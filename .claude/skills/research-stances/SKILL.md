@@ -448,6 +448,10 @@ EVIDENCE CONTRACT — every stance row must be provable from the page it cites:
 - reasoning must never be blank for a scored (non-blank-value) row (`reasoning-empty`).
 - Do not cite ONLY ballotpedia.org — every source_url on a row being ballotpedia.org is refused
   (`ballotpedia-only`); cite the record, filing or report the Ballotpedia bio itself draws on.
+- Cite Ballotpedia ONLY for a Candidate Connection survey answer, as its `#Campaign_themes` deep link
+  (ruling 2026-11-02). A bio, election, measure or Ballotpedia News page may lead you to a record, but
+  never goes in source_url_1..3 or evidence.csv — on any row, blanks included. The gate refuses it
+  (`ballotpedia-non-survey`). Cite the record itself, or leave it out of a blank's examined sources.
 - A bare-domain source_url with no path (e.g. `https://example.gov` instead of a specific page) is
   flagged for review (`source-no-path`) — link the actual page, not the site root.
 - If reasoning puts words in quotation marks, that exact text (normalized for case/whitespace) must

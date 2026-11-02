@@ -15,8 +15,8 @@
  * A BLANK (value 0 + a codebook V6 blank_reason, evidence_type `blank`; spec
  * 2026-10-07-season2-blank-review-design.md §3.2) claims no chair, so the chair checks
  * (record-no-instrument, instrument-not-cited, quote-not-in-snippet, ballotpedia-only) do not
- * apply. Its sources are the sources the coder EXAMINED; the source checks and party-inference
- * still run on them.
+ * apply. Its sources are the sources the coder EXAMINED; the source checks (ballotpedia-non-survey
+ * among them) and party-inference still run on them.
  */
 import { NAMES_INSTRUMENT } from './chair-evidence-patterns.mjs';
 import { isCandidateConnectionUrl, passageInSurveySection, withoutFragment } from './candidate-connection.mjs';
@@ -66,7 +66,7 @@ export const GATE_CHECK_IDS = [
   'unknown-politician', 'ambiguous-politician', 'duplicate-row', 'value-out-of-range', 'topic-not-in-season',
   'topic-out-of-scope', 'level-unknown', 'no-source', 'source-without-snippet', 'snippet-too-short',
   'evidence-type-invalid', 'record-no-instrument', 'statement-needs-review', 'party-inference',
-  'reasoning-empty', 'ballotpedia-only', 'source-no-path', 'pointer-only-source', 'instrument-not-cited',
+  'reasoning-empty', 'ballotpedia-only', 'ballotpedia-non-survey', 'source-no-path', 'pointer-only-source', 'instrument-not-cited',
   'quote-not-in-snippet', 'evidence-url-not-cited', 'blank-reason-invalid', 'blank-unexamined-fallback',
 ] as const;
 export type GateCheckId = typeof GATE_CHECK_IDS[number];
@@ -316,6 +316,16 @@ export function checkStanceRow(
   if (!isBlank && ((row.source_urls.length > 0 && row.source_urls.every(isBioOnlyUrl))
     || (evidenceUrls.length > 0 && evidenceUrls.every(isBioOnlyUrl)))) {
     add('ballotpedia-only', 'high', 'every source (or every evidence URL) is on ballotpedia.org — cite the underlying record, filing or report Ballotpedia draws on');
+  }
+
+  // Ruling 2026-11-02 (Chris Andrews): Ballotpedia is a source ONLY for a Candidate Connection survey answer,
+  // cited as its #Campaign_themes deep link. A bio, election, measure or news page may lead the coder to a
+  // record but is never cited, on any row, blanks included (Season 3 voting-rights: 10 blank rows cited a
+  // Ballotpedia bio whose stored "evidence" was the site header and newsletter sign-up).
+  for (const url of new Set([...row.source_urls, ...evidenceUrls])) {
+    if (isBallotpediaUrl(url) && !isCandidateConnectionUrl(url)) {
+      add('ballotpedia-non-survey', 'high', `${url} is a Ballotpedia page other than a Candidate Connection survey (#Campaign_themes) — use it to find the record, then cite the record`);
+    }
   }
 
   // Only snippets on a CITED URL can satisfy the citation-control checks below: a snippet the
