@@ -83,8 +83,23 @@
 -- ⚠ Ballotpedia holds NO photo for Kirkland or Dunlap, only a "submit a photo" placeholder. An
 --   aggregator's silence is not evidence of anything.
 --
--- ⚠ OUT OF SCOPE, FOUND ON THE WAY: Kyle Kirkland is a CA-21 candidate and Randy Villegas a CA-22
--- candidate; we file both under California Congressional District 2. A race-mapping question.
+-- 🔴 A CORRECTION TO THIS HEADER, AND THE REASON IT IS WORTH READING. An earlier draft of this
+-- comment reported, as an out-of-scope finding, that "Kyle Kirkland is a CA-21 candidate and Randy
+-- Villegas a CA-22 candidate; we file both under California Congressional District 2".
+-- 🟢 THAT WAS FALSE. Both are mapped correctly — Kirkland to `Congressional District 21`
+-- (ocd-division/country:us/state:ca/cd:21) and Villegas to `Congressional District 22`
+-- (…/cd:22). Re-read from production 2026-11-02.
+--
+-- 🔴🔴 THE DEFECT WAS IN MY OWN DISPLAY, NOT IN THE DATA: a throwaway report column formatted the
+-- label with `.slice(0, 24)`, and "Congressional District " is exactly 23 characters — so EVERY
+-- two-digit district printed as its first digit alone, and 21 and 22 both rendered as "2". Two
+-- different candidates appearing in one implausible district is what made it look systemic.
+-- ▶ **A TRUNCATED DISPLAY MANUFACTURES FINDINGS, AND IT BIASES THEM TOWARDS LOOKING LIKE
+-- DUPLICATES** — distinct values collapse onto one another, which reads as exactly the kind of
+-- collision worth reporting. Before believing a pattern, print the field at FULL WIDTH, or read
+-- the stable key beside it: `ocd_id` carried the right answer the whole time and was never shown.
+-- ⚠ Nothing else in this migration depended on it. The two wrong-person findings rest on the
+-- Wikipedia articles' own text and on what is visible in the photographs, not on district numbers.
 --
 -- Run: node backend/scripts/apply-migration-file.mjs backend/migrations/CC_0336_remove_wrong_person_portraits.sql
 
