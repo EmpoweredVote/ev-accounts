@@ -1,10 +1,22 @@
 BEGIN;
 
 -- =============================================================================
--- CA_0340: season-aware read RPCs for the Focused Communities module
+-- CA_0341: season-aware read RPCs for the Focused Communities module
 --          (connect.get_season_list / get_season_detail / get_season_chairs)
 -- =============================================================================
 -- Created 2026-10-31 with Chris Andrews.
+--
+-- 🔴 RENUMBERED FROM CA_0340 ON 2026-11-01, AND THE DATABASE STILL SAYS CA_0340.
+-- This file took slot 340 without reserving it. The LegiScan governor-signing lane then
+-- reserved 340 properly (steward, 2026-10-31 21:02) and landed
+-- CA_0340_braun_governor_term_start.sql on master, so two files held one slot and CI caught it.
+-- This is the newer claim on the slot, so this is the file that moved.
+--
+-- It was already applied to production under the name ca_0340_focused_communities_seasons at
+-- 2026-10-31 17:23, and supabase_migrations.schema_migrations still records that name. Nothing
+-- is broken by the difference: apply ORDER is the timestamped version column, not the filename,
+-- and re-running this file is a no-op. But if you are matching files to applied rows, this is
+-- the one pair whose names do not match, and this paragraph is why.
 --
 -- WHAT THIS DOES
 -- Adds three read-only functions in the connect schema, intended for
@@ -118,18 +130,18 @@ GRANT EXECUTE ON FUNCTION connect.get_season_chairs(uuid, int, boolean) TO focus
 DO $$
 BEGIN
   IF NOT has_function_privilege('focused_communities_app', 'connect.get_season_list(uuid, boolean)', 'EXECUTE') THEN
-    RAISE EXCEPTION 'CA_0340: missing EXECUTE on connect.get_season_list(uuid, boolean)';
+    RAISE EXCEPTION 'CA_0341: missing EXECUTE on connect.get_season_list(uuid, boolean)';
   END IF;
   IF NOT has_function_privilege('focused_communities_app', 'connect.get_season_detail(uuid, int, boolean)', 'EXECUTE') THEN
-    RAISE EXCEPTION 'CA_0340: missing EXECUTE on connect.get_season_detail(uuid, integer, boolean)';
+    RAISE EXCEPTION 'CA_0341: missing EXECUTE on connect.get_season_detail(uuid, integer, boolean)';
   END IF;
   IF NOT has_function_privilege('focused_communities_app', 'connect.get_season_chairs(uuid, int, boolean)', 'EXECUTE') THEN
-    RAISE EXCEPTION 'CA_0340: missing EXECUTE on connect.get_season_chairs(uuid, integer, boolean)';
+    RAISE EXCEPTION 'CA_0341: missing EXECUTE on connect.get_season_chairs(uuid, integer, boolean)';
   END IF;
   IF has_schema_privilege('focused_communities_app', 'inform', 'USAGE') THEN
-    RAISE WARNING 'CA_0340: focused_communities_app can USE schema inform — investigate the wall';
+    RAISE WARNING 'CA_0341: focused_communities_app can USE schema inform — investigate the wall';
   END IF;
-  RAISE NOTICE 'CA_0340 OK — season RPCs created (SECURITY DEFINER, search_path pinned), EXECUTE granted to focused_communities_app (PUBLIC revoked).';
+  RAISE NOTICE 'CA_0341 OK — season RPCs created (SECURITY DEFINER, search_path pinned), EXECUTE granted to focused_communities_app (PUBLIC revoked).';
 END $$;
 
 COMMIT;
