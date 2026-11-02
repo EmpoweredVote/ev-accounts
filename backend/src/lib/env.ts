@@ -70,6 +70,11 @@ const envSchema = z.object({
   // absent = the adapter is a no-op and congress.gov URLs fall through to the fetch
   // ladder (tier 1 → Wayback), today's behavior. Lives in the Render dashboard, never in git.
   CONGRESS_GOV_API_KEY: z.string().optional(),
+  // IGA_API_KEY: MyIGA Developer Program token (request it from apitoken.request@iga.in.gov) for the
+  // iga.in.gov official-API verification tier (igaAdapter). Optional — absent = the adapter is a no-op
+  // and iga.in.gov URLs fall through to the fetch ladder, where they read as a JavaScript shell. The
+  // token is also sent inside the User-Agent, as the API requires: never log a request. Render dashboard only.
+  IGA_API_KEY: z.string().optional(),
   // ADMIN_INGEST_TOKEN: pre-shared token for POST /admin/ingest/:adapter.
   ADMIN_INGEST_TOKEN: z.string(),
   // SQS_INGEST_QUEUE_URL: optional SQS queue URL for EventBridge-triggered ingestion.

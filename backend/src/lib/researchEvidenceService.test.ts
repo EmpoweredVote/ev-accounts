@@ -802,6 +802,10 @@ describe('validStoredSpan (I6)', () => {
     expect(validStoredSpan(ROLL_LINE, ROLL_LINE)).toBeNull();                        // no URL
     expect(validStoredSpan(ROLL_LINE, ROLL_LINE, 'https://a.example')).toBeNull();   // not the Clerk XML
     expect(validStoredSpan(`Note: ${ROLL_LINE}`, ROLL_LINE, ROLL_URL)).toBeNull();   // not the whole snippet
+    const IGA_URL = 'https://iga.in.gov/pdf-documents/124/2025/senate/bills/SB0010/rollcalls/SB0010.340_H.pdf';
+    const IGA_LINE = 'Indiana House roll call 340 (2025), SB 10 - Culp - 3rd Reading: Culp voted Yea.';
+    expect(validStoredSpan(IGA_LINE, IGA_LINE, IGA_URL)).toBe(IGA_LINE);
+    expect(validStoredSpan(IGA_LINE, IGA_LINE, ROLL_URL)).toBeNull();               // not an Indiana roll call
     const party = 'House roll call 102 (2025), H R 22, On Passage: Jack (R-GA) voted Yea.';
     expect(validStoredSpan(party, party, ROLL_URL)).toBeNull();                      // not a canonical line
     expect(validStoredSpan('Jane Doe voted', 'Jane Doe voted', ROLL_URL)).toBeNull();

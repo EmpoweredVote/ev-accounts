@@ -22,6 +22,8 @@ Python as `python3 -I scripts/stage5/<tool>.py`. `<batch>` is the batch folder, 
 | 7 | `legiscan-rollcalls.ts <ST> <vote-pages.json> <out.json>` | finds the LegiScan roll call for each official one (bill, chamber, counts) |
 | 7 | `legiscan_pairs.py <batch> <findings> --topic --state --host --rollcalls <json> [--bill-pad N]` | official votes/authorships → `legiscan/pairs.csv` |
 | 7 | `../legiscan-evidence-lines.ts --in pairs.csv --out legiscan-evidence.csv` | the LegiScan lines (counted API calls) |
+| 7 (IN) | `iga-votes.ts <batch> <findings> --topic <key>` | Indiana: each vote's official roll-call PDF → its line; cites the PDF, uncites covered bill pages, cross-checks (exit 1 on any disagreement) |
+| 4, 7 (IN) | `iga-pages.ts <pages dir> <url>…` · `iga-evidence-lines.ts --in pairs.csv --out <csv>` | iga.in.gov text through the MyIGA API (what the verifier reads); lines for hand-made pairs |
 | 7 | `legiscan_merge.py <batch> --host <official host>` | cites the lines, uncites covered official pages, cross-checks every vote (exit 1 on any disagreement) |
 | 8 | `bill_text_auto.py <batch> <findings> --topic <key> [--instruments <dir>] [--saved-root <dir>]` | finds each quote the gate cannot place in the person's bills (store operative text, then the saved copy) and cites that bill with a 25+-word passage |
 | 8 | `add_bill_text.py <batch> --topic --url --sentences <json> [--text <file>]` | the same by hand, for a bill the store does not hold |
@@ -34,8 +36,13 @@ Notes:
 - ⚠ **`build_evidence.py` and `pdf_pages.py` fetch with a browser user-agent.** This is a deliberate exception to
   decision 0003 (ev-cto `knowledge/decisions/0003-scraping-toolchain.md`), ruled 2026-10-31 (Chris Andrews), for local research runs only. Never copy it into a live or
   scheduled fetch path. A page these tools read is not proof the verifier can read it: the verifier sends the honest
-  `EmpoweredVoteBot` identity (`src/lib/verificationFetch.ts`). iga.in.gov, for example, serves its PDFs and JSON to
-  a browser identity only, so Indiana's records come from LegiScan or the official keyed API (`api.iga.in.gov`).
+  `EmpoweredVoteBot` identity (`src/lib/verificationFetch.ts`).
+- **iga.in.gov goes through the official MyIGA API, never the browser user-agent.** Both tools hand any iga.in.gov
+  URL to `iga-pages.ts` (through `_iga.py`), which reads it with `src/lib/adapters/igaAdapter.ts`, the verifier's own
+  Indiana tier. The API asks for the token in `x-api-key` and as `User-Agent: iga-api-client-<token>`
+  (docs.api.iga.in.gov/usage.html): the state's rule, not a disguise. Set `IGA_API_KEY` in `backend/.env`; without
+  it Indiana pages stay unread and Indiana votes go through LegiScan as before. The token sits inside a header, so
+  never log a request.
 
 - `build_evidence.py` also reads an `overrides.json` of the older shape `{name: {column: value}}`; a `{"trims": …}`
   file is ignored by it (no row is named "trims").

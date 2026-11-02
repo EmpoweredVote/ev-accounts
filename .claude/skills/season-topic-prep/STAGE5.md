@@ -294,7 +294,7 @@ prints no party by the names. Otherwise cite a LegiScan line instead. The legisl
 | NC | roll calls print party headings and surnames only | LegiScan lines, matched by bill, date and motion |
 | AZ | the vote API prints `"Party":"R"` by each name (the sweep misses it) | LegiScan lines |
 | MI | journal snippets mis-decoded, or cut from the attendance list | LegiScan lines |
-| IN | iga.in.gov is a JavaScript app to a plain fetch | LegiScan lines; bill text as a PDF (step 8) |
+| IN | iga.in.gov is a JavaScript app to a plain fetch; the official MyIGA API reads it (2026-11-02) | official roll-call lines (`iga-votes.ts`, below); LegiScan as before when `IGA_API_KEY` is unset |
 | TX | robots-blocked bill pages | LegiScan lane (PR #1218) |
 
 Steps:
@@ -313,6 +313,16 @@ Steps:
    own vote.
 
 Every LegiScan call counts against the monthly cap (`LEGISCAN_API_KEY`). The lines print no party.
+
+**Indiana: the official roll calls instead** (with `IGA_API_KEY` in `backend/.env`). One command replaces steps 1-3:
+`npx tsx --env-file=.env scripts/stage5/iga-votes.ts <batch> <findings dir> --topic <key>`. It finds each vote's
+official roll-call PDF through the MyIGA API, cuts the person's line from it
+("Indiana House roll call 340 (2025), SB 10 - Culp - 3rd Reading: Culp voted Yea."), cites the PDF, uncites a
+covered bill page, and cross-checks every line against the finding (`iga/crosscheck.json`, 🔴 **0 disagree**).
+A vote with no line is listed in `iga/unmapped.json`: hold that person; do not guess. Replayed on `in-01`: the
+same 101 votes as the LegiScan lines, plus Alting and Prescott, whom LegiScan could not match. Bill pages,
+legislator pages and every other iga.in.gov PDF read through the same API in step 4 (`build_evidence.py`,
+`pdf_pages.py`), and the verifier reads them the same way (`src/lib/adapters/igaAdapter.ts`).
 
 **8. Bill text.** When the reasoning quotes a bill's words and the cited page cannot be read, the gate cannot find
 the quote. Run the gate once (step 9) to list those quotes, then:
