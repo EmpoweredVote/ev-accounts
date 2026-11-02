@@ -79,10 +79,53 @@ export const MIN_COVERAGE = 0.6;
  */
 export const NO_SURVEY_NOTICE = /has not (?:yet )?completed Ballotpedia'?s?\b|did not complete Ballotpedia'?s?\b|has not responded to Ballotpedia'?s?\b/i;
 
+/**
+ * "<Name> completed Ballotpedia's Candidate Connection survey in 2022." The notice CONTAINS this phrase
+ * ("has not completed Ballotpedia's ..."), so a match negated within the 24 characters before it does not
+ * count (sweep-candidate-connection-anchors.mjs correction 5).
+ */
+export const COMPLETED_SURVEY = /completed\s+Ballotpedia'?s?\s+(?:\d{4}\s+)?Candidate\s+Connection\s+survey/gi;
+const NEGATED_BEFORE = /\b(?:not|never|hasn't|haven't|didn't)\b[^.]{0,24}$/i;
+/** Where one completed survey's answers end: Ballotpedia's edit note, or the next cycle's survey block. */
+const SURVEY_BLOCK_END = /Note: Ballotpedia reserves the right to edit|Ballotpedia survey responses/i;
+
+/** Start offsets of each affirmative "completed ... survey" statement, negations excluded. */
+function completedSurveyStarts(text) {
+  const starts = [];
+  for (const m of text.matchAll(COMPLETED_SURVEY)) {
+    if (!NEGATED_BEFORE.test(text.slice(Math.max(0, m.index - 24), m.index))) starts.push(m.index);
+  }
+  return starts;
+}
+
+/** True when the section affirmatively states a completed survey, negations excluded. */
+export function statesCompletedSurvey(text) {
+  return completedSurveyStarts(String(text ?? '')).length > 0;
+}
+
+/**
+ * The text that is the candidate's own survey answers. A page can carry the current cycle's notice and an
+ * earlier cycle's completed survey under the same heading (Jonah Garson, 2026-11-02: no 2026 survey, a
+ * full 2022 one). So when a completed survey is stated, only those blocks count, and the notice does not
+ * void them; with no completed survey stated, the notice voids the section; otherwise the whole section.
+ */
+function surveyAnswerText(section) {
+  const starts = completedSurveyStarts(section);
+  if (starts.length > 0) {
+    return starts.map((s) => {
+      const rest = section.slice(s);
+      const end = rest.slice(1).search(SURVEY_BLOCK_END);
+      return end < 0 ? rest : rest.slice(0, end + 1);
+    }).join(' ');
+  }
+  return NO_SURVEY_NOTICE.test(section) ? null : section;
+}
+
 export function passageInSurveySection(section, passage) {
   if (!section || !String(passage ?? '').trim()) return false;
-  if (NO_SURVEY_NOTICE.test(section)) return false;
-  const hay = norm(section);
+  const answers = surveyAnswerText(section);
+  if (!answers) return false;
+  const hay = norm(answers);
   const words = norm(passage).split(' ').filter(Boolean);
   if (words.length === 0) return false;
   if (words.length < SHINGLE_WORDS) return hay.includes(words.join(' '));
