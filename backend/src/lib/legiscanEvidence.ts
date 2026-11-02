@@ -28,6 +28,11 @@
  *
  *   LegiScan IN 2025 Regular Session SB0010: Signed by the Governor on 2025-04-16.
  *
+ * The US Congress is state "US" here, so the lane also verifies US Senate roll calls, which senate.gov's
+ * firewall keeps from us (2026-11-02). senateRollCall.ts turns a senate.gov vote URL into its LegiScan one.
+ *
+ *   LegiScan US 119th Congress SB5, roll call 1472537 (Senate, 2025-01-20, "On Passage of the Bill S. 5 RC# 7"): Jerry Moran voted Yea.
+ *
  * LegiScan has four sponsor kinds only (sponsor, primary sponsor, cosponsor, joint sponsor), so a
  * line never says "author": Texas authors and joint authors are both LegiScan primary sponsors.
  *
