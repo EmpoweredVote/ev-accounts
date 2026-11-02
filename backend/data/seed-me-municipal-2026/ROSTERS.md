@@ -675,6 +675,58 @@ Hallowell. **A rule that has been satisfied in form has not been checked.**
 
 ---
 
+## 🔴🔴 R13. `maine.gov` EXPRESSLY RESERVES ITS PHOTOGRAPHS. DO NOT TAKE ONE.
+
+Read 2026-11-02, before a portrait was taken — which is the only reason one was not.
+`maine.gov/portal/policies/photo_use_policy.html`, reachable from **every** state page via the
+footer link "Site Policies":
+
+> "Photos displayed on the Maine.gov website are **copyrighted by the photographer**." Permission
+> is granted only for **personal, non-commercial** uses. "Photos **may not be altered in any way,
+> including resizing or cropping**." "Photos **cannot be posted on the Internet** on personal,
+> commercial, or other sites, **without explicit permission from the photographer**." "**Photo
+> credits must be provided.**"
+
+🔴 **THREE OF THOSE CLAUSES BIND THIS REPO AT ONCE**, and the fourth is impossible: we crop and
+resize every portrait to 4:5, we publish it on our own site, and the pages name no photographer,
+so the required credit cannot be given. ⚠ This applies to the **whole** `maine.gov` estate, not
+to any one agency — the policy is the portal's, and the agency pages inherit it.
+
+▶ **THIS IS AN EXPRESS RESERVATION, NOT SILENCE, AND THE DIFFERENCE DECIDES THE ANSWER.** This
+repo treats a publisher that says *nothing* about reuse as unlicensed-but-usable, recording what
+was found and when (that is how the Massachusetts legislature's portraits are held). A publisher
+that affirmatively reserves is a refusal. **The two look identical until you open the policy
+page** — so open it *before* downloading, never after. Same lesson as `gov.texas.gov`, whose
+1000×1499 Abbott portrait was the best found anywhere and had to be dropped.
+
+### The worked example: Matthew Dunlap, and the three fallbacks that also failed
+
+Maine's State Auditor page publishes an excellent **1995×2545** portrait of him. It is off limits.
+Every other route was tried and none is usable:
+
+- **Wikimedia Commons** — `File:Matt Dunlap (cropped headshot).jpg` is CC BY-SA 4.0 but only
+  **279×424**, and its own credit says the parent file "**was deleted for reasons that may or may
+  not affect this image**". 🔴 **A deleted Commons parent usually means a copyright problem** —
+  that is Commons hedging about its own licence. Do not build on such a derivative.
+- **Federal public domain (17 USC 105)** — he served on, and sued, the Presidential Advisory
+  Commission on Election Integrity, but the coverage is all press photography. Nothing federal.
+- **His campaign site** (`mattdunlapforuscongress.com`) — the only usable images, but no press
+  page, no terms, no copyright notice. **Silence, not a grant.** ⚠ Its portrait is also
+  **pre-upscaled** (`upscalemedia-transformed.png`): downscaling the host's 1600px render back to
+  833 matched the direct 833 at **MAD 0.994**, against 179 for a different image as control — no
+  real detail. 🔴 **Wix does NOT cap a resize request at the source size** (it served 6000×6115),
+  so served dimensions prove nothing; **the downscale-and-compare test is what works.** Real
+  ceiling 833×849 ⇒ a tight headshot is **400×500 native**, and enlarging that is forbidden.
+- ⚠ **`matthewdunlap.com` is a commercial film director of the same name.** A plausible domain is
+  not an identity.
+
+▶ **RULING 2026-11-02: he is left with NO portrait, deliberately.** He is the ME-02 nominee
+(election 2026-11-03); if he won, the House publishes a **public-domain** portrait in January 2027
+and that is the clean source. 🔴 **If he lost, that source never exists** — fall back to the
+campaign image recorded as silence, or ask. **A blank is the honest state meanwhile.**
+
+---
+
 ### Per-city recipe
 
 Maine is finished, so this is kept for the next STATE, not the next Maine city. Every step
