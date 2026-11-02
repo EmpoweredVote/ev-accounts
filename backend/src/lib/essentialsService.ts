@@ -67,6 +67,7 @@ import {
   buildStatewideQuery,
 } from './districtQueries.js';
 import { PHOTO_RESTRICTION_SELECT_SQL, type PhotoRestriction } from './photoRestriction.js';
+import { PHOTO_CREDIT_SELECT_SQL, type PhotoCredit } from './photoCredit.js';
 export { GeocodingError };
 
 /**
@@ -1232,6 +1233,11 @@ export interface PoliticianDetail {
   photo_origin_url: string;
   /** Non-null when a portrait exists but its publisher reserved it. See photoRestriction.ts. */
   photo_restriction?: PhotoRestriction | null;
+  /**
+   * The credit the portrait owes, for display. Null when there is none to give.
+   * 🔴 NOT the same thing as `photo_origin_url`, which is the image to show. See photoCredit.ts.
+   */
+  photo_credit?: PhotoCredit | null;
   web_form_url: string;
   urls: string[] | null;
   email_addresses: string[] | null;
@@ -1359,6 +1365,7 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
            p.preferred_name, p.name_suffix, p.party, p.party_short_name,
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
            ${PHOTO_RESTRICTION_SELECT_SQL},
+           ${PHOTO_CREDIT_SELECT_SQL},
            p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug,
            p.total_years_in_office, p.is_incumbent, p.is_appointed, p.is_vacant,
@@ -1554,6 +1561,7 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
     party_short_name: row.party_short_name ?? '',
     photo_origin_url: row.photo_origin_url ?? '',
     photo_restriction: (row.photo_restriction as PhotoRestriction | null) ?? null,
+    photo_credit: (row.photo_credit as PhotoCredit | null) ?? null,
     web_form_url: row.web_form_url ?? '',
     urls: row.urls ?? null,
     email_addresses: row.email_addresses ?? null,
