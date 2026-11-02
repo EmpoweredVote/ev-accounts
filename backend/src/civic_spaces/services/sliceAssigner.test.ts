@@ -461,3 +461,81 @@ describe('a full frontier slice splits rather than opening an empty one', () => 
     expect(calls(/INSERT INTO slice_members/).at(-1)![1]).toEqual(['user-1', 'slice-v2'])
   })
 })
+
+describe('the lifecycle: where members land as a jurisdiction divides (E2, E4)', () => {
+  // 🔴 These two belong to the end-to-end rehearsal in civic-spaces
+  // (scripts/rehearsal/19-01-split-e2e.sql), and they are here instead of there on purpose.
+  // That file drives one synthetic jurisdiction through two consecutive splits and asserts
+  // E1/E3/E5/E6/E7 — the split itself, the frontier rule, the seed's provenance, the count
+  // invariant. E2 and E4 are the two claims in that story about WHERE THE NEXT MEMBER GOES,
+  // and placement is this file's rule, not SQL's. Asserting them there would mean writing a
+  // second implementation of the placement rule in SQL to check the first one against —
+  // which is the duplication Task 4 exists to remove. See Ruling 1 in the 19-01 ledger.
+  //
+  // So the lifecycle is proven in two files. This is the half that knows about people
+  // arriving; the SQL half is the one that knows about the town dividing.
+
+  beforeEach(() => {
+    queryMock.mockReset()
+  })
+
+  const slice = (i: number, n: number) => ({
+    id: `slice-${i}`,
+    sibling_index: i,
+    current_member_count: n,
+  })
+
+  /** Answer the placement query with this picture of the jurisdiction. */
+  const jurisdiction = (...rows: ReturnType<typeof slice>[]) =>
+    queryMock.mockResolvedValueOnce({ rows })
+
+  it('E2 after the first split, new members land in slice 1 — the second-newest', async () => {
+    // Slice 1 reached 6000 and divided: it kept the longest-standing half and slice 2 opened
+    // with the most recently joined half plus a forked window of the conversation. Both now
+    // hold 3000 and both are open.
+    //
+    // 🔴 The newcomer goes to slice 1, the slice that just split, NOT to the new one. The
+    // point of a split is to open the next room before it is needed, so the second-newest
+    // fills while the newest holds its space. Sending arrivals to the new slice would fill
+    // it in half the time and force the next split immediately.
+    jurisdiction(slice(1, 3000), slice(2, 3000))
+
+    await expect(findActiveSliceForGeoid('city', '4858016')).resolves.toBe('slice-1')
+  })
+
+  it('E4 once slice 1 refills and closes, members land in slice 2', async () => {
+    // Slice 1 is back at the cap. It does NOT split again — slice 2 is newer, so slice 1
+    // simply closes (that is E3, asserted in the SQL rehearsal, and it is the assertion this
+    // whole phase turns on). From this side the only visible consequence is that arrivals
+    // move to slice 2.
+    //
+    // 🔴 THIS ASSERTION PROVES NOTHING ON ITS OWN, and that is measured, not suspected: it
+    // stays green with the two-newest window deleted and green again with the sort reversed.
+    // Slice 2 is the only slice with room, so every candidate rule returns it. It is here to
+    // keep the lifecycle readable as a story. E4b below is the step that carries the claim.
+    jurisdiction(slice(1, 6000), slice(2, 3000))
+
+    await expect(findActiveSliceForGeoid('city', '4858016')).resolves.toBe('slice-2')
+  })
+
+  it('E4b a closed slice that loses members does NOT reopen to new arrivals', async () => {
+    // 🔴 The case the lifecycle makes real and P5 only sketches. Members leave; counts are
+    // trigger-maintained and go down. Slice 1 is closed and now has room again — a query
+    // that asked only "which slice has space" would start seating newcomers back in a room
+    // the conversation left two splits ago, one at a time, with nobody arriving beside them.
+    // Closed means closed. Room is not candidacy.
+    jurisdiction(slice(1, 500), slice(2, 3000), slice(3, 3000))
+
+    await expect(findActiveSliceForGeoid('city', '4858016')).resolves.toBe('slice-2')
+  })
+
+  it('E7b the open pair moves with the jurisdiction, split after split', async () => {
+    // Three splits in: 1 and 2 are closed, 3 and 4 are open, and the answer walks forward
+    // with them rather than staying anchored to where it started.
+    jurisdiction(slice(1, 6000), slice(2, 6000), slice(3, 3000), slice(4, 3000))
+    await expect(findActiveSliceForGeoid('city', '4858016')).resolves.toBe('slice-3')
+
+    jurisdiction(slice(1, 6000), slice(2, 6000), slice(3, 6000), slice(4, 3000), slice(5, 3000))
+    await expect(findActiveSliceForGeoid('city', '4858016')).resolves.toBe('slice-4')
+  })
+})
