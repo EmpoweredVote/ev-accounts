@@ -740,6 +740,15 @@ each was first learned.
 - 🔴 **A MASTER-ONLY GATE CANNOT VET THE MERGE THAT TRIPS IT.** It reads production data and runs
   after the merge, so it fails on *the next* PR and names an innocent author. Carry the check into
   the migration's own post-verify, as a delta, if you need it to block the guilty change.
+- 🔴🔴 **A TRUNCATED DISPLAY MANUFACTURES FINDINGS, AND IT BIASES THEM TOWARDS LOOKING LIKE
+  DUPLICATES.** Cutting a column to fit makes distinct values collapse onto one another, and that
+  collision is exactly the shape of a real defect, so the artefact reads as a discovery. On
+  2026-11-02 a report column formatted a district label with `.slice(0, 24)` — and
+  `"Congressional District "` is exactly 23 characters — so every two-digit district printed as
+  its first digit alone. Two different candidates appeared to share one implausible district,
+  which was reported as a race-mapping bug and was retracted: both were mapped correctly.
+  ▶ **Print the field at FULL WIDTH before believing a pattern in it, or read the stable key
+  beside it.** `ocd_id` carried the right answer throughout and was never displayed.
 - 🔴🔴 **A PREDICATE READS THE SHAPE OF A VALUE, NEVER WHAT THE VALUE IS.** Before naming or acting
   on the class some `WHERE` clause catches, `GROUP BY` the discriminating field and read a sample
   of real rows. **Deleting raises that bar, it does not lower it.** ⚠ A lookalike key can be a
