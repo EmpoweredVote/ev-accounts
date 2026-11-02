@@ -6,12 +6,29 @@ import { env } from '../../lib/env.js';
 // (src/lib/db.ts) for ISOLATION, not sizing.
 //
 // 🔴 PRIVACY WALL. This pool connects as `focused_communities_app`, a dedicated login role
-// granted access to ONLY the five connect tables the module reads or writes —
-// communities (read), threads + posts (read/insert/update), thread_edits + post_edits (read) —
+// granted access to ONLY the eight connect tables the module reads or writes:
+//
+//   communities                      read                      (CA_0323)
+//   threads, posts                   read / insert / update    (CA_0323)
+//   thread_edits, post_edits         read                      (CA_0323)
+//   claims                           read / insert / update    (CA_0342)
+//   claim_ratings                    read / insert / update    (CA_0342)
+//   claim_edits                      read                      (CA_0342)
+//
 // plus EXECUTE on connect.get_stances_for_community. Nothing else: NOT
 // connect.connected_profiles (identity, PRIVACY-ARCHITECTURE property A), NOT the gem/XP/invite
 // tables that share the schema, NOT any other schema. The standalone service used the broad
-// service_role key, which reaches all of them. See migration CA_0323.
+// service_role key, which reaches all of them. See migrations CA_0323 and CA_0342.
+//
+// No DELETE and no TRUNCATE is granted on any of the eight — Memory over Moderation is a grant,
+// not only a route — and CA_0342 section 8 revokes both from the four grantable roles on the
+// three claim tables outright, along with INSERT and UPDATE on claim_edits, so the audit trail
+// is writable by nothing but its SECURITY DEFINER trigger.
+//
+// 🔴 THIS LIST IS THE ONE A REVIEWER READS TO DECIDE WHETHER A NEW QUERY IS IN SCOPE. A
+// migration that grants this role a ninth table and leaves the list at eight makes that
+// decision wrong. claims.test.ts keeps the two in step: it reads every `connect.<table>` the
+// module's SQL names and fails if one of them is missing from this paragraph.
 //
 // The two triggers that need identity (snapshot_author_display_name reads
 // connected_profiles; log_*_edit writes the edit tables) are SECURITY DEFINER, so they run

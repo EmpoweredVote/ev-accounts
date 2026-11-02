@@ -17,6 +17,24 @@ export interface AccountUser {
   account_standing: 'active' | 'suspended';
   completed_onboarding: boolean;
   display_name: string;
+  /**
+   * When the public.users row was created. getAccountMe already returns it and loadUser
+   * spreads the whole composite onto req.user, so this is a field that was always there
+   * and merely undeclared — not a new query.
+   *
+   * It is here for ONE reason: routes/claimWrites.ts snapshots the rater's account age
+   * onto connect.claim_ratings at rating time. That is a property of the rater AT THE
+   * MOMENT OF RATING and cannot be recovered afterwards, so it has to be written then or
+   * never. Optional, because this interface is a narrowing of a composite assembled from
+   * several tables and a caller must not assume any of it is present.
+   */
+  created_at?: string | null;
+  /**
+   * The connected-tier child record, when there is one. Present only for connected and
+   * empowered accounts — an Inform-tier caller has no row and no verification status.
+   * Here for the same reason as created_at: the rating snapshot.
+   */
+  connected_profile?: { verification_status?: string | null } | null;
 }
 
 export type FcRequest = Request & { user?: AccountUser };
