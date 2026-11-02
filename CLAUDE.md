@@ -54,6 +54,19 @@ could not disprove them (CA_0156, CA_0159), all with `term_start` NULL — ungua
 past date. Read `office_terms` directly to see them. An audit that keeps an unverifiable term should use the
 same tag.
 
+🔴🔴 **THE VIEW IS MOSTLY CANDIDATES, NOT OFFICEHOLDERS.** Roughly **84.5k** rows against **~9.7k**
+with occupancy evidence (both figures drift). To restrict a read to evidenced holders, filter
+`is_placeholder_occupancy = false` on `essentials.politician_occupancy_evidence` — **not** on the
+view, which has no such column. ⚠ **Never delete the placeholder people**; they are candidates, and
+other subsystems hold them.
+
+🔴 **`office_current_holder` LEFT JOINs FROM `offices`, SO A VACANCY IS A ROW WITH A NULL
+`politician_id` — AND `count(*) = 0` PASSES VACUOUSLY.** A gate written as `count(*)` counts the
+empty seats too and reports success over a table that seated nobody. **Count `och.politician_id`.**
+
+⚠ **`unaccent` IS NOT INSTALLED ON PROD.** A name comparison that reaches for it works locally and
+fails in production; fold accents in the application, or compare on a column you already store.
+
 **Never cache "current" in a column.** No trigger fires merely because the calendar advanced — that
 is the whole reason this model exists.
 
@@ -305,6 +318,16 @@ Honesty rules that the schema enforces:
 - **`politicians.valid_from` / `valid_to` are DEPRECATED** — wrong entity (dates belong to a tenure,
   and people hold two offices). Don't read them in new code. `politicians.office_id` is a legacy
   point-in-time snapshot with the same flaw; prefer the view.
+- 🔴 **`term_end IS NULL` IS NOT "CURRENT".** An open-ended term can also be a row nobody ever
+  closed. Ask for **date containment** against the span, which is what the view does; a
+  `term_end IS NULL` filter quietly returns stale tenures beside live ones.
+- 🔴 **THREE PLACES HAVE NO INBOUND FOREIGN KEY, SO A DELETE CORRUPTS SILENTLY INSTEAD OF
+  ERRORING:** `districts` (deleting one **orphans its offices**), `chambers.government_id`, and
+  `politicians.office_id`. **Repoint before deleting**, and gate on the END STATE rather than on
+  the delete's own row count.
+- 🔴 **AN `external_id` COLLISION SEATS THE WRONG PERSON, AND NOTHING ERRORS.** The upsert finds an
+  existing row by that id and writes your term onto it. Assert the id is unseen, or that the row it
+  matched carries the name you expect, before you write.
 
 ### Sourcing a seat from a roster or an election result
 
@@ -437,6 +460,17 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
   - 🔴 **It also destroyed the evidence for its own premise.** `CA_0335` said all four rows showed
     a real name. They did not — two were invented handles. Nobody could check, because the values
     were gone. **Write the old value down and the claim stays testable.**
+- 🔴🔴 **THE DRY-RUN AND APPLY TOOLS ALREADY EXIST — `ls backend/scripts/` BEFORE WRITING ONE.**
+  `dry-run-migration.mjs` and `apply-migration-file.mjs`. They have been replaced with worse
+  hand-rolled copies more than once.
+  - 🔴🔴 **`dry-run-migration.mjs` ONCE COMMITTED TO PROD WHILE PRINTING "ROLLED BACK".** It strips
+    only the **FIRST** `BEGIN`/`COMMIT` pair, so a file holding two migrations has its second one
+    run and committed for real. **ONE MIGRATION PER FILE — NEVER CONCATENATE.** Guarded in #1235;
+    the guard does not make the rule optional.
+- 🔴 **"APPLIED TO PROD" IS NOT "ON MASTER".** There is no `schema_migrations` table, so **the file
+  is the only record that a migration exists**. Data alone cannot tell you whether the file was
+  ever merged — a migration can be live in production and absent from the repo. **Check the PR,
+  not just the data.**
 - 🔴 **`ev_api` CANNOT REACH EVERY SCHEMA — `apply-migration-file.mjs` FAILS ON `civic_spaces`**
   with `permission denied for schema civic_spaces`. That is not a broken credential; it is the
   role. Apply such a migration through the Supabase MCP, which connects privileged.
@@ -616,6 +650,12 @@ npm run steward --prefix backend -- extend  place:0642468 --hours 4
     worktree marker and no pathspec check. They now run through
     `backend/scripts/lib/main-checkout-fallback.mjs`, which borrows the main checkout's
     `node_modules` and `.env`, and print one "skipped" line when neither checkout has them.
+- 🔴🔴 **BEFORE ANY `git worktree remove`, SCAN FOR A `node_modules` JUNCTION — REMOVAL DELETES
+  STRAIGHT THROUGH IT.** A junction planted to save a reinstall is followed by the delete, and it
+  has **emptied the main checkout's `node_modules` twice**. ⚠ **`check:deletable` is silent on
+  this** — it is not one of the four checks. Look with PowerShell (`Get-ChildItem -Directory` and
+  read `LinkType`), and `rmdir` a junction you made yourself as a control before trusting the scan.
+  ▶ **Do not plant junctions**; run tooling from the main checkout with an absolute `--dir`.
 - **Before deleting a worktree or branch**, run the four checks — as **one command**:
 
   ```bash
@@ -687,6 +727,11 @@ each was first learned.
   four officeholder names and three district labels and presented them as quoted text from the
   page. Use it to LOCATE a document; never source a **name, a date or a count** from it. A web
   search summary is a lead, not evidence — open the page and read it.
+- 🔴 **A CLEAN HTTP 200 LIES IN AT LEAST FIVE WAYS**, and each one reads as success: an ACS or API
+  host returning an **HTML error page**; **TIGERweb layer 0** answering for a layer that holds
+  nothing; a **parked domain**; a **truncated body** — check `Content-Length` against what you
+  received; and a **soft 404**, a "not found" page served as 200. Assert on the *content* you
+  expected, never on the status code alone.
 - 🔴 **A WAF REJECTION CAN BE HTTP 200 OR 202, so never judge a fetch by `r.ok`.** F5 WAFs on
   government hosts reject Node's `fetch` on its TLS fingerprint and answer 200 with a challenge
   body; `curl` and Python `requests` get through. A 403 that persists even with a browser
@@ -710,6 +755,26 @@ each was first learned.
 - Party affiliation is **antipartisan** by design: party lives on `races.primary_party` (which ballot
   a voter requests), never on `race_candidates`.
 - `geofence_boundaries.state` holds **2-digit FIPS**, not USPS codes.
+- 🔴 **`geo_id` IS NOT UNIQUE — THE KEY IS THE PAIR `(mtfcc, geo_id)`.** Measured: **1,159
+  collisions across 13 states**, because a place and a county subdivision can share a number.
+  `geoIdGuard.ts` enforces the pair on the production write path; **ad-hoc SQL does not**, so a
+  hand-written join on `geo_id` alone silently matches the wrong geography. ⚠ **`ocd_id` ROLLS UP,
+  `geo_id` LOOKS UP** — they answer different questions and are not interchangeable.
+- 🔴🔴 **A CITY CAN BE FULLY SEEDED, ANSWER EVERY ADDRESS, AND STILL BE INVISIBLE ON THE MAIN
+  PAGE.** The landing chip keys on **`governments.geo_id`**, which address search never touches, so
+  the two surfaces fail independently and neither one's success implies the other's. 🔴 **THE ONLY
+  RELIABLE DETECTOR IS END-TO-END: does a city-hall point return a council member?**
+  `check:reachability` runs on master-push and cron — **not on PRs** — and takes no probe list, so
+  **green does not mean your districts were swept.**
+- 🔴🔴 **SUPABASE STORAGE NEEDS BOTH `apikey` AND `Authorization` HEADERS** (key `sb_secret_…`). A
+  lone Bearer is refused as **HTTP 400 with a body saying 403 "Invalid Compact JWS"**, which reads
+  like a missing object and sends you looking in the wrong place.
+  - 🔴🔴 **STORAGE ANSWERS ON TWO HOSTNAMES** — `<ref>.storage.supabase.co` *and* `<ref>.supabase.co`.
+    **Match on the PATH `%supabase.co/storage/v1/object/public/%`, never on the host:** a host-based
+    `LIKE` once classified **1,279 of our own mirrored headshots as "hotlinked"**.
+- 🔴🔴 **PROD AUTHENTICATES AS `ev_api`, AND A SUPABASE PASSWORD RESET ROTATES `postgres` ONLY.** So
+  the break you will see is a **mismatched username**, not an expired secret. **Test a credential
+  against a DATA endpoint** — `/api/health` touches no data and passes with a dead database.
 - 🔴 **`districts.geo_id` IS A LOOKUP KEY, SO AN EMPTY ONE IS A KEY NOTHING CAN EVER MATCH.** A
   district with `geo_id = ''` is invisible to every `geo_id`-keyed read — today that is the
   `government_bodies` join in `DISTRICT_SELECT_FIELDS`, which simply never fires for it. The seats
