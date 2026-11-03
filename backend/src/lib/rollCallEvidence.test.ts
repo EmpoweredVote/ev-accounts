@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { formatRollCallLine, isRollCallXmlUrl, parseRollCallLine, verifyRollCallLine } from './rollCallEvidence.js';
+import { formatRollCallLine, houseRollCallIsFor, houseRollCallLineFor, isRollCallXmlUrl, parseRollCallLine, verifyRollCallLine } from './rollCallEvidence.js';
 import { lastNameOf } from './researchVerifier.js';
 import { verifyEvidence, type EvidenceRow, type StanceRow } from './researchVerifier.js';
 
@@ -88,5 +88,47 @@ describe('rollCallEvidence', () => {
     });
     expect(r.pushable).toHaveLength(1);
     expect(r.pushable[0].verifiedSources[0].snippets[0].matchedSpan).toBe(LINE);
+  });
+});
+
+describe('houseRollCallLineFor', () => {
+  it('builds the line for a member by bioguide, and the verifier accepts it', () => {
+    const line = houseRollCallLineFor(XML, URL, 'J000304')!;
+    expect(line).toContain('Jackson (TX) voted Aye.');
+    expect(verifyRollCallLine(line, URL, XML, 'Jackson').verdict).toBe('verified');
+  });
+  it('picks the other Jackson by bioguide, and the verifier accepts it', () => {
+    const line = houseRollCallLineFor(XML, URL, 'J000032')!;
+    expect(line).toContain('Jackson (IL) voted No.');
+    expect(verifyRollCallLine(line, URL, XML, 'Jackson').verdict).toBe('verified');
+  });
+  it('returns null when the question cannot be carried by the line format', () => {
+    const xml = XML.replace('<vote-question>On Passage</vote-question>', '<vote-question>On Motion: Recommit</vote-question>');
+    expect(houseRollCallLineFor(xml, URL, 'J000304')).toBeNull();
+  });
+  it('never prints a party', () => {
+    expect(houseRollCallLineFor(XML, URL, 'G000558')).not.toMatch(/\bparty\b|\(R\)|\(D\)/);
+  });
+  it('returns null for a member not on the roll call', () => {
+    expect(houseRollCallLineFor(XML, URL, 'X000000')).toBeNull();
+  });
+});
+
+describe('houseRollCallIsFor', () => {
+  it('accepts the XML of the matched bill and roll number, spaces aside', () => {
+    expect(houseRollCallIsFor(XML, 'HR 8281', 345)).toBe(true);
+    const hjres = XML.replace('<legis-num>H R 8281</legis-num>', '<legis-num>H J RES 44</legis-num>');
+    expect(houseRollCallIsFor(hjres, 'HJRES 44', 345)).toBe(true);
+  });
+  it('refuses an XML whose bill differs from the matched roll call', () => {
+    expect(houseRollCallIsFor(XML, 'HR 8282', 345)).toBe(false);
+    expect(houseRollCallIsFor(XML, 'HJRES 8281', 345)).toBe(false);
+  });
+  it('refuses an XML whose roll number differs from the matched roll call', () => {
+    expect(houseRollCallIsFor(XML, 'HR 8281', 346)).toBe(false);
+  });
+  it('refuses an XML with no bill or no roll number', () => {
+    expect(houseRollCallIsFor(XML.replace('<legis-num>H R 8281</legis-num>', ''), 'HR 8281', 345)).toBe(false);
+    expect(houseRollCallIsFor(XML.replace('<rollcall-num>345</rollcall-num>', ''), 'HR 8281', 345)).toBe(false);
   });
 });
