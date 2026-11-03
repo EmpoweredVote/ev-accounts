@@ -98,3 +98,46 @@ export function verifyRollCallLine(line: string, url: string, xml: string, lastN
   }
   return { verdict: 'verified', matchOffset: 0 };
 }
+
+/**
+ * Whether the roll-call XML is the roll call it was fetched to prove: its `legis-num` is `billNumber`
+ * (spaces removed from both, so the clerk's "H J RES 44" is the table's "HJRES 44") and its
+ * `rollcall-num` is `rollNum`. False when either field is missing.
+ */
+export function houseRollCallIsFor(xml: string, billNumber: string, rollNum: number): boolean {
+  const legisNum = tag(xml, 'legis-num');
+  const squash = (s: string) => decode(s).replace(/\s+/g, '').toUpperCase();
+  return legisNum !== null && squash(legisNum) !== '' && squash(legisNum) === squash(billNumber)
+    && Number(tag(xml, 'rollcall-num')) === rollNum;
+}
+
+/**
+ * Build the canonical line for one member of a House roll call, chosen by bioguide id (`name-id`).
+ * No surname guess is involved. The party attribute is never read. `null` when the member is not
+ * on this roll call, when the URL is not a House roll-call XML URL, or when the XML lacks a field.
+ */
+export function houseRollCallLineFor(xml: string, url: string, bioguideId: string): string | null {
+  const u = HOUSE_ROLL_XML.exec(url.trim());
+  if (!u) return null;
+  const rollNum = Number(tag(xml, 'rollcall-num'));
+  const legisNum = tag(xml, 'legis-num');
+  const question = tag(xml, 'vote-question');
+  if (!rollNum || !legisNum || !question) return null;
+  const rec = /<recorded-vote>\s*<legislator\b([^>]*)>([^<]*)<\/legislator>\s*<vote>([^<]*)<\/vote>\s*<\/recorded-vote>/g;
+  for (let m = rec.exec(xml); m; m = rec.exec(xml)) {
+    if (/\bname-id="([^"]*)"/.exec(m[1])?.[1] !== bioguideId) continue;
+    const state = /\bstate="([A-Z]{2})"/.exec(m[1])?.[1];
+    const vote = m[3].trim() as RollCallLine['vote'];
+    if (!state || !VOTES.includes(vote)) return null;
+    const built: RollCallLine = {
+      rollNum, year: Number(u[1]), legisNum, question: decode(question),
+      surname: decode(m[2]).replace(/\s*\([A-Z]{2}\)\s*$/, '').trim(), state, vote,
+    };
+    const line = formatRollCallLine(built);
+    // Fail closed: a bill number or question the line format cannot carry (a ',' or ':') must not
+    // yield a line the verifier would refuse, or one that parses into different fields.
+    const back = parseRollCallLine(line);
+    return back && JSON.stringify(back) === JSON.stringify(built) ? line : null;
+  }
+  return null;
+}

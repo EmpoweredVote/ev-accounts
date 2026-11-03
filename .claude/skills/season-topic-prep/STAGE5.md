@@ -58,13 +58,22 @@ Write `stage5/subjects.json`: each census instrument's subjects in plain words (
 the polls"] }`), read from its title and operative text. Then:
 
 ```bash
-npm run topic:stage5-prefill --prefix backend -- --topic <key> --research <abs topic folder> --subjects <abs>/stage5/subjects.json --dry-run
-npm run topic:stage5-prefill --prefix backend -- --topic <key> --research <abs topic folder> --subjects <abs>/stage5/subjects.json
+npm run topic:stage5-prefill --prefix backend -- --topic <key> --research <abs topic folder> --subjects <abs>/stage5/subjects.json --from-table --dry-run
+npm run topic:stage5-prefill --prefix backend -- --topic <key> --research <abs topic folder> --subjects <abs>/stage5/subjects.json --from-table
 ```
 
 Members with no politician id land in `stage5/prefill/unmatched.json`. Match them with `npm run census:identity`
 (official member lists, never surname alone), set the ids on the instruments, and run the pre-fill again; it adds
 only what is new.
+
+**`--from-table` (federal votes; leave it out when the census has no `US-` instrument).** It also reads the
+roster's federal roll calls on the census bills from `essentials.legislative_votes` (read only; roster ids with a
+bioguide id), takes findings from the table, and checks each hand-listed vote against it, by politician id, never by
+name: `yea` → yea, `nay` → nay, `present` → abstain, `not_voting` → no finding. It writes
+`stage5/prefill/table-crosscheck.json`. 🔴 On any disagreement it prints each one, writes **no** findings and exits
+1: fix the hand list or the store vote, then run it again. A hand-listed absent or recused against a table yea or nay
+is a disagreement. A census vote the table cannot match (a 2013 Senate amendment, two roll calls that fit) keeps its
+hand list and is listed as "not matched". The table read takes about 5 minutes for the federal roster.
 
 ### 3. Search, one unit at a time
 
@@ -296,6 +305,7 @@ prints no party by the names. Otherwise cite a LegiScan line instead. The legisl
 | MI | journal snippets mis-decoded, or cut from the attendance list | LegiScan lines |
 | IN | iga.in.gov is a JavaScript app to a plain fetch; the official MyIGA API reads it (2026-11-02) | official roll-call lines (`iga-votes.ts`, below); LegiScan as before when `IGA_API_KEY` is unset |
 | TX | robots-blocked bill pages | LegiScan lane (PR #1218) |
+| US | House: the Clerk XML prints a party by each name; Senate: senate.gov blocks a fresh fetch | House: Clerk XML lines; Senate: LegiScan lines (`federal-votes.ts`, below) |
 
 Steps:
 
@@ -323,6 +333,26 @@ A vote with no line is listed in `iga/unmapped.json`: hold that person; do not g
 same 101 votes as the LegiScan lines, plus Alting and Prescott, whom LegiScan could not match. Bill pages,
 legislator pages and every other iga.in.gov PDF read through the same API in step 4 (`build_evidence.py`,
 `pdf_pages.py`), and the verifier reads them the same way (`src/lib/adapters/igaAdapter.ts`).
+
+**Federal: the roll-call table instead.** One command for the House, two more for the Senate:
+
+```bash
+npx tsx --env-file=.env scripts/stage5/federal-votes.ts <batch> <findings dir> --topic <key>
+npx tsx --env-file=.env scripts/legiscan-evidence-lines.ts --in <batch>/legiscan/pairs.csv --out <batch>/legiscan/legiscan-evidence.csv
+python3 -I scripts/stage5/legiscan_merge.py <batch> --host <official host>
+```
+
+`federal-votes.ts` pairs each seated vote with its roll call in `essentials.legislative_votes` (read only), finds
+the person on it by politician id, and cross-checks the table position against the finding. House: it fetches the
+Clerk XML once per roll call, cuts the person's line by bioguide id, with no party
+("House roll call 102 (2025), H R 22, On Passage: Fedorchak (ND) voted Yea."), cites the XML, and uncites a covered
+page. Senate (115th Congress on): it writes `legiscan/pairs.csv` and `legiscan/needs.json` for the two commands
+after it; skip them when it prints no Senate pairs. 🔴 `federal/crosscheck.json` and `legiscan/crosscheck.json` must
+both show **0 disagree**. A vote with no line is listed in `federal/unmapped.json` (Senate: `legiscan/unmapped.json`):
+hold that person; do not guess. A Senate seat whose act is abstain ("present") shows up as a `DISAGREE` line
+(LegiScan NV is stored as `not_voting`) and stops the run; hold that person by hand. A page it prints as `WARN` stays cited on purpose (a House vote or other snippet
+on it has no line). Replayed on `federal-01` (2026-11-03): 97 of the 98 House lines again, 0 disagree; the 98th is
+held, because that person's politician record has no bioguide id (held, never matched by surname).
 
 **8. Bill text.** When the reasoning quotes a bill's words and the cited page cannot be read, the gate cannot find
 the quote. Run the gate once (step 9) to list those quotes, then:
