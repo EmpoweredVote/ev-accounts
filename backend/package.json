@@ -93,7 +93,7 @@
     "check:incumbency": "node scripts/reconcile-incumbency.mjs --check"
   },
   "overrides": {
-    "qs": "^6.16.0",
+    "qs": "^6.17.1",
     "@humanfs/node": "^0.16.8",
     "basic-ftp": "^6.2.1"
   },
