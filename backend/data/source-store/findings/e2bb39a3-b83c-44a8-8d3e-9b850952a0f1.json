@@ -1,0 +1,136 @@
+{
+  "politician_id": "e2bb39a3-b83c-44a8-8d3e-9b850952a0f1",
+  "findings": [
+    {
+      "id": "62a5841f4d196d2b6838fae3a36bfd58bf410d898a4514840672ee6e0adb6303",
+      "kind": "own-words",
+      "url": "https://ago.mo.gov/attorney-general-hanaway-defends-missouris-voter-id-law-to-safeguard-election-integrity/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "“Requiring government-issued photo identification is a commonsense safeguard that strengthens confidence in our elections and ensures every lawful vote is protected,” said Attorney General Hanaway. “Our laws are designed to ensure secure, accurate, and trustworthy elections while maintaining full access for every eligible voter.”",
+      "note": "Statement in her name, issued when her office defended the 2022 voter-ID law (HB 1878) before the Missouri Supreme Court. Page shows no date.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T04:58:13.156Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "164b3ce2286d1417f7c6af0833768d0244dfc47cd0c8bd6e60f451a767a9c6f4",
+      "kind": "own-words",
+      "url": "https://ago.mo.gov/missouri-attorney-general-hanaway-leads-multi-state-effort-to-protect-election-integrity-laws/",
+      "date": "2026-06-24",
+      "date_precision": "day",
+      "passage": "“We will stand against any effort seeking to undermine the integrity and security of American elections. Requiring government-issued photo ID is a commonsense safeguard that strengthens confidence in our elections and ensures votes are lawfully cast,” said General Hanaway.",
+      "note": "Press release on her leading 23 states in an amicus brief backing Indiana's voter ID law in the Seventh Circuit.",
+      "subjects": [
+        "voter ID at the polls",
+        "defending other states' ID laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T04:58:13.156Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f95dc34f7d6dfe31a28a9108a84d2a00aab4e37d9802d890ab7c0132183735f6",
+      "kind": "own-words",
+      "url": "https://ago.mo.gov/missouri-attorney-general-hanaway-leads-multi-state-effort-to-protect-election-integrity-laws/",
+      "date": "2026-06-24",
+      "date_precision": "day",
+      "passage": "“We have a strong interest in protecting our elections and must not wait for fraud to occur before acting. These laws are designed to preserve secure, accurate, and trustworthy elections while maintaining access for every eligible voter.”",
+      "note": "Same release; she says states need not wait for fraud before acting.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T04:58:13.156Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6eb0b16a1f59be05148cf6da06d685e76ae51bf29ace52d5502e123f4fcc84d2",
+      "kind": "own-words",
+      "url": "https://www.kctv5.com/2026/07/23/missouri-ag-defends-voter-id-law-faces-lawsuits-over-gambling-machine-crackdown/",
+      "date": "2026-07-23",
+      "date_precision": "day",
+      "passage": "“In Missouri, we finally have a voter ID law that the Missouri Supreme Court has said is constitutional and we want to make sure that that continues to spread throughout the country,” Hanaway said.",
+      "note": "Quoted by KCTV5 from an interview with a Gray Media Missouri Capitol Bureau reporter.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T04:58:13.156Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9c54cde209a15ab4bb5556794a28f31cab12a6d44c28be7af34c4094dd02e48",
+      "kind": "own-words",
+      "url": "https://www.kctv5.com/2026/07/23/missouri-ag-defends-voter-id-law-faces-lawsuits-over-gambling-machine-crackdown/",
+      "date": "2026-07-23",
+      "date_precision": "day",
+      "passage": "“Both, and I don’t know that I’d say one takes precedence over the other,” she said.",
+      "note": "Her answer, quoted by KCTV5, when asked whether defending Indiana's law is more about state authority or fraud prevention.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T04:58:13.156Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot / free ID for voters without ID",
+        "proof of citizenship to register",
+        "non-citizen voting / SAVE Act",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search: Hanaway voter ID proof of citizenship",
+        "web search: Hanaway SAVE Act election integrity noncitizen (no statement by her found)",
+        "Attorney General office site, two press releases on voter ID",
+        "KCTV5 interview report 2026-07-23",
+        "blocked: https://missouriindependent.com/2025/11/19/missouri-supreme-court-reviews-voter-id-mandate-ban-on-paid-registration-efforts/",
+        "St. Louis Public Radio 2004 article (no quotes from her; about an expired licence)",
+        "no campaign site or Ballotpedia page reviewed",
+        "nothing on proof of citizenship"
+      ],
+      "found": 5,
+      "at": "2026-11-04T04:58:13.156Z",
+      "by": "search-mo-2026-11-03"
+    }
+  ]
+}

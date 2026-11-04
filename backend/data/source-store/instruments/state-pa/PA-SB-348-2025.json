@@ -1,0 +1,146 @@
+{
+  "id": "PA-SB-348-2025",
+  "scope": "state:pa",
+  "title": "SB348 (2025-2026 Regular Session): In firearms and other dangerous articles, providing for report of theft or loss of firearm; and imposing a penalty.",
+  "urls": [
+    "https://www.palegis.us/legislation/bills/2025/sb348",
+    "https://www.palegis.us/legislation/bills/text/PDF/2025/0/SB0348/PN0285"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 1 (adding 18 Pa.C.S. 6115.1(a)): An owner or other person lawfully in possession of a firearm who suffers the loss or theft of a firearm shall within 24 hours of the discovery of the loss or theft report the facts and circumstances of the loss or theft to the police department having jurisdiction where the loss or theft occurred.\nSec. 1 (adding 18 Pa.C.S. 6115.1(b)): When a person reports the loss or theft of a firearm to a police department, the officer or department receiving the report shall forward notice of the loss or theft with the information obtained under subsection (a) to the Pennsylvania State Police.\nSec. 1 (adding 18 Pa.C.S. 6115.1(d)): A person who violates subsection (a) commits a summary offense punishable by a fine of not more than $500.",
+  "sponsors": [
+    {
+      "name": "Christine Tartaglione",
+      "politician_id": "12f585f8-8bfd-4b91-90e6-c463ecf951cc",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Timothy Kearney",
+      "politician_id": "8da144fd-0190-47d7-9fe4-bda8b2ca670e",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Maria Collett",
+      "politician_id": "612c266e-4cb1-4584-8f47-7f79603eb4fe",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Carolyn Comitta",
+      "politician_id": "14c65fd0-d799-4bc2-8121-0afdcb867b54",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Wayne Fontana",
+      "politician_id": "e2c1ede6-5fed-4b72-80dc-91abccaa9c27",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Sharif Street",
+      "politician_id": "0bd008f8-cd83-42e3-9727-ae0d56046392",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Lisa Boscola",
+      "politician_id": "5160d735-3e19-45b2-a155-c11d6ce3b796",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Vincent Hughes",
+      "politician_id": "a1f72773-59fb-497e-8c9a-37f4d22a4c19",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Arthur Haywood",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "183d6e7b-b7c5-43cf-a811-920466c887fe"
+    },
+    {
+      "name": "Judy Schwank",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e9c056d1-7261-4f3e-a71c-6146f1037f59"
+    },
+    {
+      "name": "Jay Costa",
+      "politician_id": "18000caa-76dd-4b8b-ba7d-1e6d786222ac",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "John Kane",
+      "politician_id": "4bb70465-0123-4f08-b4fe-6b35ffd48cbc",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Patty Kim",
+      "politician_id": "628b51bd-2b86-4f53-aa5c-840c77eaeaa2",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Nicholas Miller",
+      "politician_id": "da612bb8-3d85-4ebd-b2bf-c77aacf3575a",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Katie Muth",
+      "politician_id": "fe77961f-78fb-4d45-aefc-877662337c86",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Lindsey Williams",
+      "politician_id": "112bac0a-74b6-4bc8-b76a-5e41d0d9cd5f",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Steven Santarsiero",
+      "politician_id": "3f51509b-54b5-4fee-80e5-62d88b7e697d",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "James Andrew Malone",
+      "politician_id": "d92b1dfa-8d0d-4157-9e13-2ce0c2687150",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Amanda Cappelletti",
+      "politician_id": "fe699f0f-07ac-480e-b71f-6e8c22244798",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-348-2025.introduced.pdf",
+      "sha256": "abc26212fcdd2ced433b042efb2f17e7287787752032e5f4e6f1cba78f99f4e2"
+    }
+  }
+}

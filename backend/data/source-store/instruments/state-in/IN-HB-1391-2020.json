@@ -1,0 +1,54 @@
+{
+  "id": "IN-HB-1391-2020",
+  "scope": "state:in",
+  "title": "HB1391 (2020 Regular Session): Retired law enforcement officers and firearms.",
+  "urls": [
+    "http://iga.in.gov/legislative/2020/bills/house/1391/",
+    "http://iga.in.gov/static-documents/8/1/0/f/810fec47/HB1391.01.INTR.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sheila Klinker",
+      "role": "author",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4b0d1306-5004-482c-b5e4-44a6c1d542eb"
+    },
+    {
+      "name": "Christy Stutzman",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "David Wolkins",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Chris Campbell",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1c1d4016-93b8-4a97-9166-077921868027"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-31T18:31:13.796330Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1391-2020.introduced.pdf",
+      "sha256": "94263d461195a92742f5da39591358a67b21b1f6f03b6ce60c6c14bd2f94cb8b"
+    }
+  },
+  "operative_text": "Sec. 1 (amending IC 35-47-9-1(a)): (2) A:\n(A) qualified law enforcement officer (as defined in 18 U.S.C. 926B); or\n(B) qualified retired law enforcement officer (as defined in 18 U.S.C. 926C);\nif the qualified law enforcement officer or qualified retired law enforcement officer carries the identification required by 18 U.S.C. 926B or 18 U.S.C. 926C."
+}

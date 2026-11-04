@@ -1,0 +1,29 @@
+{
+  "politician_id": "43b17d54-473e-46f8-add4-bf395e423ba1",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity laws",
+        "Proposition 39 voter ID initiative"
+      ],
+      "places": [
+        "In scope: https://ballotpedia.org/Karen_Ross shows her as the appointed California Secretary of Agriculture since 2011-01-12, term ending 2027-01-04; she is not a 2026 candidate and has no legislative votes",
+        "On the Record (0 appearances, nothing on the subject)",
+        "official site https://www.cdfa.ca.gov and /secretary/ (nothing on the subject; site search page did not run)",
+        "Ballotpedia profile (nothing on the subject)",
+        "no campaign site (not a candidate)",
+        "legislature bill pages: not applicable, she is not a legislator",
+        "one news search on name plus subject words (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:58:36.149Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

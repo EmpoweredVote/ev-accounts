@@ -16,6 +16,8 @@ Fill [templates/stage4-facts.sql](templates/stage4-facts.sql) (topic id and key)
 - topic id and key; the control revision id (the current published one), its revision number, version and
   change class; any other open (`draft` or `approved`) revision — there must be none;
 - the open and draft season ids and what each pins for this topic (`{{SEASON_OPEN_ID}}`, `{{SEASON_DRAFT_ID}}`);
+  the open season's pin goes into the gate as `{{OPEN_PIN_ID}}`. It is usually the control, but not always (see
+  "Known traps");
 - the number of questions in each season (`inform.season_questions`) — these go into the gate as `{{S2_COUNT}}`
   and `{{S3_COUNT}}`;
 - seats on the topic in every season (`politician_answers`, `politician_context`, `stance_research_review`). The
@@ -149,6 +151,11 @@ A clarifying rewording keeps the seats with no re-audit; say so in `README.md`.
 - **`guidance` is not a parameter of `admin_propose_topic_revision`.** A trigger copies the previous revision's line
   onto the new row. Set it with `UPDATE inform.compass_topic_revisions SET guidance = … WHERE id = <new> AND status =
   'draft'` **before** approving. `guidance` is outside the immutable-content trigger, so this is allowed on a draft.
+- **The open season may not pin the control.** When a clarifying revision was published after the open season
+  locked its pins, the season keeps its older pin and is served the newer text by version. Then
+  `{{OPEN_PIN_ID}}` ≠ `{{REV_PREV_ID}}`; fill `{{OPEN_PIN_ID}}` from the facts query's `pin` row, never by copying the
+  control. Found on gun-policy (CA_0338, 2026-10-30: Season 2 pins revision 2, the control is revision 3); on that
+  date 13 topics were in this state.
 - **Season question counts in the gate must be re-read** before the dry run and before applying (step 5).
 - **Approve, never publish.** Publishing would make the revision current in the open season. Opening the draft
   season publishes its pins.

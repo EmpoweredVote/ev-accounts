@@ -1,0 +1,41 @@
+{
+  "politician_id": "3fdb9164-9404-43b5-a079-dc0c5358bbca",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (https://ballotpedia.org/Robert_Neeld: Robert Neeld lost in the primary on August 18, 2026 for U.S. House Florida District 19, with 13.4 percent of the vote)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (fetched; no Candidate Connection survey, nothing on the subject)",
+        "not reviewed: web searches, campaign site and congress.gov (stopped because candidate is out of scope; shared search budget was also used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:58:13.617Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Ballotpedia page https://ballotpedia.org/Victor_Arias lists Robert Neeld third in the Florida District 19 primary of August 18, 2026, behind the winner, and the general-election field excludes him)",
+        "On the Record (0 meetings)",
+        "https://www.ballotready.org/people/robert-m-neeld: confirms he was a 2026 district 19 candidate; nothing on the subject",
+        "blocked: https://floridaelectionwatch.gov/CompareStateToCounty/140192 (page returned an error)",
+        "stopped after confirming out of scope; other places not searched"
+      ],
+      "found": 0,
+      "at": "2026-10-27T02:55:51.050Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

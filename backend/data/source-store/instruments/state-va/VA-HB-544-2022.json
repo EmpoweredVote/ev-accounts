@@ -1,0 +1,449 @@
+{
+  "id": "VA-HB-544-2022",
+  "scope": "state:va",
+  "title": "HB 544 (2022 Regular Session (LIS session code 221)): Voter identification; optional restrictive identification requirement.",
+  "urls": [
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+sum+HB544",
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+mbr+HB544",
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+ful+HB544",
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+ful+HB544+pdf (introduced PDF; not read)"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) § 24.2-643 F (new subsection, as introduced = version passed by House)\n(quote) F. The officer of election shall ask a voter for whom the pollbook indicates a valid photo identification issued by the Commonwealth, one of its political subdivisions, or the United States is required to vote to present such identification. If the voter does not show a valid photo identification issued by the Commonwealth, one of its political subdivisions, or the United States, he shall be offered a provisional ballot under the provisions of § 24.2-653.\n(b_no_id_remedy)\n(section) § 24.2-643 B, second paragraph (existing text reprinted, unchanged; applies to voters who did not opt in)\n(quote) Except as provided in subsection E, any voter who does not show one of the forms of identification specified in this subsection shall be allowed to vote after signing a statement, subject to felony penalties for false statements pursuant to § 24.2-1016, that he is the named registered voter he claims to be. A voter who requires assistance in voting by reason of a physical disability or an inability to read or write, and who requests assistance pursuant to § 24.2-649, may be assisted in preparation of this statement in accordance with that section. The provisions of § 24.2-649 regarding voters who are unable to sign shall be followed when assisting a voter in completing this statement. A voter who does not show one of the forms of identification specified in this subsection and does not sign this statement shall be offered a provisional ballot under the provisions of § 24.2-653. The State Board of Elections shall provide an ID-ONLY provisional ballot envelope that requires no follow-up action by the registrar or electoral board other than matching submitted identification documents from the voter for the electoral board to make a determination on whether to count the ballot.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) § 24.2-418 A (new paragraph on the registration application, as introduced)\n(quote) The form of the application to register shall permit the applicant to indicate whether he opts to be required to present a valid photo identification issued by the Commonwealth, one of its political subdivisions, or the United States when voting in person, but no application shall be denied for failure to make an indication.\n(section) Enactment clause 2 (as introduced)\n(quote) 2. That, no later than October 1, 2022, the Department of Elections shall provide the means for each registered voter to indicate whether he opts to be required to present a valid photo identification issued by the Commonwealth, one of its political subdivisions, or the United States when voting in person.\n(other) Only §§ 24.2-418 and 24.2-643 are amended; no other subject.",
+  "sponsors": [
+    {
+      "name": "Amanda E. Batten",
+      "role": "author",
+      "version": "Introduced (22100935D, 1/12/2022); passed House unamended 2/3/2022 (read second time and engrossed with no amendment); passed by indefinitely in Senate Privileges and Elections 2/22/2022"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2022-02-03",
+      "body": "VA House",
+      "motion": "VOTE: Passage (51-Y 49-N) (HV0417)",
+      "kind": "roll-call",
+      "yes": 51,
+      "no": 49,
+      "absent": 0,
+      "body_size": 100,
+      "note": "Page note: \"Delegate LaRock was recorded as voting nay. Intended to vote yea.\" | https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0417+HB0544",
+      "members": [
+        {
+          "name": "Adams, L.R.",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Austin",
+          "vote": "yea"
+        },
+        {
+          "name": "Avoli",
+          "vote": "yea"
+        },
+        {
+          "name": "Ballard",
+          "vote": "yea"
+        },
+        {
+          "name": "Batten",
+          "vote": "yea"
+        },
+        {
+          "name": "Bell",
+          "vote": "yea"
+        },
+        {
+          "name": "Bloxom",
+          "vote": "yea"
+        },
+        {
+          "name": "Brewer",
+          "vote": "yea"
+        },
+        {
+          "name": "Byron",
+          "vote": "yea"
+        },
+        {
+          "name": "Campbell, J.L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Campbell, R.R.",
+          "vote": "yea"
+        },
+        {
+          "name": "Cherry",
+          "vote": "yea"
+        },
+        {
+          "name": "Cordoza",
+          "vote": "yea"
+        },
+        {
+          "name": "Coyner",
+          "vote": "yea"
+        },
+        {
+          "name": "Davis",
+          "vote": "yea"
+        },
+        {
+          "name": "Durant",
+          "vote": "yea"
+        },
+        {
+          "name": "Edmunds",
+          "vote": "yea"
+        },
+        {
+          "name": "Fariss",
+          "vote": "yea"
+        },
+        {
+          "name": "Fowler",
+          "vote": "yea"
+        },
+        {
+          "name": "Freitas",
+          "vote": "yea"
+        },
+        {
+          "name": "Greenhalgh",
+          "vote": "yea"
+        },
+        {
+          "name": "Head",
+          "vote": "yea"
+        },
+        {
+          "name": "Hodges",
+          "vote": "yea"
+        },
+        {
+          "name": "Kilgore",
+          "vote": "yea"
+        },
+        {
+          "name": "Knight",
+          "vote": "yea"
+        },
+        {
+          "name": "Leftwich",
+          "vote": "yea"
+        },
+        {
+          "name": "March",
+          "vote": "yea"
+        },
+        {
+          "name": "Marshall",
+          "vote": "yea"
+        },
+        {
+          "name": "McGuire",
+          "vote": "yea"
+        },
+        {
+          "name": "McNamara",
+          "vote": "yea"
+        },
+        {
+          "name": "Morefield",
+          "vote": "yea"
+        },
+        {
+          "name": "O'Quinn",
+          "vote": "yea"
+        },
+        {
+          "name": "Orrock",
+          "vote": "yea"
+        },
+        {
+          "name": "Ransone",
+          "vote": "yea"
+        },
+        {
+          "name": "Robinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Runion",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott, P.A.",
+          "vote": "yea"
+        },
+        {
+          "name": "Tata",
+          "vote": "yea"
+        },
+        {
+          "name": "Taylor",
+          "vote": "yea"
+        },
+        {
+          "name": "Wachsmann",
+          "vote": "yea"
+        },
+        {
+          "name": "Walker",
+          "vote": "yea"
+        },
+        {
+          "name": "Wampler",
+          "vote": "yea"
+        },
+        {
+          "name": "Ware",
+          "vote": "yea"
+        },
+        {
+          "name": "Webert",
+          "vote": "yea"
+        },
+        {
+          "name": "Wiley",
+          "vote": "yea"
+        },
+        {
+          "name": "Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilt",
+          "vote": "yea"
+        },
+        {
+          "name": "Wright",
+          "vote": "yea"
+        },
+        {
+          "name": "Wyatt",
+          "vote": "yea"
+        },
+        {
+          "name": "Mr. Speaker",
+          "vote": "yea"
+        },
+        {
+          "name": "Adams, D.M.",
+          "vote": "nay"
+        },
+        {
+          "name": "Bagby",
+          "vote": "nay"
+        },
+        {
+          "name": "Bennett-Parker",
+          "vote": "nay"
+        },
+        {
+          "name": "Bourne",
+          "vote": "nay"
+        },
+        {
+          "name": "Bulova",
+          "vote": "nay"
+        },
+        {
+          "name": "Carr",
+          "vote": "nay"
+        },
+        {
+          "name": "Clark",
+          "vote": "nay"
+        },
+        {
+          "name": "Convirs-Fowler",
+          "vote": "nay"
+        },
+        {
+          "name": "Delaney",
+          "vote": "nay"
+        },
+        {
+          "name": "Filler-Corn",
+          "vote": "nay"
+        },
+        {
+          "name": "Glass",
+          "vote": "nay"
+        },
+        {
+          "name": "Gooditis",
+          "vote": "nay"
+        },
+        {
+          "name": "Guzman",
+          "vote": "nay"
+        },
+        {
+          "name": "Hayes",
+          "vote": "nay"
+        },
+        {
+          "name": "Helmer",
+          "vote": "nay"
+        },
+        {
+          "name": "Herring",
+          "vote": "nay"
+        },
+        {
+          "name": "Hope",
+          "vote": "nay"
+        },
+        {
+          "name": "Hudson",
+          "vote": "nay"
+        },
+        {
+          "name": "Jenkins",
+          "vote": "nay"
+        },
+        {
+          "name": "Keam",
+          "vote": "nay"
+        },
+        {
+          "name": "Kory",
+          "vote": "nay"
+        },
+        {
+          "name": "Krizek",
+          "vote": "nay"
+        },
+        {
+          "name": "LaRock",
+          "vote": "nay"
+        },
+        {
+          "name": "Lopez",
+          "vote": "nay"
+        },
+        {
+          "name": "Maldonado",
+          "vote": "nay"
+        },
+        {
+          "name": "McQuinn",
+          "vote": "nay"
+        },
+        {
+          "name": "Mullin",
+          "vote": "nay"
+        },
+        {
+          "name": "Mundon King",
+          "vote": "nay"
+        },
+        {
+          "name": "Murphy",
+          "vote": "nay"
+        },
+        {
+          "name": "Plum",
+          "vote": "nay"
+        },
+        {
+          "name": "Price",
+          "vote": "nay"
+        },
+        {
+          "name": "Rasoul",
+          "vote": "nay"
+        },
+        {
+          "name": "Reid",
+          "vote": "nay"
+        },
+        {
+          "name": "Roem",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott, D.L.",
+          "vote": "nay"
+        },
+        {
+          "name": "Sewell",
+          "vote": "nay"
+        },
+        {
+          "name": "Shin",
+          "vote": "nay"
+        },
+        {
+          "name": "Sickles",
+          "vote": "nay"
+        },
+        {
+          "name": "Simon",
+          "vote": "nay"
+        },
+        {
+          "name": "Simonds",
+          "vote": "nay"
+        },
+        {
+          "name": "Subramanyam",
+          "vote": "nay"
+        },
+        {
+          "name": "Sullivan",
+          "vote": "nay"
+        },
+        {
+          "name": "Torian",
+          "vote": "nay"
+        },
+        {
+          "name": "Tran",
+          "vote": "nay"
+        },
+        {
+          "name": "VanValkenburg",
+          "vote": "nay"
+        },
+        {
+          "name": "Ward",
+          "vote": "nay"
+        },
+        {
+          "name": "Watts",
+          "vote": "nay"
+        },
+        {
+          "name": "Willett",
+          "vote": "nay"
+        },
+        {
+          "name": "Williams Graves",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T17:30:00Z)",
+    "fetched_at": "2026-10-28T17:30:00Z",
+    "method": "curl"
+  }
+}

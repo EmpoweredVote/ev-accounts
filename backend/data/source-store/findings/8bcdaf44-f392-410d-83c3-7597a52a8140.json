@@ -1,0 +1,31 @@
+{
+  "politician_id": "8bcdaf44-f392-410d-83c3-7597a52a8140",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances, extract-otr run)",
+        "office held: State Mine Inspector (appointed 2025, running for a full term in 2026), not a legislator; https://en.wikipedia.org/wiki/Les_Presmyk says he is running for a full term in 2026",
+        "https://theballotbrief.com/candidate/walter-les-presmyk-az lists him as running for State Mine Inspector; the page does not itself show the November ballot, so general-election ballot status is not directly confirmed there; nothing on the subject",
+        "blocked: https://ballotpedia.org/Les_Presmyk (page came back empty)",
+        "not reviewed: https://www.azfamily.com/video/2026/09/01/arizona-mine-inspector-candidates-face-off-ahead-2026-election/ (debate video, no transcript on the page)",
+        "no campaign or official issue page on voter ID found; his stated priorities are mining topics",
+        "news search on his name: nothing on the subject",
+        "legislature bill pages: not applicable, he is not a legislator"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:12:02.809Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

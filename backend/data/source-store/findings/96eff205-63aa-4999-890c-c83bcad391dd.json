@@ -1,0 +1,30 @@
+{
+  "politician_id": "96eff205-63aa-4999-890c-c83bcad391dd",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and Second Amendment",
+        "restrictions on gun ownership",
+        "background checks",
+        "assault-style weapons",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "BallotReady profile https://www.ballotready.org/people/adonis-hooslyn: confirms 2026 Utah 3rd District general election candidate; no gun position listed",
+        "iVoterGuide profile https://ivoterguide.com/candidate/94929: confirms race; the gun question (what restrictions on gun ownership are needed) is marked as not answered by the candidate",
+        "campaign site https://www.hooslynforhouse.com/: nothing on the subject (issues are housing, wages, healthcare, foreign policy, government reform and speech; no gun words)",
+        "one web search on name plus guns: nothing on the subject",
+        "congress.gov: not applicable, not a sitting legislator",
+        "Ballotpedia: not reviewed",
+        "Facebook page https://www.facebook.com/people/Hooslyn-4-House/61587396446355/: not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:03:01.442Z",
+      "by": "source-collector"
+    }
+  ]
+}

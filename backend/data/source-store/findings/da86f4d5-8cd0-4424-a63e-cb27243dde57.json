@@ -1,0 +1,55 @@
+{
+  "politician_id": "da86f4d5-8cd0-4424-a63e-cb27243dde57",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Ralph_Groves) says he is on the Nov 3, 2026 general ballot for U.S. House Florida District 11; the Aug 18, 2026 primary for this office was canceled",
+        "On the Record (0 appearances, 0 sources)",
+        "campaign site https://www.grovesforcongress.com/ pages home, meet-ralph-groves, my-mission, position-papers, press-releases, my-letters, and a party resolutions page: nothing on the subject",
+        "Ballotpedia: nothing on the subject (no survey completed)",
+        "congress.gov: not applicable, never held federal office",
+        "not reviewed: news search by name plus subject words (web search budget exhausted)",
+        "not reviewed: ontheissues.org, vote411 (lead-only sources, not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:59:17.477Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "SAVE Act",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "identity check: Ralph Groves is the minor-ballot-line candidate for Florida 11th District, shown on the 2026-11-03 ballot per https://theballotbrief.com/candidate/ralph-groves-fl (a page that says it is written with AI; his own site https://www.grovesforcongress.com/ confirms he is running in that district)",
+        "On the Record (0 meetings)",
+        "campaign site https://www.grovesforcongress.com/ (home, Meet Ralph Groves, Mission, Position Papers, Letters, Resolutions, Press Releases): nothing on the subject",
+        "blocked: https://ballotpedia.org/Ralph_Groves (page returned empty)",
+        "news and web search on name plus voter ID, SAVE Act, election integrity and proof of citizenship: nothing naming him on the subject",
+        "congress.gov: not applicable, never held federal office"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:57:31.378Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

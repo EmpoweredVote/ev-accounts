@@ -1,0 +1,457 @@
+{
+  "politician_id": "541efc37-b332-4c80-8264-7b655efed5ac",
+  "findings": [
+    {
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "yea",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e302ce80d49996308fc6fceeb851e0c4da225194d70e942267c578f54cfd72da",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H812",
+      "date": "2021-03-29",
+      "date_precision": "day",
+      "instrument_id": "MA-H-812-2021",
+      "act": "sponsor",
+      "note": "H.812, 'An Act relative to Massachusetts voter identification law', is described on the legislature's page as a petition of Marc T. Lombardo and Nicholas A. Boldyga 'relative to the identification requirements for certain voters.' The page lists it as referred to the Election Laws committee on 3/29/2021 and accompanied a study order (H5026) on 9/12/2022. The bill text itself did not load on the page, so what it requires is not confirmed here. Boldyga is named as a petitioner (lead petitioner is Lombardo).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:11:22.366Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5c357b1e70a86f59217fe418cb01e3e643c3b107535d66911daeaf46d68c74a5",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/H592/Cosponsor",
+      "date": "2013-01-22",
+      "date_precision": "day",
+      "instrument_id": "MA-H-592-2013",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of H.592, 'An Act requiring photo identification for voting' (filed 2013-01-22).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-31T03:30:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "c19ad6437e734ddf5bc5c2c42cca9771db548fc3dc8d5503d540427c366ff8a1",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall42.pdf",
+      "date": "2025-04-29",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4000-AMDT-409-2025",
+      "act": "yea",
+      "motion": "On adoption of amendment #409 (H.4000) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 42, On adoption of amendment #409 (H.4000) - failed, 2025-04-29: yea (tally 25–131); the sheet lists 'Boldyga'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "edf75db6e0dee4a3cf4dfb9d5bb65a7d22f5722fa8a92057d5d2a2a6de43aeed",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/GetAmendmentContent/194/H4000/409/House/Content",
+      "date": "2025-04-29",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4000-AMDT-409-2025",
+      "act": "sponsor",
+      "note": "Added co-sponsor of Amendment #409 to H.4000, 'An Act relative to identification to vote' (2025-04-29).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "031da260f8e422347d5016f4a54a60c19a73e3efaba279ce2f337d18bdbfcb4e",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall174.pdf",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-5500-AMDT-1587-2026",
+      "act": "yea",
+      "motion": "On adoption of amendment #1587 (H.5500) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 174, On adoption of amendment #1587 (H.5500) - failed, 2026-04-28: yea (tally 27–131); the sheet lists 'Boldyga'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "eff3062a33ce764cb26f4cc3322a0b3e2923bed629971e2cc0551beab6c4fe94",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/GetAmendmentContent/194/H5500/1587/House/Content",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-5500-AMDT-1587-2026",
+      "act": "sponsor",
+      "note": "Added co-sponsor of Amendment #1587 to H.5500, 'An Act relative to identification to vote' (2026-04-28).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "fa8087771668164fa41cebcce4ea1837cefe0d5dda9c72df7aa9612f3319e886",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "nay",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: nay (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bbdd9bc7132a57a94f28cf83874fa7e904f8da79aa8251a3b1194121a5467815",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "nay",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: nay (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "3a4ea3a97f7f4bdbdbec2bd0159a53c3ceac4e61d0bea05be7023f40da9c8669",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/House/H4376",
+      "date": "2014-07-31",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4376-2013",
+      "act": "nay",
+      "motion": "Acceptance of the committee of conference report (Yea and Nay No. 483)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, Acceptance of the committee of conference report (Yea and Nay No. 483), 2014-07-31: nay (tally 122–30); census gate: multi-subject.",
+      "subjects": [
+        "firearm license classes merged and Class B licences phased out",
+        "new penalties for shooting and for trafficking guns into the state",
+        "background-check records sent to the federal system",
+        "ban on carrying firearms on school and college grounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "malegislature.gov roll-call PDFs + LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:34:02.477850Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4376-2013.introduced.pdf",
+          "sha256": "b94514a66e779c1400d1b875eb3aac207f6b1b1f12f9928fd8d977feab23bb61"
+        }
+      }
+    },
+    {
+      "id": "c5523d50a631897031188db98ea5d927074d7126174a492b6b9e8d21f240f855",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4517",
+      "date": "2018-05-23",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4517-2017",
+      "act": "yea",
+      "motion": "House On Engrossment Yea and Nay No. 359",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MA House, House On Engrossment Yea and Nay No. 359, 2018-05-23: yea (tally 139–14); census gate: near-unanimous.",
+      "subjects": [
+        "court orders to remove guns from people at risk of harming self or others",
+        "emergency orders without notice",
+        "penalty for false petitions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4517-2017.introduced.pdf",
+          "sha256": "3bac8bca02408059e2c0db49bae39de8a690f0fb6e1b5469f7a23cf51fbd5cc4"
+        }
+      }
+    },
+    {
+      "id": "7727b62aa6ef27fb9e9cfc73a0491b1c4dc595f2b71982384c335273fe2771d1",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4670",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4670-2017",
+      "act": "yea",
+      "motion": "On acceptance of the conference report (Yea and Nay No. 389)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, On acceptance of the conference report (Yea and Nay No. 389), 2018-06-28: yea (tally 133–15); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders to remove guns from people at risk of harming self or others",
+        "protection order added as a bar to gun licenses",
+        "stun gun rules and locked storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4670-2017.introduced.pdf",
+          "sha256": "6b37958358a3f01548ef0d16c386b3caaf5993d5c100f88279ff5b45ad1fe098"
+        }
+      }
+    },
+    {
+      "id": "c071287a3d1a64e9053232500ab9a7388416fe01cab4addbc6aa6fad8bf16a0b",
+      "kind": "own-words",
+      "url": "https://thewestfieldnews.com/?p=82500",
+      "date": "2014-06-05",
+      "date_precision": "day",
+      "passage": "“This bill doesn’t achieve what it sets out to do. It won’t get guns off the street,” said Rep. Nicholas Boldyga (R-Southwick) Wednesday.",
+      "note": "Quoted by The Westfield News on the 2014 House gun licensing bill; date is the article's own publication date.",
+      "subjects": [
+        "gun licensing bill",
+        "general gun law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:06.131Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ca934dd4b5983450f284f18431adb6fa9f6143fb134f931fad408c99888e3734",
+      "kind": "own-words",
+      "url": "https://thewestfieldnews.com/?p=82500",
+      "date": "2014-06-05",
+      "date_precision": "day",
+      "passage": "“I have two young kids and want to do everything I can to combat gun violence, and while the bill addresses mental health, we should be focused on stopping gun violence.”",
+      "note": "Quoted by The Westfield News, same article, on the 2014 gun bill.",
+      "subjects": [
+        "gun licensing bill"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:06.131Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2cdb689c6a91fc954983e58003871cba3056f638370bdaa508271774c5ea00be",
+      "kind": "own-words",
+      "url": "https://www.foxnews.com/politics/tactical-retreat-democrats-postpone-blue-state-gun-reform-bill-chambers-clash",
+      "date": "2023-07-26",
+      "date_precision": "day",
+      "passage": "\"As a lifelong responsible gun owner and former law enforcement officer, I am unequivocally opposed to this anti-Second Amendment attack against law-abiding citizens,\" he said.",
+      "note": "Quoted by Fox News (article dated by the page) on the 2023 Massachusetts gun-law overhaul bill.",
+      "subjects": [
+        "general gun law",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:06.131Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1be27bf7fba04221375a3c88ae1019f8c01bc9e0260181cf56733c276a8ce344",
+      "kind": "own-words",
+      "url": "https://www.foxnews.com/politics/tactical-retreat-democrats-postpone-blue-state-gun-reform-bill-chambers-clash",
+      "date": "2023-07-26",
+      "date_precision": "day",
+      "passage": "\"I stand firmly opposed to this legislation if it comes to the floor for a vote.\"",
+      "note": "Quoted by Fox News in the same article, about the same bill.",
+      "subjects": [
+        "general gun law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:06.131Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Nicholas_Boldyga names him as the incumbent for 3rd Hampden District, advanced from the September 1, 2026 primary, on the November 3, 2026 general-election ballot; legislature page https://malegislature.gov/Legislators/Profile/NAG1 confirms Representative Nicholas A. Boldyga",
+        "On the Record (0 appearances for this politician id, 0 sources; name search also returned 0)",
+        "campaign site https://stickwithnick.org (home and About Nick pages fetched): nothing on the subject; no issues page (the /issues path returns 404)",
+        "official legislature profile and bill pages (sponsored bills 187th to 194th sessions reviewed): one voter-identification bill found (H.812, 192nd); the cosponsored-bills listing returned the same list as the sponsored one, so cosponsorships were not separately confirmed",
+        "Ballotpedia: nothing on the subject; he has not completed the 2026 Candidate Connection survey",
+        "not reviewed: web news search on name plus subject words (the shared web search budget was used up before this agent could search)",
+        "not reviewed: https://www.x.com/@RepNickBoldyga (campaign social account, not fetched)",
+        "not reviewed: campaign video 'Getting Answers- Interview with Dave Madsen' linked on https://stickwithnick.org (video, unreadable)",
+        "not reviewed: ontheissues.org (lead-only source, not fetched)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:11:22.366Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans and magazine limits",
+        "background checks and permits",
+        "red flag orders",
+        "ghost guns",
+        "carry permits and carry rules",
+        "repeal of gun laws",
+        "general gun safety statements"
+      ],
+      "places": [
+        "sponsor list: covered by LegiScan bulk check",
+        "On the Record (0 meetings)",
+        "malegislature.gov: sponsor list covered by LegiScan bulk check",
+        "official or campaign site: no working address found (boldyga.com and nickboldyga.com did not load usefully)",
+        "web searches (5): Westfield News 2014 and Fox News 2023 quotes found; no Question 9 or 2024 statement found",
+        "Ballotpedia: not used (pages return empty)"
+      ],
+      "found": 4,
+      "at": "2026-11-01T01:43:06.131Z",
+      "by": "source-collector"
+    }
+  ]
+}

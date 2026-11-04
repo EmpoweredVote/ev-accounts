@@ -1,0 +1,131 @@
+{
+  "politician_id": "289ed21e-a562-47c8-b6dd-0193ae682d73",
+  "findings": [
+    {
+      "id": "d511f46d06c21bc1edae0d7929abcffc6517c5c15473dc29c95d37df3e33cb8a",
+      "kind": "own-words",
+      "url": "https://vernetti123.com/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "He is a proud Constitutional Conservative who will protect our Second Amendment rights, crack down on illegal immigration and ensure only legal Missouri citizens can vote.",
+      "note": "Campaign site biography states he will ensure only legal Missouri citizens can vote.",
+      "subjects": [
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:05:03.227Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "19fd060dd4b9b7b22c3b223e99e155a87a63dc5a4683fe35220ad05850a6cc07",
+      "kind": "own-words",
+      "url": "https://mailchi.mp/7d190bfa928a/district-123-vernetti-capitol-report-07-30-6689327?e=b89e855d61",
+      "date": "2025-07",
+      "date_precision": "month",
+      "passage": "Secretary of State Denny Hoskins is cleaning up Missouri’s voter rolls. His office is conducting a thorough sweep of rolls to remove individuals who are deceased or convicted felons. Additionally, the Secretary of State’s Office is partnering with the Department of Homeland Security and the Federal Bureau of Investigations to investigate any non-citizens who have voted in Missouri.",
+      "note": "His capitol report newsletter describes the Secretary of State's voter-roll sweep and a non-citizen voting investigation under the heading 'Securing Missouri Elections'. Date taken from the 07-30 in the URL; year inferred from content (Sept 26 2025 event), so month precision.",
+      "subjects": [
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:05:03.227Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b494e11fe0bb60df1db096bb292591a4231e1a6301d57cad3c6e7096ddbb9114",
+      "kind": "own-words",
+      "url": "https://us13.campaign-archive.com/?e=__test_email__&u=5526a31577103e3fb11b27802&id=dc713d3f39",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "You will need one of the following forms of identification in order to vote: a nonexpired Missouri driver or non-driver license; a nonexpired military ID, including a veteran’s ID card; a nonexpired United States passport; or another photo ID issues by the United States or the state of Missouri which is either not expired or expired after the date of the most recent general election.",
+      "note": "Newsletter before the Nov 3 election tells voters which photo IDs are needed at the polls. It informs voters; it does not state his view of the rule.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:05:03.227Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d1c2057c28b9a9de66314d9782a9a555af1fc83cfbd202012f15f99a2e9733c4",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "nay",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Vernetti'), linked to Jeff Vernetti (district 123) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.756Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org (not fetched, per instruction)",
+        "web search on name plus subject words (no own-words hit)",
+        "house.mo.gov member pages not fetched (URLs contain ?, barred by robots.txt)",
+        "campaign site vernetti123.com home page",
+        "campaign press-release list read; no voter ID or citizenship release found",
+        "capitol report newsletter 'Securing Missouri Elections'",
+        "capitol report newsletter 'Election Day Approaches'",
+        "BallotReady profile",
+        "not reviewed: capitol report items 'Proposition A & Amendment 3' (no ID/citizenship text found) and earlier campaign-filing releases",
+        "not reviewed: senate.mo.gov (member is a House member)"
+      ],
+      "found": 3,
+      "at": "2026-11-04T05:05:03.227Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:10:53.756Z",
+      "by": "identity-mo-2026-11-04"
+    }
+  ]
+}

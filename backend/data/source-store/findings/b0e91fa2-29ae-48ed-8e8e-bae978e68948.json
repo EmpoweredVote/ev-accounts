@@ -1,0 +1,58 @@
+{
+  "politician_id": "b0e91fa2-29ae-48ed-8e8e-bae978e68948",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: on the 2026 general-election ballot for WI-6 (https://ballotpedia.org/Mike_Thurow and https://www.wuwm.com/wisconsins-6th-congressional-district-candidates-2026)",
+        "On the Record (0 appearances)",
+        "campaign site https://www.thurowforcongress.com (home, /platform, /about): nothing on the subject",
+        "Ballotpedia page and Candidate Connection survey: nothing on the subject",
+        "WUWM candidate guide: nothing on the subject",
+        "congress.gov: not applicable, not a legislator",
+        "news searches (name plus voter ID, SAVE Act, proof of citizenship, election integrity, forum): nothing on the subject",
+        "blocked: https://upnorthnewswi.com/2026/02/18/wisconsin-firefighter-plans-independent-2026-congress-run/ (fetch tool refused the domain)",
+        "blocked: https://wisconsinexaminer.com/voter-guides/contests/2026-general-6th-cd/ (HTTP 403)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:30:55.766Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "WUWM candidate guide https://www.wuwm.com/wisconsins-6th-congressional-district-candidates-2026: confirms independent candidate for WI-6 on the Nov. 3, 2026 ballot; he did not answer their questionnaire; nothing on the subject",
+        "campaign site https://www.thurowforcongress.com/ and platform page: nothing on ID or citizenship (platform covers gerrymandering and campaign finance only, not saved as off-subject)",
+        "Up North News article on his launch: nothing on the subject",
+        "PBS Wisconsin candidate statement page: spoken text has nothing on the subject",
+        "web search on name plus subject words: nothing on the subject",
+        "congress.gov: not applicable, not a sitting legislator",
+        "Ballotpedia: not reviewed, no page fetched"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:11:59.075Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

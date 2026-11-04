@@ -1,0 +1,129 @@
+{
+  "politician_id": "1838536a-ea4d-4054-ad51-dcf9bde3f8b9",
+  "findings": [
+    {
+      "id": "709ff5248c989f591f8efc6cf59eadde358888589f43c86b2f04a518dec46a73",
+      "kind": "own-words",
+      "url": "https://www.lisaforga.com/issues",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Voting is a fundamental right of our constitution, and I will never stop fighting to protect it for every eligible voter. As your State Representative, I will put my experience in leading teams and building technology to protect our voting rights and ensure that every eligible voter has access to the ballot box. It’s time for free, fair and transparent voting for all eligible voters in Georgia.",
+      "note": "Campaign issues page, undated. States a general commitment to voting access for eligible voters. Does not mention photo ID or proof of citizenship.",
+      "subjects": [
+        "voting access for eligible voters",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:41:11.621Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7aaf988b13cd85e2ad41eb70bb060642b60728c0101519b61cf7ba416755c749",
+      "kind": "own-words",
+      "url": "https://cobbcountycourier.com/2022/03/lisa-campbell-democratic-candidate-for-house-district-35/",
+      "date": "2022-03-05",
+      "date_precision": "day",
+      "passage": "Voting rights…My platform is about affirming the rights of Georgians and proactively working to build unity, inclusivity and opportunity. I would apply that also to voting. How we, at the local level, at the state level, are working to expand all eligible voters’ opportunities to cast a vote and do it with convenience, ease and security.",
+      "note": "Quoted in a Cobb County Courier candidate interview. The article also says she supports secure drop boxes, voting by mail and same-day registration (article text, not her quote).",
+      "subjects": [
+        "voting access for eligible voters",
+        "mail voting",
+        "same-day registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:41:11.621Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1d9cb0634a6283f073c7df436d0f18af3897e37b01074fc524ba08a20c390c85",
+      "kind": "own-words",
+      "url": "https://cobbcountycourier.com/2022/03/lisa-campbell-democratic-candidate-for-house-district-35/",
+      "date": "2022-03-05",
+      "date_precision": "day",
+      "passage": "Try to go to the various county websites or the secretary of state website to download your absentee ballot these days. It’s not straightforward. It’s not easy.",
+      "note": "Quoted in the same Cobb County Courier interview, about how hard it is to get an absentee ballot. Does not mention ID.",
+      "subjects": [
+        "mail-ballot access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:41:11.621Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Campbell, L'), linked to Lisa Campbell (district 35) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.417Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID and access",
+        "voting rights and access to the ballot",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia: https://ballotpedia.org/Lisa_Campbell_(Georgia) (confirms sitting House District 35 member, advanced from the 2026-05-19 primary, on the 2026-11-03 general ballot; took office 2023 so no 2021 SB 202 vote; no survey answers on file)",
+        "campaign site https://www.lisaforga.com/issues (voting rights section saved; no photo ID or citizenship text), https://www.lisaforga.com/lisas-record (bill list, nothing on ID or citizenship)",
+        "Cobb County Courier 2022 candidate interview (saved); Cobb County Courier 2020 profile (nothing on the subject); Marietta Daily Journal profile (nothing on the subject)",
+        "branch.vote 2026 profile (summary only, no own words; not citable)",
+        "blocked: https://www.legis.ga.gov (bill pages load only through a login-token API that returns 401; sponsorship pages could not be read)",
+        "two news and web searches on name plus subject words (no statement on photo ID or proof of citizenship found)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:41:11.621Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.417Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "politician_id": "52cbb916-a7d5-4fcc-a8c8-a396841b2bb8",
+  "findings": [
+    {
+      "id": "5ae2da56cf047c22e7fee00be51c7c4b95d80396e1adf68176244400cc1ca184",
+      "kind": "own-words",
+      "url": "https://abc13.com/post/santa-fe-shooting-victims-mom-rails-against-guns-in-classroom/3653846/",
+      "date": "2018-06-26",
+      "date_precision": "day",
+      "passage": "As a parent that just lost a child to a gun, they want to put more of the things in the school that killed my daughter, and that doesn't make sense to me. It just doesn't add up.",
+      "note": "Quoted by ABC13 Houston; she opposes suggestions to arm teachers at Santa Fe schools.",
+      "subjects": [
+        "arming teachers",
+        "guns in schools"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:25:37.049Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "389142079f28c84dd60c8811402c20b0d51ab9e5ddaed4b2d03a082e23fddfa4",
+      "kind": "own-words",
+      "url": "https://www.offthekuff.com/wp/?p=112450",
+      "date": "2023-12-03",
+      "date_precision": "day",
+      "passage": "He attended my daughter's funeral. Her bill was a simple, commonsense measure.",
+      "note": "Blog post excerpting a Houston Chronicle story on her 2024 run; she is quoted about the Kimberly Vaughan Firearm Safe Storage Act (educational materials on safe storage; raising the minimum age to buy semi-automatic weapons from 18 to 21) and about the incumbent's refusal to back it. Date is the blog post date.",
+      "subjects": [
+        "safe storage of guns",
+        "minimum age to buy semi-automatic guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:25:37.049Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "safe storage of guns",
+        "minimum age to buy semi-automatic guns",
+        "check every gun buyer",
+        "arming teachers",
+        "guns in schools",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "voter-guide profile page confirms she is listed for Texas U.S. House District 36 on the 2026-11-03 general election ballot; its gun-restriction question shows 'Did not answer'",
+        "candidate profile page (branch.vote): third-party summary of her platform, not saved as her own words",
+        "local TV report 2018 (ABC13): quoted words saved",
+        "a blog post excerpting a 2023 Chronicle story: quoted words saved; original story not fetched",
+        "blocked: https://www.texasobserver.org/do-something-with-this-grief-mom-of-sante-fe-shooting-victim-turns-to-politics/",
+        "blocked: https://12newsnow.com/article/news/politics/elections/incumbent-randy-weber-newcomer-rhonda-hart-battle-house-district-14-seat/502-ceb191f7-3774-4c40-91cb-f5f1b05c66f9",
+        "blocked: https://www.houstoniamag.com/news-and-city-life/2019/02/rhonda-hart-on-going-to-the-state-of-the-union-with-congresswoman-lizzie-fletcher",
+        "no working campaign site found at guessed addresses (empty responses)",
+        "not a legislator: no sponsored-bills list applies",
+        "Ballotpedia: not reviewed (pages come back empty)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T22:25:37.049Z",
+      "by": "source-collector"
+    }
+  ]
+}

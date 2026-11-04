@@ -1,0 +1,115 @@
+{
+  "politician_id": "b1baf884-5fd5-4618-b380-f2790fa47ee5",
+  "findings": [
+    {
+      "id": "60cb738b1cddd3480397fc413945fa810896249ef7ff6d67e76d29dda91164ff",
+      "kind": "own-words",
+      "url": "https://www.bowman2026.com/copy-of-the-home-mortgage-deduction-3",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I believe the Second Amendment is a foundational right. It is not just about owning a firearm, but about personal responsibility, self-reliance, and the freedom to protect what matters most. It’s a right worth preserving, not because we glorify guns, but because we value the principles behind them: safety, liberty, and trust in the individual.",
+      "note": "Campaign site Second Amendment page, opening statement. Page is undated. Text was returned by the fetch tool in fragments and joined here in order.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:15:18.606Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6c4fa148757fef6912d59b11976ed7d0e465c667f8d2f2793768170aa7b86a94",
+      "kind": "own-words",
+      "url": "https://www.bowman2026.com/copy-of-the-home-mortgage-deduction-3",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I support lawful access to firearms, along with strong, common-sense training and safety practices.",
+      "note": "Bullet on the campaign site Second Amendment page. Page is undated.",
+      "subjects": [
+        "lawful access to guns with training and safety practices"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:15:18.606Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c615eac87cb720bd07bb14ce6380363507b19c7adc45b824f1d74f6a5a751c4b",
+      "kind": "own-words",
+      "url": "https://www.bowman2026.com/copy-of-the-home-mortgage-deduction-3",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "This right should be protected for law-abiding citizens, especially in rural and remote communities where help isn’t always nearby.",
+      "note": "Bullet on the campaign site Second Amendment page. Page is undated.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:15:18.606Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c0d9d20430c199a32fa45df82ec18bdfd10c2fae13d5657ec98984fa494b22cf",
+      "kind": "own-words",
+      "url": "https://www.bowman2026.com/copy-of-the-home-mortgage-deduction-3",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "And it’s worth having honest, respectful conversations about how to uphold this right while keeping everyone safe.",
+      "note": "Closing bullet on the campaign site Second Amendment page. Page is undated.",
+      "subjects": [
+        "general statement on gun safety"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:15:18.606Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "lawful access to firearms and training",
+        "bans on a type of firearm",
+        "background checks",
+        "red-flag orders",
+        "carry permits",
+        "sponsored gun bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope check: Kentucky Secretary of State filing page shows Jay J Bowman filed 2026-04-13 for U.S. Representative, District 6, as an independent, with no withdrawal shown: https://web.sos.ky.gov/CandidateFilings/Default.aspx?cand=11406",
+        "campaign site Second Amendment page (found text)",
+        "campaign site issues page: nothing on the subject",
+        "campaign site home page and menu",
+        "Branch candidate page: nothing on guns (public safety section covers drug policy only)",
+        "blocked: https://ballotpedia.org/Jay_Bowman (page came back empty)",
+        "congress.gov sponsor list: not applicable, never a member of Congress",
+        "web search on name plus gun words: nothing else on the subject",
+        "not reviewed: his X, Facebook and Instagram accounts (linked from campaign site)"
+      ],
+      "found": 4,
+      "at": "2026-10-31T00:15:18.606Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "politician_id": "929346a2-8037-4b14-af33-4820eb365323",
+  "findings": [
+    {
+      "id": "dd776079af0ccdf387b0db8de0111523986f926737ac342385ff3b5b06b7091b",
+      "kind": "own-words",
+      "url": "https://indianacitizen.org/?p=20698",
+      "date": "2025-09",
+      "date_precision": "month",
+      "passage": "This isn’t about gun policy — it’s about the spiritual war for America’s soul.",
+      "note": "Social media post after the Minneapolis school shooting, quoted by The Indiana Citizen (article dated 2025-09-05); he says the event is not about gun policy.",
+      "subjects": [
+        "general gun rights or gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:38:53.382Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c6b9f6ea09b43241fdaa206a8500ef7486f394288ce3c861d20056ff11255b7e",
+      "kind": "own-words",
+      "url": "https://indianacitizen.org/?p=20698",
+      "date": "2025-09",
+      "date_precision": "month",
+      "passage": "We don’t need gun control — we need to control the REAL problem: the transgender ideology that’s destroying our children’s minds and bodies.",
+      "note": "Social media post quoted by The Indiana Citizen (article dated 2025-09-05); he says gun control is not needed and endorses a call of 'not gun control'.",
+      "subjects": [
+        "general gun rights or gun safety laws",
+        "opposes gun control"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:38:53.382Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Lieutenant Governor of Indiana, term 2025 to 2029 (confirmed at https://ballotpedia.org/Micah_Beckwith and https://www.in.gov/lg/); not on the 2026 ballot as a candidate for this office",
+        "On the Record (0 appearances for this politician id)",
+        "official site https://www.in.gov/lg/: nothing on the subject on the home page",
+        "blocked: https://www.in.gov/lg/newsroom/news-releases (list loads dynamically; page text shows no releases, so not reviewed)",
+        "Ballotpedia https://ballotpedia.org/Micah_Beckwith: nothing on the subject",
+        "not reviewed: https://x.com/LGMicahBeckwith, https://www.youtube.com/@LGMicahBeckwith, campaign site, news search (web search budget exhausted for the session)",
+        "legislature bill pages: not reviewed; the lieutenant governor presides over the Senate and does not sponsor bills"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:42:37.907Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://en.wikipedia.org/wiki/Micah_Beckwith (confirms he is the sitting Lieutenant Governor, in office since January 2025; nothing on the subject)",
+        "Ballotpedia (fetched via curl; confirms office and 2023 survey; nothing on the subject)",
+        "blocked: https://www.in.gov/ltgov/ (404)",
+        "the legislature bill pages: not applicable, Lieutenant Governor does not sponsor bills",
+        "news searches on name plus subject words (4 searches): nothing on the subject",
+        "https://indianacitizen.org/free-wheeling-conversation-lt-gov-beckwith-spars-with-a-few-as-he-covers-20-plus-topics-during-warsaw-town-hall/ (remarks about paid turnout, not ID or citizenship; not saved)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:39:04.908Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "general gun rights or gun safety laws",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "in scope: sitting Lieutenant Governor of Indiana (official site https://www.in.gov/lg/ )",
+        "official site https://www.in.gov/lg/: nothing on the subject",
+        "campaign site https://www.micahbeckwith.com: nothing on the subject",
+        "Indiana Citizen article on social posts after the Minneapolis school shooting (two own-words findings)",
+        "https://www.wishtv.com/?p=950794 : reporter's paraphrase only, not saved as own words",
+        "https://www.youarecurrent.com/2023/06/06/beckwith-announces-run-for-lieutenant-governor/ : quote about a former governor's power, not clearly about guns; not saved",
+        "blocked: https://indianacapitalchronicle.com/2024/10/16/lieutenant-governor-nominees-talk-controversies-priorities-and-duties/ (bot check)",
+        "blocked: https://indianacapitalchronicle.com/2024/06/15/hoosier-gop-insiders-spurn-party-establishment-nominate-beckwith-for-lg/ (403)",
+        "Ballotpedia: not usable through the fetch tool",
+        "sponsor list: not applicable, office of Lieutenant Governor is not a legislator; no sponsored bills"
+      ],
+      "found": 2,
+      "at": "2026-10-31T20:38:53.382Z",
+      "by": "source-collector"
+    }
+  ]
+}

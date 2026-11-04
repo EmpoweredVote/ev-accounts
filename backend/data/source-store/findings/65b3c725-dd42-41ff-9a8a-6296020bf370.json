@@ -1,0 +1,68 @@
+{
+  "politician_id": "65b3c725-dd42-41ff-9a8a-6296020bf370",
+  "findings": [
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Glaize'), linked to Lydia Glaize (district 67) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.417Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what a voter with no ID can do",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances, nothing on the subject)",
+        "Campaign site https://www.lydiaglaize.com (nothing on voting)",
+        "Branch page confirming 2026 general-election candidacy for House District 67",
+        "House press releases page 5 (nothing on the subject)",
+        "Crowdpac campaign page (2023-24): her own words on expanding Fairburn precincts from one to three; about polling-place access, not ID or citizenship, so not saved",
+        "blocked: Ballotpedia (page returned empty to the fetch tool; a browser-agent retry was not attempted because it would get around the site's bot check)",
+        "not reviewed: legis.ga.gov bill pages (need a login token); no ID-bill sponsorship found through news and bill-tracker searches",
+        "news search: nothing on ID or citizenship"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:28:59.675Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.417Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

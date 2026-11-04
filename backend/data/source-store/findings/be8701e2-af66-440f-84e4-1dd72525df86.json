@@ -1,0 +1,55 @@
+{
+  "politician_id": "be8701e2-af66-440f-84e4-1dd72525df86",
+  "findings": [
+    {
+      "id": "0b2f363911665929976e52e16617f0aa6cf1053f9e713e09a91193dc8718f957",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/64924/race/4006/election/961",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "None.  Most criminal acts are performed by criminals who obtain guns illegally.  Most law abiding gun owners are extremely conscientious of the law and do not pose a threat to public safety.  If anything, have concealed carry gun owners who are law abiding citizens would help PROTECT the public.",
+      "note": "His written answer to a voter-guide question on what restrictions on gun ownership are needed, from his 2022 Georgia District 4 profile (page lists no exact date).",
+      "subjects": [
+        "limits on who may buy or own a gun",
+        "carry a gun with a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:14:17.918Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "limits on who may buy or own a gun",
+        "carry permits",
+        "general gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "in scope: listed for Georgia District 13 on the Nov 3, 2026 general ballot (https://ivoterguide.com/candidate/64924/race/32026/election/1470)",
+        "voter guide, 2026 profile: gun question present, no answer shown",
+        "voter guide, 2024 profile: gun question present, no answer shown (https://ivoterguide.com/candidate/64924/race/19906/election/1226)",
+        "voter guide, 2022 District 4 profile: answer saved",
+        "Branch profile (branch.vote 2026 general): campaign site had no information on the issues as of 2026-07-23",
+        "The Ballot Brief and Prediction Edge profiles and Fox 5 candidate list: nothing on the subject",
+        "campaign site: not located",
+        "sponsor list: not a legislator, none",
+        "Ballotpedia: not reviewed (empty to fetch tool)",
+        "FEC page: nothing on the subject",
+        "2 web searches on name plus gun words; no 2026 own words found",
+        "a second line in the 2022 profile about suing gun makers was left out because the page does not show whether it is his answer"
+      ],
+      "found": 1,
+      "at": "2026-10-31T00:14:17.918Z",
+      "by": "source-collector"
+    }
+  ]
+}

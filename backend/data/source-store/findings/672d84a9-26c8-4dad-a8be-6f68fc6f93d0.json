@@ -1,0 +1,29 @@
+{
+  "politician_id": "672d84a9-26c8-4dad-a8be-6f68fc6f93d0",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "candidate listing pages (theballotbrief.com and branch.vote) name him as a 2026 candidate for U.S. House in Pennsylvania's 5th District, general election 2026-11-03; neither says outright that he is certified for the ballot; nothing on the subject on either page",
+        "League of Women Voters event page https://my.lwv.org/node/73863: nothing on the subject; it only announces a recorded candidate interview on 2026-10-13",
+        "not reviewed: video https://youtu.be/sXvo6J3Fgb8 (League of Women Voters candidate interview, cannot be read)",
+        "blocked: https://penncapital-star.com/voter-guides/contests/2026-general-u-s-house-district-5/ (403)",
+        "no campaign website found (a listing page says none was found as of 2026-09-09)",
+        "not applicable: legislative sponsor list (not a legislator)",
+        "not reviewed: Ballotpedia (not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T22:42:40.439Z",
+      "by": "source-collector"
+    }
+  ]
+}

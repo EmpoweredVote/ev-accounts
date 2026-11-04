@@ -1,0 +1,145 @@
+{
+  "id": "MA-S-1388-2019",
+  "scope": "state:ma",
+  "title": "S1388 (191st General Court): Relative to crime gun data reporting and analysis",
+  "urls": [
+    "https://malegislature.gov/Bills/191/S1388",
+    "https://malegislature.gov/Bills/191/S1388.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cynthia Creem",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b46a6774-2d85-4750-813a-6d4ef2eefb5b"
+    },
+    {
+      "name": "David Linsky",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fa6beaf8-acfe-4365-82a2-6f282aa1b688"
+    },
+    {
+      "name": "Cindy Friedman",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Denise Provost",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "James Eldridge",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9ed1b75f-a314-4241-87ff-231de4aba963"
+    },
+    {
+      "name": "Julian Cyr",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "bd451748-111f-461d-9752-95e7c243769e"
+    },
+    {
+      "name": "Joanne Comerford",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "961506eb-3f00-4358-a9a3-1730e7004474"
+    },
+    {
+      "name": "Rebecca Rausch",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b7369e32-1916-413e-b0eb-2871a5348470"
+    },
+    {
+      "name": "Harriette Chandler",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Tami Gouveia",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Paul Feeney",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c435ab14-5d64-46e4-a59f-bba18ed483c9"
+    },
+    {
+      "name": "Michael Barrett",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "60e4da77-0c2b-4ca4-8d02-a4210bd91d90"
+    },
+    {
+      "name": "Patricia Jehlen",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d40a0eda-36fc-4032-8382-20c76a36d6a6"
+    },
+    {
+      "name": "Patrick O'Connor",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e1f72270-5809-4d0e-969c-48d1ab34fbdc"
+    },
+    {
+      "name": "James Welch",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Joan Lovely",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6d8717ca-45f9-42cf-bd28-6786a50d254f"
+    },
+    {
+      "name": "Lori Ehrlich",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Sonia Chang-Diaz",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Brendan Crighton",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "99457307-afa4-4045-aebf-06ee8b39d28f"
+    },
+    {
+      "name": "Lindsay Sabadosa",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "853f0b26-a2b5-48b6-8dd6-f40ca48c87fd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-31T18:31:13.796330Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-S-1388-2019.introduced.pdf",
+      "sha256": "ef4cb64fc242ae7df425557408dc449e1507668db996e81266a94029eb68522b"
+    }
+  },
+  "operative_text": "Sec. 1 (amending G.L. c. 6A, section 18 3/4, paragraph (10)): to develop or solicit proposals for a university or nonprofit to develop a biennial report analyzing the firearms trace data collected under section 131Q of chapter 140 of the General Laws and non-identifying gun sales transaction data held by the firearms records bureau."
+}

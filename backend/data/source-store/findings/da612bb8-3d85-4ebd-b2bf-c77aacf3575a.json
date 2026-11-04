@@ -1,0 +1,197 @@
+{
+  "politician_id": "da612bb8-3d85-4ebd-b2bf-c77aacf3575a",
+  "findings": [
+    {
+      "id": "fc316a91c15a9d69b8de8a31f201ccdfb2b8ddcf04549d215151894a08cf6992",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "nay",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Miller'), linked to Nicholas P. Miller (district 14) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.722Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "600c768f84705f5781e5d3e86fc9701ee0912f112e8da215e8320133fd0f590d",
+      "kind": "own-words",
+      "url": "https://pahouse.com/McNeill/InTheNews/NewsRelease/?id=143569",
+      "date": "2026-05-05",
+      "date_precision": "day",
+      "passage": "This mistake must be fixed immediately. Voters who applied to vote-by-mail in the May primary election must get their correct ballots as quickly as possible, and it is our sincere hope that the county will take every possible action to do just that.",
+      "note": "Joint statement issued in the names of six Lehigh County legislators including Sen. Nick Miller, on a county error sending wrong vote-by-mail ballots for the May 19 primary. It is about ballot delivery, not ID. Hosted on a House member's site.",
+      "subjects": [
+        "mail ballots (county error, not ID)",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:45:05.962Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "08e9495f9701e3368e933241a0ea3224120294003302de4d3f8c18dcadf468fe",
+      "kind": "own-words",
+      "url": "https://pahouse.com/McNeill/InTheNews/NewsRelease/?id=143569",
+      "date": "2026-05-05",
+      "date_precision": "day",
+      "passage": "At a time when the integrity of our elections is under constant attack from extremists who want to end vote-by-mail the last thing we need to do is hand them more rhetorical ammunition courtesy of this careless error by our county leadership.",
+      "note": "Same joint statement; speaks of election integrity and vote-by-mail in general terms. No mention of ID.",
+      "subjects": [
+        "election integrity in general",
+        "vote-by-mail"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:45:05.962Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6bd9e0daf575de3278ee6eb88fa505dc19674172b27ff66e23a7275845a464d8",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb822",
+      "date": "2026-05-06",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-822-2025",
+      "act": "yea",
+      "motion": "Senate Floor: PN0881, Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: PN0881, Final Passage, 2026-05-06: yea (tally 30–20); census gate: none.",
+      "subjects": [
+        "local firearm and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-822-2025.introduced.pdf",
+          "sha256": "38d1bdcb626cc1614fee0c352427248f5e599df007fead7d1a6031742385df55"
+        }
+      }
+    },
+    {
+      "id": "3295f3ca764ec705e99d1e3ac2783e1ae0949dab0b7628a119ff558b5999a87e",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=S&type=B&bn=204",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-204-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-SB-204-2023 (LegiScan sponsor list): SB204 (2023-2024 Regular Session): In actions, proceedings and other matters generally, providing for extreme risk protection orders..",
+      "subjects": [
+        "court orders to remove guns from people at risk of harming themselves or others",
+        "family members and police may petition",
+        "penalty for possessing guns under an order"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-204-2023.introduced.pdf",
+          "sha256": "3aaf5420de53bef1bf18d7ed5c88cda96951528d75fb2331337afa67ef725805"
+        }
+      }
+    },
+    {
+      "id": "974bcaa11083851fdf648bd4b6b53b2f69fbd2b79d1857b0e68638182e4e9f3b",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb348",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-348-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-SB-348-2025 (LegiScan sponsor list): SB348 (2025-2026 Regular Session): In firearms and other dangerous articles, providing for report of theft or loss of firearm; and imposing a penalty..",
+      "subjects": [
+        "lost or stolen firearm must be reported within 24 hours",
+        "fine for failing to report"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-348-2025.introduced.pdf",
+          "sha256": "abc26212fcdd2ced433b042efb2f17e7287787752032e5f4e6f1cba78f99f4e2"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:45:58.722Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws",
+        "vote-by-mail"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "https://pasenatormiller.com home page shows State Senator Nick Miller, 14th district, news through 2026-10-27 (positive control); nothing on the subject in headlines",
+        "https://pasenatormiller.com/?s=ballot and https://pasenatormiller.com/vote/: voting-information page with mail-ballot steps; no ID wording, so nothing saved",
+        "https://nickmillerforpa.com/: nothing on the subject",
+        "https://en.wikipedia.org/wiki/Nick_Miller_(politician): confirms the 14th district seat since 2023-01-03; nothing on the subject",
+        "blocked: https://ballotpedia.org/Nick_Miller_(Pennsylvania) (empty page)",
+        "web search on name plus voter ID / mail-in / election: found one joint statement on vote-by-mail, saved; no voter ID statement found",
+        "not reviewed: https://nickmillerforpa.com/priorities/"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:05.962Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

@@ -55,6 +55,11 @@ Give exactly one outcome:
   `between-rungs`, `related-question` (a possible other topic), `unnamed-position` (a position no rung names),
   `direction-only` (shows a side, not a rung), `other-level-lever`. Do not force a case into a tag.
   Also give the older `blank_class` as detail: `gate`, `wording`, `no-lever`, `off-question` or `nay-only`.
+  And answer **`shows_side`**, true or false: does the evidence show which way the person leans on the question,
+  even though no rung holds it ("people should show their voter ID", no kind named → true), or no side at all
+  (an abstention, a line about a neighbouring question, current law described without a view → false)? It decides
+  what voters see: a side is written as `direction-only`, no side as `no-evidence` (RULINGS.md "Mapping a blank to a
+  V6 reason"). With the `direction-only` tag it must be true.
 
 `evidence_basis` is `record`, `own-words` or `joint` (both), by what you cite. Leave it out for `no-stance`.
 
@@ -72,6 +77,7 @@ Give exactly one outcome:
   "blank_class": "wording",
   "open_note": "…",
   "tags": ["direction-only"],
+  "shows_side": true,
   "finding_ids": ["<64-hex id from the findings file>"],
   "evidence_basis": "own-words",
   "codebook": "{{CODEBOOK_VERSION}}",
@@ -80,4 +86,4 @@ Give exactly one outcome:
 }
 ```
 
-Omit `value` unless `seated`. `tags` may be `[]`. Return one line per person: id, outcome, value or tags.
+Omit `value` unless `seated`, and `shows_side` unless `doesnt-fit`. `tags` may be `[]`. Return one line per person: id, outcome, value or tags.

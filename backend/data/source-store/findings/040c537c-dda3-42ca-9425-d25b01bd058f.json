@@ -1,0 +1,31 @@
+{
+  "politician_id": "040c537c-dda3-42ca-9425-d25b01bd058f",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks / non-citizen voting / election integrity"
+      ],
+      "places": [
+        "Missouri Times 2022 launch release and 2022 primary article: nothing on the subject",
+        "KCUR 2024 voter guide for House District 62: confirms office; nothing on the subject",
+        "documents.house.mo.gov HCR 48 witness PDF: unreadable, author not confirmed, not reviewed: https://documents.house.mo.gov/billtracking/bills261/witnesses/HCR48Testimony2-25.pdf",
+        "campaign site: not found (www.sherrigallick.com does not resolve)",
+        "House member page: not reviewed (its URL contains a query string, barred by robots rules; one request was made by mistake and returned 404)",
+        "On the Record (0 appearances)",
+        "blocked: https://ballotpedia.org (page returned empty)",
+        "one news search plus subject-word searches on name",
+        "bill sponsorships and floor votes: not searched, linked separately"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:04:32.400Z",
+      "by": "search-mo-2026-11-04"
+    }
+  ]
+}

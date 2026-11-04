@@ -1,0 +1,828 @@
+{
+  "politician_id": "b0862650-00c3-480e-9d92-745fdae38121",
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "fb8f988242e4b4e9bbd6a341bca61c07a16337f6ee3931259f729e19b2627276",
+      "kind": "record",
+      "url": "https://news.ballotpedia.org/2023/04/06/election-legislation-roundup-indiana-house-of-representatives/",
+      "date": "2023-04-06",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1383-2023",
+      "act": "sponsor",
+      "note": "Ballotpedia's roundup lists him as sponsor of HB 1383, Documents and procedures concerning elections. As introduced it updates a voter's registration address when a candidate withdraws, adds electronic sample and provisional ballots to materials given to poll inspectors, and bars giving one person more than one absentee ballot application. The date is the roundup's date, not the bill's filing date. It does not itself set an ID rule.",
+      "subjects": [
+        "absentee ballot application handling",
+        "election procedures in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:11:22.417Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8191e04f8fccae4546cb5b844de1fb64dbe294bc523d3ff8cfb4e9894e9b5997",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/house/1137/details",
+      "date": "2025-03-17",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1137-2025",
+      "act": "yea",
+      "motion": "House - House concurred with Senate amendments",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "IN House, House - House concurred with Senate amendments, 2025-03-17: yea (tally 96–0); census gate: near-unanimous.",
+      "subjects": [
+        "red flag law case records sealed and expunged when person found not dangerous",
+        "court may expunge records when person found no longer dangerous"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1137-2025.enrolled.pdf",
+          "sha256": "d12e60dc0565d89568dc7eda9c3175d05e626578f1629f4ff9ae28fbcac54979"
+        }
+      }
+    },
+    {
+      "id": "d4641b55f8e2d82d4fb0869b839cec9884de9aac967ac86bc0585680c201bbc7",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2024/bills/house/1143/details",
+      "date": "2024-02-05",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1143-2024",
+      "act": "yea",
+      "motion": "House - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN House, House - Third reading, 2024-02-05: yea (tally 83–14); census gate: none.",
+      "subjects": [
+        "police may trade confiscated firearms for new equipment",
+        "records of firearm trades are public"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1143-2024.enrolled.pdf",
+          "sha256": "3d2e92aad597239fbbd4120eb545efa85e8d2ae2b8c56fccbdb5d810c862d819"
+        }
+      }
+    },
+    {
+      "id": "534231d0e7966709a62318f66125cf6c19dcdc8f7eeb1b32538162564aac3eaf",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2023/bills/house/1177/",
+      "date": "2023-04-26",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1177-2023",
+      "act": "yea",
+      "motion": "House - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "IN House, House - Rules Suspended. Conference Committee Report 1, 2023-04-26: yea (tally 72–22); census gate: multi-subject.",
+      "subjects": [
+        "state grants for firearms training of armed school staff",
+        "safe firearm storage guidance sent to parents",
+        "school-property gun ban exceptions for qualified officers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1177-2023.enrolled.pdf",
+          "sha256": "6b8e3c10f7134e1a98c7e6172888fc617f2333655d5a659e0e49bb75d5ab5dd5"
+        }
+      }
+    },
+    {
+      "id": "b7a0457ae8faaf85839bb4a854b46b8c60de0f766cb2d15bddc513cc4a97419c",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2024/bills/house/1235/details",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1235-2024",
+      "act": "yea",
+      "motion": "House - House concurred in Senate amendments",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN House, House - House concurred in Senate amendments, 2024-03-05: yea (tally 64–27); census gate: none.",
+      "subjects": [
+        "local lawsuits against gun and ammunition industry barred; only the state may sue",
+        "exceptions for contract or warranty and zoning or business rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1235-2024.enrolled.pdf",
+          "sha256": "863d0845047c379ed79ba8f50257fbeb368b93926d8db51be22e09c4ba3372e4"
+        }
+      }
+    },
+    {
+      "id": "5cfbcdc5a0babd104acd57a365d57f02a5099ef296f191816d2f0a3cada14794",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2026/bills/house/1274/details",
+      "date": "2026-01-28",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1274-2026",
+      "act": "yea",
+      "motion": "House - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN House, House - Third reading, 2026-01-28: yea (tally 69–25); census gate: none.",
+      "subjects": [
+        "insurers barred from requiring gun free zone signs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1274-2026.enrolled.pdf",
+          "sha256": "c9c7acd718bbd025aa03f305929915de62929dc4ac0ef07974fc28f95732de67"
+        }
+      }
+    },
+    {
+      "id": "813e21b98f4f8071e0c52566a740ea9a12c6c283d1deeb60adbcce4bed1a0337",
+      "kind": "record",
+      "url": "http://iga.in.gov/legislative/2019/bills/house/1284/",
+      "date": "2019-04-22",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1284-2019",
+      "act": "yea",
+      "motion": "House Floor - ",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "IN House, House Floor - , 2019-04-22: yea (tally 64–17); census gate: multi-subject.",
+      "subjects": [
+        "handgun license applications must be checked against NICS and other criminal history databases",
+        "four-year handgun license becomes five years; five-year and lifetime licenses may both be held",
+        "firearm allowed on school property for worship services and house-of-worship staff or volunteers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1284-2019.enrolled.pdf",
+          "sha256": "f4e7260224a4bafc279d9740fe39a36b0b4847b1d90d60c5e45c8acf68263402"
+        }
+      }
+    },
+    {
+      "id": "b39ef6f25ed1089ab8d73cef54129290bbfb8bc6360761321c135fe07ae5f225",
+      "kind": "record",
+      "url": "http://iga.in.gov/legislative/2022/bills/house/1296/",
+      "date": "2022-03-08",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1296-2022",
+      "act": "yea",
+      "motion": "House - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN House, House - Rules Suspended. Conference Committee Report 1, 2022-03-08: yea (tally 68–30); census gate: none.",
+      "subjects": [
+        "no license needed to carry a handgun in Indiana for people not otherwise prohibited",
+        "new list of people barred from carrying a handgun, with \"unlawful carrying of a handgun\" offence",
+        "theft of a firearm becomes a Level 5 felony",
+        "license still available for out-of-state reciprocity"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1296-2022.enrolled.pdf",
+          "sha256": "c06a46720d1b166dceaa0ef272ed74e5f4a8f5c4f1148b046a8eff645bdb1f21"
+        }
+      }
+    },
+    {
+      "id": "ca5cf85289638d68f274904b417c6ceb0885a7bfc5c4e2f87094e9ca9b01561f",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2023/bills/house/1323/",
+      "date": "2023-02-07",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1323-2023",
+      "act": "yea",
+      "motion": "House - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN House, House - Third reading, 2023-02-07: yea (tally 81–13); census gate: none.",
+      "subjects": [
+        "handgun license holder information shared with federal agencies only for a single-entry query tied to a criminal investigation or arrest"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1323-2023.enrolled.pdf",
+          "sha256": "85efd9fbf405d0d8df41b624004dec6514b6849eff0cc00c6923fa94437a4b31"
+        }
+      }
+    },
+    {
+      "id": "629069882e920d65e997612a13b3d9cdd599138b8e394180b8c65cb871c8fc6c",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2023/bills/house/1365/",
+      "date": "2023-04-03",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1365-2023",
+      "act": "nay",
+      "motion": "House - House concurred in Senate amendments",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN House, House - House concurred in Senate amendments, 2023-04-03: nay (tally 71–23); census gate: none.",
+      "subjects": [
+        "machine gun definition revised",
+        "machine guns and other items not on the federal registry exempted from state machine gun offences",
+        "machine gun transfer to minors stays a felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1365-2023.enrolled.pdf",
+          "sha256": "f8d2309af4ba7f01e519d3579ae8bae7e606041348d5d4225b3f9a7954d7d0a0"
+        }
+      }
+    },
+    {
+      "id": "897cc33405dd459eaaf5a2bc7a065df0a72ec5fb0581a2c949f915b11d03c47f",
+      "kind": "record",
+      "url": "http://iga.in.gov/legislative/2021/bills/house/1558/",
+      "date": "2021-04-13",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1558-2021",
+      "act": "yea",
+      "motion": "House - House concurred in Senate amendments",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "IN House, House - House concurred in Senate amendments, 2021-04-13: yea (tally 91–1); census gate: near-unanimous.",
+      "subjects": [
+        "state crime guns task force traces firearms used in crimes",
+        "requires ballistic-network use by participating agencies",
+        "new task force fund"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1558-2021.enrolled.pdf",
+          "sha256": "ffc63cd63a5b8d93f6d07996189ad0ad4c6ae75588977bdbedb8113c0f73eedd"
+        }
+      }
+    },
+    {
+      "id": "279ae52ece7f62f2f3e028e63e4005198385db7bbadc9e615001a122ccfc6766",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/house/1637/details",
+      "date": "2025-04-24",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1637-2025",
+      "act": "yea",
+      "motion": "House - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "IN House, House - Rules Suspended. Conference Committee Report 1, 2025-04-24: yea (tally 93–0); census gate: multi-subject.",
+      "subjects": [
+        "passenger pointing a firearm during reckless driving becomes a felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1637-2025.enrolled.pdf",
+          "sha256": "cc70e14806548478abb7f7cec4c48376d06e8c7917ed7c1285755678475b8fe1"
+        }
+      }
+    },
+    {
+      "id": "a12aa64e9303b39d7ede09c1e7b026359a1f8aa53ae2b665744de7df93874c10",
+      "kind": "record",
+      "url": "http://iga.in.gov/legislative/2019/bills/house/1651/",
+      "date": "2019-04-24",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1651-2019",
+      "act": "yea",
+      "motion": "House - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "IN House, House - Rules Suspended. Conference Committee Report 1, 2019-04-24: yea (tally 93–1); census gate: near-unanimous.",
+      "subjects": [
+        "dangerous persons barred from owning or buying firearms (misdemeanor)",
+        "transferring a firearm to a dangerous person is a felony",
+        "dangerous finding blocks handgun licence",
+        "red flag seizure, 48-hour affidavit and hearing rules revised"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1651-2019.enrolled.pdf",
+          "sha256": "e4953dc8d82aa456c0c3b9034de8556d652daf73aa8cfd3eae3912100eabea8b"
+        }
+      }
+    },
+    {
+      "id": "bfe9a63e102ea1d1ab88711b55c0f50d5ae6e3ba3c410dc8de82fab44b19277d",
+      "kind": "record",
+      "url": "http://iga.in.gov/legislative/2019/bills/senate/119/",
+      "date": "2019-04-22",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-119-2019",
+      "act": "yea",
+      "motion": "House - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "IN House, House - Rules Suspended. Conference Committee Report 1, 2019-04-22: yea (tally 72–0); census gate: near-unanimous.",
+      "subjects": [
+        "machine gun transfers to under-18s made a felony",
+        "definition of machine gun added"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-SB-119-2019.enrolled.pdf",
+          "sha256": "f592cb25f26c536c2c7f2fda6285a7ca0ee0e65b3ea3b7a80382d02ae782fef2"
+        }
+      }
+    },
+    {
+      "id": "90370703230edcb93546bafe74597ab157999ad330635554e5f96cddb69d2a13",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2026/bills/senate/148/details",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-148-2026",
+      "act": "yea",
+      "motion": "House - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "IN House, House - Third reading, 2026-02-24: yea (tally 98–0); census gate: near-unanimous.",
+      "subjects": [
+        "crime guns task force area adds LaPorte and Porter counties",
+        "task force board quorum and tie vote rule"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-SB-148-2026.enrolled.pdf",
+          "sha256": "1f829218891368cebe709f3312019cd5b3918ace216b073c8e1c546a2939e732"
+        }
+      }
+    },
+    {
+      "id": "c2e1c730a34f4b2aed14b1ff4208faeaf74b6916e13dbaefff91eafd24ee5e3a",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2023/bills/senate/158/",
+      "date": "2023-03-21",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-158-2023",
+      "act": "yea",
+      "motion": "House - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "IN House, House - Third reading, 2023-03-21: yea (tally 94–0); census gate: multi-subject.",
+      "subjects": [
+        "more crimes count as serious violent felonies for the firearm possession ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-SB-158-2023.enrolled.pdf",
+          "sha256": "7a12b0989818ac31ded5aac7e9cbbbb60045b45cc31c61f6be610e0ef327d039"
+        }
+      }
+    },
+    {
+      "id": "bed4f18dde3b332a96ce6ea58343673fe0df38bc3e23f5c4219ffdcea7baa4bd",
+      "kind": "record",
+      "url": "http://iga.in.gov/legislative/2022/bills/senate/19/",
+      "date": "2022-02-22",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-19-2022",
+      "act": "yea",
+      "motion": "House - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "IN House, House - Third reading, 2022-02-22: yea (tally 92–0); census gate: near-unanimous.",
+      "subjects": [
+        "firearm sentence enhancement now covers inspector general investigators as police officers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-SB-19-2022.enrolled.pdf",
+          "sha256": "bc4895e90fb076bbd47bfe6a2425c5938160570a29e25f72ba6f4fea4acfac72"
+        }
+      }
+    },
+    {
+      "id": "5fc5ca54de5b3f596937eb2a4481ff2c079cd86b748625ef1e1927def1658cf1",
+      "kind": "record",
+      "url": "http://iga.in.gov/legislative/2020/bills/senate/335/",
+      "date": "2020-03-11",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-335-2020",
+      "act": "yea",
+      "motion": "House - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "IN House, House - Rules Suspended. Conference Committee Report 1, 2020-03-11: yea (tally 89–2); census gate: multi-subject.",
+      "subjects": [
+        "new offence: gun possession by young people adjudicated delinquent for armed violent acts",
+        "serious violent felon firearm ban restated",
+        "red-flag law seizure steps and court reporting changed",
+        "state report on firearm confiscations"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-SB-335-2020.enrolled.pdf",
+          "sha256": "7ce0e15b833fc81efe6340d3720478c872b6da9be595aadc6225fbf316807e58"
+        }
+      }
+    },
+    {
+      "id": "5f78636e0a5a4d6c21301d4d847ecf8624666ba6a13141b1c974910b3b30dac3",
+      "kind": "record",
+      "url": "http://iga.in.gov/legislative/2022/bills/house/1296/",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "IN-HB-1296-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of IN-HB-1296-2022 (LegiScan sponsor list): HB1296 (2022 Regular Session): Firearms matters..",
+      "subjects": [
+        "no license needed to carry a handgun in Indiana for people not otherwise prohibited",
+        "new list of people barred from carrying a handgun, with \"unlawful carrying of a handgun\" offence",
+        "theft of a firearm becomes a Level 5 felony",
+        "license still available for out-of-state reciprocity"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1296-2022.enrolled.pdf",
+          "sha256": "c06a46720d1b166dceaa0ef272ed74e5f4a8f5c4f1148b046a8eff645bdb1f21"
+        }
+      }
+    },
+    {
+      "id": "f8d56776f4af088276ad60d5aba93fade21676520a0e25662878f5199a3655f2",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/hostettler-votes-to-advance-bill-supporting-lawful-gun-owners/",
+      "date": "2022-01-07",
+      "date_precision": "day",
+      "passage": "\"This legislation does nothing to change who can or can't legally own a handgun, it simply would remove unnecessary and burdensome red tape,\" Hostettler said.",
+      "note": "House caucus press release quoting him on the 2022 bill to allow carrying a handgun without a licence (HB 1077, voted forward in House Public Policy Committee).",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:36:59.761Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbf992435d972ed5ab6d50e065d645383fdc5bfabc90829bb481b1bb27da637c",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/hostettler-votes-to-advance-bill-supporting-lawful-gun-owners/",
+      "date": "2022-01-07",
+      "date_precision": "day",
+      "passage": "\"This much-needed change supports law-abiding gun owners who are being forced to ask permission to exercise their Constitutional right.\"",
+      "note": "Same release. He describes the licence requirement as asking permission to use a constitutional right.",
+      "subjects": [
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:36:59.761Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8d313393b55e4b53598947b65936f30053e6e204d3458c4b4dadad91cda1dfae",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/hostettler-votes-to-advance-bill-supporting-lawful-gun-owners/",
+      "date": "2022-01-07",
+      "date_precision": "day",
+      "passage": "He said this process ensures only eligible buyers legally purchase handguns.",
+      "note": "Release says the bill would leave the federal form and national instant background check for handgun purchases in place; this sentence is the release's report of his view.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:36:59.761Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e65d7c73791e8272ca427101dcaf0a58175a9611dde19e229764bde11a3cc0e6",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/hostettler-supports-legislation-to-allow-lawful-carry/",
+      "date": "2021-03-05",
+      "date_precision": "day",
+      "passage": "\"Criminals are not the ones taking the time to get a handgun carry permit,\" Hostettler said. \"This bill simply eliminates the extra red tape for law-abiding citizens who want to protect themselves and their family.\"",
+      "note": "House caucus release on the 2021 House-passed lawful carry bill, quoting him.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:36:59.761Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c90ce8fc289e04308604122ddce38c2d81e38f73393a768c00ab00c1a7d3d979",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/hostettler-supports-legislation-to-allow-lawful-carry/",
+      "date": "2021-03-05",
+      "date_precision": "day",
+      "passage": "\"Lawful carry would only apply while in Indiana, and individuals would still need to obtain a reciprocity permit to carry in other eligible states,\" Hostettler said. \"This legislation would remove a roadblock for lawful Hoosiers to carry and strengthen our Second Amendment rights.\"",
+      "note": "Same release. He says the bill would strengthen Second Amendment rights and that reciprocity permits stay for travel to other states.",
+      "subjects": [
+        "carry a gun without a permit",
+        "carry permits and fees",
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:36:59.761Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "083f369792b097515712d2848aad9071ca4d0f7c662617f45fb35d9fcc609ba7",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/hostettler-highlights-new-indiana-laws-effective-july-1/",
+      "date": "2021-07-02",
+      "date_precision": "day",
+      "passage": "\"Guided by conservative principles, Indiana lawmakers took action on a number of issues ranging from removing carry permit fees for lawful gun owners to cutting red tape for adoptive families,\" Hostettler said.",
+      "note": "Release on new laws effective July 1, 2021; he refers to removal of carry permit fees.",
+      "subjects": [
+        "carry permits and fees"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:36:59.761Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "472a3bb17daf79d996d8337bdb8ba047ed492b15c32cd9abc91bc3e3af2f1a62",
+      "kind": "record",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/hostettler-votes-to-advance-bill-supporting-lawful-gun-owners/",
+      "date": "2022-01-07",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1077-2022",
+      "act": "yea",
+      "motion": "House Public Policy Committee vote to advance",
+      "note": "Caucus release says he voted in committee to advance HB 1077, which would let adults carry a handgun without a licence and raise the penalty for stealing a firearm.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:36:59.761Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Matt_Hostettler names him as Indiana House District 64 member, on the Nov 3, 2026 general ballot after advancing from the May 5, 2026 primary",
+        "On the Record (0 appearances found for this politician id)",
+        "official caucus page https://indianahouserepublicans.com/members/general/matt-hostettler/ (first page of the news list reviewed: nothing on the subject; no site search or older pages reviewed)",
+        "Ballotpedia page fetched: no election-ID statements or bills listed",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_matt_hostettler_1 (page needs JavaScript; no bill list readable)",
+        "blocked: https://api.iga.in.gov/2026/legislators/matt_hostettler_1 (API key required)",
+        "not reviewed: Indiana bill sponsorship pages for voter ID, citizenship or mail-ballot bills (could not be read)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: campaign site, questionnaires, debate or forum answers"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:47:38.183Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity",
+        "absentee ballot application handling"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Indiana House caucus member page https://www.indianahouserepublicans.com/members/general/matt-hostettler/: confirms House District 64; only voter-registration reminders, nothing on ID or citizenship",
+        "blocked: https://iga.in.gov (legislator and bill pages load only as an empty script shell; roll-call lists for HB 1334 (2023) and SB 10 (2025) not reachable)",
+        "blocked: https://legiscan.com/IN/bill/SB0010/2025 and HB1334/2023 (403)",
+        "Ballotpedia news roundup https://news.ballotpedia.org/2023/04/06/election-legislation-roundup-indiana-house-of-representatives/: lists his authorship of HB 1383 (election documents and procedures)",
+        "Democracy Docket and Indiana Capital Chronicle on HB 1334 (2023): no individual vote by him shown",
+        "web searches on name plus voter ID, mail-in, citizenship words: no statement of his own on the subject",
+        "Ballotpedia candidate page and 2026 ballot status: not reviewed, no page fetched; he is a sitting member"
+      ],
+      "found": 1,
+      "at": "2026-10-27T15:11:22.417Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "carry permits and fees",
+        "ban on assault-style guns",
+        "safe storage of guns",
+        "red-flag orders",
+        "ghost guns",
+        "gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope: on the 2026 general-election ballot for House District 64 per iVoterGuide race page https://ivoterguide.com/race/30713/election/1456 (questionnaire answers not shown)",
+        "House caucus member page and its press-release list (three gun items found)",
+        "blocked: nothing; Ballotpedia not reviewed (returns empty)",
+        "sponsor list: covered by LegiScan bulk check",
+        "official caucus site",
+        "Ballotpedia: not usable (returns empty to fetch tool)",
+        "news search on name plus gun words"
+      ],
+      "found": 7,
+      "at": "2026-10-31T20:36:59.761Z",
+      "by": "source-collector"
+    }
+  ]
+}

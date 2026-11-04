@@ -122,10 +122,20 @@ describe('season-topic-prep stage4-revision.sql', () => {
     const placeholders = [
       'SLOT', 'TOPIC_KEY', 'TOPIC_ID', 'REV_PREV_ID', 'TITLE', 'SHORT_TITLE', 'QUESTION', 'GUIDANCE',
       'RUNG_1', 'RUNG_2', 'RUNG_3', 'RUNG_4', 'RUNG_5', 'RUNG_MAP', 'RATIONALE', 'PUBLIC_NOTE', 'REVIEW_REF',
-      'S2_COUNT', 'S3_COUNT',
+      'S2_COUNT', 'S3_COUNT', 'OPEN_PIN_ID',
     ];
     for (const p of placeholders) expect(sql, `{{${p}}}`).toContain(`{{${p}}}`);
     expect(sql).toContain('UPDATE inform.compass_topic_revisions SET guidance');
+  });
+
+  it('checks the open-season pin against {{OPEN_PIN_ID}}, not the current revision', () => {
+    // A clarifying revision published after the open season locked its pins makes the current
+    // revision differ from the open-season pin (gun-policy CA_0338, 2026-10-30).
+    const sql = read('templates/stage4-revision.sql');
+    expect(sql).not.toMatch(/v_pin IS DISTINCT FROM v_prev/);
+    expect(sql).toMatch(/v_pin IS DISTINCT FROM v_openPin/);
+    expect(sql).toMatch(/season_id = '\{\{SEASON_OPEN_ID\}\}'[\s\S]*topic_revision_id = '\{\{OPEN_PIN_ID\}\}'/);
+    expect(read('STAGE4-RECIPE.md')).toContain('{{OPEN_PIN_ID}}');
   });
 
   it('sets guidance before approving (guidance is not a propose parameter)', () => {

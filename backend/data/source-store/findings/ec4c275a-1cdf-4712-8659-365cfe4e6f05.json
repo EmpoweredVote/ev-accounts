@@ -1,0 +1,56 @@
+{
+  "politician_id": "ec4c275a-1cdf-4712-8659-365cfe4e6f05",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Seth_Haskin names him as a No Party Affiliation candidate for U.S. House, Florida District 19, on the general-election ballot November 3, 2026",
+        "On the Record (0 appearances, also searched by name)",
+        "campaign site https://www.sethhaskinforfl.com/ (home, /policy, /about-seth-haskin): nothing on the subject",
+        "Ballotpedia page and 2026 Candidate Connection survey answers: nothing on the subject",
+        "congress.gov: not applicable, he has never been a member of Congress, no sponsorships; not reviewed",
+        "not reviewed: audio interview on campaign home page (Trey Has On podcast mp3), could not be read",
+        "not reviewed: social media pages (https://x.com/Seth4FL, https://www.youtube.com/@Seth4FL, https://www.tiktok.com/@seth4fl, https://www.instagram.com/seth4fl/)",
+        "blocked: web search budget used up, so no news search was run",
+        "not reached: sethhaskin.com and similar guessed domains did not resolve; ontheissues.org not tried (lead-only source)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:01:52.808Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "BallotReady candidate profile https://www.ballotready.org/people/seth-haskin (confirms he is a candidate for Florida's 19th District, 2026 general election; issue stances cover defense, economy, government reform and budget, nothing on the subject)",
+        "https://theballotbrief.com/candidate/seth-haskin-fl (profile; nothing on the subject)",
+        "campaign site https://www.sethhaskinforfl.com/policy and /about-seth-haskin and home page (nothing on the subject)",
+        "not reviewed: Ballotpedia (no page fetched)",
+        "two news searches on his name plus the subject words (no coverage of him on the subject)",
+        "no legislative record: not a sitting legislator"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:40:42.684Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

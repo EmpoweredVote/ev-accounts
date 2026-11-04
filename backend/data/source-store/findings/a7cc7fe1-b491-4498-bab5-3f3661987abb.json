@@ -1,0 +1,35 @@
+{
+  "politician_id": "a7cc7fe1-b491-4498-bab5-3f3661987abb",
+  "findings": [
+    {
+      "id": "3b5e04aa891abd516b213c95060db89eaa9f5a7e4f970202aae8e0f32ed7452c",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2021/bills/static/HB0060.html",
+      "date": "2021-02-05",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-60-2021",
+      "act": "yea",
+      "motion": "Final Passage (3rd Reading)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT Senate, Final Passage (3rd Reading), 2021-02-05: yea (tally 23–6); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/UT_HB0060_enrolled.pdf",
+          "sha256": "9f557ddd8492473f960c9ad62cec88bd194518ed33e745e7902f5f66eb7119ea"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

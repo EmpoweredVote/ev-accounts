@@ -1,0 +1,507 @@
+{
+  "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a",
+  "findings": [
+    {
+      "id": "b1244edab908f33c03e28fc0aac00de80a171fc1b2c9853d2f0ac929bd410c0e",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/76696",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2241-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2241P: as introduced (printed version)",
+      "note": "Named as co sponsor ('John Kavanagh') on the official bill page; linked to John Kavanagh via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5c404ef2a0007c3c0eb227a4fb86c634b6ef7a8e8ab5e81bec8ddc2773a5f6b3",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=28748&billStatusActionId=55645&includeVotes=true",
+      "date": "2011-02-22",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2303-2011",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('KAVANAGH'), linked to John Kavanagh (district None) via the official 2011 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c4531f29733c7dfee4dfc424ee16a4b016006a09645b3f08149bb39476010688",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76970&billStatusActionId=209634&includeVotes=true",
+      "date": "2022-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2492-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('KAVANAGH'), linked to John Kavanagh (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21a2498d56ed4f1916e342f62fb428b5fdfc03cc110978bb03e54c68bdc38b24",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=26092&billStatusActionId=53571&includeVotes=true",
+      "date": "2009-06-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2627-2009",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('KAVANAGH'), linked to John Kavanagh (district None) via the official 2009 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "529cf90a71ccf9d645617ef3b60a7f27ca50e952001992f4c3fb68c019c62cfc",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=246497&includeVotes=true",
+      "date": "2026-06-12",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('KAVANAGH'), linked to John Kavanagh (district 3) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "67f1f8f7181db16165b8d24d99732ae95bfcc41434ceb827fc653bb873e6c692",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/77221",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-HCR-2025-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, HCR2025P: as introduced (printed version)",
+      "note": "Named as co sponsor ('John Kavanagh') on the official bill page; linked to John Kavanagh via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba4bbab8ec97997d4fb86d0b3830076f32919bda55f035196b142276f76fd206",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=234554&includeVotes=true",
+      "date": "2025-03-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('KAVANAGH'), linked to John Kavanagh (district 3) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b714a91dbebc4fc5a84abb54b8a12c9e6fc1a76bf56608b1c785862bc0a9b256",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=71189&billStatusActionId=188418&includeVotes=true",
+      "date": "2019-03-18",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1072-2019",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('KAVANAGH'), linked to John Kavanagh (district None) via the official 2019 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d2d451d27200c951c4ac0fce30e3b3b0798f1790b723f08f16cc5808b9b8c52",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=233421&includeVotes=true",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('KAVANAGH'), linked to John Kavanagh (district 3) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "330408ec4896d61a3e54a41918f6a9cb34e65520c76a66a406068d0c72d8d724",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78743&billStatusActionId=216660&includeVotes=true",
+      "date": "2023-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1141-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('KAVANAGH'), linked to John Kavanagh (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43c31e9e19d446cfa257d435467eac22004793413fd5999c83ee78dbc70b3803",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78784&billStatusActionId=217557&includeVotes=true",
+      "date": "2023-03-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1178-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('KAVANAGH'), linked to John Kavanagh (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5ec2093480950ffc9deb5663480704889b59c996690d96ea54139285fbf54fee",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=77405&billStatusActionId=211337&includeVotes=true",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1460-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('KAVANAGH'), linked to John Kavanagh (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c317edba5932851a547b9a08821e246d23e724e516c40a7a27f9d0a603f407a8",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79205&billStatusActionId=218058&includeVotes=true",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1518-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('KAVANAGH'), linked to John Kavanagh (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7f88491a24de3b8fc57c195fa6e6dd0ec7429139072247414246681c16061fd5",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79268&billStatusActionId=217410&includeVotes=true",
+      "date": "2023-03-07",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('KAVANAGH'), linked to John Kavanagh (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9e34a3debf61bc19ab4a711c3da0f592bd77e6248725ec6f01f2213dd959adde",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/79268",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, SB1595H: House-engrossed version (text as it stood after the House acted)",
+      "note": "Named as co sponsor ('John Kavanagh') on the official bill page; linked to John Kavanagh via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b610273a3ef40c8417bb530372a6381c3355f335ee364b8204b420a1623cdd06",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=75855&billStatusActionId=204259&includeVotes=true",
+      "date": "2021-05-26",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1713-2021",
+      "act": "yea",
+      "motion": "House: Third Reading: failed to pass (as amended)",
+      "note": "House roll call as printed ('KAVANAGH'), linked to John Kavanagh (district None) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b710491ef013601ee9fc8ef9a969bd6a50b49dd697860219043e566ae0080f8c",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/81291",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "AZ-SB-1733-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, SB1733P: as introduced (printed version)",
+      "note": "Named as co sponsor ('John Kavanagh') on the official bill page; linked to John Kavanagh via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aeb744ceacde5e405640f0f86456e7f9ce347bfb3561ffe01639c659dfec6bd",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83528&billStatusActionId=241249&includeVotes=true",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1001-2026",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('KAVANAGH'), linked to John Kavanagh (district 3) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5cf2840637b67c8e511244c2206b1eee06a63e80f1a418e47b37e3298409c64d",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76391&billStatusActionId=209637&includeVotes=true",
+      "date": "2022-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1012-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('KAVANAGH'), linked to John Kavanagh (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b1b98e4d17837294e3ee7e8113d6518f6371940fd0c703690ec60fe3b515b360",
+      "kind": "own-words",
+      "url": "https://news.ballotpedia.org/2022/03/02/arizona-legislature-sends-measure-on-voter-identification-requirements-for-mail-in-ballots-and-in-person-voting-to-nov-8-ballot",
+      "date": "2022-03-02",
+      "date_precision": "day",
+      "passage": "Kavanagh stated, “This bill closes a weak link in the security chain of our election system.”",
+      "note": "Quoted by the news outlet about the 2022 legislative referral (SCR 1012) adding date of birth and an ID number to the mail-ballot affidavit; the article says he was speaking about the existing signature check on mail ballots. Date is taken from the article URL.",
+      "subjects": [
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:09:17.650Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76b9057669eb86e2a7e89a38d363fa13001ea49eaec843027619ddaa9cad9f96",
+      "kind": "own-words",
+      "url": "https://www.alternet.org/2021/03/arizona-gop-wage-war-on-voting-rights-with-more-than-two-dozen-restrictive-voting-laws",
+      "date": "2021-03",
+      "date_precision": "month",
+      "passage": "Democrats value as many people as possible voting and they're willing to risk fraud. Republicans are more concerned about fraud, so we don't mind putting security measures in that won't let everybody vote -- but everybody shouldn't be voting.",
+      "note": "Remarks to a national TV network in March 2021, quoted by the outlet, about why the House elections committee he chaired advanced election-security bills. Contains a party reference inside the speaker's own quoted words.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:09:17.650Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 19,
+      "at": "2026-10-28T22:53:15.884Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "positive control: official legislature member page, https://www.azleg.gov/Senate/Senate-member/?legislature=57&session=130&legislator=2386 (Senate, District 3, Majority Leader)",
+        "On the Record extract script: not reviewed (the standing rules for this session forbid running repo scripts)",
+        "Senate caucus site and official page: page lists no personal biography; nothing on the subject",
+        "blocked: https://ballotpedia.org/ (profile page returned empty content)",
+        "blocked: https://12news.com/ (403)",
+        "blocked: https://ktar.com/ (403)",
+        "blocked: https://www.mediaite.com/ (403)",
+        "blocked: https://azmirror.com/ (403)",
+        "news.ballotpedia.org 2022 article and alternet 2021 article: own words found (2 findings)",
+        "news search 2025-2026 on HCR 2001 / SB 1001 / proof of citizenship: no statement by this person found",
+        "other 2021 reprints (rawstory, fhtimes) read: the quotes there repeat the same remarks or are paywalled"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:09:17.650Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

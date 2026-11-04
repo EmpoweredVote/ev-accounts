@@ -1,0 +1,71 @@
+{
+  "id": "TX-SB-145-2025",
+  "scope": "state:tx",
+  "title": "SB 145 (89R): Relating to early voting by mail by any qualified voter and to the repeal of certain criminal offenses concerning the solicitation and distribution of an application to vote by mail.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB145",
+    "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=SB145",
+    "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB00145I.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) SECTION 5 (amends Election Code 84.002(a)); the (1-a) item is printed without brackets or underline, i.e. existing text carried forward\n(quote) (1-a) the following information: (A) the number of the applicant's driver's license, election identification certificate, or personal identification card issued by the Department of Public Safety; (B) if the applicant has not been issued a number described by Paragraph (A), the last four digits of the applicant's social security number; or (C) a statement by the applicant that the applicant has not been issued a number described by Paragraph (A) or (B);\n(section) SECTION 12 (amends Election Code 87.041(b)); existing item renumbered from (8) to (6)\n(quote) (6) [ (8) ] the information required under Section 86.002(g) provided by the voter identifies the same voter identified on the voter's application for voter registration under Section 13.002(c)(8).\n(d_proof_of_citizenship) not stated.\n(other) Sec 1-4: any qualified voter eligible to vote early by mail or in person (82.005); address confidentiality program participants must register by personal delivery to vote by mail.\n(other) Sec 5-7, 9-11, 13: removes ground-of-eligibility references in mail ballot application, jail, age and disability, civil commitment, and late-ballot wording (84.002, 84.009, 84.011, 86.0015, 86.003, 86.004, 102.001).\n(other) Sec 8: clerk application acceptance and rejection wording (86.001).\n(other) Sec 14: repeals Election Code 82.001, 82.002, 82.003, 82.004, 82.008, 84.002(b) and (c), 84.0111, 112.002(b), 276.016 and 276.017 (the last three are the offenses on soliciting and distributing mail ballot applications).\n(other) Sec 15-16: applies to elections ordered on or after September 1, 2025; effective September 1, 2025.",
+  "sponsors": [
+    {
+      "name": "Menéndez",
+      "role": "author",
+      "version": "Introduced (S.B. No. 145; no other version exists)",
+      "politician_id": "ada67d5b-b7d5-4ab9-a751-59355715c3e1"
+    },
+    {
+      "name": "Blanco",
+      "role": "author",
+      "version": "Introduced (S.B. No. 145; no other version exists)",
+      "politician_id": "32608fd7-5038-4474-bfa9-7392b5e0eb80"
+    },
+    {
+      "name": "Eckhardt",
+      "role": "author",
+      "version": "Introduced (S.B. No. 145; no other version exists)",
+      "politician_id": "2775a1c4-d7e5-45ce-9633-f1ad137c546a"
+    },
+    {
+      "name": "Gutierrez",
+      "role": "author",
+      "version": "Introduced (S.B. No. 145; no other version exists)",
+      "politician_id": "3aee54f8-89eb-425d-b850-19fff9f2c8ea"
+    },
+    {
+      "name": "Johnson",
+      "role": "author",
+      "version": "Introduced (S.B. No. 145; no other version exists)",
+      "politician_id": "7d100649-77bc-4dd1-8845-d379ca466fa2"
+    },
+    {
+      "name": "Zaffirini",
+      "role": "author",
+      "version": "Introduced (S.B. No. 145; no other version exists)",
+      "politician_id": "1d0b1e50-5bd7-46f6-b9a9-6ca7cdfcebe6"
+    },
+    {
+      "name": "Alvarado",
+      "role": "co",
+      "version": "Introduced (S.B. No. 145; no other version exists)",
+      "politician_id": "6ed2b57e-4930-4099-8567-d5a6bf7b999f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T15:13:39Z)",
+    "fetched_at": "2026-10-28T15:13:39Z",
+    "method": "curl"
+  }
+}

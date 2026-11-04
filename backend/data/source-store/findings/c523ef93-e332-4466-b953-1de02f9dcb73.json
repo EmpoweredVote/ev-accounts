@@ -1,0 +1,49 @@
+{
+  "politician_id": "c523ef93-e332-4466-b953-1de02f9dcb73",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote / SAVE Act",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician; no name-based hits)",
+        "list-discovered-sources.ts (could not run: backend environment variables missing in worktree)",
+        "Ballotpedia https://ballotpedia.org/Mark_Kaye (fetched by curl; confirms FL-5 candidate, lost 2026 primary; page states he did not complete Candidate Connection survey; no issue positions)",
+        "markkaye.com (fetched; no election or voting content)",
+        "blocked: https://markkayeforcongress.com/ (404 on WebFetch and curl)",
+        "blocked: https://floridapolitics.com/archives/743249-rutherford-kaye-primary (HTTP 402)",
+        "wokv.com announcement of candidacy (fetched; no policy positions on voting)",
+        "talkers.com announcement (fetched; no policy positions on voting)",
+        "web searches on Kaye plus voter ID, SAVE Act, noncitizen voting, election integrity, mail ballots: no statement by Kaye found",
+        "not reached: X/Facebook/YouTube/podcast archives (Mark Kaye Saves the Republic, The 47 Daily)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:11:06.766Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "scope check only (search stopped: out of scope)"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary",
+        "Ballotpedia https://ballotpedia.org/Mark_Kaye (says he ran for Florida's 5th Congressional District and lost the 2026-08-18 primary, so he is not on the 2026 general-election ballot)",
+        "On the Record (0 meetings found for this person)",
+        "stopped after the out-of-scope check, as the brief directs; no subject search run",
+        "not run: the discovered-sources database script (standing rule bars running repo scripts that read the database)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:35:58.029Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

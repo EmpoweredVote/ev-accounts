@@ -1,0 +1,227 @@
+{
+  "politician_id": "01b896ff-57bb-42df-b137-0301d7abf063",
+  "findings": [
+    {
+      "id": "2ec6351d1c5a5a501ef372e0430d31dd927da21fd91f8127a9d5f8a12961ebc5",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021-10-14",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "yea",
+      "motion": "concurrence in Senate substitute S-3",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MI House, concurrence in Senate substitute S-3, 2021-10-14: yea (tally 56–51); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.562Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "f5f33e4525c9124ac85d3d53c56f63ea56a438dd941e720e539f8d84a711478f",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 432 YEAS 21 NAYS 16 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Huizenga'), linked to Mark E. Huizenga (district 30) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.341Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b08f0e761d4a963324310ce8c431fed7110ec371e16e2ab9a21f4e387d94a795",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 434 YEAS 22 NAYS 15 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Huizenga'), linked to Mark E. Huizenga (district 30) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.341Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d938cadf95ba7904cb3b7446f91c9ba61dcaedd5fcdfd815cf9b20ab6dfd348a",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0076",
+      "date": "2023-03-16",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-76-2023",
+      "act": "nay",
+      "motion": "Passage, Roll Call No. 80",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI Senate, Passage, Roll Call No. 80, 2023-03-16: nay (tally 20–17); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/2023-SEBS-0076.pdf",
+          "sha256": "028ca04fb10c11c8fa040b47bcab77dc8b252576fae94d7bf73e3063b125abae"
+        }
+      }
+    },
+    {
+      "id": "2a2d05a72ad1a68e0be30fed07885e7ccca539012aef77c04d7c1f14d5f898be",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0077",
+      "date": "2023-03-16",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-77-2023",
+      "act": "nay",
+      "motion": "Passage, Roll Call No. 81",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI Senate, Passage, Roll Call No. 81, 2023-03-16: nay (tally 20–17); census gate: none.",
+      "subjects": [
+        "check every gun buyer (penalty update)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/2023-SEBS-0077.pdf",
+          "sha256": "6d3820ea03f3dd6591990531a9149c167a88b17cd22fae7324bc8371e8a6da5e"
+        }
+      }
+    },
+    {
+      "id": "6b2c31e51707a5c6b6b791dad2fa3d1211900e2a6de6e9648db25634e8c51459",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0078",
+      "date": "2023-03-16",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-78-2023",
+      "act": "nay",
+      "motion": "Passage, Roll Call No. 82",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI Senate, Passage, Roll Call No. 82, 2023-03-16: nay (tally 20–17); census gate: none.",
+      "subjects": [
+        "check every gun buyer (sentencing update)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd3d2738eca736e843f6d00ade83aff0daa1971828e97b8db8abbc1fcaa76c7b",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4138",
+      "date": "2023-03-23",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-4138-2023",
+      "act": "nay",
+      "motion": "Passage, Roll Call No. 115 (final; House did not need to concur since Senate passed without amendment)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI Senate, Passage, Roll Call No. 115 (final; House did not need to concur since Senate passed without amendment), 2023-03-23: nay (tally 20–18); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/2023-PA-0019.pdf",
+          "sha256": "2b8ace86c9e2b41bb2310e59e23d0100684ebb1734093484e474d4588c5007c6"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks / non-citizen voting / election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr run with name search, 0 sources)",
+        "official Senate site https://www.senatormarkhuizenga.com/ (home page and meet-your-senator page confirm Michigan Senate office; nothing on the subject)",
+        "official site search https://www.senatormarkhuizenga.com/?s=voter (no results on the subject)",
+        "blocked: https://ballotpedia.org/Mark_Huizenga (empty page returned)",
+        "not reviewed: https://senate.michigan.gov/senators/senator-huizenga/ (404)",
+        "Wikipedia page for the person (office confirmed; says nothing on 2026 status)",
+        "two news searches on name plus subject words: nothing by this person on the subject; a proof-of-citizenship amendment story was about a different lawmaker, not him",
+        "2026 ballot status not confirmed by any page"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:12:55.219Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:55:46.341Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

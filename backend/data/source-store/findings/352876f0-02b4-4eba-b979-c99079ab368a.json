@@ -1,0 +1,222 @@
+{
+  "politician_id": "352876f0-02b4-4eba-b979-c99079ab368a",
+  "findings": [
+    {
+      "id": "703b01c6a82a987fc2d944c39ebbf46adc101c3a12efdfa6c5bc92ee3504ed31",
+      "kind": "own-words",
+      "url": "https://laist.com/news/republican-backed-bill-would-upend-voter-registration-8-things-to-know",
+      "date": "2025-03-12",
+      "date_precision": "day",
+      "passage": "“Because of [a voter's] physical condition or their age or their distance from their county registrar's office, they just don't get to vote anymore?” Fontes questioned. “This is a radical shift in the way we consider preserving the voter's right to vote.”",
+      "note": "Quoted by LAist on the federal SAVE Act (documentary proof of citizenship to register). He raises voters who cannot easily reach a county office.",
+      "subjects": [
+        "proof of citizenship to register (SAVE Act)",
+        "access for voters with physical limits"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:55.906Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "75bdacbb9f0216a5b5dd7dfa6d8a68615f47ba9da650edde685f08abb76b6f5f",
+      "kind": "own-words",
+      "url": "https://laist.com/news/republican-backed-bill-would-upend-voter-registration-8-things-to-know",
+      "date": "2025-03-12",
+      "date_precision": "day",
+      "passage": "“It's going to put a heavy burden on localities and it's really bad for voters,” Fontes said.",
+      "note": "Quoted by LAist on the federal SAVE Act.",
+      "subjects": [
+        "proof of citizenship to register (SAVE Act)",
+        "burden on election offices"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:55.906Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "926c04bb54f60f73f48240de01b728b46b8c926978eda14a9588e713eccb7ea3",
+      "kind": "own-words",
+      "url": "https://ktar.com/arizona-politics-news/election/adrian-fontes-mail-in-voting",
+      "date": "2026-02-19",
+      "date_precision": "day",
+      "passage": "If you're going to vote in person, you show your ID.",
+      "note": "Quoted by KTAR (article published 2026-02-19), on the voter ID ballot referral. Page text reached through the fetch tool only; a plain curl of the page was refused (403).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:55.906Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e60367c30bbf043ee48bb8836fa6bc8d18fd0e9353683d6485ef5eccfdc51972",
+      "kind": "own-words",
+      "url": "https://ktar.com/arizona-politics-news/election/adrian-fontes-mail-in-voting",
+      "date": "2026-02-19",
+      "date_precision": "day",
+      "passage": "It already exists, just like documented proof of citizenship.",
+      "note": "Quoted by KTAR on the voter ID ballot referral. Page text reached through the fetch tool only; a plain curl was refused (403).",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:55.906Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9de380c0d64673320e9bde5063dba49d128ddf4b2c36b8258bcad4da29098c75",
+      "kind": "own-words",
+      "url": "https://www.kjzz.org/politics/2026-09-01/fontes-kolodin-debate-election-security-in-race-for-secretary-of-state",
+      "date": "2026-09-01",
+      "date_precision": "day",
+      "passage": "“I mean, who has a photocopier at their house?” he asked. “It's unworkable, it's unreasonable.”",
+      "note": "Quoted by KJZZ (Capitol Media Services) on the idea of including a photocopy of ID with a mail ballot under Prop. 144. Article publication date used.",
+      "subjects": [
+        "ID with a mail ballot",
+        "Prop. 144 (voter ID ballot measure)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:55.906Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e2bcd0737aaa83e3da2e111aca2fbdefe3251158610cdc3daac5b2496285e2d3",
+      "kind": "own-words",
+      "url": "https://www.kjzz.org/politics/2026-09-01/fontes-kolodin-debate-election-security-in-race-for-secretary-of-state",
+      "date": "2026-09-01",
+      "date_precision": "day",
+      "passage": "“People are going to have to go take their ballot in instead of putting it in the mail,” he said.",
+      "note": "Quoted by KJZZ on what Prop. 144 would require for mail voters, in his view. Article publication date used.",
+      "subjects": [
+        "ID with a mail ballot",
+        "Prop. 144 (voter ID ballot measure)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:55.906Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b9791ed3546e15aa0fd7de333a9819828bba4e03b709df62d05c17995fbbb7c3",
+      "kind": "own-words",
+      "url": "https://www.kjzz.org/politics/2026-09-01/fontes-kolodin-debate-election-security-in-race-for-secretary-of-state",
+      "date": "2026-09-01",
+      "date_precision": "day",
+      "passage": "“Are they human beings? Yes,” he said. “But the reality is these folks are asking for perfection when we've already got great elections in Arizona.”",
+      "note": "Quoted by KJZZ in the same debate story, on election-integrity demands and signature checks. Article publication date used.",
+      "subjects": [
+        "election integrity in general",
+        "mail ballot signature checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:55.906Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3f3f0dc68c7b09d5ca783d0120bc86511b3b45db3797608e0dd6024a7221f4ce",
+      "kind": "own-words",
+      "url": "https://www.kjzz.org/politics/2026-10-01/secretary-of-state-candidates-trade-insults-diverge-on-election-plans-in-debate",
+      "date": "2026-10-01",
+      "date_precision": "day",
+      "passage": "“If you're living in an assisted living home and you don't have transportation, how are you going to get to that polling place?” Fontes asked.",
+      "note": "Quoted by KJZZ on the 2026-09-30 secretary of state debate, on Prop. 144 and access to voting. Article publication date used.",
+      "subjects": [
+        "Prop. 144 (voter ID ballot measure)",
+        "access to voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:55.906Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "29cf2b0a1cfa2b6385c7abd8bacbd696029dd6b2be212378970fd05b626384e3",
+      "kind": "own-words",
+      "url": "https://www.kjzz.org/politics/2026-10-01/secretary-of-state-candidates-trade-insults-diverge-on-election-plans-in-debate",
+      "date": "2026-10-01",
+      "date_precision": "day",
+      "passage": "“The election-denier people like Mr. Kolodin want to whip up all of this nonsense about untold hundreds of thousands of illegal voters, which is a lie,” he said.",
+      "note": "Quoted by KJZZ from the 2026-09-30 debate, on claims of non-citizen voting.",
+      "subjects": [
+        "non-citizen voting claims",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:55.906Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "ID with a mail ballot",
+        "Prop. 144 voter ID ballot measure",
+        "non-citizen voting claims",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "scope check: https://en.wikipedia.org/wiki/2026_Arizona_elections lists him as the incumbent Secretary of State and a general-election candidate for 2026; https://www.azfamily.com/2026/09/23/arizona-secretary-state-race-reignites-fight-over-election-rules/ describes him as seeking a second term",
+        "blocked: https://azsos.gov/about-office/media-center/press-releases (403)",
+        "blocked: https://azmirror.com/?p=28008 (403)",
+        "not reachable: https://www.fontesforarizona.com (site does not resolve)",
+        "not reviewed: https://ballotready.org profile (404 at the guessed address)",
+        "news pages: laist.com, ktar.com, kjzz.org (2 stories) used for quotes; ktar.com plain curl refused (403) so its text came from the fetch tool only",
+        "web searches (4): SAVE Act, Prop. 144, debate coverage",
+        "debate video: not reviewed",
+        "legislature bill pages: not applicable to this office; floor votes linked separately"
+      ],
+      "found": 9,
+      "at": "2026-10-28T23:08:55.906Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

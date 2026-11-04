@@ -3,15 +3,794 @@
   "scope": "state:az",
   "title": "HB 2617 (55th Legislature, 2nd Regular Session, 2022) — voter registration; cancellations; causes (ADJACENT: citizenship database checks and cancellation for noncitizenship, juror questionnaire notice). No voter ID or ID number provision.",
   "urls": [
-    "https://www.azleg.gov/legtext/55leg/2R/bills/HB2617H.htm"
+    "https://www.azleg.gov/legtext/55leg/2R/bills/HB2617H.htm",
+    "https://apps.azleg.gov/BillStatus/BillOverview/77330",
+    "https://www.azleg.gov/legtext/55leg/2R/bills/HB2617S.htm"
   ],
   "version": "other",
-  "operative_text": "Sec 1 amends 16-165 monthly database comparisons and citizenship cancellation: (paraphrase only)\nSec 2 amends 21-314 juror questionnaire forwarded to Secretary of State and recorder: (paraphrase only)",
+  "operative_text": "Sec 1 amends 16-165 monthly database comparisons and citizenship cancellation: (paraphrase only)\nSec 2 amends 21-314 juror questionnaire forwarded to Secretary of State and recorder: (paraphrase only)\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Joseph Chaplik",
+      "role": "prime",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Brenda Barton",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Leo Biasiucci",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Walter \"Walt\" Blackman",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Judy M. Burges",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Frank P Carroll",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Neal Carter",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Regina E. Cobb",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "David L. Cook",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Lupe Diaz",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Tim Dunn",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "John M. Fillmore",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Mark W. Finchem",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Travis Grantham",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Gail Griffin",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Jake Hoffman",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Steve Kaiser",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "John Kavanagh",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Quang H Nguyen",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Jacqueline Parker",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Kevin Payne",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Beverly Pingerelli",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Ben Toma",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Jeff Weninger",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Justin Wilmeth",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Sonny Borrelli",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Wendy Rogers",
+      "role": "co",
+      "version": "HB2617S: Senate-engrossed version (text as it stood after the Senate acted)"
+    }
+  ],
   "single_subject": [],
-  "votes": [],
+  "votes": [
+    {
+      "date": "2022-03-01",
+      "body": "AZ House",
+      "motion": "Third Reading: Passed (as amended)",
+      "kind": "roll-call",
+      "yes": 31,
+      "no": 26,
+      "absent": 3,
+      "body_size": 60,
+      "note": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=77330&billStatusActionId=209738&includeVotes=true",
+      "members": [
+        {
+          "name": "ABRAHAM",
+          "vote": "nay"
+        },
+        {
+          "name": "ANDRADE",
+          "vote": "nay"
+        },
+        {
+          "name": "BARTON",
+          "vote": "yea"
+        },
+        {
+          "name": "BIASIUCCI",
+          "vote": "yea"
+        },
+        {
+          "name": "BLACKMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "BLACKWATER-NYGREN",
+          "vote": "absent"
+        },
+        {
+          "name": "BOLDING",
+          "vote": "absent"
+        },
+        {
+          "name": "BOLICK",
+          "vote": "yea"
+        },
+        {
+          "name": "BURGES",
+          "vote": "yea"
+        },
+        {
+          "name": "BUTLER",
+          "vote": "nay"
+        },
+        {
+          "name": "CANO",
+          "vote": "nay"
+        },
+        {
+          "name": "CARROLL",
+          "vote": "yea"
+        },
+        {
+          "name": "CARTER",
+          "vote": "yea"
+        },
+        {
+          "name": "CHAPLIK",
+          "vote": "yea"
+        },
+        {
+          "name": "CHÁVEZ",
+          "vote": "nay"
+        },
+        {
+          "name": "COBB",
+          "vote": "yea"
+        },
+        {
+          "name": "COOK",
+          "vote": "yea"
+        },
+        {
+          "name": "DALESSANDRO",
+          "vote": "nay"
+        },
+        {
+          "name": "DEGRAZIA",
+          "vote": "nay"
+        },
+        {
+          "name": "DIAZ",
+          "vote": "yea"
+        },
+        {
+          "name": "DUNN",
+          "vote": "yea"
+        },
+        {
+          "name": "EPSTEIN",
+          "vote": "nay"
+        },
+        {
+          "name": "ESPINOZA",
+          "vote": "nay"
+        },
+        {
+          "name": "FERNANDEZ B",
+          "vote": "nay"
+        },
+        {
+          "name": "FILLMORE",
+          "vote": "yea"
+        },
+        {
+          "name": "FINCHEM",
+          "vote": "yea"
+        },
+        {
+          "name": "GRANTHAM",
+          "vote": "yea"
+        },
+        {
+          "name": "GRIFFIN",
+          "vote": "yea"
+        },
+        {
+          "name": "HERNANDEZ A",
+          "vote": "nay"
+        },
+        {
+          "name": "HERNANDEZ D",
+          "vote": "nay"
+        },
+        {
+          "name": "HERNANDEZ M",
+          "vote": "nay"
+        },
+        {
+          "name": "HOFFMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "JERMAINE",
+          "vote": "nay"
+        },
+        {
+          "name": "JOHN",
+          "vote": "yea"
+        },
+        {
+          "name": "KAISER",
+          "vote": "yea"
+        },
+        {
+          "name": "KAVANAGH",
+          "vote": "yea"
+        },
+        {
+          "name": "LIGUORI",
+          "vote": "nay"
+        },
+        {
+          "name": "LONGDON",
+          "vote": "nay"
+        },
+        {
+          "name": "MARTINEZ",
+          "vote": "yea"
+        },
+        {
+          "name": "MATHIS",
+          "vote": "nay"
+        },
+        {
+          "name": "MEZA",
+          "vote": "nay"
+        },
+        {
+          "name": "NGUYEN",
+          "vote": "yea"
+        },
+        {
+          "name": "OSBORNE",
+          "vote": "yea"
+        },
+        {
+          "name": "PARKER",
+          "vote": "yea"
+        },
+        {
+          "name": "PAWLIK",
+          "vote": "nay"
+        },
+        {
+          "name": "PAYNE",
+          "vote": "yea"
+        },
+        {
+          "name": "PINGERELLI",
+          "vote": "yea"
+        },
+        {
+          "name": "POWERS HANNLEY",
+          "vote": "nay"
+        },
+        {
+          "name": "QUIÑONEZ",
+          "vote": "nay"
+        },
+        {
+          "name": "SALMAN",
+          "vote": "absent"
+        },
+        {
+          "name": "SCHWIEBERT",
+          "vote": "nay"
+        },
+        {
+          "name": "SHAH",
+          "vote": "nay"
+        },
+        {
+          "name": "SIERRA",
+          "vote": "nay"
+        },
+        {
+          "name": "SOLORIO",
+          "vote": "nay"
+        },
+        {
+          "name": "TOMA",
+          "vote": "yea"
+        },
+        {
+          "name": "TSOSIE",
+          "vote": "nay"
+        },
+        {
+          "name": "UDALL",
+          "vote": "yea"
+        },
+        {
+          "name": "WENINGER",
+          "vote": "yea"
+        },
+        {
+          "name": "WILMETH",
+          "vote": "yea"
+        },
+        {
+          "name": "BOWERS",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2022-05-23",
+      "body": "AZ Senate",
+      "motion": "Third Reading: Passed (as amended)",
+      "kind": "roll-call",
+      "yes": 16,
+      "no": 13,
+      "absent": 1,
+      "body_size": 30,
+      "note": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=77330&billStatusActionId=211308&includeVotes=true",
+      "members": [
+        {
+          "name": "ALSTON",
+          "vote": "nay"
+        },
+        {
+          "name": "BARTO",
+          "vote": "yea"
+        },
+        {
+          "name": "BORRELLI",
+          "vote": "yea"
+        },
+        {
+          "name": "BOWIE",
+          "vote": "nay"
+        },
+        {
+          "name": "BOYER",
+          "vote": "yea"
+        },
+        {
+          "name": "CONTRERAS",
+          "vote": "nay"
+        },
+        {
+          "name": "GABALDON",
+          "vote": "nay"
+        },
+        {
+          "name": "GONZALES",
+          "vote": "nay"
+        },
+        {
+          "name": "GOWAN",
+          "vote": "yea"
+        },
+        {
+          "name": "GRAY",
+          "vote": "yea"
+        },
+        {
+          "name": "HATATHLIE",
+          "vote": "nay"
+        },
+        {
+          "name": "KERR",
+          "vote": "yea"
+        },
+        {
+          "name": "LEACH",
+          "vote": "yea"
+        },
+        {
+          "name": "LIVINGSTON",
+          "vote": "yea"
+        },
+        {
+          "name": "MARSH",
+          "vote": "nay"
+        },
+        {
+          "name": "MENDEZ",
+          "vote": "absent"
+        },
+        {
+          "name": "MESNARD",
+          "vote": "yea"
+        },
+        {
+          "name": "OTONDO",
+          "vote": "nay"
+        },
+        {
+          "name": "PACE",
+          "vote": "yea"
+        },
+        {
+          "name": "PETERSEN",
+          "vote": "yea"
+        },
+        {
+          "name": "QUEZADA",
+          "vote": "nay"
+        },
+        {
+          "name": "RIOS",
+          "vote": "nay"
+        },
+        {
+          "name": "ROGERS",
+          "vote": "yea"
+        },
+        {
+          "name": "SHOPE",
+          "vote": "yea"
+        },
+        {
+          "name": "STAHL HAMILTON",
+          "vote": "nay"
+        },
+        {
+          "name": "STEELE",
+          "vote": "nay"
+        },
+        {
+          "name": "TERÁN",
+          "vote": "nay"
+        },
+        {
+          "name": "TOWNSEND",
+          "vote": "yea"
+        },
+        {
+          "name": "UGENTI-RITA",
+          "vote": "yea"
+        },
+        {
+          "name": "FANN",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2022-05-25",
+      "body": "AZ House",
+      "motion": "Final Reading: Passed",
+      "kind": "roll-call",
+      "yes": 31,
+      "no": 26,
+      "absent": 3,
+      "body_size": 60,
+      "note": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=77330&billStatusActionId=211354&includeVotes=true",
+      "members": [
+        {
+          "name": "ABRAHAM",
+          "vote": "nay"
+        },
+        {
+          "name": "ANDRADE",
+          "vote": "nay"
+        },
+        {
+          "name": "BARTON",
+          "vote": "yea"
+        },
+        {
+          "name": "BIASIUCCI",
+          "vote": "yea"
+        },
+        {
+          "name": "BLACKMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "BLACKWATER-NYGREN",
+          "vote": "nay"
+        },
+        {
+          "name": "BOLDING",
+          "vote": "nay"
+        },
+        {
+          "name": "BOLICK",
+          "vote": "yea"
+        },
+        {
+          "name": "BURGES",
+          "vote": "yea"
+        },
+        {
+          "name": "BUTLER",
+          "vote": "nay"
+        },
+        {
+          "name": "CANO",
+          "vote": "nay"
+        },
+        {
+          "name": "CARROLL",
+          "vote": "yea"
+        },
+        {
+          "name": "CARTER",
+          "vote": "yea"
+        },
+        {
+          "name": "CHAPLIK",
+          "vote": "yea"
+        },
+        {
+          "name": "CHÁVEZ",
+          "vote": "nay"
+        },
+        {
+          "name": "COBB",
+          "vote": "yea"
+        },
+        {
+          "name": "COOK",
+          "vote": "yea"
+        },
+        {
+          "name": "DALESSANDRO",
+          "vote": "nay"
+        },
+        {
+          "name": "DEGRAZIA",
+          "vote": "nay"
+        },
+        {
+          "name": "DIAZ",
+          "vote": "yea"
+        },
+        {
+          "name": "DUNN",
+          "vote": "yea"
+        },
+        {
+          "name": "EPSTEIN",
+          "vote": "nay"
+        },
+        {
+          "name": "ESPINOZA",
+          "vote": "nay"
+        },
+        {
+          "name": "FERNANDEZ B",
+          "vote": "nay"
+        },
+        {
+          "name": "FILLMORE",
+          "vote": "yea"
+        },
+        {
+          "name": "FINCHEM",
+          "vote": "yea"
+        },
+        {
+          "name": "GRANTHAM",
+          "vote": "yea"
+        },
+        {
+          "name": "GRIFFIN",
+          "vote": "yea"
+        },
+        {
+          "name": "HERNANDEZ A",
+          "vote": "nay"
+        },
+        {
+          "name": "HERNANDEZ D",
+          "vote": "absent"
+        },
+        {
+          "name": "HERNANDEZ M",
+          "vote": "nay"
+        },
+        {
+          "name": "HOFFMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "JERMAINE",
+          "vote": "nay"
+        },
+        {
+          "name": "JOHN",
+          "vote": "yea"
+        },
+        {
+          "name": "KAISER",
+          "vote": "yea"
+        },
+        {
+          "name": "KAVANAGH",
+          "vote": "yea"
+        },
+        {
+          "name": "LIGUORI",
+          "vote": "nay"
+        },
+        {
+          "name": "LONGDON",
+          "vote": "nay"
+        },
+        {
+          "name": "MARTINEZ",
+          "vote": "yea"
+        },
+        {
+          "name": "MATHIS",
+          "vote": "nay"
+        },
+        {
+          "name": "MEZA",
+          "vote": "nay"
+        },
+        {
+          "name": "NGUYEN",
+          "vote": "yea"
+        },
+        {
+          "name": "OSBORNE",
+          "vote": "yea"
+        },
+        {
+          "name": "PARKER",
+          "vote": "yea"
+        },
+        {
+          "name": "PAWLIK",
+          "vote": "nay"
+        },
+        {
+          "name": "PAYNE",
+          "vote": "yea"
+        },
+        {
+          "name": "PINGERELLI",
+          "vote": "yea"
+        },
+        {
+          "name": "POWERS HANNLEY",
+          "vote": "absent"
+        },
+        {
+          "name": "QUIÑONEZ",
+          "vote": "nay"
+        },
+        {
+          "name": "SALMAN",
+          "vote": "absent"
+        },
+        {
+          "name": "SCHWIEBERT",
+          "vote": "nay"
+        },
+        {
+          "name": "SHAH",
+          "vote": "nay"
+        },
+        {
+          "name": "SIERRA",
+          "vote": "nay"
+        },
+        {
+          "name": "SOLORIO",
+          "vote": "nay"
+        },
+        {
+          "name": "TOMA",
+          "vote": "yea"
+        },
+        {
+          "name": "TSOSIE",
+          "vote": "nay"
+        },
+        {
+          "name": "UDALL",
+          "vote": "yea"
+        },
+        {
+          "name": "WENINGER",
+          "vote": "yea"
+        },
+        {
+          "name": "WILMETH",
+          "vote": "yea"
+        },
+        {
+          "name": "BOWERS",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
   "provenance": {
-    "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-    "fetched_at": "2026-10-21T01:52:20.308Z",
-    "method": "webfetch"
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
   }
 }

@@ -1,0 +1,54 @@
+{
+  "politician_id": "e124f458-7090-4149-b0ab-451f4073795d",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "in scope: on the Nov 3 2026 general ballot for U.S. Senate Oklahoma as an independent, per https://ballotpedia.org/Ron_Meinhardt (note: Senate, not House)",
+        "On the Record (0 appearances)",
+        "Ballotpedia page and 2026 Candidate Connection survey (nothing on the subject)",
+        "campaign site https://www.running4ok.com (single page; issues listed: war powers, energy, healthcare, immigration, child protection, local consent; nothing on the subject)",
+        "congress.gov: not a legislator, no sponsorships to check",
+        "blocked: https://www.facebook.com/ron.meinhardt.2025/ (login-gated, no readable posts)",
+        "not reviewed: https://x.com/running4ok, https://www.tiktok.com/@ronmeinhardt (social feeds not readable)",
+        "not reviewed: news search (web search budget exhausted for the session)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:14:10.853Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "election integrity",
+        "mail-ballot ID",
+        "SAVE Act"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia page (confirms he is an independent candidate for U.S. Senate in Oklahoma on the 2026 general-election ballot; his 2026 candidate survey answers say nothing on the subject)",
+        "campaign site https://www.running4ok.com (issues page: nothing on the subject)",
+        "two news searches on his name plus the subject words (nothing on the subject)",
+        "blocked: https://x.com/running4ok (HTTP 402)",
+        "not reviewed: https://www.youtube.com/@running4ok (no video titles readable)",
+        "not reviewed: Facebook pages (login-gated)",
+        "congress.gov (no sponsorships: he has held no federal office)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:02:56.371Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

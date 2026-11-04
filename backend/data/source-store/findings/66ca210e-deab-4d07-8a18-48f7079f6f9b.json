@@ -1,0 +1,636 @@
+{
+  "politician_id": "66ca210e-deab-4d07-8a18-48f7079f6f9b",
+  "findings": [
+    {
+      "id": "9607b5461c2f9808fd5a5fc9a2b087c1eb6da24aef89b8c1c9ded1f32a9b5c14",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/76696",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2241-2022",
+      "act": "sponsor",
+      "motion": "prime sponsor, HB2241P: as introduced (printed version)",
+      "note": "Named as prime sponsor ('Jake Hoffman') on the official bill page; linked to Jake Hoffman via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c4531f29733c7dfee4dfc424ee16a4b016006a09645b3f08149bb39476010688",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76970&billStatusActionId=209634&includeVotes=true",
+      "date": "2022-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2492-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('HOFFMAN'), linked to Jake Hoffman (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9986b37d90879a5330bd11fe50a5a3a05e56555443db0ba20c6380a070f01c76",
+      "kind": "record",
+      "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0099.htm",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2492-2022",
+      "act": "sponsor",
+      "motion": "prime sponsor, HB2492H: House-engrossed version (text as it stood after the House acted)",
+      "note": "Named as prime sponsor ('Jake Hoffman') on the official bill page; linked to Jake Hoffman via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "07beb22391c4a87027116d0de8b5fc744a95f4fe4b0aa8071a98ee581de3d18a",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/77219",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2596-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2596P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Jake Hoffman') on the official bill page; linked to Jake Hoffman via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "44f22a1534e60ab11b9d575955d64b27d53acaedbacf9bd3af25ab73293ff38b",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81400&billStatusActionId=223261&includeVotes=true",
+      "date": "2024-02-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2785-2024",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('HOFFMAN'), linked to Jake Hoffman (district None) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "529cf90a71ccf9d645617ef3b60a7f27ca50e952001992f4c3fb68c019c62cfc",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=246497&includeVotes=true",
+      "date": "2026-06-12",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('HOFFMAN'), linked to Jake Hoffman (district 15) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba4bbab8ec97997d4fb86d0b3830076f32919bda55f035196b142276f76fd206",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=234554&includeVotes=true",
+      "date": "2025-03-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('HOFFMAN'), linked to Jake Hoffman (district 15) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d2d451d27200c951c4ac0fce30e3b3b0798f1790b723f08f16cc5808b9b8c52",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=233421&includeVotes=true",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('HOFFMAN'), linked to Jake Hoffman (district 15) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "da4b972d0394fbe6635ba6d84805bb80e2e3500360f2cf69d4e4caaaf7ae8185",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/81927",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, SB1098S: Senate-engrossed version (text as it stood after the Senate acted)",
+      "note": "Named as prime sponsor ('Jake Hoffman') on the official bill page; linked to Jake Hoffman via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "330408ec4896d61a3e54a41918f6a9cb34e65520c76a66a406068d0c72d8d724",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78743&billStatusActionId=216660&includeVotes=true",
+      "date": "2023-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1141-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('HOFFMAN'), linked to Jake Hoffman (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b1af987fcef9889feed040ae528c39c9f8b2562de63d09fc8678907a2dfb1124",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/78743",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "AZ-SB-1141-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, SB1141S: Senate-engrossed version (text as it stood after the Senate acted)",
+      "note": "Named as prime sponsor ('Jake Hoffman') on the official bill page; linked to Jake Hoffman via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43c31e9e19d446cfa257d435467eac22004793413fd5999c83ee78dbc70b3803",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78784&billStatusActionId=217557&includeVotes=true",
+      "date": "2023-03-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1178-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('HOFFMAN'), linked to Jake Hoffman (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5ec2093480950ffc9deb5663480704889b59c996690d96ea54139285fbf54fee",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=77405&billStatusActionId=211337&includeVotes=true",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1460-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('HOFFMAN'), linked to Jake Hoffman (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c317edba5932851a547b9a08821e246d23e724e516c40a7a27f9d0a603f407a8",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79205&billStatusActionId=218058&includeVotes=true",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1518-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('HOFFMAN'), linked to Jake Hoffman (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7f88491a24de3b8fc57c195fa6e6dd0ec7429139072247414246681c16061fd5",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79268&billStatusActionId=217410&includeVotes=true",
+      "date": "2023-03-07",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('HOFFMAN'), linked to Jake Hoffman (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9e34a3debf61bc19ab4a711c3da0f592bd77e6248725ec6f01f2213dd959adde",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/79268",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, SB1595H: House-engrossed version (text as it stood after the House acted)",
+      "note": "Named as co sponsor ('Jake Hoffman') on the official bill page; linked to Jake Hoffman via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b610273a3ef40c8417bb530372a6381c3355f335ee364b8204b420a1623cdd06",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=75855&billStatusActionId=204259&includeVotes=true",
+      "date": "2021-05-26",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1713-2021",
+      "act": "yea",
+      "motion": "House: Third Reading: failed to pass (as amended)",
+      "note": "House roll call as printed ('HOFFMAN'), linked to Jake Hoffman (district None) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aeb744ceacde5e405640f0f86456e7f9ce347bfb3561ffe01639c659dfec6bd",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83528&billStatusActionId=241249&includeVotes=true",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1001-2026",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('HOFFMAN'), linked to Jake Hoffman (district 15) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5cf2840637b67c8e511244c2206b1eee06a63e80f1a418e47b37e3298409c64d",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76391&billStatusActionId=209637&includeVotes=true",
+      "date": "2022-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1012-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('HOFFMAN'), linked to Jake Hoffman (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5fa52dac174083cf2c6d1e6c084c64d8478d4f3e74ef0a0582294f2b2bec74f4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/85010",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "AZ-SCR-1030-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, SCR1030P: as introduced (printed version)",
+      "note": "Named as prime sponsor ('Jake Hoffman') on the official bill page; linked to Jake Hoffman via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fa0a14fdefe60727f90b89668b9308cd68e3beb3b0860857fbfee9f412de18c7",
+      "kind": "own-words",
+      "url": "https://www.azsenaterepublicans.gov/press-releases/senator-hoffman-advances-election-integrity-measure",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "passage": "\"Arizonans deserve to know that election laws are not just written in statute but actually enforced in practice,\" said Senator Hoffman.",
+      "note": "Quote in a Senate caucus release about his SB 1570 strike-everything amendment, which would have county officials agree with federal immigration authorities to have a federal presence at early voting sites, polling places and drop boxes to prevent violations of voter eligibility laws. The release says federal personnel could not question anyone solely to determine eligibility.",
+      "subjects": [
+        "election integrity in general",
+        "enforcement of voter eligibility laws",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:13:42.982Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c57f82f3b2fcc61ae29ad21326b892b0a633b84fd8a73f9ed223ceaf3a3bb54f",
+      "kind": "own-words",
+      "url": "https://www.tucsonweekly.com/?p=80875",
+      "date": "2021-08-19",
+      "date_precision": "day",
+      "passage": "“This is a brand new initiative. So, this is something that the legislators are certainly going to be weighing the merits of. And I look forward to seeing the support that we do have,” Hoffman said.",
+      "note": "Tucson Weekly page (a reprint of an Arizona Mirror story by Jeremy Duda) quotes him at the launch of a ballot initiative to require ID on early ballots and photo ID in person. He says legislators may weigh referring it to the ballot.",
+      "subjects": [
+        "ID with mail or early ballots",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:13:42.982Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6f12e632d24548c6b8d904f2c1e1732256e578b7fba80b8c9da1dfb6752a051d",
+      "kind": "own-words",
+      "url": "https://www.supremecourt.gov/DocketPDF/25/25-1017/424012/20260911235724487_ACB_Ariz._Sen._Jake_Hoffman_ISO_Pet.pdf",
+      "date": "2026-09",
+      "date_precision": "month",
+      "passage": "Arizona’s authority to require citizenship means little without authority to verify it.",
+      "note": "Summary of argument in an amicus brief filed in his name in Mi Familia Vota v. Fontes (the national-committee appeal) (No. 25-1017) supporting the petitioner. He was prime sponsor of HB 2492 (2022). The brief says Arizona may demand proof of citizenship on its state registration form.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:13:42.982Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7fd75c58df3253f2c2d6be248a7464b9d65acaf1e94156fd4ca570706deaf79c",
+      "kind": "own-words",
+      "url": "https://www.supremecourt.gov/DocketPDF/25/25-1017/424012/20260911235724487_ACB_Ariz._Sen._Jake_Hoffman_ISO_Pet.pdf",
+      "date": "2026-09",
+      "date_precision": "month",
+      "passage": "An assertion of citizenship and evidence of citizenship do different work.",
+      "note": "Same amicus brief, argument part I: a signed attestation of citizenship and documentary evidence are treated as separate things, and the brief says the law allows corroboration of the attestation.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:13:42.982Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7d594f81c07fbe4dd94a1475b277b0d497a75906cd138ff240fb605e77a79c75",
+      "kind": "own-words",
+      "url": "https://www.supremecourt.gov/DocketPDF/25/25-1017/424012/20260911235724487_ACB_Ariz._Sen._Jake_Hoffman_ISO_Pet.pdf",
+      "date": "2026-09",
+      "date_precision": "month",
+      "passage": "The Court should restore Arizona’s authority to verify citizenship and remove noncitizens from its voter rolls.",
+      "note": "Same amicus brief, summary of argument: asks the Court to allow citizenship verification and removal of non-citizens from the rolls.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:13:42.982Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "88a7da87cd0c8e4c734c60ffcee1ceea7201386d2f7deb27a668b8c889f53e2c",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/83527",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, HCR2001S: Senate-engrossed version (text as it stood after the Senate acted)",
+      "note": "Named as co sponsor ('Jake Hoffman') on the official bill page; linked to Jake Hoffman via the official 2026 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.945Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 20,
+      "at": "2026-10-28T22:53:15.883Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters without ID",
+        "ID with mail or early ballots",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity in general",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "The Ballot Brief https://www.theballotbrief.com/state/arizona/maricopa-county/arizona-senate-district-15 (confirms he is the sitting senator and on the 2026-11-03 general ballot for district 15; says no 2026 campaign site was found)",
+        "blocked: https://www.jakehoffman.com",
+        "blocked: https://ballotpedia.org/Jake_Hoffman",
+        "blocked: https://floridaphoenix.com/2022/03/31/arizona-could-force-u-s-supreme-court-to-consider-proof-of-citizenship-for-voter-registration/",
+        "blocked: https://azmirror.com/?p=13181",
+        "blocked: https://www.yumasun.com/news/gop-lawmakers-push-for-citizen-only-state-census-in-2030/article_1010038e-7f3e-4842-b29e-24c664cf379d.html",
+        "Senate caucus press release page (February 2026 election-security measure)",
+        "Tucson Weekly reprint of a 2021 news story on the voter-ID-for-early-ballots initiative",
+        "U.S. Supreme Court docket, amicus brief filed in his name in No. 25-1017 (September 2026)",
+        "https://www.azsenaterepublicans.gov/jake-hoffman (404)",
+        "https://www.kjzz.org/politics/2026-02-17/new-legislation-would-deploy-immigration-agents-to-arizona-polling-places (quotes the same February 2026 release)",
+        "https://arizonaglobe.com/election/kolodin-hoffman-call-out-polling-place-chaos (a post on observers at Pima County polls; not about ID or citizenship; not saved)",
+        "https://www.kold.com/2025/11/17/election-integrity-bill-lead-off-arizonas-2026-legislative-session (does not name him)",
+        "news searches on name plus voter ID, early ballots, proof of citizenship, SCR 1001, SB 1098"
+      ],
+      "found": 5,
+      "at": "2026-10-28T23:13:42.982Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:15:12.945Z",
+      "by": "identity-az-2026-10-28"
+    }
+  ]
+}

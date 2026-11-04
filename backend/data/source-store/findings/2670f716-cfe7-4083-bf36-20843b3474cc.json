@@ -1,0 +1,101 @@
+{
+  "politician_id": "2670f716-cfe7-4083-bf36-20843b3474cc",
+  "findings": [
+    {
+      "id": "b1fa27b78a85178b33637df47195bc7ef3346ce4f3bc1324a23808a5399fecb6",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Barb_Regnitz",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "passage": "Make Americans' Votes Count Again Ensure 100% election integrity through transparency, accountability, and secure voting procedures. Support same-day, in-person voting using verifiable, watermarked paper ballots. Limit mail-in ballots to rare, verified exceptions to protect against fraud and maintain confidence in election results.",
+      "note": "Campaign website text as quoted verbatim by Ballotpedia (campaign site version dated April 15, 2026). Lists election integrity, same-day in-person voting with verifiable watermarked paper ballots, and limiting mail-in ballots to rare verified exceptions. Does not mention photo ID, proof of citizenship or the SAVE Act.",
+      "subjects": [
+        "election integrity in general",
+        "mail-in ballot limits",
+        "in-person voting on election day"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:04:15.927Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a48e6651cf06b0b5374034a94e17c3d5b710225aa5e3c65539321ff9a534cb01",
+      "kind": "own-words",
+      "url": "https://barbregnitzforcongress.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Ensure 100% election integrity through transparency, accountability, and secure voting procedures. Support same-day, in-person voting using verifiable, watermarked paper ballots. Limit mail-in ballots to rare, verified exceptions to protect against fraud and maintain confidence in election results.",
+      "note": "Three bullet points under the heading \"Make Americans' Votes Count Again\" on her campaign issues list. The page is undated; the date is the year of the 2026 campaign. Ballotpedia reproduces the same text. Says nothing about ID at the polls or proof of citizenship.",
+      "subjects": [
+        "election integrity",
+        "mail-in ballot limits",
+        "in-person voting with paper ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:34:42.789Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "election integrity in general",
+        "mail-in ballot limits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Barb_Regnitz (confirms IN-01 general election candidate, Nov 3 2026, won May 5 2026 primary; campaign-site text and Candidate Connection survey read)",
+        "campaign site https://barbregnitzforcongress.com/ (blocked: page is script-rendered, no readable text from fetch or curl; original wording taken from the Ballotpedia quote of the site dated 2026-04-15)",
+        "campaign site https://regnitzforcongress.com (nothing on the subject: 'Launching Soon' page)",
+        "Ballotpedia Candidate Connection survey (nothing on the subject)",
+        "congress.gov (nothing on the subject: not a member of Congress; no sponsorships possible; not separately fetched)",
+        "web news search: not reviewed (search budget exhausted)",
+        "not reviewed: https://www.youtube.com/@BarbRegnitzforCongress",
+        "not reviewed: https://x.com/BarbRegnitz",
+        "not reviewed: https://www.facebook.com/Barb-Regnitz-for-Congress"
+      ],
+      "found": 1,
+      "at": "2026-10-22T22:04:15.927Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot limits and ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity and secure voting procedures"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia (confirms candidate for U.S. House Indiana District 1, on the 2026-11-03 general-election ballot after advancing from the 2026-05-05 primary; quotes her campaign site)",
+        "campaign site barbregnitzforcongress.com (page is a script-built app; the issue text was read from the site's own script file, https://barbregnitzforcongress.com/assets/index-sHxoRLV9.js)",
+        "web search: name plus voter ID and election (no statement on voter ID found)",
+        "Indiana Capital Chronicle district 1 voter guide (page text had nothing on the subject)",
+        "not applicable: legislature bill pages (not a legislator in this race; county commissioner)",
+        "not reviewed: social media, debate and interview video, Ballotpedia Candidate Connection survey"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:34:42.789Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

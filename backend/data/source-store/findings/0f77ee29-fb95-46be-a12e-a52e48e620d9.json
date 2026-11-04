@@ -1,0 +1,402 @@
+{
+  "politician_id": "0f77ee29-fb95-46be-a12e-a52e48e620d9",
+  "findings": [
+    {
+      "id": "3a3d6fb831214f4c2211322133a08ec7a6197f94c3ff15992ef4e8946fe922f3",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250919222333/https://www.palegis.us/legislation/bills/2025/hb437",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-437-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 418 (as introduced; the only printer's number). Text NOT read: no archived copy of the text page was found. Page copy dated 2025-09-19. Memo subject printed on the page: \"Voter ID Constitutional Amendment\".",
+      "note": "Named as co sponsor ('REICHARD') on the official bill page; linked to Chad G. Reichard via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.863Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6bcc2ae00b4c79f1ffdbe4207b35e3d3e0cce31c8ed5214b6a521f5afe41aa14",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "nay",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Reichard'), linked to Chad G. Reichard (district 90) via the official 2025-2026 House member roll (identity step 2026-10-31, pa-01 HB 1396 nays).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-31-raw-votes",
+        "fetched_at": "2026-10-31T18:07:00.904Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0a48c5ed321ce155049b65d66d570a829fac3f9a364ee86f35ed19fb08d01f89",
+      "kind": "own-words",
+      "url": "https://www.repreichard.com/News/36764/Latest-News/Anti-Gun-Bills-Goes-Against-U.S.--PA-Constitutions",
+      "date": "2025-10-03",
+      "date_precision": "day",
+      "passage": "Contrary to that oath, House Democrats called up four gun-control bills for votes this week, and I voted “no” on every one of them.",
+      "note": "Op-ed on his official House site stating he voted no on four gun-control bills, citing the U.S. and Pennsylvania constitutions.",
+      "subjects": [
+        "general statement on gun rights",
+        "red-flag orders",
+        "homemade guns",
+        "devices that mimic machine-gun fire"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:06.699Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53f529bc4a92194d1d7527133bbb34bcbb57d5c78de2c1bb2063288e85e8af1b",
+      "kind": "own-words",
+      "url": "https://www.repreichard.com/News/36764/Latest-News/Anti-Gun-Bills-Goes-Against-U.S.--PA-Constitutions",
+      "date": "2025-10-03",
+      "date_precision": "day",
+      "passage": "The Red Flag law (House Bill 1859) would have allowed for a person’s firearm to be confiscated without due process. This is a clear violation of both the U.S. and Pennsylvania constitutions.",
+      "note": "His statement on the red-flag bill HB 1859.",
+      "subjects": [
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:06.699Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "51d2edb2eaba60beb954cb16271915cf8f5621d0dca5a053f8dde038c9abbb66",
+      "kind": "own-words",
+      "url": "https://www.repreichard.com/News/36764/Latest-News/Anti-Gun-Bills-Goes-Against-U.S.--PA-Constitutions",
+      "date": "2025-10-03",
+      "date_precision": "day",
+      "passage": "House Bill 1099 would have ended the time-honored tradition of gun owners building firearms by limiting the types of materials that could be used to construct firearms and prohibited the right of individuals to build their own firearms at home.",
+      "note": "His statement on HB 1099 (homemade firearms).",
+      "subjects": [
+        "home-made guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:06.699Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "553b9a90bea6120179b7f53dc5d7dc662de2947c13f5e1c4458160ff83b75cd8",
+      "kind": "own-words",
+      "url": "https://www.repreichard.com/News/36764/Latest-News/Anti-Gun-Bills-Goes-Against-U.S.--PA-Constitutions",
+      "date": "2025-10-03",
+      "date_precision": "day",
+      "passage": "House Bill 1866 would have banned “a part or combination of parts designed and intended to simulate the rate of fire of a machine gun.” No explanation of what “simulate the rate of fire of a machine gun” meant was ever offered, leading to the potential for broad and misguided enforcement.",
+      "note": "His statement on HB 1866 (rapid-fire devices).",
+      "subjects": [
+        "ban on rapid-fire devices"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:06.699Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "03655e834525b3b028f7f6c79e0ef300965f6e8dbf96f6384effcb2ecd3ea63d",
+      "kind": "own-words",
+      "url": "https://www.repreichard.com/News/36764/Latest-News/Anti-Gun-Bills-Goes-Against-U.S.--PA-Constitutions",
+      "date": "2025-10-03",
+      "date_precision": "day",
+      "passage": "Despite the success in stopping the previous, unconstitutional bills, I am disappointed a bill to expand background check requirements to include private sales of long guns, such as hunting rifles and shotguns, narrowly passed. I am hopeful House Bill 1593 will not be taken up by the Senate.",
+      "note": "His statement on HB 1593 (background checks on private long-gun sales).",
+      "subjects": [
+        "check every gun buyer",
+        "background checks on private sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:06.699Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5cdfdad91dcdb56fbd4ec6f104bfc303980e7931fc878052fb50bc80fbde15fe",
+      "kind": "own-words",
+      "url": "https://www.repreichard.com/News/36764/Latest-News/Anti-Gun-Bills-Goes-Against-U.S.--PA-Constitutions",
+      "date": "2025-10-03",
+      "date_precision": "day",
+      "passage": "The stated policy positions of each of these bills are already covered by existing state and federal laws, and enactment of any of these pieces of legislation would only curb the rights of law-abiding citizens.",
+      "note": "His general reason for opposing the four bills.",
+      "subjects": [
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:06.699Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1b949747d90284bf2c8adb3ad0f96231826f78cc5e5382e97ef04c2a35d6e89f",
+      "kind": "own-words",
+      "url": "https://repreichard.com/News/36756/Latest-News/Reichard-Invites-Residents-to-Concealed-Carry-Seminar",
+      "date": "2025-09-30",
+      "date_precision": "day",
+      "passage": "“The upcoming seminar offers a valuable chance for residents to better understand their rights and responsibilities as gun owners,” Reichard said.",
+      "note": "Official press release quote about a concealed-carry seminar he hosted with the county sheriff.",
+      "subjects": [
+        "concealed carry",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:06.699Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f28e3c05f5b88e732479f15881da05e41ea088c0e92d17cd6b3e0259cbe0c3ee",
+      "kind": "own-words",
+      "url": "https://repreichard.com/about",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "He is a fiscal conservative who believes wasteful government spending must be eliminated and is a defender of firearm owner rights, medical freedom and parental rights in education.",
+      "note": "Biography on his official site, written in the third person by his office.",
+      "subjects": [
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:06.699Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3d70f3bb583017e6e61ef98dbd89bfb8ee4ddb988cd0d3c0686c666061668914",
+      "kind": "record",
+      "url": "https://www.palegis.us/house/co-sponsorship/memo?memoID=48448",
+      "date": "2026-04-02",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-2447-2026",
+      "act": "sponsor",
+      "note": "Co-sponsorship memo titled Firearm and Ammunition Sales Tax Holiday: proposes a sales tax holiday on firearms and ammunition from July 1 to December 31, 2026. Read only through the fetch tool's summary (direct fetch was 403), so the bill number rests on that summary and should be re-checked.",
+      "subjects": [
+        "firearm sales tax holiday"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:06.699Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "776be13d4edc022219fdf3819db0234ee24aae9807915d326ecc971a85558b0b",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb2599",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2599-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-2599-2025 (LegiScan sponsor list): HB2599 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for firearms not to be carried without a license, for licenses and for proof of license and exception..",
+      "subjects": [
+        "license no longer required to carry a gun in a vehicle",
+        "vehicle carry exceptions repealed",
+        "license covers concealed carry on the person only"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2599-2025.introduced.pdf",
+          "sha256": "dc8c286b9dddc4dec2d44c39427334dbb59b7f4135d52a736491c2e33d679d51"
+        }
+      }
+    },
+    {
+      "id": "5a1e8a788a9a3b1de393bdb1dde749a6f598706061fbe03d4e66bccf89447f17",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb454",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-454-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-454-2025 (LegiScan sponsor list): HB454 (2025-2026 Regular Session): In firearms and other dangerous articles, repealing provisions relating to firearms not to be carried without a license, providing for license not required, repealing provisions relating to carrying firearms on public streets or public property in Philadelphia, further providing for prohibited conduct during emergency, providing for sportsman's firearm permit, further providing for licenses and for antique firearms and repealing provisions relating to proof of license and exception; and making editorial changes..",
+      "subjects": [
+        "no license needed to carry firearms openly or concealed",
+        "carry license made optional",
+        "Philadelphia public-carry rule repealed",
+        "license age minimum and character check removed",
+        "duty to show license on demand repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-454-2025.introduced.pdf",
+          "sha256": "f30ec3f128cf3767ddff70a1eeaf2b9e5550db871bb897761638ddd54b516abe"
+        }
+      }
+    },
+    {
+      "id": "d286596c5fbf23976f50103b657a58aab391f2dc93424dafbbac8f5df6ae6538",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb548",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-548-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-548-2025 (LegiScan sponsor list): HB548 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for limitation on the regulation of firearms and ammunition; and, in preemptions, providing for regulation of firearms and ammunition..",
+      "subjects": [
+        "state preemption of local gun and ammunition rules extended to all municipalities",
+        "lawsuits and expense awards against local governments that break preemption"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-548-2025.introduced.pdf",
+          "sha256": "96cead2961c739e15a8f1b6213d6cebb08434f6d00d7d5db6ad44267c48a36b1"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "help for voters getting an ID",
+        "proof of identity with a mail ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://www.repreichard.com/ (homepage and press release list: nothing on the subject)",
+        "positive control: https://www.repreichard.com/ is headed 'PA State Rep. Chad Reichard'",
+        "web searches on his name plus voter ID, photo ID, mail ballot, election integrity: no statement from him found",
+        "blocked: https://ballotpedia.org/Chad_Reichard (empty page, status 202; not retried)",
+        "legislature bill pages: not reviewed (votes and sponsorships are linked separately)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:01:49.076Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.863Z",
+      "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-31, pa-01 HB 1396 nays)"
+      ],
+      "found": 1,
+      "at": "2026-10-31T18:07:00.904Z",
+      "by": "identity-pa-2026-10-31-raw-votes"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red-flag orders",
+        "homemade/unserialised guns",
+        "machine-gun-rate-of-fire devices",
+        "background checks on private long-gun sales",
+        "concealed carry",
+        "Second Amendment general statement",
+        "firearm sales tax holiday"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr found nothing)",
+        "official House site repreichard.com: press release pages and About page, read in full",
+        "https://www.pahouse.com/Reichard returned 404 (not a real page)",
+        "blocked: https://www.palegis.us/house/co-sponsorship/memo?memoID=48448 (curl returned 403; the memo was read through the fetch tool as a summary only, so no passage is copied)",
+        "blocked: https://www.abc27.com/pennsylvania/pennsylvania-bill-proposes-sales-tax-holiday-on-firearms-ammunition/amp/ (curl returned 'too many requests')",
+        "blocked: https://gunstuff.tv/pennsylvania-lawmakers-introduce-bill-for-six-month-sales-tax-holiday-on-firearms-and-ammunition/ (bot check)",
+        "blocked: https://ballotpedia.org/Chad_Reichard (empty page)",
+        "blocked: https://www.yahoo.com/news/waynesboro-republican-announces-candidacy-pennsylvania-101356863.html (2024 campaign announcement; redirect, curl empty)",
+        "https://localnews1.org/reichard-announces-candidacy-for-pas-90th-legislative-district/ (2024 announcement, nothing on the subject)",
+        "scope: https://ivoterguide.com/candidate/79305/race/26736/election/1404 lists him as State Representative, District 90, Pennsylvania General, November 3, 2026, uncontested",
+        "two web searches run (name plus firearms terms; name plus 2026 ballot)"
+      ],
+      "found": 9,
+      "at": "2026-10-30T15:13:06.699Z",
+      "by": "source-collector"
+    }
+  ]
+}

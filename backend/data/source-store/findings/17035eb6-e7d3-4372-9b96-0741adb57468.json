@@ -1,0 +1,80 @@
+{
+  "politician_id": "17035eb6-e7d3-4372-9b96-0741adb57468",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback (affidavit, provisional ballot)",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Dennis_Gallagher_(Massachusetts) names him as incumbent, 8th Plymouth District, on the 2026 general-election ballot after advancing in the September 1, 2026 primary",
+        "legislature profile https://malegislature.gov/Legislators/Profile/DCG2 (sponsored and co-sponsored petitions listed: none on the subject; only Bridgewater town recall/term-limit/charter petitions H.828, H.829 and local bills)",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "Ballotpedia: nothing on the subject (no Candidate Connection survey completed for 2024 or 2026)",
+        "legislature roll-call page https://malegislature.gov/Legislators/Profile/DCG2/RollCalls: lists no roll calls; nothing on the subject",
+        "legislature bill search https://malegislature.gov/Bills/Search?SearchTerms=voter%20identification: results load by script, not readable; blocked",
+        "official site: none found beyond the legislature profile page; nothing on the subject",
+        "campaign site: not found (Ballotpedia lists only Facebook pages)",
+        "blocked: https://www.facebook.com/dennis.c.gallagher (HTTP 400)",
+        "not reviewed: news search and web search on name plus subject words, because the shared web-search budget was used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:00:28.149Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "In scope: Ballotpedia (https://ballotpedia.org/Dennis_Gallagher) shows him as Massachusetts state representative, 8th Plymouth District, on the 2026 general-election ballot after advancing from the 2026-09-01 primary",
+        "On the Record (0 appearances)",
+        "Legislature profile malegislature.gov/Legislators/Profile/DCG2 and its cosponsor list: only town-level election petitions (Bridgewater recall, term limits); nothing on the subject",
+        "Campaign site gallagherforrep.com: pages fetched, nothing on the subject found",
+        "Wikipedia page: nothing on the subject",
+        "web searches (3, shared across the roll-call and name searches): nothing by him on voter ID, proof of citizenship or election integrity"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:13:07.704Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red flag orders",
+        "ghost guns",
+        "carry permits",
+        "general gun safety statements",
+        "2024 gun law and 2026 repeal question"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "in scope: House member page on malegislature.gov names him for the 8th Plymouth district; a news search shows him on the 2026 general-election ballot",
+        "sponsor list: covered by LegiScan bulk check",
+        "official House profile page on malegislature.gov: nothing on the subject",
+        "campaign site gallagherforrep.com (home, meet, accomplishments pages): nothing on the subject",
+        "Ballotpedia: not reviewed, pages come back empty",
+        "news searches on his name plus gun words and the 2026 repeal question (3 searches): no statement from him found",
+        "blocked: https://www.tauntongazette.com/story/news/local/2024/11/01/bridgewater-raynham-state-representative-democrat-dennis-gallagher-republican-sandy-wright/75847460007/ (HTTP 402)"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:53:12.886Z",
+      "by": "source-collector"
+    }
+  ]
+}

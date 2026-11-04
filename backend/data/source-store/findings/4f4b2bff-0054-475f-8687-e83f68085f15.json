@@ -1,0 +1,548 @@
+{
+  "politician_id": "4f4b2bff-0054-475f-8687-e83f68085f15",
+  "findings": [
+    {
+      "id": "d7675ba70c37b1ef2180d4ca25b67dd2d45fc2291a4b89110e9b23a9af40ba0b",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-117s2938enr/html/BILLS-117s2938enr.htm",
+      "date": "2022-06-23",
+      "date_precision": "day",
+      "instrument_id": "US-S-2938-2022",
+      "act": "yea",
+      "motion": "Motion to Concur in the House amendment to S. 2938 with an amendment (Amdt. No. 5099)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US Senate, Motion to Concur in the House amendment to S. 2938 with an amendment (Amdt. No. 5099), 2022-06-23: yea (tally 65–33); census gate: multi-subject.",
+      "subjects": [
+        "background checks for buyers under 21",
+        "court orders that take guns from a dangerous person (state grants)",
+        "gun trafficking (package)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c20fcb96eb78e01ead82694ac19d878a311409fb4bbbe34cb7a90636662f5d55",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2023252",
+      "date": "2023-06-22",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-44-2023",
+      "act": "nay",
+      "motion": "On the Joint Resolution (H.J. Res. 44)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Joint Resolution (H.J. Res. 44), 2023-06-22: nay (tally 49–50); census gate: none.",
+      "subjects": [
+        "cancel the federal pistol-brace rule"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-118hjres44eh.txt",
+          "sha256": "d04fe1fe2a2512a1932d14b7b93d88fe25ac6712851bc4caa37df31b89101f4d"
+        }
+      }
+    },
+    {
+      "id": "5ad2aa68bfbab048a12d5be66f21722454b3313fb30f46f1745edde9ea11774a",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2024/https://www.senate.gov/legislative/LIS/roll_call_votes/vote1131/vote_113_1_00097.htm",
+      "date": "2013-04-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-649-SAMDT-715-2013",
+      "act": "yea",
+      "motion": "On the Amendment (Manchin Amdt. No. 715) to S. 649 (Safe Communities, Safe Schools Act of 2013)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Amendment (Manchin Amdt. No. 715) to S. 649 (Safe Communities, Safe Schools Act of 2013), 2013-04-17: yea (tally 54–46); census gate: none.",
+      "subjects": [
+        "background checks at gun shows and online sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/CREC-2013-04-11-senate.pdf",
+          "sha256": "5cbf6123ec6d0ee19de0b8748333db8dffcc46d276dd1e80d1692c182b9872fb"
+        }
+      }
+    },
+    {
+      "id": "2aee36e893bb5474cd8d242d7254f09f95571ddd55e723aaadb01a3471855a68",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2024/https://www.senate.gov/legislative/LIS/roll_call_votes/vote1131/vote_113_1_00100.htm",
+      "date": "2013-04-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-649-SAMDT-719-2013",
+      "act": "nay",
+      "motion": "On the Amendment (Cornyn Amdt. No. 719) to S. 649 (Safe Communities, Safe Schools Act of 2013)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Amendment (Cornyn Amdt. No. 719) to S. 649 (Safe Communities, Safe Schools Act of 2013), 2013-04-17: nay (tally 57–43); census gate: none.",
+      "subjects": [
+        "honor carry permits from other states"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/CREC-2013-04-17-senate.pdf",
+          "sha256": "40bb495c367c32e142f8ea953accada60d7a67c47296fcd8b7dd71b653ef3a69"
+        }
+      }
+    },
+    {
+      "id": "cd6242a5f6074c3a522a526b23362688490f30e43baf232ed3fc5e7670715167",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2024/https://www.senate.gov/legislative/LIS/roll_call_votes/vote1131/vote_113_1_00101.htm",
+      "date": "2013-04-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-649-SAMDT-711-2013",
+      "act": "nay",
+      "motion": "On the Amendment (Feinstein Amdt. No. 711) to S. 649 (Safe Communities, Safe Schools Act of 2013)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Amendment (Feinstein Amdt. No. 711) to S. 649 (Safe Communities, Safe Schools Act of 2013), 2013-04-17: nay (tally 40–60); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns",
+        "large magazine limit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/CREC-2013-04-11-senate.pdf",
+          "sha256": "5cbf6123ec6d0ee19de0b8748333db8dffcc46d276dd1e80d1692c182b9872fb"
+        }
+      }
+    },
+    {
+      "id": "c90bdbcf78bf71ec4d53648b4f8ebe188ca331c8dd00e4aa90ea8f004b52d94a",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2025190",
+      "date": "2025-07-01",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2025",
+      "act": "nay",
+      "motion": "On Passage of the Bill (H.R. 1, as Amended)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US Senate, On Passage of the Bill (H.R. 1, as Amended), 2025-07-01: nay (tally 50–50); census gate: multi-subject.",
+      "subjects": [
+        "end the federal tax on suppressors and short-barrelled guns",
+        "budget (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "933f38fead47068980c17a84870807ea58ea3e8c9e8991233064f6f50c0e1b87",
+      "kind": "own-words",
+      "url": "https://bangordailynews.com/2013/04/11/politics/angus-king-presents-his-position-on-gun-control/",
+      "date": "2013-04-11",
+      "date_precision": "day",
+      "passage": "I have therefore concluded that the single most effective step we can take is to expand the current system of criminal background checks to all firearm transactions, with common sense exceptions for transfers within families.",
+      "note": "Op-ed by King: supports background checks on all gun sales with a family exception, without a national registry.",
+      "subjects": [
+        "check every gun buyer",
+        "private sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:23:07.988Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf3f58aea0b292f6294e0b02e0c4719660447221857a570221522c1309e8c1e9",
+      "kind": "own-words",
+      "url": "https://bangordailynews.com/2013/04/11/politics/angus-king-presents-his-position-on-gun-control/",
+      "date": "2013-04-11",
+      "date_precision": "day",
+      "passage": "It is time to limit magazine size to no more than 10 rounds.",
+      "note": "Op-ed by King: supports a 10-round magazine limit.",
+      "subjects": [
+        "limit on large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:23:07.988Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "75af054c1843e97868054d753c633547317fea55976f5f8a017ec1f35078c012",
+      "kind": "own-words",
+      "url": "https://bangordailynews.com/2013/04/11/politics/angus-king-presents-his-position-on-gun-control/",
+      "date": "2013-04-11",
+      "date_precision": "day",
+      "passage": "The proposed ban is really about the appearance of particular firearms rather than what they do — and banning a gun because we don’t like its looks will not, in my opinion, have a significant impact upon gun violence.",
+      "note": "Op-ed by King: explains why he did not back the 2013 assault-weapons ban proposal.",
+      "subjects": [
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:23:07.988Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "524e4209f2886f606090dbe1857601e33174ebc9884db352c9f95fe145a27681",
+      "kind": "own-words",
+      "url": "https://bangordailynews.com/2013/04/11/politics/angus-king-presents-his-position-on-gun-control/",
+      "date": "2013-04-11",
+      "date_precision": "day",
+      "passage": "We should make it a federal crime to traffic guns between states for the purpose of providing them to people who could not purchase them legally and increase the penalties for straw purchasing — buying a gun for transfer to another who is legally prohibited from purchasing it themselves.",
+      "note": "Op-ed by King: backs federal crime for gun trafficking and tougher penalties for straw purchases.",
+      "subjects": [
+        "straw purchases and gun trafficking",
+        "who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:23:07.988Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "50765ca2ad120ef74f42eb09bd4e128eb66006f457b054a155f4d4ac295667c0",
+      "kind": "own-words",
+      "url": "https://www.mainepublic.org/politics/2022-06-03/king-says-he-supports-commonsense-measures-on-gun-reform",
+      "date": "2022-06-03",
+      "date_precision": "day",
+      "passage": "U.S. Senator Angus King of Maine said commonsense measures that don't infringe on 2nd Amendment rights include universal background checks, limiting magazine sizes, and increasing the age to buy a weapon.",
+      "note": "Maine Public's report of King's statements (reporter's wording, not a direct quote): names universal background checks, magazine limits and a higher minimum age.",
+      "subjects": [
+        "check every gun buyer",
+        "limit on large-capacity magazines",
+        "minimum age to buy a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:23:07.988Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "41a919825b8275374c9e5344e1e4534d30a559dfb4bacb3c505b405f5768a036",
+      "kind": "own-words",
+      "url": "https://www.mainepublic.org/politics/2022-06-03/king-says-he-supports-commonsense-measures-on-gun-reform",
+      "date": "2022-06-03",
+      "date_precision": "day",
+      "passage": "\"We've got to protect constitutional right, use due process. We just can't keep sacrificing children as we have in the last several weeks,\" King said.",
+      "note": "Direct quote of King, quoted by Maine Public, on gun reform with due process.",
+      "subjects": [
+        "general gun safety statement",
+        "who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:23:07.988Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0848d126c538871929e18a572f77c7277be3d4805b116f17380d9c32845b6acd",
+      "kind": "own-words",
+      "url": "https://www.wshu.org/2023-10-31/lewiston-shooting-brings-more-scrutiny-of-maine-senators-positions-on-guns",
+      "date": "2023-10-31",
+      "date_precision": "day",
+      "passage": "\"The current rule holds that if the VA finds a veteran incapable of managing their finances and needs a fiduciary, this finding results in their name being submitted to the background check database,\" the statement read.",
+      "note": "King's written statement, quoted in this news report, about a VA background-check reporting rule.",
+      "subjects": [
+        "who may have a gun",
+        "background check database"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:23:07.988Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "42e14098b39b50423de14a15b40641fb3e21d3315cf2e8ad936da401abe3ae31",
+      "kind": "own-words",
+      "url": "https://www.wshu.org/2023-10-31/lewiston-shooting-brings-more-scrutiny-of-maine-senators-positions-on-guns",
+      "date": "2023-10-31",
+      "date_precision": "day",
+      "passage": "Secondly, the finding is made by the VA official rather than a court or other forum involving due process for the veteran.",
+      "note": "Continuation of King's written statement quoted in the report: objects that no court makes the finding.",
+      "subjects": [
+        "who may have a gun",
+        "due process"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:23:07.988Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2784c38ba2f87b9f577f7bfebfe29883c76a5514b59f06c77f9e09d1e88c30c1",
+      "kind": "own-words",
+      "url": "https://foxbaltimore.com/news/nation-world/restricting-lethality-weapons-maine-split-senator-angus-king-proposed-gun-legislation-wake-lewiston-mass-shooting-robert-card-semi-automatic-voluntary-buy-back-bump-stock-ammunition-capacity-magazines",
+      "date": "2023-11-30",
+      "date_precision": "day",
+      "passage": "“We're talking about restricting the lethality of weapons that are designed more for killing people than doing pretty much anything else,” King said.",
+      "note": "King, quoted by WGME, on his GOSAFE bill.",
+      "subjects": [
+        "restrict gas-operated semi-automatic guns",
+        "limit on large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:23:07.988Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bcc0146a9ffd5a482ef813c11ee9f858ac9923bfd9e4f6af2a0bea34d47b8897",
+      "kind": "own-words",
+      "url": "https://foxbaltimore.com/news/nation-world/restricting-lethality-weapons-maine-split-senator-angus-king-proposed-gun-legislation-wake-lewiston-mass-shooting-robert-card-semi-automatic-voluntary-buy-back-bump-stock-ammunition-capacity-magazines",
+      "date": "2023-11-30",
+      "date_precision": "day",
+      "passage": "“We're not talking about taking anybody's guns away,” King said.",
+      "note": "King, quoted by WGME, on the GOSAFE bill.",
+      "subjects": [
+        "restrict gas-operated semi-automatic guns",
+        "voluntary buyback"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:23:07.988Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7fe33e088f2b4a016628ac356fec46d4eaa0723b8ddba12e100f6f4310186622",
+      "kind": "record",
+      "url": "https://www.congress.gov/118/bills/s3369/BILLS-118s3369is.pdf",
+      "date": "2023-11-30",
+      "date_precision": "day",
+      "instrument_id": "US-S-3369-2023",
+      "act": "sponsor",
+      "note": "S. 3369 (GOSAFE Act): introduced by Sen. Heinrich with King as a named co-introducer; restricts possession of certain gas-operated semi-automatic firearms. King announced it with Heinrich (reported by Bangor Daily News).",
+      "subjects": [
+        "restrict gas-operated semi-automatic guns",
+        "limit on large-capacity magazines",
+        "ban on bump stocks",
+        "voluntary buyback"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:23:07.988Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "129e263e008bce57f9f26e271ab931716fd0346453a6eccf6916ddc1daa04b9b",
+      "kind": "record",
+      "url": "https://www.congress.gov/119/bills/s1370/BILLS-119s1370is.htm",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "US-S-1370-2025",
+      "act": "other",
+      "note": "S. 1370 (GOSAFE Act, 119th Congress): introduced by Sen. Heinrich; King is named among the co-sponsors on the introduced text.",
+      "subjects": [
+        "restrict gas-operated semi-automatic guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:23:07.988Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0efe1f5df93634314d3c200896dc5c85660351ff71f64bccd4d6438141467165",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/115th-congress/house-joint-resolution/40",
+      "date": "2017-02-15",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-40-2017",
+      "act": "yea",
+      "motion": "Passed Senate without amendment by Yea-Nay Vote. 57 - 43. Record Vote Number: 66 (Roll 66)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, Passed Senate without amendment by Yea-Nay Vote. 57 - 43. Record Vote Number: 66 (Roll 66), 2017-02-15: yea (tally 57–43); census gate: none.",
+      "subjects": [
+        "rule sending records to gun background check system overturned"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HJRES-40-2017.htm",
+          "sha256": "616db93c5dbc0f8d42ff56878c6d7302412f4feaade1ac2794ac4020fae05e55"
+        }
+      }
+    },
+    {
+      "id": "7b0ece74e62d90b736e118101b5ca4d4a3d5365e9a5c7049fec2dae5e9351c9e",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/117th-congress/senate-bill/3623",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "US-S-3623-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2022-03-10",
+      "note": "co sponsor of US-S-3623-2022 (cosponsor 2022-03-10): S 3623 (117th Congress): Violence Against Women Act Reauthorization Act of 2022.",
+      "subjects": [
+        "failed gun background checks reported to state and tribal police within 24 hours",
+        "special prosecutors for domestic-violence gun prohibitions",
+        "annual report on background check denials"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-S-3623-2022.htm",
+          "sha256": "419c00ae6f2e6419ac37d5acb435277d30262291fcc4f6029d92a54840724e31"
+        }
+      }
+    },
+    {
+      "id": "bc4d8c5d394b8fd0c6878c21f7d001c7298234610622b0e0bfaf94d9ab462625",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/senate-bill/494",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "US-S-494-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2023-02-16",
+      "note": "co sponsor of US-S-494-2023 (cosponsor 2023-02-16): S 494 (118th Congress): Background Check Expansion Act.",
+      "subjects": [
+        "background check required for private firearm sales and transfers",
+        "dealer notice and certification form"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-S-494-2023.htm",
+          "sha256": "0eaaa7cc5526464d22459d097de221fb72ed82b50625475b2294e52829e78e63"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "large-capacity magazines",
+        "background checks",
+        "minimum age",
+        "red-flag and yellow-flag orders",
+        "bump stocks",
+        "who may have a gun",
+        "general gun statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Bangor Daily News 2013 op-ed by King",
+        "Maine Public 2022",
+        "WSHU/Maine Public 2023",
+        "WGME/Fox Baltimore 2023",
+        "congress.gov introduced-bill texts S.3369 and S.1370",
+        "web searches: news on King's gun positions; GOSAFE bill",
+        "blocked: https://www.king.senate.gov/newsroom/press-releases (403)",
+        "blocked: https://www.king.senate.gov/newsroom/press-releases/bangor-daily-news-op-ed-angus-king-presents-his-position-on-gun-control (403)",
+        "blocked: https://www.congress.gov/member/angus-king/K000383 (403; sponsor list not reached, used bill texts instead)",
+        "blocked: https://legiscan.com/legislator/people/angus-king (403)",
+        "blocked: https://www.washingtontimes.com/news/2017/nov/7/angus-king-assault-weapons-simply-semi-automatic-h/ (403)",
+        "Ballotpedia: empty page, not reviewed",
+        "scope: congress.gov bill texts and 2023 news name Sen. King of Maine; no page checked for 2026 ballot status"
+      ],
+      "found": 12,
+      "at": "2026-10-30T22:23:07.988Z",
+      "by": "source-collector"
+    }
+  ]
+}

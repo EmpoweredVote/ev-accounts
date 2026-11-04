@@ -53,6 +53,31 @@ describe('NAMES_INSTRUMENT — what each widening admits', () => {
     expect(NAMES_INSTRUMENT.test('see H. 12 of the report')).toBe(false);
   });
 
+  it('sees an executive order — the tenth widening', () => {
+    // A mayor's primary instrument. Parker's homelessness-response row is seated on EO 7-25.
+    expect(NAMES_INSTRUMENT.test('signed Executive Order No. 7-25 on 19 December 2025')).toBe(true);
+    expect(NAMES_INSTRUMENT.test('created by Executive Order 3-25')).toBe(true);
+    // Refused: the words are required, so the bare number stays out — the R- form below refuses it too.
+    expect(NAMES_INSTRUMENT.test('the order 7-25 took effect')).toBe(false);
+    expect(NAMES_INSTRUMENT.test('between 7-25 and 8-25 of that year')).toBe(false);
+  });
+  it('sees a Philadelphia council bill number — the ninth widening', () => {
+    // The ordinance Mayor Parker's housing row is seated on, as phlcouncil.com and Legistar each spell it.
+    expect(NAMES_INSTRUMENT.test('Council approved Bill #250568, authorising $800 million in H.O.M.E. bonds')).toBe(true);
+    expect(NAMES_INSTRUMENT.test('signed Bill No. 250568 on 22 January 2026')).toBe(true);
+    expect(NAMES_INSTRUMENT.test('signed Bill No.250568 that afternoon')).toBe(true);
+    // Refused: the marker is required, so a bare six-digit number stays out — it is an id, a dollar
+    // figure or a zip+4 fragment as often as it is a bill.
+    expect(NAMES_INSTRUMENT.test('the plan is budgeted at 250568 dollars')).toBe(false);
+    expect(NAMES_INSTRUMENT.test('Bill 250568 passed')).toBe(false);
+  });
+
+  it('the ninth widening did not displace the eighth — both forms still match', () => {
+    // Guard for a real slip: the Philadelphia alternative was first written OVER the Massachusetts
+    // one rather than after it, and only this suite caught it.
+    expect(NAMES_INSTRUMENT.test('Frost authored H.4359 House Amendment #7')).toBe(true);
+    expect(NAMES_INSTRUMENT.test('Council approved Bill #250568')).toBe(true);
+  });
   it('sees a Miami-Dade County resolution — the sixth widening', () => {
     // The three instruments the transportation and housing rows are seated on.
     expect(NAMES_INSTRUMENT.test('She is the prime sponsor of R-551-26, adopted in 2026')).toBe(true);

@@ -1,0 +1,201 @@
+{
+  "id": "TX-HB-2066-2025",
+  "scope": "state:tx",
+  "title": "HB2066 (89th Legislature Regular Session): Relating to the expunction of arrest records and files for certain defendants placed on deferred adjudication community supervision for the unlawful carrying of a handgun.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2066",
+    "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB02066I.htm",
+    "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB02066H.htm"
+  ],
+  "version": "other",
+  "operative_text": "Sec. 1 (amending Code of Criminal Procedure art. 55A.005): A person to whom this subchapter applies is entitled to have all records and files relating to the arrest expunged if: (1)  the person was{+:+} {+(A)+}  tried for and convicted of the offense for which the person was arrested; {+or+} {+(B)+} {+placed on deferred adjudication community +} {+supervision under Subchapter C, Chapter 42A, for the offense for +} {+which the person was arrested;+} and (2)  the offense was committed before September 1, 2021, under Section 46.02(a), Penal Code, as that section existed before that date.",
+  "sponsors": [
+    {
+      "name": "Wesley Virdell",
+      "politician_id": "8925add1-8c61-4d2d-92e8-4314df644187",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Senfronia Thompson",
+      "politician_id": "c783e709-2cef-460e-af1e-8b4f8e8339b0",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Tom Oliverson",
+      "politician_id": "8d339a48-dabd-424c-ac3c-e1e128b68bf8",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "David Cook",
+      "politician_id": "5249613b-40df-4458-830d-cdbb121961dc",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Lacey Hull",
+      "politician_id": "02288122-6afb-46c4-ae9f-a712152b1a73",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Trent Ashby",
+      "politician_id": "754cf14b-7282-46cb-a2d8-5aee3639f003",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Brad Buckley",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d701afd5-c15c-48c4-8f16-54aa142a6769"
+    },
+    {
+      "name": "Ben Bumgarner",
+      "politician_id": "586b4b4d-26f1-449c-90ba-55d4aec48066",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Briscoe Cain",
+      "politician_id": "9d6eae75-9400-46bf-a2f1-34de55db3d49",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Mark Dorazio",
+      "politician_id": "207cb8e4-14f2-49e1-8786-9533dc9b9d31",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Ryan Guillen",
+      "politician_id": "b6ea3b73-5664-462f-bc99-6c377418c34f",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Richard Hayes",
+      "politician_id": "099c7880-e909-4874-a257-cc8ca54ca7bd",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Hillary Hickland",
+      "politician_id": "82968d14-f39b-401d-821c-89825a9811ac",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Andy Hopper",
+      "politician_id": "b266c38d-9763-48d4-bcba-7b44adf79ab9",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Helen Kerwin",
+      "politician_id": "d9dbb8f1-c49a-4a95-8a53-8aaf34809ffe",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Mitch Little",
+      "politician_id": "6c1e1764-f093-44e2-9ec0-90b61457fd45",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "AJ Louderback",
+      "politician_id": "3c083452-8494-4c47-b6e8-327dc24584c7",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Shelley Luther",
+      "politician_id": "9a8cf4be-0543-4cc1-99ea-be5f19cb3402",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Don McLaughlin",
+      "politician_id": "481d7dae-0a6f-4e54-917c-72a2c6be6731",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Terry Meza",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b9cb31c9-15e0-405d-a8a0-d64850bf0955"
+    },
+    {
+      "name": "Joseph Moody",
+      "politician_id": "819c3c06-c958-4e98-bc60-da91e3fb5c24",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Katrina Pierson",
+      "politician_id": "2d902ae4-2c04-4ecc-b9a4-55dccc848c70",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Keresa Richardson",
+      "politician_id": "f7ff0e3b-1d14-4563-8119-7919a5a9cd14",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Nate Schatzline",
+      "politician_id": "14694bb4-489f-4223-9961-d899b51146a7",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Tony Tinderholt",
+      "politician_id": "054a67f5-74b5-469b-bba2-0722834bac12",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Steve Toth",
+      "politician_id": "579a5a6f-c12e-4f01-af74-ec30f6bfbafe",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Ellen Troxclair",
+      "politician_id": "c27708ad-8718-4b73-99c4-c3161c130462",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Cody Vasut",
+      "politician_id": "2f3450e1-7b1c-4ca0-ae62-581bbc2cf606",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-2066-2025.comm-sub.html",
+      "sha256": "f75a6d18fd687ce974953c63ea71e4008f0c73763dfcc24b3eaa67687d2aca69"
+    }
+  }
+}

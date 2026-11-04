@@ -1,0 +1,241 @@
+{
+  "politician_id": "17589403-085b-47af-8f83-7a7cdc3888b0",
+  "findings": [
+    {
+      "id": "fd9a13b3d20fc80c82698d139bdc0b8dd32971c93a8a8bb2a60af6bdd3fb57b7",
+      "kind": "own-words",
+      "url": "https://www.whmi.com/news/article/47862",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "passage": "Secretary of State Jocelyn Benson has even conceded that their ballots were counted and impacted the results of our elections. This is unconscionable and proof that we need voter ID requirements. Michigan’s elections should be decided by the citizens of Michigan alone.",
+      "note": "Statement given to WHMI when he announced a bill requiring proof of citizenship to register. He ties it to non-citizen voting and calls for voter ID requirements.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID requirements",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:27.545Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f98d9ae5093655d7de4b384009a41bd7a9a5b2c3457bb7d8cd51ea2690cc83a1",
+      "kind": "own-words",
+      "url": "https://www.whmi.com/news/article/49876",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "passage": "\"Michigan families are tired of wondering if their vote will still count,\" Rep. Woolford told the House Election Integrity Committee.  \"We've seen documented instances where non-citizens ended up on the voter file, not only here in Michigan, but around the United States.  So it's important we remember every improper ballot cancels out the lawful vote of a Michigan citizen.\"",
+      "note": "Remarks to the House Election Integrity Committee on House Bill 4765 (proof of citizenship to register), as reported by WHMI.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "voter rolls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:27.545Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1ab108eb49a9dd4ecd622ea49a093ff477df859436aaa44b75783d40b8bda697",
+      "kind": "own-words",
+      "url": "https://www.whmi.com/news/article/49876",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "passage": "This is not a partisan issue.  In fact, polls show over 80 percent of Americans, including a large majority of Democrats and independents, support requiring proof of citizenship to vote.",
+      "note": "Committee remarks, as quoted by WHMI. He says broad public support exists for proof of citizenship.",
+      "subjects": [
+        "proof of citizenship to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:27.545Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3b9c85b4fedafe14622a7b68b170094024eb67f93bc901293e4f9955671f8b9a",
+      "kind": "own-words",
+      "url": "https://wwmt.com/news/michigan-politics/michigan-voting-bill-proof-of-citizenship-house-bill-4765-real-id-drivers-license-passport-debate-law",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "passage": "Let us pass House Bill 4765 and send a clear message to our citizens that voting matters. Citizenship matters. That the rule of law matters and that the voice of every lawful vote in this state will be protected,",
+      "note": "Speech in the Election Integrity Committee supporting HB 4765, which requires photo ID plus proof of citizenship to register and vote (WWMT report).",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:27.545Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "42d1cd23216e5f52f61ed5b6de6982956c647f073b3d67049843259ff79b9b8a",
+      "kind": "own-words",
+      "url": "https://www.wnem.com/2026/03/04/michigan-house-committee-debates-bill-requiring-proof-citizenship-register-vote/",
+      "date": "2026-03-03",
+      "date_precision": "day",
+      "passage": "“There needs to be, in our voting, no chaos, no games, and no dilution of citizens and their votes.”",
+      "note": "Committee remarks on HB 4765 as quoted by WNEM.",
+      "subjects": [
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:27.545Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7f94a89c2128c983c0c2dc433e077ae0ef92ae3a5a784d8c78485125bf562e6d",
+      "kind": "own-words",
+      "url": "https://www.whmi.com/news/article/50148",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "passage": "“Michiganders deserve to have their voices respected,” Woolford said. “Unfortunately, without requiring identification, we have been threatening the sanctity of our voting process. The people of Michigan deserve better, and today we delivered. We need to do everything in our power to ensure that our elections are free from foreign interference. An identification requirement should be the bare minimum.”",
+      "note": "Statement after the House passed HB 4765, as published by WHMI.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:27.545Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e379aa723d0408c589b4485a213309ec02809b2f82f0e924e97e7ac79528c831",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4765",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4765-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, Text file header as saved: \"substitute for House BILL NO. 4765 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 4\" ; engrossed House substitute (H-1) passed House 2026-04-14",
+      "note": "Named as prime sponsor ('Jason Woolford (District 50)') on the official bill page; linked to Jason Woolford via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.333Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "520c858db5afc9d85749d27ab3c925fdaa469930c5032a8ea9adc52f5698059e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "yea",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Woolford'), linked to Jason Woolford (district 50) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.333Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "194c9d57c501cdf8e0bf10a1c07a3890c98c8bb29c97004ceb06d884b4ccaa43",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HJR-B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced text only (2025-HIJR-B.htm). The bill page lists no posted text of the House substitute H-1 adopted 2025-04-30 (HJ 41 Pg. 438), so the roll call on adoption (2025-05-01, not adopted 58-48, needs two-thirds) was on text that is not in this file. Quotes below are from the introduced text; section labels are Article II sections as printed.",
+      "note": "Named as co sponsor ('Jason Woolford (District 50)') on the official bill page; linked to Jason Woolford via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.333Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "proof of citizenship to vote",
+        "non-citizen voting",
+        "election integrity laws",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed in office: WHMI articles name him as the Howell state representative",
+        "Michigan House caucus member page (house-caucus.org/woolford, house-caucus.mi.gov/woolford): page does not exist",
+        "blocked: https://michiganadvance.com/2026/04/15/michigan-house-passes-controversial-voter-id-bill-along-party-lines/",
+        "blocked: https://ballotpedia.org/Jason_Woolford",
+        "web search: name plus voter ID / proof of citizenship (3 searches)",
+        "local news: WHMI (3 articles), WNEM, WWMT",
+        "legislature bill pages: not reviewed (votes and sponsorships linked separately)",
+        "campaign site: not found in search results"
+      ],
+      "found": 6,
+      "at": "2026-10-28T22:43:27.545Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:55:46.333Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

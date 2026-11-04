@@ -1,0 +1,280 @@
+{
+  "politician_id": "b207a60b-0879-4135-b6d3-164c5d5c5701",
+  "findings": [
+    {
+      "id": "c538b27c637f8596dbdd703598a7c58a66f179b8eae9e633b71ca8c1d1b2c26d",
+      "kind": "own-words",
+      "url": "https://www.sansabanews.com/node/5252",
+      "date": "2021-06-09",
+      "date_precision": "day",
+      "passage": "“The Texas Senate will soon head back to Austin to complete our conservative priorities including election integrity. With this task before us, I am launching a campaign to be commissioner of the Texas General Land Office.” - Sen. Buckingham",
+      "note": "Quoted in a Sansaba news article announcing her land commissioner campaign. She names election integrity as unfinished Senate business. No detail on ID or citizenship rules.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:14.799Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1604add68c3508fae5ca8402f9b54d95e5ff97b0ad9662f5260b8b16ea373d0c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB7",
+      "date": "2021-05-17",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-7-2021",
+      "act": "author",
+      "motion": "SB 7, election integrity and security bill: listed among the Senate authors, offered floor amendment FA25, and appointed to the conference committee on 2021-05-17",
+      "note": "The bill history lists her as an author of SB 7, relating to election integrity and security, including preventing fraud in the conduct of elections and creating criminal offenses. It also shows a floor amendment by her (FA25) and her appointment as a Senate conferee.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:14.799Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7629cbde7550938836d4fd41cee771bede270d2a4842cde8a59551ca6953701a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+      "date": "2021-08-27",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "author",
+      "motion": "SB 1 (87th 2nd called session), election integrity and security: listed as coauthor; appointed Senate conferee on 2021-08-27",
+      "note": "The bill history lists her as a coauthor of SB 1, relating to election integrity and security, and as one of five Senate conferees appointed on 2021-08-27. Her own recorded vote on the conference report was not readable.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:14.799Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c060db1a57a725c95f594ec5f318a542dfd1420b87c6a032a1dc2196ce2653dc",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/87r/pdf/87RSJ04-01-F.PDF",
+      "date": "2021-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-7-2021",
+      "act": "yea",
+      "motion": "SB 7 (87th regular session) on third reading and final passage in the Senate, passed 18 to 13",
+      "note": "The Senate Journal lists her among the 18 yeas on the motion to take up CSSB 7 on third reading and on passage. The bill is described as relating to elections, including election integrity and security.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:14.799Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6e11e98e21a3307a4cdaa876c3a4b3777214f23e762c2f18fd5f4ce56d619517",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/87r/pdf/87RSJ05-29-F.PDF",
+      "date": "2021-05-29",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-7-2021",
+      "act": "yea",
+      "motion": "SB 7 (87th regular session), adoption of the corrected conference committee report in the Senate, 18 to 13",
+      "note": "The Senate Journal for 2021-05-29 (the vote ran into the early hours of 2021-05-30) lists her among the 18 yeas adopting the conference committee report on SB 7.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:14.799Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b53dda0bf6e86400ea84831a9950bc4ba1259e6580cd0b82ead1c7a46b35cfb2",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/872/pdf/87S208-31-F.PDF",
+      "date": "2021-08-31",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "yea",
+      "motion": "SB 1 (87th 2nd called session), adoption of the conference committee report in the Senate, 18 to 13",
+      "note": "The Senate Journal lists her among the 18 yeas adopting the conference committee report on SB 1, the election integrity and security bill.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:14.799Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5c595f709285f9d7b45fa3a7199ea7dd4f4c1b28a638de24995413ff00eacb44",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB1927",
+      "date": "2021-05-24",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-1927-2021",
+      "act": "yea",
+      "motion": "Adopt conference committee report on HB 1927",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX Senate, Adopt conference committee report on HB 1927, 2021-05-24: yea (tally 17–13); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/TX_HB1927F.htm",
+          "sha256": "4304d02a805a1d242de73ddfcf222aafa676bbf58aab71a8fda237b3e867d3f3"
+        }
+      }
+    },
+    {
+      "id": "cf45b065aaaea6da04cfe486d384e55126e06254f331fa91705e482845c4e7b5",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB1500",
+      "date": "2021-05-24",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-1500-2021",
+      "act": "yea",
+      "motion": "Read 3rd time",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "TX Senate, Read 3rd time, 2021-05-24: yea (tally 28–2); census gate: near-unanimous.",
+      "subjects": [
+        "emergency orders may not shut gun and ammunition businesses",
+        "governor can no longer suspend firearm sales in a disaster",
+        "cities lose power to regulate guns in riots or disasters"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-1500-2021.enrolled.html",
+          "sha256": "cef9b24c3a583cde7bb00e38d2b138b097c8192ec180b32f874ad81233deb4ee"
+        }
+      }
+    },
+    {
+      "id": "e57c92f7cc62307e736314de5ed47321f7435482805ff514a7a9ca00930a6d89",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB2622",
+      "date": "2021-05-24",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-2622-2021",
+      "act": "yea",
+      "motion": "Read 3rd time",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX Senate, Read 3rd time, 2021-05-24: yea (tally 17–13); census gate: none.",
+      "subjects": [
+        "no state help enforcing federal gun registry, license, background-check or confiscation rules",
+        "cities lose state funds if they help"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-2622-2021.enrolled.html",
+          "sha256": "0b56d10ce6535f540220291a769936dae432e67b8eafd35a9299aa2d078e6d8f"
+        }
+      }
+    },
+    {
+      "id": "ec902701ef604ecf89c5cd89f14aceab12643c19d0ce5c40c7645cf70dcf2ece",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB20",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-20-2021",
+      "act": "author",
+      "motion": "author sponsor, LegiScan sponsor list",
+      "note": "author sponsor of TX-SB-20-2021 (LegiScan sponsor list): SB20 (87th Legislature Regular Session): Relating to carrying and storing a handgun or handgun ammunition by a hotel guest..",
+      "subjects": [
+        "hotels may not ban guests' guns in rooms or vehicles",
+        "hotel guests with handgun licenses shielded from trespass charges"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-20-2021.enrolled.html",
+          "sha256": "0fad1b08f164e0fea7293d6fc72a9631dd6b308638cdd4bc24c1dc455132cb5f"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia page https://ballotpedia.org/Dawn_Buckingham (confirms Texas Land Commissioner, term ends 2027, on the 2026-11-03 general-election ballot; nothing on the subject)",
+        "Texas Legislature Online bill history pages for SB 1 (87th 2nd called session) and SB 7 (87th regular session)",
+        "campaign site https://dawnbuckingham.com (nothing on the subject)",
+        "official Land Office site https://www.glo.texas.gov (nothing on the subject)",
+        "a Point of View Ministries profile page https://pointofview.net/alternate-users/2447/ (biography only; nothing on the subject)",
+        "one news search on her name plus voter ID and election-integrity words (one lead, a 2021 campaign-launch article, saved)",
+        "Texas Senate Journals (2021-04-01, 2021-05-29, 2021-08-31) read for the recorded votes on SB 7 and SB 1"
+      ],
+      "found": 6,
+      "at": "2026-10-28T15:15:14.799Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

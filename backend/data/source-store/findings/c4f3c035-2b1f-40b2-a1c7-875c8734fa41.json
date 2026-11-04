@@ -1,0 +1,146 @@
+{
+  "politician_id": "c4f3c035-2b1f-40b2-a1c7-875c8734fa41",
+  "findings": [
+    {
+      "id": "ba2491e5cc4b6d3865821e9a0436cbb38edb34c377533da9871d44f24764cd00",
+      "kind": "own-words",
+      "url": "https://www.newstribune.com/news/2022/mar/11/house-passes-voter-id-initiative-petition-bills/",
+      "date": "2022-03-11",
+      "date_precision": "day",
+      "passage": "\"This is not good for Missouri,\" said Rep. David Smith, D-Columbia. \"It's not necessary.\"",
+      "note": "Quoted by the Jefferson City News Tribune in a story on House passage of voter ID and initiative-petition bills. The paper names him as Rep. David Smith of Columbia; identity with David Tyson Smith is by seat and town, not by full name. Same quote also in Macon Home Press 2022-03-21.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:12:50.121Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e076c8b48278b31632ee890048920af3952a61ffb83895b5d23bfa476c64b17f",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Smith 46'), linked to David Tyson Smith (district 46) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.751Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "556497fc48f8627c070b046d932bed845d802c5a26818fab6ea2c498bfd7a812",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills251/sumpdf/HB0300I.pdf",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-300-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, HB 300 as introduced: text not found (LR number not found); official summary read",
+      "note": "Named as prime sponsor ('Smith (46)') on the official bill text, summary or journal; linked to David Tyson Smith via the official 2025 member roll of the House (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.751Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9302fa7bcbb9205f150b8afd9e072506397909e3ae094c01acad3b2775cdebe0",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn052.pdf",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "MO-HCR-48-2026",
+      "act": "nay",
+      "motion": "House: HCR 48 read the third time and passed",
+      "note": "House roll call as printed ('Smith 46'), linked to David Tyson Smith (district 46) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.231Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "documentary proof of citizenship",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "newstribune.com 2022-02-12 and 2022-03-11 articles",
+        "maconhomepress.com 2022-03-21 article",
+        "northwestmoinfo.com 2022-02-11: paraphrase only, no quote",
+        "939theeagle.com article: 404 (not found)",
+        "On the Record (0 appearances)",
+        "Ballotpedia: blocked, not tried per instructions",
+        "House member pages on the official House site: not fetched (off-limits)",
+        "newsroom caucus site: not fetched (single collector)",
+        "web search: name plus subject words, no own-words result"
+      ],
+      "found": 1,
+      "at": "2026-11-04T05:12:50.121Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-04T14:10:53.751Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:14:55.231Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

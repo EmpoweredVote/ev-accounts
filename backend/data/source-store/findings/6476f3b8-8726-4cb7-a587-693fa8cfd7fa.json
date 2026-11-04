@@ -1,0 +1,54 @@
+{
+  "politician_id": "6476f3b8-8726-4cb7-a587-693fa8cfd7fa",
+  "findings": [
+    {
+      "id": "7501a0cf8c43461afe7a37ecf643de7fa050e0f9c764b0bc81ce49ce0fc7c2e1",
+      "kind": "own-words",
+      "url": "https://www.ambrosioforcongress.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Ensure government fulfills its primary function of keeping citizens safe by supporting law enforcement, securing the nation, and defending the right to self-defense.",
+      "note": "Issues page of his campaign site, under public safety: lists defending the right to self-defense; no gun law is named. Page undated; fetched 2026-10-30.",
+      "subjects": [
+        "right to self-defense",
+        "general gun rights statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:43:29.379Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on gun types or magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "general Second Amendment statements",
+        "sponsored gun bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.ambrosioforcongress.com (home, /issues, /press_room; one line on self-defense saved, no gun-law positions)",
+        "https://www.ballotready.org/people/ralph-f-ambrosio (confirms 2026-11-03 general election, NY-20)",
+        "https://www.wamc.org/news/2026-10-26/ralph-ambrosio-ny-20-congressional-race-republican-candidate (nothing on guns; his 'SAFE Act' remarks there are about criminal-justice rules)",
+        "https://spectrumlocalnews.com/nys/capital-region/news/2026/01/20/republican-announces-plans-to-challenge-tonko (nothing on the subject)",
+        "web searches (2): no gun statement found",
+        "legislator sponsor list: not applicable, not a sitting legislator",
+        "Ballotpedia: not reviewed (known to return empty)",
+        "not reviewed: https://www.ralphforcongress.com and ralphambrosio.com (no campaign content / did not resolve)"
+      ],
+      "found": 1,
+      "at": "2026-10-30T22:43:29.379Z",
+      "by": "source-collector"
+    }
+  ]
+}

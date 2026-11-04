@@ -1,0 +1,75 @@
+{
+  "politician_id": "0b8f74ff-347b-477d-87d4-7ce5b9565104",
+  "findings": [
+    {
+      "id": "7316fb50152e2b7a8530867ac9f43b772ca15563628560c4b295a705220592ba",
+      "kind": "own-words",
+      "url": "https://www.burks4congress.com/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "“Wisconsin's local municipalities lack authority over firearm legislation; that power resides with state and federal officials. The gridlock in Washington regarding gun safety is staggering. Milwaukee's challenges cannot be met without federal partnership.”",
+      "note": "Quote featured on his campaign home page and attributed there to Mayor Cavalier Johnson, January 2026. Words of another person that the campaign chose to publish; not written by the candidate. Page is undated.",
+      "subjects": [
+        "federal action on gun laws",
+        "gun safety legislation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:06:55.239Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1225b87c2f6cf5679493293900da549ede8fdb690731a3cb92eaa5a70bbee70a",
+      "kind": "own-words",
+      "url": "https://www.ballotready.org/people/arthur-burks",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Burks supports comprehensive gun safety legislation and funding for violence interruption programs that address crime at its roots.",
+      "note": "Issue summary on his BallotReady profile, written in the third person under 'Criminal Justice / Public Safety'. Author not stated on the page; may be candidate-submitted. Page is undated.",
+      "subjects": [
+        "gun safety legislation",
+        "violence interruption programs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:06:55.239Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "repeal of gun laws",
+        "general gun safety law statement"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site burks4congress.com (home page; /issues, /priorities, /about return 404)",
+        "BallotReady profile",
+        "The Ballot Brief profile",
+        "ivoterguide.com profile (2nd Amendment question: did not answer)",
+        "blocked: https://wisconsinexaminer.com/voter-guides/contests/2026-general-4th-cd/",
+        "Ballotpedia: not reviewed (not fetched)",
+        "congress.gov sponsorships: not applicable, not a sitting member",
+        "news searches on name plus gun words (2 searches): nothing further; WUWM says he did not answer its questions (via search result)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T15:06:55.239Z",
+      "by": "source-collector"
+    }
+  ]
+}

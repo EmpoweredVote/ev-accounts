@@ -1,0 +1,246 @@
+{
+  "politician_id": "9081c52c-92ea-4a75-84b1-96305fafd333",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "cb3baf09c53c562a29fc6949e5b4ab6d205efe06c8bc5c49b52c0c2e452261ad",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H3990",
+      "date": "2021-05-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-3990-2021",
+      "act": "sponsor",
+      "note": "H.3990 (192nd session), An Act granting noncitizen permanent residents in the town of Warwick the right to vote in municipal elections. A local home-rule petition filed by Rep. Whipps and Sen. Comerford at the vote of the town. It was referred to the Joint Committee on Election Laws. The 5/27/2021 date is the first date on the bill history page and is the filing date as read from that page.",
+      "subjects": [
+        "non-citizen voting in local elections",
+        "voter eligibility by citizenship"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:16:51.973Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fa8087771668164fa41cebcce4ea1837cefe0d5dda9c72df7aa9612f3319e886",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "nay",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: nay (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6eae9de37bdf534b21a6f61732cfdc3d406087959e7c425d4b36a7c27217b9d8",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4670",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4670-2017",
+      "act": "nay",
+      "motion": "On acceptance of the conference report (Yea and Nay No. 389)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, On acceptance of the conference report (Yea and Nay No. 389), 2018-06-28: nay (tally 133–15); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders to remove guns from people at risk of harming self or others",
+        "protection order added as a bar to gun licenses",
+        "stun gun rules and locked storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4670-2017.introduced.pdf",
+          "sha256": "6b37958358a3f01548ef0d16c386b3caaf5993d5c100f88279ff5b45ad1fe098"
+        }
+      }
+    },
+    {
+      "id": "c9c404cfc9291a34e25a129a7905772ff2df6aac62ae893420416f6438576276",
+      "kind": "own-words",
+      "url": "https://gazettenet.com/2024/09/01/locals-react-to-new-state-gun-law-56775274/",
+      "date": "2024-09-01",
+      "date_precision": "day",
+      "passage": "“As a gun owner who is proficient, safe and licensed, I was disappointed with this bill,” Whipps told the Greenfield Recorder in a statement. “I don’t feel it was necessary and from the contacts I received from constituents, they didn’t think it was necessary either. I also don’t think that it will address gun violence in the Commonwealth.",
+      "note": "Statement to the Greenfield Recorder, quoted by the Daily Hampshire Gazette. Date is the article's publication date; the statement's own date is not given. She says she did not think the 2024 gun law was needed and does not expect it to reduce gun violence.",
+      "subjects": [
+        "2024 Massachusetts gun law",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:56:07.289Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3069610de2bbd84af373d54fe918124a29b50dc4767d6c43cb59c1a501e853eb",
+      "kind": "own-words",
+      "url": "https://gazettenet.com/2024/09/01/locals-react-to-new-state-gun-law-56775274/",
+      "date": "2024-09-01",
+      "date_precision": "day",
+      "passage": "“The prohibitions and barriers placed on out of state hunters, business owner[s] who live outside of Massachusetts and seasonal residents are not terribly welcoming,” she added. “The added burdens placed on businesses, sportsmen and women and law-abiding citizens will have zero effect on violent crime. Also, there’s no money attached to this bill which makes the work of implementing regulations and issuing licenses even more slowed than it is now.”",
+      "note": "Same statement, quoted by the Daily Hampshire Gazette (date is publication date). She objects to carry and licence limits for non-residents and to the burden on gun owners and businesses, and says licence processing is slow.",
+      "subjects": [
+        "carry permits and licences",
+        "2024 Massachusetts gun law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:56:07.289Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3c14723fa80618c564c5f3434fd5d74d6f6f19ce6ae82f62b4644261950eaeb3",
+      "kind": "own-words",
+      "url": "https://gazettenet.com/2024/09/01/locals-react-to-new-state-gun-law-56775274/",
+      "date": "2024-09-01",
+      "date_precision": "day",
+      "passage": "“I would guess for every contact in favor of this bill I received 50 in opposition,” she wrote.",
+      "note": "Same statement, quoted by the Daily Hampshire Gazette (date is publication date). She describes the mail she received from constituents on the bill.",
+      "subjects": [
+        "2024 Massachusetts gun law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:56:07.289Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Susannah_Whipps names her as 2nd Franklin District incumbent on the November 3, 2026 general-election ballot",
+        "On the Record (0 appearances)",
+        "campaign site: https://www.susannahwhipps.com is a parked page that redirects to /lander, nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "MA Legislature sponsored bills, 192nd, 193rd, 194th sessions (https://malegislature.gov/Legislators/Profile/SLG1): one bill on the subject, no voter ID or proof of citizenship bill",
+        "not reviewed: official House page text, social media (facebook.com/repwhipps, youtube.com/@susannahwhipps9169)",
+        "not searched: news search, web search budget used up for the session"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:16:51.973Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature sponsored-bills page https://malegislature.gov/Legislators/Profile/SLG1/194/Bills/Sponsored?isUpdate=True (confirms 2nd Franklin District; only election-related items are H.882 on political designations and S.3026 on a school district vote, none on ID or citizenship)",
+        "Ballotpedia https://ballotpedia.org/Susannah_Whipps (on the 2026-11-03 general election ballot; nothing on the subject)",
+        "two news searches on her name plus subject words (no own words found)",
+        "campaign site: not reviewed, no URL found",
+        "official 2022 amendment roll call already on file"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:30:49.978Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry permits and wait times",
+        "minimum age",
+        "2024 gun law",
+        "general gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "blocked: https://www.whippsforstaterep.com (site does not exist)",
+        "blocked: https://home.recorder.com/Firearm-age-limits-in-new-state-law-see-pushback-locally-59724461 (curl returned nothing, fetch tool refused connection)",
+        "Ballotpedia (not reachable by fetch tool, not reviewed)",
+        "news page https://gazettenet.com/2024/09/01/locals-react-to-new-state-gun-law-56775274/ (own statement quoted)",
+        "news page https://www.nbcboston.com/news/local/house-approves-overhaul-of-mass-gun-laws-on-120-38-vote/3164591/ (only reports her vote, no words of hers)",
+        "web searches on name plus gun, Second Amendment, 2024 gun law",
+        "2026 status: not checked beyond news listing her as a sitting member"
+      ],
+      "found": 3,
+      "at": "2026-11-01T01:56:07.289Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "politician_id": "c63201eb-c3e1-4bcd-b24a-995e9d367fc3",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Christopher_Lancia says he is on the Nov 3, 2026 general-election ballot for U.S. House CT-3 (the Aug 11 primary was canceled and he advanced); https://theballotbrief.com/candidate/christopher-lancia-ct confirms",
+        "On the Record (0 appearances for this politician id; name search for Christopher Lancia also 0)",
+        "campaign site https://lanciaforcongress2026.org/ (home page read in full via curl; nothing on the subject; /issues and /about return not found)",
+        "Ballotpedia (no Candidate Connection survey completed; nothing on the subject)",
+        "https://ivoterguide.com/candidate/88295/race/34159/election/1495 (photo ID and immigration questions marked 'Did not answer'; nothing on the subject)",
+        "https://theballotbrief.com/candidate/christopher-lancia-ct (nothing on the subject)",
+        "https://ctcommonsense.substack.com/p/who-is-this-chris-lancia-guy (podcast page, no quotes from him on the subject)",
+        "news search on name plus voter ID / SAVE Act / election integrity / proof of citizenship (nothing naming him)",
+        "congress.gov / legislature bill pages: not applicable, never held legislative office",
+        "not reviewed: campaign Facebook, Instagram and TikTok accounts (linked from campaign site, not fetched)",
+        "not reviewed: the substack podcast episode audio/video itself"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:32:55.777Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Christopher_Lancia (confirms on the 2026-11-03 general ballot for CT-3; no survey answers; nothing on the subject)",
+        "campaign site https://lanciaforcongress2026.org/ (home and about text; nothing on the subject; the /issues page returned no text)",
+        "https://theballotbrief.com/candidate/christopher-lancia-ct (nothing on the subject)",
+        "https://ctmirror.org/2026/10/22/in-cts-3rd-district-delauro-eyes-gavel-as-lancia-seeks-change/ (nothing on the subject)",
+        "https://www.wshu.org/connecticut-news/2026-05-06/election-security-ct-federal-lawmakers (does not mention him)",
+        "https://ctcommonsense.substack.com/p/who-is-this-chris-lancia-guy (third-party blog, not his words; nothing on the subject)",
+        "not a sitting legislator: no bill record to search",
+        "one web search on name plus subject words: nothing on the subject",
+        "no debate or forum video found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:27:42.243Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

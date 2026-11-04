@@ -1,0 +1,31 @@
+{
+  "politician_id": "a89982a7-85d2-421f-9355-c255b898899c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red flag orders",
+        "general statement on gun rights or gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status check: https://www.pollsmax.com/2026-us-house/indiana-4/ names him as the challenger in the 2026 Indiana 4th District race",
+        "campaign site https://drewcox.org (home, The Issues, Drew's Story, Our District, political-corruption, wars-and-veterans): nothing on the subject; the issues page has only a general line on constitutional rights and civil liberties",
+        "Ballotpedia https://ballotpedia.org/Drew_Cox: page came back empty to the fetch tool",
+        "web search on name plus gun words: only a third-party summary (Prediction Edge) that paraphrases his view; not his own words, not saved",
+        "blocked: https://indianacapitalchronicle.com/voter-guides/contests/congressional-district-4/ (403)",
+        "blocked: https://bluevoterguide.org/district/IN/Indiana_District_4/46482/778 (403)",
+        "blocked: https://www.wdrb.com/news/national/drew-cox-wins-democratic-nomination-for-u-s-house-in-indianas-4th-congressional-district/article_7eac7710-168b-5065-bf3e-af449a78c999.html (redirected away)",
+        "legislative record: not a legislator, no sponsored bills"
+      ],
+      "found": 0,
+      "at": "2026-10-30T23:57:16.807Z",
+      "by": "source-collector"
+    }
+  ]
+}

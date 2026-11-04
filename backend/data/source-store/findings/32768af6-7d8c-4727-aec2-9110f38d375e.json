@@ -1,0 +1,48 @@
+{
+  "politician_id": "32768af6-7d8c-4727-aec2-9110f38d375e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote"
+      ],
+      "places": [
+        "status: out of scope, not a sitting member of Congress and not on the 2026 ballot; the only Scott Turner found is the U.S. Secretary of Housing and Urban Development (Senate confirmed 55-44 on 2025-02-05), per https://ballotpedia.org/Scott_Turner (positive control: page names him in that office; his only run for Congress was a 2006 special election he lost)",
+        "On the Record (0 meetings)",
+        "Ballotpedia (fetched with curl)",
+        "one web search: Scott Turner member of Congress 2026",
+        "not reviewed: official site, congress.gov and subject searches, because the person is out of scope and the identity does not match the record"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:38:38.548Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "status: not a sitting member of Congress; the only Scott Turner found in public office is the U.S. Secretary of Housing and Urban Development (confirmed 2025-02-05) and former Texas House District 33 member (2013-2017); the brief's office does not match, so no Congress record was searched",
+        "On the Record (0 appearances for this person)",
+        "Ballotpedia https://ballotpedia.org/Scott_Turner (confirms the HUD Secretary and former Texas House member identity; no statements on the subject)",
+        "two web searches: one for a Scott Turner in the 119th Congress (found none), one for his Texas House record on voter ID (found no vote or statement by him)",
+        "not reviewed: Texas Legislature Online roll calls for 2013-2015 voter-ID bills; not checked because the identity does not match the brief",
+        "not reviewed: official HUD pages and social accounts"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:25:09.346Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

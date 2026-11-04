@@ -1,0 +1,169 @@
+{
+  "politician_id": "8566674a-3a3b-4c88-bba0-c9f42e4ff810",
+  "findings": [
+    {
+      "id": "a9bc43bb7b7006784547bc030a71dc118ed95e53c3d9b326daf49e6bfff39511",
+      "kind": "own-words",
+      "url": "https://sjvsun.com/?p=103462",
+      "date": "2026-03",
+      "date_precision": "month",
+      "passage": "This is simple. This is common sense. This is not partisan. This is absolutely what Californians demand from all walks of life, from all geographical areas, from all wealth classes and certainly from all parties. So we look forward to getting this on the ballot. Congratulations to the hard work of the men and women that got this there, and let’s get it across the finish line in November.",
+      "note": "Quoted by The San Joaquin Valley Sun at a Fresno rally for the California Voter ID initiative (rally held 2026-03-03 per ABC30). She speaks about the initiative that would require ID to vote and verify voter lists.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID ballot initiative",
+        "voter-roll maintenance"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:07:36.044Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b0aa017e14d61609a2a1aeb91415f079a41003c46e0783c67886805f748ae8c2",
+      "kind": "record",
+      "url": "https://www.reformcalifornia.org/events/ca-voter-id-initiative-signature-drive---visalia-10-25-25",
+      "date": "2025-10-25",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Listed as CA Voter ID Regional Co-Chair at a Visalia signature-gathering event for the voter ID initiative",
+      "note": "Event page lists her as regional co-chair of the voter ID initiative campaign, for an event held in Visalia on 2025-10-25.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID ballot initiative"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:07:36.044Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "67aa5ac322cb691e648c897123c31c531240ba11a84988dc45a36812eca22612",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab25",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-25-2025",
+      "act": "yea",
+      "motion": "Assembly Elections Committee: do pass and re-refer to Judiciary (failed 2-5); also voted aye on reconsideration (failed 2-5)",
+      "note": "AB 25, California Voter ID and Election Integrity Act of 2025, would require voter ID and documentary proof of citizenship to register. Source is CalMatters Digital Democracy. She voted aye both times; the bill then died in committee.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:07:36.044Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e18577db883d239e5bc856d5899ac868984b9f4df8b2ba008179994c4397288e",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "nay",
+      "motion": "Assembly Elections Committee: do pass as amended and re-refer to Appropriations",
+      "note": "AB 1116 (Berman), voter registration, would let people register online without a California driver license or state ID by giving the last four digits of their Social Security number. Source is CalMatters Digital Democracy. She voted no.",
+      "subjects": [
+        "ID to register to vote",
+        "voter registration without a state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:07:36.044Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f693b0c6dec41055d6182a4bc221c51b351fd761625ca7866cbe625c4257b938",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "nay",
+      "motion": "Assembly floor: third reading, AB 1116 passed",
+      "note": "AB 1116 (Berman), voter registration, would let people register online without a California driver license or state ID by giving the last four digits of their Social Security number. Source is CalMatters Digital Democracy. She voted no.",
+      "subjects": [
+        "ID to register to vote",
+        "voter registration without a state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:07:36.044Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6ef49304c35806c2d136901ef2023658b6bdfb42f1624df71f93081a6a86732a",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-25",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "nay",
+      "motion": "Assembly floor: concurrence in Senate amendments, AB 1116 passed",
+      "note": "AB 1116 (Berman), voter registration, would let people register online without a California driver license or state ID by giving the last four digits of their Social Security number. Source is CalMatters Digital Democracy. She voted no.",
+      "subjects": [
+        "ID to register to vote",
+        "voter registration without a state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:07:36.044Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID ballot initiative",
+        "voter-roll maintenance",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms Assembly District 33 seat, on the 2026 general-election ballot, advanced from the June 2, 2026 primary; nothing on the subject)",
+        "CalMatters Digital Democracy bill page for AB 25 (committee vote record; the Internet Archive copy of the leginfo vote page returned the Digital Democracy page instead)",
+        "CalMatters Digital Democracy bill page for AB 1116 (voter registration by last four digits of Social Security number; vote lists show her no votes)",
+        "SB 1174 (2024): not reviewed, it passed before her term began on 2024-12-02",
+        "news coverage: SJV Sun, ABC30 (no direct Macedo quote), Reform California event page",
+        "blocked: https://ad33.asmrc.org/ (HTTP 403)",
+        "blocked: https://a33.asmrc.org/ (host not found)",
+        "CalMatters Digital Democracy legislator page (404)",
+        "Wikipedia (nothing on the subject)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T16:07:36.044Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

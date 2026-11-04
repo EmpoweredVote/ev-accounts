@@ -32,6 +32,8 @@
 import { Readability } from '@mozilla/readability';
 import { parseHTML } from 'linkedom';
 import { fetchCongressPageText } from './adapters/congressAdapter.js';
+import { fetchIgaPageText } from './adapters/igaAdapter.js';
+import { fetchMaRollCallText } from './adapters/maLegislatureAdapter.js';
 
 /**
  * Honest user-agent. Names Empowered Vote, links a public policy page, and
@@ -746,6 +748,13 @@ export interface VerificationFetchDeps {
   wayback?: (url: string) => Promise<string | null>;
   /** Source-specific tier — congress.gov official API. Runs before the generic tiers. */
   congressAdapter?: (url: string) => Promise<string | null>;
+  /** Source-specific tier — Indiana General Assembly official API (iga.in.gov). Runs before the generic tiers. */
+  igaAdapter?: (url: string) => Promise<string | null>;
+  /**
+   * Source-specific tier — Massachusetts House roll-call PDFs (malegislature.gov/RollCall/…). A live
+   * fetch of a public site, so it runs AFTER the robots gate, before the generic tiers.
+   */
+  maRollCallAdapter?: (url: string) => Promise<string | null>;
 }
 
 /**
@@ -762,6 +771,8 @@ export function createVerificationFetchSession(
   const httpFetch = deps.httpFetch ?? fetchViaHttp;
   const wayback = deps.wayback ?? fetchViaWayback;
   const congressAdapter = deps.congressAdapter ?? fetchCongressPageText;
+  const igaAdapter = deps.igaAdapter ?? fetchIgaPageText;
+  const maRollCallAdapter = deps.maRollCallAdapter ?? ((url: string) => fetchMaRollCallText(url, { userAgent: EMPOWERED_VOTE_UA }));
 
   return {
     async fetch(url: string): Promise<string> {
@@ -773,6 +784,17 @@ export function createVerificationFetchSession(
       try {
         const t = await congressAdapter(url);
         if (t && looksLikeRealPage(t)) return t;
+      } catch {
+        /* fall through to the generic ladder */
+      }
+      // Source-specific tier — iga.in.gov through the MyIGA API, under our own token and the client
+      // identity the state's API documentation prescribes (adapters/igaAdapter.ts). Same placement and
+      // the same null-means-fall-through contract as the congress.gov tier above.
+      try {
+        const t = await igaAdapter(url);
+        // No length gate: the adapter returns null for the JavaScript shell, and a small chamber's
+        // roll-call render can be shorter than MIN_REAL_PAGE_CHARS.
+        if (t && t.trim()) return t;
       } catch {
         /* fall through to the generic ladder */
       }
@@ -788,6 +810,15 @@ export function createVerificationFetchSession(
           /* fall through to the distinct signal */
         }
         throw new RobotsDisallowedError(url);
+      }
+
+      // Source-specific tier — a Massachusetts House roll-call PDF, read into the party-free render
+      // its vote lines verify against (maRollCallEvidence.ts). Null falls through to the plain tier.
+      try {
+        const t = await maRollCallAdapter(url);
+        if (t && t.trim()) return t;
+      } catch {
+        /* fall through to the generic ladder */
       }
 
       const candidates: string[] = [];

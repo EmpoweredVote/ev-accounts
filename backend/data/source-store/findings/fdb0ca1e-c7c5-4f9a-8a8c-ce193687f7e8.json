@@ -1,0 +1,96 @@
+{
+  "politician_id": "fdb0ca1e-c7c5-4f9a-8a8c-ce193687f7e8",
+  "findings": [
+    {
+      "id": "6ca033e5f9b17e08b643850cc26275b701dd5bef7fe18b0cc38b1cc36df466a3",
+      "kind": "own-words",
+      "url": "https://www.ashleybanksworksforyou.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I also support transparency in our election systems so voters can have confidence in the electoral process. This includes advocating for clear election procedures, public accountability, voter education, and open communication about voter identification requirements and other election laws so every eligible voter understands their rights and responsibilities before casting a ballot.",
+      "note": "Campaign home page, civic engagement section. She supports clear election procedures and voter education, including open communication about voter identification requirements. It does not say what the requirements should be. The page carries no date, so the year is the date it was read.",
+      "subjects": [
+        "voter ID information and education",
+        "election transparency"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T16:40:48.206Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fd325bce313d80edc992b069f8f1c2c195f2fc52b816b03065ad242ef05604d1",
+      "kind": "own-words",
+      "url": "https://www.ashleybanksworksforyou.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "As your representative, I will encourage civic engagement by supporting voter registration efforts, expanding access to nonpartisan civic education, and helping residents better understand how to participate in local, state, and federal elections.",
+      "note": "Campaign home page, same section. She supports voter registration efforts and civic education. No mention of proof of identity or citizenship. The page carries no date.",
+      "subjects": [
+        "voter registration efforts"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T16:40:48.206Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope check: https://ballotpedia.org/Ashley_Banks (fetched via curl) names her as an independent write-in candidate for U.S. House Illinois District 2, general election November 3, 2026, listed in the general-election box; the same page also carries the category 'U.S. House candidate (Withdrew), 2026' and a finance row 'Withdrew general'. Withdrawal date not stated; scope unclear, flagged for review",
+        "On the Record (0 appearances for this politician id)",
+        "campaign site https://www.ashleybanksworksforyou.com/ (pages read: home, our-stance-on-key-issues, proposed-policies, why-should-you-vote-independent, about, behind-the-scenes, events-initiatives, experience, contact): nothing on the subject",
+        "Ballotpedia profile and Candidate Connection survey (Nov 7, 2025): nothing on the subject",
+        "Ballotpedia district race page: not reviewed, returned no usable text",
+        "congress.gov: not applicable, never a member of Congress; no sponsorships",
+        "web news search: not performed, shared search budget used up",
+        "ontheissues.org, Wikipedia: not reviewed, lead-only sources"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:01:06.054Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter identification information",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity and transparency",
+        "voter registration efforts"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script found no appearances)",
+        "Ballotpedia https://ballotpedia.org/Ashley_Banks (confirms an independent candidate for U.S. House Illinois District 2 in the 2026-11-03 general election, listed as a write-in; her 2025 survey answers do not mention voter ID)",
+        "campaign site https://www.ashleybanksworksforyou.com/ (home page has a civic engagement section; pages our-stance-on-key-issues and proposed-policies fetched: nothing on the subject)",
+        "web search on her name plus voter ID and election judge (nothing new; confirms the general-election listing)",
+        "not applicable: she holds no legislative office, so no bill record to check"
+      ],
+      "found": 2,
+      "at": "2026-10-27T16:40:48.206Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+ "id": "MA-S-1140-2013",
+ "scope": "state:ma",
+ "title": "S1140 (188th General Court): An Act requiring a firearms licensing authority to provide a receipt for firearm license applications.",
+ "urls": [
+  "https://malegislature.gov/Bills/188/S1140",
+  "https://malegislature.gov/Bills/188/S1140/Senate/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "John F. Keenan",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "5cd1c798-31dc-4e53-b578-7e2d81378478"
+  },
+  {
+   "name": "James E. Timilty",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Randy Hunt",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-S-1140-2013.html",
+   "sha256": "a5af7a26401489a1b334b0d8a34852c1438566e8d0a8fc3af2056fe103ad8da7"
+  }
+ },
+ "operative_text": "SECTION 1. Clause (e) of section 131 of chapter 140 of the General Laws, as appearing in the 2010 Official Edition, is hereby amended in line 150 after the words “carry or possess firearms.” by inserting the following:-\n“The licensing authority shall provide to the applicant a receipt indicating that it received the applicant’s application. Said receipt must be provided to the applicant within seven days by mail if the application was received by mail, or immediately if the application was made in person; provided further, that the receipt must include, at least, the applicants’ name, the applicant’s address, the applicant’s current license number if any, the applicant’s current license expiration date if any, the date when the application was received by the licensing authority, the name of the licensing authority and its agent that received the application, the licensing authority’s address and telephone number, the type of application, and whether it is an application for a new license or for renewal of an existing license; provided further, that a copy of the receipt shall be kept by the licensing authority for no less than one year and a copy shall be furnished to the applicant if requested by said applicant; provided further, that the Department of Public Safety shall promulgate rules and regulations for the implementation of a standardized receipt form and records keeping system.”"
+}

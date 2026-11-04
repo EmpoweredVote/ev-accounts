@@ -1,0 +1,38 @@
+{
+ "id": "MA-H-1287-2017",
+ "scope": "state:ma",
+ "title": "H1287 (190th General Court): An Act relative to unloaded rifles or shotguns",
+ "urls": [
+  "https://malegislature.gov/Bills/190/H1287",
+  "https://malegislature.gov/Bills/190/H1287/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Paul W. Mark",
+   "role": "prime",
+   "version": "official bill page (presenter/petitioners)",
+   "politician_id": "f530be83-6f1b-4b04-a8c4-3a83dc35099f"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA (runner asked to find missing bill texts, 2026-10-31); official bill text page",
+  "fetched_at": "2026-11-01T02:22:00Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-H-1287-2017.html",
+   "sha256": "faf02f0a570254abd2920c73469a709ef66a4c5be2768fee995cabdaf0150fa2"
+  }
+ },
+ "operative_text": "SECTION 1.Section 12D of Chapter 269 of the Massachusetts General Laws shall be amended by deleting the following language:\n(b) Except as exempted or provided by law, no person shall carry on his person on any public way an unloaded rifle or shotgun, unless such rifle or shotgun is enclosed in a case.\nWhoever violates the provisions of this subsection shall be punished by a fine of not less than $100 nor more than $1,000, and may be arrested without a warrant; provided, however, that if such unloaded rifle or shotgun is a large capacity weapon and is carried simultaneously with a fully or partially loaded large capacity feeding device, such person shall be punished by a fine of not less than $1,000 nor more than $10,000 or by imprisonment for not less than one year nor more than ten years, or by both such fine and imprisonment, and may be arrested without a warrant.\nThis subsection shall not apply to drills, parades, military reenactments or other commemorative ceremonies, color guards or memorial service firing squads, so-called, as permitted by law."
+}

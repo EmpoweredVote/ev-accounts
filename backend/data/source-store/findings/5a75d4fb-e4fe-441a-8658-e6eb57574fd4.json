@@ -1,0 +1,147 @@
+{
+  "politician_id": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4",
+  "findings": [
+    {
+      "id": "daa3ab48fe22960b9ebbe9027332fcc0ca5fdffb580ae352059a865d4c750536",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "SB 1174 (Min) Senate Third Reading, Assembly Floor; passed 57 ayes, 16 noes, 6 abstentions",
+      "note": "Voted aye on the Assembly floor for SB 1174, which bars local governments from enacting or enforcing voter identification requirements. Roll call taken from the Digital Democracy bill page; the official leginfo vote page was blocked.",
+      "subjects": [
+        "local voter ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:02:43.057Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c48728fe804d9517e51c4ee7f641c3a7162e55e18b951d68af105324647634b8",
+      "kind": "own-words",
+      "url": "https://www.calonews.com/elections/top-california-democrats-sue-over-language-in-state-guide-about-voter-id-measure/article_daf3d237-45cb-4127-a218-21a5db9c38f3.html",
+      "date": "2026-07-30",
+      "date_precision": "day",
+      "passage": "“Proposition 39 is a tool to suppress voter participation, plain and simple. Donald Trump’s endorsement is proof enough of that,” Rivas and Limón said in a joint statement.",
+      "note": "Joint statement with the Senate leader, quoted by CALÓ News, about the 2026 voter ID initiative (Proposition 39), issued when they sued over its voter guide arguments. The article date is the date shown on the page.",
+      "subjects": [
+        "Proposition 39 (2026 voter ID initiative)",
+        "voter ID at the polls",
+        "ID number on mail ballot envelope"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:02:43.057Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45d7ace5eb827cc535f6236e7cd59f9844644c83d628dd1f6baf8c5bb2d3bf50",
+      "kind": "own-words",
+      "url": "https://www.kalw.org/bay-area-news/2026-08-20/state-democrats-push-voter-id-campaign",
+      "date": "2026-08-20",
+      "date_precision": "day",
+      "passage": "\"Don’t let anyone make you afraid to vote,\" said Assembly Speaker Robert Rivas, \"don’t let anyone make it harder for your neighbor to vote, and don’t let Donald Trump bring his voter suppression agenda to California.\"",
+      "note": "Remarks at a campaign event against Proposition 39 (2026 voter ID initiative), quoted by KALW. Date is the article date.",
+      "subjects": [
+        "Proposition 39 (2026 voter ID initiative)",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:02:43.057Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4972b136338d3eff1cefac8fd95f3468ee7c96956876d556c021e9c3a71d460a",
+      "kind": "record",
+      "url": "https://www.courthousenews.com/wp-content/uploads/2026/07/rivas-limon-lawsuit-proposition-39.pdf",
+      "date": "2026-07",
+      "date_precision": "month",
+      "act": "other",
+      "motion": "Verified petition for writ of mandate, Rivas v. Weber (Sacramento Superior Court), challenging ballot arguments for Proposition 39",
+      "note": "He and the Senate leader filed a petition against the Secretary of State and State Printer to change the Proposition 39 voter guide arguments. The filing is stamped late July 2026; a news page says a judge later ruled for the petitioners.",
+      "subjects": [
+        "Proposition 39 (2026 voter ID initiative)",
+        "voter ID at the polls",
+        "ID number on mail ballot envelope"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:02:43.057Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5448dfddee96efbf47a72854df473610ae795657df06b446607b4455fb712c63",
+      "kind": "record",
+      "url": "https://calmatters.org/politics/2026/10/california-election-voter-id-proposition-39/",
+      "date": "2026-10",
+      "date_precision": "month",
+      "act": "other",
+      "motion": "Joint fundraising committee for the No on Proposition 39 campaign",
+      "note": "CalMatters reports he and a candidate for governor created a joint committee to raise money for the No campaign on Proposition 39.",
+      "subjects": [
+        "Proposition 39 (2026 voter ID initiative)",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:02:43.057Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter ID rules",
+        "ID number on mail ballot envelope",
+        "Proposition 39 (2026 voter ID initiative)",
+        "proof of citizenship and voter-roll checks",
+        "SAVE Act"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "official Speaker site https://speaker.asmdc.org (home, press releases and news lists; nothing on the subject)",
+        "Ballotpedia page (lists his position on Proposition 39; used as a lead only)",
+        "CalMatters Digital Democracy page for SB 1174 (member roll call; shows his vote)",
+        "Proposition 39 Ballotpedia page and official 2026 voter information guide (he is not a signer of ballot arguments)",
+        "news pages: KALW, CALÓ News, CalMatters (Oct 2026)",
+        "court filing: petition in Rivas v. Weber",
+        "web news searches on his name plus voter ID / Proposition 39 / SAVE Act",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (bot challenge and HTTP 403)",
+        "blocked: https://www.politico.com/news/2026/07/24/california-dems-ramp-up-anti-voter-id-fight-01011990 (HTTP 403)",
+        "blocked: https://courthousenews.com/top-democrats-rip-arguments-in-support-of-california-voter-id-ballot-measure/ (HTTP 403)",
+        "not reviewed: video of the 2026-08-18 No on 39 press conference"
+      ],
+      "found": 5,
+      "at": "2026-10-28T16:02:43.057Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

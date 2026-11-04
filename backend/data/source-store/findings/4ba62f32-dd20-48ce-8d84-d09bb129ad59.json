@@ -1,0 +1,229 @@
+{
+  "politician_id": "4ba62f32-dd20-48ce-8d84-d09bb129ad59",
+  "findings": [
+    {
+      "id": "e2142710002473ce1b983cae6f8f4d20f7d02987f871fd7154dc590cb2d4184e",
+      "kind": "own-words",
+      "url": "https://www.sos.ca.gov/administration/news-releases-and-advisories/2024-news-releases-and-advisories/secretary-state-shirley-n-weber-phd-and-attorney-general-rob-bonta-file-lawsuit-challenge-voter-id-law",
+      "date": "2024-04-15",
+      "date_precision": "day",
+      "passage": "This voter ID measure conflicts with state law. Not only is it a solution in search of a problem, laws like these are harmful to California voters, especially low-income, the elderly, people of color, those with disabilities, and young voters.",
+      "note": "Statement in her name in the Secretary of State news release announcing the suit against Huntington Beach's charter voter ID rule for city elections.",
+      "subjects": [
+        "voter ID at the polls",
+        "local voter ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:00:49.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2701ee9bd6f52a89810996ba09be88f9e59dd66b45d5a19eaf35f56feb18f5b6",
+      "kind": "own-words",
+      "url": "https://www.sos.ca.gov/administration/news-releases-and-advisories/2024-news-releases-and-advisories/secretary-state-shirley-n-weber-phd-and-attorney-general-rob-bonta-file-lawsuit-challenge-voter-id-law",
+      "date": "2024-04-15",
+      "date_precision": "day",
+      "passage": "Voter ID requirements have historically been used to turn eligible voters away from exercising their right to vote,",
+      "note": "Second quoted sentence from the same news release. The release also says each person who registers must give identifying information under penalty of perjury, which officials check.",
+      "subjects": [
+        "voter ID at the polls",
+        "identifying information at registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:00:49.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "60c4f0076bdac7a8a900e3e3e6c47c1929d3cc0e1aedb4362daebe81b8a87dfc",
+      "kind": "record",
+      "url": "https://www.sos.ca.gov/administration/news-releases-and-advisories/2024-news-releases-and-advisories/secretary-state-shirley-n-weber-phd-and-attorney-general-rob-bonta-file-lawsuit-challenge-voter-id-law",
+      "date": "2024-04-15",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Lawsuit in Orange County challenging Huntington Beach charter amendment requiring voter ID at the polls in city elections (filed with the Attorney General)",
+      "note": "As Secretary of State she joined the Attorney General in suing to block the city's voter ID rule, saying state law bars local governments from imposing voter ID. The release says they warned the city by letter on 2023-09-28.",
+      "subjects": [
+        "voter ID at the polls",
+        "local voter ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:00:49.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d9c1c1b5d2a10271469a58d49d0db5d5693bd7605b7b3c339398e7f4029c1ad5",
+      "kind": "own-words",
+      "url": "https://www.sos.ca.gov/administration/news-releases-and-advisories/2026-news-releases-and-advisories/supreme-court-ruling-dhs-voter-database-will-have-no-impact-californias-2026-general-election",
+      "date": "2026-09-25",
+      "date_precision": "day",
+      "passage": "This ruling does not affect California’s upcoming general election, and to be clear, we do not have any intention to use this concerning database,",
+      "note": "Statement in her name on a U.S. Supreme Court ruling letting the federal SAVE database be expanded to check voter eligibility; she says California will not use it.",
+      "subjects": [
+        "federal SAVE database for voter eligibility",
+        "voter-roll citizenship checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:00:49.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d16a5043534ace98cb168f78fec23a39aa6fd317168f70d66fc96134ab99a491",
+      "kind": "own-words",
+      "url": "https://www.sos.ca.gov/administration/news-releases-and-advisories/2026-news-releases-and-advisories/california-secretary-state-shirley-n-weber-phd-issues-statement-response-us-department-justice-letter",
+      "date": "2026-10-14",
+      "date_precision": "day",
+      "passage": "California has robust state law requirements that only U.S. citizens can register to vote and that any non-eligible registrants are removed from the State’s voter rolls.",
+      "note": "Statement in her name responding to a federal Justice Department demand to review a list of people it believes are noncitizens on the rolls.",
+      "subjects": [
+        "non-citizen voting",
+        "voter-roll citizenship checks",
+        "citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:00:49.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5b2a96264f3835ff31bb0ef69f3557e2ff09c0e71aff7115d69f5da3be53de4f",
+      "kind": "own-words",
+      "url": "https://dnyuz.com/2026/10/02/voter-id-proponents-accuse-california-democrats-of-lying-about-trumps-support-for-prop-39/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "“But if you tell me everybody has to take their ID to the poll, Californians should be concerned because 90% of them don’t want to do that,” she said. “They want to vote by mail, and you would effectively eliminate vote by mail.”",
+      "note": "Her words in a KCRA Sacramento TV interview, quoted in a Los Angeles Times story republished on dnyuz.com dated 2026-10-02 (interview aired the same week; exact day not given). The story also says she said the state already requires ID for those who register to vote. Original TV interview not reviewed.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "Proposition 39"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:00:49.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f120450ae95e60a88702dbbee6074686b5979f479b9853a0de18c89abf51aee8",
+      "kind": "own-words",
+      "url": "https://dnyuz.com/2026/10/02/voter-id-proponents-accuse-california-democrats-of-lying-about-trumps-support-for-prop-39/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Weber, when asked about her statement this week, said in an email to The Times that Proposition 39 would “cause disruption” in the state’s mail-in voting system because it would require voters “to write private personal information on the ballots.”",
+      "note": "The Los Angeles Times (republished on dnyuz.com, dated 2026-10-02) reports her emailed explanation; the quoted words inside the sentence are hers. The story says the measure needs the last four digits of an ID number on mail ballots.",
+      "subjects": [
+        "mail-ballot ID",
+        "Proposition 39"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:00:49.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c45095d4c8b234399b9bf66a8b7f9daa75a574b7263ccb0d01d27cea4c859e6e",
+      "kind": "own-words",
+      "url": "https://www.kpbs.org/podcasts/kpbs-midday-edition/ca-secretary-of-state-responds-to-trumps-push-to-nationalize-elections",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "passage": "We fought that because that's within the control of the state of California. And we won. And so they can't demand that from us.",
+      "note": "From the page's transcript of a KPBS Midday Edition interview, on refusing a federal demand for the full state voter database (with Social Security numbers).",
+      "subjects": [
+        "voter-roll data demand",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:00:49.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "adbf06b0d284f808f25e9009e60948e415d5b6735fd0f82236095e8d44ea55e5",
+      "kind": "own-words",
+      "url": "https://www.kpbs.org/podcasts/kpbs-midday-edition/ca-secretary-of-state-responds-to-trumps-push-to-nationalize-elections",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "passage": "There is no fraud , no , no stealing of of elections.",
+      "note": "From the page's transcript of the same KPBS interview (transcript spacing kept as printed); speaking about court and study findings on the 2020 election.",
+      "subjects": [
+        "election integrity",
+        "voter fraud"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:00:49.675Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity laws",
+        "non-citizen voting",
+        "federal voter-roll and SAVE database demands",
+        "Proposition 39 voter ID initiative"
+      ],
+      "places": [
+        "In scope: https://ballotpedia.org/Shirley_Weber shows her as the sitting Secretary of State (term ends 2027-01-04), advanced from the 2026-06-02 primary and on the 2026-11-03 general-election ballot",
+        "On the Record (0 appearances, nothing on the subject)",
+        "official site https://www.sos.ca.gov (2024 and 2026 news releases read; five news releases read in all, three saved)",
+        "campaign site https://www.shirleyweber.com (home page; nothing on the subject)",
+        "Ballotpedia profile (confirms candidacy; nothing on the subject)",
+        "KPBS Midday Edition transcript 2026-02-10 (saved two passages)",
+        "Los Angeles Times story republished on dnyuz.com 2026-10-02 (saved two passages)",
+        "not reviewed: KCRA Sacramento TV interview (video, late 2026-09 or early 2026-10)",
+        "not reviewed: https://leginfo.legislature.ca.gov (page needs scripts; her Assembly years were 2012-2021 and SB 1174 of 2024 was not a vote she cast as Secretary of State)",
+        "not reviewed: 2025 news-release archive https://www.sos.ca.gov/administration/news-releases-and-advisories/2025-news-releases-and-advisories",
+        "gvwire.com 2026-10-21 commentary (does not quote her)",
+        "four news searches on name plus subject words"
+      ],
+      "found": 9,
+      "at": "2026-10-28T16:00:49.675Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

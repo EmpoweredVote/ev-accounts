@@ -1,0 +1,69 @@
+{
+  "politician_id": "cdd84abe-0a61-40bb-ba3f-6bf7fab74ba3",
+  "findings": [
+    {
+      "id": "2a8c1e6adeeb1b83990f54b1ca73fbb70a72c10f09939c42f1e1da2b2ae32867",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('GOODWIN'), linked to Russell Goodwin (district 12) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.789Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "not reviewed: On the Record extraction script (agent rules forbid running repo scripts)",
+        "legislature member page https://legis.wisconsin.gov/assembly/12/goodwin/ (confirms 12th Assembly District; nothing on the subject)",
+        "legislature news list https://legis.wisconsin.gov/assembly/12/goodwin/news-updates/news-updates/ (first page of titles only: SNAP, first responder, unity; nothing on the subject; older pages not reviewed)",
+        "WisPolitics 2026 re-election announcement (confirms re-election bid; text cut off by paywall; nothing on the subject)",
+        "Wikipedia Russell Goodwin page (says he won the 2026-08-11 primary; nothing on the subject)",
+        "blocked: https://bluevoterguide.org/es/WI/candidate_Russell_Goodwin/49300 (403)",
+        "blocked: https://ballotpedia.org/Russell_Goodwin (empty page returned)",
+        "blocked: https://ballotpedia.org/Wisconsin_State_Assembly_District_12 (empty page returned)",
+        "no campaign site found; two web searches on name plus subject words: nothing on the subject by him",
+        "not reviewed: sponsorship bill pages (votes and sponsorships are linked separately)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:05:51.571Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:15:12.789Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

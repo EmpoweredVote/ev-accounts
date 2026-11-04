@@ -1,0 +1,86 @@
+{
+  "politician_id": "c2eecef6-b969-43d0-9d19-7d048bf412e5",
+  "findings": [
+    {
+      "id": "2a65892efb215a6863aa8d7fabf29e9057bb1352d8447f7608bdd31e586ec794",
+      "kind": "own-words",
+      "url": "https://www.wispolitics.com/2025/rep-rivera-wagner-slams-republican-priorities-as-unnecessary-amendment-is-first-legislative-action-of-the-session/",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "passage": "Wisconsin already has a voter ID law on the books and in effect.",
+      "note": "Press statement in his name on the Assembly passing a photo ID constitutional amendment as its first act of the session. He says the state already has a voter ID law in effect. Only the opening of the release was readable (rest behind login), and the passage is as returned by the fetch tool on a word-for-word request.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:04:39.086Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2a8c1e6adeeb1b83990f54b1ca73fbb70a72c10f09939c42f1e1da2b2ae32867",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('RIVERA-WAGNER'), linked to Amaad Rivera-Wagner (district 90) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.790Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "absentee ballots",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "2026 ballot confirmed by https://jdjohn215.github.io/wi-legis-26-preview/State-Assembly/AD90.html",
+        "blocked: https://legis.wisconsin.gov/assembly/90/rivera-wagner/news-updates/press-releases/ (404)",
+        "blocked: https://legis.wisconsin.gov/assembly/90/rivera-wagner/ (404)",
+        "blocked: curl of the WisPolitics page returned empty; full release is behind a subscriber login, only the opening paragraph was readable",
+        "news searches on name plus subject words (2024 forum and interview listings, nothing on the subject; not reviewed: https://civicmedia.us/shows/rational-revolution/2024/04/20/sit-down-with-amaad-rivera-wagner)",
+        "bill sponsorships not searched (linked separately)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:04:39.086Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:15:12.790Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

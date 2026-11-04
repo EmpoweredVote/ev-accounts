@@ -329,7 +329,7 @@ async function getOrCreateSession(
   return ins.rows[0].id;
 }
 
-async function isUnchanged(sessionId: number, hash: string): Promise<boolean> {
+export async function isUnchanged(sessionId: number, hash: string): Promise<boolean> {
   const { rows } = await query(
     'SELECT dataset_hash, bills FROM essentials.legiscan_dataset_state WHERE legiscan_session_id = $1',
     [sessionId],
@@ -337,7 +337,7 @@ async function isUnchanged(sessionId: number, hash: string): Promise<boolean> {
   return rows.length > 0 && rows[0].dataset_hash === hash && Number(rows[0].bills) > 0;
 }
 
-async function markImported(
+export async function markImported(
   sessionId: number, jurisdiction: string, hash: string, bridgeCount: number, bills: number,
 ): Promise<void> {
   await query(

@@ -1,0 +1,291 @@
+{
+  "politician_id": "6a1417b8-cdcd-43f2-a63d-533beaefc563",
+  "findings": [
+    {
+      "id": "ee2efa6b2719eb4781f7e001c5eb1a93ae2508ba5fe9dd0a0a363a978711ef9b",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81696&billStatusActionId=232198&includeVotes=true",
+      "date": "2025-02-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2038-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('KESHEL'), linked to Rachel Keshel (district 17) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf505d93bd66bd7c75041cc66d163a3bd3cdb1892d9f2db25a481fbf733a4047",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=240878&includeVotes=true",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('KESHEL'), linked to Rachel Keshel (district 17) via the official 2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "88a7da87cd0c8e4c734c60ffcee1ceea7201386d2f7deb27a668b8c889f53e2c",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/83527",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, HCR2001S: Senate-engrossed version (text as it stood after the Senate acted)",
+      "note": "Named as co sponsor ('Rachel Keshel') on the official bill page; linked to Rachel Keshel via the official 2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d13ea4ab747e28da585dbb99feba8cff1df7ff3703b5d6dd3e7da7452184336",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=235732&includeVotes=true",
+      "date": "2025-05-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('KESHEL'), linked to Rachel Keshel (district 17) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "952173591d640b583e28572370068bafb45b89ec8fa8f4c212a09a5ef64474e5",
+      "kind": "own-words",
+      "url": "https://reprachel.substack.com/p/silly-democrat-voting-is-for-citizens",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "passage": "No one who was asked the million dollar question could muster the courage to answer what must be a 90% issue among the American electorate, neither for themselves or on behalf of their employers.  This sort of thing makes me want to look into just how many votes by our “guests” are disenfranchising lawfully cast American votes.",
+      "note": "Newsletter post about a 2026-01-29 committee hearing where lobbyists were asked whether only citizens should vote in Arizona elections. She comments on non-citizen voting.",
+      "subjects": [
+        "non-citizen voting",
+        "citizens-only voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:52.164Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "791db919be8c2b30b0b316ef596b8d8d064095af5e20d1e39a3efc1b12b325ef",
+      "kind": "own-words",
+      "url": "https://reprachel.substack.com/p/two-weeks-in-legislative-update",
+      "date": "2026-01-24",
+      "date_precision": "day",
+      "passage": "In the Federalism, Military Affairs and Elections Committee, also on Wednesday, Representative Alex Kolodin’s HCR2001 was presented.  This is the “Florida Style” vote counting bill, which will also tighten up security on mail-in balloting (by mandating voters to verify addresses and request a mail-in ballot before each election), a measure that voters are begging for so our state isn’t the butt of all elections jokes.",
+      "note": "Newsletter describing HCR2001 in committee, including a requirement that voters verify address and request a mail ballot before each election.",
+      "subjects": [
+        "mail-ballot request and verification",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:52.164Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a2bd203d8e992216afadc83a0e24c0197ac84cc1706cdac6e85d10ea1207fa1c",
+      "kind": "own-words",
+      "url": "https://reprachel.substack.com/p/explaining-hcr-2016-return-to-precinct",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "passage": "Moving back to manageable precinct sizes will not only make elections smoother and reduce reliance upon mail-in balloting; it will help return voting to what it was supposed to be – a tradition of engaged citizenship rather than a passive, weeks-long game of ballot collection.",
+      "note": "Her speech excerpt on HCR 2016 (her own bill, small precincts) and mail voting. Related to election integrity; not about ID or citizenship proof.",
+      "subjects": [
+        "mail voting",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:52.164Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1e5b830abce8baf7787f7dc3f7d14a77d1dd0d5ab180b6d0c472f3e6e3a6e636",
+      "kind": "own-words",
+      "url": "https://hoodline.com/2025/04/arizona-state-rep-rachel-keshel-endorses-trump-s-push-for-election-system-overhaul-advocates-for-paper-ballot-transparency/",
+      "date": "2025-04-08",
+      "date_precision": "day",
+      "passage": "This Executive Order is exactly what this country needs",
+      "note": "Hoodline article quoting her press release on the 2025-03-25 federal election executive order. The article says in its own words that she cites the SAVE Act; that sentence is the reporter's, not hers.",
+      "subjects": [
+        "election integrity in general",
+        "federal election order"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:52.164Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a648fb2301e72261c19d9035e0555298a259335ab9b4e9100c367df13b9035e9",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/81927",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, SB1098S: Senate-engrossed version (text as it stood after the Senate acted)",
+      "note": "Named as co sponsor ('Rachel Keshel') on the official bill page; linked to Rachel Keshel via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.944Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbb9ee39d7ade6a2e208d394d7af23ac45487eae22e5da26f16b612718fe9717",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=236364&includeVotes=true",
+      "date": "2025-06-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('KESHEL'), linked to Rachel Keshel (district 17) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28b",
+        "fetched_at": "2026-10-28T23:23:11.510Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:53:15.880Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID or request",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "election integrity in general",
+        "precinct voting and mail voting"
+      ],
+      "places": [
+        "scope: sitting District 17 House member (azleg.gov roster); the Tucson Spotlight primary report says she advanced from an uncontested primary; her own newsletter dated 2026-07-12 speaks of reelection this fall",
+        "not reviewed: On the Record (the extraction script is a repo script and was not run in this session)",
+        "blocked: https://ballotpedia.org/Rachel_Keshel (empty page)",
+        "her newsletter https://reprachel.substack.com (about 12 posts from 2025-08 to 2026-07 read; four had on-subject text)",
+        "Hoodline news page of 2025-04-08 quoting her press release",
+        "state voter-ID and citizenship pages on her site: nothing separate; no official-site search page reached",
+        "one news search on her name plus subject words (leads only)",
+        "nothing on the subject in her posts of 2025-10-10, 2025-10-28, 2026-03-28, 2026-04-26, 2026-05-17"
+      ],
+      "found": 4,
+      "at": "2026-10-28T23:08:52.164Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:15:12.944Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:23:11.510Z",
+      "by": "identity-az-2026-10-28b"
+    }
+  ]
+}

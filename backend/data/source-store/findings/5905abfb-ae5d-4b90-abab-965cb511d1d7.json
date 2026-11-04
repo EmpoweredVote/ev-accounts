@@ -1,0 +1,181 @@
+{
+  "politician_id": "5905abfb-ae5d-4b90-abab-965cb511d1d7",
+  "findings": [
+    {
+      "id": "fa22c90e4a1c2bb5f48948e4f002008b8c076a0bcaa27574c998a94344176781",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/747",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (member vote: Aye, 66 to 47)",
+      "note": "HB 958 is a broad election law bill. Its text includes photo ID rules: a voter whose driver license or Social Security number does not match at registration must show ID with the ballot, in person or absentee; a voter without photo ID may cast a provisional ballot and must present ID by a deadline; absentee request forms carry ID information. Same day the member voted Aye on amendment A1 (Blackwell, 112 to 0) and Aye on amendment A2 (Blackwell, 69 to 44), and No on amendment A3 (Dahle, failed 47 to 66). Contents of the amendments were not read.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "provisional ballot without photo ID",
+        "ID number mismatch at registration",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:47:01.688Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5ce1eee6ac3df99cf04e2ad20793c15f32c467db9a43e47db3fd144daf094a2a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/747",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, M11 Concur (vote to agree with Senate changes; member vote: Aye, 62 to 47)",
+      "note": "Final House vote to concur on HB 958, sending it on. The bill page shows the Governor vetoed it on 08/17/2026 (https://www.ncleg.gov/BillLookUp/2025/H958). No override vote was found on the member's vote list at fetch time.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:47:01.688Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5a9245945117457534806c01961c2f8227ef8bd9a06c5e14cbfcd7e06a213a96",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/747",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "note": "House vote to concur in the Senate committee substitute of HB 958, Election Law Changes (roll call 2026-08-04, 6:26 PM): Humphrey voted Aye, 62 to 47. The ratified text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) adds G.S. 163-83, under which a county board processes a registration application only if it affirmatively says the applicant is a U.S. citizen. A blank answer gets a notice, and a statement under penalty of perjury is required within 30 days. It also bars driver-license-office staff from proceeding with a registration unless the applicant says they are a citizen, and it requires a process to remove voters flagged as non-citizens in a federal database. The bill page shows the bill was vetoed 2026-08-17.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks and removal of non-citizens",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:13:47.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2e4df82e9b18df216b7d00eb3ac2c8e234c67ad62b8b6a428f9487f3792d518b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/747",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "note": "House second-reading vote on HB 958, Election Law Changes (roll call 2026-06-30, 6:25 PM), earlier House version: Humphrey voted Aye, 66 to 47. On the same day he voted Aye on Blackwell amendments 1 and 2 and No on Dahle amendment 3.",
+      "subjects": [
+        "election integrity laws in general",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:13:47.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "ID number matching at registration",
+        "proof of citizenship",
+        "election integrity laws in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "in scope: NC House District 12, on the Nov 3 2026 general ballot (https://ballotpedia.org/Chris_Humphrey; https://www.ncleg.gov/Members/Biography/H/747)",
+        "On the Record (0 appearances)",
+        "NC General Assembly member vote record (https://www.ncleg.gov/Members/Votes/H/747)",
+        "NC General Assembly introduced bills list (https://www.ncleg.gov/Members/IntroducedBills/H/747): nothing on the subject except a 2026 bill titled No Voter Registration Changes At DMV (H1231, referred to committee, not read for ID content)",
+        "NC General Assembly bill page and text for HB 958 (https://www.ncleg.gov/BillLookUp/2025/H958)",
+        "Ballotpedia: nothing on the subject",
+        "not reviewed: official and campaign sites (no URL fetched; web search budget was used up)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: votes before 2025 session (2023 election law votes) not checked"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:47:01.688Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter-roll checks and removal of non-citizens",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "NC legislature member list https://www.ncleg.gov/Members/MemberTable/H (confirms Chris Humphrey, House District 12)",
+        "NC legislature introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/H/747 (no voter ID or citizenship bill among his primary-sponsored bills)",
+        "NC legislature roll-call votes page https://www.ncleg.gov/Members/Votes/H/747 (fetched in full)",
+        "NC legislature bill page and text for H1231 (he is a co-sponsor; it concerns where registration updates are made, not proof of identity or citizenship, so not saved)",
+        "one news search on his name plus the subject words (no statement of his found)",
+        "his own site and Ballotpedia not reviewed",
+        "no own-words statement on the subject found"
+      ],
+      "found": 2,
+      "at": "2026-10-27T19:13:47.946Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

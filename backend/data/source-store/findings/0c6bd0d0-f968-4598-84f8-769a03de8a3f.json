@@ -1,0 +1,40 @@
+{
+  "politician_id": "0c6bd0d0-f968-4598-84f8-769a03de8a3f",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (https://ballotpedia.org/Yen_Bailey: lost the primary for U.S. House Florida District 2 on August 18, 2026; general election is between two other candidates)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (fetched with curl; confirms she is the person, FL-02 candidate)",
+        "not reviewed: campaign site, congress.gov, news search (stopped after lost primary; web search budget also used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:11:04.628Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary",
+        "https://ballotpedia.org/Yen_Bailey (page says she ran for U.S. House Florida District 2 and lost the primary held 2026-08-18; so out of scope, no further search)",
+        "On the Record (0 appearances found)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T00:59:12.947Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

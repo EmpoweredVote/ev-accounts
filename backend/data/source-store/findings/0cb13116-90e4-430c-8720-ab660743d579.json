@@ -1,0 +1,68 @@
+{
+  "politician_id": "0cb13116-90e4-430c-8720-ab660743d579",
+  "findings": [
+    {
+      "id": "e076c8b48278b31632ee890048920af3952a61ffb83895b5d23bfa476c64b17f",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Boyko'), linked to Mark Boyko (district 90) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.747Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House newsroom tag page for Mark Boyko (one video release, 2026-01-07, nothing on the subject)",
+        "campaign site markboyko.com (home page and recent-news list: nothing on the subject; only redistricting items)",
+        "St. Louis Public Radio interview 2025-02-28: nothing on the subject",
+        "Kirkwood Call profile: nothing on the subject",
+        "legislature bill pages: not searched here (votes and sponsorships linked separately)",
+        "blocked: https://bluevoterguide.org/MO/candidate_Mark_Boyko/36782",
+        "blocked: https://ballotpedia.org/Mark_Boyko (not fetched, known to refuse)",
+        "web searches for his name with voter ID / citizenship words: nothing on the subject",
+        "note: one fetch of a house.mo.gov URL with a query string was made by mistake (returned 404)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:03:48.908Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:10:53.747Z",
+      "by": "identity-mo-2026-11-04"
+    }
+  ]
+}

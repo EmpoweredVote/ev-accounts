@@ -1,0 +1,33 @@
+{
+  "politician_id": "851d83ef-ae51-47cd-84c7-cffbdac87cd3",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun safety laws",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry permits",
+        "gun violence"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "BallotReady profile https://www.ballotready.org/people/kristina-knickerbocker lists her as a candidate for U.S. House, Ohio 10th District, on the 2026 general-election ballot (identity check); only issue stances listed there are defense/veterans and healthcare, nothing on guns",
+        "campaign site https://www.kristinaknickerbocker.com/my-priorities (home, my-priorities, meet-kristina read): its safer-communities section covers first responders and prevention and does not mention guns or firearms; nothing on the subject",
+        "web search: name plus Second Amendment/guns, name plus district and gun violence, name plus questionnaire: no page with her own words on guns",
+        "washingtonsun.com NOTUS profile of the race (redirect from notus.org): nothing on the subject",
+        "blocked: https://www.journal-news.com/local/air-force-veteran-democrat-joins-race-to-challenge-turner-for-congressional-seat/4JI3TQRQ6ZDJ3KV2K6LBMDE5CA/ (HTTP 429)",
+        "blocked: https://www.daytondailynews.com/local/dems-eye-chance-to-unseat-turner-for-dayton-area-congressional-seat-but-can-they/SLAV6GYYLJAAPJQ5ZYFN2ZAXMQ/ (HTTP 429)",
+        "Ballotpedia: not reviewed (pages come back empty to the fetch tool)",
+        "no legislative record (has not held office); congress.gov sponsor list not applicable"
+      ],
+      "found": 0,
+      "at": "2026-10-30T23:32:20.047Z",
+      "by": "source-collector"
+    }
+  ]
+}

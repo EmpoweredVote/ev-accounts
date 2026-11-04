@@ -1,0 +1,69 @@
+{
+  "politician_id": "10ed2260-bf8c-41f4-868b-78ef107abc94",
+  "findings": [
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Ridley, Jor'), linked to Jordan Ridley (district 22) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.418Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "absentee ID",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "status check: https://ballotpedia.org/Jordan_Ridley shows him on the 2026-11-03 general-election ballot for Georgia House District 22 after advancing from the primary (in scope); he took office 2023-01-09, so there is no SB 202 vote to record",
+        "On the Record (0 appearances)",
+        "campaign site https://www.ridleyforhouse.com/ (home and issues pages): nothing on the subject",
+        "https://www.ridleyforhouse.com/ridleyreport and /post/policy-progress-2025: inaccessible (404 to curl); the 2025 post was read as returned and had nothing on the subject",
+        "Ballotpedia",
+        "local news voter guide and forum story (tribuneledgernews.com, 2024): nothing on the subject",
+        "bill tracker https://fastdemocracy.com/bill-search/ga/legislators/GAL000574: no election-ID bills found in readable text",
+        "blocked: https://app.legiplex.com/profile/jordan-ridley-1830/legislation (403)",
+        "official legislature page https://www.legis.ga.gov/members/house/5019?session=1033: not reviewed (script-rendered)",
+        "web searches: 1 run (name plus voter ID, election integrity, citizenship, SAVE Act, absentee)",
+        "nothing on the subject found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:41:56.326Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.418Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

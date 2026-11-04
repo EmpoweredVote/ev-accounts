@@ -1,0 +1,38 @@
+{
+ "id": "MA-H-2305-2023",
+ "scope": "state:ma",
+ "title": "H2305 (193rd General Court): An Act relative to firearms in certain public buildings",
+ "urls": [
+  "https://malegislature.gov/Bills/193/H2305",
+  "https://malegislature.gov/Bills/193/H2305/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Marjorie C. Decker",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "2b1a645a-72ce-4c0f-80ec-17565a2d6d10"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-H-2305-2023.html",
+   "sha256": "8d13fb2145ce41efc50a536f05b58123636fae2d51ef55b7a5bc6ec2e3d0d853"
+  }
+ },
+ "operative_text": "Section 10 of chapter 269 of the General Laws, as appearing in the 2020 Official Edition, is hereby amended by adding the following paragraphs:\n(p) For the purposes of this paragraph, “firearm” shall mean any pistol, revolver, rifle or smoothbore arm from which a shot, bullet or pellet can be discharged.\nWhoever, not being an on-duty law enforcement officer and notwithstanding any license obtained by the person pursuant to chapter 140, carries on the person a firearm, loaded or unloaded in any building or on the grounds of the state house shall be punished by a fine of not more than $1,000 or by imprisonment for not more than 2 years or both. A law enforcement officer may arrest without a warrant and detain a person found carrying a firearm in violation of this paragraph.\n(q) For the purposes of this paragraph, “firearm” shall mean any pistol, revolver, rifle or smoothbore arm from which a shot, bullet or pellet can be discharged.\nWhoever, not being an on-duty law enforcement officer and notwithstanding any license obtained by the person pursuant to chapter 140, carries on the person a firearm, loaded or unloaded on the grounds of or in any portion of a building that is designated a polling place or a place to be used for the counting ballots shall be punished by a fine of not more than $1,000 or by imprisonment for not more than 2 years or both. A law enforcement officer may arrest without a warrant and detain a person found carrying a firearm in violation of this paragraph.\nSaid chapter, as so appearing, is hereby further amended by inserting after section 12F the following section:-\nSection 12G. Firearms—Carrying Firearms at Demonstrations\n(1) For the purposes of this section, the following words shall have the following meanings.--\n\"Demonstration\", one or more persons demonstrating, picketing, speechmaking, marching, holding a vigil, or engaging in any other similar conduct that involves the communication or expression of views or grievances and that has the effect, intent, or propensity to attract a crowd or onlookers. \"Demonstration\" does not include the casual use of property by visitors or tourists that does not have the intent or propensity to attract a crowd or onlookers.\n\"Firearm\", any pistol, revolver, rifle or smoothbore arm from which a shot, bullet or pellet can be discharged.\n''Public building'', a building, including its grounds or curtilage, owned by the commonwealth or any political subdivision thereof, or a portion of a building, including its grounds and curtilage or other public grounds where employees of a state agency or department of the commonwealth are regularly present for the purpose of performing their official duties.\n(2) Whoever, not being an on-duty law enforcement officer and notwithstanding any license obtained by the person pursuant to chapter 140, knowingly carries on the person a firearm, loaded or unloaded at a demonstration in a public building shall be punished by a fine of not more than $1,000 or by imprisonment for not more than 2 years or both. A law enforcement officer may arrest without a warrant and detain a person found carrying a firearm in violation of this paragraph."
+}

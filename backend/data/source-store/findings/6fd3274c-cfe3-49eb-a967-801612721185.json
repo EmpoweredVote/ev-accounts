@@ -1,0 +1,236 @@
+{
+  "politician_id": "6fd3274c-cfe3-49eb-a967-801612721185",
+  "findings": [
+    {
+      "id": "e4bc22671e83714d613df6b372ecb4e8828c5290073db8a7cd916e79d3abac5a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/1002",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "note": "Roll call 758 on HB 958, Election Law Changes, second reading. The member's page records her vote as No. The ratified bill (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) includes a removal process for voters flagged as possible non-citizens from a federal database, a requirement that a registration applicant state citizenship, and a sworn citizenship statement for applications left blank. It has no photo-ID changes in the text searched.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voter-roll removal",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:52:09.615Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e48fd20163f3991b39107c00ab74f45e1cc3c937f9688807fd475a0ca075d2bd",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/1002",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "note": "Roll call 801 on HB 958, Election Law Changes, motion to concur in the Senate version. The member's page records her vote as No. The bill passed the House 62 to 47 (https://www.ncleg.gov/BillLookup/2025/H958).",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voter-roll removal",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:52:09.615Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f0f6ef771fb6c96e0d44e409f37d3ef369886b6a9925edfc19bc64c5cb1b19d8",
+      "kind": "record",
+      "url": "https://house.ncleg.gov/Members/Votes/H/1002",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Second Reading (final House passage vote, 6/30/2026 6:25 PM)",
+      "note": "Cook voted No. The bill, per the UNC bill summary, covers photo ID copies for overseas ballots, a later deadline to show ID after a provisional ballot, citizenship statements on registration, and absentee-ballot rules. The Governor vetoed it on 2026-08-17.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID and curing",
+        "election law bills in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:58:20.685Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bb8bbb6c00cc625efd1b8ba4fce4e3f71520ed7180549106c8e4a1ca67cde4c2",
+      "kind": "record",
+      "url": "https://house.ncleg.gov/Members/Votes/H/1002",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, M11 Concur (6/26 PM on 8/4/2026)",
+      "note": "Cook voted No on the House concurring with the Senate changes to HB 958.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID and curing",
+        "election law bills in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:58:20.685Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f2fffbc9e831bbf34385ec820b31ec1ff062ae03af3da242c4b0b7efd7c2f96c",
+      "kind": "record",
+      "url": "https://house.ncleg.gov/Members/Votes/H/1002",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, A1 Blackwell amendment, Second Reading (5:32 PM; passed 112 to 0)",
+      "note": "Cook voted Aye on the A1 amendment to HB 958. The page shows only the title and tally, not the amendment text.",
+      "subjects": [
+        "election law bills in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:58:20.685Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c21dc4323192cb6427fd754ecc89672dad44ccfdb2366a7747d30159d2cc356",
+      "kind": "record",
+      "url": "https://house.ncleg.gov/Members/Votes/H/1002",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, A2 Blackwell amendment, Second Reading (5:34 PM; passed 69 to 44)",
+      "note": "Cook voted No on the A2 amendment to HB 958, which passed. The page shows only the title and tally.",
+      "subjects": [
+        "election law bills in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:58:20.685Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9556ca6d79ce93b729e09bd96148ea0bf4e92c9bab34145601711ec935e4e61",
+      "kind": "record",
+      "url": "https://house.ncleg.gov/Members/Votes/H/1002",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, A3 Dahle amendment, Second Reading (5:37 PM; failed 47 to 66)",
+      "note": "Cook voted Aye on the A3 amendment to HB 958, which failed. The page shows only the title and tally.",
+      "subjects": [
+        "election law bills in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:58:20.685Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d7edd98f95b95df76560d7c4a8dc14c8cd76874b5323d04c63cb679f2e7a3402",
+      "kind": "record",
+      "url": "https://house.ncleg.gov/Members/Votes/H/1002",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "act": "nay",
+      "motion": "HB 834 State Board of Elections Administrative Changes, M11 Concur",
+      "note": "Cook voted No on concurring with Senate changes to HB 834. The page shows only the title; its contents on ID or citizenship were not checked.",
+      "subjects": [
+        "election law bills in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:58:20.685Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voter-roll removal",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Amanda_Cook_(North_Carolina) (House District 60, on the 2026 general-election ballot) and https://www.ncleg.gov/Members/Biography/H/1002",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "ncleg.gov member votes page (https://www.ncleg.gov/Members/Votes/H/1002): 2025-2026 election-related votes reviewed",
+        "ncleg.gov introduced-bills page (https://www.ncleg.gov/Members/IntroducedBills/H/1002): no voter-ID or citizenship bill by title",
+        "ncleg.gov bill page and ratified text for HB 958",
+        "Ballotpedia (page read for scope only)",
+        "blocked: web search budget exhausted, so no news search and no search for own words was run",
+        "not reviewed: official legislator site and campaign site (https://www.amandacookfornc.com did not load; no other campaign URL found)",
+        "own words on voter ID or proof of citizenship: nothing found in the places reached"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:52:09.615Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID and curing",
+        "voter-roll checks",
+        "election law bills in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "NC House member page https://www.ncleg.gov/Members/Biography/H/1002 (appointed 11/18/25, District 60; nothing on the subject)",
+        "NC House roll-call record https://house.ncleg.gov/Members/Votes/H/1002",
+        "NC bill page and bill summary for HB 958",
+        "Carolina Journal primary report confirming she won the primary and is on the fall ballot",
+        "blocked: https://ballotpedia.org/Amanda_Cook (fetch returned no page content)",
+        "blocked: https://branch.vote/races/2026-north-carolina-general-election-nc-state-state-representative-nc-state-house-60/candidates/amanda-cook (timeout; third-party summary only)",
+        "campaign site: not found in search; nothing on the subject in news searches (2 searches)",
+        "not reviewed: https://webservices.ncleg.gov/ViewBillDocument/2025/10363/0/H958-BD-NBC-18144 (veto document, unreadable PDF)"
+      ],
+      "found": 6,
+      "at": "2026-10-27T19:58:20.685Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

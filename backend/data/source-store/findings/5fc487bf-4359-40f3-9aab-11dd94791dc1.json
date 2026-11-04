@@ -1,0 +1,91 @@
+{
+  "politician_id": "5fc487bf-4359-40f3-9aab-11dd94791dc1",
+  "findings": [
+    {
+      "id": "eb61619fffaa437d0d70f5bf605f63619ae18a5226b0104a8aed876fc77203be",
+      "kind": "own-words",
+      "url": "https://www.tomschmitzforliberty.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "We need to vigilantly protect our right to keep an bear arms; the American people should never be helpless, defenseless victims.",
+      "note": "Campaign issues page, section 'The Right to Keep and Bear Arms'. Says the right to keep and bear arms should be protected.",
+      "subjects": [
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:40:42.772Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7974f4fae5e17e5c45761f205c79013ebdea618f8a798d11330298a4094b5f27",
+      "kind": "own-words",
+      "url": "https://www.tomschmitzforliberty.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "The right to bear arms is a human right.  The 2nd Amendment is important in that it recognizes this human right, but our right to keep and bear arms does not come from government.",
+      "note": "Campaign issues page. Describes the right to bear arms as a human right that the Second Amendment recognizes.",
+      "subjects": [
+        "general statement on gun rights",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:40:42.772Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "74b0b7badb844d8201a923eeaaeca2803f4508c991e673514d09f1ff54be1dbd",
+      "kind": "own-words",
+      "url": "https://www.tomschmitzforliberty.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "We must resist the expansion of \"red flag\" laws, which are a dangerous slippery slope toward government obtaining the power to disarm American Citizens at will and without any semblance of due process.",
+      "note": "Campaign issues page. Calls for resisting red flag (extreme-risk) laws.",
+      "subjects": [
+        "red flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:40:42.772Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "right to keep and bear arms",
+        "red flag laws",
+        "gun control",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "FEC candidate page H0MO08285: Tom Schmitz, candidate for Missouri District 1, 2026, statement of candidacy filed 2026-08-10",
+        "ivoterguide.com listing shows him in the Missouri U.S. Representative District 1 race of 2026-11-03 (on the ballot)",
+        "campaign site tomschmitzforliberty.com: home page and blog have nothing on the subject; issues page has a section on the subject",
+        "blocked: https://ballotpedia.org/Tom_Schmitz (page came back empty)",
+        "congress.gov: not applicable, he has never held federal office, so no sponsorships",
+        "two web searches on his name plus guns: no news or interview coverage of his gun views found",
+        "not reviewed: ivoterguide.com questionnaire section (not opened)"
+      ],
+      "found": 3,
+      "at": "2026-10-30T22:40:42.772Z",
+      "by": "source-collector"
+    }
+  ]
+}

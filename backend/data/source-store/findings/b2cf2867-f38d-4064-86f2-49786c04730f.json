@@ -1,0 +1,91 @@
+{
+  "politician_id": "b2cf2867-f38d-4064-86f2-49786c04730f",
+  "findings": [
+    {
+      "id": "2916cde6fb794848c9b0b6b7dbca0f82bb1b848bc6d45b6ac31f308fdab0dc10",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/legislation/document/20252026/234334",
+      "date": "2025-01-30",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-215-2025",
+      "act": "sponsor",
+      "note": "Townsend is listed among the sponsors of HB 215, the Voter List Integrity Act (sponsor list read on policyrisk.com/state-bill/GA-HB215-2025-2026; bill text, committee substitute LC 47 3419S, read at the URL). The substitute bars the Secretary of State and local election officials from taking part in multistate voter list maintenance organizations and lets the state enter voter list maintenance compacts with other states. Hopper date 1/30/2025; recommitted 4/4/2025.",
+      "subjects": [
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:33:45.919Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Townsend'), linked to Rick Townsend (district 179) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.417Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of identity to vote",
+        "documentary proof of citizenship",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Georgia House press-release site house-press.com member page (first page only): nothing on the subject",
+        "Wikipedia page (current office confirmed, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Rick_Townsend (empty page)",
+        "blocked: https://app.legiplex.com/profile/rick-townsend-1833/ga/legislatures/2025/2025-r/legislation (403)",
+        "bill tracker pages policyrisk.com for HB 215 and legis.ga.gov bill text PDF",
+        "web searches on name plus voter ID, voter list, ERIC: no own words found",
+        "not reviewed: personal campaign site (none found)",
+        "2026 ballot status not confirmed; sitting House member"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:33:45.919Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.417Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "politician_id": "ab8310aa-5d2a-4c44-8a88-fa55862a2999",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Bill_Reeside lists him on the Nov 3, 2026 general ballot for U.S. House SC-1 (nominated at a party convention April 11, 2026)",
+        "On the Record (0 meetings)",
+        "Ballotpedia page and Candidate Connection survey: nothing on the subject",
+        "campaign site https://www.reesideforcongress.com/ and /priorities: nothing on the subject (Immigration section mentions a path to citizenship for Dreamers, not voting)",
+        "campaign site https://debate.reesideforcongress.com/: nothing on the subject (debate-access petition)",
+        "congress.gov: not applicable, never a legislator, no record reviewed",
+        "blocked: web search budget exhausted, news search not run"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:57:52.740Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances, extract script run)",
+        "Ballotpedia https://ballotpedia.org/Bill_Reeside (confirms him on the 2026-11-03 general-election ballot for U.S. House, South Carolina District 1; his candidate survey answers cover immigration, nothing on the subject)",
+        "campaign site https://reesideforcongress.com (home page): nothing on the subject",
+        "campaign site https://reesideforcongress.com/priorities: nothing on the subject",
+        "campaign debate page https://debate.reesideforcongress.com: nothing on the subject",
+        "Live 5 News profile 2026-04-10: nothing on the subject",
+        "Post and Courier (Moultrie News) 2026-03-18 filing story: nothing on the subject",
+        "two news searches on name plus subject words: nothing on the subject",
+        "not applicable: legislator record (he has not held office, so no bill pages)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:11:03.264Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

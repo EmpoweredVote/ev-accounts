@@ -1,0 +1,150 @@
+{
+  "politician_id": "4e367596-c6c9-44a3-af63-10c3670ed2af",
+  "findings": [
+    {
+      "id": "be4a476926561e348015bdb5f160d1424699525f67fc0ca8e334bd5b843039c5",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('James'), linked to James, Donzella (district 35) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.418Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d7d9796af815875184b98ca9c514b16c643a7fd0abecf1e1587d68a7546b4e93",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2019-senate-journal.pdf",
+      "date": "2019-03-13",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-316-2019",
+      "act": "nay",
+      "motion": "Senate: On the passage of the bill (Senate Committee on Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('James'), linked to DONZELLA JAMES (district 35) via the official 2019 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.418Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d18aa3deb1756631945ea35c6032cd156c7b106aa86a37c933342dd0730a6cd6",
+      "kind": "record",
+      "url": "https://law-journals-books.vlex.com/vid/sb-319-chairman-john-935400390",
+      "date": "2022-02-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-319-2022",
+      "act": "nay",
+      "motion": "Passage (third reading)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA Senate, Passage (third reading), 2022-02-28: nay (tally 34–22); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "orchestrator, gun-policy Stage 5, LegiScan API (getBill, getRollCall, getSessionPeople, getBillText)",
+        "fetched_at": "2026-10-30T18:00:00Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/prefill/legiscan-ga/ga-sb319-enrolled.pdf",
+          "sha256": "17943534917a39ee671fab99d8120acebcc4e61921a039e7c8f5bb13fc72114d"
+        }
+      }
+    },
+    {
+      "id": "948fbdf37c513aa66d0ae3c5bdbe4d6693a22f68d3bb2cf997db8d2d87f31b69",
+      "kind": "record",
+      "url": "https://law-journals-books.vlex.com/vid/sb-319-chairman-john-935400390",
+      "date": "2022-04-01",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-319-2022",
+      "act": "nay",
+      "motion": "Final passage / agree to House version",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA Senate, Final passage / agree to House version, 2022-04-01: nay (tally 34–22); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "orchestrator, gun-policy Stage 5, LegiScan API (getBill, getRollCall, getSessionPeople, getBillText)",
+        "fetched_at": "2026-10-30T18:00:00Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/prefill/legiscan-ga/ga-sb319-enrolled.pdf",
+          "sha256": "17943534917a39ee671fab99d8120acebcc4e61921a039e7c8f5bb13fc72114d"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws in general",
+        "SB 202 (2021) vote"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "https://ballotpedia.org/Donzella_James (confirms State Senate District 28 incumbent, on the 2026 general-election ballot, Nov 3 2026; nothing on the subject)",
+        "news search on name plus subject words (a 2024 hand-count ruling statement and a 2025-26 same-day registration bill were seen; neither is about proof of identity or citizenship, so not saved)",
+        "https://www.fox5atlanta.com/news/state-election-board-fulton-county-voting-rights-act (does not quote her; nothing on the subject)",
+        "https://hoodline.com/2024/10/georgia-senator-donzella-james-cheers-court-decision-to-halt-controversial-ballot-hand-count-mandate-in-atlanta/ (hand-count rule only; nothing on the subject)",
+        "Senate press release list https://senatepress.net (nothing on the subject)",
+        "blocked: https://www.donzellajames.com (domain error)",
+        "blocked: https://www.legis.ga.gov (JavaScript-only site; she served in the Senate in 2021 but the SB 202 roll-call page could not be read)",
+        "blocked: https://legiscan.com/GA/rollcall/SB202/id/1023895 (403)",
+        "blocked: https://justfacts.votesmart.org/bills/GA/2021/12/S (403)",
+        "blocked: https://app.legiplex.com/profile/donzella-james-322/ga/legislatures/2025/2025-r/legislation/page/3 (site error)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:48:31.955Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T20:51:14.418Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

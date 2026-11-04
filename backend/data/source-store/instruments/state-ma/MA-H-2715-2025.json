@@ -1,0 +1,50 @@
+{
+ "id": "MA-H-2715-2025",
+ "scope": "state:ma",
+ "title": "H2715 (194th General Court): An Act relative to firearms features",
+ "urls": [
+  "https://malegislature.gov/Bills/194/H2715",
+  "https://malegislature.gov/Bills/194/H2715/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Justin Thurber",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "a485b386-65a5-4c6c-aaa1-a441facd45fc"
+  },
+  {
+   "name": "Michael D. Brady",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "67ea7814-b7aa-42de-aba8-2230c181d15a"
+  },
+  {
+   "name": "John R. Gaskey",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "08a2dfdf-43fb-408a-b758-aa94497fd871"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-H-2715-2025.html",
+   "sha256": "622024886d8684d4437ed3ec9e92fc3d934fac93adbe5d4889fb47fe1a24579a"
+  }
+ },
+ "operative_text": "SECTION 1. Section 16 of Chapter 135 of the Acts of 2024, is hereby amended by deleting subsection 121(a)(v) from the definition of “Assault-style firearm.”\nSECTION 2. Section 16 of Chapter 135 of the Acts of 2024, is hereby amended by striking subsection 121(b)(iv) from the definition of “Assault-style firearm.”"
+}

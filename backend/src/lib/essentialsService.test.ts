@@ -183,3 +183,36 @@ describe('getPoliticiansFlatList incumbents-only filter', () => {
     expect(sql).not.toContain('p.is_incumbent = true');
   });
 });
+
+describe('getPoliticiansFlatList incoming holder', () => {
+  // The transition display is DERIVED FROM DATES, never from a stored flag: "Outgoing" means
+  // this office has a next term, and "Incoming on <date>" is that term's term_start. That is why
+  // the labels expire on their own and January needs no cleanup pass over 2,159 seats.
+  async function sqlFor(includeCandidates: boolean): Promise<string> {
+    const query = vi.mocked(pool.query);
+    query.mockReset();
+    query.mockResolvedValue({ rows: [] } as never);
+    await getPoliticiansFlatList(includeCandidates);
+    return String(query.mock.calls[0][0]);
+  }
+
+  it('joins the next-term view and selects the incoming holder', async () => {
+    const sql = await sqlFor(false);
+    expect(sql).toContain('essentials.office_next_term');
+    expect(sql).toContain('incoming_on');
+    expect(sql).toContain('incoming_holder_id');
+    expect(sql).toContain('incoming_holder_name');
+  });
+
+  it('joins it with LEFT JOIN, so an office with no successor still returns', async () => {
+    const sql = await sqlFor(false);
+    expect(sql).toMatch(/LEFT JOIN\s+essentials\.office_next_term/i);
+  });
+
+  it('does not let the new join narrow the incumbents-only match', async () => {
+    // The is_vacant trap: a condition must constrain the MATCH, not a downstream join.
+    const sql = await sqlFor(false);
+    expect(sql).toContain('och.office_id IS NOT NULL');
+    expect(sql).not.toContain('ont.office_id IS NOT NULL');
+  });
+});

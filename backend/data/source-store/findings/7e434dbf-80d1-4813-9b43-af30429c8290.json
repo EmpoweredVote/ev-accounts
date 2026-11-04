@@ -1,0 +1,121 @@
+{
+  "politician_id": "7e434dbf-80d1-4813-9b43-af30429c8290",
+  "findings": [
+    {
+      "id": "11102c60ed3bc51e260a23c7ff98257943a7c3dd26779a8d8b3ce27a88ad22a0",
+      "kind": "own-words",
+      "url": "https://www.justice.senate.gov/about/issues/second-amendment/",
+      "date": "2026-02-04",
+      "date_precision": "day",
+      "passage": "Senator Justice will continue to work against bureaucrats, activist judges, and lawmakers who try to strip away law-abiding Americans’ right to bear arms.",
+      "note": "Issue page on his Senate site (page metadata: published 2026-02-04, modified 2026-04-08); issued in his name.",
+      "subjects": [
+        "Second Amendment",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4d1a3a165bc4af77024ca1efea6d22c9018b9f4238672610a628b02812ab3727",
+      "kind": "own-words",
+      "url": "https://www.justice.senate.gov/about/issues/second-amendment/",
+      "date": "2026-02-04",
+      "date_precision": "day",
+      "passage": "He deeply values the Second Amendment and the traditions and responsibility of firearm ownership.",
+      "note": "Same issue page; general statement on gun ownership.",
+      "subjects": [
+        "Second Amendment",
+        "firearm ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59c9eaed6ad8d62b557e27fd6b2b75271bce535faf3cef2b6b55238230957dbc",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2025190",
+      "date": "2025-07-01",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2025",
+      "act": "yea",
+      "motion": "On Passage of the Bill (H.R. 1, as Amended)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US Senate, On Passage of the Bill (H.R. 1, as Amended), 2025-07-01: yea (tally 50–50); census gate: multi-subject.",
+      "subjects": [
+        "end the federal tax on suppressors and short-barrelled guns",
+        "budget (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0673c1ffb68bd17f629b4a53b807dd7abe5fee7d8127d24c9b52a1eada540f44",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/65",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "US-S-65-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2025-02-10",
+      "note": "co sponsor of US-S-65-2025 (cosponsor 2025-02-10): S 65 (119th Congress): Constitutional Concealed Carry Reciprocity Act of 2025.",
+      "subjects": [
+        "national concealed-carry reciprocity for handguns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-S-65-2025.htm",
+          "sha256": "553385ff6538d8ab33b460cba8f4ce77a6b27ee7f2d5542d5f6810317128aeb4"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun rights",
+        "campus carry",
+        "federal red-flag laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site https://www.justice.senate.gov/about/issues/second-amendment/",
+        "not reviewed: governor-era signing pages (NRA-ILA, PBS) surfaced in search but not copied",
+        "blocked: https://www.congress.gov (not fetched)",
+        "web search on name plus subject words"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

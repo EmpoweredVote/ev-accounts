@@ -1,0 +1,367 @@
+{
+  "politician_id": "602f147a-90bc-4083-aeab-1d0becf088e9",
+  "findings": [
+    {
+      "id": "d93932d6bb6c737c2eb53cc5c2951d594aed9fdc0d913a9ff17ead15a77abd40",
+      "kind": "own-words",
+      "url": "https://andreacampbell.org/accomplishments/",
+      "date": "2026-09-17",
+      "date_precision": "day",
+      "passage": "Trump tried to disqualify eligible voters and throw out lawfully cast ballots. Andrea fought back, co-leading a lawsuit with 24 states to block his unconstitutional voting order and winning in court when Trump’s Justice Department demanded Massachusetts voter data. When Trump directed the Post Office to take control of mail-in voting, requiring states to overhaul their entire election systems in a matter of weeks, Andrea co-led a coalition of 25 states to sue to stop it, and won a preliminary injunction blocking the rule from taking effect before November.",
+      "note": "Campaign site text (page last modified 2026-09-17) describing her lawsuits as Attorney General against a federal voting order, a federal demand for state voter data, and a federal rule on mail-in voting. It does not mention photo ID or documentary proof of citizenship by name. Date is the page's last-modified date, not the date of the lawsuits.",
+      "subjects": [
+        "lawsuit against federal voting executive order",
+        "voter-roll data demand by federal government",
+        "mail-in voting rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:10:26.604Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "177ddc14fea1ad29fb648471867c9837b7b3ef87818407dd4799a1a65f336b0b",
+      "kind": "own-words",
+      "url": "https://www.bostonglobe.com/2025/04/03/metro/mass-ag-andrea-campbell-joins-national-lawsuit-challenging-trump-voter-action/",
+      "date": "2025-04-03",
+      "date_precision": "day",
+      "passage": "“Elections should be free, fair and accessible,” Campbell said in the statement. “The Trump Administration’s attempt to disqualify eligible voters and throw out lawfully cast ballots is plainly unconstitutional. We will not stand by while the President tries to impose unlawful barriers to the ballot box.”",
+      "note": "Boston Globe quotes Campbell's statement on joining a 19-state suit against the March 2025 executive order that called for proof of citizenship to register and for limits on counting mail and absentee ballots.",
+      "subjects": [
+        "proof of citizenship to register",
+        "mail-ballot rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:12:38.392Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "893cd3dedf58c93e7a04d56c6e9e9c43f879d7a5cf49f1215821e61517ff2811",
+      "kind": "own-words",
+      "url": "https://www.bostonglobe.com/2025/04/03/metro/mass-ag-andrea-campbell-joins-national-lawsuit-challenging-trump-voter-action/",
+      "date": "2025-04-03",
+      "date_precision": "day",
+      "passage": "Imposing “extraordinarily burdensome proof of citizenship requirements for voter registration” would “disenfranchise countless eligible Massachusetts voters,” according to Campbell’s statement.",
+      "note": "Globe sentence quoting fragments of Campbell's own statement about documentary proof of citizenship for voter registration. Only the quoted fragments are her words.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:12:38.392Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "610e81b06e925b10e75df1f25e6430c29cc7f37708d001b05c52a6b23e314d38",
+      "kind": "record",
+      "url": "https://www.bostonglobe.com/2025/04/03/metro/mass-ag-andrea-campbell-joins-national-lawsuit-challenging-trump-voter-action/",
+      "date": "2025-04-03",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Joined multistate federal suit in Boston against the March 2025 executive order on proof of citizenship for voter registration and mail-ballot counting",
+      "note": "Campbell signed on as one of 19 attorneys general plaintiffs. The suit asks a court to declare the order's provisions unconstitutional and void.",
+      "subjects": [
+        "proof of citizenship to register",
+        "mail-ballot rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:12:38.392Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf616a0290e832b46283608c8e01d39488afa3596a927cc4c95d62963e1a32cf",
+      "kind": "own-words",
+      "url": "https://www.benningtonbanner.com/local-news/vermont-other-states-sue-over-federal-executive-order-on-mail-in-voting/article_5b0bb04a-cd2a-446a-89d6-376a740d8792.html",
+      "date": "2026-04-05",
+      "date_precision": "day",
+      "passage": "“Though the President may wish he had unlimited power to restrict voting rights, the Constitution gives states – not the White House – the authority to oversee elections,” said Massachusetts Attorney General General Andrea Joy Campbell. “Mail-in voting is secure, our election laws are strong, and there is absolutely no evidence of widespread voter fraud. I will not back down from ensuring that every eligible voter in Massachusetts can cast their ballot and have their vote counted.”",
+      "note": "Bennington Banner quotes Campbell from the coalition press release on the 2026 suit over the executive order titled Ensuring Citizenship Verification and Integrity in Federal Elections (mail voting and citizenship verification). Page date is the article date, which may be a day or so after the filing.",
+      "subjects": [
+        "mail-ballot rules",
+        "non-citizen voting and voter fraud claims",
+        "citizenship verification"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:12:38.392Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad11eb9cd9de447d9611bc24d898d150cb1728ea94ffc5b6b011cfe163396edd",
+      "kind": "own-words",
+      "url": "https://www.mass.gov/news/ag-campbell-issues-statement-on-first-circuit-court-of-appeals-decision-to-uphold-massachusetts-assault-weapons-ban",
+      "date": "2025-04-18",
+      "date_precision": "day",
+      "passage": "Massachusetts has some of the strongest common sense gun laws in the country, and we know they are effective in ensuring our communities, especially our children, remain safe. The recent First Circuit Court of Appeals’ decision to uphold Massachusetts’ assault weapons ban is a tremendous victory for our state, and I will continue to vigorously defend these laws,",
+      "note": "Official statement in her name after an appeals court upheld, at a preliminary stage, the state's ban on selling and possessing assault weapons and large-capacity magazines (Capen and National Association for Gun Rights v. Campbell).",
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:56:07.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cc7209f40a5d123dc301ae1c2a0df781ca329affc39f54bd2ac3d60a34edd3db",
+      "kind": "own-words",
+      "url": "https://www.mass.gov/news/ag-campbell-co-leads-coalition-to-support-assault-weapons-ban-in-cook-county-illinois",
+      "date": "2024-09-04",
+      "date_precision": "day",
+      "passage": "Extensive evidence demonstrates that gun safety regulations protect our residents and the public while not undermining the Second Amendment,",
+      "note": "Official press-release quote in her name when she co-led a 19-state friend-of-the-court brief defending Cook County, Illinois's assault weapons ban.",
+      "subjects": [
+        "ban on assault-style guns",
+        "Second Amendment",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:56:07.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "da0939d03a322d9a807b7108aea232d92ac879d7a7a7b91afed62df0252bb59b",
+      "kind": "own-words",
+      "url": "https://www.mass.gov/news/ag-campbell-co-leads-coalition-to-support-assault-weapons-ban-in-cook-county-illinois",
+      "date": "2024-09-04",
+      "date_precision": "day",
+      "passage": "Assault weapons are meant to kill and are not for self-defense, thus why we have used every tool available to defend commonsense gun laws in Massachusetts, and I’m proud to help other jurisdictions do the same.",
+      "note": "Same press release, her statement on why her office defends assault weapons bans.",
+      "subjects": [
+        "ban on assault-style guns",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:56:07.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "93b9aa1804023395f7b2d02503f21876174aa93a3f87e27623c042affb203397",
+      "kind": "record",
+      "url": "https://www.mass.gov/news/ag-campbell-co-leads-coalition-to-support-assault-weapons-ban-in-cook-county-illinois",
+      "date": "2024-09-04",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Co-led 19-state amicus brief, Viramontes v. County of Cook (Seventh Circuit), supporting a county assault weapons ban",
+      "note": "Her office co-led, with New Jersey, a brief urging the court to uphold Cook County's ban on selling and possessing assault weapons.",
+      "subjects": [
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:56:07.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8036d3c5615593061ce5016a1bbabd99ea3025381f4c312ad053a93940653021",
+      "kind": "own-words",
+      "url": "https://commonwealthbeacon.org/criminal-justice/ag-says-news-laws-needed-to-trace-ghost-guns/",
+      "date": "2023-07-11",
+      "date_precision": "day",
+      "passage": "You can buy parts online or use a 3D printer to make a deadly weapon and completely circumvent our existing gun laws in Massachusetts,",
+      "note": "Quoted by State House News Service (published by CommonWealth Beacon) at a briefing where she urged lawmakers to act on untraceable ghost guns.",
+      "subjects": [
+        "ghost guns",
+        "3D-printed guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:56:07.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7854a4344a7c3c832d35ef00e49190f8a8ede59ad3aac43efaa47d0ac915c723",
+      "kind": "own-words",
+      "url": "https://commonwealthbeacon.org/criminal-justice/ag-says-news-laws-needed-to-trace-ghost-guns/",
+      "date": "2023-07-11",
+      "date_precision": "day",
+      "passage": "We need to get these guns off the street and, frankly, out of communities that are seeing and have seen, probably for generations, an uptick in violence or gun violence in their community,",
+      "note": "Quoted by State House News Service at the same briefing, on ghost guns.",
+      "subjects": [
+        "ghost guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:56:07.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a672b6de9defa785d3a89ec9627df4c58d156412ea734240699de1c9c74ba7b",
+      "kind": "own-words",
+      "url": "https://commonwealthbeacon.org/criminal-justice/andrea-campbell-wants-to-cap-gun-purchases-expand-assault-weapons-ban/",
+      "date": "2022-06-30",
+      "date_precision": "day",
+      "passage": "We know no one should need that many guns, and it tends to be used for trafficking,",
+      "note": "Quoted by CommonWealth Beacon while she was a candidate for attorney general, on her plan to seek lifetime and annual limits on gun purchases.",
+      "subjects": [
+        "limit on buying multiple guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:56:07.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f9d94bf5a7b9723fa0fbf6dfa55465c3fc3b7bd9533335d9c7db5bef1e374898",
+      "kind": "own-words",
+      "url": "https://commonwealthbeacon.org/criminal-justice/andrea-campbell-wants-to-cap-gun-purchases-expand-assault-weapons-ban/",
+      "date": "2022-06-30",
+      "date_precision": "day",
+      "passage": "We have some of the best, most progressive gun laws in the country, but we still have work to do here,",
+      "note": "Quoted by CommonWealth Beacon on her campaign gun plan, which the outlet describes as covering revising the assault weapons ban, purchase caps, ghost guns and safety training.",
+      "subjects": [
+        "ban on assault-style guns",
+        "limit on buying multiple guns",
+        "ghost guns",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:56:07.793Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll data demands",
+        "mail-in voting rules",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Andrea_Joy_Campbell names her as Attorney General of Massachusetts, on the Nov 3, 2026 general-election ballot (positive control)",
+        "On the Record (0 appearances)",
+        "campaign site andreacampbell.org (bio, accomplishments, news list, site search for voter ID, SAVE Act, citizenship, election integrity, mail ballot, voting)",
+        "Ballotpedia (nothing on the subject)",
+        "blocked: https://www.mass.gov/orgs/office-of-the-attorney-general (HTTP 403 for WebFetch and curl with browser agent)",
+        "blocked: https://www.mass.gov/people/andrea-joy-campbell (HTTP 403)",
+        "not applicable: legislature bill pages (statewide executive office, not a legislator)",
+        "not reviewed: news search on name plus subject words (session web search budget used up)",
+        "not reviewed: ontheissues.org and vote411 (lead-only sources, not fetched)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:10:26.604Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "mail-ballot rules and ID",
+        "non-citizen voting and voter fraud claims",
+        "federal election executive orders",
+        "SAVE Act"
+      ],
+      "places": [
+        "In scope: https://ballotpedia.org/Massachusetts_Attorney_General_election,_2026 lists Andrea Campbell on the 2026 general-election ballot for Attorney General",
+        "On the Record (0 meetings)",
+        "blocked: https://www.mass.gov/news/ag-campbell-files-lawsuit-against-trump-administrations-unlawful-attempt-to-restrict-voting-access (403 on fetch and on curl with browser user agent)",
+        "blocked: https://www.mass.gov/news/ag-campbell-sues-trump-administration-over-unlawful-executive-order-attempting-to-exert-federal-control-over-elections (403)",
+        "blocked: https://www.mass.gov/news/ag-campbell-secures-victory-in-blocking-trump-administrations-unlawful-attempt-to-restrict-voting-access (403)",
+        "blocked: https://www.axios.com/local/boston/2026/04/06/massachusetts-mail-in-voting-trump (page returned no text)",
+        "not reviewed: https://www.eagletribune.com/news/boston/ags-sue-to-block-trumps-voting-law-changes/article_4774f916-6c80-4ea0-bcce-b62627a6e54c.html (text scrambled on the page)",
+        "Illinois AG page on the SAVE Act coalition letter (https://illinoisattorneygeneral.gov/news/story/attorney-general-raoul-opposes-federal-legislation-that-would-create-substantial-barriers-to-voting-3-31-25) lists Massachusetts but does not name Campbell: not saved",
+        "Ballotpedia news page on court rulings: describes the orders, no Campbell words: not saved",
+        "no state legislature or campaign-site bill record applies to a statewide law officer; no photo-ID or no-ID-voter statement found",
+        "three news searches on name plus subject words"
+      ],
+      "found": 4,
+      "at": "2026-10-27T19:12:38.392Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large-capacity magazines",
+        "ghost guns",
+        "limits on how many guns one person can buy",
+        "gun safety training",
+        "general gun-safety statements and Second Amendment litigation"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity and scope: https://www.wgbh.org/news/politics/2025-10-21/massachusetts-ag-andrea-campbell-announces-reelection-bid says Attorney General Andrea Campbell is running for reelection in 2026; mass.gov press releases below are issued by the Attorney General",
+        "official site: mass.gov Attorney General press releases of 2024-09-04 and 2025-04-18 (saved)",
+        "campaign site https://www.andreacampbell.org/ home page: nothing on the subject",
+        "sponsor list: not applicable (statewide office, not a legislator); earlier city council record searched, no gun ordinance found",
+        "Ballotpedia: not fetched (known to return empty)",
+        "blocked: https://www.mass.gov/news/ag-campbell-statement-on-signing-of-gun-safety-law (403)",
+        "blocked: https://andreacampbell.org/2022/06/30/andrea-campbell-for-attorney-general-announces-gun-violence-prevention-plan-for-massachusetts (404, page gone)",
+        "blocked: https://www.andreacampbell.org/issues (404)",
+        "blocked: https://www.mass.gov/orgs/gun-violence-prevention-unit (404)",
+        "not reviewed: https://www.bostonglobe.com/2024/07/15/metro/trump-shooting-mass-ag-gun-reform/ (not fetched)",
+        "web searches (3): found news and press releases; a Boston city council gun ordinance search found none"
+      ],
+      "found": 8,
+      "at": "2026-11-01T01:56:07.793Z",
+      "by": "source-collector"
+    }
+  ]
+}

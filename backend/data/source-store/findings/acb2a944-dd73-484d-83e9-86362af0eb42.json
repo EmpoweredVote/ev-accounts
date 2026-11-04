@@ -1,0 +1,78 @@
+{
+  "politician_id": "acb2a944-dd73-484d-83e9-86362af0eb42",
+  "findings": [
+    {
+      "id": "4e9e10ebde41cc94d831bba5af44c718996ee9d82cd771b60b4cb94d4ad2fffc",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2026/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "nay",
+      "motion": "SB 1174 Min Senate Third Reading By BERMAN, Assembly Floor, result PASS 57 to 16",
+      "note": "Voted no on the Assembly floor for SB 1174 (Elections: voter identification), which bars local governments from requiring voter ID. Source is the Internet Archive copy of the leginfo vote page.",
+      "subjects": [
+        "local voter ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:06:59.510Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8004ae6588e6e3ce884f873d8dfc91fc34166b096c83e2b32217ecf8f7ad158",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2026/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1116",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "nay",
+      "motion": "AB 1116 Berman Assembly Third Reading, Assembly Floor, result PASS 60 to 18",
+      "note": "Voted no on the Assembly floor for AB 1116 (online voter registration without a driver's license or state ID, using the last four digits of the Social Security number to verify identity). Source is the Internet Archive copy of the leginfo vote page.",
+      "subjects": [
+        "proof of identity to register to vote",
+        "online voter registration ID alternative"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:06:59.510Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter ID rules",
+        "proof of citizenship to register",
+        "proof of identity to register online",
+        "mail-ballot signature and ID checks",
+        "election integrity statements"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia page https://ballotpedia.org/Josh_Hoover (confirms Assembly District 7, seated 2022-12-05, on the 2026 general-election ballot after advancing from the 2026-06-02 primary; nothing on the subject)",
+        "campaign site https://hooverforassembly.com/ (home page only; nothing on the subject)",
+        "blocked: https://ad07.asmrc.org/ (403 from the fetch tool; a direct request returned only a short page with nothing on the subject)",
+        "two news searches on his name plus voter ID, SB 1174 and AB 25: no statement of his found",
+        "Internet Archive copies of the leginfo vote pages for SB 1174 (2024) and AB 1116 (2025) (leginfo itself is behind a bot check)",
+        "CalMatters Digital Democracy bill page for AB 1116 (no member-level votes shown)",
+        "AB 25 (2025) failed in the Assembly Elections Committee; he is not on that committee's roll in the SB 1174 and AB 1116 committee votes checked, so no vote of his found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T16:06:59.510Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

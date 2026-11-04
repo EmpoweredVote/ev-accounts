@@ -1,0 +1,46 @@
+[
+ {
+  "key": "county_attorney",
+  "pid": "0a15aa05-ecfe-4f15-9c59-432591ffddbc",
+  "name": "Gerald A. Mumford",
+  "seat": "County Attorney",
+  "object": "0a15aa05-ecfe-4f15-9c59-432591ffddbc-headshot.jpg",
+  "sha": "775925ee4a305689ccfe996d70603daeb003260ba018d6f75065468fca72809e",
+  "source": "https://www.hindscountyms.com/sites/default/files/gerald-mumford-2x3-website.jpg",
+  "put": 200,
+  "verified": true
+ },
+ {
+  "key": "sheriff",
+  "pid": "d0697130-c722-4401-9a5e-098b2ae1059d",
+  "name": "Tyree D. Jones",
+  "seat": "Sheriff",
+  "object": "d0697130-c722-4401-9a5e-098b2ae1059d-headshot.jpg",
+  "sha": "6281fcc6dbb801883d622f5a4d388610ec4f1a18705b054dd3f2f40cce1bd452",
+  "source": "https://www.hindscountyms.com/sites/default/files/Tyree_D_Jones.jpg",
+  "put": 200,
+  "verified": true
+ },
+ {
+  "key": "tax_collector",
+  "pid": "b90bf116-89af-4451-951e-88fa6ea3342c",
+  "name": "Eddie J. Fair",
+  "seat": "Tax Collector",
+  "object": "b90bf116-89af-4451-951e-88fa6ea3342c-headshot.jpg",
+  "sha": "d58cc3898fcac40bc3597a8594d25ab686367dcc7a478d25a4347eda16e229e1",
+  "source": "https://www.hindscountyms.com/sites/default/files/fair-page.jpg",
+  "put": 200,
+  "verified": true
+ },
+ {
+  "key": "tax_assessor",
+  "pid": "96f6bee3-c4ce-4795-92ed-6939adb12ea3",
+  "name": "Charles E. Stokes",
+  "seat": "Tax Assessor",
+  "object": "96f6bee3-c4ce-4795-92ed-6939adb12ea3-headshot.jpg",
+  "sha": "a84f9f9b43e4145112bdecb11c176467ba1c06c9ce101bab208953b5f4ea80d9",
+  "source": "https://www.hindscountyms.com/sites/default/files/stokes-page.jpg",
+  "put": 200,
+  "verified": true
+ }
+]

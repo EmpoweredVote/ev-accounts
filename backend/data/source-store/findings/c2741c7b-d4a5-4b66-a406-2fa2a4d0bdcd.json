@@ -1,0 +1,65 @@
+{
+  "politician_id": "c2741c7b-d4a5-4b66-a406-2fa2a4d0bdcd",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "status: no longer in scope; appointed (not elected) Indiana Utility Regulatory Commission member, left office on 2026-08-14, not a legislator and not on a ballot (https://ballotpedia.org/David_Veleta)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (https://ballotpedia.org/David_Veleta): identifies him; nothing on the subject",
+        "not reviewed: Indiana General Assembly bill pages (not a legislator; no sponsorships expected)",
+        "not reviewed: news search on name plus subject words (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:49:18.612Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "scope check only (search stopped: out of scope)"
+      ],
+      "places": [
+        "status: left office 2026-08-14 (Ballotpedia page https://ballotpedia.org/David_Veleta shows he served on the Indiana Utility Regulatory Commission from 2022-09-14 to 2026-08-14, not a legislator or a 2026 candidate)",
+        "On the Record (0 appearances)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:35:57.974Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns",
+        "background checks",
+        "red flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check (appointed executive official, not a legislator)",
+        "web search: name plus gun and Second Amendment words, nothing on the subject",
+        "Ballotpedia: not reliable through fetch tool",
+        "https://www.insideindianabusiness.com/?p=123203 (shows he was appointed to the Indiana Utility Regulatory Commission; not a legislator)",
+        "blocked: https://www.in.gov/iurc/about-us/commission-chairman-and-commissioners/david-veleta (404, page not found)",
+        "search results report he resigned from the commission effective 2026-08-31; no official or campaign site with issue pages found"
+      ],
+      "found": 0,
+      "at": "2026-10-31T20:37:46.295Z",
+      "by": "source-collector"
+    }
+  ]
+}

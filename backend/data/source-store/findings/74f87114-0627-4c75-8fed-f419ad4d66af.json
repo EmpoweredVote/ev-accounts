@@ -1,0 +1,57 @@
+{
+  "politician_id": "74f87114-0627-4c75-8fed-f419ad4d66af",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship / SAVE Act",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "status: in scope. Won the March 17, 2026 primary for IL-15 and is on the November 3, 2026 ballot (https://ballotpedia.org/Jennifer_Todd ; https://www.nprillinois.org/illinois/2026-04-20/democrat-wants-to-unseat-a-3-term-republican-in-ultra-conservative-illinois-district)",
+        "On the Record (0 appearances, nothing on the subject)",
+        "campaign site https://www.jentodd2026.us/ and /issues (nothing on the subject; issues: healthcare, working families, immigration)",
+        "Ballotpedia (candidate survey and campaign site excerpt, nothing on the subject)",
+        "BallotReady profile (nothing on the subject)",
+        "NPR Illinois profile (nothing on the subject)",
+        "news search on name plus subject words (nothing on the subject)",
+        "congress.gov: not applicable, not a legislator (no sponsorships or votes)",
+        "not reviewed: Facebook https://www.facebook.com/jentoddforcongress and Instagram https://www.instagram.com/jentodd2026 (social posts not readable)",
+        "ontheissues.org: lead only, no record as non-incumbent"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:35:41.093Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Jennifer_Todd) shows her as a candidate for U.S. House Illinois District 15, advanced from the 2026-03-17 primary, on the 2026-11-03 general-election ballot",
+        "On the Record (0 appearances)",
+        "Ballotpedia: her Candidate Connection survey answers cover healthcare, families, farming, veterans; nothing on the subject",
+        "campaign site https://www.jentodd2026.us/ and /issues: priorities pages (affordability, equality and freedom, veterans, education, healthcare, family, farming, workers and families, immigration), nothing on ID or citizenship proof",
+        "campaign site news and campaign-updates pages: headlines only, nothing on the subject",
+        "web search on name plus voter ID words (1 search) and NPR Illinois interview article: nothing on the subject",
+        "congress.gov: not applicable, she holds no seat and has no votes or sponsorships",
+        "blocked: https://news.wttw.com/elections/voters-guide/2026-primary/jennifer-todd (page returned almost no text)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:22:11.683Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

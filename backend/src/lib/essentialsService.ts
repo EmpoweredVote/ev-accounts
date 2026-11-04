@@ -67,6 +67,7 @@ import {
   buildStatewideQuery,
 } from './districtQueries.js';
 import { PHOTO_RESTRICTION_SELECT_SQL, type PhotoRestriction } from './photoRestriction.js';
+import { PHOTO_CREDIT_SELECT_SQL, type PhotoCredit } from './photoCredit.js';
 export { GeocodingError };
 
 /**
@@ -138,6 +139,24 @@ export interface PoliticianFlatRecord {
    * the question the data asserts.
    */
   seat_status: 'held' | 'vacant';
+  /**
+   * The successor who has won this seat but has not taken office yet (CC_0341), and the date
+   * they do. All three are null for almost every seat, because almost every seat is not in
+   * transition.
+   *
+   * 🔴 THESE ARE DATES, NOT A STATE FLAG. A renderer shows the holder as "Outgoing" and the
+   * successor as "Incoming on <incoming_on>" exactly while `incoming_on` is non-null, and that
+   * stops being true on the morning it arrives, with nothing written and nothing deployed —
+   * `essentials.office_next_term` and `essentials.current_office_holders` split on the same
+   * comparison against CURRENT_DATE. Do not cache this, and do not add a column that says
+   * "in transition": that is the mistake the whole temporal model exists to avoid.
+   *
+   * ⚠ A seat can be `seat_status: 'held'` and still have a successor waiting. That is the
+   * normal mid-transition state, not a contradiction.
+   */
+  incoming_holder_id: string | null;
+  incoming_holder_name: string | null;
+  incoming_on: string | null;
   external_id: number | null;
   first_name: string;
   middle_initial: string;
@@ -413,6 +432,14 @@ export async function getPoliticiansFlatList(
            COALESCE(p.term_date_precision, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.id AS office_id,
+           -- CC_0341 transition fields. All three are NULL for a seat with no successor
+           -- waiting, which is almost every seat. incoming_on is the DATE the successor takes
+           -- office: it is what "Incoming on <date>" renders, and the reason no flag has to be
+           -- flipped on the day — the same comparison that makes this row appear also makes it
+           -- disappear, at midnight, with no write.
+           ont.politician_id AS incoming_holder_id,
+           inc.full_name AS incoming_holder_name,
+           ont.term_start AS incoming_on,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.voting_powers, o.representation_note,
            o.is_appointed_position, o.is_vacant, o.vacant_since,
@@ -441,6 +468,15 @@ export async function getPoliticiansFlatList(
     -- what returned two "Aaron Freeman"s until CC_0103 removed the duplicate office (2026-09-12).
     LEFT JOIN essentials.office_current_holder och ON och.politician_id = p.id
     LEFT JOIN essentials.offices o ON o.id = och.office_id
+    -- CC_0341: the successor who has not taken office yet, so a seat mid-transition can render
+    -- the sitting holder as "Outgoing" and the winner as "Incoming on <date>".
+    -- 🔴 LEFT JOIN, AND IT MUST STAY ONE. Nearly every office has no successor waiting, so an
+    -- inner join would drop almost the whole list. And per the is_vacant trap, a condition on
+    -- this join must never constrain the MATCH: the incumbents-only filter above decides who is
+    -- returned, and a NOT NULL condition on the ont join anywhere would silently reduce this
+    -- list to the offices in transition. The view is one row per office, so this cannot fan out.
+    LEFT JOIN essentials.office_next_term ont ON ont.office_id = o.id
+    LEFT JOIN essentials.politicians inc ON inc.id = ont.politician_id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
@@ -480,6 +516,9 @@ export async function getPoliticiansFlatList(
     id: (row.id as string | null) ?? null,
     office_id: (row.office_id as string | null) ?? '',
     seat_status: row.id ? 'held' : 'vacant',
+    incoming_holder_id: (row.incoming_holder_id as string | null) ?? null,
+    incoming_holder_name: (row.incoming_holder_name as string | null) ?? null,
+    incoming_on: row.incoming_on ? String(row.incoming_on).slice(0, 10) : null,
     external_id: row.external_id != null ? Number(row.external_id) : null,
     first_name: row.first_name ?? '',
     middle_initial: row.middle_initial ?? '',
@@ -648,6 +687,9 @@ function mapPoliticianRow(row: Record<string, any>): PoliticianFlatRecord {
     id: (row.id as string | null) ?? null,
     office_id: (row.office_id as string | null) ?? '',
     seat_status: row.id ? 'held' : 'vacant',
+    incoming_holder_id: (row.incoming_holder_id as string | null) ?? null,
+    incoming_holder_name: (row.incoming_holder_name as string | null) ?? null,
+    incoming_on: row.incoming_on ? String(row.incoming_on).slice(0, 10) : null,
     external_id: row.external_id != null ? Number(row.external_id) : null,
     first_name: row.first_name ?? '',
     middle_initial: row.middle_initial ?? '',
@@ -1232,6 +1274,11 @@ export interface PoliticianDetail {
   photo_origin_url: string;
   /** Non-null when a portrait exists but its publisher reserved it. See photoRestriction.ts. */
   photo_restriction?: PhotoRestriction | null;
+  /**
+   * The credit the portrait owes, for display. Null when there is none to give.
+   * 🔴 NOT the same thing as `photo_origin_url`, which is the image to show. See photoCredit.ts.
+   */
+  photo_credit?: PhotoCredit | null;
   web_form_url: string;
   urls: string[] | null;
   email_addresses: string[] | null;
@@ -1359,6 +1406,7 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
            p.preferred_name, p.name_suffix, p.party, p.party_short_name,
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
            ${PHOTO_RESTRICTION_SELECT_SQL},
+           ${PHOTO_CREDIT_SELECT_SQL},
            p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug,
            p.total_years_in_office, p.is_incumbent, p.is_appointed, p.is_vacant,
@@ -1554,6 +1602,7 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
     party_short_name: row.party_short_name ?? '',
     photo_origin_url: row.photo_origin_url ?? '',
     photo_restriction: (row.photo_restriction as PhotoRestriction | null) ?? null,
+    photo_credit: (row.photo_credit as PhotoCredit | null) ?? null,
     web_form_url: row.web_form_url ?? '',
     urls: row.urls ?? null,
     email_addresses: row.email_addresses ?? null,
@@ -1988,6 +2037,9 @@ export async function getRepresentativesByJurisdiction(
     id: (row.id as string | null) ?? null,
     office_id: (row.office_id as string | null) ?? '',
     seat_status: row.id ? 'held' : 'vacant',
+    incoming_holder_id: (row.incoming_holder_id as string | null) ?? null,
+    incoming_holder_name: (row.incoming_holder_name as string | null) ?? null,
+    incoming_on: row.incoming_on ? String(row.incoming_on).slice(0, 10) : null,
     external_id: row.external_id != null ? Number(row.external_id) : null,
     first_name: (row.first_name as string) ?? '',
     middle_initial: (row.middle_initial as string) ?? '',
@@ -2097,6 +2149,9 @@ export async function getLocalOfficialsByUserId(userId: string): Promise<Politic
     id: (row.id as string | null) ?? null,
     office_id: (row.office_id as string | null) ?? '',
     seat_status: row.id ? 'held' : 'vacant',
+    incoming_holder_id: (row.incoming_holder_id as string | null) ?? null,
+    incoming_holder_name: (row.incoming_holder_name as string | null) ?? null,
+    incoming_on: row.incoming_on ? String(row.incoming_on).slice(0, 10) : null,
     external_id: row.external_id != null ? Number(row.external_id) : null,
     first_name: (row.first_name as string) ?? '',
     middle_initial: (row.middle_initial as string) ?? '',

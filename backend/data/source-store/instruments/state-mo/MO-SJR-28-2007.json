@@ -1,0 +1,33 @@
+{
+  "id": "MO-SJR-28-2007",
+  "scope": "state:mo",
+  "title": "SJR 28 (2007 First Regular Session (94th General Assembly)): Requires photo identification to vote in elections",
+  "urls": [
+    "https://www.senate.mo.gov/07info/BTS_Web/Bill.aspx?SessionType=R&BillID=57061",
+    "https://www.senate.mo.gov/07info/pdf-bill/intro/SJR28.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) SJR 28 introduced, new section 8 of article VIII\n(quote) Section 8. Any person seeking to vote in a public election shall establish their qualification as a citizen of the state of Missouri lawfully present in the United States of America by providing election officials a form of identification, including valid government-issued photo identification, as established by general law. The state shall provide at least one form of such identification required to vote at no cost to any otherwise qualified citizen w ho does not already possess such identification and who desires the identification in order to vote. In the event that any political subdivision incurs costs to im plement the requirements of this law, the state shall reim burse the political subdivision for such costs.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Constitutional amendment for the 2008 general election; state pays for one free ID form and reimburses political subdivisions' costs.",
+  "sponsors": [
+    {
+      "name": "Scott",
+      "role": "prime",
+      "version": "Introduced version (LR 2513S.01I)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04T00:00:00Z)",
+    "fetched_at": "2026-11-04T00:00:00Z",
+    "method": "curl"
+  }
+}

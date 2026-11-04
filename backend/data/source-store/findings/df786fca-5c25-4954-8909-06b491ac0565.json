@@ -1,0 +1,71 @@
+{
+  "politician_id": "df786fca-5c25-4954-8909-06b491ac0565",
+  "findings": [
+    {
+      "id": "149ddc7335f921b4b0bc1bea8aa3da5733cda8e2e42015c827955885fa1180b5",
+      "kind": "own-words",
+      "url": "https://shookforcongress.com",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Close loopholes that allow guns to be sold without background checks.",
+      "note": "Bullet under 'Public Safety & Gun Violence Prevention' on his campaign home page. Page is undated.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:06:55.236Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4a874cfeda8580c8e32a1fbdc093ed4b4f16560b35134cb180e0ba9c08e4a76d",
+      "kind": "own-words",
+      "url": "https://shookforcongress.com",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Support red-flag laws to keep firearms away from those who pose an imminent danger.",
+      "note": "Bullet under 'Public Safety & Gun Violence Prevention' on his campaign home page. Page is undated.",
+      "subjects": [
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:06:55.236Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "red-flag orders",
+        "ban on assault-style guns",
+        "carry permits",
+        "Second Amendment general statement"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site shookforcongress.com home page (issues section) - fetched",
+        "blocked: https://ballotpedia.org/Steven_Shook (403 request blocked)",
+        "Branch voter-guide page (third-party summary of his site; confirms same text, not saved as own words)",
+        "iVoterGuide page: empty response, nothing readable",
+        "news and web search on name plus gun words: nothing from him on the subject beyond the campaign site",
+        "congress.gov / legislature record: not applicable, first-time candidate with no legislative record",
+        "confirmed in scope: candidate for Texas 26th District, 2026 general election (pollsmax.com forecast page names him as the opposing candidate in November)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T15:06:55.236Z",
+      "by": "source-collector"
+    }
+  ]
+}

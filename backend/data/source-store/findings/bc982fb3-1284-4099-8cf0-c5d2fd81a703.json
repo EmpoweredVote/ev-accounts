@@ -1,0 +1,121 @@
+{
+  "politician_id": "bc982fb3-1284-4099-8cf0-c5d2fd81a703",
+  "findings": [
+    {
+      "id": "e150f242a3c540e589b6b1c43e7ab6f3a4382d5a97fb4a13b80c65f7808a9d3c",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/80565/race/11966/election/1245",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "People should be able to vote without photo identification. Disagree",
+      "note": "iVoterGuide questionnaire item, under Elections and Voting, answered by the candidate: he disagrees that people should be able to vote without photo identification. Page shows no date.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:09:53.978Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e076c8b48278b31632ee890048920af3952a61ffb83895b5d23bfa476c64b17f",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Warwick'), linked to Christopher D Warwick (district 128) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.752Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "72a52d290b9978b563f9da836e97197e83a6bdb92ec9fc051a7d62606b3d4473",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn052.pdf",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "MO-HCR-48-2026",
+      "act": "yea",
+      "motion": "House: HCR 48 read the third time and passed",
+      "note": "House roll call as printed ('Warwick'), linked to Christopher D Warwick (district 128) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.232Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site warwickformo128th.com (nothing on the subject)",
+        "iVoterGuide candidate profile (1 questionnaire answer)",
+        "Missouri Times candidacy and re-election press releases (nothing on the subject)",
+        "web searches on name plus voter ID, citizenship, election words (nothing further)",
+        "blocked: https://ballotpedia.org/Christopher_Warwick (listed as blocked per instruction, not fetched)",
+        "not reviewed: house.mo.gov and newsroom.house.mo.gov (off-limits per robots/instruction)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T05:09:53.978Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:10:53.752Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:14:55.232Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

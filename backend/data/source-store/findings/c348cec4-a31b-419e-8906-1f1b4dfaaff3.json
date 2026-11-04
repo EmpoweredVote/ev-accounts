@@ -1,0 +1,211 @@
+{
+  "politician_id": "c348cec4-a31b-419e-8906-1f1b4dfaaff3",
+  "findings": [
+    {
+      "id": "7125f6d1f6e5bd5e1834545d2e05e4bb95db311cbdbb65fd2cc51b5746c755be",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2026/bills/house/1249/details",
+      "date": "2026-02-27",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1249-2026",
+      "act": "abstain",
+      "motion": "Senate - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "IN Senate, Senate - Rules Suspended. Conference Committee Report 1, 2026-02-27: abstain (tally 43–4); census gate: multi-subject.",
+      "subjects": [
+        "child's dangerous possession of a firearm made a Level 5 felony near schools or with a prior conviction",
+        "child giving a firearm to an ineligible child is a felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1249-2026.enrolled.pdf",
+          "sha256": "172d79f5e19ed54ba0ca8d38d66b853eaa663ef271f3c0ed00058967e2e07e50"
+        }
+      }
+    },
+    {
+      "id": "cea634a48ab1da4159cb44cb907d655305034ae17085df645dca261d3feae02a",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2026/bills/house/1258/details",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1258-2026",
+      "act": "yea",
+      "motion": "Senate - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "IN Senate, Senate - Third reading, 2026-02-24: yea (tally 46–2); census gate: multi-subject.",
+      "subjects": [
+        "repeat illegal gun carrying and possession counted as crimes of violence",
+        "crime-of-violence list feeds bail and release rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1258-2026.enrolled.pdf",
+          "sha256": "1adf420a4f8712a678b443140991f8e966a3e1d936fc1f62e72e9bee6a1733c2"
+        }
+      }
+    },
+    {
+      "id": "09a61906e299344ad445e7b9c9b1a4838d77e14930b62226abd79919fb8d4ef2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2026/bills/house/1274/details",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1274-2026",
+      "act": "yea",
+      "motion": "Senate - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN Senate, Senate - Third reading, 2026-02-24: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "insurers barred from requiring gun free zone signs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1274-2026.enrolled.pdf",
+          "sha256": "c9c7acd718bbd025aa03f305929915de62929dc4ac0ef07974fc28f95732de67"
+        }
+      }
+    },
+    {
+      "id": "cb58bc0c6e13a58c95f6e13eebbd9c3e3f51a9e052eb0ee6e61f7160dc62fb82",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2026/bills/house/1343/details",
+      "date": "2026-02-27",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1343-2026",
+      "act": "yea",
+      "motion": "Senate - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "IN Senate, Senate - Rules Suspended. Conference Committee Report 1, 2026-02-27: yea (tally 37–11); census gate: multi-subject.",
+      "subjects": [
+        "new school-property offence for imitation firearms",
+        "trunk or locked-glove-box defense extended to imitation firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1343-2026.enrolled.pdf",
+          "sha256": "97ae4e77fb76f4f2988fda66fbb368c52d8428a4d583512f96f4106c986a61c2"
+        }
+      }
+    },
+    {
+      "id": "a4be4d6ccb6c7bc6b9fd795effb900f4a96849c45f0694ffac518357da6c6d64",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2026/bills/senate/176/details",
+      "date": "2026-02-27",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-176-2026",
+      "act": "yea",
+      "motion": "Senate - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN Senate, Senate - Rules Suspended. Conference Committee Report 1, 2026-02-27: yea (tally 42–8); census gate: none.",
+      "subjects": [
+        "local limits on shooting range permits and zoning restricted",
+        "indoor shooting ranges allowed in commercial, industrial and farm zones",
+        "sporting goods stores (which sell firearms) allowed in commercial zones"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-SB-176-2026.enrolled.pdf",
+          "sha256": "6933ecc1981c83b3d7313eea18239a5ee7b0e3d3bd08cbb353141deb4dac3127"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "places": [
+        "status: lost the 2026-05-05 primary (https://ballotpedia.org/Nick_McKinley says he lost the primary for Indiana State Senate District 17 on May 5, 2026; his term ends November 4, 2026)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (fetched, confirms identity and primary loss)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_nick_mckinley_1 (page returned no content)",
+        "not reviewed: web news search (search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:50:15.861Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "scope check only (search stopped: out of scope)"
+      ],
+      "places": [
+        "status: lost the 2026-05-05 primary (Ballotpedia page https://ballotpedia.org/Nick_McKinley says he ran for re-election to Indiana State Senate District 17 and lost the primary; term ends 2026-11-04)",
+        "On the Record (0 appearances)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:35:58.001Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "general gun rights"
+      ],
+      "places": [
+        "status: lost the May 2026 primary (Wikipedia page for Nick McKinley states he lost the May 2026 primary by roughly 500 votes; exact day not on that page; the Indiana primary was 2026-05-05 per other coverage; a primary-night news report naming him was not reachable)",
+        "On the Record (0 meetings)",
+        "Indiana Senate caucus member page https://www.indianasenaterepublicans.com/mckinley (names him Senator, District 17; nothing on the subject)",
+        "sponsor list: covered by LegiScan bulk check",
+        "web search: Nick McKinley Indiana Senate firearms (no own words on the subject found)",
+        "blocked: https://indianacapitalchronicle.com/2026/05/05/trump-backed-candidates-romp-to-wins-in-indiana-senate-races/ (403)",
+        "blocked: https://www.newsfromthestates.com/node/406041 (403)",
+        "Ballotpedia: not reviewed (pages return empty to the fetch tool)"
+      ],
+      "found": 0,
+      "at": "2026-10-31T20:37:54.388Z",
+      "by": "source-collector"
+    }
+  ]
+}

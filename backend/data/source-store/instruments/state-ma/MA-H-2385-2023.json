@@ -1,0 +1,38 @@
+{
+ "id": "MA-H-2385-2023",
+ "scope": "state:ma",
+ "title": "H2385 (193rd General Court): An Act establishing a smart gun technology task force",
+ "urls": [
+  "https://malegislature.gov/Bills/193/H2385",
+  "https://malegislature.gov/Bills/193/H2385/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Alice Hanlon Peisch",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "ac853e6e-d419-4d05-b89c-77d11bb68fb2"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-H-2385-2023.html",
+   "sha256": "89ace405a163a6e4e6914b620ff3e80174033bc01edc3631380e5af8c77e0d8e"
+  }
+ },
+ "operative_text": "SECTION 1. The secretary of public safety and security shall establish a task force to review the feasibility of “smart gun” technology in the commonwealth. The task force shall examine, among other issues: how current firearm safety features compare to “smart gun” technology, whereby a firearm enables only an authorized user to fire the weapon; the availability, readiness and effectiveness of “smart gun” technology; and the costs, benefits and drawbacks of implementing “smart gun” technology in the commonwealth.\nSECTION 2. Members of the task force shall be named and the task force shall commence its work within 60 days of the effective date of this act. The task force shall report to the general court the results of its study by filing the same with the clerks of the senate and the house of representatives and the house and senate chairs of the joint committee on public safety and homeland security not more than 365 days after the effective date of this act."
+}

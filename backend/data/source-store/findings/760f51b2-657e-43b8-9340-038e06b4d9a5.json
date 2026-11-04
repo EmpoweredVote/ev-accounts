@@ -1,0 +1,31 @@
+{
+  "politician_id": "760f51b2-657e-43b8-9340-038e06b4d9a5",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity in general"
+      ],
+      "places": [
+        "scope: sitting Arizona Corporation Commission member (a statewide utility regulator, not a legislator); a Veridus primary-results page names him as the top vote-getter in the Corporation Commission primary, so he stays in scope; https://en.wikipedia.org/wiki/Kevin_Thompson_(politician) confirms the office",
+        "not reviewed: On the Record (the extraction script is a repo script and was not run in this session)",
+        "blocked: https://ballotpedia.org/Kevin_Thompson_(Arizona) (empty page)",
+        "commission site https://azcc.gov/commissioners/kevin-thompson (404)",
+        "Arizona PBS candidates-in-conversation page (only utility and energy remarks; nothing on the subject)",
+        "nonpartisan voters guide to the 2026 Corporation Commission (positions on energy only; nothing on the subject)",
+        "Wikipedia page (nothing on the subject)",
+        "two news searches on his name plus subject words (nothing on the subject)",
+        "legislative bill pages: not applicable, the office is not a legislative seat"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:11:07.682Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

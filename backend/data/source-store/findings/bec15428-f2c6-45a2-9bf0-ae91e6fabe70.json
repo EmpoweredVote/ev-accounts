@@ -1,0 +1,75 @@
+{
+  "politician_id": "bec15428-f2c6-45a2-9bf0-ae91e6fabe70",
+  "findings": [
+    {
+      "id": "48f957b9cf0c0d1a6a13c21a090924f512ccd7b77f9a5a3b55f3945e39e3c24c",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/ranjit-singh/2023/08/16/afghan-american-legislator-forgets-taliban-thuggery-introduces-right-to-safety-amendment-n73763",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "passage": "As someone who values both the Second Amendment and has personally experienced the impact of gun violence, I am proud to partner with Governor Gavin Newsom on the Right to Safety Resolution,",
+      "note": "Statement issued in her name as a state senator on the Right to Safety Resolution; quoted by Bearing Arms, a gun-rights outlet. Date is the article date; the statement itself may be earlier.",
+      "subjects": [
+        "Second Amendment general",
+        "Right to Safety constitutional resolution"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3b848572d9221805c77a35a783784557fd623a387495349333fdb3a169a427e8",
+      "kind": "record",
+      "url": "https://bearingarms.com/ranjit-singh/2023/08/16/afghan-american-legislator-forgets-taliban-thuggery-introduces-right-to-safety-amendment-n73763",
+      "date": "2023-08-16",
+      "date_precision": "unknown",
+      "instrument_id": "CA-SJR-7-2023",
+      "act": "author",
+      "note": "News article reports she introduced the Right to Safety Resolution (Senate Joint Resolution 7) in the California Senate; official bill page was blocked, so the introduction date and text are not confirmed.",
+      "subjects": [
+        "Right to Safety constitutional resolution",
+        "Second Amendment general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment general",
+        "gun safety resolution",
+        "assault-style weapons",
+        "background checks",
+        "red-flag orders",
+        "carry"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope: https://en.wikipedia.org/wiki/Aisha_Wahab (fetched; says she faces a second candidate in the November 2026 general election for CA-14)",
+        "official site / state senate site: https://sd10.senate.ca.gov/node/240 and /node/234 returned 404; press list https://sd10.senate.ca.gov/press-releases?page=6 fetched, nothing on the subject on that page",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240SJR7",
+        "Ballotpedia: not reviewed",
+        "congress.gov: not applicable (new to Congress; no federal bill pages checked)",
+        "news search on name plus gun words (one search)",
+        "Bearing Arms 2023-08-16 (fetched with curl; passage copied from page text)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

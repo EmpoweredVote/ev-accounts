@@ -1,0 +1,173 @@
+{
+  "politician_id": "7cf1080e-6e7e-4f5b-be00-6fb170896a7c",
+  "findings": [
+    {
+      "id": "daf94dbd6fcb3e42c0a00a1447c9466212d6781c3992499f7ee38e867e34ee77",
+      "kind": "record",
+      "url": "https://malegislature.gov/Laws/SessionLaws/Acts/2024/Chapter135",
+      "date": "2024-07-25",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "signed",
+      "note": "The session-law page for Chapter 135 of 2024, 'An Act Modernizing Firearm Laws' (original bill H.4885), ends with the line 'Approved, July 25, 2024.' The act covers serial numbers on firearms, untraceable guns, a list of banned assault-style firearms, and firearm safety courses.",
+      "subjects": [
+        "ban on assault-style guns",
+        "untraceable and home-made guns",
+        "firearm licensing and safety courses"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:57:07.905Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "98d609a70d22387840919d478b38d655c56a6f2f4444239e3ba16a57ef17948f",
+      "kind": "own-words",
+      "url": "https://www.boston.com/news/politics/2026/10/09/what-to-know-about-mass-ballot-question-9-the-effort-to-repeal-a-sweeping-gun-reform-law/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "This law will save lives.",
+      "note": "Statement issued in her name on the 2024 gun law, as quoted by Boston.com in an October 2026 explainer; the same article quotes her saying the law cracks down on ghost guns and 3-D printed weapons and enhances the ability to prevent guns from falling into dangerous hands. The date of the statement is not shown on the page.",
+      "subjects": [
+        "support for the 2024 gun law",
+        "untraceable and home-made guns",
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:57:07.905Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c40199459112932359e6f856389e69ef5d50bfa9046e61067c77c60c3d435160",
+      "kind": "own-words",
+      "url": "https://www.nbcboston.com/news/politics/how-are-maura-healey-and-mike-minogue-voting-on-9-mass-ballot-questions/4037834/",
+      "date": "2026-10-26",
+      "date_precision": "day",
+      "passage": "I think that our gun laws should stay in place, that's a big difference in this race",
+      "note": "Quoted by NBC Boston on her plan to vote yes on Question 9 (keep the 2024 gun law); date is the article's publication date.",
+      "subjects": [
+        "keep the 2024 gun law (Question 9)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:57:07.905Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f0ff2e8f16fb6ba8675fab8ec728655b0df8a5ea5d1a6fcd7f9ffcf13d13941a",
+      "kind": "own-words",
+      "url": "https://www.wbur.org/news/2016/07/20/healey-assault-weapons-enforcement",
+      "date": "2016-07-20",
+      "date_precision": "day",
+      "passage": "The gun industry has openly defied our laws here in Massachusetts for nearly two decades.",
+      "note": "As Attorney General she said this in a statement announcing enforcement of the state's assault weapons ban against copycat weapons; quoted by WBUR, date is the article date.",
+      "subjects": [
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:57:07.905Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity",
+        "same-day registration proof of residency"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Maura_Healey names her as incumbent Governor, advanced from the 2026-09-01 primary, on the 2026-11-03 general ballot",
+        "On the Record (0 meetings)",
+        "Ballotpedia (Maura_Healey page: nothing on the subject in her own words; Question 4 same-day registration page lists her as a supporter, no quote or primary source)",
+        "campaign site https://www.maurahealey.com/ (home page, nothing on the subject; /issues returns 404)",
+        "blocked: https://www.mass.gov/orgs/office-of-the-governor/news (403 on WebFetch and curl)",
+        "blocked: https://www.mass.gov/news/search?q=voter+ID (403)",
+        "blocked: https://www.telegram.com/story/news/politics/2026/10/08/how-would-same-day-voter-registration-change-elections-in-ma/92133618007/ (402)",
+        "ACLUM Yes on 4 press release and boston.com Galvin mail-voting article: fetched, no Healey statement",
+        "not reviewed: news search on name plus subject words (shared web search budget exhausted)",
+        "not reviewed: Massachusetts legislature bill pages (not applicable to a governor; no search budget to find signed or vetoed election bills)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:14:47.731Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "news search confirms she is governor and a 2026 candidate (WBUR poll https://wbur.org/news/2026/10/19/massachusetts-governors-race-ballot-question-poll, found by search)",
+        "news search on name plus voter ID / ballot question: nothing on the subject",
+        "news search on name plus SAVE Act / proof of citizenship: nothing on the subject",
+        "NBC Boston article on a voter ID ballot proposal: her only quoted words are about voting restrictions in general, not ID or citizenship proof",
+        "Ballotpedia: nothing usable (page returned empty)",
+        "blocked: https://www.mass.gov/people/governor-maura-t-healey (403)",
+        "official site issue pages and press-release list: not reviewed beyond the blocked page"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:25:15.404Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "untraceable and home-made guns",
+        "red-flag orders",
+        "carry in government buildings",
+        "Question 9 repeal vote",
+        "general gun-law statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official law page https://malegislature.gov/Laws/SessionLaws/Acts/2024/Chapter135 (Governor's approval line)",
+        "sponsor list: not applicable (governor, not a legislator)",
+        "blocked: https://www.mass.gov/news/governor-healey-signs-legislation-to-strengthen-gun-safety-laws",
+        "blocked: https://www.mass.gov/news/governor-healey-signs-gun-safety-legislation-cracking-down-on-ghost-guns-strengthening-violence-prevention",
+        "blocked: https://www.mass.gov/news/statement-from-ag-healey-on-an-act-relative-to-firearms",
+        "blocked: https://www.mass.gov/news/ag-healey-announces-enforcement-of-ban-on-copycat-assault-weapons",
+        "blocked: https://www.axios.com/local/boston/2026/10/13/massachusetts-question-9-gun-law-ballot-2026-vote-yes-no-repeal-ghost-guns-red-flag",
+        "campaign site: not found (healeydriscoll.com does not resolve)",
+        "Ballotpedia: not reviewed (fetch returns empty pages)",
+        "news pages from boston.com, nbcboston.com, wbur.org (2016 and 2026) used for direct quotes",
+        "four web searches on name plus gun words"
+      ],
+      "found": 4,
+      "at": "2026-11-01T01:57:07.905Z",
+      "by": "source-collector"
+    }
+  ]
+}

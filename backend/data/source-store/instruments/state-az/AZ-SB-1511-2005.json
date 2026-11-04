@@ -1,0 +1,442 @@
+{
+  "id": "AZ-SB-1511-2005",
+  "scope": "state:az",
+  "title": "SB 1511 (2005 - Forty-seventh Legislature - First Regular Session (azleg session id 82)): secure and verifiable identification",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/20695",
+    "https://www.azleg.gov/legtext/47leg/1R/bills/SB1511S.htm"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1: Title 41, Arizona Revised Statutes, is amended by adding chapter 41, to read: (para A)\n(quote) LAW ENFORCEMENT SERVICES SHALL NOT BE WITHHELD BECAUSE OF THE PRESENTATION OF AN UNVERIFIABLE IDENTIFICATION DOCUMENT, BUT THE UNVERIFIABLE DOCUMENT CANNOT BE USED TO ESTABLISH IDENTITY.\n(b_no_id_remedy)\n(section) Sec. 1: Title 41, Arizona Revised Statutes, is amended by adding chapter 41, to read:\n(quote) SECURE AND VERIFIABLE IDENTIFICATION\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Bill text\n(quote) AMENDING TITLE 41, ARIZONA REVISED STATUTES, BY ADDING CHAPTER 41; RELATING TO IDENTIFICATION REQUIREMENTS.\n(section) Sec. 1: Title 41, Arizona Revised Statutes, is amended by adding chapter 41, to read:\n(quote) Identification requirements; exceptions; consequences; definitions\n(section) Sec. 1: Title 41, Arizona Revised Statutes, is amended by adding chapter 41, to read: (para A)\n(quote) A. FOR THE DISBURSEMENT OF PUBLIC SERVICES, INCLUDING LAW ENFORCEMENT SERVICES, IN THIS STATE THAT REQUIRE RECIPIENTS TO PRODUCE IDENTIFICATION, A DEPARTMENT, AGENCY, COMMISSION, BOARD OR DISTRICT OF THIS STATE OR A POLITICAL SUBDIVISION OF THIS STATE SHALL NOT ACCEPT OR RECOGNIZE ANY IDENTIFICATION DOCUMENT UNLESS THE DOCUMENT WAS ISSUED BY A POLITICAL SUBDIVISION OF THIS STATE, A FEDERALLY RECOGNIZED INDIAN TRIBE OR A STATE OR FEDERAL AUTHORITY AND IS VERIFIABLE BY A LAW ENFORCEMENT OR HOMELAND SECURITY AGENCY.\n(section) Sec. 1: Title 41, Arizona Revised Statutes, is amended by adding chapter 41, to read: (para A)\n(quote) A POLITICAL SUBDIVISION OF THIS STATE SHALL NOT AUTHORIZE ACCEPTANCE OF AN UNVERIFIABLE IDENTIFICATION DOCUMENT AND A PUBLIC OFFICIAL ACTING IN THE CAPACITY OF A PUBLIC OFFICIAL SHALL NOT ACCEPT, ACKNOWLEDGE OR RECOGNIZE ANYTHING OTHER THAN A VERIFIABLE IDENTIFICATION DOCUMENT.\n(section) Sec. 1: Title 41, Arizona Revised Statutes, is amended by adding chapter 41, to read: (para A)\n(quote) FOR THE PURPOSE OF ISSUING ANY FORM OF IDENTIFICATION, LICENSE, PERMIT OR OFFICIAL DOCUMENT TO ANY PERSON, A POLITICAL SUBDIVISION OF THIS STATE SHALL NOT RELY ON, OR USE IN ANY MANNER, ANY DOCUMENT OTHER THAN A VERIFIABLE IDENTIFICATION DOCUMENT.\n(other) 0: n\n(other) 1: o\n(other) 2: t\n(other) 3:  \n(other) 4: s\n(other) 5: t\n(other) 6: a\n(other) 7: t\n(other) 8: e\n(other) 9: d\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Dean Martin",
+      "role": "prime",
+      "version": "SB1511S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Ron Gould",
+      "role": "co",
+      "version": "SB1511S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Linda Gray",
+      "role": "co",
+      "version": "SB1511S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Jack Harper",
+      "role": "co",
+      "version": "SB1511S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Rick Murphy",
+      "role": "co",
+      "version": "SB1511S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Marilyn Jarrett",
+      "role": "co",
+      "version": "SB1511S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Jerry Weiers",
+      "role": "co",
+      "version": "SB1511S: Senate-engrossed version (text as it stood after the Senate acted)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2005-03-15",
+      "body": "AZ Senate",
+      "motion": "Third Reading: Passed (as amended)",
+      "kind": "roll-call",
+      "yes": 19,
+      "no": 11,
+      "absent": 0,
+      "body_size": 30,
+      "note": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=20695&billStatusActionId=48098&includeVotes=true",
+      "members": [
+        {
+          "name": "AGUIRRE L",
+          "vote": "nay"
+        },
+        {
+          "name": "ALLEN C",
+          "vote": "yea"
+        },
+        {
+          "name": "ARZBERGER",
+          "vote": "yea"
+        },
+        {
+          "name": "BEE",
+          "vote": "yea"
+        },
+        {
+          "name": "BLENDU",
+          "vote": "yea"
+        },
+        {
+          "name": "BROTHERTON",
+          "vote": "nay"
+        },
+        {
+          "name": "BURNS R",
+          "vote": "yea"
+        },
+        {
+          "name": "CANNELL",
+          "vote": "nay"
+        },
+        {
+          "name": "CHEUVRONT",
+          "vote": "nay"
+        },
+        {
+          "name": "FLAKE",
+          "vote": "yea"
+        },
+        {
+          "name": "GARCIA J",
+          "vote": "nay"
+        },
+        {
+          "name": "GIFFORDS",
+          "vote": "nay"
+        },
+        {
+          "name": "GOULD",
+          "vote": "yea"
+        },
+        {
+          "name": "GRAY L",
+          "vote": "yea"
+        },
+        {
+          "name": "HALE",
+          "vote": "nay"
+        },
+        {
+          "name": "HARPER",
+          "vote": "yea"
+        },
+        {
+          "name": "HELLON",
+          "vote": "yea"
+        },
+        {
+          "name": "HUPPENTHAL",
+          "vote": "yea"
+        },
+        {
+          "name": "JARRETT",
+          "vote": "yea"
+        },
+        {
+          "name": "JOHNSON",
+          "vote": "yea"
+        },
+        {
+          "name": "LEFF",
+          "vote": "yea"
+        },
+        {
+          "name": "MARTIN",
+          "vote": "yea"
+        },
+        {
+          "name": "MIRANDA R",
+          "vote": "nay"
+        },
+        {
+          "name": "MITCHELL",
+          "vote": "nay"
+        },
+        {
+          "name": "RIOS R",
+          "vote": "nay"
+        },
+        {
+          "name": "SOLTERO",
+          "vote": "nay"
+        },
+        {
+          "name": "TIBSHRAENY",
+          "vote": "yea"
+        },
+        {
+          "name": "VERSCHOOR",
+          "vote": "yea"
+        },
+        {
+          "name": "WARING",
+          "vote": "yea"
+        },
+        {
+          "name": "BENNETT",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2005-04-28",
+      "body": "AZ House",
+      "motion": "Third Reading: Passed",
+      "kind": "roll-call",
+      "yes": 31,
+      "no": 25,
+      "absent": 4,
+      "body_size": 60,
+      "note": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=20695&billStatusActionId=48771&includeVotes=true",
+      "members": [
+        {
+          "name": "AGUIRRE A",
+          "vote": "nay"
+        },
+        {
+          "name": "ALLEN J",
+          "vote": "yea"
+        },
+        {
+          "name": "ALVAREZ",
+          "vote": "nay"
+        },
+        {
+          "name": "ANDERSON",
+          "vote": "absent"
+        },
+        {
+          "name": "BARNES",
+          "vote": "absent"
+        },
+        {
+          "name": "BIGGS",
+          "vote": "yea"
+        },
+        {
+          "name": "BOONE",
+          "vote": "yea"
+        },
+        {
+          "name": "BRADLEY",
+          "vote": "nay"
+        },
+        {
+          "name": "BROWN",
+          "vote": "nay"
+        },
+        {
+          "name": "BURGES",
+          "vote": "yea"
+        },
+        {
+          "name": "BURNS J",
+          "vote": "absent"
+        },
+        {
+          "name": "BURTON CAHILL",
+          "vote": "nay"
+        },
+        {
+          "name": "CAJERO BEDFORD",
+          "vote": "nay"
+        },
+        {
+          "name": "CARPENTER",
+          "vote": "yea"
+        },
+        {
+          "name": "CHASE",
+          "vote": "nay"
+        },
+        {
+          "name": "DOWNING",
+          "vote": "absent"
+        },
+        {
+          "name": "FARNSWORTH",
+          "vote": "yea"
+        },
+        {
+          "name": "GALLARDO",
+          "vote": "nay"
+        },
+        {
+          "name": "GARCIA M",
+          "vote": "nay"
+        },
+        {
+          "name": "GORMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "GRAY C",
+          "vote": "yea"
+        },
+        {
+          "name": "GROE",
+          "vote": "yea"
+        },
+        {
+          "name": "HERSHBERGER",
+          "vote": "nay"
+        },
+        {
+          "name": "HUFFMAN",
+          "vote": "nay"
+        },
+        {
+          "name": "JONES",
+          "vote": "nay"
+        },
+        {
+          "name": "KIRKPATRICK",
+          "vote": "nay"
+        },
+        {
+          "name": "KNAPEREK",
+          "vote": "yea"
+        },
+        {
+          "name": "KONOPNICKI",
+          "vote": "yea"
+        },
+        {
+          "name": "LANDRUM TAYLOR",
+          "vote": "nay"
+        },
+        {
+          "name": "LOPES",
+          "vote": "nay"
+        },
+        {
+          "name": "LOPEZ",
+          "vote": "nay"
+        },
+        {
+          "name": "LUJAN",
+          "vote": "nay"
+        },
+        {
+          "name": "MASON",
+          "vote": "yea"
+        },
+        {
+          "name": "MCCLURE",
+          "vote": "yea"
+        },
+        {
+          "name": "MCCOMISH",
+          "vote": "yea"
+        },
+        {
+          "name": "MCCUNE DAVIS",
+          "vote": "nay"
+        },
+        {
+          "name": "MCLAIN",
+          "vote": "yea"
+        },
+        {
+          "name": "MEZA",
+          "vote": "nay"
+        },
+        {
+          "name": "MIRANDA B",
+          "vote": "nay"
+        },
+        {
+          "name": "MURPHY",
+          "vote": "yea"
+        },
+        {
+          "name": "NELSON",
+          "vote": "yea"
+        },
+        {
+          "name": "NICHOLS",
+          "vote": "yea"
+        },
+        {
+          "name": "O'HALLERAN",
+          "vote": "nay"
+        },
+        {
+          "name": "PATON",
+          "vote": "yea"
+        },
+        {
+          "name": "PEARCE",
+          "vote": "yea"
+        },
+        {
+          "name": "PIERCE",
+          "vote": "yea"
+        },
+        {
+          "name": "PREZELSKI",
+          "vote": "nay"
+        },
+        {
+          "name": "QUELLAND",
+          "vote": "yea"
+        },
+        {
+          "name": "REAGAN",
+          "vote": "yea"
+        },
+        {
+          "name": "RIOS P",
+          "vote": "nay"
+        },
+        {
+          "name": "ROBSON",
+          "vote": "yea"
+        },
+        {
+          "name": "ROSATI",
+          "vote": "yea"
+        },
+        {
+          "name": "SINEMA",
+          "vote": "nay"
+        },
+        {
+          "name": "SMITH",
+          "vote": "yea"
+        },
+        {
+          "name": "STUMP",
+          "vote": "yea"
+        },
+        {
+          "name": "TOM",
+          "vote": "nay"
+        },
+        {
+          "name": "TULLY",
+          "vote": "yea"
+        },
+        {
+          "name": "WEIERS JP",
+          "vote": "yea"
+        },
+        {
+          "name": "YARBROUGH",
+          "vote": "yea"
+        },
+        {
+          "name": "WEIERS J",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

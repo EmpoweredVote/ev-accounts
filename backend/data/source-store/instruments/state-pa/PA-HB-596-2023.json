@@ -1,0 +1,119 @@
+{
+  "id": "PA-HB-596-2023",
+  "scope": "state:pa",
+  "title": "HB596 (2023-2024 Regular Session): In firearms and other dangerous articles, further providing for persons not to possess, use, manufacture, control, sell or transfer firearms and for sale or transfer of firearms and providing for Gun Violence Task Force in cities of the first class.",
+  "urls": [
+    "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=596",
+    "https://www.legis.state.pa.us/cfdocs/legis/PN/Public/btCheck.cfm?txtType=PDF&sessYr=2023&sessInd=0&billBody=H&billTyp=B&billNbr=0596&pn=0797"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 1 (amending 18 Pa.C.S. 6105(d.1)(3)): This subsection shall not apply to any case instituted [two years after the effective date of this subsection.]: (i) after September 2, 2021, and before the effective date of this subparagraph; or (ii) after December 31, 2025.\nSec. 1 (amending 18 Pa.C.S. 6111(d.1)(3)): This subsection shall not apply to any case instituted [two years after the effective date of this subsection.]: (i) after September 2, 2021, and before the effective date of this subparagraph; or (ii) after December 31, 2025.\nSec. 2 (adding 18 Pa.C.S. 6129(a)): (1) A joint local-State firearm task force is established in each city of the first class, which shall be known as the Gun Violence Task Force. (2) The Gun Violence Task Force shall be under the authority of the Attorney General.\nSec. 2 (adding 18 Pa.C.S. 6129(b)(1)): The Gun Violence Task Force shall investigate and prosecute violations of sections 6105 (relating to persons not to possess, use, manufacture, control, sell or transfer firearms) and 6111 (relating to sale or transfer of firearms), and similar offenses under Federal law, in a city of the first class.\nSec. 2 (adding 18 Pa.C.S. 6129(g)(1)): The Attorney General may assert preemptive prosecutorial jurisdiction over any criminal actions or proceedings, including proceedings for the forfeiture or condemnation of property under 42 Pa.C.S. Ch. 58 (relating to forfeiture of assets), for which the Attorney General has jurisdiction under section 6105 or 6111.\nSec. 2 (adding 18 Pa.C.S. 6129(h)(1)): By October 1 of each year, the Attorney General shall make an annual report on the operation of the Gun Violence Task Force to: (i) The Appropriations Committee of the Senate.",
+  "sponsors": [
+    {
+      "name": "Craig Williams",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9b25cb45-ccd3-4d8d-bb74-c149ebf56753"
+    },
+    {
+      "name": "Martina White",
+      "politician_id": "7ac8c204-7c32-4dfc-88ee-95a932929dae",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Craig Staats",
+      "politician_id": "bb7f2a1e-12a9-4321-8404-4f28f9402037",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Dan Moul",
+      "politician_id": "3c4c0a99-f0d9-4d3e-9064-2fd4cd30b60f",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Tina Pickett",
+      "politician_id": "c7fb3af8-ce99-40e4-80c6-6d3280539c1e",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Mike Armanini",
+      "politician_id": "ab88a2b1-69e0-4287-8126-423c7cfc45f3",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Kathleen Tomlinson",
+      "politician_id": "e96f1aeb-b347-438c-8214-df74a5f62721",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Torren Ecker",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Dawn Keefer",
+      "politician_id": "28bcc9ec-e676-47c0-bbe1-30ad59bb98f4",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Kristin Marcell",
+      "politician_id": "218870d3-89b5-448d-93a7-effd946a85e6",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Natalie Mihalek",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Paul Schemel",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Robert James",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "feebbd80-c9e9-48aa-b0fb-1ca306ada4e8"
+    },
+    {
+      "name": "Mark Gillen",
+      "politician_id": "f6cda73d-501f-4873-9d62-71c2652af602",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Joseph Hogan",
+      "politician_id": "0187c103-4961-4d98-be44-46f49aa7e71a",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-596-2023.introduced.pdf",
+      "sha256": "d456ef24b4bcbc55d4970254c90366c43e23b09f64cfea90a6c8731756eaad33"
+    }
+  }
+}

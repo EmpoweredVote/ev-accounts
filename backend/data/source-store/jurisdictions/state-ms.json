@@ -1,0 +1,15 @@
+{
+  "scope": "state:ms",
+  "portals": [],
+  "rosters": [
+    {
+      "url": "https://web.archive.org/web/2016/http://billstatus.ls.state.ms.us/members/hr_membs.xml",
+      "note": "house member list, 2016 Regular Session (term 2016-2019) (archive); gun-policy identity check 2026-10-29"
+    },
+    {
+      "url": "https://web.archive.org/web/2016/http://billstatus.ls.state.ms.us/members/ss_membs.xml",
+      "note": "senate member list, 2016 Regular Session (term 2016-2019) (archive); gun-policy identity check 2026-10-29"
+    }
+  ],
+  "higher_law_duties": []
+}

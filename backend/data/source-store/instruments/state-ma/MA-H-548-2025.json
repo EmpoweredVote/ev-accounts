@@ -1,0 +1,140 @@
+{
+ "id": "MA-H-548-2025",
+ "scope": "state:ma",
+ "title": "H548 (194th General Court): An Act to promote safe firearm storage education and increase the well-being of students",
+ "urls": [
+  "https://malegislature.gov/Bills/194/H548",
+  "https://malegislature.gov/Bills/194/H548/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Marjorie C. Decker",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "2b1a645a-72ce-4c0f-80ec-17565a2d6d10"
+  },
+  {
+   "name": "Michelle L. Badger",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "29af459c-8142-487d-bb51-2224983faca3"
+  },
+  {
+   "name": "James C. Arena-DeRosa",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "ea8ed274-32d6-499d-a787-7ad1f0624280"
+  },
+  {
+   "name": "Michelle M. DuBois",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "75a2d83f-8db8-478b-a36d-5ecb707b8507"
+  },
+  {
+   "name": "Patrick Joseph Kearney",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "8c2553dd-437e-4614-89ab-f54031bc418e"
+  },
+  {
+   "name": "Sean Garballey",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "7072bd94-b465-414e-bcf5-6e3feb7ec8dd"
+  },
+  {
+   "name": "Estela A. Reyes",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "8e125ae2-3101-49b1-b228-f172ad9c70d9"
+  },
+  {
+   "name": "Mindy Domb",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "ecafa801-15b3-4777-9c38-95f5ded5cbe6"
+  },
+  {
+   "name": "James B. Eldridge",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "9ed1b75f-a314-4241-87ff-231de4aba963"
+  },
+  {
+   "name": "Michelle L. Ciccolo",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "0748d787-7e5d-4852-b461-3459312fae45"
+  },
+  {
+   "name": "Richard M. Haggerty",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "2d3def44-9916-469d-8f8f-b098ad896768"
+  },
+  {
+   "name": "Hannah Bowen",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "b651cf67-37b4-4cbf-afcd-088010247788"
+  },
+  {
+   "name": "Dennis C. Gallagher",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "17035eb6-e7d3-4372-9b96-0741adb57468"
+  },
+  {
+   "name": "Lindsay N. Sabadosa",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "853f0b26-a2b5-48b6-8dd6-f40ca48c87fd"
+  },
+  {
+   "name": "Carlos González",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "64e0eeb2-c83a-4da4-b6a2-2047b1e25cab"
+  },
+  {
+   "name": "Greg Schwartz",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "8167ef8d-b8c8-44aa-86a2-9128c9078547"
+  },
+  {
+   "name": "Amy Mah Sangiolo",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "2dcaf90d-f476-4fcf-af03-3d0a7aa5d3bf"
+  },
+  {
+   "name": "Christopher Richard Flanagan",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "516feaaa-7086-4382-8cfa-9463f508dd74"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-H-548-2025.html",
+   "sha256": "cbc19326d9a42b93e81c7fbb75c38569713d0b4773df32366e4d611c837e1093"
+  }
+ },
+ "operative_text": "Chapter 71 of the General Laws is hereby amended by adding the following section:-\nSection 99. (a) The department shall develop model content for the safe storage of firearms in consultation with the executive office of public safety and security for school districts in order for the districts to disseminate a notice to their school communities, including families, guardians and staff.\n(b) The model content for the safe storage of firearms shall include information for the school community regarding: (i) the life-saving importance of secure gun storage in homes and vehicles to protect unsupervised, unauthorized children and teens from accessing firearms with which they may cause harm; (ii) the risks of unsecured firearms to children and teens, schools, and the wider community; (iii) actions everyone in the school community can take to keep our communities safe including raising awareness about secure firearm storage requirements, the safe storage of firearms pursuant to section 131L of chapter 140 , suicide prevention resources as well as other behavioral health or educational resources.\n(c) The model content developed by the department shall be published in English and multiple languages that are representative of the needs of local communities as determined by the department. The department shall review the model content annually.\n(d) The office of the superintendent and the school committee of each school district shall collaborate and annually distribute a notice developed pursuant to this section to the school community, including parents and guardians who have students enrolled in the school district, and staff, and make said information electronically accessible on the district’s webpage."
+}

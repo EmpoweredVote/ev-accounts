@@ -1,0 +1,59 @@
+{
+  "politician_id": "20e1ee0a-fdd7-4bd5-9179-a362bbc9976d",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Peter_Jassenoff says he is on the Nov 3, 2026 general-election ballot for U.S. House Florida District 25 and the August 18, 2026 primary was canceled",
+        "On the Record (0 appearances, 0 meetings)",
+        "Ballotpedia: nothing on the subject (candidate has not completed Candidate Connection survey)",
+        "campaign site: not found (guessed domains jassenoff.com, peterjassenoff.com did not load; no site linked on Ballotpedia)",
+        "blocked: https://www.facebook.com/peter.jassenoff (not readable)",
+        "not reviewed: web news search (search budget for the session was used up)",
+        "congress.gov: not reviewed, not a legislator, no sponsorships",
+        "state political organization candidate pages: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:10:00.789Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr returned none)",
+        "Ballotpedia https://ballotpedia.org/Peter_Jassenoff (confirms he is a candidate for Florida's 25th Congressional District and on the November 3, 2026 general-election ballot; he has not completed the candidate survey; no campaign themes listed)",
+        "https://theballotbrief.com/candidate/peter-jassenoff-fl (on the certified 2026 ballot; no statements on the subject; no campaign website found)",
+        "https://palmbeachexaminer.substack.com/p/meet-floridas-libertarian-candidates (does not mention him; rest behind a paywall)",
+        "https://www.instagram.com/putinpj/ (profile with only old photos, nothing on the subject)",
+        "no campaign site found (searched)",
+        "no legislative record (not an officeholder)",
+        "news searches on his name plus voter ID, election, ballot (only coverage of a ballot-qualification lawsuit against him, which is not the subject)",
+        "not reviewed: https://kdhnews.com/news/politics/republicans-want-to-remove-libertarian-competitor-in-high-stakes-south-florida-congressional-race/article_8abcb1fc-d32a-51d3-80b2-584454bb9af9.html (about the qualifying-fee lawsuit, off subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:16:56.657Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

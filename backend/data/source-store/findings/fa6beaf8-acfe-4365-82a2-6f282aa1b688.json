@@ -1,0 +1,658 @@
+{
+  "politician_id": "fa6beaf8-acfe-4365-82a2-6f282aa1b688",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "aa481021632dc220b549997bfa36ee2d234a7ebb8d28009923c45aca36ac9e6a",
+      "kind": "own-words",
+      "url": "https://patch.com/massachusetts/natick/vote-mail-passes-ma-house-representatives",
+      "date": "2020-06-05",
+      "date_precision": "day",
+      "passage": "“Expanding early voting options and integrating voting by mail will increase participation in elections while improving the integrity of our voting systems,” said Representative Linsky.",
+      "note": "Statement issued in his name, published on Patch, on House passage of H.4768, a 2020 COVID-era bill expanding mail-in and early voting. Not about ID or citizenship.",
+      "subjects": [
+        "mail and early voting access",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:25:50.478Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1447a7d5aa739d1bbc9b22d0a18212b4363db44c820f8711c4e317affd157717",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/187/H1981/Cosponsor",
+      "date": "2011-01-24",
+      "date_precision": "day",
+      "instrument_id": "MA-H-1981-2011",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of H.1981, 'An Act establishing identification requirements for voters who registered by mail' (filed 2011-01-24).",
+      "subjects": [
+        "ID for first-time voters who registered by mail"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-31T03:30:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "818586ba7a6fa8e00a512d1c240c01472b0f796fab8f64a338fb0b5e616ea7fe",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: yea (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9fc7fe42d4ca0418da57b37f789b4766ff618ad71e31a528b663386efac66476",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: yea (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "3cb7a6eb2595e83f808e9aa6a3f3bb5e782a0aa86dc925a943767e1bab71e9ec",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/House/H4376",
+      "date": "2014-07-31",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4376-2013",
+      "act": "yea",
+      "motion": "Acceptance of the committee of conference report (Yea and Nay No. 483)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, Acceptance of the committee of conference report (Yea and Nay No. 483), 2014-07-31: yea (tally 122–30); census gate: multi-subject.",
+      "subjects": [
+        "firearm license classes merged and Class B licences phased out",
+        "new penalties for shooting and for trafficking guns into the state",
+        "background-check records sent to the federal system",
+        "ban on carrying firearms on school and college grounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "malegislature.gov roll-call PDFs + LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:34:02.477850Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4376-2013.introduced.pdf",
+          "sha256": "b94514a66e779c1400d1b875eb3aac207f6b1b1f12f9928fd8d977feab23bb61"
+        }
+      }
+    },
+    {
+      "id": "c5523d50a631897031188db98ea5d927074d7126174a492b6b9e8d21f240f855",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4517",
+      "date": "2018-05-23",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4517-2017",
+      "act": "yea",
+      "motion": "House On Engrossment Yea and Nay No. 359",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MA House, House On Engrossment Yea and Nay No. 359, 2018-05-23: yea (tally 139–14); census gate: near-unanimous.",
+      "subjects": [
+        "court orders to remove guns from people at risk of harming self or others",
+        "emergency orders without notice",
+        "penalty for false petitions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4517-2017.introduced.pdf",
+          "sha256": "3bac8bca02408059e2c0db49bae39de8a690f0fb6e1b5469f7a23cf51fbd5cc4"
+        }
+      }
+    },
+    {
+      "id": "7727b62aa6ef27fb9e9cfc73a0491b1c4dc595f2b71982384c335273fe2771d1",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4670",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4670-2017",
+      "act": "yea",
+      "motion": "On acceptance of the conference report (Yea and Nay No. 389)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, On acceptance of the conference report (Yea and Nay No. 389), 2018-06-28: yea (tally 133–15); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders to remove guns from people at risk of harming self or others",
+        "protection order added as a bar to gun licenses",
+        "stun gun rules and locked storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4670-2017.introduced.pdf",
+          "sha256": "6b37958358a3f01548ef0d16c386b3caaf5993d5c100f88279ff5b45ad1fe098"
+        }
+      }
+    },
+    {
+      "id": "af484982eb27dcb0534b18013bd8b0696a162038d30b57da6f2ef5008bf7f9c7",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/191/H2092",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MA-H-2092-2019",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MA-H-2092-2019 (LegiScan sponsor list): H2092 (191st General Court): Relative to universal background checks for private gun sales.",
+      "subjects": [
+        "private gun sales must go through a licensed dealer",
+        "fee cap and penalty for unlawful private transfers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2092-2019.introduced.pdf",
+          "sha256": "5fd01d1a09d8ce366cbd5257b50c2937d0029e8495690da7567930f79f4a2203"
+        }
+      }
+    },
+    {
+      "id": "bf3bc7668a7230f6c4d806d15b2740f5e7e6522104a727e5cb5ce2fdd6e85029",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H2359",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MA-H-2359-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MA-H-2359-2023 (LegiScan sponsor list): H2359 (193rd General Court): To prohibit carrying firearms in sensitive places.",
+      "subjects": [
+        "new offence for carrying guns in sensitive places",
+        "list of sensitive places: government buildings, schools, parks, transit, polling places"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2359-2023.introduced.pdf",
+          "sha256": "ae5134ebc4a3ceb3c56314ffb509a9e10f45934bd770c53473576c1f60b1bd13"
+        }
+      }
+    },
+    {
+      "id": "e38406741e351519ef2709aa65f0b06efee6339aa8de82f167484230c496dd82",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H2360",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MA-H-2360-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MA-H-2360-2023 (LegiScan sponsor list): H2360 (193rd General Court): Relative to 3D printed guns and ghost guns.",
+      "subjects": [
+        "ghost guns: serial numbers required on all firearms",
+        "3D-printed and undetectable firearms banned",
+        "felony penalty for breaking the new rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2360-2023.introduced.pdf",
+          "sha256": "571ab4edc7bf2d33a4ab46199dedc64d80f657ef98d1f743254495c425d2fe94"
+        }
+      }
+    },
+    {
+      "id": "46909e36d3988df4a2fcede93635db5657e3ef8916d5e6a720a8032025862912",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/191/H3780",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MA-H-3780-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-3780-2019 (LegiScan sponsor list): H3780 (191st General Court): Relative to firearm purchases.",
+      "subjects": [
+        "one firearm per 30 days purchase limit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-3780-2019.introduced.pdf",
+          "sha256": "29474a294b3858a8cc2f55533f679fb9e4e88f3562a9815572e0b0e181925996"
+        }
+      }
+    },
+    {
+      "id": "3e37989df5a7135793590676582056d9b4894fffcf53abf65d4e894b1a9c125c",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H3980",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MA-H-3980-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-3980-2023 (LegiScan sponsor list): H3980 (193rd General Court): Modernizing firearm laws.",
+      "subjects": [
+        "all firearms and magazines must be registered, with serial numbers required",
+        "privately made (ghost) guns regulated",
+        "licensing rewritten, with new limits on assault-style firearms and large magazines",
+        "extreme risk protection orders to remove guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-3980-2023.introduced.pdf",
+          "sha256": "fc2cf32dbd88bb4b1b9266311c82ce3b8ee11febb2a878a7f7da17f1ab4578fd"
+        }
+      }
+    },
+    {
+      "id": "a7b3680b261d62ebf6107ab9f9df747c623a6f9a611585300571497c66066cff",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4869",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MA-H-4869-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-4869-2021 (LegiScan sponsor list): H4869 (192nd General Court): Relative to 3D printed guns and ghost guns.",
+      "subjects": [
+        "serial numbers required on firearms; unserialized guns must be registered and marked",
+        "ban on undetectable firearms and on 3D-printing guns without a federal license",
+        "ban on distributing digital gun-printing files in some cases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4869-2021.introduced.pdf",
+          "sha256": "bbafa283c191659d818a8dd83633ee46fe167ce87f0f7135b64e570c963d4381"
+        }
+      }
+    },
+    {
+      "id": "098afdb4cf8c0cce88e55aa34438095f59ae2ea312a0d1e21b95ef0adc101724",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/191/S1388",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MA-S-1388-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-S-1388-2019 (LegiScan sponsor list): S1388 (191st General Court): Relative to crime gun data reporting and analysis.",
+      "subjects": [
+        "biennial report on crime gun trace and sales data"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-S-1388-2019.introduced.pdf",
+          "sha256": "ef4cb64fc242ae7df425557408dc449e1507668db996e81266a94029eb68522b"
+        }
+      }
+    },
+    {
+      "id": "1c84c3606722d47862669f33058bd2724c1c3549181d45e52fddbff62b035014",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/S1496",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MA-S-1496-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-S-1496-2023 (LegiScan sponsor list): S1496 (193rd General Court): Relative to ghost guns.",
+      "subjects": [
+        "ban on making, selling or possessing guns and frames without a serial number",
+        "license needed to make more than one gun a year or to 3D-print or CNC-mill guns",
+        "ban on sending digital gun-making files to unlicensed people",
+        "ban on undetectable and disguised firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-S-1496-2023.introduced.pdf",
+          "sha256": "9a9d2b6679f1aeb09e45b59a489422562e26ad916926d061a5260b3072ae3d2a"
+        }
+      }
+    },
+    {
+      "id": "f1854f3ae445ef38a48dea4ff0aa45199b3a7c2a1094df364ff34ef6dcadbfab",
+      "kind": "own-words",
+      "url": "https://patch.com/massachusetts/natick/linsky-house-passes-comprehensive-balanced-gun-violence-legislation",
+      "date": "2014-07-11",
+      "date_precision": "day",
+      "passage": "The bill passed by the House will give Massachusetts some of the most effective gun laws in the country- it's not about having the toughest laws, it is about having the most effective laws.",
+      "note": "His release (posted by him on Patch) after the 2014 House vote on the gun bill.",
+      "subjects": [
+        "omnibus gun bill 2014",
+        "firearm ID cards",
+        "private sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:37:16.806Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "97b4a8d4e2c816731b4df87ac2de2ba85f696a41a7427f03b9b60c123e69acdd",
+      "kind": "own-words",
+      "url": "https://patch.com/massachusetts/natick/linsky-house-passes-comprehensive-balanced-gun-violence-legislation",
+      "date": "2014-07-11",
+      "date_precision": "day",
+      "passage": "When this bill is law, it will help prevent the many types of gun violence, including suicides, domestic violence, and accidental shootings, while protecting the rights of gun owners.",
+      "note": "From the same release; says the bill is meant to cut gun violence while protecting gun owners' rights.",
+      "subjects": [
+        "gun violence prevention",
+        "rights of lawful gun owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:37:16.806Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cfe14ec9f0e648194fcea1096295cc6558cf93f053ff0a84f6d44229b3b47688",
+      "kind": "own-words",
+      "url": "https://patch.com/massachusetts/natick/representative-linsky-announces-gun-violence-prevention-legislation",
+      "date": "2023-01-12",
+      "date_precision": "day",
+      "passage": "While the Massachusetts Legislature has been a national leader in passing effective legislation that addresses gun violence prevention, there are more measures that can be taken,\" said Representative Linsky.",
+      "note": "His release on filing a package of gun bills in 2023, including a ghost-gun and 3D-printed gun ban and a liability insurance requirement for gun ownership.",
+      "subjects": [
+        "ghost guns",
+        "liability insurance for gun owners",
+        "gun violence prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:37:16.806Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "49b035c7ce6610efcd6f1ba8f24afb451388b306368313cc80b5cc3617681e9a",
+      "kind": "record",
+      "url": "https://patch.com/massachusetts/natick/representative-linsky-announces-gun-violence-prevention-legislation",
+      "date": "2023-01-12",
+      "date_precision": "day",
+      "instrument_id": "MA-HD-352-2023",
+      "act": "sponsor",
+      "note": "Filed HD352, 'An Act relative to 3D printed weapons and ghost guns': would prohibit possessing ghost guns and making a 3D printed gun without a federal licence. Docket number, as announced in his release.",
+      "subjects": [
+        "ghost guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:37:16.806Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0f39d2e700383ea77080ed089b48e95df1cf2ecf564201ab2064b34803561a36",
+      "kind": "record",
+      "url": "https://patch.com/massachusetts/natick/representative-linsky-announces-gun-violence-prevention-legislation",
+      "date": "2023-01-12",
+      "date_precision": "day",
+      "instrument_id": "MA-HD-361-2023",
+      "act": "sponsor",
+      "note": "Filed HD361, 'An Act to require liability insurance for gun ownership', as announced in his release (docket number).",
+      "subjects": [
+        "liability insurance for gun owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:37:16.806Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c40c0388425b334d4ff56be7d61b8398454cf14c72e31a070e289b0ceb2a02a0",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/HD4266",
+      "date": "2017-10-04",
+      "date_precision": "day",
+      "instrument_id": "MA-HD-4266-2017",
+      "act": "author",
+      "note": "Lead petitioner (joint petition of Representative Linsky and Senator Creem) on House docket 4266 (190th General Court, 2017), An Act prohibiting large capacity feeding devices and devices that increase the rate of discharge of a weapon. Petitioner list read from the official bill page; date is the filing date shown for the docket.",
+      "subjects": [
+        "ban on large-capacity magazines",
+        "devices that raise the rate of fire"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T02:26:55.142Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/David_Linsky shows him on the Nov 3, 2026 general ballot for 5th Middlesex after advancing Sept 1, 2026; malegislature.gov profile https://malegislature.gov/Legislators/Profile/DPL1 names him in office",
+        "On the Record (0 appearances; name search also 0)",
+        "Ballotpedia page: nothing on the subject by him (voter ID text on that page is another candidate's)",
+        "malegislature.gov sponsored-bills page (Profile/DPL1/Sponsored): nothing on the subject",
+        "malegislature.gov bill search 'voter identification': results load by script, not reviewed: https://malegislature.gov/Bills/Search?SearchTerms=voter+identification",
+        "blocked: https://www.davidlinsky.com (no connection)",
+        "not reviewed: news search on name plus subject words (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:30:22.591Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail ballots",
+        "proof of citizenship to register or vote",
+        "mail and early voting access",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia (confirms 5th Middlesex District seat, on the 2026 general-election ballot, won the 2026 primary; nothing on the subject)",
+        "state legislature member page https://malegislature.gov/Legislators/Profile/DPL1 (no statement on the subject)",
+        "news and bill search (1 search) and three local press-release pages on voting bills",
+        "blocked: https://www.davidlinsky.com/ and https://www.linskyforstaterep.com/ (no response; campaign site not found)",
+        "nothing on ID or citizenship found"
+      ],
+      "found": 1,
+      "at": "2026-10-27T22:25:50.478Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry permits",
+        "ghost guns",
+        "safe gun storage",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Patch posts authored by him (2014 and 2023)",
+        "one web search on name plus gun words",
+        "not reviewed: Ballotpedia (empty to fetch tool)",
+        "not reviewed: campaign site"
+      ],
+      "found": 5,
+      "at": "2026-11-01T01:37:16.806Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on large-capacity magazines",
+        "devices that raise the rate of fire"
+      ],
+      "places": [
+        "official bill page https://malegislature.gov/Bills/190/HD4266 and its Petitioners tab (orchestrator check, 2026-10-31): docket text says \"By Representative Linsky of Natick and Senator Creem, a joint petition\"; lead petitioners listed first"
+      ],
+      "found": 1,
+      "at": "2026-11-01T02:26:55.142Z",
+      "by": "source-collector"
+    }
+  ]
+}

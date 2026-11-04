@@ -1,0 +1,300 @@
+{
+  "politician_id": "8dcf58fe-fea2-4dd4-81ac-542432b154cf",
+  "findings": [
+    {
+      "id": "709284c3a0e10df4a6622a591966f30c849ecce3a4a4ee4fef00617c603c1cbd",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81696&billStatusActionId=232198&includeVotes=true",
+      "date": "2025-02-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2038-2025",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('CONTRERAS P'), linked to Patty Contreras (district 12) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.878Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bad8ec15795229ce928c381bb8f76d5bf6ee55d2dbd63b877e9ed95ff6c44ea9",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/80715",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2670-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2670P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Patricia Contreras') on the official bill page; linked to Patricia Contreras via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.878Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d3fe91d34c5db7125e471be71d0287c2e7915c5da0d038d007934da226e0f5e",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/80716",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2671-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2671P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Patricia Contreras') on the official bill page; linked to Patricia Contreras via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.878Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d2821492d1c687f55e3f4161d375ea78aa33b52fafad686d2067d60ee474a7e4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81400&billStatusActionId=223258&includeVotes=true",
+      "date": "2024-02-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2785-2024",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('CONTRERAS P'), linked to Patricia Contreras (district None) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.878Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5ca67848aa733588751373129d47d11dfd2873eb2d867736bbfb2d87c05ade9c",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=240878&includeVotes=true",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('CONTRERAS P'), linked to Patty Contreras (district 12) via the official 2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.878Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c0182fcb8574a3883c579212fed0026affbe51ded5eb871413e17fcbc496ab00",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=235732&includeVotes=true",
+      "date": "2025-05-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('CONTRERAS P'), linked to Patty Contreras (district 12) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.878Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0dfb2519c98f83e5598ac6fd0ad9df8c4fe318abd4d5608788b6d5b08e232aa2",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78743&billStatusActionId=219083&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1141-2023",
+      "act": "nay",
+      "motion": "House: Third Reading: failed to pass",
+      "note": "House roll call as printed ('CONTRERAS P'), linked to Patricia Contreras (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.878Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "874d8b41974c07ab69831bb20b6331b1899f813251abd335d0c6c41ea2804008",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79205&billStatusActionId=219025&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1518-2023",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('CONTRERAS P'), linked to Patricia Contreras (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.878Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8986512a76239d1085f23b414056af40ca1776a196aa959bbf7fbba3fcd3db8",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79268&billStatusActionId=219027&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('CONTRERAS P'), linked to Patricia Contreras (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.878Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "341b9a18c503914da9d742eebee41da40af47621497aebb5cbc9cbe0486b92c8",
+      "kind": "own-words",
+      "url": "https://www.contrerasforaz.net/priorities.html",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "I will protect our voting rights in the state legislature. I have volunteered as a Poll Watcher and for Election Protection in previous elections to make sure that everyone who is eligible to vote has the opportunity to vote.",
+      "note": "Campaign priorities page, undated, under the heading Democracy and Voting Rights. States a general commitment to voting access; no mention of ID or citizenship proof.",
+      "subjects": [
+        "voting access in general",
+        "election protection volunteering"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.394Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d68905ce1e404a6c0cf9a53a7b8bf0dba4a51c755ac0dc62cef38e7fa3950ae4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=236364&includeVotes=true",
+      "date": "2025-06-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('CONTRERAS P'), linked to Patty Contreras (district 12) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28b",
+        "fetched_at": "2026-10-28T23:23:11.509Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 10,
+      "at": "2026-10-28T22:53:15.878Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "blocked: https://ballotpedia.org/Patty_Contreras (empty page returned)",
+        "blocked: https://ballotpedia.org/Patricia_Contreras (empty page returned)",
+        "campaign site https://www.contrerasforaz.net/priorities.html (one passage saved; nothing on voter ID or proof of citizenship)",
+        "campaign profile page on teamlpac.squarespace.com (May 2024 profile, nothing on the subject)",
+        "legislature member page https://www.azleg.gov/House/House-member/?legislature=57&session=130&legislator=2302 (confirms name and District 12; lists bill sponsorships, none opened for this subject)",
+        "web searches on her name plus voter ID, citizenship, early ballot (no own words on the subject found)",
+        "2026 candidacy: not independently confirmed by me; a reference-site summary says she left the House seat to run for the state Senate; not reviewed further"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:18:25.394Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:23:11.509Z",
+      "by": "identity-az-2026-10-28b"
+    }
+  ]
+}

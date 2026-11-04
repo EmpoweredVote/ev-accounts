@@ -1,0 +1,33 @@
+{
+  "politician_id": "36fad2d6-fdd9-4ac9-a85f-e5447f7f68cd",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "repeal of gun laws",
+        "general gun safety statement"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site villegasforcongress.com (home, issues page, about page, debate release, San Diego mosque shooting statement, shooting statement for Lorenzo Salgado Araujo): nothing on the subject in his own words",
+        "gun-safety group endorsement page giffords.org/candidates/randy-villegas (organization's own text about him, not his words, so not saved) and its press release",
+        "Wikipedia page (lead aid only): nothing on the subject in his words",
+        "his Substack page: nothing on the subject",
+        "blocked: https://guides.vote/guide/2026-california-ca-22-us-house-voters-guide/",
+        "blocked: https://www.kget.com/news/politics/your-local-elections/meet-kerns-2026-primary-candidates-one-on-one-interview-with-cd-22-hopeful-randy-villegas/amp (429)",
+        "Ballotpedia: not reviewed (not fetched)",
+        "congress.gov sponsorships: not applicable, not a sitting member",
+        "news search on name plus gun words (1 search)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:02:26.752Z",
+      "by": "source-collector"
+    }
+  ]
+}

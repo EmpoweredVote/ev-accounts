@@ -1,0 +1,112 @@
+{
+  "politician_id": "cc08909a-99b4-47fe-a252-248fbc9a015b",
+  "findings": [
+    {
+      "id": "f47fa0ff91387f1cc7afedaa8c91b189d777c0fe220b86594cbaaafd0578987a",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/94081",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Absolutely none. Self defense is a right that shall not be infringed.",
+      "note": "His voter-guide answer to the question 'What restrictions on gun ownership are needed to protect public safety?'",
+      "subjects": [
+        "no restrictions on gun ownership",
+        "general statement on gun rights / Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:02:32.048Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2584f71d14e79dba399fba21a9b78c510d3b8a9ae98d5206b0d280c9217a7506",
+      "kind": "own-words",
+      "url": "https://jeremy-todd.com/issue-2",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I believe every responsible, peaceable citizen has the right to protect themselves, their family, and their property without unnecessary government interference.",
+      "note": "Campaign Second Amendment page. Supports self-defense rights with little government interference.",
+      "subjects": [
+        "general statement on gun rights / Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:02:32.048Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b6bf7808e01ab9f1250e01df6b448bd37f07b4d4986830013b75446e91d4a9e",
+      "kind": "own-words",
+      "url": "https://jeremy-todd.com/issue-2",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Law-abiding Americans should not be punished, restricted, or treated like criminals for choosing to exercise those rights. Instead of disarming responsible citizens, we should be focused on addressing the cultural decline, broken communities, and failures that lead individuals toward violence in the first place.",
+      "note": "Same page: opposes restricting law-abiding gun owners and points to cultural causes of violence instead.",
+      "subjects": [
+        "opposes restrictions on law-abiding gun owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:02:32.048Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1b565b97105b52741d7489f562db009792ba9832c868a851efb426c3e5653736",
+      "kind": "own-words",
+      "url": "https://jeremy-todd.com/issue-2",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I also believe many of the policies pushed in the name of “gun safety” have failed to make Americans safer. So-called “gun-free zones” have too often become targets for those who seek to do harm, while endless regulations continue to burden responsible gun owners rather than criminals.",
+      "note": "Same page: says gun safety policies and gun-free zones have not worked and regulations burden responsible owners.",
+      "subjects": [
+        "gun-free zones",
+        "gun safety laws",
+        "opposes gun regulations"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:02:32.048Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun-free zones",
+        "gun regulations",
+        "restrictions on gun ownership",
+        "carry"
+      ],
+      "places": [
+        "On the Record (1 podcast, 2026-06-21; searched the transcript for gun, firearm, weapon, Second Amendment: nothing on the subject)",
+        "campaign site issues page and its Second Amendment page (jeremy-todd.com/issue-2)",
+        "iVoterGuide profile (listed for the Kentucky district 4 general election; has a written answer on gun ownership)",
+        "news search: Kentucky Secretary of State filing list and local news confirm he is on the 2026 general-election ballot for district 4 (search lead only; not fetched)",
+        "Ballotpedia: not reviewed",
+        "congress.gov: not applicable, not a sitting member"
+      ],
+      "found": 4,
+      "at": "2026-10-30T15:02:32.048Z",
+      "by": "source-collector"
+    }
+  ]
+}

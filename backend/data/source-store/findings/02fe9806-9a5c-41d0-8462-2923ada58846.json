@@ -1,0 +1,35 @@
+{
+  "politician_id": "02fe9806-9a5c-41d0-8462-2923ada58846",
+  "findings": [
+    {
+      "id": "e1aa337a398913f78fafcf7c44253162465e344341b998817f38c9e4f3341c5a",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/SB25-003",
+      "date": "2025-03-24",
+      "date_precision": "day",
+      "instrument_id": "CO-SB25-003-2025",
+      "act": "nay",
+      "motion": "Third reading, passage of bill",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO House, Third reading, passage of bill, 2025-03-24: nay (tally 36–28); census gate: none.",
+      "subjects": [
+        "ban on some semiautomatic guns unless the buyer has a permit and training"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/CO-SB25-003-signed.pdf",
+          "sha256": "ea5b00b5f6564207f7a8a70ebced49cadcfadbbf0d335f79e03360ea3d7a6b51"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

@@ -1,0 +1,415 @@
+{
+  "politician_id": "d36c9fc0-3aef-4cb7-8e0f-e8d7a4f5576b",
+  "findings": [
+    {
+      "id": "00f2e9f2d360fbd7439d15afeabdf55124766c73371f203d821c1602e9f5ea09",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/senate/12/felzkowski/media/ad4pjqmd/20250108-sjr2-voter-id.pdf",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "passage": "Showing an ID to vote is common sense and overwhelmingly popular among Wisconsinites, and I am pleased to have presided over this action on the Senate Floor,",
+      "note": "Statement issued by her office after the Senate passed SJR 2, the voter ID constitutional amendment (second consideration). She calls showing ID to vote common sense.",
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment for voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:25.593Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbe70805f01a6d0880252e6ecd9282c6cc047a64ee320c992ef5124c910f875a",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/senate/12/felzkowski/media/ad4pjqmd/20250108-sjr2-voter-id.pdf",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "passage": "Secure elections are a fundamental part of a functioning government and cannot be subject to political winds; enshrining this basic requirement in our constitution will ensure voting in Wisconsin remains secure moving forward.",
+      "note": "Same release. She says putting the ID requirement in the constitution keeps elections secure.",
+      "subjects": [
+        "constitutional amendment for voter ID",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:25.593Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "27922f6156a6334f19a31d0dffefc798c57ff36efa84d400ad0f2490294fd56e",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/senate/12/felzkowski/media/ad4pjqmd/20250108-sjr2-voter-id.pdf",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "passage": "When an ID is required to drive a car, open a bank account, and even to get a library card, there is no reason why showing an ID to vote is not acceptable,",
+      "note": "Same release. She compares the ID to vote with ID needed for other everyday things.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:25.593Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b275686c120ca0b06400b77434cf276e5300cebf3d5713ae4bd9b83ee3047643",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/senate/12/felzkowski/media/ad4pjqmd/20250108-sjr2-voter-id.pdf",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "passage": "Requiring Voter ID is an easy way to make sure people feel confident when they vote and ensure that the foundation of our constitutional republic is strong.",
+      "note": "Same release. She says a voter ID requirement builds voter confidence.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:25.593Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cc314439e68dbf7428f08b7f9ca399835e9ef77b1fbcd1c4e5d14857964034e8",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/ab1002",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-1002-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/16/2022; hearing 2/21/2022; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/15/2022)",
+      "note": "Named as co sponsor ('Felzkowski') on the official bill page; linked to Mary Felzkowski via the official 2022 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0920e2530883eff8d4eec932a20b68d830ed1386dc660a05b8f46505aada347b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/ab201",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-201-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 3/25/2021; committee recommended passage as amended 6/16/2021; laid on the table 6/22/2021; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/15/2022)",
+      "note": "Named as co sponsor ('Felzkowski') on the official bill page; linked to Mary Felzkowski via the official 2021 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c398b951a734a7dcdb44b106de3a6a7db48e6b57d544c890cbc380fe5e3bbcf0",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/sv0177",
+      "date": "2023-11-14",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-494-2023",
+      "act": "yea",
+      "motion": "Senate: Read a third time and concurred in (CONCURRENCE) (sv0177)",
+      "note": "Senate roll call as printed ('FELZKOWSKI'), linked to Mary Felzkowski (district 12) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f0a756aa38c0688e9298d1fa6dd953093e3ac6492da29ee0d44a6656305b95d4",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/ab999",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-999-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/16/2022; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/15/2022)",
+      "note": "Named as co sponsor ('Felzkowski') on the official bill page; linked to Mary Felzkowski via the official 2022 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05f8a142565de5b18a7bb52eccf388587e6178fcea0d942c4b6f4e87c5f035e1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ajr1",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-1-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/6/2025 (second consideration, text of 2023 SJR 73); committee recommended adoption 1/9/2025 (5-2); laid on the table 1/14/2025; died (Failed to adopt pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Felzkowski') on the official bill page; linked to Mary Felzkowski via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "afa5598b3a1af4be7e19017a800bf635b25b6b582646a110e688d2f5407df51c",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/sv0085",
+      "date": "2021-06-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "yea",
+      "motion": "Senate: Read a third time and passed (PASSAGE) (sv0085)",
+      "note": "Senate roll call as printed ('FELZKOWSKI'), linked to Mary Felzkowski (district 12) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b319d313df39958fd1385f38fe6719f965c4ebd72f3d2261d707f416105bc3d3",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/sb204",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled bill as vetoed by the Governor (2021 Senate Bill 204, vetoed 8/10/2021, enrolled from Senate Substitute Amendment 1); passed Senate 6/9/2021, concurred by Assembly 6/22/2021; override failed (Joint Rule 82, 5/17/2022)",
+      "note": "Named as co sponsor ('Felzkowski') on the official bill page; linked to Mary Felzkowski via the official 2021 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4f30723e38f6bac08dfc861be5cb5156051e1eebf82a52f402ee921c9e9fdf26",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2017/av0362",
+      "date": "2018-12-04",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-884-2018",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0362)",
+      "note": "Assembly roll call as printed ('FELZKOWSKI'), linked to Mary Felzkowski (district 35) via the official 2017 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d13c5034d8852f39633cb03add59315b6842cac4346e989cc3d46f2f34a0fb1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/sv0260",
+      "date": "2022-02-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "yea",
+      "motion": "Senate: Read a third time and passed (PASSAGE) (sv0260)",
+      "note": "Senate roll call as printed ('FELZKOWSKI'), linked to Mary Felzkowski (district 12) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d18ec4f8e6c2ec482a548482cc0f5bd2db49f952b41b66b8696c034c4141a0b4",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/sb939",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled bill as vetoed by the Governor (2021 Senate Bill 939, vetoed 4/8/2022); passed Senate 2/22/2022, concurred by Assembly 2/24/2022; override failed (Joint Rule 82, 5/17/2022)",
+      "note": "Named as co sponsor ('Felzkowski') on the official bill page; linked to Mary Felzkowski via the official 2022 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "097e5be441c78312236748cdf9f0e45bc27901642be1fe8690bad61c835c3d34",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/sv0003",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "yea",
+      "motion": "Senate: Read a third time and adopted (PASSAGE) (sv0003)",
+      "note": "Senate roll call as printed ('FELZKOWSKI'), linked to Mary Felzkowski (district 12) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "52afc0d599e71925804c90692661774de3a4e6234e50f5798a0f86167fb91d4e",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sjr2",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election",
+      "note": "Named as co sponsor ('Felzkowski') on the official bill page; linked to Mary Felzkowski via the official 2025 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f242b6244d66e708c0a0080ce690b279166ec537853c0cc236e406ae40cc7622",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/sv0139",
+      "date": "2023-11-07",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "yea",
+      "motion": "Senate: Read a third time and adopted (ADOPTION) (sv0139)",
+      "note": "Senate roll call as printed ('FELZKOWSKI'), linked to Mary Felzkowski (district 12) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment for voter ID",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "not reviewed: On the Record extraction script (agent rules forbid running repo scripts)",
+        "legislature member page https://legis.wisconsin.gov/senate/12/felzkowski/ (confirms 12th Senate District and Senate President; nothing on the subject)",
+        "legislature press release list (page 1, 10 titles, Aug 2025 to Feb 2026): nothing on the subject by title; the January 2025 voter ID release is on the same site (saved below); older pages not reviewed",
+        "legislature 2025-2026 session highlights page: nothing on the subject",
+        "WisPolitics page of the January 2025 statement (partly behind a login; the full text was taken from the legislature PDF instead)",
+        "blocked: https://www.wispolitics.com/2021/sen-felzkowski-senate-passes-election-resolution-bills/ (403 on curl; a 2021 statement on a Senate resolution about the elections commission, not copied)",
+        "two web searches on name plus subject words, including proof of citizenship and absentee: nothing from her on citizenship found",
+        "not reviewed: Ballotpedia and a campaign site (not fetched; her seat status in 2026 not checked); floor votes and sponsorships (linked separately)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T23:08:25.593Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 13,
+      "at": "2026-10-28T23:15:12.771Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

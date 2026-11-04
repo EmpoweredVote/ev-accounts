@@ -1,0 +1,64 @@
+{
+ "id": "MA-S-2572-AMDT-73-2024",
+ "scope": "state:ma",
+ "title": "S.2572 (193rd General Court) Senate floor amendment #73: Advanced Practice Registered Nurses. Adopted 2/1/2024.",
+ "urls": [
+  "https://malegislature.gov/Bills/GetAmendmentContent/193/S2572/73/Senate/Content",
+  "https://malegislature.gov/Bills/193/S2572/BillHistory"
+ ],
+ "version": "other",
+ "sponsors": [
+  {
+   "name": "Friedman",
+   "role": "prime",
+   "version": "amendment text (movers named in it)",
+   "politician_id": "248f76d7-e76a-49e5-88b7-dc43a3131329"
+  },
+  {
+   "name": "Rausch",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Moore",
+   "role": "co",
+   "version": "amendment text (movers named in it)",
+   "politician_id": "c0b79f82-6ce7-413a-a18a-286c9a8fa5fd"
+  },
+  {
+   "name": "Timilty",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Brady",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Moran",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03): official amendment text + bill history for fate",
+  "fetched_at": "2026-11-03T19:02:32Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-S-2572-AMDT-73-2024.html",
+   "sha256": "cc934361702b6ce446fec6c15e14d33b8870c09e785d03911c1c76d81cbacfe7"
+  }
+ },
+ "operative_text": "Amendment 73 Amendment ID: S2572-73 Amendment 73 Advanced Practice Registered Nurses Ms. Friedman, Ms. Rausch, Messrs. Moore, Timilty and Brady and Ms. Moran move that the proposed new text be amended in section 18 by striking out, in lines 458-460, the words “physician or clinical psychologist attesting that such physician or psychologist is familiar with the applicant’s mental illness and that in the physician’s or psychologist’s” and inserting in place thereof the following words:- “physician, advanced practice registered nurse or clinical psychologist attesting that such physician, advanced practice registered nurse or psychologist is familiar with the applicant’s mental illness and that in the physician’s, advanced practice registered nurse’s or psychologist’s”; and in section 19 but striking out, in lines 485-486, the words “physician or clinical psychologist attesting that such physician or psychologist is familiar with the applicant’s mental illness and that in the physician’s or psychologist’s” and inserting in place thereof the following words:- “physician, advanced practice registered nurse or clinical psychologist attesting that such physician, advanced practice registered nurse or psychologist is familiar with the applicant’s mental illness and that in the physician’s, advanced practice registered nurse’s or psychologist’s”."
+}

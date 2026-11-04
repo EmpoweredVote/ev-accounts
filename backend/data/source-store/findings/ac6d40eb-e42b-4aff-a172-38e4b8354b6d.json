@@ -1,0 +1,63 @@
+{
+  "politician_id": "ac6d40eb-e42b-4aff-a172-38e4b8354b6d",
+  "findings": [
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Harris, K.'), linked to Keith S. Harris (district 195) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.718Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "status: lost the 2026-05-19 primary (page https://www.abc27.com/pennsylvania-politics/sierra-mcneil-defeats-incumbent-keith-harris-in-pennsylvania-house-district-195-democratic-primary/amp/ says the challenger defeated the incumbent; the page shows no exact date, and 2026-05-19 comes from the state primary calendar and a Wikipedia citation; confirmed also at https://en.wikipedia.org/wiki/Keith_Harris_(politician))",
+        "On the Record (0 appearances found)",
+        "stopped after confirming he is out of scope; no own-words search run"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:10:24.746Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:45:58.718Z",
+      "by": "identity-pa-2026-10-28"
+    }
+  ]
+}

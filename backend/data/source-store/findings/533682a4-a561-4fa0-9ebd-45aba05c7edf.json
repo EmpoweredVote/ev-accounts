@@ -1,0 +1,43 @@
+{
+  "politician_id": "533682a4-a561-4fa0-9ebd-45aba05c7edf",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (https://ballotpedia.org/Ola_Hawatmeh: lost the primary for U.S. House Florida District 19 on August 18, 2026; general election lists other candidates)",
+        "On the Record (0 appearances)",
+        "campaign site https://www.olaforcongress.com (home and /issues): nothing on the subject",
+        "Ballotpedia (page and Candidate Connection survey): nothing on the subject",
+        "not reviewed: congress.gov, news search (web search budget exhausted; out of scope after primary loss)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:58:06.244Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (https://ballotpedia.org/Ola_Hawatmeh, which names her as a candidate for Florida's 19th District and lists her as defeated in the primary; the general-election list on that page does not include her)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (candidate page and her survey answers; nothing on the subject)",
+        "one web search to confirm identity and race"
+      ],
+      "found": 0,
+      "at": "2026-10-27T11:42:41.590Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

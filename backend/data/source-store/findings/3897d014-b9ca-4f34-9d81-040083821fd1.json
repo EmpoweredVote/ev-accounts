@@ -1,0 +1,109 @@
+{
+  "politician_id": "3897d014-b9ca-4f34-9d81-040083821fd1",
+  "findings": [
+    {
+      "id": "b1d464106905e668d2cdc7693ee339013485d5a4e08246a75dfd5ef5f9cc4002",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/64963/race/15863/election/900",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "Photo ID, no electronic machines whatsoever, paper ballots, local counting of all ballots at each precinct polling location.",
+      "note": "Candidate questionnaire answer to 'What laws would you propose to change present voting practices?' (2022 state senate primary listing). The answer continues: 'Semi or annual audit of voter rolls.' On the same page he marked 'Strongly Disagree' to the statement 'People should be able to vote without photo identification.'",
+      "subjects": [
+        "voter ID at the polls",
+        "paper ballots",
+        "voter-roll audits",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T04:58:26.086Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b7d713cb42803c242562d0c7c1ce0dc41a1245ea9f0fc6ddf79012b1339b5491",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/64963/race/15863/election/900",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "Election integrity is a very high priority.",
+      "note": "Answer to 'What else would you like voters to know about you, including your legislative priorities?' on the same questionnaire. The next sentence is 'Without it we do not have freedom.'",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T04:58:26.086Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b33d89fc1419193891722fe00f6d4df68f57ad81cc7e7eab7af0cd1b473d327e",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/26info/Journals/Rday6405111615-1637.pdf",
+      "date": "2026-05-11",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "nay",
+      "motion": "Senate: SS for SCS for HCS for HB 1871, as amended, read the 3rd time and passed",
+      "note": "Senate roll call as printed ('Nicola'), linked to Joe Nicola (district 11) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.236Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "paper ballots and voter-roll audits",
+        "election integrity in general",
+        "proof of citizenship",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 appearances, also searched by name)",
+        "official Missouri Senate page for District 11 (confirms Joe Nicola holds the seat, sworn in 2025-01-08): https://www.senate.mo.gov/Nicola",
+        "Senate media archive and current media pages: nothing on the subject (committee presentations of SB 1012 and SB 1255 carry no description of content; floor remarks on HJRs 173/174 and 23/3 are off-subject)",
+        "iVoterGuide candidate questionnaire (2022 Senate District 8 primary page)",
+        "blocked: https://ballotpedia.org/Joe_Nicola (empty page)",
+        "blocked: https://nicolaformo.com (empty page)",
+        "news search on name plus subject words: nothing in his own words beyond the questionnaire"
+      ],
+      "found": 2,
+      "at": "2026-11-04T04:58:26.086Z",
+      "by": "search-mo-2026-11-03"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:14:55.236Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

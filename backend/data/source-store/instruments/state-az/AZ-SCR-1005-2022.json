@@ -1,0 +1,33 @@
+{
+  "id": "AZ-SCR-1005-2022",
+  "scope": "state:az",
+  "title": "SCR 1005 (2022 - Fifty-fifth Legislature - Second Regular Session (azleg session id 125)): federal ballot voters; identification",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/76260",
+    "https://www.azleg.gov/legtext/55leg/2R/bills/SCR1005P.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Bill text\n(quote) REFERENCE TITLE: federal ballot voters; identification\n(section) Sec. 1: Section 16-579, Arizona Revised Statutes, is amended to read:\n(quote) (a) A valid form of identification that bears the photograph, name and address of the elector that reasonably appear to be the same as the name and address in the precinct register, including an Arizona driver license, an Arizona nonoperating identification license, a tribal enrollment card or other form of tribal identification or a United States federal, state or local government issued identification.\n(section) Sec. 1: Section 16-579, Arizona Revised Statutes, is amended to read: (para 1)\n(quote) 1. the elector's driver license or nonoperating identification license issued after October 1, 1996 by the department of transportation or the equivalent governmental agency of another state within the United States if the agency indicates on the elector's driver license or nonoperating identification license that the person has provided satisfactory proof of United States citizenship.\n(b_no_id_remedy)\n(section) Sec. 1: Section 16-579, Arizona Revised Statutes, is amended to read:\n(quote) (c) A valid form of identification that bears the photograph, name and address of the elector except that if the address on the identification does not reasonably appear to be the same as the address in the precinct register or the identification is a valid United States military identification card or a valid United States passport and does not bear an address, the identification must be accompanied by one of the items listed in subdivision (b) of this paragraph.\n(section) Sec. 1: Section 16-579, Arizona Revised Statutes, is amended to read: (para 2)\n(quote) 2. If the elector does not present identification that complies with paragraph 1 of this subsection, the elector is only eligible to vote a provisional ballot as prescribed by section 16-584 or a conditional provisional ballot as provided for in the secretary of state's instruction and procedures manual adopted pursuant to section 16-452.\n(section) Sec. 1: Section 16-579, Arizona Revised Statutes, is amended to read: (para C)\n(quote) C. An elector who registered to vote using a federal voter registration form and who has not provided proof of citizenship to the county recorder as prescribed in section 16-166 may not receive a ballot unless the elector provides identification as prescribed in subsection A of this section and provides proof of citizenship by presenting one of the FOLLOWING:\n(c_mail_ballot_id)\n(section) Sec. 1: Section 16-579, Arizona Revised Statutes, is amended to read:\n(quote) (b) Two different items that contain the name and address of the elector that reasonably appear to be the same as the name and address in the precinct register, including a utility bill, a bank or credit union statement that is dated within ninety days of the date of the election, a valid Arizona vehicle registration, an Arizona vehicle insurance card, an Indian census card, tribal enrollment card or other form of tribal identification, a property tax statement, a recorder's certificate, a voter registration card, a valid United States federal, state or local government issued identification or any mailing that is labeled as \"official election material\".\n(d_proof_of_citizenship)\n(section) Sec. 1: Section 16-579, Arizona Revised Statutes, is amended to read: (para C)\n(quote) C. An elector who registered to vote using a federal voter registration form and who has not provided proof of citizenship to the county recorder as prescribed in section 16-166 may not receive a ballot unless the elector provides identification as prescribed in subsection A of this section and provides proof of citizenship by presenting one of the FOLLOWING:\n(section) Sec. 1: Section 16-579, Arizona Revised Statutes, is amended to read: (para 1)\n(quote) 1. the elector's driver license or nonoperating identification license issued after October 1, 1996 by the department of transportation or the equivalent governmental agency of another state within the United States if the agency indicates on the elector's driver license or nonoperating identification license that the person has provided satisfactory proof of United States citizenship.\n(section) Sec. 1: Section 16-579, Arizona Revised Statutes, is amended to read: (para 2)\n(quote) 2. the elector's birth certificate that verifies citizenship.\n(e_other_rule)\n(section) Sec. 1: Section 16-579, Arizona Revised Statutes, is amended to read:\n(quote) Identification is deemed valid unless it can be determined on its face that it has expired.\n(other) 0: n\n(other) 1: o\n(other) 2: t\n(other) 3:  \n(other) 4: s\n(other) 5: t\n(other) 6: a\n(other) 7: t\n(other) 8: e\n(other) 9: d",
+  "sponsors": [
+    {
+      "name": "Kelly Townsend",
+      "role": "prime",
+      "version": "SCR1005P: as introduced (printed version)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

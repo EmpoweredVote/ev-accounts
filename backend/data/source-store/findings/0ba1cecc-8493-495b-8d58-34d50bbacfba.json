@@ -1,0 +1,268 @@
+{
+  "politician_id": "0ba1cecc-8493-495b-8d58-34d50bbacfba",
+  "findings": [
+    {
+      "id": "86135173fc45c9e57fb00f0b7033b2cf40b696b7cf3c7f89dd826c77ca65f392",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2023252",
+      "date": "2023-06-22",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-44-2023",
+      "act": "yea",
+      "motion": "On the Joint Resolution (H.J. Res. 44)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Joint Resolution (H.J. Res. 44), 2023-06-22: yea (tally 49–50); census gate: none.",
+      "subjects": [
+        "cancel the federal pistol-brace rule"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-118hjres44eh.txt",
+          "sha256": "d04fe1fe2a2512a1932d14b7b93d88fe25ac6712851bc4caa37df31b89101f4d"
+        }
+      }
+    },
+    {
+      "id": "59c9eaed6ad8d62b557e27fd6b2b75271bce535faf3cef2b6b55238230957dbc",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2025190",
+      "date": "2025-07-01",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2025",
+      "act": "yea",
+      "motion": "On Passage of the Bill (H.R. 1, as Amended)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US Senate, On Passage of the Bill (H.R. 1, as Amended), 2025-07-01: yea (tally 50–50); census gate: multi-subject.",
+      "subjects": [
+        "end the federal tax on suppressors and short-barrelled guns",
+        "budget (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "087435729026677fb23dcf45c8e5bf439cdea6997a3404afbf3ffd6310120c69",
+      "kind": "own-words",
+      "url": "https://1819news.com/news/item/britt-said-that-red-flag-laws-are-a-gateway-to-push-a-disarming-agenda",
+      "date": "2022-06-10",
+      "date_precision": "day",
+      "passage": "\"Gun grabbers use so-called 'red flag laws' as a gateway to push their disarming agenda,\" Britt told 1819 News, following passage of the legislation in the House. \"In reality, a 'red flag law' is an abridgment of the Second Amendment and can be abused to take away the right to self-defense with no due process. I do not support additional gun laws that infringe upon our Second Amendment rights. As Senator for Alabama, I will be a champion for preserving and strengthening our God-given Second Amendment rights.\"",
+      "note": "Statement to 1819 News (as a Senate candidate) after the House passed a red-flag bill; she says red flag laws can be abused and she does not support additional gun laws.",
+      "subjects": [
+        "red flag orders",
+        "no new gun laws",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:12:51.764Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76eea3a39eda73ae7f9186822fa53f5f09a6d9f8ae4839370a5fb1cbb99b4482",
+      "kind": "own-words",
+      "url": "https://1819news.com/news/item/britt-said-that-red-flag-laws-are-a-gateway-to-push-a-disarming-agenda",
+      "date": "2022-06-10",
+      "date_precision": "day",
+      "passage": "\"I will introduce a bill to ensure that no state that implements an unlawful and unconstitutional red flag law can be entitled to federal dollars,\" Britt said. \"Alabamians are proud to exercise our Second Amendment rights for hunting and self-defense — but that is not the purpose of the Second Amendment. The Second Amendment exists to protect citizens from tyranny. Armed citizens are empowered citizens. This is why liberals want to disarm populations to take control — without firearms, Americans can be pushed towards anything.\"",
+      "note": "Campaign pledge to bar federal money to states with red flag laws; says the Second Amendment exists to protect citizens from tyranny. Quoted by 1819 News.",
+      "subjects": [
+        "red flag orders",
+        "federal funds and state red flag laws",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:12:51.764Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59b7fcd90b81f5a51831235b090b586ef1d358e21df3624be2e1f21522732b3e",
+      "kind": "own-words",
+      "url": "https://1819news.com/news/item/katie-britt-says-purpose-of-second-amendment-to-protect-citizens-against-tyranny-04-14-2022",
+      "date": "2022-04-14",
+      "date_precision": "day",
+      "passage": "\"As you know, many Alabamians are proud to exercise their Second Amendment rights, and I am one of them,\" she said. \"Many times, people discuss hunting and self-defense. Those things are very important. But the purpose of the Second Amendment, Jeff, is obviously to protect our citizens against tyranny of the government. Armed citizens are empowered citizens. You can look across our history, even at the current rate, and we know how important it is to make sure that our citizenry is armed and that Second Amendment is not infringed upon.",
+      "note": "Radio interview on Mobile's FM Talk 106.5 during the 2022 Senate campaign, as quoted by 1819 News (article dated 2022-04-14; interview was on a Tuesday that week).",
+      "subjects": [
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:12:51.764Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e1ec7056d33244ae46bd3f2148c8fd5106be4a5adfc73e36cbae91e3e3596f5",
+      "kind": "own-words",
+      "url": "https://1819news.com/news/item/katie-britt-says-purpose-of-second-amendment-to-protect-citizens-against-tyranny-04-14-2022",
+      "date": "2022-04-14",
+      "date_precision": "day",
+      "passage": "When you look at the Second Amendment, and you look at what it says, 'shall not be infringed,' and I believe that wholeheartedly.",
+      "note": "Same radio interview, as quoted by 1819 News.",
+      "subjects": [
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:12:51.764Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4fc269994aa68802153df102afdd71004805013a38c708ae9dd5b4ebac492f74",
+      "kind": "own-words",
+      "url": "https://www.britt.senate.gov/issues/faith-family-freedom/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "When it comes to the Second Amendment, Senator Britt as a constitutional conservative has always believed that restrictive gun control measures are contrary to both the letter and the spirit of our United States Constitution.",
+      "note": "Official Senate issues page, undated; states her view on gun control measures.",
+      "subjects": [
+        "general statement on gun rights",
+        "gun control measures"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:12:51.764Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2c54f46534f4f88e5b87ac1bb041e17b96197971f0c418dab5e734c754b258e3",
+      "kind": "own-words",
+      "url": "https://www.britt.senate.gov/issues/faith-family-freedom/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "She believes that we need to enforce the laws already on the books, combat the growing culture of violence in society, and address the underlying mental health issues that often contribute to heinous, senseless crimes.",
+      "note": "Same official issues page; lists enforcing existing laws and mental health as her approach to gun violence.",
+      "subjects": [
+        "enforce existing gun laws",
+        "mental health and violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:12:51.764Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "82aace17f4ba2c5eb7b92483e60727b6c46b6bb43cdbfea72357fea1a36e10b7",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/65",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "US-S-65-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2025-01-09",
+      "note": "co sponsor of US-S-65-2025 (cosponsor 2025-01-09): S 65 (119th Congress): Constitutional Concealed Carry Reciprocity Act of 2025.",
+      "subjects": [
+        "national concealed-carry reciprocity for handguns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-S-65-2025.htm",
+          "sha256": "553385ff6538d8ab33b460cba8f4ce77a6b27ee7f2d5542d5f6810317128aeb4"
+        }
+      }
+    },
+    {
+      "id": "a79db97feb0101fbc93ee29dc0a3e5b51323914a16c3b2da2d48ce626bedd4f7",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/senate-joint-resolution/20",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "US-SJRES-20-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2023-03-15",
+      "note": "co sponsor of US-SJRES-20-2023 (cosponsor 2023-03-15): SJRES 20 (118th Congress): A joint resolution providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Justice and the Bureau of Alcohol, Tobacco, Firearms and Explosives relating to \"Factoring Criteria for Firearms With Attached 'Stabilizing Braces'\"..",
+      "subjects": [
+        "ATF stabilizing-brace rule disapproved"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-SJRES-20-2023.htm",
+          "sha256": "01e71824e8991c247f827837d8852968be726f4c2b3d843bf11bbb3a396d8f75"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "Second Amendment",
+        "red flag orders",
+        "suppressors and National Firearms Act",
+        "background checks",
+        "carry permits and reciprocity",
+        "bills sponsored or co-sponsored on firearms"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Senate site issues page (Faith, Family, & Freedom) read: https://www.britt.senate.gov/issues/faith-family-freedom/ ; names her as the Senator",
+        "blocked: https://www.britt.senate.gov/news/press-releases/ (403)",
+        "blocked: https://www.congress.gov/member/katie-britt/B001319 (403)",
+        "blocked: https://ballotpedia.org/Katie_Britt (empty page)",
+        "blocked: https://altoday.com/archives/45017-katie-britt-releases-new-campaign-ad-showing-second-amendment-support (SSL handshake failure)",
+        "web searches: Second Amendment statements; Senate press releases on guns; sponsorships and co-sponsorships (no Senate firearm bill by her turned up)",
+        "news pages read: two 1819 News articles from 2022",
+        "nothing on the subject: no Senate-era (2025-2026) statements or bill sponsorships found in the pages reached",
+        "scope: sitting senator; term runs past 2026"
+      ],
+      "found": 6,
+      "at": "2026-10-30T15:12:51.764Z",
+      "by": "source-collector"
+    }
+  ]
+}

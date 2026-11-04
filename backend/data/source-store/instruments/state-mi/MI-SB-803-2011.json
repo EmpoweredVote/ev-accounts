@@ -1,0 +1,937 @@
+{
+  "id": "MI-SB-803-2011",
+  "scope": "state:mi",
+  "title": "SB 803 (2011-2012 Regular Session, Michigan Legislature (bill page title: \"Senate Bill 803 of 2011\")): Elections; voters; declaration of United States citizenship when voting or applying for an absent voter ballot; require. Amends secs. 523 & 759 of 1954 PA 116 (MCL 168.523 & 168.759) & adds sec. 766a.",
+  "urls": [
+    "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2011-SB-0803",
+    "https://www.legislature.mi.gov/documents/2011-2012/billenrolled/Senate/htm/2011-SNB-0803.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 523 (as in the version read)\n(quote) (1) At each election, before being given a ballot, each registered elector offering to vote shall identify himself or herself by presenting an official state identification card issued to that individual under 1972 PA 222, MCL 28.291 to 28.300, an operator’s or chauffeur’s license issued to that individual under the Michigan vehicle code, 1949 PA 300, MCL 257.1 to 257.923, or other generally recognized picture identification card and by executing an application, on a form prescribed by the secretary of state, in the presence of an election official which includes all of the following:\n(section) Sec. 523 (as in the version read)\n(quote) If the name appears on the voter registration list, the elector shall provide further identification or other information stated upon the voter registration list.\n(section) Sec. 523 (as in the version read)\n(quote) However, an elector being allowed to vote without the identification required under this subsection is subject to challenge as provided in section 727.\n(section) Sec. 523 (as in the version read)\n(quote) (4) If, upon a comparison of the signature or other identification as required in this section, it is found that the applicant is entitled to vote, the election officer having charge of the registration list shall approve the application and write his or her initials on the application, after which the number on the ballot issued shall be noted on the application.\n(b_no_id_remedy)\n(section) Sec. 523 (as in the version read)\n(quote) If the elector does not have an official state identification card, operator’s or chauffeur’s license, or other generally recognized picture identification card as required under this subsection, the individual shall sign an affidavit to that effect before an election inspector and be allowed to vote as otherwise provided in this act.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec. 523 (as in the version read)\n(quote) (2) If an elector does not affirmatively state on the application that he or she is a citizen of the United States, that elector shall be challenged by an election inspector.\n(section) Sec. 523 (as in the version read)\n(quote) If the elector fails to state under oath that he or she is a citizen of the United States, that elector shall not be issued a ballot.\n(section) Sec. 523 (as in the version read)\n(quote) If the signature or an item of information, other than citizenship, does not correspond, the vote of the person shall be challenged, and the same procedure shall be followed as provided in this act for the challenging of an elector.\n(e_other_rule) not stated.\n(other) Sec. 759: begins \"(1) At any time during the 75 days before a primary or special primary, but not later than 2 p.m. of the Saturday immediately befo\"\n(other) Sec. 766a: begins \"If an election is contested in a court, an absent voter ballot that was not counted because the absent voter did not answer the ci\"",
+  "sponsors": [
+    {
+      "name": "Darwin Booher (District 35)",
+      "role": "prime",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "Jack Brandenburg (District 11)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "Thomas Casperson (District 38)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "Bruce Caswell (District 16)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "Patrick Colbeck (District 7)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "Judith Emmons (District 33)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "Michael Green (District 31)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "Goeffrey Hansen (District 34)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "David Hildenbrand (District 29)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "Mark Jansen (District 28)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "Rick Jones (District 24)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "Roger Kahn (District 32)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "Michael Kowall (District 15)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "James Marleau (District 12)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "Arlan Meekhof (District 30)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "John Moolenaar (District 36)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "Mike Nofs (District 19)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "John Pappageorge (District 13)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "Phillip Pavlov (District 25)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "John Proos (District 21)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "Randy Richardville (District 17)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "David Robertson (District 26)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "Tory Rocca (District 10)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "Tonya Schuitmaker (District 20)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    },
+    {
+      "name": "Howard Walker (District 37)",
+      "role": "co",
+      "version": "Text file header as saved: \"STATE OF MICHIGAN 96TH LEGISLATURE REGULAR SESSION OF 2012 Introduced by Senators Booher, Brandenburg, Casperson, Caswel\""
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2012-02-14",
+      "body": "MI Senate",
+      "motion": "PASSED ROLL CALL # 66 YEAS 30 NAYS 8 EXCUSED 0 NOT VOTING 0",
+      "kind": "roll-call",
+      "yes": 30,
+      "no": 8,
+      "absent": 0,
+      "body_size": 38,
+      "note": "absent = Excused as printed; present_not_voting = Not Voting as printed. House journals print Excused/Not Voting counts in the history line only for some votes. | SJ 13 Pg. 166 | https://www.legislature.mi.gov/documents/2011-2012/journal/Senate/htm/2012-SJ-02-14-013.htm",
+      "members": [
+        {
+          "name": "Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Gleason",
+          "vote": "yea"
+        },
+        {
+          "name": "Kowall",
+          "vote": "yea"
+        },
+        {
+          "name": "Proos",
+          "vote": "yea"
+        },
+        {
+          "name": "Bieda",
+          "vote": "yea"
+        },
+        {
+          "name": "Green",
+          "vote": "yea"
+        },
+        {
+          "name": "Marleau",
+          "vote": "yea"
+        },
+        {
+          "name": "Richardville",
+          "vote": "yea"
+        },
+        {
+          "name": "Booher",
+          "vote": "yea"
+        },
+        {
+          "name": "Hansen",
+          "vote": "yea"
+        },
+        {
+          "name": "Meekhof",
+          "vote": "yea"
+        },
+        {
+          "name": "Robertson",
+          "vote": "yea"
+        },
+        {
+          "name": "Brandenburg",
+          "vote": "yea"
+        },
+        {
+          "name": "Hildenbrand",
+          "vote": "yea"
+        },
+        {
+          "name": "Moolenaar",
+          "vote": "yea"
+        },
+        {
+          "name": "Rocca",
+          "vote": "yea"
+        },
+        {
+          "name": "Casperson",
+          "vote": "yea"
+        },
+        {
+          "name": "Hune",
+          "vote": "yea"
+        },
+        {
+          "name": "Nofs",
+          "vote": "yea"
+        },
+        {
+          "name": "Schuitmaker",
+          "vote": "yea"
+        },
+        {
+          "name": "Caswell",
+          "vote": "yea"
+        },
+        {
+          "name": "Jansen",
+          "vote": "yea"
+        },
+        {
+          "name": "Pappageorge",
+          "vote": "yea"
+        },
+        {
+          "name": "Walker",
+          "vote": "yea"
+        },
+        {
+          "name": "Colbeck",
+          "vote": "yea"
+        },
+        {
+          "name": "Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Pavlov",
+          "vote": "yea"
+        },
+        {
+          "name": "Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Emmons",
+          "vote": "yea"
+        },
+        {
+          "name": "Kahn",
+          "vote": "yea"
+        },
+        {
+          "name": "Gregory",
+          "vote": "nay"
+        },
+        {
+          "name": "Hopgood",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Warren",
+          "vote": "nay"
+        },
+        {
+          "name": "Hood",
+          "vote": "nay"
+        },
+        {
+          "name": "Hunter",
+          "vote": "nay"
+        },
+        {
+          "name": "Smith",
+          "vote": "nay"
+        },
+        {
+          "name": "Whitmer",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2012-06-12",
+      "body": "MI House",
+      "motion": "passed; given immediate effect Roll Call # 421 Yeas 67 Nays 43",
+      "kind": "roll-call",
+      "yes": 67,
+      "no": 43,
+      "absent": 0,
+      "body_size": 110,
+      "note": "absent = Excused as printed; present_not_voting = Not Voting as printed. House journals print Excused/Not Voting counts in the history line only for some votes. | HJ 60 Pg. 1791 | https://www.legislature.mi.gov/documents/2011-2012/journal/House/htm/2012-HJ-06-12-060.htm",
+      "members": [
+        {
+          "name": "Agema",
+          "vote": "yea"
+        },
+        {
+          "name": "Graves",
+          "vote": "yea"
+        },
+        {
+          "name": "Lori",
+          "vote": "yea"
+        },
+        {
+          "name": "Potvin",
+          "vote": "yea"
+        },
+        {
+          "name": "Bolger",
+          "vote": "yea"
+        },
+        {
+          "name": "Greimel",
+          "vote": "yea"
+        },
+        {
+          "name": "Lund",
+          "vote": "yea"
+        },
+        {
+          "name": "Price",
+          "vote": "yea"
+        },
+        {
+          "name": "Bumstead",
+          "vote": "yea"
+        },
+        {
+          "name": "Haines",
+          "vote": "yea"
+        },
+        {
+          "name": "Lyons",
+          "vote": "yea"
+        },
+        {
+          "name": "Pscholka",
+          "vote": "yea"
+        },
+        {
+          "name": "Callton",
+          "vote": "yea"
+        },
+        {
+          "name": "Haveman",
+          "vote": "yea"
+        },
+        {
+          "name": "MacGregor",
+          "vote": "yea"
+        },
+        {
+          "name": "Rendon",
+          "vote": "yea"
+        },
+        {
+          "name": "Cotter",
+          "vote": "yea"
+        },
+        {
+          "name": "Heise",
+          "vote": "yea"
+        },
+        {
+          "name": "MacMaster",
+          "vote": "yea"
+        },
+        {
+          "name": "Rogers",
+          "vote": "yea"
+        },
+        {
+          "name": "Crawford",
+          "vote": "yea"
+        },
+        {
+          "name": "Hooker",
+          "vote": "yea"
+        },
+        {
+          "name": "McBroom",
+          "vote": "yea"
+        },
+        {
+          "name": "Schmidt, R.",
+          "vote": "yea"
+        },
+        {
+          "name": "Daley",
+          "vote": "yea"
+        },
+        {
+          "name": "Horn",
+          "vote": "yea"
+        },
+        {
+          "name": "McMillin",
+          "vote": "yea"
+        },
+        {
+          "name": "Schmidt, W.",
+          "vote": "yea"
+        },
+        {
+          "name": "Damrow",
+          "vote": "yea"
+        },
+        {
+          "name": "Hughes",
+          "vote": "yea"
+        },
+        {
+          "name": "Moss",
+          "vote": "yea"
+        },
+        {
+          "name": "Shaughnessy",
+          "vote": "yea"
+        },
+        {
+          "name": "Denby",
+          "vote": "yea"
+        },
+        {
+          "name": "Huuki",
+          "vote": "yea"
+        },
+        {
+          "name": "Muxlow",
+          "vote": "yea"
+        },
+        {
+          "name": "Shirkey",
+          "vote": "yea"
+        },
+        {
+          "name": "Farrington",
+          "vote": "yea"
+        },
+        {
+          "name": "Jacobsen",
+          "vote": "yea"
+        },
+        {
+          "name": "Nesbitt",
+          "vote": "yea"
+        },
+        {
+          "name": "Smiley",
+          "vote": "yea"
+        },
+        {
+          "name": "Forlini",
+          "vote": "yea"
+        },
+        {
+          "name": "Jenkins",
+          "vote": "yea"
+        },
+        {
+          "name": "O’Brien",
+          "vote": "yea"
+        },
+        {
+          "name": "Somerville",
+          "vote": "yea"
+        },
+        {
+          "name": "Foster",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Olson",
+          "vote": "yea"
+        },
+        {
+          "name": "Stamas",
+          "vote": "yea"
+        },
+        {
+          "name": "Franz",
+          "vote": "yea"
+        },
+        {
+          "name": "Knollenberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Opsommer",
+          "vote": "yea"
+        },
+        {
+          "name": "Tyler",
+          "vote": "yea"
+        },
+        {
+          "name": "Genetski",
+          "vote": "yea"
+        },
+        {
+          "name": "Kowall",
+          "vote": "yea"
+        },
+        {
+          "name": "Ouimet",
+          "vote": "yea"
+        },
+        {
+          "name": "Walsh",
+          "vote": "yea"
+        },
+        {
+          "name": "Gilbert",
+          "vote": "yea"
+        },
+        {
+          "name": "Kurtz",
+          "vote": "yea"
+        },
+        {
+          "name": "Outman",
+          "vote": "yea"
+        },
+        {
+          "name": "Yonker",
+          "vote": "yea"
+        },
+        {
+          "name": "Glardon",
+          "vote": "yea"
+        },
+        {
+          "name": "LaFontaine",
+          "vote": "yea"
+        },
+        {
+          "name": "Pettalia",
+          "vote": "yea"
+        },
+        {
+          "name": "Zorn",
+          "vote": "yea"
+        },
+        {
+          "name": "Goike",
+          "vote": "yea"
+        },
+        {
+          "name": "LeBlanc",
+          "vote": "yea"
+        },
+        {
+          "name": "Poleski",
+          "vote": "yea"
+        },
+        {
+          "name": "Ananich",
+          "vote": "nay"
+        },
+        {
+          "name": "Dillon",
+          "vote": "nay"
+        },
+        {
+          "name": "Lane",
+          "vote": "nay"
+        },
+        {
+          "name": "Segal",
+          "vote": "nay"
+        },
+        {
+          "name": "Barnett",
+          "vote": "nay"
+        },
+        {
+          "name": "Durhal",
+          "vote": "nay"
+        },
+        {
+          "name": "Lindberg",
+          "vote": "nay"
+        },
+        {
+          "name": "Slavens",
+          "vote": "nay"
+        },
+        {
+          "name": "Bauer",
+          "vote": "nay"
+        },
+        {
+          "name": "Geiss",
+          "vote": "nay"
+        },
+        {
+          "name": "Lipton",
+          "vote": "nay"
+        },
+        {
+          "name": "Stallworth",
+          "vote": "nay"
+        },
+        {
+          "name": "Bledsoe",
+          "vote": "nay"
+        },
+        {
+          "name": "Hammel",
+          "vote": "nay"
+        },
+        {
+          "name": "Liss",
+          "vote": "nay"
+        },
+        {
+          "name": "Stanley",
+          "vote": "nay"
+        },
+        {
+          "name": "Brown",
+          "vote": "nay"
+        },
+        {
+          "name": "Haugh",
+          "vote": "nay"
+        },
+        {
+          "name": "McCann",
+          "vote": "nay"
+        },
+        {
+          "name": "Stapleton",
+          "vote": "nay"
+        },
+        {
+          "name": "Brunner",
+          "vote": "nay"
+        },
+        {
+          "name": "Hobbs",
+          "vote": "nay"
+        },
+        {
+          "name": "Meadows",
+          "vote": "nay"
+        },
+        {
+          "name": "Switalski",
+          "vote": "nay"
+        },
+        {
+          "name": "Byrum",
+          "vote": "nay"
+        },
+        {
+          "name": "Hovey-Wright",
+          "vote": "nay"
+        },
+        {
+          "name": "Nathan",
+          "vote": "nay"
+        },
+        {
+          "name": "Talabi",
+          "vote": "nay"
+        },
+        {
+          "name": "Cavanagh",
+          "vote": "nay"
+        },
+        {
+          "name": "Howze",
+          "vote": "nay"
+        },
+        {
+          "name": "Oakes",
+          "vote": "nay"
+        },
+        {
+          "name": "Tlaib",
+          "vote": "nay"
+        },
+        {
+          "name": "Clemente",
+          "vote": "nay"
+        },
+        {
+          "name": "Irwin",
+          "vote": "nay"
+        },
+        {
+          "name": "Olumba",
+          "vote": "nay"
+        },
+        {
+          "name": "Townsend",
+          "vote": "nay"
+        },
+        {
+          "name": "Constan",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackson",
+          "vote": "nay"
+        },
+        {
+          "name": "Rutledge",
+          "vote": "nay"
+        },
+        {
+          "name": "Womack",
+          "vote": "nay"
+        },
+        {
+          "name": "Darany",
+          "vote": "nay"
+        },
+        {
+          "name": "Kandrevas",
+          "vote": "nay"
+        },
+        {
+          "name": "Santana",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2012-06-13",
+      "body": "MI Senate",
+      "motion": "HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 513 YEAS 26 NAYS 11 EXCUSED 1 NOT VOTING 0",
+      "kind": "roll-call",
+      "yes": 26,
+      "no": 11,
+      "absent": 1,
+      "body_size": 38,
+      "note": "absent = Excused as printed; present_not_voting = Not Voting as printed. House journals print Excused/Not Voting counts in the history line only for some votes. | SJ 59 Pg. 1760 | https://www.legislature.mi.gov/documents/2011-2012/journal/Senate/htm/2012-SJ-06-13-059.htm",
+      "members": [
+        {
+          "name": "Booher",
+          "vote": "yea"
+        },
+        {
+          "name": "Hansen",
+          "vote": "yea"
+        },
+        {
+          "name": "Marleau",
+          "vote": "yea"
+        },
+        {
+          "name": "Proos",
+          "vote": "yea"
+        },
+        {
+          "name": "Brandenburg",
+          "vote": "yea"
+        },
+        {
+          "name": "Hildenbrand",
+          "vote": "yea"
+        },
+        {
+          "name": "Meekhof",
+          "vote": "yea"
+        },
+        {
+          "name": "Richardville",
+          "vote": "yea"
+        },
+        {
+          "name": "Casperson",
+          "vote": "yea"
+        },
+        {
+          "name": "Hune",
+          "vote": "yea"
+        },
+        {
+          "name": "Moolenaar",
+          "vote": "yea"
+        },
+        {
+          "name": "Robertson",
+          "vote": "yea"
+        },
+        {
+          "name": "Caswell",
+          "vote": "yea"
+        },
+        {
+          "name": "Jansen",
+          "vote": "yea"
+        },
+        {
+          "name": "Nofs",
+          "vote": "yea"
+        },
+        {
+          "name": "Rocca",
+          "vote": "yea"
+        },
+        {
+          "name": "Colbeck",
+          "vote": "yea"
+        },
+        {
+          "name": "Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Pappageorge",
+          "vote": "yea"
+        },
+        {
+          "name": "Schuitmaker",
+          "vote": "yea"
+        },
+        {
+          "name": "Emmons",
+          "vote": "yea"
+        },
+        {
+          "name": "Kahn",
+          "vote": "yea"
+        },
+        {
+          "name": "Pavlov",
+          "vote": "yea"
+        },
+        {
+          "name": "Walker",
+          "vote": "yea"
+        },
+        {
+          "name": "Green",
+          "vote": "yea"
+        },
+        {
+          "name": "Kowall",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson",
+          "vote": "nay"
+        },
+        {
+          "name": "Gregory",
+          "vote": "nay"
+        },
+        {
+          "name": "Hunter",
+          "vote": "nay"
+        },
+        {
+          "name": "Warren",
+          "vote": "nay"
+        },
+        {
+          "name": "Bieda",
+          "vote": "nay"
+        },
+        {
+          "name": "Hood",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Young",
+          "vote": "nay"
+        },
+        {
+          "name": "Gleason",
+          "vote": "nay"
+        },
+        {
+          "name": "Hopgood",
+          "vote": "nay"
+        },
+        {
+          "name": "Smith",
+          "vote": "nay"
+        },
+        {
+          "name": "Whitmer",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T19:30:00Z)",
+    "fetched_at": "2026-10-28T19:30:00Z",
+    "method": "curl"
+  }
+}

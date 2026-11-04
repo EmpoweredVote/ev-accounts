@@ -1,0 +1,42 @@
+{
+  "politician_id": "0ef9c1e3-8381-42e3-bafc-d7632119c37f",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity"
+      ],
+      "places": [
+        "status: lost the August 4, 2026 primary (https://ballotpedia.org/Adam_Dunigan: 'He lost in the Democratic primary on August 4, 2026.' for Virginia's 8th District; 9.0 percent, 5,267 votes)",
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Adam_Dunigan (fetched with curl; campaign site agenda quoted there has nothing on the subject)",
+        "not reviewed: web search (session search budget used up)",
+        "not reviewed: campaign site, congress.gov, other URL patterns (out of scope after lost primary)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:44:54.577Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship"
+      ],
+      "places": [
+        "status: lost the 2026-08-04 primary",
+        "https://ballotpedia.org/Adam_Dunigan (page says he ran for U.S. House Virginia District 8 and lost the primary held 2026-08-04; so out of scope, no further search)",
+        "On the Record (0 appearances found)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T00:59:52.141Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

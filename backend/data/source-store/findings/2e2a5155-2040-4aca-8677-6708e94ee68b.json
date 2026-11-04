@@ -1,0 +1,50 @@
+{
+  "politician_id": "2e2a5155-2040-4aca-8677-6708e94ee68b",
+  "findings": [
+    {
+      "id": "1558216209ecc44574d7cc01aa98ebea2f8fd539167e615db3f9af441962399d",
+      "kind": "own-words",
+      "url": "https://tebrownforflorida.com/issues/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Faith, family, and freedom are the foundation of America. Religious liberty, parental rights, the Second Amendment, and the Constitution itself are under attack — and they’re worth fighting for.",
+      "note": "Issues page of her campaign site (page last modified 2026-09-02) lists the Second Amendment among rights she says are under attack; no specific gun policy named.",
+      "subjects": [
+        "general statement on the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:01:44.102Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "general statement on gun rights or the Second Amendment",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity and ballot status confirmed: Miami-Dade 2026-11-03 general election master ballot and The Ballot Brief list her on the November ballot for Florida district 24",
+        "campaign site tebrownforflorida.com: issues page, agenda page, meet page and news page fetched and searched for gun words; one passage found on issues page",
+        "blocked: https://ballotpedia.org/Mayonna_Te_Brown (403)",
+        "web search: name plus Second Amendment/guns, nothing about her found",
+        "profile pages (The Ballot Brief, Prediction Edge): nothing on the subject",
+        "Congress sponsorships: not applicable, never a member of Congress"
+      ],
+      "found": 1,
+      "at": "2026-10-30T20:01:44.102Z",
+      "by": "source-collector"
+    }
+  ]
+}

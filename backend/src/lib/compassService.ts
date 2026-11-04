@@ -820,7 +820,10 @@ export interface ResearchState {
 export async function getResearchStates(politicianId: string): Promise<ResearchState[]> {
   // CA_0322 is applied by hand after the Stage 5 early check, and this route ships before it. Until the
   // table exists nobody has been researched, so the answer is [] rather than a 500 on every profile.
-  const { rows } = await pool.query<{ topic_id: string; outcome: ResearchState['outcome']; researched_on: string; passages: ResearchPassage[] | null }>(
+  // Voters see shown_text (party labels bracketed out, CA_0337) when there is one, else the exact words. Until
+  // CA_0337 is applied the column is missing (42703) and no row can carry one, so the exact words are served.
+  // Asked on every read, never cached: a cached "no column" would outlive the apply and show a label.
+  const read = (shown: string) => pool.query<{ topic_id: string; outcome: ResearchState['outcome']; researched_on: string; passages: ResearchPassage[] | null }>(
     `-- @zero-scope: counts-blanks — shows voters that a person was researched and holds no seat; the
      -- outcome filter sits OUTSIDE the newest-season collapse, so a newer seat hides an older blank.
      SELECT latest.topic_id, latest.outcome, latest.researched_on::text AS researched_on, p.passages
@@ -833,7 +836,7 @@ export async function getResearchStates(politicianId: string): Promise<ResearchS
        ) latest
        LEFT JOIN LATERAL (
          SELECT json_agg(json_build_object(
-                  'kind', w.kind, 'passage', w.passage, 'source_url', w.source_url, 'source_date', w.source_date::text)
+                  'kind', w.kind, 'passage', ${shown}, 'source_url', w.source_url, 'source_date', w.source_date::text)
                   ORDER BY w.source_date DESC NULLS LAST, w.id) AS passages
            FROM inform.own_words_passages w
           WHERE w.politician_id = $1 AND w.topic_id = latest.topic_id AND w.season_id = latest.season_id
@@ -851,10 +854,16 @@ export async function getResearchStates(politicianId: string): Promise<ResearchS
               ) na WHERE na.value <> 0)
       ORDER BY latest.topic_id ASC`,
     [politicianId]
-  ).catch((err: { code?: string }) => {
-    if (err?.code === '42P01') return { rows: [] };
-    throw err;
-  });
+  );
+  const { rows } = await read('COALESCE(w.shown_text, w.passage)')
+    .catch((err: { code?: string; message?: string }) => {
+      if (err?.code === '42703' && /shown_text/.test(err.message ?? '')) return read('w.passage');
+      throw err;
+    })
+    .catch((err: { code?: string }) => {
+      if (err?.code === '42P01') return { rows: [] };
+      throw err;
+    });
   return rows.map((r) => ({
     topic_id: r.topic_id,
     outcome: r.outcome,

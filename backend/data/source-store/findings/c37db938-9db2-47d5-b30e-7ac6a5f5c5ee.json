@@ -1,0 +1,238 @@
+{
+  "politician_id": "c37db938-9db2-47d5-b30e-7ac6a5f5c5ee",
+  "findings": [
+    {
+      "id": "709284c3a0e10df4a6622a591966f30c849ecce3a4a4ee4fef00617c603c1cbd",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81696&billStatusActionId=232198&includeVotes=true",
+      "date": "2025-02-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2038-2025",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('SANDOVAL'), linked to Mariana Sandoval (district 23) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5098d52b93edadc88105ace3704f2b704de45236ac78f12c4db3b0e36908bb97",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/82421",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2587-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2587P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Mariana Sandoval') on the official bill page; linked to Mariana Sandoval via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bad8ec15795229ce928c381bb8f76d5bf6ee55d2dbd63b877e9ed95ff6c44ea9",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/80715",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2670-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2670P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Mariana Sandoval') on the official bill page; linked to Mariana Sandoval via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d3fe91d34c5db7125e471be71d0287c2e7915c5da0d038d007934da226e0f5e",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/80716",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2671-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2671P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Mariana Sandoval') on the official bill page; linked to Mariana Sandoval via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d2821492d1c687f55e3f4161d375ea78aa33b52fafad686d2067d60ee474a7e4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81400&billStatusActionId=223258&includeVotes=true",
+      "date": "2024-02-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2785-2024",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('SANDOVAL'), linked to Mariana Sandoval (district None) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5ca67848aa733588751373129d47d11dfd2873eb2d867736bbfb2d87c05ade9c",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=240878&includeVotes=true",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('SANDOVAL'), linked to Mariana Sandoval (district 23) via the official 2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c0182fcb8574a3883c579212fed0026affbe51ded5eb871413e17fcbc496ab00",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=235732&includeVotes=true",
+      "date": "2025-05-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('SANDOVAL'), linked to Mariana Sandoval (district 23) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d68905ce1e404a6c0cf9a53a7b8bf0dba4a51c755ac0dc62cef38e7fa3950ae4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=236364&includeVotes=true",
+      "date": "2025-06-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('SANDOVAL'), linked to Mariana Sandoval (district 23) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28b",
+        "fetched_at": "2026-10-28T23:23:11.511Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 8,
+      "at": "2026-10-28T22:53:15.882Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with a mail or early ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (repo script not run under this session's rules)",
+        "https://www.azleg.gov/MemberRoster/ (positive control: member roster lists the person)",
+        "https://www.azleg.gov/House/House-member/?legislature=57&session=130&legislator=2334 (member page; sponsored bills include early voting, voting-rights and polling-place bills; none titled voter ID)",
+        "https://www.kawc.org/news/2026-06-26/rep-mariana-sandoval-seeks-re-election-with-focus-on-affordability (confirms 2026 re-election run; nothing on the subject)",
+        "https://en.wikipedia.org/wiki/2026_Arizona_House_of_Representatives_election (placed in the top two of the 2026 primary for the 23rd district)",
+        "blocked: https://ballotpedia.org/Mariana_Sandoval (empty page)",
+        "blocked: https://azmirror.com/2024/03/01/more-than-75-of-voters-use-early-ballots-every-az-house-republican-voted-to-take-that-away/ (bot check; a search summary says she urged a no vote on a 2024 early-voting bill, not verified)",
+        "campaign site: not found by search, not reviewed",
+        "web searches (one): nothing quoting her on voter ID or proof of citizenship"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:17:05.067Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:23:11.511Z",
+      "by": "identity-az-2026-10-28b"
+    }
+  ]
+}

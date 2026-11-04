@@ -1,0 +1,32 @@
+{
+  "politician_id": "91fbc0cb-1d87-4a5e-9b58-ddf462627b58",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "Branch candidate page: lists him on the 2026 general-election ballot for Senate District 38; its issue text is a summary by Branch, not his words, so not saved: https://branch.vote/races/2026-georgia-general-election-ga-state-state-senator-ga-senate-38/candidates/rashaun-kemp",
+        "billsponsor.com sponsor list: five bills shown, none on voter ID or proof of citizenship: https://www.billsponsor.com/politicians/11827/rashaun-kemp",
+        "official or campaign site: not reached (rashaunkemp.com did not respond)",
+        "On the Record (0 appearances for this person)",
+        "blocked: https://ballotpedia.org (page returned empty)",
+        "blocked: https://app.legiplex.com (403)",
+        "blocked: https://legiscan.com (403)",
+        "legis.ga.gov bill pages not opened (login token needed)",
+        "web searches on the name plus subject words (several, nothing own-words on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:33:45.706Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

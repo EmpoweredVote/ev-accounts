@@ -1,0 +1,58 @@
+{
+  "politician_id": "36803909-3fa9-43e7-98d4-068f832c4a35",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Tessa_Lynn_Hodge names her as a candidate for U.S. House, California District 23, 2026 primary winner, next election November 3, 2026",
+        "On the Record (0 appearances)",
+        "campaign site https://tessaforca.com (home, /issues, /about, /priorities): nothing on the subject; issue sub-sections are collapsed under 'View more' and their text was not in the fetched page",
+        "Ballotpedia https://ballotpedia.org/Tessa_Lynn_Hodge: nothing on the subject",
+        "congress.gov: not applicable, not a legislator",
+        "web news search: not reviewed, search budget used up",
+        "not reviewed: https://www.youtube.com/@Tessalynnhodge",
+        "not reviewed: https://x.com/Tessaforca"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:16:12.159Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "confirmed on the 2026-11-03 general ballot for California's 23rd Congressional District via https://tessaforca.com/about and the state certified candidate list https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf (found by search; list not opened)",
+        "campaign site https://tessaforca.com/ and https://tessaforca.com/issues, plus the immigration and national security issue pages: nothing on the subject",
+        "https://www.communityforwardredlands.com/meet-the-candidates-running-in-californias-23rd-congressional-district/: candidate questionnaire, nothing on the subject",
+        "not a sitting legislator: no bill record",
+        "Ballotpedia not reviewed (no page surfaced)",
+        "news searches (2): nothing by her on the subject",
+        "blocked: https://bluevoterguide.org (Cloudflare challenge on same-site pages)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:32:09.089Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

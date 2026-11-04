@@ -1,0 +1,46 @@
+{
+  "id": "GA-HB-1227-2026",
+  "scope": "state:ga",
+  "title": "HB 1227 (2025-2026 Regular Session (filed 2026, second year)): Elections; information sought from persons registering to vote; provisions",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/ (bill detail and vote API answer 401; token needed; not obtained, not bypassed)",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/245245",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/241705 (introduced)"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 1, 21-2-218(b.2)(1) (information a registrar sends to the Secretary of State for a registrant who says they were registered in another state)\n(quote) (b.2)(1) If a person's voter registration application indicates, pursuant to subsections (a) and (b.1) of this Code section, that such person had previously been registered to vote in a different state, the registrar shall cause the following information of the applicant, if available, to be transmitted to the Secretary of State: (A) Full name; (B) Year of birth; (C) Last four digits of his or her Social Security Number; (D) Driver's license or identification card number; (E) Any unique voter identification number assigned to such applicant; (F) Address of current residence; (G) Address of previous residence; and (H) A copy of the applicant's voter registration form.\n(other) Sec. 1: revises 21-2-218 so registrants who moved from another state, county or municipality give information to cancel the old registration, and a signed statement requesting cancellation\n(other) Sec. 2: new 21-2-225(e): Secretary of State notifies the other state, with quarterly public report\n(other) Sec. 3: revises 21-2-232 (removal of elector name from list; text not summarized further)\n(other) effective date added in the substitute\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Gullett of the 19th",
+      "role": "prime",
+      "version": "House Committee on Governmental Affairs substitute (LC 47 4109S). Also read as introduced (241705)."
+    },
+    {
+      "name": "Fleming of the 114th",
+      "role": "co",
+      "version": "House Committee on Governmental Affairs substitute (LC 47 4109S). Also read as introduced (241705)."
+    },
+    {
+      "name": "Momtahan of the 17th",
+      "role": "co",
+      "version": "House Committee on Governmental Affairs substitute (LC 47 4109S). Also read as introduced (241705)."
+    },
+    {
+      "name": "Sainz of the 180th",
+      "role": "co",
+      "version": "House Committee on Governmental Affairs substitute (LC 47 4109S). Also read as introduced (241705)."
+    },
+    {
+      "name": "Thomas of the 21st",
+      "role": "co",
+      "version": "House Committee on Governmental Affairs substitute (LC 47 4109S). Also read as introduced (241705)."
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28)",
+    "fetched_at": "2026-10-28",
+    "method": "curl"
+  }
+}

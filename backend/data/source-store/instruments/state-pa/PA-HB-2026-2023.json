@@ -1,0 +1,90 @@
+{
+  "id": "PA-HB-2026-2023",
+  "scope": "state:pa",
+  "title": "HB2026 (2023-2024 Regular Session): In school safety and security, providing for purchase of firearm detection technology.",
+  "urls": [
+    "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=2026",
+    "https://www.legis.state.pa.us/cfdocs/legis/PN/Public/btCheck.cfm?txtType=PDF&sessYr=2023&sessInd=0&billBody=H&billTyp=B&billNbr=2026&pn=2590"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 1 (adding Public School Code Sec. 1322-B(a)): A school entity may, with the approval of the department, enter into a contract or other agreement with a vendor for the lease, purchase, installation, operation or maintenance of a firearm detection technology or other equipment and supplies necessary for the proper operation of the firearm detection technology.\nSec. 1 (adding Public School Code Sec. 1322-B(b)(2)): When a brandished firearm is detected on school property or a school bus, possess the capacity to immediately and independently alert school personnel, first responders or other persons, as determined by the department or school entity, with minimal human oversight.",
+  "sponsors": [
+    {
+      "name": "Joseph Hogan",
+      "politician_id": "0187c103-4961-4d98-be44-46f49aa7e71a",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Shelby Labs",
+      "politician_id": "1f36df7c-8496-41c3-bacd-a8f8b211b7f8",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Kristin Marcell",
+      "politician_id": "218870d3-89b5-448d-93a7-effd946a85e6",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Natalie Mihalek",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Donna Scheuren",
+      "politician_id": "922cf921-d333-4a8d-94b6-5f062e83c971",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Scott Conklin",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "357ba7fc-3d45-462c-a54d-e76de3af9fe3"
+    },
+    {
+      "name": "Kathleen Tomlinson",
+      "politician_id": "e96f1aeb-b347-438c-8214-df74a5f62721",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Barry Jozwiak",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Mary Jo Daley",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6aebb023-6299-4074-b33b-b40bb113741c"
+    },
+    {
+      "name": "Roni Green",
+      "politician_id": "ed590e4e-1530-4612-9e6b-9530f1c90523",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2026-2023.introduced.pdf",
+      "sha256": "ab5dd7a33a8b90cd8ac07cf8a02440d498b8e73e014d367659afa87b0e15e7c4"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "politician_id": "e5fde615-31fa-4486-a9be-1637c9a9d64e",
+  "findings": [
+    {
+      "id": "db07fc738e7e382a92738ffa2e169845ffb07bc834ec08502113ad42ff27bc21",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/61057",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "The 2nd Amendment states, “A well regulated Militia, being necessary to the security of a Free State, the right of the people to keep and bear Arms, shall not be infringed.” Gun ownership is a civil right.  Furthermore, we live in a time of Government overreach and tyranny against the Citizens of this Great Republic.  I oppose attempts to prohibit ownership of guns by law-abiding citizens and will stand against all laws which would require the registration of guns or ammunition.",
+      "note": "His iVoterGuide questionnaire answer to 'What restrictions on gun ownership are needed to protect public safety?'. The page lists his 2022, 2024 and 2026 races, so the year of this answer is not shown.",
+      "subjects": [
+        "general gun rights statement",
+        "ban on guns for law-abiding people",
+        "gun and ammunition registration"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:50:36.598Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7081a0dc3acf99082ff0d725e4b656529e959ed56115c628abd128a6995753c5",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/61057",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "The American Constitution Party platform states, “The right to bear arms is inherent in the right of self defense, defense of the family, and defense against tyranny, conferred on the individual and the community by our Creator to safeguard life, liberty, and property, as well as to help preserve the independence of the nation. The right to keep and bear arms is guaranteed by the Second Amendment to the Constitution; it may not properly be infringed upon or denied. The American Constitution Party upholds the right of the citizen to keep and bear arms. We oppose attempts to prohibit ownership of guns by law-abiding citizens, and stand against all laws which would require the registration of guns or ammunition.”",
+      "note": "In the same questionnaire answer he quotes his party's platform text on the right to bear arms. The year of the answer is not shown.",
+      "subjects": [
+        "general gun rights statement",
+        "gun and ammunition registration"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:50:36.598Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "gun registration",
+        "general gun rights statements",
+        "suing gun makers and dealers"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope check: Ballotpedia news page lists him on the 2026-11-03 general-election list for CO-05: https://news.ballotpedia.org/2026/07/18/incumbent-jeff-crank-r-jessica-killin-d-and-four-other-candidates-are-running-in-the-general-election-for-colorados-5th-congressional-district-on-november-3-2026/",
+        "campaign site home page (header 'Christopher Mitchell for Congress 2026') and /about-christopher: nothing on the subject: https://patriotcowboyrevolution.com",
+        "iVoterGuide candidate page (questionnaire answers): https://ivoterguide.com/candidate/61057",
+        "KKTV 2024 interview page: nothing on the subject: https://www.kktv.com/2024/10/15/know-before-you-vote-in-depth-interview-with-2024-cd-5-candidate-christopher-mitchell",
+        "web searches: two news and campaign searches run; no news piece with his gun statements found",
+        "blocked: https://ballotpedia.org/Christopher_Mitchell_(Colorado) (empty page)",
+        "sponsor list: not a legislator, no sponsorships"
+      ],
+      "found": 2,
+      "at": "2026-10-31T00:50:36.598Z",
+      "by": "source-collector"
+    }
+  ]
+}

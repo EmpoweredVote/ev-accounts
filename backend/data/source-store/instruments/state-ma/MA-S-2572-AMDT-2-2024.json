@@ -1,0 +1,53 @@
+{
+ "id": "MA-S-2572-AMDT-2-2024",
+ "scope": "state:ma",
+ "title": "S.2572 (193rd General Court) Senate floor amendment #2: Strengthening the Prohibition on Silencers. Adopted 2/1/2024.",
+ "urls": [
+  "https://malegislature.gov/Bills/GetAmendmentContent/193/S2572/2/Senate/Content",
+  "https://malegislature.gov/Bills/193/S2572/BillHistory"
+ ],
+ "version": "other",
+ "sponsors": [
+  {
+   "name": "Moore",
+   "role": "prime",
+   "version": "amendment text (movers named in it)",
+   "politician_id": "c0b79f82-6ce7-413a-a18a-286c9a8fa5fd"
+  },
+  {
+   "name": "Brady",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Gomez",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Tarr",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03): official amendment text + bill history for fate",
+  "fetched_at": "2026-11-03T19:02:32Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-S-2572-AMDT-2-2024.html",
+   "sha256": "4f42baf39d95cf436af16fcb9e5f96b142008fa5e13eb0cc95865b6a181e8c8f"
+  }
+ },
+ "operative_text": "Amendment 2 Amendment ID: S2572-2 Amendment 2 Strengthening the Prohibition on Silencers Messrs. Moore, Brady, Gomez and Tarr move that the proposed new text be amended by inserting after section 37 the following sections:- “SECTION XX. Section 10A of chapter 269 of the General Laws, as appearing in the 2020 Official Edition, is hereby amended by inserting after the word “firearm,” in line 11 the following words:- , including any combination of parts, designed or redesigned, and intended for use in assembling or fabricating any such instrument, attachment, weapon or appliance, and any part intended only for use in such assembly or fabrication, . SECTION YY. Said section 10A of said chapter 269, as so appearing, is hereby further amended by striking out, in line 16, the words “or appliance” and inserting in place thereof the following words:- , appliance or parts.”"
+}

@@ -1,0 +1,196 @@
+{
+  "politician_id": "1e6711f8-190e-4edd-a2d7-75584e192ce9",
+  "findings": [
+    {
+      "id": "d1ccc27e567d38f0c4fc21ea8cfc79b18945c4f9f082635cf02b2967548dc38b",
+      "kind": "own-words",
+      "url": "https://urbanmilwaukee.com/pressrelease/state-rep-jim-piwowarczyk-co-authored-constitutional-amendment-on-voter-id/",
+      "date": "2025-01-09",
+      "date_precision": "day",
+      "passage": "“This common-sense requirement (SJR 2) will safeguard our elections and has strong support from voters,” Piwowarczyk said.",
+      "note": "Press release issued in his name (carried by Urban Milwaukee as submitted) on SJR 2, the proposed constitutional amendment to make photo ID for voting permanent; he says he co-authored it and will vote for it.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:59:15.428Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9d8edc4f58461ae87b3be5ec8ee7746c8efbde7b4185c3b1279d3597f447fe74",
+      "kind": "own-words",
+      "url": "https://urbanmilwaukee.com/pressrelease/state-rep-jim-piwowarczyk-co-authored-constitutional-amendment-on-voter-id/",
+      "date": "2025-01-09",
+      "date_precision": "day",
+      "passage": "“Voter ID has been working well in Wisconsin for years,” Piwowarczyk said. “Contrary to one argument by opponents, having Voter ID has not depressed turnout. In 2012, before the Voter ID law, general election turnout was 70.14 percent; last year, it rose to 72.6 percent.”",
+      "note": "Same release: he says the existing ID law has not lowered turnout.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:59:15.428Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ecc67622c5198a039a4d789ec7cc51dbb5e625a71dbc62cbb846adf2f23a312c",
+      "kind": "own-words",
+      "url": "https://urbanmilwaukee.com/pressrelease/state-rep-jim-piwowarczyk-co-authored-constitutional-amendment-on-voter-id/",
+      "date": "2025-01-09",
+      "date_precision": "day",
+      "passage": "Piwowarczyk noted that verifying voters’ identities at the polls is more critical than ever due to President Joe Biden’s reckless open border policies.",
+      "note": "Same release, a sentence written in his name: ties checking identity at the polls to immigration and the border.",
+      "subjects": [
+        "voter ID at the polls",
+        "non-citizen voting and border link"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:59:15.428Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "abada631a30a770a0dda8077cd297eefa06783a945cd90a2f14888f44ddd7b47",
+      "kind": "own-words",
+      "url": "https://urbanmilwaukee.com/pressrelease/state-rep-jim-piwowarczyk-co-authored-constitutional-amendment-on-voter-id/",
+      "date": "2025-01-09",
+      "date_precision": "day",
+      "passage": "Piwowarczyk, a former law enforcement officer, was elected in November on a platform that includes election integrity, strengthening the economy and immigration enforcement, as well as improving public safety.",
+      "note": "Same release: describes election integrity as part of his platform.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:59:15.428Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05f8a142565de5b18a7bb52eccf388587e6178fcea0d942c4b6f4e87c5f035e1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ajr1",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-1-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/6/2025 (second consideration, text of 2023 SJR 73); committee recommended adoption 1/9/2025 (5-2); laid on the table 1/14/2025; died (Failed to adopt pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Piwowarczyk') on the official bill page; linked to Jim Piwowarczyk via the official 2025 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aac49f80b6252a05edb5b95b705c5111fbb94d9575b9dfdc762cc087dd25edd",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('PIWOWARCZYK'), linked to Jim Piwowarczyk (district 98) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "52afc0d599e71925804c90692661774de3a4e6234e50f5798a0f86167fb91d4e",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sjr2",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election",
+      "note": "Named as co sponsor ('Piwowarczyk') on the official bill page; linked to Jim Piwowarczyk via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "ID for mail or absentee ballots",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://legis.wisconsin.gov/assembly/98/piwowarczyk/ (home page, press release page and news page: no items listed, nothing on the subject)",
+        "official e-update archive https://us21.campaign-archive.com/home/?u=2c39abc3a2d5f2e027631fdd5&id=815b42ef2e (20 issues from 2025-06 to 2026-03 by title; none on voter ID or citizenship; two on E-Verify for employment, which is off subject; issue bodies not reviewed)",
+        "https://theballotbrief.com/state/wisconsin/washington-county/wisconsin-assembly-district-98 (lists him on the 2026-11-03 ballot)",
+        "https://urbanmilwaukee.com/pressrelease/state-rep-jim-piwowarczyk-co-authored-constitutional-amendment-on-voter-id/ (release in his name, read with plain curl; also lists his 2026-04-13 re-election announcement)",
+        "not reviewed: his 2026-04-13 re-election announcement release body and other releases on that site",
+        "blocked: https://www.wispolitics.com/2025/rep-piwarczyk-co-authored-constitutional-amendment-on-voter-id/ (only the opening paragraph was visible; not used)",
+        "Ballotpedia not fetched for this person: the same site returned empty or refused pages for the other four people in this batch",
+        "campaign site: none found in search results",
+        "web searches run twice on his name with voter ID, citizenship and noncitizen words; no further own-words pages. His bill sponsorships and floor votes are being linked separately and are not collected here."
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:59:15.428Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:15:12.785Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

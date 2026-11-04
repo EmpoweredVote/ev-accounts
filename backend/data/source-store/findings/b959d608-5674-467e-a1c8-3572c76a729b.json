@@ -1,0 +1,127 @@
+{
+  "politician_id": "b959d608-5674-467e-a1c8-3572c76a729b",
+  "findings": [
+    {
+      "id": "c661da39eb2ac4e47a935a6a9d23c422d2727e7b9caf775673d5a268bf1e9c82",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250311010119/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174",
+      "date": "2024-06-19",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "Do pass (Assembly Local Government Committee)",
+      "note": "Senate Bill 1174 (2024), voter identification: says local governments cannot set their own voter ID rules for local elections. Vote list taken from the Internet Archive copy of the leginfo vote page. Assembly Local Government Committee, do-pass vote; he chaired the hearing and put the motion.",
+      "subjects": [
+        "local voter ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:15:35.916Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c91f968e602a90920b9470a2443d7fddca81c5c9c115e76e765707861bf394f1",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250311010119/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "SB 1174 Senate Third Reading (Assembly floor)",
+      "note": "Senate Bill 1174 (2024), voter identification: says local governments cannot set their own voter ID rules for local elections. Vote list taken from the Internet Archive copy of the leginfo vote page. Assembly floor vote, 57 to 16.",
+      "subjects": [
+        "local voter ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:15:35.916Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e2522df6950dbe60748b673e4c66dd6b0a8ed0948574d3f1788895f763e5a2e6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250919041548/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1116",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "AB 1116 Assembly Third Reading",
+      "note": "Assembly Bill 1116 (2025), voter registration: lets a person with no driver license or state ID register online using the last four digits of a Social Security number, and sets up an electronic signature image for ballot matching. Assembly floor vote, 60 to 18; the roll lists him by surname only and Digital Democracy confirms Juan Carrillo.",
+      "subjects": [
+        "ID number to register online",
+        "proof of identity to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:15:35.916Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2e724112ca969d72c730c36d0d93686a0e2941d1477a7052892b2b25a6aa8d7f",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-25",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "AB 1116 Concurrence in Senate Amendments",
+      "note": "Assembly Bill 1116 (2025), voter registration: lets a person with no driver license or state ID register online using the last four digits of a Social Security number, and sets up an electronic signature image for ballot matching. Vote to agree to Senate changes, 59 to 19. Digital Democracy later shows the bill vetoed on 2026-09-27.",
+      "subjects": [
+        "ID number to register online",
+        "proof of identity to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:15:35.916Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter ID rules",
+        "proof of identity to register",
+        "ID number with mail ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll citizenship checks"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script run with the name)",
+        "official site https://a39.asmdc.org/ (confirms Juan Carrillo, 39th Assembly District; home page, press releases, 2024 and 2025 legislation pages checked; nothing on voter ID, proof of citizenship or mail-ballot ID)",
+        "Ballotpedia https://ballotpedia.org/Juan_Carrillo (on the 2026 general-election ballot for Assembly District 39; no stated position on the subject)",
+        "Digital Democracy bill pages for SB 1174 and AB 1116 (votes, status)",
+        "Digital Democracy hearing transcript https://calmatters.digitaldemocracy.org/hearings/258121 (Assembly Local Government hearing 2024-06-19, he chaired; only procedural remarks on SB 1174, no statement of a view)",
+        "Digital Democracy Assembly floor transcript https://calmatters.digitaldemocracy.org/hearings/258297 (2024-08-27; he did not speak on SB 1174)",
+        "leginfo vote pages via Internet Archive copies (leginfo itself is behind a bot check)",
+        "AB 25 (2025) text via Internet Archive https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB25 (authors are two other members; he is not an author or coauthor; no committee roll call found)",
+        "web search: two news searches on name plus voter ID, nothing from him on the subject",
+        "not reviewed: social media and video clips",
+        "not reviewed: Senate roll calls are not relevant (Assembly member)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T16:15:35.916Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

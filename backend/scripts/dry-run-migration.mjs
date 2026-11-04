@@ -30,7 +30,7 @@ import 'dotenv/config';
 import { readFileSync } from 'node:fs';
 import { Pool } from 'pg';
 
-import { stripOwnTransaction } from './lib/migration-file-guards.mjs';
+import { assertSingleTransaction, stripOwnTransaction } from './lib/migration-file-guards.mjs';
 
 const argv = process.argv.slice(2);
 const vi = argv.indexOf('--verify');
@@ -46,7 +46,18 @@ const verifySql = verifyArg === '-' ? readFileSync(0, 'utf8') : verifyArg ? read
 // The migration manages its own transaction; we need to manage it instead so the rollback is ours.
 // Shared with apply-migration-file.mjs so a file is rehearsed and applied by the same rule — the
 // two had this regex pair duplicated inline until 2026-09-09.
-const sql = stripOwnTransaction(readFileSync(file, 'utf8'));
+const raw = readFileSync(file, 'utf8');
+// 🔴 Refuse a file carrying more than one transaction BEFORE touching the database: this tool
+// strips only the first BEGIN;/COMMIT;, so a later COMMIT; would commit for real while the run
+// still printed "ROLLED BACK". See assertSingleTransaction.
+try {
+  assertSingleTransaction(raw, file);
+} catch (err) {
+  console.error(`REFUSED — ${file}`);
+  console.error(`  ${err.message}`);
+  process.exit(2);
+}
+const sql = stripOwnTransaction(raw);
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
 const client = await pool.connect();

@@ -1,0 +1,38 @@
+{
+  "id": "VA-SB-1397-2025",
+  "scope": "state:va",
+  "title": "SB1397 (2025 Regular Session): Firearms, stun weapons, etc.; possession or transportation by persons adjudicated delinquent.",
+  "urls": [
+    "https://lis.virginia.gov/bill-details/20251/SB1397",
+    "https://lis.virginia.gov/bill-details/20251/SB1397/text/SB1397"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 1 (amending Code 18.2-308.2(A)): However, any person [-who-] [-violates-]{+ convicted under+} this section by knowingly and intentionally possessing or transporting any firearm and who was previously convicted{+ or adjudicated delinquent+} of a violent felony as defined in § 17.1-805 shall be sentenced to a mandatory minimum term of imprisonment of five years.\nSec. 1 (amending Code 18.2-308.2(A)): Any person [-who-] [-violates-]{+ convicted under+} this section by knowingly and intentionally possessing or transporting any firearm and who was previously convicted{+ or adjudicated delinquent+} of any other felony within the prior 10 years shall be sentenced to a mandatory minimum term of imprisonment of two years.\nSec. 1 (Code 18.2-308.2(A), existing): It shall be unlawful for (i) any person who has been convicted of a felony; (ii) any person adjudicated delinquent as a juvenile 14 years of age or older at the time of the offense of murder in violation of § 18.2-31 or 18.2-32, kidnapping in violation of § 18.2-47, robbery by the threat or presentation of firearms in violation of § 18.2-58, or rape in violation of § 18.2-61; or (iii) any person under the age of 29 who was adjudicated delinquent as a juvenile 14 years of age or older at the time of the offense of a delinquent act which would be a felony if committed by an adult, other than those felonies set forth in clause (ii)",
+  "sponsors": [
+    {
+      "name": "Mark Peake",
+      "politician_id": "ed60a0c7-252c-443f-98ff-5926bf9a58a3",
+      "role": "patron",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-SB-1397-2025.introduced.html",
+      "sha256": "2e49595a179a1d4f3137063615c8947877cafb8617851232e8075700b36da28e"
+    }
+  }
+}

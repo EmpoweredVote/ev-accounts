@@ -1,0 +1,138 @@
+{
+  "politician_id": "6eef204b-5d35-48e6-bf8c-dd3cac62e2cd",
+  "findings": [
+    {
+      "id": "818586ba7a6fa8e00a512d1c240c01472b0f796fab8f64a338fb0b5e616ea7fe",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: yea (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9fc7fe42d4ca0418da57b37f789b4766ff618ad71e31a528b663386efac66476",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: yea (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Kate_Donaghue names her as 19th Worcester District representative, advanced from the 2026-09-01 primary, on the 2026-11-03 general ballot (positive control)",
+        "On the Record (0 appearances for this politician id)",
+        "MA Legislature profile https://malegislature.gov/Legislators/Profile/K_D1 (sponsored bills reviewed: no bill on photo ID, mail-ballot ID or proof of citizenship; H.820 is polling-place access for voters with disabilities and H.4108 is death of candidates, both off the subject, not saved)",
+        "Ballotpedia (no issue positions on the subject; Candidate Connection survey link present, not read)",
+        "not reviewed: official site and campaign site (web search budget used up, no URL found by direct fetch)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "nothing on the subject: ontheissues.org not fetched (lead-only source)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:11:11.871Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Massachusetts Legislature profile https://malegislature.gov/Legislators/Profile/K_D1 (confirms Representative Kate Donaghue, 19th Worcester; her election bills cover polling-place access for voters with disabilities (H.820), death of a candidate (H.4108) and a Southborough local voting-age request (H.3874); nothing on ID or citizenship)",
+        "Ballotpedia https://ballotpedia.org/Kate_Donaghue (nothing on the subject)",
+        "Patch 2022 candidate profile (nothing on the subject)",
+        "official House site and campaign site not reached",
+        "one web search on name plus voting and elections (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T13:56:47.198Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation generally",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "ghost guns",
+        "red flag orders",
+        "carry permits",
+        "gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.katedonaghue.org/ (home, about, our-district): nothing on the subject; lists health care, climate and public education as priorities",
+        "legislature member page: sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia https://ballotpedia.org/Kate_Donaghue: page came back empty",
+        "Patch 2022 candidate profile: nothing on the subject",
+        "Fifty Plus Advocate profile 2023-11-02: nothing on the subject",
+        "five web searches (name plus gun, firearm, gun safety, newsletter, Lewiston): no statement by her on guns found",
+        "not reviewed: https://malegislature.gov/Legislators/Profile/KED0 (404)"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:40:55.826Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "politician_id": "c2975ee6-7770-4c5f-809c-4e1245f2ab64",
+  "findings": [
+    {
+      "id": "5cf9abb0fd252841422cf7a1dd8be0e4f7ac82bef28eeb409dc2ad2869e6f631",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250311010119/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "nay",
+      "motion": "SB 1174 Senate Third Reading (Assembly floor)",
+      "note": "Senate Bill 1174 (2024), voter identification: says local governments cannot set their own voter ID rules for local elections. Vote list taken from the Internet Archive copy of the leginfo vote page. Assembly floor vote, 57 to 16; the roll lists him as Ta.",
+      "subjects": [
+        "local voter ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:15:35.917Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2e9e8e64c54b26a920f19b6af0f67442fd953f764bb03de34a0f32097a4239c7",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250919041548/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1116",
+      "date": "2025-05-23",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "nay",
+      "motion": "AB 1116 Do pass (Assembly Appropriations)",
+      "note": "Assembly Bill 1116 (2025), voter registration: lets a person with no driver license or state ID register online using the last four digits of a Social Security number, and sets up an electronic signature image for ballot matching. Assembly Appropriations Committee do-pass vote, 11 to 3.",
+      "subjects": [
+        "ID number to register online",
+        "proof of identity to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:15:35.917Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c1c689dedc1f06e9000dd78f6a3b1b97d639365bf644d777640a81134335f14e",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250919041548/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1116",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "nay",
+      "motion": "AB 1116 Assembly Third Reading",
+      "note": "Assembly Bill 1116 (2025), voter registration: lets a person with no driver license or state ID register online using the last four digits of a Social Security number, and sets up an electronic signature image for ballot matching. Assembly floor vote, 60 to 18.",
+      "subjects": [
+        "ID number to register online",
+        "proof of identity to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:15:35.917Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "44bc309f9960f50369756b2d0800b77084788560735789214f48529aeeb36f10",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-25",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "nay",
+      "motion": "AB 1116 Concurrence in Senate Amendments",
+      "note": "Assembly Bill 1116 (2025), voter registration: lets a person with no driver license or state ID register online using the last four digits of a Social Security number, and sets up an electronic signature image for ballot matching. Vote to agree to Senate changes, 59 to 19. Digital Democracy later shows the bill vetoed on 2026-09-27.",
+      "subjects": [
+        "ID number to register online",
+        "proof of identity to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:15:35.917Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter ID rules",
+        "proof of identity to register",
+        "ID number with mail ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll citizenship checks"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script run with the name)",
+        "blocked: https://ad70.asmrc.org/ (403 on every try, with and without browser headers)",
+        "Ballotpedia https://ballotpedia.org/Tri_Ta (Assembly District 70; on the 2026 general-election ballot; no stated position on the subject)",
+        "Digital Democracy bill pages for SB 1174 and AB 1116 (votes, status)",
+        "Digital Democracy Assembly floor transcript https://calmatters.digitaldemocracy.org/hearings/258297 (2024-08-27; he did not speak on SB 1174)",
+        "leginfo vote pages via Internet Archive copies (leginfo itself is behind a bot check)",
+        "AB 25 (2025) text via Internet Archive https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB25 (authors are two other members; he is not an author or coauthor; no committee roll call found)",
+        "web search: two news searches on name plus voter ID, proof of citizenship, the 2026 voter ID ballot measure; nothing from him",
+        "nothing on the subject in his own words found",
+        "not reviewed: social media"
+      ],
+      "found": 4,
+      "at": "2026-10-28T16:15:35.917Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

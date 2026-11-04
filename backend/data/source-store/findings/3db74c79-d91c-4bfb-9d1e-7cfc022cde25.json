@@ -1,0 +1,397 @@
+{
+  "politician_id": "3db74c79-d91c-4bfb-9d1e-7cfc022cde25",
+  "findings": [
+    {
+      "id": "b8154476153e0fcec6c1e24891ea46051eef5ea800069c448ba1c544904df1e2",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/84/wichgers/media/xjdnjxif/wec-hava-compliance.pdf",
+      "date": "2025-06-09",
+      "date_precision": "day",
+      "passage": "This bill serves the public. It paves a way for people to have complaints heard and to gain assurance that our elections are safe and secure.",
+      "note": "Statement in his official release about a bill he circulated to set a complaint process for federal Help America Vote Act election violations. Related election-integrity material; it does not mention ID or citizenship.",
+      "subjects": [
+        "election integrity laws",
+        "election complaint process"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:58:51.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6091ef2f954433d8f5d70a03857023643189282a02bd4a0ff06dcafc04c56623",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/84/wichgers/media/xjdnjxif/wec-hava-compliance.pdf",
+      "date": "2025-06-09",
+      "date_precision": "day",
+      "passage": "It fulfills the legislative duty for oversight of election integrity, and responds responsibly and urgently to the federal warning, ensuring Wisconsin remains eligible for federal support in maintaining secure and accessible elections.",
+      "note": "Same release. He describes the bill as the legislature's oversight of election integrity.",
+      "subjects": [
+        "election integrity laws",
+        "election complaint process"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:58:51.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7527b6215974bffc460b26a0cb9ba80c4206958d46a627fd21acd0850599cd23",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/84/wichgers/media/kypld0py/wec-wolfe-impeachment-resolution2.pdf",
+      "date": "2023-12-19",
+      "date_precision": "day",
+      "passage": "Willfully and shamelessly endangering the integrity of Wisconsin’s elections is criminal. It is the responsibility of the Assembly and Senate together to rein in the WEC Administrator and ensure that Wisconsin elections are safe and secure.",
+      "note": "Statement in his release on a resolution he circulated to impeach the elections commission administrator over unregulated ballot drop boxes. Related election-integrity material; no mention of ID or citizenship.",
+      "subjects": [
+        "election integrity laws",
+        "ballot drop boxes"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:58:51.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4ec1827aeae992bb95fa750b42e843530c1b47e9171b49025351770f5e87e8df",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/84/wichgers/media/kypld0py/wec-wolfe-impeachment-resolution2.pdf",
+      "date": "2023-12-19",
+      "date_precision": "day",
+      "passage": "The sanctity of the ballot box deserves the highest protection and Wolfe failed to give that protection by allowing unregulated drop boxes.",
+      "note": "Same release. He says the administrator failed to protect the ballot box by allowing drop boxes.",
+      "subjects": [
+        "election integrity laws",
+        "ballot drop boxes"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:58:51.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0920e2530883eff8d4eec932a20b68d830ed1386dc660a05b8f46505aada347b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/ab201",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-201-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 3/25/2021; committee recommended passage as amended 6/16/2021; laid on the table 6/22/2021; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/15/2022)",
+      "note": "Named as co sponsor ('Wichgers') on the official bill page; linked to Chuck Wichgers via the official 2021 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.776Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f0a756aa38c0688e9298d1fa6dd953093e3ac6492da29ee0d44a6656305b95d4",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/ab999",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-999-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/16/2022; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/15/2022)",
+      "note": "Named as co sponsor ('Wichgers') on the official bill page; linked to Chuck Wichgers via the official 2022 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.776Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05f8a142565de5b18a7bb52eccf388587e6178fcea0d942c4b6f4e87c5f035e1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ajr1",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-1-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/6/2025 (second consideration, text of 2023 SJR 73); committee recommended adoption 1/9/2025 (5-2); laid on the table 1/14/2025; died (Failed to adopt pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Wichgers') on the official bill page; linked to Chuck Wichgers via the official 2025 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.776Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f105cb8cc766b9ac9b7e2489ba36edc3c7ee78320f2205bd664bd72a8b747ad4",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0252",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-133-2022",
+      "act": "yea",
+      "motion": "Assembly: Adopted (ADOPTION) (av0252)",
+      "note": "Assembly roll call as printed ('WICHGERS'), linked to Chuck Wichgers (district 83) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.776Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3dcdd6812724e9ea085737c1a28378742e9b2599a364726fd8fb1c0b5f415b7f",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0090",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0090)",
+      "note": "Assembly roll call as printed ('WICHGERS'), linked to Chuck Wichgers (district 83) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.776Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b319d313df39958fd1385f38fe6719f965c4ebd72f3d2261d707f416105bc3d3",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/sb204",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled bill as vetoed by the Governor (2021 Senate Bill 204, vetoed 8/10/2021, enrolled from Senate Substitute Amendment 1); passed Senate 6/9/2021, concurred by Assembly 6/22/2021; override failed (Joint Rule 82, 5/17/2022)",
+      "note": "Named as co sponsor ('Wichgers') on the official bill page; linked to Chuck Wichgers via the official 2021 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.776Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4f30723e38f6bac08dfc861be5cb5156051e1eebf82a52f402ee921c9e9fdf26",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2017/av0362",
+      "date": "2018-12-04",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-884-2018",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0362)",
+      "note": "Assembly roll call as printed ('WICHGERS'), linked to Chuck Wichgers (district 83) via the official 2017 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.776Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b31b4288bd002fb7b4bbaa46b990e06d7b2eff283e39b1556d0e71f0bd7e00cb",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0258",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0258)",
+      "note": "Assembly roll call as printed ('WICHGERS'), linked to Chuck Wichgers (district 83) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.776Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d18ec4f8e6c2ec482a548482cc0f5bd2db49f952b41b66b8696c034c4141a0b4",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/sb939",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled bill as vetoed by the Governor (2021 Senate Bill 939, vetoed 4/8/2022); passed Senate 2/22/2022, concurred by Assembly 2/24/2022; override failed (Joint Rule 82, 5/17/2022)",
+      "note": "Named as co sponsor ('Wichgers') on the official bill page; linked to Chuck Wichgers via the official 2022 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.776Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aac49f80b6252a05edb5b95b705c5111fbb94d9575b9dfdc762cc087dd25edd",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('WICHGERS'), linked to Chuck Wichgers (district 84) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.776Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "52afc0d599e71925804c90692661774de3a4e6234e50f5798a0f86167fb91d4e",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sjr2",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election",
+      "note": "Named as co sponsor ('Wichgers') on the official bill page; linked to Chuck Wichgers via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.776Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f37735cfc46365a2fe5a6cf819e19dbb60dbab9982d4680456fe62a5dc680974",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('WICHGERS'), linked to Chuck Wichgers (district 82) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.776Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws",
+        "ballot drop boxes",
+        "federal election-law complaint process"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "in scope: https://www.branch.vote/races/2026-wisconsin-general-election-wi-state-state-representative-wi-state-house-84 shows him as the only candidate for Assembly District 84 in the 2026 general election",
+        "official site press release list pages 1, 2 and 3 (https://legis.wisconsin.gov/assembly/84/wichgers/news-updates/press-releases/): two election-related releases found and saved; others nothing on the subject; some page-1 headlines only skimmed by the fetch tool",
+        "blocked: https://www.wispolitics.com/2022/rep-wichgers-votes-yes-for-election-reforms-responds-to-no-votes-on-senate-bills-935-937-and-946/ (403 on plain curl; the fetch tool only gave a summary and broken fragments, so nothing copied from it; a 2022 release on election bills, special voting deputies and indefinitely confined voters, a lead for later)",
+        "blocked: https://goodparty.org/candidate/chuck-wichgers/wisconsin-state-assembly-district-84 (429)",
+        "blocked: https://docs.legis.wisconsin.gov/2025/legislators/assembly/2868 (429; this URL was a guess and may not be his page); his bill pages not reviewed, as sponsorships are linked separately",
+        "https://legis.wisconsin.gov/assembly/83/wichgers/ and /22/wichgers/ returned 404 (wrong district numbers)",
+        "Ballotpedia not fetched separately: it returned 403 for another person in this batch",
+        "one news search on name plus voter ID words: found no statement on voter ID or proof of citizenship by him"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:58:51.947Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 12,
+      "at": "2026-10-28T23:15:12.776Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

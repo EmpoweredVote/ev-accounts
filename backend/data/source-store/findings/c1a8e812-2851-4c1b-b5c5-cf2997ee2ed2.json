@@ -1,0 +1,155 @@
+{
+  "politician_id": "c1a8e812-2851-4c1b-b5c5-cf2997ee2ed2",
+  "findings": [
+    {
+      "id": "b70592cf13d6dd3abacd5fc7b2603570ed958b5d91bf957c62cfef3511adb437",
+      "kind": "own-words",
+      "url": "https://www.spotlightpa.org/news/2024/04/dave-sunday-pennsylvania-attorney-general-primary-election-2024/",
+      "date": "2024-04-09",
+      "date_precision": "day",
+      "passage": "When asked about lingering doubts about election integrity, Sunday said that in York County he assigned detectives to investigate criminal election complaints. “And as a result of that, we were able to see … that there was not material fraud in the county of York to have changed the York County election,” he said. “I can't speak to any other place.”",
+      "note": "Spotlight PA quoted him in its candidate guide; about election complaints in the county where he was district attorney. Page date taken from the fetch tool's reading.",
+      "subjects": [
+        "election integrity and voter rolls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:26.490Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b80fd11c6c32d3307ecf670bddf0e51f324700d0b6aea955bcbc6ab3c591c7d1",
+      "kind": "own-words",
+      "url": "https://www.attorneygeneral.gov/taking-action/ag-sunday-announces-charges-against-canvassers-pa-field-director-regarding-submissions-of-falsified-voter-registration-forms-in-multiple-counties/",
+      "date": "2025-10-24",
+      "date_precision": "day",
+      "passage": "“We are confident that the motive behind these crimes was personal financial gain, and not a conspiracy or organized effort to tip any election for any one candidate or party,” Attorney General Sunday said.",
+      "note": "Official release on charges over falsified voter registration forms. Date from the AG site search listing.",
+      "subjects": [
+        "election integrity and voter rolls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:26.490Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1317d38d3a22f5a8703d293b81eb7f84b45905b15aaa7df4f4c72b38b8367b9f",
+      "kind": "own-words",
+      "url": "https://www.attorneygeneral.gov/taking-action/ag-sunday-announces-charges-against-canvassers-pa-field-director-regarding-submissions-of-falsified-voter-registration-forms-in-multiple-counties/",
+      "date": "2025-10-24",
+      "date_precision": "day",
+      "passage": "County election offices have the most important role in ensuring the safety and integrity of our elections and voter rolls, and we received full cooperation from those offices in this investigation.",
+      "note": "Same release; says county election offices guard the voter rolls.",
+      "subjects": [
+        "election integrity and voter rolls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:26.490Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "102b197fd06ddd0431a20dfd977b6b331072740541539f2c854e9a715f532e60",
+      "kind": "own-words",
+      "url": "https://www.attorneygeneral.gov/taking-action/ag-sunday-partners-announce-arrest-of-philadelphia-area-ghost-gun-dealer-seizures-of-firearms-with-machine-gun-conversions/",
+      "date": "2026-01-15",
+      "date_precision": "day",
+      "passage": "“Ghost guns exist for criminals to avoid detection by law enforcement, and every one of these deadly weapons should be considered a direct threat to public safety,” Attorney General Sunday said.",
+      "note": "Quote in the Attorney General's release on the arrest of a Philadelphia-area ghost gun dealer.",
+      "subjects": [
+        "home-made (ghost) guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T17:23:45.656Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b7ebc11619b37ce701b259ab384fd4e4bc9c7b154f1bacf7e21a3b94ec10281",
+      "kind": "own-words",
+      "url": "https://www.attorneygeneral.gov/taking-action/ag-sunday-led-philadelphia-gun-violence-task-force-nabs-felon-not-to-possess-charged-with-print-at-home-firearms-trafficking-operation/",
+      "date": "2026-06-15",
+      "date_precision": "day",
+      "passage": "“Every print-at-home firearm that is transferred on the street presents a direct threat to public safety, as the guns are not traceable and could potentially be used in acts of violence or other crimes.”",
+      "note": "Quote from the Attorney General's release on a task-force case about print-at-home firearms. The release page's attribution line was not captured in the copy, so the speaker is taken from the release being issued by his office.",
+      "subjects": [
+        "home-made (ghost) guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T17:23:45.656Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity and voter rolls"
+      ],
+      "places": [
+        "official site https://www.attorneygeneral.gov (site search for 'voter ID': 6 results, none on ID rules)",
+        "AG release page, Oct 24 2025, falsified registration forms",
+        "Spotlight PA profile, 2024 primary",
+        "web search (standard, several queries on name plus subject words)",
+        "not reviewed: On the Record extract script (standing rules forbid running repo scripts)",
+        "blocked: https://ballotpedia.org (403)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:10:26.490Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "home-made (ghost) guns",
+        "gun trafficking and illegal possession",
+        "Second Amendment and under-21 carry (Lara v. Paris)",
+        "check every gun buyer",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site attorneygeneral.gov: firearms search, two releases opened",
+        "web search: Sunday Second Amendment statement; Lara v. Paris; 2024 candidate statements",
+        "Spotlight PA 2024 election profile",
+        "campaign site: not reviewed, address dsunday.com did not resolve",
+        "Ballotpedia: not reviewed, returns empty to the fetch tool",
+        "sponsor list: not applicable, statewide executive, not a legislator",
+        "blocked: https://www.ammoland.com/2025/02/pennsylvania-attorney-general-breaks-promise-and-defends-gun-law/ (403)",
+        "not reviewed: Gun Owners of America 2024 candidate survey (not located)",
+        "nothing on the subject: Altoona Mirror 2025-02-28 piece on Lara v. Paris does not mention him or the Attorney General's office",
+        "Spotlight PA 2024 profile: only a partial quote on illegal gun possession could be copied, not saved"
+      ],
+      "found": 2,
+      "at": "2026-10-31T17:23:45.656Z",
+      "by": "source-collector"
+    }
+  ]
+}

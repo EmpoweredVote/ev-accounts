@@ -1,0 +1,30 @@
+{
+  "politician_id": "5561c7ea-d6f5-4b49-9ed9-f61f19ab5b43",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "positive control: https://en.wikipedia.org/wiki/Rene_Lopez_(politician) and https://www.kawc.org/news/2024-09-30/arizona-corporation-commission-candidates-republican-rene-lopez (elected to the Arizona Corporation Commission in 2024; not a legislator, so no bills or floor votes exist)",
+        "On the Record extract script: not reviewed (the standing rules for this session forbid running repo scripts)",
+        "official commission biography https://azcc.gov/Rene-Lopez/biography: not fetched",
+        "blocked: https://ballotpedia.org/ (profile page returned empty content)",
+        "news search on name plus voter ID and election words: nothing on the subject; the 2024 candidate profile does not mention voter ID or citizenship",
+        "not reviewed: https://www.pbs.org/video/az-votes-arizona-corporation-commission-debate-sept-26-2024-qtvkjj (debate video)",
+        "not reviewed: https://news.ballotpedia.org/2024/10/20/seven-candidates-running-in-nov-5-general-election-for-arizona-corporation-commission-complete-ballotpedias-survey/ (survey answers not read)",
+        "2026 ballot status: his term appears to run to 2029 per search results, so likely not on the 2026 ballot; not confirmed from a fetched page"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:09:17.650Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

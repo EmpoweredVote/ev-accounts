@@ -1,0 +1,54 @@
+{
+  "politician_id": "2d47646e-ba97-4e3e-ae34-8022c1edaabe",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Michael_Mebruer names him as a candidate for Louisiana's 6th Congressional District, on the ballot November 3, 2026",
+        "On the Record (0 appearances, 0 name matches)",
+        "campaign site https://www.mebruerforcongress.com/ and /about (fetched; no voting-ID or election-law content; the about page mentions citizens only in an immigration passage)",
+        "Ballotpedia page and Candidate Connection survey (nothing on the subject)",
+        "not reviewed: https://x.com/MebruerforLA5",
+        "not reviewed: https://www.facebook.com/profile.php?id=61588323936286",
+        "not reviewed: https://www.instagram.com/mebruerforcongress/",
+        "not searched: web and news search (the session's 200-search budget was used up); congress.gov not applicable (never held office); ontheissues.org not tried (no congressional record)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:59:11.337Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Michael_Mebruer (confirms candidate for Louisiana's 6th District on the 2026 ballot; his survey answers cover spending, debt and self-funding, nothing on the subject)",
+        "campaign site https://www.mebruerforcongress.com/ (home and about pages reviewed; about page covers legal immigration only; nothing on the subject; no issues page exists)",
+        "web search on name plus voter ID (nothing on the subject)",
+        "congress.gov: not applicable, never held federal office"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:21:53.632Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

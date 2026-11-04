@@ -1,0 +1,31 @@
+{
+  "politician_id": "0e80946b-8f57-43b7-af44-3c1c8469a51c",
+  "findings": [
+    {
+      "id": "52d44d33a1e636a786c0369f3d0069773fa51d8463edd341c9ef174526f6256f",
+      "kind": "record",
+      "url": "https://archive.leg.state.nv.us/Session/80th2019/Bills/SB/SB143_EN.pdf",
+      "date": "2019-02-15",
+      "date_precision": "day",
+      "instrument_id": "NV-SB-143-2019",
+      "act": "nay",
+      "motion": "Passage (third reading), Roll call on Senate Bill No. 143",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NV Assembly, Passage (third reading), Roll call on Senate Bill No. 143, 2019-02-15: nay (tally 28–13); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E, F (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": []
+}

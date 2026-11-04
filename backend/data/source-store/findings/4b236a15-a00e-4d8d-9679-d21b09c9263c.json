@@ -1,0 +1,68 @@
+{
+  "politician_id": "4b236a15-a00e-4d8d-9679-d21b09c9263c",
+  "findings": [
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Richardson'), linked to Gary Richardson (district 125) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.417Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "scope check: https://www.branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-125/candidates/gary-richardson lists him as a 2026 general-election candidate for House District 125; Wikipedia says he took office 2024-03-20, so he did not serve in 2021 and has no SB 202 vote",
+        "campaign site https://www.garyfordistrict125.com (nothing on the subject)",
+        "branch.vote page says his site had no information on voting and elections (nothing on the subject)",
+        "https://theaugustapress.com/keeping-up-with-gary-richardson/ (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Gary_Richardson_(Georgia) (fetch returned empty page)",
+        "blocked: https://app.legiplex.com/profile/gary-richardson-1985/ga/legislatures/2025/2025-r/legislation (403)",
+        "news search on his name plus election bill, voter ID, citizenship: nothing found on the subject",
+        "not reviewed: legis.ga.gov sponsor pages (load by script only, data API returns 401)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:48:56.160Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.417Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

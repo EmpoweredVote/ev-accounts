@@ -1,0 +1,570 @@
+{
+  "politician_id": "183d6e7b-b7c5-43cf-a811-920466c887fe",
+  "findings": [
+    {
+      "id": "f8790250e662a2094587310da60f80cf6f48b144aa0f4a0b459193e62eea9d56",
+      "kind": "own-words",
+      "url": "https://senatorhaywood.com/senators-art-haywood-vincent-hughes-censored-on-senate-floor-for-calling-out-voter-suppression/",
+      "date": "2023-05-04",
+      "date_precision": "day",
+      "passage": "Voter suppression, Senator Haywood continues, “is not just a poll tax, it’s not just literacy tests, it’s not just voter ID, it’s not just gerrymandering; it’s taking away the power of people that they voted for.”",
+      "note": "Floor remarks on SB 140 (SEPTA special prosecutor). Lists voter ID among forms of voter suppression in passing; the bill is not about ID.",
+      "subjects": [
+        "voter ID at the polls (passing mention)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:00:24.403Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dcaa2bc162bedc2f6b9e91ae9e179a92b1c05081f2eec853183a760f1884258",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('HAYWOOD'), linked to Arthur L. Haywood III (district 4) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.712Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc316a91c15a9d69b8de8a31f201ccdfb2b8ddcf04549d215151894a08cf6992",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "nay",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Haywood'), linked to Arthur L. Haywood III (district 4) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.712Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dbe3c0f0546a6231771fc2eb2ca14e791584abef2001ceba50dfd88547754dfb",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Haywood'), linked to Arthur L. Haywood III (district 4) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.712Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8919f777e996df6017e73096f32be4cc18f382716845d0fdb1fbdab4e8d89660",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "nay",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Haywood'), linked to Arthur L. Haywood III (district 4) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.462Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1d0155895ce8411a4438986cd1d5eafc092c54b213a013aab945a0900ab58bf7",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2021/sb565",
+      "date": "2021-11-09",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-565-2021",
+      "act": "nay",
+      "motion": "Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Final Passage, 2021-11-09: nay (tally 29–21); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/PA_SB565_PN1212.pdf",
+          "sha256": "8599bf5e56d8378a456fd36d933e5a05733e1a059d642ddb6883c809f6226568"
+        }
+      }
+    },
+    {
+      "id": "c4adb8fee77286458c4c232c1688f47e58ac3d1ace3b8c74d264085bda5a2976",
+      "kind": "own-words",
+      "url": "https://senatorhaywood.com/gunviolenceprevention/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Senator Haywood supports efforts to ensure dangerous people do not have access to guns. He has introduced SB701 to limit the purchase of handguns to one person per month. The senator is also sponsoring legislation that would implement fingerprint handgun licensing in Pennsylvania.",
+      "note": "Issue page on his official Senate site (undated; it also links a September 2022 item) describing a one-handgun-a-month limit and fingerprint handgun licensing.",
+      "subjects": [
+        "limit on handgun purchases",
+        "licence to buy a gun",
+        "keep guns from dangerous people"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:15:00.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5864857869f47d993e99d663b2d0a8690de940691dff5e619ccb1167d5ab37a",
+      "kind": "own-words",
+      "url": "https://senatorhaywood.com/gunviolenceprevention/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "This legislation would enact an assault weapons ban in Pennsylvania. This bill would mirror language that is very similar to what was enacted in Connecticut after the Sandy Hook Elementary School shooting, which is considered to be some of the toughest in the nation.",
+      "note": "His site's legislation list describes Senate Bill 254, an assault weapons ban, and says both assault weapons and high-capacity magazines are legal under state law. Whether he sponsored it is not stated on the page.",
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:15:00.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "665a298d7c62448e267d80c99cdda1fa14b5e1b312f0dba89524ca0dd4c8cf6c",
+      "kind": "own-words",
+      "url": "https://senatorhaywood.com/gunviolenceprevention/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "This legislation eliminates most of the exceptions to the requirement of a background check prior to the purchase or transfer of a firearm. The close familial transfer exception to the background check requirements would remain under this legislation.",
+      "note": "His site's description of Senate Bill 88, universal background checks. Whether he sponsored it is not stated on the page.",
+      "subjects": [
+        "check every gun buyer",
+        "private sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:15:00.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5708179b5f0a1fece23c0a796b8a0f6ca65defe0a9f9113fa619e38df1ffaf64",
+      "kind": "own-words",
+      "url": "https://senatorhaywood.com/gunviolenceprevention/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "An Extreme Risk Protection Order (“ERPO”) provides a mechanism for law enforcement and loved ones to request a Court order to temporarily restrict an individual’s access to firearms when they clearly present a danger to themselves and others.",
+      "note": "His site's description of Senate Bill 90, extreme risk protection orders; the page also lists Senate Bill 138 on safe storage of firearms. Whether he sponsored them is not stated on the page.",
+      "subjects": [
+        "red flag orders",
+        "safe storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:15:00.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d4ef71910e832d0f97d61915d4b8ebe0b2ad066d0f985f136c3118f69dfef20c",
+      "kind": "own-words",
+      "url": "https://6abc.com/post/state-senator-lawmakers-have-done-nothing-to-reduce-gun-violence/1122529/",
+      "date": "2015-12-14",
+      "date_precision": "day",
+      "passage": "\"These four factors: going to the police station, getting your fingerprints, getting your background check, these all discourage individuals who would otherwise resell a gun to a criminal,\" Haywood said.",
+      "note": "Quoted by WPVI (Philadelphia) while promoting Senate Bill 1029, a Firearm Eligibility License for handgun buyers (fingerprints, background check, safety course). The story is dated Dec 15, 2015 and says he spoke Monday.",
+      "subjects": [
+        "licence to buy a gun",
+        "check every gun buyer",
+        "straw purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:15:00.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2ab77eb942c329bb38a417c0fd1d2f7180042205c266639bce1c8fbe9f877f80",
+      "kind": "own-words",
+      "url": "https://senatorhaywood.com/senator-haywood-hosts-gun-violence-press-conference/",
+      "date": "2021-05-14",
+      "date_precision": "day",
+      "passage": "“We have a serious gun violence problem in the city of Philadelphia,” said Sen. Haywood. “There are strong gun violence prevention organizations who can help reduce the high shooting rates. We need to fund these organizations so they can reduce gun violence effectively.”",
+      "note": "Press release on his press conference calling on the General Assembly to pass gun violence legislation; focus is funding for violence intervention groups.",
+      "subjects": [
+        "funding for violence intervention",
+        "gun violence general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:15:00.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b2b1c8e0adebd84e260bb582513c417b5060be0927d265e97fbc6511d693510a",
+      "kind": "record",
+      "url": "https://senatorhaywood.com/senator-haywood-hosts-gun-violence-press-conference/",
+      "date": "2021-05-14",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-670-2021",
+      "act": "sponsor",
+      "note": "Release says he introduced SB 670 that week: a Violence Intervention Program grant program through the state crime commission for community groups reducing gun-related violence.",
+      "subjects": [
+        "funding for violence intervention",
+        "gun violence general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:15:00.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "738b720f452185b10c66c10244ad9d3bb753ac94a288fb65c353b4845128301b",
+      "kind": "record",
+      "url": "https://policyrisk.com/state-bill/PA-SR31-2025-2026",
+      "date": "2025-03-06",
+      "date_precision": "day",
+      "instrument_id": "PA-SR-31-2025",
+      "act": "sponsor",
+      "note": "Listed as prime sponsor of SR 31, a resolution recognizing January 22-26, 2025 as Gun Violence Survivors Week in Pennsylvania; date is the Senate referral date on the tracker page (third-party source).",
+      "subjects": [
+        "gun violence general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:15:00.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad2092b87c986ecc7a0465d2114036690e82b8bc18598fcc60aaa3e2b84a2af1",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=1747",
+      "date": "2020-11-18",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1747-2019",
+      "act": "abstain",
+      "motion": "Senate Floor: HB 1747 PN 2338, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 1747 PN 2338, FINAL PASSAGE, 2020-11-18: abstain (tally 29–20); census gate: none.",
+      "subjects": [
+        "emergency-time carry restriction repealed",
+        "no seizure of guns, accessories or ammunition during emergencies",
+        "governor cannot suspend firearm sales in emergencies"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1747-2019.introduced.pdf",
+          "sha256": "a4e95a0229bcf1cde7a5fa9d58ac2c33f09477e837d84525b7ff04d3a5f71ece"
+        }
+      }
+    },
+    {
+      "id": "2c05507b5bd4558cf745717335e51abccde7f13410de129cdd7287e5aab7301f",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=2440",
+      "date": "2020-11-18",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-2440-2019",
+      "act": "abstain",
+      "motion": "Senate Floor: HB 2440 PN 3776, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 2440 PN 3776, FINAL PASSAGE, 2020-11-18: abstain (tally 29–20); census gate: none.",
+      "subjects": [
+        "gun and ammunition businesses and ranges can never be closed or limited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2440-2019.amended.pdf",
+          "sha256": "9bdd564f4d0812adfa9af91a3ac7f854f4196ebd9577febef5953c94486be5c8"
+        }
+      }
+    },
+    {
+      "id": "e551ed2f59e072bfb12b47cdaee82befe90ec2b072f23db862ca5acdcd44d811",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=979",
+      "date": "2022-01-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-979-2021",
+      "act": "nay",
+      "motion": "Senate Floor: HB 979 PN 1706, Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 979 PN 1706, Final Passage, 2022-01-25: nay (tally 32–17); census gate: none.",
+      "subjects": [
+        "local gun and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs",
+        "localities barred from suing gun makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-979-2021.amended.pdf",
+          "sha256": "494cfe800bdb89be85cf7c2a28a81c203b581e7614e7bc8f69211cb4c736f5dd"
+        }
+      }
+    },
+    {
+      "id": "aeb8266984e53754ceef8ff83f7e417709cb966b7ba747cb9d64e2c79c4a49ed",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb822",
+      "date": "2026-05-06",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-822-2025",
+      "act": "nay",
+      "motion": "Senate Floor: PN0881, Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: PN0881, Final Passage, 2026-05-06: nay (tally 30–20); census gate: none.",
+      "subjects": [
+        "local firearm and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-822-2025.introduced.pdf",
+          "sha256": "38d1bdcb626cc1614fee0c352427248f5e599df007fead7d1a6031742385df55"
+        }
+      }
+    },
+    {
+      "id": "3295f3ca764ec705e99d1e3ac2783e1ae0949dab0b7628a119ff558b5999a87e",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=S&type=B&bn=204",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-204-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-SB-204-2023 (LegiScan sponsor list): SB204 (2023-2024 Regular Session): In actions, proceedings and other matters generally, providing for extreme risk protection orders..",
+      "subjects": [
+        "court orders to remove guns from people at risk of harming themselves or others",
+        "family members and police may petition",
+        "penalty for possessing guns under an order"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-204-2023.introduced.pdf",
+          "sha256": "3aaf5420de53bef1bf18d7ed5c88cda96951528d75fb2331337afa67ef725805"
+        }
+      }
+    },
+    {
+      "id": "974bcaa11083851fdf648bd4b6b53b2f69fbd2b79d1857b0e68638182e4e9f3b",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb348",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-348-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-SB-348-2025 (LegiScan sponsor list): SB348 (2025-2026 Regular Session): In firearms and other dangerous articles, providing for report of theft or loss of firearm; and imposing a penalty..",
+      "subjects": [
+        "lost or stolen firearm must be reported within 24 hours",
+        "fine for failing to report"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-348-2025.introduced.pdf",
+          "sha256": "abc26212fcdd2ced433b042efb2f17e7287787752032e5f4e6f1cba78f99f4e2"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll data and election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "web search: name plus voter ID",
+        "web search: Senate voter ID constitutional amendment 2025 2026",
+        "official site https://senatorhaywood.com (site search for voter ID and election)",
+        "blocked: https://www.penncapital-star.com/commentary/philly-lawmaker-will-sue-to-block-release-of-personal-info-in-gop-probe-monday-morning-coffee/ (403)",
+        "Ballotpedia not reviewed: not fetched",
+        "bill pages not searched, linked separately"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:00:24.403Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:45:58.712Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.462Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red flag / extreme risk orders",
+        "gun purchase licence",
+        "limit on handgun purchases",
+        "safe storage",
+        "gun violence general statements",
+        "sponsored bills"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Senate site senatorhaywood.com: Gun Violence Prevention page; May 2021 press conference release; June 2022 and June 2023 awareness-day pages (no text, video only)",
+        "news: WPVI 2015 story; Philly Voice 2015 piece reposted on his site (not separately quoted)",
+        "bill page: SR 31 (2025-26) on a third-party tracker",
+        "blocked: https://penncapital-star.com/criminal-justice/senate-democrats-renew-calls-for-gun-control-measures-that-face-an-uphill-battle/",
+        "SB 669 (2025-26, Oct 2025) lists him as sponsor and is reported to cover firearm sales, but its subject could not be confirmed from a fetched page, so not saved",
+        "web search for 2025 statements on assault weapons, extreme risk, background checks: nothing new found",
+        "blocked: https://ballotpedia.org/Art_Haywood",
+        "blocked: https://www.legis.state.pa.us/"
+      ],
+      "found": 8,
+      "at": "2026-10-30T15:15:00.793Z",
+      "by": "source-collector"
+    }
+  ]
+}

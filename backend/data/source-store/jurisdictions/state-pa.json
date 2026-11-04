@@ -1,0 +1,15 @@
+{
+  "scope": "state:pa",
+  "portals": [],
+  "rosters": [
+    {
+      "url": "https://web.archive.org/web/20211231233025/https://www.legis.state.pa.us/cfdocs/legis/home/member_information/mbrList.cfm?body=H&sort=alpha",
+      "note": "house member list, 2021-2022 (archive); gun-policy identity check 2026-10-29"
+    },
+    {
+      "url": "https://web.archive.org/web/20220108115218/https://www.legis.state.pa.us/cfdocs/legis/home/member_information/mbrList.cfm?body=S&sort=alpha",
+      "note": "senate member list, 2021-2022 (archive); gun-policy identity check 2026-10-29"
+    }
+  ],
+  "higher_law_duties": []
+}

@@ -1,0 +1,30 @@
+{
+  "politician_id": "d692e25d-3200-44a0-8056-c47ec8cd85a1",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun rights",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry permits",
+        "firearm"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "The Ballot Brief https://theballotbrief.com/candidate/joan-e-andrews-bell-va (identity check): lists her running for U.S. House, VA-4; nothing on the subject",
+        "campaign site https://joan.vote/: home page covers the Amendment 1 vote, late-term abortion and her ads; nothing on the subject",
+        "web search x3 (name plus guns; name plus campaign site; name plus Second Amendment): nothing by her on the subject",
+        "blocked: https://virginiamercury.com/voter-guides/contests/2026-general-election-4th-congressional-district/",
+        "Ballotpedia: not reviewed (pages return empty)",
+        "sponsor list: not applicable, not a legislator"
+      ],
+      "found": 0,
+      "at": "2026-10-31T00:45:03.642Z",
+      "by": "source-collector"
+    }
+  ]
+}

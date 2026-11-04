@@ -1,0 +1,50 @@
+{
+  "politician_id": "4e119c6a-8ded-423f-9227-6e9d30236f4b",
+  "findings": [
+    {
+      "id": "23789fcf8c127260696badc71e495540ee93a9b7084fcfdd729700b641af1673",
+      "kind": "own-words",
+      "url": "https://www.berryforga.com",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "But the work is not done. Prices continue to rise, Trump and State House Republicans are trampling on our voting rights, and as a state, we still rank near the bottom in areas ranging from workforce development to gun safety.",
+      "note": "Campaign home page, undated. A general statement about voting rights; it names no ID or citizenship rule.",
+      "subjects": [
+        "voting rights and election laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:47:27.849Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws in general",
+        "voting rights"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "https://ballotpedia.org/Bryce_Berry (confirms State House District 56 incumbent and on the 2026 general-election ballot, Nov 3 2026; Candidate Connection survey has nothing on the subject)",
+        "campaign site https://www.berryforga.com (one general line on voting rights; /issues page empty)",
+        "news search on name plus subject words (nothing on the subject)",
+        "https://www.fox5atlanta.com/news/meet-bryce-berry-georgia-first-lawmaker-born-after-2000 (nothing on the subject)",
+        "SB 202 (2021) votes: not applicable, took office January 2025",
+        "blocked: https://www.legis.ga.gov (JavaScript-only site; bill and vote pages could not be read, so 2025-26 sponsorships and votes were not reviewed)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:47:27.849Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

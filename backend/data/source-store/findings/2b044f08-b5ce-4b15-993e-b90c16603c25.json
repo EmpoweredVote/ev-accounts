@@ -1,0 +1,215 @@
+{
+  "politician_id": "2b044f08-b5ce-4b15-993e-b90c16603c25",
+  "findings": [
+    {
+      "id": "709284c3a0e10df4a6622a591966f30c849ecce3a4a4ee4fef00617c603c1cbd",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81696&billStatusActionId=232198&includeVotes=true",
+      "date": "2025-02-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2038-2025",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('CAVERO'), linked to Junelle Cavero (district 11) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.878Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5ca67848aa733588751373129d47d11dfd2873eb2d867736bbfb2d87c05ade9c",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=240878&includeVotes=true",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('CAVERO'), linked to Junelle Cavero (district 11) via the official 2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.878Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c0182fcb8574a3883c579212fed0026affbe51ded5eb871413e17fcbc496ab00",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=235732&includeVotes=true",
+      "date": "2025-05-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('CAVERO'), linked to Junelle Cavero (district 11) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.878Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0a647577ff41ef35fc69a3a8f5d3632affec84dce92b464d32885e7568394d57",
+      "kind": "own-words",
+      "url": "https://www.caveroforaz.com/priorities",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Every eligible Arizonan deserves the freedom to vote easily, securely, and with confidence that their ballot will be counted. I will continue fighting against efforts that make it harder for eligible voters to participate in our democracy while supporting policies that strengthen both election access and election integrity. That includes protecting Arizona's popular Vote-by-Mail system, expanding early voting opportunities, supporting same-day voter registration with appropriate verification requirements, and ensuring election officials have the resources they need to administer safe, secure, and transparent elections.",
+      "note": "Campaign priorities page, elections section. Undated page. She names mail voting, early voting and same-day registration with verification requirements; it does not mention photo ID or proof of citizenship by name.",
+      "subjects": [
+        "election integrity in general",
+        "vote by mail",
+        "same-day registration verification",
+        "barriers to voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.417Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b97dbf78faf52dad5919dc6afec7594a7b5296196c14d89c4cb44dd2f22fc49c",
+      "kind": "own-words",
+      "url": "https://www.ballotready.org/people/junelle-cavero",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "I am committed to combating voter suppression efforts and advocating for policies that enhance accessibility to voting, including preserving Vote By Mail and advocating for Same Day Registration on Election Day with proper proof of residency and citizenship. These measures will uphold election integrity while ensuring all Arizonans can exercise their right to vote.",
+      "note": "Candidate issue statement on the BallotReady voter guide, written in the first person. Undated. She links same-day registration to proof of residency and citizenship.",
+      "subjects": [
+        "proof of citizenship to register",
+        "same-day registration verification",
+        "vote by mail",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.417Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d68905ce1e404a6c0cf9a53a7b8bf0dba4a51c755ac0dc62cef38e7fa3950ae4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=236364&includeVotes=true",
+      "date": "2025-06-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('CAVERO'), linked to Junelle Cavero (district 11) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28b",
+        "fetched_at": "2026-10-28T23:23:11.508Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:53:15.878Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "same-day registration verification",
+        "vote by mail",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "scope check: https://www.ballotready.org/people/junelle-cavero shows her as a candidate for Arizona House District 11 on the 2026 general-election ballot",
+        "campaign site https://www.caveroforaz.com/priorities (2 findings: elections statement on the priorities page)",
+        "https://www.ballotready.org/people/junelle-cavero (candidate issue statement, fetched by curl)",
+        "blocked: https://ballotpedia.org/Junelle_Cavero (empty page returned)",
+        "web search (1): bill and statement search found only her floor vote already on file; no news quote on the subject",
+        "legislature bill pages for sponsorships: not searched, linked separately"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:13:34.914Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "same-day registration verification",
+        "vote by mail",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "scope check: https://www.ballotready.org/people/junelle-cavero shows her as a candidate for Arizona House District 11 on the 2026 general-election ballot",
+        "campaign site https://www.caveroforaz.com/priorities (2 findings: elections statement on the priorities page)",
+        "https://www.ballotready.org/people/junelle-cavero (candidate issue statement, fetched by curl)",
+        "blocked: https://ballotpedia.org/Junelle_Cavero (empty page returned)",
+        "web search (1): bill and statement search found only her floor vote already on file; no news quote on the subject",
+        "legislature bill pages for sponsorships: not searched, linked separately"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:18:25.417Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:23:11.508Z",
+      "by": "identity-az-2026-10-28b"
+    }
+  ]
+}

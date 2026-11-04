@@ -1,0 +1,38 @@
+{
+  "id": "VA-HB-540-2026",
+  "scope": "state:va",
+  "title": "HB540 (2026 Regular Session): Carrying firearms in restricted locations; exception.",
+  "urls": [
+    "https://lis.virginia.gov/bill-details/20261/HB540",
+    "https://lis.virginia.gov/bill-details/20261/HB540/text/HB540"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 1 (amending Code 15.2-915(E)): The provisions of this subsection shall not apply to{+ +}{+(+}{+a+}{+) +}{+any +}{+wom+}{+a+}{+n +}{+w+}{+h+}{+o+}{+ +}{+(+}{+1+}{+) +}{+is a+}{+ +}{+current victim+}{+ of family abuse+}{+,+}{+ as that term is defined in +}{+§ 16.1-228+}{+,+}{+ and+}{+ (+}{+2+}{+)+}{+ ha+}{+s+}{+ an active protective order against a family or house+}{+hold member+}{+,+}{+ as that term is defined in § 16.1-228+}{+; or (+}{+b+}{+)+} the activities of [-(i)-]{+ (+}{+1+}{+)+} a Senior Reserve Officers' Training Corps program operated at a public or private institution of higher education in accordance with the provisions of 10 U.S.C. § 2101 et seq. or [-(ii)-]{+ (2)+} any intercollegiate athletics program operated by a public or private institution of higher education and governed by the National Collegiate Athletic Association or any club sports team recognized by a public or private institution of higher education where the sport engaged in by such program or team involves the use of a firearm. Such activities shall follow strict guidelines developed by such institutions for these activities and shall be conducted under the supervision of staff officials of such institutions.\nSec. 1 (amending Code 18.2-283.2(F)): F. {+The provisions of this section shall not apply to +}{+any +}{+wom+}{+a+}{+n +}{+w+}{+h+}{+o+}{+ (+}{+i+}{+) +}{+is a+}{+ +}{+current victim of family abuse, as that term is defined in § 16.1-228, and (+}{+ii+}{+) ha+}{+s+}{+ an active protective order against a family or household member, as that term is defined in § 16.1-228+}{+.+}\nSec. 1 (amending Code 18.2-287.01(C)): {+C. The provisions of this section shall not apply to +}{+any +}{+wom+}{+a+}{+n +}{+w+}{+h+}{+o+}{+ (i) +}{+is a+}{+ current victim of family abuse, as that term is defined in § 16.1-228, and (ii) ha+}{+s+}{+ an active protective order against a family or household member, as that term is defined in § 16.1-228.+}\nSec. 1 (amending Code 18.2-287.4): The provisions of this section shall not apply to{+ (+}{+a+}{+)+} law-enforcement officers, licensed security guards,{+ or+} military personnel in the performance of their lawful duties[-,-] [-or-]{+; (+}{+b+}{+)+} any person having a valid concealed handgun permit [-or-] [-to-]{+; (+}{+c+}{+)+} any person actually engaged in lawful hunting or lawful recreational shooting activities at an established shooting range or shooting contest{+; or (+}{+d+}{+)+}{+ any+}{+ wom+}{+an+}{+ +}{+w+}{+h+}{+o+}{+ (+}{+1+}{+) +}{+is a+}{+ current victim of family abuse, as that term is defined in § 16.1-228, and (+}{+2+}{+) ha+}{+s+}{+ an active protective order against a family or household member, as that term is defined in § 16.1-228+}. Any person violating the provisions of this section shall be guilty of a Class 1 misdemeanor.\nSec. 1 (amending Code 18.2-308(C), item 10): 10. {+Any woman +}{+w+}{+h+}{+o+}{+ (i) is a current victim of family abuse, as that term is defined in § 16.1-228, and (ii) has an active protective order against a family or household member, as that term is defined in § 16.1-228+}{+; and+}",
+  "sponsors": [
+    {
+      "name": "Karen Hamilton",
+      "politician_id": "11074d6c-4c9c-4b9e-9606-42eae7a6537c",
+      "role": "patron",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-540-2026.introduced.html",
+      "sha256": "515885c39a3be2fff851e91a35df9928962916cb8c59af1bb481b0e0a26db1bb"
+    }
+  }
+}

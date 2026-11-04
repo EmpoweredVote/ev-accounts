@@ -1,0 +1,65 @@
+{
+  "politician_id": "b285d29b-14f3-491e-a7a1-d94e30219bb8",
+  "findings": [
+    {
+      "id": "c70787c18c066547be5e7f2b555ce00b2e8a02383f8c0d6e8182ffca1244b56a",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=71189&billStatusActionId=186495&includeVotes=true",
+      "date": "2019-02-14",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1072-2019",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('PESHLAKAI'), linked to Jamescita Peshlakai (district None) via the official 2019 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.888Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "619833fd123fbc3b42d7bdd713be448dc9c45601c819401e27d7ccc667578151",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=75855&billStatusActionId=202926&includeVotes=true",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1713-2021",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('PESHLAKAI'), linked to Jamescita Peshlakai (district None) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.888Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:53:15.888Z",
+      "by": "identity-az-2026-10-28"
+    }
+  ]
+}

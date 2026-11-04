@@ -1,0 +1,142 @@
+{
+  "politician_id": "e47f2082-6fcb-4961-9df5-c5fb94004b59",
+  "findings": [
+    {
+      "id": "de993072b1f015691757356966b25be35f10f79ccfc21b9e05ca9348996cbcde",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "Roll Call #208 - Question on acceptance of conference committee report",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA Senate, Roll Call #208 - Question on acceptance of conference committee report, 2024-07-18: yea (tally 35–5); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db16b98b521d382c722d5503605116e48c77fb9d34798b9816992f739c986730",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "Senate Engrossed Roll Call #114",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA Senate, Senate Engrossed Roll Call #114, 2024-02-01: yea (tally 37–3); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws",
+        "voter-roll checks"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Robyn_Kennedy (Massachusetts State Senate, 1st Worcester District; advanced from the 1 September 2026 primary; on the 3 November 2026 general ballot)",
+        "On the Record (0 appearances, 0 name-matched sources) - nothing on the subject",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/RKK0 - reached; its sponsored list could not be read beyond the first 61 bills and showed no bill on the subject",
+        "malegislature.gov bill search (voter identification, voter ID, photo identification, citizenship, voting, elections, ballot, voter rolls) - the two photo-ID bills found, H.833 and S.510 (194th Court), show no sign of her as presenter or on the page text; the petitioner list could not be fully read, so her co-sponsorship is not confirmed either way",
+        "campaign site https://www.electrobynkennedy.com/ and /campaign-news - nothing on the subject",
+        "Ballotpedia page - no issue positions, no 2026 candidate survey completed - nothing on the subject",
+        "not reviewed: Facebook pages https://www.facebook.com/SenRobynKennedy and https://www.facebook.com/Robyn4Senate (login-walled)",
+        "not reviewed: Senate roll-call votes (no voter ID vote located)",
+        "news search not run: the shared web-search budget was used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:31:10.553Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "in scope: sitting state senator for the 1st Worcester District, advanced from the 2026-09-01 primary and is on the 2026 general ballot (Ballotpedia: https://ballotpedia.org/Robyn_Kennedy)",
+        "On the Record (0 meetings)",
+        "legislature profile with her sponsored petitions: no bill on voter ID, proof of citizenship or voting ID; only a town recall-election petition (Berlin) and a bill on ID for people experiencing homelessness, neither about voting (https://malegislature.gov/Legislators/Profile/RKK0)",
+        "official site: nothing on the subject (https://www.senrobynkennedy.com/)",
+        "campaign site: nothing on the subject (https://www.electrobynkennedy.com/)",
+        "her Substack archive through May 2026: nothing on the subject (https://senrobynkennedy.substack.com/archive)",
+        "Ballotpedia: nothing on the subject",
+        "two news searches on her name with voter ID and citizenship words: nothing tying her to the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:04:52.807Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "repeal of gun laws",
+        "general statement on gun safety laws",
+        "gun offender registry"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Robyn_Kennedy",
+        "sponsor list: covered by LegiScan bulk check",
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/RKK0 (sitting state senator, First Worcester)",
+        "her newsletter site https://senrobynkennedy.substack.com: read the full archive (18 posts, 2025-04 to 2026-05) through its public listing and post pages; no post mentions guns, firearms or the Second Amendment",
+        "4 web searches on her name with gun, firearms, ghost guns and Senate debate terms: no statement of her own on the subject",
+        "news coverage of the 2024 Senate gun bill debate (Boston 25, WBUR, Commonwealth Beacon): her name does not appear"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:43:21.076Z",
+      "by": "source-collector"
+    }
+  ]
+}

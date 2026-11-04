@@ -806,7 +806,43 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // Refresh the view after loading: REFRESH MATERIALIZED VIEW CONCURRENTLY
   // essentials.geofence_child_county (outside a transaction; see migration 1696).
   IL: new Set(['place']),
-  AK: new Set(['place']),
+  // AK. TWO WAVES SHARE THIS ONE ENTRY, and they must stay merged.
+  //   place  — the 149 G4110 Alaska places, loaded 2026-10-06 for city-name resolution.
+  //            ⚠ Juneau is a "city and borough" and Anchorage a "municipality"; the identity
+  //            anchors below name them in that form. No `county`: Alaska's 30 G4020 boroughs and
+  //            census areas are already in production from the national load, and the
+  //            place->county mapping (essentials.geofence_child_county) joins against them.
+  //   sldu   — 20 Senate districts, added 2026-10-30 for the Alaska Legislature deep seed.
+  //   sldl   — 40 House districts, same wave.
+  // 🔴 THE LEGISLATIVE WAVE FIRST ADDED A SECOND `AK:` KEY INSTEAD OF EXTENDING THIS ONE. A later
+  //    duplicate key in an object literal SILENTLY WINS, so `place` quietly stopped being an
+  //    allowed layer for Alaska and nothing errored — the sldu/sldl load ran fine and said
+  //    nothing. `no-dupe-keys` in CI caught it. ▶ When adding a state here, CHECK WHETHER IT IS
+  //    ALREADY PRESENT; this allowlist is keyed by state, not by wave.
+  //
+  // Production held ZERO G5210 and ZERO G5220 rows for FIPS 02 and ZERO state legislative
+  // offices before 2026-10-30, measured that day.
+  //
+  // 🔴 ALASKA'S SENATE DISTRICTS ARE LETTERED A..T, AND THE HOUSE IS NUMBERED 1..40. Read from
+  //    the real TIGER .dbf: SLDUST is '00A'..'00T' (20 records, G5210) and SLDLST is '001'..'040'
+  //    (40 records, G5220). This is the INVERSE of Idaho, whose pre-flight asserts that lettered
+  //    codes are ABSENT; here the letters are the real district identity and their absence is the
+  //    failure. Both assertions are made explicitly in the pre-flight below, so neither state's
+  //    rule can be pasted over the other's.
+  //
+  // 🔴 THE DIGITS IN '00A' ARE PADDING, NOT A NUMBER. `ocdDistrictSuffix` carries the branch that
+  //    turns '00A' into 'A' rather than '0A'; Alaska is the first state here whose district code
+  //    is purely alphabetic. See src/lib/ocdDistrictSuffix.ts.
+  //
+  // 🔴 EVERY SENATE DISTRICT IS EXACTLY TWO HOUSE DISTRICTS: Senate letter N covers House 2N-1
+  //    and 2N. Measured 2026-10-30 against TIGER 2024 two independent ways — all 40 House
+  //    interior points fall inside Senate ceil(N/2), and all 20 Senate ALAND values equal the sum
+  //    of their two House ALAND values to within 0.1%. ⚠ That pairing is the exact thing Alaska's
+  //    2021-22 redistricting litigation was about (the Eagle River / East Anchorage pairings were
+  //    struck down twice), so it is asserted in CC_0316's post-verify against the loaded polygons
+  //    rather than assumed. It is a STRUCTURAL check and NOT a vintage check — the 2013 plan
+  //    nests the same way — which is why the two live apart.
+  AK: new Set(['place', 'sldu', 'sldl']),
   // HI. sldu/sldl ONLY, and deliberately no `place`: Hawaii has NO INCORPORATED PLACES AT
   // ALL — TIGERweb's Incorporated Places layer returns zero features for state 15, against
   // 483 for California, so a place load here would import nothing and the empty result
@@ -815,6 +851,21 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // sldu/sldl are the 2022 reapportionment maps and were absent entirely: production held
   // 0 of 1,178 G5210 and 0 of 3,065 G5220 rows for Hawaii before this.
   HI: new Set(['sldu', 'sldl']),
+  // ID. Boise / Ada County / Idaho legislature deep seed. Production held ZERO G5210 and ZERO
+  // G5220 rows for FIPS 16 and ZERO state legislative offices before this wave; measured
+  // 2026-10-30. `county` is EXCLUDED and must NOT be re-run — all 44 Idaho G4020 rows are
+  // already in production from the national load, and Ada County (16001) is one of them.
+  // 🔴 IDAHO'S HOUSE IS MULTI-MEMBER, THE SAME SHAPE AS AZ AND WA. Each of the 35 legislative
+  // districts elects ONE senator and TWO representatives — Seat A and Seat B — over the SAME
+  // boundary. So TIGER SLDL is 35 POLYGONS COVERING 70 SEATS, NOT 70 polygons, and SLDU and
+  // SLDL are the same 35 shapes with the same numbers. Measured against TIGERweb 2026-10-30:
+  // all 12 probe points resolve to an IDENTICAL district number in both layers. A seeder that
+  // reads the polygon count as a seat count builds half a chamber and nothing errors.
+  // place: Idaho's incorporated cities are elected governments. The G4110 filter in the
+  // pre-flight excludes the G4210 CDPs in the same file. This slice needs Boise 1608830 —
+  // ⚠ whose TIGER BASENAME is 'Boise City', not 'Boise' (the city's legal name is "City of
+  // Boise City"), so a name search for 'Boise' alone is a false-absence trap. Match the GEOID.
+  ID: new Set(['sldu', 'sldl', 'place']),
 };
 
 // STATE_LAYER_TYPE_MAP: override layerDef.district_type for the insertDistrictIfMissing
@@ -3931,8 +3982,604 @@ async function processLayer(
     }
   }
 
+  // ── ID pre-flight (Boise / Ada County / Idaho legislature deep seed) ──────
+  // Counts MEASURED against TIGERweb for FIPS 16 on 2026-10-30, then asserted here against the
+  // raw downloaded shapefile before any DB write:
+  //   sldu   35 records, MTFCC G5210, SLDUST '001'..'035', no letters
+  //   sldl   35 records, MTFCC G5220, SLDLST '001'..'035', no letters
+  //   place 199 G4110 incorporated cities (the file's remaining records are G4210 CDPs)
+  //
+  // 🔴 35 IS A POLYGON COUNT AND ONLY THE SENATE'S SEAT COUNT. Idaho Const. Art. III §2 and §4
+  // give each of the 35 legislative districts one senator and TWO representatives, Seat A and
+  // Seat B, elected over the SAME boundary — the AZ/WA multi-member shape. So sldl's 35
+  // polygons carry 70 House seats. The seat arithmetic is asserted separately below, apart from
+  // the polygon count, so the two can never be read as the same number.
+  //
+  // 🔴🔴 NOTHING IN THE FILE DATES THE MAP, AND A COUNT CAN NEVER DATE IT HERE. Idaho's
+  // SUPERSEDED 2011 plan (L87) also had 35 Senate and 35 House polygons, because the number is
+  // fixed by Idaho Const. Art. III §2 at "not less than thirty nor more than thirty-five"
+  // legislative districts and Idaho has sat at 35 since 1992. 35/35 is therefore identical in
+  // every TIGER vintage, and a wrong count means a wrong state, a wrong layer or a truncated
+  // download — it can NEVER mean a superseded plan. Only the anchors below can date this map.
+  //
+  // ▶ The anchors were produced by resolving each point against BOTH TIGERweb vintages — layer
+  // 13/14 ("2018 State Legislative Districts", which carries the 2011 L87 plan) and layer 5/6
+  // ("2024", which carries the 2021 L03 commission plan) — and keeping what each one actually
+  // returned. Six of the twelve DISAGREE between the plans and are what dates the file; the
+  // other six agree under both and are positive controls on the point-in-polygon test itself.
+  // 🔴 DO NOT "TIDY" THE DISAGREEING SIX AWAY. Boise, Nampa, Pocatello, Idaho Falls, Coeur
+  // d'Alene and Rexburg City Halls — the six most recognisable civic points in the state —
+  // ALL resolve IDENTICALLY under both plans, so an anchor set chosen for recognisability
+  // cannot date the map at all. That is the South Dakota failure, and the discrimination
+  // assertion below exists to stop it being reintroduced.
+  // ⚠ Every coordinate came from the Census address geocoder, was rounded to 4 dp FIRST and
+  // re-resolved against BOTH vintages afterwards, so the value in this file is exactly the
+  // value that was tested — the KS-1 rule.
+  //
+  // 🟢 ONE ANCHOR TABLE SERVES BOTH LAYERS, AND THAT IS A MEASUREMENT, NOT A SHORTCUT: all 12
+  // points returned the SAME district number from sldu and sldl in both vintages, which is the
+  // multi-member structure showing up in the geometry. If a future TIGER ever breaks that, the
+  // identical-layer assertion below fires.
+  if (fipsArg === '16') {
+    const EXPECTED_ID_MTFCC: Record<string, number> = {
+      sldu:   35,  // 35 ID legislative districts, 1 senator each — measured 2026-10-30
+      sldl:   35,  // 35 polygons covering 70 House seats (Seat A + Seat B per district), NOT 70
+      place: 200,  // 200 ID G4110 incorporated cities (198 FUNCSTAT 'A' + 2 'I'); the file's
+                   // other 36 records are G4210 CDPs. MEASURED from the .dbf — see below.
+    };
+    // ⚠ 200 IS THE FILE'S NUMBER AND TIGERWEB SAYS 199. BOTH ARE RIGHT; THE VINTAGES DIFFER.
+    // The first expectation written here was 199, taken from TIGERweb's Incorporated Places
+    // layer, and this assertion caught it. Diffing the two sets GEOID by GEOID on 2026-10-30
+    // showed the difference is exactly one entity and in one direction:
+    //   Hamer (1634570), FUNCSTAT 'I' — present in TIGER 2024, ABSENT from TIGERweb's BAS 2026.
+    // Nothing is in BAS 2026 and missing from the file. So Hamer went inactive between the two
+    // vintages; Lost River (1647890) is the other FUNCSTAT 'I' place and survives in both.
+    // 🔴 THIS NUMBER WAS NOT RAISED TO CLEAR A RED — it was raised because the red was read.
+    // ▶ A future re-measure against TIGERweb will say 199 again. That is NOT drift, and the
+    // number to change is this one only if the TIGER FILE itself changes.
+    // FUNCSTAT is deliberately NOT filtered, matching every other state in this loader: an
+    // inactive place is still a real legal polygon, and this slice seeds offices only for
+    // Boise (1608830) regardless.
+    // [lat, lon, code under the ADOPTED 2021 L03 plan, code under the SUPERSEDED 2011 L87 plan, label]
+    const ID_ANCHORS_BOTH_LAYERS: Array<[number, number, string, string, string]> = [
+      // — the six that DISAGREE: these are what date the map —
+      [43.6101, -116.3929, '21', '20', 'Meridian City Hall — 2011 LD-20, 2021 LD-21'],
+      [42.5549, -114.4686, '25', '24', 'Twin Falls City Hall — 2011 LD-24, 2021 LD-25'],
+      [46.4181, -117.0189,  '7',  '6', 'Lewiston City Hall — 2011 LD-6, 2021 LD-7'],
+      [46.7324, -116.9999,  '6',  '5', 'Moscow City Hall — 2011 LD-5, 2021 LD-6'],
+      [43.6677, -116.6929, '11', '10', 'Caldwell City Hall — 2011 LD-10, 2021 LD-11'],
+      [47.7111, -116.9480,  '5',  '3', 'Post Falls City Hall — 2011 LD-3, 2021 LD-5'],
+      // — the six that AGREE under both plans: positive controls on the hit test itself —
+      [43.6154, -116.2019, '19', '19', 'Boise City Hall — LD-19 under both plans'],
+      [43.5829, -116.5700, '12', '12', 'Nampa City Hall — LD-12 under both plans'],
+      [43.4940, -112.0384, '33', '33', 'Idaho Falls City Hall — LD-33 under both plans'],
+      [42.8739, -112.4486, '29', '29', 'Pocatello City Hall — LD-29 under both plans'],
+      [47.6716, -116.7756,  '4',  '4', "Coeur d'Alene City Hall — LD-4 under both plans"],
+      [43.8267, -111.7810, '34', '34', 'Rexburg City Hall — LD-34 under both plans'],
+    ];
+    const ID_VINTAGE_ANCHORS: Record<string, Array<[number, number, string, string, string]>> = {
+      sldu: ID_ANCHORS_BOTH_LAYERS.map((a) => [...a] as typeof a),
+      sldl: ID_ANCHORS_BOTH_LAYERS.map((a) => [...a] as typeof a),
+    };
+    const ID_MIN_DISCRIMINATING = 4;
+    const ID_SENATE_SEATS = 35;
+    const ID_HOUSE_SEATS = 70;
+    // Controls, so every half of this gate can be WATCHED FAILING rather than trusted:
+    //   ID_PREFLIGHT_CONTROL=count   perturbs the expected record count  -> MTFCC assertion fires
+    //   ID_PREFLIGHT_CONTROL=anchor  perturbs one anchor's expected code -> VINTAGE fires
+    //   ID_PREFLIGHT_CONTROL=weak    drops the disagreeing anchors       -> DISCRIMINATION fires
+    // 🟢 AND IDAHO HAS THE CONTROL THAT NEEDS NO FLAG AT ALL, the one South Dakota has:
+    //   --vintage 2020  (carries the 2011 L87 plan) -> all six discriminating anchors name the
+    //   wrong plan and the vintage assertion aborts with "THIS FILE IS THE SUPERSEDED 2011
+    //   PLAN". The record count is byte-identical between the two vintages, so this control
+    //   tests ONLY the geometry, which is the thing actually in doubt.
+    const ID_CONTROL = process.env.ID_PREFLIGHT_CONTROL ?? '';
+    if (ID_CONTROL) console.log(`  [${layer}] ⚠ ID_PREFLIGHT_CONTROL=${ID_CONTROL} — this run is a CONTROL and must FAIL.`);
+    if (ID_CONTROL === 'count' && layer in EXPECTED_ID_MTFCC) EXPECTED_ID_MTFCC[layer] = EXPECTED_ID_MTFCC[layer] - 1;
+    if (ID_CONTROL === 'anchor' && ID_VINTAGE_ANCHORS[layer]?.length) ID_VINTAGE_ANCHORS[layer][0][2] = '999';
+    if (ID_CONTROL === 'weak' && ID_VINTAGE_ANCHORS[layer]?.length) {
+      ID_VINTAGE_ANCHORS[layer] = ID_VINTAGE_ANCHORS[layer].filter((a) => a[2] === a[3]);
+    }
+
+    if (layer in EXPECTED_ID_MTFCC) {
+      const expected = EXPECTED_ID_MTFCC[layer];
+      const anchors = ID_VINTAGE_ANCHORS[layer] ?? [];
+      let actualCount = 0;
+      const ocdSuffixes = new Set<string>();
+      const seenCodes = new Set<string>();
+      const anchorHits: Array<string | null> = anchors.map(() => null);
+
+      const ringHas = (x: number, y: number, ring: number[][]): boolean => {
+        let inside = false;
+        for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+          const [xi, yi] = ring[i];
+          const [xj, yj] = ring[j];
+          if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
+        }
+        return inside;
+      };
+      const polyHas = (x: number, y: number, poly: number[][][]): boolean => {
+        if (!ringHas(x, y, poly[0])) return false;
+        for (let k = 1; k < poly.length; k++) if (ringHas(x, y, poly[k])) return false;
+        return true;
+      };
+      type Ring = number[][];
+      type GeoJsonPoly = { type: string; coordinates: Ring[] | Ring[][] };
+      const geomHas = (x: number, y: number, geom: GeoJsonPoly | null | undefined): boolean => {
+        if (!geom) return false;
+        if (geom.type === 'Polygon') return polyHas(x, y, geom.coordinates as Ring[]);
+        if (geom.type === 'MultiPolygon') return (geom.coordinates as Ring[][]).some((p) => polyHas(x, y, p));
+        return false;
+      };
+
+      // 🔴 THE ANCHOR SET MUST BE ABLE TO TELL THE PLANS APART. Runs BEFORE the file is read,
+      // because it is a statement about this source file rather than about the download. It is
+      // what stops a later editor from replacing the six disagreeing anchors with recognisable
+      // civic landmarks and leaving Idaho with a gate that agrees with the 2011 map — which,
+      // measured, every recognisable civic point in the state does.
+      if (anchors.length) {
+        const discriminatingNow = anchors.filter((a) => a[2] !== a[3]).length;
+        if (discriminatingNow < ID_MIN_DISCRIMINATING) {
+          const err = new Error(
+            `[ID anchor discrimination assertion] layer=${layer}: only ${discriminatingNow} of ` +
+            `${anchors.length} anchors distinguish the adopted 2021 L03 plan from the superseded ` +
+            `2011 L87 plan, expected at least ${ID_MIN_DISCRIMINATING}. ⚠ Boise, Nampa, Pocatello, ` +
+            `Idaho Falls, Coeur d'Alene and Rexburg City Halls ALL resolve identically under both ` +
+            `plans, so an anchor set with too few disagreements cannot date the map at all. ` +
+            `Aborting before any DB write.`
+          );
+          err.name = 'MtfccAssertionError';
+          throw err;
+        }
+      }
+
+      await streamShapefile(shpPath, dbfPath, async (geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layer === 'place') {
+          const mtfccRaw = (props['MTFCC'] ?? props['mtfcc'] ?? '') as string;
+          if (mtfccRaw && mtfccRaw !== 'G4110') return;
+        }
+        let code: string | null = null;
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+          // 🔴 Never parseInt this. Idaho has no lettered codes today, but the asserted-absence
+          // check below is what proves that rather than assuming it.
+          code = ocdDistrictSuffix(fpVal);
+          ocdSuffixes.add(code);
+          seenCodes.add(fpVal);
+        }
+        actualCount++;
+        for (let i = 0; i < anchors.length; i++) {
+          if (anchorHits[i] !== null) continue;
+          const [lat, lon] = anchors[i];
+          if (geomHas(lon, lat, geom as GeoJsonPoly)) anchorHits[i] = code;
+        }
+      });
+
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[ID MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. ⚠ 35/35 is identical in every TIGER vintage because Idaho Const. ` +
+          `Art. III §2 fixes the district count, so a WRONG count here means a wrong state, a ` +
+          `wrong layer or a truncated download — it can never mean a superseded plan. ` +
+          `Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+
+      if (layer === 'sldu' || layer === 'sldl') {
+        if (ocdSuffixes.size !== expected) {
+          const err = new Error(
+            `[ID OCD-ID assertion] layer=${layer}: ${actualCount} records collapsed to ` +
+            `${ocdSuffixes.size} distinct OCD-ID suffixes, expected ${expected}. Aborting before ` +
+            `any DB write.`
+          );
+          err.name = 'MtfccAssertionError';
+          throw err;
+        }
+        // 🔴 ASSERTED AS AN ABSENCE. Idaho does NOT split a district into lettered halves the way
+        // MN/MD/SD/ND do — its two House seats share one boundary and are distinguished by the
+        // OFFICE TITLE ('Seat A' / 'Seat B'), never by the district code. A lettered code here
+        // would mean TIGER had started modelling the seats as separate geography, which would
+        // change how this whole slice is seeded.
+        const lettered = [...ocdSuffixes].filter((s) => /[A-Z]$/.test(s)).sort();
+        if (lettered.length) {
+          const err = new Error(
+            `[ID subdistrict assertion] layer=${layer}: lettered district codes ` +
+            `${JSON.stringify(lettered)} are PRESENT, expected NONE. Idaho's two House seats per ` +
+            `district share ONE boundary and are distinguished by office title, not by district ` +
+            `code. A lettered code means TIGER now models them as separate geography — stop and ` +
+            `re-measure the whole slice. Aborting before any DB write.`
+          );
+          err.name = 'MtfccAssertionError';
+          throw err;
+        }
+        // Codes 1..35 contiguous — catches a partial download that still happens to total 35.
+        const missing: string[] = [];
+        for (let n = 1; n <= expected; n++) if (!ocdSuffixes.has(String(n))) missing.push(String(n));
+        if (missing.length) {
+          const err = new Error(
+            `[ID contiguity assertion] layer=${layer}: district codes ${JSON.stringify(missing)} ` +
+            `are absent although the record count is correct. Aborting before any DB write.`
+          );
+          err.name = 'MtfccAssertionError';
+          throw err;
+        }
+        // 🔴 THE SEAT ARITHMETIC, ASSERTED APART FROM THE POLYGON COUNT so the two can never be
+        // read as the same number. 35 polygons x 1 senator = 35; 35 polygons x 2 reps = 70.
+        const seats = layer === 'sldu' ? expected * 1 : expected * 2;
+        const expectedSeats = layer === 'sldu' ? ID_SENATE_SEATS : ID_HOUSE_SEATS;
+        if (seats !== expectedSeats) {
+          const err = new Error(
+            `[ID seat assertion] layer=${layer}: ${expected} polygons imply ${seats} seats, ` +
+            `expected ${expectedSeats}. Aborting before any DB write.`
+          );
+          err.name = 'MtfccAssertionError';
+          throw err;
+        }
+      }
+
+      const anchorFailures = anchors
+        .map((a, i) => ({ expected: a[2], prior: a[3], got: anchorHits[i], label: a[4] }))
+        .filter((r) => r.got !== r.expected);
+      if (anchorFailures.length) {
+        // 🔴 NAME THE CONDITION ACTUALLY FOUND. This file is the 2011 plan only if EVERY anchor
+        // that distinguishes the plans failed onto its 2011 value — a subset failing cannot be a
+        // different map, because the anchors that still agree name the adopted one. This is the
+        // South Dakota correction, carried forward deliberately: the =anchor control perturbs an
+        // expected value to '999', which lands on its own prior and would otherwise be
+        // misdiagnosed as "this is the superseded plan" when it is a corrupted table.
+        const allOnPrior = anchorFailures.every((r) => r.got === r.prior);
+        const discriminatingAnchors = anchors.filter((a) => a[2] !== a[3]);
+        const failedDiscriminating = anchorFailures.filter((r) => r.expected !== r.prior);
+        const isPriorPlan = allOnPrior
+          && discriminatingAnchors.length > 0
+          && failedDiscriminating.length === discriminatingAnchors.length;
+        const diagnosis = isPriorPlan
+          ? `⚠ ALL ${discriminatingAnchors.length} discriminating anchors failed onto their 2011 ` +
+            `value — THIS FILE IS THE SUPERSEDED 2011 L87 PLAN, not a damaged download. TIGER ` +
+            `2020 carries it, and its record count is identical, so nothing else here can tell.`
+          : `⚠ Only ${failedDiscriminating.length} of ${discriminatingAnchors.length} discriminating ` +
+            `anchors failed, so this is NOT simply the 2011 plan — suspect a wrong state, a wrong ` +
+            `layer, a moved anchor, or an edited anchor table.`;
+        const err = new Error(
+          `[ID vintage assertion] layer=${layer}: ${anchorFailures.length} of ${anchors.length} ` +
+          `anchors disagree with the adopted 2021 L03 plan: ` +
+          anchorFailures.map((r) => `${r.label} expected ${r.expected}, got ${r.got ?? 'NONE'} (2011: ${r.prior})`).join('; ') +
+          `. ${diagnosis} These anchors were resolved against TIGERweb's own 2018 and 2024 ` +
+          `Legislative layers on 2026-10-30. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+
+      const discriminating = anchors.filter((a) => a[2] !== a[3]).length;
+      // The anchor clause is printed only for the SLD layers — `place` carries no anchors, and a
+      // trailing "0/0 anchors agree" there reads like a gate that ran and found nothing.
+      console.log(`  [${layer}] ID MTFCC pre-flight assertion PASSED: ${actualCount} records ` +
+                  `(expected ${expected})` +
+                  (layer === 'place'
+                    ? ' — G4110 only, G4210 CDPs filtered; FUNCSTAT not filtered.'
+                    : `, ${ocdSuffixes.size} distinct OCD-ID suffixes, no lettered codes, ` +
+                      `codes 1..${expected} contiguous, seat arithmetic ` +
+                      `${expected}x${layer === 'sldu' ? 1 : 2} = ${layer === 'sldu' ? ID_SENATE_SEATS : ID_HOUSE_SEATS} holds, ` +
+                      `${anchors.length}/${anchors.length} adopted-2021-plan anchors agree ` +
+                      `(${discriminating} of them distinguish the superseded 2011 plan).`));
+    }
+  }
+
+  // ── AK pre-flight (Alaska Legislature deep seed) ──────────────────────────
+  // Counts MEASURED by reading the real TIGER .dbf for FIPS 02 on 2026-10-30, then asserted here
+  // against the raw downloaded shapefile before any DB write:
+  //   sldu  20 records, MTFCC G5210, SLDUST '00A'..'00T'  — LETTERED
+  //   sldl  40 records, MTFCC G5220, SLDLST '001'..'040'  — numbered
+  //
+  // 🔴 ALASKA IS THE INVERSE OF IDAHO AND THE TWO RULES MUST NOT BE PASTED OVER EACH OTHER.
+  // Idaho asserts that lettered district codes are ABSENT, because a letter there would mean
+  // TIGER had begun splitting its multi-member House seats into separate geography. In Alaska the
+  // letters ARE the Senate districts' identity — Alaska Const. Art. II sec. 2 fixes the
+  // legislature at "a senate of twenty members and a house of representatives of forty members",
+  // and the Senate districts are named A..T, not numbered. So here the letters are asserted as a
+  // PRESENCE on sldu and as an ABSENCE on sldl, and each failure message says which it is.
+  //
+  // 🔴 A COUNT CAN NEVER DATE THIS MAP. 20/40 is fixed by the constitution and is identical in
+  // every TIGER vintage — the superseded 2013 plan is also 20 Senate and 40 House polygons. A
+  // wrong count here means a wrong state, a wrong layer or a truncated download; it can NEVER
+  // mean a superseded plan. Only the anchors below can date the file.
+  //
+  // ▶ The anchors were produced by resolving each point against FIVE TIGER vintages (2020, 2021,
+  // 2022, 2023, 2024) on 2026-10-30 and keeping what each actually returned. 2020 and 2021 carry
+  // the superseded 2013 plan; 2022, 2023 and 2024 are IDENTICAL to one another at all 28 probe
+  // points and carry the adopted 2021 plan as amended by the Alaska Supreme Court.
+  // 🟢 ALASKA RENUMBERED END TO END in 2021 — the old plan counted up from the Interior, the new
+  // one from Southeast — so 21 of 28 probe points disagree between the plans. That is the OPPOSITE
+  // of Idaho's problem, where every recognisable civic point resolved identically under both. The
+  // eight discriminating anchors per layer below are therefore easy to come by, and the four
+  // agreeing ones are kept as positive controls on the point-in-polygon test itself.
+  // ⚠ Every coordinate in this table is EXACTLY the value that was tested — rounded to 4 dp first
+  // and then resolved against all five vintages, never rounded afterwards (the KS-1 rule).
+  //
+  // 🔴 THE SENATE/HOUSE NESTING IS NOT CHECKED HERE, ON PURPOSE. Senate letter N covers House
+  // 2N-1 and 2N, and that was measured two independent ways (all 40 House interior points fall in
+  // Senate ceil(N/2); all 20 Senate ALAND values equal the sum of their two House ALANDs to within
+  // 0.1%). But it is a STRUCTURAL invariant that the superseded 2013 plan satisfies too, so it
+  // cannot date anything — and this pre-flight runs ONE LAYER AT A TIME and so cannot see both.
+  // It is asserted in CC_0316's post-verify, against the loaded polygons, where both layers are
+  // present at once. Keeping it out of here is what stops it being read as a vintage check.
+  if (fipsArg === '02') {
+    const EXPECTED_AK_MTFCC: Record<string, number> = {
+      sldu: 20,  // Alaska Const. Art. II sec. 2 — 20 senators, districts lettered A..T
+      sldl: 40,  // Alaska Const. Art. II sec. 2 — 40 representatives, districts numbered 1..40
+    };
+    // [lat, lon, code under the ADOPTED 2021 plan, code under the SUPERSEDED 2013 plan, label]
+    const AK_SLDU_ANCHORS: Array<[number, number, string, string, string]> = [
+      // — the eight that DISAGREE: these are what date the map —
+      [61.2181, -149.9003, 'I', 'J', 'Anchorage City Hall — 2013 SD-J, 2021 SD-I'],
+      [64.8378, -147.7164, 'P', 'A', 'Fairbanks City Hall — 2013 SD-A, 2021 SD-P'],
+      [58.3019, -134.4197, 'B', 'Q', 'Juneau City Hall — 2013 SD-Q, 2021 SD-B'],
+      [61.5814, -149.4394, 'N', 'D', 'Wasilla City Hall — 2013 SD-D, 2021 SD-N'],
+      [55.3422, -131.6461, 'A', 'R', 'Ketchikan City Hall — 2013 SD-R, 2021 SD-A'],
+      [57.7900, -152.4072, 'C', 'P', 'Kodiak City Hall — 2013 SD-P, 2021 SD-C'],
+      [61.3214, -149.5678, 'L', 'G', 'Eagle River — 2013 SD-G, 2021 SD-L'],
+      [61.2170, -149.7300, 'K', 'H', 'Muldoon / East Anchorage — 2013 SD-H, 2021 SD-K'],
+      // — the four that AGREE under both plans: positive controls on the hit test itself —
+      [60.7922, -161.7558, 'S', 'S', 'Bethel City Hall — SD-S under both plans'],
+      [64.5011, -165.4064, 'T', 'T', 'Nome City Hall — SD-T under both plans'],
+      [71.2906, -156.7886, 'T', 'T', 'Utqiagvik — SD-T under both plans'],
+      [53.8753, -166.5331, 'S', 'S', 'Unalaska — SD-S under both plans'],
+    ];
+    const AK_SLDL_ANCHORS: Array<[number, number, string, string, string]> = [
+      // — the eight that DISAGREE —
+      [61.2181, -149.9003, '17', '20', 'Anchorage City Hall — 2013 HD-20, 2021 HD-17'],
+      [64.8378, -147.7164, '31',  '1', 'Fairbanks City Hall — 2013 HD-1, 2021 HD-31'],
+      [58.3019, -134.4197,  '4', '33', 'Juneau City Hall — 2013 HD-33, 2021 HD-4'],
+      [61.5814, -149.4394, '27',  '7', 'Wasilla City Hall — 2013 HD-7, 2021 HD-27'],
+      [55.3422, -131.6461,  '1', '36', 'Ketchikan City Hall — 2013 HD-36, 2021 HD-1'],
+      [57.7900, -152.4072,  '5', '32', 'Kodiak City Hall — 2013 HD-32, 2021 HD-5'],
+      [61.3214, -149.5678, '23', '14', 'Eagle River — 2013 HD-14, 2021 HD-23'],
+      [61.2170, -149.7300, '22', '15', 'Muldoon / East Anchorage — 2013 HD-15, 2021 HD-22'],
+      // — the four that AGREE under both plans —
+      [60.7922, -161.7558, '38', '38', 'Bethel City Hall — HD-38 under both plans'],
+      [64.5011, -165.4064, '39', '39', 'Nome City Hall — HD-39 under both plans'],
+      [71.2906, -156.7886, '40', '40', 'Utqiagvik — HD-40 under both plans'],
+      [53.8753, -166.5331, '37', '37', 'Unalaska — HD-37 under both plans'],
+    ];
+    const AK_VINTAGE_ANCHORS: Record<string, Array<[number, number, string, string, string]>> = {
+      sldu: AK_SLDU_ANCHORS.map((a) => [...a] as typeof a),
+      sldl: AK_SLDL_ANCHORS.map((a) => [...a] as typeof a),
+    };
+    const AK_MIN_DISCRIMINATING = 4;
+    const AK_SENATE_SEATS = 20;
+    const AK_HOUSE_SEATS = 40;
+    // Controls, so every half of this gate can be WATCHED FAILING rather than trusted:
+    //   AK_PREFLIGHT_CONTROL=count    perturbs the expected record count  -> MTFCC assertion fires
+    //   AK_PREFLIGHT_CONTROL=anchor   perturbs one anchor's expected code -> VINTAGE fires
+    //   AK_PREFLIGHT_CONTROL=weak     drops the disagreeing anchors       -> DISCRIMINATION fires
+    //   AK_PREFLIGHT_CONTROL=letters  claims sldu carries no letters      -> LETTER assertion fires
+    // 🟢 AND, like Idaho, ALASKA HAS THE CONTROL THAT NEEDS NO FLAG: --vintage 2021 (or 2020)
+    //   carries the superseded 2013 plan. Its record count is IDENTICAL (20/40) and its code
+    //   SHAPE is identical (lettered Senate, numbered House), so that run tests ONLY the
+    //   geometry — which is the thing actually in doubt — and must abort with
+    //   "THIS FILE IS THE SUPERSEDED 2013 PLAN".
+    const AK_CONTROL = process.env.AK_PREFLIGHT_CONTROL ?? '';
+    if (AK_CONTROL) console.log(`  [${layer}] ⚠ AK_PREFLIGHT_CONTROL=${AK_CONTROL} — this run is a CONTROL and must FAIL.`);
+    if (AK_CONTROL === 'count' && layer in EXPECTED_AK_MTFCC) EXPECTED_AK_MTFCC[layer] = EXPECTED_AK_MTFCC[layer] - 1;
+    if (AK_CONTROL === 'anchor' && AK_VINTAGE_ANCHORS[layer]?.length) AK_VINTAGE_ANCHORS[layer][0][2] = 'ZZ';
+    if (AK_CONTROL === 'weak' && AK_VINTAGE_ANCHORS[layer]?.length) {
+      AK_VINTAGE_ANCHORS[layer] = AK_VINTAGE_ANCHORS[layer].filter((a) => a[2] === a[3]);
+    }
+
+    if (layer in EXPECTED_AK_MTFCC) {
+      const expected = EXPECTED_AK_MTFCC[layer];
+      const anchors = AK_VINTAGE_ANCHORS[layer] ?? [];
+      let actualCount = 0;
+      const ocdSuffixes = new Set<string>();
+      const anchorHits: Array<string | null> = anchors.map(() => null);
+
+      const ringHas = (x: number, y: number, ring: number[][]): boolean => {
+        let inside = false;
+        for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+          const [xi, yi] = ring[i];
+          const [xj, yj] = ring[j];
+          if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
+        }
+        return inside;
+      };
+      const polyHas = (x: number, y: number, poly: number[][][]): boolean => {
+        if (!ringHas(x, y, poly[0])) return false;
+        for (let k = 1; k < poly.length; k++) if (ringHas(x, y, poly[k])) return false;
+        return true;
+      };
+      type Ring = number[][];
+      type GeoJsonPoly = { type: string; coordinates: Ring[] | Ring[][] };
+      const geomHas = (x: number, y: number, geom: GeoJsonPoly | null | undefined): boolean => {
+        if (!geom) return false;
+        if (geom.type === 'Polygon') return polyHas(x, y, geom.coordinates as Ring[]);
+        if (geom.type === 'MultiPolygon') return (geom.coordinates as Ring[][]).some((p) => polyHas(x, y, p));
+        return false;
+      };
+
+      // 🔴 THE ANCHOR SET MUST BE ABLE TO TELL THE PLANS APART — the same guard Idaho carries,
+      // for the same reason, even though Alaska makes discriminating anchors easy to find.
+      if (anchors.length) {
+        const discriminatingNow = anchors.filter((a) => a[2] !== a[3]).length;
+        if (discriminatingNow < AK_MIN_DISCRIMINATING) {
+          const err = new Error(
+            `[AK anchor discrimination assertion] layer=${layer}: only ${discriminatingNow} of ` +
+            `${anchors.length} anchors distinguish the adopted 2021 plan from the superseded 2013 ` +
+            `plan, expected at least ${AK_MIN_DISCRIMINATING}. Bethel, Nome, Utqiagvik and Unalaska ` +
+            `resolve identically under both plans and are controls, NOT discriminators. ` +
+            `Aborting before any DB write.`
+          );
+          err.name = 'MtfccAssertionError';
+          throw err;
+        }
+      }
+
+      await streamShapefile(shpPath, dbfPath, async (geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        let code: string | null = null;
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+          // 🔴 Never parseInt an Alaska Senate code. '00A' is not a number; ocdDistrictSuffix
+          // carries the branch that returns 'A' rather than '0A'.
+          code = ocdDistrictSuffix(fpVal);
+          ocdSuffixes.add(code);
+        }
+        actualCount++;
+        for (let i = 0; i < anchors.length; i++) {
+          if (anchorHits[i] !== null) continue;
+          const [lat, lon] = anchors[i];
+          if (geomHas(lon, lat, geom as GeoJsonPoly)) anchorHits[i] = code;
+        }
+      });
+
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[AK MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. ⚠ 20/40 is identical in every TIGER vintage because Alaska Const. ` +
+          `Art. II sec. 2 fixes the chamber sizes, so a WRONG count here means a wrong state, a ` +
+          `wrong layer or a truncated download — it can never mean a superseded plan. ` +
+          `Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+
+      if (ocdSuffixes.size !== expected) {
+        const err = new Error(
+          `[AK OCD-ID assertion] layer=${layer}: ${actualCount} records collapsed to ` +
+          `${ocdSuffixes.size} distinct OCD-ID suffixes, expected ${expected}. ⚠ If this is sldu, ` +
+          `suspect ocdDistrictSuffix having dropped the LETTER — '00A'..'00T' all collapse onto ` +
+          `'0' the moment the alpha part is lost. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+
+      if (layer === 'sldu') {
+        // 🔴 ASSERTED AS A PRESENCE — the exact inverse of the Idaho rule directly above.
+        // Alaska's Senate districts ARE the letters A..T. If these ever arrive as numbers it
+        // means TIGER has renamed the whole chamber, and every office title, district label and
+        // seeded seat letter in CC_0316/CC_0317 is keyed on the letter.
+        const expectedLetters = Array.from({ length: expected }, (_, i) => String.fromCharCode(65 + i));
+        const got = [...ocdSuffixes].sort();
+        const missing = expectedLetters.filter((l) => !ocdSuffixes.has(l));
+        const unexpected = got.filter((s) => !expectedLetters.includes(s));
+        const letteredCount = AK_CONTROL === 'letters' ? 0 : got.filter((s) => /^[A-Z]+$/.test(s)).length;
+        if (letteredCount !== expected || missing.length || unexpected.length) {
+          const err = new Error(
+            `[AK Senate letter assertion] layer=sldu: expected exactly the ${expected} lettered ` +
+            `codes A..T, got ${JSON.stringify(got)} (${letteredCount} lettered; missing ` +
+            `${JSON.stringify(missing)}; unexpected ${JSON.stringify(unexpected)}). ` +
+            `⚠ Alaska's Senate districts are LETTERED, not numbered — this is the INVERSE of the ` +
+            `Idaho assertion above, which requires letters to be ABSENT. Do not "fix" this by ` +
+            `copying Idaho's rule. Aborting before any DB write.`
+          );
+          err.name = 'MtfccAssertionError';
+          throw err;
+        }
+      }
+
+      if (layer === 'sldl') {
+        // 🔴 ASSERTED AS AN ABSENCE on this layer only: the House is numbered 1..40, single-member.
+        const lettered = [...ocdSuffixes].filter((s) => /[A-Z]/.test(s)).sort();
+        if (lettered.length) {
+          const err = new Error(
+            `[AK House letter assertion] layer=sldl: lettered district codes ${JSON.stringify(lettered)} ` +
+            `are PRESENT, expected NONE. Alaska's 40 House districts are numbered and ` +
+            `single-member; a letter here would mean TIGER had begun splitting them. ` +
+            `Aborting before any DB write.`
+          );
+          err.name = 'MtfccAssertionError';
+          throw err;
+        }
+        const missing: string[] = [];
+        for (let n = 1; n <= expected; n++) if (!ocdSuffixes.has(String(n))) missing.push(String(n));
+        if (missing.length) {
+          const err = new Error(
+            `[AK contiguity assertion] layer=sldl: district codes ${JSON.stringify(missing)} are ` +
+            `absent although the record count is correct. Aborting before any DB write.`
+          );
+          err.name = 'MtfccAssertionError';
+          throw err;
+        }
+      }
+
+      // 🔴 THE SEAT ARITHMETIC, ASSERTED APART FROM THE POLYGON COUNT. Alaska is single-member in
+      // BOTH chambers — 1 senator per Senate district, 1 representative per House district — so
+      // unlike Idaho the two numbers coincide. They are still asserted separately, so a future
+      // reader cannot mistake "polygons" for "seats" the way Idaho's shape invites.
+      const seats = expected * 1;
+      const expectedSeats = layer === 'sldu' ? AK_SENATE_SEATS : AK_HOUSE_SEATS;
+      if (seats !== expectedSeats) {
+        const err = new Error(
+          `[AK seat assertion] layer=${layer}: ${expected} polygons imply ${seats} seats, expected ` +
+          `${expectedSeats}. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+
+      const anchorFailures = anchors
+        .map((a, i) => ({ expected: a[2], prior: a[3], got: anchorHits[i], label: a[4] }))
+        .filter((r) => r.got !== r.expected);
+      if (anchorFailures.length) {
+        // 🔴 NAME THE CONDITION ACTUALLY FOUND — the South Dakota correction, carried forward.
+        // This file is the 2013 plan only if EVERY anchor that distinguishes the plans failed onto
+        // its 2013 value; a subset failing cannot be a different map, because the anchors that
+        // still agree name the adopted one.
+        const allOnPrior = anchorFailures.every((r) => r.got === r.prior);
+        const discriminatingAnchors = anchors.filter((a) => a[2] !== a[3]);
+        const failedDiscriminating = anchorFailures.filter((r) => r.expected !== r.prior);
+        const isPriorPlan = allOnPrior
+          && discriminatingAnchors.length > 0
+          && failedDiscriminating.length === discriminatingAnchors.length;
+        const diagnosis = isPriorPlan
+          ? `⚠ ALL ${discriminatingAnchors.length} discriminating anchors failed onto their 2013 ` +
+            `value — THIS FILE IS THE SUPERSEDED 2013 PLAN, not a damaged download. TIGER 2020 and ` +
+            `2021 carry it, its record count is identical (20/40) and its code shape is identical ` +
+            `(lettered Senate, numbered House), so nothing else here can tell.`
+          : `⚠ Only ${failedDiscriminating.length} of ${discriminatingAnchors.length} discriminating ` +
+            `anchors failed, so this is NOT simply the 2013 plan — suspect a wrong state, a wrong ` +
+            `layer, a moved anchor, or an edited anchor table.`;
+        const err = new Error(
+          `[AK vintage assertion] layer=${layer}: ${anchorFailures.length} of ${anchors.length} ` +
+          `anchors disagree with the adopted 2021 plan: ` +
+          anchorFailures.map((r) => `${r.label} expected ${r.expected}, got ${r.got ?? 'NONE'} (2013: ${r.prior})`).join('; ') +
+          `. ${diagnosis} These anchors were resolved against TIGER 2020/2021/2022/2023/2024 ` +
+          `directly on 2026-10-30. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+
+      const discriminating = anchors.filter((a) => a[2] !== a[3]).length;
+      console.log(`  [${layer}] AK MTFCC pre-flight assertion PASSED: ${actualCount} records ` +
+                  `(expected ${expected}), ${ocdSuffixes.size} distinct OCD-ID suffixes, ` +
+                  (layer === 'sldu'
+                    ? `all ${expected} codes lettered A..T (asserted as a PRESENCE), `
+                    : `no lettered codes, codes 1..${expected} contiguous, `) +
+                  `seat arithmetic ${expected}x1 = ${expectedSeats} holds, ` +
+                  `${anchors.length}/${anchors.length} adopted-2021-plan anchors agree ` +
+                  `(${discriminating} of them distinguish the superseded 2013 plan). ` +
+                  `⚠ Senate/House nesting is NOT checked here — see CC_0316 post-verify.`);
+    }
+  }
+
   // ── Dry-run stops here — every per-state pre-flight assertion above (MA,
-  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN, MN, PA, SC, OH, MI, ND, KY, KS, SD, MO, MS) has now run against
+  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN, MN, PA, SC, OH, MI, ND, KY, KS, SD, MO, MS, ID, AK) has now run against
   // the real downloaded/extracted shapefile, so a wrong EXPECTED_*_MTFCC
   // count throws and aborts BEFORE this point, exactly like a live run.
   // `client` is still never touched above this line (see task-1-report.md

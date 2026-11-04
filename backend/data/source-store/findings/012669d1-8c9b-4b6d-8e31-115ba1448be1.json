@@ -1,0 +1,29 @@
+{
+  "politician_id": "012669d1-8c9b-4b6d-8e31-115ba1448be1",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "Second Amendment",
+        "gun control",
+        "gun violence"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "voter guide page https://ivoterguide.com/candidate/96881/race/35039/election/1503 (names her as a Louisiana congressional candidate; her answer to the gun-restrictions question is listed as 'Did not answer')",
+        "blocked: https://lailluminator.com/2026/10/10/6th-district-forum/",
+        "blocked: https://bluevoterguide.org/district/LA/Louisiana_District_6/47496/786",
+        "web search x3 (candidate profile, campaign site plus guns, name plus gun terms): no campaign site found, nothing by her on guns",
+        "official site: none (not an officeholder)",
+        "congress.gov sponsorships: not applicable (not a legislator)",
+        "not reviewed: Ballotpedia (returns empty to fetch tool)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:12:12.477Z",
+      "by": "source-collector"
+    }
+  ]
+}

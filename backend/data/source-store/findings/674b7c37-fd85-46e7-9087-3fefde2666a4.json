@@ -1,0 +1,85 @@
+{
+  "politician_id": "674b7c37-fd85-46e7-9087-3fefde2666a4",
+  "findings": [
+    {
+      "id": "2a8c1e6adeeb1b83990f54b1ca73fbb70a72c10f09939c42f1e1da2b2ae32867",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('HYSELL'), linked to Andrew Hysell (district 48) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.789Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "absentee/mail ballot rules",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Assembly site (District 48): home page and press release list pages 1 to 4, about 32 releases; opened the State Affairs testimony release (wake surfing bill) and the special session release (property taxes): nothing on the subject",
+        "scope check: a 2026 preview page (jdjohn215.github.io) shows him as incumbent and a 2026 November candidate for Assembly District 48; WisPolitics April 15 2026 reelection announcement (text cut off by paywall)",
+        "blocked: https://ballotpedia.org/Andrew_Hysell (not fetched after the same site returned empty for an earlier person)",
+        "two news searches on name plus voter ID: no statement by him found",
+        "campaign site not found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:59:44.803Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "absentee/mail ballot rules",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Assembly site (District 48): home page and press release list pages 1 to 4, about 32 releases; opened the State Affairs testimony release (wake surfing bill) and the special session release (property taxes): nothing on the subject",
+        "scope check: a 2026 preview page (jdjohn215.github.io) shows him as incumbent and a 2026 November candidate for Assembly District 48; WisPolitics April 15 2026 reelection announcement (text cut off by paywall)",
+        "blocked: https://ballotpedia.org/Andrew_Hysell (fetch returned an empty page)",
+        "two news searches on name plus voter ID: no statement by him found",
+        "campaign site not found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:00:08.189Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:15:12.789Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "politician_id": "7d91fee1-7c0c-41e5-b1f2-fa93849c772c",
+  "findings": [
+    {
+      "id": "6298bb684633cc3be32a1ddfc776db7fe065a674b36f76938c696baa196eb415",
+      "kind": "own-words",
+      "url": "https://urbanmilwaukee.com/pressrelease/state-rep-mayadev-votes-against-enshrining-strict-voter-id-requirements-into-the-wisconsin-constitution/",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "passage": "“The only real purpose AJR1/SJR2 would serve is to make it more difficult for eligible citizens to exercise their fundamental right to vote. Studies consistently show that people of color, people with disabilities, and people of modest means are less likely to have the government-issued ID that this law would require. This action is a naked attempt to suppress Wisconsin voters. The Wisconsin Constitution is there to protect the right to vote, not to deny it as this proposal will do.”",
+      "note": "Statement in her name, in a press release posted on Urban Milwaukee, issued after her floor vote on AJR1/SJR2 (constitutional amendment on photo ID to vote). The release also says she voted no.",
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment on photo ID",
+        "voting access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:02:44.390Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2a8c1e6adeeb1b83990f54b1ca73fbb70a72c10f09939c42f1e1da2b2ae32867",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('MAYADEV'), linked to Renuka Mayadev (district 77) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.790Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "mail ballot ID",
+        "non-citizen voting",
+        "election integrity laws",
+        "constitutional amendment on photo ID"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "official Assembly page https://legis.wisconsin.gov/assembly/77/mayadev/ (confirms State Representative, District 77; nothing on the subject on the page)",
+        "campaign site https://mayadevforwi.com/ (home page has headings on defending and safeguarding democracy; no sentence on voter ID, citizenship or ID rules)",
+        "https://en.wikipedia.org/wiki/2026_Wisconsin_State_Assembly_election (lists her as incumbent running in District 77 for the 2026 general election; lead only)",
+        "https://urbanmilwaukee.com/pressrelease/state-rep-mayadev-votes-against-enshrining-strict-voter-id-requirements-into-the-wisconsin-constitution/ (her press release, used)",
+        "blocked: https://ballotpedia.org/Renuka_Mayadev (403 on plain curl)",
+        "blocked: https://aclu-wi.org/sites/default/files/ad77_renuka_mayadev.pdf (404)",
+        "blocked: https://www.mayadevforwisconsin.com/ (near-empty response)",
+        "web search on name plus voter ID words and on 2026 candidacy (two searches)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:02:44.390Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:15:12.790Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

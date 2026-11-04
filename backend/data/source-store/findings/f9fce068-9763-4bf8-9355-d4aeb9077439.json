@@ -1,0 +1,35 @@
+{
+  "politician_id": "f9fce068-9763-4bf8-9355-d4aeb9077439",
+  "findings": [
+    {
+      "id": "b83034f67f17f88308bb9cfd8d532b670a36be87e2cdec327949c1f88a11f920",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/134/sb215",
+      "date": "2022-03-02",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-215-2022",
+      "act": "yea",
+      "motion": "Passed (same-day Senate vote; label on page is \"Passed\", likely concurrence in House changes, not verified)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH Senate, Passed (same-day Senate vote; label on page is \"Passed\", likely concurrence in House changes, not verified), 2022-03-02: yea (tally 24–9); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/OH_sb215_EN.pdf",
+          "sha256": "dddae0081901748ede39524ddca0094c322a065fe443d8ffdbae0913c1a95fa4"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

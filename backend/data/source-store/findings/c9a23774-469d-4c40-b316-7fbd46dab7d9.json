@@ -1,0 +1,371 @@
+{
+  "politician_id": "c9a23774-469d-4c40-b316-7fbd46dab7d9",
+  "findings": [
+    {
+      "id": "55f3dd00941f368cb7c2d3f512c2555e345435b303679bde096fb583117d15de",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H878",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-HD-878-2025",
+      "act": "sponsor",
+      "note": "Vaughn filed H.878, 'An Act relative to public information requests', described as relative to the availability of voter lists. Referred to Election Laws on Feb 27, 2025. On June 10, 2025 the committee reported it to accompany a study order; on April 2, 2026 it accompanied study order H.5311. Bill text was not on the page.",
+      "subjects": [
+        "voter-roll access (availability of voter lists)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:23:44.184Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3eff5ecb4e2e7135e182bb7a6d2077e77db2aa5940c010a3dc77670fa680efa0",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H720.pdf",
+      "date": "2023-02-14",
+      "date_precision": "day",
+      "instrument_id": "MA-H-720-2023",
+      "act": "sponsor",
+      "motion": "Added as a petitioner (co-signer) of H.720, An Act establishing identification at the voting polls",
+      "note": "Vaughn is one of eight legislators named on the petition for H.720, added 2/14/2023. The bill has the state secretary issue a free photo ID card for voting only, and requires a person voting in a federal, state, local or primary election to show a valid photo ID, MassHealth card or Medicare card to an election officer before voting. The bill went to the Election Laws committee and on 2024-07-15 accompanied a study order (H4733).",
+      "subjects": [
+        "voter ID at the polls",
+        "free state-issued voter photo ID card"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:06:14.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "35e32ad1c470717ee874745e958981798954a32447cf1d561a95aff6b7e6d3a5",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H878",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-878-2025",
+      "act": "sponsor",
+      "note": "Vaughn filed H.878, An Act relative to public information requests, a petition relative to the availability of voter lists. Referred to Election Laws 2/27/2025; hearing 6/17/2025; accompanied a study order (H5311) on 4/2/2026.",
+      "subjects": [
+        "voter lists and public access to them"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:06:14.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "016fc49defe9a2f0c548dcfde615bd013f151a67f66dbcf35c906f2a3a093832",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H877",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-877-2025",
+      "act": "sponsor",
+      "note": "Vaughn filed H.877, An Act relative to how Electoral College votes are delegated, a petition relative to choosing presidential electors and the process which governs them. Referred to Election Laws.",
+      "subjects": [
+        "how presidential electors are chosen"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:06:14.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c19ad6437e734ddf5bc5c2c42cca9771db548fc3dc8d5503d540427c366ff8a1",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall42.pdf",
+      "date": "2025-04-29",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4000-AMDT-409-2025",
+      "act": "yea",
+      "motion": "On adoption of amendment #409 (H.4000) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 42, On adoption of amendment #409 (H.4000) - failed, 2025-04-29: yea (tally 25–131); the sheet lists 'Vaughn'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "031da260f8e422347d5016f4a54a60c19a73e3efaba279ce2f337d18bdbfcb4e",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall174.pdf",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-5500-AMDT-1587-2026",
+      "act": "yea",
+      "motion": "On adoption of amendment #1587 (H.5500) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 174, On adoption of amendment #1587 (H.5500) - failed, 2026-04-28: yea (tally 27–131); the sheet lists 'Vaughn'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "fa8087771668164fa41cebcce4ea1837cefe0d5dda9c72df7aa9612f3319e886",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "nay",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: nay (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bbdd9bc7132a57a94f28cf83874fa7e904f8da79aa8251a3b1194121a5467815",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "nay",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: nay (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "45bb3079b25331bd2630d0f30e56bb99ba4c86e89e26fcf7fa1f7a4271168756",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H2360",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MA-H-2360-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-2360-2023 (LegiScan sponsor list): H2360 (193rd General Court): Relative to 3D printed guns and ghost guns.",
+      "subjects": [
+        "ghost guns: serial numbers required on all firearms",
+        "3D-printed and undetectable firearms banned",
+        "felony penalty for breaking the new rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2360-2023.introduced.pdf",
+          "sha256": "571ab4edc7bf2d33a4ab46199dedc64d80f657ef98d1f743254495c425d2fe94"
+        }
+      }
+    },
+    {
+      "id": "5b0196bae85609ebeb3b48eddb12be82491b8e98beadc7676a5eef523a6e63f0",
+      "kind": "own-words",
+      "url": "https://www.ballotready.org/people/marcus-s-vaughn",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Representative Vaughn is a staunch advocate for the preservation of 2nd Amendment rights. He firmly believes in upholding the rights of citizens to bear arms responsibly and will work tirelessly to safeguard these rights. He stands firmly against HD.4420, recognizing its potential impact on the rights and freedoms of our citizens. He will actively oppose any legislation that threatens the fundamental rights of individuals.",
+      "note": "Issue-stance text on his BallotReady profile, written in the third person; it is a candidate-profile text probably supplied by his campaign, not a verified first-person quote. Says he is against HD.4420 (the 2023 bill that became the firearm modernizing law) and will oppose bills that threaten gun rights.",
+      "subjects": [
+        "Second Amendment rights",
+        "opposes HD.4420 (2023 firearm modernizing bill)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:41:06.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "34690bfaac80aff9dc2f4d9edfb339d3bfcdd2cc706e9863aba08c2f3cc8e357",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H1806",
+      "date": "2023-02-16",
+      "date_precision": "day",
+      "instrument_id": "MA-H-1806-2023",
+      "act": "sponsor",
+      "note": "He filed H.1806, An Act ensuring the enforcement of mandatory minimums for firearm related crimes; sent to the Judiciary committee. Date is the filing date on the bill page.",
+      "subjects": [
+        "mandatory minimum sentences for gun crimes"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:41:06.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9743afa87b417fdbbb7bf9207965cf26b7f730397f33ebc0a6adb527c550487b",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H2034",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-2034-2025",
+      "act": "sponsor",
+      "note": "He filed H.2034, An Act ensuring the enforcement of mandatory minimums for firearm related crimes (same subject as the earlier bill); sent to the Judiciary committee. Date is the filing date on the bill page.",
+      "subjects": [
+        "mandatory minimum sentences for gun crimes"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:41:06.942Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll access and checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Marcus_Vaughn says he is on the Nov 3, 2026 general ballot, 9th Norfolk, after the Sept 1, 2026 primary",
+        "On the Record (0 appearances, 0 candidates)",
+        "malegislature.gov member profile MSV1 (sponsored bills: only H.877 and H.878 are election bills; nothing on voter ID)",
+        "malegislature.gov bill pages H.877, H.878",
+        "not reviewed: malegislature.gov cosponsored-bills tab (page did not load list)",
+        "Ballotpedia (no 2026 survey answers; 2022 survey has no subject content)",
+        "campaign site https://www.marcusvaughn.com: blocked, no readable content",
+        "web search: not done, session search budget used up"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:23:44.184Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state-issued voter photo ID card",
+        "voter lists and public access to them",
+        "how presidential electors are chosen",
+        "proof of citizenship to register",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "malegislature.gov legislator profile (confirms Marcus S. Vaughn, 9th Norfolk)",
+        "malegislature.gov bill pages H.720 (193rd), H.877 and H.878 (194th)",
+        "Ballotpedia (confirms he is on the 2026 general election ballot)",
+        "web news search on name plus voter ID words: no own words found",
+        "campaign site and official site statements: nothing on the subject found",
+        "mail-ballot ID and proof of citizenship: nothing on the subject"
+      ],
+      "found": 3,
+      "at": "2026-10-27T22:06:14.608Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry permits",
+        "Second Amendment rights",
+        "mandatory minimum sentences for gun crimes",
+        "repeal of 2024 gun law (Question 9)"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page (confirms Representative Marcus S. Vaughn, 9th Norfolk)",
+        "sponsor list: covered by LegiScan bulk check (two sponsored bills still seen on the legislature's own bill pages)",
+        "campaign site repvaughn.com (home page fetched; no gun text in the static page)",
+        "blocked: https://www.marcusvaughn.com (404)",
+        "Ballotpedia (page came back empty)",
+        "BallotReady candidate profile (issue-stances text, fetched by curl)",
+        "news searches on name plus gun words and Question 9: no quote from him found",
+        "web search: no 2026 ballot-question statement by him found"
+      ],
+      "found": 3,
+      "at": "2026-11-01T01:41:06.942Z",
+      "by": "source-collector"
+    }
+  ]
+}

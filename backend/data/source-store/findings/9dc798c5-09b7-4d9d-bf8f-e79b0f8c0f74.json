@@ -1,0 +1,109 @@
+{
+  "politician_id": "9dc798c5-09b7-4d9d-bf8f-e79b0f8c0f74",
+  "findings": [
+    {
+      "id": "beab4a73a0a5a1a4bf2540b017fe2e4683fc22b963d82c2084e786daa96058a8",
+      "kind": "own-words",
+      "url": "https://townhall.com/tipsheet/amy-curtis/2025/10/10/josh-kaul-illegals-on-wi-voter-rolls-n2664734",
+      "date": "2025-10-10",
+      "date_precision": "day",
+      "passage": "AG Kaul said the ruling would \"require a massive overhaul of Wisconsin’s voter registration system and the creation of new verification requirements not otherwise provided for by statute.\"",
+      "note": "Quoted by Townhall from the Attorney General's request to pause a court order that told the state elections agency to check voter rolls against driver-record data for non-citizens. Date is the article date.",
+      "subjects": [
+        "voter-roll checks for non-citizens",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:31:40.381Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0ae5e64684940c46673df59bc3d60de7f4b76a3cdf6654876b1ec37100ba53bc",
+      "kind": "record",
+      "url": "https://patch.com/wisconsin/across-wi/wisconsin-department-justice-appeals-citizen-voting-check-ruling",
+      "date": "2025-10-21",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Wisconsin Department of Justice appeal, led by the Attorney General, of the Waukesha County order on checking voter rolls for non-citizens",
+      "note": "The appeal filing states: \"The circuit court’s decision and order drastically alters voter registration and elections in Wisconsin, violates state law, and threatens voting rights,\" and \"The court issued this sweeping relief despite no evidence of injury to Respondents: they speculated about the risk of vote dilution by illegal voters, but provided no evidence that a noncitizen had voted or registered to vote in Wisconsin.\" Report text says current law has registrants affirm citizenship without giving proof.",
+      "subjects": [
+        "voter-roll checks for non-citizens",
+        "proof of citizenship to register",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:31:40.381Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "voter-roll checks against driver records",
+        "non-citizen voting",
+        "federal request for state voter file"
+      ],
+      "places": [
+        "status: seeking a third term as Attorney General in the 2026 general election (https://hoodline.com/2026/09/kaul-toney-rematch-returns-to-wisconsin-ballots-with-41-days-to-go/)",
+        "On the Record (0 meetings)",
+        "campaign site: https://www.joshkaul.com returned 404",
+        "official site wisdoj.gov home page (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Josh_Kaul (empty page)",
+        "blocked: https://m.washingtontimes.com/news/2018/may/2/kaul-calls-schimels-voter-id-remarks-incredible-ad/",
+        "blocked: https://electionlawblog.org/?p=98939",
+        "blocked: https://news.wttw.com/2025/12/19/us-justice-department-sues-3-states-district-columbia-voter-data",
+        "blocked: https://captimes.com/news/elections/josh-kaul-says-now-isn-t-the-time-to-back-down-as-he-seeks-third/article_ad6b6c7c-d21a-4f2a-a474-e3a7e49e42e1.html",
+        "https://www.wpr.org/schimel-voter-id-helped-trump-win-wisconsin (no Kaul words, reporter text only)",
+        "https://www.wispolitics.com/2021/toney-campaign-rips-kaul-for-turning-back-on-election-law-enforcement/ (opponent's words only)",
+        "news searches on name plus voter ID, SAVE Act, voter data"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:02:28.135Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "voter-roll checks against driver records",
+        "non-citizen voting",
+        "federal request for state voter file"
+      ],
+      "places": [
+        "scope check: seeking a third term as Attorney General in the 2026 general election (https://hoodline.com/2026/09/kaul-toney-rematch-returns-to-wisconsin-ballots-with-41-days-to-go/)",
+        "On the Record (0 meetings)",
+        "campaign site: https://www.joshkaul.com returned 404",
+        "official site wisdoj.gov home page (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Josh_Kaul (empty page)",
+        "blocked: https://m.washingtontimes.com/news/2018/may/2/kaul-calls-schimels-voter-id-remarks-incredible-ad/",
+        "blocked: https://electionlawblog.org/?p=98939",
+        "blocked: https://news.wttw.com/2025/12/19/us-justice-department-sues-3-states-district-columbia-voter-data",
+        "blocked: https://captimes.com/news/elections/josh-kaul-says-now-isn-t-the-time-to-back-down-as-he-seeks-third/article_ad6b6c7c-d21a-4f2a-a474-e3a7e49e42e1.html",
+        "https://www.wpr.org/schimel-voter-id-helped-trump-win-wisconsin (no Kaul words, reporter text only)",
+        "https://www.wispolitics.com/2021/toney-campaign-rips-kaul-for-turning-back-on-election-law-enforcement/ (opponent's words only)",
+        "news searches on name plus voter ID, SAVE Act, voter data"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:31:40.381Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

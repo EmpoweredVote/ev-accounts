@@ -1,0 +1,44 @@
+{
+ "id": "MA-S-1537-2021",
+ "scope": "state:ma",
+ "title": "S1537 (192nd General Court): An Act to require liability insurance for gun ownership",
+ "urls": [
+  "https://malegislature.gov/Bills/192/S1537",
+  "https://malegislature.gov/Bills/192/S1537/Senate/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Michael J. Barrett",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "60e4da77-0c2b-4ca4-8d02-a4210bd91d90"
+  },
+  {
+   "name": "Michelle L. Ciccolo",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "0748d787-7e5d-4852-b461-3459312fae45"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-S-1537-2021.html",
+   "sha256": "45ac4029ced12ebe4bcf404b5cf80d11bc6a1952935535ce3f577e3be10fc883"
+  }
+ },
+ "operative_text": "SECTION 1. Chapter 140 of the General Laws is hereby amended by adding the following section:-\nSection 207. (a) Any person who possesses, carries, or owns a firearm, rifle or shotgun shall obtain and maintain a liability policy, bond, or deposit. This section shall not apply to a person who possesses a firearm, rifle, or shotgun on a temporary basis while on the premises of a licensed gun club. Violation of this section shall result in a punishment of a fine of not less than five hundred and not more than five thousand dollars, or by imprisonment for not more than one year in a house of correction, or both.\n(b) The commissioner of insurance shall promulgate regulations set forth for the minimum terms of liability insurance policies which shall satisfy the requirements of this section."
+}

@@ -1,0 +1,130 @@
+{
+  "politician_id": "cd8587a0-718b-4e9d-b4e1-f409884fa59f",
+  "findings": [
+    {
+      "id": "d0fa26fe03a8670cd0c036b3c2eaaf59f0b7bb0fd6db7c336a025a3dc08423a1",
+      "kind": "own-words",
+      "url": "https://wdet.org/?p=51935",
+      "date": "2021-10-14",
+      "date_precision": "day",
+      "passage": "“My vote is my voice,” he said, before intoning twice more. “My vote is my voice. My vote is my voice.”",
+      "note": "Quoted by WDET (article dated 2021-10-15) during the House floor debate on the voter ID and absentee ballot bill; he spoke against it. The outlet also reports he called it an insult to people who fought for voting rights.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:48:48.358Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59031dab7d4dd7e6902b03c7de71b64d7ea00b61466a81f88eaeb7001916f0a8",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4698",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4698-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"SENATE Substitute For HOUSE BILL NO. 4698 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sec\"",
+      "note": "Named as co sponsor ('Amos O'Neal (District 94)') on the official bill page; linked to Amos O'Neal via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.333Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "64bed1f7e34107fd77b620204b32f1e257a09f9c7059de0e75e88f88cb135549",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "nay",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('O’Neal'), linked to Amos O'Neal (district 94) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.333Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0f5a8600e44203779df7b73d932985732a5e8ec0a82c557f57d33fc8999bb1f3",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021-10-14",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "nay",
+      "motion": "House: concurrence in Senate substitute S-3",
+      "note": "House roll call as printed ('O'Neal'), linked to Amos O'Neal (district 95) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.333Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID without a photo / no-ID options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 linked appearances)",
+        "official House site https://housedems.com/amos-oneal/ (first page of news, nothing on the subject)",
+        "blocked: https://michiganpublic.org/politics-government/2021-10-14/michigan-house-adopts-voter-id-legislation (certificate rejected)",
+        "blocked: https://ballotpedia.org/Amos_O'Neal (empty page)",
+        "web search on name plus subject words",
+        "bill sponsorship pages not searched (linked separately)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:48:48.358Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:55:46.333Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

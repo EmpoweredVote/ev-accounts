@@ -1,0 +1,210 @@
+{
+  "politician_id": "23675559-e2dd-4e26-abed-2f87954dc70e",
+  "findings": [
+    {
+      "id": "ee2efa6b2719eb4781f7e001c5eb1a93ae2508ba5fe9dd0a0a363a978711ef9b",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81696&billStatusActionId=232198&includeVotes=true",
+      "date": "2025-02-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2038-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('CARTER P'), linked to Pamela Carter (district 4) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.878Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf505d93bd66bd7c75041cc66d163a3bd3cdb1892d9f2db25a481fbf733a4047",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=240878&includeVotes=true",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('CARTER P'), linked to Pamela Carter (district 4) via the official 2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.878Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d13ea4ab747e28da585dbb99feba8cff1df7ff3703b5d6dd3e7da7452184336",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=235732&includeVotes=true",
+      "date": "2025-05-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('CARTER P'), linked to Pamela Carter (district 4) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.878Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6b01fd33144108f9d062827ad8b6433c7df2a394650f2e244dde46e30bcb7dc8",
+      "kind": "own-words",
+      "url": "https://pamelacarter.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Despite a divided government, I earned the Vice Chair seat on Public Safety & Law Enforcement — and used it to advance safe communities, parental rights, low taxes, secure elections, and local control.",
+      "note": "Campaign site home page for her 2026 re-election run (dated by the page's 2026 election references); lists secure elections among her aims, with no specific rule.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:09:25.419Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "65f91da6d9b64f465d2cb50a39c1ae14792d21119ac225746bf06ce266269469",
+      "kind": "own-words",
+      "url": "https://pamelacarter.com/issues",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Secure elections and better information for voters. I widened the Voter Education Guide so every county candidate reaches your mailbox.",
+      "note": "Election integrity and transparency item on her campaign issues page; points to HB 2376, which adds county races to the state voter education guide. It is not about ID or citizenship.",
+      "subjects": [
+        "election integrity in general",
+        "voter information guide"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:09:25.419Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "10f077fe1ab9b01d9188b6bd38ae5610fd6cefd329560cb3782027446bc1eaa1",
+      "kind": "record",
+      "url": "https://pamelacarter.com/record",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "act": "sponsor",
+      "motion": "HB 2376, Voter Information Transparency (sponsor, per her campaign site)",
+      "note": "HB 2376, Voter Information Transparency: per her campaign record page, widens the Clean Elections voter education guide to cover county races. Source is her own site, not the legislature; the session year is not stated on the page. Not an ID or citizenship bill.",
+      "subjects": [
+        "voter information guide"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:09:25.419Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbb9ee39d7ade6a2e208d394d7af23ac45487eae22e5da26f16b612718fe9717",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=236364&includeVotes=true",
+      "date": "2025-06-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('CARTER P'), linked to Pamela Carter (district 4) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28b",
+        "fetched_at": "2026-10-28T23:23:11.508Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:53:15.878Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity in general",
+        "voter information guide"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "candidate roster page showing her on the 2026 general-election ballot for House District 4: https://theballotbrief.com/state/arizona/maricopa-county/arizona-house-district-4",
+        "campaign site https://pamelacarter.com (home, issues, record, news pages)",
+        "Arizona Legislature member page and House caucus member list (nothing on the subject)",
+        "KJZZ 2026-10-06 candidate profile (no quotes from her on the subject)",
+        "an Arizona Globe story of 2026-06-16 quoting a House member named Carter on HCR 2001: that is the Speaker Pro Tempore (Neal Carter), a different person, so not saved",
+        "blocked: https://ballotpedia.org/Pamela_Carter (empty page)",
+        "not reviewed: social media pages and the campaign video",
+        "news searches on name plus subject words (no quotes by her on ID or citizenship found)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:09:25.419Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:23:11.508Z",
+      "by": "identity-az-2026-10-28b"
+    }
+  ]
+}

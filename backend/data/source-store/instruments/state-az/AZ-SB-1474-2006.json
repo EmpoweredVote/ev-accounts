@@ -1,0 +1,53 @@
+{
+  "id": "AZ-SB-1474-2006",
+  "scope": "state:az",
+  "title": "SB 1474 (2006 - Forty-seventh Legislature - Second Regular Session (azleg session id 83)): early ballots; voter identification",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/22213",
+    "https://www.azleg.gov/legtext/47leg/2R/bills/SB1474P.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1: Section 16-548, Arizona Revised Statutes, is amended to read: (para A)\n(quote) The early voter shall also include in the envelope a legible photocopy of identification that complies with section 16-579.\n(b_no_id_remedy)\n(section) Sec. 1: Section 16-548, Arizona Revised Statutes, is amended to read: (para A)\n(quote) The envelope shall be securely sealed and, together with the affidavit and photocopies of identification, delivered or mailed to the county recorder or other officer in charge of elections of the political subdivision in which the elector is registered or deposited by the voter or the voter's agent at any polling place in the county.\n(section) Sec. 1: Section 16-548, Arizona Revised Statutes, is amended to read: (para B)\n(quote) B. If the early voter is an overseas citizen, a qualified elector absent from the United States or in the United States service, a spouse or dependent residing with the early voter or a qualified elector of a special district mail ballot election as provided in article 8.1 of this chapter, the early voter may subscribe to the affidavit before and obtain the signature and military identification number or passport number, if available, of any person who is a United States citizen eighteen years of age or older.\n(section) Sec. 2: Section 16-552, Arizona Revised Statutes, is amended to read: (para B)\n(quote) B. The early election board shall check the voter's affidavit on the envelope containing the early ballot and shall check the forms of identification submitted by the voter.\n(section) Sec. 2: Section 16-552, Arizona Revised Statutes, is amended to read: (para B)\n(quote) If the affidavit and identification are found to be sufficient, the vote shall be allowed.\n(section) Sec. 2: Section 16-552, Arizona Revised Statutes, is amended to read: (para B)\n(quote) If the affidavit and identification are insufficient, the vote shall not be allowed.\n(c_mail_ballot_id)\n(section) Bill text\n(quote) REFERENCE TITLE: early ballots; voter identification\n(section) Sec. 1: Section 16-548, Arizona Revised Statutes, is amended to read: (para A)\n(quote) The envelope shall be securely sealed and, together with the affidavit and photocopies of identification, delivered or mailed to the county recorder or other officer in charge of elections of the political subdivision in which the elector is registered or deposited by the voter or the voter's agent at any polling place in the county.\n(section) Sec. 1: Section 16-548, Arizona Revised Statutes, is amended to read: (para B)\n(quote) B. If the early voter is an overseas citizen, a qualified elector absent from the United States or in the United States service, a spouse or dependent residing with the early voter or a qualified elector of a special district mail ballot election as provided in article 8.1 of this chapter, the early voter may subscribe to the affidavit before and obtain the signature and military identification number or passport number, if available, of any person who is a United States citizen eighteen years of age or older.\n(section) Sec. 2: Section 16-552, Arizona Revised Statutes, is amended to read: (para B)\n(quote) B. The early election board shall check the voter's affidavit on the envelope containing the early ballot and shall check the forms of identification submitted by the voter.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) 0: n\n(other) 1: o\n(other) 2: t\n(other) 3:  \n(other) 4: s\n(other) 5: t\n(other) 6: a\n(other) 7: t\n(other) 8: e\n(other) 9: d",
+  "sponsors": [
+    {
+      "name": "Dean Martin",
+      "role": "prime",
+      "version": "SB1474P: as introduced (printed version)"
+    },
+    {
+      "name": "Timothy Bee",
+      "role": "co",
+      "version": "SB1474P: as introduced (printed version)"
+    },
+    {
+      "name": "Robert Blendu",
+      "role": "co",
+      "version": "SB1474P: as introduced (printed version)"
+    },
+    {
+      "name": "Bill Brotherton",
+      "role": "co",
+      "version": "SB1474P: as introduced (printed version)"
+    },
+    {
+      "name": "Ron Gould",
+      "role": "co",
+      "version": "SB1474P: as introduced (printed version)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "politician_id": "6244bb0e-26a7-4ac1-ae8f-d0cf0c72e151",
+  "findings": [
+    {
+      "id": "fbf96e379f2ab54e3b6e8700d7536be1652d3f5e977555774d99d0a25260e62f",
+      "kind": "own-words",
+      "url": "https://www.ksmu.org/show/informed-voter-coalition/2024-10-21/missouri-house-district-135",
+      "date": "2024-10-21",
+      "date_precision": "day",
+      "passage": "This issue of noncitizens voting has become a political wedge and a political talking point that the majority party has given a lot of oxygen and a lot of attention to.",
+      "note": "Asked about the 2024 Amendment 7 (citizens-only voting, ranked choice ban). She says she does not support it, and that state law already protects against non-citizen voting. Interview answer on non-citizen voting; outlet is a radio interview.",
+      "subjects": [
+        "non-citizen voting",
+        "citizenship requirement to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:07:11.117Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "17d5fb9f64a858e9da596904879cbb1778d9a4b7b07d1870c9c36e19c69d74a0",
+      "kind": "own-words",
+      "url": "https://www.ksmu.org/show/informed-voter-coalition/2024-10-21/missouri-house-district-135",
+      "date": "2024-10-21",
+      "date_precision": "day",
+      "passage": "We already have protections to make sure that only residents and citizens can vote here in our state.",
+      "note": "Same answer: continues that existing protections ensure only residents and citizens can vote.",
+      "subjects": [
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:07:11.117Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "56f7308a0ab436b7063342b2de7471f71e535bbd8739c99cc90672e05623c6b2",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills251/sumpdf/HB1320I.pdf",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-1320-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, Not read; only the official House summary of the introduced bill was fetched",
+      "note": "Named as prime sponsor ('Fogle') on the official bill text, summary or journal; linked to Betsy Fogle via the official 2025 member roll of the House (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.741Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e076c8b48278b31632ee890048920af3952a61ffb83895b5d23bfa476c64b17f",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Fogle'), linked to Betsy Fogle (district 135) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.741Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dfe035d919161f8e7a212ccf1893e678f2501ffe4beeebfd715e92cbb874ba82",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills221/jrnpdf/jrn070.pdf",
+      "date": "2022-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1878-2022",
+      "act": "nay",
+      "motion": "House: SS SCS HB 1878, as amended, adopted",
+      "note": "House roll call as printed ('Fogle'), linked to Betsy Fogle (district 135) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.741Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "88d291e7c86845be78e5eec22b4bd5ece41209ffde13d65186529af11e9fc1ac",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills221/jrnpdf/jrn036.pdf",
+      "date": "2022-03-10",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1878-PERF-2022",
+      "act": "nay",
+      "motion": "House: HB 1878 read the third time and passed",
+      "note": "House roll call as printed ('Fogle'), linked to Betsy Fogle (district 135) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.210Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0f220d433217529da91203e4d05844a646285c027e6522b2c321df2adf6901e2",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills211/jrnpdf/jrn029.pdf",
+      "date": "2021-02-24",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-334-2021",
+      "act": "nay",
+      "motion": "House: HCS HB 334 read the third time and passed",
+      "note": "House roll call as printed ('Fogle'), linked to Betsy Fogle (district 135) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.210Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9302fa7bcbb9205f150b8afd9e072506397909e3ae094c01acad3b2775cdebe0",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn052.pdf",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "MO-HCR-48-2026",
+      "act": "nay",
+      "motion": "House: HCR 48 read the third time and passed",
+      "note": "House roll call as printed ('Fogle'), linked to Betsy Fogle (district 135) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.210Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia: blocked (not fetched, per instruction)",
+        "house.mo.gov: not fetched (robots/hard rule)",
+        "newsroom.house.mo.gov: not fetched (single collector)",
+        "web searches on name plus subject words: nothing in own words",
+        "KSMU Informed Voter Coalition interview 2024-10-21 (read in full via curl): https://www.ksmu.org/show/informed-voter-coalition/2024-10-21/missouri-house-district-135",
+        "iVoterGuide questionnaire: did not answer photo-ID item: https://ivoterguide.com/candidate/56582/race/11973/election/1245",
+        "caucus site (mohousedemcaucus.com): blocked: could not resolve host"
+      ],
+      "found": 2,
+      "at": "2026-11-04T05:07:11.117Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-04T14:10:53.741Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-04T14:14:55.210Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

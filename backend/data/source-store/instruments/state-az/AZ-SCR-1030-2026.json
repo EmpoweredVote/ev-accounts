@@ -1,0 +1,35 @@
+{
+  "id": "AZ-SCR-1030-2026",
+  "scope": "state:az",
+  "title": "SCR 1030 (2026 - Fifty-seventh Legislature - Second Regular Session (azleg session id 130)): citizenship; identification; contributions; early voting..",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/85010",
+    "https://www.azleg.gov/legtext/57leg/2R/bills/SCR1030P.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Bill text (para 19)\n(quote) Elections; citizens; foreign contributions; identification; early voting; severability\n(section) Sec. 19: A. Only citizens of the United States shall be eligible to register and vote once for each available office or (para C)\n(quote) C. Concurrent with casting a ballot, all electors shall be required to provide a government issued identification.\n(section) Sec. 19: A. Only citizens of the United States shall be eligible to register and vote once for each available office or (para C)\n(quote) Acceptable identification, as provided by law, shall be made available to electors free of charge.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Bill text\n(quote) REFERENCE TITLE: citizenship; identification; contributions; early voting..\n(section) Sec. 19: A. Only citizens of the United States shall be eligible to register and vote once for each available office or\n(quote) All qualified electors who have provided documented proof of citizenship shall be offered an opportunity to receive a mail-in ballot, which shall be provided solely upon their affirmative request confirming a specific mail address prior to each biennial general election, if mail-in voting is authorized by law, and in such a manner as the law prescribes.\n(e_other_rule) not stated.\n(other) 0: n\n(other) 1: o\n(other) 2: t\n(other) 3:  \n(other) 4: s\n(other) 5: t\n(other) 6: a\n(other) 7: t\n(other) 8: e\n(other) 9: d",
+  "sponsors": [
+    {
+      "name": "Jake Hoffman",
+      "role": "prime",
+      "version": "SCR1030P: as introduced (printed version)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "campaign-finance"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

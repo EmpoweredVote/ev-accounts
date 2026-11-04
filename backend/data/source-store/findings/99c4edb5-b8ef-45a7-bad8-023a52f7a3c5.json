@@ -1,0 +1,156 @@
+{
+  "politician_id": "99c4edb5-b8ef-45a7-bad8-023a52f7a3c5",
+  "findings": [
+    {
+      "id": "fdab6a5c2e3f93a829ddfa05ea00d4692f0852ef8cf950d9119a0a3df2d53576",
+      "kind": "own-words",
+      "url": "https://pahousegop.com/News/38069/Latest-News/Verobish-Introduces-Bill-Removing-Concealed-Carry-Permit-Requirement-for-Carrying-Firearm-in-Vehicle",
+      "date": "2026-06-05",
+      "date_precision": "day",
+      "passage": "“The right to own and bear arms is a fundamental constitutional right,” Verobish said. “Law-abiding citizens should not be required to obtain government permission before exercising that right while on the road.”",
+      "note": "Her statement in a House caucus release announcing her bill to end the concealed carry permit requirement for carrying a firearm in a vehicle.",
+      "subjects": [
+        "carry permits",
+        "concealed carry in vehicles",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a526734ae2a428da6b4245b15a7faa47abc51c37d65f30c026e0a3759553212b",
+      "kind": "record",
+      "url": "https://pahousegop.com/News/38069/Latest-News/Verobish-Introduces-Bill-Removing-Concealed-Carry-Permit-Requirement-for-Carrying-Firearm-in-Vehicle",
+      "date": "2026-06-05",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-2599-2025",
+      "act": "sponsor",
+      "note": "Release says she introduced House Bill 2599 to remove the requirement that a person first obtain a concealed carry permit before carrying a firearm in a vehicle. Release date is the announcement date; the filing date was not checked on palegis.us.",
+      "subjects": [
+        "carry permits",
+        "concealed carry in vehicles",
+        "permitless carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3d55030423996310aa9c1c0113793aa5d4c569875bbb4f8a91bd55ca355d63ad",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb2599",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2599-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of PA-HB-2599-2025 (LegiScan sponsor list): HB2599 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for firearms not to be carried without a license, for licenses and for proof of license and exception..",
+      "subjects": [
+        "license no longer required to carry a gun in a vehicle",
+        "vehicle carry exceptions repealed",
+        "license covers concealed carry on the person only"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2599-2025.introduced.pdf",
+          "sha256": "dc8c286b9dddc4dec2d44c39427334dbb59b7f4135d52a736491c2e33d679d51"
+        }
+      }
+    },
+    {
+      "id": "5a1e8a788a9a3b1de393bdb1dde749a6f598706061fbe03d4e66bccf89447f17",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb454",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-454-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-454-2025 (LegiScan sponsor list): HB454 (2025-2026 Regular Session): In firearms and other dangerous articles, repealing provisions relating to firearms not to be carried without a license, providing for license not required, repealing provisions relating to carrying firearms on public streets or public property in Philadelphia, further providing for prohibited conduct during emergency, providing for sportsman's firearm permit, further providing for licenses and for antique firearms and repealing provisions relating to proof of license and exception; and making editorial changes..",
+      "subjects": [
+        "no license needed to carry firearms openly or concealed",
+        "carry license made optional",
+        "Philadelphia public-carry rule repealed",
+        "license age minimum and character check removed",
+        "duty to show license on demand repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-454-2025.introduced.pdf",
+          "sha256": "f30ec3f128cf3767ddff70a1eeaf2b9e5550db871bb897761638ddd54b516abe"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "swearing-in press release https://www.pahousegop.com/News/37828/Latest-News/Verobish-Sworn-In-to-Represent-79th-District-: confirms she is the sitting member for the 79th District (sworn in 2026-04-13 after a March 2026 special election); nothing on the subject",
+        "House caucus member page and news list https://www.pahousegop.com/Verobish/News: returned only generic site text, nothing on the subject",
+        "local newspaper swearing-in story https://www.altoonamirror.com/news/local-news/2026/04/pa-house-79th-verbonish-sworn-in/: nothing on the subject",
+        "letter to the editor backing her, https://www.altoonamirror.com/opinion/2026/02/verobish-will-bring-energy-values-to-post: written by someone else, nothing on the subject",
+        "third-party profile https://thecandidate.com/states/pa/legislature/house/79/andrea-verobish: nothing on the subject",
+        "blocked: https://ballotpedia.org/Andrea_Verobish (HTTP 403)",
+        "campaign site: not found, guessed address https://www.verobishforpa.com gave no response",
+        "news searches on name plus voter ID and election integrity: nothing by her on the subject",
+        "legislature bill pages: not searched, sponsorships linked separately"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:06:04.067Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry permits",
+        "concealed carry in vehicles",
+        "Second Amendment general statements",
+        "permitless carry"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official caucus site pahousegop.com (June 5, 2026 release)",
+        "bearingarms.com commentary (lead only, not saved)",
+        "news search (two searches)",
+        "not reviewed: Ballotpedia, RepVerobish.com, palegis.us HB 2599 page, 2026 ballot status not confirmed on a page"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "politician_id": "faa95b98-4d86-4134-ac92-4f191e69d0b6",
+  "findings": [
+    {
+      "id": "e6f866e8ba9aca775855e785caa9e4231e714021d674d98788d21d7771121def",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: yea (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f9d95155c75a9bb40f00506b98c216c4ad0661259124063aac78b82d3dd143cc",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/H/1337",
+      "date": "2013-07-25",
+      "date_precision": "day",
+      "instrument_id": "NC-H-589-2013",
+      "act": "yea",
+      "motion": "M11 Concur (House concurrence in the Senate version of HB 589, VIVA/Election Reform)",
+      "note": "Roll call 1337 lists Bell, J. among the ayes; the vote was 73 to 41. HB 589 became S.L. 2013-381 and its Part 2 is titled 'Photo identification requirement for voting in person'.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:17:48.243Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/John_Bell_(North_Carolina) (NC House District 10, on the Nov 3, 2026 general ballot; March 3, 2026 primary was canceled) and https://www.ncleg.gov/Members/Biography/H/661",
+        "On the Record (0 appearances, 0 meetings)",
+        "campaign site issues page https://www.electjohnbell.com/issues: nothing on the subject",
+        "campaign site news list https://www.electjohnbell.com/news: one page of 87 dated items scanned for subject words, nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "NC General Assembly bill page and roll call for HB 589 (2013): reviewed",
+        "NC-S-824-2018 already on file, not collected again",
+        "blocked: https://www.ncleg.gov/Members/Biography/H/754 (HTTP 500, wrong member id anyway)",
+        "blocked: https://www.ncleg.gov/BillLookUp/2018/S824 (HTTP 500)",
+        "not reviewed: news search on name plus subject words (shared web search budget exhausted)",
+        "not reviewed: floor speeches, interviews, debate or forum videos",
+        "not reviewed: bill sponsorship search on ncleg.gov for later sessions (2021-2025)"
+      ],
+      "found": 1,
+      "at": "2026-10-23T00:17:48.243Z",
+      "by": "source-collector"
+    }
+  ]
+}

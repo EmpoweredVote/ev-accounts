@@ -1,0 +1,416 @@
+{
+  "politician_id": "18528793-98ff-447e-80a1-78c6f4edef10",
+  "findings": [
+    {
+      "id": "2a6029dbc2e21135628118c532559bd858bd6a0de8dbc7a1290d5be5c6aeb9a8",
+      "kind": "own-words",
+      "url": "https://mailchi.mp/legis.wisconsin.gov/senmarklein-5144678",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "passage": "“I am proud to cosponsor and vote for legislation that, if approved by the voters, would enshrine voter ID requirements in Wisconsin’s Constitution. Since the voter ID law went into effect in 2012, voter turnout has risen in Wisconsin. We saw record-breaking turnout percentage in the 2020 presidential election and a record-breaking number of votes were cast in the 2024 election.”",
+      "note": "Statement in his name after the Senate passed SJR 2 (photo ID constitutional amendment) 17-15 on 2025-01-08. He says he cosponsored it. Listed on his Senate site as 'Marklein Celebrates the Passage of Voter ID Constitutional Amendment'.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:58:06.890Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4370c15d578eddfcb60ea4f9ca3bde2c93d63560d8ab81dc7fd5c113df3306de",
+      "kind": "own-words",
+      "url": "https://mailchi.mp/legis.wisconsin.gov/senmarklein-5144678",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "passage": "“This common-sense reform is supported by a vast majority of Wisconsinites and enshrining it in our State Constitution will ensure that it is around for years to come. I look forward to the State Assembly passing SJR 2 and sending this question to the voters.”",
+      "note": "Same release; he cites public support for the amendment.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:58:06.890Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cc314439e68dbf7428f08b7f9ca399835e9ef77b1fbcd1c4e5d14857964034e8",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/ab1002",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-1002-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/16/2022; hearing 2/21/2022; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/15/2022)",
+      "note": "Named as co sponsor ('Marklein') on the official bill page; linked to Howard Marklein via the official 2022 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c398b951a734a7dcdb44b106de3a6a7db48e6b57d544c890cbc380fe5e3bbcf0",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/sv0177",
+      "date": "2023-11-14",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-494-2023",
+      "act": "yea",
+      "motion": "Senate: Read a third time and concurred in (CONCURRENCE) (sv0177)",
+      "note": "Senate roll call as printed ('MARKLEIN'), linked to Howard Marklein (district 17) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "77df6e09e55f5ed1592ffb5005d4ac9df122c3ed401c58f46c529b061c25d39b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2011/av0330",
+      "date": "2011-05-11",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-7-2011",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and passed (PASSAGE) (av0330)",
+      "note": "Assembly roll call as printed ('MARKLEIN'), linked to Howard Marklein (district 51) via the official 2011 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f0a756aa38c0688e9298d1fa6dd953093e3ac6492da29ee0d44a6656305b95d4",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/ab999",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-999-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/16/2022; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/15/2022)",
+      "note": "Named as co sponsor ('Marklein') on the official bill page; linked to Howard Marklein via the official 2022 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05f8a142565de5b18a7bb52eccf388587e6178fcea0d942c4b6f4e87c5f035e1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ajr1",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-1-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/6/2025 (second consideration, text of 2023 SJR 73); committee recommended adoption 1/9/2025 (5-2); laid on the table 1/14/2025; died (Failed to adopt pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Marklein') on the official bill page; linked to Howard Marklein via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "859b5c8ce4718a309615ebc193a6cd65c0c31ba55084517735acaa9c8a0dc903",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/ajr78",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-78-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 9/29/2023 (first consideration); committee recommended adoption 11/6/2023; laid on the table 11/9/2023; died (Failed to adopt pursuant to Senate Joint Resolution 1, 4/15/2024)",
+      "note": "Named as co sponsor ('Marklein') on the official bill page; linked to Howard Marklein via the official 2023 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "afa5598b3a1af4be7e19017a800bf635b25b6b582646a110e688d2f5407df51c",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/sv0085",
+      "date": "2021-06-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "yea",
+      "motion": "Senate: Read a third time and passed (PASSAGE) (sv0085)",
+      "note": "Senate roll call as printed ('MARKLEIN'), linked to Howard Marklein (district 17) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0e866c26b1c84eb8888f73f03997e28e2005a4fc5b09e753863626d294b085d2",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/sb582",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-582-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 10/30/2023; Senate committee recommended passage as amended 11/10/2023 (3-2); available for scheduling; died (Failed to pass pursuant to Senate Joint Resolution 1, 4/15/2024)",
+      "note": "Named as co sponsor ('Marklein') on the official bill page; linked to Howard Marklein via the official 2023 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5e92c3b1e1100135c7e6512463e4f3c227c4151069b959ef47dfa5264ab9ad27",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2017/sv0291",
+      "date": "2018-12-04",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-884-2018",
+      "act": "yea",
+      "motion": "Senate: Read a third time and passed (PASSAGE) (sv0291)",
+      "note": "Senate roll call as printed ('MARKLEIN'), linked to Howard Marklein (district 17) via the official 2017 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d13c5034d8852f39633cb03add59315b6842cac4346e989cc3d46f2f34a0fb1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/sv0260",
+      "date": "2022-02-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "yea",
+      "motion": "Senate: Read a third time and passed (PASSAGE) (sv0260)",
+      "note": "Senate roll call as printed ('MARKLEIN'), linked to Howard Marklein (district 17) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d18ec4f8e6c2ec482a548482cc0f5bd2db49f952b41b66b8696c034c4141a0b4",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/sb939",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled bill as vetoed by the Governor (2021 Senate Bill 939, vetoed 4/8/2022); passed Senate 2/22/2022, concurred by Assembly 2/24/2022; override failed (Joint Rule 82, 5/17/2022)",
+      "note": "Named as co sponsor ('Marklein') on the official bill page; linked to Howard Marklein via the official 2022 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "097e5be441c78312236748cdf9f0e45bc27901642be1fe8690bad61c835c3d34",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/sv0003",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "yea",
+      "motion": "Senate: Read a third time and adopted (PASSAGE) (sv0003)",
+      "note": "Senate roll call as printed ('MARKLEIN'), linked to Howard Marklein (district 17) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "52afc0d599e71925804c90692661774de3a4e6234e50f5798a0f86167fb91d4e",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sjr2",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election",
+      "note": "Named as co sponsor ('Marklein') on the official bill page; linked to Howard Marklein via the official 2025 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f242b6244d66e708c0a0080ce690b279166ec537853c0cc236e406ae40cc7622",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/sv0139",
+      "date": "2023-11-07",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "yea",
+      "motion": "Senate: Read a third time and adopted (ADOPTION) (sv0139)",
+      "note": "Senate roll call as printed ('MARKLEIN'), linked to Howard Marklein (district 17) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5bff7ebb8d70b2c56770ba61c80e5c48e6eeb953970ea91ca07f3a04122b3427",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/sjr73",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2023 Enrolled Joint Resolution 9, first consideration); adopted by Senate 11/7/2023 and concurred by Assembly 11/9/2023",
+      "note": "Named as co sponsor ('Marklein') on the official bill page; linked to Howard Marklein via the official 2023 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.771Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "absentee ballot ID",
+        "election integrity",
+        "proof of citizenship"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "his Senate site, press release pages 1 and 2 (found one 2025 voter ID release, reached through its mailchimp copy)",
+        "candidacy: https://civicmedia.us/news/2026/06/02/howard-marklein-announced-he-is-officially-on-the-ballot-for-re-election says he is on the 2026 ballot for the 17th Senate District and unopposed in the August primary",
+        "blocked: https://ballotpedia.org/Howard_Marklein (empty page)",
+        "blocked: https://www.wispolitics.com/2020/sen-marklein-urges-voters-to-vote-absentee/ (403; a 2020 absentee-voting release that mentions ID help was not read)",
+        "two web searches on name plus voter ID and reelection words",
+        "campaign site: none fetched; nothing on proof of citizenship or SAVE Act found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:58:06.890Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 15,
+      "at": "2026-10-28T23:15:12.771Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

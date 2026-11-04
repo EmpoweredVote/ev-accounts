@@ -1,0 +1,31 @@
+{
+  "politician_id": "407ca254-9f51-4aa2-becb-2f1e9ca5ea70",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety laws",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "Second Amendment general statements",
+        "public safety and school safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.votepamdelancy.com/ : home, issues, meet_pamela, nurse and news pages read; confirms she is the 2026 nominee for Georgia's 10th District; the issues page has a Safety section that does not mention guns, so nothing on the subject",
+        "The Ballot Brief candidate page: lists Safety as a priority, nothing on guns",
+        "not a legislator: no sponsorship list exists to open",
+        "blocked: https://www.covnews.com/news/state/pamela-delancy-declares-her-candidacy-for-congress (429)",
+        "blocked: https://redandblack.com/athensnews/pamela-delancy-on-why-she-s-running-for-georgia-s-10th-congressional-district/article_588b06e0-123b-46e7-b5be-88b54465c4a7.html (429)",
+        "blocked: https://bluevoterguide.org/endorser-org/Gun_Sense_Voter/GA/4895 (bot check; a search result says a gun-safety group lists her, but that is a third-party listing and was not read)",
+        "https://www.delancyforcongress.com : address does not exist",
+        "web search (3 searches): no questionnaire or statement from her on guns found; Ballotpedia not reachable by fetch tool, not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-30T20:50:23.154Z",
+      "by": "source-collector"
+    }
+  ]
+}

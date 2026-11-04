@@ -1,0 +1,38 @@
+{
+  "id": "TX-HB-2599-2023",
+  "scope": "state:tx",
+  "title": "HB2599 (88th Legislature Regular Session): Relating to prohibiting the possession of a firearm by a person in a criminal street gang; creating a criminal offense; increasing criminal penalties; changing eligibility for community supervision.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB2599",
+    "https://capitol.texas.gov/tlodocs/88R/billtext/html/HB02599I.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 1 (amending Penal Code 46.04(a-1)): A person who is a member of a criminal street gang, as defined by Section 71.01, commits an offense if the person {+possesses a firearm+} [[-intentionally, knowingly, or recklessly -] [-carries on or about his or her person a handgun in a motor vehicle or -] [-watercraft-]].\nSec. 1 (adding Penal Code 46.04(a-2)): {+It is an affirmative defense to prosecution under +} {+Subsection (a-1) that:+}\nSec. 1 (amending Penal Code 46.04(e)): An offense under Subsection (a) is a felony of the third degree.  {+An offense under Subsection (a-1) is a felony of the second +} {+degree.+}\nSec. 3 (amending Code of Criminal Procedure art. 42A.054(a)): {+(15-a)  Section 46.04(a-1), Penal Code;+}",
+  "sponsors": [
+    {
+      "name": "Yvonne Davis",
+      "politician_id": "9634d62c-f6b1-45da-918e-33c9969cf6c9",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-2599-2023.introduced.html",
+      "sha256": "d0fae0bde9c3a1d9ad09ea0a79fda34b6d86685d9719220467af62d9dfb76030"
+    }
+  }
+}

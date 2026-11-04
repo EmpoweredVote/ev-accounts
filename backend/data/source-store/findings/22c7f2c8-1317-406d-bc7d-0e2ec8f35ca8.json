@@ -1,0 +1,92 @@
+{
+  "politician_id": "22c7f2c8-1317-406d-bc7d-0e2ec8f35ca8",
+  "findings": [
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Davidson'), linked to Nathan Davidson (district 103) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.720Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "https://www.pahouse.com/davidson/InTheNews/NewsRelease/?id=136662 (swearing-in release, nothing on the subject)",
+        "campaign site https://www.natedavidson.com (nothing on the subject)",
+        "Pennsylvania House member page: confirms he is the sitting 103rd District member (via search result)",
+        "blocked: https://votesmart.org/public-statement/912526 (404)",
+        "not reviewed: On the Record extraction (repo script not run in this session)",
+        "blocked: https://ballotpedia.org (empty page, not retried)",
+        "web searches on name plus voter ID, photo ID, election integrity: no own words on the subject beyond findings listed",
+        "legislature bill pages for sponsorships: not reviewed (votes and sponsorships are linked separately)",
+        "2026 general-election ballot status not confirmed from any page"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:01:24.714Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:45:58.720Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "gun rights and Second Amendment statements",
+        "firearm bill sponsorships"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "House site news releases https://www.pahouse.com/davidson/InTheNews/NewsRelease/?id=136662 and ?id=136729 (confirm Nate Davidson, 103rd District): nothing on the subject",
+        "Campaign site https://www.natedavidson.com: nothing on the subject",
+        "House site legislation page https://www.pahouse.com/davidson/Legislation: nothing on the subject",
+        "Search results show gun-safety bill articles for a different legislator (Margo Davidson), not used",
+        "Ballotpedia: not reviewed (not fetched)",
+        "not reviewed: palegis.us sponsorship lists"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

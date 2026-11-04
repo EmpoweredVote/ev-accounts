@@ -1,0 +1,311 @@
+{
+  "id": "US-SJRES-20-2023",
+  "scope": "federal",
+  "title": "SJRES 20 (118th Congress): A joint resolution providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Justice and the Bureau of Alcohol, Tobacco, Firearms and Explosives relating to \"Factoring Criteria for Firearms With Attached 'Stabilizing Braces'\".",
+  "urls": [
+    "https://www.congress.gov/bill/118th-congress/senate-joint-resolution/20",
+    "https://www.govinfo.gov/content/pkg/BILLS-118sjres20is/xml/BILLS-118sjres20is.xml"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 1 (resolving clause, disapproving ATF rule): That Congress disapproves the rule submitted by the Department of Justice and the Bureau of Alcohol, Tobacco, Firearms and Explosives relating to Factoring Criteria for Firearms With Attached Stabilizing Braces (88 Fed. Reg. 6478 (January 31, 2023)), and such rule shall have no force or effect.",
+  "sponsors": [
+    {
+      "name": "John Kennedy",
+      "politician_id": "ffe3816f-4923-4e10-b71c-8b2590a8f377",
+      "role": "prime",
+      "version": "introduced"
+    },
+    {
+      "name": "Roger Marshall",
+      "politician_id": "9df12eb2-bc9a-4083-8004-1af4167342ea",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Bill Hagerty",
+      "politician_id": "0dd5daa6-87cf-43a7-a1ee-25349ae35e27",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Kevin Cramer",
+      "politician_id": "88c06231-8e34-43ff-befb-8868b44383e6",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Mike Lee",
+      "politician_id": "4f62ca82-fda1-4386-9a4a-62dd84318f83",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "John Cornyn",
+      "politician_id": "2b022ce1-6272-40db-9332-015a057ec9f8",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Marsha Blackburn",
+      "politician_id": "808ab926-365f-4b8a-a42e-628f11ecc48e",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Mitch McConnell",
+      "politician_id": "f8d6555b-faea-4746-b8d8-27c41e08f4c4",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "James Risch",
+      "politician_id": "9a41971c-1e38-41b8-a6ec-bec6055a00b3",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Mike Crapo",
+      "politician_id": "2971d4f9-1433-4dcd-aaa7-193241ef3c95",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Ted Cruz",
+      "politician_id": "a8bda21a-a5ca-4c15-9612-10fad5d5c9d6",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Rick Scott",
+      "politician_id": "129c2764-370c-4385-ad64-4cb5744c3541",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Markwayne Mullin",
+      "politician_id": "6fccd939-1a0f-4aca-8114-bcc28ef7f8bb",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Roger Wicker",
+      "politician_id": "d53cbad2-d166-4f8d-87a2-f7e5ddc7a237",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Josh Hawley",
+      "politician_id": "108e7bcc-554a-49d7-81f0-c3058f933a07",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Thomas Tillis",
+      "politician_id": "f1271c9d-fad4-4e1e-9c22-e6e2333a8a3e",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "James Lankford",
+      "politician_id": "2b8d4b89-2d7c-4b67-a5a1-72bd7c766e1e",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Ron Johnson",
+      "politician_id": "00abc782-e86b-40f2-be0d-f07fad802688",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Tom Cotton",
+      "politician_id": "0942f325-1180-4e1a-b1df-06438f1792a3",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Cindy Hyde-Smith",
+      "politician_id": "4d83f985-9248-4905-a9b6-5742e2df77a8",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Deb Fischer",
+      "politician_id": "3149d855-8d85-4080-b0d6-fb83be500533",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Steve Daines",
+      "politician_id": "24109768-01ad-4bab-b833-b7bc1d8f437d",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "John Thune",
+      "politician_id": "661c0499-af4c-4cf9-a34b-eb0c20d5cd4b",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Joni Ernst",
+      "politician_id": "130591ca-bfd1-4691-916b-3570341b04fb",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Lindsey Graham",
+      "politician_id": "20aa1064-bbe7-484c-b779-28d99e92e608",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "J. Vance",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Mike Braun",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Todd Young",
+      "politician_id": "102b239c-0a3d-44b9-ae32-88d8179197e2",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "John Boozman",
+      "politician_id": "3621bbef-a821-45fe-991c-e1744ad05203",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Cynthia Lummis",
+      "politician_id": "d04b548f-8655-40f6-8d27-9989f473a828",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "John Barrasso",
+      "politician_id": "e4b27d5e-59de-4e71-a8a7-28e7b9a80807",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Ted Budd",
+      "politician_id": "401f1fab-c996-4b1a-92f7-2817c5dd4619",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "John Hoeven",
+      "politician_id": "e6596b34-8d9f-4593-bf0c-4fe7fc17cd26",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Jerry Moran",
+      "politician_id": "2f52b4b6-f167-4452-be9b-d37a5b667e69",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Rand Paul",
+      "politician_id": "4cc6f4af-a528-430e-975b-bd5a86382a13",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Mitt Romney",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Chuck Grassley",
+      "politician_id": "dd5d3f6d-fc82-4774-b510-287ec47cbd84",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Dan Sullivan",
+      "politician_id": "a97678bc-8844-4560-87b1-5ef4f8013d96",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Bill Cassidy",
+      "politician_id": "eff33c8a-38f6-421f-a8de-24518c52d650",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Mike Rounds",
+      "politician_id": "624e51ff-2f0f-45d0-bd57-1dfa8ad47013",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Katie Britt",
+      "politician_id": "0ba1cecc-8493-495b-8d58-34d50bbacfba",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Tommy Tuberville",
+      "politician_id": "7affca4e-db2b-4f7e-b009-9acc6b493139",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Eric Schmitt",
+      "politician_id": "274c286d-a292-4e3f-b570-6c2d7ae9c209",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Pete Ricketts",
+      "politician_id": "d01ea902-317a-4a66-b346-8b29a91fcd25",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Shelley Capito",
+      "politician_id": "6ca6aabe-6a7f-46b7-b51d-620a7f5c9913",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Marco Rubio",
+      "politician_id": "7c8e4442-e13e-485a-8993-b05ca110410d",
+      "role": "co",
+      "version": "cosponsor 2023-03-15"
+    },
+    {
+      "name": "Tim Scott",
+      "politician_id": "675778b0-7e6f-45ef-96b2-7bcb5d7e0af7",
+      "role": "co",
+      "version": "cosponsor 2023-03-22"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-31T00:23:59.657689Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-SJRES-20-2023.htm",
+      "sha256": "01e71824e8991c247f827837d8852968be726f4c2b3d843bf11bbb3a396d8f75"
+    }
+  }
+}

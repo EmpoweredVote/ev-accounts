@@ -1,0 +1,732 @@
+{
+  "politician_id": "634d4e4c-57e4-454d-9e40-94e6a0e46f04",
+  "findings": [
+    {
+      "id": "d2a7bce5f0439eb010e19178a01ce884f0f7377983f68c163913ffa75dd4703c",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/rep.-culp-legislation-to-improve-election-integrity-passes-the-house/",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "passage": "\"A student ID gives very little information about the voter, only their name, university and a photo,\" Culp said. \"This bill would treat college students the same as other voters, ensuring they have a government-issued ID to vote, such as a drivers license.\"",
+      "note": "Quote in a House caucus press release issued in his name. He explains Senate Bill 10, which removes student IDs as accepted ID at the polls.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted ID types",
+        "student ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:36:24.765Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "50efb9e1c08b5ab2e5fdb31346200979d1a5bd7c952643f604bde94e329f9815",
+      "kind": "record",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/rep.-culp-legislation-to-improve-election-integrity-passes-the-house/",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "sponsor",
+      "note": "He was the House sponsor of SB 10. Per the release, it removes student IDs as authorized proof of identification at the polls, requires county voter registration offices to keep updated voter lists, and requires local health officers to share death records with them every quarter.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted ID types",
+        "voter-roll maintenance",
+        "student ID as proof of identity",
+        "voter-roll maintenance and death records"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:59:13.172Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "c185b75e23bb3cec160e1491a00aeea50b5ad2f1cfc7b4ba148f5030f398fff6",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/rep.-culp-legislation-to-improve-election-integrity-passes-the-house/",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "passage": "\"A student ID gives very little information about the voter, only their name, university and a photo,\" Culp said.",
+      "note": "House caucus press release on House passage of SB 10, which he sponsored. He explains why the bill removes student IDs as accepted proof of identity at the polls.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as proof of identity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:59:13.172Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4c38136990ecaa3405c75b636fd1a0363ac8eca74aeaf89fd71582981555f396",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/rep.-culp-legislation-to-improve-election-integrity-passes-the-house/",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "passage": "\"This bill would treat college students the same as other voters, ensuring they have a government-issued ID to vote, such as a drivers license.\"",
+      "note": "Same release. He says college students would need a government-issued ID, such as a driver's license, like other voters.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as proof of identity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:59:13.172Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "503008a0d3c49dc7102fe94cb663413172355ff34119c54c0321732dc8c6f1c0",
+      "kind": "own-words",
+      "url": "https://www.wfyi.org/public-affairs/2025-04-01/house-republicans-vote-to-ban-use-of-college-student-ids-at-polling-places",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "passage": "\"A university ID does not prove that that is an Indiana resident,\" Culp said.",
+      "note": "Quoted by WFYI during House floor debate on SB 10, of which he was the House sponsor.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as proof of identity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:59:13.172Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "66e44d6647289438b833f817e03af544f6a73393d1ef2bee6e639f738e28c0a9",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2024/bills/house/1084/details",
+      "date": "2024-03-06",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1084-2024",
+      "act": "yea",
+      "motion": "House - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN House, House - Rules Suspended. Conference Committee Report 1, 2024-03-06: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "state officers may carry handguns at the state capitol",
+        "ban on firearm registries of Indiana consumers",
+        "no firearm-specific payment card codes or refusals to process firearm sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1084-2024.enrolled.pdf",
+          "sha256": "9614117749f50b72173264ad1436d587465d01f1298e10a6c33f83c649ee7825"
+        }
+      }
+    },
+    {
+      "id": "d4641b55f8e2d82d4fb0869b839cec9884de9aac967ac86bc0585680c201bbc7",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2024/bills/house/1143/details",
+      "date": "2024-02-05",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1143-2024",
+      "act": "yea",
+      "motion": "House - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN House, House - Third reading, 2024-02-05: yea (tally 83–14); census gate: none.",
+      "subjects": [
+        "police may trade confiscated firearms for new equipment",
+        "records of firearm trades are public"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1143-2024.enrolled.pdf",
+          "sha256": "3d2e92aad597239fbbd4120eb545efa85e8d2ae2b8c56fccbdb5d810c862d819"
+        }
+      }
+    },
+    {
+      "id": "534231d0e7966709a62318f66125cf6c19dcdc8f7eeb1b32538162564aac3eaf",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2023/bills/house/1177/",
+      "date": "2023-04-26",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1177-2023",
+      "act": "yea",
+      "motion": "House - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "IN House, House - Rules Suspended. Conference Committee Report 1, 2023-04-26: yea (tally 72–22); census gate: multi-subject.",
+      "subjects": [
+        "state grants for firearms training of armed school staff",
+        "safe firearm storage guidance sent to parents",
+        "school-property gun ban exceptions for qualified officers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1177-2023.enrolled.pdf",
+          "sha256": "6b8e3c10f7134e1a98c7e6172888fc617f2333655d5a659e0e49bb75d5ab5dd5"
+        }
+      }
+    },
+    {
+      "id": "b7a0457ae8faaf85839bb4a854b46b8c60de0f766cb2d15bddc513cc4a97419c",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2024/bills/house/1235/details",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1235-2024",
+      "act": "yea",
+      "motion": "House - House concurred in Senate amendments",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN House, House - House concurred in Senate amendments, 2024-03-05: yea (tally 64–27); census gate: none.",
+      "subjects": [
+        "local lawsuits against gun and ammunition industry barred; only the state may sue",
+        "exceptions for contract or warranty and zoning or business rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1235-2024.enrolled.pdf",
+          "sha256": "863d0845047c379ed79ba8f50257fbeb368b93926d8db51be22e09c4ba3372e4"
+        }
+      }
+    },
+    {
+      "id": "f3f0e9b8c83fbb3c5c216c18d147d03905c505818ef9d1e00da12079899e80f6",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2024/bills/house/1240/details",
+      "date": "2024-03-06",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1240-2024",
+      "act": "yea",
+      "motion": "House - House concurred in Senate amendments",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "IN House, House - House concurred in Senate amendments, 2024-03-06: yea (tally 93–0); census gate: multi-subject.",
+      "subjects": [
+        "felony handgun carrying by older teens made a waivable juvenile case"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1240-2024.enrolled.pdf",
+          "sha256": "4ebeecc2dfaa074800f340dd3ab0f6301f292333d068bd90c5b72fc29c9f64dd"
+        }
+      }
+    },
+    {
+      "id": "32b80a2b55566aecf4dca52f91bfb524bd166f748ae16bef2ef392c0aa648b61",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2026/bills/house/1249/details",
+      "date": "2026-02-27",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1249-2026",
+      "act": "yea",
+      "motion": "House - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "IN House, House - Rules Suspended. Conference Committee Report 1, 2026-02-27: yea (tally 96–0); census gate: multi-subject.",
+      "subjects": [
+        "child's dangerous possession of a firearm made a Level 5 felony near schools or with a prior conviction",
+        "child giving a firearm to an ineligible child is a felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1249-2026.enrolled.pdf",
+          "sha256": "172d79f5e19ed54ba0ca8d38d66b853eaa663ef271f3c0ed00058967e2e07e50"
+        }
+      }
+    },
+    {
+      "id": "8146912e1fab9108707b77974b8d366dcf15ac4c554f8780b9a6d51d75a2a728",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2026/bills/house/1258/details",
+      "date": "2026-02-26",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1258-2026",
+      "act": "yea",
+      "motion": "House - House concurred with Senate amendments",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "IN House, House - House concurred with Senate amendments, 2026-02-26: yea (tally 78–15); census gate: multi-subject.",
+      "subjects": [
+        "repeat illegal gun carrying and possession counted as crimes of violence",
+        "crime-of-violence list feeds bail and release rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1258-2026.enrolled.pdf",
+          "sha256": "1adf420a4f8712a678b443140991f8e966a3e1d936fc1f62e72e9bee6a1733c2"
+        }
+      }
+    },
+    {
+      "id": "5cfbcdc5a0babd104acd57a365d57f02a5099ef296f191816d2f0a3cada14794",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2026/bills/house/1274/details",
+      "date": "2026-01-28",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1274-2026",
+      "act": "yea",
+      "motion": "House - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN House, House - Third reading, 2026-01-28: yea (tally 69–25); census gate: none.",
+      "subjects": [
+        "insurers barred from requiring gun free zone signs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1274-2026.enrolled.pdf",
+          "sha256": "c9c7acd718bbd025aa03f305929915de62929dc4ac0ef07974fc28f95732de67"
+        }
+      }
+    },
+    {
+      "id": "ca5cf85289638d68f274904b417c6ceb0885a7bfc5c4e2f87094e9ca9b01561f",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2023/bills/house/1323/",
+      "date": "2023-02-07",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1323-2023",
+      "act": "yea",
+      "motion": "House - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN House, House - Third reading, 2023-02-07: yea (tally 81–13); census gate: none.",
+      "subjects": [
+        "handgun license holder information shared with federal agencies only for a single-entry query tied to a criminal investigation or arrest"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1323-2023.enrolled.pdf",
+          "sha256": "85efd9fbf405d0d8df41b624004dec6514b6849eff0cc00c6923fa94437a4b31"
+        }
+      }
+    },
+    {
+      "id": "17312fd1850f5b9d53895e3238d0a3b58bd2a4852ec672f77736270718209e0b",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2026/bills/house/1343/details",
+      "date": "2026-02-27",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1343-2026",
+      "act": "yea",
+      "motion": "House - Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "IN House, House - Conference Committee Report 1, 2026-02-27: yea (tally 65–29); census gate: multi-subject.",
+      "subjects": [
+        "new school-property offence for imitation firearms",
+        "trunk or locked-glove-box defense extended to imitation firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1343-2026.enrolled.pdf",
+          "sha256": "97ae4e77fb76f4f2988fda66fbb368c52d8428a4d583512f96f4106c986a61c2"
+        }
+      }
+    },
+    {
+      "id": "629069882e920d65e997612a13b3d9cdd599138b8e394180b8c65cb871c8fc6c",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2023/bills/house/1365/",
+      "date": "2023-04-03",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1365-2023",
+      "act": "nay",
+      "motion": "House - House concurred in Senate amendments",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN House, House - House concurred in Senate amendments, 2023-04-03: nay (tally 71–23); census gate: none.",
+      "subjects": [
+        "machine gun definition revised",
+        "machine guns and other items not on the federal registry exempted from state machine gun offences",
+        "machine gun transfer to minors stays a felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1365-2023.enrolled.pdf",
+          "sha256": "f8d2309af4ba7f01e519d3579ae8bae7e606041348d5d4225b3f9a7954d7d0a0"
+        }
+      }
+    },
+    {
+      "id": "279ae52ece7f62f2f3e028e63e4005198385db7bbadc9e615001a122ccfc6766",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/house/1637/details",
+      "date": "2025-04-24",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1637-2025",
+      "act": "yea",
+      "motion": "House - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "IN House, House - Rules Suspended. Conference Committee Report 1, 2025-04-24: yea (tally 93–0); census gate: multi-subject.",
+      "subjects": [
+        "passenger pointing a firearm during reckless driving becomes a felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1637-2025.enrolled.pdf",
+          "sha256": "cc70e14806548478abb7f7cec4c48376d06e8c7917ed7c1285755678475b8fe1"
+        }
+      }
+    },
+    {
+      "id": "90370703230edcb93546bafe74597ab157999ad330635554e5f96cddb69d2a13",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2026/bills/senate/148/details",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-148-2026",
+      "act": "yea",
+      "motion": "House - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "IN House, House - Third reading, 2026-02-24: yea (tally 98–0); census gate: near-unanimous.",
+      "subjects": [
+        "crime guns task force area adds LaPorte and Porter counties",
+        "task force board quorum and tie vote rule"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-SB-148-2026.enrolled.pdf",
+          "sha256": "1f829218891368cebe709f3312019cd5b3918ace216b073c8e1c546a2939e732"
+        }
+      }
+    },
+    {
+      "id": "c2e1c730a34f4b2aed14b1ff4208faeaf74b6916e13dbaefff91eafd24ee5e3a",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2023/bills/senate/158/",
+      "date": "2023-03-21",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-158-2023",
+      "act": "yea",
+      "motion": "House - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "IN House, House - Third reading, 2023-03-21: yea (tally 94–0); census gate: multi-subject.",
+      "subjects": [
+        "more crimes count as serious violent felonies for the firearm possession ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-SB-158-2023.enrolled.pdf",
+          "sha256": "7a12b0989818ac31ded5aac7e9cbbbb60045b45cc31c61f6be610e0ef327d039"
+        }
+      }
+    },
+    {
+      "id": "a998f71c38fd9c56791ef25886541522695d6b98c88e0bf71b7704806e90c41a",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2026/bills/senate/176/details",
+      "date": "2026-02-27",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-176-2026",
+      "act": "yea",
+      "motion": "House - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN House, House - Rules Suspended. Conference Committee Report 1, 2026-02-27: yea (tally 67–25); census gate: none.",
+      "subjects": [
+        "local limits on shooting range permits and zoning restricted",
+        "indoor shooting ranges allowed in commercial, industrial and farm zones",
+        "sporting goods stores (which sell firearms) allowed in commercial zones"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-SB-176-2026.enrolled.pdf",
+          "sha256": "6933ecc1981c83b3d7313eea18239a5ee7b0e3d3bd08cbb353141deb4dac3127"
+        }
+      }
+    },
+    {
+      "id": "e43168beb013f95f1f285f55f17a446c6ee045e28f363ca23234efa2caf37696",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/60179/race/30665/election/1456",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Individual gun ownership is guaranteed in our constitution and should remain that way.",
+      "note": "His iVoterGuide questionnaire answer to \"What restrictions on gun ownership are needed to protect public safety?\" The page does not show a date for the answer.",
+      "subjects": [
+        "general statement on gun rights",
+        "restrictions on gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:33:51.838Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "533ea96ca517a1305af6998ba94dd56956d3e43750fd570123a100ab82cd6a7d",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/60179/race/30665/election/1456",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Should teachers be allowed to carry guns at school? Yes",
+      "note": "His iVoterGuide questionnaire answer on teachers carrying guns at school was Yes. The page does not show a date for the answer.",
+      "subjects": [
+        "teachers carrying guns at school"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:33:51.838Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c0180bc790f7a14a5bae1f4e76194939e42f8c0511356707d0ca6e0b004b7d98",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/aylesworth-culp-state-hits-the-bullseye-with-5.5m-for-jasper-pulaski-fwa-shooting-range/",
+      "date": "2023-12-19",
+      "date_precision": "day",
+      "passage": "\"With the approved funding, the Jasper-Pulaski FWA Shooting Range can safely continue to house the local archery, rifle, shotgun and handgun facilities,\" Culp said.",
+      "note": "Release on state money for a public shooting range. It is about range funding, not gun law; saved only as a general gun-related statement.",
+      "subjects": [
+        "gun safety and training facilities"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:33:51.838Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "accepted ID types",
+        "voter-roll maintenance",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "non-citizen voting"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Kendell_Culp (House District 16, advanced from May 5, 2026 primary, on Nov 3, 2026 general ballot)",
+        "On the Record (0 appearances for this politician)",
+        "official site: https://www.indianahouserepublicans.com/members/general/kendell-culp (press-release list scanned for subject words; one election item found)",
+        "Ballotpedia (no subject positions found)",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_kendell_culp_1 (page needs JavaScript; bill pages unreadable)",
+        "blocked: https://www.kendellculp.com (no connection)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "nothing on the subject: SAVE Act, proof of citizenship, mail-ballot ID"
+      ],
+      "found": 2,
+      "at": "2026-10-22T22:36:24.765Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as proof of identity",
+        "voter-roll maintenance and death records",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia page (confirms he is an Indiana House District 16 member, advanced from the 2026-05-05 primary and is on the 2026-11-03 general-election ballot)",
+        "Indiana House caucus press release of 2025-04-16 on SB 10",
+        "WFYI public radio report of 2025-04-01 on SB 10",
+        "Indiana Capital Chronicle and Ink Free News reports of April 2025 on SB 10 (his sponsor remarks)",
+        "news search on his name plus election, citizenship and ID bills (no citizenship-bill role for him found)",
+        "not reviewed: his House member page and campaign site",
+        "not reviewed: https://iga.in.gov (roll calls already on file, per brief)"
+      ],
+      "found": 4,
+      "at": "2026-10-27T19:59:13.172Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "restrictions on gun ownership",
+        "teachers carrying guns at school",
+        "Second Amendment",
+        "gun safety and training",
+        "carry without a permit",
+        "background checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House caucus member page and press-release list for Culp (House District 16, Rensselaer; no gun-law release)",
+        "House caucus column on public safety, 2025-06-26 (mentions only a data-sharing law covering stolen firearms)",
+        "iVoterGuide questionnaire page for the 2026 race, with a second iVoterGuide page showing no answer",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site: no address found",
+        "Ballotpedia: not reviewed, returns empty",
+        "web searches: 2 run; no other own-words found",
+        "blocked: https://iga.in.gov/ (not opened; sponsorships covered by LegiScan bulk check)"
+      ],
+      "found": 3,
+      "at": "2026-10-31T20:33:51.838Z",
+      "by": "source-collector"
+    }
+  ]
+}

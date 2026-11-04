@@ -1,0 +1,549 @@
+{
+  "id": "CA-SB-1174-2024",
+  "scope": "state:ca",
+  "title": "SB 1174 (2023-2024 Regular Session): Elections: voter identification.",
+  "urls": [
+    "https://leginfo.legislature.ca.gov/faces/billHistoryClient.xhtml?bill_id=202320240SB1174 (read via https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billHistoryClient.xhtml?bill_id=202320240SB1174)",
+    "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202320240SB1174 (read via https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202320240SB1174)",
+    "https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240SB1174 (official URL; read via https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240SB1174)",
+    "Versions listed: 08/29/24 Enrolled; 05/02/24 Amended Senate; 03/18/24 Amended Senate; 02/14/24 Introduced (not read)",
+    "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174 (chaptered text copy; summary read)"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) SEC. 2 (adds Elections Code Section 10005)\n(quote) A local government shall not enact or enforce any charter provision, ordinance, or regulation requiring a person to present identification for the purpose of voting or submitting a ballot at any polling place, vote center, or other location where ballots are cast or submitted, unless required by state or federal law.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) SEC. 2 (adds Elections Code Section 10005)\n(quote) For the purpose of this section, “local government” means any charter or general law city, charter or general law county, or any city and county.\n(section) SEC. 1(b)\n(quote) The Legislature finds and declares that Section 2 of this act adding Section 10005 of the Elections Code addresses a matter of statewide concern rather than a municipal affair as that term is used in Section 5 of Article XI of the California Constitution. Therefore, Section 2 of this act applies to all cities, including charter cities.\n(other) SEC. 1(a): Legislative findings on voter ID, voter registration identifiers, and election integrity measures.",
+  "sponsors": [
+    {
+      "name": "Min (S)",
+      "role": "author",
+      "version": "Chaptered (09/29/24), Chapter 990, Statutes of 2024"
+    },
+    {
+      "name": "Cervantes (A)",
+      "role": "co",
+      "version": "Chaptered (09/29/24), Chapter 990, Statutes of 2024"
+    },
+    {
+      "name": "Newman (S)",
+      "role": "co",
+      "version": "Chaptered (09/29/24), Chapter 990, Statutes of 2024"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2024-08-27",
+      "body": "CA Assembly",
+      "motion": "SB 1174 Min Senate Third Reading By BERMAN (PASS)",
+      "kind": "roll-call",
+      "yes": 57,
+      "no": 16,
+      "absent": 6,
+      "body_size": 79,
+      "note": "https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (Internet Archive copy used; Official leginfo.legislature.ca.gov returns a Cloudflare 403 challenge (WebFetch and curl). The vote page was read from the Internet Archive copy of the official leginfo page (captured 2025), which reproduces the official roll call; names exactly as printed there. Tally 'absent' = NVR count.)",
+      "members": [
+        {
+          "name": "Addis",
+          "vote": "yea"
+        },
+        {
+          "name": "Aguiar-Curry",
+          "vote": "yea"
+        },
+        {
+          "name": "Alvarez",
+          "vote": "yea"
+        },
+        {
+          "name": "Arambula",
+          "vote": "yea"
+        },
+        {
+          "name": "Bains",
+          "vote": "yea"
+        },
+        {
+          "name": "Bauer-Kahan",
+          "vote": "yea"
+        },
+        {
+          "name": "Bennett",
+          "vote": "yea"
+        },
+        {
+          "name": "Berman",
+          "vote": "yea"
+        },
+        {
+          "name": "Boerner",
+          "vote": "yea"
+        },
+        {
+          "name": "Bonta",
+          "vote": "yea"
+        },
+        {
+          "name": "Bryan",
+          "vote": "yea"
+        },
+        {
+          "name": "Calderon",
+          "vote": "yea"
+        },
+        {
+          "name": "Juan Carrillo",
+          "vote": "yea"
+        },
+        {
+          "name": "Wendy Carrillo",
+          "vote": "yea"
+        },
+        {
+          "name": "Connolly",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Fong",
+          "vote": "yea"
+        },
+        {
+          "name": "Friedman",
+          "vote": "yea"
+        },
+        {
+          "name": "Gabriel",
+          "vote": "yea"
+        },
+        {
+          "name": "Garcia",
+          "vote": "yea"
+        },
+        {
+          "name": "Gipson",
+          "vote": "yea"
+        },
+        {
+          "name": "Grayson",
+          "vote": "yea"
+        },
+        {
+          "name": "Haney",
+          "vote": "yea"
+        },
+        {
+          "name": "Hart",
+          "vote": "yea"
+        },
+        {
+          "name": "Holden",
+          "vote": "yea"
+        },
+        {
+          "name": "Irwin",
+          "vote": "yea"
+        },
+        {
+          "name": "Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Jones-Sawyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Kalra",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee",
+          "vote": "yea"
+        },
+        {
+          "name": "Low",
+          "vote": "yea"
+        },
+        {
+          "name": "Lowenthal",
+          "vote": "yea"
+        },
+        {
+          "name": "Maienschein",
+          "vote": "yea"
+        },
+        {
+          "name": "McCarty",
+          "vote": "yea"
+        },
+        {
+          "name": "McKinnor",
+          "vote": "yea"
+        },
+        {
+          "name": "Muratsuchi",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephanie Nguyen",
+          "vote": "yea"
+        },
+        {
+          "name": "Pacheco",
+          "vote": "yea"
+        },
+        {
+          "name": "Papan",
+          "vote": "yea"
+        },
+        {
+          "name": "Pellerin",
+          "vote": "yea"
+        },
+        {
+          "name": "Petrie-Norris",
+          "vote": "yea"
+        },
+        {
+          "name": "Quirk-Silva",
+          "vote": "yea"
+        },
+        {
+          "name": "Ramos",
+          "vote": "yea"
+        },
+        {
+          "name": "Rendon",
+          "vote": "yea"
+        },
+        {
+          "name": "Reyes",
+          "vote": "yea"
+        },
+        {
+          "name": "Luz Rivas",
+          "vote": "yea"
+        },
+        {
+          "name": "Blanca Rubio",
+          "vote": "yea"
+        },
+        {
+          "name": "Santiago",
+          "vote": "yea"
+        },
+        {
+          "name": "Soria",
+          "vote": "yea"
+        },
+        {
+          "name": "Ting",
+          "vote": "yea"
+        },
+        {
+          "name": "Valencia",
+          "vote": "yea"
+        },
+        {
+          "name": "Villapudua",
+          "vote": "yea"
+        },
+        {
+          "name": "Ward",
+          "vote": "yea"
+        },
+        {
+          "name": "Weber",
+          "vote": "yea"
+        },
+        {
+          "name": "Wicks",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilson",
+          "vote": "yea"
+        },
+        {
+          "name": "Wood",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Rivas",
+          "vote": "yea"
+        },
+        {
+          "name": "Alanis",
+          "vote": "nay"
+        },
+        {
+          "name": "Chen",
+          "vote": "nay"
+        },
+        {
+          "name": "Megan Dahle",
+          "vote": "nay"
+        },
+        {
+          "name": "Davies",
+          "vote": "nay"
+        },
+        {
+          "name": "Dixon",
+          "vote": "nay"
+        },
+        {
+          "name": "Essayli",
+          "vote": "nay"
+        },
+        {
+          "name": "Gallagher",
+          "vote": "nay"
+        },
+        {
+          "name": "Hoover",
+          "vote": "nay"
+        },
+        {
+          "name": "Lackey",
+          "vote": "nay"
+        },
+        {
+          "name": "Mathis",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Patterson",
+          "vote": "nay"
+        },
+        {
+          "name": "Joe Patterson",
+          "vote": "nay"
+        },
+        {
+          "name": "Sanchez",
+          "vote": "nay"
+        },
+        {
+          "name": "Ta",
+          "vote": "nay"
+        },
+        {
+          "name": "Waldron",
+          "vote": "nay"
+        },
+        {
+          "name": "Wallis",
+          "vote": "nay"
+        },
+        {
+          "name": "Cervantes",
+          "vote": "absent"
+        },
+        {
+          "name": "Flora",
+          "vote": "absent"
+        },
+        {
+          "name": "Ortega",
+          "vote": "absent"
+        },
+        {
+          "name": "Rodriguez",
+          "vote": "absent"
+        },
+        {
+          "name": "Schiavo",
+          "vote": "absent"
+        },
+        {
+          "name": "Zbur",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2024-05-21",
+      "body": "CA Senate",
+      "motion": "Senate 3rd Reading SB1174 Min et al. (PASS)",
+      "kind": "roll-call",
+      "yes": 30,
+      "no": 8,
+      "absent": 2,
+      "body_size": 40,
+      "note": "https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (Internet Archive copy used)",
+      "members": [
+        {
+          "name": "Archuleta",
+          "vote": "yea"
+        },
+        {
+          "name": "Ashby",
+          "vote": "yea"
+        },
+        {
+          "name": "Atkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Becker",
+          "vote": "yea"
+        },
+        {
+          "name": "Blakespear",
+          "vote": "yea"
+        },
+        {
+          "name": "Bradford",
+          "vote": "yea"
+        },
+        {
+          "name": "Caballero",
+          "vote": "yea"
+        },
+        {
+          "name": "Cortese",
+          "vote": "yea"
+        },
+        {
+          "name": "Dodd",
+          "vote": "yea"
+        },
+        {
+          "name": "Durazo",
+          "vote": "yea"
+        },
+        {
+          "name": "Eggman",
+          "vote": "yea"
+        },
+        {
+          "name": "Glazer",
+          "vote": "yea"
+        },
+        {
+          "name": "Gonzalez",
+          "vote": "yea"
+        },
+        {
+          "name": "Hurtado",
+          "vote": "yea"
+        },
+        {
+          "name": "Laird",
+          "vote": "yea"
+        },
+        {
+          "name": "Limón",
+          "vote": "yea"
+        },
+        {
+          "name": "McGuire",
+          "vote": "yea"
+        },
+        {
+          "name": "Menjivar",
+          "vote": "yea"
+        },
+        {
+          "name": "Min",
+          "vote": "yea"
+        },
+        {
+          "name": "Newman",
+          "vote": "yea"
+        },
+        {
+          "name": "Padilla",
+          "vote": "yea"
+        },
+        {
+          "name": "Portantino",
+          "vote": "yea"
+        },
+        {
+          "name": "Roth",
+          "vote": "yea"
+        },
+        {
+          "name": "Rubio",
+          "vote": "yea"
+        },
+        {
+          "name": "Skinner",
+          "vote": "yea"
+        },
+        {
+          "name": "Smallwood-Cuevas",
+          "vote": "yea"
+        },
+        {
+          "name": "Stern",
+          "vote": "yea"
+        },
+        {
+          "name": "Umberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Wahab",
+          "vote": "yea"
+        },
+        {
+          "name": "Wiener",
+          "vote": "yea"
+        },
+        {
+          "name": "Dahle",
+          "vote": "nay"
+        },
+        {
+          "name": "Grove",
+          "vote": "nay"
+        },
+        {
+          "name": "Jones",
+          "vote": "nay"
+        },
+        {
+          "name": "Nguyen",
+          "vote": "nay"
+        },
+        {
+          "name": "Niello",
+          "vote": "nay"
+        },
+        {
+          "name": "Ochoa Bogh",
+          "vote": "nay"
+        },
+        {
+          "name": "Seyarto",
+          "vote": "nay"
+        },
+        {
+          "name": "Wilk",
+          "vote": "nay"
+        },
+        {
+          "name": "Allen",
+          "vote": "absent"
+        },
+        {
+          "name": "Alvarado-Gil",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T16:00:28.285005Z)",
+    "fetched_at": "2026-10-28T16:00:28.285005Z",
+    "method": "curl"
+  }
+}

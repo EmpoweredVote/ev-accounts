@@ -1,0 +1,239 @@
+{
+  "politician_id": "8c61cd23-68fb-4f1c-8a3c-60da74c86a64",
+  "findings": [
+    {
+      "id": "4c1c8803cd38a2b7bee7a642c65aa18d9b4a5dfdc0113b50d7429944d41fbdd5",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250103223149/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "SB 1174 Senate Third Reading, Assembly floor",
+      "note": "Voted aye on the Assembly floor (57 to 16) for SB 1174, which bars local voter-identification requirements. Source is the Internet Archive copy of the leginfo vote page.",
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.889Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "36d4025312fdb5bbe438b50ce46f2401e997be1204352e8644d7e24233a4afd1",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250103223149/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174",
+      "date": "2024-06-12",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "Assembly Elections Committee: do pass and re-refer to Local Government",
+      "note": "Voted aye in the Assembly Elections Committee (6 to 2) on SB 1174, which bars local voter-identification requirements. Source is the Internet Archive copy of the leginfo vote page.",
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.889Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4d49bf0d7ddeb62aaead992451398949364920d97622483c5971deec4f38a193",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB25",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-25-2025",
+      "act": "nay",
+      "motion": "Assembly Elections Committee: do pass and re-refer to Judiciary",
+      "note": "Voted no in the Assembly Elections Committee (2 to 5) on AB 25, the California Voter ID and Election Integrity Act of 2025; the motion failed. Source is the Internet Archive copy of the leginfo vote page.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.889Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "25f88340209e66f5695ca7fab44dfe4e5e4a3922d528e6197d10f9e8bd6ad135",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB25",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-25-2025",
+      "act": "nay",
+      "motion": "Assembly Elections Committee: reconsideration of AB 25",
+      "note": "Voted no on the motion to reconsider AB 25 in the same committee (2 to 5). Source is the Internet Archive copy of the leginfo vote page.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.889Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a25c439641b31a58053fcaa97899c558c4c11820b9c73a6a67436afc3f34c19e",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1116",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "AB 1116 Assembly Third Reading",
+      "note": "Voted aye on the Assembly floor (60 to 18) for AB 1116, which lets a person register online without a driver's license or state ID by giving the last four digits of a Social Security number, with the state checking name, birth date and those digits. Source is the Internet Archive copy of the leginfo vote page.",
+      "subjects": [
+        "identity check to register to vote",
+        "online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.889Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b006b0ddf45c57a8b60314fa34dd0cfbe480624d3a7a47694783025c27283492",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1116",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "Assembly Elections Committee: do pass as amended and re-refer to Appropriations",
+      "note": "Voted aye in the Assembly Elections Committee (5 to 2) on AB 1116, which lets a person register online without a driver's license or state ID by giving the last four digits of a Social Security number. Source is the Internet Archive copy of the leginfo vote page.",
+      "subjects": [
+        "identity check to register to vote",
+        "online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.889Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b02241e1fe725f2a89cd04a0ae0b81cc9dffe666072841c15a72769fa49c1919",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-25",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2026",
+      "act": "yea",
+      "motion": "AB 1116 Concurrence in Senate Amendments, Assembly floor",
+      "note": "Voted aye on the Assembly floor (59 to 19) on concurring in the Senate amendments to AB 1116 (online voter registration without a driver's license or state ID, identity checked with the last four digits of a Social Security number). The Governor vetoed the bill on 2026-09-27 per the same page. Source is CalMatters Digital Democracy.",
+      "subjects": [
+        "identity check to register to vote",
+        "online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:11:41.986Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9719738d619c35d876442417ab112fa3848a003d7f7ef33dcc070824e9e233e",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-25",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "AB 1116 Concurrence in Senate Amendments, Assembly floor",
+      "note": "Voted aye on the Assembly floor (59 to 19) on concurring in the Senate amendments to AB 1116 (online voter registration without a driver's license or state ID, identity checked with the last four digits of a Social Security number). The Governor vetoed the bill on 2026-09-27 per the same page. Source is CalMatters Digital Democracy.",
+      "subjects": [
+        "identity check to register to vote",
+        "online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.889Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "voter registration without a driver's license or state ID",
+        "local voter-ID rules",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site a38.asmdc.org (home page and site search for voter ID and election: nothing on the subject)",
+        "California Assembly bill votes via the Internet Archive copy of the leginfo vote page (SB 1174, AB 25, AB 1116); leginfo itself not used",
+        "CalMatters Digital Democracy bill pages for AB 25 and SB 1174 (no statements by this member found)",
+        "Ballotpedia (confirms he is on the 2026 general-election ballot for Assembly District 38)",
+        "one news search on his name plus voter ID: nothing in his own words",
+        "not reviewed: Assembly Elections Committee hearing video for 2025-04-09 and 2024-06-12",
+        "CalMatters Digital Democracy AB 1116 page (2026 concurrence vote and veto)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T16:11:41.986Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "voter registration without a driver's license or state ID",
+        "local voter-ID rules",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site a38.asmdc.org (home page and site search for voter ID and election: nothing on the subject)",
+        "California Assembly bill votes via the Internet Archive copy of the leginfo vote page (SB 1174, AB 25, AB 1116); leginfo itself not used",
+        "CalMatters Digital Democracy bill pages for AB 25 and SB 1174 (no statements by this member found)",
+        "Ballotpedia (confirms he is on the 2026 general-election ballot for Assembly District 38)",
+        "one news search on his name plus voter ID: nothing in his own words",
+        "not reviewed: Assembly Elections Committee hearing video for 2025-04-09 and 2024-06-12",
+        "CalMatters Digital Democracy AB 1116 page (2026 concurrence vote and veto)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T16:28:19.889Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

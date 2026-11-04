@@ -1,0 +1,38 @@
+{
+  "id": "TX-HB-956-2025",
+  "scope": "state:tx",
+  "title": "HB956 (89th Legislature Regular Session): Relating to the reporting of certain orders and convictions to the Department of Public Safety and Federal Bureau of Investigation for use with the National Instant Criminal Background Check System for the transfer of firearms.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB956",
+    "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00956I.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 1 (adding Code of Criminal Procedure 7B.0085): {+Art.+}{+ +}{+7B.0085.+}{+ +}{+ +}{+REPORTING.  For an original or modified +}{+protective order issued under this subchapter, on receipt of the +}{+order from the clerk of the court, a law enforcement agency shall +}{+immediately, but not later than the third calendar day after the +}{+date the order is received, enter the information required by +}{+Section 411.042(b)(6), Government Code, into the statewide law +}{+enforcement information system maintained by the Department of +}{+Public Safety.+}\nSec. 3 (amending Code of Criminal Procedure 66.252): {+(d-1)+}{+ +}{+ +}{+A conviction for an offense involving family violence +}{+that would prohibit a person from possessing a firearm under state +}{+or federal law shall be reported to the Department of Public Safety +}{+not later than the fifth calendar day after the date the judgment of +}{+conviction is entered.+}\nSec. 4 (adding Government Code 411.0525(b)): {+(b)+}{+ +}{+ +}{+The department shall report to the Federal Bureau of +}{+Investigation for use with the National Instant Criminal Background +}{+Check System each protective order and each conviction for a family +}{+violence misdemeanor not later than the third calendar day after +}{+the date the department receives information that the protective +}{+order or judgment of conviction was entered.+}",
+  "sponsors": [
+    {
+      "name": "Cassandra Garcia Hernandez",
+      "politician_id": "dd4cb2d3-41c7-498d-8a0c-94f988deb0eb",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-956-2025.introduced.html",
+      "sha256": "33ce9fee0d8e5b67e483aafa172dd42256a6328a473a4a8689c316aec6279fcd"
+    }
+  }
+}

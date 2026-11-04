@@ -1,0 +1,67 @@
+{
+  "politician_id": "500a0b90-6c1b-4bcc-8ee2-a2451eb207b0",
+  "findings": [
+    {
+      "id": "9302fa7bcbb9205f150b8afd9e072506397909e3ae094c01acad3b2775cdebe0",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn052.pdf",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "MO-HCR-48-2026",
+      "act": "nay",
+      "motion": "House: HCR 48 read the third time and passed",
+      "note": "House roll call as printed ('Taylor 84'), linked to Del Taylor (district 84) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.236Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "iVoterGuide pages (confirm Del Taylor candidate; voter ID question marked did not answer)",
+        "blocked: https://bluevoterguide.org/MO/candidate_Del_Taylor/353122 (403)",
+        "unreachable: mohousedemcaucus.com (host not found)",
+        "On the Record (0 meetings)",
+        "blocked: Ballotpedia (not fetched, per rule)",
+        "house.mo.gov not fetched (rule)",
+        "newsroom.house.mo.gov not fetched (rule)",
+        "web searches on name plus voter ID and election words: no own words on the subject found"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:07:25.381Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:14:55.236Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

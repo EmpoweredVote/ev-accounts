@@ -1,0 +1,55 @@
+{
+  "politician_id": "95ba3901-b6cb-4928-9cb0-19ca79b71491",
+  "findings": [
+    {
+      "id": "b60c810d4c277e96d06382ccca1ec139eebfa237673960a1f973ed0784beb964",
+      "kind": "own-words",
+      "url": "https://www.sanchezforgeorgia.com/our-vision",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "As your representative, I'll advocate for same-day voter registration, easier access to mail-in and dropbox voting, ranked choice voting to eliminate runoffs, and an independent commission to create fair election maps in Georgia.",
+      "note": "Campaign issue page, undated (appears to be from his 2024 run, since it says 'the only candidate in this race'). Lists voting-access goals. Says nothing about photo ID or proof of citizenship.",
+      "subjects": [
+        "same-day voter registration",
+        "mail-in and dropbox voting access",
+        "election laws in general (voting access)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:33:45.717Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "Branch candidate page: lists him in the 2026 general election for House District 42: https://branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-42/candidates/gabriel-sanchez",
+        "campaign site sanchezforgeorgia.com: home, our-work and press-releases pages, nothing on photo ID or citizenship; the our-vision page has a voting-rights section (saved)",
+        "not reviewed: House Governmental Affairs hearing on SB 175 of 2025 (a photo caption says he spoke; no transcript or video read)",
+        "On the Record (0 appearances for this person)",
+        "blocked: https://ballotpedia.org (page returned empty)",
+        "blocked: https://app.legiplex.com (403)",
+        "blocked: https://legiscan.com (403)",
+        "legis.ga.gov bill pages not opened (login token needed)",
+        "web searches on the name plus subject words (several, nothing own-words on the subject)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:33:45.717Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

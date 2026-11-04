@@ -1,0 +1,53 @@
+{
+  "politician_id": "2da39a56-c9af-42b8-ab0f-8df57aaea4aa",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Steven_Swinton names him as a general-election candidate for U.S. House NC-13 on Nov 3, 2026 (primary canceled, advanced); https://www.lpnc.org/candidates also lists him for District 13",
+        "On the Record (0 appearances)",
+        "Ballotpedia (nothing on the subject; did not complete Candidate Connection survey)",
+        "campaign site: none found (guessed domains swinton4congress.com, stevenswinton.com, swintonforcongress.com, steveswinton.com did not respond)",
+        "state party candidate page lpnc.org (nothing on the subject)",
+        "blocked: https://www.congress.gov (403; also not a legislator, no federal record)",
+        "not reviewed: web news search (search budget exhausted)",
+        "not reviewed: https://www.instagram.com/yourmama9218/ (social profile listed on Ballotpedia, login-walled)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:08:42.075Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Steven_Swinton (confirms candidate for North Carolina's 13th District on the 2026 general-election ballot; he did not complete the candidate survey; nothing on the subject)",
+        "state party candidate page https://www.lpnc.org/2026_candidates (lists him; nothing on the subject)",
+        "candidate profile pages https://branch.vote/races/2026-north-carolina-general-election-nc-state-us-representative-nc-congressional-13/candidates/steven-swinton-1 and https://theballotbrief.com/candidate/steven-swinton-nc (say he has no website or online information; nothing on the subject)",
+        "web search on name plus 2026 Congress (nothing on the subject)",
+        "no campaign site exists; congress.gov not applicable, never held federal office; no state legislative record found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:22:13.309Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

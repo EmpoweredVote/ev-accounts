@@ -1,0 +1,69 @@
+{
+  "politician_id": "3afc572b-7a49-4cb8-9edd-b57c936cea7b",
+  "findings": [
+    {
+      "id": "2a8c1e6adeeb1b83990f54b1ca73fbb70a72c10f09939c42f1e1da2b2ae32867",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('TAYLOR'), linked to Sequanna Taylor (district 11) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.790Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "in scope: WUWM 2026 candidate page shows her running for re-election in Assembly District 11: https://www.wuwm.com/wisconsin-state-assembly-district-11-candidates",
+        "legislature bill page https://docs.legis.wisconsin.gov/2025/legislators/assembly/2880 (her election-related bills: polling place change notice AB 942, 16-17 year-old preregistration AB 539, voter education AB 533; no voter ID or citizenship bill seen; last 10k characters not read)",
+        "blocked: https://ballotpedia.org/Sequanna_Taylor (403)",
+        "nothing on the subject: https://en.wikipedia.org/wiki/Sequanna_Taylor",
+        "nothing on the subject: https://shepherdexpress.com/news/features/state-representative-sequanna-taylor-talks-about-her-first-year-in-office/",
+        "nothing on the subject: https://www.wuwm.com/candidates-wisconsin-assembly-district-11-fall-election",
+        "official assembly page legis.wisconsin.gov/assembly/11/ returned 404; no personal or campaign site found",
+        "two news searches on name plus voter ID: results were about a different legislator named Chris Taylor, not used"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:56:08.426Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:15:12.790Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

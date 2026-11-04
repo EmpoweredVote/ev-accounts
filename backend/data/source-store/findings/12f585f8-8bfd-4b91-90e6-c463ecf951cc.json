@@ -1,0 +1,734 @@
+{
+  "politician_id": "12f585f8-8bfd-4b91-90e6-c463ecf951cc",
+  "findings": [
+    {
+      "id": "a0f5b3bb11f659db61ce3c720325ab30c0772157eaad6abd25ce54c55a178e4c",
+      "kind": "own-words",
+      "url": "https://senatortartaglione.com/courts-voter-id-ruling-should-be-end-of-farce-tartaglione-says",
+      "date": "2014-01-17",
+      "date_precision": "day",
+      "passage": "Let us return elections to the generations of registered Pennsylvania voters who have gone to the polls with only their signatures. It is what we expect. It is what should be.",
+      "note": "Press release after the Commonwealth Court struck down the 2012 photo ID law; she says voters should return to signing in at the polls, and says there is very little fraud.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID requirement",
+        "voter fraud claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T21:59:41.340Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ef157360789b72c88e7b617417a44550e783eb182aadee63da0a8b229c599d59",
+      "kind": "own-words",
+      "url": "https://senatortartaglione.com/courts-voter-id-ruling-should-be-end-of-farce-tartaglione-says",
+      "date": "2014-01-17",
+      "date_precision": "day",
+      "passage": "The petitioners did a great job proving there is very little fraud in Philadelphia and throughout the state.",
+      "note": "Same release; she cites court evidence on the amount of in-person fraud.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter fraud claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T21:59:41.340Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53263a7d4cf34e2a3bc20e0ce02be7fb304eb6412dae07ce04901db9481d5e32",
+      "kind": "own-words",
+      "url": "https://senatortartaglione.com/tartaglione-voter-id-a-costly-mistake-2",
+      "date": "2012-10-02",
+      "date_precision": "day",
+      "passage": "I’ve been confident all along that the courts would see the serious flaws and dubious reasoning behind voter ID,",
+      "note": "Statement on the Commonwealth Court order keeping a soft roll-out, where voters are asked for ID but not required to show it.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID requirement"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T21:59:41.340Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "096f3d70232f90c8ac39a6c3417b44adbc75df3c28de3e95e13f9516018d3f9f",
+      "kind": "own-words",
+      "url": "https://senatortartaglione.com/tartaglione-voter-id-a-costly-mistake-2",
+      "date": "2012-10-02",
+      "date_precision": "day",
+      "passage": "For months I’ve been hearing from frustrated seniors, students and others who didn’t know what the requirements were and the requirements kept changing,",
+      "note": "Same release; she describes voter confusion about ID rules in her district.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter confusion about ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T21:59:41.340Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b60a72eeda0e2c49a7ad6b6f469ca96b8207982adc0e8bbae5413e95bdfd0628",
+      "kind": "own-words",
+      "url": "https://senatortartaglione.com/tartaglione-voter-id-part-of-a-disturbing-trend-for-the-disabled",
+      "date": "2012-03-07",
+      "date_precision": "day",
+      "passage": "Creating barriers to prevent the disabled from voicing their grievances with their government, either inside the Capitol or inside the polling place, has become a priority with the legislature’s Republican majority and the current administration,",
+      "note": "Reaction to Senate passage of House Bill 934 (photo ID at polls); the release says her amendment to exempt voters with disabilities was rejected. Quoted text names a party, copied verbatim as her words.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID and voters with disabilities"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T21:59:41.340Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b6377557b5392f3d7dc2c30cfef401addf78ce5eadce774c6bbe73fa583377f0",
+      "kind": "record",
+      "url": "https://senatortartaglione.com/tartaglione-voter-id-part-of-a-disturbing-trend-for-the-disabled",
+      "date": "2012-03-07",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "other",
+      "motion": "Tartaglione amendment to exempt voters with disabilities from photo ID, rejected on the Senate floor (as reported in her release)",
+      "note": "Her own release says the Senate rejected her amendment to exempt those with disabilities from HB 934, the photo ID bill, before passing it.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID and voters with disabilities"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T21:59:41.340Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dcaa2bc162bedc2f6b9e91ae9e179a92b1c05081f2eec853183a760f1884258",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('TARTAGLIONE'), linked to Christine M. Tartaglione (district 2) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12a315c7021acce6f88535df7cbb333f9e8c78a13a73455d56adfd7709e5a2a2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2012/0/Sj20120307.pdf",
+      "date": "2012-03-07",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 3166)",
+      "note": "Senate roll call as printed ('Tartaglione'), linked to Christine Tartaglione (district 2) via the official 2011-2012 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc316a91c15a9d69b8de8a31f201ccdfb2b8ddcf04549d215151894a08cf6992",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "nay",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Tartaglione'), linked to Christine M. Tartaglione (district 2) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dbe3c0f0546a6231771fc2eb2ca14e791584abef2001ceba50dfd88547754dfb",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Tartaglione'), linked to Christine M. Tartaglione (district 2) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8919f777e996df6017e73096f32be4cc18f382716845d0fdb1fbdab4e8d89660",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "nay",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Tartaglione'), linked to Christine M. Tartaglione (district 2) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.464Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1d0155895ce8411a4438986cd1d5eafc092c54b213a013aab945a0900ab58bf7",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2021/sb565",
+      "date": "2021-11-09",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-565-2021",
+      "act": "nay",
+      "motion": "Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Final Passage, 2021-11-09: nay (tally 29–21); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/PA_SB565_PN1212.pdf",
+          "sha256": "8599bf5e56d8378a456fd36d933e5a05733e1a059d642ddb6883c809f6226568"
+        }
+      }
+    },
+    {
+      "id": "5b2efb6720b7dba2a093ddb59f00591daa3faf138b29e47c896878ef441f1935",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb1449",
+      "date": "2026-09-10",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1449-2026",
+      "act": "sponsor",
+      "note": "Prime sponsor of Senate Bill 1449, which amends the crimes code on prohibited offensive weapons; referred to Senate Judiciary on 2026-09-10. Her release says it bans possessing, selling, making and transferring machine gun conversion devices.",
+      "subjects": [
+        "ban on machine gun conversion devices",
+        "ban on type of firearm part"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:33.562Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4fd34418d07730749209f2644420e458fcc0c4ca42754e60b614cd628ac4c4cd",
+      "kind": "own-words",
+      "url": "https://pasenate.com/senator-tartaglione-introduces-legislation-to-ban-glock-switches-in-pennsylvania/",
+      "date": "2026-09-09",
+      "date_precision": "day",
+      "passage": "“Machine guns capable of automatic fire have long been prohibited under federal law because of their extraordinary destructive potential. The same standard should apply to devices that allow a handgun to become a machine gun. It’s common sense, and it will help protect both our communities and the law enforcement officers who put their lives on the line every day.”",
+      "note": "Quote in her release announcing SB 1449 (caucus-hosted copy of the release).",
+      "subjects": [
+        "ban on machine gun conversion devices"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:33.562Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3157f170663749cd27cd4a318318c0a5075c8f5c6e3fd4576c32b5ddfdec1efd",
+      "kind": "own-words",
+      "url": "https://senatortartaglione.com/senator-tartaglione-to-introduce-legislation-banning-machine-gun-conversion-devices-following-deadly-shootings",
+      "date": "2025-07-09",
+      "date_precision": "day",
+      "passage": "“I’m outraged by the gun violence tearing through our communities,” Senator Tartaglione said.",
+      "note": "Her statement in the release announcing she will introduce a Glock switch ban.",
+      "subjects": [
+        "ban on machine gun conversion devices",
+        "gun violence general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:33.562Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "846f0ee4d3040dfae2834ccefd508d42cb6ca8297294d63513a9cdeebc3c3360",
+      "kind": "own-words",
+      "url": "https://senatortartaglione.com/senator-tartaglione-to-introduce-legislation-banning-machine-gun-conversion-devices-following-deadly-shootings",
+      "date": "2025-07-09",
+      "date_precision": "day",
+      "passage": "“We need a statewide solution. I urge my colleagues in the General Assembly to join me in taking this important step to save lives.”",
+      "note": "Her call for a statewide ban on conversion devices.",
+      "subjects": [
+        "ban on machine gun conversion devices"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:33.562Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "86d9c31e8451bb61322dbc53a61450736b6ba230dc96c398c8281004b42428a8",
+      "kind": "own-words",
+      "url": "https://senatortartaglione.com/statement-form-senator-tartaglione-on-last-nights-mass-shooting",
+      "date": "2023-11-22",
+      "date_precision": "day",
+      "passage": "It is crucial that we unite in solidarity to advocate for the enactment of sensible and comprehensive gun control measures.",
+      "note": "Statement after a Fairhill mass shooting.",
+      "subjects": [
+        "gun control measures in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:33.562Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "56579521cec93e440622b7eb6f2109b307c6865abfd6d7ed5875a3231913ab1a",
+      "kind": "own-words",
+      "url": "https://senatortartaglione.com/tartaglione-issues-statement-regarding-mass-shooting-in-california-nightclub",
+      "date": "2018-11-08",
+      "date_precision": "day",
+      "passage": "As a nation, it’s our obligation to do everything in our power to stop these catastrophes from happening.",
+      "note": "Statement after a California nightclub shooting; names no specific measure.",
+      "subjects": [
+        "gun violence general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:33.562Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6132d48425a9e237dbde2b4219ec67dd1aad5cbfd0318be50e2ffb3246c7dac8",
+      "kind": "own-words",
+      "url": "https://senatortartaglione.com/tartaglione-urges-senate-to-act-on-committees-violence-prevention-recommendations-especially-for-lost-and-stolen-guns",
+      "date": "2014-01-08",
+      "date_precision": "day",
+      "passage": "“I believe, as do the members of the Joint State Government Commission, that requiring a 24-hour reporting requirement for lost or stolen firearms is a necessary public duty that we can no longer ignore. As such, I am requesting your assistance in the movement of S.B. 810 from the Judiciary Committee,” she wrote.",
+      "note": "Quote from her letter to the Judiciary chair.",
+      "subjects": [
+        "report lost or stolen guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:33.562Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0079cfd6cea03dceea31a50c56c2f8c44ef9d9da4622fecd4f9c6c603849405b",
+      "kind": "record",
+      "url": "https://senatortartaglione.com/tartaglione-urges-senate-to-act-on-committees-violence-prevention-recommendations-especially-for-lost-and-stolen-guns",
+      "date": "2014-01-08",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "SB 810 (2013-14), 24-hour report of lost or stolen guns",
+      "note": "Release says she proposed Senate Bill 810, requiring owners to report lost or stolen guns within 24 hours.",
+      "subjects": [
+        "report lost or stolen guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:33.562Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ecd13f6f18acde0294e9542e4d0a25a832fa9d13e981ac0ce5ee5cfd21313690",
+      "kind": "record",
+      "url": "https://senatortartaglione.com/tartaglione-urges-senate-to-act-on-committees-violence-prevention-recommendations-especially-for-lost-and-stolen-guns",
+      "date": "2014-01-08",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "SB 811 (2013-14), register firearm sales or transfers in Philadelphia",
+      "note": "Release says she proposed Senate Bill 811, requiring people who sell or transfer firearms in Philadelphia to register those transactions with state police.",
+      "subjects": [
+        "register gun sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:33.562Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e99de4b0a86c1b853034d33ad0764faada0eb2e37be5bbd040336368b6a61232",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb246",
+      "date": "2025-11-06",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-246-2025",
+      "act": "other",
+      "motion": "co-sponsor of SB 246, notice of weapon incidents in schools",
+      "note": "Listed co-sponsor of SB 246, which requires notice to parents and school employees of weapon incidents; signed as Act 44 of 2025 on 2025-11-06 (date is the signing, not co-sponsorship).",
+      "subjects": [
+        "weapons in schools notice"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:33.562Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6926d5aca1b8e5dfa1d1fe1815b11bc6b750c15358891fcd9c4ea5a405b5785b",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=1747",
+      "date": "2020-11-18",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1747-2019",
+      "act": "nay",
+      "motion": "Senate Floor: HB 1747 PN 2338, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 1747 PN 2338, FINAL PASSAGE, 2020-11-18: nay (tally 29–20); census gate: none.",
+      "subjects": [
+        "emergency-time carry restriction repealed",
+        "no seizure of guns, accessories or ammunition during emergencies",
+        "governor cannot suspend firearm sales in emergencies"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1747-2019.introduced.pdf",
+          "sha256": "a4e95a0229bcf1cde7a5fa9d58ac2c33f09477e837d84525b7ff04d3a5f71ece"
+        }
+      }
+    },
+    {
+      "id": "7ac860115240e898e99179f0252f386cf4942bf1be694ef5653fb8d3aaf3a31c",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=2440",
+      "date": "2020-11-18",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-2440-2019",
+      "act": "nay",
+      "motion": "Senate Floor: HB 2440 PN 3776, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 2440 PN 3776, FINAL PASSAGE, 2020-11-18: nay (tally 29–20); census gate: none.",
+      "subjects": [
+        "gun and ammunition businesses and ranges can never be closed or limited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2440-2019.amended.pdf",
+          "sha256": "9bdd564f4d0812adfa9af91a3ac7f854f4196ebd9577febef5953c94486be5c8"
+        }
+      }
+    },
+    {
+      "id": "e551ed2f59e072bfb12b47cdaee82befe90ec2b072f23db862ca5acdcd44d811",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=979",
+      "date": "2022-01-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-979-2021",
+      "act": "nay",
+      "motion": "Senate Floor: HB 979 PN 1706, Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 979 PN 1706, Final Passage, 2022-01-25: nay (tally 32–17); census gate: none.",
+      "subjects": [
+        "local gun and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs",
+        "localities barred from suing gun makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-979-2021.amended.pdf",
+          "sha256": "494cfe800bdb89be85cf7c2a28a81c203b581e7614e7bc8f69211cb4c736f5dd"
+        }
+      }
+    },
+    {
+      "id": "aeb8266984e53754ceef8ff83f7e417709cb966b7ba747cb9d64e2c79c4a49ed",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb822",
+      "date": "2026-05-06",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-822-2025",
+      "act": "nay",
+      "motion": "Senate Floor: PN0881, Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: PN0881, Final Passage, 2026-05-06: nay (tally 30–20); census gate: none.",
+      "subjects": [
+        "local firearm and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-822-2025.introduced.pdf",
+          "sha256": "38d1bdcb626cc1614fee0c352427248f5e599df007fead7d1a6031742385df55"
+        }
+      }
+    },
+    {
+      "id": "3295f3ca764ec705e99d1e3ac2783e1ae0949dab0b7628a119ff558b5999a87e",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=S&type=B&bn=204",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-204-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-SB-204-2023 (LegiScan sponsor list): SB204 (2023-2024 Regular Session): In actions, proceedings and other matters generally, providing for extreme risk protection orders..",
+      "subjects": [
+        "court orders to remove guns from people at risk of harming themselves or others",
+        "family members and police may petition",
+        "penalty for possessing guns under an order"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-204-2023.introduced.pdf",
+          "sha256": "3aaf5420de53bef1bf18d7ed5c88cda96951528d75fb2331337afa67ef725805"
+        }
+      }
+    },
+    {
+      "id": "efa80596e7a1e5465c9a1207f95ddde3390db69dac99719c4eed1cf76305f3ca",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb348",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-348-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of PA-SB-348-2025 (LegiScan sponsor list): SB348 (2025-2026 Regular Session): In firearms and other dangerous articles, providing for report of theft or loss of firearm; and imposing a penalty..",
+      "subjects": [
+        "lost or stolen firearm must be reported within 24 hours",
+        "fine for failing to report"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-348-2025.introduced.pdf",
+          "sha256": "abc26212fcdd2ced433b042efb2f17e7287787752032e5f4e6f1cba78f99f4e2"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship / SAVE Act",
+        "voter fraud claims",
+        "voter-roll checks"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (standing rule bars running repo scripts)",
+        "official Senate site tag page https://www.senatortartaglione.com/tag/voter-id (4 releases saved; one more release on the bill 934 committee vote had no usable ID-policy passage)",
+        "web search: her name plus voter ID (results were the 2012-2014 releases only)",
+        "nothing on the subject: no 2025-2026 statement found on the SAVE Act or mail-ballot ID",
+        "not reviewed: Ballotpedia, legislature bill pages (floor votes and sponsorships are linked separately)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T21:59:41.340Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:45:58.715Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.464Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on machine gun conversion devices (Glock switches)",
+        "report lost or stolen guns",
+        "register private gun sales",
+        "gun control measures in general",
+        "Second Amendment",
+        "school weapon incident notice"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "official Senate site: tag page for guns and site search for gun (fetched, several releases)",
+        "official Senate site releases fetched by curl for exact text",
+        "caucus site pasenate.com release on SB 1449",
+        "PA legislature bill pages for SB 1449 and SB 246",
+        "one web search on name plus gun words, plus follow-up searches",
+        "Ballotpedia: not reviewed (known to return empty to the fetch tool)",
+        "no separate campaign site found; not reviewed",
+        "2022 and 2019 caucus-wide letters on the official site: caucus statements, not saved as her own words"
+      ],
+      "found": 10,
+      "at": "2026-10-30T15:13:33.562Z",
+      "by": "source-collector"
+    }
+  ]
+}

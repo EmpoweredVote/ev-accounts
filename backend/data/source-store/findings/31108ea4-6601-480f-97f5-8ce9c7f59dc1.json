@@ -1,0 +1,29 @@
+{
+  "politician_id": "31108ea4-6601-480f-97f5-8ce9c7f59dc1",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and Second Amendment",
+        "gun control",
+        "check every gun buyer"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://theballotbrief.com/candidate/natalie-m-fleming-id (confirms she is an independent candidate for the 2026 U.S. Senate race in Idaho; positive control)",
+        "campaign site https://nataliefleming.info/ (home, issues, policy and just-a-few-issues pages: nothing on the subject)",
+        "https://ivoterguide.com/candidate/42177 (questionnaire item on more restrictive gun control is marked Did not answer)",
+        "https://www.idahopress.com/news/elections/idaho-congressional-candidate-surveys-for-nov-3-election/article_7e5bc648-6b4b-5e2f-95af-974a10ee6696.html (2020 Senate survey: nothing on the subject)",
+        "blocked: https://idahocapitalsun.com/voter-guides/contests/2026-general-u-s-senate/ (403)",
+        "Ballotpedia not reviewed (pages come back empty)",
+        "legislature sponsorship lists: not applicable, never a legislator",
+        "news searches on name plus gun words (3 searches): one 2022 remark appears only on ontheissues.org, a lead; original not found, so not saved"
+      ],
+      "found": 0,
+      "at": "2026-10-30T20:41:26.660Z",
+      "by": "source-collector"
+    }
+  ]
+}

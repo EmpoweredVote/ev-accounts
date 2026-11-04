@@ -1,0 +1,64 @@
+{
+  "id": "MA-S-378-2015",
+  "scope": "state:ma",
+  "title": "An Act establishing voter identification procedures (S.378, filed 2015; heard in Election Laws 2016-01-19; no floor vote)",
+  "urls": [
+    "https://malegislature.gov/Bills/189/S378",
+    "https://malegislature.gov/Bills/189/S378.Html",
+    "https://malegislature.gov/Bills/189/S378/Cosponsor"
+  ],
+  "version": "as-filed",
+  "operative_text": "Be it enacted by the Senate and House of Representatives in General Court assembled, and by the authority of the same, as follows: SECTION 1. Section 76 of Chapter 54 of the General Laws, as appearing in the 2012 Official Edition, is hereby amended by striking out the first sentence in its entirety and replacing it with the following sentences:- “An elections official shall ask each voter desiring to vote at a polling place for his full name and address of residence, and the official shall repeat the full name and address of residence of said voter. The official shall also instruct the voter to present one of the following forms of identification to establish his identity: a Commonwealth of Massachusetts driver’s license, an official Commonwealth of Massachusetts photo identification card, a United States passport, or a Social Security card.” SECTION 2. Section 76B of Chapter 54 of the General Laws, as appearing in the 2012 Official Edition, is hereby amended by striking the entire section and inserting the following section in place thereof:- “Section 76B. Any person desiring to vote who fails to present the required identification shall not be permitted to vote.”",
+  "sponsors": [
+    {
+      "name": "Viriato M. deMacedo",
+      "role": "prime",
+      "version": "as filed; petitioners tab, S.378, session 189"
+    },
+    {
+      "name": "Elizabeth A. Poirier",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.378, session 189"
+    },
+    {
+      "name": "Robert L. Hedlund",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.378, session 189"
+    },
+    {
+      "name": "Donald F. Humason, Jr.",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.378, session 189"
+    },
+    {
+      "name": "Bruce E. Tarr",
+      "politician_id": "b1bd9a21-a37e-49f4-907b-9fba480a1ca2",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.378, session 189"
+    },
+    {
+      "name": "Keiko M. Orrall",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.378, session 189"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+    "fetched_at": "2026-10-31T03:30:00Z",
+    "method": "curl",
+    "saved_copy": {
+      "path": "s3-prep-voting-rights/stage5/raw/ma-id-bills/189_S378.Html.htm",
+      "sha256": "7a5c80a74ea4bd311330565097c47ae62008ebb7f50f27c88ab04457ce1ebdef"
+    }
+  }
+}

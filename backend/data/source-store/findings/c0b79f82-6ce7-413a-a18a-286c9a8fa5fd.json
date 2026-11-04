@@ -1,0 +1,545 @@
+{
+  "politician_id": "c0b79f82-6ce7-413a-a18a-286c9a8fa5fd",
+  "findings": [
+    {
+      "id": "19a33f05cfa80e6ceb82c70ad5a9f525c2af041d664d435fa23f84b5d4c79466",
+      "kind": "record",
+      "url": "https://malegislature.gov/Legislators/Profile/MOM0",
+      "date": "2025-01-01",
+      "date_precision": "year",
+      "instrument_id": "MA-S-44-2025",
+      "act": "sponsor",
+      "note": "The legislature profile lists S.44 among the bills he filed: legislation relative to deceptive and fraudulent deepfakes in election communications, referred to the Advanced Information Technology, the Internet and Cybersecurity committee. Not about ID or citizenship; saved as a related election-integrity topic. Session year inferred from the current bill list.",
+      "subjects": [
+        "deepfakes in election communications (related election-integrity law)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:29:09.439Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "de993072b1f015691757356966b25be35f10f79ccfc21b9e05ca9348996cbcde",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "Roll Call #208 - Question on acceptance of conference committee report",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA Senate, Roll Call #208 - Question on acceptance of conference committee report, 2024-07-18: yea (tally 35–5); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db16b98b521d382c722d5503605116e48c77fb9d34798b9816992f739c986730",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "Senate Engrossed Roll Call #114",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA Senate, Senate Engrossed Roll Call #114, 2024-02-01: yea (tally 37–3); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "b217bf7236d592008af6b6b55e2f9966e9a1bad25733c3822a32a66bc1d68a0d",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/House/H4376",
+      "date": "2014-07-31",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4376-2013",
+      "act": "yea",
+      "motion": "Acceptance of conference committee report (Roll Call #473)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA Senate, Acceptance of conference committee report (Roll Call #473), 2014-07-31: yea (tally 37–3); census gate: multi-subject.",
+      "subjects": [
+        "firearm license classes merged and Class B licences phased out",
+        "new penalties for shooting and for trafficking guns into the state",
+        "background-check records sent to the federal system",
+        "ban on carrying firearms on school and college grounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "malegislature.gov roll-call PDFs + LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:34:02.477850Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4376-2013.introduced.pdf",
+          "sha256": "b94514a66e779c1400d1b875eb3aac207f6b1b1f12f9928fd8d977feab23bb61"
+        }
+      }
+    },
+    {
+      "id": "767c668122bf86e324f6d9a6719f5b58f7381ff23e94c183d816b849ebaf9525",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4670",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4670-2017",
+      "act": "yea",
+      "motion": "Senate Committee of conference report accepted, in concurrence  Roll Call #435",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MA Senate, Senate Committee of conference report accepted, in concurrence  Roll Call #435, 2018-06-28: yea (tally 36–1); census gate: near-unanimous.",
+      "subjects": [
+        "extreme risk protection orders to remove guns from people at risk of harming self or others",
+        "protection order added as a bar to gun licenses",
+        "stun gun rules and locked storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4670-2017.introduced.pdf",
+          "sha256": "6b37958358a3f01548ef0d16c386b3caaf5993d5c100f88279ff5b45ad1fe098"
+        }
+      }
+    },
+    {
+      "id": "a7b3680b261d62ebf6107ab9f9df747c623a6f9a611585300571497c66066cff",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4869",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MA-H-4869-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-4869-2021 (LegiScan sponsor list): H4869 (192nd General Court): Relative to 3D printed guns and ghost guns.",
+      "subjects": [
+        "serial numbers required on firearms; unserialized guns must be registered and marked",
+        "ban on undetectable firearms and on 3D-printing guns without a federal license",
+        "ban on distributing digital gun-printing files in some cases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4869-2021.introduced.pdf",
+          "sha256": "bbafa283c191659d818a8dd83633ee46fe167ce87f0f7135b64e570c963d4381"
+        }
+      }
+    },
+    {
+      "id": "c3d69be39d4b172f228fb4d18e179ac794b9df189c39440aec991101f27d612c",
+      "kind": "own-words",
+      "url": "https://www.senatormikemoore.com/new-blog/2019/8/15/moore-urges-national-action-to-prevent-gun-violence",
+      "date": "2019-08-15",
+      "date_precision": "day",
+      "passage": "There is tremendous potential to advance commonsense laws at the federal level such as background checks, licensing requirements and firearm restrictions— including a renewal of the assault weapons ban.",
+      "note": "Press release from his office, quoting him; he asked two national state-lawmaker groups to act on gun violence.",
+      "subjects": [
+        "federal assault weapons ban",
+        "check every gun buyer",
+        "licence to own a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:59.206Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f08c829977db67fceac466218010d1966ae236156dd16537995e5a9d3ffb43fc",
+      "kind": "own-words",
+      "url": "https://www.senatormikemoore.com/new-blog/2019/8/20/the-lost-art-of-compromise-a-path-toward-addressing-gun-violence",
+      "date": "2019-08-20",
+      "date_precision": "day",
+      "passage": "I have, and will continue to be an ally of law-abiding gun owners. However, I support additional efforts at the national level to close existing loopholes that jeopardize public safety.",
+      "note": "His own op-ed, on why he wrote to the national groups.",
+      "subjects": [
+        "rights of law-abiding gun owners",
+        "close gun-law loopholes nationally"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:59.206Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "79e3525374b1b89496db5c0669a9d4cf8e4d0834193c6d87fb08e3544921efcb",
+      "kind": "own-words",
+      "url": "https://www.senatormikemoore.com/new-blog/2019/8/20/the-lost-art-of-compromise-a-path-toward-addressing-gun-violence",
+      "date": "2019-08-20",
+      "date_precision": "day",
+      "passage": "Limiting access to assault weapons would seem appropriate to help prevent gunmen from inflicting the most deadly harm possible in a short period.",
+      "note": "Op-ed; argues for a national ban on assault weapons and cites the state's 1998 ban.",
+      "subjects": [
+        "ban on assault-style guns",
+        "federal assault weapons ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:59.206Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fb7aef9cafd4f5dffee48ced8308252ffef0847c8e20c458f35ec7b8acbb5934",
+      "kind": "own-words",
+      "url": "https://www.senatormikemoore.com/new-blog/2019/8/20/the-lost-art-of-compromise-a-path-toward-addressing-gun-violence",
+      "date": "2019-08-20",
+      "date_precision": "day",
+      "passage": "Why wouldn’t we want national action to prevent those who may cause harm from possessing a firearm?",
+      "note": "Op-ed, after describing the state red flag law (court-ordered licence suspension on petition of a relative or close contact); asks for national action of that kind.",
+      "subjects": [
+        "red-flag orders",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:59.206Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6d0bc7d57f12b3c351d778b2593e915ba1da8b080b331d7380bb3099263e61cb",
+      "kind": "own-words",
+      "url": "https://www.senatormikemoore.com/new-blog/2019/8/20/the-lost-art-of-compromise-a-path-toward-addressing-gun-violence",
+      "date": "2019-08-20",
+      "date_precision": "day",
+      "passage": "The bottom line is that I will continue to advocate for policies that are proven to save lives, and that do not infringe on our Second Amendment rights.",
+      "note": "Closing line of his op-ed.",
+      "subjects": [
+        "gun safety laws",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:59.206Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "753897d38f0a5c447a13862660efe0333971887caf2ee7141a4271077990c0f3",
+      "kind": "own-words",
+      "url": "https://www.senatormikemoore.com/new-blog/2017/10/12/sen-moore-statement-on-senate-passage-of-bump-stock-measure",
+      "date": "2017-10-20",
+      "date_precision": "day",
+      "passage": "I view this hearing as an opportunity for residents of the Commonwealth to provide comment on a very important and complex subject.",
+      "note": "His statement on a Senate informational hearing on bump-stock and trigger-crank language added to a spending bill; page shows Oct 20, 2017 (URL path says 10/12). He takes no side on the wording.",
+      "subjects": [
+        "bump stocks",
+        "firearm accessories"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:59.206Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bf547c7db303ee70677a5daca850fd318da2913d81d1f7e093963aaf782187e2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/S2572/BillHistory",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "MA-S-2572-2024",
+      "act": "other",
+      "note": "Bill history for S.2572 (Senate gun-law rewrite) lists Moore Amendments #2, #3 and #5 adopted and Amendment #20 rejected on 2/1/2024; Amendment #3 adopted on Roll Call #110 (39 to 0). Amendment text not read here.",
+      "subjects": [
+        "gun law overhaul",
+        "amendments"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:59.206Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5ad17c27a4bbb92eb79354dbfa5e3366fc2f41c8266803ff6ee3832b386adf0",
+      "kind": "own-words",
+      "url": "https://www.senatormikemoore.com/new-blog/2024/7/22/massachusetts-legislature-passes-firearm-safety-reform-bill",
+      "date": "2024-07-22",
+      "date_precision": "day",
+      "passage": "This legislation will help make sure we can protect our communities from gun violence without infringing the right to bear arms for law-abiding gun owners.",
+      "note": "His quoted comment in his office's release on the final 2024 firearm bill (ghost guns, red flag law, assault-style definition, carry limits).",
+      "subjects": [
+        "ghost guns",
+        "red-flag orders",
+        "ban on assault-style guns",
+        "rights of law-abiding gun owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:59.206Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "60b3c1e88611175fbc843e4706886e39a18e9461d7f264b8914c3425296deb50",
+      "kind": "own-words",
+      "url": "https://www.senatormikemoore.com/new-blog/2024/7/22/massachusetts-legislature-passes-firearm-safety-reform-bill",
+      "date": "2024-07-22",
+      "date_precision": "day",
+      "passage": "During debate, Senator Moore secured an amendment that aligns the definition of a ‘silencer’ with the federal definition, broadening Massachusetts’ silencer ban to include devices that are sold for the sole purpose of being easily modified into firearm silencers.",
+      "note": "Sentence in his office's release (third person, issued by his office) describing his adopted amendment on silencers.",
+      "subjects": [
+        "silencers",
+        "amendment on gun accessories"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:59.206Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f504ef2d2bdf941ac8dc9e3cc44f0ec51f3a99a4daf6d9e82a4af55457547e6e",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/GetAmendmentContent/193/S2572/2/Senate/Content",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "MA-S-2572-AMDT-2-2024",
+      "act": "author",
+      "note": "First-named mover of S.2572 floor amendment #2, Strengthening the Prohibition on Silencers (adopted). Movers read from the official amendment text; date is the floor-action date in the bill history, not a filing date.",
+      "subjects": [
+        "silencers and silencer parts"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-03T19:03:30.473Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b13cb884c96d759c519fde5a4a61b1a74d0e6f6f6994b9dc3be63ea4d0dfc85b",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/GetAmendmentContent/193/S2572/3/Senate/Content",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "MA-S-2572-AMDT-3-2024",
+      "act": "author",
+      "note": "First-named mover of S.2572 floor amendment #3, Establishing a Task Force on Live-Fire Training (adopted, Roll Call #110, 39-0). Movers read from the official amendment text; date is the floor-action date in the bill history, not a filing date.",
+      "subjects": [
+        "firearm safety training study"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-03T19:03:30.473Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "857a52668c0fd1050b7181772666dd7a5290dba8ff26d8bb3f21016f00d74c1f",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/GetAmendmentContent/193/S2572/5/Senate/Content",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "MA-S-2572-AMDT-5-2024",
+      "act": "author",
+      "note": "First-named mover of S.2572 floor amendment #5, Studying the Establishment of a Central MA Regional Gun Lab (adopted). Movers read from the official amendment text; date is the floor-action date in the bill history, not a filing date.",
+      "subjects": [
+        "crime gun laboratory study"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-03T19:03:30.473Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "698bd0473675e2d6c09ad46ff73acb126213f17bf4688655f233d387ac06660e",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/GetAmendmentContent/193/S2572/20/Senate/Content",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "MA-S-2572-AMDT-20-2024",
+      "act": "author",
+      "note": "First-named mover of S.2572 floor amendment #20, Codifying the 2016 Enforcement Notice's Copies and Duplicates Exemptions (rejected). Movers read from the official amendment text; date is the floor-action date in the bill history, not a filing date.",
+      "subjects": [
+        "ban on assault-style guns",
+        "exemptions from the copies-and-duplicates rule"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-03T19:03:30.473Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances, nothing on the subject)",
+        "Massachusetts Legislature profile https://malegislature.gov/Legislators/Profile/MOM0 (confirms Senator Michael O. Moore; sponsored bill list shows no voter ID or citizenship bill; only S.44 election deepfakes and S.265 personal identifying information, both off subject)",
+        "Ballotpedia https://ballotpedia.org/Michael_Moore_(Massachusetts) (in scope: 2nd Worcester District, on the 2026-11-03 general ballot; nothing on the subject)",
+        "not reviewed: official Senate site and campaign site (no fetchable URL found)",
+        "not reviewed: news search on name plus subject words (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:22:20.412Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia (confirms sitting 2nd Worcester senator, won the 2026-09-01 primary, on the general ballot)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/MOM0 (nothing on ID or citizenship; one election-communications bill)",
+        "his official site https://www.senatormikemoore.com (nothing on the subject)",
+        "two news searches on his name plus the subject words (nothing on the subject)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T15:29:09.439Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "licensing",
+        "red-flag orders",
+        "bump stocks",
+        "gun license fees",
+        "general statements on gun rights and gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site senatormikemoore.com (newsroom posts fetched; site search page returned no extra gun posts)",
+        "malegislature.gov bill history S.2572 (2024)",
+        "malegislature.gov bill page S.1338 (2017)",
+        "Ballotpedia (not relied on; page empty to fetch tool)",
+        "news search on name plus subject words (4 web searches)",
+        "sponsor list: covered by LegiScan bulk check",
+        "not reviewed: 2016-06-22 TV interview video linked on https://www.senatormikemoore.com/new-blog/2016/6/22/sen-moore-reacts-to-rejection-of-federal-gun-control-legislation (video only, no text)",
+        "left out one sentence on the Second Amendment from the 2019-08-15 release because it names a party",
+        "official site 2024-07-22 post on the final firearm bill (fetched)"
+      ],
+      "found": 9,
+      "at": "2026-11-01T01:43:59.206Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "crime gun laboratory study",
+        "exemptions from the copies-and-duplicates rule",
+        "firearm safety training study",
+        "silencers and silencer parts"
+      ],
+      "places": [
+        "official floor-amendment texts and bill history, https://malegislature.gov/Bills/193/S2572/Amendments and /BillHistory (orchestrator check, gun-policy Stage 5 MA Session A, 2026-11-03)"
+      ],
+      "found": 4,
+      "at": "2026-11-03T19:03:30.473Z",
+      "by": "source-collector"
+    }
+  ]
+}

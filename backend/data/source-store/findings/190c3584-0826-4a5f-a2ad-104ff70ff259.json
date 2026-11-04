@@ -1,0 +1,167 @@
+{
+  "politician_id": "190c3584-0826-4a5f-a2ad-104ff70ff259",
+  "findings": [
+    {
+      "id": "0bb4d3f592ee21839ea51d4357d9b233f81788cf11d7cc09f738fd87cde6416b",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-06-12",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "Assembly Elections Committee vote on SB 1174 (Min), 6-2-0, as recorded in the committee analysis",
+      "note": "She chaired the Assembly Elections Committee at the hearing dated June 12, 2024 and is listed among the six yes votes on SB 1174, which bars local governments from requiring ID to vote at polling places or other places where ballots are cast. The bill page prints the committee tally without its own date; the date is the committee analysis hearing date.",
+      "subjects": [
+        "local voter-ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:07.104Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "917096ab250ea71c3418522322b078bf90c813b95cedd487cc6b442dad9d7cdf",
+      "kind": "own-words",
+      "url": "https://a28.asmdc.org/news/20261014-doj-says-california-must-respond-voter-fraud-claims-within-48-hours",
+      "date": "2026-10-14",
+      "date_precision": "day",
+      "passage": "Public reporting has exposed serious flaws in the Trump administration’s noncitizen voting claims, including disputed figures and unreliable data matching that has wrongly flagged eligible voters,” she wrote in a statement. “California will not sacrifice lawful voters’ rights to accommodate an unreliable list and an artificial deadline.",
+      "note": "Her statement as quoted in a San Francisco Chronicle story reposted on her Assembly site (posted 2026-10-14), responding to a federal demand about noncitizen voting claims and voter-list matching.",
+      "subjects": [
+        "non-citizen voting claims",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:07.104Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "990ca2af49ee90c66399706b4a887b705a624cd764a96db47a84eee8cc59fb9e",
+      "kind": "own-words",
+      "url": "https://a28.asmdc.org/news/20261020-democratic-legislators-push-back-california-voter-fraud-claims-after-charges",
+      "date": "2026-10-20",
+      "date_precision": "day",
+      "passage": "Pellerin called it a “bad-faith attempt to fuel” President Donald Trump’s “baseless voter-fraud narrative and cast suspicion on millions of lawful voters.”",
+      "note": "A Sacramento Bee story reposted on her Assembly site (posted 2026-10-20) quotes her statement on federal charges against 28 people for fraudulent registration or voting; the quoted words are partial, the rest is the reporter's paraphrase.",
+      "subjects": [
+        "non-citizen voting claims",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:07.104Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "01399b2a2cf86e2a3e542fd97fb940a6aac2a9a0adf622f68d37ea5d5c48800e",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab25",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-25-2025",
+      "act": "nay",
+      "motion": "Assembly Elections Committee, motion: do pass and be re-referred to the Committee on Judiciary (bill failed)",
+      "note": "AB 25 (voter ID and election integrity bill by other authors) would repeal proof of citizenship by sworn statement on the registration form and require documentation of citizenship, plus voter ID. She chaired the committee and is listed among the five no votes; two members voted yes.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:07.104Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b6ead5946af139443b7a09baa00c0b8c94b86e2d7a410a85d0cdf7cb689b7318",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab25",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-25-2025",
+      "act": "nay",
+      "motion": "Assembly Elections Committee, motion: reconsideration of AB 25 (failed)",
+      "note": "Listed among the five no votes on the reconsideration motion for AB 25, voter ID and documentary proof of citizenship.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:07.104Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0fe1aef026340ac0e87d17f44edfb0317087ac5fb1e969a391a615b2da89e99c",
+      "kind": "own-words",
+      "url": "https://www.ijpr.org/politics-government/2025-04-11/california-voter-id-bill-voted-down-at-the-state-capitol",
+      "date": "2025-04-11",
+      "date_precision": "day",
+      "passage": "The most important thing that public officials can do to build confidence in elections is to stop lying to the public to make them think that voter fraud is rampant,” Pellerin said.",
+      "note": "Said at the Assembly Elections Committee hearing on AB 25 (voter ID and proof of citizenship), as quoted by Jefferson Public Radio in a story published 2025-04-11 (date is the story date).",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:07.104Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "non-citizen voting claims",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Assembly site https://a28.asmdc.org/ (confirms Assemblymember for the 28th District; news list and site search checked; two news reposts on non-citizen voting claims saved)",
+        "CalMatters Digital Democracy SB 1174 page (carries the Assembly Elections Committee analysis she chaired)",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (bot challenge page)",
+        "news search on name plus subject words (nothing further on the subject)",
+        "not reviewed: https://ballotpedia.org/Gail_Pellerin",
+        "not reviewed: the Sacramento Bee and San Francisco Chronicle originals (her site carries the text with a link)",
+        "her own bills on election-interference and election administration were seen in search results but are not about ID or citizenship proof, so not saved",
+        "Jefferson Public Radio story on the AB 25 hearing (https://www.ijpr.org/politics-government/2025-04-11/california-voter-id-bill-voted-down-at-the-state-capitol)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T15:59:07.104Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

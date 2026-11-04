@@ -1,0 +1,263 @@
+{
+  "politician_id": "84bbf8f6-c12f-4e47-99e8-e5175cf0ebda",
+  "findings": [
+    {
+      "id": "c51a49d6b84fc29aec420b8e3f612104223c3ac1f43ee151b6626589a052edf6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/20rs/sb2.html",
+      "date": "2020-03-03",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-2-2020",
+      "act": "yea",
+      "motion": "passage of SB 2 with CS1 and HFA 40 (RCS# 169)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "KY House, passage of SB 2 with CS1 and HFA 40 (RCS# 169), 2020-03-03: yea (tally 62–35); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T3 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.567Z, webfetch",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/ky_sb2_orig.pdf",
+          "sha256": "3fede52081f5f6e8e563c1c5bbc938c7da208c96d5fb0040ae7a7574f43f43c6"
+        }
+      }
+    },
+    {
+      "id": "8521791ad358fce322dbaf75b7464e6b38a639011e5e164a4d00763a8d7d0f69",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/20rs/sb2.html",
+      "date": "2020-03-03",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-2-2020",
+      "act": "nay",
+      "motion": "floor amendment HFA 42 (RCS# 168), defeated; subject of amendment not read",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "KY House, floor amendment HFA 42 (RCS# 168), defeated; subject of amendment not read, 2020-03-03: nay (tally 36–58); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T3 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.567Z, webfetch",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/ky_sb2_orig.pdf",
+          "sha256": "3fede52081f5f6e8e563c1c5bbc938c7da208c96d5fb0040ae7a7574f43f43c6"
+        }
+      }
+    },
+    {
+      "id": "515fcdbb2570e52a64dabf7cc9bd5a2d4d54a2e5c5f4a00474d0785689587afb",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/20rs/sb2.html",
+      "date": "2020-03-19",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-2-2020",
+      "act": "yea",
+      "motion": "adoption of free conference committee report 1 (RCS# 284)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "KY House, adoption of free conference committee report 1 (RCS# 284), 2020-03-19: yea (tally 57–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T3 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.567Z, webfetch",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/ky_sb2_orig.pdf",
+          "sha256": "3fede52081f5f6e8e563c1c5bbc938c7da208c96d5fb0040ae7a7574f43f43c6"
+        }
+      }
+    },
+    {
+      "id": "cfaffe4835a8c3fc81300c17afbf630a644bb52215cf1d28514734cd542bc4e9",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/20rs/sb2.html",
+      "date": "2020-03-19",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-2-2020",
+      "act": "yea",
+      "motion": "final passage of SB 2 as amended by free conference report (RCS# 285)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "KY House, final passage of SB 2 as amended by free conference report (RCS# 285), 2020-03-19: yea (tally 58–25); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T3 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.567Z, webfetch",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/ky_sb2_orig.pdf",
+          "sha256": "3fede52081f5f6e8e563c1c5bbc938c7da208c96d5fb0040ae7a7574f43f43c6"
+        }
+      }
+    },
+    {
+      "id": "13f65fb3207a2a6a80dfaa158996f4ad2de29384b785249b6cbf6fe73c415eda",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/20rs/sb2.html",
+      "date": "2020-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-2-2020",
+      "act": "yea",
+      "motion": "veto override (RCS# 357)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "KY House, veto override (RCS# 357), 2020-04-14: yea (tally 60–29); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T3 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.567Z, webfetch",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/ky_sb2_orig.pdf",
+          "sha256": "3fede52081f5f6e8e563c1c5bbc938c7da208c96d5fb0040ae7a7574f43f43c6"
+        }
+      }
+    },
+    {
+      "id": "2771acdd76ff79bafa6ef3a6b3527cc38c202703ee9423827b473cde611a9f8a",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/21rs/hb574.html",
+      "date": "2021-02-26",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-574-2021",
+      "act": "nay",
+      "motion": "floor amendment HFA 3 (RCS# 138), failed; subject NOT read",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "KY House, floor amendment HFA 3 (RCS# 138), failed; subject NOT read, 2021-02-26: nay (tally 28–68); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "early and mail voting (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "B (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+        "fetched_at": "2026-10-21T01:52:20.308Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a043b35f1f28f59f819251ee1d0e70fd5b373f0f10066c0b12c2c49d87be3a64",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/21rs/hb574.html",
+      "date": "2021-02-26",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-574-2021",
+      "act": "yea",
+      "motion": "passage of HB 574 (RCS# 139)",
+      "gate_by_topic": {
+        "voting-rights": "near-unanimous"
+      },
+      "note": "KY House, passage of HB 574 (RCS# 139), 2021-02-26: yea (tally 93–4); census gate: near-unanimous.",
+      "subjects": [
+        "voter ID at the polls",
+        "early and mail voting (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "B (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+        "fetched_at": "2026-10-21T01:52:20.308Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ca64f6e029a26da6e4e4947b12c77d1659dda010c06fdfcd9ef6fb89e658278c",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/21rs/hb574.html",
+      "date": "2021-03-29",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-574-2021",
+      "act": "yea",
+      "motion": "final passage / concurrence in Senate amendments (RCS# 431)",
+      "gate_by_topic": {
+        "voting-rights": "near-unanimous"
+      },
+      "note": "KY House, final passage / concurrence in Senate amendments (RCS# 431), 2021-03-29: yea (tally 91–3); census gate: near-unanimous.",
+      "subjects": [
+        "voter ID at the polls",
+        "early and mail voting (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "B (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+        "fetched_at": "2026-10-21T01:52:20.308Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c0e56e01014b03b25dc7db5a352927aae1972c474513c12f641df989e4c7c881",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/19rs/sb150.html",
+      "date": "2019-03-01",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-150-2019",
+      "act": "yea",
+      "motion": "Pass SB 150 (RCS# 196)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KY House, Pass SB 150 (RCS# 196), 2019-03-01: yea (tally 60–37); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/KY_acts_2019_ch010.pdf",
+          "sha256": "93266e8d17c0b31728a6c78573a4afda6517fbacbe2200b4273a5f2e422960c1"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

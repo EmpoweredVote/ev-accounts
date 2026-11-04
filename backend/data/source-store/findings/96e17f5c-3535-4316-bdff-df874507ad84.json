@@ -1,0 +1,55 @@
+{
+  "politician_id": "96e17f5c-3535-4316-bdff-df874507ad84",
+  "findings": [
+    {
+      "id": "ce7b30cd930a2464819f020079eb23d3bbe7272d834c211b8f7f932a631f4680",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/legislation/document/20252026/243655",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "GA-SR-838-2026",
+      "act": "sponsor",
+      "note": "SR 838, the State Assurance of Voter Eligibility (SAVE) Amendment, would amend the Georgia Constitution to say only citizens of the United States may vote and to require registered electors to present photographic identification before casting a ballot in any election. The text lists him among the sponsors ('Senators Dolezal of the 27th, Still of the 48th, Albers of the 56th, Echols of the 49th, Walker III of the 20th and others'); he is not the first-named sponsor. Date is the introduction date shown on the fastdemocracy page, which also shows the Senate lost the adoption vote 32-23 on 2026-03-06 (floor vote is linked separately).",
+      "subjects": [
+        "photo ID to vote",
+        "citizenship requirement to vote",
+        "constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:33:45.737Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "constitutional citizenship-only voting amendment"
+      ],
+      "places": [
+        "branch.vote 2026 general-election page: names him as a candidate for Georgia Senate District 49",
+        "not reviewed: On the Record extract script (repo scripts not run in this session)",
+        "blocked: https://ballotpedia.org/Drew_Echols (empty page)",
+        "blocked: https://www.senate.ga.gov/en-US/SenatorInfo.aspx?Member=1161&Session=1032 (connection refused)",
+        "legislature's bill-text PDF for SR 838 (downloaded, text read)",
+        "fastdemocracy bill page for SR 838",
+        "WALB 2026-06-18 article on SR 4EX (does not name him; nothing on the subject from him)",
+        "blocked: https://www.wabe.org/bill-to-ban-noncitizens-from-voting-in-georgia-elections-stalls-at-key-legislative-deadline/ (403)",
+        "blocked: https://app.legiplex.com/lpx/bill/37097 (403)",
+        "three web searches: name plus voter ID / citizenship / SR 838; no direct quote from him found",
+        "not reviewed: personal or campaign site; legislature bill pages (login token required)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:33:45.737Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

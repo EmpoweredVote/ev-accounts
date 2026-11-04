@@ -1,0 +1,118 @@
+{
+  "politician_id": "3467ec59-d701-4e4e-899b-34756dee3ebf",
+  "findings": [
+    {
+      "id": "f1fc142720e44ea7b5f8474a29e3828bc7618b36717f324fccd75046653837f7",
+      "kind": "own-words",
+      "url": "https://kozyckiforcongress.com/how-to-vote.html",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Georgia requires a valid photo ID to vote in person. See the accepted ID list below.",
+      "note": "Campaign how-to-vote page, issued under the campaign's name. It states the existing Georgia in-person photo ID rule as a voter instruction and lists accepted IDs, including a free voter ID card from the county registrar or DDS. It does not say whether he wants the rule kept or changed. Page has no visible date; it cites the Oct 5, 2026 registration deadline.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted ID types",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:02:38.486Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "988696d68a76f8525b99b308d0386f171d81de9172237e6507822857e0c08cb5",
+      "kind": "own-words",
+      "url": "https://kozyckiforcongress.com/how-to-vote.html",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "For absentee voting, you'll need to provide your Georgia driver's license number or state ID number on your application.",
+      "note": "Same campaign page. It tells voters that an ID number is needed on an absentee ballot application in Georgia, and that no photo ID copy is mailed in. Voter instruction, no stated preference on the rule.",
+      "subjects": [
+        "mail-ballot ID",
+        "ID number to request absentee ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:02:38.486Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0883d3be2fe91d5958e3d9c07dbb0d39031307d17d13c5bb54beaf27f55e20bb",
+      "kind": "own-words",
+      "url": "https://kozyckiforcongress.com/how-to-vote.html",
+      "date": "2026-10-27",
+      "date_precision": "day",
+      "passage": "Georgia requires a valid photo ID to vote in person.",
+      "note": "Voter-information page on his campaign site, listing accepted photo IDs and absentee-ballot steps (no excuse needed). It states the current Georgia rule; it does not say whether he wants the rule kept or changed. Date is the day fetched because the page is undated.",
+      "subjects": [
+        "voter ID at the polls",
+        "absentee ballot request"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:43:36.294Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship / SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "identity confirmed: candidate listed as Tony Kozycki (name used on ballot), U.S. House Georgia District 7, on the Nov 3, 2026 general ballot after advancing from the June 16, 2026 primary runoff: https://ballotpedia.org/Tony_Kozycki",
+        "On the Record (0 appearances)",
+        "campaign site https://kozyckiforcongress.com/ (home page: nothing on the subject; how-to-vote page: voter ID guidance saved)",
+        "Ballotpedia profile and Candidate Connection survey (campaign themes: stock-trading ban, ending gerrymandering, Citizens United, immigration due process; nothing on voter ID or citizenship proof)",
+        "congress.gov: not reviewed (not a legislator)",
+        "not reviewed: https://substack.com/@tonykozycki",
+        "not reviewed: https://www.youtube.com/watch?v=9ZY-hCzSaOA",
+        "web search: not performed, session search budget used up; nothing found by news search"
+      ],
+      "found": 2,
+      "at": "2026-10-22T22:02:38.486Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID or request steps for an absentee ballot",
+        "proof of citizenship to register or vote (SAVE America Act)",
+        "election integrity and voting access in general"
+      ],
+      "places": [
+        "Ballotpedia https://ballotpedia.org/Tony_Kozycki (on the 2026 general-election ballot for GA-7 after winning the June 16, 2026 primary runoff; the page carries a Candidate Connection survey with nothing on this subject)",
+        "On the Record (0 meetings)",
+        "campaign site kozyckiforcongress.com: home, issues page (nothing on this subject) and how-to-vote page",
+        "Forsyth News launch story: blocked, paywalled (https://www.forsythnews.com/news/politics/immigration-attorney-tony-kozycki-launches-bid-for-georgias-7th-district-seat/)",
+        "two web searches on his name plus voter ID, SAVE Act and election integrity: nothing from him",
+        "congress.gov: not applicable, not a sitting member"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:43:36.294Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

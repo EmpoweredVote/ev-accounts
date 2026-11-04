@@ -1,0 +1,186 @@
+{
+  "politician_id": "98291d86-d42d-49d0-a5b2-d689a8154b15",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "0f719f853955efad67919dff725351b07a9b0950c75ba9e5059d7b088c65e3c1",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H4033",
+      "date": "2025-04-17",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4033-2025",
+      "act": "sponsor",
+      "note": "Home rule petition, filed by her and Rep. Mike Connolly, to give non-citizen residents of Somerville the right to vote in municipal elections. Referred to Election Laws on 2025-04-17. Local approval was received, and on 2026-04-02 it went to a study order. The date is the referral date shown on the page.",
+      "subjects": [
+        "non-citizen voting in local elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:31:43.616Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "818586ba7a6fa8e00a512d1c240c01472b0f796fab8f64a338fb0b5e616ea7fe",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: yea (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9fc7fe42d4ca0418da57b37f789b4766ff618ad71e31a528b663386efac66476",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: yea (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Erika_Uyterhoeven names her as a sitting member of the Massachusetts House (27th Middlesex) and a candidate on the 3 November 2026 general-election ballot for State Senate, 2nd Middlesex District",
+        "Ballotpedia (fetched; nothing on the subject)",
+        "Wikipedia (fetched; nothing on the subject)",
+        "On the Record (extract-otr: 0 appearances, 0 sources)",
+        "blocked: https://malegislature.gov/Legislators/Profile/EAU1 (404; legislator profile URL not found, bill sponsorship list not reached)",
+        "not reviewed: official legislature bill pages for sponsorships on the subject",
+        "not reviewed: official site and campaign site (guessed domains did not connect; could not locate the real address)",
+        "not reviewed: news search on her name plus subject words (web search budget was used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:16:50.237Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "non-citizen voting in local elections",
+        "mail-ballot ID",
+        "election integrity bills",
+        "voting rights of people with felony convictions"
+      ],
+      "places": [
+        "On the Record (0 appearances; nothing on the subject)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/E_U1/ (confirms her as 27th Middlesex representative; sponsored list read)",
+        "bill page https://malegislature.gov/Bills/194/H4033",
+        "two news searches on name plus voter ID, elections and non-citizen voting: no direct quote from her found",
+        "blocked: https://app.legiplex.com/profile/erika-uyterhoeven-12111/ma/legislatures/2025/2025-r/legislation/page/19 (403)",
+        "cosponsored list: not reviewed (the cosponsor page returned the sponsored tab)",
+        "Ballotpedia: not reviewed",
+        "campaign site: not reviewed",
+        "2026 ballot status not separately confirmed"
+      ],
+      "found": 1,
+      "at": "2026-10-27T21:31:43.616Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "Second Amendment statements"
+      ],
+      "places": [
+        "official member page https://malegislature.gov/Legislators/Profile/E_U1/194/District (confirms Representative Erika Uyterhoeven, 27th Middlesex; no gun titles in the list shown)",
+        "two web searches on name plus gun words: nothing on the subject",
+        "https://www.thesomervilletimes.com/archives/84154 fetched: no words by this person",
+        "campaign site: guessed address did not resolve; not found",
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia: not reviewed, returns empty to the fetch tool"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:36:16.666Z",
+      "by": "source-collector"
+    }
+  ]
+}

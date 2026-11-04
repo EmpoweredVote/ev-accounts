@@ -1,0 +1,117 @@
+{
+  "politician_id": "c06165d2-008c-4fe3-93cd-e31fbd6e377f",
+  "findings": [
+    {
+      "id": "93865a8b89bdbc41d4ef5bb8b2ef5120365ea4dece2135c35bb191a3918c0842",
+      "kind": "own-words",
+      "url": "https://correa.house.gov/news/press-releases/rep-correa-responds-to-passage-of-gun-law-that-puts-californians-at-risk",
+      "date": "2017-12-06",
+      "date_precision": "day",
+      "passage": "In California, our law enforcement decides who gets issued a concealed carry permit. We require these permits because guns aren’t toys and carrying one in public without proper training can be deadly. This bill will allow people who don’t meet California’s standards to carry a concealed weapon in our streets. Our police officers oppose this legislation. I voted with our public safety officers and to keep our streets safe.",
+      "note": "Official press release statement on passage of H.R. 38, Concealed Carry Reciprocity Act of 2017, which he voted against.",
+      "subjects": [
+        "carry permits",
+        "honoring other states' carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:02:28.988Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "147454ea3abd2410d1024f23ad925050b6deea66add3f1616c4e24f675dbec07",
+      "kind": "own-words",
+      "url": "https://correa.house.gov/news/press-releases/correa-votes-against-push-to-expand-concealed-carry-in-schools",
+      "date": "2025-05-14",
+      "date_precision": "day",
+      "passage": "I support our retired public safety officers being able to conceal carry and their ability to step in during times of crisis to protect public safety,” Correa said. “However, this legislation would allow off-duty and retired law enforcement to carry guns in schools and other sensitive areas. Due to there being no restriction on concealed carry in schools, I voted ‘no.’ Should this legislation be amended in the future to include this restriction, I would support it.",
+      "note": "Press release on his no vote on H.R. 2243, LEOSA Reform Act of 2025: supports retired officers carrying concealed, objects to carry in schools and other sensitive places.",
+      "subjects": [
+        "carry guns in schools and sensitive places",
+        "retired officers carrying concealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:02:28.988Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7dcbcef4071f09dd851a47ce0f6862a3230143ba557cc6397a2cc6a8f393ef24",
+      "kind": "own-words",
+      "url": "https://correa.house.gov/news/press-releases/rep-lou-correa-joins-president-joe-biden-to-announce-gun-violence-prevention-protocols",
+      "date": "2021-04-08",
+      "date_precision": "day",
+      "passage": "I am a father of four. Last week, a tragic mass shooting that resulted in the murder of a nine-year-old boy shook me to my core. That is why I joined President Biden to support common-sense gun violence safety measures to keep our communities safe.",
+      "note": "Press release statement after joining the President to announce an administration gun violence plan.",
+      "subjects": [
+        "gun violence prevention measures",
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:02:28.988Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2e9fc367f83de0baa21445c2b0d0f902cd2730b3c29bee966aa38a4003aacdb1",
+      "kind": "own-words",
+      "url": "https://correa.house.gov/news/press-releases/06/10/2022/weekly-wrap-up",
+      "date": "2022-06-10",
+      "date_precision": "day",
+      "passage": "This week, Congressman Correa joined his House colleagues to pass life-saving gun violence prevention laws.",
+      "note": "His office's weekly newsletter, describing the House passing the Protecting Our Kids Act (age 21 for semi-automatic purchase, high-capacity magazine ban, ghost gun background checks, bump stock ban) and the Federal Extreme Risk Protection Order Act. Office text issued in his name, not a vote record.",
+      "subjects": [
+        "ban on large-capacity magazines",
+        "minimum age for semi-automatic weapons",
+        "ghost gun background checks",
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:02:28.988Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "assault-style guns",
+        "background checks",
+        "carry permits",
+        "red-flag orders",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site press releases (4 pages saved; one 2026 release on a shooting was not about gun policy)",
+        "blocked: https://correa.house.gov/search?q=gun (403)",
+        "blocked: https://www.congress.gov/member/lou-correa/C001110 (403, bot check)",
+        "not reviewed: https://justfacts.votesmart.org/candidate/public-statements/9732/lou-correa/37/guns?s=date (not opened)",
+        "web searches: name plus gun terms, name plus bills sponsored (no sponsorship on the subject confirmed; a 2019 bill on tracking lost federal agency firearms was not saved)",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 4,
+      "at": "2026-10-30T15:02:28.988Z",
+      "by": "source-collector"
+    }
+  ]
+}

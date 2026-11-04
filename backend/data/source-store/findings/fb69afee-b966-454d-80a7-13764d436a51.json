@@ -1,0 +1,30 @@
+{
+  "politician_id": "fb69afee-b966-454d-80a7-13764d436a51",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry permits",
+        "Second Amendment general statement"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://www.ballotready.org/people/tim-long-a3a5f6ae-31b4-458b-b1d1-b1f410ceacc8 (fetched: lists him as a candidate for U.S. Senate in Michigan, 2026 general election; no issue positions)",
+        "https://www.branch.vote/races/2026-michigan-general-election-mi-state-u.s.-senator-mi-state/candidates/tim-long (fetched: says that as of 2026-09-04 he had no website or online information)",
+        "campaign site: none found",
+        "blocked: https://ballotpedia.org/Tim_Long (page returned an error or blocked response)",
+        "blocked: https://goodparty.org/people/tim-long-00559022 (page returned almost no readable text)",
+        "not reviewed: his Facebook page linked from BallotReady (social media, not fetchable)",
+        "congress.gov: not applicable, no legislative record",
+        "web search on name plus gun words: nothing from him on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:01:01.240Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,616 @@
+{
+  "id": "VA-HB-78-2026",
+  "scope": "state:va",
+  "title": "HB 78 (2026 Regular Session (LIS session code 20261)): Elections administration; duties of local electoral boards, certification of election, etc.",
+  "urls": [
+    "https://lis.virginia.gov/bill-details/20261/HB78",
+    "https://lis.virginia.gov/bill-details/20261/HB78",
+    "https://lis.blob.core.windows.net/files/1216223.HTML",
+    "https://lis.blob.core.windows.net/files/1193774.HTML (enrolled 3/6/2026; not read)",
+    "https://lis.blob.core.windows.net/files/1105116.HTML (engrossed 2/2/2026; not read)",
+    "https://lis.blob.core.windows.net/files/1082289.HTML (introduced 12/31/2025; not read)"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(other) § 24.2-103: powers and duties of State Board in general; report\n(other) § 24.2-109: appointment and removal of general registrar and officers of election; duties of electoral boards\n(other) § 24.2-671, 675, 678: electoral board meeting to ascertain results; abstracts of votes; law-enforcement officer sent for abstracts\n(other) § 24.2-1001.1 (new): failure or refusal to certify election; civil penalty\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Price",
+      "role": "author",
+      "version": "Chaptered: Acts of Assembly Chapter 60, approved 4/6/2026"
+    }
+  ],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2026-02-03",
+      "body": "VA House",
+      "motion": "Read third time and passed House (2619960)",
+      "kind": "roll-call",
+      "yes": 92,
+      "no": 6,
+      "absent": 2,
+      "body_size": 100,
+      "note": "https://lis.virginia.gov/vote-details/20261/HB78/2619960",
+      "members": [
+        {
+          "name": "Kilgore, Terry G.",
+          "vote": "yea"
+        },
+        {
+          "name": "Watts, Vivian E.",
+          "vote": "yea"
+        },
+        {
+          "name": "Ware, R. Lee",
+          "vote": "yea"
+        },
+        {
+          "name": "Wright, Thomas C., Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Ward, Jeion A.",
+          "vote": "yea"
+        },
+        {
+          "name": "Knight, Barry D.",
+          "vote": "absent"
+        },
+        {
+          "name": "McQuinn, Delores L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Herring, Charniele L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Carr, Betsy B.",
+          "vote": "yea"
+        },
+        {
+          "name": "Hope, Patrick A.",
+          "vote": "yea"
+        },
+        {
+          "name": "Morefield, James W. (Will)",
+          "vote": "yea"
+        },
+        {
+          "name": "Torian, Luke E.",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilt, Tony O.",
+          "vote": "yea"
+        },
+        {
+          "name": "Hodges, M. Keith",
+          "vote": "yea"
+        },
+        {
+          "name": "Lopez, Alfonso H.",
+          "vote": "yea"
+        },
+        {
+          "name": "O'Quinn, Israel D.",
+          "vote": "yea"
+        },
+        {
+          "name": "Webert, Michael J.",
+          "vote": "yea"
+        },
+        {
+          "name": "Austin, Terry L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Fowler, Hyland F., Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Leftwich, James A. (Jay), Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Simon, Marcus B.",
+          "vote": "yea"
+        },
+        {
+          "name": "Rasoul, Sam",
+          "vote": "yea"
+        },
+        {
+          "name": "Bloxom, Robert S., Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Sullivan, Richard C. (Rip), Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Krizek, Paul E.",
+          "vote": "yea"
+        },
+        {
+          "name": "Price, Marcia S. (Cia)",
+          "vote": "yea"
+        },
+        {
+          "name": "Hayes, C. E. (Cliff), Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Delaney, Karrie K.",
+          "vote": "yea"
+        },
+        {
+          "name": "Convirs-Fowler, Kelly K.",
+          "vote": "yea"
+        },
+        {
+          "name": "Guzman, Elizabeth R.",
+          "vote": "yea"
+        },
+        {
+          "name": "Reid, David A.",
+          "vote": "yea"
+        },
+        {
+          "name": "Tran, Kathy KL",
+          "vote": "yea"
+        },
+        {
+          "name": "McNamara, Joseph P.",
+          "vote": "yea"
+        },
+        {
+          "name": "Askew, Alex Q.",
+          "vote": "yea"
+        },
+        {
+          "name": "Cole, Joshua G.",
+          "vote": "yea"
+        },
+        {
+          "name": "Helmer, Dan",
+          "vote": "yea"
+        },
+        {
+          "name": "Runion, Chris",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott, Don",
+          "vote": "yea"
+        },
+        {
+          "name": "Simonds, Shelly A.",
+          "vote": "yea"
+        },
+        {
+          "name": "Walker, Wendell S.",
+          "vote": "yea"
+        },
+        {
+          "name": "Willett, Rodney T.",
+          "vote": "yea"
+        },
+        {
+          "name": "Wyatt, Scott A.",
+          "vote": "yea"
+        },
+        {
+          "name": "Wiley, William D. (Bill)",
+          "vote": "yea"
+        },
+        {
+          "name": "Ballard, Jason S.",
+          "vote": "yea"
+        },
+        {
+          "name": "Bennett-Parker, Elizabeth B.",
+          "vote": "yea"
+        },
+        {
+          "name": "Cherry, Mike A.",
+          "vote": "yea"
+        },
+        {
+          "name": "Clark, Nadarius E.",
+          "vote": "yea"
+        },
+        {
+          "name": "Maldonado, Michelle Lopes",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott, Phillip A.",
+          "vote": "nay"
+        },
+        {
+          "name": "Sewell, Briana D.",
+          "vote": "yea"
+        },
+        {
+          "name": "Shin, Irene",
+          "vote": "yea"
+        },
+        {
+          "name": "Tata, Anne Ferrell H.",
+          "vote": "yea"
+        },
+        {
+          "name": "Wachsmann, Howard Otto, Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Williams, Wren M.",
+          "vote": "nay"
+        },
+        {
+          "name": "Glass, Jackie Hope",
+          "vote": "yea"
+        },
+        {
+          "name": "McLaughlin, Ellen H.",
+          "vote": "yea"
+        },
+        {
+          "name": "Seibold, Holly M.",
+          "vote": "yea"
+        },
+        {
+          "name": "Anthony, Bonita G.",
+          "vote": "yea"
+        },
+        {
+          "name": "Callsen, Katrina E.",
+          "vote": "yea"
+        },
+        {
+          "name": "Cohen, Laura Jane",
+          "vote": "yea"
+        },
+        {
+          "name": "Cousins, Rae C.",
+          "vote": "yea"
+        },
+        {
+          "name": "Davis, Will P.",
+          "vote": "yea"
+        },
+        {
+          "name": "Feggans, Michael",
+          "vote": "yea"
+        },
+        {
+          "name": "Gardner, Debra D.",
+          "vote": "yea"
+        },
+        {
+          "name": "Garrett, Thomas A., Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Griffin, Timothy P.",
+          "vote": "nay"
+        },
+        {
+          "name": "Henson, Rozia A., Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Hernandez, Phil M.",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent, Hillary Pugh",
+          "vote": "yea"
+        },
+        {
+          "name": "Keys-Gamarra, Karen",
+          "vote": "absent"
+        },
+        {
+          "name": "Laufer, Amy J.",
+          "vote": "yea"
+        },
+        {
+          "name": "LeVere Bolling, Destiny L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Martinez, Fernando J.",
+          "vote": "yea"
+        },
+        {
+          "name": "McClure, Adele Y.",
+          "vote": "yea"
+        },
+        {
+          "name": "Oates, Delores",
+          "vote": "yea"
+        },
+        {
+          "name": "Reaser, Atoosa R.",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas, Josh",
+          "vote": "yea"
+        },
+        {
+          "name": "Zehr, Eric",
+          "vote": "nay"
+        },
+        {
+          "name": "Phillips, Eric J.",
+          "vote": "yea"
+        },
+        {
+          "name": "Singh, JJ",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson, Jessica L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Carnegie, Karen Robins",
+          "vote": "yea"
+        },
+        {
+          "name": "Carroll, Stacey A.",
+          "vote": "yea"
+        },
+        {
+          "name": "Cole, Nicole",
+          "vote": "yea"
+        },
+        {
+          "name": "Cornett, Mitchell",
+          "vote": "yea"
+        },
+        {
+          "name": "Dougherty, Lindsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Downey, Mark C.",
+          "vote": "yea"
+        },
+        {
+          "name": "Franklin, Lily V.",
+          "vote": "yea"
+        },
+        {
+          "name": "Hamilton, Karen Fleming",
+          "vote": "nay"
+        },
+        {
+          "name": "McAuliff, John C",
+          "vote": "yea"
+        },
+        {
+          "name": "Mehta, Leslie Chambers",
+          "vote": "yea"
+        },
+        {
+          "name": "Nivar, May",
+          "vote": "yea"
+        },
+        {
+          "name": "Pence, Justin L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Pope Adams, Kimberly",
+          "vote": "yea"
+        },
+        {
+          "name": "Thornton, Virgil Gene, Sr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Whittle, Madison",
+          "vote": "yea"
+        },
+        {
+          "name": "Schmidt, Charles H., Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Bulova, Gretchen M.",
+          "vote": "yea"
+        },
+        {
+          "name": "Franklin, Margaret Angela",
+          "vote": "yea"
+        },
+        {
+          "name": "McGuire, Garrett",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-02",
+      "body": "VA Senate",
+      "motion": "Passed Senate (SV764)",
+      "kind": "roll-call",
+      "yes": 25,
+      "no": 15,
+      "absent": 0,
+      "body_size": 40,
+      "note": "https://lis.virginia.gov/vote-details/20261/HB78/SV764",
+      "members": [
+        {
+          "name": "Lashrecse D. Aird",
+          "vote": "yea"
+        },
+        {
+          "name": "Lamont Bagby",
+          "vote": "yea"
+        },
+        {
+          "name": "Elizabeth B. Bennett-Parker",
+          "vote": "yea"
+        },
+        {
+          "name": "Jennifer B. Boysko",
+          "vote": "yea"
+        },
+        {
+          "name": "Jennifer D. Carroll Foy",
+          "vote": "yea"
+        },
+        {
+          "name": "R. Creigh Deeds",
+          "vote": "yea"
+        },
+        {
+          "name": "Barbara A. Favola",
+          "vote": "yea"
+        },
+        {
+          "name": "Timmy French",
+          "vote": "yea"
+        },
+        {
+          "name": " Michael J. Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Mamie E. Locke",
+          "vote": "yea"
+        },
+        {
+          "name": "L. Louise Lucas",
+          "vote": "yea"
+        },
+        {
+          "name": "David W. Marsden",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeremy S. McPike",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark D. Obenshain",
+          "vote": "yea"
+        },
+        {
+          "name": "Stella G. Pekarsky",
+          "vote": "yea"
+        },
+        {
+          "name": "Russet Perry",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd E. Pillion",
+          "vote": "yea"
+        },
+        {
+          "name": "Danica A. Roem",
+          "vote": "yea"
+        },
+        {
+          "name": "Aaron R. Rouse",
+          "vote": "yea"
+        },
+        {
+          "name": "Saddam Azlan Salim",
+          "vote": "yea"
+        },
+        {
+          "name": "Kannan Srinivasan",
+          "vote": "yea"
+        },
+        {
+          "name": "David R. Suetterlein",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott A. Surovell",
+          "vote": "yea"
+        },
+        {
+          "name": "Schuyler T. VanValkenburg",
+          "vote": "yea"
+        },
+        {
+          "name": "Angelia Williams Graves",
+          "vote": "yea"
+        },
+        {
+          "name": "Luther Cifers, III",
+          "vote": "nay"
+        },
+        {
+          "name": "Christie New Craig",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill DeSteph",
+          "vote": "nay"
+        },
+        {
+          "name": "J.D. \"Danny\" Diggs",
+          "vote": "nay"
+        },
+        {
+          "name": "Tara A. Durant",
+          "vote": "nay"
+        },
+        {
+          "name": "T. Travis Hackworth",
+          "vote": "nay"
+        },
+        {
+          "name": "Christopher T. Head",
+          "vote": "nay"
+        },
+        {
+          "name": "Emily M. Jordan",
+          "vote": "nay"
+        },
+        {
+          "name": "Ryan T. McDougle",
+          "vote": "nay"
+        },
+        {
+          "name": "Tammy Brankley Mulchi",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark J. Peake",
+          "vote": "nay"
+        },
+        {
+          "name": "Bryce E. Reeves",
+          "vote": "nay"
+        },
+        {
+          "name": "William M. Stanley, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Richard H. Stuart",
+          "vote": "nay"
+        },
+        {
+          "name": "Glen H. Sturtevant, Jr.",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T15:50:01Z)",
+    "fetched_at": "2026-10-28T15:50:01Z",
+    "method": "curl"
+  }
+}

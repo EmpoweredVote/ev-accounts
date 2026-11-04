@@ -1,0 +1,273 @@
+{
+  "politician_id": "32ea954f-8bfa-4d28-9f9e-12d1929cb853",
+  "findings": [
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "36d3dcc94e294b4fd5a6d39652bb8c35fc01792f973fe607233e1965c93ab6c4",
+      "kind": "own-words",
+      "url": "https://walkinshaw.house.gov/Issues/Issue/?IssueID=14964",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Congressman Walkinshaw has been a consistent advocate for common-sense gun safety laws that protect communities while respecting responsible gun ownership. On the Fairfax County Board of Supervisors, he led the effort to pass a landmark ordinance banning guns in County buildings, libraries, recreation centers, and parks.",
+      "note": "Official House issue page, written in third person on his behalf (undated). Says he led a county ordinance banning guns in county buildings, libraries, recreation centers and parks.",
+      "subjects": [
+        "places where carry is allowed",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:06:55.243Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8a185881a1ebade681ae8a4557a66d31dcba986c25c8c7d905fd9892e82ba137",
+      "kind": "own-words",
+      "url": "https://walkinshaw.house.gov/Issues/Issue/?IssueID=14964",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "As a parent of a young child who has already experienced a preschool lockdown, James knows the urgency of preventing gun violence. In Congress, he supports legislation to ban assault weapons and high-capacity magazines, close the Charleston loophole, require background checks on all gun sales, and oppose federal concealed carry mandates that override state protections.",
+      "note": "Same official issue page (undated). States support for bans on assault weapons and large magazines, closing the Charleston loophole, background checks on all gun sales, and opposition to federal carry mandates that override state rules.",
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "check every gun buyer",
+        "federal carry mandates"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:06:55.243Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cc10645d5316ebb42651c8a53d6c6aadcffad279f2b2ae4494ca267430ab9459",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1041",
+      "date": "2026-05-21",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1041-2026",
+      "act": "nay",
+      "motion": "On Passage (Roll 190)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 190), 2026-05-21: nay (tally 216–201); census gate: none.",
+      "subjects": [
+        "VA records barred from gun background check without a judge's finding",
+        "VA fiduciary or incompetence finding not a 'mental defective' adjudication"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1041-2026.htm",
+          "sha256": "2a2784caf1b89019cb01ab04ebd2e2332984244d9935fad9618771638d40338e"
+        }
+      }
+    },
+    {
+      "id": "7ec892592e9e81a8d9eb8988f864827e569606567c2d3dc28ee24bff21b9c73b",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1181",
+      "date": "2026-07-14",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1181-2026",
+      "act": "nay",
+      "motion": "On Passage (Roll 240)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 240), 2026-07-14: nay (tally 221–201); census gate: none.",
+      "subjects": [
+        "separate payment codes for gun stores barred",
+        "state and local rules on gun-store payment codes preempted"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1181-2026.htm",
+          "sha256": "f006527184528c0f2d077b081748501c1dd86c4e2c2b83f4ce23ab419e1fb25c"
+        }
+      }
+    },
+    {
+      "id": "ca23e7025d826a863f98362cb04dbe6c7118d52ee12a75770ac7b314e80da6d5",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/2189",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "US-HR-2189-2026",
+      "act": "nay",
+      "motion": "On Passage (Roll 70)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 70), 2026-02-12: nay (tally 233–185); census gate: none.",
+      "subjects": [
+        "less-than-lethal launchers exempt from federal firearm rules",
+        "firearms and ammunition excise tax waived for those devices",
+        "exempt from National Firearms Act"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-2189-2026.htm",
+          "sha256": "dc2e63136aaa75fcc392af14f19bb2aae027e280992db65f70d454213a650e4e"
+        }
+      }
+    },
+    {
+      "id": "eb11c957f300f3d2599161bce38e5574ba3b442b9be97b5f75d41e3193351a64",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1307",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "US-HR-1307-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2026-03-27",
+      "note": "co sponsor of US-HR-1307-2025 (cosponsor 2026-03-27): HR 1307 (119th Congress): Office of Gun Violence Prevention Act of 2025.",
+      "subjects": [
+        "new Justice Department office for gun violence prevention",
+        "public education on safe gun storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1307-2025.htm",
+          "sha256": "5be12c5cce55739dd5e238649c27d6115c185a4e0e5679ca310262c713f7b8ea"
+        }
+      }
+    },
+    {
+      "id": "2fdda3731a9ebdbdfdeccb6e325cf58fd901770a4748c8ba566d3b6e27d76418",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1564",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "US-HR-1564-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2025-12-03",
+      "note": "co sponsor of US-HR-1564-2025 (cosponsor 2025-12-03): HR 1564 (119th Congress): Ethan's Law.",
+      "subjects": [
+        "federal safe-storage offence for guns reachable by minors or prohibited people",
+        "grants to states with matching safe-storage laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1564-2025.htm",
+          "sha256": "d35362313d852ff9cc41c95f1bfcebc775eed59c7d0a3977d15ff07c13559e45"
+        }
+      }
+    },
+    {
+      "id": "27b420445e60c51d5d3bab740ef2ddeda95d41153cf8b80878b806b9290e648a",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1674",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "US-HR-1674-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2026-04-21",
+      "note": "co sponsor of US-HR-1674-2025 (cosponsor 2026-04-21): HR 1674 (119th Congress): Keep Americans Safe Act.",
+      "subjects": [
+        "ban on magazines holding more than 15 rounds",
+        "existing magazines allowed, new ones must carry serial numbers",
+        "buy-back funding for large magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1674-2025.htm",
+          "sha256": "b8f771e36906d74c17b43c374e789b4fc50b5e10422fdd280358ad6bb18e78d7"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "carry permits",
+        "who may own a gun",
+        "general gun rights statement"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://walkinshaw.house.gov/Issues/Issue/?IssueID=14964 (official issue page, fetched with curl)",
+        "https://walkinshaw.house.gov/issues/ (issue list)",
+        "official press release listing: nothing found by keyword query beyond the issue page",
+        "blocked: https://www.congress.gov/member/james-walkinshaw/W000831 (403)",
+        "web searches on name plus gun words (advocacy-group page only, not his words)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T15:06:55.243Z",
+      "by": "source-collector"
+    }
+  ]
+}

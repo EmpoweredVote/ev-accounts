@@ -1,0 +1,141 @@
+{
+  "politician_id": "ef888471-24a9-4a9f-9115-e530c16986ae",
+  "findings": [
+    {
+      "id": "de993072b1f015691757356966b25be35f10f79ccfc21b9e05ca9348996cbcde",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "Roll Call #208 - Question on acceptance of conference committee report",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA Senate, Roll Call #208 - Question on acceptance of conference committee report, 2024-07-18: yea (tally 35–5); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db16b98b521d382c722d5503605116e48c77fb9d34798b9816992f739c986730",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "Senate Engrossed Roll Call #114",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA Senate, Senate Engrossed Roll Call #114, 2024-02-01: yea (tally 37–3); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity laws",
+        "same day registration"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/John_J._Cronin names him as MA State Senate, Worcester and Middlesex, on the Nov 3, 2026 general-election ballot after advancing in the Sept 1, 2026 primary",
+        "positive control: https://malegislature.gov/Legislators/Profile/JJC0 (Senator John J. Cronin, Worcester and Middlesex)",
+        "On the Record (0 appearances, 0 sources)",
+        "official legislature page and sponsored-bills list https://malegislature.gov/Legislators/Profile/JJC0/Sponsored: no election, voter ID or citizenship bills among sponsored petitions",
+        "malegislature.gov bill search 'voter identification' (194th Court): H833, S510, H834, S505, S498 reviewed; Cronin is not named as the filer of any (not confirmed for the full co-sponsor lists)",
+        "Ballotpedia: nothing on the subject",
+        "blocked: https://www.senatorcronin.com (no response)",
+        "blocked: https://malegislature.gov/Legislators/Profile/JJC0/Votes (no response)",
+        "not reviewed: roll-call vote records on election bills; web news search not run (search budget used up)",
+        "not reviewed: https://www.johncronin.org (loaded, unverified as his site)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:29:31.462Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot ID",
+        "voting access and election integrity bills in general"
+      ],
+      "places": [
+        "found the person: Ballotpedia page (https://ballotpedia.org/John_J._Cronin) shows him as the sitting state senator for Worcester and Middlesex, on the 2026-11-03 general election ballot after the 2026-09-01 primary",
+        "Wikipedia page, nothing on the subject",
+        "campaign site johnjcronin.com, nothing on the subject",
+        "Groton Herald 2022-06-16 article on the VOTES Act, a news summary of mail-in and early voting expansion with no quote from him and no ID content (paywalled in part)",
+        "blocked: malegislature.gov legislator pages were not fetched; a Senate roll call PDF seen in search was not opened, its topic is unknown",
+        "On the Record extract script not present in this workspace, not run",
+        "3 web searches on his name plus voter ID terms, nothing tying him to the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:42:25.161Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "background checks",
+        "red flag",
+        "ghost guns",
+        "carry permits",
+        "gun rights general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed in office: https://malegislature.gov/Legislators/Profile/JJC0",
+        "sponsor list: covered by LegiScan bulk check",
+        "official legislature profile page: no personal site or gun statements listed",
+        "campaign site (home and issues/accomplishments pages): nothing on the subject",
+        "6 web searches (name plus gun, firearm, ghost gun, ballot question words): no own words found on the subject; only news about the 2024 law and the 2026 ballot question that do not quote this person",
+        "Ballotpedia: not reviewed, returns empty to fetch tool",
+        "no statement found on the 2026 repeal ballot question"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:35:40.495Z",
+      "by": "source-collector"
+    }
+  ]
+}

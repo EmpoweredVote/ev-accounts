@@ -1,0 +1,486 @@
+{
+  "politician_id": "2d222946-7125-4c9e-ab59-9ebab94f8301",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "ab97042a76ea2deb7cf3a0bb4bfadd0d4c9dd55eb6e25f8565cba2e0ce347418",
+      "kind": "own-words",
+      "url": "https://patronis.house.gov/media/press-releases/patronis-applauds-the-passage-of-the-save-america-act",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "passage": "“It’s crazy that you need an ID for almost everything in life except when it comes to voting,” said Congressman Patronis.",
+      "note": "Quote in his official press release on House passage of the SAVE America Act. He says ID is required for most things but not for voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID before voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:38.666Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7a03e895a52721d45df45011877ff6f6a9f1756ea3a23f30c137afe2d1aa7195",
+      "kind": "own-words",
+      "url": "https://patronis.house.gov/media/press-releases/patronis-applauds-the-passage-of-the-save-america-act",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "passage": "This bill is common sense, and I’m proud to support it.",
+      "note": "Closing sentence of his quoted statement in the same release, about the SAVE America Act (voter ID for federal elections and proof of citizenship to register).",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:38.666Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "68b8412983347066f54fe379bf4e0bfa42bf429b03875327474fc75bd648b5b7",
+      "kind": "own-words",
+      "url": "https://patronis.house.gov/media/press-releases/patronis-applauds-the-passage-of-the-save-america-act",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "passage": "In several states, they can obtain a driver’s license and other identification that can be used to register to vote in federal elections. We must protect the integrity of our elections and keep them in the hands of American citizens.",
+      "note": "Release text issued in his name. Says some states give driver's licenses and other ID that can be used to register, and calls for protecting election integrity and citizen-only elections.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:38.666Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "93f303b90efbcef9f14e9e1d469b009208c62895c393140cc83a406281031901",
+      "kind": "own-words",
+      "url": "https://patronis.house.gov/media/press-releases/patronis-applauds-the-passage-of-the-save-america-act",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "passage": "Congressman Jimmy Patronis today applauds the passage of the SAVE America Act, which will add Voter ID requirements for voting in federal elections and proof-of-citizenship requirements for voter registration. Congressman Patronis voted in favor of the SAVE America Act.",
+      "note": "Release states he voted yes on the SAVE America Act and lists its terms: eligible photo ID before voting, in-person proof of citizenship to register, and removal of non-citizens from voter rolls.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID before voting",
+        "proof of citizenship to register",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:38.666Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12883c161facedd8059bc0502bb87e82c0aae50c8a2f7114279bce25fe6a1a15",
+      "kind": "own-words",
+      "url": "https://flvoicenews.com/jimmy-patronis-and-randy-fine-round-out-first-full-week-in-congress-voting-for-trump-backed-priorities/",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "“Proud to join my colleagues to co-sponsor & pass the SAVE Act!” Patronis said on Thursday. “The Act preserves the integrity of our federal elections by ensuring ONLY Americans can vote in American elections.",
+      "note": "Quoted by Florida's Voice (article dated April 11, 2025; 'Thursday' is April 10, 2025, the day of the House vote on H.R. 22). He says he co-sponsored and voted for the SAVE Act (proof of citizenship to register for federal elections). The cosponsor claim was not confirmed on congress.gov (blocked).",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:38.666Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d1cf3ea0fb05d85514d99e72ecfbc343d0b958d25acd54e6a5b4e7f76f835fe9",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2025190",
+      "date": "2025-07-03",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2025",
+      "act": "yea",
+      "motion": "On Motion to Concur in the Senate Amendment",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US House, On Motion to Concur in the Senate Amendment, 2025-07-03: yea (tally 218–214); census gate: multi-subject.",
+      "subjects": [
+        "end the federal tax on suppressors and short-barrelled guns",
+        "budget (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "589708d68e86e126254680ea18c91ed72a8f45c4ea1d4d85fb6f52e8a54d98a3",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1041",
+      "date": "2026-05-21",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1041-2026",
+      "act": "yea",
+      "motion": "On Passage (Roll 190)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 190), 2026-05-21: yea (tally 216–201); census gate: none.",
+      "subjects": [
+        "VA records barred from gun background check without a judge's finding",
+        "VA fiduciary or incompetence finding not a 'mental defective' adjudication"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1041-2026.htm",
+          "sha256": "2a2784caf1b89019cb01ab04ebd2e2332984244d9935fad9618771638d40338e"
+        }
+      }
+    },
+    {
+      "id": "4a308d48a9549e50306297a949724b97a1418451146f08ca82bbe8af63d33502",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1181",
+      "date": "2026-07-14",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1181-2026",
+      "act": "yea",
+      "motion": "On Passage (Roll 240)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 240), 2026-07-14: yea (tally 221–201); census gate: none.",
+      "subjects": [
+        "separate payment codes for gun stores barred",
+        "state and local rules on gun-store payment codes preempted"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1181-2026.htm",
+          "sha256": "f006527184528c0f2d077b081748501c1dd86c4e2c2b83f4ce23ab419e1fb25c"
+        }
+      }
+    },
+    {
+      "id": "342e719a2631d053db4cb07977d5fc7e78d95ce5d7b5ae14f3440c2c501164ff",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/2189",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "US-HR-2189-2026",
+      "act": "yea",
+      "motion": "On Passage (Roll 70)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 70), 2026-02-12: yea (tally 233–185); census gate: none.",
+      "subjects": [
+        "less-than-lethal launchers exempt from federal firearm rules",
+        "firearms and ammunition excise tax waived for those devices",
+        "exempt from National Firearms Act"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-2189-2026.htm",
+          "sha256": "dc2e63136aaa75fcc392af14f19bb2aae027e280992db65f70d454213a650e4e"
+        }
+      }
+    },
+    {
+      "id": "23114e9e86206e3862695a222cdf0d4b9d8071e9e39e2d4fdbd7f6f4f00855de",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/2243",
+      "date": "2025-05-14",
+      "date_precision": "day",
+      "instrument_id": "US-HR-2243-2025",
+      "act": "yea",
+      "motion": "On Passage (Roll 128)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 128), 2025-05-14: yea (tally 229–193); census gate: none.",
+      "subjects": [
+        "more places where off-duty and retired officers may carry concealed guns",
+        "retired officer firearms-training standards loosened"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-2243-2025.htm",
+          "sha256": "ca5f7326393fa8074705e6aa642e2b3a991c4d683236cff228e515a1bf193f9e"
+        }
+      }
+    },
+    {
+      "id": "a7e7960420c95fbb22562bb2a39c5682ce204f7a4452b4ad1026d6531d951f5e",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/2255",
+      "date": "2025-05-15",
+      "date_precision": "day",
+      "instrument_id": "US-HR-2255-2025",
+      "act": "yea",
+      "motion": "On Passage (Roll 130)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 130), 2025-05-15: yea (tally 234–182); census gate: none.",
+      "subjects": [
+        "federal officers may buy retired service firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-2255-2025.htm",
+          "sha256": "d169bbda6c281e845e29bde7d0fdabe0f76218dba3948eaf0725bb49db42a459"
+        }
+      }
+    },
+    {
+      "id": "7a3a7df8f8b5249f630b2674e0ba7013f91e906a1d2b83c4bfd1df79aa65038c",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1181",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "US-HR-1181-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2025-10-17",
+      "note": "co sponsor of US-HR-1181-2026 (cosponsor 2025-10-17): HR 1181 (119th Congress): Protecting Privacy in Purchases Act.",
+      "subjects": [
+        "separate payment codes for gun stores barred",
+        "state and local rules on gun-store payment codes preempted"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1181-2026.htm",
+          "sha256": "f006527184528c0f2d077b081748501c1dd86c4e2c2b83f4ce23ab419e1fb25c"
+        }
+      }
+    },
+    {
+      "id": "035b8d00c22051c816b86693437dd6754057279dcde5ec603b9f4b0772ed6c55",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/38",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "US-HR-38-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2025-10-03",
+      "note": "co sponsor of US-HR-38-2025 (cosponsor 2025-10-03): HR 38 (119th Congress): Constitutional Concealed Carry Reciprocity Act of 2025.",
+      "subjects": [
+        "concealed-carry permits honored across state lines",
+        "state and local carry laws overridden",
+        "carry allowed on national park and federal public land",
+        "no arrest without probable cause; lawsuits and legal fees for violations"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-38-2025.htm",
+          "sha256": "956e5f8eb857804e25089a765234f0d85edf8f6acc1803db879f4ed2e9fb30f3"
+        }
+      }
+    },
+    {
+      "id": "0875dd6844d1d729bd892069cf701f2fefedd3d732cbd2ccc842fbf0c68ef145",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/45",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "US-HR-45-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2026-08-24",
+      "note": "co sponsor of US-HR-45-2025 (cosponsor 2026-08-24): HR 45 (119th Congress): FIND Act.",
+      "subjects": [
+        "federal contractors barred from discriminating against gun and ammunition businesses",
+        "contract terminated and debarment for violators"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-45-2025.htm",
+          "sha256": "0a2fedce19846aa2979e9b5c658da25963f271a5e44d54fef9d6048e81873d76"
+        }
+      }
+    },
+    {
+      "id": "b6e234eab9cc0a087384241c990c7250c9384fe8e74429154b9c19ef18d2fcc8",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/850",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "US-HR-850-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2026-05-19",
+      "note": "co sponsor of US-HR-850-2025 (cosponsor 2026-05-19): HR 850 (119th Congress): SHUSH Act.",
+      "subjects": [
+        "silencers removed from federal firearm rules and registration",
+        "state silencer taxes and registration preempted",
+        "silencer penalty enhancements repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-850-2025.htm",
+          "sha256": "c82aca6905adcd127cdd348aeb836f78df29b15bd4beb177a62784466d0c8670"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID before voting",
+        "proof of citizenship to register",
+        "SAVE Act / SAVE America Act",
+        "non-citizens on voter rolls",
+        "election integrity",
+        "mail-ballot ID",
+        "no-ID fallback (affidavit, provisional ballot)"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Jimmy_Patronis (incumbent, FL-1, won the August 18, 2026 primary, on the November 3, 2026 general-election ballot)",
+        "On the Record (0 appearances for this politician id; nothing on the subject)",
+        "official site patronis.house.gov: press-release list page 1 and issues pages (nothing on the subject besides the SAVE America Act release); one SAVE America Act press release fetched",
+        "blocked: https://patronis.house.gov/search?q=SAVE+Act (403)",
+        "campaign site joinjimmy.com (home and page links; nothing on the subject)",
+        "Ballotpedia (lists SAVE Act yea vote only; no own words on the subject)",
+        "blocked: https://www.congress.gov/member/jimmy-patronis/P000622 and congress.gov H.R.22 cosponsors page (403); cosponsor status not confirmed from an official page",
+        "news: Florida's Voice (April 11, 2025), Florida Press (April 11, 2025 vote list)",
+        "news search on name plus voter ID, citizenship, election integrity (no further own words found)",
+        "nothing on the subject: mail-ballot ID, no-ID fallback, non-photo documents",
+        "not reviewed: video clip linked in the February 13, 2026 press release (not fetched)"
+      ],
+      "found": 5,
+      "at": "2026-10-22T21:38:38.666Z",
+      "by": "source-collector"
+    }
+  ]
+}

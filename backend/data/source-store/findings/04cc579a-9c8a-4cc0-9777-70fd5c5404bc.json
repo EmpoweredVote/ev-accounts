@@ -1,0 +1,123 @@
+{
+  "politician_id": "04cc579a-9c8a-4cc0-9777-70fd5c5404bc",
+  "findings": [
+    {
+      "id": "3359cb792d8ef750eacd9c787ffc4488542e5c375ca24699a9d0149ce96ad996",
+      "kind": "own-words",
+      "url": "https://www.mikejones4mo.com",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Allowing only American citizens the right to vote",
+      "note": "List item on his Senate campaign site under a heading of priorities. It is a short phrase, not a full sentence, and gives no method such as ID or documents.",
+      "subjects": [
+        "non-citizen voting / citizens-only voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:04:32.400Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e076c8b48278b31632ee890048920af3952a61ffb83895b5d23bfa476c64b17f",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Jones 12'), linked to Mike Jones (district 12) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.750Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "72a52d290b9978b563f9da836e97197e83a6bdb92ec9fc051a7d62606b3d4473",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn052.pdf",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "MO-HCR-48-2026",
+      "act": "yea",
+      "motion": "House: HCR 48 read the third time and passed",
+      "note": "House roll call as printed ('Jones 12'), linked to Mike Jones (district 12) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.224Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks / non-citizen voting / election integrity"
+      ],
+      "places": [
+        "KQ2 2026 candidate profile: confirms Senate District 34 race; nothing on the subject",
+        "campaign site https://www.mikejones4mo.com (read; one line on the subject)",
+        "blocked: https://missouriindependent.com/2026/07/15/in-northwest-missouri-senate-primary-two-gop-lawmakers-who-vote-alike-differ-on-styles/ (403)",
+        "House member and press pages: not reviewed (URLs contain query strings, barred by robots rules)",
+        "On the Record (0 appearances)",
+        "blocked: https://ballotpedia.org (page returned empty)",
+        "one news search plus subject-word searches on name",
+        "bill sponsorships and floor votes: not searched, linked separately"
+      ],
+      "found": 1,
+      "at": "2026-11-04T05:04:32.400Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:10:53.750Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:14:55.224Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

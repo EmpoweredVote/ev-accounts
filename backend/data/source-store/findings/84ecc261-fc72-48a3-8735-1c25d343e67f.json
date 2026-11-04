@@ -1,0 +1,66 @@
+{
+  "politician_id": "84ecc261-fc72-48a3-8735-1c25d343e67f",
+  "findings": [
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Howard'), linked to Karlton L. Howard (district 129) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.416Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity",
+        "SB 202 absentee ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "candidate guide page https://branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-129/candidates/karlton-l-howard (confirms he is running for Georgia House District 129 in the 2026 general election; the page has a Voting & Elections list that opposes restrictive voter identification laws, but it cites no source and is not shown to be his own wording, so it is not saved as own words)",
+        "news: https://theaugustapress.com/house-district-129-profile-karlton-howard/ (2022 profile; no statement on the subject)",
+        "three web searches on his name plus the subject words: no quote of him on the subject found",
+        "blocked: https://ballotpedia.org/Karlton_Howard (fetch returned empty page)",
+        "his official site and campaign site were not found by search",
+        "legis.ga.gov bill pages not tried (login token needed); floor votes linked separately per the brief"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:28:59.723Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.416Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

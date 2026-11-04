@@ -1,0 +1,32 @@
+{
+  "politician_id": "25b2326a-6012-4e28-bdf1-b78c4a21a5ed",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "general Second Amendment statement",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry permits",
+        "red flag orders"
+      ],
+      "places": [
+        "scope: https://theballotbrief.com/candidate/clay-faircloth-tn describes him as an independent candidate from Nashville running for U.S. House, TN-4; https://ivoterguide.com/candidate/94857/race/34519/election/1499 lists him for the same race",
+        "On the Record (0 meetings)",
+        "campaign site https://claycares.org/ (read by plain curl): jobs, infrastructure, healthcare, technology; nothing on the subject",
+        "iVoterGuide profile: the gun-restrictions question is marked 'Did not answer', so no words to save",
+        "Ballotpedia: page returned empty",
+        "not a legislator: no sponsorship records to check",
+        "news search for his name plus gun words: nothing about him",
+        "not reviewed: his campaign site subpages (About, Opportunities, Involve, News) beyond the home page",
+        "blocked: https://www.clayandbuck.com/clays-childhood-friend-is-running-for-congress-in-tenneseee was not about him (about another candidate), nothing saved",
+        "web searches run: 2"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:02:48.624Z",
+      "by": "source-collector"
+    }
+  ]
+}

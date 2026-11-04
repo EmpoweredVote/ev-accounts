@@ -1,0 +1,852 @@
+{
+  "id": "MA-H-4000-AMDT-409-2025",
+  "scope": "state:ma",
+  "title": "Amendment #409 to H.4000 (FY2026 budget), 'An Act relative to identification to vote' (offered by Mr. Lombardo of Billerica; failed 25-131, roll call 42)",
+  "urls": [
+    "https://malegislature.gov/Bills/GetAmendmentContent/194/H4000/409/House/Content",
+    "https://malegislature.gov/RollCall/194/HouseRollCall42.pdf",
+    "https://malegislature.gov/Bills/194/H4000/Amendments/House"
+  ],
+  "version": "other",
+  "operative_text": "Mr. Lombardo of Billerica moves to amend the bill by inserting at the end thereof the following new outside section:- SECTION XX. Section 76 of chapter 54 of the General Laws, as appearing in the 2022 Official Edition, is hereby amended by striking the section in its entirety and inserting in place thereof the following:- (a) Each voter desiring to vote at a polling place shall give his name and, if requested, his residence to one of the officers at the entrance to the space within the guard rail, who shall thereupon distinctly announce the same. If such name is found on the voting list, the election officer shall check and repeat the name valid State or Federal photo identification prior to receiving a ballot. The officer shall verify the voter’s identification matches the name and residence with the voting list. If verified, the officer and shall admit the voter to the space enclosed by the guard rail and, in case official ballots, other than those marked ''Challenged Ballots'' as provided by section thirty-five A, are used, such voter shall be given one ballot. The use of electronic means such as tape recording equipment or radio broadcasting equipment for the recording or broadcasting of the names of voters not yet checked as having voted shall be prohibited. (b) A valid government-issued photo identification shall include, but not be limited to: (i) A Massachusetts driver’s license or state identification card issued by the Registry of Motor Vehicles; (ii) A United States passport; (iii) A United States military identification card; (iv) A Massachusetts-issued firearm identification card; (v) Any other federal or state government-issued identification card that includes a photograph of the voter. (c) The Secretary of the Commonwealth shall implement a program to provide, at no cost, a Massachusetts photo identification card for voting purposes to any registered voter who does not possess a valid form of photo identification and who signs an affidavit affirming such. (d) The Secretary of the Commonwealth shall develop and distribute information to the public regarding the requirements of this section, and shall provide training and guidance to election officials to ensure uniform implementation of the law. (e) This section shall take effect on January 1, 2026. Additional co-sponsor(s) added to Amendment #409 to H4000 An Act relative to identification to vote Representative: Kelly W. Pease Nicholas A. Boldyga",
+  "sponsors": [
+    {
+      "name": "Lombardo",
+      "politician_id": "e2c3e1a7-78b2-4c90-a136-c0a22c3f3e48",
+      "role": "prime",
+      "version": "amendment as offered"
+    },
+    {
+      "name": "Kelly W. Pease",
+      "politician_id": "296406bb-cc2a-4214-978f-d30333d62939",
+      "role": "co",
+      "version": "added co-sponsor"
+    },
+    {
+      "name": "Nicholas A. Boldyga",
+      "politician_id": "541efc37-b332-4c80-8264-7b655efed5ac",
+      "role": "co",
+      "version": "added co-sponsor"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-04-29",
+      "body": "MA House",
+      "motion": "On adoption of amendment #409 (H.4000) - failed",
+      "kind": "roll-call",
+      "yes": 25,
+      "no": 131,
+      "absent": 2,
+      "body_size": 160,
+      "note": "Roll call 42 (https://malegislature.gov/RollCall/194/HouseRollCall42.pdf); names as printed on the sheet.",
+      "members": [
+        {
+          "name": "Mr. Speaker",
+          "vote": "nay",
+          "politician_id": "5fdefd59-b543-4221-b6ed-b33532f9bd5f"
+        },
+        {
+          "name": "Flanagan",
+          "vote": "absent",
+          "politician_id": "516feaaa-7086-4382-8cfa-9463f508dd74"
+        },
+        {
+          "name": "Markey",
+          "vote": "nay",
+          "politician_id": "2270da0d-09e7-40b4-858f-fe25bc822916"
+        },
+        {
+          "name": "Sylvia",
+          "vote": "nay",
+          "politician_id": "8658e02a-1456-45ba-96bb-19ff438d8e1b"
+        },
+        {
+          "name": "Moran M.",
+          "vote": "nay",
+          "politician_id": "9b3c9aa8-d22a-4761-93e3-8054c762f4a5"
+        },
+        {
+          "name": "Fluker-Reid",
+          "vote": "nay",
+          "politician_id": "5c497509-7a9d-492b-ac35-ff37f8fcfb82"
+        },
+        {
+          "name": "McGonagle",
+          "vote": "nay",
+          "politician_id": "4a818693-d820-4f4a-94b7-3d43a2381e1c"
+        },
+        {
+          "name": "Tarsky",
+          "vote": "nay",
+          "politician_id": "de311b87-1026-4f61-8e42-110b90491160"
+        },
+        {
+          "name": "Hogan",
+          "vote": "nay",
+          "politician_id": "e96eddbe-4a4a-4499-8102-636f0cfac10e"
+        },
+        {
+          "name": "Gallagher",
+          "vote": "nay",
+          "politician_id": "17035eb6-e7d3-4372-9b96-0741adb57468"
+        },
+        {
+          "name": "McMurtry",
+          "vote": "nay",
+          "politician_id": "5020a35d-1f0c-44f7-b533-4e5e457238b5"
+        },
+        {
+          "name": "Turco",
+          "vote": "nay",
+          "politician_id": "c539c9fa-a531-456f-9125-8d30f1fcedfe"
+        },
+        {
+          "name": "Peisch",
+          "vote": "nay",
+          "politician_id": "ac853e6e-d419-4d05-b89c-77d11bb68fb2"
+        },
+        {
+          "name": "Galvin",
+          "vote": "nay",
+          "politician_id": "78f3bb2d-90e4-4263-925e-6203385bc6eb"
+        },
+        {
+          "name": "Mendes",
+          "vote": "nay",
+          "politician_id": "042c79d6-2f15-4e90-b672-ce779a53cae0"
+        },
+        {
+          "name": "Tyler",
+          "vote": "nay",
+          "politician_id": "fd3bf15c-265b-46a9-aa72-c9097749d762"
+        },
+        {
+          "name": "Moran F.",
+          "vote": "nay",
+          "politician_id": "5729a0a4-40a9-41bd-82a4-9a0bea757567"
+        },
+        {
+          "name": "Garballey",
+          "vote": "nay",
+          "politician_id": "7072bd94-b465-414e-bcf5-6e3feb7ec8dd"
+        },
+        {
+          "name": "Meschino",
+          "vote": "nay",
+          "politician_id": "502890e3-ad59-4d40-88a4-3cdee03f025e"
+        },
+        {
+          "name": "Ultrino",
+          "vote": "nay",
+          "politician_id": "0cb5bf41-db67-4c4e-b4cf-79c4e4e8dcd7"
+        },
+        {
+          "name": "Donato",
+          "vote": "nay",
+          "politician_id": "a73b7873-74df-484f-bfab-3b0d905972d9"
+        },
+        {
+          "name": "Garcia",
+          "vote": "nay",
+          "politician_id": "c4c3ed02-2592-4505-a26c-0195d0b5314e"
+        },
+        {
+          "name": "Michlewitz",
+          "vote": "nay",
+          "politician_id": "9cf147de-64e0-4116-b461-95933e18c423"
+        },
+        {
+          "name": "Uyterhoeven",
+          "vote": "nay",
+          "politician_id": "98291d86-d42d-49d0-a5b2-d689a8154b15"
+        },
+        {
+          "name": "Arciero",
+          "vote": "nay",
+          "politician_id": "f392e7c6-0ab2-4834-9a57-df86541f55d3"
+        },
+        {
+          "name": "Garry",
+          "vote": "nay",
+          "politician_id": "c8f917f9-f6c4-49f8-b5a4-c330b07f90d2"
+        },
+        {
+          "name": "Moakley",
+          "vote": "nay",
+          "politician_id": "35cf0880-be86-45bb-97e9-4ef2097feba1"
+        },
+        {
+          "name": "Vargas",
+          "vote": "nay",
+          "politician_id": "19b7c45b-57a7-468c-9762-82b926080646"
+        },
+        {
+          "name": "Arena-DeRosa",
+          "vote": "nay",
+          "politician_id": "ea8ed274-32d6-499d-a787-7ad1f0624280"
+        },
+        {
+          "name": "Gentile",
+          "vote": "nay",
+          "politician_id": "a9ea7006-d595-45aa-a301-9c71d5a3af4d"
+        },
+        {
+          "name": "Montaño",
+          "vote": "nay",
+          "politician_id": "28a703f8-8316-4d3c-bfc0-3dcd77eab96c"
+        },
+        {
+          "name": "Vitolo",
+          "vote": "nay",
+          "politician_id": "001147b2-5c07-499e-85b9-bae224fdc73a"
+        },
+        {
+          "name": "Armini",
+          "vote": "nay",
+          "politician_id": "6148f954-b8cc-4204-96ca-34f2afc1d24a"
+        },
+        {
+          "name": "Giannino",
+          "vote": "nay",
+          "politician_id": "1f4c93e7-37a6-4577-a2bc-d77218ad1feb"
+        },
+        {
+          "name": "Moran J.",
+          "vote": "nay",
+          "politician_id": "7cc9694b-3bca-44ec-ab75-762c1f6d5136"
+        },
+        {
+          "name": "Walsh",
+          "vote": "nay",
+          "politician_id": "ff2939e8-befb-4c16-ace7-9f677847088c"
+        },
+        {
+          "name": "Arriaga",
+          "vote": "nay",
+          "politician_id": "8995a410-276d-4a84-87f2-b097c1535f90"
+        },
+        {
+          "name": "Gómez",
+          "vote": "nay",
+          "politician_id": "3ea88aee-8bc7-4ddf-b897-5aa8111fadc8"
+        },
+        {
+          "name": "Murphy",
+          "vote": "nay",
+          "politician_id": "755d18f8-8c99-4d41-93eb-4f154d9bb7a9"
+        },
+        {
+          "name": "Wells",
+          "vote": "nay",
+          "politician_id": "a3131d21-f3ad-4483-ac6d-13c9c7ecdd74"
+        },
+        {
+          "name": "Ashe",
+          "vote": "nay",
+          "politician_id": "1e83f9fc-43c9-4568-937d-94383acdc117"
+        },
+        {
+          "name": "González",
+          "vote": "nay",
+          "politician_id": "64e0eeb2-c83a-4da4-b6a2-2047b1e25cab"
+        },
+        {
+          "name": "Murray",
+          "vote": "nay",
+          "politician_id": "4702bc3c-0820-42f4-a0ae-5bc244c44159"
+        },
+        {
+          "name": "Williams",
+          "vote": "nay",
+          "politician_id": "aee5ccea-d3ca-426c-9849-fbfc5e297e2a"
+        },
+        {
+          "name": "Ayers",
+          "vote": "nay",
+          "politician_id": "3582a053-ee20-4391-904f-3905a2d13a52"
+        },
+        {
+          "name": "Gordon",
+          "vote": "nay",
+          "politician_id": "afb64fe5-b2a7-4c47-b113-5200ed26182a"
+        },
+        {
+          "name": "Nguyen",
+          "vote": "nay",
+          "politician_id": "fc1d7143-1be8-49b0-be31-6dbc5874230d"
+        },
+        {
+          "name": "Worrell",
+          "vote": "nay",
+          "politician_id": "bca54df2-f059-44ce-81c3-f208f1e20752"
+        },
+        {
+          "name": "Badger",
+          "vote": "nay",
+          "politician_id": "29af459c-8142-487d-bb51-2224983faca3"
+        },
+        {
+          "name": "Gregoire",
+          "vote": "nay",
+          "politician_id": "3d9354a8-e7ee-4381-b91a-a40d0a2e8d3a"
+        },
+        {
+          "name": "O'Day",
+          "vote": "nay",
+          "politician_id": "9b754d96-e0e7-4f6b-b3ae-e0d1c12ef1bf"
+        },
+        {
+          "name": "Zlotnik",
+          "vote": "nay",
+          "politician_id": "869ba820-3138-473c-b70d-383e67f5797d"
+        },
+        {
+          "name": "Barber",
+          "vote": "nay",
+          "politician_id": "7cbdb829-4836-49e9-afb2-cb8035afc6bf"
+        },
+        {
+          "name": "Haggerty",
+          "vote": "nay",
+          "politician_id": "2d3def44-9916-469d-8f8f-b098ad896768"
+        },
+        {
+          "name": "Ouellette",
+          "vote": "nay",
+          "politician_id": "a4e6e14a-46f7-4574-94c6-5b7edd484d91"
+        },
+        {
+          "name": "Jones",
+          "vote": "yea",
+          "politician_id": "a6e1a867-1e4e-449f-bb10-4f55449762bf"
+        },
+        {
+          "name": "Barrett",
+          "vote": "nay",
+          "politician_id": "ecddb344-846b-4b7d-b712-3a7db8b47ef6"
+        },
+        {
+          "name": "Hamilton",
+          "vote": "nay",
+          "politician_id": "bdc19d3c-1169-4923-9ed9-f914b73f63e9"
+        },
+        {
+          "name": "Owens",
+          "vote": "nay",
+          "politician_id": "1d78debb-efd5-45e8-9204-06aab3076b2a"
+        },
+        {
+          "name": "Ferguson",
+          "vote": "yea",
+          "politician_id": "62aee074-7ed1-45e8-94fc-3b5b5007f85d"
+        },
+        {
+          "name": "Biele",
+          "vote": "nay",
+          "politician_id": "f5ab360a-7ec0-4af9-8d9a-1eb17e842b9f"
+        },
+        {
+          "name": "Hawkins",
+          "vote": "nay",
+          "politician_id": "95d5e111-b7dd-4440-8b51-070b72e33126"
+        },
+        {
+          "name": "Paulino",
+          "vote": "nay",
+          "politician_id": "77ceaab2-846e-4bc8-b09d-faff40ddbc60"
+        },
+        {
+          "name": "Frost",
+          "vote": "yea",
+          "politician_id": "799c1cea-4020-4c50-b7d1-1e9aac867529"
+        },
+        {
+          "name": "Blais",
+          "vote": "nay"
+        },
+        {
+          "name": "Hendricks",
+          "vote": "nay",
+          "politician_id": "9cb46542-a671-4bdd-bfcb-98fc1bc79415"
+        },
+        {
+          "name": "Philips",
+          "vote": "nay",
+          "politician_id": "73afbe36-aa0c-4474-a2fc-6ff13bf20d71"
+        },
+        {
+          "name": "Muradian",
+          "vote": "yea",
+          "politician_id": "891030da-39e2-496f-8a20-72aeb27093ba"
+        },
+        {
+          "name": "Cabral",
+          "vote": "nay",
+          "politician_id": "5e27127a-4df3-4d16-a1a4-2bf081c92842"
+        },
+        {
+          "name": "Higgins",
+          "vote": "nay",
+          "politician_id": "c14b3502-f142-4c1f-bfa9-a8fa52351a8e"
+        },
+        {
+          "name": "Plouffe",
+          "vote": "nay",
+          "politician_id": "63df70bd-91d8-4576-8136-d2128ea5e9b9"
+        },
+        {
+          "name": "Vieira",
+          "vote": "yea",
+          "politician_id": "35f10acb-fe09-40eb-a847-195fffee6f25"
+        },
+        {
+          "name": "Cahill",
+          "vote": "nay",
+          "politician_id": "ca6d9c06-e613-46a1-b938-0d89d488b583"
+        },
+        {
+          "name": "Holmes",
+          "vote": "nay",
+          "politician_id": "e96b35eb-dad1-4a29-b416-d9b10838840f"
+        },
+        {
+          "name": "Puppolo",
+          "vote": "nay",
+          "politician_id": "9b3772d3-3602-457a-82e7-479b5e557b13"
+        },
+        {
+          "name": "Berthiaume",
+          "vote": "yea",
+          "politician_id": "329212d4-14ef-4685-9d95-cc7473aad949"
+        },
+        {
+          "name": "Cataldo",
+          "vote": "nay",
+          "politician_id": "918296a2-5def-4ddf-8986-860d542900e7"
+        },
+        {
+          "name": "Honan",
+          "vote": "nay",
+          "politician_id": "c7c8d91f-156b-42ea-93f1-7dac0c4080a4"
+        },
+        {
+          "name": "Ramos, A.",
+          "vote": "nay",
+          "politician_id": "ee861f58-dabf-429f-97ee-32591bdd3650"
+        },
+        {
+          "name": "Boldyga",
+          "vote": "yea",
+          "politician_id": "541efc37-b332-4c80-8264-7b655efed5ac"
+        },
+        {
+          "name": "Chan",
+          "vote": "nay",
+          "politician_id": "90602902-b178-4709-a74b-68b30fe45394"
+        },
+        {
+          "name": "Hong",
+          "vote": "nay",
+          "politician_id": "18477533-2ddf-47dd-8fc3-8eb8e65ccb2f"
+        },
+        {
+          "name": "Ramos, O.",
+          "vote": "nay",
+          "politician_id": "ef8a23a0-7f93-425c-a773-dcec9eb96dfb"
+        },
+        {
+          "name": "Chaisson",
+          "vote": "yea",
+          "politician_id": "69a4aaa2-5265-45e0-87c7-8cea22b2dc18"
+        },
+        {
+          "name": "Ciccolo",
+          "vote": "nay",
+          "politician_id": "0748d787-7e5d-4852-b461-3459312fae45"
+        },
+        {
+          "name": "Howard",
+          "vote": "nay"
+        },
+        {
+          "name": "Reid",
+          "vote": "nay",
+          "politician_id": "444ac209-7bfa-4f3a-a733-5666fd74fd66"
+        },
+        {
+          "name": "DeCoste",
+          "vote": "yea",
+          "politician_id": "a743a9a0-711c-40cf-b6e2-0ce2b587949a"
+        },
+        {
+          "name": "Connolly",
+          "vote": "nay",
+          "politician_id": "49963775-d2d5-4ae2-95cf-b2b8d0ed2a92"
+        },
+        {
+          "name": "Hunt",
+          "vote": "nay",
+          "politician_id": "5c36a94c-9006-4550-a37e-978a65d2725c"
+        },
+        {
+          "name": "Reyes",
+          "vote": "nay",
+          "politician_id": "8e125ae2-3101-49b1-b228-f172ad9c70d9"
+        },
+        {
+          "name": "Gaskey",
+          "vote": "yea",
+          "politician_id": "08a2dfdf-43fb-408a-b758-aa94497fd871"
+        },
+        {
+          "name": "Consalvo",
+          "vote": "nay",
+          "politician_id": "3f5dd4b3-c0b6-470b-861d-41a71637797c"
+        },
+        {
+          "name": "Kassner",
+          "vote": "nay",
+          "politician_id": "36343ab4-817f-44eb-9221-15eb338af57a"
+        },
+        {
+          "name": "Robertson",
+          "vote": "nay",
+          "politician_id": "f8ae17d7-bc53-4b74-a92e-efa122cd5f04"
+        },
+        {
+          "name": "Howitt",
+          "vote": "yea",
+          "politician_id": "3107f5d0-2cfd-43bc-a8eb-6b8ddc75bfc1"
+        },
+        {
+          "name": "Cruz",
+          "vote": "nay",
+          "politician_id": "02eedd50-b5a5-48dd-b1a4-9b5220bf7e8e"
+        },
+        {
+          "name": "Kearney",
+          "vote": "absent",
+          "politician_id": "8c2553dd-437e-4614-89ab-f54031bc418e"
+        },
+        {
+          "name": "Rogers, D.",
+          "vote": "nay",
+          "politician_id": "ffb8e526-7ad7-4911-92c5-d69528a0f280"
+        },
+        {
+          "name": "Kane",
+          "vote": "yea",
+          "politician_id": "d54b9791-0668-4397-b488-160d06f7c420"
+        },
+        {
+          "name": "Cusack",
+          "vote": "nay",
+          "politician_id": "99206e70-8173-4d6c-803c-1ae2d1109e30"
+        },
+        {
+          "name": "Keefe",
+          "vote": "nay",
+          "politician_id": "a6eb79f8-c7e7-41b0-8a1c-baf85e7cd22c"
+        },
+        {
+          "name": "Rogers, J.",
+          "vote": "nay",
+          "politician_id": "730f6bce-4d8c-4ad0-897b-f687971a4d87"
+        },
+        {
+          "name": "Lombardo",
+          "vote": "yea",
+          "politician_id": "e2c3e1a7-78b2-4c90-a136-c0a22c3f3e48"
+        },
+        {
+          "name": "Davis",
+          "vote": "nay",
+          "politician_id": "ca9208b4-47c6-4a4e-8d8f-62d6e179d7f4"
+        },
+        {
+          "name": "Kerans",
+          "vote": "nay",
+          "politician_id": "de40220c-2935-42a2-ac90-d662bb47d49b"
+        },
+        {
+          "name": "Roy",
+          "vote": "nay",
+          "politician_id": "4024c884-6627-4496-b3ff-5e91862bf894"
+        },
+        {
+          "name": "Marsi",
+          "vote": "yea",
+          "politician_id": "9dd7276b-1c24-466c-a530-d2297607a784"
+        },
+        {
+          "name": "Day",
+          "vote": "nay",
+          "politician_id": "ff5cc07a-b904-4365-bcac-027bb50e8a8e"
+        },
+        {
+          "name": "Kilcoyne",
+          "vote": "nay",
+          "politician_id": "074555d9-2806-4f78-bce9-1958d61742c6"
+        },
+        {
+          "name": "Ryan",
+          "vote": "nay",
+          "politician_id": "6ab8e9cc-6315-40d8-bb99-eb00faed61fa"
+        },
+        {
+          "name": "McKenna",
+          "vote": "yea",
+          "politician_id": "2fadc37b-4d33-46b4-a3cc-a2ca5ebeb39a"
+        },
+        {
+          "name": "Decker",
+          "vote": "nay",
+          "politician_id": "2b1a645a-72ce-4c0f-80ec-17565a2d6d10"
+        },
+        {
+          "name": "Kushmerek",
+          "vote": "nay",
+          "politician_id": "d9b59bbc-90e5-435e-8c46-d8b555f1b932"
+        },
+        {
+          "name": "Sabadosa",
+          "vote": "nay",
+          "politician_id": "853f0b26-a2b5-48b6-8dd6-f40ca48c87fd"
+        },
+        {
+          "name": "Orrall",
+          "vote": "yea",
+          "politician_id": "c77f1324-a106-4d45-a044-0174bddfe8e0"
+        },
+        {
+          "name": "Diggs",
+          "vote": "nay",
+          "politician_id": "2386732f-e3af-4b76-8c34-1c8ff7fa2f4d"
+        },
+        {
+          "name": "LaNatra",
+          "vote": "nay",
+          "politician_id": "bb235d49-c91a-45da-8d91-bf3d5b766196"
+        },
+        {
+          "name": "Sangiolo",
+          "vote": "nay",
+          "politician_id": "2dcaf90d-f476-4fcf-af03-3d0a7aa5d3bf"
+        },
+        {
+          "name": "Pease",
+          "vote": "yea",
+          "politician_id": "296406bb-cc2a-4214-978f-d30333d62939"
+        },
+        {
+          "name": "Domb",
+          "vote": "nay",
+          "politician_id": "ecafa801-15b3-4777-9c38-95f5ded5cbe6"
+        },
+        {
+          "name": "Lawn",
+          "vote": "nay",
+          "politician_id": "baddd174-93ea-47b6-9cbd-c48fc3acf2f6"
+        },
+        {
+          "name": "Saunders",
+          "vote": "nay",
+          "politician_id": "e2daa3aa-02b6-4a4d-859b-fb75f674625b"
+        },
+        {
+          "name": "Smola",
+          "vote": "yea",
+          "politician_id": "aca1e324-cc09-4492-a2f7-d795beb752ff"
+        },
+        {
+          "name": "Donaghue",
+          "vote": "nay",
+          "politician_id": "6eef204b-5d35-48e6-bf8c-dd3cac62e2cd"
+        },
+        {
+          "name": "LeBoeuf",
+          "vote": "nay",
+          "politician_id": "3ca6c1b2-eec3-4e28-991d-fce8b6b67354"
+        },
+        {
+          "name": "Scanlon",
+          "vote": "nay",
+          "politician_id": "c0852fa6-8184-4f2d-b1cf-fde8cbf3c4b2"
+        },
+        {
+          "name": "Soter",
+          "vote": "yea",
+          "politician_id": "51e50b38-dbb2-4131-91bb-23c24bf6d741"
+        },
+        {
+          "name": "Donahue",
+          "vote": "nay",
+          "politician_id": "71aa11da-0fa1-49d2-bcbd-3bce7d0bad2b"
+        },
+        {
+          "name": "Lewis",
+          "vote": "nay",
+          "politician_id": "04a9edee-5d51-49f3-a2c9-585e2231bd08"
+        },
+        {
+          "name": "Scarsdale",
+          "vote": "nay",
+          "politician_id": "a0dc1cc3-efcf-4109-9f9b-4d8b36452361"
+        },
+        {
+          "name": "Sullivan-Almeida",
+          "vote": "yea",
+          "politician_id": "7131c893-90fc-4c27-b4f6-e3fc8fcf6ec2"
+        },
+        {
+          "name": "DuBois",
+          "vote": "nay",
+          "politician_id": "75a2d83f-8db8-478b-a36d-5ecb707b8507"
+        },
+        {
+          "name": "Linsky",
+          "vote": "nay",
+          "politician_id": "fa6beaf8-acfe-4365-82a2-6f282aa1b688"
+        },
+        {
+          "name": "Schwartz",
+          "vote": "nay",
+          "politician_id": "8167ef8d-b8c8-44aa-86a2-9128c9078547"
+        },
+        {
+          "name": "Sweezey",
+          "vote": "yea",
+          "politician_id": "8512ef88-a285-4c6f-89d3-41fb4f8cfd48"
+        },
+        {
+          "name": "Duffy",
+          "vote": "nay",
+          "politician_id": "4a0609a0-7073-4de1-9bf8-b3ecaebc9638"
+        },
+        {
+          "name": "Lipper-Garabedian",
+          "vote": "nay",
+          "politician_id": "37e88d74-8fdf-4a66-8685-989248512b29"
+        },
+        {
+          "name": "Sena",
+          "vote": "nay",
+          "politician_id": "f8986c05-2e32-4184-bfb2-9d4c244ffd3a"
+        },
+        {
+          "name": "Thurber",
+          "vote": "yea",
+          "politician_id": "a485b386-65a5-4c6c-aaa1-a441facd45fc"
+        },
+        {
+          "name": "Elliott",
+          "vote": "nay",
+          "politician_id": "751464b8-069c-4a7e-b21b-06d36c338060"
+        },
+        {
+          "name": "Livingstone",
+          "vote": "nay",
+          "politician_id": "852e4a21-5750-4ac8-ba06-0376c5a31685"
+        },
+        {
+          "name": "Shand",
+          "vote": "nay",
+          "politician_id": "8ee72aa5-b7a0-422f-817d-a330f29dd2b1"
+        },
+        {
+          "name": "Vaughn",
+          "vote": "yea",
+          "politician_id": "c9a23774-469d-4c40-b316-7fbd46dab7d9"
+        },
+        {
+          "name": "Farley-Bouvier",
+          "vote": "nay",
+          "politician_id": "15c27efb-0402-4a3a-bfad-9df152874046"
+        },
+        {
+          "name": "Luddy",
+          "vote": "nay",
+          "politician_id": "03e35156-c179-4dd5-9c8c-8d418976914e"
+        },
+        {
+          "name": "Silvia",
+          "vote": "nay",
+          "politician_id": "a646d95b-7341-4181-a25b-87b5abcf0a6c"
+        },
+        {
+          "name": "Wong",
+          "vote": "yea",
+          "politician_id": "44ca0b25-e4b9-4409-8407-f5119568be3e"
+        },
+        {
+          "name": "Ferrante",
+          "vote": "nay"
+        },
+        {
+          "name": "MacGregor",
+          "vote": "nay",
+          "politician_id": "194b9b91-6986-423e-89a0-ee9750f275d8"
+        },
+        {
+          "name": "Sousa",
+          "vote": "nay",
+          "politician_id": "2ada2d01-a77a-44f6-a569-916d9639fbdc"
+        },
+        {
+          "name": "Xiarhos",
+          "vote": "yea",
+          "politician_id": "892670a6-f15f-4014-86a8-434090c2a514"
+        },
+        {
+          "name": "Finn",
+          "vote": "nay",
+          "politician_id": "949b1930-0574-44f5-9389-efc75c654139"
+        },
+        {
+          "name": "Madaro",
+          "vote": "nay",
+          "politician_id": "290ee018-6e9e-4a8c-9561-385cf5ef3d73"
+        },
+        {
+          "name": "Stanley",
+          "vote": "nay",
+          "politician_id": "c70bd1f2-6ba2-446e-a40c-d07f446db214"
+        },
+        {
+          "name": "Whipps",
+          "vote": "nay",
+          "politician_id": "9081c52c-92ea-4a75-84b1-96305fafd333"
+        },
+        {
+          "name": "Fiola",
+          "vote": "nay",
+          "politician_id": "913143ad-c39b-4dde-9a93-8252a98b0181"
+        },
+        {
+          "name": "Mahoney",
+          "vote": "nay",
+          "politician_id": "50838d91-2ce4-4aa6-8950-b87579860a4b"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+    "fetched_at": "2026-10-31T05:00:00Z",
+    "method": "curl",
+    "saved_copy": {
+      "path": "s3-prep-voting-rights/stage5/raw/ma-id-bills/194_H4000_amdt409.htm",
+      "sha256": "5caba5105a57decef0e798768032d5b952e593650ca6b0969df9f759938faeff"
+    }
+  }
+}

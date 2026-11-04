@@ -1,0 +1,623 @@
+{
+  "politician_id": "8123c0d7-aaf6-4abe-bb8d-5d835463f733",
+  "findings": [
+    {
+      "id": "fbf676cec75d741cc1f66ab8728a68feae309c67a8be91637510f3e04753d26c",
+      "kind": "own-words",
+      "url": "https://www.griffinforvirginia.com/issues",
+      "date": "2023",
+      "date_precision": "year",
+      "passage": "We must ensure that our parents play a leading role in our schools and that we prevent indoctrination & self-hatred of our students on issues like CRT, American history, & trans ideology. We must pass school choice; save our election system by strengthening in-person voting and photo ID; and make sure that Virginia is a friendly place for churches and religious organizations to worship God and practice freely.",
+      "note": "Campaign issues page (undated; from his 2023 House run). One line on election law: strengthen in-person voting and photo ID.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:08.093Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "74a9cecce229a003fe087bfbeadf3be65e8b607d55d072ec84bd2d520dc6a24d",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB0002",
+      "date": "2024-03-01",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-2-2024",
+      "act": "nay",
+      "motion": "Adoption (Senate substitute agreed to by House)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA House, Adoption (Senate substitute agreed to by House), 2024-03-01: nay (tally 50–47); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/VA-HB2-2024-ER.pdf",
+          "sha256": "be2c4a82097d208f802bc88c1aa08097489565a6746bfd36f1a1f755a683cd50"
+        }
+      }
+    },
+    {
+      "id": "fb8afb14864f284c23bff3b3f6447405570ac331955ab29c074900020ef336f0",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB0002",
+      "date": "2024-02-28",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-2-2024",
+      "act": "nay",
+      "motion": "Passage (with committee substitute)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA House, Passage (with committee substitute), 2024-02-28: nay (tally 51–49); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/va_sb2_2024_enrolled.html",
+          "sha256": "fbb47c123b27eae84175225b3f36034532cd7be496f4a56cb8ff2c6f3c7bbe41"
+        }
+      }
+    },
+    {
+      "id": "1f01255edb35b1996e6e941b585f48e00681211d1f88ffee401bc8c6bb580cb7",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/bill-details/20261/HB101",
+      "date": "2026-04-22",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-101-2026",
+      "act": "yea",
+      "motion": "House concurred in Governor's recommendation (99-Y 0-N 0-A)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "VA House, House concurred in Governor's recommendation (99-Y 0-N 0-A), 2026-04-22: yea (tally 99–0); census gate: near-unanimous.",
+      "subjects": [
+        "concealed handgun permit applications may be filed electronically",
+        "request for email address for expiry notice becomes optional"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-101-2026.chaptered.html",
+          "sha256": "b159cf84d01678b6af7ca6c26ff63352f18bf7b38a608c217b511935658c5ca0"
+        }
+      }
+    },
+    {
+      "id": "f5016abde8da04578943c9925ab10a1377d8c5c1843c48199f68bc21878ff159",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/bill-details/20251/HB1583",
+      "date": "2025-02-22",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1583-2025",
+      "act": "yea",
+      "motion": "Conference report agreed to by House (99-Y 0-N)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "VA House, Conference report agreed to by House (99-Y 0-N), 2025-02-22: yea (tally 99–0); census gate: multi-subject.",
+      "subjects": [
+        "threats to shoot at or inside a building or vehicle made a felony",
+        "under-18 offenders get misdemeanor instead of under-15"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-1583-2025.chaptered.html",
+          "sha256": "c36a6142b49fd127c03021102f0c28bfb0076861b64c60955c44efa292b30e2c"
+        }
+      }
+    },
+    {
+      "id": "72ce5c8139c49c0fb34fe976668835807f249034c7683c94419a8cf57e31bfc5",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/bill-details/20251/HB1607",
+      "date": "2025-04-02",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1607-2025",
+      "act": "nay",
+      "motion": "House sustained Governor's veto (50-Y 46-N)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA House, House sustained Governor's veto (50-Y 46-N), 2025-04-02: nay (tally 50–46); census gate: none.",
+      "subjects": [
+        "sale and transfer of assault firearms made a misdemeanor",
+        "under-21 ban on assault firearms",
+        "3-year firearm ban after conviction",
+        "sale of magazines over 10 rounds banned"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-1607-2025.enrolled.html",
+          "sha256": "12c784298e242a061421f81339630e857188d33858f6dae7aa44acff921a4633"
+        }
+      }
+    },
+    {
+      "id": "06b81617a3995b20f6b20be9707f66807d7057cffd6b04d525c71ce33a5dde7c",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/bill-details/20251/HB1736",
+      "date": "2025-02-18",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1736-2025",
+      "act": "nay",
+      "motion": "Senate substitute agreed to by House (52-Y 43-N)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA House, Senate substitute agreed to by House (52-Y 43-N), 2025-02-18: nay (tally 52–43); census gate: none.",
+      "subjects": [
+        "new state center for firearm violence intervention and prevention",
+        "grants to local violence-intervention programs",
+        "model policies for serving risk orders and taking guns from prohibited people"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-1736-2025.enrolled.html",
+          "sha256": "71821c9a3f2e52b7d0a10eeade49e0a99bf41052b629a2bfc1758850734fbd45"
+        }
+      }
+    },
+    {
+      "id": "8607411c04c066bb31ea36e4e324c562f5546db979c14700d983259ba338dc93",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/bill-details/20251/HB1876",
+      "date": "2025-04-02",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1876-2025",
+      "act": "nay",
+      "motion": "House sustained Governor's veto (50-Y 46-N)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA House, House sustained Governor's veto (50-Y 46-N), 2025-04-02: nay (tally 50–46); census gate: none.",
+      "subjects": [
+        "public colleges may ban firearms in their buildings",
+        "ROTC and NCAA/club shooting sports exempt from campus bans",
+        "campus security screening allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-1876-2025.enrolled.html",
+          "sha256": "bbaf1d4efd9d2aac67458f7b6478c97ca191eda81cfdde511b8c82d4763e0755"
+        }
+      }
+    },
+    {
+      "id": "8f82903cca0a92ad832e9454d487bf96e3d6bc7db5eda8e6b8d0b3f6c6e1f394",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/bill-details/20261/HB21",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-21-2026",
+      "act": "nay",
+      "motion": "Senate substitute agreed to by House (62-Y 36-N 0-A)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA House, Senate substitute agreed to by House (62-Y 36-N 0-A), 2026-03-05: nay (tally 62–36); census gate: none.",
+      "subjects": [
+        "firearm industry must use reasonable controls against straw and trafficked sales",
+        "public nuisance liability for firearm sellers and makers",
+        "Attorney General and injured people may sue"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-21-2026.chaptered.html",
+          "sha256": "e7be4c6c9d6f2a4831b6be9e07485f6843f681d77ad03aab079fe149c5c62dfb"
+        }
+      }
+    },
+    {
+      "id": "72f4d219321df2bf8752a6ba89600fbedbcce44a519cd488054758918ce1423b",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB22",
+      "date": "2024-03-04",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-22-2024",
+      "act": "nay",
+      "motion": "House: VOTE: Adoption (89-Y 2-N)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "VA House, House: VOTE: Adoption (89-Y 2-N), 2024-03-04: nay (tally 89–2); census gate: near-unanimous.",
+      "subjects": [
+        "auto sears banned as a Class 6 felony",
+        "auto sears subject to forfeiture"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-22-2024.chaptered.html",
+          "sha256": "88a3aea381a5647490b4ff52c98a409a491db4fcada2809d3767782db32d51af"
+        }
+      }
+    },
+    {
+      "id": "276973f63833e01ef2d025f4fad799137197ec5c34ff0615495b85ebe1a03db6",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/bill-details/20261/HB229",
+      "date": "2026-02-05",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-229-2026",
+      "act": "nay",
+      "motion": "Read third time and passed House (63-Y 34-N 0-A)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA House, Read third time and passed House (63-Y 34-N 0-A), 2026-02-05: nay (tally 63–34); census gate: none.",
+      "subjects": [
+        "firearm and weapon ban in mental health hospitals",
+        "Class 1 misdemeanor and seizure of weapons"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-229-2026.chaptered.html",
+          "sha256": "e81b6bf04cef60b29c9a838ae7f98c44960488952f71fccaa0fedc9a45189222"
+        }
+      }
+    },
+    {
+      "id": "b729f1f92307dedfafb5065ce2ca3bcddfef6605f02f2a50d92c335ea9b0a4aa",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB362",
+      "date": "2024-03-04",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-362-2024",
+      "act": "nay",
+      "motion": "House: VOTE: Adoption (52-Y 46-N)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA House, House: VOTE: Adoption (52-Y 46-N), 2024-03-04: nay (tally 52–46); census gate: none.",
+      "subjects": [
+        "firearm ban after intimate-partner assault conviction",
+        "intimate partner added to family or household member"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-362-2024.enrolled.html",
+          "sha256": "3861935c2658428bcc55de737ffe1a9d4bb8b59f34707211b4149280a25acc6b"
+        }
+      }
+    },
+    {
+      "id": "e5a3ef2a7d7cdc3d9242e1de25145e1e8055428c56b61e17c9005bffe9436c8f",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/bill-details/20261/HB626",
+      "date": "2026-02-05",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-626-2026",
+      "act": "nay",
+      "motion": "Read third time and passed House (63-Y 35-N 0-A)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA House, Read third time and passed House (63-Y 35-N 0-A), 2026-02-05: nay (tally 63–35); census gate: none.",
+      "subjects": [
+        "college building exemption for carrying firearms narrowed to approved curriculum and activities"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-626-2026.chaptered.html",
+          "sha256": "e4b8636e27eea6abe2eeee464b8cdd72a994b215097d6037daa034b53e82d4ab"
+        }
+      }
+    },
+    {
+      "id": "85e91b429ef51c89a5e38e43b51708e3b3f4813f83f57401d196db860524b7b8",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/bill-details/20261/HB969",
+      "date": "2026-04-22",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-969-2026",
+      "act": "nay",
+      "motion": "House concurred in Governor's recommendation (64-Y 35-N 0-A)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA House, House concurred in Governor's recommendation (64-Y 35-N 0-A), 2026-04-22: nay (tally 64–35); census gate: none.",
+      "subjects": [
+        "work group to plan a state Gun Violence Prevention Center"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-969-2026.chaptered.html",
+          "sha256": "12418d229c386368a2c48d9a1c8ed4d7bf70408d14deffde4d9b26cf0aa2260c"
+        }
+      }
+    },
+    {
+      "id": "32a910dcf77f8333bf7aeb0d311dcfe538ed0c4e38672b671408c1f17631977d",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB210",
+      "date": "2024-02-21",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-210-2024",
+      "act": "nay",
+      "motion": "House: VOTE: Passage (89-Y 2-N)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "VA House, House: VOTE: Passage (89-Y 2-N), 2024-02-21: nay (tally 89–2); census gate: near-unanimous.",
+      "subjects": [
+        "ban on auto sears added to trigger-activator ban",
+        "auto sears subject to forfeiture"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-SB-210-2024.chaptered.html",
+          "sha256": "aab21de6e0d4552bcd02420259aab685a4daee4cff4f26bb1d1a86699b1cb9b9"
+        }
+      }
+    },
+    {
+      "id": "4f490d0eec65c7698b6a34f50de873996cab59af9c596faa40e9f4bd8b653650",
+      "kind": "own-words",
+      "url": "https://cardinalnews.org/2024/01/18/house-panel-shoots-down-del-griffins-gun-proposals/",
+      "date": "2024-01-18",
+      "date_precision": "day",
+      "passage": "“What this law does is, it says, listen, if you have proven yourself by doing a little bit of extra training and asking permission, so we know who you are, we know that you are competent and have shown your experience firing a firearm for 100 live rounds, then you have the ability to apply for a permit that gives you ability to take your firearm into places like only law enforcement would be able to take into, like government buildings,” Griffin told the panel.",
+      "note": "Quoted by Cardinal News from his testimony to the House Firearms Subcommittee on his enhanced concealed handgun permit bill.",
+      "subjects": [
+        "carry permits",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:18:10.395Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "30e5c1cebc5aa5d602124cc748b476a86a669da9b419932ca10509e89b388980",
+      "kind": "own-words",
+      "url": "https://cardinalnews.org/2024/01/18/house-panel-shoots-down-del-griffins-gun-proposals/",
+      "date": "2024-01-18",
+      "date_precision": "day",
+      "passage": "“We’re talking about giving people the right to protect themselves with their guns when no one else is there to protect them.”",
+      "note": "Quoted by Cardinal News in his argument for the enhanced concealed handgun permit bill; the article adds that he said gun crime rarely comes from permit holders.",
+      "subjects": [
+        "carry permits",
+        "self-defense"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:18:10.395Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0e407c517ce58a26f74314b0ba2520581c7658d8652ef0d5f1d7d06aab9ce196",
+      "kind": "own-words",
+      "url": "https://cardinalnews.org/2024/01/18/house-panel-shoots-down-del-griffins-gun-proposals/",
+      "date": "2024-01-18",
+      "date_precision": "day",
+      "passage": "“I couldn’t help noticing that the speakers were from Fairfax, Richmond and Charlottesville. These are different cultures, and they don’t want guns, and I understand that. But where I live, we want the ability to defend ourselves,” Griffin said.",
+      "note": "Quoted by Cardinal News in committee, answering opponents of his permit bill.",
+      "subjects": [
+        "carry permits",
+        "local differences in gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:18:10.395Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "378aefd9c6634a7936296eba8e059d7161e67e69cbd65a43f6dc03ee59c8171a",
+      "kind": "own-words",
+      "url": "https://cardinalnews.org/2024/01/18/house-panel-shoots-down-del-griffins-gun-proposals/",
+      "date": "2024-01-18",
+      "date_precision": "day",
+      "passage": "“It’s not as if they are handed a gun, it’s not as if they are made to take this,” Griffin said. “We’re saying we trust women, we trust them to make the right decision. I believe that these women who are victims of crime can defend themselves, and this is a decision they should be able to have.”",
+      "note": "Quoted by Cardinal News in support of his bill letting a person with a protective order carry a concealed handgun for a period without a permit.",
+      "subjects": [
+        "carry a gun without a permit",
+        "protective order holders carrying"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:18:10.395Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f9939ba26bf95865a94726923a3fa316ff32639c5650442946203ede336e8ac3",
+      "kind": "record",
+      "url": "https://cardinalnews.org/2024/01/18/house-panel-shoots-down-del-griffins-gun-proposals/",
+      "date": "2024-01-18",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-395-2024",
+      "act": "sponsor",
+      "note": "His bill: adults 21 or older could apply for an enhanced concealed handgun permit (100 live rounds on a range) to carry where law enforcement may carry. A House firearms subcommittee killed it 7-2 on this date. Sponsorship taken from the news report; official list is covered by the LegiScan bulk check.",
+      "subjects": [
+        "carry permits",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:18:10.395Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4f74de6780388474c761919314c71f0d89a6f8e5fa4a1e6bd73278f288c6ab64",
+      "kind": "record",
+      "url": "https://cardinalnews.org/2024/01/18/house-panel-shoots-down-del-griffins-gun-proposals/",
+      "date": "2024-01-18",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-390-2024",
+      "act": "sponsor",
+      "note": "His bill: an adult 21 or older who may legally have a gun and holds an unexpired protective order could carry a concealed handgun for 45 days after the order without a permit. The committee rejected it 5-4 on this date. Sponsorship taken from the news report; official list is covered by the LegiScan bulk check.",
+      "subjects": [
+        "carry a gun without a permit",
+        "protective order holders carrying"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:18:10.395Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for absentee ballots",
+        "affidavit for voters without ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "not reviewed: On the Record extractor script not run (instructed not to run repo scripts)",
+        "campaign site https://www.griffinforvirginia.com/ and /issues (one finding)",
+        "Ballotpedia page fetched: no issue statements on the subject",
+        "Cardinal News 2023-04-24 profile: reporter paraphrase only, no direct quote on the subject",
+        "blocked: https://lis.virginia.gov (bill pages load by script, no content returned); legiscan, legiplex, legilist, plural policy and vpap also not readable",
+        "news searches: reports of his sponsoring HB1131 (photo ID) and other ID bills could not be confirmed from a page I could read",
+        "blocked: https://www.virginiamercury.com/blog-va/va-senate-kills-gop-push-to-let-voters-self-impose-photo-id-rule/ (403)",
+        "blocked: https://legilist.com (Cloudflare)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:28:08.093Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "enhanced concealed handgun permit",
+        "carry a gun with a protective order",
+        "Second Amendment",
+        "check every gun buyer",
+        "ban on assault-style guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official page https://apps.house.virginia.gov/members/H0364 confirms Timothy P. Griffin, Delegate, 53rd District; no gun text on the page",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site: https://www.timgriffinforvirginia.com does not resolve",
+        "Ballotpedia: not reviewed (pages return empty to the fetch tool)",
+        "https://int.wset.com/news/local/ill-be-your-voice-tim-griffin-holds-meet-greet-as-he-runs-for-53rd-district-delegate-amherst-virginia-future-constituents-march-2023 only a reporter's paraphrase of his Second Amendment remarks, not saved as his words",
+        "2 web searches; found 2024 committee hearing coverage; nothing for 2025 or 2026"
+      ],
+      "found": 6,
+      "at": "2026-10-30T23:18:10.395Z",
+      "by": "source-collector"
+    }
+  ]
+}

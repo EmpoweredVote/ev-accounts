@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeAll } from 'vitest';
-import { parseCongressUrl, fetchCongressPageText } from './congressAdapter.js';
+import { parseCongressUrl, fetchCongressPageText, stripPartyTag } from './congressAdapter.js';
 import { matchSnippet, checkNameProximity } from '../researchVerifier.js';
+import { namesParty } from '../partyLabels.js';
 
 describe('parseCongressUrl', () => {
   it('parses a house-bill overview URL (congress is a slug)', () => {
@@ -86,6 +87,15 @@ function routedFetch(
     return fakeRes({ error: 'not found' }, false);
   };
 }
+
+describe('stripPartyTag', () => {
+  it('drops the party letter and keeps state and district', () => {
+    expect(stripPartyTag('Rep. Scalise, Steve [R-LA-1]')).toBe('Rep. Scalise, Steve [LA-1]');
+    expect(stripPartyTag('Sen. King, Angus S., Jr. [I-ME]')).toBe('Sen. King, Angus S., Jr. [ME]');
+    expect(stripPartyTag('Rep. Moylan, James C. [R-GU-At Large]')).toBe('Rep. Moylan, James C. [GU-At Large]');
+    expect(stripPartyTag('Ayanna Pressley')).toBe('Ayanna Pressley');
+  });
+});
 
 describe('fetchCongressPageText', () => {
   const KEY = 'test-key';
@@ -177,18 +187,60 @@ describe('fetchCongressPageText', () => {
     expect(text).toContain('Test Act of 2025');
   });
 
-  it('builds member text from the member endpoint', async () => {
+  it('builds member text with sponsored and cosponsored bills, and no party', async () => {
+    const urls: string[] = [];
     const fetchImpl = routedFetch([
-      ['/member/P000617', { member: {
+      ['/member/P000617/sponsored-legislation', { sponsoredLegislation: [
+        { congress: 119, number: '10746', type: 'HR', title: 'Fossil Free Finance Act of 2026' },
+        { congress: 118, amendmentNumber: '12', type: null }, // an amendment: no title, skipped
+      ] }],
+      ['/member/P000617/cosponsored-legislation', { cosponsoredLegislation: [
+        { congress: 101, number: '1637', type: 'HRES', title: 'Recognizing the significance of equal pay.' },
+        null,
+      ] }],
+      ['/member/P000617?', { member: {
         directOrderName: 'Ayanna Pressley',
-        partyHistory: [{ partyName: 'Democratic' }],
+        partyHistory: [{ partyName: 'Democratic', partyAbbreviation: 'D' }],
         state: 'Massachusetts',
         terms: [{ chamber: 'House of Representatives' }],
       } }],
-    ]);
+    ], (u) => urls.push(u));
     const text = await fetchCongressPageText('https://www.congress.gov/member/ayanna-pressley/P000617', { apiKey: KEY, fetchImpl });
     expect(text).toContain('Ayanna Pressley');
     expect(text).toContain('Massachusetts');
+    expect(text).toContain('H.R. 10746 (119th Congress): Fossil Free Finance Act of 2026');
+    expect(text).toContain('H.Res. 1637 (101st Congress): Recognizing the significance of equal pay.');
+    expect(text).not.toContain('Party');
+    expect(namesParty(text!)).toBe(false);
+    expect(urls.find((u) => u.includes('/sponsored-legislation'))).toMatch(/limit=250&/);
+  });
+
+  it('member text still builds when the bill-list endpoints fail', async () => {
+    const fetchImpl = routedFetch([
+      ['/member/P000617?', { member: { directOrderName: 'Ayanna Pressley', state: 'Massachusetts' } }],
+      ['/member/P000617/sponsored-legislation', { sponsoredLegislation: {} }], // not an array
+    ]);
+    const text = await fetchCongressPageText('https://www.congress.gov/member/P000617', { apiKey: KEY, fetchImpl });
+    expect(text).toBe('Ayanna Pressley\n\nState: Massachusetts');
+  });
+
+  it('bill text prints sponsor and cosponsor names without the party tag', async () => {
+    const fetchImpl = routedFetch([
+      ['/bill/118/hr/26?', { bill: {
+        title: 'Born-Alive Abortion Survivors Protection Act',
+        sponsors: [{ fullName: 'Rep. Wagner, Ann [R-MO-2]', party: 'R' }],
+      } }],
+      ['/bill/118/hr/26/cosponsors', { cosponsors: [
+        { fullName: 'Rep. Scalise, Steve [R-LA-1]', party: 'R' },
+        { fullName: 'Rep. Cuellar, Henry [D-TX-28]', party: 'D' },
+        { fullName: 'Rep. Begich, Nicholas J. [R-AK-At Large]', party: 'R' },
+        { fullName: 'Sen. Sanders, Bernard [I-VT]', party: 'I' },
+      ] }],
+    ]);
+    const text = await fetchCongressPageText('https://www.congress.gov/bill/118th-congress/house-bill/26/cosponsors', { apiKey: KEY, fetchImpl });
+    expect(text).toContain('Sponsor: Rep. Wagner, Ann [MO-2]');
+    expect(text).toContain('Cosponsors: Rep. Scalise, Steve [LA-1], Rep. Cuellar, Henry [TX-28], Rep. Begich, Nicholas J. [AK-At Large], Sen. Sanders, Bernard [VT]');
+    expect(namesParty(text!)).toBe(false);
   });
 
   it('best-effort /text: a non-array textVersions body does not throw (still resolves to the composite)', async () => {
@@ -209,6 +261,47 @@ describe('fetchCongressPageText', () => {
     ]);
     const text = await fetchCongressPageText('https://www.congress.gov/bill/119th-congress/house-bill/7', { apiKey: KEY, fetchImpl });
     expect(text).toContain('Null Cosponsor Element Act of 2025');
+  });
+
+  describe('a list the page must print is never silently missing', () => {
+    const billRoutes = (cosponsors: (n: number) => Response) => {
+      let n = 0;
+      return async (url: string) => {
+        if (url.includes('/bill/117/hr/1?')) return fakeRes({ bill: { title: 'For the People Act of 2021' } });
+        if (url.includes('/bill/117/hr/1/cosponsors')) return cosponsors(++n);
+        return fakeRes({ error: 'not found' }, false);
+      };
+    };
+    const status = (code: number) => ({ ok: false, status: code, json: async () => ({}), text: async () => '' }) as unknown as Response;
+    const URL_HR1 = 'https://www.congress.gov/bill/117th-congress/house-bill/1/cosponsors';
+
+    it('retries a cosponsor call that failed for a passing reason, and prints the list', async () => {
+      const fetchImpl = billRoutes((n) => (n === 1 ? status(429) : fakeRes({ cosponsors: [{ fullName: 'Rep. Sherman, Brad [D-CA-32]' }] })));
+      const text = await fetchCongressPageText(URL_HR1, { apiKey: KEY, fetchImpl, retryDelayMs: 0 });
+      expect(text).toContain('Cosponsors: Rep. Sherman, Brad [CA-32]');
+    });
+
+    it('falls through (null) when the cosponsor call fails twice, rather than print the page without it', async () => {
+      for (const fail of [() => status(503), () => { throw new Error('timeout'); }]) {
+        const fetchImpl = billRoutes(fail as (n: number) => Response);
+        expect(await fetchCongressPageText(URL_HR1, { apiKey: KEY, fetchImpl, retryDelayMs: 0 })).toBeNull();
+      }
+    });
+
+    it('keeps a 404 on the cosponsor list best-effort (the page still builds)', async () => {
+      const fetchImpl = billRoutes(() => status(404));
+      expect(await fetchCongressPageText(URL_HR1, { apiKey: KEY, fetchImpl, retryDelayMs: 0 })).toContain('For the People Act of 2021');
+    });
+
+    it('falls through when a member bill list fails twice', async () => {
+      const fetchImpl = async (url: string) => {
+        if (url.includes('/member/L000562?')) return fakeRes({ member: { directOrderName: 'Stephen F. Lynch', state: 'Massachusetts' } });
+        if (url.includes('/sponsored-legislation')) return status(500);
+        return fakeRes({ cosponsoredLegislation: [] });
+      };
+      expect(await fetchCongressPageText('https://www.congress.gov/member/stephen-lynch/L000562', { apiKey: KEY, fetchImpl, retryDelayMs: 0 }))
+        .toBeNull();
+    });
   });
 
   it('bounds every api.congress.gov fetch with an AbortSignal timeout', async () => {

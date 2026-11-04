@@ -1,0 +1,123 @@
+{
+  "politician_id": "80e30a8b-f5a7-47c9-a044-454e1416f290",
+  "findings": [
+    {
+      "id": "e83306c27095aede3152a0c887d797869c2dc12a24788df3921bc05c5245d920",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/77972/race/31349/election/1464",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification. Disagree",
+      "note": "Candidate questionnaire on iVoterGuide, section Elections and Voting: the statement is 'People should be able to vote without photo identification' and her recorded answer is 'Disagree', with no explanation. Page carries no date; year of the 2026 cycle used.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "photo ID to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:33:53.811Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1c687cbf0c7677b814c53df49b5307a859746dedd776c138d9b573efe5d22487",
+      "kind": "own-words",
+      "url": "https://www.devasimmons.com/en/issues",
+      "date": "2026-10-22",
+      "date_precision": "month",
+      "passage": "Our democracy is only as strong as our commitment to protect it. I will fight to ensure every voice is heard and every vote is counted.",
+      "note": "Campaign issues page, democracy section. Bullets listed under it: 'Protecting voting rights for all citizens', 'Fighting against gerrymandering', 'Protecting election security'. No mention of ID or citizenship proof. Date is the fetch date, not the posting date.",
+      "subjects": [
+        "election security",
+        "voting rights access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:18.308Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2b0f7052420ddf75ca8fa38a2484388cfb6b6cd43af5fd05f375a906b172b770",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Deva_Simmons",
+      "date": "2026-10-22",
+      "date_precision": "month",
+      "passage": "I believe we should make it easier for eligible citizens to participate, not create unnecessary barriers.",
+      "note": "Ballotpedia candidate survey answer on voting and voter rights. She cites past work as an outreach specialist with the Polk County Supervisor of Elections. Does not name ID. Survey date not shown on the page text; date is the fetch date.",
+      "subjects": [
+        "voting rights access",
+        "barriers to voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:18.308Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election security",
+        "voting rights access",
+        "non-citizen voting"
+      ],
+      "places": [
+        "confirmed in scope: https://theballotbrief.com/candidate/deva-simmons-fl and https://ivoterguide.com/candidate/77972/race/31349/election/1464 (FL-18, general election 2026-11-03)",
+        "On the Record (0 appearances)",
+        "campaign site devasimmons.com (home, /en/issues)",
+        "Ballotpedia candidate survey",
+        "iVoterGuide candidate profile",
+        "BallotReady profile",
+        "Tampa Bay 28 candidate questionnaire: nothing on the subject",
+        "The Ballot Brief: nothing on the subject",
+        "congress.gov: not reviewed, not a sitting member so no bills expected"
+      ],
+      "found": 3,
+      "at": "2026-10-22T21:38:18.308Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to vote",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site devasimmonsforcongress.com (home, issues, meet-deva pages: nothing on the subject)",
+        "Ballotpedia: https://ballotpedia.org/Deva_Simmons (fetch returned empty page; not reviewed)",
+        "The Ballot Brief candidate page (confirms 2026 general ballot, FL-18; nothing on the subject)",
+        "Tampa Bay 28 candidate questionnaire (nothing on the subject)",
+        "iVoterGuide candidate page (one questionnaire answer on photo ID)",
+        "one news search on name plus subject words (nothing from her)",
+        "Congress.gov: not applicable, not a legislator"
+      ],
+      "found": 1,
+      "at": "2026-10-27T20:33:53.811Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

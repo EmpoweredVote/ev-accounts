@@ -1,0 +1,691 @@
+{
+  "politician_id": "18000caa-76dd-4b8b-ba7d-1e6d786222ac",
+  "findings": [
+    {
+      "id": "023831ef84f5a12a09d9c5c0a6c17bccfeb6e863c2906225223a2aa071e1ad42",
+      "kind": "own-words",
+      "url": "https://senatorcosta.com/tag/voter-id/",
+      "date": "2012-09-13",
+      "date_precision": "day",
+      "passage": "“The voter ID case involves the ability of all citizens to cast their vote on Election Day.   There is no evidence of voter fraud and obstacles to voting should not be permitted.  The requirement that voters have photo ID before their vote is counted will cause immediate harm for seniors, the poor, students and others.",
+      "note": "Statement as Senate floor leader on the Supreme Court hearing of the 2012 photo ID law. Quoted from his Voter ID archive page.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID law in court"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:00:24.403Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6b3ecbe2743e02d8d529aefc6a91bd8d44e0279666129f52db25ece80045d8de",
+      "kind": "own-words",
+      "url": "https://senatorcosta.com/tag/voter-id/",
+      "date": "2012-10-02",
+      "date_precision": "day",
+      "passage": "“Eligible voters should go and exercise their right to vote on Election Day and not worry about whether they have a photo ID.",
+      "note": "Statement on the Commonwealth Court order blocking the photo ID law for the November 2012 election.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID law in court"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:00:24.403Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3daf1bfc020467b4aa0f0f69c4906e130c39248ced839324b61f0dca086fc814",
+      "kind": "own-words",
+      "url": "https://senatorcosta.com/tag/voter-id/",
+      "date": "2013-01-17",
+      "date_precision": "day",
+      "passage": "“Senate Democrats have said clearly and repeatedly that the voter ID law was an overreach that would result in the disenfranchisement of hundreds of thousands of voters.",
+      "note": "Reaction to the court striking down the 2012 photo ID law.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID law in court"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:00:24.403Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "591de5130d98233b51b3b44e48032d4110e0e13517dea38d2820d2552111e7af",
+      "kind": "own-words",
+      "url": "https://senatorcosta.com/tag/voter-id/",
+      "date": "2014-05-08",
+      "date_precision": "day",
+      "passage": "“The case fell apart almost immediately because the court rightly saw there was no evidence of fraud.",
+      "note": "Statement on the administration's decision not to appeal the ruling against the photo ID law.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID law in court"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:00:24.403Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dcaa2bc162bedc2f6b9e91ae9e179a92b1c05081f2eec853183a760f1884258",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('COSTA'), linked to Jay Costa, Jr. (district 43) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.712Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12a315c7021acce6f88535df7cbb333f9e8c78a13a73455d56adfd7709e5a2a2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2012/0/Sj20120307.pdf",
+      "date": "2012-03-07",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 3166)",
+      "note": "Senate roll call as printed ('Costa'), linked to Jay Costa, Jr. (district 43) via the official 2011-2012 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.712Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc316a91c15a9d69b8de8a31f201ccdfb2b8ddcf04549d215151894a08cf6992",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "nay",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Costa'), linked to Jay Costa (district 43) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.712Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dbe3c0f0546a6231771fc2eb2ca14e791584abef2001ceba50dfd88547754dfb",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Costa'), linked to Jay Costa, Jr. (district 43) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.712Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8919f777e996df6017e73096f32be4cc18f382716845d0fdb1fbdab4e8d89660",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "nay",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Costa'), linked to Jay Costa, Jr. (district 43) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.462Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ff80cac0a16750ecaeb21c1b69e3bf0667ebd7a0907fee2d82d1e1e29ba0bb8e",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251202213448/https://www.palegis.us/legislation/bills/2023/sb224",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1171 (House Appropriations re-reported as amended, Oct. 17, 2023; the version that passed the House 104-99 on Oct. 18, 2023). Read. Earlier versions: PN 194 (introduced), PN 1059, PN 1097 (Senate-passed 45-2), PN 1159, PN 1160. Page copy dated 2025-12-02.",
+      "note": "Named as co sponsor ('COSTA') on the official bill page; linked to Jay Costa via the official 2023 member roll of the Senate (identity step 2026-10-28). Corrected 2026-11-03: SB 224 as introduced (PN 194) and as passed by the House (PN 1171) has no voter-ID text; the ID part was a House amendment (A02365) later struck.",
+      "subjects": [
+        "voter ID removed from this version"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.859Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1d0155895ce8411a4438986cd1d5eafc092c54b213a013aab945a0900ab58bf7",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2021/sb565",
+      "date": "2021-11-09",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-565-2021",
+      "act": "nay",
+      "motion": "Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Final Passage, 2021-11-09: nay (tally 29–21); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/PA_SB565_PN1212.pdf",
+          "sha256": "8599bf5e56d8378a456fd36d933e5a05733e1a059d642ddb6883c809f6226568"
+        }
+      }
+    },
+    {
+      "id": "8af0853ae45517089775bd7cd1837e20aae2b5107a9fc6681d4dfa2d6889459a",
+      "kind": "own-words",
+      "url": "https://senatorcosta.com/senate-democratic-leader-jay-costa-statement-on-proposed-federal-gun-reform-deal/",
+      "date": "2022-06-12",
+      "date_precision": "day",
+      "passage": "Part of that is passing common sense gun laws that don’t impede on Second Amendment rights but instead improve our systems to ensure only responsible gun owners have access to firearms. Senate Democrats have long advocated for the issues that are expected to be part of the federal plan – from the implementation of red flag laws and a more comprehensive background check system to increased mental health funding to provide greater access to services and improved school safety measures.",
+      "note": "Statement issued in his name as Senate caucus leader on a proposed federal gun deal; mentions red flag laws, a broader background check system, and Second Amendment rights.",
+      "subjects": [
+        "red flag orders",
+        "check every gun buyer",
+        "Second Amendment and gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:28.768Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "91fe9f2203acec0301eaed97716e893f3274519fefdd6503bfc3c19d2735fdbe",
+      "kind": "own-words",
+      "url": "https://senatorcosta.com/senate-democratic-leader-jay-costa-statement-on-deadly-school-shooting-at-robb-elementary-school/",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "passage": "I am calling on my colleagues in the General Assembly to act. While I believe this issue is best addressed at the federal level to ensure uniformity from state to state, partisan deadlock in Washington always blocks deliberation.",
+      "note": "Statement after the Uvalde shooting: calls on the state legislature to act on gun safety, while saying federal action would be best for uniformity.",
+      "subjects": [
+        "gun safety laws general",
+        "state versus federal action"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:28.768Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "25d46265aaa703c5b1052c7fab3c803c47ea37741511175b324b8f7f7faf4cf0",
+      "kind": "own-words",
+      "url": "https://senatorcosta.com/senate-democratic-leader-jay-costa-statement-on-deadly-school-shooting-at-robb-elementary-school/",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "passage": "No one seeks or wishes to infringe upon any law-abiding citizens’ rights. The perpetrators of gun violence on our communities are the ones who infringe upon the constitutionally protected rights of the victims.",
+      "note": "Same statement: says gun safety changes are not meant to infringe on law-abiding citizens' rights.",
+      "subjects": [
+        "Second Amendment and gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:28.768Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9ec46eacc57b4f7dab43092189bbcb5561ba822a5531206a5a4b3b4f83bf5ec7",
+      "kind": "own-words",
+      "url": "https://pasenate.com/?p=131135",
+      "date": "2022-06-07",
+      "date_precision": "day",
+      "passage": "Part of that is passing common sense gun laws that don’t impede on Second Amendment rights but improve our systems to ensure only responsible gun owners have access to firearms. We must protect our communities, and we must act now.",
+      "note": "His statement on six discharge resolutions filed to force Senate votes on gun bills: SB 88 universal background checks, SB 134 extreme risk protection orders, SB 217 lost and stolen gun reporting, SB 581 and 582 safe storage, SB 761 72-hour waiting period.",
+      "subjects": [
+        "check every gun buyer",
+        "red flag orders",
+        "waiting period",
+        "safe storage",
+        "report lost or stolen guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:28.768Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b98aa4348f71112311531eea312fe7af7d7a1e8593ca4c177bd9ce9ef7e3196",
+      "kind": "own-words",
+      "url": "https://senatorcosta.com/safe-communities/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "We must prohibit ownership of assault weapons such as the AR-15, including its high capacity ammunition feeding devices and other accessories, have become the tool of choice in mass murders.",
+      "note": "Policy priorities page on his official Senate site, listed under what the caucus will fight for: ban on assault weapons. Page is undated.",
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:28.768Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d62cb7415646413b77deaa76864c7630fc71c8c1f94df2c0cc1e40556e1896f",
+      "kind": "own-words",
+      "url": "https://senatorcosta.com/safe-communities/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Every firearm sale in Pennsylvania needs to undergo a background check.",
+      "note": "Same page, under universal background checks heading.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:28.768Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "82f095546c1b3fa4a85cf5032d017aa6896506e853b558dc422e7a7c2f41d6ae",
+      "kind": "own-words",
+      "url": "https://senatorcosta.com/safe-communities/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Such an order would temporarily suspend an individual’s access to firearms if there is documented evidence that a person is threatening to harm themselves or others.",
+      "note": "Same page, under extreme risk protections heading; also lists safe storage requirements (gun locks) as a priority.",
+      "subjects": [
+        "red flag orders",
+        "safe storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:28.768Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "738b720f452185b10c66c10244ad9d3bb753ac94a288fb65c353b4845128301b",
+      "kind": "record",
+      "url": "https://policyrisk.com/state-bill/PA-SR31-2025-2026",
+      "date": "2025-03-06",
+      "date_precision": "day",
+      "instrument_id": "PA-SR-31-2025",
+      "act": "sponsor",
+      "note": "Listed as a co-sponsor (not prime sponsor) of SR 31, a resolution recognizing January 22-26, 2025 as Gun Violence Survivors Week in Pennsylvania; date is the Senate referral date on the tracker page. Source is a third-party tracker; official page blocked.",
+      "subjects": [
+        "gun violence general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:13:28.768Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6926d5aca1b8e5dfa1d1fe1815b11bc6b750c15358891fcd9c4ea5a405b5785b",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=1747",
+      "date": "2020-11-18",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1747-2019",
+      "act": "nay",
+      "motion": "Senate Floor: HB 1747 PN 2338, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 1747 PN 2338, FINAL PASSAGE, 2020-11-18: nay (tally 29–20); census gate: none.",
+      "subjects": [
+        "emergency-time carry restriction repealed",
+        "no seizure of guns, accessories or ammunition during emergencies",
+        "governor cannot suspend firearm sales in emergencies"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1747-2019.introduced.pdf",
+          "sha256": "a4e95a0229bcf1cde7a5fa9d58ac2c33f09477e837d84525b7ff04d3a5f71ece"
+        }
+      }
+    },
+    {
+      "id": "7ac860115240e898e99179f0252f386cf4942bf1be694ef5653fb8d3aaf3a31c",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=2440",
+      "date": "2020-11-18",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-2440-2019",
+      "act": "nay",
+      "motion": "Senate Floor: HB 2440 PN 3776, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 2440 PN 3776, FINAL PASSAGE, 2020-11-18: nay (tally 29–20); census gate: none.",
+      "subjects": [
+        "gun and ammunition businesses and ranges can never be closed or limited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2440-2019.amended.pdf",
+          "sha256": "9bdd564f4d0812adfa9af91a3ac7f854f4196ebd9577febef5953c94486be5c8"
+        }
+      }
+    },
+    {
+      "id": "e551ed2f59e072bfb12b47cdaee82befe90ec2b072f23db862ca5acdcd44d811",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=979",
+      "date": "2022-01-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-979-2021",
+      "act": "nay",
+      "motion": "Senate Floor: HB 979 PN 1706, Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 979 PN 1706, Final Passage, 2022-01-25: nay (tally 32–17); census gate: none.",
+      "subjects": [
+        "local gun and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs",
+        "localities barred from suing gun makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-979-2021.amended.pdf",
+          "sha256": "494cfe800bdb89be85cf7c2a28a81c203b581e7614e7bc8f69211cb4c736f5dd"
+        }
+      }
+    },
+    {
+      "id": "aeb8266984e53754ceef8ff83f7e417709cb966b7ba747cb9d64e2c79c4a49ed",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb822",
+      "date": "2026-05-06",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-822-2025",
+      "act": "nay",
+      "motion": "Senate Floor: PN0881, Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: PN0881, Final Passage, 2026-05-06: nay (tally 30–20); census gate: none.",
+      "subjects": [
+        "local firearm and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-822-2025.introduced.pdf",
+          "sha256": "38d1bdcb626cc1614fee0c352427248f5e599df007fead7d1a6031742385df55"
+        }
+      }
+    },
+    {
+      "id": "3295f3ca764ec705e99d1e3ac2783e1ae0949dab0b7628a119ff558b5999a87e",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=S&type=B&bn=204",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-204-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-SB-204-2023 (LegiScan sponsor list): SB204 (2023-2024 Regular Session): In actions, proceedings and other matters generally, providing for extreme risk protection orders..",
+      "subjects": [
+        "court orders to remove guns from people at risk of harming themselves or others",
+        "family members and police may petition",
+        "penalty for possessing guns under an order"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-204-2023.introduced.pdf",
+          "sha256": "3aaf5420de53bef1bf18d7ed5c88cda96951528d75fb2331337afa67ef725805"
+        }
+      }
+    },
+    {
+      "id": "974bcaa11083851fdf648bd4b6b53b2f69fbd2b79d1857b0e68638182e4e9f3b",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb348",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-348-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-SB-348-2025 (LegiScan sponsor list): SB348 (2025-2026 Regular Session): In firearms and other dangerous articles, providing for report of theft or loss of firearm; and imposing a penalty..",
+      "subjects": [
+        "lost or stolen firearm must be reported within 24 hours",
+        "fine for failing to report"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-348-2025.introduced.pdf",
+          "sha256": "abc26212fcdd2ced433b042efb2f17e7287787752032e5f4e6f1cba78f99f4e2"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll data and election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "web search: name plus voter ID",
+        "web search: Senate voter ID constitutional amendment 2025 2026",
+        "official site https://senatorcosta.com (voter ID tag page and site search; statements 2012 to 2014, nothing newer found)",
+        "Ballotpedia not reviewed: not fetched",
+        "bill pages not searched, linked separately"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:00:24.403Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:45:58.712Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.462Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.859Z",
+      "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag / extreme risk orders",
+        "safe storage",
+        "waiting period",
+        "gun violence general statements",
+        "sponsored or co-sponsored gun bills"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Senate site senatorcosta.com: Safe Communities page, news releases on gun violence (2022)",
+        "caucus site pasenate.com: June 7, 2022 discharge resolutions release",
+        "bill pages: co-sponsor list of SR 31 (2025-26) read on a third-party tracker",
+        "blocked: https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2025&sind=0&body=S&type=R&bn=31",
+        "blocked: https://legiscan.com/PA/bill/SB37/2025",
+        "blocked: https://legiscan.com/PA/bill/SB669/2025",
+        "blocked: https://app.azure.legiplex.com/pa/legislature/2025/2025-r/bills/sb669",
+        "blocked: https://ballotpedia.org/Jay_Costa",
+        "web search for news and bill pages on gun policy: no further own-words pages found",
+        "SB 37 and SB 669 (2025-26) list him as co-sponsor but their subject could not be confirmed, so not saved"
+      ],
+      "found": 8,
+      "at": "2026-10-30T15:13:28.768Z",
+      "by": "source-collector"
+    }
+  ]
+}

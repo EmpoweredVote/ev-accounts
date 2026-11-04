@@ -1,0 +1,56 @@
+{
+ "id": "MA-S-1508-2023",
+ "scope": "state:ma",
+ "title": "S1508 (193rd General Court): An Act to strengthen gun control",
+ "urls": [
+  "https://malegislature.gov/Bills/193/S1508",
+  "https://malegislature.gov/Bills/193/S1508/Senate/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "James B. Eldridge",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "9ed1b75f-a314-4241-87ff-231de4aba963"
+  },
+  {
+   "name": "James Arciero",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "f392e7c6-0ab2-4834-9a57-df86541f55d3"
+  },
+  {
+   "name": "Sal N. DiDomenico",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "c7e94dda-1862-40fe-bda5-5fa2fe68f536"
+  },
+  {
+   "name": "Patricia D. Jehlen",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "d40a0eda-36fc-4032-8382-20c76a36d6a6"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-S-1508-2023.html",
+   "sha256": "376adf1ba16aad597c4dc3b0b70df90a2a4908f46a5e8ec5d7d4195635a3b8a2"
+  }
+ },
+ "operative_text": "SECTION 1. Section 121 of chapter 140 of the General Laws, as appearing in the 2020 Official Edition, is hereby amended by inserting after the definition of “weapon” the following definitions:-\n“Frame”, the part of a firearm or variant of a firearm, that provides housing or a structure for the primary energized component designed to hold back the hammer, striker, bolt, or similar element, prior to initiation of the firing sequence, even if pins or other attachments are required to attach the component to the housing or structure.\n“Receiver”, the part of a rifle or shotgun, or variants thereof, that provides housing or a structure for the primary component designed to block or seal the breech prior to initiation of the firing sequence, even if pins or other attachments are required to connect the component to the housing or structure.\nSECTION 2. The first paragraph of section 123 of said chapter 140, as so appearing, is hereby amended by inserting after the twenty-first clause the following clause:- Twenty-second, That no licensee shall sell, lease, rent, transfer or deliver or offer for sale, lease, rent, transfer or delivery to a person a completed or unfinished frame or receiver that is not an integrated component of a fully-assembled weapon.\nSECTION 3. Said section 123 of said chapter 140, as so appearing, is hereby amended by striking out, in line 286, the words “licensing authority” and inserting in place thereof the following words:- “the office of the attorney general\".\nSECTION 4. Chapter 258E of the General Laws is hereby amended by inserting after section 4 of chapter 258E the following sections: -\nSection 4A. Order for suspension and surrender of firearms license; surrender of firearms; petition for review; hearing\nUpon issuance of a temporary or emergency order under section five of this chapter, the court shall, if the plaintiff demonstrates a substantial likelihood of immediate danger of abuse, order the immediate suspension and surrender of any license to carry firearms and or firearms identification card which the defendant may hold and order the defendant to surrender all firearms, rifles, shotguns, machine guns and ammunition which the defendant then controls, owns or possesses in accordance with the provisions of this chapter and any license to carry firearms or firearms identification cards which the defendant may hold shall be surrendered to the appropriate law enforcement officials in accordance with the provisions of this chapter and, said law enforcement official may store, transfer or otherwise dispose of any such weapon in accordance with the provisions of section 129D of chapter 140; provided however, that nothing herein shall authorize the transfer of any weapons surrendered by the defendant to anyone other than a licensed dealer. Notice of such suspension and ordered surrender shall be appended to the copy of abuse prevention order served on the defendant pursuant to section seven. Law enforcement officials, upon the service of said orders, shall immediately take possession of all firearms, rifles, shotguns, machine guns, ammunition, any license to carry firearms and any firearms identification cards in the control, ownership, or possession of said defendant. Any violation of such orders shall be punishable by a fine of not more than five thousand dollars, or by imprisonment for not more than two and one-half years in a house of correction, or by both such fine and imprisonment.\nAny defendant aggrieved by an order of surrender or suspension as described in the first sentence of this section may petition the court which issued such suspension or surrender order for a review of such action and such petition shall be heard no later than ten court business days after the receipt of the notice of the petition by the court. If said license to carry firearms or firearms identification card has been suspended upon the issuance of an order issued pursuant to section five or six, said petition may be heard contemporaneously with the hearing specified in the second sentence of the second paragraph of section five. Upon the filing of an affidavit by the defendant that a firearm, rifle, shotgun, machine gun or ammunition is required in the performance of the defendant's employment, and upon a request for an expedited hearing, the court shall order said hearing within two business days of receipt of such affidavit and request but only on the issue of surrender and suspension pursuant to this section.\nSection 4B: Continuation or modification of order for surrender or suspension\nUpon the continuation or modification of an order issued pursuant to section 4A or upon petition for review as described in section 4A, the court shall also order or continue to order the immediate suspension and surrender of a defendant's license to carry firearms and firearms identification card and the surrender of all firearms, rifles, shotguns, machine guns or ammunition which such defendant then controls, owns or possesses if the court makes a determination that the return of such license to carry firearms and firearm identification card or firearms, rifles, shotguns, machine guns or ammunition presents a likelihood of abuse to the plaintiff. A suspension and surrender order issued pursuant to this section shall continue so long as the restraining order to which it relates is in effect; and, any law enforcement official to whom such weapon is surrendered may store, transfer or otherwise dispose of any such weapon in accordance with the provisions of section 129D of chapter 140; provided, however, that nothing herein shall authorize the transfer of any weapons surrendered by the defendant to anyone other than a licensed dealer. Any violation of such order shall be punishable by a fine of not more than $5,000 or by imprisonment for not more than two and one-half years in a house of correction or by both such fine and imprisonment."
+}

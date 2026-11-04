@@ -1,0 +1,46 @@
+{
+  "id": "GA-HB-215-2025",
+  "scope": "state:ga",
+  "title": "HB 215 (2025-2026 Regular Session (2025)): Voter List Integrity Act; enact",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/ (detail and vote pages answer 401 without the site token; not used)",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/234334",
+    "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2025-house-journal.pdf (House Journal 2025, pp. 191, 203, 882: first reading, second reading, committee report)"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Committee substitute, paragraph (4) of the passage allowing membership in a voter list maintenance entity (Code section number not checked)\n(quote) (4) If the Secretary of State becomes a member of such nongovernmental entity, the Department of Driver Services shall, pursuant to an agreement with the Secretary of State, provide driver's license or identification card information related to voter eligibility to the Secretary of State for the purpose of sharing and exchanging voter registration information with such nongovernmental entity.\n(other) Prohibits the Secretary of State and local election officials from membership in certain multistate voter list maintenance organizations and requires them to end such membership\n(other) Allows voter list maintenance joint compacts with other states, with sharing of driver's license and identification card information\n(other) Keeps an exemption from disclosure for certain documents\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Momtahan of the 17th",
+      "role": "prime",
+      "version": "House Committee on Governmental Affairs substitute (LC 47 3419S)"
+    },
+    {
+      "name": "Fleming of the 114th",
+      "role": "co",
+      "version": "House Committee on Governmental Affairs substitute (LC 47 3419S)"
+    },
+    {
+      "name": "Townsend of the 179th",
+      "role": "co",
+      "version": "House Committee on Governmental Affairs substitute (LC 47 3419S)"
+    },
+    {
+      "name": "Ballinger of the 23rd",
+      "role": "co",
+      "version": "House Committee on Governmental Affairs substitute (LC 47 3419S)"
+    },
+    {
+      "name": "Jasperse of the 11th",
+      "role": "co",
+      "version": "House Committee on Governmental Affairs substitute (LC 47 3419S)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

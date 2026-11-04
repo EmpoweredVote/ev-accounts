@@ -1,0 +1,80 @@
+{
+  "id": "MA-H-720-2023",
+  "scope": "state:ma",
+  "title": "An Act establishing identification at the voting polls (H.720, filed 2023; accompanied a study order (H4733) 2024-07-15)",
+  "urls": [
+    "https://malegislature.gov/Bills/193/H720",
+    "https://malegislature.gov/Bills/193/H720.Html",
+    "https://malegislature.gov/Bills/193/H720/Cosponsor"
+  ],
+  "version": "as-filed",
+  "operative_text": "Be it enacted by the Senate and House of Representatives in General Court assembled, and by the authority of the same, as follows: SECTION 1. Chapter 51 of the General Laws is hereby amended by adding the following section:- Section 67. The state secretary shall issue, upon request and at no cost to the voter, a photo identification card to be used for voting purposes only. Upon determination that a person meets the qualifications of a voter described in section 1, the secretary photograph the voter, and said photograph shall appear on the voting identification card and be a straightforward looking view of the voter without eyeglasses. The identification card shall be clearly marked “FOR VOTING PURPOSES ONLY.” SECTION 2. Chapter 54 of the General Laws is hereby amended by striking out section 76B and inserting in place thereof the following section:- Section 76B. Any person who seeks to vote in a federal, state, local or primary election shall establish their qualification to vote by providing a valid photo identification card, MassHealth card or Medicare card to an election officer prior to voting. Acceptable forms of photo identification shall be a voting identification card issued pursuant to section 67 of chapter 51, current driver’s license, government employee identification card, pilot’s license, military identification, state identification card issued pursuant to section 8E of chapter 90 or United States passport.",
+  "sponsors": [
+    {
+      "name": "Alyson M. Sullivan-Almeida",
+      "politician_id": "7131c893-90fc-4c27-b4f6-e3fc8fcf6ec2",
+      "role": "prime",
+      "version": "as filed; petitioners tab, H.720, session 193"
+    },
+    {
+      "name": "Michael J. Soter",
+      "politician_id": "51e50b38-dbb2-4131-91bb-23c24bf6d741",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.720, session 193"
+    },
+    {
+      "name": "Kelly W. Pease",
+      "politician_id": "296406bb-cc2a-4214-978f-d30333d62939",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.720, session 193"
+    },
+    {
+      "name": "Angelo L. D'Emilia",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.720, session 193"
+    },
+    {
+      "name": "Joseph D. McKenna",
+      "politician_id": "2fadc37b-4d33-46b4-a3cc-a2ca5ebeb39a",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.720, session 193"
+    },
+    {
+      "name": "David F. DeCoste",
+      "politician_id": "a743a9a0-711c-40cf-b6e2-0ce2b587949a",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.720, session 193"
+    },
+    {
+      "name": "Marcus S. Vaughn",
+      "politician_id": "c9a23774-469d-4c40-b316-7fbd46dab7d9",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.720, session 193"
+    },
+    {
+      "name": "Donald R. Berthiaume, Jr.",
+      "politician_id": "329212d4-14ef-4685-9d95-cc7473aad949",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.720, session 193"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+    "fetched_at": "2026-10-31T03:30:00Z",
+    "method": "curl",
+    "saved_copy": {
+      "path": "s3-prep-voting-rights/stage5/raw/ma-id-bills/193_H720.Html.htm",
+      "sha256": "fad495970e52e239748faa2cb7fcc480aabf03e6ec601b4c598f2242e8c29649"
+    }
+  }
+}

@@ -1,0 +1,643 @@
+{
+  "politician_id": "4d83f985-9248-4905-a9b6-5742e2df77a8",
+  "findings": [
+    {
+      "id": "3703a365d0ff2ef8d8d8279b183c3c2f604faa3957b62f8196be6c92bb5f7485",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-117s2938enr/html/BILLS-117s2938enr.htm",
+      "date": "2022-06-23",
+      "date_precision": "day",
+      "instrument_id": "US-S-2938-2022",
+      "act": "nay",
+      "motion": "Motion to Concur in the House amendment to S. 2938 with an amendment (Amdt. No. 5099)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US Senate, Motion to Concur in the House amendment to S. 2938 with an amendment (Amdt. No. 5099), 2022-06-23: nay (tally 65–33); census gate: multi-subject.",
+      "subjects": [
+        "background checks for buyers under 21",
+        "court orders that take guns from a dangerous person (state grants)",
+        "gun trafficking (package)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "86135173fc45c9e57fb00f0b7033b2cf40b696b7cf3c7f89dd826c77ca65f392",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2023252",
+      "date": "2023-06-22",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-44-2023",
+      "act": "yea",
+      "motion": "On the Joint Resolution (H.J. Res. 44)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Joint Resolution (H.J. Res. 44), 2023-06-22: yea (tally 49–50); census gate: none.",
+      "subjects": [
+        "cancel the federal pistol-brace rule"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-118hjres44eh.txt",
+          "sha256": "d04fe1fe2a2512a1932d14b7b93d88fe25ac6712851bc4caa37df31b89101f4d"
+        }
+      }
+    },
+    {
+      "id": "59c9eaed6ad8d62b557e27fd6b2b75271bce535faf3cef2b6b55238230957dbc",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2025190",
+      "date": "2025-07-01",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2025",
+      "act": "yea",
+      "motion": "On Passage of the Bill (H.R. 1, as Amended)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US Senate, On Passage of the Bill (H.R. 1, as Amended), 2025-07-01: yea (tally 50–50); census gate: multi-subject.",
+      "subjects": [
+        "end the federal tax on suppressors and short-barrelled guns",
+        "budget (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3ba14a6e45bc09f8668284c6442806a821250234021d965461ce1357224e015f",
+      "kind": "own-words",
+      "url": "https://www.hydesmith.senate.gov/issues/second-amendment",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Senator Hyde-Smith, who holds an enhanced-carry permit, is a strong advocate for protecting the Constitutional right of law-abiding citizens to keep and bear arms. The Senator has authored and supported federal legislation defending Second Amendment rights and is committed to supporting efforts that would prevent the federal government from infringing upon those rights.",
+      "note": "Issue page on her Senate site, undated, in the third person (office copy).",
+      "subjects": [
+        "general Second Amendment statement",
+        "carry a gun with a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:28:26.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e8baff6cd2acbf3686b8a63fde815e49e1f78ca5896705c3309f178932478017",
+      "kind": "own-words",
+      "url": "https://www.hydesmith.senate.gov/hyde-smith-gosar-reintroduce-grip-act-block-state-gun-registries",
+      "date": "2026-02-25",
+      "date_precision": "day",
+      "passage": "“The Second Amendment rights of law-abiding citizens remain imperiled as Democrats and anti-gun activists lean into government overreach.  The GRIP Act is needed to clarify that states and localities cannot use federal funds or data to keep gun registries that can lead to infringing on a constitutional right,”",
+      "note": "Her quote in her office's release on reintroducing the GRIP Act (S.3916).",
+      "subjects": [
+        "no gun registries",
+        "state and local gun registries"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:28:26.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6b897261d976ee98ee48c7070418f73e2a93728d9967704ffae9cef8e9b76637",
+      "kind": "record",
+      "url": "https://www.hydesmith.senate.gov/hyde-smith-gosar-reintroduce-grip-act-block-state-gun-registries",
+      "date": "2026-02-25",
+      "date_precision": "day",
+      "instrument_id": "US-S-3916-2026",
+      "act": "sponsor",
+      "motion": "S.3916, Gun-owner Registration Information Protection (GRIP) Act",
+      "note": "Release says she and Rep. Gosar reintroduced a bill barring states and localities from using federal funds or background-check data to keep gun registries; she is its author per the April 2026 release.",
+      "subjects": [
+        "no gun registries"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:28:26.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6abda2b8e4d5e91191def35bef7c7e5fefb04537ef02e4cc98b6090bdb96e0f5",
+      "kind": "own-words",
+      "url": "https://www.hydesmith.senate.gov/hyde-smith-ezell-sign-amicus-brief-scotus-opposing-new-york-attempt-undermine-federal-firearms-law",
+      "date": "2026-04-02",
+      "date_precision": "day",
+      "passage": "“Our brief is part of the ongoing work to protect the Second Amendment rights of law-abiding citizens from leftist states run by anti-gun activists.  These states shouldn’t be allowed to erode the constitutional protections established by Congress by law,”",
+      "note": "Her quote on signing a Supreme Court friend-of-the-court brief about a New York law and the federal law shielding gun makers from suits (PLCAA).",
+      "subjects": [
+        "gun-industry liability",
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:28:26.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "deb37cee437bd4d233ffa64e20084161e0e6e33ea5f97813536984efa785786f",
+      "kind": "record",
+      "url": "https://www.hydesmith.senate.gov/hyde-smith-ezell-sign-amicus-brief-scotus-opposing-new-york-attempt-undermine-federal-firearms-law",
+      "date": "2026-04-02",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Signed amicus brief to the U.S. Supreme Court supporting the NSSF petition on the Protection of Lawful Commerce in Arms Act and a New York public nuisance law",
+      "note": "One of 77 members of Congress who signed a brief urging the Court to overturn a Second Circuit ruling that allowed New York's law.",
+      "subjects": [
+        "gun-industry liability"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:28:26.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2bbc99ca07949edca5d00c3c1ad79803088f5f4cab570ee0a85533b315e21c94",
+      "kind": "record",
+      "url": "https://www.hydesmith.senate.gov/hyde-smith-colleagues-press-atf-stop-enforcing-vacated-pistol-brace-rule",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Signed letter to Acting ATF Director urging ATF to stop enforcing the vacated 2023 pistol brace rule",
+      "note": "Release says she signed a letter led by Sen. Cassidy. The release quotes the letter: “In our view, this since-vacated rule does not comply with the statute and cannot pass constitutional muster, and we urge ATF to cease any efforts to continue enforcing it either in substance or form,”",
+      "subjects": [
+        "pistol-brace rule",
+        "federal agency gun rules",
+        "National Firearms Act short-barreled rifles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:28:26.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "525026ca2aff8b00fff6d78479fb7159d78b35bd5998d8b4722fba4384788904",
+      "kind": "own-words",
+      "url": "https://www.hydesmith.senate.gov/hyde-smith-again-joins-effort-increase-penalties-smash-and-grab-gun-thefts",
+      "date": "2026-06-05",
+      "date_precision": "day",
+      "passage": "“Law-abiding citizens who want to own a firearm don’t engage in smash-and-grab robberies.  It’s the criminal element committing these crimes that leads to more illegal firearms on our streets and more crime.  It’s past time to enact this legislation to put stiffer prison sentences on the books for these criminals,”",
+      "note": "Her quote on the Federal Firearms Licensee Protection Act (S.4671), which raises penalties for stealing guns from licensed dealers.",
+      "subjects": [
+        "tougher penalties for stealing guns from dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:28:26.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5e6d33a4a44585bbd985d95597852fb960821941214f5df648638fd8d2285314",
+      "kind": "record",
+      "url": "https://www.hydesmith.senate.gov/hyde-smith-again-joins-effort-increase-penalties-smash-and-grab-gun-thefts",
+      "date": "2026-06-05",
+      "date_precision": "day",
+      "instrument_id": "US-S-4671-2026",
+      "act": "sponsor",
+      "motion": "S.4671, Federal Firearms Licensee Protection Act (cosponsor)",
+      "note": "Release says she is again supporting the bill and cosponsored it in the past two Congresses; it raises penalties for stealing firearms from licensed dealers.",
+      "subjects": [
+        "tougher penalties for stealing guns from dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:28:26.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6e266f84f8ff97f1f2df82f661931e186f0fcf57d78cc283d090f7a4eb7c0ce5",
+      "kind": "own-words",
+      "url": "https://www.hydesmith.senate.gov/hyde-smith-colleagues-aim-restore-18-year-olds-constitutional-right-purchase-handguns",
+      "date": "2021-04-27",
+      "date_precision": "day",
+      "passage": "“The right to keep and bear all firearms is a fundamental right that should not be restricted by the federal government.  This legislation would repeal the arbitrary restriction for citizens between 18 and 20 years old from purchasing a handgun,”",
+      "note": "Her quote on the SAME Act of 2021, a bill to let adults 18 to 20 buy a handgun from a licensed dealer.",
+      "subjects": [
+        "minimum age to buy a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:28:26.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d953cc589e12d4dfcad730fef34389af3387d5c6a637fb839cc608c1deff4a75",
+      "kind": "record",
+      "url": "https://www.hydesmith.senate.gov/hyde-smith-colleagues-aim-restore-18-year-olds-constitutional-right-purchase-handguns",
+      "date": "2021-04-27",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "Second Amendment Mandates Equality (SAME) Act of 2021 (primary cosponsor)",
+      "note": "Release titles her a primary cosponsor of a bill to repeal the federal ban on handgun purchases from dealers by adults under 21.",
+      "subjects": [
+        "minimum age to buy a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:28:26.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "acbfb71a99fa26230ba803fe15dccd22a5b7f0a8d0ea3712398da7596467c62b",
+      "kind": "own-words",
+      "url": "https://www.hydesmith.senate.gov/hyde-smith-cosponsors-concealed-carry-reciprocity-act",
+      "date": "2019-01-10",
+      "date_precision": "day",
+      "passage": "“This legislation would honor the rights of law-abiding gun owners with concealed carry permits in other states with right-to-carry laws,” Hyde-Smith said.",
+      "note": "Her quote on the Constitutional Concealed Carry Reciprocity Act (S.69).",
+      "subjects": [
+        "honor other states' carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:28:26.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fbd2bbbb82ae3897d4ae45d710e7958a511d2e56c687132570db043db2e820bd",
+      "kind": "record",
+      "url": "https://www.hydesmith.senate.gov/hyde-smith-cosponsors-concealed-carry-reciprocity-act",
+      "date": "2019-01-10",
+      "date_precision": "day",
+      "instrument_id": "US-S-69-2019",
+      "act": "sponsor",
+      "motion": "S.69, Constitutional Concealed Carry Reciprocity Act (original cosponsor)",
+      "note": "Release says she signed as an original cosponsor of a bill letting carry-permit holders carry concealed handguns across state lines.",
+      "subjects": [
+        "honor other states' carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:28:26.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "20b1bb96ce04d2d6efee43d49b15885c27b5055a933cd0d25c7fe5bf811f8982",
+      "kind": "own-words",
+      "url": "https://www.hydesmith.senate.gov/bills-let-officers-and-le-retirees-carry-no-gun-zones-reintroduced-congress",
+      "date": "2025-03-25",
+      "date_precision": "day",
+      "passage": "“There’s no need to restrict the ability of qualified, well-trained law enforcement officers from being able to provide another level of protection for our communities. This legislation would cut through some of the unnecessary red tape involving concealed-carry rights for police officers,” Senator Hyde-Smith said.",
+      "note": "Her quote on the LEOSA Reform Act (S.679), page dated 2025-03-25 (a news item posted on her site).",
+      "subjects": [
+        "carry a gun with a permit",
+        "carry in places where guns are barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:28:26.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "47e56dbff17b02a163301c96df28cfc4ead6f4f71672c9fd67d9e27952725fbf",
+      "kind": "record",
+      "url": "https://www.hydesmith.senate.gov/bills-let-officers-and-le-retirees-carry-no-gun-zones-reintroduced-congress",
+      "date": "2025-03-25",
+      "date_precision": "day",
+      "instrument_id": "US-S-679-2025",
+      "act": "sponsor",
+      "motion": "S.679, Law Enforcement Officers Safety Act (LEOSA) Reform Act (reintroduced with Sen. Kennedy)",
+      "note": "Page says she and Sen. Kennedy reintroduced the bill; it eases concealed-carry rules for qualified officers and retired officers, including in places where guns are barred. Date is the page date.",
+      "subjects": [
+        "carry in places where guns are barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:28:26.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dab3e5e00bff835f34e7d42267fc9591022a69ff05d5357b4fdb4d3045d3dab9",
+      "kind": "own-words",
+      "url": "https://www.hydesmith.senate.gov/hyde-smith-seeks-strengthen-2a-rights-atf-transparency-act",
+      "date": "2025-03-06",
+      "date_precision": "day",
+      "passage": "“No system is infallible, including the federal bureaucracy.  The ATF Transparency Act would help ensure law-abiding Americans aren’t denied their Second Amendment rights due to mistakes in their background checks that may wrongfully prevent them from owning a firearm,” Hyde-Smith said.",
+      "note": "Her quote on the ATF Transparency Act, an appeal route for people wrongly denied in a gun-purchase background check.",
+      "subjects": [
+        "background check appeals",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:28:26.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "783b07a41351119e388962f3ac0552dc93b45729582bf20fe9077891df4ac303",
+      "kind": "record",
+      "url": "https://www.hydesmith.senate.gov/hyde-smith-seeks-strengthen-2a-rights-atf-transparency-act",
+      "date": "2025-03-06",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "ATF Transparency Act (original cosponsor; with Sen. Risch)",
+      "note": "Release says she is an original cosponsor of a bill to set an appeal process for people wrongly denied by the national background check and to speed National Firearms Act applications.",
+      "subjects": [
+        "background check appeals",
+        "National Firearms Act applications"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:28:26.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e6be93d53f8ec16c0d5977cbc4bf2b2753e5d3d2cf535f2570e5555fc6186f5a",
+      "kind": "own-words",
+      "url": "https://www.hydesmith.senate.gov/hyde-smith-wicker-back-resolution-stop-atf-pistol-brace-rule",
+      "date": "2023-03-17",
+      "date_precision": "day",
+      "passage": "“The ATF under the Biden administration insists on issuing rules that end up infringing on the rights of law-abiding gun owners while doing next to nothing to stop violent crime.",
+      "note": "Her quote on the 2023 pistol brace rule; the release says she cosponsored a Congressional Review Act resolution against it and the SHORT Act.",
+      "subjects": [
+        "pistol-brace rule",
+        "federal agency gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:28:26.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4e3e05ef5fcd106f6c7baef86b2bb8cd5d6615f2dd6c417ea86075ea2b5fab98",
+      "kind": "record",
+      "url": "https://www.hydesmith.senate.gov/hyde-smith-wicker-back-resolution-stop-atf-pistol-brace-rule",
+      "date": "2023-03-17",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "Cosponsor of a Congressional Review Act resolution against the ATF pistol brace rule, and of the SHORT Act",
+      "note": "Release says she cosponsored both; bill numbers are not given on the page.",
+      "subjects": [
+        "pistol-brace rule",
+        "National Firearms Act short-barreled rifles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:28:26.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "647c1c53028aab4c59fe02ac00ad5fd6115912ebca4d1722fa732249d3f671a7",
+      "kind": "record",
+      "url": "https://www.hydesmith.senate.gov/hyde-smith-colleagues-ask-atf-align-rules-trump-second-amendment-agenda",
+      "date": "2025-02-20",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Signed letter from 30 senators urging ATF to rescind Biden-era rules",
+      "note": "Release lists the rules named in the letter, including the \"Engaged in the Business\" rule it calls a move toward universal background checks, the \"Ghost Gun\" rule and the pistol brace rule.",
+      "subjects": [
+        "federal agency gun rules",
+        "ghost guns",
+        "check every gun buyer",
+        "pistol-brace rule"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:28:26.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f33fdd5a17ceb36c56db4ae29902f49c07d7118d5c1d3fd1075e6e6b5bb636ef",
+      "kind": "record",
+      "url": "https://www.hydesmith.senate.gov/alabama-kansas-lawmakers-push-dismantle-federal-restrictions-short-barreled-guns",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "SHORT Act (cosponsor): removes short-barreled rifles and shotguns from the National Firearms Act",
+      "note": "Page, dated 2025-04-01, lists her among 11 senators who joined the bill. Bill number not given.",
+      "subjects": [
+        "National Firearms Act short-barreled rifles",
+        "repeal gun registration"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:28:26.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "48d0577e2c63029f5b05af08bb8e4a6ebbd49a8789d565d0e7a53c1215d1dd87",
+      "kind": "record",
+      "url": "https://www.hydesmith.senate.gov/senators-demand-doj-probe-and-destruction-atfs-14-billion-out-business-records",
+      "date": "2026-09-24",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Signed Sept. 24, 2026 letter to the Attorney General asking for an investigation and destruction of ATF out-of-business dealer records",
+      "note": "Page names her among eight senators who signed; the letter calls the database an illegal national gun registry.",
+      "subjects": [
+        "federal gun registry",
+        "repeal gun registration"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:28:26.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c006b7da351d1dee65386c489a80d6633cb5c8a12f2071ce9f29beeeb1f309d",
+      "kind": "own-words",
+      "url": "https://www.jacksonfreepress.com/news/2019/nov/14/hyde-smith-blocks-gun-checks-school-shooting-unfol",
+      "date": "2019-11-14",
+      "date_precision": "day",
+      "passage": "\"Legislation that would affect the rights of American citizens under the Second Amendment should not be fast tracked by the Senate,\" Hyde-Smith said on the Senate floor in Washington, D.C., this morning, ",
+      "note": "Jackson Free Press quoted her floor remarks when she objected to taking up a House-passed bill requiring background checks on all gun purchases.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:28:26.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "82aace17f4ba2c5eb7b92483e60727b6c46b6bb43cdbfea72357fea1a36e10b7",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/65",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "US-S-65-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2025-01-09",
+      "note": "co sponsor of US-S-65-2025 (cosponsor 2025-01-09): S 65 (119th Congress): Constitutional Concealed Carry Reciprocity Act of 2025.",
+      "subjects": [
+        "national concealed-carry reciprocity for handguns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-S-65-2025.htm",
+          "sha256": "553385ff6538d8ab33b460cba8f4ce77a6b27ee7f2d5542d5f6810317128aeb4"
+        }
+      }
+    },
+    {
+      "id": "a79db97feb0101fbc93ee29dc0a3e5b51323914a16c3b2da2d48ce626bedd4f7",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/senate-joint-resolution/20",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "US-SJRES-20-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2023-03-15",
+      "note": "co sponsor of US-SJRES-20-2023 (cosponsor 2023-03-15): SJRES 20 (118th Congress): A joint resolution providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Justice and the Bureau of Alcohol, Tobacco, Firearms and Explosives relating to \"Factoring Criteria for Firearms With Attached 'Stabilizing Braces'\"..",
+      "subjects": [
+        "ATF stabilizing-brace rule disapproved"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-SJRES-20-2023.htm",
+          "sha256": "01e71824e8991c247f827837d8852968be726f4c2b3d843bf11bbb3a396d8f75"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "carry permits and reciprocity",
+        "minimum age to buy",
+        "gun registries",
+        "federal agency gun rules",
+        "check every gun buyer",
+        "background check appeals",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "suppressors and the National Firearms Act"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site issue page https://www.hydesmith.senate.gov/issues/second-amendment and its list pages (releases on registries, amicus brief, pistol brace, FFL Protection Act, SAME Act, carry reciprocity, LEOSA, ATF Transparency Act, SHORT Act, ATF letters read)",
+        "the Senate site pages found nothing on the subject of assault-style weapon bans, magazine limits or red-flag orders in her own words",
+        "campaign site cindyhydesmith.com: issues page fetched, nothing on the subject in the page text",
+        "web search x3 (ballot status, news on her gun positions, her Senate releases); a news report of the 2026 primary win and her November race: https://www.wlox.com/2026/03/11/ap-us-senate-incumbent-cindy-hyde-smith-wins-mississippis-republican-primary-election",
+        "news report 2019 on the floor objection: Jackson Free Press",
+        "blocked: https://www.congress.gov/member/cindy-hyde-smith/H001079 (403)",
+        "blocked: https://legiscan.com/people/search?q=hyde-smith (403)",
+        "blocked: https://ballotpedia.org/Cindy_Hyde-Smith (403)",
+        "not reviewed: other Senate site release pages on suppressors, travelers and military families, and tax on guns (titles seen in the list only)"
+      ],
+      "found": 22,
+      "at": "2026-10-30T22:28:26.900Z",
+      "by": "source-collector"
+    }
+  ]
+}
