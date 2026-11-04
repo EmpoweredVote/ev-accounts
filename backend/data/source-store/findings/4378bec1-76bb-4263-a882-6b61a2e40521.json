@@ -1,0 +1,382 @@
+{
+  "politician_id": "4378bec1-76bb-4263-a882-6b61a2e40521",
+  "findings": [
+    {
+      "id": "956ec359823866036a4cd88db1128cfbd7aa6060c9b2ca54c0c20f80275b17a5",
+      "kind": "own-words",
+      "url": "https://www.newstribune.com/news/2022/mar/11/house-passes-voter-id-initiative-petition-bills/",
+      "date": "2022-03",
+      "date_precision": "month",
+      "passage": "\"I'm trying to prevent an issue that's hard to prove with numbers,\" he said. \"Just because the house hasn't been robbed doesn't mean you don't lock the doors.\"",
+      "note": "Jefferson City News Tribune quotes the HB 1878 sponsor on why he backs photo ID despite few proven fraud cases.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:08:09.393Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2667aae84349bb8e5a2988f70acea2f4dcc262a84e0f1327f850c041954a532e",
+      "kind": "own-words",
+      "url": "https://www.krcu.org/post/missouri-house-approves-legislation-requiring-photo-identification-vote",
+      "date": "2021-02-24",
+      "date_precision": "day",
+      "passage": "“Showing a photo ID to vote will help my constituents and your constituents ensure their vote is not disenfranchised,” said Rep. John Simmons, R-Washington, the sponsor of the legislation.",
+      "note": "Floor remark on HB 334, quoted by the Missouri Independent via KRCU.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:08:09.393Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c36e366caf4d19cb065033f6323528144fc200debcb6cc8044b5102ac3e10fe3",
+      "kind": "own-words",
+      "url": "https://www.krcu.org/post/missouri-house-approves-legislation-requiring-photo-identification-vote",
+      "date": "2021-02-24",
+      "date_precision": "day",
+      "passage": "“The actual voters of Missouri agreed also with their desire for people to show a photo ID to vote,” Simmons said. “Remember 63% in favor on that ballot issue, 113 out of 115 counties voted in favor.”",
+      "note": "Floor remark citing the 2016 constitutional amendment vote as support for photo ID.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:08:09.393Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0ee0d635043bf600308ca87614576f0a1a8b5c82c3608d228c2b2ee2b26f966a",
+      "kind": "own-words",
+      "url": "https://themissouritimes.com/capitol-briefs-house-passes-voter-id-bill/",
+      "date": "2021-02-24",
+      "date_precision": "day",
+      "passage": "“The voters of Missouri want their votes protected and counted properly,” Simmons said. “They don’t want their votes to be disenfranchised by fraudulent votes. Showing a photo ID will help my constituents and your constituents ensure their vote is not disenfranchised.”",
+      "note": "Floor remark on HB 334, quoted by the Missouri Times (page dated 2021-02-25).",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:08:09.393Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "267abb36a20a89e575c6747b034a855281a88cabaceedf4c5dad69ea879dd262",
+      "kind": "own-words",
+      "url": "https://news.stlpublicradio.org/show/st-louis-on-the-air/2021-03-09/missouri-republican-leaders-seek-to-change-voter-id-laws",
+      "date": "2021-03-09",
+      "date_precision": "day",
+      "passage": "“My bill just takes out that second option,” he said. “So there won't be the option to bring a utility bill or a voter card without some other form of viable identification. So it just simplifies and really is a response to what the court decided back in January of 2020.”",
+      "note": "Radio interview on HB 334: removes the non-photo-ID sworn-statement pathway, keeps provisional ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID: non-photo documents",
+        "provisional ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:08:09.393Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "efdf6cc1dc53bd6ea5404adb7efccd2d827bf0af8dfb48b1e9a37c346d575643",
+      "kind": "own-words",
+      "url": "https://www.newstribune.com/news/2021/may/02/As-legislative-session-nears-end-debate-over-elect/",
+      "date": "2021-05-02",
+      "date_precision": "day",
+      "passage": "\"This is just a response to that Supreme Court decision,\" Simmons told the Senate committee.",
+      "note": "Testimony to a Senate committee on HB 334, quoted by the News Tribune (article date).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:08:09.393Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bb3e6dd81cf316ec9b44e9d5cdf52364842cbe99183db916dda663bffde5b47",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/BillTracking/bills201/jrnpdf/index/2020JournalIndex.pdf",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-1600-2020",
+      "act": "sponsor",
+      "motion": "prime sponsor, HCS HB 1600 perfected (LR 3088H.02P); third read and passed 2020-03-02",
+      "note": "Named as prime sponsor ('Simmons') on the official bill text, summary or journal; linked to John Simmons via the official 2020 member roll of the House (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.746Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d1c2057c28b9a9de66314d9782a9a555af1fc83cfbd202012f15f99a2e9733c4",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "nay",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Simmons'), linked to John Simmons (district 109) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.746Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "993617738474b6e1011b3f325a151322a46e53faa871349c51d0be802bb18bfd",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills221/jrnpdf/jrn070.pdf",
+      "date": "2022-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1878-2022",
+      "act": "yea",
+      "motion": "House: SS SCS HB 1878, as amended, adopted",
+      "note": "House roll call as printed ('Simmons'), linked to John Simmons (district 109) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.746Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e22c5727b1a7bb1cc6631d27f9ec695c87db5185afb3033c19eafb217b8334ec",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills221/hlrbillspdf/4557H.01I.pdf",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-1878-PERF-2022",
+      "act": "sponsor",
+      "motion": "prime sponsor, 4557H.01P (House perfected); operative text quoted from the introduced text 4557H.01I, which the House version voted on 2022-03-10 amends in the same single section",
+      "note": "Named as prime sponsor ('Simmons') on the official bill text, summary or journal; linked to John Simmons via the official 2022 member roll of the House (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.746Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "573604d9a27c7903936e3fab95c247f7503ece7cfd06a23a32ae0b7013f8f7cb",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills211/jrnpdf/jrn029.pdf",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-334-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, HCS HB 334 perfected (LR 1191H.02P)",
+      "note": "Named as prime sponsor ('Simmons') on the official bill text, summary or journal; linked to John Simmons via the official 2021 member roll of the House (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.746Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "09168f5132c6b66b10b4254aab83e73fdf84a5634b8de9e4a06a3e27354ca549",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills201/jrnpdf/jrn031.pdf",
+      "date": "2020-03-02",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1600-2020",
+      "act": "yea",
+      "motion": "House: HCS HB 1600 read the third time and passed by the following vote (Speaker Pro Tem Wiemann declared the bill passed)",
+      "note": "House roll call as printed ('Simmons'), linked to John Simmons (district 109) via the official 2020 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.219Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "83ed7cdcb7b45a53a1a8c58005cd0bdc5762e1b3da17af7e338f0cd3bf061d21",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills221/jrnpdf/jrn036.pdf",
+      "date": "2022-03-10",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1878-PERF-2022",
+      "act": "yea",
+      "motion": "House: HB 1878 read the third time and passed",
+      "note": "House roll call as printed ('Simmons'), linked to John Simmons (district 109) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.219Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c350f7cdbed9fac86919949bd8c9c98019a47152c42c532aeb59af7c8b34a250",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills211/jrnpdf/jrn029.pdf",
+      "date": "2021-02-24",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-334-2021",
+      "act": "yea",
+      "motion": "House: HCS HB 334 read the third time and passed",
+      "note": "House roll call as printed ('Simmons'), linked to John Simmons (district 109) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.219Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "72a52d290b9978b563f9da836e97197e83a6bdb92ec9fc051a7d62606b3d4473",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn052.pdf",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "MO-HCR-48-2026",
+      "act": "yea",
+      "motion": "House: HCR 48 read the third time and passed",
+      "note": "House roll call as printed ('Simmons'), linked to John Simmons (district 109) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.219Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "iVoterGuide 2026 questionnaire: https://ivoterguide.com/candidate/47353/race/34817/election/1501 (photo-ID item 'Did not answer', nothing on the subject)",
+        "Missouri Times campaign announcement: nothing on the subject",
+        "KRCU/Missouri Independent, STL Public Radio, News Tribune, Missouri Times coverage (findings)",
+        "blocked: Ballotpedia (not tried, per instruction)",
+        "Missouri Independent pages (voter-ID bill 2021, 2022): blocked: https://missouriindependent.com/2022/05/12/voter-id-bill-clears-missouri-legislature-despite-fierce-criticism-from-black-democrats/ and https://missouriindependent.com/2021/02/25/missouri-republicans-look-to-reinstate-voter-id-requirement/ (bot check)",
+        "blocked: https://www.semissourian.com/news/missouri-house-advances-new-voter-photo-id-bill-2671634 (403)",
+        "no house.mo.gov page fetched (robots)",
+        "not reviewed: newsroom.house.mo.gov (separate collector)"
+      ],
+      "found": 6,
+      "at": "2026-11-04T05:08:09.393Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 6,
+      "at": "2026-11-04T14:10:53.746Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T14:14:55.219Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

@@ -1,0 +1,676 @@
+{
+  "id": "MO-HB-1878-PERF-2022",
+  "scope": "state:mo",
+  "title": "HB 1878 (2022 Second Regular Session (101st General Assembly)): HB 1878 as introduced (4557H.01I) and as perfected and passed by the House on 2022-03-10 (4557H.01P): repeals and re-enacts section 115.427 only (voter photo identification)",
+  "urls": [
+    "https://documents.house.mo.gov/billtracking/bills221/hlrbillspdf/4557H.01I.pdf",
+    "https://documents.house.mo.gov/billtracking/bills221/hlrbillspdf/4557H.01I.pdf",
+    "https://documents.house.mo.gov/billtracking/bills221/hlrbillspdf/4557H.01P.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) 4557H.01I, section 115.427.1\n(quote) 115.427. 1. Persons seeking to vote in a public election shall establish their identity and eligibility to vote at the polling place or, if casting an absentee ballot under section 115.257, at the office of the election authority or other authorized location designated by the election authority by presenting a form of personal photo identification to election officials. No form of personal identification other than the forms listed in this section shall be accepted to establish a voter's qualifications to vote. Forms of personal identification that satisfy the requirements of this section are any one of the following: (1) Nonexpired Missouri driver's license; (2) Nonexpired or nonexpiring Missouri nondriver's license; (3) A document that satisfies all of the following requirements: (a) The document contains the name of the individual to whom the document was issued, and the name substantially conforms to the most recent signature in the individual's voter registration record; (b) The document shows a photograph of the individual; (c) The document includes an expiration date, and the document is not expired, or, if expired, the document expired after the date of the most recent general election; and (d) The document was issued by the United States or the state of Missouri; or (4) Any identification containing a photograph of the individual which is issued by the Missouri National Guard, the United States Armed Forces, or the United States Department of Veteran Affairs to a member or former member of the Missouri National Guard or the United States Armed Forces and that is not expired or does not have an expiration date.\n(b_no_id_remedy)\n(section) 4557H.01I, section 115.427 (the sworn-statement route with non-photo documents is struck; bracketed text is deleted law)\n(quote) [4. A voter] shall be allowed to cast a provisional ballot [under section 115.430 even if the election judges cannot establish the voter's identity under this section]. The election judges shall make a notation on the provisional ballot envelope to indicate that the voter's identity was not verified.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) None: the bill repeals and re-enacts section 115.427 only. The omnibus parts of the final law were added by the Senate substitute (MO-HB-1878-2022).",
+  "sponsors": [
+    {
+      "name": "Simmons",
+      "role": "prime",
+      "version": "4557H.01P (House perfected); operative text quoted from the introduced text 4557H.01I, which the House version voted on 2022-03-10 amends in the same single section"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2022-03-10",
+      "body": "MO House",
+      "motion": "HB 1878 read the third time and passed",
+      "kind": "roll-call",
+      "yes": 96,
+      "no": 35,
+      "absent": 26,
+      "body_size": 157,
+      "note": "H1293 | https://documents.house.mo.gov/billtracking/bills221/jrnpdf/jrn036.pdf",
+      "members": [
+        {
+          "name": "Atchison",
+          "vote": "yea"
+        },
+        {
+          "name": "Baker",
+          "vote": "yea"
+        },
+        {
+          "name": "Basye",
+          "vote": "yea"
+        },
+        {
+          "name": "Billington",
+          "vote": "yea"
+        },
+        {
+          "name": "Black 137",
+          "vote": "yea"
+        },
+        {
+          "name": "Black 7",
+          "vote": "yea"
+        },
+        {
+          "name": "Boggs",
+          "vote": "yea"
+        },
+        {
+          "name": "Bromley",
+          "vote": "yea"
+        },
+        {
+          "name": "Buchheit-Courtway",
+          "vote": "yea"
+        },
+        {
+          "name": "Burger",
+          "vote": "yea"
+        },
+        {
+          "name": "Chipman",
+          "vote": "yea"
+        },
+        {
+          "name": "Christofanelli",
+          "vote": "yea"
+        },
+        {
+          "name": "Coleman 97",
+          "vote": "yea"
+        },
+        {
+          "name": "Cook",
+          "vote": "yea"
+        },
+        {
+          "name": "Copeland",
+          "vote": "yea"
+        },
+        {
+          "name": "Cupps",
+          "vote": "yea"
+        },
+        {
+          "name": "Davidson",
+          "vote": "yea"
+        },
+        {
+          "name": "Davis",
+          "vote": "yea"
+        },
+        {
+          "name": "Deaton",
+          "vote": "yea"
+        },
+        {
+          "name": "DeGroot",
+          "vote": "yea"
+        },
+        {
+          "name": "Dinkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Eggleston",
+          "vote": "yea"
+        },
+        {
+          "name": "Evans",
+          "vote": "yea"
+        },
+        {
+          "name": "Falkner",
+          "vote": "yea"
+        },
+        {
+          "name": "Fitzwater",
+          "vote": "yea"
+        },
+        {
+          "name": "Francis",
+          "vote": "yea"
+        },
+        {
+          "name": "Gregory 51",
+          "vote": "yea"
+        },
+        {
+          "name": "Grier",
+          "vote": "yea"
+        },
+        {
+          "name": "Griffith",
+          "vote": "yea"
+        },
+        {
+          "name": "Haden",
+          "vote": "yea"
+        },
+        {
+          "name": "Haffner",
+          "vote": "yea"
+        },
+        {
+          "name": "Haley",
+          "vote": "yea"
+        },
+        {
+          "name": "Hardwick",
+          "vote": "yea"
+        },
+        {
+          "name": "Henderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Hicks",
+          "vote": "yea"
+        },
+        {
+          "name": "Houx",
+          "vote": "yea"
+        },
+        {
+          "name": "Hovis",
+          "vote": "yea"
+        },
+        {
+          "name": "Hudson",
+          "vote": "yea"
+        },
+        {
+          "name": "Hurlbert",
+          "vote": "yea"
+        },
+        {
+          "name": "Kalberloh",
+          "vote": "yea"
+        },
+        {
+          "name": "Kelley 127",
+          "vote": "yea"
+        },
+        {
+          "name": "Kelly 141",
+          "vote": "yea"
+        },
+        {
+          "name": "Kidd",
+          "vote": "yea"
+        },
+        {
+          "name": "Knight",
+          "vote": "yea"
+        },
+        {
+          "name": "Lewis 6",
+          "vote": "yea"
+        },
+        {
+          "name": "Lovasco",
+          "vote": "yea"
+        },
+        {
+          "name": "Mayhew",
+          "vote": "yea"
+        },
+        {
+          "name": "McGaugh",
+          "vote": "yea"
+        },
+        {
+          "name": "McGirl",
+          "vote": "yea"
+        },
+        {
+          "name": "Morse",
+          "vote": "yea"
+        },
+        {
+          "name": "Murphy",
+          "vote": "yea"
+        },
+        {
+          "name": "O'Donnell",
+          "vote": "yea"
+        },
+        {
+          "name": "Owen",
+          "vote": "yea"
+        },
+        {
+          "name": "Perkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Pike",
+          "vote": "yea"
+        },
+        {
+          "name": "Plocher",
+          "vote": "yea"
+        },
+        {
+          "name": "Pollitt 52",
+          "vote": "yea"
+        },
+        {
+          "name": "Pollock 123",
+          "vote": "yea"
+        },
+        {
+          "name": "Porter",
+          "vote": "yea"
+        },
+        {
+          "name": "Pouche",
+          "vote": "yea"
+        },
+        {
+          "name": "Railsback",
+          "vote": "yea"
+        },
+        {
+          "name": "Reedy",
+          "vote": "yea"
+        },
+        {
+          "name": "Richey",
+          "vote": "yea"
+        },
+        {
+          "name": "Riggs",
+          "vote": "yea"
+        },
+        {
+          "name": "Riley",
+          "vote": "yea"
+        },
+        {
+          "name": "Roberts",
+          "vote": "yea"
+        },
+        {
+          "name": "Roden",
+          "vote": "yea"
+        },
+        {
+          "name": "Rone",
+          "vote": "yea"
+        },
+        {
+          "name": "Sander",
+          "vote": "yea"
+        },
+        {
+          "name": "Sassmann",
+          "vote": "yea"
+        },
+        {
+          "name": "Schnelting",
+          "vote": "yea"
+        },
+        {
+          "name": "Schroer",
+          "vote": "yea"
+        },
+        {
+          "name": "Schwadron",
+          "vote": "yea"
+        },
+        {
+          "name": "Seitz",
+          "vote": "yea"
+        },
+        {
+          "name": "Sharpe 4",
+          "vote": "yea"
+        },
+        {
+          "name": "Shaul",
+          "vote": "yea"
+        },
+        {
+          "name": "Shields",
+          "vote": "yea"
+        },
+        {
+          "name": "Simmons",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith 155",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith 163",
+          "vote": "yea"
+        },
+        {
+          "name": "Stacy",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephens 128",
+          "vote": "yea"
+        },
+        {
+          "name": "Tate",
+          "vote": "yea"
+        },
+        {
+          "name": "Taylor 139",
+          "vote": "yea"
+        },
+        {
+          "name": "Taylor 48",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas",
+          "vote": "yea"
+        },
+        {
+          "name": "Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Toalson Reisch",
+          "vote": "yea"
+        },
+        {
+          "name": "Trent",
+          "vote": "yea"
+        },
+        {
+          "name": "Van Schoiack",
+          "vote": "yea"
+        },
+        {
+          "name": "Veit",
+          "vote": "yea"
+        },
+        {
+          "name": "Walsh 50",
+          "vote": "yea"
+        },
+        {
+          "name": "West",
+          "vote": "yea"
+        },
+        {
+          "name": "Wiemann",
+          "vote": "yea"
+        },
+        {
+          "name": "Wright",
+          "vote": "yea"
+        },
+        {
+          "name": "Mr. Speaker",
+          "vote": "yea"
+        },
+        {
+          "name": "Adams",
+          "vote": "nay"
+        },
+        {
+          "name": "Aldridge",
+          "vote": "nay"
+        },
+        {
+          "name": "Anderson",
+          "vote": "nay"
+        },
+        {
+          "name": "Appelbaum",
+          "vote": "nay"
+        },
+        {
+          "name": "Bangert",
+          "vote": "nay"
+        },
+        {
+          "name": "Baringer",
+          "vote": "nay"
+        },
+        {
+          "name": "Brown 70",
+          "vote": "nay"
+        },
+        {
+          "name": "Burnett",
+          "vote": "nay"
+        },
+        {
+          "name": "Burton",
+          "vote": "nay"
+        },
+        {
+          "name": "Butz",
+          "vote": "nay"
+        },
+        {
+          "name": "Clemens",
+          "vote": "nay"
+        },
+        {
+          "name": "Collins",
+          "vote": "nay"
+        },
+        {
+          "name": "Dogan",
+          "vote": "nay"
+        },
+        {
+          "name": "Doll",
+          "vote": "nay"
+        },
+        {
+          "name": "Fogle",
+          "vote": "nay"
+        },
+        {
+          "name": "Gray",
+          "vote": "nay"
+        },
+        {
+          "name": "Gunby",
+          "vote": "nay"
+        },
+        {
+          "name": "Ingle",
+          "vote": "nay"
+        },
+        {
+          "name": "Mackey",
+          "vote": "nay"
+        },
+        {
+          "name": "McCreery",
+          "vote": "nay"
+        },
+        {
+          "name": "Merideth",
+          "vote": "nay"
+        },
+        {
+          "name": "Mosley",
+          "vote": "nay"
+        },
+        {
+          "name": "Person",
+          "vote": "nay"
+        },
+        {
+          "name": "Phifer",
+          "vote": "nay"
+        },
+        {
+          "name": "Proudie",
+          "vote": "nay"
+        },
+        {
+          "name": "Quade",
+          "vote": "nay"
+        },
+        {
+          "name": "Rogers",
+          "vote": "nay"
+        },
+        {
+          "name": "Sharp 36",
+          "vote": "nay"
+        },
+        {
+          "name": "Smith 45",
+          "vote": "nay"
+        },
+        {
+          "name": "Smith 67",
+          "vote": "nay"
+        },
+        {
+          "name": "Stevens 46",
+          "vote": "nay"
+        },
+        {
+          "name": "Terry",
+          "vote": "nay"
+        },
+        {
+          "name": "Unsicker",
+          "vote": "nay"
+        },
+        {
+          "name": "Walsh Moore 93",
+          "vote": "nay"
+        },
+        {
+          "name": "Young",
+          "vote": "nay"
+        },
+        {
+          "name": "Andrews",
+          "vote": "absent"
+        },
+        {
+          "name": "Aune",
+          "vote": "absent"
+        },
+        {
+          "name": "Bailey",
+          "vote": "absent"
+        },
+        {
+          "name": "Barnes",
+          "vote": "absent"
+        },
+        {
+          "name": "Bland Manlove",
+          "vote": "absent"
+        },
+        {
+          "name": "Bosley",
+          "vote": "absent"
+        },
+        {
+          "name": "Brown 16",
+          "vote": "absent"
+        },
+        {
+          "name": "Brown 27",
+          "vote": "absent"
+        },
+        {
+          "name": "Busick",
+          "vote": "absent"
+        },
+        {
+          "name": "Coleman 32",
+          "vote": "absent"
+        },
+        {
+          "name": "Derges",
+          "vote": "absent"
+        },
+        {
+          "name": "Ellebracht",
+          "vote": "absent"
+        },
+        {
+          "name": "Fishel",
+          "vote": "absent"
+        },
+        {
+          "name": "Gregory 96",
+          "vote": "absent"
+        },
+        {
+          "name": "Johnson",
+          "vote": "absent"
+        },
+        {
+          "name": "Lewis 25",
+          "vote": "absent"
+        },
+        {
+          "name": "McDaniel",
+          "vote": "absent"
+        },
+        {
+          "name": "Nurrenbern",
+          "vote": "absent"
+        },
+        {
+          "name": "Patterson",
+          "vote": "absent"
+        },
+        {
+          "name": "Pietzman",
+          "vote": "absent"
+        },
+        {
+          "name": "Price IV",
+          "vote": "absent"
+        },
+        {
+          "name": "Rowland",
+          "vote": "absent"
+        },
+        {
+          "name": "Sauls",
+          "vote": "absent"
+        },
+        {
+          "name": "Turnbaugh",
+          "vote": "absent"
+        },
+        {
+          "name": "Weber",
+          "vote": "absent"
+        },
+        {
+          "name": "Windham",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04T00:00:00Z)",
+    "fetched_at": "2026-11-04T00:00:00Z",
+    "method": "curl"
+  }
+}

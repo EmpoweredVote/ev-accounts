@@ -1,0 +1,101 @@
+{
+  "politician_id": "7caa77ae-af1f-41c5-a7ec-8fb5d513bb43",
+  "findings": [
+    {
+      "id": "e076c8b48278b31632ee890048920af3952a61ffb83895b5d23bfa476c64b17f",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Mr.Speaker'), linked to Jon Patterson (district 30) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.745Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "09168f5132c6b66b10b4254aab83e73fdf84a5634b8de9e4a06a3e27354ca549",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills201/jrnpdf/jrn031.pdf",
+      "date": "2020-03-02",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1600-2020",
+      "act": "yea",
+      "motion": "House: HCS HB 1600 read the third time and passed by the following vote (Speaker Pro Tem Wiemann declared the bill passed)",
+      "note": "House roll call as printed ('Patterson'), linked to Jon Patterson (district 30) via the official 2020 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.218Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c350f7cdbed9fac86919949bd8c9c98019a47152c42c532aeb59af7c8b34a250",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills211/jrnpdf/jrn029.pdf",
+      "date": "2021-02-24",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-334-2021",
+      "act": "yea",
+      "motion": "House: HCS HB 334 read the third time and passed",
+      "note": "House roll call as printed ('Patterson'), linked to Jon Patterson (district 30) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.218Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-04T14:10:53.745Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-04T14:14:55.218Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

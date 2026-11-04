@@ -1,0 +1,33 @@
+{
+  "id": "MO-HB-308-2025",
+  "scope": "state:mo",
+  "title": "HB 308 (2025 First Regular Session (103rd General Assembly)): HB 308 (2025): adds a nonexpired student ID card issued by a Missouri high school or accredited institution of higher education to the acceptable photo IDs (House summary of the 2026 companion HB 2114 says HB 2114 is similar to HB 308)",
+  "urls": [
+    "https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/0458H.01I.pdf",
+    "https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/0458H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Introduced text, RSMo 115.427 subsection 1 (adds a student ID card)\n(quote) 115.427. 1. Persons seeking to vote in a public election shall establish their identity and eligibility to vote at the polling place or, if voting absentee in person under section 115.277, at the office of the election authority or other authorized location designated by the election authority by presenting a form of personal photo identification to election officials. No form of personal photo identification other than the forms listed in this section shall be accepted to establish a voter's qualifications to vote. Forms of personal photo identification that satisfy the requirements of this section are any one of the following: (1) Nonexpired Missouri driver's license; (2) Nonexpired or nonexpiring Missouri nondriver's license; (3) A nonexpired student identification card issued by a Missouri high school, as defined in section 160.011, or an accredited institution of higher education within the state of Missouri; (4) A document that satisfies all of the following requirements: (a) The document contains the name of the individual to whom the document was issued, and the name substantially conforms to the most recent signature in the individual's voter registration record; (b) The document shows a photograph of the individual; HB 308 2 (c) The document includes an expiration date, and the document is not expired, or, if expired, the document expired after the date of the most recent general election; and (d) The document was issued by the United States or the state of Missouri; or [(4)] (5) Any identification containing a photograph of the individual which is issued by the Missouri National Guard, the United States Armed Forces, including the Space Force, or the United States Department of Veteran Affairs to a member or former member of the Missouri National Guard or the United States Armed Forces, including the Space Force, and that is not expired or does not have an expiration date.\n(b_no_id_remedy)\n(section) Introduced text, RSMo 115.427 subsection 2 (no-ID provisional ballot)\n(quote) An individual who appears at a polling place without a form of personal identification described in subsection 1 of this section and who is otherwise qualified to vote at that polling place shall be allowed to cast a provisional ballot. The election judges shall make a notation on the provisional ballot envelope to indicate that the voter's identity was not verified. (2) No person shall be entitled to receive a provisional ballot until such person has completed a provisional ballot affidavit on the provisional ballot envelope. All provisional ballots shall be marked with a conspicuous stamp or mark that makes them distinguishable from other ballots. (3) The provisional ballot envelope shall be completed by the voter for use in determining the voter's eligibility to cast a ballot.\n(section) Introduced text, RSMo 115.427 provisional-ballot certificate (student ID listed)\n(quote) e. Nonexpired student identification card issued by a Missouri high school, as defined in section 160.011, or an accredited institution of higher education within the state of Missouri; or\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.",
+  "sponsors": [
+    {
+      "name": "Steinhoff",
+      "role": "prime",
+      "version": "Introduced text (0458H.01I.pdf)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04T00:00:00Z)",
+    "fetched_at": "2026-11-04T00:00:00Z",
+    "method": "curl"
+  }
+}

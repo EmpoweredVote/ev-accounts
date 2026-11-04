@@ -30,7 +30,256 @@
           "sha256": "541d477ef09b83d6555700233abc760ce80a58d9602aff90b0ac2befb0f6afdd"
         }
       }
+    },
+    {
+      "id": "b51a2bbe7288c31ec722d3b7970ce3a026f3b65e19f4d090d1dc45838c32c318",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/newsDetails?id=56",
+      "date": "2022-05-11",
+      "date_precision": "day",
+      "passage": "“Missouri should have the strongest election laws in the country,” Sen. Brattin said. “There were enough problems around the country in the 2020 election that we need to do everything in our power to make sure ballots and voting are secure and that voters have full confidence in our elections.”",
+      "note": "Senate press release in his name on the Senate passing HB 1878, which the release says covers voter ID, a ban on private funding of election offices, and a ban on drop boxes and mail-in voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws",
+        "mail voting and drop boxes"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T04:59:59.998Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f224e3823094b43cbf3944f93fe71d66a2150dc028a502f070570464f982a5de",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/newsDetails?id=56",
+      "date": "2022-05-11",
+      "date_precision": "day",
+      "passage": "“There is no issue more pressing to our country than the integrity of our elections,” Sen. Brattin said. “If we don’t have confidence and trust in our elections, than we don’t have a country. Free and fair elections are part of what has allowed our country to endure and thrive for almost 250 years, and we owe it to the voters, our state and our country to fight for election integrity.”",
+      "note": "Same release; he says election integrity is the most pressing issue.",
+      "subjects": [
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T04:59:59.998Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b11de19d9a7607f2583a575c702d8430da4c0b7ef74704f036c00d69730c3280",
+      "kind": "own-words",
+      "url": "https://www.missourinet.com/2026/02/10/missouri-senate-bill-seeks-cleaner-voting-lists-but-critics-see-risk-to-eligible-voters/",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "passage": "“It’s a part of being a functioning member of society to apply for benefits from the government. So, if we have a process that requires that, we’ll pay for it, how is this a detrimental thing other than we’re helping them provide that documentation, but also at the same time ensuring a safe, secure election?” asked Brattin.",
+      "note": "Quoted by Missourinet in a story on another senator's bill requiring proof of citizenship to register; he says the state would pay to help people get the documents.",
+      "subjects": [
+        "proof of citizenship to register",
+        "free documents to obtain ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T04:59:59.998Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fb8bc7215936366db8d25d14ac2035ad2dfb934513b5290dbe4ec91c30e946b6",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills161/rollcalls/073.003.pdf",
+      "date": "2016-09-14",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1631-2016",
+      "act": "yea",
+      "motion": "House: SS#2 SCS HB 1631 ALFERMAN (061) VOTER IDENTIFICATION 4554S.18T THAT SS#2 SCS HB 1631 BE PASSED, THE OBJECTIONS OF THE GOVERNOR THERETO NOTWITHSTANDING",
+      "note": "House roll call as printed ('BRATTIN'), linked to Rick Brattin (district 55) via the official 2016 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.746Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fdf4dc53a4ec51a07d4beab3f585340c15ffdbabd51fb2ea8348344c58e0fe2f",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills161/jrnpdf/jrn070.pdf",
+      "date": "2016-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HJR-53-2016",
+      "act": "yea",
+      "motion": "House: SS HJR 53 was adopted",
+      "note": "House roll call as printed ('Brattin'), linked to Rick Brattin (district 55) via the official 2016 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.746Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "573eba7f65302613c600888ff0d15b2a409b81d99700a4fbbbfdeb4989b220b9",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills161/jrnpdf/jrn009.pdf",
+      "date": "2016-01-21",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1631-2016",
+      "act": "yea",
+      "motion": "House: HB 1631 read the third time and passed",
+      "note": "House roll call as printed ('Brattin'), linked to Rick Brattin (district 55) via the official 2016 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2820ba1138fe2edc7b2f277b507128c8dd5b25a415fff10237bc182989690f3d",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/22info/Journals/RDay6205092378-2447.pdf",
+      "date": "2022-05-09",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1878-2022",
+      "act": "yea",
+      "motion": "Senate: SS for SCS for HB 1878, as amended, read the 3rd time and passed",
+      "note": "Senate roll call as printed ('Brattin'), linked to Rick Brattin (district 31) via the official 2022 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0cdc75c9b016c744b75e601ed12d6cc9f3f3874e677e9ac655547831de822750",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills111/jrnpdf/jrn066.pdf",
+      "date": "2011-05-04",
+      "date_precision": "day",
+      "instrument_id": "MO-SB-3-2011",
+      "act": "yea",
+      "motion": "House: HCS#2 SB 3, as amended, read the third time and passed",
+      "note": "House roll call as printed ('Brattin'), linked to Rick Brattin (district 124) via the official 2011 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "24497832b7e519384b390326a460fcaa943e7c29f63e3789be857e19fb5d48f9",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills111/jrnpdf/jrn064.pdf",
+      "date": "2011-05-02",
+      "date_precision": "day",
+      "instrument_id": "MO-SJR-2-2011",
+      "act": "yea",
+      "motion": "House: HCS#2 SJR 2 read the third time and passed",
+      "note": "House roll call as printed ('Brattin'), linked to Rick Brattin (district 124) via the official 2011 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws",
+        "mail voting and drop boxes"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Senate member page https://www.senate.mo.gov/brattin (confirms Senator, District 31)",
+        "Senate current media list (nothing on the subject; items on redistricting and a court case)",
+        "Senate press release 2022-05-11",
+        "Missourinet 2026-02-10 article",
+        "The Federalist 2024-03-05 article (his quotes are about the amendment process, not saved)",
+        "3 web searches",
+        "no campaign site or Ballotpedia page reviewed",
+        "bill pages not searched: sponsorships linked separately"
+      ],
+      "found": 3,
+      "at": "2026-11-04T04:59:59.998Z",
+      "by": "search-mo-2026-11-03"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-04T14:10:53.746Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T14:14:55.221Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
 }

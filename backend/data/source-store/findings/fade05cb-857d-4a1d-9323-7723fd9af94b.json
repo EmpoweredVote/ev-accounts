@@ -30,7 +30,215 @@
           "sha256": "541d477ef09b83d6555700233abc760ce80a58d9602aff90b0ac2befb0f6afdd"
         }
       }
+    },
+    {
+      "id": "9341eabad2834914a888294871e34987432999dd48fd6e51058cc44d75af862d",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills161/rollcalls/073.003.pdf",
+      "date": "2016-09-14",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1631-2016",
+      "act": "nay",
+      "motion": "House: SS#2 SCS HB 1631 ALFERMAN (061) VOTER IDENTIFICATION 4554S.18T THAT SS#2 SCS HB 1631 BE PASSED, THE OBJECTIONS OF THE GOVERNOR THERETO NOTWITHSTANDING",
+      "note": "House roll call as printed ('WEBBER'), linked to Stephen Webber (district 46) via the official 2016 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.747Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6b496c3cff4b99d28b82bd8efb6125f2972e72e413feb50e4230bee1eeee8e69",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills161/jrnpdf/jrn070.pdf",
+      "date": "2016-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HJR-53-2016",
+      "act": "nay",
+      "motion": "House: SS HJR 53 was adopted",
+      "note": "House roll call as printed ('Webber'), linked to Stephen Webber (district 46) via the official 2016 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.747Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "23087a036a100ff4343bfedc07277c669eebeec687fb47dcf78857ca4f842fa4",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills161/jrnpdf/jrn009.pdf",
+      "date": "2016-01-21",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1631-2016",
+      "act": "nay",
+      "motion": "House: HB 1631 read the third time and passed",
+      "note": "House roll call as printed ('Webber'), linked to Stephen Webber (district 46) via the official 2016 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e114662582e36f9f876ea58ca7997d4a6cd77360af2d2f46d1a30370cb3d2133",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/26info/Journals/Rday6405111615-1637.pdf",
+      "date": "2026-05-11",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "Senate: SS for SCS for HCS for HB 1871, as amended, read the 3rd time and passed",
+      "note": "Senate roll call as printed ('Webber'), linked to Steven Webber (district 19) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ffe92dbb6803552cd2685de033eb60f06f83ff72b56c8106f40d0c6e60593ab2",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills101/jrnpdf/jrn055.pdf",
+      "date": "2010-04-20",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1966-2010",
+      "act": "nay",
+      "motion": "House: HCS HB 1966 read the third time and passed",
+      "note": "House roll call as printed ('Webber'), linked to Stephen Webber (district 23) via the official 2010 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5721c06d33efd6c9c1bf549d91d165976c4d8af4abaab8ff42d9c952c9d44083",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills101/jrnpdf/jrn055.pdf",
+      "date": "2010-04-20",
+      "date_precision": "day",
+      "instrument_id": "MO-HJR-64-2010",
+      "act": "nay",
+      "motion": "House: HCS HJR 64 read the third time and passed",
+      "note": "House roll call as printed ('Webber'), linked to Stephen Webber (district 23) via the official 2010 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6f9a5d4a5762f2e5aa5f4d2bbfaf54a1e5f3570ac5385e946f6d5f71a2610ebe",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills111/jrnpdf/jrn064.pdf",
+      "date": "2011-05-02",
+      "date_precision": "day",
+      "instrument_id": "MO-SJR-2-2011",
+      "act": "nay",
+      "motion": "House: HCS#2 SJR 2 read the third time and passed",
+      "note": "House roll call as printed ('Webber'), linked to Stephen Webber (district 23) via the official 2011 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings; name search also 0)",
+        "blocked: https://ballotpedia.org/Stephen_Webber (empty page)",
+        "Missouri Senate member page for Webber (https://www.senate.mo.gov/Senators/member/19 returned 404; the Senate search result and media archive https://www.senate.mo.gov/Media/MediaArchive?id=6373 listed no items)",
+        "Senate sponsored-bills list https://www.senate.mo.gov/BillTracking/Bills/sponsoredbills?district=19: no election-related titles",
+        "campaign site stephenwebber.com: domain is parked for sale, nothing",
+        "https://abc17news.com/voter-guide-2024/2024/10/22/interview-with-stephen-webber-candidate-for-missouri-senate-district-19/: nothing on the subject",
+        "https://abc17news.com/voter-guide-2024/2024/09/20/stephen-webber-candidate-for-missouris-19th-senate-district/: nothing on the subject",
+        "web searches on his name plus voter ID, photo ID, citizenship, mail ballot: nothing in his own words"
+      ],
+      "found": 0,
+      "at": "2026-11-04T04:58:22.185Z",
+      "by": "search-mo-2026-11-03"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-04T14:10:53.747Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 5,
+      "at": "2026-11-04T14:14:55.221Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
 }

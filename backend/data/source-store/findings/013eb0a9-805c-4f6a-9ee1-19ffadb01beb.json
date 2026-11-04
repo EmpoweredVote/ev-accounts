@@ -1,0 +1,75 @@
+{
+  "politician_id": "013eb0a9-805c-4f6a-9ee1-19ffadb01beb",
+  "findings": [
+    {
+      "id": "bc936753d56974cd32652c99c4ebf2ef7e92e618964e8dd77957275a3dc7001d",
+      "kind": "own-words",
+      "url": "https://justthenews.com/nation/states/center-square/poll-large-majority-missourians-support-citizen-only-voting-amendment",
+      "date": "2024-10-09",
+      "date_precision": "day",
+      "passage": "“I am a first-generation American, and I worked hard to pursue the American Dream and earn the opportunity to become a citizen,” State Treasurer Vivek Malek said in a statement. “The right to vote and participate in our elections is fundamental to our republic, and that is why we need to pass the Only Citizens Vote and Only Vote Once Amendment.”",
+      "note": "Statement in his name, quoted by Just the News (Center Square), backing the 2024 amendment limiting voting to citizens.",
+      "subjects": [
+        "non-citizen voting",
+        "citizen-only voting amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T04:59:03.355Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "State Treasurer site home page (nothing on the subject)",
+        "On the Record (0 meetings)",
+        "web search: name plus subject words (no own words on the subject surfaced)",
+        "Ballotpedia: not reviewed (search result only, not fetched)",
+        "Missouri Senate member page",
+        "Missouri Senate current media list and media archive (titles only, nothing on the subject)",
+        "bill pages: sponsor lists left to the separate record lane"
+      ],
+      "found": 1,
+      "at": "2026-11-04T04:59:03.355Z",
+      "by": "search-mo-2026-11-03"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "Treasurer news list pages 1-12 at https://treasurer.mo.gov/newsroom/news-and-events (titles of 36 releases; all on unclaimed property, savings plans, school scholarships, investments; one on unlawful migration practices, not opened: link is a postback; nothing on voting or ID)",
+        "web search: Malek plus citizenship and election words (nothing new beyond the Amendment 7 quote on file)",
+        "web search: Malek plus Amendment 7 (a campaign-stop quote surfaced only in a snippet; the page could not be confirmed by fetch)",
+        "fetch: newstribune.com 2024-10-16 treasurer candidates article (nothing on the subject)",
+        "blocked: https://newspressnow.com/?p=18618 (HTTP 429)",
+        "fetch: https://newspressnow.com/?p=23459 (page text does not mention him)",
+        "inaccessible: https://suntimesnews.com/?p=112033 (HTTP 404)",
+        "Ballotpedia: blocked (not fetched, per instruction)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T13:26:32.249Z",
+      "by": "research-mo-r2-2026-11-04"
+    }
+  ]
+}

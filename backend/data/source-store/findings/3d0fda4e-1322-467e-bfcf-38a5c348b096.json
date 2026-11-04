@@ -30,7 +30,193 @@
           "sha256": "541d477ef09b83d6555700233abc760ce80a58d9602aff90b0ac2befb0f6afdd"
         }
       }
+    },
+    {
+      "id": "fb8bc7215936366db8d25d14ac2035ad2dfb934513b5290dbe4ec91c30e946b6",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills161/rollcalls/073.003.pdf",
+      "date": "2016-09-14",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1631-2016",
+      "act": "yea",
+      "motion": "House: SS#2 SCS HB 1631 ALFERMAN (061) VOTER IDENTIFICATION 4554S.18T THAT SS#2 SCS HB 1631 BE PASSED, THE OBJECTIONS OF THE GOVERNOR THERETO NOTWITHSTANDING",
+      "note": "House roll call as printed ('MOON'), linked to Mike Moon (district 157) via the official 2016 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.742Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fdf4dc53a4ec51a07d4beab3f585340c15ffdbabd51fb2ea8348344c58e0fe2f",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills161/jrnpdf/jrn070.pdf",
+      "date": "2016-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HJR-53-2016",
+      "act": "yea",
+      "motion": "House: SS HJR 53 was adopted",
+      "note": "House roll call as printed ('Moon'), linked to Mike Moon (district 157) via the official 2016 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.742Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "09168f5132c6b66b10b4254aab83e73fdf84a5634b8de9e4a06a3e27354ca549",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills201/jrnpdf/jrn031.pdf",
+      "date": "2020-03-02",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1600-2020",
+      "act": "yea",
+      "motion": "House: HCS HB 1600 read the third time and passed by the following vote (Speaker Pro Tem Wiemann declared the bill passed)",
+      "note": "House roll call as printed ('Moon'), linked to Mike Moon (district 157) via the official 2020 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.217Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "573eba7f65302613c600888ff0d15b2a409b81d99700a4fbbbfdeb4989b220b9",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills161/jrnpdf/jrn009.pdf",
+      "date": "2016-01-21",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1631-2016",
+      "act": "yea",
+      "motion": "House: HB 1631 read the third time and passed",
+      "note": "House roll call as printed ('Moon'), linked to Mike Moon (district 157) via the official 2016 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.217Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b33d89fc1419193891722fe00f6d4df68f57ad81cc7e7eab7af0cd1b473d327e",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/26info/Journals/Rday6405111615-1637.pdf",
+      "date": "2026-05-11",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "nay",
+      "motion": "Senate: SS for SCS for HCS for HB 1871, as amended, read the 3rd time and passed",
+      "note": "Senate roll call as printed ('Moon'), linked to Mike Moon (district 29) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.217Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21359c61a4aa9f0fc1d5ed5539ef00909e6cc5e45e12169c91328f1e12050b02",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/22info/Journals/RDay6205092378-2447.pdf",
+      "date": "2022-05-09",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1878-2022",
+      "act": "nay",
+      "motion": "Senate: SS for SCS for HB 1878, as amended, read the 3rd time and passed",
+      "note": "Senate roll call as printed ('Moon'), linked to Mike Moon (district 29) via the official 2022 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.217Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship",
+        "mail-ballot ID",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances, also searched by name)",
+        "official Missouri Senate page for District 29 (confirms Mike Moon holds the seat): https://www.senate.mo.gov/Senators/member?id=19 (no personal site or social links listed)",
+        "Senate media archive and current media pages: nothing on the subject (items cover other topics)",
+        "Senate sponsored-bills list: no bill titled on voter ID, citizenship or registration; two judge-election bills only",
+        "blocked: https://ballotpedia.org/Mike_Moon (empty page)",
+        "blocked: https://missouriindependent.com/2021/08/31/mike-moon-joins-race-for-congress-in-southwest-missouri/ (403)",
+        "2021 congressional campaign announcement coverage (ky3.com): lists his priorities, nothing on the subject in his own words",
+        "news searches on name plus voter ID, photo ID and election integrity: no own-words passage found; legislature's older Senate news pages returned 404",
+        "campaign site: not located"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:00:45.340Z",
+      "by": "search-mo-2026-11-03"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-04T14:10:53.742Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T14:14:55.217Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
 }

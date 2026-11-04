@@ -1,0 +1,166 @@
+{
+  "politician_id": "892ccd3e-3f5d-48b2-a0d0-d482e4833602",
+  "findings": [
+    {
+      "id": "e810788b128757d58bb916940e1eb27097657cacd5478ffc8affb3e8ec47a701",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/53592/race/12042/election/800",
+      "date": "2020",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification.",
+      "note": "Questionnaire statement on his iVoterGuide profile (2020 candidacy); his recorded response to it was 'Strongly Disagree'. Same profile also asks about the Electoral College (answered 'Agree'), which is not on this subject.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:10:51.199Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d1c2057c28b9a9de66314d9782a9a555af1fc83cfbd202012f15f99a2e9733c4",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "nay",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('West'), linked to Richard William West (district 102) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "83ed7cdcb7b45a53a1a8c58005cd0bdc5762e1b3da17af7e338f0cd3bf061d21",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills221/jrnpdf/jrn036.pdf",
+      "date": "2022-03-10",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1878-PERF-2022",
+      "act": "yea",
+      "motion": "House: HB 1878 read the third time and passed",
+      "note": "House roll call as printed ('West'), linked to Richard W West (district 63) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.235Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c350f7cdbed9fac86919949bd8c9c98019a47152c42c532aeb59af7c8b34a250",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills211/jrnpdf/jrn029.pdf",
+      "date": "2021-02-24",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-334-2021",
+      "act": "yea",
+      "motion": "House: HCS HB 334 read the third time and passed",
+      "note": "House roll call as printed ('West'), linked to Richard W West (district 63) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.235Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "72a52d290b9978b563f9da836e97197e83a6bdb92ec9fc051a7d62606b3d4473",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn052.pdf",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "MO-HCR-48-2026",
+      "act": "yea",
+      "motion": "House: HCR 48 read the third time and passed",
+      "note": "House roll call as printed ('West'), linked to Richard William West (district 102) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.235Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://www.ballotpedia.org (not tried, listed as blocked per instruction)",
+        "house.mo.gov not fetched (robots/hard rule)",
+        "web searches (standard) on name plus voter ID / citizenship / election integrity",
+        "iVoterGuide 2020 questionnaire (https://ivoterguide.com/candidate/53592/race/12042/election/800; same candidate id lists District 102 races 2022-2026)",
+        "news search: redistricting remarks only, nothing on the subject",
+        "not reviewed: no campaign site found"
+      ],
+      "found": 1,
+      "at": "2026-11-04T05:10:51.199Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:10:53.757Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-04T14:14:55.235Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}
