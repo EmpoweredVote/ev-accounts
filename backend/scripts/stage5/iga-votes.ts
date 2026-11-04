@@ -26,6 +26,7 @@ import { join } from 'node:path';
 import { API_BASE, fetchIgaPageText, igaGet, igaRedirectTarget } from '../../src/lib/adapters/igaAdapter.js';
 import { igaRollCallLinesFor, parseIgaRollCallLine, type IgaVote } from '../../src/lib/igaRollCallEvidence.js';
 import { readCsv } from './lib.js';
+import { isCommitteeVote, isConferenceReport, pickRollCall, tallyOf, type ApiRollCall } from './igaVotesPlan.js';
 
 const args = process.argv.slice(2);
 const opt = (k: string) => (args.includes(k) ? args[args.indexOf(k) + 1] : undefined);
@@ -61,19 +62,26 @@ function billOf(instrument: string): { session: string; bill: string } | null {
 /** Roll-call API link by `${session}/${bill}/${H|S}/${n}`, from each bill's API record. */
 const linkIndex = new Map<string, string>();
 const pdfIndex = new Map<string, string | null>();
-const billsRead = new Set<string>();
-async function rollCallPdf(session: string, bill: string, chamber: 'H' | 'S', n: string): Promise<string | null> {
+const billsRead = new Map<string, ApiRollCall[]>();
+/** The bill's `all_rollcalls` from its API record, read once; fills linkIndex. */
+async function billRollCalls(session: string, bill: string): Promise<ApiRollCall[]> {
   const key = `${session}/${bill}`;
   if (!billsRead.has(key)) {
-    billsRead.add(key);
     const res = await igaGet(`${API_BASE}/${session}/bills/${bill.toLowerCase()}`, 'application/json');
     const b = res ? await res.json().catch(() => null) : null;
-    for (const r of Array.isArray(b?.all_rollcalls) ? b.all_rollcalls : []) {
+    const list: any[] = Array.isArray(b?.all_rollcalls) ? b.all_rollcalls : [];
+    billsRead.set(key, list);
+    for (const r of list) {
       const ch = r?.chamber?.name === 'House' ? 'H' : r?.chamber?.name === 'Senate' ? 'S' : null;
       if (!ch || !r?.rollcall_number || !r?.link) continue;
       linkIndex.set(`${key}/${ch}/${r.rollcall_number}`, String(r.link));
     }
   }
+  return billsRead.get(key)!;
+}
+async function rollCallPdf(session: string, bill: string, chamber: 'H' | 'S', n: string): Promise<string | null> {
+  const key = `${session}/${bill}`;
+  await billRollCalls(session, bill);
   // The API's ids are opaque (docs: "subject to change"); its PDF form redirects to the public file,
   // and only that public URL is ever cited.
   const k = `${key}/${chamber}/${n}`;
@@ -112,11 +120,14 @@ for (const r of rows) {
     const per = covered.get(name) ?? covered.set(name, new Map()).get(name)!;
     if (!per.has(u)) per.set(u, true);
     const miss = (why: string) => { unmapped.push([name, u, f.instrument_id ?? '', why]); per.set(u, false); };
-    if (/committee/i.test(String(f.motion ?? ''))) { miss('committee vote (no floor roll call)'); continue; }
+    if (isCommitteeVote(String(f.motion ?? ''))) { miss('committee vote (no floor roll call)'); continue; }
     const txt = `${f.note ?? ''} ${f.motion ?? ''} ${u}`;
     const ch = HOUSE.test(txt) ? 'H' : SENATE.test(txt) ? 'S' : null;
-    const n = /roll call\D{0,3}(\d+)/i.exec(txt)?.[1] ?? /\.(\d+)_[HS]\.pdf$/.exec(u)?.[1];
     const bill = billOf(String(f.instrument_id ?? ''));
+    // No roll-call number printed: take the bill's one roll call in that chamber with the finding's tally.
+    const tally = tallyOf(txt);
+    const n = /roll call\D{0,3}(\d+)/i.exec(txt)?.[1] ?? /\.(\d+)_[HS]\.pdf$/.exec(u)?.[1]
+      ?? (ch && bill && tally ? pickRollCall(await billRollCalls(bill.session, bill.bill), ch, tally, isConferenceReport(txt)) ?? undefined : undefined);
     if (!ch || !n || !bill) { miss(`cannot tell chamber/roll call/bill: ${String(f.motion ?? '').slice(0, 80)}`); continue; }
     const pdf = await rollCallPdf(bill.session, bill.bill, ch, n);
     if (!pdf) { miss(`roll call ${ch} ${n} not in the API record of ${bill.bill} (${bill.session})`); continue; }

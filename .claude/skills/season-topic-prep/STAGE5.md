@@ -361,7 +361,10 @@ Every LegiScan call counts against the monthly cap (`LEGISCAN_API_KEY`). The lin
 official roll-call PDF through the MyIGA API, cuts the person's line from it
 ("Indiana House roll call 340 (2025), SB 10 - Culp - 3rd Reading: Culp voted Yea."), cites the PDF, uncites a
 covered bill page, and cross-checks every line against the finding (`iga/crosscheck.json`, 🔴 **0 disagree**).
-A vote with no line is listed in `iga/unmapped.json`: hold that person; do not guess. Replayed on `in-01`: the
+A vote with no line is listed in `iga/unmapped.json`: hold that person; do not guess. A finding that prints no
+roll-call number is matched by chamber and tally to the bill's one roll call (exact first, else within one vote on
+each count, as LegiScan's tallies can be; never two candidates), and a floor vote on a conference committee report
+is a floor vote, not a committee vote (`igaVotesPlan.ts`, 2026-11-04). Replayed on `in-01`: the
 same 101 votes as the LegiScan lines, plus Alting and Prescott, whom LegiScan could not match. Bill pages,
 legislator pages and every other iga.in.gov PDF read through the same API in step 4 (`build_evidence.py`,
 `pdf_pages.py`), and the verifier reads them the same way (`src/lib/adapters/igaAdapter.ts`).
