@@ -61,7 +61,7 @@ fixed by law, and notes like "recount running" or "winner declined".
 |---|---|---|
 | Federal | 470 | 435 `NATIONAL_LOWER`, 35 `NATIONAL_UPPER` |
 | State | 1,157 | 848 `STATE_LOWER`, 266 `STATE_UPPER`, 34 `STATE_EXEC`, 9 boards |
-| Local | 526 | 202 `SCHOOL`, 179 `LOCAL`, 103 `COUNTY`, 40 `LOCAL_EXEC` |
+| Local | 524 | 202 `SCHOOL`, 179 `LOCAL`, 103 `COUNTY`, 40 `LOCAL_EXEC` |
 | Other | 8 | 2 `JUDICIAL`, 6 with no office attached |
 | **Total** | **2,159** | |
 
@@ -288,7 +288,7 @@ seating script must pass the term start from the date table, never "today".
 | 2. House | 435 | 2027-01-03 | Same statutory date, same shape as wave 1 |
 | 3. December locals | ~175 | **2026-12-01 onward** | Nearest deadline in the program |
 | 4. State | 1,157 | mostly Jan+ | Largest pile, latest dates, needs the seeding wave first |
-| 5. Remaining locals | ~350 | Jan+ and varied | January and off-cycle starts |
+| 5. Remaining locals | ~349 | Jan+ and varied | January and off-cycle starts |
 
 🔴 **Wave 3 has the earliest deadline but runs third.** That is deliberate: waves 1 and 2 are
 the trial run and prove the spine, and they are only 470 seats of largely uniform shape.
@@ -316,7 +316,7 @@ historical rows, not confirmed. The real sequencing cannot be set until those ~1
 sourced dates, so that is piece 4's first job, ahead of the state tier's.
 
 🔴🔴 **MEASURED 2026-11-04: LOCAL'S DEADLINE ARRIVES FIRST, AND THE PRIORITY ORDER ABOVE
-INVERTS IT.** Reading existing `office_terms.term_start` months for the 526 local offices that
+INVERTS IT.** Reading existing `office_terms.term_start` months for the 524 local offices that
 carry a 2026-11-03 race:
 
 | Tier | Dec starts | Jan starts | Other | December range |
@@ -489,7 +489,7 @@ recorded. Per-state alone is already disproved by our own data: the six Washingt
 a dated handover are **county** offices ending 2026-12-31, which is not a Washington statewide
 date. Keying on the office lets the seeding script look a date up itself in the common case
 while still allowing a per-seat override, which is the difference between a scripted wave and
-526 manual lookups.
+524 manual lookups.
 
 🔴 **A predecessor's term may end BEFORE the successor's term starts, leaving a real gap.**
 The six Washington county terms end 2026-12-31; if those winners take office later,
