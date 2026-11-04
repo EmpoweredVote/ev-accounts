@@ -1041,6 +1041,29 @@
           "sha256": "db45e4868a76f99bc336496193d41182472f3efe2dc277b8edb92828c9fafefc"
         }
       }
+    },
+    {
+      "id": "3002c8efc5867afe7b265635bcb5b089be5998c4078c8ab70609894e9424d56f",
+      "kind": "own-words",
+      "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-april-newsletter",
+      "date": "2026-04-27",
+      "date_precision": "day",
+      "passage": "I voted against that law because allowing people to carry concealed weapons without a permit puts Hoosiers at risk. Sadly, the legislature refuses to enact even the most basic safety laws like closing loopholes in background checks, instituting safe gun storage requirements and banning assault rifles. Gun safety policies save lives, and we need more common-sense gun legislation at the Statehouse.",
+      "note": "His own monthly newsletter as State Representative, signed and written in the first person (Substack, 'Rep. Matt Pierce', Apr 27, 2026), section 'Yet More Evidence Gun Safety Laws are Needed'. In term. He names laws he says the legislature refuses to enact. Fetched as plain HTTP by fallback-fetch.ts (the verifier's own fetch path); found 2026-11-04 by the Stage 5 step 5 read of his Season 2 chair's source (in-02-held).",
+      "subjects": [
+        "permitless carry",
+        "background checks",
+        "safe storage",
+        "assault-weapons ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "orchestrator, gun-policy Stage 5 held follow-up (2026-11-04)",
+        "fetched_at": "2026-11-04T18:00:00Z",
+        "method": "curl"
+      }
     }
   ],
   "searches": [
