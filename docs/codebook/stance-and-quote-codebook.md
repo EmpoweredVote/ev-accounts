@@ -393,7 +393,7 @@ This variable is the core of the codebook. The stance-program pass-1 measurement
 | `multi-subject` | A vote on a bill with an operative part that would be evidence for **a different compass topic** (V4.1 "The single-subject test"). Omnibus, budget, appropriations and reconciliation bills almost always are. | only via the vote ladder |
 | `procedural` | Cloture, rule, table, recommit, previous question, adjournment. | no |
 | `study-directive` | It orders a study, task force or report. | no |
-| `near-unanimous` | Fewer than 10% of the body voted against. (0.6) On a body of 10 or fewer voting members, the tally does not decide: a vote adopted on a consent agenda or en bloc, or a vote whose provision is a duty a higher law imposes, is `near-unanimous` (V4.1 "Small bodies"). | no, alone |
+| `near-unanimous` | Fewer than 10% of the members voting Yes or No voted against (clarified 2026-11-03: a share of votes cast, not of all seats; every gate so far was computed this way). (0.6) On a body of 10 or fewer voting members, the tally does not decide: a vote adopted on a consent agenda or en bloc, or a vote whose provision is a duty a higher law imposes, is `near-unanimous` (V4.1 "Small bodies"). | no, alone |
 | `rhetorical` | Real and attributed, but it names no policy clause ("hateful and divisive"). | no |
 | `off-axis` | It speaks to the topic along a dimension the ladder does not order. | no |
 
