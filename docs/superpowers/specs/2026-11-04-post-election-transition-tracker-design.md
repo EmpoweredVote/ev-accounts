@@ -566,3 +566,27 @@ node backend/scripts/build-transition-dataset.mjs   # writes seats.csv + waves.c
 
 ⚠ **It is private until shared.** Nobody else can open the link until the user shares it from
 the page's Share menu; Claude cannot change that.
+
+## Piece 8 — the read path, as built (CC_0341)
+
+`essentials.office_next_term` is the nearest not-yet-started term, one row per office. The
+three fields `incoming_holder_id`, `incoming_holder_name` and `incoming_on` are exposed on:
+
+- `getPoliticiansFlatList` (the `?q=` list)
+- **the address and coordinate paths**, via `DISTRICT_SELECT_FIELDS` in `districtQueries.ts`
+
+🔴 **THE ADDRESS PATH IS THE SURFACE THIS PIECE EXISTS FOR, AND IT WAS MISSED ON THE FIRST
+PASS.** The join went into the list query only, so `/politicians` returned
+`incoming_on = 2027-01-05` for the Los Angeles judge while an LA **address** returned `null` for
+the same person — two endpoints, one seat, contradictory transition state, and the null is
+indistinguishable from "nobody is coming". A reviewer found it; the live probe that would have
+caught it was skipped on the reasoning that no winner was recorded yet, which was wrong because
+the `CC_0201` handover is real, dated and address-reachable. ▶ **Probe an LA County address, not
+a South Carolina one.**
+
+⚠ **Still NOT sourced on the browse path.** The three mappers in `essentialsBrowseService.ts`
+set all three fields to explicit `null` with a comment saying so. Nothing should render a
+transition from that path until its seven query sites get the join and it is measured.
+
+▶ **Outstanding for piece 8:** the Essentials frontend render. Separate repository, separate
+plan. Until it ships, voters still see a departing officeholder with no sign they are leaving.

@@ -18,7 +18,9 @@
  * is seated from them.
  */
 import 'dotenv/config';
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, mkdirSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { Pool } from 'pg';
 import { buildStatus } from './election-transition-status.mjs';
 
@@ -111,8 +113,12 @@ try {
   }
   const waves = [...byWave.values()].sort((a, b) => a.wave - b.wave);
 
-  writeFileSync('data/transition-tracker/seats.csv', csv(seats, Object.keys(seats[0])));
-  writeFileSync('data/transition-tracker/waves.csv', csv(waves, Object.keys(waves[0])));
+  // Anchored on this file, not on cwd: a cwd-relative write lands somewhere else, or throws,
+  // whenever the script is run from anywhere but backend/.
+  const outDir = join(dirname(fileURLToPath(import.meta.url)), '..', 'data', 'transition-tracker');
+  mkdirSync(outDir, { recursive: true });
+  writeFileSync(join(outDir, 'seats.csv'), csv(seats, Object.keys(seats[0])));
+  writeFileSync(join(outDir, 'waves.csv'), csv(waves, Object.keys(waves[0])));
   console.log(`seats.csv ${seats.length} rows · waves.csv ${waves.length} rows`);
   console.log(waves.map((w) => `${w.wave_label}: ${w.total} (blocked ${w.blocked})`).join('\n'));
 } finally {

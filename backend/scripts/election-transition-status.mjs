@@ -29,6 +29,7 @@
  */
 import 'dotenv/config';
 import { Pool } from 'pg';
+import { pathToFileURL } from 'node:url';
 
 /** Map a districts.district_type to the tier the program works in. */
 export function levelOf(districtType) {
@@ -100,11 +101,30 @@ export async function buildStatus(client, opts = {}) {
              rc.result_certainty
         FROM essentials.race_candidates rc
     ),
+    -- 🔴 A RACE CAN HAVE MORE THAN ONE WINNER, AND PICKING ONE HIDES THE REST.
+    -- An earlier version took DISTINCT ON (race_id) ordered by politician_id — one winner per
+    -- race, chosen by UUID order. Production already holds 7 races with several 'won' rows, in
+    -- two legitimate shapes: a PRIMARY (Maine 2026-06-09 returns a winner per party ballot) and
+    -- a MULTI-SEAT AT-LARGE council (Glendale and Beverly Hills elect 3). Waves 3 and 5 are 532
+    -- local races where at-large councils are common, so the dropped winners — and their
+    -- headshot and stance gaps — would have been invisible. That is exactly the hiding this
+    -- tracker exists to prevent.
     winner AS (
-      SELECT DISTINCT ON (l.race_id) l.race_id, l.politician_id, l.full_name, l.photo_url,
-             l.result_certainty
+      SELECT l.race_id,
+             count(*)                                   AS winner_count,
+             array_agg(l.politician_id)                 AS politician_ids,
+             string_agg(l.full_name, ', ' ORDER BY l.full_name) AS full_names,
+             -- Mixed provenance across a multi-seat race reads as the weaker of the two.
+             CASE WHEN bool_or(l.result_certainty IS DISTINCT FROM 'certified')
+                  THEN 'called' ELSE 'certified' END    AS result_certainty,
+             bool_or(l.photo_url IS NULL AND NOT EXISTS (
+               SELECT 1 FROM essentials.politicians wp
+                WHERE wp.id = l.politician_id AND wp.photo_custom_url IS NOT NULL)) AS any_no_headshot,
+             bool_or(NOT EXISTS (
+               SELECT 1 FROM inform.politician_answers pa
+                WHERE pa.politician_id = l.politician_id))                          AS any_no_stances
         FROM live l WHERE l.result = 'won'
-       ORDER BY l.race_id, l.politician_id
+       GROUP BY l.race_id
     )
     -- 🔴 KEYED ON THE RACE, NOT THE OFFICE. An earlier version used DISTINCT ON (o.id), which
     -- looked right -- the repo's rule is that office-rooted reads de-duplicate on o.id -- and
@@ -123,20 +143,31 @@ export async function buildStatus(client, opts = {}) {
            och.politician_id AS current_holder_id,
            hp.full_name      AS current_holder_name,
            och.term_end      AS current_holder_term_end,
-           w.politician_id   AS winner_id,
-           w.full_name       AS winner_name,
+           w.winner_count    AS winner_count,
+           w.full_names      AS winner_name,
            w.result_certainty AS result_certainty,
+           -- 🔴 MEASURED FROM THE ELECTION DATE, NOT FROM TODAY. An earlier version filtered
+           -- term_start > $2::date (today), which made this value ALWAYS in the future by
+           -- construction — so seatState's today >= termStart could never be true and state
+           -- 5 was unreachable. Worse, on the morning a term started the subquery stopped
+           -- matching, returned NULL, and the seat fell BACKWARDS from "seated" to "certified"
+           -- on the very day it was sworn in. Anchoring on the election date makes both states
+           -- reachable and lets the date comparison in seatState do its job.
            (SELECT min(t.term_start) FROM essentials.office_terms t
-             WHERE t.office_id = o.id AND t.politician_id = w.politician_id
-               AND t.term_start > $2::date)            AS winner_term_start,
+             WHERE t.office_id = o.id AND t.politician_id = ANY(w.politician_ids)
+               AND t.term_start >= e.election_date)    AS winner_term_start,
+           -- A multi-seat race is seated only when EVERY winner has a term.
+           (SELECT count(DISTINCT t.politician_id) FROM essentials.office_terms t
+             WHERE t.office_id = o.id AND t.politician_id = ANY(w.politician_ids)
+               AND t.term_start >= e.election_date)    AS winners_seated,
            (SELECT count(*) FROM live l WHERE l.race_id = r.id)  AS candidate_rows,
            (SELECT count(*) FROM live l WHERE l.race_id = r.id
               AND (l.result IS NULL OR l.result NOT IN ('lost','not_nominated','withdrew')))
                                                         AS live_candidates,
-           (wp.photo_custom_url IS NULL AND w.photo_url IS NULL) AS winner_no_headshot,
-           (w.politician_id IS NOT NULL AND NOT EXISTS (
-              SELECT 1 FROM inform.politician_answers pa WHERE pa.politician_id = w.politician_id))
-                                                        AS winner_no_stances
+           -- Gap flags are computed across EVERY winner of the race, in the winner CTE, so a
+           -- multi-seat council reports a gap when any of its winners has one.
+           w.any_no_headshot AS winner_no_headshot,
+           w.any_no_stances  AS winner_no_stances
       FROM essentials.elections e
       JOIN essentials.races r      ON r.election_id = e.id
       LEFT JOIN essentials.offices o   ON o.id = r.office_id
@@ -144,11 +175,10 @@ export async function buildStatus(client, opts = {}) {
       LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
       LEFT JOIN essentials.politicians hp ON hp.id = och.politician_id
       LEFT JOIN winner w  ON w.race_id = r.id
-      LEFT JOIN essentials.politicians wp ON wp.id = w.politician_id
      WHERE e.election_date = $1::date
      ORDER BY r.id
     `,
-    [electionDate, today],
+    [electionDate],
   );
 
   const wanted = opts.levels ?? null;
@@ -171,19 +201,28 @@ export async function buildStatus(client, opts = {}) {
         currentHolderTermEnd: row.current_holder_term_end
           ? new Date(row.current_holder_term_end).toISOString().slice(0, 10)
           : null,
-        winner: row.winner_id ? { id: row.winner_id, name: row.winner_name } : null,
+        winnerCount: Number(row.winner_count ?? 0),
+        winner: row.winner_count ? { name: row.winner_name } : null,
         resultCertainty: row.result_certainty ?? null,
         seatState: seatState({
-          result: row.winner_id ? 'won' : null,
+          result: row.winner_count ? 'won' : null,
           resultCertainty: row.result_certainty,
-          winnerTermStart,
+          // 🔴 A multi-seat race is seated only when EVERY winner has a term. Passing a term
+          // start while some winners are unseated would report a half-filled council as done.
+          winnerTermStart:
+            Number(row.winners_seated ?? 0) === Number(row.winner_count ?? 0) ? winnerTermStart : null,
           today,
         }),
         flags: {
           noCandidateRows: Number(row.candidate_rows) === 0,
           noOffice: row.office_id === null,
-          noHeadshot: Boolean(row.winner_id) && row.winner_no_headshot === true,
-          noStances: row.winner_no_stances === true,
+          noHeadshot: Boolean(row.winner_count) && row.winner_no_headshot === true,
+          noStances: Boolean(row.winner_count) && row.winner_no_stances === true,
+          // Some winners seated, some not — a partly-filled multi-seat body.
+          partlySeated:
+            Boolean(row.winner_count) &&
+            Number(row.winners_seated ?? 0) > 0 &&
+            Number(row.winners_seated) < Number(row.winner_count),
           // A predecessor whose term already ends is an overwrite hazard when seating.
           holderTermEnds: row.current_holder_term_end !== null,
         },
@@ -192,7 +231,7 @@ export async function buildStatus(client, opts = {}) {
     })
     .filter((s) => (wanted ? wanted.includes(s.level) : true));
 
-  const totals = { byLevel: {}, byState: {}, flags: { noCandidateRows: 0, noOffice: 0, noHeadshot: 0, noStances: 0, holderTermEnds: 0 } };
+  const totals = { byLevel: {}, byState: {}, flags: { noCandidateRows: 0, noOffice: 0, noHeadshot: 0, noStances: 0, holderTermEnds: 0, partlySeated: 0 } };
   for (const s of seats) {
     const lv = (totals.byLevel[s.level] ??= { total: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 });
     lv.total += 1;
@@ -206,7 +245,10 @@ export async function buildStatus(client, opts = {}) {
   return { generatedAt: new Date().toISOString(), electionDate, today, seats, totals };
 }
 
-const isMain = process.argv[1] && import.meta.url.endsWith(process.argv[1].replace(/\\/g, '/').split('/').pop());
+// 🔴 COMPARE RESOLVED URLS, NOT A FILENAME SUFFIX. The sibling script had this same bug:
+// any importer whose own filename ends with this one's would have run the CLI, opened a pool
+// against DATABASE_URL and written JSON to stdout. A suffix is not an identity.
+const isMain = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
 if (isMain) {
   const argv = process.argv.slice(2);
   const arg = (name, dflt) => {

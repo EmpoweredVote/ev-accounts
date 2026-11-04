@@ -43,7 +43,7 @@ import { pathToFileURL } from 'node:url';
  * distinct politician ids before comparing. Counting rows instead of people would report the
  * same person twice.
  */
-export function findDrift({ politicians, currentHolders }) {
+export function findDrift({ politicians, currentHolders, raceCandidates = [] }) {
   // 🔴 A PLACEHOLDER OFFICE IS NOT A SEAT. `currentHolders` must already exclude
   // 'Candidate for ...' offices (migration 196) — the caller's SQL does it, and so does the read
   // path this flag feeds (essentialsService.ts:360). The first version of this function did not,
@@ -67,11 +67,33 @@ export function findDrift({ politicians, currentHolders }) {
     }
   }
 
+  // race_candidates.is_incumbent — RULED 2026-11-04: it means "incumbent OF THE SEAT THIS RACE
+  // IS FOR". Each row therefore carries its own expected value, computed by the caller's SQL
+  // against the RACE'S OWN OFFICE as of the RACE'S OWN ELECTION DATE; this function only compares.
+  //
+  // 🔴 ELECTION DATE, NOT TODAY, AND THE DIFFERENCE IS NOT THEORETICAL. Three rows in production
+  // hold the contested seat today but took office AFTER the election they appear in — Chris
+  // Jamieson and Brandon Smith won as challengers and were seated weeks later. A "holds it today"
+  // rule relabels those three winners as the incumbents of races they won as challengers.
+  for (const rc of raceCandidates) {
+    if (!rc.politician_id) continue;
+    const expected = Boolean(rc.expected_is_incumbent);
+    if (Boolean(rc.is_incumbent) !== expected) {
+      drift.push({
+        raceCandidateId: rc.id,
+        politicianId: rc.politician_id,
+        column: 'race_candidates.is_incumbent',
+        current: Boolean(rc.is_incumbent),
+        expected,
+      });
+    }
+  }
+
   return drift;
 }
 
 /**
- * 🔴 TWO COLUMNS THIS DELIBERATELY DOES NOT RECONCILE, EACH BECAUSE RECONCILING IT WAS WRONG.
+ * 🔴 ONE COLUMN THIS DELIBERATELY DOES NOT RECONCILE, BECAUSE RECONCILING IT WAS WRONG.
  *
  *   politicians.office_id         A DEPRECATED POINT-IN-TIME SNAPSHOT (ADR 0002). It was never
  *                                 meant to equal the current holder — that is why the view
@@ -80,21 +102,19 @@ export function findDrift({ politicians, currentHolders }) {
  *                                 point at real offices, none dangling, and there is no history
  *                                 table, so the values would have existed nowhere afterwards.
  *
- *   race_candidates.is_incumbent  SEAT-SCOPED, not global: "is this candidate the incumbent OF
- *                                 THE SEAT BEING CONTESTED". A state senator running for the
- *                                 U.S. House is correctly `false`. An earlier version used the
- *                                 global rule and reported 297 rows.
- *                                 ⚠ AND THE DATA CARRIES BOTH CONVENTIONS: 234 cross-office
- *                                 candidates are stored `true` while others are stored `false`.
- *                                 Until somebody rules on which is intended, this script must
- *                                 not touch the column — `compassService.ts:629` reads it for
- *                                 the "challengers only" view, so a wrong guess is voter-facing.
+ * Adding it back needs a ruling first, not a predicate.
  *
- * Adding either back needs a ruling first, not a predicate.
+ * ✅ race_candidates.is_incumbent WAS such a ruling, and it is now reconciled. An earlier version
+ * used the GLOBAL rule ("holds office somewhere") and reported 297 rows, 234 of which were
+ * cross-office candidates — a state senator running for the U.S. House, a Lt. Governor running
+ * for Treasurer — that the rule would have relabelled as incumbents of races they were
+ * challenging. The data carried both conventions, so the script refused to touch it until the
+ * operator ruled on 2026-11-04: the column means "incumbent OF THE SEAT THIS RACE IS FOR",
+ * measured on the race's own election date. CC_0343 applied that to 292 rows.
  */
 
 export async function computeIncumbencyDrift(client) {
-  const [politicians, currentHolders] = await Promise.all([
+  const [politicians, currentHolders, raceCandidates] = await Promise.all([
     client.query(
       `SELECT id, is_incumbent FROM essentials.politicians WHERE is_active = true`),
     // 🔴 NOT ILIKE 'Candidate for%' — A PLACEHOLDER OFFICE IS NOT A SEAT. Without this clause
@@ -106,22 +126,46 @@ export async function computeIncumbencyDrift(client) {
          JOIN essentials.offices o ON o.id = och.office_id
         WHERE och.politician_id IS NOT NULL
           AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'`),
+    // Seat-scoped and measured AT THE ELECTION DATE — see findDrift. The expected value is
+    // computed here, in SQL, because it is a fact about this row's own race and office.
+    client.query(
+      `SELECT rc.id, rc.politician_id, rc.is_incumbent,
+              EXISTS (SELECT 1 FROM essentials.office_terms t
+                       WHERE t.office_id = r.office_id
+                         AND t.politician_id = rc.politician_id
+                         AND (t.term_start IS NULL OR t.term_start <= e.election_date)
+                         AND (t.term_end   IS NULL OR t.term_end   >= e.election_date)
+                     ) AS expected_is_incumbent
+         FROM essentials.race_candidates rc
+         JOIN essentials.races r ON r.id = rc.race_id
+         JOIN essentials.elections e ON e.id = r.election_id
+        WHERE e.election_date >= CURRENT_DATE - INTERVAL '1 year'
+          AND rc.politician_id IS NOT NULL`),
   ]);
 
   return findDrift({
     politicians: politicians.rows,
     currentHolders: currentHolders.rows,
+    raceCandidates: raceCandidates.rows,
   });
 }
 
 export async function applyIncumbencyFixes(client, rows) {
   let applied = 0;
   for (const row of rows) {
+    // ⚠ COUNT WHAT THE DATABASE DID, NOT HOW MANY TIMES WE ASKED. Every UPDATE is guarded on the
+    // value it changes, so a row already correct writes nothing — `applied += 1` would have
+    // reported work that never happened.
     if (row.column === 'politicians.is_incumbent') {
-      await client.query(
+      const res = await client.query(
         `UPDATE essentials.politicians SET is_incumbent = $2 WHERE id = $1 AND is_incumbent IS DISTINCT FROM $2`,
         [row.politicianId, row.expected]);
-      applied += 1;
+      applied += res.rowCount ?? 0;
+    } else if (row.column === 'race_candidates.is_incumbent') {
+      const res = await client.query(
+        `UPDATE essentials.race_candidates SET is_incumbent = $2 WHERE id = $1 AND is_incumbent IS DISTINCT FROM $2`,
+        [row.raceCandidateId, row.expected]);
+      applied += res.rowCount ?? 0;
     }
   }
   return applied;

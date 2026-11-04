@@ -67,15 +67,38 @@ describe('findDrift', () => {
   // 🔴 The next two pin rules this script used to have and MUST NOT get back. Both were applied
   // to a first measurement that reported 429 drift rows; reading real rows showed only 9 were
   // drift. CC_0342 has the full account.
-  it('never reports race_candidates.is_incumbent — the column is seat-scoped and ambiguous', () => {
-    // A state senator running for the U.S. House is correctly NOT the incumbent of that race.
-    // The global rule called 297 rows drift; 234 of them were cross-office candidates stored
-    // `true` and others of the same shape were stored `false`, so the data holds BOTH
-    // conventions and nobody has ruled on which is meant.
+  it('ignores a cross-office candidate: holding a seat elsewhere is not incumbency in THIS race', () => {
+    // A state senator running for the U.S. House. The global rule called 234 rows like this
+    // drift and would have relabelled every one as the incumbent of a race they were
+    // challenging. The expected value is computed per row by the caller's SQL, against the
+    // race's own office on the race's own election date.
     const drift = findDrift({
       politicians: [{ id: 'p4', is_incumbent: true }],
       currentHolders: [holder('p4')],
-      raceCandidates: [{ id: 'rc1', politician_id: 'p4', is_incumbent: false }],
+      raceCandidates: [{ id: 'rc1', politician_id: 'p4', is_incumbent: false, expected_is_incumbent: false }],
+    });
+    expect(drift).toEqual([]);
+  });
+
+  it('flags a candidate defending the very seat they held on election day', () => {
+    const drift = findDrift({
+      politicians: [{ id: 'p6', is_incumbent: true }],
+      currentHolders: [holder('p6')],
+      raceCandidates: [{ id: 'rc2', politician_id: 'p6', is_incumbent: false, expected_is_incumbent: true }],
+    });
+    expect(drift).toEqual([
+      { raceCandidateId: 'rc2', politicianId: 'p6', column: 'race_candidates.is_incumbent', current: false, expected: true },
+    ]);
+  });
+
+  it('does not call a winner seated AFTER the election its incumbent', () => {
+    // Chris Jamieson and Brandon Smith hold their seats today but took office weeks after the
+    // elections they appear in. They ran as challengers and won; stored false is correct, and a
+    // "holds it today" rule would have flipped all three.
+    const drift = findDrift({
+      politicians: [{ id: 'p7', is_incumbent: true }],
+      currentHolders: [holder('p7')],
+      raceCandidates: [{ id: 'rc3', politician_id: 'p7', is_incumbent: false, expected_is_incumbent: false }],
     });
     expect(drift).toEqual([]);
   });

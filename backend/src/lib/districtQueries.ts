@@ -94,6 +94,16 @@ export const DISTRICT_SELECT_FIELDS = `
     -- could not be keyed on anything at all, and it reached voters as a blank card. Selected on
     -- every politician query, held or not, so one shape answers both.
     o.id AS office_id,
+    -- 🔴 CC_0341 TRANSITION FIELDS, AND THE ADDRESS PATH IS THE SURFACE THEY EXIST FOR. They were
+    -- added to getPoliticiansFlatList only, so for a while /politicians returned
+    -- incoming_on = '2027-01-05' for the Los Angeles judge while an LA ADDRESS returned null for
+    -- the same person — two endpoints, same seat, contradictory transition state, and the null
+    -- was indistinguishable from "nobody is coming". Same lesson as office_description above:
+    -- THE DATA WAS CORRECT AND THE READ PATH WAS NOT. This select is office-rooted
+    -- (DISTINCT ON (o.id)) and office_next_term is one row per office, so the join cannot fan out.
+    ont.politician_id AS incoming_holder_id,
+    inc.full_name AS incoming_holder_name,
+    ont.term_start AS incoming_on,
     o.title AS office_title, o.representing_state, o.representing_city,
     -- 🔴 WITHOUT THIS THE ADDRESS PATH DROPPED EVERY OFFICE DESCRIPTION ON THE FLOOR. The mapper
     -- has always read row.office_description, and this select never produced it, so the field
@@ -133,6 +143,11 @@ export const DISTRICT_JOINS = `
     -- the expired holder; such a seat now correctly reads as vacant.
     LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
     LEFT JOIN essentials.politicians p ON p.id = och.politician_id
+    -- CC_0341: the successor who has not taken office yet. LEFT JOIN, and it must stay one —
+    -- almost no office has a successor waiting, so an inner join would empty every address
+    -- result. One row per office, so no fan-out, and no condition on it may constrain the match.
+    LEFT JOIN essentials.office_next_term ont ON ont.office_id = o.id
+    LEFT JOIN essentials.politicians inc ON inc.id = ont.politician_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
     LEFT JOIN essentials.government_bodies gvb
