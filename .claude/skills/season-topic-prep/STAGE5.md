@@ -102,6 +102,37 @@ Run [templates/stage5-coder-prompt.md](templates/stage5-coder-prompt.md) on the 
 per batch of about 20 people, writing `stage5/codes/<politician_id>.json`. The ladder text comes from
 `npm run topic:ladder-lint --prefix backend -- --topic <key> --season draft`.
 
+### Pitfalls the first topic found (voting-rights, Season 3, 2026-10/11)
+
+Each cost at least one re-code round or a store fix. Check them before coding a new topic.
+
+- **Read bill text before coding.** Fetch the full text of broad or much-voted bills and draft each bill's verdict
+  (an Opus draft, then a review) before the coders run. Three voting-rights re-code rounds came from text found late.
+  Never overwrite a stored instrument's text with an earlier version (enrolled text beats as-introduced).
+- **Read a vote on the version voted on.** An amendment can add or strike the topic's text between printer's
+  numbers. PA SB 224 PN 1171 and PA SB 1 PN 385 passed the House after their voter-ID text was struck, and the store
+  said they carried it (#1289). Check the journal for the version and for separate votes on the topic part
+  (W3-R25). A House-added part was never in the Senate-passed or as-introduced version, so its sponsors did not
+  sponsor it.
+- **Linking votes.** A concurrence motion is not an amendment vote. On a same-day failed-then-passed roll call, take
+  the later one. A cross-chamber sponsor fallback needs the printed first name to agree. Skip a vote taken before
+  the topic's text existed.
+- **Search notes.** A note whose first place starts with `status` is read as an exit by the coding scripts: keep
+  `status:` for exits only.
+- **Web-search budget.** About 200 searches per turn of the orchestrating session, shared by every subagent it runs.
+- **Blank classes.** Coders drift between `gate` and `wording` for people whose only records widen an accepted
+  list. Name that case in the coder prompt's blank-class rule.
+- **Rulings live in the coder digest.** A runner ruling that exists only in a batch script is invisible to the next
+  coder and the next topic. Add it to the digest the coders read, then to the scripts.
+- **Store corrections keep finding ids.** A finding's id hashes its kind, URL, instrument, act, date and motion.
+  Correct a wrong fact in the note and subjects, not the motion. A changed act changes the id: find the codes that
+  cite the old one first.
+- **Floor debate as evidence.** Pennsylvania's journals print floor remarks as text; Georgia keeps video only.
+  Read `robots.txt` before fetching from any video host (palegis' Sliq player says `Disallow: /`).
+- **Reasoning text is voter-facing.** When a store fix changes a fact that seated reasoning repeats, search the
+  codes for the phrase and fix each row with a guarded text-only migration (CA_0355, CA_0357), not a batch
+  re-write, which would send the rows back to review.
+
 ### 5. Early check (after federal and the first two or three states)
 
 ```bash
