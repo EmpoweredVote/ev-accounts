@@ -43,7 +43,13 @@ import { pathToFileURL } from 'node:url';
  * distinct politician ids before comparing. Counting rows instead of people would report the
  * same person twice.
  */
-export function findDrift({ politicians, currentHolders, raceCandidates }) {
+export function findDrift({ politicians, currentHolders }) {
+  // 🔴 A PLACEHOLDER OFFICE IS NOT A SEAT. `currentHolders` must already exclude
+  // 'Candidate for ...' offices (migration 196) — the caller's SQL does it, and so does the read
+  // path this flag feeds (essentialsService.ts:360). The first version of this function did not,
+  // and reported 25 "missing incumbents" of whom 22 were CANDIDATES holding only a placeholder:
+  // Roy Cooper, Sherrod Brown, Mary Peltola and 19 others. Applying that would have published
+  // them as sitting incumbents. See CC_0342.
   const holds = new Set();
   for (const h of currentHolders) if (h.politician_id) holds.add(h.politician_id);
 
@@ -59,54 +65,52 @@ export function findDrift({ politicians, currentHolders, raceCandidates }) {
         expected,
       });
     }
-    // The deprecated snapshot asserts a seat. If the person holds nothing, it asserts a lie.
-    if (p.office_id && !expected) {
-      drift.push({
-        politicianId: p.id,
-        column: 'politicians.office_id',
-        current: p.office_id,
-        expected: null,
-      });
-    }
-  }
-
-  for (const rc of raceCandidates) {
-    if (!rc.politician_id) continue;
-    const expected = holds.has(rc.politician_id);
-    if (Boolean(rc.is_incumbent) !== expected) {
-      drift.push({
-        raceCandidateId: rc.id,
-        politicianId: rc.politician_id,
-        column: 'race_candidates.is_incumbent',
-        current: Boolean(rc.is_incumbent),
-        expected,
-      });
-    }
   }
 
   return drift;
 }
 
+/**
+ * 🔴 TWO COLUMNS THIS DELIBERATELY DOES NOT RECONCILE, EACH BECAUSE RECONCILING IT WAS WRONG.
+ *
+ *   politicians.office_id         A DEPRECATED POINT-IN-TIME SNAPSHOT (ADR 0002). It was never
+ *                                 meant to equal the current holder — that is why the view
+ *                                 replaced it. An earlier version of this script reported 101
+ *                                 of them as drift and would have nulled every one. All 101
+ *                                 point at real offices, none dangling, and there is no history
+ *                                 table, so the values would have existed nowhere afterwards.
+ *
+ *   race_candidates.is_incumbent  SEAT-SCOPED, not global: "is this candidate the incumbent OF
+ *                                 THE SEAT BEING CONTESTED". A state senator running for the
+ *                                 U.S. House is correctly `false`. An earlier version used the
+ *                                 global rule and reported 297 rows.
+ *                                 ⚠ AND THE DATA CARRIES BOTH CONVENTIONS: 234 cross-office
+ *                                 candidates are stored `true` while others are stored `false`.
+ *                                 Until somebody rules on which is intended, this script must
+ *                                 not touch the column — `compassService.ts:629` reads it for
+ *                                 the "challengers only" view, so a wrong guess is voter-facing.
+ *
+ * Adding either back needs a ruling first, not a predicate.
+ */
+
 export async function computeIncumbencyDrift(client) {
-  const [politicians, currentHolders, raceCandidates] = await Promise.all([
+  const [politicians, currentHolders] = await Promise.all([
     client.query(
-      `SELECT id, is_incumbent, office_id FROM essentials.politicians WHERE is_active = true`),
+      `SELECT id, is_incumbent FROM essentials.politicians WHERE is_active = true`),
+    // 🔴 NOT ILIKE 'Candidate for%' — A PLACEHOLDER OFFICE IS NOT A SEAT. Without this clause
+    // the query calls 22 Senate CANDIDATES incumbents, Roy Cooper and Sherrod Brown among them.
+    // It mirrors the filter the read path already applies at essentialsService.ts:360.
     client.query(
-      `SELECT DISTINCT politician_id FROM essentials.office_current_holder
-        WHERE politician_id IS NOT NULL`),
-    client.query(
-      `SELECT rc.id, rc.politician_id, rc.is_incumbent
-         FROM essentials.race_candidates rc
-         JOIN essentials.races r ON r.id = rc.race_id
-         JOIN essentials.elections e ON e.id = r.election_id
-        WHERE e.election_date >= CURRENT_DATE - INTERVAL '1 year'
-          AND rc.politician_id IS NOT NULL`),
+      `SELECT DISTINCT och.politician_id
+         FROM essentials.office_current_holder och
+         JOIN essentials.offices o ON o.id = och.office_id
+        WHERE och.politician_id IS NOT NULL
+          AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'`),
   ]);
 
   return findDrift({
     politicians: politicians.rows,
     currentHolders: currentHolders.rows,
-    raceCandidates: raceCandidates.rows,
   });
 }
 
@@ -117,16 +121,6 @@ export async function applyIncumbencyFixes(client, rows) {
       await client.query(
         `UPDATE essentials.politicians SET is_incumbent = $2 WHERE id = $1 AND is_incumbent IS DISTINCT FROM $2`,
         [row.politicianId, row.expected]);
-      applied += 1;
-    } else if (row.column === 'politicians.office_id') {
-      await client.query(
-        `UPDATE essentials.politicians SET office_id = NULL WHERE id = $1 AND office_id IS NOT NULL`,
-        [row.politicianId]);
-      applied += 1;
-    } else if (row.column === 'race_candidates.is_incumbent') {
-      await client.query(
-        `UPDATE essentials.race_candidates SET is_incumbent = $2 WHERE id = $1 AND is_incumbent IS DISTINCT FROM $2`,
-        [row.raceCandidateId, row.expected]);
       applied += 1;
     }
   }

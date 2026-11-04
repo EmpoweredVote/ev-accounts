@@ -64,26 +64,48 @@ describe('findDrift', () => {
     expect(drift).toHaveLength(1);
   });
 
-  it('reports race_candidates.is_incumbent separately from politicians.is_incumbent', () => {
+  // 🔴 The next two pin rules this script used to have and MUST NOT get back. Both were applied
+  // to a first measurement that reported 429 drift rows; reading real rows showed only 9 were
+  // drift. CC_0342 has the full account.
+  it('never reports race_candidates.is_incumbent — the column is seat-scoped and ambiguous', () => {
+    // A state senator running for the U.S. House is correctly NOT the incumbent of that race.
+    // The global rule called 297 rows drift; 234 of them were cross-office candidates stored
+    // `true` and others of the same shape were stored `false`, so the data holds BOTH
+    // conventions and nobody has ruled on which is meant.
     const drift = findDrift({
-      politicians: [{ id: 'p4', is_incumbent: true, office_id: null }],
+      politicians: [{ id: 'p4', is_incumbent: true }],
       currentHolders: [holder('p4')],
       raceCandidates: [{ id: 'rc1', politician_id: 'p4', is_incumbent: false }],
     });
-    expect(drift).toEqual([
-      { raceCandidateId: 'rc1', politicianId: 'p4', column: 'race_candidates.is_incumbent', current: false, expected: true },
-    ]);
+    expect(drift).toEqual([]);
   });
 
-  it('flags a deprecated office_id snapshot that points nowhere real', () => {
+  it('never reports politicians.office_id — it is a point-in-time snapshot, not a current fact', () => {
+    // It was never supposed to equal the current holder; that is why the view replaced it.
+    // Nulling the 101 rows the old rule caught would have destroyed values held nowhere else.
     const drift = findDrift({
       politicians: [{ id: 'p5', is_incumbent: false, office_id: 'o-stale' }],
       currentHolders: [],
       raceCandidates: [],
     });
-    expect(drift).toContainEqual(
-      { politicianId: 'p5', column: 'politicians.office_id', current: 'o-stale', expected: null },
-    );
+    expect(drift).toEqual([]);
+  });
+});
+
+describe('the truth predicate must exclude candidate placeholder offices', () => {
+  // 🔴 A TEXT GUARD on this module's own SQL. Without the clause, 22 Senate CANDIDATES holding
+  // only a 'Candidate for U.S. Senate — X' office (migration 196) are reported as missing
+  // incumbents, and applying that publishes Roy Cooper and Sherrod Brown as sitting senators.
+  const src = readFileSync(new URL('./reconcile-incumbency.mjs', import.meta.url), 'utf8');
+
+  it("filters 'Candidate for%' out of the current-holder set", () => {
+    expect(src).toMatch(/NOT ILIKE 'Candidate for%'/);
+  });
+
+  it('reads the holder set from office_current_holder joined to offices', () => {
+    // Positive control on the assertion above: the clause only means anything if the query
+    // actually joins offices, since the title lives there.
+    expect(src).toMatch(/office_current_holder och[\s\S]{0,200}JOIN essentials\.offices o/);
   });
 });
 
