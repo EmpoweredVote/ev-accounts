@@ -543,3 +543,26 @@ meantime, because most "workers" right now are sessions holding leases.
 - How the "next term" read path is exposed to Essentials — a view, or a query in
   `essentialsService.ts`. The frontend change is a separate piece of work and is out of scope
   for this document beyond the data it needs.
+
+## The tracker artifact (live)
+
+**https://claude.ai/artifact/68XRWM6MpNd2W6Phit4QNo** — "2026 transition tracker".
+
+🔴 **LIVING ARTIFACT: UPDATE IT IN PLACE, NEVER REPUBLISH A FRESH ONE.** Its URL is what the
+team opens. Built from the published Dashboard type, so its page and datasets are store
+documents, not repo files.
+
+Refresh it by re-running the two scripts and replacing the uploaded files:
+
+```bash
+node backend/scripts/build-transition-dataset.mjs   # writes seats.csv + waves.csv
+# then upload both and update datasets/seats and datasets/waves to the new /_blob/ urls
+```
+
+- `datasets/seats` — one row per race, from `election-transition-status.mjs`. Computed.
+- `datasets/waves` — per-wave rollup. Computed.
+- `datasets/assignments` — **the only hand-kept document.** An editor replaces it from the
+  dashboard's Sources panel without waiting for anyone, which is how handoff works here.
+
+⚠ **It is private until shared.** Nobody else can open the link until the user shares it from
+the page's Share menu; Claude cannot change that.
