@@ -694,6 +694,15 @@ function cleanHumanVerifiedUrls(urls: string[]): string[] {
  * client (I6): either the row is approved with its value, reasoning and citations, or nothing is
  * written and it stays pending.
  *
+ * One exception to "no citation, no stance", and only on request: `opts.unverifiableBlankNote` lets a queued
+ * BLANK be approved with no source when its old sources cannot be verified (runner ruling 2026-10-31, "Write a
+ * blank for all 26": OnTheIssues or Wikipedia only, a page that no longer loads, or a page with no passage the
+ * verifier can tie to the person). It applies only to a proposed blank approved as a blank, queued below the
+ * threshold — so the verifier's blank-unexamined-fallback check, a high finding that keeps a row out of the
+ * queue, has already passed: every old source that still loads is among the blank's cited pages. The note is
+ * appended to the review row's notes. stage5/approve-batch.ts --unverifiable-blank is the caller; the admin
+ * route never passes it.
+ *
  * Also refuses (CONFLICT → 409, LADDER_CHANGED_MESSAGE) a row whose stored ladder revision is known
  * and is not the open season's current pin for the topic (CA_0264): the proposed value answers a
  * sentence the open season no longer asks. A legacy row (revision NULL, queued before CA_0264) is
@@ -706,6 +715,7 @@ export async function resolveResearchReview(
   valueOverride?: number | null,
   reasoningOverride?: string,
   blankReasonOverride?: string,
+  opts: { unverifiableBlankNote?: string } = {},
 ): Promise<{ ladderRevisionUnknown: boolean }> {
   // Lazy, for the same reason as accumulateEvidence above: a static import of
   // seasonService drags db.js in before the test mock is installed.
@@ -774,7 +784,14 @@ export async function resolveResearchReview(
     .filter((e) => e.snippets.some((s) => publishable(e.url, s) !== null))
     .map((e) => e.url);
   const allSources = [...new Set([...machineVerifiedUrls, ...cleanedHumanVerifiedUrls])];
-  if (allSources.length === 0) {
+  const unverifiableNote = opts.unverifiableBlankNote?.trim() || null;
+  if (unverifiableNote && !(finalValue === 0 && row.proposedValue === 0
+    && (row.queueReasons ?? []).includes('below-threshold'))) {
+    throw Object.assign(
+      new Error('unverifiableBlankNote applies only to a proposed blank, approved as a blank, queued below the threshold'),
+      { code: 'INCOMPLETE' });
+  }
+  if (allSources.length === 0 && !unverifiableNote) {
     throw Object.assign(
       new Error('No verified or human-verified source — a stance cannot be published without a citation'),
       { code: 'INCOMPLETE' });
@@ -895,6 +912,12 @@ export async function resolveResearchReview(
       throw Object.assign(
         new Error('Review row is no longer pending — another decision landed first; nothing was written'),
         { code: 'CONFLICT' });
+    }
+    if (unverifiableNote && allSources.length === 0) {
+      await client.query(
+        `UPDATE inform.stance_research_review SET notes = concat_ws(E'\\n', notes, $2::text) WHERE id = $1`,
+        [id, unverifiableNote],
+      );
     }
     await client.query('COMMIT');
   } catch (err) {
