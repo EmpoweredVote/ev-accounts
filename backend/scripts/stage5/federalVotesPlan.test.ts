@@ -114,6 +114,13 @@ describe('planCitations', () => {
     const p = planCitations([seatedHouse], [roll({ rc: null, question: 'On Passage' })]);
     expect(p.unmapped[0].reason).toMatch(/no roll number/);
   });
+  it('pairs a House roll call with no roll number at LegiScan when the table id is a LegiScan id', () => {
+    const p = planCitations([seatedHouse], [roll({ rc: null, question: 'On Passage', external_vote_id: 'legiscan-680050' })]);
+    expect(p.unmapped).toHaveLength(0);
+    expect(p.house).toHaveLength(0);
+    expect(p.senate.map((x) => x.source_url)).toEqual(['https://legiscan.com/US/rollcall/HJR44/id/680050']);
+    expect(p.senateVotes).toHaveLength(1);
+  });
   it('holds a Senate roll call whose table id is not a LegiScan id', () => {
     const p = planCitations([seatedSenate], [{ ...senateRoll, external_vote_id: 'voteview-123' }]);
     expect(p.unmapped[0].reason).toMatch(/not a LegiScan id/);
