@@ -1,0 +1,26 @@
+{
+  "id": "MO-HB-879-2025",
+  "scope": "state:mo",
+  "title": "HB 879 (2025 First Regular Session (103rd General Assembly)): HOUSE BILL NO. 879: An Act to repeal section 115.175, RSMo, and to enact in lieu thereof two new sections relating to the Missouri voter fraud prevention act, with penalty provisions.",
+  "urls": [
+    "https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/1992H.01I.pdf",
+    "https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/1992H.01I.pdf",
+    "https://documents.house.mo.gov/billtracking/bills251/sumpdf/HB0879I.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) HB 879 (LR 1992H.01I), RSMo 115.975, subsection 2 (automatic registration)\n(quote) 115.975. 1. This section shall be known and may be cited as the \"Missouri Voter Fraud Prevention Act\". 2. Notwithstanding any other manner of voter registration under this chapter, every eligible voter in the state shall be automatically registered to vote as provided in this section unless the voter indicates that he or she does not want to be registered to vote.\n(section) HB 879 (LR 1992H.01I), RSMo 115.975, subsection 4 (opt-out)\n(quote) If an individual fails to decline voter registration within forty-five days from the date the notice is postmarked, the individual shall be registered to vote.\n(other) RSMo 115.175: election offence for false registration information; errors in the voter registration system are not an offence unless knowing or willful.\n(other) RSMo 115.975: source agencies list; automatic registration triggers; monthly data transfer; notice and opt-out form; Secretary of State form.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Appelbaum",
+      "role": "prime",
+      "version": "HB 879 as introduced (LR 1992H.01I)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04T00:00:00Z)",
+    "fetched_at": "2026-11-04T00:00:00Z",
+    "method": "curl"
+  }
+}

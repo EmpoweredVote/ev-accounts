@@ -1,0 +1,123 @@
+{
+  "politician_id": "3ed359ed-821f-4a77-acda-5edff145c314",
+  "findings": [
+    {
+      "id": "bb167c270c6bb0dd867c942d8b2a03aaaafcfdbf448470fc0ac401a9908cdc12",
+      "kind": "own-words",
+      "url": "https://woodsformissouri.com",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "In the House of Representatives, Eric serves as the Ranking Minority Member of the House Elections committee. This role has put him on the front line in the fight against Republican attempts to curtail voting rights, weaken the citizen's initiative petition process, and gerrymander Missouri's congressional districts.",
+      "note": "Campaign-site biography (third person, issued in his campaign's name); states he opposes bills that curtail voting rights; names no ID or citizenship bill.",
+      "subjects": [
+        "election integrity laws",
+        "voting rights in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:08:19.114Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e076c8b48278b31632ee890048920af3952a61ffb83895b5d23bfa476c64b17f",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Woods'), linked to Eric Woods (district 18) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.753Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9302fa7bcbb9205f150b8afd9e072506397909e3ae094c01acad3b2775cdebe0",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn052.pdf",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "MO-HCR-48-2026",
+      "act": "nay",
+      "motion": "House: HCR 48 read the third time and passed",
+      "note": "House roll call as printed ('Woods'), linked to Eric Woods (district 18) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.232Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site woodsformissouri.com (finding)",
+        "KCUR 2024 voter guide: no direct quote on the subject",
+        "news search on name plus subject words: nothing on the subject",
+        "House caucusic caucus pages: unreachable (DNS failure for mohousedemcaucus.com)",
+        "blocked: Ballotpedia (not tried, per instruction)",
+        "no house.mo.gov page fetched (robots)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T05:08:19.114Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:10:53.753Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:14:55.232Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

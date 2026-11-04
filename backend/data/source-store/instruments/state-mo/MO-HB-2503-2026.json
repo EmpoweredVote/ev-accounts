@@ -1,0 +1,25 @@
+{
+  "id": "MO-HB-2503-2026",
+  "scope": "state:mo",
+  "title": "HB 2503 (2026 Second Regular Session (103rd General Assembly)): HB 2503 -- VOTER IDENTIFICATION (House summary title)",
+  "urls": [
+    "https://documents.house.mo.gov/billtracking/bills261/sumpdf/HB2503I.pdf",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/4182H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Introduced text, RSMo 115.427 subsection 1 (as printed)\n(quote) 115.427. 1. Persons seeking to vote in a public election shall establish their identity and eligibility to vote at the polling place or, if voting absentee in person under section 115.277, at the office of the election authority or other authorized location designated by the election authority by presenting a form of personal photo identification to election officials. No form of personal photo identification other than the forms listed in this section shall be accepted to establish a voter's qualifications to vote. Forms of personal photo identification that satisfy the requirements of this section are any one of the following: (1) Nonexpired Missouri driver's license; (2) Nonexpired or nonexpiring Missouri nondriver's license; (3) A document that satisfies all of the following requirements: (a) The document contains the name of the individual to whom the document was issued, and the name substantially conforms to the most recent signature in the individual's voter registration record; (b) The document shows a photograph of the individual; (c) The document includes an expiration date, and the document is not expired, or, if expired, the document expired after the date of the most recent general election; and (d) The document was issued by the United States or the state of Missouri; or HB 2503 2 (4) Any identification containing a photograph of the individual which is issued by the Missouri National Guard, the United States Armed Forces, including the Space Force, or the United States Department of Veteran Affairs to a member or former member of the Missouri National Guard or the United States Armed Forces, including the Space Force, and that is not expired or does not have an expiration date.\n(b_no_id_remedy)\n(section) Introduced text, RSMo 115.427 subsection 3 (provisional ballot envelope certificate)\n(quote) I do solemnly [swear] attest and affirm that I am the person identified above and the information provided is correct.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) House summary: HB 2503 -- VOTER IDENTIFICATION SPONSOR: Kelley Currently, the envelopes in which provisional ballots are placed include a certification upon which the voter swears that the information provided is correct. This bill replaces the word \"swear\" with the words \"attest and affirm\" on that certification.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Kelley",
+      "role": "prime",
+      "version": "Introduced text (4182H.01I.pdf)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04T00:00:00Z)",
+    "fetched_at": "2026-11-04T00:00:00Z",
+    "method": "curl"
+  }
+}

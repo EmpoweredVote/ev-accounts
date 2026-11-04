@@ -1,0 +1,167 @@
+{
+  "politician_id": "66726ca3-a0d7-4201-a0be-323f4fc041ce",
+  "findings": [
+    {
+      "id": "993617738474b6e1011b3f325a151322a46e53faa871349c51d0be802bb18bfd",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills221/jrnpdf/jrn070.pdf",
+      "date": "2022-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1878-2022",
+      "act": "yea",
+      "motion": "House: SS SCS HB 1878, as amended, adopted",
+      "note": "House roll call as printed ('Henderson'), linked to Mike Henderson (district 117) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.744Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "09168f5132c6b66b10b4254aab83e73fdf84a5634b8de9e4a06a3e27354ca549",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills201/jrnpdf/jrn031.pdf",
+      "date": "2020-03-02",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1600-2020",
+      "act": "yea",
+      "motion": "House: HCS HB 1600 read the third time and passed by the following vote (Speaker Pro Tem Wiemann declared the bill passed)",
+      "note": "House roll call as printed ('Henderson'), linked to Mike Henderson (district 117) via the official 2020 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.214Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e114662582e36f9f876ea58ca7997d4a6cd77360af2d2f46d1a30370cb3d2133",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/26info/Journals/Rday6405111615-1637.pdf",
+      "date": "2026-05-11",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "Senate: SS for SCS for HCS for HB 1871, as amended, read the 3rd time and passed",
+      "note": "Senate roll call as printed ('Henderson'), linked to Mike Henderson (district 3) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.214Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "83ed7cdcb7b45a53a1a8c58005cd0bdc5762e1b3da17af7e338f0cd3bf061d21",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills221/jrnpdf/jrn036.pdf",
+      "date": "2022-03-10",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1878-PERF-2022",
+      "act": "yea",
+      "motion": "House: HB 1878 read the third time and passed",
+      "note": "House roll call as printed ('Henderson'), linked to Mike Henderson (district 117) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.214Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c350f7cdbed9fac86919949bd8c9c98019a47152c42c532aeb59af7c8b34a250",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills211/jrnpdf/jrn029.pdf",
+      "date": "2021-02-24",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-334-2021",
+      "act": "yea",
+      "motion": "House: HCS HB 334 read the third time and passed",
+      "note": "House roll call as printed ('Henderson'), linked to Mike Henderson (district 117) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.214Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit/provisional)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks / non-citizen voting / election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Mike_Henderson_(Missouri) (page returned empty)",
+        "Senate member page confirms Senator Mike Henderson, District 3",
+        "Senate press page current (15 items) and archive (14 items): titles reviewed; 12 capitol reports and committee videos fetched, nothing on the subject",
+        "SB 1195 committee video page (Local Government, Elections and Pensions Committee, 2026-02-24): page gives no bill description, nothing on the subject in his words",
+        "web searches (several, names plus subject words): nothing on the subject in their own words"
+      ],
+      "found": 0,
+      "at": "2026-11-04T04:59:12.494Z",
+      "by": "search-mo-2026-11-03"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-04T14:10:53.744Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T14:14:55.214Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

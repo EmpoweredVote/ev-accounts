@@ -1,0 +1,130 @@
+{
+  "politician_id": "33fb91bf-0128-4953-8ec4-cf23ff32f2dd",
+  "findings": [
+    {
+      "id": "ebf5a26ffbffae5dbb56b0e4dce537cbd243cd0e1be1bf3a8785aa6076bc7ef8",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/NewsDetails?id=2341",
+      "date": "2026-05-15",
+      "date_precision": "day",
+      "passage": "Changes laws around elections, extending the distance of campaigning near polling places from 25 feet to 50 feet, limiting accepted write-in ballots and expands the use of provisional ballots.",
+      "note": "In her legislative column of May 15, 2026 she lists House Bill 1871 among bills from the session with this one-line description; the column gives no opinion of the bill. It touches provisional ballots only.",
+      "subjects": [
+        "election law changes in general",
+        "provisional ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-mo-r2-2026-11-04",
+        "fetched_at": "2026-11-04T13:26:32.249Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e114662582e36f9f876ea58ca7997d4a6cd77360af2d2f46d1a30370cb3d2133",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/26info/Journals/Rday6405111615-1637.pdf",
+      "date": "2026-05-11",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "Senate: SS for SCS for HCS for HB 1871, as amended, read the 3rd time and passed",
+      "note": "Senate roll call as printed ('Mosley'), linked to Angela Walton Mosley (district 13) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.235Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21359c61a4aa9f0fc1d5ed5539ef00909e6cc5e45e12169c91328f1e12050b02",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/22info/Journals/RDay6205092378-2447.pdf",
+      "date": "2022-05-09",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1878-2022",
+      "act": "nay",
+      "motion": "Senate: SS for SCS for HB 1878, as amended, read the 3rd time and passed",
+      "note": "Senate roll call as printed ('Mosley'), linked to Angela Walton Mosley (district 13) via the official 2022 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.235Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "newsletter pages 2026-07-31, 2026-08-14, 2026-10-26 (election mentions only; nothing on ID or citizenship)",
+        "On the Record (0 meetings)",
+        "web search: name plus subject words (no own words on the subject surfaced)",
+        "Ballotpedia: not reviewed (search result only, not fetched)",
+        "Missouri Senate member page",
+        "Missouri Senate current media list and media archive (titles only, nothing on the subject)",
+        "bill pages: sponsor lists left to the separate record lane"
+      ],
+      "found": 0,
+      "at": "2026-11-04T04:59:03.355Z",
+      "by": "search-mo-2026-11-03"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "Senate current media list for Mosley: bodies read of 73 items (columns, releases, committee videos); election-related ones read in full: 2025-05-02, 2025-05-09, 2025-05-30, 2026-04-02, 2026-04-27, 2026-05-04, 2026-05-07, 2026-05-13 map statement, 2026-05-15, 2026-07-31, 2026-08-14, 2026-08-28, 2026-10-26",
+        "Senate media archive for Mosley (same list; nothing further on ID or citizenship)",
+        "web search: Mosley plus voter ID, photo ID, citizenship (none surfaced; a former House member with a similar surname is a different person)",
+        "campaign site, local papers, iVoterGuide, Vote411: not found by search",
+        "Ballotpedia: blocked (not fetched, per instruction)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T13:26:32.249Z",
+      "by": "research-mo-r2-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-04T14:14:55.235Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

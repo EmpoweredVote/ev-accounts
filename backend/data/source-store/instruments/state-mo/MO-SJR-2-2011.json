@@ -1,0 +1,1133 @@
+{
+  "id": "MO-SJR-2-2011",
+  "scope": "state:mo",
+  "title": "SJR 2 (2011 First Regular Session (96th General Assembly)): Allows enabling legislation for advance voting and photographic identification for voting",
+  "urls": [
+    "https://www.senate.mo.gov/11info/BTS_Web/Actions.aspx?SessionType=R&BillID=4065296",
+    "https://www.senate.mo.gov/11info/pdf-bill/tat/SJR2.pdf",
+    "https://www.senate.mo.gov/11info/pdf-bill/intro/SJR2.pdf",
+    "https://www.senate.mo.gov/11info/pdf-bill/perf/SJR2.pdf",
+    "https://www.senate.mo.gov/11info/pdf-bill/hcs/SJR2.pdf"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) SJR 2 (HCS#2) truly agreed text, proposed constitutional Section 9 proposed constitutional Section 9\n(quote) Section 9. A person seeking to vote in person in public elections may be required by general law to identify himself or herself and verify his or her qualifications as a citizen of the United States of America and a resident of the state of Missouri by providing election officials with a form of identification, which may include requiring valid government-issued photo identification. Exceptions to the identification requirement may also be provided for by general law.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) SJR 2 (HCS#2) truly agreed text, proposed constitutional Section 8, subsection 3 (advance voting)\n(quote) 3. If a voter identification requirement is provided by general law for in-person voting on election day, persons who desire to vote in advance of election day shall also comply with that identification requirement.\n(section) SJR 2 (HCS#2) truly agreed text, proposed constitutional Section 10 (absentee voting)\n(quote) Section 10. Different requirements for absentee voting when the voter does not appear before the election authority may be established by general law as may be necessary or desirable in order to accommodate the different purposes and administration requirements of this method of voting.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) SJR 2 (HCS#2) truly agreed text, Section B (official ballot title)\n(quote) Section B. The official ballot title for section A of this act shall read as follows: \"Shall the Missouri Constitution be amended to adopt the Voter Protection Act and allow the General Assembly to provide by general law for advance voting prior to election day, voter photo identification requirements, and voter requirements based on whether one appears to vote in person or by absentee ballot?\". T\n(other) Section 8 (HCS#2): advance in-person voting may be enabled by general law (third Saturday before election to first Tuesday before, excluding Sundays).\n(other) Section 10: different requirements for absentee voting may be set by general law.\n(other) Section 11: severability of sections 8, 9 and 10.",
+  "sponsors": [
+    {
+      "name": "Stouffer",
+      "role": "prime",
+      "version": "HCS#2 SJR 2, truly agreed to and finally passed 5/9/2011 (LR 0282L.05T)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2011-02-24",
+      "body": "MO Senate",
+      "motion": "SJR 2 read the 3rd time and passed",
+      "kind": "roll-call",
+      "yes": 26,
+      "no": 7,
+      "absent": 0,
+      "body_size": 33,
+      "note": "S324-325 | https://www.senate.mo.gov/11info/pdf-jrnl/DAY27.pdf#page=6",
+      "members": [
+        {
+          "name": "Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Crowell",
+          "vote": "yea"
+        },
+        {
+          "name": "Cunningham",
+          "vote": "yea"
+        },
+        {
+          "name": "Dempsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Dixon",
+          "vote": "yea"
+        },
+        {
+          "name": "Engler",
+          "vote": "yea"
+        },
+        {
+          "name": "Goodman",
+          "vote": "yea"
+        },
+        {
+          "name": "Kehoe",
+          "vote": "yea"
+        },
+        {
+          "name": "Kraus",
+          "vote": "yea"
+        },
+        {
+          "name": "Lager",
+          "vote": "yea"
+        },
+        {
+          "name": "Lamping",
+          "vote": "yea"
+        },
+        {
+          "name": "Lembke",
+          "vote": "yea"
+        },
+        {
+          "name": "Mayer",
+          "vote": "yea"
+        },
+        {
+          "name": "Munzlinger",
+          "vote": "yea"
+        },
+        {
+          "name": "Nieves",
+          "vote": "yea"
+        },
+        {
+          "name": "Parson",
+          "vote": "yea"
+        },
+        {
+          "name": "Pearce",
+          "vote": "yea"
+        },
+        {
+          "name": "Purgason",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard",
+          "vote": "yea"
+        },
+        {
+          "name": "Ridgeway",
+          "vote": "yea"
+        },
+        {
+          "name": "Rupp",
+          "vote": "yea"
+        },
+        {
+          "name": "Schaaf",
+          "vote": "yea"
+        },
+        {
+          "name": "Schaefer",
+          "vote": "yea"
+        },
+        {
+          "name": "Schmitt",
+          "vote": "yea"
+        },
+        {
+          "name": "Stouffer",
+          "vote": "yea"
+        },
+        {
+          "name": "Wasson",
+          "vote": "yea"
+        },
+        {
+          "name": "Callahan",
+          "vote": "nay"
+        },
+        {
+          "name": "Chappelle-Nadal",
+          "vote": "nay"
+        },
+        {
+          "name": "Green",
+          "vote": "nay"
+        },
+        {
+          "name": "Justus",
+          "vote": "nay"
+        },
+        {
+          "name": "Keaveny",
+          "vote": "nay"
+        },
+        {
+          "name": "McKenna",
+          "vote": "nay"
+        },
+        {
+          "name": "Wright-Jones",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2011-05-02",
+      "body": "MO House",
+      "motion": "HCS#2 SJR 2 read the third time and passed",
+      "kind": "roll-call",
+      "yes": 102,
+      "no": 55,
+      "absent": 3,
+      "body_size": 160,
+      "note": "H1695 | https://documents.house.mo.gov/billtracking/bills111/jrnpdf/jrn064.pdf",
+      "members": [
+        {
+          "name": "Allen",
+          "vote": "yea"
+        },
+        {
+          "name": "Asbury",
+          "vote": "yea"
+        },
+        {
+          "name": "Bahr",
+          "vote": "yea"
+        },
+        {
+          "name": "Barnes",
+          "vote": "yea"
+        },
+        {
+          "name": "Bernskoetter",
+          "vote": "yea"
+        },
+        {
+          "name": "Berry",
+          "vote": "yea"
+        },
+        {
+          "name": "Brandom",
+          "vote": "yea"
+        },
+        {
+          "name": "Brattin",
+          "vote": "yea"
+        },
+        {
+          "name": "Brown 85",
+          "vote": "yea"
+        },
+        {
+          "name": "Brown 116",
+          "vote": "yea"
+        },
+        {
+          "name": "Burlison",
+          "vote": "yea"
+        },
+        {
+          "name": "Cauthorn",
+          "vote": "yea"
+        },
+        {
+          "name": "Cierpiot",
+          "vote": "yea"
+        },
+        {
+          "name": "Conway 14",
+          "vote": "yea"
+        },
+        {
+          "name": "Cookson",
+          "vote": "yea"
+        },
+        {
+          "name": "Cox",
+          "vote": "yea"
+        },
+        {
+          "name": "Crawford",
+          "vote": "yea"
+        },
+        {
+          "name": "Cross",
+          "vote": "yea"
+        },
+        {
+          "name": "Curtman",
+          "vote": "yea"
+        },
+        {
+          "name": "Davis",
+          "vote": "yea"
+        },
+        {
+          "name": "Day",
+          "vote": "yea"
+        },
+        {
+          "name": "Denison",
+          "vote": "yea"
+        },
+        {
+          "name": "Dieckhaus",
+          "vote": "yea"
+        },
+        {
+          "name": "Diehl",
+          "vote": "yea"
+        },
+        {
+          "name": "Dugger",
+          "vote": "yea"
+        },
+        {
+          "name": "Elmer",
+          "vote": "yea"
+        },
+        {
+          "name": "Entlicher",
+          "vote": "yea"
+        },
+        {
+          "name": "Fisher",
+          "vote": "yea"
+        },
+        {
+          "name": "Fitzwater",
+          "vote": "yea"
+        },
+        {
+          "name": "Flanigan",
+          "vote": "yea"
+        },
+        {
+          "name": "Fraker",
+          "vote": "yea"
+        },
+        {
+          "name": "Franklin",
+          "vote": "yea"
+        },
+        {
+          "name": "Franz",
+          "vote": "yea"
+        },
+        {
+          "name": "Frederick",
+          "vote": "yea"
+        },
+        {
+          "name": "Fuhr",
+          "vote": "yea"
+        },
+        {
+          "name": "Funderburk",
+          "vote": "yea"
+        },
+        {
+          "name": "Gatschenberger",
+          "vote": "yea"
+        },
+        {
+          "name": "Gosen",
+          "vote": "yea"
+        },
+        {
+          "name": "Grisamore",
+          "vote": "yea"
+        },
+        {
+          "name": "Guernsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Haefner",
+          "vote": "yea"
+        },
+        {
+          "name": "Hampton",
+          "vote": "yea"
+        },
+        {
+          "name": "Higdon",
+          "vote": "yea"
+        },
+        {
+          "name": "Hinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Hoskins",
+          "vote": "yea"
+        },
+        {
+          "name": "Hough",
+          "vote": "yea"
+        },
+        {
+          "name": "Houghton",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Jones 89",
+          "vote": "yea"
+        },
+        {
+          "name": "Jones 117",
+          "vote": "yea"
+        },
+        {
+          "name": "Keeney",
+          "vote": "yea"
+        },
+        {
+          "name": "Kelley 126",
+          "vote": "yea"
+        },
+        {
+          "name": "Klippenstein",
+          "vote": "yea"
+        },
+        {
+          "name": "Koenig",
+          "vote": "yea"
+        },
+        {
+          "name": "Korman",
+          "vote": "yea"
+        },
+        {
+          "name": "Lair",
+          "vote": "yea"
+        },
+        {
+          "name": "Lant",
+          "vote": "yea"
+        },
+        {
+          "name": "Largent",
+          "vote": "yea"
+        },
+        {
+          "name": "Lasater",
+          "vote": "yea"
+        },
+        {
+          "name": "Lauer",
+          "vote": "yea"
+        },
+        {
+          "name": "Leach",
+          "vote": "yea"
+        },
+        {
+          "name": "Leara",
+          "vote": "yea"
+        },
+        {
+          "name": "Lichtenegger",
+          "vote": "yea"
+        },
+        {
+          "name": "Loehner",
+          "vote": "yea"
+        },
+        {
+          "name": "Long",
+          "vote": "yea"
+        },
+        {
+          "name": "Marshall",
+          "vote": "yea"
+        },
+        {
+          "name": "McCaherty",
+          "vote": "yea"
+        },
+        {
+          "name": "McNary",
+          "vote": "yea"
+        },
+        {
+          "name": "Molendorp",
+          "vote": "yea"
+        },
+        {
+          "name": "Nance",
+          "vote": "yea"
+        },
+        {
+          "name": "Neth",
+          "vote": "yea"
+        },
+        {
+          "name": "Nolte",
+          "vote": "yea"
+        },
+        {
+          "name": "Parkinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Phillips",
+          "vote": "yea"
+        },
+        {
+          "name": "Pollock",
+          "vote": "yea"
+        },
+        {
+          "name": "Redmon",
+          "vote": "yea"
+        },
+        {
+          "name": "Reiboldt",
+          "vote": "yea"
+        },
+        {
+          "name": "Richardson",
+          "vote": "yea"
+        },
+        {
+          "name": "Riddle",
+          "vote": "yea"
+        },
+        {
+          "name": "Rowland",
+          "vote": "yea"
+        },
+        {
+          "name": "Ruzicka",
+          "vote": "yea"
+        },
+        {
+          "name": "Sater",
+          "vote": "yea"
+        },
+        {
+          "name": "Schad",
+          "vote": "yea"
+        },
+        {
+          "name": "Scharnhorst",
+          "vote": "yea"
+        },
+        {
+          "name": "Schatz",
+          "vote": "yea"
+        },
+        {
+          "name": "Schieber",
+          "vote": "yea"
+        },
+        {
+          "name": "Schneider",
+          "vote": "yea"
+        },
+        {
+          "name": "Schoeller",
+          "vote": "yea"
+        },
+        {
+          "name": "Shumake",
+          "vote": "yea"
+        },
+        {
+          "name": "Silvey",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith 150",
+          "vote": "yea"
+        },
+        {
+          "name": "Solon",
+          "vote": "yea"
+        },
+        {
+          "name": "Stream",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomson",
+          "vote": "yea"
+        },
+        {
+          "name": "Torpey",
+          "vote": "yea"
+        },
+        {
+          "name": "Wells",
+          "vote": "yea"
+        },
+        {
+          "name": "White",
+          "vote": "yea"
+        },
+        {
+          "name": "Wieland",
+          "vote": "yea"
+        },
+        {
+          "name": "Wright",
+          "vote": "yea"
+        },
+        {
+          "name": "Wyatt",
+          "vote": "yea"
+        },
+        {
+          "name": "Zerr",
+          "vote": "yea"
+        },
+        {
+          "name": "MrSpeaker",
+          "vote": "yea"
+        },
+        {
+          "name": "Anders",
+          "vote": "nay"
+        },
+        {
+          "name": "Atkins",
+          "vote": "nay"
+        },
+        {
+          "name": "Aull",
+          "vote": "nay"
+        },
+        {
+          "name": "Black",
+          "vote": "nay"
+        },
+        {
+          "name": "Brown 50",
+          "vote": "nay"
+        },
+        {
+          "name": "Carlson",
+          "vote": "nay"
+        },
+        {
+          "name": "Carter",
+          "vote": "nay"
+        },
+        {
+          "name": "Casey",
+          "vote": "nay"
+        },
+        {
+          "name": "Colona",
+          "vote": "nay"
+        },
+        {
+          "name": "Conway 27",
+          "vote": "nay"
+        },
+        {
+          "name": "Ellinger",
+          "vote": "nay"
+        },
+        {
+          "name": "Fallert",
+          "vote": "nay"
+        },
+        {
+          "name": "Harris",
+          "vote": "nay"
+        },
+        {
+          "name": "Holsman",
+          "vote": "nay"
+        },
+        {
+          "name": "Hubbard",
+          "vote": "nay"
+        },
+        {
+          "name": "Hughes",
+          "vote": "nay"
+        },
+        {
+          "name": "Hummel",
+          "vote": "nay"
+        },
+        {
+          "name": "Jones 63",
+          "vote": "nay"
+        },
+        {
+          "name": "Kander",
+          "vote": "nay"
+        },
+        {
+          "name": "Kelly 24",
+          "vote": "nay"
+        },
+        {
+          "name": "Kirkton",
+          "vote": "nay"
+        },
+        {
+          "name": "Kratky",
+          "vote": "nay"
+        },
+        {
+          "name": "Lampe",
+          "vote": "nay"
+        },
+        {
+          "name": "May",
+          "vote": "nay"
+        },
+        {
+          "name": "McCannBeatty",
+          "vote": "nay"
+        },
+        {
+          "name": "McDonald",
+          "vote": "nay"
+        },
+        {
+          "name": "McGhee",
+          "vote": "nay"
+        },
+        {
+          "name": "McManus",
+          "vote": "nay"
+        },
+        {
+          "name": "McNeil",
+          "vote": "nay"
+        },
+        {
+          "name": "Meadows",
+          "vote": "nay"
+        },
+        {
+          "name": "Montecillo",
+          "vote": "nay"
+        },
+        {
+          "name": "Nasheed",
+          "vote": "nay"
+        },
+        {
+          "name": "Newman",
+          "vote": "nay"
+        },
+        {
+          "name": "Nichols",
+          "vote": "nay"
+        },
+        {
+          "name": "Oxford",
+          "vote": "nay"
+        },
+        {
+          "name": "Pace",
+          "vote": "nay"
+        },
+        {
+          "name": "Peters-Baker",
+          "vote": "nay"
+        },
+        {
+          "name": "Pierson",
+          "vote": "nay"
+        },
+        {
+          "name": "Quinn",
+          "vote": "nay"
+        },
+        {
+          "name": "Rizzo",
+          "vote": "nay"
+        },
+        {
+          "name": "Schieffer",
+          "vote": "nay"
+        },
+        {
+          "name": "Schupp",
+          "vote": "nay"
+        },
+        {
+          "name": "Shively",
+          "vote": "nay"
+        },
+        {
+          "name": "Sifton",
+          "vote": "nay"
+        },
+        {
+          "name": "Smith 71",
+          "vote": "nay"
+        },
+        {
+          "name": "Spreng",
+          "vote": "nay"
+        },
+        {
+          "name": "Still",
+          "vote": "nay"
+        },
+        {
+          "name": "Swearingen",
+          "vote": "nay"
+        },
+        {
+          "name": "Swinger",
+          "vote": "nay"
+        },
+        {
+          "name": "Talboy",
+          "vote": "nay"
+        },
+        {
+          "name": "Taylor",
+          "vote": "nay"
+        },
+        {
+          "name": "WaltonGray",
+          "vote": "nay"
+        },
+        {
+          "name": "Webb",
+          "vote": "nay"
+        },
+        {
+          "name": "Webber",
+          "vote": "nay"
+        },
+        {
+          "name": "Weter",
+          "vote": "nay"
+        },
+        {
+          "name": "Hodges",
+          "vote": "absent"
+        },
+        {
+          "name": "McGeoghegan",
+          "vote": "absent"
+        },
+        {
+          "name": "Wallingford",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2011-05-09",
+      "body": "MO Senate",
+      "motion": "Motion that HCS No. 2 for SJR 2 be adopted (concurrence)",
+      "kind": "roll-call",
+      "yes": 23,
+      "no": 10,
+      "absent": 1,
+      "body_size": 34,
+      "note": "S1524 | https://www.senate.mo.gov/11info/pdf-jrnl/DAY65.pdf#page=41",
+      "members": [
+        {
+          "name": "Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Crowell",
+          "vote": "yea"
+        },
+        {
+          "name": "Cunningham",
+          "vote": "yea"
+        },
+        {
+          "name": "Dempsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Dixon",
+          "vote": "yea"
+        },
+        {
+          "name": "Engler",
+          "vote": "yea"
+        },
+        {
+          "name": "Goodman",
+          "vote": "yea"
+        },
+        {
+          "name": "Kehoe",
+          "vote": "yea"
+        },
+        {
+          "name": "Lager",
+          "vote": "yea"
+        },
+        {
+          "name": "Lamping",
+          "vote": "yea"
+        },
+        {
+          "name": "Mayer",
+          "vote": "yea"
+        },
+        {
+          "name": "McKenna",
+          "vote": "yea"
+        },
+        {
+          "name": "Munzlinger",
+          "vote": "yea"
+        },
+        {
+          "name": "Nieves",
+          "vote": "yea"
+        },
+        {
+          "name": "Parson",
+          "vote": "yea"
+        },
+        {
+          "name": "Pearce",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard",
+          "vote": "yea"
+        },
+        {
+          "name": "Rupp",
+          "vote": "yea"
+        },
+        {
+          "name": "Schaaf",
+          "vote": "yea"
+        },
+        {
+          "name": "Schaefer",
+          "vote": "yea"
+        },
+        {
+          "name": "Schmitt",
+          "vote": "yea"
+        },
+        {
+          "name": "Stouffer",
+          "vote": "yea"
+        },
+        {
+          "name": "Wasson",
+          "vote": "yea"
+        },
+        {
+          "name": "Callahan",
+          "vote": "nay"
+        },
+        {
+          "name": "Chappelle-Nadal",
+          "vote": "nay"
+        },
+        {
+          "name": "Curls",
+          "vote": "nay"
+        },
+        {
+          "name": "Green",
+          "vote": "nay"
+        },
+        {
+          "name": "Justus",
+          "vote": "nay"
+        },
+        {
+          "name": "Keaveny",
+          "vote": "nay"
+        },
+        {
+          "name": "Lembke",
+          "vote": "nay"
+        },
+        {
+          "name": "Purgason",
+          "vote": "nay"
+        },
+        {
+          "name": "Ridgeway",
+          "vote": "nay"
+        },
+        {
+          "name": "Wright-Jones",
+          "vote": "nay"
+        },
+        {
+          "name": "Kraus",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2011-05-09",
+      "body": "MO Senate",
+      "motion": "HCS No. 2 for SJR 2 read the 3rd time and passed",
+      "kind": "roll-call",
+      "yes": 25,
+      "no": 9,
+      "absent": 0,
+      "body_size": 34,
+      "note": "S1524-1525 | https://www.senate.mo.gov/11info/pdf-jrnl/DAY65.pdf#page=41",
+      "members": [
+        {
+          "name": "Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Crowell",
+          "vote": "yea"
+        },
+        {
+          "name": "Cunningham",
+          "vote": "yea"
+        },
+        {
+          "name": "Dempsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Dixon",
+          "vote": "yea"
+        },
+        {
+          "name": "Engler",
+          "vote": "yea"
+        },
+        {
+          "name": "Goodman",
+          "vote": "yea"
+        },
+        {
+          "name": "Kehoe",
+          "vote": "yea"
+        },
+        {
+          "name": "Kraus",
+          "vote": "yea"
+        },
+        {
+          "name": "Lager",
+          "vote": "yea"
+        },
+        {
+          "name": "Lamping",
+          "vote": "yea"
+        },
+        {
+          "name": "Mayer",
+          "vote": "yea"
+        },
+        {
+          "name": "McKenna",
+          "vote": "yea"
+        },
+        {
+          "name": "Munzlinger",
+          "vote": "yea"
+        },
+        {
+          "name": "Nieves",
+          "vote": "yea"
+        },
+        {
+          "name": "Parson",
+          "vote": "yea"
+        },
+        {
+          "name": "Pearce",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard",
+          "vote": "yea"
+        },
+        {
+          "name": "Ridgeway",
+          "vote": "yea"
+        },
+        {
+          "name": "Rupp",
+          "vote": "yea"
+        },
+        {
+          "name": "Schaaf",
+          "vote": "yea"
+        },
+        {
+          "name": "Schaefer",
+          "vote": "yea"
+        },
+        {
+          "name": "Schmitt",
+          "vote": "yea"
+        },
+        {
+          "name": "Stouffer",
+          "vote": "yea"
+        },
+        {
+          "name": "Wasson",
+          "vote": "yea"
+        },
+        {
+          "name": "Callahan",
+          "vote": "nay"
+        },
+        {
+          "name": "Chappelle-Nadal",
+          "vote": "nay"
+        },
+        {
+          "name": "Curls",
+          "vote": "nay"
+        },
+        {
+          "name": "Green",
+          "vote": "nay"
+        },
+        {
+          "name": "Justus",
+          "vote": "nay"
+        },
+        {
+          "name": "Keaveny",
+          "vote": "nay"
+        },
+        {
+          "name": "Lembke",
+          "vote": "nay"
+        },
+        {
+          "name": "Purgason",
+          "vote": "nay"
+        },
+        {
+          "name": "Wright-Jones",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04T00:00:00Z)",
+    "fetched_at": "2026-11-04T00:00:00Z",
+    "method": "curl"
+  }
+}

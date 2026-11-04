@@ -30,7 +30,258 @@
           "sha256": "541d477ef09b83d6555700233abc760ce80a58d9602aff90b0ac2befb0f6afdd"
         }
       }
+    },
+    {
+      "id": "9341eabad2834914a888294871e34987432999dd48fd6e51058cc44d75af862d",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills161/rollcalls/073.003.pdf",
+      "date": "2016-09-14",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1631-2016",
+      "act": "nay",
+      "motion": "House: SS#2 SCS HB 1631 ALFERMAN (061) VOTER IDENTIFICATION 4554S.18T THAT SS#2 SCS HB 1631 BE PASSED, THE OBJECTIONS OF THE GOVERNOR THERETO NOTWITHSTANDING",
+      "note": "House roll call as printed ('MCCREERY'), linked to Tracy McCreery (district 88) via the official 2016 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.742Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dfe035d919161f8e7a212ccf1893e678f2501ffe4beeebfd715e92cbb874ba82",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills221/jrnpdf/jrn070.pdf",
+      "date": "2022-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1878-2022",
+      "act": "nay",
+      "motion": "House: SS SCS HB 1878, as amended, adopted",
+      "note": "House roll call as printed ('McCreery'), linked to Tracy McCreery (district 88) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.742Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6b496c3cff4b99d28b82bd8efb6125f2972e72e413feb50e4230bee1eeee8e69",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills161/jrnpdf/jrn070.pdf",
+      "date": "2016-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HJR-53-2016",
+      "act": "nay",
+      "motion": "House: SS HJR 53 was adopted",
+      "note": "House roll call as printed ('McCreery'), linked to Tracy McCreery (district 88) via the official 2016 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.742Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9e12944216f4199e2fbcc9373296c13fd833050a9945ea58468d136c33af32e3",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills201/jrnpdf/jrn031.pdf",
+      "date": "2020-03-02",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1600-2020",
+      "act": "nay",
+      "motion": "House: HCS HB 1600 read the third time and passed by the following vote (Speaker Pro Tem Wiemann declared the bill passed)",
+      "note": "House roll call as printed ('McCreery'), linked to Tracy McCreery (district 88) via the official 2020 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "23087a036a100ff4343bfedc07277c669eebeec687fb47dcf78857ca4f842fa4",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills161/jrnpdf/jrn009.pdf",
+      "date": "2016-01-21",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1631-2016",
+      "act": "nay",
+      "motion": "House: HB 1631 read the third time and passed",
+      "note": "House roll call as printed ('McCreery'), linked to Tracy McCreery (district 88) via the official 2016 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e114662582e36f9f876ea58ca7997d4a6cd77360af2d2f46d1a30370cb3d2133",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/26info/Journals/Rday6405111615-1637.pdf",
+      "date": "2026-05-11",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "Senate: SS for SCS for HCS for HB 1871, as amended, read the 3rd time and passed",
+      "note": "Senate roll call as printed ('McCreery'), linked to Tracy McCreery (district 24) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "88d291e7c86845be78e5eec22b4bd5ece41209ffde13d65186529af11e9fc1ac",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills221/jrnpdf/jrn036.pdf",
+      "date": "2022-03-10",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1878-PERF-2022",
+      "act": "nay",
+      "motion": "House: HB 1878 read the third time and passed",
+      "note": "House roll call as printed ('McCreery'), linked to Tracy McCreery (district 88) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0f220d433217529da91203e4d05844a646285c027e6522b2c321df2adf6901e2",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills211/jrnpdf/jrn029.pdf",
+      "date": "2021-02-24",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-334-2021",
+      "act": "nay",
+      "motion": "House: HCS HB 334 read the third time and passed",
+      "note": "House roll call as printed ('McCreery'), linked to Tracy McCreery (district 88) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House pages on house.mo.gov: not fetched (robots rule)",
+        "blocked: https://ballotpedia.org (not fetched per instruction)",
+        "web searches on name plus voter ID / citizenship / elections: no own words on the subject",
+        "Senate media pages https://www.senate.mo.gov/Media/newsDetails?id=1670 and id=1792 (name her as Senator; nothing on the subject)",
+        "https://www.stlpr.org/government-politics-issues/2022-09-23/mccreery-and-hruza-vie-for-missouris-most-competitive-state-senate-seat (nothing on the subject)",
+        "blocked: https://bluevoterguide.org/fr/MO/candidate_Tracy_McCreery/56489 (403)",
+        "https://senate.mo.gov/mem24 returned 404",
+        "note: she holds a Senate seat (District 24); other Senate release bodies not all opened"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:12:41.722Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks / election integrity"
+      ],
+      "places": [
+        "Senate member page https://www.senate.mo.gov/Senators/Member?id=277 (confirms Senator Tracy McCreery, District 24; links to her current and archive media pages)",
+        "Senate media pages https://www.senate.mo.gov/Media/CurrentMedia?id=277 and https://www.senate.mo.gov/Media/MediaArchive?id=277: all 66 distinct releases, Capitol Reports, video and audio notes from 2023-01-05 to 2026-09-24, bodies fetched and read; election, ballot, voting, ID and citizenship words checked in each body; nothing on proof of identity or citizenship to vote (only a poll-worker recruitment notice, comments on initiative-petition and congressional-map changes, ballot measures on taxes, and REAL ID for air travel)",
+        "web search on name plus voter ID / photo ID / citizenship: no own words on the subject",
+        "https://www.stlpr.org/government-politics-issues/2022-09-23/mccreery-and-hruza-vie-for-missouris-most-competitive-state-senate-seat (in first file; not re-read)",
+        "On the Record, house.mo.gov, newsroom.house.mo.gov, Ballotpedia: not fetched this round (per instruction)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T13:27:04.282Z",
+      "by": "research-mo-r2-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T14:10:53.742Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 5,
+      "at": "2026-11-04T14:14:55.221Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
 }

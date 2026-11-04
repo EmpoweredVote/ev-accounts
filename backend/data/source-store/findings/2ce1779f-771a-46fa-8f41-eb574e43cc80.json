@@ -1,0 +1,170 @@
+{
+  "politician_id": "2ce1779f-771a-46fa-8f41-eb574e43cc80",
+  "findings": [
+    {
+      "id": "e076c8b48278b31632ee890048920af3952a61ffb83895b5d23bfa476c64b17f",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Proudie'), linked to Raychel C Proudie (district 73) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.742Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dfe035d919161f8e7a212ccf1893e678f2501ffe4beeebfd715e92cbb874ba82",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills221/jrnpdf/jrn070.pdf",
+      "date": "2022-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1878-2022",
+      "act": "nay",
+      "motion": "House: SS SCS HB 1878, as amended, adopted",
+      "note": "House roll call as printed ('Proudie'), linked to Raychel C Proudie (district 73) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.742Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "88d291e7c86845be78e5eec22b4bd5ece41209ffde13d65186529af11e9fc1ac",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills221/jrnpdf/jrn036.pdf",
+      "date": "2022-03-10",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1878-PERF-2022",
+      "act": "nay",
+      "motion": "House: HB 1878 read the third time and passed",
+      "note": "House roll call as printed ('Proudie'), linked to Raychel C Proudie (district 73) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.231Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0f220d433217529da91203e4d05844a646285c027e6522b2c321df2adf6901e2",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills211/jrnpdf/jrn029.pdf",
+      "date": "2021-02-24",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-334-2021",
+      "act": "nay",
+      "motion": "House: HCS HB 334 read the third time and passed",
+      "note": "House roll call as printed ('Proudie'), linked to Raychel C Proudie (district 73) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.231Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9302fa7bcbb9205f150b8afd9e072506397909e3ae094c01acad3b2775cdebe0",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn052.pdf",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "MO-HCR-48-2026",
+      "act": "nay",
+      "motion": "House: HCR 48 read the third time and passed",
+      "note": "House roll call as printed ('Proudie'), linked to Raychel C Proudie (district 73) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.231Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "documentary proof of citizenship",
+        "mail-ballot ID",
+        "voter-roll checks / non-citizen voting"
+      ],
+      "places": [
+        "identity check: https://www.blackenterprise.com/missouri-rep-raychel-proudie-announces-state-senate-bid-focused-on-st-louis-county (2025-09-21, Senate District 14 candidate, race decided Nov 2026); https://www.stlpr.org/government-politics-issues/2022-03-10/missouri-house-passes-legislation-requiring-a-photo-id-to-vote (names her, hair-discrimination bill only)",
+        "https://www.kcur.org/politics-elections-and-government/2022-03-11/missouri-legislators-make-moves-on-voter-id-and-hair-discrimination-bills-before-taking-a-week-off nothing on the subject from her",
+        "https://www.stlpr.org/podcast/politically-speaking/2026-08-31/missouri-state-rep-proudie-wants-to-punish-people-who-misuse-flock-cameras nothing on the subject",
+        "blocked: https://missouriindependent.com/2022/05/12/voter-id-bill-clears-missouri-legislature-despite-fierce-criticism-from-black-democrats/ (403; a search summary says it holds a 2022 photo-ID floor remark by her, not copied)",
+        "blocked: https://inkl.com/news/voting-changes-win-approval-in-missouri-house-now-head-to-governor",
+        "https://mohousedemcaucus.com/team-1/raychel-proudie not reviewed: host did not resolve",
+        "On the Record (0 meetings)",
+        "web searches on name plus subject words (several, nothing on the subject)",
+        "blocked: https://ballotpedia.org (not fetched, per instruction)",
+        "house.mo.gov member pages not fetched (URLs contain ?, barred by robots.txt)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:04:22.731Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-04T14:10:53.742Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-04T14:14:55.231Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

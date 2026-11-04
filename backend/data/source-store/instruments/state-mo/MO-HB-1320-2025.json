@@ -1,0 +1,33 @@
+{
+  "id": "MO-HB-1320-2025",
+  "scope": "state:mo",
+  "title": "HB 1320 (2025 First Regular Session (103rd General Assembly)): HB 1320 -- VOTER IDENTIFICATION (House summary title)",
+  "urls": [
+    "https://documents.house.mo.gov/billtracking/bills251/sumpdf/HB1320I.pdf",
+    "https://documents.house.mo.gov/billtracking/bills251/sumpdf/HB1320I.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.",
+  "sponsors": [
+    {
+      "name": "Fogle",
+      "role": "prime",
+      "version": "Not read; only the official House summary of the introduced bill was fetched"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04T00:00:00Z)",
+    "fetched_at": "2026-11-04T00:00:00Z",
+    "method": "curl"
+  }
+}

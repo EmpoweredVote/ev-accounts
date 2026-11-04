@@ -1,0 +1,67 @@
+{
+  "politician_id": "8891787b-53b6-48b9-8b6f-afbcfc1a3bf5",
+  "findings": [
+    {
+      "id": "c350f7cdbed9fac86919949bd8c9c98019a47152c42c532aeb59af7c8b34a250",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills211/jrnpdf/jrn029.pdf",
+      "date": "2021-02-24",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-334-2021",
+      "act": "yea",
+      "motion": "House: HCS HB 334 read the third time and passed",
+      "note": "House roll call as printed ('Brown 16'), linked to Chris Brown (district 16) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.236Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org (known to refuse fetches, not tried)",
+        "house.mo.gov pages not fetched (robots rule)",
+        "web searches on name plus subject words: nothing on the subject in own words",
+        "https://www.kcur.org/kcvoterguide2024/missouri/house-district-16: 2024 voter guide, no answers on the subject",
+        "https://www.kcur.org/politics-elections-and-government/2025-04-08/voter-registration-in-missouri-could-get-harder-if-federal-save-act-passes-election-officials-warn: he does not appear",
+        "blocked: https://www.yakimaherald.com/ap/national/bill-would-require-missourians-to-prove-citizenship-when-registering-to-vote/article_db1d369c-9b9e-5c02-80e9-c6c7b145ca96.html (429); unclear which Brown it quotes",
+        "note: a different Chris Brown is a 2026 candidate for District 75"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:10:05.889Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:14:55.236Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

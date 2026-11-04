@@ -1,0 +1,93 @@
+{
+  "politician_id": "d3aa3ea7-10dd-4644-8c66-0510c47d2315",
+  "findings": [
+    {
+      "id": "72a52d290b9978b563f9da836e97197e83a6bdb92ec9fc051a7d62606b3d4473",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn052.pdf",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "MO-HCR-48-2026",
+      "act": "yea",
+      "motion": "House: HCR 48 read the third time and passed",
+      "note": "House roll call as printed ('Farnan'), linked to Jeff Farnan (district 1) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.236Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks / election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings, name search also 0)",
+        "The Missouri Times 2024 re-election release (confirms House District 1 seat; nothing on the subject)",
+        "NW Missourian 2022 profile (nothing on the subject)",
+        "KMAland 2024 meet-the-candidates (nothing on the subject)",
+        "vote-usa.org profile (empty sections)",
+        "iVoterGuide Missouri guide: his entry has no profile link",
+        "blocked: https://www.maryvilleforum.com/news/commentary-rep-farnans-capitol-report/article_03aaf926-c1b5-4542-8424-761080d74429.html (429); a search snippet says this column mentions election security among House priorities, but the text was not read",
+        "blocked: https://www.maryvilleforum.com/news/election_2022/a-letter-to-voters-from-jeff-farnan/article_7e145770-5b97-11ed-ab21-cfca5920b9cd.html (429)",
+        "blocked: https://ballotpedia.org/Jeff_Farnan (known refusal, not tried)",
+        "not reviewed: https://www.facebook.com/forwardfarnan (login-walled); no own campaign site found",
+        "house.mo.gov not fetched (robots rule); newsroom.house.mo.gov not fetched (rule)",
+        "web searches (3): none returned a statement by him on voter ID or proof of citizenship"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:15:22.553Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks / election integrity"
+      ],
+      "places": [
+        "blocked: https://www.maryvilleforum.com/news/commentary-rep-farnans-capitol-report/article_03aaf926-c1b5-4542-8424-761080d74429.html (HTTP 429 again on the single permitted retry, 2026-11-04)",
+        "https://www.nwmissourinews.com/news/article_e6e01cb6-5a80-11ed-979d-db2fd84e16b9.html (candidate interview; nothing on the subject)",
+        "blocked: https://kxcv.org/programs/2022/Morning-Conversation-MO-State-House-District-1-Candidates.htm (404)",
+        "blocked: https://farmerpublishing.com/?p=66997 and https://farmerpublishing.com/?p=56946 (HTTP 429)",
+        "3 web searches (Capitol Report, newsletters, local papers, documents.house.mo.gov): no statement by him on voter ID or proof of citizenship; no newsletter PDF on documents.house.mo.gov found by search",
+        "house.mo.gov, newsroom.house.mo.gov, Ballotpedia, On the Record: not fetched this round (per instruction)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T13:27:04.282Z",
+      "by": "research-mo-r2-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:14:55.236Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}
