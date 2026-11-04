@@ -806,6 +806,10 @@ describe('validStoredSpan (I6)', () => {
     const IGA_LINE = 'Indiana House roll call 340 (2025), SB 10 - Culp - 3rd Reading: Culp voted Yea.';
     expect(validStoredSpan(IGA_LINE, IGA_LINE, IGA_URL)).toBe(IGA_LINE);
     expect(validStoredSpan(IGA_LINE, IGA_LINE, ROLL_URL)).toBeNull();               // not an Indiana roll call
+    const MA_URL = 'https://malegislature.gov/RollCall/193/HouseRollCall135.pdf';
+    const MA_LINE = 'Massachusetts House roll call 135 (193rd General Court), H.4885 - On acceptance of the report: Kilcoyne voted Yea.';
+    expect(validStoredSpan(MA_LINE, MA_LINE, MA_URL)).toBe(MA_LINE);
+    expect(validStoredSpan(MA_LINE, MA_LINE, IGA_URL)).toBeNull();                  // not a Massachusetts roll call
     const party = 'House roll call 102 (2025), H R 22, On Passage: Jack (R-GA) voted Yea.';
     expect(validStoredSpan(party, party, ROLL_URL)).toBeNull();                      // not a canonical line
     expect(validStoredSpan('Jane Doe voted', 'Jane Doe voted', ROLL_URL)).toBeNull();

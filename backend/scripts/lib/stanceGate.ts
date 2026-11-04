@@ -28,6 +28,7 @@ import { namesPartyTagOrColour } from '../../src/lib/partyLabels.js';
 import { isRollCallXmlUrl, parseRollCallLine } from '../../src/lib/rollCallEvidence.js';
 import { isLegiscanUrl, parseLegiscanLine } from '../../src/lib/legiscanEvidence.js';
 import { isIgaRollCallUrl, parseIgaRollCallLine } from '../../src/lib/igaRollCallEvidence.js';
+import { isMaRollCallUrl, parseMaRollCallLine } from '../../src/lib/maRollCallEvidence.js';
 import { appliesToLevel, type Level, type TopicApplicability } from '../../src/lib/topicApplicability.js';
 
 export interface ResearchRow {
@@ -280,6 +281,7 @@ export function checkStanceRow(
       if (isRollCallXmlUrl(url) && parseRollCallLine(e.snippet)) continue;
       if (isLegiscanUrl(url) && parseLegiscanLine(e.snippet)) continue;
       if (isIgaRollCallUrl(url) && parseIgaRollCallLine(e.snippet)) continue;
+      if (isMaRollCallUrl(url) && parseMaRollCallLine(e.snippet)) continue;
       const n = wordCount(e.snippet);
       if (n < MIN_SNIPPET_WORDS) add('snippet-too-short', 'high', `snippet ${e.snippet_index} for ${url} has ${n} words (< ${MIN_SNIPPET_WORDS})`);
     }
