@@ -69,6 +69,20 @@ export function firstMondayAfterJanuary1(year) {
 }
 
 /**
+ * The first Monday IN January of `year` — the water-district principal acts' phrasing.
+ *
+ * 🔴 NOT THE SAME RULE as `firstMondayAfterJanuary1`, and the difference is invisible this
+ * cycle. Both give 2027-01-04 for the 2026 election, because 1 January 2027 is a Friday. When
+ * 1 January is itself a Monday they are a week apart — 2029-01-01 against 2029-01-08. One
+ * function would have passed every test this wave can write and been wrong in the next.
+ */
+export function firstMondayInJanuary(year) {
+  const jan1 = new Date(Date.UTC(year, 0, 1));
+  const offset = (MONDAY - jan1.getUTCDay() + 7) % 7;
+  return iso(year, 1, 1 + offset);
+}
+
+/**
  * The rules, each with the authority that makes a seated term defensible.
  *
  * `compute` is null where the authority fixes no statewide date. That is a fact about the law,
@@ -84,10 +98,46 @@ export const CA_SWEARING_IN_RULES = {
   },
   'ca-elec-10554': {
     id: 'ca-elec-10554',
-    label: 'District officers elected under the Uniform District Election Law',
+    label: 'District officers under the Uniform District Election Law whose principal act does not say otherwise',
     authority: 'Cal. Elec. Code § 10554 — noon on the first Friday in December next following the general district election',
     source: 'https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=ELEC&sectionNum=10554. (read 2026-11-04)',
     compute: (electionYear) => firstFridayInDecember(electionYear),
+    // 🔴🔴 THIS IS NOT THE BLANKET SPECIAL-DISTRICT RULE, AND IT READS EXACTLY LIKE ONE.
+    // § 10554's "elective officers, elected or appointed pursuant to this part" is bounded by a
+    // district's PRINCIPAL ACT, which can and does override it. Los Angeles County's own
+    // calendar for this election puts health care and recreation-and-park districts here, on
+    // 4 December — and puts municipal water districts, water agencies and water replenishment
+    // districts a month later, on 4 January, under `ca-water-principal-act`.
+    //
+    // Applying this rule by a predicate over the office title (`Director%`) would have seated
+    // 14 of California's 25 district offices in this wave A MONTH EARLY, while the people they
+    // replace were still in office. NO office in the 2026 California set uses this rule.
+    warning:
+      'Check the district\'s principal act before using this rule. It does NOT cover municipal water districts, water agencies or water replenishment districts.',
+  },
+  'ca-water-principal-act': {
+    id: 'ca-water-principal-act',
+    label: 'Municipal water districts, water agencies and water replenishment districts',
+    authority:
+      'Cal. Water Code § 60139, Water Code Appendix §§ 98-51 and 103-5(b), and Cal. Gov. Code § 24200 — noon on the first Monday in January following the election',
+    source:
+      'Los Angeles County Registrar-Recorder/County Clerk, Candidate Handbook and Resource Guide, November 3, 2026 General Election, Calendar of Events, "JAN. 4 (M) NOON E+62 — TAKING OF OFFICE — MUNICIPAL WATER, WATER AGENCIES, AND WATER REPLENISHMENT DISTRICTS" — https://content.lavote.gov/docs/rrcc/documents/candidate-handbook-general-election-complete-v-10.pdf (read 2026-11-04)',
+    compute: (electionYear) => firstMondayInJanuary(electionYear + 1),
+  },
+  'ca-la-county-charter': {
+    id: 'ca-la-county-charter',
+    label: 'Los Angeles County Assessor, Sheriff and Supervisors',
+    authority: 'Los Angeles County Charter, Art. II § 6 and Art. IV § 13',
+    source:
+      'Los Angeles County Registrar-Recorder/County Clerk, Candidate Handbook and Resource Guide, November 3, 2026 General Election, Calendar of Events — https://content.lavote.gov/docs/rrcc/documents/candidate-handbook-general-election-complete-v-10.pdf (read 2026-11-04)',
+    // 🔴 UNRESOLVED, ON PURPOSE. The handbook states the rule as "noon on the first Monday in
+    // December following the election" and then calendars that very entry at NOV. 30 (M) NOON,
+    // E+27. 30 November 2026 IS a Monday and is NOT in December; the first Monday in December
+    // 2026 is the 7th. Both readings cannot hold, the gap is a week, and the charter sections
+    // the entry cites are the only thing that can settle it.
+    compute: null,
+    notComputableReason:
+      'the county\'s own handbook contradicts itself: it states "the first Monday in December" and calendars that entry on 30 November (E+27). Read Art. II § 6 and Art. IV § 13 of the charter before seating the Sheriff',
   },
   'ca-gov-24200': {
     id: 'ca-gov-24200',

@@ -24,6 +24,7 @@ import {
   firstFridayInDecember,
   secondFridayInDecember,
   firstMondayAfterJanuary1,
+  firstMondayInJanuary,
   CA_SWEARING_IN_RULES,
   swearingInDateForRule,
 } from './ca-swearing-in.mjs';
@@ -70,11 +71,32 @@ describe('firstMondayAfterJanuary1 — Cal. Gov. Code § 24200', () => {
   });
 });
 
+describe('firstMondayInJanuary vs firstMondayAfterJanuary1 — two rules, one date, until they differ', () => {
+  // 🔴 THESE TWO AGREE IN 2027 AND DISAGREE IN 2029, AND BOTH ARE LIVE IN THIS WAVE.
+  // Cal. Gov. Code § 24200 says the first Monday AFTER January 1; the water-district principal
+  // acts say the first Monday IN January. For the 2026 cycle both land on 2027-01-04, so a
+  // single function would pass every test this wave can write and be wrong in the next one.
+  // They are separate functions because they are separate rules, not because today's answers
+  // differ.
+  it('both give 2027-01-04 for the 2026 cycle', () => {
+    expect(firstMondayInJanuary(2027)).toBe('2027-01-04');
+    expect(firstMondayAfterJanuary1(2027)).toBe('2027-01-04');
+  });
+
+  it('diverge by a week when 1 January is itself a Monday', () => {
+    expect(firstMondayInJanuary(2029)).toBe('2029-01-01');
+    expect(firstMondayAfterJanuary1(2029)).toBe('2029-01-08');
+  });
+});
+
 describe('the rule catalogue', () => {
   it('gives every rule a citation, because a date with no authority cannot seat a term', () => {
     for (const rule of Object.values(CA_SWEARING_IN_RULES)) {
       expect(rule.authority, `rule ${rule.id} has no authority`).toMatch(/§|art\./);
-      expect(rule.source, `rule ${rule.id} has no source`).toMatch(/^https:\/\//);
+      // A URL SOMEWHERE in the source, not at the start: the strongest citations here name the
+      // document and the section first and carry the URL after it, which an anchored match
+      // would have rejected in favour of a bare link.
+      expect(rule.source, `rule ${rule.id} has no source URL`).toMatch(/https:\/\/\S+/);
     }
   });
 
@@ -83,6 +105,40 @@ describe('the rule catalogue', () => {
     expect(swearingInDateForRule('ca-elec-10554', 2026)).toBe('2026-12-04');
     expect(swearingInDateForRule('ca-gov-24200', 2026)).toBe('2027-01-04');
     expect(swearingInDateForRule('ca-const-vi-16c', 2026)).toBe('2027-01-04');
+    expect(swearingInDateForRule('ca-water-principal-act', 2026)).toBe('2027-01-04');
+  });
+
+  it('does NOT put a municipal water district on the UDEL December date', () => {
+    // 🔴🔴 THE MISTAKE THIS PASS CAME CLOSEST TO SHIPPING. Cal. Elec. Code § 10554 reads like a
+    // blanket rule for special districts — "elective officers ... take office at noon on the
+    // first Friday in December" — and a predicate over `title ILIKE 'Director%'` would have
+    // applied it to all 25 California district offices in this wave. 14 of them are municipal
+    // water districts, water agencies and water replenishment districts, whose PRINCIPAL ACTS
+    // override § 10554 and seat them a month later. Los Angeles County's own calendar for this
+    // election lists the two groups under separate headings and separate dates.
+    //
+    // A month early is not a rounding error: it seats a winner while the predecessor is still
+    // in office, and the temporal model would have made that live on its own date with nobody
+    // running anything.
+    expect(swearingInDateForRule('ca-water-principal-act', 2026))
+      .not.toBe(swearingInDateForRule('ca-elec-10554', 2026));
+  });
+
+  it('refuses the Los Angeles County charter rule, whose own source contradicts itself', () => {
+    // 🔴 The county's handbook states the rule as "noon on the first Monday in December
+    // following the election" and then places that event on its calendar at NOV. 30 (E+27).
+    // November 30 2026 is a Monday, and it is not in December; the first Monday in December is
+    // the 7th. The two cannot both be right, and the Sheriff is the only office in this wave
+    // the rule governs. It is in the catalogue so the conflict is recorded, and it throws so
+    // nothing seeds from it until the charter itself settles which reading is correct.
+    //
+    // ⚠ THIS ASSERTION WAS VACUOUS ON ITS FIRST RUN AND PASSED. `swearingInDateForRule` throws
+    // `unknown rule: ca-la-county-charter` for an id it does not know, and that message matches
+    // /charter/i — so the test went green while the rule did not exist. It now requires the
+    // reason, which only a rule that IS in the catalogue can produce.
+    expect(() => swearingInDateForRule('ca-la-county-charter', 2026))
+      .toThrow(/contradicts itself/i);
+    expect(CA_SWEARING_IN_RULES['ca-la-county-charter']).toBeDefined();
   });
 
   it('refuses to compute a date for the city rule instead of inventing one', () => {
