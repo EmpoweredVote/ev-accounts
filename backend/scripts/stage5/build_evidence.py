@@ -1,11 +1,13 @@
 """Stage 5 -> research-stances bridge (STAGE5 step 7.4).
 python3 -I scripts/stage5/build_evidence.py <batch dir> <roster.tsv> <store findings dir> [--fetch] [--level state --state XX]
+    [--max-urls N]  (default 8 federal, 20 state)
 Rewrites <batch>/research.csv in place (original kept as research-pre-evidence.csv) and writes <batch>/evidence.csv:
 - full_name -> the bundle's spelling (politicians.json), joined by politician_id through the roster;
 - blank rows: no source URLs (a blank claims no chair; the gate allows it), URLs in reasoning reduced to host names;
 - seated rows: one snippet per cited URL, cut from the page fetched once (pages/<sha1>.txt), >= 30 words, around the
   person's quoted passage, else their surname, else the instrument named in the reasoning.
---fetch fetches missing pages one at a time (curl, 1 s apart)."""
+--fetch fetches missing pages one at a time (curl, 1 s apart); iga.in.gov and congress.gov pages through their official
+APIs instead (_iga.py, _congress.py). A congress.gov page cached by an older run holds a bot check: delete it first."""
 import csv, json, sys, os, re, hashlib, subprocess, time, html
 B, ROSTER, FIND = sys.argv[1:4]; FETCH = '--fetch' in sys.argv
 pol = json.load(open(f'{B}/politicians.json')); pol = pol if isinstance(pol, list) else pol.get('politicians', pol)
@@ -16,7 +18,9 @@ if not os.path.exists(src): os.rename(f'{B}/research.csv', src)
 rows = list(csv.DictReader(open(src))); cols = list(rows[0].keys())
 LEVEL = sys.argv[sys.argv.index('--level') + 1] if '--level' in sys.argv else 'federal'
 STATE = sys.argv[sys.argv.index('--state') + 1] if '--state' in sys.argv else None
-MAXU = 8 if LEVEL == 'federal' else 20  # stance-gate reads any number of source_url_N columns
+# Most source URLs a seated row keeps. stance-gate reads any number of source_url_N columns; the federal default of 8
+# dropped cited acts on a federal batch (2026-11-03), which then ran with 20. --max-urls N sets it for any level.
+MAXU = int(sys.argv[sys.argv.index('--max-urls') + 1]) if '--max-urls' in sys.argv else (8 if LEVEL == 'federal' else 20)
 cols += [f'source_url_{i}' for i in range(1, MAXU + 1) if f'source_url_{i}' not in cols]
 for _r in rows:
     for _k in cols: _r.setdefault(_k, '')
@@ -33,12 +37,14 @@ for x in csv.DictReader(open(f'{B}/research-pre-evidence.csv')):
 # 2026-10-31 by Chris Andrews: kept for LOCAL research runs only, never in a live or scheduled fetch path. A page read
 # this way is NOT proof the verifier can read it: the verifier sends the honest EmpoweredVoteBot identity
 # (src/lib/verificationFetch.ts), so it may still fail there. iga.in.gov is NOT fetched this way: it goes through the
-# official MyIGA API (_iga.py → iga-pages.ts, the same reader the verifier uses).
+# official MyIGA API (_iga.py → iga-pages.ts, the same reader the verifier uses); congress.gov through the official
+# api.congress.gov reader (_congress.py → congress-pages.ts, what the verifier reads; a plain fetch gets a bot check).
 def text_of(url):
     f = f'{B}/pages/{hashlib.sha1(url.encode()).hexdigest()}.txt'
     if not os.path.exists(f):
         if not FETCH: return None
         if is_iga(url): return iga_text(url, f'{B}/pages')
+        if is_congress(url): return congress_text(url, f'{B}/pages')
         time.sleep(1)
         r = subprocess.run(['curl', '-sL', '--compressed', '--max-time', '40', '-A', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36', url], capture_output=True)
         if r.stdout[:5] == b'%PDF-':  # a PDF is read with pdftotext, never stripped as HTML
@@ -106,6 +112,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the s
 from _party import names_party  # the one party test the sweep and the writer use (party-check.ts)
 from _window import verifiable_window  # a passage the verifier itself accepts (window-check.ts)
 from _iga import is_iga, iga_text  # iga.in.gov through the official API, never the browser UA
+from _congress import is_congress, congress_text  # congress.gov through api.congress.gov, never the browser UA
 from _ballotpedia import ballotpedia_non_survey  # survey answers only (ruling 2026-11-02)
 def window(t, i, j, n=30):
     w = t.split(' '); pos = len(t[:i].split(' ')) - 1; end = len(t[:j].split(' '))

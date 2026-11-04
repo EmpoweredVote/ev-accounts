@@ -8,6 +8,8 @@
  *   House  (totals above 150): the Clerk XML, https://clerk.house.gov/evs/<year>/roll<NNN>.xml, from `RC# <n>`.
  *   Senate (115th Congress on): the LegiScan roll call, https://legiscan.com/US/rollcall/<bill>/id/<id>, from the
  *          table's `legiscan-<id>`; the pair goes to scripts/legiscan-evidence-lines.ts.
+ *   House roll call the table gives no roll number (so no Clerk XML), when its table id is `legiscan-<id>`: the
+ *          same LegiScan pair as the Senate. Any other unnumbered House roll call is held.
  *
  * A vote with no single roll call, a motion that names another roll number or tally, a person with no bioguide id
  * or no table position, a Senate roll call before the 115th Congress: held in `unmapped` with the reason. A table act that differs from the seated act (a
@@ -33,7 +35,10 @@ export type SeatedVote = {
 };
 /** `bill_number` and `rc` are the matched table roll call's: the Clerk XML must show both (houseRollCallIsFor). */
 export type HouseCite = SeatedVote & { url: string; bill_number: string; rc: number };
-/** The `pairs.csv` columns of legiscan-evidence-lines.ts, plus what `legiscan/needs.json` records of the vote. */
+/**
+ * The `pairs.csv` columns of legiscan-evidence-lines.ts, plus what `legiscan/needs.json` records of the vote. The LegiScan
+ * lane: every Senate pair, and a House roll call the table gives no roll number (`senate` and `senateVotes` carry both).
+ */
 export type SenatePair = {
   full_name: string;
   last_name: string;
@@ -122,18 +127,24 @@ export function planCitations(
     }
     crosscheck.agree++;
 
-    if (roll.yes + roll.no > HOUSE_MIN_TOTAL) {
-      if (roll.rc === null) { hold(`house roll call with no roll number in the table (${roll.external_vote_id})`); continue; }
-      const url = `https://clerk.house.gov/evs/${roll.date.slice(0, 4)}/roll${String(roll.rc).padStart(3, '0')}.xml`;
-      house.push({ ...s, url, bill_number: roll.bill_number, rc: roll.rc });
-      continue;
-    }
-    if (Number(roll.congress) < FIRST_SENATE_CONGRESS) { hold(`senate roll call before the 115th Congress (${roll.congress}th)`); continue; }
     const id = /^legiscan-(\d+)$/.exec(roll.external_vote_id)?.[1];
-    if (!id) { hold(`senate roll call whose table id is not a LegiScan id (${roll.external_vote_id})`); continue; }
     // The table prints 'HJRES 44'; LegiScan names it HJR44 (S → SB, HR → HB, …).
     const lsBill = legiscanBillNumber(roll.bill_number.replace(/\s+/g, ''));
-    if (!lsBill) { hold(`senate roll call on a bill with no LegiScan bill number (${roll.bill_number})`); continue; }
+    if (roll.yes + roll.no > HOUSE_MIN_TOTAL) {
+      if (roll.rc === null) {
+        // No roll number, so no Clerk XML. A LegiScan table id still names the one roll call: cite it as the Senate is.
+        if (!id) { hold(`house roll call with no roll number in the table (${roll.external_vote_id})`); continue; }
+        if (!lsBill) { hold(`house roll call with no roll number, on a bill with no LegiScan bill number (${roll.bill_number})`); continue; }
+      } else {
+        const url = `https://clerk.house.gov/evs/${roll.date.slice(0, 4)}/roll${String(roll.rc).padStart(3, '0')}.xml`;
+        house.push({ ...s, url, bill_number: roll.bill_number, rc: roll.rc });
+        continue;
+      }
+    } else {
+      if (Number(roll.congress) < FIRST_SENATE_CONGRESS) { hold(`senate roll call before the 115th Congress (${roll.congress}th)`); continue; }
+      if (!id) { hold(`senate roll call whose table id is not a LegiScan id (${roll.external_vote_id})`); continue; }
+      if (!lsBill) { hold(`senate roll call on a bill with no LegiScan bill number (${roll.bill_number})`); continue; }
+    }
     const source_url = `https://legiscan.com/US/rollcall/${lsBill}/id/${id}`;
     senateVotes.push(s);
     if (senate.some((p) => p.full_name === s.full_name && p.source_url === source_url && p.official === s.cited_url)) continue;

@@ -30,6 +30,8 @@
  *           Each such page is printed as WARN too. A cited page that is itself a LegiScan roll call cannot block
  *           that way, so its Senate votes are held and no pair is written for it. legiscan/unmapped.json lists
  *           this run's Senate holds.
+ *   House roll call the table gives no roll number: no Clerk XML can be named, so when its table id is
+ *           `legiscan-<id>` it takes the Senate's LegiScan lane above (pair, needs, merge); otherwise it is held.
  *
  * Held, never guessed (federal/unmapped.json): no single store vote or table roll call, no bioguide id, no table
  * position, a Senate roll call before the 115th Congress, an XML that could not be read or whose bill or roll
@@ -246,9 +248,9 @@ writeCsv(join(B, 'research.csv'), cols, rows);
 writeCsv(join(B, 'evidence.csv'), ['full_name', 'topic_key', 'source_url', 'snippet', 'snippet_index'], ev);
 
 const dis = plan.crosscheck.disagree.length + crosscheck.house_xml.disagree.length;
-console.info(`people ${people.size} · seated votes ${votesFound} · table roll calls ${rolls.length} · house lines ${lines.length} · senate pairs ${pairs.length} · unmapped ${unmapped.length} · table agree ${plan.crosscheck.agree} · disagree ${dis} · official uncited ${log.filter((l) => l[1].startsWith('uncite')).length}`);
+console.info(`people ${people.size} · seated votes ${votesFound} · table roll calls ${rolls.length} · house lines ${lines.length} · legiscan pairs ${pairs.length} · unmapped ${unmapped.length} · table agree ${plan.crosscheck.agree} · disagree ${dis} · official uncited ${log.filter((l) => l[1].startsWith('uncite')).length}`);
 for (const d of plan.crosscheck.disagree) console.info('DISAGREE', JSON.stringify(d));
 for (const d of crosscheck.house_xml.disagree) console.info('DISAGREE', JSON.stringify(d));
 for (const w of decided.warn) console.info(`WARN ${w.full_name}: ${w.why}, so needs.json blocks legiscan_merge.py from uncite: ${w.page}`);
-if (pairs.length) console.info(`senate: ${pairs.length} pairs in legiscan/pairs.csv; next, legiscan-evidence-lines.ts then legiscan_merge.py`);
+if (pairs.length) console.info(`legiscan: ${pairs.length} pairs (Senate, and House roll calls with no roll number) in legiscan/pairs.csv; next, legiscan-evidence-lines.ts then legiscan_merge.py`);
 process.exit(dis ? 1 : 0);
