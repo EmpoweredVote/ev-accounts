@@ -1,6 +1,6 @@
-# gun-policy — Season 3 draft, revision 5 `{{REV5_ID}}` (v3 r5, CA_0356; replaces revision 4)
+# gun-policy — Season 3 draft, revision 5 `41349e39-394a-47b9-81c6-a79f8ec60425` (v3 r5, CA_0356; replaces revision 4)
 
-**Revision 5 applied:** {{APPLY_DATE}} by CA_0356, which rejected revision 4 (`76a098af`, Draft B, CA_0338, applied
+**Revision 5 applied:** 2026-11-03 by CA_0356, which rejected revision 4 (`76a098af`, Draft B, CA_0338, applied
 2026-10-30), proposed and approved revision 5 (approved and parked) and pinned it in the draft Season 3. Revision 5
 keeps Draft B's rungs 1, 2, 4 and 5 and rewrites rung 3 after Stage 5 (Session C, 2026-11-03). Season 2 keeps its pin (revision 2, served revision 3's text).
 

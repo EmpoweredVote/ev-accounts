@@ -14,7 +14,8 @@
 -- Drafted 2026-11-03, offline, as the Stage 4 package of the Season 3 prep for this
 -- topic. Actor 854fbc06-40fc-458d-b523-20ef8e5ad1b2 (Chris Andrews).
 --
--- APPLIED: (fill in on apply — date, who said yes, revision id)
+-- APPLIED 2026-11-03 on production after Chris Andrews' yes #2: revision 5 = 41349e39-394a-47b9-81c6-a79f8ec60425 (v3, approved/parked,
+-- pinned in draft Season 3); revision 4 76a098af… rejected; open Season 2 pin unchanged (1a72d5df…).
 -- Dry run on prod 2026-11-03 (body twice inside BEGIN, forced RAISE): gate OK on both runs; first run re-pinned
 -- the draft season to revision 3, rejected revision 4 and proposed/approved/pinned revision 5; second run skipped
 -- propose/approve; voter answers reworded x3; rollback confirmed (4 revisions, revision 4 still approved and pinned).
