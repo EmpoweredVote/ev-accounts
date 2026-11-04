@@ -20,6 +20,110 @@
         "fetched_at": "2026-10-22T22:41:08.557Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "dc6ecf4989764eb720b383420162da7da187677c5e8aa6609d911b6513cb5bcd",
+      "kind": "own-words",
+      "url": "https://wfyi.org/news/articles/republicans-block-gun-storage-requirement-from-firearms-bill",
+      "date": "2022-01-10",
+      "date_precision": "day",
+      "passage": "“Data shows us that if this language is incorporated into Indiana code, we could expect unintentional firearm deaths and suicides among children to decrease by a third,” Gore said.",
+      "note": "Quoted by WFYI/Indiana Public Radio, speaking for his floor amendment requiring gun owners to secure firearms from children; the amendment was ruled not germane to HB 1077.",
+      "subjects": [
+        "safe storage of guns around children"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:38:20.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c809356c1593d0bb43decb32e5fc75c26c5d9852fd58a054af8dd6592aa62a3e",
+      "kind": "record",
+      "url": "https://wfyi.org/news/articles/republicans-block-gun-storage-requirement-from-firearms-bill",
+      "date": "2022-01-10",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Floor amendment to HB 1077 (handgun license repeal) making it a crime to fail to secure a firearm a child then accesses; ruled not germane",
+      "note": "Gore authored the amendment; the outlet reports it would require locking the gun in a container, using a trigger or cable lock, or disassembling it.",
+      "subjects": [
+        "safe storage of guns around children",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:38:20.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1bb9fc414f3d8460ce94d38885bb9a25996fe80937a7f54c777ae9de0daf6e02",
+      "kind": "own-words",
+      "url": "https://www.wfyi.org/public-affairs/2023-12-14/safe-storage-bill-sees-revival-following-surge-in-youth-gun-shootings",
+      "date": "2023-12-14",
+      "date_precision": "day",
+      "passage": "“The idea, of course, is to prevent these tragedies that we’re seeing more and more where children access an unsecured firearm and then use it to injure themselves or another,” Gore said.",
+      "note": "Quoted by WFYI/Indiana Public Radio on reviving his safe storage bill.",
+      "subjects": [
+        "safe storage of guns around children"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:38:20.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "50be23b1b32b6393e8165b94aa98ee3ef32de2d0dd9e5819641ee5f6237007fa",
+      "kind": "own-words",
+      "url": "https://www.wfyi.org/public-affairs/2023-12-14/safe-storage-bill-sees-revival-following-surge-in-youth-gun-shootings",
+      "date": "2023-12-14",
+      "date_precision": "day",
+      "passage": "“We attempted to introduce it as an amendment to permitless carry or license-less carry,” Gore said about the most recent attempt. “I thought it’d be a good amendment to show that we’re serious about gun owner’s rights but we’re also serious about their responsibilities.”",
+      "note": "Quoted by WFYI/Indiana Public Radio, describing his storage amendment offered on the permitless carry bill.",
+      "subjects": [
+        "safe storage of guns around children",
+        "carry a gun without a permit",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:38:20.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e1ec6a762a121a3f60df1b739bfa4b0d0f58bb54b32d18c8121c59e0c4285456",
+      "kind": "own-words",
+      "url": "https://www.wfyi.org/public-affairs/2023-12-14/safe-storage-bill-sees-revival-following-surge-in-youth-gun-shootings",
+      "date": "2023-12-14",
+      "date_precision": "day",
+      "passage": "“In Cumberland, I’ve had conversations with the (police) chief about the toll this takes on law enforcement and other first responders,” Gore said. “It’s just tragic and I’m really, really sick of having to hear about this occurring throughout the state… I think it’s time for it to end and I think it’s common sense.”",
+      "note": "Quoted by WFYI/Indiana Public Radio on child shootings with unsecured guns.",
+      "subjects": [
+        "safe storage of guns around children"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:38:20.882Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -75,6 +179,36 @@
       "found": 0,
       "at": "2026-10-27T20:35:01.141Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "safe storage of guns around children",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "general statements on gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House caucus member page https://indianahousedemocrats.org/members/mitch-gore/ (confirms House District 89; only a general line about gun violence in his biography)",
+        "blocked: https://indianahousedemocrats.org/news-media/gore-reacts-to-tragic-death-of-toddler-in-cumberland-calls-for-safe-storage-legislation (404)",
+        "blocked: https://indianahousedemocrats.org/news-media/gore-statement-on-central-indiana-shootings (404)",
+        "blocked: https://indianahousedemocrats.org/news-media/state-rep.-gore-comments-on-mass-shooting-at-fedex-facility (404)",
+        "blocked: https://indianahousedemocrats.org/news-media/house-republicans-block-gores-attempt-to-keep-parents-guns-out-of-kids-hands (404)",
+        "campaign site https://www.mitchgore.com (loaded, nothing on the subject found in its text)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia: page came back empty",
+        "news search on name plus gun words (WFYI/Indiana Public Radio 2022 and 2023 stories read)",
+        "blocked: https://indianacapitalchronicle.com/2023/12/14/safe-storage-bill-sees-revival-following-surge-in-youth-gun-shootings/ (403)",
+        "blocked: https://wthr.com/article/news/local/potential-bill-to-protect-children-against-unsecured-guns-in-indiana-proposed-mitch-gore/531-3d277a4e-0016-4a8d-ac57-42dcc687ddf9 (403)",
+        "Yahoo roundup of 2025 gun bills (lists him as author of HB 1676 and co-author of HB 1597; used as a lead, covered by LegiScan check)"
+      ],
+      "found": 5,
+      "at": "2026-10-31T20:38:20.882Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -1,6 +1,68 @@
 {
   "politician_id": "d62f0017-3d27-43f0-8908-781f3c9e5050",
-  "findings": [],
+  "findings": [
+    {
+      "id": "db44a3b7800a82a4097e065afe4b1cb0445c5d2eae3ad92381d516354f7cbb34",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1596",
+      "date": "2025-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1596-2025",
+      "act": "nay",
+      "motion": "Laid out as postponed business RV#3937",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Laid out as postponed business RV#3937, 2025-05-28: nay (tally 87–52); census gate: none.",
+      "subjects": [
+        "short-barrel firearm possession offense repealed",
+        "definition of short-barrel firearm repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-1596-2025.enrolled.html",
+          "sha256": "79af2b9f1e3b2967b40f051ee7540cd4f3d0d7f9ae0f8c6802c5cd20ab4d37f4"
+        }
+      }
+    },
+    {
+      "id": "89fe52e63cd8fdb701d7e490352bd00c8991e85a17b7415ce6f04c6256559a61",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB706",
+      "date": "2025-05-21",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-706-2025",
+      "act": "nay",
+      "motion": "Read 3rd time RV#3121",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Read 3rd time RV#3121, 2025-05-21: nay (tally 89–51); census gate: none.",
+      "subjects": [
+        "out-of-state handgun licenses recognized in Texas",
+        "state must publish list of states honoring Texas license",
+        "old background-check condition for recognition repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-706-2025.enrolled.html",
+          "sha256": "fb39773e7239800d5a632dde6685542e492721c2bc464dbd6838c1b0425f3c93"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",

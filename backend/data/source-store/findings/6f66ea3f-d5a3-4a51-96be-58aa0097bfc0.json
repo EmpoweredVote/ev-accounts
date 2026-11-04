@@ -1,6 +1,129 @@
 {
   "politician_id": "6f66ea3f-d5a3-4a51-96be-58aa0097bfc0",
-  "findings": [],
+  "findings": [
+    {
+      "id": "de993072b1f015691757356966b25be35f10f79ccfc21b9e05ca9348996cbcde",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "Roll Call #208 - Question on acceptance of conference committee report",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA Senate, Roll Call #208 - Question on acceptance of conference committee report, 2024-07-18: yea (tally 35–5); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db16b98b521d382c722d5503605116e48c77fb9d34798b9816992f739c986730",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "Senate Engrossed Roll Call #114",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA Senate, Senate Engrossed Roll Call #114, 2024-02-01: yea (tally 37–3); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "b217bf7236d592008af6b6b55e2f9966e9a1bad25733c3822a32a66bc1d68a0d",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/House/H4376",
+      "date": "2014-07-31",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4376-2013",
+      "act": "yea",
+      "motion": "Acceptance of conference committee report (Roll Call #473)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA Senate, Acceptance of conference committee report (Roll Call #473), 2014-07-31: yea (tally 37–3); census gate: multi-subject.",
+      "subjects": [
+        "firearm license classes merged and Class B licences phased out",
+        "new penalties for shooting and for trafficking guns into the state",
+        "background-check records sent to the federal system",
+        "ban on carrying firearms on school and college grounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "malegislature.gov roll-call PDFs + LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:34:02.477850Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4376-2013.introduced.pdf",
+          "sha256": "b94514a66e779c1400d1b875eb3aac207f6b1b1f12f9928fd8d977feab23bb61"
+        }
+      }
+    },
+    {
+      "id": "767c668122bf86e324f6d9a6719f5b58f7381ff23e94c183d816b849ebaf9525",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4670",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4670-2017",
+      "act": "yea",
+      "motion": "Senate Committee of conference report accepted, in concurrence  Roll Call #435",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MA Senate, Senate Committee of conference report accepted, in concurrence  Roll Call #435, 2018-06-28: yea (tally 36–1); census gate: near-unanimous.",
+      "subjects": [
+        "extreme risk protection orders to remove guns from people at risk of harming self or others",
+        "protection order added as a bar to gun licenses",
+        "stun gun rules and locked storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4670-2017.introduced.pdf",
+          "sha256": "6b37958358a3f01548ef0d16c386b3caaf5993d5c100f88279ff5b45ad1fe098"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -49,6 +172,33 @@
       "found": 0,
       "at": "2026-10-27T14:13:31.640Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "ghost guns",
+        "red-flag orders",
+        "carry permits",
+        "Second Amendment",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page (confirms Senator Mark C. Montigny, Second Bristol and Plymouth; no gun bills in its list)",
+        "sponsor list: covered by LegiScan bulk check",
+        "legislature biography page (nothing on the subject)",
+        "BallotReady profile (policy positions absent)",
+        "Ballotpedia (page came back empty)",
+        "blocked: https://www.markmontigny.com/ (connection failed)",
+        "blocked: https://www.montigny.com/ (refused, status 999)",
+        "four news searches on name plus gun words, Senate floor remarks, statements: nothing from him found"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:44:25.820Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -1,0 +1,31 @@
+{
+  "politician_id": "c93f3eb9-63fe-4923-9773-8471a304af62",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "Second Amendment",
+        "gun violence"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "status unclear: a news search showed him on the scheduled 2026 primary ballot in Louisiana's 5th District, but the later schedule change was reported and no page I could open confirms his November ballot status",
+        "https://www.wwno.org/2026-10-20/nov-3-election-guide-meet-the-5th-congressional-district-candidates (Nov 3 guide; does not name him, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Larry_Foy (empty page)",
+        "blocked: https://lailluminator.com/voter-guides/contests/louisiana-house-5/ (403)",
+        "blocked: https://bluevoterguide.org/district/LA/Louisiana_District_5/35043/525 (403)",
+        "blocked: https://www.newsfromthestates.com/article/louisiana-5th-district-candidates-share-views-abortion-redistricting (403)",
+        "blocked: https://lailluminator.com/2026/02/12/whos-running-so-far-in-louisianas-party-primary-elections/ (403)",
+        "blocked: https://ballotpedia.org/Louisiana%27s_5th_Congressional_District_election,_2026 (empty via curl)",
+        "web searches: name plus gun terms, campaign site (no campaign site found; nothing on the subject)",
+        "congress.gov: not applicable, not a legislator"
+      ],
+      "found": 0,
+      "at": "2026-10-30T14:59:34.353Z",
+      "by": "source-collector"
+    }
+  ]
+}

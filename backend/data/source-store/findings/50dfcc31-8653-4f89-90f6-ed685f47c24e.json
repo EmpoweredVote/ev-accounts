@@ -1,0 +1,139 @@
+{
+  "politician_id": "50dfcc31-8653-4f89-90f6-ed685f47c24e",
+  "findings": [
+    {
+      "id": "ca04536f2f671e950b5506d365342ee0450bb3d68228e5d5a852ff493c0bd0d0",
+      "kind": "own-words",
+      "url": "https://www.pbs.org/video/the-press-room-september-25-2026-dqhgeh/",
+      "date": "2026-09-25",
+      "date_precision": "day",
+      "passage": "Every time one incident impacted the system, everybody was for, \"Well, let's get rid of this thing.\" And it's the same thing out here. You have a gun. Someone gets shot by a gun in a shootout. Everyone wants to take the gun. And a lot of people get behind it because it sounds like a good idea. But if we give up these rights, we will never get them back, just like in the prison.",
+      "note": "Interview on The Press Room (date from the episode title). He says calls to take guns after a shooting sound good but give up rights that would not come back.",
+      "subjects": [
+        "general statement on gun rights",
+        "against taking guns after shootings"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:22:47.472Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "93a71e349a957ae2c49ec598a1892594ae5de031dddbdd84d4cf263b7c4eec1e",
+      "kind": "own-words",
+      "url": "https://www.pbs.org/video/the-press-room-september-25-2026-dqhgeh/",
+      "date": "2026-09-25",
+      "date_precision": "day",
+      "passage": "I also took gun safety in Nash Elementary, and I think they should do that again. I think they should teach kids the respect of the gun, and they should teach kids respect for one another and for their parents and their teachers.",
+      "note": "Asked about recent local shootings, he backs gun safety teaching for children.",
+      "subjects": [
+        "gun safety education"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:22:47.472Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ffb6cb08e5d90aa280cb85966c20069d654e7a3c6e3554f902fa83374dce9243",
+      "kind": "own-words",
+      "url": "https://www.pbs.org/video/the-press-room-september-25-2026-dqhgeh/",
+      "date": "2026-09-25",
+      "date_precision": "day",
+      "passage": "I think everybody, any responsible gun owner should have those guns locked up. And if they don't respect that, then there should be consequences held on the person that did not take care of their guns.",
+      "note": "Answering a question on keeping guns from children, he says owners should lock up guns and face consequences if they do not.",
+      "subjects": [
+        "safe storage of guns",
+        "penalty for unsecured guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:22:47.472Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f71173987d3ebfd5bd14d20ad391e528f17b139c9a6d41145ee39a8a4ca71d65",
+      "kind": "own-words",
+      "url": "https://www.pbs.org/video/the-press-room-september-25-2026-dqhgeh/",
+      "date": "2026-09-25",
+      "date_precision": "day",
+      "passage": "Now, if you're a criminal, you're going to get it anyways. So what's the gun law going to do to stop the criminal in the first place? He's still going to go get the gun.",
+      "note": "Asked whether it is too easy to get guns in Arizona, he questions whether gun laws stop criminals.",
+      "subjects": [
+        "doubts new gun laws stop criminals",
+        "ease of buying guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:22:47.472Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4fa85a76e4967cbdf298648aba2437f046bc883c2cac8572165fe4849da771c4",
+      "kind": "own-words",
+      "url": "https://www.pbs.org/video/the-press-room-september-25-2026-dqhgeh/",
+      "date": "2026-09-25",
+      "date_precision": "day",
+      "passage": "Educating. I believe educating is always the correct answer.",
+      "note": "The host's question and his answer: he picks education over gun control.",
+      "subjects": [
+        "gun safety education over gun control"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:22:47.472Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "repeal of gun laws",
+        "safe storage",
+        "general Second Amendment statement"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site butierezforcongress.com (home, policy list, economic, housing, income tax, press, CD-07 page, personal story): nothing on the subject",
+        "https://www.fox10phoenix.com/election/2026-election-adelita-grijalva-faces-her-gop-opponent-clean-elections-debate: confirms he is the challenger in the November 3, 2026 general election; nothing on guns",
+        "https://www.pbs.org/video/the-press-room-september-25-2026-dqhgeh/: interview transcript, gun passages saved",
+        "https://www.kold.com/2026/10/02/tucson-now-daniel-butierezs-plan-cd-07/: nothing on the subject",
+        "blocked: https://ballotpedia.org/Daniel_Butierez",
+        "blocked: https://www.congress.gov (search page returned 403); not a sitting member, no sponsorships expected",
+        "blocked: https://azsos.gov/elections",
+        "https://theballotbrief.com/candidate/daniel-butierez-az: no profile text",
+        "web searches on his name with Second Amendment and with the 2026 ballot",
+        "not reviewed: video of the August 26, 2026 clean elections debate"
+      ],
+      "found": 5,
+      "at": "2026-10-30T22:22:47.472Z",
+      "by": "source-collector"
+    }
+  ]
+}

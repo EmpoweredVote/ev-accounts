@@ -1,0 +1,215 @@
+{
+  "politician_id": "b5cc94df-2ba3-4057-8abd-5760383b286b",
+  "findings": [
+    {
+      "id": "d85821ecea2291fa84c60a2ba4c9ae60e4931abeb0513cc84720f2fb7edf064a",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/19rs/sb150.html",
+      "date": "2019-03-01",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-150-2019",
+      "act": "nay",
+      "motion": "Pass SB 150 (RCS# 196)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KY House, Pass SB 150 (RCS# 196), 2019-03-01: nay (tally 60–37); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/KY_acts_2019_ch010.pdf",
+          "sha256": "93266e8d17c0b31728a6c78573a4afda6517fbacbe2200b4273a5f2e422960c1"
+        }
+      }
+    },
+    {
+      "id": "e491d0d4d1a450eb1bf3aa641042b586b6131aab443dbf14813803f566bcad0a",
+      "kind": "own-words",
+      "url": "https://lpm.org/news/2019-02-27/bill-allowing-concealed-carry-in-ky-without-permit-nears-final-passage",
+      "date": "2019-02-27",
+      "date_precision": "day",
+      "passage": "“I’ve had relatives that have been murdered, I’ve had a gun put in my face. I’ll speak right now: this will not protect me. I’ve lost family to this,” Booker said.",
+      "note": "Quoted by Louisville Public Media in a story on the bill to carry concealed guns without a permit; he said he worried it would lead to more gun violence.",
+      "subjects": [
+        "carry a gun without a permit",
+        "general statement on gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:12:31.522Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "561b221b1f1b5afb2f605ea848dd4428390055186c6164678c86b1f127f498c4",
+      "kind": "own-words",
+      "url": "https://www.wbko.com/2021/05/21/full-interview-charles-booker-talks-potential-us-senate-run-against-rand-paul/",
+      "date": "2021-05-21",
+      "date_precision": "day",
+      "passage": "What I’ve said very clearly from the start in my work over the years to address gun laws in our community to protect our cities, working across Kentucky, as a director of Fish and Wildlife, I want us to fully fund community and public safety.",
+      "note": "Interview transcript on WBKO; he says he has worked on gun laws to protect cities and wants community safety funded. No specific policy named.",
+      "subjects": [
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:12:31.522Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "48248cbf4b4f6486270052f6635289a9eef87fbadeb870895e5c6e125cfa019e",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/19rs/hb70.html",
+      "date": "2019-01-08",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-70-2019",
+      "act": "sponsor",
+      "note": "HB 70 would make it a crime to store a firearm unsafely, including letting a minor reach an unsecured firearm (safe storage). Listed as a co-sponsor/sponsor on the legislature's bill page.",
+      "subjects": [
+        "safe storage of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:12:31.522Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "966df820abc8b2c1578c0a4ee777c26eb046160a60123b6dc83ccb5c7c1c1242",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/19rs/hb76.html",
+      "date": "2019-01-08",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-76-2019",
+      "act": "sponsor",
+      "note": "HB 76 would define assault weapons, large-capacity magazines and bump stocks, require background checks for private gun sales, require reporting of lost or stolen guns, require safe storage, and ban making, selling or transferring bump stocks. Listed as a co-sponsor/sponsor on the legislature's bill page.",
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "large-capacity magazines",
+        "safe storage of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:12:31.522Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b5022e60a1c6057dd178a222660c1c8b8d5ab65283c4ab94bcd80644d196bceb",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/19rs/hb376.html",
+      "date": "2019-02-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-376-2019",
+      "act": "sponsor",
+      "note": "HB 376 would let people petition a district court for one-year extreme risk protection orders to remove firearms from a person judged a significant danger (red-flag orders). Listed as a co-sponsor/sponsor on the legislature's bill page.",
+      "subjects": [
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:12:31.522Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ef606f3175856b388578d89bc46c2267789060dc98d68936170778640c5c0c1e",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/20rs/hb31.html",
+      "date": "2019-07-22",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-31-2020",
+      "act": "sponsor",
+      "note": "HB 31 would repeal KRS 237.109, the law allowing concealed deadly weapons to be carried without a license. Booker is listed first among the sponsors (primary sponsor). Date is the prefiling date. Listed as a co-sponsor/sponsor on the legislature's bill page.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:12:31.522Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6a026f6dab6fc9493b55551047a7918b1acc7e343815a9d5422c53dd266e78a7",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/20rs/hb45.html",
+      "date": "2019-09-04",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-45-2020",
+      "act": "sponsor",
+      "note": "HB 45 would define assault weapons and large-capacity magazines, require background checks for private gun sales, require safe storage and theft reporting, and require licensing of handgun and assault weapon owners. Date is the prefiling date. Listed as a co-sponsor/sponsor on the legislature's bill page.",
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "large-capacity magazines",
+        "permit to buy or own a gun",
+        "safe storage of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:12:31.522Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "safe storage",
+        "general gun statements"
+      ],
+      "places": [
+        "scope: 2026 Kentucky U.S. Senate general-election candidate (won the May 2026 primary per search results; campaign site https://charlesbookerky.org/ names the race)",
+        "On the Record (0 meetings)",
+        "campaign site https://charlesbookerky.org/ (home, policies/safety page): nothing on guns",
+        "blocked: https://www.bookerforkentucky.com/ (2020 campaign site, no connection)",
+        "Kentucky legislature sponsor list https://apps.legislature.ky.gov/record/IndividualSponsorPages/433.html and bill pages for 19RS HB 70, 76, 376 and 20RS HB 31, 45",
+        "Ballotpedia https://ballotpedia.org/Charles_Booker (empty page; not reviewed)",
+        "Kentucky legislature SB 150 page (vote already on file)",
+        "news searches: 3 web searches (LPM 2019 story, WBKO 2021 interview); OnTheIssues used only as a lead, not cited",
+        "not reviewed: https://www.wdrb.com local-gun-law bill story (page text had no usable Booker passage); no filed bill for it found on the sponsor list"
+      ],
+      "found": 7,
+      "at": "2026-10-31T00:12:31.522Z",
+      "by": "source-collector"
+    }
+  ]
+}

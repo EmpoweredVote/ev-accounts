@@ -1,6 +1,50 @@
 {
   "politician_id": "085e88aa-edfd-435e-90bb-d84c5912efde",
-  "findings": [],
+  "findings": [
+    {
+      "id": "2f2c337d75249941e5cfddb7979ce3a3ecec001de2cc0dd0c52a70bc9eed4383",
+      "kind": "own-words",
+      "url": "https://www.ibj.com/articles/indiana-nears-law-allowing-more-armed-statewide-officials-at-state-capitol",
+      "date": "2024-03-08",
+      "date_precision": "day",
+      "passage": "“The 2nd Amendment Rights of Hoosiers shouldn’t end at the steps of the Statehouse,” he said in a written statement.",
+      "note": "Quoted by the Indianapolis Business Journal. Written statement from the Treasurer on a bill (HB 1084) letting more armed statewide officials carry at the Statehouse. The article also says he hoped to extend it to officials' staff next year.",
+      "subjects": [
+        "carry a gun at the Statehouse",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:38:38.227Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f29a5627072b2652c31c54ad9b8c4dce595704d4beacbc78a46d44121717e36",
+      "kind": "record",
+      "url": "https://www.ibj.com/articles/indiana-nears-law-allowing-more-armed-statewide-officials-at-state-capitol",
+      "date": "2024-03-08",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1084-2024",
+      "act": "other",
+      "motion": "Testified for HB 1084, allowing more armed statewide officials at the Statehouse",
+      "note": "The IBJ reports that Treasurer Elliott testified for the measure. This is testimony, not a vote or sponsorship.",
+      "subjects": [
+        "carry a gun at the Statehouse"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:38:38.227Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -51,6 +95,32 @@
       "found": 0,
       "at": "2026-10-27T01:02:28.780Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "background checks",
+        "red flag orders",
+        "carry permits",
+        "carry in the Statehouse",
+        "Second Amendment",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity: Indiana State Treasurer, in office since 2023, nominated for a second term at the 2026-06-20 state convention (stated in the search results; the stateside.com profile PDF could not be read, not reviewed)",
+        "IBJ article of 2024-03-08 on HB 1084: https://www.ibj.com/articles/indiana-nears-law-allowing-more-armed-statewide-officials-at-state-capitol",
+        "campaign site https://www.danielelliott.org/: home page has nothing on the subject",
+        "Treasurer office page https://www.in.gov/tos/index: nothing on the subject",
+        "not a legislator, so no sponsor list (he testified for the bill, which is saved as a record)",
+        "not found (404): https://www.foxnews.com/politics/indiana-nears-law-allowing-more-armed-statewide-officials-at-state-capitol",
+        "Ballotpedia not reachable by fetch tool; two news searches on name plus gun words run"
+      ],
+      "found": 2,
+      "at": "2026-10-31T20:38:38.227Z",
+      "by": "source-collector"
     }
   ]
 }

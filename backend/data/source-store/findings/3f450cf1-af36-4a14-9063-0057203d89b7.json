@@ -1,0 +1,32 @@
+{
+  "politician_id": "3f450cf1-af36-4a14-9063-0057203d89b7",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red flag orders",
+        "carry a gun without a permit"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site home page (nothing on the subject)",
+        "campaign site platform page (only 'Make communities safer for families' under crime and public safety; nothing on guns)",
+        "campaign site about page and why-me page (nothing on the subject)",
+        "WWNO Nov 3 election guide for Louisiana 3rd District (confirms he is a Nov 3 2026 candidate; his answers there cover other topics, nothing on the subject)",
+        "Prediction Edge profile (background: Lake Charles Navy veteran, LA-03 challenger)",
+        "blocked: https://ballotpedia.org (403 to scripted fetch; not retried)",
+        "not reviewed: his social media (x.com, facebook, instagram, tiktok, bluesky)",
+        "congress.gov: not applicable, not a sitting legislator",
+        "web search x2 (name plus Second Amendment; name plus Lake Charles plus guns): nothing on the subject from him"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:01:21.068Z",
+      "by": "source-collector"
+    }
+  ]
+}

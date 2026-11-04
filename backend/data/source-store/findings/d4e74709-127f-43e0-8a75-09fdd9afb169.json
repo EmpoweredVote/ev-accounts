@@ -1,0 +1,54 @@
+{
+  "politician_id": "d4e74709-127f-43e0-8a75-09fdd9afb169",
+  "findings": [
+    {
+      "id": "676735c6923d6ef1b46d6244671320745245ffcd58b0409f23e2aab8b4da0aad",
+      "kind": "own-words",
+      "url": "https://www.johansonforidaho.com/the-issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Shall not be infringed.",
+      "note": "Answer on his campaign issues page under an item headed 'The Second Amendment?' in the quick-answers section. It is the whole text of that item.",
+      "subjects": [
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:44:13.350Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun rights general statement",
+        "background checks",
+        "assault-style weapons",
+        "carry permits",
+        "firearm"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "BallotReady https://www.ballotready.org/people/will-johanson: confirms 2026 Idaho 2nd District general election candidate; no gun position listed",
+        "idahonews.com 2026 candidate survey page: lists him as a candidate, shows none of his answers",
+        "campaign site issues page https://www.johansonforidaho.com/the-issues: one gun item, saved",
+        "campaign site home and about pages: nothing on the subject",
+        "web search x2 (name plus guns, name plus firearms): nothing on the subject by him",
+        "sponsor list: not applicable, not a legislator",
+        "blocked: https://idahocapitalsun.com/2026/09/15/idaho-district-2-congressional-candidates-say-theyre-worried-about-high-cost-of-living/",
+        "Ballotpedia: page came back empty, nothing found",
+        "not reviewed: https://x.com/Johanson4Idaho"
+      ],
+      "found": 1,
+      "at": "2026-10-31T00:44:13.350Z",
+      "by": "source-collector"
+    }
+  ]
+}

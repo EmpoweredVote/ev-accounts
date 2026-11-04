@@ -1,0 +1,24 @@
+{
+  "politician_id": "bfeb3ea5-8c24-44d7-8e37-8d809d14b3b6",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "scope check: still on the 2026 general-election ballot"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Florida district 2: Austin Rogers won the nomination, Evan Power finished third with 15.78 percent, per https://news.wfsu.org/2026-election-coverage/2026-08-18/austin-rogers-secures-republican-nomination-for-district-two-congressional-seat)",
+        "https://www.wjhg.com/2026/08/19/2026-primary-rogers-green-head-november-election/ (general-election matchup named; Power not mentioned)",
+        "https://www.wtxl.com/news/florida-news/fl-gop-chair-evan-power-announces-bid-for-house-seat-as-dunn-steps-down (confirms he entered the district 2 race)",
+        "On the Record (0 meetings)",
+        "Ballotpedia: fetched, nothing returned",
+        "gun-subject search not run: person is out of scope"
+      ],
+      "found": 0,
+      "at": "2026-10-31T00:11:24.973Z",
+      "by": "source-collector"
+    }
+  ]
+}

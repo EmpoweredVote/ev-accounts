@@ -1,0 +1,37 @@
+{
+  "politician_id": "acde546d-dca1-4209-8a98-a6900bd58152",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general statements on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity and race confirmed: https://www.ballotready.org/people/dan-mckay lists Dan McKay as a 2026 candidate for Louisiana 5th Congressional District; https://www.wafb.com/2026/07/11/potential-candidates-discuss-5th-congressional-district-run/ names him among candidates who qualified, with the new election a jungle primary on Nov. 3",
+        "ballot status: May 2026 party primary was called off; open primary now set for Nov. 3 2026 with runoff Dec. 12 (per search results); not confirmed from a fetched page that he is on the final ballot",
+        "campaign site https://www.mckayforcongress.com/ (home page only, no issues page; 404 at /issues; nothing on the subject)",
+        "https://ivoterguide.com/candidate/96819/race/35038/election/1503 (gun restrictions question: candidate did not answer)",
+        "https://www.ballotready.org/people/dan-mckay (nothing on the subject)",
+        "https://www.wafb.com/2026/07/11/potential-candidates-discuss-5th-congressional-district-run/ (nothing on the subject)",
+        "congress.gov sponsored bills: not applicable, he has never held federal office",
+        "Ballotpedia https://ballotpedia.org/Dan_McKay (page returned empty to the fetch tool)",
+        "blocked: https://lailluminator.com/2026/08/06/undeterred_democrats_qualify/",
+        "blocked: https://bluevoterguide.org/district/LA/Louisiana_District_5/35043/525",
+        "blocked: https://lailluminator.com/voter-guides/contests/louisiana-house-5/",
+        "news searches on name plus gun words: nothing on the subject by him"
+      ],
+      "found": 0,
+      "at": "2026-10-30T23:56:58.772Z",
+      "by": "source-collector"
+    }
+  ]
+}

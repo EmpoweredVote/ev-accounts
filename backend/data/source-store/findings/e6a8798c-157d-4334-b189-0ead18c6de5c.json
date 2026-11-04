@@ -1,0 +1,36 @@
+{
+  "politician_id": "e6a8798c-157d-4334-b189-0ead18c6de5c",
+  "findings": [
+    {
+      "id": "19cdbbe5d34d08f33a4387382dd9d4a8a8a0a1c3d116d85c34272ae18d3c22ad",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2016/pdf/history/HB/HB0786.xml",
+      "date": "2016-04-05",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-786-2016",
+      "act": "yea",
+      "motion": "Concurred in Amendment from Senate (final House vote)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS House, Concurred in Amendment from Senate (final House vote), 2016-04-05: yea (tally 85–35); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence",
+        "church security"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/MS_HB786SG.pdf",
+          "sha256": "a1142904e692e81f08ce94bef1f5827e9d662ac1f81ce57f6330064169e08945"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

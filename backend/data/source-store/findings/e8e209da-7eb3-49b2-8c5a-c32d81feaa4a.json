@@ -1,0 +1,35 @@
+{
+  "politician_id": "e8e209da-7eb3-49b2-8c5a-c32d81feaa4a",
+  "findings": [
+    {
+      "id": "db74990112ed083d3f62b7c985da9e7999a797a4fc70fb61dfc4d200035c2561",
+      "kind": "record",
+      "url": "https://legislature.maine.gov/legis/bills/display_ps.asp?LD=652&snum=127",
+      "date": "2015-06-04",
+      "date_precision": "day",
+      "instrument_id": "ME-LD-652-2015",
+      "act": "nay",
+      "motion": "concur (House Journal/Maine roll-call #152; page prints motion as \"concur\")",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ME House, concur (House Journal/Maine roll-call #152; page prints motion as \"concur\"), 2015-06-04: nay (tally 87–60); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/ME_LD652_item19.pdf",
+          "sha256": "fba3b06cb25aba0d489b98593deeb7afc3746986105e17024896f5f1daadf6c7"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

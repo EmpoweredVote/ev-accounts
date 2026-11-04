@@ -167,6 +167,307 @@
         "fetched_at": "2026-10-30T13:29:50.971Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "24bd8572cb21bcf4980e506d743af697caffcc57975fe681a2e4ffb4534fc9a9",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB1927",
+      "date": "2021-05-24",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-1927-2021",
+      "act": "nay",
+      "motion": "Adopt conference committee report on HB 1927",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX Senate, Adopt conference committee report on HB 1927, 2021-05-24: nay (tally 17–13); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/TX_HB1927F.htm",
+          "sha256": "4304d02a805a1d242de73ddfcf222aafa676bbf58aab71a8fda237b3e867d3f3"
+        }
+      }
+    },
+    {
+      "id": "f63964a9715c57f4ba58ba3db6127f4f2f430c02c01e892c3c3359b88a676db5",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB1500",
+      "date": "2021-05-24",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-1500-2021",
+      "act": "nay",
+      "motion": "Read 3rd time",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "TX Senate, Read 3rd time, 2021-05-24: nay (tally 28–2); census gate: near-unanimous.",
+      "subjects": [
+        "emergency orders may not shut gun and ammunition businesses",
+        "governor can no longer suspend firearm sales in a disaster",
+        "cities lose power to regulate guns in riots or disasters"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-1500-2021.enrolled.html",
+          "sha256": "cef9b24c3a583cde7bb00e38d2b138b097c8192ec180b32f874ad81233deb4ee"
+        }
+      }
+    },
+    {
+      "id": "2b4e2f34bfbd251f5a2f3ed1c53275224ac487c44a02374584a3ae88283da33d",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB2622",
+      "date": "2021-05-24",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-2622-2021",
+      "act": "nay",
+      "motion": "Read 3rd time",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX Senate, Read 3rd time, 2021-05-24: nay (tally 17–13); census gate: none.",
+      "subjects": [
+        "no state help enforcing federal gun registry, license, background-check or confiscation rules",
+        "cities lose state funds if they help"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-2622-2021.enrolled.html",
+          "sha256": "0b56d10ce6535f540220291a769936dae432e67b8eafd35a9299aa2d078e6d8f"
+        }
+      }
+    },
+    {
+      "id": "28af1a89090f6b7405d3e125c5a7426b3cc66ff47813de86473333ebaa4eac75",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB3",
+      "date": "2023-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-3-2023",
+      "act": "nay",
+      "motion": "Senate adopts conference committee report",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "TX Senate, Senate adopts conference committee report, 2023-05-28: nay (tally 26–5); census gate: multi-subject.",
+      "subjects": [
+        "armed security officer required at every school campus",
+        "limits on duties of people allowed to carry guns on campus",
+        "safe gun storage information given to parents",
+        "school safety funds may train staff who carry guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-3-2023.enrolled.html",
+          "sha256": "aa48b42b1c125656c8e194e81ca5eb7c8ff826e9fdc284d51a21c481481614b2"
+        }
+      }
+    },
+    {
+      "id": "3322bf20a7e3f1503cba47693a3257ee11f0d0f9001513694b82bbf5b08d2d31",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB3137",
+      "date": "2023-05-24",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-3137-2023",
+      "act": "nay",
+      "motion": "Read 3rd time",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX Senate, Read 3rd time, 2023-05-24: nay (tally 19–12); census gate: none.",
+      "subjects": [
+        "local gun rules barred from being enforced",
+        "local firearm liability insurance requirement banned"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-3137-2023.enrolled.html",
+          "sha256": "870ff91198688315aa2fd6a3e3be74800698a2fdaa6edcb46a56b1688e6ceb81"
+        }
+      }
+    },
+    {
+      "id": "bbbbc138b057bed8c6e92ed17ff8008306bb088d82415310ad764fb938698854",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1596",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1596-2025",
+      "act": "nay",
+      "motion": "Read 3rd time",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX Senate, Read 3rd time, 2025-04-16: nay (tally 21–10); census gate: none.",
+      "subjects": [
+        "short-barrel firearm possession offense repealed",
+        "definition of short-barrel firearm repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-1596-2025.enrolled.html",
+          "sha256": "79af2b9f1e3b2967b40f051ee7540cd4f3d0d7f9ae0f8c6802c5cd20ab4d37f4"
+        }
+      }
+    },
+    {
+      "id": "3a422aee39bb1bea74d7497f6aa94227668c89b1b13cafe4a47ae28b0521e9ec",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1657",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-1657-2025",
+      "act": "author",
+      "motion": "author sponsor, LegiScan sponsor list",
+      "note": "author sponsor of TX-SB-1657-2025 (LegiScan sponsor list): SB1657 (89th Legislature Regular Session): Relating to prohibiting the transfer of certain semiautomatic rifles to certain recipients; creating a criminal offense; increasing a criminal penalty..",
+      "subjects": [
+        "no sale of detachable-magazine semiautomatic rifles to people under 21",
+        "exceptions for police, military, supervised use",
+        "state jail felony penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-1657-2025.introduced.html",
+          "sha256": "85f3832601ec3a643a12cd4e35a8f6bc44ff522c85892c21569417c324134307"
+        }
+      }
+    },
+    {
+      "id": "a982df92d601f17aa2c0b2cc6d1ec1ba4c0c173a2ac39a6ce498f7106a52ecdc",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3053",
+      "date": "2025-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-3053-2025",
+      "act": "nay",
+      "motion": "Read 3rd time",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX Senate, Read 3rd time, 2025-05-28: nay (tally 20–11); census gate: none.",
+      "subjects": [
+        "local firearm buyback programs prohibited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-3053-2025.enrolled.html",
+          "sha256": "5c783f0f9c65e8195dcc193a50eb55c2c6158aa0407a2ccf6a2bea6d95531ee0"
+        }
+      }
+    },
+    {
+      "id": "708fb56cb2ced9e9cb012b0c4324548d7ed04ab2f8d01a2f1a0ab41fab713515",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1362",
+      "date": "2025-05-30",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1362-2025",
+      "act": "nay",
+      "motion": "Senate concurs in House amendment(s)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX Senate, Senate concurs in House amendment(s), 2025-05-30: nay (tally 20–11); census gate: none.",
+      "subjects": [
+        "red flag orders may not be enforced by state or local officials",
+        "federal red flag orders declared unenforceable",
+        "serving an out-of-state red flag order is a state jail felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-1362-2025.enrolled.html",
+          "sha256": "aec24880eb60a1cd8426dd2df4725f2ab3d34a596d3b9e887d080e4018887f72"
+        }
+      }
+    },
+    {
+      "id": "805b0b6a4e2c1fced45e19bb86a523ad5f6a479a54e76be3b4286289c8bb4fe7",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB706",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-706-2025",
+      "act": "nay",
+      "motion": "Read 3rd time",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "TX Senate, Read 3rd time, 2025-03-19: nay (tally 29–2); census gate: near-unanimous.",
+      "subjects": [
+        "out-of-state handgun licenses recognized in Texas",
+        "state must publish list of states honoring Texas license",
+        "old background-check condition for recognition repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-706-2025.enrolled.html",
+          "sha256": "fb39773e7239800d5a632dde6685542e492721c2bc464dbd6838c1b0425f3c93"
+        }
+      }
     }
   ],
   "searches": [

@@ -1,0 +1,103 @@
+{
+  "id": "MA-H-2359-2023",
+  "scope": "state:ma",
+  "title": "H2359 (193rd General Court): To prohibit carrying firearms in sensitive places",
+  "urls": [
+    "https://malegislature.gov/Bills/193/H2359",
+    "https://malegislature.gov/Bills/193/H2359.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "David Linsky",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fa6beaf8-acfe-4365-82a2-6f282aa1b688"
+    },
+    {
+      "name": "Tommy Vitolo",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "001147b2-5c07-499e-85b9-bae224fdc73a"
+    },
+    {
+      "name": "Jack Lewis",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "04a9edee-5d51-49f3-a2c9-585e2231bd08"
+    },
+    {
+      "name": "James Hawkins",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "95d5e111-b7dd-4440-8b51-070b72e33126"
+    },
+    {
+      "name": "Carol Doherty",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Jason Lewis",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "a40f234e-1790-4b52-8670-090b6379eb03"
+    },
+    {
+      "name": "Kevin Honan",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c7c8d91f-156b-42ea-93f1-7dac0c4080a4"
+    },
+    {
+      "name": "Michelle DuBois",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "75a2d83f-8db8-478b-a36d-5ecb707b8507"
+    },
+    {
+      "name": "Tricia Farley-Bouvier",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "15c27efb-0402-4a3a-bfad-9df152874046"
+    },
+    {
+      "name": "James Eldridge",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9ed1b75f-a314-4241-87ff-231de4aba963"
+    },
+    {
+      "name": "Carmine Gentile",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "a9ea7006-d595-45aa-a301-9c71d5a3af4d"
+    },
+    {
+      "name": "Rebecca Rausch",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b7369e32-1916-413e-b0eb-2871a5348470"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-31T18:31:13.796330Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2359-2023.introduced.pdf",
+      "sha256": "ae5134ebc4a3ceb3c56314ffb509a9e10f45934bd770c53473576c1f60b1bd13"
+    }
+  },
+  "operative_text": "Sec. 1 (amending G.L. c. 269 s. 10, adding paragraph (p)): Section 10 of Chapter 269 is herby amended by inserting paragraph (p) after the word “shotgun” in line 250 “(p)Criminal possession of a firearm, rifle or shotgun in a sensitive location. 1. Any person who knowingly possesses a firearm, rifle or shotgun in a sensitive location and who is not otherwise prohibited in subsection 3 of this section, shall be punished by not more than two and one-half years in the House of Correction or a fine of not more than $10,000 or both. It shall be a defense to an indictment or complaint made pursuant to this section that the defendant left the premises or removed the firearm from the premises promptly upon discovering or being informed that firearms were prohibited.\nSec. 1 (sensitive locations, start): 2. For the purposes of this section, a sensitive location shall mean: a. Any place owned or under the control of federal, state, county, municipal or local government, for the purpose of government administration, including courts;\nSec. 1 (sensitive locations, selected): c. Any place of worship or religious observation; d. Libraries, public playgrounds, public parks, and zoos;\nSec. 1 (sensitive locations, schools and transit): k. In or upon any building or grounds, owned or leased, of any educational institutions, colleges and universities, licensed private career schools, school districts, public schools, private schools, charter schools, non-public schools, board of cooperative educational services, preschool special education programs, private residential or non-residential schools for the education of students with disabilities, and any state-operated or state-supported schools;\nSec. 1 (exceptions): 3. This section shall not apply to: a. Consistent with federal law, law enforcement who qualify to carry under the federal law enforcement officers safety act, 18 U.S.C. 926C; b. Persons who are police officers and are on duty"
+}

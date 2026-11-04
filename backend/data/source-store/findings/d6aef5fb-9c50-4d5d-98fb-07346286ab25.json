@@ -1,6 +1,90 @@
 {
   "politician_id": "d6aef5fb-9c50-4d5d-98fb-07346286ab25",
-  "findings": [],
+  "findings": [
+    {
+      "id": "6848730d469d4a0237751691173a39543a307d3bd15fcd190fcf95aa948cce23",
+      "kind": "own-words",
+      "url": "https://2amike4congress.org/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Protect the armed body of the people from both federal overreach and state-level disarmament — the right to keep and bear arms and the duty of common defense are two faces of one design.",
+      "note": "Third item of the plan under the 'Second Amendment: Restore the Militia' plank on his campaign issues section.",
+      "subjects": [
+        "general Second Amendment statement",
+        "oppose state limits on gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:45:57.292Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ec76716b5791ed3e1ca9278439ef9bba7188b02f19aad096fd5008f529f60170",
+      "kind": "own-words",
+      "url": "https://2amike4congress.org/papers/restore-the-militia",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Federal policy should defend the armed citizen against both federal overreach and state-level disarmament of the very body from which the militia is drawn.",
+      "note": "Part C of the proposal in his Second Amendment position paper on his campaign site.",
+      "subjects": [
+        "general Second Amendment statement",
+        "oppose state limits on gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:45:57.292Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4f2625658aa7cd70b320c2c321b4b2997c9ff81d1d888240a270953a2658644f",
+      "kind": "own-words",
+      "url": "https://2amike4congress.org/papers/restore-the-militia",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "A people forbidden the ordinary arms of a citizen cannot constitute the militia the Constitution presupposes.",
+      "note": "From Part C of the same position paper, on why he opposes limits on the arms ordinary citizens may own.",
+      "subjects": [
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:45:57.292Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6027b5e98d26dd6afb9f1a6131ced12817d813cb7f95d4af3a99df5851ba21b2",
+      "kind": "own-words",
+      "url": "https://2amike4congress.org/papers/restore-the-militia",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "In May 2026, Virginia enacted a ban on the future sale, purchase, and manufacture of the most common semi-automatic rifles in America — Virginia, whose own Declaration of Rights, adopted June 12, 1776 in George Mason’s hand, was among the first inscriptions of the principle this paper defends:",
+      "note": "In the position paper he describes Virginia's 2026 ban on new sales of semi-automatic rifles as states moving 'to disarm the body of the people'; the paper then says the state 'has now legislated against its premise'.",
+      "subjects": [
+        "ban on assault-style guns",
+        "state gun bans"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:45:57.292Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -48,6 +132,34 @@
       "found": 0,
       "at": "2026-10-27T15:54:30.434Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun rights",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry permits",
+        "state gun bans",
+        "militia"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "BallotReady https://www.ballotready.org/people/michael-stoddard (identity check): names him as a candidate for U.S. House, Utah 3rd District, 2026 general election; no gun answers",
+        "iVoterGuide https://ivoterguide.com/candidate/74000/race/33687/election/1486: on the 2nd Amendment question about gun-ownership limits it records that he did not answer",
+        "campaign site https://2amike4congress.org/ home page (issue planks): Second Amendment plank saved",
+        "campaign site paper https://2amike4congress.org/papers/restore-the-militia: saved",
+        "campaign site paper https://2amike4congress.org/papers/2a-grammar: reads the amendment's wording; no statement on any specific gun law",
+        "web search x3 (name plus guns; name plus iVoterGuide-type pages; name plus campaign platform): nothing further by him on the subject",
+        "Ballotpedia: not reviewed (pages return empty)",
+        "not reviewed: https://x.com/MikeAuditUSGov",
+        "sponsor list: not applicable, not a legislator"
+      ],
+      "found": 4,
+      "at": "2026-10-31T00:45:57.292Z",
+      "by": "source-collector"
     }
   ]
 }

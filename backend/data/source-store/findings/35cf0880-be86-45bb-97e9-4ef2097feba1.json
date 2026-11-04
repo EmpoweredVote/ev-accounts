@@ -52,6 +52,31 @@
       "found": 0,
       "at": "2026-10-27T01:31:16.201Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "repeal of the 2024 gun law (Question 9)",
+        "general gun safety or Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page https://malegislature.gov/Legislators/Profile/TWM1 (confirms sitting member for Barnstable, Dukes and Nantucket; sponsored and cosponsored list shows no firearms bills)",
+        "sponsor list: covered by LegiScan bulk check",
+        "official site https://www.repmoakley.com (home, releases, about, new-page) and https://ThomasMoakley.com: plain curl, no gun, firearm or Second Amendment text",
+        "Martha's Vineyard Times pages on his 2023 announcement and 2024 win: nothing on the subject",
+        "Ballotpedia: not reachable by the fetch tool, not reviewed",
+        "web searches (4) on his name plus gun words, Question 9, campaign forums: nothing from him on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:53:06.115Z",
+      "by": "source-collector"
     }
   ]
 }

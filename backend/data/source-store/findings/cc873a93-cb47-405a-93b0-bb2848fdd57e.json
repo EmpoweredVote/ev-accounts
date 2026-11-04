@@ -274,6 +274,380 @@
         "fetched_at": "2026-10-27T15:57:31.377Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "d7675ba70c37b1ef2180d4ca25b67dd2d45fc2291a4b89110e9b23a9af40ba0b",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-117s2938enr/html/BILLS-117s2938enr.htm",
+      "date": "2022-06-23",
+      "date_precision": "day",
+      "instrument_id": "US-S-2938-2022",
+      "act": "yea",
+      "motion": "Motion to Concur in the House amendment to S. 2938 with an amendment (Amdt. No. 5099)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US Senate, Motion to Concur in the House amendment to S. 2938 with an amendment (Amdt. No. 5099), 2022-06-23: yea (tally 65–33); census gate: multi-subject.",
+      "subjects": [
+        "background checks for buyers under 21",
+        "court orders that take guns from a dangerous person (state grants)",
+        "gun trafficking (package)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "86135173fc45c9e57fb00f0b7033b2cf40b696b7cf3c7f89dd826c77ca65f392",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2023252",
+      "date": "2023-06-22",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-44-2023",
+      "act": "yea",
+      "motion": "On the Joint Resolution (H.J. Res. 44)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Joint Resolution (H.J. Res. 44), 2023-06-22: yea (tally 49–50); census gate: none.",
+      "subjects": [
+        "cancel the federal pistol-brace rule"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-118hjres44eh.txt",
+          "sha256": "d04fe1fe2a2512a1932d14b7b93d88fe25ac6712851bc4caa37df31b89101f4d"
+        }
+      }
+    },
+    {
+      "id": "9ce1f33f76dbc58198365ff351ff87295e6f6a641ce6e66e7104616d8469acda",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2024/https://www.senate.gov/legislative/LIS/roll_call_votes/vote1131/vote_113_1_00097.htm",
+      "date": "2013-04-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-649-SAMDT-715-2013",
+      "act": "nay",
+      "motion": "On the Amendment (Manchin Amdt. No. 715) to S. 649 (Safe Communities, Safe Schools Act of 2013)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Amendment (Manchin Amdt. No. 715) to S. 649 (Safe Communities, Safe Schools Act of 2013), 2013-04-17: nay (tally 54–46); census gate: none.",
+      "subjects": [
+        "background checks at gun shows and online sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/CREC-2013-04-11-senate.pdf",
+          "sha256": "5cbf6123ec6d0ee19de0b8748333db8dffcc46d276dd1e80d1692c182b9872fb"
+        }
+      }
+    },
+    {
+      "id": "5332af60ebb1cedea53c74220b5423e11ba41619648c8e8288583a4c5b9c7306",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2024/https://www.senate.gov/legislative/LIS/roll_call_votes/vote1131/vote_113_1_00100.htm",
+      "date": "2013-04-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-649-SAMDT-719-2013",
+      "act": "yea",
+      "motion": "On the Amendment (Cornyn Amdt. No. 719) to S. 649 (Safe Communities, Safe Schools Act of 2013)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Amendment (Cornyn Amdt. No. 719) to S. 649 (Safe Communities, Safe Schools Act of 2013), 2013-04-17: yea (tally 57–43); census gate: none.",
+      "subjects": [
+        "honor carry permits from other states"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/CREC-2013-04-17-senate.pdf",
+          "sha256": "40bb495c367c32e142f8ea953accada60d7a67c47296fcd8b7dd71b653ef3a69"
+        }
+      }
+    },
+    {
+      "id": "cd6242a5f6074c3a522a526b23362688490f30e43baf232ed3fc5e7670715167",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2024/https://www.senate.gov/legislative/LIS/roll_call_votes/vote1131/vote_113_1_00101.htm",
+      "date": "2013-04-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-649-SAMDT-711-2013",
+      "act": "nay",
+      "motion": "On the Amendment (Feinstein Amdt. No. 711) to S. 649 (Safe Communities, Safe Schools Act of 2013)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Amendment (Feinstein Amdt. No. 711) to S. 649 (Safe Communities, Safe Schools Act of 2013), 2013-04-17: nay (tally 40–60); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns",
+        "large magazine limit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/CREC-2013-04-11-senate.pdf",
+          "sha256": "5cbf6123ec6d0ee19de0b8748333db8dffcc46d276dd1e80d1692c182b9872fb"
+        }
+      }
+    },
+    {
+      "id": "59c9eaed6ad8d62b557e27fd6b2b75271bce535faf3cef2b6b55238230957dbc",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2025190",
+      "date": "2025-07-01",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2025",
+      "act": "yea",
+      "motion": "On Passage of the Bill (H.R. 1, as Amended)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US Senate, On Passage of the Bill (H.R. 1, as Amended), 2025-07-01: yea (tally 50–50); census gate: multi-subject.",
+      "subjects": [
+        "end the federal tax on suppressors and short-barrelled guns",
+        "budget (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0efe1f5df93634314d3c200896dc5c85660351ff71f64bccd4d6438141467165",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/115th-congress/house-joint-resolution/40",
+      "date": "2017-02-15",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-40-2017",
+      "act": "yea",
+      "motion": "Passed Senate without amendment by Yea-Nay Vote. 57 - 43. Record Vote Number: 66 (Roll 66)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, Passed Senate without amendment by Yea-Nay Vote. 57 - 43. Record Vote Number: 66 (Roll 66), 2017-02-15: yea (tally 57–43); census gate: none.",
+      "subjects": [
+        "rule sending records to gun background check system overturned"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HJRES-40-2017.htm",
+          "sha256": "616db93c5dbc0f8d42ff56878c6d7302412f4feaade1ac2794ac4020fae05e55"
+        }
+      }
+    },
+    {
+      "id": "260e11e0ff12b569d2fa98b4171b2fc0effcb3d6aeeb20f54c49098cd12a062b",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/117th-congress/senate-bill/3623",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "US-S-3623-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2022-02-09",
+      "note": "co sponsor of US-S-3623-2022 (cosponsor 2022-02-09): S 3623 (117th Congress): Violence Against Women Act Reauthorization Act of 2022.",
+      "subjects": [
+        "failed gun background checks reported to state and tribal police within 24 hours",
+        "special prosecutors for domestic-violence gun prohibitions",
+        "annual report on background check denials"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-S-3623-2022.htm",
+          "sha256": "419c00ae6f2e6419ac37d5acb435277d30262291fcc4f6029d92a54840724e31"
+        }
+      }
+    },
+    {
+      "id": "a16b5d191dc72f8cabd78631e87c85b45c6228187fb9e43ecd5c9e5973074f21",
+      "kind": "own-words",
+      "url": "https://www.murkowski.senate.gov/press/release/senator-murkowski-statement-on-gun-legislation-proposals",
+      "date": "2013-04-18",
+      "date_precision": "day",
+      "passage": "We all agree that we want to keep guns out of the hands of criminals and the mentally unstable, but there are a number of paths to the same destination.  There’s been a lot of attention that has been paid to the Manchin-Toomey amendment this week. And while there were some good things in that legislation, I admit, I could not support the amendment as it was drafted.",
+      "note": "Senate floor statement after the 2013 gun votes explaining why she did not back the Manchin-Toomey buyer-check amendment as written.",
+      "subjects": [
+        "check every gun buyer",
+        "general gun rights statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:44:53.270Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "48576b893ccfe64d4476b7d19c72a8770e7a6cfebc7354ba5087059d3711f117",
+      "kind": "own-words",
+      "url": "https://www.murkowski.senate.gov/press/release/senator-murkowski-statement-on-gun-legislation-proposals",
+      "date": "2013-04-18",
+      "date_precision": "day",
+      "passage": "Senator Grassley’s amendment would have strengthened the existing background check process, enforced the tough federal laws that we already have on the books, worked harder to keep guns out of the hands of the mentally ill, criminalized straw purchasing and gun trafficking as well as worked to secure our schools.",
+      "note": "She describes the Grassley alternative she supported: improve the existing background check process and enforce current law rather than add new steps.",
+      "subjects": [
+        "check every gun buyer",
+        "enforce existing gun laws",
+        "mental health and guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:44:53.270Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "26633238060a8c0fb770b67a0b256e002442314de142a903229608b715b984b8",
+      "kind": "own-words",
+      "url": "https://www.murkowski.senate.gov/press/release/senator-murkowski-statement-on-gun-legislation-proposals",
+      "date": "2013-04-18",
+      "date_precision": "day",
+      "passage": "I wish we had accomplished something this week in dealing with gun violence, but I was not willing to compromise our 2nd Amendment rights.  I will continue to protect law-abiding Alaskans’ right to bear arms and fight proposals that attempt to chip away at that right.",
+      "note": "General statement on gun rights, in the same 2013 floor statement.",
+      "subjects": [
+        "general gun rights statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:44:53.270Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a547652dab5638bfcec9cc5cfedb955937368787e0235f7d247c327477f8746e",
+      "kind": "own-words",
+      "url": "https://www.murkowski.senate.gov/press/release/murkowski-supports-protecting-americans-from-terrorists-defending-second-amendment-rights-and-civil-liberties",
+      "date": "2016-06-23",
+      "date_precision": "day",
+      "passage": "However I also strongly believe that Americans should not be forced to prove their innocence before losing a basic right. If the government is going to deny a U.S. citizen the right to purchase a firearm they should be prepared to carry the burden in court to demonstrate that the individual in fact presents a risk.",
+      "note": "Statement on a 2016 vote to continue debate on keeping guns from suspected terrorists, asking for court process before a person loses the right to buy.",
+      "subjects": [
+        "limits on who may have a gun",
+        "due process before losing gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:44:53.270Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aeec41a7eab06e99ab5b55fcd0698af068fede95d431837c6640f9ba1be13be4",
+      "kind": "own-words",
+      "url": "https://www.murkowski.senate.gov/press/release/senate-passes-gun-safety-mental-health-measure",
+      "date": "2022-06-24",
+      "date_precision": "day",
+      "passage": "As a strong supporter of the 2nd Amendment and a gun owner myself, it was essential to ensure that this legislation not violate the rights of law-abiding gun owners. It does not.",
+      "note": "Her statement on voting for the Bipartisan Safer Communities Act (65-33).",
+      "subjects": [
+        "general gun rights statement",
+        "mental health and guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:44:53.270Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2bc3e3bda4dc45489da575dca6642cf3462b0f5b30534af7ae7ac6205077a4b0",
+      "kind": "own-words",
+      "url": "https://www.murkowski.senate.gov/press/release/senate-passes-gun-safety-mental-health-measure",
+      "date": "2022-06-24",
+      "date_precision": "day",
+      "passage": "The bill does NOT create a national red flag law, or require or incentivize states to enact red flag laws, or penalize states that do not have these laws; it does NOT infringe on the Second Amendment rights of law abiding citizens; and it does NOT create universal background checks, mental health checks or mandatory or de-facto waiting periods.",
+      "note": "Statement issued in her name describing what the 2022 bill does not do on red flag laws, universal checks and waiting periods.",
+      "subjects": [
+        "red-flag orders",
+        "check every gun buyer",
+        "waiting periods"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:44:53.270Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "06f851e83e824a29caf27caceae6c1ddc88a39dfada65325311eaa90033d8862",
+      "kind": "own-words",
+      "url": "https://www.murkowski.senate.gov/press/release/myth-vs-fact-bipartisan-safer-communities-act",
+      "date": "2022-06-23",
+      "date_precision": "day",
+      "passage": "It does not require or incentivize any state to adopt red flag laws, or penalize states for not having those laws.",
+      "note": "Her office's myth-versus-fact sheet on the 2022 bill and red flag laws.",
+      "subjects": [
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:44:53.270Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -330,6 +704,32 @@
       "found": 13,
       "at": "2026-10-27T15:57:31.377Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "general gun rights statements",
+        "guns and suspected terrorists",
+        "mental health and guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site: press releases fetched (2013-04-18, 2016-06-23, 2016-06-22 news clip, 2022-06-23, 2022-06-24); the issue pages /issues/second-amendment returned gone (HTTP 410) in an earlier pass",
+        "sponsor list: covered by federal bulk check",
+        "campaign site https://www.lisamurkowski.com/ : nothing on the subject; /issues returned 404",
+        "blocked: https://ballotpedia.org/Lisa_Murkowski (empty page)",
+        "blocked: https://www.congress.gov/member/lisa-murkowski/M001153 (403)",
+        "web and news search: Juneau Empire 2022-06-22 and Peninsula Clarion 2018-02-23 articles reviewed; identity confirmed by the Senate site pages naming her as Alaska's senator; she is a sitting senator (not on the 2026 ballot)",
+        "blocked: https://www.murkowski.senate.gov/ (403) in an earlier pass"
+      ],
+      "found": 7,
+      "at": "2026-10-31T00:44:53.270Z",
+      "by": "source-collector"
     }
   ]
 }

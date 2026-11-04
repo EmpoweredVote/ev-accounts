@@ -1,0 +1,112 @@
+{
+  "id": "MA-H-3780-2019",
+  "scope": "state:ma",
+  "title": "H3780 (191st General Court): Relative to firearm purchases",
+  "urls": [
+    "https://malegislature.gov/Bills/191/H3780",
+    "https://malegislature.gov/Bills/191/H3780.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Chynah Tyler",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fd3bf15c-265b-46a9-aa72-c9097749d762"
+    },
+    {
+      "name": "Bud Williams",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "aee5ccea-d3ca-426c-9849-fbfc5e297e2a"
+    },
+    {
+      "name": "Mike Connolly",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "49963775-d2d5-4ae2-95cf-b2b8d0ed2a92"
+    },
+    {
+      "name": "Michelle DuBois",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "75a2d83f-8db8-478b-a36d-5ecb707b8507"
+    },
+    {
+      "name": "Tami Gouveia",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Danielle Gregoire",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3d9354a8-e7ee-4381-b91a-a40d0a2e8d3a"
+    },
+    {
+      "name": "Daniel Hunt",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5c36a94c-9006-4550-a37e-978a65d2725c"
+    },
+    {
+      "name": "Kay Khan",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "David Linsky",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fa6beaf8-acfe-4365-82a2-6f282aa1b688"
+    },
+    {
+      "name": "Liz Miranda",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2f7d598c-c3d7-48ba-ac9c-fb059e032bfe"
+    },
+    {
+      "name": "Denise Provost",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Maria Robinson",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "David Rogers",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ffb8e526-7ad7-4911-92c5-d69528a0f280"
+    },
+    {
+      "name": "Tommy Vitolo",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "001147b2-5c07-499e-85b9-bae224fdc73a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-31T18:31:13.796330Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-3780-2019.introduced.pdf",
+      "sha256": "29474a294b3858a8cc2f55533f679fb9e4e88f3562a9815572e0b0e181925996"
+    }
+  },
+  "operative_text": "Sec. 1 (adding G.L. c. 140, section 122E(a)): No person shall purchase more than 1 firearm within any 30-day period.\nSec. 1 (adding G.L. c. 140, section 122E(e)): Whoever purchases a firearm in violation of this section shall for the first offense be punished by a fine of not less than $500 or more than $1,000 and for any subsequent offense by imprisonment in the state prison for not more than 10 years."
+}

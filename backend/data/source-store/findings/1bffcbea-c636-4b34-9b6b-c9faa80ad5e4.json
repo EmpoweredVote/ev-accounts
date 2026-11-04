@@ -1,0 +1,93 @@
+{
+  "politician_id": "1bffcbea-c636-4b34-9b6b-c9faa80ad5e4",
+  "findings": [
+    {
+      "id": "0bcc2998eb6736544537f921442b96a07d0ed9ddb183e621d90493e8a0764be1",
+      "kind": "own-words",
+      "url": "https://jaceforcongress.com/priorities",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "In Congress, Jace Yarbrough will champion national reciprocity on concealed carry permits so law-abiding gun owners can lawfully carry when traveling over state lines, and a repeal of the National Firearms Act - an outdated law twisted by Democrats to arbitrarily infringe on our freedoms.",
+      "note": "Campaign priorities page (written in the third person) promises national concealed-carry reciprocity and repeal of the National Firearms Act. Page is undated.",
+      "subjects": [
+        "honor other states' carry permits",
+        "repeal of the National Firearms Act"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:12:15.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0685537840a4a7f59b68b09d868fc4e2e96c0c1277569112017fe31130020b77",
+      "kind": "own-words",
+      "url": "https://jaceforcongress.com/priorities",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Liberals in Washington DC will stop at nothing to restrict and control our 2nd amendment rights, and they don't even try to hide their intentions.",
+      "note": "Campaign priorities page, section 'Protecting our 2nd Amendment': says federal gun restrictions threaten Second Amendment rights.",
+      "subjects": [
+        "general gun rights statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:12:15.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f085077b55fa9641bf0de7c296a1c021f24663edaa53e65b5e129dc58a8c32c",
+      "kind": "own-words",
+      "url": "https://jaceforcongress.com/priorities",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "A proud gun-owner, Jace still treasures his grand-dads .410 and long barrel .22 and owns firearms for home defense.",
+      "note": "Campaign priorities page: describes his own gun ownership.",
+      "subjects": [
+        "general gun rights statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:12:15.091Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "background checks",
+        "red-flag orders",
+        "carry permits and reciprocity",
+        "NFA repeal",
+        "general gun rights statements"
+      ],
+      "places": [
+        "scope: Ballot Brief TX-32 page https://theballotbrief.com/district/tx-32 says he became the nominee after his runoff opponent withdrew; web search results also show he is the general-election nominee",
+        "On the Record (0 appearances)",
+        "campaign site https://jaceforcongress.com/ (home, priorities, about, news, endorsements pages read; priorities page re-fetched and passages confirmed)",
+        "Ballotpedia https://ballotpedia.org/Jace_Yarbrough (empty page; not reviewed)",
+        "not a legislator, so no bill sponsorships",
+        "web search x2 (name plus Second Amendment/guns; name plus gun-rights group endorsement): only third-party profiles and endorsement lists, no further own words",
+        "blocked: https://dallasexpress.com/profiles/jace-yarbrough-says-texas-32-must-deliver-reinforcements-for-president-trump/ (403)",
+        "https://www.predictionedge.com/elections/profile/jace-yarbrough/ read: third-party summary only, not saved"
+      ],
+      "found": 3,
+      "at": "2026-10-30T15:12:15.091Z",
+      "by": "source-collector"
+    }
+  ]
+}

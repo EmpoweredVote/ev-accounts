@@ -25,6 +25,86 @@
         "fetched_at": "2026-10-21T03:40:10.569Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "fa8087771668164fa41cebcce4ea1837cefe0d5dda9c72df7aa9612f3319e886",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "nay",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: nay (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bbdd9bc7132a57a94f28cf83874fa7e904f8da79aa8251a3b1194121a5467815",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "nay",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: nay (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "a91120e27e4c09064378f25ee20e7a8c2b3faf7b3e1d054d7a56b058ed71b825",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/HD5245",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "instrument_id": "MA-HD-5245-2021",
+      "act": "sponsor",
+      "note": "Lead petitioner on An Act relative to restoring civil rights (docket HD.5245, 192nd session): legislation to repeal certain aspects of the gun laws, with a preamble calling them civil rights violations. Referred to Rules committee 2022-07-18; no further action 2023-01-03. Filing date not shown.",
+      "subjects": [
+        "repeal of gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:57:07.785Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -47,6 +127,33 @@
       ],
       "found": 0,
       "at": "2026-10-22T23:22:34.538Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "ghost guns",
+        "carry permits and places to carry",
+        "repeal of gun laws",
+        "safe storage",
+        "general gun-law statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "malegislature.gov HD.5245 bill page and member co-sponsor pages (192nd and 194th)",
+        "web searches on name plus gun terms (3 searches)",
+        "blocked: https://www.goal.org/page-18241 (404 to fetch tool)",
+        "blocked: https://www.goal.org/page-18242 (404 to fetch tool; curl returned no readable text)",
+        "Ballotpedia: not reviewed (pages return empty)",
+        "not confirmed on 2026 ballot"
+      ],
+      "found": 1,
+      "at": "2026-11-01T01:57:07.785Z",
       "by": "source-collector"
     }
   ]

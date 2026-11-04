@@ -154,6 +154,331 @@
         "fetched_at": "2026-10-29T14:14:50.859Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "aeb65d12036af99040b815acf169cd88e92459727111bbf138f6ffd554e9435f",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2021/sb565",
+      "date": "2021-11-09",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-565-2021",
+      "act": "yea",
+      "motion": "Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Final Passage, 2021-11-09: yea (tally 29–21); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/PA_SB565_PN1212.pdf",
+          "sha256": "8599bf5e56d8378a456fd36d933e5a05733e1a059d642ddb6883c809f6226568"
+        }
+      }
+    },
+    {
+      "id": "a31d4a5d373d54e7079fa7944b783f363993cebfb924ef76538566f0213f0850",
+      "kind": "own-words",
+      "url": "https://www.wesa.fm/politics-government/2015-04-19/bill-would-eliminate-state-background-checks-for-gun-purchases-would-rely-on-national-system",
+      "date": "2015-04-19",
+      "date_precision": "day",
+      "passage": "“Eliminating this system will eliminate duplicity,” Bartolotta said.",
+      "note": "Quoted by WESA on her bill to end the state's own instant gun-purchase background check (PICS) and rely on the national check.",
+      "subjects": [
+        "background checks on gun sales",
+        "repeal a state gun-law check"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:26:39.427Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a063ff7fb18830597750060d578a3ed873a8552fd4b3d6a853dd4083ca5aa73f",
+      "kind": "own-words",
+      "url": "https://www.wesa.fm/politics-government/2015-04-19/bill-would-eliminate-state-background-checks-for-gun-purchases-would-rely-on-national-system",
+      "date": "2015-04-19",
+      "date_precision": "day",
+      "passage": "“People actually have to pay a fee to sign up and to have that background check when the national one is free,” Bartolotta said.",
+      "note": "Quoted by WESA: objects to the fee for the state check.",
+      "subjects": [
+        "background checks on gun sales",
+        "repeal a state gun-law check"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:26:39.427Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0b40ae82404932957f681f2d0d3363b9ef7954a3c9bd8f47728bc531166ee425",
+      "kind": "record",
+      "url": "https://www.wesa.fm/politics-government/2015-04-19/bill-would-eliminate-state-background-checks-for-gun-purchases-would-rely-on-national-system",
+      "date": "2015-04-19",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "Bill to eliminate the Pennsylvania Instant Check System (PICS) and rely on the national instant check (2015-2016 session)",
+      "note": "WESA reports Bartolotta introduced legislation that would end the state instant background check for gun purchases, leave the national check, and require state police to report crimes to the national system. Bill number not confirmed on a fetched official page (palegis.us blocked).",
+      "subjects": [
+        "background checks on gun sales",
+        "repeal a state gun-law check"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:26:39.427Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dd5447a9ffff2190eb837400bebf6c0b200080a46e1e051e2d0531d9140c99c4",
+      "kind": "own-words",
+      "url": "https://www.cbsnews.com/amp/pittsburgh/news/republican-lawmakers-in-harrisburg-not-likely-to-budge-on-push-for-gun-control/",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "passage": "\"We've got well over 130 gun laws on the books that we should be following,\" says state Sen. Camera Bartolotta, a Carroll Republican.",
+      "note": "Quoted by KDKA/CBS Pittsburgh after the Texas school shooting.",
+      "subjects": [
+        "general gun safety statement",
+        "enforce existing gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:26:39.427Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6395b42529eba5e4a053816a5776d859efc7c07c8260f18da890d15cff577235",
+      "kind": "own-words",
+      "url": "https://www.cbsnews.com/amp/pittsburgh/news/republican-lawmakers-in-harrisburg-not-likely-to-budge-on-push-for-gun-control/",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "passage": "\"We should be enforcing the laws that we have on the books, and we aren't following all of them.\"",
+      "note": "Quoted in the same CBS Pittsburgh report: favors enforcing existing laws.",
+      "subjects": [
+        "general gun safety statement",
+        "enforce existing gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:26:39.427Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "662be56ed3e805c4bbd22f9e244f751e4884758148937ee96e33c1ed98263608",
+      "kind": "own-words",
+      "url": "https://www.cbsnews.com/philadelphia/news/pa-senators-seeking-to-strengthen-state-pfa-laws-divided-over-guns/",
+      "date": "2017-03-28",
+      "date_precision": "day",
+      "passage": "\"While I appreciate the intent of that bill, I need to look at it more closely, because I actually have some issues pertaining to PFAs that are filed fraudulently,\" said Bartolotta.",
+      "note": "Quoted by CBS Philadelphia on a bill requiring people under a final protection-from-abuse order to surrender guns to police or a licensed dealer; she had not co-sponsored it.",
+      "subjects": [
+        "limits on who may have a gun",
+        "gun surrender after protection order"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:26:39.427Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c2a8e890f4a8c09e34716c2040d5d8b36b689e80c2bb9c00c5794df849b9cae0",
+      "kind": "own-words",
+      "url": "https://www.senatorbartolotta.com/enews/vets-0426/",
+      "date": "2026-04",
+      "date_precision": "month",
+      "passage": "Veterans receiving assistance through the U.S. Department of Veterans Affairs’ (VA) Fiduciary Program will no longer be deprived of their Second Amendment rights by being reported to the Federal Bureau of Investigation’s National Instant Criminal Background Check System (NICS) as “prohibited persons” based solely on their participation in the program.",
+      "note": "Item in her official April 2026 veterans e-newsletter under the heading 'VA Moves to Better Ensure the Second Amendment Rights of Veterans'; reports the change without comment on whether it is wanted (newsletter text, not a first-person quote).",
+      "subjects": [
+        "limits on who may have a gun",
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:26:39.427Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f8ba761f92f0e872ce8e5d77f3ccfd80c1858310f177d25520a334ec191f3db",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=1747",
+      "date": "2020-11-18",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1747-2019",
+      "act": "yea",
+      "motion": "Senate Floor: HB 1747 PN 2338, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 1747 PN 2338, FINAL PASSAGE, 2020-11-18: yea (tally 29–20); census gate: none.",
+      "subjects": [
+        "emergency-time carry restriction repealed",
+        "no seizure of guns, accessories or ammunition during emergencies",
+        "governor cannot suspend firearm sales in emergencies"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1747-2019.introduced.pdf",
+          "sha256": "a4e95a0229bcf1cde7a5fa9d58ac2c33f09477e837d84525b7ff04d3a5f71ece"
+        }
+      }
+    },
+    {
+      "id": "efb62f310bc5c5696e4809ac5721cfa0f83c160127cc45d98447f27c96540ce6",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=2440",
+      "date": "2020-11-18",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-2440-2019",
+      "act": "yea",
+      "motion": "Senate Floor: HB 2440 PN 3776, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 2440 PN 3776, FINAL PASSAGE, 2020-11-18: yea (tally 29–20); census gate: none.",
+      "subjects": [
+        "gun and ammunition businesses and ranges can never be closed or limited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2440-2019.amended.pdf",
+          "sha256": "9bdd564f4d0812adfa9af91a3ac7f854f4196ebd9577febef5953c94486be5c8"
+        }
+      }
+    },
+    {
+      "id": "4283984ad3d78c5d2314c26ee04a95552a5dbce6bc8b22bffb9b0237b64f1919",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=979",
+      "date": "2022-01-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-979-2021",
+      "act": "yea",
+      "motion": "Senate Floor: HB 979 PN 1706, Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 979 PN 1706, Final Passage, 2022-01-25: yea (tally 32–17); census gate: none.",
+      "subjects": [
+        "local gun and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs",
+        "localities barred from suing gun makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-979-2021.amended.pdf",
+          "sha256": "494cfe800bdb89be85cf7c2a28a81c203b581e7614e7bc8f69211cb4c736f5dd"
+        }
+      }
+    },
+    {
+      "id": "6bd9e0daf575de3278ee6eb88fa505dc19674172b27ff66e23a7275845a464d8",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb822",
+      "date": "2026-05-06",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-822-2025",
+      "act": "yea",
+      "motion": "Senate Floor: PN0881, Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: PN0881, Final Passage, 2026-05-06: yea (tally 30–20); census gate: none.",
+      "subjects": [
+        "local firearm and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-822-2025.introduced.pdf",
+          "sha256": "38d1bdcb626cc1614fee0c352427248f5e599df007fead7d1a6031742385df55"
+        }
+      }
+    },
+    {
+      "id": "d20f227db97f86c03f373ca7e0740f326dd513940d0ee0196faf2397fc32bb02",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb822",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-822-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-SB-822-2025 (LegiScan sponsor list): SB822 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for limitation on the regulation of firearms and ammunition; and, in preemptions, providing for regulation of firearms and ammunition..",
+      "subjects": [
+        "local firearm and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-822-2025.introduced.pdf",
+          "sha256": "38d1bdcb626cc1614fee0c352427248f5e599df007fead7d1a6031742385df55"
+        }
+      }
     }
   ],
   "searches": [
@@ -220,6 +545,33 @@
       "found": 1,
       "at": "2026-10-29T14:14:50.859Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "background checks",
+        "gun bans",
+        "red-flag and protection-order surrender",
+        "carry permits",
+        "general gun statements",
+        "bills sponsored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site senatorbartolotta.com: searches for gun, firearm, Second Amendment; April 2026 veterans newsletter",
+        "WESA 2015, CBS Pittsburgh 2022, CBS Philadelphia 2017 news reports",
+        "web searches: news on her gun positions; primary result; PICS bill number",
+        "blocked: https://www.palegis.us/senate/members/bio?id=1698 (403)",
+        "blocked: https://www.palegis.us/legislation/bills/2015/sb725 (403)",
+        "blocked: https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2015&sind=0&body=S&type=B&bn=725 (403)",
+        "blocked: https://www.palegis.us/legislation/bills/2017/sb224 (403)",
+        "Ballotpedia: not reachable by the fetch tool, not reviewed",
+        "scope: https://www.monvalleyindependent.com/2026/08/22/borello-to-challenge-bartolotta-in-november-election/ names her as the three-term incumbent facing a November challenger"
+      ],
+      "found": 7,
+      "at": "2026-10-30T22:26:39.427Z",
+      "by": "source-collector"
     }
   ]
 }

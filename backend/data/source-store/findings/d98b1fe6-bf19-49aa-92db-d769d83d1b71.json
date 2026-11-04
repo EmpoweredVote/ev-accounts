@@ -1,0 +1,24 @@
+{
+  "politician_id": "d98b1fe6-bf19-49aa-92db-d769d83d1b71",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and gun limits (scope check only)"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (another candidate won the nomination in Florida's 19th district, per https://news.wgcu.org/text/top-story/2026-08-18/primary-election-in-person-voting-gets-under-way-amid-continuing-heat-advisory)",
+        "On the Record (0 appearances)",
+        "campaign site https://www.votefortex.com: confirms he ran in the district 19 primary",
+        "https://ivoterguide.com/candidate/78041/race/28528/election/1431: candidate profile with a gun answer; not collected because he is out of scope",
+        "blocked: https://flvoicenews.com/?p=142943 (403)",
+        "blocked: https://www.inkl.com/news/jim-schwartzel-r-defeated-nine-other-candidates-in-the-republican-primary-for-floridas-19th-congressional-district-on-august-18-2026 (403)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:01:22.073Z",
+      "by": "source-collector"
+    }
+  ]
+}

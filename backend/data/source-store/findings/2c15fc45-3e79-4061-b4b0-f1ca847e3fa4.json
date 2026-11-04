@@ -1,6 +1,34 @@
 {
   "politician_id": "2c15fc45-3e79-4061-b4b0-f1ca847e3fa4",
-  "findings": [],
+  "findings": [
+    {
+      "id": "d95af806771f587ccef59962c07a3ff13953f51b87cd22537c23a3a6c881a590",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/6492",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "US-HR-6492-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2023-11-29",
+      "note": "co sponsor of US-HR-6492-2023 (cosponsor 2023-11-29): HR 6492 (118th Congress): EXPLORE Act.",
+      "subjects": [
+        "federal public-land target shooting ranges to be built",
+        "ranges kept open before recreational shooting is closed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-6492-2023.htm",
+          "sha256": "fa1ff70ba178164165b54edc4d889da9c2c6179318956c59d78b3700d1c443f4"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",

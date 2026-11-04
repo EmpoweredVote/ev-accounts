@@ -1,0 +1,30 @@
+{
+  "politician_id": "053c472e-8d92-43f2-a054-305547e18eb7",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "background checks",
+        "carry permits",
+        "general gun statements"
+      ],
+      "places": [
+        "status: disqualified before the 2026-08-04 primary; not on the November 2026 ballot",
+        "status: disqualified before the 2026-08-04 primary (candidate list on the Wikipedia 2026 Michigan House elections page, used as a finding aid for status only; the official disqualification record was not reached)",
+        "identity check: https://www.fec.gov/data/candidate/H6MI11258/?cycle=2026 shows Stu Baker as a 2026 candidate for Michigan's 11th District",
+        "https://www.fox2detroit.com/news/jeremy-moss-wins-11th-congressional-district-democratic-primary (Moss won the nomination; Baker not named)",
+        "https://theballotbrief.com/district/mi-11 (November ballot list for MI-11 does not include Stu Baker)",
+        "On the Record (0 appearances)",
+        "blocked: https://ballotpedia.org/Stu_Baker (403)",
+        "blocked: https://michiganadvance.com/voter-guides/contests/11th-district-representative-in-congress/ (403)",
+        "no campaign site found; no gun statements found in three searches"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:07:16.515Z",
+      "by": "source-collector"
+    }
+  ]
+}

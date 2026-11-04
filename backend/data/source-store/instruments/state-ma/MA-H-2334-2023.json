@@ -1,0 +1,61 @@
+{
+ "id": "MA-H-2334-2023",
+ "scope": "state:ma",
+ "title": "H2334 (193rd General Court): An Act relative to tracking, tracing and stopping illegal firearms",
+ "urls": [
+  "https://malegislature.gov/Bills/193/H2334",
+  "https://malegislature.gov/Bills/193/H2334/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Carlos González",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "64e0eeb2-c83a-4da4-b6a2-2047b1e25cab"
+  },
+  {
+   "name": "Bud L. Williams",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "aee5ccea-d3ca-426c-9849-fbfc5e297e2a"
+  },
+  {
+   "name": "Jason M. Lewis",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "a40f234e-1790-4b52-8670-090b6379eb03"
+  },
+  {
+   "name": "Carol A. Doherty",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Rebecca L. Rausch",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "b7369e32-1916-413e-b0eb-2871a5348470"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-H-2334-2023.html",
+   "sha256": "5f372d5d5d4f9fce6f3a89ead871b4c55a21d2abc871368a4b0e742ecf1c38ed"
+  }
+ },
+ "operative_text": "SECTION 1. Chapter 140 of the General Laws is hereby amended by inserting after 131Q the following section: -\nSection 131Q 1/2. There shall be an illegal firearm tracking and tracing task force, which shall consist of 9 members to serve staggered 3 year terms each. 1 member shall be appointment by the Governor, 2 members shall be appointment by the Massachusetts Black and Latino Caucus, 1 member shall be appointed by the Speaker of the House, 1 member shall be appointed by the Senate President, and 3 of those 9 members shall come from a “gateway municipality,” pursuant to Section 3A of Chapter 23A of the General Laws.\nThe purpose of the task force shall be to determine where in the Commonwealth illegal firearms are prevalent, where the illegal firearms are coming from and where the illegal firearms have the most impact on crimes of violence and suicides. The task force shall make annual report and recommendations to be submitted to the Chairs of the Joint Committee on Public Safety and Homeland Security, the Speaker of the House, the Senate President, and the Attorney General to be considered in their efforts to build policy and legislation to address firearm violence by the end of each fiscal year. The task force shall operate within the Department of Public Safety and Inspections.\nSECTION 2. Section 123 of chapter 140 of the General Laws, as appearing in the 2018 Official Edition, is hereby amended by inserting after the figure “131A”, in line 567, the following words:- ; provided further, that no person licensed under the provisions of said section 122 shall sell or transfer firearms, rifles, shotguns, or machine guns at any regular meeting of an incorporated collectors club or at a gun show that does not have a unique serial number or other mark of identification engraved or permanently affixed to the firearm in a manner that conforms with the requirements imposed on licensed importers and licensed manufacturers of firearms pursuant to 18 U.S.C. section 923(i), as amended from time to time, and any regulation adopted thereunder; provided further, that no person licensed under the provisions of said section 122 shall create using a 3D printer any component parts of a firearm to be sold, traded or transferred at a incorporated collectors club or at a gun show; provided further, that no person licensed under the provisions of said section 122 shall sell or transfer at any regular meeting of an incorporated collectors club or at a gun show component parts of a firearm to construct a firearm or plans to manufacture of fabricate a firearm.\nSECTION 3. Said section 123 of said chapter 140, as so appearing, is hereby further amended by adding the following 2 paragraphs:-\nNo person organizing a regular meeting of an incorporated collectors club or a gun show shall permit a person to enter the meeting or gun show without verifying that the person possesses a firearm identification card pursuant to section 129B of chapter 140 or a license to carry firearms pursuant to section 131 of said chapter 140. Whoever permits a person without a firearm identification card or license to carry firearms to enter the meeting or gun show shall be punished by a fine of not more than $1,000.\nNo person shall attend a regular meeting of an incorporated collectors club or a gun show that has not been issued a firearm identification card pursuant to section 129B of chapter 140 or a license to carry firearms pursuant to section 131 of said chapter 140. Whoever attends a meeting or gun show without a firearm identification card or license to carry firearms shall be punished by a fine of not more than $300."
+}

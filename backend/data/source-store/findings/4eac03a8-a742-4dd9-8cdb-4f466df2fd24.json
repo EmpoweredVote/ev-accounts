@@ -30,6 +30,64 @@
           "sha256": "dc87e3cc526e87f6c4fdeaeb8077eb616216271be1304522b88078065a703c17"
         }
       }
+    },
+    {
+      "id": "74a9cecce229a003fe087bfbeadf3be65e8b607d55d072ec84bd2d520dc6a24d",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB0002",
+      "date": "2024-03-01",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-2-2024",
+      "act": "nay",
+      "motion": "Adoption (Senate substitute agreed to by House)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA House, Adoption (Senate substitute agreed to by House), 2024-03-01: nay (tally 50–47); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/VA-HB2-2024-ER.pdf",
+          "sha256": "be2c4a82097d208f802bc88c1aa08097489565a6746bfd36f1a1f755a683cd50"
+        }
+      }
+    },
+    {
+      "id": "fb8afb14864f284c23bff3b3f6447405570ac331955ab29c074900020ef336f0",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB0002",
+      "date": "2024-02-28",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-2-2024",
+      "act": "nay",
+      "motion": "Passage (with committee substitute)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA House, Passage (with committee substitute), 2024-02-28: nay (tally 51–49); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/va_sb2_2024_enrolled.html",
+          "sha256": "fbb47c123b27eae84175225b3f36034532cd7be496f4a56cb8ff2c6f3c7bbe41"
+        }
+      }
     }
   ],
   "searches": [
@@ -58,6 +116,30 @@
       "found": 0,
       "at": "2026-10-28T16:26:08.564Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "Second Amendment general statement",
+        "bills sponsored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "her site teamtata.org: home, about, issues (lists public safety and 'protect freedom and liberty' only), legislation page and 'did you know' page; nothing on the subject",
+        "https://www.ballotready.org/people/anne-ferrell-tata: shows her House District 99 term running to 2028-01-12, so her seat is not on the 2026 ballot",
+        "Virginia legislature's own member pages (legacy LIS) for her chief-patron bills: https://lis.virginia.gov/cgi-bin/legp604.exe?221+mbr+H345C, ?222+, ?231+, ?241+, ?251+ read: no gun bill among bills she introduced in the 2022, 2023, 2024 or 2025 sessions; the 2026 page returned almost no content (not reviewed: https://lis.virginia.gov/cgi-bin/legp604.exe?261+mbr+H345C). Co-sponsorship lists were not available on these pages",
+        "web search x2 (her gun bills and statements): nothing about her on the subject",
+        "blocked: https://legiscan.com/VA/people/anne-ferrell-tata/id/21301 (403)",
+        "not reviewed: Ballotpedia (empty to the fetch tool); her video channel https://www.youtube.com/@DelegateAnneFerrellTata and social pages (cannot be read)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T22:27:30.062Z",
+      "by": "source-collector"
     }
   ]
 }

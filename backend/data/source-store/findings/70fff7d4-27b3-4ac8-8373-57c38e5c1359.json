@@ -52,6 +52,32 @@
       "found": 0,
       "at": "2026-10-27T14:15:47.095Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry permits",
+        "red-flag orders",
+        "Second Amendment general statement"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://www.mccrackenformontana.com/ (fetched; one-page site with a donate link and newsletter sign-up, no issue text; /issues, /platform, /about, /priorities return 404)",
+        "BallotReady https://www.ballotready.org/people/patrick-mccracken (fetched; confirms candidate for Montana 2nd District on the 2026-11-03 general election ballot; no positions)",
+        "The Ballot Brief https://theballotbrief.com/candidate/patrick-mccracken-mt (fetched; lists priorities from his site: constitutional rights protections, meat origin labeling, cannabis banking; nothing on guns; AI-written summary)",
+        "Montana Free Press election guide (fetched; nothing on guns)",
+        "Yellowstone Public Radio Q&A 2026-04-23 and Montana Public Radio interview 2026-04-17 (fetched as page text; nothing on guns)",
+        "blocked: https://ballotpedia.org/Patrick_McCracken (403 request blocked)",
+        "blocked: https://goodparty.org/people/patrick-mccracken-efdd0bd2 (almost no readable text)",
+        "congress.gov: not applicable, no legislative record",
+        "web search on name plus gun words: no own words on guns found"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:04:28.877Z",
+      "by": "source-collector"
     }
   ]
 }

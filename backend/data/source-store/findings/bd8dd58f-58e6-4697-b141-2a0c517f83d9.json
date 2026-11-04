@@ -1,0 +1,53 @@
+{
+  "politician_id": "bd8dd58f-58e6-4697-b141-2a0c517f83d9",
+  "findings": [
+    {
+      "id": "cb3a4a2f3855b6b85db19d57809f0bd6def8496d82a12ab073421514bc043bac",
+      "kind": "own-words",
+      "url": "https://www.mattgromlichforcongress.com/priorities",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "In Louisiana, gun ownership is a way of life. I believe in the second amendment, and also believe in personal responsibility. We can protect our 2nd Amendment rights while supporting common-sense measures that keep our communities safe. This isn’t about taking rights away; it’s about responsibility and common sense safeguards that help prevent violence while still protecting law-abiding citizens’ rights.",
+      "note": "His answer to 'What is your stance on the 2nd Amendment?' on his campaign priorities page. Names no specific law. Page is undated.",
+      "subjects": [
+        "general statement on gun rights",
+        "common-sense gun safety measures"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:06:55.235Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry permits",
+        "red-flag orders",
+        "Second Amendment general statement"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://www.mattgromlichforcongress.com/priorities (fetched; Second Amendment answer saved) and home page (nothing on the subject)",
+        "BallotReady profile https://www.ballotready.org/people/matt-gromlich (fetched; confirms race and links his site)",
+        "iVoterGuide https://ivoterguide.com/candidate/96787/race/35037/election/1503 (fetched; confirms he is on the 2026-11-03 Louisiana ballot for U.S. House District 4; his gun questionnaire answer is 'Did not answer')",
+        "FWPB Substack interview and Techbullion interview (fetched; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Matt_Gromlich (403 request blocked)",
+        "not reviewed: Facebook, Instagram and X pages linked from BallotReady (social media)",
+        "congress.gov: not applicable, no legislative record",
+        "web search on name plus gun words: nothing further"
+      ],
+      "found": 1,
+      "at": "2026-10-30T15:06:55.235Z",
+      "by": "source-collector"
+    }
+  ]
+}

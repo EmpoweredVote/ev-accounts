@@ -215,6 +215,112 @@
         "fetched_at": "2026-10-31T18:07:00.904Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "aadf049da9c877b6ff2c394840cb4aa7ed6144423f58ce2833cec97296371de3",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=1018",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1018-2023",
+      "act": "nay",
+      "motion": "House Floor: HB 1018 PN 1152, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 1018 PN 1152, FINAL PASSAGE, 2023-05-22: nay (tally 102–99); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders created to remove firearms",
+        "firearm ban while an order is active",
+        "penalty for not turning in firearms under an order",
+        "longer penalty for prohibited persons found with a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1018-2023.amended.pdf",
+          "sha256": "05d5a4c60b9a22ac9e77d07afe3e7adc8841cd9dab1224832eb50521b29958a6"
+        }
+      }
+    },
+    {
+      "id": "465f6ee5ddd1f662a245de10a843aaa91be6f6eb2fd9c53ca322315e316e29ad",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=777",
+      "date": "2024-03-27",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-777-2023",
+      "act": "nay",
+      "motion": "House Floor: HB 777 PN 2578, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 777 PN 2578, FINAL PASSAGE, 2024-03-27: nay (tally 104–97); census gate: none.",
+      "subjects": [
+        "sale or transfer of unserialized gun frames, receivers and kits made a felony",
+        "buying parts to build an unserialized gun made a felony",
+        "licensed dealers must mark and record privately made firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-777-2023.amended.pdf",
+          "sha256": "65a5f4847629a43127721168bc31890a6fd60f0aefae6ac528a3cd698d73d35e"
+        }
+      }
+    },
+    {
+      "id": "5f8d103f41e07e31a3dc0f29fd49e3cdd9178eafa5b194b37306454272ffe1c4",
+      "kind": "own-words",
+      "url": "https://repflick.com/News/32344/Press-Releases/Hamm,-Flick-to-Host-Gun-Law-Seminars-",
+      "date": "2023-04-26",
+      "date_precision": "day",
+      "passage": "“As a life-long hunter and owner of a private shooting range, it is important to me to co-host these joint district gun safety seminars with Representative Hamm so that constituents in our area can learn more about current laws and licenses from local experts and law enforcement,” said Flick.",
+      "note": "His official House site press release announcing two gun-law seminars; he describes himself as a hunter and range owner and frames the events as information for law-abiding gun owners.",
+      "subjects": [
+        "gun safety",
+        "carry permits and licences",
+        "hunting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:53:56.886Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "890f0fc9ab78b41f3d418b3066cf621451d5cc5488ae5aa6716d1ac1943797a2",
+      "kind": "own-words",
+      "url": "https://repflick.com/News/32344/Press-Releases/Hamm,-Flick-to-Host-Gun-Law-Seminars-",
+      "date": "2023-04-26",
+      "date_precision": "day",
+      "passage": "Additionally, these seminars are a great way to share gun-safety tips and practical information with fellow law-abiding gun owners and citizens.",
+      "note": "Same release; seminar topics listed include the Castle Doctrine, stand-your-ground laws, and rules on licenses to carry firearms.",
+      "subjects": [
+        "gun safety",
+        "carry permits and licences"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:53:56.886Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -298,6 +404,29 @@
       "found": 1,
       "at": "2026-10-31T18:07:00.904Z",
       "by": "identity-pa-2026-10-31-raw-votes"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety",
+        "carry permits and licences",
+        "check every gun buyer",
+        "red-flag orders",
+        "home-made untraceable guns",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "his official House site repflick.com (home page and press release on gun seminars; no issues page on guns)",
+        "Ballotpedia (not usable via fetch)",
+        "web search x2 for his name plus gun words: no statement on the 2025 gun bills found",
+        "not reviewed: podcast episode https://selinsgrove-seals-football-on-eagle-107.castos.com/episodes/12922-on-the-mark-mark-john-shipman-host-calls-from-state-reps-jamie-flick-r-83rd-and-stephanie-borowitz-r-76th-as-well-as-a-conversation-about-gun-violence-and-the-grinerbout-swap (audio)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T23:53:56.886Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -263,6 +263,35 @@
         "fetched_at": "2026-10-28T22:55:46.334Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "bd3d2738eca736e843f6d00ade83aff0daa1971828e97b8db8abbc1fcaa76c7b",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4138",
+      "date": "2023-03-23",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-4138-2023",
+      "act": "nay",
+      "motion": "Passage, Roll Call No. 115 (final; House did not need to concur since Senate passed without amendment)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI Senate, Passage, Roll Call No. 115 (final; House did not need to concur since Senate passed without amendment), 2023-03-23: nay (tally 20–18); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/2023-PA-0019.pdf",
+          "sha256": "2b8ace86c9e2b41bb2310e59e23d0100684ebb1734093484e474d4588c5007c6"
+        }
+      }
     }
   ],
   "searches": [

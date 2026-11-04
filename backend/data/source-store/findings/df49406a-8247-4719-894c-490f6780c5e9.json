@@ -110,6 +110,97 @@
         "fetched_at": "2026-10-31T18:07:00.901Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "aadf049da9c877b6ff2c394840cb4aa7ed6144423f58ce2833cec97296371de3",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=1018",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1018-2023",
+      "act": "nay",
+      "motion": "House Floor: HB 1018 PN 1152, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 1018 PN 1152, FINAL PASSAGE, 2023-05-22: nay (tally 102–99); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders created to remove firearms",
+        "firearm ban while an order is active",
+        "penalty for not turning in firearms under an order",
+        "longer penalty for prohibited persons found with a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1018-2023.amended.pdf",
+          "sha256": "05d5a4c60b9a22ac9e77d07afe3e7adc8841cd9dab1224832eb50521b29958a6"
+        }
+      }
+    },
+    {
+      "id": "465f6ee5ddd1f662a245de10a843aaa91be6f6eb2fd9c53ca322315e316e29ad",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=777",
+      "date": "2024-03-27",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-777-2023",
+      "act": "nay",
+      "motion": "House Floor: HB 777 PN 2578, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 777 PN 2578, FINAL PASSAGE, 2024-03-27: nay (tally 104–97); census gate: none.",
+      "subjects": [
+        "sale or transfer of unserialized gun frames, receivers and kits made a felony",
+        "buying parts to build an unserialized gun made a felony",
+        "licensed dealers must mark and record privately made firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-777-2023.amended.pdf",
+          "sha256": "65a5f4847629a43127721168bc31890a6fd60f0aefae6ac528a3cd698d73d35e"
+        }
+      }
+    },
+    {
+      "id": "d51dc3a5330421c3e36c612a67e7e9bb4c8a0f2590f294d4c324b176f9addc31",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=893",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-893-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-893-2023 (LegiScan sponsor list): HB893 (2023-2024 Regular Session): Providing for Second Amendment Preservation Act, for limitation of Federal law and for private cause of action; and imposing a penalty..",
+      "subjects": [
+        "state declares federal gun laws void",
+        "state officers barred from enforcing federal gun laws",
+        "lawsuits and penalties against federal enforcers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-893-2023.introduced.pdf",
+          "sha256": "1f29f95c24f1689c0b30239ad30dfbb9aa1d60189079034113efbdb7b8f68491"
+        }
+      }
     }
   ],
   "searches": [

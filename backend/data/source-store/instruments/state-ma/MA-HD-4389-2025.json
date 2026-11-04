@@ -1,0 +1,38 @@
+{
+ "id": "MA-HD-4389-2025",
+ "scope": "state:ma",
+ "title": "HD4389 (194th General Court): An Act to repeal the ban on handgun ownership for adults age 18 through 20",
+ "urls": [
+  "https://malegislature.gov/Bills/194/HD4389",
+  "https://malegislature.gov/Bills/194/HD4389/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "John R. Gaskey",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "08a2dfdf-43fb-408a-b758-aa94497fd871"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-HD-4389-2025.html",
+   "sha256": "9c2067656e8f828f0871fe849006576005385036d83d0380ef8d6753abb2283d"
+  }
+ },
+ "operative_text": "SECTION 1. Purpose\nThe purpose of this act is to align Massachusetts firearm laws with constitutional principles as affirmed by recent federal court rulings (New York State Rifle and Pistol Association, Inc. V. Bruen; Supreme Court decision 2022), including the decision by the Fifth Circuit Court of Appeals, which found that restrictions on handgun sales to individuals aged 18 to 20 violate the Second Amendment of the United States Constitution. It has been long standing law that the age of maturation is 18 years of age. Over time, the Massachusetts state legislature has slowly taken away the common rights and advantages of adulthood while affirming other rights, not only on adults aged 18-20, but on children as young as 11 years old.\nSECTION 2. Amendment to Firearm Licensing Laws\n(a) Chapter 140 of the General Laws, Section 131, is hereby amended by striking the words “21 years of age” wherever they appear and inserting in place thereof the words “18 years of age.”\n(b) Chapter 140, Section 129B, is amended to allow individuals 18 years of age and older to apply for a Firearm Identification (FID) card without restriction and for a License to Carry (LTC) under the same conditions as those 21 and older.\nSECTION 3. Lawful Purchase and Possession\n(a) Any law restricting the purchase of handguns by individuals aged 18 to 20 is hereby repealed.\n(b) Licensed firearm dealers may lawfully sell handguns to individuals aged 18 and older who meet all other requirements under state and federal law.\nSECTION 4. Constitutional Compliance\nThis act is enacted in response to the ruling by the United States Court of Appeals for the Fifth Circuit, which determined that bans on firearm purchases by legal adults aged 18 to 20 are unconstitutional under the Second Amendment.\nSECTION 5. Implementation and Effective Date\nThis act shall take effect immediately upon passage."
+}

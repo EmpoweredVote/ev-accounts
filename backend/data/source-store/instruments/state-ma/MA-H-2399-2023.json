@@ -1,0 +1,50 @@
+{
+ "id": "MA-H-2399-2023",
+ "scope": "state:ma",
+ "title": "H2399 (193rd General Court): An Act relative to a voluntary do-not-sell list for firearms purchases",
+ "urls": [
+  "https://malegislature.gov/Bills/193/H2399",
+  "https://malegislature.gov/Bills/193/H2399/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Lindsay N. Sabadosa",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "853f0b26-a2b5-48b6-8dd6-f40ca48c87fd"
+  },
+  {
+   "name": "Joanne M. Comerford",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "961506eb-3f00-4358-a9a3-1730e7004474"
+  },
+  {
+   "name": "Shirley B. Arriaga",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "8995a410-276d-4a84-87f2-b097c1535f90"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-H-2399-2023.html",
+   "sha256": "b385356ed990fce225957a241f71fea0c7c5df0cb29f3822fb0e6355d6b7a264"
+  }
+ },
+ "operative_text": "SECTION 1. Chapter 140 of the General Laws is hereby amended by inserting after section 131Y the following section:-\nSection 131Z. (a) The department of criminal justice information services, hereinafter department, shall establish a voluntary do not sell firearms list, hereinafter the list, in the commonwealth to prohibit the purchase, rental, lease, borrowing, possession and carrying of firearms by any person who voluntarily registers to be enrolled into the list. The department shall maintain and update the list, which shall be available only to licensing authorities and the colonel of state police. The department shall promulgate any regulations and develop any policies for the implementation of the list.\n(b) The department, the colonel of state police and all licensing authorities shall withhold from public disclosure all information regarding a request to be enrolled into or removed from the list and any other personal identifying information contained in or related to the list, except that said information may be disclosed to a law enforcement officer, as defined in section 1 of chapter 6E, acting in the performance of the officer’s official duties or the applicant with respect to the applicant’s own information.\n(c) Any person 18 years of age or older may apply in writing to the department to request voluntary enrollment into the list and, after being enrolled into the list, may apply in writing to the department to request removal from the list. The application for enrollment into and removal from the list shall be on forms prescribed by the department. Pursuant to subsection (f), the forms shall state that any person enrolled into the list shall not be removed from the list until 21 days after receiving an application for removal. The commissioner of the department shall make the forms available on the department website and the colonel of state police shall make the forms available on the department of state police website.\n(d) Any person requesting enrollment into or removal from the list shall submit a photocopy of: (1) a motor vehicle license issued pursuant to section 8 of chapter 90; (2) an identification card issued under section 8E of chapter 90; (3) a valid passport issued by the United States government; or (4) a valid United States issued military identification card to accompany the enrollment and removal form. The request for enrollment into or removal from the list may be submitted to the department by mail or in person at any department of state police office location.\n(e) Upon enrolling a person into the list, the department shall submit a notification indicating the person's enrollment on the voluntary do not sell firearms list to the attorney general of the United States for the National Instant Criminal Background Check System. The department shall also notify the person by mail that the person has been enrolled into the list.\n(f) The department shall not remove any person from the list until 21 days after receipt of the person's removal request. Upon removal of a person's name from the list, the department shall: (i) submit a notification indicating the person’s removal from the voluntary do not sell firearms list to the attorney general of the United States for the National Instant Criminal Background Check System; and (ii) destroy all records of enrollment into and request for removal from the list.\n(g) The department shall engage in a public awareness campaign to raise awareness about this option.\nSECTION 2. Section 129B of said chapter 140, as so appearing, is hereby amended by striking out, in lines 100 and 101, the words “or (xi)” and inserting in place thereof the following words:-\n(xi) is enrolled on the voluntary do not sell firearms list established in section 131Z;\nSECTION 3. Section 131 of said chapter 140, as so appearing, is hereby amended by striking out, in lines 258 and 259, the words “or (x)” and inserting in place thereof the following words:-\n(x) is enrolled on the voluntary do not sell firearms list established in section 131Z;\nSECTION 4. Section 131F of said chapter 140, as so appearing, is hereby amended by striking out, in lines 56 and 57, the words “or (x)” and inserting in place thereof the following words:-\n(x) is enrolled on the voluntary do not sell firearms list established in section 131Z."
+}

@@ -1,0 +1,220 @@
+{
+  "politician_id": "becbb10c-fc9a-4125-9650-caec79be0d46",
+  "findings": [
+    {
+      "id": "86bd9019aeb8165c23b43367c2c2370d508a0da36e80e890b4f72a3c892d2aae",
+      "kind": "own-words",
+      "url": "https://freebeacon.com/politics/duffy-gun-control-laws-lead-slippery-slope-eradicate-second-amendment/",
+      "date": "2017-11-07",
+      "date_precision": "day",
+      "passage": "I'm okay with background checks.",
+      "note": "Quoted by the Washington Free Beacon (page date from fetch); he said he is fine with background checks.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:11:13.211Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "994ee30b08b526c35287e2725b20fe80b99d02cd061046101b4b4e9381485cd3",
+      "kind": "own-words",
+      "url": "https://freebeacon.com/politics/duffy-gun-control-laws-lead-slippery-slope-eradicate-second-amendment/",
+      "date": "2017-11-07",
+      "date_precision": "day",
+      "passage": "If I want to give my gun to my son or if I want to sell a firearm to a neighbor or a friend, I think it's pretty intrusive.",
+      "note": "Quoted by the Washington Free Beacon; he calls checks on private transfers intrusive.",
+      "subjects": [
+        "private gun sales",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:11:13.211Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "62f4a44bbb24a87978d9a718b8ebe3087245abf9a913b39fb92a80ef3f2e1b6f",
+      "kind": "own-words",
+      "url": "https://freebeacon.com/politics/duffy-gun-control-laws-lead-slippery-slope-eradicate-second-amendment/",
+      "date": "2017-11-07",
+      "date_precision": "day",
+      "passage": "I don't think this will ever stop. I think they want to eradicate the Second Amendment.",
+      "note": "Quoted by the Washington Free Beacon; he says new gun laws will not satisfy advocates and he sees a goal of ending the Second Amendment.",
+      "subjects": [
+        "Second Amendment general statement",
+        "gun laws after a mass shooting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:11:13.211Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ce568cab8d045a5caf12acabbccd28c5e3258f2e816859fca12154c01b9d4fd2",
+      "kind": "own-words",
+      "url": "https://www.wtkr.com/2016/06/23/gop-congressman-this-isnt-about-guns",
+      "date": "2016-06-23",
+      "date_precision": "day",
+      "passage": "We're talking about terrorism right now. This isn't about guns.",
+      "note": "Quoted by WTKR on the House sit-in over gun votes after the Orlando shooting (date from the page URL).",
+      "subjects": [
+        "gun laws after a mass shooting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:11:13.211Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d25acf1fc4d7a2035d6fb91a508bc362f4694424aa8fec05faf3b59dc365dcc1",
+      "kind": "own-words",
+      "url": "https://wpr.org/politics/rep-duffy-says-no-dems-assault-weapons-ban",
+      "date": "2013-01-25",
+      "date_precision": "day",
+      "passage": "in regard to limiting access to the current law for guns and law-abiding citizens, no.",
+      "note": "Quoted by Wisconsin Public Radio in a story titled as saying no to an assault weapons ban; he said he would look at the President's proposals but not at limiting access to guns for law-abiding citizens. Fragment as quoted by the outlet.",
+      "subjects": [
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:11:13.211Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0fb3929f5246717d4bde69923fcfeeda2c1e07d717698020231b9db0288a72f0",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/115th-congress/house-joint-resolution/40",
+      "date": "2017-02-02",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-40-2017",
+      "act": "yea",
+      "motion": "On Passage (Roll 77)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 77), 2017-02-02: yea (tally 235–180); census gate: none.",
+      "subjects": [
+        "rule sending records to gun background check system overturned"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HJRES-40-2017.htm",
+          "sha256": "616db93c5dbc0f8d42ff56878c6d7302412f4feaade1ac2794ac4020fae05e55"
+        }
+      }
+    },
+    {
+      "id": "4452b2d523b44906547583c31a076a0cc023cc2913c4f04adbf6c269dbdc254b",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/116th-congress/house-bill/1112",
+      "date": "2019-02-28",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1112-2019",
+      "act": "nay",
+      "motion": "On Passage (Roll 103)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 103), 2019-02-28: nay (tally 228–198); census gate: none.",
+      "subjects": [
+        "gun sale proceeds after 10 business days if background check pending and buyer petitions",
+        "renamed 'mental defective' category in gun prohibitions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1112-2019.htm",
+          "sha256": "d817cf452544898f788a74fb237b88aa4118eba8faf5f27c87a6b4a3553c0657"
+        }
+      }
+    },
+    {
+      "id": "47c366f203ce98320481a330d1d875c58d608bc4ba0ff068d88e6c5231a10b69",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/115th-congress/house-bill/1181",
+      "date": "2017-03-16",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1181-2017",
+      "act": "yea",
+      "motion": "On Passage (Roll 169)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 169), 2017-03-16: yea (tally 240–175); census gate: none.",
+      "subjects": [
+        "VA incompetence finding alone cannot block gun purchase"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1181-2017.htm",
+          "sha256": "16ac8058d73137cfefc981316ca66ecbcdedd11533be8975a8b95aed6f3ebd85"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "private gun sales",
+        "Second Amendment general statements",
+        "gun law after mass shootings"
+      ],
+      "places": [
+        "scope: past member of the Wisconsin 7th District House seat who announced his resignation in 2019 (https://cfjctoday.com/2019/08/26/gop-rep-sean-duffy-of-wisconsin-resigning-from-congress/); not on the 2026 ballot as far as reached; statements below date from his time in Congress",
+        "On the Record (0 meetings)",
+        "web search: one search on name plus Second Amendment and guns; results were news items from 2013 to 2017, none recent",
+        "blocked: https://www.congress.gov/member/sean-duffy/D000614 (403); sponsored-bills list also blocked: https://www.congress.gov/member/sean-duffy/D000614?q=%7B%22sponsorship%22%3A%22sponsored%22%7D (403)",
+        "blocked: https://ballotpedia.org/Sean_Duffy (empty page)",
+        "official House site and campaign site: not reviewed (no longer in office)",
+        "no recent statements found on guns in his current federal role"
+      ],
+      "found": 5,
+      "at": "2026-10-31T00:11:13.211Z",
+      "by": "source-collector"
+    }
+  ]
+}

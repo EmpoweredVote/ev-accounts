@@ -35,6 +35,22 @@
       "found": 0,
       "at": "2026-10-27T15:55:18.674Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and gun safety laws in general"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Florida U.S. House District 3). The AP report says another candidate won the nomination: https://baynews9.com/fl/tampa/ap-online/2026/08/19/seth-harp-wins-democratic-nomination-for-us-house-in-floridas-3rd-congressional-district ; the primary voter guide https://www.clickorlando.com/voters-guide/2026/07/31/2026-voters-guide-us-house-district-3-democratic-primary/ names him as a primary candidate (his answers there cover economy, health care, housing and climate, nothing on the subject)",
+        "On the Record (0 meetings)",
+        "Florida Election Watch general-election contest page https://floridaelectionwatch.gov/ContestResultsByCounty/140032: no records shown",
+        "stopped after confirming he is out of the race, as the brief directs"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:02:39.114Z",
+      "by": "source-collector"
     }
   ]
 }

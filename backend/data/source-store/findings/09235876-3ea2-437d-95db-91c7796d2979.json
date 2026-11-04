@@ -1,6 +1,84 @@
 {
   "politician_id": "09235876-3ea2-437d-95db-91c7796d2979",
-  "findings": [],
+  "findings": [
+    {
+      "id": "3facffa5113173f92958687b8a383cfef61df169a408d5fb3b5eacc846261479",
+      "kind": "own-words",
+      "url": "https://senatorpicozzi.com/enews/062325-2/",
+      "date": "2025-06-23",
+      "date_precision": "day",
+      "passage": "The agreement resulted from efforts of Pennsylvania Attorney General Dave Sunday to maximize reciprocity agreements while protecting standing law and constitutional rights.",
+      "note": "Item titled 'PA Now Has Concealed Carry Reciprocity with Virginia' in his Senate office e-news dated 2025-06-23. It announces that holders of Pennsylvania licenses to carry may carry in Virginia, the 30th state with a reciprocity agreement. A newsletter item issued in his office's name, not a first-person statement.",
+      "subjects": [
+        "honoring other states' carry permits",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:17:04.277Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aeb8266984e53754ceef8ff83f7e417709cb966b7ba747cb9d64e2c79c4a49ed",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb822",
+      "date": "2026-05-06",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-822-2025",
+      "act": "nay",
+      "motion": "Senate Floor: PN0881, Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: PN0881, Final Passage, 2026-05-06: nay (tally 30–20); census gate: none.",
+      "subjects": [
+        "local firearm and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-822-2025.introduced.pdf",
+          "sha256": "38d1bdcb626cc1614fee0c352427248f5e599df007fead7d1a6031742385df55"
+        }
+      }
+    },
+    {
+      "id": "0ed848da85863e6017461c46ab1b02fcf92b5cf326e18c8cc0c62c939d22d732",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb918",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-918-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-SB-918-2025 (LegiScan sponsor list): SB918 (2025-2026 Regular Session): In sentencing, providing for sentences for persons not to possess, use, manufacture, control, sell or transfer firearms..",
+      "subjects": [
+        "mandatory minimum sentences for repeat 'persons not to possess firearms' convictions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-918-2025.introduced.pdf",
+          "sha256": "6cbf3667d680618446674cec5a5b784197368f595bccd6e6a5645e3a274ea3f9"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -25,6 +103,33 @@
       "found": 0,
       "at": "2026-10-28T22:00:24.092Z",
       "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun with a permit and honoring other states' permits",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "bills sponsored on firearms",
+        "general statement on the Second Amendment"
+      ],
+      "places": [
+        "scope: https://senatorpicozzi.com/biography/ names him as state senator for Pennsylvania's 5th Senate District (sitting, not on the 2026 ballot as far as the page shows)",
+        "On the Record (0 appearances, extract-otr run)",
+        "official site: biography page (public safety listed as a priority, nothing on guns); site search for 'firearm' returned two e-news items, both opened",
+        "official e-news 2025-06-23: one item on concealed carry reciprocity (saved)",
+        "official e-news September 2025 veterans issue: only a mention of lethal-means safety counseling in a webinar notice; not his stance, not saved",
+        "Pennsylvania General Assembly bill pages for SB 559 and SB 357 (firearm bills): he is not in the listed co-sponsors; no gun bill sponsorship by him found",
+        "blocked: https://penncapital-star.com/government-politics/gop-state-sen-elect-joe-picozzi-will-represent-philly-district-thats-been-blue-since-1996/ (403)",
+        "blocked: https://northeasttimes.com/2026/05/10/picozzi-on-the-budget-public-safety-education-and-more/ (403 via fetch tool; plain curl returned no gun text)",
+        "Philly Daily year-in-review 2025-12-22: nothing on the subject",
+        "Ballotpedia: fetch returned empty; not reviewed",
+        "campaign site: not separately found; 2 web searches run"
+      ],
+      "found": 1,
+      "at": "2026-10-30T15:17:04.277Z",
+      "by": "source-collector"
     }
   ]
 }

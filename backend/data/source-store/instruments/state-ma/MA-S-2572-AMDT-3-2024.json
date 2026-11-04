@@ -1,0 +1,59 @@
+{
+ "id": "MA-S-2572-AMDT-3-2024",
+ "scope": "state:ma",
+ "title": "S.2572 (193rd General Court) Senate floor amendment #3: Establishing a Task Force on Live-Fire Training (redraft). Adopted, roll call #110, 39-0 2/1/2024.",
+ "urls": [
+  "https://malegislature.gov/Bills/GetAmendmentContent/193/S2572/3/Senate/Content",
+  "https://malegislature.gov/Bills/193/S2572/BillHistory"
+ ],
+ "version": "other",
+ "sponsors": [
+  {
+   "name": "Moore",
+   "role": "prime",
+   "version": "amendment text (movers named in it)",
+   "politician_id": "c0b79f82-6ce7-413a-a18a-286c9a8fa5fd"
+  },
+  {
+   "name": "O'Connor",
+   "role": "co",
+   "version": "amendment text (movers named in it)",
+   "politician_id": "e1f72270-5809-4d0e-969c-48d1ab34fbdc"
+  },
+  {
+   "name": "Brady",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Tarr",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Gomez",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03): official amendment text + bill history for fate",
+  "fetched_at": "2026-11-03T19:02:32Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-S-2572-AMDT-3-2024.html",
+   "sha256": "1a442346ff28b52ef4721d901beec6fe2969d6e542a270d81bb07e5c3d81d026"
+  }
+ },
+ "operative_text": "Amendment 3 Amendment ID: S2572-3-R1 Redraft Amendment 3 Establishing a Task Force on Live-Fire Training Messrs. Moore, O'Connor, Brady, Tarr and Gomez move that the proposed new text be amended by inserting after section 37 the following section:- “SECTION 37A. There shall be a commission to study the benefits and feasibility of adding live-fire training to the requirements for a basic firearms safety certificate under section 131P of chapter 140 of the General Laws. The commission shall consist of: the secretary of public safety and security or a designee, who shall serve as chair; the colonel of the state police or a designee; the attorney general or a designee; 1 member appointed by the Massachusetts Chiefs of Police Association Incorporated; 1 member appointed by the Gun Owners’ Action League, Inc.; 1 member appointed by the Massachusetts Coalition to Prevent Gun Violence, Inc.; and 3 members appointed by the governor, 2 of whom shall be certified firearms safety instructors and 1 of whom shall represent a sportsman’s association. The commission shall study and make recommendations regarding the benefits and feasibility of adding live-fire training to the requirements for a basic firearms safety certificate. The study shall include: (i) the cost of such training to applicants, instructors and the commonwealth; (ii) the availability of resources necessary to implement the training, including the geographic distribution of ranges and instructors and the capacity of ranges and instructors; (iii) recommendations on the types of firearms, rifles or shotguns that should be included in live-fire training; (iv) academic research regarding the effectiveness of live-fire training in promoting safety and reducing firearms accidents; and (v) any other information related to certified firearms safety instructors or the basic firearms safety certificate and deemed relevant to the study. The commission shall submit the study and recommendations, including any legislative recommendations, to the clerks of the house of representatives and the senate and the joint committee on public safety and homeland security not later than August 1, 2025.”."
+}

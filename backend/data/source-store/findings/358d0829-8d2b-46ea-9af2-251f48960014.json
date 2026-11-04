@@ -1,0 +1,36 @@
+{
+  "politician_id": "358d0829-8d2b-46ea-9af2-251f48960014",
+  "findings": [
+    {
+      "id": "7292876d7868969a8ad870e44b579f60c678386171707aecc9904ddf1c1bf32a",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2017663",
+      "date": "2017-12-06",
+      "date_precision": "day",
+      "instrument_id": "US-HR-38-2017",
+      "act": "yea",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2017-12-06: yea (tally 231–198); census gate: none.",
+      "subjects": [
+        "honor carry permits from other states",
+        "background check system reporting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-115hr38eh.txt",
+          "sha256": "96f3d68e094e7438812650edc88a468959aa2048490e6a8299d390837cb09d12"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

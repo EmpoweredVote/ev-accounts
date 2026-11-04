@@ -1,0 +1,33 @@
+{
+  "politician_id": "8ef374f4-e74a-4f51-9733-c9c208856c8d",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on firearm types",
+        "background checks",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "penalties for gun crimes",
+        "general gun rights and gun violence statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site http://www.davidpan4congress.com (/issues and /news fetched): nothing on the subject",
+        "Ballotpedia https://ballotpedia.org/David_Pan (nearly empty for the fetch tool)",
+        "press release https://www.einpresswire.com/article/910503378/republican-david-pan-accelerates-drive-for-congress-in-ca-46: nothing on guns",
+        "Daily Titan 2024 article: nothing on the subject",
+        "Fullerton Observer interview teaser: full text not available, not reviewed: https://fullertonobserver.com/tag/david-pan/",
+        "two news searches: no gun statement found",
+        "not a sitting legislator, so no sponsor list",
+        "blocked: https://www.davidpan.org (bot check)",
+        "identity: CA-46 candidate, UC Irvine professor"
+      ],
+      "found": 0,
+      "at": "2026-10-30T23:46:31.452Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -55,6 +55,27 @@
         "fetched_at": "2026-10-27T14:48:19.619Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "9ba1138c8d0a310bc8ba167209e9b9f09344e576f00d7994a8965bc155b46702",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/in/2021/bills/INB00008933",
+      "date": "2021-01-14",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1232-2021",
+      "act": "author",
+      "note": "HB 1232, short title 'Right to carry a handgun'. Prescott is listed as author (coauthors Mayfield, Torr, May). Summary: 'Repeals the law that requires a person to obtain a license to carry a handgun in Indiana.' Action line dated Jan 14, 2021: 'Authored by Representative Prescott'. Per LegiScan snippet it died in committee. Source is a third-party mirror, not iga.in.gov (which could not be read). Orchestrator check 2026-11-03: the LegiScan IN 2021 bulk set lists John Prescott as primary sponsor (type 1) of HB1232, coauthors Mayfield, Torr, May; url set to the official bill page (LegiScan state_link).",
+      "subjects": [
+        "repeal of handgun carry licence (permitless carry)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-03T21:09:28.181Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -107,6 +128,51 @@
       "found": 1,
       "at": "2026-10-27T14:48:19.619Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "handgun licence repeal",
+        "guns in the state capitol and government center",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope check: https://en.wikipedia.org/wiki/J.D._Prescott (finding aid only, not cited) shows him as the member for Indiana House district 33 since 2018; search results also describe him as a sitting House member",
+        "sponsor list: covered by LegiScan bulk check",
+        "official site: the House caucus member page was not found at the guessed address (404: http://www.indianahouserepublicans.com/members/house-district-33/); the General Assembly member page returned no member content to the fetch tool (needs JavaScript): not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_j_d_prescott_1",
+        "news search on name plus gun words: a January 2021 report of his permit-repeal bills was found only as a search snippet and could not be opened",
+        "blocked: https://thecr.com/news/2021/jan/13/holdman-prescott-combine-for-14-measures (HTTP 429)",
+        "blocked: https://www.jurist.org/news/2021/02/indiana-house-approves-legislation-to-eliminate-handgun-licensing/",
+        "blocked: https://legiscan.com/IN/legislators?q=Prescott",
+        "opened with no mention of him: https://www.ibj.com/articles/teacher-gun-training-legislation-passes-indiana-house; https://www.ibj.com/articles/indiana-nears-law-allowing-more-armed-statewide-officials-at-state-capitol; https://www.nbcchicago.com/news/local/indiana-senate-could-change-stance-on-handgun-carry-permits/2765539/",
+        "Ballotpedia: not reviewed (known to return empty to the fetch tool)"
+      ],
+      "found": 0,
+      "at": "2026-10-31T20:39:13.811Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "2021 Indiana bills repealing the handgun licence",
+        "HB 1369 (2021)",
+        "HB 1232 (2021) Right to carry a handgun",
+        "Prescott own words on permitless carry"
+      ],
+      "places": [
+        "https://fastdemocracy.com/bill-search/in/2021/bills/INB00009094 (HB 1369: authors Smaltz, coauthors Lehman, Wesco, Lucas; Prescott appears only in the 65-yes House vote list, Feb 22 2021; no authorship)",
+        "http://iga.in.gov/legislative/2021/bills/house/1232/ (HB 1232: Prescott is author)",
+        "blocked: https://iga.in.gov/legislative/2021/bills/house/1232/details and /1369/details (page renders only a header without JavaScript)",
+        "blocked: legiscan.com bill and sponsors pages (403); jurist.org (403); open.pluralpolicy.com HB1232/HB1295 (404)",
+        "web searches for Prescott statements on permitless carry (none found)"
+      ],
+      "found": 1,
+      "at": "2026-11-03T21:09:28.181Z",
+      "by": "source-collector"
     }
   ]
 }

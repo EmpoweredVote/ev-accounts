@@ -46,6 +46,28 @@
       "found": 0,
       "at": "2026-10-27T01:19:07.686Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "general gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official page: https://www.in.gov/iurc/about-us/commission-chairman-and-commissioners/commissioner-bob-deig/ (appointed commissioner of the utility regulatory commission; nothing on the subject)",
+        "sponsor list: covered by LegiScan bulk check (former state senator 2006-2010)",
+        "Wikipedia page: finding aid only, not cited",
+        "one news search on name plus gun words: nothing on the subject",
+        "a 2010 list of legislators thanked for a gun-related vote names him but does not say how he voted or what he said, so not saved: https://www.nraila.org/articles/20100326/please-thank-your-legislators-for-suppo",
+        "Ballotpedia: not reachable by fetch tool"
+      ],
+      "found": 0,
+      "at": "2026-10-31T20:37:02.690Z",
+      "by": "source-collector"
     }
   ]
 }

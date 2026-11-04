@@ -1,0 +1,31 @@
+{
+  "politician_id": "f43eadfc-f60c-40c9-84fb-6f7bda881c8c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights",
+        "gun safety laws",
+        "background checks",
+        "assault-style weapons",
+        "carry permits"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (assumes this id is the Michael Don Johnson who ran in Florida's 7th district; the id could not be tied to him with certainty). https://www.fox35orlando.com/news/florida-congressional-district-7-election-results shows another candidate won that primary and faces nominee in November, and the October general-election guide https://www.clickorlando.com/voters-guide/2026/10/16/2026-voters-guide-us-house-district-7/ has no Johnson",
+        "On the Record (0 meetings)",
+        "https://www.clickorlando.com/voters-guide/2026/07/31/2026-voters-guide-us-house-district-7-republican-primary/ (Michael Johnson's Q&A answers read; nothing on the subject)",
+        "campaign site votemichaeldonjohnson.com (no gun text found)",
+        "FEC filings list: one 2026 Florida House challenger named Michael Johnson, district 7",
+        "BallotReady: a different Mike Johnson, not used",
+        "blocked: https://ballotpedia.org/Mike_Johnson_(Florida) (empty page)",
+        "congress.gov: not applicable, not a sitting legislator",
+        "web searches: one search to identify the race"
+      ],
+      "found": 0,
+      "at": "2026-10-31T00:50:36.656Z",
+      "by": "source-collector"
+    }
+  ]
+}

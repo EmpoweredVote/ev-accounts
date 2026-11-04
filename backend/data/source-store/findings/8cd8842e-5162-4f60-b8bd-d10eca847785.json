@@ -149,6 +149,71 @@
         "fetched_at": "2026-10-27T21:31:48.692Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "31f5a2be8a506c2e271a560bc3279862185d97d5d123994cbc7b31efe2541912",
+      "kind": "own-words",
+      "url": "https://www.ibj.com/articles/16186-ballard-vows-to-veto-gun-bill",
+      "date": "2010-02-03",
+      "date_precision": "day",
+      "passage": "Indianapolis Mayor Greg Ballard plans to veto any plan that would let people bring guns into city parks, he said.",
+      "note": "As city mayor, he said he would veto a council proposal to allow guns in city parks. The business journal reports his statement; the proposal was raised by a council member who called it a Second Amendment matter. Date is from the outlet's article page as read by the fetch tool.",
+      "subjects": [
+        "guns in city parks",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:37:54.795Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7e32efb20f85bf143205451e9bf496947d0cb4b2367675f57c955fe48fdfcbdf",
+      "kind": "record",
+      "url": "https://www.ipm.org/2019-10-10/mayor-ballard-vetoes-gun-regulation-pay-raise-proposals-91529",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "act": "vetoed",
+      "motion": "City-County Council ordinance requiring gun owners to report missing or stolen guns to police within 48 hours (veto)",
+      "local_record": true,
+      "note": "As city mayor he vetoed a council ordinance that would have required gun owners to report missing or stolen guns within 48 hours. Public radio's report quotes his statement calling it 'contrary to state law'. The page shows a 2019 publish stamp, which does not fit his time in office, so the true date of the veto is not confirmed here.",
+      "subjects": [
+        "report lost or stolen guns",
+        "city gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:37:54.795Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "079285f6acacd79dc9d05f9e23efd858df61af157a2c6faa012b7dd3ffef7717",
+      "kind": "own-words",
+      "url": "https://www.ipm.org/2019-10-10/mayor-ballard-vetoes-gun-regulation-pay-raise-proposals-91529",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "In a statement, Ballard calls this proposal, \"contrary to state law,\" and vetoed the council's decision.",
+      "note": "Public radio reports his veto statement on the lost-or-stolen-gun reporting ordinance. Only the two quoted words are his own; the sentence is the outlet's.",
+      "subjects": [
+        "report lost or stolen guns",
+        "city gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:37:54.795Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -201,6 +266,30 @@
       "found": 2,
       "at": "2026-10-27T21:31:48.692Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on firearm types",
+        "background checks",
+        "gun carry in parks",
+        "reporting lost or stolen guns",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope check: https://www.wndu.com/video/2026/08/05/indiana-secretary-state-candidate-greg-ballard-wants-open-up-states-election-system/ names him as a 2026 candidate for Indiana Secretary of State (independent); https://www.lpm.org/news/2026-06-29/greg-ballard-vying-for-indiana-secretary-of-state-but-not-with-gop confirms the signature drive; ballot spot reported 2026-07-02",
+        "campaign site: not located by search; nothing on the subject in news coverage of the campaign",
+        "sponsor list: not applicable, he is not a legislator (former city mayor)",
+        "news search on name plus gun words: only his time as city mayor surfaced (two items saved)",
+        "blocked: https://indianacapitalchronicle.com/?p=23118",
+        "blocked: https://indianacapitalchronicle.com/voter-guides/contests/secretary-of-state/",
+        "Ballotpedia: not reviewed (known to return empty to the fetch tool)"
+      ],
+      "found": 3,
+      "at": "2026-10-31T20:37:54.795Z",
+      "by": "source-collector"
     }
   ]
 }

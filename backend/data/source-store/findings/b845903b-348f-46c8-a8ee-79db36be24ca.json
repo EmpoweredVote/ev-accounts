@@ -1,0 +1,31 @@
+{
+  "politician_id": "b845903b-348f-46c8-a8ee-79db36be24ca",
+  "findings": [
+    {
+      "id": "03dc8ae9aef2e2ae573ca2ec2337034db3ab10fec2edddf67c815e832848b111",
+      "kind": "record",
+      "url": "https://kslegislature.gov/li_2016/b2015_16/measures/SB45/",
+      "date": "2015-03-25",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-45-2015",
+      "act": "yea",
+      "motion": "Emergency Final Action - Passed as amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, Emergency Final Action - Passed as amended, 2015-03-25: yea (tally 85–39); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "C, F (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": []
+}

@@ -50,6 +50,32 @@
       "found": 0,
       "at": "2026-10-27T01:29:39.146Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "background checks",
+        "red flag orders",
+        "carry permits",
+        "Second Amendment",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed candidate for Indiana House District 60 in the 2026 general election: https://www.chamberbloomington.org/state-legislative-candidates-2026.html",
+        "BallotReady profile: issue text covers only local resources and government transparency, nothing on the subject",
+        "iVoterGuide race page: nothing on the subject in her own words",
+        "no campaign site found by two searches",
+        "blocked: https://bluevoterguide.org/fr/IN/candidate_Carrie_Syczylo/726760",
+        "not a sitting legislator, so no sponsor list",
+        "Ballotpedia not reachable by fetch tool; news searches found nothing on the subject",
+        "Indiana legislature site (iga.in.gov) returned no usable content"
+      ],
+      "found": 0,
+      "at": "2026-10-31T20:36:50.259Z",
+      "by": "source-collector"
     }
   ]
 }

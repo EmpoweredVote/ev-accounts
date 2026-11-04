@@ -56,6 +56,32 @@
       "found": 0,
       "at": "2026-10-27T14:48:20.352Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "carry permits",
+        "background checks",
+        "assault-style guns",
+        "Second Amendment",
+        "guns in schools"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "candidate on the Nov 3 2026 ballot for House District 62 per https://ivoterguide.com/candidate/95587/race/30711/election/1456 and https://www.dlcc.org/candidates/amy-huffman-oliver/",
+        "iVoterGuide page: both gun questions marked as not answered",
+        "campaign site https://www.voteamyoliver.com and /priorities (nothing on the subject)",
+        "https://hoosierwomenforward.org/amy-huffman-oliver/ (nothing on the subject)",
+        "blocked: https://indianacapitalchronicle.com/voter-guides/contests/house-district-62/ (403)",
+        "not a sitting legislator: no sponsor list",
+        "web searches (3; nothing on the subject)",
+        "Ballotpedia: not retrievable by the fetch tool"
+      ],
+      "found": 0,
+      "at": "2026-10-31T20:37:35.810Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -38,6 +38,24 @@
       "found": 0,
       "at": "2026-10-27T01:09:23.313Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "general gun-rights and Second Amendment statements"
+      ],
+      "places": [
+        "status: out of scope as described. Search results from the Department of Education press-release list and the Senate nomination record show Linda McMahon serving as U.S. Secretary of Education (confirmed 2025); no page found showing her as a sitting member of Congress or a 2026 candidate. The brief's description (sitting member of Congress) appears wrong; the id may be mis-linked.",
+        "blocked: https://www.ed.gov/about/leadership/secretary-linda-mcmahon (403)",
+        "blocked: https://www.ed.gov/about/news/press-release/us-secretary-of-education-linda-mcmahon-delivers-remarks-trump-administrations-efforts-restore-public-trust-higher-education (403)",
+        "On the Record (0 meetings)",
+        "web search x2: only lead-only aggregator pages for gun statements from her 2010 and 2012 Senate runs; not cited, not fetched",
+        "congress.gov member/sponsorship pages: not applicable (not a member)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:01:10.548Z",
+      "by": "source-collector"
     }
   ]
 }

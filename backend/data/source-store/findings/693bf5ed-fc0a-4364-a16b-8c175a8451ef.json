@@ -1,0 +1,32 @@
+{
+  "politician_id": "693bf5ed-fc0a-4364-a16b-8c175a8451ef",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun rights",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://larrymarker.com (home, border, energy, ag, videos, legal-matters, meet-larry pages): nothing on the subject",
+        "https://www.abqjournal.com/election/us-senate-larry-marker-r/3128990 (candidate page dated 2026-10-02 naming him as a U.S. Senate candidate on the Nov 3 ballot; nothing on the subject)",
+        "https://www.santafenewmexican.com/news/elections/id-like-to-see-more-hope-gop-write-in-u-s-senate-candidate-larry-marker/article_4e9038b9-0d10-48e4-84f5-69d2255c603e.html (2026-05-21; nothing on the subject)",
+        "https://www.abqjournal.com/news/us-sen-ben-ray-lujan-faces-long-shot-challenge-from-republican-larry-marker-in-reelection-bid/3137106 (nothing on the subject)",
+        "blocked: https://sourcenm.com/2026/09/11/new-mexico-election-2026-us-senator/ (403)",
+        "blocked: https://ballotpedia.org/Larry_Marker (page came back empty)",
+        "not reviewed: https://www.ballotready.org/people/larry-marker (404)",
+        "two web searches (name plus guns, Second Amendment, questionnaire): no own words on the subject found",
+        "congress.gov: not applicable (not a member; no sponsored bills)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T22:46:33.935Z",
+      "by": "source-collector"
+    }
+  ]
+}

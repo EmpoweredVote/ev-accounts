@@ -1,0 +1,55 @@
+{
+  "politician_id": "3bc348ae-0363-4dca-b235-30bc5c073fad",
+  "findings": [
+    {
+      "id": "b78dc6f7c810b5a0653ee70db94b142ee83c695144ae299eef7d300814ebc2a1",
+      "kind": "own-words",
+      "url": "https://wdet.org/2024/07/31/michigan-primary-2024-voter-guide-6th-congressional-district/",
+      "date": "2024-07-31",
+      "date_precision": "day",
+      "passage": "As part of the foundation for our Constitutional Republic, the 2nd Amendment states the “right of the people to keep and bear Arms, shall not be infringed.” Many existing gun laws are not being enforced or equally applied, and gun reform has progressively been enacted over many years — most recently with President Trump’s 2017 ban on bump stocks.",
+      "note": "Her written answer to WDET's 2024 voter-guide question on gun reform, when she was a candidate for the same seat. The page carries an editor's note that the Supreme Court struck down the bump-stock ban in June 2024.",
+      "subjects": [
+        "Second Amendment right not to be infringed",
+        "enforce existing gun laws",
+        "bump stock ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:00:43.788Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "enforce existing gun laws",
+        "ban on bump stocks",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Branch voter-guide page lists her as a 2026 candidate for Michigan U.S. House District 6 (confirms the race; its one-line gun summary is the site's wording, not hers, so not saved)",
+        "campaign site smileyforcongress.com and /issues: pages returned no text on the subject",
+        "Bridge Michigan 2024 race guide: nothing on the subject in her own words",
+        "WDET 2024 voter guide: her own written answer on gun reform saved",
+        "WDET 2024-10-08 interview piece: nothing on guns in her words",
+        "web search on name plus gun words (1 search)",
+        "Ballotpedia and congress.gov not fetched for her (never held office; no bills)"
+      ],
+      "found": 1,
+      "at": "2026-10-30T15:00:43.788Z",
+      "by": "source-collector"
+    }
+  ]
+}

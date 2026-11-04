@@ -1,0 +1,35 @@
+{
+  "politician_id": "58bdda83-1546-43b3-97cc-0198f8231690",
+  "findings": [
+    {
+      "id": "61fb8f2bad8d97060a24e30bc39999c1a0a131e5931f6d44b0248952c2e11185",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1169.html",
+      "date": "2017-02-20",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1169-2017",
+      "act": "yea",
+      "motion": "final passage of the amended bill (second reading)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND House, final passage of the amended bill (second reading), 2017-02-20: yea (tally 83–9); census gate: near-unanimous.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/ND_HB1169_enrolled.pdf",
+          "sha256": "40d815ae7b94d5894a9c24cfc4b886a240f156f24849d51cd380be6977fdf8fd"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

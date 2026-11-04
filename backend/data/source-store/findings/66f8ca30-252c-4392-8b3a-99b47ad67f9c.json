@@ -1,6 +1,35 @@
 {
   "politician_id": "66f8ca30-252c-4392-8b3a-99b47ad67f9c",
-  "findings": [],
+  "findings": [
+    {
+      "id": "776be13d4edc022219fdf3819db0234ee24aae9807915d326ecc971a85558b0b",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb2599",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2599-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-2599-2025 (LegiScan sponsor list): HB2599 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for firearms not to be carried without a license, for licenses and for proof of license and exception..",
+      "subjects": [
+        "license no longer required to carry a gun in a vehicle",
+        "vehicle carry exceptions repealed",
+        "license covers concealed carry on the person only"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2599-2025.introduced.pdf",
+          "sha256": "dc8c286b9dddc4dec2d44c39427334dbb59b7f4135d52a736491c2e33d679d51"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",

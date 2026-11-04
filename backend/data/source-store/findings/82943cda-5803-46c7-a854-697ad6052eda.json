@@ -70,6 +70,300 @@
         "fetched_at": "2026-10-31T03:30:00Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "f8a30920e236e8d163ece09e46405c510081f8d17c3c6a7a5f2cfd49c9d7ff71",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "nay",
+      "motion": "Roll Call #208 - Question on acceptance of conference committee report",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA Senate, Roll Call #208 - Question on acceptance of conference committee report, 2024-07-18: nay (tally 35–5); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bbdd9bc7132a57a94f28cf83874fa7e904f8da79aa8251a3b1194121a5467815",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "nay",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: nay (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "0764de62d48559a69e38e8340415d2a837580d3426942607934e2422acabd0d8",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "nay",
+      "motion": "Senate Engrossed Roll Call #114",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA Senate, Senate Engrossed Roll Call #114, 2024-02-01: nay (tally 37–3); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "3a4ea3a97f7f4bdbdbec2bd0159a53c3ceac4e61d0bea05be7023f40da9c8669",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/House/H4376",
+      "date": "2014-07-31",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4376-2013",
+      "act": "nay",
+      "motion": "Acceptance of the committee of conference report (Yea and Nay No. 483)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, Acceptance of the committee of conference report (Yea and Nay No. 483), 2014-07-31: nay (tally 122–30); census gate: multi-subject.",
+      "subjects": [
+        "firearm license classes merged and Class B licences phased out",
+        "new penalties for shooting and for trafficking guns into the state",
+        "background-check records sent to the federal system",
+        "ban on carrying firearms on school and college grounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "malegislature.gov roll-call PDFs + LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:34:02.477850Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4376-2013.introduced.pdf",
+          "sha256": "b94514a66e779c1400d1b875eb3aac207f6b1b1f12f9928fd8d977feab23bb61"
+        }
+      }
+    },
+    {
+      "id": "d01ed1ae5794f8824c367d91b05731dcc664f64b098a2107b1eec578c3a4f7cc",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4517",
+      "date": "2018-05-23",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4517-2017",
+      "act": "nay",
+      "motion": "House On Engrossment Yea and Nay No. 359",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MA House, House On Engrossment Yea and Nay No. 359, 2018-05-23: nay (tally 139–14); census gate: near-unanimous.",
+      "subjects": [
+        "court orders to remove guns from people at risk of harming self or others",
+        "emergency orders without notice",
+        "penalty for false petitions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4517-2017.introduced.pdf",
+          "sha256": "3bac8bca02408059e2c0db49bae39de8a690f0fb6e1b5469f7a23cf51fbd5cc4"
+        }
+      }
+    },
+    {
+      "id": "6eae9de37bdf534b21a6f61732cfdc3d406087959e7c425d4b36a7c27217b9d8",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4670",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4670-2017",
+      "act": "nay",
+      "motion": "On acceptance of the conference report (Yea and Nay No. 389)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, On acceptance of the conference report (Yea and Nay No. 389), 2018-06-28: nay (tally 133–15); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders to remove guns from people at risk of harming self or others",
+        "protection order added as a bar to gun licenses",
+        "stun gun rules and locked storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4670-2017.introduced.pdf",
+          "sha256": "6b37958358a3f01548ef0d16c386b3caaf5993d5c100f88279ff5b45ad1fe098"
+        }
+      }
+    },
+    {
+      "id": "32ee02a4fed6614167b74e029b7217f81bebcede06dc9316f605ba8887240651",
+      "kind": "own-words",
+      "url": "https://www.nbcboston.com/news/local/house-approves-overhaul-of-mass-gun-laws-on-120-38-vote/3164591/",
+      "date": "2023-10-19",
+      "date_precision": "day",
+      "passage": "\"When the listening tours were going on, when we were having the informational sessions, when this bill was being written, we were all told that the legal gun owner is not the not the target here. We're not going after them,\" Durant said. \"But it certainly seems to be that that's exactly what we're doing.\"",
+      "note": "Quoted by NBC Boston after the House passed the 2023 gun bill (H.4139). He says lawful gun owners were told they were not the target but the bill appears to target them. The same article says he sees only 'one goal' in the legislation.",
+      "subjects": [
+        "effect of the 2023 gun bill on lawful gun owners",
+        "opposition to H.4139"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:41:31.514Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9b5cc561d0cc3c42200730f4442acf6ea89d000abc227e2bd9afbe696b036e72",
+      "kind": "own-words",
+      "url": "https://www.cnhi.com/?p=37198",
+      "date": "2025-01-09",
+      "date_precision": "day",
+      "passage": "The senator said he would also file five other bills aimed at eliminating \"some of the more egregious sections\" dealing with gun registration, semiautomatic rifles and shotguns (Section 33), live fire training requirements, a nonresident ban on semiautomatic hunting , and pre-ban magazines.",
+      "note": "CNHI report of his announcement (the article says Thursday; the Patch story on the same event is dated 2025-01-09). The article reports he will file a bill to repeal the 2024 firearms law plus five bills to remove parts of it. Only the phrase in quotation marks is his own wording; the rest is the reporter's summary.",
+      "subjects": [
+        "repeal of the 2024 firearms law",
+        "gun registration",
+        "semiautomatic rifles and shotguns",
+        "live fire training",
+        "pre-ban magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:41:31.514Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c6fc8f8d5a5650c5f50c129de72be9ed790f9a8766715f5e8da928788bf00bf7",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/S1671",
+      "date": "2025-01-13",
+      "date_precision": "day",
+      "instrument_id": "MA-S-1671-2025",
+      "act": "sponsor",
+      "note": "S.1671 'An Act relative to firearm laws': petition by Durant (with three co-petitioners) for legislation to repeal the firearms laws. Docket filed 1/13/2025. Referred to Public Safety and Homeland Security; later accompanied a study order.",
+      "subjects": [
+        "repeal of the 2024 firearms law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:41:31.514Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3779af1a3d333b01dc0c7b804db7474b31662fe04cc9224a67ef591a434851a8",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/S1677",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MA-S-1677-2025",
+      "act": "sponsor",
+      "note": "S.1677 'An Act relative to semiautomatic rifles and shotguns': petition by Durant for legislation relative to firearm identification card. Referred to Public Safety and Homeland Security.",
+      "subjects": [
+        "semiautomatic rifles and shotguns",
+        "firearm identification card"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:41:31.514Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "607f1eb0e4852d49dc340dd7d1ab7e041917bca157ef8e5b7b0f80c37865ceee",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/S1672",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MA-S-1672-2025",
+      "act": "sponsor",
+      "note": "S.1672 'An Act relative to registration of guns': petition by Durant for legislation relative to registration of guns. Referred to Public Safety and Homeland Security.",
+      "subjects": [
+        "gun registration"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:41:31.514Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -97,6 +391,30 @@
       ],
       "found": 1,
       "at": "2026-10-22T23:14:26.817Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "repeal of the 2024 firearms law",
+        "gun registration",
+        "semiautomatic rifles and shotguns",
+        "firearm identification card",
+        "gun law impact on legal gun owners"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "malegislature.gov bill pages S.1671, S.1677, S.1672 and SD433 (fetched to confirm the bills and sponsor)",
+        "official Senate member page and campaign site: not reviewed (no working address found; www.senatorpeterdurant.com does not resolve)",
+        "Ballotpedia: not reviewed (returns empty to the fetch tool)",
+        "news searches: Patch Jan 2025 (no direct quote from him), CNHI Jan 2025, NBC Boston Oct 2023, Commonwealth Beacon Nov 2023 (reporter description only), Athol Daily News Sept 2023 (paraphrase only), WBUR Jan 2025 (page did not render text)",
+        "pjmedia podcast page: he is not named there; nothing on the subject",
+        "web searches: 3 searches run; stopped when results repeated the same sources"
+      ],
+      "found": 5,
+      "at": "2026-11-01T01:41:31.514Z",
       "by": "source-collector"
     }
   ]

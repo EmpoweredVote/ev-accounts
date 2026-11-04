@@ -1,0 +1,155 @@
+{
+  "id": "TX-HB-2744-2023",
+  "scope": "state:tx",
+  "title": "HB2744 (88th Legislature Regular Session): Relating to prohibiting the transfer of certain semiautomatic rifles to certain recipients; creating a criminal offense; increasing a criminal penalty.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB2744",
+    "https://capitol.texas.gov/tlodocs/88R/billtext/html/HB02744I.htm",
+    "https://capitol.texas.gov/tlodocs/88R/billtext/html/HB02744H.htm"
+  ],
+  "version": "other",
+  "operative_text": "Sec. 1 (amending Penal Code 46.06(a)(2)(B)): {+to a person younger than 21 years of age a +} {+semiautomatic rifle that is capable of accepting a detachable +} {+magazine and that has a caliber greater than .22+};\nSec. 1 (adding Penal Code 46.06(c-1)(1)): {+the semiautomatic rifle is transferred to a +} {+recipient who:+} {+(A)  is a peace officer; or+} {+(B)+} {+is currently serving in or has been honorably +} {+discharged from the United States armed forces; or+}\nSec. 1 (amending Penal Code 46.06(d)(2)): an offense under Subsection {+(a)(2)(B) or+} (a)(7) is a state jail felony.",
+  "sponsors": [
+    {
+      "name": "Tracy King",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Rafael Anchia",
+      "politician_id": "217dbd01-bbb3-45ef-afc3-a1a94a937583",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "John Bucy",
+      "politician_id": "2be64a58-ae2c-4eee-b80d-6e673ef774bd",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Maria Flores",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6af34442-997a-4b8d-8c19-3ae65519fa38"
+    },
+    {
+      "name": "Erin Gamez",
+      "politician_id": "112dd21d-c4ea-4299-91a4-46508b74fdca",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Vikki Goodwin",
+      "politician_id": "f39b0865-c923-428a-b940-09138c09e4e8",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Ana Hernandez",
+      "politician_id": "f6570c10-effb-41e1-b559-ef9ca41a2bf1",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Ann Johnson",
+      "politician_id": "136fc01b-f061-4e30-9aa7-d5735e0a4659",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Julie Johnson",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Suleman Lalani",
+      "politician_id": "96a7a21f-87c1-4a3c-b7ee-4caa30d8ff09",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Trey Martinez Fischer",
+      "politician_id": "d4eb0cfb-f7e4-4d07-b44b-a046e06108e5",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Penny Morales Shaw",
+      "politician_id": "81d931a9-5906-4ff4-9ac8-15b49c4ae38a",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Christina Morales",
+      "politician_id": "b5e9a6f8-e768-402e-aff5-77dc22e68115",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Lina Ortega",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Mihaela Plesa",
+      "politician_id": "00184c56-6581-4815-b30a-2e47aca9ee14",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Ron Reynolds",
+      "politician_id": "2f16bdad-8486-48c7-94f2-cbe7ea6853c9",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Jon Rosenthal",
+      "politician_id": "f5f63005-94a6-4170-b120-a421ea5a8f3b",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "James Talarico",
+      "politician_id": "e31c865b-e378-4c02-b6d5-3f3fc1393791",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Shawn Thierry",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Chris Turner",
+      "politician_id": "625ec7a8-10b3-446d-a935-a8bee51e72fd",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Eugene Wu",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5b64f3b4-1ec1-4247-9ff3-9e7043be21d6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-2744-2023.comm-sub.html",
+      "sha256": "aa76df8f7b56a3247d3a176f9e6f333126b20ac64fbf2b896d5e54ba30d49948"
+    }
+  }
+}

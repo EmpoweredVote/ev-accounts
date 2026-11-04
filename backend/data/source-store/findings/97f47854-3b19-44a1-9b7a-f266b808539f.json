@@ -88,6 +88,224 @@
         "fetched_at": "2026-10-31T15:52:56.611Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "e2687b743e0bf929c4d09f93e5bd917c1083182114fbbc359b3b6db87724e555",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=1018",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1018-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-1018-2023 (LegiScan sponsor list): HB1018 (2023-2024 Regular Session): In firearms and other dangerous articles, further providing for persons not to possess, use, manufacture, control, sell or transfer firearms and for abandonment of firearms, weapons or ammunition; in community and municipal courts, further providing for masters; adding provisions relating to extreme risk protection orders; imposing duties on the Office of Attorney General; and imposing penalties..",
+      "subjects": [
+        "extreme risk protection orders created to remove firearms",
+        "firearm ban while an order is active",
+        "penalty for not turning in firearms under an order",
+        "longer penalty for prohibited persons found with a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1018-2023.amended.pdf",
+          "sha256": "05d5a4c60b9a22ac9e77d07afe3e7adc8841cd9dab1224832eb50521b29958a6"
+        }
+      }
+    },
+    {
+      "id": "800874da45274888c512c3ce2ff57a496ed6554c3743f6c10ad583d9553f5506",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb1065",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1065-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-1065-2025 (LegiScan sponsor list): HB1065 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for definitions and providing for the offense of sale of firearm or firearm parts without serial numbers and for privately made firearms..",
+      "subjects": [
+        "sale of unserialized gun frames and kits made a felony",
+        "buying parts to build an untraceable gun made a felony",
+        "dealers must mark privately made firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1065-2025.introduced.pdf",
+          "sha256": "34b91995f20ec4936440cc2230659301f600d37e7e50653195d36caf02ae3e7c"
+        }
+      }
+    },
+    {
+      "id": "7174289c575bf709364a342d36ab510bf5dbb07217a38ea13952051ae24c3c2e",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=1157",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1157-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-1157-2023 (LegiScan sponsor list): HB1157 (2023-2024 Regular Session): In firearms and other dangerous articles, further providing for licenses and for Pennsylvania State Police..",
+      "subjects": [
+        "faster court reporting of mental-health commitments to State Police",
+        "electronic reporting form for gun background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1157-2023.amended.pdf",
+          "sha256": "aaa037dbc48503ae5467861205b827bc77c0323d8957da9dd80283c8871ea880"
+        }
+      }
+    },
+    {
+      "id": "974a1fe6ea97e6fb2707025c37b89b50385ef4dc9f093e3769f59e928f7f3fe4",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb2244",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2244-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-2244-2025 (LegiScan sponsor list): HB2244 (2025-2026 Regular Session): In sales and use tax, further providing for exclusions from tax. Amending Title 18 (Crimes and Offenses) of the Pennsylvania Consolidated Statutes, in firearms and other dangerous articles, providing for the offense of unauthorized access to firearms..",
+      "subjects": [
+        "secure storage required for firearms",
+        "strict civil liability for unsecured firearms",
+        "sales tax exemption for gun safes and gun locks",
+        "retailer must post storage warning"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2244-2025.amended.pdf",
+          "sha256": "44aa84fd2022c4fe857f2ee2443a4cec6a4dd720f0590e9cdde0e487b9a44723"
+        }
+      }
+    },
+    {
+      "id": "b6f93bd51b38c8c63d69145e9446df56f7ebad8c7f4c3fa1dd09e5e0cf2ed28a",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=1018",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1018-2023",
+      "act": "yea",
+      "motion": "House Floor: HB 1018 PN 1152, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 1018 PN 1152, FINAL PASSAGE, 2023-05-22: yea (tally 102–99); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders created to remove firearms",
+        "firearm ban while an order is active",
+        "penalty for not turning in firearms under an order",
+        "longer penalty for prohibited persons found with a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1018-2023.amended.pdf",
+          "sha256": "05d5a4c60b9a22ac9e77d07afe3e7adc8841cd9dab1224832eb50521b29958a6"
+        }
+      }
+    },
+    {
+      "id": "1561ab47f9bb2cf3b379931e6b111466d9042b024b1f43b38ba23bbb38f188dc",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=777",
+      "date": "2024-03-27",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-777-2023",
+      "act": "yea",
+      "motion": "House Floor: HB 777 PN 2578, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 777 PN 2578, FINAL PASSAGE, 2024-03-27: yea (tally 104–97); census gate: none.",
+      "subjects": [
+        "sale or transfer of unserialized gun frames, receivers and kits made a felony",
+        "buying parts to build an unserialized gun made a felony",
+        "licensed dealers must mark and record privately made firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-777-2023.amended.pdf",
+          "sha256": "65a5f4847629a43127721168bc31890a6fd60f0aefae6ac528a3cd698d73d35e"
+        }
+      }
+    },
+    {
+      "id": "67aef829724c0bc4de0762266fa32228a0799f74a9ba70266e2b2b2273a14942",
+      "kind": "own-words",
+      "url": "https://www.pahouse.com/Probst/InTheNews/NewsRelease/?id=138603",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "passage": "“This is an opportunity for everyone to get together to talk about one of the most vital issues facing our communities -- keeping people safe. I look forward to the discussion on this important topic and I hope to see a packed auditorium,” said Probst, D-Monroe/Pike.",
+      "note": "Official House news release announcing her May 29, 2025 town hall on preventing gun violence, co-hosted with a local gun-safety group.",
+      "subjects": [
+        "gun violence prevention",
+        "gun safety town hall"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:46:09.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4484e571f02c5cc31f13fbd83e5c01c84d8a660cdce62582886890dff62d47bc",
+      "kind": "own-words",
+      "url": "https://www.pahouse.com/Probst/InTheNews/NewsRelease/?id=138603",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "passage": "“The Mission of CPGS is to save lives and reduce the harm caused by firearms and gun violence in our community through advocacy and partnerships that provide education, support and resources,” Probst said.",
+      "note": "She describes the mission of the local partnership co-hosting the town hall. The same release says the discussion will cover how people should safely store their weapons.",
+      "subjects": [
+        "gun violence prevention",
+        "safe storage of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:46:09.413Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -157,6 +375,33 @@
       "found": 1,
       "at": "2026-10-31T15:52:56.611Z",
       "by": "identity-pa-2026-10-31-a02365"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun violence",
+        "safe storage of guns",
+        "gun safety town hall",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope confirmed: https://www.pahouse.com/Probst (Rep. Tarah Probst, 189th District, Monroe and Pike counties; news items dated Oct 2026)",
+        "official House page news list: no gun items among the latest four; nothing on the subject there",
+        "official news release on a gun safety town hall (fetched, saved)",
+        "sponsor list: covered by LegiScan bulk check",
+        "third-party bill page fastdemocracy HR 567 (June 2026 Gun Violence Awareness Month resolution) lists her as a cosponsor; not an official page, so not saved as a record",
+        "Ballotpedia: not fetched (known to return empty)",
+        "campaign site: not found",
+        "web searches: 3 (name plus gun violence; district plus gun terms; town hall coverage); no further own words found",
+        "not reviewed: https://pahouse.com/Probst/Video/?id=131460 (video)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T23:46:09.413Z",
+      "by": "source-collector"
     }
   ]
 }

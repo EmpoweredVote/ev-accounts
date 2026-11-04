@@ -47,6 +47,33 @@
       "found": 0,
       "at": "2026-10-27T01:13:07.707Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "repeal of the 2024 gun law (Question 9)",
+        "general gun safety or Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page https://malegislature.gov/Legislators/Profile/TTH1 (confirms sitting member, 18th Middlesex; bills listed show nothing on the subject)",
+        "official legislature biography page (nothing on the subject)",
+        "sponsor list: covered by LegiScan bulk check",
+        "official site https://reptarahong.com/ and its legislation page (plain curl; no gun, firearm or Second Amendment text)",
+        "blocked: https://www.statehousenews.com/news/legislature/house/q-a-shns-talks-with-new-rep-tara-hong/article_f6e83240-f54e-11ef-9a60-cfbd5a0fb534.html (HTTP 429)",
+        "Ballotpedia: not reachable by the fetch tool, not reviewed",
+        "web searches (5) on her name plus gun words, questionnaires, and the 2026 Question 9: nothing from her on the subject",
+        "Inside Lowell and Progressive Massachusetts pages: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:51:50.403Z",
+      "by": "source-collector"
     }
   ]
 }

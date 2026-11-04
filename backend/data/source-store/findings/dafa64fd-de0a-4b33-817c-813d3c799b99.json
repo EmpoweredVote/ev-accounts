@@ -80,6 +80,233 @@
           "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
         }
       }
+    },
+    {
+      "id": "d8354bd96ef3b2f7bc2752dd19bc28bd5e73a9d49e5e4346b0ae89989d11d8cd",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2022410",
+      "date": "2022-07-29",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1808-2022",
+      "act": "nay",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2022-07-29: nay (tally 217–213); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns",
+        "large magazine limit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-117hr1808eh.txt",
+          "sha256": "75fbb3d8aa67a1e741919bd36d5950f2147af5ee9aebad54f3c833934b9b65c9"
+        }
+      }
+    },
+    {
+      "id": "79544b7f17fafb73741ecf3e91b943ed2e980a7c386058c35622bc31d59d5284",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2021075",
+      "date": "2021-03-11",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8-2021",
+      "act": "nay",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2021-03-11: nay (tally 227–203); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-117hr8eh.txt",
+          "sha256": "7ff6618b8d01b36e670d15017408752e74041ec8d8a1582826124674ff3dff11"
+        }
+      }
+    },
+    {
+      "id": "11c5e8927abf4f2884e1588daba1d4169b6f56bd0eb903dcd07a82af07721bca",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/201999",
+      "date": "2019-02-27",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8-2019",
+      "act": "nay",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2019-02-27: nay (tally 240–190); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-116hr8eh.txt",
+          "sha256": "8596643f954424e8d7074a38f569bc2885d50357f8208d6d0dbd7329c96e4b2c"
+        }
+      }
+    },
+    {
+      "id": "7292876d7868969a8ad870e44b579f60c678386171707aecc9904ddf1c1bf32a",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2017663",
+      "date": "2017-12-06",
+      "date_precision": "day",
+      "instrument_id": "US-HR-38-2017",
+      "act": "yea",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2017-12-06: yea (tally 231–198); census gate: none.",
+      "subjects": [
+        "honor carry permits from other states",
+        "background check system reporting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-115hr38eh.txt",
+          "sha256": "96f3d68e094e7438812650edc88a468959aa2048490e6a8299d390837cb09d12"
+        }
+      }
+    },
+    {
+      "id": "c072ff5fa91582b0b0fa6ff7cf6cffd94f588275db23a751786de0d6886a71a4",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2022245",
+      "date": "2022-06-08",
+      "date_precision": "day",
+      "instrument_id": "US-HR-7910-2022",
+      "act": "nay",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2022-06-08: nay (tally 223–204); census gate: none.",
+      "subjects": [
+        "age 21 to buy some semiautomatic rifles",
+        "large magazine limit",
+        "gun trafficking (package)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3b69171aad418cf3b882de356ff4b4f51b86cc460aed11ed8cb869de5bbd4d55",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-117s2938enr/html/BILLS-117s2938enr.htm",
+      "date": "2022-06-24",
+      "date_precision": "day",
+      "instrument_id": "US-S-2938-2022",
+      "act": "nay",
+      "motion": "On Concurring in the Senate Amendments to the House Amendment",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US House, On Concurring in the Senate Amendments to the House Amendment, 2022-06-24: nay (tally 234–193); census gate: multi-subject.",
+      "subjects": [
+        "background checks for buyers under 21",
+        "court orders that take guns from a dangerous person (state grants)",
+        "gun trafficking (package)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "706a380a62569720f113336c1911d3aa1d0bde03db194683edd8485644bc1e03",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2023252",
+      "date": "2023-06-13",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-44-2023",
+      "act": "yea",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2023-06-13: yea (tally 219–210); census gate: none.",
+      "subjects": [
+        "cancel the federal pistol-brace rule"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-118hjres44eh.txt",
+          "sha256": "d04fe1fe2a2512a1932d14b7b93d88fe25ac6712851bc4caa37df31b89101f4d"
+        }
+      }
+    },
+    {
+      "id": "d1cf3ea0fb05d85514d99e72ecfbc343d0b958d25acd54e6a5b4e7f76f835fe9",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2025190",
+      "date": "2025-07-03",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2025",
+      "act": "yea",
+      "motion": "On Motion to Concur in the Senate Amendment",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US House, On Motion to Concur in the Senate Amendment, 2025-07-03: yea (tally 218–214); census gate: multi-subject.",
+      "subjects": [
+        "end the federal tax on suppressors and short-barrelled guns",
+        "budget (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": []

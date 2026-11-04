@@ -131,6 +131,218 @@
         "fetched_at": "2026-10-31T15:52:56.606Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "3c3cd688d1f3ae9a11d7102eee6220426291416599e2f1d9d192c1613bd747c1",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2021/sb565",
+      "date": "2021-11-16",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-565-2021",
+      "act": "nay",
+      "motion": "FP (final passage, page prints 'FP')",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, FP (final passage, page prints 'FP'), 2021-11-16: nay (tally 107–92); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/PA_SB565_PN1212.pdf",
+          "sha256": "8599bf5e56d8378a456fd36d933e5a05733e1a059d642ddb6883c809f6226568"
+        }
+      }
+    },
+    {
+      "id": "75975ad7c0d31f6f8c9a1c6bf98e1fd626d947f3b0fe6772547cd59b67092df4",
+      "kind": "own-words",
+      "url": "https://www.cityandstatepa.com/opinion/2023/04/opinion-why-im-working-reduce-gun-violence/385293/",
+      "date": "2023-04-17",
+      "date_precision": "day",
+      "passage": "There are evidence-based common sense changes we can make that most responsible gun owners agree will work, like lost and stolen gun reporting and safe storage.",
+      "note": "Benham's own opinion column (City & State Pennsylvania) on what the state should do about gun violence.",
+      "subjects": [
+        "report lost or stolen guns",
+        "safe storage of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:14:32.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e468e8a43fa130661db98d52d16eb692a6116d1daf3024fd40acb30cbb53f5ca",
+      "kind": "own-words",
+      "url": "https://www.cityandstatepa.com/opinion/2023/04/opinion-why-im-working-reduce-gun-violence/385293/",
+      "date": "2023-04-17",
+      "date_precision": "day",
+      "passage": "In Harrisburg, I have advocated and voted to move forward with a number of these changes, though unfortunately, we have not yet had enough votes to pass the legislation.",
+      "note": "Same column; she says she has advocated and voted for these gun measures and will renew the push in the new session.",
+      "subjects": [
+        "report lost or stolen guns",
+        "safe storage of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:14:32.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bf7530b945fba52bdb2c21d652913bfcfdcc0a367e5ad0a4157cb25b001ab659",
+      "kind": "own-words",
+      "url": "https://www.cityandstatepa.com/opinion/2023/04/opinion-why-im-working-reduce-gun-violence/385293/",
+      "date": "2023-04-17",
+      "date_precision": "day",
+      "passage": "Since taking office in December 2020, I've helped bring over $10 million in funding to violence prevention initiatives in our communities.",
+      "note": "Same column; on funding for community violence prevention.",
+      "subjects": [
+        "violence prevention funding"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:14:32.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c1220d7adcbff9da205a38ca2271fa26a33365f54c550f3bb385f0b05de06a4c",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=980",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-980-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-980-2021 (LegiScan sponsor list): HB980 (2021-2022 Regular Session): In firearms and other dangerous articles, providing for report of theft or loss of firearm..",
+      "subjects": [
+        "lost or stolen firearm must be reported within 72 hours",
+        "penalties for failing to report"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-980-2021.introduced.pdf",
+          "sha256": "06b62f304a987c1d02d1ce56474c1c810a6551176fe776e5d244bb28af4645f1"
+        }
+      }
+    },
+    {
+      "id": "b6f93bd51b38c8c63d69145e9446df56f7ebad8c7f4c3fa1dd09e5e0cf2ed28a",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=1018",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1018-2023",
+      "act": "yea",
+      "motion": "House Floor: HB 1018 PN 1152, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 1018 PN 1152, FINAL PASSAGE, 2023-05-22: yea (tally 102–99); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders created to remove firearms",
+        "firearm ban while an order is active",
+        "penalty for not turning in firearms under an order",
+        "longer penalty for prohibited persons found with a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1018-2023.amended.pdf",
+          "sha256": "05d5a4c60b9a22ac9e77d07afe3e7adc8841cd9dab1224832eb50521b29958a6"
+        }
+      }
+    },
+    {
+      "id": "1561ab47f9bb2cf3b379931e6b111466d9042b024b1f43b38ba23bbb38f188dc",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=777",
+      "date": "2024-03-27",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-777-2023",
+      "act": "yea",
+      "motion": "House Floor: HB 777 PN 2578, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 777 PN 2578, FINAL PASSAGE, 2024-03-27: yea (tally 104–97); census gate: none.",
+      "subjects": [
+        "sale or transfer of unserialized gun frames, receivers and kits made a felony",
+        "buying parts to build an unserialized gun made a felony",
+        "licensed dealers must mark and record privately made firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-777-2023.amended.pdf",
+          "sha256": "65a5f4847629a43127721168bc31890a6fd60f0aefae6ac528a3cd698d73d35e"
+        }
+      }
+    },
+    {
+      "id": "50812eb85740a07bdb1435214ed9bf4663229de35f990e813880c246ce9f0eae",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=979",
+      "date": "2021-06-08",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-979-2021",
+      "act": "nay",
+      "motion": "House Floor: HB 979 PN 1706, FP",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 979 PN 1706, FP, 2021-06-08: nay (tally 124–79); census gate: none.",
+      "subjects": [
+        "local gun and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs",
+        "localities barred from suing gun makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-979-2021.amended.pdf",
+          "sha256": "494cfe800bdb89be85cf7c2a28a81c203b581e7614e7bc8f69211cb4c736f5dd"
+        }
+      }
     }
   ],
   "searches": [
@@ -198,6 +410,30 @@
       "found": 1,
       "at": "2026-10-31T15:52:56.606Z",
       "by": "identity-pa-2026-10-31-a02365"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "report lost or stolen guns",
+        "safe storage of guns",
+        "violence prevention funding",
+        "check every gun buyer",
+        "red-flag orders",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official House member news center pages 1-2 (no gun items; grant memos on violence prevention only)",
+        "web search (1): Benham gun bills and statements",
+        "City & State Pennsylvania opinion column by Benham, 2023-04-17",
+        "legislature bill pages for sponsorships: not reviewed (no gun bill sponsorship surfaced)",
+        "Ballotpedia: not reviewed (fetch returns empty)",
+        "campaign site (RepJess.com): not reviewed"
+      ],
+      "found": 3,
+      "at": "2026-10-30T15:14:32.946Z",
+      "by": "source-collector"
     }
   ]
 }

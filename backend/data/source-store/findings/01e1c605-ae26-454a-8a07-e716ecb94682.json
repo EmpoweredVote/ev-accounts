@@ -1,0 +1,53 @@
+{
+  "politician_id": "01e1c605-ae26-454a-8a07-e716ecb94682",
+  "findings": [
+    {
+      "id": "5a4adf7b0c040bc0f0ef90718d2d0c36e857750f89be8002d24da77ebf52d4e3",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/77901/race/29574/election/1443",
+      "date": "2026-03-17",
+      "date_precision": "unknown",
+      "passage": "No guns for criminals",
+      "note": "His answer to the voter guide question 'What restrictions on gun ownership are needed to protect public safety?'. The page lists the 2026 primary (March 17, 2026) for this office; the answer's own date is not shown.",
+      "subjects": [
+        "who may own a gun",
+        "keep guns from criminals"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:12:33.164Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "restrictions on gun ownership",
+        "Second Amendment",
+        "gun ban",
+        "assault-style guns",
+        "gun violence"
+      ],
+      "places": [
+        "scope: https://www.shawlocal.com/northwest-herald/2026/03/18/schneider-cruises-in-10th-district-primary names him as the nominee in the November 2026 general election for the 10th District",
+        "On the Record (0 appearances)",
+        "ivoterguide candidate page (own questionnaire answer found)",
+        "blocked: https://www.dailyherald.com/20241014/illinois-state-politics/carl-lambrecht-2024-candidate-for-illinois-house-district-58/",
+        "https://www.ballotready.org/people/carl-lambrecht (nothing on the subject)",
+        "https://www.predictionedge.com/elections/profile/carl-lambrecht/ (summary by a third party, no own words, not saved)",
+        "campaign site: none listed in his filing, per search; not reviewed",
+        "congress.gov sponsorships: not applicable, not a sitting legislator",
+        "Ballotpedia: not reviewed (pages return empty)"
+      ],
+      "found": 1,
+      "at": "2026-10-30T15:12:33.164Z",
+      "by": "source-collector"
+    }
+  ]
+}

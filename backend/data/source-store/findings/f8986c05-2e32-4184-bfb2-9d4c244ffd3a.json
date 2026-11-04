@@ -47,6 +47,93 @@
         "fetched_at": "2026-10-27T22:27:37.956Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "818586ba7a6fa8e00a512d1c240c01472b0f796fab8f64a338fb0b5e616ea7fe",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: yea (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9fc7fe42d4ca0418da57b37f789b4766ff618ad71e31a528b663386efac66476",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: yea (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "a7b3680b261d62ebf6107ab9f9df747c623a6f9a611585300571497c66066cff",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4869",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MA-H-4869-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-4869-2021 (LegiScan sponsor list): H4869 (192nd General Court): Relative to 3D printed guns and ghost guns.",
+      "subjects": [
+        "serial numbers required on firearms; unserialized guns must be registered and marked",
+        "ban on undetectable firearms and on 3D-printing guns without a federal license",
+        "ban on distributing digital gun-printing files in some cases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4869-2021.introduced.pdf",
+          "sha256": "bbafa283c191659d818a8dd83633ee46fe167ce87f0f7135b64e570c963d4381"
+        }
+      }
     }
   ],
   "searches": [
@@ -93,6 +180,33 @@
       "found": 1,
       "at": "2026-10-27T22:27:37.956Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "repeal of gun laws",
+        "general gun-law statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "one news search on name plus gun words",
+        "Ballotpedia: not relied on (returns empty to fetch tool)",
+        "official site https://repdansena.com/about-dansena: nothing on the subject; identifies him as State Representative, 37th Middlesex",
+        "Wikipedia page https://en.wikipedia.org/wiki/Danillo_Sena used only to confirm identity: nothing on the subject",
+        "malegislature.gov 194th co-sponsor list https://malegislature.gov/Legislators/Profile/DAS1/194/Cosponsor: no gun bill (only H.1047 lead-free ammunition for wildlife, not on subject)",
+        "campaign site https://www.dansenama.com/about: nothing on the subject; https://www.danillosena.com: blocked (domain does not resolve)",
+        "no quoted statements on guns found in news searches"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:36:34.347Z",
+      "by": "source-collector"
     }
   ]
 }

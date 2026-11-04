@@ -66,6 +66,64 @@
         "fetched_at": "2026-10-28T16:32:10.711Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "b9d59fca97788792f9a7af83ab5f4872e680dddd7a3231a02639a0e90ef08195",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+SB70",
+      "date": "2020-03-05",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-70-2020",
+      "act": "yea",
+      "motion": "Adoption (conference report)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA House, Adoption (conference report), 2020-03-05: yea (tally 54–46); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/VA-SB70-CHAP1112.pdf",
+          "sha256": "e84c10123a1b7e6e6baafd75f7af2a51d02a6e3324ba7076d92397d6e85b8458"
+        }
+      }
+    },
+    {
+      "id": "52491bc53d5ded4db7ee5f712d80db6c3f10d805c9b653ff7f1f2713fac6ca6f",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB0002",
+      "date": "2020-03-05",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-2-2020",
+      "act": "yea",
+      "motion": "Adoption #2 (conference report, after reconsideration)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA House, Adoption #2 (conference report, after reconsideration), 2020-03-05: yea (tally 54–44); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/va_hb2_2020_ch1111.html",
+          "sha256": "2677881b400709b8e0c4e144c8d6b60dd2f535e497141f572eda2dea8df87ff1"
+        }
+      }
     }
   ],
   "searches": [

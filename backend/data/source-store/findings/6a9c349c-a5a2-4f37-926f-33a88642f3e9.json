@@ -44,6 +44,85 @@
         "fetched_at": "2026-10-31T18:07:00.904Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "9ff6261dc0ae982aaa006057b20084d2421b5f826cb1b1ef11cfe07e924db8b6",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb548",
+      "date": "2025-02-11",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-548-2025",
+      "act": "sponsor",
+      "note": "Co-sponsor (the prime sponsor is Rep. Josh Bashline). HB 548 would limit how far local governments may regulate firearms and ammunition and would add a preemption provision. The bill was referred to House Judiciary on this date; the date he signed on as a co-sponsor is not shown.",
+      "subjects": [
+        "state law overrides local gun rules",
+        "limits on local regulation of firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:48:47.830Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5a1e8a788a9a3b1de393bdb1dde749a6f598706061fbe03d4e66bccf89447f17",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb454",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-454-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-454-2025 (LegiScan sponsor list): HB454 (2025-2026 Regular Session): In firearms and other dangerous articles, repealing provisions relating to firearms not to be carried without a license, providing for license not required, repealing provisions relating to carrying firearms on public streets or public property in Philadelphia, further providing for prohibited conduct during emergency, providing for sportsman's firearm permit, further providing for licenses and for antique firearms and repealing provisions relating to proof of license and exception; and making editorial changes..",
+      "subjects": [
+        "no license needed to carry firearms openly or concealed",
+        "carry license made optional",
+        "Philadelphia public-carry rule repealed",
+        "license age minimum and character check removed",
+        "duty to show license on demand repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-454-2025.introduced.pdf",
+          "sha256": "f30ec3f128cf3767ddff70a1eeaf2b9e5550db871bb897761638ddd54b516abe"
+        }
+      }
+    },
+    {
+      "id": "d286596c5fbf23976f50103b657a58aab391f2dc93424dafbbac8f5df6ae6538",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb548",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-548-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-548-2025 (LegiScan sponsor list): HB548 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for limitation on the regulation of firearms and ammunition; and, in preemptions, providing for regulation of firearms and ammunition..",
+      "subjects": [
+        "state preemption of local gun and ammunition rules extended to all municipalities",
+        "lawsuits and expense awards against local governments that break preemption"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-548-2025.introduced.pdf",
+          "sha256": "96cead2961c739e15a8f1b6213d6cebb08434f6d00d7d5db6ad44267c48a36b1"
+        }
+      }
     }
   ],
   "searches": [
@@ -98,6 +177,34 @@
       "found": 1,
       "at": "2026-10-31T18:07:00.904Z",
       "by": "identity-pa-2026-10-31-raw-votes"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun rights",
+        "limits on local gun regulation (preemption)",
+        "carry permits",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "gun bills sponsored or co-sponsored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://reprasel.com/ (home, /about, press-release list of 14 items from 2025-01-06 to 2026-09-16): nothing on the subject",
+        "https://www.palegis.us/legislation/bills/2025/hb548 (names him as a co-sponsor; saved)",
+        "https://www.palegis.us/legislation/bills/2025/hb1818 (constitutional-right-to-carry joint resolution): he is not listed",
+        "https://policyrisk.com/state-bill/PA-HB548-2025-2026 (cross-check of HB 548 co-sponsor list)",
+        "blocked: https://penncapital-star.com/government-politics/state-rep-elect-brian-rasel-wants-to-stop-the-population-bleed/ (403)",
+        "blocked: https://www.billtrack50.com/legislatordetail/29587 (sponsored list did not load)",
+        "not reviewed: the full palegis.us member sponsored/co-sponsored list (needs the site's search; member bio URL guess returned 404)",
+        "three web searches (name plus Second Amendment, state representative, firearms sponsorship): no own words on the subject found",
+        "Ballotpedia: not reviewed (fetch tool returns empty for it)"
+      ],
+      "found": 1,
+      "at": "2026-10-30T22:48:47.830Z",
+      "by": "source-collector"
     }
   ]
 }

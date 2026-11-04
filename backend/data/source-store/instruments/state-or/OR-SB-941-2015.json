@@ -409,11 +409,13 @@
         },
         {
           "name": "Rayfield",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "15dbbf1b-da3d-4fb9-8fc5-67b734e7979e"
         },
         {
           "name": "Read",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "94105ea6-e6f7-4629-b30c-a8fe713e1cad"
         },
         {
           "name": "Reardon",
@@ -434,7 +436,8 @@
         },
         {
           "name": "Vega Pederson",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "27f6b552-0e36-429a-a6fd-bb7108b80b35"
         },
         {
           "name": "Williamson",

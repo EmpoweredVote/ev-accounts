@@ -50,6 +50,31 @@
       "found": 0,
       "at": "2026-10-27T02:59:23.234Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "ghost guns",
+        "carrying guns",
+        "general statements on gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "malegislature.gov member page https://malegislature.gov/Legislators/Profile/S_R1/194 (confirms Sean Reid, 11th Essex, Lynn; his sponsored list has only two hunting-noise bills, H.1025 and H.1026, about migratory game birds, not firearms; nothing saved)",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site: none found (a guessed address did not load; Wikipedia lists none)",
+        "Wikipedia page (finding aid only; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Sean_Reid_(Massachusetts) (returned empty)",
+        "local news https://itemlive.com/2025/01/01/state-rep-reid-sworn-in, and two 2024 forum stories on itemlive.com (read via plain curl; no gun words)",
+        "three web searches on name plus gun words and campaign issues: nothing on the subject from him"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:52:40.429Z",
+      "by": "source-collector"
     }
   ]
 }

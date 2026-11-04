@@ -1,0 +1,27 @@
+{
+  "politician_id": "a91374c7-51c6-4afb-a618-771a17bd67de",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "Second Amendment",
+        "restrictions on gun ownership"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://theballotbrief.com/candidate/richard-g-baker-tn (confirms independent candidate from Johnson City for Tennessee 1st district; no campaign website found as of 2026-10-15; nothing on the subject)",
+        "https://www.ballotready.org/people/richard-g-baker (lists 2026 general election candidacy for Tennessee 1st district; no positions; nothing on the subject)",
+        "https://ivoterguide.com/candidate/53838/race/1106/election/979 (voter guide; the two gun questions are marked did not answer; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Richard_Baker_(Tennessee) (page returned empty)",
+        "no campaign site exists per the profile above; no official site (not an officeholder; no congress.gov record)",
+        "two news searches on name plus gun subjects: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:02:44.886Z",
+      "by": "source-collector"
+    }
+  ]
+}

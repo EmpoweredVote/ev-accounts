@@ -1,0 +1,72 @@
+{
+  "politician_id": "bd4d2cbe-8463-40e2-bdc1-ca4960c6e1bb",
+  "findings": [
+    {
+      "id": "ed54d1c5e5f36e91275b20d6a1e15178bd30d4bbb88aa84d6c71f6528b8fe4b1",
+      "kind": "own-words",
+      "url": "https://www.somdnews.com/independent/news/local/prince-frederick-s-chaffee-makes-second-run-for-u-s/article_8df1949b-2dfb-5479-a846-3a9da5b1ccba.html",
+      "date": "2018-05-17",
+      "date_precision": "day",
+      "passage": "Chaffee said the law, which was implemented on the heels of the Great Mills High School shooting, is an “infringement of our Second Amendment rights,” suggesting schools could have easily had metal detectors.",
+      "note": "Maryland local paper (Southern Maryland News) quotes him opposing Maryland's red flag law (temporary removal of guns from people seen as a threat); only the words in quotation marks are his. Written during his U.S. Senate run.",
+      "subjects": [
+        "red-flag orders",
+        "general gun safety statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:13:25.566Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d8623e8428e2745559dc60d58c22ae2a8d914e08d56782e586d783fd23ad3427",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/21056/race/2055/election/308",
+      "date": "2014",
+      "date_precision": "year",
+      "passage": "Gun control this is our second amendment right.2nd amendment secures all of us freedom .",
+      "note": "His written answer in a voter-guide questionnaire (profile for the Nov 4, 2014 Maryland District 5 general election, as listed on the page) when asked for three issues of most concern. Page does not show an exact answer date.",
+      "subjects": [
+        "general gun safety statements",
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:13:25.566Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red-flag orders",
+        "general gun rights and Second Amendment statements",
+        "gun control laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "in scope: listed as a candidate for Maryland District 5 in the 2026 general election, and as 2026 primary winner (https://www.ballotready.org/people/chris-chaffee ; https://ivoterguide.com/candidate/21056/race/2055/election/308 ; Maryland election results page seen in search, not fetched)",
+        "BallotReady profile: nothing on the subject",
+        "local newspaper interview 2018-05-17 (somdnews.com)",
+        "voter-guide questionnaire (ivoterguide.com), Nov 2014 general election profile",
+        "campaign site: not located",
+        "sponsor list: not a legislator, none",
+        "Ballotpedia: not reviewed (empty to fetch tool)",
+        "2 web searches on name plus gun words; no 2026 own words found"
+      ],
+      "found": 2,
+      "at": "2026-10-31T00:13:25.566Z",
+      "by": "source-collector"
+    }
+  ]
+}

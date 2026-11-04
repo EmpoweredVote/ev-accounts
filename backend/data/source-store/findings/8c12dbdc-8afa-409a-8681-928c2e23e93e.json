@@ -48,6 +48,33 @@
       "found": 0,
       "at": "2026-10-27T14:28:03.300Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "safe storage of guns",
+        "red-flag orders",
+        "general statements on gun rights or gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House caucus member page https://indianahousedemocrats.org/members/blake-johnson/ (confirms Robert B. 'Blake' Johnson, Indiana House District 100, Indianapolis; nothing on the subject)",
+        "campaign site: none found",
+        "newsletter https://indyblakej.substack.com/ and https://indyblakej.substack.com/archive (loaded; no gun text in the page HTML, posts may need JavaScript)",
+        "blocked: https://ballotpedia.org/Robert_Johnson_(Indiana) (empty page)",
+        "blocked: https://bluevoterguide.org/IN/candidate_Robert_Johnson/47242 (403)",
+        "blocked: https://indianahousedemocrats.org/blake-johnson (404)",
+        "sponsor list: covered by LegiScan bulk check",
+        "web searches on name plus gun words and on his newsletter: no statement by him on the subject found",
+        "iga.in.gov legislator page: did not show a name (JavaScript page), not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-31T20:39:00.644Z",
+      "by": "source-collector"
     }
   ]
 }

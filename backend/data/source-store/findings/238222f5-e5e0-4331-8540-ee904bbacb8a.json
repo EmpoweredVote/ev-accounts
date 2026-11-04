@@ -1,0 +1,115 @@
+{
+  "politician_id": "238222f5-e5e0-4331-8540-ee904bbacb8a",
+  "findings": [
+    {
+      "id": "8373afd9bf8aba959e6639b3771e6667317607d97aa40366827c1d524a8b81da",
+      "kind": "own-words",
+      "url": "https://drannieandrews.com/issue/an-end-to-gun-violence/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "We can respect the Second Amendment and still protect our kids. That means:",
+      "note": "Campaign policy page 'An End to Gun Violence' (U.S. Senate race). The list under this sentence reads: Universal background checks; Banning weapons of war from our streets; Safe storage laws that prevent unintentional shootings and youth suicides; More funding for community violence prevention and mental health programs.",
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "safe storage of guns",
+        "Second Amendment general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T19:44:38.810Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "152649d220a43161c7c7b1b196213ba98295a3ee98ccfb68333470f37ffbea4b",
+      "kind": "own-words",
+      "url": "https://drannieandrews.com/issue/an-end-to-gun-violence/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Banning weapons of war from our streets",
+      "note": "Campaign policy page list item under 'We can respect the Second Amendment and still protect our kids.'",
+      "subjects": [
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T19:44:38.810Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bcc6957cf270a6565ca6ad53b99f17067f65d068cb1eaf1fde53b7a7a28e4c2d",
+      "kind": "own-words",
+      "url": "https://drannieandrews.com/issue/an-end-to-gun-violence/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Universal background checks",
+      "note": "Campaign policy page list item under 'We can respect the Second Amendment and still protect our kids.'",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T19:44:38.810Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b25dae6954e51e684510c3226fae12c4045c011d45e815c977e3148c177f0774",
+      "kind": "own-words",
+      "url": "https://www.live5news.com/2025/03/13/groups-rally-common-sense-gun-laws-state-house/",
+      "date": "2025-03-13",
+      "date_precision": "day",
+      "passage": "We have the responsibility to hold our Lowcountry elected leaders, who represent us in Columbia, to hold them to account for their refusal to even consider the passage of common sense gun laws.",
+      "note": "Live 5 News directly quotes her ahead of a State House rally (she was then a pediatrician and former candidate). The reporter's text, not her words, says she backs expanded background checks and secure storage laws.",
+      "subjects": [
+        "gun safety laws general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T19:44:38.810Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "safe storage",
+        "open carry and permits",
+        "Second Amendment general statement"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://drannieandrews.com (home, issue page 'An End to Gun Violence'); Everytown release of 2026-08-06 names her as the nominee for U.S. Senate in South Carolina (not a sitting legislator; no sponsored bills to list)",
+        "nothing on the subject: https://annieandrews.com (parked domain)",
+        "blocked: https://scdailygazette.com/2026/10/23/republicans-call-annie-andrews-anti-gun-she-explains-her-platform-to-end-gun-violence/ (bot check)",
+        "blocked: https://www.newsfromthestates.com/node/434378 (403)",
+        "Ballotpedia: not reviewed (pages come back empty)",
+        "not reviewed: https://www.postandcourier.com/politics/in-sc-congressional-race-annie-andrews-bets-on-guns-while-rep-nancy-mace-goes-national/article_08f0da5e-4b0c-11ed-83dd-1bfb4c91846c.html (page date not shown, only a 2022 race article; not used)",
+        "not reviewed: podcast pages (audio) https://democracyonthemove.podbean.com/e/dr-annie-andrews-on-gun-violence-prevention",
+        "two news searches on name plus gun words"
+      ],
+      "found": 4,
+      "at": "2026-10-30T19:44:38.810Z",
+      "by": "source-collector"
+    }
+  ]
+}

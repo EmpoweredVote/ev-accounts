@@ -241,6 +241,164 @@
         "fetched_at": "2026-10-28T17:58:27.786Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "e394421a513d430625b7cefa633057359b54eaba7fa332ea0ecb3500f8e66d94",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+SB70",
+      "date": "2020-03-05",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-70-2020",
+      "act": "nay",
+      "motion": "Adoption (conference report)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA House, Adoption (conference report), 2020-03-05: nay (tally 54–46); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/VA-SB70-CHAP1112.pdf",
+          "sha256": "e84c10123a1b7e6e6baafd75f7af2a51d02a6e3324ba7076d92397d6e85b8458"
+        }
+      }
+    },
+    {
+      "id": "780f0d6e7b81bbf391869ef7e771255b0f943bccd6719b143c5854172e4e3540",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB0002",
+      "date": "2020-03-05",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-2-2020",
+      "act": "nay",
+      "motion": "Adoption #2 (conference report, after reconsideration)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA House, Adoption #2 (conference report, after reconsideration), 2020-03-05: nay (tally 54–44); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/va_hb2_2020_ch1111.html",
+          "sha256": "2677881b400709b8e0c4e144c8d6b60dd2f535e497141f572eda2dea8df87ff1"
+        }
+      }
+    },
+    {
+      "id": "25fb92fe0b769a45129dcf6799c9914dd81b5002d6156a620684e75dfa378aec",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB0002",
+      "date": "2024-02-28",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-2-2024",
+      "act": "nay",
+      "motion": "Passed Senate with substitute",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, Passed Senate with substitute, 2024-02-28: nay (tally 20–19); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/VA-HB2-2024-ER.pdf",
+          "sha256": "be2c4a82097d208f802bc88c1aa08097489565a6746bfd36f1a1f755a683cd50"
+        }
+      }
+    },
+    {
+      "id": "27c346652735a8ea776d6f58563ee41f98faf4e1eacbcd4b03fd394a235745b9",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB0002",
+      "date": "2024-03-01",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-2-2024",
+      "act": "nay",
+      "motion": "House substitute agreed to by Senate",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, House substitute agreed to by Senate, 2024-03-01: nay (tally 21–19); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/va_sb2_2024_enrolled.html",
+          "sha256": "fbb47c123b27eae84175225b3f36034532cd7be496f4a56cb8ff2c6f3c7bbe41"
+        }
+      }
+    },
+    {
+      "id": "25686a66ab966c9b8e46c9f172e20c9867d31d8945a44014ac71c00c1e4b26ed",
+      "kind": "own-words",
+      "url": "https://senatorchrishead.com/issues/2nd-amendment/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Chris Head is a proven protector of our Second Amendment rights and the heritage of gun ownership in Virginia.",
+      "note": "From the 2nd Amendment issues page on his official Senate site; the page is undated. It also says he is a gun owner and a Life Member of the NRA, and that as State Senator he will continue to protect the constitutional right to keep and bear arms.",
+      "subjects": [
+        "general statement on gun rights",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:18:47.426Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f66612c240fab59c83b6d23bac9c31a7e5ec4ff5a9738db0467044433d045a03",
+      "kind": "own-words",
+      "url": "https://senatorchrishead.com/issues/2nd-amendment/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "As your State Senator, Chris will continue to protect our constitutional right to keep and bear arms.",
+      "note": "Same undated issues page on his official site; a pledge to protect the right to keep and bear arms.",
+      "subjects": [
+        "general statement on gun rights",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:18:47.426Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -290,6 +448,31 @@
       "found": 6,
       "at": "2026-10-28T17:58:27.786Z",
       "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "general statement on gun rights",
+        "assault-style weapon ban",
+        "red-flag orders",
+        "permit to purchase",
+        "carry laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "official senator site senatorchrishead.com: /about/ confirms State Senator for the 3rd District (earlier House of Delegates, 17th District); /issues/2nd-amendment/ fetched and read in raw page text",
+        "chrishead.com: a different person (comedy coach); not used",
+        "blocked: https://votesmart.org/public-statement/821660/issue-position-protecting-gun-rights (404)",
+        "blocked: https://votesmart.org/public-statement/970862/issue-position-a-second-amendment-champion (404)",
+        "news search on name plus gun words: no statement from him on specific gun bills found",
+        "Ballotpedia: not relied on (fetch returns empty)",
+        "2026 ballot status: not separately confirmed; sitting senator per his site"
+      ],
+      "found": 2,
+      "at": "2026-10-30T23:18:47.426Z",
+      "by": "source-collector"
     }
   ]
 }

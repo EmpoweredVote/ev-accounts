@@ -1,6 +1,144 @@
 {
   "politician_id": "ea8ed274-32d6-499d-a787-7ad1f0624280",
-  "findings": [],
+  "findings": [
+    {
+      "id": "818586ba7a6fa8e00a512d1c240c01472b0f796fab8f64a338fb0b5e616ea7fe",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: yea (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9fc7fe42d4ca0418da57b37f789b4766ff618ad71e31a528b663386efac66476",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: yea (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "45bb3079b25331bd2630d0f30e56bb99ba4c86e89e26fcf7fa1f7a4271168756",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H2360",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MA-H-2360-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-2360-2023 (LegiScan sponsor list): H2360 (193rd General Court): Relative to 3D printed guns and ghost guns.",
+      "subjects": [
+        "ghost guns: serial numbers required on all firearms",
+        "3D-printed and undetectable firearms banned",
+        "felony penalty for breaking the new rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2360-2023.introduced.pdf",
+          "sha256": "571ab4edc7bf2d33a4ab46199dedc64d80f657ef98d1f743254495c425d2fe94"
+        }
+      }
+    },
+    {
+      "id": "3e37989df5a7135793590676582056d9b4894fffcf53abf65d4e894b1a9c125c",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H3980",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MA-H-3980-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-3980-2023 (LegiScan sponsor list): H3980 (193rd General Court): Modernizing firearm laws.",
+      "subjects": [
+        "all firearms and magazines must be registered, with serial numbers required",
+        "privately made (ghost) guns regulated",
+        "licensing rewritten, with new limits on assault-style firearms and large magazines",
+        "extreme risk protection orders to remove guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-3980-2023.introduced.pdf",
+          "sha256": "fc2cf32dbd88bb4b1b9266311c82ce3b8ee11febb2a878a7f7da17f1ab4578fd"
+        }
+      }
+    },
+    {
+      "id": "7e6d88e77304573aa61b27b5ab37073b987c13ac3abca570ff1b33a9319ee8de",
+      "kind": "own-words",
+      "url": "https://jamesforstaterep.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Massachusetts has strong gun laws in place, but it is time to ban the manufacturing of assault weapons in our state except for use by the military and law enforcement and consider greater liability for gun manufacturers in state court.",
+      "note": "Issues page headed 'Common Sense Gun Control' on his campaign site (undated; written around the 2022 campaign). Supports banning manufacture of assault weapons for non-military use and more liability for gun makers.",
+      "subjects": [
+        "ban on assault-style guns",
+        "gun maker liability"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:37:10.852Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -48,6 +186,31 @@
       "found": 0,
       "at": "2026-10-27T16:05:33.381Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "general gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "confirmed in office: search results for the 8th Middlesex seat and campaign site https://jamesforstaterep.com/issues",
+        "campaign site issues page",
+        "local Hopkinton news pages (hopkintonindependent.com, four pages) checked: nothing on the subject",
+        "Ballotpedia: not reviewed (pages return empty to the fetch tool)",
+        "ontheissues.org scorecard: lead only, not cited",
+        "three web searches"
+      ],
+      "found": 1,
+      "at": "2026-11-01T01:37:10.852Z",
+      "by": "source-collector"
     }
   ]
 }

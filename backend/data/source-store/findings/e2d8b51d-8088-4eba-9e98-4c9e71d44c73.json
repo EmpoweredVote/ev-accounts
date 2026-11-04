@@ -1,0 +1,57 @@
+{
+  "politician_id": "e2d8b51d-8088-4eba-9e98-4c9e71d44c73",
+  "findings": [
+    {
+      "id": "586e32e5a237ccb6088c856bb4330ebe426b8fbb954995dea6ef6be7769e171a",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/39399/race/29573/election/1443",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Gun ownership should be protected under the Second Amendment. Public safety can be supported through background checks for criminals and the mentally ill, enforcement of existing laws, and preventing illegal firearms, rather than broad restrictions on law-abiding citizens.",
+      "note": "His answer to the question 'What restrictions on gun ownership are needed to protect public safety?' on the iVoterGuide page, which says it comes from his 2026 Ballotpedia Candidate Connection survey. The exact day is not given.",
+      "subjects": [
+        "general Second Amendment statement",
+        "check every gun buyer",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:45:51.196Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "general Second Amendment statement",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry permits",
+        "red flag orders",
+        "bills sponsored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope: https://ivoterguide.com/candidate/39399/race/29573/election/1443 lists him for U.S. Representative, District 9, Illinois, general election Nov 3, 2026",
+        "iVoterGuide questionnaire (Ballotpedia Candidate Connection survey answers, 2026): one gun answer saved",
+        "campaign site home and stances pages (nothing on the subject)",
+        "BallotReady profile (nothing on the subject)",
+        "The Ballot Brief profile (nothing on the subject)",
+        "blocked: https://ballotpedia.org/John_Elleson (empty page)",
+        "blocked: https://news.wttw.com/node/25653 (403)",
+        "blocked: https://www.foxillinois.com/news/nation-world/john-elleson-wins-republican-nomination-for-u-s-house-in-illinois-9th-congressional-district/article_35e652c5-6ebf-5f19-9dc6-44b514fe97ea.html (429)",
+        "two web news searches on name plus gun words",
+        "not a legislator: no sponsorship list to check"
+      ],
+      "found": 1,
+      "at": "2026-10-31T00:45:51.196Z",
+      "by": "source-collector"
+    }
+  ]
+}

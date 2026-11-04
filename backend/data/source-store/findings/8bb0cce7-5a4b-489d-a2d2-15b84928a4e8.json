@@ -65,6 +65,68 @@
         "fetched_at": "2026-10-27T21:32:16.786Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "b81820560e4799a4daab630afcaceff7e6be1579e5bd1eb6e0052b0d5d017720",
+      "kind": "own-words",
+      "url": "https://www.kohforcongress.com/issues/gun-safety",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I support an assault weapons ban, universal background checks, and red flag laws.",
+      "note": "Campaign issue page states his support for an assault weapons ban, universal background checks and red flag laws. Page is undated.",
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:33:10.293Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "13c19e0f91e1fbb1302c796fabf961842a57099172ebc330435bf52a04b3c616",
+      "kind": "own-words",
+      "url": "https://www.kohforcongress.com/issues/gun-safety",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Massachusetts has shown that strong and common-sense gun safety laws save lives, and we need to bring that approach nationwide.",
+      "note": "Campaign issue page says Massachusetts gun laws should be a national model. Page is undated.",
+      "subjects": [
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:33:10.293Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a899cdb7f22a4a414ef7d827555cc060e372466bf8f652194cba7c6d2edb7c04",
+      "kind": "own-words",
+      "url": "https://www.kohforcongress.com/issues/gun-safety",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I was proud that we passed the Bipartisan Safer Communities Act in the Biden Administration, but that was only a first step.",
+      "note": "Campaign issue page cites the 2022 federal gun law as a first step needing more action. He worked in the administration, not in Congress. Page is undated.",
+      "subjects": [
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:33:10.293Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -122,6 +184,29 @@
       "found": 1,
       "at": "2026-10-27T21:32:16.786Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "gun safety laws"
+      ],
+      "places": [
+        "status check: on the 2026 general-election ballot as the nominee for Massachusetts 6th District (https://wbur.org/news/2026/09/01/massachusetts-6th-district-primary-results)",
+        "On the Record (0 meetings)",
+        "campaign site issues list https://www.kohforcongress.com/issues",
+        "campaign site gun safety page https://www.kohforcongress.com/issues/gun-safety",
+        "sponsor list: not applicable, never a member of Congress (congress.gov member page not opened)",
+        "Ballotpedia: not reviewed (pages return empty to the fetch tool); iVoterGuide page https://ivoterguide.com/candidate/44467/race/35219/election/1507 opened, no gun text found in it",
+        "web searches (4): only a third-party profile and an advocacy-group endorsement list turned up; not cited as sources",
+        "https://www.dankoh.com is a domain for sale, not the campaign site"
+      ],
+      "found": 3,
+      "at": "2026-10-30T23:33:10.293Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -1,0 +1,54 @@
+{
+  "politician_id": "5ef74cf2-a137-4a96-827d-95e6b9365069",
+  "findings": [
+    {
+      "id": "511ca2fb2e8527793b9686a6a9a71c38bb6031cdde8f36bee0b36db962059d1d",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/44225/race/32757/election/1475",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I believe the right to keep and bear arms is an individual right. Restrictions should focus narrowly on people who have demonstrated that they pose a serious threat to others, with strong due-process protections, rather than broadly restricting the rights of peaceful, law-abiding gun owners.",
+      "note": "His answer to the voter-guide question 'What restrictions on gun ownership are needed to protect public safety?' for the 2026 U.S. Senate race in Colorado. Page shows no answer date; page version stamp is 2026-10-26.",
+      "subjects": [
+        "gun rights as an individual right",
+        "limits on who may have a gun",
+        "due process for gun limits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:41:07.960Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "gun rights and Second Amendment",
+        "restrictions on who may own a gun",
+        "carry of guns",
+        "background checks",
+        "bans on types of guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "ballot status: https://theballotbrief.com/candidate/blake-huber-co shows him as a minor-party candidate for U.S. Senate, Colorado, on the 2026-11-03 ballot; no campaign website found there; nothing on the subject",
+        "https://ivoterguide.com/candidate/44225/race/32757/election/1475: questionnaire answer on gun ownership restrictions (saved)",
+        "blocked: https://goodparty.org/people/blake-huber-486daea4 (429)",
+        "not reviewed: https://lpcolorado.org/wp-content/uploads/sites/26/2026/03/Huber-US-Senate.pdf (PDF text not readable by the fetch tool)",
+        "no official campaign site found; not a legislator, so no sponsored-bill list",
+        "Ballotpedia: not reviewed (pages return empty to the fetch tool)",
+        "two web searches on name plus gun words and campaign site: nothing further on the subject"
+      ],
+      "found": 1,
+      "at": "2026-10-30T22:41:07.960Z",
+      "by": "source-collector"
+    }
+  ]
+}

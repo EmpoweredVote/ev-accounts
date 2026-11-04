@@ -51,7 +51,470 @@
         "fetched_at": "2026-10-21T03:40:10.558Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "8e32c7aa3f9375c7e2ffa3433c3ececd243af24b314c9c0b1a351318f3c1a30f",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2025190",
+      "date": "2025-07-03",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2025",
+      "act": "nay",
+      "motion": "On Motion to Concur in the Senate Amendment",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US House, On Motion to Concur in the Senate Amendment, 2025-07-03: nay (tally 218–214); census gate: multi-subject.",
+      "subjects": [
+        "end the federal tax on suppressors and short-barrelled guns",
+        "budget (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "563137533a5eebebdd35497343361835f5e7d7cb25600fa5ec5a0f101848024a",
+      "kind": "own-words",
+      "url": "https://www.sarahmcbride.com/issues/gun-violence",
+      "date": "2026-10-13",
+      "date_precision": "day",
+      "passage": "I am proud to have helped ban assault weapons in Delaware and pass the most significant gun safety package in the state’s history. In Congress, I have supported efforts to strengthen background checks, ban assault weapons, and institute safeguards to prevent dangerous individuals from getting guns.",
+      "note": "Campaign issue page (page last modified 2026-10-13). Says she supports stronger background checks, an assault weapons ban and safeguards to keep guns from dangerous people.",
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "keep guns from dangerous people"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:01:44.859Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "736aa880ce5fd729d2d325e54e7d34f9c05785129301e77b8a3a57132f4d7415",
+      "kind": "own-words",
+      "url": "https://mcbride.house.gov/media/press-releases/video-release-rep-mcbride-calls-house-republicans-debate-gun-violence",
+      "date": "2025-06-25",
+      "date_precision": "day",
+      "passage": "For my part, I’ll continue to champion legislation that bans assault weapons, closes background check loopholes, implements red flag laws, and holds the gun industry accountable.",
+      "note": "Video remarks released by her House office. She names an assault weapons ban, closing background check gaps, red flag laws and gun-industry liability as legislation she will champion.",
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "gun industry accountability"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:01:44.859Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b46b5875a799679eb5bd61c6e18fa121f79010becb2fbe3e76337cbfd94cff52",
+      "kind": "own-words",
+      "url": "https://mcbride.house.gov/media/press-releases/video-release-rep-mcbride-calls-house-republicans-debate-gun-violence",
+      "date": "2025-06-25",
+      "date_precision": "day",
+      "passage": "The data doesn’t lie: when places implement smart, common sense gun safety laws–fewer people die by gun violence.",
+      "note": "In the same video she describes Delaware's gun laws she led: universal background checks, bans on assault weapons, bump stocks and large-capacity magazines, and a handgun permit-to-purchase.",
+      "subjects": [
+        "general statement on gun safety laws",
+        "permit to buy a handgun",
+        "ban on large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:01:44.859Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a287674ee512222550455aa386f13b93e1e1fdf2a44695f80db80c11e1b2b415",
+      "kind": "own-words",
+      "url": "https://mcbride.house.gov/media/press-releases/rep-mcbride-and-delawareans-support-bipartisan-background-checks-act-2025",
+      "date": "2025-06-11",
+      "date_precision": "day",
+      "passage": "Background checks are a proven mechanism of limiting gun deaths and restricting the sale of firearms to at-risk or dangerous individuals.",
+      "note": "Her statement on becoming an original cosponsor of H.R. 18. The release says the bill requires a background check for all gun sales, closing the gap for unlicensed sellers.",
+      "subjects": [
+        "check every gun buyer",
+        "private and online sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:01:44.859Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "de52a94f6711cdd5e2fe98d4ad8195acdae03a5ac88c0a20d3bbf138be9d049e",
+      "kind": "own-words",
+      "url": "https://mcbride.house.gov/media/press-releases/photo-release-rep-sarah-mcbride-hosts-gun-safety-roundtable-former-rep-gabby",
+      "date": "2025-08-06",
+      "date_precision": "day",
+      "passage": "Today’s conversation made clear that we can lead the nation by strengthening dealer licensing, improving traceability of crime guns, and supporting violence prevention.",
+      "note": "Her quote on hosting a gun-safety roundtable in Wilmington with Gabby Giffords; she also criticises federal rollbacks of gun-sale and trafficking enforcement.",
+      "subjects": [
+        "dealer licensing",
+        "tracing crime guns",
+        "federal gun enforcement (ATF)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:01:44.859Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aa6bca2a9fec6159b0defd736613640a2743773ee38a9d3e5d7a2d0056a54ac",
+      "kind": "record",
+      "url": "https://mcbride.house.gov/media/press-releases/rep-mcbride-and-delawareans-support-bipartisan-background-checks-act-2025",
+      "date": "2025-06-11",
+      "date_precision": "day",
+      "instrument_id": "US-HR-18-2025",
+      "act": "sponsor",
+      "note": "Original cosponsor of H.R. 18, Bipartisan Background Checks Act of 2025, which requires a background check before all firearm purchases (per her office's release; congress.gov blocked).",
+      "subjects": [
+        "check every gun buyer",
+        "private and online sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:01:44.859Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b1824d49df82e80db64fd4ff72addc587d61dee83487b813e3acfe63fda4fc14",
+      "kind": "record",
+      "url": "https://mcbride.house.gov/media/press-releases/video-release-rep-mcbride-calls-house-republicans-debate-gun-violence",
+      "date": "2025-06-25",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Cosponsorships listed by her office: Office of Gun Violence Prevention Act, Assault Weapons Ban, Break the Cycle of Gun Violence Act",
+      "note": "Her office's release lists these three bills, plus the background checks bill, as ones she has cosponsored in Congress. Bill numbers not given on the page.",
+      "subjects": [
+        "ban on assault-style guns",
+        "gun violence prevention office",
+        "gun violence prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:01:44.859Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9a846ca3b1b53fc90852fbdc269410f3bf4f866e34e236c3d8bb1a3275b134b8",
+      "kind": "record",
+      "url": "https://mcbride.house.gov/media/press-releases/video-release-rep-mcbride-calls-house-republicans-debate-gun-violence",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "act": "other",
+      "motion": "Delaware gun safety package she led as a state legislator (assault weapons, bump stock and large-capacity magazine bans, universal background checks, handgun permit-to-purchase)",
+      "local_record": false,
+      "note": "Her office's release says she led passage of this state package; bill numbers and dates not given on the page.",
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on large-capacity magazines",
+        "check every gun buyer",
+        "permit to buy a handgun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:01:44.859Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cc10645d5316ebb42651c8a53d6c6aadcffad279f2b2ae4494ca267430ab9459",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1041",
+      "date": "2026-05-21",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1041-2026",
+      "act": "nay",
+      "motion": "On Passage (Roll 190)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 190), 2026-05-21: nay (tally 216–201); census gate: none.",
+      "subjects": [
+        "VA records barred from gun background check without a judge's finding",
+        "VA fiduciary or incompetence finding not a 'mental defective' adjudication"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1041-2026.htm",
+          "sha256": "2a2784caf1b89019cb01ab04ebd2e2332984244d9935fad9618771638d40338e"
+        }
+      }
+    },
+    {
+      "id": "7ec892592e9e81a8d9eb8988f864827e569606567c2d3dc28ee24bff21b9c73b",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1181",
+      "date": "2026-07-14",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1181-2026",
+      "act": "nay",
+      "motion": "On Passage (Roll 240)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 240), 2026-07-14: nay (tally 221–201); census gate: none.",
+      "subjects": [
+        "separate payment codes for gun stores barred",
+        "state and local rules on gun-store payment codes preempted"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1181-2026.htm",
+          "sha256": "f006527184528c0f2d077b081748501c1dd86c4e2c2b83f4ce23ab419e1fb25c"
+        }
+      }
+    },
+    {
+      "id": "ca23e7025d826a863f98362cb04dbe6c7118d52ee12a75770ac7b314e80da6d5",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/2189",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "US-HR-2189-2026",
+      "act": "nay",
+      "motion": "On Passage (Roll 70)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 70), 2026-02-12: nay (tally 233–185); census gate: none.",
+      "subjects": [
+        "less-than-lethal launchers exempt from federal firearm rules",
+        "firearms and ammunition excise tax waived for those devices",
+        "exempt from National Firearms Act"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-2189-2026.htm",
+          "sha256": "dc2e63136aaa75fcc392af14f19bb2aae027e280992db65f70d454213a650e4e"
+        }
+      }
+    },
+    {
+      "id": "4ea4d8e8bb4bbd7f7cfd506501e9cef20614c760bea78fb55218eaae0d517a65",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/2243",
+      "date": "2025-05-14",
+      "date_precision": "day",
+      "instrument_id": "US-HR-2243-2025",
+      "act": "nay",
+      "motion": "On Passage (Roll 128)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 128), 2025-05-14: nay (tally 229–193); census gate: none.",
+      "subjects": [
+        "more places where off-duty and retired officers may carry concealed guns",
+        "retired officer firearms-training standards loosened"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-2243-2025.htm",
+          "sha256": "ca5f7326393fa8074705e6aa642e2b3a991c4d683236cff228e515a1bf193f9e"
+        }
+      }
+    },
+    {
+      "id": "846d457c86ec2f7961d150d346e84e4acd80d92fa8e1310acfb94513294f6aff",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/2255",
+      "date": "2025-05-15",
+      "date_precision": "day",
+      "instrument_id": "US-HR-2255-2025",
+      "act": "nay",
+      "motion": "On Passage (Roll 130)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 130), 2025-05-15: nay (tally 234–182); census gate: none.",
+      "subjects": [
+        "federal officers may buy retired service firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-2255-2025.htm",
+          "sha256": "d169bbda6c281e845e29bde7d0fdabe0f76218dba3948eaf0725bb49db42a459"
+        }
+      }
+    },
+    {
+      "id": "02b2a0ef8e8356c3d2fb89d624960de83abd2084f096cb42fbfeee9cb1dec865",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1307",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "US-HR-1307-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2025-02-13",
+      "note": "co sponsor of US-HR-1307-2025 (cosponsor 2025-02-13): HR 1307 (119th Congress): Office of Gun Violence Prevention Act of 2025.",
+      "subjects": [
+        "new Justice Department office for gun violence prevention",
+        "public education on safe gun storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1307-2025.htm",
+          "sha256": "5be12c5cce55739dd5e238649c27d6115c185a4e0e5679ca310262c713f7b8ea"
+        }
+      }
+    },
+    {
+      "id": "d0c50d4fe316245007caf7b501f03005003d6c04fb2cc2deac49d424cad59e6e",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1564",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "US-HR-1564-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2025-02-25",
+      "note": "co sponsor of US-HR-1564-2025 (cosponsor 2025-02-25): HR 1564 (119th Congress): Ethan's Law.",
+      "subjects": [
+        "federal safe-storage offence for guns reachable by minors or prohibited people",
+        "grants to states with matching safe-storage laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1564-2025.htm",
+          "sha256": "d35362313d852ff9cc41c95f1bfcebc775eed59c7d0a3977d15ff07c13559e45"
+        }
+      }
+    },
+    {
+      "id": "a4968b88e4c4568aeefa8e96fd4d288fab3324be6f48aa881beb7e5dd68901b7",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1674",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "US-HR-1674-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2025-02-27",
+      "note": "co sponsor of US-HR-1674-2025 (cosponsor 2025-02-27): HR 1674 (119th Congress): Keep Americans Safe Act.",
+      "subjects": [
+        "ban on magazines holding more than 15 rounds",
+        "existing magazines allowed, new ones must carry serial numbers",
+        "buy-back funding for large magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1674-2025.htm",
+          "sha256": "b8f771e36906d74c17b43c374e789b4fc50b5e10422fdd280358ad6bb18e78d7"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "background checks",
+        "assault-style gun ban",
+        "red flag laws",
+        "permit to purchase",
+        "dealer licensing",
+        "safe storage",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House site press releases (3 gun-related releases fetched: 2025-06-11, 2025-06-25, 2025-08-06)",
+        "campaign site issues page (sarahmcbride.com/priority/gun-violence; the campaign home page also shows her 2026 reelection campaign)",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/18/cosponsors (403)",
+        "news search: one search, results were mostly her own releases and advocacy-group pages",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 8,
+      "at": "2026-10-30T15:01:44.859Z",
+      "by": "source-collector"
+    }
+  ]
 }

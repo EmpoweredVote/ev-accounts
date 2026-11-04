@@ -22,6 +22,112 @@
         "fetched_at": "2026-10-31T18:07:00.903Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "97a2e2852687ee463cc6bfb151f09930ec17314b1c1a1a7fc031bc921b8f8f43",
+      "kind": "own-words",
+      "url": "https://politicspa.com/hd-14-kozak-targets-beaver-county-seat/128005/",
+      "date": "2023-11-21",
+      "date_precision": "day",
+      "passage": "We need leaders who are unashamedly pro-America, pro-2nd amendment, pro-life, and pro-industry.",
+      "note": "From his campaign announcement for the state House seat, as quoted by PoliticsPA. A general statement of support for the Second Amendment; no specific gun policy named.",
+      "subjects": [
+        "Second Amendment",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:48:04.762Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "776be13d4edc022219fdf3819db0234ee24aae9807915d326ecc971a85558b0b",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb2599",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2599-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-2599-2025 (LegiScan sponsor list): HB2599 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for firearms not to be carried without a license, for licenses and for proof of license and exception..",
+      "subjects": [
+        "license no longer required to carry a gun in a vehicle",
+        "vehicle carry exceptions repealed",
+        "license covers concealed carry on the person only"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2599-2025.introduced.pdf",
+          "sha256": "dc8c286b9dddc4dec2d44c39427334dbb59b7f4135d52a736491c2e33d679d51"
+        }
+      }
+    },
+    {
+      "id": "5a1e8a788a9a3b1de393bdb1dde749a6f598706061fbe03d4e66bccf89447f17",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb454",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-454-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-454-2025 (LegiScan sponsor list): HB454 (2025-2026 Regular Session): In firearms and other dangerous articles, repealing provisions relating to firearms not to be carried without a license, providing for license not required, repealing provisions relating to carrying firearms on public streets or public property in Philadelphia, further providing for prohibited conduct during emergency, providing for sportsman's firearm permit, further providing for licenses and for antique firearms and repealing provisions relating to proof of license and exception; and making editorial changes..",
+      "subjects": [
+        "no license needed to carry firearms openly or concealed",
+        "carry license made optional",
+        "Philadelphia public-carry rule repealed",
+        "license age minimum and character check removed",
+        "duty to show license on demand repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-454-2025.introduced.pdf",
+          "sha256": "f30ec3f128cf3767ddff70a1eeaf2b9e5550db871bb897761638ddd54b516abe"
+        }
+      }
+    },
+    {
+      "id": "d286596c5fbf23976f50103b657a58aab391f2dc93424dafbbac8f5df6ae6538",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb548",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-548-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-548-2025 (LegiScan sponsor list): HB548 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for limitation on the regulation of firearms and ammunition; and, in preemptions, providing for regulation of firearms and ammunition..",
+      "subjects": [
+        "state preemption of local gun and ammunition rules extended to all municipalities",
+        "lawsuits and expense awards against local governments that break preemption"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-548-2025.introduced.pdf",
+          "sha256": "96cead2961c739e15a8f1b6213d6cebb08434f6d00d7d5db6ad44267c48a36b1"
+        }
+      }
     }
   ],
   "searches": [
@@ -62,6 +168,31 @@
       "found": 1,
       "at": "2026-10-31T18:07:00.903Z",
       "by": "identity-pa-2026-10-31-raw-votes"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "home-made guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page https://www.palegis.us/house/members/bio/2022/rep-kozak (confirms House District 14, Beaver County; page lists no gun bills)",
+        "House co-sponsorship memo list for member 2022 (16 memos, none on guns; it shows only his own memos, not bills he co-sponsored)",
+        "full sponsored/co-sponsored bill list (89 bills) not shown on the member page: not reviewed",
+        "House caucus member page: nothing found (page not found)",
+        "Ballotpedia: not reviewed, pages return empty",
+        "news search: campaign announcement coverage; 2024 voter guide notes he did not answer a candidate survey",
+        "campaign site: not found"
+      ],
+      "found": 1,
+      "at": "2026-10-30T22:48:04.762Z",
+      "by": "source-collector"
     }
   ]
 }

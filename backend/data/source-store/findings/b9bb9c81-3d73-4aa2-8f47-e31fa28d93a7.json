@@ -1,0 +1,27 @@
+{
+  "politician_id": "b9bb9c81-3d73-4aa2-8f47-e31fa28d93a7",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry permits",
+        "Second Amendment general statement"
+      ],
+      "places": [
+        "status: lost the 2026-08-11 primary",
+        "https://birminghamwatch.org/2026/08/12/palmer-mercer-and-akin-win-nominations-to-run-for-congress/ (fetched: another candidate won the District 6 nomination; Bouma-Sims finished fourth with 7.22 percent)",
+        "https://birminghamwatch.org/elections/candidates/jacob-bouma-sims/ (fetched: confirms him as a first-time candidate; nothing on the subject)",
+        "On the Record (0 appearances)",
+        "blocked: http://jacob4aldistrict6.com/ (403 Forbidden)",
+        "web search on name plus gun words: nothing from him on the subject; searches stopped because he is out of scope"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:00:25.469Z",
+      "by": "source-collector"
+    }
+  ]
+}

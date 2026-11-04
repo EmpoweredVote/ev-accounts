@@ -52,6 +52,32 @@
         "fetched_at": "2026-10-31T05:00:00Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "59fe7df2e2a460e77fafd7c360a4f22d9ea283f9c78d2fb6c16d0e8a869402ff",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H2711",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MA-H-2711-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MA-H-2711-2025 (LegiScan sponsor list): H2711 (194th General Court): Relative to semiautomatic rifles and shotguns.",
+      "subjects": [
+        "repeals a section of the 2024 firearms act on semiautomatic rifles and shotguns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2711-2025.introduced.pdf",
+          "sha256": "f25757f74627ebb5405cdea555d684b5396dfb2a6ffc6bd546330b4a0d7096e0"
+        }
+      }
     }
   ],
   "searches": [
@@ -104,6 +130,32 @@
       "found": 0,
       "at": "2026-10-27T14:31:21.658Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "repeal of the 2024 firearms law",
+        "gun registration",
+        "right to carry",
+        "live-fire training",
+        "pre-ban magazines",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page https://malegislature.gov/Legislators/Profile/KPS1: confirms 6th Plymouth seat; lists several firearm bills (H.2610, H.2701, H.2708, H.2709, H.2710, H.2711, H.2712, H.2713) under his name",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site https://www.kensweezey.com: home page has nothing on the subject",
+        "blocked: https://www.kensweezey.com/news (404 on fetch)",
+        "blocked: https://www.statehousenews.com/news/legislature/q-a-shns-talks-with-freshman-rep-ken-sweezey/article_d20eb9e2-efb5-11ef-8277-d310eab8b2cc.html (429; 2025 Q&A where he is asked about his gun repeal bills, text not reachable)",
+        "Ballotpedia: not reviewed (pages return empty to the fetch tool)",
+        "news searches on name plus gun terms (5 searches): no direct quotes from him reachable",
+        "not reviewed: Public Safety committee hearing of 2025-10-31 on the repeal bills (no transcript or testimony page found)"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:42:37.790Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -1,6 +1,48 @@
 {
   "politician_id": "e687c089-f00d-464c-aa37-3b021a3aba2c",
-  "findings": [],
+  "findings": [
+    {
+      "id": "a7fce8ed056e7b89842e80e231dcbc499c4f92cf748770bc1ff203fca191d60d",
+      "kind": "own-words",
+      "url": "https://www.mass.gov/news/governor-healey-signs-gun-safety-legislation-cracking-down-on-ghost-guns-strengthening-violence-prevention",
+      "date": "2024-07-25",
+      "date_precision": "day",
+      "passage": "“Gun technology and trends are constantly evolving, and it’s important that our laws evolve along with them,” said Lieutenant Governor Kim Driscoll.",
+      "note": "Quoted in the Governor's press release on the day H.4885, An Act Modernizing Firearms Laws, was signed.",
+      "subjects": [
+        "gun safety laws",
+        "ghost guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:53:40.044Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "27c4b3ff056d62540132f7c6ab1d8090ab105a579986c3761d6085cc302063cc",
+      "kind": "own-words",
+      "url": "https://www.mass.gov/news/governor-healey-signs-gun-safety-legislation-cracking-down-on-ghost-guns-strengthening-violence-prevention",
+      "date": "2024-07-25",
+      "date_precision": "day",
+      "passage": "“This law will make our communities safer by preventing violence in the first place and improving law enforcement’s ability to respond to gun crimes.”",
+      "note": "Second sentence of her quote in the same release, about the 2024 firearms law.",
+      "subjects": [
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:53:40.044Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -49,6 +91,31 @@
       "found": 0,
       "at": "2026-10-27T16:03:28.602Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ghost guns",
+        "red flag law",
+        "gun safety laws",
+        "assault-style firearms",
+        "Question 9 / 2024 firearms law",
+        "gun violence"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "mass.gov official page for Lieutenant Governor Kim Driscoll (confirms office)",
+        "mass.gov press releases of the Governor and Lieutenant Governor (July 2024 signing release; August 2023 gun-violence statement, which quotes only the Governor)",
+        "sponsor list: not applicable, Lieutenant Governor is not a legislator",
+        "blocked: https://www.salemma.gov/mayors-office/news/mayor-kim-driscoll-declares-june-2nd-gun-violence-awareness-day-salem (404)",
+        "blocked: https://www.salemma.gov/mayors-office/news/statement-following-mass-shooting-uvalde-texas (404)",
+        "Ballotpedia: not fetched, not reachable per prompt",
+        "web searches on name plus gun words and Question 9: no statement by her on Question 9 found; no campaign site separate from the joint ticket reviewed"
+      ],
+      "found": 2,
+      "at": "2026-11-01T01:53:40.044Z",
+      "by": "source-collector"
     }
   ]
 }

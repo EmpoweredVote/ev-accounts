@@ -1,0 +1,44 @@
+{
+ "id": "MA-H-1650-2025",
+ "scope": "state:ma",
+ "title": "H1650 (194th General Court): An Act to stop mass shootings",
+ "urls": [
+  "https://malegislature.gov/Bills/194/H1650",
+  "https://malegislature.gov/Bills/194/H1650/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Marjorie C. Decker",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "2b1a645a-72ce-4c0f-80ec-17565a2d6d10"
+  },
+  {
+   "name": "Estela A. Reyes",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "8e125ae2-3101-49b1-b228-f172ad9c70d9"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-H-1650-2025.html",
+   "sha256": "8ee97fd3785120db12dec99564d6a9f6dba8e924a77ee6e830c4efb6870e9a4a"
+  }
+ },
+ "operative_text": "Chapter 269 of the General Laws is hereby amended by adding the following section:--\nSection 20. No person shall, within the commonwealth, manufacture or cause to be manufactured, partially or completely, any assault weapon or large capacity feeding device as defined in section 121 of chapter 140 of the General Laws. This prohibition shall not apply to weapons or devices manufactured by a licensed manufacturer solely for the purpose of the lawful sale to an authorized law enforcement or military agency of the commonwealth, any other state, the United States, or a foreign government approved by the United States State Department.\nWhoever violates this section shall be punished by a fine of not less than $1,000 nor more than $1,000,000 or by imprisonment for not less than one year nor more than ten years, or by both such fine and imprisonment."
+}

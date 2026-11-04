@@ -1,0 +1,44 @@
+{
+  "id": "MA-H-2711-2025",
+  "scope": "state:ma",
+  "title": "H2711 (194th General Court): Relative to semiautomatic rifles and shotguns",
+  "urls": [
+    "https://malegislature.gov/Bills/194/H2711",
+    "https://malegislature.gov/Bills/194/H2711.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kenneth Sweezey",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8512ef88-a285-4c6f-89d3-41fb4f8cfd48"
+    },
+    {
+      "name": "Paul Frost",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "799c1cea-4020-4c50-b7d1-1e9aac867529"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-31T18:31:13.796330Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2711-2025.introduced.pdf",
+      "sha256": "f25757f74627ebb5405cdea555d684b5396dfb2a6ffc6bd546330b4a0d7096e0"
+    }
+  },
+  "operative_text": "SECTION 1: Section 44 of chapter 135 of the Acts of 2024 is hereby repealed."
+}

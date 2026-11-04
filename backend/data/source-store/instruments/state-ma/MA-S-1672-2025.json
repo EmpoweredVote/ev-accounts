@@ -1,0 +1,44 @@
+{
+ "id": "MA-S-1672-2025",
+ "scope": "state:ma",
+ "title": "S1672 (194th General Court): An Act relative to registration of guns",
+ "urls": [
+  "https://malegislature.gov/Bills/194/S1672",
+  "https://malegislature.gov/Bills/194/S1672/Senate/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Peter J. Durant",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "82943cda-5803-46c7-a854-697ad6052eda"
+  },
+  {
+   "name": "Kelly W. Pease",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "296406bb-cc2a-4214-978f-d30333d62939"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-S-1672-2025.html",
+   "sha256": "477ead45d430365e8a11edbcc091d84d196c8de2ca9188dd445cf3a3f881416e"
+  }
+ },
+ "operative_text": "Section 32 of chapter 135 of the Acts of 2024 is hereby repealed."
+}

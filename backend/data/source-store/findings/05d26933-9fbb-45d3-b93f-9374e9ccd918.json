@@ -22,6 +22,117 @@
         "fetched_at": "2026-10-31T18:07:00.900Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "ea2692f591884127822cf9630031f7a34248e88dc487cecd5a181b973301b6ac",
+      "kind": "own-words",
+      "url": "https://www.cbsnews.com/amp/pittsburgh/news/conservative-republican-jeremy-shaffer-suburban-congressional-election",
+      "date": "2022-02-22",
+      "date_precision": "day",
+      "passage": "On the Second Amendment right to bear arms, \"I don't believe the government should step in and put undue restrictions on that.\"",
+      "note": "Quoted by CBS Pittsburgh (KDKA) in an interview during his 2022 run for Congress. The outlet's sentence frames the quote; the quoted words are his.",
+      "subjects": [
+        "general statement on gun rights",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:12:35.011Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5c41996e99bef3b2310950e98284a5b411fa0dcd21c4388a9df89a4a009c7c3b",
+      "kind": "own-words",
+      "url": "https://www.cbsnews.com/amp/pittsburgh/news/conservative-republican-jeremy-shaffer-suburban-congressional-election",
+      "date": "2022-02-22",
+      "date_precision": "day",
+      "passage": "\"If we're looking at red flag laws, obviously, I think all of us would agree that someone who has mental issues or is physically violent, they should not be in possession of a firearm,\" says Shaffer.",
+      "note": "Quoted by CBS Pittsburgh (KDKA) in the same 2022 congressional-race interview, on red flag laws and who may have a gun.",
+      "subjects": [
+        "red flag orders",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:12:35.011Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7fa2f6fb9f07522b088fbe503740e958fc23350c65a062307f44445220377b2f",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/39954/race/158/election/948",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "Question: \"What restrictions on gun ownership are needed to protect public safety?\" Answer: \"-\"",
+      "note": "2022 congressional-race voter guide: no answer given to the gun-restrictions question. Also marked \"Choose not to answer\" on whether gun-violence victims should be able to sue dealers and makers.",
+      "subjects": [
+        "restrictions on gun ownership",
+        "suing gun sellers and makers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:12:35.011Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9c3d2e5d454489fbb2d0ed6ece53e05b22379c114c85880eed56e79c69dba04",
+      "kind": "record",
+      "url": "https://policyrisk.com/state-bill/PA-HB548-2025-2026",
+      "date": "2025-02-11",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-548-2025",
+      "act": "sponsor",
+      "note": "Third-party tracker lists him as one of 48 cosponsors of HB 548 (prime sponsor Josh Bashline), which amends the firearms and municipalities titles on limits on local regulation of firearms and ammunition. Referred to Judiciary 2025-02-11. Official page not confirmed. Act is cosponsor.",
+      "subjects": [
+        "state preemption of local gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:12:35.011Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d286596c5fbf23976f50103b657a58aab391f2dc93424dafbbac8f5df6ae6538",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb548",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-548-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-548-2025 (LegiScan sponsor list): HB548 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for limitation on the regulation of firearms and ammunition; and, in preemptions, providing for regulation of firearms and ammunition..",
+      "subjects": [
+        "state preemption of local gun and ammunition rules extended to all municipalities",
+        "lawsuits and expense awards against local governments that break preemption"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-548-2025.introduced.pdf",
+          "sha256": "96cead2961c739e15a8f1b6213d6cebb08434f6d00d7d5db6ad44267c48a36b1"
+        }
+      }
     }
   ],
   "searches": [
@@ -62,6 +173,29 @@
       "found": 1,
       "at": "2026-10-31T18:07:00.900Z",
       "by": "identity-pa-2026-10-31-raw-votes"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "limits on gun rights",
+        "red flag orders",
+        "state preemption of local gun rules",
+        "Second Amendment general statement"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site repshafferpa.com (about page: nothing on the subject; site search page returned page not found)",
+        "voter guide page ivoterguide.com (2022 congressional race questionnaire)",
+        "news search on name plus gun words (one interview found)",
+        "bill tracker page for HB 548 (third-party tracker)",
+        "blocked: https://legiscan.com/PA/bill/HB548/2025",
+        "palegis.us HB 548 page: returned no readable text",
+        "Ballotpedia: not reviewed, returns empty to the fetch tool"
+      ],
+      "found": 4,
+      "at": "2026-10-30T15:12:35.011Z",
+      "by": "source-collector"
     }
   ]
 }

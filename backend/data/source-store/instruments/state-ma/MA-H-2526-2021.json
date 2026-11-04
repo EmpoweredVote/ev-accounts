@@ -1,0 +1,87 @@
+{
+  "id": "MA-H-2526-2021",
+  "scope": "state:ma",
+  "title": "H2526 (192nd General Court): Preserving Second Amendment rights for medical marijuana patients",
+  "urls": [
+    "https://malegislature.gov/Bills/192/H2526",
+    "https://malegislature.gov/Bills/192/H2526.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michael Soter",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "51e50b38-dbb2-4131-91bb-23c24bf6d741"
+    },
+    {
+      "name": "Shawn Dooley",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Joseph McKenna",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2fadc37b-4d33-46b4-a3cc-a2ca5ebeb39a"
+    },
+    {
+      "name": "David Robertson",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f8ae17d7-bc53-4b74-a92e-efa122cd5f04"
+    },
+    {
+      "name": "Christopher Hendricks",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9cb46542-a671-4bdd-bfcb-98fc1bc79415"
+    },
+    {
+      "name": "Kelly Pease",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "296406bb-cc2a-4214-978f-d30333d62939"
+    },
+    {
+      "name": "David Muradian",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "891030da-39e2-496f-8a20-72aeb27093ba"
+    },
+    {
+      "name": "Hannah Kane",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d54b9791-0668-4397-b488-160d06f7c420"
+    },
+    {
+      "name": "Ryan Fattman",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "785c2d95-9d99-41c9-b903-7aab661f8928"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "cannabis-policy: Sec. 1 — protects holders of medical marijuana patient licenses from losing gun-license eligibility"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-31T18:31:13.796330Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2526-2021.introduced.pdf",
+      "sha256": "dc51a982d3eece8fd210427664e48a84c864b8edfca5fdca59fb48ce22369267"
+    }
+  },
+  "operative_text": "Sec. 1 (amending G.L. c.140 s.131(d)(i)): Section 131 of Chapter 140 of the General Laws, as appearing in the 2018 Official Edition, is hereby amended in subsection (i) of paragraph (d) by inserting after the words \"violation of said Chapter 94C\" the words :- \"Provided, however, that the state of Massachusetts and its approved licensing bodies may not deny an otherwise qualified applicant for a license to carry or a firearm identification card solely on the basis of the applicant being a lawful holder of a medical marijuana patient license\""
+}

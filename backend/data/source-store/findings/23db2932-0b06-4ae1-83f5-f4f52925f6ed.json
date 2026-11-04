@@ -1,0 +1,30 @@
+{
+  "politician_id": "23db2932-0b06-4ae1-83f5-f4f52925f6ed",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry gun without a permit",
+        "Second Amendment general statement",
+        "gun violence general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://locklinforcongress.com (home, about, bio, issues pages, corruption, endorsements, news): nothing on the subject; she is the 2026 Florida 26th District U.S. House candidate per the site's own page data",
+        "https://ivoterguide.com/candidate/96054/race/31357/election/1464: question 'What restrictions on gun ownership are needed to protect public safety?' shows 'Did not answer'",
+        "nothing on the subject: https://www.ballotready.org/people/nicole-locklin",
+        "nothing on the subject: https://theballotbrief.com/candidate/nicole-locklin-fl",
+        "Ballotpedia: not reviewed (pages come back empty)",
+        "not a sitting legislator, so no sponsored-bill list exists",
+        "two web searches on name plus gun words"
+      ],
+      "found": 0,
+      "at": "2026-10-30T19:44:13.870Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -25,6 +25,115 @@
         "fetched_at": "2026-10-21T03:40:10.569Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "818586ba7a6fa8e00a512d1c240c01472b0f796fab8f64a338fb0b5e616ea7fe",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: yea (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9fc7fe42d4ca0418da57b37f789b4766ff618ad71e31a528b663386efac66476",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: yea (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "a7b3680b261d62ebf6107ab9f9df747c623a6f9a611585300571497c66066cff",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4869",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MA-H-4869-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-4869-2021 (LegiScan sponsor list): H4869 (192nd General Court): Relative to 3D printed guns and ghost guns.",
+      "subjects": [
+        "serial numbers required on firearms; unserialized guns must be registered and marked",
+        "ban on undetectable firearms and on 3D-printing guns without a federal license",
+        "ban on distributing digital gun-printing files in some cases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4869-2021.introduced.pdf",
+          "sha256": "bbafa283c191659d818a8dd83633ee46fe167ce87f0f7135b64e570c963d4381"
+        }
+      }
+    },
+    {
+      "id": "f6bfefe63a3ca50714858f35ba4fecf02fb922393e12d5e25f01ae2af32e4e38",
+      "kind": "own-words",
+      "url": "https://patch.com/massachusetts/melrose/state-rep-appointed-leader-firearm-study-commission",
+      "date": "2025-02-24",
+      "date_precision": "day",
+      "passage": "“I proudly joined the Legislature last session to pass our latest gun safety law,” Lipper-Garabdeian said in a statement. “I look forward to the Commission’s work ahead and collaborating with my fellow Commissioners as we hear from experts and stakeholders to investigate these emerging firearm safety technologies and consider opportunities for Massachusetts to remain a leader in reducing gun violence and empowering law enforcement to prevent and prosecute crime.”",
+      "note": "Statement quoted by Patch (Melrose) when she was named House chair of the Special Legislative Commission on Emerging Firearm Technology. Patch's date is the posting date (Mon, Feb 24, 2025). She says she helped pass the latest state gun safety law and wants the state to keep leading on reducing gun violence.",
+      "subjects": [
+        "gun safety laws",
+        "new gun technology such as microstamping",
+        "reducing gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:41:36.258Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -73,6 +182,29 @@
       "found": 0,
       "at": "2026-10-27T18:41:27.487Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation generally",
+        "ghost guns",
+        "gun safety law",
+        "emerging firearm technology (microstamping)",
+        "Question 9 on the 2024 gun law"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Patch article 2025-02-24 on her appointment as House chair of the firearm technology commission (fetched with plain curl)",
+        "legislature member page: sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia https://ballotpedia.org/Kate_Lipper-Garabedian: page came back empty",
+        "campaign site: could not locate; guessed addresses did not resolve (katelipper.com, katelipper.org, katelipperforma.com)",
+        "not reviewed: https://malegislature.gov/Legislators/Profile/KLG0 (404)",
+        "four web searches (name plus gun violence, ghost guns, Question 9, newsletter): no further statements by her found; no stated position on Question 9 found"
+      ],
+      "found": 1,
+      "at": "2026-11-01T01:41:36.258Z",
+      "by": "source-collector"
     }
   ]
 }

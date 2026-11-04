@@ -1,6 +1,242 @@
 {
   "politician_id": "a40f234e-1790-4b52-8670-090b6379eb03",
-  "findings": [],
+  "findings": [
+    {
+      "id": "de993072b1f015691757356966b25be35f10f79ccfc21b9e05ca9348996cbcde",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "Roll Call #208 - Question on acceptance of conference committee report",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA Senate, Roll Call #208 - Question on acceptance of conference committee report, 2024-07-18: yea (tally 35–5); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db16b98b521d382c722d5503605116e48c77fb9d34798b9816992f739c986730",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "Senate Engrossed Roll Call #114",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA Senate, Senate Engrossed Roll Call #114, 2024-02-01: yea (tally 37–3); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "b217bf7236d592008af6b6b55e2f9966e9a1bad25733c3822a32a66bc1d68a0d",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/House/H4376",
+      "date": "2014-07-31",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4376-2013",
+      "act": "yea",
+      "motion": "Acceptance of conference committee report (Roll Call #473)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA Senate, Acceptance of conference committee report (Roll Call #473), 2014-07-31: yea (tally 37–3); census gate: multi-subject.",
+      "subjects": [
+        "firearm license classes merged and Class B licences phased out",
+        "new penalties for shooting and for trafficking guns into the state",
+        "background-check records sent to the federal system",
+        "ban on carrying firearms on school and college grounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "malegislature.gov roll-call PDFs + LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:34:02.477850Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4376-2013.introduced.pdf",
+          "sha256": "b94514a66e779c1400d1b875eb3aac207f6b1b1f12f9928fd8d977feab23bb61"
+        }
+      }
+    },
+    {
+      "id": "767c668122bf86e324f6d9a6719f5b58f7381ff23e94c183d816b849ebaf9525",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4670",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4670-2017",
+      "act": "yea",
+      "motion": "Senate Committee of conference report accepted, in concurrence  Roll Call #435",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MA Senate, Senate Committee of conference report accepted, in concurrence  Roll Call #435, 2018-06-28: yea (tally 36–1); census gate: near-unanimous.",
+      "subjects": [
+        "extreme risk protection orders to remove guns from people at risk of harming self or others",
+        "protection order added as a bar to gun licenses",
+        "stun gun rules and locked storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4670-2017.introduced.pdf",
+          "sha256": "6b37958358a3f01548ef0d16c386b3caaf5993d5c100f88279ff5b45ad1fe098"
+        }
+      }
+    },
+    {
+      "id": "c94b2de26145d57badd2c72615ea2ede1f4e226fb463afa071ec5aa98c61da13",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H2359",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MA-H-2359-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-2359-2023 (LegiScan sponsor list): H2359 (193rd General Court): To prohibit carrying firearms in sensitive places.",
+      "subjects": [
+        "new offence for carrying guns in sensitive places",
+        "list of sensitive places: government buildings, schools, parks, transit, polling places"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2359-2023.introduced.pdf",
+          "sha256": "ae5134ebc4a3ceb3c56314ffb509a9e10f45934bd770c53473576c1f60b1bd13"
+        }
+      }
+    },
+    {
+      "id": "30024891374b1b1b4f04f46c57564f428ba2f59bcd0cab4470e15e47948bcb2a",
+      "kind": "own-words",
+      "url": "https://thereadingpost.com/?p=26016",
+      "date": "2024-02-02",
+      "date_precision": "day",
+      "passage": "“Massachusetts is already a national leader in combating gun violence, but there is always more we can and must do to make our communities as safe as possible for all of our residents,” said State Senator Jason Lewis. “This legislation was carefully crafted to focus on policies that will further reduce gun violence, including suicides, while respecting the rights of lawful gun owners in the Commonwealth.”",
+      "note": "Statement issued by his office after the Senate passed the SAFER Act (ghost guns, extreme risk orders, carry limits in government buildings, gun dealer inspections). Published by The Reading Post.",
+      "subjects": [
+        "general gun-law statements",
+        "ghost guns",
+        "red flag orders",
+        "carry permits and places to carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:36:48.351Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ea204eb30f9177cda4dca2020baaacac869c20b9aa57d4d3fcf13d503b0b490c",
+      "kind": "own-words",
+      "url": "https://thereadingpost.com/2024/07/30/senator-lewis-joins-the-massachusetts-legislature-to-pass-gun-violence-prevention-bill",
+      "date": "2024-07-30",
+      "date_precision": "day",
+      "passage": "“Massachusetts is already a national leader in combating gun violence, but there is always more we can and must do to make our communities as safe as possible for all of our residents,” said State Senator Jason Lewis. “This legislation was carefully crafted to focus on policies that will further reduce gun violence, including suicides, while respecting the rights of lawful gun owners in the Commonwealth.”",
+      "note": "Same statement reused in his office's release after the final gun bill passed the Legislature; says the bill respects lawful gun owners.",
+      "subjects": [
+        "general gun-law statements",
+        "respecting lawful gun owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:36:48.351Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8c669636066f8ec6239b76e5aa5aefaf80e8e8fa7a8c4f65dc6c8bb20e25ae50",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/S305",
+      "date": "2023-02-16",
+      "date_precision": "day",
+      "instrument_id": "MA-S-305-2023",
+      "act": "sponsor",
+      "note": "Filed as lead petitioner: An Act to promote safe firearm storage education and increase the well-being of students. Date is the first recorded action (referral to Education committee).",
+      "subjects": [
+        "safe storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:36:48.351Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "725bb41dd14d5c8c4b5586a4b6d75bf29f1773760bb70075b2403b0cbfd36296",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/S397",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-S-397-2025",
+      "act": "sponsor",
+      "note": "Filed as lead petitioner: same safe firearm storage education bill, new session. Date is the first recorded action (referral to Education committee).",
+      "subjects": [
+        "safe storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:36:48.351Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -38,6 +274,32 @@
       "found": 0,
       "at": "2026-10-27T00:57:16.066Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "ghost guns",
+        "carry permits and places to carry",
+        "repeal of gun laws",
+        "safe storage",
+        "general gun-law statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "official site / news releases carried by local papers (thereadingpost.com, winchesternews.org, localheadlinenews.com)",
+        "malegislature.gov bill pages S.305 (2023) and S.397 (2025)",
+        "web searches on name plus gun terms and Question 9 (no own-words on Question 9 found)",
+        "Ballotpedia: not reviewed (pages return empty)",
+        "not confirmed on the 2026 general-election ballot; the person is a sitting state senator per the release pages"
+      ],
+      "found": 4,
+      "at": "2026-11-01T01:36:48.351Z",
+      "by": "source-collector"
     }
   ]
 }

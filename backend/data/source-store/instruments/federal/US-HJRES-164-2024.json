@@ -1,0 +1,686 @@
+{
+  "id": "US-HJRES-164-2024",
+  "scope": "federal",
+  "title": "HJRES 164 (118th Congress): Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Commerce relating to \"Revision of Firearms License Requirements\".",
+  "urls": [
+    "https://www.congress.gov/bill/118th-congress/house-joint-resolution/164",
+    "https://www.govinfo.gov/content/pkg/BILLS-118hjres164ih/xml/BILLS-118hjres164ih.xml"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 1 (disapproving Commerce rule, 89 Fed. Reg. 34680): That Congress disapproves the rule submitted by the Department of Commerce relating to Revision of Firearms License Requirements (89 Fed. Reg. 34680), and such rule shall have no force or effect.",
+  "sponsors": [
+    {
+      "name": "Mark Green",
+      "role": "prime",
+      "version": "introduced"
+    },
+    {
+      "name": "Michael McCaul",
+      "politician_id": "1139cf4b-c7be-464f-b343-69c4b0f8ace6",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Elise Stefanik",
+      "politician_id": "963af970-08b4-4880-abf2-eab8afe78e67",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Richard Hudson",
+      "politician_id": "951d32a1-8ff1-4c4f-be20-01efdf8f02dc",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Michael Guest",
+      "politician_id": "2d0245b5-08f7-4c07-a1ba-0b01e066ee7d",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Roger Williams",
+      "politician_id": "42e2edff-6da4-49c2-ba60-fd4acbb326f7",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Sam Graves",
+      "politician_id": "fe96da99-4c28-42b7-841f-1d25b2c47406",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Mike Bost",
+      "politician_id": "01c4093a-db5a-4f92-9caa-b54c1e44c63a",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Andrew Ogles",
+      "politician_id": "1bc25880-660c-4254-b13d-729263e0d9e2",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Diana Harshbarger",
+      "politician_id": "cf705451-177f-4ab1-8870-cc9ff54b35d4",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "David Kustoff",
+      "politician_id": "0e89ee8b-5e55-4a40-a88e-04f13a012246",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Scott DesJarlais",
+      "politician_id": "83775f9b-ed73-433b-87c0-fe0f9a177bba",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Tim Burchett",
+      "politician_id": "56c566e1-c4be-47fe-8c39-2fa235de61ba",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Charles Fleischmann",
+      "politician_id": "d367c814-6226-44d3-b0bb-fdf6c2540f51",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Bob Good",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Andy Biggs",
+      "politician_id": "8118811a-aadd-4eb9-9208-de0f5d3b29ad",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Chip Roy",
+      "politician_id": "815bc4fa-a987-4245-9fa1-cb1026ca3ee5",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Michael Cloud",
+      "politician_id": "4e29212d-3ff9-42fc-bcd8-817ad6fd90d7",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Andrew Clyde",
+      "politician_id": "94d6a044-7a03-400d-8092-00aac9859c9b",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Josh Brecheen",
+      "politician_id": "5297cab2-3706-458e-85cb-a6146347cbfb",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Ben Cline",
+      "politician_id": "e4deeac3-b172-473d-9696-a07d874f4795",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Paul Gosar",
+      "politician_id": "efd863c6-df64-4b40-9b49-73ddd003dc5d",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "H. Griffith",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Andy Harris",
+      "politician_id": "ff596d3f-3056-43e2-a80a-8c4b8fd9abde",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Clay Higgins",
+      "politician_id": "a8a724eb-d7ff-4bd2-8397-560024f478de",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Mary Miller",
+      "politician_id": "73816ba4-4235-400c-a0a1-00c67b762687",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Barry Moore",
+      "politician_id": "ea4cb6d8-76aa-47f4-a064-babaac0bc436",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Troy Nehls",
+      "politician_id": "a0bc977b-71c6-4973-9082-3cc009445a02",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Thomas Tiffany",
+      "politician_id": "a8f96324-50ac-4fa1-b57b-47a998306fe8",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Warren Davidson",
+      "politician_id": "d7f3b400-2d9f-4d23-bd02-9edea5274e92",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Dan Bishop",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Eric Burlison",
+      "politician_id": "df39a562-e7e8-481f-a2ed-fa0d2f0c3a79",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Byron Donalds",
+      "politician_id": "13972902-fa8a-4ebc-91f6-b451db77c7d1",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Russ Fulcher",
+      "politician_id": "4112b70d-e961-4313-987e-8673e9f39f22",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Alexander Mooney",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Gregory Murphy",
+      "politician_id": "6c2a7eee-dd04-4844-801d-5acddc4facba",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Ralph Norman",
+      "politician_id": "1d7c7221-54de-4b0d-92df-6c4290fe39e1",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Guy Reschenthaler",
+      "politician_id": "6840c7e6-2169-43a4-8490-1e73c8704cbd",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Blake Moore",
+      "politician_id": "e365a1d4-2de3-4fb6-b416-d78227836553",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Bill Posey",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Glenn Grothman",
+      "politician_id": "b1b79d5e-4e85-4348-ac57-65506c2dec60",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Dan Crenshaw",
+      "politician_id": "deae1b6d-3aa5-43fe-aff3-df73052cc434",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Ann Wagner",
+      "politician_id": "6d0241d8-0408-4a0d-a159-62e1fe5d8fab",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Russell Fry",
+      "politician_id": "aded369b-b50c-439d-bd72-e9c5039a38c3",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Rudy Yakym",
+      "politician_id": "8da1e283-3fa6-4796-b7c4-4941ca28c771",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Tony Gonzales",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Aaron Bean",
+      "politician_id": "34042ebd-71f0-4a8c-abd8-7389da45b754",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Pete Sessions",
+      "politician_id": "e3cfee5b-29ab-427b-adc9-acd97e4b0f9a",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "William Timmons",
+      "politician_id": "31d3830f-81dd-46b3-a69b-a19e392f09d6",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Claudia Tenney",
+      "politician_id": "e1d8c7bb-cde0-4ec5-8863-0b8ce838cb57",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Randy Weber",
+      "politician_id": "d5b43e69-b0df-44d5-83ba-a4baca56dd3b",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Adrian Smith",
+      "politician_id": "3498a850-4dfe-49d2-8af9-a11651adb3c2",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Tracey Mann",
+      "politician_id": "2855c340-e9c1-478d-9257-ca316f89e82d",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Carol Miller",
+      "politician_id": "2efc9246-9448-4cb3-b45d-b6cd43a1cfdb",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "John Moolenaar",
+      "politician_id": "55432c1f-2d1c-4848-8515-066bd1d3521a",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Kevin Hern",
+      "politician_id": "96e589b9-d04a-4749-bf9f-9b66eaea5083",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Chuck Edwards",
+      "politician_id": "f7763de5-8cb1-439b-9176-2c16070c01df",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Ashley Hinson",
+      "politician_id": "91aa37bf-dc8a-45f3-9bf7-e887b8dd99bd",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Tim Walberg",
+      "politician_id": "30c32663-db0f-4ada-b85f-eaeed3766511",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "W. Steube",
+      "politician_id": "9325e98f-db12-4214-bae0-9898e9438fac",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Cory Mills",
+      "politician_id": "6862f5a4-4de8-41c8-ac4d-427cc3aa56de",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Pat Fallon",
+      "politician_id": "c6187c67-fa60-4fa2-917f-543cd7fc441f",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Thomas Massie",
+      "politician_id": "4d92b909-6add-4486-b0cf-f317b4e10e9b",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Mike Ezell",
+      "politician_id": "0fd6132b-eb62-461d-98f7-8449fb3adbf2",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Nicholas Langworthy",
+      "politician_id": "556dded4-bd76-4e22-863f-60fa5e1d4d56",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "John Rutherford",
+      "politician_id": "8561df96-52fd-42de-b6ad-e15dfc748c52",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Jack Bergman",
+      "politician_id": "98c51f29-fa5d-4368-8330-cb2420746f45",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Scott Franklin",
+      "politician_id": "23f38835-0bf7-43c7-88fa-229004eb9c3d",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Trent Kelly",
+      "politician_id": "dc96bdae-2812-4ca4-af18-75d5d737ec89",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Keith Self",
+      "politician_id": "65013b5e-faf5-458a-abc7-24cd61e32bdb",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Andy Barr",
+      "politician_id": "164fb70e-b8c1-48cd-a6ef-12d80165c67d",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Jerry Carl",
+      "politician_id": "6a04d1f3-1065-45cb-9084-60906a70383b",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "James Baird",
+      "politician_id": "6b2cfe00-2c5a-47bf-a1ae-59a0a3ca8452",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Laurel Lee",
+      "politician_id": "96cc507d-bb3a-4e25-ae6c-4b937f68f9f4",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Randy Feenstra",
+      "politician_id": "c25acca0-f280-469c-b708-c314d8036036",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Brian Babin",
+      "politician_id": "c4ad307f-b38a-409c-8190-8dedad609d88",
+      "role": "co",
+      "version": "cosponsor 2024-06-05"
+    },
+    {
+      "name": "Kelly Armstrong",
+      "role": "co",
+      "version": "cosponsor 2024-06-07"
+    },
+    {
+      "name": "Barry Loudermilk",
+      "politician_id": "7f0bb866-57f4-45de-88ae-5c9977f086bd",
+      "role": "co",
+      "version": "cosponsor 2024-06-07"
+    },
+    {
+      "name": "Brad Finstad",
+      "politician_id": "dc0a717a-67ef-4ca2-9c43-4896fad03392",
+      "role": "co",
+      "version": "cosponsor 2024-06-07"
+    },
+    {
+      "name": "Scott Perry",
+      "politician_id": "7412719e-e468-4ce7-85fb-26516ca7610f",
+      "role": "co",
+      "version": "cosponsor 2024-06-07"
+    },
+    {
+      "name": "Joe Wilson",
+      "politician_id": "3f7e3a08-6ef9-4203-8dd1-1b54ad2209cd",
+      "role": "co",
+      "version": "cosponsor 2024-06-07"
+    },
+    {
+      "name": "Darrell Issa",
+      "politician_id": "8347c5a7-36f9-4264-8ac5-40eab4790364",
+      "role": "co",
+      "version": "cosponsor 2024-06-11"
+    },
+    {
+      "name": "Michelle Fischbach",
+      "politician_id": "dbb2888a-78f8-4f86-b793-52e90a9a2826",
+      "role": "co",
+      "version": "cosponsor 2024-06-11"
+    },
+    {
+      "name": "Mike Collins",
+      "politician_id": "b6542655-fc71-4b18-a022-6528522cdcae",
+      "role": "co",
+      "version": "cosponsor 2024-06-11"
+    },
+    {
+      "name": "Anna Paulina Luna",
+      "politician_id": "ef7d314c-bc47-4ed6-954c-77eb3d53eb69",
+      "role": "co",
+      "version": "cosponsor 2024-06-11"
+    },
+    {
+      "name": "Richard McCormick",
+      "politician_id": "b295210e-a45d-4a80-8001-47cdc522a3e5",
+      "role": "co",
+      "version": "cosponsor 2024-06-11"
+    },
+    {
+      "name": "Lisa McClain",
+      "politician_id": "e04094d1-247c-40c8-8829-c7cb8654d0ed",
+      "role": "co",
+      "version": "cosponsor 2024-06-12"
+    },
+    {
+      "name": "Lauren Boebert",
+      "politician_id": "58c25b43-0ed1-4636-8213-b89a90f7f6a2",
+      "role": "co",
+      "version": "cosponsor 2024-06-13"
+    },
+    {
+      "name": "Gus Bilirakis",
+      "politician_id": "2ccd34d7-ca08-45d1-bfe0-f64c63349e18",
+      "role": "co",
+      "version": "cosponsor 2024-06-13"
+    },
+    {
+      "name": "Ronny Jackson",
+      "politician_id": "184670b8-6647-4f84-a5fb-f2a9cfae3f5a",
+      "role": "co",
+      "version": "cosponsor 2024-06-14"
+    },
+    {
+      "name": "Lance Gooden",
+      "politician_id": "d141e4b7-f9a7-4ab0-927a-ba08348eab13",
+      "role": "co",
+      "version": "cosponsor 2024-06-14"
+    },
+    {
+      "name": "Michael Burgess",
+      "role": "co",
+      "version": "cosponsor 2024-06-28"
+    },
+    {
+      "name": "Erin Houchin",
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "role": "co",
+      "version": "cosponsor 2024-07-10"
+    },
+    {
+      "name": "Maria Salazar",
+      "politician_id": "7fba1fee-9053-4a51-9f02-2f72997eafa6",
+      "role": "co",
+      "version": "cosponsor 2024-07-22"
+    },
+    {
+      "name": "Jeff Duncan",
+      "role": "co",
+      "version": "cosponsor 2024-08-23"
+    },
+    {
+      "name": "Kat Cammack",
+      "politician_id": "c45b3872-ec1d-4758-bf9d-f12a0a5c2a3f",
+      "role": "co",
+      "version": "cosponsor 2024-08-23"
+    },
+    {
+      "name": "Bill Huizenga",
+      "politician_id": "7f190fe5-c3d3-43a4-bda4-5873123cd07d",
+      "role": "co",
+      "version": "cosponsor 2024-08-23"
+    },
+    {
+      "name": "Pete Stauber",
+      "politician_id": "f96903fe-3379-49f3-bec3-8e761db88ff2",
+      "role": "co",
+      "version": "cosponsor 2024-08-23"
+    },
+    {
+      "name": "John Curtis",
+      "politician_id": "b87583fe-2348-4bf3-aba5-12f5f88d3606",
+      "role": "co",
+      "version": "cosponsor 2024-08-27"
+    },
+    {
+      "name": "Austin Scott",
+      "politician_id": "247e657a-8c30-4194-8702-81adce0beea4",
+      "role": "co",
+      "version": "cosponsor 2024-08-30"
+    },
+    {
+      "name": "Neal Dunn",
+      "politician_id": "66dd6633-ef79-46d1-87b6-5b52203de64c",
+      "role": "co",
+      "version": "cosponsor 2024-08-30"
+    },
+    {
+      "name": "Mark Alford",
+      "politician_id": "24ffc01e-b6f8-48c7-b3a9-eefc5b03c7bb",
+      "role": "co",
+      "version": "cosponsor 2024-09-06"
+    },
+    {
+      "name": "J. Hill",
+      "politician_id": "85ec278d-c143-4128-a058-e468899ded8f",
+      "role": "co",
+      "version": "cosponsor 2024-09-06"
+    },
+    {
+      "name": "Stephanie Bice",
+      "politician_id": "93fa4e3a-2e04-4a49-b12f-b72e9d4bfdac",
+      "role": "co",
+      "version": "cosponsor 2024-09-06"
+    },
+    {
+      "name": "Robert Wittman",
+      "politician_id": "8f4379fc-ae32-4f6a-8773-ac1d723106a5",
+      "role": "co",
+      "version": "cosponsor 2024-09-06"
+    },
+    {
+      "name": "Ryan Zinke",
+      "politician_id": "eb9fac1d-e596-4a78-8c14-314af94e307f",
+      "role": "co",
+      "version": "cosponsor 2024-09-06"
+    },
+    {
+      "name": "Ron Estes",
+      "politician_id": "c59d862c-c8bc-462f-8386-cc176aa9c973",
+      "role": "co",
+      "version": "cosponsor 2024-09-06"
+    },
+    {
+      "name": "Beth Van Duyne",
+      "politician_id": "510f7802-7b58-4e4a-9824-37e169e65680",
+      "role": "co",
+      "version": "cosponsor 2024-09-09"
+    },
+    {
+      "name": "Mike Rogers",
+      "role": "co",
+      "version": "cosponsor 2024-09-10"
+    },
+    {
+      "name": "Cathy Rodgers",
+      "role": "co",
+      "version": "cosponsor 2024-09-11"
+    },
+    {
+      "name": "Dan Newhouse",
+      "politician_id": "85e712ff-8b13-4a29-8c94-cb4394650d73",
+      "role": "co",
+      "version": "cosponsor 2024-09-12"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-31T00:23:59.657689Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HJRES-164-2024.htm",
+      "sha256": "ea1ab9ed94751700e95a07c47aaf4b31439a4851966412483df5ac9ac4d08420"
+    }
+  }
+}

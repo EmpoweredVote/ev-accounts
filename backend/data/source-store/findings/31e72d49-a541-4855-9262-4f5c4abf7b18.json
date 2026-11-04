@@ -1,0 +1,33 @@
+{
+  "politician_id": "31e72d49-a541-4855-9262-4f5c4abf7b18",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and Second Amendment",
+        "gun control",
+        "check every gun buyer"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://theballotbrief.com/district/ca-17 (lists him as a candidate in the 2026 CA-17 race; his listed priorities are living costs, housing and education costs; positive control)",
+        "https://hoodline.com/2026/06/ro-khanna-steamrolls-primary-field-sets-up-south-bay-showdown/ (June 2026 primary report says he came second and goes to the November matchup)",
+        "https://sanjosespotlight.com/exclusive-qa-u-s-house-district-17-candidate-ritesh-tandon/ (2020 Q&A: nothing on the subject)",
+        "https://milpitasbeat.com/congressional-candidate-ritesh-tandon-will-work-more-for-the-people-if-elected/ (2020 profile: nothing on the subject)",
+        "blocked: https://www.riteshtandon.com/ (bot check)",
+        "blocked: https://goodparty.org/candidate/ritesh-tandon/us-house-of-representatives-california-17th-congressional-district (bot check)",
+        "blocked: https://ballotpedia.org/Ritesh_Tandon (403)",
+        "blocked: https://www.newkerala.com/news/a/indian-american-candidates-sandeep-dixit-ritesh-tandon-run-shoestring-332.htm (403)",
+        "blocked: https://bluevoterguide.org/district/CA/California_District_17/50351/638 (403)",
+        "https://votesmart.org/candidate/biography/Ritesh-Tandon (page loads only a shell, nothing read)",
+        "legislature sponsorship lists: not applicable, never a legislator",
+        "4 web searches on name plus gun words and campaign site: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-30T20:42:29.956Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+ "id": "MA-H-2328-2017",
+ "scope": "state:ma",
+ "title": "H2328 (190th General Court): An Act to enhance courthouse security",
+ "urls": [
+  "https://malegislature.gov/Bills/190/H2328",
+  "https://malegislature.gov/Bills/190/H2328/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "James M. Murphy",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "755d18f8-8c99-4d41-93eb-4f154d9bb7a9"
+  },
+  {
+   "name": "Bruce J. Ayers",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "3582a053-ee20-4391-904f-3905a2d13a52"
+  },
+  {
+   "name": "John C. Velis",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "973d60e2-fca7-4185-bd2a-84a686e925ab"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-H-2328-2017.html",
+   "sha256": "1c8946d7d96d91aba5656863eab6dcdf79a9df79faab79b2b91265786cf87895"
+  }
+ },
+ "operative_text": "SECTION 1. Section 10 of chapter 269 of the General Laws, as appearing in the 2010 Official Edition, is hereby amended by adding the following subsection after subsection (o) :\n(p) Whoever, not being a law enforcement officer in the performance of his official duties, and notwithstanding any license obtained by him under the provisions of chapter one hundred and forty, carries on his person a firearm as hereinafter defined, loaded or unloaded, in a courthouse without written authorization of the trial court administrator and trial court chief justice shall be punished by a fine of not more than one thousand dollars or by imprisonment for not more than one year or both. For the purpose of this paragraph, “firearm” shall mean any pistol, revolver, rifle, or smoothbore arm from which a shot, bullet, or pellet can be discharged by whatever means.\nWhoever, not being a law enforcement officer in the performance of his official duties, and notwithstanding any license obtained by him under the provisions of chapter one hundred and forty, carries on his person a firearm as hereinafter defined, loaded or unloaded, in a courthouse with the intent to use said firearm during the commission of a crime shall be punished by imprisonment in the state prison nor more than five years or for not more than two and a half years in a jail or house of correction or by a fine of not more than five thousand dollars or by both imprisonment. For the purpose of this paragraph, “firearm” shall mean any pistol, revolver, rifle, or smoothbore arm from which a shot, bullet, or pellet can be discharged by whatever means.\nNotice of the provisions of subsections (p) shall be posted conspicuously at each public entrance to each courthouse."
+}

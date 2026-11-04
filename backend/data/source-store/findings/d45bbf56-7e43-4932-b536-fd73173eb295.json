@@ -67,6 +67,36 @@
       "found": 2,
       "at": "2026-10-28T15:27:47.127Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety general statements",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "minimum age for rifles",
+        "red-flag orders",
+        "carry a gun without a permit"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "positive control: https://house.texas.gov/members/4015/biography (Rep. Claudia Ordaz, District 79, El Paso; no gun content on the page)",
+        "web search: Ordaz El Paso gun legislation statement",
+        "web search: Ordaz quotes on guns, age 21, background checks",
+        "KFOX town hall article 2022-06-06: lists her only as a contact, no quote",
+        "KFOX Cielo Vista Mall delegation statement (about the 2023 mall shooting, signed with other El Paso members, does not address gun policy)",
+        "Yahoo/El Paso Times 2022-06-29 article: paraphrase only, no direct quote from her",
+        "Lone Star Parity Project profile (2021, updated 2024): a profile of her, not her own words, so not saved",
+        "campaign site: not reviewed, no working address found",
+        "X account @COrdazPerez: blocked: https://twitter.com/COrdazPerez (page needs JavaScript, no post text returned)",
+        "Ballotpedia: not reviewed, returns empty to the fetch tool",
+        "sponsor list: covered by LegiScan bulk check",
+        "nothing on the subject: no own-words passage on guns found in the pages above"
+      ],
+      "found": 0,
+      "at": "2026-10-31T17:25:12.247Z",
+      "by": "source-collector"
     }
   ]
 }

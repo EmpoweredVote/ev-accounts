@@ -1,0 +1,29 @@
+{
+  "politician_id": "2e19b56e-a4cd-4fb1-8e21-e92f526e1844",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "check every gun buyer",
+        "carry permits",
+        "federal agency gun rules",
+        "general gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status: the brief calls him a member of Congress, but he is the federal budget office director (confirmed 2025-02-06 per a news summary); he holds no legislative seat, so there is no sponsored-bill list to open",
+        "archived White House profile page trumpwhitehouse.archives.gov/people/russell-vought: identifies him; nothing on the subject",
+        "blocked: https://www.hsgac.senate.gov/wp-content/uploads/Prepared-Statement-Vought-2025-01-15.pdf (403)",
+        "two searches on name plus gun, firearm, Second Amendment, ATF rule words: nothing by him on the subject",
+        "Ballotpedia: not reachable by fetch tool, not used",
+        "not reviewed: campaign site (none; not a candidate)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T20:06:35.206Z",
+      "by": "source-collector"
+    }
+  ]
+}

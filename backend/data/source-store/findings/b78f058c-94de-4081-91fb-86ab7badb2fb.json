@@ -88,6 +88,35 @@
         "fetched_at": "2026-10-27T00:57:16.067Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "6b5f3eff9393b9ed72b2b20ceb2569f569e3fe0f8d66ff785098426dcaf88740",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/201999",
+      "date": "2019-02-27",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8-2019",
+      "act": "yea",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2019-02-27: yea (tally 240–190); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-116hr8eh.txt",
+          "sha256": "8596643f954424e8d7074a38f569bc2885d50357f8208d6d0dbd7329c96e4b2c"
+        }
+      }
     }
   ],
   "searches": [

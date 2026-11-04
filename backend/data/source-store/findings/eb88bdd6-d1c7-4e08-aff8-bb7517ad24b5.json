@@ -1,6 +1,155 @@
 {
   "politician_id": "eb88bdd6-d1c7-4e08-aff8-bb7517ad24b5",
-  "findings": [],
+  "findings": [
+    {
+      "id": "a7c7bb8740042abe149654bc91c43aa4464d6d9cb70ff7a1020dd635ac90eb0d",
+      "kind": "own-words",
+      "url": "https://www.mass.gov/news/treasurer-goldberg-partners-with-legislature-on-gun-divestment-bill",
+      "date": "2018-03-15",
+      "date_precision": "day",
+      "passage": "“In the aftermath of the horrific shooting in Parkland, Florida, I watched as those brave students from Stoneman Douglas High School stood in the balcony watching while the Florida Legislature did nothing,” said Treasurer Deb Goldberg. “It is clear that traditional approaches have not worked. Divesting our public pension funds from gun and ammunition manufacturers sends a clear message that we stand with the victims and survivors of gun violence everywhere.”",
+      "note": "Treasury press release quoting her on a bill to make the state pension fund sell shares in gun and ammunition makers.",
+      "subjects": [
+        "pension fund sells gun-maker shares",
+        "general statement on gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:52:20.369Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d3eaa1c2bbc9d849cdb1e72c7047eabed0ba6f8d5aa33d86b9f63e9571f96f08",
+      "kind": "own-words",
+      "url": "https://www.eagletribune.com/news/boston/goldberg-urges-lawmakers-to-divest-gun-holdings/article_24d62152-e329-11ec-b139-17f19437adbb.html",
+      "date": "2022-06-06",
+      "date_precision": "day",
+      "passage": "“It is unacceptable that we as a country continue to live in a seemingly endless cycle of gun violence,” Goldberg said in a statement. “Traditional approaches are not working, and we must do what we can to potentially save lives.”",
+      "note": "Quoted by the Eagle-Tribune (article date) when she urged lawmakers to direct the pension fund to divest from firearm and ammunition companies after the Uvalde and Buffalo shootings. Article text was read from the page source.",
+      "subjects": [
+        "pension fund sells gun-maker shares",
+        "general statement on gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:52:20.369Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f8a102e162fdb67928e7d2654add1094a13e06b70597a9e1a6323d7c8b7df679",
+      "kind": "own-words",
+      "url": "https://www.mass.gov/doc/legislators-hold-power-to-divest-gun-stocks/download",
+      "date": "2016-06-17",
+      "date_precision": "day",
+      "passage": "“While I am personally against owning gun stocks,’’ Goldberg said in a statement in the wake of the Orlando nightclub massacre Sunday, divestment from the state fund “has to be a directive from the Legislature.”",
+      "note": "Boston Globe (hosted on mass.gov) quoting her statement that divesting the pension fund from gun stocks needs a legislative directive.",
+      "subjects": [
+        "pension fund sells gun-maker shares"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:52:20.369Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59cd400766b1bc63bf1ac9c583b0955f7e5a598cc3e038a473cf6040424ae18f",
+      "kind": "record",
+      "url": "https://www.mass.gov/news/treasurer-goldberg-partners-with-legislature-on-gun-divestment-bill",
+      "date": "2018-03-15",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4402-2018",
+      "act": "other",
+      "motion": "Treasurer-backed bill filed, H.4402/S.2407, pension divestment from ammunition and firearms",
+      "note": "She announced the filing of a bill (sponsored by a state representative and a state senator) requiring the pension board to sell shares in firearm and ammunition makers earning 15% or more of revenue from civilian sales. She is not the legislative sponsor; instrument number taken from her 2018 testimony page.",
+      "subjects": [
+        "pension fund sells gun-maker shares"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:52:20.369Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b1de9c907a87238866a4757983c793162a48eedddeadcfa7bbe25f337abe40fb",
+      "kind": "record",
+      "url": "https://www.mass.gov/news/treasurer-goldbergs-letter-of-testimony-on-firearms-divestment",
+      "date": "2018-05-02",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Letter of testimony supporting H.4402 and S.2407, pension divestment from ammunition and firearms",
+      "note": "Her office posted her letter of testimony in support of the two divestment bills. The letter file itself had no readable text.",
+      "subjects": [
+        "pension fund sells gun-maker shares"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:52:20.369Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "883e30268e22897f21634736c563f69434976aa46126f14ff524dde964d89ca2",
+      "kind": "record",
+      "url": "https://www.mass.gov/doc/firearm-divestment-fact-sheet-0/download",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MA-H-55-2019",
+      "act": "other",
+      "motion": "Treasury fact sheet for H.55, pension divestment from ammunition and firearms",
+      "note": "Fact sheet from her office says the Treasurer again proposes divestment of pension holdings in gun and ammunition firms; year inferred only from the September 2019 figures in it.",
+      "subjects": [
+        "pension fund sells gun-maker shares"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:52:20.369Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "316d26fd811d70dd5c9e77ae167eba623679cbf3ca21346d720eb4762ef4078a",
+      "kind": "record",
+      "url": "https://www.eagletribune.com/news/boston/goldberg-urges-lawmakers-to-divest-gun-holdings/article_24d62152-e329-11ec-b139-17f19437adbb.html",
+      "date": "2022-06-06",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Request to add firearm-divestment language to the supplemental budget bill; she also filed a standalone divestment bill that was sent to study",
+      "note": "News report says she asked lawmakers to add divestment of firearm and ammunition makers to a pending budget bill and had filed a standalone bill earlier in the session. Date is the article date.",
+      "subjects": [
+        "pension fund sells gun-maker shares"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:52:20.369Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -51,6 +200,33 @@
       "found": 0,
       "at": "2026-10-27T16:38:19.961Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "pension divestment from gun makers",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red flag orders",
+        "carry permits",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sitting statewide official (state treasurer), not a legislator: no legislature sponsor list applies; sponsor list: covered by LegiScan bulk check not applicable",
+        "her treasury news pages on mass.gov (press release, testimony page, hosted news clipping, fact sheet)",
+        "campaign site debgoldberg.com home page: nothing on the subject",
+        "masstreasury.org news page: nothing on the subject",
+        "blocked: https://www.mass.gov/orgs/office-of-state-treasurer-and-receiver-general-deborah-b-goldberg/news",
+        "Ballotpedia: not reviewed, pages come back empty",
+        "news searches on her name plus gun words (2 searches); no 2026 statement on guns found",
+        "2018 debate report (wgbh.org) read: only a reporter's paraphrase of her view, not saved",
+        "testimony letter PDF (mass.gov): no readable text"
+      ],
+      "found": 7,
+      "at": "2026-11-01T01:52:20.369Z",
+      "by": "source-collector"
     }
   ]
 }

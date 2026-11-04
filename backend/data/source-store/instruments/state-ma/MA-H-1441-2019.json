@@ -1,0 +1,66 @@
+{
+  "id": "MA-H-1441-2019",
+  "scope": "state:ma",
+  "title": "H1441 (191st General Court): Increasing penalties for discharging a firearm into a dwelling, residence, or structure where persons reside",
+  "urls": [
+    "https://malegislature.gov/Bills/191/H1441",
+    "https://malegislature.gov/Bills/191/H1441.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Russell Holmes",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e96b35eb-dad1-4a29-b416-d9b10838840f"
+    },
+    {
+      "name": "Bud Williams",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "aee5ccea-d3ca-426c-9849-fbfc5e297e2a"
+    },
+    {
+      "name": "Angelo Scaccia",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Michael Rush",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "62764b2a-5b54-4edb-9c69-06320cbebbad"
+    },
+    {
+      "name": "Daniel Ryan",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6ab8e9cc-6315-40d8-bb99-eb00faed61fa"
+    },
+    {
+      "name": "Joseph Boncore",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-31T18:31:13.796330Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-1441-2019.introduced.pdf",
+      "sha256": "c82b2a6ba059064c870b83d7181ee52ed537d3123ad2977e7e47bc593a9ca8c2"
+    }
+  },
+  "operative_text": "Sec. 1 (inserting G.L. c.269 s.12G): Any person that discharges a firearm, as defined in section one hundred and twenty-one of chapter one hundred and forty, and as a result of that discharge, strikes a dwelling, residence, or structure where any person or persons reside, whether or not the dwelling, residence, or structure is actually occupied at the time the firearm is discharged, shall be punished by imprisonment in the state prison for not more than five years, or for not more than two and one-half years in a jail or house of correction. The provisions of this section shall not apply to (a) the lawful defense of life and property; or (b) any law enforcement officer acting in the discharge of his duties.\nSec. 1 (inserting G.L. c.269 s.12H): Any person that discharges a firearm, as defined in section one hundred and twenty-one of chapter one hundred and forty, and as a result of that discharge, strikes a public park or playground, public or private accredited preschool, accredited headstart facility, elementary, vocational, or secondary school, daycare facility, college, or university, shall be punished by imprisonment in the state prison for not more than five years, or not more than two and one-half years in a jail or house of correction. The provisions of this section shall not apply to (a) the lawful defense of life and property; or (b) any law enforcement officer acting in the discharge of his duties."
+}

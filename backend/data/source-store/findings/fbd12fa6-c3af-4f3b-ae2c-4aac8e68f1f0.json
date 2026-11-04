@@ -55,6 +55,31 @@
       "found": 0,
       "at": "2026-10-27T16:39:51.981Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "background checks",
+        "carry permits",
+        "red flag orders",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "BallotReady profile https://www.ballotready.org/people/taylor-wright (confirms 2026 general election candidate, Utah 4th District; no gun content)",
+        "campaign site https://wrightforutah.com (home page and three posts searched for gun words; nothing on the subject; /issues is a 404)",
+        "Salt Lake Tribune district 4 candidate preview 2026-10-12 (nothing on the subject)",
+        "Deseret News district 4 debate article 2026-10-08 (nothing on the subject)",
+        "blocked: https://ivoterguide.com/candidate/94934 (fetch timed out)",
+        "blocked: https://ballotpedia.org/Taylor_Wright (page came back empty)",
+        "web search x2 (news and campaign terms): no gun statements found",
+        "congress.gov: not applicable, not a legislator"
+      ],
+      "found": 0,
+      "at": "2026-10-30T14:59:29.329Z",
+      "by": "source-collector"
     }
   ]
 }

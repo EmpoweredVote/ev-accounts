@@ -1,6 +1,28 @@
 {
   "politician_id": "bc54f404-d2d3-4fba-b2c4-94a65d6d4db7",
-  "findings": [],
+  "findings": [
+    {
+      "id": "28800120d6ad90040d3de6fd9934b00c0e13dab920641bd0a2bea4b2b6dfe376",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/25228/race/6929/election/594",
+      "date": "2018",
+      "date_precision": "year",
+      "passage": "More restrictive gun control is needed to protect public safety. Strongly Disagree",
+      "note": "His answer on a voter-guide questionnaire (the 2018 race for Auditor of State, the office now called Comptroller) to the statement that more restrictive gun control is needed: he chose Strongly Disagree. The answer text is shown by the voter-guide site; the exact date of the answer is not shown.",
+      "subjects": [
+        "more limits on guns",
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:38:38.736Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -49,6 +71,30 @@
       "found": 0,
       "at": "2026-10-27T15:11:59.030Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment and gun safety in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed in scope: https://theballotbrief.com/candidate/john-schick-in names him as a candidate for Indiana comptroller, general election 2026-11-03",
+        "campaign site: none found (the Ballot Brief says no campaign website was found as of 2026-09-08)",
+        "ballotready page: nothing on the subject",
+        "iVoterGuide 2018 questionnaire page (same candidate profile also lists 2026): one gun answer saved",
+        "sponsor list: not applicable (not a legislator)",
+        "Ballotpedia: empty page returned",
+        "two web searches on his name plus gun and statement words: nothing else from him on the subject"
+      ],
+      "found": 1,
+      "at": "2026-10-31T20:38:38.736Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -30,6 +30,272 @@
           "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
         }
       }
+    },
+    {
+      "id": "c8e0cff340fd7df37f6533108793c2016fb5693d37ba5ae2d0a734553639da93",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/house/1137/details",
+      "date": "2025-03-11",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1137-2025",
+      "act": "yea",
+      "motion": "Senate - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "IN Senate, Senate - Third reading, 2025-03-11: yea (tally 49–0); census gate: near-unanimous.",
+      "subjects": [
+        "red flag law case records sealed and expunged when person found not dangerous",
+        "court may expunge records when person found no longer dangerous"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1137-2025.enrolled.pdf",
+          "sha256": "d12e60dc0565d89568dc7eda9c3175d05e626578f1629f4ff9ae28fbcac54979"
+        }
+      }
+    },
+    {
+      "id": "bda34548892dd73413bd2db0da0004cb483eb02a5da79ff3fe24055039156858",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2026/bills/house/1249/details",
+      "date": "2026-02-27",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1249-2026",
+      "act": "yea",
+      "motion": "Senate - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "IN Senate, Senate - Rules Suspended. Conference Committee Report 1, 2026-02-27: yea (tally 43–4); census gate: multi-subject.",
+      "subjects": [
+        "child's dangerous possession of a firearm made a Level 5 felony near schools or with a prior conviction",
+        "child giving a firearm to an ineligible child is a felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1249-2026.enrolled.pdf",
+          "sha256": "172d79f5e19ed54ba0ca8d38d66b853eaa663ef271f3c0ed00058967e2e07e50"
+        }
+      }
+    },
+    {
+      "id": "cea634a48ab1da4159cb44cb907d655305034ae17085df645dca261d3feae02a",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2026/bills/house/1258/details",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1258-2026",
+      "act": "yea",
+      "motion": "Senate - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "IN Senate, Senate - Third reading, 2026-02-24: yea (tally 46–2); census gate: multi-subject.",
+      "subjects": [
+        "repeat illegal gun carrying and possession counted as crimes of violence",
+        "crime-of-violence list feeds bail and release rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1258-2026.enrolled.pdf",
+          "sha256": "1adf420a4f8712a678b443140991f8e966a3e1d936fc1f62e72e9bee6a1733c2"
+        }
+      }
+    },
+    {
+      "id": "09a61906e299344ad445e7b9c9b1a4838d77e14930b62226abd79919fb8d4ef2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2026/bills/house/1274/details",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1274-2026",
+      "act": "yea",
+      "motion": "Senate - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN Senate, Senate - Third reading, 2026-02-24: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "insurers barred from requiring gun free zone signs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1274-2026.enrolled.pdf",
+          "sha256": "c9c7acd718bbd025aa03f305929915de62929dc4ac0ef07974fc28f95732de67"
+        }
+      }
+    },
+    {
+      "id": "cb58bc0c6e13a58c95f6e13eebbd9c3e3f51a9e052eb0ee6e61f7160dc62fb82",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2026/bills/house/1343/details",
+      "date": "2026-02-27",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1343-2026",
+      "act": "yea",
+      "motion": "Senate - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "IN Senate, Senate - Rules Suspended. Conference Committee Report 1, 2026-02-27: yea (tally 37–11); census gate: multi-subject.",
+      "subjects": [
+        "new school-property offence for imitation firearms",
+        "trunk or locked-glove-box defense extended to imitation firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1343-2026.enrolled.pdf",
+          "sha256": "97ae4e77fb76f4f2988fda66fbb368c52d8428a4d583512f96f4106c986a61c2"
+        }
+      }
+    },
+    {
+      "id": "12172ff04acd66c6301b207a132e032d52085cd2d71058d2580004cac7500971",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/house/1637/details",
+      "date": "2025-04-24",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1637-2025",
+      "act": "yea",
+      "motion": "Senate - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "IN Senate, Senate - Rules Suspended. Conference Committee Report 1, 2025-04-24: yea (tally 50–0); census gate: multi-subject.",
+      "subjects": [
+        "passenger pointing a firearm during reckless driving becomes a felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1637-2025.enrolled.pdf",
+          "sha256": "cc70e14806548478abb7f7cec4c48376d06e8c7917ed7c1285755678475b8fe1"
+        }
+      }
+    },
+    {
+      "id": "b444cd8c96ab93191cbb89c794625db0a2c69834f6f1bee47e720fdb019435bf",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2026/bills/senate/148/details",
+      "date": "2026-01-27",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-148-2026",
+      "act": "yea",
+      "motion": "Senate - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "IN Senate, Senate - Third reading, 2026-01-27: yea (tally 46–0); census gate: near-unanimous.",
+      "subjects": [
+        "crime guns task force area adds LaPorte and Porter counties",
+        "task force board quorum and tie vote rule"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-SB-148-2026.enrolled.pdf",
+          "sha256": "1f829218891368cebe709f3312019cd5b3918ace216b073c8e1c546a2939e732"
+        }
+      }
+    },
+    {
+      "id": "a4be4d6ccb6c7bc6b9fd795effb900f4a96849c45f0694ffac518357da6c6d64",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2026/bills/senate/176/details",
+      "date": "2026-02-27",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-176-2026",
+      "act": "yea",
+      "motion": "Senate - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN Senate, Senate - Rules Suspended. Conference Committee Report 1, 2026-02-27: yea (tally 42–8); census gate: none.",
+      "subjects": [
+        "local limits on shooting range permits and zoning restricted",
+        "indoor shooting ranges allowed in commercial, industrial and farm zones",
+        "sporting goods stores (which sell firearms) allowed in commercial zones"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-SB-176-2026.enrolled.pdf",
+          "sha256": "6933ecc1981c83b3d7313eea18239a5ee7b0e3d3bd08cbb353141deb4dac3127"
+        }
+      }
+    },
+    {
+      "id": "a9db6a04c34ea5eb499e525a59baa67baa200a2ab5378e1718ba8d24ab4e17da",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2026/bills/house/1343/details",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "IN-HB-1343-2026",
+      "act": "author",
+      "motion": "author sponsor, LegiScan sponsor list",
+      "note": "author sponsor of IN-HB-1343-2026 (LegiScan sponsor list): HB1343 (2026 Regular Session): Public safety matters..",
+      "subjects": [
+        "new school-property offence for imitation firearms",
+        "trunk or locked-glove-box defense extended to imitation firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1343-2026.enrolled.pdf",
+          "sha256": "97ae4e77fb76f4f2988fda66fbb368c52d8428a4d583512f96f4106c986a61c2"
+        }
+      }
     }
   ],
   "searches": [
@@ -79,6 +345,32 @@
       "found": 0,
       "at": "2026-10-27T02:57:01.638Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "background checks",
+        "gun rights",
+        "Second Amendment",
+        "gun bills sponsored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status note: sitting Senate District 24 member, elected 2024 (https://indianasenaterepublicans.com/clark); not up in 2026 as far as sources show",
+        "Senate caucus member page (nothing on the subject)",
+        "Senate caucus statement on end of 2026 session (nothing on the subject)",
+        "Senate caucus release 'Clark presents his first three bills' (nothing on firearms)",
+        "blocked: https://goodparty.org/candidate/brett-clark/indiana-state-senate-district-24 (429)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia (empty page returned)",
+        "campaign site: none found",
+        "web searches: name plus gun words returned no statement by him on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-31T20:34:33.926Z",
+      "by": "source-collector"
     }
   ]
 }

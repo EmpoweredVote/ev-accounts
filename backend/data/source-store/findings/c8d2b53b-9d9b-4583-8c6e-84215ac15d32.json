@@ -1,0 +1,56 @@
+{
+  "politician_id": "c8d2b53b-9d9b-4583-8c6e-84215ac15d32",
+  "findings": [
+    {
+      "id": "2caa7e3dd9145f024502c921af54e0704ceacdfd0c7d6f0d699f917d792a7cd6",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/90414/race/30370/election/1454",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I am a steadfast advocate of the Second Amendment and believe that California continues to enact laws which directly violate the U.S. Constitution.  I applaud the fed's efforts to reinstitute Californians' 2A rights.",
+      "note": "His answer on the iVoterGuide questionnaire (2026 election cycle, exact date not shown) to the question \"What restrictions on gun ownership are needed to protect public safety?\". Page also gives his reasons: the amendment as a defense against tyranny, and that disarming groups has led to harm.",
+      "subjects": [
+        "gun rights and the Second Amendment in general",
+        "state gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:15:18.656Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment in general",
+        "restrictions on gun ownership",
+        "federal action on state gun laws",
+        "check every gun buyer",
+        "bans on assault-style guns",
+        "carry permits"
+      ],
+      "places": [
+        "status: on the 2026 general-election ballot in California's 19th District, per the state certified candidate list https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf (found by search; identity also on https://ivoterguide.com/candidate/90414/race/30370/election/1454)",
+        "On the Record (0 meetings)",
+        "campaign site https://peterverbica.com (home, /about, /district-19, /news): nothing on the subject",
+        "June 2025 25-point plan press release on financialcontent: nothing on the subject",
+        "county voter statement PDF (Santa Cruz County, June 2026): text not readable by the fetch, not reviewed",
+        "blocked: https://goodparty.org/candidate/peter-verbica/us-house-of-representatives-california-19th-congressional-district (429)",
+        "iVoterGuide candidate questionnaire page: gun answer saved",
+        "campaign-supporter column on kbew98country.com: nothing on the subject",
+        "legislator bill lists: not applicable, he has not held federal or state legislative office",
+        "Ballotpedia: not reviewed (pages return empty to the fetch tool)",
+        "two web searches on his name plus gun words: no further statements found"
+      ],
+      "found": 1,
+      "at": "2026-10-31T00:15:18.656Z",
+      "by": "source-collector"
+    }
+  ]
+}

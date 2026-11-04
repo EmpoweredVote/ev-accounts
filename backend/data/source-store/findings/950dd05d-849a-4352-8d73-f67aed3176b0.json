@@ -1,0 +1,73 @@
+{
+  "politician_id": "950dd05d-849a-4352-8d73-f67aed3176b0",
+  "findings": [
+    {
+      "id": "8a5a6d4e2a164382b61202acaaf3d76eb80de76042814879ff7694e9e280003c",
+      "kind": "own-words",
+      "url": "https://charliehatcher.com/platform/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "The Second Amendment is not a suggestion. It is a constitutional right.",
+      "note": "Heading statement in the 2ND AMENDMENT section of his campaign platform page. The page text is written about him in the third person but is his campaign's own issue page. Page has no date.",
+      "subjects": [
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:03:17.810Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "293336e8e20e727f31abcb09ad006dce76853ebaddd77f5421aa4d1aa4801774",
+      "kind": "own-words",
+      "url": "https://charliehatcher.com/platform/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Charlie will defend the right of law-abiding Americans to keep and bear arms and oppose efforts by Washington to create unnecessary restrictions on responsible gun ownership.",
+      "note": "Same campaign platform section. Says he will oppose federal efforts to add what it calls unnecessary restrictions on responsible gun ownership. It also says he believes violent criminals can be vigorously prosecuted while protecting law-abiding citizens' rights.",
+      "subjects": [
+        "oppose new federal gun restrictions",
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:03:17.810Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "limits on responsible gun ownership"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.wsmv.com/2026/08/07/trump-backed-incumbent-loses-tennessee-primary-fifth-generation-farmer/ (confirms he won the Aug 2026 primary for Tennessee's 5th District and faces three others in the general election; nothing on the subject)",
+        "https://charliehatcher.com/ (campaign site home page; its title line says pro-gun)",
+        "https://charliehatcher.com/platform/ (finding)",
+        "https://charliehatcher.com/about/ and https://charliehatcher.com/media/ (nothing on the subject)",
+        "https://ivoterguide.com/candidate/59017/race/34520/election/1499 (voter guide gun question marked not answered by him)",
+        "Ballotpedia: not fetched",
+        "congress.gov sponsorships: not applicable, not a legislator (former state agriculture commissioner)",
+        "one web search on his name plus subject words"
+      ],
+      "found": 2,
+      "at": "2026-10-30T15:03:17.810Z",
+      "by": "source-collector"
+    }
+  ]
+}

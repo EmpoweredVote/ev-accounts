@@ -1,0 +1,53 @@
+{
+  "politician_id": "adc2e7ca-1ab6-4f94-9484-10160a90ff78",
+  "findings": [
+    {
+      "id": "491e02906cc8ca074daf338c65bbe7b730a3500c56fd0263d3a1f3ae2f33807b",
+      "kind": "own-words",
+      "url": "https://aurora4pa.com/supporting-those-who-serve-why-i-stand-with-law-enforcement/",
+      "date": "2026-06-18",
+      "date_precision": "day",
+      "passage": "I am a strong supporter of both law enforcement and the Second Amendment. I support both without reservation.",
+      "note": "Campaign site post (publication date from the page's own metadata). General statement of support for the Second Amendment. The same post discusses H.R. 354 (LEOSA Reform Act, concealed carry for qualified active and retired officers) and says her opponent voted No on it; those sentences are campaign copy about the opponent's vote and she does not state a position on the bill in that passage.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:01:18.638Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "law enforcement carry across states"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://aurora4pa.com/ (campaign site; home page link list read; issues page, platform page, protecting-children page and about page checked for gun words, nothing beyond the finding)",
+        "https://aurora4pa.com/supporting-those-who-serve-why-i-stand-with-law-enforcement/ (finding)",
+        "https://aurora4pa.com/?s=gun (site search page returned no results text)",
+        "https://branch.vote/races/2026-pennsylvania-general-election--pa-state-us-representative-pa-congressional-4/candidates/aurora-stuski (confirms she is a PA-04 candidate on the 2026 general ballot; its public-safety line quotes her site)",
+        "https://www.ballotready.org/people/aurora-stuski and https://penncapital-star.com/voter-guides/contests/2026-general-u-s-house-district-4/ (no gun text found)",
+        "Ballotpedia: not fetched",
+        "congress.gov sponsorships: not applicable, not a legislator",
+        "one web search on her name"
+      ],
+      "found": 1,
+      "at": "2026-10-30T15:01:18.638Z",
+      "by": "source-collector"
+    }
+  ]
+}

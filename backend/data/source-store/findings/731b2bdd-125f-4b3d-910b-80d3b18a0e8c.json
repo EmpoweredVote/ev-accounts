@@ -1,0 +1,29 @@
+{
+  "politician_id": "731b2bdd-125f-4b3d-910b-80d3b18a0e8c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "background checks",
+        "carry permits",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "ballot status confirmed: https://ivoterguide.com/candidate/71345 lists him on the 2026-11-03 general ballot for FL-11",
+        "campaign site https://joestradaforcongress.com/ (page loads with no text about guns; the previously guessed joestrada.com returned 404)",
+        "voter guide page: questionnaire question on gun restrictions shows 'Did not answer'",
+        "local news profile https://www.wintergardenvox.com/candidates/joe-strada: nothing on the subject",
+        "web searches on name plus Second Amendment: nothing on the subject in his own words",
+        "not a legislator: no sponsorships to list",
+        "Ballotpedia: not reachable by fetch tool, not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-30T22:54:45.469Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -146,6 +146,35 @@
         "fetched_at": "2026-10-21T01:52:20.308Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "06bec4bf9bfa78113458fec392c0548ab08a7a776cce20aa244ec307c64b2f91",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/19rs/sb150.html",
+      "date": "2019-02-14",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-150-2019",
+      "act": "yea",
+      "motion": "Pass SB 150 (RSN# 802)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KY Senate, Pass SB 150 (RSN# 802), 2019-02-14: yea (tally 29–8); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/KY_acts_2019_ch010.pdf",
+          "sha256": "93266e8d17c0b31728a6c78573a4afda6517fbacbe2200b4273a5f2e422960c1"
+        }
+      }
     }
   ],
   "searches": []

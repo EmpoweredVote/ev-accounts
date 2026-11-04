@@ -22,6 +22,73 @@
         "fetched_at": "2026-10-28T22:45:58.718Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "56b24e0ddcc363c3ab0e3e2bc962f042684c8f10f5d829487bd694e6d7852ebb",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb1114",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1114-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-1114-2025 (LegiScan sponsor list): HB1114 (2025-2026 Regular Session): In inchoate crimes, prohibiting the possession of firearm at polling place..",
+      "subjects": [
+        "guns banned at polling places",
+        "license-holder exception for guns concealed in vehicles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1114-2025.introduced.pdf",
+          "sha256": "b37dc782b05f8c6693491dc55dd3a8c49aa5ad338aa57975379d4143d0812c69"
+        }
+      }
+    },
+    {
+      "id": "c894e4f8eed22671cbe969620c2ec4964ffd3ba6ab82d891bf61145c0e29cdc0",
+      "kind": "own-words",
+      "url": "https://pahouse.com/Carroll/InTheNews/NewsRelease/?id=138189",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "passage": "As the state representative for the Philadelphia neighborhoods of Germantown, Logan and West Oak Lane, I remain steadfast in my commitment to pushing for legislation that will help keep our community safe and free from gun violence.",
+      "note": "Statement in his office's release after a town hall on a shooting; no specific bill named.",
+      "subjects": [
+        "general statement on gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:46:31.452Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "174f7bc454dfa48414f5c69533aa4dcf26a11741b75030730653714cc86ac778",
+      "kind": "own-words",
+      "url": "https://inquirer.com/politics/election/andre-carroll-stephen-kinsey-northwest-philly-state-representative-20240331.html",
+      "date": "2024-03-31",
+      "date_precision": "day",
+      "passage": "“We’ve seen disproportionately too many folks who look like myself, and many folks in this community, be the recipient of harsh punishments,” said the 33-year-old Democratic candidate for state representative in Northwest Philadelphia’s 201st House District.",
+      "note": "Quoted by the Philadelphia Inquirer. The article says the quote concerns a 2021 House bill that would have set stricter sentences for crimes where guns were present, which he opposed.",
+      "subjects": [
+        "longer sentences for crimes involving guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:46:31.452Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -62,6 +129,30 @@
       "found": 1,
       "at": "2026-10-28T22:45:58.718Z",
       "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on firearm types",
+        "background checks",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "penalties for gun crimes",
+        "general gun rights and gun violence statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official page https://pahouse.com/Carroll (news releases fetched: 2025-04-16 town hall release, 2024-09-30 swearing-in release)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Inquirer profile 2024-03-31",
+        "Ballotpedia not relied on (empty for the fetch tool)",
+        "two news searches; other results were a different person (Illinois legislator Jonathan Carroll) and were discarded",
+        "identity: pahouse.com release names state Rep. Andre D. Carroll for Germantown, Logan and West Oak Lane"
+      ],
+      "found": 2,
+      "at": "2026-10-30T23:46:31.452Z",
+      "by": "source-collector"
     }
   ]
 }

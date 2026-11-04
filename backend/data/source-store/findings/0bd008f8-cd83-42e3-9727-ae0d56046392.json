@@ -194,6 +194,358 @@
         "fetched_at": "2026-10-29T14:14:50.860Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "1d0155895ce8411a4438986cd1d5eafc092c54b213a013aab945a0900ab58bf7",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2021/sb565",
+      "date": "2021-11-09",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-565-2021",
+      "act": "nay",
+      "motion": "Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Final Passage, 2021-11-09: nay (tally 29–21); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/PA_SB565_PN1212.pdf",
+          "sha256": "8599bf5e56d8378a456fd36d933e5a05733e1a059d642ddb6883c809f6226568"
+        }
+      }
+    },
+    {
+      "id": "7b360a6432599ebd57649dfe5853a8078fee08b384da5219bd357573c6e7b515",
+      "kind": "own-words",
+      "url": "https://senatorsharifstreet.com/senator-street-joins-senator-santarsiero-to-introduce-legislation-banning-military-style-assault-weapons-in-pennsylvania/",
+      "date": "2022-06-10",
+      "date_precision": "day",
+      "passage": "Thoughts and prayers ring hollow to the families of every victim without action behind them. This is a uniquely American problem, and if we are a civilized nation then the right to bear arms cannot supersede the right to live free from violence. I’m proud to join Senator Santarsiero who continues to lead on common sense reform for responsible firearms ownership.",
+      "note": "His quote in a press release on a colleague's bill to ban military-style assault weapons and magazines over 10 rounds; he says he joins that effort.",
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on large-capacity magazines",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:16:16.540Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8a8cab5359ec805dfb8316cf1609f26a637ae3e5dd987b82d681baaeedcfd560",
+      "kind": "own-words",
+      "url": "https://senatorsharifstreet.com/senator-street-offers-legislation-to-restrict-military-grade-weapons-in-wake-of-philadelphia-shooting/",
+      "date": "2019-08-15",
+      "date_precision": "day",
+      "passage": "I will offer legislation to restrict the sale and purchase of military grade weapons and accessories.",
+      "note": "Statement after the August 2019 Philadelphia police shooting; he says he will offer a bill restricting sale and purchase of military-grade weapons and accessories.",
+      "subjects": [
+        "restrict sale of military-grade weapons",
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:16:16.540Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "af85e51a06e6f2fd2d1225b83c7ffe676733ab999ef213d43069ce0dec3bd917",
+      "kind": "own-words",
+      "url": "https://senatorsharifstreet.com/senator-street-offers-legislation-to-restrict-military-grade-weapons-in-wake-of-philadelphia-shooting/",
+      "date": "2019-08-15",
+      "date_precision": "day",
+      "passage": "“Good guys with guns, couldn’t stop a single well-armed individual with a military grade firearm and enough ammunition to endanger countless law enforcement officials”, Senator Street said.",
+      "note": "Same 2019 statement, about the limits of armed responders against military-grade firearms.",
+      "subjects": [
+        "restrict sale of military-grade weapons"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:16:16.540Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "27516545b3da0bb69c8931a5b45c43f6d8e34cc9385af64a838d11b0fb4be408",
+      "kind": "own-words",
+      "url": "https://senatorsharifstreet.com/senator-sharif-street-issues-statement-on-olney-mass-shooting-in-north-philadelphia/",
+      "date": "2021-02-17",
+      "date_precision": "day",
+      "passage": "More than a dozen bills on gun reform continue to go ignored in Harrisburg. I’ve reintroduced my bill to ban weapons of war.",
+      "note": "Statement on a mass shooting in Philadelphia; says he reintroduced his own bill to ban weapons of war. Bill number not stated on the page.",
+      "subjects": [
+        "ban on assault-style guns",
+        "bills sponsored on firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:16:16.540Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "51de7a0c3fe549884b728b33b72c3143053d1fd00a68e879a4bc7b469d81c2cf",
+      "kind": "own-words",
+      "url": "https://senatorsharifstreet.com/senator-street-speaks-on-gun-violence-prevention-following-philadelphia-shooting-outside-his-district-office/",
+      "date": "2021-12-14",
+      "date_precision": "day",
+      "passage": "“As rates of violence in Philadelphia, Lancaster, Erie, Reading, and Pittsburgh are all rising, it is time we do something about gun violence,” said Senator Sharif Street. “We certainly should pass bills that a number of my colleagues have introduced, but at a minimum we should dramatically increase funding for safe corridor programs, violence prevention programs, youth sports activities, PTSD training and treatment, and crisis intervention workers.”",
+      "note": "Press conference after a shooting outside his district office; supports colleagues' gun bills and funding for violence prevention.",
+      "subjects": [
+        "gun violence prevention funding",
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:16:16.540Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "51796e8e7ff71b6c6da51c97d122434aba025adeba6842a904be37ac5ad25639",
+      "kind": "own-words",
+      "url": "https://senatorsharifstreet.com/street-statement-on-texas-shooting-these-are-levels-of-gun-violence-no-generation-of-americans-have-known/",
+      "date": "2022-05-24",
+      "date_precision": "day",
+      "passage": "A nation that elevates the right to unfettered access to firearms above all, even the right to live free from violence, cannot be civilized.",
+      "note": "Statement on the Uvalde school shooting, dated May 24, 2022 on the site's gun reform list.",
+      "subjects": [
+        "general statement on gun rights",
+        "gun access limits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:16:16.540Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "747e013966dd292b6e60352644acbb27628c6654bbafc9b6c5b7fa00dcf1d217",
+      "kind": "own-words",
+      "url": "https://billypenn.com/2024/07/16/trump-shooting-pennsylvania-gun-laws/",
+      "date": "2024-07-16",
+      "date_precision": "day",
+      "passage": "“But if a person is having a mental health crisis, and can be identified, and there’s a process for family members and other people having those guns taken away from people, that could prevent a lot of mass shootings, and a lot of shootings period.”",
+      "note": "Quoted by Billy Penn (article dated 2024-07-16) on a process to take guns from a person in a mental health crisis.",
+      "subjects": [
+        "red flag orders",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:16:16.540Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6926d5aca1b8e5dfa1d1fe1815b11bc6b750c15358891fcd9c4ea5a405b5785b",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=1747",
+      "date": "2020-11-18",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1747-2019",
+      "act": "nay",
+      "motion": "Senate Floor: HB 1747 PN 2338, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 1747 PN 2338, FINAL PASSAGE, 2020-11-18: nay (tally 29–20); census gate: none.",
+      "subjects": [
+        "emergency-time carry restriction repealed",
+        "no seizure of guns, accessories or ammunition during emergencies",
+        "governor cannot suspend firearm sales in emergencies"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1747-2019.introduced.pdf",
+          "sha256": "a4e95a0229bcf1cde7a5fa9d58ac2c33f09477e837d84525b7ff04d3a5f71ece"
+        }
+      }
+    },
+    {
+      "id": "7ac860115240e898e99179f0252f386cf4942bf1be694ef5653fb8d3aaf3a31c",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=2440",
+      "date": "2020-11-18",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-2440-2019",
+      "act": "nay",
+      "motion": "Senate Floor: HB 2440 PN 3776, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 2440 PN 3776, FINAL PASSAGE, 2020-11-18: nay (tally 29–20); census gate: none.",
+      "subjects": [
+        "gun and ammunition businesses and ranges can never be closed or limited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2440-2019.amended.pdf",
+          "sha256": "9bdd564f4d0812adfa9af91a3ac7f854f4196ebd9577febef5953c94486be5c8"
+        }
+      }
+    },
+    {
+      "id": "e551ed2f59e072bfb12b47cdaee82befe90ec2b072f23db862ca5acdcd44d811",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=979",
+      "date": "2022-01-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-979-2021",
+      "act": "nay",
+      "motion": "Senate Floor: HB 979 PN 1706, Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 979 PN 1706, Final Passage, 2022-01-25: nay (tally 32–17); census gate: none.",
+      "subjects": [
+        "local gun and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs",
+        "localities barred from suing gun makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-979-2021.amended.pdf",
+          "sha256": "494cfe800bdb89be85cf7c2a28a81c203b581e7614e7bc8f69211cb4c736f5dd"
+        }
+      }
+    },
+    {
+      "id": "aeb8266984e53754ceef8ff83f7e417709cb966b7ba747cb9d64e2c79c4a49ed",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb822",
+      "date": "2026-05-06",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-822-2025",
+      "act": "nay",
+      "motion": "Senate Floor: PN0881, Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: PN0881, Final Passage, 2026-05-06: nay (tally 30–20); census gate: none.",
+      "subjects": [
+        "local firearm and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-822-2025.introduced.pdf",
+          "sha256": "38d1bdcb626cc1614fee0c352427248f5e599df007fead7d1a6031742385df55"
+        }
+      }
+    },
+    {
+      "id": "3295f3ca764ec705e99d1e3ac2783e1ae0949dab0b7628a119ff558b5999a87e",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=S&type=B&bn=204",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-204-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-SB-204-2023 (LegiScan sponsor list): SB204 (2023-2024 Regular Session): In actions, proceedings and other matters generally, providing for extreme risk protection orders..",
+      "subjects": [
+        "court orders to remove guns from people at risk of harming themselves or others",
+        "family members and police may petition",
+        "penalty for possessing guns under an order"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-204-2023.introduced.pdf",
+          "sha256": "3aaf5420de53bef1bf18d7ed5c88cda96951528d75fb2331337afa67ef725805"
+        }
+      }
+    },
+    {
+      "id": "974bcaa11083851fdf648bd4b6b53b2f69fbd2b79d1857b0e68638182e4e9f3b",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb348",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-348-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-SB-348-2025 (LegiScan sponsor list): SB348 (2025-2026 Regular Session): In firearms and other dangerous articles, providing for report of theft or loss of firearm; and imposing a penalty..",
+      "subjects": [
+        "lost or stolen firearm must be reported within 24 hours",
+        "fine for failing to report"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-348-2025.introduced.pdf",
+          "sha256": "abc26212fcdd2ced433b042efb2f17e7287787752032e5f4e6f1cba78f99f4e2"
+        }
+      }
     }
   ],
   "searches": [
@@ -262,6 +614,36 @@
       "found": 1,
       "at": "2026-10-29T14:14:50.860Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "restrict sale of military-grade weapons",
+        "ghost guns",
+        "background checks",
+        "lost and stolen gun reporting",
+        "red-flag style removal of guns",
+        "carry permits",
+        "safe storage",
+        "violence prevention funding",
+        "general gun-rights and gun-safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official senator site: gun reform page https://senatorsharifstreet.com/?p=73886 (several posts read)",
+        "news: Billy Penn 2024-07-16 article read",
+        "web searches: his gun statements; his gun bill sponsorships",
+        "not reviewed: https://www.legis.state.pa.us bill pages (no prime-sponsor bill number on the subject was found in search results, so none was opened)",
+        "not reviewed: Ballotpedia (known to return empty)",
+        "nothing on the subject: no bill on the subject with him as prime sponsor was confirmed; his 2021 statement says he reintroduced his own bill to ban weapons of war, but the bill number was not found",
+        "scope: sitting state senator; his site is current to 2026",
+        "official senator site about page: not reviewed (no usable copy fetched)"
+      ],
+      "found": 7,
+      "at": "2026-10-30T15:16:16.540Z",
+      "by": "source-collector"
     }
   ]
 }
