@@ -4,10 +4,15 @@ Piece 4 of the post-election transition programme, California slice. Read this b
 `essentials.office_swearing_in` for California, and before seating any California winner.
 
 **Measured 2026-11-04. 337 California offices carry a 2026-11-03 race at the local tiers**
-(`SCHOOL`, `LOCAL`, `LOCAL_EXEC`, `COUNTY`). **226 now have a cited date** (`CC_0345`,
-`CC_0346`). **111 are owed one** — 110 city offices and the Los Angeles County Sheriff.
+(`SCHOOL`, `LOCAL`, `LOCAL_EXEC`, `COUNTY`). **All but one now have a row**
+(`CC_0345`, `CC_0346`, `CC_0347`):
 
-Every district and school body is now dated. What is left is cities.
+- **230 are seatable** — `basis` of `statute` or `published`, each with its authority.
+- **106 are city offices marked `estimated` and are NOT seatable.** The law fixes a *process*
+  for them, not a day; they carry the statutory floor and the rule that bounds them, and each
+  must be replaced per city when that city publishes its installation date.
+- **1 — the Los Angeles County Sheriff — has no row at all**, because its source contradicts
+  itself. See below.
 
 ---
 
@@ -24,7 +29,8 @@ Every district and school body is now dated. What is left is cities.
 | **2026-12-11** | 197 | School and community college boards | [Educ. Code § 5017](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=EDC&sectionNum=5017.) (window to 12-25, § 35143) |
 | **2027-01-04** | 6 | Water agencies, water replenishment district | Water Code § 60139, Appendix §§ 98-51 and 103-5(b) |
 | **2027-01-04** | 4 | Superior court judges | [Cal. Const. art. VI § 16(c)](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CONS&sectionNum=SEC.%2016.&article=VI) |
-| *owed* | 110 | City officers | [Gov. Code § 36503](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=36503.) — no statewide date |
+| **2026-12-14** | 4 | City of Los Angeles — Mayor, City Attorney, Council 3 and 9 | [LA City Charter § 205(c)](https://codelibrary.amlegal.com/codes/los_angeles/latest/laac/0-0-0-392) |
+| *estimated* | 106 | All other city officers, 52 cities | [Gov. Code § 36503](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=36503.) + [Elec. Code § 10263(b)](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=ELEC&sectionNum=10263.) — no statewide date |
 | *conflicted* | 1 | LA County Sheriff | LA County Charter, Art. II § 6 and Art. IV § 13 |
 
 **19 California seats change hands on 4 December — 30 days out, and the earliest in the
@@ -150,27 +156,81 @@ is the legally correct start of the term.
 
 ---
 
-## What is still owed — 111 offices
+## The city offices — 110 across 53 cities
 
-### 110 city offices · `ca-gov-36503` · ~45 cities
+### Los Angeles is the exception: its charter fixes a date
 
-`Gov. Code § 36503`: city officers *"hold office for their prescribed terms from the date of the
-**installation of officers following adoption by the council of the official canvass** of their
-election"*. A per-council event. **There is no statewide date**, and the handbook carries none.
+**LA City Charter § 205(c)**: *"The term of an official elected to City office shall commence on the
+**second Monday in December** next following his or her election."* → **2026-12-14**.
 
-Bounds that do exist: the canvass must be completed within 30 days (**2026-12-03**), the RR/CC is
-tentatively scheduled to certify on **2026-11-27**, and the Board of Supervisors declares the
-election concluded on **2026-12-01**. Installations therefore fall in early-to-mid December. That is
-a bound, **not a date**.
+Controlled against a real past seating: the City Clerk's roster records the 2024 citywide officers as
+commencing **2024-12-09**, the second Monday of that December. § 205(c) also stages the cycle — the
+Mayor, City Attorney, Controller and **odd-numbered** council districts commence each fourth
+anniversary of 2022. The four offices on this ballot are Mayor, City Attorney and Council Districts
+**3 and 9**, both odd. Charter and ballot agree, which is the check that the right cycle was read.
 
-⚠ **Charter cities set their own rule** — Los Angeles, Burbank, Culver City, Long Beach, Santa
-Monica, Compton and Inglewood among them. § 36503 is the *general law* city rule.
+### 🔴 Being a charter city does not mean having a date
 
-🔴 **The jurisdiction is not on the district row for 37 of them.** Their `districts.label` reads only
-`District 1` … `District 6` with `city` NULL and `ocd_id` NULL. The city is recoverable, but from a
-different column depending on how the office was seeded — `ocd_id` (`place:artesia`), `geo_id`
-(`arcadia-council-district-2`), or the label prefix. **This is why piece 4 carries the date per
-office instead of deriving it from a jurisdiction key: there is no such key today.**
+**Burbank's charter fixes no commencement at all.** Read the same day: it provides only that, for a
+consolidated election, the county *"shall canvass the returns and shall certify the result … to the
+Council, who shall thereupon declare the result"*. No date. Burbank is therefore in exactly the same
+position as the general law cities.
+
+12 of the 53 are confirmed charter cities, from the California Department of Industrial Relations'
+*List of Charter Cities that Are in Compliance with Senate Bill 7 (2013), Senate Bill 829 (2011),
+and Senate Bill 922 (2012)*, current as of 2026-03-05: **Alhambra, Arcadia, Burbank, Compton, Culver
+City, Downey, Inglewood, Irwindale, Los Angeles, Palmdale, Pomona, Santa Monica**.
+
+⚠ **That list is a subset and absence proves nothing.** It names only charter cities compliant with
+three particular statutes, so a charter city missing from it is not thereby a general law city.
+Montebello was separately confirmed general law from its own clerk's page. The other 40 are
+unclassified — and the classification only decides *which document to read*, never the date, so
+nothing seeded depends on it.
+
+### The other 106: the law fixes a process, not a day
+
+| Section | What it says |
+|---|---|
+| `Gov. Code § 36503` | city officers hold office *"from the date of the **installation of officers** following adoption by the council of the official canvass"* |
+| `Elec. Code § 10262(b)` | for a consolidated election the council acts *"no later than the next regularly scheduled city council meeting following presentation of the 28-day canvass … or at a special meeting called for this purpose"* |
+| `Elec. Code § 10263(b)` | at that meeting the council shall *"declare the results **and install the newly elected officers**"* |
+
+So declaration and installation are **one event**, at that council's own meeting.
+
+**What is fixed:** the 28-day canvass is **2026-12-01** (E+28), and § 10263 requires the canvass to be
+complete before the council may install. The county's canvass must finish within 30 days
+(**2026-12-03**) and the RR/CC is tentatively scheduled to certify **2026-11-27**.
+
+🔴 **Why these are `estimated` and carry 2026-12-01, not a computed meeting date.** "The next
+regularly scheduled council meeting" is derivable from each city's published meeting rule — but
+§ 10263(b) says **"no later than"** and expressly allows *"a special meeting called for this
+purpose"*. Cities use it: Glendale's June 2026 election was certified by the RR/CC on 26 June and the
+city held a **special council meeting** to administer the oath. A computed next-regular-meeting is an
+upper bound that is **systematically late**, and writing 106 upper bounds as dates would repeat, in
+bulk, the error `CC_0346` had to correct for the municipal water districts.
+
+▶ **A bound you can defend beats a date you cannot.** `2026-12-01` is the statutory floor, `basis`
+is `estimated` so nothing can seat from it, and the rule that sets the ceiling is in the row.
+
+⚠ **Nothing is published yet, and that is expected, not a search failure.** This was written one day
+after the election; the canvass does not complete for four weeks. **The dates will appear through
+late November and early December** — replace each row with `basis = 'published'` as its city posts
+one.
+
+### 🔴 There is no jurisdiction key in the data, and it bit this migration
+
+37 of the 110 have `districts.label` reading only `District 1` … `District 6`, with `city` **and
+`ocd_id` NULL**. The city is recoverable, but from a *different column* depending on how the office
+was seeded — `ocd_id` (`place:artesia`), the `geo_id` slug (`arcadia-council-district-2`), or the
+label prefix. That is why piece 4 carries the date per office rather than deriving it from a
+jurisdiction key.
+
+**`CC_0347`'s first dry run wrote 69 rows instead of 106**, silently. Its Los Angeles test was
+`d.ocd_id LIKE '…place:los_angeles%'`, and for a NULL `ocd_id` that is **NULL, not false** — so
+`WHERE is_la_city` dropped those 37 rows *and* `WHERE NOT is_la_city` dropped them too, because
+`NOT NULL` is `NULL` and not true. They fell out of both branches and the inserts just wrote fewer
+rows, with no error. **The count gate is what caught it.** ▶ Three-valued logic does not raise; it
+quietly returns a smaller set.
 
 ### 1 · Los Angeles County Sheriff · the source contradicts itself
 
@@ -199,9 +259,14 @@ the **Assessor and the Supervisors**, so resolving it pays for itself beyond thi
 | **2026-12-04** | **19** | district seats — **settled, and the earliest in the programme** |
 | 2026-12-07 *or* 2026-11-30 | 1 | LA County Sheriff — conflicted |
 | **2026-12-11** | **197** | school and community college boards — the bulk |
-| early–mid December | 110 | city offices — bounded, undated |
+| **2026-12-14** | 4 | City of Los Angeles |
+| early–mid December | 106 | other city offices — bounded, undated, **not seatable** |
 | 2027-01-04 | 10 | water agencies and superior court judges |
 
 The design doc put wave 3 at 1 December and called it 27 days out. The true first handover is
 **4 December** and the bulk is **11 December**. The programme is not late — but the 19 seats on
 4 December are now the nearest real deadline, and they are ready to seat as soon as results exist.
+
+**The open work in California is now a watch, not a research problem.** 106 city seats need their
+installation dates, and those dates do not exist yet anywhere. They appear as each council posts its
+December agenda, from late November. The Sheriff needs one charter read.

@@ -26,6 +26,7 @@ import {
   firstMondayAfterJanuary1,
   firstMondayInJanuary,
   lastFridayInNovember,
+  secondMondayInDecember,
   CA_SWEARING_IN_RULES,
   swearingInDateForRule,
 } from './ca-swearing-in.mjs';
@@ -69,6 +70,24 @@ describe('firstMondayAfterJanuary1 — Cal. Gov. Code § 24200', () => {
     // 2026 cycle — 1 January 2027 is a Friday — and it is pinned so that it never has to be
     // re-derived under time pressure in a cycle where it does.
     expect(firstMondayAfterJanuary1(2029)).toBe('2029-01-08');
+  });
+});
+
+describe('secondMondayInDecember — Los Angeles City Charter § 205(c)', () => {
+  it('is 2026-12-14 for the 2026 cycle', () => {
+    expect(secondMondayInDecember(2026)).toBe('2026-12-14');
+  });
+
+  it('is 2024-12-09, the date Los Angeles actually seated its 2024 class', () => {
+    // A positive control on the arithmetic against a real past seating: the City Clerk's roster
+    // records the 2024 citywide officers as commencing 2024-12-09, which is the second Monday.
+    expect(secondMondayInDecember(2024)).toBe('2024-12-09');
+  });
+
+  it('counts 1 December itself as the first Monday when it falls on one', () => {
+    // December 2025 opens on a Monday, so the second Monday is the 8th. Looking for the first
+    // Monday strictly after the 1st returns the 15th — a week late.
+    expect(secondMondayInDecember(2025)).toBe('2025-12-08');
   });
 });
 
@@ -191,6 +210,16 @@ describe('the rule catalogue', () => {
     expect(() => swearingInDateForRule('ca-la-county-charter', 2026))
       .toThrow(/contradicts itself/i);
     expect(CA_SWEARING_IN_RULES['ca-la-county-charter']).toBeDefined();
+  });
+
+  it('gives Los Angeles a real date, because its charter fixes one', () => {
+    // 🔴 LA IS THE EXCEPTION AMONG THE CITIES, NOT THE PATTERN. Its charter § 205(c) says "The
+    // term of an official elected to City office shall commence on the second Monday in December
+    // next following his or her election" — an actual date, computable, with no council meeting
+    // in the way. Burbank's charter was read the same day and fixes NO commencement date: it
+    // only says the county certifies to the Council, "who shall thereupon declare the result".
+    // So being a charter city does not mean having a date.
+    expect(swearingInDateForRule('ca-la-city-charter-205c', 2026)).toBe('2026-12-14');
   });
 
   it('refuses to compute a date for the city rule instead of inventing one', () => {

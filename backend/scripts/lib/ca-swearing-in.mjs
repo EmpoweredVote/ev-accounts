@@ -62,6 +62,18 @@ export function lastFridayInNovember(year) {
   return iso(year, 11, 30 - offset);
 }
 
+/**
+ * The second Monday in December of `year` — Los Angeles City Charter § 205(c).
+ *
+ * ⚠ 1 December COUNTS when it is itself a Monday (December 2025). Searching for the first
+ * Monday strictly after the 1st is a week late in those years.
+ */
+export function secondMondayInDecember(year) {
+  const dec1 = new Date(Date.UTC(year, 11, 1));
+  const offset = (MONDAY - dec1.getUTCDay() + 7) % 7;
+  return iso(year, 12, 1 + offset + 7);
+}
+
 /** The second Friday in December of `year` — Cal. Educ. Code § 5017. */
 export function secondFridayInDecember(year) {
   const first = firstFridayInDecember(year);
@@ -232,6 +244,22 @@ export const CA_SWEARING_IN_RULES = {
     authority: 'Cal. Const. art. VI § 16(c) — terms begin the Monday after January 1 following their election',
     source: 'https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CONS&sectionNum=SEC.%2016.&article=VI (read 2026-11-04)',
     compute: (electionYear) => firstMondayAfterJanuary1(electionYear + 1),
+  },
+  'ca-la-city-charter-205c': {
+    id: 'ca-la-city-charter-205c',
+    label: 'City of Los Angeles elected officers',
+    authority:
+      'Los Angeles City Charter § 205(c) — "The term of an official elected to City office shall commence on the second Monday in December next following his or her election"',
+    source: 'https://codelibrary.amlegal.com/codes/los_angeles/latest/laac/0-0-0-392 (read 2026-11-04)',
+    compute: (electionYear) => secondMondayInDecember(electionYear),
+    // 🔴 LOS ANGELES IS THE EXCEPTION AMONG THE 53 CITIES, NOT THE PATTERN. Its charter fixes a
+    // DATE, so no council meeting stands between the election and the handover. Burbank's
+    // charter, read the same day, fixes no commencement at all — it says only that the county
+    // certifies to the Council, "who shall thereupon declare the result". Being a charter city
+    // does not mean having a date.
+    // ⚠ § 205(c) also stages the cycle: the Mayor, City Attorney, Controller and ODD-numbered
+    // council districts commence on each fourth anniversary of 2022, which is 2026. The four
+    // offices in this wave are Mayor, City Attorney and Council Districts 3 and 9 — both odd.
   },
   'ca-gov-36503': {
     id: 'ca-gov-36503',
