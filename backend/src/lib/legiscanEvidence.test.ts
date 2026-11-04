@@ -41,6 +41,13 @@ function fakeApi(): { query: LegiscanQuery; calls: string[] } {
         { ...person(20013, 'John', 'Prescott', { nickname: 'J.D.' }), sponsor_type_id: 2, sponsor_order: 8, committee_sponsor: 0 },
         // GA records, 2026-10-31: LegiScan misspells Timothy Bearden's surname "Beardon" (SB 86 of 2009).
         { ...person(3398, 'Timothy', 'Beardon'), sponsor_type_id: 2, sponsor_order: 9, committee_sponsor: 0 },
+        // VA, TX and MA records, 2026-11-04 (gun-policy held people): "JJ Singh" is first_name "J.J.";
+        // "Jose Manuel Lozano" is first_name "J. M."; Josh, Sal and Cynthia are printed Joshua, Salvatore, Cindy.
+        { ...person(26302, 'J.J.', 'Singh', { nickname: 'Jas' }), sponsor_type_id: 2, sponsor_order: 10, committee_sponsor: 0 },
+        { ...person(11346, 'J. M.', 'Lozano', { name: 'J.M. Lozano' }), sponsor_type_id: 2, sponsor_order: 11, committee_sponsor: 0 },
+        { ...person(24971, 'Joshua', 'Thomas', { middle_name: 'E.' }), sponsor_type_id: 2, sponsor_order: 12, committee_sponsor: 0 },
+        { ...person(12439, 'Salvatore', 'DiDomenico', { middle_name: 'N.' }), sponsor_type_id: 2, sponsor_order: 13, committee_sponsor: 0 },
+        { ...person(19410, 'Cindy', 'Friedman', { middle_name: 'F.' }), sponsor_type_id: 2, sponsor_order: 14, committee_sponsor: 0 },
       ] },
     2000102: { bill_id: 2000102, state: 'TX', bill_number: 'SB16', session: SESSION, url: 'https://legiscan.com/TX/bill/SB16/2025', sponsors: [] },
     2100001: { bill_id: 2100001, state: 'TX', bill_number: 'HB5337', session: special, url: SPECIAL_URL, sponsors: [
@@ -210,6 +217,26 @@ describe('verifyLegiscanLine', () => {
     expect(verifyLegiscanLine(line, BILL_URL, rec, { fullName: 'John Prescott', lastName: 'Prescott' }).verdict).toBe('verified');
     expect(verifyLegiscanLine(line, BILL_URL, rec, { fullName: 'J.R. Prescott', lastName: 'Prescott' }).verdict).toBe('name_not_present');
     expect(verifyLegiscanLine(line, BILL_URL, rec, { fullName: 'J. Prescott', lastName: 'Prescott' }).verdict).toBe('name_not_present');
+  });
+  it('matches dotted initials printed as the first name to the initials of the given names, and nothing looser', async () => {
+    const rec = await record(BILL_URL);
+    const singh = 'LegiScan TX 89th Legislature Regular Session HB5337: J.J. Singh is listed as a cosponsor.';
+    expect(verifyLegiscanLine(singh, BILL_URL, rec, { fullName: 'JJ Singh', lastName: 'Singh' }).verdict).toBe('verified');
+    expect(verifyLegiscanLine(singh, BILL_URL, rec, { fullName: 'J.J. Singh', lastName: 'Singh' }).verdict).toBe('verified');
+    expect(verifyLegiscanLine(singh, BILL_URL, rec, { fullName: 'J. Singh', lastName: 'Singh' }).verdict).toBe('name_not_present');
+    expect(verifyLegiscanLine(singh, BILL_URL, rec, { fullName: 'John Singh', lastName: 'Singh' }).verdict).toBe('name_not_present');
+    const lozano = 'LegiScan TX 89th Legislature Regular Session HB5337: J.M. Lozano is listed as a cosponsor.';
+    expect(verifyLegiscanLine(lozano, BILL_URL, rec, { fullName: 'Jose Manuel Lozano', lastName: 'Lozano' }).verdict).toBe('verified');
+    expect(verifyLegiscanLine(lozano, BILL_URL, rec, { fullName: 'Jose Lozano', lastName: 'Lozano' }).verdict).toBe('name_not_present');
+    expect(verifyLegiscanLine(lozano, BILL_URL, rec, { fullName: 'Juan Carlos Lozano', lastName: 'Lozano' }).verdict).toBe('name_not_present');
+  });
+  it('matches Josh, Sal and Cynthia to the record\'s Joshua, Salvatore and Cindy', async () => {
+    const rec = await record(BILL_URL);
+    const line = (n: string) => `LegiScan TX 89th Legislature Regular Session HB5337: ${n} is listed as a cosponsor.`;
+    expect(verifyLegiscanLine(line('Joshua Thomas'), BILL_URL, rec, { fullName: 'Josh Thomas', lastName: 'Thomas' }).verdict).toBe('verified');
+    expect(verifyLegiscanLine(line('Salvatore DiDomenico'), BILL_URL, rec, { fullName: 'Sal N. DiDomenico', lastName: 'DiDomenico' }).verdict).toBe('verified');
+    expect(verifyLegiscanLine(line('Cindy Friedman'), BILL_URL, rec, { fullName: 'Cynthia F. Friedman', lastName: 'Friedman' }).verdict).toBe('verified');
+    expect(verifyLegiscanLine(line('Joshua Thomas'), BILL_URL, rec, { fullName: 'John Thomas', lastName: 'Thomas' }).verdict).toBe('name_not_present');
   });
   it('matches a surname LegiScan is known to misspell (Bearden printed "Beardon"), and nothing looser', async () => {
     const rec = await record(BILL_URL);
