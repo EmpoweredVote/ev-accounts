@@ -1,0 +1,97 @@
+{
+  "politician_id": "7520a629-a0ec-44b3-9460-c7e4574a897d",
+  "findings": [
+    {
+      "id": "486c44084a0a335ea2d0856c32c1aca96bf1aaa4866d6d52fdeff59e98eea358",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250103223149/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "nay",
+      "motion": "SB 1174 Senate Third Reading, Assembly Floor",
+      "note": "SB 1174 bars local governments from requiring ID to vote at polling places. He voted no on the Assembly floor (57 yes, 16 no, 6 not voting, passed).",
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:09:50.354Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "be503a2b575fffc46b37fe4f4b41a40032dda6ba45f0fda16467b606470ec155",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250919041548/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1116",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "nay",
+      "motion": "AB 1116 Berman Assembly Third Reading",
+      "note": "AB 1116 (Elections: voter registration) lets a person without a California driver's license or state ID register online by giving the last four digits of their Social Security number, with the Secretary of State checking identity from that number, name and birth date. He voted no on Assembly third reading (60 yes, 18 no, 1 not voting, passed).",
+      "subjects": [
+        "proof of identity to register",
+        "online voter registration without state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:09:50.354Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "42451a4663e4a07d2040f6c0cad5910fc7a7acf0c13c1b9ca968702a1f6315c2",
+      "kind": "own-words",
+      "url": "https://web.archive.org/web/20260206234504/https://ad22.asmrc.org/2025/04/09/alanis-elections-efficiency-and-transparency-bills-advance/",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "passage": "“Recent elections have shown just how critical it is to get results out quickly and accurately,” said Assemblymember Alanis. “AB 16 is a practical proposal that empowers election officials to start processing ballots earlier, freeing up resources and getting more of the results reported more quickly. This will help restore trust in the election process.”",
+      "note": "Press release from his office on his AB 16, which lets elections officials start processing mail ballots earlier. It is about speed of results and trust in elections, not ID or citizenship. Saved as related election-administration material. Page copy is from the Internet Archive because his site blocks direct fetches.",
+      "subjects": [
+        "election administration and public trust (related)",
+        "mail-ballot processing (related)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:09:50.354Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "proof of identity to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site https://ad22.asmrc.org: direct fetches blocked by a bot check, read Internet Archive copies of three election press releases (AB 16, AB 17); no statement on voter ID or citizenship found",
+        "Ballotpedia https://ballotpedia.org/Juan_Alanis_(California) (confirms Assembly District 22; nothing on the subject)",
+        "two news searches on name plus subject words (no statement of his on voter ID or citizenship; a statement on SB 1174 not found)",
+        "California Assembly vote pages for SB 1174, AB 25 and AB 1116 via the Internet Archive copy of the leginfo vote pages (leginfo itself is behind a bot check)",
+        "AB 25 (2025): only the Assembly Elections Committee voted and he is not on it; no vote of his exists",
+        "campaign site: not reviewed, none located"
+      ],
+      "found": 3,
+      "at": "2026-10-28T16:09:50.354Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

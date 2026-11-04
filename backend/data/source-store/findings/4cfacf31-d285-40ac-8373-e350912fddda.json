@@ -1,0 +1,148 @@
+{
+  "politician_id": "4cfacf31-d285-40ac-8373-e350912fddda",
+  "findings": [
+    {
+      "id": "784085e571aaf1bd64eab388144e9579e10de3538ea4fa16825da6fe777f4641",
+      "kind": "own-words",
+      "url": "https://berman.asmdc.org/press-releases/20251104-assemblymember-berman-refutes-trumps-lie-californias-voting-rigged",
+      "date": "2025-11-04",
+      "date_precision": "day",
+      "passage": "“Voting by mail is both safe and bipartisan.",
+      "note": "Statement on his official site answering the President's claim that California's vote-by-mail system is rigged; he says he wrote the 2021 law making California a universal vote-by-mail state and calls the fraud claims baseless.",
+      "subjects": [
+        "mail-ballot security",
+        "election integrity and voter fraud claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:00:10.299Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39764722e3bbc06c8ae5b2a06503d03bb02de30a005cce366254bade4bba4619",
+      "kind": "own-words",
+      "url": "https://berman.asmdc.org/press-releases/20260331-assemblymember-bermans-response-president-trumps-most-recent-attack-voting",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "passage": "Faced with the potential for massive and embarrassing losses in the midterms, Trump is now trying to erect as many unnecessary barriers as possible to voting, with the goal of disenfranchising millions of Americans who are tired of his incompetence, corruption, and cruelty.",
+      "note": "Statement on his official site about the federal executive order restricting mail-in voting. The same release says he chaired the Assembly Elections Committee from 2017 to 2021 and authored AB 860 (2020) and AB 37 (2021) on mail ballots.",
+      "subjects": [
+        "mail-ballot access",
+        "election integrity and voter fraud claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:00:10.299Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43bfbaf5ec96dc45d29cf6476b821525ec9c7ed42ef1e074764eb593d7fd819b",
+      "kind": "own-words",
+      "url": "https://berman.asmdc.org/press-releases/20260716-statement-assemblymember-berman-president-trumps-national-address",
+      "date": "2026-07-16",
+      "date_precision": "day",
+      "passage": "If President Trump wants to make America’s elections more secure, I suggest he start with the man in the mirror.",
+      "note": "Statement on his official site responding to a presidential national address about election security; he rejects the fraud claims about prior elections.",
+      "subjects": [
+        "election integrity and voter fraud claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:00:10.299Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1ec52e461799fc5a901a7868f9a03a3b059a953260b551587a70e4168c15889e",
+      "kind": "own-words",
+      "url": "https://berman.asmdc.org/press-releases/20260824-statement-assemblymember-berman-recent-supreme-court-decision-mail-voting",
+      "date": "2026-08-24",
+      "date_precision": "day",
+      "passage": "California will keep every eligible voter’s mail ballot secure and accessible, and we’ll be back in court immediately if Trump tries to overreach into state election administration.\"",
+      "note": "Statement on his official site about a Supreme Court decision on the executive order limiting mail-in voting.",
+      "subjects": [
+        "mail-ballot security",
+        "mail-ballot access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:00:10.299Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0a33181102bba2ada9265326dc1661e5f87841e2977637ee1e26c4beab45980b",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2026/https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB25 (archive resolved to https://web.archive.org/web/20260605003527/ ...)",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-25-2025",
+      "act": "nay",
+      "motion": "Assembly Elections Committee: Do pass and be re-referred to the Committee on [Judiciary] (FAIL)",
+      "note": "Committee roll call as printed ('Berman'), linked to Marc Berman as the only Berman on the 2025-26 California Assembly roster. AB 25 never reached the floor, so this is its last recorded vote in the Assembly (W2-R7).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ca-committee-2026-10-28",
+        "fetched_at": "2026-10-28T21:11:06.635Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot security",
+        "election integrity and voter fraud claims",
+        "SB 1174 of 2024"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Marc_Berman (confirms sitting Assembly District 23 member on the 2026 general-election ballot)",
+        "his official site https://berman.asmdc.org/ (press release list, four releases on election security and mail voting read in full; nothing found there that names voter ID or proof of citizenship)",
+        "web news searches (two): no statement by him on voter ID, proof of citizenship or the SAVE Act",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (page needs scripts); https://legiscan.com/CA/rollcall/SB1174/id/1456865 (403); his individual floor vote on SB 1174 not confirmed",
+        "not reviewed: Digital Democracy hearing videos for the Assembly Elections Committee hearings on SB 1174 and AB 25"
+      ],
+      "found": 4,
+      "at": "2026-10-28T16:00:10.299Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official California Assembly Elections Committee roll call on AB 25, 2025-04-09 (identity step 2026-10-28, W2-R7)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T21:11:06.635Z",
+      "by": "identity-ca-committee-2026-10-28"
+    }
+  ]
+}

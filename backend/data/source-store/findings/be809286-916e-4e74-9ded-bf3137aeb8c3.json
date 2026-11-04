@@ -1,0 +1,79 @@
+{
+  "politician_id": "be809286-916e-4e74-9ded-bf3137aeb8c3",
+  "findings": [
+    {
+      "id": "92b39ec866c02053a3717a7e522c972d24ee7e657f97796720e11e6cdecf4ce8",
+      "kind": "own-words",
+      "url": "https://guy4nc.org/priorities/electoral-reform-independent-voters/",
+      "date": "2024-06-18",
+      "date_precision": "day",
+      "passage": "Electoral matters are governed by the North Carolina Board of Elections and in each of the 100 counties, a local Board of Elections, each with five members. In total, that is 505 people who make important decisions about elections including the calendar for early voting and voting locations for precincts, approving voting machines, collecting and reviewing campaign finance reports, determining what types of photo IDs can be used to vote, resolving voting and candidate eligibility issues, and certifying elections.",
+      "note": "Campaign issue page on election reform. The sentence lists election boards' duties, including deciding which photo IDs can be used to vote. It states who decides, and gives no view on whether ID should be required. Date is the page's published date; page was modified 2024-07-22.",
+      "subjects": [
+        "voter ID at the polls",
+        "who decides which photo IDs are accepted",
+        "election administration in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:55:28.493Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID for people with no ID",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "confirmed in scope: https://ballotpedia.org/Guy_Meilleur says he is on the November 3, 2026 general ballot for U.S. House North Carolina District 4 (primary was canceled, he advanced)",
+        "On the Record (0 meetings found for this person)",
+        "campaign site guy4nc.org: home, priorities index, independent-voters page (1 passage on the subject), instant-runoff page, restorative-justice page, meet pages, news page, when-where-to-vote page (links to state absentee request only, nothing on ID); nothing else on the subject",
+        "Ballotpedia (profile fetched; no Candidate Connection survey answers, no issue positions)",
+        "not reviewed: congress.gov (never held federal or state legislative office, so no sponsorships or votes expected; not searched)",
+        "not reviewed: news search on name plus subject words (the shared web search budget was used up)",
+        "not reviewed: https://x.com/GuyMeilleur and Facebook (login walls, not fetched)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T21:55:28.493Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "election integrity",
+        "voting rules and election administration"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms Guy Meilleur on the 2026-11-03 general-election ballot for U.S. House NC District 4)",
+        "campaign site https://guy4nc.org (home, priorities, electoral reform pages, immigration survey post, site search for voter ID / photo ID / citizenship / election integrity: nothing stating his view on ID or citizenship proof to vote; the independent-voters page only mentions that election boards decide which photo IDs can be used)",
+        "Branch 2026 candidate profile (nothing on the subject)",
+        "Branch 2024 voter guide response (nothing on the subject)",
+        "blocked: https://goodparty.org/people/guy-meilleur-4c8062e1 (security checkpoint)",
+        "news search on name plus voter ID words (nothing on the subject)",
+        "congress.gov not applicable (never held office)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:57:00.998Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

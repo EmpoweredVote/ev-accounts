@@ -1,0 +1,58 @@
+{
+  "politician_id": "9167576d-d5f5-4779-805b-23348323a48e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "election integrity",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Armen_Kurdian names him as a candidate for U.S. House California District 49, on the November 3, 2026 general-election ballot, advanced from the June 2, 2026 primary",
+        "On the Record (0 appearances; extract-otr.mjs found none)",
+        "Ballotpedia Candidate Connection survey 2026: nothing on the subject",
+        "campaign site https://www.armenkurdian.com (and kurdianforcongress.com): page is script-rendered; the code bundle lists video titles only, one titled 'Defending Democracy Means Letting Voters Decide', no readable text on the subject; nothing on the subject in readable text",
+        "not reviewed: https://www.youtube.com/watch?v=y2j1koX0LYY (campaign video 'Defending Democracy Means Letting Voters Decide', cannot read video)",
+        "not reviewed: congress.gov (not a legislator; no sponsorships possible)",
+        "not reviewed: news search (web search budget exhausted for the session)",
+        "inaccessible: https://www.armenforcongress.com (domain does not exist)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:14:23.508Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity / voter rolls"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia profile (https://ballotpedia.org/Armen_Kurdian): confirms he is on the 2026 general-election ballot for CA-49; nothing on the subject",
+        "California Secretary of State district 49 results page (https://dp.electionresults.sos.ca.gov/returns/us-rep/district/49): shows him advancing from the June primary (known via search result only, not fetched)",
+        "campaign site home page https://www.kurdianforcongress.com: single-page app, no readable text; nothing on the subject",
+        "campaign site issues page https://www.kurdianforcongress.com/issues: seven issue areas, none on voting ID, citizenship or election rules (read through a summarising fetch)",
+        "one news search on name plus subject words: nothing on the subject",
+        "not reviewed: https://www.youtube.com/@ArmenKurdianForCongress",
+        "not reviewed: https://x.com/ArmenKurdian",
+        "blocked: https://factually.co/fact-checks/media/armen-kurdian-profile-352985 (HTTP 403)",
+        "congress.gov: not applicable, not a sitting legislator"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:39:41.645Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

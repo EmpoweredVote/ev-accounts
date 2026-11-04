@@ -1,0 +1,123 @@
+{
+  "id": "AZ-HCR-2025-2022",
+  "scope": "state:az",
+  "title": "HCR 2025 (2022 - Fifty-fifth Legislature - Second Regular Session (azleg session id 125)): (NOW: voter identification; voting)",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/77221",
+    "https://www.azleg.gov/legtext/55leg/2R/bills/HCR2025P.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Bill text\n(quote) REFERENCE TITLE: government-issued voter identification\n(section) Bill text\n(quote) enacting and ordering the submission to the PEOPLE of a measure relating to voter identification.\n(section) Bill text (para 1)\n(quote) 1. Under the power of the referendum, as vested in the legislature, the following measure, relating to voter identification, is enacted to become valid as a law if approved by the voters and on proclamation of the Governor:\n(section) Bill text\n(quote) amending section 16-579, Arizona Revised Statutes; relating to voter identification.\n(section) Sec. 16: -579, Arizona Revised Statutes, is amended to read:\n(quote) a valid form of identification that bears the photograph, name and address of the elector that reasonably appear to be the same as the name and address in the precinct register, including an Arizona driver license, an Arizona nonoperating identification license, a tribal enrollment card or other form of tribal identification or a United States federal, state or local government issued identification.\n(b_no_id_remedy)\n(section) Sec. 16: -579, Arizona Revised Statutes, is amended to read: (para 2)\n(quote) 2. If the elector does not present identification that complies with paragraph 1 of this subsection, the elector is only eligible to vote a provisional ballot as prescribed by section 16-584 or a conditional provisional ballot as provided for in the secretary of state's instruction and procedures manual adopted pursuant to section 16-452.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 16: -579, Arizona Revised Statutes, is amended to read:\n(quote) Identification is deemed valid unless it can be determined on its face that it has expired.\n(other) 0: n\n(other) 1: o\n(other) 2: t\n(other) 3:  \n(other) 4: s\n(other) 5: t\n(other) 6: a\n(other) 7: t\n(other) 8: e\n(other) 9: d",
+  "sponsors": [
+    {
+      "name": "John M. Fillmore",
+      "role": "prime",
+      "version": "HCR2025P: as introduced (printed version)"
+    },
+    {
+      "name": "Leo Biasiucci",
+      "role": "co",
+      "version": "HCR2025P: as introduced (printed version)"
+    },
+    {
+      "name": "Walter \"Walt\" Blackman",
+      "role": "co",
+      "version": "HCR2025P: as introduced (printed version)"
+    },
+    {
+      "name": "Shawnna Bolick",
+      "role": "co",
+      "version": "HCR2025P: as introduced (printed version)"
+    },
+    {
+      "name": "Judy M. Burges",
+      "role": "co",
+      "version": "HCR2025P: as introduced (printed version)"
+    },
+    {
+      "name": "Joseph Chaplik",
+      "role": "co",
+      "version": "HCR2025P: as introduced (printed version)"
+    },
+    {
+      "name": "Lupe Diaz",
+      "role": "co",
+      "version": "HCR2025P: as introduced (printed version)"
+    },
+    {
+      "name": "Mark W. Finchem",
+      "role": "co",
+      "version": "HCR2025P: as introduced (printed version)"
+    },
+    {
+      "name": "Steve Kaiser",
+      "role": "co",
+      "version": "HCR2025P: as introduced (printed version)"
+    },
+    {
+      "name": "John Kavanagh",
+      "role": "co",
+      "version": "HCR2025P: as introduced (printed version)"
+    },
+    {
+      "name": "Teresa Martinez",
+      "role": "co",
+      "version": "HCR2025P: as introduced (printed version)"
+    },
+    {
+      "name": "Quang H Nguyen",
+      "role": "co",
+      "version": "HCR2025P: as introduced (printed version)"
+    },
+    {
+      "name": "Jacqueline Parker",
+      "role": "co",
+      "version": "HCR2025P: as introduced (printed version)"
+    },
+    {
+      "name": "Kevin Payne",
+      "role": "co",
+      "version": "HCR2025P: as introduced (printed version)"
+    },
+    {
+      "name": "Beverly Pingerelli",
+      "role": "co",
+      "version": "HCR2025P: as introduced (printed version)"
+    },
+    {
+      "name": "Ben Toma",
+      "role": "co",
+      "version": "HCR2025P: as introduced (printed version)"
+    },
+    {
+      "name": "Jeff Weninger",
+      "role": "co",
+      "version": "HCR2025P: as introduced (printed version)"
+    },
+    {
+      "name": "Justin Wilmeth",
+      "role": "co",
+      "version": "HCR2025P: as introduced (printed version)"
+    },
+    {
+      "name": "Vince Leach",
+      "role": "co",
+      "version": "HCR2025P: as introduced (printed version)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

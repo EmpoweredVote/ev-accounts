@@ -1,0 +1,38 @@
+{
+  "id": "VA-SB-639-2024",
+  "scope": "state:va",
+  "title": "SB639 (2024 Regular Session): Firearms; removal from persons posing substantial risk, penalties.",
+  "urls": [
+    "https://lis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB639",
+    "https://lis.virginia.gov/cgi-bin/legp604.exe?241+ful+SB639+hil"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 2 (repealing Code 18.2-308.1:6, Chapter 9.2 of Title 19.2, and 19.2-387.3): 2. That §18.2-308.1:6, Chapter 9.2 (§§19.2-152.13 through 19.2-152.17) of Title 19.2, and §19.2-387.3 of the Code of Virginia are repealed.\nSec. 1 (amending Code 18.2-308.09): 1. An individual who is ineligible to possess a firearm pursuant to §18.2-308.1:1, 18.2-308.1:2, 18.2-308.1:3,[- 18.2-308.1:6,-] 18.2-308.1:7, or 18.2-308.1:8 or the substantially similar law of any other state or of the United States.\nSec. 1 (amending Code 18.2-308.2:1): giving, or furnishing, any firearm to any person he knows is prohibited from possessing or transporting a firearm pursuant to §18.2-308.1:1, 18.2-308.1:2, or 18.2-308.1:3, subsection B of §18.2-308.1:4, §[- 18.2-308.1:6 or-] 18.2-308.2, subsection B of §18.2-308.2:01, or §18.2-308.7 is guilty of a Class 4 felony.\nSec. 1 (amending Code 18.2-308.2:2(B)): 37.2-805[-; and (iv) is the applicant subject to an emergency substantial risk order or a substantial risk order entered pursuant to §19.2-152.13 or 19.2-152.14 and prohibited from purchasing, possessing, or transporting a firearm pursuant to §18.2-308.1:6 or any substantially similar law of any other jurisdiction-].",
+  "sponsors": [
+    {
+      "name": "Glen Sturtevant",
+      "politician_id": "405de162-8de9-4aef-af9a-c323c04da698",
+      "role": "patron",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-SB-639-2024.introduced.html",
+      "sha256": "81db129f648d44700313ed39ab6ba469851ad9f49940718c26708622d2d71bec"
+    }
+  }
+}

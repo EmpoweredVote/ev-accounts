@@ -1,0 +1,72 @@
+{
+  "politician_id": "c894de21-bb91-4699-addc-be2348cf62f5",
+  "findings": [
+    {
+      "id": "cd168b917ece201a1dbec7c074a7163839766556c318cee45e21e834c88fd22a",
+      "kind": "own-words",
+      "url": "https://ontherecord.empowered.vote/meetings/5a8dabfe-9bac-4267-bd15-26084f2a5ba6",
+      "date": "2026-06-24",
+      "date_precision": "day",
+      "passage": "And then really where it was solidified the need to have the Second Amendment and have it be unencumbered was during BLM riots and during COVID because we saw the way that the government was willing to overreach and to take away your civil liberties.",
+      "note": "From the transcript of the CD1 primary debate on On the Record (at 41:13), answering a question on his past gun posts. He says he came to own a gun for home defense and ties his view of the Second Amendment to his experience of those events.",
+      "subjects": [
+        "gun rights and the Second Amendment in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:15:18.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "257eef12d74a21b1fdebc45cc7c14f7931f159856893d4b661df55f3ea91b9de",
+      "kind": "own-words",
+      "url": "https://www.jayfeelyforcongress.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "In Congress, I’ll be a voice for the Valley—not the D.C. establishment. That means protecting our water, standing up for our farmers and ranchers, defending our Second Amendment rights, and stopping out-of-control federal mandates that hurt our families, small businesses, and schools.",
+      "note": "Campaign issues page, undated. Lists defending Second Amendment rights among his priorities; no specific gun policy named.",
+      "subjects": [
+        "gun rights and the Second Amendment in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:15:18.679Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment in general",
+        "check every gun buyer",
+        "bans on assault-style guns",
+        "red-flag orders",
+        "carry permits",
+        "federal gun rules"
+      ],
+      "places": [
+        "status: on the 2026 general-election ballot as a nominee for Arizona's 1st District, per https://californiaglobe.com/?p=95264 (names him the nominee facing the other major-party nominee)",
+        "On the Record (1 meeting(s)): CD1 primary debate 2026-06-24, https://ontherecord.empowered.vote/meetings/5a8dabfe-9bac-4267-bd15-26084f2a5ba6, one gun answer saved",
+        "campaign site home page https://www.jayfeelyforcongress.com and issues page https://www.jayfeelyforcongress.com/issues: one general line saved; no detailed gun page found",
+        "https://www.jayfeely.com redirects to a link page; its /issues returned 404",
+        "congress.gov sponsored bills: not applicable, he has never held federal office; no legislator record",
+        "Ballotpedia: not reviewed (pages return empty to the fetch tool)",
+        "two web searches on his name plus gun words: news on a 2018 prom photo with a handgun and its apology, not policy, not saved; no policy statement beyond the above",
+        "nothing found on background checks, red-flag orders, assault-style bans, carry permits or federal gun rules"
+      ],
+      "found": 2,
+      "at": "2026-10-31T00:15:18.679Z",
+      "by": "source-collector"
+    }
+  ]
+}

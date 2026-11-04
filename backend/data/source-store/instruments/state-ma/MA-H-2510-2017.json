@@ -1,0 +1,92 @@
+{
+ "id": "MA-H-2510-2017",
+ "scope": "state:ma",
+ "title": "H2510 (190th General Court): An Act relative to gun free zones",
+ "urls": [
+  "https://malegislature.gov/Bills/190/H2510",
+  "https://malegislature.gov/Bills/190/H2510/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "John C. Velis",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "973d60e2-fca7-4185-bd2a-84a686e925ab"
+  },
+  {
+   "name": "Steven S. Howitt",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "3107f5d0-2cfd-43bc-a8eb-6b8ddc75bfc1"
+  },
+  {
+   "name": "James R. Miceli",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Joseph D. McKenna",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "2fadc37b-4d33-46b4-a3cc-a2ca5ebeb39a"
+  },
+  {
+   "name": "Shawn Dooley",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Susan Williams Gifford",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Angelo L. D'Emilia",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Sheila C. Harrington",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Angelo J. Puppolo, Jr.",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "9b3772d3-3602-457a-82e7-479b5e557b13"
+  },
+  {
+   "name": "Donald R. Berthiaume, Jr.",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "329212d4-14ef-4685-9d95-cc7473aad949"
+  },
+  {
+   "name": "Donald F. Humason, Jr.",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-H-2510-2017.html",
+   "sha256": "2d8b362862dbc8065eea16ce5ef4d07f3454cb49941a4b26acd00c8d8dd18eba"
+  }
+ },
+ "operative_text": "Whereas, it has become evident that “Gun Free Zones” have become a popular target for murderers and terrorists; and\nWhereas, “Gun Free Zones” have become dangerous places for our children and families; and\nWhereas, the citizens of the Commonwealth have the right to defend themselves and others anywhere they have the legal right to be; and\nWhereas, the employees of the government at all levels should be able to work in a safe and responsive environment;\nSECTION 1. There shall be a commission established to review current and future policies within the Commonwealth regarding so-called “Gun Free Zones”.\n(a) The members of the commission shall be as follows; one member shall be the colonel of the state police, one member shall be appointed by the Massachusetts Law Enforcement Firearms Instructors’ and Armorers’ Association, one member shall be a private security expert appointed by the President of the Senate, one shall be a self-defense expert appointed by the Speaker of the House, and one shall be a counter terrorism expert appointed by the Governor.\n(b) The commission shall be tasked with reviewing current statutes, regulations and or policies within the Commonwealth regarding facilities, properties, and areas where lawful citizens are not allowed to carry items for self-defense including, but not limited to, firearms, defensive sprays and knives. The commission shall work to identify potential unsafe areas within the Commonwealth and provide suggestions for increasing the safety of citizens in these areas.\n(c) The commission shall be provided with quarters in the state house or elsewhere and may:\n(i) expend for expenses and for expert, legal, clerical and other assistance such sums as may be appropriated therefor;\n(ii) travel within the commonwealth; and\n(iii) hold hearings.\n(d) Private or executive meetings of the commission shall be open to the public unless a majority of the members of the task force shall vote otherwise. A notice of each such meeting shall be filed with the clerk of either branch, and the notice or a copy thereof shall be publicly posted in the office of such clerk at least 24 hours prior to such meeting, excluding Saturdays, Sundays and legal holidays.\n(e) The commission shall report the results of its study, together with drafts of legislation or regulation, if any, necessary to carry its recommendations into effect, by filing the report with the clerks of the House of Representatives and Senate on or before December 31st, 2017. The clerks of the House of Representatives and Senate shall forward the report to the chairs of the Joint Committee on Public Safety and Homeland Security and the Chairs of the Joint Committee on State Administration and Regulatory Oversight."
+}

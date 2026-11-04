@@ -1,0 +1,596 @@
+{
+  "politician_id": "2b1a645a-72ce-4c0f-80ec-17565a2d6d10",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "c07bf8e618c0054c09f20a0b730ee03df202e6670fb477ed845a83ae57619d89",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/192/HouseRollCall132.pdf",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-8-2022",
+      "act": "nay",
+      "motion": "H.4359 On adoption of amendment #8, House Yea and Nay No. 132 (32 yeas, 126 nays)",
+      "note": "Decker is recorded N. A Beacon Hill Roll Call article (https://gazettenet.com/2022/02/03/beacon-hill-roll-call-jan-24-to-jan-28-2022-44905014/) says the House that day rejected, 32 to 126, an amendment requiring a federal or Massachusetts picture ID at the polls with a fee waiver. Two roll calls that day (No. 132 on amendment 8, and No. 139 on amendment 7, already on file) have that same 32-126 tally, and I could not confirm from the pages which amendment holds the ID text, so this match to the ID amendment is not confirmed.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:45:16.280Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "818586ba7a6fa8e00a512d1c240c01472b0f796fab8f64a338fb0b5e616ea7fe",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: yea (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9fc7fe42d4ca0418da57b37f789b4766ff618ad71e31a528b663386efac66476",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: yea (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "3cb7a6eb2595e83f808e9aa6a3f3bb5e782a0aa86dc925a943767e1bab71e9ec",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/House/H4376",
+      "date": "2014-07-31",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4376-2013",
+      "act": "yea",
+      "motion": "Acceptance of the committee of conference report (Yea and Nay No. 483)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, Acceptance of the committee of conference report (Yea and Nay No. 483), 2014-07-31: yea (tally 122–30); census gate: multi-subject.",
+      "subjects": [
+        "firearm license classes merged and Class B licences phased out",
+        "new penalties for shooting and for trafficking guns into the state",
+        "background-check records sent to the federal system",
+        "ban on carrying firearms on school and college grounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "malegislature.gov roll-call PDFs + LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:34:02.477850Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4376-2013.introduced.pdf",
+          "sha256": "b94514a66e779c1400d1b875eb3aac207f6b1b1f12f9928fd8d977feab23bb61"
+        }
+      }
+    },
+    {
+      "id": "c5523d50a631897031188db98ea5d927074d7126174a492b6b9e8d21f240f855",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4517",
+      "date": "2018-05-23",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4517-2017",
+      "act": "yea",
+      "motion": "House On Engrossment Yea and Nay No. 359",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MA House, House On Engrossment Yea and Nay No. 359, 2018-05-23: yea (tally 139–14); census gate: near-unanimous.",
+      "subjects": [
+        "court orders to remove guns from people at risk of harming self or others",
+        "emergency orders without notice",
+        "penalty for false petitions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4517-2017.introduced.pdf",
+          "sha256": "3bac8bca02408059e2c0db49bae39de8a690f0fb6e1b5469f7a23cf51fbd5cc4"
+        }
+      }
+    },
+    {
+      "id": "7727b62aa6ef27fb9e9cfc73a0491b1c4dc595f2b71982384c335273fe2771d1",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4670",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4670-2017",
+      "act": "yea",
+      "motion": "On acceptance of the conference report (Yea and Nay No. 389)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, On acceptance of the conference report (Yea and Nay No. 389), 2018-06-28: yea (tally 133–15); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders to remove guns from people at risk of harming self or others",
+        "protection order added as a bar to gun licenses",
+        "stun gun rules and locked storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4670-2017.introduced.pdf",
+          "sha256": "6b37958358a3f01548ef0d16c386b3caaf5993d5c100f88279ff5b45ad1fe098"
+        }
+      }
+    },
+    {
+      "id": "a00af043e828adfd93628001bb55296f31caa4e02bcca3e7273445aca8997aab",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/191/H2092",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MA-H-2092-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-2092-2019 (LegiScan sponsor list): H2092 (191st General Court): Relative to universal background checks for private gun sales.",
+      "subjects": [
+        "private gun sales must go through a licensed dealer",
+        "fee cap and penalty for unlawful private transfers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2092-2019.introduced.pdf",
+          "sha256": "5fd01d1a09d8ce366cbd5257b50c2937d0029e8495690da7567930f79f4a2203"
+        }
+      }
+    },
+    {
+      "id": "3e37989df5a7135793590676582056d9b4894fffcf53abf65d4e894b1a9c125c",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H3980",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MA-H-3980-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-3980-2023 (LegiScan sponsor list): H3980 (193rd General Court): Modernizing firearm laws.",
+      "subjects": [
+        "all firearms and magazines must be registered, with serial numbers required",
+        "privately made (ghost) guns regulated",
+        "licensing rewritten, with new limits on assault-style firearms and large magazines",
+        "extreme risk protection orders to remove guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-3980-2023.introduced.pdf",
+          "sha256": "fc2cf32dbd88bb4b1b9266311c82ce3b8ee11febb2a878a7f7da17f1ab4578fd"
+        }
+      }
+    },
+    {
+      "id": "a7b3680b261d62ebf6107ab9f9df747c623a6f9a611585300571497c66066cff",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4869",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MA-H-4869-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-4869-2021 (LegiScan sponsor list): H4869 (192nd General Court): Relative to 3D printed guns and ghost guns.",
+      "subjects": [
+        "serial numbers required on firearms; unserialized guns must be registered and marked",
+        "ban on undetectable firearms and on 3D-printing guns without a federal license",
+        "ban on distributing digital gun-printing files in some cases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4869-2021.introduced.pdf",
+          "sha256": "bbafa283c191659d818a8dd83633ee46fe167ce87f0f7135b64e570c963d4381"
+        }
+      }
+    },
+    {
+      "id": "4d167dfeaa7a002a243c61122117ba71daee52e2982f7147d6d771902530636d",
+      "kind": "own-words",
+      "url": "https://www.cambridgeday.com/2018/03/30/decker-calls-town-hall-on-gun-issues-april-4/",
+      "date": "2018-03-30",
+      "date_precision": "day",
+      "passage": "“Massachusetts has the opportunity to build upon its national reputation for strict gun laws by taking a proactive stance in the interest of children,” Decker said.",
+      "note": "Direct quote in Cambridge Day, announcing her town hall on a House extreme-risk-orders bill. Date is the article date.",
+      "subjects": [
+        "strict gun laws",
+        "extreme-risk orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:15.917Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4a17f74a6ada2c15ccb6f40736ec527e36a11149fafdd0b0c30852a56326f5af",
+      "kind": "own-words",
+      "url": "https://recorder.com/?p=225057",
+      "date": "2018-05-02",
+      "date_precision": "day",
+      "passage": "“We’re saying if someone is in your home and you don’t believe they are safe with a gun, if they are going to hurt themselves or hurt someone else that there should be a pause and that we should remove those very things that can hurt them and hurt others,” Decker said.",
+      "note": "Direct quote in the Greenfield Recorder (wire story) on her extreme-risk-orders bill, which the story says she was chief sponsor of. Date is the article date.",
+      "subjects": [
+        "red-flag or extreme-risk orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:15.917Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dac887e224d87590d9d2b73efcafcd436b0e5d0eea5f88065a94bbeb47e11286",
+      "kind": "own-words",
+      "url": "https://www.nbcboston.com/news/local/mass-lawmaker-gets-death-threats-over-gun-control-support/126772/",
+      "date": "2018-03-01",
+      "date_precision": "day",
+      "passage": "“They just talk about how I'm trying to steal their Second Amendment rights,” Decker said in response. “That has nothing to do with the conversation, and we need to stop letting them own the narrative.”",
+      "note": "Direct quote in NBC Boston, replying to a gun-rights group leader who criticised her over remarks at a hearing on her extreme-risk-orders bill. Date is the article date.",
+      "subjects": [
+        "Second Amendment",
+        "red-flag or extreme-risk orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:15.917Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9c20fba92b4226b63d6a5832f01559edcefa74eade01e3b1de54d6ea6608c369",
+      "kind": "own-words",
+      "url": "https://www.marjoriedecker.com/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "She is a nationally recognized leader in the fight against gun violence, most recently authoring five pieces of legislation that became law in the Fall of 2023.",
+      "note": "Biography text on her campaign site (third person, issued by her campaign). Date of the page text not shown.",
+      "subjects": [
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:15.917Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b2d2ad020474dc58bc63695229d0e4bfe3c74644fe6db8c2cf56e297d480d593",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H1650",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-1650-2025",
+      "act": "sponsor",
+      "note": "She is first-named filer (with a second representative) of H.1650, An Act to stop mass shootings, to further regulate the manufacture of assault weapons and large capacity feeding devices; sent to Judiciary. Date is the filing date on the bill page.",
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:15.917Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "be6d35a982aa73171ba395d1a7fd5d297a016f45d05c94dc089042930f1159e1",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H2589",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-2589-2025",
+      "act": "sponsor",
+      "note": "She filed H.2589, requiring licensed gun owners to submit a yearly affidavit; sent to Public Safety and Homeland Security.",
+      "subjects": [
+        "limits on who may keep a gun",
+        "gun licences"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:15.917Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "78720d6b543ecafa52bd59e45cc7249847df0c2d1a0ec8e5d0dd17b7c3282836",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H2590",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-2590-2025",
+      "act": "sponsor",
+      "note": "She filed H.2590, making firearm owners civilly liable for damage caused by lost or stolen firearms.",
+      "subjects": [
+        "owner liability for lost or stolen guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:15.917Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0ff58d69547329f0dc7070ff9f5149d88932dd3fbd168fb6cc8adfc862da65c5",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H2592",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-2592-2025",
+      "act": "sponsor",
+      "note": "She filed H.2592, letting a state official set up a list of people who voluntarily give up eligibility to buy a firearm.",
+      "subjects": [
+        "voluntary do-not-sell list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:15.917Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b04215410d0ae85e47000b1370f59569e6112d5ecbb379a20aafbe512c84738a",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H1656",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-1656-2025",
+      "act": "sponsor",
+      "note": "She filed H.1656, An Act relative to the reckless discharge of firearms; sent to Judiciary.",
+      "subjects": [
+        "reckless discharge of firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:15.917Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "94e85564a49d0efacfddc367d5dd6890a2a94720310afbfc998313c5ef9070e4",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H548",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-548-2025",
+      "act": "sponsor",
+      "note": "She is first-named filer (with one other representative) of H.548, promoting safe firearm storage education for students; co-filing noted as sponsor.",
+      "subjects": [
+        "safe gun storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:15.917Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9d3cd3d4f2c27293060bcae088df4147073a1ff480714ef2b1dbc2a3dcc9568b",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H2305",
+      "date": "2023-02-16",
+      "date_precision": "day",
+      "instrument_id": "MA-H-2305-2023",
+      "act": "sponsor",
+      "note": "She filed H.2305 (earlier session), An Act relative to firearms in certain public buildings; sent to Public Safety and Homeland Security.",
+      "subjects": [
+        "places where guns are allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:43:15.917Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter procedures",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity / voter-roll checks"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Marjorie_Decker (fetched with curl) says she advanced from the September 1, 2026 primary and is on the November 3, 2026 general-election ballot, MA House 25th Middlesex",
+        "On the Record (0 appearances; nothing on the subject)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/MCD1 (confirms office; no voter ID or citizenship bills listed)",
+        "official legislature bills page https://malegislature.gov/Legislators/Profile/MCD1/Bills (only election bill H.818, donation disclosure; nothing on the subject)",
+        "malegislature.gov bill search 'voter identification' (no sponsorship by Decker among results shown, page 1 only)",
+        "campaign site http://www.decker4rep.com/ (home page only; nothing on the subject)",
+        "Ballotpedia candidate survey: not reviewed, link not fetched",
+        "news search: not done, web search budget exhausted"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:04:12.559Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "ID with mail or absentee ballot",
+        "same-day registration and voting access",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "Ballotpedia: confirms she is Massachusetts House 25th Middlesex incumbent on the Nov 3, 2026 ballot; nothing on the subject",
+        "Massachusetts legislature member profile MCD1 (sponsored bills: nothing on voter ID or citizenship)",
+        "campaign site decker4rep.com: home, accomplishments, press and vote pages (nothing on voter ID; the vote page only gives mail and early voting logistics); blocked: https://decker4rep.com/thefacts/ (404)",
+        "Massachusetts House roll-call PDFs 131, 132 and 139 for H.4359 and the bill history page",
+        "Beacon Hill Roll Call article (Gazette) on the Jan 27, 2022 votes; New England Public Media 2022 story (no Decker words)",
+        "two news searches on her name plus subject words: nothing in her own words"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:45:16.280Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large-capacity magazines",
+        "red-flag or extreme-risk orders",
+        "yearly affidavit for licensed owners",
+        "owner liability for lost or stolen guns",
+        "safe storage",
+        "guns in public buildings",
+        "Second Amendment",
+        "2026 ballot question on the 2024 gun law"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page (confirms Representative Marjorie C. Decker, 25th Middlesex; list of her gun bills)",
+        "legislature bill pages for each gun bill found (fetched)",
+        "sponsor list: covered by LegiScan bulk check (also read on the legislature's own pages)",
+        "campaign site marjoriedecker.com (home page fetched; issues page empty)",
+        "Ballotpedia (page came back empty)",
+        "news: Cambridge Day 2018, Greenfield Recorder 2018, NBC Boston 2018",
+        "web search on a 2026 statement or Question 9 position: nothing from her found"
+      ],
+      "found": 11,
+      "at": "2026-11-01T01:43:15.917Z",
+      "by": "source-collector"
+    }
+  ]
+}

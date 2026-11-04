@@ -1,0 +1,67 @@
+{
+  "politician_id": "295a50df-00ec-4f38-ae73-54d618944fbf",
+  "findings": [
+    {
+      "id": "d1c2057c28b9a9de66314d9782a9a555af1fc83cfbd202012f15f99a2e9733c4",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "nay",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Myers'), linked to Jeff Myers (district 42) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.755Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org (not fetched, per instruction)",
+        "web search on name plus subject words (no own-words hit)",
+        "house.mo.gov member pages not fetched (URLs contain ?, barred by robots.txt)",
+        "campaign site myers4mo.com: nothing on the subject",
+        "Warren County Record interviews 2022-08-30 and 2024-07-18: nothing on the subject (only initiative-petition process remarks)",
+        "BallotReady profile: nothing on the subject",
+        "Missouri Times 2022-03-31 announcement: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:05:03.227Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:10:53.755Z",
+      "by": "identity-mo-2026-11-04"
+    }
+  ]
+}

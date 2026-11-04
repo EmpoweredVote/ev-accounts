@@ -1,0 +1,184 @@
+{
+  "politician_id": "1ee95c1d-6127-494b-9f68-e8b3c975adee",
+  "findings": [
+    {
+      "id": "cd545633f2c92ea446bb0a8a9e9439f30d22ade3ad743c656ca1ad63cfe15539",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/hearings/258121",
+      "date": "2024-06-19",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "Do pass, Assembly Local Government Committee",
+      "note": "Voted in favour in the Assembly Local Government Committee on SB 1174, which bars local governments from requiring ID to vote (committee vote 7 to 2).",
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:21.811Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "929240f76aba6e7deb5feefeadb1861c1975a3f7a20b9d96a04efdd3d03d0b09",
+      "kind": "own-words",
+      "url": "https://calmatters.digitaldemocracy.org/hearings/258121",
+      "date": "2024-06-19",
+      "date_precision": "day",
+      "passage": "Yeah, absolutely. Consistency across our state in how we process elections I think is key to the confidence that we have in our elections. So thank you for doing this bill. Happy to support.",
+      "note": "Said in committee on SB 1174, the bill barring local voter-ID rules, as transcribed by Digital Democracy.",
+      "subjects": [
+        "local voter-ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:21.811Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "226ce22399139b58e90f8cbc80fa072356ef04b54d47bdf010503cdb8af7e19f",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/hearings/258297",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "Assembly floor third reading",
+      "note": "Voted in favour on the Assembly floor of SB 1174; the roll lists him among the ayes.",
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:21.811Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8ebc393e4034969bff9f0083ed7aea18744233fa0e556d90f93012001dc27d75",
+      "kind": "own-words",
+      "url": "https://calmatters.digitaldemocracy.org/hearings/258297",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "passage": "And if this as a moment, to be able to maybe exchange some dialogue and set the record straight, you know, the history that we have in this country around ID requirements is both racist and discriminatory and really has been able to interfere with an individual Americans right to be able to exercise their right to vote.",
+      "note": "Floor speech in support of SB 1174, as transcribed by Digital Democracy.",
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:21.811Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ab8df9261f5745da659533c5c831df0c081d3a3fecfa57a65d9509f98236c47e",
+      "kind": "own-words",
+      "url": "https://calmatters.digitaldemocracy.org/hearings/258297",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "passage": "Now, there is no evidence of non citizens voting in our elections. This is something that is maliciously spread across social media and taken as fact.",
+      "note": "Same floor speech; speaks on non-citizen voting claims.",
+      "subjects": [
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:21.811Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "38dfebdb769fbe808da70b0b56aab81cc1d8c6affbb0ced59dda77ecba748e6e",
+      "kind": "own-words",
+      "url": "https://calmatters.digitaldemocracy.org/hearings/258297",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "passage": "It compromises our ability to be able to have faith in our mail-in voting system because of course that is something that is signed for on the back of your envelope and have to be matched back at your registrar of voters. No ID required.",
+      "note": "Same floor speech; describes how mail ballots are checked by signature, with no ID required.",
+      "subjects": [
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:21.811Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "480888e61a78eb6b9d1b4b01fd4258138c888a8f5eceb6c05030f7c819442122",
+      "kind": "own-words",
+      "url": "https://calmatters.digitaldemocracy.org/hearings/258297",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "passage": "We have faith in our Secretary of State and we have faith in our elections process here in the state of California. And it is the root of that faith that compels us to stay the course and make sure that we are not changing our standards when it comes to voter ID.",
+      "note": "Same floor speech; on keeping California's current voter-ID standard.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:21.811Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Digital Democracy bill page for SB 1174 (2023-24) with vote rolls and hearing transcripts",
+        "Digital Democracy bill page for AB 25 (2025-26 voter ID bill): no vote by this person",
+        "Secretary of State certified candidate list for 2026-11-03 (used to confirm 2026 candidacy)",
+        "news search on name plus voter ID and SAVE Act: nothing on the subject",
+        "blocked: https://ballotpedia.org/ (fetch tool returned empty; direct fetch not attempted further)",
+        "blocked: https://leginfo.legislature.ca.gov/ (403 bot challenge; legiscan also 403)",
+        "official site ward.asmdc.org (site search for voter ID: no results)",
+        "Digital Democracy hearing transcripts: Assembly floor 2024-08-27 and Assembly Local Government 2024-06-19",
+        "status: on the 2026 general-election ballot for Assembly District 78 per https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf"
+      ],
+      "found": 7,
+      "at": "2026-10-28T15:59:21.811Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

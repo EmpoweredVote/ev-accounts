@@ -1,0 +1,64 @@
+{
+  "id": "MA-S-320-2011",
+  "scope": "state:ma",
+  "title": "An Act relative to voter identification (S.320, filed 2011; accompanied a study order 2012-07-23)",
+  "urls": [
+    "https://malegislature.gov/Bills/187/S320",
+    "https://malegislature.gov/Bills/187/S320.Html",
+    "https://malegislature.gov/Bills/187/S320/Cosponsor"
+  ],
+  "version": "as-filed",
+  "operative_text": "Be it enacted by the Senate and House of Representatives in General Court assembled, and by the authority of the same, as follows: SECTION 1. Chapter 54 of the General Laws, as appearing in the 2008 Official Edition, is hereby amended by striking out section 76 and inserting in place thereof a new section 76:- Section 76. Each voter desiring to vote at a polling place shall give his name and his residence to one of the officers at the entrance to the space within the guard rail, who shall thereupon distinctly announce the same. If such name is found on the voting list, the election officer shall check and repeat the name and shall require the voter to show identification. Acceptable forms of identification shall be a social security card or any other pre-printed form of identification providing the name and either address, signature, or photograph. After the voter’s identification has been verified, the election officer shall admit the voter to the space enclosed by the guard rail and, in case official ballots, other than those marked \"Challenged Ballots'' as provided by section thirty-five A, are used, such voter shall be given one ballot. The use of electronic means such as tape recording equipment or radio broadcasting equipment for the recording or broadcasting of the names of voters not yet checked as having voted shall be prohibited.",
+  "sponsors": [
+    {
+      "name": "Bruce E. Tarr",
+      "politician_id": "b1bd9a21-a37e-49f4-907b-9fba480a1ca2",
+      "role": "prime",
+      "version": "as filed; petitioners tab, S.320, session 187"
+    },
+    {
+      "name": "Michael R. Knapik",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.320, session 187"
+    },
+    {
+      "name": "Robert L. Hedlund",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.320, session 187"
+    },
+    {
+      "name": "Richard J. Ross",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.320, session 187"
+    },
+    {
+      "name": "Richard T. Moore",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.320, session 187"
+    },
+    {
+      "name": "James E. Timilty",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.320, session 187"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+    "fetched_at": "2026-10-31T03:30:00Z",
+    "method": "curl",
+    "saved_copy": {
+      "path": "s3-prep-voting-rights/stage5/raw/ma-id-bills/187_S320.Html.htm",
+      "sha256": "e7d3db8cccf12abb24151e50dbb27419a8837a937adceeff46be91b34bb82cf2"
+    }
+  }
+}

@@ -1,0 +1,422 @@
+{
+  "politician_id": "ac7faadb-52c2-4e13-9073-3a607a4f8e57",
+  "findings": [
+    {
+      "id": "f31364fa4f2a94cc30c56c5082a5714cfcaa873febd7929b815b2b3e14c719a4",
+      "kind": "own-words",
+      "url": "https://www.baldwin.senate.gov/news/press-releases/baldwin-colleagues-demand-trump-admin-halt-2026-election-interference-efforts",
+      "date": "2026-10-01",
+      "date_precision": "day",
+      "passage": "The 2026 midterm elections are already underway. Your unsubstantiated allegations of noncitizen voter fraud, public recitation of unreliable data, and unwarranted conditioning of continued grant funding for state election security measures on compliance with politically motivated requests for voter data appear to be calculated efforts to undermine confidence in our elections and risks wrongly disenfranchising voters.",
+      "note": "Letter from Baldwin and other senators to the Homeland Security Secretary, published on her official site. It disputes claims of non-citizen registration and objects to pressure on states over voter-roll data.",
+      "subjects": [
+        "non-citizen voting claims",
+        "voter-roll citizenship checks",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:11:23.003Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "04c7e86004c902ae9864e8f5aac2982fe88cdc197a782aa5fffb135c1cf9a23f",
+      "kind": "own-words",
+      "url": "https://www.baldwin.senate.gov/news/press-releases/baldwin-colleagues-demand-trump-admin-halt-2026-election-interference-efforts",
+      "date": "2026-10-01",
+      "date_precision": "day",
+      "passage": "Since then, DHS has repeatedly pressured states to share their voter rolls and run them through the modified SAVE program, despite legal concerns and known accuracy issues.",
+      "note": "Same joint letter. Concerns the federal SAVE data system (a citizenship-status checking system), not the SAVE Act bill. It says the system's data on citizenship can be inaccurate.",
+      "subjects": [
+        "voter-roll citizenship checks",
+        "non-citizen voting claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:11:23.003Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8c8410607ec00cbcc1faf5fc24c52eceaf62bece418c74896bb68837aa008ea",
+      "kind": "own-words",
+      "url": "https://www.wbay.com/2026/02/13/save-act-draws-mixed-reactions-wisconsin-voters/",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "passage": "“I am all about keeping our elections safe and secure, and trust our local clerks to do that, but that is simply not what this bill is about,” Baldwin said. “This bill is being pushed because Trump lost an election six years ago and has been lying about it and undermining faith in our elections ever since. This bill will make it harder for Americans to exercise their constitutional right to vote and to have their voices heard at the ballot box – and I am against that.”",
+      "note": "Statement to WBAY on the SAVE Act, the House-passed bill that would require proof of citizenship to register and photo ID to vote. She says she will not support it.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "election security"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:49:47.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f1f032edd774e8dac238d0bf201fc8f59c7fd5291cdfc4a4db49a0b359d7ab2",
+      "kind": "own-words",
+      "url": "https://www.wpr.org/news/wisconsin-tammy-baldwin-gop-bill-restrict-voting",
+      "date": "2026-02-06",
+      "date_precision": "day",
+      "passage": "“I am highly suspicious of any legislation that makes it harder for people to exercise their constitutional right to vote and to intimidate people from accessing the ballot box,” Baldwin said.",
+      "note": "Remarks to reporters in Milwaukee, quoted by Wisconsin Public Radio, on the SAVE Act proof-of-citizenship and photo-ID bill.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "voting access in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:49:47.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cd77483482ae7556c56a5a130568e8edcdff317447939d04334f1db455f33da1",
+      "kind": "record",
+      "url": "https://watch.vote/votes/119-2026-s73",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "Cloture on S.Amdt. 4732 (To require voters to provide photo identification) to S.Amdt. 4420 to S. 1383",
+      "note": "Senate roll call 73. The page lists her as voting nay. The cloture motion was rejected 53-47. Source is a third-party tracker; the official senate.gov page was blocked.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:49:47.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d7675ba70c37b1ef2180d4ca25b67dd2d45fc2291a4b89110e9b23a9af40ba0b",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-117s2938enr/html/BILLS-117s2938enr.htm",
+      "date": "2022-06-23",
+      "date_precision": "day",
+      "instrument_id": "US-S-2938-2022",
+      "act": "yea",
+      "motion": "Motion to Concur in the House amendment to S. 2938 with an amendment (Amdt. No. 5099)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US Senate, Motion to Concur in the House amendment to S. 2938 with an amendment (Amdt. No. 5099), 2022-06-23: yea (tally 65–33); census gate: multi-subject.",
+      "subjects": [
+        "background checks for buyers under 21",
+        "court orders that take guns from a dangerous person (state grants)",
+        "gun trafficking (package)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c20fcb96eb78e01ead82694ac19d878a311409fb4bbbe34cb7a90636662f5d55",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2023252",
+      "date": "2023-06-22",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-44-2023",
+      "act": "nay",
+      "motion": "On the Joint Resolution (H.J. Res. 44)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Joint Resolution (H.J. Res. 44), 2023-06-22: nay (tally 49–50); census gate: none.",
+      "subjects": [
+        "cancel the federal pistol-brace rule"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-118hjres44eh.txt",
+          "sha256": "d04fe1fe2a2512a1932d14b7b93d88fe25ac6712851bc4caa37df31b89101f4d"
+        }
+      }
+    },
+    {
+      "id": "5ad2aa68bfbab048a12d5be66f21722454b3313fb30f46f1745edde9ea11774a",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2024/https://www.senate.gov/legislative/LIS/roll_call_votes/vote1131/vote_113_1_00097.htm",
+      "date": "2013-04-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-649-SAMDT-715-2013",
+      "act": "yea",
+      "motion": "On the Amendment (Manchin Amdt. No. 715) to S. 649 (Safe Communities, Safe Schools Act of 2013)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Amendment (Manchin Amdt. No. 715) to S. 649 (Safe Communities, Safe Schools Act of 2013), 2013-04-17: yea (tally 54–46); census gate: none.",
+      "subjects": [
+        "background checks at gun shows and online sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/CREC-2013-04-11-senate.pdf",
+          "sha256": "5cbf6123ec6d0ee19de0b8748333db8dffcc46d276dd1e80d1692c182b9872fb"
+        }
+      }
+    },
+    {
+      "id": "2aee36e893bb5474cd8d242d7254f09f95571ddd55e723aaadb01a3471855a68",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2024/https://www.senate.gov/legislative/LIS/roll_call_votes/vote1131/vote_113_1_00100.htm",
+      "date": "2013-04-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-649-SAMDT-719-2013",
+      "act": "nay",
+      "motion": "On the Amendment (Cornyn Amdt. No. 719) to S. 649 (Safe Communities, Safe Schools Act of 2013)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Amendment (Cornyn Amdt. No. 719) to S. 649 (Safe Communities, Safe Schools Act of 2013), 2013-04-17: nay (tally 57–43); census gate: none.",
+      "subjects": [
+        "honor carry permits from other states"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/CREC-2013-04-17-senate.pdf",
+          "sha256": "40bb495c367c32e142f8ea953accada60d7a67c47296fcd8b7dd71b653ef3a69"
+        }
+      }
+    },
+    {
+      "id": "eb805d1472aefe4f67f8f60732d337732931be70ca8fa4a251d020168a076081",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2024/https://www.senate.gov/legislative/LIS/roll_call_votes/vote1131/vote_113_1_00101.htm",
+      "date": "2013-04-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-649-SAMDT-711-2013",
+      "act": "yea",
+      "motion": "On the Amendment (Feinstein Amdt. No. 711) to S. 649 (Safe Communities, Safe Schools Act of 2013)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Amendment (Feinstein Amdt. No. 711) to S. 649 (Safe Communities, Safe Schools Act of 2013), 2013-04-17: yea (tally 40–60); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns",
+        "large magazine limit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/CREC-2013-04-11-senate.pdf",
+          "sha256": "5cbf6123ec6d0ee19de0b8748333db8dffcc46d276dd1e80d1692c182b9872fb"
+        }
+      }
+    },
+    {
+      "id": "c90bdbcf78bf71ec4d53648b4f8ebe188ca331c8dd00e4aa90ea8f004b52d94a",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2025190",
+      "date": "2025-07-01",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2025",
+      "act": "nay",
+      "motion": "On Passage of the Bill (H.R. 1, as Amended)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US Senate, On Passage of the Bill (H.R. 1, as Amended), 2025-07-01: nay (tally 50–50); census gate: multi-subject.",
+      "subjects": [
+        "end the federal tax on suppressors and short-barrelled guns",
+        "budget (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bd995a1e3dcb680b70cd621d4f6b5164604a5bb6d3a92c8170d6bb68a529fb9",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/115th-congress/house-joint-resolution/40",
+      "date": "2017-02-15",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-40-2017",
+      "act": "nay",
+      "motion": "Passed Senate without amendment by Yea-Nay Vote. 57 - 43. Record Vote Number: 66 (Roll 66)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, Passed Senate without amendment by Yea-Nay Vote. 57 - 43. Record Vote Number: 66 (Roll 66), 2017-02-15: nay (tally 57–43); census gate: none.",
+      "subjects": [
+        "rule sending records to gun background check system overturned"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HJRES-40-2017.htm",
+          "sha256": "616db93c5dbc0f8d42ff56878c6d7302412f4feaade1ac2794ac4020fae05e55"
+        }
+      }
+    },
+    {
+      "id": "7b0ece74e62d90b736e118101b5ca4d4a3d5365e9a5c7049fec2dae5e9351c9e",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/117th-congress/senate-bill/3623",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "US-S-3623-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2022-03-10",
+      "note": "co sponsor of US-S-3623-2022 (cosponsor 2022-03-10): S 3623 (117th Congress): Violence Against Women Act Reauthorization Act of 2022.",
+      "subjects": [
+        "failed gun background checks reported to state and tribal police within 24 hours",
+        "special prosecutors for domestic-violence gun prohibitions",
+        "annual report on background check denials"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-S-3623-2022.htm",
+          "sha256": "419c00ae6f2e6419ac37d5acb435277d30262291fcc4f6029d92a54840724e31"
+        }
+      }
+    },
+    {
+      "id": "bc4d8c5d394b8fd0c6878c21f7d001c7298234610622b0e0bfaf94d9ab462625",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/senate-bill/494",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "US-S-494-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2023-02-16",
+      "note": "co sponsor of US-S-494-2023 (cosponsor 2023-02-16): S 494 (118th Congress): Background Check Expansion Act.",
+      "subjects": [
+        "background check required for private firearm sales and transfers",
+        "dealer notice and certification form"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-S-494-2023.htm",
+          "sha256": "0eaaa7cc5526464d22459d097de221fb72ed82b50625475b2294e52829e78e63"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll citizenship checks",
+        "non-citizen voting claims",
+        "election integrity"
+      ],
+      "places": [
+        "status: sitting U.S. Senator (Wisconsin), confirmed on https://www.baldwin.senate.gov/news/press-releases; current term runs to 2031 per 2024 re-election on Ballotpedia, so not on the 2026 ballot; in scope as a sitting member",
+        "On the Record (0 appearances)",
+        "official site press release list and site search (baldwin.senate.gov): one relevant release found",
+        "Ballotpedia https://ballotpedia.org/Tammy_Baldwin: nothing on the subject (only a Freedom to Vote: John R. Lewis Act vote mention, not reviewed in detail)",
+        "blocked: https://www.congress.gov/search (HTTP 403)",
+        "blocked: https://www.congress.gov/bill/117th-congress/senate-bill/2747/cosponsors (page returned no cosponsor data)",
+        "not reviewed: web news search (session search budget used up)",
+        "not reviewed: https://www.baldwin.senate.gov/about/voting-record"
+      ],
+      "found": 2,
+      "at": "2026-10-22T22:11:23.003Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register (SAVE Act, SAVE America Act)",
+        "ID with mail ballots",
+        "voting access in general",
+        "election security and local clerks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "WPR report 2026-02-06 and WBAY report 2026-02-13 (both name her as the Wisconsin US senator)",
+        "watch.vote Senate roll call 73 page (third-party record of the 2026-03-26 vote)",
+        "blocked: https://www.baldwin.senate.gov/news/press-releases (403)",
+        "blocked: https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00073.htm (403)",
+        "not reviewed: https://www.wispolitics.com/2026/dc-wrap-wisconsin-lawmakers-split-on-gop-bill-to-require-proof-of-citizenship-to-register-to-vote/ (no Baldwin text found on fetch)",
+        "Senate floor schedule pages for March 2026 (vote tallies only)",
+        "news searches on name plus SAVE Act and voter ID",
+        "congress.gov not tried; her sponsorships and cosponsorships not reviewed"
+      ],
+      "found": 3,
+      "at": "2026-10-27T21:49:47.816Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

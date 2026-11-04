@@ -1,0 +1,143 @@
+{
+  "politician_id": "a82fec1e-3b94-4f7f-8931-fafb9787def3",
+  "findings": [
+    {
+      "id": "41189e4e027ba1288632e7d0bed6d34132bdce7574616d7ccd881be73938f71d",
+      "kind": "own-words",
+      "url": "https://www.darlinegraham.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "The right to keep and bear arms is guaranteed by the Constitution, and Darline will defend it without apology.",
+      "note": "Campaign issues page statement on gun rights, written in the third person in her campaign's name.",
+      "subjects": [
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:51:32.563Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8cbee2ea977a004f9cb5238174917db5adf7ccbe4e4fae333e655d1b32d1d0fb",
+      "kind": "own-words",
+      "url": "https://www.darlinegraham.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "She opposes gun registries, red-flag confiscation schemes, and bans on the firearms law-abiding South Carolinians own.",
+      "note": "Campaign page says she opposes gun registries, red-flag orders and firearm bans.",
+      "subjects": [
+        "gun registry",
+        "red-flag orders",
+        "ban on firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:51:32.563Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2eb47e119687f979f015f553bd9a5761608495c067b09b28828954358c8b41a9",
+      "kind": "own-words",
+      "url": "https://www.darlinegraham.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "She supports concealed carry reciprocity — and going after criminals instead of law-abiding gun owners.",
+      "note": "Campaign page says she supports honoring other states' concealed carry permits.",
+      "subjects": [
+        "honor other states' carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:51:32.563Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f4d9afabc3107e965e16881e77d6642a4d77d726e36042c547c52803fd8d5e36",
+      "kind": "own-words",
+      "url": "https://www.foxnews.com/opinion/darline-graham-south-carolina-newest-senator-who-i-am-what-i-believe",
+      "date": "2026-08-05",
+      "date_precision": "day",
+      "passage": "I strongly support the Second Amendment, and I believe gun control is how steady you hold your weapon.",
+      "note": "Her own opinion piece in Fox News; general statement supporting the Second Amendment.",
+      "subjects": [
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:51:32.563Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a85145f91829aad80eea4026f745918ff62e0133c2c8c0a083ddd86eacfeb4b4",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/65",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "US-S-65-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2026-07-28",
+      "note": "co sponsor of US-S-65-2025 (cosponsor 2026-07-28): S 65 (119th Congress): Constitutional Concealed Carry Reciprocity Act of 2025.",
+      "subjects": [
+        "national concealed-carry reciprocity for handguns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-S-65-2025.htm",
+          "sha256": "553385ff6538d8ab33b460cba8f4ce77a6b27ee7f2d5542d5f6810317128aeb4"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights general",
+        "carry a gun without a permit / concealed carry reciprocity",
+        "gun registry",
+        "red-flag orders",
+        "bans on firearms",
+        "sponsored gun bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site issues page (darlinegraham.com/issues)",
+        "campaign site home page (nothing on the subject)",
+        "Fox News opinion piece by her, 2026-08-05",
+        "blocked: https://www.dgraham.senate.gov/?p=6383",
+        "blocked: https://www.dgraham.senate.gov/media/press-releases/3/",
+        "blocked: https://www.congress.gov/member/darline-graham/G000598",
+        "blocked: https://www.congress.gov/search (sponsor list; congress.gov member lists could not be read, so no sponsorships recorded)",
+        "web search: her office's Second Amendment release was seen only as a search snippet, not fetched, so not used",
+        "Ballotpedia: not reachable by the fetch tool, not relied on",
+        "news: one JPost article reviewed; it is reporter text, not her words, so not saved"
+      ],
+      "found": 4,
+      "at": "2026-10-30T23:51:32.563Z",
+      "by": "source-collector"
+    }
+  ]
+}

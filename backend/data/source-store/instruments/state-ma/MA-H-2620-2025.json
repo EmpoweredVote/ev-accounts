@@ -1,0 +1,38 @@
+{
+ "id": "MA-H-2620-2025",
+ "scope": "state:ma",
+ "title": "H2620 (194th General Court): An Act repealing red flag laws",
+ "urls": [
+  "https://malegislature.gov/Bills/194/H2620",
+  "https://malegislature.gov/Bills/194/H2620/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "John R. Gaskey",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "08a2dfdf-43fb-408a-b758-aa94497fd871"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-H-2620-2025.html",
+   "sha256": "95c676be3332333b0fe50da87a85fad1668766aecd8a3264f0253e8f13125042"
+  }
+ },
+ "operative_text": "SECTION 1. Section 19 of Chapter 135 of the Acts of 2024 is hereby repealed.\nSECTION 2. Section 25 of Chapter 135 of the Acts of 2024 is hereby amended by striking the definitions for “Petition” and “Petitioner.”\nSECTION 3. Section 26 of Chapter 135 of the Acts of 2024 is hereby amended by striking the definition for “Respondent.”\nSECTION 4. Chapter 140 of the Massachusetts General Laws as appearing in the 2022 Official Edition is hereby amended by striking section 131R in its entirety.\nSECTION 5. Chapter 135 of the Acts of 2024 is hereby amended by repealing sections 76, 77, 77A, 78, 79, 80, 81, 82, 83, 84, and 85.\nSECTION 6. Chapter 140 of the Massachusetts General Laws as appearing in the 2022 Official Edition is hereby amended by striking sections 131S, 131T, 131U, 131V, 131W, 131X, and 131Y."
+}

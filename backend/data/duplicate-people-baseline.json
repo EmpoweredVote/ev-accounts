@@ -1,6 +1,6 @@
 {
   "_comment": "Reviewed pairs for check-duplicate-people.mjs. The gate fails on any pair NOT listed here. Set verdict to different_people (quiet for ever) or same_person (needs a merge migration) and add a note naming the source you checked. \"unreviewed\" is the backlog and should only shrink. split = the seated row holds nothing while the same-named unseated row holds the compass answers or the candidacies (voter-visible harm).",
-  "_updated": "2026-10-22",
+  "_updated": "2026-11-04",
   "pairs": {
     "006cec13-0c52-46b2-a509-703826a0f06b|04afc704-a4eb-42f7-bae4-dcacd6490e09": {
       "names": "Lawrence J Demoss ~ Lawrence Demoss",
@@ -301,15 +301,6 @@
       "split": false,
       "verdict": "unreviewed"
     },
-    "7a43967d-ffde-405f-be63-6ce39278d812|ed095ae9-1864-47e1-9d5d-36b65f0314fe": {
-      "names": "John Rose ~ John W. Rose",
-      "state": "tn",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": false,
-      "verdict": "unreviewed"
-    },
     "7b574d95-952c-476a-b2eb-b9f1493c090c|ad773a1b-a007-4b7f-a1fe-2091db751d0d": {
       "names": "Jerry Ayers ~ Jerry W Ayers",
       "state": "in",
@@ -337,15 +328,6 @@
       "split": true,
       "verdict": "different_people",
       "note": "Different people, re-confirmed 2026-09-30. Andrew C. Kim (e4a6ffc5) is the SEATED Judge of the Los Angeles County Superior Court. Andrew K. Kim (7f6c4fa3) ran for LOS ANGELES MAYOR in the 2026 LA County Primary (2026-06-02) and LOST; he carries 5 Season-1 stances and no seat. Different middle initial, different office. The \"split\" here is BENIGN: a seated judge and a defeated mayoral candidate are supposed to look like this."
-    },
-    "8118811a-aadd-4eb9-9208-de0f5d3b29ad|868b219c-a10a-4dc2-a632-9022c7f835d1": {
-      "names": "Andy Biggs ~ Andy Biggs",
-      "state": "az",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": false,
-      "verdict": "unreviewed"
     },
     "81917154-ced7-5743-8d63-f2ecfb15c29d|e54f6ad7-900d-46eb-bdd6-19d0028b176b": {
       "names": "Gina Almanza-Ramirez ~ Gina Ramirez",
@@ -436,7 +418,8 @@
         "NAME_STATE"
       ],
       "split": false,
-      "verdict": "unreviewed"
+      "verdict": "different_people",
+      "note": "Different people, checked 2026-11-04. a97678bc is the sitting U.S. Senator Dan S. Sullivan (bioguide S001198, FEC S4AK00214). f0a46feb, Daniel J. Sullivan Jr., is a separate 2026 U.S. Senate candidate with his own FEC id (S6AK00326); both are separately on the 2026 Alaska primary and general ballots and both advanced (CA_0231). Migration 1555 and senate-2026/_RUN_PLAN.md already call him a homonym challenger. WARNING: on 2026-11-04 f0a46feb carried the senator's official portrait; that is a namesake photo defect, not evidence of identity."
     },
     "ae4d08d2-71c8-4861-b418-8c981d78d13d|cfa073a3-70af-4552-ae30-7c3236137cf0": {
       "names": "James White ~ James White",

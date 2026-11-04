@@ -1,0 +1,399 @@
+{
+  "politician_id": "1c73491e-50bd-4a4f-ac7b-b8e65acdd2bb",
+  "findings": [
+    {
+      "id": "7b0fd5c8a833de068229f0d905eb73723f1aa11e44b56399953edc1264166f68",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab379",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-379-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Sinicki') on the official bill page; linked to Christine Sinicki via the official 2025 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2821134600bfbdf2ef3d724e20efa03217fbf8181b9a21a283b1220c38ff7f6c",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2011/proposals/ab460",
+      "date": "2012",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-460-2012",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/6/2012; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2012)",
+      "note": "Named as co sponsor ('Sinicki') on the official bill page; linked to Christine M. Sinicki via the official 2012 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c0cadb2a1391ea821eb4bca32c5332fdbbfa724939f71915c733099665cfe088",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2005/related/journals/assembly/20050503/_149",
+      "date": "2005-05-03",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-63-2005",
+      "act": "nay",
+      "motion": "Assembly: Shall Assembly Bill 63 pass notwithstanding the objections of the governor?",
+      "note": "Assembly roll call as printed ('Sinicki'), linked to Christine M. Sinicki (district 20) via the official 2005 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cfe2b58cc03809c65478217a725ed68f4a8e8dfdc570c506d17180e72e4cec02",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2011/av0330",
+      "date": "2011-05-11",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-7-2011",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and passed (PASSAGE) (av0330)",
+      "note": "Assembly roll call as printed ('SINICKI'), linked to Christine M. Sinicki (district 20) via the official 2011 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "515e4cdb71ca796ae8cb9e46e076b85ad8796da70821a4fd4f55a7a9a3f7c11b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2011/proposals/ab724",
+      "date": "2012",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-724-2012",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 3/15/2012; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2012)",
+      "note": "Named as co sponsor ('Sinicki') on the official bill page; linked to Christine M. Sinicki via the official 2012 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1abef592fd420e5a7754f530aecd628a31c41acca61fdf66ceefad9adb233b88",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab941",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-941-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/28/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Sinicki') on the official bill page; linked to Christine Sinicki via the official 2026 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1920eea68a6d5b547cca780be2bb0df6d7fe8e6b0b844c1ffa3ca4aea81819ef",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2007/related/journals/assembly/20070417/_231",
+      "date": "2007-04-17",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-17-2007",
+      "act": "nay",
+      "motion": "Assembly: Assembly Joint Resolution 17 having been read three times, shall the joint resolution be adopted?",
+      "note": "Assembly roll call as printed ('Sinicki'), linked to Christine M. Sinicki (district 20) via the official 2007 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "22f6c63786ae8d3b85cec8927a9b15707f70ef521033b0bf15f10a8d70d0eb36",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2005/related/journals/assembly/20051101/_101",
+      "date": "2005-11-01",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-36-2005",
+      "act": "nay",
+      "motion": "Assembly: Assembly Joint Resolution 36 having been read three times, shall the joint resolution be adopted?",
+      "note": "Assembly roll call as printed ('Sinicki'), linked to Christine M. Sinicki (district 20) via the official 2005 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a92b3a1d28a863321f1e167225b5c089b8c96361cd62ca640dcf023216486cdc",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0090",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0090)",
+      "note": "Assembly roll call as printed ('SINICKI'), linked to Christine Sinicki (district 20) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bcb13791c94ee36710c0447ec9f7789eb5cd06985ecfae9a3d22f03584c00511",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2011/proposals/sb247",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-247-2011",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 10/19/2011; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2012)",
+      "note": "Named as co sponsor ('Sinicki') on the official bill page; linked to Christine M. Sinicki via the official 2011 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3033a48793490738b7b933b26206e0607e71021cf4b89fa8e0780e904022fe20",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sb362",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-362-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 6/27/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Sinicki') on the official bill page; linked to Christine Sinicki via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8d5481a3ebe45c1350eac96092ca06e2c04f307510732457259842de25dbd581",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2005/related/journals/assembly/20050623/_220",
+      "date": "2005-06-23",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-42-2005",
+      "act": "nay",
+      "motion": "Assembly: Senate Bill 42 having been read three times, shall the bill be concurred in?",
+      "note": "Assembly roll call as printed ('Sinicki'), linked to Christine M. Sinicki (district 20) via the official 2005 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a3f034886e697912243c76d9b9961000a7681ddd21bbd92bcb907efaab86191e",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2011/proposals/sb553",
+      "date": "2012",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-553-2012",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 3/6/2012; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2012)",
+      "note": "Named as co sponsor ('Sinicki') on the official bill page; linked to Christine M. Sinicki via the official 2012 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bdf48e7701ed601adf34eea22af1ad6ffbdfa957445f4bb4e435c7024f84405b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sb931",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-931-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/6/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Sinicki') on the official bill page; linked to Christine Sinicki via the official 2026 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2a8c1e6adeeb1b83990f54b1ca73fbb70a72c10f09939c42f1e1da2b2ae32867",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('SINICKI'), linked to Christine Sinicki (district 20) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b953b8ca77be5fb9ddafa6b70a382b4723ca94e06d8baa02c27e3b6f154dc83",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('SINICKI'), linked to Christine Sinicki (district 20) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member page https://legis.wisconsin.gov/assembly/20/sinicki (confirms her as the District 20 representative; nothing on the subject)",
+        "https://www.wuwm.com/wisconsin-assembly-district-20-candidates (confirms she is on the 2026-11-03 ballot; her questionnaire answers have nothing on the subject)",
+        "official press release list (4 items, none on the subject)",
+        "official e-update list (3 items; Spring 2024 ballot e-update read, it covers two election-funding and election-official amendments only, nothing on ID or citizenship)",
+        "blocked: https://ballotpedia.org/Christine_Sinicki",
+        "blocked: https://www.wispolitics.com/2022/rep-sinicki-state-affairs-committee-democrats-condemn-gop-election-bills/",
+        "blocked: https://wisconsinexaminer.com/2025/01/15/assembly-passes-voter-id-constitutional-amendment-proposal-now-it-goes-to-voters-in-april/ (a search summary says she was quoted there; the page itself could not be read, so nothing is saved)",
+        "campaign site not found (sinickiforwisconsin.com does not resolve)",
+        "web news search run twice on her name with voter ID words; no readable page with her own words on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:55:43.102Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 16,
+      "at": "2026-10-28T23:15:12.778Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

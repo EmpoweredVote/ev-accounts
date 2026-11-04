@@ -1,0 +1,39 @@
+{
+  "politician_id": "a5236227-d226-4691-b6bc-5ef224c1ba0d",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (FL-11 nomination went to Joe Strada, confirmed by recount; page: https://mynews13.com/fl/orlando/news/2026/08/24/recount-confirms-strada-wins-the-republican-nomination-for-congressional-district-11 names Ivette Palomo among the beaten primary candidates)",
+        "On the Record (0 appearances)",
+        "Wikipedia 2026 Florida US House elections page (lists her in the FL-11 primary field with poll figure 2.2 percent)",
+        "not searched further: out of scope after primary loss"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:38:47.497Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (unofficial result about 2 percent, last of five; nomination went to another candidate, confirmed by recount): https://www.wftv.com/news/local/floridas-district-11-congressional-primaries-remain-undecided/Y4QAMQS7BRHD5ICHQLRRV6EOVY/ and https://mynews13.com/fl/orlando/news/2026/08/24/recount-confirms-strada-wins-the-republican-nomination-for-congressional-district-11",
+        "On the Record (0 appearances)",
+        "identity confirmed by a local news profile https://www.orangeobserver.com/news/2026/aug/12/meet-11th-congressional-district-republican-candidate-ivette-palomo/ (search result only, not read for stances because she is out of scope)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:47:19.530Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "politician_id": "4046a3d6-87ba-41bb-afd8-422f017c851b",
+  "findings": [
+    {
+      "id": "dccd48f32b76eb8fc13b6396a53d87f5e98083832180cdb25007e7d564aa49b4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81400&billStatusActionId=223261&includeVotes=true",
+      "date": "2024-02-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2785-2024",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('BRAVO'), linked to Flavio Bravo (district None) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0da3aed2455336057e100fde82e9f576a3cc98862d9e034d6b51c98802207615",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=246497&includeVotes=true",
+      "date": "2026-06-12",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('BRAVO'), linked to Flavio Bravo (district 26) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a2d40a39f131a87e5e9a3d3fbb430a43d59903c0638a14b987d48c2958c11a86",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=234554&includeVotes=true",
+      "date": "2025-03-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('BRAVO'), linked to Flavio Bravo (district 26) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "35da6f70d1f84b2046ea1b4872f6f957fd245a0cb67db40f094de4cd201a5fa7",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=233421&includeVotes=true",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('BRAVO'), linked to Flavio Bravo (district 26) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "03a16c0951629bf6162b4a4641ce199c48f3f00694fca3d54826952415a18d7f",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83528&billStatusActionId=241249&includeVotes=true",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1001-2026",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('BRAVO'), linked to Flavio Bravo (district 26) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:53:15.887Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "early ballot return deadline",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "scope check: https://www.ballotready.org/people/flavio-bravo shows him as a candidate for Arizona Senate District 26 on the 2026 general-election ballot",
+        "BallotReady profile: issue stances cover other topics; nothing on the subject",
+        "campaign site https://www.flaviobravo.com: nothing on the subject (page text may have been cut off by the fetch tool)",
+        "blocked: https://ballotpedia.org/Flavio_Bravo (empty page returned)",
+        "https://www.kjzz.org/politics/2026-04-02/2-potentially-conflicting-measures-on-early-mail-voting-could-go-on-arizona-ballot-this-year: does not quote him; nothing on the subject",
+        "https://www.kjzz.org/2024-05-16/content-1880186-gop-senators-want-change-az-voting-laws-elections-officials-say-it-will-do-more-harm and https://www.democracydocket.com/news-alerts/arizona-passes-voter-id-ballot-measure-for-november/: do not name him",
+        "not reachable: https://www.azsenatedemocrats.com (site does not resolve)",
+        "web searches (2): no statement by him on the subject outside the floor votes already on file",
+        "legislature bill pages for sponsorships: not searched, linked separately"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:10:31.144Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

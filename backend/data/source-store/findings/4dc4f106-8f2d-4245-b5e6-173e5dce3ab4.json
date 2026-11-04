@@ -1,0 +1,33 @@
+{
+  "politician_id": "4dc4f106-8f2d-4245-b5e6-173e5dce3ab4",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "scope check: https://ballotpedia.org/Georgia_House_of_Representatives_District_106 shows him as incumbent (assumed office 2025-12-18) running in the 2026-11-03 general election; he took office after 2021, so there is no SB 202 vote",
+        "blocked: https://www.wabe.org/gwinnetts-gen-z-state-rep-akbar-ali-reflects-on-his-first-legislative-session-georgia-election-battles-ahead/ (403 on both fetch and curl)",
+        "blocked: https://www.wabe.org/newly-elected-gwinnett-democrat-akbar-ali-promises-progress-in-georgia-legislature/ (403)",
+        "blocked: https://atlantaciviccircle.org/2026/01/14/akbar-ali-georgias-youngest-state-representative/ (404)",
+        "https://theaugustapress.com/georgias-youngest-lawmaker-hopes-to-implement-foundational-change-this-legislative-session (nothing on the subject)",
+        "https://americankahani.com/politics/mamdani-down-south-pakistani-american-akbar-ali-makes-history-as-georgias-youngest-legislator/ (nothing on the subject)",
+        "https://capitol-beat.org/?p=18068 and the AJC 2026-01-14 profile (nothing on the subject)",
+        "Ballotpedia has no personal page for him at the URLs tried (404); no campaign site found",
+        "news search on his name plus voter ID, citizenship, election bills: nothing on the subject",
+        "not reviewed: legis.ga.gov sponsor and roll-call pages (load by script only, data API returns 401)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:53:26.599Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

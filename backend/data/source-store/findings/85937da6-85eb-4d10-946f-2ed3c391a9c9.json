@@ -1,0 +1,57 @@
+{
+  "politician_id": "85937da6-85eb-4d10-946f-2ed3c391a9c9",
+  "findings": [
+    {
+      "id": "129ef51f25475111840b62b81b369cf7f182f2d05bdf231832455e1963bb5f2c",
+      "kind": "own-words",
+      "url": "https://www.maricopa.gov/DocumentCenter/View/118198/Reim---LD-3-Responses",
+      "date": "2026-03",
+      "date_precision": "month",
+      "passage": "I absolutely agree reforms are needed in order to more efficiently perform election tabulations. It is unacceptable that Arizonans wait for weeks to receive election results while other states, much larger than us, have their results posted the night of the election.",
+      "note": "His written answer to a Maricopa County Board of Supervisors appointment questionnaire. The question asked about reforms (such as ending election-day drop-off of early ballots) to speed up counting. The PDF has no date on its face; its file properties show it was made in mid-March 2026, before his 2026-03-17 appointment. He does not mention voter ID or citizenship proof.",
+      "subjects": [
+        "election integrity laws in general",
+        "early-ballot drop-off and tabulation speed"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:11:04.572Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general",
+        "early-ballot drop-off and tabulation speed"
+      ],
+      "places": [
+        "On the Record (0 appearances found, extract script run with name)",
+        "Maricopa County news flash of 2026-03-17 (appointment to the House District 3 seat; confirms the seat is on the 2026-11-03 ballot; nothing on the subject from him)",
+        "The Ballot Brief House District 3 (confirms on the 2026-11-03 ballot; priorities listed do not include the subject)",
+        "Maricopa County Board of Supervisors appointment questionnaire PDF (his written answers)",
+        "Wikipedia page for him (nothing on the subject)",
+        "blocked: https://goodparty.org/candidate/cody-reim/arizona-house-of-representatives-district-3 (429)",
+        "blocked: https://ballotpedia.org/Cody_Reim (empty page via curl)",
+        "not reviewed: azcapitoltimes.com/news/2026/03/17/cody-reim-appointed-to-replace-chaplik-in-ld3/ (not fetched)",
+        "campaign site: none found",
+        "news searches (2)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:11:04.572Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

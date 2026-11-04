@@ -1,0 +1,151 @@
+{
+  "politician_id": "07c94a00-4238-435e-b6f5-5470c728589b",
+  "findings": [
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Dougherty'), linked to Sean Dougherty (district 172) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "800874da45274888c512c3ce2ff57a496ed6554c3743f6c10ad583d9553f5506",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb1065",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1065-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-1065-2025 (LegiScan sponsor list): HB1065 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for definitions and providing for the offense of sale of firearm or firearm parts without serial numbers and for privately made firearms..",
+      "subjects": [
+        "sale of unserialized gun frames and kits made a felony",
+        "buying parts to build an untraceable gun made a felony",
+        "dealers must mark privately made firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1065-2025.introduced.pdf",
+          "sha256": "34b91995f20ec4936440cc2230659301f600d37e7e50653195d36caf02ae3e7c"
+        }
+      }
+    },
+    {
+      "id": "974a1fe6ea97e6fb2707025c37b89b50385ef4dc9f093e3769f59e928f7f3fe4",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb2244",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2244-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-2244-2025 (LegiScan sponsor list): HB2244 (2025-2026 Regular Session): In sales and use tax, further providing for exclusions from tax. Amending Title 18 (Crimes and Offenses) of the Pennsylvania Consolidated Statutes, in firearms and other dangerous articles, providing for the offense of unauthorized access to firearms..",
+      "subjects": [
+        "secure storage required for firearms",
+        "strict civil liability for unsecured firearms",
+        "sales tax exemption for gun safes and gun locks",
+        "retailer must post storage warning"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2244-2025.amended.pdf",
+          "sha256": "44aa84fd2022c4fe857f2ee2443a4cec6a4dd720f0590e9cdde0e487b9a44723"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballot",
+        "proof of citizenship to register",
+        "what happens to a voter with no ID",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site https://www.pahouse.com/Dougherty/ (home and news center): nothing on the subject",
+        "web searches on his name plus voter ID and election statements: nothing on the subject",
+        "official House page confirms sitting 172nd District member; 2026 ballot status not confirmed from a page I fetched",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:01:36.411Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:45:58.716Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "ghost guns",
+        "carry a gun without a permit",
+        "gun safety general statements",
+        "sponsored gun bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House page https://www.pahouse.com/Dougherty (confirms Rep. Sean M. Dougherty, 172nd District, Philadelphia County; nothing on the subject)",
+        "House news center https://www.pahouse.com/Dougherty/NewsCenter/ (nothing on the subject)",
+        "House news release id=136839 (nothing on the subject)",
+        "inaugural newsletter PDF (not reviewed: text could not be read by the fetch tool)",
+        "blocked: https://northeasttimes.com/2024/12/19/sean-dougherty/",
+        "blocked: https://penncapital-star.com/government-politics/state-rep-elect-sean-dougherty-wants-to-help-philly-police-and-make-the-172nd-house-district-safer/",
+        "blocked: https://bluevoterguide.org/endorser-org/CeaseFirePA/PA/1088",
+        "not found: https://www.palegis.us/house/members/bio?id=2035 (404)",
+        "two web searches (name plus gun words; cosponsorship plus gun words): no sponsorship or own words found",
+        "Ballotpedia not fetched (known to return empty)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:12:25.558Z",
+      "by": "source-collector"
+    }
+  ]
+}

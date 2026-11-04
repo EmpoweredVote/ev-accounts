@@ -1,0 +1,146 @@
+{
+  "politician_id": "1af0730f-0e36-49f8-a454-768f9eb48f03",
+  "findings": [
+    {
+      "id": "afab9db3c90ba5fefe1f7180a7bec96709fd80756b4f0bf350dbb8a73d01e481",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Danny_Minton",
+      "date": "2026-02-19",
+      "date_precision": "day",
+      "passage": "We deserve a democracy where every eligible Texan can vote freely, safely, and confidently. and where every vote is counted and matters.",
+      "note": "Quoted by Ballotpedia, labelled verbatim from his campaign website (Feb 19, 2026) under the heading about protecting the Constitution and the right to vote. General statement about ballot access and secure elections. It names no ID or citizenship requirement.",
+      "subjects": [
+        "election integrity in general",
+        "ballot access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:10:01.112Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "850cb50a67d97feff7137ddf85248b8077444810d18f5bc89832c50477c9512f",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Danny_Minton",
+      "date": "2026-02-19",
+      "date_precision": "day",
+      "passage": "Texas elections should be secure and accessible. not confusing, intimidating, or designed to keep people home.",
+      "note": "Quoted by Ballotpedia, labelled verbatim from his campaign website (Feb 19, 2026). General statement that elections should be both secure and easy to use. It names no ID or citizenship requirement.",
+      "subjects": [
+        "election integrity in general",
+        "ballot access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:10:01.112Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6e2448d541af26c6704f2e2b089e4626c39f698f150e48a160e7a198f59e620d",
+      "kind": "own-words",
+      "url": "https://dannyfortexas.com/priorities",
+      "date": "2026-10",
+      "date_precision": "month",
+      "passage": "We deserve fair maps, secure elections, and easy access to the ballot.",
+      "note": "From the priorities page of his campaign site under the heading about protecting the right to vote; the page is undated, and an archived copy exists from 2026-10-01. Names no specific ID or citizenship rule.",
+      "subjects": [
+        "secure elections",
+        "access to the ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:11:36.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "668c451bcc18c1e96d163551f46d659903f11039139cbf0427fb2c1824fb1f98",
+      "kind": "own-words",
+      "url": "https://dannyfortexas.com/priorities",
+      "date": "2026-10",
+      "date_precision": "month",
+      "passage": "Texas elections should be secure and accessible, not confusing, intimidating, or designed to keep people home.",
+      "note": "Same campaign-site section. Says elections should be both secure and easy to use; does not mention photo ID, proof of citizenship or the SAVE Act.",
+      "subjects": [
+        "secure elections",
+        "access to the ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:11:36.680Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia page https://ballotpedia.org/Danny_Minton says he is on the Nov 3, 2026 general ballot for U.S. House Texas District 6 and advanced from the Mar 3, 2026 primary",
+        "On the Record (0 appearances, 0 sources)",
+        "campaign site https://dannyminton.com/ (home page reviewed; priorities page text found only as quoted on Ballotpedia)",
+        "blocked: https://dannyminton.com/priorities/ (404 on direct fetch)",
+        "blocked: https://dannyminton.com/faq/ (404 on direct fetch)",
+        "blocked: https://dannyminton.com/vote/ (404 on direct fetch)",
+        "https://dannyforcongress.com (placeholder page, nothing on the subject)",
+        "Ballotpedia (profile text searched for voter ID, photo ID, citizenship, SAVE Act, election integrity: nothing beyond the quoted site passage)",
+        "congress.gov: not applicable, candidate has held no legislative seat",
+        "not reviewed: Ballotpedia Candidate Connection survey page (not fetched)",
+        "not reviewed: news search (web search budget used up)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T22:10:01.112Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "the SAVE Act",
+        "voter-roll checks and non-citizen voting",
+        "secure elections and access to the ballot"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Danny_Minton (on the 2026 general-election ballot, Texas 6th Congressional District; no stated positions on the subject)",
+        "campaign site home page https://dannyfortexas.com/ (nothing on the subject)",
+        "campaign site issues page https://dannyfortexas.com/priorities (saved: general statements on secure elections and ballot access; no mention of photo ID, citizenship proof or the SAVE Act)",
+        "BallotReady profile https://www.ballotready.org/people/danny-minton (nothing on the subject)",
+        "podcast interview page https://bluelusionalpodcast.substack.com/p/grassroots-candidate-interview-danny (only the host's written summary mentions secure elections, not his own words; audio not reviewed: https://bluelusionalpodcast.substack.com/p/grassroots-candidate-interview-danny)",
+        "news search (1): nothing by him on the subject",
+        "not reviewed: congress.gov (he holds no federal office, so no bills or votes)",
+        "not reviewed: Wikipedia and ontheissues (lead-only sources)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T17:11:36.680Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

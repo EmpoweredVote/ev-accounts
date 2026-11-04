@@ -1,0 +1,310 @@
+{
+  "politician_id": "7072bd94-b465-414e-bcf5-6e3feb7ec8dd",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "818586ba7a6fa8e00a512d1c240c01472b0f796fab8f64a338fb0b5e616ea7fe",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: yea (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9fc7fe42d4ca0418da57b37f789b4766ff618ad71e31a528b663386efac66476",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: yea (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "3cb7a6eb2595e83f808e9aa6a3f3bb5e782a0aa86dc925a943767e1bab71e9ec",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/House/H4376",
+      "date": "2014-07-31",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4376-2013",
+      "act": "yea",
+      "motion": "Acceptance of the committee of conference report (Yea and Nay No. 483)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, Acceptance of the committee of conference report (Yea and Nay No. 483), 2014-07-31: yea (tally 122–30); census gate: multi-subject.",
+      "subjects": [
+        "firearm license classes merged and Class B licences phased out",
+        "new penalties for shooting and for trafficking guns into the state",
+        "background-check records sent to the federal system",
+        "ban on carrying firearms on school and college grounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "malegislature.gov roll-call PDFs + LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:34:02.477850Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4376-2013.introduced.pdf",
+          "sha256": "b94514a66e779c1400d1b875eb3aac207f6b1b1f12f9928fd8d977feab23bb61"
+        }
+      }
+    },
+    {
+      "id": "c5523d50a631897031188db98ea5d927074d7126174a492b6b9e8d21f240f855",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4517",
+      "date": "2018-05-23",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4517-2017",
+      "act": "yea",
+      "motion": "House On Engrossment Yea and Nay No. 359",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MA House, House On Engrossment Yea and Nay No. 359, 2018-05-23: yea (tally 139–14); census gate: near-unanimous.",
+      "subjects": [
+        "court orders to remove guns from people at risk of harming self or others",
+        "emergency orders without notice",
+        "penalty for false petitions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4517-2017.introduced.pdf",
+          "sha256": "3bac8bca02408059e2c0db49bae39de8a690f0fb6e1b5469f7a23cf51fbd5cc4"
+        }
+      }
+    },
+    {
+      "id": "7727b62aa6ef27fb9e9cfc73a0491b1c4dc595f2b71982384c335273fe2771d1",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4670",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4670-2017",
+      "act": "yea",
+      "motion": "On acceptance of the conference report (Yea and Nay No. 389)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, On acceptance of the conference report (Yea and Nay No. 389), 2018-06-28: yea (tally 133–15); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders to remove guns from people at risk of harming self or others",
+        "protection order added as a bar to gun licenses",
+        "stun gun rules and locked storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4670-2017.introduced.pdf",
+          "sha256": "6b37958358a3f01548ef0d16c386b3caaf5993d5c100f88279ff5b45ad1fe098"
+        }
+      }
+    },
+    {
+      "id": "a00af043e828adfd93628001bb55296f31caa4e02bcca3e7273445aca8997aab",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/191/H2092",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MA-H-2092-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-2092-2019 (LegiScan sponsor list): H2092 (191st General Court): Relative to universal background checks for private gun sales.",
+      "subjects": [
+        "private gun sales must go through a licensed dealer",
+        "fee cap and penalty for unlawful private transfers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2092-2019.introduced.pdf",
+          "sha256": "5fd01d1a09d8ce366cbd5257b50c2937d0029e8495690da7567930f79f4a2203"
+        }
+      }
+    },
+    {
+      "id": "04dfd333dea1384fca6ce33e73fd8bb2ca4c8e461c54f61e208fe150a0c863ac",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/HD4300",
+      "date": "2013-01-01",
+      "date_precision": "unknown",
+      "instrument_id": "MA-HD-4300-2013",
+      "act": "sponsor",
+      "motion": "Petition HD.4300 (188th General Court) relative to safety technology for firearms, filed by Sean Garballey",
+      "note": "He filed this petition on safety technology for firearms; it was sent to the Public Safety and Homeland Security committee. The page does not show a filing date; the 188th court sat 2013-2014 so the date is unknown. It carries a draft number (HD.4300), not a bill number. Recorded as the filer (sponsor).",
+      "subjects": [
+        "safety technology for firearms",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:44:36.624Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Sean_Garballey) names him as member for the 23rd Middlesex District, on the Nov 3, 2026 general-election ballot after advancing on Sep 1, 2026",
+        "On the Record (0 appearances; run by id and by name only, no city)",
+        "official legislature profile and sponsored/cosponsored bill lists, session 194 (https://malegislature.gov/Legislators/Profile/S_G1): election bills found are age rules, ballot uniformity, local ranked-choice and recall; none on proof of identity or citizenship to vote",
+        "Ballotpedia: nothing on the subject",
+        "blocked: https://www.seangarballey.com (no connection)",
+        "not reviewed: malegislature.gov bill search filtered by sponsor (site error); campaign and official issue pages not found",
+        "news search not done: the shared web search budget was used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:12:30.290Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter registration rules",
+        "election law bills in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "MA legislature member biography https://malegislature.gov/Legislators/Profile/S_G1/194/Biography (confirms he holds the 23rd Middlesex seat; nothing on the subject)",
+        "MA state election results page https://electionstats.state.ma.us/elections/view/173009/ (2026 primary, 23rd Middlesex, Garballey the only named candidate, 8,720 votes)",
+        "MA bill page H.790 (192nd court), his permanent voter registration bill: about registration for movers, not ID or citizenship, so not saved",
+        "MA roll call page for H.4359 amendment 7 (already on file; page shows the vote only, not the amendment text)",
+        "blocked: https://ballotpedia.org/Sean_Garballey (fetch returned no page content)",
+        "blocked: https://malegislature.gov/Legislators/Profile/SPG1 (404)",
+        "news and own-words searches (2 searches): nothing on the subject; no campaign site found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T19:59:09.138Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "ghost guns",
+        "red-flag / extreme risk orders",
+        "safety technology for firearms",
+        "general gun safety laws",
+        "carry permits",
+        "background checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member page https://malegislature.gov/Legislators/Profile/S_G1 (confirms him as the state representative for the 23rd Middlesex district, Arlington; no gun bill in the current-session list)",
+        "ballot page: the Ballot Brief lists him as on the 2026 general-election ballot for the same seat; no campaign website found by it as of 2026-09-11",
+        "bill page https://malegislature.gov/Bills/188/HD4300 and its history page (a petition filed by him on safety technology for firearms; session 188 per the address, action dates not shown)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia: not reviewed, returns empty to the fetch tool",
+        "blocked: https://www.facebook.com/RepGarballey (empty page)",
+        "blocked: https://www.seangarballey.com (empty page)",
+        "web search x4 (name plus gun words, local news, vote coverage): no statement by him found; results about Arlington in Virginia and Texas were set aside as other places",
+        "no questionnaire or voter guide answer found"
+      ],
+      "found": 1,
+      "at": "2026-11-01T01:44:36.624Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "politician_id": "86a5ff83-f6b8-434d-99be-c200d9bfc9b5",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Jon_Kamerath) lists him on the Nov 3, 2026 general-election ballot, U.S. House Nevada District 3 (Independent American Party line only as ballot listing); nothing on the subject",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "campaign site https://www.jonkamerath.org/ (home, /bio, /endorse, /taxpayer-promise): nothing on the subject",
+        "Ballotpedia: no Candidate Connection survey completed (2024 or 2026); nothing on the subject",
+        "congress.gov: not applicable, never a member of Congress (past runs only: 2010, 2014 state senate, 2024)",
+        "not reviewed: news search, WebSearch budget for the session was used up",
+        "not reviewed: ontheissues.org, vote411 (lead-only sources; no search budget to find originals)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:44:09.016Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia page https://ballotpedia.org/Jon_Kamerath and BallotReady https://www.ballotready.org/people/jon-kamerath show him on the 2026-11-03 general-election ballot for US House Nevada District 3",
+        "On the Record (0 appearances)",
+        "campaign site https://www.jonkamerath.org/ home page (nothing on the subject)",
+        "campaign site /bio (nothing on the subject)",
+        "campaign site /taxpayer-promise (nothing on the subject)",
+        "campaign site /endorse and /issues and /platform: not reviewed (script-driven site; /issues and /platform returned no text)",
+        "BallotReady issue summary (nothing on the subject)",
+        "congress.gov: not applicable, not a legislator",
+        "news search on name plus voter ID / election integrity (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:32:46.917Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

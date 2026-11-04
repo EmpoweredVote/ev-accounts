@@ -1,0 +1,177 @@
+{
+  "politician_id": "b5c0a945-8e4f-4617-895d-a75be0e3b48c",
+  "findings": [
+    {
+      "id": "d2693a266628cd3f8fa908bbaec55947f1ea84946620ba9f235f6c60beff6b29",
+      "kind": "own-words",
+      "url": "https://www.wsbtv.com/news/local/atlanta/exclusive-ga-secretary-state-wants-state-pass-bill-requiring-real-id-vote/7577EUWX5ZCB5JF7O6KAOODTVU",
+      "date": "2026-01-22",
+      "date_precision": "day",
+      "passage": "So I'm going to call on the General Assembly to pass Real ID this session,",
+      "note": "Quoted by WSB-TV. He asks the legislature to require a Real ID to vote.",
+      "subjects": [
+        "REAL ID to vote",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:33:45.950Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c595ce7e73d85aa967ee86879c71525feae7526d9c03d6bb838e00fc1e4a07c",
+      "kind": "own-words",
+      "url": "https://www.wuga.org/local-news/2026-01-22/raffensperger-wants-citizens-to-have-a-real-id-to-vote",
+      "date": "2026-01-22",
+      "date_precision": "day",
+      "passage": "Requiring Real ID to vote adds an extra layer of protection.",
+      "note": "Quoted by WUGA. Gives his reason for a Real ID requirement to vote.",
+      "subjects": [
+        "REAL ID to vote",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:33:45.950Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f4a962412a1c34a7d9ab9811008f9bb5ea77609fea3d19826c6a1cb1462b6276",
+      "kind": "own-words",
+      "url": "https://www.atlantanewsfirst.com/2026/01/22/lawmakers-should-pass-real-id-voting-georgia-raffensperger-says",
+      "date": "2026-01-22",
+      "date_precision": "day",
+      "passage": "The General Assembly needs to pass this legislation this session to safeguard our elections.",
+      "note": "Quoted by Atlanta News First on his Real ID to vote request.",
+      "subjects": [
+        "REAL ID to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:33:45.950Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "226d3032dde09a722c8033be543ba4938f0dbf5df38cd416e1c98b2f01cbf471",
+      "kind": "own-words",
+      "url": "https://www.wtoc.com/2021/03/30/ga-secretary-state-defends-states-new-voting-bill/",
+      "date": "2021-03-30",
+      "date_precision": "day",
+      "passage": "The left said that photo ID for in-person voting would suppress votes. It didn't.",
+      "note": "Quoted by WTOC in his statement defending SB 202. He says photo ID for in-person voting did not suppress votes.",
+      "subjects": [
+        "photo ID for in-person voting",
+        "election integrity law (SB 202)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:33:45.950Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "31dcd69685c9697749228ef442e2d50c1915f45f6c7869f2442e73e860381421",
+      "kind": "own-words",
+      "url": "https://www.wrdw.com/2023/12/11/raffensperger-seeks-ga-amendment-citizens-only-voting/",
+      "date": "2023-12-11",
+      "date_precision": "day",
+      "passage": "With open borders, citizenship verification for voter registration is more important than ever,",
+      "note": "Quoted by WRDW when he asked the General Assembly for a constitutional amendment limiting voting to citizens.",
+      "subjects": [
+        "citizenship verification for voter registration",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:33:45.950Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "80fd6ca86ab77ec9d5942dd94c6b0de0aecdbcbf98c0997276b42a56cfd6225b",
+      "kind": "own-words",
+      "url": "https://www.fox5atlanta.com/news/georgia-elections-chief-aims-to-shore-up-republican-support",
+      "date": "2022-05-10",
+      "date_precision": "day",
+      "passage": "the real issue that we’re facing right now is noncitizen voting.",
+      "note": "Quoted by Fox 5 Atlanta (published date; exact date of remark not given).",
+      "subjects": [
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:33:45.950Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "82f5c8e7551d304a1eed5c20cedad75559233b78bbe52d6fe6243e6d1ed71980",
+      "kind": "own-words",
+      "url": "https://www.wrdw.com/2026/01/26/court-rejects-challenge-controversial-ga-election-law/",
+      "date": "2026-01-26",
+      "date_precision": "day",
+      "passage": "Thanks to the Georgia Election Integrity Act, our state remains the best, most secure state for voting.",
+      "note": "Quoted by WRDW after a court ruling on parts of SB 202. General praise of the law; no ID detail in the article.",
+      "subjects": [
+        "election integrity law (SB 202)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:33:45.950Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "REAL ID to vote",
+        "photo ID for in-person voting",
+        "ID for absentee ballots",
+        "citizenship verification for voter registration",
+        "non-citizen voting",
+        "voter-roll citizenship checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "still holds the Secretary of State office; he did not advance from the 2026 governor primary (per https://en.wikipedia.org/wiki/Brad_Raffensperger), so searched as a sitting official",
+        "blocked: https://ballotpedia.org/Brad_Raffensperger (empty page)",
+        "blocked: https://sos.ga.gov/news/raffensperger-calls-lawmakers-protect-election-integrity-pass-real-id-vote (403)",
+        "blocked: https://sos.ga.gov/news/secretary-raffensperger-save-was-valuable-citizenship-verification-tool-states (403)",
+        "not reviewed: official site search pages and campaign site (official site returned 403)",
+        "not reviewed: legislature bill pages (statewide officer, not a legislator)",
+        "news pages: WRDW, Atlanta News First, WUGA, WSB-TV, WTOC, Fox 5 Atlanta (quotes taken from fetch-tool excerpts; each quote is a complete sentence)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T20:33:45.950Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

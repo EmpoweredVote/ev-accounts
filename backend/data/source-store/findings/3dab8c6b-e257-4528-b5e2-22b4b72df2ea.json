@@ -1,0 +1,33 @@
+{
+  "politician_id": "3dab8c6b-e257-4528-b5e2-22b4b72df2ea",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "absentee voting and same-day registration"
+      ],
+      "places": [
+        "status: sitting state senator (district 34, took office January 2025), unopposed on the 2026 general-election ballot, per https://branch.vote/races/2026-georgia-general-election-ga-state-state-senator-ga-senate-34/candidates/kenya-wicks",
+        "not in office in 2021, so no SB 202 vote exists for her",
+        "On the Record (0 appearances found, script ran)",
+        "https://branch.vote candidate page (says her website had no information on voting and elections as of 2026-07-23; nothing on the subject)",
+        "Senate press office release of 2025-04-11 on her first session (nothing on the subject)",
+        "news search on name plus voter ID, citizenship, election (nothing on the subject by her)",
+        "lead not verified: a search result said she was primary sponsor of 2025 SB 271 (permanent absentee voter list) and SB 274 (same-day registration and voting); I could not open a page confirming it, so it is not saved as a finding",
+        "blocked: https://app.legiplex.com/profile/kenya-wicks-20703/legislation (HTTP 403)",
+        "blocked: https://pluralpolicy.com/app/legislative-tracking/bill/details/state-ga-2025_2026-sb271 and -sb274 (page returned only a title)",
+        "blocked: https://www.legis.ga.gov/ bill pages (load by script, no content)",
+        "blocked: https://ballotpedia.org pages (earlier fetches returned empty; not retried)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:48:59.760Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

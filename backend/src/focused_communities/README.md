@@ -8,10 +8,38 @@ stays in that repo** and becomes a free static site that calls this module.
 
 ## What it is
 The Focused Communities read and write API: communities, stance cards, threads, replies, public
-edit history, and a member's own post history. Every route is request/reply — no timers, no
-queue, no files — so nothing here goes in `jobs/registry.ts`, and all of it is served under
-`EV_ROLE=api`. Mounted at **`/fc/api`** (byte-for-byte alias of the old paths) and **`/api/fc`**
-(tidy) in `src/index.ts`; the seam is `app.ts`.
+edit history, a member's own post history, and the **argument tree** (below). Every route is
+request/reply — no timers, no queue, no files — so nothing here goes in `jobs/registry.ts`, and
+all of it is served under `EV_ROLE=api`. Mounted at **`/fc/api`** (byte-for-byte alias of the old
+paths) and **`/api/fc`** (tidy) in `src/index.ts`; the seam is `app.ts`.
+
+## The argument tree
+A Kialo-style tree of claims under each community's question, added by migrations
+**CA_0342 – CA_0346**. Three routers, mounted in `app.ts` in this order, all under the same
+prefixes as the rest of the module:
+
+| Router | Routes |
+| --- | --- |
+| `routes/claims.ts` (read) | `GET /communities/:id/claims/root`, `GET /communities/:id/claims/shape`, `GET /claims/:id` |
+| `routes/claimWrites.ts` | `POST /claims/:parentId/children`, `PUT /claims/:id/rating`, `PATCH /claims/:id`, `GET /claims/:id/edits`, `DELETE /claims/:id` → 405 |
+| `routes/claimCuration.ts` (maven **or** admin) | `POST /claims/:id/move`, `POST /claims/:id/merge`, `POST /claims/:id/hide` |
+
+- **Grants:** `connect.claims` and `connect.claim_ratings` read/insert/update,
+  `connect.claim_edits` read only, all on the same `focused_communities_app` role — see the
+  privacy-wall paragraph in `config/database.ts`, which lists all eight tables.
+- **Every community has a root claim**, seeded from its name by
+  `trg_communities_seed_root_claim`. A root has no author, no side and no parent, and **nothing
+  curates, edits or rates one** — four separate routes refuse it.
+- **Position is derived, never sent.** `path` and `depth` come from
+  `trg_claims_derive_position`; a move or a merge rewrites the whole subtree in one sweep.
+  `impact` is `GENERATED ALWAYS` from the rating aggregate (CA_0346) and is never written.
+- **Nothing is deleted and nothing is folded.** A hidden claim becomes a tombstone (empty body,
+  no pseudonym, counts intact); a merged claim keeps its id, URL, body and history and gains a
+  `mergedInto` pointer that a client follows a hop at a time.
+- **Caching:** the shape map and the default node pages are hand-cached for 30s;
+  `middleware/claimInvalidation.ts` drops them on any 2xx write under `/claims/`, and
+  `middleware/claimsTouched.ts` is how a curation route names the other rows it moved. A
+  credentialed response is never cached, because `myRating` is per-caller.
 
 ## How it differs from the standalone (deliberately)
 - **Database:** `config/database.ts` is a dedicated pg pool that connects as

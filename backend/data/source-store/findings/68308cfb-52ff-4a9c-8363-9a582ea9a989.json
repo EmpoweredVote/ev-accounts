@@ -1,0 +1,219 @@
+{
+  "politician_id": "68308cfb-52ff-4a9c-8363-9a582ea9a989",
+  "findings": [
+    {
+      "id": "0da3aed2455336057e100fde82e9f576a3cc98862d9e034d6b51c98802207615",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=246497&includeVotes=true",
+      "date": "2026-06-12",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('KUBY'), linked to Lauren Kuby (district 8) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.888Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a2d40a39f131a87e5e9a3d3fbb430a43d59903c0638a14b987d48c2958c11a86",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=234554&includeVotes=true",
+      "date": "2025-03-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('KUBY'), linked to Lauren Kuby (district 8) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.888Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "35da6f70d1f84b2046ea1b4872f6f957fd245a0cb67db40f094de4cd201a5fa7",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=233421&includeVotes=true",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('KUBY'), linked to Lauren Kuby (district 8) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.888Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "03a16c0951629bf6162b4a4641ce199c48f3f00694fca3d54826952415a18d7f",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83528&billStatusActionId=241249&includeVotes=true",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1001-2026",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('KUBY'), linked to Lauren Kuby (district 8) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.888Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2a5a81ac5a91ec6620279b97a4ebbf29a3dd34abe332af04f1fcf453ffb3c6df",
+      "kind": "own-words",
+      "url": "https://www.kubyforsenate.com/priorities",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I serve on the Senate Elections Committee and stand up and speak out about Republican bills that would reduce access to the ballot box and deny citizens their right to vote. We must preserve our popular Vote By Mail system.",
+      "note": "Democracy and voting rights section of her campaign priorities page. She says she opposes bills that cut ballot access and wants to keep voting by mail. No ID or citizenship rule is named.",
+      "subjects": [
+        "mail voting access",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:13:43.571Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "350af46399e505a09912940222d02428de9042d76a4535a68553ff8ff144c90d",
+      "kind": "own-words",
+      "url": "https://www.phoenixnewtimes.com/news/arizona-bill-ice-agents-at-every-voting-location-40646275/",
+      "date": "2026-02-18",
+      "date_precision": "day",
+      "passage": "“In my time in the legislature and in my time as a citizen, the Republican-led legislature has been trying to whittle away at voting rights and voting access,” Kuby said. “They’ve acted to really increase disenfranchisement. We see bill after bill after bill.”",
+      "note": "Direct quote in Phoenix New Times on the SB 1570 proposal (federal immigration agents at polling places) and other voting bills. She describes recent voting bills as cutting access. The same story says she cited federal and state laws on voter intimidation against SB 1570.",
+      "subjects": [
+        "election integrity in general",
+        "voter eligibility enforcement at polling places"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:13:43.571Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5098d52b93edadc88105ace3704f2b704de45236ac78f12c4db3b0e36908bb97",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/82421",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2587-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2587P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Lauren Kuby') on the official bill page; linked to Lauren Kuby via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.945Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:53:15.888Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters without ID",
+        "ID with mail or early ballots",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity in general",
+        "voter-roll checks",
+        "non-citizen voting",
+        "mail voting access"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "The Ballot Brief https://www.theballotbrief.com/state/arizona/maricopa-county/arizona-senate-district-8 (confirms she is the sitting senator and on the 2026-11-03 general ballot for district 8)",
+        "campaign site https://www.kubyforsenate.com/ (home, priorities, issues, record and in-the-news pages; democracy and voting rights section saved)",
+        "blocked: https://ballotpedia.org/Lauren_Kuby",
+        "blocked: https://www.arizonaagenda.com/p/icey-relations-at-the-capitol",
+        "blocked: https://azmirror.com/briefs/ice-at-the-polls-arizona-republicans-push-plan-to-require-agents-at-all-polling-places/",
+        "https://www.phoenixnewtimes.com/news/arizona-bill-ice-agents-at-every-voting-location-40646275/ (direct quotes of her on voting bills)",
+        "https://www.abc15.com/news/politics/bill-would-allow-ice-agents-at-every-arizona-polling-location (does not quote her)",
+        "https://coppercourier.com/2026/02/18/ice-at-polling-locations/ (does not quote her)",
+        "https://www.kjzz.org/politics/2026-02-17/new-legislation-would-deploy-immigration-agents-to-arizona-polling-places (does not name her)",
+        "https://www.azsenatedemocrats.com not separately reviewed",
+        "news searches on name plus voter ID, SAVE Act, early ballot, proof of citizenship: no statement by her on ID or citizenship rules found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:13:43.571Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:15:12.945Z",
+      "by": "identity-az-2026-10-28"
+    }
+  ]
+}

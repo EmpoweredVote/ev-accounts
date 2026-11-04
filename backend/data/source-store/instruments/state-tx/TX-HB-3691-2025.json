@@ -1,0 +1,35 @@
+{
+  "id": "TX-HB-3691-2025",
+  "scope": "state:tx",
+  "title": "HB 3691 (89R): Relating to electronic submission of an application for an early voting ballot by mail by certain persons.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3691",
+    "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB3691",
+    "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB03691I.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) SECTION 3 (adds Election Code 84.0091(b))\n(quote) (b) The program implemented under Subsection (a) must require a person 65 years of age or older to provide the following information before allowing the person to complete an application for an early voting ballot by mail: (1) the person's name and voter registration number or registration address; (2) the person's driver's license number or personal identification card number issued by the Department of Public Safety; and (3) the last four digits of the person's social security number.\n(d_proof_of_citizenship) not stated.\n(other) Sec 1 (84.001(b), (d)): application in ink on paper still required except as provided by new 84.0091; electronic or photocopied signature not permitted except under 84.0091; application submitted to the early voting clerk (the words 'by mail' removed).\n(other) Sec 2 (84.007(a)): cross-reference to 84.0091.\n(other) Sec 3 (84.0091(a)): secretary of state program for persons 65 or older to complete a mail ballot application online from the state website and the county website, with electronic signature, delivery to the early voting clerk and status check.\n(other) Sec 4: effective September 1, 2025.",
+  "sponsors": [
+    {
+      "name": "Ward Johnson",
+      "role": "author",
+      "version": "Introduced (H.B. No. 3691; no other version exists)",
+      "politician_id": "60e2bada-4104-47af-b4d7-93662e401543"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T15:13:39Z)",
+    "fetched_at": "2026-10-28T15:13:39Z",
+    "method": "curl"
+  }
+}

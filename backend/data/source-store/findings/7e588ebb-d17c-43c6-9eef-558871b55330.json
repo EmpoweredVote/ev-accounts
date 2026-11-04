@@ -1,0 +1,123 @@
+{
+  "politician_id": "7e588ebb-d17c-43c6-9eef-558871b55330",
+  "findings": [
+    {
+      "id": "31448b0af7bb5a0a5d4a46b9b66c1adc95deb7504523207c56676176dfc9a3f7",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174",
+      "date": "2024-06-12",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "Do pass and be re-referred to the Committee on Local Government (Assembly Elections Committee, passed 6 to 2)",
+      "note": "As an Assembly member she voted yes in the Elections Committee on SB 1174, which bars local governments from requiring voter ID for voting. Source is the Internet Archive copy of the leginfo vote page.",
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:09:30.352Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "de9d79101c6aa2395daa0497942d32b27b5d7d14f2a529398504804632529f11",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "other",
+      "motion": "SB 1174 Min Senate Third Reading (Assembly floor, passed 57 to 16); no vote recorded for her",
+      "note": "On the Assembly floor vote on SB 1174 she is listed among members with no vote recorded. Source is the Internet Archive copy of the leginfo vote page.",
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:09:30.352Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9e0c50e07324d4e05b533599184acd12c445526d7aa8d62ff1d144d734f2b61f",
+      "kind": "own-words",
+      "url": "https://sd31.senate.ca.gov/video/governor-signs-landmark-cervantes-bill-protect-california-elections-interference",
+      "date": "2026-05-27",
+      "date_precision": "day",
+      "passage": "The enactment of SB 73 protects Californians’ sacred right to vote free from fear of intimidation or interference and safeguards the essential integrity of elections in California.",
+      "note": "Statement on her official site when SB 73 was signed. SB 73 limits law enforcement presence at voting places and access to voting machines and voter rolls. It does not address voter ID or proof of citizenship; saved as an election-integrity law in general.",
+      "subjects": [
+        "election integrity laws in general",
+        "law enforcement at polling places and voter-roll access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:09:30.352Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "596b63635f003aec872e0086620519fdcba934e75a2acddd58438110278f9e7e",
+      "kind": "record",
+      "url": "https://sd31.senate.ca.gov/video/governor-signs-landmark-cervantes-bill-protect-california-elections-interference",
+      "date": "2026-05-27",
+      "date_precision": "day",
+      "act": "author",
+      "motion": "SB 73 (Cervantes), election interference protections, signed by the Governor",
+      "note": "Author of SB 73, which lets state officials object to law enforcement posted at voting sites or election offices, bars access to voting machines or voter rolls without a court order, and makes taking ballots from a county registrar a felony. Described on her official site.",
+      "subjects": [
+        "election integrity laws in general",
+        "law enforcement at polling places and voter-roll access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:09:30.352Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules",
+        "proof of citizenship to register",
+        "ID for mail ballots",
+        "election integrity laws in general",
+        "law enforcement at polling places and voter-roll access"
+      ],
+      "places": [
+        "Confirmed as sitting State Senator for District 31 (term to 2028) via Ballotpedia and her official site",
+        "On the Record (0 meetings)",
+        "Official site sd31.senate.ca.gov: home page, site search (voter, election returned no results), and two election-related video pages",
+        "Official site news and press release lists: not reviewed beyond the home page links",
+        "campaign site: not reviewed (none found in the Ballotpedia link set)",
+        "Ballotpedia: nothing on the subject beyond the profile",
+        "Bill votes read from the Internet Archive copy of the leginfo vote page for SB 1174 (live leginfo is behind a bot check)",
+        "blocked: https://web.archive.org leginfo text page for SB 73 (bot check); SB 73 described from her official site only",
+        "one news search on name plus voter ID, proof of citizenship, SAVE Act: only federal-bill coverage returned, nothing about her",
+        "not reviewed: her Senate floor and committee votes on election bills in 2025-26"
+      ],
+      "found": 4,
+      "at": "2026-10-28T16:09:30.352Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

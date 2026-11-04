@@ -1,0 +1,38 @@
+{
+ "id": "MA-HD-4300-2013",
+ "scope": "state:ma",
+ "title": "HD4300 (188th General Court): An Act relative to gun safety",
+ "urls": [
+  "https://malegislature.gov/Bills/188/HD4300",
+  "https://malegislature.gov/Bills/188/HD4300/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Sean Garballey",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "7072bd94-b465-414e-bcf5-6e3feb7ec8dd"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-HD-4300-2013.html",
+   "sha256": "826ada0b633002c58de90786855ec01c54ca83b21deba4bd67bf892cb5989724"
+  }
+ },
+ "operative_text": "SECTION 1. Chapter 140 of the General Laws is hereby amended by inserting after Section 131P the following section:\nSection 131Q. As used in Section 131Q the following words shall, unless the context clearly requires otherwise, have the following meanings:-\n“External safety lock” shall mean an external device that is attached to the firearm with a key or combination and is designed to prevent a firearm from being discharged.\n“Grip safety” shall mean a button, lever, or switch located on the handle of a firearm that, when activated, prevents the gun from firing.\n“Magazine” shall mean a box, drum, tube or other container which stores firearm ammunition to be fed directly into the firearm.\n“Loaded chamber indicator” shall mean a mechanism on the firearm which visually alerts the user that a bullet is present in the chamber, even when the magazine has been removed.\n“Magazine disconnect device” shall mean any device fitted to a firearm that prevents the firearm from firing when the magazine has been removed.\n“Personalized firearm” shall mean a handgun which incorporates within its design, and as part of its original manufacture, technology which automatically limits its operational use and which cannot be readily deactivated, so that it may only be fired by an authorized or recognized user. The technology limiting the handgun's operational use may include, but not be limited to: radio frequency tagging, touch memory, remote control, fingerprint, magnetic encoding and other automatic user identification systems utilizing biometric, mechanical or electronic system.\n(a) Any firearm sold in the commonwealth on or after January 1, 2015 must have the following safety features incorporated in the design of the firearm: grip safety feature, loaded chamber indicator, magazine disconnect device.\n(b) Any firearm sold in the commonwealth must incorporate technology to render it a personalized firearm, once said technology has become reasonably feasible and scalable; or by January 1, 2018, whichever may occur first.\n(c) Any firearm sold in the commonwealth prior to the passage of this Act, must be sold with a locked external safety lock."
+}

@@ -1,0 +1,69 @@
+{
+  "politician_id": "436d0c4e-8663-46e1-bbc8-28ec8bb1273c",
+  "findings": [
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('New'), linked to Kimberly R. New (district 64) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.416Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity laws",
+        "voter-roll checks"
+      ],
+      "places": [
+        "in scope: Georgia House District 40 incumbent, on the 2026 general-election ballot (https://ballotpedia.org/Kimberly_New)",
+        "On the Record (0 meetings)",
+        "Ballotpedia (nothing on the subject)",
+        "Branch voter-guide profile (says her website had nothing on voting and elections as of 2026-07-23)",
+        "news search on her name plus ID and election-integrity words (nothing on the subject)",
+        "blocked: https://www.kimberlynew.com/ (fetch returned no page content)",
+        "blocked: https://www.billtrack50.com/legislatordetail/28316 (sponsored-bill list did not load)",
+        "blocked: https://www.legis.ga.gov/members/house/5030?session=1033 (script-loaded page, not readable)",
+        "not reviewed: official roll calls on SB 189 (2024) and HB 397 (2025); she first took office in 2025, so no SB 202 (2021) vote exists"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:48:55.044Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.416Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

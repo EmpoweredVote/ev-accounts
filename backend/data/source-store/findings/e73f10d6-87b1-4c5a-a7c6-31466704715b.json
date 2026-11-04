@@ -1,0 +1,43 @@
+{
+  "politician_id": "e73f10d6-87b1-4c5a-a7c6-31466704715b",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship"
+      ],
+      "places": [
+        "status: lost the 2026-08-04 primary (https://ballotpedia.org/Elizabeth_Beggs: lost the August 4, 2026 primary for Virginia's 1st Congressional District, 7.2 percent; not on the general-election ballot)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (page fetched; survey answers have nothing on the subject)",
+        "not reviewed: campaign site (guessed domains did not resolve)",
+        "not reviewed: congress.gov, news search (web search budget used up; stopped because out of scope)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:56:23.506Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "candidate status for the 2026 general election"
+      ],
+      "places": [
+        "status: lost the 2026-08-04 primary for Virginia's 1st district (https://ballotpedia.org/Elizabeth_Beggs)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (candidate status page, fetched)",
+        "campaign site elizabethforvirginia.com (lapsed, no content)",
+        "web search on name plus voter ID (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:03:44.746Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

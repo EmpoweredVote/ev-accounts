@@ -1,0 +1,91 @@
+{
+  "politician_id": "fa2e4ce7-491c-4794-a096-6da22e4b288d",
+  "findings": [
+    {
+      "id": "f66b738918d07e31c0143d1cef2d9267b4a2bbe976fa365cb3457c150a67a082",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/Legislation/20252026/240918.pdf",
+      "date": "2026-02-02",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1109-2026",
+      "act": "sponsor",
+      "note": "Listed fourth among the authors of HB 1109 (Byrd, Kahaian, Dunahoo, Barrett). The bill text amends Code Section 21-2-417 so that certain driver's licenses and ID cards are not proper ID to show a poll worker. It also would put the words 'BEARER NOT A U.S. CITIZEN - NOT VOTER ID' on certain licenses and add the prefix NC to those card numbers. Date is the House first reading shown on policyrisk.com (https://policyrisk.com/state-bill/GA-HB1109-2025-2026), which also lists the bill as failed.",
+      "subjects": [
+        "voter ID at the polls",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:40:32.042Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Barrett'), linked to Carter Barrett (district 24) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.416Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "non-photo ID or no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks / non-citizen voting / election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found by extract-otr)",
+        "Wikipedia page (confirms sitting state representative, House District 24)",
+        "policyrisk.com bill page for HB 1109 (sponsor list)",
+        "official bill text PDF https://www.legis.ga.gov/Legislation/20252026/240918.pdf (downloaded normally)",
+        "not reviewed: https://forsythnews.com/news/politics/2024-election-district-24-georgia-house-representative-outlines-campaign-initiative (page text cut off after one line)",
+        "not reviewed: https://www.forsythnews.com/news/state/why-rep-carter-barrett-co-sponsored-bill-remove-raffensperger-state-election-board/ (page text cut off after the first paragraph, no quote from him readable)",
+        "blocked: https://ballotpedia.org/Carter_Barrett (empty page)",
+        "blocked: https://legiscan.com/GA/bill/HB1109/2025 (HTTP 403)",
+        "blocked: https://app.legiplex.com pages (HTTP 403)",
+        "no official site or campaign issue page with own words on the subject found"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:40:32.042Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.416Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

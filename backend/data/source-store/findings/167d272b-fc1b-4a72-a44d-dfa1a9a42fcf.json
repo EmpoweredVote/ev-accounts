@@ -1,0 +1,309 @@
+{
+  "politician_id": "167d272b-fc1b-4a72-a44d-dfa1a9a42fcf",
+  "findings": [
+    {
+      "id": "de993072b1f015691757356966b25be35f10f79ccfc21b9e05ca9348996cbcde",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "Roll Call #208 - Question on acceptance of conference committee report",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA Senate, Roll Call #208 - Question on acceptance of conference committee report, 2024-07-18: yea (tally 35–5); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db16b98b521d382c722d5503605116e48c77fb9d34798b9816992f739c986730",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "Senate Engrossed Roll Call #114",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA Senate, Senate Engrossed Roll Call #114, 2024-02-01: yea (tally 37–3); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "b217bf7236d592008af6b6b55e2f9966e9a1bad25733c3822a32a66bc1d68a0d",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/House/H4376",
+      "date": "2014-07-31",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4376-2013",
+      "act": "yea",
+      "motion": "Acceptance of conference committee report (Roll Call #473)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA Senate, Acceptance of conference committee report (Roll Call #473), 2014-07-31: yea (tally 37–3); census gate: multi-subject.",
+      "subjects": [
+        "firearm license classes merged and Class B licences phased out",
+        "new penalties for shooting and for trafficking guns into the state",
+        "background-check records sent to the federal system",
+        "ban on carrying firearms on school and college grounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "malegislature.gov roll-call PDFs + LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:34:02.477850Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4376-2013.introduced.pdf",
+          "sha256": "b94514a66e779c1400d1b875eb3aac207f6b1b1f12f9928fd8d977feab23bb61"
+        }
+      }
+    },
+    {
+      "id": "767c668122bf86e324f6d9a6719f5b58f7381ff23e94c183d816b849ebaf9525",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4670",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4670-2017",
+      "act": "yea",
+      "motion": "Senate Committee of conference report accepted, in concurrence  Roll Call #435",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MA Senate, Senate Committee of conference report accepted, in concurrence  Roll Call #435, 2018-06-28: yea (tally 36–1); census gate: near-unanimous.",
+      "subjects": [
+        "extreme risk protection orders to remove guns from people at risk of harming self or others",
+        "protection order added as a bar to gun licenses",
+        "stun gun rules and locked storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4670-2017.introduced.pdf",
+          "sha256": "6b37958358a3f01548ef0d16c386b3caaf5993d5c100f88279ff5b45ad1fe098"
+        }
+      }
+    },
+    {
+      "id": "866dcddf705aa4ef5a566b18acd9a40e11b42272b8adbcc90eba7f39828753d7",
+      "kind": "own-words",
+      "url": "https://karenspilka.com/updates/2023/10/27/senate-presidents-statement-on-the-devastating-events-in-lewiston",
+      "date": "2023-10-26",
+      "date_precision": "day",
+      "passage": "The Senate has always been committed to having the strongest gun safety laws in the nation, and we remain firm in our resolve to pass a comprehensive gun safety and violence prevention bill this session.",
+      "note": "Statement issued in her name after the Lewiston shooting; the page is dated 2023-10-26. She commits the Senate to a comprehensive gun safety bill.",
+      "subjects": [
+        "general statement on gun safety laws",
+        "comprehensive gun safety bill"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:46:22.093Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b825c47647a8f58bb7ee85a11e0e3bb4ab60c1f5eb6899a137dd7c65b54f8d59",
+      "kind": "own-words",
+      "url": "https://karenspilka.com/updates/saferactrelease",
+      "date": "2024-01-25",
+      "date_precision": "day",
+      "passage": "By bringing together stakeholders with a variety of viewpoints, the Senate has shown that it is possible to make changes to our gun laws that will save lives while respecting the rights of law-abiding gun owners in the state.",
+      "note": "Quote in her official press release when the Senate unveiled the SAFER Act (page published 2024-01-25).",
+      "subjects": [
+        "gun safety bill (SAFER Act)",
+        "respect for law-abiding gun owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:46:22.093Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "137af9f47d7e899a5a443f9bc4e1fb87772ec34067e16be841b71ff1180b38c2",
+      "kind": "own-words",
+      "url": "https://karenspilka.com/updates/saferactpasses",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "passage": "I’m proud to lead a body that is committed to building on our Commonwealth’s record as a national leader on gun safety.",
+      "note": "Quote in her official press release after the Senate passed the SAFER Act (page published 2024-02-01).",
+      "subjects": [
+        "gun safety bill (SAFER Act)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:46:22.093Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "413fa8de65ce9a5792aeeb0100044eaea9de1a34d5f70365a1726eeb3989c85b",
+      "kind": "own-words",
+      "url": "https://www.nbcboston.com/news/local/with-police-support-mass-senate-to-debate-gun-bill-next-week-2/3260714/",
+      "date": "2024-01-27",
+      "date_precision": "day",
+      "passage": "\"Our state, I think all of you know, has one of the lowest rates of gun violence in the nation, and this fact is not by accident,\" Senate President Karen Spilka said.",
+      "note": "Quoted by NBC Boston (article published 2024-01-27) at the unveiling of the Senate gun bill; says the state has updated its gun laws to prevent access by people who wish to do harm.",
+      "subjects": [
+        "general statement on gun safety laws",
+        "gun safety bill (SAFER Act)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:46:22.093Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b3da060137f56be4f8021d3d69569ea5be435a1e1ce99a5099ea4d2dbfce798a",
+      "kind": "own-words",
+      "url": "https://www.nbcboston.com/news/politics/healey-makes-move-to-block-efforts-to-suspend-mass-gun-reform-law-for-2-years/3507962/",
+      "date": "2024-10-02",
+      "date_precision": "day",
+      "passage": "\"The vast majority of Massachusetts residents wants this bill and want it to take effect as soon as possible,\" said Massachusetts Senate President Karen Spilka.",
+      "note": "Quoted by NBC Boston (article published 2024-10-02) on the 2024 gun law and the effort to suspend it.",
+      "subjects": [
+        "2024 gun law",
+        "repeal of gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:46:22.093Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for voting bills",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: https://malegislature.gov/Legislators/Profile/KES0 names her Senate President; https://ballotpedia.org/Karen_Spilka says she advanced from the 2026 primary and is on the 2026 general-election ballot",
+        "On the Record (0 appearances, 0 candidates from extract-otr.mjs)",
+        "Ballotpedia (fetched with curl; nothing on the subject)",
+        "malegislature.gov sponsored-bills list for KES0 (nothing on the subject)",
+        "malegislature.gov bill pages S510 (photo ID for voting, sponsored by another senator) and S2567 (committee study order); neither is an act by her",
+        "blocked: https://www.senatorspilka.com (curl returned no response)",
+        "not reviewed: web news search on her name plus subject words (shared 200-search budget was used up; no search could run)",
+        "nothing on the subject: massnews.com site search"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:00:16.908Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "In scope: Ballotpedia (https://ballotpedia.org/Karen_Spilka) shows her as Massachusetts State Senate President, Middlesex and Norfolk District, on the 2026 general-election ballot after advancing from the 2026-09-01 primary",
+        "On the Record (0 appearances)",
+        "Legislature profile page malegislature.gov/Legislators/Profile/KES0: nothing on the subject in the bill list shown",
+        "Her site karenspilka.com: news index page returned nothing on the subject; the site search was not run",
+        "blocked: https://www.masenate.gov/Senators/Karen-E-Spilka (connection failed)",
+        "WGBH 2022-01-25 and NBC Boston one-on-one pages: nothing on identity or citizenship proof (WGBH covers same-day registration only)",
+        "web searches (3): nothing by her on voter ID, proof of citizenship or the SAVE Act"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:12:07.178Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "how the government regulates firearms",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "ghost guns",
+        "red flag orders",
+        "carry permits and places where carry is allowed",
+        "repeal of gun laws",
+        "general statements on gun safety and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "malegislature.gov member page (confirms Senator Karen E. Spilka)",
+        "sponsor list: covered by LegiScan bulk check",
+        "official site karenspilka.com (site search for gun; statements and press releases fetched)",
+        "blocked: https://www.statehousenews.com/news/legislature/senate/spilka-confident-about-house-senate-accord-on-gun-laws/article_ffb679c0-6398-11ee-8220-73d48cc90693.html (HTTP 429)",
+        "karenspilka.com NBC10 interview page: headline only, interview text not on the page; interview video not reviewed: https://www.nbcboston.com/news/local/one-on-one-with-mass-senate-president-karen-spilka/3704274/",
+        "Ballotpedia: blocked in fetch (not relied on)",
+        "web searches on name plus gun words and the 2026 ballot question: no 2026 statement by her found",
+        "news: NBC Boston 2024 articles"
+      ],
+      "found": 5,
+      "at": "2026-11-01T01:46:22.093Z",
+      "by": "source-collector"
+    }
+  ]
+}

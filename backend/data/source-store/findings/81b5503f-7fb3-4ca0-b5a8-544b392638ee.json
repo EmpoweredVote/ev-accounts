@@ -1,0 +1,408 @@
+{
+  "politician_id": "81b5503f-7fb3-4ca0-b5a8-544b392638ee",
+  "findings": [
+    {
+      "id": "aa07745fe39dcf4e4e76e2599770fa93ca73f5067231e2aa65b4e00114e231e8",
+      "kind": "own-words",
+      "url": "https://repbashline.com/about",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "His priorities include supporting local jobs, workers and small businesses; backing efforts to secure the border and protect Pennsylvanians; boosting American energy independence to stop price hikes; upholding election integrity by supporting commonsense voter ID; and giving parents more control over their children’s education.",
+      "note": "From the About page of his official site, written in the third person. Lists support for what it calls commonsense voter ID among his priorities. No details of what the ID rule would be. Page date not shown.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6bcc2ae00b4c79f1ffdbe4207b35e3d3e0cce31c8ed5214b6a521f5afe41aa14",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "nay",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Bashline'), linked to Josh Bashline (district 63) via the official 2025-2026 House member roll (identity step 2026-10-31, pa-01 HB 1396 nays).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-31-raw-votes",
+        "fetched_at": "2026-10-31T18:07:00.900Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "776be13d4edc022219fdf3819db0234ee24aae9807915d326ecc971a85558b0b",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb2599",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2599-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-2599-2025 (LegiScan sponsor list): HB2599 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for firearms not to be carried without a license, for licenses and for proof of license and exception..",
+      "subjects": [
+        "license no longer required to carry a gun in a vehicle",
+        "vehicle carry exceptions repealed",
+        "license covers concealed carry on the person only"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2599-2025.introduced.pdf",
+          "sha256": "dc8c286b9dddc4dec2d44c39427334dbb59b7f4135d52a736491c2e33d679d51"
+        }
+      }
+    },
+    {
+      "id": "5a1e8a788a9a3b1de393bdb1dde749a6f598706061fbe03d4e66bccf89447f17",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb454",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-454-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-454-2025 (LegiScan sponsor list): HB454 (2025-2026 Regular Session): In firearms and other dangerous articles, repealing provisions relating to firearms not to be carried without a license, providing for license not required, repealing provisions relating to carrying firearms on public streets or public property in Philadelphia, further providing for prohibited conduct during emergency, providing for sportsman's firearm permit, further providing for licenses and for antique firearms and repealing provisions relating to proof of license and exception; and making editorial changes..",
+      "subjects": [
+        "no license needed to carry firearms openly or concealed",
+        "carry license made optional",
+        "Philadelphia public-carry rule repealed",
+        "license age minimum and character check removed",
+        "duty to show license on demand repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-454-2025.introduced.pdf",
+          "sha256": "f30ec3f128cf3767ddff70a1eeaf2b9e5550db871bb897761638ddd54b516abe"
+        }
+      }
+    },
+    {
+      "id": "dc33f92e9a47dbfb19b0f4a38cadeb56973ada56e4fee0f7a722d4faf66207ba",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb548",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-548-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of PA-HB-548-2025 (LegiScan sponsor list): HB548 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for limitation on the regulation of firearms and ammunition; and, in preemptions, providing for regulation of firearms and ammunition..",
+      "subjects": [
+        "state preemption of local gun and ammunition rules extended to all municipalities",
+        "lawsuits and expense awards against local governments that break preemption"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-548-2025.introduced.pdf",
+          "sha256": "96cead2961c739e15a8f1b6213d6cebb08434f6d00d7d5db6ad44267c48a36b1"
+        }
+      }
+    },
+    {
+      "id": "ec184250c9cb147e45038263f1ea3ba169d07826703fc4cfc411b50cb6970408",
+      "kind": "own-words",
+      "url": "https://repbashline.com/about",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Bashline is a strong advocate and protector of the Second Amendment and wants to bring more family-sustaining jobs to his district while cutting intrusive government red tape.",
+      "note": "Official biography page describing his stance on the Second Amendment (undated page).",
+      "subjects": [
+        "gun rights and Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:17:02.063Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "815e8c4e295725975d5f0452a225c9b289437dee8c039e9ca689cfc84f36b575",
+      "kind": "own-words",
+      "url": "https://repbashline.com/News/37804/Latest-News/Bashline-to-Host-Concealed-Carry-Seminar-April-30",
+      "date": "2026-04-07",
+      "date_precision": "day",
+      "passage": "“I am pleased to host this event once again to give law-abiding citizens pertinent information on how they can legally protect themselves, their families and their properties,” said Bashline.",
+      "note": "Quote in his office's release announcing his annual concealed carry seminar (date per page).",
+      "subjects": [
+        "concealed carry permits",
+        "gun safety"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:17:02.063Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "300c1adb0ab6eef03fbc6999631eb4f3e0e70eba16bf9fab5ae7a192cec284ca",
+      "kind": "own-words",
+      "url": "https://www.explorejeffersonpa.com/local/2026/02/13/rep-josh-bashline-launches-re-election-campaign-for-63rd-district-173258/",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "passage": "Bashline highlighted his voting record, noting support for pro-life legislation, Second Amendment protections, small businesses, energy development and agriculture.",
+      "note": "Outlet's report of how he described his own record at his re-election launch; paraphrase by the outlet, not a direct quote.",
+      "subjects": [
+        "gun rights and Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:17:02.063Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "official site https://repbashline.com/about (confirms state representative, 63rd District; one line on voter ID, saved)",
+        "official site home and press release list https://repbashline.com/NewsGroup/Press-Releases (20 releases Dec 2025 to Sep 2026, nothing on the subject)",
+        "House caucus release https://webcms.pahousegop.com/News-Print/35346/Bashline-Sworn-in-as-State-Representative-?SiteID=1 (swearing-in release, Jan 2025; its voter ID line is the release's own summary of his priorities, not saved)",
+        "news https://www.explorejeffersonpa.com/local/2026/02/13/rep-josh-bashline-launches-re-election-campaign-for-63rd-district-173258/ (confirms he is seeking re-election in 2026; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Josh_Bashline (empty page)",
+        "caucus member page https://www.pahousegop.com/Bashline (page not found)",
+        "one web search on name plus voter ID words",
+        "legislature bill pages for sponsorships: not searched, linked separately"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:43:27.547Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "official site https://repbashline.com/about (confirms state representative, 63rd District; one line on voter ID, saved)",
+        "official site home and press release list https://repbashline.com/NewsGroup/Press-Releases (20 releases Dec 2025 to Sep 2026, nothing on the subject)",
+        "House caucus release https://webcms.pahousegop.com/News-Print/35346/Bashline-Sworn-in-as-State-Representative-?SiteID=1 (swearing-in release, Jan 2025; its voter ID line is the release's own summary of his priorities, not saved)",
+        "news https://www.explorejeffersonpa.com/local/2026/02/13/rep-josh-bashline-launches-re-election-campaign-for-63rd-district-173258/ (confirms he is seeking re-election in 2026; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Josh_Bashline (empty page)",
+        "caucus member page https://www.pahousegop.com/Bashline (page not found)",
+        "one web search on name plus voter ID words",
+        "legislature bill pages for sponsorships: not searched, linked separately"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:47:07.209Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "official site https://repbashline.com/about (confirms state representative, 63rd District; one line on voter ID, saved)",
+        "official site home and press release list https://repbashline.com/NewsGroup/Press-Releases (20 releases Dec 2025 to Sep 2026, nothing on the subject)",
+        "House caucus release https://webcms.pahousegop.com/News-Print/35346/Bashline-Sworn-in-as-State-Representative-?SiteID=1 (swearing-in release, Jan 2025; its voter ID line is the release's own summary of his priorities, not saved)",
+        "news https://www.explorejeffersonpa.com/local/2026/02/13/rep-josh-bashline-launches-re-election-campaign-for-63rd-district-173258/ (confirms he is seeking re-election in 2026; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Josh_Bashline (empty page)",
+        "caucus member page https://www.pahousegop.com/Bashline (page not found)",
+        "one web search on name plus voter ID words",
+        "legislature bill pages for sponsorships: not searched, linked separately"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:52:01.929Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "official site https://repbashline.com/about (confirms state representative, 63rd District; one line on voter ID, saved)",
+        "official site home and press release list https://repbashline.com/NewsGroup/Press-Releases (20 releases Dec 2025 to Sep 2026, nothing on the subject)",
+        "House caucus release https://webcms.pahousegop.com/News-Print/35346/Bashline-Sworn-in-as-State-Representative-?SiteID=1 (swearing-in release, Jan 2025; its voter ID line is the release's own summary of his priorities, not saved)",
+        "news https://www.explorejeffersonpa.com/local/2026/02/13/rep-josh-bashline-launches-re-election-campaign-for-63rd-district-173258/ (confirms he is seeking re-election in 2026; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Josh_Bashline (empty page)",
+        "caucus member page https://www.pahousegop.com/Bashline (page not found)",
+        "one web search on name plus voter ID words",
+        "legislature bill pages for sponsorships: not searched, linked separately"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:59:56.351Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "official site https://repbashline.com/about (confirms state representative, 63rd District; one line on voter ID, saved)",
+        "official site home and press release list https://repbashline.com/NewsGroup/Press-Releases (20 releases Dec 2025 to Sep 2026, nothing on the subject)",
+        "House caucus release https://webcms.pahousegop.com/News-Print/35346/Bashline-Sworn-in-as-State-Representative-?SiteID=1 (swearing-in release, Jan 2025; its voter ID line is the release's own summary of his priorities, not saved)",
+        "news https://www.explorejeffersonpa.com/local/2026/02/13/rep-josh-bashline-launches-re-election-campaign-for-63rd-district-173258/ (confirms he is seeking re-election in 2026; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Josh_Bashline (empty page)",
+        "caucus member page https://www.pahousegop.com/Bashline (page not found)",
+        "one web search on name plus voter ID words",
+        "legislature bill pages for sponsorships: not searched, linked separately"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:05:26.592Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "official site https://repbashline.com/about (confirms state representative, 63rd District; one line on voter ID, saved)",
+        "official site home and press release list https://repbashline.com/NewsGroup/Press-Releases (20 releases Dec 2025 to Sep 2026, nothing on the subject)",
+        "House caucus release https://webcms.pahousegop.com/News-Print/35346/Bashline-Sworn-in-as-State-Representative-?SiteID=1 (swearing-in release, Jan 2025; its voter ID line is the release's own summary of his priorities, not saved)",
+        "news https://www.explorejeffersonpa.com/local/2026/02/13/rep-josh-bashline-launches-re-election-campaign-for-63rd-district-173258/ (confirms he is seeking re-election in 2026; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Josh_Bashline (empty page)",
+        "caucus member page https://www.pahousegop.com/Bashline (page not found)",
+        "one web search on name plus voter ID words",
+        "legislature bill pages for sponsorships: not searched, linked separately"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:13:34.911Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "official site https://repbashline.com/about (confirms state representative, 63rd District; one line on voter ID, saved)",
+        "official site home and press release list https://repbashline.com/NewsGroup/Press-Releases (20 releases Dec 2025 to Sep 2026, nothing on the subject)",
+        "House caucus release https://webcms.pahousegop.com/News-Print/35346/Bashline-Sworn-in-as-State-Representative-?SiteID=1 (swearing-in release, Jan 2025; its voter ID line is the release's own summary of his priorities, not saved)",
+        "news https://www.explorejeffersonpa.com/local/2026/02/13/rep-josh-bashline-launches-re-election-campaign-for-63rd-district-173258/ (confirms he is seeking re-election in 2026; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Josh_Bashline (empty page)",
+        "caucus member page https://www.pahousegop.com/Bashline (page not found)",
+        "one web search on name plus voter ID words",
+        "legislature bill pages for sponsorships: not searched, linked separately"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:18:25.413Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-31, pa-01 HB 1396 nays)"
+      ],
+      "found": 1,
+      "at": "2026-10-31T18:07:00.900Z",
+      "by": "identity-pa-2026-10-31-raw-votes"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and Second Amendment",
+        "concealed carry permits",
+        "gun buyback",
+        "gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site repbashline.com/about",
+        "official site news: concealed carry seminar release",
+        "re-election launch article (exploreJefferson)",
+        "web search: name plus Second Amendment",
+        "Ballotpedia: not reviewed (returns empty to fetch tool)",
+        "sponsor list: covered by LegiScan bulk check",
+        "blocked: none"
+      ],
+      "found": 3,
+      "at": "2026-10-30T23:17:02.063Z",
+      "by": "source-collector"
+    }
+  ]
+}

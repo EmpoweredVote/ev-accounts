@@ -1,0 +1,15 @@
+{
+  "scope": "state:ks",
+  "portals": [],
+  "rosters": [
+    {
+      "url": "https://kslegislature.gov/li_2016/b2015_16/members/csv/kansas_legislator_info.csv",
+      "note": "house member list, 2015 session (2015-2016 biennium) (official); gun-policy identity check 2026-10-29"
+    },
+    {
+      "url": "https://kslegislature.gov/li_2016/b2015_16/members/csv/kansas_legislator_info.csv",
+      "note": "senate member list, 2015 session (2015-2016 biennium) (official); gun-policy identity check 2026-10-29"
+    }
+  ],
+  "higher_law_duties": []
+}

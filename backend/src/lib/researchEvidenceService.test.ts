@@ -123,6 +123,19 @@ describe('accumulateEvidence', () => {
 
   // I9 (partial): report what was really inserted — the season-less unique index drops a snippet
   // already stored for the pair, and that must not be counted as written.
+  // RULINGS.md "Party labels never reach a reader": a snippet is never edited, so one with a label is dropped.
+  it('skips a snippet with a party label, writes the rest, and counts only what was inserted', async () => {
+    const { accumulateEvidence } = await import('./researchEvidenceService.js');
+    const r = { politician_id: 'p', topic_id: 't', source_url: 'u', snippet: 'He voted for the bill.', snippet_index: 0, batch_id: 'b' };
+    mockQuery.mockResolvedValueOnce({ rows: [], rowCount: 1 });
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
+    const n = await accumulateEvidence([r, { ...r, snippet: 'Sen. Jim Risch (R-Idaho) voted for the bill.', snippet_index: 1 }]);
+    expect(n).toBe(1);
+    expect(mockQuery.mock.calls.filter((c: any[]) => /INSERT INTO inform\.politician_context_evidence/.test(String(c[0])))).toHaveLength(1);
+    expect(warn).toHaveBeenCalledWith(expect.stringMatching(/party label/));
+    warn.mockRestore();
+  });
+
   it('returns the number of rows actually inserted (sum of rowCount), not the number attempted', async () => {
     const { accumulateEvidence } = await import('./researchEvidenceService.js');
     const r = { politician_id: 'p', topic_id: 't', source_url: 'u', snippet: 's', snippet_index: 0, batch_id: 'b' };
@@ -446,6 +459,9 @@ describe('writeVerifiedStance', () => {
 // A 25-word page span inside a longer researcher snippet (I6).
 const SPAN = 'Jane Doe voted yes on House Bill 1001 in 2025 because she believes every family deserves affordable coverage and lower prescription costs at the pharmacy counter';
 const FULL_SNIPPET = `At a town hall she said: ${SPAN} — her words.`;
+// A roll-call lane line (rollCallEvidence.ts): 14 words, stored as both snippet and matched span.
+const ROLL_URL = 'https://clerk.house.gov/evs/2025/roll102.xml';
+const ROLL_LINE = 'House roll call 102 (2025), H R 22, On Passage: Jack (GA) voted Yea.';
 
 describe('resolveResearchReview — citations written on approval, not at queue time (R1)', () => {
   const reviewRow = {
@@ -521,6 +537,36 @@ describe('resolveResearchReview — citations written on approval, not at queue 
       { snippet_index: 0, snippet: FULL_SNIPPET, verdict: 'verified', ...(span ? { matched_span: span } : {}) }] }] };
     mockQuery.mockResolvedValueOnce({ rows: [row] });
     await expect(resolveResearchReview('rev-1', 'editor-1')).rejects.toMatchObject({ code: 'INCOMPLETE' });
+    expect(mockConnect).not.toHaveBeenCalled();
+  });
+
+  // Roll-call lane (rollCallEvidence.ts): its canonical line is ~14 words, under MIN_SNIPPET_WORDS,
+  // but it was checked field by field against the Clerk XML, so it is a citation on its own.
+  it('approves a row whose only citation is a verified roll-call line, and publishes the line', async () => {
+    const { resolveResearchReview } = await import('./researchEvidenceService.js');
+    const row = { ...reviewRow, evidence: [{ url: ROLL_URL, snippets: [
+      { snippet_index: 0, snippet: ROLL_LINE, verdict: 'verified', matched_span: ROLL_LINE }] }] };
+    mockQuery.mockResolvedValueOnce({ rows: [row] });
+    await resolveResearchReview('rev-1', 'editor-1');
+    const calls = mockClientQuery.mock.calls;
+    expect(calls.map((c) => String(c[0]))).toContain('COMMIT');
+    const evidenceCalls = calls.filter((c) => String(c[0]).includes('politician_context_evidence'));
+    expect(evidenceCalls).toHaveLength(1);
+    expect(evidenceCalls[0][1]).toEqual(['p1', 't1', ROLL_URL, ROLL_LINE, 0, 'batch-1']);
+  });
+  it.each([
+    ['a short ordinary snippet on an ordinary page', 'https://a.example', 'Jane Doe voted yes on House Bill 1001.'],
+    ['a roll-call-shaped line on a page that is not a Clerk roll-call XML', 'https://a.example', ROLL_LINE],
+    ['a short non-roll-call snippet on a Clerk roll-call XML', ROLL_URL, 'Jack voted Yea on H R 22.'],
+  ])('still refuses (INCOMPLETE) a row whose only citation is %s', async (_label, url, text) => {
+    const { resolveResearchReview } = await import('./researchEvidenceService.js');
+    const row = { ...reviewRow, evidence: [{ url, snippets: [
+      { snippet_index: 0, snippet: text, verdict: 'verified', matched_span: text }] }] };
+    mockQuery.mockResolvedValueOnce({ rows: [row] });
+    await expect(resolveResearchReview('rev-1', 'editor-1')).rejects.toMatchObject({
+      code: 'INCOMPLETE',
+      message: 'No verified or human-verified source — a stance cannot be published without a citation',
+    });
     expect(mockConnect).not.toHaveBeenCalled();
   });
 
@@ -750,6 +796,37 @@ describe('validStoredSpan (I6)', () => {
     expect(validStoredSpan(FULL_SNIPPET, `${SPAN} extra`)).toBeNull();
   });
 
+  it('accepts a roll-call line only with a Clerk roll-call XML URL, as the whole snippet', async () => {
+    const { validStoredSpan } = await import('./researchEvidenceService.js');
+    expect(validStoredSpan(ROLL_LINE, ROLL_LINE, ROLL_URL)).toBe(ROLL_LINE);
+    expect(validStoredSpan(ROLL_LINE, ROLL_LINE)).toBeNull();                        // no URL
+    expect(validStoredSpan(ROLL_LINE, ROLL_LINE, 'https://a.example')).toBeNull();   // not the Clerk XML
+    expect(validStoredSpan(`Note: ${ROLL_LINE}`, ROLL_LINE, ROLL_URL)).toBeNull();   // not the whole snippet
+    const IGA_URL = 'https://iga.in.gov/pdf-documents/124/2025/senate/bills/SB0010/rollcalls/SB0010.340_H.pdf';
+    const IGA_LINE = 'Indiana House roll call 340 (2025), SB 10 - Culp - 3rd Reading: Culp voted Yea.';
+    expect(validStoredSpan(IGA_LINE, IGA_LINE, IGA_URL)).toBe(IGA_LINE);
+    expect(validStoredSpan(IGA_LINE, IGA_LINE, ROLL_URL)).toBeNull();               // not an Indiana roll call
+    const MA_URL = 'https://malegislature.gov/RollCall/193/HouseRollCall135.pdf';
+    const MA_LINE = 'Massachusetts House roll call 135 (193rd General Court), H.4885 - On acceptance of the report: Kilcoyne voted Yea.';
+    expect(validStoredSpan(MA_LINE, MA_LINE, MA_URL)).toBe(MA_LINE);
+    expect(validStoredSpan(MA_LINE, MA_LINE, IGA_URL)).toBeNull();                  // not a Massachusetts roll call
+    const party = 'House roll call 102 (2025), H R 22, On Passage: Jack (R-GA) voted Yea.';
+    expect(validStoredSpan(party, party, ROLL_URL)).toBeNull();                      // not a canonical line
+    expect(validStoredSpan('Jane Doe voted', 'Jane Doe voted', ROLL_URL)).toBeNull();
+  });
+
+  it('accepts a LegiScan line only with a LegiScan bill or roll-call URL, as the whole snippet', async () => {
+    const { validStoredSpan } = await import('./researchEvidenceService.js');
+    const url = 'https://legiscan.com/TX/bill/HB5337/2025';
+    const line = 'LegiScan TX 89th Legislature Regular Session HB5337: Gary Gates is listed as a cosponsor.';
+    expect(validStoredSpan(line, line, url)).toBe(line);
+    expect(validStoredSpan(line, line)).toBeNull();                                  // no URL
+    expect(validStoredSpan(line, line, ROLL_URL)).toBeNull();                        // not a LegiScan URL
+    expect(validStoredSpan(`Note: ${line}`, line, url)).toBeNull();                  // not the whole snippet
+    const party = 'LegiScan TX 89th Legislature Regular Session HB5337: Gary Gates (R) is a cosponsor.';
+    expect(validStoredSpan(party, party, url)).toBeNull();                           // not a canonical line
+  });
+
   // The span is now decoded before it is stored, so a voter does not read "&mdash;". The snippet in
   // the review row is still the researcher's copy of the page, entities and all. Both sides fold
   // through normalizeText, so approval must still accept the pair — if it did not, every citation
@@ -907,6 +984,68 @@ describe('Season 2 blanks through the review queue (CA_0303, spec 2026-10-07 §3
     const { resolveResearchReview } = await import('./researchEvidenceService.js');
     mockQuery.mockResolvedValueOnce({ rows: [blankRow({ evidence: [] })] });
     await expect(resolveResearchReview('rev-b', 'editor-1')).rejects.toMatchObject({ code: 'INCOMPLETE' });
+  });
+
+  // Ruling 2026-10-31 ("Write a blank for all 26"): a queued blank whose old sources cannot be verified is approved
+  // through the tool, with the reason on the review row, instead of being written by hand.
+  describe('unverifiableBlankNote (approve-batch --unverifiable-blank)', () => {
+    const note = 'Blank approved with no verified source (2026-11-03): no page could be cited.';
+    const unverified = (over: Record<string, unknown> = {}) => blankRow({
+      evidence: [{ url: 'https://old.example/s1', snippets: [{ snippet_index: 1, snippet: SPAN, verdict: 'name_not_present' }] }],
+      verified_source_count: 0, queue_reasons: ['below-threshold'], ...over });
+
+    it('approves a below-threshold blank with no source, cites nothing and records the note', async () => {
+      const { resolveResearchReview } = await import('./researchEvidenceService.js');
+      const { UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL } = await import('./seasonService.js');
+      mockQuery.mockResolvedValueOnce({ rows: [unverified()] });
+      openSeason();
+      await resolveResearchReview('rev-b', 'editor-1', [], undefined, undefined, undefined, { unverifiableBlankNote: note });
+      const calls = mockClientQuery.mock.calls;
+      expect(calls[0][0]).toBe('BEGIN');
+      expect(calls.at(-1)![0]).toBe('COMMIT');
+      expect(calls.find((c) => c[0] === UPSERT_ANSWER_SQL)![1]).toEqual(['p1', 't1', 0, 'editor-1']);
+      const ctx = calls.find((c) => c[0] === UPSERT_CONTEXT_SQL)!;
+      expect(ctx[1][2]).toMatch(/^Blank in Season 2 \(direction-only\) — researched on 2026-10-07\. /);
+      expect(ctx[1][3]).toEqual([]);
+      expect(calls.filter((c) => /INSERT INTO inform\.politician_context_evidence/.test(String(c[0])))).toHaveLength(0);
+      const notes = calls.find((c) => /SET notes = /.test(String(c[0])))!;
+      expect(notes[1]).toEqual(['rev-b', note]);
+    });
+
+    it('refuses without the note, as before', async () => {
+      const { resolveResearchReview } = await import('./researchEvidenceService.js');
+      mockQuery.mockResolvedValueOnce({ rows: [unverified()] });
+      await expect(resolveResearchReview('rev-b', 'editor-1')).rejects.toMatchObject({ code: 'INCOMPLETE' });
+      expect(mockConnect).not.toHaveBeenCalled();
+    });
+
+    it.each([
+      ['a proposed chair', { proposed_value: 3, proposed_blank_reason: null }],
+      ['a blank queued for another reason', { queue_reasons: ['blank-replaces-published-chair'] }],
+      ['a blank with no queue reasons recorded', { queue_reasons: null }],
+    ])('refuses %s', async (_label, over) => {
+      const { resolveResearchReview } = await import('./researchEvidenceService.js');
+      mockQuery.mockResolvedValueOnce({ rows: [unverified(over)] });
+      await expect(resolveResearchReview('rev-b', 'editor-1', [], undefined, undefined, undefined,
+        { unverifiableBlankNote: note })).rejects.toMatchObject({ code: 'INCOMPLETE' });
+      expect(mockConnect).not.toHaveBeenCalled();
+    });
+
+    it('refuses when the reviewer turns the blank into a chair', async () => {
+      const { resolveResearchReview } = await import('./researchEvidenceService.js');
+      mockQuery.mockResolvedValueOnce({ rows: [unverified()] });
+      await expect(resolveResearchReview('rev-b', 'editor-1', [], 2, 'new reasoning for rung 2', undefined,
+        { unverifiableBlankNote: note })).rejects.toMatchObject({ code: 'INCOMPLETE' });
+      expect(mockConnect).not.toHaveBeenCalled();
+    });
+
+    it('a blank that does verify is approved as usual and the note is not written', async () => {
+      const { resolveResearchReview } = await import('./researchEvidenceService.js');
+      mockQuery.mockResolvedValueOnce({ rows: [blankRow({ queue_reasons: ['below-threshold'] })] });
+      openSeason();
+      await resolveResearchReview('rev-b', 'editor-1', [], undefined, undefined, undefined, { unverifiableBlankNote: note });
+      expect(mockClientQuery.mock.calls.some((c) => /SET notes = /.test(String(c[0])))).toBe(false);
+    });
   });
 });
 

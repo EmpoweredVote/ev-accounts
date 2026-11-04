@@ -94,6 +94,14 @@ with or without a cure; exceptions left to later law with none named are no esca
 the bill's printed text. A person with a stated-escape record at 3 and a silent photo-ID record at 4 sits at 3. Read
 it in the Season 3 annex ("Draft H lines") and RULINGS.md "Topic-scoped readings". None of the 57 Season 3 rows
 moves. Decision record: `.planning/research/s3-prep-voting-rights/stage3-h/results.md` (workspace root).
+**Clarified 2026-10-30 (still 0.6 — a topic-scoped reading, no new variable or value; rulings by Chris
+Andrews 2026-10-29/30, Q5, J7, D4):** `gun-policy` gains three topic-scoped readings. Q5: a federal bill that bars
+states from requiring a carry permit is on-question under V2 (it states the carry rule) and sits at rung 5, despite
+H12. J7: a self-defense part (no duty to retreat, a justifiable-homicide line) is not `judicial-criminal-justice`
+evidence under V4.1. D4: a background-check notice to immigration enforcement is not `deportation` evidence under
+V4.1. They apply to the Season 3 revision 4 of that topic only (CA_0338). No label or gold row on this topic's
+Season 3 revision exists, so no recorded result changes. Decision record:
+`.planning/research/s3-prep-gun-policy/stage3/results.md` and `stage4/` (workspace root).
 **Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
 **Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
 and a skill or prompt disagree, this file wins; fix the other one.
@@ -385,7 +393,7 @@ This variable is the core of the codebook. The stance-program pass-1 measurement
 | `multi-subject` | A vote on a bill with an operative part that would be evidence for **a different compass topic** (V4.1 "The single-subject test"). Omnibus, budget, appropriations and reconciliation bills almost always are. | only via the vote ladder |
 | `procedural` | Cloture, rule, table, recommit, previous question, adjournment. | no |
 | `study-directive` | It orders a study, task force or report. | no |
-| `near-unanimous` | Fewer than 10% of the body voted against. (0.6) On a body of 10 or fewer voting members, the tally does not decide: a vote adopted on a consent agenda or en bloc, or a vote whose provision is a duty a higher law imposes, is `near-unanimous` (V4.1 "Small bodies"). | no, alone |
+| `near-unanimous` | Fewer than 10% of the members voting Yes or No voted against (clarified 2026-11-03: a share of votes cast, not of all seats; every gate so far was computed this way). (0.6) On a body of 10 or fewer voting members, the tally does not decide: a vote adopted on a consent agenda or en bloc, or a vote whose provision is a duty a higher law imposes, is `near-unanimous` (V4.1 "Small bodies"). | no, alone |
 | `rhetorical` | Real and attributed, but it names no policy clause ("hateful and divisive"). | no |
 | `off-axis` | It speaks to the topic along a dimension the ladder does not order. | no |
 

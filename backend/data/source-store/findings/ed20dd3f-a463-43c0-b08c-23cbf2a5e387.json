@@ -1,0 +1,503 @@
+{
+  "politician_id": "ed20dd3f-a463-43c0-b08c-23cbf2a5e387",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "d1cf3ea0fb05d85514d99e72ecfbc343d0b958d25acd54e6a5b4e7f76f835fe9",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2025190",
+      "date": "2025-07-03",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2025",
+      "act": "yea",
+      "motion": "On Motion to Concur in the Senate Amendment",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US House, On Motion to Concur in the Senate Amendment, 2025-07-03: yea (tally 218–214); census gate: multi-subject.",
+      "subjects": [
+        "end the federal tax on suppressors and short-barrelled guns",
+        "budget (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bc027dbf82f388e9835d49e331df4639cbb8d64a606d6e4ad87a26d3b600d415",
+      "kind": "own-words",
+      "url": "https://www.abeforaz.com/our-issues/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "America is built on fundamental rights that we, as citizens, can never lose. Our First Amendment gives us the right to say what we want; The Second Amendment protects the First. I will unequivocally support your right to bear arms and protect the Second Amendment.",
+      "note": "Second Amendment section of the issues page on his campaign site. The page carries no date.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment",
+        "right to bear arms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:50:36.456Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "589708d68e86e126254680ea18c91ed72a8f45c4ea1d4d85fb6f52e8a54d98a3",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1041",
+      "date": "2026-05-21",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1041-2026",
+      "act": "yea",
+      "motion": "On Passage (Roll 190)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 190), 2026-05-21: yea (tally 216–201); census gate: none.",
+      "subjects": [
+        "VA records barred from gun background check without a judge's finding",
+        "VA fiduciary or incompetence finding not a 'mental defective' adjudication"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1041-2026.htm",
+          "sha256": "2a2784caf1b89019cb01ab04ebd2e2332984244d9935fad9618771638d40338e"
+        }
+      }
+    },
+    {
+      "id": "4a308d48a9549e50306297a949724b97a1418451146f08ca82bbe8af63d33502",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1181",
+      "date": "2026-07-14",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1181-2026",
+      "act": "yea",
+      "motion": "On Passage (Roll 240)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 240), 2026-07-14: yea (tally 221–201); census gate: none.",
+      "subjects": [
+        "separate payment codes for gun stores barred",
+        "state and local rules on gun-store payment codes preempted"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1181-2026.htm",
+          "sha256": "f006527184528c0f2d077b081748501c1dd86c4e2c2b83f4ce23ab419e1fb25c"
+        }
+      }
+    },
+    {
+      "id": "342e719a2631d053db4cb07977d5fc7e78d95ce5d7b5ae14f3440c2c501164ff",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/2189",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "US-HR-2189-2026",
+      "act": "yea",
+      "motion": "On Passage (Roll 70)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 70), 2026-02-12: yea (tally 233–185); census gate: none.",
+      "subjects": [
+        "less-than-lethal launchers exempt from federal firearm rules",
+        "firearms and ammunition excise tax waived for those devices",
+        "exempt from National Firearms Act"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-2189-2026.htm",
+          "sha256": "dc2e63136aaa75fcc392af14f19bb2aae027e280992db65f70d454213a650e4e"
+        }
+      }
+    },
+    {
+      "id": "23114e9e86206e3862695a222cdf0d4b9d8071e9e39e2d4fdbd7f6f4f00855de",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/2243",
+      "date": "2025-05-14",
+      "date_precision": "day",
+      "instrument_id": "US-HR-2243-2025",
+      "act": "yea",
+      "motion": "On Passage (Roll 128)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 128), 2025-05-14: yea (tally 229–193); census gate: none.",
+      "subjects": [
+        "more places where off-duty and retired officers may carry concealed guns",
+        "retired officer firearms-training standards loosened"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-2243-2025.htm",
+          "sha256": "ca5f7326393fa8074705e6aa642e2b3a991c4d683236cff228e515a1bf193f9e"
+        }
+      }
+    },
+    {
+      "id": "a7e7960420c95fbb22562bb2a39c5682ce204f7a4452b4ad1026d6531d951f5e",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/2255",
+      "date": "2025-05-15",
+      "date_precision": "day",
+      "instrument_id": "US-HR-2255-2025",
+      "act": "yea",
+      "motion": "On Passage (Roll 130)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 130), 2025-05-15: yea (tally 234–182); census gate: none.",
+      "subjects": [
+        "federal officers may buy retired service firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-2255-2025.htm",
+          "sha256": "d169bbda6c281e845e29bde7d0fdabe0f76218dba3948eaf0725bb49db42a459"
+        }
+      }
+    },
+    {
+      "id": "78288bba03cb4690f2571bb732fd8899aaee5206d5c23c7eeff7f586e2fa74b8",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1041",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "US-HR-1041-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2025-02-06",
+      "note": "co sponsor of US-HR-1041-2026 (cosponsor 2025-02-06): HR 1041 (119th Congress): Veterans 2nd Amendment Protection Act.",
+      "subjects": [
+        "VA records barred from gun background check without a judge's finding",
+        "VA fiduciary or incompetence finding not a 'mental defective' adjudication"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1041-2026.htm",
+          "sha256": "2a2784caf1b89019cb01ab04ebd2e2332984244d9935fad9618771638d40338e"
+        }
+      }
+    },
+    {
+      "id": "3aa46c4cd61d33bbfc6ac3f49e51d5b5746c4d326a2c2229db5169d383c53a8e",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1181",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "US-HR-1181-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2025-05-15",
+      "note": "co sponsor of US-HR-1181-2026 (cosponsor 2025-05-15): HR 1181 (119th Congress): Protecting Privacy in Purchases Act.",
+      "subjects": [
+        "separate payment codes for gun stores barred",
+        "state and local rules on gun-store payment codes preempted"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1181-2026.htm",
+          "sha256": "f006527184528c0f2d077b081748501c1dd86c4e2c2b83f4ce23ab419e1fb25c"
+        }
+      }
+    },
+    {
+      "id": "b94bb7ca80bae5810581dd069a8722559a44a99820089619c438f42c920581ef",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/2189",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "US-HR-2189-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2025-06-10",
+      "note": "co sponsor of US-HR-2189-2026 (cosponsor 2025-06-10): HR 2189 (119th Congress): To modernize Federal firearms laws to account for advancements in technology and less-than-lethal weapons, and for other purposes..",
+      "subjects": [
+        "less-than-lethal launchers exempt from federal firearm rules",
+        "firearms and ammunition excise tax waived for those devices",
+        "exempt from National Firearms Act"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-2189-2026.htm",
+          "sha256": "dc2e63136aaa75fcc392af14f19bb2aae027e280992db65f70d454213a650e4e"
+        }
+      }
+    },
+    {
+      "id": "cd25d72db8ae6ad84e3706b919c33e79b96060a3b61272b378b7ba66b52fa78a",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/38",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "US-HR-38-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2025-01-15",
+      "note": "co sponsor of US-HR-38-2025 (cosponsor 2025-01-15): HR 38 (119th Congress): Constitutional Concealed Carry Reciprocity Act of 2025.",
+      "subjects": [
+        "concealed-carry permits honored across state lines",
+        "state and local carry laws overridden",
+        "carry allowed on national park and federal public land",
+        "no arrest without probable cause; lawsuits and legal fees for violations"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-38-2025.htm",
+          "sha256": "956e5f8eb857804e25089a765234f0d85edf8f6acc1803db879f4ed2e9fb30f3"
+        }
+      }
+    },
+    {
+      "id": "d4c2b3a1e10b4036c835f8cae57bd0d70f9c52e3a279fe28665a23e4cf2d380a",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/45",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "US-HR-45-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2025-05-15",
+      "note": "co sponsor of US-HR-45-2025 (cosponsor 2025-05-15): HR 45 (119th Congress): FIND Act.",
+      "subjects": [
+        "federal contractors barred from discriminating against gun and ammunition businesses",
+        "contract terminated and debarment for violators"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-45-2025.htm",
+          "sha256": "0a2fedce19846aa2979e9b5c658da25963f271a5e44d54fef9d6048e81873d76"
+        }
+      }
+    },
+    {
+      "id": "ae753623d718d778e2228cb0ae0cc79f17eac6a601d5a076cd253d5fd5c95613",
+      "kind": "own-words",
+      "url": "https://hamadeh.house.gov/media/press-releases/congressman-hamadeh-takes-aim-anti-second-amendment-policies-support",
+      "date": "2025-04-14",
+      "date_precision": "day",
+      "passage": "“For too long convoluted policies and misguided definitions have caused confusion and concern, putting targets on gun owners in attempts to weaken our Second Amendment rights. Enough is enough. I for one, know that we can never do enough to protect our coveted God-given rights, but we must try.”",
+      "note": "Quote attributed to him in his House office release on suppressors, issued after a Phoenix gun show visit.",
+      "subjects": [
+        "repeal or ease federal rules on suppressors",
+        "general statement on gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:50:36.456Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "225a383dfcd6e3164f82845711b69157dad7075fd68a85ffd59597143b286a77",
+      "kind": "record",
+      "url": "https://hamadeh.house.gov/media/press-releases/congressman-hamadeh-takes-aim-anti-second-amendment-policies-support",
+      "date": "2025-04-14",
+      "date_precision": "day",
+      "instrument_id": "US-HR-631-2025",
+      "act": "sponsor",
+      "note": "Release says he signed on in support of the Protecting Americans' Right to Silence (PARTS) Act, which would change the legal definitions of silencers and mufflers so components are not treated as silencers. Co-sponsorship; bill number not given on the page. Bill number H.R. 631 (119th) from govinfo BILLSTATUS (co-sponsor listed).",
+      "subjects": [
+        "repeal or ease federal rules on suppressors"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:50:36.456Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3ac582a593cb461ead27b92a34f4cfe6269b350d2f01c27a4e012130c274b214",
+      "kind": "record",
+      "url": "https://hamadeh.house.gov/media/press-releases/congressman-hamadeh-takes-aim-anti-second-amendment-policies-support",
+      "date": "2025-04-14",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "co-sponsor of the Hearing Protection Act (119th Congress), per his 2025-04-14 release; bill number unconfirmed",
+      "note": "Release says he signed on as a co-sponsor of the Hearing Protection Act, which would lower the barriers to buying a firearm suppressor. Co-sponsorship; bill number not given on the page. Not found as his co-sponsorship in govinfo BILLSTATUS; bill number unconfirmed.",
+      "subjects": [
+        "repeal or ease federal rules on suppressors"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:50:36.456Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3d0f6fbf0915125d4baaed8bc4751fbca35f458511d19740123ca6289ea7b6b",
+      "kind": "record",
+      "url": "https://hamadeh.house.gov/media/press-releases/congressman-hamadeh-takes-aim-anti-second-amendment-policies-support",
+      "date": "2025-04-14",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "co-sponsor of the SHUSH Act (119th Congress), per his 2025-04-14 release; bill number unconfirmed",
+      "note": "Release says he is co-sponsoring the Silencers Help Us Save Hearing (SHUSH) Act, which it says removes regulations on suppressors. Co-sponsorship; bill number not given on the page. Not found as his co-sponsorship in govinfo BILLSTATUS; bill number unconfirmed.",
+      "subjects": [
+        "repeal or ease federal rules on suppressors"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:50:36.456Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "suppressors and the National Firearms Act",
+        "federal firearms agency rules",
+        "background checks",
+        "carry permits",
+        "assault-style guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House site hamadeh.house.gov (press release on suppressors read; 2025 year-in-review release read, nothing on the subject; release list first page read)",
+        "campaign site abeforaz.com issues page (own words, saved)",
+        "campaign site abehamadeh.com home page (only gun sentence is someone else's endorsement quote, not saved)",
+        "Fox 10 Phoenix 2026 district explainer (confirms he is a general-election candidate in Arizona's 8th district)",
+        "blocked: https://ballotpedia.org/Abraham_Hamadeh (empty page)",
+        "blocked: https://www.congress.gov/member/abraham-hamadeh/H001100 (403)",
+        "sponsor list: covered by federal bulk check",
+        "web searches: three news and web searches on his name plus gun terms; nothing found on carry reciprocity, agency rules or red-flag orders"
+      ],
+      "found": 5,
+      "at": "2026-10-31T00:50:36.456Z",
+      "by": "source-collector"
+    }
+  ]
+}

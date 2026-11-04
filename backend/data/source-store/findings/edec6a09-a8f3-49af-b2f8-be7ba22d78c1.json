@@ -1,0 +1,53 @@
+{
+  "politician_id": "edec6a09-a8f3-49af-b2f8-be7ba22d78c1",
+  "findings": [
+    {
+      "id": "7b23f48ab3c17de8f40d93895bd72361e528983fea317020b781a8831401305e",
+      "kind": "own-words",
+      "url": "https://house-press.com/?p=15816",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "passage": "Some national political figures are now calling for sweeping executive orders to eliminate mail-in voting nationwide.",
+      "note": "Related mention in a House press statement issued in his name about HB 40. He calls such orders federal overreach. The statement says nothing about ID or citizenship.",
+      "subjects": [
+        "mail voting (related, no ID content)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:40:31.982Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what a voter with no ID can do",
+        "ID with mail or absentee ballot",
+        "documentary proof of citizenship to register or vote",
+        "non-citizen voting",
+        "voter-roll checks and election integrity laws"
+      ],
+      "places": [
+        "On the Record: 0 appearances found by extract-otr.mjs",
+        "web search on name plus voter ID and election bill (confirmed Floyd Griffin is a Georgia House member for District 149 via https://house-press.com/?p=15816)",
+        "web search on name plus voter ID, photo ID and election bill sponsor",
+        "https://house-press.com/?p=15816 fetched; HB 40 statement is about the State Election Board chair; one line on national mail-in voting proposals saved",
+        "https://house-press.com/?p=15981 fetched; nothing on the subject",
+        "blocked: https://ballotpedia.org/Floyd_Griffin (403)",
+        "https://www.billtrack50.com/legislatordetail/30041 fetched; sponsored-bills list did not load",
+        "his bills HB 40, HB 501, HB 503 (State Election Board) seen in search results; off the subject, not saved",
+        "legis.ga.gov bill pages: not reviewed (login token needed)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:40:31.982Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

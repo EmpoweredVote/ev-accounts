@@ -1,0 +1,15 @@
+{
+  "scope": "state:oh",
+  "portals": [],
+  "rosters": [
+    {
+      "url": "https://www.ohiohouse.gov/legislation/134/hr4/votes",
+      "note": "house member list, 134th (2021-2022) (official); gun-policy identity check 2026-10-29"
+    },
+    {
+      "url": "https://web.archive.org/web/20220529052357/https://www.ohiosenate.gov/senators",
+      "note": "senate member list, 134th (2021-2022) (archive); gun-policy identity check 2026-10-29"
+    }
+  ],
+  "higher_law_duties": []
+}

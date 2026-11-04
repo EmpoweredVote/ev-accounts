@@ -1,0 +1,200 @@
+{
+  "politician_id": "6bdea3fd-5a3f-4d43-a0cc-9f4c7373c269",
+  "findings": [
+    {
+      "id": "e1c74b5f314163cf76e9857fe7cd8888c77df0556da1096a1325e38429e633be",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/former-county-commissioner-vince-perez-184626366.html",
+      "date": "2023-09-27",
+      "date_precision": "day",
+      "passage": "Although a gun owner himself, Perez expressed support for new gun law measures, saying he does not \"believe that civilians need access (to) military-style rifles.\"",
+      "note": "El Paso Times (republished on Yahoo) reported this as he announced his run for the Texas House; the quoted words in the middle are his, the rest is the reporter's summary. He is described as a gun owner who supports new gun laws and does not think civilians need military-style rifles.",
+      "subjects": [
+        "ban on assault-style guns",
+        "new gun law measures",
+        "gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:49:48.825Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dc6b6639dac5443eccf0a6211f995e894c640a994eb707ab206bd589f17d155b",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3053",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-3053-2025",
+      "act": "nay",
+      "motion": "Read 3rd time RV#2266",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Read 3rd time RV#2266, 2025-05-13: nay (tally 85–56); census gate: none.",
+      "subjects": [
+        "local firearm buyback programs prohibited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-3053-2025.enrolled.html",
+          "sha256": "5c783f0f9c65e8195dcc193a50eb55c2c6158aa0407a2ccf6a2bea6d95531ee0"
+        }
+      }
+    },
+    {
+      "id": "8509db7371a87e84f70628bb1f0f55e19257b6a9b76cb81359be8723f867ed3e",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1362",
+      "date": "2025-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1362-2025",
+      "act": "nay",
+      "motion": "Read 3rd time RV#3869",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Read 3rd time RV#3869, 2025-05-28: nay (tally 86–53); census gate: none.",
+      "subjects": [
+        "red flag orders may not be enforced by state or local officials",
+        "federal red flag orders declared unenforceable",
+        "serving an out-of-state red flag order is a state jail felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-1362-2025.enrolled.html",
+          "sha256": "aec24880eb60a1cd8426dd2df4725f2ab3d34a596d3b9e887d080e4018887f72"
+        }
+      }
+    },
+    {
+      "id": "db44a3b7800a82a4097e065afe4b1cb0445c5d2eae3ad92381d516354f7cbb34",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1596",
+      "date": "2025-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1596-2025",
+      "act": "nay",
+      "motion": "Laid out as postponed business RV#3937",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Laid out as postponed business RV#3937, 2025-05-28: nay (tally 87–52); census gate: none.",
+      "subjects": [
+        "short-barrel firearm possession offense repealed",
+        "definition of short-barrel firearm repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-1596-2025.enrolled.html",
+          "sha256": "79af2b9f1e3b2967b40f051ee7540cd4f3d0d7f9ae0f8c6802c5cd20ab4d37f4"
+        }
+      }
+    },
+    {
+      "id": "5e3359ff7f9b4fad984e8f776e51f8a42cf169e6b30547196fbde9688f1a520a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB706",
+      "date": "2025-05-21",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-706-2025",
+      "act": "yea",
+      "motion": "Read 3rd time RV#3121",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Read 3rd time RV#3121, 2025-05-21: yea (tally 89–51); census gate: none.",
+      "subjects": [
+        "out-of-state handgun licenses recognized in Texas",
+        "state must publish list of states honoring Texas license",
+        "old background-check condition for recognition repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-706-2025.enrolled.html",
+          "sha256": "fb39773e7239800d5a632dde6685542e492721c2bc464dbd6838c1b0425f3c93"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "his Texas House member page https://house.texas.gov/members/member-page?district=77 (District 77) and its media, newsletter and biography pages: nothing on the subject",
+        "Ballotpedia: the name page is a disambiguation list; the District 77 page shows him as incumbent on the 2026 general-election ballot; no stated positions on the subject",
+        "campaign site https://www.vinceperez.com (home, newsroom, about, early-voting and fair-maps pages checked: redistricting and voting-map content only, nothing on ID or citizenship)",
+        "two web searches on his name plus subject words: no statement from him on ID or citizenship found",
+        "not reviewed: his three linked video recordings and press pages from 2025 (redistricting-focused)",
+        "not reviewed: his bill pages on Texas Legislature Online (no author search done)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:14:57.322Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "carry permits",
+        "general gun-safety and Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status: sitting Texas House member, District 77 (El Paso), on the November 3, 2026 ballot; confirmed on https://house.texas.gov/members/4710/biography",
+        "Texas Legislature Online authored-bills lists, 89th regular session https://capitol.texas.gov/reports/report.aspx?LegSess=89R&ID=author&Code=A4710 (no gun bills among authored or joint-authored), 89th first called session (resolutions only) and second called session (resolutions only)",
+        "Texas Legislature Online coauthored-bills list, 89th regular session https://capitol.texas.gov/reports/report.aspx?LegSess=89R&ID=coauthor&Code=A4710 (39 items by caption, none on guns; bodies not read)",
+        "not reviewed: sponsored-bills lists (Senate-bill House sponsorships) at capitol.texas.gov ID=sponsor",
+        "blocked: https://legiscan.com/TX/legislator/vincent-vince-perez/people/ (403)",
+        "official page house.texas.gov member media and biography pages (nothing on the subject)",
+        "branch.vote candidate page and kfoxtv.com 2024 runoff interview page (nothing on the subject)",
+        "El Paso Times announcement story (2023-09-27, via Yahoo): the passage was returned by the fetch tool; a plain curl of the same address came back empty, so the wording is not confirmed from raw page text",
+        "campaign site not found; Ballotpedia not fetched (returns empty)",
+        "web search x3: one news story with his remarks on the subject"
+      ],
+      "found": 1,
+      "at": "2026-10-30T22:49:48.825Z",
+      "by": "source-collector"
+    }
+  ]
+}

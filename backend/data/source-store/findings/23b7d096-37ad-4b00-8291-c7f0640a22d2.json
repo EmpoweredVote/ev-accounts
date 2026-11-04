@@ -1,0 +1,461 @@
+{
+  "politician_id": "23b7d096-37ad-4b00-8291-c7f0640a22d2",
+  "findings": [
+    {
+      "id": "8d1130c6387f8bfd286661b9aea381ccd8e47703f412244d1a6a4fc154becc74",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76970&billStatusActionId=210697&includeVotes=true",
+      "date": "2022-03-23",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2492-2022",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('ROGERS'), linked to Wendy Rogers (district None) via the official 2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dccd48f32b76eb8fc13b6396a53d87f5e98083832180cdb25007e7d564aa49b4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81400&billStatusActionId=223261&includeVotes=true",
+      "date": "2024-02-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2785-2024",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('ROGERS'), linked to Wendy Rogers (district None) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "529cf90a71ccf9d645617ef3b60a7f27ca50e952001992f4c3fb68c019c62cfc",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=246497&includeVotes=true",
+      "date": "2026-06-12",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('ROGERS'), linked to Wendy Rogers (district 7) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba4bbab8ec97997d4fb86d0b3830076f32919bda55f035196b142276f76fd206",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=234554&includeVotes=true",
+      "date": "2025-03-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('ROGERS'), linked to Wendy Rogers (district 7) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d2d451d27200c951c4ac0fce30e3b3b0798f1790b723f08f16cc5808b9b8c52",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=233421&includeVotes=true",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('ROGERS'), linked to Wendy Rogers (district 7) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "330408ec4896d61a3e54a41918f6a9cb34e65520c76a66a406068d0c72d8d724",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78743&billStatusActionId=216660&includeVotes=true",
+      "date": "2023-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1141-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('ROGERS'), linked to Wendy Rogers (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43c31e9e19d446cfa257d435467eac22004793413fd5999c83ee78dbc70b3803",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78784&billStatusActionId=217557&includeVotes=true",
+      "date": "2023-03-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1178-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('ROGERS'), linked to Wendy Rogers (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a7deb26f92e06e44e7cbb8aec2ec13fe5ecaddde424e5a0aec256aaaa0bbf345",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=77405&billStatusActionId=210449&includeVotes=true",
+      "date": "2022-03-14",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1460-2022",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('ROGERS'), linked to Wendy Rogers (district None) via the official 2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c317edba5932851a547b9a08821e246d23e724e516c40a7a27f9d0a603f407a8",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79205&billStatusActionId=218058&includeVotes=true",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1518-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('ROGERS'), linked to Wendy Rogers (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7f88491a24de3b8fc57c195fa6e6dd0ec7429139072247414246681c16061fd5",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79268&billStatusActionId=217410&includeVotes=true",
+      "date": "2023-03-07",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('ROGERS'), linked to Wendy Rogers (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9e34a3debf61bc19ab4a711c3da0f592bd77e6248725ec6f01f2213dd959adde",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/79268",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, SB1595H: House-engrossed version (text as it stood after the House acted)",
+      "note": "Named as co sponsor ('Wendy Rogers') on the official bill page; linked to Wendy Rogers via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d846cce7a43e3a899a2c302629e2c8cc5c660781bc29bdbdc95f2f00eb0626bb",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=75855&billStatusActionId=202926&includeVotes=true",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1713-2021",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('ROGERS'), linked to Wendy Rogers (district None) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f10ad658152e468c38f4404d5912e96677d5fc4dcc6dca86c39bb46f64b644d",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/81291",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "AZ-SB-1733-2024",
+      "act": "sponsor",
+      "motion": "prime sponsor, SB1733P: as introduced (printed version)",
+      "note": "Named as prime sponsor ('Wendy Rogers') on the official bill page; linked to Wendy Rogers via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aeb744ceacde5e405640f0f86456e7f9ce347bfb3561ffe01639c659dfec6bd",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83528&billStatusActionId=241249&includeVotes=true",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1001-2026",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('ROGERS'), linked to Wendy Rogers (district 7) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "95a18b5673d4baab12c071e130fcf26ef474c543ae4c5cea800334aec0de7904",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76391&billStatusActionId=209313&includeVotes=true",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1012-2022",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('ROGERS'), linked to Wendy Rogers (district None) via the official 2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "812ac776d8359e015bc13713777a9a924a52e1f081f44a1d8197d28734c4a2a3",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/77624",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-SCR-1046-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, SCR1046P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Wendy Rogers') on the official bill page; linked to Wendy Rogers via the official 2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e91eb0358f0d3738a24ee85027808e2d15bbc9a82988a7ffd04b05f804efa55d",
+      "kind": "own-words",
+      "url": "https://arizonaglobe.com/?p=60928",
+      "date": "2025-07-14",
+      "date_precision": "day",
+      "passage": "There is insufficient enforcement of proof-of-citizenship requirements",
+      "note": "Quoted from her July 14, 2025 letter to the President asking for a federal review of Arizona's election systems, as reported by the Arizona Globe on 2025-07-31. The same letter says the state relies on self-attestation for federal elections (the full sentence was too long to copy exactly).",
+      "subjects": [
+        "proof of citizenship enforcement",
+        "federal review of state elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:06:25.039Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8fb610f0c91712500a3958b7c80fbdf96955903d0ba9d2856419cd86cfd16e63",
+      "kind": "record",
+      "url": "https://wendyrogers.org/arizona-senate-judiciary-and-elections-committee-passes-bill-to-speed-up-election-tabulation-modeled-after-florida-law/",
+      "date": "2025-01",
+      "date_precision": "month",
+      "instrument_id": "AZ-SB-1011-2025",
+      "act": "other",
+      "note": "In committee, her amendment to the ballot-tabulation speed-up bill was adopted. Per the page, it \"clarified that voters can return ballots to any polling place before 7 p.m. on Election Day as long as they show ID\". Page dated 2025-01-17.",
+      "subjects": [
+        "ID to return a mail ballot at a polling place"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:06:25.039Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b2d801ba4c8ab5c8d7bf80019947cf8f9ac7ffe808d82f9d431a27406b59c97a",
+      "kind": "own-words",
+      "url": "https://wendyrogers.org/sb-1040-sb-1038-election-transparency-full-voter-rolls-and-public-cast-vote-records/",
+      "date": "2026-01-14",
+      "date_precision": "day",
+      "passage": "We're going to continue to bring up those issues because the people want us to represent them.",
+      "note": "Related topic: said of her bills SB 1040 and SB 1038 on public access to full voter rolls and cast vote records, after a prior veto. Not about ID or citizenship directly.",
+      "subjects": [
+        "voter-roll transparency",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:06:25.039Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 16,
+      "at": "2026-10-28T22:53:15.887Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID with ballot return",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Wendy_Rogers (fetch returned an empty page; 2026 ballot status therefore not confirmed from that page)",
+        "campaign site wendyrogers.org: site search for voter ID, six election pages reviewed; most had nothing on the subject in her own words",
+        "blocked: https://wendyrogers.org/voting-systems-under-fire-amid-trumps-integrity-order/ (plain curl returned 406 Not Acceptable)",
+        "nothing on the subject: https://wendyrogers.org/wendy-rogers-talks-election-integrity-with-joe-oltmann/ (video, not transcribed; not reviewed)",
+        "nothing on the subject: https://wendyrogers.org/republicans-ban-voting-machines-arizona-legislature-fights-voter-fraud-after-rigged-elections/ (podcast, not transcribed)",
+        "news search on her name plus the subject words (two searches)",
+        "not reviewed: Arizona Legislature bill pages (sponsorships already on file)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:06:25.039Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

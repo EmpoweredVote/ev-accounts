@@ -1,0 +1,236 @@
+{
+  "politician_id": "28a703f8-8316-4d3c-bfc0-3dcd77eab96c",
+  "findings": [
+    {
+      "id": "ee6a241838130cde9575b42fbad9f17cd3ec50760ac7512d00a36d0aa7942046",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H855",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-HB-855-2025",
+      "act": "sponsor",
+      "note": "She is the sole sponsor of H.855, An Act extending voting rights in municipal elections to noncitizen voters of the Commonwealth, referred to the Election Laws committee. Related topic: non-citizen voting. Filing date is the first history date shown on the bill page.",
+      "subjects": [
+        "non-citizen voting in municipal elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:03:36.763Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "520835e159283e7cf501fdb8a0f88aec7970838034ba40734e72cfd159b4db71",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H855",
+      "date": "2025-01-13",
+      "date_precision": "day",
+      "instrument_id": "MA-H-855-2025",
+      "act": "sponsor",
+      "note": "Sole petitioner of H.855, a bill to let noncitizens with legal immigration status vote in municipal elections only. The bill sets up a separate noncitizen registration form with a declaration of residency signed under pains and penalties of perjury, and bars noncitizen voting in federal and state races. Related topic: who is eligible to register and vote.",
+      "subjects": [
+        "non-citizen voting in municipal elections",
+        "registration form declaration of residency"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:43:53.320Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39b289bdc1c5e52184ee118585325649d503ffe491b4262bb6e12ecc96dad508",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H706",
+      "date": "2023-01-17",
+      "date_precision": "day",
+      "instrument_id": "MA-H-706-2023",
+      "act": "sponsor",
+      "note": "Lead petitioner of H.706 (2023-24 session), an earlier version of the bill extending municipal voting rights to noncitizens with legal immigration status. Related topic: who is eligible to register and vote.",
+      "subjects": [
+        "non-citizen voting in municipal elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:43:53.320Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "818586ba7a6fa8e00a512d1c240c01472b0f796fab8f64a338fb0b5e616ea7fe",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: yea (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9fc7fe42d4ca0418da57b37f789b4766ff618ad71e31a528b663386efac66476",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: yea (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "3e37989df5a7135793590676582056d9b4894fffcf53abf65d4e894b1a9c125c",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H3980",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MA-H-3980-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-3980-2023 (LegiScan sponsor list): H3980 (193rd General Court): Modernizing firearm laws.",
+      "subjects": [
+        "all firearms and magazines must be registered, with serial numbers required",
+        "privately made (ghost) guns regulated",
+        "licensing rewritten, with new limits on assault-style firearms and large magazines",
+        "extreme risk protection orders to remove guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-3980-2023.introduced.pdf",
+          "sha256": "fc2cf32dbd88bb4b1b9266311c82ce3b8ee11febb2a878a7f7da17f1ab4578fd"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia district page https://ballotpedia.org/Massachusetts_House_of_Representatives_15th_Suffolk_District lists Sam Montaño running in the general election on November 3, 2026 for 15th Suffolk; MA Legislature profile https://malegislature.gov/Legislators/Profile/S_M1 names her as Representative, 15th Suffolk",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "MA Legislature profile and sponsored-bills list (https://malegislature.gov/Legislators/Profile/S_M1 and /SponsoredLegislation)",
+        "MA Legislature bill page H.855 (194th)",
+        "Ballotpedia personal page https://ballotpedia.org/Samantha_Montaño: no such page (empty)",
+        "campaign site: not reviewed: no campaign site URL found (samanthamontano.com did not connect)",
+        "news search: not reviewed: web search budget used up",
+        "nothing on the subject: no sponsored bill on voter ID, no-ID fallback, mail-ballot ID, or proof of citizenship found in her sponsored list",
+        "nothing on the subject: no own words on voter ID found in reachable pages"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:03:36.763Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "non-citizen voting in municipal elections",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia https://ballotpedia.org/Sam_Monta%C3%B1o (sitting 15th Suffolk member, advanced from the 2026-09-01 primary, on the 2026 general-election ballot)",
+        "Massachusetts legislature profile https://malegislature.gov/Legislators/Profile/S_M1/193 (sponsored bills list; one bill on the subject)",
+        "bill pages H.706 (2023-24) and H.855 (2025-26) on malegislature.gov",
+        "news searches on name plus voter ID, proof of citizenship, SAVE Act: nothing naming her on those topics",
+        "no campaign or personal issues page found with text on the subject; no statement by her on the subject found"
+      ],
+      "found": 2,
+      "at": "2026-10-27T18:43:53.320Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "ghost guns",
+        "red-flag / extreme risk orders",
+        "general gun safety laws",
+        "carry permits",
+        "background checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member page https://malegislature.gov/Legislators/Profile/S_M1 (confirms her as the state representative for Boston, 15th Suffolk; bill list shows no gun bill in the part read)",
+        "ballot page: the Ballot Brief lists her as on the 2026 general-election ballot for the same seat and says no campaign website was found as of 2026-09-11",
+        "bill page https://malegislature.gov/Bills/193/H3980 (title 'An act modernizing firearm laws'; its petitioner list did not load, so her co-sponsorship is left to the bulk check)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia: blocked: https://ballotpedia.org/Sam_Montaño (page came back empty)",
+        "2022 candidate Q&A in the Jamaica Plain Gazette (rent, housing, schools, safe consumption sites): nothing on the subject",
+        "a 2026 local progressive group endorsement page naming her: nothing on the subject for her",
+        "blocked: https://www.samforboston.com (empty page); other guessed campaign addresses returned nothing",
+        "web search x5 (name plus gun words, campaign site, 2026 primary status, bill debate, statements): nothing by her on the subject",
+        "nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:43:33.585Z",
+      "by": "source-collector"
+    }
+  ]
+}

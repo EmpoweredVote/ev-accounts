@@ -1,0 +1,28 @@
+{
+  "politician_id": "b51018a5-19c2-470d-8e45-9d1248950ed5",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "proof of identity to register online",
+        "mail-ballot ID",
+        "election integrity statements"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "CPUC profile https://www.cpuc.ca.gov/about-cpuc/commissioners/page-content/profile-list/commissioner-matthew-baker (confirms he is a Public Utilities Commission commissioner, appointed 2024-02-16 and confirmed by the state Senate 2025-02-27; he is an appointed commissioner, not a legislator, and not on a 2026 ballot; nothing on elections)",
+        "Ballotpedia page https://ballotpedia.org/Matthew_Baker_(California) is a different person (a 2016 school board candidate), so not used",
+        "one news search on his name and office: nothing on voter ID, citizenship or elections",
+        "Internet Archive copies of the leginfo vote pages for SB 1174 (2024) and AB 1116 (2025): not a legislator, so no votes exist",
+        "commission's remit is utilities; no voter ID, citizenship or ballot role found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:07:47.698Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -1,0 +1,487 @@
+{
+  "politician_id": "248f76d7-e76a-49e5-88b7-dc43a3131329",
+  "findings": [
+    {
+      "id": "c834a1926026cf815265474c92d8ef1abe12b25905d91b107c0da2304f17ac5a",
+      "kind": "own-words",
+      "url": "https://cindyfriedman.org/massachusetts-senate-passes-automatic-voter-registration/",
+      "date": "2018",
+      "date_precision": "year",
+      "passage": "The legislation increases penalties associated with voter fraud. It orders that whoever knowingly provides false information in connection with automatic voter registration shall be punished by a fine of not more than $10,000 or imprisonment for up to 5 years or both.",
+      "note": "Press release on her site about the Senate vote on H.4671 (automatic voter registration with anti-fraud penalties). Statement issued on her site; the quoted line is the release's description of the bill, not a personal quote.",
+      "subjects": [
+        "election integrity law in general",
+        "registration safeguards against fraud"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:10:23.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "75e97351799b35887cc212a47b9046f4540eef62674208ff7237d8bdff749b36",
+      "kind": "own-words",
+      "url": "https://cindyfriedman.org/massachusetts-senate-passes-automatic-voter-registration/",
+      "date": "2018",
+      "date_precision": "year",
+      "passage": "We should be making it easier for people to exercise their right to vote, not harder.",
+      "note": "Her quoted statement on the automatic voter registration bill, about registration access.",
+      "subjects": [
+        "voter registration access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:10:23.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6d1d5a703289beca4e76ec57447cc44adfd82491b1135f1927bcfc5d9fd3b3c3",
+      "kind": "record",
+      "url": "https://cindyfriedman.org/massachusetts-senate-passes-automatic-voter-registration/",
+      "date": "2018",
+      "date_precision": "year",
+      "instrument_id": "MA-H-4671-2018",
+      "act": "yea",
+      "note": "Her press release says she joined Senate colleagues in voting to pass H.4671, An Act automatically registering eligible voters and enhancing safeguards against fraud.",
+      "subjects": [
+        "automatic voter registration",
+        "election integrity law in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:10:23.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dcc304d5ad507337d77dbe27eb325d152622c528370c07d0da972053e9970bdc",
+      "kind": "own-words",
+      "url": "https://cindyfriedman.org/2021/10/06/senate-passes-landmark-voting-reform-legislation-2/",
+      "date": "2021-10-06",
+      "date_precision": "day",
+      "passage": "The bill would require the Secretary of the Commonwealth to enter into an agreement with ERIC no later than July 1, 2022, which thirty other states have already joined, helping states keep more accurate voting rolls.",
+      "note": "Press release on her site about Senate passage of S.2545 (VOTES Act). Describes the voter-roll accuracy provision.",
+      "subjects": [
+        "voter-roll checks",
+        "election integrity law in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:10:23.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a45504e2aa3216d40fade5dfe419b53a7894ada9ebbd7353e51fc8aab65e7adf",
+      "kind": "record",
+      "url": "https://cindyfriedman.org/2021/10/06/senate-passes-landmark-voting-reform-legislation-2/",
+      "date": "2021-10-06",
+      "date_precision": "day",
+      "instrument_id": "MA-S-2545-2021",
+      "act": "yea",
+      "note": "Her release says she joined colleagues to pass S.2545, the VOTES Act (permanent mail-in and early voting, same-day registration, ERIC). No ID requirement is described.",
+      "subjects": [
+        "mail-ballot access",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:10:23.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "416b4b4cf1fb39931184458b5e76ff4891d3b024a5da00724c47c795f6352dc7",
+      "kind": "own-words",
+      "url": "https://cindyfriedman.org/2022/06/23/senate-passes-landmark-voting-reform-legislation%EF%BF%BC/",
+      "date": "2022-06-23",
+      "date_precision": "day",
+      "passage": "Allows election officials to pre-process mail-in and early voting ballots (by opening up envelopes and verifying signatures in advance of Election Day).",
+      "note": "Press release on her site about the final VOTES Act (S.2924). Mail ballots are checked by signature; the release lists no photo ID requirement.",
+      "subjects": [
+        "mail-ballot ID or signature check"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:10:23.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f46acaaf39a46e15a80bb3eab704b8d09cddd27765ec943065e9683bb2fcff1",
+      "kind": "record",
+      "url": "https://cindyfriedman.org/2022/06/23/senate-passes-landmark-voting-reform-legislation%EF%BF%BC/",
+      "date": "2022-06-23",
+      "date_precision": "day",
+      "instrument_id": "MA-S-2924-2022",
+      "act": "yea",
+      "note": "Her release says she joined colleagues to pass S.2924, the VOTES Act conference agreement. It also requires the state to join ERIC to keep voter rolls accurate.",
+      "subjects": [
+        "mail-ballot access",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:10:23.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53011110b072941c2a1d90cc45ddb47899a44c2461214e674917f542303fd3da",
+      "kind": "own-words",
+      "url": "https://cindyfriedman.org/massachusetts-gun-laws-moving-forward/",
+      "date": "2018-03",
+      "date_precision": "month",
+      "passage": "We cannot continue to sit back and do nothing and wait for the next tragedy to occur.",
+      "note": "Date inferred from the page's own text (it mentions the March for Our Lives 'this Saturday, March 24', and the site's upload folder is 2018/03); the page shows no year. Her own post on her Senate site saying lawmakers should act on gun violence.",
+      "subjects": [
+        "general gun safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:55:02.569Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1a536efdca2639a82b8604a217db01365249d5e71e1e4464be07ee6a85a06398",
+      "kind": "own-words",
+      "url": "https://cindyfriedman.org/massachusetts-gun-laws-moving-forward/",
+      "date": "2018-03",
+      "date_precision": "month",
+      "passage": "Specifically, the legislation (H.3081/H.3610) would establish extreme risk protection orders to allow family members, healthcare providers, or law enforcement officers to petition a judge to temporarily suspend an individual’s access to firearms if they are deemed a danger to themselves or others.",
+      "note": "Date inferred from the page's own text (it mentions the March for Our Lives 'this Saturday, March 24', and the site's upload folder is 2018/03); the page shows no year. She describes the extreme risk order bills H.3081/H.3610 in her own post; the next sentences say she believes the state should follow other states on red flag laws.",
+      "subjects": [
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:55:02.569Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "293aaa03806a3afba3532d7ed22d359d6e65d46c585a49860bfeaa8dd889f41f",
+      "kind": "own-words",
+      "url": "https://cindyfriedman.org/massachusetts-gun-laws-moving-forward/",
+      "date": "2018-03",
+      "date_precision": "month",
+      "passage": "Five states have already enacted similar “Red Flag” laws, and I strongly believe we need to follow their lead to make our schools and public spaces safer.",
+      "note": "Date inferred from the page's own text (it mentions the March for Our Lives 'this Saturday, March 24', and the site's upload folder is 2018/03); the page shows no year. She says Massachusetts should adopt a red flag law.",
+      "subjects": [
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:55:02.569Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e5c7eb0d6e2061fbce85cb4fbdd62a6294dae1fe88c1be0a747a229788c875a9",
+      "kind": "own-words",
+      "url": "https://cindyfriedman.org/massachusetts-gun-laws-moving-forward/",
+      "date": "2018-03",
+      "date_precision": "month",
+      "passage": "Additional steps we can take to enhance public safety in Massachusetts include limiting the number of firearms that may be purchased at one time, imposing a waiting period on firearm purchases, and requiring unlicensed firearm sellers to conduct a background check on the purchaser.",
+      "note": "Date inferred from the page's own text (it mentions the March for Our Lives 'this Saturday, March 24', and the site's upload folder is 2018/03); the page shows no year. She lists a limit on purchases at one time, a waiting period, and background checks for unlicensed sellers as steps she names.",
+      "subjects": [
+        "check every gun buyer",
+        "waiting period",
+        "limit on guns bought at one time"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:55:02.569Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a7d07d0e0660feddee2bf4ce2b1c1539778ed240cafe7b193428d1da25bb180d",
+      "kind": "own-words",
+      "url": "https://cindyfriedman.org/massachusetts-gun-laws-moving-forward/",
+      "date": "2018-03",
+      "date_precision": "month",
+      "passage": "I am proud to live in a state that has banned semi-automatic assault weapons and large capacity ammunition feeding devices as well as bump stocks and trigger cranks, and one that has not even considered arming teachers in our schools.",
+      "note": "Date inferred from the page's own text (it mentions the March for Our Lives 'this Saturday, March 24', and the site's upload folder is 2018/03); the page shows no year. She says she is proud of the state's existing bans on assault weapons, large-capacity magazines, bump stocks and trigger cranks.",
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:55:02.569Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f460859a1b747e75ac08a1db40da7a4cbb15f6abc78f760c5eb872b3d4b79aab",
+      "kind": "own-words",
+      "url": "https://cindyfriedman.org/senator-friedman-local-leaders-demand-gun-reform/",
+      "date": "2018-02",
+      "date_precision": "month",
+      "passage": "“This isn’t about the right to own guns,” Friedman continued, “That right is alive and well in this country.",
+      "note": "Date inferred from the page's own text (rally on 'Feb. 17' held after the Parkland shooting that it calls recent); the page shows no year. Her remarks quoted in a release on her site about a rally in Lexington.",
+      "subjects": [
+        "general gun rights statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:55:02.569Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45ecf42da9c176987caa968bbf8c7dbbe55dadb35f06f489e5a56b8bf4762901",
+      "kind": "own-words",
+      "url": "https://cindyfriedman.org/senator-friedman-local-leaders-demand-gun-reform/",
+      "date": "2018-02",
+      "date_precision": "month",
+      "passage": "“When did it become okay to have children massacred in the United States and do nothing about it? If you are not for commonsense gun control, then you are for the killing of children in our schools and in our homes.",
+      "note": "Same page and date basis as above. She speaks in favour of commonsense gun control at the rally.",
+      "subjects": [
+        "general gun safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:55:02.569Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "743da50b09b481db8b45e3322f56cbd2b3d180ef09c1d470136f306efb739822",
+      "kind": "own-words",
+      "url": "https://cindyfriedman.org/2024/01/25/senate-unveils-the-safer-act-comprehensive-gun-safety-reform-for-massachusetts/",
+      "date": "2024-01-25",
+      "date_precision": "day",
+      "passage": "“Gun violence is a public health crisis, and it should be treated as such,” said Senator Friedman, Vice Chair of the Senate Committee on Ways and Means.",
+      "note": "Quoted in her own press release on her site about the SAFER Act (S.2572) being unveiled.",
+      "subjects": [
+        "general gun safety statement",
+        "comprehensive gun bill (SAFER Act)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:55:02.569Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f6be9206b701b217ab7082b59eeced2027353d197380d99b23506353aabd4e81",
+      "kind": "own-words",
+      "url": "https://cindyfriedman.org/2024/02/06/friedman-senate-pass-the-safer-act-consensus-commonsense-gun-reform-for-massachusetts/",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "passage": "“This legislation will implement effective reforms by updating our gun laws to mirror federal definitions and standards and strengthening our red flag laws to better support public safety personnel and those at risk of harm to themselves or others.",
+      "note": "Quoted in her own press release (dated 2/1/2024, posted Feb 6, 2024) on the Senate passing the SAFER Act. The release lists in the bill: ghost gun rules, the existing assault weapons ban in law, Glock switches ban, stronger red flag orders.",
+      "subjects": [
+        "red-flag orders",
+        "ghost guns",
+        "comprehensive gun bill (SAFER Act)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:55:02.569Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5debe60202ced5ce1983aea7dae0887c7939fb07f71a9217579d58def614825f",
+      "kind": "own-words",
+      "url": "https://cindyfriedman.org/2024/02/06/friedman-senate-pass-the-safer-act-consensus-commonsense-gun-reform-for-massachusetts/",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "passage": "It will set new standards and guidelines for licensing based on recent court decisions and bring new tools to address the increasing problem of illegal gun and ghost gun possession.",
+      "note": "Same press release; she speaks about licensing standards and ghost gun possession.",
+      "subjects": [
+        "gun licensing",
+        "ghost guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:55:02.569Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6dbf41ae22e88765a888fdd8541fbf911abee572c433a15e23cdef989f953b26",
+      "kind": "record",
+      "url": "https://cindyfriedman.org/2024/02/06/friedman-senate-pass-the-safer-act-consensus-commonsense-gun-reform-for-massachusetts/",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "MA-S-2572-AMDT-73-2024",
+      "act": "other",
+      "motion": "Amendment to S.2572 (SAFER Act) adding Advanced Practice Registered Nurses to the providers who can attest to an applicant's history of hospitalizations",
+      "note": "Her press release says the Senate adopted an amendment filed by her that aligns the bill with current law and adds Advanced Practice Registered Nurses to the qualified health care providers who attest to a licence applicant's involuntary mental health hospitalisation history. Floor vote on the bill itself is covered separately.",
+      "subjects": [
+        "limits on who may have a gun",
+        "comprehensive gun bill (SAFER Act)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:55:02.569Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "de993072b1f015691757356966b25be35f10f79ccfc21b9e05ca9348996cbcde",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "Roll Call #208 - Question on acceptance of conference committee report",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA Senate, Roll Call #208 - Question on acceptance of conference committee report, 2024-07-18: yea (tally 35–5); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Cindy_Friedman names Cindy Friedman as MA State Senate 4th Middlesex incumbent, advanced from the Sept 1, 2026 primary, on the Nov 3, 2026 general ballot",
+        "On the Record (0 appearances; extract-otr.mjs run, no --city because state official)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/CFF0 and bill list https://malegislature.gov/Legislators/Profile/CFF0/Bills: nothing on the subject (election-related sponsorships are local Arlington petitions on youth voting, ranked choice and recall, which are off subject)",
+        "malegislature.gov bill search for voter identification https://malegislature.gov/Bills/Search?SearchTerms=voter+identification: sponsors listed were others; no filing by Friedman seen on first page",
+        "Ballotpedia: nothing on the subject",
+        "blocked: https://www.cindyfriedman.com (no response)",
+        "not reviewed: news search, official Senate site issue pages and roll-call votes (web search budget used up; no direct fetch pattern found)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:02:26.867Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "ID with mail ballot",
+        "proof of citizenship",
+        "voter-roll checks",
+        "registration safeguards against fraud"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site cindyfriedman.org (site search for voter ID found only voting-reform press releases; nothing on photo ID or citizenship proof)",
+        "legislature profile page (malegislature.gov, did not render her bill list)",
+        "Wikipedia (confirms State Senator, 4th Middlesex district, in office since 2017)",
+        "Ballotpedia (blocked: https://ballotpedia.org/Cindy_Friedman returned HTTP 202, no content)",
+        "web search: name plus voter ID (nothing linking her to a voter ID bill)",
+        "not reviewed: her 2026 candidacy status page (not confirmed; she is shown as sitting State Senator)"
+      ],
+      "found": 7,
+      "at": "2026-10-27T01:10:23.850Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "waiting period",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/CFF0 confirms Fourth Middlesex senator; nothing on the subject",
+        "sponsor list: covered by LegiScan bulk check",
+        "official Senate site https://cindyfriedman.org: gun-law post, rally release, SAFER Act page and two SAFER Act press releases saved",
+        "https://cindyfriedman.org/meet-cindy/: nothing on the subject",
+        "blocked: https://cindyfriedman.org/priorities/ (404)",
+        "The Ballot Brief via search: lists her as incumbent on the 2026-11-03 ballot for the Fourth Middlesex seat (not fetched)",
+        "Ballotpedia: not reviewed (empty-page risk, not fetched)",
+        "Wikipedia page: nothing on the subject",
+        "web searches (5) on name plus gun words; no statement by her on the final signed 2024 law found"
+      ],
+      "found": 11,
+      "at": "2026-11-01T01:55:02.569Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -24,7 +24,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { Pool } from 'pg';
 import { parse } from 'node-html-parser';
-import { sectionText, NO_SURVEY_NOTICE, CC_ANCHOR_PATTERN, withoutFragment } from './lib/candidate-connection.mjs';
+import { sectionText, NO_SURVEY_NOTICE, statesCompletedSurvey, CC_ANCHOR_PATTERN, withoutFragment } from './lib/candidate-connection.mjs';
 import { extractQuotes, quotePresent, looseIncludes, candidateTerms, identityTerms } from './lib/claim-match.mjs';
 
 const argv = process.argv.slice(2);
@@ -76,7 +76,7 @@ async function fetchPage(url) {
       const base = { pid: r.pid, tid: r.tid, season: r.season, name: `${r.first_name} ${r.last_name}`, url, only_ballotpedia: r.sources.every((s) => /ballotpedia/i.test(s)) };
       if (page.status !== 200 || page.body.length < MIN_BODY) { results.push({ ...base, verdict: 'UNKNOWN', why: `status ${page.status}, ${page.body.length}c` }); continue; }
       if (!page.section) { results.push({ ...base, verdict: 'NO_SECTION' }); continue; }
-      if (NO_SURVEY_NOTICE.test(page.section)) { results.push({ ...base, verdict: 'NO_SURVEY' }); continue; }
+      if (NO_SURVEY_NOTICE.test(page.section) && !statesCompletedSurvey(page.section)) { results.push({ ...base, verdict: 'NO_SURVEY' }); continue; }
       const ident = identityTerms(r); const quotes = extractQuotes(r.reasoning);
       const terms = candidateTerms(r.reasoning).filter((t) => !ident.has(t.toLowerCase()));
       const hit = quotes.length ? quotes.some((q) => quotePresent(page.section, q) === true)

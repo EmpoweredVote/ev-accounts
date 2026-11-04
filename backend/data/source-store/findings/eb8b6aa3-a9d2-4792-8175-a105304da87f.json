@@ -1,0 +1,77 @@
+{
+  "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f",
+  "findings": [
+    {
+      "id": "684c8a695bcc22f5ff75a388d1cdcf01001b0323bd8ead3d1a50de3ce63b0b7a",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-05-01",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "Do pass, Senate Local Government Committee (4-2-1)",
+      "note": "Scott Wiener's committee vote on SB 1174, Elections: voter identification, a bill that bars local governments from requiring voter ID. Read from the Digital Democracy bill page (a news-site tracker, not the official legislature page, which returned 403).",
+      "subjects": [
+        "local voter ID bans",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:23:22.566Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "acf703ea2e785a4ec3dc0830db7825a9c197f1602540090870f7e64e12266342",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-05-21",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "Senate floor (passed 30-8-2)",
+      "note": "Scott Wiener's floor vote on SB 1174, Elections: voter identification, a bill that bars local governments from requiring voter ID. Read from the Digital Democracy bill page (a news-site tracker, not the official legislature page, which returned 403).",
+      "subjects": [
+        "local voter ID bans",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:23:22.566Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter ID with no ID fallback",
+        "local voter ID bans"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "web searches on name plus voter ID / SAVE Act / election integrity (nothing on the subject in their own words)",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (403)",
+        "blocked: https://legiscan.com/CA/bill/SB1174/2023 (403)",
+        "blocked: https://ballotpedia.org/Phillip_Chen_(California) and ballotpedia pages (empty content)",
+        "2026 ballot status not confirmed from a fetched page",
+        "campaign site https://www.scottwiener.com/defending-democracy (fetched: general voting-rights text, nothing on ID or citizenship)",
+        "official Senate site sd11.senate.ca.gov (searched, nothing on the subject)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T16:23:22.566Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

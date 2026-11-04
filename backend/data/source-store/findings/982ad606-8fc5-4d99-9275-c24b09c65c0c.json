@@ -1,0 +1,112 @@
+{
+  "politician_id": "982ad606-8fc5-4d99-9275-c24b09c65c0c",
+  "findings": [
+    {
+      "id": "74a9cecce229a003fe087bfbeadf3be65e8b607d55d072ec84bd2d520dc6a24d",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB0002",
+      "date": "2024-03-01",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-2-2024",
+      "act": "nay",
+      "motion": "Adoption (Senate substitute agreed to by House)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA House, Adoption (Senate substitute agreed to by House), 2024-03-01: nay (tally 50–47); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/VA-HB2-2024-ER.pdf",
+          "sha256": "be2c4a82097d208f802bc88c1aa08097489565a6746bfd36f1a1f755a683cd50"
+        }
+      }
+    },
+    {
+      "id": "fb8afb14864f284c23bff3b3f6447405570ac331955ab29c074900020ef336f0",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB0002",
+      "date": "2024-02-28",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-2-2024",
+      "act": "nay",
+      "motion": "Passage (with committee substitute)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA House, Passage (with committee substitute), 2024-02-28: nay (tally 51–49); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/va_sb2_2024_enrolled.html",
+          "sha256": "fbb47c123b27eae84175225b3f36034532cd7be496f4a56cb8ff2c6f3c7bbe41"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record: not run (no repo scripts permitted)",
+        "blocked: lis.virginia.gov, legiscan, legiplex (not retried)",
+        "Ballotpedia profile (fetched by curl)",
+        "web searches on name plus voter ID words",
+        "campaign site https://www.hillarykent.com/ (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:26:05.436Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun rights",
+        "bans on types of firearms",
+        "background checks",
+        "carry permits",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status: sitting member of the House of Delegates, 67th District (the brief says state official); won the 2025-11-04 general election per branch.vote results page, so no 2026 ballot race",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site hillarypughkentva.com home, about and general-1 pages: nothing on the subject",
+        "Rappahannock Record candidacy announcement (2023-03-01): nothing on the subject, partly paywalled",
+        "branch.vote 2025 race page: results only, no issue statements",
+        "Ballotpedia not reachable by fetch tool, not reviewed",
+        "official House of Delegates member page: JavaScript page, not reviewed: https://house.vga.virginia.gov/members/H0369",
+        "not reviewed: Facebook, Instagram and X accounts linked from the campaign site",
+        "web searches (3): no statement of hers on guns found"
+      ],
+      "found": 0,
+      "at": "2026-10-30T23:47:43.769Z",
+      "by": "source-collector"
+    }
+  ]
+}

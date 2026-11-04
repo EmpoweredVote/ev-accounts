@@ -1,0 +1,33 @@
+{
+  "politician_id": "f113ab4e-bd66-4112-bacc-4973eb004083",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "non-photo ID / no-ID voters",
+        "ID or ID number with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances; run with the name)",
+        "legis.ga.gov bill pages not opened (login token needed); no bill text document IDs found for the subject",
+        "https://en.wikipedia.org/wiki/Angie_O%27Steen: confirms House District 169 seat since 2025; nothing on the subject",
+        "Senate press site search does not apply (House member); nothing found",
+        "web searches on name plus voter ID and election bills: nothing on the subject; search results list her as seeking re-election in 2026 (not confirmed by a fetched page)",
+        "no campaign site found",
+        "blocked: https://ballotpedia.org (empty page for each member)",
+        "blocked: https://legiscan.com/GA/bill/HR59/2025 (403)",
+        "blocked: https://app.legiplex.com (403)",
+        "blocked: https://www.wabe.org and https://georgiarecorder.com article pages (403)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:40:32.005Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

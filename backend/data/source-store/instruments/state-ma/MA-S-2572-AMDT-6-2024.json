@@ -1,0 +1,137 @@
+{
+ "id": "MA-S-2572-AMDT-6-2024",
+ "scope": "state:ma",
+ "title": "S.2572 (193rd General Court) Senate floor amendment #6: Repeat Firearm-Violent Offender (redraft). Adopted 2/1/2024.",
+ "urls": [
+  "https://malegislature.gov/Bills/GetAmendmentContent/193/S2572/6/Senate/Content",
+  "https://malegislature.gov/Bills/193/S2572/BillHistory"
+ ],
+ "version": "other",
+ "sponsors": [
+  {
+   "name": "Velis",
+   "role": "prime",
+   "version": "amendment text (movers named in it)",
+   "politician_id": "973d60e2-fca7-4185-bd2a-84a686e925ab"
+  },
+  {
+   "name": "Edwards",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Cronin",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Moore",
+   "role": "co",
+   "version": "amendment text (movers named in it)",
+   "politician_id": "c0b79f82-6ce7-413a-a18a-286c9a8fa5fd"
+  },
+  {
+   "name": "Pacheco",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Brady",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Finegold",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Keenan",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "O'Connor",
+   "role": "co",
+   "version": "amendment text (movers named in it)",
+   "politician_id": "e1f72270-5809-4d0e-969c-48d1ab34fbdc"
+  },
+  {
+   "name": "Timilty",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Feeney",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Oliveira",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Durant",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Gomez",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Moran",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Tarr",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Collins",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Montigny",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Lovely",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Fattman",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "multi",
+   "other_topics": [
+    "the whole amendment is pretrial detention for people charged with gun crimes, new c.276 s.58C (judicial-criminal-justice)"
+   ]
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03): official amendment text + bill history for fate",
+  "fetched_at": "2026-11-03T19:02:32Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-S-2572-AMDT-6-2024.html",
+   "sha256": "b9be3ad2c92fe8c32ba8a5f534fbb83874f123c5943e07b6b8aef7b0ae8638a2"
+  }
+ },
+ "operative_text": "Amendment 6 Amendment ID: S2572-6-R1 Redraft Amendment 6 Repeat Firearm-Violent Offender Mr. Velis, Ms. Edwards, Messrs. Cronin, Moore, Pacheco, Brady, Finegold, Keenan, O'Connor, Timilty, Feeney, Oliveira, Durant and Gomez, Ms. Moran, Messrs. Tarr, Collins and Montigny, Ms. Lovely and Mr. Fattman move that the proposed new text be amended by inserting after section 33 the following section:- \"SECTION 33A.Chapter 276 of the General Laws is hereby amended by inserting after section 58B the following section:- Section 58C. (a) A person who has been charged with a crime under sections 17 or 18C of chapter 265, who has been released after a hearing pursuant to sections 42A, 58, 58A or 87, and who has subsequently been determined, after a hearing, by clear and convincing evidence, to have violated a condition of release by committing any offense, an element of which is the use or unlawful possession of a firearm, rifle, shotgun, machine gun or assault weapon, shall be deemed a danger to the safety of the community and the presiding judicial officer shall enter an order of revocation and detention. (b) A person who has been charged with any offense, an element of which is the use or unlawful possession of a firearm, rifle, shotgun, machine gun or assault weapon, who has been released after a hearing pursuant to sections 42A, 58, 58A or 87, and who has subsequently been determined, after a hearing, by clear and convincing evidence, to have violated a condition of release by committing a crime undersections 17 or 18C of chapter 265 shall be deemed a danger to the safety of the community and the presiding judicial officer shall enter an order of revocation and detention. (c) A person who has been charged with an offense, an element of which is the use or unlawful possession of a firearm, rifle, shotgun, machine gun or assault weapon, who has been released after a hearing pursuant to sections 42A, 58, 58A or 87, and who has subsequently been determined, after a hearing, by clear and convincing evidence, to have violated a condition of release by committing an offense, an element of which is the use or unlawful possession of a firearm, rifle, shotgun, machine gun or assault weapon, shall be deemed a danger to the safety of the community and the presiding judicial officer shall enter an order of revocation and detention. (d) A person detained under this section shall be brought to a trial as soon as reasonably possible but, in the absence of good cause, the person so held shall not be detained for a period exceeding 120 days by the district court or for a period exceeding 180 days by the superior court excluding any period of delay under Rule 36(b)(2) of the Massachusetts Rules of Criminal Procedure .\""
+}

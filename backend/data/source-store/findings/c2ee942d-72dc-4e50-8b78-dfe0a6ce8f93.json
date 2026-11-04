@@ -1,0 +1,299 @@
+{
+  "politician_id": "c2ee942d-72dc-4e50-8b78-dfe0a6ce8f93",
+  "findings": [
+    {
+      "id": "8d1130c6387f8bfd286661b9aea381ccd8e47703f412244d1a6a4fc154becc74",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76970&billStatusActionId=210697&includeVotes=true",
+      "date": "2022-03-23",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2492-2022",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('LEACH'), linked to Vince Leach (district None) via the official 2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.886Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "529cf90a71ccf9d645617ef3b60a7f27ca50e952001992f4c3fb68c019c62cfc",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=246497&includeVotes=true",
+      "date": "2026-06-12",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('LEACH'), linked to Venden \"Vince\" Leach (district 17) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.886Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba4bbab8ec97997d4fb86d0b3830076f32919bda55f035196b142276f76fd206",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=234554&includeVotes=true",
+      "date": "2025-03-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('LEACH'), linked to Venden \"Vince\" Leach (district 17) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.886Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7d5e44b430b6e15ec69fa0d8dcf6796810e7555960b3cc2f14df58db5471c128",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=71189&billStatusActionId=186495&includeVotes=true",
+      "date": "2019-02-14",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1072-2019",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('LEACH'), linked to Vince Leach (district None) via the official 2019 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.886Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d2d451d27200c951c4ac0fce30e3b3b0798f1790b723f08f16cc5808b9b8c52",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=233421&includeVotes=true",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('LEACH'), linked to Venden \"Vince\" Leach (district 17) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.886Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a7deb26f92e06e44e7cbb8aec2ec13fe5ecaddde424e5a0aec256aaaa0bbf345",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=77405&billStatusActionId=210449&includeVotes=true",
+      "date": "2022-03-14",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1460-2022",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('LEACH'), linked to Vince Leach (district None) via the official 2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.886Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d846cce7a43e3a899a2c302629e2c8cc5c660781bc29bdbdc95f2f00eb0626bb",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=75855&billStatusActionId=202926&includeVotes=true",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1713-2021",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('LEACH'), linked to Vince Leach (district None) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.886Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aeb744ceacde5e405640f0f86456e7f9ce347bfb3561ffe01639c659dfec6bd",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83528&billStatusActionId=241249&includeVotes=true",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1001-2026",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('LEACH'), linked to Venden \"Vince\" Leach (district 17) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.886Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "95a18b5673d4baab12c071e130fcf26ef474c543ae4c5cea800334aec0de7904",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76391&billStatusActionId=209313&includeVotes=true",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1012-2022",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('LEACH'), linked to Vince Leach (district None) via the official 2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.886Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "812ac776d8359e015bc13713777a9a924a52e1f081f44a1d8197d28734c4a2a3",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/77624",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-SCR-1046-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, SCR1046P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Vince Leach') on the official bill page; linked to Vince Leach via the official 2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.886Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "07beb22391c4a87027116d0de8b5fc744a95f4fe4b0aa8071a98ee581de3d18a",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/77219",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2596-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2596P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Vince Leach') on the official bill page; linked to Vince Leach via the official 2022 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.945Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "67f1f8f7181db16165b8d24d99732ae95bfcc41434ceb827fc653bb873e6c692",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/77221",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-HCR-2025-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, HCR2025P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Vince Leach') on the official bill page; linked to Vince Leach via the official 2022 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.945Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 10,
+      "at": "2026-10-28T22:53:15.886Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:15:12.945Z",
+      "by": "identity-az-2026-10-28"
+    }
+  ]
+}

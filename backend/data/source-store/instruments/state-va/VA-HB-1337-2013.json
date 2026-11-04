@@ -1,0 +1,1728 @@
+{
+  "id": "VA-HB-1337-2013",
+  "scope": "state:va",
+  "title": "HB 1337 (2013 Regular Session (LIS session code 131)): Polling place procedures; voter identification to be current, valid, and contain photograph.",
+  "urls": [
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+sum+HB1337",
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+mbr+HB1337",
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+ful+HB1337ER",
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+ful+CHAP0703 (chapter text; not read)",
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+ful+HB1337H1 (House committee substitute; not read)"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id)\n(section) § 24.2-643 B (as passed (enrolled; struck words removed, new words kept))\n(quote) The officer shall ask the voter to present any one of the following forms of identification: his Commonwealth of Virginia voter registration card; his Virginia driver's license; his concealed handgun permit issued pursuant to § 18.2-308; any other identification card issued by a government agency of the Commonwealth, one of its political subdivisions, or the United States; any student identification card issued by any institution of higher education located in the Commonwealth of Virginia; or any employee identification card issued by an employer of the voter in the ordinary course of the employer's business. All forms of identification permitted in this subsection are required to (i) be current and valid and (ii) contain a photograph or the name and address of the voter.\n(b_no_id_remedy)\n(section) § 24.2-643 B, second paragraph (existing text reprinted, unchanged)\n(quote) Any voter who does not show one of the forms of identification specified in this subsection shall be offered a provisional ballot under the provisions of § 24.2-653. The State Board of Elections shall provide an ID-ONLY provisional ballot envelope that requires no follow-up action by the registrar or electoral board other than matching submitted identification documents from the voter for the electoral board to make a determination on whether to count the ballot.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Enactment clause 2 (as passed)\n(quote) 2. That the provisions of this act shall become effective on July 1, 2014, provided an appropriation providing for a voter outreach or public information program and otherwise effectuating the purposes of this act is included in a general appropriation act passed during the 2014 Regular Session of the General Assembly that becomes law.\n(other) § 24.2-701 C: absentee application contents (rank/grade/service number, religion, workplace address, designating party chairman or candidate)",
+  "sponsors": [
+    {
+      "name": "Mark L. Cole",
+      "role": "author",
+      "version": "Chaptered: Acts of Assembly Chapter 703, approved 3/23/2013 (text read as enrolled HB1337ER, 2/22/2013, after Senate amendment)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2013-02-05",
+      "body": "VA House",
+      "motion": "VOTE: PASSAGE (63-Y 36-N) (HV0630)",
+      "kind": "roll-call",
+      "yes": 63,
+      "no": 36,
+      "absent": 1,
+      "body_size": 100,
+      "note": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+HV0630+HB1337",
+      "members": [
+        {
+          "name": "Albo",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Bell, Richard P.",
+          "vote": "yea"
+        },
+        {
+          "name": "Bell, Robert B.",
+          "vote": "yea"
+        },
+        {
+          "name": "Byron",
+          "vote": "yea"
+        },
+        {
+          "name": "Cline",
+          "vote": "yea"
+        },
+        {
+          "name": "Cole",
+          "vote": "yea"
+        },
+        {
+          "name": "Cosgrove",
+          "vote": "yea"
+        },
+        {
+          "name": "Cox, J.A.",
+          "vote": "yea"
+        },
+        {
+          "name": "Cox, M.K.",
+          "vote": "yea"
+        },
+        {
+          "name": "Crockett-Stark",
+          "vote": "yea"
+        },
+        {
+          "name": "Dudenhefer",
+          "vote": "yea"
+        },
+        {
+          "name": "Fariss",
+          "vote": "yea"
+        },
+        {
+          "name": "Farrell",
+          "vote": "yea"
+        },
+        {
+          "name": "Garrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Gilbert",
+          "vote": "yea"
+        },
+        {
+          "name": "Greason",
+          "vote": "yea"
+        },
+        {
+          "name": "Habeeb",
+          "vote": "yea"
+        },
+        {
+          "name": "Head",
+          "vote": "yea"
+        },
+        {
+          "name": "Helsel",
+          "vote": "yea"
+        },
+        {
+          "name": "Hodges",
+          "vote": "yea"
+        },
+        {
+          "name": "Hugo",
+          "vote": "yea"
+        },
+        {
+          "name": "Iaquinto",
+          "vote": "yea"
+        },
+        {
+          "name": "Ingram",
+          "vote": "yea"
+        },
+        {
+          "name": "Joannou",
+          "vote": "yea"
+        },
+        {
+          "name": "Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Kilgore",
+          "vote": "yea"
+        },
+        {
+          "name": "Knight",
+          "vote": "yea"
+        },
+        {
+          "name": "Landes",
+          "vote": "yea"
+        },
+        {
+          "name": "LeMunyon",
+          "vote": "yea"
+        },
+        {
+          "name": "Lingamfelter",
+          "vote": "yea"
+        },
+        {
+          "name": "Loupassi",
+          "vote": "yea"
+        },
+        {
+          "name": "Marshall, D.W.",
+          "vote": "yea"
+        },
+        {
+          "name": "Marshall, R.G.",
+          "vote": "yea"
+        },
+        {
+          "name": "Massie",
+          "vote": "yea"
+        },
+        {
+          "name": "May",
+          "vote": "yea"
+        },
+        {
+          "name": "Merricks",
+          "vote": "yea"
+        },
+        {
+          "name": "Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Minchew",
+          "vote": "yea"
+        },
+        {
+          "name": "Morris",
+          "vote": "yea"
+        },
+        {
+          "name": "O'Bannon",
+          "vote": "yea"
+        },
+        {
+          "name": "O'Quinn",
+          "vote": "yea"
+        },
+        {
+          "name": "Orrock",
+          "vote": "yea"
+        },
+        {
+          "name": "Peace",
+          "vote": "yea"
+        },
+        {
+          "name": "Pogge",
+          "vote": "yea"
+        },
+        {
+          "name": "Poindexter",
+          "vote": "yea"
+        },
+        {
+          "name": "Purkey",
+          "vote": "yea"
+        },
+        {
+          "name": "Putney",
+          "vote": "yea"
+        },
+        {
+          "name": "Ramadan",
+          "vote": "yea"
+        },
+        {
+          "name": "Ransone",
+          "vote": "yea"
+        },
+        {
+          "name": "Robinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott, E.T.",
+          "vote": "yea"
+        },
+        {
+          "name": "Sherwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Stolle",
+          "vote": "yea"
+        },
+        {
+          "name": "Tata",
+          "vote": "yea"
+        },
+        {
+          "name": "Villanueva",
+          "vote": "yea"
+        },
+        {
+          "name": "Ware, R.L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Watson",
+          "vote": "yea"
+        },
+        {
+          "name": "Webert",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilt",
+          "vote": "yea"
+        },
+        {
+          "name": "Wright",
+          "vote": "yea"
+        },
+        {
+          "name": "Yancey",
+          "vote": "yea"
+        },
+        {
+          "name": "Mr. Speaker",
+          "vote": "yea"
+        },
+        {
+          "name": "BaCote",
+          "vote": "nay"
+        },
+        {
+          "name": "Brink",
+          "vote": "nay"
+        },
+        {
+          "name": "Bulova",
+          "vote": "nay"
+        },
+        {
+          "name": "Carr",
+          "vote": "nay"
+        },
+        {
+          "name": "Comstock",
+          "vote": "nay"
+        },
+        {
+          "name": "Dance",
+          "vote": "nay"
+        },
+        {
+          "name": "Edmunds",
+          "vote": "nay"
+        },
+        {
+          "name": "Filler-Corn",
+          "vote": "nay"
+        },
+        {
+          "name": "Herring",
+          "vote": "nay"
+        },
+        {
+          "name": "Hester",
+          "vote": "nay"
+        },
+        {
+          "name": "Hope",
+          "vote": "nay"
+        },
+        {
+          "name": "Howell, A.T.",
+          "vote": "nay"
+        },
+        {
+          "name": "James",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Keam",
+          "vote": "nay"
+        },
+        {
+          "name": "Kory",
+          "vote": "nay"
+        },
+        {
+          "name": "Krupicka",
+          "vote": "nay"
+        },
+        {
+          "name": "Lewis",
+          "vote": "nay"
+        },
+        {
+          "name": "Lopez",
+          "vote": "nay"
+        },
+        {
+          "name": "McClellan",
+          "vote": "nay"
+        },
+        {
+          "name": "McQuinn",
+          "vote": "nay"
+        },
+        {
+          "name": "Morrissey",
+          "vote": "nay"
+        },
+        {
+          "name": "Plum",
+          "vote": "nay"
+        },
+        {
+          "name": "Rush",
+          "vote": "nay"
+        },
+        {
+          "name": "Rust",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott, J.M.",
+          "vote": "nay"
+        },
+        {
+          "name": "Sickles",
+          "vote": "nay"
+        },
+        {
+          "name": "Spruill",
+          "vote": "nay"
+        },
+        {
+          "name": "Surovell",
+          "vote": "nay"
+        },
+        {
+          "name": "Torian",
+          "vote": "nay"
+        },
+        {
+          "name": "Toscano",
+          "vote": "nay"
+        },
+        {
+          "name": "Tyler",
+          "vote": "nay"
+        },
+        {
+          "name": "Ward",
+          "vote": "nay"
+        },
+        {
+          "name": "Ware, O.",
+          "vote": "nay"
+        },
+        {
+          "name": "Watts",
+          "vote": "nay"
+        },
+        {
+          "name": "Yost",
+          "vote": "nay"
+        },
+        {
+          "name": "Morefield",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2013-02-14",
+      "body": "VA Senate",
+      "motion": "Constitutional reading dispensed (39-Y 0-N) (SV0556)",
+      "kind": "roll-call",
+      "yes": 39,
+      "no": 0,
+      "absent": 1,
+      "body_size": 40,
+      "note": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+SV0556HB1337+HB1337",
+      "members": [
+        {
+          "name": "Alexander",
+          "vote": "yea"
+        },
+        {
+          "name": "Barker",
+          "vote": "yea"
+        },
+        {
+          "name": "Black",
+          "vote": "yea"
+        },
+        {
+          "name": "Blevins",
+          "vote": "yea"
+        },
+        {
+          "name": "Carrico",
+          "vote": "yea"
+        },
+        {
+          "name": "Colgan",
+          "vote": "yea"
+        },
+        {
+          "name": "Deeds",
+          "vote": "yea"
+        },
+        {
+          "name": "Ebbin",
+          "vote": "yea"
+        },
+        {
+          "name": "Edwards",
+          "vote": "yea"
+        },
+        {
+          "name": "Favola",
+          "vote": "yea"
+        },
+        {
+          "name": "Garrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Hanger",
+          "vote": "yea"
+        },
+        {
+          "name": "Herring",
+          "vote": "yea"
+        },
+        {
+          "name": "Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Locke",
+          "vote": "yea"
+        },
+        {
+          "name": "Lucas",
+          "vote": "yea"
+        },
+        {
+          "name": "Marsden",
+          "vote": "yea"
+        },
+        {
+          "name": "Marsh",
+          "vote": "yea"
+        },
+        {
+          "name": "Martin",
+          "vote": "yea"
+        },
+        {
+          "name": "McDougle",
+          "vote": "yea"
+        },
+        {
+          "name": "McEachin",
+          "vote": "yea"
+        },
+        {
+          "name": "McWaters",
+          "vote": "yea"
+        },
+        {
+          "name": "Newman",
+          "vote": "yea"
+        },
+        {
+          "name": "Norment",
+          "vote": "yea"
+        },
+        {
+          "name": "Northam",
+          "vote": "yea"
+        },
+        {
+          "name": "Obenshain",
+          "vote": "yea"
+        },
+        {
+          "name": "Petersen",
+          "vote": "yea"
+        },
+        {
+          "name": "Puckett",
+          "vote": "yea"
+        },
+        {
+          "name": "Puller",
+          "vote": "yea"
+        },
+        {
+          "name": "Reeves",
+          "vote": "yea"
+        },
+        {
+          "name": "Ruff",
+          "vote": "yea"
+        },
+        {
+          "name": "Saslaw",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Stanley",
+          "vote": "yea"
+        },
+        {
+          "name": "Stosch",
+          "vote": "yea"
+        },
+        {
+          "name": "Stuart",
+          "vote": "yea"
+        },
+        {
+          "name": "Vogel",
+          "vote": "yea"
+        },
+        {
+          "name": "Wagner",
+          "vote": "yea"
+        },
+        {
+          "name": "Watkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Miller",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2013-02-15",
+      "body": "VA Senate",
+      "motion": "Amendment by Senator McEachin rejected (19-Y 21-N) (SV0578)",
+      "kind": "roll-call",
+      "yes": 19,
+      "no": 21,
+      "absent": 0,
+      "body_size": 40,
+      "note": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+SV0578HB1337+HB1337",
+      "members": [
+        {
+          "name": "Alexander",
+          "vote": "yea"
+        },
+        {
+          "name": "Barker",
+          "vote": "yea"
+        },
+        {
+          "name": "Colgan",
+          "vote": "yea"
+        },
+        {
+          "name": "Deeds",
+          "vote": "yea"
+        },
+        {
+          "name": "Ebbin",
+          "vote": "yea"
+        },
+        {
+          "name": "Edwards",
+          "vote": "yea"
+        },
+        {
+          "name": "Favola",
+          "vote": "yea"
+        },
+        {
+          "name": "Herring",
+          "vote": "yea"
+        },
+        {
+          "name": "Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Locke",
+          "vote": "yea"
+        },
+        {
+          "name": "Lucas",
+          "vote": "yea"
+        },
+        {
+          "name": "Marsden",
+          "vote": "yea"
+        },
+        {
+          "name": "McEachin",
+          "vote": "yea"
+        },
+        {
+          "name": "Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Northam",
+          "vote": "yea"
+        },
+        {
+          "name": "Petersen",
+          "vote": "yea"
+        },
+        {
+          "name": "Puckett",
+          "vote": "yea"
+        },
+        {
+          "name": "Puller",
+          "vote": "yea"
+        },
+        {
+          "name": "Saslaw",
+          "vote": "yea"
+        },
+        {
+          "name": "Black",
+          "vote": "nay"
+        },
+        {
+          "name": "Blevins",
+          "vote": "nay"
+        },
+        {
+          "name": "Carrico",
+          "vote": "nay"
+        },
+        {
+          "name": "Garrett",
+          "vote": "nay"
+        },
+        {
+          "name": "Hanger",
+          "vote": "nay"
+        },
+        {
+          "name": "Marsh",
+          "vote": "nay"
+        },
+        {
+          "name": "Martin",
+          "vote": "nay"
+        },
+        {
+          "name": "McDougle",
+          "vote": "nay"
+        },
+        {
+          "name": "McWaters",
+          "vote": "nay"
+        },
+        {
+          "name": "Newman",
+          "vote": "nay"
+        },
+        {
+          "name": "Norment",
+          "vote": "nay"
+        },
+        {
+          "name": "Obenshain",
+          "vote": "nay"
+        },
+        {
+          "name": "Reeves",
+          "vote": "nay"
+        },
+        {
+          "name": "Ruff",
+          "vote": "nay"
+        },
+        {
+          "name": "Smith",
+          "vote": "nay"
+        },
+        {
+          "name": "Stanley",
+          "vote": "nay"
+        },
+        {
+          "name": "Stosch",
+          "vote": "nay"
+        },
+        {
+          "name": "Stuart",
+          "vote": "nay"
+        },
+        {
+          "name": "Vogel",
+          "vote": "nay"
+        },
+        {
+          "name": "Wagner",
+          "vote": "nay"
+        },
+        {
+          "name": "Watkins",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2013-02-15",
+      "body": "VA Senate",
+      "motion": "Amendment by Senator McEachin reconsidered (40-Y 0-N) (SV0579)",
+      "kind": "roll-call",
+      "yes": 40,
+      "no": 0,
+      "absent": 0,
+      "body_size": 40,
+      "note": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+SV0579HB1337+HB1337",
+      "members": [
+        {
+          "name": "Alexander",
+          "vote": "yea"
+        },
+        {
+          "name": "Barker",
+          "vote": "yea"
+        },
+        {
+          "name": "Black",
+          "vote": "yea"
+        },
+        {
+          "name": "Blevins",
+          "vote": "yea"
+        },
+        {
+          "name": "Carrico",
+          "vote": "yea"
+        },
+        {
+          "name": "Colgan",
+          "vote": "yea"
+        },
+        {
+          "name": "Deeds",
+          "vote": "yea"
+        },
+        {
+          "name": "Ebbin",
+          "vote": "yea"
+        },
+        {
+          "name": "Edwards",
+          "vote": "yea"
+        },
+        {
+          "name": "Favola",
+          "vote": "yea"
+        },
+        {
+          "name": "Garrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Hanger",
+          "vote": "yea"
+        },
+        {
+          "name": "Herring",
+          "vote": "yea"
+        },
+        {
+          "name": "Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Locke",
+          "vote": "yea"
+        },
+        {
+          "name": "Lucas",
+          "vote": "yea"
+        },
+        {
+          "name": "Marsden",
+          "vote": "yea"
+        },
+        {
+          "name": "Marsh",
+          "vote": "yea"
+        },
+        {
+          "name": "Martin",
+          "vote": "yea"
+        },
+        {
+          "name": "McDougle",
+          "vote": "yea"
+        },
+        {
+          "name": "McEachin",
+          "vote": "yea"
+        },
+        {
+          "name": "McWaters",
+          "vote": "yea"
+        },
+        {
+          "name": "Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Newman",
+          "vote": "yea"
+        },
+        {
+          "name": "Norment",
+          "vote": "yea"
+        },
+        {
+          "name": "Northam",
+          "vote": "yea"
+        },
+        {
+          "name": "Obenshain",
+          "vote": "yea"
+        },
+        {
+          "name": "Petersen",
+          "vote": "yea"
+        },
+        {
+          "name": "Puckett",
+          "vote": "yea"
+        },
+        {
+          "name": "Puller",
+          "vote": "yea"
+        },
+        {
+          "name": "Reeves",
+          "vote": "yea"
+        },
+        {
+          "name": "Ruff",
+          "vote": "yea"
+        },
+        {
+          "name": "Saslaw",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Stanley",
+          "vote": "yea"
+        },
+        {
+          "name": "Stosch",
+          "vote": "yea"
+        },
+        {
+          "name": "Stuart",
+          "vote": "yea"
+        },
+        {
+          "name": "Vogel",
+          "vote": "yea"
+        },
+        {
+          "name": "Wagner",
+          "vote": "yea"
+        },
+        {
+          "name": "Watkins",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2013-02-15",
+      "body": "VA Senate",
+      "motion": "Amendment by Senator McEachin agreed to (20-Y 20-N) (SV0580)",
+      "kind": "roll-call",
+      "yes": 20,
+      "no": 20,
+      "absent": 0,
+      "body_size": 40,
+      "note": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+SV0580HB1337+HB1337",
+      "members": [
+        {
+          "name": "Alexander",
+          "vote": "yea"
+        },
+        {
+          "name": "Barker",
+          "vote": "yea"
+        },
+        {
+          "name": "Colgan",
+          "vote": "yea"
+        },
+        {
+          "name": "Deeds",
+          "vote": "yea"
+        },
+        {
+          "name": "Ebbin",
+          "vote": "yea"
+        },
+        {
+          "name": "Edwards",
+          "vote": "yea"
+        },
+        {
+          "name": "Favola",
+          "vote": "yea"
+        },
+        {
+          "name": "Herring",
+          "vote": "yea"
+        },
+        {
+          "name": "Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Locke",
+          "vote": "yea"
+        },
+        {
+          "name": "Lucas",
+          "vote": "yea"
+        },
+        {
+          "name": "Marsden",
+          "vote": "yea"
+        },
+        {
+          "name": "Marsh",
+          "vote": "yea"
+        },
+        {
+          "name": "McEachin",
+          "vote": "yea"
+        },
+        {
+          "name": "Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Northam",
+          "vote": "yea"
+        },
+        {
+          "name": "Petersen",
+          "vote": "yea"
+        },
+        {
+          "name": "Puckett",
+          "vote": "yea"
+        },
+        {
+          "name": "Puller",
+          "vote": "yea"
+        },
+        {
+          "name": "Saslaw",
+          "vote": "yea"
+        },
+        {
+          "name": "Black",
+          "vote": "nay"
+        },
+        {
+          "name": "Blevins",
+          "vote": "nay"
+        },
+        {
+          "name": "Carrico",
+          "vote": "nay"
+        },
+        {
+          "name": "Garrett",
+          "vote": "nay"
+        },
+        {
+          "name": "Hanger",
+          "vote": "nay"
+        },
+        {
+          "name": "Martin",
+          "vote": "nay"
+        },
+        {
+          "name": "McDougle",
+          "vote": "nay"
+        },
+        {
+          "name": "McWaters",
+          "vote": "nay"
+        },
+        {
+          "name": "Newman",
+          "vote": "nay"
+        },
+        {
+          "name": "Norment",
+          "vote": "nay"
+        },
+        {
+          "name": "Obenshain",
+          "vote": "nay"
+        },
+        {
+          "name": "Reeves",
+          "vote": "nay"
+        },
+        {
+          "name": "Ruff",
+          "vote": "nay"
+        },
+        {
+          "name": "Smith",
+          "vote": "nay"
+        },
+        {
+          "name": "Stanley",
+          "vote": "nay"
+        },
+        {
+          "name": "Stosch",
+          "vote": "nay"
+        },
+        {
+          "name": "Stuart",
+          "vote": "nay"
+        },
+        {
+          "name": "Vogel",
+          "vote": "nay"
+        },
+        {
+          "name": "Wagner",
+          "vote": "nay"
+        },
+        {
+          "name": "Watkins",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2013-02-15",
+      "body": "VA Senate",
+      "motion": "Passed Senate with amendment (20-Y 20-N) (SV0581)",
+      "kind": "roll-call",
+      "yes": 20,
+      "no": 20,
+      "absent": 0,
+      "body_size": 40,
+      "note": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+SV0581HB1337+HB1337",
+      "members": [
+        {
+          "name": "Black",
+          "vote": "yea"
+        },
+        {
+          "name": "Blevins",
+          "vote": "yea"
+        },
+        {
+          "name": "Carrico",
+          "vote": "yea"
+        },
+        {
+          "name": "Garrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Hanger",
+          "vote": "yea"
+        },
+        {
+          "name": "Martin",
+          "vote": "yea"
+        },
+        {
+          "name": "McDougle",
+          "vote": "yea"
+        },
+        {
+          "name": "McWaters",
+          "vote": "yea"
+        },
+        {
+          "name": "Newman",
+          "vote": "yea"
+        },
+        {
+          "name": "Norment",
+          "vote": "yea"
+        },
+        {
+          "name": "Obenshain",
+          "vote": "yea"
+        },
+        {
+          "name": "Reeves",
+          "vote": "yea"
+        },
+        {
+          "name": "Ruff",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Stanley",
+          "vote": "yea"
+        },
+        {
+          "name": "Stosch",
+          "vote": "yea"
+        },
+        {
+          "name": "Stuart",
+          "vote": "yea"
+        },
+        {
+          "name": "Vogel",
+          "vote": "yea"
+        },
+        {
+          "name": "Wagner",
+          "vote": "yea"
+        },
+        {
+          "name": "Watkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Alexander",
+          "vote": "nay"
+        },
+        {
+          "name": "Barker",
+          "vote": "nay"
+        },
+        {
+          "name": "Colgan",
+          "vote": "nay"
+        },
+        {
+          "name": "Deeds",
+          "vote": "nay"
+        },
+        {
+          "name": "Ebbin",
+          "vote": "nay"
+        },
+        {
+          "name": "Edwards",
+          "vote": "nay"
+        },
+        {
+          "name": "Favola",
+          "vote": "nay"
+        },
+        {
+          "name": "Herring",
+          "vote": "nay"
+        },
+        {
+          "name": "Howell",
+          "vote": "nay"
+        },
+        {
+          "name": "Locke",
+          "vote": "nay"
+        },
+        {
+          "name": "Lucas",
+          "vote": "nay"
+        },
+        {
+          "name": "Marsden",
+          "vote": "nay"
+        },
+        {
+          "name": "Marsh",
+          "vote": "nay"
+        },
+        {
+          "name": "McEachin",
+          "vote": "nay"
+        },
+        {
+          "name": "Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Northam",
+          "vote": "nay"
+        },
+        {
+          "name": "Petersen",
+          "vote": "nay"
+        },
+        {
+          "name": "Puckett",
+          "vote": "nay"
+        },
+        {
+          "name": "Puller",
+          "vote": "nay"
+        },
+        {
+          "name": "Saslaw",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2013-02-19",
+      "body": "VA House",
+      "motion": "VOTE: ADOPTION (64-Y 36-N) (HV1076)",
+      "kind": "roll-call",
+      "yes": 64,
+      "no": 36,
+      "absent": 0,
+      "body_size": 100,
+      "note": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+HV1076+HB1337",
+      "members": [
+        {
+          "name": "Albo",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Bell, Richard P.",
+          "vote": "yea"
+        },
+        {
+          "name": "Bell, Robert B.",
+          "vote": "yea"
+        },
+        {
+          "name": "Byron",
+          "vote": "yea"
+        },
+        {
+          "name": "Cline",
+          "vote": "yea"
+        },
+        {
+          "name": "Cole",
+          "vote": "yea"
+        },
+        {
+          "name": "Comstock",
+          "vote": "yea"
+        },
+        {
+          "name": "Cosgrove",
+          "vote": "yea"
+        },
+        {
+          "name": "Cox, J.A.",
+          "vote": "yea"
+        },
+        {
+          "name": "Cox, M.K.",
+          "vote": "yea"
+        },
+        {
+          "name": "Crockett-Stark",
+          "vote": "yea"
+        },
+        {
+          "name": "Dudenhefer",
+          "vote": "yea"
+        },
+        {
+          "name": "Fariss",
+          "vote": "yea"
+        },
+        {
+          "name": "Farrell",
+          "vote": "yea"
+        },
+        {
+          "name": "Garrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Gilbert",
+          "vote": "yea"
+        },
+        {
+          "name": "Greason",
+          "vote": "yea"
+        },
+        {
+          "name": "Habeeb",
+          "vote": "yea"
+        },
+        {
+          "name": "Head",
+          "vote": "yea"
+        },
+        {
+          "name": "Hodges",
+          "vote": "yea"
+        },
+        {
+          "name": "Hugo",
+          "vote": "yea"
+        },
+        {
+          "name": "Iaquinto",
+          "vote": "yea"
+        },
+        {
+          "name": "Ingram",
+          "vote": "yea"
+        },
+        {
+          "name": "Joannou",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Kilgore",
+          "vote": "yea"
+        },
+        {
+          "name": "Knight",
+          "vote": "yea"
+        },
+        {
+          "name": "Landes",
+          "vote": "yea"
+        },
+        {
+          "name": "LeMunyon",
+          "vote": "yea"
+        },
+        {
+          "name": "Lingamfelter",
+          "vote": "yea"
+        },
+        {
+          "name": "Loupassi",
+          "vote": "yea"
+        },
+        {
+          "name": "Marshall, D.W.",
+          "vote": "yea"
+        },
+        {
+          "name": "Marshall, R.G.",
+          "vote": "yea"
+        },
+        {
+          "name": "Massie",
+          "vote": "yea"
+        },
+        {
+          "name": "May",
+          "vote": "yea"
+        },
+        {
+          "name": "Merricks",
+          "vote": "yea"
+        },
+        {
+          "name": "Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Minchew",
+          "vote": "yea"
+        },
+        {
+          "name": "Morefield",
+          "vote": "yea"
+        },
+        {
+          "name": "Morris",
+          "vote": "yea"
+        },
+        {
+          "name": "O'Bannon",
+          "vote": "yea"
+        },
+        {
+          "name": "O'Quinn",
+          "vote": "yea"
+        },
+        {
+          "name": "Orrock",
+          "vote": "yea"
+        },
+        {
+          "name": "Peace",
+          "vote": "yea"
+        },
+        {
+          "name": "Pogge",
+          "vote": "yea"
+        },
+        {
+          "name": "Poindexter",
+          "vote": "yea"
+        },
+        {
+          "name": "Purkey",
+          "vote": "yea"
+        },
+        {
+          "name": "Ramadan",
+          "vote": "yea"
+        },
+        {
+          "name": "Ransone",
+          "vote": "yea"
+        },
+        {
+          "name": "Robinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott, E.T.",
+          "vote": "yea"
+        },
+        {
+          "name": "Sherwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Stolle",
+          "vote": "yea"
+        },
+        {
+          "name": "Tata",
+          "vote": "yea"
+        },
+        {
+          "name": "Villanueva",
+          "vote": "yea"
+        },
+        {
+          "name": "Ware, R.L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Watson",
+          "vote": "yea"
+        },
+        {
+          "name": "Webert",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilt",
+          "vote": "yea"
+        },
+        {
+          "name": "Wright",
+          "vote": "yea"
+        },
+        {
+          "name": "Yancey",
+          "vote": "yea"
+        },
+        {
+          "name": "Mr. Speaker",
+          "vote": "yea"
+        },
+        {
+          "name": "BaCote",
+          "vote": "nay"
+        },
+        {
+          "name": "Brink",
+          "vote": "nay"
+        },
+        {
+          "name": "Bulova",
+          "vote": "nay"
+        },
+        {
+          "name": "Carr",
+          "vote": "nay"
+        },
+        {
+          "name": "Dance",
+          "vote": "nay"
+        },
+        {
+          "name": "Edmunds",
+          "vote": "nay"
+        },
+        {
+          "name": "Filler-Corn",
+          "vote": "nay"
+        },
+        {
+          "name": "Helsel",
+          "vote": "nay"
+        },
+        {
+          "name": "Herring",
+          "vote": "nay"
+        },
+        {
+          "name": "Hester",
+          "vote": "nay"
+        },
+        {
+          "name": "Hope",
+          "vote": "nay"
+        },
+        {
+          "name": "Howell, A.T.",
+          "vote": "nay"
+        },
+        {
+          "name": "James",
+          "vote": "nay"
+        },
+        {
+          "name": "Keam",
+          "vote": "nay"
+        },
+        {
+          "name": "Kory",
+          "vote": "nay"
+        },
+        {
+          "name": "Krupicka",
+          "vote": "nay"
+        },
+        {
+          "name": "Lewis",
+          "vote": "nay"
+        },
+        {
+          "name": "Lopez",
+          "vote": "nay"
+        },
+        {
+          "name": "McClellan",
+          "vote": "nay"
+        },
+        {
+          "name": "McQuinn",
+          "vote": "nay"
+        },
+        {
+          "name": "Morrissey",
+          "vote": "nay"
+        },
+        {
+          "name": "Plum",
+          "vote": "nay"
+        },
+        {
+          "name": "Putney",
+          "vote": "nay"
+        },
+        {
+          "name": "Rush",
+          "vote": "nay"
+        },
+        {
+          "name": "Rust",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott, J.M.",
+          "vote": "nay"
+        },
+        {
+          "name": "Sickles",
+          "vote": "nay"
+        },
+        {
+          "name": "Spruill",
+          "vote": "nay"
+        },
+        {
+          "name": "Surovell",
+          "vote": "nay"
+        },
+        {
+          "name": "Torian",
+          "vote": "nay"
+        },
+        {
+          "name": "Toscano",
+          "vote": "nay"
+        },
+        {
+          "name": "Tyler",
+          "vote": "nay"
+        },
+        {
+          "name": "Ward",
+          "vote": "nay"
+        },
+        {
+          "name": "Ware, O.",
+          "vote": "nay"
+        },
+        {
+          "name": "Watts",
+          "vote": "nay"
+        },
+        {
+          "name": "Yost",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T17:30:00Z)",
+    "fetched_at": "2026-10-28T17:30:00Z",
+    "method": "curl"
+  }
+}

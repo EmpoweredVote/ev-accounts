@@ -1,0 +1,642 @@
+{
+  "politician_id": "b4f19462-f23f-4061-831d-ec4544b5678f",
+  "findings": [
+    {
+      "id": "438021c25d6f1bbf9fc8921c3ce80c3563636ccc648eca28af8a3707c72eb08c",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB19",
+      "date": "2020-03-07",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-19-2020",
+      "act": "yea",
+      "motion": "conference report agreed to",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA Senate, conference report agreed to, 2020-03-07: yea (tally 20–19); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.563Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "7c7526c5e7b92d638648d8bf3f401f9a8433f7903be1928f3f0ad919bc453773",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+SV0887HB0213+HB0213",
+      "date": "2020-02-24",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-213-2020",
+      "act": "yea",
+      "motion": "Senate: Passed Senate (21-Y 18-N)",
+      "note": "Senate roll call as printed ('Boysko'), linked to Jennifer B. Boysko via the official 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c8eceae2402fb2bddb87244182c25b6b73c6c7e7f76abd69a12bf7b1dd58e221",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+SB70",
+      "date": "2020-03-07",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-70-2020",
+      "act": "yea",
+      "motion": "Conference report agreed to by Senate",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, Conference report agreed to by Senate, 2020-03-07: yea (tally 23–17); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/VA-SB70-CHAP1112.pdf",
+          "sha256": "e84c10123a1b7e6e6baafd75f7af2a51d02a6e3324ba7076d92397d6e85b8458"
+        }
+      }
+    },
+    {
+      "id": "16ba0bcfddc03492a22df84bd5ed4deabf224479111322d537126dcc576455a9",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB0002",
+      "date": "2020-03-07",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-2-2020",
+      "act": "yea",
+      "motion": "Conference report agreed to by Senate",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, Conference report agreed to by Senate, 2020-03-07: yea (tally 23–16); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/va_hb2_2020_ch1111.html",
+          "sha256": "2677881b400709b8e0c4e144c8d6b60dd2f535e497141f572eda2dea8df87ff1"
+        }
+      }
+    },
+    {
+      "id": "99f341266801aa3ebc58ac29ee2df795a7bea002a640eec3e4eb62dc4f143e65",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB0002",
+      "date": "2024-02-28",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-2-2024",
+      "act": "yea",
+      "motion": "Passed Senate with substitute",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, Passed Senate with substitute, 2024-02-28: yea (tally 20–19); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/VA-HB2-2024-ER.pdf",
+          "sha256": "be2c4a82097d208f802bc88c1aa08097489565a6746bfd36f1a1f755a683cd50"
+        }
+      }
+    },
+    {
+      "id": "d63a4d995411ec6fb5cfa8699e3f43daf7a571a0e48f75c4efa50b5809d01db8",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB0002",
+      "date": "2024-03-01",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-2-2024",
+      "act": "yea",
+      "motion": "House substitute agreed to by Senate",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, House substitute agreed to by Senate, 2024-03-01: yea (tally 21–19); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/va_sb2_2024_enrolled.html",
+          "sha256": "fbb47c123b27eae84175225b3f36034532cd7be496f4a56cb8ff2c6f3c7bbe41"
+        }
+      }
+    },
+    {
+      "id": "0db42dae9569b813b7804c5edb17e73251263ea48dc3152a30c970f9e76f0645",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/bill-details/20261/HB101",
+      "date": "2026-04-22",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-101-2026",
+      "act": "yea",
+      "motion": "Senate concurred in Governor's recommendation (39-Y 0-N 0-A)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "VA Senate, Senate concurred in Governor's recommendation (39-Y 0-N 0-A), 2026-04-22: yea (tally 39–0); census gate: near-unanimous.",
+      "subjects": [
+        "concealed handgun permit applications may be filed electronically",
+        "request for email address for expiry notice becomes optional"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-101-2026.chaptered.html",
+          "sha256": "b159cf84d01678b6af7ca6c26ff63352f18bf7b38a608c217b511935658c5ca0"
+        }
+      }
+    },
+    {
+      "id": "866f4e4bd7ced07d5b21da6269570dd71aae7e7def7dfab5a0f8cab123cf3acd",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/bill-details/20251/HB1583",
+      "date": "2025-02-22",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1583-2025",
+      "act": "yea",
+      "motion": "Conference report agreed to by Senate (40-Y 0-N)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "VA Senate, Conference report agreed to by Senate (40-Y 0-N), 2025-02-22: yea (tally 40–0); census gate: multi-subject.",
+      "subjects": [
+        "threats to shoot at or inside a building or vehicle made a felony",
+        "under-18 offenders get misdemeanor instead of under-15"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-1583-2025.chaptered.html",
+          "sha256": "c36a6142b49fd127c03021102f0c28bfb0076861b64c60955c44efa292b30e2c"
+        }
+      }
+    },
+    {
+      "id": "9ef37f0e77e6d0fb1aa403d4acd3a6302645c0b54c7743f6d29308bc76c9f252",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/bill-details/20251/HB1607",
+      "date": "2025-02-14",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1607-2025",
+      "act": "yea",
+      "motion": "Passed Senate (21-Y 15-N)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, Passed Senate (21-Y 15-N), 2025-02-14: yea (tally 21–15); census gate: none.",
+      "subjects": [
+        "sale and transfer of assault firearms made a misdemeanor",
+        "under-21 ban on assault firearms",
+        "3-year firearm ban after conviction",
+        "sale of magazines over 10 rounds banned"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-1607-2025.enrolled.html",
+          "sha256": "12c784298e242a061421f81339630e857188d33858f6dae7aa44acff921a4633"
+        }
+      }
+    },
+    {
+      "id": "dcb39e695c1d39bf5912903cd6a4d5cbf2d900ab27a7e5a6b6fdcbf6790f4964",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/bill-details/20251/HB1736",
+      "date": "2025-02-14",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1736-2025",
+      "act": "yea",
+      "motion": "Passed Senate with substitute (20-Y 15-N)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, Passed Senate with substitute (20-Y 15-N), 2025-02-14: yea (tally 20–15); census gate: none.",
+      "subjects": [
+        "new state center for firearm violence intervention and prevention",
+        "grants to local violence-intervention programs",
+        "model policies for serving risk orders and taking guns from prohibited people"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-1736-2025.enrolled.html",
+          "sha256": "71821c9a3f2e52b7d0a10eeade49e0a99bf41052b629a2bfc1758850734fbd45"
+        }
+      }
+    },
+    {
+      "id": "bc95220d5e9d36000b590232c9ab66c41e9b88e3f86c4340cad64da3b118250d",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/bill-details/20251/HB1876",
+      "date": "2025-02-14",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1876-2025",
+      "act": "yea",
+      "motion": "Passed Senate with substitute (21-Y 15-N)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, Passed Senate with substitute (21-Y 15-N), 2025-02-14: yea (tally 21–15); census gate: none.",
+      "subjects": [
+        "public colleges may ban firearms in their buildings",
+        "ROTC and NCAA/club shooting sports exempt from campus bans",
+        "campus security screening allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-1876-2025.enrolled.html",
+          "sha256": "bbaf1d4efd9d2aac67458f7b6478c97ca191eda81cfdde511b8c82d4763e0755"
+        }
+      }
+    },
+    {
+      "id": "c5ce81333e541f1a06ebf585b0c809202b16924c70d5441a4eb07f511af0afb6",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/bill-details/20261/HB21",
+      "date": "2026-03-03",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-21-2026",
+      "act": "yea",
+      "motion": "Passed Senate with substitute (21-Y 19-N 0-A)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, Passed Senate with substitute (21-Y 19-N 0-A), 2026-03-03: yea (tally 21–19); census gate: none.",
+      "subjects": [
+        "firearm industry must use reasonable controls against straw and trafficked sales",
+        "public nuisance liability for firearm sellers and makers",
+        "Attorney General and injured people may sue"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-21-2026.chaptered.html",
+          "sha256": "e7be4c6c9d6f2a4831b6be9e07485f6843f681d77ad03aab079fe149c5c62dfb"
+        }
+      }
+    },
+    {
+      "id": "4ddc77f34052390195c311ef459c72446b49b51c78305d554904a92f01305e0c",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB22",
+      "date": "2024-03-01",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-22-2024",
+      "act": "yea",
+      "motion": "Senate: Passed Senate with substitute (27-Y 13-N)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, Senate: Passed Senate with substitute (27-Y 13-N), 2024-03-01: yea (tally 27–13); census gate: none.",
+      "subjects": [
+        "auto sears banned as a Class 6 felony",
+        "auto sears subject to forfeiture"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-22-2024.chaptered.html",
+          "sha256": "88a3aea381a5647490b4ff52c98a409a491db4fcada2809d3767782db32d51af"
+        }
+      }
+    },
+    {
+      "id": "f8b6ec2c6162d6fd65d6192d13651a3df59b0ce748f0628a83ac2f2c6235bc8e",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/bill-details/20261/HB229",
+      "date": "2026-03-09",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-229-2026",
+      "act": "yea",
+      "motion": "Passed Senate (21-Y 19-N 0-A)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, Passed Senate (21-Y 19-N 0-A), 2026-03-09: yea (tally 21–19); census gate: none.",
+      "subjects": [
+        "firearm and weapon ban in mental health hospitals",
+        "Class 1 misdemeanor and seizure of weapons"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-229-2026.chaptered.html",
+          "sha256": "e81b6bf04cef60b29c9a838ae7f98c44960488952f71fccaa0fedc9a45189222"
+        }
+      }
+    },
+    {
+      "id": "185e32bf4157b76369b66014e021bdf29527872dd44c05b692ad88a2fd2161bb",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB2387",
+      "date": "2023-02-15",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-2387-2023",
+      "act": "yea",
+      "motion": "Senate: Passed Senate with substitute (40-Y 0-N)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "VA Senate, Senate: Passed Senate with substitute (40-Y 0-N), 2023-02-15: yea (tally 40–0); census gate: multi-subject.",
+      "subjects": [
+        "tax credit up to $300 for gun safes and locks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-2387-2023.chaptered.html",
+          "sha256": "f02ab301f9938630dc98c3bdbe436c2aebb80b0a565e436b7f3b2ec3e5cd3b9c"
+        }
+      }
+    },
+    {
+      "id": "41ea417db79dbc19bb7a0cd50137b5e02e94df2dbe475133dd0ee1e16d281b87",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB351",
+      "date": "2024-03-08",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-351-2024",
+      "act": "yea",
+      "motion": "Senate: Conference report agreed to by Senate (21-Y 19-N)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, Senate: Conference report agreed to by Senate (21-Y 19-N), 2024-03-08: yea (tally 21–19); census gate: none.",
+      "subjects": [
+        "locking device or certification required at firearm purchase",
+        "dealer storage warning with each firearm sale"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-351-2024.enrolled.html",
+          "sha256": "3e23902b1c60b9d77e61b58972c56569e14d2b042ce15d4ae903ff61db7c857a"
+        }
+      }
+    },
+    {
+      "id": "8d9c5b2486890078e80582e4cc4b6e5d1df02ea966d662fbad4863f477ee4472",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB362",
+      "date": "2024-03-01",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-362-2024",
+      "act": "yea",
+      "motion": "Senate: Passed Senate with substitute (21-Y 19-N)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, Senate: Passed Senate with substitute (21-Y 19-N), 2024-03-01: yea (tally 21–19); census gate: none.",
+      "subjects": [
+        "firearm ban after intimate-partner assault conviction",
+        "intimate partner added to family or household member"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-362-2024.enrolled.html",
+          "sha256": "3861935c2658428bcc55de737ffe1a9d4bb8b59f34707211b4149280a25acc6b"
+        }
+      }
+    },
+    {
+      "id": "251f95c3328f363551d75bb2b802158b5b05aff8bcbb68a78ef471d4e17cfc49",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/bill-details/20261/HB626",
+      "date": "2026-03-02",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-626-2026",
+      "act": "yea",
+      "motion": "Passed Senate (21-Y 19-N 0-A)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, Passed Senate (21-Y 19-N 0-A), 2026-03-02: yea (tally 21–19); census gate: none.",
+      "subjects": [
+        "college building exemption for carrying firearms narrowed to approved curriculum and activities"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-626-2026.chaptered.html",
+          "sha256": "e4b8636e27eea6abe2eeee464b8cdd72a994b215097d6037daa034b53e82d4ab"
+        }
+      }
+    },
+    {
+      "id": "8c7ca6dbf36ec42746856d770416fbfcc7d098eb3063edc45ffa4eb038515f4e",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/bill-details/20261/HB969",
+      "date": "2026-04-22",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-969-2026",
+      "act": "yea",
+      "motion": "Senate concurred in Governor's recommendation (21-Y 18-N 0-A)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, Senate concurred in Governor's recommendation (21-Y 18-N 0-A), 2026-04-22: yea (tally 21–18); census gate: none.",
+      "subjects": [
+        "work group to plan a state Gun Violence Prevention Center"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-969-2026.chaptered.html",
+          "sha256": "12418d229c386368a2c48d9a1c8ed4d7bf70408d14deffde4d9b26cf0aa2260c"
+        }
+      }
+    },
+    {
+      "id": "8fee0cd92412d0339453f4ea8c86f29900f49a08ca3094a6f1aff9942984b121",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB210",
+      "date": "2024-02-23",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-210-2024",
+      "act": "yea",
+      "motion": "Senate: House substitute agreed to by Senate (28-Y 11-N)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, Senate: House substitute agreed to by Senate (28-Y 11-N), 2024-02-23: yea (tally 28–11); census gate: none.",
+      "subjects": [
+        "ban on auto sears added to trigger-activator ban",
+        "auto sears subject to forfeiture"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-SB-210-2024.chaptered.html",
+          "sha256": "aab21de6e0d4552bcd02420259aab685a4daee4cff4f26bb1d1a86699b1cb9b9"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voters with no ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Virginia General Assembly bill pages / LIS: not reviewed, lis.virginia.gov known to block",
+        "blocked: legiscan.com and legiplex (known to block, not retried)",
+        "web searches on name plus voter ID, photo ID, SAVE Act: no own words found",
+        "campaign site https://jenniferboysko.com/: nothing on the subject",
+        "iVoterGuide: no profile found",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:26:03.104Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T17:53:04.521Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T17:58:27.793Z",
+      "by": "identity-va-2026-10-28"
+    }
+  ]
+}

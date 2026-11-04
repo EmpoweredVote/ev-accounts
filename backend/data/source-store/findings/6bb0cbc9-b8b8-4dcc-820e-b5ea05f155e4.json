@@ -1,0 +1,31 @@
+{
+  "politician_id": "6bb0cbc9-b8b8-4dcc-820e-b5ea05f155e4",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "carry permits",
+        "general gun-safety and Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status: 2026 nominee for U.S. House, South Carolina District 2, on the November 3 ballot; confirmed on https://www.wrdw.com/2026/06/24/zyon-khalifa-wins-democratic-nomination-us-house-sc-2nd-congressional-district/",
+        "campaign site https://www.khalifaforcongress.com: home and platform (nothing on guns)",
+        "The Ballot Brief https://theballotbrief.com/candidate/zyon-khalifa-sc (nothing on the subject)",
+        "news: wrdw.com Oct 20 2026 debate story, wistv.com Sep 7 2026 district story, postandcourier.com runoff story (nothing on guns)",
+        "blocked: https://scdailygazette.com/2026/10/20/high-schoolers-host-only-debate-for-this-sc-congressional-seat/ (403)",
+        "not reviewed: the campaign site Debate and Zyon's Messages pages",
+        "no legislative record, so no sponsorship list applies; Ballotpedia not fetched (returns empty)",
+        "web search x3: nothing from his own words on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-30T22:48:09.170Z",
+      "by": "source-collector"
+    }
+  ]
+}

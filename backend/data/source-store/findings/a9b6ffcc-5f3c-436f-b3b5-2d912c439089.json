@@ -1,0 +1,29 @@
+{
+  "politician_id": "a9b6ffcc-5f3c-436f-b3b5-2d912c439089",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "proof of identity to register online",
+        "mail-ballot ID",
+        "election integrity statements"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia page https://ballotpedia.org/John_Reynolds_(California) (confirms he is a member of the California Public Utilities Commission, appointed 2021-12-23, term to 2029; he is an appointed commissioner, not a legislator and not on any 2026 ballot)",
+        "news article https://hoodline.com/2026/02/newsom-shakes-up-power-watchdogs-hands-cpuc-gavel-to-john-reynolds/ (names him as the governor's pick for commission president; nothing on elections)",
+        "one news search on his name plus voter ID and election terms: nothing on the subject",
+        "blocked: https://www.cpuc.ca.gov/about-cpuc/commissioners/john-reynolds (404)",
+        "Assembly and Senate floor votes on AB 1116 (2025) and SB 1174 (2024): he is not a legislator, so no votes exist (Internet Archive copies of the leginfo vote pages checked for the roll)",
+        "commission's remit is utilities; no voter ID, citizenship or ballot role found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:06:30.974Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

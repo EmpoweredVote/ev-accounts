@@ -1,0 +1,372 @@
+{
+  "id": "VA-SB-52-2026",
+  "scope": "state:va",
+  "title": "SB 52 (2026 Regular Session (LIS session code 20261)): Voter registration; regular periodic review of registration records.",
+  "urls": [
+    "https://lis.virginia.gov/bill-details/20261/SB52",
+    "https://lis.virginia.gov/bill-details/20261/SB52"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(note) Text not read: no official text file id for SB52 or SB52S1 could be located (see blocked). The only official wording read is the BILLS.CSV caption: \"Voter registration; regular periodic review of registration records.\" Whether it sets any ID or citizenship rule could not be checked.",
+  "sponsors": [
+    {
+      "name": "Rouse",
+      "role": "author",
+      "version": "Senate committee substitute SB52S1 (26106068D-S1, 1/28/2026), engrossed and passed Senate 2/2/2026; left in House Appropriations 3/10/2026"
+    }
+  ],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2026-01-29",
+      "body": "VA Senate",
+      "motion": "Constitutional reading dispensed (on 1st reading) (40-Y 0-N 0-A) (SV140)",
+      "kind": "roll-call",
+      "yes": 40,
+      "no": 0,
+      "absent": 0,
+      "body_size": 40,
+      "note": "https://lis.virginia.gov/vote-details/20261/SB52/SV140",
+      "members": [
+        {
+          "name": "L. Louise Lucas",
+          "vote": "yea"
+        },
+        {
+          "name": "R. Creigh Deeds",
+          "vote": "yea"
+        },
+        {
+          "name": "Mamie E. Locke",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark D. Obenshain",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan T. McDougle",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard H. Stuart",
+          "vote": "yea"
+        },
+        {
+          "name": "David W. Marsden",
+          "vote": "yea"
+        },
+        {
+          "name": "William M. Stanley, Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam P. Ebbin",
+          "vote": "yea"
+        },
+        {
+          "name": "Barbara A. Favola",
+          "vote": "yea"
+        },
+        {
+          "name": "Bryce E. Reeves",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill DeSteph",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeremy S. McPike",
+          "vote": "yea"
+        },
+        {
+          "name": "Glen H. Sturtevant, Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott A. Surovell",
+          "vote": "yea"
+        },
+        {
+          "name": "David R. Suetterlein",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark J. Peake",
+          "vote": "yea"
+        },
+        {
+          "name": "Jennifer B. Boysko",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd E. Pillion",
+          "vote": "yea"
+        },
+        {
+          "name": "T. Travis Hackworth",
+          "vote": "yea"
+        },
+        {
+          "name": "Aaron R. Rouse",
+          "vote": "yea"
+        },
+        {
+          "name": "Lamont Bagby",
+          "vote": "yea"
+        },
+        {
+          "name": "Lashrecse D. Aird",
+          "vote": "yea"
+        },
+        {
+          "name": "Emily M. Jordan",
+          "vote": "yea"
+        },
+        {
+          "name": "Jennifer D. Carroll Foy",
+          "vote": "yea"
+        },
+        {
+          "name": "Christie New Craig",
+          "vote": "yea"
+        },
+        {
+          "name": "J.D. \"Danny\" Diggs",
+          "vote": "yea"
+        },
+        {
+          "name": "Tara A. Durant",
+          "vote": "yea"
+        },
+        {
+          "name": "Timmy French",
+          "vote": "yea"
+        },
+        {
+          "name": "Christopher T. Head",
+          "vote": "yea"
+        },
+        {
+          "name": "Stella G. Pekarsky",
+          "vote": "yea"
+        },
+        {
+          "name": "Russet Perry",
+          "vote": "yea"
+        },
+        {
+          "name": "Danica A. Roem",
+          "vote": "yea"
+        },
+        {
+          "name": "Saddam Azlan Salim",
+          "vote": "yea"
+        },
+        {
+          "name": "Schuyler T. VanValkenburg",
+          "vote": "yea"
+        },
+        {
+          "name": "Angelia Williams Graves",
+          "vote": "yea"
+        },
+        {
+          "name": "Tammy Brankley Mulchi",
+          "vote": "yea"
+        },
+        {
+          "name": "Luther Cifers, III",
+          "vote": "yea"
+        },
+        {
+          "name": "Kannan Srinivasan",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael J. Jones",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-02",
+      "body": "VA Senate",
+      "motion": "Read third time and passed Senate (21-Y 19-N 0-A) (SV170)",
+      "kind": "roll-call",
+      "yes": 21,
+      "no": 19,
+      "absent": 0,
+      "body_size": 40,
+      "note": "https://lis.virginia.gov/vote-details/20261/SB52/SV170",
+      "members": [
+        {
+          "name": "L. Louise Lucas",
+          "vote": "yea"
+        },
+        {
+          "name": "R. Creigh Deeds",
+          "vote": "yea"
+        },
+        {
+          "name": "Mamie E. Locke",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark D. Obenshain",
+          "vote": "nay"
+        },
+        {
+          "name": "Ryan T. McDougle",
+          "vote": "nay"
+        },
+        {
+          "name": "Richard H. Stuart",
+          "vote": "nay"
+        },
+        {
+          "name": "David W. Marsden",
+          "vote": "yea"
+        },
+        {
+          "name": "William M. Stanley, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Adam P. Ebbin",
+          "vote": "yea"
+        },
+        {
+          "name": "Barbara A. Favola",
+          "vote": "yea"
+        },
+        {
+          "name": "Bryce E. Reeves",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill DeSteph",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeremy S. McPike",
+          "vote": "yea"
+        },
+        {
+          "name": "Glen H. Sturtevant, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott A. Surovell",
+          "vote": "yea"
+        },
+        {
+          "name": "David R. Suetterlein",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark J. Peake",
+          "vote": "nay"
+        },
+        {
+          "name": "Jennifer B. Boysko",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd E. Pillion",
+          "vote": "nay"
+        },
+        {
+          "name": "T. Travis Hackworth",
+          "vote": "nay"
+        },
+        {
+          "name": "Aaron R. Rouse",
+          "vote": "yea"
+        },
+        {
+          "name": "Lamont Bagby",
+          "vote": "yea"
+        },
+        {
+          "name": "Lashrecse D. Aird",
+          "vote": "yea"
+        },
+        {
+          "name": "Emily M. Jordan",
+          "vote": "nay"
+        },
+        {
+          "name": "Jennifer D. Carroll Foy",
+          "vote": "yea"
+        },
+        {
+          "name": "Christie New Craig",
+          "vote": "nay"
+        },
+        {
+          "name": "J.D. \"Danny\" Diggs",
+          "vote": "nay"
+        },
+        {
+          "name": "Tara A. Durant",
+          "vote": "nay"
+        },
+        {
+          "name": "Timmy French",
+          "vote": "nay"
+        },
+        {
+          "name": "Christopher T. Head",
+          "vote": "nay"
+        },
+        {
+          "name": "Stella G. Pekarsky",
+          "vote": "yea"
+        },
+        {
+          "name": "Russet Perry",
+          "vote": "yea"
+        },
+        {
+          "name": "Danica A. Roem",
+          "vote": "yea"
+        },
+        {
+          "name": "Saddam Azlan Salim",
+          "vote": "yea"
+        },
+        {
+          "name": "Schuyler T. VanValkenburg",
+          "vote": "yea"
+        },
+        {
+          "name": "Angelia Williams Graves",
+          "vote": "yea"
+        },
+        {
+          "name": "Tammy Brankley Mulchi",
+          "vote": "nay"
+        },
+        {
+          "name": "Luther Cifers, III",
+          "vote": "nay"
+        },
+        {
+          "name": "Kannan Srinivasan",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael J. Jones",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T17:30:00Z)",
+    "fetched_at": "2026-10-28T17:30:00Z",
+    "method": "curl"
+  }
+}

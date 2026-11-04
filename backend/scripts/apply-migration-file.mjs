@@ -24,12 +24,20 @@ import 'dotenv/config';
 import fs from 'node:fs';
 import pg from 'pg';
 
-import { stripOwnTransaction, unsafeDropTargets } from './lib/migration-file-guards.mjs';
+import { assertSingleTransaction, stripOwnTransaction, unsafeDropTargets } from './lib/migration-file-guards.mjs';
 
 const file = process.argv[2];
 if (!file) { console.error('usage: node scripts/apply-migration-file.mjs <migration.sql>'); process.exit(2); }
 
 const raw = fs.readFileSync(file, 'utf8');
+// 🔴 One migration per file — a second COMMIT; would commit mid-run. See assertSingleTransaction.
+try {
+  assertSingleTransaction(raw, file);
+} catch (err) {
+  console.error(`REFUSED — ${file}`);
+  console.error(`  ${err.message}`);
+  process.exit(2);
+}
 const sql = stripOwnTransaction(raw);
 
 // 🔴 THE DROP GUARD USED TO REFUSE THE HOUSE STYLE, AND THAT SENT PEOPLE BACK TO HAND-PASTING.

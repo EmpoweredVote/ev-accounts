@@ -1,0 +1,65 @@
+{
+  "politician_id": "21b282b2-24bf-49b2-b0b7-109eb98083f8",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Michael_Bridgford names him as an independent candidate for U.S. House Iowa District 1, on the November 3, 2026 general election ballot",
+        "On the Record (0 meetings)",
+        "Ballotpedia page and Candidate Connection survey (nothing on the subject)",
+        "campaign site https://www.bridgfordforiowa.com/issues (nothing on the subject; page is client-rendered, read through the fetch tool only, so no passage saved)",
+        "congress.gov: not applicable, never a member of Congress (no bills or votes)",
+        "news search: not reviewed, the shared web search budget was exhausted",
+        "ontheissues.org, vote411, Wikipedia: not reviewed (lead-only sources, and search budget gone)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:48:36.008Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr found no meetings)",
+        "campaign site https://bridgfordforiowa.com/Issues (fetched; issues list has anti-corruption, term limits, stock trading ban, campaign finance reform; nothing on the subject)",
+        "campaign site other pages (About, WhyImRunning, News) not reviewed: https://bridgfordforiowa.com/ (client-rendered page; raw HTML has no text)",
+        "blocked: https://ballotpedia.org/Michael_Bridgford (empty response, HTTP 202)",
+        "blocked: https://iowacapitaldispatch.com/?p=59037 (HTTP 403, Cloudflare challenge)",
+        "Iowa Public Radio 2026-04-16 profile (nothing on the subject)",
+        "KDSM17 profile (confirms an independent candidate on the Nov 2026 ballot in IA-1; nothing on the subject in the matched text)",
+        "IVN profile (nothing on the subject; mentions Citizens United and a campaign finance pledge only)",
+        "WHO13 interview page (fetched; no text on the subject; interview video not reviewed: https://who13.com/news/politics/iowa-politics/meet-independent-candidate-for-congress-michael-bridgford/amp/)",
+        "congress.gov: not applicable, never held office",
+        "web searches: candidate name plus voter ID / SAVE Act / election integrity / citizenship / questionnaire (nothing on the subject)",
+        "not reviewed: https://www.ourquadcities.com/news/local-news/bridgford-to-file-nomination-petitions-in-iowas-1st-congressional-district-race/amp/",
+        "not reviewed: https://www.southeastiowaunion.com/fairfield/news/independent-house-candidate-michael-bridgford-visits-fairfield/article_7f5f6371-6533-4d2e-a50c-e93ab059164e.html",
+        "not reviewed: https://www.forwardparty.com/media/press_release/the-forward-party-endorses-michael-bridgford-and-dave-bushaw-in-iowa-congressional-races/"
+      ],
+      "found": 0,
+      "at": "2026-10-27T00:57:16.060Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

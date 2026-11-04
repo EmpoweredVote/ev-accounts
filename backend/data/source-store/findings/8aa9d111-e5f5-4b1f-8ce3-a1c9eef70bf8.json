@@ -1,0 +1,785 @@
+{
+  "politician_id": "8aa9d111-e5f5-4b1f-8ce3-a1c9eef70bf8",
+  "findings": [
+    {
+      "id": "e89912cc4f012a28616d1d9ed356f0f0d95cb14b56918db083afee0fd8ad0b53",
+      "kind": "record",
+      "url": "http://iga.in.gov/legislative/2017/bills/house/1071/",
+      "date": "2017-04-21",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1071-2017",
+      "act": "yea",
+      "motion": "House - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN House, House - Rules Suspended. Conference Committee Report 1, 2017-04-21: yea (tally 74–26); census gate: none.",
+      "subjects": [
+        "protection-order holders may carry a handgun without a license for 60 days",
+        "faster handgun license processing for protected people",
+        "study of repealing the handgun license requirement urged"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1071-2017.enrolled.pdf",
+          "sha256": "1d94ee5297a9f8475bee16e23882a6a845ba0fc9969a9b54a71b3579f911f169"
+        }
+      }
+    },
+    {
+      "id": "e64afcdc95d22a2407a91a0122467814dea5e823ac20ce70620de28a41126d47",
+      "kind": "record",
+      "url": "http://iga.in.gov/legislative/2018/bills/house/1073/",
+      "date": "2018-01-30",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1073-2018",
+      "act": "yea",
+      "motion": "House - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "IN House, House - Third reading, 2018-01-30: yea (tally 94–0); census gate: multi-subject.",
+      "subjects": [
+        "child care providers must keep firearms, ammunition and weapons out of children's reach",
+        "firearms accessible to children listed as an imminent threat"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1073-2018.enrolled.pdf",
+          "sha256": "05d706197300fdbc8c469416f4b980f73ac106d07def4fe5a2bc5fd55e0c8763"
+        }
+      }
+    },
+    {
+      "id": "747d013e57048ca76a51b2aa65d4f9eb775c864dc1fd36a7b6bef087674f0393",
+      "kind": "record",
+      "url": "http://iga.in.gov/legislative/2017/bills/house/1095/",
+      "date": "2017-04-11",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1095-2017",
+      "act": "yea",
+      "motion": "House - House concurred in Senate amendments",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "IN House, House - House concurred in Senate amendments, 2017-04-11: yea (tally 91–2); census gate: near-unanimous.",
+      "subjects": [
+        "new armor-piercing ammunition ban",
+        "older plastic-coated handgun ammunition ban repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1095-2017.enrolled.pdf",
+          "sha256": "0485c3ed68dbfc5ebae8fedd2b72d5b8e74ea0f98b629e9a91682cead57ea871"
+        }
+      }
+    },
+    {
+      "id": "d4641b55f8e2d82d4fb0869b839cec9884de9aac967ac86bc0585680c201bbc7",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2024/bills/house/1143/details",
+      "date": "2024-02-05",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1143-2024",
+      "act": "yea",
+      "motion": "House - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN House, House - Third reading, 2024-02-05: yea (tally 83–14); census gate: none.",
+      "subjects": [
+        "police may trade confiscated firearms for new equipment",
+        "records of firearm trades are public"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1143-2024.enrolled.pdf",
+          "sha256": "3d2e92aad597239fbbd4120eb545efa85e8d2ae2b8c56fccbdb5d810c862d819"
+        }
+      }
+    },
+    {
+      "id": "b7a0457ae8faaf85839bb4a854b46b8c60de0f766cb2d15bddc513cc4a97419c",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2024/bills/house/1235/details",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1235-2024",
+      "act": "yea",
+      "motion": "House - House concurred in Senate amendments",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN House, House - House concurred in Senate amendments, 2024-03-05: yea (tally 64–27); census gate: none.",
+      "subjects": [
+        "local lawsuits against gun and ammunition industry barred; only the state may sue",
+        "exceptions for contract or warranty and zoning or business rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1235-2024.enrolled.pdf",
+          "sha256": "863d0845047c379ed79ba8f50257fbeb368b93926d8db51be22e09c4ba3372e4"
+        }
+      }
+    },
+    {
+      "id": "cf2777dc193dc8975ce6bfd1963500872a642f774371de90dcc879427071376a",
+      "kind": "record",
+      "url": "http://iga.in.gov/legislative/2017/bills/house/1250/",
+      "date": "2017-02-20",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1250-2017",
+      "act": "yea",
+      "motion": "House - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "IN House, House - Third reading, 2017-02-20: yea (tally 90–7); census gate: near-unanimous.",
+      "subjects": [
+        "lifetime handgun license for officers with 20 years of service, no retirement-board requirement",
+        "fee exemption for those officers' lifetime licenses"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1250-2017.enrolled.pdf",
+          "sha256": "f9eb68acb99b07ff6434fb3a3e82ec32a5faac04b6c368ec3ca856e6b587456f"
+        }
+      }
+    },
+    {
+      "id": "b39ef6f25ed1089ab8d73cef54129290bbfb8bc6360761321c135fe07ae5f225",
+      "kind": "record",
+      "url": "http://iga.in.gov/legislative/2022/bills/house/1296/",
+      "date": "2022-03-08",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1296-2022",
+      "act": "yea",
+      "motion": "House - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN House, House - Rules Suspended. Conference Committee Report 1, 2022-03-08: yea (tally 68–30); census gate: none.",
+      "subjects": [
+        "no license needed to carry a handgun in Indiana for people not otherwise prohibited",
+        "new list of people barred from carrying a handgun, with \"unlawful carrying of a handgun\" offence",
+        "theft of a firearm becomes a Level 5 felony",
+        "license still available for out-of-state reciprocity"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1296-2022.enrolled.pdf",
+          "sha256": "c06a46720d1b166dceaa0ef272ed74e5f4a8f5c4f1148b046a8eff645bdb1f21"
+        }
+      }
+    },
+    {
+      "id": "ca5cf85289638d68f274904b417c6ceb0885a7bfc5c4e2f87094e9ca9b01561f",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2023/bills/house/1323/",
+      "date": "2023-02-07",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1323-2023",
+      "act": "yea",
+      "motion": "House - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN House, House - Third reading, 2023-02-07: yea (tally 81–13); census gate: none.",
+      "subjects": [
+        "handgun license holder information shared with federal agencies only for a single-entry query tied to a criminal investigation or arrest"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1323-2023.enrolled.pdf",
+          "sha256": "85efd9fbf405d0d8df41b624004dec6514b6849eff0cc00c6923fa94437a4b31"
+        }
+      }
+    },
+    {
+      "id": "629069882e920d65e997612a13b3d9cdd599138b8e394180b8c65cb871c8fc6c",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2023/bills/house/1365/",
+      "date": "2023-04-03",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1365-2023",
+      "act": "nay",
+      "motion": "House - House concurred in Senate amendments",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN House, House - House concurred in Senate amendments, 2023-04-03: nay (tally 71–23); census gate: none.",
+      "subjects": [
+        "machine gun definition revised",
+        "machine guns and other items not on the federal registry exempted from state machine gun offences",
+        "machine gun transfer to minors stays a felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1365-2023.enrolled.pdf",
+          "sha256": "f8d2309af4ba7f01e519d3579ae8bae7e606041348d5d4225b3f9a7954d7d0a0"
+        }
+      }
+    },
+    {
+      "id": "897cc33405dd459eaaf5a2bc7a065df0a72ec5fb0581a2c949f915b11d03c47f",
+      "kind": "record",
+      "url": "http://iga.in.gov/legislative/2021/bills/house/1558/",
+      "date": "2021-04-13",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1558-2021",
+      "act": "yea",
+      "motion": "House - House concurred in Senate amendments",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "IN House, House - House concurred in Senate amendments, 2021-04-13: yea (tally 91–1); census gate: near-unanimous.",
+      "subjects": [
+        "state crime guns task force traces firearms used in crimes",
+        "requires ballistic-network use by participating agencies",
+        "new task force fund"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1558-2021.enrolled.pdf",
+          "sha256": "ffc63cd63a5b8d93f6d07996189ad0ad4c6ae75588977bdbedb8113c0f73eedd"
+        }
+      }
+    },
+    {
+      "id": "a12aa64e9303b39d7ede09c1e7b026359a1f8aa53ae2b665744de7df93874c10",
+      "kind": "record",
+      "url": "http://iga.in.gov/legislative/2019/bills/house/1651/",
+      "date": "2019-04-24",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1651-2019",
+      "act": "yea",
+      "motion": "House - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "IN House, House - Rules Suspended. Conference Committee Report 1, 2019-04-24: yea (tally 93–1); census gate: near-unanimous.",
+      "subjects": [
+        "dangerous persons barred from owning or buying firearms (misdemeanor)",
+        "transferring a firearm to a dangerous person is a felony",
+        "dangerous finding blocks handgun licence",
+        "red flag seizure, 48-hour affidavit and hearing rules revised"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1651-2019.enrolled.pdf",
+          "sha256": "e4953dc8d82aa456c0c3b9034de8556d652daf73aa8cfd3eae3912100eabea8b"
+        }
+      }
+    },
+    {
+      "id": "bfe9a63e102ea1d1ab88711b55c0f50d5ae6e3ba3c410dc8de82fab44b19277d",
+      "kind": "record",
+      "url": "http://iga.in.gov/legislative/2019/bills/senate/119/",
+      "date": "2019-04-22",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-119-2019",
+      "act": "yea",
+      "motion": "House - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "IN House, House - Rules Suspended. Conference Committee Report 1, 2019-04-22: yea (tally 72–0); census gate: near-unanimous.",
+      "subjects": [
+        "machine gun transfers to under-18s made a felony",
+        "definition of machine gun added"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-SB-119-2019.enrolled.pdf",
+          "sha256": "f592cb25f26c536c2c7f2fda6285a7ca0ee0e65b3ea3b7a80382d02ae782fef2"
+        }
+      }
+    },
+    {
+      "id": "82d8bc48c224bc6c3eeae210029a872cea81448d3b3076f96e5001e0e6cc3e73",
+      "kind": "record",
+      "url": "http://iga.in.gov/legislative/2017/bills/senate/13/",
+      "date": "2017-03-21",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-13-2017",
+      "act": "yea",
+      "motion": "House - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "IN House, House - Third reading, 2017-03-21: yea (tally 88–7); census gate: near-unanimous.",
+      "subjects": [
+        "misdemeanor for lending against a handgun repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-SB-13-2017.enrolled.pdf",
+          "sha256": "3cd21b6162608a07f9ff311d3e119ad2a426ca84c4829644fc64f71c5e459948"
+        }
+      }
+    },
+    {
+      "id": "c2e1c730a34f4b2aed14b1ff4208faeaf74b6916e13dbaefff91eafd24ee5e3a",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2023/bills/senate/158/",
+      "date": "2023-03-21",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-158-2023",
+      "act": "yea",
+      "motion": "House - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "IN House, House - Third reading, 2023-03-21: yea (tally 94–0); census gate: multi-subject.",
+      "subjects": [
+        "more crimes count as serious violent felonies for the firearm possession ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-SB-158-2023.enrolled.pdf",
+          "sha256": "7a12b0989818ac31ded5aac7e9cbbbb60045b45cc31c61f6be610e0ef327d039"
+        }
+      }
+    },
+    {
+      "id": "bed4f18dde3b332a96ce6ea58343673fe0df38bc3e23f5c4219ffdcea7baa4bd",
+      "kind": "record",
+      "url": "http://iga.in.gov/legislative/2022/bills/senate/19/",
+      "date": "2022-02-22",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-19-2022",
+      "act": "yea",
+      "motion": "House - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "IN House, House - Third reading, 2022-02-22: yea (tally 92–0); census gate: near-unanimous.",
+      "subjects": [
+        "firearm sentence enhancement now covers inspector general investigators as police officers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-SB-19-2022.enrolled.pdf",
+          "sha256": "bc4895e90fb076bbd47bfe6a2425c5938160570a29e25f72ba6f4fea4acfac72"
+        }
+      }
+    },
+    {
+      "id": "ed64bbf1e069b5ef8a6036d9fe2af5d822aa5189e6b888e47a3235a9846fcc1b",
+      "kind": "record",
+      "url": "http://iga.in.gov/legislative/2017/bills/senate/191/",
+      "date": "2017-04-06",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-191-2017",
+      "act": "yea",
+      "motion": "House - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "IN House, House - Third reading, 2017-04-06: yea (tally 94–2); census gate: near-unanimous.",
+      "subjects": [
+        "procedure for returning or disposing of firearms held by police",
+        "no public sale of damaged or altered firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-SB-191-2017.enrolled.pdf",
+          "sha256": "1e489988d8b11dfab4d1b338374cc25ce592c78362d68aca9084c838773a7c33"
+        }
+      }
+    },
+    {
+      "id": "5fc5ca54de5b3f596937eb2a4481ff2c079cd86b748625ef1e1927def1658cf1",
+      "kind": "record",
+      "url": "http://iga.in.gov/legislative/2020/bills/senate/335/",
+      "date": "2020-03-11",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-335-2020",
+      "act": "yea",
+      "motion": "House - Rules Suspended. Conference Committee Report 1",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "IN House, House - Rules Suspended. Conference Committee Report 1, 2020-03-11: yea (tally 89–2); census gate: multi-subject.",
+      "subjects": [
+        "new offence: gun possession by young people adjudicated delinquent for armed violent acts",
+        "serious violent felon firearm ban restated",
+        "red-flag law seizure steps and court reporting changed",
+        "state report on firearm confiscations"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-SB-335-2020.enrolled.pdf",
+          "sha256": "7ce0e15b833fc81efe6340d3720478c872b6da9be595aadc6225fbf316807e58"
+        }
+      }
+    },
+    {
+      "id": "134a26df114a87571b758bee9036f196e83ad77ac90edb55e03cd7f18e6a4593",
+      "kind": "record",
+      "url": "http://iga.in.gov/legislative/2017/bills/senate/43/",
+      "date": "2017-03-28",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-43-2017",
+      "act": "abstain",
+      "motion": "House - Third reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "IN House, House - Third reading, 2017-03-28: abstain (tally 76–16); census gate: none.",
+      "subjects": [
+        "licensed lawmakers, staff and lobby commission members may carry handguns at the state capitol",
+        "penal facilities must require employees to lock up firearms and ammunition in vehicles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-SB-43-2017.enrolled.pdf",
+          "sha256": "db45e4868a76f99bc336496193d41182472f3efe2dc277b8edb92828c9fafefc"
+        }
+      }
+    },
+    {
+      "id": "540e2ca2b83802c2ebcede74a99fdda3776737a93847f0b32f44810ce60b6287",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2024/bills/house/1084/details",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "IN-HB-1084-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of IN-HB-1084-2024 (LegiScan sponsor list): HB1084 (2024 Regular Session): Privacy of firearms financial transactions..",
+      "subjects": [
+        "state officers may carry handguns at the state capitol",
+        "ban on firearm registries of Indiana consumers",
+        "no firearm-specific payment card codes or refusals to process firearm sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1084-2024.enrolled.pdf",
+          "sha256": "9614117749f50b72173264ad1436d587465d01f1298e10a6c33f83c649ee7825"
+        }
+      }
+    },
+    {
+      "id": "2637b49bc99c56018ae5c628cdc170ebb2b4c3994c62207cf59ea4f264b55f21",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2023/bills/house/1323/",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "IN-HB-1323-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of IN-HB-1323-2023 (LegiScan sponsor list): HB1323 (2023 Regular Session): Information privacy relating to firearms..",
+      "subjects": [
+        "handgun license holder information shared with federal agencies only for a single-entry query tied to a criminal investigation or arrest"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1323-2023.enrolled.pdf",
+          "sha256": "85efd9fbf405d0d8df41b624004dec6514b6849eff0cc00c6923fa94437a4b31"
+        }
+      }
+    },
+    {
+      "id": "02679bbb6989d4eed51a90e03a2dca12ffb40faa507e42c0b4f8ccc575b7c77a",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/29534/race/4984/election/480",
+      "date": "2016",
+      "date_precision": "year",
+      "passage": "In the House, I authored, co-authored, sponsored or co-sponsored bills that (1) voided city ordinances that restrict the right to carry in parks among other public spaces, (2) removed the ability of local government to dictate to private business the wage & benefits of their employees, (3) gave workers the right to chose whether to belong to a labor union, (4) protected natural marriage, (5) protected religious freedom, and (6) increased school choice for parents thereby increasing competition and performance for many public school districts.",
+      "note": "2016 voter-guide track-record answer for State House District 90. The gun part is the first item: bills that voided city ordinances limiting carrying in parks and other public places. The other items are off the subject.",
+      "subjects": [
+        "places where carry is allowed",
+        "local limits on carrying guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:37:11.270Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c5b35e3386b4a0f7ebcb4bc65cedbcd005896f591b03103c0d5986df4bebf7a",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/29534/race/4984/election/480",
+      "date": "2016",
+      "date_precision": "year",
+      "passage": "On the Council, I voted against (1) multiple tax increases necessary to finance a stadium whose primary user is an NFL team, (2) two \"Human Rights Ordinances\", (3) sale of public open space to a corporate headquarters, and (4) an ordinance to virtually eliminate all target shooting by responsible gun owners.",
+      "note": "Same 2016 voter-guide answer. He says that on the city council he voted against an ordinance that would have nearly ended target shooting; the other items are off the subject.",
+      "subjects": [
+        "local limits on target shooting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:37:11.270Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4c34adfa2aa9830c9c2805e5b3382934b8ac43326096965a588c0fa372252945",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/29534/race/4984/election/480",
+      "date": "2016",
+      "date_precision": "year",
+      "passage": "Strongly Disagree",
+      "note": "2016 voter-guide answer to the statement 'More restrictive gun control laws are needed to protect public safety.'",
+      "subjects": [
+        "more gun control laws",
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:37:11.270Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e2186cb06ac04defc794087cae18d28b64226b22223021c99c528ad64884e160",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/29534/race/4984/election/784",
+      "date": "2020",
+      "date_precision": "year",
+      "passage": "Restrictions on gun ownership is not nearly as important as enforcing existing laws",
+      "note": "2020 voter-guide answer to the question 'What restrictions on gun ownership are needed to protect public safety?' The page also says laws barring convicted violent felons from owning guns should be enforced most of all.",
+      "subjects": [
+        "limits on gun ownership",
+        "enforcing existing gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:37:11.270Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6583b5ccd9158bb3fc3764af46f1e8b578603a8beabce373fa34fad26ba6d0f0",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/29534/race/4984/election/784",
+      "date": "2020",
+      "date_precision": "year",
+      "passage": "Yes",
+      "note": "2020 voter-guide answer to the question 'Should teachers be allowed to carry guns at school?'",
+      "subjects": [
+        "teachers carrying guns at school",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:37:11.270Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter procedures",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "status: appointed Indiana Commissioner of Labor since 2025-01-13 (no 2026 ballot race found); House District 90 2010-2024; lost 2024-05-07 U.S. House primary. Page: https://ballotpedia.org/Mike_Speedy (fetched, confirms identity)",
+        "On the Record (0 appearances; extract-otr run with --names)",
+        "Ballotpedia https://ballotpedia.org/Mike_Speedy (fetched; nothing on the subject)",
+        "official site: https://www.in.gov/dol/ (fetched; does not name him, nothing on the subject)",
+        "blocked: https://www.speedyforindiana.com (guessed campaign URL, no connection)",
+        "blocked: https://www.mikespeedy.com (guessed campaign URL, no connection)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_mike_speedy_1 (script-rendered page, no text; bill sponsorships not read)",
+        "not reviewed: Indiana General Assembly bill pages for 2010-2024 sponsorships and votes (no readable index reached)",
+        "not reviewed: news search on name plus subject words (shared web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:42:42.982Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity / voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Mike_Speedy: confirms he is the appointed Indiana Commissioner of Labor (since January 2025), served in the Indiana House 2010 to 2024, and lost a 2024 primary for Congress; no 2026 race shown; nothing on the subject",
+        "blocked: https://justfacts.votesmart.org/candidate/biography/73023/ (403)",
+        "blocked: https://www.mikespeedy.com/ and https://www.speedyforindiana.com/ (hosts do not respond)",
+        "not reviewed: WISH-TV 2024 interview podcast https://www.wishtv.com/podcast-episode/mike-speedy-candidate-for-u-s-representative-for-indianas-6th-congressional-district/ (audio)",
+        "not reviewed: his 2010-2024 House roll calls on election bills (legislature bill pages are script-driven and not readable)",
+        "news and web search (2 searches) on name plus voter ID, election security, campaign priorities: no page tied him to the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:27:05.996Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun restrictions for public safety",
+        "teachers carrying guns at school",
+        "carry in parks and public places",
+        "local limits on target shooting",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status: not a sitting legislator; House service ended 2024-11-18 per a reference page, and he was named Secretary of Business Affairs by the governor (page: https://www.ibj.com/articles/braun-taps-former-state-lawmaker-as-business-affairs-secretary). Own words and records from his House years were still collected.",
+        "sponsor list: covered by LegiScan bulk check",
+        "voter guide pages for 2016 and 2020 State House District 90 races",
+        "news searches on name plus gun words (no direct quote on a gun bill found)",
+        "Ballotpedia (not fetched: known to come back empty)",
+        "blocked: https://justfacts.votesmart.org/candidate/biography/73023/ (not fetched; the same kind of Vote Smart page returned 403 for another person)",
+        "House caucus press release on Second Amendment (does not mention him)",
+        "official site and campaign site: not reviewed"
+      ],
+      "found": 5,
+      "at": "2026-10-31T20:37:11.270Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "AZ-SB-1211-2007",
+  "scope": "state:az",
+  "title": "SB 1211 (2007 - Forty-eighth Legislature - First Regular Session (azleg session id 85)): voter identification; valid driver license",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/23442",
+    "https://www.azleg.gov/legtext/48leg/1R/bills/SB1211P.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Bill text\n(quote) REFERENCE TITLE: voter identification; valid driver license\n(section) Sec. 1: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-579, Arizona (para A)\n(quote) A. Every qualified elector, before receiving a ballot, shall announce the elector's name and place of residence in a clear, audible tone of voice to the election official in charge of the signature roster or present the elector's name and residence in writing and shall present one form of identification that bears the name, address and photograph of the elector or two different forms of identification that bear the name and address of the elector.\n(b_no_id_remedy)\n(section) Sec. 1: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-579, Arizona (para A)\n(quote) A driver license that is issued by this state and that is not expired constitutes proper identification without regard to whether the address shown on the driver license matches the voter's address on the signature roster or precinct register.\n(section) Sec. 1: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-579, Arizona (para 2)\n(quote) 2. If the person does not present a document that complies with paragraph 1, the person is only eligible to vote a provisional ballot as prescribed by section 16-584.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 1: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-579, Arizona\n(quote) (a) A current form of identification that bears a photograph of the person and the name of the person.\n(other) Sec. 2: Repeal\n(other) Sec. 16: -579, Arizona Revised Statutes, as amended by Laws 2003, chapter 260, section 18, is repealed.\n(other) Sec. 3: Requirements for enactment; three-fourths vote",
+  "sponsors": [
+    {
+      "name": "Richard Miranda",
+      "role": "prime",
+      "version": "SB1211P: as introduced (printed version)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "MA-H-663-2009",
+  "scope": "state:ma",
+  "title": "An Act establishing identification requirements for voters who registered by mail (H.663, filed 2009; reported favorably by Election Laws 2010-05-17; no floor vote)",
+  "urls": [
+    "https://malegislature.gov/Bills/186/H663",
+    "https://malegislature.gov/Bills/186/H663.Html",
+    "https://malegislature.gov/Bills/186/H663/Cosponsor"
+  ],
+  "version": "as-filed",
+  "operative_text": "Be it enacted by the Senate and House of Representatives in General Court assembled, and by the authority of the same, as follows: 1.Section 76B of chapter 54 of the general laws, as appearing in the 2006 Official Edition, is hereby amended by striking subsection (b)(1) and inserting in its place the following:- election shall present identification under paragraph (2) if: (b)(1) Subject to paragraph (3), a person asserting a right to vote in a primary, caucus, preliminary, or other (a) the person registered to vote in the city or town by mail after January 1, 2003; and (b) the person has not previously voted in a primary, caucus, preliminary, or other election in the commonwealth. SECTION 2. This act shall take effect upon its passage.",
+  "sponsors": [
+    {
+      "name": "Viriato Manuel deMacedo",
+      "role": "prime",
+      "version": "as filed; petitioners tab, H.663, session 186"
+    },
+    {
+      "name": "Louis L. Kafka",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.663, session 186"
+    },
+    {
+      "name": "Thomas J. Calter",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.663, session 186"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+    "fetched_at": "2026-10-31T03:30:00Z",
+    "method": "curl",
+    "saved_copy": {
+      "path": "s3-prep-voting-rights/stage5/raw/ma-id-bills/186_H663.Html.htm",
+      "sha256": "7c3fe2f6e520f053e605cb3a25bbeecd70aef61cee4f06cfafc784873e1f3e8a"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "AZ-SB-1426-2014",
+  "scope": "state:az",
+  "title": "SB 1426 (2014 - Fifty-first Legislature - Second Regular Session (azleg session id 112)): voter identification; proof of citizenship",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/33926",
+    "https://www.azleg.gov/legtext/51leg/2R/bills/SB1426P.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Bill text\n(quote) REFERENCE TITLE: voter identification; proof of citizenship\n(section) Bill text\n(quote) amending sections 16-152, 16-166 and 16-579, Arizona Revised Statutes; relating to voter identification.\n(section) Sec. 2: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-166, Arizona (para E)\n(quote) E. The county recorder on or before May 1 of each year preceding a state primary and general election or more frequently as the recorder deems necessary may use the change of address information supplied by the postal service through its licensees to identify registrants whose addresses may have changed.\n(b_no_id_remedy)\n(section) Sec. 1: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-152, Arizona\n(quote) (b) If the registrant does not have an Arizona driver license or nonoperating identification license, the last four digits of the registrant's social security number.\n(section) Sec. 1: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-152, Arizona\n(quote) (c) If the registrant does not have an Arizona driver license or nonoperating identification license or a social security number and the registrant attests to that, a unique identifying number consisting of the registrant's unique identification number to be assigned by the secretary of state in the statewide electronic voter registration database.\n(section) Sec. 1: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-152, Arizona (para B)\n(quote) The voter receipt is evidence of valid registration for the purpose of casting a provisional ballot as prescribed in section 16‑584, subsection B.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Bill text\n(quote) REFERENCE TITLE: voter identification; proof of citizenship\n(e_other_rule)\n(section) Sec. 1: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-152, Arizona (para 3)\n(quote) 3. The complete address of the registrant's actual place of residence, including street name and number, apartment or space number, city or town and zip code, or such description of the location of the residence that it can be readily ascertained or identified.\n(section) Sec. 1: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-152, Arizona (para 12)\n(quote) One of the following identifiers for each registrant:\n(section) Sec. 1: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-152, Arizona\n(quote) (a) The Arizona driver license number of the registrant or nonoperating identification license number of the registrant that is issued pursuant to section 28‑3165.\n(other) Sec. 3: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-579, Arizona\n(other) Sec. 4: Requirements for enactment; three-fourths vote",
+  "sponsors": [
+    {
+      "name": "Steve Gallardo",
+      "role": "prime",
+      "version": "SB1426P: as introduced (printed version)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

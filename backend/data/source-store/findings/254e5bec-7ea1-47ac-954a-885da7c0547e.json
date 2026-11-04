@@ -1,0 +1,116 @@
+{
+  "politician_id": "254e5bec-7ea1-47ac-954a-885da7c0547e",
+  "findings": [
+    {
+      "id": "4179d479eb4dc8501610cb3fafd7c4753abdbb37c1b30fd0bf7c996edd968a68",
+      "kind": "own-words",
+      "url": "https://hodgesforstatesenate.com/priorities/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Mike will stand against efforts to compromise Georgia’s new Election Integrity Act. The new legislation makes it  easier to vote and harder to cheat. Photo ID, secure election drop boxes and expanded early voting, including weekends, will ensure a fair election process.",
+      "note": "Campaign issues page, undated; the site's home page refers to a June 21 run-off, so it appears to be his 2022 campaign. It names SB 202 (the Election Integrity Act), photo ID, drop boxes and early voting as features of a fair process.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws",
+        "photo ID",
+        "SB 202 support"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:40:10.598Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b4f9d1751475308fe6f4f4c8e35b014af1c0f2e2f7b3dd7f5fa6f35a622ffaab",
+      "kind": "own-words",
+      "url": "https://senatepress.net/column-hodges-special-legislative-session-update.html",
+      "date": "2026-07-15",
+      "date_precision": "day",
+      "passage": "We also achieved a major win for Georgia voters with the passage of Senate Bill 3EX. The legislation creates the Election Equipment Specification and Standards Committee, which will evaluate and recommend new election equipment designed for hand-marked paper ballots.",
+      "note": "His column from the 2026 special session describes SB 3EX (election equipment committee for hand-marked paper ballots; manual recount rule). It does not address ID or citizenship. Saved as related election-administration material.",
+      "subjects": [
+        "hand-marked paper ballots",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:40:10.598Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e9d37fc3287bce81b3f284cac9840364f2ad68a4cfefdf4a2d6a9ccdd4ba3aa",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Hodges'), linked to Hodges, Mike (district 3) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.418Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws",
+        "voter-roll checks",
+        "non-citizen voting",
+        "hand-marked paper ballots and recount rules"
+      ],
+      "places": [
+        "status confirmed: sitting Senate District 3 member, on the 2026-11-03 general-election ballot for the same seat (https://ballotpedia.org/Mike_Hodges)",
+        "On the Record (0 appearances)",
+        "campaign site https://hodgesforstatesenate.com/ (home and issues and priorities page; one passage saved; site is from his 2022 run)",
+        "Ballotpedia https://ballotpedia.org/Mike_Hodges: nothing on the subject",
+        "Wikipedia https://en.wikipedia.org/wiki/Mike_Hodges_(politician): nothing on the subject",
+        "blocked: https://www.legis.ga.gov/members/senate/5013 (the legislature's member and vote pages load only through a script and its data service refuses requests, so bill and vote records could not be read)",
+        "blocked: https://app.legiplex.com/profile/mike-hodges-1701/ga/legislatures/2025/2025-r/legislation/page/2 (403)",
+        "not reviewed: https://www.legis.ga.gov/api/document/docs/default-source/bios/hodges-mike-5013.pdf (bio PDF could not be read as text)",
+        "web news search on his name plus voting words: no item tying him to a voting bill or statement; the June 2026 citizenship-only voting amendment resolution (SR 4EX) coverage does not name him",
+        "not applicable: SB 202 (2021) vote, because he took office 2023-01-09",
+        "Senate press office column by Hodges https://senatepress.net/column-hodges-special-legislative-session-update.html (one related passage saved; no ID or citizenship text)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:40:10.598Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.418Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

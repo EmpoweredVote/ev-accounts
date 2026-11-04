@@ -1,0 +1,93 @@
+{
+  "id": "VA-HB-5020-SP1-2020",
+  "scope": "state:va",
+  "title": "HB5020 (2020 Special I): Concealed handgun permit; local control of firearms.",
+  "urls": [
+    "https://lis.virginia.gov/cgi-bin/legp604.exe?202+sum+HB5020",
+    "https://lis.virginia.gov/cgi-bin/legp604.exe?202+ful+HB5020+hil"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 1 (amending Code 15.2-915, new subsection G): {+G. Any ordinance adopted pursuant to subsection E shall not apply to a person who has a valid concealed handgun permit issued pursuant to Article 6.1 (§ 18.2-307.1 et seq.) of Chapter 7 of Title 18.2.+}",
+  "sponsors": [
+    {
+      "name": "Glenn Davis",
+      "role": "patron",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Terry Austin",
+      "politician_id": "3049ed75-9743-42f4-8c9e-037a41f9bdc3",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "John Avoli",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Mark Cole",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Hyland Fowler",
+      "politician_id": "7639d181-586e-40a4-8d95-204c56ede118",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Dave LaRock",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Charles Poindexter",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Wendell Walker",
+      "politician_id": "f830ca33-179a-4981-8b89-0b02155e374b",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Lee Ware",
+      "politician_id": "af619400-b4b0-48f4-ba87-69a5ddd53301",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Thomas Wright",
+      "politician_id": "ff50eaf3-0f12-455e-85b2-bc37f1e542db",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Scott Wyatt",
+      "politician_id": "d918e6be-5933-4b24-aada-84cbc461c207",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-5020-SP1-2020.prefiled.html",
+      "sha256": "aa583611fa5172be9ecc051712b4451ceb9bc203797d6f106d606b417ea0288b"
+    }
+  }
+}

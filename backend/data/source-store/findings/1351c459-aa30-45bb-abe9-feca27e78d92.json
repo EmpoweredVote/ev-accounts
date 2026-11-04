@@ -1,0 +1,350 @@
+{
+  "politician_id": "1351c459-aa30-45bb-abe9-feca27e78d92",
+  "findings": [
+    {
+      "id": "c1deddc541dd6952a5e7bc857433bb7527633d94bec37bead5b85072f541a846",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/37/born/media/hc0l01dz/rep-born-supports-voter-id-01142025.pdf",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "passage": "“Voter ID is a cornerstone of our election process. Supporting this resolution to send it to referenda for the voters of Wisconsin to decide is vitally important,” said Rep. Born.",
+      "note": "Press release from his Assembly office on his vote for SJR 2, the photo ID constitutional amendment.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:55:53.618Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "30087106d96a0ee5b76717fb23738dc348a86b2b5881c2dc88b5a819f42a2817",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/37/born/media/hc0l01dz/rep-born-supports-voter-id-01142025.pdf",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "passage": "“Voter ID is supported by 74% of registered voters in Wisconsin. I am proud to cast my vote to preserve the integrity of our election system,” said Rep. Born.",
+      "note": "Same release; he cites public support and ties photo ID to election integrity.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:55:53.618Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "15306c49c146cbad0a9e418add6f2ef354651948e827543f6b92a8fa0b67ac5c",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/37/born/media/bmid1e10/rep-born-backs-key-legislation-incentivizing-school-efficiency-efforts-and-expanding-early-voting-access.pdf",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "passage": "“Voters should have fair and accountable access to early voting no matter where they live,” said Rep. Born. “This bill supports our clerks and ensures greater opportunity to cast a ballot.”",
+      "note": "Release on AB 312, minimum in-person absentee voting hours plus an election security grant program for clerks. Not about ID, but related election administration.",
+      "subjects": [
+        "in-person absentee voting access",
+        "election security"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:55:53.618Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3b049321bbb761aed848202ac58c12c9da37c0d23c62289f92056b0b802c12a7",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2015/proposals/ab723",
+      "date": "2016",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-723-2016",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/15/2016; committee recommended passage as amended 2/11/2016; laid on the table 2/16/2016; died (Failed to pass pursuant to Senate Joint Resolution 1, 4/13/2016)",
+      "note": "Named as co sponsor ('Born') on the official bill page; linked to Mark Born via the official 2016 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05f8a142565de5b18a7bb52eccf388587e6178fcea0d942c4b6f4e87c5f035e1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ajr1",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-1-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/6/2025 (second consideration, text of 2023 SJR 73); committee recommended adoption 1/9/2025 (5-2); laid on the table 1/14/2025; died (Failed to adopt pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Born') on the official bill page; linked to Mark Born via the official 2025 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f105cb8cc766b9ac9b7e2489ba36edc3c7ee78320f2205bd664bd72a8b747ad4",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0252",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-133-2022",
+      "act": "yea",
+      "motion": "Assembly: Adopted (ADOPTION) (av0252)",
+      "note": "Assembly roll call as printed ('BORN'), linked to Mark Born (district 39) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "859b5c8ce4718a309615ebc193a6cd65c0c31ba55084517735acaa9c8a0dc903",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/ajr78",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-78-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 9/29/2023 (first consideration); committee recommended adoption 11/6/2023; laid on the table 11/9/2023; died (Failed to adopt pursuant to Senate Joint Resolution 1, 4/15/2024)",
+      "note": "Named as co sponsor ('Born') on the official bill page; linked to Mark Born via the official 2023 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3dcdd6812724e9ea085737c1a28378742e9b2599a364726fd8fb1c0b5f415b7f",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0090",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0090)",
+      "note": "Assembly roll call as printed ('BORN'), linked to Mark Born (district 39) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4f30723e38f6bac08dfc861be5cb5156051e1eebf82a52f402ee921c9e9fdf26",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2017/av0362",
+      "date": "2018-12-04",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-884-2018",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0362)",
+      "note": "Assembly roll call as printed ('BORN'), linked to Mark Born (district 39) via the official 2017 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b31b4288bd002fb7b4bbaa46b990e06d7b2eff283e39b1556d0e71f0bd7e00cb",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0258",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0258)",
+      "note": "Assembly roll call as printed ('BORN'), linked to Mark Born (district 39) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aac49f80b6252a05edb5b95b705c5111fbb94d9575b9dfdc762cc087dd25edd",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('BORN'), linked to Mark Born (district 37) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "52afc0d599e71925804c90692661774de3a4e6234e50f5798a0f86167fb91d4e",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sjr2",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election",
+      "note": "Named as co sponsor ('Born') on the official bill page; linked to Mark Born via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f37735cfc46365a2fe5a6cf819e19dbb60dbab9982d4680456fe62a5dc680974",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('BORN'), linked to Mark Born (district 39) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5bff7ebb8d70b2c56770ba61c80e5c48e6eeb953970ea91ca07f3a04122b3427",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/sjr73",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2023 Enrolled Joint Resolution 9, first consideration); adopted by Senate 11/7/2023 and concurred by Assembly 11/9/2023",
+      "note": "Named as co sponsor ('Born') on the official bill page; linked to Mark Born via the official 2023 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "election integrity",
+        "absentee and early voting access",
+        "proof of citizenship"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Born's Assembly site, front page and press release pages 1-4 (one 2025 voter ID release found; one 2025 early-voting release found)",
+        "candidacy: a 2026-04 blog post says he announced a re-election run in the 37th Assembly District; no official November ballot list reviewed",
+        "blocked: https://ballotpedia.org/Mark_Born (empty page)",
+        "blocked: https://www.wispolitics.com/2022/rep-born-votes-for-more-fair-and-transparent-elections/ (403)",
+        "blocked: https://dailydodge.com/state-representative-mark-born-announces-reelection-campaign (403)",
+        "one web search on name plus voter ID words",
+        "campaign site: none found; nothing on proof of citizenship or SAVE Act found"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:55:53.618Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 11,
+      "at": "2026-10-28T23:15:12.783Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

@@ -1,0 +1,355 @@
+{
+  "politician_id": "f59396a3-66bf-481d-8180-0cf1cfea5280",
+  "findings": [
+    {
+      "id": "9c1c6a0b47ab37c45d1d68a7020f9c7c0e90d8498cd519632443c2e12bff7985",
+      "kind": "own-words",
+      "url": "https://docs.legis.wisconsin.gov/misc/lc/hearing_testimony_and_materials/2025/ajr1/ajr0001_2025_01_08.pdf",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "passage": "I authored this amendment to the Wisconsin Constitution to ensure that the people of Wisconsin have full confidence in the security and integrity of Wisconsin elections. This Joint Resolution would amend the State Constitution to require valid photographic identification when voting. Under the amendment, the State Legislature would still be able to create exceptions to the requirement in statutes and qualified electors who lack valid identification on elections day would still be able to cast a provisional ballot. This proposal does not change any current statutory exceptions to existing voter ID requirements.",
+      "note": "Written testimony to the Assembly Committee on Campaigns and Elections on AJR 1, a constitutional amendment requiring photo ID to vote; describes the provisional-ballot path and statutory exceptions.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "provisional ballot for voters without ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:05:35.400Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a3b8d8bc9ab77b3b077a9e69f96f6d7b0cf3f6fee1f09f1bf0019bc20b6986fc",
+      "kind": "own-words",
+      "url": "https://docs.legis.wisconsin.gov/misc/lc/hearing_testimony_and_materials/2025/ajr1/ajr0001_2025_01_08.pdf",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "passage": "Wisconsin's voter ID requirement has been widely successful in preserving election integrity and ensuring that citizens are confident that the ballots cast are legitimate.",
+      "note": "Same testimony; says the existing voter ID requirement has worked and cites polling support.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:05:35.400Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f6764ecc3a82d5dfb9ebd9335d922b1f93b7a094538aef81ad5d4d461981904",
+      "kind": "own-words",
+      "url": "https://wpr.org/news/wisconsin-legislature-constitution-voter-identification-ballot",
+      "date": "2025-01-07",
+      "date_precision": "day",
+      "passage": "“If we wait on something like this, then (the court) could rule that the photo ID is unconstitutional, and then it would be a harder time,” said Rep. Patrick Snyder, R-Weston, the bill’s co-author. “This gives the electorate the opportunity to make that decision.”",
+      "note": "Quoted by WPR in a story on the photo ID amendment; gives his reason for putting it in the constitution now.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:05:35.400Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b893a46e69807ca98aee76f959b7a29a44ed4356eddb6be7cd54516c1b4c1fb6",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ajr1",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-1-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, As introduced 1/6/2025 (second consideration, text of 2023 SJR 73); committee recommended adoption 1/9/2025 (5-2); laid on the table 1/14/2025; died (Failed to adopt pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as prime sponsor ('Snyder') on the official bill page; linked to Patrick Snyder via the official 2025 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.784Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f105cb8cc766b9ac9b7e2489ba36edc3c7ee78320f2205bd664bd72a8b747ad4",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0252",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-133-2022",
+      "act": "yea",
+      "motion": "Assembly: Adopted (ADOPTION) (av0252)",
+      "note": "Assembly roll call as printed ('SNYDER'), linked to Patrick Snyder (district 85) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.784Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e5586964b8e22088932e14e064cb67150314913969250af43ea639b4e528b9d0",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/ajr133",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-133-2022",
+      "act": "sponsor",
+      "motion": "prime sponsor, As introduced 2/16/2022 (first consideration); adopted by Assembly 2/24/2022 (59-36, 4 paired); died in Senate committee (Failed to concur in pursuant to Senate Joint Resolution 1, 3/15/2022)",
+      "note": "Named as prime sponsor ('Snyder') on the official bill page; linked to Patrick Snyder via the official 2022 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.784Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5da764d5450c5388c177e4c25c49c4c907e34c366aa9dea852c9ccb9166b120c",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/ajr78",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-78-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, As introduced 9/29/2023 (first consideration); committee recommended adoption 11/6/2023; laid on the table 11/9/2023; died (Failed to adopt pursuant to Senate Joint Resolution 1, 4/15/2024)",
+      "note": "Named as prime sponsor ('Snyder') on the official bill page; linked to Patrick Snyder via the official 2023 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.784Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3dcdd6812724e9ea085737c1a28378742e9b2599a364726fd8fb1c0b5f415b7f",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0090",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0090)",
+      "note": "Assembly roll call as printed ('SNYDER'), linked to Patrick Snyder (district 85) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.784Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4f30723e38f6bac08dfc861be5cb5156051e1eebf82a52f402ee921c9e9fdf26",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2017/av0362",
+      "date": "2018-12-04",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-884-2018",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0362)",
+      "note": "Assembly roll call as printed ('SNYDER'), linked to Patrick Snyder (district 85) via the official 2017 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.784Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b31b4288bd002fb7b4bbaa46b990e06d7b2eff283e39b1556d0e71f0bd7e00cb",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0258",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0258)",
+      "note": "Assembly roll call as printed ('SNYDER'), linked to Patrick Snyder (district 85) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.784Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aac49f80b6252a05edb5b95b705c5111fbb94d9575b9dfdc762cc087dd25edd",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('SNYDER'), linked to Patrick Snyder (district 85) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.784Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "52afc0d599e71925804c90692661774de3a4e6234e50f5798a0f86167fb91d4e",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sjr2",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election",
+      "note": "Named as co sponsor ('Snyder') on the official bill page; linked to Patrick Snyder via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.784Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f37735cfc46365a2fe5a6cf819e19dbb60dbab9982d4680456fe62a5dc680974",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('SNYDER'), linked to Patrick Snyder (district 85) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.784Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5bff7ebb8d70b2c56770ba61c80e5c48e6eeb953970ea91ca07f3a04122b3427",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/sjr73",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2023 Enrolled Joint Resolution 9, first consideration); adopted by Senate 11/7/2023 and concurred by Assembly 11/9/2023",
+      "note": "Named as co sponsor ('Snyder') on the official bill page; linked to Patrick Snyder via the official 2023 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.784Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot for voters without ID",
+        "photo ID constitutional amendment",
+        "proof of citizenship",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature page https://legis.wisconsin.gov/assembly/85/snyder/ (nothing on the subject on the page)",
+        "campaign site: none found",
+        "Wausau Pilot & Review 2026-03-31 candidacy article (confirms 2026 reelection run; nothing on the subject)",
+        "WSAW 2026-03-31 candidacy article (nothing on the subject)",
+        "legislature hearing testimony PDF for AJR 1 (2025-01-08)",
+        "WPR news 2025-01-07",
+        "blocked: https://www.ballotpedia.org/Pat_Snyder (empty page)",
+        "blocked: https://wisconsinexaminer.com/2025/01/15/assembly-passes-voter-id-constitutional-amendment-proposal-now-it-goes-to-voters-in-april/ (403)",
+        "blocked: https://docs-preview.legis.wisconsin.gov/document/legislator/2025/2786 (503)",
+        "no proof-of-citizenship or mail-ballot ID statements found in the pages reviewed"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:05:35.400Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 11,
+      "at": "2026-10-28T23:15:12.784Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

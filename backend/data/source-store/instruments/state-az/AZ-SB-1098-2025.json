@@ -1,0 +1,435 @@
+{
+  "id": "AZ-SB-1098-2025",
+  "scope": "state:az",
+  "title": "SB 1098 (2025 - Fifty-seventh Legislature - First Regular Session (azleg session id 129)): early ballot drop off; identification",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/81927",
+    "https://www.azleg.gov/legtext/57leg/1R/bills/SB1098S.htm"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1: Section 16-411, Arizona Revised Statutes, is amended to read: (para 4)\n(quote) A voting center shall allow any voter in that county to receive the appropriate ballot for that voter on election day after presenting identification as prescribed in section 16-579 and to lawfully cast the ballot.\n(b_no_id_remedy)\n(section) Sec. 2: Section 16-548, Arizona Revised Statutes, is amended to read: (para B)\n(quote) B. For any voter or any voter's agent who delivers one or more voted early ballots in affidavit envelopes to any polling place in the county, to a voting center or to an emergency voting center, the election board shall require the voter or voter's agent to attest to in writing and provide identification as follows:\n(section) Sec. 2: Section 16-548, Arizona Revised Statutes, is amended to read: (para 1)\n(quote) 1. For a voter who delivers the voter's own early ballot, present to the board worker identification that complies with section 16-579, subsection A, paragraph 1 on which the voter's name reasonably appears to be the same as on the ballot affidavit.\n(section) Sec. 2: Section 16-548, Arizona Revised Statutes, is amended to read: (para C)\n(quote) C. If the early voter is an overseas citizen, a qualified elector absent from the United States or in the United States service, a spouse or dependent residing with the early voter or a qualified elector of a special district mail ballot election as provided in article 8.1 of this chapter, the early voter may subscribe to the affidavit before and obtain the signature and military identification number or passport number, if available, of any person who is a United States citizen eighteen years of age or older.\n(c_mail_ballot_id)\n(section) Bill text\n(quote) early ballot drop off; identification\n(section) Sec. 1: Section 16-411, Arizona Revised Statutes, is amended to read: (para 4)\n(quote) For any voting center that accepts voted early ballots, the election board and the voter or the voter's agent shall comply with the attestation and identification requirements prescribed by section 16-548.\n(section) Sec. 1: Section 16-411, Arizona Revised Statutes, is amended to read:\n(quote) (b) A qualified elector voting at an emergency voting center shall provide identification as prescribed in section 16-579, except that notwithstanding section 16-579, subsection A, paragraph 2, for any voting at an emergency voting center, the county recorder or other officer in charge of elections may allow a qualified elector to update the elector's voter registration information as provided for in the secretary of state's instructions and procedures manual adopted pursuant to section 16-452.\n(section) Sec. 1: Section 16-411, Arizona Revised Statutes, is amended to read:\n(quote) For any emergency voting center that accepts voted early ballots, the election board and the voter or the voter's agent shall comply with the attestation and identification requirements prescribed by section 16-548.\n(section) Sec. 2: Section 16-548, Arizona Revised Statutes, is amended to read: (para B)\n(quote) B. For any voter or any voter's agent who delivers one or more voted early ballots in affidavit envelopes to any polling place in the county, to a voting center or to an emergency voting center, the election board shall require the voter or voter's agent to attest to in writing and provide identification as follows:\n(section) Sec. 2: Section 16-548, Arizona Revised Statutes, is amended to read: (para 1)\n(quote) 1. For a voter who delivers the voter's own early ballot, present to the board worker identification that complies with section 16-579, subsection A, paragraph 1 on which the voter's name reasonably appears to be the same as on the ballot affidavit.\n(section) Sec. 2: Section 16-548, Arizona Revised Statutes, is amended to read: (para 2)\n(quote) 2. For a voter's agent who delivers another person's voted early ballot, present to the board worker identification that contains the voter's agent's name and that complies with section 16-579, subsection A, paragraph 1 and attest in writing that the voter's agent is the voter's family member, household member or caregiver as defined in section 16-1005.\n(section) Sec. 2: Section 16-548, Arizona Revised Statutes, is amended to read: (para C)\n(quote) C. If the early voter is an overseas citizen, a qualified elector absent from the United States or in the United States service, a spouse or dependent residing with the early voter or a qualified elector of a special district mail ballot election as provided in article 8.1 of this chapter, the early voter may subscribe to the affidavit before and obtain the signature and military identification number or passport number, if available, of any person who is a United States citizen eighteen years of age or older.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) 0: n\n(other) 1: o\n(other) 2: t\n(other) 3:  \n(other) 4: s\n(other) 5: t\n(other) 6: a\n(other) 7: t\n(other) 8: e\n(other) 9: d",
+  "sponsors": [
+    {
+      "name": "Jake Hoffman",
+      "role": "prime",
+      "version": "SB1098S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Joseph Chaplik",
+      "role": "co",
+      "version": "SB1098S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Laurin Hendrix",
+      "role": "co",
+      "version": "SB1098S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Rachel Keshel",
+      "role": "co",
+      "version": "SB1098S: Senate-engrossed version (text as it stood after the Senate acted)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-03-05",
+      "body": "AZ Senate",
+      "motion": "Third Reading: Passed",
+      "kind": "roll-call",
+      "yes": 17,
+      "no": 12,
+      "absent": 1,
+      "body_size": 30,
+      "note": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=233421&includeVotes=true",
+      "members": [
+        {
+          "name": "ALSTON",
+          "vote": "nay"
+        },
+        {
+          "name": "ANGIUS",
+          "vote": "yea"
+        },
+        {
+          "name": "BOLICK",
+          "vote": "yea"
+        },
+        {
+          "name": "BRAVO",
+          "vote": "nay"
+        },
+        {
+          "name": "BURCH",
+          "vote": "nay"
+        },
+        {
+          "name": "CARROLL",
+          "vote": "yea"
+        },
+        {
+          "name": "DIAZ",
+          "vote": "nay"
+        },
+        {
+          "name": "DUNN",
+          "vote": "yea"
+        },
+        {
+          "name": "EPSTEIN",
+          "vote": "nay"
+        },
+        {
+          "name": "FARNSWORTH",
+          "vote": "yea"
+        },
+        {
+          "name": "FERNANDEZ",
+          "vote": "nay"
+        },
+        {
+          "name": "FINCHEM",
+          "vote": "yea"
+        },
+        {
+          "name": "GABALDÓN",
+          "vote": "absent"
+        },
+        {
+          "name": "GONZALES",
+          "vote": "nay"
+        },
+        {
+          "name": "GOWAN",
+          "vote": "yea"
+        },
+        {
+          "name": "HATATHLIE",
+          "vote": "nay"
+        },
+        {
+          "name": "HOFFMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "KAVANAGH",
+          "vote": "yea"
+        },
+        {
+          "name": "KUBY",
+          "vote": "nay"
+        },
+        {
+          "name": "LEACH",
+          "vote": "yea"
+        },
+        {
+          "name": "MESNARD",
+          "vote": "yea"
+        },
+        {
+          "name": "MIRANDA",
+          "vote": "nay"
+        },
+        {
+          "name": "ORTIZ",
+          "vote": "nay"
+        },
+        {
+          "name": "PAYNE",
+          "vote": "yea"
+        },
+        {
+          "name": "ROGERS",
+          "vote": "yea"
+        },
+        {
+          "name": "SHAMP",
+          "vote": "yea"
+        },
+        {
+          "name": "SHOPE",
+          "vote": "yea"
+        },
+        {
+          "name": "SUNDARESHAN",
+          "vote": "nay"
+        },
+        {
+          "name": "WERNER",
+          "vote": "yea"
+        },
+        {
+          "name": "PETERSEN",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2025-05-05",
+      "body": "AZ House",
+      "motion": "Third Reading: Passed",
+      "kind": "roll-call",
+      "yes": 32,
+      "no": 25,
+      "absent": 3,
+      "body_size": 60,
+      "note": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=235732&includeVotes=true",
+      "members": [
+        {
+          "name": "ABEYTIA",
+          "vote": "nay"
+        },
+        {
+          "name": "AGUILAR",
+          "vote": "nay"
+        },
+        {
+          "name": "AUSTIN",
+          "vote": "nay"
+        },
+        {
+          "name": "BIASIUCCI",
+          "vote": "yea"
+        },
+        {
+          "name": "BLACKMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "BLATTMAN",
+          "vote": "nay"
+        },
+        {
+          "name": "BLISS",
+          "vote": "yea"
+        },
+        {
+          "name": "CARBONE",
+          "vote": "yea"
+        },
+        {
+          "name": "CARTER N",
+          "vote": "yea"
+        },
+        {
+          "name": "CARTER P",
+          "vote": "yea"
+        },
+        {
+          "name": "CAVERO",
+          "vote": "nay"
+        },
+        {
+          "name": "CHAPLIK",
+          "vote": "yea"
+        },
+        {
+          "name": "CONNOLLY",
+          "vote": "nay"
+        },
+        {
+          "name": "CONTRERAS L",
+          "vote": "nay"
+        },
+        {
+          "name": "CONTRERAS P",
+          "vote": "nay"
+        },
+        {
+          "name": "CREWS",
+          "vote": "nay"
+        },
+        {
+          "name": "DE LOS SANTOS",
+          "vote": "nay"
+        },
+        {
+          "name": "DIAZ",
+          "vote": "yea"
+        },
+        {
+          "name": "FINK",
+          "vote": "yea"
+        },
+        {
+          "name": "GARCIA",
+          "vote": "nay"
+        },
+        {
+          "name": "GILLETTE",
+          "vote": "yea"
+        },
+        {
+          "name": "GRESS",
+          "vote": "yea"
+        },
+        {
+          "name": "GRIFFIN",
+          "vote": "yea"
+        },
+        {
+          "name": "GUTIERREZ",
+          "vote": "nay"
+        },
+        {
+          "name": "HEAP",
+          "vote": "yea"
+        },
+        {
+          "name": "HENDRIX",
+          "vote": "yea"
+        },
+        {
+          "name": "HERNANDEZ A",
+          "vote": "nay"
+        },
+        {
+          "name": "HERNANDEZ C",
+          "vote": "nay"
+        },
+        {
+          "name": "HERNANDEZ L",
+          "vote": "nay"
+        },
+        {
+          "name": "KESHEL",
+          "vote": "yea"
+        },
+        {
+          "name": "KOLODIN",
+          "vote": "yea"
+        },
+        {
+          "name": "KUPPER",
+          "vote": "yea"
+        },
+        {
+          "name": "LIGUORI",
+          "vote": "nay"
+        },
+        {
+          "name": "LIVINGSTON",
+          "vote": "yea"
+        },
+        {
+          "name": "LOPEZ",
+          "vote": "yea"
+        },
+        {
+          "name": "LUNA-NÁJERA",
+          "vote": "nay"
+        },
+        {
+          "name": "MÁRQUEZ",
+          "vote": "nay"
+        },
+        {
+          "name": "MARSHALL",
+          "vote": "yea"
+        },
+        {
+          "name": "MARTINEZ",
+          "vote": "yea"
+        },
+        {
+          "name": "MATHIS",
+          "vote": "nay"
+        },
+        {
+          "name": "NGUYEN",
+          "vote": "yea"
+        },
+        {
+          "name": "OLSON",
+          "vote": "yea"
+        },
+        {
+          "name": "PEÑA",
+          "vote": "yea"
+        },
+        {
+          "name": "PESHLAKAI",
+          "vote": "absent"
+        },
+        {
+          "name": "PINGERELLI",
+          "vote": "absent"
+        },
+        {
+          "name": "POWELL",
+          "vote": "yea"
+        },
+        {
+          "name": "RIVERO",
+          "vote": "yea"
+        },
+        {
+          "name": "SANDOVAL",
+          "vote": "nay"
+        },
+        {
+          "name": "SIMACEK",
+          "vote": "absent"
+        },
+        {
+          "name": "STAHL HAMILTON",
+          "vote": "nay"
+        },
+        {
+          "name": "TAYLOR",
+          "vote": "yea"
+        },
+        {
+          "name": "TRAVERS",
+          "vote": "nay"
+        },
+        {
+          "name": "TSOSIE",
+          "vote": "nay"
+        },
+        {
+          "name": "VILLEGAS",
+          "vote": "nay"
+        },
+        {
+          "name": "VOLK",
+          "vote": "nay"
+        },
+        {
+          "name": "WAY",
+          "vote": "yea"
+        },
+        {
+          "name": "WENINGER",
+          "vote": "yea"
+        },
+        {
+          "name": "WILLOUGHBY",
+          "vote": "yea"
+        },
+        {
+          "name": "WILMETH",
+          "vote": "yea"
+        },
+        {
+          "name": "MONTENEGRO",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

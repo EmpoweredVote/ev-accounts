@@ -1,0 +1,164 @@
+{
+  "politician_id": "36343ab4-817f-44eb-9221-15eb338af57a",
+  "findings": [
+    {
+      "id": "818586ba7a6fa8e00a512d1c240c01472b0f796fab8f64a338fb0b5e616ea7fe",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: yea (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9fc7fe42d4ca0418da57b37f789b4766ff618ad71e31a528b663386efac66476",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: yea (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "d25066ec16a91b68611ad10bb9179838e3ab21abe353d974c67c026055549490",
+      "kind": "own-words",
+      "url": "https://www.kristinkassner.org/priorities",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Supported commonsense gun reform and a ban on ghost guns, signed into law",
+      "note": "Campaign priorities page, Public Safety section, lists as an accomplishment that she supported gun reform and a ban on ghost guns that became law. The page shows no date.",
+      "subjects": [
+        "ban on ghost guns",
+        "gun reform law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:57:07.902Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Kristin_Kassner (state representative, 2nd Essex District, on the 2026 general-election ballot, advanced from the 2026-09-01 primary)",
+        "On the Record (0 appearances for this politician id)",
+        "Massachusetts Legislature profile https://malegislature.gov/Legislators/Profile/K_K2 (petitioner list of 25 bills, none on voting, ID or citizenship; cosponsor tab not reachable)",
+        "Massachusetts Legislature bill search for 'voter identification' (first page of 347 results, no sponsorship by this person; later pages not reviewed)",
+        "campaign site https://www.kristinkassner.org/ (home page and /issues: nothing on the subject)",
+        "Ballotpedia: no survey responses or campaign themes on the subject",
+        "blocked: https://www.kristinkassner.com (no connection)",
+        "not reviewed: web news search on name plus subject words (shared search budget was used up)",
+        "not reviewed: ontheissues.org, vote411, Vote Smart, official house page beyond the legislature profile",
+        "not reviewed: roll-call votes on election bills (not searched)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:08:22.968Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "identified as the sitting state representative for the 2nd Essex district via https://malegislature.gov/Legislators/Profile/K_K2/Legislation",
+        "legislature legislation list on that page: no bill on voter ID, citizenship proof, ballots or elections; nothing on the subject",
+        "official site and campaign site: none found; nothing on the subject",
+        "Ballotpedia not reviewed (no page surfaced)",
+        "news search (1): nothing by her on the subject",
+        "recorded floor votes on identity or citizenship bills not reviewed: no vote page surfaced"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:31:31.550Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun reform",
+        "ghost guns",
+        "assault-style guns",
+        "licences and background checks",
+        "Second Amendment statements",
+        "the 2024 firearms law and its 2026 repeal question"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page (malegislature.gov K_K2, bills and co-sponsor pages): confirms she is the Hamilton representative; listed filings show no gun bills",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site https://www.kristinkassner.org: priorities page has a Public Safety section with a gun statement; news page and about page had nothing on guns",
+        "Ballotpedia: empty page, not relied on",
+        "news searches (3): no direct quote on guns found; a fundraising page for a 2026 re-election campaign (ActBlue) shows she is running in 2026",
+        "not reviewed: Yahoo/Town Common local news pages on her races, nothing on guns found in them"
+      ],
+      "found": 1,
+      "at": "2026-11-01T01:57:07.902Z",
+      "by": "source-collector"
+    }
+  ]
+}

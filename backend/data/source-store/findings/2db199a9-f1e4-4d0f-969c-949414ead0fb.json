@@ -1,0 +1,32 @@
+{
+  "politician_id": "2db199a9-f1e4-4d0f-969c-949414ead0fb",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "check every gun buyer",
+        "carry permits",
+        "red-flag orders",
+        "general gun safety",
+        "armas de fuego"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site hernandez.house.gov: about page confirms he is the Resident Commissioner of Puerto Rico; home, issues and press release first pages: nothing on the subject",
+        "blocked: https://hernandez.house.gov/search?search_api_fulltext=gun (403)",
+        "blocked: https://www.congress.gov/member/pablo-jose-hernandez/H001104 (bot check); sponsored-bill list not reachable",
+        "blocked: https://www.govtrack.us/congress/members/pablo_hernandez/456937 (bot check)",
+        "blocked: https://legilist.com/legislator/H001103 (403)",
+        "not reviewed: https://clerk.house.gov (no sponsorship data there)",
+        "Ballotpedia: not reachable by fetch tool, not used",
+        "three news/web searches on name plus gun words in English and Spanish: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-30T20:04:51.065Z",
+      "by": "source-collector"
+    }
+  ]
+}

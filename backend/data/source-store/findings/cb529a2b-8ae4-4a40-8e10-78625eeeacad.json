@@ -1,0 +1,142 @@
+{
+  "politician_id": "cb529a2b-8ae4-4a40-8e10-78625eeeacad",
+  "findings": [
+    {
+      "id": "814c430c259c604517b3f44b8b0c0a4f6cdf361ba7c2c67eec6818b1259bc15e",
+      "kind": "own-words",
+      "url": "https://rogersforflorida.com/issues/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Every American has a constitutional right to keep and bear arms. Austin will be a strong and unwavering defender of the Second Amendment in Congress.",
+      "note": "Campaign issues page, 'Guns' section, written in the third person. States support for the Second Amendment; no specific policy named.",
+      "subjects": [
+        "general statement on gun rights / Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T14:59:49.367Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4240a99a0c095bd74799031ec9675c5391de342da3b16b1ae3d05e0bc72f4cd1",
+      "kind": "own-words",
+      "url": "https://rogersforflorida.com/issues/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Austin will stand firmly against any radical gun control agenda pursued by the Radical Left and work to protect the rights of law-abiding gun owners.",
+      "note": "Same campaign page: says he will oppose gun control proposals he calls radical and protect law-abiding gun owners.",
+      "subjects": [
+        "opposes gun control",
+        "protect law-abiding gun owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T14:59:49.367Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4a70f81e1f83ef785040168d4428ddeabd5c4588af7bbd7156f3b0170bdb7c2f",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/93093/race/31333/election/1464",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "What restrictions on gun ownership are needed to protect public safety?",
+      "note": "Voter-guide questionnaire question; his answer is listed as 'Did not answer.'",
+      "subjects": [
+        "restrictions on gun ownership (left unanswered)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T14:59:49.367Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote / SAVE Act",
+        "non-citizen voting",
+        "election integrity laws",
+        "voter-roll checks"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Austin_Rogers) shows him on the Nov 3, 2026 general ballot for U.S. House Florida District 2 after the Aug 18, 2026 primary",
+        "On the Record (0 appearances; nothing on the subject)",
+        "campaign site home page https://rogersforflorida.com/ (nothing on the subject)",
+        "campaign site issues page https://rogersforflorida.com/issues/ (nothing on the subject; covers faith, family, economy, border, guns, Constitution)",
+        "campaign site news and press-release posts, all 31 posts read through the site's WordPress feed, keyword scan for voter ID, photo ID, SAVE Act, proof of citizenship, election integrity, mail ballot, non-citizen voting (nothing on the subject; only birthright citizenship and surrogacy op-eds, which are off-subject)",
+        "campaign site search pages for voter and citizenship (no relevant results)",
+        "Ballotpedia (no Candidate Connection survey completed)",
+        "congress.gov: not applicable, he has never been a legislator (no sponsorships or votes)",
+        "not reviewed: news search on name plus subject words (the session web search budget was used up)",
+        "not reviewed: debate or forum videos, vote411, ontheissues.org (no search available; not reached by direct fetch)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:57:15.814Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "In scope: Ballotpedia shows Austin Rogers, candidate for U.S. House Florida District 2, on the 2026-11-03 general-election ballot after the 2026-08-18 primary (https://ballotpedia.org/Austin_Rogers)",
+        "On the Record (0 appearances)",
+        "campaign site rogersforflorida.com (home, issues, updates, media kit, endorsements): nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "two news searches on name plus voter ID, SAVE Act and election integrity words: nothing on the subject",
+        "congress.gov: not applicable, no congressional record (he was a Senate staff lawyer)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:29:37.073Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment general statement",
+        "gun control",
+        "gun owners' rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site issues page (rogersforflorida.com/issues)",
+        "iVoterGuide profile (confirms general-election candidate for FL district 2 on 2026-11-03; Second Amendment question marked 'Did not answer')",
+        "BallotReady profile (repeats the campaign issues text)",
+        "WFSU forum and primary-race articles: fetched, nothing on the subject in page text",
+        "Ballotpedia: not reviewed",
+        "congress.gov: not applicable, not a sitting member"
+      ],
+      "found": 3,
+      "at": "2026-10-30T14:59:49.367Z",
+      "by": "source-collector"
+    }
+  ]
+}

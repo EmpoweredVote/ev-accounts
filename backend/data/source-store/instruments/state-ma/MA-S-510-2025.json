@@ -1,0 +1,75 @@
+{
+  "id": "MA-S-510-2025",
+  "scope": "state:ma",
+  "title": "An Act relative to safe and secure elections (S.510, filed 2025; in Election Laws, hearing 2025-07-08)",
+  "urls": [
+    "https://malegislature.gov/Bills/194/S510",
+    "https://malegislature.gov/Bills/194/S510.Html",
+    "https://malegislature.gov/Bills/194/S510/Cosponsor"
+  ],
+  "version": "as-filed",
+  "operative_text": "Be it enacted by the Senate and House of Representatives in General Court assembled, and by the authority of the same, as follows: SECTION 1. Chapter 51 of the General Laws, as appearing in the 2022 Official Edition, is hereby amended by adding the following section:- Section 67. The state secretary shall issue, upon request and at no cost to the voter, a photo identification card to be used for voting purposes only. Upon determination that a person meets the qualifications of a voter described in section 1, the secretary photograph the voter, and said photograph shall appear on the voting identification card and be a straightforward looking view of the voter without eyeglasses. The identification card shall be clearly marked “FOR VOTING PURPOSES ONLY.” SECTION 2. Chapter 54 of the General Laws, as so appearing, is hereby amended by striking out section 76 as appearing in the 2022 Official Edition and inserting in place thereof the following section:- SECTION 76. (a) A person desiring to vote shall, before being admitted to the enclosed space within the guardrail, announce his or her name and address to one of the ballot clerks who shall, if the name is found on the checklist by the ballot clerk, repeat the name and address. If the address announced by voter is different from what appears on the checklist, but is in the same town or ward, the ballot clerk shall record the change of address in red on the paper checklist and the supervisors of the checklist shall cause the voter registration database to reflect the change. SECTION 3. Chapter 54 of the General Laws, as so appearing, is hereby amended by striking out section 76B as appearing in the 2022 Official Edition and inserting in place thereof the following section:- Section 76B. (a) The voter who desires to vote shall be asked to present proof of his or her identity meeting the requirements of subsection (b). If the voter presents such proof of identity to the ballot clerk, the ballot clerk shall give the voter one of each ballot to be voted on in that election. The ballot clerk shall also mark the checklist using a ruler or other straight edge to ensure accuracy of the mark in order to show that the voter obtained his or her ballot. If the photo identification is an out-of-state driver's license or nondriver's identification card, the ballot clerk shall record the state of issuance on the checklist in accordance with uniform procedures developed by the secretary of state in a color designated for such entries and the supervisors of the checklist or designee shall record the state of issuance of the voter's driver's license or identification card in the statewide centralized voter registration database within 30 days of the election. The voter shall then be allowed to enter the space enclosed by the guardrail to mark and cast his or her ballot. (b) A valid photo identification shall show the name of the individual to whom the identification was issued, and the name shall substantially conform to the name in the individual's voter registration record; it also shall show a photograph of the individual to whom the identification was issued. The photo identification shall also have an expiration date that has not been exceeded by a period of more than 5 years, except that a voter 65 years of age or older may use an otherwise qualified form of identification without regard to expiration date, and except that student identification cards shall comply with the date requirements in subparagraph (5). The following forms of identification bearing a photograph of the voter shall satisfy the identification requirements of subsection (a): (1) A driver's license issued under section 9 of Chapter 159A of the General Laws; (2) An identification card issued under section 8E of Chapter 90 of the General Laws or a nondriver's identification card issued by the motor vehicles division, department, agency, or office of any other state; (3) A United States armed services identification card; (4) A United States passport or card; (5) A voter identification card issued by the secretary of state, under Section 67 of Chapter 51 of the General Laws; or (6) A challenged voter affidavit in accordance with subsection (c). The secretary of state shall provide training for supervisors of the checklist on how the nonpublic data in the statewide centralized voter registration database may be used to satisfy voter identification requirements. (c) The secretary of state shall develop and make available an informational pamphlet explaining the procedure for obtaining a picture identification card for voter identification purposes only. (d) An individual who does not or cannot provide a valid photo identification document they shall be able to cast a provisional ballot pursuant to section 76C of Chapter 54.",
+  "sponsors": [
+    {
+      "name": "Peter J. Durant",
+      "politician_id": "82943cda-5803-46c7-a854-697ad6052eda",
+      "role": "prime",
+      "version": "as filed; petitioners tab, S.510, session 194"
+    },
+    {
+      "name": "John R. Gaskey",
+      "politician_id": "08a2dfdf-43fb-408a-b758-aa94497fd871",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.510, session 194"
+    },
+    {
+      "name": "Joseph D. McKenna",
+      "politician_id": "2fadc37b-4d33-46b4-a3cc-a2ca5ebeb39a",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.510, session 194"
+    },
+    {
+      "name": "Colleen M. Garry",
+      "politician_id": "c8f917f9-f6c4-49f8-b5a4-c330b07f90d2",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.510, session 194"
+    },
+    {
+      "name": "Bruce E. Tarr",
+      "politician_id": "b1bd9a21-a37e-49f4-907b-9fba480a1ca2",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.510, session 194"
+    },
+    {
+      "name": "Kelly W. Pease",
+      "politician_id": "296406bb-cc2a-4214-978f-d30333d62939",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.510, session 194"
+    },
+    {
+      "name": "Steven George Xiarhos",
+      "politician_id": "892670a6-f15f-4014-86a8-434090c2a514",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.510, session 194"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+    "fetched_at": "2026-10-31T05:00:00Z",
+    "method": "curl",
+    "saved_copy": {
+      "path": "s3-prep-voting-rights/stage5/raw/ma-id-bills/194_S510.Html.htm",
+      "sha256": "8c4285a7b74a85e0c64106d6fa97048d4ec04494e53d3c422045d41d38c5f8c3"
+    }
+  }
+}

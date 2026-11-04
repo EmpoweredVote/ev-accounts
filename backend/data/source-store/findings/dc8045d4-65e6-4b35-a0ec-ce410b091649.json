@@ -1,0 +1,139 @@
+{
+  "politician_id": "dc8045d4-65e6-4b35-a0ec-ce410b091649",
+  "findings": [
+    {
+      "id": "5104e7285ab7909a54380f5abb0bdf7821c46b941ff451d9841f2b03512968b6",
+      "kind": "own-words",
+      "url": "https://www.jodiforsenate.com/issues",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Jodi cares deeply about restoring and protecting this trust. She will advocate for government transparency, fair maps, reducing unreasonable barriers for eligible voters, will support local election officials and call out misinformation for what it is. Jodi will be an advocate for any legislation that makes it easier for Wisconsinites to vote and will fight back against any attempts to reduce access to the ballot box.",
+      "note": "Campaign issues page for her 2024 Senate race, written in the third person. Says she would back reducing unreasonable barriers for eligible voters and legislation that makes voting easier. It does not mention ID.",
+      "subjects": [
+        "voting access in general",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.328Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5701519fd74ce6b5df753b8cf6383e03e6ddc57a8f745a649271c96325d90866",
+      "kind": "own-words",
+      "url": "https://www.jodiforsenate.com/issues",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "In recent years, we have seen unfounded claims of election fraud, “anonymous objections” on controversial projects, voter suppression, and gerrymandered voting maps all undermine the public’s trust in our democracy.",
+      "note": "Same campaign page; describes unfounded fraud claims and voter suppression as harming trust in elections.",
+      "subjects": [
+        "election fraud claims",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.328Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "173370a2da2254e9558211fd7d716d85ba2265e26f9f3d3e2282786165ffeebc",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/sv0003",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Senate: Read a third time and adopted (PASSAGE) (sv0003)",
+      "note": "Senate roll call as printed ('HABUSH SINYKIN'), linked to Jodi Habush Sinykin (district 8) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.790Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "help for voters without ID",
+        "ID with mail or absentee ballots",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity and voter access in general"
+      ],
+      "places": [
+        "On the Record (0 meetings linked)",
+        "official site https://legis.wisconsin.gov/senate/08/habush-sinykin/ (confirms Senator, 8th Senate District; her seat is not up in 2026, so no ballot check was needed)",
+        "official press release list, op-ed list and e-update list (2025 to mid 2026) reviewed by title; nothing on voter ID or proof of citizenship; October 2025 e-newsletter titled Standing Up for Democracy was fetched and has nothing on the subject",
+        "official 2026 legislative survey page: nothing on the subject",
+        "campaign site https://www.jodiforsenate.com/issues (2024 campaign): general text on voting access",
+        "legislature bill pages: not reviewed, sponsorships and votes are linked separately",
+        "Ballotpedia: blocked: https://ballotpedia.org/Jodi_Habush_Sinykin (empty page returned)",
+        "news search on name plus voter ID and the January 2025 Senate amendment vote; five news stories on that vote were fetched and none quotes her",
+        "older 2025 e-updates and press releases (before September 2025): not reviewed, list pages show only the newest items",
+        "nothing found on voter ID or proof of citizenship in her own words"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:13:34.850Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:15:12.790Z",
+      "by": "identity-wi-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "help for voters without ID",
+        "ID with mail or absentee ballots",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity and voter access in general"
+      ],
+      "places": [
+        "On the Record (0 meetings linked)",
+        "official site https://legis.wisconsin.gov/senate/08/habush-sinykin/ (confirms Senator, 8th Senate District; her seat is not up in 2026, so no ballot check was needed)",
+        "official press release list, op-ed list and e-update list (2025 to mid 2026) reviewed by title; nothing on voter ID or proof of citizenship; October 2025 e-newsletter titled Standing Up for Democracy was fetched and has nothing on the subject",
+        "official 2026 legislative survey page: nothing on the subject",
+        "campaign site https://www.jodiforsenate.com/issues (2024 campaign): general text on voting access",
+        "legislature bill pages: not reviewed, sponsorships and votes are linked separately",
+        "Ballotpedia: blocked: https://ballotpedia.org/Jodi_Habush_Sinykin (empty page returned)",
+        "news search on name plus voter ID and the January 2025 Senate amendment vote; five news stories on that vote were fetched and none quotes her",
+        "older 2025 e-updates and press releases (before September 2025): not reviewed, list pages show only the newest items",
+        "nothing found on voter ID or proof of citizenship in her own words"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:18:25.328Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

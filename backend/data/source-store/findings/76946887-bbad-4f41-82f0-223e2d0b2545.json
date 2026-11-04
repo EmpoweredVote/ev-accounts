@@ -1,0 +1,23 @@
+{
+  "politician_id": "76946887-bbad-4f41-82f0-223e2d0b2545",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation (scope check only)"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Florida 7th district; third place with 9,071 votes, 19 percent, per https://www.clickorlando.com/election-2026/2026/08/18/election-results-for-the-us-house-and-senate-races-in-the-florida-primary-on-aug-18-2026/ where the results data lists his votes and won: false)",
+        "On the Record (0 appearances)",
+        "blocked: https://ballotpedia.org/Alan_Grayson (page returned empty)",
+        "Wikipedia page confirms the 2026 run for Florida 7th district (finding aid only)",
+        "one news search on name plus gun subjects; no gun content searched further because he is out of scope"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:02:15.286Z",
+      "by": "source-collector"
+    }
+  ]
+}

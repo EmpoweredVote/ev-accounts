@@ -1,0 +1,174 @@
+{
+  "politician_id": "9a203de1-f2dc-46d6-86d1-ee40562a79c6",
+  "findings": [
+    {
+      "id": "cfdcad1e923ec5f265bf5166321b07d5d028059ca21f2e1c96180f36e4548f41",
+      "kind": "own-words",
+      "url": "https://www.nextgov.com/people/2026/02/gabbards-expanded-role-election-security-draws-scrutiny/411295",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "passage": "President Trump's directive to secure our elections was clear, and DNI Gabbard has and will proudly continue to take actions within her authorities, alongside our interagency partners, including the FBI, to support ensuring the integrity of our elections.",
+      "note": "Statement from an ODNI spokesperson (issued for her office, not her own voice), reported by Nextgov. About general election integrity work; says nothing on ID or citizenship.",
+      "subjects": [
+        "election integrity (general)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:41:34.756Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f6292e66381cb72aafe251e058242eb8526668addbaee96fb73f5bca7ff18485",
+      "kind": "own-words",
+      "url": "https://www.wpxi.com/news/politics/18th-district-race/with-18th-district-special-election-looming-voting-security-under-scrutiny/712497342/",
+      "date": "2018-03-07",
+      "date_precision": "day",
+      "passage": "Whether you’re protecting against hackers or those who are just questioning the outcomes of the election, you have a secure, auditable paper record of every single vote that’s cast,” said Gabbard.",
+      "note": "Quoted by WPXI while she was a House member, about her bill to replace paper-less voting machines or add a verified paper backup. Not about ID or citizenship; saved as related election-security material. Publish date taken from the page's metadata.",
+      "subjects": [
+        "voting machines and paper ballots (related)",
+        "election integrity (general)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:41:34.756Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "daf396dc2011c6465167797e0e86791c9fc570fbd09683a31266eb021d1905e7",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/115th-congress/house-joint-resolution/40",
+      "date": "2017-02-02",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-40-2017",
+      "act": "nay",
+      "motion": "On Passage (Roll 77)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 77), 2017-02-02: nay (tally 235–180); census gate: none.",
+      "subjects": [
+        "rule sending records to gun background check system overturned"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HJRES-40-2017.htm",
+          "sha256": "616db93c5dbc0f8d42ff56878c6d7302412f4feaade1ac2794ac4020fae05e55"
+        }
+      }
+    },
+    {
+      "id": "d8b25189c98d0bb21c14bbe54ee926e7c77880f0e0f743616e973130245306ee",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/116th-congress/house-bill/1112",
+      "date": "2019-02-28",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1112-2019",
+      "act": "yea",
+      "motion": "On Passage (Roll 103)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 103), 2019-02-28: yea (tally 228–198); census gate: none.",
+      "subjects": [
+        "gun sale proceeds after 10 business days if background check pending and buyer petitions",
+        "renamed 'mental defective' category in gun prohibitions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1112-2019.htm",
+          "sha256": "d817cf452544898f788a74fb237b88aa4118eba8faf5f27c87a6b4a3553c0657"
+        }
+      }
+    },
+    {
+      "id": "47c366f203ce98320481a330d1d875c58d608bc4ba0ff068d88e6c5231a10b69",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/115th-congress/house-bill/1181",
+      "date": "2017-03-16",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1181-2017",
+      "act": "yea",
+      "motion": "On Passage (Roll 169)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 169), 2017-03-16: yea (tally 240–175); census gate: none.",
+      "subjects": [
+        "VA incompetence finding alone cannot block gun purchase"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1181-2017.htm",
+          "sha256": "16ac8058d73137cfefc981316ca66ecbcdedd11533be8975a8b95aed6f3ebd85"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote",
+        "election integrity"
+      ],
+      "places": [
+        "status: not a 2026 candidate and not a sitting member of Congress. Her House term (Hawaii 2nd district) ended January 3, 2021; she served as Director of National Intelligence from February 12, 2025 and resigned effective June 19, 2026 (page: https://en.wikipedia.org/wiki/Tulsi_Gabbard). Out of scope, so subject search stopped.",
+        "On the Record (0 appearances for this politician id)",
+        "web search: not run, session search budget used up",
+        "not reviewed: official site, congress.gov, Ballotpedia (stopped at scope check)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:15:27.526Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "election integrity (general)",
+        "voting machines and paper ballots (related)"
+      ],
+      "places": [
+        "status: not a sitting member of Congress; sources show Tulsi Gabbard as Director of National Intelligence in 2026 (https://www.nextgov.com/people/2026/02/gabbards-expanded-role-election-security-draws-scrutiny/411295); she served in Congress for Hawaii's 2nd District until 2021. Not on any 2026 ballot found.",
+        "On the Record (0 appearances)",
+        "https://gvwire.com/2026/02/05/us-spy-chiefs-office-investigated-voting-machines-in-puerto-rico/ (only statements from her office, nothing from her on ID or citizenship)",
+        "web searches on name plus voter ID, citizenship, election integrity, paper ballots: no statement or bill by her on voter ID or proof of citizenship found",
+        "not reviewed: congress.gov bill list, official ODNI press page, social media posts, April 2025 cabinet meeting transcript"
+      ],
+      "found": 2,
+      "at": "2026-10-27T14:41:34.756Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

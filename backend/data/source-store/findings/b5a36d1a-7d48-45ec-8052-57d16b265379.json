@@ -1,0 +1,111 @@
+{
+  "politician_id": "b5a36d1a-7d48-45ec-8052-57d16b265379",
+  "findings": [
+    {
+      "id": "4618de0eac32671aae6982b7f7b988877fd3112887043bb6f88d6119c138de3d",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "M11 Concur (House concurrence in the Senate committee substitute), Roll Call #801, passed 62-47",
+      "note": "The roll call transcript lists Zenger among the Ayes on House concurrence in HB 958, Election Law Changes. The ratified bill (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) says a county board processes a voter registration application only if it affirmatively indicates the applicant is a United States citizen, with a 30-day notice and a statement under penalty of perjury if the answer is blank. It also requires a process to remove voters flagged as possible non-citizens by a federal database. The bill page shows the Governor vetoed it on 2026-08-17.",
+      "subjects": [
+        "citizenship statement on voter registration",
+        "non-citizen voting and voter-roll removal",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:06:23.095Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter procedures",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Jeff_Zenger) says he represents NC House District 74 and is on the Nov 3, 2026 general-election ballot; his March 3, 2026 primary was canceled and he advanced unopposed",
+        "On the Record (0 appearances, 0 sources)",
+        "campaign site https://www.jeffzenger.com (home page only, nothing on the subject)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/H/775 (confirms Representative Jeff Zenger)",
+        "NC General Assembly introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/H/775 (no bill of his on the subject; the election-related ones are an Election Day holiday bill, H31, and an AI bill, H934)",
+        "NC General Assembly bill page and roll call for HB 958 (2025-2026)",
+        "Ballotpedia (no issue positions on the subject)",
+        "not reviewed: news search on his name plus subject words (web search budget used up for the session)",
+        "not reviewed: official ncleg press releases, social media, committee video (no own-words item found; no search available)",
+        "blocked: https://www.zengerfornc.com (no response)"
+      ],
+      "found": 1,
+      "at": "2026-10-23T00:06:23.095Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "where college students may vote (residency)",
+        "election bills in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "NC legislature library page listing the bills he primary-sponsored (https://library.ncleg.gov/Members/IntroducedBills/H/775): confirms NC House District 74 member; no bill on voter ID, ballots or citizenship; election-related titles are HB 31 (election day holiday) and HB 144 (State Board of Elections chair), neither saved as they are not about ID or citizenship",
+        "Wikipedia page (confirms NC House District 74 since 2021; 2026 candidacy not stated)",
+        "news search on name plus voter ID: no own words on ID",
+        "an NC Newsline-based article of 2023-09 had his words on college students voting in local elections; not saved, as it is about residency and not ID",
+        "Ballotpedia: fetched, returned no content",
+        "vote already listed on file for S 921 (2023) not collected again",
+        "nothing on the subject beyond the above"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:58:24.346Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

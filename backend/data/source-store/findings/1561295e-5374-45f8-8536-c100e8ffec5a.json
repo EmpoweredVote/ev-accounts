@@ -1,0 +1,91 @@
+{
+  "politician_id": "1561295e-5374-45f8-8536-c100e8ffec5a",
+  "findings": [
+    {
+      "id": "b743571b63821aa0b7232788af736b657a9cd31f4e8b7d010f6ac53133315574",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Bazemore'), linked to DEBRA BAZEMORE (district 63) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.397Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "651594353ed38a5127fce94793e8d3d68b610222c415888c846e1c920f596135",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Bazemore'), linked to DEBRA BAZEMORE (district 63) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.397Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "SB 202 vote",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia: https://ballotpedia.org/Debra_Bazemore (confirms sitting House District 69 member, advanced from the 2026-05-19 primary, on the 2026-11-03 general ballot; no survey answers on file; nothing on the subject)",
+        "blocked: https://www.legis.ga.gov/legislation/60763 (official bill pages load only through a login-token API that returns 401; SB 202 roll-call votes and sponsorship lists could not be read)",
+        "blocked: https://legiscan.com/GA/rollcall/SB202/id/1023895 (403)",
+        "blocked: https://justfacts.votesmart.org/bills/GA/2021/12/ (403)",
+        "blocked: https://atlantaprogressivenews.com/?p=8691 (2016 candidate questionnaire; server refused the connection, so no passage could be read or cited)",
+        "branch.vote 2026 profile (says her site has no voting information; summary only, not citable)",
+        "wevoteproject profile (biography and committees, nothing on the subject)",
+        "two news and web searches on name plus subject words (nothing citable found)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:42:51.206Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T20:51:14.397Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

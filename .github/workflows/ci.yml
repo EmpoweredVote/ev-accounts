@@ -228,6 +228,17 @@ jobs:
       - name: Unit tests
         run: npm run test:unit
 
+      # Rides this job because it needs node_modules (it imports pg through the check it drives)
+      # but no DATABASE_URL — so unlike the live check it also runs on PRs and on forks.
+      #
+      # It proves that a FAIL in the seating verdicts actually reaches the exit code, which the
+      # unit tests on their own cannot say. The two DDL tampers it replays were performed against
+      # production once, inside BEGIN/ROLLBACK, and are written up in the control's header: a
+      # verdict nobody has watched fail is not a gate.
+      - name: Seating invariant control (verdicts reach the exit code)
+        if: ${{ !cancelled() }}
+        run: npm run check:seating:control
+
   static-guards:
     name: static guards
     runs-on: ubuntu-latest
@@ -588,6 +599,42 @@ jobs:
       - name: Check Census TIGER layers against the vintage they claim
         if: ${{ !cancelled() }}
         run: npm run check:tiger-fidelity
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      # The two seating invariants CC_0338 and CC_0341 depend on and do not check themselves.
+      # CC_0338 ships NO post-verify gate, and its own header calls its DROP load-bearing: a
+      # DROP whose signature does not match fails SILENTLY, CREATE OR REPLACE then leaves an
+      # OVERLOAD, and every 4-argument call site fails "function is not unique" at runtime.
+      # CC_0341 has a gate, but both assertions are tautologies of the view definition
+      # (a DISTINCT ON view cannot return two rows per key) so neither can ever fire.
+      #
+      # 🔴 NEITHER MIGRATION CAN BE AMENDED TO CARRY THIS — both are applied, migrations here run
+      # once by hand and are never replayed, so a gate added to an applied file executes nowhere.
+      # A daily check is also stronger than a one-shot gate, because the drift that matters here
+      # happens AFTER the migration: terms start and end on their own dates, with no commit.
+      #
+      # Rides this job for the same reasons as the two above: same live DB, same non-PR trigger,
+      # same npm ci already paid for. Skips itself green without DATABASE_URL and says so.
+      - name: Check the seating helper and next-term view still hold
+        if: ${{ !cancelled() }}
+        run: npm run check:seating
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      # 🔴 THE RECONCILER SHIPPED RUNNING NOWHERE. It was built, tested and controlled while
+      # nothing invoked it, so incumbency drift would have accumulated silently again — the one
+      # thing it exists to stop. politicians.is_incumbent and race_candidates.is_incumbent are
+      # CACHED, nothing recomputes them, and terms start and end on their own dates with no
+      # commit involved, so this is drift that happens with nobody touching the repo.
+      #
+      # ⚠ REPORTS, NEVER WRITES. Correcting a drifted row means deciding what that row IS, and
+      # the first measurement of this reported 429 rows of which only 9 were real — an automatic
+      # --apply on a schedule would have published 22 Senate CANDIDATES as sitting incumbents
+      # (CC_0342). The job going red is a prompt to read rows, not to run --apply.
+      - name: Check incumbency has not drifted from office_terms
+        if: ${{ !cancelled() }}
+        run: npm run check:incumbency
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 

@@ -20,6 +20,23 @@ import { supabaseAdmin } from '../lib/supabase.js';
  * Returns 403 if the user is not in admin_users table.
  *
  * Usage: router.use(requireAuth, requireAdmin)
+ *
+ * 🔴 "NOT AN ADMIN" AND "COULD NOT ASK" ARE TWO ANSWERS, NOT ONE. postgrest-js RESOLVES on a
+ * transport or query failure — it puts the fetch error in `error` rather than throwing, unless
+ * throwOnError is set — so `if (error || !data)` used to collapse a Supabase outage into
+ * `403 Admin access required`. That is fail-closed, so it was never a hole; it was a
+ * misdiagnosis. An admin was told they are not one and sent to ask for a role they already
+ * hold, at the exact moment the platform could least afford a second wrong turn.
+ *
+ * `.maybeSingle()` makes the split clean: zero rows is `data: null, error: null`, so a non-null
+ * `error` really does mean the question could not be asked. That case is now 503 with its own
+ * code, which says "try again" rather than "you do not have this".
+ *
+ * Callers that invoke this manually (src/routes/compass.ts, src/routes/connect.ts) branch on
+ * `res.headersSent` and are unaffected. src/focused_communities/routes/claimCuration.ts reads
+ * the STATUS back off a sink to tell the two apart — it is the one caller for which the
+ * difference changes the answer, because its guard is "maven OR admin" and a 403 from this half
+ * is an ordinary, expected outcome there.
  */
 export async function requireAdmin(
   req: Request,
@@ -33,7 +50,13 @@ export async function requireAdmin(
     .eq('user_id', authReq.userId)
     .maybeSingle();
 
-  if (error || !data) {
+  if (error) {
+    console.error('[requireAdmin] admin_users lookup failed:', error.message);
+    res.status(503).json({ error: 'Could not verify admin access' });
+    return;
+  }
+
+  if (!data) {
     res.status(403).json({ error: 'Admin access required' });
     return;
   }

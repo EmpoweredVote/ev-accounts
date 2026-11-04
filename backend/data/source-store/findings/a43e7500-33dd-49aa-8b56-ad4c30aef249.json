@@ -1,0 +1,29 @@
+{
+  "politician_id": "a43e7500-33dd-49aa-8b56-ad4c30aef249",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "carry permits",
+        "who may own a gun",
+        "general gun rights statement"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://ivoterguide.com/candidate/93312/race/32306/election/1471 (gun question unanswered)",
+        "web search on name plus gun words (nothing on the subject)",
+        "campaign site: not found by search",
+        "Ballotpedia survey page: not reviewed (not fetched)",
+        "no prior federal office, so no sponsorships"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:01:01.160Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "politician_id": "6b74ee91-be71-47f3-a292-060384491295",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "carry permits",
+        "general gun-safety and Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status: 2026 no-party candidate for U.S. House, Florida District 28, on the November 3 ballot; confirmed on https://theballotbrief.com/candidate/eddy-rojas-fl",
+        "campaign site https://www.eddyrojas.com: home, about, issues page /events-1 (a Safe Communities section on police, borders and prevention programs; nothing on guns)",
+        "The Ballot Brief https://theballotbrief.com/candidate/eddy-rojas-fl (nothing on the subject)",
+        "blocked: https://bluevoterguide.org/FL/candidate_Eddy_Rojas/562195?lang=es (403)",
+        "blocked: https://bluevoterguide.org/es/endorser-org/Gun_Sense_Voter/FL/4895 (403; a search result placed his name under a gun-sense voter group, meaning unconfirmed)",
+        "no legislative record, so no sponsorship list applies; Ballotpedia not fetched (returns empty; search result says he has not filled in its survey)",
+        "web search x2: nothing from his own words on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-30T22:47:15.684Z",
+      "by": "source-collector"
+    }
+  ]
+}

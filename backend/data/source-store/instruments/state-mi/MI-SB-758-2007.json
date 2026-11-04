@@ -1,0 +1,68 @@
+{
+  "id": "MI-SB-758-2007",
+  "scope": "state:mi",
+  "title": "SB 758 (2007-2008 Regular Session, Michigan Legislature (bill page title: \"Senate Bill 758 of 2007\")): Elections; voters; photo identification or affidavit required before being given a ballot at an election; eliminate. Amends sec. 523 of 1954 PA 116 (MCL 168.523 ).",
+  "urls": [
+    "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2007-SB-0758",
+    "https://www.legislature.mi.gov/documents/2007-2008/billintroduced/Senate/htm/2007-SIB-0758.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 523(1) (language STRUCK by this bill, i.e. repealed; read from the strike-through in the introduced text)\n(quote) by presenting an official state identification card issued to that individual pursuant to Act No. 222 of the Public Acts of 1972, being sections 28.291 to 28.295 of the Michigan Compiled Laws, an operator's or chauffeur's license issued to that individual pursuant to the Michigan vehicle code, Act No. 300 of the Public Acts of 1949, being sections 257.1 to 257.923 of the Michigan Compiled Laws, or other generally recognized picture identification card and\n(section) Sec. 523(1) (language STRUCK by this bill, i.e. repealed)\n(quote) If the elector does not have an official state identification card, operator's or chauffeur's license as required in this subsection, or other generally recognized picture identification card, the individual shall sign an affidavit to that effect before an election inspector and be allowed to vote as otherwise provided in this act. However, an elector being allowed to vote without the identification required under this subsection is subject to challenge as provided in section 727.\n(other) Sec. 523: begins \"(1) At each election, before being given a ballot, each registered elector offering to vote shall identify himself or herself by e\"",
+  "sponsors": [
+    {
+      "name": "Deborah Cherry (District 26)",
+      "role": "prime",
+      "version": "Text file header as saved: \"SENATE BILL No. 758 September 11, 2007, Introduced by Senators CHERRY, SCOTT, OLSHOVE, BASHAM, WHITMER, CLARKE, SWITALSK\""
+    },
+    {
+      "name": "Martha Scott (District 2)",
+      "role": "co",
+      "version": "Text file header as saved: \"SENATE BILL No. 758 September 11, 2007, Introduced by Senators CHERRY, SCOTT, OLSHOVE, BASHAM, WHITMER, CLARKE, SWITALSK\""
+    },
+    {
+      "name": "Dennis Olshove (District 9)",
+      "role": "co",
+      "version": "Text file header as saved: \"SENATE BILL No. 758 September 11, 2007, Introduced by Senators CHERRY, SCOTT, OLSHOVE, BASHAM, WHITMER, CLARKE, SWITALSK\""
+    },
+    {
+      "name": "Raymond Basham (District 8)",
+      "role": "co",
+      "version": "Text file header as saved: \"SENATE BILL No. 758 September 11, 2007, Introduced by Senators CHERRY, SCOTT, OLSHOVE, BASHAM, WHITMER, CLARKE, SWITALSK\""
+    },
+    {
+      "name": "Gretchen Whitmer (District 23)",
+      "role": "co",
+      "version": "Text file header as saved: \"SENATE BILL No. 758 September 11, 2007, Introduced by Senators CHERRY, SCOTT, OLSHOVE, BASHAM, WHITMER, CLARKE, SWITALSK\""
+    },
+    {
+      "name": "Hansen Clarke (District 1)",
+      "role": "co",
+      "version": "Text file header as saved: \"SENATE BILL No. 758 September 11, 2007, Introduced by Senators CHERRY, SCOTT, OLSHOVE, BASHAM, WHITMER, CLARKE, SWITALSK\""
+    },
+    {
+      "name": "Michael Switalski (District 10)",
+      "role": "co",
+      "version": "Text file header as saved: \"SENATE BILL No. 758 September 11, 2007, Introduced by Senators CHERRY, SCOTT, OLSHOVE, BASHAM, WHITMER, CLARKE, SWITALSK\""
+    },
+    {
+      "name": "Samuel Thomas (District 4)",
+      "role": "co",
+      "version": "Text file header as saved: \"SENATE BILL No. 758 September 11, 2007, Introduced by Senators CHERRY, SCOTT, OLSHOVE, BASHAM, WHITMER, CLARKE, SWITALSK\""
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T19:30:00Z)",
+    "fetched_at": "2026-10-28T19:30:00Z",
+    "method": "curl"
+  }
+}

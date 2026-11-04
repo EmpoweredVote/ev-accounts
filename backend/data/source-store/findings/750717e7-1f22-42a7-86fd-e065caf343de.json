@@ -1,0 +1,467 @@
+{
+  "politician_id": "750717e7-1f22-42a7-86fd-e065caf343de",
+  "findings": [
+    {
+      "id": "97ffe191c8ba3b5bde8cbdd52e7115aa33c265efd413c33580389c038f08ad21",
+      "kind": "own-words",
+      "url": "https://www.cantwell.senate.gov/news/press-releases/cantwell-joins-state-and-king-county-leaders-to-warn-of-proposed-barriers-to-voting",
+      "date": "2026-02-19",
+      "date_precision": "day",
+      "passage": "\"The House of Representatives passing the SAVE [America] Act by a very narrow margin is going to cost America,\" said Sen. Cantwell.",
+      "note": "Quoted in her own press release about a Feb. 19, 2026 event in Seattle. She says the Senate should not pass the SAVE America Act, which the release describes as requiring a passport or birth certificate, in person, to register or change a registration. Release posted 2026-02-20; event date used.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:10:14.366Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9c6974abbaf0aa19f97949dcec7bc97dc6471d663c2c8f47d70d6b3588987494",
+      "kind": "own-words",
+      "url": "https://www.cantwell.senate.gov/news/press-releases/cantwell-statement-on-vote-against-trojan-horse-extreme-voter-id-bill",
+      "date": "2026-10-01",
+      "date_precision": "day",
+      "passage": "“Yesterday, we voted down yet another bill that would attack voting rights and vote-by-mail. Republicans used a weak, loophole-filled anti-corruption bill as a Trojan Horse in order to shove through extreme new voter ID rules that would interfere with mail-in voting and disenfranchise Americans, particularly tribal members and students.”",
+      "note": "Statement issued in her name after the Senate vote of Sept. 30, 2026 on an ethics and stock-trading bill that carried voter ID provisions. She voted against it and says the voter ID rules would affect mail-in voting, tribal members and students.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "voter ID attached to unrelated bill"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:10:14.366Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2320fadd73f37566a9203a54f92a9d9cbe6e150bce0578626992f16db7cc0bc1",
+      "kind": "own-words",
+      "url": "https://www.cantwell.senate.gov/news/press-releases/cantwell-joins-democratic-colleagues-in-demanding-dhs-and-ssa-uphold-federal-law-rather-than-president-trumps-illegal-executive-order-to-limit-voting",
+      "date": "2026-05-01",
+      "date_precision": "day",
+      "passage": "“The Department should immediately discontinue the SAVE program’s use for these illegal and non-statutory purposes and take no steps pursuant to the Executive Order that violate the law and risk disenfranchising eligible voters,”",
+      "note": "Closing line of a letter to DHS that she joined with 27 other senators. The letter objects to using the federal SAVE citizenship-check database for voter-roll maintenance under a March 31 executive order, citing wrongly flagged citizens. Release dated 2026-05-01; the letter itself is undated on the page.",
+      "subjects": [
+        "voter-roll citizenship checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:10:14.366Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "14c522c563203765a793ad3dbfcf4b81eb046653bc4d780953d1019dac6a824b",
+      "kind": "record",
+      "url": "https://www.cantwell.senate.gov/news/press-releases/cantwell-statement-on-vote-against-trojan-horse-extreme-voter-id-bill",
+      "date": "2026-09-30",
+      "date_precision": "day",
+      "act": "nay",
+      "motion": "Senate vote against advancing a partisan stock-trading ethics bill that included voter identification provisions (bill number and roll-call number not given on the page)",
+      "note": "Her press release says the Senate voted against advancing the bill on Sept. 29-30, 2026 ('Yesterday' in a release dated 2026-10-01) and that she voted against it. Bill number not stated on the page; the vote date is inferred from the release.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:10:14.366Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a1a29c543c9857835a33991bc54ad9b4415da70bbb9feaaf8b3c048b50dd80d2",
+      "kind": "own-words",
+      "url": "https://capitolreleases.com/releases/de57cf86-3fe2-458f-a44a-815874b74a93",
+      "date": "2026-02-19",
+      "date_precision": "day",
+      "passage": "The House of Representatives passing the SAVE [America] Act by a very narrow margin is going to cost America,\" said Sen. Cantwell. \"It will cost Washingtonians time and money, and it may even cost them their vote. That is why we are trying to say the Senate should not pass the SAVE [America] Act.",
+      "note": "Says the Senate should not pass the SAVE America Act, at a Seattle event on 2026-02-19. Quoted in her Senate office press release of 2026-02-20, which I read as a repost on capitolreleases.com because cantwell.senate.gov returned Access Denied.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:04:27.548Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b05f136fa9b845129c36ab707e08f8ec30d527de1e4a774201dc8acc46bb593",
+      "kind": "own-words",
+      "url": "https://capitolreleases.com/releases/de57cf86-3fe2-458f-a44a-815874b74a93",
+      "date": "2026-02-19",
+      "date_precision": "day",
+      "passage": "This bill would ... force every voter who needs to register or change their registration to go in person to an election office and show a birth certificate or a passport or proof of citizenship,\" said Sen. Cantwell. \"Why are we putting these burdens on Washington voters? About 40% of Washingtonians don't have a passport.",
+      "note": "Describes the bill's document requirement to register and objects to its burden, citing passport ownership in Washington. Quoted in her Senate office press release of 2026-02-20, which I read as a repost on capitolreleases.com because cantwell.senate.gov returned Access Denied.",
+      "subjects": [
+        "proof of citizenship to register",
+        "documents needed to register",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:04:27.548Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "42132d77394c42eef91385eb3781a78e2f27584bdd31cd87e4376e3fd4b453fd",
+      "kind": "record",
+      "url": "https://www.congress.gov/119/crec/2026/03/17/172/48/CREC-2026-03-17.pdf",
+      "date": "2026-03-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "Rollcall Vote No. 57: motion to proceed, Safeguard American Voter Eligibility Act (House message to accompany S. 1383)",
+      "note": "Congressional Record shows Cantwell among the 48 nays on the Senate motion to proceed to the SAVE America Act (S. 1383 House message); the motion carried 51-48. Page text: 'The result was announced--yeas 51, nays 48.' The SAVE America Act is described in her press release as requiring a passport or birth certificate to register.",
+      "subjects": [
+        "proof of citizenship to register",
+        "photo ID at the polls",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:04:27.548Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d7675ba70c37b1ef2180d4ca25b67dd2d45fc2291a4b89110e9b23a9af40ba0b",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-117s2938enr/html/BILLS-117s2938enr.htm",
+      "date": "2022-06-23",
+      "date_precision": "day",
+      "instrument_id": "US-S-2938-2022",
+      "act": "yea",
+      "motion": "Motion to Concur in the House amendment to S. 2938 with an amendment (Amdt. No. 5099)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US Senate, Motion to Concur in the House amendment to S. 2938 with an amendment (Amdt. No. 5099), 2022-06-23: yea (tally 65–33); census gate: multi-subject.",
+      "subjects": [
+        "background checks for buyers under 21",
+        "court orders that take guns from a dangerous person (state grants)",
+        "gun trafficking (package)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c20fcb96eb78e01ead82694ac19d878a311409fb4bbbe34cb7a90636662f5d55",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2023252",
+      "date": "2023-06-22",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-44-2023",
+      "act": "nay",
+      "motion": "On the Joint Resolution (H.J. Res. 44)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Joint Resolution (H.J. Res. 44), 2023-06-22: nay (tally 49–50); census gate: none.",
+      "subjects": [
+        "cancel the federal pistol-brace rule"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-118hjres44eh.txt",
+          "sha256": "d04fe1fe2a2512a1932d14b7b93d88fe25ac6712851bc4caa37df31b89101f4d"
+        }
+      }
+    },
+    {
+      "id": "5ad2aa68bfbab048a12d5be66f21722454b3313fb30f46f1745edde9ea11774a",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2024/https://www.senate.gov/legislative/LIS/roll_call_votes/vote1131/vote_113_1_00097.htm",
+      "date": "2013-04-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-649-SAMDT-715-2013",
+      "act": "yea",
+      "motion": "On the Amendment (Manchin Amdt. No. 715) to S. 649 (Safe Communities, Safe Schools Act of 2013)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Amendment (Manchin Amdt. No. 715) to S. 649 (Safe Communities, Safe Schools Act of 2013), 2013-04-17: yea (tally 54–46); census gate: none.",
+      "subjects": [
+        "background checks at gun shows and online sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/CREC-2013-04-11-senate.pdf",
+          "sha256": "5cbf6123ec6d0ee19de0b8748333db8dffcc46d276dd1e80d1692c182b9872fb"
+        }
+      }
+    },
+    {
+      "id": "2aee36e893bb5474cd8d242d7254f09f95571ddd55e723aaadb01a3471855a68",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2024/https://www.senate.gov/legislative/LIS/roll_call_votes/vote1131/vote_113_1_00100.htm",
+      "date": "2013-04-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-649-SAMDT-719-2013",
+      "act": "nay",
+      "motion": "On the Amendment (Cornyn Amdt. No. 719) to S. 649 (Safe Communities, Safe Schools Act of 2013)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Amendment (Cornyn Amdt. No. 719) to S. 649 (Safe Communities, Safe Schools Act of 2013), 2013-04-17: nay (tally 57–43); census gate: none.",
+      "subjects": [
+        "honor carry permits from other states"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/CREC-2013-04-17-senate.pdf",
+          "sha256": "40bb495c367c32e142f8ea953accada60d7a67c47296fcd8b7dd71b653ef3a69"
+        }
+      }
+    },
+    {
+      "id": "eb805d1472aefe4f67f8f60732d337732931be70ca8fa4a251d020168a076081",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2024/https://www.senate.gov/legislative/LIS/roll_call_votes/vote1131/vote_113_1_00101.htm",
+      "date": "2013-04-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-649-SAMDT-711-2013",
+      "act": "yea",
+      "motion": "On the Amendment (Feinstein Amdt. No. 711) to S. 649 (Safe Communities, Safe Schools Act of 2013)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Amendment (Feinstein Amdt. No. 711) to S. 649 (Safe Communities, Safe Schools Act of 2013), 2013-04-17: yea (tally 40–60); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns",
+        "large magazine limit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/CREC-2013-04-11-senate.pdf",
+          "sha256": "5cbf6123ec6d0ee19de0b8748333db8dffcc46d276dd1e80d1692c182b9872fb"
+        }
+      }
+    },
+    {
+      "id": "c90bdbcf78bf71ec4d53648b4f8ebe188ca331c8dd00e4aa90ea8f004b52d94a",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2025190",
+      "date": "2025-07-01",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2025",
+      "act": "nay",
+      "motion": "On Passage of the Bill (H.R. 1, as Amended)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US Senate, On Passage of the Bill (H.R. 1, as Amended), 2025-07-01: nay (tally 50–50); census gate: multi-subject.",
+      "subjects": [
+        "end the federal tax on suppressors and short-barrelled guns",
+        "budget (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bd995a1e3dcb680b70cd621d4f6b5164604a5bb6d3a92c8170d6bb68a529fb9",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/115th-congress/house-joint-resolution/40",
+      "date": "2017-02-15",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-40-2017",
+      "act": "nay",
+      "motion": "Passed Senate without amendment by Yea-Nay Vote. 57 - 43. Record Vote Number: 66 (Roll 66)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, Passed Senate without amendment by Yea-Nay Vote. 57 - 43. Record Vote Number: 66 (Roll 66), 2017-02-15: nay (tally 57–43); census gate: none.",
+      "subjects": [
+        "rule sending records to gun background check system overturned"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HJRES-40-2017.htm",
+          "sha256": "616db93c5dbc0f8d42ff56878c6d7302412f4feaade1ac2794ac4020fae05e55"
+        }
+      }
+    },
+    {
+      "id": "7b0ece74e62d90b736e118101b5ca4d4a3d5365e9a5c7049fec2dae5e9351c9e",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/117th-congress/senate-bill/3623",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "US-S-3623-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2022-03-10",
+      "note": "co sponsor of US-S-3623-2022 (cosponsor 2022-03-10): S 3623 (117th Congress): Violence Against Women Act Reauthorization Act of 2022.",
+      "subjects": [
+        "failed gun background checks reported to state and tribal police within 24 hours",
+        "special prosecutors for domestic-violence gun prohibitions",
+        "annual report on background check denials"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-S-3623-2022.htm",
+          "sha256": "419c00ae6f2e6419ac37d5acb435277d30262291fcc4f6029d92a54840724e31"
+        }
+      }
+    },
+    {
+      "id": "bc4d8c5d394b8fd0c6878c21f7d001c7298234610622b0e0bfaf94d9ab462625",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/senate-bill/494",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "US-S-494-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2023-02-16",
+      "note": "co sponsor of US-S-494-2023 (cosponsor 2023-02-16): S 494 (118th Congress): Background Check Expansion Act.",
+      "subjects": [
+        "background check required for private firearm sales and transfers",
+        "dealer notice and certification form"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-S-494-2023.htm",
+          "sha256": "0eaaa7cc5526464d22459d097de221fb72ed82b50625475b2294e52829e78e63"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "documentary proof of citizenship to register (SAVE America Act)",
+        "voter-roll citizenship checks (SAVE database)",
+        "mail-ballot rules",
+        "election integrity"
+      ],
+      "places": [
+        "status: sitting U.S. Senator (WA), confirmed by cantwell.senate.gov pages naming her; not on the 2026 ballot (not reviewed: no page fetched on her term)",
+        "On the Record (0 meetings)",
+        "official site cantwell.senate.gov: site search for 'SAVE Act', 'election integrity', 'voter ID' (result lists read; 4 press releases fetched, 3 cited)",
+        "nothing on the subject: https://www.cantwell.senate.gov/news/press-releases/cantwell-defends-voting-rights-on-the-senate-floor-highlights-success-of-washington-state-vote-by-mail-business-leader-support (2022 floor remarks on voting rights and vote-by-mail; mentions voter ID only as background text of the release)",
+        "blocked: https://ballotpedia.org/Maria_Cantwell (fetch returned blank page)",
+        "not reviewed: https://www.congress.gov (sponsorships and roll-call pages not fetched)",
+        "not reviewed: https://www.senate.gov/legislative/LIS/roll_call_lists/vote_menu_119_2.htm (only a tool summary seen, not citable; the Sept. 30, 2026 vote has no roll-call number or bill number from a primary page)",
+        "not reviewed: further cantwell.senate.gov press releases from the search lists (for example 'Response to Trump's Prime Time Speech Attacking Election Integrity'; 'Cantwell Statement on SCOTUS Decision Enabling Trump Admin to Restrict Mail-In Ballots')",
+        "not reviewed: news search on name plus subject words (shared web-search budget was used up)"
+      ],
+      "found": 4,
+      "at": "2026-10-22T22:10:14.366Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SAVE America Act",
+        "ID with mail ballot",
+        "vote-by-mail",
+        "voter-roll checks"
+      ],
+      "places": [
+        "confirmed identity: Congressional Record page names Sen. Cantwell in the 2026-03-17 roll call; sitting Senator for Washington, not on the 2026 ballot (term runs to 2030)",
+        "On the Record (0 appearances)",
+        "Congressional Record 2026-03-17 (congress.gov) roll call 57",
+        "Congressional Record 2026-03-17 roll call 56 and 2026-03-20 roll call 59 reviewed: not SAVE America Act motions (a nomination and an appropriations bill), not saved",
+        "capitolreleases.com repost of 2026-02-20 office press release",
+        "blocked: https://www.cantwell.senate.gov (Access Denied on press releases and transcripts, including the 2026-03-17 and 2026-02-24 and 2026-02-19 transcripts)",
+        "blocked: https://www.senate.gov roll call pages (unauthorized)",
+        "blocked: https://www.govtrack.us and https://justfacts.votesmart.org (403)",
+        "not reviewed: Ballotpedia and the 2026-06 and 2026-08 office statements on vote-by-mail and the court ruling"
+      ],
+      "found": 3,
+      "at": "2026-10-27T20:04:27.548Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

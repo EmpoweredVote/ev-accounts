@@ -1,0 +1,58 @@
+{
+  "id": "WI-SB-499-2017",
+  "scope": "state:wi",
+  "title": "SB 499 (2017-2018 Wisconsin Legislature, regular session): allowing an elector to use an affidavit as proof of identification to vote.",
+  "urls": [
+    "https://docs.legis.wisconsin.gov/2017/proposals/sb499",
+    "https://docs.legis.wisconsin.gov/document/proposaltext/2017/REG/SB499"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) s. 5.02 (6m) (h) (new): affidavit as proof of identification\n(quote) 5.02 (6m) (h) An affidavit executed by the elector affirming the elector's identity.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) s. 343.50 (5) (a) 1. as amended (ID card fee)\n(quote) Except as provided in subd. 2., the fee for an original card, for renewal of a card, and for the reinstatement of an identification card after cancellation under sub. (10) shall be $18.\n(other) LRB analysis (printed with the bill): The bill also eliminates the requirement that the Department of Transportation provide an identification card without charge to any individual who wants the card for voting purposes.",
+  "sponsors": [
+    {
+      "name": "L. Taylor",
+      "role": "prime",
+      "version": "As introduced 10/27/2017; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/28/2018)"
+    },
+    {
+      "name": "Young",
+      "role": "co",
+      "version": "As introduced 10/27/2017; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/28/2018)"
+    },
+    {
+      "name": "Anderson",
+      "role": "co",
+      "version": "As introduced 10/27/2017; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/28/2018)"
+    },
+    {
+      "name": "Berceau",
+      "role": "co",
+      "version": "As introduced 10/27/2017; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/28/2018)"
+    },
+    {
+      "name": "Considine",
+      "role": "co",
+      "version": "As introduced 10/27/2017; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/28/2018)"
+    },
+    {
+      "name": "Hebl",
+      "role": "co",
+      "version": "As introduced 10/27/2017; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/28/2018)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T23:12:49Z)",
+    "fetched_at": "2026-10-28T23:12:49Z",
+    "method": "curl"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "AZ-HB-2369-2021",
+  "scope": "state:az",
+  "title": "HB 2369 (2021 - Fifty-fifth Legislature - First Regular Session (azleg session id 123)): early ballots; notarization; identification",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/74900",
+    "https://www.azleg.gov/legtext/55leg/1R/bills/HB2369P.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy)\n(section) Sec. 1: Section 16-547, Arizona Revised Statutes, is amended to read:\n(quote) I declare the following under penalty of perjury: At the registered voter's request I assisted the voter identified in this affidavit with marking the voter's ballot, I marked the ballot as directly instructed by the voter, I provided the assistance because the voter was physically unable to mark the ballot solely due to illness, injury or physical limitation and I understand that there is no power of attorney for voting and that the voter must be able to make their selection even if they cannot physically mark the ballot.\n(section) Sec. 2: Section 16-548, Arizona Revised Statutes, is amended to read: (para B)\n(quote) B. If the early voter is an overseas citizen, a qualified elector absent from the United States or in the United States service, a spouse or dependent residing with the early voter or a qualified elector of a special district mail ballot election as provided in article 8.1 of this chapter, the early voter may subscribe to the affidavit before and obtain the signature and military identification number or passport number, if available, of any person who is a United States citizen eighteen years of age or older.\n(c_mail_ballot_id)\n(section) Bill text\n(quote) REFERENCE TITLE: early ballots; notarization; identification\n(section) Sec. 2: Section 16-548, Arizona Revised Statutes, is amended to read: (para A)\n(quote) For a ballot that is delivered to a polling place or other location that is designated to receive voted early ballots, the voter shall present identification to the election board worker as prescribed by section 16-579, subsection A. If delivery by a voter's agent is allowed pursuant to section 16-1005, the voter's agent shall present to the election board worker the agent's identification that complies with section 16-579, subsection A. In order to be counted and valid, the ballot must be received by mail by the county recorder or other officer in charge of elections or delivered to any polling place in the county not later than 7:00 p.m. on election day, and if delivered, may only be accepted if the voter or voter's agent provides proper identification.\n(section) Sec. 2: Section 16-548, Arizona Revised Statutes, is amended to read: (para B)\n(quote) B. If the early voter is an overseas citizen, a qualified elector absent from the United States or in the United States service, a spouse or dependent residing with the early voter or a qualified elector of a special district mail ballot election as provided in article 8.1 of this chapter, the early voter may subscribe to the affidavit before and obtain the signature and military identification number or passport number, if available, of any person who is a United States citizen eighteen years of age or older.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec. 3: Section 16-1005, Arizona Revised Statutes, is amended to read:",
+  "sponsors": [
+    {
+      "name": "Kevin Payne",
+      "role": "prime",
+      "version": "HB2369P: as introduced (printed version)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

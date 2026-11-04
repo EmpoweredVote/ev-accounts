@@ -1,0 +1,270 @@
+{
+  "politician_id": "08a2dfdf-43fb-408a-b758-aa94497fd871",
+  "findings": [
+    {
+      "id": "c19ad6437e734ddf5bc5c2c42cca9771db548fc3dc8d5503d540427c366ff8a1",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall42.pdf",
+      "date": "2025-04-29",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4000-AMDT-409-2025",
+      "act": "yea",
+      "motion": "On adoption of amendment #409 (H.4000) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 42, On adoption of amendment #409 (H.4000) - failed, 2025-04-29: yea (tally 25–131); the sheet lists 'Gaskey'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "031da260f8e422347d5016f4a54a60c19a73e3efaba279ce2f337d18bdbfcb4e",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall174.pdf",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-5500-AMDT-1587-2026",
+      "act": "yea",
+      "motion": "On adoption of amendment #1587 (H.5500) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 174, On adoption of amendment #1587 (H.5500) - failed, 2026-04-28: yea (tally 27–131); the sheet lists 'Gaskey'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "eff3062a33ce764cb26f4cc3322a0b3e2923bed629971e2cc0551beab6c4fe94",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/GetAmendmentContent/194/H5500/1587/House/Content",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-5500-AMDT-1587-2026",
+      "act": "sponsor",
+      "note": "Added co-sponsor of Amendment #1587 to H.5500, 'An Act relative to identification to vote' (2026-04-28).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "d16c44ca605e34045d46da62288100515320bfe0227c663cca0fa667dd422269",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/S510/Cosponsor",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-S-510-2025",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of S.510, 'An Act relative to safe and secure elections' (referred 2025-02-27).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "16a5f8ace8386828259529c28cc9000db62ea294dd4e8aa9b1fd5e55e4827213",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H2618.Html",
+      "date": "2025-01-17",
+      "date_precision": "day",
+      "instrument_id": "MA-H-2618-2025",
+      "act": "author",
+      "note": "Filed by him as lead petitioner. H.2618 would repeal Chapter 135 of the Acts of 2024, the state's 2024 firearms law, in full. Referred to the Public Safety and Homeland Security committee.",
+      "subjects": [
+        "repealing gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:54:58.502Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bea480d2f8578180a6406c6327efb8db8b63dfe43812bb43df89bafbc8541a54",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H2620.Html",
+      "date": "2025-01-17",
+      "date_precision": "day",
+      "instrument_id": "MA-H-2620-2025",
+      "act": "author",
+      "note": "Filed by him as lead petitioner. H.2620, An Act repealing red flag laws, would repeal Section 19 and related definitions of Chapter 135 of the Acts of 2024 (the extreme-risk petition provisions).",
+      "subjects": [
+        "red flag or extreme risk orders",
+        "repealing gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:54:58.502Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a1bd808bb39465b6de6f7e6f0d7c1c6bcda6d513b8f93700964361acd42e262a",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/HD4389.Html",
+      "date": "2025-02-11",
+      "date_precision": "day",
+      "instrument_id": "MA-HD-4389-2025",
+      "act": "author",
+      "note": "Filed by him as lead petitioner (House docket 4389; bill page shows referral to the House Rules committee on 3/24/2025). An Act to repeal the ban on handgun ownership for adults age 18 through 20. Bill number not yet assigned on the page.",
+      "subjects": [
+        "minimum age to buy or carry",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:54:58.502Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bedcc3675363cb137cf4c2cf6474ee6e0cb15397117eda566f8b28935edd9a23",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H2716.Html",
+      "date": "2025-01-17",
+      "date_precision": "day",
+      "instrument_id": "MA-H-2716-2025",
+      "act": "sponsor",
+      "note": "Co-sponsorship: he is a co-petitioner (date added 1/17/2025) on H.2716, An Act to repeal expanded firearms bans; lead filer is Justin Thurber. It repeals Section 16 and Section 71 of Chapter 135 of the Acts of 2024 and amends the large-capacity firearm definition and section 131(a).",
+      "subjects": [
+        "ban on assault-style guns and large-capacity magazines",
+        "repealing gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:54:58.502Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: on the 2026 general-election ballot, 2nd Plymouth District (page: https://ballotpedia.org/John_Gaskey, fetched; also https://malegislature.gov/Legislators/Profile/JRG2)",
+        "On the Record (0 appearances; extract-otr.mjs run with name search)",
+        "official legislature profile and sponsored-bill list (https://malegislature.gov/Legislators/Profile/JRG2): nothing on the subject",
+        "campaign site https://www.johngaskey.com: nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: https://www.facebook.com/repjohngaskey",
+        "blocked: https://malegislature.gov/Search/Bills (404 on the bill search URL tried)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:59:18.104Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/John_Gaskey (incumbent, 2nd Plymouth District, won the 1 Sep 2026 primary, on the 3 Nov 2026 general-election ballot)",
+        "On the Record (0 appearances; extract-otr returned 0 sources)",
+        "campaign site https://www.johngaskey.com/ (nothing on the subject; issues listed are immigration, sanctuary status, shelters)",
+        "Ballotpedia (nothing on the subject; no Candidate Connection survey completed)",
+        "blocked: https://malegislature.gov/Legislators/Profile/JRG1 (timeout / HTTP 503)",
+        "blocked: https://malegislature.gov/Bills/194/H833 (HTTP 503; could not check cosponsors of the voter ID bill H833)",
+        "blocked: https://app.azure.legiplex.com/ma/legislature/2025/2025-r/bills/h833 (HTTP 403)",
+        "https://fastdemocracy.com/bill-search//ma/legislators/MAL000411 (sponsored-bill list not shown; nothing on the subject)",
+        "not reviewed: https://www.facebook.com/repjohngaskey (page returned no readable text)",
+        "news searches on name plus voter ID, SAVE Act, proof of citizenship, election integrity, mail ballot (nothing naming him on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T00:57:16.060Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or large-capacity magazines",
+        "check every gun buyer",
+        "minimum age to buy or carry",
+        "red flag / extreme risk orders",
+        "carry permits",
+        "repealing gun laws",
+        "general statements on gun rights and gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/JRG2 (confirms Representative John R. Gaskey of Carver, 2nd Plymouth)",
+        "sponsor list: covered by LegiScan bulk check (profile list still read; gun bills H.2618, H.2620, HD.4389 listed, H.2716 found by web search then fetched)",
+        "status: primary on 2026-09-01 appears won per search snippet of state election stats; not certified by me; still sitting",
+        "campaign site https://www.johngaskey.com/ and /press : nothing on the subject",
+        "Eagle-Tribune article https://www.eagletribune.com/news/boston/proposal-would-lower-firearm-purchase-age-to-18/article_d4dcf9fa-e898-11ef-a110-c7f70ad01262.html : no quotes from him, only describes his bill; not saved",
+        "Ballotpedia: not relied on (returns empty to the fetch tool)",
+        "news searches on name plus gun words: no interview or statement found beyond his bill texts"
+      ],
+      "found": 4,
+      "at": "2026-11-01T01:54:58.502Z",
+      "by": "source-collector"
+    }
+  ]
+}

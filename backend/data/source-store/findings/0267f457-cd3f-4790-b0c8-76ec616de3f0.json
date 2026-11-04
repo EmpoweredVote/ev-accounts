@@ -1,0 +1,226 @@
+{
+  "politician_id": "0267f457-cd3f-4790-b0c8-76ec616de3f0",
+  "findings": [
+    {
+      "id": "7ddb97dd3cdf5febce873cbd27c5e7f5f6f7a17abe6d6baa7afde4fa45ff05cb",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-24",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "Assembly 3rd Reading AB1116 Berman et al., Senate floor",
+      "note": "AB 1116 (Berman, Elections: voter registration) lets a person register online without a California driver license or state ID if they give the last four digits of their Social Security number; the Secretary of State may verify identity from those digits, full name and date of birth; operative 2029. Vote record is from CalMatters Digital Democracy; the official leginfo site blocked automated access. The Governor vetoed the bill on 2026-09-27.",
+      "subjects": [
+        "identity proof to register to vote online"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:00:55.275Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8cdde12149784ca1338611ab935c418b2d11e9154fac438233d84f81fa490306",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2022410",
+      "date": "2022-07-29",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1808-2022",
+      "act": "yea",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2022-07-29: yea (tally 217–213); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns",
+        "large magazine limit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-117hr1808eh.txt",
+          "sha256": "75fbb3d8aa67a1e741919bd36d5950f2147af5ee9aebad54f3c833934b9b65c9"
+        }
+      }
+    },
+    {
+      "id": "e490443f231416e4eda25d4ceddac54cc706b79e37886db337b05bc55f28fc05",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2021075",
+      "date": "2021-03-11",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8-2021",
+      "act": "yea",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2021-03-11: yea (tally 227–203); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-117hr8eh.txt",
+          "sha256": "7ff6618b8d01b36e670d15017408752e74041ec8d8a1582826124674ff3dff11"
+        }
+      }
+    },
+    {
+      "id": "6b5f3eff9393b9ed72b2b20ceb2569f569e3fe0f8d66ff785098426dcaf88740",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/201999",
+      "date": "2019-02-27",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8-2019",
+      "act": "yea",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2019-02-27: yea (tally 240–190); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-116hr8eh.txt",
+          "sha256": "8596643f954424e8d7074a38f569bc2885d50357f8208d6d0dbd7329c96e4b2c"
+        }
+      }
+    },
+    {
+      "id": "294cb6022ab522f3808c094aaa75e9d109039183692df242020d0c4838c02faa",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2017663",
+      "date": "2017-12-06",
+      "date_precision": "day",
+      "instrument_id": "US-HR-38-2017",
+      "act": "nay",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2017-12-06: nay (tally 231–198); census gate: none.",
+      "subjects": [
+        "honor carry permits from other states",
+        "background check system reporting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-115hr38eh.txt",
+          "sha256": "96f3d68e094e7438812650edc88a468959aa2048490e6a8299d390837cb09d12"
+        }
+      }
+    },
+    {
+      "id": "4bfe5feffdcd834aa96f97f2d56a39a6449292edd19b6b963ed9e99fd750d998",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2022245",
+      "date": "2022-06-08",
+      "date_precision": "day",
+      "instrument_id": "US-HR-7910-2022",
+      "act": "yea",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2022-06-08: yea (tally 223–204); census gate: none.",
+      "subjects": [
+        "age 21 to buy some semiautomatic rifles",
+        "large magazine limit",
+        "gun trafficking (package)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "69db56d0bfe8578817bff509cf09fa458879a97b92b0b93f98d4cafc678f7ec9",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-117s2938enr/html/BILLS-117s2938enr.htm",
+      "date": "2022-06-24",
+      "date_precision": "day",
+      "instrument_id": "US-S-2938-2022",
+      "act": "yea",
+      "motion": "On Concurring in the Senate Amendments to the House Amendment",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US House, On Concurring in the Senate Amendments to the House Amendment, 2022-06-24: yea (tally 234–193); census gate: multi-subject.",
+      "subjects": [
+        "background checks for buyers under 21",
+        "court orders that take guns from a dangerous person (state grants)",
+        "gun trafficking (package)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter ID rules",
+        "proof of citizenship to register",
+        "identity proof to register to vote online",
+        "SAVE Act",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Jerry_McNerney (State Senate District 5 since 2024, term ends 2028; U.S. House 2013-2023)",
+        "official Senate site https://sd05.senate.ca.gov/ (site search did not work; nothing on the subject found)",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (bot challenge)",
+        "SB 1174 of 2024: took office after the vote, no vote recorded",
+        "CalMatters Digital Democracy vote pages for AB 25 of 2025 (failed without a vote), SB 405 of 2025 (failed), AB 1116 of 2025",
+        "House Clerk roll calls for H.R. 8281 SAVE Act 2024 (not a member then, no vote); H.R. 1 For the People Act roll calls 2019 and 2021 show a yea vote but are not saved because the roll-call pages do not show any voter-ID content",
+        "web searches on name plus voter ID and SAVE Act (no statement by this person found)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:00:55.275Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

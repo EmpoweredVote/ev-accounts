@@ -1,0 +1,58 @@
+{
+  "politician_id": "fe9e7931-3a5a-46a4-8e69-d2609bae9992",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Kimberlyn_King-Hinds lists her as incumbent U.S. House Northern Mariana Islands At-large, general election November 3, 2026",
+        "On the Record (0 appearances)",
+        "official site king-hinds.house.gov: press releases pages 0-5 (titles reviewed, nothing on the subject); in-the-news pages 0-1 (nothing on the subject); issues menu has no election topic",
+        "blocked: https://king-hinds.house.gov/search (403, site search)",
+        "blocked: https://www.congress.gov/member/kimberlyn-king-hinds/K000404 (403)",
+        "blocked: https://api.congress.gov (needs API key)",
+        "blocked: https://www.govtrack.us (Cloudflare challenge)",
+        "campaign site https://king-hindsforcongress.my.canva.site/ (single page, no issue text found)",
+        "Ballotpedia: nothing on the subject in the page text retrieved",
+        "not searched: news search on name plus subject words (shared web search budget was used up)",
+        "not reviewed: X, Facebook, Instagram, YouTube accounts (RepKimKingHinds)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:13:10.441Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register (SAVE Act, SAVE America Act)",
+        "mail-ballot ID",
+        "territorial residents and federal voting rules",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script found no appearances)",
+        "Ballotpedia https://ballotpedia.org/Kimberlyn_King-Hinds (confirms sitting Northern Mariana Islands at-large member, on the 2026-11-03 general-election ballot; nothing on the subject)",
+        "official House site https://king-hinds.house.gov/ (home page and press-release pages 0 to 5 scanned by title: nothing on the subject; no election bills or releases seen)",
+        "blocked: https://king-hinds.house.gov/search/node/voter (site search returned 403)",
+        "blocked: https://www.congress.gov/member/kimberlyn-king-hinds/K000404 (bot check page), so cosponsorships on the subject could not be checked",
+        "blocked: https://kinghinds.com/ and https://king-hindsforcongress.my.canva.site/ (campaign sites returned no readable text)",
+        "two web searches on her name plus SAVE Act, voter ID and citizenship (nothing attributed to her; coverage of territorial voting concerns quotes her predecessor, not her)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:42:11.158Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

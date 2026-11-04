@@ -1,0 +1,25 @@
+{
+  "id": "VA-SB-1070-2025",
+  "scope": "state:va",
+  "title": "SB 1070 (2025 Regular Session (LIS session code 20251)): Voter identification; identification containing a photograph required.",
+  "urls": [
+    "https://lis.virginia.gov/bill-details/20251/SB1070",
+    "https://lis.virginia.gov/bill-details/20251/SB1070"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(note) Text not read: no official text file id for SB1070 could be located within budget (see blocked). Caption from BILLS.CSV only.",
+  "sponsors": [
+    {
+      "name": "Peake",
+      "role": "author",
+      "version": "Introduced (25102275D, 1/7/2025); passed by indefinitely in Senate Privileges and Elections 1/21/2025"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T17:30:00Z)",
+    "fetched_at": "2026-10-28T17:30:00Z",
+    "method": "curl"
+  }
+}

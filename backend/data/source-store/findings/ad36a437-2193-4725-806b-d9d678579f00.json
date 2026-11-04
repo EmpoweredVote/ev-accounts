@@ -1,0 +1,88 @@
+{
+  "politician_id": "ad36a437-2193-4725-806b-d9d678579f00",
+  "findings": [
+    {
+      "id": "2a8c1e6adeeb1b83990f54b1ca73fbb70a72c10f09939c42f1e1da2b2ae32867",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('ANDERSON'), linked to Clinton Anderson (district 45) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.788Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b953b8ca77be5fb9ddafa6b70a382b4723ca94e06d8baa02c27e3b6f154dc83",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('ANDERSON, C'), linked to Clinton Anderson (district 45) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.788Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site (legis.wisconsin.gov/assembly/45/anderson): home and first press release page (Nov 2025 to Feb 2026): nothing on the subject",
+        "Channel 3000 report of his 2026-02-24 re-election announcement: lists 'election integrity' as a topic he hopes to keep working on, but in the reporter's words, not a direct quote, so not saved",
+        "blocked: https://www.beloitdailynews.com/news/local-news/beloits-anderson-announces-re-election-bid/article_f9a48d8b-1080-4fd4-8755-c00696606c04.html (429)",
+        "blocked: https://ballotpedia.org/Clinton_Anderson (403)",
+        "Urban Milwaukee author page: nothing on the subject by him",
+        "two web searches on name plus voter ID words: no statement by him found (his name is Clinton Anderson in official records)",
+        "candidacy confirmed: theballotbrief.com Assembly District 45 page says the sitting officeholder is on the 2026-11-03 ballot"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:04:02.123Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:15:12.788Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

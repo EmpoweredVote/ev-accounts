@@ -1,0 +1,87 @@
+{
+  "politician_id": "107243f5-5a0a-4b95-8339-3a067ebaa908",
+  "findings": [
+    {
+      "id": "2820ba1138fe2edc7b2f277b507128c8dd5b25a415fff10237bc182989690f3d",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/22info/Journals/RDay6205092378-2447.pdf",
+      "date": "2022-05-09",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1878-2022",
+      "act": "yea",
+      "motion": "Senate: SS for SCS for HB 1878, as amended, read the 3rd time and passed",
+      "note": "Senate roll call as printed ('Bean'), linked to Jason Bean (district 25) via the official 2022 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.236Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search: name plus subject words (no own words on the subject surfaced)",
+        "Ballotpedia: not reviewed (search result only, not fetched)",
+        "Missouri Senate member page",
+        "Missouri Senate current media list and media archive (titles only, nothing on the subject)",
+        "bill pages: sponsor lists left to the separate record lane"
+      ],
+      "found": 0,
+      "at": "2026-11-04T04:59:03.355Z",
+      "by": "search-mo-2026-11-03"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "Senate current media list for Bean: read the 4 items (property tax relief from data centers; SB 1033, SB 953, SB 864 committee videos); nothing on the subject",
+        "Senate media archive for Bean: 2024 items listed (worker resources, plant announcement, floor-leader election); nothing on the subject",
+        "web search: Bean plus voter ID, citizenship, election integrity (no own words surfaced)",
+        "Senate senators index and member page (identity confirmed: Senator Jason Bean, District 25)",
+        "campaign site, local papers, iVoterGuide, Vote411: not found by search",
+        "Ballotpedia: blocked (not fetched, per instruction)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T13:26:32.249Z",
+      "by": "research-mo-r2-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:14:55.236Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

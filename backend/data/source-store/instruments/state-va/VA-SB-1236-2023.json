@@ -1,0 +1,50 @@
+{
+  "id": "VA-SB-1236-2023",
+  "scope": "state:va",
+  "title": "SB1236 (2023 Regular Session): Firearms, etc.; control of possession by locality.",
+  "urls": [
+    "https://lis.virginia.gov/cgi-bin/legp604.exe?231+sum+SB1236",
+    "https://lis.virginia.gov/cgi-bin/legp604.exe?231+ful+SB1236+hil"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 1 (amending Code 15.2-915(E)): E. Notwithstanding the provisions of this section, a locality may adopt an ordinance that prohibits the possession, carrying, or transportation of any firearms, ammunition, or components or combination thereof[- (i)-] in any building, or part thereof, owned or used by such locality, or by any authority or local governmental entity created or controlled by the locality, for governmental purposes[-; (ii) in any public park owned or operated by the locality, or by any authority or local governmental entity created or controlled by the locality; (iii) in any recreation or community center facility operated by the locality, or by any authority or local governmental entity created or controlled by the locality; or (iv) in any public street, road, alley, or sidewalk or public right-of-way or any other place of whatever nature that is open to the public and is being used by or is adjacent to a permitted event or an event that would otherwise require a permit-].\nSec. 1 (amending Code 15.2-915(E)): In buildings that are not owned by a locality, or by any authority or local governmental entity created or controlled by the locality, such ordinance shall apply only to the part of the building that is being used{+ exclusively+} for a governmental purpose and when such building, or part thereof, is being used for a governmental purpose.",
+  "sponsors": [
+    {
+      "name": "Mark Obenshain",
+      "politician_id": "b7e9d159-b766-445c-b95f-9797b57247d9",
+      "role": "patron",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Bill DeSteph",
+      "politician_id": "ec4a7239-4681-4284-b77d-9c2d5c5473dd",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "David Suetterlein",
+      "politician_id": "8ed24df0-2a89-45d2-a236-1fe339b2a11c",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-SB-1236-2023.prefiled.html",
+      "sha256": "a8b4a2ffd9bf3775a10bc1e6cd7d8541da8cbb3e403d2a8f08f1e542f3c25a66"
+    }
+  }
+}

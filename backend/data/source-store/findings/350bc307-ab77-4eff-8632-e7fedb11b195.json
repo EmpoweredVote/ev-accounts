@@ -1,0 +1,33 @@
+{
+  "politician_id": "350bc307-ab77-4eff-8632-e7fedb11b195",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carrying guns and carry permits",
+        "repealing gun laws",
+        "general statements on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed on ballot: iVoterGuide page https://ivoterguide.com/candidate/96999/race/31353/election/1464 names her for the Nov 3 2026 general election; search results say she won the Aug 18 FL-22 primary",
+        "iVoterGuide questionnaire: gun-ownership question marked 'Did not answer' (not her words, not saved)",
+        "campaign site: could not find the address; guessed addresses did not resolve (piafloridacongress.com no such host; piaforflorida.com/issues 404)",
+        "blocked: https://bluevoterguide.org/endorser-org/Gun_Sense_Voter/FL/4895 (403)",
+        "giffords.org candidate page: 404",
+        "Ballotpedia: not reviewed (empty to fetch tool)",
+        "legislature sponsored bills: not applicable, not a legislator",
+        "web searches: no statement by her on guns found"
+      ],
+      "found": 0,
+      "at": "2026-10-30T20:41:57.070Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "politician_id": "afa7fc22-a6c6-4b4e-ab60-f1eb499fb7c0",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "status: in scope. Ballotpedia https://ballotpedia.org/Mark_Hackett (fetched by curl) says he is on the November 3, 2026 general-election ballot for U.S. Senate, South Carolina; it also lists his 2020 and 2024 U.S. House races. Ballotpedia shows no 2026 Candidate Connection survey and no stated positions",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "Ballotpedia (nothing on the subject)",
+        "blocked: web search budget used up, so no news search and no campaign-site search was possible",
+        "not reviewed: campaign site (URL not found; guessed domains markhackett.org, markhackett.us, markhackettforsc.com did not respond)",
+        "congress.gov (not a legislator, no record to check; not reviewed)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:09:05.571Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "The Ballot Brief https://theballotbrief.com/candidate/mark-hackett-sc: confirms he is a minor-party nominee for U.S. Senate in South Carolina on the 2026 general ballot; no campaign website found; nothing on the subject",
+        "iVoterGuide https://ivoterguide.com/candidate/55325: every questionnaire answer left blank; nothing on the subject",
+        "FEC page for a 2024 House run https://www.fec.gov/data/candidate/H0SC06245/: no financial data, nothing on the subject",
+        "WRDW news article on the 2026 Senate field: he did not respond to the outlet; nothing on the subject",
+        "blocked: https://www.facebook.com/markhackettSC/ (fetch returned no posts)",
+        "Wikipedia Senate race page: no mention of him in the part read",
+        "web search on name plus subject words: nothing on the subject",
+        "congress.gov: not applicable, not a sitting legislator",
+        "Ballotpedia: not reviewed, no page fetched"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:10:09.490Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

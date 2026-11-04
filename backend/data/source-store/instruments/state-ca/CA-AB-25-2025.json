@@ -1,0 +1,115 @@
+{
+  "id": "CA-AB-25-2025",
+  "scope": "state:ca",
+  "title": "AB 25 (2025-2026 Regular Session): California Voter ID and Election Integrity Act of 2025 (short title in SEC. 1; leginfo caption not read)",
+  "urls": [
+    "https://web.archive.org/web/2026/https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB25 (archive resolved to https://web.archive.org/web/20260605003527/ ...)"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) SEC. 13 (adds Elections Code Section 14216.5)\n(quote) 14216.5.  In addition to the requirements of Section 14216, before a person desiring to vote at a polling place may vote, the person shall present a valid government-issued form of identification to a precinct board member.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) SEC. 7 (amends Elections Code Section 3011)\n(quote) (4) The last four digits of the voter’s valid government-issued form of identification.\n(section) SEC. 10 (adds Elections Code Section 3019.3)\n(quote) 3019.3.  In addition to the requirements of Section 3019, before an elections official may process and count a vote by mail ballot, the elections official shall confirm that the last four digits of the voter’s valid government-issued form of identification listed on the identification envelope match the voter’s valid government-issued form of identification listed on the voter’s affidavit of registration.\n(d_proof_of_citizenship)\n(section) SEC. 2 (adds Elections Code Section 2110)(a)(1)\n(quote) (a) (1) On the affidavit of registration, a person shall certify under penalty of perjury that the person is a citizen. The person shall provide appropriate documentation of citizenship with the affidavit of registration.\n(section) SEC. 2 (2110)(a)(3)\n(quote) (3) A person who does not provide appropriate documentation of citizenship with the affidavit of registration, or a person whose citizenship cannot be verified by the elections official based on the documentation provided, shall not be registered to vote.\n(section) SEC. 2 (2110)(b)\n(quote) (b) An elections official shall verify the citizenship of voters registered to vote in the county as of January 1, 2026.\n(section) SEC. 3 (repeals Section 2111)\n(quote) 2111. A person may prove he or she is a citizen by his or her certification under penalty of perjury on the affidavit of registration.\n(e_other_rule)\n(section) SEC. 12 (repeals Elections Code Section 10005)\n(quote) 10005. A local government shall not enact or enforce any charter provision, ordinance, or regulation requiring a person to present identification for the purpose of voting or submitting a ballot at any polling place, vote center, or other location where ballots are cast or submitted, unless required by state or federal law.\n(section) SEC. 5 (adds Section 2186)(b)(2)\n(quote) (2) If in the review described in paragraph (1) the State Auditor determines that fewer than 98 percent of the persons listed on the roster are qualified electors in that county, for the next statewide election the elections official shall not mail the materials specified in Section 3010 to every registered voter pursuant to Section 3000.5.\n(other) SEC. 1: Short title: California Voter ID and Election Integrity Act of 2025.\n(other) SEC. 4: Repeals Section 2112 (citizenship certification as evidence of citizenship).\n(other) SEC. 5: Adds Section 2186: State Auditor review of county rosters.\n(other) SEC. 6: Amends Section 3000.5 (mailing ballots to every registered voter, with exceptions).\n(other) SEC. 8: Amends Section 3019 (signature comparison and cure procedures).\n(other) SEC. 9: Adds Section 3019.1 (State Auditor audits of signature comparisons).\n(other) SEC. 11: Adds Chapter 3 (Section 3200 et seq.), vote by mail procedures in counties with inaccurate rosters or late counts.\n(other) SEC. 14: Amends Section 15301 (72-hour ballot count requirement).\n(other) SEC. 15: State-mandated local costs reimbursement.\n(other) Intent section: It is the intent of the Legislature to enact legislation to improve the integrity of state and local elections by requiring a government-issued ID to vote, verifying the citizenship of voters, maintaining accurate voter lists, incentivizing timely counting of ballots, and enhancing the signature review process.",
+  "sponsors": [
+    {
+      "name": "DeMaio (A)",
+      "role": "author",
+      "version": "02/24/25 Amended Assembly (only version listed in archive capture of 2026-06-05)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-04-09",
+      "body": "CA Assembly Elections Committee",
+      "motion": "Do pass and be re-referred to the Committee on [Judiciary] (FAIL)",
+      "kind": "roll-call",
+      "yes": 2,
+      "no": 5,
+      "absent": 0,
+      "body_size": 7,
+      "note": "https://web.archive.org/web/2026/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB25 (Internet Archive copy, capture 2025-10-17; official roll call)",
+      "members": [
+        {
+          "name": "Macedo",
+          "vote": "yea"
+        },
+        {
+          "name": "Tangipa",
+          "vote": "yea"
+        },
+        {
+          "name": "Bennett",
+          "vote": "nay"
+        },
+        {
+          "name": "Berman",
+          "vote": "nay"
+        },
+        {
+          "name": "Pellerin",
+          "vote": "nay"
+        },
+        {
+          "name": "Solache",
+          "vote": "nay"
+        },
+        {
+          "name": "Stefani",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2025-04-09",
+      "body": "CA Assembly Elections Committee",
+      "motion": "Reconsideration. (FAIL)",
+      "kind": "roll-call",
+      "yes": 2,
+      "no": 5,
+      "absent": 0,
+      "body_size": 7,
+      "note": "https://web.archive.org/web/2026/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB25 (same page, second roll call listed)",
+      "members": [
+        {
+          "name": "Macedo",
+          "vote": "yea"
+        },
+        {
+          "name": "Tangipa",
+          "vote": "yea"
+        },
+        {
+          "name": "Bennett",
+          "vote": "nay"
+        },
+        {
+          "name": "Berman",
+          "vote": "nay"
+        },
+        {
+          "name": "Pellerin",
+          "vote": "nay"
+        },
+        {
+          "name": "Solache",
+          "vote": "nay"
+        },
+        {
+          "name": "Stefani",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T16:00:28.285005Z)",
+    "fetched_at": "2026-10-28T16:00:28.285005Z",
+    "method": "curl"
+  }
+}

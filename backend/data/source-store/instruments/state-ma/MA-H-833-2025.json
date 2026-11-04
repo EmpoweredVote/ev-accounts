@@ -1,0 +1,39 @@
+{
+  "id": "MA-H-833-2025",
+  "scope": "state:ma",
+  "title": "An Act ensuring the election integrity through voter identification (H.833, filed 2025; in Election Laws, hearing 2025-07-08)",
+  "urls": [
+    "https://malegislature.gov/Bills/194/H833",
+    "https://malegislature.gov/Bills/194/H833.Html",
+    "https://malegislature.gov/Bills/194/H833/Cosponsor"
+  ],
+  "version": "as-filed",
+  "operative_text": "Be it enacted by the Senate and House of Representatives in General Court assembled, and by the authority of the same, as follows: SECTION 1. Section 76 of Chapter 54 of the General Laws, as appearing in the 2010 Official Edition, is hereby amended by striking out the first sentence in its entirety and replacing it with the following sentences:— “An election officer shall ask each voter desiring to vote at a polling place for his full name and current residence address and repeat the full name and address stated by the voter. The officer shall ask the voter to present any one of the following forms of identification: his Commonwealth of Massachusetts voter registration card, his social security card, his valid Massachusetts driver’s license, or any other identification card issued by a government agency by the Commonwealth, one of its political subdivisions, or the United States; or any valid employee identification card containing a photograph of the voter and issued by an employer of the voter in the ordinary course of the employer’s business.” SECTION 2. Section 76B of Chapter 54 of the General Laws, as appearing in the 2010 Official Edition, is hereby amended by striking the entire section and inserting the following section in place thereof:—“Section 76B. Any person desiring to vote who fails to present suitable identification shall not be permitted to vote.”",
+  "sponsors": [
+    {
+      "name": "Colleen M. Garry",
+      "politician_id": "c8f917f9-f6c4-49f8-b5a4-c330b07f90d2",
+      "role": "prime",
+      "version": "as filed; petitioners tab, H.833, session 194"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+    "fetched_at": "2026-10-31T05:00:00Z",
+    "method": "curl",
+    "saved_copy": {
+      "path": "s3-prep-voting-rights/stage5/raw/ma-id-bills/194_H833.Html.htm",
+      "sha256": "1e95bc9de77a36b718d8e36d7bb809df559b6f6679b74d590da47bff343bc39d"
+    }
+  }
+}

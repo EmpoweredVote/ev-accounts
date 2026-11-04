@@ -1,0 +1,73 @@
+{
+  "politician_id": "95ee7e6c-31ba-4439-8ed8-b4826fb21aa1",
+  "findings": [
+    {
+      "id": "31e7b85af9f5d3c62710095196ba6f14ffb38c6101ef4643689de890106801fa",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Christy_Peterson",
+      "date": "2026-04-13",
+      "date_precision": "day",
+      "passage": "Yes to election integrity, the Save America Act, paper ballots, same day voting & hand count.",
+      "note": "From her Ballotpedia Candidate Connection survey answer on why the race matters (submitted April 13, 2026). She lists support for election integrity, the Save America Act, paper ballots, same-day voting and hand counts. The same answer also mentions paying for illegals. No detail on ID rules, no-ID fallback or mail ballots.",
+      "subjects": [
+        "election integrity",
+        "Save America Act",
+        "paper ballots",
+        "same-day voting",
+        "hand count of ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:03:44.942Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "election integrity",
+        "non-citizen voting",
+        "paper ballots and hand count"
+      ],
+      "places": [
+        "confirmed in scope: Ballotpedia page https://ballotpedia.org/Christy_Peterson names her as candidate for U.S. House Colorado District 1, advanced from the June 30, 2026 primary, on the Nov 3, 2026 general ballot",
+        "On the Record (0 appearances, extract-otr run with name)",
+        "campaign site https://christyforamerica.us (home, /christy-peterson-for-america.htm, /new.htm, /resources reviewed; nothing on the subject; the site shows spam links and a post saying it was hacked)",
+        "Ballotpedia Candidate Connection survey (fetched by curl)",
+        "congress.gov: not reviewed, not a sitting legislator",
+        "blocked: web search (session search budget used up), so no news search was run",
+        "not reviewed: campaign Facebook, X and Instagram pages (linked from Ballotpedia, not fetched)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T22:03:44.942Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "SAVE America Act",
+        "voter ID",
+        "election integrity"
+      ],
+      "places": [
+        "https://christyforamerica.us/ (own site: no position on the topic)",
+        "coloradopolitics.com profile of her CD1 race, 2026-07-02 (nothing on topic)",
+        "web search: no source beyond the Ballotpedia survey"
+      ],
+      "found": 0,
+      "at": "2026-10-29T22:03:33.033Z",
+      "by": "stage5 federal-held (Opus)"
+    }
+  ]
+}

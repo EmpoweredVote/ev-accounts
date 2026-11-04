@@ -1,0 +1,97 @@
+{
+  "politician_id": "3599e8d7-7fa1-46d9-a98e-f5258cc50088",
+  "findings": [
+    {
+      "id": "fcc5507944cb998491bfcb520d0660e46270a716c1bf378bbd7533ea7b719b3f",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Eric_Gisler",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "I am a passionate advocate for voting reform. In the past few years, the MAGA GOP has used \"election integrity\" to dismantle our election systems and try to rig the outcomes for their party. I want to repeal SB202, the law that led to the changes in the State Election Board that threaten to throw the November results into chaos.",
+      "note": "From his answers on the Ballotpedia Candidate Connection survey (undated). States he wants to repeal SB 202 and criticises how election integrity is used.",
+      "subjects": [
+        "election integrity laws in general",
+        "SB 202 repeal"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:46:42.931Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a3d546fe00ab2781bbd16ecdda655ed218a0685c734347e73abd248c7aeedaeb",
+      "kind": "own-words",
+      "url": "https://house-press.com/?p=16144",
+      "date": "2026-02-03",
+      "date_precision": "day",
+      "passage": "Today, I have filed a resolution that re-affirms that if the secretary of state were to release recently requested information to the U.S. Department of Justice, it would not only violate state law, but it would also violate the trust of Georgia voters and unnecessarily put their personal information at risk.",
+      "note": "Quote in a House press release on HR 1200, about protecting the voter registration list from a federal request.",
+      "subjects": [
+        "voter-roll data",
+        "voter registration list privacy"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:46:42.931Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3fe30059fd0bf4047e4e21b346e83bd036014a180c86c4f515a7f2d93f70767a",
+      "kind": "record",
+      "url": "https://house-press.com/?p=16144",
+      "date": "2026-02-03",
+      "date_precision": "day",
+      "instrument_id": "GA-HR-1200-2026",
+      "act": "sponsor",
+      "note": "HR 1200 would urge the secretary of state to keep private information in the voter registration list protected from a U.S. Department of Justice request for unredacted copies. Date is the press release date.",
+      "subjects": [
+        "voter-roll data",
+        "voter registration list privacy"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:46:42.931Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll data and registration list",
+        "election integrity laws in general",
+        "SB 202"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms incumbent on the 2026-11-03 general ballot for House District 121; candidate survey)",
+        "branch.vote general-election page confirms candidacy",
+        "Georgia House media office page for Rep. Gisler (2 posts)",
+        "athenspoliticsnerd.com legislator page (nothing on the subject; a CDL vote for noncitizens is off subject)",
+        "blocked: https://www.ericgisler.com/ (page renders by script, no readable text)",
+        "blocked: https://www.legis.ga.gov/legislation/search?query=HR%201200 (loading shell only)",
+        "web news search on name plus subject words",
+        "SB 202 2021 vote: not applicable, first took office 2026-01-08"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:46:42.931Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

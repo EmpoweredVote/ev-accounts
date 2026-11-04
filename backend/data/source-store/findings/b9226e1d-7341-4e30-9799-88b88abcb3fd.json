@@ -1,0 +1,135 @@
+{
+  "politician_id": "b9226e1d-7341-4e30-9799-88b88abcb3fd",
+  "findings": [
+    {
+      "id": "a09d2aaf1d7fd66f1d24e576baee80f7496b23cfa66c826c9494c7468333bedd",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/newsDetails?id=629",
+      "date": "2023-01-26",
+      "date_precision": "day",
+      "passage": "In my opinion, this is an unneeded policy that will further disenfranchise voters. I believe the Legislature should focus on making voting more accessible, instead of creating additional barriers to this fundamental right.",
+      "note": "From her official legislative column. She is describing a bill heard in the Local Government and Elections Committee that would widen the grounds for removing voters from the registration rolls. Related to voter-roll rules, not ID.",
+      "subjects": [
+        "voter-roll maintenance",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T04:59:30.056Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9e12944216f4199e2fbcc9373296c13fd833050a9945ea58468d136c33af32e3",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills201/jrnpdf/jrn031.pdf",
+      "date": "2020-03-02",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1600-2020",
+      "act": "nay",
+      "motion": "House: HCS HB 1600 read the third time and passed by the following vote (Speaker Pro Tem Wiemann declared the bill passed)",
+      "note": "House roll call as printed ('Washington'), linked to Barbara Anne Washington (district 23) via the official 2020 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e114662582e36f9f876ea58ca7997d4a6cd77360af2d2f46d1a30370cb3d2133",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/26info/Journals/Rday6405111615-1637.pdf",
+      "date": "2026-05-11",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "Senate: SS for SCS for HCS for HB 1871, as amended, read the 3rd time and passed",
+      "note": "Senate roll call as printed ('Washington'), linked to Barbara Anne Washington (district 9) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21359c61a4aa9f0fc1d5ed5539ef00909e6cc5e45e12169c91328f1e12050b02",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/22info/Journals/RDay6205092378-2447.pdf",
+      "date": "2022-05-09",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1878-2022",
+      "act": "nay",
+      "motion": "Senate: SS for SCS for HB 1878, as amended, read the 3rd time and passed",
+      "note": "Senate roll call as printed ('Washington'), linked to Barbara Anne Washington (district 9) via the official 2022 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll maintenance",
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "places": [
+        "status check: sitting state senator for District 9 (senate.mo.gov member page, re-elected 2024)",
+        "On the Record (0 meetings)",
+        "official Senate site: member page and media archive list (no ID or citizenship titles found)",
+        "official legislative columns of 2024-07-03, 2024-09-30, 2024-10-11, 2024-10-30, 2025-09-12: nothing on ID or citizenship",
+        "official legislative column of 2023-01-26: one passage on a voter-roll removal bill",
+        "blocked: https://ballotpedia.org/Barbara_Anne_Washington (403)",
+        "Ballotpedia /Barbara_Washington: empty page, nothing usable",
+        "two news searches on her name plus the subject words: nothing on the subject",
+        "no campaign site found; not reviewed"
+      ],
+      "found": 1,
+      "at": "2026-11-04T04:59:30.056Z",
+      "by": "search-mo-2026-11-03"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-04T14:14:55.221Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

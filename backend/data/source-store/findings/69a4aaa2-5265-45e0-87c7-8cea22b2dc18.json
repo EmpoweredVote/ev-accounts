@@ -1,0 +1,131 @@
+{
+  "politician_id": "69a4aaa2-5265-45e0-87c7-8cea22b2dc18",
+  "findings": [
+    {
+      "id": "c19ad6437e734ddf5bc5c2c42cca9771db548fc3dc8d5503d540427c366ff8a1",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall42.pdf",
+      "date": "2025-04-29",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4000-AMDT-409-2025",
+      "act": "yea",
+      "motion": "On adoption of amendment #409 (H.4000) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 42, On adoption of amendment #409 (H.4000) - failed, 2025-04-29: yea (tally 25–131); the sheet lists 'Chaisson'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "031da260f8e422347d5016f4a54a60c19a73e3efaba279ce2f337d18bdbfcb4e",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall174.pdf",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-5500-AMDT-1587-2026",
+      "act": "yea",
+      "motion": "On adoption of amendment #1587 (H.5500) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 174, On adoption of amendment #1587 (H.5500) - failed, 2026-04-28: yea (tally 27–131); the sheet lists 'Chaisson'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Michael_Chaisson names him as 1st Bristol District representative, advanced from the 2026-09-01 primary, on the 2026-11-03 general ballot",
+        "On the Record (0 appearances for this politician id)",
+        "MA Legislature profile https://malegislature.gov/Legislators/Profile/MSC1 (his sponsored bills: none on the subject)",
+        "MA Legislature bill search: voter identification, proof of citizenship, election integrity, citizenship voter (194th Court); only H.833 (Garry, voter identification requirements) is on voter ID, and its Cosponsor page https://malegislature.gov/Bills/194/H833/Cosponsor does not list him; S.514, S.520, S.1273 election-integrity bills not checked for cosponsors beyond headers",
+        "Ballotpedia: nothing on the subject (he has not completed the candidate survey)",
+        "blocked: https://www.chaissonforma.com (no content returned)",
+        "not reviewed: official House page text and campaign site issue pages (web search budget exhausted, so no news or own-words search was possible)",
+        "nothing on the subject: news search not run, search budget used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:13:07.027Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with absentee or mail ballot",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity in general"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Michael_Chaisson shows him as 1st Bristol District incumbent who advanced from the 2026-09-01 primary and is on the 2026-11-03 general-election ballot",
+        "On the Record (0 appearances)",
+        "Official legislature profile https://malegislature.gov/Legislators/Profile/MSC1 (identity confirmed; sponsored bills are local land, utility, licence and similar matters; nothing on the subject)",
+        "Legislature bill search for 'voter identification': results page loaded without listings (not usable)",
+        "Two news searches on name plus subject words and on House roll calls: nothing on the subject",
+        "not reviewed: campaign site (none found)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T13:57:00.100Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "repeal of the 2024 gun law (Question 9)",
+        "general gun-law statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official page https://malegislature.gov/Legislators/Profile/MSC1 (confirms Representative Michael S. Chaisson, 1st Bristol)",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site: none found in searches",
+        "https://theballotbrief.com/candidate/michael-s-chaisson-ma: nothing on the subject, no campaign site listed",
+        "not reviewed: https://www.ballotready.org/people/michael-sean-chaisson (404)",
+        "Ballotpedia: not reviewed (fetch returns empty pages)",
+        "three news searches on name plus gun words and the gun-owner group: nothing in his own words"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:53:55.923Z",
+      "by": "source-collector"
+    }
+  ]
+}

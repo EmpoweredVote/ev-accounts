@@ -1,0 +1,286 @@
+{
+  "politician_id": "0d156e09-417d-450a-b757-d44171336fed",
+  "findings": [
+    {
+      "id": "14139864f3566dedfc86dae343163963cccb67d7ad241ff67f580601faa88f4e",
+      "kind": "own-words",
+      "url": "https://urbanmilwaukee.com/pressrelease/sen-smiths-statement-regarding-senate-action-on-constitutional-amendment-for-voter-id",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "passage": "It is Day Three of the 2025-2026 legislative session. Already, Republicans skirted the rules and rushed senators into a senate floor session. Republicans are more afraid of voters and losing power than they are about the issues that are impacting those voters.",
+      "note": "Press release issued in his name, stating his opposition to 2025 Senate Joint Resolution 2 (the voter ID constitutional amendment) during the Senate floor session. The quoted text objects to how the session was handled and does not discuss ID requirements themselves. Also carried by WEAU (https://www.weau.com/2025/01/08/wisconsin-gop-lawmakers-looking-get-voter-id-laws-state-constitution-by-spring/).",
+      "subjects": [
+        "voter ID constitutional amendment",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:55:44.569Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "27c88d6080df136f402c3a1d55e9bd199ead4c960e4d2ffd43d2667d18bbaf56",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/ab1046",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-1046-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/2/2024; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 4/15/2024)",
+      "note": "Named as co sponsor ('Smith') on the official bill page; linked to Jeff Smith via the official 2024 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f3ef3a2d280038fbee51dc62a66f6e4534d8027fec2e9bc990dcb1bb0609813",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/sv0177",
+      "date": "2023-11-14",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-494-2023",
+      "act": "nay",
+      "motion": "Senate: Read a third time and concurred in (CONCURRENCE) (sv0177)",
+      "note": "Senate roll call as printed ('SMITH'), linked to Jeff Smith (district 31) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1abef592fd420e5a7754f530aecd628a31c41acca61fdf66ceefad9adb233b88",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab941",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-941-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/28/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Smith') on the official bill page; linked to Jeff Smith via the official 2026 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1920eea68a6d5b547cca780be2bb0df6d7fe8e6b0b844c1ffa3ca4aea81819ef",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2007/related/journals/assembly/20070417/_231",
+      "date": "2007-04-17",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-17-2007",
+      "act": "nay",
+      "motion": "Assembly: Assembly Joint Resolution 17 having been read three times, shall the joint resolution be adopted?",
+      "note": "Assembly roll call as printed ('Smith'), linked to Jeffrey E. Smith (district 93) via the official 2007 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0bc467088f936f1409c3c4816d66e8cf56c78c7b11688f863b1ab9caef48c94f",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/sv0085",
+      "date": "2021-06-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "nay",
+      "motion": "Senate: Read a third time and passed (PASSAGE) (sv0085)",
+      "note": "Senate roll call as printed ('SMITH'), linked to Jeff Smith (district 31) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f90565fdd904e0c687439e6fbfb6bc85f8478b5659af977f422b6e5cd99b9e4d",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sb931",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-931-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, As introduced 2/6/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as prime sponsor ('Smith') on the official bill page; linked to Jeff Smith via the official 2026 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e1b08054049e32c11c00cbb05b467301903166919d9bf93c68d618cc8309e73b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/sb938",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-938-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/19/2024; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 4/15/2024)",
+      "note": "Named as co sponsor ('Smith') on the official bill page; linked to Jeff Smith via the official 2024 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6576877349bee88f9291d10a5621c787e680b1be63a222ed5e3fd5f93834d6dd",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/sv0260",
+      "date": "2022-02-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "nay",
+      "motion": "Senate: Read a third time and passed (PASSAGE) (sv0260)",
+      "note": "Senate roll call as printed ('SMITH'), linked to Jeff Smith (district 31) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "173370a2da2254e9558211fd7d716d85ba2265e26f9f3d3e2282786165ffeebc",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/sv0003",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Senate: Read a third time and adopted (PASSAGE) (sv0003)",
+      "note": "Senate roll call as printed ('SMITH'), linked to Jeff Smith (district 31) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fda5b4834a3005b2bae97ae1fb5bbf0b8a4d8e1b83041d7a107fed6a688188f4",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/sv0139",
+      "date": "2023-11-07",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "nay",
+      "motion": "Senate: Read a third time and adopted (ADOPTION) (sv0139)",
+      "note": "Senate roll call as printed ('SMITH'), linked to Jeff Smith (district 31) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID constitutional amendment",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Senate site legis.wisconsin.gov/senate/31/Smith (home page and press releases pages 1-2: nothing on the subject)",
+        "scope: still a 2026 candidate in Senate District 31, shown by the Urban Milwaukee press release https://urbanmilwaukee.com/pressrelease/michele-magadance-skinner-trails-sen-smith-by-7-while-remaining-unpopular-in-the-district/",
+        "blocked: https://ballotpedia.org/Jeff_Smith_(Wisconsin) (empty page)",
+        "blocked: https://wisconsinexaminer.com/2026/04/15/gop-sen-jesse-james-drops-challenge-against-democratic-sen-jeff-smith/ (403)",
+        "blocked: https://www.wispolitics.com/wp-content/uploads/2021/05/20210511-Sen.-Smith-Condemns-Passage-of-Republicans-Voter-Suppression-Bills.pdf (403)",
+        "web news searches on name plus voter ID, proof of citizenship, SAVE Act: only the January 2025 statement found",
+        "no campaign site reviewed (none found)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:55:44.569Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 10,
+      "at": "2026-10-28T23:15:12.775Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

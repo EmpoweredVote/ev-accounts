@@ -1,0 +1,74 @@
+{
+  "politician_id": "102c04a0-ecbb-470f-b6f8-fa808d868559",
+  "findings": [
+    {
+      "id": "92b503f88d87a74abf0e66a78e3701c041366f90d2fc0672d535785ea0fda29d",
+      "kind": "own-words",
+      "url": "https://kyleaustinmt.com",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Austin is a gun owner, and a hunter understands the importance of gun rights in America. Austin believes everyone American should un-restricted access to bear arms.",
+      "note": "Campaign site home page, under the heading 2nd Amendment Rights, written in the third person by his campaign. Typos are the page's own.",
+      "subjects": [
+        "unrestricted access to firearms",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:16:06.811Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3480b779416e37258815679e32e0f79dd03a3faaf7ced57d2768622287a7d14d",
+      "kind": "own-words",
+      "url": "https://dailymontanan.com/2026/10/19/libertarian-us-senate-candidate-kyle-austin-pitches-himself-as-an-alternative-for-voters/",
+      "date": "2026-10-19",
+      "date_precision": "day",
+      "passage": "He’s a gun owner and said he believes that Americans should have unrestricted access to firearms.",
+      "note": "Daily Montanan reporter's summary of what he said in an interview; not a direct quote of him.",
+      "subjects": [
+        "unrestricted access to firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:16:06.811Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "unrestricted access to firearms",
+        "Second Amendment general statement",
+        "background checks",
+        "red-flag orders",
+        "assault-style gun bans",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr found nothing)",
+        "scope: https://dailymontanan.com/2026/10/19/libertarian-us-senate-candidate-kyle-austin-pitches-himself-as-an-alternative-for-voters/ shows he is a candidate for the open U.S. Senate seat in Montana in the November 2026 general election, in a four-way race; he won his June primary",
+        "campaign site kyleaustinmt.com home page read; its issues and about pages return 404",
+        "https://projects.montanafreepress.org/election-guide-2026/candidates/kyle-austin/ (March 2026 written questionnaire: questions asked were war powers, health care, Montana issues, cost of living; nothing on guns)",
+        "https://www.mtpr.org/montana-news/2026-05-06/q-a-kyle-austin-libertarian-u-s-senate-candidate (interview; nothing on guns)",
+        "https://nbcmontana.com/news/beyond-the-podium/kyle-austin-hopes-to-improve-health-care-with-us-senate-run (nothing on guns)",
+        "not reviewed: the 'A Message from a Gun Owner' video on kyleaustinmt.com (video, cannot be read)",
+        "not reviewed: https://ballotpedia.org (empty pages by instruction); not reviewed: 2022 and 2024 U.S. House primary coverage (search found none on guns)",
+        "two web searches run; kyleaustin.com and similar addresses are private/unrelated sites, not used"
+      ],
+      "found": 2,
+      "at": "2026-10-30T15:16:06.811Z",
+      "by": "source-collector"
+    }
+  ]
+}

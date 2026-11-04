@@ -1,0 +1,486 @@
+{
+  "politician_id": "5130ee75-9b4e-4095-8a78-245f7402d287",
+  "findings": [
+    {
+      "id": "6703bc9a57c20cbbdd95c6a4c814c4a9c7f6d2bac0410201fa086d3f6c0c8862",
+      "kind": "own-words",
+      "url": "https://patch.com/wisconsin/greenfield/greenfield-state-senator-votes-against-voter-id-bill",
+      "date": "2011-05-19",
+      "date_precision": "day",
+      "passage": "“I don’t think this group is likely to commit voter fraud,” he said. “I would be interested to see evidence of voter fraud at elderly centers and nursing homes. At least not in Milwaukee County, maybe Waukesha County.”",
+      "note": "Patch article (2011) quotes his remarks in the Senate debate on the photo ID bill, in support of an amendment to exempt voters 65 and older. The article also says he was one of five senators to vote against the bill.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID exemption for older voters",
+        "voter fraud claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:58:00.173Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "27c88d6080df136f402c3a1d55e9bd199ead4c960e4d2ffd43d2667d18bbaf56",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/ab1046",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-1046-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/2/2024; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 4/15/2024)",
+      "note": "Named as co sponsor ('Carpenter') on the official bill page; linked to Tim Carpenter via the official 2024 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b0fd5c8a833de068229f0d905eb73723f1aa11e44b56399953edc1264166f68",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab379",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-379-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Carpenter') on the official bill page; linked to Tim Carpenter via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f3ef3a2d280038fbee51dc62a66f6e4534d8027fec2e9bc990dcb1bb0609813",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/sv0177",
+      "date": "2023-11-14",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-494-2023",
+      "act": "nay",
+      "motion": "Senate: Read a third time and concurred in (CONCURRENCE) (sv0177)",
+      "note": "Senate roll call as printed ('CARPENTER'), linked to Tim Carpenter (district 3) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d514f2886e410f61ae6d8cbcf9843d31ddcb1546ae78dca7b84a81607d228e5c",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2005/related/journals/senate/20050413/_308",
+      "date": "2005-04-13",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-63-2005",
+      "act": "yea",
+      "motion": "Senate: Assembly Bill 63: Read a third time. Concurred in.",
+      "note": "Senate roll call as printed ('Carpenter'), linked to Tim Carpenter (district 3) via the official 2005 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f2994ac700807fac226193a65f9b9951c1f4d811b65f7821fe06efd09cf38153",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2011/sv0192",
+      "date": "2011-05-19",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-7-2011",
+      "act": "nay",
+      "motion": "Senate: Concurred in (CONCURRENCE) (sv0192)",
+      "note": "Senate roll call as printed ('CARPENTER'), linked to Tim Carpenter (district 3) via the official 2011 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32b98afb5fe49daee0ff1776f7b91dce28d5a0ed36d2cccde57c811cfcb255b3",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2011/proposals/ab7",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-7-2011",
+      "act": "sponsor",
+      "motion": "co sponsor, Enacted (2011 Wisconsin Act 23, approved 5/25/2011; text as enrolled, which is the Assembly substitute amendment 2 version passed 5/11/2011 and concurred by the Senate 5/19/2011)",
+      "note": "Named as co sponsor ('Carpenter') on the official bill page; linked to Tim Carpenter via the official 2011 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1abef592fd420e5a7754f530aecd628a31c41acca61fdf66ceefad9adb233b88",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab941",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-941-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/28/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Carpenter') on the official bill page; linked to Tim Carpenter via the official 2026 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3822a44d8e8d1d5c94a3e5d4a50ace90882f061c63080b9440db909571f8deaf",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2005/related/journals/senate/20060309/_1732",
+      "date": "2006-03-09",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-36-2005",
+      "act": "nay",
+      "motion": "Senate: Assembly Joint Resolution 36 (first consideration): Read a third time. Concurred in.",
+      "note": "Senate roll call as printed ('Carpenter'), linked to Tim Carpenter (district 3) via the official 2005 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0bc467088f936f1409c3c4816d66e8cf56c78c7b11688f863b1ab9caef48c94f",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/sv0085",
+      "date": "2021-06-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "nay",
+      "motion": "Senate: Read a third time and passed (PASSAGE) (sv0085)",
+      "note": "Senate roll call as printed ('CARPENTER'), linked to Tim Carpenter (district 3) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8930f3fb15d54ca3f2724a5256d8a209edc284874dd8d03f8e81e245e662c6e6",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2011/proposals/sb247",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-247-2011",
+      "act": "sponsor",
+      "motion": "prime sponsor, As introduced 10/19/2011; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2012)",
+      "note": "Named as prime sponsor ('Carpenter') on the official bill page; linked to Tim Carpenter via the official 2011 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "619ed5f9e9ba30703897122910a0beaea32c051f547113cdabb3dbe20fc127b5",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sb362",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-362-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, As introduced 6/27/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as prime sponsor ('Carpenter') on the official bill page; linked to Tim Carpenter via the official 2025 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f43802d0d208e182b3210578726d50f71efa24cd322ae2bd0fd259528a4d7eec",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2005/related/journals/senate/20050920/_258",
+      "date": "2005-09-20",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-42-2005",
+      "act": "yea",
+      "motion": "Senate: Shall Senate Bill 42 pass notwithstanding the objections of the governor?",
+      "note": "Senate roll call as printed ('Carpenter'), linked to Tim Carpenter (district 3) via the official 2005 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "54409b9da082533907565bfb094989862349d0f44717a17ee4060665e4c4c916",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2011/proposals/sb6",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-6-2011",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/14/2011; committee recommended passage as amended 2/22/2011; held on the Senate calendar; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2012)",
+      "note": "Named as co sponsor ('Carpenter') on the official bill page; linked to Tim Carpenter via the official 2011 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4cefd30d97173ce36c76f86da73172cc38fc558343bb8b589c1b434226b0c582",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2017/sv0291",
+      "date": "2018-12-04",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-884-2018",
+      "act": "nay",
+      "motion": "Senate: Read a third time and passed (PASSAGE) (sv0291)",
+      "note": "Senate roll call as printed ('CARPENTER'), linked to Tim Carpenter (district 3) via the official 2017 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bdf48e7701ed601adf34eea22af1ad6ffbdfa957445f4bb4e435c7024f84405b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sb931",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-931-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/6/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Carpenter') on the official bill page; linked to Tim Carpenter via the official 2026 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e1b08054049e32c11c00cbb05b467301903166919d9bf93c68d618cc8309e73b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/sb938",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-938-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/19/2024; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 4/15/2024)",
+      "note": "Named as co sponsor ('Carpenter') on the official bill page; linked to Tim Carpenter via the official 2024 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6576877349bee88f9291d10a5621c787e680b1be63a222ed5e3fd5f93834d6dd",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/sv0260",
+      "date": "2022-02-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "nay",
+      "motion": "Senate: Read a third time and passed (PASSAGE) (sv0260)",
+      "note": "Senate roll call as printed ('CARPENTER'), linked to Tim Carpenter (district 3) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "173370a2da2254e9558211fd7d716d85ba2265e26f9f3d3e2282786165ffeebc",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/sv0003",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Senate: Read a third time and adopted (PASSAGE) (sv0003)",
+      "note": "Senate roll call as printed ('CARPENTER'), linked to Tim Carpenter (district 3) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fda5b4834a3005b2bae97ae1fb5bbf0b8a4d8e1b83041d7a107fed6a688188f4",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/sv0139",
+      "date": "2023-11-07",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "nay",
+      "motion": "Senate: Read a third time and adopted (ADOPTION) (sv0139)",
+      "note": "Senate roll call as printed ('CARPENTER'), linked to Tim Carpenter (district 3) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "exemption from photo ID for older voters",
+        "voter fraud claims",
+        "proof of citizenship to register",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Tim_Carpenter (empty page)",
+        "blocked: https://city.milwaukee.gov/ImageLibrary/Groups/electionAuthors/Election-Results/2026/2026-Partisan-primary-Summary-results.pdf (bot check)",
+        "official Senate page for the 3rd District (about page reviewed, nothing on the subject; the news list URL returned 404)",
+        "April 15, 2020 press release on the delayed election (reviewed, about election timing, nothing on ID)",
+        "one earlier-news article quoting him on photo ID (saved)",
+        "web searches on his name with voter ID and the 2025 voter ID amendment (no own words from 2025 or 2026 found)",
+        "a 2026 district preview page lists him as the incumbent on the November ballot",
+        "not reviewed: no campaign site found"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:58:00.173Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 19,
+      "at": "2026-10-28T23:15:12.775Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

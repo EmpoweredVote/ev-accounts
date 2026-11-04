@@ -1,0 +1,58 @@
+{
+  "politician_id": "bf2a6480-5ac9-421c-b14d-710b86fc89c1",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot, free ID)",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site charlie4va.com (homepage: only a general line backing proposed voting-rights constitutional amendment, not about ID; issues page 404)",
+        "VPM candidate page (confirms House District 77 seat): nothing on the subject",
+        "blocked: https://virginiamercury.com/briefs/former-aclu-attorney-charlie-schmidt-wins-democratic-nomination-in-house-district-77/ (HTTP 403)",
+        "Ballotpedia not reviewed (page returned empty)",
+        "blocked: lis.virginia.gov (not retried, per instruction)",
+        "news search on name plus voter ID / ACLU: nothing attributed to him on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:27:06.031Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carrying guns and permits",
+        "repealing gun laws",
+        "general statement on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search: member name plus gun words, searched several times, nothing on the subject by this person",
+        "Ballotpedia: not usable, returns empty to the fetch tool",
+        "campaign site: guessed addresses did not resolve",
+        "Virginia House of Delegates District 77, Charlie Schmidt, in office since 2026-01-17 (search result lead from history.house.virginia.gov; not fetched)",
+        "Richmonder primary article https://www.richmonder.org/charlie-schmidt-edges-michelle-mosby-in-firehouse-primary/: platform does not cover guns",
+        "iVoterGuide https://ivoterguide.com/race/25628/election/1388: no statement by him on guns",
+        "Commonwealth Times profile https://commonwealthtimes.org/2026/01/14/richmonds-next-lawmaker-a-professor-protester-lawyer-and-librarian/: nothing on guns",
+        "Wikipedia article URL for him returned 404",
+        "sponsor list: covered by LegiScan bulk check"
+      ],
+      "found": 0,
+      "at": "2026-10-31T17:22:57.122Z",
+      "by": "source-collector"
+    }
+  ]
+}

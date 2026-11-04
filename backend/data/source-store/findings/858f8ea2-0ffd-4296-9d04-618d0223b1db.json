@@ -1,0 +1,71 @@
+{
+  "politician_id": "858f8ea2-0ffd-4296-9d04-618d0223b1db",
+  "findings": [
+    {
+      "id": "c14780df4569089c992f8d783c99b6971e4344dfdfba6fc8b281ea9621145cf3",
+      "kind": "own-words",
+      "url": "https://www.mcqueenforga.com/issues",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Oppose voter suppression: I will fight against blatant measures to suppress our right to vote, such as strict voter ID laws and partisan gerrymandering.",
+      "note": "Campaign issues page, undated; the same text is quoted in Branch.vote's 2024 profile. She says she will fight against strict voter ID laws. Date unknown: the page is undated (the 2024 date was a guess and was removed).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.725Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e1f93c027ea73e3bfae4d4e3ce93835f2877532fc40e2c5eeec1b640ace9b96a",
+      "kind": "own-words",
+      "url": "https://www.mcqueenforga.com/issues",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Fair, and transparent voting: While Georgia Republicans are working to silence us, I will fight for our right to vote. This means advocating for policies that make it easier, not harder to participate in our democracy - automatic voter registration, expanding early voting opportunities, convenient absentee ballot options.",
+      "note": "Same undated campaign page. Lists voting-access measures she backs: automatic registration, more early voting, easier absentee voting. (Page text names a party; not used as evidence.) Date unknown: the page is undated (the 2024 date was a guess and was removed).",
+      "subjects": [
+        "voting access in general",
+        "mail-ballot access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.725Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site issues page (https://www.mcqueenforga.com/issues)",
+        "Branch.vote 2026 profile (summary by a third party, not saved as own words)",
+        "house-press.com swearing-in release (nothing on the subject)",
+        "Wikipedia (nothing on the subject; confirms sitting District 61 member)",
+        "web searches on name plus voter ID (no news quotes found)",
+        "not reviewed: legis.ga.gov bill pages (login token needed)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T20:28:59.725Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

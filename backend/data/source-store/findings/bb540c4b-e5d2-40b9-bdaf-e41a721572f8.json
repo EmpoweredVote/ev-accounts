@@ -1,0 +1,270 @@
+{
+  "politician_id": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8",
+  "findings": [
+    {
+      "id": "d2821492d1c687f55e3f4161d375ea78aa33b52fafad686d2067d60ee474a7e4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81400&billStatusActionId=223258&includeVotes=true",
+      "date": "2024-02-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2785-2024",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('ORTIZ'), linked to Analise Ortiz (district None) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0da3aed2455336057e100fde82e9f576a3cc98862d9e034d6b51c98802207615",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=246497&includeVotes=true",
+      "date": "2026-06-12",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('ORTIZ'), linked to Analise Ortiz (district 24) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a2d40a39f131a87e5e9a3d3fbb430a43d59903c0638a14b987d48c2958c11a86",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=234554&includeVotes=true",
+      "date": "2025-03-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('ORTIZ'), linked to Analise Ortiz (district 24) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "35da6f70d1f84b2046ea1b4872f6f957fd245a0cb67db40f094de4cd201a5fa7",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=233421&includeVotes=true",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('ORTIZ'), linked to Analise Ortiz (district 24) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0dfb2519c98f83e5598ac6fd0ad9df8c4fe318abd4d5608788b6d5b08e232aa2",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78743&billStatusActionId=219083&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1141-2023",
+      "act": "nay",
+      "motion": "House: Third Reading: failed to pass",
+      "note": "House roll call as printed ('ORTIZ'), linked to Analise Ortiz (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "874d8b41974c07ab69831bb20b6331b1899f813251abd335d0c6c41ea2804008",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79205&billStatusActionId=219025&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1518-2023",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('ORTIZ'), linked to Analise Ortiz (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8986512a76239d1085f23b414056af40ca1776a196aa959bbf7fbba3fcd3db8",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79268&billStatusActionId=219027&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('ORTIZ'), linked to Analise Ortiz (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "03a16c0951629bf6162b4a4641ce199c48f3f00694fca3d54826952415a18d7f",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83528&billStatusActionId=241249&includeVotes=true",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1001-2026",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('ORTIZ'), linked to Analise Ortiz (district 24) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e5091485e98482c3999b1d2610cbb27d063061517417eca7484c37e13e72e708",
+      "kind": "own-words",
+      "url": "https://www.votebeat.org/arizona/2026/06/13/2026-ballot-measure-voting-changes-republican-voter-id-fast-election-results/",
+      "date": "2026-06-13",
+      "date_precision": "day",
+      "passage": "“The intention of this is to eliminate early voting,” said Sen. Analise Ortiz, a Democrat from Phoenix. “We shouldn’t be tiptoeing around the impact of this, because what it means is that senior citizens, rural voters, tribal voters, people with disabilities, people who work multiple jobs and can’t wait in long lines, are going to lose their access to vote by mail. That is shameful.”",
+      "note": "Quoted by Votebeat on the Senate's referral of the 2026 ID and early-ballot ballot measure (HCR 2001). She describes the measure as ending early voting and names the groups she says would lose access to vote by mail. Article date is the publication date in the URL; the floor vote was the day before.",
+      "subjects": [
+        "election integrity laws in general",
+        "ID with a mail or early ballot",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:17:05.067Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b403418d3587c4c54b1129d0b2aa96b6d2d383202d62492b28380de620c47db9",
+      "kind": "own-words",
+      "url": "http://azcapitoltimes.com/news/2025/11/22/arizona-republicans-reignite-push-for-florida-style-elections/",
+      "date": "2025-11-22",
+      "date_precision": "day",
+      "passage": "“I think that we’re going to see these voter suppression efforts amplified this year because I think Republicans are terrified by the election results that we saw in Virginia and New Jersey,” Ortiz said. “Arizona Republicans are reading the tea leaves and are recognizing the only way they can win is to cheat and that’s what they are trying to do.”",
+      "note": "Quoted by the Arizona Capitol Times on two proposed constitutional amendments about early voting and election timing (the same package that later included an ID requirement). The same article reports she said she expected a well-funded campaign if the measure reached the ballot.",
+      "subjects": [
+        "election integrity laws in general",
+        "ID with a mail or early ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:17:05.067Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 8,
+      "at": "2026-10-28T22:53:15.887Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with a mail or early ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (repo script not run under this session's rules)",
+        "https://www.azleg.gov/MemberRoster/ (positive control: member roster lists the person)",
+        "https://www.azleg.gov/Senate/Senate-member/?legislature=57&session=130&legislator=2384 (member page, committees and sponsored bills; no voter-ID or citizenship bill titles seen)",
+        "https://en.wikipedia.org/wiki/2026_Arizona_Senate_election (unopposed primary win, general-election nominee for the 24th district seat)",
+        "blocked: https://ballotpedia.org/Analise_Ortiz (empty page)",
+        "blocked: https://www.analiseortiz.com (fetch failed with no output)",
+        "blocked: https://azmirror.com/2026/06/13/az-legislature-ends-2026-session-after-late-night-gop-push-to-send-conservative-agenda-to-voters/ (403 / bot check)",
+        "blocked: https://azmirror.com/2026/02/17/arizona-gop-intraparty-fight-looms-over-competing-election-overhaul-proposals/ (bot check)",
+        "blocked: https://azmirror.com/2026/06/15/republican-legislators-put-measure-to-change-voting-procedures-on-november-ballot/ (bot check)",
+        "http://azcapitoltimes.com/news/2026/02/13/republicans-bring-back-florida-style-election-measure/ (no words from her on the page)",
+        "https://www.fox10phoenix.com/news/2026-election-prop-144-debate-examines-proposed-voter-id-mandates-arizona-mail-in-voting (nothing from her)",
+        "web searches: news and statements on voter ID and proof of citizenship"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:17:05.067Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

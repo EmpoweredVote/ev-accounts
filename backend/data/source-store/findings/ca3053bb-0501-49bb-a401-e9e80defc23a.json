@@ -1,0 +1,391 @@
+{
+  "politician_id": "ca3053bb-0501-49bb-a401-e9e80defc23a",
+  "findings": [
+    {
+      "id": "894b31c8baa9b052cc3b34a914da5ca9cfa21297dd4831b2b88def3227b4c63b",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/NewsDetails?id=2047",
+      "date": "2026-01-16",
+      "date_precision": "day",
+      "passage": "The SAVE Act, Senate Bill 986, which I have proudly filed again this year, builds directly on this voter-approved constitutional foundation and the broader national momentum for secure elections.",
+      "note": "Senate release in his name: he refiled SB 986 and ties it to the 2024 constitutional amendment limiting voting to citizens.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:13:46.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fdb8600d13fb3ad2d1fc2e076ada608603e85018ba9254825a469f8ffa6f7ea7",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/NewsDetails?id=2047",
+      "date": "2026-01-16",
+      "date_precision": "day",
+      "passage": "It requires applicants to provide clear documentary proof of citizenship—helping to confirm elections are conducted fairly, securely and with the integrity that Americans expect and deserve.",
+      "note": "Describes what SB 986 requires of people registering to vote.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:13:46.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "41493e68bd618739e2aded8dba60395084784ec5015b8a913c6c965c6390d875",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/NewsDetails?id=2047",
+      "date": "2026-01-16",
+      "date_precision": "day",
+      "passage": "Election interference can come in many forms.",
+      "note": "Opening line of his argument for SB 896, a bill limiting outside money and in-kind help for election administration.",
+      "subjects": [
+        "election integrity laws in general",
+        "outside funding of elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:13:46.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "92c0693d8913e739e95af44455e28ee3404e0556857f4d63c790bb8c8f272a66",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/NewsDetails?id=2352",
+      "date": "2026-05-29",
+      "date_precision": "day",
+      "passage": "The legislation is a straightforward, commonsense measure requiring documentary proof of citizenship when registering to vote, helping ensure that only eligible U.S. citizens participate in our elections.",
+      "note": "End-of-session report: he describes SB 986 and says it did not pass before adjournment.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:13:46.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c6abba511d77711448fc4e309e9771b35f9449d81575ab8d928197a01ffbc7aa",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/NewsDetails?id=2352",
+      "date": "2026-05-29",
+      "date_precision": "day",
+      "passage": "While SB 986 advanced through the legislative process this session, it ultimately did not cross the finish line before adjournment.",
+      "note": "Reports SB 986 did not become law in 2026.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:13:46.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "55a8a4c1515bc93db46be4521d3b5e67c9a2e6c7d10a8cb8ac1709f95a8e8823",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/NewsDetails?id=2203",
+      "date": "2026-03-03",
+      "date_precision": "day",
+      "passage": "To restore faith and integrity in elections, it is imperative to ensure noncitizens cannot participate.",
+      "note": "Written in a Senate release; he says he spoke about the SAVE Act and SB 986 on a radio show.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:13:46.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5f5ec79232c72b91e05a4d1f8636741f7c5db7d25a978e618cb5c9042927aac",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/NewsDetails?id=2203",
+      "date": "2026-03-03",
+      "date_precision": "day",
+      "passage": "I believe requiring documentary proof of U.S. citizenship for new voter registrations will ensure only eligible Missouri citizens vote and restore full public trust in our elections.",
+      "note": "His stated reason for requiring documents at new registration.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:13:46.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1cd8c11264ad311236984266f8d973e751f8a70dc029680dc75dc33b0220b9c4",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/NewsDetails?id=1876",
+      "date": "2025-04-28",
+      "date_precision": "day",
+      "passage": "Protecting the security of elections is one of the basic tenets of the conservative platform and the main reason I filed Senate Bill 152, now one vote in the Missouri House of Representatives away from the governor’s desk.",
+      "note": "Describes SB 152 as his election-security bill.",
+      "subjects": [
+        "election integrity laws in general",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:13:46.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9bded06144bdf6c550a6fee9ad9c0b3488c9a55652513bb18bd669411b9b5c0a",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/NewsDetails?id=1876",
+      "date": "2025-04-28",
+      "date_precision": "day",
+      "passage": "The legislation prohibits foreign influence in the initiative petition process and requires a person to show documentary proof of citizenship when they first register to vote.",
+      "note": "His description of what SB 152 does.",
+      "subjects": [
+        "proof of citizenship to register",
+        "outside funding of elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:13:46.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b7dd82d4d1ff68de9a7cb8dca0fefb17b1d2701fc520c8196e1cb1b4b9580868",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/NewsDetails?id=1876",
+      "date": "2025-04-28",
+      "date_precision": "day",
+      "passage": "This will enhance election integrity by putting a stop to voting by illegal immigrants, as well as foreign nationals controlling the outcome of constitutional amendments.",
+      "note": "His stated aim for SB 152.",
+      "subjects": [
+        "non-citizen voting",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:13:46.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "367b21209a05aa4bd6eab93d29c1cc51592fc2fe4358171edad3e1fbb888ecb8",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/NewsDetails?id=1657",
+      "date": "2025-01-27",
+      "date_precision": "day",
+      "passage": "I filed Senate Bill 62 to mandate documentary proof of citizenship when registering to vote, require election authorities to perform system maintenance on a quarterly basis and refer cases against those accused of violating election laws directly to the attorney general instead of the designated prosecuting attorney.",
+      "note": "Describes SB 62: document proof at registration, quarterly voter-roll maintenance, referral of election-law cases to the attorney general.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:13:46.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "09290c40ef904fd21e934d59d6f4b584368f944de40f24cdb65dc5cc2a2bd880",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/NewsDetails?id=1465",
+      "date": "2024-04-10",
+      "date_precision": "day",
+      "passage": "The second provision of this resolution pertains to non-citizen voting.",
+      "note": "From his report on SJR 78, which also proposed a ranked choice ban.",
+      "subjects": [
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:13:46.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1d988efbbdef8043fc172974eb4405bf350bf2c37a48f83c3602a94581bfebf1",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/NewsDetails?id=1465",
+      "date": "2024-04-10",
+      "date_precision": "day",
+      "passage": "It would amend our state constitution to only allow U.S. citizens to vote in our elections.",
+      "note": "His description of the citizens-only voting provision of SJR 78.",
+      "subjects": [
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:13:46.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "042bdc5b1995e1aec5fb4ba7ed46c1a57cc95409ba7432b01e1f3ec1f0c07149",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/BillTracking/Bills/BillInformation?year=2025&billId=327",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-62-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, SCS SB 62 (LR 1308S.04C), Senate committee substitute voted do pass by the committee 02/17/2025 and reported 02/24/2025; it has no floor vote. Introduced version is LR 1308S.01I.",
+      "note": "Named as prime sponsor ('Brown (26)') on the official bill text, summary or journal; linked to Ben Brown via the official 2025 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dba4065af4c3c823f23b8dbbf5c8a8e82ebd89e460f997527b0314834e8d2fec",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/BillTracking/Bills/BillInformation?year=2026&billid=260",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-986-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, SCS SB 986 (LR 5099S.06C), Senate committee substitute voted do pass by the committee 04/13/2026; no floor vote. Introduced version is LR 5099S.02I. The bill page's year is 2026; SB 986 in the 102nd General Assembly (2024) is a different bill (health-care billing, Coleman).",
+      "note": "Named as prime sponsor ('Brown (26)') on the official bill text, summary or journal; linked to Ben Brown via the official 2026 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e114662582e36f9f876ea58ca7997d4a6cd77360af2d2f46d1a30370cb3d2133",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/26info/Journals/Rday6405111615-1637.pdf",
+      "date": "2026-05-11",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "Senate: SS for SCS for HCS for HB 1871, as amended, read the 3rd time and passed",
+      "note": "Senate roll call as printed ('Brown (26)'), linked to Ben Brown (district 26) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.235Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "voter-roll checks / election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings, name search also 0)",
+        "official Senate media: Capitol Reports ids 1465, 1657, 1800, 1876, 2047, 2203, 2352 read in full (bodies); nothing on photo ID at the polls or no-ID fallback; id 1800 only repeats bill-description sentences, not saved",
+        "senate.mo.gov member page https://www.senate.mo.gov/brown/ (HTTP 500), media archive https://senate.mo.gov/Senators/MediaArchive/26 (404): full release list not reachable, so other releases may exist",
+        "news searches (3): articles quote critics and bill details; no direct Brown quote page fetched (not reviewed: columbiamissourian, griffonnews, newstribune, newsnationnow stories)",
+        "blocked: https://ballotpedia.org/Ben_Brown (known refusal, not tried)",
+        "no campaign site or questionnaire found"
+      ],
+      "found": 13,
+      "at": "2026-11-04T05:13:46.935Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-04T14:10:53.757Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:14:55.235Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

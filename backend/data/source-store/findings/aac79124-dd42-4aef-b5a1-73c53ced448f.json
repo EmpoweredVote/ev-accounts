@@ -1,0 +1,240 @@
+{
+  "politician_id": "aac79124-dd42-4aef-b5a1-73c53ced448f",
+  "findings": [
+    {
+      "id": "661e160cb8e91068a81879fcd7955ec2cac55894b0f506aefdd1bced72d0b9fa",
+      "kind": "own-words",
+      "url": "https://urbanmilwaukee.com/pressrelease/rep-madison-opposes-republicans-continued-voter-suppression-efforts",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "passage": "Today, Legislative Republicans have shown that their number one priority is passing a constitutional amendment that could disenfranchise voters because their austerity agenda is unpopular. There’s a historic legacy of voter suppression in Wisconsin’s Black communities – this is yet another attempt to silence the voices of Black, Brown and Indigenous people in Wisconsin.",
+      "note": "Statement issued in his name when the Assembly passed AJR 1, the voter ID constitutional amendment. He says the amendment could keep people from voting and ties it to past voter suppression. Date is from the official press release list (legis.wisconsin.gov/assembly/10/madison/news-updates/press-releases/).",
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:03:08.723Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "27c88d6080df136f402c3a1d55e9bd199ead4c960e4d2ffd43d2667d18bbaf56",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/ab1046",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-1046-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/2/2024; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 4/15/2024)",
+      "note": "Named as co sponsor ('Madison') on the official bill page; linked to Darrin Madison via the official 2024 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.773Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b0fd5c8a833de068229f0d905eb73723f1aa11e44b56399953edc1264166f68",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab379",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-379-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Madison') on the official bill page; linked to Darrin Madison via the official 2025 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.773Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1abef592fd420e5a7754f530aecd628a31c41acca61fdf66ceefad9adb233b88",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab941",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-941-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/28/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Madison') on the official bill page; linked to Darrin Madison via the official 2026 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.773Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3033a48793490738b7b933b26206e0607e71021cf4b89fa8e0780e904022fe20",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sb362",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-362-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 6/27/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Madison') on the official bill page; linked to Darrin Madison via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.773Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bdf48e7701ed601adf34eea22af1ad6ffbdfa957445f4bb4e435c7024f84405b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sb931",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-931-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/6/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Madison') on the official bill page; linked to Darrin Madison via the official 2026 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.773Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e1b08054049e32c11c00cbb05b467301903166919d9bf93c68d618cc8309e73b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/sb938",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-938-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/19/2024; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 4/15/2024)",
+      "note": "Named as co sponsor ('Madison') on the official bill page; linked to Darrin Madison via the official 2024 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.773Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2a8c1e6adeeb1b83990f54b1ca73fbb70a72c10f09939c42f1e1da2b2ae32867",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('MADISON'), linked to Darrin Madison (district 10) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.773Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b953b8ca77be5fb9ddafa6b70a382b4723ca94e06d8baa02c27e3b6f154dc83",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('MADISON'), linked to Darrin Madison (district 10) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.773Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site home page and press release list (legis.wisconsin.gov/assembly/10/madison): list shows the 2025-01-14 release on the voter ID amendment and a 2023-10-02 release on automatic voter registration (registration only, not saved); only the first page of the list was reviewed",
+        "Urban Milwaukee copy of the 2025-01-14 release (fetched, text copied)",
+        "blocked: https://ballotpedia.org/Darrin_Madison (not fetched; the same site returned 403 for another person in this batch, so not retried)",
+        "two web searches on name plus voter ID words",
+        "campaign site not found",
+        "candidacy confirmed: theballotbrief.com Assembly District 10 page says the sitting officeholder is on the 2026-11-03 ballot"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:03:08.723Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 8,
+      "at": "2026-10-28T23:15:12.773Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

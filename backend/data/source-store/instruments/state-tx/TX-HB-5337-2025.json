@@ -1,0 +1,371 @@
+{
+  "id": "TX-HB-5337-2025",
+  "scope": "state:tx",
+  "title": "HB 5337 (89R): Relating to requiring a person to submit proof of citizenship to register to vote; creating criminal offenses.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5337",
+    "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5337",
+    "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB05337H.htm",
+    "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB05337I.htm (introduced; not read)",
+    "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB05337I.htm"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) SECTION 1 (amends Election Code 13.002(a), adds (a-1))\n(quote) (a-1) A person desiring to register to vote shall submit to the registrar a copy of one of the following documents: (1) a United States passport or passport card issued to the person; (2) a certified copy of a birth certificate issued by a United States state or territory, or the District of Columbia; (3) United States citizenship papers issued to the person; (4) identification issued by the agency of the United States responsible for citizenship and immigration; or (5) for citizens born abroad, a certificate of report of birth or consular report of birth abroad issued by the United States Department of State.\n(section) SECTION 1 (13.002(a))\n(quote) (a) A person desiring to register to vote must submit an application and proof of citizenship as required under Subsection (a-1) to the registrar of the county in which the person resides.\n(section) SECTION 4 (adds 13.0722)\n(quote) (a) An individual who fails to submit proof of citizenship under Section 13.002(a-1) to the registrar and who is unable to be verified as a United States citizen under Section 13.0721 is only qualified to vote a limited federal ballot under Chapter 115.\n(section) SECTION 4 (adds 13.0721(c))\n(quote) (c) Notwithstanding the requirement to submit documentation under Section 13.002(a-1), the registrar shall approve the application if the registrar matches the applicant with information that verifies the applicant is a United States citizen and is otherwise eligible for registration under this chapter.\n(section) SECTION 12 (adds 115.002(b))\n(quote) (2) the voter must provide proof of citizenship to the voter registrar not later than the sixth day after election day in order for a voter's limited federal ballot to be counted as a full ballot; and (3) if the voter does not provide proof of citizenship to the voter registrar during the period described by Subdivision (2), then only the races for the offices of United States senator or United States representative on the voter's ballot will be counted.\n(other) Sec 2: notice duties and training for volunteer deputy registrars; they may not receive citizenship documents (13.0391).\n(other) Sec 3: registrar approval/rejection rules for applications; new state jail felony for knowingly failing to reject an application (13.072).\n(other) Sec 4: registrar citizenship verification against databases within 10 days; limited federal ballot status; notation F; verification for existing registrants by Dec 1, 2025 (13.0721-13.0723); state jail felony for registering a non-citizen without verification.\n(other) Sec 5: registration-by-mail form must be business reply mail rather than postcard (13.121(a)).\n(other) Sec 6: contents of official registration form, including statement on citizenship documents and space for alien registration, naturalization or citizenship certificate number (13.122(a)).\n(other) Sec 7: new Subchapter G: attorney general citizenship verification, report by March 31, 2026, new offense of a non-citizen applying to register (state jail felony), attorney general prosecution if local prosecutors do not act in 180 days.\n(other) Sec 8: voters who already gave proof need not re-provide it for registration updates (15.021(f)).\n(other) Sec 9: F notation on the voter list (15.0211).\n(other) Sec 10: limited federal ballot voters at the polls (63.007).\n(other) Sec 11: definition of restricted ballot (111.001).\n(other) Sec 12: new Chapter 115, voting a limited federal ballot: sealed envelopes, registrar and early voting ballot board review, counting only U.S. Senate/House races when no proof, notice of outcome.\n(other) Sec 13: secretary of state rulemaking.\n(other) Sec 14: secretary of state to ask the federal Election Assistance Commission to change the federal mail registration form; attorney general enforcement if refused.\n(other) Sec 15: effective date September 1, 2025.\n(filed text, as introduced) (section) SECTION 1, adding Election Code Section 13.002(a-1)\n(quote) (a-1) A person desiring to register to vote shall submit to the registrar a copy of one of the following documents: (1) a United States passport or passport card issued to the person; (2) a certified copy of a birth certificate issued by a United States state or territory, or the District of Columbia; (3) United States citizenship papers issued to the person; (4) identification issued by the agency of the United States responsible for citizenship and immigration; or (5) for citizens born abroad, a certificate of report of birth or consular report of birth abroad issued by the United States Department of State.",
+  "sponsors": [
+    {
+      "name": "Isaac",
+      "role": "author",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "42370d1a-2ffd-480b-a24f-b2a39405c929"
+    },
+    {
+      "name": "Alders",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "687ba2dd-c179-4ac6-abb2-3a5ac7ed43bb"
+    },
+    {
+      "name": "Ashby",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "754cf14b-7282-46cb-a2d8-5aee3639f003"
+    },
+    {
+      "name": "Barry",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "f6e50487-d839-479d-8efd-9937a09f9ab4"
+    },
+    {
+      "name": "Bell, Cecil",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Bell, Keith",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "b5f2f8c9-13ab-4e15-82dd-dbecb6466084"
+    },
+    {
+      "name": "Bumgarner",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "586b4b4d-26f1-449c-90ba-55d4aec48066"
+    },
+    {
+      "name": "Cain",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "9d6eae75-9400-46bf-a2f1-34de55db3d49"
+    },
+    {
+      "name": "Cook",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "5249613b-40df-4458-830d-cdbb121961dc"
+    },
+    {
+      "name": "Cunningham",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "032bb339-c63b-4510-93e5-25e72c4f9632"
+    },
+    {
+      "name": "Curry",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "0fa291b4-7f6b-4004-8bb9-19a11b75ab26"
+    },
+    {
+      "name": "Darby",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "b01f30e9-0c17-4d59-af5f-a90c176b133d"
+    },
+    {
+      "name": "Dean",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "b10ab09a-0945-4ee7-a78c-a25288a6f136"
+    },
+    {
+      "name": "DeAyala",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "6121f45c-3508-43a7-a36e-871901303d73"
+    },
+    {
+      "name": "Dorazio",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "207cb8e4-14f2-49e1-8786-9533dc9b9d31"
+    },
+    {
+      "name": "Frank",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "3b3da471-8c67-4ea5-bb5f-fa1b2c0ce095"
+    },
+    {
+      "name": "Gates",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "1769fdb6-9c60-4c99-b08d-55cbe95bcedd"
+    },
+    {
+      "name": "Gerdes",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "002f4446-75be-4860-935e-3cb65ce296fb"
+    },
+    {
+      "name": "Guillen",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "b6ea3b73-5664-462f-bc99-6c377418c34f"
+    },
+    {
+      "name": "Harris",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "c6dcdb47-9bbd-4c9b-9169-77e6082f17b1"
+    },
+    {
+      "name": "Hayes",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "099c7880-e909-4874-a257-cc8ca54ca7bd"
+    },
+    {
+      "name": "Hefner",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "cb331eaa-fe08-4692-b92c-c3d303a426aa"
+    },
+    {
+      "name": "Hickland",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "82968d14-f39b-401d-821c-89825a9811ac"
+    },
+    {
+      "name": "Hunter",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "d66fb5fd-7b56-47a5-9762-e29b7403bb39"
+    },
+    {
+      "name": "Kerwin",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "d9dbb8f1-c49a-4a95-8a53-8aaf34809ffe"
+    },
+    {
+      "name": "LaHood",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "786ac925-59d3-40e3-a9ce-b63a54f4caf4"
+    },
+    {
+      "name": "Landgraf",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "90d94c32-12a1-433a-8ab4-418cd2f05c01"
+    },
+    {
+      "name": "Leo Wilson",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "edbedc04-f48d-48b9-b229-1f10db22b4f6"
+    },
+    {
+      "name": "Little",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "6c1e1764-f093-44e2-9ec0-90b61457fd45"
+    },
+    {
+      "name": "Lopez, Janie",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "df2b0dba-63d7-4f18-b713-7cc0594ec61d"
+    },
+    {
+      "name": "Louderback",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "3c083452-8494-4c47-b6e8-327dc24584c7"
+    },
+    {
+      "name": "Lujan",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "4001a833-a971-45ec-a625-cdb206d3c2ed"
+    },
+    {
+      "name": "Luther",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "9a8cf4be-0543-4cc1-99ea-be5f19cb3402"
+    },
+    {
+      "name": "McLaughlin",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "481d7dae-0a6f-4e54-917c-72a2c6be6731"
+    },
+    {
+      "name": "Metcalf",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "9ce81b97-6e02-4bdb-b9dc-e2592d4ce87c"
+    },
+    {
+      "name": "Meyer",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "1c90dfec-8203-4c1c-9158-48b775862109"
+    },
+    {
+      "name": "Money",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "03bd0a2b-4693-477d-90e9-4bc7c10f5978"
+    },
+    {
+      "name": "Oliverson",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "8d339a48-dabd-424c-ac3c-e1e128b68bf8"
+    },
+    {
+      "name": "Orr",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "9ced80ef-935e-47a3-ab6c-92f31e31e5e8"
+    },
+    {
+      "name": "Patterson",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "4f6da77d-f516-4873-b705-3adeb23c1ffb"
+    },
+    {
+      "name": "Paul",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "a80b2deb-e005-4115-b5c0-2a050fa6a1ec"
+    },
+    {
+      "name": "Pierson",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "2d902ae4-2c04-4ecc-b9a4-55dccc848c70"
+    },
+    {
+      "name": "Richardson",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "f7ff0e3b-1d14-4563-8119-7919a5a9cd14"
+    },
+    {
+      "name": "Shofner",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "e1b7592e-6f9a-411a-96c3-19f1ccc23435"
+    },
+    {
+      "name": "Slawson",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "ac161830-6b8a-479d-8ef4-c0eb3d93df83"
+    },
+    {
+      "name": "Smithee",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "edad1d9c-b40b-407c-bdcc-af34e3f37413"
+    },
+    {
+      "name": "Spiller",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "2c5de636-b661-4b8f-8863-f10aa25e54ce"
+    },
+    {
+      "name": "Swanson",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "7c2c52a2-4047-4090-bc88-e543aaaeba50"
+    },
+    {
+      "name": "Tepper",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "21d1e18c-f192-4a1a-9dc0-36bd873a3daa"
+    },
+    {
+      "name": "Tinderholt",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "054a67f5-74b5-469b-bba2-0722834bac12"
+    },
+    {
+      "name": "Toth",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "579a5a6f-c12e-4f01-af74-ec30f6bfbafe"
+    },
+    {
+      "name": "VanDeaver",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Vasut",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "2f3450e1-7b1c-4ca0-ae62-581bbc2cf606"
+    },
+    {
+      "name": "Villalobos",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "1d0242ba-f594-4764-b071-22cc86a7cc30"
+    },
+    {
+      "name": "Virdell",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "8925add1-8c61-4d2d-92e8-4314df644187"
+    },
+    {
+      "name": "Wharton",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "81932e53-b3f3-436a-90bb-61df43447953"
+    },
+    {
+      "name": "Wilson",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "politician_id": "56b91150-194f-4699-ba31-e944443eacae"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T14:43:40Z)",
+    "fetched_at": "2026-10-28T14:43:40Z",
+    "method": "curl"
+  }
+}

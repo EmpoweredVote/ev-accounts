@@ -1,0 +1,334 @@
+{
+  "politician_id": "75a2d83f-8db8-478b-a36d-5ecb707b8507",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "818586ba7a6fa8e00a512d1c240c01472b0f796fab8f64a338fb0b5e616ea7fe",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: yea (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9fc7fe42d4ca0418da57b37f789b4766ff618ad71e31a528b663386efac66476",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: yea (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "c5523d50a631897031188db98ea5d927074d7126174a492b6b9e8d21f240f855",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4517",
+      "date": "2018-05-23",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4517-2017",
+      "act": "yea",
+      "motion": "House On Engrossment Yea and Nay No. 359",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MA House, House On Engrossment Yea and Nay No. 359, 2018-05-23: yea (tally 139–14); census gate: near-unanimous.",
+      "subjects": [
+        "court orders to remove guns from people at risk of harming self or others",
+        "emergency orders without notice",
+        "penalty for false petitions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4517-2017.introduced.pdf",
+          "sha256": "3bac8bca02408059e2c0db49bae39de8a690f0fb6e1b5469f7a23cf51fbd5cc4"
+        }
+      }
+    },
+    {
+      "id": "7727b62aa6ef27fb9e9cfc73a0491b1c4dc595f2b71982384c335273fe2771d1",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4670",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4670-2017",
+      "act": "yea",
+      "motion": "On acceptance of the conference report (Yea and Nay No. 389)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, On acceptance of the conference report (Yea and Nay No. 389), 2018-06-28: yea (tally 133–15); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders to remove guns from people at risk of harming self or others",
+        "protection order added as a bar to gun licenses",
+        "stun gun rules and locked storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4670-2017.introduced.pdf",
+          "sha256": "6b37958358a3f01548ef0d16c386b3caaf5993d5c100f88279ff5b45ad1fe098"
+        }
+      }
+    },
+    {
+      "id": "c94b2de26145d57badd2c72615ea2ede1f4e226fb463afa071ec5aa98c61da13",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H2359",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MA-H-2359-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-2359-2023 (LegiScan sponsor list): H2359 (193rd General Court): To prohibit carrying firearms in sensitive places.",
+      "subjects": [
+        "new offence for carrying guns in sensitive places",
+        "list of sensitive places: government buildings, schools, parks, transit, polling places"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2359-2023.introduced.pdf",
+          "sha256": "ae5134ebc4a3ceb3c56314ffb509a9e10f45934bd770c53473576c1f60b1bd13"
+        }
+      }
+    },
+    {
+      "id": "45bb3079b25331bd2630d0f30e56bb99ba4c86e89e26fcf7fa1f7a4271168756",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H2360",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MA-H-2360-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-2360-2023 (LegiScan sponsor list): H2360 (193rd General Court): Relative to 3D printed guns and ghost guns.",
+      "subjects": [
+        "ghost guns: serial numbers required on all firearms",
+        "3D-printed and undetectable firearms banned",
+        "felony penalty for breaking the new rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2360-2023.introduced.pdf",
+          "sha256": "571ab4edc7bf2d33a4ab46199dedc64d80f657ef98d1f743254495c425d2fe94"
+        }
+      }
+    },
+    {
+      "id": "46909e36d3988df4a2fcede93635db5657e3ef8916d5e6a720a8032025862912",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/191/H3780",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MA-H-3780-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-3780-2019 (LegiScan sponsor list): H3780 (191st General Court): Relative to firearm purchases.",
+      "subjects": [
+        "one firearm per 30 days purchase limit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-3780-2019.introduced.pdf",
+          "sha256": "29474a294b3858a8cc2f55533f679fb9e4e88f3562a9815572e0b0e181925996"
+        }
+      }
+    },
+    {
+      "id": "a7b3680b261d62ebf6107ab9f9df747c623a6f9a611585300571497c66066cff",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4869",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MA-H-4869-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-4869-2021 (LegiScan sponsor list): H4869 (192nd General Court): Relative to 3D printed guns and ghost guns.",
+      "subjects": [
+        "serial numbers required on firearms; unserialized guns must be registered and marked",
+        "ban on undetectable firearms and on 3D-printing guns without a federal license",
+        "ban on distributing digital gun-printing files in some cases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4869-2021.introduced.pdf",
+          "sha256": "bbafa283c191659d818a8dd83633ee46fe167ce87f0f7135b64e570c963d4381"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Michelle_DuBois names her as 10th Plymouth District incumbent, advanced from the September 1, 2026 primary, on the November 3, 2026 ballot",
+        "On the Record (0 appearances; nothing on the subject)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/MMD1 (sponsored bills reviewed, nothing on the subject)",
+        "legislature bills list https://malegislature.gov/Legislators/Profile/MMD1/Bills (nothing on the subject)",
+        "campaign site https://www.dubois4staterep.com (nothing on the subject)",
+        "Ballotpedia page (no issue statements; no 2026 survey completed; nothing on the subject)",
+        "not reviewed: news search on name plus subject words (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:13:02.877Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script, by id and by name)",
+        "Ballotpedia https://ballotpedia.org/Michelle_DuBois (confirms sitting 10th Plymouth District member, advanced from the 2026-09-01 primary, on the 2026-11-03 general ballot; nothing on the subject)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/MMD1/193 (nothing on the subject)",
+        "legislature bill search for voter identification https://malegislature.gov/Bills/Search?SearchTerms=voter+identification; bill pages 194/H833, 193/H687, 192/H792, 192/H812 fetched, her name does not appear as sponsor on any",
+        "campaign site: not reviewed, no working site found (only social pages linked from Ballotpedia: https://www.facebook.com/DuBois4StateRep)",
+        "two news searches on her name plus voter ID, proof of citizenship, election integrity: nothing on the subject",
+        "ontheissues.org and Wikipedia: not used (lead only)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T20:33:56.015Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "ghost guns",
+        "carry permits and places where carry is allowed",
+        "repeal of gun laws",
+        "general statements on gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/MMD1 names Representative Michelle M. DuBois of Brockton (10th Plymouth); bill list shows no gun bill in the view fetched",
+        "Mass Alliance candidate page https://www.massalliance.org/past-candidate/michelle_dubois/ : 2014 profile, nothing on guns",
+        "campaign site: none found; guessed addresses did not load (blocked: https://www.michelleduboisma.com, https://www.michelleduboisforstaterep.com, https://www.michelleduboisma.org, https://www.michelleduboisforma.com, no connection)",
+        "news search (four searches): coverage of the 2023-2024 House gun bill does not quote her; nothing on the subject in her own words",
+        "Ballotpedia: not reviewed, page empty to the fetch tool"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:42:43.426Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "politician_id": "a2792a55-75ed-414b-bdb8-f0f25dbbda7f",
+  "findings": [
+    {
+      "id": "a6b0a8b433a406e0c6bbd2a0775beaa4429d8b6ddcb42db6b9166babe22f14a8",
+      "kind": "own-words",
+      "url": "https://www.stgop.org/schaumburg_township_republicans_on_the_radar_newsletter_vol_3_issue_6_august_2026",
+      "date": "2026-08",
+      "date_precision": "month",
+      "passage": "I have always been conservative, I've never been anything other than conservative, pro-life, pro-Second Amendment and pro-First Amendment…I think families and freedom are the most important things that we do in everything we do.",
+      "note": "Local party newsletter (Aug 2026) quotes her, from an interview with the Kane County Reporter, calling herself pro-Second Amendment. No specific gun policy named.",
+      "subjects": [
+        "general statement on gun rights / Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T14:59:17.440Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b908c97ad30c0fe1f07b7463366c6187da961707c407491fac44d98931251dcc",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/89053/race/29572/election/1443",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "What restrictions on gun ownership are needed to protect public safety?",
+      "note": "Questionnaire question on her profile; her answer is listed as 'Did not answer.' Saved to show the question was left blank.",
+      "subjects": [
+        "restrictions on gun ownership (left unanswered)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T14:59:17.440Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment general statement",
+        "gun ownership restrictions",
+        "firearm bills sponsored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "iVoterGuide profile (confirms 2026 general-election candidate for IL-8; her answer to the Second Amendment question is blank)",
+        "campaign site votejenniferdavis.com (page text did not load as readable content; nothing on the subject found)",
+        "The Ballot Brief profile (nothing on the subject)",
+        "Ballotpedia: fetch returned empty page, not reviewed: https://ballotpedia.org/Jennifer_Davis_(Illinois)",
+        "congress.gov: not applicable, not a sitting member",
+        "news search: one local party newsletter quoting an interview with a local paper",
+        "not reviewed: the Kane County Reporter article quoted in the newsletter (not located)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T14:59:17.440Z",
+      "by": "source-collector"
+    }
+  ]
+}

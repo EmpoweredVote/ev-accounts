@@ -1,0 +1,319 @@
+{
+  "politician_id": "e9ae7dbc-e266-4d10-ad47-4cd63efc5d0d",
+  "findings": [
+    {
+      "id": "dce07def23c254ed92fdc1700114a1bd9f20545f1cc37549ef16fce72e795a48",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "nay",
+      "motion": "third reading and final passage of CSSB 16 (as amended on second reading, FA1 Hughes)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX Senate, third reading and final passage of CSSB 16 (as amended on second reading, FA1 Hughes), 2025-04-01: nay (tally 20–11); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.562Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V125_SB00016I.htm",
+          "sha256": "bbed58b857c8e5f6b4709c07b60255b713a68300fa9fcaf79b22daee0d8820b9"
+        }
+      }
+    },
+    {
+      "id": "b24f1e7212b0ce76f14909385d6f816fa279c220b1080a700214d8bfabb056b4",
+      "kind": "own-words",
+      "url": "https://www.mollyfortexas.com/issues",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "We must make it as easy as possible for anyone who is legally permitted to make their voices heard.",
+      "note": "Voting Rights section of her campaign issues page. The same section lists support for online voter registration, 24-hour and drive-through voting where needed, and lifting barriers from the 2021 SB 1.",
+      "subjects": [
+        "voting access in general",
+        "voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:45.472Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dffc41a5cc553e8f5c9d8a684e5de3d85c2fd98384eb22e9278bfc70816c5eb3",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ04-01-F1.PDF",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "nay",
+      "motion": "CSSB 16 on second reading: suspend regular order (20-11) and pass to engrossment (20-11)",
+      "note": "SB 16 requires a person to submit proof of citizenship to register to vote. She is listed among the nays on both roll calls.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:45.472Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9387803678d9d8ec4b3860462bb292897a4d73c1fd75a7b4a22823ab95483c8d",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ04-01-F.PDF",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "nay",
+      "motion": "CSSB 16 on third reading and final passage (20 yeas, 11 nays)",
+      "note": "The Senate passed SB 16, the proof-of-citizenship-to-register bill. She is listed among the nays.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:45.472Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ab0c9d4eea7b4d5316bad917fc8068b79acc90b447db39b62b0c31238f6dfdf7",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ04-01-F1.PDF",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "nay",
+      "motion": "SJR 37 on second reading and third reading and final passage (28 yeas, 3 nays)",
+      "note": "SJR 37 proposes a constitutional amendment clarifying that a voter must be a United States citizen. She is one of three senators listed as nay.",
+      "subjects": [
+        "proof of citizenship to vote (constitutional amendment SJR 37)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:45.472Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d28be987d03bd2c933bf15a5a9b63a1d565a7c8b4a2b6a3d754dabfde2cf6152",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ04-01-F.PDF",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-318-2025",
+      "act": "nay",
+      "motion": "SB 318 on third reading and final passage (20 yeas, 11 nays)",
+      "note": "SB 318 sets up an election integrity division in the attorney general's office. She is listed among the nays.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:45.472Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bbbbc138b057bed8c6e92ed17ff8008306bb088d82415310ad764fb938698854",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1596",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1596-2025",
+      "act": "nay",
+      "motion": "Read 3rd time",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX Senate, Read 3rd time, 2025-04-16: nay (tally 21–10); census gate: none.",
+      "subjects": [
+        "short-barrel firearm possession offense repealed",
+        "definition of short-barrel firearm repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-1596-2025.enrolled.html",
+          "sha256": "79af2b9f1e3b2967b40f051ee7540cd4f3d0d7f9ae0f8c6802c5cd20ab4d37f4"
+        }
+      }
+    },
+    {
+      "id": "3a422aee39bb1bea74d7497f6aa94227668c89b1b13cafe4a47ae28b0521e9ec",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1657",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-1657-2025",
+      "act": "author",
+      "motion": "author sponsor, LegiScan sponsor list",
+      "note": "author sponsor of TX-SB-1657-2025 (LegiScan sponsor list): SB1657 (89th Legislature Regular Session): Relating to prohibiting the transfer of certain semiautomatic rifles to certain recipients; creating a criminal offense; increasing a criminal penalty..",
+      "subjects": [
+        "no sale of detachable-magazine semiautomatic rifles to people under 21",
+        "exceptions for police, military, supervised use",
+        "state jail felony penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-1657-2025.introduced.html",
+          "sha256": "85f3832601ec3a643a12cd4e35a8f6bc44ff522c85892c21569417c324134307"
+        }
+      }
+    },
+    {
+      "id": "a982df92d601f17aa2c0b2cc6d1ec1ba4c0c173a2ac39a6ce498f7106a52ecdc",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3053",
+      "date": "2025-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-3053-2025",
+      "act": "nay",
+      "motion": "Read 3rd time",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX Senate, Read 3rd time, 2025-05-28: nay (tally 20–11); census gate: none.",
+      "subjects": [
+        "local firearm buyback programs prohibited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-3053-2025.enrolled.html",
+          "sha256": "5c783f0f9c65e8195dcc193a50eb55c2c6158aa0407a2ccf6a2bea6d95531ee0"
+        }
+      }
+    },
+    {
+      "id": "708fb56cb2ced9e9cb012b0c4324548d7ed04ab2f8d01a2f1a0ab41fab713515",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1362",
+      "date": "2025-05-30",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1362-2025",
+      "act": "nay",
+      "motion": "Senate concurs in House amendment(s)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX Senate, Senate concurs in House amendment(s), 2025-05-30: nay (tally 20–11); census gate: none.",
+      "subjects": [
+        "red flag orders may not be enforced by state or local officials",
+        "federal red flag orders declared unenforceable",
+        "serving an out-of-state red flag order is a state jail felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-1362-2025.enrolled.html",
+          "sha256": "aec24880eb60a1cd8426dd2df4725f2ab3d34a596d3b9e887d080e4018887f72"
+        }
+      }
+    },
+    {
+      "id": "805b0b6a4e2c1fced45e19bb86a523ad5f6a479a54e76be3b4286289c8bb4fe7",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB706",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-706-2025",
+      "act": "nay",
+      "motion": "Read 3rd time",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "TX Senate, Read 3rd time, 2025-03-19: nay (tally 29–2); census gate: near-unanimous.",
+      "subjects": [
+        "out-of-state handgun licenses recognized in Texas",
+        "state must publish list of states honoring Texas license",
+        "old background-check condition for recognition repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-706-2025.enrolled.html",
+          "sha256": "fb39773e7239800d5a632dde6685542e492721c2bc464dbd6838c1b0425f3c93"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "proof of citizenship to vote",
+        "election integrity laws in general",
+        "voter registration"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Texas Senate member page senate.texas.gov/members/d15/ (confirms Senator Molly Cook, District 15; press room list has nothing on the subject)",
+        "campaign site mollyfortexas.com/issues",
+        "Ballotpedia (candidate survey mentions voting rights and voting access only in general terms; nothing on ID or citizenship)",
+        "Senate Journal 2025-04-01 (SB 16, SB 318, SJR 37 roll calls)",
+        "two news searches (Texas Tribune and Votebeat SB 16 coverage checked: no quote from her)",
+        "her electronic voter registration bill SB 255: not reviewed",
+        "her newsletter archive: not reviewed: https://lp.constantcontactpages.com/sl/VIQmZr0/SD15Newsletter"
+      ],
+      "found": 5,
+      "at": "2026-10-28T15:29:45.472Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

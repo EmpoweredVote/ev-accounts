@@ -1,0 +1,149 @@
+{
+  "politician_id": "ef81fdd6-14af-4aef-b621-fee3f084402c",
+  "findings": [
+    {
+      "id": "57217abc3a2f73e478e45c3a01f87dde95c226c5b1f154f0e3724b60d8b3f850",
+      "kind": "own-words",
+      "url": "https://www.ajc.com/opinion/2026/02/save-act-threatens-georgians-right-to-vote-who-will-save-the-peach-state/",
+      "date": "2026-02-07",
+      "date_precision": "day",
+      "passage": "If all Georgians, regardless of party, fight against Trump’s attempts to require documentary proof of citizenship in order to vote, we will help to preserve the right of every American citizen to vote.",
+      "note": "Closing line of an AJC guest column she co-wrote with two other authors (page shows updated 2026-02-07). The column is about the federal SAVE Act and documentary proof of citizenship.",
+      "subjects": [
+        "documentary proof of citizenship to register or vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:40:31.992Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1ed71069b3c5eb383c56a5cbbc669d2cda5d796875534195e68c8763ba2affdf",
+      "kind": "own-words",
+      "url": "https://www.ajc.com/opinion/2026/02/save-act-threatens-georgians-right-to-vote-who-will-save-the-peach-state/",
+      "date": "2026-02-07",
+      "date_precision": "day",
+      "passage": "The nonpartisan League of Women Voters estimates that 69 million American women lack a birth certificate that reflects their current name, because they have married and have done what most have always done, changed their last name to match their husbands’ names.",
+      "note": "Same co-written AJC column; gives a reason documentary proof of citizenship would be hard to meet.",
+      "subjects": [
+        "documentary proof of citizenship to register or vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:40:31.992Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "125ae37a040f8bfcfbe701b0f0bfe1182821e6efbca063c74e80daaa50af473a",
+      "kind": "own-words",
+      "url": "https://www.ajc.com/politics/voter-id-requirement-harder-on-those-without-georgia-drivers-licenses/5AQA73BSNRHR3AQJR7EMSJLY6I",
+      "date": "2021-09-17",
+      "date_precision": "day",
+      "passage": "Obtaining a photocopy can be challenging for many Georgians, and this additional step will mean disenfranchisement for many voters with mobility issues, transportation issues, in poverty or who are sheltering in place.",
+      "note": "Quoted by the AJC before she held office, speaking for a voting-rights role at the time, on the photocopy of ID needed for an absentee ballot application under SB 202.",
+      "subjects": [
+        "ID with mail or absentee ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:40:31.992Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "647a06a23c52bb91111b880efdd785c6cf41ca2df264e978fbe10c6f95268fc7",
+      "kind": "own-words",
+      "url": "https://capitol-beat.org/2024/03/elections-bill-clears-general-assembly-in-final-hour-of-24-session/",
+      "date": "2024-03-29",
+      "date_precision": "day",
+      "passage": "I can't believe we're still bending over to accommodate election deniers and conspiracy theorists.",
+      "note": "Quoted by Capitol Beat on the 2024 end-of-session elections bill that included changes to voter eligibility challenges. This is about voter-roll challenges, not ID.",
+      "subjects": [
+        "voter-roll checks and election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:40:31.992Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Draper'), linked to Saira Draper (district 90) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.416Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what a voter with no ID can do",
+        "ID with mail or absentee ballot",
+        "documentary proof of citizenship to register or vote",
+        "non-citizen voting",
+        "voter-roll checks and election integrity laws"
+      ],
+      "places": [
+        "On the Record: 0 appearances found by extract-otr.mjs",
+        "web search on name plus voter ID and proof of citizenship (confirmed Saira Draper is a Georgia House member for District 90 via the AJC op-ed below; her site https://www.sairadraper.com/news shows a 2026 run for Senate District 44)",
+        "web search on name plus absentee ID and SB 202",
+        "https://capitol-beat.org/2024/03/elections-bill-clears-general-assembly-in-final-hour-of-24-session/ fetched",
+        "https://www.sairadraper.com/news and three of its posts fetched; nothing on ID or citizenship",
+        "https://www.sairadraper.com/democracy returned a 404 page; not used",
+        "blocked: https://ballotpedia.org/Saira_Draper (empty page)",
+        "official House page: not reviewed (no URL reached)",
+        "legis.ga.gov bill pages: not reviewed (login token needed)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T20:40:31.992Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.416Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

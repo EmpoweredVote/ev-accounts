@@ -1,0 +1,76 @@
+{
+  "politician_id": "b104e0d2-104f-4fd0-84ba-d68874c3e19e",
+  "findings": [
+    {
+      "id": "345aa4901e96d88aa50dcde0a6117b53c4f3c835bfd6eb0dd63a3d363da1dc4d",
+      "kind": "own-words",
+      "url": "https://flvoicenews.com/scalise-endorses-jim-schwartzel-in-crowded-cd-19-primary/",
+      "date": "2026-08-07",
+      "date_precision": "day",
+      "passage": "“Together with Leader Scalise and President Trump, I’ll fight to pass the SAVE America Act, secure our border, restore law and order, defend the Constitution, and put America First.",
+      "note": "Quoted by Florida's Voice (told to the outlet) on receiving an endorsement; he says he will fight to pass the SAVE America Act. The article describes that bill as requiring documentary proof of citizenship to register to vote in federal elections and photo ID to cast a ballot (that description is the outlet's, not his).",
+      "subjects": [
+        "SAVE America Act",
+        "proof of citizenship to register",
+        "photo ID to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:09:09.383Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "election integrity / voter rolls / non-citizen voting"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Jim_Schwartzel names him as candidate for U.S. House Florida District 19, on the Nov 3, 2026 general-election ballot after the Aug 18, 2026 primary",
+        "On the Record (0 appearances; names search also 0)",
+        "Ballotpedia page and Candidate Connection survey: nothing on the subject",
+        "campaign site https://www.jimforcongress.com/ (home page text searched for voter, ID, citizenship, SAVE, integrity, election): nothing on the subject; the Ballotpedia copy of the campaign issues text (June 23, 2026) also has nothing on the subject",
+        "blocked: https://www.jimforcongress.com/issues (404)",
+        "blocked: https://www.congress.gov (403; also he holds no seat, so no record expected)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: https://www.ontheissues.org, Vote Smart, X and Facebook posts, debate/forum videos"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:52:47.437Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "documentary proof of citizenship to register",
+        "SAVE America Act",
+        "election integrity",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "in scope: won the 2026-08-18 primary for Florida's 19th District, per https://news.ballotpedia.org/2026/08/19/jim-schwartzel-r-defeated-nine-other-candidates-in-the-republican-primary-for-floridas-19th-congressional-district-on-august-18-2026/ ; on the Nov 3 2026 general ballot",
+        "campaign site jimschwartzel.com: blocked: https://jimschwartzel.com (bot-check error page); jimforflorida.com gave no usable page",
+        "Ballotpedia candidate page and survey: nothing on the subject (key messages cover spending, term limits, red tape)",
+        "Florida's Voice article on a leadership endorsement: one own-words statement found",
+        "congress.gov: not applicable, not a sitting legislator, no sponsorships",
+        "web searches: voter ID / election integrity / citizenship; found nothing beyond the SAVE America Act statement"
+      ],
+      "found": 1,
+      "at": "2026-10-27T15:09:09.383Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "politician_id": "24d474ef-9223-49b1-bf7d-3bdcd3678300",
+  "findings": [
+    {
+      "id": "ec1b0272db7bc922544e1044d520d4afd0c9b9d569db3fef3d7a7062e057089a",
+      "kind": "own-words",
+      "url": "https://rudyforuscongress.com/index.php/issues/politics/",
+      "date": "2024-01-28",
+      "date_precision": "day",
+      "passage": "Election integrity: We need to ensure election integrity so that there is transparency throughout the entire voting process. We need to be able to verify everything from voter roles, voting machines, and mail-in voting, and do ballot harvesting. AND we need to make sure NO company, entity or person has a monopoly on our voting process, and I will be pushing for change.",
+      "note": "Campaign issues page, Politics section. Date is the page's last-modified date (first published 2022-02-23). Calls for verification of voter rolls, voting machines and mail-in voting, and for ending any monopoly on the voting process. Does not mention photo ID, ID for mail ballots, or proof of citizenship.",
+      "subjects": [
+        "election integrity in general",
+        "voter-roll checks",
+        "mail-in voting",
+        "ballot harvesting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:58:53.811Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "voter-roll checks",
+        "election integrity in general",
+        "mail-in voting and ballot harvesting"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Rudy_Recile says he advanced from the June 2, 2026 primary and is on the November 3, 2026 general ballot for U.S. House California District 8",
+        "On the Record (0 appearances)",
+        "campaign site https://rudyforuscongress.com (issues and Politics pages read; site search for voter ID, citizenship, election integrity, ballot run through its WordPress search)",
+        "campaign site Interviews page: nothing on the subject in page text; linked media not reviewed",
+        "Ballotpedia: no Candidate Connection survey completed for 2026; nothing on the subject",
+        "not reviewed: web news search (search budget for the session was used up)",
+        "not reviewed: https://www.ontheissues.org (lead-only source)",
+        "congress.gov: not applicable, never held a legislative seat; no record search run"
+      ],
+      "found": 1,
+      "at": "2026-10-22T21:58:53.811Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia (confirms candidate for U.S. House California District 8, on the 2026-11-03 general-election ballot after advancing from the 2026-06-02 primary; nothing on the subject)",
+        "campaign site rudyforuscongress.com home page and issues page (text searched for voter, election, ballot, citizenship; nothing on the subject)",
+        "web search: name plus voter ID and election integrity (nothing on the subject)",
+        "iVoterGuide candidate page (lead only; nothing on the subject found)",
+        "not applicable: legislature bill pages (not a legislator)",
+        "not reviewed: campaign endorsements page, social media, and any debate or interview video"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:34:06.567Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

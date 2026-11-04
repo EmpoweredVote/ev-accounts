@@ -1,0 +1,331 @@
+{
+  "politician_id": "059dab9f-a79a-4664-b4cf-26b0655c596f",
+  "findings": [
+    {
+      "id": "707043c5af5b3251beca113cd36a6cee0765b95bac19f4c647625f7facf5e42e",
+      "kind": "own-words",
+      "url": "https://www.duckworth.senate.gov/news/press-releases/duckworth-urges-senators-to-vote-for-critical-election-protection-and-voting-rights-bill",
+      "date": "2022-01-19",
+      "date_precision": "day",
+      "passage": "Expanded voter purges; increased barriers for voters with disabilities; and harsher voter ID requirements.",
+      "note": "In Senate floor remarks, she lists harsher voter ID requirements among protections she says she is trying to claw back, alongside voter purges and barriers for voters with disabilities. Text is from her office's press release carrying the speech.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter roll purges"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:13:35.305Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d1f5910c012b0aec46aeae84b97d55c825fa22072cea9e9a9c4b012be84f735",
+      "kind": "own-words",
+      "url": "https://www.duckworth.senate.gov/news/press-releases/duckworth-durbin-colleagues-introduce-for-the-people-act-to-strengthen-democracy",
+      "date": "2021-03-18",
+      "date_precision": "day",
+      "passage": "Promote Integrity – Fights back against the assault on voting rights by reaffirming Congress’s commitment to restoring the Voting Rights Act, prohibiting voter roll purges like those seen in Ohio, Georgia and elsewhere, and ensuring that discriminatory voter ID laws do not prevent Americans citizens from exercising their rights.",
+      "note": "Press release from her office on introducing the For the People Act. This bill summary says one part of the bill ensures discriminatory voter ID laws do not stop citizens from voting. Statement issued in her name; the bill summary is not a personal quote.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter roll purges"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:13:35.305Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad15942e7226a6f580e97c0504bbc11bada12c5fb70e0ab5068a9e6b12be7b76",
+      "kind": "record",
+      "url": "https://www.duckworth.senate.gov/news/press-releases/duckworth-durbin-colleagues-introduce-for-the-people-act-to-strengthen-democracy",
+      "date": "2021-03-18",
+      "date_precision": "day",
+      "instrument_id": "US-S-S1-2021",
+      "act": "sponsor",
+      "note": "For the People Act (S. 1, 117th Congress): her office's release says she joined colleagues to introduce it. It covers voter registration, mail voting, voter roll purges and voter ID laws. Bill number is from memory of the 117th Congress and not confirmed on congress.gov (blocked); the release does not state it.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot access",
+        "voter roll purges"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:13:35.305Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e2c5c69f723f8ff8105cc3b511beeeea3339fcabbe62c11d5f484571c759b42e",
+      "kind": "own-words",
+      "url": "https://politifact.com/factchecks/2026/mar/20/tammy-duckworth/save-america-act-voter-id-drivers-licenses-real-id/",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "“9% of American citizens don’t have the identification that the SAVE act requires to vote. Almost 1 in 10. This is a voter suppression bill.”",
+      "note": "Her X post on the SAVE America Act, as quoted and fact-checked by PolitiFact on 2026-03-20. She says about 1 in 10 citizens lack the ID the bill requires and calls it a voter suppression bill.",
+      "subjects": [
+        "documentary proof of citizenship to register (SAVE America Act)",
+        "photo ID to vote in person",
+        "voter suppression claims about ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:01:00.258Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a5f2deb07edb0d1b7b9d9e3b860949a3c36335b508a34eee870b1b132a536330",
+      "kind": "own-words",
+      "url": "https://www.nbcchicago.com/news/national-international/drivers-licenses-voter-registration-save-act/",
+      "date": "2026-03",
+      "date_precision": "month",
+      "passage": "Under the SAVE Act, you cannot use your driver’s license to register to vote. Republicans want you to buy a passport instead. If you can afford one. This is a modern-day poll tax.",
+      "note": "Her X post on the SAVE America Act, quoted in an AP fact-check carried by NBC Chicago (March 2026, exact day not shown on the page text I read). She says a driver's license would not be enough to register and that a passport costs money.",
+      "subjects": [
+        "documentary proof of citizenship to register (SAVE America Act)",
+        "cost and access of citizenship documents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:01:00.258Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d7675ba70c37b1ef2180d4ca25b67dd2d45fc2291a4b89110e9b23a9af40ba0b",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-117s2938enr/html/BILLS-117s2938enr.htm",
+      "date": "2022-06-23",
+      "date_precision": "day",
+      "instrument_id": "US-S-2938-2022",
+      "act": "yea",
+      "motion": "Motion to Concur in the House amendment to S. 2938 with an amendment (Amdt. No. 5099)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US Senate, Motion to Concur in the House amendment to S. 2938 with an amendment (Amdt. No. 5099), 2022-06-23: yea (tally 65–33); census gate: multi-subject.",
+      "subjects": [
+        "background checks for buyers under 21",
+        "court orders that take guns from a dangerous person (state grants)",
+        "gun trafficking (package)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c20fcb96eb78e01ead82694ac19d878a311409fb4bbbe34cb7a90636662f5d55",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2023252",
+      "date": "2023-06-22",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-44-2023",
+      "act": "nay",
+      "motion": "On the Joint Resolution (H.J. Res. 44)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Joint Resolution (H.J. Res. 44), 2023-06-22: nay (tally 49–50); census gate: none.",
+      "subjects": [
+        "cancel the federal pistol-brace rule"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-118hjres44eh.txt",
+          "sha256": "d04fe1fe2a2512a1932d14b7b93d88fe25ac6712851bc4caa37df31b89101f4d"
+        }
+      }
+    },
+    {
+      "id": "c90bdbcf78bf71ec4d53648b4f8ebe188ca331c8dd00e4aa90ea8f004b52d94a",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2025190",
+      "date": "2025-07-01",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2025",
+      "act": "nay",
+      "motion": "On Passage of the Bill (H.R. 1, as Amended)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US Senate, On Passage of the Bill (H.R. 1, as Amended), 2025-07-01: nay (tally 50–50); census gate: multi-subject.",
+      "subjects": [
+        "end the federal tax on suppressors and short-barrelled guns",
+        "budget (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bd995a1e3dcb680b70cd621d4f6b5164604a5bb6d3a92c8170d6bb68a529fb9",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/115th-congress/house-joint-resolution/40",
+      "date": "2017-02-15",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-40-2017",
+      "act": "nay",
+      "motion": "Passed Senate without amendment by Yea-Nay Vote. 57 - 43. Record Vote Number: 66 (Roll 66)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, Passed Senate without amendment by Yea-Nay Vote. 57 - 43. Record Vote Number: 66 (Roll 66), 2017-02-15: nay (tally 57–43); census gate: none.",
+      "subjects": [
+        "rule sending records to gun background check system overturned"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HJRES-40-2017.htm",
+          "sha256": "616db93c5dbc0f8d42ff56878c6d7302412f4feaade1ac2794ac4020fae05e55"
+        }
+      }
+    },
+    {
+      "id": "7b0ece74e62d90b736e118101b5ca4d4a3d5365e9a5c7049fec2dae5e9351c9e",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/117th-congress/senate-bill/3623",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "US-S-3623-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2022-03-10",
+      "note": "co sponsor of US-S-3623-2022 (cosponsor 2022-03-10): S 3623 (117th Congress): Violence Against Women Act Reauthorization Act of 2022.",
+      "subjects": [
+        "failed gun background checks reported to state and tribal police within 24 hours",
+        "special prosecutors for domestic-violence gun prohibitions",
+        "annual report on background check denials"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-S-3623-2022.htm",
+          "sha256": "419c00ae6f2e6419ac37d5acb435277d30262291fcc4f6029d92a54840724e31"
+        }
+      }
+    },
+    {
+      "id": "bc4d8c5d394b8fd0c6878c21f7d001c7298234610622b0e0bfaf94d9ab462625",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/senate-bill/494",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "US-S-494-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2023-02-16",
+      "note": "co sponsor of US-S-494-2023 (cosponsor 2023-02-16): S 494 (118th Congress): Background Check Expansion Act.",
+      "subjects": [
+        "background check required for private firearm sales and transfers",
+        "dealer notice and certification form"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-S-494-2023.htm",
+          "sha256": "0eaaa7cc5526464d22459d097de221fb72ed82b50625475b2294e52829e78e63"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "discriminatory voter ID laws",
+        "voter roll purges",
+        "mail-ballot access",
+        "proof of citizenship / SAVE Act"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site duckworth.senate.gov: site search 'voter ID' (6 results; 2 press releases fetched and read; senator page confirms Senate office: https://www.duckworth.senate.gov/news/press-releases/duckworth-urges-senators-to-vote-for-critical-election-protection-and-voting-rights-bill)",
+        "nothing on the subject: SAVE Act / proof of citizenship (not found on official site search)",
+        "not reviewed: https://www.duckworth.senate.gov/news/press-releases/duckworth-durbin-join-entire-senate-democratic-caucus-to-introduce-for-the-people-act",
+        "not reviewed: https://www.duckworth.senate.gov/imo/media/doc/amicus-brief-of-bipartisan-current-and-former-members-of-congress-filed.pdf",
+        "blocked: https://www.congress.gov/member/tammy-duckworth/D000622 (HTTP 403)",
+        "blocked: https://ballotpedia.org/Tammy_Duckworth (fetch returned empty content)",
+        "not reviewed: ontheissues.org, govtrack, news search (web search budget used up)"
+      ],
+      "found": 3,
+      "at": "2026-10-22T22:13:35.305Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "photo ID to vote in person",
+        "documentary proof of citizenship to register (SAVE America Act)",
+        "cost and access of citizenship documents",
+        "voter suppression claims about ID rules"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "blocked: https://www.duckworth.senate.gov/search?keys=voter+ID (403, also with browser agent)",
+        "blocked: https://www.duckworth.senate.gov/news/press-releases (403)",
+        "blocked: https://www.duckworth.senate.gov/news/press-releases/duckworth-statement-in-response-to-republicans-blocking-the-freedom-to-vote-act (403)",
+        "blocked: https://www.congress.gov/member/tammy-duckworth/D000622 (403)",
+        "blocked: https://www.senate.gov/legislative/LIS/roll_call_lists/vote_menu_119_2.htm (403), so her own vote on the March 26 2026 cloture vote was not confirmed",
+        "Senate floor log for 2026-03-26 (https://www.dailypress.senate.gov/thursday-march-26-2026/): shows the cloture vote on the photo-ID amendment to the SAVE America Act vehicle but no per-senator tally",
+        "PolitiFact fact-check of her X post",
+        "AP fact-check carried by NBC Chicago",
+        "web search of her official press-release titles (older voting-rights releases found, none fetchable)",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-27T17:01:00.258Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "politician_id": "f36f34e0-2a5e-4a26-9e44-0f377c445a23",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Haseeb_Fatmi names him as NC State Senate District 18 incumbent, appointed May 15, 2026, on the Nov 3, 2026 general ballot",
+        "On the Record (0 appearances, 0 name matches)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/S/1002: nothing on the subject",
+        "NC General Assembly introduced bills https://www.ncleg.gov/Members/IntroducedBills/S/1002: 'No bills were introduced by Haseeb Fatmi in the 2025-2026 Session.'",
+        "Ballotpedia page and Candidate Connection survey answers (affordability, healthcare, education): nothing on the subject",
+        "WRAL appointment article https://www.wral.com/news/nccapitol/nc-senate-wake-forest-everitt-haseeb-fatmi-appoint-election-may-2026/: nothing on the subject",
+        "campaign site: not found; Ballotpedia campaign link points to another candidate's site, guessed domains returned placeholder pages",
+        "not reviewed: news and web search on name plus subject words (shared web search budget was used up)",
+        "not reviewed: NC Senate roll-call votes pages (not located by direct URL)"
+      ],
+      "found": 0,
+      "at": "2026-10-23T00:15:08.384Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot ID",
+        "voting access and election integrity in general"
+      ],
+      "places": [
+        "found the person: Ballotpedia page (https://ballotpedia.org/Haseeb_Fatmi) shows him as the sitting District 18 state senator (appointed 2026-05-21), on the 2026-11-03 general election ballot",
+        "official legislature member page (https://www.ncleg.gov/Members/Biography/S/1002), nothing on the subject",
+        "legislature introduced-bills page (https://ncleg.gov/Members/IntroducedBills/S/1002): no bills introduced by him in 2025-2026, so no sponsorships",
+        "campaign site electhaseeb.com and its platform page: a voting rights section on early voting, campus polling places and fair maps; nothing on ID or citizenship proof, so not saved",
+        "Wikipedia page, nothing on the subject",
+        "blocked: https://ncnewsline.com/voter-guides/contests/n-c-senate-district-18/ (403)",
+        "not reviewed: legislature vote-history page https://library.ncleg.gov/Members/Votes/S/1002 (loaded with no roll-call entries)",
+        "On the Record extract script not present in this workspace, not run",
+        "3 web searches, nothing tying him to ID or citizenship proof"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:43:24.456Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "politician_id": "88ad281d-534e-4497-b007-862476f161d2",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Angus_Purdy says he is on the ballot in the general election on November 3, 2026 for Tennessee's 6th Congressional District (independent candidate)",
+        "On the Record (0 appearances)",
+        "campaign site https://www.anguspurdy.com/ (home page) nothing on the subject",
+        "campaign site https://www.anguspurdy.com/more (key issues page) nothing on the subject; its 'Election Info' tab had no readable text in the page HTML",
+        "campaign site https://www.anguspurdy.com/contact nothing on the subject",
+        "Ballotpedia profile nothing on the subject",
+        "not a legislator: no congress.gov bill record to check",
+        "blocked: https://public.api.bsky.app (403 on search; author feed returned 5 posts, none on the subject)",
+        "not reviewed: https://www.facebook.com/profile.php?id=100092245728923",
+        "not reviewed: https://www.instagram.com/angusmpurdy/",
+        "not searched: web news search (session search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:46:50.998Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity / voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "BallotReady https://www.ballotready.org/people/angus-purdy names him as a 2026 candidate for the Tennessee 6th District House seat; issue text covers pay, farm subsidies, hospitals, schools, rent and childcare, nothing on the subject",
+        "campaign site: none found in searches",
+        "Ballotpedia: page https://ballotpedia.org/Angus_Purdy returned empty; nothing on the subject",
+        "blocked: https://tennesseelookout.com/voter-guides/contests/congressional-district-6-2/ (403 on both fetch tool and curl)",
+        "nothing on the subject: https://tnfirefly.com/elections/us-house/6 and https://theballotbrief.com/district/tn-6 (no text on him)",
+        "news and web search on name plus voter ID words: nothing on the subject",
+        "congress.gov: not applicable, not a sitting legislator",
+        "ballot status: search summary of the Tennessee Lookout guide says he qualified as an independent for the November 3, 2026 ballot; could not read the page itself"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:24:51.896Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

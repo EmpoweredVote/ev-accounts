@@ -1,0 +1,63 @@
+{
+  "id": "WI-AB-808-2005",
+  "scope": "state:wi",
+  "title": "AB 808 (2005-2006 Wisconsin Legislature, regular session): requiring certain identification in order to vote at a polling place or obtain an absentee ballot, verification of the addresses of electors, absentee voting procedure in certain residential care apartment complexes and adult family homes, registration and voting procedures for certain persons who are convicted of felonies, and the fee for an identification card issued by the Department of Transportation.",
+  "urls": [
+    "https://docs.legis.wisconsin.gov/2005/proposals/ab808",
+    "https://docs.legis.wisconsin.gov/document/proposaltext/2005/REG/AB808"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) s. 6.79 (2) (a)\n(quote) Except as provided in subs. (6) and (7), each elector, before receiving a serial number, shall state his or her full name and address and present to the officials an identifying document.\n(section) definition of identifying document\n(quote) 5.02 (6s) \"Identifying document\" means: (a) In the case of an individual who votes in person at a polling place: 1.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) s. 6.86 (1) (ar)\n(quote) Except as authorized in s. 6.79 (6) and this paragraph, if an elector applies for an absentee ballot in person at the clerk's office, the clerk shall not issue the elector an absentee ballot unless the elector presents an identifying document.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) LRB analysis (printed with the bill): The bill directs each municipal clerk and each executive director of a board of election commissioners to designate one inspector (poll worker) at each polling place who shall be authorized to administer the oaths required for these affidavits.\n(other) LRB analysis (printed with the bill): Under the bill, any person who applies for an absentee ballot, except a military or overseas elector, as defined by federal law, or a person whose address is confidential as a result of domestic abuse, must provide a copy of an identifying document, unless: 1) the person has already provided a copy of his or her identifying document in connection with an absentee ballot cast at a previous election and has not changed\n(other) LRB analysis (printed with the bill): The bill continues current requirements for certain electors to provide proof of residence in order to register or to vote, but discontinues the use of corroborating electors to verify residence.\n(other) LRB analysis (printed with the bill): The bill also permits an elector who is eligible to obtain a Wisconsin identification card to obtain the card from DOT free of charge, if the elector specifically requests not to be charged.\n(other) LRB analysis (printed with the bill): The bill permits an applicant to receive a Wisconsin identification card without a photograph being taken, as currently required, if the applicant provides an affidavit stating that he or she has sincerely held religious beliefs against being photographed, that he or she is a member of a religious organization or identifies with the tenets of a religious organization and names that organization, and that the religiou",
+  "sponsors": [
+    {
+      "name": "Cullen",
+      "role": "prime",
+      "version": "As introduced 11/3/2005; held by committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 5/11/2006)"
+    },
+    {
+      "name": "Lehman",
+      "role": "co",
+      "version": "As introduced 11/3/2005; held by committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 5/11/2006)"
+    },
+    {
+      "name": "Sheridan",
+      "role": "co",
+      "version": "As introduced 11/3/2005; held by committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 5/11/2006)"
+    },
+    {
+      "name": "Van Akkeren",
+      "role": "co",
+      "version": "As introduced 11/3/2005; held by committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 5/11/2006)"
+    },
+    {
+      "name": "Shilling",
+      "role": "co",
+      "version": "As introduced 11/3/2005; held by committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 5/11/2006)"
+    },
+    {
+      "name": "Decker",
+      "role": "co",
+      "version": "As introduced 11/3/2005; held by committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 5/11/2006)"
+    },
+    {
+      "name": "Breske",
+      "role": "co",
+      "version": "As introduced 11/3/2005; held by committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 5/11/2006)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T23:12:49Z)",
+    "fetched_at": "2026-10-28T23:12:49Z",
+    "method": "curl"
+  }
+}

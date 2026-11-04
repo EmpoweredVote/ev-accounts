@@ -1,0 +1,201 @@
+{
+  "politician_id": "c3956e15-01f6-46cf-95bd-edd43f0ae8f3",
+  "findings": [
+    {
+      "id": "16b28a093ab2a84e26ceb6f51a6816a383b4b46ba83cf1aa1ed8fb47b9842ead",
+      "kind": "own-words",
+      "url": "https://www.inquirer.com/politics/election/pennsylvania-voting-laws-2022-governor-election-20220125.html",
+      "date": "2022-01-25",
+      "date_precision": "day",
+      "passage": "“I am willing to sit down with folks who are operating in good faith to discuss voter ID,” Shapiro said in the interview, stressing that he won’t engage with those “sharing conspiracy theories” and won’t support “any restrictive measure” that disenfranchises people.",
+      "note": "Philadelphia Inquirer quoted him in an interview during his 2022 campaign for governor. The sentence also reports that he did not rule out some form of voter ID requirements provided they do not decrease access to the ballot (reporter's wording). Date is the article's published date.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:27.547Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f44ea6f7ba528e2340b25a59da76d1d41a57c8eac44402bd463b13408f5e698f",
+      "kind": "own-words",
+      "url": "https://www.inquirer.com/politics/election/pennsylvania-voting-laws-2022-governor-election-20220125.html",
+      "date": "2022-01-25",
+      "date_precision": "day",
+      "passage": "“Congress has failed to protect voting rights,” Shapiro said in an interview. “Now what’s clear is that the battle is going to be left up to the states.”",
+      "note": "Same Inquirer interview. The article says he pledged to veto nearly all the other caucus ideas on elections, including any attempt to restrict mail voting (reporter's wording).",
+      "subjects": [
+        "election integrity laws (general)",
+        "mail voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:27.547Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2e5b01000a887a58eb3ee81a60a2cc1ed85e541ccf0908ad287cf4bae3cd1340",
+      "kind": "own-words",
+      "url": "https://www.democracydocket.com/news-alerts/pennsylvania-governor-republicans-are-on-the-side-of-disenfranchisement/",
+      "date": "2026-04-16",
+      "date_precision": "day",
+      "passage": "“Why do we do that? Because we want to err on the side of enfranchisement,” Shapiro said.",
+      "note": "Democracy Docket quoted him from an interview about letting voters fix mail-ballot errors such as a missing date and about early processing of mail ballots. Not about ID. Saved as related mail-ballot material.",
+      "subjects": [
+        "mail-ballot dating and curing (related)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:27.547Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c7803c543ecf07ff43229f49872ff2bcf8aa69ae4351c671c8855c4511e311c0",
+      "kind": "own-words",
+      "url": "https://www.spotlightpa.org/news/2026/08/pennsylvania-governor-race-elections-voting-shapiro-garrity/",
+      "date": "2026-08-20",
+      "date_precision": "day",
+      "passage": "“Governor Shapiro has a long record of protecting our democracy – from standing up to Trump and his allies when they try to undermine it, to implementing commonsense reforms to protect and improve our free, fair, safe, secure elections,” he said in an email.",
+      "note": "Spotlight PA/Votebeat quoted Manuel Bonder, a spokesperson for his campaign, defending his election record. This is a campaign spokesperson's statement, not the governor's own words. The same article says he did not directly answer a question about whether he supported a 2024 House bill.",
+      "subjects": [
+        "election integrity laws (general)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:27.547Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b1d30d3f7380a15e5179623c30bfea10d2f2dfcf75058e0eb5b06648487a504",
+      "kind": "own-words",
+      "url": "https://www.nbcphiladelphia.com/news/local/uvalde-shooting-what-pa-s-senate-gov-candidates-say-about-guns/3251829/",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "passage": "As Governor, I will bring people together to get this done by putting a mental health counselor in every school, and giving every student access to telemental health; closing the ghost gun loophole; enacting universal background checks; and passing stronger red flag laws in Pennsylvania.",
+      "note": "Written answer to NBC10's questionnaire while a candidate for governor (then state attorney general), sent in response to a question on bans, assault-style rifles, background checks and licences. His answer lists closing the ghost gun loophole, universal background checks and stronger red flag laws.",
+      "subjects": [
+        "check every gun buyer",
+        "home-made (ghost) guns",
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T17:25:46.791Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1c65ae7620dd473cc8eebb6647276117c7cf122b57f915a48c312765fece427c",
+      "kind": "own-words",
+      "url": "https://www.pa.gov/en/governor/newsroom/2024-press-releases/gov-shapiro-signs-eo-2024-02-re-establishing-pa-ogvp-pccd-lt-gov.html",
+      "date": "2024-09-10",
+      "date_precision": "day",
+      "passage": "I’ve spoken to too many Pennsylvanians who’ve lost loved ones to gun violence – that’s why today, my Administration took real action to re-establish and resource Pennsylvania’s Office of Gun Violence Prevention,” said Governor Shapiro.",
+      "note": "Governor's quote in the release on Executive Order 2024-02, which re-established the state Office of Gun Violence Prevention inside the crime and delinquency commission.",
+      "subjects": [
+        "gun violence prevention office"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T17:25:46.791Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a2eb9950fd18aed61da87ea37b3d42b3eec2d86a52d8bb2e182654c92637438d",
+      "kind": "own-words",
+      "url": "https://www.pa.gov/governor/newsroom/2024-press-releases/icymi--governor-shapiro-s-proposed-investments-to-combat-gun-vio.html",
+      "date": "2024-05-06",
+      "date_precision": "day",
+      "passage": "The Pennsylvania House has already passed a package of bills to do just that in a bipartisan manner, including universal background checks and legislation that bans ghost guns. Governor Shapiro supports these bipartisan bills that empower families and Pennsylvania law enforcement – and he is committed to building a broad coalition to support commonsense gun safety reform to protect communities all across the Commonwealth.",
+      "note": "Statement issued in the Governor's name by his office (not a direct quote of him) saying he supports the House-passed bills on universal background checks and banning ghost guns. The same release says his proposed 2024-25 budget invests $100 million to reduce gun violence.",
+      "subjects": [
+        "check every gun buyer",
+        "home-made (ghost) guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T17:25:46.791Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws",
+        "mail-ballot dating and curing",
+        "automatic voter registration"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 meetings)",
+        "official governor newsroom page (pa.gov/governor/newsroom): nothing on the subject (search page empty)",
+        "campaign site joshshapiro.org: home page reached; issues page returned 404; nothing on the subject",
+        "blocked: https://ballotpedia.org/Josh_Shapiro",
+        "blocked: https://penncapital-star.com/government-politics/with-a-softened-stance-from-the-governor-house-gop-to-reintroduce-election-reform-bill/",
+        "news: Inquirer (2022-01-25), Democracy Docket (2026-04-16), Votebeat/Spotlight PA (2026-08-20)",
+        "web search x4 (voter ID, Inquirer interview, SAVE Act, mail ballots)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:43:27.547Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "home-made (ghost) guns",
+        "red-flag orders",
+        "ban on assault-style guns and large magazines",
+        "gun violence prevention office and funding",
+        "carry permits and permitless carry"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search: Shapiro gun violence, assault weapons, background checks (found NBC10 2022, Fox29 2023, pa.gov pages)",
+        "web search: pa.gov governor press releases on gun violence prevention",
+        "official governor newsroom pages (pa.gov), three releases opened",
+        "campaign site: not reviewed, no address found",
+        "Ballotpedia: not reviewed, returns empty to the fetch tool",
+        "sponsor list: not applicable, statewide executive, not a legislator",
+        "nothing on the subject: assault-style gun or magazine ban in his own words found only as a campaign-era NBC10 answer that does not mention it",
+        "not reviewed: https://www.fox29.com/news/shapiro-hopes-to-rein-in-gun-violence-in-time-as-pennsylvania-governor (page fetched through summary only; no curl copy made, passages from the summary not saved)"
+      ],
+      "found": 3,
+      "at": "2026-10-31T17:25:46.791Z",
+      "by": "source-collector"
+    }
+  ]
+}

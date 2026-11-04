@@ -1,0 +1,80 @@
+{
+  "politician_id": "1f43f597-c42a-4211-b72b-56bc455dd964",
+  "findings": [
+    {
+      "id": "1a55b5cf92d557f0612052aaaec48ff45970c5221250342f52f59e1a1f753f65",
+      "kind": "own-words",
+      "url": "https://kasiesouthcarolina.com/second-verse-same-as-the-first/",
+      "date": "2026-08-05",
+      "date_precision": "day",
+      "passage": "I am adamantly opposed to ending the filibuster. This is the sixty-vote threshold needed in the Senate to pass legislation.",
+      "note": "From her campaign blog recap of a Senate primary candidate forum. The question 5 she recaps (in her words, 'Question five was about the SAVE Act and the candidates’ willingness to eliminate the filibuster in order to pass it.') was about ending the filibuster to pass the SAVE Act. She states her view on the filibuster. She does not state a view on the SAVE Act's proof-of-citizenship content.",
+      "subjects": [
+        "SAVE Act (proof of citizenship)",
+        "Senate filibuster and the SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:13:37.399Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "election integrity",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "In scope: Ballotpedia (https://ballotpedia.org/Kasie_Whitener) lists her on the Nov 3, 2026 general-election ballot for U.S. Senate, South Carolina, after the April 11, 2026 convention",
+        "On the Record (0 appearances)",
+        "campaign site https://kasiesouthcarolina.com (home, about, blog, newsroom, statewide-tour, video, feed pages 1-2: nothing on the subject)",
+        "personal blog https://kasiewhitener.com (campaign tag and search: nothing on the subject)",
+        "Ballotpedia Candidate Connection survey (only mentions ranked choice voting and campaign finance reform: nothing on the subject)",
+        "congress.gov: not applicable, not a legislator (no record)",
+        "not reviewed: web news search for name plus subject words (search budget exhausted)",
+        "not reviewed: debate and forum videos on https://kasiesouthcarolina.com/video/"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:57:07.846Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr returned none)",
+        "Ballotpedia https://ballotpedia.org/Kasie_Whitener (confirms she is on the 2026 general-election ballot for US Senate in South Carolina after an April 11, 2026 nominating convention; survey answers mention ranked choice voting and election reform but not voter ID or citizenship proof)",
+        "campaign site https://kasiesouthcarolina.com (home, blog list, newsroom, about, site search for voter ID, election, citizenship, ballot; the posts on ballot access and immigration enforcement do not address voter ID)",
+        "campaign blog post on the Senate primary debate (see finding)",
+        "no congressional record (not an officeholder)",
+        "news searches on her name plus voter ID, SAVE Act, election integrity (no statements by her found)",
+        "not reviewed: video interviews https://www.live5news.com/video/2026/08/26/interview-libertarian-senate-candidate-kasie-whitener-race-after-gop-primary/ and https://kasiesouthcarolina.com/video/ (video, cannot be read)",
+        "not reviewed: Oct 11 2026 SCETV Senate debate video (no transcript found)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T01:13:37.399Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

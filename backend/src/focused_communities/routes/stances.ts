@@ -35,7 +35,7 @@ stancesRouter.get('/communities/:id/stances', cacheMiddleware(TTL.STANCES), asyn
   }>;
   try {
     ({ rows } = await pool.query(
-      'SELECT position, text, supporting_points, description, example_perspectives FROM connect.get_stances_for_community($1)',
+      'SELECT position, text, supporting_points, description, example_perspectives FROM connect.get_stances_for_community($1) ORDER BY position ASC',
       [communityId]
     ));
   } catch (err) {
@@ -45,8 +45,9 @@ stancesRouter.get('/communities/:id/stances', cacheMiddleware(TTL.STANCES), asyn
     return;
   }
 
+  // `position` is selected only to order rows; it must never reach the response body.
+  // Array order is the only thing that carries the ladder.
   const stances = rows.map((s) => ({
-    position: s.position,
     text: s.text,
     supportingPoints: s.supporting_points ?? [],
     description: s.description ?? '',

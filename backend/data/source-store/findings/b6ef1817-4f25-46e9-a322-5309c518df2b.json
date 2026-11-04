@@ -1,0 +1,64 @@
+{
+  "politician_id": "b6ef1817-4f25-46e9-a322-5309c518df2b",
+  "findings": [
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Adesanya'), linked to Solomon Adesanya (district 43) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.415Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "ID for mail ballots",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity and 2026 ballot confirmed: sitting House District 43 member and candidate in the 2026 general election (https://www.ballotready.org/people/solomon-adesanya)",
+        "nothing on the subject: BallotReady page (issue stances cover other topics)",
+        "not reviewed: https://fastdemocracy.com/bill-search/ga/legislators/GAL000581 (sponsored-bills tab did not load)",
+        "not reviewed: https://ballotpedia.org/Solomon_Adesanya, official House page, campaign site, legislature bill pages (login token needed)",
+        "one news search on name plus subject words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:33:45.958Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.415Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

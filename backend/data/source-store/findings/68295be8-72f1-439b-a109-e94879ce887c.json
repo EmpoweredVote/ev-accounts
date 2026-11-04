@@ -1,0 +1,59 @@
+{
+  "politician_id": "68295be8-72f1-439b-a109-e94879ce887c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship / SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Thomas_Laehn names him as a candidate for U.S. Senate in Iowa on the November 3, 2026 general-election ballot (he is a Senate candidate, not a House candidate)",
+        "On the Record (0 appearances)",
+        "campaign site https://laehn4iowa.org (home, /issues, /petition, /about, /media-page): nothing on the subject",
+        "Ballotpedia Candidate Connection survey answers: nothing on the subject",
+        "not reviewed: congress.gov and legislature bill pages (not a legislator; no sponsorships to check)",
+        "not reviewed: news search, because the shared web search budget was used up",
+        "not reviewed: ontheissues.org, Vote Smart, GovTrack (lead-only or no record as a legislator)",
+        "not reviewed: media links on the campaign site (weareiowa.com, desmoinesregister.com, lpia.org, greenecountynewsonline.com)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:45:56.169Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "documentary proof of citizenship",
+        "mail-ballot ID",
+        "election integrity laws in general",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity confirmed: https://ballotpedia.org/Thomas_Laehn (candidate for the U.S. Senate in Iowa, on the 2026 general ballot; the brief called it Congress, the race is the U.S. Senate) and https://www.kcrg.com/2025/10/07/iowa-libertarian-attorney-running-against-two-party-system-campaign-us-senate/",
+        "campaign site issues page https://laehn4iowa.org/issues: read in full; nothing on the subject (topics are campaign finance, eminent domain, war powers, debt, border, abortion, marijuana)",
+        "campaign site home https://laehn4iowa.org: reviewed, nothing on the subject",
+        "Ballotpedia: campaign-themes section had nothing on the subject",
+        "Dakota News Now 2026-10-23 interview piece: no voter ID or citizenship content in its text",
+        "blocked: https://iowacapitaldispatch.com/?p=59013 (HTTP 403)",
+        "blocked: https://sos.iowa.gov/sites/default/files/2026-08/2026%20General%20-%20Candidate%20List%20Database%20-%20All%20Elections.pdf (did not download as a PDF)",
+        "web search on name plus subject words: nothing on the subject",
+        "not reviewed: YouTube channel https://www.youtube.com/@ThomasLaehn-U.S.Senate (video, not readable)",
+        "congress.gov: not applicable (county attorney, not a legislator)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T13:58:16.103Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

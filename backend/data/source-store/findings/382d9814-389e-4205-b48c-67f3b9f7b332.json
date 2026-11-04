@@ -1,0 +1,638 @@
+{
+  "politician_id": "382d9814-389e-4205-b48c-67f3b9f7b332",
+  "findings": [
+    {
+      "id": "6e2c669c9ac0a94aaf9ccd0c6b65fbebc5927a1ccd220c6a445114e8926c10e7",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB04902I.htm",
+      "date": "2025-03-13",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-4902-2025",
+      "act": "author",
+      "note": "Lowe is the author. As filed, the bill would have the Secretary of State write rules requiring proof of citizenship to register to vote, to the extent federal law permits, and have registrars send mail applicants a notice of what proof they need. It also lets officials check voter addresses against real-estate records. Referred to the Elections committee on 2025-04-03; no later action shown.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ebc5e348ebbf8e30bba0dc51d3ba547e82e9dce3948250f1a56367fa1cadbe83",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB05101I.htm",
+      "date": "2025-03-13",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-5101-2025",
+      "act": "author",
+      "note": "Lowe is the author. As filed, the bill would make voter registration certificates expire after each presidential election (November 30 following the next presidential election) instead of on January 1 of an even-numbered year, and adds a civil penalty. Referred to the Elections committee 2025-04-07; no later action shown.",
+      "subjects": [
+        "voter-roll maintenance",
+        "voter registration expiry"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "68e4e2fbd79a6764615facd37d63b2f293f3fa669fc7cadb3738bfecf0f8ebff",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HJR161",
+      "date": "2025-03-03",
+      "date_precision": "day",
+      "instrument_id": "TX-HJR-161-2025",
+      "act": "other",
+      "motion": "coauthor of HJR 161, constitutional amendment adding non-citizens to the classes of persons not allowed to vote (bill filed 2025-03-03; date Lowe was added not shown)",
+      "note": "Lowe is listed as a coauthor. The measure proposed a constitutional amendment adding individuals who are not United States citizens to the classes of persons not allowed to vote. It was reported favorably by the House Elections committee on 2025-04-28 and laid on the table subject to call on 2025-05-09.",
+      "subjects": [
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f44679d25199c31bcfaf363cfd9f47e70e636b5fc786a703d9bcfd028b71564e",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/David_Lowe_(Texas)",
+      "date": "2024-01",
+      "date_precision": "month",
+      "passage": "Also, the voter rolls are completely outdated. David supports expiring voter registrations. Only living Texans should be voting in Texas.",
+      "note": "From his answers in a 2024 candidate survey as published on Ballotpedia (written in the third person in his name). He backs expiring voter registrations because of outdated rolls. The same answer says: Without free and fair elections, we don't have a representative form of government. It's time to reform our election laws and procedures.",
+      "subjects": [
+        "voter-roll maintenance",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "37a0bb63924a689608cdc48baa1aeea83a608b3f702d479c944d3747fc95d9a6",
+      "kind": "own-words",
+      "url": "https://www.davidlowefortexas.com/issues",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "With decades of elections seeing occurrences of illegal voting, invalid votes are being counted.",
+      "note": "Campaign site issues page, undated (it refers to the 88th session as past, so 2023-2024). Under the heading ELECTION INTEGRITY it continues: Every illegal, fraudulent, and invalid vote must be stopped, and every legal vote must be vehemently protected. No mention of ID or citizenship proof on this page.",
+      "subjects": [
+        "election integrity in general",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "554061485c8c4785584cfe93ecaf2a370933bb379fafd34bf4878319aebef2d4",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB4962",
+      "date": "2025-03-13",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-4962-2025",
+      "act": "other",
+      "motion": "coauthor of HB 4962, disclosure of citizenship of a candidate for public office (filed 2025-03-13; date Lowe was added not shown)",
+      "note": "Lowe is listed as a coauthor of a bill requiring disclosure of a candidate's citizenship. Referred to the Elections committee 2025-04-03; no later action shown.",
+      "subjects": [
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf7f115aacf29eac22a3d610b5967a37a4eee0d53c68a17e1e118fea5ba75f3d",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5138",
+      "date": "2025-03-13",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-5138-2025",
+      "act": "other",
+      "motion": "coauthor of HB 5138, attorney general duty to prosecute election-law offenses (filed 2025-03-13; date Lowe was added not shown)",
+      "note": "Lowe is listed as a coauthor of a bill on the attorney general's duty to prosecute criminal offenses under the state's election laws. The last action shown is the Senate appointing conferees on 2025-05-29.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d744016b8f302f08919915d1c2a2436bd03184b94c174042da7fea7e466fa861",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HJR189",
+      "date": "2025-03-12",
+      "date_precision": "day",
+      "instrument_id": "TX-HJR-189-2025",
+      "act": "other",
+      "motion": "coauthor of HJR 189, constitutional amendment on attorney general authority to prosecute election-law offenses (filed 2025-03-12; date Lowe was added not shown)",
+      "note": "Lowe is listed as a coauthor of a proposed constitutional amendment specifying the attorney general's authority to prosecute election-law offenses. Referred to State Affairs 2025-04-02; no later action shown.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "91ea998983c7be9286060a6e945c3e7967d26a6b972212755372f9058642ec8a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HJR161",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HJR-161-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HJR-161-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.523Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2efbc7842519db4cb618c606f9539b5219108972b12b67f25cbc2b0eff7ce562",
+      "kind": "own-words",
+      "url": "https://www.davidlowefortexas.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Red flag laws must be banned because they are the gateway to unconstitutional gun confiscation by the government.",
+      "note": "Campaign priorities page, section headed 'Stop red flag laws & support our 2A rights'. Undated page.",
+      "subjects": [
+        "red flag orders",
+        "ban on red flag laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:43:05.176Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b3d79e9653e459fb5caeac8b66e24766e695c83aefb6367054d4dd381599fd2d",
+      "kind": "own-words",
+      "url": "https://www.davidlowefortexas.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Red Flag Laws do not work and are only used to mislead the public.",
+      "note": "Same campaign page.",
+      "subjects": [
+        "red flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:43:05.176Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b79283bf5e3b8e2187d16fc87d6f575df541485cff2651cbb29478548fee00c1",
+      "kind": "own-words",
+      "url": "https://www.davidlowefortexas.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "You don't need a license for any of your other constitutional rights, so you shouldn't need one for your gun rights. It's time to get rid of the license to carry program and remove meaningless restrictions on your right to carry.",
+      "note": "Same campaign page; calls for ending the state's license-to-carry program even though permitless carry already exists.",
+      "subjects": [
+        "carry a gun without a permit",
+        "repeal license to carry program"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:43:05.176Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "839d4ee524b3de70b24fcf74df27ae60c78d5f405fc3b7d99130a9dd9638ca86",
+      "kind": "own-words",
+      "url": "https://www.davidlowefortexas.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Legal gun owners in Texas are protected by the Constitution, but liberal Republicans keep selling out our rights to the left.",
+      "note": "Same campaign page; general gun-rights statement.",
+      "subjects": [
+        "gun rights general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:43:05.176Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "97be1f4f94c90d704f49260660659ba9c825e098f1ee8a450ef452dc712b4870",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?ID=coauthor&LegSess=89R&Code=A4643",
+      "date": "2025-01-01",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-162-2025",
+      "act": "other",
+      "note": "Coauthor (name on the Texas Legislature Online coauthor report). Bill by Rep. Cain would bar Texas from recognizing, serving or enforcing extreme risk protective orders (red flag orders) and make it a crime. Left in committee.",
+      "subjects": [
+        "red flag orders",
+        "ban on red flag laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:43:05.176Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "969a8cf2103023175542564092eae63649635bd3bcfdf0ec7fc2a873b8296733",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?ID=coauthor&LegSess=89R&Code=A4643",
+      "date": "2025-01-01",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-1403-2025",
+      "act": "other",
+      "note": "Coauthor (name on the coauthor report). Bill on collecting and keeping confidential information about firearms in agency foster homes. Effective 2025.",
+      "subjects": [
+        "guns in foster homes"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:43:05.176Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "897bbd57dd131828be6cc68e26a0ac4798ae7877996b0ab4de4b1cfe7e964558",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?ID=coauthor&LegSess=89R&Code=A4643",
+      "date": "2025-01-01",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-2031-2025",
+      "act": "other",
+      "note": "Coauthor (name on the coauthor report). Bill on a tenant's right to possess, carry, transport or store a firearm and ammunition on leased premises.",
+      "subjects": [
+        "gun possession by tenants"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:43:05.176Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e43b810ee1f8d5e027ff200017d564ef7b48e7b0d50e5ba3cc003a7add1bbb36",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?ID=coauthor&LegSess=89R&Code=A4643",
+      "date": "2025-01-01",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-3053-2025",
+      "act": "other",
+      "note": "Coauthor (name on the coauthor report). Bill on municipal and county firearm buyback programs. Effective 2025.",
+      "subjects": [
+        "gun buyback programs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:43:05.176Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "20f64ac7bd0e2755e0248f4fe3e2c4ac6bc0e65cb600188032b7635f8067f741",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?ID=coauthor&LegSess=89R&Code=A4643",
+      "date": "2025-01-01",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5014-2025",
+      "act": "other",
+      "note": "Coauthor (name on the coauthor report). Bill on rights of special forces veterans who hold a license to carry a handgun.",
+      "subjects": [
+        "carry permits for veterans"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:43:05.176Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c8e41451ff44003686de1540a26349e7b4e87350445ad65f4f8961e21470417e",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3053",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-3053-2025",
+      "act": "yea",
+      "motion": "Read 3rd time RV#2266",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Read 3rd time RV#2266, 2025-05-13: yea (tally 85–56); census gate: none.",
+      "subjects": [
+        "local firearm buyback programs prohibited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-3053-2025.enrolled.html",
+          "sha256": "5c783f0f9c65e8195dcc193a50eb55c2c6158aa0407a2ccf6a2bea6d95531ee0"
+        }
+      }
+    },
+    {
+      "id": "ac5dd6b513bd1f4a89ad5d7b72c55baaa896bacabf9e47a86b70a9dae82f0e4b",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1362",
+      "date": "2025-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1362-2025",
+      "act": "yea",
+      "motion": "Read 3rd time RV#3869",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Read 3rd time RV#3869, 2025-05-28: yea (tally 86–53); census gate: none.",
+      "subjects": [
+        "red flag orders may not be enforced by state or local officials",
+        "federal red flag orders declared unenforceable",
+        "serving an out-of-state red flag order is a state jail felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-1362-2025.enrolled.html",
+          "sha256": "aec24880eb60a1cd8426dd2df4725f2ab3d34a596d3b9e887d080e4018887f72"
+        }
+      }
+    },
+    {
+      "id": "93a5c8ea0cafea0d097554a756bb609857cf8c540fcff91dacb4c62b1a18e6a1",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1596",
+      "date": "2025-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1596-2025",
+      "act": "yea",
+      "motion": "Laid out as postponed business RV#3937",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Laid out as postponed business RV#3937, 2025-05-28: yea (tally 87–52); census gate: none.",
+      "subjects": [
+        "short-barrel firearm possession offense repealed",
+        "definition of short-barrel firearm repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-1596-2025.enrolled.html",
+          "sha256": "79af2b9f1e3b2967b40f051ee7540cd4f3d0d7f9ae0f8c6802c5cd20ab4d37f4"
+        }
+      }
+    },
+    {
+      "id": "5e3359ff7f9b4fad984e8f776e51f8a42cf169e6b30547196fbde9688f1a520a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB706",
+      "date": "2025-05-21",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-706-2025",
+      "act": "yea",
+      "motion": "Read 3rd time RV#3121",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Read 3rd time RV#3121, 2025-05-21: yea (tally 89–51); census gate: none.",
+      "subjects": [
+        "out-of-state handgun licenses recognized in Texas",
+        "state must publish list of states honoring Texas license",
+        "old background-check condition for recognition repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-706-2025.enrolled.html",
+          "sha256": "fb39773e7239800d5a632dde6685542e492721c2bc464dbd6838c1b0425f3c93"
+        }
+      }
+    },
+    {
+      "id": "80265cf02f3228f1d37f4c0b636d91b9063e49cdc4fb74b163ebb7b48ac6a5fe",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3053",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-3053-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of TX-HB-3053-2025 (LegiScan sponsor list): HB3053 (89th Legislature Regular Session): Relating to municipal and county firearm buyback programs..",
+      "subjects": [
+        "local firearm buyback programs prohibited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-3053-2025.enrolled.html",
+          "sha256": "5c783f0f9c65e8195dcc193a50eb55c2c6158aa0407a2ccf6a2bea6d95531ee0"
+        }
+      }
+    },
+    {
+      "id": "7eed5b38b778a20a34d985c60cdce23b19a60a8aa673c32f55249e9204d89660",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1362",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-1362-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of TX-SB-1362-2025 (LegiScan sponsor list): SB1362 (89th Legislature Regular Session): Relating to prohibiting the recognition, service, and enforcement of extreme risk protective orders; creating a criminal offense..",
+      "subjects": [
+        "red flag orders may not be enforced by state or local officials",
+        "federal red flag orders declared unenforceable",
+        "serving an out-of-state red flag order is a state jail felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-1362-2025.enrolled.html",
+          "sha256": "aec24880eb60a1cd8426dd2df4725f2ab3d34a596d3b9e887d080e4018887f72"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "ID with mail ballot",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "voter-roll maintenance",
+        "election integrity in general"
+      ],
+      "places": [
+        "identity confirmed: Ballotpedia page shows David Lowe, Texas House District 91, term ends 2027, on the 2026-11-03 general election ballot",
+        "On the Record (0 appearances; extract-otr run, nothing)",
+        "campaign site davidlowefortexas.com (home, issues, meet pages read)",
+        "official House page house.texas.gov/members/4643 (links to bill lists)",
+        "Texas Legislature Online author, coauthor and sponsor lists for the 89th session, plus bill histories and introduced texts of HB 4902, HB 5101, HB 4652, HB 4152, HJR 161, HB 4962, HB 1661",
+        "Ballotpedia (2024 candidate survey answers read)",
+        "web search x4 (name plus subject words; bill HB 4902); results were bill trackers, no direct quotes of him on voter ID",
+        "nothing on the subject: Fort Worth Report page ?p=97943 (no mention of him)",
+        "blocked: https://voterguide.dallasnews.com/2022-primary/candidates/2387 (404 / dead host)",
+        "blocked: https://www.texaspolicyresearch.com/bills/89th-legislature-hb-4902/ (403)",
+        "not reviewed: campaign YouTube channel and X account (video/social, not readable)",
+        "no Lowe sponsorship found on photo ID at the polls or mail-ballot ID bills"
+      ],
+      "found": 8,
+      "at": "2026-10-28T15:07:21.050Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:55:41.523Z",
+      "by": "identity-step-sponsors"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red flag orders",
+        "carry a gun without a permit",
+        "gun rights general statements",
+        "bills authored or coauthored on firearms",
+        "check every gun buyer",
+        "ban on assault-style guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official page https://house.texas.gov/members/91 (confirms Rep. David Lowe, District 91; nothing on the subject)",
+        "campaign site https://www.davidlowefortexas.com/ and /issues (gun statements found) and /survey (nothing)",
+        "Texas Legislature Online authored and coauthored reports for the 89th regular session (authored list: no gun bill; coauthored list: gun bills recorded)",
+        "TLO bill history for HB 162",
+        "voter guide on ivoterguide.com: gun question left unanswered; lists gun-rights group endorsements",
+        "2026 candidate profile on branch.vote (confirms he is a 2026 general-election candidate; summary of positions matches his site)",
+        "blocked: https://app.legiplex.com/profile/david-lowe-3022",
+        "not reviewed: https://www.kera.org/elections (redirected away from the article)",
+        "Ballotpedia: not usable through the fetch tool",
+        "news searches (2): nothing further"
+      ],
+      "found": 9,
+      "at": "2026-10-30T20:43:05.176Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "politician_id": "8ea58fae-bd3a-42a8-aa8a-c57b72ce3eb0",
+  "findings": [
+    {
+      "id": "68b7a7d912729489eb7e8b5f5880a76e6670d243b1e2801321925b16b3da0b65",
+      "kind": "own-words",
+      "url": "https://www.citizenscount.org/candidate/edmond-j-laplante-jr/running/2026-general-us-senate",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Should the federal government require voters to provide proof of U.S. citizenship (such as passport or birth certificate) at the time of registration? \"For\"",
+      "note": "His answer in the Citizens Count 2026 issue survey (question text and his answer, no comment added).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.065Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d0ce515b4ee97864de7541f18eee0350f56ddf8193be42b11a63ea522cc15366",
+      "kind": "own-words",
+      "url": "https://www.citizenscount.org/candidate/edmond-j-laplante-jr/running/2026-general-us-senate",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Do you support the option of mail-in ballots for all voters, not just absentees? \"Against\"",
+      "note": "His answer in the Citizens Count 2026 issue survey on no-excuse mail voting.",
+      "subjects": [
+        "mail-in voting for all voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.065Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: on the 2026 general-election ballot for US Senate in New Hampshire (not the House), per https://laplante4constitutionalnh.com/about-me and https://www.ballotready.org/people/edmond-laplante",
+        "On the Record (0 appearances; nothing on the subject)",
+        "campaign site home, my-platform, endorsements pages (nothing on the subject)",
+        "BallotReady (nothing on the subject)",
+        "Citizens Count Concord Ward 8 page (nothing on the subject)",
+        "Constitution Party blog 2026-06-03 (nothing on the subject)",
+        "Granite Grok 2024 announcement (nothing on the subject)",
+        "Keene Sentinel 2022 profile (nothing on the subject)",
+        "New England Take 2026-08-28 episode page (video; transcript not read; not reviewed: https://www.newenglandtake.com/p/the-chaos-of-running-third-party)",
+        "blocked: https://ballotpedia.org/Edmond_Laplante (HTTP 202, empty body)",
+        "news search on name plus subject words (nothing; results were about a different person, Judge Joseph Laplante)",
+        "congress.gov: not applicable, never a legislator"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:34:27.655Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "mail-in voting",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "identity check: Edmond J. Laplante Jr. is listed as a 2026 New Hampshire U.S. Senate general-election candidate (the brief says Congress; the office is U.S. Senate) at https://www.citizenscount.org/nh/merrimack/concord-ward-8 and https://www.ballotready.org/people/edmond-laplante; ballot access by signatures per Citizens Count",
+        "On the Record (0 appearances)",
+        "campaign site laplante4constitutionalnh.com (home, My Platform: nothing on voter ID or citizenship to vote)",
+        "Citizens Count 2026 issue survey (own answers)",
+        "BallotReady (nothing on the subject)",
+        "politics1.com NH (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Edmond_Laplante (page returned empty)",
+        "blocked: https://citizenscount.org/candidate/edmond-j-laplante-jr/history (404)",
+        "congress.gov: not applicable, no legislative record in Congress; no state bills reviewed",
+        "web searches (2): no news coverage of him on voter ID or election integrity"
+      ],
+      "found": 2,
+      "at": "2026-10-27T00:57:16.065Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

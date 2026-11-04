@@ -1,14 +1,45 @@
 {
   "id": "GA-SB-202-2021",
   "scope": "state:ga",
-  "title": "SB 202 (2021) Election Integrity Act of 2021 (2021-2022) — omnibus election law including ID number or ID copy on absentee requests",
+  "title": "SB 202 (2021-2022 Regular Session (first year); Act 9 of 2021): Election Integrity Act of 2021",
   "urls": [
     "https://www.legis.ga.gov/legislation/60396 (unreadable JS; unconfirmed it is SB 202)",
     "https://www.legis.ga.gov/api/legislation/document/20212022/201424 (compressed PDF, unreadable by tool)",
-    "https://en.wikipedia.org/wiki/Election_Integrity_Act_of_2021"
+    "https://en.wikipedia.org/wiki/Election_Integrity_Act_of_2021",
+    "SB 202 detail page on legis.ga.gov not fetched (its detail API answers 401: token needed, not bypassed). History taken from the House Journal 2021 (index p. 2253, 2294, 2304, 2469) and Senate Journal 2021 index (787, 1053, 1145, 1270 ...) and the Senate Research Office 2021 report.",
+    "https://www.legis.ga.gov/api/legislation/document/20212022/201424",
+    "https://www.legis.ga.gov/api/legislation/document/20212022/201427 (Rules Committee floor amendment AM 28 1868, ADOPTED; adds website/public-prominence notice wording; read first page only)",
+    "https://www.legis.ga.gov/api/legislation/document/20212022/201429 (Rules Committee floor amendment AM 28 1870, ADOPTED; not read beyond header)"
   ],
   "version": "enrolled",
-  "operative_text": "Absentee ID (secondary: Wikipedia): Requires absentee voters to supply a driver's license or state ID number, the last four digits of their Social Security number, or a photocopy of an accepted ID when requesting a ballot.\nSignature match replaced: Replaces signature-match verification of absentee ballots by poll workers.\nDrop boxes: Codifies permanent drop boxes for general elections and requires at least one per county.\nAbsentee request window: Moves the request deadline from four days to eleven days before Election Day.\nUnsolicited absentee applications: Bars state and local officials from sending unsolicited absentee ballot request forms to registered voters.\nEarly voting: Mandates three weeks of in-person early voting, including two Saturdays and optionally two Sundays.\nState control of county boards and State Election Board composition: Lets the State Board of Elections replace a county board with a state-chosen administrator if the State Board deems the county board to be performing poorly.\nRunoffs and special elections: Shortens the Senate runoff period from nine weeks to four weeks.\nLong lines: Requires counties with precincts of more than 2,000 voters that had waits over an hour in 2020 to add a voting station or add staff or equipment.\nFood and water: Makes it illegal to give free food or water to voters waiting in line within 150 feet of polling locations or 25 feet of voting lines\nWrong-precinct provisional ballots: Eliminates the option of casting a provisional ballot at the wrong polling location, requiring voters to go to the correct precinct.\nThird-party funding: Prohibits outside, third-party funding of elections.\nOther (litigation coverage): A general ban on photographing voted ballots (preliminarily enjoined in August 2021).",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 34 (O.C.G.A. 21-2-418(b), provisional ballots)\n(quote) The form of the provisional ballot voting certificate shall be prescribed by the Secretary of State. The person shall also present the identification required by Code Section 21-2-417.\n(section) Sec. 25 (O.C.G.A. 21-2-381(b)(1)) - in-person absentee voting at the registrar office\n(quote) In order to be found eligible to vote an absentee ballot in person at the registrar's office or absentee ballot clerk's office, such person shall show one of the forms of identification listed in Code Section 21-2-417 and the registrar or absentee ballot clerk shall compare the identifying information on the application with the information on file in the registrar's office.\n(b_no_id_remedy)\n(section) Sec. 25 (O.C.G.A. 21-2-381(b)(3)) - signature mismatch on application, cure with ID copy\n(quote) However, an absentee ballot application shall not be rejected solely due to an apparent a mismatch between the signature identifying information of the elector on the application and the signature identifying information of the elector on file with the board of registrars. In such cases, the board of registrars or absentee ballot clerk shall send the elector a provisional absentee ballot with the designation 'Provisional Ballot' on the outer oath envelope and information prepared by the Secretary of State as to the process to be followed to cure the signature discrepancy. If such ballot is returned to the board of registrars or absentee ballot clerk prior to the closing of the polls on the day of the primary or election, the elector may cure the signature discrepancy by submitting an affidavit to the board of registrars or absentee ballot clerk along with a copy of one of the forms of identification enumerated in subsection (c) of Code Section 21-2-417 before the close of the period for verifying provisional ballots contained in subsection (c) of Code Section 21-2-419. If the board of registrars or absentee ballot clerk finds the affidavit and identification to be sufficient, the absentee ballot shall be counted as other absentee ballots. If the board of registrars or absentee ballot clerk finds the affidavit and identification to be insufficient, then the procedure contained in Code Section 21-2-386 shall be followed for rejected absentee ballots.\n(section) Sec. 28 (O.C.G.A. 21-2-385(a)) - first-time mail registrant\n(quote) If the elector registered to vote for the first time in this state by mail and has not previously provided the identification required by Code Section 21-2-220 and votes for the first time by absentee ballot and fails to provide the identification required by Code Section 21-2-220 with such absentee ballot, such absentee ballot shall be treated as a provisional ballot and shall be counted only if the registrars are able to verify the identification and registration of the elector during the time provided pursuant to Code Section 21-2-419.\"\n(section) Sec. 29 (O.C.G.A. 21-2-386(a)(1)(C)) - rejected absentee ballot, cure\n(quote) (C) If the elector has failed to sign the oath, or if the signature identifying information entered on the absentee ballot envelope does not appear to be valid match the same information appearing in the elector's voter registration record, or if the elector has failed to furnish required information or information so furnished does not conform with that on file in the registrar's or clerk's office, or if the elector is otherwise found disqualified to vote, the registrar or clerk shall write across the face of the envelope 'Rejected,' giving the reason therefor. The board of registrars or absentee ballot clerk shall promptly notify the elector of such rejection, a copy of which notification shall be retained in the files of the board of registrars or absentee ballot clerk for at least two years. Such elector shall have until the end of the period for verifying provisional ballots contained in subsection (c) of Code Section 21-2-419 to cure the problem resulting in the rejection of the ballot. The elector may cure a failure to sign the oath, an invalid signature nonmatching identifying information, or missing information by submitting an affidavit to the board of registrars or absentee ballot clerk along with a copy of one of the forms of identification enumerated in subsection (c) of Code Section 21-2-417 before the close of such period. The affidavit shall affirm that the ballot was submitted by the elector, is the elector's ballot, and that the elector is registered and qualified to vote in the primary, election, or runoff in question. If the board of registrars or absentee ballot clerk finds the affidavit and identification to be sufficient, the absentee ballot shall be counted.\n(section) Sec. 29 (O.C.G.A. 21-2-386(a)(1)(D)) - first-time mail registrant ID\n(quote) (D) An elector who registered to vote by mail, but did not comply with subsection (c) of Code Section 21-2-220, and who votes for the first time in this state by absentee ballot shall include with his or her application for an absentee ballot or in the outer oath envelope of his or her absentee ballot either one of the forms of identification listed in subsection (a) of Code Section 21-2-417 or a copy of a current utility bill, bank statement, government check, paycheck, or other government document that shows the name and address of such elector. If such elector does not provide any of the forms of identification listed in this subparagraph with his or her application for an absentee ballot or with the absentee ballot, such absentee ballot shall be deemed to be a provisional ballot and such ballot shall only be counted if the registrars are able to verify current and valid identification of the elector as provided in this subparagraph within the time period for verifying provisional ballots pursuant to Code Section 21-2-419. The board of registrars or absentee ballot clerk shall promptly notify the elector that such ballot is deemed a provisional ballot and shall provide information on the types of identification needed and how and when such identification is to be submitted to the board of registrars or absentee ballot clerk to verify the ballot.\n(c_mail_ballot_id)\n(section) Sec. 25 (O.C.G.A. 21-2-381(a)(1)(C)(i)) - application\n(quote) (C)(i) Any person applying for an absentee-by-mail ballot shall make application in writing on the form made available by the Secretary of State. In order to confirm the identity of the voter, such form shall require the elector to provide his or her name, date of birth, address as registered, address where the elector wishes the ballot to be mailed, and the number of his or her Georgia driver's license or identification card issued pursuant to Article 5 of Chapter 5 of Title 40. If such elector does not have a Georgia driver's license or identification card issued pursuant to Article 5 of Chapter 5 of Title 40, the elector shall affirm this fact in the manner prescribed in the application and the elector shall provide a copy of a form of identification listed in subsection (c) of Code Section 21-2-417. The form made available by the Secretary of State shall include a space to affix a photocopy or electronic image of such identification.\n(section) Sec. 28 (O.C.G.A. 21-2-385(a)) - outer oath envelope\n(quote) In order to verify that the absentee ballot was voted by the elector who requested the ballot, the elector shall print the number of his or her Georgia driver's license number or identification card issued pursuant to Article 5 of Chapter 5 of Title 40 in the space provided on the outer oath envelope. The elector shall also print his or her date of birth in the space provided in the outer oath envelope. If the elector does not have a Georgia driver's license or state identification card issued pursuant to Article 5 of Chapter 5 of Title 40, the elector shall so affirm in the space provided on the outer oath envelope and print the last four digits of his or her social security number in the space provided on the outer oath envelope. If the elector does not have a Georgia driver's license, identification card issued pursuant to Article 5 of Chapter 5 of Title 40, or a social security number, the elector shall so affirm in the space provided on the outer oath envelope and place a copy of one of the forms of identification set forth in subsection (c) of Code Section 21-2-417 in the outer envelope.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 25 (O.C.G.A. 21-2-381(b)(1)) - checking the application\n(quote) (b)(1) Upon receipt of a timely application for an absentee ballot, a registrar or absentee ballot clerk shall enter thereon the date received. The registrar or absentee ballot clerk shall verify the identity of the applicant and determine, in accordance with the provisions of this chapter, if the applicant is eligible to vote in the primary or election involved. In order to be found eligible to vote an absentee ballot by mail verify the identity of the applicant, the registrar or absentee ballot clerk shall compare the identifying information applicant's name, date of birth, and number of his or her Georgia driver's license or identification card issued pursuant to Article 5 of Chapter 5 of Title 40 on the application with the information on file in the registrar's office and, if the application is signed by the elector, compare the signature or mark of the elector on the application with the signature or mark of the elector on the elector's voter registration card. If the application does not contain the number of the applicant's Georgia driver's license or identification card issued pursuant to Article 5 of Chapter 5 of Title 40, the registrar or absentee ballot clerk shall verify that the identification provided with the application identifies the applicant.\n(section) Sec. 29 (O.C.G.A. 21-2-386(a)(1)(B)) - checking the returned ballot\n(quote) (B) Upon receipt of each ballot, a registrar or clerk shall write the day and hour of the receipt of the ballot on its envelope. The registrar or clerk shall then compare the number of the elector's Georgia driver's license number or state identification card issued pursuant to Article 5 of Chapter 5 of Title 40 and date of birth entered on the absentee ballot envelope identifying information on the oath with the same information on file in his or her office, shall compare the signature or mark on the oath with the signature or mark on the absentee elector's voter registration card or the most recent update to such absentee elector's voter registration card and application for absentee ballot or a facsimile of said signature or mark taken from said card or application, and shall, if the information and signature appear to be valid and other identifying information appears to be correct, contained in the elector's voter registration records. If the elector has affirmed on the envelope that he or she does not have a Georgia driver's license or state identification card issued pursuant to Article 5 of Chapter 5 of Title 40, the registrar or clerk shall compare the last four digits of the elector's social security number and date of birth entered on the envelope with the same information contained in the elector's voter registration records. The registrar or clerk shall also confirm that the elector signed the oath and the person assisting the elector, if any, signed the required oath. If the elector has signed the elector's oath, the person assisting has signed the required oath, if applicable, and the identifying information entered on the absentee ballot envelope matches the same information contained in the elector's voter registration record, the registrar or clerk shall so certify by signing or initialing his or her name below the voter's oath. Each elector's name so certified shall be listed by the registrar or clerk on the numbered list of absentee voters prepared for his or her precinct.\n(other) Sec. 1-2: short title \"Election Integrity Act of 2021\"; legislative findings.\n(other) Sec. 3-4: revise election-code definition; amend 21-2-3.\n(other) Sec. 5-8: State Election Board - Secretary of State nonvoting ex officio member, chair elected by General Assembly, quorum, suspension and replacement of county or municipal superintendents (21-2-33.1, 21-2-33.2), performance review boards (21-2-35, 21-2-36).\n(other) Sec. 9-10: no private funding for superintendents/registrars (21-2-71); acting election superintendents when probate judge office vacant (21-2-74.1).\n(other) Sec. 11-13: poll workers may serve outside county of residence (21-2-92); election-code part for performance review boards; death of candidate before nonpartisan election (21-2-134).\n(other) Sec. 14-17: county registrars (21-2-212); challenges to voter registrations and electors (21-2-229, 21-2-230, 21-2-232); list maintenance (new paragraph).\n(other) Sec. 18-20: precinct size limits, polling places, use of buses and movable facilities (21-2-263, 21-2-265, 21-2-266).\n(other) Sec. 21-24: ballot form and safety paper, voting equipment allocation, ballot description (21-2-285.1, 21-2-367, 21-2-372, 21-2-379.25).\n(other) Sec. 25-29: absentee ballots - application timing and ID, limits on mailing of applications, drop boxes (21-2-382), delivery and return, advance voting dates, processing/tabulation (21-2-381 to 21-2-386).\n(other) Sec. 30-33: delivery of election materials (21-2-390), poll hours (21-2-403), poll watchers (21-2-408), restrictions near polls incl. giving items to voters in line (21-2-414).\n(other) Sec. 34-36: provisional ballots (21-2-418, 21-2-419), duplication panels (new 21-2-420 and following).\n(other) Sec. 37-42: counting, certification deadlines, runoffs (21-2-437, 21-2-438, 21-2-483, 21-2-492, 21-2-493, 21-2-501).\n(other) Sec. 43-46: special elections and special primaries (21-2-540 to 21-2-542, 21-2-546).\n(other) Sec. 47-48: observing a voter's ballot, accepting ballots for return (21-2-568, 21-2-568.1).\n(other) Sec. 49-53: municipal reapportionment delay (36-35-4.1), rulemaking (50-13-4), public records (50-18-71), effective dates, repealer.",
+  "sponsors": [
+    {
+      "name": "Burns of the 23rd",
+      "role": "prime",
+      "version": "House Substitute to Senate Bill 202 (file label SB 202/HRCSFA; the PDF is headed HOUSE SUBSTITUTE TO SENATE BILL 202; the journal shows the Rules Committee substitute adopted as amended on the floor), passed by the House 2021-03-25 100-75 and agreed to by the Senate 2021-03-25 34-20; became Act 9. The enrolled Act text itself was not found on the document API."
+    },
+    {
+      "name": "Miller of the 49th",
+      "role": "co",
+      "version": "House Substitute to Senate Bill 202 (file label SB 202/HRCSFA; the PDF is headed HOUSE SUBSTITUTE TO SENATE BILL 202; the journal shows the Rules Committee substitute adopted as amended on the floor), passed by the House 2021-03-25 100-75 and agreed to by the Senate 2021-03-25 34-20; became Act 9. The enrolled Act text itself was not found on the document API."
+    },
+    {
+      "name": "Dugan of the 30th",
+      "role": "co",
+      "version": "House Substitute to Senate Bill 202 (file label SB 202/HRCSFA; the PDF is headed HOUSE SUBSTITUTE TO SENATE BILL 202; the journal shows the Rules Committee substitute adopted as amended on the floor), passed by the House 2021-03-25 100-75 and agreed to by the Senate 2021-03-25 34-20; became Act 9. The enrolled Act text itself was not found on the document API."
+    },
+    {
+      "name": "Ginn of the 47th",
+      "role": "co",
+      "version": "House Substitute to Senate Bill 202 (file label SB 202/HRCSFA; the PDF is headed HOUSE SUBSTITUTE TO SENATE BILL 202; the journal shows the Rules Committee substitute adopted as amended on the floor), passed by the House 2021-03-25 100-75 and agreed to by the Senate 2021-03-25 34-20; became Act 9. The enrolled Act text itself was not found on the document API."
+    },
+    {
+      "name": "Anderson of the 24th",
+      "role": "co",
+      "version": "House Substitute to Senate Bill 202 (file label SB 202/HRCSFA; the PDF is headed HOUSE SUBSTITUTE TO SENATE BILL 202; the journal shows the Rules Committee substitute adopted as amended on the floor), passed by the House 2021-03-25 100-75 and agreed to by the Senate 2021-03-25 34-20; became Act 9. The enrolled Act text itself was not found on the document API."
+    }
+  ],
   "single_subject": [],
   "higher_law_duty": "not obtained",
   "votes": [
@@ -33,11 +64,1218 @@
       "body_size": 180,
       "note": "member names not captured",
       "members": []
+    },
+    {
+      "date": "2021-03-25",
+      "body": "GA House",
+      "motion": "On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "kind": "roll-call",
+      "yes": 100,
+      "no": 75,
+      "absent": 4,
+      "body_size": 180,
+      "note": "yes and no are the printed totals and equal the count of Y and N marks parsed from the journal text. absent = marks printed E (read as Excused; the roll-call block does not define its letters). Members printed without a mark are listed with that note. | House Journal 2021, Thursday March 25, 2021, pp. 3083-3084 (roll call heading to tally line; journal line 141998 of the DLG full text) | https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "members": [
+        {
+          "name": "Alexander",
+          "vote": "nay"
+        },
+        {
+          "name": "Allen",
+          "vote": "nay"
+        },
+        {
+          "name": "Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Anulewicz",
+          "vote": "nay"
+        },
+        {
+          "name": "Ballinger",
+          "vote": "yea"
+        },
+        {
+          "name": "Barr",
+          "vote": "yea"
+        },
+        {
+          "name": "Barton",
+          "vote": "yea"
+        },
+        {
+          "name": "Bazemore",
+          "vote": "nay"
+        },
+        {
+          "name": "Belton",
+          "vote": "yea"
+        },
+        {
+          "name": "Bennett",
+          "vote": "nay"
+        },
+        {
+          "name": "Bentley",
+          "vote": "nay"
+        },
+        {
+          "name": "Benton",
+          "vote": "yea"
+        },
+        {
+          "name": "Beverly",
+          "vote": "nay"
+        },
+        {
+          "name": "Blackmon",
+          "vote": "yea"
+        },
+        {
+          "name": "Boddie",
+          "vote": "nay"
+        },
+        {
+          "name": "Bonner",
+          "vote": "yea"
+        },
+        {
+          "name": "Bruce",
+          "vote": "nay"
+        },
+        {
+          "name": "Buckner",
+          "vote": "nay"
+        },
+        {
+          "name": "Burchett",
+          "vote": "yea"
+        },
+        {
+          "name": "Burnough",
+          "vote": "nay"
+        },
+        {
+          "name": "Burns",
+          "vote": "yea"
+        },
+        {
+          "name": "Byrd",
+          "vote": "yea"
+        },
+        {
+          "name": "Cameron",
+          "vote": "yea"
+        },
+        {
+          "name": "Camp",
+          "vote": "yea"
+        },
+        {
+          "name": "Campbell",
+          "vote": "yea"
+        },
+        {
+          "name": "Cannon",
+          "vote": "nay"
+        },
+        {
+          "name": "Cantrell",
+          "vote": "yea"
+        },
+        {
+          "name": "Carpenter",
+          "vote": "yea"
+        },
+        {
+          "name": "Carson",
+          "vote": "yea"
+        },
+        {
+          "name": "Carter",
+          "vote": "nay"
+        },
+        {
+          "name": "Corbett",
+          "vote": "yea"
+        },
+        {
+          "name": "Crowe",
+          "vote": "yea"
+        },
+        {
+          "name": "Davis",
+          "vote": "nay"
+        },
+        {
+          "name": "DeLoach",
+          "vote": "yea"
+        },
+        {
+          "name": "Dempsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Dickey",
+          "vote": "yea"
+        },
+        {
+          "name": "Dollar",
+          "vote": "yea"
+        },
+        {
+          "name": "Douglas",
+          "vote": "nay"
+        },
+        {
+          "name": "Drenner",
+          "vote": "nay"
+        },
+        {
+          "name": "Dreyer",
+          "vote": "nay"
+        },
+        {
+          "name": "Dubnik",
+          "vote": "yea"
+        },
+        {
+          "name": "Dukes",
+          "vote": "nay"
+        },
+        {
+          "name": "Dunahoo",
+          "vote": "yea"
+        },
+        {
+          "name": "Efstration",
+          "vote": "yea"
+        },
+        {
+          "name": "Ehrhart",
+          "vote": "yea"
+        },
+        {
+          "name": "England",
+          "vote": "yea"
+        },
+        {
+          "name": "Erwin",
+          "vote": "yea"
+        },
+        {
+          "name": "Evans, B",
+          "vote": "nay"
+        },
+        {
+          "name": "Evans, S",
+          "vote": "nay"
+        },
+        {
+          "name": "Fleming",
+          "vote": "yea"
+        },
+        {
+          "name": "Frazier",
+          "vote": "nay"
+        },
+        {
+          "name": "Frye",
+          "vote": "nay"
+        },
+        {
+          "name": "Gaines",
+          "vote": "yea"
+        },
+        {
+          "name": "Gambill",
+          "vote": "yea"
+        },
+        {
+          "name": "Gilliard",
+          "vote": "nay"
+        },
+        {
+          "name": "Gilligan",
+          "vote": "yea"
+        },
+        {
+          "name": "Glanton",
+          "vote": "nay"
+        },
+        {
+          "name": "Gravley",
+          "vote": "yea"
+        },
+        {
+          "name": "Greene",
+          "vote": "yea"
+        },
+        {
+          "name": "Gullett",
+          "vote": "yea"
+        },
+        {
+          "name": "Hogan",
+          "vote": "yea"
+        },
+        {
+          "name": "Holcomb",
+          "vote": "nay"
+        },
+        {
+          "name": "Holland",
+          "vote": "nay"
+        },
+        {
+          "name": "Holly",
+          "vote": "nay"
+        },
+        {
+          "name": "Holmes",
+          "vote": "absent"
+        },
+        {
+          "name": "Hopson",
+          "vote": "nay"
+        },
+        {
+          "name": "Houston",
+          "vote": "yea"
+        },
+        {
+          "name": "Howard",
+          "vote": "nay"
+        },
+        {
+          "name": "Hugley",
+          "vote": "nay"
+        },
+        {
+          "name": "Hutchinson",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackson, D",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackson, M",
+          "vote": "absent"
+        },
+        {
+          "name": "Jasperse",
+          "vote": "yea"
+        },
+        {
+          "name": "Jenkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Jones, J",
+          "vote": "yea"
+        },
+        {
+          "name": "Jones, S",
+          "vote": "nay"
+        },
+        {
+          "name": "Jones, T",
+          "vote": "yea"
+        },
+        {
+          "name": "Kausche",
+          "vote": "nay"
+        },
+        {
+          "name": "Kelley",
+          "vote": "yea"
+        },
+        {
+          "name": "Kendrick",
+          "vote": "nay"
+        },
+        {
+          "name": "Kennard",
+          "vote": "nay"
+        },
+        {
+          "name": "Kirby",
+          "vote": "yea"
+        },
+        {
+          "name": "Knight",
+          "vote": "yea"
+        },
+        {
+          "name": "LaHood",
+          "vote": "yea"
+        },
+        {
+          "name": "LaRiccia",
+          "vote": "yea"
+        },
+        {
+          "name": "Leverett",
+          "vote": "yea"
+        },
+        {
+          "name": "Lewis-Ward",
+          "vote": "nay"
+        },
+        {
+          "name": "Lim",
+          "vote": "nay"
+        },
+        {
+          "name": "Lopez",
+          "vote": "nay"
+        },
+        {
+          "name": "Lott",
+          "vote": "yea"
+        },
+        {
+          "name": "Mathis",
+          "vote": "yea"
+        },
+        {
+          "name": "McClain",
+          "vote": "nay"
+        },
+        {
+          "name": "McDonald",
+          "vote": "yea"
+        },
+        {
+          "name": "McLaurin",
+          "vote": "nay"
+        },
+        {
+          "name": "McLeod",
+          "vote": "nay"
+        },
+        {
+          "name": "Meeks",
+          "vote": "yea"
+        },
+        {
+          "name": "Metze",
+          "vote": "nay"
+        },
+        {
+          "name": "Mitchell, B",
+          "vote": "nay"
+        },
+        {
+          "name": "Mitchell, R",
+          "vote": "nay"
+        },
+        {
+          "name": "Momtahan",
+          "vote": "yea"
+        },
+        {
+          "name": "Moore, A",
+          "vote": "nay"
+        },
+        {
+          "name": "Moore, B",
+          "vote": "nay"
+        },
+        {
+          "name": "Morris",
+          "vote": "yea"
+        },
+        {
+          "name": "Neal",
+          "vote": "nay"
+        },
+        {
+          "name": "Nelson",
+          "vote": "nay"
+        },
+        {
+          "name": "Newton",
+          "vote": "yea"
+        },
+        {
+          "name": "Nguyen",
+          "vote": "nay"
+        },
+        {
+          "name": "Nix",
+          "vote": "yea"
+        },
+        {
+          "name": "Oliver",
+          "vote": "nay"
+        },
+        {
+          "name": "Paris",
+          "vote": "nay"
+        },
+        {
+          "name": "Park",
+          "vote": "nay"
+        },
+        {
+          "name": "Parrish",
+          "vote": "yea"
+        },
+        {
+          "name": "Parsons",
+          "vote": "yea"
+        },
+        {
+          "name": "Petrea",
+          "vote": "yea"
+        },
+        {
+          "name": "Pirkle",
+          "vote": "yea"
+        },
+        {
+          "name": "Powell",
+          "vote": "yea"
+        },
+        {
+          "name": "Prince",
+          "vote": "nay"
+        },
+        {
+          "name": "Pruitt",
+          "vote": "yea"
+        },
+        {
+          "name": "Reeves",
+          "vote": "yea"
+        },
+        {
+          "name": "Rhodes",
+          "vote": "yea"
+        },
+        {
+          "name": "Scoggins",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott",
+          "vote": "nay"
+        },
+        {
+          "name": "Setzler",
+          "vote": "absent"
+        },
+        {
+          "name": "Shannon",
+          "vote": "nay"
+        },
+        {
+          "name": "Sharper",
+          "vote": "nay"
+        },
+        {
+          "name": "Singleton",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith, L",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith, M",
+          "vote": "nay"
+        },
+        {
+          "name": "Smith, R",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith, T",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith, V",
+          "vote": "yea"
+        },
+        {
+          "name": "Smyre",
+          "vote": "nay"
+        },
+        {
+          "name": "Stephens, M",
+          "vote": "absent"
+        },
+        {
+          "name": "Stephens, R",
+          "vote": "yea"
+        },
+        {
+          "name": "Tankersley",
+          "vote": "yea"
+        },
+        {
+          "name": "Tarvin",
+          "vote": "yea"
+        },
+        {
+          "name": "Taylor, D",
+          "vote": "yea"
+        },
+        {
+          "name": "Taylor, R",
+          "vote": "nay"
+        },
+        {
+          "name": "Thomas, B",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas, E",
+          "vote": "nay"
+        },
+        {
+          "name": "Thomas, M",
+          "vote": "nay"
+        },
+        {
+          "name": "Wade",
+          "vote": "yea"
+        },
+        {
+          "name": "Washburn",
+          "vote": "yea"
+        },
+        {
+          "name": "Watson",
+          "vote": "yea"
+        },
+        {
+          "name": "Werkheiser",
+          "vote": "yea"
+        },
+        {
+          "name": "Wiedower",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilensky",
+          "vote": "nay"
+        },
+        {
+          "name": "Wilkerson",
+          "vote": "nay"
+        },
+        {
+          "name": "Williams, A",
+          "vote": "nay"
+        },
+        {
+          "name": "Williams, MF",
+          "vote": "nay"
+        },
+        {
+          "name": "Cheokas",
+          "vote": "yea"
+        },
+        {
+          "name": "Clark, D",
+          "vote": "yea"
+        },
+        {
+          "name": "Clark, H",
+          "vote": "yea"
+        },
+        {
+          "name": "Clark, J",
+          "vote": "nay"
+        },
+        {
+          "name": "Collins",
+          "vote": "yea"
+        },
+        {
+          "name": "Cooper",
+          "vote": "yea"
+        },
+        {
+          "name": "Gunter",
+          "vote": "yea"
+        },
+        {
+          "name": "Hatchett",
+          "vote": "yea"
+        },
+        {
+          "name": "Hawkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Henderson",
+          "vote": "nay"
+        },
+        {
+          "name": "Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Hitchens",
+          "vote": "yea"
+        },
+        {
+          "name": "Lumsden",
+          "vote": "yea"
+        },
+        {
+          "name": "Mainor",
+          "vote": "nay"
+        },
+        {
+          "name": "Mallow",
+          "vote": "nay"
+        },
+        {
+          "name": "Marin",
+          "vote": "nay"
+        },
+        {
+          "name": "Martin",
+          "vote": "yea"
+        },
+        {
+          "name": "Mathiak",
+          "vote": "yea"
+        },
+        {
+          "name": "Rich",
+          "vote": "yea"
+        },
+        {
+          "name": "Ridley",
+          "vote": "yea"
+        },
+        {
+          "name": "Roberts",
+          "vote": "nay"
+        },
+        {
+          "name": "Robichaux",
+          "vote": "nay"
+        },
+        {
+          "name": "Sainz",
+          "vote": "yea"
+        },
+        {
+          "name": "Schofield",
+          "vote": "nay"
+        },
+        {
+          "name": "Williams, N",
+          "vote": "yea"
+        },
+        {
+          "name": "Williams, R",
+          "vote": "yea"
+        },
+        {
+          "name": "Williamson",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilson",
+          "vote": "nay"
+        },
+        {
+          "name": "Yearta",
+          "vote": "yea"
+        },
+        {
+          "name": "Ralston, Speaker",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2021-03-25",
+      "body": "GA Senate",
+      "motion": "Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
+      "kind": "roll-call",
+      "yes": 34,
+      "no": 20,
+      "absent": 2,
+      "body_size": 56,
+      "note": "yes and no are the printed totals and equal the count of Y and N marks parsed from the journal text. absent = marks printed E (read as Excused; the roll-call block does not define its letters). Members printed without a mark are listed with that note. | Senate Journal 2021, Thursday March 25, 2021, pp. 2222-2222 (roll call heading to tally line; journal line 102644 of the DLG full text) | https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "members": [
+        {
+          "name": "Albers",
+          "vote": "yea"
+        },
+        {
+          "name": "Anavitarte",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson, L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson, T.",
+          "vote": "nay"
+        },
+        {
+          "name": "Au",
+          "vote": "nay"
+        },
+        {
+          "name": "Beach",
+          "vote": "yea"
+        },
+        {
+          "name": "Brass",
+          "vote": "yea"
+        },
+        {
+          "name": "Burke",
+          "vote": "yea"
+        },
+        {
+          "name": "Burns",
+          "vote": "yea"
+        },
+        {
+          "name": "Butler",
+          "vote": "nay"
+        },
+        {
+          "name": "Cowsert",
+          "vote": "yea"
+        },
+        {
+          "name": "Davenport",
+          "vote": "nay"
+        },
+        {
+          "name": "Dixon",
+          "vote": "yea"
+        },
+        {
+          "name": "Dolezal",
+          "vote": "yea"
+        },
+        {
+          "name": "Dugan",
+          "vote": "yea"
+        },
+        {
+          "name": "Ginn",
+          "vote": "yea"
+        },
+        {
+          "name": "Gooch",
+          "vote": "yea"
+        },
+        {
+          "name": "Goodman",
+          "vote": "yea"
+        },
+        {
+          "name": "Halpern",
+          "vote": "nay"
+        },
+        {
+          "name": "Harbin",
+          "vote": "yea"
+        },
+        {
+          "name": "Harbison",
+          "vote": "nay"
+        },
+        {
+          "name": "Harper",
+          "vote": "yea"
+        },
+        {
+          "name": "Harrell",
+          "vote": "nay"
+        },
+        {
+          "name": "Hatchett",
+          "vote": "yea"
+        },
+        {
+          "name": "Hickman",
+          "vote": "yea"
+        },
+        {
+          "name": "Hufstetler",
+          "vote": "yea"
+        },
+        {
+          "name": "Jackson, K.",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackson, L.",
+          "vote": "nay"
+        },
+        {
+          "name": "James",
+          "vote": "absent"
+        },
+        {
+          "name": "Jones, B.",
+          "vote": "yea"
+        },
+        {
+          "name": "Jones, E.",
+          "vote": "nay"
+        },
+        {
+          "name": "Jones, H.",
+          "vote": "nay"
+        },
+        {
+          "name": "Jordan",
+          "vote": "nay"
+        },
+        {
+          "name": "Kennedy",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirkpatrick",
+          "vote": "yea"
+        },
+        {
+          "name": "Lucas",
+          "vote": "nay"
+        },
+        {
+          "name": "McNeill",
+          "vote": "yea"
+        },
+        {
+          "name": "Merritt",
+          "vote": "nay"
+        },
+        {
+          "name": "Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Mullis",
+          "vote": "yea"
+        },
+        {
+          "name": "Orrock",
+          "vote": "nay"
+        },
+        {
+          "name": "Parent",
+          "vote": "nay"
+        },
+        {
+          "name": "Payne",
+          "vote": "yea"
+        },
+        {
+          "name": "Rahman",
+          "vote": "nay"
+        },
+        {
+          "name": "Rhett",
+          "vote": "nay"
+        },
+        {
+          "name": "Robertson",
+          "vote": "yea"
+        },
+        {
+          "name": "Seay",
+          "vote": "nay"
+        },
+        {
+          "name": "Sims",
+          "vote": "nay"
+        },
+        {
+          "name": "Strickland",
+          "vote": "yea"
+        },
+        {
+          "name": "Summers",
+          "vote": "yea"
+        },
+        {
+          "name": "Tate",
+          "vote": "absent"
+        },
+        {
+          "name": "Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Tillery",
+          "vote": "yea"
+        },
+        {
+          "name": "Tippins",
+          "vote": "yea"
+        },
+        {
+          "name": "Walker",
+          "vote": "yea"
+        },
+        {
+          "name": "Watson",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2021-03-08",
+      "body": "GA Senate",
+      "motion": "On the passage of the bill, a roll call was taken, and the vote was as follows (Senate passage of SB 202 by Senate Ethics substitute, 2021-03-08)",
+      "kind": "roll-call",
+      "yes": 32,
+      "no": 20,
+      "absent": 3,
+      "body_size": 56,
+      "note": "yes and no are the printed totals and equal the count of Y and N marks parsed from the journal text. absent = marks printed E (read as Excused; the roll-call block does not define its letters). Members printed without a mark are listed with that note. | Senate Journal 2021, Monday March 8, 2021, pp. 1403-1403 (roll call heading to tally line; journal line 60002 of the DLG full text) | https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "members": [
+        {
+          "name": "Albers",
+          "vote": "yea"
+        },
+        {
+          "name": "Anavitarte",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson, L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson, T.",
+          "vote": "nay"
+        },
+        {
+          "name": "Au",
+          "vote": "nay"
+        },
+        {
+          "name": "Beach",
+          "vote": "yea"
+        },
+        {
+          "name": "Brass",
+          "vote": "yea"
+        },
+        {
+          "name": "Burke",
+          "vote": "yea"
+        },
+        {
+          "name": "Burns",
+          "vote": "yea"
+        },
+        {
+          "name": "Butler",
+          "vote": "nay"
+        },
+        {
+          "name": "Cowsert",
+          "vote": "yea"
+        },
+        {
+          "name": "Davenport",
+          "vote": "nay"
+        },
+        {
+          "name": "Dixon",
+          "vote": "yea"
+        },
+        {
+          "name": "Dolezal",
+          "vote": "yea"
+        },
+        {
+          "name": "Dugan",
+          "vote": "yea"
+        },
+        {
+          "name": "Ginn",
+          "vote": "yea"
+        },
+        {
+          "name": "Gooch",
+          "vote": "yea"
+        },
+        {
+          "name": "Goodman",
+          "vote": "yea"
+        },
+        {
+          "name": "Halpern",
+          "vote": "nay"
+        },
+        {
+          "name": "Harbin",
+          "vote": "yea"
+        },
+        {
+          "name": "Harbison",
+          "vote": "nay"
+        },
+        {
+          "name": "Harper",
+          "vote": "yea"
+        },
+        {
+          "name": "Harrell",
+          "vote": "nay"
+        },
+        {
+          "name": "Hatchett",
+          "vote": "yea"
+        },
+        {
+          "name": "Hickman",
+          "vote": "yea"
+        },
+        {
+          "name": "Hufstetler",
+          "vote": "yea"
+        },
+        {
+          "name": "Jackson, K.",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackson, L.",
+          "vote": "nay"
+        },
+        {
+          "name": "James",
+          "vote": "absent"
+        },
+        {
+          "name": "Jones, B.",
+          "vote": "yea"
+        },
+        {
+          "name": "Jones, E.",
+          "vote": "nay"
+        },
+        {
+          "name": "Jones, H.",
+          "vote": "nay"
+        },
+        {
+          "name": "Jordan",
+          "vote": "nay"
+        },
+        {
+          "name": "Kennedy",
+          "vote": "absent"
+        },
+        {
+          "name": "Kirkpatrick",
+          "vote": "yea"
+        },
+        {
+          "name": "Lucas",
+          "vote": "nay"
+        },
+        {
+          "name": "McNeill",
+          "vote": "yea"
+        },
+        {
+          "name": "Merritt",
+          "vote": "nay"
+        },
+        {
+          "name": "Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Mullis",
+          "vote": "yea"
+        },
+        {
+          "name": "Orrock",
+          "vote": "nay"
+        },
+        {
+          "name": "Parent",
+          "vote": "nay"
+        },
+        {
+          "name": "Payne",
+          "vote": "yea"
+        },
+        {
+          "name": "Rahman",
+          "vote": "nay"
+        },
+        {
+          "name": "Rhett",
+          "vote": "nay"
+        },
+        {
+          "name": "Robertson",
+          "vote": "yea"
+        },
+        {
+          "name": "Seay",
+          "vote": "nay"
+        },
+        {
+          "name": "Sims",
+          "vote": "nay"
+        },
+        {
+          "name": "Strickland",
+          "vote": "yea"
+        },
+        {
+          "name": "Summers",
+          "vote": "yea"
+        },
+        {
+          "name": "Tate",
+          "vote": "absent"
+        },
+        {
+          "name": "Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Tillery",
+          "vote": "yea"
+        },
+        {
+          "name": "Tippins",
+          "vote": "yea"
+        },
+        {
+          "name": "Walker",
+          "vote": "absent"
+        },
+        {
+          "name": "Watson",
+          "vote": "yea"
+        }
+      ]
     }
   ],
   "provenance": {
-    "fetched_by": "C (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-    "fetched_at": "2026-10-21T01:52:20.308Z",
-    "method": "webfetch"
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
   }
 }

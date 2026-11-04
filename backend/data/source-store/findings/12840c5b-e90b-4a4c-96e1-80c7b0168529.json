@@ -1,0 +1,59 @@
+{
+  "politician_id": "12840c5b-e90b-4a4c-96e1-80c7b0168529",
+  "findings": [
+    {
+      "id": "b01ac95d3da365968123e767e8907481d7e36f8900fc207e5a9e2185969adf0c",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/93284",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I respect the Second Amendment and the rights of law-abiding gun owners. Public safety should focus on dangerous people, not punish responsible citizens. I support enforcing existing laws, effective background checks, keeping firearms from violent felons and domestic abusers, safe storage around children, and court action when someone poses a proven imminent threat, with strong due-process protections.",
+      "note": "Her answer, on a 2026 voter-guide profile, to the question 'What restrictions on gun ownership are needed to protect public safety?'. Answer date is not shown on the page.",
+      "subjects": [
+        "background checks",
+        "keep guns from violent felons and domestic abusers",
+        "safe storage around children",
+        "court orders for imminent threat with due process",
+        "Second Amendment rights of law-abiding owners",
+        "enforce existing gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:15:33.264Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun restrictions and public safety",
+        "background checks",
+        "safe storage",
+        "Second Amendment",
+        "dangerous-person court orders"
+      ],
+      "places": [
+        "status: on the 2026-11-03 general-election ballot for U.S. House, Texas District 9 (voter guide profile https://ivoterguide.com/candidate/93284; campaign site banner says Election Day is Nov. 3)",
+        "On the Record (0 meetings)",
+        "campaign site home, About, Priorities and Media pages: nothing on the subject",
+        "voter guide questionnaire (candidate answer on the Second Amendment found)",
+        "Branch candidate page: no gun entry",
+        "Off the Kuff interview (January 2026): nothing on the subject",
+        "blocked: https://bluevoterguide.org/es/TX/candidate_Leticia_Gutierrez/711890",
+        "Ballotpedia (not fetched; briefing says pages come back empty)",
+        "not a legislator: no sponsorship record to search",
+        "two web searches on name plus gun words; gun results belonged to a different person (a state senator with the same surname) and were not used",
+        "not reviewed: Houston Chronicle editorial and other forum or debate video"
+      ],
+      "found": 1,
+      "at": "2026-10-30T15:15:33.264Z",
+      "by": "source-collector"
+    }
+  ]
+}

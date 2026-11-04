@@ -1,0 +1,46 @@
+{
+  "id": "GA-SB-568-2026",
+  "scope": "state:ga",
+  "title": "SB 568 (2025-2026 Regular Session (filed 2026, second year)): Elections and Primaries; the list of eligible voters is posted and made public (Composite Status). Long title begins: \"To amend Chapter 2 of Title 21 of the Official Code of Georgia Annotated, relating to elections and primaries generally, so as to require that the list of eligible voters is posted and made public prior to each primary or election;\"",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/ (bill detail and vote API answer 401; token needed; not obtained, not bypassed)",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/244509",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/243789 (introduced)"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Long title of the substitute (advance voting precinct assignment; operative text is in Sec. 9, 21-2-385(d))\n(quote) to provide that, if multiple advance voting locations\n(other) Sec. 1: official list of electors a public record (21-2-224(f))\n(other) Secs. 2-3: civil fines up to $10,000 per registration not removed after a successful challenge\n(other) Sec. 4: voting equipment after July 1, 2026\n(other) Secs. 5-8, 11: ballot design, timing marks, ballot description\n(other) Sec. 9: advance voting precinct assignment\n(other) Sec. 10: posting list of electors who voted after polls close\n(other) Secs. 12-14: canvass, recounts, risk-limiting audits\n(other) Sec. 15: repeals conflicting laws\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Dolezal of the 27th",
+      "role": "prime",
+      "version": "Senate Ethics Committee substitute (LC 47 4149S). Also read as introduced (243789)."
+    },
+    {
+      "name": "Burns of the 23rd",
+      "role": "co",
+      "version": "Senate Ethics Committee substitute (LC 47 4149S). Also read as introduced (243789)."
+    },
+    {
+      "name": "Summers of the 13th",
+      "role": "co",
+      "version": "Senate Ethics Committee substitute (LC 47 4149S). Also read as introduced (243789)."
+    },
+    {
+      "name": "Gooch of the 51st",
+      "role": "co",
+      "version": "Senate Ethics Committee substitute (LC 47 4149S). Also read as introduced (243789)."
+    },
+    {
+      "name": "Brass of the 6th",
+      "role": "co",
+      "version": "Senate Ethics Committee substitute (LC 47 4149S). Also read as introduced (243789)."
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28)",
+    "fetched_at": "2026-10-28",
+    "method": "curl"
+  }
+}

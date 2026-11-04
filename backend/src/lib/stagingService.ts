@@ -422,7 +422,16 @@ export async function reviewPolitician(
  *   valid_to        -> valid_to
  *   total_years_in_office -> total_years_in_office
  *
- * Always sets: is_active = true, is_incumbent = true
+ * Always sets: is_active = true.
+ *
+ * 🔴 ON A RE-PROMOTION IT NO LONGER TOUCHES is_incumbent. It used to force `is_incumbent = true`
+ * in the ON CONFLICT update, which silently reverted every correction made elsewhere — including
+ * by `scripts/reconcile-incumbency.mjs`, whose whole job is to keep that flag true to
+ * `office_terms`. A promotion knows that a row arrived from staging; it does not know whether
+ * that person still holds a seat today, and only `essentials.office_current_holder` does.
+ * A FIRST insert still sets it true explicitly (staging carries sitting officials), because the
+ * column defaults to false and a seated person inserted without it is hidden from address
+ * search. `scripts/reconcile-incumbency.test.ts` guards the absence of the update line by text.
  *
  * external_id type mismatch: staging stores text, essentials stores bigint.
  * Attempt Number(external_id) — if NaN or null, use NULL in essentials.
@@ -452,8 +461,7 @@ async function promoteToEssentials(politician: StagingPolitician): Promise<void>
          valid_from = EXCLUDED.valid_from,
          valid_to = EXCLUDED.valid_to,
          total_years_in_office = EXCLUDED.total_years_in_office,
-         is_active = true,
-         is_incumbent = true`,
+         is_active = true`,
       [
         politician.fullName,
         politician.party,

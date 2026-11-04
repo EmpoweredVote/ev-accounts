@@ -1,0 +1,146 @@
+{
+  "politician_id": "59c5663c-3b17-4476-b3d5-51bf36d658b6",
+  "findings": [
+    {
+      "id": "c5a283b16deb6d47ac20c0f486e822b2967cfd3995a361b2ef092e57569baa27",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/89397/race/23545/election/1343",
+      "date": "2026-03-03",
+      "date_precision": "day",
+      "passage": "Law-abiding citizens should have no restrictions per the 2nd Amendment of the U.S. Constitution.",
+      "note": "Questionnaire answer for the 2026 primary on what restrictions on gun ownership are needed to protect public safety. The date is the election date on the page, not the answer date.",
+      "subjects": [
+        "limits on gun ownership",
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:35:46.462Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0eedf5e0c3a88174a8531864e7544452e16cb090a452d5a152132fef2f3fd465",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/89397/race/28730/election/1433",
+      "date": "2026-05-26",
+      "date_precision": "day",
+      "passage": "Law-abiding citizens should have no restrictions per the 2nd Amendment of the U.S. Constitution.",
+      "note": "Same answer on the runoff questionnaire. The date is the runoff date on the page, not the answer date.",
+      "subjects": [
+        "limits on gun ownership",
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:35:46.462Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8beb0a6e1c689949f1778d61c943b315b12d48de0f72529857cc28f617594afa",
+      "kind": "own-words",
+      "url": "https://selltexastrue.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Protect the Second Amendment",
+      "note": "Heading on his campaign issues page; no further text on guns. Not a full sentence.",
+      "subjects": [
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:35:46.462Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship / SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "status: in scope. Ballotpedia (https://ballotpedia.org/Tom_Sell) lists him under 2026 general election and primary runoff (winner); The Texan reports he won the May 26, 2026 runoff for TX-19",
+        "On the Record (0 meetings, nothing on the subject)",
+        "campaign site https://www.selltexastrue.com/ (home, /issues, /about, /press): nothing on the subject; issues page covers border and immigration, energy, guns, life, agriculture, defense, Sharia law",
+        "Ballotpedia: nothing on the subject (no Candidate Connection survey text found)",
+        "Texas Tribune 2026-02-26 profile: nothing on the subject",
+        "The Texan runoff article: nothing on the subject",
+        "news searches on name plus voter ID / SAVE Act / election integrity / proof of citizenship: nothing found",
+        "not reviewed: congress.gov (candidate, not a legislator)",
+        "blocked: https://web.archive.org/web/20260928164852/https://www.selltexastrue.com/issues (fetch tool refused archive.org)",
+        "not reviewed: campaign YouTube/X/Facebook (https://www.youtube.com/@SellForTexas19, https://x.com/SellForTexas19)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:42:55.096Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "https://www.fox34.com/2026/05/22/tom-sell-makes-final-push-congressional-district-19-race/ (confirms he is a candidate for Texas 19th District, in a runoff then; a later news search says he won the nomination and is on the November 2026 ballot; nothing on the subject)",
+        "On the Record (0 appearances)",
+        "campaign site https://www.selltexastrue.com/issues (all eight issue sections read; only border and immigration content; nothing on the subject)",
+        "https://ballotpedia.org/Tom_Sell (fetched; nothing on the subject)",
+        "https://www.bigcountryhomepage.com/big-country-politics/tom-sell-shares-goals-for-texas-19th-district/amp/ (interview coverage; nothing on the subject)",
+        "not applicable: congress.gov and legislature bill pages (not a sitting legislator)",
+        "two web searches on name plus subject words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T11:45:04.838Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "limits on gun ownership",
+        "general Second Amendment statements",
+        "gun bans",
+        "background checks",
+        "red-flag orders",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope: https://thetexan.news/elections/2026/tom-sell-wins-republican-nomination-for-west-texas-congressional-district/article_9dd9b273-1cd0-459e-9631-752a8580efe2.html (dated 2026-05-26) says he secured the runoff nomination for the 19th district; he is on the November ballot",
+        "campaign site https://selltexastrue.com/ and /issues reviewed: only a heading on the Second Amendment, no detail",
+        "iVoterGuide primary (2026-03-03) and runoff (2026-05-26) questionnaires reviewed",
+        "not a legislator: no sponsored bills to review",
+        "Ballotpedia: not reviewed (known to return empty)",
+        "web searches (2): nothing further on the subject; local TV and news items on the race seen in results but not opened: not reviewed: https://www.fox34.com/2026/05/22/tom-sell-makes-final-push-congressional-district-19-race/"
+      ],
+      "found": 3,
+      "at": "2026-10-30T22:35:46.462Z",
+      "by": "source-collector"
+    }
+  ]
+}

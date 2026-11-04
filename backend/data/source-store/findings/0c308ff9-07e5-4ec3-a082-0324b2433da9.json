@@ -1,0 +1,30 @@
+{
+  "politician_id": "0c308ff9-07e5-4ec3-a082-0324b2433da9",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans and magazine limits",
+        "background checks and permits",
+        "red-flag orders",
+        "carry permits",
+        "gun rights general statement"
+      ],
+      "places": [
+        "status check: won the 2026-08-11 primary and is on the November ballot, per https://www.vermontpublic.org/local-news/2026-08-11/gerald-malloy-wins-gop-u-s-house-primary-will-face-becca-balint-in-the-fall (positive control)",
+        "On the Record (0 appearances)",
+        "campaign site https://www.deploymalloy.com: positions page, Q and A page, proposals page and site search for gun all read; nothing on guns (positions page names the 10th Amendment and constitutional rights generally, no gun mention)",
+        "news: VTDigger primary profile (2026-08-05), WCAX campaign countdown (2026-09-22), WCAX debate story (2026-10-16): no gun content",
+        "not reviewed: video of the 2026-10-15 WCAX debate and the 2026-10-07 Vermont Public debate",
+        "Ballotpedia: not reviewed",
+        "web search for his gun statements (2 searches): nothing on the subject; results were about a different person with a similar name",
+        "congress.gov: not applicable, never held federal office"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:07:09.725Z",
+      "by": "source-collector"
+    }
+  ]
+}

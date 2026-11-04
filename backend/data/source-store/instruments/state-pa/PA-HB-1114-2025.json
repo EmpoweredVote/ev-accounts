@@ -1,0 +1,140 @@
+{
+  "id": "PA-HB-1114-2025",
+  "scope": "state:pa",
+  "title": "HB1114 (2025-2026 Regular Session): In inchoate crimes, prohibiting the possession of firearm at polling place.",
+  "urls": [
+    "https://www.palegis.us/legislation/bills/2025/hb1114",
+    "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB1114/PN1236"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 1 (adding 18 Pa.C.S. 914(a)): Except as provided under subsections (c) and (d)(2), a person commits an offense if the person: (1) knowingly possesses a firearm in any building, real property or parking area of a polling place holding an election;\nSec. 1 (adding 18 Pa.C.S. 914(b)): (1) An offense committed under subsection (a)(1) shall constitute a misdemeanor of the third degree.\nSec. 1 (adding 18 Pa.C.S. 914(c)): (3) The concealment of a firearm inside a vehicle by a person who: (i) possesses a valid and lawfully issued license to carry a firearm; and (ii) owns the firearm.\nSec. 1 (adding 18 Pa.C.S. 914(d)): (1) Notice of the provisions of subsections (a), (b) and (c) shall be posted conspicuously at each public entrance of a building where a polling place is located during an election.",
+  "sponsors": [
+    {
+      "name": "Timothy Brennan",
+      "politician_id": "2fe92761-4310-437c-af6a-3cddaa9a2621",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Mary Jo Daley",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6aebb023-6299-4074-b33b-b40bb113741c"
+    },
+    {
+      "name": "Arvind Venkat",
+      "politician_id": "e8e53eb8-2066-4477-aa1a-ab777ff484af",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Maureen Madden",
+      "politician_id": "b55531ce-16fd-4932-aa29-c8d3b17cea37",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Ed Neilson",
+      "politician_id": "5a384797-5f6a-4963-b06a-d4dbc23dd613",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Carol Hill-Evans",
+      "politician_id": "8baa6921-f212-41ff-a1af-fe4fae9421f7",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Emily Kinkead",
+      "politician_id": "46f9ef45-e45d-405d-b8bb-2b68b33dbb15",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Christopher Pielli",
+      "politician_id": "3ea03f3c-bcaa-4568-87bf-92b8ef333ccf",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Joseph Hohenstein",
+      "politician_id": "7de7f516-ae01-4859-9187-9916da9a8804",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Nikki Rivera",
+      "politician_id": "81d859ec-68c4-4ee4-a29e-0fd8adab9a71",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Robert Freeman",
+      "politician_id": "8599e467-12eb-413d-8a14-8d583e7e40b8",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Steven Malagari",
+      "politician_id": "711ba898-b60e-4b68-8ebe-116c35f1eb80",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Ben Sanchez",
+      "politician_id": "1556ce0c-1cc2-4c97-994d-a51c878f7e20",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Tarik Khan",
+      "politician_id": "c23cbdf4-b6eb-4de0-8ae3-b619c623709e",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Dan Williams",
+      "politician_id": "f08d3d4c-5f8e-454f-8bc9-89fdfc83fc38",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Andre Carroll",
+      "politician_id": "8f8ad625-5293-4796-800d-329ade1d4f52",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Melissa Shusterman",
+      "politician_id": "8763233c-8c20-49db-949f-395f8d89acf3",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Joseph Ciresi",
+      "politician_id": "bd550de5-ad76-405c-96a3-90ff2c0e21ff",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1114-2025.introduced.pdf",
+      "sha256": "b37dc782b05f8c6693491dc55dd3a8c49aa5ad338aa57975379d4143d0812c69"
+    }
+  }
+}

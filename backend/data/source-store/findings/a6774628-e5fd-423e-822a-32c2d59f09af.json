@@ -1,0 +1,110 @@
+{
+  "politician_id": "a6774628-e5fd-423e-822a-32c2d59f09af",
+  "findings": [
+    {
+      "id": "25fb92fe0b769a45129dcf6799c9914dd81b5002d6156a620684e75dfa378aec",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB0002",
+      "date": "2024-02-28",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-2-2024",
+      "act": "nay",
+      "motion": "Passed Senate with substitute",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, Passed Senate with substitute, 2024-02-28: nay (tally 20–19); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/VA-HB2-2024-ER.pdf",
+          "sha256": "be2c4a82097d208f802bc88c1aa08097489565a6746bfd36f1a1f755a683cd50"
+        }
+      }
+    },
+    {
+      "id": "27c346652735a8ea776d6f58563ee41f98faf4e1eacbcd4b03fd394a235745b9",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB0002",
+      "date": "2024-03-01",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-2-2024",
+      "act": "nay",
+      "motion": "House substitute agreed to by Senate",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, House substitute agreed to by Senate, 2024-03-01: nay (tally 21–19); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/va_sb2_2024_enrolled.html",
+          "sha256": "fbb47c123b27eae84175225b3f36034532cd7be496f4a56cb8ff2c6f3c7bbe41"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters without ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks / non-citizen voting / election integrity"
+      ],
+      "places": [
+        "Confirmed identity: Senator, Senate District 17 (https://ballotpedia.org/Emily_Jordan; Senate member page https://apps.senate.virginia.gov/Senator/memberpage.php?id=S116 fetched, a members list)",
+        "Ballotpedia (nothing on the subject)",
+        "campaign site: not found, not reviewed",
+        "other name used in older sources: Emily Brewer",
+        "On the Record (0 meetings)",
+        "web search on name plus voter ID words (nothing on the subject; results were about other people or general history)",
+        "LIS / legiplex / legiscan bill pages: not reviewed, blocked or not reachable (open.pluralpolicy.com bill pages returned 404)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:26:04.888Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the right to bear arms",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "unserialised guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate member page https://apps.senate.virginia.gov/Senator/memberpage.php?id=S116 (confirms Senate District 17; nothing on the subject)",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site: not found (emilyforvirginia.com does not resolve)",
+        "blocked: https://ballotpedia.org/Emily_Jordan (empty page for curl; a search snippet pointed to a 2017 campaign statement on gun rights, not saved because the page text could not be read)",
+        "web searches on name plus gun words (3): no quoted statements found"
+      ],
+      "found": 0,
+      "at": "2026-10-30T23:52:31.376Z",
+      "by": "source-collector"
+    }
+  ]
+}

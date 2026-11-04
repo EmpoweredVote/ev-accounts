@@ -1,0 +1,33 @@
+{
+  "politician_id": "1af14e38-da38-44ea-854d-3d8f1c615460",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election integrity",
+        "local voter-ID rules"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://votehadwick.com/ and /issues (identity confirmed as 1st Assembly District; nothing on the subject)",
+        "Wikipedia page for Heather Hadwick (identity: 1st Assembly District; nothing on the subject)",
+        "CalMatters Digital Democracy page for AB 25 (voter ID bill by other authors; she is not listed as author)",
+        "CalMatters Digital Democracy legislator page for Hadwick (nothing on the subject)",
+        "blocked: https://ad01.asmrc.org/ (403)",
+        "blocked: https://legiscan.com/CA/bill/AB25/2025 (403)",
+        "blocked: https://leginfo.legislature.ca.gov (bot challenge page on the bill pages; coauthor list and her floor votes on AB 25 not checked)",
+        "not reviewed: https://ballotpedia.org/Heather_Hadwick (page returned empty)",
+        "two news searches on name plus subject words (nothing on the subject from her)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:58:06.354Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

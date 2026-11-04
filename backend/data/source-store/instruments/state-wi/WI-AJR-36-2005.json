@@ -1,0 +1,594 @@
+{
+  "id": "WI-AJR-36-2005",
+  "scope": "state:wi",
+  "title": "AJR 36 (2005-2006 Wisconsin Legislature, regular session): requiring a photographic identification to vote, or register to vote, at the polls on election day (first consideration).",
+  "urls": [
+    "https://docs.legis.wisconsin.gov/2005/proposals/ajr36",
+    "https://docs.legis.wisconsin.gov/document/enrolledbills/2005/REG/AJR36"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id)\n(section) Art. III, s. 1m (1) (proposed)\n(quote) [Article III] Section 1m (1) A qualified elector may not vote, or register to vote, at the polls on election day unless the elector presents a photographic identification issued by this state or by the federal government.\n(section) Art. III, s. 1m (2) (proposed)\n(quote) (2) After the date of ratification of this section, the legislature, by law, with the concurrence of two-thirds of all the members present, may exempt any class of electors from the requirements of subsection (1).\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.",
+  "sponsors": [
+    {
+      "name": "Stone",
+      "role": "prime",
+      "version": "Enrolled joint resolution (2005 Enrolled Joint Resolution 39, first consideration); adopted by Assembly 11/1/2005 and concurred by Senate 3/9/2006"
+    },
+    {
+      "name": "Vukmir",
+      "role": "co",
+      "version": "Enrolled joint resolution (2005 Enrolled Joint Resolution 39, first consideration); adopted by Assembly 11/1/2005 and concurred by Senate 3/9/2006"
+    },
+    {
+      "name": "Leibham",
+      "role": "co",
+      "version": "Enrolled joint resolution (2005 Enrolled Joint Resolution 39, first consideration); adopted by Assembly 11/1/2005 and concurred by Senate 3/9/2006"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2005-11-01",
+      "body": "WI Assembly",
+      "motion": "Assembly Joint Resolution 36 having been read three times, shall the joint resolution be adopted?",
+      "kind": "roll-call",
+      "yes": 57,
+      "no": 36,
+      "absent": 3,
+      "body_size": 98,
+      "note": "565 | https://docs.legis.wisconsin.gov/2005/related/journals/assembly/20051101/_101",
+      "members": [
+        {
+          "name": "Ainsworth",
+          "vote": "yea"
+        },
+        {
+          "name": "Ballweg",
+          "vote": "yea"
+        },
+        {
+          "name": "Bies",
+          "vote": "yea"
+        },
+        {
+          "name": "Davis",
+          "vote": "yea"
+        },
+        {
+          "name": "J. Fitzgerald",
+          "vote": "yea"
+        },
+        {
+          "name": "Freese",
+          "vote": "yea"
+        },
+        {
+          "name": "Friske",
+          "vote": "yea"
+        },
+        {
+          "name": "Gielow",
+          "vote": "yea"
+        },
+        {
+          "name": "Gottlieb",
+          "vote": "yea"
+        },
+        {
+          "name": "Gunderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Hahn",
+          "vote": "yea"
+        },
+        {
+          "name": "Hines",
+          "vote": "yea"
+        },
+        {
+          "name": "Honadel",
+          "vote": "yea"
+        },
+        {
+          "name": "Huebsch",
+          "vote": "yea"
+        },
+        {
+          "name": "Hundertmark",
+          "vote": "yea"
+        },
+        {
+          "name": "Jensen",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeskewitz",
+          "vote": "yea"
+        },
+        {
+          "name": "Kerkman",
+          "vote": "yea"
+        },
+        {
+          "name": "Kestell",
+          "vote": "yea"
+        },
+        {
+          "name": "Kleefisch",
+          "vote": "yea"
+        },
+        {
+          "name": "Krawczyk",
+          "vote": "yea"
+        },
+        {
+          "name": "Krusick",
+          "vote": "yea"
+        },
+        {
+          "name": "Lamb",
+          "vote": "yea"
+        },
+        {
+          "name": "F. Lasee",
+          "vote": "yea"
+        },
+        {
+          "name": "LeMahieu",
+          "vote": "yea"
+        },
+        {
+          "name": "Loeffelholz",
+          "vote": "yea"
+        },
+        {
+          "name": "Lothian",
+          "vote": "yea"
+        },
+        {
+          "name": "McCormick",
+          "vote": "yea"
+        },
+        {
+          "name": "Meyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Montgomery",
+          "vote": "yea"
+        },
+        {
+          "name": "Moulton",
+          "vote": "yea"
+        },
+        {
+          "name": "Mursau",
+          "vote": "yea"
+        },
+        {
+          "name": "Musser",
+          "vote": "yea"
+        },
+        {
+          "name": "Nass",
+          "vote": "yea"
+        },
+        {
+          "name": "Nerison",
+          "vote": "yea"
+        },
+        {
+          "name": "Nischke",
+          "vote": "yea"
+        },
+        {
+          "name": "Ott",
+          "vote": "yea"
+        },
+        {
+          "name": "Owens",
+          "vote": "yea"
+        },
+        {
+          "name": "Petrowski",
+          "vote": "yea"
+        },
+        {
+          "name": "Pettis",
+          "vote": "yea"
+        },
+        {
+          "name": "Pridemore",
+          "vote": "yea"
+        },
+        {
+          "name": "Rhoades",
+          "vote": "yea"
+        },
+        {
+          "name": "Stone",
+          "vote": "yea"
+        },
+        {
+          "name": "Strachota",
+          "vote": "yea"
+        },
+        {
+          "name": "Suder",
+          "vote": "yea"
+        },
+        {
+          "name": "Towns",
+          "vote": "yea"
+        },
+        {
+          "name": "Townsend",
+          "vote": "yea"
+        },
+        {
+          "name": "Underheim",
+          "vote": "yea"
+        },
+        {
+          "name": "Van Roy",
+          "vote": "yea"
+        },
+        {
+          "name": "Vos",
+          "vote": "yea"
+        },
+        {
+          "name": "Vukmir",
+          "vote": "yea"
+        },
+        {
+          "name": "Ward",
+          "vote": "yea"
+        },
+        {
+          "name": "Wieckert",
+          "vote": "yea"
+        },
+        {
+          "name": "M. Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Wood",
+          "vote": "yea"
+        },
+        {
+          "name": "Ziegelbauer",
+          "vote": "yea"
+        },
+        {
+          "name": "Speaker Gard",
+          "vote": "yea"
+        },
+        {
+          "name": "Benedict",
+          "vote": "nay"
+        },
+        {
+          "name": "Berceau",
+          "vote": "nay"
+        },
+        {
+          "name": "Black",
+          "vote": "nay"
+        },
+        {
+          "name": "Colon",
+          "vote": "nay"
+        },
+        {
+          "name": "Cullen",
+          "vote": "nay"
+        },
+        {
+          "name": "Fields",
+          "vote": "nay"
+        },
+        {
+          "name": "Grigsby",
+          "vote": "nay"
+        },
+        {
+          "name": "Gronemus",
+          "vote": "nay"
+        },
+        {
+          "name": "Hebl",
+          "vote": "nay"
+        },
+        {
+          "name": "Hubler",
+          "vote": "nay"
+        },
+        {
+          "name": "Kessler",
+          "vote": "nay"
+        },
+        {
+          "name": "Kreuser",
+          "vote": "nay"
+        },
+        {
+          "name": "Lehman",
+          "vote": "nay"
+        },
+        {
+          "name": "Molepske",
+          "vote": "nay"
+        },
+        {
+          "name": "Nelson",
+          "vote": "nay"
+        },
+        {
+          "name": "Parisi",
+          "vote": "nay"
+        },
+        {
+          "name": "Pocan",
+          "vote": "nay"
+        },
+        {
+          "name": "Pope-Roberts",
+          "vote": "nay"
+        },
+        {
+          "name": "Richards",
+          "vote": "nay"
+        },
+        {
+          "name": "Schneider",
+          "vote": "nay"
+        },
+        {
+          "name": "Seidel",
+          "vote": "nay"
+        },
+        {
+          "name": "Sheridan",
+          "vote": "nay"
+        },
+        {
+          "name": "Sherman",
+          "vote": "nay"
+        },
+        {
+          "name": "Shilling",
+          "vote": "nay"
+        },
+        {
+          "name": "Sinicki",
+          "vote": "nay"
+        },
+        {
+          "name": "Staskunas",
+          "vote": "nay"
+        },
+        {
+          "name": "Steinbrink",
+          "vote": "nay"
+        },
+        {
+          "name": "Toles",
+          "vote": "nay"
+        },
+        {
+          "name": "Travis",
+          "vote": "nay"
+        },
+        {
+          "name": "Turner",
+          "vote": "nay"
+        },
+        {
+          "name": "Van Akkeren",
+          "vote": "nay"
+        },
+        {
+          "name": "Vruwink",
+          "vote": "nay"
+        },
+        {
+          "name": "Wasserman",
+          "vote": "nay"
+        },
+        {
+          "name": "A. Williams",
+          "vote": "nay"
+        },
+        {
+          "name": "Young",
+          "vote": "nay"
+        },
+        {
+          "name": "Zepnick",
+          "vote": "nay"
+        },
+        {
+          "name": "Kreibich",
+          "vote": "absent"
+        },
+        {
+          "name": "Boyle",
+          "vote": "absent"
+        },
+        {
+          "name": "Albers",
+          "vote": "absent"
+        },
+        {
+          "name": "Gundrum",
+          "vote": "absent"
+        },
+        {
+          "name": "Kaufert",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2006-03-09",
+      "body": "WI Senate",
+      "motion": "Assembly Joint Resolution 36 (first consideration): Read a third time. Concurred in.",
+      "kind": "roll-call",
+      "yes": 19,
+      "no": 14,
+      "absent": 0,
+      "body_size": 33,
+      "note": "740 | https://docs.legis.wisconsin.gov/2005/related/journals/senate/20060309/_1732",
+      "members": [
+        {
+          "name": "Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Cowles",
+          "vote": "yea"
+        },
+        {
+          "name": "Darling",
+          "vote": "yea"
+        },
+        {
+          "name": "Ellis",
+          "vote": "yea"
+        },
+        {
+          "name": "S. Fitzgerald",
+          "vote": "yea"
+        },
+        {
+          "name": "Grothman",
+          "vote": "yea"
+        },
+        {
+          "name": "Harsdorf",
+          "vote": "yea"
+        },
+        {
+          "name": "Kanavas",
+          "vote": "yea"
+        },
+        {
+          "name": "Kapanke",
+          "vote": "yea"
+        },
+        {
+          "name": "Kedzie",
+          "vote": "yea"
+        },
+        {
+          "name": "A. Lasee",
+          "vote": "yea"
+        },
+        {
+          "name": "Lazich",
+          "vote": "yea"
+        },
+        {
+          "name": "Leibham",
+          "vote": "yea"
+        },
+        {
+          "name": "Olsen",
+          "vote": "yea"
+        },
+        {
+          "name": "Reynolds",
+          "vote": "yea"
+        },
+        {
+          "name": "Roessler",
+          "vote": "yea"
+        },
+        {
+          "name": "Schultz",
+          "vote": "yea"
+        },
+        {
+          "name": "Stepp",
+          "vote": "yea"
+        },
+        {
+          "name": "Zien",
+          "vote": "yea"
+        },
+        {
+          "name": "Breske",
+          "vote": "nay"
+        },
+        {
+          "name": "Carpenter",
+          "vote": "nay"
+        },
+        {
+          "name": "Coggs",
+          "vote": "nay"
+        },
+        {
+          "name": "Decker",
+          "vote": "nay"
+        },
+        {
+          "name": "Erpenbach",
+          "vote": "nay"
+        },
+        {
+          "name": "Hansen",
+          "vote": "nay"
+        },
+        {
+          "name": "Jauch",
+          "vote": "nay"
+        },
+        {
+          "name": "Lassa",
+          "vote": "nay"
+        },
+        {
+          "name": "Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Plale",
+          "vote": "nay"
+        },
+        {
+          "name": "Risser",
+          "vote": "nay"
+        },
+        {
+          "name": "Robson",
+          "vote": "nay"
+        },
+        {
+          "name": "Taylor",
+          "vote": "nay"
+        },
+        {
+          "name": "Wirch",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T23:12:49Z)",
+    "fetched_at": "2026-10-28T23:12:49Z",
+    "method": "curl"
+  }
+}

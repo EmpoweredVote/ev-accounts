@@ -1,0 +1,31 @@
+{
+  "politician_id": "e67dbe35-ecd4-4672-923b-289f9b8783d9",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter without ID",
+        "ID with absentee ballot or application",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://chedrickgreene.com/ (states the full four-year term is on the Nov 3, 2026 ballot; home page and about page read, nothing on the subject; issues page is 404)",
+        "https://www.michiganpublic.org/politics-government/2026-05-22/chedrick-greene-special-election-winner-joins-michigan-senate (his swearing-in as state senator for the 35th district; nothing on the subject)",
+        "https://en.wikipedia.org/wiki/Chedrick_Greene (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Chedrick_Greene (page came back empty)",
+        "blocked: https://senatedems.com/greene/page/2/ (403)",
+        "one more search on his name plus voter ID and election integrity: nothing on the subject",
+        "not reviewed: legislature bill pages for sponsorships (votes and sponsorships are linked separately)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:52:26.362Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

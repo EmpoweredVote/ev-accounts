@@ -1,0 +1,283 @@
+{
+  "id": "GA-HB-316-2019",
+  "scope": "state:ga",
+  "title": "HB 316 (2019-2020 Regular Session): (Senate Journal title) A BILL to be entitled an Act to amend Chapter 2 of Title 21 of the O.C.G.A., relating to primaries and elections generally, so as to provide for definitions; ...",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/ (detail and vote pages answer 401 without the site token; not used)",
+    "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2019-senate-journal.pdf (Senate Journal 2019, pp. 1260-1295)"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) Senate substitute, 21-2-381 (in-person absentee voting at the registrar office)\n(quote) In order to be found eligible to vote an absentee ballot in person at the registrar's office or absentee ballot clerk's office, such person shall show one of the forms of identification listed in Code Section 21-2-417 and the registrar or absentee ballot clerk shall compare the identifying information on the application with the information on file in the registrar's office.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Senate substitute, Section 36 (21-2-417.1(f), Georgia voter identification card); struck and new words run together in the print\n(quote) A Georgia voter identification card shall remain valid so long as a person resides at in the same address county and remains qualified to vote. It shall be the duty of a person who moves his or her residence within the State of Georgia outside of the county in which it was issued to surrender his or her card to the board of registrars of the county of his or her new residence; and such person may after such surrender apply for and receive a new card if such person is otherwise eligible under this Code section. It shall be the duty of a person who moves his or her residence outside the State of Georgia or who ceases to be qualified to vote to surrender his or her card to the board of registrars by which it was issued.\n(other) Replaces the DRE voting system with ballot-marking devices and optical scanners; audits; voter registration list and signature-match changes; provisional ballots",
+  "sponsors": [
+    {
+      "name": "Fleming of the 121st",
+      "role": "prime",
+      "version": "Senate Committee on Ethics substitute, as passed by the Senate 13 March 2019 (read from the Senate Journal)"
+    },
+    {
+      "name": "Jones of the 47th",
+      "role": "co",
+      "version": "Senate Committee on Ethics substitute, as passed by the Senate 13 March 2019 (read from the Senate Journal)"
+    },
+    {
+      "name": "Burns of the 159th",
+      "role": "co",
+      "version": "Senate Committee on Ethics substitute, as passed by the Senate 13 March 2019 (read from the Senate Journal)"
+    },
+    {
+      "name": "Rynders of the 152nd",
+      "role": "co",
+      "version": "Senate Committee on Ethics substitute, as passed by the Senate 13 March 2019 (read from the Senate Journal)"
+    },
+    {
+      "name": "Watson of the 172nd",
+      "role": "co",
+      "version": "Senate Committee on Ethics substitute, as passed by the Senate 13 March 2019 (read from the Senate Journal)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2019-03-13",
+      "body": "GA Senate",
+      "motion": "On the passage of the bill (Senate Committee on Ethics substitute)",
+      "kind": "roll-call",
+      "yes": 35,
+      "no": 21,
+      "absent": 0,
+      "body_size": 56,
+      "note": "Senate Journal 2019, p. 1295 | https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2019-senate-journal.pdf",
+      "members": [
+        {
+          "name": "Albers",
+          "vote": "yea"
+        },
+        {
+          "name": "Henson",
+          "vote": "nay"
+        },
+        {
+          "name": "Parent",
+          "vote": "nay"
+        },
+        {
+          "name": "Anderson, L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Payne",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson, T.",
+          "vote": "nay"
+        },
+        {
+          "name": "Hufstetler",
+          "vote": "yea"
+        },
+        {
+          "name": "Rahman",
+          "vote": "nay"
+        },
+        {
+          "name": "Beach",
+          "vote": "yea"
+        },
+        {
+          "name": "Jackson",
+          "vote": "nay"
+        },
+        {
+          "name": "Rhett",
+          "vote": "nay"
+        },
+        {
+          "name": "Black",
+          "vote": "yea"
+        },
+        {
+          "name": "James",
+          "vote": "nay"
+        },
+        {
+          "name": "Robertson",
+          "vote": "yea"
+        },
+        {
+          "name": "Brass",
+          "vote": "yea"
+        },
+        {
+          "name": "Jones, B.",
+          "vote": "yea"
+        },
+        {
+          "name": "Seay",
+          "vote": "nay"
+        },
+        {
+          "name": "Burke",
+          "vote": "yea"
+        },
+        {
+          "name": "Jones, E.",
+          "vote": "nay"
+        },
+        {
+          "name": "Sims",
+          "vote": "nay"
+        },
+        {
+          "name": "Butler",
+          "vote": "nay"
+        },
+        {
+          "name": "Jones, H.",
+          "vote": "nay"
+        },
+        {
+          "name": "Stone",
+          "vote": "yea"
+        },
+        {
+          "name": "Cowsert",
+          "vote": "yea"
+        },
+        {
+          "name": "Jordan",
+          "vote": "nay"
+        },
+        {
+          "name": "Strickland",
+          "vote": "yea"
+        },
+        {
+          "name": "Davenport",
+          "vote": "nay"
+        },
+        {
+          "name": "Karinshak",
+          "vote": "nay"
+        },
+        {
+          "name": "Tate",
+          "vote": "nay"
+        },
+        {
+          "name": "Dolezal",
+          "vote": "yea"
+        },
+        {
+          "name": "Kennedy",
+          "vote": "yea"
+        },
+        {
+          "name": "Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Dugan",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirk",
+          "vote": "yea"
+        },
+        {
+          "name": "Tillery",
+          "vote": "yea"
+        },
+        {
+          "name": "Ginn",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirkpatrick",
+          "vote": "yea"
+        },
+        {
+          "name": "Tippins",
+          "vote": "yea"
+        },
+        {
+          "name": "Gooch",
+          "vote": "yea"
+        },
+        {
+          "name": "Ligon",
+          "vote": "yea"
+        },
+        {
+          "name": "Unterman",
+          "vote": "yea"
+        },
+        {
+          "name": "Harbin",
+          "vote": "yea"
+        },
+        {
+          "name": "Lucas",
+          "vote": "nay"
+        },
+        {
+          "name": "Walker",
+          "vote": "yea"
+        },
+        {
+          "name": "Harbison",
+          "vote": "nay"
+        },
+        {
+          "name": "Martin",
+          "vote": "yea"
+        },
+        {
+          "name": "Watson",
+          "vote": "yea"
+        },
+        {
+          "name": "Harper",
+          "vote": "yea"
+        },
+        {
+          "name": "Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilkinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Harrell",
+          "vote": "nay"
+        },
+        {
+          "name": "Mullis",
+          "vote": "yea"
+        },
+        {
+          "name": "Williams",
+          "vote": "nay"
+        },
+        {
+          "name": "Heath",
+          "vote": "yea"
+        },
+        {
+          "name": "Orrock",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

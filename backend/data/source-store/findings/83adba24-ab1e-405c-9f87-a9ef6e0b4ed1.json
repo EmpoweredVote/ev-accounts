@@ -1,0 +1,54 @@
+{
+  "politician_id": "83adba24-ab1e-405c-9f87-a9ef6e0b4ed1",
+  "findings": [
+    {
+      "id": "9a0548b4a6528c5141794a3e56deedb1fbca19233c9dda3d485845cf78e3cb86",
+      "kind": "record",
+      "url": "https://www.nmlegis.gov/Sessions/24%20Regular/bills/house/HB0157.HTML",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "NM-HB-157-2024",
+      "act": "sponsor",
+      "note": "Bill text says it was introduced by Martin R. Zamora. HB 157, School Teachers On-Site Protection Act, would have the Department of Public Safety train school employees, license and appoint them to carry handguns on school premises, and add them to the exceptions to the ban on carrying a deadly weapon on school premises. Final status not checked.",
+      "subjects": [
+        "armed school employees",
+        "carry a gun in schools"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:33:40.035Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "armed school employees",
+        "firearms regulation",
+        "carry of guns",
+        "Second Amendment general statements",
+        "gun bills sponsored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Albuquerque Journal article on the 2026 general election race for Congressional District 3 (names him as the challenger on the Nov. 3 ballot; nothing on guns)",
+        "campaign/personal site martinzamora.com (nothing on the subject)",
+        "New Mexico Legislature member page nmlegis.gov/Members/Legislator?SponCode=HZAMO (lists sessions only)",
+        "New Mexico Legislature sponsor finder (2026 session bills shown are not on guns; earlier sessions not listed there)",
+        "nmlegis.gov HB 157 (2024) bill text",
+        "Prediction Edge candidate profile (secondary; points to the bill)",
+        "web searches: name plus gun/Second Amendment/armed teachers (no interview or direct statement found)",
+        "Ballotpedia (not fetched; known to return empty)"
+      ],
+      "found": 1,
+      "at": "2026-10-30T23:33:40.035Z",
+      "by": "source-collector"
+    }
+  ]
+}

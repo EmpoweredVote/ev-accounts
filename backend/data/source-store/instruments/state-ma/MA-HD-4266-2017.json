@@ -1,0 +1,50 @@
+{
+ "id": "MA-HD-4266-2017",
+ "scope": "state:ma",
+ "title": "HD4266 (190th General Court): An Act prohibiting large capacity feeding devices and devices that increase the rate of discharge of a weapon",
+ "urls": [
+  "https://malegislature.gov/Bills/190/HD4266",
+  "https://malegislature.gov/Bills/190/HD4266/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "David Paul Linsky",
+   "role": "prime",
+   "version": "official bill page (presenter/petitioners)",
+   "politician_id": "fa6beaf8-acfe-4365-82a2-6f282aa1b688"
+  },
+  {
+   "name": "Cynthia Stone Creem",
+   "role": "prime",
+   "version": "official bill page (presenter/petitioners)",
+   "politician_id": "b46a6774-2d85-4750-813a-6d4ef2eefb5b"
+  },
+  {
+   "name": "Tricia Farley-Bouvier",
+   "role": "co",
+   "version": "official bill page (presenter/petitioners)",
+   "politician_id": "15c27efb-0402-4a3a-bfad-9df152874046"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA (runner asked to find missing bill texts, 2026-10-31); official bill text page",
+  "fetched_at": "2026-11-01T02:22:00Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-HD-4266-2017.html",
+   "sha256": "c1ceaed2526a30eaa46a553edb0d856d34dd028e20ac31a9dc246781f38e6ea1"
+  }
+ },
+ "operative_text": "Section 131M of Chapter 140 of General Laws, is hereby amended by striking out in line 2 after the word “weapon” the following: “or a large capacity feeding device”; line 3 after the year “1994”, by inserting “or a large capacity feeding device” and by inserting after the second paragraph the following:-\n“Whoever possesses, owns or offers for sale any device which is designed to increase the rate of discharge of a rifle, shotgun or firearm or alters any rifle, shotgun or firearm with the intent to increase its rate of discharge, shall be punished by imprisonment in the state prison by not less than three nor more than twenty years.”"
+}

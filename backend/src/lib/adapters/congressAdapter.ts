@@ -82,15 +82,27 @@ export type FetchLike = (url: string, init?: RequestInit) => Promise<Response>;
 export interface CongressDeps {
   fetchImpl?: FetchLike;
   apiKey?: string;
+  /** Wait before the one retry of a list that failed for a passing reason (tests pass 0). */
+  retryDelayMs?: number;
 }
+
+/** A page that drops a list it should print is worse than no page: the verifier would read "name not
+ * present" as fact. Thrown inside a builder when a list call still fails after its retry; the adapter
+ * then returns null and the URL falls through to the ladder (Wayback holds the real page). */
+class ListUnavailable extends Error {}
 
 const API_BASE = 'https://api.congress.gov/v3';
 /** How many of the newest actions to include (latest action is already shown). */
 const MAX_ACTIONS = 15;
+/** One API page (the API's maximum) of a member's newest sponsored or cosponsored bills. A long-serving
+ * member cosponsors thousands; paging further would spend the shared api.data.gov budget on one page. */
+const MEMBER_BILLS_LIMIT = 250;
 /** Bound every outbound fetch so a stalled host cannot hang a verification
  * (a bill composite makes up to ~6 serial calls). Matches the generic ladder's
  * HTTP_TIMEOUT_MS in verificationFetch.ts (not exported, so redefined here). */
 const HTTP_TIMEOUT_MS = 12_000;
+/** Wait before retrying a list call that failed for a passing reason. */
+const LIST_RETRY_DELAY_MS = 2_000;
 
 /**
  * GET a v3 JSON resource with the key + format appended. Acquires a rate-limit
@@ -98,16 +110,40 @@ const HTTP_TIMEOUT_MS = 12_000;
  * a missing sub-resource must not fail the whole composite).
  */
 async function getJson(path: string, apiKey: string, fetchImpl: FetchLike): Promise<any | null> {
+  return (await getJsonResult(path, apiKey, fetchImpl)).data;
+}
+
+/** Like getJson, but says whether a failure may pass on retry (timeout, network error, 429, 5xx). */
+async function getJsonResult(
+  path: string, apiKey: string, fetchImpl: FetchLike,
+): Promise<{ data: any | null; transient: boolean }> {
   const sep = path.includes('?') ? '&' : '?';
   const url = `${API_BASE}${path}${sep}format=json&api_key=${encodeURIComponent(apiKey)}`;
   try {
     await acquireApiDataGovSlot('congress');
     const res = await fetchImpl(url, { signal: AbortSignal.timeout(HTTP_TIMEOUT_MS) });
-    if (!res.ok) return null;
-    return await res.json();
+    if (!res.ok) return { data: null, transient: res.status === 429 || res.status >= 500 };
+    return { data: await res.json(), transient: false };
   } catch {
-    return null;
+    return { data: null, transient: true };
   }
+}
+
+/**
+ * GET a list the page must print (cosponsors, a member's bills). A passing failure is retried once; if
+ * it fails again, ListUnavailable is thrown so the whole page falls through rather than print without
+ * the list. A 404 or other client error stays best-effort (null), as before.
+ */
+async function getRequiredList(
+  path: string, apiKey: string, fetchImpl: FetchLike, retryDelayMs: number,
+): Promise<any | null> {
+  let r = await getJsonResult(path, apiKey, fetchImpl);
+  if (r.data === null && r.transient) {
+    await new Promise((resolve) => setTimeout(resolve, retryDelayMs));
+    r = await getJsonResult(path, apiKey, fetchImpl);
+    if (r.data === null && r.transient) throw new ListUnavailable(path);
+  }
+  return r.data;
 }
 
 /** Fetch and strip a bill's newest text version (best-effort). */
@@ -151,8 +187,45 @@ async function fetchBillText(
   }
 }
 
+/**
+ * A member's API fullName without its party tag: "Rep. Scalise, Steve [R-LA-1]" → "Rep. Scalise, Steve [LA-1]".
+ * EV's antipartisan rule: no party label may reach text a quote can be cut from. State and district stay.
+ */
+export function stripPartyTag(fullName: string): string {
+  return fullName.replace(/\s*\[\s*[A-Z]{1,3}\s*-\s*([A-Z]{2}(?:-[^\]]+)?)\s*\]/g, ' [$1]').trim();
+}
+
+/** api.congress.gov bill-type code → the citation form congress.gov prints. */
+const BILL_TYPE_LABEL: Map<string, string> = new Map([
+  ['HR', 'H.R.'], ['S', 'S.'], ['HRES', 'H.Res.'], ['SRES', 'S.Res.'], ['HJRES', 'H.J.Res.'],
+  ['SJRES', 'S.J.Res.'], ['HCONRES', 'H.Con.Res.'], ['SCONRES', 'S.Con.Res.'],
+]);
+
+function ordinal(n: number): string {
+  const teen = n % 100 >= 11 && n % 100 <= 13;
+  const suffix = teen ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' } as Record<number, string>)[n % 10] ?? 'th';
+  return `${n}${suffix}`;
+}
+
+/** "H.R. 10746 (119th Congress): Fossil Free Finance Act of 2026". Amendments (no title) are skipped. */
+function memberBillLine(b: any): string | null {
+  if (!b?.title || !b?.number) return null;
+  const type = BILL_TYPE_LABEL.get(String(b.type ?? '').toUpperCase());
+  if (!type) return null;
+  const congress = Number.isFinite(Number(b.congress)) && b.congress ? ` (${ordinal(Number(b.congress))} Congress)` : '';
+  return `${type} ${b.number}${congress}: ${b.title}`;
+}
+
+async function memberBillLines(
+  bioguideId: string, which: 'sponsored' | 'cosponsored', apiKey: string, fetchImpl: FetchLike, retryDelayMs: number,
+): Promise<string[]> {
+  const data = await getRequiredList(`/member/${bioguideId}/${which}-legislation?limit=${MEMBER_BILLS_LIMIT}`, apiKey, fetchImpl, retryDelayMs);
+  const list: any[] = Array.isArray(data?.[`${which}Legislation`]) ? data[`${which}Legislation`] : [];
+  return list.map(memberBillLine).filter((l): l is string => l !== null);
+}
+
 async function buildBillText(
-  ref: Extract<CongressRef, { kind: 'bill' }>, apiKey: string, fetchImpl: FetchLike,
+  ref: Extract<CongressRef, { kind: 'bill' }>, apiKey: string, fetchImpl: FetchLike, retryDelayMs: number,
 ): Promise<string | null> {
   const base = `/bill/${ref.congress}/${ref.billType}/${ref.number}`;
   const main = await getJson(base, apiKey, fetchImpl);
@@ -163,7 +236,7 @@ async function buildBillText(
   if (bill.title) parts.push(String(bill.title));
   if (bill.policyArea?.name) parts.push(`Policy area: ${bill.policyArea.name}`);
   const sponsors: any[] = Array.isArray(bill.sponsors) ? bill.sponsors : [];
-  if (sponsors.length) parts.push('Sponsor: ' + sponsors.map((s) => s?.fullName).filter(Boolean).join(', '));
+  if (sponsors.length) parts.push('Sponsor: ' + sponsors.map((s) => s?.fullName).filter(Boolean).map(stripPartyTag).join(', '));
   if (bill.latestAction?.text) parts.push('Latest action: ' + bill.latestAction.text);
 
   const summaries = await getJson(`${base}/summaries`, apiKey, fetchImpl);
@@ -174,9 +247,9 @@ async function buildBillText(
 
   // limit=250: the API's default page is 20, so a member deep in a long list (H.R. 26 (118th) has
   // about 160) was never printed, and their cosponsorship could not be verified from this page.
-  const cosponsors = await getJson(`${base}/cosponsors?limit=250`, apiKey, fetchImpl);
+  const cosponsors = await getRequiredList(`${base}/cosponsors?limit=250`, apiKey, fetchImpl, retryDelayMs);
   const cosponsorList: any[] = Array.isArray(cosponsors?.cosponsors) ? cosponsors.cosponsors : [];
-  const coNames = cosponsorList.map((c: any) => c?.fullName).filter(Boolean);
+  const coNames = cosponsorList.map((c: any) => c?.fullName).filter(Boolean).map(stripPartyTag);
   if (coNames.length) parts.push('Cosponsors: ' + coNames.join(', '));
 
   const actions = await getJson(`${base}/actions`, apiKey, fetchImpl);
@@ -192,7 +265,7 @@ async function buildBillText(
 }
 
 async function buildMemberText(
-  ref: Extract<CongressRef, { kind: 'member' }>, apiKey: string, fetchImpl: FetchLike,
+  ref: Extract<CongressRef, { kind: 'member' }>, apiKey: string, fetchImpl: FetchLike, retryDelayMs: number,
 ): Promise<string | null> {
   const main = await getJson(`/member/${ref.bioguideId}`, apiKey, fetchImpl);
   const m = main?.member;
@@ -200,13 +273,16 @@ async function buildMemberText(
   const parts: string[] = [];
   const name = m.directOrderName ?? m.invertedOrderName ?? m.name;
   if (name) parts.push(String(name));
-  const partyHistory: any[] = Array.isArray(m.partyHistory) ? m.partyHistory : [];
-  const party = partyHistory.map((p: any) => p?.partyName).filter(Boolean).join(', ');
-  if (party) parts.push(`Party: ${party}`);
+  // No party line: m.partyHistory is never printed (antipartisan rule).
   if (m.state) parts.push(`State: ${m.state}`);
   const terms: any[] = Array.isArray(m.terms) ? m.terms : [];
   const chambers = terms.map((t: any) => t?.chamber).filter(Boolean);
   if (chambers.length) parts.push(`Chamber: ${[...new Set(chambers)].join(', ')}`);
+  // A quote about a bill the member sponsored or cosponsored can match the member page.
+  const sponsored = await memberBillLines(ref.bioguideId, 'sponsored', apiKey, fetchImpl, retryDelayMs);
+  if (sponsored.length) parts.push('Sponsored legislation:\n' + sponsored.join('\n'));
+  const cosponsored = await memberBillLines(ref.bioguideId, 'cosponsored', apiKey, fetchImpl, retryDelayMs);
+  if (cosponsored.length) parts.push('Cosponsored legislation:\n' + cosponsored.join('\n'));
   const out = parts.join('\n\n').trim();
   return out || null;
 }
@@ -222,7 +298,13 @@ export async function fetchCongressPageText(url: string, deps: CongressDeps = {}
   const apiKey = deps.apiKey ?? process.env.CONGRESS_GOV_API_KEY;
   if (!apiKey) return null; // no-op: adapter degrades, URL falls through to the ladder
   const fetchImpl = deps.fetchImpl ?? fetch;
-  return ref.kind === 'bill'
-    ? buildBillText(ref, apiKey, fetchImpl)
-    : buildMemberText(ref, apiKey, fetchImpl);
+  const retryDelayMs = deps.retryDelayMs ?? LIST_RETRY_DELAY_MS;
+  try {
+    return ref.kind === 'bill'
+      ? await buildBillText(ref, apiKey, fetchImpl, retryDelayMs)
+      : await buildMemberText(ref, apiKey, fetchImpl, retryDelayMs);
+  } catch (err) {
+    if (err instanceof ListUnavailable) return null;
+    throw err;
+  }
 }

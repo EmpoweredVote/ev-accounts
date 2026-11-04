@@ -1,0 +1,135 @@
+{
+  "politician_id": "d4ba1b87-b76b-458c-9cfd-5038d9831d80",
+  "findings": [
+    {
+      "id": "f8a1c86b58900b090911a37df1e2abc702e701f9591da4e9bd515b4eea19d3ff",
+      "kind": "own-words",
+      "url": "https://www.bostonglobe.com/2024/09/06/metro/nh-congressional-candidate-lily-tang-williams-2024-election-certification",
+      "date": "2024-09-06",
+      "date_precision": "day",
+      "passage": "“But we’ve got to pass the SAVE Act, so our voices as American citizens will not be marginalized, and prevent fraud and cheating in our elections,” she said.",
+      "note": "Quoted by the Boston Globe (article date; she spoke around the 2024 NH-02 candidate debates). She calls for passing the federal SAVE Act, which requires proof of citizenship, to keep non-citizens from voting and to prevent fraud.",
+      "subjects": [
+        "proof of citizenship to register (SAVE Act)",
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:33:43.523Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c15043235a8dbeee68d590df43a2591295735f41e1b4906f2202b6f9bed55c2e",
+      "kind": "own-words",
+      "url": "https://www.bostonglobe.com/2024/09/06/metro/nh-congressional-candidate-lily-tang-williams-2024-election-certification",
+      "date": "2024-09-06",
+      "date_precision": "day",
+      "passage": "“Why do you have to use ‘stolen’?” Williams said. “How about ‘not honest’? I feel like it’s not honest. … My questions never got answered.”",
+      "note": "Quoted by the Boston Globe, from a 2024 debate at New England College. Asked whether the 2020 election was stolen, she said she felt it was not honest and that her questions went unanswered. Related election-integrity talk, not about ID rules directly.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:33:43.523Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b26807cb6e15a90202748199ad4def9fbeee7fdaa31c8f59cc63c05429afb73f",
+      "kind": "own-words",
+      "url": "https://www.thedartmouth.com/article/2026/04/2nd-congressional-district-candidate-lily-tang-williams-calls-for-balanced-budget-amendment-national-constitutional-carry-in-rematch",
+      "date": "2026-04-01",
+      "date_precision": "month",
+      "passage": "I support the SAVE Act — citizenship required to register, and photo ID to vote.",
+      "note": "The Dartmouth interview (April 2026, current campaign), her answer marked LTW. She backs the SAVE Act and names its rules: citizenship required to register and photo ID to vote.",
+      "subjects": [
+        "proof of citizenship to register or vote (SAVE Act)",
+        "photo ID requirement"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 federal-held (Opus)",
+        "fetched_at": "2026-10-29T22:03:33.033Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c74fa8574782690dde03cce4e2afc031badf7f5895bced4cad222ee81403eeaa",
+      "kind": "own-words",
+      "url": "https://www.citizenscount.org/candidate/lily-tang-williams/running/2026-primary-us-house",
+      "date": "2026-01-01",
+      "date_precision": "year",
+      "passage": "I support the SAVE Act — citizenship required to register, and photo ID to vote.",
+      "note": "Citizens Count candidate profile, issue 'Proof of citizenship to vote: For', quoting her (source marked 'Other, 2026'; same words as The Dartmouth interview). The page names her in full next to the quote.",
+      "subjects": [
+        "proof of citizenship to register or vote (SAVE Act)",
+        "photo ID requirement"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 federal-held (Opus)",
+        "fetched_at": "2026-10-29T22:03:33.033Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register (SAVE Act)",
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "places": [
+        "in scope: Boston Globe 2026-09-08 (https://www.bostonglobe.com/2026/09/08/metro/nh-primary-goodlander-tang-williams-second-congressional-district/) says she won the primary for NH-02 and is on the general-election ballot",
+        "On the Record (0 appearances, 0 sources)",
+        "campaign site https://www.lilytangwilliams.com and /congress/ (nothing on the subject; site search for voter, SAVE Act, election returned nothing)",
+        "Ballotpedia (https://ballotpedia.org/Lily_Tang_Williams returned a does-not-exist page; nothing on the subject)",
+        "news search: name plus voter ID / SAVE Act / proof of citizenship / election integrity (found Boston Globe 2024-09-06)",
+        "not reviewed: debate videos (WMUR and New England College debates, 2024)",
+        "not reviewed: congress.gov (not a legislator, no sponsorships)",
+        "not reviewed: social media (YouTube, Facebook, X)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T21:33:43.523Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "SAVE Act",
+        "voter ID",
+        "proof of citizenship"
+      ],
+      "places": [
+        "https://www.thedartmouth.com/article/2026/04/2nd-congressional-district-candidate-lily-tang-williams-calls-for-balanced-budget-amendment-national-constitutional-carry-in-rematch",
+        "https://www.citizenscount.org/candidate/lily-tang-williams/running/2026-primary-us-house",
+        "https://www.concordmonitor.com/2026/09/09/goodlander-williams-congressional-race/ (nothing on topic)",
+        "collaborativenh.org \"on the issues\" article, 2024-10-21 (nothing on topic)",
+        "https://www.lilytangwilliams.com/ (no issues text)"
+      ],
+      "found": 2,
+      "at": "2026-10-29T22:03:33.033Z",
+      "by": "stage5 federal-held (Opus)"
+    }
+  ]
+}

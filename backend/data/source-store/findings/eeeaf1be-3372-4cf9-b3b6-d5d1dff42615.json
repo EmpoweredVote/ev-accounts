@@ -1,0 +1,30 @@
+{
+  "politician_id": "eeeaf1be-3372-4cf9-b3b6-d5d1dff42615",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter ID with no ID fallback",
+        "local voter ID bans"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "web searches on name plus voter ID / SAVE Act / election integrity (nothing on the subject in their own words)",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (403)",
+        "blocked: https://legiscan.com/CA/bill/SB1174/2023 (403)",
+        "blocked: https://ballotpedia.org/Phillip_Chen_(California) and ballotpedia pages (empty content)",
+        "2026 ballot status not confirmed from a fetched page",
+        "official site sd07.senate.ca.gov (searched; nothing on voter ID, only SB 239 election official safety, off subject)",
+        "not a member of the Legislature when SB 1174 was voted in 2024"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:23:22.566Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

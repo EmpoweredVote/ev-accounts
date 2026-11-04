@@ -45,6 +45,22 @@ describe('passageInSurveySection (test 2: the page text)', () => {
     const none = `Ballotpedia survey responses Jane Doe has not yet completed Ballotpedia's 2026 Candidate Connection survey. ${SURVEY}`;
     expect(passageInSurveySection(none, SURVEY)).toBe(false);
   });
+  // Jonah Garson's page, 2026-11-02: the section opens with the 2026 notice and then carries the survey he
+  // completed in 2022. The notice is about one cycle, not the page.
+  const EARLIER = `Ballotpedia survey responses Jane Doe has not yet completed Ballotpedia's 2026 Candidate Connection survey. `
+    + `2022 Ballotpedia survey responses See also: Ballotpedia's Candidate Connection Jane Doe completed Ballotpedia's `
+    + `Candidate Connection survey in 2022. ${SURVEY} Note: Ballotpedia reserves the right to edit Candidate Connection survey responses.`;
+  it('passes a passage from a survey completed in an earlier cycle, beside a notice for the current one', () => {
+    expect(passageInSurveySection(EARLIER, SURVEY)).toBe(true);
+  });
+  it('still refuses text outside the completed survey when a notice is present', () => {
+    const editorial = `${EARLIER} Campaign website Doe's campaign website stated: ${BIO}`;
+    expect(passageInSurveySection(editorial, BIO)).toBe(false);
+  });
+  it('does not read the negative notice as a completed survey', () => {
+    const none = `Jane Doe has not completed Ballotpedia's Candidate Connection survey. ${SURVEY}`;
+    expect(passageInSurveySection(none, SURVEY)).toBe(false);
+  });
   it('refuses when there is no section', () => {
     expect(passageInSurveySection(null, SURVEY)).toBe(false);
     expect(passageInSurveySection('', SURVEY)).toBe(false);

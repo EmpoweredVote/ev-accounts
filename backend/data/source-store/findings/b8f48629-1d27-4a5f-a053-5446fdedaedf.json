@@ -1,0 +1,35 @@
+{
+  "politician_id": "b8f48629-1d27-4a5f-a053-5446fdedaedf",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "general gun statements"
+      ],
+      "places": [
+        "scope: on the 2026-11-03 general-election ballot for Wisconsin's 5th Congressional District (https://www.wuwm.com/wisconsins-5th-congressional-district-election-candidates)",
+        "On the Record (0 meetings)",
+        "campaign site https://www.beckforcongress.com/ (home, about, issues, press-releases, news, endorsed): nothing on the subject",
+        "WUWM candidate questionnaire page: nothing on guns in his answers",
+        "https://urbanmilwaukee.com/pressrelease/andy-beck-announces-candidacy-for-wisconsins-5th-congressional-district/ (launch release): nothing on the subject",
+        "https://theballotbrief.com/candidate/andrew-beck-wi: nothing on the subject",
+        "https://hoodline.com/2026/07/milwaukee-suburbs-on-edge-as-fitzgerald-beck-duke-it-out-in-5th-district/: nothing on guns",
+        "blocked: https://ballotpedia.org/Andrew_Beck (403)",
+        "blocked: https://goodparty.org/candidate/andrew-beck/us-house-of-representatives-wisconsin-5th-congressional-district (429)",
+        "blocked: https://wisconsinexaminer.com/voter-guides/contests/2026-general-5th-cd/ (403)",
+        "blocked: https://bluevoterguide.org/endorser-org/Gun_Sense_Voter/WI/4895 (403); a search snippet suggested a gun-safety group lists him, unconfirmed",
+        "not a legislator: no sponsorship records to check",
+        "web searches: 2 (guns plus race; guns plus Fitzgerald)"
+      ],
+      "found": 0,
+      "at": "2026-10-31T00:14:53.199Z",
+      "by": "source-collector"
+    }
+  ]
+}

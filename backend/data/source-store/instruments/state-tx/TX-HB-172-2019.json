@@ -1,0 +1,38 @@
+{
+  "id": "TX-HB-172-2019",
+  "scope": "state:tx",
+  "title": "HB172 (86th Legislature Regular Session): Relating to the notice given by a property owner prohibiting a handgun license holder from carrying a handgun on certain property.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB172",
+    "https://capitol.texas.gov/tlodocs/86R/billtext/html/HB00172I.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 1 (adding Government Code 411.2045(a)): {+The department +} {+shall adopt rules that prescribe the size of a sign and the +} {+lettering on that sign under Sections 30.06(c)(3)(B) and +} {+30.07(c)(3)(B), Penal Code.  Rules adopted under this subsection +} {+may not require that a sign be larger than 8.5 inches by 11 inches +} {+for each language in which the sign must be posted.+}\nSec. 2 (amending Penal Code 30.06(c)(3)(B)(ii)): appears in contrasting colors with block letters {+and otherwise complies with the requirements +} {+regarding the size and lettering of the sign provided by rules +} {+adopted under Section 411.2045, Government Code+} [[-at least one inch -] [-in height-]]; and",
+  "sponsors": [
+    {
+      "name": "Diego Bernal",
+      "politician_id": "3a310d29-093f-417b-a23f-885aa3658b12",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-172-2019.introduced.html",
+      "sha256": "e50b4c392e308650d632fe3da9b2278f46a3b0a9a3b2da866b7704742f7e46e1"
+    }
+  }
+}

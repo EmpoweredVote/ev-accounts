@@ -1,0 +1,54 @@
+{
+  "politician_id": "178a41d4-42b5-4ffd-be06-d1059d54eacb",
+  "findings": [
+    {
+      "id": "e652104fd6b6ac9b16fd1894db5d1caa870d1e1ea80b8f43f4d42e4a41b53972",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-05-21",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "Senate floor vote on SB 1174 (Min), 30-8-2",
+      "note": "Listed among the 30 yes votes on the Senate floor for SB 1174, which bars local governments from requiring ID to vote at polling places or other places where ballots are cast. Roll call as printed in the Assembly floor analysis on the bill page; date of the Senate vote from a news report that the bill cleared the Senate floor May 21.",
+      "subjects": [
+        "local voter-ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:55:53.421Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Senate site https://sd17.senate.ca.gov/ (confirms he was re-elected to the State Senate on November 5, 2024; nothing on the subject)",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (bot challenge page; same for bill status, text and analysis pages)",
+        "CalMatters Digital Democracy SB 1174 page (carries the Assembly floor analysis with the Senate roll call)",
+        "news search on name plus subject words (nothing on the subject from him)",
+        "not reviewed: https://ballotpedia.org/John_Laird (page returned empty)",
+        "no campaign-site statements, press releases or own-words passages on voter ID or proof of citizenship found"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:55:53.421Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": "TX-HB-2481-2017",
+  "scope": "state:tx",
+  "title": "HB 2481 (85R): Relating to requiring a voter to present proof of identification; providing a criminal penalty.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=HB2481",
+    "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=85R&Bill=HB2481",
+    "https://capitol.texas.gov/tlodocs/85R/billtext/html/HB02481I.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) SECTION 2 (amends Election Code 63.001(b))\n(quote) (b) Except as provided by Subsection (h), on offering to vote, a voter must present to an election officer at the polling place : (1) one form of photo identification listed in [ described by ] Section 63.0101(a); or (2) one form of identification listed in Section 63.0101(b) accompanied by the declaration described by Subsection (i) [ 63.0101 ].\n(section) SECTION 4 (amends Election Code 63.0101(a))\n(quote) (a) The following documentation is an acceptable form of photo identification under this chapter: (1) a driver's license, election identification certificate, or personal identification card issued to the person by the Department of Public Safety that has not expired or that expired no earlier than 60 days before the date of presentation; (2) a United States military identification card that contains the person's photograph that has not expired or that expired no earlier than 60 days before the date of presentation; (3) a United States citizenship certificate issued to the person that contains the person's photograph; (4) a United States passport issued to the person that has not expired or that expired no earlier than 60 days before the date of presentation; or (5) a license to carry a handgun issued to the person by the Department of Public Safety that has not expired or that expired no earlier than 60 days before the date of presentation.\n(b_no_id_remedy)\n(section) SECTION 2 (adds Election Code 63.001(i))\n(quote) (i) If the requirement for identification prescribed by Subsection (b)(1) is not met, an election officer shall notify the voter that the voter may be accepted for voting if the voter meets the requirement for identification prescribed by Subsection (b)(2) and executes a declaration declaring the voter has a reasonable impediment to meeting the requirement for identification prescribed by Subsection (b)(1).\n(section) SECTION 4 (amends Election Code 63.0101(b))\n(quote) (b) The following documentation is acceptable as proof of identification under this chapter: (1) a government document that shows the name and address of the voter, including the voter's voter registration certificate; (2) one of the following documents that shows the name and address of the voter: (A) a copy of a current utility bill; (B) a bank statement; (C) a government check; or (D) a paycheck; or (3) a certified copy of a domestic birth certificate or other document confirming birth that is admissible in a court of law and establishes the person's identity.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(other) Sec 1: secretary of state mobile units issuing election identification certificates (adds 31.013), no fee to a requesting group.\n(other) Sec 2 (63.001(d), (i)): election officer may not question reasonableness of a sworn impediment; contents of the declaration, including a list of impediments (lack of transportation; lack of birth certificate or other documents; work schedule; lost or stolen identification; disability or illness; family responsibilities; identification applied for but not received).\n(other) Sec 3: false statement on the declaration is a third degree felony (adds 63.0013).\n(other) Sec 4(c): a person 70 or older may use an expired listed identification.\n(other) Sec 5: translations of the impediment declaration (272.011(b)).\n(other) Sec 6: DPS election identification certificate rules (Transportation Code 521A.001(a)).\n(other) Sec 7: effective January 1, 2018.",
+  "sponsors": [
+    {
+      "name": "King, Phil",
+      "role": "author",
+      "version": "Introduced (H.B. No. 2481; no other version exists)"
+    },
+    {
+      "name": "Laubenberg",
+      "role": "author",
+      "version": "Introduced (H.B. No. 2481; no other version exists)"
+    },
+    {
+      "name": "Geren",
+      "role": "author",
+      "version": "Introduced (H.B. No. 2481; no other version exists)"
+    },
+    {
+      "name": "Parker",
+      "role": "author",
+      "version": "Introduced (H.B. No. 2481; no other version exists)"
+    },
+    {
+      "name": "Sanford",
+      "role": "author",
+      "version": "Introduced (H.B. No. 2481; no other version exists)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T15:13:39Z)",
+    "fetched_at": "2026-10-28T15:13:39Z",
+    "method": "curl"
+  }
+}

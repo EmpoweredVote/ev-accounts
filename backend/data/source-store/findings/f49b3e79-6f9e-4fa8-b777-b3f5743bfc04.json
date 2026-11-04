@@ -1,0 +1,52 @@
+{
+  "politician_id": "f49b3e79-6f9e-4fa8-b777-b3f5743bfc04",
+  "findings": [
+    {
+      "id": "e514ac20037d80edcbdcbbe37658500085e985b894cd25b702afa04309bf3054",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/20833/race/2948/election/236",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "3. More restrictive gun control laws are needed now to protect public safety. Strongly Disagree",
+      "note": "His answer to a voter-guide questionnaire statement. The profile page is headed as a Kentucky state House district 89 race and lists his earlier races, so the answer is likely from an earlier campaign; the page gives no date for the answer.",
+      "subjects": [
+        "general statement on gun safety laws",
+        "more restrictive gun control laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:49:59.768Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry permits",
+        "general statement on gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "state filing page https://web.sos.ky.gov/candidatefilings/Default.aspx?cand=11402 (confirms an independent filing for U.S. House, 5th district, 2026)",
+        "campaign site serranoforamerica.com (home, stories, county report and ordinance pages read; no gun policy text; the stories page mentions police seizing his truck over bullets found inside, which is about asset seizure, not saved)",
+        "The Ballot Brief and Branch candidate pages (no gun position)",
+        "iVoterGuide profile (old questionnaire answer, saved)",
+        "blocked: https://ballotpedia.org (known to return empty to the fetch tool; not fetched)",
+        "congress.gov: not applicable, not a sitting legislator",
+        "web searches: two web searches on his name plus gun terms; nothing else found"
+      ],
+      "found": 1,
+      "at": "2026-10-31T00:49:59.768Z",
+      "by": "source-collector"
+    }
+  ]
+}

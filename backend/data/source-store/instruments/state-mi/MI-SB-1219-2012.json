@@ -1,0 +1,38 @@
+{
+  "id": "MI-SB-1219-2012",
+  "scope": "state:mi",
+  "title": "SB 1219 (2011-2012 Regular Session, Michigan Legislature (bill page title: \"Senate Bill 1219 of 2012\")): Elections; voters; declaration of United States citizenship when voting or applying for an absent voter ballot; require. Amends secs. 523 & 759 of 1954 PA 116 (MCL 168.523 & 168.759) & adds sec. 766a.",
+  "urls": [
+    "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2011-SB-1219",
+    "https://www.legislature.mi.gov/documents/2011-2012/billintroduced/Senate/htm/2012-SIB-1219.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 523 (as in the version read)\n(quote) (1) At each election, before being given a ballot, each registered elector offering to vote shall identify himself or herself by presenting an official state identification card issued to that individual under 1972 PA 222, MCL 28.291 to 28.300, an operator's or chauffeur's license issued to that individual under the Michigan vehicle code, 1949 PA 300, MCL 257.1 to 257.923, or other generally recognized picture identification card and by executing an application, on a form prescribed by the secretary of state, in the presence of an election official which includes all of the following:\n(section) Sec. 523 (as in the version read)\n(quote) If the name appears on the voter registration list, the elector shall provide further identification or other information stated upon the voter registration list.\n(section) Sec. 523 (as in the version read)\n(quote) However, an elector being allowed to vote without the identification required under this subsection is subject to challenge as provided in section 727.\n(section) Sec. 523 (as in the version read)\n(quote) (4) If, upon a comparison of the signature or other identification as required in this section, it is found that the applicant is entitled to vote, the election officer having charge of the registration list shall approve the application and write his or her initials on the application, after which the number on the ballot issued shall be noted on the application.\n(b_no_id_remedy)\n(section) Sec. 523 (as in the version read)\n(quote) If the elector does not have an official state identification card, operator's or chauffeur's license, or other generally recognized picture identification card as required under this subsection, the individual shall sign an affidavit to that effect before an election inspector and be allowed to vote as otherwise provided in this act.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec. 523 (as in the version read)\n(quote) (2) If an elector does not affirmatively state on the application that he or she is a citizen of the United States, that elector shall be challenged by an election inspector.\n(section) Sec. 523 (as in the version read)\n(quote) If the elector fails to state under oath that he or she is a citizen of the United States, that elector shall not be issued a ballot.\n(section) Sec. 523 (as in the version read)\n(quote) If the signature or an item of information, other than citizenship, does not correspond, the vote of the person shall be challenged, and the same procedure shall be followed as provided in this act for the challenging of an elector.\n(e_other_rule) not stated.\n(other) Sec. 759: begins \"(1) At any time during the 75 days before a primary or special primary, but not later than 2 p.m. of the Saturday immediately befo\"\n(other) Sec. 766a: begins \"If an election is contested in a court, an absent voter ballot that was not counted because the absent voter did not answer the ci\"",
+  "sponsors": [
+    {
+      "name": "Darwin Booher (District 35)",
+      "role": "prime",
+      "version": "Text file header as saved: \"SENATE BILL No. 1219 July 18, 2012, Introduced by Senators BOOHER and ROBERTSON and referred to the Committee on Local G\""
+    },
+    {
+      "name": "David Robertson (District 26)",
+      "role": "co",
+      "version": "Text file header as saved: \"SENATE BILL No. 1219 July 18, 2012, Introduced by Senators BOOHER and ROBERTSON and referred to the Committee on Local G\""
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T19:30:00Z)",
+    "fetched_at": "2026-10-28T19:30:00Z",
+    "method": "curl"
+  }
+}

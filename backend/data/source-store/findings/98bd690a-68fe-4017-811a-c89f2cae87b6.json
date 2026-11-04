@@ -1,0 +1,28 @@
+{
+  "politician_id": "98bd690a-68fe-4017-811a-c89f2cae87b6",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia: blocked (refuses fetches, not tried)",
+        "house.mo.gov and newsroom.house.mo.gov: not fetched (robots/hard rule)",
+        "a web search on name plus voter ID / citizenship / election words",
+        "iVoterGuide 2024 profile (District 36): https://ivoterguide.com/candidate/74021/race/12013/election/1245?culture=en-us - photo ID question listed but marked as not answered",
+        "one web search on name plus voting-rights words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:10:02.481Z",
+      "by": "search-mo-2026-11-04"
+    }
+  ]
+}

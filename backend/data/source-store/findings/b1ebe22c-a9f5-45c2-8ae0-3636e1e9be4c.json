@@ -1,0 +1,37 @@
+{
+  "politician_id": "b1ebe22c-a9f5-45c2-8ae0-3636e1e9be4c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "limits on gun ownership",
+        "bans on a type of firearm",
+        "background checks",
+        "red-flag orders",
+        "carry permits",
+        "sponsored gun bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope check: BallotReady and iVoterGuide list James Sceniak as a candidate for U.S. House, Indiana District 7, Indiana General election 2026-11-03: https://www.ballotready.org/people/james-m-sceniak and https://ivoterguide.com/candidate/73286/race/15376/election/956",
+        "iVoterGuide 2022 Senate race page: the gun questions (restrictions on gun ownership; suing gun dealers) are marked 'Did not answer', so nothing usable",
+        "BallotReady profile: no policy statements on guns",
+        "campaign site: none found (a news voter guide reports he has no campaign website); his Facebook is linked from BallotReady, not reviewed because it needs a login",
+        "2022 Indiana Public Media Senate race article (2022-10-20): no gun statements by him",
+        "blocked: https://www.therepublic.com/?p=715120 (403; a 2024 article that a search summary says carries his gun answer)",
+        "blocked: https://indianacapitalchronicle.com/voter-guides/contests/congressional-district-7/ (403)",
+        "blocked: https://indianacapitalchronicle.com/race-details/congressional-district-6/ (403)",
+        "blocked: https://www.wellsforindiana.com/post/u-s-state-candidates-speak-at-indiana-democratic-party-s-town-hall (404)",
+        "Ballotpedia: not fetched, pages come back empty",
+        "congress.gov sponsor list: not applicable, never a member of Congress",
+        "web search on name plus gun words: only the blocked pages above carry a gun statement"
+      ],
+      "found": 0,
+      "at": "2026-10-31T00:12:02.204Z",
+      "by": "source-collector"
+    }
+  ]
+}

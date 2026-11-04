@@ -1,0 +1,31 @@
+{
+  "politician_id": "c8e496a6-58d6-475a-b6b7-4bf2f15d657b",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "not reviewed: On the Record extraction script (agent rules forbid running repo scripts)",
+        "state treasurer office site https://statetreasurer.wi.gov/ (confirms him as State Treasurer; nothing on the subject)",
+        "campaign site https://www.leiberfortreasurer.com/ home, /about, /media (pages truncated by fetch; nothing on the subject in visible text)",
+        "PBS Wisconsin 2026 candidate statement page (about school fund and unclaimed property; nothing on the subject)",
+        "Civic Media 2026-06-11 article on the race (confirms second-term run, challengers in the Aug 11 primary; no subject quotes)",
+        "Wikipedia John Leiber page (lists him as 2026 nominee; nothing on the subject)",
+        "blocked: https://ballotpedia.org/John_Leiber (empty page returned)",
+        "not applicable: legislature bill pages (he holds a statewide office with no election duties, not a legislator)",
+        "two web searches on name plus subject words: nothing on the subject found by him"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:05:12.704Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

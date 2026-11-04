@@ -1,0 +1,497 @@
+{
+  "politician_id": "14c65fd0-d799-4bc2-8121-0afdcb867b54",
+  "findings": [
+    {
+      "id": "a952083662c0fded693e84ad9f64999d7defacb8c8ce8820739a64d44d6bffa4",
+      "kind": "own-words",
+      "url": "https://www.pasenatorcomitta.com/comitta-partisan-move-to-collect-voter-data-an-attack-on-freedom-to-vote/",
+      "date": "2021-09-15",
+      "date_precision": "day",
+      "passage": "They want the names, dates of birth, driver’s license numbers, and Social Security information of all registered voters without the consent of the individuals and without explaining who will have access to this personal information and what they plan to do with it.",
+      "note": "Statement in her name on a Senate committee subpoena for state voter records. Touches voter data privacy, not ID rules to vote.",
+      "subjects": [
+        "voter-roll data and privacy",
+        "election integrity investigation"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:00:24.403Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dcaa2bc162bedc2f6b9e91ae9e179a92b1c05081f2eec853183a760f1884258",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('COMITTA'), linked to Carolyn Comitta (district 19) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.711Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc316a91c15a9d69b8de8a31f201ccdfb2b8ddcf04549d215151894a08cf6992",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "nay",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Comitta'), linked to Carolyn T. Comitta (district 19) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.711Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dbe3c0f0546a6231771fc2eb2ca14e791584abef2001ceba50dfd88547754dfb",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Comitta'), linked to Carolyn Comitta (district 19) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.711Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8919f777e996df6017e73096f32be4cc18f382716845d0fdb1fbdab4e8d89660",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "nay",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Comitta'), linked to Carolyn Comitta (district 19) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.462Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1d0155895ce8411a4438986cd1d5eafc092c54b213a013aab945a0900ab58bf7",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2021/sb565",
+      "date": "2021-11-09",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-565-2021",
+      "act": "nay",
+      "motion": "Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Final Passage, 2021-11-09: nay (tally 29–21); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/PA_SB565_PN1212.pdf",
+          "sha256": "8599bf5e56d8378a456fd36d933e5a05733e1a059d642ddb6883c809f6226568"
+        }
+      }
+    },
+    {
+      "id": "98f536b455861c629be506ee1118bf30711381bcd492a9d6f1acd2bd9a52c3be",
+      "kind": "own-words",
+      "url": "https://www.pasenatorcomitta.com/comitta-issues-statement-on-supreme-court-striking-down-ny-concealed-carry-law/",
+      "date": "2022-06-23",
+      "date_precision": "day",
+      "passage": "“I’m extremely concerned and disappointed that at this moment, following a surge in deadly gun violence and multiple mass shootings, the U.S. Supreme Court would move to invalidate basic, commonsense efforts at the state level to better protect our residents and communities. Studies show that more firearms do not make our communities safer. Rather, they make them more dangerous and increase the likelihood of gun violence. The fact that the court’s majority failed to consider the growing and practically ubiquitous impacts of gun violence on communities across this nation in its decision seems tone-deaf. The idea that six justices would overrule the efforts of duly elected state legislators to enact reasonable licensing laws to safeguard their communities is confounding. This week, Congress is considering what may become the first gun control measure to pass in decades. In Pennsylvania, the legislature has not passed a single gun control measure since 2019, when we enacted Act 79 to keep firearms out of the hands of domestic abusers. At that time, it represented the first new state law in more than a decade to deal directly with firearms. I believe public opinion is on the side of meaningful, effective, and comprehensive gun reform. For example, according to a 2021 poll, 84 percent of voters, including 77 percent of Republicans, support requiring all gun purchasers to go through a background check. I remain hopeful that we can and will come together to pass laws to keep our communities, our schools, and our children safe. However, when basic measures, like those safeguarding the streets of some of our largest cities, are struck down by the Supreme Court, it seems like we’re taking a big step back for every inch we move forward.”",
+      "note": "Statement from the State Senator after the U.S. Supreme Court struck down New York's concealed-carry law. Criticizes the ruling, says more firearms make communities more dangerous, cites polling for universal background checks, and calls for comprehensive gun reform.",
+      "subjects": [
+        "carry a gun with a permit",
+        "check every gun buyer",
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:16:57.727Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2d1ecc8026d3736952f03473656a38d4b69898a3730d5699316d26e2f9adb29a",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb669",
+      "date": "2025-10-24",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-669-2025",
+      "act": "sponsor",
+      "note": "Listed as a co-sponsor of SB 669 (PN 1276), which amends the crimes, domestic relations and judicial codes on firearms and ammunition. The co-sponsorship memo subject line is 'Requiring Background Checks to Purchase Ammunition'. Date is the date the bill was printed and referred to the Senate Judiciary Committee; the date she added her name is not shown.",
+      "subjects": [
+        "background checks to buy ammunition",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:16:57.727Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b27e874b3f0586764ce5f8d7ad38f1cd51aed9aec75e72c5298a8bacd61250b0",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2019/hb1288",
+      "date": "2019-04-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1288-2019",
+      "act": "sponsor",
+      "note": "Listed as a House co-sponsor of HB 1288 (2019-20), which would require a firearm owner to report the theft or loss of a firearm. Date is the referral to the House Judiciary Committee; the date she added her name is not shown.",
+      "subjects": [
+        "report lost or stolen guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:16:57.727Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "97d0c5d3da03ac9325149d68d949ff684cd2d351921f08aaac2ecf522cdda84c",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=2440",
+      "date": "2020-05-20",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-2440-2019",
+      "act": "nay",
+      "motion": "House Floor: HB 2440 PN 3776, FP",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 2440 PN 3776, FP, 2020-05-20: nay (tally 124–78); census gate: none.",
+      "subjects": [
+        "gun and ammunition businesses and ranges can never be closed or limited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2440-2019.amended.pdf",
+          "sha256": "9bdd564f4d0812adfa9af91a3ac7f854f4196ebd9577febef5953c94486be5c8"
+        }
+      }
+    },
+    {
+      "id": "e551ed2f59e072bfb12b47cdaee82befe90ec2b072f23db862ca5acdcd44d811",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=979",
+      "date": "2022-01-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-979-2021",
+      "act": "nay",
+      "motion": "Senate Floor: HB 979 PN 1706, Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 979 PN 1706, Final Passage, 2022-01-25: nay (tally 32–17); census gate: none.",
+      "subjects": [
+        "local gun and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs",
+        "localities barred from suing gun makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-979-2021.amended.pdf",
+          "sha256": "494cfe800bdb89be85cf7c2a28a81c203b581e7614e7bc8f69211cb4c736f5dd"
+        }
+      }
+    },
+    {
+      "id": "aeb8266984e53754ceef8ff83f7e417709cb966b7ba747cb9d64e2c79c4a49ed",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb822",
+      "date": "2026-05-06",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-822-2025",
+      "act": "nay",
+      "motion": "Senate Floor: PN0881, Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: PN0881, Final Passage, 2026-05-06: nay (tally 30–20); census gate: none.",
+      "subjects": [
+        "local firearm and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-822-2025.introduced.pdf",
+          "sha256": "38d1bdcb626cc1614fee0c352427248f5e599df007fead7d1a6031742385df55"
+        }
+      }
+    },
+    {
+      "id": "cdcb463e6bc2af8680827045596e8477e389030c3f2c5e66d5fdc158d335117c",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=1075",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1075-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-1075-2019 (LegiScan sponsor list): HB1075 (2019-2020 Regular Session): In firearms and other dangerous articles, further providing for persons not to possess, use, manufacture, control, sell or transfer firearms and for abandonment of firearms, weapons or ammunition; in community and municipal courts, further providing for masters; and adding provisions relating to extreme risk protection orders..",
+      "subjects": [
+        "extreme risk protection orders created to remove firearms",
+        "24-hour turn-in of firearms under an order",
+        "firearm ban while an order is active"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1075-2019.introduced.pdf",
+          "sha256": "a3ba05eaa870f451582b43a5e4f7443bbbfaffc411b853c9369e251b0ed1932e"
+        }
+      }
+    },
+    {
+      "id": "3295f3ca764ec705e99d1e3ac2783e1ae0949dab0b7628a119ff558b5999a87e",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=S&type=B&bn=204",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-204-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-SB-204-2023 (LegiScan sponsor list): SB204 (2023-2024 Regular Session): In actions, proceedings and other matters generally, providing for extreme risk protection orders..",
+      "subjects": [
+        "court orders to remove guns from people at risk of harming themselves or others",
+        "family members and police may petition",
+        "penalty for possessing guns under an order"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-204-2023.introduced.pdf",
+          "sha256": "3aaf5420de53bef1bf18d7ed5c88cda96951528d75fb2331337afa67ef725805"
+        }
+      }
+    },
+    {
+      "id": "974bcaa11083851fdf648bd4b6b53b2f69fbd2b79d1857b0e68638182e4e9f3b",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb348",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-348-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-SB-348-2025 (LegiScan sponsor list): SB348 (2025-2026 Regular Session): In firearms and other dangerous articles, providing for report of theft or loss of firearm; and imposing a penalty..",
+      "subjects": [
+        "lost or stolen firearm must be reported within 24 hours",
+        "fine for failing to report"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-348-2025.introduced.pdf",
+          "sha256": "abc26212fcdd2ced433b042efb2f17e7287787752032e5f4e6f1cba78f99f4e2"
+        }
+      }
+    },
+    {
+      "id": "3cb2a1db5995795ce0c0d5275205a5cda4ca08c7c216c164097bed184539cc18",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=1747",
+      "date": "2020-06-24",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1747-2019",
+      "act": "nay",
+      "motion": "House Floor: HB 1747 PN 2338, FP",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 1747 PN 2338, FP, 2020-06-24: nay (tally 127–74); census gate: none.",
+      "subjects": [
+        "emergency-time carry restriction repealed",
+        "no seizure of guns, accessories or ammunition during emergencies",
+        "governor cannot suspend firearm sales in emergencies"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1747-2019.introduced.pdf",
+          "sha256": "a4e95a0229bcf1cde7a5fa9d58ac2c33f09477e837d84525b7ff04d3a5f71ece"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll data and election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "web search: name plus voter ID",
+        "web search: Senate voter ID constitutional amendment 2025 2026",
+        "official site https://www.pasenatorcomitta.com (search for voter ID; one 2021 statement on voter data, nothing on ID rules)",
+        "Ballotpedia not reviewed: not fetched",
+        "bill pages not searched, linked separately"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:00:24.403Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:45:58.711Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.462Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun violence",
+        "background checks",
+        "concealed carry",
+        "loaded guns in vehicles",
+        "ammunition purchase checks"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Senate site (pasenatorcomitta.com), site search for 'gun': confirms she is State Senator; 8 gun-related posts found",
+        "official Senate site: 2022 concealed-carry statement read in full",
+        "not reviewed: https://www.pasenatorcomitta.com/comitta-working-to-end-gun-violence/ (video only, no text)",
+        "not reviewed: https://www.pasenatorcomitta.com/freedom-from-gun-violence/ (no text on page)",
+        "not reviewed: https://www.pasenatorcomitta.com/end-gun-violence-now/ (no text on page)",
+        "not reviewed: https://www.pasenatorcomitta.com/sen-comittas-remarks-on-gun-violence/ (no text on page)",
+        "not reviewed: https://www.pasenatorcomitta.com/comitta-calls-for-action-to-stop-gun-violence/ (no text on page)",
+        "not reviewed: https://www.pasenatorcomitta.com/sen-comitta-remarks-in-support-of-gun-reform/ (no text on page)",
+        "PA General Assembly bill page for SB 669 (2025): co-sponsor list",
+        "blocked: https://www.palegis.us/senate/co-sponsorship/memo?memoID=43388&document=SB669",
+        "blocked: https://legiscan.com/PA/bill/SB669/2025 (403)",
+        "blocked: https://www.pressreader.com/usa/the-mercury-pottstown-pa/20180928/281539406888142 (403)",
+        "blocked: https://www.yahoo.com/news/bianca-bill-proposed-law-carrying-185609771.html (empty)",
+        "Ballotpedia: not reviewed (returns empty)",
+        "web search x2 (news and bill sponsorship)",
+        "PA General Assembly bill page for HB 1288 (2019): House co-sponsor list"
+      ],
+      "found": 3,
+      "at": "2026-10-30T15:16:57.727Z",
+      "by": "source-collector"
+    }
+  ]
+}

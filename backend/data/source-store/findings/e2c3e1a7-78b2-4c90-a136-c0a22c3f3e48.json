@@ -1,0 +1,417 @@
+{
+  "politician_id": "e2c3e1a7-78b2-4c90-a136-c0a22c3f3e48",
+  "findings": [
+    {
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "yea",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "7b2d4b3506526c2cbacd6c4548ddfa4202cf5549942da82e881b1ab3eeb8a5c4",
+      "kind": "own-words",
+      "url": "https://www.marclombardo.com/issues",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Marc supports requiring voters to present identification before receiving a ballot. His proposal would also ensure that eligible voters who do not have identification can obtain one without charge.",
+      "note": "Campaign issues page (page is undated; date is the 2026 campaign cycle). States support for ID before receiving a ballot and free ID for eligible voters who lack one.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID for voters without ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:27:40.103Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d4a23ea4571dd1d01a62df5f304f3fd474da9dcbfb8832157f72923aad1f228e",
+      "kind": "own-words",
+      "url": "https://www.marclombardo.com/issues",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Voter identification is a commonsense safeguard that protects legitimate voters, strengthens public confidence and helps ensure every lawful vote is counted properly.",
+      "note": "Campaign issues page (undated, 2026 cycle). Gives his reasons for voter ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:27:40.103Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "24a151d73200449e3aa61a46234c555a3a2da94ce1f7e85b50d77577cb33831d",
+      "kind": "own-words",
+      "url": "https://www.marclombardo.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Filed legislation to secure elections with showing an ID to vote",
+      "note": "Campaign home page lists this among his accomplishments. No matching bill number was found on his legislature sponsor list, so the bill is not identified.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:27:40.103Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "65e2fe96a5bdad8273a8293760c8812b17cf4cccef4c047b79a0e67de86f59e2",
+      "kind": "own-words",
+      "url": "https://www.marclombardo.com/issues",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Requiring verification of citizenship or lawful status before receiving taxpayer-funded benefits",
+      "note": "Related item, not about voting: he lists verifying citizenship or lawful status for public benefits. Saved only as a related theme (citizenship verification).",
+      "subjects": [
+        "citizenship verification for benefits (related, not voting)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:27:40.103Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c19ad6437e734ddf5bc5c2c42cca9771db548fc3dc8d5503d540427c366ff8a1",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall42.pdf",
+      "date": "2025-04-29",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4000-AMDT-409-2025",
+      "act": "yea",
+      "motion": "On adoption of amendment #409 (H.4000) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 42, On adoption of amendment #409 (H.4000) - failed, 2025-04-29: yea (tally 25–131); the sheet lists 'Lombardo'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "edf75db6e0dee4a3cf4dfb9d5bb65a7d22f5722fa8a92057d5d2a2a6de43aeed",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/GetAmendmentContent/194/H4000/409/House/Content",
+      "date": "2025-04-29",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4000-AMDT-409-2025",
+      "act": "sponsor",
+      "note": "Moved Amendment #409 to H.4000, 'An Act relative to identification to vote' (2025-04-29).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "031da260f8e422347d5016f4a54a60c19a73e3efaba279ce2f337d18bdbfcb4e",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall174.pdf",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-5500-AMDT-1587-2026",
+      "act": "yea",
+      "motion": "On adoption of amendment #1587 (H.5500) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 174, On adoption of amendment #1587 (H.5500) - failed, 2026-04-28: yea (tally 27–131); the sheet lists 'Lombardo'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "eff3062a33ce764cb26f4cc3322a0b3e2923bed629971e2cc0551beab6c4fe94",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/GetAmendmentContent/194/H5500/1587/House/Content",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-5500-AMDT-1587-2026",
+      "act": "sponsor",
+      "note": "Moved Amendment #1587 to H.5500, 'An Act relative to identification to vote' (2026-04-28).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "fa8087771668164fa41cebcce4ea1837cefe0d5dda9c72df7aa9612f3319e886",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "nay",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: nay (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bbdd9bc7132a57a94f28cf83874fa7e904f8da79aa8251a3b1194121a5467815",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "nay",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: nay (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "3a4ea3a97f7f4bdbdbec2bd0159a53c3ceac4e61d0bea05be7023f40da9c8669",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/House/H4376",
+      "date": "2014-07-31",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4376-2013",
+      "act": "nay",
+      "motion": "Acceptance of the committee of conference report (Yea and Nay No. 483)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, Acceptance of the committee of conference report (Yea and Nay No. 483), 2014-07-31: nay (tally 122–30); census gate: multi-subject.",
+      "subjects": [
+        "firearm license classes merged and Class B licences phased out",
+        "new penalties for shooting and for trafficking guns into the state",
+        "background-check records sent to the federal system",
+        "ban on carrying firearms on school and college grounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "malegislature.gov roll-call PDFs + LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:34:02.477850Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4376-2013.introduced.pdf",
+          "sha256": "b94514a66e779c1400d1b875eb3aac207f6b1b1f12f9928fd8d977feab23bb61"
+        }
+      }
+    },
+    {
+      "id": "c5523d50a631897031188db98ea5d927074d7126174a492b6b9e8d21f240f855",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4517",
+      "date": "2018-05-23",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4517-2017",
+      "act": "yea",
+      "motion": "House On Engrossment Yea and Nay No. 359",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MA House, House On Engrossment Yea and Nay No. 359, 2018-05-23: yea (tally 139–14); census gate: near-unanimous.",
+      "subjects": [
+        "court orders to remove guns from people at risk of harming self or others",
+        "emergency orders without notice",
+        "penalty for false petitions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4517-2017.introduced.pdf",
+          "sha256": "3bac8bca02408059e2c0db49bae39de8a690f0fb6e1b5469f7a23cf51fbd5cc4"
+        }
+      }
+    },
+    {
+      "id": "7727b62aa6ef27fb9e9cfc73a0491b1c4dc595f2b71982384c335273fe2771d1",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4670",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4670-2017",
+      "act": "yea",
+      "motion": "On acceptance of the conference report (Yea and Nay No. 389)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, On acceptance of the conference report (Yea and Nay No. 389), 2018-06-28: yea (tally 133–15); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders to remove guns from people at risk of harming self or others",
+        "protection order added as a bar to gun licenses",
+        "stun gun rules and locked storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4670-2017.introduced.pdf",
+          "sha256": "6b37958358a3f01548ef0d16c386b3caaf5993d5c100f88279ff5b45ad1fe098"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free ID for voters without ID",
+        "proof of citizenship",
+        "election integrity",
+        "mail ballot ID",
+        "verification of citizenship for benefits (related)"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Marc_Lombardo says he advanced from the 2026-09-01 primary and is on the 2026-11-03 general ballot for MA House 22nd Middlesex; malegislature.gov profile https://malegislature.gov/Legislators/Profile/MTL1 names him as state representative, 22nd Middlesex",
+        "On the Record (0 appearances)",
+        "campaign site marclombardo.com (home, issues, accomplishments pages)",
+        "malegislature.gov sponsored and cosponsored bill lists (no election-ID bill listed in the 194th session pages; page shows only the current session)",
+        "Ballotpedia (nothing on the subject)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)",
+        "not reviewed: Twitter https://twitter.com/MarcTLombardo and Facebook (not fetched)",
+        "not reviewed: bill pages for prior-session voter ID filings"
+      ],
+      "found": 4,
+      "at": "2026-10-22T23:27:40.103Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style weapons",
+        "weapon regulation bills",
+        "firearm manufacture and sale",
+        "ghost guns",
+        "background checks and licensing",
+        "red-flag orders",
+        "carry permits",
+        "Second Amendment / gun rights statements",
+        "2024 gun law"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site marclombardo.com (fetched; mentions public safety in general terms only; nothing on guns)",
+        "malegislature.gov member profile https://malegislature.gov/People/Profile/MTL1 (confirms Representative Marc T. Lombardo, Billerica; bills listed in the portion returned include none on guns)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia: not relied on (returns empty to fetch tool)",
+        "news pages fetched, none names or quotes him on guns: WGBH 2023-10-10 hearing story, WBUR, Boston.com and Boston Globe 2023-10-18 House passage stories, Lowell Sun 2020 campaign story",
+        "news and group searches (3 web searches): no quote from him on gun regulation found; no gun-owner group questionnaire or endorsement page found for him",
+        "nothing on the subject: floor remarks on the 2023 and 2024 gun bills (no transcript found)"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:44:22.637Z",
+      "by": "source-collector"
+    }
+  ]
+}

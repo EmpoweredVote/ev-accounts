@@ -1,0 +1,491 @@
+{
+  "politician_id": "6cedb096-6638-4f3d-906f-1731c06d4ca4",
+  "findings": [
+    {
+      "id": "2eba6f2a24207fb98e1e99d1ff1cd1280c9b707923365e462812ee9d4529952a",
+      "kind": "own-words",
+      "url": "https://www.wvia.org/news/local/2024-04-20/041924col-109thhouse",
+      "date": "2024-04-20",
+      "date_precision": "day",
+      "passage": "“It's something that is not only common sense, but we know that it works,” he said.",
+      "note": "WVIA's candidate-comparison story, under the heading Election Reform/Term Limits, lists Leadbeter as favoring requiring identification each time someone votes and quotes him with these words. The outlet quoted him; the story's paraphrase around it also says he favors more frequent voter-roll purges so only eligible voters vote. The 'Sudafed' quote in the same story belongs to his opponent, not to him.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:05:10.278Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a3d6fb831214f4c2211322133a08ec7a6197f94c3ff15992ef4e8946fe922f3",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250919222333/https://www.palegis.us/legislation/bills/2025/hb437",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-437-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 418 (as introduced; the only printer's number). Text NOT read: no archived copy of the text page was found. Page copy dated 2025-09-19. Memo subject printed on the page: \"Voter ID Constitutional Amendment\".",
+      "note": "Named as co sponsor ('LEADBETER') on the official bill page; linked to Robert Leadbeter via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.863Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d13e52158fce5819ebb61b2e4e6c9ae0e263bc9ae23c829d12a44529c1a0e3a7",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241010200041/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=891",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-891-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 873 (as introduced; the only printer's number). Read. Archived history page copy dated 2024-10-10 still shows referral to State Government as the last action.",
+      "note": "Named as co sponsor ('LEADBETER') on the official bill page; linked to Robert Leadbeter via the official 2023 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.863Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('LEADBETER'), linked to Robert Leadbeter (district 109) via the official 2023-2024 House member roll (identity step 2026-10-28). Corrected 2026-11-03: PN 1171 has no voter-ID text (struck by A02604, 2023-10-17); this vote says nothing about ID.",
+      "subjects": [
+        "voter ID removed from this version"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.863Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2f65853a720e57cb22105fb00a60edcc4fa62bbf6324a24d79c15c57261cf59e",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250403213116/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=572",
+      "date": "2023-10-04",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-AMDT-A02365-2023",
+      "act": "yea",
+      "motion": "House: On the question, Will the House agree to the amendment? (A02365 to SB 224 PN 1097; House RCS No. 572) - agreed to",
+      "note": "House roll call as printed ('LEADBETER'), linked to Robert Leadbeter (district 109) via the official 2023-2024 House member roll (identity step 2026-10-31, pa-01 A02365).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-31-a02365",
+        "fetched_at": "2026-10-31T15:52:56.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6bcc2ae00b4c79f1ffdbe4207b35e3d3e0cce31c8ed5214b6a521f5afe41aa14",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "nay",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Leadbeter'), linked to Robert Leadbeter (district 109) via the official 2025-2026 House member roll (identity step 2026-10-31, pa-01 HB 1396 nays).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-31-raw-votes",
+        "fetched_at": "2026-10-31T18:07:00.904Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a999cadc10a166781fbfc668c8e03a86e62da8b0fd7ff3a9cab86dce67ff559b",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/36707/Leadbeter-Introduces-Legislation-to-Prevent-Red-Flag-Laws-in-Pennsylvania-?SiteID=1",
+      "date": "2025-09-17",
+      "date_precision": "day",
+      "passage": "“One of the greatest potential abuses inflicted on Pennsylvania gun owners comes under the guise of ‘red flag’ gun confiscation,” said Leadbeter. “Not only do these laws blatantly violate the Second Amendment, but they also infringe on the 14th Amendment in the U.S. Constitution, as it reads no state shall ‘deprive any person of life, liberty, or property, without due process of law.’”",
+      "note": "Quote in his press release announcing his bill to bar red flag laws in Pennsylvania.",
+      "subjects": [
+        "red flag orders",
+        "Second Amendment",
+        "due process before guns are taken"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:49:56.665Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0498887f87b9ac7169b8d36351c29cd2da7d366c08f211c37e89e34fa38d167e",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/36707/Leadbeter-Introduces-Legislation-to-Prevent-Red-Flag-Laws-in-Pennsylvania-?SiteID=1",
+      "date": "2025-09-17",
+      "date_precision": "day",
+      "passage": "HARRISBURG – To uphold the Second Amendment and protect the freedoms of law-abiding citizens, state Rep. Robert Leadbeter (R-Columbia) introduced legislation to prohibit Red Flag laws in Pennsylvania.",
+      "note": "Opening sentence of the release issued in his name on the day he introduced the bill.",
+      "subjects": [
+        "red flag orders",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:49:56.665Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "900ad12efc6ab1b46e154f69f5b2558bb10e616c4107b57eb34667ebabe819c3",
+      "kind": "record",
+      "url": "https://webcms.pahousegop.com/News-Print/36707/Leadbeter-Introduces-Legislation-to-Prevent-Red-Flag-Laws-in-Pennsylvania-?SiteID=1",
+      "date": "2025-09-17",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1867-2025",
+      "act": "sponsor",
+      "note": "He introduced House Bill 1867, which would prohibit red flag laws in Pennsylvania. The release says it was awaiting committee assignment. Official bill page was blocked, so sponsorship rests on the House caucus release.",
+      "subjects": [
+        "red flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:49:56.665Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fa55d9dc1027269c637b9850548a283612cd041b15e8b76168cbbe1c26a44d54",
+      "kind": "own-words",
+      "url": "https://pennsylvaniafreedomcaucus.substack.com/p/pa-freedom-caucus-proposed-repeal",
+      "date": "2023-05-12",
+      "date_precision": "day",
+      "passage": "“Reestablishing the “duty to retreat” law puts the most vulnerable and least accessible members of our commonwealth in grave danger. This only expands a criminal’s ability to overpower single moms, young people, folks with medical conditions, legal immigrants, low-income individuals, and anyone else who could be seen as a target by violent criminals.”",
+      "note": "Quoted in a Freedom Caucus release responding to a proposal to repeal Pennsylvania's stand your ground law. Post date taken from the fetch result.",
+      "subjects": [
+        "stand your ground law",
+        "self-defence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:49:56.665Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5e8cf74617f046b0d7e38443b3a0be25cc360d9342876da8e4396b4ebf3f36d2",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/66480/race/33167/election/1477",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "The Second Amendment ensures the right to bear arms, and shall not be infringed. Responsible gun ownership enhances public safety.",
+      "note": "His answer to the voter-guide question 'What restrictions on gun ownership are needed to protect public safety?', on his 2026 general election profile.",
+      "subjects": [
+        "limits on gun ownership",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:49:56.665Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5a1e8a788a9a3b1de393bdb1dde749a6f598706061fbe03d4e66bccf89447f17",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb454",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-454-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-454-2025 (LegiScan sponsor list): HB454 (2025-2026 Regular Session): In firearms and other dangerous articles, repealing provisions relating to firearms not to be carried without a license, providing for license not required, repealing provisions relating to carrying firearms on public streets or public property in Philadelphia, further providing for prohibited conduct during emergency, providing for sportsman's firearm permit, further providing for licenses and for antique firearms and repealing provisions relating to proof of license and exception; and making editorial changes..",
+      "subjects": [
+        "no license needed to carry firearms openly or concealed",
+        "carry license made optional",
+        "Philadelphia public-carry rule repealed",
+        "license age minimum and character check removed",
+        "duty to show license on demand repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-454-2025.introduced.pdf",
+          "sha256": "f30ec3f128cf3767ddff70a1eeaf2b9e5550db871bb897761638ddd54b516abe"
+        }
+      }
+    },
+    {
+      "id": "d286596c5fbf23976f50103b657a58aab391f2dc93424dafbbac8f5df6ae6538",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb548",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-548-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-548-2025 (LegiScan sponsor list): HB548 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for limitation on the regulation of firearms and ammunition; and, in preemptions, providing for regulation of firearms and ammunition..",
+      "subjects": [
+        "state preemption of local gun and ammunition rules extended to all municipalities",
+        "lawsuits and expense awards against local governments that break preemption"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-548-2025.introduced.pdf",
+          "sha256": "96cead2961c739e15a8f1b6213d6cebb08434f6d00d7d5db6ad44267c48a36b1"
+        }
+      }
+    },
+    {
+      "id": "d51dc3a5330421c3e36c612a67e7e9bb4c8a0f2590f294d4c324b176f9addc31",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=893",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-893-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-893-2023 (LegiScan sponsor list): HB893 (2023-2024 Regular Session): Providing for Second Amendment Preservation Act, for limitation of Federal law and for private cause of action; and imposing a penalty..",
+      "subjects": [
+        "state declares federal gun laws void",
+        "state officers barred from enforcing federal gun laws",
+        "lawsuits and penalties against federal enforcers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-893-2023.introduced.pdf",
+          "sha256": "1f29f95c24f1689c0b30239ad30dfbb9aa1d60189079034113efbdb7b8f68491"
+        }
+      }
+    },
+    {
+      "id": "aadf049da9c877b6ff2c394840cb4aa7ed6144423f58ce2833cec97296371de3",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=1018",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1018-2023",
+      "act": "nay",
+      "motion": "House Floor: HB 1018 PN 1152, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 1018 PN 1152, FINAL PASSAGE, 2023-05-22: nay (tally 102–99); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders created to remove firearms",
+        "firearm ban while an order is active",
+        "penalty for not turning in firearms under an order",
+        "longer penalty for prohibited persons found with a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1018-2023.amended.pdf",
+          "sha256": "05d5a4c60b9a22ac9e77d07afe3e7adc8841cd9dab1224832eb50521b29958a6"
+        }
+      }
+    },
+    {
+      "id": "465f6ee5ddd1f662a245de10a843aaa91be6f6eb2fd9c53ca322315e316e29ad",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=777",
+      "date": "2024-03-27",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-777-2023",
+      "act": "nay",
+      "motion": "House Floor: HB 777 PN 2578, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 777 PN 2578, FINAL PASSAGE, 2024-03-27: nay (tally 104–97); census gate: none.",
+      "subjects": [
+        "sale or transfer of unserialized gun frames, receivers and kits made a felony",
+        "buying parts to build an unserialized gun made a felony",
+        "licensed dealers must mark and record privately made firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-777-2023.amended.pdf",
+          "sha256": "65a5f4847629a43127721168bc31890a6fd60f0aefae6ac528a3cd698d73d35e"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter-roll checks",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site repleadbeter.com home page and press-release list page 1 (about 20 items): nothing on the subject",
+        "official site video list (3 videos): nothing on the subject",
+        "official site search page: page not found, nothing on the subject",
+        "blocked: https://ballotpedia.org/Robert_Leadbeter",
+        "blocked: https://ballotpedia.org/Pennsylvania_House_of_Representatives_District_109",
+        "Wikipedia page confirms he is the sitting member for the 109th district (elected 2022); could not confirm a 2026 ballot line from any fetched page",
+        "WVIA 2024-04-20 primary story (found, one own-words quote)",
+        "PoliticsPA 2024 primary preview: fetched, its voter ID text for this race sits under other candidates, not saved",
+        "news searches on name plus subject words: nothing further found",
+        "not reviewed: bill pages and roll calls (linked separately by brief)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:05:10.278Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-29T14:14:50.863Z",
+      "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-31, pa-01 A02365)"
+      ],
+      "found": 1,
+      "at": "2026-10-31T15:52:56.603Z",
+      "by": "identity-pa-2026-10-31-a02365"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-31, pa-01 HB 1396 nays)"
+      ],
+      "found": 1,
+      "at": "2026-10-31T18:07:00.904Z",
+      "by": "identity-pa-2026-10-31-raw-votes"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red flag orders",
+        "limits on gun ownership",
+        "stand your ground law",
+        "Second Amendment general statements",
+        "local limits on gun rules",
+        "teachers carrying guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://www.repleadbeter.com (home page and press release list: school safety grants only, nothing else on the subject; no gun item found in list)",
+        "blocked: https://www.repleadbeter.com/Legislation/Sponsorships (page not found)",
+        "House caucus news page for his red flag bill (fetched, saved)",
+        "blocked: https://www.palegis.us/legislation/bills/2025/hb1867 (403; same for hb548 and the member page)",
+        "blocked: https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2025&sind=0&body=H&type=B&bn=1867 (403)",
+        "blocked: https://legiscan.com/PA/bill/HB1867/2025 (403)",
+        "blocked: https://www.wfmz.com/news/state/leadbeter-introduces-legislation-to-prevent-red-flag-gun-laws-in-pa/article_bc869ed2-1e7b-51c2-8c72-c9539b2c249c.html (429; reprint of the same release, not needed)",
+        "caucus post on stand your ground (fetched, saved)",
+        "iVoterGuide profile (confirms 2026-11-03 general election candidate, House District 109; questionnaire saved)",
+        "HB 548 (local gun-rule limits) co-sponsorship: seen only on a third-party tracker, official bill page blocked, so not saved",
+        "Ballotpedia: not reachable by fetch tool, not relied on",
+        "news searches on his name plus gun terms (3 searches)"
+      ],
+      "found": 5,
+      "at": "2026-10-30T22:49:56.665Z",
+      "by": "source-collector"
+    }
+  ]
+}

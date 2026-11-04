@@ -1,0 +1,62 @@
+{
+  "politician_id": "8bbbf3eb-2902-4846-b2bd-7a0ae37eadb0",
+  "findings": [
+    {
+      "id": "d1992d22dbc5b0826778ae6eeadcffe34c82386c05999814fcc1a08ef294b48c",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/Legislation/20252026/240918.pdf",
+      "date": "2026-01-29",
+      "date_precision": "day",
+      "passage": "House Bill 1109 By: Representatives Byrd of the 20th, Kahaian of the 81st, Dunahoo of the 31st, and Barrett of the 24th",
+      "instrument_id": "GA-HB-1109-2026",
+      "act": "sponsor",
+      "motion": "HB 1109, Elections; certain driver's licenses and identification cards shall not be proper identification",
+      "note": "She is one of four named sponsors. The bill amends Code Section 21-2-417 so that a driver's license or special ID card issued to a noncitizen is not proper ID to show a poll worker, and it would require licenses held by noncitizens to carry the words 'BEARER NOT A U.S. CITIZEN - NOT VOTER ID' and an 'NC' number prefix. Date is the first-reading date recorded by a bill tracker (policyrisk.com, fetched); the tracker shows the bill stopped at House Second Readers on 2026-02-03 and did not pass.",
+      "subjects": [
+        "voter ID at the polls",
+        "noncitizen driver's licenses as voter ID",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.741Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen licenses as voter ID",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "identity confirmed: https://en.wikipedia.org/wiki/Noelle_Kahaian (member of the Georgia House, District 81, since 2025-01-13; sitting official, in scope)",
+        "https://www.branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-81/candidates/noelle-kahaian (listed in the 2026 general race; says she sponsored HB 1109)",
+        "On the Record (0 appearances)",
+        "blocked: https://ballotpedia.org/Noelle_Kahaian (fetch returned an empty page)",
+        "blocked: https://legiscan.com/GA/bill/HB1109/2025 (HTTP 403)",
+        "https://policyrisk.com/state-bill/GA-HB1109-2025-2026 (sponsor list and history)",
+        "https://www.legis.ga.gov/Legislation/20252026/240918.pdf (official bill text PDF of HB 1109, downloaded)",
+        "https://house-press.com/?p=14135 (House caucus release on her swearing-in; nothing on the subject)",
+        "web search for name with voter ID and 2026 election (found HB 1109)",
+        "web search for name with HB 1109 and her remarks (no own words found)",
+        "official House page and campaign site: none found with relevant content",
+        "legis.ga.gov bill pages: not reviewed (login token needed); only the public PDF was used"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:28:59.741Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -1,0 +1,476 @@
+{
+  "politician_id": "61a601c2-7faa-4889-abf2-bbb0066ce448",
+  "findings": [
+    {
+      "id": "88fc6106616bb0be0e5f39d9de61dd965f5822d99192b82030dbc8277df69284",
+      "kind": "record",
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00073.htm",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "US-S-AMDT-4732-2026",
+      "act": "nay",
+      "motion": "Roll call 73, cloture on Husted Amdt. 4732 to S.Amdt. 4420 to S. 1383 (SAVE America Act vehicle), to require voters to provide photo identification; rejected 53-47",
+      "note": "Voted nay on ending debate on an amendment requiring voters to show photo identification. Cloture failed, 53 yeas to 47 nays, 3/5 needed.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID requirement"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:36:36.519Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "611bf00d5657472021e55ae441763adaac46e6f7b43a68a2f81cb297cf25321c",
+      "kind": "record",
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00068.htm",
+      "date": "2026-03-24",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "Roll call 68, motion to table the motion to refer the House message to accompany S. 1383 (SAVE America Act vehicle) to the Committee on Rules and Administration; agreed to 53-47",
+      "note": "Voted nay on a procedural motion tied to the House message carrying the SAVE America Act (proof of citizenship to register, photo ID to vote).",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "SAVE America Act procedure"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:36:36.519Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "052b8ef0d4a1f556b9b23ff01cfcb03146cbbf5f502284187f4504a289a10e76",
+      "kind": "record",
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00057.htm",
+      "date": "2026-03-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "Roll call 57, motion to proceed to the House message to accompany S. 1383 (SAVE America Act vehicle); agreed to 51-48",
+      "note": "Voted nay on the motion to begin Senate consideration of the House message carrying the SAVE America Act.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "SAVE America Act procedure"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:36:36.519Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9722baf2a68af241d7eac2902711eafc6371a2d28486ac5fa54a9886e846dd18",
+      "kind": "own-words",
+      "url": "https://www.vanhollen.senate.gov/news/videos/watch/this-is-a-fraud-masquerading-as-an-election-integrity-effort",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "This is a fraud masquerading as an election integrity effort.",
+      "note": "Caption on his official video page about the SAVE America Act, which the page describes as a bill designed to make it harder for certain citizens to vote. Issued in his name.",
+      "subjects": [
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:36:36.519Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3f6da04cf76dfaf2cc4b02464821a71e65b896dbd3f193ffa3468049fe268e42",
+      "kind": "own-words",
+      "url": "https://www.vanhollen.senate.gov/about/issues/voting-rights",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "In Congress, Senator Van Hollen is fighting to pass the Freedom to Vote Act, legislation he has cosponsored that would establish a minimum set of national standards to ensure that our fellow citizens can make their voices heard at the ballot box.",
+      "note": "Issue page on his official site (undated) says he cosponsored the Freedom to Vote Act, a national minimum-standards voting bill. The page does not mention voter ID by name.",
+      "subjects": [
+        "national voting standards",
+        "Freedom to Vote Act",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:36:36.519Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bb18291345032671f7617014bc1ff7fc802d97838ac31e05f961ca8bb6be43d4",
+      "kind": "own-words",
+      "url": "https://www.wbal.com/maryland-sen-chris-van-hollen-says-save-act-could-disenfranchise-millions",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "“Nobody is going to risk going to prison for six years in order to cast a vote in an election,” Van Hollen said. “I mean that defies common sense and it also defies the facts, which is why Republicans can’t come up with any proof.”",
+      "note": "Quoted by WBAL Baltimore News from his Senate floor remarks on the SAVE America Act. He says there is no evidence of widespread non-citizen voting. WBAL also reports that he said the bill will disenfranchise millions of voters (reporter's words, not his).",
+      "subjects": [
+        "SAVE America Act",
+        "non-citizen voting claims",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:57:18.140Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d7675ba70c37b1ef2180d4ca25b67dd2d45fc2291a4b89110e9b23a9af40ba0b",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-117s2938enr/html/BILLS-117s2938enr.htm",
+      "date": "2022-06-23",
+      "date_precision": "day",
+      "instrument_id": "US-S-2938-2022",
+      "act": "yea",
+      "motion": "Motion to Concur in the House amendment to S. 2938 with an amendment (Amdt. No. 5099)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US Senate, Motion to Concur in the House amendment to S. 2938 with an amendment (Amdt. No. 5099), 2022-06-23: yea (tally 65–33); census gate: multi-subject.",
+      "subjects": [
+        "background checks for buyers under 21",
+        "court orders that take guns from a dangerous person (state grants)",
+        "gun trafficking (package)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c20fcb96eb78e01ead82694ac19d878a311409fb4bbbe34cb7a90636662f5d55",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2023252",
+      "date": "2023-06-22",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-44-2023",
+      "act": "nay",
+      "motion": "On the Joint Resolution (H.J. Res. 44)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Joint Resolution (H.J. Res. 44), 2023-06-22: nay (tally 49–50); census gate: none.",
+      "subjects": [
+        "cancel the federal pistol-brace rule"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-118hjres44eh.txt",
+          "sha256": "d04fe1fe2a2512a1932d14b7b93d88fe25ac6712851bc4caa37df31b89101f4d"
+        }
+      }
+    },
+    {
+      "id": "c90bdbcf78bf71ec4d53648b4f8ebe188ca331c8dd00e4aa90ea8f004b52d94a",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2025190",
+      "date": "2025-07-01",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2025",
+      "act": "nay",
+      "motion": "On Passage of the Bill (H.R. 1, as Amended)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US Senate, On Passage of the Bill (H.R. 1, as Amended), 2025-07-01: nay (tally 50–50); census gate: multi-subject.",
+      "subjects": [
+        "end the federal tax on suppressors and short-barrelled guns",
+        "budget (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0bcf016471a3530743def7198ea1e65f8306869d44346ee0c3488fbcb08902dc",
+      "kind": "own-words",
+      "url": "https://bethesdamagazine.com/2013/04/18/van-hollen-condemns-gun-control-failure-in-senate/",
+      "date": "2013-04-18",
+      "date_precision": "day",
+      "passage": "Today, in a sickening display of political cowardice, an undemocratic minority of senators blocked a series of bills that would help reduce gun violence, including a bipartisan compromise proposal to close gaping loopholes in current law and keep guns out of the hands of criminals and people with severe mental illnesses – a proposal that has the support of 90 percent of Americans.",
+      "note": "His statement as a House member, printed in full by Bethesda Magazine, after the Senate blocked the 2013 background-check compromise. Date is the article date.",
+      "subjects": [
+        "check every gun buyer",
+        "limits on who may have a gun",
+        "general gun safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:00:13.379Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6194b84e1ec73b47c68660234b7e09a9b24c9ac774641eb8607b8d5a1b6d7048",
+      "kind": "own-words",
+      "url": "https://bethesdamagazine.com/2013/04/18/van-hollen-condemns-gun-control-failure-in-senate/",
+      "date": "2013-04-18",
+      "date_precision": "day",
+      "passage": "We have a long tradition in this country of responsible gun ownership – but in the wake of too many tragedies, including the massacre in Newtown, we are clearly not doing enough to keep our citizens safe.",
+      "note": "Same 2013 statement. Mentions responsible gun ownership and says current action is not enough.",
+      "subjects": [
+        "general gun safety statement",
+        "responsible gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:00:13.379Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ca1c609e95be0307b653121dddfdc98a785b97f8f4f89255c176da477964cb7e",
+      "kind": "own-words",
+      "url": "https://raskin.house.gov/2022/7/maryland-congressional-delegation-members-release-statement-on-suspension-of-state-s-good-and-substantial-reason-standard-for-concealed-carry-permits",
+      "date": "2022-07",
+      "date_precision": "month",
+      "passage": "The Supreme Court's decision to interfere with common-sense concealed carry laws will ultimately result in more guns on our streets and less safe communities.",
+      "note": "Joint statement issued in the names of both Maryland senators and six House members (he is one), after the Bruen ruling and Maryland's suspension of its 'good and substantial reason' carry-permit standard. Posted on Rep. Raskin's site; month taken from the URL.",
+      "subjects": [
+        "carry permits",
+        "Bruen ruling",
+        "general gun safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:00:13.379Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3433df704fe2c242fdb97a9233480dc168e34a0d940b093746f9218798175a82",
+      "kind": "own-words",
+      "url": "https://raskin.house.gov/2022/7/maryland-congressional-delegation-members-release-statement-on-suspension-of-state-s-good-and-substantial-reason-standard-for-concealed-carry-permits",
+      "date": "2022-07",
+      "date_precision": "month",
+      "passage": "Now more than ever, we are committed to pushing for federal gun safety reforms that are proven to better protect our communities and are overwhelmingly supported by the American people.",
+      "note": "Same joint statement; commits the signers to federal gun safety reforms.",
+      "subjects": [
+        "federal gun safety reforms",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:00:13.379Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bd995a1e3dcb680b70cd621d4f6b5164604a5bb6d3a92c8170d6bb68a529fb9",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/115th-congress/house-joint-resolution/40",
+      "date": "2017-02-15",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-40-2017",
+      "act": "nay",
+      "motion": "Passed Senate without amendment by Yea-Nay Vote. 57 - 43. Record Vote Number: 66 (Roll 66)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, Passed Senate without amendment by Yea-Nay Vote. 57 - 43. Record Vote Number: 66 (Roll 66), 2017-02-15: nay (tally 57–43); census gate: none.",
+      "subjects": [
+        "rule sending records to gun background check system overturned"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HJRES-40-2017.htm",
+          "sha256": "616db93c5dbc0f8d42ff56878c6d7302412f4feaade1ac2794ac4020fae05e55"
+        }
+      }
+    },
+    {
+      "id": "7b0ece74e62d90b736e118101b5ca4d4a3d5365e9a5c7049fec2dae5e9351c9e",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/117th-congress/senate-bill/3623",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "US-S-3623-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2022-03-10",
+      "note": "co sponsor of US-S-3623-2022 (cosponsor 2022-03-10): S 3623 (117th Congress): Violence Against Women Act Reauthorization Act of 2022.",
+      "subjects": [
+        "failed gun background checks reported to state and tribal police within 24 hours",
+        "special prosecutors for domestic-violence gun prohibitions",
+        "annual report on background check denials"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-S-3623-2022.htm",
+          "sha256": "419c00ae6f2e6419ac37d5acb435277d30262291fcc4f6029d92a54840724e31"
+        }
+      }
+    },
+    {
+      "id": "bc4d8c5d394b8fd0c6878c21f7d001c7298234610622b0e0bfaf94d9ab462625",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/senate-bill/494",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "US-S-494-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2023-02-16",
+      "note": "co sponsor of US-S-494-2023 (cosponsor 2023-02-16): S 494 (118th Congress): Background Check Expansion Act.",
+      "subjects": [
+        "background check required for private firearm sales and transfers",
+        "dealer notice and certification form"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-S-494-2023.htm",
+          "sha256": "0eaaa7cc5526464d22459d097de221fb72ed82b50625475b2294e52829e78e63"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register (SAVE Act / SAVE America Act)",
+        "election integrity laws in general",
+        "national voting standards (Freedom to Vote Act)",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "confirmed in scope: sitting U.S. Senator, Maryland, term ends 2029, not on the 2026 ballot (https://ballotpedia.org/Chris_Van_Hollen)",
+        "On the Record (0 appearances, 0 candidates)",
+        "official site press releases first page and site search for SAVE Act (https://www.vanhollen.senate.gov/news/press-releases): nothing on the subject in pages seen",
+        "official site videos (2 floor-remarks pages, 2026-03-18) and voting-rights issue page",
+        "Senate roll call votes 57, 68, 73 of the 119th Congress, 2nd session (senate.gov)",
+        "Ballotpedia (office and term only; nothing on the subject)",
+        "news search: WFMD 2025-04-16 town hall report (reporter paraphrase only, not saved as his words)",
+        "not reviewed: video of the 2026-03-18 floor speech (no transcript on page)",
+        "not reviewed: https://www.congress.gov/member/chris-van-hollen/V000128 (sponsorship list not fetched)",
+        "official video page 2026-03-18 'speaks on Senate floor' not saved: the only usable sentence names a party"
+      ],
+      "found": 5,
+      "at": "2026-10-22T21:36:36.519Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "SAVE America Act",
+        "proof of citizenship to register",
+        "photo ID to vote",
+        "non-citizen voting claims",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "blocked: https://www.vanhollen.senate.gov/news/press-releases (HTTP 403 to the fetch tool; no readable result by curl)",
+        "news search on his name plus SAVE America Act and voter ID",
+        "WBAL Baltimore News article, 2026-03-18 (his floor remarks quoted)",
+        "Congressional Record pages for 2026-03-17, 03-19 and 03-23 (no text by him found in them)",
+        "a news-summary site repeating another quote of his, not used because it is not the original outlet",
+        "not reviewed: https://www.congress.gov (sponsorships and co-sponsorships)",
+        "not reviewed: Ballotpedia"
+      ],
+      "found": 1,
+      "at": "2026-10-27T19:57:18.140Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "permit to buy a handgun",
+        "ghost guns",
+        "carry permits after the Bruen ruling",
+        "limits on who may have a gun",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://www.vanhollen.senate.gov/search?q=gun",
+        "blocked: https://www.vanhollen.senate.gov/news/press-releases/van-hollen-cardin-join-in-introducing-bills-to-protect-communities-schools-from-assault-weapons",
+        "blocked: https://www.vanhollen.senate.gov/news/press-releases/van-hollen-raskin-reintroduce-permit-to-purchase-gun-safety-bill",
+        "blocked: https://www.congress.gov/member/chris-van-hollen/V000128 (sponsorships; bot check)",
+        "blocked: https://www.govtrack.us (bot check)",
+        "blocked: https://ballotpedia.org/Chris_Van_Hollen",
+        "blocked: https://marylandmatters.org/2019/09/04/van-hollen-blasts-mcconnell-over-senate-inaction-on-gun-bill/",
+        "blocked: https://afro.com/van-hollen-remarks-on-house-floor-demanding-vote-on-gun-safety-legislation/",
+        "Senate press releases on bills he co-introduced (assault weapons, universal background checks, no check no sale, permit to purchase, ghost guns) were found by search but all senate.gov pages refuse the fetch, so the bill sponsorship records are not saved: gap, not nothing",
+        "Bethesda Magazine 2013 page with his full statement",
+        "Rep. Raskin's site, 2022 joint statement by the Maryland delegation"
+      ],
+      "found": 4,
+      "at": "2026-10-30T15:00:13.379Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "politician_id": "270e2fd2-45bf-4325-ab38-9c9343a89b9e",
+  "findings": [
+    {
+      "id": "5224f69e7a0eaac53dedf584d82a6db6774f92ed1e99d0dd1ccd78756f9a813b",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/9374/51605",
+      "date": "2019-01-29",
+      "date_precision": "day",
+      "instrument_id": "SD-SB-47-2019",
+      "act": "nay",
+      "motion": "Do Pass (final House passage)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SD House, Do Pass (final House passage), 2019-01-29: nay (tally 47–23); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/SD_SB47_intro_51605.pdf",
+          "sha256": "0466d77011414fe00091581533ef0c56b6517e871eb47c4d1e116e852eb5a663"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

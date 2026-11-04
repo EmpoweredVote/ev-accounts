@@ -1,0 +1,187 @@
+{
+  "politician_id": "ad5ba3f2-8bab-4165-8835-a0f754b1f965",
+  "findings": [
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Inglis'), linked to John C. Inglis III (district 38) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.720Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e0ef76bf52f257932f340675c18452f8d5491bf4a0f3213f323059945d572fba",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251030233525/https://www.palegis.us/legislation/bills/2025/hb771",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-771-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1624 (as reported from State Government as amended, May 6, 2025). Read. Page copy dated 2025-10-30.",
+      "note": "Named as co sponsor ('INGLIS') on the official bill page; linked to John C. Inglis III via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.862Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "800874da45274888c512c3ce2ff57a496ed6554c3743f6c10ad583d9553f5506",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb1065",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1065-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-1065-2025 (LegiScan sponsor list): HB1065 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for definitions and providing for the offense of sale of firearm or firearm parts without serial numbers and for privately made firearms..",
+      "subjects": [
+        "sale of unserialized gun frames and kits made a felony",
+        "buying parts to build an untraceable gun made a felony",
+        "dealers must mark privately made firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1065-2025.introduced.pdf",
+          "sha256": "34b91995f20ec4936440cc2230659301f600d37e7e50653195d36caf02ae3e7c"
+        }
+      }
+    },
+    {
+      "id": "974a1fe6ea97e6fb2707025c37b89b50385ef4dc9f093e3769f59e928f7f3fe4",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb2244",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2244-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-2244-2025 (LegiScan sponsor list): HB2244 (2025-2026 Regular Session): In sales and use tax, further providing for exclusions from tax. Amending Title 18 (Crimes and Offenses) of the Pennsylvania Consolidated Statutes, in firearms and other dangerous articles, providing for the offense of unauthorized access to firearms..",
+      "subjects": [
+        "secure storage required for firearms",
+        "strict civil liability for unsecured firearms",
+        "sales tax exemption for gun safes and gun locks",
+        "retailer must post storage warning"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2244-2025.amended.pdf",
+          "sha256": "44aa84fd2022c4fe857f2ee2443a4cec6a4dd720f0590e9cdde0e487b9a44723"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House site member page https://www.pahouse.com/Inglis (identity confirmed: 38th District; news items Sept-Oct 2026; nothing on the subject)",
+        "official House site biography page (nothing on the subject)",
+        "official House site news list https://www.pahouse.net/inglis/InTheNews (nothing on the subject)",
+        "web search limited to the House site (nothing on the subject by him)",
+        "blocked: https://ballotpedia.org/John_Inglis_(Pennsylvania) (empty page)",
+        "blocked: https://bluevoterguide.org/district/PA/Pennsylvania_House_of_Representatives_District_38/48412/793 (403)",
+        "two news/web searches on name plus voter ID and 2026 (no own words on the subject found)",
+        "not confirmed from a fetched page: 2026 general-election ballot placement (search results show him as incumbent candidate; both pages that would show it were blocked); no sign of a lost primary or withdrawal"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:09:13.418Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:45:58.720Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.862Z",
+      "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general statements on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity confirmed: https://www.pahouse.net/inglis/InTheNews is his House member news page (38th District, Allegheny County); 2026 ballot status not confirmed from a fetched page",
+        "official member news page https://www.pahouse.net/inglis/InTheNews (headlines only; nothing on the subject)",
+        "sponsor list: covered by LegiScan bulk check",
+        "https://www.cbsnews.com/amp/pittsburgh/news/john-inglis-stone-sobieralski-pennsylvania-state-house-seat (2024 race story; nothing on the subject)",
+        "blocked: https://bluevoterguide.org/district/PA/Pennsylvania_House_of_Representatives_District_38/48412/793",
+        "Ballotpedia and campaign site: not reviewed, no separate fetch made",
+        "news searches on name plus gun words (2 searches): nothing on the subject by him"
+      ],
+      "found": 0,
+      "at": "2026-10-30T23:58:31.193Z",
+      "by": "source-collector"
+    }
+  ]
+}

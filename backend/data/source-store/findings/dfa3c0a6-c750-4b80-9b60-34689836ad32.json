@@ -1,0 +1,502 @@
+{
+  "politician_id": "dfa3c0a6-c750-4b80-9b60-34689836ad32",
+  "findings": [
+    {
+      "id": "908b5153d1edb548856cd93ad1a2d34446f8c363b10a574ebe1ccd5c56a477e8",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/31/august/press-releases/assembly-republicans-announce-voter-id-constitutional-amendment/",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "passage": "“The legislature continues to make election integrity one of our top priorities,” said August.  “I am confident that voters will approve Voter ID overwhelmingly in April.”",
+      "note": "Press release on the resolutions to put a photo ID requirement for voting into the state constitution; he expects voters to approve it. (The press release page holds the text as an image, https://legis.wisconsin.gov/assembly/31/august/media/marp2njz/voterid2025.jpg; the passage was read from that image.)",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:10:42.355Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2e797424b51b03b91fc2c39856a96eef507b92328736bb24d75c75fd5c514e60",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/31/august/press-releases/assembly-republicans-announce-voter-id-constitutional-amendment/",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "passage": "“Our goal is to get Voter ID into the constitution so that the common-sense law cannot be blocked by progressive judges.”",
+      "note": "Same release; he gives his reason for putting the photo ID rule into the constitution. (The press release page holds the text as an image, https://legis.wisconsin.gov/assembly/31/august/media/marp2njz/voterid2025.jpg; the passage was read from that image.)",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:10:42.355Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a1485fb1d20ceb7a6b0d66e48959f4dae8a5fb14a137df291d9e6eae6eb9d2eb",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/31/august/press-releases/assembly-republicans-announce-voter-id-constitutional-amendment/",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "passage": "August pointed out that cementing the popular law into the Constitution will ensure an activist court is unable to strike down the provision.",
+      "note": "Same release; text written about him in the press release, issued from his office, and not a direct quote. (The press release page holds the text as an image, https://legis.wisconsin.gov/assembly/31/august/media/marp2njz/voterid2025.jpg; the passage was read from that image.)",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:10:42.355Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "09a1e328f9df26856a5f0dcbe37ea20419366a279ecf25a1d9b39161efce5caf",
+      "kind": "own-words",
+      "url": "https://mailchi.mp/4deee820b2be/improving-election-integrity?e=0c8b823425",
+      "date": "2024-05-17",
+      "date_precision": "day",
+      "passage": "A key to ensuring election integrity in Wisconsin continues to be the requirement of a photo ID to vote.",
+      "note": "Legislative e-update by him on election integrity; photo ID to vote section.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:10:42.355Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dda287be83ff64a58c3593bf78b7731817222e62c099f756e1536e86eb32f5b1",
+      "kind": "own-words",
+      "url": "https://mailchi.mp/4deee820b2be/improving-election-integrity?e=0c8b823425",
+      "date": "2024-05-17",
+      "date_precision": "day",
+      "passage": "Putting this common-sense provision into our constitution will ensure it cannot be ignored or struck down by an activist court.",
+      "note": "Same e-update, photo ID section.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:10:42.355Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "29a5f01596a6debed93233a5447bec2cdee14ad4457fcacf68eff784db936fb9",
+      "kind": "own-words",
+      "url": "https://mailchi.mp/4deee820b2be/improving-election-integrity?e=0c8b823425",
+      "date": "2024-05-17",
+      "date_precision": "day",
+      "passage": "I authored another constitutional amendment that would affirm that only US citizens are eligible to vote.",
+      "note": "Same e-update; he says he wrote a constitutional amendment on citizenship as a voting requirement.",
+      "subjects": [
+        "citizenship to vote",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:10:42.355Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "686ab44a0a49aca5774695a726e8bd734ddc4f0d1ec8c9af5ea8fb560a402024",
+      "kind": "own-words",
+      "url": "https://mailchi.mp/4deee820b2be/improving-election-integrity?e=0c8b823425",
+      "date": "2024-05-17",
+      "date_precision": "day",
+      "passage": "This will preempt the disturbing trend around the country where non-citizens are being allowed to vote in elections.",
+      "note": "Same e-update; his stated reason for the citizenship amendment.",
+      "subjects": [
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:10:42.355Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dff3aec983eca46c40ef7ee427dee7ec87e46039271e1df1c125950b85d8ec53",
+      "kind": "own-words",
+      "url": "https://mailchi.mp/4deee820b2be/improving-election-integrity?e=0c8b823425",
+      "date": "2024-05-17",
+      "date_precision": "day",
+      "passage": "Over the past few years, we've taken action to pass numerous election reforms.",
+      "note": "Same e-update; introduces a list of other election bills he will keep pushing, including maintaining accurate voter rolls, removing non-citizens from voter rolls, banning ballot harvesting and closing voter ID loopholes (list items are fragments, not copied as a passage).",
+      "subjects": [
+        "voter-roll checks",
+        "non-citizen voting",
+        "voter ID loopholes",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:10:42.355Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "77df6e09e55f5ed1592ffb5005d4ac9df122c3ed401c58f46c529b061c25d39b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2011/av0330",
+      "date": "2011-05-11",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-7-2011",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and passed (PASSAGE) (av0330)",
+      "note": "Assembly roll call as printed ('AUGUST'), linked to Tyler August (district 32) via the official 2011 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32b98afb5fe49daee0ff1776f7b91dce28d5a0ed36d2cccde57c811cfcb255b3",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2011/proposals/ab7",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-7-2011",
+      "act": "sponsor",
+      "motion": "co sponsor, Enacted (2011 Wisconsin Act 23, approved 5/25/2011; text as enrolled, which is the Assembly substitute amendment 2 version passed 5/11/2011 and concurred by the Senate 5/19/2011)",
+      "note": "Named as co sponsor ('August') on the official bill page; linked to Tyler August via the official 2011 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05f8a142565de5b18a7bb52eccf388587e6178fcea0d942c4b6f4e87c5f035e1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ajr1",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-1-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/6/2025 (second consideration, text of 2023 SJR 73); committee recommended adoption 1/9/2025 (5-2); laid on the table 1/14/2025; died (Failed to adopt pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('August') on the official bill page; linked to Tyler August via the official 2025 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f105cb8cc766b9ac9b7e2489ba36edc3c7ee78320f2205bd664bd72a8b747ad4",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0252",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-133-2022",
+      "act": "yea",
+      "motion": "Assembly: Adopted (ADOPTION) (av0252)",
+      "note": "Assembly roll call as printed ('AUGUST'), linked to Tyler August (district 32) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "859b5c8ce4718a309615ebc193a6cd65c0c31ba55084517735acaa9c8a0dc903",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/ajr78",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-78-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 9/29/2023 (first consideration); committee recommended adoption 11/6/2023; laid on the table 11/9/2023; died (Failed to adopt pursuant to Senate Joint Resolution 1, 4/15/2024)",
+      "note": "Named as co sponsor ('August') on the official bill page; linked to Tyler August via the official 2023 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3dcdd6812724e9ea085737c1a28378742e9b2599a364726fd8fb1c0b5f415b7f",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0090",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0090)",
+      "note": "Assembly roll call as printed ('AUGUST'), linked to Tyler August (district 32) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "54409b9da082533907565bfb094989862349d0f44717a17ee4060665e4c4c916",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2011/proposals/sb6",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-6-2011",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/14/2011; committee recommended passage as amended 2/22/2011; held on the Senate calendar; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2012)",
+      "note": "Named as co sponsor ('August') on the official bill page; linked to Tyler August via the official 2011 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4f30723e38f6bac08dfc861be5cb5156051e1eebf82a52f402ee921c9e9fdf26",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2017/av0362",
+      "date": "2018-12-04",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-884-2018",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0362)",
+      "note": "Assembly roll call as printed ('AUGUST'), linked to Tyler August (district 32) via the official 2017 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b31b4288bd002fb7b4bbaa46b990e06d7b2eff283e39b1556d0e71f0bd7e00cb",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0258",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0258)",
+      "note": "Assembly roll call as printed ('AUGUST'), linked to Tyler August (district 32) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aac49f80b6252a05edb5b95b705c5111fbb94d9575b9dfdc762cc087dd25edd",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('AUGUST'), linked to Tyler August (district 31) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "52afc0d599e71925804c90692661774de3a4e6234e50f5798a0f86167fb91d4e",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sjr2",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election",
+      "note": "Named as co sponsor ('August') on the official bill page; linked to Tyler August via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f37735cfc46365a2fe5a6cf819e19dbb60dbab9982d4680456fe62a5dc680974",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('AUGUST'), linked to Tyler August (district 32) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5bff7ebb8d70b2c56770ba61c80e5c48e6eeb953970ea91ca07f3a04122b3427",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/sjr73",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2023 Enrolled Joint Resolution 9, first consideration); adopted by Senate 11/7/2023 and concurred by Assembly 11/9/2023",
+      "note": "Named as co sponsor ('August') on the official bill page; linked to Tyler August via the official 2023 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "help for voters without ID",
+        "ID with mail or absentee ballots",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings linked)",
+        "scope check: https://theballotbrief.com/state/wisconsin/walworth-county lists him as the incumbent on the 2026-11-03 general election ballot for Assembly District 31 (page cites the state elections commission list)",
+        "official site https://legis.wisconsin.gov/assembly/31/august/ (press release list and legislative update list reviewed)",
+        "official press release Jan 2025 on the voter ID constitutional amendment (text is an image; read)",
+        "official legislative update May 2024 on election integrity (opens a newsletter page; fetched)",
+        "official press release Nov 2023 'August Election Reform Proposals Approved': page has no readable body (wrong image attached); not reviewed beyond title: https://legis.wisconsin.gov/assembly/31/august/press-releases/august-election-reform-proposals-approved/",
+        "campaign site: none found (https://repaugust.com did not load; the ballot guide says none found)",
+        "legislature bill pages: not reviewed, sponsorships and votes are linked separately",
+        "Ballotpedia: blocked: https://ballotpedia.org/Tyler_August (empty page returned)",
+        "blocked: https://www.wispolitics.com/?p=365248 (403)",
+        "news search on name plus voter ID, citizenship, election integrity (two searches)",
+        "nothing found on ID with mail ballots, or on the federal SAVE Act, in his own words"
+      ],
+      "found": 8,
+      "at": "2026-10-28T23:10:42.355Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 13,
+      "at": "2026-10-28T23:15:12.782Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

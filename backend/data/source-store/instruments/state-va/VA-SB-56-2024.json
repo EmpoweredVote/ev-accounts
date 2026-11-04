@@ -1,0 +1,50 @@
+{
+  "id": "VA-SB-56-2024",
+  "scope": "state:va",
+  "title": "SB56 (2024 Regular Session): Firearm or explosive material; carrying within Capitol Square & surrounding area, etc., exceptions.",
+  "urls": [
+    "https://lis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB56",
+    "https://lis.virginia.gov/cgi-bin/legp604.exe?241+ful+SB56+hil"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 1 (amending Code 18.2-283.2(E)): The provisions of clauses (iii) and (iv) of subsection B shall not apply to (a) any[- State Police officer-]{+ law-enforcement officer as defined in §9.1-101+} who is off-duty;\nSec. 1 (Code 18.2-283.2(B), existing): It is unlawful for any person to carry any firearm as defined in §18.2-308.2:2 or explosive material as defined in §18.2-308.2 within (i) the Capitol of Virginia; (ii) Capitol Square and the surrounding area; (iii) any building owned or leased by the Commonwealth or any agency thereof; or (iv) any office where employees of the Commonwealth or any agency thereof are regularly present for the purpose of performing their official duties.",
+  "sponsors": [
+    {
+      "name": "Ryan McDougle",
+      "politician_id": "ceba2c53-8da5-4ef9-9e1b-57fdfba98f50",
+      "role": "patron",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Bill DeSteph",
+      "politician_id": "ec4a7239-4681-4284-b77d-9c2d5c5473dd",
+      "role": "patron",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Christie New Craig",
+      "politician_id": "7b7540c8-f62f-4edd-a49a-19a3f883ebd8",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-SB-56-2024.prefiled.html",
+      "sha256": "a08b7c9c00322b5a1b5a45ce11823c9f3a610bdd11cf2a1c7ee053a9ea24660a"
+    }
+  }
+}

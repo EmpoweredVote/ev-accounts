@@ -547,6 +547,14 @@ export async function getPoliticiansByArea(
     id: (row.id as string | null) ?? null,
     office_id: (row.office_id as string | null) ?? '',
     seat_status: row.id ? 'held' : 'vacant',
+    // 🔴 NOT SOURCED ON THIS PATH YET (CC_0341). These are null here because the browse
+    // queries do not join essentials.office_next_term, NOT because the seat has no successor:
+    // the two are indistinguishable to a caller, so do not render a transition from this path
+    // until the join is added and measured. getPoliticiansFlatList does source them.
+    incoming_holder_id: null,
+    incoming_holder_name: null,
+    incoming_on: null,
+
     external_id: row.external_id != null ? Number(row.external_id) : null,
     first_name: row.first_name ?? '',
     middle_initial: row.middle_initial ?? '',
@@ -861,6 +869,14 @@ export async function getPoliticiansByGovernmentList(
     id: (row.id as string | null) ?? null,
     office_id: (row.office_id as string | null) ?? '',
     seat_status: row.id ? 'held' : 'vacant',
+    // 🔴 NOT SOURCED ON THIS PATH YET (CC_0341). These are null here because the browse
+    // queries do not join essentials.office_next_term, NOT because the seat has no successor:
+    // the two are indistinguishable to a caller, so do not render a transition from this path
+    // until the join is added and measured. getPoliticiansFlatList does source them.
+    incoming_holder_id: null,
+    incoming_holder_name: null,
+    incoming_on: null,
+
     external_id: row.external_id != null ? Number(row.external_id) : null,
     first_name: row.first_name as string ?? '',
     middle_initial: row.middle_initial as string ?? '',
@@ -948,6 +964,14 @@ function mapBrowseRow(row: Record<string, unknown>): PoliticianFlatRecord {
     id: (row.id as string | null) ?? null,
     office_id: (row.office_id as string | null) ?? '',
     seat_status: row.id ? 'held' : 'vacant',
+    // 🔴 NOT SOURCED ON THIS PATH YET (CC_0341). These are null here because the browse
+    // queries do not join essentials.office_next_term, NOT because the seat has no successor:
+    // the two are indistinguishable to a caller, so do not render a transition from this path
+    // until the join is added and measured. getPoliticiansFlatList does source them.
+    incoming_holder_id: null,
+    incoming_holder_name: null,
+    incoming_on: null,
+
     external_id: row.external_id != null ? Number(row.external_id) : null,
     first_name: (row.first_name as string) ?? '',
     middle_initial: (row.middle_initial as string) ?? '',

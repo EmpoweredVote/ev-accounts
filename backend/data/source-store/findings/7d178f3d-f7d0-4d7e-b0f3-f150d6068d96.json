@@ -1,0 +1,30 @@
+{
+  "politician_id": "7d178f3d-f7d0-4d7e-b0f3-f150d6068d96",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "carry permits",
+        "who may own a gun",
+        "general gun rights statement"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "voter guide profile https://ivoterguide.com/candidate/90285/race/24298/election/1358 (gun question left unanswered)",
+        "https://www.branch.vote/races/2026-kentucky-general-election-ky-state-us-representative-ky-congressional-3/candidates/maria-teresa-rodriguez (public-safety line only, nothing on guns; page names her in the Kentucky 3rd District general race)",
+        "candidate site: none found (a page says she has no website)",
+        "web search on name plus gun words (nothing on the subject)",
+        "congress.gov not applicable: no prior federal office",
+        "Ballotpedia: not reviewed (not returned by search)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:01:01.159Z",
+      "by": "source-collector"
+    }
+  ]
+}

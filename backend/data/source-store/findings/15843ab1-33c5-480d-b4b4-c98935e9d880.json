@@ -1,0 +1,87 @@
+{
+  "politician_id": "15843ab1-33c5-480d-b4b4-c98935e9d880",
+  "findings": [
+    {
+      "id": "9fdbe6d46cf9c669fa1c324eb1f37e6f17669d43d62f7c7ffa64d7e3625dd30d",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=house&f=HF2890&ssn=0&y=2023",
+      "date": "2023-05-16",
+      "date_precision": "day",
+      "instrument_id": "MN-SF-2909-2023",
+      "act": "nay",
+      "motion": "SF 2909 repassage, as amended by Conference (journal p. 8025)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MN House, SF 2909 repassage, as amended by Conference (journal p. 8025), 2023-05-16: nay (tally 69–63); census gate: multi-subject.",
+      "subjects": [
+        "check every gun buyer",
+        "court orders that take guns from a dangerous person",
+        "public safety (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4cee0133a7773cc27b7c442cb26a0b0ae06911e98425e9c1b6824f1426b19e8d",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=house&f=HF2890&ssn=0&y=2023",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "MN-SF-2909-2023",
+      "act": "nay",
+      "motion": "Moller motion to adopt conference report (68-60); not the final passage but names kept",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MN House, Moller motion to adopt conference report (68-60); not the final passage but names kept, 2023-05-15: nay (tally 68–60); census gate: multi-subject.",
+      "subjects": [
+        "check every gun buyer",
+        "court orders that take guns from a dangerous person",
+        "public safety (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c6ef12de4b043a3c38b31e12c60a2bf0243c0a2c68554c210a9390e8f25ed322",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=house&f=HF2890&ssn=0&y=2023",
+      "date": "2023-04-26",
+      "date_precision": "day",
+      "instrument_id": "MN-SF-2909-2023",
+      "act": "nay",
+      "motion": "SF 2909 passage as amended (earlier House version)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MN House, SF 2909 passage as amended (earlier House version), 2023-04-26: nay (tally 69–60); census gate: multi-subject.",
+      "subjects": [
+        "check every gun buyer",
+        "court orders that take guns from a dangerous person",
+        "public safety (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": []
+}

@@ -1,0 +1,50 @@
+{
+ "id": "MA-H-2590-2025",
+ "scope": "state:ma",
+ "title": "H2590 (194th General Court): An Act making firearm owners civilly liable for damage caused by lost or stolen firearms",
+ "urls": [
+  "https://malegislature.gov/Bills/194/H2590",
+  "https://malegislature.gov/Bills/194/H2590/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Marjorie C. Decker",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "2b1a645a-72ce-4c0f-80ec-17565a2d6d10"
+  },
+  {
+   "name": "Estela A. Reyes",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "8e125ae2-3101-49b1-b228-f172ad9c70d9"
+  },
+  {
+   "name": "David Paul Linsky",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "fa6beaf8-acfe-4365-82a2-6f282aa1b688"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-H-2590-2025.html",
+   "sha256": "185a3e410d91bad22e69d6d02214b4a067d95a2e54cefd847a943e1cbf6e4cba"
+  }
+ },
+ "operative_text": "Section 129C of chapter 140 of the General Laws, as appearing in the 2022 Official Edition, is hereby amended by inserting after the third paragraph the following paragraph:-\nWhoever fails to report the loss or theft of a firearm, rifle, shotgun or machine gun that is later used in the commission of a crime shall be civilly liable for any damages resulting from that crime. The liability imposed under this paragraph shall not apply if the owner reports the loss or theft of such firearm, rifle, shotgun or machine gun to the commissioner of the department of criminal justice information services and the licensing authority in the city or town where the owner resides within 24 hours of the owner’s knowledge of such loss or theft."
+}

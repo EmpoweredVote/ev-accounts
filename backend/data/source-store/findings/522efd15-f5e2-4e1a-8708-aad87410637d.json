@@ -1,0 +1,53 @@
+{
+  "politician_id": "522efd15-f5e2-4e1a-8708-aad87410637d",
+  "findings": [
+    {
+      "id": "00965f792a53cb46971edd6883dacea7d220bbd028bc28bba4532ec4672c82bd",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "SB 1174 Assembly floor third reading vote (Aye 57, Noe 16, Abstain 6 listed)",
+      "note": "McKinnor is listed among the Aye votes on the Assembly floor vote on SB 1174, Elections: voter identification, which bars local governments from requiring ID to vote. Source is a state-data aggregator because the official leginfo page was blocked.",
+      "subjects": [
+        "local voter-ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:57:17.693Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms 2026 general-election candidacy for the Assembly): https://ballotpedia.org/Tina_McKinnor",
+        "official Assembly site https://a61.asmdc.org/ home page and its search pages (search returned the same page for every term; nothing on the subject)",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (bot challenge page)",
+        "blocked: https://legiscan.com/CA/bill/SB1174/2023 (403)",
+        "CalMatters Digital Democracy bill page for SB 1174 (used for the vote record instead of leginfo): https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+        "two web searches on name plus subject words (nothing on the subject)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:57:17.693Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

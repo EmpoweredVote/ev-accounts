@@ -1,0 +1,69 @@
+{
+  "politician_id": "d226793e-2fed-4e3a-8873-cc51a30485f9",
+  "findings": [
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Silcox'), linked to Deborah Silcox (district 53) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.416Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: sitting state representative, House District 53, listed in the 2026 general-election race (https://branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-53/candidates/deborah-silcox)",
+        "On the Record (0 appearances, 0 candidates)",
+        "campaign site silcoxforgeorgia.com home page: nothing on the subject; issues page returned no readable text, not reviewed: https://silcoxforgeorgia.com/issues/",
+        "Branch voting and elections page: says her website has no information on voting and elections",
+        "House press office site, search for Silcox election: nothing on the subject",
+        "blocked: https://ballotpedia.org/Deborah_Silcox (HTTP 403)",
+        "not reviewed: https://app.legiplex.com/profile/deborah-silcox-939/ga/legislatures/2025/2025-r/legislation/page/2 (third-party bill list, not fetched)",
+        "legis.ga.gov bill pages not reviewed (login token required)",
+        "two news searches on name plus voter ID, absentee, citizenship words: no quote from her found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:40:31.830Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.416Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

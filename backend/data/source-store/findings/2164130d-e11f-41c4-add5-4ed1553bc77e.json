@@ -1,0 +1,61 @@
+{
+  "politician_id": "2164130d-e11f-41c4-add5-4ed1553bc77e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: out of scope - not a member of Congress and not on the 2026 ballot; Linda McMahon (WWE co-founder, 2010 and 2012 Connecticut Senate candidate) is the appointed U.S. Secretary of Education, confirmed March 3, 2025 by a 51-45 Senate vote (https://en.wikipedia.org/wiki/Linda_McMahon, fetched)",
+        "On the Record (0 appearances)",
+        "blocked: https://www.ed.gov/about/ed-overview/secretary-linda-mcmahon (HTTP 403)",
+        "not reviewed: official site, congress.gov, Ballotpedia, news search (stopped after scope check; no congressional record exists)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:32:05.477Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "places": [
+        "status: not a sitting member of Congress; page https://en.wikipedia.org/wiki/Linda_McMahon shows Linda McMahon is U.S. Secretary of Education (executive branch, confirmed 2025-03-03), so no bill or vote record exists",
+        "On the Record (0 appearances)",
+        "one web search on name plus voter ID / SAVE Act: nothing by her on the subject",
+        "blocked: https://ballotpedia.org/Linda_McMahon (fetch returned no usable page text)",
+        "not reviewed: congress.gov (not a member of Congress)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:09:23.313Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "general gun-rights and Second Amendment statements"
+      ],
+      "places": [
+        "status: out of scope as described. Search results from the Department of Education press-release list and the Senate nomination record show Linda McMahon serving as U.S. Secretary of Education (confirmed 2025); no page found showing her as a sitting member of Congress or a 2026 candidate. The brief's description (sitting member of Congress) appears wrong; the id may be mis-linked.",
+        "blocked: https://www.ed.gov/about/leadership/secretary-linda-mcmahon (403)",
+        "blocked: https://www.ed.gov/about/news/press-release/us-secretary-of-education-linda-mcmahon-delivers-remarks-trump-administrations-efforts-restore-public-trust-higher-education (403)",
+        "On the Record (0 meetings)",
+        "web search x2: only lead-only aggregator pages for gun statements from her 2010 and 2012 Senate runs; not cited, not fetched",
+        "congress.gov member/sponsorship pages: not applicable (not a member)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:01:10.548Z",
+      "by": "source-collector"
+    }
+  ]
+}

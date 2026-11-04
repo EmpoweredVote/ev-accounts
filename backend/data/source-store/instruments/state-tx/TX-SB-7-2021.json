@@ -1,0 +1,449 @@
+{
+  "id": "TX-SB-7-2021",
+  "scope": "state:tx",
+  "title": "SB 7 (87R): Relating to election integrity and security, including by preventing fraud in the conduct of elections in this state; increasing criminal penalties; creating criminal offenses.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB7",
+    "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=87R&Bill=SB7",
+    "https://capitol.texas.gov/tlodocs/87R/billtext/html/SB00007H.htm",
+    "https://capitol.texas.gov/tlodocs/87R/billtext/html/SB00007E.htm (Senate engrossed version, read; differs from the House committee report)",
+    "https://capitol.texas.gov/tlodocs/87R/billtext/html/SB00007S.htm (Senate committee report; not read)",
+    "https://capitol.texas.gov/tlodocs/87R/billtext/html/SB00007I.htm (introduced; not read)"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) SECTION 3.09 of House Committee Report (amends Election Code 86.006(a-1)): ID for a voter who delivers a marked mail ballot in person\n(quote) (a-1) The voter may deliver a marked ballot in person to the early voting clerk's office only while the polls are open on election day. A voter who delivers a marked ballot in person must present an acceptable form of identification described by Section 63.0101.\n(d_proof_of_citizenship)\n(section) SECTION 1.04 of Senate engrossed version (amends Election Code 16.0332(a)); this section is not in the House Committee Report\n(quote) (a) After the registrar receives a list under Section 18.068 of this code or Section 62.113, Government Code, of persons excused or disqualified from jury service or otherwise determined to be ineligible to vote because of citizenship status, the registrar shall deliver to each registered voter whose name appears on the list a written notice requiring the voter to submit to the registrar proof of United States citizenship in the form of a certified copy of the voter's birth certificate, United States passport, or certificate of naturalization or any other form prescribed by the secretary of state.\n(other) House Committee Report Sec 1.01-1.06: short title Election Integrity Protection Act of 2021, purpose, findings, legislative intent, strict construction, definition of public official.\n(other) Sec 2.01-2.02: death-certificate abstracts to voter registrars (16.001); register of spoiled ballots at polling place (64.007).\n(other) Sec 3.01-3.11: poll watchers (no removal, offense for refusing a watcher, observation rights, data storage sealing, offense for obstruction); who may be in polling place, ballot board room, counting station.\n(other) Sec 4.01-4.05: assistance to voters (form by assistant, oath, mail ballot assistant disclosures, offenses, carrier envelope spaces).\n(other) Sec 5.01-5.04: offenses on provisional voting forms, illegal voting (64.012), influencing a vote, paid vote harvesting.\n(other) Sec 6.01-6.04: courts: panels, priority and assignment of election proceedings.\n(other) Sec 7.01-7.04: repeal of 86.0052(b) and 86.0105(b); severability; applies to offenses after effective date; effective September 1, 2021.\n(other) Senate engrossed version, by article (headings only as printed): Article 1 Voter Registration; Article 2 Voting by Mail (e.g. 84.0011 solicitation of mail ballot applications prohibited, 84.0111 distribution of application form, 86.015 tracking of mail ballot); Article 3 Election Security (watchers, voting after polls close 85.0055, voting machines, paper audit trail); Article 4 Enforcement (injunctive relief, election contest petition alleging fraud, civil penalty, paid vote harvesting); Article 5 Repealer and Effective Date. Sec 1.02 adds a requirement that a registration application make the applicant affirmatively indicate all information provided.",
+  "sponsors": [
+    {
+      "name": "Hughes",
+      "role": "author",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Bettencourt",
+      "role": "author",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Birdwell",
+      "role": "author",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Buckingham",
+      "role": "author",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Campbell",
+      "role": "author",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Creighton",
+      "role": "author",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Hall",
+      "role": "author",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Kolkhorst",
+      "role": "author",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Nelson",
+      "role": "author",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Paxton",
+      "role": "author",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Perry",
+      "role": "author",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Schwertner",
+      "role": "author",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Springer",
+      "role": "author",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Taylor",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Cain",
+      "role": "prime",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Schofield",
+      "role": "prime",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Jetton",
+      "role": "prime",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Klick",
+      "role": "prime",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Oliverson",
+      "role": "prime",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Allison",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Anderson",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Ashby",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Bell, Cecil",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Bell, Keith",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Biedermann",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Bonnen",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Buckley",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Burns",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Burrows",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Button",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Capriglione",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Cason",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Cook",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Cyrier",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Dean",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Ellzey",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Frank",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Frullo",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Goldman",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Harless",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Harris",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Hefner",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Holland",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Hull",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Kacal",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "King, Phil",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Krause",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Kuempel",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Lambert",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Landgraf",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Leach",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Leman",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Lozano",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Metcalf",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Meyer",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Middleton",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Morrison",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Murphy",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Murr",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Noble",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Paddie",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Parker",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Patterson",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Paul",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Price",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Rogers",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Sanford",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Schaefer",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Shaheen",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Shine",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Slaton",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Slawson",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Smith",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Smithee",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Spiller",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Stephenson",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Stucky",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Swanson",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Thompson, Ed",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Tinderholt",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Toth",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "VanDeaver",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Vasut",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "White",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    },
+    {
+      "name": "Wilson",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 7; House passed it 05/07/2021 with amendments, and the Senate adopted the conference committee report 05/30/2021; no enrolled version exists and the conference report text is not on the Text tab)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T15:13:39Z)",
+    "fetched_at": "2026-10-28T15:13:39Z",
+    "method": "curl"
+  }
+}

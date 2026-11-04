@@ -1,0 +1,135 @@
+{
+  "politician_id": "1bd8cb75-4099-4121-9e4e-c04418d8275c",
+  "findings": [
+    {
+      "id": "16e674519d0be9d0e3a33b03119d064698c57e4c3116761d4ec4799d5625c619",
+      "kind": "own-words",
+      "url": "https://thestarnewsnetwork.com/2022/04/27/georgia-state-senate-candidate-shawn-still-wants-to-eliminate-drop-boxes-in-georgia",
+      "date": "2022-04-27",
+      "date_precision": "day",
+      "passage": "Election integrity requires that we eliminate unprotected, nighttime absentee ballot drop boxes, as well as require proper identification be shown for all voters.",
+      "note": "Text from his 2022 Senate campaign website, quoted by The Star News Network in a 2022-04-27 article. The original campaign page was not reachable. Calls for proper identification for all voters and an end to absentee drop boxes.",
+      "subjects": [
+        "voter ID at the polls",
+        "absentee drop boxes",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:36:55.898Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7a14b7ea0455f5496d9b96d17777ab2261232353db4175ad1dd7ed8f777ec335",
+      "kind": "own-words",
+      "url": "https://thestarnewsnetwork.com/2022/04/27/georgia-state-senate-candidate-shawn-still-wants-to-eliminate-drop-boxes-in-georgia",
+      "date": "2022-04-27",
+      "date_precision": "day",
+      "passage": "So on day one in the state legislature, I will be fighting to eliminate drop boxes entirely. That is going to be the very first thing that I do,",
+      "note": "Spoken remark quoted by The Star News Network in its 2022-04-27 report on his Senate campaign. Not about ID directly; about absentee drop boxes.",
+      "subjects": [
+        "absentee drop boxes",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:36:55.898Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e9d37fc3287bce81b3f284cac9840364f2ad68a4cfefdf4a2d6a9ccdd4ba3aa",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Still'), linked to Still, Shawn (district 48) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.418Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8cdf77c4c457877fb297f4ca4a428970349bdd30855f5edac4bb39cf8652fef4",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/ (bill detail and vote API answer 401; token needed; not obtained, not bypassed)",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "GA-SR-838-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced (LC 47 4076); a later Senate Rules or committee version was not found.",
+      "note": "Named as co sponsor ('Still of the 48th') on the official bill text; linked to Shawn Still via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.418Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "absentee drop boxes",
+        "election integrity in general"
+      ],
+      "places": [
+        "status check: Ballotpedia page shows him as the sitting Senate District 48 member, advancing from the 2026-05-19 primary and on the 2026-11-03 general ballot for the same seat (https://ballotpedia.org/Shawn_Still)",
+        "On the Record (0 meetings found by extract-otr)",
+        "campaign site shawnstill.com home, record and about pages: nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "Wikipedia: nothing on the subject",
+        "bill sponsorship lists (billsponsor.com): only SB 3 (2026 special session, election equipment standards committee), not on the subject",
+        "blocked: https://legiscan.com/GA/bill/SB175/ (403 / bot check)",
+        "blocked: https://app.legiplex.com/profile/shawn-still-1673/legislation?page=3 (web firewall)",
+        "not reviewed: legis.ga.gov bill pages (page loads by script only)",
+        "news searches on name plus subject words: one 2022 campaign-time article found",
+        "SB 202 (2021): he took office 2023-01-09, so no 2021 vote exists"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:36:55.898Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T20:51:14.418Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "politician_id": "799c1cea-4020-4c50-b7d1-1e9aac867529",
+  "findings": [
+    {
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "yea",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "5c357b1e70a86f59217fe418cb01e3e643c3b107535d66911daeaf46d68c74a5",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/H592/Cosponsor",
+      "date": "2013-01-22",
+      "date_precision": "day",
+      "instrument_id": "MA-H-592-2013",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of H.592, 'An Act requiring photo identification for voting' (filed 2013-01-22).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-31T03:30:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "bcd1a87a7452c6aec9f56454248eee195addf3aa76b483dcab2a1466956ed383",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/GetAmendmentContent/192/H4359/7/House/Content",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "sponsor",
+      "note": "Listed as presenter of Amendment #7 to H.4359, 'Voter Identification' (2022-01-27).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-31T03:30:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "c19ad6437e734ddf5bc5c2c42cca9771db548fc3dc8d5503d540427c366ff8a1",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall42.pdf",
+      "date": "2025-04-29",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4000-AMDT-409-2025",
+      "act": "yea",
+      "motion": "On adoption of amendment #409 (H.4000) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 42, On adoption of amendment #409 (H.4000) - failed, 2025-04-29: yea (tally 25–131); the sheet lists 'Frost'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "031da260f8e422347d5016f4a54a60c19a73e3efaba279ce2f337d18bdbfcb4e",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall174.pdf",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-5500-AMDT-1587-2026",
+      "act": "yea",
+      "motion": "On adoption of amendment #1587 (H.5500) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 174, On adoption of amendment #1587 (H.5500) - failed, 2026-04-28: yea (tally 27–131); the sheet lists 'Frost'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "fa8087771668164fa41cebcce4ea1837cefe0d5dda9c72df7aa9612f3319e886",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "nay",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: nay (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bbdd9bc7132a57a94f28cf83874fa7e904f8da79aa8251a3b1194121a5467815",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "nay",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: nay (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "3a4ea3a97f7f4bdbdbec2bd0159a53c3ceac4e61d0bea05be7023f40da9c8669",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/House/H4376",
+      "date": "2014-07-31",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4376-2013",
+      "act": "nay",
+      "motion": "Acceptance of the committee of conference report (Yea and Nay No. 483)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, Acceptance of the committee of conference report (Yea and Nay No. 483), 2014-07-31: nay (tally 122–30); census gate: multi-subject.",
+      "subjects": [
+        "firearm license classes merged and Class B licences phased out",
+        "new penalties for shooting and for trafficking guns into the state",
+        "background-check records sent to the federal system",
+        "ban on carrying firearms on school and college grounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "malegislature.gov roll-call PDFs + LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:34:02.477850Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4376-2013.introduced.pdf",
+          "sha256": "b94514a66e779c1400d1b875eb3aac207f6b1b1f12f9928fd8d977feab23bb61"
+        }
+      }
+    },
+    {
+      "id": "d01ed1ae5794f8824c367d91b05731dcc664f64b098a2107b1eec578c3a4f7cc",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4517",
+      "date": "2018-05-23",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4517-2017",
+      "act": "nay",
+      "motion": "House On Engrossment Yea and Nay No. 359",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MA House, House On Engrossment Yea and Nay No. 359, 2018-05-23: nay (tally 139–14); census gate: near-unanimous.",
+      "subjects": [
+        "court orders to remove guns from people at risk of harming self or others",
+        "emergency orders without notice",
+        "penalty for false petitions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4517-2017.introduced.pdf",
+          "sha256": "3bac8bca02408059e2c0db49bae39de8a690f0fb6e1b5469f7a23cf51fbd5cc4"
+        }
+      }
+    },
+    {
+      "id": "6eae9de37bdf534b21a6f61732cfdc3d406087959e7c425d4b36a7c27217b9d8",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4670",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4670-2017",
+      "act": "nay",
+      "motion": "On acceptance of the conference report (Yea and Nay No. 389)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, On acceptance of the conference report (Yea and Nay No. 389), 2018-06-28: nay (tally 133–15); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders to remove guns from people at risk of harming self or others",
+        "protection order added as a bar to gun licenses",
+        "stun gun rules and locked storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4670-2017.introduced.pdf",
+          "sha256": "6b37958358a3f01548ef0d16c386b3caaf5993d5c100f88279ff5b45ad1fe098"
+        }
+      }
+    },
+    {
+      "id": "59fe7df2e2a460e77fafd7c360a4f22d9ea283f9c78d2fb6c16d0e8a869402ff",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H2711",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MA-H-2711-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MA-H-2711-2025 (LegiScan sponsor list): H2711 (194th General Court): Relative to semiautomatic rifles and shotguns.",
+      "subjects": [
+        "repeals a section of the 2024 firearms act on semiautomatic rifles and shotguns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2711-2025.introduced.pdf",
+          "sha256": "f25757f74627ebb5405cdea555d684b5396dfb2a6ffc6bd546330b4a0d7096e0"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks, non-citizen voting, election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Paul_Frost) names him as incumbent for MA House 7th Worcester District and on the 2026 general-election ballot after advancing from the 1 Sep 2026 primary",
+        "On the Record (0 appearances for this politician id; run with --names only, no meetings found)",
+        "MA Legislature profile https://malegislature.gov/Legislators/Profile/PKF1 (bill list reviewed: election-related filings are H.826 candidates reporting public assistance and H.827 voting procedures of presidential electors; nothing on voter ID or citizenship proof)",
+        "Ballotpedia: nothing on the subject",
+        "not reviewed: official and campaign sites (site search not run)",
+        "not reviewed: news search (web search budget used up for the session)",
+        "not reviewed: H.827 bill text and the 2022 amendment text (already on file)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:13:26.517Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "ghost guns",
+        "carrying guns",
+        "licence renewal in an emergency",
+        "repeal of the 2024 gun law",
+        "general gun rights and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/PKF1 (confirms Representative Paul K. Frost, 7th Worcester; the page's sponsored list shows several firearms bills, no statements)",
+        "ballot page https://theballotbrief.com/state/massachusetts/worcester-county/massachusetts-house-7th-worcester-district (says he is on the Nov 3 2026 ballot)",
+        "sponsor list: covered by LegiScan bulk check",
+        "blocked: https://www.paulfrost.com/about.php (403; https://votepaulfrost.com/about.php redirects there)",
+        "Ballotpedia: not reviewed, known to return empty to the fetch tool",
+        "four web searches on his name plus gun, firearm, Second Amendment, repeal and rally words: no own words by him found; results were about other people or his bill filings"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:43:45.951Z",
+      "by": "source-collector"
+    }
+  ]
+}

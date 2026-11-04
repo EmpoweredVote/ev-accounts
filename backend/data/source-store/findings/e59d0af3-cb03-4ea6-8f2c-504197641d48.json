@@ -1,0 +1,166 @@
+{
+  "politician_id": "e59d0af3-cb03-4ea6-8f2c-504197641d48",
+  "findings": [
+    {
+      "id": "4b7e36a79814f506db051e44d08e3c8f401899143486b70adae2ef25c6294d28",
+      "kind": "own-words",
+      "url": "https://lydialynnchristensen.com/#/tracker",
+      "date": "2026-03-26",
+      "date_precision": "month",
+      "passage": "Lydia opposes this bill as a voter suppression measure targeting low-income and minority voters.",
+      "note": "Campaign-site bill tracker entry for S. 1383 (SAVE America Act), written in the third person on her site. The same entry says the bill requires documentary proof of citizenship to register and sends state voter rolls to a federal database. The site lists her position on the bill, and on H.R. 22, H.R. 8281 and H.R. 7296 (other versions of the SAVE Act), as opposed. Date is the entry's latest-action date; the date the sentence was written is not shown.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act",
+        "voter-roll check against federal database"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:12:38.363Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "741676178ed772a5685b5d6875332f8ed47492b8035b386c3adb9002c6be8c7b",
+      "kind": "own-words",
+      "url": "https://lydialynnchristensen.com/#/tracker",
+      "date": "2026-07-22",
+      "date_precision": "month",
+      "passage": "Lydia opposes both the SAVE Act rider and the underlying $1.15 trillion defense authorization itself.",
+      "note": "Campaign-site tracker entry for H.R. 8800 (defense funding bill for FY2027) after the House attached SAVE America Act voter-ID and citizenship-proof provisions as a rider. The site says she opposes the rider.",
+      "subjects": [
+        "SAVE Act rider",
+        "photo ID to vote",
+        "proof of citizenship"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:12:38.363Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76a28c41052e77cc4202b767d1f2fb68d29e07665aecfe1e6c760ae195c3e837",
+      "kind": "own-words",
+      "url": "https://lydialynnchristensen.com/#/tracker",
+      "date": "2026-07-23",
+      "date_precision": "month",
+      "passage": "Lydia's opposition is to the SAVE Act rider specifically — not a statement on the underlying stock-trading ban.",
+      "note": "Campaign-site tracker entry for H.R. 7008 (Stop Insider Trading Act), which the entry says carries a SAVE Act-style photo-ID voting requirement as a rider. The site lists her position as opposed to the rider only.",
+      "subjects": [
+        "photo ID to vote",
+        "SAVE Act rider"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:12:38.363Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "96fda34de04eaa5f73d3f9e46e2d15afdd880c38771b0beaea449fdb147eadb7",
+      "kind": "own-words",
+      "url": "https://lydialynnchristensen.com/#/newsroom",
+      "date": "2026-04-24",
+      "date_precision": "day",
+      "passage": "I am calling on you to immediately withdraw the Department of Justice's April 14 demand for Wayne County ballots and to drop the federal lawsuit against the state of Michigan over its voter rolls.",
+      "note": "Press release and open letter in her name to the Justice Department's Civil Rights Division, dated April 24, 2026. She asks the department to withdraw a demand for Wayne County ballots and to drop its lawsuit against Michigan over voter rolls.",
+      "subjects": [
+        "voter-roll checks",
+        "federal lawsuit over state voter rolls",
+        "election integrity and federal control of elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:12:38.363Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1673a68a6da43f2f154ce155822b9f70755fb816b1a7e6b72deeed0e44d454b4",
+      "kind": "own-words",
+      "url": "https://lydialynnchristensen.com/#/newsroom",
+      "date": "2026-04-24",
+      "date_precision": "day",
+      "passage": "The Constitution is unambiguous. Article I, Section 4 grants states primary authority over the administration of elections.",
+      "note": "Same April 24, 2026 letter. She cites the Constitution's Elections Clause for state authority over running elections.",
+      "subjects": [
+        "election administration authority",
+        "election integrity and federal control of elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:12:38.363Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID rider",
+        "what happens to a voter with no ID",
+        "ID with mail or absentee ballot",
+        "documentary proof of citizenship to register (SAVE Act)",
+        "voter-roll checks and federal voter-roll lawsuit",
+        "non-citizen voting",
+        "election integrity and federal control of elections"
+      ],
+      "places": [
+        "status: on the 2026 general-election ballot for U.S. Senate, Michigan (Ballotpedia https://ballotpedia.org/Lydia_Christensen, fetched by curl)",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "campaign site https://lydialynnchristensen.com (single-page app; read through its main.js bundle: bill tracker, newsroom press releases, issues text, FAQ, about)",
+        "Ballotpedia (candidate page and Candidate Connection survey: nothing on the subject)",
+        "not reviewed: congress.gov sponsorship list (she holds no legislative office; candidate only)",
+        "blocked: web search (session search budget used up; no news search done)",
+        "not reviewed: https://www.facebook.com/lydiaforussenate",
+        "not reviewed: https://www.tiktok.com/@lydiaforussenate",
+        "campaign site issue pages, platform text: nothing on photo ID, ID for mail ballots, or no-ID voters"
+      ],
+      "found": 5,
+      "at": "2026-10-22T22:12:38.363Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register (SAVE Act)",
+        "voter-roll checks",
+        "mail or absentee ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms she is on the 2026 general-election ballot for U.S. Senate in Michigan; survey answers not readable in the fetched page; nothing on the subject)",
+        "campaign site https://lydialynnchristensen.com (fetched, page text is empty without scripts; not reviewed)",
+        "Branch voter-guide page https://www.branch.vote/races/2026-michigan-general-election-mi-state-u.s.-senator-mi-state/candidates/lydia-christensen (fetched; third-party summary of her positions on the SAVE America Act and a Justice Department voter-roll lawsuit, not her own words, so not saved as a finding)",
+        "The Ballot Brief page (fetched, nothing on the subject)",
+        "congress.gov: not applicable, she holds no congressional office",
+        "news search on name plus subject words: no quotes of her found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:07:06.397Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

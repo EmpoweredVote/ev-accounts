@@ -1,0 +1,34 @@
+{
+  "id": "VA-SB-45-2024",
+  "scope": "state:va",
+  "title": "SB 45 (2024 Regular Session (LIS session code 241)): Voter identification; identification containing a photograph required.",
+  "urls": [
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB45",
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+mbr+SB45",
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+ful+SB45"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) § 24.2-643 B (as introduced; struck words removed, new words kept)\n(quote) The officer shall ask the voter to present any one of the following forms of identification: (i) his valid Virginia driver's license, his valid United States passport, or any other identification issued by the Commonwealth, one of its political subdivisions, or the United States, other than a driver privilege card issued under § 46.2-328.3 or an identification privilege card issued under § 46.2-345.3; (ii) any valid student identification card containing a photograph of the voter and issued by any institution of higher education located in the Commonwealth or any private school located in the Commonwealth; (iii) any valid student identification card containing a photograph of the voter and issued by any institution of higher education located in any other state or territory of the United States; or (iv) any valid employee identification card containing a photograph of the voter and issued by an employer of the voter in the ordinary course of the employer's business. The expiration date on a Virginia driver's license shall not be considered when determining the validity of the driver's license offered for purposes of this section.\n(b_no_id_remedy)\n(section) § 24.2-643 B, second paragraph (signed-statement option struck)\n(quote) Any voter who does not show one of the forms of identification specified in this subsection shall be offered a provisional ballot under the provisions of § 24.2-653. The State Board of Elections shall provide an ID-ONLY provisional ballot envelope that requires no follow-up action by the registrar or electoral board other than matching submitted identification documents from the voter for the electoral board to make a determination on whether to count the ballot.\n(section) § 24.2-404 A 3 (free voter photo identification card)\n(quote) 3. Provide to each general registrar (i) voter confirmation documents for newly registered voters, including voters who were automatically registered pursuant to subdivision 1, and for notice to registered voters on the system of changes and corrections in their registration records and polling places and (ii) voter photo identification cards containing the voter's photograph and signature for free for those voters who do not have one of the forms of identification specified in subsection B of § 24.2-643. The Department shall promulgate rules and regulations authorizing each general registrar to obtain a photograph and signature of a voter who does not have one of the forms of identification specified in subsection B of § 24.2-643 for the purpose of providing such voter a voter photo identification card containing the voter's photograph and signature. The Department shall provide each general registrar with the equipment necessary to obtain a voter's signature and photograph, and no general registrar shall be required to purchase such equipment at his own expense. Photographs and signatures obtained by a general registrar shall be submitted to the Department. The Department may contract with an outside vendor for the production and distribution of voter photo identification cards.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n\n(other) § 24.2-411.3 E: DMV to assist in providing voter photo identification cards\n(other) §§ 24.2-653, 24.2-653.01: provisional ballot procedures for voters without ID\n(other) §§ 24.2-701, 24.2-701.1: ID for in-person absentee application and in-person absentee voting",
+  "sponsors": [
+    {
+      "name": "Mark J. Peake",
+      "role": "author",
+      "version": "Introduced (24100890D, 12/19/2023); incorporated into SB81 by Senate Privileges and Elections 1/16/2024"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T17:30:00Z)",
+    "fetched_at": "2026-10-28T17:30:00Z",
+    "method": "curl"
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "politician_id": "892670a6-f15f-4014-86a8-434090c2a514",
+  "findings": [
+    {
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "yea",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "c19ad6437e734ddf5bc5c2c42cca9771db548fc3dc8d5503d540427c366ff8a1",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall42.pdf",
+      "date": "2025-04-29",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4000-AMDT-409-2025",
+      "act": "yea",
+      "motion": "On adoption of amendment #409 (H.4000) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 42, On adoption of amendment #409 (H.4000) - failed, 2025-04-29: yea (tally 25–131); the sheet lists 'Xiarhos'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "031da260f8e422347d5016f4a54a60c19a73e3efaba279ce2f337d18bdbfcb4e",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall174.pdf",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-5500-AMDT-1587-2026",
+      "act": "yea",
+      "motion": "On adoption of amendment #1587 (H.5500) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 174, On adoption of amendment #1587 (H.5500) - failed, 2026-04-28: yea (tally 27–131); the sheet lists 'Xiarhos'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "d16c44ca605e34045d46da62288100515320bfe0227c663cca0fa667dd422269",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/S510/Cosponsor",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-S-510-2025",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of S.510, 'An Act relative to safe and secure elections' (referred 2025-02-27).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "fa8087771668164fa41cebcce4ea1837cefe0d5dda9c72df7aa9612f3319e886",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "nay",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: nay (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bbdd9bc7132a57a94f28cf83874fa7e904f8da79aa8251a3b1194121a5467815",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "nay",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: nay (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "3dd20ecb7c987dee3fcb24a03b0baf6b3a9ec77241662ae8e60e8b690dfbfa14",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H1782",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MA-H-1782-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-1782-2021 (LegiScan sponsor list): H1782 (192nd General Court): Relative to illegal drug and firearm trafficking.",
+      "subjects": [
+        "life sentence for combined drug and firearm trafficking"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-1782-2021.introduced.pdf",
+          "sha256": "ec7445c86a7b2334d4a2a2681243904d4c16903800ff52233357e82fbe8f732a"
+        }
+      }
+    },
+    {
+      "id": "4c69494e9e82b675893ec8b5d9075a00fe8dde0e818fce7278c1604ace67e64f",
+      "kind": "own-words",
+      "url": "https://gazettenet.com/?p=244597",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "passage": "“I’m hearing a lot from constituents that if they have a license to carry, and they cannot carry in certain areas, that affects them,” Xiarhos said to Rosenthal. “So I was wondering, in your opinion, how does this bill not affect them when they can’t carry in certain areas?“",
+      "note": "Said at the Judiciary hearing on the House gun bill, to its sponsor-side witness Rosenthal. Quoted by State House News Service in the Daily Hampshire Gazette, article dated 2023-10-10. He raises the limits on carrying in government buildings, schools and polling places.",
+      "subjects": [
+        "carry permits and places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:45:26.302Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e23082e2d50aed4b7cefb2a8440f0cfefd005db2636ec41532b148d49242ce4a",
+      "kind": "own-words",
+      "url": "https://www.recorder.com/Beacon-Hill-Roll-Call-Oct-16-to-Oct-20-2023-52790762",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "passage": "“Massachusetts already has some of the strictest firearms laws in the country, along with the lowest rate of deaths associated with gun violence,” said Rep. Steve Xiarhos, R-Barnstable. “The vast majority of gun-related crimes are committed with illegal weapons and not with legally owned firearms, and the focus of the bill should be based on listening to our Massachusetts police chiefs and on punishing those who break the law rather than targeting law-abiding citizens.”",
+      "note": "Quoted in Beacon Hill Roll Call (published 2023-10-27) on the House gun bill week of Oct 16-20, 2023. Exact day of the statement not given on the page. Dated to the floor debate (House passage of H.4135, 2023-10-18; runner 2026-11-03); the column date was 2023.",
+      "subjects": [
+        "gun safety laws in general",
+        "carry permits and places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:45:26.302Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Steven_Xiarhos names him as member of the Massachusetts House, 5th Barnstable District, on the 2026 general-election ballot (advanced from the 2026-09-01 primary)",
+        "On the Record (0 meetings, 0 unlinked-name matches)",
+        "campaign site https://www.xiarhosforrep.com/issues (nothing on the subject; home page returned no text)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/SGX1 (no sponsored bill on voter ID, proof of citizenship or mail ballots; only H.2357, a Sandwich town clerk appointed-to-elected petition, not a voting-rules bill)",
+        "bill page https://malegislature.gov/Bills/192/H4359 (H.4359, amendment 7 roll call already on file; page does not state what the amendment did)",
+        "Ballotpedia https://ballotpedia.org/Steven_Xiarhos (nothing on the subject; no Candidate Connection survey)",
+        "not reviewed: news search on name plus subject words (web search budget used up for the session)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:14:55.797Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red flag orders",
+        "ghost guns",
+        "carry permits and places where carry is allowed",
+        "gun safety laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "official legislature member page (malegislature.gov profile, found to confirm office)",
+        "Ballotpedia: not reviewed, returns empty to the fetch tool",
+        "news searches on name plus gun words (several)",
+        "news pages on the 2026 Question 9 repeal vote checked for the name: no statement found",
+        "official sites stevexiarhos.com: did not load",
+        "blocked: none; Gazette and Recorder articles fetched by plain curl"
+      ],
+      "found": 2,
+      "at": "2026-11-01T01:45:26.302Z",
+      "by": "source-collector"
+    }
+  ]
+}

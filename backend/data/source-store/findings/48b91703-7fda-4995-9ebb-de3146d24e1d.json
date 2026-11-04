@@ -1,0 +1,231 @@
+{
+  "politician_id": "48b91703-7fda-4995-9ebb-de3146d24e1d",
+  "findings": [
+    {
+      "id": "50f7b269a481afd7ba91a679b8edd8491f0a8341dbab789aef0b4f20c5d5a919",
+      "kind": "own-words",
+      "url": "https://www.missourinet.com/2015/11/17/voter-photo-id-ethics-reform-among-top-priorities-for-missouri-senate-republicans/",
+      "date": "2015-11-17",
+      "date_precision": "day",
+      "passage": "\"We feel like if you're going to vote for the most powerful man in the world, having proper identification is only reasonable.\"",
+      "note": "Missourinet quotes him, then a state senator and Senate floor leader, saying photo ID for voting would be proposed again in the 2016 session and that another senator would lead on it. The article also says the other caucus were pairing a proposed constitutional amendment with a companion bill.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:01:29.118Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c31f15cac3ed0e8098d5394b9def7ba44f4b1f116382e7f46624a892a2b212da",
+      "kind": "own-words",
+      "url": "https://www.fultonsun.com/news/2016/jan/22/senate-wont-delay-voter-id-issue/",
+      "date": "2016-01-22",
+      "date_precision": "day",
+      "passage": "\"But, in my district, as I travel around Missouri, Missourians pretty much believe that, if you need a photo ID to rent a jet ski, you should probably have to have one to vote for the most powerful person in the world,\" he said.",
+      "note": "Fulton Sun quotes him, then Senate floor leader, on the photo ID constitutional amendment and enabling bill. Date is the article's publication date; he spoke 'Thursday' of that week.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:01:29.118Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "33f71d2b11892f5f741700a217c27af652b32d239a95ffa1618fef5afd0a2a26",
+      "kind": "own-words",
+      "url": "https://www.fultonsun.com/news/2016/jan/22/senate-wont-delay-voter-id-issue/",
+      "date": "2016-01-22",
+      "date_precision": "day",
+      "passage": "\"Voter ID was one of those things we thought was important to have an early discussion about,\" he explained.",
+      "note": "Same article. Explains why the Senate would take up the photo ID bills early in the 2016 session.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:01:29.118Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf41c6fc3c825914fb3b4ae21b05a46fe15bb5650b8669fe30edc21f0156d458",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/16info/Journals/VDay0109141-30.pdf",
+      "date": "2016-09-14",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1631-2016",
+      "act": "yea",
+      "motion": "Senate: Motion to pass SS No. 2 for SCS for HB 1631, the objections of the Governor thereto notwithstanding (veto override)",
+      "note": "Senate roll call as printed ('Kehoe'), linked to Mike Kehoe (district 6) via the official 2016 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.747Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b6560918e06fe0793d4b27950c776f079f9abe879c70713f6110d79dd0799fc8",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/11info/pdf-jrnl/DAY66.pdf#page=51",
+      "date": "2011-05-10",
+      "date_precision": "day",
+      "instrument_id": "MO-SB-3-2011",
+      "act": "yea",
+      "motion": "Senate: Motion that HCS No. 2 for SB 3, as amended, be adopted (concurrence)",
+      "note": "Senate roll call as printed ('Kehoe'), linked to Mike Kehoe (district 6) via the official 2011 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.747Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d47ca00a4dcf1942a09200a2dda6c966f84e6d854166ddb5799f8995e38d3f1",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/11info/pdf-jrnl/DAY65.pdf#page=41",
+      "date": "2011-05-09",
+      "date_precision": "day",
+      "instrument_id": "MO-SJR-2-2011",
+      "act": "yea",
+      "motion": "Senate: Motion that HCS No. 2 for SJR 2 be adopted (concurrence)",
+      "note": "Senate roll call as printed ('Kehoe'), linked to Mike Kehoe (district 6) via the official 2011 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.747Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "71680b248e0ea02a03578c34939e2e65dcdf9d2ccdca19d7fb26e34294a48248",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/16info/Journals/RDay6205031643-1714.pdf",
+      "date": "2016-05-03",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1631-2016",
+      "act": "yea",
+      "motion": "Senate: SS No. 2 for SCS for HB 1631, as amended, read the 3rd time and passed",
+      "note": "Senate roll call as printed ('Kehoe'), linked to Mike Kehoe (district 6) via the official 2016 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.222Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7f2cc2b9d3511567f2edc0d315a48b83bdbd60d0abba2529c0d95722322e1cfb",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/16info/Journals/RDay6805112096-2213.pdf",
+      "date": "2016-05-11",
+      "date_precision": "day",
+      "instrument_id": "MO-HJR-53-2016",
+      "act": "yea",
+      "motion": "Senate: SS for HJR 53 read the 3rd time and passed",
+      "note": "Senate roll call as printed ('Kehoe'), linked to Mike Kehoe (district 6) via the official 2016 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.222Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship",
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances, also searched by name)",
+        "governor's site (governor.mo.gov) search for 'voter': nothing on the subject",
+        "2025 State of the State address text (official PDF): nothing on the subject",
+        "2026 State of the State address text (official PDF): nothing on the subject; mentions a ballot measure only on another topic",
+        "2025 inaugural address text (official PDF): nothing on the subject",
+        "blocked: https://ballotpedia.org/Mike_Kehoe (empty page)",
+        "news searches on name plus voter ID, citizenship and Amendment 7: his own words found only from his time as a state senator (2015 and 2016)",
+        "ontheissues.org used as a lead only; original Missourinet article fetched and cited",
+        "campaign site: not separately located; official sites covered"
+      ],
+      "found": 3,
+      "at": "2026-11-04T05:01:29.118Z",
+      "by": "search-mo-2026-11-03"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-04T14:10:53.747Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-04T14:14:55.222Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

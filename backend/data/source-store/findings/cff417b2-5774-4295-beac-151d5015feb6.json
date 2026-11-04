@@ -1,0 +1,287 @@
+{
+  "politician_id": "cff417b2-5774-4295-beac-151d5015feb6",
+  "findings": [
+    {
+      "id": "d83ead395bcb4f914898fbf2fe3c1003e98c74e4ece7c03775dc019e7fe4ce9f",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/70/vandermeer/media/rvhbgjig/vandermeer-column-vote-yes-for-photo-identification-when-voting.jpeg",
+      "date": "2025-03-07",
+      "date_precision": "day",
+      "passage": "One of the most effective and straightforward tools at our disposal to attempt to protect the integrity of our elections is requiring the use of photo identification to vote.",
+      "note": "From her opinion column urging a yes vote on the April 1, 2025 photo ID constitutional amendment. The column is a JPEG; the text was read from the image. She supports requiring photo ID to vote and calls it a tool for election integrity.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:06:50.345Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6cb01f48fa9df72f65a1512e6c7af14e6eab476000b45d2c40c2dab86d9d515a",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/70/vandermeer/media/rvhbgjig/vandermeer-column-vote-yes-for-photo-identification-when-voting.jpeg",
+      "date": "2025-03-07",
+      "date_precision": "day",
+      "passage": "Furthermore, qualified electors who do not have photo identification on Election Day would be able to cast a provisional ballot.",
+      "note": "In the same column, she describes what happens to a voter without photo ID under the amendment: a provisional ballot. She also says military and overseas voters could still use absentee ballots.",
+      "subjects": [
+        "voter with no ID and provisional ballot",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:06:50.345Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "54db9b2cf16e7fd14fd52d17ee39c7cf94c82982e4b8b308f96255eb0c171fdc",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/70/vandermeer/media/rvhbgjig/vandermeer-column-vote-yes-for-photo-identification-when-voting.jpeg",
+      "date": "2025-03-07",
+      "date_precision": "day",
+      "passage": "For these reasons and more, I advise you to vote YES for voter identification on April 1st and enshrine this integral piece of election integrity in our state constitution.",
+      "note": "Closing line of the column: she asks readers to vote yes on putting the photo ID requirement in the state constitution.",
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment for voter ID",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:06:50.345Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e670aa0c625b7adf9e4755093810b59f0acf302d3149becf0f7996f5aa4d333e",
+      "kind": "own-words",
+      "url": "https://mailchi.mp/28fde72cf8f7/march-news-from-nancy",
+      "date": "2025-03-21",
+      "date_precision": "day",
+      "passage": "This amendment language has been approved by the state legislature in two consecutive legislative sessions and would require photo identification when voting. Please take a look and vote YES for voter identification on or before April 1st.",
+      "note": "March 2025 e-newsletter to constituents, sent with a copy of her column. She asks readers to vote yes on the photo ID amendment.",
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment for voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:06:50.345Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05f8a142565de5b18a7bb52eccf388587e6178fcea0d942c4b6f4e87c5f035e1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ajr1",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-1-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/6/2025 (second consideration, text of 2023 SJR 73); committee recommended adoption 1/9/2025 (5-2); laid on the table 1/14/2025; died (Failed to adopt pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('VanderMeer') on the official bill page; linked to Nancy VanderMeer via the official 2025 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.786Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f105cb8cc766b9ac9b7e2489ba36edc3c7ee78320f2205bd664bd72a8b747ad4",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0252",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-133-2022",
+      "act": "yea",
+      "motion": "Assembly: Adopted (ADOPTION) (av0252)",
+      "note": "Assembly roll call as printed ('VANDERMEER'), linked to Nancy VanderMeer (district 70) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.786Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3dcdd6812724e9ea085737c1a28378742e9b2599a364726fd8fb1c0b5f415b7f",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0090",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0090)",
+      "note": "Assembly roll call as printed ('VANDERMEER'), linked to Nancy VanderMeer (district 70) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.786Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4f30723e38f6bac08dfc861be5cb5156051e1eebf82a52f402ee921c9e9fdf26",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2017/av0362",
+      "date": "2018-12-04",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-884-2018",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0362)",
+      "note": "Assembly roll call as printed ('VANDERMEER'), linked to Nancy VanderMeer (district 70) via the official 2017 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.786Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b31b4288bd002fb7b4bbaa46b990e06d7b2eff283e39b1556d0e71f0bd7e00cb",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0258",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0258)",
+      "note": "Assembly roll call as printed ('VANDERMEER'), linked to Nancy VanderMeer (district 70) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.786Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aac49f80b6252a05edb5b95b705c5111fbb94d9575b9dfdc762cc087dd25edd",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('VANDERMEER'), linked to Nancy VanderMeer (district 70) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.786Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f37735cfc46365a2fe5a6cf819e19dbb60dbab9982d4680456fe62a5dc680974",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('VANDERMEER'), linked to Nancy VanderMeer (district 70) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.786Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter and provisional ballot",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "not reviewed: On the Record extraction script (agent rules forbid running repo scripts)",
+        "legislature member page https://legis.wisconsin.gov/assembly/70/vandermeer/ (confirms name; nothing on the subject)",
+        "legislature press releases list (10 titles, Feb 2025 to Apr 2026): nothing on the subject; release texts not opened",
+        "legislature columns list: one column on photo ID (saved below, read from the page image)",
+        "legislature e-updates list; March 2025 newsletter (saved below); April 2025 newsletter has nothing on the subject; other newsletters not reviewed",
+        "Wisconsin bill page for 2025 AB 372 (about a veterans memorial map sign, not the subject; a search snippet wrongly tied it to photo ID)",
+        "BallotReady page (lists her as a 2026 candidate for Assembly District 70, in the 2026-08-11 primary and the general election)",
+        "blocked: https://ballotpedia.org/Nancy_VanderMeer (empty page returned)",
+        "one web search on name plus subject words; no campaign site found",
+        "not reviewed: floor votes and sponsorships on voter ID and citizenship bills (linked separately)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T23:06:50.345Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T23:15:12.786Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

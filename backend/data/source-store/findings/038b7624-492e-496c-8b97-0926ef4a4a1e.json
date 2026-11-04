@@ -1,0 +1,99 @@
+{
+  "politician_id": "038b7624-492e-496c-8b97-0926ef4a4a1e",
+  "findings": [
+    {
+      "id": "788ae4041dcba3d352b50de60a4ac5cd6b9a06a0873ad58e5a01cc48518a7d5a",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "nay",
+      "motion": "SB 1174 Senate Third Reading, Assembly floor",
+      "note": "SB 1174 (Min, Elections: voter identification) bars a city or district from enacting or enforcing a charter provision, ordinance or regulation requiring a person to show identification to vote or submit a ballot at a polling place, vote center or other ballot location. Chaptered as Chapter 990, Statutes of 2024. Vote record is from CalMatters Digital Democracy; the official leginfo site blocked automated access.",
+      "subjects": [
+        "local voter ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:22.637Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b15b75503895138d93a6b568ca71f1873a187487ed6d98f42a57ff8da7ae5263",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "nay",
+      "motion": "AB 1116 Assembly Third Reading",
+      "note": "AB 1116 (Berman, Elections: voter registration) lets a person register online without a California driver license or state ID if they give the last four digits of their Social Security number; the Secretary of State may verify identity from those digits, full name and date of birth; operative 2029. Vote record is from CalMatters Digital Democracy; the official leginfo site blocked automated access.",
+      "subjects": [
+        "identity proof to register to vote online"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:22.637Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "44bc309f9960f50369756b2d0800b77084788560735789214f48529aeeb36f10",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-25",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "nay",
+      "motion": "AB 1116 Concurrence in Senate Amendments",
+      "note": "AB 1116 (Berman, Elections: voter registration) lets a person register online without a California driver license or state ID if they give the last four digits of their Social Security number; the Secretary of State may verify identity from those digits, full name and date of birth; operative 2029. Vote record is from CalMatters Digital Democracy; the official leginfo site blocked automated access. The Governor vetoed the bill on 2026-09-27.",
+      "subjects": [
+        "identity proof to register to vote online"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:22.637Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter ID rules",
+        "proof of citizenship to register",
+        "identity proof to register to vote online",
+        "mail-ballot ID",
+        "SAVE Act",
+        "official canvass"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Joe_Patterson_(California) (confirms 2026 general-election incumbent)",
+        "blocked: https://ad05.asmrc.org/ (bot challenge, official site not searched)",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (bot challenge)",
+        "blocked: https://www.courthousenews.com/california-lawmakers-knock-down-voter-id-bill-in-committee/ (not reviewed; a search snippet ties this person's AB 1214 to a committee hearing, but trackers list AB 1214 as an official-canvass bill, so it is not saved as on the subject)",
+        "CalMatters Digital Democracy vote pages for SB 1174 of 2024, AB 25 of 2025 (failed without a vote; this person is not an author), SB 405 of 2025 (failed), AB 1116 of 2025; AB 1214 page returned a server error",
+        "web searches on name plus voter ID and SB 1174 (no statement by this person found)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:59:22.637Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

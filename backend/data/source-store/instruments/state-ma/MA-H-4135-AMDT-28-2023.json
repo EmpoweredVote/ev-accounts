@@ -1,0 +1,58 @@
+{
+ "id": "MA-H-4135-AMDT-28-2023",
+ "scope": "state:ma",
+ "title": "H.4135 (193rd General Court) House floor amendment #28: Modernizing Firearm Laws (replaces the whole bill with four sections). Rejected (no roll call shown) 10/18/2023.",
+ "urls": [
+  "https://malegislature.gov/Bills/GetAmendmentContent/193/H4135/28/House/Content",
+  "https://malegislature.gov/Bills/193/H4135/BillHistory"
+ ],
+ "version": "other",
+ "sponsors": [
+  {
+   "name": "Soter",
+   "role": "prime",
+   "version": "amendment text (movers named in it)",
+   "politician_id": "51e50b38-dbb2-4131-91bb-23c24bf6d741"
+  },
+  {
+   "name": "Muradian",
+   "role": "co",
+   "version": "amendment text (movers named in it)"
+  },
+  {
+   "name": "Kimberly N. Ferguson",
+   "role": "co",
+   "version": "additional co-sponsor listed on the amendment"
+  },
+  {
+   "name": "Bradley H. Jones, Jr.",
+   "role": "co",
+   "version": "additional co-sponsor listed on the amendment"
+  },
+  {
+   "name": "Alyson M. Sullivan-Almeida",
+   "role": "co",
+   "version": "additional co-sponsor listed on the amendment"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03): official amendment text + bill history for fate",
+  "fetched_at": "2026-11-03T19:02:32Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-H-4135-AMDT-28-2023.html",
+   "sha256": "f3bd7fc3655ae82a7f7fe7650f9647fce973e9181de1578e0a689108a7709df4"
+  }
+ },
+ "operative_text": "Amendment #28 to H.4135 Amendment #28 to H4135 Modernizing Firearm Laws Representatives Soter of Bellingham and Muradian of Grafton move to amend the bill By striking the bill in its entirety and inserting the following four sections: SECTION 1: Said chapter 131, as so appearing, is hereby further amended by striking out section 62 and inserting in place thereof the following section:- Section 62. A person, with a percentage, by weight, of alcohol in their blood of eight one hundredths or greater, or while under the influence of intoxicating liquor, or of marihuana, narcotic drugs, depressant or stimulant substances, all as defined in section 1 of chapter 94C, or who intentionally smells or inhales the fumes of any substance having the property of releasing toxic vapors in violation of section 18 of chapter 270, shall not hunt or carry a firearm, bow and arrow or other weapon while engaged in hunting or target shooting. A violation of this section shall be punished by a fine of not more than $5,000 or by imprisonment in the house of correction for not more than 2 ½ years, or by both such fine and imprisonment. SECTION 2: Said section 121 of said chapter 140, as so appearing, is hereby further amended by striking out the definition of “Machine gun” and inserting in place thereof the following 4 definitions:- “Machine gun”, a firearm, loaded or unloaded, which may automatically discharge more than 1 shot by a continuous activation of the trigger, whether originally manufactured as such or modified by automatic conversion, including through the use of an automatic part; provided, that “machine gun” shall include a submachine gun. “Manufacture”, to fabricate, make, form, produce or construct, by manual labor or by machinery, a firearm; provided, however, that “manufacture” shall not include firearm reassembly, firearm repair or the making or fitting of special barrels, stocks or trigger mechanisms to firearms. “Nonresident”, a person who is temporarily in the commonwealth but legally resides in another state or territory of the United States. “Permanently embedded”, applied in such a way that cannot be easily or readily removed 320 without destroying the part to which it is applied. SECTION 3: Said section 121 of said chapter 140, as so appearing, is hereby further amended by striking out the definition of “Trigger crank” and inserting in place thereof the following 3 definitions:- “Trigger modifier”, any modification that repeatedly activates the trigger of a firearm, including, but not limited to, trigger cranks, binary triggers and hellfire triggers. “Undetectable firearm”, (i) a firearm that after the removal of grips, stocks and magazines, is not detectable by walk-through metal detectors calibrated and operated to detect the security exemplar as defined in 18 U.S.C. Section 922(p)(2)(C); or (ii) a major component of a firearm as defined in 18 U.S.C. Section 922(p)(2)(B) that, when inspected by detection devices commonly used at secure public buildings and transit stations, does not generate an image that accurately depicts the shape of the component. “Untraceable firearm”, a firearm that has not been serialized or a firearm whose serial or other identification number has been removed, defaced, altered, obliterated or mutilated in any manner. SECTION 4: Said chapter 140 of the General Laws, as so appearing, is hereby amended by striking out section 122B and inserting in place thereof the following section:- 122B. (a) The department of criminal justice information services in collaboration with the executive office of public safety and security and the executive office of technology services and security, shall collect, assemble, and publish data and other information relating to the use of firearms in the commonwealth. (b) State and local agencies, including but not limited to the department of the state police, licensing authorities, all district attorney offices within the commonwealth, and other criminal justice agencies as defined in section 167 of chapter 6, shall provide timely access to information requested by the department of criminal justice information services pursuant to this section. (c) The department of criminal justice information services shall make non-personally identifying data accessible to the general public through the publication of an online dashboard updated at least quarterly. This dashboard shall include but shall not be limited to: (1) the following aggregate data on the issuance of firearm licenses and permits pursuant to sections 124 to 124B, inclusive, of chapter 140: (i) the age, gender, and municipality of applicants for a license to carry; (ii) the age, gender, and municipality of individuals whose applications for a license to carry were denied; (iii) the age, gender, and municipality of applicants for a long gun permit; and (iv) the age, gender, and municipality of individuals whose applications for a long gun permit were denied; and (2) the following aggregate data on firearm-related violence, including but not limited to firearm-involved crimes and attempted or completed suicides using firearms: (i) the type of firearm-involved violence (e.g., attempted or completed suicide, homicide, accidental shooting, other firearm-involved crime); (ii) the age, and gender of the firearm user; (iii) the age, and gender of any victims of firearm-involved violence; (iv) the geographic location of the firearm-involved violence; (v) the firearms license status of the firearm user; (vi) whether the firearm user, at the time of the incident, would be considered a prohibited person as described in section 123 of; (vii) whether the firearm user was arrested as a result of the incident; (viii) whether the firearm user was charged with a mandatory minimum and the disposition of the charge; (ix) the disposition of any prosecution; (x) whether the firearm was used in connection with known gang activity, a domestic dispute, or police interaction; (xi) the make, model, manufacturer, and state or country of origin of the involved firearm; (xii) the origin, source and secondary market of the involved firearm, including whether it was purchased from a licensed dealer or private seller; (xiii) whether the involved firearm was lost, stolen or otherwise illegally obtained; and (xiv) whether the involved firearm was untraceable or a privately made firearm, including the manner in which it was produced. (d) the department of criminal justice information services, in coordination with the executive office of public safety and security, shall promulgate rules and regulations to ensure prompt collection, exchange, and publication the firearm licensing information under this section. Additional co-sponsor(s) added to Amendment #28 to H4135 Modernizing Firearm Laws Representative: Kimberly N. Ferguson Bradley H. Jones, Jr. Alyson M. Sullivan-Almeida"
+}

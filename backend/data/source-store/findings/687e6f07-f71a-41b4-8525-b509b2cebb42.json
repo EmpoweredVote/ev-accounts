@@ -1,0 +1,293 @@
+{
+  "politician_id": "687e6f07-f71a-41b4-8525-b509b2cebb42",
+  "findings": [
+    {
+      "id": "dccd48f32b76eb8fc13b6396a53d87f5e98083832180cdb25007e7d564aa49b4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81400&billStatusActionId=223261&includeVotes=true",
+      "date": "2024-02-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2785-2024",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('SHAMP'), linked to Janae Shamp (district None) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba4bbab8ec97997d4fb86d0b3830076f32919bda55f035196b142276f76fd206",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=234554&includeVotes=true",
+      "date": "2025-03-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('SHAMP'), linked to Janae Shamp (district 29) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d2d451d27200c951c4ac0fce30e3b3b0798f1790b723f08f16cc5808b9b8c52",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=233421&includeVotes=true",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('SHAMP'), linked to Janae Shamp (district 29) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "330408ec4896d61a3e54a41918f6a9cb34e65520c76a66a406068d0c72d8d724",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78743&billStatusActionId=216660&includeVotes=true",
+      "date": "2023-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1141-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('SHAMP'), linked to Janae Shamp (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43c31e9e19d446cfa257d435467eac22004793413fd5999c83ee78dbc70b3803",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78784&billStatusActionId=217557&includeVotes=true",
+      "date": "2023-03-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1178-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('SHAMP'), linked to Janae Shamp (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c317edba5932851a547b9a08821e246d23e724e516c40a7a27f9d0a603f407a8",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79205&billStatusActionId=218058&includeVotes=true",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1518-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('SHAMP'), linked to Janae Shamp (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7f88491a24de3b8fc57c195fa6e6dd0ec7429139072247414246681c16061fd5",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79268&billStatusActionId=217410&includeVotes=true",
+      "date": "2023-03-07",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('SHAMP'), linked to Janae Shamp (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aeb744ceacde5e405640f0f86456e7f9ce347bfb3561ffe01639c659dfec6bd",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83528&billStatusActionId=241249&includeVotes=true",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1001-2026",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('SHAMP'), linked to Janae Shamp (district 29) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a31761a82eac517c409849a37f3bd868b9ed382b32f889006ce709be96633f9e",
+      "kind": "own-words",
+      "url": "https://azcleanelections.gov/arizona-elections/voter-education-guide/primary-text-legislative29",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Secure borders, secure elections, good jobs, trying to reverse the damage the Biden and Hobbs administrations are doing to our economies, fighting inflation and high prices, protecting private property rights, school choice, doing right by our veterans and first responders, restoring your medical freedom, looking after our water supply, and more.",
+      "note": "Candidate statement in the state voter education guide (District 29 Senate race, 2024 cycle). Lists secure elections among her priorities; no specifics on ID or citizenship.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.472Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "56f5cd071801eadbd6a1b276ffda33618d58728b160fa7a398fe00beeb833cce",
+      "kind": "own-words",
+      "url": "https://voteforshamp.com/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Election Integrity, Medical Freedom, Border Security, Agriculture Industry support, Water,",
+      "note": "Campaign site 'My top issues' list; election integrity is named first. No detail on ID or citizenship. Page date not shown.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.472Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 8,
+      "at": "2026-10-28T22:53:15.887Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity in general",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "places": [
+        "scope: sitting District 29 senator (azleg.gov member roster); a KJZZ page dated 2026-09-19 says she is running for reelection in District 29; the primary result itself was not confirmed (Ballotpedia blocked, a Phoenix New Times results page blocked)",
+        "not reviewed: On the Record (the extraction script is a repo script and was not run in this session)",
+        "blocked: https://ballotpedia.org/Janae_Shamp (empty page)",
+        "blocked: https://www.phoenixnewtimes.com/news/arizona-state-legislature-primary-election-results-19569148 (403)",
+        "blocked: https://www.12news.com/article/news/politics/arizona-senate-votes-to-require-id-with-mailed-ballot/75-c6056d8d-f646-4a43-acec-146912581a6c (403)",
+        "blocked: https://yourvalley.net/stories/qa-get-to-know-arizona-senate-candidates-for-legislative-district-29,327071 (members-only paywall)",
+        "campaign site https://voteforshamp.com/ and its legislation page (only a short issue list, nothing further on the subject)",
+        "state senate caucus site https://www.azsenaterepublicans.gov/senators/janae-shamp (404) and press list (no release naming her on the subject)",
+        "state voter education guide page (candidate statement)",
+        "Wikipedia page (nothing on the subject)",
+        "two news searches on her name plus subject words (no direct quote found)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:13:34.961Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity in general",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "places": [
+        "scope: sitting District 29 senator (azleg.gov member roster); a KJZZ page dated 2026-09-19 says she is running for reelection in District 29; the primary result itself was not confirmed (Ballotpedia blocked, a Phoenix New Times results page blocked)",
+        "not reviewed: On the Record (the extraction script is a repo script and was not run in this session)",
+        "blocked: https://ballotpedia.org/Janae_Shamp (empty page)",
+        "blocked: https://www.phoenixnewtimes.com/news/arizona-state-legislature-primary-election-results-19569148 (403)",
+        "blocked: https://www.12news.com/article/news/politics/arizona-senate-votes-to-require-id-with-mailed-ballot/75-c6056d8d-f646-4a43-acec-146912581a6c (403)",
+        "blocked: https://yourvalley.net/stories/qa-get-to-know-arizona-senate-candidates-for-legislative-district-29,327071 (members-only paywall)",
+        "campaign site https://voteforshamp.com/ and its legislation page (only a short issue list, nothing further on the subject)",
+        "state senate caucus site https://www.azsenaterepublicans.gov/senators/janae-shamp (404) and press list (no release naming her on the subject)",
+        "state voter education guide page (candidate statement)",
+        "Wikipedia page (nothing on the subject)",
+        "two news searches on her name plus subject words (no direct quote found)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:18:25.472Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "id": "MA-H-3980-2023",
+  "scope": "state:ma",
+  "title": "H3980 (193rd General Court): Modernizing firearm laws",
+  "urls": [
+    "https://malegislature.gov/Bills/193/H3980",
+    "https://malegislature.gov/Bills/193/H3980.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michael Day",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ff5cc07a-b904-4365-bcac-027bb50e8a8e"
+    },
+    {
+      "name": "David Linsky",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fa6beaf8-acfe-4365-82a2-6f282aa1b688"
+    },
+    {
+      "name": "Christopher Hendricks",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9cb46542-a671-4bdd-bfcb-98fc1bc79415"
+    },
+    {
+      "name": "Jennifer Balinsky Armini",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Mindy Domb",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ecafa801-15b3-4777-9c38-95f5ded5cbe6"
+    },
+    {
+      "name": "Tram Nguyen",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fc1d7143-1be8-49b0-be31-6dbc5874230d"
+    },
+    {
+      "name": "Adrianne Ramos",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ee861f58-dabf-429f-97ee-32591bdd3650"
+    },
+    {
+      "name": "Rodney Elliott",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "751464b8-069c-4a7e-b21b-06d36c338060"
+    },
+    {
+      "name": "Patricia Duffy",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4a0609a0-7073-4de1-9bf8-b3ecaebc9638"
+    },
+    {
+      "name": "David Rogers",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ffb8e526-7ad7-4911-92c5-d69528a0f280"
+    },
+    {
+      "name": "Kenneth Gordon",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "afb64fe5-b2a7-4c47-b113-5200ed26182a"
+    },
+    {
+      "name": "James Arena-DeRosa",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ea8ed274-32d6-499d-a787-7ad1f0624280"
+    },
+    {
+      "name": "Tricia Farley-Bouvier",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "15c27efb-0402-4a3a-bfad-9df152874046"
+    },
+    {
+      "name": "Rita Mendes",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "042c79d6-2f15-4e90-b672-ce779a53cae0"
+    },
+    {
+      "name": "Natalie Higgins",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c14b3502-f142-4c1f-bfa9-a8fa52351a8e"
+    },
+    {
+      "name": "Jack Lewis",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "04a9edee-5d51-49f3-a2c9-585e2231bd08"
+    },
+    {
+      "name": "David LeBoeuf",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3ca6c1b2-eec3-4e28-991d-fce8b6b67354"
+    },
+    {
+      "name": "Daniel Cahill",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ca6d9c06-e613-46a1-b938-0d89d488b583"
+    },
+    {
+      "name": "Christine Barber",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "7cbdb829-4836-49e9-afb2-cb8035afc6bf"
+    },
+    {
+      "name": "Carlos Gonzalez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "64e0eeb2-c83a-4da4-b6a2-2047b1e25cab"
+    },
+    {
+      "name": "Steven Ultrino",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0cb5bf41-db67-4c4e-b4cf-79c4e4e8dcd7"
+    },
+    {
+      "name": "John Moran",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "7cc9694b-3bca-44ec-ab75-762c1f6d5136"
+    },
+    {
+      "name": "Dawne Shand",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8ee72aa5-b7a0-422f-817d-a330f29dd2b1"
+    },
+    {
+      "name": "Carmine Gentile",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "a9ea7006-d595-45aa-a301-9c71d5a3af4d"
+    },
+    {
+      "name": "John Mahoney",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "50838d91-2ce4-4aa6-8950-b87579860a4b"
+    },
+    {
+      "name": "Michelle Ciccolo",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0748d787-7e5d-4852-b461-3459312fae45"
+    },
+    {
+      "name": "James O'Day",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9b754d96-e0e7-4f6b-b3ae-e0d1c12ef1bf"
+    },
+    {
+      "name": "Tommy Vitolo",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "001147b2-5c07-499e-85b9-bae224fdc73a"
+    },
+    {
+      "name": "William Driscoll",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ab975fdf-b4f1-4955-94a4-97681a2a8d08"
+    },
+    {
+      "name": "Ruth Balser",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Marjorie Decker",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2b1a645a-72ce-4c0f-80ec-17565a2d6d10"
+    },
+    {
+      "name": "Daniel Ryan",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6ab8e9cc-6315-40d8-bb99-eb00faed61fa"
+    },
+    {
+      "name": "Vanna Howard",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c947719a-cd1a-497a-8fc9-d9c4d434b18f"
+    },
+    {
+      "name": "Samantha Montano",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "28a703f8-8316-4d3c-bfc0-3dcd77eab96c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-31T18:31:13.796330Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-3980-2023.introduced.pdf",
+      "sha256": "fc2cf32dbd88bb4b1b9266311c82ce3b8ee11febb2a878a7f7da17f1ab4578fd"
+    }
+  },
+  "operative_text": "Sec. 48 (replacing G.L. c.140 s.122): (a) All firearms and feeding devices possessed in the commonwealth must be registered in accordance with this section. All firearms and feeding devices purchased, acquired, manufactured, or assembled in the commonwealth shall, at the time of purchase, acquisition, manufacture or assembly be registered unless the firearm is imported by: (i) a new resident moving into the commonwealth who causes the firearm to be serialized and registered within 60 days of arrival; (ii) an heir who is transferred the firearm through the distribution of an estate and causes said firearm to be serialized and registered within 60 days of taking possession; (iii) a licensed dealer, gunsmith, distributor or manufacturer who causes said firearm to be serialized and registered within 10 days of taking possession.\nSec. 49 (replacing G.L. c.140 s.122A): (c) No person shall manufacture or assemble a privately made firearm in the commonwealth without: (i) prior to manufacture or assembly obtaining a unique serial number from the department of criminal justice information services; (ii) during manufacture or assembly serializing the firearm with the obtained serial number; and (iii) within 7 days of the firearm’s manufacture or assembly register the firearm with the department in accordance with section 122.\nSec. 54 (replacing G.L. c.140 s.124): (a)(1) A license to carry firearms shall entitle the holder thereof to transfer, possess and carry firearms including large capacity firearms, feeding devices and ammunition therefor. This license shall not entitle a holder thereof to transfer, possess or carry large capacity feeding devices or assault-style firearms unless exempted from section 128B.\nSec. 60 (replacing G.L. c.140 s.128B): No person may knowingly possess, own, offer for sale, sell or otherwise transfer in the commonwealth or import into the commonwealth an assault-style firearm as defined in section 121 that was not otherwise lawfully possessed on September 13, 1994, or a large capacity feeding device as defined in section 121.\nSec. 64 (replacing G.L. c.140 s.131): (a) A petitioner who believes that a person holding a firearms license or permit may pose a risk of causing bodily injury to self or others may, on a form furnished by the court and signed under the pains and penalties of perjury, file a petition in court.\nSec. 196 (G.L. c.269 s.10I): (a) Whoever transports a firearm into the commonwealth for use in the commission of criminal activity shall be punished by imprisonment for not less than 5 years nor more than 10 years.\nSec. 216 (inserting G.L. c.269 s.12G): Whoever discharges a firearm as defined in section 121 of chapter 140, with intent to strike a dwelling or other building in use, and as a result does strike such dwelling or building, shall be punished by imprisonment in the house of correction for not more than 2 ½ years, or in state prison for not more than 5 years.\nSec. 233 (transition): Any person in possession of a valid firearm identification card on the effective date of this act may continue to possess common long guns under the terms and conditions outlined for a long gun permit in chapter 140 until renewal of said card is required."
+}

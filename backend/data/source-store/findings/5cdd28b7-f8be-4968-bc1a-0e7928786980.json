@@ -1,0 +1,56 @@
+{
+  "politician_id": "5cdd28b7-f8be-4968-bc1a-0e7928786980",
+  "findings": [
+    {
+      "id": "daa3ab48fe22960b9ebbe9027332fcc0ca5fdffb580ae352059a865d4c750536",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "SB 1174 (Min) Senate Third Reading, Assembly Floor; passed 57 ayes, 16 noes, 6 abstentions",
+      "note": "Voted aye on the Assembly floor for SB 1174, which bars local governments from enacting or enforcing voter identification requirements. Roll call taken from the Digital Democracy bill page; the official leginfo vote page was blocked.",
+      "subjects": [
+        "local voter ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:01:05.181Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter ID rules",
+        "proof of citizenship to register",
+        "ID number on mail ballot envelope",
+        "Proposition 39 (2026 voter ID initiative)",
+        "SAVE Act",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "official Assembly site https://bryan.asmdc.org (home page and press release list; only voting-rights item found is on restoring voting rights after incarceration, not on ID or citizenship)",
+        "Ballotpedia page (nothing on the subject)",
+        "Proposition 39 Ballotpedia page (his name does not appear)",
+        "CalMatters Digital Democracy page for SB 1174 (member roll call; positive control: it lists him and shows his vote)",
+        "CalMatters Digital Democracy page for AB 25 (2025 Elections Committee roll call; he is not among the members who voted)",
+        "web news search on his name plus voter ID / Proposition 39 / SAVE Act / proof of citizenship (nothing on the subject)",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (bot challenge and HTTP 403)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:01:05.181Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

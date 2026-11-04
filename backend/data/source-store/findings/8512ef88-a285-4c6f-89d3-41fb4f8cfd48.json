@@ -1,0 +1,161 @@
+{
+  "politician_id": "8512ef88-a285-4c6f-89d3-41fb4f8cfd48",
+  "findings": [
+    {
+      "id": "c19ad6437e734ddf5bc5c2c42cca9771db548fc3dc8d5503d540427c366ff8a1",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall42.pdf",
+      "date": "2025-04-29",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4000-AMDT-409-2025",
+      "act": "yea",
+      "motion": "On adoption of amendment #409 (H.4000) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 42, On adoption of amendment #409 (H.4000) - failed, 2025-04-29: yea (tally 25–131); the sheet lists 'Sweezey'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "031da260f8e422347d5016f4a54a60c19a73e3efaba279ce2f337d18bdbfcb4e",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall174.pdf",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-5500-AMDT-1587-2026",
+      "act": "yea",
+      "motion": "On adoption of amendment #1587 (H.5500) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 174, On adoption of amendment #1587 (H.5500) - failed, 2026-04-28: yea (tally 27–131); the sheet lists 'Sweezey'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "59fe7df2e2a460e77fafd7c360a4f22d9ea283f9c78d2fb6c16d0e8a869402ff",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H2711",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MA-H-2711-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MA-H-2711-2025 (LegiScan sponsor list): H2711 (194th General Court): Relative to semiautomatic rifles and shotguns.",
+      "subjects": [
+        "repeals a section of the 2024 firearms act on semiautomatic rifles and shotguns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2711-2025.introduced.pdf",
+          "sha256": "f25757f74627ebb5405cdea555d684b5396dfb2a6ffc6bd546330b4a0d7096e0"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "scope confirmed: https://malegislature.gov/Legislators/Profile/KPS1 (Representative Kenneth P. Sweezey, Duxbury, 194th General Court); campaign site https://www.kensweezey.com says 'Re-Elect Your State Representative'",
+        "On the Record (0 appearances)",
+        "legislature bill pages (profile sponsorship list; H.871 'An Act moving the date of regular primary elections' and H.872 Pembroke recall are election bills but not on this subject): nothing on the subject",
+        "campaign site https://www.kensweezey.com: nothing on the subject",
+        "blocked: https://ballotpedia.org/Kenneth_P._Sweezey (404 / empty)",
+        "not reviewed: web news search (search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:14:07.679Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "status: in scope; Ballotpedia https://ballotpedia.org/Kenneth_Sweezey shows a sitting Massachusetts House member for the 6th Plymouth District, on the November 3, 2026 general-election ballot after advancing from the September 1, 2026 primary",
+        "On the Record (0 appearances found)",
+        "campaign/official site https://www.kensweezey.com (home and about pages: nothing on the subject; /issues and /news do not exist)",
+        "Ballotpedia page (Candidate Connection survey not completed; nothing on the subject)",
+        "news search on name plus voter ID words (nothing on him)",
+        "search for 194th General Court voter ID bills (found H.833 by another representative; could not check whether he co-sponsored)",
+        "blocked: https://malegislature.gov/Bills/194/H833/Cosponsor (503)",
+        "blocked: https://malegislature.gov/Bills/194/HD3562 (503)",
+        "blocked: https://malegislature.gov/Bills/194/H833 (empty response)",
+        "not reviewed: his X account https://x.com/RepSweezey",
+        "not reviewed: Massachusetts House roll-call records 2025-2026"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:31:21.658Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "repeal of the 2024 firearms law",
+        "gun registration",
+        "right to carry",
+        "live-fire training",
+        "pre-ban magazines",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page https://malegislature.gov/Legislators/Profile/KPS1: confirms 6th Plymouth seat; lists several firearm bills (H.2610, H.2701, H.2708, H.2709, H.2710, H.2711, H.2712, H.2713) under his name",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site https://www.kensweezey.com: home page has nothing on the subject",
+        "blocked: https://www.kensweezey.com/news (404 on fetch)",
+        "blocked: https://www.statehousenews.com/news/legislature/q-a-shns-talks-with-freshman-rep-ken-sweezey/article_d20eb9e2-efb5-11ef-8277-d310eab8b2cc.html (429; 2025 Q&A where he is asked about his gun repeal bills, text not reachable)",
+        "Ballotpedia: not reviewed (pages return empty to the fetch tool)",
+        "news searches on name plus gun terms (5 searches): no direct quotes from him reachable",
+        "not reviewed: Public Safety committee hearing of 2025-10-31 on the repeal bills (no transcript or testimony page found)"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:42:37.790Z",
+      "by": "source-collector"
+    }
+  ]
+}

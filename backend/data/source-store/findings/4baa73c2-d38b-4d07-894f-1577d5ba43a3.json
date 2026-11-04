@@ -1,0 +1,31 @@
+{
+  "politician_id": "4baa73c2-d38b-4d07-894f-1577d5ba43a3",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID bans (SB 1174 of 2024)",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Caroline_Menjivar (confirms sitting State Senate District 20 member, on the 2026 general-election ballot)",
+        "official Senate site https://sd20.senate.ca.gov/ and first page of press releases https://sd20.senate.ca.gov/press-releases (nothing on the subject; later pages not reviewed)",
+        "Digital Democracy legislator page and SB 1174 bill page (no individual vote shown; her authored bills listed are not on the subject)",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (page needs scripts, no vote names in text)",
+        "blocked: https://legiscan.com/CA/rollcall/SB1174/id/1456865 (403)",
+        "blocked: https://pluralpolicy.com/app/legislative-tracking/bill/details/state-ca-20232024-sb1174 (no content)",
+        "web news searches: no statement by her on voter ID, proof of citizenship or the SAVE Act; her individual vote on SB 1174 could not be confirmed"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:56:52.206Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

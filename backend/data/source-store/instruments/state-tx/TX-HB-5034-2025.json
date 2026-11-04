@@ -1,0 +1,41 @@
+{
+  "id": "TX-HB-5034-2025",
+  "scope": "state:tx",
+  "title": "HB 5034 (89R): Relating to eligibility requirements for voting.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5034",
+    "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5034",
+    "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB05034I.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) SECTION 3 (amends Election Code 63.0101(a))\n(quote) (a) The following documentation is an acceptable form of photo identification under this chapter: (1) one of the following forms of identification issued to the person by the Department of Public Safety that has not expired or that expired no earlier than one year before the date of presentation: (A) a driver's license, not including a driver's license subject to Section 521.271(a-2), (a-3), or (a-4) or 521.2711(c), Transportation Code; (B) an election identification certificate ; [ , ] or (C) a personal identification card [ issued to the person by the Department of Public Safety that has not expired or that expired no earlier than four years before the date of presentation ]; (2) a United States military identification card that contains the person's photograph that has not expired or that expired no earlier than four years before the date of presentation; (3) a United States citizenship certificate issued to the person that contains the person's photograph; (4) a United States passport book or card issued to the person that has not expired or that expired no earlier than four years before the date of presentation; or (5) a license to carry a handgun issued to the person by the Department of Public Safety that has not expired or that expired no earlier than four years before the date of presentation.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) SECTION 4 (adds Election Code 114.004(d)); federal postcard application, used by military and overseas voters\n(quote) (d) The federal postcard application must include: (1) a photocopy of the applicant's unexpired, valid United States passport or current, unexpired military identification card; (2) a photocopy of a lease, bank statement, utility bill, or other document that shows the name and foreign address of the applicant; and (3) a signed affidavit that each of the statements in the application are correct and true.\n(section) SECTION 5 (amends Election Code 114.007(c))\n(quote) (c) A ballot voted under this chapter may be returned to the early voting clerk by mail, common or contract carrier, or courier and must include the material required under Section 114.004(d) .\n(d_proof_of_citizenship)\n(section) SECTION 1 (13.002(c)(3))\n(quote) (3) a statement that the applicant is a United States citizen;\n(section) SECTION 1 (amends Election Code 13.002(c)(8))\n(quote) (8) the following information: (A) the applicant's Texas driver's license number or the number of a personal identification card issued by the Department of Public Safety; (B) if the applicant has not been issued a number described by Paragraph (A), the last four digits of the applicant's social security number; or (C) if the applicant has not been issued a number described by Paragraph (A) or (B), a document listed under Section 63.0101(a) that confirms the applicant's citizenship status [ a statement by the applicant that the applicant has not been issued a number described by Paragraph (A) or (B) ];\n(section) SECTION 2 (amends Election Code 13.122(a)(13))\n(quote) (13) a statement listing the documents confirming citizenship status an applicant must include if the applicant does not have a Texas driver's license number or personal identification card number issued by the Department of Public Safety, or a social security number;\n(other) Sec 3: DPS-issued photo ID expiry window shortened from four years to one year; driver's licenses subject to Transportation Code 521.271(a-2), (a-3), (a-4) or 521.2711(c) excluded from acceptable DPS licenses.\n(other) Sec 5 (114.007): balloting materials for federal postcard applicants may be airmailed or sent by electronic transmission under secretary of state procedures; instructions to early voting clerks.\n(other) Sec 6: effective September 1, 2025.",
+  "sponsors": [
+    {
+      "name": "Harrison",
+      "role": "author",
+      "version": "Introduced (H.B. No. 5034; no other version exists)",
+      "politician_id": "1df6d2a2-8b75-43a9-9a05-b8caa9a65894"
+    },
+    {
+      "name": "Cunningham",
+      "role": "co",
+      "version": "Introduced (H.B. No. 5034; no other version exists)",
+      "politician_id": "032bb339-c63b-4510-93e5-25e72c4f9632"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T15:13:39Z)",
+    "fetched_at": "2026-10-28T15:13:39Z",
+    "method": "curl"
+  }
+}

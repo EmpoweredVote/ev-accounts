@@ -1,0 +1,718 @@
+{
+  "politician_id": "8925add1-8c61-4d2d-92e8-4314df644187",
+  "findings": [
+    {
+      "id": "06442d47a9495bd9ff652d2c8a6b043191ccb0bcf833fefb6bef0931b5853c2e",
+      "kind": "own-words",
+      "url": "https://virdellfortexas.com/legislative-priorities/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "In the 87th legislative session, our representatives voted to reduce voter fraud penalties from a felony to a misdemeanor, Wes will fight to increase penalties for voter fraud. If we can’t trust our elections to be accurate, we can’t trust our government at all.",
+      "note": "Campaign site, Election Reform section (page is undated). He says he would work to raise penalties for voter fraud and ties trust in government to accurate elections.",
+      "subjects": [
+        "election integrity and voter fraud penalties"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:21:54.166Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "675e8cb64201bc1b3cdc4c0d853114e9b03d08c18ccdc7fa933b63fd8f5adfe8",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB1312",
+      "date": "2025-04-08",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-1312-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 1312, proof of citizenship to verify eligibility to vote",
+      "note": "Signed on as a coauthor on 2025-04-08 to a bill requiring a person to submit proof of citizenship to verify eligibility to vote. Referred to the Elections committee 2025-03-10; no later action shown.",
+      "subjects": [
+        "proof of citizenship to register to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:21:54.166Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "af88ed234ad38e07270038c8a6725b7b161f7abdca630e6b3e5f455facb4945d",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB1670",
+      "date": "2025-04-23",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-1670-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 1670, proof of citizenship to verify eligibility to vote",
+      "note": "Signed on as a coauthor on 2025-04-23 to a bill requiring a person to submit proof of citizenship to verify eligibility to vote. Referred to the Elections committee 2025-03-12; no later action shown.",
+      "subjects": [
+        "proof of citizenship to register to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:21:54.166Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c0656b217ffb711513909fd4963e5c6730db6eafcedf7f2723e22c0aacea43a8",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025-04-23",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 5337, proof of citizenship to register to vote; criminal offenses",
+      "note": "Signed on as a coauthor on 2025-04-23 to a bill requiring a person to submit proof of citizenship to register to vote and creating criminal offenses. The Elections committee reported it favorably as substituted 2025-04-28; last action 2025-05-07, committee report sent to Calendars.",
+      "subjects": [
+        "proof of citizenship to register to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:21:54.166Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6446ed91e8ac4f727493eb3db6e1e2c0d0cf4955da5d1db9be0987de21e94b4e",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2245",
+      "date": "2025-04-23",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-2245-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 2245, verification of citizenship status of registered voters",
+      "note": "Signed on as a coauthor on 2025-04-23 to a bill on verifying the citizenship status of registered voters. Referred to the Elections committee 2025-03-14; no later action shown.",
+      "subjects": [
+        "verifying citizenship of registered voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:21:54.166Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad915c508c3be3ffb94d2f4c718f62b942825b80858c717f6c2f85f01a4e0738",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3936",
+      "date": "2025-04-23",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-3936-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 3936, cancelling all voter registrations after each presidential election",
+      "note": "Signed on as a coauthor on 2025-04-23 to a bill cancelling all voter registrations after each presidential election and changing registration and maintenance procedures. Referred to the Elections committee 2025-03-27; no later action shown.",
+      "subjects": [
+        "cancelling voter registrations"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:21:54.166Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9e32a47a83a98260eabfce957f274c58969967afcc168ce4d69680cb89e786cc",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB989",
+      "date": "2025-04-23",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-989-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 989, processes to address election irregularities; civil penalty",
+      "note": "Signed on as a coauthor on 2025-04-23 to a bill on processes to address election irregularities, with a civil penalty. Referred to the Elections committee 2025-03-06; no later action shown.",
+      "subjects": [
+        "election integrity and voter fraud penalties"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:21:54.166Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "463958013e7de6c891fc87ca050e1bf189cf99921430ac5a9dc0e353ad57c9bf",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5138",
+      "date": "2025-04-23",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-5138-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 5138, attorney general duty to prosecute election-law offenses",
+      "note": "Signed on as a coauthor on 2025-04-23 to a bill on the attorney general's duty to prosecute criminal offenses under the state's election laws. Latest action shown: 2025-05-29, Senate appoints conferees.",
+      "subjects": [
+        "who prosecutes election crimes",
+        "election integrity and voter fraud penalties"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:21:54.166Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c7a8a3697f5071a8e5f66f1f42e278218d21bf233b2fd8fe3168184467cb701f",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB1312",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-1312-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced (only version)",
+      "note": "Listed as co of TX-HB-1312-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.517Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c7d684180fc8b633e2cd604cdc42837e97d594e3375c3e01f630ef7549c66e15",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB1670",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-1670-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced (only version)",
+      "note": "Listed as co of TX-HB-1670-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.517Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d64fa34e2edcb101db8082d58d211d3d5e2d0061184fd5387214334962a0ed12",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB2739",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-2739-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced (only version)",
+      "note": "Listed as co of TX-HB-2739-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.517Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8797f835dff93d1e38977098cbc8b0700278ff3297f3693e3f2a385d03a1be5c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HB-5337-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.517Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "976ca9d6116b8d50e94e54f6734c073466dcd79b534822c467c9e7620e911d20",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB892",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-892-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced (only version)",
+      "note": "Listed as co of TX-HB-892-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.517Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "91ea998983c7be9286060a6e945c3e7967d26a6b972212755372f9058642ec8a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HJR161",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HJR-161-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HJR-161-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.517Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c8e41451ff44003686de1540a26349e7b4e87350445ad65f4f8961e21470417e",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3053",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-3053-2025",
+      "act": "yea",
+      "motion": "Read 3rd time RV#2266",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Read 3rd time RV#2266, 2025-05-13: yea (tally 85–56); census gate: none.",
+      "subjects": [
+        "local firearm buyback programs prohibited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-3053-2025.enrolled.html",
+          "sha256": "5c783f0f9c65e8195dcc193a50eb55c2c6158aa0407a2ccf6a2bea6d95531ee0"
+        }
+      }
+    },
+    {
+      "id": "ac5dd6b513bd1f4a89ad5d7b72c55baaa896bacabf9e47a86b70a9dae82f0e4b",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1362",
+      "date": "2025-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1362-2025",
+      "act": "yea",
+      "motion": "Read 3rd time RV#3869",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Read 3rd time RV#3869, 2025-05-28: yea (tally 86–53); census gate: none.",
+      "subjects": [
+        "red flag orders may not be enforced by state or local officials",
+        "federal red flag orders declared unenforceable",
+        "serving an out-of-state red flag order is a state jail felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-1362-2025.enrolled.html",
+          "sha256": "aec24880eb60a1cd8426dd2df4725f2ab3d34a596d3b9e887d080e4018887f72"
+        }
+      }
+    },
+    {
+      "id": "93a5c8ea0cafea0d097554a756bb609857cf8c540fcff91dacb4c62b1a18e6a1",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1596",
+      "date": "2025-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1596-2025",
+      "act": "yea",
+      "motion": "Laid out as postponed business RV#3937",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Laid out as postponed business RV#3937, 2025-05-28: yea (tally 87–52); census gate: none.",
+      "subjects": [
+        "short-barrel firearm possession offense repealed",
+        "definition of short-barrel firearm repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-1596-2025.enrolled.html",
+          "sha256": "79af2b9f1e3b2967b40f051ee7540cd4f3d0d7f9ae0f8c6802c5cd20ab4d37f4"
+        }
+      }
+    },
+    {
+      "id": "5e3359ff7f9b4fad984e8f776e51f8a42cf169e6b30547196fbde9688f1a520a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB706",
+      "date": "2025-05-21",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-706-2025",
+      "act": "yea",
+      "motion": "Read 3rd time RV#3121",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Read 3rd time RV#3121, 2025-05-21: yea (tally 89–51); census gate: none.",
+      "subjects": [
+        "out-of-state handgun licenses recognized in Texas",
+        "state must publish list of states honoring Texas license",
+        "old background-check condition for recognition repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-706-2025.enrolled.html",
+          "sha256": "fb39773e7239800d5a632dde6685542e492721c2bc464dbd6838c1b0425f3c93"
+        }
+      }
+    },
+    {
+      "id": "90333082902e318ad65fbc9b54d81dafe927cef48563960fa6373161279a753e",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2066",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-2066-2025",
+      "act": "author",
+      "motion": "author sponsor, LegiScan sponsor list",
+      "note": "author sponsor of TX-HB-2066-2025 (LegiScan sponsor list): HB2066 (89th Legislature Regular Session): Relating to the expunction of arrest records and files for certain defendants placed on deferred adjudication community supervision for the unlawful carrying of a handgun..",
+      "subjects": [
+        "arrest records expunged for past unlawful-handgun-carry cases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-2066-2025.comm-sub.html",
+          "sha256": "f75a6d18fd687ce974953c63ea71e4008f0c73763dfcc24b3eaa67687d2aca69"
+        }
+      }
+    },
+    {
+      "id": "110722642a98c91ec93a538381222a57afb724384a3744100744d65099b724f1",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3053",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-3053-2025",
+      "act": "author",
+      "motion": "author sponsor, LegiScan sponsor list",
+      "note": "author sponsor of TX-HB-3053-2025 (LegiScan sponsor list): HB3053 (89th Legislature Regular Session): Relating to municipal and county firearm buyback programs..",
+      "subjects": [
+        "local firearm buyback programs prohibited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-3053-2025.enrolled.html",
+          "sha256": "5c783f0f9c65e8195dcc193a50eb55c2c6158aa0407a2ccf6a2bea6d95531ee0"
+        }
+      }
+    },
+    {
+      "id": "7eed5b38b778a20a34d985c60cdce23b19a60a8aa673c32f55249e9204d89660",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1362",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-1362-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of TX-SB-1362-2025 (LegiScan sponsor list): SB1362 (89th Legislature Regular Session): Relating to prohibiting the recognition, service, and enforcement of extreme risk protective orders; creating a criminal offense..",
+      "subjects": [
+        "red flag orders may not be enforced by state or local officials",
+        "federal red flag orders declared unenforceable",
+        "serving an out-of-state red flag order is a state jail felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-1362-2025.enrolled.html",
+          "sha256": "aec24880eb60a1cd8426dd2df4725f2ab3d34a596d3b9e887d080e4018887f72"
+        }
+      }
+    },
+    {
+      "id": "987978b3a573fc0e59c81c8550b2c6dfbe956cf2a8852844faaaa410a799ac3f",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1596",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-1596-2025",
+      "act": "author",
+      "motion": "author sponsor, LegiScan sponsor list",
+      "note": "author sponsor of TX-SB-1596-2025 (LegiScan sponsor list): SB1596 (89th Legislature Regular Session): Relating to the prohibition of short-barrel firearms..",
+      "subjects": [
+        "short-barrel firearm possession offense repealed",
+        "definition of short-barrel firearm repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-1596-2025.enrolled.html",
+          "sha256": "79af2b9f1e3b2967b40f051ee7540cd4f3d0d7f9ae0f8c6802c5cd20ab4d37f4"
+        }
+      }
+    },
+    {
+      "id": "728e79d6462a33d95c4cfea3447b6c30b916f2101c4ba8c3c22aa110cf67683e",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB706",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-706-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of TX-SB-706-2025 (LegiScan sponsor list): SB706 (89th Legislature Regular Session): Relating to the recognition of a handgun license issued by another state..",
+      "subjects": [
+        "out-of-state handgun licenses recognized in Texas",
+        "state must publish list of states honoring Texas license",
+        "old background-check condition for recognition repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-706-2025.enrolled.html",
+          "sha256": "fb39773e7239800d5a632dde6685542e492721c2bc464dbd6838c1b0425f3c93"
+        }
+      }
+    },
+    {
+      "id": "df24d5d738f232503b11259717a751d6ec881c9a67524e21136c1f6b47dc2ffa",
+      "kind": "own-words",
+      "url": "https://www.spectrumlocalnews.com/tx/austin/politics/2025/06/25/texas-lawmakers-loosen-gun-ownership-laws-and-strengthened-restrictions-on-removal",
+      "date": "2025-06-26",
+      "date_precision": "day",
+      "passage": "“That’s in the big beautiful bill that they’re working through, so we hope that that stays in there,” he said.",
+      "note": "Quoted by Spectrum News on federal removal of short-barrelled firearm restrictions, which he is lobbying Congress to pass; the article also says he plans to challenge the National Firearms Act in court if it is dropped.",
+      "subjects": [
+        "short-barrelled rifles and the National Firearms Act",
+        "repeal of gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:33:45.270Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9650a8e24cbb58129d1e8cc823ed42c1fd5968a907309b725e2097f328268a5c",
+      "kind": "own-words",
+      "url": "https://www.spectrumlocalnews.com/tx/austin/politics/2025/06/25/texas-lawmakers-loosen-gun-ownership-laws-and-strengthened-restrictions-on-removal",
+      "date": "2025-06-26",
+      "date_precision": "day",
+      "passage": "“If you want to feel safe at the end of the day, make sure that you have something that you can defend yourself with because bad people don’t care what the law is,” he said.",
+      "note": "Quoted by Spectrum News on gun ownership and self-defense.",
+      "subjects": [
+        "gun rights general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:33:45.270Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a4ba61f7a679ab5744f12c52140299e0ed0d984f63cf5013174c2cfde9c2ad0c",
+      "kind": "own-words",
+      "url": "https://thetexan.news/issues/second-amendment/prohibition-on-local-taxpayer-funded-gun-buybacks-passes-texas-house/article_2a8dc615-42c8-4c70-91c9-fe6d435a80f5.html",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "passage": "“He also is quoted as saying that the number of guns recovered in no way reduced violent crime.",
+      "note": "Floor remarks quoted by The Texan, arguing for HB 3053 (ban on local gun buyback spending); quoted passage is part of a longer quote about a San Antonio police chief.",
+      "subjects": [
+        "gun buyback programs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:33:45.270Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d3bb90318ea9debc4aacf3e037ea558af4c3b78780f5a0c4b473055190bea04f",
+      "kind": "record",
+      "url": "https://thetexan.news/issues/second-amendment/prohibition-on-local-taxpayer-funded-gun-buybacks-passes-texas-house/article_2a8dc615-42c8-4c70-91c9-fe6d435a80f5.html",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-3053-2025",
+      "act": "author",
+      "note": "HB 3053, by Virdell, bars cities and counties from funding or running gun buyback programs; The Texan reports it passed the House 85-56. Authorship to be confirmed by the LegiScan bulk check.",
+      "subjects": [
+        "gun buyback programs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:33:45.270Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "proof of citizenship to register to vote",
+        "verifying citizenship of registered voters",
+        "voter ID at the polls",
+        "election integrity and voter fraud penalties",
+        "cancelling voter registrations",
+        "who prosecutes election crimes"
+      ],
+      "places": [
+        "On the Record (0 appearances found for this person)",
+        "Ballotpedia (confirms House District 53 seat and a place on the 2026 general-election ballot; his 2026 and 2024 candidate surveys not completed; 2020 survey has nothing on this subject)",
+        "campaign site virdellfortexas.com (home page and legislative priorities page)",
+        "Texas Legislature Online author and coauthor pages and histories for 89th-session bills HB 1312, HB 1670, HB 5337, HB 2245, HB 3936, HB 989, HB 5138",
+        "news and bill-tracker search on name plus subject words (2 web searches); no news story quoting him on the subject found",
+        "not reviewed: his social media posts (not reachable by this tool)",
+        "not reviewed: house.texas.gov member page (member id not found; list page gave no link)",
+        "nothing on the subject: floor votes (none on file; the proof-of-citizenship bills he signed on to never reached a floor vote)"
+      ],
+      "found": 8,
+      "at": "2026-10-28T15:21:54.166Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T15:55:41.517Z",
+      "by": "identity-step-sponsors"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun control bills",
+        "Second Amendment",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "background checks",
+        "assault-style weapons",
+        "guns on school property",
+        "gun buyback programs",
+        "short-barrelled rifles and the National Firearms Act"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check (TX)",
+        "web search x2: Second Amendment, HB 3053, short-barrelled firearms",
+        "news articles fetched: Spectrum News (2025-06-26), The Texan (2025-05-13)",
+        "Ballotpedia: not reviewed (returns empty to fetch tool)",
+        "blocked: https://texasscorecard.com/?p=110379 (403)",
+        "blocked: https://dallasexpress.com/state/texas-lawmakers-say-buy-bye-to-local-gun-buyback-programs/ (403)",
+        "not reviewed: his own legislative page and campaign site"
+      ],
+      "found": 4,
+      "at": "2026-10-30T23:33:45.270Z",
+      "by": "source-collector"
+    }
+  ]
+}

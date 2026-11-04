@@ -1,0 +1,78 @@
+-- CC_0319_holladay_ward_srid_repair.sql
+-- Holladay, Utah — put the five city-council ward polygons into the WGS84 degrees (EPSG:4326)
+-- their SRID has always claimed. They held Web Mercator METRES.
+--
+-- 🔴 GENERATED. Rebuild with: node data/fix-holladay-wards-2026/build-cc0319.mjs
+--    Do not hand-edit the WKT.
+--
+-- ═══ 🔴 WHAT WAS WRONG, AND WHAT IT COST A VOTER ═══
+--
+-- All five rows held coordinates around x = -12,448,000 and y = 4,963,000 — Web Mercator metres
+-- (EPSG:3857) — while the geometry was tagged SRID 4326, which means degrees. The polygons were
+-- real, VALID (ST_IsValid true on all five) and correctly shaped, and sat nowhere on Earth that
+-- an address could reach.
+--
+-- 🔴 THE FIVE SEATS WERE UNREACHABLE BY ADDRESS. Measured against production: Holladay City Hall
+--    (-111.8247, 40.6689) was contained by 0 of 5 wards before, and by exactly 1 after. Each ward
+--    carries one office and one seated councillor — David Sundwall (1), Matt Durham (2), Natalie
+--    Bradley (3), Drew Quinn (4), Emily Gray (5) — so a Holladay resident searching their address
+--    got no council member at all, and NOTHING ERRORED. The Mayor still showed, being city-wide,
+--    which made the page look populated rather than broken.
+--    ⚠ A PARTLY-CORRECT ADDRESS RESULT IS HARDER TO SPOT THAN AN EMPTY ONE.
+--
+-- ⚠ NOTHING IN CI SEES THIS LAYER. `check:tiger-fidelity` compares against the Census authority,
+--   so it covers TIGER MTFCCs (G####) only. These are `X0001`, a custom layer with no authority
+--   to compare against. The defect surfaced incidentally, while listing which polygons a new
+--   antimeridian rule would exempt (#1236): these five reported longitude spans of 2,198 to 5,919
+--   degrees, which is impossible.
+--   ▶ A POLYGON CAN BE VALID, CORRECTLY SHAPED AND IN THE WRONG COORDINATE SYSTEM, AND EVERY
+--     GEOMETRIC CHECK STILL PASSES. Only the RANGE of the numbers gives it away.
+--
+-- ⚠ ISOLATED, AND MEASURED RATHER THAN HOPED. Exactly these five rows repo-wide have any
+--   coordinate outside [-180,180] x [-90,90]. One source, one place, one layer:
+--   `manual_digitize_holladay-wards-2022` — hand-digitised over what was almost certainly a Web
+--   Mercator basemap and exported without reprojecting.
+--
+-- ═══ 🔴 WHY LITERAL WKT AND NOT ST_Transform ═══
+--
+-- `ST_Transform` and every `::geography` cast read `public.spatial_ref_sys`, which `anon` can
+-- write — ev-cto decision 0006, an accepted risk that `check-postgis-spatial-ref-guard.mjs`
+-- refuses to let new SQL re-open. An earlier draft of this migration used both and tripped that
+-- guard. Writing the reprojected rings out as literals removes the read entirely, so this needs
+-- no sign-off and adds no exposure. Every gate below is likewise free of `::geography`.
+--
+-- ⚠ HONEST ABOUT HISTORY: the run that actually repaired production used
+--   `ST_Transform(ST_SetSRID(geometry, 3857), 4326)`. This file expresses the SAME END STATE with
+--   literals, and the literals were read back OUT of production afterwards rather than recomputed
+--   — so what it writes is what was measured, not a second implementation of the same arithmetic.
+--   The post-verify asserts the resulting MD5 per row, so the two cannot silently diverge.
+--
+-- ═══ 🔴 THE VALUE OVERWRITTEN IS RECORDED ═══
+--
+-- There is no history table for `geometry`, so the pre-image is committed at
+-- `backend/data/fix-holladay-wards-2026/original-geometry-3857.json` (WKT + MD5 per row), captured
+-- from production before the repair. The pre-flight asserts each row's MD5 against that capture
+-- before touching it, so a drifted production STOPS this migration rather than overwriting
+-- something nothing has a record of. `source` is appended to, never replaced.
+--
+-- 🟢 IDEMPOTENT ACROSS BOTH STATES. Production already holds the repaired geometry. The pre-flight
+--    accepts either all-five-before or all-five-after, and refuses a MIXTURE — a half-repaired set
+--    means someone else has been here, and reprojecting again would throw good polygons into the
+--    Atlantic.
+--
+-- ═══ WHY 3857 WAS THE RIGHT PRE-IMAGE SRID, NOT A GUESS ═══
+--
+-- Reading the numbers as Web Mercator puts all five squarely on Holladay. Three independent
+-- cross-checks agree, and all three are asserted below:
+--   * AREA      the five union to 21.993 km2 against the TIGER place polygon's 22.031 km2
+--   * COVERAGE  they cover 99.53% of the city, 0.065 km2 falling outside it (digitising slop)
+--   * TILING    zero pairwise overlap above ~1 m2; 7 of the 10 pairs touch, which is adjacency
+-- A wrong source projection cannot land on the right city AND tile it. The control proves the
+-- gate can tell the difference: swapping 3857 for 3395 (World Mercator) — the realistic wrong
+-- guess, not nonsense — failed with "City Hall resolves to 0 ward(s), expected exactly 1".
+--
+-- ⚠ AREAS BELOW ARE IN SQUARE DEGREES, DELIBERATELY. Without `::geography` there is no metre
+--   measure available. Every area test here is therefore a RATIO or a threshold in degrees2, which
+--   is sound over an extent this small (~5 km across, where the degree-to-metre scale is
+--   effectively constant) and would NOT be sound over a large or high-latitude polygon.
+--   At 40.67 N, 1 m2 is about 1.06e-10 degrees2.

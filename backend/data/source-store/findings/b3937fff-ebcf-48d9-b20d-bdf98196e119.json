@@ -1,0 +1,55 @@
+{
+  "politician_id": "b3937fff-ebcf-48d9-b20d-bdf98196e119",
+  "findings": [
+    {
+      "id": "3206e2bdf0b29bf5274a41a0a6edc5645cb843c269a677f19f5989c407dbc9ae",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2026/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174",
+      "date": "2024-05-21",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "Senate 3rd Reading SB1174 Min et al., Senate Floor, result PASS 30 to 8",
+      "note": "Voted aye on the Senate floor for SB 1174 (Elections: voter identification), which bars local governments from requiring voter ID. Source is the Internet Archive copy of the leginfo vote page.",
+      "subjects": [
+        "local voter ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:07:28.462Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter ID rules",
+        "proof of citizenship to register",
+        "proof of identity to register online",
+        "mail-ballot ID",
+        "election integrity statements"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia page https://ballotpedia.org/Susan_Rubio (confirms Senate District 22, seated 2018-12-03, on the 2026 general-election ballot after advancing from the 2026-06-02 primary; nothing on the subject)",
+        "official Senate site https://sd22.senate.ca.gov/ (home page; nothing on the subject)",
+        "campaign site: not reviewed, no URL located",
+        "news search on her name plus voter ID, proof of citizenship and election terms: nothing on the subject (the only item found was an older release on the census citizenship question, which is off the subject)",
+        "Internet Archive copy of the leginfo vote page for SB 1174 (2024) (leginfo itself is behind a bot check)",
+        "AB 1116 (2025): the Senate floor vote is not on the archived leginfo page I could reach (latest copy is from 2025), and the CalMatters Digital Democracy bill page lists no member votes, so her Senate vote on it is not reviewed",
+        "AB 25 (2025) failed in the Assembly Elections Committee, so no Senate vote exists"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:07:28.462Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

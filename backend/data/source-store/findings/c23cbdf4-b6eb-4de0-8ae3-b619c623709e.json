@@ -1,0 +1,426 @@
+{
+  "politician_id": "c23cbdf4-b6eb-4de0-8ae3-b619c623709e",
+  "findings": [
+    {
+      "id": "e436a69d1e310f316aa260ad6f77661e136c2148bbfe95daac93cf6f47317137",
+      "kind": "own-words",
+      "url": "https://pahouse.com/Tarik/InTheNews/NewsRelease/?id=143044",
+      "date": "2026-04-06",
+      "date_precision": "day",
+      "passage": "Voting by mail is secure and available to all registered voters.",
+      "note": "House news release in his name encouraging voters to request a mail ballot early for the May primary. Date is the page's published time.",
+      "subjects": [
+        "mail voting",
+        "election integrity (general)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:25.963Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d755075b9f6fdd34b2a67264f5ca7c7960996e9a9083354ae7975671267b1b7c",
+      "kind": "record",
+      "url": "https://pahouse.com/Tarik/Video/?id=142608",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Question to the Department of State at the House Appropriations budget hearing on voter misinformation and free and fair elections",
+      "note": "House video page says he asked the Department of State what it is doing to curb voter misinformation and how the state can reassure the public that elections are free and fair. The page text is a caption, not his words; the video was not watched. Date is the page's published time.",
+      "subjects": [
+        "voter misinformation",
+        "election integrity (general)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:25.963Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Khan'), linked to Tarik Khan (district 194) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.721Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1508aeb35641e63732a47d869e988a75b06dcd7dd07073659d5011bf2be58b0e",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2025&sInd=0&body=H&type=B&bn=1396",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1688 (passed House May 13, 2025). Read.",
+      "note": "Named as co sponsor ('Tarik Khan') on the official bill page; linked to Tarik Khan via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.721Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Khan'), linked to Tarik Khan (district 194) via the official 2023-2024 House member roll (identity step 2026-10-28). Corrected 2026-11-03: PN 385 has no voter-ID text (House Judiciary amendment A00091 removed it); this vote says nothing about ID.",
+      "subjects": [
+        "voter ID removed from this version"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.721Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dc878a63fe78e8da54f72af76e2784f10a8070e12ba87503a90bacd154880ec",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "yea",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('KHAN'), linked to Tarik Khan (district 194) via the official 2023-2024 House member roll (identity step 2026-10-28). Corrected 2026-11-03: PN 1171 has no voter-ID text (struck by A02604, 2023-10-17); this vote says nothing about ID.",
+      "subjects": [
+        "voter ID removed from this version"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.862Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4f9ce215b96bf59092424a568b16da39c638538bd536276e71605d83bce54941",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250403213116/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=572",
+      "date": "2023-10-04",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-AMDT-A02365-2023",
+      "act": "nay",
+      "motion": "House: On the question, Will the House agree to the amendment? (A02365 to SB 224 PN 1097; House RCS No. 572) - agreed to",
+      "note": "House roll call as printed ('KHAN'), linked to Tarik Khan (district 194) via the official 2023-2024 House member roll (identity step 2026-10-31, pa-01 A02365).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-31-a02365",
+        "fetched_at": "2026-10-31T15:52:56.609Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e2687b743e0bf929c4d09f93e5bd917c1083182114fbbc359b3b6db87724e555",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=1018",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1018-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-1018-2023 (LegiScan sponsor list): HB1018 (2023-2024 Regular Session): In firearms and other dangerous articles, further providing for persons not to possess, use, manufacture, control, sell or transfer firearms and for abandonment of firearms, weapons or ammunition; in community and municipal courts, further providing for masters; adding provisions relating to extreme risk protection orders; imposing duties on the Office of Attorney General; and imposing penalties..",
+      "subjects": [
+        "extreme risk protection orders created to remove firearms",
+        "firearm ban while an order is active",
+        "penalty for not turning in firearms under an order",
+        "longer penalty for prohibited persons found with a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1018-2023.amended.pdf",
+          "sha256": "05d5a4c60b9a22ac9e77d07afe3e7adc8841cd9dab1224832eb50521b29958a6"
+        }
+      }
+    },
+    {
+      "id": "800874da45274888c512c3ce2ff57a496ed6554c3743f6c10ad583d9553f5506",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb1065",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1065-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-1065-2025 (LegiScan sponsor list): HB1065 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for definitions and providing for the offense of sale of firearm or firearm parts without serial numbers and for privately made firearms..",
+      "subjects": [
+        "sale of unserialized gun frames and kits made a felony",
+        "buying parts to build an untraceable gun made a felony",
+        "dealers must mark privately made firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1065-2025.introduced.pdf",
+          "sha256": "34b91995f20ec4936440cc2230659301f600d37e7e50653195d36caf02ae3e7c"
+        }
+      }
+    },
+    {
+      "id": "56b24e0ddcc363c3ab0e3e2bc962f042684c8f10f5d829487bd694e6d7852ebb",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb1114",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1114-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-1114-2025 (LegiScan sponsor list): HB1114 (2025-2026 Regular Session): In inchoate crimes, prohibiting the possession of firearm at polling place..",
+      "subjects": [
+        "guns banned at polling places",
+        "license-holder exception for guns concealed in vehicles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1114-2025.introduced.pdf",
+          "sha256": "b37dc782b05f8c6693491dc55dd3a8c49aa5ad338aa57975379d4143d0812c69"
+        }
+      }
+    },
+    {
+      "id": "7174289c575bf709364a342d36ab510bf5dbb07217a38ea13952051ae24c3c2e",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=1157",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1157-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-1157-2023 (LegiScan sponsor list): HB1157 (2023-2024 Regular Session): In firearms and other dangerous articles, further providing for licenses and for Pennsylvania State Police..",
+      "subjects": [
+        "faster court reporting of mental-health commitments to State Police",
+        "electronic reporting form for gun background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1157-2023.amended.pdf",
+          "sha256": "aaa037dbc48503ae5467861205b827bc77c0323d8957da9dd80283c8871ea880"
+        }
+      }
+    },
+    {
+      "id": "ed5786a72c0bd453a62e995692c5682a4ecded943c2f932717648e96ceb4c9af",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=777",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-777-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-777-2023 (LegiScan sponsor list): HB777 (2023-2024 Regular Session): In firearms and other dangerous articles, further providing for definitions and providing for the offense of sale of firearm or firearm parts without serial numbers and for privately made firearms..",
+      "subjects": [
+        "sale or transfer of unserialized gun frames, receivers and kits made a felony",
+        "buying parts to build an unserialized gun made a felony",
+        "licensed dealers must mark and record privately made firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-777-2023.amended.pdf",
+          "sha256": "65a5f4847629a43127721168bc31890a6fd60f0aefae6ac528a3cd698d73d35e"
+        }
+      }
+    },
+    {
+      "id": "b6f93bd51b38c8c63d69145e9446df56f7ebad8c7f4c3fa1dd09e5e0cf2ed28a",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=1018",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1018-2023",
+      "act": "yea",
+      "motion": "House Floor: HB 1018 PN 1152, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 1018 PN 1152, FINAL PASSAGE, 2023-05-22: yea (tally 102–99); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders created to remove firearms",
+        "firearm ban while an order is active",
+        "penalty for not turning in firearms under an order",
+        "longer penalty for prohibited persons found with a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1018-2023.amended.pdf",
+          "sha256": "05d5a4c60b9a22ac9e77d07afe3e7adc8841cd9dab1224832eb50521b29958a6"
+        }
+      }
+    },
+    {
+      "id": "1561ab47f9bb2cf3b379931e6b111466d9042b024b1f43b38ba23bbb38f188dc",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=777",
+      "date": "2024-03-27",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-777-2023",
+      "act": "yea",
+      "motion": "House Floor: HB 777 PN 2578, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 777 PN 2578, FINAL PASSAGE, 2024-03-27: yea (tally 104–97); census gate: none.",
+      "subjects": [
+        "sale or transfer of unserialized gun frames, receivers and kits made a felony",
+        "buying parts to build an unserialized gun made a felony",
+        "licensed dealers must mark and record privately made firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-777-2023.amended.pdf",
+          "sha256": "65a5f4847629a43127721168bc31890a6fd60f0aefae6ac528a3cd698d73d35e"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity",
+        "mail voting",
+        "voter misinformation"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 meetings)",
+        "official House site (pahouse.com/Tarik): news release and video page fetched; confirms Rep. Tarik Khan, Philadelphia, 194th District",
+        "campaign site tarikforpa.com: home page only; its voting-rights page address redirected to the home page, so that page was not readable (not reviewed: https://tarikforpa.com/?p=4349)",
+        "not reviewed: https://ballotpedia.org/Tarik_Khan (not fetched)",
+        "web search x2 (voter ID, mail ballot, election): no voter-ID or proof-of-citizenship statement found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:10:25.963Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:45:58.721Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.862Z",
+      "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-31, pa-01 A02365)"
+      ],
+      "found": 1,
+      "at": "2026-10-31T15:52:56.609Z",
+      "by": "identity-pa-2026-10-31-a02365"
+    }
+  ]
+}

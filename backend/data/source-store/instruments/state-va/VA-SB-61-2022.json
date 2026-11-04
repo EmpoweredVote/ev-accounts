@@ -1,0 +1,51 @@
+{
+  "id": "VA-SB-61-2022",
+  "scope": "state:va",
+  "title": "SB61 (2022 Regular Session): Firearms; concealed carry for law-enforcement officers, attorneys for the Commonwealth, etc.",
+  "urls": [
+    "https://lis.virginia.gov/cgi-bin/legp604.exe?221+sum+SB61",
+    "https://lis.virginia.gov/cgi-bin/legp604.exe?221+ful+SB61+hil",
+    "https://lis.virginia.gov/cgi-bin/legp604.exe?221+ful+SB61S1+hil"
+  ],
+  "version": "other",
+  "operative_text": "Sec. 1 (amending Code 15.2-915.2): {+The provisions of this section shall not apply to any active law-enforcement officer, any retired law-enforcement officer qualified pursuant to §18.2-308.016, any attorney for the Commonwealth or assistant attorney for the Commonwealth, any retired attorney for the Commonwealth or retired assistant attorney for the Commonwealth pursuant to §18.2-308.016, any judge or justice of the Commonwealth, or any retired judge or retired justice of the Commonwealth.+}\nSec. 1 (amending Code 15.2-915(E)): The provisions of this subsection{+ and any ordinance enacted pursuant to this subsection+} shall not apply to{+ any person who holds a valid Virginia permit to carry a concealed handgun issued in accordance with Article 6.1 (§18.2-307.1 et seq.) of Chapter 7 of Title 18.2 or to+} the activities of (i) a Senior Reserve Officers' Training Corps program\nSec. 1 (amending Code 18.2-283.2): E. {+The provisions of subsection B shall not apply to any active law-enforcement officer, any retired law-enforcement officer qualified pursuant to §18.2-308.016, any attorney for the Commonwealth or assistant attorney for the Commonwealth, any retired attorney for the Commonwealth or retired assistant attorney for the Commonwealth pursuant to §18.2-308.016, any judge or justice of the Commonwealth, or any retired judge or retired justice of the Commonwealth.+}\nSec. 1 (amending Code 18.2-287.4): The provisions of this section shall not apply to{+ any+} law-enforcement[- officers-]{+ officer+},{+ any+} licensed security[- guards-]{+ guard+},{+ any+} military personnel in the performance of[- their-]{+ his+} lawful duties,{+ any retired law-enforcement officer qualified pursuant to §18.2-308.016, any attorney for the Commonwealth or assistant attorney for the Commonwealth, any retired attorney for the Commonwealth or retired assistant attorney for the Commonwealth pursuant to § 18.2-308.016, any judge or justice of the Commonwealth, any retired judge or retired justice of the Commonwealth,+}\nSec. 1 (amending Code 18.2-308(C)(7)): 7. Any attorney for the Commonwealth or assistant attorney for the Commonwealth,{+ or retired attorney for the Commonwealth or retired assistant attorney for the Commonwealth pursuant to §18.2-308.016,+} wherever such attorney{+ or retired attorney+} may travel in the Commonwealth{+. Any other statute, rule, regulation, ordinance, order, or policy and any other statute or rule specifically addressing the possession or transportation of weapons anywhere in the Commonwealth shall be invalid, and this subdivision shall control, provided that the enumerated person is not disqualified for a concealed handgun permit pursuant to §18.2-308.09+};\nSec. 1 (amending Code 24.2-604(F)): F. The provisions of clause (iv) of subsection A shall not apply to (i) any law-enforcement officer or any retired law-enforcement officer qualified pursuant to subsection C of §18.2-308.016{+, any attorney for the Commonwealth or assistant attorney for the Commonwealth or retired attorney for the Commonwealth or retired assistant attorney for the Commonwealth pursuant to §18.2-308.016, or any judge or justice of the Commonwealth or retired judge or retired justice of the Commonwealth+};",
+  "sponsors": [
+    {
+      "name": "Travis Hackworth",
+      "politician_id": "cd200e06-d726-4a12-b2e8-0295700d185e",
+      "role": "patron",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Bill DeSteph",
+      "politician_id": "ec4a7239-4681-4284-b77d-9c2d5c5473dd",
+      "role": "patron",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Mark Obenshain",
+      "politician_id": "b7e9d159-b766-445c-b95f-9797b57247d9",
+      "role": "patron",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-SB-61-2022.comm-sub.html",
+      "sha256": "9f9f2ee3107e22b6338b6748d78daaee533e95ea03aee9af0a03e6b0f780dfb0"
+    }
+  }
+}

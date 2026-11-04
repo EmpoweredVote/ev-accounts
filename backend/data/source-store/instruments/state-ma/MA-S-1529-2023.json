@@ -1,0 +1,50 @@
+{
+ "id": "MA-S-1529-2023",
+ "scope": "state:ma",
+ "title": "S1529 (193rd General Court): An Act to prevent illegal trafficking and gun violence among youth in the Commonwealth",
+ "urls": [
+  "https://malegislature.gov/Bills/193/S1529",
+  "https://malegislature.gov/Bills/193/S1529/Senate/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Adam Gomez",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "78ae3786-e71e-4dc4-8b84-0ab28b555632"
+  },
+  {
+   "name": "David Paul Linsky",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "fa6beaf8-acfe-4365-82a2-6f282aa1b688"
+  },
+  {
+   "name": "Michael J. Barrett",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "60e4da77-0c2b-4ca4-8d02-a4210bd91d90"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-S-1529-2023.html",
+   "sha256": "b9eecaade392f899e3fc125a88beb1c9777eb8d9749937b2688353a427b15712"
+  }
+ },
+ "operative_text": "SECTION 1. Section 121 of chapter 140 of the General Laws, as appearing in the 2016 Official Edition, is hereby amended by inserting after the word “gun” in line 100 the following words:-\n“Microstamp”, a microscopic array of characters that identify the make, model, and serial number of the firearms, etched or otherwise imprinted in two or more places on the interior surface of the internal working parts of the firearm, and that are transferred by imprinting on each cartridge case when the firearm is fired.\nSECTION 2. Section 123 of chapter 140 of the General Laws, as so appearing, is hereby amended by inserting after the word “lease” in line 525, the following three sentences:-\nNo person licensed under section 122 or section 122B shall sell or otherwise transfer to any person more than 1 firearm during any thirty-day period, except by devise or trust. Commencing 3 years after the passage of this bill, persons licensed under section 122 or section 122B must only sell guns designed or equipped with the ability to microstamp ammunition, by etching or otherwise imprinting a microscopic array of characters that identify the make, model, and serial number of the firearms in two or more places on the interior surface of the internal working parts of the firearm, and that are transferred by imprinting on each cartridge case when the firearm is fired.\nSECTION 3. Said section 123 of said chapter 140 is hereby further amended by inserting after the word “131E” in line 499 the following words:-\nTwenty-second, That no licensee shall sell, rent, lease, transfer or deliver or offer for sale, lease, transfer or delivery, any firearm to any purchaser in the commonwealth unless the firearm has the ability to microstamp its ammunition with two unique parts of the firearm.\nSECTION 4. Section 131¾ of chapter 140 of the General Laws, as so appearing, is hereby amended by striking out in line 6, the word “Twenty-first” and inserting in place thereof the following word:- Twenty-second.\nSECTION 5. The secretary of public safety and security shall study the feasibility of the establishment of an interstate compact for the purpose of developing an interstate compact to encourage the adoption of uniform procedures to combat illegal gun trafficking between states. The report of such study and any recommended legislation or regulations shall be filed with the joint committee on public safety not later than one year from the passage of this act. Such report shall include but not be limited to, the steps necessary to form such an interstate compact.\nSECTION 6. Chapter 140 of the General Laws is hereby further amended by inserting after section 128B, the following section:-\nSection 128C. Whoever being licensed under section 122 and who purchases or otherwise accepts and keeps within the commonwealth for any period of time more than one firearm in a thirty-day period shall be punished by not more than 5 years in state prison and the licensing authority shall suspend any license or identification card issued under this chapter to such person for a period not to exceed 3 years. This section shall not apply to firearms bequeathed through trust or devise.\nSECTION 7. Said chapter 140 is hereby further amended by inserting after section 129C the following section:-\nSection 129C½. Any person or entity that inherits a firearm, rifle or shotgun by trust or devise, may sell, transfer or deliver such weapon to a licensed dealer or to another person if the transferee is legally permitted to purchase or take possession of such weapon or, within 180 days of receiving such weapon through trust or devise, the recipient thereof shall obtain the relevant firearms identification card or license to carry. Whoever violates this section shall be punished by a fine of not less than $1,000 nor more than $10,000.\nSECTION 8. Section 10 of chapter 269 of the General Laws, as so appearing, is hereby amended by striking out, in line 6, the words “(1) being present in or on his residence or place of business; or”.\nSECTION 9. Section 11A of chapter 269 of the General Laws, as so appearing, is hereby amended by adding the following paragraph:-\n“Microstamp”. a microscopic array of characters that identify the make, model, and serial number of the firearms, etched or otherwise imprinted in two or more places on the interior surface of the internal working parts of the firearm, and that are transferred by imprinting on each cartridge case when the firearm is fired.\nSECTION 10. Chapter 269 of the General Laws, as so appearing, is hereby amended by striking out section 11C and inserting in place thereof the following section:-\nSection 11C. Whoever, by himself or another, removes, defaces, alters, obliterates or mutilates in any manner the serial number, identification number, or microstamping functions of a firearm, or in any way participates therein, and whoever receives a firearm with knowledge that its serial number, identification number, or microstamping functions have been removed, defaced, altered, obliterated or mutilated in any manner, shall be punished by a fine of not more than two hundred dollars or by imprisonment for not less than one month nor more than two and one half years. Possession or control of a firearm the serial number, identification number, or microstamping functions of which has been removed, defaced, altered, obliterated or mutilated in any manner shall be prima facie evidence that the person having such possession or control is guilty of a violation of this section; but such prima facie evidence may be rebutted by evidence that such person had no knowledge whatever that such number had been removed, defaced, altered, obliterated or mutilated, or by evidence that he had no guilty knowledge thereof. Upon a conviction of a violation of this section said firearm or other article shall be forwarded, by the authority of the written order of the court, to the colonel of the state police, who shall cause said firearm or other article to be destroyed.\nSECTION 11. Section 11E of chapter 269 of the General Laws, as so appearing, is hereby amended by adding the following paragraph:-\nAll firearms of new manufacture with the capacity to eject spent cartridges manufactured, delivered to any licensed dealer within the commonwealth, or owned by any individual holding a Massachusetts issued firearm license shall be designed or equipped with the ability to microstamp ammunition commencing three years after the passage of this bill. The manufacturer of said firearm shall keep records of said serial numbers and the dealer, distributor or person to whom the firearm was sold or delivered."
+}

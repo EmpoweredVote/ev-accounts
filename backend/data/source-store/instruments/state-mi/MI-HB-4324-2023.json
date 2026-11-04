@@ -1,0 +1,68 @@
+{
+  "id": "MI-HB-4324-2023",
+  "scope": "state:mi",
+  "title": "HB 4324 (2023-2024 Regular Session, Michigan Legislature (bill page title: \"House Bill 4324 of 2023\")): Elections: voters; definition of identification for election purposes; expand to include current concealed pistol license. Amends sec. 2 of 1954 PA 116 (MCL 168.2 ).",
+  "urls": [
+    "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4324",
+    "https://www.legislature.mi.gov/documents/2023-2024/billintroduced/House/htm/2023-HIB-4324.htm"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 2 (as in the version read)\n(quote) (k) \"Identification for election purposes\" means, if issued to the individual presenting the card or document and if presented for voting purposes the name on the card or document sufficiently matches the individual's name in the individual's voter registration record so as to accurately identify the individual as the registered elector, or if issued to the individual presenting the card or document and if presented for voter registration purposes, any of the following:\n(section) Sec. 2 (as in the version read)\n(quote) (i) An operator's or chauffeur's license issued under the Michigan vehicle code, 1949 PA 300, MCL 257.1 to 257.923, or an enhanced driver license issued under the enhanced driver license and enhanced official state personal identification card act, 2008 PA 23, MCL 28.301 to 28.308.\n(section) Sec. 2 (as in the version read)\n(quote) (ii) An official state personal identification card issued under 1972 PA 222, MCL 28.291 to 28.300, or an enhanced official state personal identification card issued under the enhanced driver license and enhanced official state personal identification card act, 2008 PA 23, MCL 28.301 to 28.308.\n(section) Sec. 2 (as in the version read)\n(quote) (iv) A current state personal identification card issued by another state.\n(section) Sec. 2 (as in the version read)\n(quote) (v) A current state government issued photo identification card.\n(section) Sec. 2 (as in the version read)\n(quote) (vi) A current United States passport or federal government issued photo identification card.\n(section) Sec. 2 (as in the version read)\n(quote) (vii) A current military photo identification card. (viii) A current tribal photo identification card.\n(section) Sec. 2 (as in the version read)\n(quote) (ix) A current student photo identification card issued by a high school in this state, an institution of higher education in this state described in section 4, 5, or 6 of article VIII of the state constitution of 1963, a junior college or community college established under section 7 of article VIII of the state constitution of 1963, or another accredited degree or certificate granting college or university, junior college, or community college located in this state.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Only the section(s) quoted above are amended; no other subject.",
+  "sponsors": [
+    {
+      "name": "James DeSana (District 29)",
+      "role": "prime",
+      "version": "Text file header as saved: \"HOUSE BILL NO. 4324 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 (MCL 168.2), as\""
+    },
+    {
+      "name": "Gregory Alexander (District 98)",
+      "role": "co",
+      "version": "Text file header as saved: \"HOUSE BILL NO. 4324 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 (MCL 168.2), as\""
+    },
+    {
+      "name": "Joseph Fox (District 101)",
+      "role": "co",
+      "version": "Text file header as saved: \"HOUSE BILL NO. 4324 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 (MCL 168.2), as\""
+    },
+    {
+      "name": "Jay DeBoyer (District 63)",
+      "role": "co",
+      "version": "Text file header as saved: \"HOUSE BILL NO. 4324 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 (MCL 168.2), as\""
+    },
+    {
+      "name": "Matt Maddock (District 51)",
+      "role": "co",
+      "version": "Text file header as saved: \"HOUSE BILL NO. 4324 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 (MCL 168.2), as\""
+    },
+    {
+      "name": "Robert Bezotte (District 50)",
+      "role": "co",
+      "version": "Text file header as saved: \"HOUSE BILL NO. 4324 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 (MCL 168.2), as\""
+    },
+    {
+      "name": "Mike Hoadley (District 99)",
+      "role": "co",
+      "version": "Text file header as saved: \"HOUSE BILL NO. 4324 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 (MCL 168.2), as\""
+    },
+    {
+      "name": "Neil Friske (District 107)",
+      "role": "co",
+      "version": "Text file header as saved: \"HOUSE BILL NO. 4324 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 (MCL 168.2), as\""
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T19:30:00Z)",
+    "fetched_at": "2026-10-28T19:30:00Z",
+    "method": "curl"
+  }
+}

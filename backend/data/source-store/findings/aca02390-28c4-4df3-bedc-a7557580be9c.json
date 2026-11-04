@@ -1,0 +1,132 @@
+{
+  "politician_id": "aca02390-28c4-4df3-bedc-a7557580be9c",
+  "findings": [
+    {
+      "id": "c5e0a0a96bec4265dd4adbd2a621504b849af9d3ae78be8fc4bc45d7c628f986",
+      "kind": "own-words",
+      "url": "https://www.missourinet.com/2026/02/10/missouri-senate-bill-seeks-cleaner-voting-lists-but-critics-see-risk-to-eligible-voters/",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "passage": "“It mandates that our data matching agreement explicitly include citizenship status information from motor vehicle records, allowing for better verification and cleaner voting lists,” said Carter.",
+      "note": "Missourinet quotes Carter on her bill to use motor-vehicle citizenship data to check voter registrations.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:10:03.406Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5d48421053754f07dd15152b35955b9fd3159cf19f31ecea9eb2de09da85bf0",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/NewsDetails?id=2198",
+      "date": "2026-02-27",
+      "date_precision": "day",
+      "passage": "“Senate Bill 985 is about strengthening transparency and trust in our elections,” Sen. Carter said. “By requiring the Secretary of the State to assign a unique ID to every voting precinct across the state, and directing local election officials to report results according to their original precinct using those IDs, we are ensuring greater accuracy, accountability, and clarity in the electoral process for every voter.”",
+      "note": "Senate release in her name on SB 985, precinct ID and results reporting. Not about voter ID; tagged as general election-integrity law.",
+      "subjects": [
+        "election integrity laws in general",
+        "precinct reporting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:10:03.406Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8efe64fa08bfff5dbb97704ecfcfbddff593e95c1918b843264eebd090ae244",
+      "kind": "own-words",
+      "url": "https://www.newstribune.com/news/2026/feb/25/bill-to-publish-missouri-voter-list-online-raises/",
+      "date": "2026-02-25",
+      "date_precision": "day",
+      "passage": "Voter registration lists are public records and the statewide list can be obtained with a Sunshine Law request and a nominal payment, Carter said during testimony to the committee.",
+      "note": "Reported statement by Carter in committee defending her bill to post the voter list online (news report, Missouri Independent story run by the News Tribune).",
+      "subjects": [
+        "voter-roll checks",
+        "voter list publication"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:10:03.406Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b33d89fc1419193891722fe00f6d4df68f57ad81cc7e7eab7af0cd1b473d327e",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/26info/Journals/Rday6405111615-1637.pdf",
+      "date": "2026-05-11",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "nay",
+      "motion": "Senate: SS for SCS for HCS for HB 1871, as amended, read the 3rd time and passed",
+      "note": "Senate roll call as printed ('Carter'), linked to Jill Carter (district 32) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.236Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "voter-roll accuracy",
+        "election integrity",
+        "precinct reporting",
+        "voter list publication"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate page senate.mo.gov/Carter (bio confirms Senator, 32nd District; media list not readable by plain fetch)",
+        "Senate release id=2198 (read in full)",
+        "Missourinet 2026-02-10",
+        "New Tribune / Missouri Independent 2026-02-25 (voter list)",
+        "web searches on name plus subject words (nothing on photo ID in her own words)",
+        "blocked: https://missouriindependent.com/2026/02/23/bill-to-publish-missouri-voter-list-online-raises-bipartisan-privacy-questions/",
+        "blocked: https://ballotpedia.org (not fetched, known to refuse)",
+        "nothing on the subject: no campaign-site or questionnaire page found"
+      ],
+      "found": 3,
+      "at": "2026-11-04T05:10:03.406Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:14:55.236Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

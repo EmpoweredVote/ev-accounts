@@ -1,0 +1,70 @@
+{
+  "politician_id": "bcd4b2cf-2c8b-4c66-8184-a8c392a07671",
+  "findings": [
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Cummings'), linked to Terry A. Cummings (district 39) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.415Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "legis.ga.gov bill pages: not reviewed (login token needed, not tried)",
+        "https://branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-39/candidates/terry-cummings (confirms House District 39, running unopposed in the 2026 general election)",
+        "https://terry4ga.com (campaign home page: general voting-access text with no mention of ID or citizenship, so not saved)",
+        "https://spotlightsouthcobbnews.com/?p=14298 (2026-04-23 statement on HB 369, nonpartisan local elections, off the subject)",
+        "https://house-press.com/representative/terry-cummings/ (first page of releases, nothing on the subject; later pages not reviewed)",
+        "blocked: https://ballotpedia.org/Terry_Cummings (empty page)",
+        "blocked: https://app.legiplex.com/profile/terry-cummings-1809/ga/legislatures/2025/2025-r/legislation/page/3 (403)",
+        "not found: https://terry4ga.com/platform (404)",
+        "web searches on her name plus voter ID and SB 189, HB 397: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:33:45.985Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.415Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

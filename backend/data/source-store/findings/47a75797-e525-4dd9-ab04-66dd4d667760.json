@@ -1,0 +1,389 @@
+{
+  "politician_id": "47a75797-e525-4dd9-ab04-66dd4d667760",
+  "findings": [
+    {
+      "id": "709284c3a0e10df4a6622a591966f30c849ecce3a4a4ee4fef00617c603c1cbd",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81696&billStatusActionId=232198&includeVotes=true",
+      "date": "2025-02-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2038-2025",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('TSOSIE'), linked to Myron Tsosie (district 6) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43498a812a9be84922a4f8ee79bb26af12b6cdbe90981537221256088f2a9ab6",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76970&billStatusActionId=209634&includeVotes=true",
+      "date": "2022-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2492-2022",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('TSOSIE'), linked to Myron Tsosie (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5098d52b93edadc88105ace3704f2b704de45236ac78f12c4db3b0e36908bb97",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/82421",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2587-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2587P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Myron Tsosie') on the official bill page; linked to Myron Tsosie via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bad8ec15795229ce928c381bb8f76d5bf6ee55d2dbd63b877e9ed95ff6c44ea9",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/80715",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2670-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2670P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Myron Tsosie') on the official bill page; linked to Myron Tsosie via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d3fe91d34c5db7125e471be71d0287c2e7915c5da0d038d007934da226e0f5e",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/80716",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2671-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2671P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Myron Tsosie') on the official bill page; linked to Myron Tsosie via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d2821492d1c687f55e3f4161d375ea78aa33b52fafad686d2067d60ee474a7e4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81400&billStatusActionId=223258&includeVotes=true",
+      "date": "2024-02-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2785-2024",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('TSOSIE'), linked to Myron Tsosie (district None) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5ca67848aa733588751373129d47d11dfd2873eb2d867736bbfb2d87c05ade9c",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=240878&includeVotes=true",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('TSOSIE'), linked to Myron Tsosie (district 6) via the official 2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c0182fcb8574a3883c579212fed0026affbe51ded5eb871413e17fcbc496ab00",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=235732&includeVotes=true",
+      "date": "2025-05-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('TSOSIE'), linked to Myron Tsosie (district 6) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0dfb2519c98f83e5598ac6fd0ad9df8c4fe318abd4d5608788b6d5b08e232aa2",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78743&billStatusActionId=219083&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1141-2023",
+      "act": "nay",
+      "motion": "House: Third Reading: failed to pass",
+      "note": "House roll call as printed ('TSOSIE'), linked to Myron Tsosie (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5ec2093480950ffc9deb5663480704889b59c996690d96ea54139285fbf54fee",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=77405&billStatusActionId=211337&includeVotes=true",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1460-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('TSOSIE'), linked to Myron Tsosie (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "874d8b41974c07ab69831bb20b6331b1899f813251abd335d0c6c41ea2804008",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79205&billStatusActionId=219025&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1518-2023",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('TSOSIE'), linked to Myron Tsosie (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8986512a76239d1085f23b414056af40ca1776a196aa959bbf7fbba3fcd3db8",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79268&billStatusActionId=219027&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('TSOSIE'), linked to Myron Tsosie (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b89a53381c2067609b97be9a1c8ee34d61f116ea26a74027156e7cf66091830d",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=75855&billStatusActionId=204259&includeVotes=true",
+      "date": "2021-05-26",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1713-2021",
+      "act": "nay",
+      "motion": "House: Third Reading: failed to pass (as amended)",
+      "note": "House roll call as printed ('TSOSIE'), linked to Myron Tsosie (district None) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a7074ef886c294292431cf748b318835547728ec2c176aea8626cd17af0a464f",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76391&billStatusActionId=209637&includeVotes=true",
+      "date": "2022-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1012-2022",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('TSOSIE'), linked to Myron Tsosie (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d68905ce1e404a6c0cf9a53a7b8bf0dba4a51c755ac0dc62cef38e7fa3950ae4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=236364&includeVotes=true",
+      "date": "2025-06-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('TSOSIE'), linked to Myron Tsosie (district 6) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28b",
+        "fetched_at": "2026-10-28T23:23:11.511Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 15,
+      "at": "2026-10-28T22:53:15.882Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "tribal ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voters with no ID"
+      ],
+      "places": [
+        "scope note: the brief lists him as a sitting member only; the Ballot Brief page for House District 6 shows him not on the 2026-11-03 ballot (https://theballotbrief.com/state/arizona/coconino-county/arizona-house-district-6)",
+        "On the Record (0 appearances)",
+        "legislature member page https://www.azleg.gov/House/House-member/?legislature=57&session=130&legislator=2341 (co-sponsor listings only; sponsorships linked separately; no personal website or press page listed)",
+        "KJZZ and AZPM reports on his bill adding a tribal designation to state IDs (his quotes there concern ICE and ID convenience, nothing on voting)",
+        "ASU news profile (nothing on the subject)",
+        "web searches on his name plus voter ID, tribal voters, citizenship (no statements by him found)",
+        "campaign site: none listed",
+        "not reviewed: https://ballotpedia.org/Myron_Tsosie (the site blocked other fetches in this batch)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:09:56.851Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:23:11.511Z",
+      "by": "identity-az-2026-10-28b"
+    }
+  ]
+}

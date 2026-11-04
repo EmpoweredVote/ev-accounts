@@ -1,0 +1,51 @@
+{
+  "politician_id": "2213bdc5-d708-4210-8901-d39835c54852",
+  "findings": [
+    {
+      "id": "d3b27d9ccb63133016714b455d8461748d9b0a4fe36922469007c6faefaa437b",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/90978/race/35038/election/1503",
+      "date": "2026",
+      "date_precision": "unknown",
+      "passage": "What restrictions on gun ownership are needed to protect public safety? None",
+      "note": "His questionnaire answer on a voter-guide profile: the question is 'What restrictions on gun ownership are needed to protect public safety?' and the answer shown is 'None'. Page is listed for the November 3, 2026 primary; exact answer date not shown.",
+      "subjects": [
+        "restrictions on gun ownership",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T19:42:27.310Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "restrictions on gun ownership",
+        "gun rights and the Second Amendment",
+        "carry and permit rules"
+      ],
+      "places": [
+        "identity and ballot confirmed: https://ivoterguide.com/candidate/90978/race/35038/election/1503 lists Austin Magee, Louisiana U.S. House District 5, Louisiana primary November 3, 2026; a third-party profile (https://www.predictionedge.com/elections/profile/austin-magee/) says he is set as a candidate after qualifying closed (not independently confirmed with the state election office)",
+        "On the Record (0 appearances)",
+        "campaign site austinmageeforcongress.com (home, about; /issues does not exist): nothing on the subject",
+        "https://www.ballotready.org/people/austin-magee reviewed: nothing on the subject",
+        "blocked: https://ballotpedia.org/Austin_Magee (403)",
+        "blocked: https://lailluminator.com/voter-guides/contests/louisiana-house-5/ (bot check)",
+        "blocked: https://www.newsfromthestates.com/node/432159 (403)",
+        "not a legislator: no sponsored-bill list applies",
+        "2 web searches used; no news quote of him on guns found"
+      ],
+      "found": 1,
+      "at": "2026-10-30T19:42:27.310Z",
+      "by": "source-collector"
+    }
+  ]
+}

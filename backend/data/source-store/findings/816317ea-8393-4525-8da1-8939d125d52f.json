@@ -1,0 +1,84 @@
+{
+  "politician_id": "816317ea-8393-4525-8da1-8939d125d52f",
+  "findings": [
+    {
+      "id": "2771acdd76ff79bafa6ef3a6b3527cc38c202703ee9423827b473cde611a9f8a",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/21rs/hb574.html",
+      "date": "2021-02-26",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-574-2021",
+      "act": "nay",
+      "motion": "floor amendment HFA 3 (RCS# 138), failed; subject NOT read",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "KY House, floor amendment HFA 3 (RCS# 138), failed; subject NOT read, 2021-02-26: nay (tally 28–68); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "early and mail voting (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "B (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+        "fetched_at": "2026-10-21T01:52:20.308Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3621e4430bb171652787b85ce31be33b062ca70d9cbfaa9b3d0b9409ca638d9e",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/21rs/hb574.html",
+      "date": "2021-02-26",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-574-2021",
+      "act": "nay",
+      "motion": "passage of HB 574 (RCS# 139)",
+      "gate_by_topic": {
+        "voting-rights": "near-unanimous"
+      },
+      "note": "KY House, passage of HB 574 (RCS# 139), 2021-02-26: nay (tally 93–4); census gate: near-unanimous.",
+      "subjects": [
+        "voter ID at the polls",
+        "early and mail voting (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "B (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+        "fetched_at": "2026-10-21T01:52:20.308Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ca64f6e029a26da6e4e4947b12c77d1659dda010c06fdfcd9ef6fb89e658278c",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/21rs/hb574.html",
+      "date": "2021-03-29",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-574-2021",
+      "act": "yea",
+      "motion": "final passage / concurrence in Senate amendments (RCS# 431)",
+      "gate_by_topic": {
+        "voting-rights": "near-unanimous"
+      },
+      "note": "KY House, final passage / concurrence in Senate amendments (RCS# 431), 2021-03-29: yea (tally 91–3); census gate: near-unanimous.",
+      "subjects": [
+        "voter ID at the polls",
+        "early and mail voting (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "B (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+        "fetched_at": "2026-10-21T01:52:20.308Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": []
+}

@@ -1,0 +1,56 @@
+{
+  "politician_id": "0a9171c6-0676-4704-b825-a7e16c66f1c2",
+  "findings": [
+    {
+      "id": "e1865d595e6605125f185795b6ce5a79acbdb9f3116761fbeb52048e0525316f",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "Assembly floor third reading, SB 1174 (Min), passed",
+      "note": "SB 1174 bars local governments from requiring voter identification for elections. The bill page's vote record for the Assembly floor vote of 2024-08-27 lists Boerner among the AYE votes. The official leginfo page was blocked, so the vote record is from the CalMatters Digital Democracy bill page.",
+      "subjects": [
+        "local voter-ID rules barred (SB 1174)",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:00:17.143Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "election integrity",
+        "local voter-ID rules (SB 1174 of 2024)"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Tasha_Boerner_Horvath) shows the sitting Assembly District 77 member, running for re-election on the 2026-11-03 general-election ballot",
+        "On the Record (0 appearances; extract-otr run with name search)",
+        "official site a77.asmdc.org (home, press-release list and site-search URL fetched; nothing on the subject)",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (bot challenge page); used CalMatters Digital Democracy bill page for the SB 1174 Assembly floor vote instead",
+        "Ballotpedia (fetched, nothing on the subject)",
+        "web searches: name plus voter ID / proof of citizenship / SAVE Act / election integrity (nothing on the subject); Assembly resolutions on the SAVE Act (none found)",
+        "AB 25 of 2025 (voter ID and proof of citizenship): checked the Digital Democracy vote record; not a member of the Elections Committee that voted, so no vote",
+        "not reviewed: the 2026 statewide voter-ID and proof-of-citizenship ballot measure; no statement by this member found"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:00:17.143Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

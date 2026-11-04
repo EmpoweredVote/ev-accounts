@@ -1,0 +1,31 @@
+{
+  "politician_id": "08f8ab63-35e2-4bd2-9b54-b6edadf4b179",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with absentee ballot",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "status: in office (Georgia House District 64, took office 2025 so no 2021 election-law vote) and on the 2026-11-03 general ballot as incumbent, per https://ballotpedia.org/Sylvia_Wayfer",
+        "On the Record (0 appearances found)",
+        "campaign site: none found",
+        "Ballotpedia https://ballotpedia.org/Sylvia_Wayfer (no survey answers; nothing on the subject)",
+        "House caucus press site https://house-press.com/representative/Sylvia-Wayfer-Baker (one release, swearing-in; nothing on the subject)",
+        "news and tracker searches: nothing on the subject; her bill list was not reachable",
+        "blocked: https://app.legiplex.com/profile/sylvia-baker-20735/legislation (no text returned)",
+        "blocked: https://fastdemocracy.com/bill-search//ga/legislators/GAL000630 (no text returned)",
+        "blocked: https://www.billtrack50.com/legislatordetail/30192 (bill list loads only through scripts; not opened)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:42:35.798Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

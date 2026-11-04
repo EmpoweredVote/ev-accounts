@@ -1,0 +1,836 @@
+{
+  "politician_id": "8bb841b4-0c4f-43d9-acc1-492968ceb8ea",
+  "findings": [
+    {
+      "id": "f276b462819875ff4ab899fc69379ff14c2c82a6c7031c188f4d4e560f8e11f8",
+      "kind": "own-words",
+      "url": "https://pahouse.com/Burns/InTheNews/NewsRelease/?id=130928",
+      "date": "2023-10-06",
+      "date_precision": "day",
+      "passage": "“Whenever voter ID has been suggested in the past, I broke ranks, stood my ground and voted my belief that voter ID was needed to allay fears of election fraud and guarantee election integrity,” Burns said.",
+      "note": "Statement in his House press release after a 2023 vote for a proposal requiring voters to show ID at the polls; also says he is ready to push his own bipartisan bill.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:06:27.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fe44868bc2fcac24be2c00e4b00e8c2e079d51bf9f5e84c5409b908ec69971bd",
+      "kind": "own-words",
+      "url": "https://pahouse.com/Burns/InTheNews/NewsRelease/?id=130928",
+      "date": "2023-10-06",
+      "date_precision": "day",
+      "passage": "“Voting is a sacred right, and we should be doing everything to protect it and restore voters’ confidence in the process, especially when so many Pennsylvanians believe ID should be required in order to vote.”",
+      "note": "Same release; his reason for supporting ID at the polls.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:06:27.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dbc8fb25b89a8371ee5b2090e8610a582719c9998e51ff3fb2b3da918a128da8",
+      "kind": "own-words",
+      "url": "https://pahouse.com/Burns/InTheNews/NewsRelease/?id=137731",
+      "date": "2025-03-17",
+      "date_precision": "day",
+      "passage": "“It’s simple; we need to make sure that people who vote are who they say they are.",
+      "note": "Quote in a House release announcing HB 771 (voter ID at the polls, with a written-affirmation alternative for a voter without ID), introduced with two co-sponsors. The sentence continues in the release: 'As elected officials we need to do everything we can to alleviate fears of election fraud and guarantee election integrity'. The release describes HB 771 as letting a voter without acceptable ID affirm identity in writing.",
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter written affirmation",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:06:27.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "54ecdaa7efaa9cbe9ab3d1b39e10bd6fff8f0274141378a2b6dfd17e3a4c6bee",
+      "kind": "own-words",
+      "url": "https://pahouse.com/Burns/InTheNews/NewsRelease/?id=120215",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "passage": "We need to make sure that people who vote are who they say they are.",
+      "note": "Quote in a House release on his vote for HB 1300 (voter ID at the polls, signature checks for mail ballots, drop-box option).",
+      "subjects": [
+        "voter ID at the polls",
+        "mail ballot signature verification",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:06:27.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('BURNS'), linked to Frank Burns (district 72) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.701Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Burns'), linked to Frank Burns (district 72) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.701Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Burns'), linked to Frank Burns (district 72) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.461Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e0ef76bf52f257932f340675c18452f8d5491bf4a0f3213f323059945d572fba",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251030233525/https://www.palegis.us/legislation/bills/2025/hb771",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-771-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1624 (as reported from State Government as amended, May 6, 2025). Read. Page copy dated 2025-10-30.",
+      "note": "Named as co sponsor ('BURNS') on the official bill page; linked to Frank Burns via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.855Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dc878a63fe78e8da54f72af76e2784f10a8070e12ba87503a90bacd154880ec",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "yea",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('BURNS'), linked to Frank Burns (district 72) via the official 2023-2024 House member roll (identity step 2026-10-28). Corrected 2026-11-03: PN 1171 has no voter-ID text (struck by A02604, 2023-10-17); this vote says nothing about ID.",
+      "subjects": [
+        "voter ID removed from this version"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.855Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2f65853a720e57cb22105fb00a60edcc4fa62bbf6324a24d79c15c57261cf59e",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250403213116/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=572",
+      "date": "2023-10-04",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-AMDT-A02365-2023",
+      "act": "yea",
+      "motion": "House: On the question, Will the House agree to the amendment? (A02365 to SB 224 PN 1097; House RCS No. 572) - agreed to",
+      "note": "House roll call as printed ('BURNS'), linked to Frank Burns (district 72) via the official 2023-2024 House member roll (identity step 2026-10-31, pa-01 A02365).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-31-a02365",
+        "fetched_at": "2026-10-31T15:52:56.607Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "827b1988eebdd9e1ccbaa8a667b4ed595af3c7def4f2530300ed0ee68690eb2b",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2021/sb565",
+      "date": "2021-11-16",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-565-2021",
+      "act": "yea",
+      "motion": "FP (final passage, page prints 'FP')",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, FP (final passage, page prints 'FP'), 2021-11-16: yea (tally 107–92); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/PA_SB565_PN1212.pdf",
+          "sha256": "8599bf5e56d8378a456fd36d933e5a05733e1a059d642ddb6883c809f6226568"
+        }
+      }
+    },
+    {
+      "id": "63a26fd926270c17e5f7c0ee93b6350e7c1dff253d9c3000a01be8a9d8335b10",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=2440",
+      "date": "2020-05-20",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-2440-2019",
+      "act": "yea",
+      "motion": "House Floor: HB 2440 PN 3776, FP",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 2440 PN 3776, FP, 2020-05-20: yea (tally 124–78); census gate: none.",
+      "subjects": [
+        "gun and ammunition businesses and ranges can never be closed or limited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2440-2019.amended.pdf",
+          "sha256": "9bdd564f4d0812adfa9af91a3ac7f854f4196ebd9577febef5953c94486be5c8"
+        }
+      }
+    },
+    {
+      "id": "d55176b423c583904b21971d8695198556eb9cc961160b03cfcff30d12dfe20b",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=1587",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1587-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-1587-2021 (LegiScan sponsor list): HB1587 (2021-2022 Regular Session): In assault, providing for arrests of previously convicted persons possessing firearms in a subsequent offense; and, in sentencing, providing for sentences for previously convicted persons possessing firearms in a subsequent offense..",
+      "subjects": [
+        "mandatory minimum prison terms for prohibited persons with guns",
+        "no release on own recognizance for armed repeat offenders",
+        "no parole before mandatory term ends"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1587-2021.introduced.pdf",
+          "sha256": "5882d520e523ca4295542e8e617e21d19c39c3dc878018c30d0f71fc055c58b1"
+        }
+      }
+    },
+    {
+      "id": "f2066e2e0422a41b77fe738b946c1df3f184a82746ad606be324b611b1a6b977",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=2440",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2440-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-2440-2019 (LegiScan sponsor list): HB2440 (2019-2020 Regular Session): Providing for the designation of shooting ranges, sportsman clubs, hunting facilities and business relating to the sale and production of firearms and ammunition as life-sustaining..",
+      "subjects": [
+        "gun and ammunition businesses and ranges can never be closed or limited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2440-2019.amended.pdf",
+          "sha256": "9bdd564f4d0812adfa9af91a3ac7f854f4196ebd9577febef5953c94486be5c8"
+        }
+      }
+    },
+    {
+      "id": "aadf049da9c877b6ff2c394840cb4aa7ed6144423f58ce2833cec97296371de3",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=1018",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1018-2023",
+      "act": "nay",
+      "motion": "House Floor: HB 1018 PN 1152, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 1018 PN 1152, FINAL PASSAGE, 2023-05-22: nay (tally 102–99); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders created to remove firearms",
+        "firearm ban while an order is active",
+        "penalty for not turning in firearms under an order",
+        "longer penalty for prohibited persons found with a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1018-2023.amended.pdf",
+          "sha256": "05d5a4c60b9a22ac9e77d07afe3e7adc8841cd9dab1224832eb50521b29958a6"
+        }
+      }
+    },
+    {
+      "id": "658f90e32cc1e6c6a69d2835ba314dc1886667ea9297baf318a11f6a30f9b59f",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=1747",
+      "date": "2020-06-24",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1747-2019",
+      "act": "yea",
+      "motion": "House Floor: HB 1747 PN 2338, FP",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 1747 PN 2338, FP, 2020-06-24: yea (tally 127–74); census gate: none.",
+      "subjects": [
+        "emergency-time carry restriction repealed",
+        "no seizure of guns, accessories or ammunition during emergencies",
+        "governor cannot suspend firearm sales in emergencies"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1747-2019.introduced.pdf",
+          "sha256": "a4e95a0229bcf1cde7a5fa9d58ac2c33f09477e837d84525b7ff04d3a5f71ece"
+        }
+      }
+    },
+    {
+      "id": "465f6ee5ddd1f662a245de10a843aaa91be6f6eb2fd9c53ca322315e316e29ad",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=777",
+      "date": "2024-03-27",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-777-2023",
+      "act": "nay",
+      "motion": "House Floor: HB 777 PN 2578, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 777 PN 2578, FINAL PASSAGE, 2024-03-27: nay (tally 104–97); census gate: none.",
+      "subjects": [
+        "sale or transfer of unserialized gun frames, receivers and kits made a felony",
+        "buying parts to build an unserialized gun made a felony",
+        "licensed dealers must mark and record privately made firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-777-2023.amended.pdf",
+          "sha256": "65a5f4847629a43127721168bc31890a6fd60f0aefae6ac528a3cd698d73d35e"
+        }
+      }
+    },
+    {
+      "id": "a9c09af126d69b2c1230440fd41791b65a2da59b0bd9de07e3e4811a1a87837a",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=979",
+      "date": "2021-06-08",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-979-2021",
+      "act": "yea",
+      "motion": "House Floor: HB 979 PN 1706, FP",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 979 PN 1706, FP, 2021-06-08: yea (tally 124–79); census gate: none.",
+      "subjects": [
+        "local gun and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs",
+        "localities barred from suing gun makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-979-2021.amended.pdf",
+          "sha256": "494cfe800bdb89be85cf7c2a28a81c203b581e7614e7bc8f69211cb4c736f5dd"
+        }
+      }
+    },
+    {
+      "id": "567e30f0146e43eb215675559c6ec878fcea510e45658ff9401235af49b84611",
+      "kind": "own-words",
+      "url": "https://www.pahouse.net/Burns/InTheNews/NewsRelease/?id=107653",
+      "date": "2019-06-04",
+      "date_precision": "day",
+      "passage": "“These local laws fly in the face of existing law and our constitution, which I took an oath to defend – and which protects the rights of all Pennsylvanians to defend themselves and bear arms,” Burns said.",
+      "note": "House news release about his support for a bill to discourage local governments from making their own gun rules; he calls such local rules attacks on legal gun ownership.",
+      "subjects": [
+        "local governments making their own gun rules",
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:33:56.743Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e7dcf9d431c353491994fb2bf5f02bc934c594848c04995e5e878b4cfced1d0f",
+      "kind": "own-words",
+      "url": "https://www.pahouse.net/Burns/InTheNews/NewsRelease/?id=105671",
+      "date": "2019-03-18",
+      "date_precision": "day",
+      "passage": "“It is insulting to mandate that responsible, law-abiding Pennsylvanians be forced to register their firearms and pay yearly fees, just to exercise their constitutional right to own a gun,” Burns said.",
+      "note": "News release opposing H.B. 768, which would charge a yearly fee per registered firearm and add fingerprinting and background checks.",
+      "subjects": [
+        "gun registration and yearly fees",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:33:56.743Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e55302ae1d3de374a5083bd194965697920965599d3dad37a736b6a6e6bb5310",
+      "kind": "own-words",
+      "url": "https://www.pahouse.net/Burns/InTheNews/NewsRelease/?id=105671",
+      "date": "2019-03-18",
+      "date_precision": "day",
+      "passage": "\"If we want to send a clear message to criminals and those who would do others harm via gunfire, the legal system needs to enforce the laws already on the books and stop plea bargaining these types of crimes.”",
+      "note": "Says existing laws should be enforced and plea bargains stopped for gun crimes.",
+      "subjects": [
+        "enforce existing gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:33:56.743Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "318ce7afad0268d137b5058c4f72d6e5482388c63e93ab91c70102a273f1ca43",
+      "kind": "own-words",
+      "url": "https://www.pahouse.net/Burns/InTheNews/NewsRelease/?id=115511",
+      "date": "2020-06-25",
+      "date_precision": "day",
+      "passage": "“Emergency declaration or not, the fundamental constitutional rights of Americans shall not be infringed,” Burns said.",
+      "note": "News release on his vote for H.B. 1737, which would end the governor's power to suspend or limit gun sales in a disaster emergency.",
+      "subjects": [
+        "guns during emergency declarations",
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:33:56.743Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "092e6bbbdb297eb23b561e6344613c249babe41b96416fa4d0a620906be0bc20",
+      "kind": "record",
+      "url": "https://www.pahouse.net/Burns/InTheNews/NewsRelease/?id=115511",
+      "date": "2020-06-25",
+      "date_precision": "day",
+      "act": "yea",
+      "motion": "H.B. 1737, repeal of the governor's power to suspend or limit firearm sales in a disaster emergency (House vote as described in his release; roll call not opened)",
+      "note": "His release says he voted for H.B. 1737, which would repeal the part of the Health and Safety Code letting the governor suspend or limit gun sales during a disaster emergency; the bill went to the Senate.",
+      "subjects": [
+        "guns during emergency declarations"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:33:56.743Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1a31a9718857417535a948c79e6d486041fa411825f46a9dd9e1a4c0057caa3e",
+      "kind": "own-words",
+      "url": "https://pahouse.com/Burns/InTheNews/NewsRelease/?id=129067",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "passage": "“I seriously doubt that many, if any, gun-related crimes in Cambria County or elsewhere are committed by someone wielding a shotgun purchased at a gun show,” Burns said.",
+      "note": "News release on his no votes against a 2023 package: a 72-hour lost-or-stolen gun reporting rule, background checks on private rifle and shotgun sales, and a red flag law.",
+      "subjects": [
+        "check every gun buyer",
+        "red flag orders",
+        "report lost or stolen guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:33:56.743Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a340aaf654692c1793810da998884b6b8681a6819beb3e9efbd200f18f3ec347",
+      "kind": "own-words",
+      "url": "https://pahouse.com/Burns/InTheNews/NewsRelease/?id=129067",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "passage": "Burns said he sees potential for the “red flag” law to be abused – and perhaps even weaponized – by spouses, other family members and the courts.",
+      "note": "Release text describing his reason for opposing a red flag bill (a description of his view, not a direct quote).",
+      "subjects": [
+        "red flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:33:56.743Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e2084d7623d61ced10bad4108099af273423845ebf23d7c10fd5ceb8ceec1f67",
+      "kind": "own-words",
+      "url": "https://pahouse.com/Burns/InTheNews/NewsRelease/?id=138643",
+      "date": "2025-05-15",
+      "date_precision": "day",
+      "passage": "“As chairman of the Second Amendment Caucus, I feel it’s important to know your rights as a law-abiding gun owner,” Burns said.",
+      "note": "Release about his Concealed Carry Seminar covering concealed carry, the Castle Doctrine and personal protection.",
+      "subjects": [
+        "carry permits and concealed carry",
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:33:56.743Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c10e20d7733c1a388b273ee1957f4fd5727f24499dfc7bc2756fceeca7a33e05",
+      "kind": "own-words",
+      "url": "https://www.pahouse.net/Burns/InTheNews/NewsRelease/?id=140389",
+      "date": "2025-09-30",
+      "date_precision": "day",
+      "passage": "Burns refused to back the bill to expand background checks to private sales of long guns, saying it’s a red herring in the gun debate.",
+      "note": "Release text (not a direct quote) on his no vote on H.B. 1593, background checks for private long-gun sales.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:33:56.743Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fcc88d80c863c3f588c35b6722715d0d3ca5569ba9ad7505dd0d482d7c073c36",
+      "kind": "own-words",
+      "url": "https://www.pahouse.net/Burns/InTheNews/NewsRelease/?id=140389",
+      "date": "2025-09-30",
+      "date_precision": "day",
+      "passage": "Burns opposed the bill to ban non-metal firearms because it would clearly violate the Second Amendment rights of hobbyists, without cutting down on crime.",
+      "note": "Release text (not a direct quote) on his no vote on H.B. 1099, a ban on nonmetal firearms.",
+      "subjects": [
+        "ban on nonmetal or home-built guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:33:56.743Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "acc4ce49897d66e3e0ff353ed8d2f119e91af78df8c676d50c60b5266f131840",
+      "kind": "own-words",
+      "url": "https://www.pahouse.net/Burns/InTheNews/NewsRelease/?id=140389",
+      "date": "2025-09-30",
+      "date_precision": "day",
+      "passage": "“I’ve said it before and I’ll say it again: I refuse to chip away at the Second Amendment rights of the people of Cambria County and Pennsylvania, when that is the crystal-clear aim of any legislation,” Burns said.",
+      "note": "General statement in the release on his votes against H.B. 1859 (red flag), H.B. 1099 and H.B. 1593.",
+      "subjects": [
+        "general Second Amendment statement",
+        "red flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:33:56.743Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21d8024b9c2aff1bab1bc3e9a26e444aa2082119134e6c2b4b05f0a1b1cfdb19",
+      "kind": "own-words",
+      "url": "https://pahouse.com/Burns/InTheNews/NewsRelease/?id=140417",
+      "date": "2025-10-01",
+      "date_precision": "day",
+      "passage": "“With criminals, the gun that they’re using in many cases is in itself illegal—it’s stolen, or they’re not allowed to possess it in the first place,” Burns said. “So, they’re not going to worry one bit about whether a bump stock is legal or not.",
+      "note": "Release on his no vote on H.B. 1866, which sought to ban devices converting semi-automatic guns to automatic.",
+      "subjects": [
+        "ban on machine-gun conversion devices"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:33:56.743Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "67b12059c18e202575608eb813089975964679bb30e763e3c7f1d08bd24f21b4",
+      "kind": "own-words",
+      "url": "https://pahouse.com/Burns/InTheNews/NewsRelease/?id=140417",
+      "date": "2025-10-01",
+      "date_precision": "day",
+      "passage": "“In Cambria County, we know that unnecessary gun laws only hurt law-abiding gun owners, not the real criminals,” Burns added.",
+      "note": "Same release; general statement on gun laws.",
+      "subjects": [
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:33:56.743Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter affirmation",
+        "mail-ballot ID and signature checks",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official House news releases (three on the subject, found via search and fetched)",
+        "official House page https://pahouse.com/Burns/ (names him as member; nothing on the subject on the home page)",
+        "campaign site: none found",
+        "blocked: https://ballotpedia.org/Frank_Burns_(Pennsylvania) (403)",
+        "one web search on his name plus voter ID",
+        "legislature bill pages: not reviewed (floor votes and sponsorships linked separately)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:06:27.680Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:58.701Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.461Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-29T14:14:50.855Z",
+      "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-31, pa-01 A02365)"
+      ],
+      "found": 1,
+      "at": "2026-10-31T15:52:56.607Z",
+      "by": "identity-pa-2026-10-31-a02365"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "red flag orders",
+        "ban on nonmetal or home-built guns",
+        "ban on machine-gun conversion devices",
+        "gun registration and fees",
+        "local gun rules",
+        "carry a gun without a permit",
+        "guns during emergency declarations",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member site news releases (pahouse.net / pahouse.com), several releases 2019-2025",
+        "sponsor list: covered by LegiScan bulk check",
+        "web search on name plus gun words (two searches)",
+        "Ballotpedia: not relied on (returns empty to the fetch tool)",
+        "not reviewed: https://www.tribdem.com/news/burns-gun-groups-spar-over-vote-tied-to-constitutional-carry/article_21896131-197e-5cf6-a107-2f10f77203ea.html (page text was scrambled in the raw download, not read)",
+        "blocked: https://www.cnhinews.com/cnhi/article_e653e9fc-cac3-494e-9e12-aee127803aff.html (HTTP 429)",
+        "blocked: https://pahouse.com/Burns/InTheNews/Newsletter/?id=141265 (page too large / not readable text)"
+      ],
+      "found": 13,
+      "at": "2026-10-30T23:33:56.743Z",
+      "by": "source-collector"
+    }
+  ]
+}

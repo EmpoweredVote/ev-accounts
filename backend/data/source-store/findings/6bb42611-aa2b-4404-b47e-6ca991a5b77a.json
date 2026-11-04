@@ -1,0 +1,66 @@
+{
+  "politician_id": "6bb42611-aa2b-4404-b47e-6ca991a5b77a",
+  "findings": [
+    {
+      "id": "e076c8b48278b31632ee890048920af3952a61ffb83895b5d23bfa476c64b17f",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Jacobs'), linked to Martin Jacobs (district 38) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.749Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org (not tried, refuses fetches)",
+        "official House member page: not fetched (robots rule)",
+        "web search on name plus voter ID words: nothing on the subject beyond background",
+        "iVoterGuide candidate profile https://ivoterguide.com/candidate/86075/race/34746/election/1501 (confirms Dist. 38 candidate on 2026 general ballot; voter ID question marked did not answer)",
+        "blocked: https://bluevoterguide.org/es/MO/candidate_Martin_Jacobs/547563 (403)",
+        "House caucus site https://www.mohousedemcaucus.com/team-1/martin-jacobs: blocked/empty (curl returned no response)",
+        "KC voter guide: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:10:19.224Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:10:53.749Z",
+      "by": "identity-mo-2026-11-04"
+    }
+  ]
+}

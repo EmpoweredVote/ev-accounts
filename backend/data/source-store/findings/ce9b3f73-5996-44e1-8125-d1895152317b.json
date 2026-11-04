@@ -1,0 +1,28 @@
+{
+  "politician_id": "ce9b3f73-5996-44e1-8125-d1895152317b",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms Secretary for Natural Resources, appointed 2019, term ends 2027)",
+        "blocked: https://resources.ca.gov/ (returns an empty response to a browser-style fetch)",
+        "not reviewed: https://www.youtube.com/@CaNaturalResources (video channel, no readable text)",
+        "web news search on name plus subject words: nothing on the subject",
+        "appointed official, not a legislator: no bill votes or sponsorships possible"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:06:46.627Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

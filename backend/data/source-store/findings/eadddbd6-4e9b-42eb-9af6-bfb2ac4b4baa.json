@@ -1,0 +1,29 @@
+{
+  "politician_id": "eadddbd6-4e9b-42eb-9af6-bfb2ac4b4baa",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "Second Amendment",
+        "assault-style guns",
+        "background checks"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://ivoterguide.com/candidate/86897/race/34160/election/1495 (confirms candidate for U.S. House District 4 Connecticut, Nov 3 2026 ballot; gun question marked did not answer)",
+        "web search: name plus gun terms (nothing on the subject)",
+        "web search: campaign site and issues (no campaign site found)",
+        "https://westontoday.news/articles/241031-congressional-debate (2024 debate, nothing on the subject)",
+        "https://ctmirror.org/2024/10/29/ct-4th-district-debate-jim-himes-michael-goldstein-benjamin-wesley/ (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Benjamin_Wesley (empty page returned)",
+        "congress.gov: not applicable, not a legislator"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:05:21.716Z",
+      "by": "source-collector"
+    }
+  ]
+}

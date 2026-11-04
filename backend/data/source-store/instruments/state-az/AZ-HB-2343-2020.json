@@ -1,0 +1,25 @@
+{
+  "id": "AZ-HB-2343-2020",
+  "scope": "state:az",
+  "title": "HB 2343 (2020 - Fifty-fourth Legislature - Second Regular Session (azleg session id 122)): early voting; identification required",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/72999",
+    "https://www.azleg.gov/legtext/54leg/2R/bills/HB2343P.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy)\n(section) Bill text (para C)\n(quote) C. If the early voter is an overseas citizen, a qualified elector absent from the United States or in the United States service, a spouse or dependent residing with the early voter or a qualified elector of a special district mail ballot election as provided in article 8.1 of this chapter, the early voter may subscribe to the affidavit before and obtain the signature and military identification number or passport number, if available, of any person who is a United States citizen eighteen years of age or older.\n(c_mail_ballot_id)\n(section) Bill text (para C)\n(quote) C. If the early voter is an overseas citizen, a qualified elector absent from the United States or in the United States service, a spouse or dependent residing with the early voter or a qualified elector of a special district mail ballot election as provided in article 8.1 of this chapter, the early voter may subscribe to the affidavit before and obtain the signature and military identification number or passport number, if available, of any person who is a United States citizen eighteen years of age or older.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Bill text\n(quote) REFERENCE TITLE: early voting; identification required\n(section) Bill text\n(quote) Preparation and transmission of ballot; identification\n(section) Bill text (para 2)\n(quote) 2. Provide identification that matches the name provided by the person delivering the ballot. any one form of IDENTIFICATION that is prescribed by section 16-579 is sufficient identification, and an identification with a photograph is not required.\n(other) 0: n\n(other) 1: o\n(other) 2: t\n(other) 3:  \n(other) 4: s\n(other) 5: t\n(other) 6: a\n(other) 7: t\n(other) 8: e\n(other) 9: d\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "John Fillmore",
+      "role": "prime",
+      "version": "HB2343P: as introduced (printed version)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

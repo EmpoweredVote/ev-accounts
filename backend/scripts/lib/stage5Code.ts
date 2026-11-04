@@ -28,6 +28,8 @@ export const Stage5CodeSchema = z.object({
   blank_class: z.enum(BLANK_CLASSES as [BlankClass, ...BlankClass[]]).optional(),
   open_note: z.string().optional(),
   tags: z.array(z.enum(STARTER_TAGS)).default([]),
+  /** doesnt-fit only: does the evidence show which way the person leans (true), or no side at all (false)? */
+  shows_side: z.boolean().optional(),
   finding_ids: z.array(z.string()).default([]),
   evidence_basis: z.enum(['record', 'own-words', 'joint']).optional(),
   codebook: z.string().min(1),
@@ -75,8 +77,10 @@ export function checkCode(code: Stage5Code, pf: PersonFindings): string[] {
   if (code.outcome === 'doesnt-fit') {
     if (!code.open_note?.trim()) out.push('doesnt-fit needs an open note in the coder\'s own words');
     if (code.blank_class === 'source-gap') out.push('source-gap means no stance found, not doesnt-fit');
-  } else if (code.tags.length) {
-    out.push('tags belong on doesnt-fit codes only');
+    if (code.shows_side === false && code.tags.includes('direction-only')) out.push('shows_side false contradicts the direction-only tag');
+  } else {
+    if (code.tags.length) out.push('tags belong on doesnt-fit codes only');
+    if (code.shows_side !== undefined) out.push('shows_side belongs on doesnt-fit codes only');
   }
 
   if (code.outcome === 'no-stance') {

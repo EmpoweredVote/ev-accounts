@@ -1,0 +1,31 @@
+{
+  "politician_id": "2155e796-61b8-419c-96b0-ddd6f61774d3",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun safety laws",
+        "background checks",
+        "gun violence"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://wpln.org/tag/darden-copeland/ (confirms he won the 7th District nomination, so he is on the 2026 general-election ballot)",
+        "campaign site home page https://www.dardenforcongress.com/ (nothing on the subject)",
+        "campaign issues page https://www.dardenforcongress.com/home-2 (fetched by curl; covers health care, corruption and the middle class; nothing on the subject)",
+        "campaign news page https://www.dardenforcongress.com/news (fetched by curl; press clippings, nothing on the subject)",
+        "blocked: https://tennesseelookout.com/voter-guides/contests/congressional-district-7-2/ (403)",
+        "blocked: https://bluevoterguide.org/TN/candidate_Darden_Copeland/679752?lang=es (403)",
+        "blocked: https://ballotpedia.org (not fetched; returns empty to the fetch tool)",
+        "congress.gov: not applicable, he has not served in Congress; no sponsored bills",
+        "two web searches (name plus guns; name plus gun safety forum or questionnaire); results were about other people"
+      ],
+      "found": 0,
+      "at": "2026-10-30T19:41:20.390Z",
+      "by": "source-collector"
+    }
+  ]
+}

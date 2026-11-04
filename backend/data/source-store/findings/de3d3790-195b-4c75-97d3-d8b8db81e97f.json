@@ -1,0 +1,237 @@
+{
+  "politician_id": "de3d3790-195b-4c75-97d3-d8b8db81e97f",
+  "findings": [
+    {
+      "id": "ed506c78dfedd149bdd905da79609f3636229e7b78d3798a09005403e9dc8d5e",
+      "kind": "own-words",
+      "url": "https://radio.wpsu.org/2024-04-17/election-2024-republican-scott-barger-race-pennsylvania-house-80th-district",
+      "date": "2024-04-17",
+      "date_precision": "day",
+      "passage": "But without that, if we could convince our friends on the other side to go along with something like a meaningful voter ID law would be would be helpful.",
+      "note": "In a radio interview during his 2024 primary run, he says a meaningful voter ID law is something people in his district are looking for.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:06.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "191791c1f1862aa8f498590dfa06b74fa969179a94c49d335e23873fb0e389bd",
+      "kind": "own-words",
+      "url": "https://radio.wpsu.org/2024-04-17/election-2024-republican-scott-barger-race-pennsylvania-house-80th-district",
+      "date": "2024-04-17",
+      "date_precision": "day",
+      "passage": "To me, it's needed because there is a lack of confidence.",
+      "note": "Asked why voter ID is needed given no evidence of widespread fraud, he answers that it is needed because of low public confidence.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter confidence in elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:06.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2b42f58fb7bae14c08400b870c768a249f0e26321b9f309b20218965fc49625b",
+      "kind": "own-words",
+      "url": "https://radio.wpsu.org/2024-04-17/election-2024-republican-scott-barger-race-pennsylvania-house-80th-district",
+      "date": "2024-04-17",
+      "date_precision": "day",
+      "passage": "I think representatives should listen to that and offer sensible solutions that restores voters confidence in the system.",
+      "note": "Says lawmakers should respond to voters' doubts about vote counting with inexpensive, simple measures.",
+      "subjects": [
+        "voter confidence in elections",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:06.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7cd155b5697ab0ee763a48986ce6ce13c7c05b5a8a41d6a534fb1b5589ed9f2c",
+      "kind": "own-words",
+      "url": "https://radio.wpsu.org/2024-04-17/election-2024-republican-scott-barger-race-pennsylvania-house-80th-district",
+      "date": "2024-04-17",
+      "date_precision": "day",
+      "passage": "Number 1, I think that it completely scuttled efforts for meaningful voter ID legislation that was kicked over from the Senate.",
+      "note": "Explains an objection to his primary opponent's 2023 leadership vote: he says it stopped voter ID legislation sent over from the Senate.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID legislation in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:06.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6bcc2ae00b4c79f1ffdbe4207b35e3d3e0cce31c8ed5214b6a521f5afe41aa14",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "nay",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Barger'), linked to Scott Barger (district 80) via the official 2025-2026 House member roll (identity step 2026-10-31, pa-01 HB 1396 nays).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-31-raw-votes",
+        "fetched_at": "2026-10-31T18:07:00.899Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "776be13d4edc022219fdf3819db0234ee24aae9807915d326ecc971a85558b0b",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb2599",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2599-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-2599-2025 (LegiScan sponsor list): HB2599 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for firearms not to be carried without a license, for licenses and for proof of license and exception..",
+      "subjects": [
+        "license no longer required to carry a gun in a vehicle",
+        "vehicle carry exceptions repealed",
+        "license covers concealed carry on the person only"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2599-2025.introduced.pdf",
+          "sha256": "dc8c286b9dddc4dec2d44c39427334dbb59b7f4135d52a736491c2e33d679d51"
+        }
+      }
+    },
+    {
+      "id": "5a1e8a788a9a3b1de393bdb1dde749a6f598706061fbe03d4e66bccf89447f17",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb454",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-454-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-454-2025 (LegiScan sponsor list): HB454 (2025-2026 Regular Session): In firearms and other dangerous articles, repealing provisions relating to firearms not to be carried without a license, providing for license not required, repealing provisions relating to carrying firearms on public streets or public property in Philadelphia, further providing for prohibited conduct during emergency, providing for sportsman's firearm permit, further providing for licenses and for antique firearms and repealing provisions relating to proof of license and exception; and making editorial changes..",
+      "subjects": [
+        "no license needed to carry firearms openly or concealed",
+        "carry license made optional",
+        "Philadelphia public-carry rule repealed",
+        "license age minimum and character check removed",
+        "duty to show license on demand repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-454-2025.introduced.pdf",
+          "sha256": "f30ec3f128cf3767ddff70a1eeaf2b9e5550db871bb897761638ddd54b516abe"
+        }
+      }
+    },
+    {
+      "id": "d286596c5fbf23976f50103b657a58aab391f2dc93424dafbbac8f5df6ae6538",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb548",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-548-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-548-2025 (LegiScan sponsor list): HB548 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for limitation on the regulation of firearms and ammunition; and, in preemptions, providing for regulation of firearms and ammunition..",
+      "subjects": [
+        "state preemption of local gun and ammunition rules extended to all municipalities",
+        "lawsuits and expense awards against local governments that break preemption"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-548-2025.introduced.pdf",
+          "sha256": "96cead2961c739e15a8f1b6213d6cebb08434f6d00d7d5db6ad44267c48a36b1"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter confidence in elections",
+        "mail ballots",
+        "proof of citizenship"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://www.repbarger.com (home page and press release list: nothing on the subject; site search page returned nothing)",
+        "caucus site https://www.pahousegop.com/Barger (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Scott_Barger",
+        "blocked: https://ballotpedia.org/Pennsylvania_House_of_Representatives_District_80",
+        "https://www.pahouse.com/Barger returned 404",
+        "https://vote.wpsu.org/candidates/394/ redirected away, not reviewed",
+        "WPSU 2024 primary interview (own words found)",
+        "Altoona Mirror 2024-04 primary result (reporter text only) and 2026-01 reelection launch (nothing on the subject)",
+        "Morrisons Cove Herald 2024-02 candidate profile (nothing on the subject)",
+        "two web searches; a Blair County 2026 primary notice appears to list him as a candidate, still in office per his site"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:10:06.942Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-31, pa-01 HB 1396 nays)"
+      ],
+      "found": 1,
+      "at": "2026-10-31T18:07:00.899Z",
+      "by": "identity-pa-2026-10-31-raw-votes"
+    }
+  ]
+}

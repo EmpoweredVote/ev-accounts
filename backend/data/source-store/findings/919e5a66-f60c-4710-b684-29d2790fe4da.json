@@ -1,0 +1,59 @@
+{
+  "politician_id": "919e5a66-f60c-4710-b684-29d2790fe4da",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws",
+        "voting rights"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/David_Redkey names him as candidate for U.S. House Arizona District 3, on the Nov 3, 2026 general-election ballot after advancing from the July 21, 2026 primary (he did not appear on the 1st District primary ballot)",
+        "On the Record (0 appearances, 0 candidates)",
+        "Ballotpedia profile and Candidate Connection survey (2025): nothing on the subject",
+        "campaign site https://www.davidredkey4congress.com/ : home, why-vote-for-david-redkey, undo-the-harm-of-trump, economic-bill-of-rights, only-asks-for-votes-never-money, u-s-supreme-court-amendment, ratify-the-equal-rights-amendment, what-is-foundation-economics checked for voter ID, citizenship, SAVE Act, election integrity, voting rights terms: nothing on the subject",
+        "congress.gov / legislature record: not applicable, not a legislator",
+        "not reviewed: other campaign site issue pages (tricare, israel, tariffs, probate, school funding, reproductive rights, NDAA) judged off-subject by title only",
+        "not reviewed: campaign YouTube https://www.youtube.com/@DavidRedkey4Congress, Instagram, TikTok (video/social not readable)",
+        "not reviewed: news search on name plus subject words (session web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:07:13.041Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity / voter rolls"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/David_Redkey: names him as a candidate for AZ-3 and says he is on the 2026-11-03 general-election ballot; his 2025 Candidate Connection answers (written for AZ-1) have nothing on the subject; no 2026 survey",
+        "news page https://azfamily.com/2026/09/21/arizona-congressional-candidate-arrested-making-threats-officials-say: reports a September 2026 arrest on threat charges; does not say he left the race; still listed on the ballot by Ballotpedia, so kept in scope",
+        "campaign site home page https://www.davidredkey4congress.com/: only a link to voter registration; nothing on ID or citizenship",
+        "campaign site pages /undo-the-harm-of-trump, /economic-bill-of-rights, /why-vote-for-david-redkey: nothing on the subject",
+        "one news search on name plus subject words: nothing on the subject",
+        "not reviewed: other campaign site issue pages (about 20 listed in the site menu, none with a voting-rules title)",
+        "not reviewed: campaign Instagram, TikTok, YouTube and Facebook",
+        "congress.gov: not applicable, not a sitting legislator"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:42:02.790Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

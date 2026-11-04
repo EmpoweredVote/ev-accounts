@@ -1,0 +1,33 @@
+{
+  "id": "GA-SB-29-2021",
+  "scope": "state:ga",
+  "title": "SB 29 (2021-2022 Regular Session (first year)): Elections and Primaries; submission of certain forms of identification by electors with absentee ballot applications and absentee ballots; provide",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/ (SB 29 detail API answers 401; not bypassed). History from Senate Journal 2021 (first reading, referred to Ethics, p. 163 in index) and 2022 Senate index \"No action in 2022\".",
+    "https://www.legis.ga.gov/api/legislation/document/20212022/196009"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1 (O.C.G.A. 21-2-381(b)(1)) - in-person absentee voting at registrar office\n(quote) In order to be found eligible to vote an absentee ballot in person at the registrar's office or absentee ballot clerk's office, such person shall show one of the forms of identification listed in Code Section 21-2-417 and the registrar or absentee ballot clerk shall compare the identifying information on the application with the information on file in the registrar's office.\n(b_no_id_remedy)\n(section) Sec. 3 (O.C.G.A. 21-2-386(a)(1)(C)) - no ID copy with returned ballot\n(quote) If the elector fails to provide the photocopy of the identification specified in subsection (a) of Code Section 21-2-417 with such absentee ballot, such absentee ballot shall be treated as a provisional ballot and shall be counted only if the registrars are able to verify the identification and registration of the elector during the time provided pursuant to Code Section 21-2-419. The board of registrars or absentee ballot clerk shall promptly notify the elector that such ballot is deemed a provisional ballot and shall provide information on the types of identification needed and how and when such identification is to be submitted to the board of registrars or absentee ballot clerk to verify the ballot.\n(c_mail_ballot_id)\n(section) Sec. 1 (O.C.G.A. 21-2-381(a)(1)(C)) - application\n(quote) Except for an elector who is entitled to vote by absentee ballot under the federal Uniformed and Overseas Citizens Absentee Voting Act, 42 U.S.C. Section 1973ff, et seq., as amended, the application shall also include a photocopy of one of the forms of identification specified in subsection (a) of Code Section 21-2-417. If the elector registered to vote by mail but did not comply with subsection (c) of Code Section 21-2-220 and is voting for the first time in this state, the application shall contain a photocopy of one of the forms of identification specified in subsection (c) of Code Section 21-2-417. If the elector fails to include a photocopy of one of the forms of identification required in this subparagraph or if the photocopy is not legible, the registrar or absentee ballot clerk shall so advise the elector promptly, and the elector shall be allowed to correct the problem. Electors who vote at an advance voting location during the period of advance voting specified in Code Section 21-2-385 shall comply with the identification requirements of this subparagraph by exhibiting the appropriate form of identification to poll officials at the advance voting location.\n(section) Sec. 2 (O.C.G.A. 21-2-385(a)) - outer envelope\n(quote) The elector shall then fill out, subscribe, and swear to the oath printed on such envelope and enclose in the outer envelope, in addition to, but not in, the ballot envelope, a photocopy of one of the forms of identification specified in subsection (a) of Code Section 21-2-417.\n(section) Sec. 3 (O.C.G.A. 21-2-386(a)(1)(B)) - clerk checks the ID copy\n(quote) (B) Upon receipt of each ballot, a registrar or clerk shall write the day and hour of the receipt of the ballot on its envelope. The registrar or clerk shall then compare the identifying information on the oath with the information on file in his or her office, shall compare the signature or mark on the oath with the signature or mark on the absentee elector's voter registration card or the most recent update to such absentee elector's voter registration card and application for absentee ballot or a facsimile of said signature or mark taken from said card or application, shall open the outer oath envelope and verify the identity of the elector with the enclosed photocopy of one of the forms of identification specified in subsection (a) of Code Section 21-2-417, and shall, if the information and signature appear to be valid and other identifying information appears to be correct, so certify by signing or initialing his or her name below the voter's oath. Each elector's name so certified shall be listed by the registrar or clerk on the numbered list of absentee voters prepared for his or her precinct.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec. 1: 21-2-381 (absentee application; subsections (a) and (b)).\n(other) Sec. 2: 21-2-385(a) (voting and returning absentee ballot).\n(other) Sec. 3: 21-2-386(a)(1)(B) and (C) (processing and rejected ballots).\n(other) Sec. 4: repealer.",
+  "sponsors": [
+    {
+      "name": "Anavitarte of the 31st",
+      "role": "prime",
+      "version": "As introduced (LC 28 0002). Never left Senate Ethics Committee."
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

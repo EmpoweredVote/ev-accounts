@@ -1,0 +1,89 @@
+{
+  "politician_id": "fef8eb85-8360-418d-8239-ccf3a823608b",
+  "findings": [
+    {
+      "id": "0da3aed2455336057e100fde82e9f576a3cc98862d9e034d6b51c98802207615",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=246497&includeVotes=true",
+      "date": "2026-06-12",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('SEARS'), linked to Kiana Sears (district 9) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.888Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "03a16c0951629bf6162b4a4641ce199c48f3f00694fca3d54826952415a18d7f",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83528&billStatusActionId=241249&includeVotes=true",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1001-2026",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('SEARS'), linked to Kiana Sears (district 9) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.888Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:53:15.888Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances, extract-otr run, no name matches)",
+        "in scope: https://www.kjzz.org/elections/2026-10-08/2026-arizona-senate-9th-legislative-district-the-candidates names her as the incumbent in Senate District 9 on the 2026 ballot; page has nothing on the subject",
+        "blocked: https://ballotpedia.org/Kiana_Sears (403)",
+        "blocked: https://apps.azlibrary.gov/officials/Legislators/Person/1784 (bot check)",
+        "campaign site https://www.kianasears.com (empty page); https://www.kiana4az.com (no connection)",
+        "https://www.dlcc.org/candidates/kiana-sears/ nothing on the subject",
+        "https://arizonasenatedemocrats.com/ home page, nothing on the subject",
+        "web searches on her name plus voter ID, proof of citizenship, HCR2001, SCR1001: no own words found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:12:37.134Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

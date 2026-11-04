@@ -1,0 +1,80 @@
+{
+  "politician_id": "bd4dc076-4bdd-4e10-be2c-80d998b17c50",
+  "findings": [
+    {
+      "id": "e2522df6950dbe60748b673e4c66dd6b0a8ed0948574d3f1788895f763e5a2e6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250919041548/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1116",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "AB 1116 Assembly Third Reading",
+      "note": "Assembly Bill 1116 (2025), voter registration: lets a person with no driver license or state ID register online using the last four digits of a Social Security number, and sets up an electronic signature image for ballot matching. Assembly floor vote, 60 to 18.",
+      "subjects": [
+        "ID number to register online",
+        "proof of identity to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:15:35.916Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2e724112ca969d72c730c36d0d93686a0e2941d1477a7052892b2b25a6aa8d7f",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-25",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "AB 1116 Concurrence in Senate Amendments",
+      "note": "Assembly Bill 1116 (2025), voter registration: lets a person with no driver license or state ID register online using the last four digits of a Social Security number, and sets up an electronic signature image for ballot matching. Vote to agree to Senate changes, 59 to 19. Digital Democracy later shows the bill vetoed on 2026-09-27.",
+      "subjects": [
+        "ID number to register online",
+        "proof of identity to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:15:35.916Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter ID rules",
+        "proof of identity to register",
+        "ID number with mail ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll citizenship checks"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script run with the name)",
+        "official site https://ahrens.asmdc.org/ (confirms Patrick Ahrens, Assembly District 26; home page seen; nothing on voter ID, proof of citizenship or mail-ballot ID)",
+        "Ballotpedia https://ballotpedia.org/Patrick_Ahrens (took office 2024-12-02; on the 2026 general-election ballot for Assembly District 26; no stated position on the subject)",
+        "Digital Democracy bill pages for AB 1116 (votes, status)",
+        "SB 1174 (2024): he was not yet in office, so no vote",
+        "leginfo vote pages via Internet Archive copies (leginfo itself is behind a bot check)",
+        "AB 25 (2025) text via Internet Archive https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB25 (authors are two other members; he is not an author or coauthor; no committee roll call found)",
+        "web search: one news search on name plus voter ID, SAVE Act, election integrity; nothing from him",
+        "nothing on the subject in his own words found",
+        "not reviewed: social media"
+      ],
+      "found": 2,
+      "at": "2026-10-28T16:15:35.916Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "id": "AZ-SCR-1001-2026",
+  "scope": "state:az",
+  "title": "SCR 1001 (2026 - Fifty-seventh Legislature - Second Regular Session (azleg session id 130)): citizenship; identification; contributions; early voting.",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/83528",
+    "https://www.azleg.gov/legtext/57leg/2R/bills/SCR1001S.htm"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 19: A. Only citizens of the United States shall be eligible to register and vote once for each available office or (para C)\n(quote) C. each qualified elector shall provide PROOF of identity as prescribed by law to vote in person or through any other means.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) Bill text (para 19)\n(quote) Elections; citizens; foreign national contributions prohibited; identification; early voting; mail-in ballots; severability\n(d_proof_of_citizenship)\n(section) Bill text\n(quote) citizenship; identification; contributions; early voting.\n(section) Sec. 19: A. Only citizens of the United States shall be eligible to register and vote once for each available office or (para 2)\n(quote) 2. The qualified elector provided documented proof of citizenship at the time the qualified elector registered to vote.\n(e_other_rule) not stated.\n(other) 0: n\n(other) 1: o\n(other) 2: t\n(other) 3:  \n(other) 4: s\n(other) 5: t\n(other) 6: a\n(other) 7: t\n(other) 8: e\n(other) 9: d",
+  "sponsors": [
+    {
+      "name": "Shawnna Bolick",
+      "role": "prime",
+      "version": "SCR1001S: Senate-engrossed version (text as it stood after the Senate acted)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "campaign-finance"
+      ]
+    }
+  ],
+  "votes": [
+    {
+      "date": "2026-02-17",
+      "body": "AZ Senate",
+      "motion": "Third Reading: Passed (as amended)",
+      "kind": "roll-call",
+      "yes": 17,
+      "no": 12,
+      "absent": 1,
+      "body_size": 30,
+      "note": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83528&billStatusActionId=241249&includeVotes=true",
+      "members": [
+        {
+          "name": "ALSTON",
+          "vote": "nay"
+        },
+        {
+          "name": "ANGIUS",
+          "vote": "yea"
+        },
+        {
+          "name": "BOLICK",
+          "vote": "yea"
+        },
+        {
+          "name": "BRAVO",
+          "vote": "nay"
+        },
+        {
+          "name": "CARROLL",
+          "vote": "yea"
+        },
+        {
+          "name": "DIAZ",
+          "vote": "nay"
+        },
+        {
+          "name": "DUNN",
+          "vote": "yea"
+        },
+        {
+          "name": "EPSTEIN",
+          "vote": "nay"
+        },
+        {
+          "name": "FARNSWORTH",
+          "vote": "yea"
+        },
+        {
+          "name": "FERNANDEZ",
+          "vote": "nay"
+        },
+        {
+          "name": "FINCHEM",
+          "vote": "yea"
+        },
+        {
+          "name": "GABALDÓN",
+          "vote": "nay"
+        },
+        {
+          "name": "GONZALES",
+          "vote": "nay"
+        },
+        {
+          "name": "GOWAN",
+          "vote": "yea"
+        },
+        {
+          "name": "HATATHLIE",
+          "vote": "nay"
+        },
+        {
+          "name": "HOFFMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "KAVANAGH",
+          "vote": "yea"
+        },
+        {
+          "name": "KUBY",
+          "vote": "nay"
+        },
+        {
+          "name": "LEACH",
+          "vote": "yea"
+        },
+        {
+          "name": "MESNARD",
+          "vote": "yea"
+        },
+        {
+          "name": "MIRANDA",
+          "vote": "absent"
+        },
+        {
+          "name": "ORTIZ",
+          "vote": "nay"
+        },
+        {
+          "name": "PAYNE",
+          "vote": "yea"
+        },
+        {
+          "name": "ROGERS",
+          "vote": "yea"
+        },
+        {
+          "name": "SEARS",
+          "vote": "nay"
+        },
+        {
+          "name": "SHAMP",
+          "vote": "yea"
+        },
+        {
+          "name": "SHOPE",
+          "vote": "yea"
+        },
+        {
+          "name": "SUNDARESHAN",
+          "vote": "nay"
+        },
+        {
+          "name": "WERNER",
+          "vote": "yea"
+        },
+        {
+          "name": "PETERSEN",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}
