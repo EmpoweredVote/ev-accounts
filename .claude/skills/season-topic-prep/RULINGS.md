@@ -226,6 +226,15 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
 
 ## Stage 5 rulings
 
+### A sponsorship of a near-unanimous bill is gated like the vote
+- **Ruling:** a sponsorship of a bill whose every counted final floor vote is near-unanimous (codebook V4.1) is gated
+  like the vote: it cannot seat anyone. A sponsorship of a bill with no floor vote on file is not gated. A gated act
+  (vote or sponsorship) never makes a record two-sided.
+- **Date and source:** 2026-11-03, Chris Andrews, gun-policy Stage 5 Session C
+  (`.planning/research/s3-prep-gun-policy/stage5/README.md`, SESSION C). First cases: VA HB 101 (2026, 99-0),
+  IN HB 1651 (2019, 93-1).
+- **Scope:** every topic.
+
 ### Local records support own words, never seat alone
 - **Ruling:** a local ordinance or resolution that shows which way a local official leans may serve as supporting
   evidence beside that person's own words on the topic. It never seats anyone alone. A local law that only decides
@@ -377,6 +386,15 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
 
 These change how a general rule reads for **one topic only**. They are not general. Do not apply them to another
 topic; if a topic seems to need the same reading, ask for a ruling and point to the entry here.
+
+### gun-policy — S4 licence rule, S5 main-subject reading
+- **Reading:** S4 — a carry widening that keeps the permit does not conflict with a rung 3 act on who may have a gun or
+  how guns are bought or made; the record sits at rung 3. It still conflicts with a type ban or a place ban, and a
+  permit repeal conflicts with every rung 1-3 act. S5 — a part that creates or changes a gun crime, or only changes a
+  word or cross-reference in another law, does not make a firearms bill multi-subject (narrows census Q1 kind 2).
+- **Date and source:** 2026-11-03, Chris Andrews, Stage 5 Session C (Season 3 annex S1-S8; CA_0356).
+- **Scope:** the Season 3 revision 5 of `gun-policy` only. Not offered to other topics until a second topic shows the
+  same shape (runner, 2026-11-03).
 
 ### education-equity-programs — R1 (single-subject scope)
 - **Reading:** a separate operative part makes a bill multi-subject only when it acts **outside K-12 schools**
