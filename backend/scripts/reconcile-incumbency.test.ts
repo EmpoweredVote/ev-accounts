@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
-import { findDrift } from './reconcile-incumbency.mjs';
+import { findDrift, driftExitCode } from './reconcile-incumbency.mjs';
 
 const holder = (id: string) => ({ politician_id: id });
 
@@ -149,5 +149,23 @@ describe('the staging promotion must not force is_incumbent back on', () => {
     const conflictBlock = src.slice(src.indexOf('ON CONFLICT (external_id) DO UPDATE SET'));
     const setList = conflictBlock.slice(0, conflictBlock.indexOf('`'));
     expect(setList).toMatch(/is_active\s*=\s*true/);
+  });
+});
+
+describe('driftExitCode — what a scheduled --check run does', () => {
+  // 🔴 This script RAN NOWHERE until it was scheduled. It was built, tested and controlled while
+  // nothing invoked it, so drift would have accumulated silently again — the one thing it exists
+  // to stop. These pin the decision the daily job makes.
+  it('fails the job when --check finds drift', () => {
+    expect(driftExitCode({ check: true, driftCount: 1 })).toBe(1);
+  });
+
+  it('passes when --check finds none', () => {
+    expect(driftExitCode({ check: true, driftCount: 0 })).toBe(0);
+  });
+
+  it('never fails a plain read-only run, however much drift it reports', () => {
+    // Running it by hand to LOOK must not be a failure; only the scheduled gate is a gate.
+    expect(driftExitCode({ check: false, driftCount: 429 })).toBe(0);
   });
 });

@@ -622,6 +622,22 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
+      # 🔴 THE RECONCILER SHIPPED RUNNING NOWHERE. It was built, tested and controlled while
+      # nothing invoked it, so incumbency drift would have accumulated silently again — the one
+      # thing it exists to stop. politicians.is_incumbent and race_candidates.is_incumbent are
+      # CACHED, nothing recomputes them, and terms start and end on their own dates with no
+      # commit involved, so this is drift that happens with nobody touching the repo.
+      #
+      # ⚠ REPORTS, NEVER WRITES. Correcting a drifted row means deciding what that row IS, and
+      # the first measurement of this reported 429 rows of which only 9 were real — an automatic
+      # --apply on a schedule would have published 22 Senate CANDIDATES as sitting incumbents
+      # (CC_0342). The job going red is a prompt to read rows, not to run --apply.
+      - name: Check incumbency has not drifted from office_terms
+        if: ${{ !cancelled() }}
+        run: npm run check:incumbency
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
       # Rides this job because it shares the trigger, not the database: it needs no
       # secrets, it just asks the live proxy whether its upstream is answering.
       # `if: ${{ !cancelled() }}` so a reachability failure cannot hide it.
