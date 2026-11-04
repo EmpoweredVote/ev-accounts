@@ -260,8 +260,12 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
   35 of 35 own-words seats; the pass mark (34 of 35) was set before the draw, with the setup unchanged from run 3.
   Runs 2 (69%) and 3 (89.5%) failed; their misses led to setup fixes (bill texts named only in words, rulings given
   without names) and ruling W3-R24, so run 4 confirms repeatability on the same seats rather than testing new ones.
-  Record: the local planning folder `s3-prep-voting-rights/stage5/blind-check/` (runs 2 to 4). Other topics
-  keep the hold.
+  Record: the local planning folder `s3-prep-voting-rights/stage5/blind-check/` (runs 2 to 4).
+- **Retired for `gun-policy`** (2026-11-04, Chris Andrews: "Approve"): blind check run 1 agreed on 24 of 24
+  own-words seats (every one in the codes: 20 written and pending review, 4 held or moved); the pass mark (23 of 24)
+  was set before the draw. Six blind Opus coders used the Stage 5 coder brief (revision 5) with their output sent
+  elsewhere. Two blind codes reached the same rung on a joint basis (a vote as support); agreement counts the rung.
+  Record: the local planning folder `s3-prep-gun-policy/stage5/blind-check/`. Other topics keep the hold.
 
 ### A vote on the record carries a joint seat
 - **Ruling:** a seat that rests on the person's own words together with a legislative record (a vote, sponsorship
