@@ -11,6 +11,7 @@
 import { HTML_ENTITIES, decodeNumericEntities, decodeEntities } from './htmlEntities.js';
 import { isRollCallXmlUrl, parseRollCallLine, verifyRollCallLine } from './rollCallEvidence.js';
 import { isIgaRollCallUrl, parseIgaRollCallLine, verifyIgaRollCallLine } from './igaRollCallEvidence.js';
+import { isMaRollCallUrl, parseMaRollCallLine, verifyMaRollCallLine } from './maRollCallEvidence.js';
 import { isLegiscanUrl, parseLegiscanLine, verifyLegiscanLine, type GovernorTerm } from './legiscanEvidence.js';
 
 /**
@@ -553,6 +554,14 @@ export async function verifyEvidence(args: {
           // PDF, against the party-free render the IGA adapter made of it.
           if (isIgaRollCallUrl(url) && parseIgaRollCallLine(ev.snippet)) {
             const v = verifyIgaRollCallLine(ev.snippet, url, fetched.text, names.lastName, names.fullName);
+            judged.push({ snippet: ev.snippet, snippet_index: ev.snippet_index, verdict: v,
+              ...(v.verdict === 'verified' ? { matchedSpan: ev.snippet.trim() } : {}) });
+            continue;
+          }
+          // Massachusetts House roll-call lane (maRollCallEvidence.ts): the same check on a
+          // malegislature.gov roll-call PDF, against the party-free render the MA adapter made of it.
+          if (isMaRollCallUrl(url) && parseMaRollCallLine(ev.snippet)) {
+            const v = verifyMaRollCallLine(ev.snippet, url, fetched.text, names.lastName, names.fullName);
             judged.push({ snippet: ev.snippet, snippet_index: ev.snippet_index, verdict: v,
               ...(v.verdict === 'verified' ? { matchedSpan: ev.snippet.trim() } : {}) });
             continue;

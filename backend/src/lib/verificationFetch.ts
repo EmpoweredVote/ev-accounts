@@ -33,6 +33,7 @@ import { Readability } from '@mozilla/readability';
 import { parseHTML } from 'linkedom';
 import { fetchCongressPageText } from './adapters/congressAdapter.js';
 import { fetchIgaPageText } from './adapters/igaAdapter.js';
+import { fetchMaRollCallText } from './adapters/maLegislatureAdapter.js';
 
 /**
  * Honest user-agent. Names Empowered Vote, links a public policy page, and
@@ -749,6 +750,11 @@ export interface VerificationFetchDeps {
   congressAdapter?: (url: string) => Promise<string | null>;
   /** Source-specific tier — Indiana General Assembly official API (iga.in.gov). Runs before the generic tiers. */
   igaAdapter?: (url: string) => Promise<string | null>;
+  /**
+   * Source-specific tier — Massachusetts House roll-call PDFs (malegislature.gov/RollCall/…). A live
+   * fetch of a public site, so it runs AFTER the robots gate, before the generic tiers.
+   */
+  maRollCallAdapter?: (url: string) => Promise<string | null>;
 }
 
 /**
@@ -766,6 +772,7 @@ export function createVerificationFetchSession(
   const wayback = deps.wayback ?? fetchViaWayback;
   const congressAdapter = deps.congressAdapter ?? fetchCongressPageText;
   const igaAdapter = deps.igaAdapter ?? fetchIgaPageText;
+  const maRollCallAdapter = deps.maRollCallAdapter ?? ((url: string) => fetchMaRollCallText(url, { userAgent: EMPOWERED_VOTE_UA }));
 
   return {
     async fetch(url: string): Promise<string> {
@@ -803,6 +810,15 @@ export function createVerificationFetchSession(
           /* fall through to the distinct signal */
         }
         throw new RobotsDisallowedError(url);
+      }
+
+      // Source-specific tier — a Massachusetts House roll-call PDF, read into the party-free render
+      // its vote lines verify against (maRollCallEvidence.ts). Null falls through to the plain tier.
+      try {
+        const t = await maRollCallAdapter(url);
+        if (t && t.trim()) return t;
+      } catch {
+        /* fall through to the generic ladder */
       }
 
       const candidates: string[] = [];

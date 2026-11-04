@@ -335,6 +335,7 @@ prints no party by the names. Otherwise cite a LegiScan line instead. The legisl
 | AZ | the vote API prints `"Party":"R"` by each name (the sweep misses it) | LegiScan lines |
 | MI | journal snippets mis-decoded, or cut from the attendance list | LegiScan lines |
 | IN | iga.in.gov is a JavaScript app to a plain fetch; the official MyIGA API reads it (2026-11-02) | official roll-call lines (`iga-votes.ts`, below); LegiScan as before when `IGA_API_KEY` is unset |
+| MA | House roll-call PDFs print a vote mark and a surname only (an initial where two share it); LegiScan has no record of some House roll calls | official roll-call lines (`ma-rollcall-votes.ts`, below) |
 | TX | robots-blocked bill pages | LegiScan lane (PR #1218) |
 | US | House: the Clerk XML prints a party by each name; Senate: senate.gov blocks a fresh fetch | House: Clerk XML lines; Senate: LegiScan lines (`federal-votes.ts`, below) |
 
@@ -364,6 +365,18 @@ A vote with no line is listed in `iga/unmapped.json`: hold that person; do not g
 same 101 votes as the LegiScan lines, plus Alting and Prescott, whom LegiScan could not match. Bill pages,
 legislator pages and every other iga.in.gov PDF read through the same API in step 4 (`build_evidence.py`,
 `pdf_pages.py`), and the verifier reads them the same way (`src/lib/adapters/igaAdapter.ts`).
+
+**Massachusetts House: the official roll-call PDFs instead.** One command replaces steps 1-3:
+`npx tsx --env-file=.env scripts/stage5/ma-rollcall-votes.ts <batch> <findings dir> --topic <key>`. Each House
+vote finding is matched to its store instrument's House vote; the instrument's `urls` give the PDF
+(malegislature.gov/RollCall/<GC>/HouseRollCall<n>.pdf). The tool cuts the person's line from the PDF
+("Massachusetts House roll call 135 (193rd General Court), H.4885 - On acceptance of the report: Kilcoyne voted
+Yea."), cites the PDF, uncites a covered bill page, and cross-checks every line against the finding
+(`ma-rollcall/crosscheck.json`, 🔴 **0 disagree**). The label must fit the surname, and the first initial when
+printed; a bare surname two members share gives no line. "Mr. Speaker" never matches anyone, so the Speaker's
+vote needs another source. Votes with no line go to `ma-rollcall/unmapped.json`: hold that person, do not
+guess. The verifier reads the PDF the same way (`src/lib/adapters/maLegislatureAdapter.ts`). Replayed on the
+44 `ma-01` members held for this (2026-11-04): 56 lines, 0 disagree, all 44 verified.
 
 **Federal: the roll-call table instead.** One command for the House, two more for the Senate:
 
