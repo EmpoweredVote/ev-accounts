@@ -25,6 +25,7 @@ import {
   secondFridayInDecember,
   firstMondayAfterJanuary1,
   firstMondayInJanuary,
+  lastFridayInNovember,
   CA_SWEARING_IN_RULES,
   swearingInDateForRule,
 } from './ca-swearing-in.mjs';
@@ -71,6 +72,18 @@ describe('firstMondayAfterJanuary1 — Cal. Gov. Code § 24200', () => {
   });
 });
 
+describe('lastFridayInNovember — Cal. Educ. Code § 19422', () => {
+  it('is 2026-11-27 for the 2026 cycle', () => {
+    expect(lastFridayInNovember(2026)).toBe('2026-11-27');
+  });
+
+  it('is 30 November when November ends on a Friday', () => {
+    // 2029-11-30 is a Friday. An implementation that walks back from 1 December returns the
+    // 23rd — a week early, on the one class of seat that changes hands before December.
+    expect(lastFridayInNovember(2029)).toBe('2029-11-30');
+  });
+});
+
 describe('firstMondayInJanuary vs firstMondayAfterJanuary1 — two rules, one date, until they differ', () => {
   // 🔴 THESE TWO AGREE IN 2027 AND DISAGREE IN 2029, AND BOTH ARE LIVE IN THIS WAVE.
   // Cal. Gov. Code § 24200 says the first Monday AFTER January 1; the water-district principal
@@ -108,20 +121,59 @@ describe('the rule catalogue', () => {
     expect(swearingInDateForRule('ca-water-principal-act', 2026)).toBe('2027-01-04');
   });
 
-  it('does NOT put a municipal water district on the UDEL December date', () => {
-    // 🔴🔴 THE MISTAKE THIS PASS CAME CLOSEST TO SHIPPING. Cal. Elec. Code § 10554 reads like a
-    // blanket rule for special districts — "elective officers ... take office at noon on the
-    // first Friday in December" — and a predicate over `title ILIKE 'Director%'` would have
-    // applied it to all 25 California district offices in this wave. 14 of them are municipal
-    // water districts, water agencies and water replenishment districts, whose PRINCIPAL ACTS
-    // override § 10554 and seat them a month later. Los Angeles County's own calendar for this
-    // election lists the two groups under separate headings and separate dates.
+  it('puts a MUNICIPAL water district on 2026-12-04, not with the water agencies', () => {
+    // 🔴🔴 THIS TEST PREVIOUSLY ASSERTED THE OPPOSITE, AND THE OPPOSITE WAS WRONG.
     //
-    // A month early is not a rounding error: it seats a winner while the predecessor is still
-    // in office, and the temporal model would have made that live on its own date with nobody
-    // running anything.
-    expect(swearingInDateForRule('ca-water-principal-act', 2026))
-      .not.toBe(swearingInDateForRule('ca-elec-10554', 2026));
+    // It used to read "does NOT put a municipal water district on the UDEL December date" and
+    // pinned `ca-water-principal-act` ≠ `ca-elec-10554`. That came from the LA County handbook's
+    // Calendar of Events, whose heading reads:
+    //
+    //   JAN. 4 (M) NOON E+62
+    //   TAKING OF OFFICE — MUNICIPAL WATER, WATER AGENCIES, AND WATER REPLENISHMENT DISTRICTS
+    //   (Water Code § 60139, Water Code Appendix 98-51 and 103-5 (b) and Govt. Code § 24200)
+    //
+    // 🔴 THE HEADING NAMES MUNICIPAL WATER DISTRICTS AND ITS CITATIONS DO NOT. § 60139 is the
+    // Water Replenishment District act; Appendix 98-51 and 103-5(b) are two water agencies'
+    // special acts. Not one of them is the Municipal Water District Law. The same handbook's
+    // General Information table gives municipal water districts their own row —
+    // "Friday at Noon, December 4, 2026 (Water Code §§ 71252, 71253 ...)" — and Water Code
+    // § 71253 is unambiguous: "directors elected to office shall take office at noon on the
+    // first Friday in December succeeding their election."
+    //
+    // So CC_0345 seated 8 municipal water seats a MONTH LATE on a heading, and CC_0346 corrects
+    // them. A month late is the mirror of a month early: the departing director keeps resolving
+    // as the officeholder after they have gone.
+    //
+    // ▶ A SOURCE CAN BE AUTHORITATIVE IN ONE TABLE AND WRONG IN ANOTHER. Read the citation, not
+    // the heading.
+    expect(swearingInDateForRule('ca-wat-71253', 2026)).toBe('2026-12-04');
+    expect(swearingInDateForRule('ca-water-principal-act', 2026)).toBe('2027-01-04');
+  });
+
+  it('gives every December district rule the same date by a different authority', () => {
+    // Nine bodies across five principal acts, and all five land on the first Friday in
+    // December. They are separate rules because they are separate authorities: if one act is
+    // amended, only its own rows should move.
+    for (const id of ['ca-elec-10554', 'ca-wat-71253', 'ca-wat-21101', 'ca-gov-61042',
+                      'ca-wat-35057-udel', 'ca-edc-19700']) {
+      expect(swearingInDateForRule(id, 2026), `rule ${id}`).toBe('2026-12-04');
+    }
+  });
+
+  it('keeps the two library-district chapters apart — they are a week apart', () => {
+    // 🔴 Ed. Code ch. 8 (§§ 19400-19532) seats trustees on the LAST FRIDAY IN NOVEMBER;
+    // ch. 9 (§§ 19600-19734, "Library Districts and Museums in Unincorporated Towns and
+    // Villages") seats them on the FIRST FRIDAY IN DECEMBER. For 2026 that is 27 November
+    // against 4 December — and 27 November would be the earliest handover in the whole
+    // programme.
+    //
+    // Both California library districts in this wave cite ch. 9 in their own words: Altadena
+    // ("Pursuant to Education Code Section 19700, Trustees take office the first Friday in
+    // December") and Palos Verdes ("formed in April 1928 under the provision of Sections
+    // 19600-19734"). So NOTHING lands on 27 November. The ch. 8 rule is kept anyway, because
+    // the next county's wave will meet a district that does.
+    expect(swearingInDateForRule('ca-edc-19422', 2026)).toBe('2026-11-27');
+    expect(swearingInDateForRule('ca-edc-19700', 2026)).toBe('2026-12-04');
   });
 
   it('refuses the Los Angeles County charter rule, whose own source contradicts itself', () => {

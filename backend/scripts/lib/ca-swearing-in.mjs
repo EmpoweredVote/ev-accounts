@@ -49,6 +49,19 @@ export function firstFridayInDecember(year) {
   return iso(year, 12, 1 + offset);
 }
 
+/**
+ * The last Friday in November of `year` — Cal. Educ. Code § 19422 / § 19510.
+ *
+ * ⚠ Counted forward from the END of the month, not backwards from 1 December. When November
+ * ends on a Friday (2029-11-30) the answer is that day; walking back from December returns the
+ * 23rd, a week early — on the only class of California seat that changes hands before December.
+ */
+export function lastFridayInNovember(year) {
+  const nov30 = new Date(Date.UTC(year, 10, 30));
+  const offset = (nov30.getUTCDay() - FRIDAY + 7) % 7;
+  return iso(year, 11, 30 - offset);
+}
+
 /** The second Friday in December of `year` — Cal. Educ. Code § 5017. */
 export function secondFridayInDecember(year) {
   const first = firstFridayInDecember(year);
@@ -102,27 +115,94 @@ export const CA_SWEARING_IN_RULES = {
     authority: 'Cal. Elec. Code § 10554 — noon on the first Friday in December next following the general district election',
     source: 'https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=ELEC&sectionNum=10554. (read 2026-11-04)',
     compute: (electionYear) => firstFridayInDecember(electionYear),
-    // 🔴🔴 THIS IS NOT THE BLANKET SPECIAL-DISTRICT RULE, AND IT READS EXACTLY LIKE ONE.
-    // § 10554's "elective officers, elected or appointed pursuant to this part" is bounded by a
-    // district's PRINCIPAL ACT, which can and does override it. Los Angeles County's own
-    // calendar for this election puts health care and recreation-and-park districts here, on
-    // 4 December — and puts municipal water districts, water agencies and water replenishment
-    // districts a month later, on 4 January, under `ca-water-principal-act`.
-    //
-    // Applying this rule by a predicate over the office title (`Director%`) would have seated
-    // 14 of California's 25 district offices in this wave A MONTH EARLY, while the people they
-    // replace were still in office. NO office in the 2026 California set uses this rule.
+    // 🔴 § 10554 IS A DEFAULT, NOT A BLANKET RULE, AND IT READS EXACTLY LIKE ONE. "Elective
+    // officers, elected or appointed pursuant to this part" is bounded by each district's
+    // PRINCIPAL ACT. Applying it by a predicate over the office title (`Director%`) covers 25
+    // California district offices in this wave; the correct answer for 6 of them is a month
+    // later. Use this rule only where the principal act is silent on the date — in the 2026
+    // California set that is the county water districts, whose Water Code § 30502 gives the
+    // term's LENGTH and nothing about when it starts.
     warning:
-      'Check the district\'s principal act before using this rule. It does NOT cover municipal water districts, water agencies or water replenishment districts.',
+      'A default. Check the district\'s principal act first — water agencies and water replenishment districts override it.',
+  },
+  'ca-wat-71253': {
+    id: 'ca-wat-71253',
+    label: 'Municipal water districts',
+    authority:
+      'Cal. Water Code § 71253 — "directors elected to office shall take office at noon on the first Friday in December succeeding their election"',
+    source: 'https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=WAT&sectionNum=71253. (read 2026-11-04)',
+    compute: (electionYear) => firstFridayInDecember(electionYear),
+    // 🔴🔴 CC_0345 PUT THESE SEATS ON 2027-01-04 AND THAT WAS WRONG BY A MONTH.
+    // It followed the LA County handbook's Calendar of Events heading, "TAKING OF OFFICE —
+    // MUNICIPAL WATER, WATER AGENCIES, AND WATER REPLENISHMENT DISTRICTS … first Monday in
+    // January". The heading NAMES municipal water districts and its citations do not: § 60139 is
+    // the Water Replenishment District act and Appendix 98-51 / 103-5(b) are two water agencies'
+    // special acts. The same handbook's General Information table gives municipal water
+    // districts their own row on 4 December, citing §§ 71252 and 71253, and § 71253 says so in
+    // plain words. CC_0346 corrects the 8 rows.
+    // ▶ READ THE CITATION, NOT THE HEADING.
+  },
+  'ca-wat-21101': {
+    id: 'ca-wat-21101',
+    label: 'Irrigation districts',
+    authority:
+      'Cal. Water Code § 21101 — notwithstanding Elec. Code §§ 10505 and 10554, officers elected at a general district election take office at noon on the first Friday in December next following',
+    source: 'https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=WAT&sectionNum=21101. (read 2026-11-04)',
+    compute: (electionYear) => firstFridayInDecember(electionYear),
+  },
+  'ca-gov-61042': {
+    id: 'ca-gov-61042',
+    label: 'Community services districts',
+    authority:
+      'Cal. Gov. Code § 61042(a) — "Directors shall take office at noon on the first Friday in December following their election"',
+    source: 'https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=61042. (read 2026-11-04)',
+    compute: (electionYear) => firstFridayInDecember(electionYear),
+  },
+  'ca-wat-35057-udel': {
+    id: 'ca-wat-35057-udel',
+    label: 'California water districts (Water Code division 13) with resident voting divisions',
+    authority:
+      'Cal. Water Code § 35057 routes the conduct of these elections to the Uniform District Election Law; Cal. Elec. Code § 10554 then sets taking office at noon on the first Friday in December',
+    source: 'https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=WAT&sectionNum=35057. and https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=ELEC&sectionNum=10554. (both read 2026-11-04)',
+    compute: (electionYear) => firstFridayInDecember(electionYear),
+  },
+  'ca-edc-19422': {
+    id: 'ca-edc-19422',
+    label: 'Library district trustees — Educ. Code chapter 8 (§§ 19400-19532)',
+    authority:
+      'Cal. Educ. Code § 19422 — "The trustee shall hold office for the term of four years beginning on the last Friday in November next succeeding their appointment or election" (§ 19510 to the same effect)',
+    source: 'https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=EDC&sectionNum=19422. (read 2026-11-04)',
+    compute: (electionYear) => lastFridayInNovember(electionYear),
+    // 🔴 THE EARLIEST DATE ANY CALIFORNIA RULE PRODUCES — 2026-11-27, before December entirely.
+    // No body in the 2026 California set uses it: both library districts here are chapter 9
+    // (below). It is kept because the two chapters are a week apart and look identical from the
+    // outside, and the next county's wave will meet a chapter 8 district.
+  },
+  'ca-edc-19700': {
+    id: 'ca-edc-19700',
+    label: 'Library district trustees — Educ. Code chapter 9 (§§ 19600-19734, unincorporated towns and villages)',
+    authority:
+      'Cal. Educ. Code § 19700(b) — "The trustees shall hold office for the term of four years beginning on the first Friday in December next succeeding their appointment or election"',
+    source: 'https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=EDC&sectionNum=19700. (read 2026-11-04)',
+    compute: (electionYear) => firstFridayInDecember(electionYear),
+    // ⚠ WHICH CHAPTER A LIBRARY DISTRICT BELONGS TO IS ITS FORMATION STATUTE, NOT ITS TERRITORY.
+    // Palos Verdes Library District serves four INCORPORATED cities and is still a chapter 9
+    // district: "formed in April 1928 under the provision of Sections 19600-19734" (pvld.org).
+    // Its own trustee roster prints "Term Expires: 11/27/2026", the chapter 8 date, while the
+    // same roster prints "Term Began: 12/02/2022" — the first Friday in December 2022, which is
+    // chapter 9. A source can be right about its own statute and wrong in a roster field.
   },
   'ca-water-principal-act': {
     id: 'ca-water-principal-act',
-    label: 'Municipal water districts, water agencies and water replenishment districts',
+    label: 'Water agencies and water replenishment districts (special acts only)',
     authority:
-      'Cal. Water Code § 60139, Water Code Appendix §§ 98-51 and 103-5(b), and Cal. Gov. Code § 24200 — noon on the first Monday in January following the election',
+      'Cal. Water Code § 60139 (water replenishment districts), Water Code Appendix §§ 98-51 and 103-5(b) (the Antelope Valley-East Kern and Santa Clarita Valley water agencies), and Cal. Gov. Code § 24200 — noon on the first Monday in January following the election',
     source:
-      'Los Angeles County Registrar-Recorder/County Clerk, Candidate Handbook and Resource Guide, November 3, 2026 General Election, Calendar of Events, "JAN. 4 (M) NOON E+62 — TAKING OF OFFICE — MUNICIPAL WATER, WATER AGENCIES, AND WATER REPLENISHMENT DISTRICTS" — https://content.lavote.gov/docs/rrcc/documents/candidate-handbook-general-election-complete-v-10.pdf (read 2026-11-04)',
+      'Los Angeles County Registrar-Recorder/County Clerk, Candidate Handbook and Resource Guide, November 3, 2026 General Election, Calendar of Events, "JAN. 4 (M) NOON E+62", corroborated by that handbook\'s General Information table row for the Antelope Valley-East Kern Water Agency ("Monday at noon, January 4, 2027") — https://content.lavote.gov/docs/rrcc/documents/candidate-handbook-general-election-complete-v-10.pdf (read 2026-11-04)',
     compute: (electionYear) => firstMondayInJanuary(electionYear + 1),
+    // ⚠ NARROWED BY CC_0346. This rule used to carry municipal water districts too, because the
+    // handbook's calendar heading names them. None of that entry's citations is the Municipal
+    // Water District Law, and § 71253 puts those districts on 4 December. See `ca-wat-71253`.
   },
   'ca-la-county-charter': {
     id: 'ca-la-county-charter',
