@@ -16,7 +16,7 @@ Python as `python3 -I scripts/stage5/<tool>.py`. `<batch>` is the batch folder, 
 | 4 | `pdf_pages.py <batch>` | reads PDF sources with `pdftotext` |
 | 5 | `s1-sources.ts --topic <key> <batch>` | old-season sources behind each blank over a shown answer → `fallback/fallback-required.json` |
 | 5 | `fallback-fetch.ts <batch>/fallback` | loads `fallback/urls.txt` through the verifier's own fetch steps |
-| 5 | `add_fallback.py <batch> --topic <key> --gloss "…" [--hold Name]… [--seen Name]…` | lists loaded old sources as examined on each blank |
+| 5 | `add_fallback.py <batch> --topic <key> --gloss "…" [--hold Name]… [--seen Name]…` | lists loaded old sources as examined on each blank, each with a passage the verifier accepts when the page has one (`cited_unverifiable` in its log when not) |
 | 6, 10 | `party-sweep.ts <evidence.csv>` · `party-sweep.ts --research <research.csv>` | lists snippets / research text that name a party (must end at 0) |
 | 6 | `party_fix.py <batch>` | drops swept snippets (or cuts, `party-cuts.json`); uncites a page left with none |
 | 7 | `legiscan-rollcalls.ts <ST> <vote-pages.json> <out.json>` | finds the LegiScan roll call for each official one (bill, chamber, counts) |
@@ -30,7 +30,7 @@ Python as `python3 -I scripts/stage5/<tool>.py`. `<batch>` is the batch folder, 
 | 8 | `add_bill_text.py <batch> --topic --url --sentences <json> [--text <file>]` | the same by hand, for a bill the store does not hold |
 | 9 | `apply_overrides.py <batch>` | research-text trims from `overrides.json` (`{"trims": [...]}`), never a stance or value |
 | 14 | `readback.ts --topic <key> <ids file> [--batch-id <id>]` | outcomes, passages and review rows the draft season now holds |
-| 15 | `approve-batch.ts <editor uuid> <batch,...> [--skip "Name"]…` | 🛑 approves pending review rows, on the runner's separate "approve" |
+| 15 | `approve-batch.ts <editor uuid> <batch,...> [--skip "Name"]… [--unverifiable-blank "Name"]…` | 🛑 approves pending review rows, on the runner's separate "approve"; `--unverifiable-blank` approves a queued blank whose old sources cannot be verified with no source, its reason on the review row (ruling 2026-10-31) — never write such a blank by hand |
 
 Notes:
 
@@ -54,7 +54,12 @@ Notes:
 - **Ballotpedia: survey answers only** (ruling 2026-11-02). `build_evidence.py` uncites any Ballotpedia page but a
   Candidate Connection `#Campaign_themes` link (logged in `evidence-missing.json`) and `add_fallback.py` skips it,
   through `_ballotpedia.py`. The stance gate refuses the same pages (`ballotpedia-non-survey`).
-- `lib.ts` holds the pure helpers (`readCsv`, `sweepHit`) and their tests; `batch-db.ts` resolves the topic id and
-  the draft season; `_args.py` is the Python tools' argument reader.
+- **One passage test for a blank's examined pages.** `build_evidence.py` and `add_fallback.py` first ask
+  `window-check.ts` (through `_window.py`) for a passage the verifier will accept: `verifiableWindow` in `lib.ts`,
+  built from the verifier's own `matchSnippet`, `matchedSpan` and `checkNameProximity` plus `sweepHit`. It need not
+  contain the name, only sit near it: on a congress.gov cosponsor list, where every name carries a party label, it is
+  the action line beside the list (Warner, S. 2747). Only when there is none do they fall back to the old window.
+- `lib.ts` holds the pure helpers (`readCsv`, `sweepHit`, `verifiableWindow`, `unverifiableNote`) and their tests;
+  `batch-db.ts` resolves the topic id and the draft season; `_args.py` is the Python tools' argument reader.
 - One-off fixes for a single batch (a person's own sentence added by hand, a page uncited because the research text
   says it is unused) stay in that batch folder, with a line in its `PREVIEW.md`.

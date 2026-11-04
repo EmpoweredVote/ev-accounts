@@ -104,6 +104,7 @@ def roll_lines(pid, fs):
 norm = lambda s: re.sub(r'\s+', ' ', s.replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"').replace('–', '-').replace('—', '-')).strip().lower()
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir; _party.py sits beside this file
 from _party import names_party  # the one party test the sweep and the writer use (party-check.ts)
+from _window import verifiable_window  # a passage the verifier itself accepts (window-check.ts)
 from _iga import is_iga, iga_text  # iga.in.gov through the official API, never the browser UA
 from _ballotpedia import ballotpedia_non_survey  # survey answers only (ruling 2026-11-02)
 def window(t, i, j, n=30):
@@ -158,9 +159,12 @@ for r in rows:
             # A party word in the ADDRESS is fine (RULINGS.md "A party word in a source address is fine", W3-R15).
             t = text_of(u)
             if not t: miss.append((r['full_name'], u, 'blank fallback: no page')); continue
-            nt = norm(t); i = nt.find(norm(r['full_name']))
-            if i < 0: i = nt.find(sur.lower())
-            snip = window(t, i, i + len(sur)) if i >= 0 else None
+            # First a passage the verifier itself accepts (window-check.ts), else the party-free window around the name.
+            snip = verifiable_window(None, r['full_name'], text=t)
+            if not snip:
+                nt = norm(t); i = nt.find(norm(r['full_name']))
+                if i < 0: i = nt.find(sur.lower())
+                snip = window(t, i, i + len(sur)) if i >= 0 else None
             if not snip: miss.append((r['full_name'], u, 'blank fallback: no name window')); continue
             k += 1; r[f'source_url_{k}'] = u; idx += 1
             ev.append({'full_name': r['full_name'], 'topic_key': r['topic_key'], 'source_url': u, 'snippet': snip, 'snippet_index': idx})
