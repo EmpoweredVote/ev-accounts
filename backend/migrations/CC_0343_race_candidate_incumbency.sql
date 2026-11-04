@@ -1,0 +1,374 @@
+-- CC_0343 — race_candidates.is_incumbent: seat-scoped, measured AT THE ELECTION DATE.
+--
+-- RULING (operator, 2026-11-04): the column means "incumbent OF THAT SEAT" — the seat the race
+-- is for — not "this person holds office somewhere".
+--
+-- 🔴 AND IT IS MEASURED ON ELECTION DAY, NOT TODAY. Every race here has already happened, so
+-- "incumbent" is a fact about who held the contested seat WHEN THE RACE RAN. The two tests agree
+-- on all but 3 rows, and those 3 are why the distinction matters: Chris Jamieson (Council Member
+-- District 10, term from 2026-05-12) and Brandon Smith (Council Member District 3, term from
+-- 2026-06-25, in two races) hold their seats TODAY but took office AFTER the elections they
+-- appear in. They ran as challengers and WON. A "holds it today" rule would relabel three
+-- winners as incumbents of races they won as challengers. They are stored false, that is
+-- correct, and this migration leaves them alone.
+--
+-- WHY THE COLUMN WAS WRONG IN BOTH DIRECTIONS. It was populated inconsistently: cross-office
+-- candidates — a state senator running for the U.S. House, a Lt. Governor running for Treasurer
+-- — were sometimes marked true (they hold office, just not this one) and sometimes false. That
+-- ambiguity is what CC_0342 refused to resolve by guessing; this file resolves it by ruling.
+--
+-- WHO READS IT: compassService.ts:629 filters rc.is_incumbent = false for the "challengers
+-- only" view, so both directions are voter-facing.
+--
+-- 🔴 THE OVERWRITE RECORD. There is no history table. Every row listed below flipped, so the
+-- old value is the opposite of the new one and the lists ARE the record:
+--     242 rows: true  -> false   (marked incumbent, did NOT hold that seat on election day)
+--     50 rows: false -> true    (held that seat on election day, not marked)
+-- The full id list with its old value is also committed at
+-- backend/data/transition-tracker/cc_0343_rows.json.
+--
+-- Scope: elections in the last year. IDEMPOTENT — each UPDATE is guarded on the value it changes.
+
+BEGIN;
+
+UPDATE essentials.race_candidates SET is_incumbent = false
+ WHERE id IN (
+    '07eb4140-922a-4452-a342-79cbf937f7cf',
+    '08bcef4b-1dcb-4ac6-8b6b-5a1246665371',
+    '0972cf6c-a097-41c6-89ac-aae88c8c9dac',
+    '0c1f1088-f4fd-4dd3-83a4-9d7a5e19adb7',
+    '0d00ee04-3825-422c-9c46-6b4020b4e7e6',
+    '0f221378-b043-49bd-9769-655842b23962',
+    '119fe4f2-6ced-4948-a1f0-da7728818275',
+    '120adad9-0bae-4f60-91ae-348236986392',
+    '126bb9ce-af8c-4abe-b57a-64bca47c5e15',
+    '1284d7c0-f169-4e4d-b939-a84460ae75b0',
+    '12aeaf5c-cef1-4512-83f3-73a9bd14c23b',
+    '12debcb2-5a9a-44f0-a55e-7618b7356f27',
+    '159ce5eb-ac52-4036-8c1c-0fcb1b54a5c8',
+    '16e61305-55ee-40fe-9ff5-b2c19479d173',
+    '191babf8-8b5c-4e16-96a3-a34f26fc78ec',
+    '1d3d48e9-7733-4f9a-b001-69daa4c8947e',
+    '1e11220e-badc-4fc0-9589-4f409dcdcb68',
+    '1ee38e04-f80d-4bbc-a131-c70c99de62cd',
+    '204683dd-b4d9-42db-980f-2347626b83f2',
+    '20886a6b-e7c6-4424-9be7-a707f74e8fc4',
+    '20f00e4d-6630-4cf9-8276-70cf0112bbbe',
+    '21d796c9-e067-404b-bb62-db716f5731f7',
+    '23a6d5a6-dbe2-4c71-8dbd-1ac09d0ab3ac',
+    '243bb7ba-1531-4e3d-aa49-87bf56274cc0',
+    '25bc5bb1-0385-429d-beac-ab05199b7944',
+    '25c5e02b-6cbe-41cd-9a0e-6fcb183e77d4',
+    '2812b8a9-df2d-4c0b-a8eb-11256b29cbff',
+    '29fa0018-4385-4b06-96c4-298dd0e20694',
+    '2adbe68c-0f6c-4ed2-ad99-23b165258529',
+    '2b1d86ee-6208-471a-be0d-29e43ce2398f',
+    '2b5f4e2e-8e2a-4c90-8b64-0cc25e568942',
+    '2b9537d4-6779-4acb-8c48-3fec8baf0d25',
+    '2db1547a-59ed-477e-b38e-8077b53da2dd',
+    '2e900c4e-6a8a-4d71-a61e-9685d0ea1b24',
+    '2f924071-14af-4912-be51-a7e843387336',
+    '34a68fc1-ed45-48f2-89d5-b9941645d0f5',
+    '350e8410-9d30-4227-971d-947e2d8e52f3',
+    '369bf570-caa8-437c-8203-13ac935e7cd7',
+    '3712b62b-db59-4c28-a2c9-577e254cde14',
+    '37cd8fe3-f939-49bf-808a-554998280112',
+    '38427ffb-dce9-435e-a66c-9c6887cd4b87',
+    '39cdf69e-556c-4504-9671-aa60237b602e',
+    '3a69c6e8-819d-47d5-91bb-e30679c2444f',
+    '3acbd303-c58f-499f-9d54-166f6e0ee470',
+    '3c1d5850-c53f-4738-b3f3-325e77fd818d',
+    '3c47df1c-e393-4b02-a37a-1b9f64fd2829',
+    '3c865c21-c31c-488a-bb48-4bab6f869819',
+    '3d1ff717-33d6-4b99-b714-747e9886e581',
+    '3d773c3d-2754-4a81-b9ad-1f9493644f18',
+    '3e4b9445-95d2-4135-bc81-f1034724873e',
+    '41c3124b-6082-4628-b2a4-87ab11688e45',
+    '43642d5f-15c7-4220-9396-0bbfdab7af81',
+    '4509b08d-b78b-490f-9904-e925375dfb53',
+    '4547f7dc-9375-4157-bcb3-170f78f54fd9',
+    '461a1014-2d9a-4bee-a8e1-23c4d27e8981',
+    '46ec2772-73ab-4392-ab4a-afff7fbf19a7',
+    '47c3c942-d87f-405f-8766-3025011b147a',
+    '48b2f458-838f-4bf3-b755-f2a2859e931b',
+    '48dde82e-0085-4beb-8b50-936530f11fd0',
+    '4a144ead-e05f-4859-bee6-976789b05da5',
+    '4a5bd9ed-a5c0-47b9-a2d2-09bec2aebd4e',
+    '4c4c6bd9-029d-4201-a53d-4349c550bf2b',
+    '4d90e2f7-8755-468d-bfdb-888df2e06dc6',
+    '4db2564a-3ed2-4daa-b230-060b891d31d9',
+    '4e11238e-e200-4346-b5d0-a3aa3fd4d85a',
+    '4f12d3c9-a608-4b3d-9387-07697303b16a',
+    '50ec9c2a-8058-4442-a82f-597b70764cca',
+    '5106065c-3064-4ada-af6e-0215eb4d2d3d',
+    '51c3f89a-fb6c-4bcd-a6b4-cf633e0063ad',
+    '52077105-6ab1-4342-b902-c49df02fc0f5',
+    '529370ab-1e08-4f76-a0e1-4e03f8c4932d',
+    '52fff4cf-f4c2-499e-95e5-6fff9e4f2301',
+    '533e5b0e-ffde-4c52-97c6-bfb16674d90a',
+    '5422f7aa-98c1-4de1-bc39-203996b36d3b',
+    '54733b5c-96dd-4755-8d7b-d20676f891ff',
+    '54c3022e-8e71-41e1-bc37-ac7640176eda',
+    '55fcabca-f43c-43e4-8831-3cb9f7b0edd3',
+    '569c56a0-fe68-47ab-a9cb-d91ca29212b8',
+    '57f8a111-2492-4c82-8f55-5ee1f7f6b334',
+    '58da4b18-a601-4ac7-a91c-8653d7242838',
+    '595fbd43-686a-4e0c-9e81-9a596b66cd91',
+    '59821dfb-00db-41f3-835b-be0f355cc296',
+    '598e5388-5cb0-4f3f-80a8-18d6031a3970',
+    '5a84b690-be4a-4fe3-8e15-a515e8f7dd5b',
+    '5dab4351-4c76-48c3-8ca9-61da303bfd37',
+    '5f759ac6-04c0-4635-992a-a00a282103fa',
+    '6105da26-0349-4b08-b999-2c3759b0b1c2',
+    '618720e8-a076-4671-a3cf-84c7681a11f3',
+    '6260c7bc-69ac-4c70-880f-ffe6e3e050a2',
+    '63d8d49b-fdb4-4e5a-a8cb-f1a9cdb7ec46',
+    '64f691bd-35b7-4f82-b6fd-dc08d6b587ac',
+    '65173330-5977-414f-9234-94636d4f55da',
+    '6551697a-7efb-4b38-83b6-26b52bbb51f5',
+    '667b5823-0f2f-438f-9106-01728a430027',
+    '678bccfa-e55d-48d4-91d2-d2274c9b8b14',
+    '692b235a-af3f-4746-86a0-d6696f4ac6ee',
+    '69d1cf68-4a86-44cd-976e-1de662e1f1c6',
+    '6bfaecc9-6a8d-4d8f-993d-f50ed6fad763',
+    '6eeb81aa-9427-4730-ab46-d1007591cfa9',
+    '6f4994bf-4f97-4ef2-b68f-b8618f522d40',
+    '70a81201-3f9b-449d-8882-4bbe02cd21a3',
+    '7196821b-91d3-4cf9-989f-0975b15fe393',
+    '71a9d517-7fcc-4373-9a11-2ced57a23c14',
+    '7313d707-47be-4970-9ad4-1d292e592e99',
+    '742dc5b4-24bd-4091-849e-ead6aecbf8a1',
+    '743cd005-7a55-4214-925c-291ddc1a9f46',
+    '749ef9c2-8c9e-44c2-80d9-253e71c20e5d',
+    '74f4f308-0273-480e-b851-be3afe2c6110',
+    '77d7444d-6a81-4448-baf9-af63aaa7ba91',
+    '7932e285-fded-4376-ba44-2c6a0ed7213d',
+    '7a90336f-a958-4db1-bb30-197f640bbb13',
+    '7a95e642-05f8-4dad-bb10-97b38c461b11',
+    '7b9d2d6e-9d4a-4f47-85d1-71dbb986678d',
+    '7bcc654d-d205-479e-a5a8-8d69b86cea94',
+    '7d956514-75ce-44fa-b0da-e04c3b5aeae7',
+    '7df744b5-3253-4b07-bc7e-9fe90864aa1a',
+    '7e0c8a4b-a1c8-4ecd-9587-063f6c276d7c',
+    '7ea74797-8f07-47c2-b08a-81c66e8affce',
+    '7fd42df8-557c-40f6-bc3d-f028ccf35ee9',
+    '809ff1e1-ff17-47ac-b7c6-3f28cc628f28',
+    '8386ac19-464e-4eb1-8bcc-d500be3d912e',
+    '8716e59b-a9a4-4223-bb8a-9f120e0629f9',
+    '87aae6c0-9ddd-4caa-b4fa-95c6e523d315',
+    '8809c0c6-1dfb-4945-8d7b-011d2c4562c5',
+    '88bb2862-33c3-456d-89a6-fb2a11c4ca9f',
+    '893c99f3-fbb4-490b-aaac-83d373255d44',
+    '89898c81-e18b-4534-8f50-e57040a41e9e',
+    '8aa76b14-1198-4ba9-9497-2e72e88e13c0',
+    '8d899442-7676-4e78-a528-2dcf1520510d',
+    '8dabad7a-603b-4bff-a86e-9a22e936ba14',
+    '8e979c21-3313-4d06-986a-95872b90912a',
+    '905c424f-9289-45b7-a2ab-918ae84832a8',
+    '915bf9a8-2173-4dd4-85f7-3f591ff54cd7',
+    '92223c90-169c-4406-bece-33c206db7830',
+    '9286fd1c-9de4-4024-867a-a0a6d85256d1',
+    '92e12961-f0bc-4c1b-bb47-0e9e2440bf29',
+    '953062ba-2863-4daf-8580-94971dc49828',
+    '9562748b-34b5-413d-b289-a1886b7e832e',
+    '957fe975-ca84-4bf0-a943-4c1220c0a1d8',
+    '959b9b45-10e8-4332-9a4f-88d6d4f3a513',
+    '95f16413-5a78-4862-ba64-7f86417328f0',
+    '960a7f41-33be-4b26-b63d-2b5b9539daee',
+    '98bcb59c-979f-4a09-af3e-b78c19ce6596',
+    '9989a055-83d4-4621-aa22-547b964488b0',
+    '99cf2abe-3741-48f1-a457-5d968c0af5b2',
+    '9a14e629-84c0-4c7f-a36a-38acdd3a4b84',
+    '9aae028c-a0df-4670-a739-4c07a0725c9c',
+    '9b88e2cb-b08f-46df-90b6-1dc306e5b330',
+    '9c23555f-fd3b-436b-a9ac-ac55408e05cd',
+    '9d61f494-fa61-43d4-8f2f-c070312086b7',
+    '9f07ae34-f5d4-4d2e-8fca-21cfbf72a12a',
+    'a0ba0683-07dd-4615-9fc2-3e3395599f52',
+    'a10b74b3-c9dd-42d7-98f6-0f5b96e158fa',
+    'a15805f5-8c63-4cf1-b943-51999021f648',
+    'a1fcea75-7f46-49b5-a788-461759481ca6',
+    'a304f248-df3b-414c-ae72-6bd931a444e0',
+    'a4bd9fc9-3593-410a-bb83-27cb1ad044e2',
+    'a518bf4b-a889-4873-b322-1abb56c1a8c0',
+    'a80ddc88-5ca3-4dd3-a903-f7764851cf0e',
+    'a88f6414-f5a5-4a09-a749-8512dc6a8905',
+    'a8a05ce4-550d-4311-8a51-109c8ba7ee3f',
+    'a8a1af85-e78a-4f4d-b749-9a8d798b8215',
+    'a92b8dcb-372b-4213-bc87-170be33f8875',
+    'aacd685e-56df-4f08-acb8-5b1b17f9992f',
+    'ac0cdc15-ec0c-4d67-aa2c-dd44d3ce4b8f',
+    'ac336db7-9055-4909-8971-2cccd2fdb12e',
+    'ac9e6967-6bc7-4149-a15a-fd4e523abb38',
+    'ad751e96-125d-4597-aeec-5af1399ce754',
+    'adf66625-684f-496f-9551-cf9548e53446',
+    'af0a69d1-8cdc-40fe-b0c4-bc2cfcacd8da',
+    'af514f12-3d08-4a25-b36e-c8d3b50d7f3c',
+    'b0e6507a-a9f4-4bef-b476-6eb02208b3c4',
+    'b6afebd1-fc50-4504-ab33-efceed50b5d9',
+    'b8d1f9ef-5f9b-4770-aef4-c239d87b5998',
+    'ba525e68-8c84-4a2d-aa4a-afa90106cbd2',
+    'bb571e6c-4a3d-4eeb-81b2-1d1632d0f8cf',
+    'bb89111a-6353-4ff0-ae52-add092826e5a',
+    'bbc00082-80dd-4845-93ca-4d75ccda8cea',
+    'bc7f05ec-f776-4bc7-aaad-be5d1e0b5baa',
+    'bec46f99-d370-4f56-ba76-d3e749fb2c06',
+    'bf0cfbcb-77f5-40de-a8a1-ea0f16b924cb',
+    'c126cf5c-5721-47fb-b360-ca71bebe8971',
+    'c21b3484-7ddb-43d8-9ec6-dcb82e9b85d1',
+    'c2d4a2fe-4e51-410b-90c4-891de1ab2177',
+    'c31eb106-75b9-4137-81be-a8906c4b7347',
+    'c681cd55-3d94-4d8a-90c3-f72042d12aa9',
+    'c7e9cde7-7f85-4553-bb4b-a1f7e218fcb0',
+    'ca7c1ed4-db0d-47a8-9c31-777e75bae66a',
+    'ca9a2721-625d-4c43-8731-bb6e74c24382',
+    'cc3056a4-3193-4645-b3a4-ca247ded936a',
+    'ce1c1908-57b0-44b1-816e-641ccb5e3891',
+    'ceb1f135-adfa-4a08-97e4-07ebc18f25f2',
+    'cf1cdb45-b098-40e1-a14c-2c3f0a499460',
+    'd22bc828-827b-45ad-9707-b55e8eff926a',
+    'd242bb69-0349-4071-a13a-b8e10def0a98',
+    'd3596dee-972f-44b9-8b29-f7023fd56d06',
+    'd359a3af-ea84-47e3-8be6-1ef2c722e493',
+    'd3f9970f-6e24-4a37-9a6a-932779a77c92',
+    'd4cf8992-a0b7-459a-bc41-36505d23a4fb',
+    'd4e41b93-4179-44df-9d4d-4c2f0397aa1a',
+    'd63c3daf-24b9-4a22-aedf-6694acc5da15',
+    'd73bd373-8ffc-4256-b789-eb418436724a',
+    'd7687169-c225-44b8-bb0f-c31d86a9d2dd',
+    'd77398ce-e7b7-4c9b-9ea2-d460700b2ad7',
+    'd90c15af-b030-4400-9d72-a6b3f370d201',
+    'd93f44eb-0389-4833-ab51-f4a92e2b8778',
+    'db49c94e-68bb-4537-8352-e1d09d2191fe',
+    'dc3292c2-4891-4e40-9408-892db84345de',
+    'de3ae7b8-d68e-4346-ac57-d57f1b11cae5',
+    'de61aace-e298-4636-afa8-4bff80f3aecf',
+    'dec30a93-46c2-46c3-9ef0-5a30cb06d724',
+    'e3b17d51-7a38-463c-97d6-5ce8aed96ece',
+    'e447ec81-3148-4d83-84dd-3d5fcfa49460',
+    'e4b506cc-9c06-48e7-b3ba-9b0cdb14fa08',
+    'e4ed5da8-aed5-4d5e-82a9-7f8b5052847b',
+    'e577b45f-8fd0-4873-a0b6-7e2819ccf5df',
+    'e6054c3d-b0fe-4f2a-b431-e204e969286e',
+    'e66ea6ba-1bd1-4fcc-8821-61059176c3b0',
+    'e87dae78-daed-412d-92f2-7b88414345d5',
+    'ea269aca-51fd-4618-8ba6-06e9aa59bb60',
+    'ea62e2fb-492c-470d-8c99-64c3f7bfcc59',
+    'ea91c17b-6066-4b17-94d0-ddb30cb6a177',
+    'ecfd5a12-610e-4dfc-b703-47c87cd223d9',
+    'ed0e370a-ece8-4c3a-b36d-12c3a2a8c39c',
+    'ee3edcd2-28f7-4cae-9590-313d354d03e8',
+    'ef8b9b8e-19e0-4180-b10e-3ccd17404f8c',
+    'f02c4c1b-e9d0-4a3c-b34d-101e8549ec77',
+    'f03d9da0-d8fb-4ffb-a1ab-d766f058f876',
+    'f1e2d7fb-807e-45fb-948c-2148da50780c',
+    'f23d6694-68ee-49ef-a117-ce63df4f0935',
+    'f28c46ab-64ba-4d07-a754-69899bab0a51',
+    'f2d77148-97ee-44c7-bf00-b3b4f66e01a9',
+    'f354a410-4e57-4d3a-9f95-7a5732aa06be',
+    'f3b9c360-64f2-4dab-b6d4-b0ad65a27f50',
+    'f797f71b-4b9c-42fe-80be-45e8768d4829',
+    'f8223760-ac84-4275-86be-f2c59674bc3a',
+    'f8dabdda-7aab-49ee-8c83-7685a44047df',
+    'fa18cec7-d27c-469c-b6ba-7a8d5053ac89',
+    'fba1a4e2-7184-46bb-bd33-d4d2b45c355d',
+    'fc99a9c4-11d2-43bc-88bc-2c52efce5872',
+    'fd3f51ed-45d6-4259-83e1-b90d557a917c',
+    'fdfa3a58-9843-4abb-baec-0d86979498f4'
+ ) AND is_incumbent IS DISTINCT FROM false;
+
+UPDATE essentials.race_candidates SET is_incumbent = true
+ WHERE id IN (
+    '03a8a4c7-de8a-48a2-8104-00ef833ab4bf',
+    '0aec1f87-4b53-48cc-ab2d-4f263a4aed9b',
+    '0c59532f-ae5b-4ef7-bf0a-0f5269095973',
+    '0f3b7e3b-86fe-4191-a1b0-3bb656933a42',
+    '19349bd3-579a-440e-81eb-fd1178c99e6e',
+    '1ae8ffd7-26ff-46cf-b047-99eafdeb4ef7',
+    '21af8460-de87-4cbf-9e42-cb5b300f3261',
+    '2302cb93-4d7f-43eb-824b-76ee0c2ff8d6',
+    '2b41f82b-1822-46f6-8501-8d8c102ad772',
+    '405fdb4a-ead7-4fa5-8f3f-f811c4d5c328',
+    '47e7053a-fe82-407c-869f-92c8e179cd78',
+    '532ce501-19ce-46a4-bb44-fe04e4f488cc',
+    '5a471452-7a6d-4e21-a4d8-2336a6a15f24',
+    '5f49e3c4-3bbe-490a-af81-a9981f25eac8',
+    '639d5095-2068-4d5d-aa16-17731097fd08',
+    '69dbcd49-8695-49da-b47c-db26652e0eaa',
+    '6de113d1-f09d-4d76-a384-f0a96a11548d',
+    '7030946d-e3a8-4739-8aa3-990f4c2cef93',
+    '7360212c-63b0-41ec-b8a8-790bb839506c',
+    '7641b0b7-e9bd-4c50-9630-eeba1b7fa4fc',
+    '7b37ddf5-decd-4ba0-a38b-8a89c7482554',
+    '7d86f45c-019d-41df-938a-d79e2de09d3a',
+    '7e768cda-38f3-4511-ad7c-c8e877c5abfa',
+    '7f60ec84-2590-42de-abdf-61c1703ba8e5',
+    '84fafa28-b4b6-4c59-bd3c-476d40e1f0f5',
+    '85361d20-6e9b-433a-89ed-34c25310662b',
+    '8955c024-7a89-450b-b258-ab48a9e7db58',
+    '8c244f50-38e4-4b4e-8888-e03d4e3cfe4d',
+    '8cb56548-5b10-4c7d-8756-648775e1f429',
+    '8f063ab0-148d-4c56-9c2f-4366ccb6faba',
+    '91d2126a-f865-46f6-bbcd-722697664b44',
+    'a05029b6-f101-4442-b7d4-2acec223bc44',
+    'a3641549-e908-4856-94b3-856d821487b3',
+    'a48d4ebc-3cd2-4443-aac3-233b2934505d',
+    'aacf3746-e3c3-471e-8ab4-7ecb98ce7fcf',
+    'afeea8ab-f33a-4b3c-8367-9da43ab7ee18',
+    'c97dbf1d-e5c1-49a8-85d6-065a93dff866',
+    'c9de9c17-bf4a-45d4-84ca-aa1473ae7915',
+    'cd7f21c9-8e25-4203-9e51-0f9aa8ebb4b7',
+    'd1aee510-8e06-49de-b115-77daf5d6e167',
+    'd357a8be-78e5-44c1-b3d8-21fcac7da607',
+    'd4d702fd-1893-438f-8bcb-a5ee658ca0ba',
+    'd656239b-a4a9-49dc-a514-7a656e574dd0',
+    'dd5a4db7-2e1d-4497-a2f1-42a55dfb2734',
+    'df1aff5b-dcb9-49f0-b3f7-3b9fdb4ea1ee',
+    'e4f930cf-e466-43a0-8a0d-de39279e104b',
+    'ee0127e1-f1fe-40fb-9214-d94e1aec8474',
+    'ee87628c-f5ce-44a4-b3c7-aaac25bebbe0',
+    'f05866a3-5b72-40ef-ab3b-f0fc088dee2d',
+    'f08d5211-bee1-4366-9660-e8996977f94e'
+ ) AND is_incumbent IS DISTINCT FROM true;
+
+DO $$
+DECLARE v_wrong int; v_drift int; v_winners int;
+BEGIN
+  SELECT count(*) INTO v_wrong FROM essentials.race_candidates
+   WHERE (id IN ('07eb4140-922a-4452-a342-79cbf937f7cf','08bcef4b-1dcb-4ac6-8b6b-5a1246665371','0972cf6c-a097-41c6-89ac-aae88c8c9dac','0c1f1088-f4fd-4dd3-83a4-9d7a5e19adb7','0d00ee04-3825-422c-9c46-6b4020b4e7e6','0f221378-b043-49bd-9769-655842b23962','119fe4f2-6ced-4948-a1f0-da7728818275','120adad9-0bae-4f60-91ae-348236986392','126bb9ce-af8c-4abe-b57a-64bca47c5e15','1284d7c0-f169-4e4d-b939-a84460ae75b0','12aeaf5c-cef1-4512-83f3-73a9bd14c23b','12debcb2-5a9a-44f0-a55e-7618b7356f27','159ce5eb-ac52-4036-8c1c-0fcb1b54a5c8','16e61305-55ee-40fe-9ff5-b2c19479d173','191babf8-8b5c-4e16-96a3-a34f26fc78ec','1d3d48e9-7733-4f9a-b001-69daa4c8947e','1e11220e-badc-4fc0-9589-4f409dcdcb68','1ee38e04-f80d-4bbc-a131-c70c99de62cd','204683dd-b4d9-42db-980f-2347626b83f2','20886a6b-e7c6-4424-9be7-a707f74e8fc4','20f00e4d-6630-4cf9-8276-70cf0112bbbe','21d796c9-e067-404b-bb62-db716f5731f7','23a6d5a6-dbe2-4c71-8dbd-1ac09d0ab3ac','243bb7ba-1531-4e3d-aa49-87bf56274cc0','25bc5bb1-0385-429d-beac-ab05199b7944','25c5e02b-6cbe-41cd-9a0e-6fcb183e77d4','2812b8a9-df2d-4c0b-a8eb-11256b29cbff','29fa0018-4385-4b06-96c4-298dd0e20694','2adbe68c-0f6c-4ed2-ad99-23b165258529','2b1d86ee-6208-471a-be0d-29e43ce2398f','2b5f4e2e-8e2a-4c90-8b64-0cc25e568942','2b9537d4-6779-4acb-8c48-3fec8baf0d25','2db1547a-59ed-477e-b38e-8077b53da2dd','2e900c4e-6a8a-4d71-a61e-9685d0ea1b24','2f924071-14af-4912-be51-a7e843387336','34a68fc1-ed45-48f2-89d5-b9941645d0f5','350e8410-9d30-4227-971d-947e2d8e52f3','369bf570-caa8-437c-8203-13ac935e7cd7','3712b62b-db59-4c28-a2c9-577e254cde14','37cd8fe3-f939-49bf-808a-554998280112','38427ffb-dce9-435e-a66c-9c6887cd4b87','39cdf69e-556c-4504-9671-aa60237b602e','3a69c6e8-819d-47d5-91bb-e30679c2444f','3acbd303-c58f-499f-9d54-166f6e0ee470','3c1d5850-c53f-4738-b3f3-325e77fd818d','3c47df1c-e393-4b02-a37a-1b9f64fd2829','3c865c21-c31c-488a-bb48-4bab6f869819','3d1ff717-33d6-4b99-b714-747e9886e581','3d773c3d-2754-4a81-b9ad-1f9493644f18','3e4b9445-95d2-4135-bc81-f1034724873e','41c3124b-6082-4628-b2a4-87ab11688e45','43642d5f-15c7-4220-9396-0bbfdab7af81','4509b08d-b78b-490f-9904-e925375dfb53','4547f7dc-9375-4157-bcb3-170f78f54fd9','461a1014-2d9a-4bee-a8e1-23c4d27e8981','46ec2772-73ab-4392-ab4a-afff7fbf19a7','47c3c942-d87f-405f-8766-3025011b147a','48b2f458-838f-4bf3-b755-f2a2859e931b','48dde82e-0085-4beb-8b50-936530f11fd0','4a144ead-e05f-4859-bee6-976789b05da5','4a5bd9ed-a5c0-47b9-a2d2-09bec2aebd4e','4c4c6bd9-029d-4201-a53d-4349c550bf2b','4d90e2f7-8755-468d-bfdb-888df2e06dc6','4db2564a-3ed2-4daa-b230-060b891d31d9','4e11238e-e200-4346-b5d0-a3aa3fd4d85a','4f12d3c9-a608-4b3d-9387-07697303b16a','50ec9c2a-8058-4442-a82f-597b70764cca','5106065c-3064-4ada-af6e-0215eb4d2d3d','51c3f89a-fb6c-4bcd-a6b4-cf633e0063ad','52077105-6ab1-4342-b902-c49df02fc0f5','529370ab-1e08-4f76-a0e1-4e03f8c4932d','52fff4cf-f4c2-499e-95e5-6fff9e4f2301','533e5b0e-ffde-4c52-97c6-bfb16674d90a','5422f7aa-98c1-4de1-bc39-203996b36d3b','54733b5c-96dd-4755-8d7b-d20676f891ff','54c3022e-8e71-41e1-bc37-ac7640176eda','55fcabca-f43c-43e4-8831-3cb9f7b0edd3','569c56a0-fe68-47ab-a9cb-d91ca29212b8','57f8a111-2492-4c82-8f55-5ee1f7f6b334','58da4b18-a601-4ac7-a91c-8653d7242838','595fbd43-686a-4e0c-9e81-9a596b66cd91','59821dfb-00db-41f3-835b-be0f355cc296','598e5388-5cb0-4f3f-80a8-18d6031a3970','5a84b690-be4a-4fe3-8e15-a515e8f7dd5b','5dab4351-4c76-48c3-8ca9-61da303bfd37','5f759ac6-04c0-4635-992a-a00a282103fa','6105da26-0349-4b08-b999-2c3759b0b1c2','618720e8-a076-4671-a3cf-84c7681a11f3','6260c7bc-69ac-4c70-880f-ffe6e3e050a2','63d8d49b-fdb4-4e5a-a8cb-f1a9cdb7ec46','64f691bd-35b7-4f82-b6fd-dc08d6b587ac','65173330-5977-414f-9234-94636d4f55da','6551697a-7efb-4b38-83b6-26b52bbb51f5','667b5823-0f2f-438f-9106-01728a430027','678bccfa-e55d-48d4-91d2-d2274c9b8b14','692b235a-af3f-4746-86a0-d6696f4ac6ee','69d1cf68-4a86-44cd-976e-1de662e1f1c6','6bfaecc9-6a8d-4d8f-993d-f50ed6fad763','6eeb81aa-9427-4730-ab46-d1007591cfa9','6f4994bf-4f97-4ef2-b68f-b8618f522d40','70a81201-3f9b-449d-8882-4bbe02cd21a3','7196821b-91d3-4cf9-989f-0975b15fe393','71a9d517-7fcc-4373-9a11-2ced57a23c14','7313d707-47be-4970-9ad4-1d292e592e99','742dc5b4-24bd-4091-849e-ead6aecbf8a1','743cd005-7a55-4214-925c-291ddc1a9f46','749ef9c2-8c9e-44c2-80d9-253e71c20e5d','74f4f308-0273-480e-b851-be3afe2c6110','77d7444d-6a81-4448-baf9-af63aaa7ba91','7932e285-fded-4376-ba44-2c6a0ed7213d','7a90336f-a958-4db1-bb30-197f640bbb13','7a95e642-05f8-4dad-bb10-97b38c461b11','7b9d2d6e-9d4a-4f47-85d1-71dbb986678d','7bcc654d-d205-479e-a5a8-8d69b86cea94','7d956514-75ce-44fa-b0da-e04c3b5aeae7','7df744b5-3253-4b07-bc7e-9fe90864aa1a','7e0c8a4b-a1c8-4ecd-9587-063f6c276d7c','7ea74797-8f07-47c2-b08a-81c66e8affce','7fd42df8-557c-40f6-bc3d-f028ccf35ee9','809ff1e1-ff17-47ac-b7c6-3f28cc628f28','8386ac19-464e-4eb1-8bcc-d500be3d912e','8716e59b-a9a4-4223-bb8a-9f120e0629f9','87aae6c0-9ddd-4caa-b4fa-95c6e523d315','8809c0c6-1dfb-4945-8d7b-011d2c4562c5','88bb2862-33c3-456d-89a6-fb2a11c4ca9f','893c99f3-fbb4-490b-aaac-83d373255d44','89898c81-e18b-4534-8f50-e57040a41e9e','8aa76b14-1198-4ba9-9497-2e72e88e13c0','8d899442-7676-4e78-a528-2dcf1520510d','8dabad7a-603b-4bff-a86e-9a22e936ba14','8e979c21-3313-4d06-986a-95872b90912a','905c424f-9289-45b7-a2ab-918ae84832a8','915bf9a8-2173-4dd4-85f7-3f591ff54cd7','92223c90-169c-4406-bece-33c206db7830','9286fd1c-9de4-4024-867a-a0a6d85256d1','92e12961-f0bc-4c1b-bb47-0e9e2440bf29','953062ba-2863-4daf-8580-94971dc49828','9562748b-34b5-413d-b289-a1886b7e832e','957fe975-ca84-4bf0-a943-4c1220c0a1d8','959b9b45-10e8-4332-9a4f-88d6d4f3a513','95f16413-5a78-4862-ba64-7f86417328f0','960a7f41-33be-4b26-b63d-2b5b9539daee','98bcb59c-979f-4a09-af3e-b78c19ce6596','9989a055-83d4-4621-aa22-547b964488b0','99cf2abe-3741-48f1-a457-5d968c0af5b2','9a14e629-84c0-4c7f-a36a-38acdd3a4b84','9aae028c-a0df-4670-a739-4c07a0725c9c','9b88e2cb-b08f-46df-90b6-1dc306e5b330','9c23555f-fd3b-436b-a9ac-ac55408e05cd','9d61f494-fa61-43d4-8f2f-c070312086b7','9f07ae34-f5d4-4d2e-8fca-21cfbf72a12a','a0ba0683-07dd-4615-9fc2-3e3395599f52','a10b74b3-c9dd-42d7-98f6-0f5b96e158fa','a15805f5-8c63-4cf1-b943-51999021f648','a1fcea75-7f46-49b5-a788-461759481ca6','a304f248-df3b-414c-ae72-6bd931a444e0','a4bd9fc9-3593-410a-bb83-27cb1ad044e2','a518bf4b-a889-4873-b322-1abb56c1a8c0','a80ddc88-5ca3-4dd3-a903-f7764851cf0e','a88f6414-f5a5-4a09-a749-8512dc6a8905','a8a05ce4-550d-4311-8a51-109c8ba7ee3f','a8a1af85-e78a-4f4d-b749-9a8d798b8215','a92b8dcb-372b-4213-bc87-170be33f8875','aacd685e-56df-4f08-acb8-5b1b17f9992f','ac0cdc15-ec0c-4d67-aa2c-dd44d3ce4b8f','ac336db7-9055-4909-8971-2cccd2fdb12e','ac9e6967-6bc7-4149-a15a-fd4e523abb38','ad751e96-125d-4597-aeec-5af1399ce754','adf66625-684f-496f-9551-cf9548e53446','af0a69d1-8cdc-40fe-b0c4-bc2cfcacd8da','af514f12-3d08-4a25-b36e-c8d3b50d7f3c','b0e6507a-a9f4-4bef-b476-6eb02208b3c4','b6afebd1-fc50-4504-ab33-efceed50b5d9','b8d1f9ef-5f9b-4770-aef4-c239d87b5998','ba525e68-8c84-4a2d-aa4a-afa90106cbd2','bb571e6c-4a3d-4eeb-81b2-1d1632d0f8cf','bb89111a-6353-4ff0-ae52-add092826e5a','bbc00082-80dd-4845-93ca-4d75ccda8cea','bc7f05ec-f776-4bc7-aaad-be5d1e0b5baa','bec46f99-d370-4f56-ba76-d3e749fb2c06','bf0cfbcb-77f5-40de-a8a1-ea0f16b924cb','c126cf5c-5721-47fb-b360-ca71bebe8971','c21b3484-7ddb-43d8-9ec6-dcb82e9b85d1','c2d4a2fe-4e51-410b-90c4-891de1ab2177','c31eb106-75b9-4137-81be-a8906c4b7347','c681cd55-3d94-4d8a-90c3-f72042d12aa9','c7e9cde7-7f85-4553-bb4b-a1f7e218fcb0','ca7c1ed4-db0d-47a8-9c31-777e75bae66a','ca9a2721-625d-4c43-8731-bb6e74c24382','cc3056a4-3193-4645-b3a4-ca247ded936a','ce1c1908-57b0-44b1-816e-641ccb5e3891','ceb1f135-adfa-4a08-97e4-07ebc18f25f2','cf1cdb45-b098-40e1-a14c-2c3f0a499460','d22bc828-827b-45ad-9707-b55e8eff926a','d242bb69-0349-4071-a13a-b8e10def0a98','d3596dee-972f-44b9-8b29-f7023fd56d06','d359a3af-ea84-47e3-8be6-1ef2c722e493','d3f9970f-6e24-4a37-9a6a-932779a77c92','d4cf8992-a0b7-459a-bc41-36505d23a4fb','d4e41b93-4179-44df-9d4d-4c2f0397aa1a','d63c3daf-24b9-4a22-aedf-6694acc5da15','d73bd373-8ffc-4256-b789-eb418436724a','d7687169-c225-44b8-bb0f-c31d86a9d2dd','d77398ce-e7b7-4c9b-9ea2-d460700b2ad7','d90c15af-b030-4400-9d72-a6b3f370d201','d93f44eb-0389-4833-ab51-f4a92e2b8778','db49c94e-68bb-4537-8352-e1d09d2191fe','dc3292c2-4891-4e40-9408-892db84345de','de3ae7b8-d68e-4346-ac57-d57f1b11cae5','de61aace-e298-4636-afa8-4bff80f3aecf','dec30a93-46c2-46c3-9ef0-5a30cb06d724','e3b17d51-7a38-463c-97d6-5ce8aed96ece','e447ec81-3148-4d83-84dd-3d5fcfa49460','e4b506cc-9c06-48e7-b3ba-9b0cdb14fa08','e4ed5da8-aed5-4d5e-82a9-7f8b5052847b','e577b45f-8fd0-4873-a0b6-7e2819ccf5df','e6054c3d-b0fe-4f2a-b431-e204e969286e','e66ea6ba-1bd1-4fcc-8821-61059176c3b0','e87dae78-daed-412d-92f2-7b88414345d5','ea269aca-51fd-4618-8ba6-06e9aa59bb60','ea62e2fb-492c-470d-8c99-64c3f7bfcc59','ea91c17b-6066-4b17-94d0-ddb30cb6a177','ecfd5a12-610e-4dfc-b703-47c87cd223d9','ed0e370a-ece8-4c3a-b36d-12c3a2a8c39c','ee3edcd2-28f7-4cae-9590-313d354d03e8','ef8b9b8e-19e0-4180-b10e-3ccd17404f8c','f02c4c1b-e9d0-4a3c-b34d-101e8549ec77','f03d9da0-d8fb-4ffb-a1ab-d766f058f876','f1e2d7fb-807e-45fb-948c-2148da50780c','f23d6694-68ee-49ef-a117-ce63df4f0935','f28c46ab-64ba-4d07-a754-69899bab0a51','f2d77148-97ee-44c7-bf00-b3b4f66e01a9','f354a410-4e57-4d3a-9f95-7a5732aa06be','f3b9c360-64f2-4dab-b6d4-b0ad65a27f50','f797f71b-4b9c-42fe-80be-45e8768d4829','f8223760-ac84-4275-86be-f2c59674bc3a','f8dabdda-7aab-49ee-8c83-7685a44047df','fa18cec7-d27c-469c-b6ba-7a8d5053ac89','fba1a4e2-7184-46bb-bd33-d4d2b45c355d','fc99a9c4-11d2-43bc-88bc-2c52efce5872','fd3f51ed-45d6-4259-83e1-b90d557a917c','fdfa3a58-9843-4abb-baec-0d86979498f4') AND is_incumbent IS DISTINCT FROM false)
+      OR (id IN ('03a8a4c7-de8a-48a2-8104-00ef833ab4bf','0aec1f87-4b53-48cc-ab2d-4f263a4aed9b','0c59532f-ae5b-4ef7-bf0a-0f5269095973','0f3b7e3b-86fe-4191-a1b0-3bb656933a42','19349bd3-579a-440e-81eb-fd1178c99e6e','1ae8ffd7-26ff-46cf-b047-99eafdeb4ef7','21af8460-de87-4cbf-9e42-cb5b300f3261','2302cb93-4d7f-43eb-824b-76ee0c2ff8d6','2b41f82b-1822-46f6-8501-8d8c102ad772','405fdb4a-ead7-4fa5-8f3f-f811c4d5c328','47e7053a-fe82-407c-869f-92c8e179cd78','532ce501-19ce-46a4-bb44-fe04e4f488cc','5a471452-7a6d-4e21-a4d8-2336a6a15f24','5f49e3c4-3bbe-490a-af81-a9981f25eac8','639d5095-2068-4d5d-aa16-17731097fd08','69dbcd49-8695-49da-b47c-db26652e0eaa','6de113d1-f09d-4d76-a384-f0a96a11548d','7030946d-e3a8-4739-8aa3-990f4c2cef93','7360212c-63b0-41ec-b8a8-790bb839506c','7641b0b7-e9bd-4c50-9630-eeba1b7fa4fc','7b37ddf5-decd-4ba0-a38b-8a89c7482554','7d86f45c-019d-41df-938a-d79e2de09d3a','7e768cda-38f3-4511-ad7c-c8e877c5abfa','7f60ec84-2590-42de-abdf-61c1703ba8e5','84fafa28-b4b6-4c59-bd3c-476d40e1f0f5','85361d20-6e9b-433a-89ed-34c25310662b','8955c024-7a89-450b-b258-ab48a9e7db58','8c244f50-38e4-4b4e-8888-e03d4e3cfe4d','8cb56548-5b10-4c7d-8756-648775e1f429','8f063ab0-148d-4c56-9c2f-4366ccb6faba','91d2126a-f865-46f6-bbcd-722697664b44','a05029b6-f101-4442-b7d4-2acec223bc44','a3641549-e908-4856-94b3-856d821487b3','a48d4ebc-3cd2-4443-aac3-233b2934505d','aacf3746-e3c3-471e-8ab4-7ecb98ce7fcf','afeea8ab-f33a-4b3c-8367-9da43ab7ee18','c97dbf1d-e5c1-49a8-85d6-065a93dff866','c9de9c17-bf4a-45d4-84ca-aa1473ae7915','cd7f21c9-8e25-4203-9e51-0f9aa8ebb4b7','d1aee510-8e06-49de-b115-77daf5d6e167','d357a8be-78e5-44c1-b3d8-21fcac7da607','d4d702fd-1893-438f-8bcb-a5ee658ca0ba','d656239b-a4a9-49dc-a514-7a656e574dd0','dd5a4db7-2e1d-4497-a2f1-42a55dfb2734','df1aff5b-dcb9-49f0-b3f7-3b9fdb4ea1ee','e4f930cf-e466-43a0-8a0d-de39279e104b','ee0127e1-f1fe-40fb-9214-d94e1aec8474','ee87628c-f5ce-44a4-b3c7-aaac25bebbe0','f05866a3-5b72-40ef-ab3b-f0fc088dee2d','f08d5211-bee1-4366-9660-e8996977f94e') AND is_incumbent IS DISTINCT FROM true);
+
+  SELECT count(*) INTO v_drift
+    FROM essentials.race_candidates rc
+    JOIN essentials.races r ON r.id = rc.race_id
+    JOIN essentials.elections e ON e.id = r.election_id
+   WHERE e.election_date >= CURRENT_DATE - INTERVAL '1 year' AND rc.politician_id IS NOT NULL
+     AND rc.is_incumbent IS DISTINCT FROM EXISTS (
+       SELECT 1 FROM essentials.office_terms t
+        WHERE t.office_id = r.office_id AND t.politician_id = rc.politician_id
+          AND (t.term_start IS NULL OR t.term_start <= e.election_date)
+          AND (t.term_end IS NULL OR t.term_end >= e.election_date));
+
+  -- 🔴 The guard for the three winners: nobody whose term STARTED AFTER the election may come
+  -- out of this flagged as that race's incumbent.
+  SELECT count(*) INTO v_winners
+    FROM essentials.race_candidates rc
+    JOIN essentials.races r ON r.id = rc.race_id
+    JOIN essentials.elections e ON e.id = r.election_id
+   WHERE rc.is_incumbent = true AND rc.politician_id IS NOT NULL
+     AND EXISTS (SELECT 1 FROM essentials.office_terms t
+                  WHERE t.office_id = r.office_id AND t.politician_id = rc.politician_id
+                    AND t.term_start > e.election_date)
+     AND NOT EXISTS (SELECT 1 FROM essentials.office_terms t
+                  WHERE t.office_id = r.office_id AND t.politician_id = rc.politician_id
+                    AND (t.term_start IS NULL OR t.term_start <= e.election_date)
+                    AND (t.term_end IS NULL OR t.term_end >= e.election_date));
+
+  IF v_wrong <> 0 THEN RAISE EXCEPTION 'CC_0343: % targeted rows do not hold their intended value', v_wrong; END IF;
+  IF v_drift <> 0 THEN RAISE EXCEPTION 'CC_0343: % row(s) still disagree with the election-day predicate', v_drift; END IF;
+  IF v_winners <> 0 THEN RAISE EXCEPTION 'CC_0343: % winner(s) seated after the election are flagged as its incumbent', v_winners; END IF;
+
+  RAISE NOTICE 'CC_0343 OK: 242 -> false, 50 -> true, 0 drift, 0 post-election winners mislabelled';
+END $$;
+
+COMMIT;

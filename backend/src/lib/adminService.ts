@@ -684,6 +684,12 @@ export async function adminCreatePolitician(data: {
   slug?: string;
   bio_text?: string;
   is_incumbent?: boolean;
+  /**
+   * What the admin UI actually sends (CreatePoliticianSchema in routes/admin.ts accepts it).
+   * It was missing from this type, so it arrived, passed validation and was SILENTLY DISCARDED
+   * — an admin ticking "is candidate" produced a row asserting the opposite.
+   */
+  is_candidate?: boolean;
 }): Promise<Record<string, unknown>> {
   // Derive full_name from first/last if not provided
   const fullName = data.full_name ?? `${data.first_name} ${data.last_name}`.trim();
@@ -704,7 +710,14 @@ export async function adminCreatePolitician(data: {
       data.party_short_name ?? null,
       data.slug ?? null,
       data.bio_text ?? null,
-      data.is_incumbent ?? true,
+      // 🔴 WAS `?? true`, AND THE ROUTE NEVER SENDS is_incumbent — so the default fired on
+      // EVERY call and every politician created here was marked a sitting officeholder. That is
+      // the CA_0188 shape, which cleared 1,817 active "incumbents" holding no seat, still live
+      // in a write path. An admin creating a record asserts nothing about occupancy, and only
+      // essentials.office_terms can; the column's own default is false, and the daily
+      // reconciler corrects it upward if the person really does hold a seat.
+      // `is_candidate` is honoured now rather than dropped. An explicit is_incumbent still wins.
+      data.is_incumbent ?? (data.is_candidate === undefined ? false : !data.is_candidate),
     ]
   );
   if (rows.length === 0) throw new Error('Insert failed');

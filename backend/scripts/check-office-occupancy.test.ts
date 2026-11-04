@@ -147,3 +147,36 @@ describe('check-office-occupancy — its own test is exempt, like the guard itse
     expect(r.out).toContain('Office occupancy OK — 0 changed file(s) scanned');
   });
 });
+
+describe('check-office-occupancy — view aliases that legitimately carry politician_id', () => {
+  // 🔴 THE SAME FALSE POSITIVE AS `ot`, WHICH THIS GUARD'S OWN COMMENT SAYS WENT UNNOTICED FOR A
+  // YEAR. The offices-alias pattern is `o[0-9a-z]*`, which swallows the conventional alias of
+  // any view whose name starts with "office". `essentials.office_next_term` (CC_0341) carries a
+  // politician_id by design, exactly as `office_current_holder` does — reading it is the thing
+  // ADR 0002 tells you to do, not the thing it forbids.
+  it('ont.politician_id (essentials.office_next_term) is not a violation', () => {
+    const src = [
+      'SELECT och.politician_id AS holder, ont.politician_id AS incoming',
+      '  FROM essentials.offices o',
+      '  LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id',
+      '  LEFT JOIN essentials.office_next_term ont ON ont.office_id = o.id;',
+      '',
+    ].join('\n');
+    const r = run({ 'backend/migrations/0002_next_term.sql': src });
+    expect(r.code).toBe(0);
+    expect(r.out).toContain('Office occupancy OK');
+  });
+
+  it('still catches a real offices read sitting right beside it', () => {
+    // A positive control on the exemption: widening the lookahead must not blind the guard to
+    // the column it exists for.
+    const src = [
+      'SELECT ont.politician_id FROM essentials.office_next_term ont;',
+      'SELECT o.politician_id FROM essentials.offices o;',
+      '',
+    ].join('\n');
+    const r = run({ 'backend/migrations/0003_mixed.sql': src });
+    expect(r.code).toBe(1);
+    expect(r.out).toContain('reads <offices alias>.politician_id');
+  });
+});

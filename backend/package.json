@@ -87,7 +87,9 @@
     "check:stance-audit": "node scripts/check-stance-audit.mjs",
     "check:entity-types": "node scripts/check-entity-types.mjs",
     "check:instrument-contradictions": "node scripts/check-instrument-rung-contradictions.mjs",
-    "check:instrument-contradictions:selftest": "node scripts/check-instrument-rung-contradictions.mjs --selftest"
+    "check:instrument-contradictions:selftest": "node scripts/check-instrument-rung-contradictions.mjs --selftest",
+    "check:seating": "node scripts/check-seating-invariants.mjs",
+    "check:seating:control": "node scripts/control-seating-invariants.mjs"
   },
   "overrides": {
     "qs": "^6.16.0",
