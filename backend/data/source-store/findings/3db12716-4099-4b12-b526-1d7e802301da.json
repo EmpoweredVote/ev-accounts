@@ -1,0 +1,24 @@
+{
+  "politician_id": "3db12716-4099-4b12-b526-1d7e802301da",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun ownership limits",
+        "Second Amendment"
+      ],
+      "places": [
+        "status: lost the 2026-08-04 primary (VA-10)",
+        "On the Record (0 meetings)",
+        "https://ivoterguide.com/candidate/93884/race/26928/election/1408 (shows him in the 2026-08-04 primary; the gun question is unanswered, nothing on the subject)",
+        "https://www.predictionedge.com/elections/profile/anthony-suttles/ (nothing on the subject)",
+        "campaign site not found; Ballotpedia not reviewed (fetch returns empty)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T20:47:06.075Z",
+      "by": "source-collector"
+    }
+  ]
+}

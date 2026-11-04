@@ -88,6 +88,137 @@
         "fetched_at": "2026-10-31T15:52:56.612Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "d08699415411b5858256e30a848146fe68dfa527b9ecb60837f74a0e4adb76a9",
+      "kind": "own-words",
+      "url": "https://dean.house.gov/2023/6/gun-violence-prevention-advocates-hold-rally-in-montgomery-county",
+      "date": "2023-06",
+      "date_precision": "month",
+      "passage": "Scott described military-style weapons as “human massacre machines that should not be readily available to the public.”",
+      "note": "Report on a Montgomery County gun violence prevention rally; the sentence is the report's, quoting Scott's words inside it. Outlet quoting him is a US Representative's site.",
+      "subjects": [
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:24:37.088Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6d47e7ad69c930cca858811ecd1a514224bd4b79f64b3bfa6ba8a289f7dc8cbe",
+      "kind": "own-words",
+      "url": "https://dean.house.gov/2023/6/gun-violence-prevention-advocates-hold-rally-in-montgomery-county",
+      "date": "2023-06",
+      "date_precision": "month",
+      "passage": "“And to my colleagues on the other side who say the way to solve these mass shooting problems is to arm teachers — no guns in school, period!” said Scott, whose comments were greeted by applause from some spectators.",
+      "note": "Same rally report; he opposes arming teachers. The report adds he said he has seen the need to enhance gun safety laws through his work as a volunteer firefighter and EMT.",
+      "subjects": [
+        "places where guns are allowed",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:24:37.088Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cae0ee827f27a9152121f00063d19d59ce92a5c28cf18fd133d5b3bc9fc24d4d",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=1157",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1157-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of PA-HB-1157-2023 (LegiScan sponsor list): HB1157 (2023-2024 Regular Session): In firearms and other dangerous articles, further providing for licenses and for Pennsylvania State Police..",
+      "subjects": [
+        "faster court reporting of mental-health commitments to State Police",
+        "electronic reporting form for gun background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1157-2023.amended.pdf",
+          "sha256": "aaa037dbc48503ae5467861205b827bc77c0323d8957da9dd80283c8871ea880"
+        }
+      }
+    },
+    {
+      "id": "b6f93bd51b38c8c63d69145e9446df56f7ebad8c7f4c3fa1dd09e5e0cf2ed28a",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=1018",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1018-2023",
+      "act": "yea",
+      "motion": "House Floor: HB 1018 PN 1152, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 1018 PN 1152, FINAL PASSAGE, 2023-05-22: yea (tally 102–99); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders created to remove firearms",
+        "firearm ban while an order is active",
+        "penalty for not turning in firearms under an order",
+        "longer penalty for prohibited persons found with a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1018-2023.amended.pdf",
+          "sha256": "05d5a4c60b9a22ac9e77d07afe3e7adc8841cd9dab1224832eb50521b29958a6"
+        }
+      }
+    },
+    {
+      "id": "1561ab47f9bb2cf3b379931e6b111466d9042b024b1f43b38ba23bbb38f188dc",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=777",
+      "date": "2024-03-27",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-777-2023",
+      "act": "yea",
+      "motion": "House Floor: HB 777 PN 2578, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 777 PN 2578, FINAL PASSAGE, 2024-03-27: yea (tally 104–97); census gate: none.",
+      "subjects": [
+        "sale or transfer of unserialized gun frames, receivers and kits made a felony",
+        "buying parts to build an unserialized gun made a felony",
+        "licensed dealers must mark and record privately made firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-777-2023.amended.pdf",
+          "sha256": "65a5f4847629a43127721168bc31890a6fd60f0aefae6ac528a3cd698d73d35e"
+        }
+      }
     }
   ],
   "searches": [
@@ -154,6 +285,30 @@
       "found": 1,
       "at": "2026-10-31T15:52:56.612Z",
       "by": "identity-pa-2026-10-31-a02365"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style weapons",
+        "guns in schools",
+        "gun safety laws",
+        "background checks",
+        "extreme-risk orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page pahouse.com/Scott: confirmed Rep. Greg Scott, 54th District; news list had nothing on guns by him (one 2025 news-coverage item about threats to politicians, not his words)",
+        "pahouse.com/Scott/InTheNews: nothing on the subject in his words",
+        "congressional site of a US Representative (2023-06 rally report) naming him: confirms identity and gives quotes",
+        "palegis.us bill pages for two 2023-24 gun bills (extended background checks, extreme-risk orders): he was not on the co-sponsor lists shown",
+        "blocked: palegis.us member page by guessed id (404), so his full sponsored and co-sponsored list was not reached; LegiScan not reached",
+        "Ballotpedia: not reviewed (pages come back empty)",
+        "web searches on name plus gun words: no campaign issue page found"
+      ],
+      "found": 2,
+      "at": "2026-10-30T22:24:37.088Z",
+      "by": "source-collector"
     }
   ]
 }

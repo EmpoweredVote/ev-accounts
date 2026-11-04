@@ -212,6 +212,30 @@
       "found": 6,
       "at": "2026-10-27T22:20:13.122Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "general gun rights or gun safety laws",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed in scope: nominee for Indiana Secretary of State, general election 2026-11-03 (https://www.wlfi.com/2026/08/13/meet-secretary-state-candidate-max-engling/)",
+        "WLFI candidate profile: nothing on the subject",
+        "blocked: https://indianacapitalchronicle.com/2026/06/10/how-gop-candidates-are-pitching-themselves-for-indiana-secretary-of-state-bid/",
+        "campaign site: not reachable (https://www.maxengling.com did not resolve); no campaign issue page found in search",
+        "Ballotpedia: not usable through the fetch tool; news searches on name plus gun words found nothing on the subject",
+        "sponsor list: covered by LegiScan bulk check (not a sitting legislator; no bills found)"
+      ],
+      "found": 0,
+      "at": "2026-10-31T20:38:53.382Z",
+      "by": "source-collector"
     }
   ]
 }

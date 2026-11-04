@@ -1,0 +1,38 @@
+{
+ "id": "MA-S-1476-2023",
+ "scope": "state:ma",
+ "title": "S1476 (193rd General Court): An Act to require liability insurance for gun ownership",
+ "urls": [
+  "https://malegislature.gov/Bills/193/S1476",
+  "https://malegislature.gov/Bills/193/S1476/Senate/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Michael J. Barrett",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "60e4da77-0c2b-4ca4-8d02-a4210bd91d90"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-S-1476-2023.html",
+   "sha256": "692dcc0b6fb0deffb4cc5af5c904e1bd7188c2745cd2fc43d03f384b6812286c"
+  }
+ },
+ "operative_text": "Chapter 140 of the General Laws is hereby amended by adding the following section:-\nSection 207. (a) Whoever possess, carries or owns a firearm, rifle or shotgun without a liability policy or bond or deposit required by the provisions of this chapter, which has not been provided and maintained in accordance therewith, shall be punished by a fine of not less than 500 nor more than 5,000 dollars or by imprisonment for not more than one year in a house of correction, or both such fine and imprisonment. This section shall not apply to a person who possesses a firearm, rifle or shotgun on a temporary basis while on the premises of a licensed gun club.\n(b) The commissioner of insurance shall promulgate regulations setting forth the minimum terms of liability insurance policies which shall satisfy the requirements of this section."
+}

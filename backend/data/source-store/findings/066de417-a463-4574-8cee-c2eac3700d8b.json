@@ -1,0 +1,32 @@
+{
+  "politician_id": "066de417-a463-4574-8cee-c2eac3700d8b",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "Second Amendment",
+        "background checks",
+        "assault-style weapons",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "web search: candidate name plus gun and Second Amendment words (nothing on the subject)",
+        "https://abc3340.com/news/connect-to-congress/a-look-at-alabamas-6th-congressional-district-democratic-candidates-ahead-of-the-primary (five-question candidate Q&A, 2026, names her as a candidate in the special primary for the 6th district; nothing on the subject)",
+        "https://www.alreporter.com/2026/07/21/alabama-cd-6-democrats-to-face-voters-at-primary-forum/ (lists her as a candidate; nothing on the subject)",
+        "blocked: https://goodparty.org/candidate/ashtyn-kennedy/us-house-of-representatives-alabama-6th-congressional-district (429)",
+        "blocked: https://ballotpedia.org/Ashtyn_Kennedy (empty page)",
+        "blocked: https://alabamareflector.com/2026/07/27/four-democrats-vie-for-central-alabama-congressional-seat-in-special-primary-election/ (403)",
+        "blocked: https://bluevoterguide.org/AL/candidate_Ashtyn_Kennedy/764203?lang=es (403)",
+        "no official or campaign site found; congress.gov not applicable (no legislative record)",
+        "status note: coverage names her in the special primary of 2026-08-11; the result was not confirmed, so ballot status for the general election is unconfirmed"
+      ],
+      "found": 0,
+      "at": "2026-10-30T14:59:02.068Z",
+      "by": "source-collector"
+    }
+  ]
+}

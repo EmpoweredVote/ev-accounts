@@ -101,6 +101,26 @@
         "fetched_at": "2026-10-28T22:01:36.411Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "5c448a66fcb030a6b048a01193625d8b9992aba198258d1ccca4eda0ad0af0d6",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/52472/race/33009/election/1477",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "What restrictions on gun ownership are needed to protect public safety? Did not answer",
+      "note": "Voter guide questionnaire: no answer on gun restrictions. Page also lists an NRA-PVF endorsement.",
+      "subjects": [
+        "restrictions on gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:17:42.453Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -130,6 +150,31 @@
       "found": 5,
       "at": "2026-10-28T22:01:36.411Z",
       "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "limits on gun rights",
+        "permitless carry",
+        "red flag orders",
+        "background checks",
+        "Second Amendment general statement"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site garrityforpa.com home page and Turn Around PA issues page (nothing on the subject)",
+        "stacygarrity.com/issues: not found (404)",
+        "voter guide page ivoterguide.com (2020 treasurer race: no answer to gun question)",
+        "news: Tribune-March 2026 interview piece (nothing on the subject)",
+        "news: abc27 piece on her issues (nothing on the subject)",
+        "news: Trump endorsement story (only his words, not saved)",
+        "legislator bill pages: not applicable, statewide office holder with no bill sponsorships",
+        "Ballotpedia: not reviewed, returns empty to the fetch tool"
+      ],
+      "found": 1,
+      "at": "2026-10-30T15:17:42.453Z",
+      "by": "source-collector"
     }
   ]
 }

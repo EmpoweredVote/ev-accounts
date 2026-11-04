@@ -1,0 +1,50 @@
+{
+  "id": "PA-HB-1953-2025",
+  "scope": "state:pa",
+  "title": "HB1953 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for licenses.",
+  "urls": [
+    "https://www.palegis.us/legislation/bills/2025/hb1953",
+    "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB1953/PN2461"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 1 (amending 18 Pa.C.S. 6109(b)): If the applicant is a resident of this Commonwealth, he shall make application with the [sheriff of the county in which he resides] sheriff's office closest to the applicant's principal residence where the individual lives for the majority of the year and maintains as a permanent residence, or, if a resident of a city of the first class, with the chief of police of that city.",
+  "sponsors": [
+    {
+      "name": "Zachary Mako",
+      "politician_id": "58c0d6b4-ee23-451f-88c1-624cb41428be",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Aaron Bernstine",
+      "politician_id": "ffe5826b-e194-4c54-a044-5db1b2f7b90d",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Michael Stender",
+      "politician_id": "b26f9c00-5f78-4989-ab17-7af4d0cde7ee",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1953-2025.introduced.pdf",
+      "sha256": "a8ae14ed8d544f1e0c68b1c8ed172b604628c435c26db9af05d4539f2063a0ca"
+    }
+  }
+}

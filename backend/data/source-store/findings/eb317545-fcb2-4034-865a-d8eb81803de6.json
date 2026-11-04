@@ -1,0 +1,75 @@
+{
+  "politician_id": "eb317545-fcb2-4034-865a-d8eb81803de6",
+  "findings": [
+    {
+      "id": "06e25e93af2e3a2577668845bdf5f38fdfabbf3c009b861eb12924c23006c276",
+      "kind": "own-words",
+      "url": "https://comptroller.nyc.gov/newsroom/statement-from-comptroller-lander-on-approval-of-a-merchant-category-code-for-gun-and-ammunition-retailers",
+      "date": "2022-09-09",
+      "date_precision": "day",
+      "passage": "“Stopping the scourge of gun violence will take action on the part of everyone, and I’m pleased that the ISO voted to advance a key step to prevent the next tragedy. American Express, Mastercard, Visa and other credit card companies now have a responsibility to implement the new merchant category code, so that financial institutions can do their part to flag suspicious activity and save lives.",
+      "note": "As NYC comptroller, he welcomed approval of a card-industry code for gun and ammunition stores and said card companies should use it to flag suspicious purchases.",
+      "subjects": [
+        "tracking gun sales",
+        "general statement on gun violence prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:47:58.405Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6314646137e2970245ba0b2bd7bc77494a2972ba897a54085b89ee52452d407d",
+      "kind": "own-words",
+      "url": "https://matthewrussellleeicp.substack.com/p/extra-as-brad-lander-talks-guns-fed",
+      "date": "2025-02-25",
+      "date_precision": "day",
+      "passage": "Lander's plan says he would \"work with DAs to scale out Manhattan DA Bragg's targeted approach of prioritizing prosecutions of gun traffickers.\"",
+      "note": "Inner City Press quotes his campaign public-safety plan (written for his earlier city race, not the House race). The framing sentence is the outlet's; the quoted phrase is from his plan.",
+      "subjects": [
+        "prosecuting gun trafficking"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:47:58.405Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "gun trafficking",
+        "tracking gun sales",
+        "general statement on gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.bradlanderforcongress.com/ (home read; confirms the 2026 race and a thank-you after the June primary; issues page text had nothing on the subject; its links to the campaign newsletter and social posts were not opened)",
+        "not reviewed: https://bradlander.substack.com",
+        "Giffords endorsement page (third-party endorsement; its text is by the endorsing group, so not saved as his words)",
+        "NYC Comptroller newsroom statement of 2022-09-09 (own words, saved)",
+        "Inner City Press newsletter of 2025-02-25 quoting his plan (saved)",
+        "Brooklyn Reader candidate profile 2026-06-19 (nothing on the subject)",
+        "iVoterGuide profile (shows the November 2026 ballot line; no gun questions)",
+        "blocked: https://ballotpedia.org (known to return empty to the fetch tool; not fetched)",
+        "web searches: four news and web searches on his name plus gun terms",
+        "congress.gov sponsor list: not applicable, not a sitting member of Congress"
+      ],
+      "found": 2,
+      "at": "2026-10-31T00:47:58.405Z",
+      "by": "source-collector"
+    }
+  ]
+}

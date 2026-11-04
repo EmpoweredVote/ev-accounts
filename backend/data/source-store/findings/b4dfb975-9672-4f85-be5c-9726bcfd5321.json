@@ -1,0 +1,31 @@
+{
+  "politician_id": "b4dfb975-9672-4f85-be5c-9726bcfd5321",
+  "findings": [
+    {
+      "id": "ddc872daa3c965714c4f7b3e42587b2b005a7a5c29f3b290aa4753626fe8ac00",
+      "kind": "record",
+      "url": "https://kslegislature.gov/li_2016/b2015_16/measures/SB45/",
+      "date": "2015-03-25",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-45-2015",
+      "act": "yea",
+      "motion": "Concurred with amendments (final Senate vote)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS Senate, Concurred with amendments (final Senate vote), 2015-03-25: yea (tally 31–8); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "C, F (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": []
+}

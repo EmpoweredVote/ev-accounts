@@ -1,0 +1,28 @@
+{
+  "politician_id": "a0f0857f-0d02-4a99-bef9-b952e9d8846a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun laws in general",
+        "Second Amendment",
+        "check every gun buyer",
+        "ban on assault-style guns"
+      ],
+      "places": [
+        "status: not confirmed on the 2026 general-election ballot; the 2026 candidate list for Michigan's 12th District at https://theballotbrief.com/district/mi-12 does not name him, and the July 2026 primary overview at https://mlcmi.com/primary-election-overview-12th-congressional-district/ lists two other primary challengers and not him",
+        "On the Record (0 meetings)",
+        "person unfindable: only a search-result mention (not a fetched page) tied the name to the 12th District; no campaign site, no statement and no page naming him was reachable",
+        "campaign site: none found",
+        "blocked: https://ballotpedia.org/Allen_Downer (empty page)",
+        "blocked: https://ballotpedia.org/Rashida_Tlaib (empty page)",
+        "web search x4 for his name plus Michigan, district, primary and gun words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-30T23:52:36.117Z",
+      "by": "source-collector"
+    }
+  ]
+}

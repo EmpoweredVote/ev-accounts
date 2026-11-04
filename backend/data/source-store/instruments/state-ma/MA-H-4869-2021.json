@@ -1,0 +1,306 @@
+{
+  "id": "MA-H-4869-2021",
+  "scope": "state:ma",
+  "title": "H4869 (192nd General Court): Relative to 3D printed guns and ghost guns",
+  "urls": [
+    "https://malegislature.gov/Bills/192/H4869",
+    "https://malegislature.gov/Bills/192/H4869.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "David Linsky",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fa6beaf8-acfe-4365-82a2-6f282aa1b688"
+    },
+    {
+      "name": "Marjorie Decker",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2b1a645a-72ce-4c0f-80ec-17565a2d6d10"
+    },
+    {
+      "name": "Jack Lewis",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "04a9edee-5d51-49f3-a2c9-585e2231bd08"
+    },
+    {
+      "name": "Lindsay Sabadosa",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "853f0b26-a2b5-48b6-8dd6-f40ca48c87fd"
+    },
+    {
+      "name": "William Galvin",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Maria Robinson",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Kay Khan",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Ted Philips",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "73afbe36-aa0c-4474-a2fc-6ff13bf20d71"
+    },
+    {
+      "name": "Tricia Farley-Bouvier",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "15c27efb-0402-4a3a-bfad-9df152874046"
+    },
+    {
+      "name": "Jay Livingstone",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "852e4a21-5750-4ac8-ba06-0376c5a31685"
+    },
+    {
+      "name": "James Eldridge",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9ed1b75f-a314-4241-87ff-231de4aba963"
+    },
+    {
+      "name": "Michelle Ciccolo",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0748d787-7e5d-4852-b461-3459312fae45"
+    },
+    {
+      "name": "Patricia Jehlen",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d40a0eda-36fc-4032-8382-20c76a36d6a6"
+    },
+    {
+      "name": "Dylan Fernandes",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8c7d04dc-f567-4759-b99b-0ae8f26d6f32"
+    },
+    {
+      "name": "Tram Nguyen",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fc1d7143-1be8-49b0-be31-6dbc5874230d"
+    },
+    {
+      "name": "Julian Cyr",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "bd451748-111f-461d-9752-95e7c243769e"
+    },
+    {
+      "name": "Carmine Gentile",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "a9ea7006-d595-45aa-a301-9c71d5a3af4d"
+    },
+    {
+      "name": "Michael Moore",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c0b79f82-6ce7-413a-a18a-286c9a8fa5fd"
+    },
+    {
+      "name": "Ann-Margaret Ferrante",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Joanne Comerford",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "961506eb-3f00-4358-a9a3-1730e7004474"
+    },
+    {
+      "name": "Steven Ultrino",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0cb5bf41-db67-4c4e-b4cf-79c4e4e8dcd7"
+    },
+    {
+      "name": "Mindy Domb",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ecafa801-15b3-4777-9c38-95f5ded5cbe6"
+    },
+    {
+      "name": "David LeBoeuf",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3ca6c1b2-eec3-4e28-991d-fce8b6b67354"
+    },
+    {
+      "name": "Kenneth Gordon",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "afb64fe5-b2a7-4c47-b113-5200ed26182a"
+    },
+    {
+      "name": "Salvatore DiDomenico",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Carol Doherty",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Tommy Vitolo",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "001147b2-5c07-499e-85b9-bae224fdc73a"
+    },
+    {
+      "name": "Steven Owens",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1d78debb-efd5-45e8-9204-06aab3076b2a"
+    },
+    {
+      "name": "Danillo Sena",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f8986c05-2e32-4184-bfb2-9d4c244ffd3a"
+    },
+    {
+      "name": "Adrian Madaro",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "290ee018-6e9e-4a8c-9561-385cf5ef3d73"
+    },
+    {
+      "name": "Michael Barrett",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "60e4da77-0c2b-4ca4-8d02-a4210bd91d90"
+    },
+    {
+      "name": "Brandy Fluker Oakley",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Kate Lipper-Garabedian",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "37e88d74-8fdf-4a66-8685-989248512b29"
+    },
+    {
+      "name": "David Rogers",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ffb8e526-7ad7-4911-92c5-d69528a0f280"
+    },
+    {
+      "name": "Andres Vargas",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "19b7c45b-57a7-468c-9762-82b926080646"
+    },
+    {
+      "name": "William Driscoll",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ab975fdf-b4f1-4955-94a4-97681a2a8d08"
+    },
+    {
+      "name": "Michelle DuBois",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "75a2d83f-8db8-478b-a36d-5ecb707b8507"
+    },
+    {
+      "name": "Christine Barber",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "7cbdb829-4836-49e9-afb2-cb8035afc6bf"
+    },
+    {
+      "name": "Tami Gouveia",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Lori Ehrlich",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Mary Keefe",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "a6eb79f8-c7e7-41b0-8a1c-baf85e7cd22c"
+    },
+    {
+      "name": "Ruth Balser",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Christina Minicucci",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "William Pignatelli",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Rebecca Rausch",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b7369e32-1916-413e-b0eb-2871a5348470"
+    },
+    {
+      "name": "Natalie Higgins",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c14b3502-f142-4c1f-bfa9-a8fa52351a8e"
+    },
+    {
+      "name": "Elizabeth Malia",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Susan Moran",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-31T18:31:13.796330Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4869-2021.introduced.pdf",
+      "sha256": "bbafa283c191659d818a8dd83633ee46fe167ce87f0f7135b64e570c963d4381"
+    }
+  },
+  "operative_text": "Sec. 5 (adding G.L. c.140 s.122E(c)): No individual shall sell, deliver, or transfer a firearm unless the firearm is required by law to be, and has been, imprinted with a serial number by a licensed importer, manufacturer, or dealer of firearms pursuant to 18 USC 923(i), or with a serial number issued by the by the Department of Criminal Justice Information Services as amended from time to time, and any regulation adopted thereunder within.\nSec. 5 (adding G.L. c.140 s.122E(d)): No individual shall purchase, obtain, or possess any firearm that is undetectable.\nSec. 5 (adding G.L. c.140 s.122E(e)): No person shall use a three-dimensional printer to manufacture any firearm, or any part or component that is intended to be used to assemble or manufacture a firearm, unless such person possesses a federal license to manufacture firearms and operates in compliance pursuant to 18 USC 923(i), as amended from time to time, and any regulation adopted thereunder within.\nSec. 5 (adding G.L. c.140 s.122E(h)): Not later than ninety days after the effective date of this act, an individual who is in possession of a firearm that has not been imprinted with a serial number by the department of criminal justice information services, a licensed importer, manufacturer, or dealer of firearms pursuant to 18 USC 923(i) shall notify the commissioner of the department of criminal justice information services and provide any identifying information concerning the firearm and the owner of such firearm pursuant to Section 128B of Chapter 140, shall apply for a serial number or mark for a firearm pursuant to subsection (g), and within 30 days of receiving such serial number shall imprint or have it imprinted upon the firearm.\nSec. 5 (adding G.L. c.140 s.122E(i)): No individual shall knowingly, facilitate, aid, or abet the manufacture or assembly of a firearm by an individual or for an individual who is otherwise prohibited by law from owning or possessing a firearm.\nSec. 6 (adding G.L. c.269 s.10L(a)): Any person who is found to have violated any provision of Chapter 140, Section 122E of the Massachusetts General Laws shall be punished by imprisonment in the state prison for a term of not more than ten years for each offense, or by not more than two and one half years in the House of Correction or by a fine of not more than ten thousand dollars for each offense or by both such imprisonment and fine."
+}

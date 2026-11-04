@@ -49,6 +49,31 @@
       "found": 0,
       "at": "2026-10-27T01:31:27.229Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or large-capacity magazines",
+        "check every gun buyer",
+        "minimum age to buy or carry",
+        "red flag / extreme risk orders",
+        "carry permits",
+        "repealing gun laws",
+        "general statements on gun rights and gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/H_G1 (confirms Representative Homar Gómez of Easthampton; sponsored-petition list shows no gun bill)",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site https://www.homargomez.com/ and https://www.homargomez.com/homar-on-the-issues : nothing on the subject (issues: jobs, education, health care, environment)",
+        "2019 Easthampton gun-safety resolution article https://gazettenet.com/2019/04/18/easthampton-city-council-pass-gun-safety-resolution-24959311/ : does not name him, so not saved",
+        "Ballotpedia: not relied on (returns empty to the fetch tool)",
+        "news searches on name plus gun words: nothing found"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:54:58.501Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -234,6 +234,178 @@
         "fetched_at": "2026-10-28T15:17:40.958Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "c21382e6af0c07936b4e5cc58cf4bc7fc56d375d8a136c0a27663f8a09934455",
+      "kind": "own-words",
+      "url": "https://gov.texas.gov/news/post/governor-abbott-signs-second-amendment-legislation-into-law-2021%22",
+      "date": "2021-06-17",
+      "date_precision": "day",
+      "passage": "\"Politicians from the federal level to the local level have threatened to take guns from law-abiding citizens — but we will not let that happen in Texas,\" said Governor Abbott. \"Texas will always be the leader in defending the Second Amendment, which is why we built a barrier around gun rights this session.",
+      "note": "Statement issued with his signing of seven gun bills; he frames the laws as shielding gun rights from state and federal limits.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "carry a gun without a permit",
+        "no state help with new federal gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:35:10.683Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c49a3e184fbd577d6d1904a80b68096be79ff7c390327e5d780d0824f9bb0b4f",
+      "kind": "record",
+      "url": "https://gov.texas.gov/news/post/governor-abbott-signs-second-amendment-legislation-into-law-2021%22",
+      "date": "2021-06-17",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-1927-2021",
+      "act": "signed",
+      "note": "Governor's release: House Bill 1927 \"authorizes Constitutional Carry in Texas, meaning law-abiding Texans can legally carry a handgun without a license to carry.\"",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:35:10.683Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1c2a7adfdd7d989cddcc05f615210f9215fd8259817e2504edb45956a996eda9",
+      "kind": "record",
+      "url": "https://gov.texas.gov/news/post/governor-abbott-signs-second-amendment-legislation-into-law-2021%22",
+      "date": "2021-06-17",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-2622-2021",
+      "act": "signed",
+      "note": "Governor's release: House Bill 2622 \"makes Texas a Second Amendment Sanctuary State by protecting Texans from new federal gun control regulations.\"",
+      "subjects": [
+        "no state help with new federal gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:35:10.683Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6ae4909d1687c8821376c963b677bcf3038ed86037080b96c10796baaa42472a",
+      "kind": "record",
+      "url": "https://gov.texas.gov/news/post/governor-abbott-signs-second-amendment-legislation-into-law-2021%22",
+      "date": "2021-06-17",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-957-2021",
+      "act": "signed",
+      "note": "Governor's release: House Bill 957 repeals the offence of possessing, making, moving or repairing a firearm silencer, and exempts Texas-made suppressors that stay in Texas from federal law.",
+      "subjects": [
+        "suppressors",
+        "repeal of gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:35:10.683Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2b1c83056662170936ddf424e5856547e92e90b8c80933aa9c9f6472b4ea2f00",
+      "kind": "record",
+      "url": "https://gov.texas.gov/news/post/governor-abbott-signs-second-amendment-legislation-into-law-2021%22",
+      "date": "2021-06-17",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-550-2021",
+      "act": "signed",
+      "note": "Governor's release: Senate Bill 550 removes the shoulder or belt holster requirements for carrying a handgun.",
+      "subjects": [
+        "carry a gun without a permit",
+        "places and manner of carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:35:10.683Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "119bb81ebd5298a07aacb01836f6e9957644d61e30dd7b703c362d5b66a66f34",
+      "kind": "record",
+      "url": "https://gov.texas.gov/news/post/governor-abbott-signs-law-strengthening-2nd-amendment-rights-in-texas",
+      "date": "2017-05-26",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2017",
+      "act": "signed",
+      "note": "Governor's release: Senate Bill 16 cuts the first-time licence-to-carry fee from $140 to $40 and the renewal fee from $70 to $40, and waives it for peace officers and military forces.",
+      "subjects": [
+        "carry permit fees"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:35:10.683Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9c62f2fbcad6ebcd107c32702270a24686379a58a242442c1b1430354cfb7a29",
+      "kind": "own-words",
+      "url": "https://gov.texas.gov/news/post/governor-abbott-signs-law-strengthening-2nd-amendment-rights-in-texas",
+      "date": "2017-05-26",
+      "date_precision": "day",
+      "passage": "No law abiding Texan should be priced out of the ability to exercise their Second Amendment rights.",
+      "note": "Statement issued in his name when he signed the carry-licence fee cut.",
+      "subjects": [
+        "carry permit fees",
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:35:10.683Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dab49d87ed9a36f554a28c55dc40a61f123b00bc8036cef36027391ef280f56d",
+      "kind": "own-words",
+      "url": "https://www.fox4news.com/news/abbott-texans-can-carry-guns-protests-responsibly-ice",
+      "date": "2026-01-29",
+      "date_precision": "day",
+      "passage": "\"I've signed about 30 laws. Texas has the most comprehensive Second Amendment protections of any state in the country,\" Abbott said. \"Every Texan has the right to be able to possess a gun. Period.\"",
+      "note": "Quoted by FOX 4 at a campaign event. He also said \"Our law is that you can open carry,\" and that people may carry at protests if done lawfully and responsibly.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "carry a gun without a permit",
+        "guns at protests"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:35:10.683Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -263,6 +435,34 @@
       "found": 11,
       "at": "2026-10-28T15:17:40.958Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "carry permit fees",
+        "suppressors",
+        "no state help with new federal gun rules",
+        "gun rights and the Second Amendment",
+        "guns at protests"
+      ],
+      "places": [
+        "status check: sitting Texas governor, shown by the governor's own site https://gov.texas.gov and a 2026-01-29 news report of a campaign event",
+        "On the Record (0 meetings)",
+        "governor's press releases: 2021-06-17 and 2017-05-26 gun bill signings (gov.texas.gov)",
+        "news report quoting him, 2026-01-29 (fox4news.com)",
+        "Hays Free Press 2021-06-17 report quoting his signing statement",
+        "sponsor list: not applicable to a governor; signatures recorded instead",
+        "blocked: https://legiscan.com/TX/bill/HB1927/2021 (403)",
+        "blocked: https://dallasexpress.com/?p=296771 (403)",
+        "Ballotpedia: not reviewed (pages return empty to the fetch tool)",
+        "campaign site: not opened; 3 web searches run",
+        "2025 signings: only a third-party advocacy-group summary found (nraila.org), not saved because no official page was reached"
+      ],
+      "found": 8,
+      "at": "2026-10-30T23:35:10.683Z",
+      "by": "source-collector"
     }
   ]
 }

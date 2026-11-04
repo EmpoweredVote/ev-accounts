@@ -48,6 +48,29 @@
       "found": 0,
       "at": "2026-10-27T14:33:08.825Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "general gun-law statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official page https://malegislature.gov/Legislators/Profile/MDS1 (confirms Representative Mark D. Sylvia, 10th Bristol)",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign/office site https://www.staterepmarksylvia.com/post/press-release: nothing on the subject",
+        "https://www.ballotready.org/people/mark-david-sylvia: nothing on the subject (only an economy stance)",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Mark_Sylvia (fetch returns empty pages)",
+        "two news searches on name plus gun words: nothing in his own words"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:51:38.346Z",
+      "by": "source-collector"
     }
   ]
 }

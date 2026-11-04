@@ -1,0 +1,78 @@
+{
+  "politician_id": "7b5c501d-8708-4e75-a61d-02c558cf69a5",
+  "findings": [
+    {
+      "id": "a7c42fa01b19601e9154c8604c338d796df92425810f5bd12e4ad184d98d7f5c",
+      "kind": "own-words",
+      "url": "https://www.breitbart.com/2nd-amendment/2026/08/15/freedom-scottsdale-gun-club-sells-suppressor-for-17-76-no-registration/amp/",
+      "date": "2026-08-15",
+      "date_precision": "day",
+      "passage": "Frankly, we’re sick and tired of too much government and these changes [in NFA registration enforcement] represent a step in the right direction, of getting back to the Second Amendment and the constitutional rights that our Founding Fathers gave us.",
+      "note": "Quoted by Breitbart after he bought a suppressor over the counter without National Firearms Act registration, under a federal court ruling that protects members of a gun-rights group. He calls the loosening of registration enforcement a step in the right direction.",
+      "subjects": [
+        "repeal National Firearms Act rules on suppressors",
+        "gun registration",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:02:30.750Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f85826b20935ee28ec25bc63b03d9aa9b7077e5a5731508c473145b48c275271",
+      "kind": "own-words",
+      "url": "https://sheriffs.substack.com/p/sheriff-mark-lamb-is-like-probably",
+      "date": "2023-02",
+      "date_precision": "month",
+      "passage": "I wouldn’t allow you to change the Second Amendment just as I wouldn’t allow you to change the First Amendment.",
+      "note": "Remark at a Phoenix Second Amendment rally, as transcribed by a newsletter author (not an own-site source). The month comes from the Tucson Sentinel URL for the same event, which could not be read.",
+      "subjects": [
+        "general statement on gun rights",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:02:30.750Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment general statements",
+        "National Firearms Act suppressor registration",
+        "red-flag orders",
+        "background checks",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://news.ballotpedia.org/2026/07/23/mark-lamb-defeats-daniel-keenan-in-the-republican-primary-for-arizonas-5th-congressional-district-on-july-21-2026/ (won the 2026-07-21 primary; nominee for the 2026 general election)",
+        "https://www.fox10phoenix.com/election/2026-election-arizona-cd-5-matchup-key-candidates-top-platform-issues (platform summary; nothing on guns)",
+        "https://www.kjzz.org/politics/2025-10-21/former-pinal-county-sheriff-mark-lamb-is-running-for-congress (no quotes from him)",
+        "https://sheriffs.substack.com/p/sheriff-mark-lamb-is-like-probably (newsletter transcript of a Feb 2023 rally remark)",
+        "https://www.breitbart.com/2nd-amendment/2026/08/15/freedom-scottsdale-gun-club-sells-suppressor-for-17-76-no-registration/amp/",
+        "no campaign site for the Arizona congressional race found (marklamb.com is a different person)",
+        "no legislative record (former county sheriff); no congress.gov sponsorships",
+        "blocked: https://azmirror.com/briefs/mark-lamb-hints-at-upcoming-run-for-u-s-senate-at-gun-rights-rally/ (empty page)",
+        "blocked: https://www.tucsonsentinel.com/local/report/022023_lamb_senate/ (empty page)",
+        "not reviewed: https://ballotpedia.org/Mark_Lamb (not fetched)",
+        "web searches: three"
+      ],
+      "found": 2,
+      "at": "2026-10-30T15:02:30.750Z",
+      "by": "source-collector"
+    }
+  ]
+}

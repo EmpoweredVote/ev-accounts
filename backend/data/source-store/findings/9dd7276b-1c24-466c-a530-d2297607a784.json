@@ -52,6 +52,74 @@
         "fetched_at": "2026-10-31T05:00:00Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "fa8087771668164fa41cebcce4ea1837cefe0d5dda9c72df7aa9612f3319e886",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "nay",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: nay (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f4517934ba2c66514cf3157e2a2273b0963b6a84e77c195f3dda2e34730d5064",
+      "kind": "own-words",
+      "url": "https://spectrumnews1.com/ma/worcester/news/2024/01/24/republican-primary-race",
+      "date": "2024-01-24",
+      "date_precision": "day",
+      "passage": "And I’m the only candidate with a 100% rating from GOAL [Gun Owners Action League].",
+      "note": "Quoted by Spectrum News during the 2024 special-election primary. He cites a top rating from a gun-owners group as a point in his favour.",
+      "subjects": [
+        "gun owner group rating",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:41:54.328Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1df9dd105eb636da940246b39119a33e657558638e0d1a3f48a4ec5b053fff4c",
+      "kind": "own-words",
+      "url": "https://spectrumnews1.com/ma/worcester/news/2024/01/24/republican-primary-race",
+      "date": "2024-01-24",
+      "date_precision": "day",
+      "passage": "Some of these goals I have a very large platform. That goes from 2nd Amendment rights all the way to bringing in funds to help our residents.",
+      "note": "Quoted by Spectrum News during the 2024 special-election primary. He names 2nd Amendment rights as part of his platform.",
+      "subjects": [
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:41:54.328Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -103,6 +171,34 @@
       "found": 0,
       "at": "2026-10-27T14:48:12.269Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun owner group rating",
+        "Second Amendment rights",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun",
+        "licence to own a gun",
+        "repeal of the 2024 gun law (ballot question)"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/JJM1 (confirms 6th Worcester seat; bills listed there had nothing on guns)",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site: none found by search; www.marsiforma.com does not exist",
+        "blocked: https://ballotpedia.org/John_Marsi (403)",
+        "news search on name plus gun words (several searches): only the Jan 2024 Spectrum News primary article had his words on the subject",
+        "news search on 2026 ballot question and general-election race: nothing from him on the subject",
+        "https://news.yahoo.com/dudley-selectman-marsi-enters-race-225044944.html: nothing on the subject",
+        "https://theballotbrief.com/state/massachusetts/worcester-county/massachusetts-house-6th-worcester-district: nothing on the subject",
+        "on the ballot Nov 3 2026 for the 6th Worcester seat per search result (state ballot listing); not opened"
+      ],
+      "found": 2,
+      "at": "2026-11-01T01:41:54.328Z",
+      "by": "source-collector"
     }
   ]
 }

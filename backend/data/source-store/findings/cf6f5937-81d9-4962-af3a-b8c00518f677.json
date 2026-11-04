@@ -136,6 +136,118 @@
         "fetched_at": "2026-10-28T22:55:46.336Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "164836b8d06501ea660375592f5ad38259d85306edd0c0361922138aa76917b2",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0076",
+      "date": "2023-03-16",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-76-2023",
+      "act": "yea",
+      "motion": "Passage, Roll Call No. 80",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI Senate, Passage, Roll Call No. 80, 2023-03-16: yea (tally 20–17); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/2023-SEBS-0076.pdf",
+          "sha256": "028ca04fb10c11c8fa040b47bcab77dc8b252576fae94d7bf73e3063b125abae"
+        }
+      }
+    },
+    {
+      "id": "8256b2dbd8ab52c7ebc5e96ddaf242323bb624f7986ae0782724a43cac166f4a",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0077",
+      "date": "2023-03-16",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-77-2023",
+      "act": "yea",
+      "motion": "Passage, Roll Call No. 81",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI Senate, Passage, Roll Call No. 81, 2023-03-16: yea (tally 20–17); census gate: none.",
+      "subjects": [
+        "check every gun buyer (penalty update)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/2023-SEBS-0077.pdf",
+          "sha256": "6d3820ea03f3dd6591990531a9149c167a88b17cd22fae7324bc8371e8a6da5e"
+        }
+      }
+    },
+    {
+      "id": "18ccd6e0e3f3bb9617c6d5726bafd273722026cddde4a43bd8e1de6c9b8c878e",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0078",
+      "date": "2023-03-16",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-78-2023",
+      "act": "yea",
+      "motion": "Passage, Roll Call No. 82",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI Senate, Passage, Roll Call No. 82, 2023-03-16: yea (tally 20–17); census gate: none.",
+      "subjects": [
+        "check every gun buyer (sentencing update)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f3515925cc7ad8f347fe8d4c5c05d143291234225c66d8417245545edd8145ad",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4138",
+      "date": "2023-03-23",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-4138-2023",
+      "act": "yea",
+      "motion": "Passage, Roll Call No. 115 (final; House did not need to concur since Senate passed without amendment)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI Senate, Passage, Roll Call No. 115 (final; House did not need to concur since Senate passed without amendment), 2023-03-23: yea (tally 20–18); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/2023-PA-0019.pdf",
+          "sha256": "2b8ace86c9e2b41bb2310e59e23d0100684ebb1734093484e474d4588c5007c6"
+        }
+      }
     }
   ],
   "searches": [

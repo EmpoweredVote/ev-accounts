@@ -128,10 +128,8 @@
       "season": 3,
       "codebook": "0.6",
       "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
-      "verdict": "multi",
-      "other_topics": [
-        "new 4-110 and amended 4-306(b): penalties for crimes of violence (Q1 kind 2)"
-      ]
+      "verdict": "single",
+      "other_topics": []
     }
   ],
   "votes": [
@@ -250,7 +248,8 @@
         },
         {
           "name": "Muse",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891"
         },
         {
           "name": "Zirkin",
@@ -290,7 +289,8 @@
         },
         {
           "name": "Jennings",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "5927d5ab-2fd7-4454-bcc3-34e494821aac"
         },
         {
           "name": "Reilly",
@@ -355,11 +355,13 @@
         },
         {
           "name": "Davis",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "75378a96-8886-46eb-b0c1-37cbe2579265"
         },
         {
           "name": "Holmes",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "b8e331fa-d58e-479f-b076-8fda0b0604c5"
         },
         {
           "name": "Mitchell",
@@ -646,7 +648,8 @@
         },
         {
           "name": "Conaway",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "94855fb3-0e08-45ac-8c67-ba668ef67c4b"
         },
         {
           "name": "Healey",
@@ -678,7 +681,8 @@
         },
         {
           "name": "Miller, A.",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "ea9fc2d6-3b26-469a-978c-e8c846d2d49a"
         },
         {
           "name": "Afzali",
@@ -908,7 +912,8 @@
         },
         {
           "name": "Wilson",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "69870c10-cea2-43c2-8cf9-bfcaf0b82265"
         },
         {
           "name": "Costa",

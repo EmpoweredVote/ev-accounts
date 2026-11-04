@@ -1,0 +1,48 @@
+{
+  "politician_id": "a3ffbc1e-cdd5-41d3-bd66-402ef122af63",
+  "findings": [
+    {
+      "id": "6a1c62f966e2b1214e33128e8ebc02a9ac662a122cc842098cb3267633cbdb75",
+      "kind": "own-words",
+      "url": "https://wltreport.com/2026/01/25/watch-bessent-pushes-back-journalist-firearm-protest/",
+      "date": "2026-01-25",
+      "date_precision": "day",
+      "passage": "Guess what? I didn’t bring a gun, I brought a billboard.",
+      "note": "Quoted by the WLT Report (an outlet, not a primary transcript) from a Sunday TV interview after a fatal shooting in Minneapolis, when asked about the dead man having carried a gun to a protest. Treated as a remark about carrying a gun at a protest, not a policy statement.",
+      "subjects": [
+        "carrying a gun at a protest",
+        "general Second Amendment remark"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:01:44.691Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carrying a gun at a protest",
+        "Second Amendment",
+        "gun rights general statement"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Treasury Department official page: shows Scott Bessent is the Secretary of the Treasury, not a member of Congress, so no bills, sponsorships or campaign site exist for him",
+        "congress.gov: not applicable, he is not a legislator",
+        "one web search on name plus Second Amendment: only the January 2026 ABC interview exchange found, reported by partisan outlets; no primary transcript reached",
+        "Ballotpedia: not reviewed",
+        "campaign site: none (not a candidate)"
+      ],
+      "found": 1,
+      "at": "2026-10-30T15:01:44.691Z",
+      "by": "source-collector"
+    }
+  ]
+}

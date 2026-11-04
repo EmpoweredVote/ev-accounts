@@ -1,0 +1,33 @@
+{
+  "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec",
+  "findings": [
+    {
+      "id": "7c76c2312f455da8a7f47e123280c231cfa6ad0721c85ccb01ec367a0c920ff8",
+      "kind": "record",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0281?ys=2013RS",
+      "date": "2013-04-04",
+      "date_precision": "day",
+      "instrument_id": "MD-SB-281-2013",
+      "act": "yea",
+      "motion": "On third reading (concurrence in House amendments)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MD Senate, On third reading (concurrence in House amendments), 2013-04-04: yea (tally 28–19); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns",
+        "10-round magazine limit",
+        "licence to buy a handgun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "D, F (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": []
+}

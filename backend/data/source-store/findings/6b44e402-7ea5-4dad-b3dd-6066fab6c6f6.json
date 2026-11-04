@@ -1,0 +1,31 @@
+{
+  "politician_id": "6b44e402-7ea5-4dad-b3dd-6066fab6c6f6",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "carry permits",
+        "general gun-safety and Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status: 2026 candidate for U.S. Senate in West Virginia who won the May 12, 2026 primary and is on the November ballot (not a sitting member of Congress as the brief says); confirmed by https://www.newsfromthestates.com/article/capito-secures-gop-nomination-us-senate-wv-will-face-fetty-anderson-november-general (search result only, not fetched)",
+        "campaign site https://www.fettyandersonforsenate.com: home, issues, platform (nothing on the subject); /priorities returned 404",
+        "The Ballot Brief candidate page https://theballotbrief.com/candidate/rachel-fetty-anderson-wv (nothing on the subject)",
+        "blocked: https://westvirginiawatch.com/2026/05/12/capito-easily-secures-gop-nomination-for-u-s-senate-seat-tuesday-shortly-after-polls-close-in-wv/ (403)",
+        "blocked: https://www.newsfromthestates.com/node/434378 (403)",
+        "not reviewed: https://www.wvmetronewstv.com/2026-west-virginia-u-s-senate-candidate-interviews-metronews-talkline/videos/rachelfa (404 on fetch)",
+        "no congressional record, so no congress.gov sponsorship list applies; Ballotpedia not fetched (returns empty)",
+        "web search x4 (guns and Second Amendment; background checks and gun violence; debate/questionnaire/interview firearms): nothing from her own words on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-30T22:46:44.449Z",
+      "by": "source-collector"
+    }
+  ]
+}

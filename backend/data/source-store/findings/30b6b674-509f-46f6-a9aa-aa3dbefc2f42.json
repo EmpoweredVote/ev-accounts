@@ -24,6 +24,37 @@
         "fetched_at": "2026-10-22T23:07:28.967Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "c5523d50a631897031188db98ea5d927074d7126174a492b6b9e8d21f240f855",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4517",
+      "date": "2018-05-23",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4517-2017",
+      "act": "yea",
+      "motion": "House On Engrossment Yea and Nay No. 359",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MA House, House On Engrossment Yea and Nay No. 359, 2018-05-23: yea (tally 139–14); census gate: near-unanimous.",
+      "subjects": [
+        "court orders to remove guns from people at risk of harming self or others",
+        "emergency orders without notice",
+        "penalty for false petitions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4517-2017.introduced.pdf",
+          "sha256": "3bac8bca02408059e2c0db49bae39de8a690f0fb6e1b5469f7a23cf51fbd5cc4"
+        }
+      }
     }
   ],
   "searches": [
@@ -74,6 +105,31 @@
       "found": 0,
       "at": "2026-10-27T18:44:26.483Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carrying guns and permits",
+        "gun rights general statement"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "web searches (several, standard mode) on name plus gun words: no own words found",
+        "Wikipedia page https://en.wikipedia.org/wiki/Diana_DiZoglio (identity confirmed: current State Auditor; nothing on the subject)",
+        "campaign site https://www.dianaforma.com/ (no gun content in visible text; page truncated; questionnaires page blocked: https://www.dianaforma.com/questionnaires returned 404)",
+        "state auditor office: statewide office with no gun-bill role; nothing found on the subject",
+        "her 2018 yea vote is already on file",
+        "plain curl of https://en.wikipedia.org/wiki/Diana_DiZoglio and https://www.dianaforma.com/: no gun words in the readable page text"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:37:48.631Z",
+      "by": "source-collector"
     }
   ]
 }

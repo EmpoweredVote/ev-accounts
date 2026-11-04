@@ -1,0 +1,149 @@
+{
+ "id": "MA-H-2402-2011",
+ "scope": "state:ma",
+ "title": "H2402 (187th General Court): An Act relative to the lawful use of shotguns",
+ "urls": [
+  "https://malegislature.gov/Bills/187/H2402",
+  "https://malegislature.gov/Bills/187/H2402/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Kate Hogan",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "e96eddbe-4a4a-4499-8102-636f0cfac10e"
+  },
+  {
+   "name": "Carolyn C. Dykema",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Todd M. Smola",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "aca1e324-cc09-4492-a2f7-d795beb752ff"
+  },
+  {
+   "name": "Marc T. Lombardo",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "e2c3e1a7-78b2-4c90-a136-c0a22c3f3e48"
+  },
+  {
+   "name": "Randy Hunt",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Donald F. Humason, Jr.",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Cory Atkins",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Shaunna O'Connell",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Angelo J. Puppolo, Jr.",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "9b3772d3-3602-457a-82e7-479b5e557b13"
+  },
+  {
+   "name": "Cleon H. Turner",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Elizabeth A. Poirier",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Kimberly N. Ferguson",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "62aee074-7ed1-45e8-94fc-3b5b5007f85d"
+  },
+  {
+   "name": "Bradford Hill",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Paul K. Frost",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "799c1cea-4020-4c50-b7d1-1e9aac867529"
+  },
+  {
+   "name": "Jennifer E. Benson",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Anne M. Gobi",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Viriato Manuel deMacedo",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "George T. Ross",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Geraldo Alicea",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Bruce E. Tarr",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "b1bd9a21-a37e-49f4-907b-9fba480a1ca2"
+  },
+  {
+   "name": "Christine E. Canavan",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "George N. Peterson, Jr.",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-H-2402-2011.html",
+   "sha256": "487765bdb842855c53f4ac8ba883b4fad880645de29b801d864873791e229445"
+  }
+ },
+ "operative_text": "Section 1. Section 66 of Chapter 131 is hereby amended by deleting it in its entirety and replacing it with the following:\nSection 66: Except during the prescribed open season when deer or bear may be hunted lawfully with a shotgun, a person shall not have in his possession a shotgun shell loaded with a rifled slug, single ball, buckshot of any size, in any place where birds or mammals might be found. The director may promulgate rules and regulations regarding shotgun ammunition to be utilized while engaged in hunting.\nNotwithstanding any special law or regulation to the contrary this section shall not apply to the use of shotguns of shotgun ammunition on a skeet, trap or other firing ranges."
+}

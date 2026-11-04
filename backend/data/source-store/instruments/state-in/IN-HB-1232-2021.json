@@ -1,0 +1,53 @@
+{
+ "id": "IN-HB-1232-2021",
+ "scope": "state:in",
+ "title": "HB1232 (2021 Regular Session): Right to carry a handgun.",
+ "urls": [
+  "https://iga.in.gov/legislative/2021/bills/house/1232",
+  "https://api.iga.in.gov/2021/bills/HB1232/versions/HB1232.01.INTR?format=pdf"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "J.D. Prescott",
+   "role": "author",
+   "version": "official IGA API bill record",
+   "politician_id": "a2bb7489-51a4-4498-be87-ef040eae4ccf"
+  },
+  {
+   "name": "Peggy Mayfield",
+   "role": "co",
+   "version": "official IGA API bill record"
+  },
+  {
+   "name": "Jerry Torr",
+   "role": "co",
+   "version": "official IGA API bill record"
+  },
+  {
+   "name": "Chris May",
+   "role": "co",
+   "version": "official IGA API bill record"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 Session B (2026-11-03, runner: add HB 1232 text for Prescott); official Indiana General Assembly API (api.iga.in.gov, IGA_API_KEY), introduced version HB1232.01.INTR; text identical to the LegiScan getBillText copy",
+  "fetched_at": "2026-11-03T21:19:50Z",
+  "method": "api",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/IN-HB-1232-2021.introduced.iga.pdf",
+   "sha256": "d8c86781ee628f57f70f6ac4d41a13380ad8432f8ee216d2e2545ba510c9ae97"
+  }
+ },
+ "operative_text": "Synopsis (official digest): Right to carry a handgun. Repeals the law that requires a person to obtain a license to carry a handgun in Indiana. Specifies that certain persons who are not otherwise prohibited from carrying or possessing a handgun are not required to obtain or possess a license or permit from the state to carry a handgun in Indiana. Prohibits certain individuals from knowingly or intentionally carrying a handgun. Creates the crime of \"unlawful carrying of a handgun\".\nSECTION 16. IC 35-47-2-2 IS REPEALED [EFFECTIVE JULY 1, 2021].\nSECTION 17. IC 35-47-2-2.1 IS REPEALED [EFFECTIVE JULY 1, 2021].\nSECTION 18 (IC 35-47-2-3(a), new text; the extracted copy runs the struck words \"desiring a license to carry\" and \"shall apply:\" into it): A person ... who is not otherwise prohibited from carrying or possessing a handgun under state or federal law is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana. A resident of this state who wishes to carry a firearm in another state under a reciprocity agreement entered into by this state and another state may obtain an Indiana reciprocity license ..."
+}

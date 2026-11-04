@@ -1,0 +1,24 @@
+{
+  "politician_id": "02fac946-eadc-4b38-840e-a15825a82e19",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "scope check only"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary",
+        "status: lost the 2026-08-18 primary (FL-16); the news results page https://baynews9.com/fl/tampa/news/2026/08/19/cd-16-primary-results says the winner 'defeated Eddie Speir and Ed Pope'",
+        "https://watch.vote/midterms/2026/races/fl-house-16 lists the confirmed general-election nominees for FL-16 and he is not one of them",
+        "positive control: The Ballot Brief and St. Pete Catalyst candidate profiles name him as a 2026 FL-16 candidate (found by search, not fetched)",
+        "On the Record (0 meetings)",
+        "stopped there: not in scope after the primary, so no gun-policy search was run (instructions for candidates who lost a primary)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:07:16.515Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -42,6 +42,30 @@
       "found": 0,
       "at": "2026-10-27T01:21:20.835Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns",
+        "background checks",
+        "red flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check (appointed executive official, not a legislator)",
+        "web search: name plus gun and Second Amendment words, nothing on the subject",
+        "Ballotpedia: not reliable through fetch tool",
+        "https://www.in.gov/iurc/about-us/commission-chairman-and-commissioners/david-ziegner (shows he is an Indiana Utility Regulatory Commissioner appointed 1990; no gun mention; not a legislator)",
+        "official IURC page has no issue statements; no campaign site (not a candidate)"
+      ],
+      "found": 0,
+      "at": "2026-10-31T20:37:46.295Z",
+      "by": "source-collector"
     }
   ]
 }

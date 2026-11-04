@@ -1,0 +1,56 @@
+{
+  "politician_id": "21bfde97-c8f4-4301-a213-8bf2909a4bc3",
+  "findings": [
+    {
+      "id": "be1e80c531efed991c502411c0134b81a2ee6405816ba5558a1aa1d8ba9ffa3d",
+      "kind": "own-words",
+      "url": "https://www.pbs.org/video/us-district-4-tuzxqs/",
+      "date": "2026-10",
+      "date_precision": "month",
+      "passage": "I have no intention of coming after anybody's guns.",
+      "note": "From the transcript of the Arkansas PBS general-election debate for U.S. House District 4 (video page posted 2026-10-14), said in reply to a question about private property.",
+      "subjects": [
+        "general statement on gun rights",
+        "no plan to take guns from owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T19:41:35.687Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun control",
+        "gun rights and the Second Amendment",
+        "restrictions on gun ownership"
+      ],
+      "places": [
+        "identity and ballot confirmed: https://ivoterguide.com/candidate/72926/race/29801/election/1446 lists James \"Rus\" Russell III, Arkansas U.S. House District 4, general election November 3, 2026 (his questionnaire answer on gun restrictions there reads 'Did not answer')",
+        "On the Record (0 appearances)",
+        "campaign site russellforar.com (home, about-james, on-the-issues): nothing on the subject",
+        "Arkansas PBS debate page with transcript (fetched, one passage saved)",
+        "https://www.ualrpublicradio.org/local-regional-news/2025-08-04/former-democratic-candidate-for-arkansas-governor-will-challenge-u-s-rep-hill-in-2026 reviewed: nothing on the subject",
+        "KATV/FOX16 candidate listing reviewed: nothing on the subject",
+        "blocked: https://arkansasadvocate.com/2025/08/27/james-russell-iii-of-little-rock-joins-democratic-primary-effort-to-unseat-u-s-sen-cotton-in-2026/ (403)",
+        "blocked: https://www.newsfromthestates.com/article/arkansas-us-house-primary-challengers-focus-education-health-care-cost-living (403)",
+        "blocked: https://www.newsfromthestates.com/node/432337 (403)",
+        "blocked: https://digital-release.nwahomepage.com/news/former-governor-candidate-james-russell-launches-campaign-to-unseat-sen-cotton/amp/ (429)",
+        "blocked: https://bluevoterguide.org/AR/candidate_James_Russell/337690?lang=es (403)",
+        "Ballotpedia not reviewed (returns empty to fetch tool)",
+        "not a legislator: no sponsored-bill list applies",
+        "4 web searches used"
+      ],
+      "found": 1,
+      "at": "2026-10-30T19:41:35.687Z",
+      "by": "source-collector"
+    }
+  ]
+}

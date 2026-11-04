@@ -49,6 +49,32 @@
       "found": 0,
       "at": "2026-10-27T01:13:07.704Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red flag orders",
+        "ghost guns",
+        "carry permits",
+        "general gun safety statements",
+        "2024 gun law and 2026 repeal question"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "in scope: House member page on malegislature.gov names him for the 8th Plymouth district; a news search shows him on the 2026 general-election ballot",
+        "sponsor list: covered by LegiScan bulk check",
+        "official House profile page on malegislature.gov: nothing on the subject",
+        "campaign site gallagherforrep.com (home, meet, accomplishments pages): nothing on the subject",
+        "Ballotpedia: not reviewed, pages come back empty",
+        "news searches on his name plus gun words and the 2026 repeal question (3 searches): no statement from him found",
+        "blocked: https://www.tauntongazette.com/story/news/local/2024/11/01/bridgewater-raynham-state-representative-democrat-dennis-gallagher-republican-sandy-wright/75847460007/ (HTTP 402)"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:53:12.886Z",
+      "by": "source-collector"
     }
   ]
 }

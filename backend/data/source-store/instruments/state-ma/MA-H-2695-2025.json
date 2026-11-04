@@ -1,0 +1,38 @@
+{
+ "id": "MA-H-2695-2025",
+ "scope": "state:ma",
+ "title": "H2695 (194th General Court): An Act relative to creating a voluntary do-not-sell list",
+ "urls": [
+  "https://malegislature.gov/Bills/194/H2695",
+  "https://malegislature.gov/Bills/194/H2695/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Lindsay N. Sabadosa",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "853f0b26-a2b5-48b6-8dd6-f40ca48c87fd"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-H-2695-2025.html",
+   "sha256": "cbc7077f867531d4103566330a730135e3ed6dd32650d664e5ffabe0846ff192"
+  }
+ },
+ "operative_text": "SECTION 1. Section 129B of chapter 140 of the General Laws, as appearing in the 2022 Official Edition, is hereby amended by striking out, in lines 100 and 101, the words “or (xi)” and inserting in place thereof the following words:-\n(xi) is registered in the voluntary do-not-sell firearms list established in section 131Z; or (xii).\nSECTION 2. Section 131 of said chapter 140, as so appearing, is hereby amended by striking out, in lines 136 and 137, the words “or (x)” and inserting in place thereof the following words:- (x) is registered in the voluntary do-not-sell firearms list established in section 131Z; or (xi).\nSECTION 3. Said Chapter 140 is hereby further amended by inserting after section 131Y the following section:-\nSection 131Z. (a) The department of criminal justice information services shall establish a voluntary do-not-sell firearms list. Any person who voluntarily registers their name to the list shall be prohibited from the purchase, rental, lease, borrowing, possession and carrying of firearms. The department shall maintain and update the list, which shall be accessible only to licensing authorities as defined in section 121 and the colonel of state police. The department shall promulgate rules and regulations as necessary to implement this section.\n(b) The department, the colonel of state police and licensing authorities, as defined in section 121, shall not disclose any information regarding a request to register or deregister with the list or any other personal identifying information contained in or related to the list; provided, however, that such information may be disclosed to a law enforcement officer, as defined in section 1 of chapter 6E, acting in the performance of the officer’s official duties or the applicant with respect to the applicant’s own information. A request to register or deregister with the list and any other personal identifying information contained in or related to the list shall not be considered: (i) by a court in any legal proceeding; (ii) as a condition of receiving employment, benefits or other services; or (iii) a public record under clause Twenty-sixth of section 7 of chapter 4 or chapter 66.\n(c) A person 18 years of age or older may voluntarily apply in writing to the department to request registration with the list and, upon registration, may thereafter apply in writing to the department to request to be deregistered with the list. The department shall prescribe forms to receive and process applications for registration and deregistration with the list. Such forms shall state that any person registered with the list shall not be deregistered until 21 days after receiving an application for deregistration. The commissioner of criminal justice information services shall make the forms available on the department website and the colonel of state police shall make the forms available on the department of state police website.\n(d) Any person requesting registration or deregistration with the list shall submit a photocopy of: (i) a motor vehicle license issued pursuant to section 8 of chapter 90; (ii) an identification card issued under section 8E of said chapter 90; (iii) a valid passport issued by the United States government; or (iv) a valid United States-issued military identification card to accompany the registration and deregistration form. The request for registration or deregistration with the list may be submitted to the department of criminal justice information services by mail or in person at any department of state police office location.\n(e) Upon a person’s registration with the list, the department of criminal justice information services shall confirm the registration with the applicant and submit a notification of such registration to the attorney general of the United States to be included in the National Instant Criminal Background Check System.\n(f) The department shall not deregister any person from the list until 21 days after receipt of the person's deregistration application. Upon deregistration, the department shall: (i) submit a notification indicating the person’s deregistration with the list to the attorney general of the United States to be included in the National Instant Criminal Background Check System; and (ii) destroy all records of registration and deregistration and any other personal identifying information contained in or related to the list attributable to the person.\n(g) The department shall engage in a public awareness campaign to raise awareness about the ability of individuals to register with the list."
+}

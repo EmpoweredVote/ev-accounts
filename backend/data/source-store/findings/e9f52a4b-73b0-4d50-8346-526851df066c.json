@@ -1,0 +1,34 @@
+{
+  "politician_id": "e9f52a4b-73b0-4d50-8346-526851df066c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment and gun rights in general",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "ban on assault-style guns",
+        "limits on who may have a gun"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "in scope: listed for the 2026 general election, North Carolina U.S. House District 1 (https://ivoterguide.com/candidate/42274/race/30751/election/1457 and https://www.ballotready.org/people/tom-bailey)",
+        "no campaign website: https://theballotbrief.com/candidate/tom-bailey-nc says none was found as of 2026-09-08",
+        "state party candidate list https://www.lpnc.org/tags/2026_candidates: lists him with a Facebook page link only, nothing on the subject",
+        "campaign Facebook page https://www.facebook.com/tombaileyforushouse/: fetch returned only a title, nothing on the subject",
+        "voter guide questionnaire (ivoterguide): Second Amendment question shown as 'Did not answer'",
+        "guides.vote NC-01 voters guide: gun section covers only the other two candidates, nothing on him",
+        "BallotReady profile: nothing on the subject",
+        "blocked: https://ncnewsline.com/voter-guides/contests/2026-general-u-s-house-1st-congressional-district/",
+        "Ballotpedia: page came back empty to the fetch tool, not reviewed",
+        "not a sitting legislator: no sponsored-bill list to open",
+        "one news search on name plus guns: nothing from him on the subject; one article found was about a different person named Bailey and was not used"
+      ],
+      "found": 0,
+      "at": "2026-10-31T00:49:12.981Z",
+      "by": "source-collector"
+    }
+  ]
+}

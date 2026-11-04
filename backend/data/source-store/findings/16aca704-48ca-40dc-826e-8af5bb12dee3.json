@@ -1,6 +1,28 @@
 {
   "politician_id": "16aca704-48ca-40dc-826e-8af5bb12dee3",
-  "findings": [],
+  "findings": [
+    {
+      "id": "5a02c45b3c67822b7f432233139bd545585a5a6135a068ecbc08f68a11ae3544",
+      "kind": "own-words",
+      "url": "https://www.ballotready.org/people/james-raymond-duffie",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Jim will defend constitutional rights, including the Second Amendment.",
+      "note": "Guns issue-stance text on the candidate's BallotReady profile, written in the third person, which links to his campaign site issues page. Whether the campaign supplied it is not stated on the page. The page is undated.",
+      "subjects": [
+        "general statement on gun rights",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:20:07.529Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -46,6 +68,30 @@
       "found": 0,
       "at": "2026-10-27T01:14:14.574Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "firearm regulations",
+        "general statement on gun rights"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "identity: pages name James Raymond (Jim) Duffie, 2026 candidate for Georgia U.S. House District 4 (voter-guide page, https://www.branch.vote/races/2026-georgia-general-election-ga-state-us-representative-ga-4/candidates/james-raymond-duffie); the database spells the name 'Duffe', so the match is by name and race and should be confirmed",
+        "BallotReady candidate page (issue stance on guns): one sentence saved",
+        "campaign site https://jimduffie.com: opens but renders with scripts only; no text readable, so not reviewed: https://jimduffie.com/issues",
+        "a voter-guide page (Branch) summarises the campaign as 'Opposes firearm regulations' with no source attached; not saved because it is the site's summary, not his words",
+        "a second voter-guide page (The Ballot Brief) summarises the campaign as 'Supports Second Amendment and religious liberty protections'; not saved because it is the site's summary",
+        "a prediction-site profile: says no specific gun position is spelled out",
+        "blocked: https://ballotpedia.org/James_Duffe (403, from earlier attempt); Ballotpedia otherwise not reviewed",
+        "Congress: not a sitting member, so no bill record",
+        "web search x2 (candidate identity; gun position and forums): no forum or interview found"
+      ],
+      "found": 1,
+      "at": "2026-10-30T15:20:07.529Z",
+      "by": "source-collector"
     }
   ]
 }

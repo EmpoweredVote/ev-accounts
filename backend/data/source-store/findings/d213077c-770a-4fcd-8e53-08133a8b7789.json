@@ -64,6 +64,26 @@
         "fetched_at": "2026-10-27T22:07:24.274Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "c677cf00db528fc909f3f65c8481beb5d6a304a85b3300334ceedc8a417eafc6",
+      "kind": "own-words",
+      "url": "https://www.ipm.org/news/2026-08-26/secretary-of-state-candidate-beau-bayh-addresses-bloomington-press-club",
+      "date": "2026-08-26",
+      "date_precision": "day",
+      "passage": "We have a Second Amendment in this country, and it's not owned by any political party. And I think sometimes folks think it is, but it's not.",
+      "note": "General statement about the Second Amendment at a Bloomington press club event, quoted by Indiana Public Media.",
+      "subjects": [
+        "general statement on the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:37:02.694Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -114,6 +134,27 @@
       "found": 1,
       "at": "2026-10-27T22:07:24.274Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "general gun rights statements",
+        "bans on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.beaubayh.com (nothing on the subject; office sought is secretary of state)",
+        "public radio report of a press club talk, 2026-08-26 (one statement saved)",
+        "sponsor list: not applicable, not a legislator",
+        "Ballotpedia: page came back empty",
+        "two news searches on name plus gun words: only the one statement; results about his father were not used"
+      ],
+      "found": 1,
+      "at": "2026-10-31T20:37:02.694Z",
+      "by": "source-collector"
     }
   ]
 }

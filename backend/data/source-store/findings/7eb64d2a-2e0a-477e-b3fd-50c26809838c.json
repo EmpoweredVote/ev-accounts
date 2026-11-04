@@ -46,6 +46,30 @@
       "found": 0,
       "at": "2026-10-27T14:26:51.442Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "background checks",
+        "red flag orders",
+        "carry permits",
+        "Second Amendment",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status check: lost the 2026-05-05 primary for Indiana House District 29, then accepted the nomination for State Treasurer at the 2026-06-06 convention, so still on the November ballot: https://indianacapitalchronicle.com/2026/05/27/indiana-dems-announce-treasurer-comptroller-candidates/ (found by search, not fetched)",
+        "campaign site https://kebeforindiana.com and /priorities: nothing on the subject",
+        "candidate Q&A https://youarecurrent.com/2026/03/17/qa-meet-the-democratic-candidates-running-for-indiana-house-district-29/: nothing on the subject",
+        "treasurer profile PDF at stateside.com: could not be read (compressed), not reviewed",
+        "Ballotpedia not reachable by fetch tool; news search on name plus gun words found nothing",
+        "not a past legislator, so no sponsor list"
+      ],
+      "found": 0,
+      "at": "2026-10-31T20:37:17.940Z",
+      "by": "source-collector"
     }
   ]
 }

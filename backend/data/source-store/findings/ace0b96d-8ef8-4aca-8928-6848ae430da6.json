@@ -1,0 +1,53 @@
+{
+  "politician_id": "ace0b96d-8ef8-4aca-8928-6848ae430da6",
+  "findings": [
+    {
+      "id": "c6466b3399091c80b3c1f5981387ccae35e1b5efb58a586b7fedef757c6f63b2",
+      "kind": "own-words",
+      "url": "https://www.michiganpublic.org/politics-government/2024-10-14/rogers-slotkin-face-off-in-final-debate-before-election",
+      "date": "2024-10-14",
+      "date_precision": "day",
+      "passage": "“We need to enforce the gun laws that we have. We also need to deal with mental health issues that are happening in our schools,” he said.",
+      "note": "Quoted by Michigan Public from the final 2024 Senate debate, answering a question on gun control. The outlet also reports he does not want new gun laws and supports better enforcement of existing ones.",
+      "subjects": [
+        "enforce existing gun laws instead of new ones",
+        "mental health as a response to gun harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T14:59:41.460Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "new gun laws versus enforcing existing ones",
+        "Second Amendment",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "CBS Detroit page confirms a 2026 run for the Michigan U.S. Senate seat (he is a former House member from Michigan; ballot status for the general election not separately confirmed)",
+        "campaign site: mikerogersformichigan.com only redirected to an empty lander page; mikerogersforsenate.com returned an unrelated page; nothing on the subject",
+        "blocked: https://ballotpedia.org/Mike_Rogers_(Michigan)",
+        "blocked: https://www.congress.gov/member/mike-rogers/R000572",
+        "blocked: https://justfacts.votesmart.org/candidate/public-statements/5705/mike-rogers/37/guns",
+        "web news search on name plus gun words (2 searches); 2024 debate coverage used",
+        "no bill sponsorships on the subject reachable (congress.gov blocked)"
+      ],
+      "found": 1,
+      "at": "2026-10-30T14:59:41.460Z",
+      "by": "source-collector"
+    }
+  ]
+}

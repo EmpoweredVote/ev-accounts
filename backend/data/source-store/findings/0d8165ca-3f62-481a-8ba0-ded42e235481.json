@@ -1,0 +1,31 @@
+{
+  "politician_id": "0d8165ca-3f62-481a-8ba0-ded42e235481",
+  "findings": [
+    {
+      "id": "802f2253d32951ab8cd5eb50291c7e551016653df861e4eb9739d3bf696af726",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/sess125_2023-2024/bills/3594.htm",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3594-2024",
+      "act": "nay",
+      "motion": "Adopt conference report",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SC House, Adopt conference report, 2024-03-05: nay (tally 86–33); census gate: none.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "B (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": []
+}

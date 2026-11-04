@@ -164,6 +164,143 @@
         "fetched_at": "2026-10-28T17:58:27.794Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "c8eceae2402fb2bddb87244182c25b6b73c6c7e7f76abd69a12bf7b1dd58e221",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+SB70",
+      "date": "2020-03-07",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-70-2020",
+      "act": "yea",
+      "motion": "Conference report agreed to by Senate",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, Conference report agreed to by Senate, 2020-03-07: yea (tally 23–17); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/VA-SB70-CHAP1112.pdf",
+          "sha256": "e84c10123a1b7e6e6baafd75f7af2a51d02a6e3324ba7076d92397d6e85b8458"
+        }
+      }
+    },
+    {
+      "id": "16ba0bcfddc03492a22df84bd5ed4deabf224479111322d537126dcc576455a9",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB0002",
+      "date": "2020-03-07",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-2-2020",
+      "act": "yea",
+      "motion": "Conference report agreed to by Senate",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, Conference report agreed to by Senate, 2020-03-07: yea (tally 23–16); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/va_hb2_2020_ch1111.html",
+          "sha256": "2677881b400709b8e0c4e144c8d6b60dd2f535e497141f572eda2dea8df87ff1"
+        }
+      }
+    },
+    {
+      "id": "99f341266801aa3ebc58ac29ee2df795a7bea002a640eec3e4eb62dc4f143e65",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB0002",
+      "date": "2024-02-28",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-2-2024",
+      "act": "yea",
+      "motion": "Passed Senate with substitute",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, Passed Senate with substitute, 2024-02-28: yea (tally 20–19); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/VA-HB2-2024-ER.pdf",
+          "sha256": "be2c4a82097d208f802bc88c1aa08097489565a6746bfd36f1a1f755a683cd50"
+        }
+      }
+    },
+    {
+      "id": "d63a4d995411ec6fb5cfa8699e3f43daf7a571a0e48f75c4efa50b5809d01db8",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB0002",
+      "date": "2024-03-01",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-2-2024",
+      "act": "yea",
+      "motion": "House substitute agreed to by Senate",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "VA Senate, House substitute agreed to by Senate, 2024-03-01: yea (tally 21–19); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/va_sb2_2024_enrolled.html",
+          "sha256": "fbb47c123b27eae84175225b3f36034532cd7be496f4a56cb8ff2c6f3c7bbe41"
+        }
+      }
+    },
+    {
+      "id": "5739b5cfd3f4cb9e85451e68bfd5ff519b8f44fbbd1578ea35fcb795d244a973",
+      "kind": "own-words",
+      "url": "https://momsdemandaction.org/a-moms-demand-action-rally-at-virginia-state-capitol-to-reduce-gun-violence/",
+      "date": "2013-02-24",
+      "date_precision": "day",
+      "passage": "“What this country has a problem with is our obsession with guns,” said Senator Dave Marsden. “We are absolutely obsessed with these metal objects.”",
+      "note": "Direct quote of him at a gun-safety group's rally at the Virginia capitol. The date is the page's posting date (February 24, 2013); the rally may be a day earlier. The group's page also says he was pushing to close the gun show loophole (the group's words, not his).",
+      "subjects": [
+        "general gun safety statement",
+        "gun show sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:36:34.545Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -213,6 +350,33 @@
       "found": 3,
       "at": "2026-10-28T17:58:27.794Z",
       "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "gun show sales",
+        "storing guns in unattended vehicles",
+        "extreme risk (red flag) orders",
+        "accountability for gun owners whose guns are used in crimes",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "local news report of a December 2012 town hall (his plans are described by the reporter, not quoted; not saved)",
+        "a gun-safety group's page of a February 2013 rally at the state capitol (carries a direct quote of his)",
+        "a gun-safety group's endorsement page (words of the group, not his; not saved)",
+        "web search on name plus gun words (three searches)",
+        "Ballotpedia: not relied on (returns empty to the fetch tool)",
+        "senator's own site: not found by search; no personal or campaign gun page reviewed",
+        "blocked: https://virginiamercury.com/2024/01/25/va-senate-passes-bill-creating-500-fine-for-leaving-handguns-visible-in-vehicles/ (HTTP 403)",
+        "blocked: https://virginiamercury.com/2026/01/27/virginia-senate-panel-advances-gun-safety-bills-once-vetoed-by-youngkin/ (HTTP 403)"
+      ],
+      "found": 1,
+      "at": "2026-10-30T23:36:34.545Z",
+      "by": "source-collector"
     }
   ]
 }

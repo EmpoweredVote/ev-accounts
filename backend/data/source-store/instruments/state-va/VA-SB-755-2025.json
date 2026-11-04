@@ -1,0 +1,38 @@
+{
+  "id": "VA-SB-755-2025",
+  "scope": "state:va",
+  "title": "SB755 (2025 Regular Session): School safety; employment of school security officers, criteria.",
+  "urls": [
+    "https://lis.virginia.gov/bill-details/20251/SB755",
+    "https://lis.virginia.gov/bill-details/20251/SB755/text/SB755"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 1 (amending Code 22.1-280.2:1): Such school security officer may carry a firearm in the performance of his duties if (i) [-within-] [-10-] [-years-] [-immediately-] [-prior-] [-to-] [-being-]{+ he is+}{+ age+}{+ 75 or younger at the time he is+} hired by the local school board or private or religious school{+; (ii)+} he (a) was an active law-enforcement officer as defined in § 9.1-101 in the Commonwealth or (b) was employed by a law-enforcement agency of the United States or any state or political subdivision thereof and his duties were substantially similar to those of a law-enforcement officer as defined in § 9.1-101;",
+  "sponsors": [
+    {
+      "name": "Tammy Brankley Mulchi",
+      "politician_id": "dcb3db81-0b8c-46ea-acdb-1d83d5c82c72",
+      "role": "patron",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-SB-755-2025.introduced.html",
+      "sha256": "a8d8c05a68728007203d89c20fe34540232b6b15f41d15005ee5544f785ee5d9"
+    }
+  }
+}

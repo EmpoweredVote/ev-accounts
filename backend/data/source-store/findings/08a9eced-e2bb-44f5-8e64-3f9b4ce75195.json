@@ -1,0 +1,36 @@
+{
+  "politician_id": "08a9eced-e2bb-44f5-8e64-3f9b4ce75195",
+  "findings": [
+    {
+      "id": "326bdbefa5d0e1f6f56cfdf4659eeb73c631bcb9dae4a8c10c34423987feaf40",
+      "kind": "record",
+      "url": "https://house.mo.gov/BillContent.aspx?bill=SB656&year=2016&code=R&style=new",
+      "date": "2016-09-14",
+      "date_precision": "day",
+      "instrument_id": "MO-SB-656-2016",
+      "act": "yea",
+      "motion": "Veto override: that CCS HCS SB 656 be passed, the objections of the Governor thereto notwithstanding (Roll Call 73.018)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Veto override: that CCS HCS SB 656 be passed, the objections of the Governor thereto notwithstanding (Roll Call 73.018), 2016-09-14: yea (tally 112–41); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a permit",
+        "self-defence (stand your ground)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/MO_SB656_tat.pdf",
+          "sha256": "541d477ef09b83d6555700233abc760ce80a58d9602aff90b0ac2befb0f6afdd"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

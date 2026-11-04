@@ -1,0 +1,91 @@
+{
+  "id": "TX-HB-347-2021",
+  "scope": "state:tx",
+  "title": "HB347 (87th Legislature Regular Session): Relating to a false statement made to illegally acquire a firearm; creating a criminal offense.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB347",
+    "https://capitol.texas.gov/tlodocs/87R/billtext/html/HB00347I.htm",
+    "https://capitol.texas.gov/tlodocs/87R/billtext/html/HB00347H.htm"
+  ],
+  "version": "other",
+  "operative_text": "Sec. 1 (amending Penal Code 46.06(a)): (6) knowingly purchases, rents, leases, or receives as a loan or gift from another a handgun while an active protective order is directed to the actor{+; or+} {+(7)+}{+ +}{+ +}{+while prohibited from possessing a firearm under +} {+state or federal law, knowingly makes a material false statement on +} {+a form that is:+} {+(A)+}{+ +}{+ +}{+required by state or federal law for the +} {+purchase, sale, or other transfer of a firearm; and+} {+(B)+}{+ +}{+ +}{+submitted to a licensed firearms dealer, as +} {+defined by 18 U.S.C. Section 923+}.\nSec. 1 (amending Penal Code 46.06(d)): (d) An offense under this section is a Class A misdemeanor, except that{+:+} {+(1)+} an offense under Subsection (a)(2) is a state jail felony if the weapon that is the subject of the offense is a handgun{+; and+} {+(2)+}{+ +}{+ +}{+an offense under Subsection (a)(7) is a state jail +} {+felony+}.",
+  "sponsors": [
+    {
+      "name": "Charlie Geren",
+      "politician_id": "01d02684-5189-4b52-9d38-e7827b4d6b42",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Nicole Collier",
+      "politician_id": "41e2f865-d56b-4999-9232-57473dea13ee",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Joseph Moody",
+      "politician_id": "819c3c06-c958-4e98-bc60-da91e3fb5c24",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Mary Gonzalez",
+      "politician_id": "619ad301-d993-40b3-94fe-0eb956932dae",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Brooks Landgraf",
+      "politician_id": "90d94c32-12a1-433a-8ab4-418cd2f05c01",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Jasmine Crockett",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Lina Ortega",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Tan Parker",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "540628fb-afea-4803-ab8e-abea3d4e603c"
+    },
+    {
+      "name": "Mary Perez",
+      "politician_id": "50d759c2-05cc-4769-a1d9-69b282745d0d",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Erin Zwiener",
+      "politician_id": "17648ed7-5a6a-4ac1-b49e-0d3eaf08417e",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-347-2021.comm-sub.html",
+      "sha256": "3aa4e8727c13639072c2006ec36f775068af3be521b861dc564781bf575c0af9"
+    }
+  }
+}

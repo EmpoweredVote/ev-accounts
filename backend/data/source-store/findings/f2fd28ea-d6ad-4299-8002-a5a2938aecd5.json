@@ -1,0 +1,78 @@
+{
+  "politician_id": "f2fd28ea-d6ad-4299-8002-a5a2938aecd5",
+  "findings": [
+    {
+      "id": "8544a126c9d43dbf2eba870ba49d45696222c6bc864b41f2ae230ddb086f32d6",
+      "kind": "own-words",
+      "url": "https://patrickgillespie4congress33.com/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I believe that we need better focus on mental health because anything in the hands of a person with mental health issues could be used as a weapon. Red flag laws are proving not to be a deterrent to gun violence. I would advocate those laws on the books be enforced. I will not propose the abolition of the 2nd Amendment. Gang violence must be addressed, and gang members must have prison sentences that have no parole.",
+      "note": "His answer to the campaign-page question 'What Steps, if Any, Do You Propose Congress Take to Curb Gun Violence in Our Communities?'. Page is undated (mentions early voting from 17 Feb 2026, so a 2026 primary-season page).",
+      "subjects": [
+        "red flag orders",
+        "mental health and gun violence",
+        "general statement on the Second Amendment",
+        "tougher sentences for gang violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:06:55.234Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "babb53c33553128152655519d407b7f180566a0c07709ac398b17bfe305b6a29",
+      "kind": "own-words",
+      "url": "https://patrickgillespie4congress33.com/my-platform-en-espanol",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Derecho inalienable de toda persona en defenderse a sí mismos y a sus bienes. Preservar la segunda enmienda de la Consitución.",
+      "note": "Spanish-language platform list on his campaign site; says everyone has an inalienable right to defend themselves and their property, and to preserve the Second Amendment. Page undated (mentions Texas early voting in Feb 2026).",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment",
+        "self-defense"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:06:55.234Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "curb gun violence",
+        "red flag orders",
+        "Second Amendment",
+        "check every gun buyer",
+        "carry a gun without a permit"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site home page (candidate questionnaire answers)",
+        "campaign site about page (nothing on the subject)",
+        "campaign site blog (nothing on the subject)",
+        "campaign site Spanish-language platform page",
+        "The Ballot Brief profile and Branch general-election race page (confirm he is a TX-33 candidate in the 2026 general; Branch page text: 'Patrick David Gillespie is running for Texas U.S. Representative, District 33.')",
+        "blocked: https://ballotpedia.org (403 to the page tool for other names; not fetched for him)",
+        "blocked: https://integration-votes.decisiondeskhq.com/races/2026-11-03/texas-us-house-33-general-election/forecast (429)",
+        "not reviewed: Vietnamese-language platform page",
+        "congress.gov: not applicable, not a sitting legislator",
+        "web search (name plus 2026 Congress Texas)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T15:06:55.234Z",
+      "by": "source-collector"
+    }
+  ]
+}

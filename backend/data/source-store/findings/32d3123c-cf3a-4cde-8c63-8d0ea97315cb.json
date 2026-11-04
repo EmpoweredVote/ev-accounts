@@ -1,0 +1,34 @@
+{
+  "politician_id": "32d3123c-cf3a-4cde-8c63-8d0ea97315cb",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "red flag / extreme-risk orders",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "general Second Amendment / gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope confirmed: https://www.wtvm.com/2026/08/21/democratic-congressional-nominee-holds-town-hall-opelika/ names him as nominee for Alabama's Third District; https://www.auburnvillager.com/news/mcinnis-announces-run-to-represent-alabamas-3rd-congressional-district/article_3e9d62be-73e4-4b12-bba9-5bb54cbf7ec1.html is his run announcement (2025-09-25)",
+        "campaign site: no site found by search",
+        "Ballotpedia: page returned empty",
+        "nothing on the subject: wtvm town hall story, Auburn Villager announcement, alreporter 2025-12-01 candidacy story, alreporter 2026-07-06 town hall notice, yahoo Opelika no-show story",
+        "blocked: https://www.theplainsman.com/article/2025/11/us-congressional-candidate-lee-mcinnis-holds-open-town-hall (403; a search summary says this story reports a pledge on red flag laws and an assault weapons ban, but I could not read it, so nothing is saved)",
+        "blocked: https://www.newsfromthestates.com/node/433508 (403)",
+        "blocked: https://bluevoterguide.org/es/AL/candidate_Lee_McInnis/686090 (403)",
+        "blocked: https://www.tpimediagroup.org/alexcityoutlook/lee-mcinnis-speaks-to-county-democratic-party/article_ce49d11b-2792-4526-aa4b-07e35c0cb7ec.html (429)",
+        "not reviewed: https://ivoterguide.com/candidate/94493/race/33904/election/1488 (timed out)",
+        "not a legislator: no sponsorship records to check",
+        "web searches run: 5"
+      ],
+      "found": 0,
+      "at": "2026-10-30T14:59:28.827Z",
+      "by": "source-collector"
+    }
+  ]
+}

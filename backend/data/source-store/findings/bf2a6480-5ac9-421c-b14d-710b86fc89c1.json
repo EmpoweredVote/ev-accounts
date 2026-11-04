@@ -25,6 +25,34 @@
       "found": 0,
       "at": "2026-10-28T16:27:06.031Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carrying guns and permits",
+        "repealing gun laws",
+        "general statement on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search: member name plus gun words, searched several times, nothing on the subject by this person",
+        "Ballotpedia: not usable, returns empty to the fetch tool",
+        "campaign site: guessed addresses did not resolve",
+        "Virginia House of Delegates District 77, Charlie Schmidt, in office since 2026-01-17 (search result lead from history.house.virginia.gov; not fetched)",
+        "Richmonder primary article https://www.richmonder.org/charlie-schmidt-edges-michelle-mosby-in-firehouse-primary/: platform does not cover guns",
+        "iVoterGuide https://ivoterguide.com/race/25628/election/1388: no statement by him on guns",
+        "Commonwealth Times profile https://commonwealthtimes.org/2026/01/14/richmonds-next-lawmaker-a-professor-protester-lawyer-and-librarian/: nothing on guns",
+        "Wikipedia article URL for him returned 404",
+        "sponsor list: covered by LegiScan bulk check"
+      ],
+      "found": 0,
+      "at": "2026-10-31T17:22:57.122Z",
+      "by": "source-collector"
     }
   ]
 }

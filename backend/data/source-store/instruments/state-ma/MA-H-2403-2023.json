@@ -1,0 +1,38 @@
+{
+ "id": "MA-H-2403-2023",
+ "scope": "state:ma",
+ "title": "H2403 (193th General Court): An Act relative to firearms and recreational vehicles",
+ "urls": [
+  "https://malegislature.gov/Bills/193/H2403",
+  "https://malegislature.gov/Bills/193/H2403/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Todd M. Smola",
+   "role": "prime",
+   "version": "official bill page (presenter/petitioners)",
+   "politician_id": "aca1e324-cc09-4492-a2f7-d795beb752ff"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA (runner asked to find missing bill texts, 2026-10-31); official bill text page",
+  "fetched_at": "2026-11-01T02:22:00Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-H-2403-2023.html",
+   "sha256": "c807ae39e18d682658047e35eff74a7115d9aac27f7186fd6c8494ef4da2edbe"
+  }
+ },
+ "operative_text": "SECTION 1. Subsection (g) of section 26 of chapter 90B of the General Laws, as appearing in the 2020 Official Edition, is hereby amended by inserting after the words “chapter 131”, in line 71, the following: “, or to any person licensed under section 131 or 131F of chapter 140”."
+}

@@ -23,6 +23,70 @@
         "fetched_at": "2026-10-28T15:16:40.259Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "b4bdb0a185d5ff8f0487e88db01ae48fc97ec86512b622ed35b4f1f2f4c9a3da",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB1187",
+      "date": "2025-03-07",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-1187-2025",
+      "act": "author",
+      "note": "Sole author. Bill: an elective course on community safety and firearm safety for certain public high school students. Last action on the House member list: referred to Public Education on 2025-03-07; date given is that referral, not the filing date.",
+      "subjects": [
+        "gun safety education"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:51:29.412Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "99690b1a1889041ac315d4046f033f0f6fc780f5e1141b1c336caabd19f35f73",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB1403",
+      "date": "2025-06-20",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-1403-2025",
+      "act": "author",
+      "note": "One of three authors (Harris, Manuel, Spiller). Bill: collection and confidentiality of information about firearms in agency foster homes, with a civil penalty. Member list shows it effective 2025-09-01; date given is the list's 2025-06-20 action.",
+      "subjects": [
+        "guns in foster homes",
+        "recordkeeping on firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:51:29.412Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3faef399248be5a8d1f8e064e8c462f22cd399a3f4975ac6f1861000c4824a04",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB1040",
+      "date": "2025-03-07",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-1040-2025",
+      "act": "author",
+      "note": "One of two authors (Turner, Manuel). Bill: prosecution of the offence of possessing or carrying certain weapons in facilities or residences serving people with intellectual or developmental disabilities. Date is the referral action on the member list, not the filing date.",
+      "subjects": [
+        "weapons in care facilities"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:51:29.412Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -51,6 +115,35 @@
       "found": 1,
       "at": "2026-10-28T15:16:40.259Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm safety education",
+        "guns in foster homes",
+        "weapons in care facilities",
+        "limits on gun ownership",
+        "background checks",
+        "red flag orders",
+        "carry rules",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official page https://house.texas.gov/members/4255 and biography (confirms sitting member, House District 22; biography has nothing on the subject)",
+        "House member bill lists (authored, co-authored, sponsored, co-sponsored; regular session and both called sessions) via https://www.house.texas.gov/api/getMemberBills/4255/A/R and the C, S, N variants; gun bills saved below",
+        "Texas Legislature Online history pages for HB 1187, HB 1403, HB 1040 (captions and author lists checked)",
+        "https://house.texas.gov/members/4255/media (nothing on the subject)",
+        "https://branch.vote/races/2026-texas-general-election-tx-state-state-representative-tx-state-house-22 (lists him as a 2026 general election candidate for House District 22; page text is a general summary, not his words)",
+        "campaign site: none found; a voter-guide page says he had no website as of July 2026",
+        "voter guide questionnaire: none found",
+        "Ballotpedia: not reachable by fetch tool, not relied on",
+        "news searches on his name plus gun terms (3 searches): no statements by him on the subject"
+      ],
+      "found": 3,
+      "at": "2026-10-30T22:51:29.412Z",
+      "by": "source-collector"
     }
   ]
 }

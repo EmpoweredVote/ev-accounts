@@ -117,6 +117,207 @@
         "fetched_at": "2026-10-31T05:00:00Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "fa8087771668164fa41cebcce4ea1837cefe0d5dda9c72df7aa9612f3319e886",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "nay",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: nay (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bbdd9bc7132a57a94f28cf83874fa7e904f8da79aa8251a3b1194121a5467815",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "nay",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: nay (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "3dd20ecb7c987dee3fcb24a03b0baf6b3a9ec77241662ae8e60e8b690dfbfa14",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H1782",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MA-H-1782-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-1782-2021 (LegiScan sponsor list): H1782 (192nd General Court): Relative to illegal drug and firearm trafficking.",
+      "subjects": [
+        "life sentence for combined drug and firearm trafficking"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-1782-2021.introduced.pdf",
+          "sha256": "ec7445c86a7b2334d4a2a2681243904d4c16903800ff52233357e82fbe8f732a"
+        }
+      }
+    },
+    {
+      "id": "fecb5cacf780ae581a840b381ad5cf12ece4ecb36c9ddd003ef6feaf4ec727c4",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/191/H2054",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MA-H-2054-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-2054-2019 (LegiScan sponsor list): H2054 (191st General Court): Relative to the lawful sale of ammunition.",
+      "subjects": [
+        "out-of-state sellers of ammunition parts exempt from state license",
+        "delivery needs licensee signature and photo ID"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2054-2019.introduced.pdf",
+          "sha256": "5a6ba0ce903baf62f5afceb28995591653e3571a14650033d412de0e8ea70866"
+        }
+      }
+    },
+    {
+      "id": "a1102272ce247d9ea5e4e7681412217d318448d42a49311df381490c974d2f72",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H2526",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MA-H-2526-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-2526-2021 (LegiScan sponsor list): H2526 (192nd General Court): Preserving Second Amendment rights for medical marijuana patients.",
+      "subjects": [
+        "gun license cannot be denied for medical marijuana patients"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2526-2021.introduced.pdf",
+          "sha256": "dc51a982d3eece8fd210427664e48a84c864b8edfca5fdca59fb48ce22369267"
+        }
+      }
+    },
+    {
+      "id": "4463e8e05e4fd27637ce541b5fb160b67f09d953eaa2dd2f765b55fac4582e04",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H2391",
+      "date": "2023-02-16",
+      "date_precision": "day",
+      "instrument_id": "MA-H-2391-2023",
+      "act": "sponsor",
+      "note": "Lead sponsor (petition) of H.2391, 'An Act relative to Constitutional rights', described as relative to protecting the rights of lawful gun owners. Referred to Public Safety committee.",
+      "subjects": [
+        "rights of lawful gun owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:37:16.806Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "de2f9d17d477e43cd0c5ccc29890f35e691ee4d4abc33329cf796575db48c20c",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H2681",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-2681-2025",
+      "act": "sponsor",
+      "note": "Lead sponsor (petition) of H.2681, 'An Act relative to Constitutional rights', relative to protecting the rights of lawful gun owners; a refiling of H.2391. Referred to Public Safety committee.",
+      "subjects": [
+        "rights of lawful gun owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:37:16.806Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7ea32192df74a5f2fb4cdfc606494a8ed5c173fbce53b5f38462278327a98540",
+      "kind": "record",
+      "url": "https://malegislature.gov/Legislators/Profile/D_R1/194/Cosponsor",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MA-H-2684-2025",
+      "act": "sponsor",
+      "note": "Lead sponsor of H.2684, relative to the return of firearms stored at private businesses (shown on his sponsored-bills list for the 194th session).",
+      "subjects": [
+        "firearm storage at businesses"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:37:16.806Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -143,6 +344,29 @@
       ],
       "found": 0,
       "at": "2026-10-22T23:30:13.643Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry permits",
+        "ghost guns",
+        "safe gun storage",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member page (malegislature.gov Legislators/Profile/D_R1/194/Cosponsor): sponsored list, confirms David Allen Robertson, 19th Middlesex",
+        "bill pages H.2391 and H.2681",
+        "two web searches on name plus gun words: no quotes in his own words found",
+        "not reviewed: Ballotpedia (empty to fetch tool)",
+        "not reviewed: campaign site"
+      ],
+      "found": 3,
+      "at": "2026-11-01T01:37:16.806Z",
       "by": "source-collector"
     }
   ]

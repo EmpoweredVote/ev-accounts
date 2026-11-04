@@ -1,0 +1,31 @@
+{
+  "politician_id": "1f82a702-d3b6-493c-a3d5-d789a2caa1fd",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on gun types or magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://ivoterguide.com/voter-guide/eleck/1501 (fetched: lists Brandon Coulter Daugherty as a U.S. House District 2 candidate in Missouri; nothing on the subject)",
+        "web searches on name plus Missouri, congress, Second Amendment and guns (a voter-guide listing and a 2024 voter guide surfaced; no campaign site found)",
+        "blocked: https://bluevoterguide.org/district/MO/Missouri_District_2/55354/847 (403)",
+        "blocked: https://www.missouribusinessalert.com/government/election_2024/voter-guide-us-house-missouri-2nd-district/article_911d314c-4e94-11ef-af44-fb015539d6eb.html (429)",
+        "blocked: https://ballotpedia.org/Brandon_Daugherty (403, empty page)",
+        "not reviewed: campaign site (none found)",
+        "not reviewed: official FEC page https://www.fec.gov/data/candidate/H4MO02116/?cycle=2026 (not fetched)",
+        "no sitting-legislator record exists (candidate only); nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:12:14.531Z",
+      "by": "source-collector"
+    }
+  ]
+}

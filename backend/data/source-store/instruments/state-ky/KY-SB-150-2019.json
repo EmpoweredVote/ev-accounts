@@ -49,7 +49,8 @@
       "members": [
         {
           "name": "Alvarado",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "78d26017-245c-40e7-a855-6c2d230816e3"
         },
         {
           "name": "Harris",
@@ -265,7 +266,8 @@
         },
         {
           "name": "Gooch",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "ca789fb3-1814-4624-b70c-d1d590f42278"
         },
         {
           "name": "McCool",

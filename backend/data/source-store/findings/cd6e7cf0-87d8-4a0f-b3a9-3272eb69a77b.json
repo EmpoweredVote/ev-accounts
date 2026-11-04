@@ -174,6 +174,64 @@
         "fetched_at": "2026-10-28T21:15:26.766Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "d18aa3deb1756631945ea35c6032cd156c7b106aa86a37c933342dd0730a6cd6",
+      "kind": "record",
+      "url": "https://law-journals-books.vlex.com/vid/sb-319-chairman-john-935400390",
+      "date": "2022-02-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-319-2022",
+      "act": "nay",
+      "motion": "Passage (third reading)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA Senate, Passage (third reading), 2022-02-28: nay (tally 34–22); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "orchestrator, gun-policy Stage 5, LegiScan API (getBill, getRollCall, getSessionPeople, getBillText)",
+        "fetched_at": "2026-10-30T18:00:00Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/prefill/legiscan-ga/ga-sb319-enrolled.pdf",
+          "sha256": "17943534917a39ee671fab99d8120acebcc4e61921a039e7c8f5bb13fc72114d"
+        }
+      }
+    },
+    {
+      "id": "948fbdf37c513aa66d0ae3c5bdbe4d6693a22f68d3bb2cf997db8d2d87f31b69",
+      "kind": "record",
+      "url": "https://law-journals-books.vlex.com/vid/sb-319-chairman-john-935400390",
+      "date": "2022-04-01",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-319-2022",
+      "act": "nay",
+      "motion": "Final passage / agree to House version",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA Senate, Final passage / agree to House version, 2022-04-01: nay (tally 34–22); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "orchestrator, gun-policy Stage 5, LegiScan API (getBill, getRollCall, getSessionPeople, getBillText)",
+        "fetched_at": "2026-10-30T18:00:00Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/prefill/legiscan-ga/ga-sb319-enrolled.pdf",
+          "sha256": "17943534917a39ee671fab99d8120acebcc4e61921a039e7c8f5bb13fc72114d"
+        }
+      }
     }
   ],
   "searches": [

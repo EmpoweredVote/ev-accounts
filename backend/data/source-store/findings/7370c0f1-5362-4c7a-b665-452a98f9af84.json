@@ -1,0 +1,29 @@
+{
+  "politician_id": "7370c0f1-5362-4c7a-b665-452a98f9af84",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "background checks",
+        "carry permits",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "ballot status confirmed: https://www.ballotready.org/people/curtis-goodwin lists him on the 2026-11-03 general ballot for AZ-2",
+        "https://www.fox10phoenix.com/election/2026-election-arizona-congressional-district-2-explained-what-know-about-race: nothing on the subject",
+        "https://theballotbrief.com/candidate/curtis-goodwin-az: no campaign website, nothing on the subject",
+        "goodparty.org profile: unclaimed, no issues listed",
+        "web searches on name plus guns: nothing on the subject",
+        "not a legislator: no sponsorships to list",
+        "Ballotpedia: not reachable by fetch tool, not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-30T22:54:45.474Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -320,6 +320,405 @@
         "fetched_at": "2026-10-27T17:04:12.684Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "d7675ba70c37b1ef2180d4ca25b67dd2d45fc2291a4b89110e9b23a9af40ba0b",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-117s2938enr/html/BILLS-117s2938enr.htm",
+      "date": "2022-06-23",
+      "date_precision": "day",
+      "instrument_id": "US-S-2938-2022",
+      "act": "yea",
+      "motion": "Motion to Concur in the House amendment to S. 2938 with an amendment (Amdt. No. 5099)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US Senate, Motion to Concur in the House amendment to S. 2938 with an amendment (Amdt. No. 5099), 2022-06-23: yea (tally 65–33); census gate: multi-subject.",
+      "subjects": [
+        "background checks for buyers under 21",
+        "court orders that take guns from a dangerous person (state grants)",
+        "gun trafficking (package)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c20fcb96eb78e01ead82694ac19d878a311409fb4bbbe34cb7a90636662f5d55",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2023252",
+      "date": "2023-06-22",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-44-2023",
+      "act": "nay",
+      "motion": "On the Joint Resolution (H.J. Res. 44)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Joint Resolution (H.J. Res. 44), 2023-06-22: nay (tally 49–50); census gate: none.",
+      "subjects": [
+        "cancel the federal pistol-brace rule"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-118hjres44eh.txt",
+          "sha256": "d04fe1fe2a2512a1932d14b7b93d88fe25ac6712851bc4caa37df31b89101f4d"
+        }
+      }
+    },
+    {
+      "id": "5ad2aa68bfbab048a12d5be66f21722454b3313fb30f46f1745edde9ea11774a",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2024/https://www.senate.gov/legislative/LIS/roll_call_votes/vote1131/vote_113_1_00097.htm",
+      "date": "2013-04-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-649-SAMDT-715-2013",
+      "act": "yea",
+      "motion": "On the Amendment (Manchin Amdt. No. 715) to S. 649 (Safe Communities, Safe Schools Act of 2013)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Amendment (Manchin Amdt. No. 715) to S. 649 (Safe Communities, Safe Schools Act of 2013), 2013-04-17: yea (tally 54–46); census gate: none.",
+      "subjects": [
+        "background checks at gun shows and online sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/CREC-2013-04-11-senate.pdf",
+          "sha256": "5cbf6123ec6d0ee19de0b8748333db8dffcc46d276dd1e80d1692c182b9872fb"
+        }
+      }
+    },
+    {
+      "id": "2aee36e893bb5474cd8d242d7254f09f95571ddd55e723aaadb01a3471855a68",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2024/https://www.senate.gov/legislative/LIS/roll_call_votes/vote1131/vote_113_1_00100.htm",
+      "date": "2013-04-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-649-SAMDT-719-2013",
+      "act": "nay",
+      "motion": "On the Amendment (Cornyn Amdt. No. 719) to S. 649 (Safe Communities, Safe Schools Act of 2013)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Amendment (Cornyn Amdt. No. 719) to S. 649 (Safe Communities, Safe Schools Act of 2013), 2013-04-17: nay (tally 57–43); census gate: none.",
+      "subjects": [
+        "honor carry permits from other states"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/CREC-2013-04-17-senate.pdf",
+          "sha256": "40bb495c367c32e142f8ea953accada60d7a67c47296fcd8b7dd71b653ef3a69"
+        }
+      }
+    },
+    {
+      "id": "eb805d1472aefe4f67f8f60732d337732931be70ca8fa4a251d020168a076081",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2024/https://www.senate.gov/legislative/LIS/roll_call_votes/vote1131/vote_113_1_00101.htm",
+      "date": "2013-04-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-649-SAMDT-711-2013",
+      "act": "yea",
+      "motion": "On the Amendment (Feinstein Amdt. No. 711) to S. 649 (Safe Communities, Safe Schools Act of 2013)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Amendment (Feinstein Amdt. No. 711) to S. 649 (Safe Communities, Safe Schools Act of 2013), 2013-04-17: yea (tally 40–60); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns",
+        "large magazine limit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/CREC-2013-04-11-senate.pdf",
+          "sha256": "5cbf6123ec6d0ee19de0b8748333db8dffcc46d276dd1e80d1692c182b9872fb"
+        }
+      }
+    },
+    {
+      "id": "c90bdbcf78bf71ec4d53648b4f8ebe188ca331c8dd00e4aa90ea8f004b52d94a",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2025190",
+      "date": "2025-07-01",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2025",
+      "act": "nay",
+      "motion": "On Passage of the Bill (H.R. 1, as Amended)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US Senate, On Passage of the Bill (H.R. 1, as Amended), 2025-07-01: nay (tally 50–50); census gate: multi-subject.",
+      "subjects": [
+        "end the federal tax on suppressors and short-barrelled guns",
+        "budget (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c47a015ba1d86506e1cfe20f7965143bd5c5562ddcc9901a475f84406dde1bf",
+      "kind": "own-words",
+      "url": "https://www.merkley.senate.gov/merkley-statement-on-senates-rejection-of-common-sense-gun-proposals/",
+      "date": "2016-06-20",
+      "date_precision": "day",
+      "passage": "“It’s incomprehensible and shameful that 53 Senators put a higher priority on pleasing the gun lobby than keeping weapons out of the hands of suspected terrorists, known criminals, and the dangerously disturbed. There are very few proposals in American politics that enjoy near-universal support, but closing loopholes in the background check system does.",
+      "note": "Press statement from his official site after the Senate voted down proposals to bar suspected terrorists from buying guns and to close background-check loopholes.",
+      "subjects": [
+        "check every gun buyer",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:16:19.385Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "92c4f03e9bffa675ce724fb9002e926abefe93969716d56c9f7828c58e135ddb",
+      "kind": "own-words",
+      "url": "https://www.merkley.senate.gov/merkley-statement-on-senates-rejection-of-common-sense-gun-proposals/",
+      "date": "2016-06-20",
+      "date_precision": "day",
+      "passage": "It makes no sense that individuals on the terrorist watch list are denied access to planes but given full access to an armory of weapons.",
+      "note": "Same 2016 press statement; speaks to barring people on the terrorist watch list from buying guns.",
+      "subjects": [
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:16:19.385Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f6c52655fc1ff2d18a1401d25e855274ca9ffc5a36340ef611f2b08708a17e92",
+      "kind": "own-words",
+      "url": "https://www.merkley.senate.gov/wyden-merkley-reintroduce-bill-to-reduce-gun-violence-2021/",
+      "date": "2021-03-04",
+      "date_precision": "day",
+      "passage": "“About 90% of Americans support background checks for gun purchases—and it’s time that Congress honor their wish and close critical loopholes that make all of our communities less safe,”",
+      "note": "Quoted in a joint press release from his official site on reintroducing the Background Checks Expansion Act; the page says it would extend federal background checks to all gun sales.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:16:19.385Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ec4a3e4e688e3e3eb3fb92d7ed4404c2c889612f8a3d8d40e7484483d1982194",
+      "kind": "own-words",
+      "url": "https://www.merkley.senate.gov/wyden-merkley-reintroduce-bill-to-reduce-gun-violence-2021/",
+      "date": "2021-03-04",
+      "date_precision": "day",
+      "passage": "“Let’s make 2021 the year that we put commonsense above the wish lists of gun manufacturers and pass this legislation.”",
+      "note": "Same 2021 joint press release, his closing line on the Background Checks Expansion Act.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:16:19.385Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cef3bb6b49ad64c13ebc6069eb2c18ddb5b13bf889791f18bc4aa9ffa1c9f058",
+      "kind": "record",
+      "url": "https://www.merkley.senate.gov/wyden-merkley-reintroduce-bill-to-reduce-gun-violence-2021/",
+      "date": "2021-03-04",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "cosponsor: Background Checks Expansion Act (117th Congress, reintroduced March 2021)",
+      "note": "His press release says he joined 43 senators in reintroducing the bill; the page says it requires background checks for the sale or transfer of all firearms, including by unlicensed sellers online, at gun shows or at home, with listed exceptions. Bill number not on the page.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:16:19.385Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "502ba0702463e37fcda6fb18b32009bf79f4e548d73f38742924eec41d142249",
+      "kind": "own-words",
+      "url": "https://www.merkley.senate.gov/merkley-slams-extremist-republicans-for-putting-the-gun-lobby-ahead-of-the-american-people/",
+      "date": "2023-04-18",
+      "date_precision": "day",
+      "passage": "Senator Merkley supports common sense reforms including banning the sale of assault weapons and high capacity magazines, and will continue to work in the Senate to get laws on the books that will protect our communities.",
+      "note": "Third-person text on his official site, posted with a video of his floor speech of April 18, 2023 on gun safety reforms; page published 2023-04-20.",
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:16:19.385Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6b1720209d09198fff7a02c8736d443a0ff60d9351f49a0323aec586adec6de3",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-118s25is/html/BILLS-118s25is.htm",
+      "date": "2023-01-23",
+      "date_precision": "day",
+      "instrument_id": "US-S-25-2023",
+      "act": "sponsor",
+      "motion": "original cosponsor: S. 25, bill to regulate assault weapons",
+      "note": "Bill text lists him among the senators who introduced S. 25 with its sponsor; the bill is titled 'To regulate assault weapons, to ensure that the right to keep and bear arms is not unlimited, and for other purposes.'",
+      "subjects": [
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:16:19.385Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bd995a1e3dcb680b70cd621d4f6b5164604a5bb6d3a92c8170d6bb68a529fb9",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/115th-congress/house-joint-resolution/40",
+      "date": "2017-02-15",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-40-2017",
+      "act": "nay",
+      "motion": "Passed Senate without amendment by Yea-Nay Vote. 57 - 43. Record Vote Number: 66 (Roll 66)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, Passed Senate without amendment by Yea-Nay Vote. 57 - 43. Record Vote Number: 66 (Roll 66), 2017-02-15: nay (tally 57–43); census gate: none.",
+      "subjects": [
+        "rule sending records to gun background check system overturned"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HJRES-40-2017.htm",
+          "sha256": "616db93c5dbc0f8d42ff56878c6d7302412f4feaade1ac2794ac4020fae05e55"
+        }
+      }
+    },
+    {
+      "id": "7b0ece74e62d90b736e118101b5ca4d4a3d5365e9a5c7049fec2dae5e9351c9e",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/117th-congress/senate-bill/3623",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "US-S-3623-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2022-03-10",
+      "note": "co sponsor of US-S-3623-2022 (cosponsor 2022-03-10): S 3623 (117th Congress): Violence Against Women Act Reauthorization Act of 2022.",
+      "subjects": [
+        "failed gun background checks reported to state and tribal police within 24 hours",
+        "special prosecutors for domestic-violence gun prohibitions",
+        "annual report on background check denials"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-S-3623-2022.htm",
+          "sha256": "419c00ae6f2e6419ac37d5acb435277d30262291fcc4f6029d92a54840724e31"
+        }
+      }
+    },
+    {
+      "id": "bc4d8c5d394b8fd0c6878c21f7d001c7298234610622b0e0bfaf94d9ab462625",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/senate-bill/494",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "US-S-494-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2023-02-16",
+      "note": "co sponsor of US-S-494-2023 (cosponsor 2023-02-16): S 494 (118th Congress): Background Check Expansion Act.",
+      "subjects": [
+        "background check required for private firearm sales and transfers",
+        "dealer notice and certification form"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-S-494-2023.htm",
+          "sha256": "0eaaa7cc5526464d22459d097de221fb72ed82b50625475b2294e52829e78e63"
+        }
+      }
     }
   ],
   "searches": [
@@ -373,6 +772,37 @@
       "found": 8,
       "at": "2026-10-27T17:04:12.684Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on large-capacity magazines",
+        "check every gun buyer",
+        "limits on who may have a gun",
+        "carry permits",
+        "Second Amendment general statement"
+      ],
+      "places": [
+        "On the Record (3 meetings dated 2026-01-16, 2026-06-28, 2026-07-12; nothing on the subject)",
+        "official site https://www.merkley.senate.gov/issues/ (no gun topic listed)",
+        "official press releases pages 1 to 3 (earlier pass, nothing on the subject); three press release pages on guns found by search were fetched and saved",
+        "https://www.merkley.senate.gov/issues/gun-violence-prevention/ (404)",
+        "blocked: https://www.merkley.senate.gov/wp-json/wp/v2/search (security block page)",
+        "blocked: https://www.merkley.senate.gov/?p=16963 (403 on the short link; the same page was read at its full address)",
+        "blocked: https://www.merkley.senate.gov/?p=4647 (403)",
+        "blocked: https://ballotpedia.org/Jeff_Merkley (error page)",
+        "blocked: https://legiscan.com/US/bill/S25/2023 (403)",
+        "not reviewed: congress.gov sponsorship pages (bot check seen earlier; not fetched)",
+        "S. 25 (118th) original sponsor list read on govinfo.gov bill text",
+        "two web searches on name plus gun words and bills: found the pages saved here; no 2022 or 2024-2026 statement text reachable",
+        "https://www.merkley.senate.gov/senator-stops-by (2018 town hall news item; text is a reporter's account, not his words; not saved)",
+        "his 2026 general-election candidacy was not separately confirmed on a page"
+      ],
+      "found": 7,
+      "at": "2026-10-30T15:16:19.385Z",
+      "by": "source-collector"
     }
   ]
 }

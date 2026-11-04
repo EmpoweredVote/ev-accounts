@@ -22,6 +22,28 @@
         "fetched_at": "2026-10-27T18:46:39.518Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "01fd55882c2d27c9ae5eb8a1a273fe5106773e4592d3c07f1ed34bf4a2147e08",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/94855/race/34519/election/1499",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "We need universal background checks to keep guns out of the hands of violent criminals. We should never take guns away from law abiding citizens.",
+      "note": "His answer on the voter guide to the question 'What restrictions on gun ownership are needed to protect public safety?' The page is undated.",
+      "subjects": [
+        "check every gun buyer",
+        "universal background checks",
+        "no taking guns from law-abiding people"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:06:55.242Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -75,6 +97,33 @@
       "found": 1,
       "at": "2026-10-27T18:46:39.518Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "repeal of gun laws",
+        "general Second Amendment statement"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site jacobanders.org (platform and policy sections; no gun text)",
+        "ivoterguide.com profile (listed for the Tennessee 4th District general election, November 3, 2026)",
+        "The Ballot Brief profile: nothing on the subject",
+        "blocked: https://www.tullahomanews.com/announcements/anders-announces-bid-for-congress/article_c1fa1d4d-e3e5-41ef-baca-67c26c14a864.html (404)",
+        "blocked: https://en.everybodywiki.com/Jacob_Anders",
+        "blocked: https://tennesseelookout.com/voter-guides/contests/congressional-district-4/",
+        "Ballotpedia: not reviewed (search shows its page covers a 2020 bid)",
+        "congress.gov sponsorships: not applicable, not a sitting member",
+        "news searches on name plus gun words (2 searches): nothing further"
+      ],
+      "found": 1,
+      "at": "2026-10-30T15:06:55.242Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -1,0 +1,99 @@
+{
+ "id": "MA-H-3254-2017",
+ "scope": "state:ma",
+ "title": "H3254 (190th General Court): An Act relative to hearings for firearms identification",
+ "urls": [
+  "https://malegislature.gov/Bills/190/H3254",
+  "https://malegislature.gov/Bills/190/H3254/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Donald R. Berthiaume, Jr.",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "329212d4-14ef-4685-9d95-cc7473aad949"
+  },
+  {
+   "name": "David F. DeCoste",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "a743a9a0-711c-40cf-b6e2-0ce2b587949a"
+  },
+  {
+   "name": "Keiko M. Orrall",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Peter J. Durant",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "82943cda-5803-46c7-a854-697ad6052eda"
+  },
+  {
+   "name": "David K. Muradian, Jr.",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "891030da-39e2-496f-8a20-72aeb27093ba"
+  },
+  {
+   "name": "Hannah Kane",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "d54b9791-0668-4397-b488-160d06f7c420"
+  },
+  {
+   "name": "F. Jay Barrows",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Richard J. Ross",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Kimberly N. Ferguson",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "62aee074-7ed1-45e8-94fc-3b5b5007f85d"
+  },
+  {
+   "name": "Bradley H. Jones, Jr.",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "a6e1a867-1e4e-449f-bb10-4f55449762bf"
+  },
+  {
+   "name": "Leonard Mirra",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Kevin J. Kuros",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-H-3254-2017.html",
+   "sha256": "3b75c61452754af30e6795ea899d7a9ac5a8f198906196d279c28492b5851af8"
+  }
+ },
+ "operative_text": "SECTION 1. Chapter 140 of the General Laws, as appearing in the 2014 Official Edition is hereby amended by inserting the following new section:-\nSection 121B: Notwithstanding any general of special law to the contrary, any attempt to reclassify a firearm, whereby the result is the removal of said firearm from approved purchase lists must have three public hearings across the commonwealth before any official determination can be made.\nSECTION 1. Chapter 140 of the General Laws, as appearing in the 2014 Official Edition is hereby amended by inserting the following new section:-\nSection 121B: Notwithstanding any general of special law to the contrary, any attempt to reclassify a firearm, whereby the result is the removal of said firearm from approved purchase lists must have three public hearings across the commonwealth before any official determination can be made."
+}

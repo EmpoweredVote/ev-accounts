@@ -302,6 +302,162 @@
         "fetched_at": "2026-10-27T15:13:41.833Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "7292876d7868969a8ad870e44b579f60c678386171707aecc9904ddf1c1bf32a",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2017663",
+      "date": "2017-12-06",
+      "date_precision": "day",
+      "instrument_id": "US-HR-38-2017",
+      "act": "yea",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2017-12-06: yea (tally 231–198); census gate: none.",
+      "subjects": [
+        "honor carry permits from other states",
+        "background check system reporting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-115hr38eh.txt",
+          "sha256": "96f3d68e094e7438812650edc88a468959aa2048490e6a8299d390837cb09d12"
+        }
+      }
+    },
+    {
+      "id": "bf9729f849bb6a0669413309ad63940650582e32db4fe79ac052695c9fe5af9c",
+      "kind": "own-words",
+      "url": "https://readthereporter.com/ag-todd-rokita-announces-indiana-gun-owners-bill-of-rights/",
+      "date": "2022-06-29",
+      "date_precision": "day",
+      "passage": "“America’s founders understood the God-given rights of free people to protect themselves against intruders, violent attackers and even an overreaching government,” Rokita said. “Although often misconstrued, this right was not established to ensure opportunities for hunting or target practice.”",
+      "note": "Quoted in a release announcing his office's Gun Owners' Bill of Rights guide, timed to Indiana's start of permitless carry on July 1, 2022. Outlet: The Reporter, reprinting the office release.",
+      "subjects": [
+        "carry a gun without a permit",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:39:11.289Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1eb9c81c353b73c76fb6818443e7c60ca66b5c7eeb370935c1835b383d8ef074",
+      "kind": "own-words",
+      "url": "https://readthereporter.com/?p=73187",
+      "date": "2022-04-08",
+      "date_precision": "day",
+      "passage": "“The purpose of the Second Amendment is not to ensure opportunities for hunting or target practice,” Rokita said. “Rather, the purpose of the Second Amendment is to enable law-abiding Americans to protect their lives, liberty and property against all threats – whether posed by individual intruders breaking into homes or marauding armies trying to take over communities.”",
+      "note": "Quoted in a release on his asking the U.S. Supreme Court to take up a case against California's limit of 10 rounds per magazine. Outlet: The Reporter, reprinting the office release.",
+      "subjects": [
+        "limits on magazine size",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:39:11.289Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f018742dfd8668449a4fecd53fe74235dab4a1d099b2e24a9815fc1715a493d",
+      "kind": "own-words",
+      "url": "https://readthereporter.com/?p=115890",
+      "date": "2024-01-26",
+      "date_precision": "day",
+      "passage": "“The right to keep and bear arms is foundational to protecting all the rest of our liberties from the long arm of government overreach,” AG Rokita said. “Regular law-abiding Hoosiers know that our office will fight to defend this right to our last breath.”",
+      "note": "Quoted in a release on his leading several states against limits on civilian access to ammunition made at a military plant. Outlet: The Reporter, reprinting the office release.",
+      "subjects": [
+        "ammunition access",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:39:11.289Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "01ac41b9e92d55a3c4ae7570c9450c1321e47d87f6e7abab8b38e4f100250fc4",
+      "kind": "own-words",
+      "url": "https://readthereporter.com/?p=115890",
+      "date": "2024-01-26",
+      "date_precision": "day",
+      "passage": "“The anti-gun radicals leading this effort are not interested in public safety,” Rokita said. “We should be focused on the free flow of illegal weapons coming across our border – not taking aim at law abiding patriots. The federal government’s failure to secure our border and protect Americans is exactly why citizens need the liberty to defend themselves.”",
+      "note": "Same release; his comments on the effort to restrict ammunition.",
+      "subjects": [
+        "ammunition access",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:39:11.289Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1962a993bdf5ddeeea1fcb01cbe2d6d3e4e32cb98ba5b8439750599fc4c14b5d",
+      "kind": "own-words",
+      "url": "https://events.in.gov/event/attorney-general-todd-rokita-and-team-secure-major-victory-for-second-amendment-rights-as-court-of-appeals-dismisses-city-of-garys-decades-old-lawsuit-against-firearm-industry",
+      "date": "2025-12-30",
+      "date_precision": "day",
+      "passage": "This result helps to ensure that firearms remain available to law-abiding citizens, preventing a single city or handful of cities from using lawsuits to force changes to the way they are sold.",
+      "note": "Part of his statement (on the State of Indiana's events site) on the Court of Appeals dismissing Gary's lawsuit against gun makers and sellers; he adds that his office will keep defending gun owners' rights.",
+      "subjects": [
+        "lawsuits against the gun industry",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:39:11.289Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "009cf002bf7a93afb5b4c844f31054a5689c348387f2a7d728f6c60739a1f756",
+      "kind": "own-words",
+      "url": "https://www.wbaa.org/government/2013-07-02/guns-and-immigration-come-up-at-rokitas-congress-on-your-corner-event",
+      "date": "2013-07-02",
+      "date_precision": "day",
+      "passage": "“And I told her I’d look into it. I did not make any commitment to support such a bill, because I’m not convinced that would have stopped Newtown (school shooting), nor am I sure it’s in accordance with the Second Amendment.”",
+      "note": "Quoted by WBAA radio, reply to constituents asking him to back a bill widening background checks for gun purchases; he had not yet seen the bill.",
+      "subjects": [
+        "check every gun buyer",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:39:11.289Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -359,6 +515,33 @@
       "found": 14,
       "at": "2026-10-27T15:13:41.833Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on large-capacity magazines",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "ammunition access",
+        "Second Amendment general statements",
+        "lawsuits against the gun industry"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Indiana Attorney General releases mirrored at events.in.gov (Gary lawsuit, 2025-12-30) and readthereporter.com (Gun Owners' Bill of Rights 2022, magazine brief 2022, ammunition 2024), all fetched",
+        "2013 radio report of a town-hall event (wbaa.org), fetched",
+        "web search x4 (statements, sponsorships, ammunition and magazine briefs)",
+        "identity: sitting Attorney General of Indiana per the releases; not on a 2026 ballot as far as found, office not up in 2026",
+        "sponsor list: congress.gov member page blocked (past House member, 2011-2019): blocked: https://www.congress.gov/member/todd-rokita/R000592",
+        "blocked: https://justfacts.votesmart.org/bill/24312/62138/3217/concealed-carry-reciprocity-act-of-2017 (403; so a co-sponsorship of H.R. 38 seen only in a search summary is not recorded)",
+        "blocked: https://indianacapitalchronicle.com/2024/02/02/rokita-defends-gun-rights-for-hoosiers-with-expunged-crimes/ (bot check)",
+        "Ballotpedia and ontheissues.org: not reviewed (leads only)",
+        "campaign site: not reviewed"
+      ],
+      "found": 6,
+      "at": "2026-10-31T20:39:11.289Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -37,6 +37,26 @@
       "found": 0,
       "at": "2026-10-27T15:53:12.482Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "scope check: still on the 2026 general-election ballot"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Florida district 24: 1,272 votes, 2.1%, sixth of seven; shown on https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Florida, used only for status, not as a stance source)",
+        "The Green Papers Florida 2026 general-election list (https://www.thegreenpapers.com/G26/FL): district 24 lists a different person, he is not listed",
+        "On the Record (0 meetings)",
+        "BallotReady profile (confirms he ran in the Florida primary; no issue text found)",
+        "blocked: https://floridaelectionwatch.gov/CompareStateToCounty/140242 (bot check)",
+        "blocked: https://www.sundayguardianlive.com/world/florida-primary-election-2026-results-live-who-won-the-congressional-races-check-leading-candidates-vote-count-and-november-election-matchups-264447/ (403)",
+        "official state results site: frameset only, no data returned",
+        "gun-subject search not run: person is out of scope"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:00:39.597Z",
+      "by": "source-collector"
     }
   ]
 }

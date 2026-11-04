@@ -1,0 +1,44 @@
+{
+ "id": "MA-H-2592-2025",
+ "scope": "state:ma",
+ "title": "H2592 (194th General Court): An Act authorizing the voluntary disavowal of eligibility to purchase a firearm",
+ "urls": [
+  "https://malegislature.gov/Bills/194/H2592",
+  "https://malegislature.gov/Bills/194/H2592/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Marjorie C. Decker",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "2b1a645a-72ce-4c0f-80ec-17565a2d6d10"
+  },
+  {
+   "name": "Estela A. Reyes",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "8e125ae2-3101-49b1-b228-f172ad9c70d9"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-H-2592-2025.html",
+   "sha256": "85366292197ca69fb8c004ac5fb34fc786dfdd074fb450a3746f8ba66add68dd"
+  }
+ },
+ "operative_text": "SECTION 1. Section 167A of chapter 6 of the General Laws, as appearing in the 2022 Official Edition, is hereby amended by adding the following subsection:-\n(j) The commissioner, in consultation with the executive office of public safety, the attorney general and the colonel of the state police, shall establish a list of persons who disavow eligibility to purchase a firearm, rifle, shotgun or machine gun, hereinafter referred to as a firearm. A person may request such person’s name to be placed on the list of disavowal of eligibility by filing a form with the commissioner acknowledging the person has a psychiatric disability and is a danger to themselves and by agreeing that the person shall not purchase a firearm.\nThe department shall develop a standard form, accessible on the department’s webpage, providing for a voluntary disavowal of eligibility to purchase a firearm. The department may revoke, limit, condition, suspend or fine any licensee, as provided for in section 122 of chapter 140, eligibility to sell, rent or lease firearms, if the licensee sells a firearm to any person on such list or provides unauthorized access to any name on such list. The list shall be shared with a licensee by the department.\nThe department shall distribute the form to acute-care hospitals and satellite emergency facilities as defined in section 244 of chapter 111.\nThe department shall adopt regulations for the maintenance and distribution of the list of persons who disavow eligibility. The list shall not be a public record and shall not be open to public inspection.\nSECTION 2. Chapter 111 of the General Laws, as appearing in the 2022 Official Edition, is hereby amended by adding the following section:-\nSection 244. A person voluntarily presenting in an acute-care hospital or a satellite emergency facility who is reasonably believed by the treating clinician to be suffering from a diagnosis of depression, using standardized definition of such diagnosis as set forth in the Diagnostic and Statistical Manual of Mental Disorders as published by the American Psychiatric Association, shall be presented with the form provided for in section 167A of chapter 6. For the purposes of this section the term “acute-care hospital”, means any hospital licensed under section 51 that contains a majority of medical-surgical, pediatric, obstetric, and maternity beds, as defined by the department and the teaching hospital of the University of Massachusetts Medical School and the term “satellite emergency facility”, means a health care facility that operates on a 7-day per week, 24-hour per day basis that is located off the premises of a hospital, but is listed on the license of a hospital, and is authorized to accept patients transported to the facility by ambulance.\nSECTION 3. Subsection (b) of section 36C of Chapter 123 of the General Laws, as appearing in the 2022 Official Edition, is hereby amended by adding, after the final sentence, the following sentence:-\nIn addition to the relief provided for in this subsection, the court may grant relief, upon petition, that the person’s name be removed from the list of persons who disavow eligibility to purchase a firearm provided in section 167A of chapter 6.\nSECTION 4. Clause (ix) of subsection (d) of section 131 of chapter 140 of the General Laws, as appearing in the 2022 Official Edition, is hereby amended by striking out, in line 258, the word “or”.\nSECTION 5. Clause (x) of subsection (d) of section 131 of chapter 140 of the General Laws, as appearing in the 2022 Official Edition, is hereby amended by striking out, in line 260, “.” and inserting in place thereof the following:- ;or.\nSECTION 6. Subsection (d) of section 131 of chapter 140 of the General Laws, as appearing in the 2022 Official Edition, is hereby amended after clause (x) by adding the following clause:-\n(y) a person who has voluntarily disavowed eligibility to purchase a firearm as listed on the list kept by the department of criminal justice information service pursuant to section 167A of chapter 6.\nSECTION 7. Notwithstanding any general or special law to the contrary, any suicide hotline maintained or operated by any entity funded in whole or part by the commonwealth shall refer callers to the form provided for in section 1 of this act."
+}

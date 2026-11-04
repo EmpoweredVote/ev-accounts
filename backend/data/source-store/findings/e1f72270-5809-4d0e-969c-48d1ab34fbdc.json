@@ -22,6 +22,238 @@
         "fetched_at": "2026-10-31T05:00:00Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "0764de62d48559a69e38e8340415d2a837580d3426942607934e2422acabd0d8",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "nay",
+      "motion": "Senate Engrossed Roll Call #114",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA Senate, Senate Engrossed Roll Call #114, 2024-02-01: nay (tally 37–3); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "767c668122bf86e324f6d9a6719f5b58f7381ff23e94c183d816b849ebaf9525",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4670",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4670-2017",
+      "act": "yea",
+      "motion": "Senate Committee of conference report accepted, in concurrence  Roll Call #435",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MA Senate, Senate Committee of conference report accepted, in concurrence  Roll Call #435, 2018-06-28: yea (tally 36–1); census gate: near-unanimous.",
+      "subjects": [
+        "extreme risk protection orders to remove guns from people at risk of harming self or others",
+        "protection order added as a bar to gun licenses",
+        "stun gun rules and locked storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4670-2017.introduced.pdf",
+          "sha256": "6b37958358a3f01548ef0d16c386b3caaf5993d5c100f88279ff5b45ad1fe098"
+        }
+      }
+    },
+    {
+      "id": "45bb3079b25331bd2630d0f30e56bb99ba4c86e89e26fcf7fa1f7a4271168756",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H2360",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MA-H-2360-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-2360-2023 (LegiScan sponsor list): H2360 (193rd General Court): Relative to 3D printed guns and ghost guns.",
+      "subjects": [
+        "ghost guns: serial numbers required on all firearms",
+        "3D-printed and undetectable firearms banned",
+        "felony penalty for breaking the new rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2360-2023.introduced.pdf",
+          "sha256": "571ab4edc7bf2d33a4ab46199dedc64d80f657ef98d1f743254495c425d2fe94"
+        }
+      }
+    },
+    {
+      "id": "098afdb4cf8c0cce88e55aa34438095f59ae2ea312a0d1e21b95ef0adc101724",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/191/S1388",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MA-S-1388-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-S-1388-2019 (LegiScan sponsor list): S1388 (191st General Court): Relative to crime gun data reporting and analysis.",
+      "subjects": [
+        "biennial report on crime gun trace and sales data"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-S-1388-2019.introduced.pdf",
+          "sha256": "ef4cb64fc242ae7df425557408dc449e1507668db996e81266a94029eb68522b"
+        }
+      }
+    },
+    {
+      "id": "49c76335f3f33ca316fb1247e69e0ac6a1d2a7fcf465dde29ffc5db5d3bcd5f0",
+      "kind": "own-words",
+      "url": "https://www.recorder.com/Beacon-Hill-Roll-Call-Jan-29-to-Feb-2-2024-53936814",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "passage": "“I voted against this bill because I have deep concerns with a number of provisions that I feel lead us into a constitutional gray area and risk opening up our great gun laws to legal challenge in front of the Supreme Court,” said Sen. Patrick O’Connor, R-Weymouth. “In a fairly unprecedented move, this bill also did not have a public hearing, which is arguably the most important part of our legislative process.”",
+      "note": "Quoted in the Beacon Hill Roll Call column (Greenfield Recorder) on why he voted against the Senate firearms bill S 2572. The date is the column's publication date, not the date he spoke. Dated to the floor debate (Senate debate on S.2572 (H.4139), 2024-02-01; runner 2026-11-03); the column date was 2024-02-09.",
+      "subjects": [
+        "Senate gun bill S 2572",
+        "public hearing on gun bill",
+        "legal challenge to gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:57:07.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "689d91016f13b612551d60cc8f2da1090bdc2e5095e9f4702cc6feb6b4c7b7ea",
+      "kind": "own-words",
+      "url": "https://www.recorder.com/Beacon-Hill-Roll-Call-Jan-29-to-Feb-2-2024-53936814",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "passage": "“Sending this bill to the Joint Committee on Public Safety [and Homeland Security] will allow for it to have a public hearing where industry experts and people from all walks of life can weigh in and share their perspectives,” said Sen. Patrick O’Connor, R-Weymouth. “Public hearings are one of our greatest assets as legislators, and forgoing the opportunity to hold one on this bill is a disservice to ourselves as legislators and our constituents.”",
+      "note": "Quoted in the same column on his motion to send S 2572 back to committee for a public hearing; the Senate rejected the motion 9-31. Date is the column's publication date. Dated to the floor debate (Senate debate on S.2572 (H.4139), 2024-02-01; runner 2026-11-03); the column date was 2024-02-09.",
+      "subjects": [
+        "public hearing on gun bill",
+        "Senate gun bill S 2572"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:57:07.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4d136ee7f66b6dab203ec1c19bbecdb1b95ee489a41b61ffe52f4ec8f65351a4",
+      "kind": "own-words",
+      "url": "https://www.recorder.com/Beacon-Hill-Roll-Call-Jan-29-to-Feb-2-2024-53936814",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "passage": "“This amendment was filed so that I could go on the record in support of commonsense gun control measures,” said sponsor Sen. Patrick O’Connor, R-Weymouth. “The provisions in this amendment maintain focus on gun violence reduction and prevention while respecting the rights afforded in the Second Amendment.”",
+      "note": "Quoted on his alternative version of the Senate firearms bill, which the Senate rejected 6-33. Date is the column's publication date. Dated to the floor debate (Senate debate on S.2572 (H.4139), 2024-02-01; runner 2026-11-03); the column date was 2024-02-09.",
+      "subjects": [
+        "Second Amendment rights",
+        "commonsense gun control measures",
+        "gun violence prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:57:07.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "caea9afe66851bfedef4599334792cad9b311b7e5b648810e6fafda837932b58",
+      "kind": "record",
+      "url": "https://www.recorder.com/Beacon-Hill-Roll-Call-Jan-29-to-Feb-2-2024-53936814",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "instrument_id": "MA-S-2572-AMDT-63-2024",
+      "act": "other",
+      "motion": "Amendment to substitute an alternative version of the firearms bill, sponsored by O'Connor; rejected 6-33",
+      "note": "He sponsored a substitute version of the Senate firearms bill S 2572 (titled 'Making Massachusetts Safer' in news coverage). The column reports it rejected 6-33; the page text does not give the vote day beyond the column's week.",
+      "subjects": [
+        "Senate gun bill S 2572",
+        "alternative gun bill"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:57:07.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f8a30920e236e8d163ece09e46405c510081f8d17c3c6a7a5f2cfd49c9d7ff71",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "nay",
+      "motion": "Roll Call #208 - Question on acceptance of conference committee report",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA Senate, Roll Call #208 - Question on acceptance of conference committee report, 2024-07-18: nay (tally 35–5); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -73,6 +305,36 @@
       "found": 0,
       "at": "2026-10-27T16:05:49.640Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "ghost guns",
+        "carrying guns",
+        "public hearing on gun bill",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/PMO (confirms Senator Patrick M. O'Connor, First Plymouth and Norfolk; nothing on the subject)",
+        "official sponsored-bills page https://malegislature.gov/Legislators/Profile/PMO/194/Bills/Sponsored (no gun bills on the 194th list)",
+        "sponsor list: covered by LegiScan bulk check",
+        "bill page https://malegislature.gov/Bills/193/S1575 (his petition on illegal possession and sale of firearms; already on file)",
+        "scope: sitting senator; a search result says his 2026 primary was uncontested, but a general-election ballot listing was not confirmed by a fetched page",
+        "blocked: https://news.yahoo.com/mass-senate-approves-gun-bill-103857744.html (plain curl returned 'Too Many Requests')",
+        "news page https://www.nepm.org/regional-news/2024-02-01/massachusetts-gun-rights-group-gives-up-on-senate-bill (reporter words only, no direct quote)",
+        "news page https://www.boston25news.com/news/local/massachusetts-senate-approves-sweeping-overhaul-state-firearms-laws/YHLCYJRQX5BMJHEIWZX7SPCHKY/ (reporter paraphrase of his floor point, not a direct quote, so not saved)",
+        "campaign site: not found by search or fetch",
+        "Ballotpedia: not reviewed, known to return empty to the fetch tool",
+        "three web searches on his name plus gun words"
+      ],
+      "found": 4,
+      "at": "2026-11-01T01:57:07.935Z",
+      "by": "source-collector"
     }
   ]
 }

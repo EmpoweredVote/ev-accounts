@@ -1,0 +1,31 @@
+{
+  "politician_id": "979a196d-62be-4ce4-bcce-f48ef285e0d1",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights",
+        "Second Amendment",
+        "restrictions on gun ownership",
+        "check every gun buyer",
+        "carry a gun without a permit"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope confirmed: https://talkbusiness.net/2026/02/arkansas-libertarians-nominate-candidates-for-2026/ lists him as nominee for US Congress District 3, Bentonville; https://ivoterguide.com/candidate/81694/race/29800/election/1446 lists him in the 2026-11-03 general election",
+        "campaign site https://bobbyforcongress.mydurable.com/ : issues listed are spending and debt, Social Security, immigration, housing, surveillance and liberty, health care; nothing on the subject",
+        "voter guide page (ivoterguide): gun-ownership question shown as unanswered; nothing on the subject",
+        "campaign Facebook page: page returned only a title, no posts readable",
+        "blocked: https://ballotpedia.org/Bobby_Wilson_(Arkansas) (empty page)",
+        "not reviewed: PBS Arkansas US District 3 debate video https://www.pbs.org/video/us-district-3-kuboc9/",
+        "web searches: 2 (name plus guns; name plus district plus gun rights); results about a different Bobby Wilson in Arizona were excluded",
+        "sponsor list: not applicable (not a legislator)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T23:45:17.111Z",
+      "by": "source-collector"
+    }
+  ]
+}

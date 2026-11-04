@@ -110,6 +110,35 @@
         "fetched_at": "2026-10-28T20:51:14.398Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "7017959dffe6011ab620b35599a42d0b19336046e7cc23725aedcccf8b60cffb",
+      "kind": "record",
+      "url": "https://law-journals-books.vlex.com/vid/sb-319-chairman-john-935400390",
+      "date": "2022-03-30",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-319-2022",
+      "act": "yea",
+      "motion": "Passage as amended/substituted",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage as amended/substituted, 2022-03-30: yea (tally 100–67); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "orchestrator, gun-policy Stage 5, LegiScan API (getBill, getRollCall, getSessionPeople, getBillText)",
+        "fetched_at": "2026-10-30T18:00:00Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/prefill/legiscan-ga/ga-sb319-enrolled.pdf",
+          "sha256": "17943534917a39ee671fab99d8120acebcc4e61921a039e7c8f5bb13fc72114d"
+        }
+      }
     }
   ],
   "searches": [

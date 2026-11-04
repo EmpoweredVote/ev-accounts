@@ -1,0 +1,76 @@
+{
+  "politician_id": "7aecb8c6-affa-41e2-a742-5fd2dc17c247",
+  "findings": [
+    {
+      "id": "c425738ad69c68c8584d21c90dd0e0580fb3d15dc9b626a7ccdb0108d3e204ae",
+      "kind": "own-words",
+      "url": "https://caitconley.com/policy/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "As a combat veteran, Cait has fired everything from a machine gun to a tank. She is a gun owner who respects the Second Amendment and understands common-sense gun safety measures. She also knows firsthand the devastation weapons of war can cause, and understands they do not belong on our streets or in our schools.",
+      "note": "Opening of the 'Common Sense Gun Safety' section of her campaign policy page; written in the third person on the campaign's behalf. Page is undated.",
+      "subjects": [
+        "general statement on gun rights and gun safety",
+        "weapons of war off the streets and out of schools"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:06:55.238Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa1c62727750f16c4cf9d2edd02098b98fb424ea41aaff12574645e3368a7d5c",
+      "kind": "own-words",
+      "url": "https://caitconley.com/policy/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "In Congress, Cait will work for common-sense gun safety measures backed by the vast majority of Americans, including: Passing Universal background checks to protect lawful gun owners while stopping criminals. Closing the loophole that exempts unlicensed dealers (gun shows, online sales, private transfers). Supporting federal grants to help states adopt extreme danger (“red flag”) laws that respect due process and keep guns out of the hands of domestic abusers or those who might do themselves harm.",
+      "note": "Bulleted list on her campaign policy page naming three measures: background checks on all sales, closing the unlicensed-dealer loophole, and federal grants for state red-flag laws. Text is a list; the bullets are joined here in page order. Page is undated.",
+      "subjects": [
+        "check every gun buyer",
+        "private and gun-show sales",
+        "red flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:06:55.238Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "private and gun-show sales",
+        "red flag orders",
+        "ban on assault-style guns",
+        "gun rights and the Second Amendment",
+        "carry a gun without a permit"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site policy page (Common Sense Gun Safety section)",
+        "campaign site home page (only an unrelated 'run to the sound of the guns' phrase)",
+        "campaign site news, media and endorsements pages (nothing own-words on the subject; endorsements page lists a gun-safety group)",
+        "City & State news story of 2026-06 confirming she won the NY-17 primary and is the general-election nominee against the incumbent",
+        "Giffords endorsement page (third-party page; text not extractable, not used as her words)",
+        "blocked: https://ballotpedia.org/Cait_Conley (403)",
+        "congress.gov: not applicable, not a sitting legislator",
+        "web search x2 (name plus gun safety; name plus NY-17 plus assault weapons/background checks): no further own words found"
+      ],
+      "found": 2,
+      "at": "2026-10-30T15:06:55.238Z",
+      "by": "source-collector"
+    }
+  ]
+}

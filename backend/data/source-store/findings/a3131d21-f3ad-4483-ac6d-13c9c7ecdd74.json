@@ -49,6 +49,31 @@
       "found": 0,
       "at": "2026-10-27T14:49:14.158Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "ghost guns",
+        "carrying guns",
+        "general statements on gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "malegislature.gov member page https://malegislature.gov/Legislators/Profile/RGW1 (confirms Richard G. Wells Jr., 7th Norfolk, 194th General Court; sponsored list shows no gun bill)",
+        "malegislature.gov co-sponsor page https://malegislature.gov/Legislators/Profile/RGW1/194/Cosponsor (only a pill-press (drug-pill machine) bill, H.2046; not a firearms bill, so not saved)",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site https://richardwells.org/, /record and /about (fetched with plain curl; he lists service on the Public Safety and Homeland Security committee and public-safety funding; nothing on guns)",
+        "Wikipedia page (finding aid only; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Richard_Wells_(Massachusetts) (returned empty)",
+        "three web searches on name plus gun words: nothing on the subject from him"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:52:02.070Z",
+      "by": "source-collector"
     }
   ]
 }

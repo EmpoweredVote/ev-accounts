@@ -43,6 +43,29 @@
       "found": 0,
       "at": "2026-10-27T15:54:43.594Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on firearm types",
+        "background checks",
+        "carry permits",
+        "general Second Amendment statements",
+        "insurance rules and guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope check: https://www.in.gov/idoi/newsroom/indiana-department-of-insurance-leadership/ shows her as the appointed state insurance commissioner (appointed October 2024); she is not a legislator and no race for her was found",
+        "official site (state insurance department leadership page): nothing on the subject",
+        "sponsor list: not applicable, she is an appointed agency head, not a legislator",
+        "news search on name plus gun words: nothing on the subject",
+        "Ballotpedia: not reviewed (known to return empty to the fetch tool)",
+        "blocked: https://indianacapitalchronicle.com/race-details/state-house-district-39/"
+      ],
+      "found": 0,
+      "at": "2026-10-31T20:38:13.026Z",
+      "by": "source-collector"
     }
   ]
 }

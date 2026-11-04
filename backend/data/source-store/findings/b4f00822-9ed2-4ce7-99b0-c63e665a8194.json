@@ -1,0 +1,63 @@
+{
+  "politician_id": "b4f00822-9ed2-4ce7-99b0-c63e665a8194",
+  "findings": [
+    {
+      "id": "66187bf0ca1c222751f3a3640c2b6d92788519e90f246ce85cdf50918e504d42",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/93111/race/30764/election/1457",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I support universal background checks, closing loopholes that allow prohibited individuals to obtain firearms, extreme risk protection orders with due process, safe storage requirements, and stronger enforcement against illegal gun trafficking. I also support protecting the constitutional rights of responsible, law-abiding gun owners.",
+      "note": "Her written answer on iVoterGuide to the question 'What restrictions on gun ownership are needed to protect public safety?' for the 2026-11-03 NC-14 race. The page shows no answer date.",
+      "subjects": [
+        "check every gun buyer",
+        "red-flag orders with due process",
+        "safe storage rules",
+        "stop illegal gun trafficking",
+        "protect rights of law-abiding gun owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:15:18.652Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "restrictions on gun ownership",
+        "check every gun buyer",
+        "red-flag orders",
+        "safe storage",
+        "gun trafficking",
+        "gun rights",
+        "bans on a type of firearm",
+        "carry permits",
+        "sponsored gun bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope check: WFAE 2026-09-22 voter guide names her as the challenger for U.S. House NC-14 in the general election: https://www.wfae.org/2026-09-22/u-s-house-of-representatives-nc-14-candidates; The Ballot Brief also lists her in the 2026-11-03 general election",
+        "iVoterGuide candidate page (answer to a 2nd Amendment question, copied from page text)",
+        "campaign site womack4nc14.com home page and /issues page: nothing on the subject",
+        "WFAE voter guide: nothing on the subject",
+        "WSOC interview 2026-04-12: nothing on the subject",
+        "PBS NC interview recorded 2026-08-31: description has nothing on the subject; video itself not reviewed: https://www.pbs.org/video/lakesha-womack-democratic-candidate-for-ncs-14th-congressional-district-5dyxti/",
+        "The Ballot Brief profile: nothing on the subject",
+        "blocked: https://www.axios.com/local/charlotte/2026/10/27/congress-midterms-moore-womack (403)",
+        "Ballotpedia: not fetched, pages come back empty",
+        "congress.gov sponsor list: not applicable, never a member of Congress",
+        "web search on name plus gun words: only the pages above"
+      ],
+      "found": 1,
+      "at": "2026-10-31T00:15:18.652Z",
+      "by": "source-collector"
+    }
+  ]
+}

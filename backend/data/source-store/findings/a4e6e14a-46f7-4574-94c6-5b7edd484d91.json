@@ -49,6 +49,34 @@
       "found": 0,
       "at": "2026-10-27T14:46:43.152Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "ghost guns",
+        "carrying guns",
+        "general statements on gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "malegislature.gov member page https://malegislature.gov/Legislators/Profile/SJO1 (confirms Steven J. Ouellette, 8th Bristol, 194th General Court; sponsored bills H.135, H.3596, H.5597 are not gun bills)",
+        "malegislature.gov co-sponsor page https://malegislature.gov/Legislators/Profile/SJO1/194/Cosponsor (no gun bills)",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site https://electouellette.com/ (home page read with plain curl; lists public safety and emergency preparedness as a priority with no gun wording; /priorities, /about and /delivering-for-the-district returned empty or 143-byte pages, so blocked or empty: https://electouellette.com/priorities)",
+        "older campaign site https://steveouellette.com/ (plain curl; nothing on guns)",
+        "New Bedford Light 2024-10-16 candidate-debate story https://newbedfordlight.org/?p=141244 has a reporter's summary that all five candidates said the Second Amendment should be protected; that is the reporter's words, not a quote of him, so it is not saved as his own words",
+        "two other New Bedford Light/AOL 2024 election stories: no gun words",
+        "Wikipedia page (finding aid only; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Steven_Ouellette (returned empty)",
+        "three web searches on name plus gun words and campaign issues: no statement of his on guns"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:53:52.045Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -51,6 +51,31 @@
       "found": 0,
       "at": "2026-10-27T16:06:42.174Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or large-capacity magazines",
+        "check every gun buyer",
+        "minimum age to buy or carry",
+        "red flag / extreme risk orders",
+        "carry permits",
+        "repealing gun laws",
+        "general statements on gun rights and gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/J_T1 (confirms Representative Joshua Tarsky of Needham; sponsored-petition list shows no gun bill; H.3942 on school safety funds school resource officers, not about firearms)",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site https://www.joshuatarsky.com/ and /issues : nothing on the subject",
+        "not reviewed: Needham Channel candidate forum video https://www.needhamchannel.org/?p=127620",
+        "Ballotpedia: not relied on (returns empty to the fetch tool)",
+        "news searches on name plus gun words and Question 9: nothing found"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:54:58.502Z",
+      "by": "source-collector"
     }
   ]
 }

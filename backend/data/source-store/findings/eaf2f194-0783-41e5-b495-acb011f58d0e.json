@@ -1,0 +1,80 @@
+{
+  "politician_id": "eaf2f194-0783-41e5-b495-acb011f58d0e",
+  "findings": [
+    {
+      "id": "8711d60f39408eae48d955d5de95ec76c98837e647339ccab9296cd0b265c2df",
+      "kind": "own-words",
+      "url": "https://staradvertiser.com/?p=1338523",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Congress can uphold the Second Amendment and incentivize every citizen to exercise those rights in a safe and responsible manner.  The political narrative of “gun violence” and “mass shooting” at the core is a mental health problem, and lack of criminal enforcement of existing laws.",
+      "note": "Star-Advertiser 2024 election questionnaire, 2024 U.S. Senate run. Answer to what Congress can do about gun violence and mass shootings. Says to uphold the Second Amendment and frames the issue as mental health and enforcement of existing laws.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment",
+        "enforce existing gun laws",
+        "mental health and gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T14:59:27.332Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d1b8eeed3aa8887c03b40543fe891c395d0a99f114a3866f03c7799bcf3b652a",
+      "kind": "own-words",
+      "url": "https://www.civilbeat.org/2024/08/candidate-qa-u-s-senate-adriel-lam/",
+      "date": "2024-08-01",
+      "date_precision": "day",
+      "passage": "Congress should invest in more self-defense and firearms education. Security is both a collective and individual responsibility.",
+      "note": "Civil Beat candidate Q&A for the 2024 U.S. Senate race, answer to what Congress can do to reduce gun violence. Calls for firearms education and individual responsibility.",
+      "subjects": [
+        "firearms safety education",
+        "general statement on gun safety"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T14:59:27.332Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry permits",
+        "red-flag orders",
+        "Second Amendment and gun rights in general",
+        "gun violence response"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site lam4aloha.com (home page only, nothing on the subject)",
+        "Star-Advertiser 2026 candidate profile (confirms 2026 House District 1 candidate; nothing on the subject)",
+        "Civil Beat 2026 candidate Q&A (nothing on the subject)",
+        "Star-Advertiser 2024 Senate candidate profile (same person, own words on the subject)",
+        "Civil Beat 2024 Senate candidate Q&A (own words on the subject)",
+        "Star-Advertiser 2022 candidate profile (nothing on the subject)",
+        "Civil Beat 2018 state house Q&A (nothing on the subject)",
+        "BallotReady profile (nothing on the subject)",
+        "Freedom Voter Guide page (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Adriel_Lam",
+        "not a legislator: no bill sponsorships to check",
+        "two web searches on name plus subject words"
+      ],
+      "found": 2,
+      "at": "2026-10-30T14:59:27.332Z",
+      "by": "source-collector"
+    }
+  ]
+}

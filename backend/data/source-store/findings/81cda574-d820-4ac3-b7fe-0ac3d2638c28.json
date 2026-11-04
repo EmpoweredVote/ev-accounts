@@ -1,0 +1,35 @@
+{
+  "politician_id": "81cda574-d820-4ac3-b7fe-0ac3d2638c28",
+  "findings": [
+    {
+      "id": "223be4ab550cb6e1ac07e25f1c5ecb259c2374878024dd7377596867a2bc5b68",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2015R1/Measures/Overview/SB941",
+      "date": "2015-05-04",
+      "date_precision": "day",
+      "instrument_id": "OR-SB-941-2015",
+      "act": "nay",
+      "motion": "House passage (third reading) 5/4/2015",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OR House, House passage (third reading) 5/4/2015, 2015-05-04: nay (tally 32–28); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/OR-SB941-enrolled.pdf",
+          "sha256": "60a0a530252fa303431ccd57c9d8e642de29fad5c20d98d85654aa418e913f3b"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

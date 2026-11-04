@@ -1,0 +1,44 @@
+{
+ "id": "MA-H-2423-2021",
+ "scope": "state:ma",
+ "title": "H2423 (192nd General Court): An Act relative to firearm licensing",
+ "urls": [
+  "https://malegislature.gov/Bills/192/H2423",
+  "https://malegislature.gov/Bills/192/H2423/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Donald R. Berthiaume, Jr.",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "329212d4-14ef-4685-9d95-cc7473aad949"
+  },
+  {
+   "name": "David Allen Robertson",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "f8ae17d7-bc53-4b74-a92e-efa122cd5f04"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-H-2423-2021.html",
+   "sha256": "69cf4161e895187622216815924841065e84ac18c4235c91648acdb5266d7728"
+  }
+ },
+ "operative_text": "SECTION 1. Section 129B(8)(g) of Chapter 140 is hereby amended by deleting the subsection in its entirety and replacing it with the following: (8)(g) A firearm identification card shall be valid, unless revoked or suspended.\nSECTION 2. Section 129B of Chapter 140 is hereby amended by deleting subsection (12) in its entirety.\nSECTION 3. Section 131(i) of Chapter 140 is hereby amended by deleting subsection (i) in its entirety and replacing with the following:\n(i) A license to carry or possess firearms shall be valid, unless revoked or suspended. The fee for the application shall be $100, which shall be payable to the licensing authority and shall not be prorated or refunded in case of revocation or denial. The licensing authority shall retain $25 of the fee; $50 of the fee shall be deposited into the general fund of the commonwealth and not less than $50,000 of the funds deposited into the General Fund shall be allocated to the Firearm Licensing Review Board, established in section 130B, for its operations and that any funds not expended by said board for its operations shall revert back to the General Fund; and $25 of the fee shall be deposited in the Firearms Fingerprint Identity Verification Trust Fund. For active and retired law enforcement officials, or local, state, or federal government entities acting on their behalf, the fee for the application shall be set at $25, which shall be payable to the licensing authority and shall not be prorated or refunded in case of revocation or denial. The licensing authority shall retain $12.50 of the fee, and $12.50 of the fee shall be deposited into the general fund of the commonwealth. Notwithstanding any general or special law to the contrary, licensing authorities shall deposit such portion of the license application fee into the Firearms Record Keeping Fund quarterly, not later than January 1, April 1, July 1 and October 1of each year. Notwithstanding any general or special law to the contrary, licensing authorities shall deposit quarterly such portion of the license application fee as is to be deposited into the General Fund, not later than January 1, April 1, July 1 and October 1 of each year.\nSECTION 4. Section 131 of Chapter 140 is hereby amended by deleting subsection (m) in its entirety."
+}

@@ -1,0 +1,118 @@
+{
+  "politician_id": "b71a700c-8091-4760-87c8-118402408fb5",
+  "findings": [
+    {
+      "id": "9dec848a9aa3d99965bb8aa103b078e1e825584807942bd9f14e72c5a2a2182d",
+      "kind": "own-words",
+      "url": "https://melissaforcongress.com/platform/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Melissa supports Ethan’s Law, which promotes the secure storage of firearms to help prevent children and teens from accessing unsecured guns.",
+      "note": "Campaign platform page (Gun Safety section): says she supports Ethan's Law on locked-up firearm storage. Page undated; site last modified 2026-07-30 per page metadata.",
+      "subjects": [
+        "safe storage of guns",
+        "keep guns from children"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:06:55.239Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d879cf871a7e9629d244e0ea60b89ad705574ffbfc52a26a6671b4baffb7bfea",
+      "kind": "own-words",
+      "url": "https://melissaforcongress.com/platform/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Banning guns is not a practical solution, but neither is doing nothing. We need to have a conversation about how to move forward as a safer nation that still respects the Second Amendment. By promoting responsible gun ownership, safe firearm storage, stronger background checks, and improved access to mental health care, we can help reduce gun violence while protecting the constitutional rights of law-abiding Texans.",
+      "note": "Campaign platform page, 'Stop the Mass Shootings': names stronger background checks, safe storage, mental health care; says banning guns is not practical.",
+      "subjects": [
+        "check every gun buyer",
+        "safe storage of guns",
+        "no general gun ban",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:06:55.239Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9c8ac1d3fa5f6133288c696fc182f19eb69b74192dbdc15afe6f9f2dde25a79a",
+      "kind": "own-words",
+      "url": "https://melissaforcongress.com/platform/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "By enabling “Constitutional Carry,” Texas is more dangerous than it has been in decades.",
+      "note": "Campaign platform page: criticises Texas carrying guns without a permit.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:06:55.239Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f2f871b91c4f1f765cf0f76dced7b495aeeb794a4a786b4deb7d5ee12c8f8095",
+      "kind": "own-words",
+      "url": "https://branch.vote/races/2026-texas-general-election-tx-state-us-representative-tx-congressional-38/candidates/melissa-mcdonough",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Wants more firearm regulations.",
+      "note": "Branch voter-guide summary line under 'Public Safety'. Third-person wording, so it may be Branch's summary and not her own words; authorship not confirmed.",
+      "subjects": [
+        "gun regulation general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:06:55.239Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety",
+        "background checks",
+        "safe storage",
+        "constitutional carry",
+        "Second Amendment",
+        "assault-style guns"
+      ],
+      "places": [
+        "in scope: listed as a 2026 Texas general election candidate for US House District 38 (Branch voter guide page, fetched)",
+        "On the Record (0 appearances)",
+        "campaign site platform page (found, fetched with curl; gun section saved)",
+        "campaign site home page (nav only; no gun text beyond headings)",
+        "Branch voter guide page: one summary line saved, flagged as not confirmed to be her wording",
+        "iVoterGuide https://ivoterguide.com/candidate/82940/race/13400/election/1214 : she did not answer the gun-restrictions question; lists a gun-safety group among endorsements (not her words, not saved)",
+        "nothing on the subject: https://www.tpr.org/government-politics/2026-06-26/national-gun-safety-group-dives-into-san-antonios-gun-centric-congressional-race (about a different district)",
+        "Ballotpedia: not reviewed",
+        "not a legislator: no sponsorship record to check",
+        "2 web searches run"
+      ],
+      "found": 4,
+      "at": "2026-10-30T15:06:55.239Z",
+      "by": "source-collector"
+    }
+  ]
+}

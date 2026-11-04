@@ -1,0 +1,78 @@
+{
+  "id": "MA-S-1496-2023",
+  "scope": "state:ma",
+  "title": "S1496 (193rd General Court): Relative to ghost guns",
+  "urls": [
+    "https://malegislature.gov/Bills/193/S1496",
+    "https://malegislature.gov/Bills/193/S1496.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cynthia Creem",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b46a6774-2d85-4750-813a-6d4ef2eefb5b"
+    },
+    {
+      "name": "Joanne Comerford",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "961506eb-3f00-4358-a9a3-1730e7004474"
+    },
+    {
+      "name": "David Linsky",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fa6beaf8-acfe-4365-82a2-6f282aa1b688"
+    },
+    {
+      "name": "Salvatore DiDomenico",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Brendan Crighton",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "99457307-afa4-4045-aebf-06ee8b39d28f"
+    },
+    {
+      "name": "Lydia Edwards",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "11d73e67-bcd9-419a-8b0d-a26447eb0c0b"
+    },
+    {
+      "name": "Adam Gomez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "78ae3786-e71e-4dc4-8b84-0ab28b555632"
+    },
+    {
+      "name": "Kay Khan",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-31T18:31:13.796330Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-S-1496-2023.introduced.pdf",
+      "sha256": "9a9d2b6679f1aeb09e45b59a489422562e26ad916926d061a5260b3072ae3d2a"
+    }
+  },
+  "operative_text": "Sec. 4 (adding G.L. c.140 s.121B(a)): It is unlawful to knowingly manufacture or assemble, cause to be manufactured or assembled, import, purchase, sell, offer for sale, or transfer ownership of any firearm, rifle, or shotgun that is not imprinted with a valid serial number.\nSec. 4 (adding G.L. c.140 s.121B(b)): It is unlawful to knowingly import, purchase, sell, offer for sale, or transfer ownership of any completed or unfinished frame or receiver, unless the completed or unfinished frame or receiver: (1) Is deemed to be a firearm pursuant to Chapter 44 (commencing with Section 921) of Title 18 of the United States Code and regulations issued pursuant thereto; and (2) Is imprinted with a valid serial number.\nSec. 4 (adding G.L. c.140 s.121B(c)): Commencing July 1, 2024, it is unlawful to knowingly possess a firearm, rifle, shotgun, or any completed or unfinished frame or receiver that is not imprinted with a valid serial number.\nSec. 5 (adding G.L. c.140 s.121C(a)): It is unlawful to knowingly manufacture or assemble more than one firearm, rifle, shotgun, or completed or unfinished frame or receiver within the commonwealth in a calendar year without a valid license to manufacture firearms.\nSec. 5 (adding G.L. c.140 s.121C(b)): It shall be unlawful to use a three-dimensional printer or CNC milling machine to manufacture or assemble any firearm, rifle, shotgun, or completed or unfinished frame or receiver within the commonwealth without a valid license to manufacture firearms.\nSec. 6 (adding G.L. c.140 s.121D(b)): A person, firm, or corporation shall not, by any means, including the Internet, knowingly distribute, or knowingly cause the distribution of, digital firearm manufacturing code to any person in the commonwealth who does not have a valid license to manufacture firearms.\nSec. 7 (replacing G.L. c.140 s.131N): No person shall knowingly manufacture or assemble or cause to be manufactured or assembled, import, sell, offer for sale, transfer or possess any weapon, capable of discharging a bullet or shot, that is: (i) constructed in a shape that does not resemble a handgun, short–barreled rifle or short–barreled shotgun including, but not limited to, covert weapons that resemble key– chains, pens, cigarette–lighters or cigarette–packages; or (ii) an undetectable firearm, rifle, or shotgun as defined in section 121."
+}

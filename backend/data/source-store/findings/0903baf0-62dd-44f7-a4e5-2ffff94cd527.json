@@ -1,0 +1,32 @@
+{
+  "politician_id": "0903baf0-62dd-44f7-a4e5-2ffff94cd527",
+  "findings": [
+    {
+      "id": "55a2132fff4b8be7e7cf8603e66002563e7fa055e1f248bcf006c6bf6bc78905",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2023/543",
+      "date": "2023-03-24",
+      "date_precision": "day",
+      "instrument_id": "FL-HB-543-2023",
+      "act": "nay",
+      "motion": "Passage of CS/HB 543, 1st Eng., third reading",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "FL House, Passage of CS/HB 543, 1st Eng., third reading, 2023-03-24: nay (tally 76–32); census gate: multi-subject.",
+      "subjects": [
+        "carry a concealed gun without a permit",
+        "school guardian program"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "B (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": []
+}

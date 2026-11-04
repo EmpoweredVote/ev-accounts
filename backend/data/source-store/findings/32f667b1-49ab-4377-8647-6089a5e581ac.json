@@ -1,0 +1,57 @@
+{
+  "politician_id": "32f667b1-49ab-4377-8647-6089a5e581ac",
+  "findings": [
+    {
+      "id": "74ce8c7ce6e89d07fcc9ca4d87dbe7d3a398eaaccaa824deb550e927348ebd52",
+      "kind": "own-words",
+      "url": "https://www.brianshaverforcongress.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I believe firmly in the Second Amendment, and I’ve even attended NRA events because I respect responsible gun ownership. At the same time, firearms should not be as easy to access as they are today. We can protect constitutional rights while still putting common‑sense safeguards in place to keep guns out of the wrong hands. To me, background checks, safe storage expectations, and reasonable limits aren’t threats to freedom, They’re basic steps to keep our communities safe.",
+      "note": "Gun Rights section of his campaign Issues page. He says he supports the Second Amendment and responsible ownership, says guns should be harder to get than now, and names background checks, safe storage expectations and reasonable limits as steps he sees as compatible with freedom. Page is undated.",
+      "subjects": [
+        "Second Amendment and gun rights",
+        "check every gun buyer",
+        "safe storage of guns",
+        "keep guns from the wrong hands",
+        "reasonable limits on gun access"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:44:22.087Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "safe storage",
+        "limits on gun access",
+        "Second Amendment and gun rights statements",
+        "ban on assault-style guns",
+        "carry a gun without a permit"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "in scope: Ballot Brief profile and a Cleveland 19 race preview list him as a general-election candidate for Ohio's 5th District on 2026-11-03",
+        "campaign site home page (nothing on the subject) and its Issues page (Gun Rights section)",
+        "Cleveland 19 race preview 2026-10-27 (nothing on the subject)",
+        "Ballot Brief candidate profile (nothing on the subject)",
+        "iVoterGuide profile seen in search results only: not fetched, shows no answer to its Second Amendment question",
+        "not a legislator: no sponsored-bill list exists",
+        "blocked: https://ballotpedia.org/Brian_Shaver (not fetched: Ballotpedia returns empty to the fetch tool)",
+        "web searches on his name plus guns, Second Amendment, forum, questionnaire"
+      ],
+      "found": 1,
+      "at": "2026-10-30T20:44:22.087Z",
+      "by": "source-collector"
+    }
+  ]
+}

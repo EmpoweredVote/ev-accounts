@@ -1,0 +1,31 @@
+{
+  "politician_id": "fab6fd01-01d0-4b18-8c21-f0d03d62beca",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns and magazines",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "general Second Amendment statements",
+        "gun bills sponsored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "candidacy confirmed: https://www.kcbd.com/2026/05/27/rable-issues-statement-after-sell-wins-tx-19-republican-primary-runoff/ says he faced no primary opponent and will face the other nominee in November (Texas District 19)",
+        "campaign site home and /issues (https://rableforwesttexas.com/issues): nothing on guns",
+        "campaign site /about, /endorsements: not reviewed",
+        "https://www.kcbd.com/2025/11/28/kyle-rable-lays-out-priorities-district-19-run: priorities are cost of living, jobs, farmers; nothing on guns",
+        "iVoterGuide (https://ivoterguide.com/candidate/93307/race/32301/election/1471): gun-restrictions question marked 'Did not answer'",
+        "two news searches on name plus gun words: nothing on the subject (a Vote Smart second-amendment page is about a different person)",
+        "not a legislator: no sponsored-bill list applies",
+        "Ballotpedia: not reachable by the fetch tool, not relied on"
+      ],
+      "found": 0,
+      "at": "2026-10-31T00:48:25.815Z",
+      "by": "source-collector"
+    }
+  ]
+}

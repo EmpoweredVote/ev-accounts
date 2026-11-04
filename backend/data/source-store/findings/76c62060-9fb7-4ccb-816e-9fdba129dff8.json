@@ -1,6 +1,28 @@
 {
   "politician_id": "76c62060-9fb7-4ccb-816e-9fdba129dff8",
-  "findings": [],
+  "findings": [
+    {
+      "id": "875a424bd7c8b81fda67aa67a158e626c0f0b7e8fe29729841d3249f5daa318c",
+      "kind": "own-words",
+      "url": "https://cheryl4maryland.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "As your unbreakable Congresswoman, I'll defend the Constitution, our Second Amendment, veterans, and law enforcement.",
+      "note": "Campaign home page (undated; 2026 campaign) says she would defend the Second Amendment. No specific gun policy named.",
+      "subjects": [
+        "general gun rights statement",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:56:26.827Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -58,6 +80,31 @@
       "found": 0,
       "at": "2026-10-27T14:14:10.273Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "background checks",
+        "carry permits",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://cheryl4maryland.com/ home page (one Second Amendment sentence saved; safety section has nothing on guns)",
+        "https://www.ballotready.org/people/cheryl-riley (2026 general-election candidate for Maryland 8th District; public-safety section has nothing on guns)",
+        "https://mocogopclub.com/cheryl-riley-fighting-for-prosperity-peace-and-safety-in-marylands-8th-district/ (nothing on the subject)",
+        "https://mdbaynews.com/2026/02/20/cheryl-riley-md8-affordability-anti-elitism-raskin-challenge/ (nothing on the subject)",
+        "web search: one news search on her name plus gun words; no gun statement found",
+        "no legislative record (not a legislator); no sponsorships to check",
+        "https://cherylriley.com is a domain-for-sale page, not hers",
+        "blocked: https://bethesdamagazine.com/cheryl-riley/ (403)",
+        "Ballotpedia: not reviewed (empty to fetch tool)"
+      ],
+      "found": 1,
+      "at": "2026-10-30T22:56:26.827Z",
+      "by": "source-collector"
     }
   ]
 }

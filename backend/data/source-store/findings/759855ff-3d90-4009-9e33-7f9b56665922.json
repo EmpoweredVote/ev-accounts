@@ -55,6 +55,30 @@
       "found": 0,
       "at": "2026-10-27T14:12:31.239Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "background checks",
+        "red-flag orders",
+        "carry permits",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site home page https://votefordiamant.com/ (nothing on the subject)",
+        "campaign plan page https://votefordiamant.com/diamants-plan-for-ny-14 (only 'safe streets'; nothing on the subject)",
+        "Branch Politics profile https://branch.vote/races/2026-new-york-general-election-ny-state-us-representative-ny-congressional-14/candidates/diamant-hysenaj (confirms candidate for NY-14; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Diamant_Hysenaj (page returned empty to fetch tool; not reviewed)",
+        "two web searches on name plus gun terms (nothing on the subject; one hit was a different candidate)",
+        "congress.gov sponsorships: not applicable, not a legislator",
+        "X and social media: not reviewed: https://x.com/diamanthysenaj"
+      ],
+      "found": 0,
+      "at": "2026-10-30T14:58:06.494Z",
+      "by": "source-collector"
     }
   ]
 }

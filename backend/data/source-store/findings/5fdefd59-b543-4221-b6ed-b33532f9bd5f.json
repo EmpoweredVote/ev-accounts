@@ -46,6 +46,269 @@
         "fetched_at": "2026-10-27T11:49:38.534Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "9fc7fe42d4ca0418da57b37f789b4766ff618ad71e31a528b663386efac66476",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: yea (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "3cb7a6eb2595e83f808e9aa6a3f3bb5e782a0aa86dc925a943767e1bab71e9ec",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/House/H4376",
+      "date": "2014-07-31",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4376-2013",
+      "act": "yea",
+      "motion": "Acceptance of the committee of conference report (Yea and Nay No. 483)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, Acceptance of the committee of conference report (Yea and Nay No. 483), 2014-07-31: yea (tally 122–30); census gate: multi-subject.",
+      "subjects": [
+        "firearm license classes merged and Class B licences phased out",
+        "new penalties for shooting and for trafficking guns into the state",
+        "background-check records sent to the federal system",
+        "ban on carrying firearms on school and college grounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "malegislature.gov roll-call PDFs + LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:34:02.477850Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4376-2013.introduced.pdf",
+          "sha256": "b94514a66e779c1400d1b875eb3aac207f6b1b1f12f9928fd8d977feab23bb61"
+        }
+      }
+    },
+    {
+      "id": "c5523d50a631897031188db98ea5d927074d7126174a492b6b9e8d21f240f855",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4517",
+      "date": "2018-05-23",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4517-2017",
+      "act": "yea",
+      "motion": "House On Engrossment Yea and Nay No. 359",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MA House, House On Engrossment Yea and Nay No. 359, 2018-05-23: yea (tally 139–14); census gate: near-unanimous.",
+      "subjects": [
+        "court orders to remove guns from people at risk of harming self or others",
+        "emergency orders without notice",
+        "penalty for false petitions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4517-2017.introduced.pdf",
+          "sha256": "3bac8bca02408059e2c0db49bae39de8a690f0fb6e1b5469f7a23cf51fbd5cc4"
+        }
+      }
+    },
+    {
+      "id": "7727b62aa6ef27fb9e9cfc73a0491b1c4dc595f2b71982384c335273fe2771d1",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4670",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4670-2017",
+      "act": "yea",
+      "motion": "On acceptance of the conference report (Yea and Nay No. 389)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, On acceptance of the conference report (Yea and Nay No. 389), 2018-06-28: yea (tally 133–15); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders to remove guns from people at risk of harming self or others",
+        "protection order added as a bar to gun licenses",
+        "stun gun rules and locked storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4670-2017.introduced.pdf",
+          "sha256": "6b37958358a3f01548ef0d16c386b3caaf5993d5c100f88279ff5b45ad1fe098"
+        }
+      }
+    },
+    {
+      "id": "0c98c24f2a09cd4243861405c41ad48b3ab22fc09f5eaaa9d4162cb7ffaf18c7",
+      "kind": "own-words",
+      "url": "https://ronmariano.com/?p=308",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "passage": "“The comprehensive gun reform legislation that the House passed today will make Massachusetts residents safer and will further strengthen the Commonwealth’s status as a national leader in the effort to combat gun violence,” said House Speaker Ronald J. Mariano (D-Quincy).",
+      "note": "Speaker's press-release statement on the House passing the 2023 firearms bill (ghost guns, red flag orders, assault-style definition, limits on carrying in some places).",
+      "subjects": [
+        "ban on assault-style guns",
+        "red flag orders",
+        "ghost guns",
+        "carrying guns and where"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:42:41.538Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f36e5aa57a36a93780f3e9ba1a004482429755fad4b9cbf9a845766e7086b444",
+      "kind": "own-words",
+      "url": "https://ronmariano.com/updates/legislature-passes-firearm-safety-reform-bill/",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "passage": "“This agreement is the most significant gun safety legislation that Massachusetts has seen in a decade.",
+      "note": "Speaker's press-release statement on the Legislature passing the final 2024 firearms bill, which he calls the most significant gun safety legislation in a decade.",
+      "subjects": [
+        "general gun-safety statements",
+        "ghost guns",
+        "red flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:42:41.538Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4898f5a3528c8802a7b8f0c97b9eff3d51a5b4096bc586662b395d5770c8fa0b",
+      "kind": "own-words",
+      "url": "https://ronmariano.com/updates/legislature-passes-firearm-safety-reform-bill/",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "passage": "“While the Commonwealth’s existing gun laws have proven to be effective in preventing gun violence compared to other states, relative success is never a cause for complacency.",
+      "note": "Same release; Speaker says existing state gun laws work well but more is needed, and the agreement builds on 2014 reforms.",
+      "subjects": [
+        "general gun-safety statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:42:41.538Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3381efceef716a54147743e35182979bc979e85a204f251d7294c9e27ad86c7b",
+      "kind": "own-words",
+      "url": "https://commonwealthbeacon.org/guns/mariano-says-gun-bill-needs-more-work/",
+      "date": "2023-07-24",
+      "date_precision": "day",
+      "passage": "Mariano said in his email that “the Bruen decision fundamentally changed how courts review state gun laws and immediately jeopardized aspects of the laws that have made our Commonwealth a national leader in reducing gun violence.”",
+      "note": "Quoted by CommonWealth Beacon from the Speaker's email to House members, pausing the gun bill to answer members' questions after the Bruen ruling.",
+      "subjects": [
+        "carry permits and licences",
+        "general gun-safety statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:42:41.538Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "187d3f082e61d83425ce4cba96fefde3700d5f7af61af8ccc329b8d165e8621e",
+      "kind": "own-words",
+      "url": "https://www.wbur.org/cognoscenti/2023/10/10/massachusetts-gun-violence-ronald-mariano-michael-day",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "passage": "Gun violence in the United States is an unrelenting crisis.",
+      "note": "Opening of a WBUR Cognoscenti op-ed co-written by Mariano and Rep. Michael Day urging new gun control legislation (assault weapon definition update, ghost gun serialization, wider red flag petitioners, bans on carrying in schools, polling places, government buildings).",
+      "subjects": [
+        "ban on assault-style guns",
+        "red flag orders",
+        "ghost guns",
+        "carrying guns and where",
+        "general gun-safety statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:42:41.538Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "818586ba7a6fa8e00a512d1c240c01472b0f796fab8f64a338fb0b5e616ea7fe",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: yea (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -97,6 +360,32 @@
       "found": 2,
       "at": "2026-10-27T11:49:38.534Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "ghost guns",
+        "carrying guns and where",
+        "carry permits and licences",
+        "repeal of gun laws",
+        "general gun-rights or gun-safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "official speaker site ronmariano.com (searched for gun and firearm; two press releases found)",
+        "state legislature member page (https://malegislature.gov/Legislators/Profile/RMH2 was another member; Mariano page not separately used)",
+        "web search: news and op-ed coverage (WBUR, CommonWealth Beacon, State House News)",
+        "Ballotpedia: not relied on (pages return empty to fetch tool)",
+        "campaign site: nothing beyond the speaker site"
+      ],
+      "found": 5,
+      "at": "2026-11-01T01:42:41.538Z",
+      "by": "source-collector"
     }
   ]
 }
