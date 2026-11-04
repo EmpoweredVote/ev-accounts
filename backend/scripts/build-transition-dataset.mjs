@@ -52,7 +52,31 @@ const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 try {
   const status = await buildStatus(pool);
 
-  // Offices whose body has a December term-start precedent → wave 3.
+  // 🔴 WAVE 3 IS NOW DRAWN FROM REAL DATES, NOT FROM A HISTORICAL MONTH.
+  // `essentials.office_swearing_in` (piece 4, CC_0344) holds a cited handover date per office.
+  // A local office belongs in wave 3 when its handover falls BEFORE the federal tier's
+  // statutory 2027-01-03 — which is the question wave 3 was always asking.
+  const FEDERAL_SWEARING_IN = '2027-01-03';
+  const { rows: dated } = await pool.query(
+    `SELECT office_id, swearing_in_date
+       FROM essentials.office_swearing_in
+      WHERE election_date = DATE '2026-11-03'
+        AND swearing_in_date < DATE '${FEDERAL_SWEARING_IN}'`);
+  const earlyOffices = new Set(dated.map((x) => x.office_id));
+
+  // 🔴 THE FALLBACK IS THE OLD HEURISTIC AND IT IS KNOWN TO BE CONTAMINATED. It is kept only
+  // for offices piece 4 has not reached yet (everything outside California, as of 2026-11-04),
+  // because having them in the wrong wave is better than having them in no wave.
+  //
+  // Two measured ways it lies:
+  //   * 118 of ~140 dated California SCHOOL terms read `2022-12-01` with
+  //     `start_precision = 'month'` — this repo's encoding of "December, day unknown". Reading
+  //     the DAY turned a precision artifact into the programme's deadline. The real statutory
+  //     date is the second Friday, 2026-12-11.
+  //   * It is SILENT, not false, for an office with no dated term at all. 129 of California's
+  //     337 local offices had none, so the heuristic reported nothing about 38% of the set and
+  //     that read as "not December".
+  // ▶ A historical month finds seats worth checking. It is not evidence of the next term.
   const { rows: dec } = await pool.query(`
     SELECT DISTINCT o.id
       FROM essentials.elections e
@@ -65,10 +89,27 @@ try {
        AND EXTRACT(month FROM t.term_start) = 12`);
   const decemberOffices = new Set(dec.map((x) => x.id));
 
+  // Did piece 4 reach this office at all, and with what strength? A dated office is decided by
+  // its date; an undated one falls back. Kept separate from `earlyOffices` so "its date says
+  // January" and "we have no date" cannot collapse into the same answer.
+  //
+  // 🔴 `basis` TRAVELS WITH THE DATE ONTO THE PAGE. An 'estimated' row is NOT a handover date —
+  // it is a record that one is owed, carrying the statutory floor. 106 California city seats are
+  // in that state, and a reader who sees only the date would read them as settled.
+  const { rows: known } = await pool.query(
+    `SELECT office_id, to_char(swearing_in_date, 'YYYY-MM-DD') AS d, basis AS b
+       FROM essentials.office_swearing_in WHERE election_date = DATE '2026-11-03'`);
+  const swearingIn = new Map(known.map((x) => [x.office_id, { d: x.d, b: x.b }]));
+  const datedOffices = new Set(known.map((x) => x.office_id));
+
   const waveOf = (s) => {
     if (s.districtType === 'NATIONAL_UPPER') return 1;
     if (s.districtType === 'NATIONAL_LOWER') return 2;
-    if (s.level === 'local') return decemberOffices.has(s.officeId) ? 3 : 5;
+    if (s.level === 'local') {
+      // A real date decides it. Only an office piece 4 has not reached falls back.
+      if (datedOffices.has(s.officeId)) return earlyOffices.has(s.officeId) ? 3 : 5;
+      return decemberOffices.has(s.officeId) ? 3 : 5;
+    }
     if (s.level === 'state') return 4;
     return 5;
   };
@@ -92,6 +133,8 @@ try {
       needs_headshot: s.flags.noHeadshot ? 1 : 0,
       needs_stances: s.flags.noStances ? 1 : 0,
       holder_term_ends: s.currentHolderTermEnd ?? '',
+      swearing_in: swearingIn.get(s.officeId)?.d ?? '',
+      swearing_in_basis: swearingIn.get(s.officeId)?.b ?? '',
       race_id: s.raceId,
     };
   });
@@ -117,10 +160,28 @@ try {
   // whenever the script is run from anywhere but backend/.
   const outDir = join(dirname(fileURLToPath(import.meta.url)), '..', 'data', 'transition-tracker');
   mkdirSync(outDir, { recursive: true });
+  // The handover calendar: what piece 4 established, one row per date.
+  // 🔴 SEATABLE AND OWED ARE COUNTED SEPARATELY AND MUST STAY THAT WAY. Summing them would
+  // report 106 California city seats as having a handover date when what they have is a
+  // statutory floor and an open question.
+  const { rows: calendar } = await pool.query(`
+    SELECT to_char(s.swearing_in_date, 'YYYY-MM-DD') AS handover_date,
+           to_char(max(s.window_end_date), 'YYYY-MM-DD') AS window_ends,
+           count(*)                                        AS offices,
+           count(*) FILTER (WHERE s.basis IN ('statute','published')) AS seatable,
+           count(*) FILTER (WHERE s.basis = 'estimated')              AS owed_a_date,
+           string_agg(DISTINCT s.rule_id, ' · ' ORDER BY s.rule_id)   AS authorities
+      FROM essentials.office_swearing_in s
+     WHERE s.election_date = DATE '2026-11-03'
+     GROUP BY 1 ORDER BY 1`);
+
   writeFileSync(join(outDir, 'seats.csv'), csv(seats, Object.keys(seats[0])));
   writeFileSync(join(outDir, 'waves.csv'), csv(waves, Object.keys(waves[0])));
-  console.log(`seats.csv ${seats.length} rows · waves.csv ${waves.length} rows`);
+  writeFileSync(join(outDir, 'handovers.csv'),
+    csv(calendar, ['handover_date', 'window_ends', 'offices', 'seatable', 'owed_a_date', 'authorities']));
+  console.log(`seats.csv ${seats.length} rows · waves.csv ${waves.length} rows · handovers.csv ${calendar.length} rows`);
   console.log(waves.map((w) => `${w.wave_label}: ${w.total} (blocked ${w.blocked})`).join('\n'));
+  console.log(calendar.map((c) => `${c.handover_date}: ${c.offices} (${c.seatable} seatable, ${c.owed_a_date} owed)`).join('\n'));
 } finally {
   await pool.end();
 }
