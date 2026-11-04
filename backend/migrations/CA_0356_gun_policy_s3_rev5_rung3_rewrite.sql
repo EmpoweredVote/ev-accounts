@@ -15,8 +15,9 @@
 -- topic. Actor 854fbc06-40fc-458d-b523-20ef8e5ad1b2 (Chris Andrews).
 --
 -- APPLIED: (fill in on apply — date, who said yes, revision id)
--- Dry run on prod (pending) (body twice inside BEGIN, forced RAISE): (fill in — gate OK,
--- second run skipped propose/approve, voter-answer dispositions, rollback confirmed)
+-- Dry run on prod 2026-11-03 (body twice inside BEGIN, forced RAISE): gate OK on both runs; first run re-pinned
+-- the draft season to revision 3, rejected revision 4 and proposed/approved/pinned revision 5; second run skipped
+-- propose/approve; voter answers reworded x3; rollback confirmed (4 revisions, revision 4 still approved and pinned).
 --
 -- WHAT THIS DOES
 --   0. Replaces revision 4 (76a098af-cf9f-499c-abb8-5a0a0863114a, approved and parked by CA_0338, pinned in
