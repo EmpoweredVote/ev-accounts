@@ -12,7 +12,8 @@
  *    ladder has to read the calendar too.
  */
 import { describe, it, expect } from 'vitest';
-import { seatState, levelOf, isStillStanding } from './election-transition-status.mjs';
+import { readFileSync } from 'node:fs';
+import { seatState, levelOf, isStillStanding, sqlNotStandingList } from './election-transition-status.mjs';
 
 describe('seatState', () => {
   it('returns 1 when no result is recorded', () => {
@@ -107,5 +108,33 @@ describe('isStillStanding', () => {
   it('excludes not_nominated and withdrew', () => {
     expect(isStillStanding({ result: 'not_nominated' })).toBe(false);
     expect(isStillStanding({ result: 'withdrew' })).toBe(false);
+  });
+});
+
+describe('the SQL and the JS cannot drift apart', () => {
+  // 🔴 levelOf and isStillStanding were exported, documented and TESTED — and never called,
+  // because buildStatus inlined both as SQL. Eight of the tests above were asserting the
+  // behaviour of dead duplicates: edit one copy and the other diverges with the suite green.
+  // Now there is one definition of each and the SQL is built from it.
+  const src = readFileSync(new URL('./election-transition-status.mjs', import.meta.url), 'utf8');
+
+  it('builds the "still standing" SQL list from the same constant isStillStanding uses', () => {
+    expect(src).toMatch(/NOT_STANDING/);
+    // The list may appear EXACTLY ONCE — its definition. A second copy is the drift this
+    // guards: the SQL interpolates `sqlNotStandingList()` rather than repeating the values.
+    const copies = src.match(/'lost'\s*,\s*'not_nominated'\s*,\s*'withdrew'/g) ?? [];
+    expect(copies).toHaveLength(1);
+    expect(src).toMatch(/NOT IN \(\$\{sqlNotStandingList\(\)\}\)/);
+  });
+
+  it('has no second, SQL-side copy of the level mapping', () => {
+    expect(src).not.toMatch(/LEVEL_SQL/);
+  });
+
+  it('every value isStillStanding rejects appears in the SQL list it generates', () => {
+    for (const r of ['lost', 'not_nominated', 'withdrew']) {
+      expect(isStillStanding({ result: r })).toBe(false);
+      expect(sqlNotStandingList()).toContain(`'${r}'`);
+    }
   });
 });

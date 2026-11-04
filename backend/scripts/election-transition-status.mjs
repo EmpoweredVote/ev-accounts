@@ -42,6 +42,22 @@ export function levelOf(districtType) {
 }
 
 /**
+ * The results that take a candidate out of contention.
+ *
+ * 🔴 ONE DEFINITION, USED BY BOTH THE JS AND THE SQL. `isStillStanding` and `levelOf` were
+ * exported, documented and tested while `buildStatus` inlined its own copies as SQL — so eight
+ * tests were pinning the behaviour of dead duplicates, and editing either copy would have let
+ * the two diverge with the suite still green. The SQL list is now generated from this array and
+ * `level` is computed in JS, where it was always consumed anyway.
+ */
+const NOT_STANDING = ['lost', 'not_nominated', 'withdrew'];
+
+/** The same set, as a SQL literal list. Exported so a test can prove the two agree. */
+export function sqlNotStandingList() {
+  return NOT_STANDING.map((r) => `'${r}'`).join(', ');
+}
+
+/**
  * Is this candidate still in contention?
  *
  * 🔴 Deliberately NOT essentials.is_live_candidate — see rule 2 in the header.
@@ -49,7 +65,7 @@ export function levelOf(districtType) {
 export function isStillStanding(row) {
   const r = row?.result ?? null;
   if (r === null) return true;
-  return !['lost', 'not_nominated', 'withdrew'].includes(r);
+  return !NOT_STANDING.includes(r);
 }
 
 /**
@@ -75,14 +91,6 @@ export function seatState(row) {
 
   return row.resultCertainty === 'certified' ? 3 : 2;
 }
-
-const LEVEL_SQL = `
-  CASE
-    WHEN d.district_type IN ('NATIONAL_UPPER','NATIONAL_LOWER') THEN 'federal'
-    WHEN d.district_type LIKE 'STATE%' THEN 'state'
-    WHEN d.district_type IN ('SCHOOL','LOCAL','COUNTY','LOCAL_EXEC') THEN 'local'
-    ELSE 'unknown'
-  END`;
 
 /**
  * Compute the whole status set for one election date.
@@ -135,7 +143,6 @@ export async function buildStatus(client, opts = {}) {
     SELECT DISTINCT ON (r.id)
            r.id              AS race_id,
            o.id              AS office_id,
-           ${LEVEL_SQL}      AS level,
            d.district_type   AS district_type,
            COALESCE(o.representing_state, e.state) AS state,
            o.title           AS title,
@@ -162,7 +169,7 @@ export async function buildStatus(client, opts = {}) {
                AND t.term_start >= e.election_date)    AS winners_seated,
            (SELECT count(*) FROM live l WHERE l.race_id = r.id)  AS candidate_rows,
            (SELECT count(*) FROM live l WHERE l.race_id = r.id
-              AND (l.result IS NULL OR l.result NOT IN ('lost','not_nominated','withdrew')))
+              AND (l.result IS NULL OR l.result NOT IN (${sqlNotStandingList()})))
                                                         AS live_candidates,
            -- Gap flags are computed across EVERY winner of the race, in the winner CTE, so a
            -- multi-seat council reports a gap when any of its winners has one.
@@ -190,7 +197,8 @@ export async function buildStatus(client, opts = {}) {
       return {
         raceId: row.race_id,
         officeId: row.office_id,
-        level: row.level ?? 'unknown',
+        // Computed here, by the one definition of the mapping (levelOf), from the raw column.
+        level: levelOf(row.district_type),
         districtType: row.district_type,
         state: row.state,
         title: row.title,

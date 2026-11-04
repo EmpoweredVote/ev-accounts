@@ -94,6 +94,37 @@ try {
   if (wRow?.seatState !== 5) fail(`on swearing-in day the seat reads state ${wRow?.seatState}, expected 5 — it must not regress`);
   else ok('on 2027-01-03 the same row reads state 5, with nothing written');
 
+  // 🔴 FAILURE MODE 4 — A WINNER WE HAVE NEVER SEEN BEFORE. The plan named this and the branch
+  // shipped with ZERO coverage, on the reasoning that it could not be exercised until real
+  // results existed. That was wrong: a winner with no `politicians` row can be planted here
+  // exactly like any other, and this is the shape a genuinely new officeholder arrives in.
+  // Their gap flags are the whole point — nobody can research a stance for a person who has no
+  // row, so the tracker must say so loudly rather than report the seat as quietly fine.
+  const { rows: fresh } = await client.query(
+    `SELECT id FROM essentials.race_candidates WHERE race_id = $1 AND id <> $2 LIMIT 1`,
+    [target.raceId, cand[0].id]);
+  if (fresh.length) {
+    // Undo the earlier plant so this race has exactly one winner again.
+    await client.query(
+      `UPDATE essentials.race_candidates SET result = NULL, result_certainty = NULL WHERE id = $1`,
+      [cand[0].id]);
+    await client.query(
+      `UPDATE essentials.race_candidates
+          SET result = 'won', result_certainty = 'called', politician_id = NULL,
+              result_source = 'POSITIVE CONTROL — unknown winner, rolled back'
+        WHERE id = $1`, [fresh[0].id]);
+
+    const unknown = await buildStatus(client, { levels: ['federal'] });
+    const uRow = unknown.seats.find((s) => s.raceId === target.raceId);
+    if (uRow?.seatState !== 2) fail(`a winner with no politicians row reads state ${uRow?.seatState}, expected 2`);
+    else if (!uRow.winner) fail('a winner with no politicians row vanished from the output');
+    else if (!uRow.flags.noHeadshot || !uRow.flags.noStances) {
+      fail(`a winner with no politicians row must flag BOTH gaps, got noHeadshot=${uRow.flags.noHeadshot} noStances=${uRow.flags.noStances}`);
+    } else ok('a winner with no politicians row: state 2, named, both gaps flagged');
+  } else {
+    fail('no second candidate on the target race — could not exercise the unknown-winner case');
+  }
+
   await client.query('ROLLBACK');
 
   // Prove the rollback reverted.
