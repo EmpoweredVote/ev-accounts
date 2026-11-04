@@ -175,10 +175,38 @@ export async function applyIncumbencyFixes(client, rows) {
 // `process.argv[1].endsWith('reconcile-incumbency.mjs')`, and `control-reconcile-incumbency.mjs`
 // ends with that string too — so importing this module from its own control ran the CLI, hit
 // production and printed a report nobody asked for. A suffix is not an identity.
+/**
+ * Does a --check run fail? Extracted so the decision can be WATCHED FAILING in a test: the
+ * script's own exit path needs a live database with real drift, which is not reproducible, and
+ * a gate nobody has seen go red is not a gate.
+ */
+export function driftExitCode({ check, driftCount }) {
+  return check && driftCount > 0 ? 1 : 0;
+}
+
 const invokedDirectly = process.argv[1]
   && import.meta.url === pathToFileURL(process.argv[1]).href;
 if (invokedDirectly) {
   const apply = process.argv.includes('--apply');
+  // 🔴 --check EXISTS BECAUSE THIS SCRIPT RAN NOWHERE. It was built, tested and controlled, and
+  // nothing invoked it — so incumbency drift would have accumulated silently again, which is the
+  // single thing it exists to stop. CI runs it daily in this mode.
+  //
+  // It REPORTS and does not write. Correcting drift means deciding what each row is, and the
+  // first attempt at that proved 420 of 429 "drift rows" were correct as they stood — so an
+  // automatic --apply on a schedule would write exactly the kind of change nobody read.
+  const check = process.argv.includes('--check');
+
+  // 🔴 NO DATABASE_URL -> SKIP, exit 0, and SAY SO. Forks get no secrets, and a check that skips
+  // without printing why is the shape of a detector that has quietly stopped working.
+  if (!process.env.DATABASE_URL) {
+    console.log(
+      'SKIPPED: DATABASE_URL is not set, so incumbency drift could not be measured. Forks get ' +
+        'no secrets; this is a deliberate green skip, not a pass.',
+    );
+    process.exit(0);
+  }
+
   const pool = new Pool({ connectionString: process.env.DATABASE_URL });
   try {
     const drift = await computeIncumbencyDrift(pool);
@@ -192,6 +220,17 @@ if (invokedDirectly) {
     }
     if (apply) console.log(`applied: ${await applyIncumbencyFixes(pool, drift)}`);
     else console.log('read-only; pass --apply to write');
+
+    if (check && drift.length) {
+      console.error(
+        `\n${drift.length} row(s) disagree with essentials.office_terms.\n` +
+          'Do NOT just run --apply: read the rows first. A predicate reads the SHAPE of a value, ' +
+          'never what it is, and the first measurement of this reported 429 rows of which only 9 ' +
+          'were real — applying the rest would have published 22 Senate CANDIDATES as sitting ' +
+          'incumbents (see CC_0342).',
+      );
+      process.exitCode = driftExitCode({ check, driftCount: drift.length });
+    }
   } finally {
     await pool.end();
   }
