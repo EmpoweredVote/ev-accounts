@@ -5,10 +5,15 @@ import { SEASON_IS_PUBLISHED, servedRevisionLateral } from './seasonService.js';
 import { appliesFromRoles } from './topicApplicability.js';
 
 // ---------------------------------------------------------------------------
-// 🔴 WHICH READS USE `inform.politician_answers_effective` (CC_0349)
+// 🔴 WHICH READS USE inform.politician_answers_effective (CC_0349)
 //
-// That view is `inform.politician_answers` minus the answers whose rung the live
-// ladder INVALIDATED — the Path B analogue of `compass_responses_effective`
+// ⚠ No backticks around an answer-table name anywhere in this comment:
+// check-answer-season-consumers.mjs judges each BACKTICK LITERAL on its own and
+// does not blank comments first, so markdown-style quoting here reads to it as a
+// SQL literal naming the answer tables with no season, and fails the gate.
+//
+// That view is inform.politician_answers minus the answers whose rung the live
+// ladder INVALIDATED — the Path B analogue of compass_responses_effective
 // (CC_0062), which has always done this for Path A. The protection existed only
 // for the few people who answer the compass themselves through an empowered
 // profile; the ~33,000 RESEARCHED answers behind almost every profile on the
