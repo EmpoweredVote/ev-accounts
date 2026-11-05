@@ -1,0 +1,284 @@
+{
+  "id": "MI-SB-331-2025",
+  "scope": "state:mi",
+  "title": "SB0331 (103rd Legislature): Weapons: firearms; requirement for all firearm components to contain serial numbers; provide for. Amends 1927 PA 372 (MCL 28.421 - 28.435) by adding sec. 14c.",
+  "urls": [
+    "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0331",
+    "https://legislature.mi.gov/documents/2025-2026/billintroduced/Senate/htm/2025-SIB-0331.htm",
+    "https://legislature.mi.gov/documents/2025-2026/billengrossed/Senate/htm/2025-SEBS-0331.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Mallory McMorrow",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3bdf2b9e-7512-4cc6-93f5-252078fae92c"
+    },
+    {
+      "name": "Dayna Polehanki",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d0e04fa1-05ee-49e8-a0c6-0d6f77789735"
+    },
+    {
+      "name": "Sue Shink",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "04b6a538-a78d-4e1a-b735-031e425ce81f"
+    },
+    {
+      "name": "Stephanie Chang",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1a9aea1b-b22e-444c-b71b-2edfbaadc62a"
+    },
+    {
+      "name": "Jeff Irwin",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "98fad2ca-67b6-444a-a9ee-21150f8c7441"
+    },
+    {
+      "name": "Paul Wojno",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8cbcbae5-10d4-4d09-98fb-c321b5a98074"
+    },
+    {
+      "name": "Rosemary Bayer",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "eb205f75-40bb-4026-bd2f-6dbd6e7fb1e0"
+    },
+    {
+      "name": "Veronica Klinefelt",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d5663ee3-8182-4bba-89dd-ae57444ee7cc"
+    },
+    {
+      "name": "Mary Cavanagh",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "aec7ae44-e7a3-4e02-9d94-e7ba5a562b32"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-06-25",
+      "body": "MI Senate",
+      "motion": "Senate Third Reading: Passed Roll Call # 175",
+      "kind": "roll-call",
+      "yes": 19,
+      "no": 17,
+      "absent": 1,
+      "note": "LegiScan roll call 1595428; NV counted with absent in the tally, members keep LegiScan marks",
+      "members": [
+        {
+          "name": "Kevin Daley",
+          "vote": "nay",
+          "politician_id": "673bb91b-34fc-4ac8-8224-f83860bbbd77"
+        },
+        {
+          "name": "Jon Bumstead",
+          "vote": "nay",
+          "politician_id": "c210b8b7-1154-4b90-b9e5-cef2b70ec240"
+        },
+        {
+          "name": "Ricky Outman",
+          "vote": "absent",
+          "politician_id": "e118ad3d-4541-4710-bf50-f643f07f7921"
+        },
+        {
+          "name": "Jeff Irwin",
+          "vote": "yea",
+          "politician_id": "98fad2ca-67b6-444a-a9ee-21150f8c7441"
+        },
+        {
+          "name": "Ed McBroom",
+          "vote": "nay",
+          "politician_id": "dfa7be6f-c195-4744-b044-25171abeb1fb"
+        },
+        {
+          "name": "Sean McCann",
+          "vote": "yea",
+          "politician_id": "78590658-b6fb-4e96-9bd5-e341c634b2e0"
+        },
+        {
+          "name": "Aric Nesbitt",
+          "vote": "nay",
+          "politician_id": "868b57f4-dbfd-4405-be3a-460d721c2a68"
+        },
+        {
+          "name": "Winnie Brinks",
+          "vote": "yea",
+          "politician_id": "9d538855-3510-40ab-a48f-328d9c9bdba4"
+        },
+        {
+          "name": "Dan Lauwers",
+          "vote": "nay",
+          "politician_id": "e2ebfe4d-f326-453b-9725-ead8244839cb"
+        },
+        {
+          "name": "Samir Singh",
+          "vote": "yea"
+        },
+        {
+          "name": "Roger Victory",
+          "vote": "nay",
+          "politician_id": "8a85a630-0c68-498e-8e8f-631451fb59b1"
+        },
+        {
+          "name": "Stephanie Chang",
+          "vote": "yea",
+          "politician_id": "1a9aea1b-b22e-444c-b71b-2edfbaadc62a"
+        },
+        {
+          "name": "James Runestad",
+          "vote": "nay",
+          "politician_id": "732a5a3e-4571-45cf-9c6b-8e0bb5a9ecc9"
+        },
+        {
+          "name": "Lana Theis",
+          "vote": "nay",
+          "politician_id": "22e06b6c-20a7-4289-ad07-984968ae34fe"
+        },
+        {
+          "name": "Michael Webber",
+          "vote": "nay",
+          "politician_id": "448abed5-8af3-4542-abe6-de8970883328"
+        },
+        {
+          "name": "Erika Geiss",
+          "vote": "yea",
+          "politician_id": "4aaae9d8-5f9c-4cc7-a72c-2d80c6254e32"
+        },
+        {
+          "name": "Jeremy Moss",
+          "vote": "yea",
+          "politician_id": "bcda2b48-b064-42b5-a843-f6152b1f6456"
+        },
+        {
+          "name": "Thomas Albert",
+          "vote": "nay",
+          "politician_id": "263a3e60-33d9-40c8-8e2c-af8189584f31"
+        },
+        {
+          "name": "Joseph Bellino",
+          "vote": "nay",
+          "politician_id": "be36fee6-f81b-4e61-953c-0e89f9718bb4"
+        },
+        {
+          "name": "Darrin Camilleri",
+          "vote": "yea",
+          "politician_id": "eda2337e-010a-4271-8898-91566d2c52ae"
+        },
+        {
+          "name": "Roger Hauck",
+          "vote": "nay",
+          "politician_id": "44808453-d7f5-48d9-abb9-6ce42ec7d1ed"
+        },
+        {
+          "name": "Kevin Hertel",
+          "vote": "yea",
+          "politician_id": "cf6f5937-81d9-4962-af3a-b8c00518f677"
+        },
+        {
+          "name": "Michele Hoitenga",
+          "vote": "nay",
+          "politician_id": "cde89f88-ac6f-429e-bc7d-e353de9bbeb5"
+        },
+        {
+          "name": "Sylvia Santana",
+          "vote": "yea",
+          "politician_id": "374b46e8-fd31-481c-b086-0588770f6466"
+        },
+        {
+          "name": "Sarah Anthony",
+          "vote": "yea",
+          "politician_id": "d9736edf-11cc-4e09-8f84-41353ccff05d"
+        },
+        {
+          "name": "John Cherry",
+          "vote": "yea",
+          "politician_id": "9f12fc5f-4827-443d-95da-80c66ca11ebf"
+        },
+        {
+          "name": "Mark Huizenga",
+          "vote": "nay",
+          "politician_id": "01b896ff-57bb-42df-b137-0301d7abf063"
+        },
+        {
+          "name": "Paul Wojno",
+          "vote": "yea",
+          "politician_id": "8cbcbae5-10d4-4d09-98fb-c321b5a98074"
+        },
+        {
+          "name": "Dayna Polehanki",
+          "vote": "yea",
+          "politician_id": "d0e04fa1-05ee-49e8-a0c6-0d6f77789735"
+        },
+        {
+          "name": "Mallory McMorrow",
+          "vote": "yea",
+          "politician_id": "3bdf2b9e-7512-4cc6-93f5-252078fae92c"
+        },
+        {
+          "name": "Rosemary Bayer",
+          "vote": "yea",
+          "politician_id": "eb205f75-40bb-4026-bd2f-6dbd6e7fb1e0"
+        },
+        {
+          "name": "Ruth Johnson",
+          "vote": "nay",
+          "politician_id": "3aa4dba3-51f6-4e54-b329-777472d34d4c"
+        },
+        {
+          "name": "John Damoose",
+          "vote": "nay",
+          "politician_id": "462fbada-42af-4bf0-8562-cb618e8752d1"
+        },
+        {
+          "name": "Mary Cavanagh",
+          "vote": "yea",
+          "politician_id": "aec7ae44-e7a3-4e02-9d94-e7ba5a562b32"
+        },
+        {
+          "name": "Veronica Klinefelt",
+          "vote": "yea",
+          "politician_id": "d5663ee3-8182-4bba-89dd-ae57444ee7cc"
+        },
+        {
+          "name": "Jonathan Lindsey",
+          "vote": "nay",
+          "politician_id": "cd3fb5b4-bc71-42cf-ae59-232692882a82"
+        },
+        {
+          "name": "Sue Shink",
+          "vote": "yea",
+          "politician_id": "04b6a538-a78d-4e1a-b735-031e425ce81f"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-11-05T19:47:07.650422Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-SB-331-2025.engrossed.html",
+      "sha256": "f0f8ba7094eedb6d7f8dcbf55120d87e5dc45f61fb9934b8b1619cc36099069c"
+    }
+  },
+  "operative_text": "Sec. 14c (adding to 1927 PA 372, MCL 28.421-28.435): {+Sec. 14c. (1) Except as otherwise provided in this section, a person shall not do any of the following:+} {+(a) Knowingly manufacture or assemble, cause to be manufactured or assembled, import, purchase, sell, offer to sell, or transfer ownership of any firearm that is not imprinted with a valid serial number. This subdivision does not apply to an person that complies with subsection (3).+} {+(b) Knowingly import, purchase, sell, offer to sell, or transfer ownership of any ghost gun precursor.+}\nSec. 14c (adding to 1927 PA 372, MCL 28.421-28.435): {+(c) Beginning 18 months after the effective date of the amendatory act that added this section, knowingly possess either of the following:+} {+(+}{+i+}{+) A firearm that is not imprinted with a valid serial number.+} {+(+}{+ii+}{+) A ghost gun precursor.+}\nSec. 14c (adding to 1927 PA 372, MCL 28.421-28.435): {+(d) Knowingly manufacture or assemble or cause to be manufactured or assembled, import, sell, offer to sell, transfer, or possess any undetectable firearm.+}\nSec. 14c (adding to 1927 PA 372, MCL 28.421-28.435): {+(2) A person that does any of the following must have a license to manufacture firearms:+} {+(a) Manufactures or assembles a firearm or completed or unfinished frame or receiver with the intent to sell that firearm or completed or unfinished frame or receiver predominantly to earn a profit.+} {+(b) Manufactures or assembles more than 5 firearms or completed or unfinished frames or receivers in this state in a calendar year for personal use.+} {+(c) Uses a 3-dimensional printer or computer numerical control milling machine to manufacture or assemble any firearm or completed or unfinished frame or receiver in this state.+}\nSec. 14c (adding to 1927 PA 372, MCL 28.421-28.435): {+(3) A person that manufactures or assembles a firearm or completed or unfinished frame or receiver in this state and who does not have a license to manufacture firearms shall, not later than 10 days after manufacturing or assembling the firearm or frame or receiver, have the firearm or completed or unfinished frame or receiver imprinted with a valid serial number in accordance with subsection (5), notify the director in a form and manner to be prescribed, and provide any identifying information concerning the firearm or frame or receiver and the owner of the firearm or frame or receiver requested by the director, including, but not limited to, the serial number of the firearm or frame or receiver.+}\nSec. 14c (adding to 1927 PA 372, MCL 28.421-28.435): {+(6) A person who violates this section is guilty of the following:+} {+(a) For a first offense, a misdemeanor punishable by imprisonment for not more than 1 year, a fine of not more than $5,000.00, or both.+} {+(b) For a second or subsequent offense, a felony punishable by imprisonment for not more than 5 years, a fine of not more than $10,000.00, or both.+}\nSec. 14c (adding to 1927 PA 372, MCL 28.421-28.435): {+(f) \"Ghost gun precursor\" means a frame, receiver, or unfinished frame or receiver, that does not have a valid serial number.+}"
+}

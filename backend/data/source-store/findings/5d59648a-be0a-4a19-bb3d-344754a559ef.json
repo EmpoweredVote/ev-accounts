@@ -128,6 +128,87 @@
         "fetched_at": "2026-10-28T22:48:20.628Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "8cf7a2a639f6084365dc08930da694f3bf81a41ed8cba97cc83df412a9e64169",
+      "kind": "own-words",
+      "url": "https://ontherecord.empowered.vote/meetings/4a0fe9aa-bad5-41e0-8745-60c8cc773fd6",
+      "date": "2026-07-13",
+      "date_precision": "day",
+      "passage": "We need to protect our communities against with gun violence, uh whether it's here in an education institution, at a place of worship, or in any community.",
+      "note": "In a TV interview, she speaks of preventing gun violence, naming schools and places of worship, and of giving law enforcement and community partners tools to reduce it. No specific law is named.",
+      "subjects": [
+        "gun violence prevention in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-05T22:09:45.269Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "188623ec5139b7186c10e6078591634bfd54ebdfecd1832c39df3ae2cff20b3d",
+      "kind": "own-words",
+      "url": "https://www.jocelynbenson.com/news/giffords-pac-endorses-jocelyn-benson-governor",
+      "date": "2026-02-04",
+      "date_precision": "day",
+      "passage": "As a mom of a 9 year old boy, I know how important it is to keep our kids and communities safe from gun violence.",
+      "note": "Her statement on receiving an endorsement from a gun-violence-prevention group.",
+      "subjects": [
+        "gun violence prevention in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-05T22:09:45.269Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f087cdbac6403c01513a669936525b3aa9002caf7edd26b9ff0c541be9746dd7",
+      "kind": "own-words",
+      "url": "https://www.jocelynbenson.com/news/giffords-pac-endorses-jocelyn-benson-governor",
+      "date": "2026-02-04",
+      "date_precision": "day",
+      "passage": "As Secretary of State I’ve worked to keep guns away from the ballot box, and have stood up to political violence - whether on my own front lawn, our state capitol building, or anywhere else in our state.",
+      "note": "Same statement: she cites her work to keep guns away from polling places and says she will continue as governor.",
+      "subjects": [
+        "guns at polling places"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-05T22:09:45.269Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1cf386b83fee10170b1a9b8db2b3d417a3d7c6b78556ca5b4ad05f092dcef36b",
+      "kind": "own-words",
+      "url": "https://michiganpublic.org/public-safety/2023-02-16/secretary-of-state-jocelyn-benson-once-again-calls-for-firearms-ban-at-polling-locations",
+      "date": "2023-02-16",
+      "date_precision": "day",
+      "passage": "“The time for only thoughts and prayers is over,” said Benson at the annual Judge Damon Keith Memorial Soul Food Luncheon.",
+      "note": "Quoted by Michigan Public on gun violence, in an article about her call to ban firearms at polling places.",
+      "subjects": [
+        "gun violence prevention in general",
+        "guns at polling places"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-05T22:09:45.269Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -161,6 +242,32 @@
       "found": 6,
       "at": "2026-10-28T22:48:20.628Z",
       "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry permits and minimum age",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment and gun rights",
+        "guns at polling places"
+      ],
+      "places": [
+        "On the Record (4 meeting(s)): read all four; one on the subject (2026-07-13); the 2026-05-19 and 2026-06-18 files mention only people with guns at her home, in a labor speech",
+        "campaign site jocelynbenson.com (Giffords endorsement release)",
+        "Giffords press release",
+        "Michigan Public 2023 article",
+        "News pieces on guns at polling places (paraphrase only; not saved)",
+        "sponsor list: not applicable (statewide office, not a bill sponsor)",
+        "Ballotpedia (not reviewed; page returns empty to the fetch tool)",
+        "web searches on name plus gun words"
+      ],
+      "found": 4,
+      "at": "2026-11-05T22:09:45.269Z",
+      "by": "source-collector"
     }
   ]
 }

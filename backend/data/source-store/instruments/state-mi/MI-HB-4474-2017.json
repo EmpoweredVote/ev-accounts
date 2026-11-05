@@ -1,0 +1,667 @@
+{
+  "id": "MI-HB-4474-2017",
+  "scope": "state:mi",
+  "title": "HB4474 (99th Legislature): Military affairs; facilities; possession of concealed firearms on military premises; allow. Amends 1967 PA 150 (MCL 32.501 - 32.851) by adding sec. 338.",
+  "urls": [
+    "http://legislature.mi.gov/doc.aspx?2017-HB-4474",
+    "http://www.legislature.mi.gov/documents/2017-2018/billintroduced/House/htm/2017-HIB-4474.htm",
+    "http://www.legislature.mi.gov/documents/2017-2018/billengrossed/House/htm/2017-HEBH-4474.htm",
+    "http://www.legislature.mi.gov/documents/2017-2018/billengrossed/House/htm/2017-HEBS-4474.htm",
+    "http://www.legislature.mi.gov/documents/2017-2018/billenrolled/House/htm/2017-HNB-4474.htm"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Gary Glenn",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2017-06-07",
+      "body": "MI House",
+      "motion": "House Third Reading: Given Immediate Effect Roll Call # 182",
+      "kind": "roll-call",
+      "yes": 103,
+      "no": 5,
+      "absent": 0,
+      "note": "LegiScan roll call 660507; NV counted with absent in the tally, members keep LegiScan marks",
+      "members": [
+        {
+          "name": "Bettie Scott",
+          "vote": "yea"
+        },
+        {
+          "name": "Holly Hughes",
+          "vote": "yea"
+        },
+        {
+          "name": "Timothy Greimel",
+          "vote": "yea"
+        },
+        {
+          "name": "Joseph Graves",
+          "vote": "yea"
+        },
+        {
+          "name": "Winnie Brinks",
+          "vote": "yea",
+          "politician_id": "9d538855-3510-40ab-a48f-328d9c9bdba4"
+        },
+        {
+          "name": "Tom Cochran",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Dianda",
+          "vote": "yea"
+        },
+        {
+          "name": "Pam Faris",
+          "vote": "yea"
+        },
+        {
+          "name": "Martin Howrylak",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Kelly",
+          "vote": "yea",
+          "politician_id": "e94fcd30-a72c-4d32-adbd-5d1de4ff993d"
+        },
+        {
+          "name": "Klint Kesto",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Kosowski",
+          "vote": "yea"
+        },
+        {
+          "name": "Dan Lauwers",
+          "vote": "yea",
+          "politician_id": "e2ebfe4d-f326-453b-9725-ead8244839cb"
+        },
+        {
+          "name": "Thomas Leonard",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael McCready",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Pagel",
+          "vote": "yea"
+        },
+        {
+          "name": "Rose Mary Robinson",
+          "vote": "nay"
+        },
+        {
+          "name": "Andy Schor",
+          "vote": "yea"
+        },
+        {
+          "name": "Samir Singh",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert VerHeulen",
+          "vote": "yea"
+        },
+        {
+          "name": "Roger Victory",
+          "vote": "yea",
+          "politician_id": "8a85a630-0c68-498e-8e8f-631451fb59b1"
+        },
+        {
+          "name": "Henry Yanez",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Zemke",
+          "vote": "yea"
+        },
+        {
+          "name": "Phil Phelps",
+          "vote": "yea"
+        },
+        {
+          "name": "John Bizon",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Barrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Afendoulis",
+          "vote": "yea"
+        },
+        {
+          "name": "Wendell Byrd",
+          "vote": "yea"
+        },
+        {
+          "name": "Edward Canfield",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephanie Chang",
+          "vote": "yea",
+          "politician_id": "1a9aea1b-b22e-444c-b71b-2edfbaadc62a"
+        },
+        {
+          "name": "Lee Chatfield",
+          "vote": "yea"
+        },
+        {
+          "name": "John Chirkun",
+          "vote": "yea"
+        },
+        {
+          "name": "Triston Cole",
+          "vote": "yea"
+        },
+        {
+          "name": "Laura Cox",
+          "vote": "yea"
+        },
+        {
+          "name": "Daniela Garcia",
+          "vote": "yea"
+        },
+        {
+          "name": "Latanya Garrett",
+          "vote": "nay"
+        },
+        {
+          "name": "Sherry Gay-Dagnogo",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Glenn",
+          "vote": "yea"
+        },
+        {
+          "name": "Christine Greig",
+          "vote": "yea"
+        },
+        {
+          "name": "Vanessa Guerra",
+          "vote": "yea"
+        },
+        {
+          "name": "Jon Hoadley",
+          "vote": "yea"
+        },
+        {
+          "name": "Brandt Iden",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Inman",
+          "vote": "yea"
+        },
+        {
+          "name": "Eric Leutheuser",
+          "vote": "yea"
+        },
+        {
+          "name": "Frank Liberati",
+          "vote": "yea"
+        },
+        {
+          "name": "Leslie Love",
+          "vote": "yea"
+        },
+        {
+          "name": "Peter Lucido",
+          "vote": "yea"
+        },
+        {
+          "name": "David Maturen",
+          "vote": "yea"
+        },
+        {
+          "name": "Aaron Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Sheldon Neeley",
+          "vote": "yea"
+        },
+        {
+          "name": "Kristy Pagan",
+          "vote": "yea"
+        },
+        {
+          "name": "Brett Roberts",
+          "vote": "yea"
+        },
+        {
+          "name": "James Runestad",
+          "vote": "yea",
+          "politician_id": "732a5a3e-4571-45cf-9c6b-8e0bb5a9ecc9"
+        },
+        {
+          "name": "Jason Sheppard",
+          "vote": "yea"
+        },
+        {
+          "name": "James Tedder",
+          "vote": "yea"
+        },
+        {
+          "name": "Lana Theis",
+          "vote": "yea",
+          "politician_id": "22e06b6c-20a7-4289-ad07-984968ae34fe"
+        },
+        {
+          "name": "Henry Vaupel",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Webber",
+          "vote": "yea",
+          "politician_id": "448abed5-8af3-4542-abe6-de8970883328"
+        },
+        {
+          "name": "Robert Wittenberg",
+          "vote": "nay"
+        },
+        {
+          "name": "Erika Geiss",
+          "vote": "yea",
+          "politician_id": "4aaae9d8-5f9c-4cc7-a72c-2d80c6254e32"
+        },
+        {
+          "name": "Fred Durhal",
+          "vote": "yea"
+        },
+        {
+          "name": "Kathy Crawford",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeremy Moss",
+          "vote": "yea",
+          "politician_id": "bcda2b48-b064-42b5-a843-f6152b1f6456"
+        },
+        {
+          "name": "David LaGrand",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Whiteford",
+          "vote": "yea"
+        },
+        {
+          "name": "Patrick Green",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Albert",
+          "vote": "yea",
+          "politician_id": "263a3e60-33d9-40c8-8e2c-af8189584f31"
+        },
+        {
+          "name": "Julie Alexander",
+          "vote": "yea"
+        },
+        {
+          "name": "Sue Allor",
+          "vote": "yea"
+        },
+        {
+          "name": "Joseph Bellino",
+          "vote": "yea",
+          "politician_id": "be36fee6-f81b-4e61-953c-0e89f9718bb4"
+        },
+        {
+          "name": "Tommy Brann",
+          "vote": "yea"
+        },
+        {
+          "name": "Darrin Camilleri",
+          "vote": "yea",
+          "politician_id": "eda2337e-010a-4271-8898-91566d2c52ae"
+        },
+        {
+          "name": "Brian Elder",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Ellison",
+          "vote": "yea"
+        },
+        {
+          "name": "Ben Frederick",
+          "vote": "yea"
+        },
+        {
+          "name": "Abdullah Hammoud",
+          "vote": "yea"
+        },
+        {
+          "name": "Roger Hauck",
+          "vote": "yea",
+          "politician_id": "44808453-d7f5-48d9-abb9-6ce42ec7d1ed"
+        },
+        {
+          "name": "Shane Hernandez",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Hertel",
+          "vote": "yea",
+          "politician_id": "cf6f5937-81d9-4962-af3a-b8c00518f677"
+        },
+        {
+          "name": "Michele Hoitenga",
+          "vote": "yea",
+          "politician_id": "cde89f88-ac6f-429e-bc7d-e353de9bbeb5"
+        },
+        {
+          "name": "Pamela Hornberger",
+          "vote": "yea"
+        },
+        {
+          "name": "Bronna Kahle",
+          "vote": "yea"
+        },
+        {
+          "name": "Beau LaFave",
+          "vote": "yea"
+        },
+        {
+          "name": "Kimberly LaSata",
+          "vote": "yea"
+        },
+        {
+          "name": "Donna Lasinski",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Lilly",
+          "vote": "yea"
+        },
+        {
+          "name": "James Lower",
+          "vote": "yea"
+        },
+        {
+          "name": "Steven Marino",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeffrey Noble",
+          "vote": "yea"
+        },
+        {
+          "name": "Ronnie Peterson",
+          "vote": "yea"
+        },
+        {
+          "name": "Yousef Rabhi",
+          "vote": "nay"
+        },
+        {
+          "name": "John Reilly",
+          "vote": "yea"
+        },
+        {
+          "name": "Terry Sabo",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Sneller",
+          "vote": "yea"
+        },
+        {
+          "name": "William Sowerby",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott VanSingel",
+          "vote": "yea"
+        },
+        {
+          "name": "Curtis VanderWall",
+          "vote": "yea",
+          "politician_id": "e40b492e-dc22-4150-9c07-6966e01f41a6"
+        },
+        {
+          "name": "Jason Wentworth",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeffrey Yaroch",
+          "vote": "yea"
+        },
+        {
+          "name": "Jewell Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Diana Farrington",
+          "vote": "yea"
+        },
+        {
+          "name": "Elizabeth Griffin",
+          "vote": "yea"
+        },
+        {
+          "name": "Steven Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Daire Rendon",
+          "vote": "yea"
+        },
+        {
+          "name": "Julie Calley",
+          "vote": "yea"
+        },
+        {
+          "name": "Sylvia Santana",
+          "vote": "nay",
+          "politician_id": "374b46e8-fd31-481c-b086-0588770f6466"
+        },
+        {
+          "name": "Cara Clemente",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2018-12-21",
+      "body": "MI Senate",
+      "motion": "Senate Third Reading: Passed Roll Call # 1038",
+      "kind": "roll-call",
+      "yes": 34,
+      "no": 4,
+      "absent": 0,
+      "note": "LegiScan roll call 781541; NV counted with absent in the tally, members keep LegiScan marks",
+      "members": [
+        {
+          "name": "Vincent Gregory",
+          "vote": "yea"
+        },
+        {
+          "name": "Kenneth Horn",
+          "vote": "yea"
+        },
+        {
+          "name": "Marty Knollenberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Coleman Young",
+          "vote": "nay"
+        },
+        {
+          "name": "Tory Rocca",
+          "vote": "yea"
+        },
+        {
+          "name": "James Marleau",
+          "vote": "yea"
+        },
+        {
+          "name": "Rebekah Warren",
+          "vote": "nay"
+        },
+        {
+          "name": "Darwin Booher",
+          "vote": "yea"
+        },
+        {
+          "name": "Goeff Hansen",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Hildenbrand",
+          "vote": "yea"
+        },
+        {
+          "name": "Arlan Meekhof",
+          "vote": "yea"
+        },
+        {
+          "name": "John Proos",
+          "vote": "yea"
+        },
+        {
+          "name": "Wayne Schmidt",
+          "vote": "yea"
+        },
+        {
+          "name": "Tonya Schuitmaker",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Stamas",
+          "vote": "yea"
+        },
+        {
+          "name": "Phillip Pavlov",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Nofs",
+          "vote": "yea"
+        },
+        {
+          "name": "Rick Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "John Brandenburg",
+          "vote": "yea"
+        },
+        {
+          "name": "Dale Zorn",
+          "vote": "yea"
+        },
+        {
+          "name": "Margaret O'Brien",
+          "vote": "yea"
+        },
+        {
+          "name": "Peter MacGregor",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Shirkey",
+          "vote": "yea"
+        },
+        {
+          "name": "James Ananich",
+          "vote": "yea"
+        },
+        {
+          "name": "David Robertson",
+          "vote": "yea"
+        },
+        {
+          "name": "Joseph Hune",
+          "vote": "yea"
+        },
+        {
+          "name": "Judith Emmons",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Casperson",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Kowall",
+          "vote": "yea"
+        },
+        {
+          "name": "Patrick Colbeck",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Green",
+          "vote": "yea"
+        },
+        {
+          "name": "Morris Hood",
+          "vote": "nay"
+        },
+        {
+          "name": "Steven Bieda",
+          "vote": "yea"
+        },
+        {
+          "name": "Hoon-Yung Hopgood",
+          "vote": "yea"
+        },
+        {
+          "name": "David Knezek",
+          "vote": "yea"
+        },
+        {
+          "name": "Curtis Hertel",
+          "vote": "yea"
+        },
+        {
+          "name": "Ian Conyers",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Hollier",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-11-05T19:47:07.650422Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-HB-4474-2017.enrolled.html",
+      "sha256": "7bf664cd1fb3857a26b79ee99ebd907418c00ad1cb5b9b555a7df53d3815d5af"
+    }
+  },
+  "operative_text": "Sec. 338 (adding to 1967 PA 150): (1) An individual who is licensed to carry a concealed pistol, or who is exempt from licensure, under 1927 PA 372, MCL 28.421 to 28.435, may possess a concealed weapon either on his or her person or properly secured while on the premises of an armory or any other building or property under the authority and control of the adjutant general.\nSec. 338 (adding to 1967 PA 150): An individual described in subsection (1) shall comply with the requirements of 1927 PA 372, MCL 28.421 to 28.435, and any other state law pertaining to concealed weapons and firearms.\nSec. 338 (adding to 1967 PA 150): The adjutant general shall not promulgate rules unduly burdening on the ability of military personnel to possess a concealed weapon as described in subsection (1)."
+}
