@@ -25,7 +25,225 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "43801463a1e3a84b94e219cf50dd18427ec5c8768e87ccd771a0b81a9a6e6f99",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/committees/resources/ctte_s_ethics_electns_1_20110316_min.pdf",
+      "date": "2011-03-16",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2067-2011",
+      "act": "other",
+      "motion": "Seconded three committee amendments to HB 2067 (voter photographic identification requirements) in Senate Ethics and Elections final action: language on ID affidavits and birth certificates, technical corrections, and affidavit language in the balloon amendment",
+      "note": "Committee minutes show him seconding amendments on affidavits for voters without ID and for birth certificates tied to citizenship evidence. Seconding a motion is a procedural act, not a stated view.",
+      "subjects": [
+        "voter ID at the polls",
+        "affidavit for voters without ID",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:02:02.973Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a1f98d7958bb41e688ad01eadde3fef9c590fcfc59fd2ce6f47a19effc7e2e43",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/historical_data/journals/2008/2008_S_Journal_0506.pdf",
+      "date": "2008-05-06",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2019-2007",
+      "act": "yea",
+      "motion": "Senate: Senator Huelskamp moved the Senate adopt the Conference Committee Report on HB 2019. (The Conference Committee report was adopted.)",
+      "note": "Senate roll call as printed ('Petersen'), linked to Mike Petersen (district 28) via the official 2008 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.933Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "16fc367b6ae612e9858d0804c70069da9a41e059381a62d495fc2173fe7e9422",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_191_HB2020.odt",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "Senate: Emergency Final Action As Amended",
+      "note": "Senate roll call as printed ('Petersen'), linked to Mike Petersen (district 28) via the official 2025 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.933Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "816150df3b57d874e5546736c47afdb7fcbf218fd273f0add8e908d7cb7fb4cc",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20110323095205_685691.odt",
+      "date": "2011-03-23",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2067-2011",
+      "act": "yea",
+      "motion": "Senate: HB 2067, AN ACT concerning elections; ... was considered on final action. (Final action; passed as amended)",
+      "note": "Senate roll call as printed ('Petersen'), linked to Mike Petersen (district 28) via the official 2011 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.933Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53cc439c8ba13aae8525c4a82092d677fe52f2aa3e4773008814268e4fad0c47",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Petersen'), linked to Mike Petersen (district 28) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.933Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "26fc0eac68c90037c402f6af64ad21e632b079f7491d447d2551656187b6c5c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Petersen'), linked to Mike Petersen (district 28) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.933Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e8daad3e3e031ab4fc3a5a2f561eb2ed0928969aecd76b434293b72a9767310a",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/chamber/documents/permanent_journal_senate_2012.pdf",
+      "date": "2012-05-08",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-129-2011",
+      "act": "yea",
+      "motion": "Senate: Senator Huntington moved the Senate adopt the Conference Committee Report on H Sub for SB 129. (The Conference Committee Report was adopted.)",
+      "note": "Senate roll call as printed ('Petersen'), linked to Mike Petersen (district 28) via the official 2012 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.933Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7709a8e391d094e607393601c6ffc28d7421685a297c8edcb9447240a463f87f",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/vote/?apn=b2023_24/year2/senate/legislative_days/day039_20240305/vote_records/vote_100_SB365.odt",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-365-2024",
+      "act": "yea",
+      "motion": "Senate: Final Action - Not passed",
+      "note": "Senate roll call as printed ('Petersen'), linked to Mike Petersen (district 28) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.933Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free ID / affidavit for voters without ID",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official page: https://www.kslegislature.gov/li/b2025_26/members/sen_petersen_mike_1/ (confirms Senate District 28, Sedgwick County, 2005-present; page has no news or newsletter links)",
+        "campaign site https://www.mikepetersenkansas.com/ (home page read; nothing on the subject; no issue pages found)",
+        "2011 Senate Ethics and Elections committee minutes 03-09, 03-11 (excused), 03-16 (HB 2067 final action)",
+        "blocked: https://justfacts.votesmart.org/candidate/12657 (403)",
+        "blocked: Ballotpedia (not fetched, listed as refusing)",
+        "blocked: kansasreflector.com (not fetched, listed as refusing)",
+        "web searches: name + voter ID / photo ID / election / mail ballots / campaign site / local outlets (5 run); no own-words statement on the subject found",
+        "committee testimony: not reviewed, none located in search"
+      ],
+      "found": 1,
+      "at": "2026-11-04T17:02:02.973Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 7,
+      "at": "2026-11-04T19:13:24.933Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
 }

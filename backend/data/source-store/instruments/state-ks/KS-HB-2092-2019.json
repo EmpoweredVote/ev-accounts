@@ -1,0 +1,38 @@
+{
+  "id": "KS-HB-2092-2019",
+  "scope": "state:ks",
+  "title": "HB 2092 (2019-2020 biennium (2019 Regular Session)): HB 2092 Allowing voter registration on election day.",
+  "urls": [
+    "https://www.kslegislature.gov/li_2020/b2019_20/measures/hb2092/",
+    "https://www.kslegislature.gov/li_2020/b2019_20/measures/documents/hb2092_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) K.S.A. 2018 Supp. 25-2311 (Sec. 1), election-day registration\n(quote) If the person is required by K.S.A. 25-2309, and amendments thereto, to provide proof of United States citizenship in order to register to vote, the person may do so either by presenting a valid or expired United States passport or by including with the provisional ballot a photocopy of any document listed in K.S.A. 25-2309(l), and amendments thereto. The form prescribed pursuant to this subsection shall include space for a member of the election board or the county election officer to indicate, if applicable, that the person presented a valid or expired United States passport or has included a citizenship document photocopy with the person's provisional ballot. No person shall be asked or required to show a photocopy of a proof of citizenship document to anyone at a polling place or satellite advance voting site.\n(e_other_rule) not stated.\n(other) Sec. 1: K.S.A. 25-2311 voter registration on election day with provisional ballot.\n(other) Sec. 2: K.S.A. 25-2316c.\n(other) Sec. 3: K.S.A. 25-3602.",
+  "sponsors": [
+    {
+      "name": "Representative Pittman",
+      "role": "prime",
+      "version": "Introduced (hb2092_00_0000)"
+    },
+    {
+      "name": "Representative Finney",
+      "role": "prime",
+      "version": "Introduced (hb2092_00_0000)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

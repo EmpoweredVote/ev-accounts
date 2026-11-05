@@ -1,0 +1,133 @@
+{
+  "politician_id": "6c605597-f89a-4802-acc1-3eef54e697f7",
+  "findings": [
+    {
+      "id": "c4338a77b3aba428947279af06cd61e61cdf9a7e779c7a2e8d9568cae10778af",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/house/legislative_days/day045_20250320/vote_records/0275_HB2020.odt",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "nay",
+      "motion": "House: Concurred with amendments",
+      "note": "House roll call as printed ('Amyx'), linked to Mike Amyx (district 45) via the official 2025 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c219fe3754d2a4205c7f4df7b0eee9545951604494d4cca3e305ee08fdc67c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day051_20260326/vote_records/0342_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "House: Conference Committee Report was adopted",
+      "note": "House roll call as printed ('Amyx'), linked to Mike Amyx (district 45) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1eb42db9bde1e358d45830781df62725c9ce8abcb4f9a4b11b626d8974c58e80",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day053_20260409/vote_records/0408_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "House: Motion to override veto prevailed",
+      "note": "House roll call as printed ('Amyx'), linked to Mike Amyx (district 45) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d78e075f99a6894d381835920e3c20b2e83e350f416352edaa8f164c0df580f1",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day023_20260212/vote_records/0067_HB2448.odt",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2448-2026",
+      "act": "nay",
+      "motion": "House: Emergency Final Action - Passed as amended",
+      "note": "House roll call as printed ('Amyx'), linked to Mike Amyx (district 45) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.942Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://www.kslegislature.gov/li/b2025_26/members/rep_amyx_mike_1/ (House District 45, Douglas County, 2019 to present; no site or newsletter listed; nothing on the subject)",
+        "KCUR 2026-02-24 story on House election bills (does not mention him)",
+        "web news searches on name plus voter ID / citizenship / mail ballot (no own words found)",
+        "not reviewed: https://www2.ljworld.com/news/state-government/2025/jan/23/legislation-would-end-kansas-3-day-grace-period-on-mail-ballots/ (fetch redirect loop)",
+        "blocked: https://bluevoterguide.org/KS/candidate_Mike_Amyx/301951 (403)",
+        "not reviewed: CAIR Kansas voter guide PDF (too large to fetch)",
+        "blocked: https://ballotpedia.org (known 403, not tried)",
+        "blocked: https://kansasreflector.com (known 403, not tried)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T16:50:58.626Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T19:13:24.942Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}
