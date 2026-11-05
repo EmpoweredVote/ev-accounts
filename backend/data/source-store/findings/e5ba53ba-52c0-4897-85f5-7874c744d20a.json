@@ -25,7 +25,331 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "b3d13c53c7c617271f0ef54cadab1f16a3d6955f03cf572d37f3aeaf0270c0c1",
+      "kind": "own-words",
+      "url": "https://hayspost.com/posts/fbf6d0ef-7417-4c10-8916-6b765d0f614a",
+      "date": "2025-03-26",
+      "date_precision": "day",
+      "passage": "The key to ensuring that our voter rolls are free from illegal immigrants is careful monitoring.",
+      "note": "Senate update (posted 2025-03-26, headed March 25) on HB2020, which has the vehicle-licence agency send the Secretary of State quarterly lists of licences issued to noncitizens, to be compared with voter rolls. Flagged names are removed within five business days. He notes the bill has the county officer tell the person they may be reinstated by providing proof of citizenship.",
+      "subjects": [
+        "non-citizen voting",
+        "voter-roll checks",
+        "proof of citizenship to be reinstated on voter rolls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:02:12.989Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8fd8ccaa18f5a86a54cf46a718a47291a7ec7f631b14b82c2b86967be908801c",
+      "kind": "own-words",
+      "url": "https://hayspost.com/posts/fbf6d0ef-7417-4c10-8916-6b765d0f614a",
+      "date": "2025-03-26",
+      "date_precision": "day",
+      "passage": "The bill would require the county election officer to notify such person that they may be reinstated on the voter registration rolls by providing proof of their citizenship.",
+      "note": "Same update, describing the reinstatement step in HB2020 for people removed from the rolls as suspected noncitizens.",
+      "subjects": [
+        "proof of citizenship to be reinstated on voter rolls",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:02:12.989Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5b0ad068f6189db21ecbdeae6bc12077f0e1fb9a2bd5991d9943ae13f9a2ced1",
+      "kind": "own-words",
+      "url": "https://hayspost.com/posts/e860e0cd-47a3-4fbc-82f9-a3e1da5ce25a",
+      "date": "2025-04-04",
+      "date_precision": "day",
+      "passage": "Most Americans believe that only citizens should vote in our elections.",
+      "note": "Senate update on HCR5004, the constitutional amendment (on the November 2026 ballot if approved) saying a qualified elector must be a US citizen, 18 or older, and resident of the voting area. He gives non-citizen voting as the reason for it.",
+      "subjects": [
+        "citizenship as a voting qualification",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:02:12.989Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "50fee3025fdbb2cd6822dcf671e13a3715f757b722f0ef88b7d83cc5a8ee2a38",
+      "kind": "own-words",
+      "url": "https://hayspost.com/posts/e860e0cd-47a3-4fbc-82f9-a3e1da5ce25a",
+      "date": "2025-04-04",
+      "date_precision": "day",
+      "passage": "To ensure this doesn’t happen in Kansas, the legislature adopted HCR5004, which if approved by voters, on the ballot in November of 2026, would amend Section 1 of Article 5 of the Kansas Constitution to clarify that no person shall be deemed a qualified elector unless such person is a citizen of the United States, has attained the age of 18, and, unless a residency exception applies to such person, resides in the voting area in which such person seeks to vote.",
+      "note": "Same update, describing HCR5004 and its stated aim of keeping non-citizens from voting in Kansas.",
+      "subjects": [
+        "citizenship as a voting qualification",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:02:12.989Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2ffc6c51d9f126d2187567530d7450d2ed225a0bb97639a5a2fe9781ac27cad0",
+      "kind": "own-words",
+      "url": "https://hayspost.com/posts/498ccf3d-03b7-4025-9d04-b93791753b38",
+      "date": "2025-02-18",
+      "date_precision": "day",
+      "passage": "SB4 passed and will set the cut off for receipt of advance ballots to 7:00 p.m. on Election Day, the same deadline all other votes must be cast by in order to be counted.",
+      "note": "Senate update (Feb. 18) reporting passage of SB4, ending the grace period for receipt of advance ballots. He adds that a federal appeals court ruled grace periods unconstitutional. Fetch tool returned the sentence in two quoted parts; joined here. Also reports SB6, a ranked-choice voting ban.",
+      "subjects": [
+        "mail/advance-ballot receipt deadline",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:02:12.989Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "16fc367b6ae612e9858d0804c70069da9a41e059381a62d495fc2173fe7e9422",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_191_HB2020.odt",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "Senate: Emergency Final Action As Amended",
+      "note": "Senate roll call as printed ('Billinger'), linked to Rick Billinger (district 40) via the official 2025 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "15ffcf50f1b7935fe0c6bdf49e7087bc510628682927c604c8503e4c8437a2b0",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20110329104238_907523.odt",
+      "date": "2011-03-29",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2067-2011",
+      "act": "yea",
+      "motion": "House: On motion of Rep. Schwab the House concurred in Senate amendments to HB 2067.",
+      "note": "House roll call as printed ('Billinger'), linked to Rick Billinger (district 121) via the official 2011 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6f049cded5bcfea0b89cdcddd7d9269d75f671c09c8525d3c82b9f0ae9a05eb4",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20120223102421_762384.odt",
+      "date": "2012-02-23",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2012",
+      "act": "yea",
+      "motion": "House: HB 2437, AN ACT concerning elections; relating to voting; changing effective date of United States citizenship requirements; amending K.S.A. 2011 Supp. 25-2309, 25-2908 and 65-2418 ... was considered on final action. (The bill passed, as amended.)",
+      "note": "House roll call as printed ('Billinger'), linked to Rick Billinger (district 121) via the official 2012 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53cc439c8ba13aae8525c4a82092d677fe52f2aa3e4773008814268e4fad0c47",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Billinger'), linked to Rick Billinger (district 40) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "26fc0eac68c90037c402f6af64ad21e632b079f7491d447d2551656187b6c5c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Billinger'), linked to Rick Billinger (district 40) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "826954d8ea499a0525f7998c672c0f480035d3c319de37f9d9912b9e94a6ced3",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20110323103652_433149.odt",
+      "date": "2011-03-23",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-129-HSUB-2011",
+      "act": "yea",
+      "motion": "House: SB 129, AN ACT concerning elections; amending K.S.A. 25-321, 25-2203, 25-2352 ... was considered on final action. (The substitute bill passed, as amended.)",
+      "note": "House roll call as printed ('Billinger'), linked to Rick Billinger (district 121) via the official 2011 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7402ac78d0cb861ab346b86ac8d160bffc362b81a0af03b2d16e383d02d10c6f",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20120509105352_921338.odt",
+      "date": "2012-05-09",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-17-2011",
+      "act": "yea",
+      "motion": "House: SB 17, AN ACT concerning elections; relating to voter identification requirements; amending K.S.A. 2011 Supp. 25-2309, 25-2908 and 65-2418 ... was considered on final action. (The substitute bill passed, as amended.)",
+      "note": "House roll call as printed ('Billinger'), linked to Rick Billinger (district 121) via the official 2012 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7709a8e391d094e607393601c6ffc28d7421685a297c8edcb9447240a463f87f",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/vote/?apn=b2023_24/year2/senate/legislative_days/day039_20240305/vote_records/vote_100_SB365.odt",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-365-2024",
+      "act": "yea",
+      "motion": "Senate: Final Action - Not passed",
+      "note": "Senate roll call as printed ('Billinger'), linked to Rick Billinger (district 40) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "reinstatement on voter rolls by proof of citizenship",
+        "non-citizen voting",
+        "advance-ballot deadline",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://kslegislature.gov/senators/sen_billinger_rick_1/ (member page: Senate District 40, Senate 2017-present, Ways and Means chair; term runs to 2029)",
+        "Hays Post weekly Senate updates by Billinger read in full: 2025-02-18, 2025-03-26, 2025-04-04 (saved); 2026-02-03, 2026-02-18, 2026-03-18, 2026-03-26 (nothing on the subject)",
+        "https://hayspost.com/posts/68c8bb8e-d23b-4bdf-b793-cd2320852b4f is a letter by another author, not Billinger: not used",
+        "no Billinger update on the April 2026 veto session found (search only)",
+        "blocked: https://ballotpedia.org (per task notes, not fetched)",
+        "blocked: https://kansasreflector.com (per task notes, not fetched)",
+        "web searches (5): name + voter ID; + Senate Update election/citizenship; + 2026 election bills; + April 2026 veto session; no campaign site or questionnaire found",
+        "not reviewed: Senate Federal and State Affairs testimony PDFs (he is not a member of that committee)"
+      ],
+      "found": 5,
+      "at": "2026-11-04T17:02:12.989Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 8,
+      "at": "2026-11-04T19:13:24.946Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
 }

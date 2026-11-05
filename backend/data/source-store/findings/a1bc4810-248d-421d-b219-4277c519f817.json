@@ -1,0 +1,162 @@
+{
+  "politician_id": "a1bc4810-248d-421d-b219-4277c519f817",
+  "findings": [
+    {
+      "id": "a180dac9fbe82db0f7ed1e12eb5a8927f8abd4f868ef36e3cf40bf126221dbed",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/house/legislative_days/day045_20250320/vote_records/0275_HB2020.odt",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "House: Concurred with amendments",
+      "note": "House roll call as printed ('Butler'), linked to Nathan Butler (district 68) via the official 2025 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.934Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c219fe3754d2a4205c7f4df7b0eee9545951604494d4cca3e305ee08fdc67c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day051_20260326/vote_records/0342_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "House: Conference Committee Report was adopted",
+      "note": "House roll call as printed ('Butler'), linked to Nathan Butler (district 68) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.934Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21f55a599c11a6bfd03cc0b661541d4440ff0a0808ab91e9abc25020cfb5fc94",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day053_20260409/vote_records/0408_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "House: Motion to override veto prevailed",
+      "note": "House roll call as printed ('Butler'), linked to Nathan Butler (district 68) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.934Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45a6a0e651989653960fc97af7759af58ffb11d0dd3f56bdfeab65bb700b032e",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day023_20260212/vote_records/0067_HB2448.odt",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2448-2026",
+      "act": "yea",
+      "motion": "House: Emergency Final Action - Passed as amended",
+      "note": "House roll call as printed ('Butler'), linked to Nathan Butler (district 68) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.934Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member page https://kslegislature.gov/legislators/rep_butler_nathan_1/ (confirms House District 68, Geary County; no personal site listed)",
+        "no campaign site found by web search; nothing on the subject",
+        "iVoterGuide https://ivoterguide.com/race/28412/election/1429 (questionnaire answers not on the page; nothing on the subject)",
+        "KSN 2022 candidate questionnaire page (nothing on the subject in the fetched summary; a direct re-fetch was refused with 429)",
+        "blocked: https://digital-release.ksn.com/news/your-local-election-hq/candidates/nathan-nate-butler-republican-for-kansas-house-district-68 (429 on the plain fetch; summary only)",
+        "Johnson County Post 2022 election-integrity questionnaire (he is not listed)",
+        "two news searches on name plus subject words: nothing on the subject",
+        "blocked: https://ballotpedia.org/Nathan_Butler_(Kansas) (listed as refusing fetches; not fetched)",
+        "blocked: kansasreflector.com (listed as refusing fetches; not fetched)",
+        "not reviewed: committee testimony lists for voter-ID bills"
+      ],
+      "found": 0,
+      "at": "2026-11-04T16:53:55.094Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "advance-ballot return deadline",
+        "election integrity"
+      ],
+      "places": [
+        "Junction City Post 2022-12-12 https://jcpost.com/posts/514be6e8-d5ea-4c8c-8034-a0bb57c4560a (committee requests; nothing on the subject)",
+        "web search: name + HB 2448 citizenship notation (no statement by him)",
+        "web search: name + Junction City Post questionnaire (no answers on the subject)",
+        "web search: name + voter ID / proof of citizenship (no own words)",
+        "web search: name + mail ballot / advance ballot / election (no own words)",
+        "web search: name + 'Rep.' + said election/voters/ballot (no own words)",
+        "BillTrack50 and Legislature vote pages seen only as vote records (linked separately)",
+        "blocked: https://ballotpedia.org/ (listed as refusing fetches; not fetched)",
+        "blocked: kansasreflector.com (listed as refusing fetches; not fetched)",
+        "HB 2448 2026 House Elections testimony PDFs sampled (ALEC and citizen testimony; none signed by this person)",
+        "Johnson County Post https://johnsoncountypost.com/?p=279169 (this person not named)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T17:05:24.854Z",
+      "by": "research-ks-r2-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T19:13:24.934Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

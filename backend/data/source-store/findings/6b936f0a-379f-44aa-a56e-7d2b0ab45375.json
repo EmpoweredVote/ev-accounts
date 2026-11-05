@@ -25,7 +25,245 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "c206080ff35d912ed429c1861bf38b4eeb0d01641c49123de1fc328c25b322b2",
+      "kind": "own-words",
+      "url": "https://www2.ljworld.com/news/2024/jan/11/sen-marci-francisco-files-for-reelection-says-she-still-strives-to-make-a-difference-after-nearly-2-decades-in-the-legislature/",
+      "date": "2024-01-11",
+      "date_precision": "day",
+      "passage": "“I want to be sure that we continue to provide for a reasonable election process,” she said, “and don’t make it more difficult for people to participate in that process.”",
+      "note": "Quoted by the Lawrence Journal-World when she filed for reelection, under an elections heading. General statement about election rules; names no ID or citizenship measure.",
+      "subjects": [
+        "election rules in general",
+        "access to voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:52:21.036Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "612221cbba53f2b32a9842c723dd4b947cc53b903c898eec9a335caef076798d",
+      "kind": "record",
+      "url": "https://www.billsponsor.com/bills/645171/kansas-house-concurrent-resolution-5004-session-2025-2026",
+      "date": "2025-03-25",
+      "date_precision": "day",
+      "instrument_id": "KS-HCR-5004-2025",
+      "act": "other",
+      "motion": "Committee of the Whole motion to amend, offered by Sen. Marci Francisco; amendment rejected",
+      "note": "History lines show she offered an amendment to the citizen-only voting constitutional amendment resolution in the Senate and it was rejected. The page does not say what the amendment changed. Secondary tracking site; official page not fetched.",
+      "subjects": [
+        "citizen-only voting constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:52:21.036Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "16fc367b6ae612e9858d0804c70069da9a41e059381a62d495fc2173fe7e9422",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_191_HB2020.odt",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "Senate: Emergency Final Action As Amended",
+      "note": "Senate roll call as printed ('Francisco'), linked to Marci Francisco (district 2) via the official 2025 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "816150df3b57d874e5546736c47afdb7fcbf218fd273f0add8e908d7cb7fb4cc",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20110323095205_685691.odt",
+      "date": "2011-03-23",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2067-2011",
+      "act": "yea",
+      "motion": "Senate: HB 2067, AN ACT concerning elections; ... was considered on final action. (Final action; passed as amended)",
+      "note": "Senate roll call as printed ('Francisco'), linked to Marci Francisco (district 2) via the official 2011 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12d5b96635aaee125a967de3c18520774687c5737469fd65d2358255cda8634d",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Francisco'), linked to Marci Francisco (district 2) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c32e05d099cacb14913d1c7c047be9deb5093f489d52813e63f1f81be052e684",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Francisco'), linked to Marci Francisco (district 2) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e8daad3e3e031ab4fc3a5a2f561eb2ed0928969aecd76b434293b72a9767310a",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/chamber/documents/permanent_journal_senate_2012.pdf",
+      "date": "2012-05-08",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-129-2011",
+      "act": "yea",
+      "motion": "Senate: Senator Huntington moved the Senate adopt the Conference Committee Report on H Sub for SB 129. (The Conference Committee Report was adopted.)",
+      "note": "Senate roll call as printed ('Francisco'), linked to Marci Francisco (district 2) via the official 2012 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b9138e22bc80ebaf6ba7c64f427af10148c9599d784a107b8895179d07a5def9",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2016/b2015_16/measures/sb333/",
+      "date": "2016",
+      "date_precision": "year",
+      "instrument_id": "KS-SB-333-2016",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced (sb333_00_0000.pdf); no later version exists on the legislature site",
+      "note": "Named as co sponsor ('Francisco') on the official bill text, summary or journal; linked to Marci Francisco via the official 2016 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "773a23f2ab30c456870279e3a5e51881ec013b5fc572b2fa03296b427529d0f8",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/vote/?apn=b2023_24/year2/senate/legislative_days/day039_20240305/vote_records/vote_100_SB365.odt",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-365-2024",
+      "act": "nay",
+      "motion": "Senate: Final Action - Not passed",
+      "note": "Senate roll call as printed ('Francisco'), linked to Marci Francisco (district 2) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "citizen-only voting constitutional amendment",
+        "access to voting"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://www.kslegislature.gov/li/b2025_26/members/sen_francisco_marci_1/ (member page: Senate District 2, 2005 to present; no site or newsletter listed; nothing on the subject)",
+        "Kansas Senate caucus caucus pages (member page and release list; nothing on the subject in her name)",
+        "Lawrence Journal-World 2007 and 2011 articles (vote tally only / no mention; nothing in her own words)",
+        "Lawrence Journal-World 2024-01-11 reelection filing story (one direct quote)",
+        "Lawrence Journal-World 2024-10-12 voter guide (nothing on the subject)",
+        "web news searches on name plus voter ID / citizenship / mail ballot",
+        "not reviewed: Senate committee testimony and floor debate audio",
+        "blocked: https://ballotpedia.org (known 403, not tried)",
+        "blocked: https://kansasreflector.com (known 403, not tried)"
+      ],
+      "found": 2,
+      "at": "2026-11-04T16:52:21.036Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 7,
+      "at": "2026-11-04T19:13:24.947Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
 }

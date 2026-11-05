@@ -1,0 +1,154 @@
+{
+  "politician_id": "34d865b0-05e2-4b4e-864d-73463be2cc6f",
+  "findings": [
+    {
+      "id": "75eda9ab75ba96c393eccc0f18981d367741830f736ceb197cc53b09c78f7c51",
+      "kind": "own-words",
+      "url": "https://hayspost.com/posts/7178f5e9-d6e8-4fe0-af51-8ebe54531561",
+      "date": "2025-07-01",
+      "date_precision": "day",
+      "passage": "“I will ensure Kansas will be a leader when it comes to election integrity and election security,” said Rahjes.",
+      "note": "Quote from his announcement of a run for Secretary of State, as printed by the Hays Post. General election integrity and security; no mention of ID or citizenship.",
+      "subjects": [
+        "election integrity and security in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:33.690Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a180dac9fbe82db0f7ed1e12eb5a8927f8abd4f868ef36e3cf40bf126221dbed",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/house/legislative_days/day045_20250320/vote_records/0275_HB2020.odt",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "House: Concurred with amendments",
+      "note": "House roll call as printed ('Rahjes'), linked to Ken Rahjes (district 110) via the official 2025 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.938Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba7a4d666ff4f78f90fc1c3060009b25057e446b4bc7846bcf906e1cf07d44b3",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day051_20260326/vote_records/0342_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "House: Conference Committee Report was adopted",
+      "note": "House roll call as printed ('Rahjes'), linked to Ken Rahjes (district 110) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.938Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21f55a599c11a6bfd03cc0b661541d4440ff0a0808ab91e9abc25020cfb5fc94",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day053_20260409/vote_records/0408_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "House: Motion to override veto prevailed",
+      "note": "House roll call as printed ('Rahjes'), linked to Ken Rahjes (district 110) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.938Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45a6a0e651989653960fc97af7759af58ffb11d0dd3f56bdfeab65bb700b032e",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day023_20260212/vote_records/0067_HB2448.odt",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2448-2026",
+      "act": "yea",
+      "motion": "House: Emergency Final Action - Passed as amended",
+      "note": "House roll call as printed ('Rahjes'), linked to Ken Rahjes (district 110) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.938Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election security / integrity in general",
+        "mail-ballot return deadline"
+      ],
+      "places": [
+        "Identity and scope confirmed: https://kenforkansas.com/news/rahjes-files-for-secretary-of-state (campaign page: on the November 2026 ballot for House District 110 after the primary winner withdrew) and https://kslegislature.gov/li/b2025_26/members/rep_rahjes_ken_1/ (House District 110, Chair of Agriculture and Natural Resources). He lost the 2026 primary as a lieutenant-governor running mate (official totals https://sos.ks.gov/elections/26elec/2026-Primary-Election-Official-Vote-Totals.pdf); full search done as instructed",
+        "On the Record (0 appearances)",
+        "campaign site kenforkansas.com home and news pages: nothing on voter ID or citizenship",
+        "official legislature page: no news or newsletter links",
+        "https://hayspost.com/posts/d7c59a6a-6884-4ac9-aad1-7c9d728f5f5f (2025-11-24): the voter-ID and mail-ballot-deadline lines are the reporter's paraphrase, not his words, so not saved",
+        "news searches (6) on name plus subject words",
+        "blocked: Ballotpedia (not fetched; refuses our fetches)",
+        "nothing on the subject found in committee testimony",
+        "not reviewed: Kansas Reflector article quoting him on mail ballots (could not be located; linn county journal URL returned 404)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T16:43:33.690Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T19:13:24.938Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "politician_id": "a319ac33-fa54-4f6a-ab8a-d27d1ad3dcb0",
+  "findings": [
+    {
+      "id": "32f50ef360e8f46051c6e73225c1e6263a84a1778a13849cac0410ae4ad6ff25",
+      "kind": "own-words",
+      "url": "https://www.newstalkkzrg.com/2023/02/24/concerns-rise-over-kansas-ballot-grace-period",
+      "date": "2023-02",
+      "date_precision": "month",
+      "passage": "\"We should always err on the side of the voter and do everything to accommodate and count legal ballots,” Republican state Rep. Jesse Borjon, of Topeka, said in a statement read by a House clerk.",
+      "note": "Statement read in the House during the 2023 debate on ending the three-day mail-ballot grace period; quoted in an AP report carried by KZRG. The statement is about counting ballots that arrive after election day. The AP report carries a 2023-02-24 date; the statement was read during that week's House debate.",
+      "subjects": [
+        "mail-ballot return deadline / grace period",
+        "counting legal ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-ks-r2-2026-11-04",
+        "fetched_at": "2026-11-04T17:05:24.855Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a180dac9fbe82db0f7ed1e12eb5a8927f8abd4f868ef36e3cf40bf126221dbed",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/house/legislative_days/day045_20250320/vote_records/0275_HB2020.odt",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "House: Concurred with amendments",
+      "note": "House roll call as printed ('Borjon'), linked to Jesse Borjon (district 52) via the official 2025 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.934Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c219fe3754d2a4205c7f4df7b0eee9545951604494d4cca3e305ee08fdc67c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day051_20260326/vote_records/0342_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "House: Conference Committee Report was adopted",
+      "note": "House roll call as printed ('Borjon'), linked to Jesse Borjon (district 52) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.934Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1eb42db9bde1e358d45830781df62725c9ce8abcb4f9a4b11b626d8974c58e80",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day053_20260409/vote_records/0408_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "House: Motion to override veto prevailed",
+      "note": "House roll call as printed ('Borjon'), linked to Jesse Borjon (district 52) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.934Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d78e075f99a6894d381835920e3c20b2e83e350f416352edaa8f164c0df580f1",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day023_20260212/vote_records/0067_HB2448.odt",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2448-2026",
+      "act": "nay",
+      "motion": "House: Emergency Final Action - Passed as amended",
+      "note": "House roll call as printed ('Borjon'), linked to Jesse Borjon (district 52) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.934Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "advance-ballot return deadline",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member page https://www.kslegislature.gov/li/b2025_26/members/rep_borjon_jesse_1/ (confirms House District 52, Shawnee County)",
+        "campaign site https://borjonforkansas.com/ (home and priorities pages; only voter-registration links, nothing on the subject)",
+        "iVoterGuide https://ivoterguide.com/candidate/54586/race/28396/election/1429 (no answers on the page; nothing on the subject)",
+        "Topeka Capital-Journal reelection-filing story via https://www.yahoo.com/news/topeka-businessman-republican-rep-jesse-095044811.html (his one quote is not about the subject)",
+        "Lawrence Times report of the 2025-03-25 advance-ballot veto override https://lawrencekstimes.com/2025/03/25/ksleg-overrides-veto-ballots/ (names him only in the vote tally; no statement by him)",
+        "three news searches on name plus subject words: no statement by him found",
+        "blocked: https://ballotpedia.org/Jesse_Borjon (listed as refusing fetches; not fetched)",
+        "blocked: kansasreflector.com (listed as refusing fetches; not fetched)",
+        "not reviewed: committee testimony lists for voter-ID bills"
+      ],
+      "found": 0,
+      "at": "2026-11-04T16:55:55.898Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "advance-ballot return deadline",
+        "election integrity"
+      ],
+      "places": [
+        "KZRG/AP report https://www.newstalkkzrg.com/2023/02/24/concerns-rise-over-kansas-ballot-grace-period (fetched; statement saved)",
+        "1350kman.com copy of the same AP report (confirms the quote)",
+        "sunflowerstateradio.com 2023-02-22 House election debate report (he is not quoted in the portion read)",
+        "web search: name + voter ID / proof of citizenship (no own words)",
+        "web search: name + mail ballot / advance ballot / election (no own words)",
+        "web search: name + 'Rep.' + said election/voters/ballot (no own words)",
+        "BillTrack50 and Legislature vote pages seen only as vote records (linked separately)",
+        "blocked: https://ballotpedia.org/ (listed as refusing fetches; not fetched)",
+        "blocked: kansasreflector.com (listed as refusing fetches; not fetched)",
+        "HB 2448 2026 House Elections testimony PDFs sampled (ALEC and citizen testimony; none signed by this person)",
+        "Johnson County Post https://johnsoncountypost.com/?p=279169 (this person not named)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T17:05:24.855Z",
+      "by": "research-ks-r2-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T19:13:24.934Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}
