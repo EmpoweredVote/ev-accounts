@@ -1,0 +1,2494 @@
+[
+  {
+    "geo": "0104",
+    "state": "AL",
+    "district": "04",
+    "apRaceID": "20261103AL1011",
+    "ap": {
+      "name": "Robert Aderholt",
+      "first": "Robert",
+      "last": "Aderholt",
+      "party": "GOP",
+      "votePct": 74.9,
+      "voteCount": 160008,
+      "calledAt": "2026-11-04T02:33:00.516Z"
+    },
+    "ours": {
+      "rc_id": "6c500c45-a2ee-4bcd-a7ca-287576e3997b",
+      "race_id": "538c5581-ba54-4b47-97b3-b1251f637372",
+      "pol_id": "7b36e7d8-f8da-4c97-b268-04d59e9b69cc",
+      "full_name": "Robert B. Aderholt",
+      "first_name": "Robert",
+      "last_name": "Aderholt",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "0105",
+    "state": "AL",
+    "district": "05",
+    "apRaceID": "20261103AL1376",
+    "ap": {
+      "name": "Dale Strong",
+      "first": "Dale",
+      "last": "Strong",
+      "party": "GOP",
+      "votePct": 53.24,
+      "voteCount": 142080,
+      "calledAt": "2026-11-04T04:03:26.672Z"
+    },
+    "ours": {
+      "rc_id": "59b605e2-ad20-42f1-bb99-4a7a208a85e5",
+      "race_id": "75178764-ac9d-440c-ae9b-43e650c303c7",
+      "pol_id": "b22cfe0d-7194-4e4e-ae86-698ce73b4c78",
+      "full_name": "Dale W. Strong",
+      "first_name": "Dale",
+      "last_name": "Strong",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "0106",
+    "state": "AL",
+    "district": "06",
+    "apRaceID": "20261103AL1377",
+    "ap": {
+      "name": "Gary Palmer",
+      "first": "Gary",
+      "last": "Palmer",
+      "party": "GOP",
+      "votePct": 57.47,
+      "voteCount": 149921,
+      "calledAt": "2026-11-04T05:00:53.608Z"
+    },
+    "ours": {
+      "rc_id": "bb737476-0e45-477a-96a0-2e39ec1cf518",
+      "race_id": "849444a8-00aa-4bb5-bd1e-414417e32c1a",
+      "pol_id": "9c7e62aa-c793-4630-b58b-4eb219b91d30",
+      "full_name": "Gary J. Palmer",
+      "first_name": "Gary",
+      "last_name": "Palmer",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "0107",
+    "state": "AL",
+    "district": "07",
+    "apRaceID": "20261103AL1378",
+    "ap": {
+      "name": "Terri Sewell",
+      "first": "Terri",
+      "last": "Sewell",
+      "party": "Dem",
+      "votePct": 69.4,
+      "voteCount": 174823,
+      "calledAt": "2026-11-04T03:24:01.827Z"
+    },
+    "ours": {
+      "rc_id": "9258a718-6d2f-4a6f-a3d6-692ea575f6cc",
+      "race_id": "a7809ece-1187-4629-9d5f-0456d0886e8e",
+      "pol_id": "c269ef7a-8a6f-4641-9a75-ecea19905268",
+      "full_name": "Terri A. Sewell",
+      "first_name": "Terri",
+      "last_name": "Sewell",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "0501",
+    "state": "AR",
+    "district": "01",
+    "apRaceID": "20261103AR5104",
+    "ap": {
+      "name": "Rick Crawford",
+      "first": "Rick",
+      "last": "Crawford",
+      "party": "GOP",
+      "votePct": 65.45,
+      "voteCount": 126957,
+      "calledAt": "2026-11-04T02:18:30.366Z"
+    },
+    "ours": {
+      "rc_id": "8e1aea9e-9ce0-4f51-b05f-fed5c3959d7a",
+      "race_id": "1b31d22e-873d-4d6c-872f-7d4a294253e6",
+      "pol_id": "20880991-553f-4eb4-8be3-ac10157d1c15",
+      "full_name": "Eric A. \"Rick\" Crawford",
+      "first_name": "Eric",
+      "last_name": "Crawford",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "0407",
+    "state": "AZ",
+    "district": "07",
+    "apRaceID": "20261103AZ3920",
+    "ap": {
+      "name": "Adelita Grijalva",
+      "first": "Adelita",
+      "last": "Grijalva",
+      "party": "Dem",
+      "votePct": 71.51,
+      "voteCount": 111192,
+      "calledAt": "2026-11-04T03:11:34.250Z"
+    },
+    "ours": {
+      "rc_id": "87c7fc49-b43b-4b3f-bc3d-ede77cb5cfbf",
+      "race_id": "fb2e9ca8-1adc-4588-82d6-5f2d078b5def",
+      "pol_id": "b0215f01-089f-4892-85a1-f9abcb4ff4af",
+      "full_name": "Adelita S. Grijalva",
+      "first_name": "Adelita",
+      "last_name": "Grijalva",
+      "party": "Democratic",
+      "existing_result": "advanced",
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "0409",
+    "state": "AZ",
+    "district": "09",
+    "apRaceID": "20261103AZ4173",
+    "ap": {
+      "name": "Paul Gosar",
+      "first": "Paul",
+      "last": "Gosar",
+      "party": "GOP",
+      "votePct": 57.81,
+      "voteCount": 138732,
+      "calledAt": "2026-11-04T08:45:30.365Z"
+    },
+    "ours": {
+      "rc_id": "44fb6bc9-ddf9-4fe2-834d-0694c5b449b4",
+      "race_id": "3d886a22-9c0c-4be2-98ab-c15746694240",
+      "pol_id": "efd863c6-df64-4b40-9b49-73ddd003dc5d",
+      "full_name": "Paul A. Gosar",
+      "first_name": "Paul",
+      "last_name": "Gosar",
+      "party": "Republican",
+      "existing_result": "advanced",
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "0636",
+    "state": "CA",
+    "district": "36",
+    "apRaceID": "20261103CA5726",
+    "ap": {
+      "name": "Ted Lieu",
+      "first": "Ted",
+      "last": "Lieu",
+      "party": "Dem",
+      "votePct": 70.66,
+      "voteCount": 148056,
+      "calledAt": "2026-11-04T04:40:06.574Z"
+    },
+    "ours": {
+      "rc_id": "349c5bbb-344b-47f4-936f-d3035f190d7e",
+      "race_id": "40e4571a-7492-4012-b244-70e2b185d15b",
+      "pol_id": "3a39c313-b994-447b-b3fd-592e4994769b",
+      "full_name": "Ted W. Lieu",
+      "first_name": "Ted",
+      "last_name": "Lieu",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "0638",
+    "state": "CA",
+    "district": "38",
+    "apRaceID": "20261103CA5728",
+    "ap": {
+      "name": "Hilda Solis",
+      "first": "Hilda",
+      "last": "Solis",
+      "party": "Dem",
+      "votePct": 65.01,
+      "voteCount": 97536,
+      "calledAt": "2026-11-04T04:55:12.583Z"
+    },
+    "ours": {
+      "rc_id": "c285d0f3-8bfa-49af-be65-e12a03ab3c04",
+      "race_id": "2910e7f6-11f2-4496-a651-056991895606",
+      "pol_id": "f1f3e6ca-5532-4f33-8ec2-64791b08f59b",
+      "full_name": "Hilda L. Solis",
+      "first_name": "Hilda L.",
+      "last_name": "Solis",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "0641",
+    "state": "CA",
+    "district": "41",
+    "apRaceID": "20261103CA5731",
+    "ap": {
+      "name": "Linda Sánchez",
+      "first": "Linda",
+      "last": "Sánchez",
+      "party": "Dem",
+      "votePct": 64.95,
+      "voteCount": 109542,
+      "calledAt": "2026-11-04T05:39:23.555Z"
+    },
+    "ours": {
+      "rc_id": "f823e02c-4834-4bfc-89d4-23389fe095f6",
+      "race_id": "7ade7f08-0d2e-42e3-b7e4-ac2b5b8c58dd",
+      "pol_id": "bb73793e-ad67-431a-bb03-663b765204d8",
+      "full_name": "Linda T. Sanchez",
+      "first_name": "Linda",
+      "last_name": "Sanchez",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "0644",
+    "state": "CA",
+    "district": "44",
+    "apRaceID": "20261103CA5734",
+    "ap": {
+      "name": "Nanette Barragan",
+      "first": "Nanette",
+      "last": "Barragan",
+      "party": "Dem",
+      "votePct": 79.81,
+      "voteCount": 96194,
+      "calledAt": "2026-11-04T04:35:04.677Z"
+    },
+    "ours": {
+      "rc_id": "2a857382-b766-4c42-a00b-81e89c37cc82",
+      "race_id": "81365b4a-d1c9-4a4a-ad85-49d9e2640987",
+      "pol_id": "5bd54ac0-c8b9-486c-844c-ecc4313e5de7",
+      "full_name": "Nanette Diaz Barragán",
+      "first_name": "Nanette",
+      "last_name": "Barragán",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "0903",
+    "state": "CT",
+    "district": "03",
+    "apRaceID": "20261103CT7011",
+    "ap": {
+      "name": "Rosa DeLauro",
+      "first": "Rosa",
+      "last": "DeLauro",
+      "party": "Dem",
+      "votePct": 60.38,
+      "voteCount": 144037,
+      "calledAt": "2026-11-04T04:42:04.756Z"
+    },
+    "ours": {
+      "rc_id": "cd4e98a2-20de-4a56-a353-9ae492ee6eb2",
+      "race_id": "98f319ec-19bc-4b83-944a-47fcbb42e38c",
+      "pol_id": "95dd596c-273e-4d68-948c-565ce7bbc4a1",
+      "full_name": "Rosa L. DeLauro",
+      "first_name": "Rosa",
+      "last_name": "DeLauro",
+      "party": "Democratic",
+      "existing_result": "advanced",
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "0904",
+    "state": "CT",
+    "district": "04",
+    "apRaceID": "20261103CT7013",
+    "ap": {
+      "name": "Jim Himes",
+      "first": "Jim",
+      "last": "Himes",
+      "party": "Dem",
+      "votePct": 65.52,
+      "voteCount": 156950,
+      "calledAt": "2026-11-04T02:55:14.618Z"
+    },
+    "ours": {
+      "rc_id": "6f017a10-98e4-47c0-a23f-35eca564be75",
+      "race_id": "00595e71-a57d-48d5-badb-2c0bdd0de8f9",
+      "pol_id": "8ce169cb-e9c0-4eca-a927-fbbad7315b98",
+      "full_name": "James A. Himes",
+      "first_name": "James",
+      "last_name": "Himes",
+      "party": "Democratic",
+      "existing_result": "advanced",
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "1205",
+    "state": "FL",
+    "district": "05",
+    "apRaceID": "20261103FL10015",
+    "ap": {
+      "name": "John Rutherford",
+      "first": "John",
+      "last": "Rutherford",
+      "party": "GOP",
+      "votePct": 56.43,
+      "voteCount": 187917,
+      "calledAt": "2026-11-04T00:38:45.451Z"
+    },
+    "ours": {
+      "rc_id": "f9ce1349-b803-4feb-8c93-3e6c7ec264f0",
+      "race_id": "3d7cad28-653d-479d-9ecb-901b4709291c",
+      "pol_id": "8561df96-52fd-42de-b6ad-e15dfc748c52",
+      "full_name": "John H. Rutherford",
+      "first_name": "John",
+      "last_name": "Rutherford",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "1212",
+    "state": "FL",
+    "district": "12",
+    "apRaceID": "20261103FL10029",
+    "ap": {
+      "name": "Gus Bilirakis",
+      "first": "Gus",
+      "last": "Bilirakis",
+      "party": "GOP",
+      "votePct": 52.74,
+      "voteCount": 150746,
+      "calledAt": "2026-11-04T00:59:41.659Z"
+    },
+    "ours": {
+      "rc_id": "a0a9379f-9c10-4aa4-a9a3-9a91bbcd5c9e",
+      "race_id": "d7f4fc4b-3301-46f7-97ce-d3ef55500efb",
+      "pol_id": "2ccd34d7-ca08-45d1-bfe0-f64c63349e18",
+      "full_name": "Gus M. Bilirakis",
+      "first_name": "Gus",
+      "last_name": "Bilirakis",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "1215",
+    "state": "FL",
+    "district": "15",
+    "apRaceID": "20261103FL10035",
+    "ap": {
+      "name": "Laurel Lee",
+      "first": "Laurel",
+      "last": "Lee",
+      "party": "GOP",
+      "votePct": 54.3,
+      "voteCount": 163251,
+      "calledAt": "2026-11-04T01:09:38.475Z"
+    },
+    "ours": {
+      "rc_id": "dcf8f77d-7b0d-4ed7-938a-5e275786be7b",
+      "race_id": "19f0dbe4-44b9-48e2-9dac-06a97bc2abd9",
+      "pol_id": "96cc507d-bb3a-4e25-ae6c-4b937f68f9f4",
+      "full_name": "Laurel M. Lee",
+      "first_name": "Laurel",
+      "last_name": "Lee",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "1217",
+    "state": "FL",
+    "district": "17",
+    "apRaceID": "20261103FL10039",
+    "ap": {
+      "name": "Greg Steube",
+      "first": "Greg",
+      "last": "Steube",
+      "party": "GOP",
+      "votePct": 58.46,
+      "voteCount": 209055,
+      "calledAt": "2026-11-04T00:46:58.943Z"
+    },
+    "ours": {
+      "rc_id": "c0d19d33-cdcc-47d8-a43c-bb56043b71f5",
+      "race_id": "bd97bf95-c5ec-463c-ae9d-16fe5c730a19",
+      "pol_id": "9325e98f-db12-4214-bae0-9898e9438fac",
+      "full_name": "W. Gregory Steube",
+      "first_name": "W.",
+      "last_name": "Steube",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "1221",
+    "state": "FL",
+    "district": "21",
+    "apRaceID": "20261103FL10393",
+    "ap": {
+      "name": "Brian Mast",
+      "first": "Brian",
+      "last": "Mast",
+      "party": "GOP",
+      "votePct": 53.95,
+      "voteCount": 183773,
+      "calledAt": "2026-11-04T01:13:02.479Z"
+    },
+    "ours": {
+      "rc_id": "1c95517e-7cad-4b51-b3ab-71fb2cc692b8",
+      "race_id": "3805c5ab-97e9-46cf-b206-2a2bf8939bec",
+      "pol_id": "1b776971-4c34-4453-ba38-6772f6783b1c",
+      "full_name": "Brian J. Mast",
+      "first_name": "Brian",
+      "last_name": "Mast",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "1228",
+    "state": "FL",
+    "district": "28",
+    "apRaceID": "20261103FL83078",
+    "ap": {
+      "name": "Carlos Gimenez",
+      "first": "Carlos",
+      "last": "Gimenez",
+      "party": "GOP",
+      "votePct": 52.9,
+      "voteCount": 124984,
+      "calledAt": "2026-11-04T00:55:15.431Z"
+    },
+    "ours": {
+      "rc_id": "048c471a-5c53-4039-a78d-c375df1834da",
+      "race_id": "55a23822-cc00-4374-b784-235310f25199",
+      "pol_id": "3030383b-2aaf-40fd-9dfb-8867d1d02f99",
+      "full_name": "Carlos A. Gimenez",
+      "first_name": "Carlos",
+      "last_name": "Gimenez",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "1301",
+    "state": "GA",
+    "district": "01",
+    "apRaceID": "20261103GA11007",
+    "ap": {
+      "name": "James Kingston",
+      "first": "James",
+      "last": "Kingston",
+      "party": "GOP",
+      "votePct": 51.42,
+      "voteCount": 140216,
+      "calledAt": "2026-11-04T05:14:38.399Z"
+    },
+    "ours": {
+      "rc_id": "fbf842f7-2fd5-4890-a7d6-19c3cd280498",
+      "race_id": "6b16cb6a-159f-48b1-a1ed-eb2de73f2e84",
+      "pol_id": "aacada00-5cff-4a4e-9bd6-c0e4935df79f",
+      "full_name": "Jim Kingston",
+      "first_name": "Jim",
+      "last_name": "Kingston",
+      "party": null,
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "1302",
+    "state": "GA",
+    "district": "02",
+    "apRaceID": "20261103GA11009",
+    "ap": {
+      "name": "Sanford Bishop",
+      "first": "Sanford",
+      "last": "Bishop",
+      "party": "Dem",
+      "votePct": 60.87,
+      "voteCount": 148193,
+      "calledAt": "2026-11-04T00:59:07.999Z"
+    },
+    "ours": {
+      "rc_id": "6be06520-8be0-42d5-a3d8-1c58815d2ada",
+      "race_id": "4a924d50-196e-456a-bd98-bb708d712c41",
+      "pol_id": "a172a95a-b866-4ece-a7e2-47487c5ec471",
+      "full_name": "Sanford D. Bishop, Jr.",
+      "first_name": "Sanford",
+      "last_name": "Bishop",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "1304",
+    "state": "GA",
+    "district": "04",
+    "apRaceID": "20261103GA11013",
+    "ap": {
+      "name": "Henry Johnson",
+      "first": "Henry",
+      "last": "Johnson",
+      "party": "Dem",
+      "votePct": 82.64,
+      "voteCount": 217144,
+      "calledAt": "2026-11-04T00:38:33.758Z"
+    },
+    "ours": {
+      "rc_id": "eedf86c7-9c9d-4938-8cea-fca6807a84c8",
+      "race_id": "fdb1e1b0-847b-430a-a0ab-47d69a30eb66",
+      "pol_id": "135f4a8f-6e03-453f-a5b2-9a3b338f26c3",
+      "full_name": "Henry C. \"Hank\" Johnson, Jr.",
+      "first_name": "Henry",
+      "last_name": "Johnson",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "1307",
+    "state": "GA",
+    "district": "07",
+    "apRaceID": "20261103GA11019",
+    "ap": {
+      "name": "Rich McCormick",
+      "first": "Rich",
+      "last": "McCormick",
+      "party": "GOP",
+      "votePct": 56.19,
+      "voteCount": 191539,
+      "calledAt": "2026-11-04T02:32:39.318Z"
+    },
+    "ours": {
+      "rc_id": "8e8732ae-2c5c-4e23-bf18-535bae033684",
+      "race_id": "e88a5aa0-3230-4143-8da7-e6b7e7100714",
+      "pol_id": "b295210e-a45d-4a80-8001-47cdc522a3e5",
+      "full_name": "Richard McCormick",
+      "first_name": "Rich",
+      "last_name": "McCormick",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "1309",
+    "state": "GA",
+    "district": "09",
+    "apRaceID": "20261103GA11023",
+    "ap": {
+      "name": "Andrew Clyde",
+      "first": "Andrew",
+      "last": "Clyde",
+      "party": "GOP",
+      "votePct": 59.3,
+      "voteCount": 182886,
+      "calledAt": "2026-11-04T01:10:46.450Z"
+    },
+    "ours": {
+      "rc_id": "5030c691-fcc9-4b85-be40-6fa30202f4ad",
+      "race_id": "33420d45-4f57-465e-903f-e02cac286769",
+      "pol_id": "94d6a044-7a03-400d-8092-00aac9859c9b",
+      "full_name": "Andrew S. Clyde",
+      "first_name": "Andrew",
+      "last_name": "Clyde",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "1312",
+    "state": "GA",
+    "district": "12",
+    "apRaceID": "20261103GA12237",
+    "ap": {
+      "name": "Rick Allen",
+      "first": "Rick",
+      "last": "Allen",
+      "party": "GOP",
+      "votePct": 52.1,
+      "voteCount": 140842,
+      "calledAt": "2026-11-04T03:57:29.693Z"
+    },
+    "ours": {
+      "rc_id": "ef952bf3-4047-4470-9608-9d1460e728c1",
+      "race_id": "1174435d-ff1b-4b9e-9bfd-eb822fe85ad9",
+      "pol_id": "3de9e882-a816-42fc-ae70-aa93098c5d02",
+      "full_name": "Rick W. Allen",
+      "first_name": "Rick",
+      "last_name": "Allen",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "1502",
+    "state": "HI",
+    "district": "02",
+    "apRaceID": "20261103HI12008",
+    "ap": {
+      "name": "Jill Tokuda",
+      "first": "Jill",
+      "last": "Tokuda",
+      "party": "Dem",
+      "votePct": 67.11,
+      "voteCount": 126197,
+      "calledAt": "2026-11-04T06:18:30.825Z"
+    },
+    "ours": {
+      "rc_id": "8c4289e2-81d5-465d-9bcb-36dc6d63fcfb",
+      "race_id": "efd98f01-175e-45ed-8afb-6d761be67de9",
+      "pol_id": "761aa2ac-d877-4654-97c7-60bf40980f63",
+      "full_name": "Jill N. Tokuda",
+      "first_name": "Jill",
+      "last_name": "Tokuda",
+      "party": "Democratic",
+      "existing_result": "advanced",
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "1602",
+    "state": "ID",
+    "district": "02",
+    "apRaceID": "20261103ID13254",
+    "ap": {
+      "name": "Mike Simpson",
+      "first": "Mike",
+      "last": "Simpson",
+      "party": "GOP",
+      "votePct": 51.67,
+      "voteCount": 170721,
+      "calledAt": "2026-11-04T08:49:18.630Z"
+    },
+    "ours": {
+      "rc_id": "5d180a96-5a8c-46d0-9c2d-81a6f83d8e83",
+      "race_id": "1d97a664-af6f-4e91-9b11-8cfa120ebb00",
+      "pol_id": "610a5a07-5633-428d-9c88-f0157414e902",
+      "full_name": "Michael K. Simpson",
+      "first_name": "Michael",
+      "last_name": "Simpson",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "1701",
+    "state": "IL",
+    "district": "01",
+    "apRaceID": "20261103IL15990",
+    "ap": {
+      "name": "Jonathan Jackson",
+      "first": "Jonathan",
+      "last": "Jackson",
+      "party": "Dem",
+      "votePct": 70.32,
+      "voteCount": 153398,
+      "calledAt": "2026-11-04T01:58:49.240Z"
+    },
+    "ours": {
+      "rc_id": "3ad782d3-4c80-4b90-b1a7-54c0fe798fa6",
+      "race_id": "c89b6491-8092-43cd-b70d-4097b8600b50",
+      "pol_id": "66da3b64-3dab-4f79-950a-475acc006dc8",
+      "full_name": "Jonathan L. Jackson",
+      "first_name": "Jonathan",
+      "last_name": "Jackson",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "1703",
+    "state": "IL",
+    "district": "03",
+    "apRaceID": "20261103IL15992",
+    "ap": {
+      "name": "Delia Ramirez",
+      "first": "Delia",
+      "last": "Ramirez",
+      "party": "Dem",
+      "votePct": 75.84,
+      "voteCount": 137104,
+      "calledAt": "2026-11-04T03:00:08.631Z"
+    },
+    "ours": {
+      "rc_id": "613f4f59-ac9c-4714-809b-f92252b53163",
+      "race_id": "74db93b8-c844-4775-a9e6-ad7caced9f6f",
+      "pol_id": "f74970a7-a63c-43e2-8033-d04b7f2bd64d",
+      "full_name": "Delia C. Ramirez",
+      "first_name": "Delia",
+      "last_name": "Ramirez",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "1710",
+    "state": "IL",
+    "district": "10",
+    "apRaceID": "20261103IL15999",
+    "ap": {
+      "name": "Brad Schneider",
+      "first": "Brad",
+      "last": "Schneider",
+      "party": "Dem",
+      "votePct": 69.8,
+      "voteCount": 160849,
+      "calledAt": "2026-11-04T04:02:02.144Z"
+    },
+    "ours": {
+      "rc_id": "8e07eb53-520e-434d-ae82-ffa3744b8ce9",
+      "race_id": "ffef2601-403f-42fb-a257-2a9303d5d737",
+      "pol_id": "ecdb6fda-81cd-48bd-9403-a03a82f3ebad",
+      "full_name": "Bradley Scott Schneider",
+      "first_name": "Bradley",
+      "last_name": "Schneider",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "1715",
+    "state": "IL",
+    "district": "15",
+    "apRaceID": "20261103IL16004",
+    "ap": {
+      "name": "Mary Miller",
+      "first": "Mary",
+      "last": "Miller",
+      "party": "GOP",
+      "votePct": 66.9,
+      "voteCount": 192711,
+      "calledAt": "2026-11-04T02:40:28.377Z"
+    },
+    "ours": {
+      "rc_id": "7378ca3c-8010-4d75-92bc-6c34b01b29ab",
+      "race_id": "57d0565f-4793-4e42-90d5-e9c1d69bb5a8",
+      "pol_id": "73816ba4-4235-400c-a0a1-00c67b762687",
+      "full_name": "Mary E. Miller",
+      "first_name": "Mary",
+      "last_name": "Miller",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "1801",
+    "state": "IN",
+    "district": "01",
+    "apRaceID": "20261103IN15014",
+    "ap": {
+      "name": "Frank Mrvan",
+      "first": "Frank",
+      "last": "Mrvan",
+      "party": "Dem",
+      "votePct": 63.02,
+      "voteCount": 142213,
+      "calledAt": "2026-11-04T03:18:26.184Z"
+    },
+    "ours": {
+      "rc_id": "289711ef-256e-4409-b1f0-664cb433cf27",
+      "race_id": "d2b43f80-d280-4375-afd6-6169be85ce7e",
+      "pol_id": "e08ec276-3194-41d4-833b-953f27454857",
+      "full_name": "Frank J. Mrvan",
+      "first_name": "Frank",
+      "last_name": "Mrvan",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "1803",
+    "state": "IN",
+    "district": "03",
+    "apRaceID": "20261103IN15020",
+    "ap": {
+      "name": "Marlin Stutzman",
+      "first": "Marlin",
+      "last": "Stutzman",
+      "party": "GOP",
+      "votePct": 54.88,
+      "voteCount": 109692,
+      "calledAt": "2026-11-04T04:05:08.960Z"
+    },
+    "ours": {
+      "rc_id": "8023919a-cbb2-4170-95e7-1e0f0eee4e29",
+      "race_id": "b55b18e3-5d88-4453-9850-a54649eda5ed",
+      "pol_id": "cd3bc298-9029-4cf7-a17b-0c2f7944956c",
+      "full_name": "Marlin A. Stutzman",
+      "first_name": "Marlin",
+      "last_name": "Stutzman",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "1805",
+    "state": "IN",
+    "district": "05",
+    "apRaceID": "20261103IN15026",
+    "ap": {
+      "name": "J.D. Ford",
+      "first": "J.D.",
+      "last": "Ford",
+      "party": "Dem",
+      "votePct": 51.66,
+      "voteCount": 134476,
+      "calledAt": "2026-11-04T06:03:32.370Z"
+    },
+    "ours": {
+      "rc_id": "60aeb82a-fbec-4173-b625-f7e17f34b23b",
+      "race_id": "e17ff0e7-c8c0-4549-bbd5-7b7cb67bbddf",
+      "pol_id": "ad47de71-253c-4710-976e-1d57b7787cae",
+      "full_name": "Jonathan Ford",
+      "first_name": "Jonathan",
+      "last_name": "Ford",
+      "party": null,
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "2102",
+    "state": "KY",
+    "district": "02",
+    "apRaceID": "20261103KY18624",
+    "ap": {
+      "name": "S. Guthrie",
+      "first": "S.",
+      "last": "Guthrie",
+      "party": "GOP",
+      "votePct": 62.81,
+      "voteCount": 145139,
+      "calledAt": "2026-11-04T01:42:38.829Z"
+    },
+    "ours": {
+      "rc_id": "17c1f2ae-cc87-4793-8b99-7fe2f6b21bdf",
+      "race_id": "fc032dbf-70ce-4835-9ae3-f0843d91720e",
+      "pol_id": "056b7a21-bdf1-4d7d-a992-be0f5db74fb0",
+      "full_name": "Brett Guthrie",
+      "first_name": "Brett",
+      "last_name": "Guthrie",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "2105",
+    "state": "KY",
+    "district": "05",
+    "apRaceID": "20261103KY18013",
+    "ap": {
+      "name": "Hal Rogers",
+      "first": "Hal",
+      "last": "Rogers",
+      "party": "GOP",
+      "votePct": 71.16,
+      "voteCount": 139808,
+      "calledAt": "2026-11-04T00:00:02.966Z"
+    },
+    "ours": {
+      "rc_id": "d71948c1-a7f8-4d13-96d1-02cd6b93c1b2",
+      "race_id": "2535ec66-1908-429d-a4c2-34a91fca71ce",
+      "pol_id": "8f1c9df6-5649-4b49-a18c-09864a2e9763",
+      "full_name": "Harold Rogers",
+      "first_name": "Harold",
+      "last_name": "Rogers",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "2202",
+    "state": "LA",
+    "district": "02",
+    "apRaceID": "20261103LA20557",
+    "ap": {
+      "name": "Troy Carter",
+      "first": "Troy",
+      "last": "Carter",
+      "party": "Dem",
+      "votePct": 79.91,
+      "voteCount": 192258,
+      "calledAt": "2026-11-04T02:47:33.690Z"
+    },
+    "ours": {
+      "rc_id": "67b5f4cd-6c15-4394-996c-b010b2b30abc",
+      "race_id": "00ce7640-00ad-4926-86bf-82e163848a2c",
+      "pol_id": "a1f17921-9054-4946-8dd5-01cb1173a036",
+      "full_name": "Troy A. Carter",
+      "first_name": "Troy",
+      "last_name": "Carter",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "2502",
+    "state": "MA",
+    "district": "02",
+    "apRaceID": "20261103MA22948",
+    "ap": {
+      "name": "James McGovern",
+      "first": "James",
+      "last": "McGovern",
+      "party": "Dem",
+      "votePct": 0,
+      "voteCount": 0,
+      "calledAt": "2026-11-04T01:00:00.000Z"
+    },
+    "ours": {
+      "rc_id": "2c6b1092-364e-4d9c-8489-4acf321f6044",
+      "race_id": "e871b833-3601-48a6-8c1c-b3f9f2b5d5ca",
+      "pol_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "full_name": "Jim McGovern",
+      "first_name": "Jim",
+      "last_name": "McGovern",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "2402",
+    "state": "MD",
+    "district": "02",
+    "apRaceID": "20261103MD21749",
+    "ap": {
+      "name": "John Olszewski",
+      "first": "John",
+      "last": "Olszewski",
+      "party": "Dem",
+      "votePct": 61.56,
+      "voteCount": 144727,
+      "calledAt": "2026-11-04T03:53:45.295Z"
+    },
+    "ours": {
+      "rc_id": "9ec1306b-9a33-47bd-8c80-d613c4c828f8",
+      "race_id": "01c39962-63fe-4f5d-ac56-a546e09374a6",
+      "pol_id": "504ff19d-5db9-4093-9cba-d36fcb70f1b6",
+      "full_name": "Johnny Olszewski",
+      "first_name": "Johnny",
+      "last_name": "Olszewski",
+      "party": "Democrat",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "2602",
+    "state": "MI",
+    "district": "02",
+    "apRaceID": "20261103MI23806",
+    "ap": {
+      "name": "John Moolenaar",
+      "first": "John",
+      "last": "Moolenaar",
+      "party": "GOP",
+      "votePct": 61.47,
+      "voteCount": 219742,
+      "calledAt": "2026-11-04T03:45:52.252Z"
+    },
+    "ours": {
+      "rc_id": "7bbaf355-4466-42d0-b9b8-8da80dee904b",
+      "race_id": "e8b32c8d-9282-419d-bbc4-d0799dc2e0d1",
+      "pol_id": "55432c1f-2d1c-4848-8515-066bd1d3521a",
+      "full_name": "John R. Moolenaar",
+      "first_name": "John",
+      "last_name": "Moolenaar",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "2603",
+    "state": "MI",
+    "district": "03",
+    "apRaceID": "20261103MI23807",
+    "ap": {
+      "name": "Hillary Scholten",
+      "first": "Hillary",
+      "last": "Scholten",
+      "party": "Dem",
+      "votePct": 57.14,
+      "voteCount": 211061,
+      "calledAt": "2026-11-04T05:54:25.475Z"
+    },
+    "ours": {
+      "rc_id": "441f4b68-b4f2-4a2c-9e3e-6930f469475d",
+      "race_id": "6e668afb-158e-483e-820a-6e3897282e3a",
+      "pol_id": "80b0b2ee-5ccb-4ee1-a7fa-58e253bb6daf",
+      "full_name": "Hillary J. Scholten",
+      "first_name": "Hillary",
+      "last_name": "Scholten",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "2609",
+    "state": "MI",
+    "district": "09",
+    "apRaceID": "20261103MI23813",
+    "ap": {
+      "name": "Lisa McClain",
+      "first": "Lisa",
+      "last": "McClain",
+      "party": "GOP",
+      "votePct": 62.64,
+      "voteCount": 247817,
+      "calledAt": "2026-11-04T04:45:00.652Z"
+    },
+    "ours": {
+      "rc_id": "8eeb769b-17f6-4fe2-bff2-0f0f523c2e21",
+      "race_id": "6827a6c1-3276-413a-85ef-fffed85bc0e8",
+      "pol_id": "e04094d1-247c-40c8-8829-c7cb8654d0ed",
+      "full_name": "Lisa C. McClain",
+      "first_name": "Lisa",
+      "last_name": "McClain",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "2610",
+    "state": "MI",
+    "district": "10",
+    "apRaceID": "20261103MI23814",
+    "ap": {
+      "name": "Christina Hines",
+      "first": "Christina",
+      "last": "Hines",
+      "party": "Dem",
+      "votePct": 52.44,
+      "voteCount": 188078,
+      "calledAt": "2026-11-04T17:26:10.023Z"
+    },
+    "ours": {
+      "rc_id": "53248533-890d-440f-a7a5-bdf57d18a9a9",
+      "race_id": "15e852be-9983-47af-bcdf-c19a0078d2f9",
+      "pol_id": "ea85c891-d6c0-4d45-a92c-f565794b1729",
+      "full_name": "Christina Bertrand Hines",
+      "first_name": "Christina",
+      "last_name": "Bertrand Hines",
+      "party": null,
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-suffix",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "2903",
+    "state": "MO",
+    "district": "03",
+    "apRaceID": "20261103MO26025",
+    "ap": {
+      "name": "Bob Onder",
+      "first": "Bob",
+      "last": "Onder",
+      "party": "GOP",
+      "votePct": 52.88,
+      "voteCount": 149239,
+      "calledAt": "2026-11-04T04:02:07.426Z"
+    },
+    "ours": {
+      "rc_id": "0a4e2a13-8854-4aa9-9bac-97dec4d93c89",
+      "race_id": "4cc7f568-8c4f-4f6c-b43b-85e7e90f168e",
+      "pol_id": "8fd53bf9-95dc-44b4-9826-192c97979fd5",
+      "full_name": "Robert F. Onder, Jr.",
+      "first_name": "Robert",
+      "last_name": "Onder",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "2802",
+    "state": "MS",
+    "district": "02",
+    "apRaceID": "20261103MS25929",
+    "ap": {
+      "name": "Bennie Thompson",
+      "first": "Bennie",
+      "last": "Thompson",
+      "party": "Dem",
+      "votePct": 67.61,
+      "voteCount": 164759,
+      "calledAt": "2026-11-04T02:45:41.646Z"
+    },
+    "ours": {
+      "rc_id": "52a2a073-0fab-4ad2-ab8c-5c67486b2b7e",
+      "race_id": "20c05b26-f25d-43e1-a154-68727bcf3cfb",
+      "pol_id": "66eef569-f283-4d35-a535-30eed922199a",
+      "full_name": "Bennie G. Thompson",
+      "first_name": "Bennie",
+      "last_name": "Thompson",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3702",
+    "state": "NC",
+    "district": "02",
+    "apRaceID": "20261103NC35386",
+    "ap": {
+      "name": "Deborah Ross",
+      "first": "Deborah",
+      "last": "Ross",
+      "party": "Dem",
+      "votePct": 75.06,
+      "voteCount": 245402,
+      "calledAt": "2026-11-04T01:24:28.657Z"
+    },
+    "ours": {
+      "rc_id": "3d1550ba-e7e4-4acc-a513-4de0fd2ad452",
+      "race_id": "e7194bc9-2297-40e9-93ff-4ac4e7a6f598",
+      "pol_id": "291f71df-c5c2-4f0a-b6be-d762d7aec9dd",
+      "full_name": "Deborah K. Ross",
+      "first_name": "Deborah",
+      "last_name": "Ross",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3704",
+    "state": "NC",
+    "district": "04",
+    "apRaceID": "20261103NC35387",
+    "ap": {
+      "name": "Valerie Foushee",
+      "first": "Valerie",
+      "last": "Foushee",
+      "party": "Dem",
+      "votePct": 79.12,
+      "voteCount": 283255,
+      "calledAt": "2026-11-04T01:24:37.306Z"
+    },
+    "ours": {
+      "rc_id": "13df77bc-1085-4900-a4f4-493db117f919",
+      "race_id": "2be0f81f-42eb-412c-9637-4b93296cdde8",
+      "pol_id": "248c67f9-b8bf-4627-b358-a0f49b47abe7",
+      "full_name": "Valerie P. Foushee",
+      "first_name": "Valerie",
+      "last_name": "Foushee",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3712",
+    "state": "NC",
+    "district": "12",
+    "apRaceID": "20261103NC35419",
+    "ap": {
+      "name": "Alma Adams",
+      "first": "Alma",
+      "last": "Adams",
+      "party": "Dem",
+      "votePct": 81.2,
+      "voteCount": 219672,
+      "calledAt": "2026-11-04T01:25:03.636Z"
+    },
+    "ours": {
+      "rc_id": "47663992-4712-4634-b21c-9916d4b08251",
+      "race_id": "0c3b0325-9ac5-40f2-aad9-17deb34a8ebe",
+      "pol_id": "2c12afd3-178d-46c3-a4ea-a09f2f796ce9",
+      "full_name": "Alma S. Adams",
+      "first_name": "Alma",
+      "last_name": "Adams",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3403",
+    "state": "NJ",
+    "district": "03",
+    "apRaceID": "20261103NJ31216",
+    "ap": {
+      "name": "Herb Conaway",
+      "first": "Herb",
+      "last": "Conaway",
+      "party": "Dem",
+      "votePct": 62.47,
+      "voteCount": 169650,
+      "calledAt": "2026-11-04T01:35:41.078Z"
+    },
+    "ours": {
+      "rc_id": "9ad0ac2c-84d7-4ffd-bbff-8fc7fae5f8c1",
+      "race_id": "298389a6-f686-48db-a95e-3fb2ba62c10a",
+      "pol_id": "f0235587-d1e8-412d-970c-16b50b2b185f",
+      "full_name": "Herbert C. Conaway, Jr.",
+      "first_name": "Herbert",
+      "last_name": "Conaway",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3404",
+    "state": "NJ",
+    "district": "04",
+    "apRaceID": "20261103NJ31208",
+    "ap": {
+      "name": "Christopher Smith",
+      "first": "Christopher",
+      "last": "Smith",
+      "party": "GOP",
+      "votePct": 59.12,
+      "voteCount": 154601,
+      "calledAt": "2026-11-04T02:23:29.661Z"
+    },
+    "ours": {
+      "rc_id": "feb17bcd-4b7a-4b65-91ac-661c6bcdfc32",
+      "race_id": "3af838f9-b1c3-4ecb-b7f3-574b430dd7ff",
+      "pol_id": "99022a78-79ea-417c-8a7c-0bc5f773e329",
+      "full_name": "Christopher H. Smith",
+      "first_name": "Christopher",
+      "last_name": "Smith",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3408",
+    "state": "NJ",
+    "district": "08",
+    "apRaceID": "20261103NJ31215",
+    "ap": {
+      "name": "Rob Menendez",
+      "first": "Rob",
+      "last": "Menendez",
+      "party": "Dem",
+      "votePct": 88.55,
+      "voteCount": 108271,
+      "calledAt": "2026-11-04T01:11:12.519Z"
+    },
+    "ours": {
+      "rc_id": "3aa7da70-31be-4910-8ec2-535677dd108d",
+      "race_id": "90c5e29a-a5a8-47ec-9003-4b4b851cca92",
+      "pol_id": "fc7a00d6-c552-4627-87f7-b0fc5cfe486c",
+      "full_name": "Robert Menendez",
+      "first_name": "Robert",
+      "last_name": "Menendez",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3409",
+    "state": "NJ",
+    "district": "09",
+    "apRaceID": "20261103NJ31226",
+    "ap": {
+      "name": "Nelida Pou",
+      "first": "Nelida",
+      "last": "Pou",
+      "party": "Dem",
+      "votePct": 66.73,
+      "voteCount": 123133,
+      "calledAt": "2026-11-04T03:22:06.948Z"
+    },
+    "ours": {
+      "rc_id": "d2f73a69-55de-490b-a64e-dd0ab20a3288",
+      "race_id": "b4f42a0f-0599-4d57-9776-d1375e69bfd3",
+      "pol_id": "149d987d-78f6-4547-92d4-19b103a62f5e",
+      "full_name": "Nellie Pou",
+      "first_name": "Nellie",
+      "last_name": "Pou",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3501",
+    "state": "NM",
+    "district": "01",
+    "apRaceID": "20261103NM34051",
+    "ap": {
+      "name": "Melanie Stansbury",
+      "first": "Melanie",
+      "last": "Stansbury",
+      "party": "Dem",
+      "votePct": 63.54,
+      "voteCount": 178261,
+      "calledAt": "2026-11-04T05:07:37.574Z"
+    },
+    "ours": {
+      "rc_id": "5bbafc33-968f-4ee4-8273-c8f87af6520c",
+      "race_id": "b591469c-fa8f-4331-8215-47308282a617",
+      "pol_id": "8a92e955-2138-41a3-a598-0c0e0478c73a",
+      "full_name": "Melanie A. Stansbury",
+      "first_name": "Melanie",
+      "last_name": "Stansbury",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3502",
+    "state": "NM",
+    "district": "02",
+    "apRaceID": "20261103NM33279",
+    "ap": {
+      "name": "Gabriel Vasquez",
+      "first": "Gabriel",
+      "last": "Vasquez",
+      "party": "Dem",
+      "votePct": 58.69,
+      "voteCount": 123113,
+      "calledAt": "2026-11-04T05:12:37.370Z"
+    },
+    "ours": {
+      "rc_id": "6ccc9a84-58fa-4adb-92d0-b12de5c67fa8",
+      "race_id": "3fd96af3-3aec-4fd4-b66f-71aa2b280cd5",
+      "pol_id": "ec381f3b-eea9-4429-a343-f606bc8a0235",
+      "full_name": "Gabe Vasquez",
+      "first_name": "Gabriel (Gabe)",
+      "last_name": "Vasquez",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3603",
+    "state": "NY",
+    "district": "03",
+    "apRaceID": "20261103NY36583",
+    "ap": {
+      "name": "Thomas Suozzi",
+      "first": "Thomas",
+      "last": "Suozzi",
+      "party": "Dem",
+      "votePct": 54.78,
+      "voteCount": 148216,
+      "calledAt": "2026-11-04T19:04:10.881Z"
+    },
+    "ours": {
+      "rc_id": "36233f7c-05e1-4fc5-b706-604500c09e4b",
+      "race_id": "e091d25a-1c46-45c0-8835-f0d84ae06173",
+      "pol_id": "a1c608d4-3feb-4bb0-b797-00453d08a0e8",
+      "full_name": "Thomas R. Suozzi",
+      "first_name": "Thomas",
+      "last_name": "Suozzi",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3605",
+    "state": "NY",
+    "district": "05",
+    "apRaceID": "20261103NY36585",
+    "ap": {
+      "name": "Gregory Meeks",
+      "first": "Gregory",
+      "last": "Meeks",
+      "party": "Dem",
+      "votePct": 80.49,
+      "voteCount": 129931,
+      "calledAt": "2026-11-04T02:05:56.054Z"
+    },
+    "ours": {
+      "rc_id": "ae1cb92d-753e-4b53-aee1-26f26fa41d14",
+      "race_id": "87d3ba4f-2a14-4af0-aea9-b3430b136155",
+      "pol_id": "b2f09c72-ceda-4942-a7db-9f0c5f229713",
+      "full_name": "Gregory W. Meeks",
+      "first_name": "Gregory",
+      "last_name": "Meeks",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3608",
+    "state": "NY",
+    "district": "08",
+    "apRaceID": "20261103NY36588",
+    "ap": {
+      "name": "Hakeem Jeffries",
+      "first": "Hakeem",
+      "last": "Jeffries",
+      "party": "Dem",
+      "votePct": 78.94,
+      "voteCount": 128197,
+      "calledAt": "2026-11-04T02:07:13.207Z"
+    },
+    "ours": {
+      "rc_id": "0542a00c-ac3c-4477-8e12-e8e5425a54f0",
+      "race_id": "ed0a4ce0-ff59-40b4-8a81-501f72a197c6",
+      "pol_id": "42f9ff9e-b15d-4b0a-9f73-23015121069c",
+      "full_name": "Hakeem S. Jeffries",
+      "first_name": "Hakeem",
+      "last_name": "Jeffries",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3609",
+    "state": "NY",
+    "district": "09",
+    "apRaceID": "20261103NY39860",
+    "ap": {
+      "name": "Yvette Clarke",
+      "first": "Yvette",
+      "last": "Clarke",
+      "party": "Dem",
+      "votePct": 82.09,
+      "voteCount": 146503,
+      "calledAt": "2026-11-04T02:05:32.790Z"
+    },
+    "ours": {
+      "rc_id": "9eb406f5-f758-47a2-ac96-567f14002cd5",
+      "race_id": "b56f4f54-8945-4d6e-8e55-b6812a7c79d3",
+      "pol_id": "efa0cb88-6ae0-47dc-abe1-b1388983addf",
+      "full_name": "Yvette D. Clarke",
+      "first_name": "Yvette",
+      "last_name": "Clarke",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3618",
+    "state": "NY",
+    "district": "18",
+    "apRaceID": "20261103NY36598",
+    "ap": {
+      "name": "Pat Ryan",
+      "first": "Pat",
+      "last": "Ryan",
+      "party": "Dem",
+      "votePct": 62.87,
+      "voteCount": 169001,
+      "calledAt": "2026-11-04T02:37:09.718Z"
+    },
+    "ours": {
+      "rc_id": "ee5b07c2-04db-411b-80e1-f9466846283f",
+      "race_id": "1a49995f-8de3-434f-968b-ac9ef8168752",
+      "pol_id": "8a42070d-5aaf-49f2-bdcd-5086adab496c",
+      "full_name": "Patrick Ryan",
+      "first_name": "Patrick",
+      "last_name": "Ryan",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3622",
+    "state": "NY",
+    "district": "22",
+    "apRaceID": "20261103NY36602",
+    "ap": {
+      "name": "John Mannion",
+      "first": "John",
+      "last": "Mannion",
+      "party": "Dem",
+      "votePct": 58.34,
+      "voteCount": 159544,
+      "calledAt": "2026-11-04T02:55:35.442Z"
+    },
+    "ours": {
+      "rc_id": "f56dc4ce-c96d-4c16-814a-7573df486b34",
+      "race_id": "92365231-af4e-49c4-969a-e24f2005ab01",
+      "pol_id": "09a47b4e-566f-46dc-b14b-547b93282f09",
+      "full_name": "John W. Mannion",
+      "first_name": "John",
+      "last_name": "Mannion",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3623",
+    "state": "NY",
+    "district": "23",
+    "apRaceID": "20261103NY36603",
+    "ap": {
+      "name": "Nicholas Langworthy",
+      "first": "Nicholas",
+      "last": "Langworthy",
+      "party": "GOP",
+      "votePct": 60.26,
+      "voteCount": 181807,
+      "calledAt": "2026-11-04T03:49:43.737Z"
+    },
+    "ours": {
+      "rc_id": "752c452c-53c7-48eb-a58b-4dbdea861c13",
+      "race_id": "920d5128-79d8-4446-9d0d-b39e3482e6b4",
+      "pol_id": "556dded4-bd76-4e22-863f-60fa5e1d4d56",
+      "full_name": "Nicholas A. Langworthy",
+      "first_name": "Nicholas",
+      "last_name": "Langworthy",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3625",
+    "state": "NY",
+    "district": "25",
+    "apRaceID": "20261103NY36605",
+    "ap": {
+      "name": "Joseph Morelle",
+      "first": "Joseph",
+      "last": "Morelle",
+      "party": "Dem",
+      "votePct": 62.86,
+      "voteCount": 176401,
+      "calledAt": "2026-11-04T02:38:51.240Z"
+    },
+    "ours": {
+      "rc_id": "e4f7e55e-5bef-4a19-a90a-bb05d1ab4c47",
+      "race_id": "c7a0aafc-63b3-475e-bf52-ba1111470024",
+      "pol_id": "c02d8232-aa7a-429a-9abe-dccb409c1c6f",
+      "full_name": "Joseph D. Morelle",
+      "first_name": "Joseph",
+      "last_name": "Morelle",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3626",
+    "state": "NY",
+    "district": "26",
+    "apRaceID": "20261103NY39859",
+    "ap": {
+      "name": "Timothy Kennedy",
+      "first": "Timothy",
+      "last": "Kennedy",
+      "party": "Dem",
+      "votePct": 65.43,
+      "voteCount": 158733,
+      "calledAt": "2026-11-04T02:53:41.461Z"
+    },
+    "ours": {
+      "rc_id": "3ff9e303-88ae-4b46-9535-8b74330891ed",
+      "race_id": "5cbfc002-fbe7-44cb-a295-4498f1681b4f",
+      "pol_id": "7e37b0b1-d311-4cf3-8f19-f861626d5d98",
+      "full_name": "Timothy M. Kennedy",
+      "first_name": "Timothy",
+      "last_name": "Kennedy",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3902",
+    "state": "OH",
+    "district": "02",
+    "apRaceID": "20261103OH37258",
+    "ap": {
+      "name": "David Taylor",
+      "first": "David",
+      "last": "Taylor",
+      "party": "GOP",
+      "votePct": 64.24,
+      "voteCount": 175411,
+      "calledAt": "2026-11-04T02:06:02.943Z"
+    },
+    "ours": {
+      "rc_id": "6580a912-2089-445d-9945-04a64aa0f8bc",
+      "race_id": "d52a8639-4a2a-4a33-b464-75c10fd81dd2",
+      "pol_id": "1938e59f-bd7c-45fb-8dd1-2f7591a0fc3d",
+      "full_name": "David J. Taylor",
+      "first_name": "David",
+      "last_name": "Taylor",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3905",
+    "state": "OH",
+    "district": "05",
+    "apRaceID": "20261103OH36023",
+    "ap": {
+      "name": "Bob Latta",
+      "first": "Bob",
+      "last": "Latta",
+      "party": "GOP",
+      "votePct": 54.26,
+      "voteCount": 163382,
+      "calledAt": "2026-11-04T02:56:06.740Z"
+    },
+    "ours": {
+      "rc_id": "1fbf44bb-d34b-4c7b-a297-e5144e6c6a85",
+      "race_id": "3a25f137-ce4c-48a7-ab56-5002bfb1e98b",
+      "pol_id": "e3c5cef5-08ff-4066-9fee-344733cb4137",
+      "full_name": "Robert E. Latta",
+      "first_name": "Robert",
+      "last_name": "Latta",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3906",
+    "state": "OH",
+    "district": "06",
+    "apRaceID": "20261103OH36025",
+    "ap": {
+      "name": "Michael Rulli",
+      "first": "Michael",
+      "last": "Rulli",
+      "party": "GOP",
+      "votePct": 60.4,
+      "voteCount": 163675,
+      "calledAt": "2026-11-04T02:35:01.196Z"
+    },
+    "ours": {
+      "rc_id": "de23b3cd-8c16-4d1d-9ff0-1b03a818ab71",
+      "race_id": "3773d04c-bc0b-416f-97e8-f8478185ce0f",
+      "pol_id": "3fe892d9-3086-4088-a6d8-af7b3a8b80c1",
+      "full_name": "Michael A. Rulli",
+      "first_name": "Michael",
+      "last_name": "Rulli",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3911",
+    "state": "OH",
+    "district": "11",
+    "apRaceID": "20261103OH36035",
+    "ap": {
+      "name": "Shontel Brown",
+      "first": "Shontel",
+      "last": "Brown",
+      "party": "Dem",
+      "votePct": 83.53,
+      "voteCount": 219971,
+      "calledAt": "2026-11-04T00:52:51.929Z"
+    },
+    "ours": {
+      "rc_id": "e2efe693-a73f-4d41-964e-06fba9b82ef3",
+      "race_id": "4892145e-6ec3-482a-85f8-c4d0f138fe68",
+      "pol_id": "e7f9cb36-33ae-4291-94da-57d956c822af",
+      "full_name": "Shontel M. Brown",
+      "first_name": "Shontel",
+      "last_name": "Brown",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3913",
+    "state": "OH",
+    "district": "13",
+    "apRaceID": "20261103OH36039",
+    "ap": {
+      "name": "Emilia Sykes",
+      "first": "Emilia",
+      "last": "Sykes",
+      "party": "Dem",
+      "votePct": 59.98,
+      "voteCount": 190593,
+      "calledAt": "2026-11-04T00:48:02.013Z"
+    },
+    "ours": {
+      "rc_id": "a2caaf67-144d-492d-b800-f8fdc59bd307",
+      "race_id": "8326e7dd-a298-4e2c-8452-7f83f7809f6f",
+      "pol_id": "5dc95a47-7f94-46b3-b797-4bd2429ceb3e",
+      "full_name": "Emilia Strong Sykes",
+      "first_name": "Emilia",
+      "last_name": "Sykes",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "3914",
+    "state": "OH",
+    "district": "14",
+    "apRaceID": "20261103OH36041",
+    "ap": {
+      "name": "David Joyce",
+      "first": "David",
+      "last": "Joyce",
+      "party": "GOP",
+      "votePct": 55.03,
+      "voteCount": 179467,
+      "calledAt": "2026-11-04T03:06:01.335Z"
+    },
+    "ours": {
+      "rc_id": "cda6b6cd-92f6-4685-9150-64784eb588a3",
+      "race_id": "bae92984-e4ca-4fbf-9484-0aedf93a4945",
+      "pol_id": "811f725f-1eaa-4e67-9dbc-389698615e00",
+      "full_name": "David P. Joyce",
+      "first_name": "David",
+      "last_name": "Joyce",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "4003",
+    "state": "OK",
+    "district": "03",
+    "apRaceID": "20261103OK37034",
+    "ap": {
+      "name": "Frank Lucas",
+      "first": "Frank",
+      "last": "Lucas",
+      "party": "GOP",
+      "votePct": 63.97,
+      "voteCount": 122138,
+      "calledAt": "2026-11-04T01:59:48.663Z"
+    },
+    "ours": {
+      "rc_id": "f93568a1-0cdf-441d-b430-fc3a0516db4f",
+      "race_id": "23bbee96-fa0b-4aba-94fd-9246c4728a7c",
+      "pol_id": "67976bb1-b8db-463b-a646-4e74686d6257",
+      "full_name": "Frank D. Lucas",
+      "first_name": "Frank",
+      "last_name": "Lucas",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "4005",
+    "state": "OK",
+    "district": "05",
+    "apRaceID": "20261103OK37856",
+    "ap": {
+      "name": "Stephanie Bice",
+      "first": "Stephanie",
+      "last": "Bice",
+      "party": "GOP",
+      "votePct": 49.49,
+      "voteCount": 130972,
+      "calledAt": "2026-11-04T22:10:38.344Z"
+    },
+    "ours": {
+      "rc_id": "0472a5d7-a98a-42b2-90d2-c98a051e29e5",
+      "race_id": "11f12c0f-e5a1-4241-b1f3-b5488bde49de",
+      "pol_id": "93fa4e3a-2e04-4a49-b12f-b72e9d4bfdac",
+      "full_name": "Stephanie I. Bice",
+      "first_name": "Stephanie",
+      "last_name": "Bice",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "4202",
+    "state": "PA",
+    "district": "02",
+    "apRaceID": "20261103PA39303",
+    "ap": {
+      "name": "Brendan Boyle",
+      "first": "Brendan",
+      "last": "Boyle",
+      "party": "Dem",
+      "votePct": 80.78,
+      "voteCount": 147433,
+      "calledAt": "2026-11-04T01:28:38.680Z"
+    },
+    "ours": {
+      "rc_id": "029dbb34-6be9-42f0-8944-c5bab7d864a1",
+      "race_id": "54e81562-7c92-4a69-acca-ecc3978460b6",
+      "pol_id": "6d11b72d-fb42-49ca-b44f-89ef02defbb7",
+      "full_name": "Brendan F. Boyle",
+      "first_name": "Brendan",
+      "last_name": "Boyle",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "4205",
+    "state": "PA",
+    "district": "05",
+    "apRaceID": "20261103PA39012",
+    "ap": {
+      "name": "Mary Scanlon",
+      "first": "Mary",
+      "last": "Scanlon",
+      "party": "Dem",
+      "votePct": 72.06,
+      "voteCount": 213389,
+      "calledAt": "2026-11-04T01:44:53.714Z"
+    },
+    "ours": {
+      "rc_id": "0f0923fb-104a-4ed7-a3ff-8b563b85e262",
+      "race_id": "40c89e2a-10a4-466d-bc5e-467cd5a0e872",
+      "pol_id": "ba906956-7359-4b26-8f1b-0d8f8d60b9fc",
+      "full_name": "Mary Gay Scanlon",
+      "first_name": "Mary",
+      "last_name": "Scanlon",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "4209",
+    "state": "PA",
+    "district": "09",
+    "apRaceID": "20261103PA40041",
+    "ap": {
+      "name": "Dan Meuser",
+      "first": "Dan",
+      "last": "Meuser",
+      "party": "GOP",
+      "votePct": 61.57,
+      "voteCount": 165686,
+      "calledAt": "2026-11-04T03:31:29.246Z"
+    },
+    "ours": {
+      "rc_id": "dd59f5f7-4fe7-4938-83d1-4fe7cba51c88",
+      "race_id": "237f60e5-e00a-465b-8556-00f82d95e722",
+      "pol_id": "345511a8-3f1a-40a7-96a6-b87d6ec011b1",
+      "full_name": "Daniel Meuser",
+      "first_name": "Daniel",
+      "last_name": "Meuser",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "4212",
+    "state": "PA",
+    "district": "12",
+    "apRaceID": "20261103PA39019",
+    "ap": {
+      "name": "Summer Lee",
+      "first": "Summer",
+      "last": "Lee",
+      "party": "Dem",
+      "votePct": 65.39,
+      "voteCount": 193488,
+      "calledAt": "2026-11-04T01:46:45.265Z"
+    },
+    "ours": {
+      "rc_id": "4f9e4cb2-374c-467f-940b-11d6fd3467ce",
+      "race_id": "91cc8aea-08c2-4066-aa49-96b85b6ff307",
+      "pol_id": "117883ff-7a9a-42cb-b42b-82223f1d618d",
+      "full_name": "Summer L. Lee",
+      "first_name": "Summer",
+      "last_name": "Lee",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "4217",
+    "state": "PA",
+    "district": "17",
+    "apRaceID": "20261103PA39024",
+    "ap": {
+      "name": "Chris Deluzio",
+      "first": "Chris",
+      "last": "Deluzio",
+      "party": "Dem",
+      "votePct": 62.82,
+      "voteCount": 207711,
+      "calledAt": "2026-11-04T02:01:11.790Z"
+    },
+    "ours": {
+      "rc_id": "198c5cce-0f22-4c7f-b29d-ef983e301c5b",
+      "race_id": "17bc3486-ddd4-4d84-8913-1773be070161",
+      "pol_id": "c20345d9-e451-4813-8645-985734fedba3",
+      "full_name": "Christopher R. Deluzio",
+      "first_name": "Chris",
+      "last_name": "Deluzio",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "4401",
+    "state": "RI",
+    "district": "01",
+    "apRaceID": "20261103RI40015",
+    "ap": {
+      "name": "Gabriel Amo",
+      "first": "Gabriel",
+      "last": "Amo",
+      "party": "Dem",
+      "votePct": 68.44,
+      "voteCount": 110625,
+      "calledAt": "2026-11-04T01:32:15.576Z"
+    },
+    "ours": {
+      "rc_id": "b31eca69-173a-438b-9eda-20a93d8450dc",
+      "race_id": "12cdad39-1ed1-44d8-8d9c-a9c836d0765b",
+      "pol_id": "241207b1-a9eb-459b-a381-38af1e023356",
+      "full_name": "Gabe Amo",
+      "first_name": "Gabe",
+      "last_name": "Amo",
+      "party": "Democratic",
+      "existing_result": "advanced",
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "4504",
+    "state": "SC",
+    "district": "04",
+    "apRaceID": "20261103SC41313",
+    "ap": {
+      "name": "William Timmons",
+      "first": "William",
+      "last": "Timmons",
+      "party": "GOP",
+      "votePct": 51.72,
+      "voteCount": 146808,
+      "calledAt": "2026-11-04T03:00:13.551Z"
+    },
+    "ours": {
+      "rc_id": "6764fe06-b6e4-47cb-9a27-5fa4426404d2",
+      "race_id": "48a830d1-13a8-4005-a772-898fd26b37fe",
+      "pol_id": "31d3830f-81dd-46b3-a69b-a19e392f09d6",
+      "full_name": "William R. Timmons IV",
+      "first_name": "William",
+      "last_name": "Timmons",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "4506",
+    "state": "SC",
+    "district": "06",
+    "apRaceID": "20261103SC41315",
+    "ap": {
+      "name": "James Clyburn",
+      "first": "James",
+      "last": "Clyburn",
+      "party": "Dem",
+      "votePct": 69.35,
+      "voteCount": 180559,
+      "calledAt": "2026-11-04T01:37:40.885Z"
+    },
+    "ours": {
+      "rc_id": "77c015ef-ff0e-417f-8a10-3f1e6d2ce583",
+      "race_id": "3d1b0ecf-d48e-4ea9-9ec1-beef03738e8a",
+      "pol_id": "ecc7d78b-8a9c-4e05-9752-d5f90b02160b",
+      "full_name": "James E. Clyburn",
+      "first_name": "James",
+      "last_name": "Clyburn",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "4703",
+    "state": "TN",
+    "district": "03",
+    "apRaceID": "20261103TN43009",
+    "ap": {
+      "name": "Chuck Fleischmann",
+      "first": "Chuck",
+      "last": "Fleischmann",
+      "party": "GOP",
+      "votePct": 57.59,
+      "voteCount": 136110,
+      "calledAt": "2026-11-04T03:40:05.919Z"
+    },
+    "ours": {
+      "rc_id": "162e9ada-b7c4-4dcb-9cf4-910cb07f1b2d",
+      "race_id": "6d927772-9797-4984-9fb7-2aeaaf9e08ce",
+      "pol_id": "d367c814-6226-44d3-b0bb-fdf6c2540f51",
+      "full_name": "Charles J. \"Chuck\" Fleischmann",
+      "first_name": "Charles",
+      "last_name": "Fleischmann",
+      "party": "Republican",
+      "existing_result": "advanced",
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "4807",
+    "state": "TX",
+    "district": "07",
+    "apRaceID": "20261103TX45877",
+    "ap": {
+      "name": "Lizzie Pannill Fletcher",
+      "first": "Lizzie",
+      "last": "Pannill Fletcher",
+      "party": "Dem",
+      "votePct": 70.84,
+      "voteCount": 160452,
+      "calledAt": "2026-11-04T02:26:22.127Z"
+    },
+    "ours": {
+      "rc_id": "bc18eea2-f7d4-4607-9512-b84263bcf2e1",
+      "race_id": "4547a4e0-bed6-4be0-a866-0f6b56259cfc",
+      "pol_id": "af3deea9-ba89-4d48-b16a-fa785b35a827",
+      "full_name": "Lizzie Fletcher",
+      "first_name": "Lizzie",
+      "last_name": "Fletcher",
+      "party": "Democratic",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-suffix",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "4808",
+    "state": "TX",
+    "district": "08",
+    "apRaceID": "20261103TX45878",
+    "ap": {
+      "name": "Jessica Hart Steinmann",
+      "first": "Jessica",
+      "last": "Hart Steinmann",
+      "party": "GOP",
+      "votePct": 53.21,
+      "voteCount": 141786,
+      "calledAt": "2026-11-04T06:08:38.787Z"
+    },
+    "ours": {
+      "rc_id": "ada11ed9-30ce-4fb2-865a-2f2052df1217",
+      "race_id": "857ff454-abb5-4a03-873b-4f0ada1e5477",
+      "pol_id": "c831bb88-7c5e-4d4b-961e-0d43792d44a6",
+      "full_name": "Jessica Steinmann",
+      "first_name": "Jessica",
+      "last_name": "Steinmann",
+      "party": null,
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-suffix",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "4822",
+    "state": "TX",
+    "district": "22",
+    "apRaceID": "20261103TX45892",
+    "ap": {
+      "name": "Trever Nehls",
+      "first": "Trever",
+      "last": "Nehls",
+      "party": "GOP",
+      "votePct": 51.82,
+      "voteCount": 150161,
+      "calledAt": "2026-11-04T22:12:10.165Z"
+    },
+    "ours": {
+      "rc_id": "686d5b3a-a7df-4a67-bdba-d6b784181889",
+      "race_id": "ef2f9063-233b-4a2a-8ded-fea5094cdc98",
+      "pol_id": "a0bc977b-71c6-4973-9082-3cc009445a02",
+      "full_name": "Troy Nehls",
+      "first_name": "Troy",
+      "last_name": "Nehls",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "5103",
+    "state": "VA",
+    "district": "03",
+    "apRaceID": "20261103VA47005",
+    "ap": {
+      "name": "Robert Scott",
+      "first": "Robert",
+      "last": "Scott",
+      "party": "Dem",
+      "votePct": 72.57,
+      "voteCount": 179594,
+      "calledAt": "2026-11-04T01:08:23.968Z"
+    },
+    "ours": {
+      "rc_id": "49b87905-91f1-45e1-be49-5514797864ab",
+      "race_id": "ae5bfa0e-f5da-4fd1-bf69-d07db17a48ee",
+      "pol_id": "cc499c9a-d165-4cd7-831d-51611339ac29",
+      "full_name": "Bobby Scott",
+      "first_name": "Bobby",
+      "last_name": "Scott",
+      "party": "Democrat",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "5108",
+    "state": "VA",
+    "district": "08",
+    "apRaceID": "20261103VA47015",
+    "ap": {
+      "name": "Donald Beyer",
+      "first": "Donald",
+      "last": "Beyer",
+      "party": "Dem",
+      "votePct": 79.31,
+      "voteCount": 248071,
+      "calledAt": "2026-11-04T01:05:22.460Z"
+    },
+    "ours": {
+      "rc_id": "f0881c8f-1046-4b31-89aa-356892a4c883",
+      "race_id": "df4895e9-81e6-4392-ab40-18105ddacf7c",
+      "pol_id": "0c1eef2f-19be-440f-b3d9-bd99d44ec056",
+      "full_name": "Don Beyer",
+      "first_name": "Don",
+      "last_name": "Beyer",
+      "party": "Democrat",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "5109",
+    "state": "VA",
+    "district": "09",
+    "apRaceID": "20261103VA47017",
+    "ap": {
+      "name": "H. Griffith",
+      "first": "H.",
+      "last": "Griffith",
+      "party": "GOP",
+      "votePct": 65.95,
+      "voteCount": 193785,
+      "calledAt": "2026-11-04T01:29:35.869Z"
+    },
+    "ours": {
+      "rc_id": "c8beed05-cb04-4ff3-9788-216216d15895",
+      "race_id": "da51cdee-de79-4186-baab-033308f251fe",
+      "pol_id": "12eef223-444e-4bed-8081-f1fd26c43e42",
+      "full_name": "Morgan Griffith",
+      "first_name": "Morgan",
+      "last_name": "Griffith",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "5301",
+    "state": "WA",
+    "district": "01",
+    "apRaceID": "20261103WA2",
+    "ap": {
+      "name": "Suzan DelBene",
+      "first": "Suzan",
+      "last": "DelBene",
+      "party": "Dem",
+      "votePct": 67.95,
+      "voteCount": 128234,
+      "calledAt": "2026-11-04T04:38:49.721Z"
+    },
+    "ours": {
+      "rc_id": "c4694185-0fc6-461e-a00e-a3328219efd8",
+      "race_id": "ef31ba46-4191-4e7d-8f65-45a43ab12ec3",
+      "pol_id": "fa64bf50-3abd-455f-ba78-5845ab983299",
+      "full_name": "Suzan K. DelBene",
+      "first_name": "Suzan",
+      "last_name": "DelBene",
+      "party": "Democratic",
+      "existing_result": "advanced",
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "5401",
+    "state": "WV",
+    "district": "01",
+    "apRaceID": "20261103WV49273",
+    "ap": {
+      "name": "Carol Miller",
+      "first": "Carol",
+      "last": "Miller",
+      "party": "GOP",
+      "votePct": 57.09,
+      "voteCount": 118735,
+      "calledAt": "2026-11-04T02:20:50.935Z"
+    },
+    "ours": {
+      "rc_id": "57b421f4-7209-4b8d-8d4d-368e21b905de",
+      "race_id": "5e2fe982-7d3a-4759-ba14-1c33a395dc86",
+      "pol_id": "2efc9246-9448-4cb3-b45d-b6cd43a1cfdb",
+      "full_name": "Carol D. Miller",
+      "first_name": "Carol",
+      "last_name": "Miller",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  },
+  {
+    "geo": "5402",
+    "state": "WV",
+    "district": "02",
+    "apRaceID": "20261103WV49274",
+    "ap": {
+      "name": "Riley Moore",
+      "first": "Riley",
+      "last": "Moore",
+      "party": "GOP",
+      "votePct": 59.41,
+      "voteCount": 143757,
+      "calledAt": "2026-11-04T02:22:21.433Z"
+    },
+    "ours": {
+      "rc_id": "4d8674ef-7b42-4788-83cb-a621883ad4d1",
+      "race_id": "2e22e104-7c88-4313-8de0-f00060794bb1",
+      "pol_id": "ec9f02ce-968a-404c-a2af-a36e672dd561",
+      "full_name": "Riley M. Moore",
+      "first_name": "Riley",
+      "last_name": "Moore",
+      "party": "Republican",
+      "existing_result": null,
+      "existing_certainty": null
+    },
+    "tier": "last-exact",
+    "spellingDiffers": true
+  }
+]
