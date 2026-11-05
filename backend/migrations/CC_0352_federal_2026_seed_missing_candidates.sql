@@ -67,6 +67,21 @@
 --     last_verified_at         NULL
 --     created_at               2026-06-29T20:55:56.714Z
 --     source                   'https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_22'
+--     updated_at               ⚠ NOT RECORDED - SEE BELOW. (Comment-only correction, 2026-11-05.)
+--
+-- 🔴 CORRECTION, 2026-11-05: THE LIST ABOVE SAID "EVERY COLUMN" AND WAS ONE SHORT.
+-- `race_candidates` has 22 columns and 21 were written down. `updated_at` was missed, the row
+-- was deleted in the same file, and there is no history table - so that one value is GONE and
+-- this note is all that can be said about it. It is recorded here rather than quietly fixed,
+-- because the omission is the kind of thing this header exists to prevent.
+-- ⚠ AND IT CANNOT BE INFERRED FROM `created_at`. No trigger maintains `updated_at` on this
+-- table, so an untouched row keeps its insert default - but it is set by hand in some code
+-- paths, and 1,060 of the table's 5,175 rows carry a value later than their `created_at`
+-- (measured 2026-11-05). Troy Nehls' row may or may not have been one of them. ▶ Writing
+-- "probably 2026-06-29T20:55:56.714Z" here would be a guess wearing a timestamp's clothes.
+-- Found while writing `CC_0354`, which had to establish what this column can and cannot date.
+-- 🟢 Nothing else in this file changes: the SQL that ran against production is untouched, and
+-- only these comment lines were added.
 --
 -- ⚠ DELETING A CANDIDACY IS NOT DELETING A PERSON. `essentials.politicians`
 -- a0bc977b-71c6-4973-9082-3cc009445a02 stays exactly as it is - active, incumbent, holding the
