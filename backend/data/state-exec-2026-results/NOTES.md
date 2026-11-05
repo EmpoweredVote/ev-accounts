@@ -334,3 +334,255 @@ one archived from `federal_2026_bulk_seed`) and **`Jessica McCormick` / `Jessica
 **73 AP-called state-executive races across 31 states** still have no race row, plus the 4
 seats we do not hold and the 6 AP has not called. ▶ **Re-run `ap-state-exec-gap.mjs` before
 each batch** — AP's uncalled six will shrink, and the gap is the thing to measure, not ours.
+
+---
+
+# `CC_0359` — the national fan-out, and the gap is now ZERO
+
+Applied 2026-11-05. **73 races created · 143 people seeded · 212 candidacies (73 won, 139 lost)
+across 30 states.** Every statement is an INSERT; nothing is updated and nothing is deleted.
+
+▶ **Measured from AP's side before and after, with `ap-state-exec-gap.mjs`:**
+
+| | before | after |
+| --- | --- | --- |
+| AP state-executive races | 104 | 104 |
+| called by AP | 98 | 98 |
+| **recorded by us** | **21** | **94** |
+| **seat held, NO race row** | **73** | **0** |
+| we hold no such seat | 4 | 4 |
+| not yet called | 6 | 6 |
+
+94 state-executive winners now stand across **37 states**. 🟢 **The four AP offices are closed
+except for the six races AP has not called and the four seats we do not hold.**
+
+## Two independent sources, reconciled race by race BEFORE anything was written
+
+AP gave the ballot, the parties, every number and the winner flag. Ballotpedia's
+*"&lt;State&gt; state executive official elections, 2026"* pages — one per state, 30 of them, read
+2026-11-05 — gave identity: the full name spelling and a per-person article URL, which is
+recorded in each seeded politician's `source`.
+
+🔴 **Those pages are authoritative for identity and STALE for numbers.** Maine's governor reads
+261,518 votes there against AP's 382,760. **Not one number in `CC_0359` comes from Ballotpedia.**
+
+The two ballots were then compared candidate by candidate:
+
+```
+AP gap races:                  73
+paired with a Ballotpedia tbl: 73
+AP candidacies paired:        212
+```
+
+**Zero contradictions. The two sources agree on every winner in all 73 races.** The report is
+committed as `crosscheck-report-2026-11-05.txt`.
+
+### 🔴 The cross-check only became believable after THREE parser bugs, and each looked like data
+
+| what it printed | what it was |
+| --- | --- |
+| "NO Ballotpedia general-election table found" for six states' Secretary of State | ⚠ Ballotpedia writes the state **either way**: `Governor of Alabama` but `Alabama Secretary of State`. Stripping only the suffix lost six real tables and reported them as absent |
+| eight states' **governors** absent from Ballotpedia | 🔴 **A GOVERNOR AND LIEUTENANT GOVERNOR ARE ONE BALLOT LINE.** Ballotpedia prints the ticket — "Byron Donalds / Bryan Avila" — and AP names only the head. Matching on the last word of the string paired AP's governor against the **running mate's** surname |
+| 200 "disagreements" on the first run | mostly the two above, plus comparing AP's raw name (which carries `(write-in)` inside it) and demanding party *strings* match when Ballotpedia spells parties out in full |
+
+▶ **A source-comparison tool reports ITS OWN bugs as findings about the data**, in exactly the
+register a real finding would use. The way out was that the failures were *shaped* — all six of
+one office, all of one office type — and a uniform answer is a broken detector.
+
+## What the reconciliation actually caught
+
+🔴 **"Total Write-ins" is not a person.** AP candidate id `100008` sits on 17 of the 73 ballots,
+with votes and a percentage, exactly like a candidate. It is the Nevada
+"None of These Candidates" trap in a second costume: **229 AP rows, 212 people.**
+
+🔴 **AP TRUNCATES NAMES.** AP publishes `T. Shannon`, `L. Taylor`, `C. Reynolds`, `H. Paige`;
+they are T. W. Shannon, L. Webb Taylor, Christopher Reynolds and H. Brooke Paige. **27 of the
+212 names differ between the two sources.** Seeded rows take Ballotpedia's spelling.
+
+🔴 **BUT THE SPLIT COMES FROM AP, WHICH PUBLISHES `first` AND `last` AS SEPARATE FIELDS.** So
+"Jose Javier Rodriguez" splits to `("Jose Javier", "Rodriguez")`, not `("Jose", "Javier
+Rodriguez")`, and "T. W. Shannon" to `("T. W.", "Shannon")`. **A first-token-is-the-first-name
+rule gets both wrong, and the error is invisible once it is a column.** Every one of the 143
+splits was asserted against AP's own surname field; the assertion rejected five and all five
+were real:
+
+- ⚠ **AP puts `(write-in)` inside the SURNAME field too**, not only the composed name — three rows.
+- **`Pro-Life` is a legal mononym.** Idaho's Constitution Party candidate for Governor
+  ([ballotpedia.org/Pro-Life_(Marvin_Thomas_Richardson)](https://ballotpedia.org/Pro-Life_(Marvin_Thomas_Richardson)),
+  read 2026-11-05: *"Pro-Life (formerly Marvin Thomas Richardson) ... was born Marvin Thomas
+  Richardson on August 5, 1941"*). `first_name` is NULL because there is no given name.
+- **Charles Morgan (TN)** — AP's surname field reads "Van Morgan"; his own Ballotpedia article is
+  titled "Charles Morgan (Tennessee)". Ballotpedia owns the spelling.
+
+🔴 **AND THE ACCENTS COME BACK FROM AP.** Ballotpedia drops them — "Jose Javier Rodriguez",
+"Amanda Lopez Askin" against AP's "José" and "López". Both are seeded accented. **Prod has no
+`unaccent` extension, so a name stored one way is unfindable by the other.**
+
+⚠ **DECLARED WRITE-INS ARE LARGELY ABSENT FROM AP'S BALLOT, SO THEY ARE ABSENT HERE.** Ballotpedia
+lists **43** write-in candidates AP does not carry, across AL, CT, DE, FL, IL, MI, MN, NY, OH, TN
+and VT — Michigan alone has nine. AP carries three (Jacob Burnett in Idaho, Randy Wilcox and
+John Glowa in Maine) and those three are seeded `is_write_in = true`. The rest are **absent
+rather than wrong.** Said out loud so nobody reads our ballot as the whole ballot.
+
+## 🔴 Three proposed matches were CONTRADICTED by what the person already holds
+
+The resolver's strongest rung is anchored on a fact the file does not supply: AP flags a
+candidate incumbent **and** `office_current_holder` names that same person for that same seat.
+40 of 69 matched that way. The other 29 were name matches — **a hypothesis, not a finding**, and
+reading what each person currently holds threw three of them out:
+
+| AP's candidate | the row the name matched | why it is a different person |
+| --- | --- | --- |
+| **Doug Jones**, AL Governor | `Doug Jones` 3216400f | came from **Colorado's** certified candidate list (`CC_0276`) and is a candidate for **CO State Representative on this same day** |
+| **David Graham**, DE Attorney General | `David C. Graham` 25ab585b | came from the **Kansas** Secretary of State's 2026 candidate list (`CA_0233`); a candidate for **KS Senator on this same day** |
+| **José Javier Rodriguez**, FL Attorney General | `Jose J. Rodriguez` 2ab06b40 | holds a **California school-board seat**, Trustee Area 2, since 2024-12-16 |
+
+Each would have attached a statewide result to the wrong human. 🔴 **This is the TX-22
+twin-brother defect, and a name match cannot see it. What saw it was asking the database what
+that person already holds** — one extra column, and it is the whole difference.
+
+Four others were confirmed by hand the same way: **Tanya F. Miller** (a Georgia state
+representative, who won the Georgia attorney generalship), **Jermaine L. Johnson, Sr.** (a South
+Carolina state representative), **James B. Rutledge III** — whose own campaign site
+[electjim.com](https://electjim.com/) reads *"JIM RUTLEDGE FOR ATTORNEY GENERAL"* and
+*"PROTECTING MARYLAND'S CONSTITUTION"* — and **Richard Bennett**.
+
+🔴 **BALLOTPEDIA'S FULLER SPELLING SURFACED A DUPLICATE AP'S SPELLING COULD NOT.** AP writes
+"Rick Bennett" and that matched one row. Ballotpedia writes "Richard Bennett" and that matched
+**three**:
+
+- `Rick Bennett` **e73bd689** — holds the **Maine** state senate seat. ✅ the right man.
+- `Richard Bennett` f3242669 — a **Mississippi** state representative. A different person.
+- `Rick Bennett` f64c1364 — **archived**, sourced from `en.wikipedia.org/wiki/Rick_Bennett_(Maine_politician)`.
+  ⚠ **A pre-existing duplicate of the same Maine man.** Not touched here. Owed a look.
+
+## Three seeded people share a name with someone we already hold, deliberately
+
+And 🔴 **"a different person with a confusable name" and "a name the guard refuses" are NOT the
+same set** — the first draft of this file conflated them and its own staleness gate refused it.
+The guard checks **two** keys and they catch different rows:
+
+| | clashes on full name | clashes on (first, last) | needs an allowance |
+| --- | --- | --- | --- |
+| Doug Jones | ✅ | ✅ | yes |
+| David Graham vs `David C. Graham` | ✗ | ✅ (his columns read plainly "David" / "Graham") | yes |
+| José Javier Rodriguez vs `Jose J. Rodriguez` | ✗ | ✗ | **no** |
+
+A second gate fails the file if a listed name has **stopped** clashing, so the allowance cannot
+rot into a blanket excuse.
+
+🟢 **THE DATABASE'S OWN TRIGGER AGREED, INDEPENDENTLY.** The dry run raised
+`DUPLICATE_POLITICIAN_NAME: 1 active politician row(s) already carry the name Doug Jones`, with
+the right default advice — *"a sitting officeholder running for a different seat is the normal
+case, not a different person"*. It is not this case. The escape hatch
+(`SET LOCAL essentials.allow_duplicate_name`) is opened for that one statement and **closed on
+the next line**, so it covers nothing else in the transaction.
+
+## ⚠ Three races carry one candidate, and one is a call on NO VOTES AT ALL
+
+| | | |
+| --- | --- | --- |
+| AR Attorney General | Tim Griffin | 100%, 620,639 votes — unopposed |
+| RI Secretary of State | Gregg Amore | 100%, 274,697 votes — unopposed |
+| **SD Attorney General** | **Lance Russell** | **0%, 0 votes, eevp = 0** |
+
+🔴 **SOUTH DAKOTA IS A CALL ON THE BALLOT, NOT ON THE COUNT.** AP marks Russell the winner with
+nothing counted, because he is the only name on it. The seat is decided and `won` is the right
+value; the percentage means nothing, and no percentage is stored.
+
+⚠ **TENNESSEE ELECTED A GOVERNOR ON 45.49%** — Marsha Blackburn against fourteen others. The gate
+asserts the winner is the **top** vote-getter, never that they cleared 50%. A `> 50%` gate would
+have failed a correct file. None of the 73 is ranked-choice and none elects more than one seat;
+both were read from AP rather than assumed.
+
+## The controls found a gate that did not exist
+
+Seven tampers, each asserted present in the file it writes, each aimed at a different gate.
+**Six fired. One passed, and that is the finding.**
+
+| | fault planted | observed |
+| --- | --- | --- |
+| A | winner and loser transposed (AL Governor) | `the winner is not the top vote-getter: AL Governor: Doug Jones won on 47.94% but Tommy Tuberville polled 52.06%` |
+| B | a second race on a seat that already has one | `1 race(s) already exist on these offices for 2026-11-03` |
+| C | incumbency moved from the losing incumbent to the winner (VT Lt Gov) | `incumbency disagrees with the current officeholder: ... this file marks Molly Gray incumbent, but the seat is held by John S. Rodgers; ... John Rodgers holds this seat and is not marked incumbent` |
+| D | a pinned uuid swapped for another real, active person | `a pinned politician is not the person this file names: AL Governor: this file names Tommy Tuberville (AP: Thomas Tuberville) but the pinned row is Marsha Blackburn` |
+| E | a name dropped from the collision allowance | `a person this file seeds already exists: Doug Jones already exists as Doug Jones (...); Doug Jones splits to the same (first, last) as ...` |
+| F | a seeded person's `last_name` corrupted, `full_name` left intact | 🔴 **DRY RUN OK — NOT CAUGHT** |
+| G | a race filed under another state's election row | `an election row is not the 2026-11-03 general of its state: AL -> AR 2026 Statewide General AR 2026-11-03` |
+
+### 🔴 F: "Robertson-Changed" was written to production's shape with no complaint
+
+Nothing compared the three name columns to each other. It matters because `first_name` and
+`last_name` are **the columns the repo's own duplicate guard keys on** — so a wrong split makes
+that person invisible to it, which is the same blindness CLAUDE.md already records for
+differently-cased and accented rows. The gate now requires `full_name` to begin with
+`first_name` and end with `last_name`, and F fires:
+
+```
+a seeded name does not match its own split: Katherine Robertson splits to (Katherine, Robertson-Changed)
+```
+
+⚠ **It is a WEAKER gate than D and the file says so.** It compares three columns this file wrote
+against each other, not against an outside fact — it catches a typo or a bad split, never a
+wrong person. The outside check is only possible where an existing row exists to check against,
+and a seeded person by definition has none.
+
+### 🔴 D is the gate CC_0358's controls bought, generalised
+
+`CC_0358`'s control E showed that checking `is_incumbent` against *the file's own table* proves
+nothing, because a tampered file agrees with itself. The same shape was waiting here one column
+over: **69 candidacies carry a hand-chosen `politician_id`, and the INSERT takes the name FROM
+THAT ROW.** A swapped uuid would be written under the wrong person's name and every other gate
+would still pass. The independent fact is that the NAME comes from AP and Ballotpedia while the
+ROW comes from the database. They are compared on (first word, last word) — two sources
+legitimately differ in the middle ("Andrea Campbell" for "Andrea Joy Campbell") but never at
+both ends. **Measured: all 69 agree with no exceptions, so the gate carries no allowance list
+to go stale.**
+
+### ⚠ B was shadowed first, and the shadow looked like a pass
+
+Swapping only the office id left the row saying `'AL'` while pointing at a Nevada office, so it
+tripped the earlier *"an office is not where this file says"* gate — a real refusal, of a
+different gate, which proves nothing about the duplicate-race one. **`CC_0358`'s control C went
+the same way.** The row had to be made internally consistent (Nevada office, Nevada label,
+Nevada election) so every upstream gate passes and only the intended one is left to catch it.
+
+### ⚠ A guard that times out is a guard that does not run
+
+The duplicate-name check timed out on its first dry run: calling the normalising function on
+**both** sides of a join defeats every index, so it was 143 seeds × 91,353 politicians × 2 keys.
+Normalising the 91,353 rows **once** into an indexed temp table turns it into 286 index lookups,
+and the whole file now dry-runs in about three seconds. 🔴 **The same table carries a positive
+control** — it asserts it can see a politician known to exist, and that it loaded more than
+50,000 rows, before any check is allowed to trust its silence.
+
+## Verified against production after applying
+
+| check | result |
+| --- | --- |
+| State-executive candidacies nationally | 334 |
+| **State-executive winners nationally** | **94**, across **37 states** |
+| Rows written by `CC_0359` | 212 — 73 won, 139 lost |
+| Incumbents marked | 40, every one cross-checked against `office_current_holder` |
+| Write-ins marked | 3 |
+| People seeded | 143 — all active, none marked incumbent |
+| Rows claiming `certified` | 0 |
+| `result_recorded_at` | one measured value on all 212: `2026-11-05 18:18:16.654469+00` |
+| **`ap-state-exec-gap.mjs`, re-run from AP's side** | **gap = 0**, buckets sum to 98 ✔ |
+
+## What is still owed at this tier
+
+- **6 races AP has not called**: AK Governor (ranked choice, 73.81% counted), IA Attorney
+  General, KS Governor / AG / Secretary of State, OH Attorney General. ▶ **Re-run
+  `ap-state-exec-gap.mjs`** — this bucket shrinks on its own.
+- **4 seats we hold no office for**, each an occupancy act with its own sourcing bar, not a
+  results migration: CT Secretary of State (Stephanie Thomas), DC Attorney General (Brian
+  Schwalb), MA Secretary of State (William Galvin), TX Railroad Commissioner (Jon Rosenthal).
+- 🔴 **AP COVERS ONLY FOUR OFFICES**, so a zero gap here is NOT "every state executive is
+  recorded". Treasurers, auditors, controllers, superintendents, insurance and labor
+  commissioners, land and agriculture commissioners were on these ballots and **AP publishes no
+  race for any of them.** Ballotpedia does — the 30 pages already saved here hold 180
+  general-election tables against the 73 AP races, so the source for that work is on disk.
+- **Certification**: all 334 rows read `called`. AP reports `isCertified: false` for every race.
+- The two duplicate pairs from `CC_0358` (`Arthur Dixon` ×2, `Jessica McCormick`/`Jessica
+  Mccormick`) and now a third: `Rick Bennett` e73bd689 / f64c1364.
