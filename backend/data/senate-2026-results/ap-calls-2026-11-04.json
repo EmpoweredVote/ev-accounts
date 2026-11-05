@@ -1,0 +1,548 @@
+[
+  {
+    "state": "AK",
+    "apRaceID": "20261103AK3079",
+    "callStatus": "Too Early to Call",
+    "isCertified": false,
+    "rankedChoice": true,
+    "winner": null,
+    "winnerCount": 0
+  },
+  {
+    "state": "AL",
+    "apRaceID": "20261103AL1755",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Barry Moore",
+      "party": "GOP",
+      "votePct": 54.71,
+      "voteCount": 917347,
+      "calledAt": "2026-11-04T04:17:58.590Z",
+      "apCandidateID": "66781"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "AR",
+    "apRaceID": "20261103AR6345",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Tom Cotton",
+      "party": "GOP",
+      "votePct": 54.26,
+      "voteCount": 480627,
+      "calledAt": "2026-11-04T03:40:06.259Z",
+      "apCandidateID": "61872"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "CO",
+    "apRaceID": "20261103CO7168",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "John Hickenlooper",
+      "party": "Dem",
+      "votePct": 60.21,
+      "voteCount": 1365991,
+      "calledAt": "2026-11-04T02:00:32.190Z",
+      "apCandidateID": "60601"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "DE",
+    "apRaceID": "20261103DE8362",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Chris Coons",
+      "party": "Dem",
+      "votePct": 63.57,
+      "voteCount": 240347,
+      "calledAt": "2026-11-04T01:00:20.744Z",
+      "apCandidateID": "60997"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "FL",
+    "apRaceID": "20261103FL84979",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Ashley Moody",
+      "party": "GOP",
+      "votePct": 50.87,
+      "voteCount": 4208022,
+      "calledAt": "2026-11-04T01:34:55.352Z",
+      "apCandidateID": "109657"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "GA",
+    "apRaceID": "20261103GA12301",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Jon Ossoff",
+      "party": "Dem",
+      "votePct": 59.03,
+      "voteCount": 2466207,
+      "calledAt": "2026-11-04T00:55:21.984Z",
+      "apCandidateID": "65866"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "IA",
+    "apRaceID": "20261103IA17247",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Josh Turek",
+      "party": "Dem",
+      "votePct": 50.51,
+      "voteCount": 686487,
+      "calledAt": "2026-11-04T04:35:30.952Z",
+      "apCandidateID": "114917"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "ID",
+    "apRaceID": "20261103ID13252",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Jim Risch",
+      "party": "GOP",
+      "votePct": 56.53,
+      "voteCount": 401731,
+      "calledAt": "2026-11-04T06:31:52.473Z",
+      "apCandidateID": "15344"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "IL",
+    "apRaceID": "20261103IL16430",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Juliana Stratton",
+      "party": "Dem",
+      "votePct": 60.94,
+      "voteCount": 2429072,
+      "calledAt": "2026-11-04T01:00:40.102Z",
+      "apCandidateID": "118184"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "KS",
+    "apRaceID": "20261103KS17585",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Adam Hamilton",
+      "party": "Dem",
+      "votePct": 50.96,
+      "voteCount": 558796,
+      "calledAt": "2026-11-04T04:24:51.393Z",
+      "apCandidateID": "175305"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "KY",
+    "apRaceID": "20261103KY18783",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Andy Barr",
+      "party": "GOP",
+      "votePct": 55,
+      "voteCount": 784869,
+      "calledAt": "2026-11-04T02:16:00.684Z",
+      "apCandidateID": "60705"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "LA",
+    "apRaceID": "20261103LA20157",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Julia Letlow",
+      "party": "GOP",
+      "votePct": 50.88,
+      "voteCount": 745963,
+      "calledAt": "2026-11-04T05:31:29.298Z",
+      "apCandidateID": "69687"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "MA",
+    "apRaceID": "20261103MA24467",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Edward Markey",
+      "party": "Dem",
+      "votePct": 63.25,
+      "voteCount": 1590089,
+      "calledAt": "2026-11-04T01:01:27.995Z",
+      "apCandidateID": "888"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "ME",
+    "apRaceID": "20261103ME20643",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": true,
+    "winner": {
+      "name": "Troy Jackson",
+      "party": "Dem",
+      "votePct": 53.41,
+      "voteCount": 368429,
+      "calledAt": "2026-11-04T06:02:01.517Z",
+      "apCandidateID": "54967"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "MI",
+    "apRaceID": "20261103MI24463",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Abdul El-Sayed",
+      "party": "Dem",
+      "votePct": 52.5,
+      "voteCount": 2507454,
+      "calledAt": "2026-11-04T07:27:18.642Z",
+      "apCandidateID": "67151"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "MN",
+    "apRaceID": "20261103MN25151",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Peggy Flanagan",
+      "party": "Dem",
+      "votePct": 53.71,
+      "voteCount": 1520869,
+      "calledAt": "2026-11-04T05:07:07.217Z",
+      "apCandidateID": "126236"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "MS",
+    "apRaceID": "20261103MS26692",
+    "callStatus": "Too Early to Call",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": null,
+    "winnerCount": 0
+  },
+  {
+    "state": "MT",
+    "apRaceID": "20261103MT27607",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Kurt Alme",
+      "party": "GOP",
+      "votePct": 48.58,
+      "voteCount": 230011,
+      "calledAt": "2026-11-04T07:54:25.875Z",
+      "apCandidateID": "171710"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "NC",
+    "apRaceID": "20261103NC35984",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Roy Cooper",
+      "party": "Dem",
+      "votePct": 58.72,
+      "voteCount": 2467963,
+      "calledAt": "2026-11-04T01:23:59.591Z",
+      "apCandidateID": "34471"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "NE",
+    "apRaceID": "20261103NE28594",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Pete Ricketts",
+      "party": "GOP",
+      "votePct": 50.44,
+      "voteCount": 373122,
+      "calledAt": "2026-11-04T08:27:46.220Z",
+      "apCandidateID": "51566"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "NH",
+    "apRaceID": "20261103NH30003",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Chris Pappas",
+      "party": "Dem",
+      "votePct": 55.96,
+      "voteCount": 341737,
+      "calledAt": "2026-11-04T01:20:51.833Z",
+      "apCandidateID": "56360"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "NJ",
+    "apRaceID": "20261103NJ31296",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Cory Booker",
+      "party": "Dem",
+      "votePct": 62.12,
+      "voteCount": 1787172,
+      "calledAt": "2026-11-04T01:00:53.549Z",
+      "apCandidateID": "63133"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "NM",
+    "apRaceID": "20261103NM33948",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Ben Lujan",
+      "party": "Dem",
+      "votePct": 63.15,
+      "voteCount": 455165,
+      "calledAt": "2026-11-04T02:00:42.148Z",
+      "apCandidateID": "56805"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "OH",
+    "apRaceID": "20261103OH84327",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Sherrod Brown",
+      "party": "Dem",
+      "votePct": 50.01,
+      "voteCount": 2301042,
+      "calledAt": "2026-11-04T04:10:04.990Z",
+      "apCandidateID": "1384"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "OK",
+    "apRaceID": "20261103OK37960",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Kevin Hern",
+      "party": "GOP",
+      "votePct": 57.2,
+      "voteCount": 639510,
+      "calledAt": "2026-11-04T02:36:04.840Z",
+      "apCandidateID": "67018"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "OR",
+    "apRaceID": "20261103OR38952",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Jeff Merkley",
+      "party": "Dem",
+      "votePct": 56.57,
+      "voteCount": 864491,
+      "calledAt": "2026-11-04T04:00:14.705Z",
+      "apCandidateID": "57469"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "RI",
+    "apRaceID": "20261103RI40003",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "John Reed",
+      "party": "Dem",
+      "votePct": 66.64,
+      "voteCount": 237742,
+      "calledAt": "2026-11-04T01:01:11.089Z",
+      "apCandidateID": "964"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "SC",
+    "apRaceID": "20261103SC41938",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Annie Andrews",
+      "party": "Dem",
+      "votePct": 51.13,
+      "voteCount": 1042362,
+      "calledAt": "2026-11-04T03:39:16.039Z",
+      "apCandidateID": "70916"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "SD",
+    "apRaceID": "20261103SD42003",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Mike Rounds",
+      "party": "GOP",
+      "votePct": 60.5,
+      "voteCount": 184584,
+      "calledAt": "2026-11-04T05:02:17.689Z",
+      "apCandidateID": "580"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "TN",
+    "apRaceID": "20261103TN43441",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Bill Hagerty",
+      "party": "GOP",
+      "votePct": 55.08,
+      "voteCount": 1138457,
+      "calledAt": "2026-11-04T04:28:22.446Z",
+      "apCandidateID": "69233"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "TX",
+    "apRaceID": "20261103TX46643",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "James Talarico",
+      "party": "Dem",
+      "votePct": 55.08,
+      "voteCount": 5445121,
+      "calledAt": "2026-11-04T04:03:28.187Z",
+      "apCandidateID": "153037"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "VA",
+    "apRaceID": "20261103VA47917",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Mark Warner",
+      "party": "Dem",
+      "votePct": 61.16,
+      "voteCount": 2183072,
+      "calledAt": "2026-11-04T00:00:10.929Z",
+      "apCandidateID": "1782"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "WV",
+    "apRaceID": "20261103WV49137",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Shelley Capito",
+      "party": "GOP",
+      "votePct": 58.33,
+      "voteCount": 266068,
+      "calledAt": "2026-11-04T01:52:23.966Z",
+      "apCandidateID": "441"
+    },
+    "winnerCount": 1
+  },
+  {
+    "state": "WY",
+    "apRaceID": "20261103WY51677",
+    "callStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "winner": {
+      "name": "Harriet Hageman",
+      "party": "GOP",
+      "votePct": 65.24,
+      "voteCount": 122157,
+      "calledAt": "2026-11-04T02:00:20.492Z",
+      "apCandidateID": "67595"
+    },
+    "winnerCount": 1
+  }
+]

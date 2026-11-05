@@ -26,7 +26,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 5,Wave 5 — Remaining locals,local,OR,County Treasurer,Deschutes County Treasurer,1,Not looked at,Bill Kuhn,,,0,0,0,0,,,,0373a566-fa8d-428b-bf4c-1c7e61ee6c96
 4,Wave 4 — State,state,ME,Representative,ME State House District 116,1,Not looked at,Samuel Zager,,,1,0,0,0,,,,03950088-dd60-4c92-bcc6-f87a16bf0bbd
 4,Wave 4 — State,state,ME,Senator,ME State Senate District 5,1,Not looked at,Russell J. Black,,,1,0,0,0,,,,03e3bfa6-1af4-4bdf-aaf1-f24a44c75ad4
-1,Wave 1 — Senate,federal,IL,Senator,U.S. Senate Illinois,1,Not looked at,Richard Durbin,,,0,0,0,0,,2027-01-03,statute,0418c7a4-5fe5-4d86-a1ea-b29036b88e07
+1,Wave 1 — Senate,federal,IL,Senator,U.S. Senate Illinois,2,Called,Richard Durbin,Juliana Stratton,called,0,0,0,0,,2027-01-03,statute,0418c7a4-5fe5-4d86-a1ea-b29036b88e07
 4,Wave 4 — State,state,UT,State Representative District 61,Utah State House District 61,1,Not looked at,Lisa Shepherd,,,0,0,0,0,,,,041ab8fc-4de1-4663-9b87-12e000e62be4
 4,Wave 4 — State,state,WA,State Representative (Position 2),WA House of Representatives Legislative District 7 Position 2,1,Not looked at,Hunter Abell,,,0,0,0,0,,,,043c8e25-a56c-4762-b552-154a2b3a1b80
 4,Wave 4 — State,state,UT,State Board of Education District 7,Utah State Board of Education District 7,1,Not looked at,Erin Longacre,,,0,0,0,0,,,,0453ecfc-257c-416d-b6a5-dfb3dce32120
@@ -59,7 +59,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 5,Wave 5 — Remaining locals,local,IN,Salt Creek Township Board,Salt Creek Township Board,1,Not looked at,,,,0,0,0,0,,,,07a8a93d-d6f1-4de0-9d95-0657315bb32c
 4,Wave 4 — State,state,CO,State Representative,State Representative District 15,1,Not looked at,Scott Bottoms,,,0,0,0,0,,,,07ee4301-e2f4-4a45-87c7-80bbe7012dfd
 4,Wave 4 — State,state,IN,Representative,"State Representative, District 061",1,Not looked at,Matt Pierce,,,0,0,0,0,,,,07f385a9-5fe1-4d2e-b5b2-869dfad4f1fc
-1,Wave 1 — Senate,federal,OR,U.S. Senate - Oregon,U.S. Senate Oregon,1,Not looked at,Jeff Merkley,,,0,0,0,0,,2027-01-03,statute,08051b89-7c0d-4609-9543-e685f44f6821
+1,Wave 1 — Senate,federal,OR,U.S. Senate - Oregon,U.S. Senate Oregon,2,Called,Jeff Merkley,Jeff Merkley,called,0,0,0,0,,2027-01-03,statute,08051b89-7c0d-4609-9543-e685f44f6821
 3,Wave 3 — December locals,local,CA,City Clerk,Monterey Park City Clerk,1,Not looked at,Maychelle Yee,,,0,0,0,0,,2026-12-01,estimated,082f92d3-4be5-48c7-ad71-62efdd19480e
 4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 32,1,Not looked at,Stan Ellis,,,0,0,0,0,,,,083efa67-40ea-402e-a4e5-224156d1f465
 4,Wave 4 — State,state,MD,Senator,MD State Senate District 1,1,Not looked at,Mike McKay,,,1,0,0,0,,,,085dfd9b-d48f-4575-9477-fdf2b13a12e6
@@ -128,7 +128,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 5,Wave 5 — Remaining locals,local,CA,Director (Division 4),Water Replenishment District of Southern California Board - Division 4,1,Not looked at,Sergio Calderon,,,0,0,0,0,,2027-01-04,published,10995b90-7211-5fb6-82dc-63cf7cd6f63e
 3,Wave 3 — December locals,local,CA,Director (Division 5),Walnut Valley Water District Board - Division 5 (Unexpired Term),1,Not looked at,Michael Lin,,,0,0,0,0,,2026-12-04,statute,10a1940e-da4c-55bb-a125-9205377a1dd1
 2,Wave 2 — House,federal,LA,U.S. Representative,U.S. Representative District 1,1,Not looked at,Steve Scalise,,,0,0,0,0,,2027-01-03,statute,10a69df9-4fdd-4f33-a6d5-58c6d43d8f03
-1,Wave 1 — Senate,federal,SD,Senator,U.S. Senate South Dakota,1,Not looked at,Mike Rounds,,,0,0,0,0,,2027-01-03,statute,10dda367-5da2-456f-9c76-f79a64855b9c
+1,Wave 1 — Senate,federal,SD,Senator,U.S. Senate South Dakota,2,Called,Mike Rounds,Mike Rounds,called,0,0,0,0,,2027-01-03,statute,10dda367-5da2-456f-9c76-f79a64855b9c
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 1),Bellflower Unified School Board - Trustee Area 1,1,Not looked at,Amie Stewart,,,0,0,0,0,,2026-12-11,statute,10ee3f55-e8fe-490c-8d8e-aef60c7696af
 4,Wave 4 — State,state,MA,"Representative, 12th Essex District",MA House 12th Essex District,1,Not looked at,Thomas P. Walsh,,,1,0,0,0,,,,1134551e-c266-4415-8b3a-e36f29c3edd5
 5,Wave 5 — Remaining locals,local,OR,Councilor,Tigard City Council Seat A,1,Not looked at,Tom Anderson,,,1,0,0,0,,,,115c8ccb-aa65-4b7d-b323-3d86e8efbd93
@@ -240,7 +240,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 2,Wave 2 — House,federal,WI,U.S. Representative,U.S. Representative District 3,1,Not looked at,Derrick Van Orden,,,0,0,0,0,,2027-01-03,statute,1eadf6d9-1dde-46bb-8d6e-0d1079c750e0
 3,Wave 3 — December locals,local,CA,Trustee,Palos Verdes Library District Board,1,Not looked at,Jonathan Beutler,,,0,0,0,0,,2026-12-04,statute,1ecc7fec-9e97-5647-a08e-10876da372b2
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 5),South Whittier School Board - Trustee Area 5,1,Not looked at,Sylvia V. Macias,,,0,0,0,0,,2026-12-11,statute,1ee10945-9593-4887-99e0-7b51bd3bb1ee
-1,Wave 1 — Senate,federal,ID,Senator,U.S. Senate Idaho,1,Not looked at,James Risch,,,0,0,0,0,,2027-01-03,statute,1ee64dbb-2a19-4a3c-b04d-7a741fdcf7ba
+1,Wave 1 — Senate,federal,ID,Senator,U.S. Senate Idaho,2,Called,James Risch,Jim Risch,called,0,0,0,0,,2027-01-03,statute,1ee64dbb-2a19-4a3c-b04d-7a741fdcf7ba
 4,Wave 4 — State,state,UT,State Representative District 40,Utah State House District 40,1,Not looked at,Andrew Stoddard,,,0,0,0,0,,,,1ef0ab55-590c-459c-bff9-d016846f5c3f
 4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 68,1,Not looked at,Avelino Valencia,,,0,0,0,0,,,,1ef5295b-0f11-4cc7-a70c-2813a293931b
 4,Wave 4 — State,state,AZ,State Senator,State Senate District 13,1,Not looked at,J.D. Mesnard,,,0,0,0,0,,,,1efb9ea1-7bbf-4bbc-a7ac-ea9676579e80
@@ -265,7 +265,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate Subdistrict 7B,1,Not looked at,Lauren Arikan,,,1,0,0,0,,,,2151f879-d739-4300-87f1-3dadcdad40ee
 4,Wave 4 — State,state,UT,State Representative District 64,Utah State House District 64,1,Not looked at,Jackie Larson,,,0,0,0,0,,,,215327aa-67a0-4f0f-8e4d-79746bbe8a77
 4,Wave 4 — State,state,CA,Senator,State Senate District 36,1,Not looked at,Tony Strickland,,,0,0,0,0,,,,215dcce6-87e7-4fe8-af5f-8ef901d3d817
-1,Wave 1 — Senate,federal,TX,U.S. Senate - Texas,U.S. Senate Texas,1,Not looked at,John Cornyn,,,0,0,0,0,,2027-01-03,statute,216ead27-9e86-49f2-b21c-af659d114faf
+1,Wave 1 — Senate,federal,TX,U.S. Senate - Texas,U.S. Senate Texas,2,Called,John Cornyn,James Talarico,called,0,0,0,0,,2027-01-03,statute,216ead27-9e86-49f2-b21c-af659d114faf
 5,Wave 5 — Remaining locals,local,IN,Polk Township Board,Polk Township Board,1,Not looked at,,,,0,0,0,0,,,,2170793e-6056-42a5-8807-5be50de266d9
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 3),Burbank Unified School Board - Trustee Area 3,1,Not looked at,Kelsey Olson,,,0,0,0,0,,2026-12-11,statute,219875d8-4b41-434d-a118-40b6cfca3663
 2,Wave 2 — House,federal,CA,U.S. Representative,U.S. Representative District 15,1,Not looked at,Kevin Mullin,,,0,0,0,0,,2027-01-03,statute,21a3ca1e-00a9-47c2-b756-889cd55a84cd
@@ -343,7 +343,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 79,1,Not looked at,Lisa Subeck,,,0,0,0,0,,,,298ad023-bcb5-4edd-ba21-819f95159e84
 2,Wave 2 — House,federal,OH,U.S. Representative,U.S. Representative District 10,1,Not looked at,Michael R. Turner,,,0,0,0,0,,2027-01-03,statute,29948b99-ac91-48b3-82a5-5970f6a10ed5
 4,Wave 4 — State,state,ME,Representative,ME State House District 19,1,Not looked at,Richard Campbell,,,1,0,0,0,,,,29a4bc14-eb0b-4c3c-93b1-f5c018a23208
-1,Wave 1 — Senate,federal,SC,Senator,U.S. Senate South Carolina,1,Not looked at,Darline Graham,,,0,0,0,0,2027-01-03,2027-01-03,statute,29b5764f-2953-4274-9c46-9be584602037
+1,Wave 1 — Senate,federal,SC,Senator,U.S. Senate South Carolina,2,Called,Darline Graham,Annie Andrews,called,0,0,0,0,2027-01-03,2027-01-03,statute,29b5764f-2953-4274-9c46-9be584602037
 4,Wave 4 — State,state,AZ,State Senator,State Senate District 16,1,Not looked at,"Thomas ""T.J."" Shope",,,0,0,0,0,,,,29e64821-c89a-470e-bda0-6b825cf7b465
 3,Wave 3 — December locals,local,CA,Director (Division 2),Palmdale Water District Board - Division 2,1,Not looked at,Don Wilson,,,0,0,0,0,,2026-12-04,statute,2a0bc808-af3b-5bdf-9259-9b493c574b66
 4,Wave 4 — State,state,MA,"Representative, 18th Middlesex District",MA House 18th Middlesex District,1,Not looked at,Tara T. Hong,,,1,0,0,0,,,,2a130497-d6f1-4a00-8b6b-fee33ee2bffe
@@ -365,10 +365,10 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,ME,Representative,ME State House District 140,1,Not looked at,Wayne Parry,,,1,0,0,0,,,,2bcf2d73-13b7-49ab-8b3c-799c5acc1c58
 2,Wave 2 — House,federal,NC,U.S. Representative,U.S. Representative District 4,1,Not looked at,Valerie P. Foushee,,,0,0,0,0,,2027-01-03,statute,2be0f81f-42eb-412c-9637-4b93296cdde8
 3,Wave 3 — December locals,local,CA,Council Member,Lawndale City Council,1,Not looked at,Pat Kearney,,,0,0,0,0,,2026-12-01,estimated,2c0c47f6-a109-4c09-aff6-31a1d701bb81
-1,Wave 1 — Senate,federal,MN,Senator,U.S. Senate Minnesota,1,Not looked at,Tina Smith,,,0,0,0,0,,2027-01-03,statute,2c3a866f-e890-4afa-aea2-d79aef05fe27
+1,Wave 1 — Senate,federal,MN,Senator,U.S. Senate Minnesota,2,Called,Tina Smith,Peggy Flanagan,called,0,0,0,0,,2027-01-03,statute,2c3a866f-e890-4afa-aea2-d79aef05fe27
 4,Wave 4 — State,state,ME,Representative,ME State House District 102,1,Not looked at,Melanie Sachs,,,1,0,0,0,,,,2c72f38a-94a0-4f78-8647-3e4a033ed3f7
 4,Wave 4 — State,state,WA,State Representative (Position 2),WA House of Representatives Legislative District 40 Position 2,1,Not looked at,Alex Ramel,,,0,0,0,0,,,,2c816ec0-8862-450d-bfd0-e8b6264f8c2e
-1,Wave 1 — Senate,federal,NM,Senator,U.S. Senate New Mexico,1,Not looked at,Ben Ray Luján,,,0,0,0,0,,2027-01-03,statute,2ca27b13-9bd8-4ad3-a516-84beff41d8f1
+1,Wave 1 — Senate,federal,NM,Senator,U.S. Senate New Mexico,2,Called,Ben Ray Luján,Ben Ray Luján,called,0,0,0,0,,2027-01-03,statute,2ca27b13-9bd8-4ad3-a516-84beff41d8f1
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 1),Rio Hondo Community College Board - Trustee Area 1,1,Not looked at,Anais Medina Diaz,,,0,0,0,0,,2026-12-11,statute,2cab0917-a3d6-56f7-b600-1cbf777a1386
 2,Wave 2 — House,federal,GA,U.S. Representative,U.S. Representative District 10,1,Not looked at,Mike Collins,,,0,0,0,0,,2027-01-03,statute,2cb356e5-8239-4c69-aca4-7e32d4120668
 4,Wave 4 — State,state,MA,"Representative, 2nd Bristol District",MA House 2nd Bristol District,1,Not looked at,James K. Hawkins,,,1,0,0,0,,,,2cc5ca12-f337-4cb9-b02a-877c9e95965c
@@ -412,7 +412,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,WA,State Representative (Position 2),WA House of Representatives Legislative District 5 Position 2,1,Not looked at,Lisa Callan,,,0,0,0,0,,,,31402a43-30b8-4c11-b48e-8185150281bc
 3,Wave 3 — December locals,local,CA,Council Member (District 2),Arcadia City Council District 2,1,Not looked at,Sharon Kwan,,,0,0,0,0,,2026-12-01,estimated,31518619-759e-4e98-af7d-92afbd8b463d
 3,Wave 3 — December locals,local,CA,Council Member,Burbank City Council,1,Not looked at,Konstantine Anthony,,,0,0,0,0,,2026-12-01,estimated,3153a109-4141-4af1-8883-120a2e416336
-1,Wave 1 — Senate,federal,DE,Senator,U.S. Senate Delaware,1,Not looked at,Chris Coons,,,0,0,0,0,,2027-01-03,statute,317328d7-bd64-48ae-a35a-672f19fe5729
+1,Wave 1 — Senate,federal,DE,Senator,U.S. Senate Delaware,2,Called,Chris Coons,Chris Coons,called,0,0,0,0,,2027-01-03,statute,317328d7-bd64-48ae-a35a-672f19fe5729
 4,Wave 4 — State,state,WA,State Representative (Position 1),WA House of Representatives Legislative District 48 Position 1,1,Not looked at,Osman Salahuddin,,,0,0,0,0,,,,317676c8-c0a8-4853-bd36-39dbe2627e0d
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 2),Norwalk-La Mirada Unified School Board - Trustee Area 2,1,Not looked at,Norma Amezcua,,,0,0,0,0,,2026-12-11,statute,31791a9a-97f2-4498-9d0f-96f2866026bc
 4,Wave 4 — State,state,ME,Representative,ME State House District 79,1,Not looked at,Michael Lance,,,1,0,0,0,,,,317a8980-e94a-4206-abc4-fc5aeaa0c8b6
@@ -672,7 +672,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,UT,State Representative District 33,Utah State House District 33,1,Not looked at,Doug Owens,,,0,0,0,0,,,,4f9b3dcb-3b72-47b0-bdb2-502abcbc59d0
 4,Wave 4 — State,state,ME,Representative,ME State House District 54,1,Not looked at,Karen Montell,,,1,0,0,0,,,,4fa067fc-4796-4f40-afb9-a5e31ab91092
 2,Wave 2 — House,federal,RI,U.S. Representative,U.S. Representative District 2,1,Not looked at,Seth Magaziner,,,0,0,0,0,,2027-01-03,statute,4fae9a83-2f41-43ff-8fc1-5d162a3d759b
-1,Wave 1 — Senate,federal,IA,Senator,U.S. Senate Iowa,1,Not looked at,Joni Ernst,,,0,0,0,0,,2027-01-03,statute,4fc0ebfd-789b-4589-984a-4fb61f5ae732
+1,Wave 1 — Senate,federal,IA,Senator,U.S. Senate Iowa,2,Called,Joni Ernst,Josh Turek,called,0,0,0,0,,2027-01-03,statute,4fc0ebfd-789b-4589-984a-4fb61f5ae732
 2,Wave 2 — House,federal,DE,U.S. Representative,U.S. Representative At-Large,1,Not looked at,Sarah McBride,,,0,0,0,0,,2027-01-03,statute,4fce398a-bd1b-47bc-8809-372a9dd1d0f1
 4,Wave 4 — State,state,MA,"Representative, 30th Middlesex District",MA House 30th Middlesex District,1,Not looked at,Richard M. Haggerty,,,1,0,0,0,,,,4fe4b294-6d7f-44a3-a7f2-10854879029f
 4,Wave 4 — State,state,CA,Board of Equalization District 3,"State Board of Equalization, 3rd District",1,Not looked at,Antonio Vazquez,,,0,0,0,0,,,,500eea68-be08-4b90-b603-f5b102507f94
@@ -835,7 +835,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate District 39,1,Not looked at,Gabriel Acevero,,,1,0,0,0,,,,654bd1fb-641a-4ef0-89c9-63523bb78c96
 4,Wave 4 — State,state,WA,State Representative (Position 1),WA House of Representatives Legislative District 1 Position 1,1,Not looked at,Davina Duerr,,,0,0,0,0,,,,659e3f49-4f8b-4611-86cf-1d13a65f56f4
 4,Wave 4 — State,state,MD,Senator,MD State Senate District 34,1,Not looked at,Mary-Dulany James,,,1,0,0,0,,,,65b31f0a-c550-4e42-bd49-4c3794423de7
-1,Wave 1 — Senate,federal,MA,U.S. Senate - Massachusetts,U.S. Senate Massachusetts,1,Not looked at,Edward J. Markey,,,0,0,0,0,,2027-01-03,statute,65b552af-ac06-45ac-bafb-f21f2015a4ec
+1,Wave 1 — Senate,federal,MA,U.S. Senate - Massachusetts,U.S. Senate Massachusetts,2,Called,Edward J. Markey,Ed Markey,called,0,0,0,0,,2027-01-03,statute,65b552af-ac06-45ac-bafb-f21f2015a4ec
 2,Wave 2 — House,federal,VA,U.S. Representative,U.S. House VA-01,1,Not looked at,Rob Wittman,,,0,0,0,0,,2027-01-03,statute,65dd3477-4828-43de-adb5-9b621d08b43e
 3,Wave 3 — December locals,local,CA,Board Member (District 3),Pasadena Unified School Board - District 3,1,Not looked at,Michelle Bailey,,,0,0,0,0,,2026-12-11,statute,65e6909a-10d0-404d-b2c9-2a65570eeb3a
 4,Wave 4 — State,state,UT,State Representative District 65,Utah State House District 65,1,Not looked at,Doug Welton,,,0,0,0,0,,,,65f6eaf7-5531-4b61-856c-f91acc439825
@@ -876,7 +876,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,ME,Senator,ME State Senate District 6,1,Not looked at,Marianne Moore,,,1,0,0,0,,,,695ad362-9a13-4902-aec8-232f944af67e
 4,Wave 4 — State,state,UT,State Senator District 21,Utah State Senate District 21,1,Not looked at,Brady Brammer,,,0,0,0,0,,,,6984965d-b30e-4c4c-a4f8-efa471081cb1
 2,Wave 2 — House,federal,FL,U.S. Representative,U.S. Representative District 4,1,Not looked at,Aaron Bean,,,0,0,0,0,,2027-01-03,statute,6989cdb6-bcbf-44c3-ae55-71e9296014ba
-1,Wave 1 — Senate,federal,NH,Senator,U.S. Senate New Hampshire,1,Not looked at,Jeanne Shaheen,,,0,0,0,0,,2027-01-03,statute,69a93943-dad5-4765-8f41-2dbc5f6897a5
+1,Wave 1 — Senate,federal,NH,Senator,U.S. Senate New Hampshire,2,Called,Jeanne Shaheen,Chris Pappas,called,0,0,0,0,,2027-01-03,statute,69a93943-dad5-4765-8f41-2dbc5f6897a5
 4,Wave 4 — State,state,MA,"Representative, 3rd Norfolk District",MA House 3rd Norfolk District,1,Not looked at,Ronald Mariano,,,1,0,0,0,,,,69b6fdea-ef83-49f2-909e-51978ff6eaf9
 2,Wave 2 — House,federal,CA,Representative,U.S. Representative District 45,1,Not looked at,Derek Tran,,,0,0,0,0,,2027-01-03,statute,69d64aab-bcdb-497f-9392-4e939efe7d95
 4,Wave 4 — State,state,MA,"Representative, 32nd Middlesex District",MA House 32nd Middlesex District,1,Not looked at,Kate Lipper-Garabedian,,,1,0,0,0,,,,69fc590f-33e5-47ef-8c6d-0bbc5c612d61
@@ -885,11 +885,11 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 2,Wave 2 — House,federal,VA,U.S. Representative,U.S. House VA-05,1,Not looked at,John McGuire,,,0,0,0,0,,2027-01-03,statute,6a1bf3a1-3fc7-4997-9e67-7d9736e03ffe
 4,Wave 4 — State,state,AZ,State Representative,State House District 20,1,Not looked at,Betty J Villegas,,,0,0,0,0,,,,6a28ea8e-f63b-4f6c-b522-c45f9846e619
 4,Wave 4 — State,state,UT,State Representative District 35,Utah State House District 35,1,Not looked at,Rosalba Dominguez,,,0,0,0,0,,,,6a4598d1-9064-4f48-a1ed-51f533bd6b30
-1,Wave 1 — Senate,federal,NC,Senator,U.S. Senate North Carolina,1,Not looked at,Thom Tillis,,,0,0,0,0,,2027-01-03,statute,6a4f55a7-a571-44d2-849a-9df94cd1b77a
+1,Wave 1 — Senate,federal,NC,Senator,U.S. Senate North Carolina,2,Called,Thom Tillis,Roy Cooper,called,0,0,0,0,,2027-01-03,statute,6a4f55a7-a571-44d2-849a-9df94cd1b77a
 4,Wave 4 — State,state,WA,State Representative (Position 2),WA House of Representatives Legislative District 10 Position 2,1,Not looked at,Dave Paul,,,0,0,0,0,,,,6a97ff84-38ac-44e6-9fc9-bdbee4a8ae68
 2,Wave 2 — House,federal,MI,U.S. Representative,U.S. Representative District 6,1,Not looked at,Debbie Dingell,,,0,0,0,0,,2027-01-03,statute,6aaa5774-7bfa-4ec0-b51a-8f59e559052c
 3,Wave 3 — December locals,local,CA,Board Member,San Marino Unified School Board,1,Not looked at,C. Joseph Chang,,,0,0,0,0,,2026-12-11,statute,6ac25b1c-a9fb-4a15-ac1c-2f779991f117
-1,Wave 1 — Senate,federal,NJ,Senator,U.S. Senate New Jersey,1,Not looked at,Cory Booker,,,0,0,0,0,,2027-01-03,statute,6adf2e66-41e0-4883-894f-194a2768cdd5
+1,Wave 1 — Senate,federal,NJ,Senator,U.S. Senate New Jersey,2,Called,Cory Booker,Cory Booker,called,0,0,0,0,,2027-01-03,statute,6adf2e66-41e0-4883-894f-194a2768cdd5
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 1),Wilsona School Board - Trustee Area 1,1,Not looked at,Robert D. Miller,,,0,0,0,0,,2026-12-11,statute,6ae993f9-3b3e-4cb5-b128-486ba6788ae9
 2,Wave 2 — House,federal,WI,U.S. Representative,U.S. Representative District 8,1,Not looked at,Tony Wied,,,0,0,0,0,,2027-01-03,statute,6b05d033-e3ac-45bb-a726-c254bb5df0db
 2,Wave 2 — House,federal,GA,U.S. Representative,U.S. Representative District 1,1,Not looked at,"Earl L. ""Buddy"" Carter",,,0,0,0,0,,2027-01-03,statute,6b16cb6a-159f-48b1-a1ed-eb2de73f2e84
@@ -970,8 +970,8 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 2,Wave 2 — House,federal,TX,Representative,U.S. Representative District 21,1,Not looked at,Chip Roy,,,0,0,0,0,,2027-01-03,statute,71e280a7-0ec9-4d19-80cc-7798b305a36b
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 5),Saugus Union School Board - Trustee Area 5,1,Not looked at,Christopher Trunkey,,,0,0,0,0,,2026-12-11,statute,71e60c3f-33e1-4f82-aca8-a823a3c7ea3e
 4,Wave 4 — State,state,ME,Representative,ME State House District 20,1,Not looked at,Dani O'Halloran,,,1,0,0,0,,,,723bbb9b-ce03-4b66-b39e-91fa6726fd44
-1,Wave 1 — Senate,federal,ME,U.S. Senate - Maine,U.S. Senate Maine,1,Not looked at,Susan M. Collins,,,0,0,0,0,,2027-01-03,statute,726895fa-bd50-4a09-9782-88c1afffbc65
-1,Wave 1 — Senate,federal,MI,Senator,U.S. Senate Michigan,1,Not looked at,Gary Peters,,,0,0,0,0,,2027-01-03,statute,729b3f91-919f-420e-be55-becb68fae553
+1,Wave 1 — Senate,federal,ME,U.S. Senate - Maine,U.S. Senate Maine,2,Called,Susan M. Collins,Troy D. Jackson,called,0,0,0,1,,2027-01-03,statute,726895fa-bd50-4a09-9782-88c1afffbc65
+1,Wave 1 — Senate,federal,MI,Senator,U.S. Senate Michigan,2,Called,Gary Peters,Abdul El-Sayed,called,0,0,0,0,,2027-01-03,statute,729b3f91-919f-420e-be55-becb68fae553
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate Subdistrict 11B,1,Not looked at,Jon S. Cardin,,,1,0,0,0,,,,72fffea6-1d39-49db-b5c4-4f875d9d86a2
 2,Wave 2 — House,federal,FL,U.S. Representative,U.S. Representative District 10,1,Not looked at,Maxwell Frost,,,0,0,0,0,,2027-01-03,statute,7300bf84-2563-4938-ab15-fb4fdeaa4b21
 5,Wave 5 — Remaining locals,local,TX,"Judge, County Criminal Court No. 7",Tarrant County Criminal Court No. 7,1,Not looked at,Eric Starnes,,,0,0,0,0,,,,7332637c-fd5f-4ff0-b9bc-c34b36288c77
@@ -992,14 +992,14 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,ME,Representative,ME State House District 49,1,Not looked at,Allison Hepler,,,1,0,0,0,,,,74d0e215-a43e-4af7-b8d1-e355d1d7202b
 2,Wave 2 — House,federal,IL,U.S. Representative,U.S. Representative District 3,1,Not looked at,Delia C. Ramirez,,,0,0,0,0,,2027-01-03,statute,74db93b8-c844-4775-a9e6-ad7caced9f6f
 2,Wave 2 — House,federal,AL,U.S. Representative,U.S. Representative District 5,1,Not looked at,Dale W. Strong,,,0,0,0,0,,2027-01-03,statute,75178764-ac9d-440c-ae9b-43e650c303c7
-1,Wave 1 — Senate,federal,CO,Senator,U.S. Senate Colorado,1,Not looked at,John Hickenlooper,,,0,0,0,0,,2027-01-03,statute,75218390-3c57-4427-a984-8f41f6ba25a0
+1,Wave 1 — Senate,federal,CO,Senator,U.S. Senate Colorado,2,Called,John Hickenlooper,John Hickenlooper,called,0,0,0,0,,2027-01-03,statute,75218390-3c57-4427-a984-8f41f6ba25a0
 2,Wave 2 — House,federal,NC,U.S. Representative,U.S. Representative District 13,1,Not looked at,Brad Knott,,,0,0,0,0,,2027-01-03,statute,7528fbba-c2ac-4009-b9e4-4fd9a13488d0
 4,Wave 4 — State,state,AZ,State Representative,State House District 27,1,Not looked at,Lisa Fink,,,0,0,0,0,,,,7538198a-7d1a-4dac-b1d8-3b881861f8be
 2,Wave 2 — House,federal,TX,Representative,U.S. Representative District 36,1,Not looked at,Brian Babin,,,0,0,0,0,,2027-01-03,statute,75502a2a-dc2b-4fa6-93c4-e4afb498b7ab
 2,Wave 2 — House,federal,MI,U.S. Representative,U.S. Representative District 5,1,Not looked at,Tim Walberg,,,0,0,0,0,,2027-01-03,statute,7564caef-cd8d-42c2-af81-65d54ee3bf59
 2,Wave 2 — House,federal,AZ,U.S. Representative,U.S. Representative District 1,1,Not looked at,David Schweikert,,,0,0,0,0,,2027-01-03,statute,75673cd6-afba-409e-a94a-a50983a3c5c8
 5,Wave 5 — Remaining locals,local,UT,Council At-Large Seat A,Salt Lake County Council At-Large A,1,Not looked at,Laurie Stringham,,,0,0,0,0,,,,75746149-b145-4eaf-8b53-b0583f824166
-1,Wave 1 — Senate,federal,MT,Senator,U.S. Senate Montana,1,Not looked at,Steve Daines,,,0,0,0,0,,2027-01-03,statute,75b2e2c6-a563-4770-b8be-2c11e04c2e4f
+1,Wave 1 — Senate,federal,MT,Senator,U.S. Senate Montana,2,Called,Steve Daines,Kurt Alme,called,0,0,0,0,,2027-01-03,statute,75b2e2c6-a563-4770-b8be-2c11e04c2e4f
 4,Wave 4 — State,state,OR,Senator,OR State Senate District 8,1,Not looked at,Sara Gelser Blouin,,,1,0,0,0,,,,75d10bdf-03fe-4cb4-84b7-fb5119be1e1c
 4,Wave 4 — State,state,OR,Representative,OR State House District 37,1,Not looked at,Jules Walters,,,1,0,0,0,,,,75e411be-f1dc-49a8-beb4-7adca380ee10
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate District 18,1,Not looked at,Aaron M. Kaufman,,,1,0,0,0,,,,763b5b43-6c0d-456f-afaa-4f437177cf2a
@@ -1064,7 +1064,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 2,Wave 2 — House,federal,TX,Representative,U.S. Representative District 29,1,Not looked at,Sylvia Garcia,,,0,0,0,0,,2027-01-03,statute,7e2bfe3b-81c9-4114-b751-b81449df488d
 3,Wave 3 — December locals,local,CA,City Treasurer,Montebello City Treasurer,1,Not looked at,David Matanga,,,0,0,0,0,,2026-12-01,estimated,7e4df051-fa34-47ba-bb92-e1b4f4e67a7b
 2,Wave 2 — House,federal,FL,U.S. Representative,U.S. Representative District 11,1,Not looked at,Daniel Webster,,,0,0,0,0,,2027-01-03,statute,7e535221-c2a8-47aa-9b18-50e1a91ed619
-1,Wave 1 — Senate,federal,WY,Senator,U.S. Senate Wyoming,1,Not looked at,Cynthia Lummis,,,0,0,0,0,,2027-01-03,statute,7e53c060-fd4a-4d86-b786-b1b4b8be226a
+1,Wave 1 — Senate,federal,WY,Senator,U.S. Senate Wyoming,2,Called,Cynthia Lummis,Harriet Hageman,called,0,0,0,0,,2027-01-03,statute,7e53c060-fd4a-4d86-b786-b1b4b8be226a
 4,Wave 4 — State,state,WA,State Senator,WA State Senate Legislative District 43,1,Not looked at,Jamie Pedersen,,,0,0,0,0,,,,7eb0353e-36be-4efa-a453-c9e5b45a4536
 4,Wave 4 — State,state,OR,Representative,OR State House District 36,1,Not looked at,Hai Pham,,,1,0,0,0,,,,7ebfb28f-4b9b-471b-ad38-10ad104b104f
 4,Wave 4 — State,state,MA,"Representative, 7th Bristol District",MA House 7th Bristol District,1,Not looked at,Alan Silvia,,,1,0,0,0,,,,7f08cb76-4a25-4453-a983-2107b0a02119
@@ -1134,7 +1134,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 31,1,Not looked at,Tyler August,,,0,0,0,0,,,,85680474-5ee2-4e47-be87-17b24580610c
 2,Wave 2 — House,federal,TX,Representative,U.S. Representative District 8,1,Not looked at,Morgan Luttrell,,,0,0,0,0,,2027-01-03,statute,857ff454-abb5-4a03-873b-4f0ada1e5477
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 2),"Alhambra Unified School Board - Trustee Area 2 (Special Election, unexpired term to Dec 2028)",1,Not looked at,Nora Corona Hernandez,,,0,0,0,0,,2026-12-11,statute,858c4b37-3a84-4e8a-903d-be8d1b6a59bd
-1,Wave 1 — Senate,federal,NE,Senator,U.S. Senate Nebraska,1,Not looked at,Pete Ricketts,,,0,0,0,0,,2027-01-03,statute,859dc167-e984-4143-94fa-9d9acb00e63b
+1,Wave 1 — Senate,federal,NE,Senator,U.S. Senate Nebraska,2,Called,Pete Ricketts,Pete Ricketts,called,0,0,0,0,,2027-01-03,statute,859dc167-e984-4143-94fa-9d9acb00e63b
 2,Wave 2 — House,federal,TX,Representative,U.S. Representative District 18,1,Not looked at,Christian Menefee,,,0,0,0,0,,2027-01-03,statute,85a70c63-1305-45b5-9824-4f65c8b79f6a
 4,Wave 4 — State,state,OR,Representative,OR State House District 33,1,Not looked at,Shannon Isadore,,,1,0,0,0,,,,85bd8533-7e90-4891-94c9-7d3b370f939e
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate District 14,1,Not looked at,Anne R. Kaiser,,,1,0,0,0,,,,868fe012-73d0-4ec2-95f9-70c8a15418ba
@@ -1155,7 +1155,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 2,Wave 2 — House,federal,NY,U.S. Representative,U.S. Representative District 5,1,Not looked at,Gregory W. Meeks,,,0,0,0,0,,2027-01-03,statute,87d3ba4f-2a14-4af0-aea9-b3430b136155
 5,Wave 5 — Remaining locals,local,WA,Treasurer,Kitsap County Treasurer,1,Not looked at,Pete Boissonneau,,,0,0,0,0,2026-12-31,,,8804cef9-6295-41ed-9e59-1781bce2c795
 5,Wave 5 — Remaining locals,local,TX,"Judge, Probate Court No. 2",Tarrant County Probate Court No. 2,1,Not looked at,,,,0,0,0,0,,,,881d7153-52ba-49bb-8556-a8c7a13d34df
-1,Wave 1 — Senate,federal,VA,Senator,U.S. Senate Virginia,1,Not looked at,Mark Warner,,,0,0,0,0,,2027-01-03,statute,8857c4d8-fc3f-4823-b09d-542acb484bef
+1,Wave 1 — Senate,federal,VA,Senator,U.S. Senate Virginia,2,Called,Mark Warner,Mark Warner,called,0,0,0,0,,2027-01-03,statute,8857c4d8-fc3f-4823-b09d-542acb484bef
 4,Wave 4 — State,state,NV,Assemblymember,Nevada State Assembly District 10,1,Not looked at,Venise Karris,,,1,0,0,0,,,,8870760a-779b-4b15-a49f-781c2b76d1e0
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 1),Centinela Valley Union High School Board - Trustee Area 1,1,Not looked at,Marisela Ruiz,,,0,0,0,0,,2026-12-11,statute,889419aa-a9c8-4fb9-9bde-cbfd6f2b3af3
 5,Wave 5 — Remaining locals,local,IN,Washington Township Trustee,Washington Township Trustee,1,Not looked at,,,,0,0,0,0,,,,88f63dac-98c1-4b9c-b876-3e213e0ce88c
@@ -1185,7 +1185,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,MA,"Representative, 9th Worcester District",MA House 9th Worcester District,1,Not looked at,David K. Muradian,,,1,0,0,0,,,,8bc9a515-7cd2-40e1-b5b9-675d0ad9ca68
 4,Wave 4 — State,state,ME,Representative,ME State House District 142,1,Not looked at,Anne-Marie Mastraccio,,,1,0,0,0,,,,8be762b8-3ca2-4c8b-9926-d792e25a0c3a
 4,Wave 4 — State,state,ME,Senator,ME State Senate District 28,1,Not looked at,Rachel Talbot Ross,,,1,0,0,0,,,,8c4d8a11-12d3-487c-a92e-9bf1d7d0ab7e
-1,Wave 1 — Senate,federal,OH,Senator,U.S. Senate Ohio,1,Not looked at,Jon Husted,,,0,0,0,0,,2027-01-03,statute,8c502d94-aa77-44e1-950b-c68ad123a429
+1,Wave 1 — Senate,federal,OH,Senator,U.S. Senate Ohio,2,Called,Jon Husted,Sherrod Brown,called,0,0,0,0,,2027-01-03,statute,8c502d94-aa77-44e1-950b-c68ad123a429
 5,Wave 5 — Remaining locals,local,TX,"Judge, Criminal District Court No. 1",Tarrant County Criminal District Court No. 1,1,Not looked at,,,,0,0,0,0,,,,8c5d980f-aac8-49ba-9bcf-bc4a95a4bfdc
 5,Wave 5 — Remaining locals,unknown,MD,Governor of Maryland,Governor of Maryland,1,Not looked at,,,,0,1,0,0,,,,8c67c58e-f3a7-4822-bbbf-eb426ac13f87
 4,Wave 4 — State,state,ME,Representative,ME State House District 32,1,Not looked at,Steven Foster,,,1,0,0,0,,,,8c6b6045-9900-416a-9521-9b7967495edb
@@ -1208,7 +1208,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,MA,"Representative, 2nd Hampden District",MA House 2nd Hampden District,1,Not looked at,Brian M. Ashe,,,1,0,0,0,,,,8e6fa376-c203-46ad-b22a-6b09f2911ddc
 4,Wave 4 — State,state,MA,"Representative, 3rd Hampshire District",MA House 3rd Hampshire District,1,Not looked at,Mindy Domb,,,1,0,0,0,,,,8e7f7f5a-5d7a-4914-a56b-d04aad46671f
 4,Wave 4 — State,state,MA,"Representative, 7th Middlesex District",MA House 7th Middlesex District,1,Not looked at,Jack P. Lewis,,,1,0,0,0,,,,8ebaca4a-0086-4d79-827b-b99a6b0538bf
-1,Wave 1 — Senate,federal,AL,Senator,U.S. Senate Alabama,1,Not looked at,Tommy Tuberville,,,0,0,0,0,,2027-01-03,statute,8ef02ec8-5c45-4621-80fc-ceac80229809
+1,Wave 1 — Senate,federal,AL,Senator,U.S. Senate Alabama,2,Called,Tommy Tuberville,Barry Moore,called,0,0,0,0,,2027-01-03,statute,8ef02ec8-5c45-4621-80fc-ceac80229809
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 1),East Whittier City School Board - Trustee Area 1,1,Not looked at,Lisa Michelle Dabbs,,,0,0,0,0,,2026-12-11,statute,8f22294c-b304-457b-9111-cbabf6f99958
 2,Wave 2 — House,federal,CA,U.S. Representative,U.S. Representative District 20,1,Not looked at,Vince Fong,,,0,0,0,0,,2027-01-03,statute,8f40ae37-39c3-42cd-9bf8-851d6a967bac
 2,Wave 2 — House,federal,TN,U.S. Representative,U.S. Representative District 9,1,Not looked at,Steve Cohen,,,0,0,0,0,,2027-01-03,statute,8f437a2a-eb56-4570-b007-69d95563bf8d
@@ -1313,7 +1313,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 5),Cerritos Community College Board - Trustee Area 5,1,Not looked at,Shin Liu,,,0,0,0,0,,2026-12-11,statute,9b99a874-fc3a-53e8-8f6c-2cac87f808ff
 2,Wave 2 — House,federal,OH,U.S. Representative,U.S. Representative District 8,1,Not looked at,Warren Davidson,,,0,0,0,0,,2027-01-03,statute,9c0ac72c-f3f6-411f-a756-5b2f4d16f483
 4,Wave 4 — State,state,MA,"Representative, 2nd Worcester District",MA House 2nd Worcester District,1,Not looked at,Jonathan D. Zlotnik,,,1,0,0,0,,,,9c4391ad-0c02-499e-b4d5-81d42a26df3e
-1,Wave 1 — Senate,federal,TN,Senator,U.S. Senate Tennessee,1,Not looked at,Bill Hagerty,,,0,0,0,0,,2027-01-03,statute,9c6de8c1-b4c1-494f-86c8-0c42aead9b49
+1,Wave 1 — Senate,federal,TN,Senator,U.S. Senate Tennessee,2,Called,Bill Hagerty,Bill Hagerty,called,0,0,0,0,,2027-01-03,statute,9c6de8c1-b4c1-494f-86c8-0c42aead9b49
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 52,1,Not looked at,Lee Snodgrass,,,0,0,0,0,,,,9ca9d78f-a33c-4093-bd5f-37c7a07c05d9
 4,Wave 4 — State,state,OR,Representative,OR State House District 21,1,Not looked at,Kevin Mannix,,,1,0,0,0,,,,9ced4516-af3e-4821-9d2b-d267af86d5c9
 2,Wave 2 — House,federal,FL,U.S. Representative,U.S. Representative District 25,1,Not looked at,Debbie Wasserman Schultz,,,0,0,0,0,,2027-01-03,statute,9cf65863-da6a-4055-87a3-5b14256722a3
@@ -1358,7 +1358,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 51,1,Not looked at,Todd Novak,,,0,0,0,0,,,,a1a257a3-0722-489b-9b56-e4d6773d117a
 4,Wave 4 — State,state,IN,Representative,"State Representative, District 062",1,Not looked at,Dave Hall,,,0,0,0,0,,,,a1d1a61b-4c6f-45fa-805a-bcf8d74aa6b2
 4,Wave 4 — State,state,MA,"Representative, 2nd Franklin District",MA House 2nd Franklin District,1,Not looked at,Susannah L. Whipps,,,1,0,0,0,,,,a1d3afe7-3abc-4933-8447-239a29fdfd43
-1,Wave 1 — Senate,federal,OK,Senator,U.S. Senate Oklahoma,1,Not looked at,Alan Armstrong,,,0,0,0,0,,2027-01-03,statute,a1e0d014-2a15-4c6a-aaf9-6171be9dcd32
+1,Wave 1 — Senate,federal,OK,Senator,U.S. Senate Oklahoma,2,Called,Alan Armstrong,Kevin Hern,called,0,0,0,0,,2027-01-03,statute,a1e0d014-2a15-4c6a-aaf9-6171be9dcd32
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 2),Bellflower Unified School Board - Trustee Area 2,1,Not looked at,Renita Armstrong,,,0,0,0,0,,2026-12-11,statute,a1f30348-6053-4fa7-9eee-9d84a20eea64
 3,Wave 3 — December locals,local,CA,Director (Division 4),La Cañada Irrigation District Board - Division 4,1,Not looked at,Sheree R. Butts,,,0,0,0,0,,2026-12-04,statute,a1fafd45-51ee-595b-9270-7df24563512e
 4,Wave 4 — State,state,MA,"Senator, Third Suffolk District",MA State Senate Third Suffolk District,1,Not looked at,Lydia M. Edwards,,,1,0,0,0,,,,a1fc10c4-04c0-4dd7-ac08-5fcf87ac8fdb
@@ -1556,7 +1556,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate Subdistrict 47A,1,Not looked at,Diana M. Fennell,,,1,0,0,0,,,,ba26d54a-4a7f-4df2-a5e5-fc1daf7743e0
 3,Wave 3 — December locals,local,CA,Council Member (District 2),Claremont City Council District 2,1,Not looked at,Ed Reece,,,0,0,0,0,,2026-12-01,estimated,ba6847df-d74e-4d99-afbd-86231153da9c
 3,Wave 3 — December locals,local,CA,Council Member,Hawthorne City Council,1,Not looked at,Katrina Manning,,,0,0,0,0,,2026-12-01,estimated,ba6e38b0-8875-4499-8649-8eb2b78ce626
-1,Wave 1 — Senate,federal,LA,Senator,U.S. Senate Louisiana,1,Not looked at,Bill Cassidy,,,0,0,0,0,,2027-01-03,statute,ba7bc250-7b75-4b57-bc8c-c523b5fb5cde
+1,Wave 1 — Senate,federal,LA,Senator,U.S. Senate Louisiana,2,Called,Bill Cassidy,Julia Letlow,called,0,0,0,0,,2027-01-03,statute,ba7bc250-7b75-4b57-bc8c-c523b5fb5cde
 4,Wave 4 — State,state,ME,Representative,ME State House District 122,1,Not looked at,Matthew Beck,,,1,0,0,0,,,,ba8f2d51-ee07-4369-a68c-e569648620e2
 3,Wave 3 — December locals,local,CA,Council Member (District 5),Alhambra City Council District 5,1,Not looked at,Adele Andrade-Stadler,,,0,0,0,0,,2026-12-01,estimated,ba9152c0-d243-4b49-968f-8697f6f4556b
 2,Wave 2 — House,federal,NJ,U.S. Representative,U.S. Representative District 2,1,Not looked at,Jefferson Van Drew,,,0,0,0,0,,2027-01-03,statute,bab7fa90-2102-420a-8b8f-0da4c8c655f1
@@ -1605,7 +1605,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 2,Wave 2 — House,federal,MN,U.S. Representative,U.S. Representative District 6,1,Not looked at,Tom Emmer,,,0,0,0,0,,2027-01-03,statute,c0f27cbe-026d-4cc6-b3f4-d714b1e5c2b8
 4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 58,1,Not looked at,Leticia Castillo,,,0,0,0,0,,,,c109fb26-2578-4125-af50-6b57e23e53ae
 2,Wave 2 — House,federal,CA,Representative,U.S. Representative District 26,1,Not looked at,Julia Brownley,,,0,0,0,0,,2027-01-03,statute,c116e2e6-9512-4462-8633-d2a1373161cb
-1,Wave 1 — Senate,federal,GA,Senator,U.S. Senate Georgia,1,Not looked at,Jon Ossoff,,,0,0,0,0,,2027-01-03,statute,c13606c7-dd50-4fd9-9caf-44f773b480c5
+1,Wave 1 — Senate,federal,GA,Senator,U.S. Senate Georgia,2,Called,Jon Ossoff,Jon Ossoff,called,0,0,0,0,,2027-01-03,statute,c13606c7-dd50-4fd9-9caf-44f773b480c5
 2,Wave 2 — House,federal,MN,U.S. Representative,U.S. Representative District 4,1,Not looked at,Betty McCollum,,,0,0,0,0,,2027-01-03,statute,c1363bbb-a6f8-4e15-b8a9-812f28cb6426
 3,Wave 3 — December locals,local,CA,Council Member (District 3),Claremont City Council District 3,1,Not looked at,Jennifer Stark,,,0,0,0,0,,2026-12-01,estimated,c145f1ab-4283-416e-b74f-823668c83224
 4,Wave 4 — State,state,NV,Assemblymember,Nevada State Assembly District 42,1,Not looked at,Tracy Brown-May,,,1,0,0,0,,,,c16d6f80-6c61-4c0a-b7e4-d2eb1a90b1ed
@@ -1771,7 +1771,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 2,Wave 2 — House,federal,OH,U.S. Representative,U.S. Representative District 2,1,Not looked at,David J. Taylor,,,0,0,0,0,,2027-01-03,statute,d52a8639-4a2a-4a33-b464-75c10fd81dd2
 2,Wave 2 — House,federal,FL,U.S. Representative,U.S. Representative District 19,1,Not looked at,Byron Donalds,,,0,0,0,0,,2027-01-03,statute,d52bf1ae-2f45-4fd6-b2cd-ba38c61a49f1
 4,Wave 4 — State,state,AZ,State Representative,State House District 1,1,Not looked at,Quang H Nguyen,,,0,0,0,0,,,,d54f897c-e1f4-4aeb-aa7c-d137bbab1b30
-1,Wave 1 — Senate,federal,WV,Senator,U.S. Senate West Virginia,1,Not looked at,Shelley Moore Capito,,,0,0,0,0,,2027-01-03,statute,d5767db7-ba5b-40d8-87aa-000feaec1f54
+1,Wave 1 — Senate,federal,WV,Senator,U.S. Senate West Virginia,2,Called,Shelley Moore Capito,Shelley Moore Capito,called,0,0,0,0,,2027-01-03,statute,d5767db7-ba5b-40d8-87aa-000feaec1f54
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 2),Acton-Agua Dulce Unified School Board - Trustee Area 2,1,Not looked at,,,,0,0,0,0,,2026-12-11,statute,d594f230-bd91-4766-9fad-ac6f9247e95e
 4,Wave 4 — State,state,UT,State Representative District 25,Utah State House District 25,1,Not looked at,Angela Romero,,,0,0,0,0,,,,d5a8133c-ace5-49c7-8846-a29bd9d93c93
 2,Wave 2 — House,federal,PA,U.S. Representative,U.S. Representative District 6,1,Not looked at,Chrissy Houlahan,,,0,0,0,0,,2027-01-03,statute,d5b6b18d-fb62-449a-9e88-05f79c2136b9
@@ -1795,7 +1795,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,ME,Representative,ME State House District 18,1,Not looked at,Mathew McIntyre,,,1,0,0,0,,,,d8420bf0-488c-4f31-9cf8-5b6902ee9ba7
 4,Wave 4 — State,state,MA,"Representative, 12th Plymouth District",MA House 12th Plymouth District,1,Not looked at,Kathleen P. LaNatra,,,1,0,0,0,,,,d89083da-c42f-4090-b086-0790032fd0be
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 6),Mt. San Antonio Community College Board - Trustee Area 6,1,Not looked at,Judy Chen Haggerty,,,0,0,0,0,,2026-12-11,statute,d8a011ff-7258-53b9-a0e2-c481face8b04
-1,Wave 1 — Senate,federal,KY,Senator,U.S. Senate Kentucky,1,Not looked at,Mitch McConnell,,,0,0,0,0,,2027-01-03,statute,d8e3894e-f3a5-4966-9683-a0d2b138ce3e
+1,Wave 1 — Senate,federal,KY,Senator,U.S. Senate Kentucky,2,Called,Mitch McConnell,Andy Barr,called,0,0,0,0,,2027-01-03,statute,d8e3894e-f3a5-4966-9683-a0d2b138ce3e
 2,Wave 2 — House,federal,FL,U.S. Representative,U.S. Representative District 3,1,Not looked at,Kat Cammack,,,0,0,0,0,,2027-01-03,statute,d8e4de3f-23a2-40cf-8d32-46e183c5d6ac
 4,Wave 4 — State,state,MD,Senator,MD State Senate District 24,1,Not looked at,Joanne C. Benson,,,1,0,0,0,,,,d8e58308-1167-4718-ad07-105378c212ad
 2,Wave 2 — House,federal,ME,Representative,U.S. House ME-01,1,Not looked at,Chellie Pingree,,,0,0,0,0,,2027-01-03,statute,d92aa73a-17db-4ba1-bfaf-46640f66f8f5
@@ -1803,7 +1803,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,MA,"Representative, 17th Middlesex District",MA House 17th Middlesex District,1,Not looked at,,,,1,0,0,0,,,,d94bf7f0-a832-4651-b05c-9da9141aec75
 4,Wave 4 — State,state,MD,Senator,MD State Senate District 23,1,Not looked at,Ron Watson,,,1,0,0,0,,,,d9677dc0-9466-4b14-9f93-d08d027b053b
 5,Wave 5 — Remaining locals,local,OR,Councilor,Forest Grove City Council Seat C,1,Not looked at,Mariana Valenzuela,,,1,0,0,0,,,,d9b1ab18-cffd-4b42-830a-8c52a194cec1
-1,Wave 1 — Senate,federal,RI,Senator,U.S. Senate Rhode Island,1,Not looked at,Jack Reed,,,0,0,0,0,,2027-01-03,statute,d9b748b7-8b99-4352-8f2d-9ca87c745a4a
+1,Wave 1 — Senate,federal,RI,Senator,U.S. Senate Rhode Island,2,Called,Jack Reed,Jack Reed,called,0,0,0,0,,2027-01-03,statute,d9b748b7-8b99-4352-8f2d-9ca87c745a4a
 4,Wave 4 — State,state,MA,"Representative, 1st Plymouth District",MA House 1st Plymouth District,1,Not looked at,Michelle L. Badger,,,1,0,0,0,,,,d9c31493-2b85-4ba7-beef-741b1461063a
 4,Wave 4 — State,state,MA,"Senator, Middlesex and Norfolk District",MA State Senate Middlesex and Norfolk District,1,Not looked at,Karen E. Spilka,,,1,0,0,0,,,,d9d6a858-6ea1-4601-9a2a-a4c91a24b44a
 3,Wave 3 — December locals,local,CA,City Clerk,Lawndale City Clerk,1,Not looked at,Erica Harbison,,,0,0,0,0,,2026-12-01,estimated,d9e4c09a-30f4-4d52-ae9b-9a2bef09aa46
@@ -1814,7 +1814,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,OR,Representative,OR State House District 6,1,Not looked at,Kim Wallan,,,1,0,0,0,,,,dae67586-c722-4413-bb97-435d3a1f6ec0
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 4),East Whittier City School Board - Trustee Area 4,1,Not looked at,Thomas Baird,,,0,0,0,0,,2026-12-11,statute,daf2a485-700f-4f9c-8bac-8301a2713979
 4,Wave 4 — State,state,MA,"Representative, 7th Suffolk District",MA House 7th Suffolk District,1,Not looked at,Chynah Tyler,,,1,0,0,0,,,,db11c013-145b-4d2b-b748-759da1ec65a0
-1,Wave 1 — Senate,federal,AR,Senator,U.S. Senate Arkansas,1,Not looked at,Tom Cotton,,,0,0,0,0,,2027-01-03,statute,db236cf8-f12a-4b1f-800c-487ea20096c6
+1,Wave 1 — Senate,federal,AR,Senator,U.S. Senate Arkansas,2,Called,Tom Cotton,Tom Cotton,called,0,0,0,0,,2027-01-03,statute,db236cf8-f12a-4b1f-800c-487ea20096c6
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 5),Alhambra Unified School Board - Trustee Area 5,1,Not looked at,Fred L. Chang,,,0,0,0,0,,2026-12-11,statute,db53cdcb-cf5a-42fb-8482-3abf347c4b1b
 5,Wave 5 — Remaining locals,local,IN,Salt Creek Township Trustee,Salt Creek Township Trustee,1,Not looked at,,,,0,0,0,0,,,,db594296-6e9a-425b-a8e2-647f17a5d66e
 2,Wave 2 — House,federal,AR,U.S. Representative,U.S. Representative District 3,1,Not looked at,Steve Womack,,,0,0,0,0,,2027-01-03,statute,db5a6aa4-e750-438d-9abb-c7cddeeb18e7
@@ -2104,7 +2104,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 5,Wave 5 — Remaining locals,local,OR,County Clerk,Deschutes County Clerk,1,Not looked at,Steve Dennison,,,0,0,0,0,,,,fb2dfade-2cd8-4151-a214-753a58b136f0
 2,Wave 2 — House,federal,AZ,U.S. Representative,U.S. Representative District 7,1,Not looked at,Adelita S. Grijalva,,,0,0,0,0,,2027-01-03,statute,fb2e9ca8-1adc-4588-82d6-5f2d078b5def
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate Subdistrict 27A,1,Not looked at,Darrell Odom,,,1,0,0,0,,,,fb4a6bce-f8c7-4f0d-8154-c96c1ffa5f79
-1,Wave 1 — Senate,federal,FL,Senator,U.S. Senate Florida,1,Not looked at,Ashley Moody,,,0,0,0,0,,2027-01-03,statute,fb5c7352-1901-4abb-af93-8435abc04deb
+1,Wave 1 — Senate,federal,FL,Senator,U.S. Senate Florida,2,Called,Ashley Moody,Ashley Moody,called,0,0,0,0,,2027-01-03,statute,fb5c7352-1901-4abb-af93-8435abc04deb
 4,Wave 4 — State,state,MA,"Representative, 10th Plymouth District",MA House 10th Plymouth District,1,Not looked at,Michelle M. DuBois,,,1,0,0,0,,,,fb6b9019-6b62-4bda-9b0e-a82bbbbd19ac
 4,Wave 4 — State,state,ME,Senator,ME State Senate District 1,1,Not looked at,Susan Bernard,,,1,0,0,0,,,,fb72e72a-54ba-4a65-8845-f12964188d79
 3,Wave 3 — December locals,local,CA,Council Member (District 4),South Pasadena City Council District 4,1,Not looked at,Michael A. Cacciotti,,,0,0,0,0,,2026-12-01,estimated,fb779878-4ffb-404b-9772-61c551ac3469
@@ -2122,7 +2122,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,WA,State Representative (Position 2),WA House of Representatives Legislative District 2 Position 2,1,Not looked at,Matt Marshall,,,0,0,0,0,,,,fc7b531f-fe68-4657-8fbc-0df81552a585
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 2),Mt. San Antonio Community College Board - Trustee Area 2,1,Not looked at,Gary Chow,,,0,0,0,0,,2026-12-11,statute,fc88577c-d80e-5d01-995c-f89f37739ef4
 2,Wave 2 — House,federal,CA,Representative,U.S. Representative District 30,1,Not looked at,Laura Friedman,,,0,0,0,0,,2027-01-03,statute,fc8ac036-1ab5-4012-aa67-16b334137509
-1,Wave 1 — Senate,federal,KS,Senator,U.S. Senate Kansas,1,Not looked at,Roger Marshall,,,0,0,0,0,,2027-01-03,statute,fcaed1a3-3a18-48ce-b09e-11202a18e6f3
+1,Wave 1 — Senate,federal,KS,Senator,U.S. Senate Kansas,2,Called,Roger Marshall,Adam Hamilton,called,0,0,0,0,,2027-01-03,statute,fcaed1a3-3a18-48ce-b09e-11202a18e6f3
 2,Wave 2 — House,federal,NY,U.S. Representative,U.S. Representative District 16,1,Not looked at,George Latimer,,,0,0,0,0,,2027-01-03,statute,fcb869e9-2fee-4551-8920-ae5fc161769a
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 3),Glendora Unified School Board - Trustee Area 3,1,Not looked at,Paul Lopez,,,0,0,0,0,,2026-12-11,statute,fcb9dbf4-fad9-425c-a574-d511d610c5d6
 4,Wave 4 — State,state,ME,Representative,ME State House District 149,1,Not looked at,Tiffany Roberts,,,1,0,0,0,,,,fce8aff8-5e99-4fa9-84ee-e6f0556eb6e5
