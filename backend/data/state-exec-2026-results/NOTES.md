@@ -198,3 +198,139 @@ All six fired.
 - **We hold state-executive races for only 6 states.** AP called 36 governorships on
   2026-11-03. The other 30 states' executives are not seeded at all — that is the state
   tier, not a gap in this file.
+
+---
+
+# 🔴 `CC_0357` DID NOT FINISH THE TIER, AND THE WAY IT LOOKED FINISHED IS THE LESSON
+
+`CC_0357` recorded 18 state-executive results and reported the tier done. **AP had called 98.**
+
+It was scoped to *races we already hold*, which is the right scope for a results migration
+and the wrong scope for the question "are the state executives recorded". The difference
+never showed, because **a race that does not exist produces no row, no gap and no error** —
+it is simply absent from every count the migration took.
+
+▶ **THE CHECK THAT CATCHES IT RUNS THE OTHER WAY ROUND: start from the SOURCE's list, not
+from ours.** `ap-state-exec-gap.mjs` does that — it walks all 104 AP state-executive races
+and classifies each against our data. Measured 2026-11-05:
+
+| | n | |
+| --- | --- | --- |
+| recorded by us | 18 | `CC_0357` |
+| **seat exists, NO 2026 race row** | **76** | across **32 states** — the gap |
+| we hold no such seat | 4 | CT Secretary of State · DC Attorney General · MA Secretary of State · TX Railroad Commissioner |
+| AP has not called it | 6 | AK Governor · IA AG · KS Gov/AG/SoS · OH AG |
+
+We hold **258 state-executive seats across 51 jurisdictions** and only **34** had a 2026 race
+row. The seats and their officeholders were seeded long ago; the 2026 *races* were not.
+🔴 **"The office is seeded" and "the election is seeded" are different claims, and the first
+is the one that looks reassuring.**
+
+⚠ **The gap script nearly lied in the same way.** Its first run reported `0` recorded and `0`
+in the gap, because Postgres returns `count(*)` as a **string** and every `=== 0` comparison
+silently failed. It was caught only because the buckets summed to 4 against 98 called.
+▶ **Print the sum and assert it. A classifier that drops rows looks like a clean result.**
+
+## `CC_0358` — Texas, the worked pattern
+
+Applied 2026-11-05. **3 races created · 4 people seeded · 10 candidacies (3 won, 7 lost).**
+Nothing updated, nothing deleted; every statement is an INSERT.
+
+| race | winner | pct | losers |
+| --- | --- | --- | --- |
+| Texas Governor 🔴 **flip** | Gina Hinojosa (Dem) | 52.82 | Greg Abbott (GOP, **sitting governor**) 45.69; Pat Dixon (Lib) 1.50 |
+| Texas Lieutenant Governor | Vikki Goodwin (Dem) | 51.73 | Dan Patrick (GOP, **sitting Lt Gov**) 45.64; Anthony Cristo (Lib) 1.73; Kevin McCormick (Grn) 0.90 |
+| Texas Attorney General | Nathan Johnson (Dem) | 52.37 | Mayes Middleton (GOP) 45.94; Tom Oxford (Lib) 1.69 |
+
+All three at **99% of the expected vote**. Two sitting statewide officials were beaten. The
+Attorney General seat was open: **Ken Paxton holds it and ran for the US Senate instead** —
+an open seat, not a missing row, and why no candidate in that race is marked incumbent.
+
+### 🔴 A control found a gate this file did not have
+
+Five tampers, each asserted present in the file, each planting one fault. **Four fired. The
+fifth PASSED**, and that is the finding:
+
+| | fault planted | observed |
+| --- | --- | --- |
+| A | Governor's winner and loser transposed | `the winner is not the top vote-getter: Texas Governor: Greg Abbott won on 45.69% but Gina Hinojosa polled 52.82%` |
+| B | seed a person who already exists (Dan Patrick) | `a person this file seeds already exists: Dan Patrick (efac375f-…, active=true)` |
+| C | a race pointed at an office that already holds one | `1 race(s) already exist on these offices for 2026-11-03` |
+| D | AP's spelling of a name, matching nobody | `a candidate does not resolve to exactly one person: Nathan M. Johnson -> 0` |
+| E | the incumbency flag moved from the losing incumbent to the winner | 🔴 **DRY RUN OK — NOT CAUGHT** |
+
+**E passed because the post-verify compared `is_incumbent` against this file's own table.**
+The write reads that table and the check read the same table, so a tampered file **agreed
+with itself** — exactly the shape the top-vote-getter cross-check exists to break, repeated
+on a different column because nobody asked the question twice.
+
+▶ **The fix is an independent fact, not a careful re-read.**
+`essentials.office_current_holder` says who holds the seat and this file does not supply it.
+The gate now checks **both directions** — marked-but-not-holding and holding-but-not-marked
+— and E fires:
+
+```
+incumbency disagrees with the current officeholder: Texas Lieutenant Governor: this file
+marks Vikki Goodwin as incumbent, but the seat is held by Dan Patrick; Texas Lieutenant
+Governor: Dan Patrick holds this seat but is not marked incumbent
+```
+
+⚠ **A COUNT of incumbents would never have caught E** — one `true` moved to another row and
+the total did not change. The gate had to compare per row.
+
+- **C was shadowed first**: I used Nevada's Governor *race* id where an *office* id belongs,
+  so it tripped the earlier "target offices exist" gate. A real refusal, of the wrong gate.
+- **A tamper that did not apply nearly slipped through too**: the control script's `must()`
+  check refused to build when my guessed column padding did not match the file. Without it
+  the tamper file would have been byte-identical to the original and reported `DRY RUN OK`.
+
+### Sourcing
+
+Numbers, parties, AP candidate ids and the winner flag: **AP only**. The four new people's
+identity and party were established from Ballotpedia, *"Texas state executive official
+elections, 2026"*, read 2026-11-05.
+
+🔴 **That page is authoritative for identity and STALE for numbers** — its Governor table
+reads Hinojosa 56.3% on 4,219,438 votes against AP's 52.82% on 5,230,929 at 99% counted.
+Ballotpedia was mid-count. **Not one number in `CC_0358` comes from it.**
+
+🟢 It also settled a contradiction: a web search put **Mike Collier (Ind.)** on the Lieutenant
+Governor ballot and AP did not list him. The page files him under *"Withdrawn or disqualified
+candidates"*. AP's ballot was right and the search summary was stale — **open the page**.
+
+⚠ A sweep of every row sharing the four surnames, **archived rows included**, found two
+unrelated pre-existing duplicate pairs: **`Arthur Dixon` ×2** (one active from ballotpedia,
+one archived from `federal_2026_bulk_seed`) and **`Jessica McCormick` / `Jessica Mccormick`**
+— the second invisible to the `(first_name, last_name)` guard because that comparison is
+**case-sensitive**. Neither is touched here. Both are owed a look.
+
+### Texas is NOT finished, and the remainder is named
+
+- **Railroad Commissioner** — AP called it (Jon Rosenthal (Dem) 52.51%, Bo French (GOP)
+  45.55%, Arthur DiBianca (Lib) 1.93%) and **we hold no such office**. Creating one is a
+  district + office + current-holder decision, an occupancy act with its own sourcing bar.
+  Its AP response is kept in `ap-tx-2026-11-05.json` so the numbers survive the live feed.
+- **Comptroller, Land Commissioner, Agriculture Commissioner** — we hold all three seats,
+  all three were on the ballot, and **AP publishes no race for any of them**.
+- **Write-ins are not in AP's ballot.** Ballotpedia lists Edward Giles (Ind., write-in, 0
+  votes) for Governor, and Stephen Samuelson (Ind., write-in, 751) and Arturo Espinosa for
+  Lieutenant Governor. This file seeds AP's ballot only, so those rows are **absent rather
+  than wrong**. Said out loud so nobody reads our ballot as complete.
+
+### Verified against production after applying
+
+| check | result |
+| --- | --- |
+| Texas state-executive races | 3 |
+| Texas candidacies | 10 — 3 won, 7 lost |
+| Incumbents marked | 2 — Abbott and Patrick, both beaten, both confirmed against `office_current_holder` |
+| The 4 seeded people | exist exactly once each; 0 marked incumbent |
+| Rows claiming `certified` | 0 |
+| `result_recorded_at` | `2026-11-05 16:33:14.275464+00` on all 10 — measured, microseconds and all |
+| **State-executive winners nationally** | **21** (18 from `CC_0357` + 3 here) |
+
+### Still owed on the national gap
+
+**73 AP-called state-executive races across 31 states** still have no race row, plus the 4
+seats we do not hold and the 6 AP has not called. ▶ **Re-run `ap-state-exec-gap.mjs` before
+each batch** — AP's uncalled six will shrink, and the gap is the thing to measure, not ours.
