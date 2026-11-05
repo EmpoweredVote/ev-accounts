@@ -44,6 +44,186 @@
         "fetched_at": "2026-10-28T22:55:46.337Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "12f36de5d5b1e4c6ae2a56d517cfaa682a9f258bb309ef952661ac9e6658dfcb",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4284",
+      "date": "2026-01-14",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-4284-2025",
+      "act": "yea",
+      "motion": "House Third Reading: Given Immediate Effect Roll Call #2",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI House, House Third Reading: Given Immediate Effect Roll Call #2, 2026-01-14: yea (tally 63–46); census gate: none.",
+      "subjects": [
+        "concealed pistol license renewal fee cut from $115 to $30",
+        "renewal fee kept by the county, not split with the state"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-HB-4284-2025.engrossed.html",
+          "sha256": "ecc12f704af77fd355ed0de9bd07216800d2b25d3bef179bd539442ffc1b1c6e"
+        }
+      }
+    },
+    {
+      "id": "06be48355dde018d0e354953cdc06e03ebf519e82110a4122af14479385f468f",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4481",
+      "date": "2025-11-13",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-4481-2025",
+      "act": "yea",
+      "motion": "House Third Reading: Given Immediate Effect Roll Call #309",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MI House, House Third Reading: Given Immediate Effect Roll Call #309, 2025-11-13: yea (tally 92–9); census gate: near-unanimous.",
+      "subjects": [
+        "state website listing concealed pistol licence reciprocity and out-of-state carry rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-HB-4481-2025.engrossed.html",
+          "sha256": "6318db3fd22203a5642c3aa2219657e27f37770a654b8155e1cc3a79cbf69570"
+        }
+      }
+    },
+    {
+      "id": "6cdae55fc18a8af830a5733bdd6a733aa9b87a99681e7fa7b8266715c8fea436",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4855",
+      "date": "2026-02-05",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-4855-2025",
+      "act": "yea",
+      "motion": "House Third Reading: Given Immediate Effect Roll Call #31",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI House, House Third Reading: Given Immediate Effect Roll Call #31, 2026-02-05: yea (tally 90–13); census gate: none.",
+      "subjects": [
+        "bow hunters may carry a loaded pistol",
+        "pistol not to be used to take game in archery season"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-HB-4855-2025.engrossed.html",
+          "sha256": "3a38b45afd71900a4ed9547746a79f434be9ab3f49300deabd45cc0a2f36a356"
+        }
+      }
+    },
+    {
+      "id": "fb67676ca0b5fa570ee26315fbb05311a5c5c15d029260b012513d6981215d62",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4949",
+      "date": "2026-03-10",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-4949-2025",
+      "act": "yea",
+      "motion": "House Third Reading: Given Immediate Effect Roll Call #79",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI House, House Third Reading: Given Immediate Effect Roll Call #79, 2026-03-10: yea (tally 56–51); census gate: none.",
+      "subjects": [
+        "shooting ranges shielded from noise and nuisance claims",
+        "ranges may expand or upgrade without losing protection",
+        "existing ranges keep operating despite new local ordinances"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-HB-4949-2025.engrossed.html",
+          "sha256": "f2ac0e37c00fc6922e00cab5d4cc0e6df127258b95227072c86d881eaf07e8d2"
+        }
+      }
+    },
+    {
+      "id": "acb6ec3bbcfb4362455ae5551d696dbac052ea325c827a625f038f8c760ecaeb",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4980",
+      "date": "2026-01-21",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-4980-2025",
+      "act": "yea",
+      "motion": "House Third Reading: Given Immediate Effect Roll Call #16",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI House, House Third Reading: Given Immediate Effect Roll Call #16, 2026-01-21: yea (tally 60–45); census gate: none.",
+      "subjects": [
+        "concealed pistol license may be applied for in any county",
+        "renewal notices tied to the issuing county clerk",
+        "outdated renewal deadlines removed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-HB-4980-2025.engrossed.html",
+          "sha256": "c32ac96b0ac6b4fe70a4a9285ba10ec243712535ef060b279b75e396e66ca86b"
+        }
+      }
+    },
+    {
+      "id": "051112e35e6d8341cb8c3895e707db879575b52afe17da948a21925601b8c36d",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5113",
+      "date": "2026-01-21",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-5113-2025",
+      "act": "yea",
+      "motion": "House Third Reading: Given Immediate Effect Roll Call #15",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI House, House Third Reading: Given Immediate Effect Roll Call #15, 2026-01-21: yea (tally 78–27); census gate: none.",
+      "subjects": [
+        "free reapply after concealed pistol license denial due to application error"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-HB-5113-2025.engrossed.html",
+          "sha256": "2c6b1c6981897078984c1ab6365e55c622d7a46746044bcf53655d593bc205a6"
+        }
+      }
     }
   ],
   "searches": [
@@ -86,6 +266,31 @@
       "found": 2,
       "at": "2026-10-28T22:55:46.337Z",
       "by": "identity-mi-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment rights",
+        "concealed carry",
+        "background checks",
+        "restrictions on gun ownership",
+        "bills on guns sponsored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "michiganvotes.org member page (District 34, 18 sponsorships) - shows a count only, no gun titles; nothing on the subject",
+        "ivoterguide 2024 profile - both gun questions marked not answered; nothing on the subject",
+        "blocked: https://votesmart.org/public-statement/547785/issue-position-protecting-your-2nd-amendment-rights (curl returned a 404 page; a search snippet attributes a Second Amendment statement to her, which could not be confirmed)",
+        "Ballotpedia: page came back empty to the fetch tool",
+        "House caucus member page: not reached (host not found); campaign site: not found in search",
+        "NRA-affiliated articles from search (2017 carry bill, permitless carry): about other legislators, not saved",
+        "four web searches on name plus gun terms"
+      ],
+      "found": 0,
+      "at": "2026-11-05T22:10:10.105Z",
+      "by": "source-collector"
     }
   ]
 }
