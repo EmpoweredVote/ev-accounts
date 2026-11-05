@@ -393,10 +393,15 @@ topic; if a topic seems to need the same reading, ask for a ruling and point to 
 
 ### gun-policy — S4 licence rule, S5 main-subject reading
 - **Reading:** S4 — a carry widening that keeps the permit does not conflict with a rung 3 act on who may have a gun or
-  how guns are bought or made; the record sits at rung 3. It still conflicts with a type ban or a place ban, and a
-  permit repeal conflicts with every rung 1-3 act. S5 — a part that creates or changes a gun crime, or only changes a
-  word or cross-reference in another law, does not make a firearms bill multi-subject (narrows census Q1 kind 2).
-- **Date and source:** 2026-11-03, Chris Andrews, Stage 5 Session C (Season 3 annex S1-S8; CA_0356).
+  how guns are bought or made, or with a rung 3 ban on carrying in named places (polling places, ballot-counting
+  places, the Capitol); the record sits at rung 3. It still conflicts with a type ban (rungs 1-2), and a permit repeal
+  conflicts with every rung 1-3 act. S5 — a part that creates or changes a gun crime, or only changes a word or
+  cross-reference in another law, does not make a firearms bill multi-subject (narrows census Q1 kind 2).
+- **Date and source:** 2026-11-03, Chris Andrews, Stage 5 Session C (Season 3 annex S1-S8; CA_0356). **Narrowed
+  2026-11-05**, Chris Andrews, Michigan Stage 5 ("Seat them at rung 3"): the 2026-11-03 text said a place ban still
+  conflicts; it no longer does. 31 Michigan records moved to rung 3; no record already written for the federal list,
+  VA, TX, PA, IN or MA had this shape (`.planning/research/s3-prep-gun-policy/stage5/README.md`, Michigan and
+  "Place-ban re-check").
 - **Scope:** the Season 3 revision 5 of `gun-policy` only. Not offered to other topics until a second topic shows the
   same shape (runner, 2026-11-03).
 
