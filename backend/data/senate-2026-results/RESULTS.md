@@ -1,6 +1,28 @@
 # 2026-11-03 US Senate — results research
 
-**Status as of 2026-11-04: 0 of 35 races recorded. Nothing has been written to production.**
+**Status as of 2026-11-04: 33 of 35 races recorded as `called` (`CC_0339`, applied).**
+Alaska and Mississippi are uncalled and correctly have no row. Nothing is `certified` — not one
+of the 35 races is certified in AP's own metadata, and the state canvasses run for weeks.
+
+> ## 🔴 This file was wrong for a day, and the rule below is why
+>
+> It said *"a media call is not a state return … those calls are leads for where to look; they
+> are not what gets written here"*, and so recorded nothing while every wire in the country
+> carried the results.
+>
+> **That misreads the operator's ruling**, which is: *"AP for called races, then state SoS to
+> confirm certified — we should label each so we know what's been called and what's been
+> certified."*
+>
+> `result_certainty` exists **because** a call and a canvass are different things. Refusing to
+> record a call until the state certifies throws away the very distinction the column was added
+> to carry, and leaves the site showing 35 departing senators as though nothing had happened.
+>
+> The repo rule it borrowed — *"the chamber's own roster outranks every aggregator"* — is about
+> **officeholder rosters**, not election night. A roster is a claim about who holds a seat today,
+> where the body itself is the authority. A race call is a claim about who won, where AP is a
+> competent source the operator named. ▶ **Check which question a rule answers before applying
+> it to a different one.**
 
 This file is the reviewed artifact. `results.json` is generated to match it, and the seating
 migration is generated from `results.json`. Nothing is seated that is not written down here
@@ -13,9 +35,16 @@ Each one is in CLAUDE.md because a real seat was got wrong without it.
 - 🔴 **A CERTIFIED RESULT IS NOT A FACT ABOUT WHO HOLDS THE SEAT.** It records who won an
   election. Taking office is a separate, later event. These winners are seated with
   `term_start = 2027-01-03`, which is the day they take office, not the day they won.
-- 🔴 **THE STATE'S OWN RETURN OUTRANKS EVERY AGGREGATOR, AND THEY DO DISAGREE.** A media call
-  is a lead. On 2026-11-04 outlets already disagreed with each other on Kansas (two spellings
-  of the winner's name), and Mississippi stood at 48.95% / 48.94%.
+- 🔴 **A CALL AND A CANVASS ARE TWO FACTS, AND EACH GETS ITS OWN LABEL.** AP's race call is
+  what `result_certainty = 'called'` records; the state's own canvass is what upgrades it to
+  `'certified'`. The state return outranks the call **when they disagree about the certified
+  result** — it does not mean a call is unrecordable. On 2026-11-04 outlets disagreed on the
+  spelling of the Kansas winner's name and Mississippi stood at 48.95% / 48.94%; Mississippi is
+  still uncalled and therefore still has no row.
+- 🔴 **SOURCE THE CALL FROM AP'S OWN DATA, NOT FROM A HEADLINE OR A SEARCH SUMMARY.** The calls
+  here come from `interactives.apelections.org/election-results/data-live/2026-11-03/`, AP's own
+  feed, read with a browser: `metadata.json` for the race and its `raceCallStatus`/`isCertified`,
+  `progress.json` for the candidate carrying `winner: "X"` and its `calledAt`.
 - 🔴 **`WebFetch` FABRICATES NAMES AND DATES AND FORMATS THEM AS QUOTATIONS.** Use it to locate
   a document. Never source a name, a date or a count from it.
 - 🔴 **A WAF REJECTION CAN BE HTTP 200.** Never judge a fetch by `r.ok`. Government hosts reject
@@ -23,9 +52,49 @@ Each one is in CLAUDE.md because a real seat was got wrong without it.
 - A race that is not called gets **no row**. It stays at seat state 1. That is correct, not a
   gap, and the tracker shows it as outstanding.
 
-## Why nothing is recorded yet
+## What is recorded, and the two that are not
 
-Checked on 2026-11-04, the day after the election:
+**33 called, 0 certified, 2 uncalled.** Each recorded row's `result_source` names the person,
+the party, the percentage, the vote count, AP's race id and the `calledAt` timestamp, and says
+in words that it is a call and not the state canvass.
+
+| Not recorded | Why |
+|---|---|
+| **AK** | `Too Early to Call`, and `rankedChoice: true` in AP's metadata. Tabulation runs for weeks. |
+| **MS** | `Too Early to Call`. |
+
+A race with no call gets no row and stays at seat state 1. That is the correct answer, not a gap.
+
+### 🔴 Matching AP's name to ours is where this goes wrong
+
+Six of the 33 are spelled differently by AP (`Jim`/`James` Risch, `Edward`/`Edward J.` Markey,
+`Troy`/`Troy D.` Jackson, `John`/`Jack` Reed, `Shelley`/`Shelley Moore` Capito,
+`Harriet`/`Harriet M.` Hageman) and **one cannot be matched on text at all**: AP writes `Lujan`,
+we hold `Luján`, and `unaccent` is not installed on production.
+
+A last-name match therefore returned **32 of 33**, silently. **The count is what caught it** —
+the join just came back smaller, with no error, exactly as the NULL did in `CC_0347`. New Mexico
+is pinned by `race_candidates.id`, and the migration's gate re-asserts 33 and one-winner-per-race
+at apply time.
+
+### 🔴 Why only winners, and what South Carolina has to do with it
+
+The obvious next step — *everyone in a called race who is not the winner lost* — would mark
+**Lindsey Graham** as having lost the November election. He died in office on 2026-07-11 and was
+**not on the ballot**: AP's own South Carolina race lists four candidates and he is not among
+them, though our `race_candidates` still carries him.
+
+Losers want a per-candidate match against AP's own candidate list, which is its own pass.
+Asserting a result about a dead man from a blanket rule is not.
+
+⚠ **South Carolina is also the overwrite**: Annie Andrews beat the appointed incumbent, so the
+seating migration rewrites Darline Graham's `term_end` from 2027-01-03 to 2027-01-02 and must
+record the old value in its own header.
+
+## What the state returns looked like on day one
+
+Checked on 2026-11-04, the day after the election. This is the evidence for why the **importer**
+(piece 2) is the largest item in the programme — not a reason to record nothing:
 
 | What was checked | Finding |
 |---|---|
