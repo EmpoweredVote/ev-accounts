@@ -29,7 +29,12 @@ const blankComments = (text: string) =>
 interface Reader { rel: string; line: number; guarded: boolean; marker: string | null }
 
 // Stage 5's research outcomes and shown passages (CA_0322) are voter reads too.
-const TABLES = /inform\.(politician_(answers|context_evidence|context)|topic_research_outcomes|own_words_passages)\b/;
+// `politician_answers_effective` (CC_0349) is a VIEW over politician_answers that drops answers
+// whose rung the live ladder invalidated. It does NOT filter by season, so every reader of it still
+// needs the draft exclusion — and `politician_answers\b` does not match it, because \b fails
+// between "answers" and "_". Without the optional suffix the six most voter-facing reads in
+// compassService silently left this scan when they moved to the view.
+const TABLES = /inform\.(politician_(answers(_effective)?|context_evidence|context)|topic_research_outcomes|own_words_passages)\b/;
 const WRITE = /^`\s*(?:--[^\n]*\n\s*)*(INSERT|UPDATE|DELETE)\b/i;
 // The shared predicate, or a spelled-out draft exclusion (the citations read excludes draft EVIDENCE rows).
 const GUARD = /\$\{SEASON_IS_PUBLISHED\}|status\s*<>\s*'draft'|NOT EXISTS \(SELECT 1 FROM inform\.seasons ds WHERE ds\.id = \w+\.season_id AND ds\.status = 'draft'\)/;
