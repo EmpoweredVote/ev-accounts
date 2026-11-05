@@ -5,6 +5,36 @@ import { SEASON_IS_PUBLISHED, servedRevisionLateral } from './seasonService.js';
 import { appliesFromRoles } from './topicApplicability.js';
 
 // ---------------------------------------------------------------------------
+// 🔴 WHICH READS USE `inform.politician_answers_effective` (CC_0349)
+//
+// That view is `inform.politician_answers` minus the answers whose rung the live
+// ladder INVALIDATED — the Path B analogue of `compass_responses_effective`
+// (CC_0062), which has always done this for Path A. The protection existed only
+// for the few people who answer the compass themselves through an empowered
+// profile; the ~33,000 RESEARCHED answers behind almost every profile on the
+// site consulted `rung_map` nowhere, so an official could be shown holding a
+// position the live question no longer offers. Today that is 28 rows, all on
+// Season 1 same-sex-marriage rung 3 ("leave it to the states"), which Season 2
+// deleted rather than moved.
+//
+// The view is used by the reads that DISPLAY a value or score against it:
+// getCandidateAnswers (Path B), getPoliticianAnswers, compareWithPoliticians,
+// getBatchPoliticianAnswers, getPoliticianCitations, getTopicAnswerStats.
+//
+// It is deliberately NOT used by the reads that ask "did we research this
+// person at all" — coverage counts, getResearchStates, and the `value = 0`
+// blank-suppression guards in getPoliticianContext/All. An invalidated answer
+// is still research that happened; hiding it from coverage would overstate the
+// gap, and hiding it from a blank guard would stop a blank suppressing.
+//
+// ⚠ The view does NOT drop 'moved' answers, though compass_responses_effective
+// drops both. Suppressing them here would hide 1,658 housing and 638
+// same-sex-marriage answers whose destination `rung_map` already states, and
+// four maps have been found claiming a false identity — so nothing is relocated
+// on a map's say-so until that map has been checked. See CC_0349.
+// ---------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------
 // Types for compare and verdicts service functions
 // ---------------------------------------------------------------------------
 
@@ -718,7 +748,7 @@ export async function getCandidateAnswers(
     // answer is 0 they have no current position, even if an older season did.
     `SELECT topic_id, value FROM (
        SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
-         FROM inform.politician_answers a
+         FROM inform.politician_answers_effective a
          JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
         WHERE a.politician_id = $1
         ORDER BY a.topic_id, s.number DESC
@@ -772,7 +802,7 @@ export async function getPoliticianAnswers(
   const { rows } = await pool.query<{ topic_id: string; value: string }>(
     `SELECT topic_id, value::text FROM (
        SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
-         FROM inform.politician_answers a
+         FROM inform.politician_answers_effective a
          JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
         WHERE a.politician_id = $1
         ORDER BY a.topic_id, s.number DESC
@@ -1184,7 +1214,7 @@ export async function compareWithPoliticians(
         `SELECT latest.topic_id, latest.value::text, ep.full_name
          FROM (
            SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value, a.politician_id
-             FROM inform.politician_answers a
+             FROM inform.politician_answers_effective a
              JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
             WHERE a.politician_id = $1
             ORDER BY a.topic_id, s.number DESC
@@ -1286,7 +1316,7 @@ export async function getBatchPoliticianAnswers(
     // filter is applied after the collapse rather than inside it.
     `SELECT topic_id, value::text FROM (
        SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
-         FROM inform.politician_answers a
+         FROM inform.politician_answers_effective a
          JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
         WHERE a.politician_id = $1 AND a.topic_id = ANY($2::uuid[])
         ORDER BY a.topic_id, s.number DESC
@@ -1446,7 +1476,7 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
      -- confabulation failure mode, produced mechanically by a join.
      LEFT JOIN LATERAL (
        SELECT a.value, a.season_id, a.topic_revision_id
-         FROM inform.politician_answers a
+         FROM inform.politician_answers_effective a
          JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
         WHERE a.politician_id = pce.politician_id AND a.topic_id = pce.topic_id
         ORDER BY s.number DESC
@@ -1631,7 +1661,7 @@ export async function getTopicAnswerStats(): Promise<TopicAnswerStats[]> {
      latest AS (
        SELECT DISTINCT ON (pa.politician_id, pa.topic_id)
               pa.politician_id, pa.topic_id, pa.value::int AS value
-         FROM inform.politician_answers pa
+         FROM inform.politician_answers_effective pa
          JOIN inform.compass_topics_promoted p ON p.id = pa.topic_id
          -- Research can be PRE-STAGED into a DRAFT season, and those rows must
          -- reach no voter read. This one is as voter-facing as they come: it is
