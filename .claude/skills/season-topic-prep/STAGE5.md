@@ -144,7 +144,16 @@ npm run topic:stage5-report --prefix backend -- --topic <key> --research <abs to
 
 Exit 3 means some codes failed their check: fix those first. Then run the theme pass,
 [templates/stage5-theme-prompt.md](templates/stage5-theme-prompt.md), as a fresh subagent on `notes.jsonl`,
-writing `stage5/themes.json`, and run the report again with `--themes <abs>/stage5/themes.json`.
+writing `stage5/themes.json`, and run the report again with `--themes <abs>/stage5/themes.json`. Do not fill the
+template by hand: write it with
+
+```bash
+npm run topic:stage5-theme-prompt --prefix backend -- --topic <key> --season draft --notes <abs>/stage5/notes.jsonl --out <abs>/stage5/theme-prompt.md
+```
+
+It fills the ladder (the question and five rungs the season serves) and exits 1, writing nothing, if any `{{…}}`
+slot stays unfilled. The Mississippi theme pass (2026-11-05) ran on a hand-filled copy with `{{LADDER_TEXT}}` left
+in, and grouped the notes without the ladder.
 
 **The bar (ruled 2026-10-22):** stop when "doesn't fit" is **more than 1 in 5** of the people with any on-topic
 evidence, or when **any one theme holds more than 1 in 10** of them (exit 4). Doesn't-fit cases whose only record
