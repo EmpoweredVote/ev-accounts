@@ -400,6 +400,25 @@ describe('instrument-not-cited: Mississippi roll-call headings (2026-11-05)', ()
     expect(ids({ ...good, reasoning: 'Voted Yea on SB 254 (2009).' }, { evidence: snip('YEAS AND NAYS On S. B. No. 2548.') })).toContain('instrument-not-cited'));
 });
 
+describe('instrument-not-cited: Ohio bill headings (2026-11-06)', () => {
+  const snip = (t: string) => [{ ...ev[0], snippet: `${t} General Assembly Regular Session 2025-2026 Representative Doe` }];
+  it('reads "Sub. S. J. R. No. 10" and "(Substitute House Bill Number 458)" as SJR 10 and HB 458', () => {
+    const row = { ...good, reasoning: 'Voted Yea on SJR 10 (2026) and HB 458 (2022).' };
+    expect(ids(row, { evidence: snip('As Adopted by the House Sub. S. J. R. No. 10 (Substitute House Bill Number 458)') })).not.toContain('instrument-not-cited');
+  });
+  it('matches the dotted forms a coder writes ("S.J.R. 10", "H.C.R. 18") to LegiScan "SJR10" / "HCR18"', () => {
+    const row = { ...good, reasoning: 'Voted Yea on S.J.R. 10 (2026); co-sponsor of H.C.R. 18 (2024).' };
+    expect(ids(row, { evidence: snip('LegiScan OH SJR10, roll call 1 (House): Jane Doe voted Yea. LegiScan OH HCR18: Jane Doe is listed as a cosponsor.') })).not.toContain('instrument-not-cited');
+    expect(ids(row, { evidence: snip('LegiScan OH SJR10, roll call 1 (House): Jane Doe voted Yea.') })).toContain('instrument-not-cited');
+  });
+  it('reads "Senate Joint Resolution Number 10" and "House Concurrent Resolution 18"', () => {
+    const row = { ...good, reasoning: 'Voted Yea on SJR 10 (2026) and HCR 18 (2024).' };
+    expect(ids(row, { evidence: snip('(Substitute Senate Joint Resolution Number 10) House Concurrent Resolution 18') })).not.toContain('instrument-not-cited');
+  });
+  it('still tells SJR 1 from "S. J. R. No. 10"', () =>
+    expect(ids({ ...good, reasoning: 'Voted Yea on SJR 1 (2026).' }, { evidence: snip('Sub. S. J. R. No. 10') })).toContain('instrument-not-cited'));
+});
+
 describe('quote-not-in-snippet (C69)', () => {
   it('does not flag a quote that appears verbatim (normalized) in a cited snippet', () => {
     const row = { ...good, reasoning: 'Voted YES on HB 1001 (2025), saying "she believes every Hoosier family deserves affordable coverage"' };
