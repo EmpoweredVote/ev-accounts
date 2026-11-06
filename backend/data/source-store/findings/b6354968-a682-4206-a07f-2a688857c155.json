@@ -1,0 +1,273 @@
+{
+  "politician_id": "b6354968-a682-4206-a07f-2a688857c155",
+  "findings": [
+    {
+      "id": "435793d89774b1931181520d9d9250644aeccea7e61d66e5d5f0f2d521c99a85",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_129/legislation/hb159/actions/",
+      "date": "2011-03-23",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-159-2011",
+      "act": "yea",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 57-38) on H. B. No. 159, from the Ohio Legislature's own actions record, which lists each member by id (rep_landis_al_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8b0efe999a9f23fc85947e3a6e1b7e631466a80b52aad663ce45c3cdc2cacbaa",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_129/legislation/hb194/actions/",
+      "date": "2011-06-29",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-194-2011",
+      "act": "yea",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 59-40) on H. B. No. 194, from the Ohio Legislature's own actions record, which lists each member by id (rep_landis_al_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d1208c0b7ce5814fce990ebb4efa689637f80aa0b1f13b83d2e42d16b6a2562c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_129/legislation/hb224/actions/",
+      "date": "2011-07-13",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-224-2011",
+      "act": "yea",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 92-0) on H. B. No. 224, from the Ohio Legislature's own actions record, which lists each member by id (rep_landis_al_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c500fd061b3bc192b92f89b7ca5f7d8e7d78f8ff2b9a85176e3a60b101a8f845",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/sb205/actions/",
+      "date": "2014-02-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-205-2014",
+      "act": "yea",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 60-38) on S. B. No. 205, from the Ohio Legislature's own actions record, which lists each member by id (rep_landis_al_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fab7b4a958714b2e754da1a8e3b78c1feac5bad10874e72062d0bd13f41b77df",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/sb216/actions/",
+      "date": "2014-02-26",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-216-2014",
+      "act": "yea",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 59-37) on S. B. No. 216, from the Ohio Legislature's own actions record, which lists each member by id (rep_landis_al_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a5bb1634ad5907616b86f560b8ecf96dfd5e4f77b5422bf26d6c663888557876",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "yea",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 23-10) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (sen_landis_al_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4c1f5fb2164062ff2f044b0322d2c82f7d347d63e7e3db39a346504a6a33e73f",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "yea",
+      "motion": "Senate: Concurred in House amendments",
+      "note": "OH Senate floor roll call (Concurred in House amendments, tally 23-10) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (sen_landis_al_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f13f923a9c6762dac1ec783ec55a014bc5e047ca8cf95da1a2ce9b180d4455de",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "yea",
+      "motion": "Senate: Adopted",
+      "note": "OH Senate floor roll call (Adopted, tally 22-9) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (sen_landis_al_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "24bc1538e4348373e8a104eefd377c3292c376793106d2d94f439aa84767d333",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/sjr10",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As Adopted by the Senate (02_AS)",
+      "note": "Listed as co sponsor of S. J. R. No. 10 (As Adopted by the Senate) on the Ohio Legislature's own record (sen_landis_al_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "noncitizen voting",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "legislature.ohio.gov committee pages for HJR 9, SJR 10, HB 54 (136th) and HB 458 (134th) read by curl: no testimony by this person",
+        "blocked: web search (limit of 200 WebSearch calls per turn reached, shared by all agents; this person's web searches were NOT run)",
+        "blocked: Ballotpedia (listed as refused, not fetched)",
+        "blocked: https://justfacts.votesmart.org (listed as refused, not fetched)",
+        "blocked: https://ohiohouse.gov/members/al-landis (fetch tool HTTP 500 three times; curl 403)",
+        "blocked: https://ohiohouse.gov/members/al-landis/news (fetch tool HTTP 500)",
+        "not reviewed: official news list, campaign site, in-the-news page"
+      ],
+      "found": 0,
+      "at": "2026-11-06T15:18:28.544Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 9,
+      "at": "2026-11-06T16:28:34.672Z",
+      "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "SJR 10 photo ID amendment",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "noncitizen voting",
+        "election integrity in general"
+      ],
+      "places": [
+        "round 2: correct page is the Ohio Senate (District 31, Dover); the earlier House slug was the wrong chamber",
+        "official news list https://ohiosenate.gov/members/al-landis/news (23 items, one page): no title touches elections, ballots, voting or ID",
+        "https://www.ohiohouse.gov/legislation/136/sjr10: lists him as a Senate cosponsor (saved as a record)",
+        "https://www.rawstory.com/ohio-republicans-2676996405/ and https://ohiosenate.gov/news/on-the-record/senate-approves-constitutional-amendment-requiring-photo-id-in-ohio-elections: do not quote him",
+        "web searches (3): name + voter ID / citizenship; name + SJR 10 vote; name + voter guide. Nothing in his own words found",
+        "not reviewed: campaign site; the SJR 10 floor video; GoodParty page (JavaScript page, not fetched)",
+        "blocked: https://ballotpedia.org (refuses fetches, not tried)",
+        "blocked: https://bluevoterguide.org (refuses fetches, not tried)",
+        "blocked: https://justfacts.votesmart.org (refuses fetches, not tried)",
+        "blocked: https://www.ohiosos.gov (not tried)",
+        "blocked: curl on ohiosenate.gov and ohiohouse.gov news pages answered 403; read with the fetch tool instead (the fetch tool limits quoted text to 125-character segments, so only whole sentences returned verbatim are saved)"
+      ],
+      "found": 0,
+      "at": "2026-11-06T16:42:23.933Z",
+      "by": "research-oh-r2-2026-11-06"
+    }
+  ]
+}

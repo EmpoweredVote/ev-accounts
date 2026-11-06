@@ -1,0 +1,19 @@
+{
+  "id": "OH-HB-13-2013",
+  "scope": "state:oh",
+  "title": "HB 13 (2013-2014 (130th General Assembly)): H. B. No. 13: Voter directed to wrong precinct-remake ballot-count what eligible to vote for",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/130/hb13",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/hb13/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy)\n(section) 3505.181(B)(7)(a)\n(quote) (a) For a provisional ballot cast pursuant to division (A)(3), (12), or (13) of this section to be eligible to be counted, the individual who cast that ballot, within ten days after the day of the election, shall do any of the following: (i) Provide to the board of elections proof of the individual's identity in the form of a current and valid photo identification, a military identification, or a copy of a current utility bill, bank statement, government check, paycheck, or other government document\n(section) 3505.181(B)(7)(a)\n(quote) (ii) Provide to the board of elections the last four digits of the individual's social security number; (iii) In the case of a provisional ballot executed pursuant to division (A)(12) of this section, execute an affirmation as permitted under division (A)(4) of section 3505.18 of the Revised Code.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) 3505.183(C)(2)\n(quote) A board of elections that remakes a provisional ballot under division (C)(1) of this section shall remake the provisional ballot on a ballot for the appropriate precinct to reflect the offices, questions, and issues for which the provisional voter was eligible to cast a ballot and for which the provisional voter attempted to cast a provisional ballot. The remade ballot shall be counted for each office, question, and issue for which the provisional voter was eligible to vote.\n(other) 3505.181, 3505.183: a provisional ballot must be remade and counted for the offices and issues the voter was eligible for, if the election official did not send the voter to the correct precinct\n(other) 3505.182: the part of the provisional ballot affirmation that the election official completes is revised\n(other) 3503.19: reprinted; no ID rule changed\n(other) note: Only one version (introduced). The provisional-ballot ID cure text in 3505.181 (ten days, photo ID or utility bill etc., SSN-4, affirmation) is reprinted existing law; struck and new words are not marked in this PDF text, and the bill's stated purpose is the wrong-precinct remake rule.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

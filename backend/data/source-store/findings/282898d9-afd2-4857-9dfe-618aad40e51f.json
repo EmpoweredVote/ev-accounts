@@ -1,0 +1,153 @@
+{
+  "politician_id": "282898d9-afd2-4857-9dfe-618aad40e51f",
+  "findings": [
+    {
+      "id": "b76b08444464d687d2e3e5da5ab666871be545e481f02bd01a7bfa3659054db7",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hcr18/actions/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "yea",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 73-20) on H. C. R. No. 18, from the Ohio Legislature's own actions record, which lists each member by id (rep_lear_beth_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.681Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "29024560daba08f577b2d9a67ad667e1516d1db2d1201351d6cce81be63c3b7e",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/hcr18",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, As Adopted by the House (02_AH)",
+      "note": "Listed as co sponsor of H. C. R. No. 18 (As Adopted by the House) on the Ohio Legislature's own record (rep_lear_beth_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.681Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "545139969c5c35a1f168640a412d667e03811d25673463e11c9fcc5bd7fca177",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "yea",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_lear_beth_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.681Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32abbbc8a3ef8b4b1a84709188caf92f2c696e2c45aaccbf5d255611a80b9668",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "yea",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_lear_beth_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.681Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7623404e30c9b7d917e593cf82741706f25f8f169ba4ee2e9cd675b5db580e8a",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/hb472",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-472-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. B. No. 472 (As Introduced) on the Ohio Legislature's own record (rep_lear_beth_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.681Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6cb88b00ceb7ad76658699a5a934f8825995b1f91ebd33c9db95bb7ce08e0239",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/hb552",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-552-2024",
+      "act": "sponsor",
+      "motion": "prime sponsor, As Introduced (00_IN)",
+      "note": "Listed as prime sponsor of H. B. No. 552 (As Introduced) on the Ohio Legislature's own record (rep_lear_beth_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.681Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 6,
+      "at": "2026-11-06T16:28:34.681Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}

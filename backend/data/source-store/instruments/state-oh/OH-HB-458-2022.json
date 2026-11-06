@@ -245,7 +245,15 @@
       "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
     }
   ],
-  "single_subject": [],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
   "higher_law_duty": "not verified",
   "votes": [
     {

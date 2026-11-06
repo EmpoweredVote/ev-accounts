@@ -1,0 +1,112 @@
+{
+  "politician_id": "8f4fdb3f-1034-4ef9-997c-1f71e420c9d6",
+  "findings": [
+    {
+      "id": "0902e7fa76fc3542f273b3e0dca071180960f9dfbff7bf0c1b0df8b3faad7385",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_sigrist_mark_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.685Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "730a6b22119baaeca4679f9ddecfeae85a89635c34995cd13d24f8df728ef61c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "nay",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_sigrist_mark_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.685Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "photo ID constitutional amendment (SJR 10 / HJR 9)",
+        "election law in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "ohiohouse.gov member page (District 10, Grove City) and first news page (29 items shown): nothing on the subject; the one election item is a 2025 congressional map release that does not touch ID or citizenship; later pages not reviewed: https://ohiohouse.gov/members/mark-sigrist/news (pages 2-8 of 8)",
+        "Statehouse News Bureau (statenews.org) site search for voter ID and photo ID terms plus all 13 voter-ID and election articles from 2022-2026 that it listed, read in full: none names or quotes this person",
+        "SJR 10, HJR 9 and HB 458 witness lists on ohiohouse.gov: this person is not a witness on any",
+        "web search: not run for this person; blocked: web search (this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent in it))",
+        "blocked: https://www.legislature.ohio.gov/legislation/136/sjr10/committee (403)",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (refuse fetches, not tried)",
+        "not reviewed: campaign site, Vote411 and voter-guide questionnaires (no URL found without web search)"
+      ],
+      "found": 0,
+      "at": "2026-11-06T15:21:37.588Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 2,
+      "at": "2026-11-06T16:28:34.685Z",
+      "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "photo ID constitutional amendment (SJR 10 / HJR 9)",
+        "election law in general"
+      ],
+      "places": [
+        "https://ohiohouse.gov/members/mark-sigrist/news pageSize=50 (about 77 items, Jan 2025 to Oct 2026): election items are redistricting releases (Oct 2025 map statement, Sep 2025 maps release), not ID or citizenship; nothing on ID, mail ballots or citizenship",
+        "https://www.ohiohouse.gov/assets/people/3019/newsletters/12251.pdf (May 2025 newsletter, 1 page): no election or ID text found in extracted content",
+        "Statehouse and search results on SJR 10 House vote name other members' statements, none from this person",
+        "web searches run this round (about 4 per person, name + voter ID / photo ID / HB 458 / SJR 10 / proof of citizenship / questionnaire): no own words on the subject found",
+        "https://ohiohouse.gov/news/republican/house-republicans-pass-resolution-aimed-at-strengthening-our-elections-by-placing-voter-id-requirements-in-the-state-constitution-145722 (June 2026 release on SJR 10 passage): quotes only the Speaker of the House, no quote from this person",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (refuse fetches, not tried)",
+        "not reviewed: legislature.ohio.gov SJR 10 / HB 458 committee testimony PDFs (round 1 found this person on no witness list)"
+      ],
+      "found": 0,
+      "at": "2026-11-06T16:39:34.096Z",
+      "by": "research-oh-r2-2026-11-06"
+    }
+  ]
+}

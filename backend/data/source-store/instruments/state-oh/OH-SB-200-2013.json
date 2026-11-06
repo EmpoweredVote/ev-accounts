@@ -1,0 +1,1069 @@
+{
+  "id": "OH-SB-200-2013",
+  "scope": "state:oh",
+  "title": "SB 200 (2013-2014 (130th General Assembly)): S. B. No. 200: Statewide voter registration database- modify governing law",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/130/sb200",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/sb200/05_EN/pdf/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/sb200/00_IN/pdf/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/sb200/01_RS/pdf/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/sb200/02_PS/pdf/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/sb200/03_RH/pdf/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/sb200/04_PH/pdf/"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) R.C. 3503.15(A)(2)(a)\n(quote) State agencies, including, but not limited to, the department of health, bureau of motor vehicles, department of job and family services, and the department of rehabilitation and corrections, shall provide any information and data to the secretary of state that is collected in the course of normal business and that is necessary to register to vote, to update an elector's registration, or to maintain the statewide voter registration database established pursuant to this section, except where prohibited by federal law or regulation.\n(section) R.C. 3503.15(C)(4)\n(quote) A search program capable of verifying registered voters and their registration information by name, driver's license number, birth date, social security number, or current address;\n(section) R.C. 3503.15(D)(7)\n(quote) Establishing a uniform method for addressing instances in which records contained in the statewide voter registration database do not conform with records maintained by an agency, state, or group of states described in division (A)(2)(a) or (3)(a) of this section. That method shall prohibit an elector's voter registration from being canceled on the sole basis that the information in the registration record does not conform to records maintained by such an agency.\n(section) R.C. 3503.11\n(quote) The registrar shall send any completed registration application received at the bureau of motor vehicles headquarters location and any completed change of residence or change of name form processed electronically in systems or programs operated and maintained by the bureau of motor vehicles to the secretary of state within five days after accepting the application or other form.\n(other) R.C. 3503.11: BMV sends completed voter registration forms to the Secretary of State within five days; BMV reports declined and completed counts\n(other) R.C. 3503.15: statewide voter registration database; agencies share data; confidentiality and no sale of the data; method for records that do not match agency records\n(other) R.C. 3503.18: Department of Health death reports monthly, plus a supplemental report within one month of late notice\n(other) R.C. 3503.21: cancellation of registration (conforming change)\n(other) R.C. 3506.22: lowers the minimum number of direct recording electronic voting machines\n(other) version: 00_IN: database and BMV data text only; no ID or citizenship text\n(other) version: 01_RS: adds BMV transmission content and format, confidentiality rules for shared data, supplemental death reports; no ID or citizenship text\n(other) version: 02_PS: same, no ID or citizenship text\n(other) version: 03_RH: same, no ID or citizenship text\n(other) version: 04_PH: same, no ID or citizenship text\n(other) version: 05_EN: same, no ID or citizenship text\n(other) note: No in-person ID, no-ID remedy, mail-ballot ID or citizenship text in any version. Slot e records the BMV and agency data-matching rules, including a bar on cancelling a registration on the sole basis of a mismatch. The enrolled text prints these sections in clean form (the 2013 file appears to show no struck words in the quoted passages). Vote mapping per brief: Senate passage on 01_RS, House passage on 03_RH; the table-amendment votes are on floor amendments whose text I do not have. ID flag is false on passage votes because the bill has no ID text in any version.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2013-10-30",
+      "body": "OH Senate",
+      "motion": "Motion to Table Amendment [version voted: unknown (amendment text not saved)]",
+      "kind": "roll-call",
+      "yes": 21,
+      "no": 10,
+      "absent": 0,
+      "body_size": 31,
+      "note": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/sb200/actions/",
+      "members": [
+        {
+          "name": "Peggy Lehner",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Widener",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Burke",
+          "vote": "yea"
+        },
+        {
+          "name": "Cliff Hite",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Obhof",
+          "vote": "yea"
+        },
+        {
+          "name": "Frank LaRose",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Bacon",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Beagle",
+          "vote": "yea"
+        },
+        {
+          "name": "Shannon Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Coley",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Oelslager",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Hughes",
+          "vote": "yea"
+        },
+        {
+          "name": "Troy Balderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Schaffer",
+          "vote": "yea"
+        },
+        {
+          "name": "Keith Faber",
+          "vote": "yea"
+        },
+        {
+          "name": "Gayle Manning",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Seitz",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Patton",
+          "vote": "yea"
+        },
+        {
+          "name": "John Eklund",
+          "vote": "yea"
+        },
+        {
+          "name": "Joe Uecker",
+          "vote": "yea"
+        },
+        {
+          "name": "Randy Gardner",
+          "vote": "yea"
+        },
+        {
+          "name": "Edna Brown",
+          "vote": "nay"
+        },
+        {
+          "name": "Charleta Tavares",
+          "vote": "nay"
+        },
+        {
+          "name": "Thomas Sawyer",
+          "vote": "nay"
+        },
+        {
+          "name": "Eric Kearney",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Skindell",
+          "vote": "nay"
+        },
+        {
+          "name": "Shirley Smith",
+          "vote": "nay"
+        },
+        {
+          "name": "Joseph Schiavoni",
+          "vote": "nay"
+        },
+        {
+          "name": "Capri Cafaro",
+          "vote": "nay"
+        },
+        {
+          "name": "Nina Turner",
+          "vote": "nay"
+        },
+        {
+          "name": "Lou Gentile",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2013-10-30",
+      "body": "OH Senate",
+      "motion": "Passed [version voted: 01_RS]",
+      "kind": "roll-call",
+      "yes": 21,
+      "no": 10,
+      "absent": 0,
+      "body_size": 31,
+      "note": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/sb200/actions/",
+      "members": [
+        {
+          "name": "Peggy Lehner",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Widener",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Burke",
+          "vote": "yea"
+        },
+        {
+          "name": "Cliff Hite",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Obhof",
+          "vote": "yea"
+        },
+        {
+          "name": "Frank LaRose",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Bacon",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Beagle",
+          "vote": "yea"
+        },
+        {
+          "name": "Shannon Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Coley",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Oelslager",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Hughes",
+          "vote": "yea"
+        },
+        {
+          "name": "Troy Balderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Schaffer",
+          "vote": "yea"
+        },
+        {
+          "name": "Keith Faber",
+          "vote": "yea"
+        },
+        {
+          "name": "Gayle Manning",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Seitz",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Patton",
+          "vote": "yea"
+        },
+        {
+          "name": "John Eklund",
+          "vote": "yea"
+        },
+        {
+          "name": "Joe Uecker",
+          "vote": "yea"
+        },
+        {
+          "name": "Randy Gardner",
+          "vote": "yea"
+        },
+        {
+          "name": "Edna Brown",
+          "vote": "nay"
+        },
+        {
+          "name": "Charleta Tavares",
+          "vote": "nay"
+        },
+        {
+          "name": "Thomas Sawyer",
+          "vote": "nay"
+        },
+        {
+          "name": "Eric Kearney",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Skindell",
+          "vote": "nay"
+        },
+        {
+          "name": "Shirley Smith",
+          "vote": "nay"
+        },
+        {
+          "name": "Joseph Schiavoni",
+          "vote": "nay"
+        },
+        {
+          "name": "Capri Cafaro",
+          "vote": "nay"
+        },
+        {
+          "name": "Nina Turner",
+          "vote": "nay"
+        },
+        {
+          "name": "Lou Gentile",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2013-12-11",
+      "body": "OH House",
+      "motion": "Motion laid on table [version voted: unknown (amendment text not saved)]",
+      "kind": "roll-call",
+      "yes": 58,
+      "no": 35,
+      "absent": 0,
+      "body_size": 93,
+      "note": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/sb200/actions/",
+      "members": [
+        {
+          "name": "Ross McGregor",
+          "vote": "yea"
+        },
+        {
+          "name": "William Batchelder",
+          "vote": "yea"
+        },
+        {
+          "name": "Lynn Wachtmann",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Huffman",
+          "vote": "yea"
+        },
+        {
+          "name": "Jay Hottinger",
+          "vote": "yea"
+        },
+        {
+          "name": "John Adams",
+          "vote": "yea"
+        },
+        {
+          "name": "Gerald Stebelton",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Amstutz",
+          "vote": "yea"
+        },
+        {
+          "name": "Nan Baker",
+          "vote": "yea"
+        },
+        {
+          "name": "Cheryl Grossman",
+          "vote": "yea"
+        },
+        {
+          "name": "Peter Stautberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Maag",
+          "vote": "yea"
+        },
+        {
+          "name": "Terry Blair",
+          "vote": "yea"
+        },
+        {
+          "name": "Timothy Derickson",
+          "vote": "yea"
+        },
+        {
+          "name": "Terry Boose",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Adams",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff McClain",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Hackett",
+          "vote": "yea"
+        },
+        {
+          "name": "Margaret Ruhl",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Hall",
+          "vote": "yea"
+        },
+        {
+          "name": "Peter Beck",
+          "vote": "yea"
+        },
+        {
+          "name": "Marlene Anielski",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrew Brenner",
+          "vote": "yea"
+        },
+        {
+          "name": "Rex Damschroder",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Dovilla",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Duffey",
+          "vote": "yea"
+        },
+        {
+          "name": "Anne Gonzales",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Hayes",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Henne",
+          "vote": "yea"
+        },
+        {
+          "name": "Terry Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Al Landis",
+          "vote": "yea"
+        },
+        {
+          "name": "Kristina Roegner",
+          "vote": "yea"
+        },
+        {
+          "name": "Cliff Rosenberger",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirk Schuring",
+          "vote": "yea"
+        },
+        {
+          "name": "Andy Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Buchy",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Butler",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Sprague",
+          "vote": "yea"
+        },
+        {
+          "name": "Christina Hagan",
+          "vote": "yea"
+        },
+        {
+          "name": "Margaret Conditt",
+          "vote": "yea"
+        },
+        {
+          "name": "Dorothy Pelanda",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Louis Terhar",
+          "vote": "yea"
+        },
+        {
+          "name": "Anthony DeVitis",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Lynch",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Scherer",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Romanchuk",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephanie Kunze",
+          "vote": "yea"
+        },
+        {
+          "name": "Louis Blessing",
+          "vote": "yea"
+        },
+        {
+          "name": "Wes Retherford",
+          "vote": "yea"
+        },
+        {
+          "name": "John Becker",
+          "vote": "yea"
+        },
+        {
+          "name": "Doug Green",
+          "vote": "yea"
+        },
+        {
+          "name": "Rick Perales",
+          "vote": "yea"
+        },
+        {
+          "name": "Tony Burkley",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Hood",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Foley",
+          "vote": "nay"
+        },
+        {
+          "name": "Vernon Sykes",
+          "vote": "nay"
+        },
+        {
+          "name": "Robert Hagan",
+          "vote": "nay"
+        },
+        {
+          "name": "Sandra Williams",
+          "vote": "nay"
+        },
+        {
+          "name": "Tom Letson",
+          "vote": "nay"
+        },
+        {
+          "name": "Tracy Heard",
+          "vote": "nay"
+        },
+        {
+          "name": "Matt Lundy",
+          "vote": "nay"
+        },
+        {
+          "name": "Ron Gerberry",
+          "vote": "nay"
+        },
+        {
+          "name": "Stephen Slesnick",
+          "vote": "nay"
+        },
+        {
+          "name": "John Patrick Carney",
+          "vote": "nay"
+        },
+        {
+          "name": "Connie Pillich",
+          "vote": "nay"
+        },
+        {
+          "name": "Denise Driehaus",
+          "vote": "nay"
+        },
+        {
+          "name": "Roland Winburn",
+          "vote": "nay"
+        },
+        {
+          "name": "Debbie Phillips",
+          "vote": "nay"
+        },
+        {
+          "name": "Alicia Reece",
+          "vote": "nay"
+        },
+        {
+          "name": "Nickie Antonio",
+          "vote": "nay"
+        },
+        {
+          "name": "Mike Ashford",
+          "vote": "nay"
+        },
+        {
+          "name": "John Barnes",
+          "vote": "nay"
+        },
+        {
+          "name": "Kathleen Clyde",
+          "vote": "nay"
+        },
+        {
+          "name": "Teresa Fedor",
+          "vote": "nay"
+        },
+        {
+          "name": "Zack Milkovich",
+          "vote": "nay"
+        },
+        {
+          "name": "Sean O'Brien",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Patmon",
+          "vote": "nay"
+        },
+        {
+          "name": "Dan Ramos",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Stinziano",
+          "vote": "nay"
+        },
+        {
+          "name": "Jack Cera",
+          "vote": "nay"
+        },
+        {
+          "name": "Nicholas Celebrezze",
+          "vote": "nay"
+        },
+        {
+          "name": "Kevin Boyce",
+          "vote": "nay"
+        },
+        {
+          "name": "Nick Barborak",
+          "vote": "nay"
+        },
+        {
+          "name": "Heather Bishoff",
+          "vote": "nay"
+        },
+        {
+          "name": "Fred Strahorn",
+          "vote": "nay"
+        },
+        {
+          "name": "John Rogers",
+          "vote": "nay"
+        },
+        {
+          "name": "Chris Redfern",
+          "vote": "nay"
+        },
+        {
+          "name": "John Patterson",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Sheehy",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2013-12-11",
+      "body": "OH House",
+      "motion": "Passed [version voted: 03_RH]",
+      "kind": "roll-call",
+      "yes": 60,
+      "no": 33,
+      "absent": 0,
+      "body_size": 93,
+      "note": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/sb200/actions/",
+      "members": [
+        {
+          "name": "Ross McGregor",
+          "vote": "yea"
+        },
+        {
+          "name": "William Batchelder",
+          "vote": "yea"
+        },
+        {
+          "name": "Lynn Wachtmann",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Huffman",
+          "vote": "yea"
+        },
+        {
+          "name": "Jay Hottinger",
+          "vote": "yea"
+        },
+        {
+          "name": "John Adams",
+          "vote": "yea"
+        },
+        {
+          "name": "Gerald Stebelton",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Amstutz",
+          "vote": "yea"
+        },
+        {
+          "name": "Nan Baker",
+          "vote": "yea"
+        },
+        {
+          "name": "Cheryl Grossman",
+          "vote": "yea"
+        },
+        {
+          "name": "Peter Stautberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Maag",
+          "vote": "yea"
+        },
+        {
+          "name": "Terry Blair",
+          "vote": "yea"
+        },
+        {
+          "name": "Timothy Derickson",
+          "vote": "yea"
+        },
+        {
+          "name": "Terry Boose",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Adams",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff McClain",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Hackett",
+          "vote": "yea"
+        },
+        {
+          "name": "Margaret Ruhl",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Hall",
+          "vote": "yea"
+        },
+        {
+          "name": "Peter Beck",
+          "vote": "yea"
+        },
+        {
+          "name": "Marlene Anielski",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrew Brenner",
+          "vote": "yea"
+        },
+        {
+          "name": "Rex Damschroder",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Dovilla",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Duffey",
+          "vote": "yea"
+        },
+        {
+          "name": "Anne Gonzales",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Hayes",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Henne",
+          "vote": "yea"
+        },
+        {
+          "name": "Terry Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Al Landis",
+          "vote": "yea"
+        },
+        {
+          "name": "Kristina Roegner",
+          "vote": "yea"
+        },
+        {
+          "name": "Cliff Rosenberger",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirk Schuring",
+          "vote": "yea"
+        },
+        {
+          "name": "Andy Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Buchy",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Butler",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Sprague",
+          "vote": "yea"
+        },
+        {
+          "name": "Christina Hagan",
+          "vote": "yea"
+        },
+        {
+          "name": "Margaret Conditt",
+          "vote": "yea"
+        },
+        {
+          "name": "Dorothy Pelanda",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Louis Terhar",
+          "vote": "yea"
+        },
+        {
+          "name": "Anthony DeVitis",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Cera",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Lynch",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Scherer",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Romanchuk",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephanie Kunze",
+          "vote": "yea"
+        },
+        {
+          "name": "Louis Blessing",
+          "vote": "yea"
+        },
+        {
+          "name": "Wes Retherford",
+          "vote": "yea"
+        },
+        {
+          "name": "John Rogers",
+          "vote": "yea"
+        },
+        {
+          "name": "John Becker",
+          "vote": "yea"
+        },
+        {
+          "name": "Doug Green",
+          "vote": "yea"
+        },
+        {
+          "name": "Rick Perales",
+          "vote": "yea"
+        },
+        {
+          "name": "Tony Burkley",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Hood",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Foley",
+          "vote": "nay"
+        },
+        {
+          "name": "Vernon Sykes",
+          "vote": "nay"
+        },
+        {
+          "name": "Robert Hagan",
+          "vote": "nay"
+        },
+        {
+          "name": "Sandra Williams",
+          "vote": "nay"
+        },
+        {
+          "name": "Tom Letson",
+          "vote": "nay"
+        },
+        {
+          "name": "Tracy Heard",
+          "vote": "nay"
+        },
+        {
+          "name": "Matt Lundy",
+          "vote": "nay"
+        },
+        {
+          "name": "Ron Gerberry",
+          "vote": "nay"
+        },
+        {
+          "name": "Stephen Slesnick",
+          "vote": "nay"
+        },
+        {
+          "name": "John Patrick Carney",
+          "vote": "nay"
+        },
+        {
+          "name": "Connie Pillich",
+          "vote": "nay"
+        },
+        {
+          "name": "Denise Driehaus",
+          "vote": "nay"
+        },
+        {
+          "name": "Roland Winburn",
+          "vote": "nay"
+        },
+        {
+          "name": "Debbie Phillips",
+          "vote": "nay"
+        },
+        {
+          "name": "Alicia Reece",
+          "vote": "nay"
+        },
+        {
+          "name": "Nickie Antonio",
+          "vote": "nay"
+        },
+        {
+          "name": "Mike Ashford",
+          "vote": "nay"
+        },
+        {
+          "name": "John Barnes",
+          "vote": "nay"
+        },
+        {
+          "name": "Kathleen Clyde",
+          "vote": "nay"
+        },
+        {
+          "name": "Teresa Fedor",
+          "vote": "nay"
+        },
+        {
+          "name": "Zack Milkovich",
+          "vote": "nay"
+        },
+        {
+          "name": "Sean O'Brien",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Patmon",
+          "vote": "nay"
+        },
+        {
+          "name": "Dan Ramos",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Stinziano",
+          "vote": "nay"
+        },
+        {
+          "name": "Nicholas Celebrezze",
+          "vote": "nay"
+        },
+        {
+          "name": "Kevin Boyce",
+          "vote": "nay"
+        },
+        {
+          "name": "Nick Barborak",
+          "vote": "nay"
+        },
+        {
+          "name": "Heather Bishoff",
+          "vote": "nay"
+        },
+        {
+          "name": "Fred Strahorn",
+          "vote": "nay"
+        },
+        {
+          "name": "Chris Redfern",
+          "vote": "nay"
+        },
+        {
+          "name": "John Patterson",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Sheehy",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

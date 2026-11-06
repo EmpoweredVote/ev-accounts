@@ -1,0 +1,19 @@
+{
+  "id": "OH-HB-378-2011",
+  "scope": "state:oh",
+  "title": "HB 378 (2011-2012 (129th General Assembly)): H. B. No. 378: Undocumented aliens-cancel driver license/voter registration/assistance benefits",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/129/hb378",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_129/legislation/hb378/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) 109.5722(B)(1)\n(quote) (B)(1) If the bureau of criminal identification and investigation or a county sheriff directly or indirectly submits the fingerprints of a person who has been arrested by a law enforcement agency and fingerprinted by the sheriff's department during the person's processing at a county jail to the federal bureau of investigation's integrated automated fingerprint identification system or the department of homeland security's automated biometric identification system and receives a response from either system stating that the fingerprints submitted match the fingerprints of an undocumented alien\n(section) 109.5722(D)(1)\n(quote) The secretary of state shall determine if the arrestee who is the subject of a notice received under division (C) of this section is registered to vote in this state. If the arrestee is registered to vote in this state, the secretary of state shall cancel the arrestee's voter registration and notify the arrestee of the cancellation.\n(section) 109.5722(E)\n(quote) An arrestee who loses rights, privileges, or benefits under division (D) of this section may obtain those rights, privileges, and benefits at a later date if the arrestee meets all licensing, registration, benefit, and residency requirements for the rights, privileges, or benefits at that later date.\n(e_other_rule)\n(section) 109.5722(A)(1)\n(quote) \"Alien\" means an individual who is not a citizen of the United States.\n(other) 109.5722(B)-(C): when fingerprint databases match an arrestee to an undocumented alien and the arrestee held or showed a driver's license, the attorney general is notified and then notifies the bureau of motor vehicles, Secretary of State, Department of Job and Family Services and the arrestee\n(other) 109.5722(D)(2)-(3): benefits from Job and Family Services programs are ended (unless federal law bars it) and the driver's license is cancelled\n(other) 109.5722(F)-(G): attorney general rules for sharing data; monthly counts of arrestees who lose rights and benefits, posted quarterly\n(other) note: Only one version (introduced); the whole section is new. This is a citizenship check against two federal fingerprint databases, run only on people arrested and fingerprinted at a county jail. Only people those databases flag are affected (voter registration cancelled); no one else must show proof. The bill sets no step for the arrestee to prove citizenship before cancellation; division (E) lets the person regain rights later if all requirements are met.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

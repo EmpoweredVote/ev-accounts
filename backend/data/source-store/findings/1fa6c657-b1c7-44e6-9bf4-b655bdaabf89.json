@@ -1,0 +1,132 @@
+{
+  "politician_id": "1fa6c657-b1c7-44e6-9bf4-b655bdaabf89",
+  "findings": [
+    {
+      "id": "07a62dc66aed003e5e74c155b191a11270cce9e881a9d9c6358ef547bbe69d62",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/actions/",
+      "date": "2022-12-14",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-458-2022",
+      "act": "yea",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 55-34) on H. B. No. 458, from the Ohio Legislature's own actions record, which lists each member by id (rep_koehler_kyle_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a5bb1634ad5907616b86f560b8ecf96dfd5e4f77b5422bf26d6c663888557876",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "yea",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 23-10) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (sen_koehler_kyle_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4c1f5fb2164062ff2f044b0322d2c82f7d347d63e7e3db39a346504a6a33e73f",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "yea",
+      "motion": "Senate: Concurred in House amendments",
+      "note": "OH Senate floor roll call (Concurred in House amendments, tally 23-10) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (sen_koehler_kyle_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f13f923a9c6762dac1ec783ec55a014bc5e047ca8cf95da1a2ce9b180d4455de",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "yea",
+      "motion": "Senate: Adopted",
+      "note": "OH Senate floor roll call (Adopted, tally 22-9) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (sen_koehler_kyle_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.675Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "noncitizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://ohiosenate.gov/members/kyle-koehler (confirms Senate District 10, 136th GA; news list pages 1-2 read: 25 items, none on elections, voting, ID or citizenship; one title about civilian defense ID is not voter ID)",
+        "campaign site https://www.votekoehler.com/ (nothing on the subject)",
+        "iVoterGuide https://ivoterguide.com/candidate/20552/race/20928/election/1130 (voter ID question: did not answer)",
+        "blocked: https://www.legislature.ohio.gov/legislation/134/hb458/committee (403 by plain curl; fetch tool certificate error)",
+        "Ballotpedia: blocked (not fetched, per instructions)",
+        "web searches (6): voter ID/photo ID, proof of citizenship/SAVE Act/noncitizen, HB 458/SJR 10, questionnaire/voter guide, absentee/election local outlets, photo ID quoted: nothing by this person on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-06T15:10:54.112Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 4,
+      "at": "2026-11-06T16:28:34.675Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}

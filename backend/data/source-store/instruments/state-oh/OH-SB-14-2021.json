@@ -1,0 +1,25 @@
+{
+  "id": "OH-SB-14-2021",
+  "scope": "state:oh",
+  "title": "SB 14 (2021-2022 (134th General Assembly)): S. B. No. 14: Regards voter registration systems and candidate protests",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/134/sb14",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/sb14/00_IN/html/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) 3506.01, 3506.04, 3506.05 and related: adds 'voter registration system' (software used to process voter registration records) to the voting-system certification and Board of Voting Machine Examiners rules; cybersecurity expert added as nonvoting board member\n(other) Candidate protest provisions (per short title) are outside slots a-e\n(other) note: No ID, citizenship, or provisional-ballot text anywhere in the saved text (only one incidental keyword match: a mention of 'identification' unrelated to voter ID). Sole version.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Michael A. Rulli",
+      "role": "prime",
+      "version": "As Introduced (00_IN)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

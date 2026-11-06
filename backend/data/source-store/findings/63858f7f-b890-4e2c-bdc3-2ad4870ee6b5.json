@@ -1,0 +1,118 @@
+{
+  "politician_id": "63858f7f-b890-4e2c-bdc3-2ad4870ee6b5",
+  "findings": [
+    {
+      "id": "0902e7fa76fc3542f273b3e0dca071180960f9dfbff7bf0c1b0df8b3faad7385",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_tims_desiree_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "730a6b22119baaeca4679f9ddecfeae85a89635c34995cd13d24f8df728ef61c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "nay",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_tims_desiree_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5d326e89edf5091ea0ff50afe14346565ee0d633bc08602a7061dddab8b599d",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_tims_desiree_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.686Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for absentee ballots",
+        "proof of citizenship to register or vote",
+        "noncitizen voting",
+        "voter-roll purges",
+        "voter registration access",
+        "HB 458"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House page https://ohiohouse.gov/members/desiree-tims (confirms Dayton, district 38); first 10 of 35 news items read: only the 2026-11-04 post touches an election, and it has nothing on ID or citizenship",
+        "ohiohouse.gov news item 2026-11-04 body: nothing on the subject",
+        "ohiohouse.gov HB 698 news item: higher-education bill, nothing on the subject",
+        "Ohio Statehouse museum profile https://ohiostatehouse.org/museum/ladies-gallery/desire-tims: only says she wants to restore voting rights through automatic voter registration, written as a profile, no ID or citizenship content, not saved",
+        "branch.vote candidate page: a summary by the site, not her own words, not saved",
+        "campaign site: not found by search",
+        "web searches (7): voter ID, HB 458 photo ID, citizenship/noncitizen, questionnaire, statehouse outlets: nothing in her own words",
+        "blocked: https://www.legislature.ohio.gov/legislation/136/hb233/committee (certificate error)",
+        "blocked: https://ballotpedia.org (refuses fetches)",
+        "blocked: https://bluevoterguide.org (refuses fetches)",
+        "blocked: https://justfacts.votesmart.org (refuses fetches)",
+        "not fetched (refused by robots): Dayton Daily News 2024 candidate-guide page"
+      ],
+      "found": 0,
+      "at": "2026-11-06T15:10:12.648Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 3,
+      "at": "2026-11-06T16:28:34.686Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}

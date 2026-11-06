@@ -29,7 +29,208 @@
           "sha256": "dddae0081901748ede39524ddca0094c322a065fe443d8ffdbae0913c1a95fa4"
         }
       }
+    },
+    {
+      "id": "07a62dc66aed003e5e74c155b191a11270cce9e881a9d9c6358ef547bbe69d62",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/actions/",
+      "date": "2022-12-14",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-458-2022",
+      "act": "yea",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 55-34) on H. B. No. 458, from the Ohio Legislature's own actions record, which lists each member by id (rep_cutrona_alessandro_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.674Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a5bb1634ad5907616b86f560b8ecf96dfd5e4f77b5422bf26d6c663888557876",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "yea",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 23-10) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (sen_cutrona_al_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.674Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b01a298f469a447b587df6d60ea80d04048e28db8117e5d3c325e772d1cb7f45",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/hb472",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As Passed by the Senate (04_PS)",
+      "note": "Listed as co sponsor of H. B. No. 472 (As Passed by the Senate) on the Ohio Legislature's own record (sen_cutrona_al_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.674Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4c1f5fb2164062ff2f044b0322d2c82f7d347d63e7e3db39a346504a6a33e73f",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "yea",
+      "motion": "Senate: Concurred in House amendments",
+      "note": "OH Senate floor roll call (Concurred in House amendments, tally 23-10) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (sen_cutrona_al_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.674Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9b1f5c0fab55b6852c164d5fd7548cc1853715c65462e15ee45b573dea4077ad",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "Senate: Adopted",
+      "note": "OH Senate floor roll call (Adopted, tally 22-9) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (sen_cutrona_al_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.674Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c7f640cf70b51e0cc31fa72512546c26497020f725b6413c118ddb09cebd00f8",
+      "kind": "own-words",
+      "url": "https://wysu.org/ohio-news/2026-06-03/ohio-senate-advances-its-fast-tracked-voter-id-amendment",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "passage": "I guess we’re going to have to rely on the House to clean our mess a little bit. As it stands today, I’m a ‘no’ vote.",
+      "note": "Quoted by public radio (Statehouse News Bureau story) from his testimony on S.J.R. 10, the photo-ID-to-vote constitutional amendment, as passed by the committee stage. He says he would vote no on the text as it stood and expects the House to change it. Raw Story (2026-06-04) carries the same quote.",
+      "subjects": [
+        "voter ID at the polls",
+        "SJR 10 photo ID amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:40:47.241Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "noncitizen voting",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "legislature.ohio.gov committee pages for HJR 9, SJR 10, HB 54 (136th) and HB 458 (134th) read by curl: no testimony by this person",
+        "blocked: web search (limit of 200 WebSearch calls per turn reached, shared by all agents; this person's web searches were NOT run)",
+        "blocked: Ballotpedia (listed as refused, not fetched)",
+        "blocked: https://justfacts.votesmart.org (listed as refused, not fetched)",
+        "blocked: https://ohiohouse.gov/members/al-cutrona (fetch tool HTTP 500 four times; curl 403)",
+        "blocked: https://ohiohouse.gov/members/al-cutrona/news (fetch tool HTTP 500)",
+        "not reviewed: official news list, campaign site, in-the-news page"
+      ],
+      "found": 0,
+      "at": "2026-11-06T15:18:28.543Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 5,
+      "at": "2026-11-06T16:28:34.674Z",
+      "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "SJR 10 photo ID amendment",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "noncitizen voting",
+        "election integrity in general"
+      ],
+      "places": [
+        "round 2: correct page is the Ohio Senate (District 33, Canfield); the earlier House slug was the wrong chamber",
+        "official news list https://ohiosenate.gov/members/al-cutrona/news (45 items, one page): no title touches elections, ballots, voting or ID",
+        "https://ohiosenate.gov/members/al-cutrona (main page): confirms Senator, District 33; recent items nothing on the subject",
+        "https://www.ohiohouse.gov/legislation/136/sjr10: lists no cosponsorship by him",
+        "https://ohiosenate.gov/news/on-the-record/senate-approves-constitutional-amendment-requiring-photo-id-in-ohio-elections: does not quote him",
+        "web searches (3): name + photo ID amendment; name + SJR 10 testimony; name + candidate questionnaire. Found the June 2026 statement saved here. A search snippet says a local paper reports he declined its 2024 questionnaire (lead only, source paper not opened)",
+        "not reviewed: campaign site; the SJR 10 committee hearing video",
+        "blocked: https://ballotpedia.org (refuses fetches, not tried)",
+        "blocked: https://bluevoterguide.org (refuses fetches, not tried)",
+        "blocked: https://justfacts.votesmart.org (refuses fetches, not tried)",
+        "blocked: https://www.ohiosos.gov (not tried)",
+        "blocked: curl on ohiosenate.gov and ohiohouse.gov news pages answered 403; read with the fetch tool instead (the fetch tool limits quoted text to 125-character segments, so only whole sentences returned verbatim are saved)"
+      ],
+      "found": 1,
+      "at": "2026-11-06T16:40:47.241Z",
+      "by": "research-oh-r2-2026-11-06"
+    }
+  ]
 }

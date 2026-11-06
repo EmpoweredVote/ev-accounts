@@ -1,0 +1,174 @@
+{
+  "politician_id": "e6ed11d7-adef-48b3-9d1a-64e7fb4dd83f",
+  "findings": [
+    {
+      "id": "0996144f6bfd468c32daf8f5bbc1f3174c27c30d409773315ddb459b58c3a8b0",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/elgin-rogers-jr/news/rep-rogers-urges-voter-participation-for-august-8-election-115752",
+      "date": "2023-07-06",
+      "date_precision": "day",
+      "passage": "You must have a state issued photo ID to vote.",
+      "note": "Release from his House office urging turnout for the August 8, 2023 special election; it tells voters a state-issued photo ID is needed to vote. The same release quotes him on Issue 1 (initiative-petition threshold), which is not about ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID reminder to voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:19:48.606Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e4fb948514740588d0225bda3b8b0405d61af23b4352f33bae30a8f33a5a4da8",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/elgin-rogers-jr/news/rep-rogers-introduces-bipartisan-bill-to-protect-employees-seeking-to-be-poll-workers-129745",
+      "date": "2025-03-27",
+      "date_precision": "day",
+      "passage": "Ohio is currently facing a shortage of poll-workers which, in turn, makes the voting process more difficult for citizens.",
+      "note": "Release on HB 180 (job protection for poll workers), introduced with another member. Related election-administration statement, not about ID or citizenship.",
+      "subjects": [
+        "poll workers (related election law)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:19:48.606Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5697afd32f03dc086b5345a0a6cd9ad151af0d90b6a4dc6c539a64510187c2b",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/actions/",
+      "date": "2022-12-14",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-458-2022",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 55-34) on H. B. No. 458, from the Ohio Legislature's own actions record, which lists each member by id (rep_rogers_elgin_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b76b08444464d687d2e3e5da5ab666871be545e481f02bd01a7bfa3659054db7",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hcr18/actions/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "yea",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 73-20) on H. C. R. No. 18, from the Ohio Legislature's own actions record, which lists each member by id (rep_rogers_elgin_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0902e7fa76fc3542f273b3e0dca071180960f9dfbff7bf0c1b0df8b3faad7385",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_rogers_elgin_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5d326e89edf5091ea0ff50afe14346565ee0d633bc08602a7061dddab8b599d",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_rogers_elgin_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID amendment (SJR 10 / State Issue 3)",
+        "proof of citizenship",
+        "HB 458",
+        "election integrity",
+        "candidate questionnaire"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House page https://ohiohouse.gov/members/elgin-rogers-jr/news (first 10 of 59 items shown, Mar-Oct 2026; none on elections, ballots, ID or citizenship); member root page https://ohiohouse.gov/members/elgin-rogers returned HTTP 500",
+        "official House news release of 2023-07-06 on the August 2023 special election",
+        "web search: name + voter ID; name + Issue 3 / SJR 10; name + HB 458 / proof of citizenship / noncitizen; name + questionnaire / voter guide (no questionnaire found; BallotReady and Branch profiles only, not opened)",
+        "blocked: Ballotpedia (refuses fetches)",
+        "not reviewed: official newsletters PDFs at ohiohouse.gov/assets/people/2973/newsletters/ (search leads, not opened)",
+        "official House release 2025-03-27 on HB 180 poll-worker bill"
+      ],
+      "found": 2,
+      "at": "2026-11-06T16:19:48.606Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 4,
+      "at": "2026-11-06T16:28:34.679Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}

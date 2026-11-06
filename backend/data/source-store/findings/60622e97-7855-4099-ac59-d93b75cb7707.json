@@ -1,0 +1,131 @@
+{
+  "politician_id": "60622e97-7855-4099-ac59-d93b75cb7707",
+  "findings": [
+    {
+      "id": "403ab256687bdf6a6dd95623fe32aef052ff620ef5e397dc79493a8233a378b2",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/christine-cockley/in-the-news/democrats-urge-gov-mike-dewine-to-veto-bill-requiring-id-with-absentee-ballots-7366",
+      "date": "2026-06-19",
+      "date_precision": "day",
+      "passage": "\"The bill was hijacked by the Senate Republicans and turned into something completely different,\" Cockley said. \"What started out as a great piece of bipartisan legislation turned into a bill about voting rights.\"",
+      "note": "Quoted by NBC4 (reposted on the House member site) on HB 472, which began as a bill on free state IDs for people without housing and was changed to require photo ID for mail-in ballots.",
+      "subjects": [
+        "mail-ballot ID",
+        "photo ID with absentee ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:13:36.833Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "75f3cd3fba06fd587e989f9572ff0b8697aee38a741ca7c84dbe7ab6bf9f01f9",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/christine-cockley/in-the-news/democrats-urge-gov-mike-dewine-to-veto-bill-requiring-id-with-absentee-ballots-7366",
+      "date": "2026-06-19",
+      "date_precision": "day",
+      "passage": "\"So it is a big concern to me that there's no way for this to be implemented in a safe, secure way.\"",
+      "note": "Quoted by NBC4 (reposted on the House member site) on the security of sending ID copies with mail-in ballots under HB 472; she also sent the Governor a letter urging a veto (the page states this in paraphrase).",
+      "subjects": [
+        "mail-ballot ID",
+        "security of ID copies"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:13:36.833Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0902e7fa76fc3542f273b3e0dca071180960f9dfbff7bf0c1b0df8b3faad7385",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_cockley_christine_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.685Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5d326e89edf5091ea0ff50afe14346565ee0d633bc08602a7061dddab8b599d",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_cockley_christine_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.685Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "mail-ballot ID (HB 472)",
+        "voter ID at the polls",
+        "photo ID in the state constitution",
+        "proof of citizenship",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page https://ohiohouse.gov/members/christine-cockley (news list has nothing on the subject; the In the News section holds two reposted articles on HB 472, both read)",
+        "blocked: curl 403 on the two ohiohouse.gov In the News pages; text taken from the fetch tool's word-for-word return",
+        "iVoterGuide candidate page (Dist. 6, 2026-11-03 general ballot; she did not answer the photo ID question)",
+        "freepress.org article on HB 472 (characterises her feelings; not her words)",
+        "Ballotpedia and bluevoterguide.org: blocked (refuse fetches, not tried)",
+        "NBC4 original: not opened (site refuses AI agents); read only the repost on the House site",
+        "two web searches on name plus voter ID / photo ID / HB 458 / proof of citizenship / questionnaire; nothing on HB 458 or proof of citizenship"
+      ],
+      "found": 2,
+      "at": "2026-11-06T15:13:36.833Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 2,
+      "at": "2026-11-06T16:28:34.685Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}
