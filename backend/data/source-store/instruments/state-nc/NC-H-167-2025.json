@@ -1,0 +1,194 @@
+{
+  "id": "NC-H-167-2025",
+  "scope": "state:nc",
+  "title": "H167 (2025-2026 Session): Firearm in Unattended Vehicle/Safely Store",
+  "urls": [
+    "https://www.ncleg.gov/BillLookUp/2025/H167",
+    "https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H167v0.pdf",
+    "https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H167v1.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Marcia Morey",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "79a8f85e-c217-48d5-9909-1e9248cadd39"
+    },
+    {
+      "name": "Jordan Lopez",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d0bcb2c4-3653-4b57-b8f1-c5688e40b54d"
+    },
+    {
+      "name": "Carolyn Logan",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "cd3b506c-acf1-48b5-8b56-a43c79ac83e7"
+    },
+    {
+      "name": "Tim Longest",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "458a6894-caf8-4705-8956-a01bac3dee5c"
+    },
+    {
+      "name": "Cynthia Ball",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "bc074749-7bf4-42ca-8eab-6fffc1e20729"
+    },
+    {
+      "name": "Mary Belk",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "607091ec-f6d3-470f-bf2b-06160885f249"
+    },
+    {
+      "name": "Gloristine Brown",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f3b4b50e-279d-4f47-b7f6-743432f50b00"
+    },
+    {
+      "name": "Terry Brown",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "cd91941f-44d7-4250-9f09-e6979d805de4"
+    },
+    {
+      "name": "Allen Buansi",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "72f01515-2705-4344-ac01-a3e8ceadd8de"
+    },
+    {
+      "name": "Laura Budd",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "87705a07-011d-4a10-9b21-f51fdda6e130"
+    },
+    {
+      "name": "Deb Butler",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "33e1a3a2-4472-4bcf-869b-1c4e0838029f"
+    },
+    {
+      "name": "Becky Carney",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8f61386d-d6f8-4bee-92a9-ae0e21dc96b2"
+    },
+    {
+      "name": "Maria Cervania",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "67b46e18-cec0-4851-9535-92d1e8d58f65"
+    },
+    {
+      "name": "Tracy Clark",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c9f7f972-85f8-44f0-a2c6-0b05c8af9d96"
+    },
+    {
+      "name": "Sarah Crawford",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "933d399d-b0d2-42eb-94a2-d0a073ea179f"
+    },
+    {
+      "name": "Julia Greenfield",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "66a20edb-0795-46a5-ad96-d8ced5cf65ed"
+    },
+    {
+      "name": "Mary Harrison",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e1c90a85-67db-4a9a-baf0-135cb2aa9d89"
+    },
+    {
+      "name": "Zack Forde-Hawkins",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Beth Helfrich",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "cbbf5ae6-0793-46fb-ba4f-e6e3ffe90849"
+    },
+    {
+      "name": "Monika Johnson-Hostler",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "50460952-dd8a-4d81-aa0f-77986ded987e"
+    },
+    {
+      "name": "Nasif Majeed",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e25c3c66-7b9c-498b-8ff4-bfd5c0354863"
+    },
+    {
+      "name": "Garland Pierce",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f14b8140-1fea-4378-b218-47caeeb06968"
+    },
+    {
+      "name": "Rodney Pierce",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "14024874-9a06-40c7-9a3e-8a38901139ac"
+    },
+    {
+      "name": "Joe Pike",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6728cd29-6abe-448b-8772-ff04693883bb"
+    },
+    {
+      "name": "Robert Reives",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ab1cff7a-cfe8-411c-b832-0071fa9cf983"
+    },
+    {
+      "name": "Phil Rubin",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b4f9a7d0-1185-4496-bf36-c63fd880a974"
+    },
+    {
+      "name": "Julie von Haefen",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e4af46e2-165a-444a-a671-d7517c621632"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-11-05T23:47:38.356374Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-H-167-2025.amended.html",
+      "sha256": "74ebc6f57592a1e4ab27cda66aa2d61ddb269266ef0f552554aa419e0ceb9186"
+    }
+  },
+  "operative_text": "Sec. 1 (adding G.S. 14-269.9(b) and (c)): {+(b)+} {+Prohibition. – It is unlawful to leave a firearm in an unattended motor vehicle unless the vehicle is locked and the firearm is either (i) secured with a trigger lock or other safety device designed to prevent an unauthorized user from operating the firearm or (ii) in a locked container.+} {+(c)+} {+Penalty. – Any person who violates subsection (b) of this section is guilty of a Class 2 misdemeanor.+}"
+}

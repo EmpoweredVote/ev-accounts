@@ -268,6 +268,27 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "4c83296fd16f6a337544d0ec23db6f094583a61d02603e89a4d78a66fead4b11",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2013/H49",
+      "date": "2013-01-31",
+      "date_precision": "day",
+      "instrument_id": "NC-H-49-2013",
+      "act": "sponsor",
+      "note": "Filed as primary sponsor (with another member) of House Bill 49, 'Firearm in Locked Motor Vehicle/Parking Lot'. Per a 2013 trade-group item it would bar employers from stopping employees storing firearms or ammunition in locked vehicles on employer property; bill title is from the official page.",
+      "subjects": [
+        "carry or store a gun in a locked vehicle at work"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-06T00:02:13.035Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -296,6 +317,32 @@
       ],
       "found": 7,
       "at": "2026-10-22T23:44:35.772Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "pistol purchase permit repeal",
+        "general statement on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "ncleg.gov member page (confirms House District 15)",
+        "campaign site: none found",
+        "Ballotpedia: not reachable by fetch tool, not relied on",
+        "web searches on name plus gun words: no own words found",
+        "local news search: nothing on the subject",
+        "NRA-ILA 2013 item names him as sponsor of a 2013 bill; used only as a lead",
+        "ncleg.gov 2013 bill page for H49 (official sponsor record)"
+      ],
+      "found": 1,
+      "at": "2026-11-06T00:02:13.035Z",
       "by": "source-collector"
     }
   ]
