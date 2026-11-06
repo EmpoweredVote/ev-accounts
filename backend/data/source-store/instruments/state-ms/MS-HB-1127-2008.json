@@ -1,0 +1,163 @@
+{
+  "id": "MS-HB-1127-2008",
+  "scope": "state:ms",
+  "title": "HB 1127 (2008 Regular Session): Government-issued photo identification for which proof of citizenship is required; provide before voting in person or by absentee.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2008/pdf/history/HB/HB1127.xml",
+    "https://billstatus.ls.state.ms.us/documents/2008/pdf/HB/1100-1199/HB1127IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1(1)\n(quote) Each elector shall present current, valid government-issued photo identification for which proof of citizenship is required to an election manager, or the circuit clerk or deputy circuit clerk in the case of absentee voting, before he shall be allowed to vote.\n(b_no_id_remedy)\n(section) Sec. 1(2)\n(quote) If an elector is unable to produce the item of identification listed in subsection (1) of this section, he or she shall sign a statement under oath in a form approved by the State Board of Election Commissioners, swearing or affirming that he or she is the person identified on the pollbooks.\n(c_mail_ballot_id)\n(section) Sec. 4 (23-15-631)\n(quote) Before sealing the envelope, enclose a copy of a current, valid government-issued photo identification for which proof of citizenship is required, with the marked ballot.\n(section) Sec. 6(3)(b) (23-15-639)\n(quote) If after opening the envelope, no copy of a current, valid government-issued photo identification for which proof of citizenship was required is found, the commissioner or executive committee shall write across the face of the envelope \"REJECTED\" giving the reason therefor, and the registrar shall promptly notify the voter of is rejection.\n(section) Sec. 7 (23-15-717 or 23-15-719)\n(quote) After the marked ballot is deposited in the envelope, the elector shall enclose a copy of a current, valid government-issued photo identification for which proof of citizenship is required.\n(d_proof_of_citizenship)\n(section) Sec. 1(1)\n(quote) current, valid government-issued photo identification for which proof of citizenship is required\n(e_other_rule) not stated.\n(other) Sec. 2-3: 23-15-11 and 23-15-541 conformed\n(other) Sec. 6: 23-15-639 rejection of absentee ballot lacking ID copy\n(other) Sec. 8: absentee application procedure conformed\n(other) Sec. 9-10: preclearance, effective date",
+  "sponsors": [
+    {
+      "name": "Denny",
+      "role": "prime",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Akins",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Baker (74th)",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Baker (8th)",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Beckett",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Byrd",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Chism",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Ellington",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Fillingane",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Formby",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Frierson",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Gunn",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Howell",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Huddleston (15th)",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Jennings",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Martinson",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Mims",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Monsour",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Moore",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Nicholson",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Palazzo",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Rogers (61st)",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Snowden",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Staples",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Stevens",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Turner",
+      "role": "co",
+      "version": "HB1127IN"
+    },
+    {
+      "name": "Weathersby",
+      "role": "co",
+      "version": "HB1127IN"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

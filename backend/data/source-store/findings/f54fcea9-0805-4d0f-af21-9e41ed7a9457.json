@@ -30,7 +30,110 @@
           "sha256": "a1142904e692e81f08ce94bef1f5827e9d662ac1f81ce57f6330064169e08945"
         }
       }
+    },
+    {
+      "id": "ff08f7a0fdb5eaee3e5d1d2c42777bdeac65a7affc0cb9f7915c4db6ea53ed5f",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/senate/0860019.pdf",
+      "date": "2022-03-30",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Report of Conference Committee on H. B. No. 1510 was adopted: (0860019)",
+      "note": "Senate roll call as printed ('Barnett'), linked to Juan Barnett (district 34) via the official 2022 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dd2a12a6dee5821334b8172c5583de5ade5bdaf4f4ad0b5e1da44e4c195eeac3",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/senate/0580007.pdf",
+      "date": "2018-02-28",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-804-2018",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On H. B. No. 804. On motion of Senator Blackwell, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0580007)",
+      "note": "Senate roll call as printed ('Barnett'), linked to Juan Barnett (district 34) via the official 2018 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4cd68734c411fde05dc865eff22b5ec7355a7eca5840d62ffaae784f759ff30d",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/senate/0720054.pdf",
+      "date": "2024-03-13",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2576. On motion of Senator England, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0720054)",
+      "note": "Senate roll call as printed ('Barnett'), linked to Juan Barnett (district 34) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a028b8f2afe6c2f1d4227a3e8a492d2bda1790c4c4d4c75b9cf3a0db850d5f39",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/senate/0320004.pdf",
+      "date": "2018-02-02",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2766-2018",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2766. On motion of Senator Blackwell, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0320004)",
+      "note": "Senate roll call as printed ('Barnett'), linked to Juan Barnett (district 34) via the official 2018 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-05T23:52:51.757Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
 }

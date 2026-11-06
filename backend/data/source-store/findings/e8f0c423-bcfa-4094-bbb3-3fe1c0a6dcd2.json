@@ -1,0 +1,111 @@
+{
+  "politician_id": "e8f0c423-bcfa-4094-bbb3-3fe1c0a6dcd2",
+  "findings": [
+    {
+      "id": "73dd8b78d8a484f5f3443cc557365a17c06f17d3b175dc051cb6780fd38976de",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/75724/race/8342/election/1024",
+      "date": "2023",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification. Strongly Disagree",
+      "note": "On the iVoterGuide candidate questionnaire for the 2023 Senate District 36 race, the statement is shown with his recorded response 'Strongly Disagree'. Questionnaire is undated on the page; the profile covers the August 8, 2023 primary and November 7, 2023 general.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID required to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:48:06.195Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4cd68734c411fde05dc865eff22b5ec7355a7eca5840d62ffaae784f759ff30d",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/senate/0720054.pdf",
+      "date": "2024-03-13",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2576. On motion of Senator England, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0720054)",
+      "note": "Senate roll call as printed ('Rhodes'), linked to Brian Rhodes (district 36) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.760Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b0a384baf6fe58a9ea0e42529ac3f22a97f043100dd50e424c87ef0255125e0b",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/senate/0770004.pdf",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Senate concurred in the foregoing House Amendment to S. B. No. 2588 by the following vote: (0770004)",
+      "note": "Senate roll call as printed ('Rhodes'), linked to Brian Rhodes (district 36) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.760Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SHIELD Act voter-roll citizenship checks",
+        "election integrity",
+        "ballot measures"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member page https://billstatus.ls.state.ms.us/members/senate/rhodes.xml (confirms Brian Rhodes, Senate District 36, in office since 2024)",
+        "campaign site https://rhodesforsenate.us/?p=377: biography only, nothing on the subject",
+        "iVoterGuide 2023 candidate profile: one questionnaire item on photo ID at the polls (saved)",
+        "web searches (5): voter ID, questionnaire/voter guide, election integrity and SHIELD Act, local news, Senate floor: no other own words found",
+        "WLOX SHIELD Act senators story (2026-05-14), MPB SHIELD Act story: do not name him",
+        "blocked: https://ballotpedia.org (not fetched, refuses our fetches)",
+        "not fetched, refused by robots: mississippitoday.org"
+      ],
+      "found": 1,
+      "at": "2026-11-05T23:48:06.195Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-05T23:52:51.760Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

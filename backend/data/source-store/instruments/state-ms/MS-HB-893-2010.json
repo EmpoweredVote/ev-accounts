@@ -1,0 +1,33 @@
+{
+  "id": "MS-HB-893-2010",
+  "scope": "state:ms",
+  "title": "HB 893 (2010 Regular Session): Elections; require voter ID.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2010/pdf/history/HB/HB0893.xml",
+    "https://billstatus.ls.state.ms.us/documents/2010/pdf/HB/0800-0899/HB0893IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1(1)\n(quote) Each elector shall present valid identification to an election manager, or the circuit clerk or deputy circuit clerk in the case of absentee voting, before he shall be allowed to vote.\n(section) Sec. 1(1)\n(quote) Valid identification shall consist of any one (1) of the following: (a) A valid Mississippi driver's license;\n(b_no_id_remedy)\n(section) Sec. 1(2)\n(quote) If an elector is unable to produce any of the items of identification listed in subsection (1) of this section, he or she may sign a statement under oath in a form approved by the State Board of Election Commissioners, swearing or affirming that he or she is the person identified on the pollbooks.\n(section) Sec. 1(2)\n(quote) The person shall be allowed to vote without undue delay.\n(c_mail_ballot_id)\n(section) Sec. 1(1)\n(quote) Each elector shall present valid identification to an election manager, or the circuit clerk or deputy circuit clerk in the case of absentee voting, before he shall be allowed to vote.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 1(2)\n(quote) Any elector who falsely swears or affirms the statement prescribed in this subsection shall be guilty of a felony and, upon conviction, shall be fined not more than Five Thousand Dollars ($5,000.00) or imprisoned not less than one (1) year, but not more than five (5) years, or both.\n(other) Sec. 2: 23-15-11 amended (citizen of the United States, residency, qualified elector)\n(other) Sec. 3: 23-15-541 conformed\n(other) Preclearance and effective date",
+  "sponsors": [
+    {
+      "name": "Martinson",
+      "role": "prime",
+      "version": "HB0893IN"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

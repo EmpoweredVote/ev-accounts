@@ -1,0 +1,33 @@
+{
+  "id": "MS-HB-950-2022",
+  "scope": "state:ms",
+  "title": "HB 950 (2022 Regular Session): Statewide Elections Management System; compare to certain databases to ensure non-U.S. citizens are not registered to vote.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2022/pdf/history/HB/HB0950.xml",
+    "https://billstatus.ls.state.ms.us/documents/2022/pdf/HB/0900-0999/HB0950IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec. 1 (23-15-15(1))\n(quote) The Statewide Elections Management System shall be compared with the Department of Public Safety driver's license database to ensure non-United States citizens are not registered to vote in this state.\n(section) Sec. 1 (23-15-15(1))\n(quote) If a person who has submitted a voter registration application is flagged in the database as a potential noncitizen, the county registrar shall enter the person's information into the United States Citizenship and Immigration Service's Systematic Alien Verification for Entitlements (SAVE) or its successor database for further inquiry.\n(section) Sec. 1 (23-15-15(2))\n(quote) Any attempted voter who receives the notice shall, within thirty (30) days of the receipt of such notice, provide proof of citizenship to the registrar or his or her designee. For purposes of this subsection (2), proof of citizenship includes, but is not limited to: (a) The attempted voter's birth certificate or a legible photocopy of the birth certificate; (b) A United States passport, or a legible photocopy of the pertinent pages of the passport, identifying the voter and showing the passport number;\n(section) Sec. 1 (23-15-15(3))\n(quote) If the attempted voter does not provide proof of citizenship within thirty (30) days of the receipt of the notification, the registrar, or his or her designee, where the person registered to vote shall purge the voter from the Statewide Elections Management System.\n(section) Sec. 1 (23-15-15(6))\n(quote) On or before July 1, 2023, the Secretary of State shall compare the entire Statewide Elections Management System to the Department of Public Safety driver's license database and follow the procedures set forth in subsections (1) and (2) of this section as applicable.\n(e_other_rule)\n(section) Sec. 1 (23-15-15(4))\n(quote) In the event a person is unable to provide any of the documentation listed in subsection (2) to show proof of citizenship, the person may appeal to the election commissioners of the county in which he or she attempted to register and submit additional proof of citizenship in person or in writing.\n(section) Sec. 1 (23-15-15(5))\n(quote) All documentation provided to show proof of citizenship as well as the Department of Public Safety database or relevant federal and state agency and county records shall be confidential\n(other) Sec. 2 (23-15-165): Statewide Elections Management System reprinted to conform\n(other) Sec. 1 (23-15-15) replaces the existing naturalized-citizen document rule (the old text is struck and not visible)",
+  "sponsors": [
+    {
+      "name": "Eubanks",
+      "role": "prime",
+      "version": "HB0950IN"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

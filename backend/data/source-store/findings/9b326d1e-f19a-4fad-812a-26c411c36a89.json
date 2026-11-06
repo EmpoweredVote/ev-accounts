@@ -1,0 +1,88 @@
+{
+  "politician_id": "9b326d1e-f19a-4fad-812a-26c411c36a89",
+  "findings": [
+    {
+      "id": "4cd68734c411fde05dc865eff22b5ec7355a7eca5840d62ffaae784f759ff30d",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/senate/0720054.pdf",
+      "date": "2024-03-13",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2576. On motion of Senator England, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0720054)",
+      "note": "Senate roll call as printed ('Hickman'), linked to Rod Hickman (district 32) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.760Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0bdc8f5070b1cefc73be1a5428135fb80819d0b830c979903e9a69d3e5147f46",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/senate/0770004.pdf",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Senate concurred in the foregoing House Amendment to S. B. No. 2588 by the following vote: (0770004)",
+      "note": "Senate roll call as printed ('Hickman'), linked to Rod Hickman (district 32) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.760Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll citizenship checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract-otr ran with name)",
+        "legislature member page https://billstatus.ls.state.ms.us/members/senate/hickman.xml (names Rod Hickman, Senate District 32)",
+        "web searches (voter ID, photo ID, proof of citizenship/SAVE Act, SHIELD Act, local paper, questionnaire/voter guide): nothing on the subject by this person unless listed in findings",
+        "SHIELD Act coverage (WLOX, Mississippi Free Press) read: does not name this person",
+        "blocked: https://ballotpedia.org (not fetched, known refusal)",
+        "blocked: https://bluevoterguide.org and https://justfacts.votesmart.org (not fetched, known 403)"
+      ],
+      "found": 0,
+      "at": "2026-11-05T22:55:10.239Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-05T23:52:51.760Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "politician_id": "ce615285-f70a-4c2e-8f71-d14b02669d52",
+  "findings": [
+    {
+      "id": "873a68f08e2508e65c057bf6cebc61e307f51b63b42ecd32cfca35d48b3fa746",
+      "kind": "own-words",
+      "url": "https://www.mississippidemocrats.org/news/mississippi-democrats-condemn-passage-of-shield-act%3A-%E2%80%9Ca-poll-tax-by-another-name%E2%80%9D",
+      "date": "2026-03-24",
+      "date_precision": "day",
+      "passage": "More than 21.3 million Americans lack immediate access to documentary proof of citizenship. More than 140 million Americans do not have a passport. Elderly Americans are among the least likely to have one.",
+      "note": "Statement issued in his name as state party chairman on the day the Senate sent the SHIELD Act (citizenship checks of voters) to the Governor. He cites how many people lack documents proving citizenship. Date is from the Magnolia Tribune report that the release went out on that Tuesday.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SHIELD Act citizenship checks",
+        "documents needed to prove citizenship"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:10:27.719Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "478a642f4046e9c9d40bf0530c4bd1400135432ba736e179b05f0c2a375a95a9",
+      "kind": "own-words",
+      "url": "https://www.mississippidemocrats.org/news/mississippi-democrats-condemn-passage-of-shield-act%3A-%E2%80%9Ca-poll-tax-by-another-name%E2%80%9D",
+      "date": "2026-03-24",
+      "date_precision": "day",
+      "passage": "There is no voter fraud crisis in Mississippi. There is a participation crisis, and instead of addressing it, they have made it worse.",
+      "note": "Same statement. He says voter fraud is not a problem in the state and that the SHIELD Act worsens low participation.",
+      "subjects": [
+        "SHIELD Act citizenship checks",
+        "voter fraud claims",
+        "voter participation"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:10:27.719Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d4e868964ed4d56fc32ec792437d9901a88084d804cae2d0686301c5384c34af",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/house/0850033.pdf",
+      "date": "2022-03-29",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "yea",
+      "motion": "House: The conference report on H. B. No. 1510 was adopted by the following vote: (0850033)",
+      "note": "House roll call as printed ('Taylor'), linked to Cheikh Taylor (district 38) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.752Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4fbba305f72e29d24d1602007a4a0beb2ae18d76c403cda48443134f7aacc0ba",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2021/pdf/votes/house/0370056.pdf",
+      "date": "2021-02-10",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-586-2021",
+      "act": "nay",
+      "motion": "House: H. B. No. 586 passed by the following vote: (0370056)",
+      "note": "House roll call as printed ('Taylor'), linked to Cheikh Taylor (district 38) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.752Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7919841f482f7fbde91a529af7a24c5d037df8b0922771e24dad12af155e1c4f",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/house/0360024.pdf",
+      "date": "2018-02-06",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-804-2018",
+      "act": "yea",
+      "motion": "House: H. B. No. 804 passed by the following vote: (0360024)",
+      "note": "House roll call as printed ('Taylor'), linked to Cheikh Taylor (district 38) via the official 2018 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.752Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2147cca7436b02fc328055efc537138f61a5635591caea67c88f498332726704",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "nay",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Taylor'), linked to Cheikh Taylor (district 38) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.752Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "SHIELD Act (SB 2588) voter-roll citizenship checks",
+        "absentee ballot documents",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Mississippi House member page https://billstatus.ls.state.ms.us/members/house/taylor.xml (confirms House District 38, 2018-present)",
+        "the state party's own news page (statement issued in his name, saved)",
+        "Magnolia Tribune 2026-03-24 (confirms office, reports the release; not saved separately)",
+        "nothing on the subject: web searches on name with voter ID, SAVE Act, proof of citizenship, photo ID, absentee, Mississippi Free Press, Magnolia Tribune, WJTV",
+        "blocked: https://ballotpedia.org/Cheikh_Taylor (known refusal, not fetched)",
+        "not reviewed: https://bluevoterguide.org candidate page (skipped by rule)",
+        "not reviewed: personal campaign site, none found"
+      ],
+      "found": 2,
+      "at": "2026-11-05T23:10:27.719Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-05T23:52:51.752Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

@@ -30,7 +30,185 @@
           "sha256": "a1142904e692e81f08ce94bef1f5827e9d662ac1f81ce57f6330064169e08945"
         }
       }
+    },
+    {
+      "id": "d4e868964ed4d56fc32ec792437d9901a88084d804cae2d0686301c5384c34af",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/house/0850033.pdf",
+      "date": "2022-03-29",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "yea",
+      "motion": "House: The conference report on H. B. No. 1510 was adopted by the following vote: (0850033)",
+      "note": "House roll call as printed ('Hale'), linked to Jeff Hale (district 24) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.748Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "18ab19fb1c8826fa1e41c5bc9ab1f5bf43f1f9e80d277e3b9a3b707d9a6c7347",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2021/pdf/history/HB/HB0543.xml",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MS-HB-543-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, HB0543IN",
+      "note": "Named as co sponsor ('Hale') on the official bill text, summary or journal; linked to Jeff Hale via the official 2021 member roll of the House (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.748Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39b991844f0e395bc487c48e801820733d70f388586c168923fbb49ce0907e59",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2021/pdf/votes/house/0370056.pdf",
+      "date": "2021-02-10",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-586-2021",
+      "act": "yea",
+      "motion": "House: H. B. No. 586 passed by the following vote: (0370056)",
+      "note": "House roll call as printed ('Hale'), linked to Jeff Hale (district 24) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.748Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7919841f482f7fbde91a529af7a24c5d037df8b0922771e24dad12af155e1c4f",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/house/0360024.pdf",
+      "date": "2018-02-06",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-804-2018",
+      "act": "yea",
+      "motion": "House: H. B. No. 804 passed by the following vote: (0360024)",
+      "note": "House roll call as printed ('Hale'), linked to Jeff Hale (district 24) via the official 2018 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.748Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f83d0028419134d578f055f22fbb42fc2269d0d95536e5a2081a180daf0e758",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/house/0940041.pdf",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "House: S. B. No. 2576 passed by the following vote: (0940041)",
+      "note": "House roll call as printed ('Hale'), linked to Jeff Hale (district 24) via the official 2024 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.748Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b680fb8404ce02d97d84d7e0e33d2bd57ac1c2f65c056d5f4979c0eb31a6ce26",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Hale'), linked to Jeff Hale (district 24) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.748Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SAVE Act / SHIELD Act citizenship checks",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Mississippi legislature member page https://billstatus.ls.state.ms.us/members/house/hale.xml (confirms the person holds the seat)",
+        "blocked: https://ballotpedia.org (refused our fetches; not tried)",
+        "bluevoterguide.org and justfacts.votesmart.org skipped (known 403)",
+        "mississippitoday.org, clarionledger.com and other refused sites not fetched",
+        "Magnolia Tribune SHIELD Act article https://magnoliatribune.com/?p=142370 (names a House committee chair and Senate author, not this person)",
+        "MPB article on 2022 citizenship-check law https://www.mpbonline.org/blogs/news/new-law-could-require-some-mississippians-to-prove-citizenship-when-registering-to-vote (does not name this person)",
+        "Mississippi Free Press pages from search hits (do not name this person on the subject)",
+        "web searches (name + voter ID, photo ID, proof of citizenship, SAVE Act, questionnaire, election, local papers): no own words on the subject found",
+        "https://ivoterguide.com/candidate/44783/race/7034/election/1069 (2023 questionnaire: voter ID and immigration items marked Did not answer)",
+        "https://tpcref.org/election-2023-candidate-qa-hd024/ (Hale entry NO RESPONSE; education questionnaire, nothing on subject)",
+        "DeSoto County News 'From the Legislature' columns 2022-01-14 and 2022-02-26 (read in full: nothing on subject)",
+        "Magnolia Tribune author page for Hale (titles only touch the Nov 2026 midterms; op-ed 2025-05-21 is on energy, nothing on subject)"
+      ],
+      "found": 0,
+      "at": "2026-11-05T23:47:51.371Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 6,
+      "at": "2026-11-05T23:52:51.748Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
 }

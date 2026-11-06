@@ -1,0 +1,88 @@
+{
+  "politician_id": "f5ba161d-4c05-4c2f-8317-0f6b0daacabe",
+  "findings": [
+    {
+      "id": "8f83d0028419134d578f055f22fbb42fc2269d0d95536e5a2081a180daf0e758",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/house/0940041.pdf",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "House: S. B. No. 2576 passed by the following vote: (0940041)",
+      "note": "House roll call as printed ('Varner'), linked to Lance Varner (district 62) via the official 2024 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.759Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b680fb8404ce02d97d84d7e0e33d2bd57ac1c2f65c056d5f4979c0eb31a6ce26",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Varner'), linked to Lance Varner (district 62) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.759Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "voter-roll citizenship checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://billstatus.ls.state.ms.us/members/house/varner.xml (confirms House District 62 member Lance Varner)",
+        "https://ivoterguide.com/candidate/75588/race/8076/election/1024 (2023 questionnaire page; every voting and ID question marked unanswered; nothing on the subject)",
+        "no campaign or official issues site found by search (nothing on the subject)",
+        "web searches: name + voter ID/photo ID/proof of citizenship/election integrity, questionnaire/voter guide, SHIELD Act (no own words found)",
+        "blocked: https://ballotpedia.org (not fetched; refuses our fetches)",
+        "not fetched: refused news sites"
+      ],
+      "found": 0,
+      "at": "2026-11-05T23:47:17.167Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-05T23:52:51.759Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

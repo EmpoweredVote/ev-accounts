@@ -1,0 +1,256 @@
+{
+  "id": "MS-SB-2766-2018",
+  "scope": "state:ms",
+  "title": "SB 2766 (2018 Regular Session): Voting by affidavit; clarify procedures for providing photo identification in municipal elections.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2018/pdf/history/SB/SB2766.xml",
+    "https://billstatus.ls.state.ms.us/documents/2018/pdf/SB/2700-2799/SB2766PS.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2018/pdf/SB/2700-2799/SB2766IN.pdf"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy)\n(section) Section 1 (23-15-573(3)(d), amended)\n(quote) (d) An affidavit ballot of a voter who was unable to present an acceptable form of photo identification shall not be rejected for this reason if the voter does either of the following: (i) Returns to the circuit clerk's office or in municipal elections, to the municipal clerk's office within five (5) business days after the date of the election and presents an acceptable form of photo identification; (ii) Returns to the circuit clerk's office within five (5) business days after the date of the election to obtain the Mississippi Voter Identification Card, or in municipal elections presents a Mississippi Voter Identification Card or Temporary Mississippi Voter Identification Card to the municipal clerk's office within five (5) business days after the date of the election; or (iii) Returns to the circuit clerk's office or in municipal elections, to the municipal clerk's office within five (5) business days after the date of the election to execute a separate Affidavit of Religious Objection.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Only 23-15-573 is amended.",
+  "sponsors": [
+    {
+      "name": "Fillingane",
+      "role": "prime",
+      "version": "As Passed the Senate (SB2766PS; identical text to SB2766IN by comparison)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2018-02-02",
+      "body": "MS Senate",
+      "motion": "YEAS AND NAYS On S. B. No. 2766. On motion of Senator Blackwell, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0320004)",
+      "kind": "roll-call",
+      "yes": 40,
+      "no": 10,
+      "absent": 2,
+      "body_size": 52,
+      "note": "https://billstatus.ls.state.ms.us/2018/pdf/votes/senate/0320004.pdf",
+      "members": [
+        {
+          "name": "Barnett",
+          "vote": "yea"
+        },
+        {
+          "name": "Blackwell",
+          "vote": "yea"
+        },
+        {
+          "name": "Branning",
+          "vote": "yea"
+        },
+        {
+          "name": "Browning",
+          "vote": "yea"
+        },
+        {
+          "name": "Bryan",
+          "vote": "yea"
+        },
+        {
+          "name": "Burton",
+          "vote": "yea"
+        },
+        {
+          "name": "Carmichael",
+          "vote": "yea"
+        },
+        {
+          "name": "Carter",
+          "vote": "yea"
+        },
+        {
+          "name": "Caughman",
+          "vote": "yea"
+        },
+        {
+          "name": "Chassaniol",
+          "vote": "yea"
+        },
+        {
+          "name": "Clarke",
+          "vote": "yea"
+        },
+        {
+          "name": "DeBar",
+          "vote": "yea"
+        },
+        {
+          "name": "Dearing",
+          "vote": "yea"
+        },
+        {
+          "name": "Doty",
+          "vote": "yea"
+        },
+        {
+          "name": "Fillingane",
+          "vote": "yea"
+        },
+        {
+          "name": "Gollott",
+          "vote": "yea"
+        },
+        {
+          "name": "Harkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Hopson",
+          "vote": "yea"
+        },
+        {
+          "name": "Jackson G. (15th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Jackson R. (11th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Jackson S. (32nd)",
+          "vote": "yea"
+        },
+        {
+          "name": "Jolly",
+          "vote": "yea"
+        },
+        {
+          "name": "Jordan",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirby",
+          "vote": "yea"
+        },
+        {
+          "name": "Massey",
+          "vote": "yea"
+        },
+        {
+          "name": "McDaniel",
+          "vote": "yea"
+        },
+        {
+          "name": "McMahan",
+          "vote": "yea"
+        },
+        {
+          "name": "Michel",
+          "vote": "yea"
+        },
+        {
+          "name": "Moran",
+          "vote": "yea"
+        },
+        {
+          "name": "Parker",
+          "vote": "yea"
+        },
+        {
+          "name": "Parks",
+          "vote": "yea"
+        },
+        {
+          "name": "Polk",
+          "vote": "yea"
+        },
+        {
+          "name": "Seymour",
+          "vote": "yea"
+        },
+        {
+          "name": "Simmons W. (13th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Tollison",
+          "vote": "yea"
+        },
+        {
+          "name": "Watson",
+          "vote": "yea"
+        },
+        {
+          "name": "Whaley",
+          "vote": "yea"
+        },
+        {
+          "name": "Wiggins",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilemon",
+          "vote": "yea"
+        },
+        {
+          "name": "Younger",
+          "vote": "yea"
+        },
+        {
+          "name": "Blackmon",
+          "vote": "nay"
+        },
+        {
+          "name": "Blount",
+          "vote": "nay"
+        },
+        {
+          "name": "Butler",
+          "vote": "nay"
+        },
+        {
+          "name": "Dawkins",
+          "vote": "nay"
+        },
+        {
+          "name": "Frazier",
+          "vote": "nay"
+        },
+        {
+          "name": "Horhn",
+          "vote": "nay"
+        },
+        {
+          "name": "Norwood",
+          "vote": "nay"
+        },
+        {
+          "name": "Simmons D. T. (12th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Turner-Ford",
+          "vote": "nay"
+        },
+        {
+          "name": "Witherspoon",
+          "vote": "nay"
+        },
+        {
+          "name": "Hill",
+          "vote": "absent"
+        },
+        {
+          "name": "Hudson",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}
