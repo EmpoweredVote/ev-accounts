@@ -22,7 +22,13 @@ PAD = int(opt('--bill-pad', '0')); YS = int(opt('--year-shift', '0'))
 ST = opt('--state', required=True, usage=USAGE); HOSTS = opt('--host', required=True, usage=USAGE).split(',')
 TOPIC = opt('--topic', required=mode == 'pairs', usage=USAGE)
 SUF = {'Jr.', 'Sr.', 'II', 'III', 'IV', 'Jr', 'Sr'}
-last = lambda n: [x for x in n.replace(',', ' ').split() if x not in SUF][-1]
+# A degree set off by a comma ("Grant L. Campbell, MD") is never the surname: dropped as the verifier's
+# lastNameOf does (src/lib/researchVerifier.ts DEGREE), else the pair asks LegiScan for a member named "MD".
+DEGREE = re.compile(r'^(m\.?d|ph\.?d|d\.?d\.?s|d\.?m\.?d|d\.?o|d\.?v\.?m|r\.?n|j\.?d|ed\.?d|esq|c\.?p\.?a|m\.?p\.?h|m\.?b\.?a)\.?$', re.I)
+def _strip_degrees(n):
+    while ',' in n and DEGREE.match(n.rsplit(',', 1)[1].strip()): n = n.rsplit(',', 1)[0]
+    return n
+last = lambda n: [x for x in _strip_degrees(n).replace(',', ' ').split() if x not in SUF][-1]
 pol = json.load(open(f'{B}/politicians.json')); pol = pol if isinstance(pol, list) else pol['politicians']
 pid = {p['full_name']: p['politician_id'] for p in pol}
 VOTE = ('yea', 'nay', 'abstain'); AUTH = ('author', 'coauthor', 'sponsor', 'cosponsor', 'co-sponsor', 'chief patron', 'patron', 'copatron')
