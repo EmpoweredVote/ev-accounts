@@ -1,0 +1,19 @@
+{
+  "id": "OH-HB-129-2005",
+  "scope": "state:oh",
+  "title": "HB 129 (2005-2006 (126th General Assembly)): H. B. No. 129: Election Law--revise",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/126/hb129",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_126/legislation/hb129/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) 3505.181(A)\n(quote) If an individual declares that the individual is a registered voter in the jurisdiction in which the individual desires to vote and that the individual is eligible to vote in an election for federal office, but the name of the individual does not appear on the official list of eligible voters for the polling place or an election official asserts that the individual is not eligible to vote, the individual shall be permitted to cast a provisional ballot as follows:\n(other) 3501.x (3501.05, .19, .27, .30, .33, .35, .40): board of elections and Secretary of State administration duties (read from the title and section list only)\n(other) 3503.19, 3503.21, 3503.24: registration, change of address and cancellation procedures (title only)\n(other) 3505.16, 3505.18, 3505.21, 3505.25, 3505.28 and repeals of 3505.19, 3505.20, 3505.22: polling-place procedure; 3505.18 is reprinted with wording changes and no ID requirement\n(other) 3505.181: provisional ballot for a person who says he or she is a registered voter but is not on the list (federal elections)\n(other) 3506.13, 3506.20: voting-machine / database rules (title only)\n(other) 3509.x (3509.02-.08), 3509.20, 3511.12, 3511.20: absentee ballot rules; 3509.20 and 3511.20 allow a provisional ballot on election day to a person who did not receive the absentee ballot applied for, if the person signs an affidavit\n(other) 3515.x, 3517.x, 3523.05, 3599.x: recounts, campaign finance and election penalties (title only)\n(other) note: Only one version (introduced). No photo-ID or citizenship text. A word search for identif/citizen/photograph/driver/social security found only 'identification envelope' for absentee ballots and 'proper identification' in the old signature-mark sentence of 3505.18. Struck words are not marked in this PDF text; other-subject lines come from the title and section list, not a full read. SB 101 (OH-SB-101-2005) carries the same text; checked by comparing the two files line by line after dropping sponsor and header lines.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

@@ -1,0 +1,406 @@
+{
+  "politician_id": "77bfba70-b754-4ff4-8441-fc1070aa72d2",
+  "findings": [
+    {
+      "id": "f29001373fd0e70996cc1712468207a4fd936b72889a0e2a01dae4f95d17cf20",
+      "kind": "own-words",
+      "url": "https://www.ohiohouse.gov/members/ashley-bryant-bailey/news/rep-bryant-bailey-votes-no-as-ohio-republicans-send-voter-id-constitutional-amendment-to-the-ballot-145803",
+      "date": "2026-06-11",
+      "date_precision": "day",
+      "passage": "Ohio already has voter ID.",
+      "note": "Release in her name on her vote on SJR 10, which puts the photo ID rule in the state constitution: she notes a photo ID rule already exists.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:18:07.551Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7a1de7188c70a375bc6e75b94444250be77d4ebb281a79da0ce3d3d1f50c2e8e",
+      "kind": "own-words",
+      "url": "https://www.ohiohouse.gov/members/ashley-bryant-bailey/news/rep-bryant-bailey-votes-no-as-ohio-republicans-send-voter-id-constitutional-amendment-to-the-ballot-145803",
+      "date": "2026-06-11",
+      "date_precision": "day",
+      "passage": "This resolution is not about whether Ohioans should show identification to vote.",
+      "note": "Same release: she says the measure is not about whether voters show ID.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:18:07.551Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "715c29a22615ab101952b8000a36fd33c23c4ec64b92343231ade2ac296e26dd",
+      "kind": "own-words",
+      "url": "https://www.ohiohouse.gov/members/ashley-bryant-bailey/news/rep-bryant-bailey-votes-no-as-ohio-republicans-send-voter-id-constitutional-amendment-to-the-ballot-145803",
+      "date": "2026-06-11",
+      "date_precision": "day",
+      "passage": "That's why I offered an amendment to guarantee every Ohioan a free path to obtaining the identification required to vote.",
+      "note": "Same release: she describes her floor amendment for a free path to the ID.",
+      "subjects": [
+        "free state ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:18:07.551Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fda1ff37573fe58b612a6639351a9c63ae87edb7a398b43ec9dfeb186e8925cf",
+      "kind": "own-words",
+      "url": "https://www.ohiohouse.gov/members/ashley-bryant-bailey/news/rep-bryant-bailey-votes-no-as-ohio-republicans-send-voter-id-constitutional-amendment-to-the-ballot-145803",
+      "date": "2026-06-11",
+      "date_precision": "day",
+      "passage": "I will always support election security, but I will never support policies that risk leaving eligible voters behind.",
+      "note": "Same release: closing statement on election security and eligible voters.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:18:07.551Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a0cbe58492e917dfa0ad9db3df85804feb5eb610317d48eb7407bc4d0e37fd83",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/ashley-bryant-bailey/news/rep-bryant-bailey-denounces-the-passage-of-republican-backed-voter-suppression-bill-139706",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "passage": "This bill is a direct assault on the rights of Ohio voters, and it's nothing short of voter suppression at its worst.",
+      "note": "Release in her name on SB 293 (ends the four-day grace period for mailed ballots; voter-roll cancellation steps). Related to election integrity laws, not ID.",
+      "subjects": [
+        "election integrity laws in general",
+        "mail-ballot deadline"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:18:07.551Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e58c0c8949d84a1fcb236aae9b8099e9bece0ae67a63d45d1a3cdcd51ecfca92",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/ashley-bryant-bailey/news/rep-bryant-bailey-ohio-voters-dealt-a-lump-of-coal-as-dewine-signs-bill-restricting-vote-by-mail-140758",
+      "date": "2025-12-22",
+      "date_precision": "day",
+      "passage": "Ohio’s elections were already secure.",
+      "note": "Release in her name after the governor signed SB 293; related to election integrity laws.",
+      "subjects": [
+        "election integrity laws in general",
+        "mail-ballot deadline"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:18:07.551Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0902e7fa76fc3542f273b3e0dca071180960f9dfbff7bf0c1b0df8b3faad7385",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_bailey_ashley_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "730a6b22119baaeca4679f9ddecfeae85a89635c34995cd13d24f8df728ef61c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "nay",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_bailey_ashley_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5d326e89edf5091ea0ff50afe14346565ee0d633bc08602a7061dddab8b599d",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_bailey_ashley_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "34f772e1644431ea9f4fa6d9edda7ecbf731158c8726fd8c021ccc4bf8be088a",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/ashley-bryant-bailey/news/rep-bryant-bailey-slams-gops-end-of-year-push-to-strip-away-voting-rights-139545",
+      "date": "2025-11-17",
+      "date_precision": "day",
+      "passage": "The people of Ohio deserve free, fair, and accessible elections—period.",
+      "note": "Release in her name warning of end-of-year election bills (includes ending the mailed-ballot grace period).",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:40:10.941Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "098008cd7b46f9314a73389970257396d7daf102ee327083fed247f49b3ccf1b",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/ashley-bryant-bailey/news/rep-bryant-bailey-slams-gops-end-of-year-push-to-strip-away-voting-rights-139545",
+      "date": "2025-11-17",
+      "date_precision": "day",
+      "passage": "These proposals would silence voters, weaken our elections, and erode public trust.",
+      "note": "Same release: her view of the election bills.",
+      "subjects": [
+        "election integrity laws in general",
+        "mail-ballot deadline"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:40:10.941Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6ea2b37f16739861ac891266f87ae8d65266cc1cb3243e2cf6fca0fa55629f03",
+      "kind": "own-words",
+      "url": "https://www.ohiohouse.gov/assets/people/3052/newsletters/16971.pdf",
+      "date": "2026-06",
+      "date_precision": "month",
+      "passage": "This proposal does nothing to make elections more secure or make it easier for Ohioans to vote.",
+      "note": "June 2026 newsletter in her name, on H.J.R. 9 (photo ID in the constitution). Date is the PDF's creation date, 2026-06-05.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:40:10.941Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "07949d933b6f5d3c1bbbdd3ded7d0efb45006b6ac06b5ca2aafd7eeb109b4b08",
+      "kind": "own-words",
+      "url": "https://www.ohiohouse.gov/assets/people/3052/newsletters/16971.pdf",
+      "date": "2026-06",
+      "date_precision": "month",
+      "passage": "What it does do is lock in barriers without a single protection for voters, no safeguard for early voting, no help for older adults, rural Ohioans, or college students who struggle to access what they need to cast a ballot.",
+      "note": "Same newsletter, same bill.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:40:10.941Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9cf62f4f6692c88072679a2ab890d7d1aa868ba66210d4528f3a80342a1bd494",
+      "kind": "own-words",
+      "url": "https://www.ohiohouse.gov/assets/people/3052/newsletters/16971.pdf",
+      "date": "2026-06",
+      "date_precision": "month",
+      "passage": "However, the proposal contains no provisions to protect individuals from the costs associated with obtaining the documents required to vote.",
+      "note": "Same newsletter, Bills to Watch entry on H.J.R. 9: cost of documents.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:40:10.941Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0121e2796f1fd8682d050dc1c27116d83cae40b77967fa8e355da2c66712954b",
+      "kind": "own-words",
+      "url": "https://www.ohiohouse.gov/assets/people/3052/newsletters/16971.pdf",
+      "date": "2026-06",
+      "date_precision": "month",
+      "passage": "This bill would require anyone voting by mail to include a physical photocopy of their photo ID with their returned ballot.",
+      "note": "Same newsletter, Bills to Watch entry on HB 577: ID with a mail ballot.",
+      "subjects": [
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:40:10.941Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "489913d60e162c73d7ba4854f9d4bd2c0e828cefebb17f5f7e6cb03af87e833f",
+      "kind": "own-words",
+      "url": "https://www.ohiohouse.gov/assets/people/3052/newsletters/16971.pdf",
+      "date": "2026-06",
+      "date_precision": "month",
+      "passage": "Older Ohioans are the largest users of absentee voting by mail, and for many seniors without access to a printer, that requirement is the difference between voting and not voting.",
+      "note": "Same newsletter, HB 577 entry.",
+      "subjects": [
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:40:10.941Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "member page and news list ohiohouse.gov/members/ashley-bryant-bailey (confirmed; District 26, Cincinnati)",
+        "3 release bodies read via fetch tool",
+        "3 web searches run",
+        "committee testimony: not reviewed",
+        "campaign site / questionnaires: not reviewed (search budget used up)",
+        "blocked: web search (this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent in it); fewer than 5 searches completed for this person)",
+        "blocked: https://ballotpedia.org (refuses fetches, not tried)",
+        "blocked: https://bluevoterguide.org (refuses fetches, not tried)",
+        "blocked: curl on ohiohouse.gov release pages (403)"
+      ],
+      "found": 6,
+      "at": "2026-11-06T15:18:07.551Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 3,
+      "at": "2026-11-06T16:28:34.686Z",
+      "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "member news list ohiohouse.gov/members/ashley-bryant-bailey/news: read via search hits; two further election releases and the June 2026 newsletter opened (new vs round 1)",
+        "release 139545 (2025-11-17) body read via fetch tool (only sentences under the fetch tool's length limit kept)",
+        "newsletter PDF 16971 (June 2026) read with pdftotext; Dec 2025 newsletter 14991 mentions SB 293 but the fetch tool returned only fragments, not saved",
+        "4 web searches (name + voter ID, proof of citizenship, photo ID, SB 293, HB 577): no proof-of-citizenship statement in her name found",
+        "campaign site / questionnaires: none found",
+        "blocked: https://www.legislature.ohio.gov/legislation/136/<bill>/committee (HTTP 403 from curl for sjr10, hjr9, sb293, hb472, sb153, hb233; not retried)",
+        "blocked: https://thereportingproject.org/?p=27298 (HTTP 403)",
+        "blocked: https://ballotpedia.org and https://bluevoterguide.org (refuse fetches, not tried)",
+        "On the Record: round 1 found 0 meetings; not re-run"
+      ],
+      "found": 7,
+      "at": "2026-11-06T16:40:10.941Z",
+      "by": "research-oh-r2-2026-11-06"
+    }
+  ]
+}

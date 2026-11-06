@@ -1,0 +1,184 @@
+{
+  "id": "OH-SB-4-2025",
+  "scope": "state:oh",
+  "title": "SB 4 (2025-2026 (136th General Assembly)): S. B. No. 4: Create Election Integrity Unit; revise election law prosecution",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/sb4",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb4/02_PS/html/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb4/00_IN/html/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb4/01_RS/html/"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) 3501.055 (new): election integrity unit in the secretary of state's office; investigates election fraud and voter suppression allegations (not 3599.03 or 3599.031), takes public allegations, refers cases, reports yearly, may subpoena; prosecutors must act on referrals within one year or explain.\n(other) 3501.05: amended to match (the introduced version also changed attorney general prosecution authority in section 109.95; later versions drop that).\n(other) version: 00_IN, 01_RS, 02_PS: no ID or citizenship text in any version. 00_IN also amends attorney general prosecutorial authority (109.95); 01_RS and 02_PS drop it and keep the election integrity unit.\n(other) note: Election integrity unit bill. The only mentions of voter identification or citizenship are existing duties in R.C. 3501.05 reprinted unchanged (voter education on ID; Uniformed and Overseas Citizens Absentee Voting Act). Passed the Senate only; the House referred it to committee.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Theresa Gavarone",
+      "role": "prime",
+      "version": "As Passed by the Senate (02_PS)"
+    },
+    {
+      "name": "Jerry C. Cirino",
+      "role": "co",
+      "version": "As Passed by the Senate (02_PS)"
+    },
+    {
+      "name": "Michele Reynolds",
+      "role": "co",
+      "version": "As Passed by the Senate (02_PS)"
+    },
+    {
+      "name": "Jane M. Timken",
+      "role": "co",
+      "version": "As Passed by the Senate (02_PS)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2025-06-18",
+      "body": "OH Senate",
+      "motion": "Passed [version voted: 01_RS]",
+      "kind": "roll-call",
+      "yes": 24,
+      "no": 8,
+      "absent": 0,
+      "body_size": 32,
+      "note": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb4/actions/",
+      "members": [
+        {
+          "name": "Steve Wilson",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob McColley",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen A. Huffman",
+          "vote": "yea"
+        },
+        {
+          "name": "Nathan H. Manning",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrew O. Brenner",
+          "vote": "yea"
+        },
+        {
+          "name": "Kristina D. Roegner",
+          "vote": "yea"
+        },
+        {
+          "name": "Theresa Gavarone",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Schaffer",
+          "vote": "yea"
+        },
+        {
+          "name": "Terry Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Louis W. Blessing, III",
+          "vote": "yea"
+        },
+        {
+          "name": "George F. Lang",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry C. Cirino",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Romanchuk",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Reineke",
+          "vote": "yea"
+        },
+        {
+          "name": "Sandra O'Brien",
+          "vote": "yea"
+        },
+        {
+          "name": "Al Landis",
+          "vote": "yea"
+        },
+        {
+          "name": "Shane Wilkin",
+          "vote": "yea"
+        },
+        {
+          "name": "Michele Reynolds",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian M. Chavez",
+          "vote": "yea"
+        },
+        {
+          "name": "Al Cutrona",
+          "vote": "yea"
+        },
+        {
+          "name": "Kyle Koehler",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Manchester",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas F. Patton",
+          "vote": "yea"
+        },
+        {
+          "name": "Jane M. Timken",
+          "vote": "yea"
+        },
+        {
+          "name": "Hearcel F. Craig",
+          "vote": "nay"
+        },
+        {
+          "name": "Nickie J. Antonio",
+          "vote": "nay"
+        },
+        {
+          "name": "Paula Hicks-Hudson",
+          "vote": "nay"
+        },
+        {
+          "name": "William P. DeMora",
+          "vote": "nay"
+        },
+        {
+          "name": "Catherine D. Ingram",
+          "vote": "nay"
+        },
+        {
+          "name": "Willis E. Blackshear, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Beth Liston",
+          "vote": "nay"
+        },
+        {
+          "name": "Casey Weinstein",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

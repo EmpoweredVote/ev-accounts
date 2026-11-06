@@ -1,0 +1,184 @@
+{
+  "politician_id": "b424ad5b-4b36-4f9a-b884-a00c355dd88c",
+  "findings": [
+    {
+      "id": "5737c03423eeabd5670fb0a61adc1fcd89774928e3a5d6128441f4d9e6338798",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hcr18/actions/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 73-20) on H. C. R. No. 18, from the Ohio Legislature's own actions record, which lists each member by id (rep_somani_anita_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.683Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0902e7fa76fc3542f273b3e0dca071180960f9dfbff7bf0c1b0df8b3faad7385",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_somani_anita_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.683Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5d326e89edf5091ea0ff50afe14346565ee0d633bc08602a7061dddab8b599d",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_somani_anita_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.683Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6ee61f28f90bdfb56f66ab6bd326d31468c49257b86b4e23ed3657f36b37a38c",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/anita-somani/news/rep-somani-ohio-republicans-place-new-burdens-on-voters-by-adding-unnecessary-hurdles-to-the-voting-process-139709",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "passage": "As elected officials, we should be making it easier for people to vote,” said Rep. Somani.",
+      "note": "Release on her opposition to S.B. 293 (ends the mailed-ballot grace period). Related election-law item, not an ID item.",
+      "subjects": [
+        "mail-ballot receipt deadline",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:40:47.241Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b7452fe6641a44b0ad4b194d0fcd5c3418266ee418b05d54ad541540da6d6b73",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/anita-somani/news/rep-somani-ohio-republicans-place-new-burdens-on-voters-by-adding-unnecessary-hurdles-to-the-voting-process-139709",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "passage": "It also creates vague and problematic procedures that could cancel registrations when other agencies' databases reflect different information or records, whether or not those records are factually correct.",
+      "note": "Same release, on the voter-roll matching part of S.B. 293.",
+      "subjects": [
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:40:47.241Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "noncitizen voting",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "legislature.ohio.gov committee pages for HJR 9, SJR 10, HB 54 (136th) and HB 458 (134th) read by curl: no testimony by this person",
+        "blocked: web search (limit of 200 WebSearch calls per turn reached, shared by all agents; this person's web searches were NOT run)",
+        "blocked: Ballotpedia (listed as refused, not fetched)",
+        "blocked: https://justfacts.votesmart.org (listed as refused, not fetched)",
+        "official page https://ohiohouse.gov/members/anita-somani: confirms Representative, District 8, Dublin; recent releases (2026) nothing on the subject",
+        "official news list https://ohiohouse.gov/members/anita-somani/news: returned no records",
+        "not reviewed: campaign site, older releases"
+      ],
+      "found": 0,
+      "at": "2026-11-06T15:18:28.544Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 3,
+      "at": "2026-11-06T16:28:34.683Z",
+      "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "SJR 10 / HJR 9 photo ID amendment",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "noncitizen voting",
+        "mail-ballot receipt deadline (SB 293)",
+        "voter-roll matching"
+      ],
+      "places": [
+        "official page https://ohiohouse.gov/members/anita-somani/news pages 1 to 3 read (about 28 items from Mar 2025 to Oct 2026); opened the item on voting: Nov 19 2025 SB 293 release",
+        "https://www.ohiohouse.gov/legislation/136/sjr10: lists no cosponsorship by her",
+        "no release of hers on HJR 9 / SJR 10 or HB 472 found in the news list pages read; pages 4 to 9 of the list not read",
+        "web searches (3): name + voter ID; name + HJR 9; name + candidate questionnaire. A search result says she did not complete the 2024 Candidate Connection survey and a 2024 voter-guide page had no voting section (leads only)",
+        "nothing on the subject: other releases (immigration bills HB 1 / SB 88 are not about voting)",
+        "not reviewed: campaign site; newsletter PDFs at ohiohouse.gov/assets/people/2978/newsletters",
+        "blocked: https://ballotpedia.org (refuses fetches, not tried)",
+        "blocked: https://bluevoterguide.org (refuses fetches, not tried)",
+        "blocked: https://justfacts.votesmart.org (refuses fetches, not tried)",
+        "blocked: https://www.ohiosos.gov (not tried)",
+        "blocked: curl on ohiosenate.gov and ohiohouse.gov news pages answered 403; read with the fetch tool instead (the fetch tool limits quoted text to 125-character segments, so only whole sentences returned verbatim are saved)"
+      ],
+      "found": 2,
+      "at": "2026-11-06T16:40:47.241Z",
+      "by": "research-oh-r2-2026-11-06"
+    }
+  ]
+}

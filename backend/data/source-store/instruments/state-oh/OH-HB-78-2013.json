@@ -1,0 +1,19 @@
+{
+  "id": "OH-HB-78-2013",
+  "scope": "state:oh",
+  "title": "HB 78 (2013-2014 (130th General Assembly)): H. B. No. 78: Online voter registration/statewide voter registration database-information sharing",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/130/hb78",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/hb78/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) 3503.20(B)(3)\n(quote) (3) The applicant's attestation to the truth and accuracy of the information submitted in the online application under penalty of election falsification using the applicant's Ohio driver's license number or the number of the applicant's Ohio identification card as proof of the applicant's identity.\n(section) 3503.20(A)\n(quote) (A) As used in this section, \"applicant\" means an individual who is qualified to register to vote under this chapter and who possesses a current and valid Ohio driver's license or identification card issued under Chapter 4507. of the Revised Code.\n(section) 3503.20(D)(2)\n(quote) The board of elections shall send a notice to the applicant that the application cannot be processed because the bureau of motor vehicles cannot confirm that the applicant possesses a current and valid Ohio driver's license or identification card.\n(other) 3503.20 (new): Secretary of State must create an online voter registration system; the bureau of motor vehicles checks the applicant against its records; the BMV electronic signature is used as the voter's signature\n(other) 3503.14, 3503.15: registration form and statewide database; data-sharing agreements with other states to keep the database accurate (title)\n(other) note: Only one version (introduced). No in-person or mail-ballot ID text. The ID-related rule is for online registration: the applicant must hold an Ohio driver's license or state ID card, confirmed by the bureau of motor vehicles; no match means the board sends a notice that the application cannot be processed. The division letter (D)(2) for the last quote is read from the text position and may differ. 3503.14 reprints the existing registration-form ID options.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

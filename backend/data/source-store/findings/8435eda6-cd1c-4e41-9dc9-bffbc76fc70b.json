@@ -1,0 +1,140 @@
+{
+  "politician_id": "8435eda6-cd1c-4e41-9dc9-bffbc76fc70b",
+  "findings": [
+    {
+      "id": "0902e7fa76fc3542f273b3e0dca071180960f9dfbff7bf0c1b0df8b3faad7385",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_rader_tristan_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.685Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5d326e89edf5091ea0ff50afe14346565ee0d633bc08602a7061dddab8b599d",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_rader_tristan_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.685Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b582792f95f1be45c3fe44e8a89465b926814a97eefae81977a81c2a58439fc3",
+      "kind": "own-words",
+      "url": "https://www.ohiohouse.gov/members/tristan-rader/news/rep-rader-condemns-ohio-republicans-for-adding-unnecessary-hurdles-to-the-voting-process-139818",
+      "date": "2025-11-21",
+      "date_precision": "day",
+      "passage": "Ohioans should not have their vote go uncounted because of factors beyond their control.",
+      "note": "Release in his name on SB 293 (ends the grace period for mailed absentee ballots). Passage returned by the fetch tool as a quoted sentence from the release; curl was refused so not byte-checked. Same release also quotes: 'It adds unnecessary hurdles to voting and especially absentee ballots,' (fragment, not saved).",
+      "subjects": [
+        "mail-ballot receipt deadline (SB 293)",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:42:06.717Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment (SJR 10 / HJR 9)",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot receipt deadline (SB 293)",
+        "voter registration"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "member page https://ohiohouse.gov/members/tristan-rader: confirms House District 13; nothing on the subject",
+        "member news list pages 1 and 2 (Mar-Oct 2026, incl. the June 2026 SJR 10 vote window): nothing on the subject except a resolution about a 16-year-old voting age by other members, not his own words",
+        "2 web searches (voter ID; proof of citizenship/SAVE Act/HB 458): nothing naming him on the subject",
+        "not reviewed: campaign site (not found)",
+        "blocked: Ballotpedia (not fetched, listed as refusing)",
+        "blocked: bluevoterguide.org",
+        "blocked: justfacts.votesmart.org",
+        "blocked: https://www.legislature.ohio.gov/legislation/134/hb458/committee (page is a script shell, no testimony list returned by curl)",
+        "blocked: web search (the search tool returned: web search budget is used up, limit 200 WebSearch calls per turn, shared by every agent in it) after the searches already run"
+      ],
+      "found": 0,
+      "at": "2026-11-06T15:19:20.732Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 2,
+      "at": "2026-11-06T16:28:34.685Z",
+      "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment (SJR 10)",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot receipt deadline (SB 293)",
+        "voter registration"
+      ],
+      "places": [
+        "6 web searches (name + voter ID/Issue 3; name + SB 458/SAVE Act/citizenship; name + 'Rader said'; questionnaire/voter guide; floor speech SJR 10/HJR 9/HB 472; SB 293 release): only the SB 293 release named him on the subject",
+        "member page https://ohiohouse.gov/members/tristan-rader (links to newsletters, in-the-news, social media; no campaign site listed)",
+        "member news list page 1 (read; the fetch tool ignores ?page=, so older pages not reachable this way)",
+        "in-the-news list page 1 (Sep-Oct 2026): nothing on the subject",
+        "newsletters list (8 issues Apr 2025-Aug 2026): blocked: all PDFs answered 403 to curl, not retried",
+        "iVoterGuide 2024 questionnaire https://ivoterguide.com/candidate/81497/race/17957/election/1201: both voting questions unanswered",
+        "SB 293 release on ohiohouse.gov (read by fetch tool; curl 403)",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (listed as refusing, not fetched)"
+      ],
+      "found": 1,
+      "at": "2026-11-06T16:42:06.717Z",
+      "by": "research-oh-r2-2026-11-06"
+    }
+  ]
+}

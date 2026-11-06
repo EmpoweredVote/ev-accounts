@@ -1,0 +1,199 @@
+{
+  "politician_id": "3bcde814-f8ca-4ade-89d4-f661aa48b3b6",
+  "findings": [
+    {
+      "id": "4c6c80a887e4056c7bcda39c27d59678094403bc2e5a62dd0d369adb139d6a8a",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/dontavius-l-jarrells/news/rep-jarrells-ohio-legislative-black-caucus-hold-juneteenth-press-conference-on-the-next-chapter-of-freedom-146138",
+      "date": "2026-06-17",
+      "date_precision": "day",
+      "passage": "The speed at which SJR 10 advanced while legislation aimed at expanding dignity and justice remains stalled is troubling.",
+      "note": "Quoted statement in a Black caucus press release. In the same statement he describes SJR 10 as the measure that would require voters to provide photo identification while voting in person and will appear on the November ballot. He calls the speed at which it advanced troubling next to a stalled bill on a different subject.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment SJR 10"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:20.298Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "96954c03b5fae727e4036f44dcdce0ab1068780c91fb19e508c2579147aebebe",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/dontavius-l-jarrells/news/rep-jarrells-democrats-stand-with-ohioans-oppose-anti-voter-resolution-on-house-floor-106283",
+      "date": "2021-05-06",
+      "date_precision": "day",
+      "passage": "Any law that makes it harder for eligible citizens to vote is wrong.",
+      "note": "Statement in a House news release on HCR 5, a resolution urging Congress not to pass HR 1 (For the People Act). General statement about laws that make voting harder; no ID or citizenship rule named.",
+      "subjects": [
+        "voting restrictions in general",
+        "HCR 5 / HR 1"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:20.298Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5697afd32f03dc086b5345a0a6cd9ad151af0d90b6a4dc6c539a64510187c2b",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/actions/",
+      "date": "2022-12-14",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-458-2022",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 55-34) on H. B. No. 458, from the Ohio Legislature's own actions record, which lists each member by id (rep_jarrells_dontavius_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5737c03423eeabd5670fb0a61adc1fcd89774928e3a5d6128441f4d9e6338798",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hcr18/actions/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 73-20) on H. C. R. No. 18, from the Ohio Legislature's own actions record, which lists each member by id (rep_jarrells_dontavius_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0902e7fa76fc3542f273b3e0dca071180960f9dfbff7bf0c1b0df8b3faad7385",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_jarrells_dontavius_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5d326e89edf5091ea0ff50afe14346565ee0d633bc08602a7061dddab8b599d",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_jarrells_dontavius_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ff8784f8d7753a83d77aa157e84fbc97c57afd9fe959bb72c6096c7efb9ace03",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/134/hb296",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-296-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. B. No. 296 (As Introduced) on the Ohio Legislature's own record (rep_jarrells_dontavius_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "noncitizen voting",
+        "election integrity",
+        "voting restrictions"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official House member page https://ohiohouse.gov/members/dontavius-l-jarrells (confirms Columbus, District 1; four listed news items, none on voting)",
+        "member news items on HCR 5, the Juneteenth press conference, and the special-session HB 1 and HB 2 release",
+        "BallotReady profile: nothing on the subject",
+        "web searches: voter ID/photo ID/proof of citizenship; voting rights/HB 458/HB 54/noncitizen; SJR 10/Issue 3/HB 458; questionnaire/voter guide",
+        "campaign site: not found by search",
+        "blocked (not tried per instructions): Ballotpedia, bluevoterguide.org, justfacts.votesmart.org",
+        "note: a plain curl of two member news pages returned empty, so passages were taken from the fetch tool's word-for-word return"
+      ],
+      "found": 2,
+      "at": "2026-11-06T15:11:20.298Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 5,
+      "at": "2026-11-06T16:28:34.678Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}

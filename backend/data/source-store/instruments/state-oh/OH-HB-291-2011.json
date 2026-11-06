@@ -1,0 +1,19 @@
+{
+  "id": "OH-HB-291-2011",
+  "scope": "state:oh",
+  "title": "HB 291 (2011-2012 (129th General Assembly)): H. B. No. 291: Elections-restore local control/increase voter participation",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/129/hb291",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_129/legislation/hb291/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) 3509.03(E)\n(quote) (E) One of the following: (1) The elector's driver's license number; (2) The last four digits of the elector's social security number; (3) A copy of the elector's current and valid photo identification, a copy of a military identification, or a copy of a current utility bill, bank statement, government check, paycheck, or other government document, other than a notice of an election mailed by a board of elections under section 3501.19 of the Revised Code or a notice of voter registration mailed by a board of elections under section 3503.19 of the Revised Code, that shows the name and address of the elector.\n(section) 3509.031(A)(5)\n(quote) (5) One of the following: (a) The elector's driver's license number; (b) The last four digits of the elector's social security number; (c) A copy of the elector's current and valid photo identification, a copy of a military identification, or a copy of a current utility bill\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) 3509.03(A): an elector may request absentee ballots by electronic mail or through the internet, if the board or Secretary of State offers internet delivery\n(other) 3509.03 and 3509.031(D): a board may mail unsolicited absentee ballot applications to any registered voter; General Assembly must fund and the Secretary of State must reimburse boards in even-numbered-year general elections\n(other) 3509.031: same changes for applications by members of the organized militia on active duty and their relatives\n(other) note: Only one version (introduced). The ID list in 3509.03(E) and 3509.031 is reprinted existing law while the sections are amended for e-mail/internet requests and unsolicited applications. Struck words are not marked; the ID text appears unchanged.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

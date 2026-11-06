@@ -1,0 +1,506 @@
+{
+  "politician_id": "79276956-dfa1-4bca-9820-ab7c78dd57c8",
+  "findings": [
+    {
+      "id": "1b59b0b9747d45f412fa4c53b4c2467d19edc85cd3c4a5f684a41c544641af7f",
+      "kind": "own-words",
+      "url": "https://cwcolumbus.com/news/local/secretary-of-state-frank-larose-shares-important-tips-ohioans-should-know-before-voting",
+      "date": "2022-11-06",
+      "date_precision": "day",
+      "passage": "\"You want to bring your state ID or driver's license when you come to vote. That's the easiest thing to do,\" LaRose said.",
+      "note": "Before the 2022 general election, under the rules then in force, he tells voters to bring a state ID or driver's license. The same WSYX story adds that a utility bill or government document also works (reporter's words).",
+      "subjects": [
+        "voter ID at the polls",
+        "non-photo documents (before 2023 law)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:13:20.100Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9b3db2f207df7133797b8f5b15b0f3fcf1848253ebfa92fac4ea531eea66adec",
+      "kind": "own-words",
+      "url": "https://cwcolumbus.com/news/local/ohio-secretary-of-state-frank-larose-issues-instructions-voting-id-changes-may-primary-deadlines",
+      "date": "2023-02-07",
+      "date_precision": "day",
+      "passage": "“Having two sets of rules and requirements for the same election would result in voter confusion, so I’m directing the county boards of elections to begin implementing these reforms before early voting begins,” said Ohio Secretary of State Frank LaRose. “It’s the will of the General Assembly that our elections be administered under these requirements, and it’s my job to follow their direction on how we conduct the time, place and manner of Ohio’s elections.”",
+      "note": "Quoted by WSYX (CW Columbus). He orders county boards to start applying the new photo ID law (HB 458) before early voting starts for the May 2023 primary, and says he is following the legislature's direction.",
+      "subjects": [
+        "voter ID at the polls",
+        "implementing HB 458 photo ID law"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:13:20.100Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0446a2700c758638eacd55018bb3e71e97cc0d02727e710ee01cd0b3344806e8",
+      "kind": "own-words",
+      "url": "https://wysu.org/ohio-news/2023-04-03/monday-is-final-day-to-register-before-ohios-may-primary",
+      "date": "2023-04-03",
+      "date_precision": "day",
+      "passage": "“For most Ohio voters, nothing's changed because let's say in a normal election, 98% of voters already bring a state ID or driver's license. That's been the case for decades now,”",
+      "note": "Quoted by the Statehouse News Bureau (WYSU) as the photo ID requirement takes effect; the story says he supported HB 458. He says most voters already carry a state ID or driver's license.",
+      "subjects": [
+        "voter ID at the polls",
+        "share of voters already showing ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:13:20.100Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5e30915032dcc083ec0176eb9fdd41807c83cdd80e94a84fa3e7495fb49ca7e",
+      "kind": "own-words",
+      "url": "https://wysu.org/ohio-news/2023-07-12/after-rejecting-absentee-voter-applications-under-new-law-larose-now-says-some-old-forms-are-ok",
+      "date": "2023-07-12",
+      "date_precision": "day",
+      "passage": "\"We've instructed that board of elections to contact — personally contact — each one of those voters so that they could fill out the correct form, mail them the correct form, all that kind of thing,\"",
+      "note": "Quoted by the Statehouse News Bureau. About 30 absentee applications on an old form were rejected under HB 458; he says the board will contact those voters and that the form must be the one prescribed by his office.",
+      "subjects": [
+        "absentee ballot request form",
+        "mail-ballot rules under HB 458"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:13:20.100Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2811db7b470c30728c18ff59af26703e082758f497579d1f789206cab90f2c4e",
+      "kind": "own-words",
+      "url": "https://nbc24.com/news/nation-world/new-voting-rules-in-ohio-ahead-of-november-elections-frank-larose-state-id-military-id-drivers-license",
+      "date": "2023-10-02",
+      "date_precision": "day",
+      "passage": "\"Ohioans tend to bring an ID when they come and vote. But if you've used that alternative in the past, bringing maybe a utility bill or a paystub you can't do that anymore. It got to be a government issued photo ID,” Ohio Secretary of State of Ohio Frank LaRose said.",
+      "note": "Quoted by WSYX (NBC24). He explains that utility bills and pay stubs no longer count at the polls and that a government-issued photo ID is required.",
+      "subjects": [
+        "voter ID at the polls",
+        "non-photo documents no longer accepted"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:13:20.100Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a6837844dd3460dd6fc2d99a08eb266662a1329822bd8a5d89bb9e0993f61a64",
+      "kind": "own-words",
+      "url": "https://nbc24.com/news/nation-world/new-voting-rules-in-ohio-ahead-of-november-elections-frank-larose-state-id-military-id-drivers-license",
+      "date": "2023-10-02",
+      "date_precision": "day",
+      "passage": "\"One of the things the state legislature did was when they passed this bill they created free IDs for anyone who wants one, so there's no excuse not to get one,” LaRose said.",
+      "note": "Quoted by WSYX (NBC24). He points to the free state ID created by the law for voters who lack one.",
+      "subjects": [
+        "free state ID for voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:13:20.100Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c6880d94ec0f23627c7bf790c0a50f882958c95b662a7048a641469dadf7662d",
+      "kind": "own-words",
+      "url": "https://woub.org/?p=333334",
+      "date": "2024-10-08",
+      "date_precision": "day",
+      "passage": "“98% of voters prior to that law were already using a state ID or a driver’s license and that means that there was a strong 2% or so who was using what we call the alternative forms back then – a pay stub, a government document, a utility bill – that kind of thing,” LaRose said.",
+      "note": "Quoted by the Statehouse News Bureau (WOUB), explaining how few voters relied on non-photo documents before HB 458.",
+      "subjects": [
+        "voter ID at the polls",
+        "share of voters already showing ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:13:20.100Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4be2fcc8450d4cce373f405abc1c4d376282788b66fb6de398cd5d56685fea46",
+      "kind": "own-words",
+      "url": "https://highlandcountypress.com/headlines/larose-issues-statement-following-passage-save-act",
+      "date": "2024-07-11",
+      "date_precision": "day",
+      "passage": "“Americans deserve to know their elections are secure and the results accurately reflect the will of the people. In Ohio, we take our responsibility for maintaining accurate voter rolls seriously – but we need additional federal data to verify only citizens are registered to vote. The SAVE Act would provide states with that data, and I’m grateful to Congressional leaders for making it a priority.”",
+      "note": "Press release statement in his name (reprinted by the Highland County Press) after the U.S. House passed the SAVE Act. He ties it to federal data for checking citizenship of registrants.",
+      "subjects": [
+        "SAVE Act",
+        "citizenship checks of voter rolls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:13:20.100Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f52093da33e927c47f10f486aba9474e8979c17685aa58e37ea5dd38d51f61e8",
+      "kind": "own-words",
+      "url": "https://highlandcountypress.com/headlines/larose-calls-legislative-authority-require-proof-citizenship-voter-registration",
+      "date": "2024-08-30",
+      "date_precision": "day",
+      "passage": "\"American elections are only for American citizens. This is common sense and it's also the law. Despite roadblocks and lack of support from the federal government, Ohio has led the way in removing noncitizens from the voter rolls and referring those who violate the law to prosecutors,\" said Ohio Secretary of State Frank LaRose. \"Following a recent ruling by the US Supreme Court, we now have the opportunity to require front-end citizenship verification prior to a registration being processed. This would be a great step forward for future elections, and I'm asking the Ohio General Assembly to pass legislation further protecting the integrity of Ohio's elections.\"",
+      "note": "Press release in his name (reprinted by the Highland County Press). He asks the legislature to let his office require proof of citizenship on state voter registration forms.",
+      "subjects": [
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "voter roll removals"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:13:20.100Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dc7626a11b4b1e1df10406a8755114e71ccd8fac9cb04c92da638662fce3debb",
+      "kind": "own-words",
+      "url": "https://highlandcountypress.com/headlines/larose-urges-congress-support-ongoing-citizenship-audits-state-voter-rolls",
+      "date": "2024-09-12",
+      "date_precision": "day",
+      "passage": "“I’m taking every step currently possible to ensure that Ohio’s voter rolls remain clean, but we’ve done this with little to no help from the federal government,” Secretary LaRose told the committee. “Unfortunately, the Department of Homeland Security has been unresponsive to my office’s demand for access to federal citizenship verification records. This is exactly why your leadership to pass the federal SAVE Act in the House earlier this summer is a critical step.”",
+      "note": "From a press release in his name about his testimony to the U.S. House Committee on Administration. He urges the SAVE Act and federal citizenship records access.",
+      "subjects": [
+        "SAVE Act",
+        "citizenship checks of voter rolls",
+        "noncitizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:13:20.100Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3fb9dd8ebeced263a715610a2120b56aee570030e3b50cc7d41e7316d9f324d4",
+      "kind": "own-words",
+      "url": "https://highlandcountypress.com/headlines/larose-urges-congress-support-ongoing-citizenship-audits-state-voter-rolls",
+      "date": "2024-09-12",
+      "date_precision": "day",
+      "passage": "“It’s essential that the Biden-Harris administration grant us access to all federal database records necessary for these investigations, which they have yet to do,” LaRose testified. “Every moment of every day is critical to ensuring a secure, successful election. We urgently need our federal partners to work with, not against, these efforts.”",
+      "note": "Same testimony as reported in his office's release: he asks for federal database access for citizenship audits of the voter rolls.",
+      "subjects": [
+        "citizenship checks of voter rolls",
+        "noncitizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:13:20.100Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e39dce329ca92d2d32d4b8f9108095c9028dfc2494f187b78f96ade7ff79a189",
+      "kind": "own-words",
+      "url": "https://highlandcountypress.com/index.php/comment/8264",
+      "date": "2026-08-19",
+      "date_precision": "day",
+      "passage": "“Transparency matters, and Ohio voters deserve to have all of the facts before deciding whether a photo ID requirement for voting should be included in the Ohio Constitution,” said Secretary LaRose.",
+      "note": "Press release in his name (Highland County Press, 19 Aug 2026) as the text and ballot language of State Issue 3 (photo ID in the Ohio Constitution) were posted. He urges voters to research it and does not say how to vote in this passage.",
+      "subjects": [
+        "constitutional photo ID amendment (State Issue 3)",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:13:20.100Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c1cfe64f1fb3ffd19ff6c4f4b9e71b6b8fcf301356de103d6ed3737d4ec3c316",
+      "kind": "own-words",
+      "url": "https://www.salemnews.net/news/local-news/2026/08/secretary-of-state-visits-columbiana-county-board-of-elections/",
+      "date": "2026-08-27",
+      "date_precision": "day",
+      "passage": "\"This makes it permanent,\" LaRose said.",
+      "note": "Salem News report of his visit to the Columbiana County Board of Elections. Context line in the story: he said voter participation went up, not down, since Ohio started requiring photo IDs, and that Issue 3 would put the requirement in the state constitution.",
+      "subjects": [
+        "constitutional photo ID amendment (State Issue 3)",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:13:20.100Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "55fb09945d65bc670c4459b5f7d772177e129f3b093e62bdf3ba1f9407d432d6",
+      "kind": "own-words",
+      "url": "https://www.salemnews.net/news/local-news/2026/08/secretary-of-state-visits-columbiana-county-board-of-elections/",
+      "date": "2026-08-27",
+      "date_precision": "day",
+      "passage": "\"Most of it I like. Most of it would not change how we do things in Ohio,\" he said.",
+      "note": "Salem News report of the same visit. Asked about the proposed federal SAVE Act, he says most of it would not change Ohio practice. The story then lists what he says Ohio does: checks IDs, removes the deceased from the rolls, and sends absentee ballots only on request (reporter's summary).",
+      "subjects": [
+        "SAVE Act",
+        "voter roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:13:20.100Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a7196fab78ce7cf640986a2281790368dff52a415e8d8c5941188643a2eb10a1",
+      "kind": "own-words",
+      "url": "https://www.salemnews.net/news/local-news/2026/08/secretary-of-state-visits-columbiana-county-board-of-elections/",
+      "date": "2026-08-27",
+      "date_precision": "day",
+      "passage": "\"We've made it easy to vote and hard to cheat,\" LaRose said.",
+      "note": "Salem News report of the same visit; a general election-integrity statement.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:13:20.100Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "57d98a1b5be65225931ee3b1d6a7e1b4853194fdbd3ac2c5357331835c205d49",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_129/legislation/hb194/actions/",
+      "date": "2011-06-23",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-194-2011",
+      "act": "yea",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 23-10) on H. B. No. 194, from the Ohio Legislature's own actions record, which lists each member by id (sen_larose_frank_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.673Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a71c069d74164e0f87f2ff55300c97128543442bd125e3f9eeef863d9c63c4c9",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_129/legislation/hb224/actions/",
+      "date": "2011-07-13",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-224-2011",
+      "act": "yea",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 29-0) on H. B. No. 224, from the Ohio Legislature's own actions record, which lists each member by id (sen_larose_frank_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.673Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "937325114349a065b5be9066477f45bf683129e87ac04a0c5f2bb5aad693d2cf",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/129/hb224",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-224-2011",
+      "act": "sponsor",
+      "motion": "co sponsor, As Passed by the Senate (04_PS)",
+      "note": "Listed as co sponsor of H. B. No. 224 (As Passed by the Senate) on the Ohio Legislature's own record (sen_larose_frank_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.673Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "08401b1f7e0f4f33f0bbda64c8f62a964363ab5541c111c6f51b68e66136aef7",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_129/legislation/sb148/actions/",
+      "date": "2011-05-24",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-148-2011",
+      "act": "yea",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 23-10) on S. B. No. 148, from the Ohio Legislature's own actions record, which lists each member by id (sen_larose_frank_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.673Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3028b978e7782cc9edad41f3a86de63f67d62319c2b949b76c6640ba45600277",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/sb205/actions/",
+      "date": "2014-02-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-205-2014",
+      "act": "yea",
+      "motion": "Senate: Concurred in House amendments",
+      "note": "OH Senate floor roll call (Concurred in House amendments, tally 21-8) on S. B. No. 205, from the Ohio Legislature's own actions record, which lists each member by id (sen_larose_frank_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.673Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9f34bcb541215a3702be021f7cc7d1556392c5029f687a04080f8480cb46ced",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/sb216/actions/",
+      "date": "2014-02-26",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-216-2014",
+      "act": "yea",
+      "motion": "Senate: Concurred in House amendments",
+      "note": "OH Senate floor roll call (Concurred in House amendments, tally 22-9) on S. B. No. 216, from the Ohio Legislature's own actions record, which lists each member by id (sen_larose_frank_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.673Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID and non-photo documents",
+        "free state ID",
+        "absentee/mail ballot ID and request form",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "noncitizen voting and voter roll checks",
+        "State Issue 3 constitutional photo ID amendment",
+        "election integrity in general"
+      ],
+      "places": [
+        "identity confirmed: Ohio Secretary of State, won Auditor of State race per task; Salem News 2026-08-28 names him as Secretary of State running for state auditor",
+        "On the Record (0 appearances; extract-otr run)",
+        "web search (8 searches) on name plus voter ID, photo ID, proof of citizenship, SAVE Act, HB 458, State Issue 3, mail-ballot ID bill",
+        "blocked: https://www.ohiosos.gov/office/media-center/categories/press-releases/2026-08-18 (403)",
+        "blocked: https://www.ohiosos.gov/office/media-center/categories/press-releases/2023-01-24 (403)",
+        "not reviewed: other ohiosos.gov press release pages (site returns 403 to fetches)",
+        "blocked: https://nfib.com/content/nfib-in-my-state/management/know-your-new-voting-requirements (403; his guest column on new voting requirements)",
+        "empty page: https://www.washingtonexaminer.com/?p=2727320 (no article text returned)",
+        "blocked: https://www.legislature.ohio.gov/legislation/134/hb458/committee (certificate error); read instead https://www.ohiohouse.gov/legislation/134/hb458/committee, which lists his two proponent testimonies",
+        "committee testimony 2021-12-07 (House Ways and Means) and 2022-11-15 (Senate Local Government and Elections) on HB 458: read both PDFs; both are about ending August special elections, nothing on ID, so nothing saved",
+        "Ballotpedia, bluevoterguide.org, justfacts.votesmart.org: blocked (named as refused in the search prompt, not tried)",
+        "not reviewed: ohiosos.gov Issue 3 report PDF and week-in-review pages (site returns 403)",
+        "the refused news sites in the prompt were not opened",
+        "Statehouse News Bureau stories via wosu.org, wysu.org, woub.org: read; the wosu.org 2024-09-01 story repeats the 2024-08-30 release quote already saved",
+        "signalcleveland.org 2026-08-03 and wysu.org 2026-08-03 ballot board stories: read; his quotes there are about citizen-initiative signature thresholds and who writes the Issue 3 arguments, nothing on ID, so nothing saved",
+        "news5cleveland.com 2026 mail-ballot ID bill story: only a reporter's paraphrase of his view and a spokesperson quote, not saved",
+        "highlandcountypress.com (reprints his office's releases): 4 releases read",
+        "no instructions addressed to the agent were found in any page"
+      ],
+      "found": 15,
+      "at": "2026-11-06T15:13:20.100Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 6,
+      "at": "2026-11-06T16:28:34.673Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}
