@@ -33,7 +33,20 @@ const ERROR_MESSAGES: Record<string, string> = {
     "We're not in your area yet, but we're expanding. We'll let you know when we arrive.",
   VALIDATION_ERROR: 'Please enter a complete address.',
   INTERNAL_ERROR: 'Something went wrong on our end. Please try again in a moment.',
+  // 403s from requireConnected (backend/src/middleware/tierGuards.ts). Retrying
+  // never changes these, so they must not fall through to INTERNAL_ERROR.
+  // Nothing in the product lets a person become Connected on their own yet (only
+  // an admin promotion does), so these say what is true and promise no next step.
+  CONNECTED_REQUIRED:
+    'Adding an address needs a Connected account, and this account is not Connected yet. Trying again will not change that.',
+  CONNECTED_UNVERIFIED:
+    'Your Connected account has not been verified yet. You can add an address once it is.',
 };
+
+// The same two refusals as sent before the guard carried a `code`. Kept so the
+// message is right whichever of the app and the API deploys first.
+ERROR_MESSAGES['Connected account required'] = ERROR_MESSAGES.CONNECTED_REQUIRED;
+ERROR_MESSAGES['Verified Connected account required'] = ERROR_MESSAGES.CONNECTED_UNVERIFIED;
 
 interface Props {
   isUpdate?: boolean;
