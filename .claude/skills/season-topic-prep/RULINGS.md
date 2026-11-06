@@ -339,6 +339,16 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
   `.planning/research/s3-prep-voting-rights/stage5/write/wi-01-clancy/`).
 - **Scope:** every topic.
 
+### A loser's written research stays
+- **Ruling:** once a person's Stage 5 research is written to the draft season, it stays even if they lose their race:
+  their outcome rows, passages and review rows are never removed. Losing only takes a person out of the next round's
+  search and coding ("After the results", STAGE5.md). The record is kept in case they run for another office later.
+- **Date and source:** 2026-11-06, Chris Andrews, gun-policy North Carolina ("we aren't going to remove their rows,
+  even if they lose"), on batch `nc-01-close`: four legislators in races not yet called (Britt, Reeder, Blust,
+  Pickett) were written and approved before the results, on the runner's instruction
+  (`.planning/research/s3-prep-gun-policy/stage5/write/nc-01-close/PREVIEW.md`).
+- **Scope:** every topic.
+
 ### OnTheIssues and Wikipedia are never sources
 - **Ruling:** OnTheIssues and Wikipedia are finding aids only: use them to find a primary source, then cite that.
   Neither is cited as stance evidence, and neither is listed as an "examined" old source on a blank row. An answer
