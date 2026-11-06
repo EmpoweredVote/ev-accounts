@@ -200,6 +200,31 @@
       "found": 3,
       "at": "2026-10-22T23:35:03.415Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "Second Amendment",
+        "gun rights",
+        "firearm bills",
+        "ban on assault-style guns",
+        "check every gun buyer"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/H/640 (confirms House District 69; nothing on the subject)",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site https://www.deanarp.com (nothing on the subject)",
+        "BallotReady profile (issue stances list no gun topic; nothing on the subject)",
+        "John Locke Foundation team page (nothing on the subject)",
+        "not reviewed: Ballotpedia (returns empty to the fetch tool)",
+        "web search x2 on name plus gun words: no own words found"
+      ],
+      "found": 0,
+      "at": "2026-11-05T23:58:46.000Z",
+      "by": "source-collector"
     }
   ]
 }

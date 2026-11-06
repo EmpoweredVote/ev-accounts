@@ -86,6 +86,133 @@
         "fetched_at": "2026-10-27T00:59:37.345Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "63d078d663f67daae2e3807ea33c5cd5ba2c78d12179d8b8ad48e768188ad32a",
+      "kind": "own-words",
+      "url": "https://ncdoj.gov/attorney-general-josh-stein-repealing-pistol-permit-law-will-make-north-carolinians-less-safe/",
+      "date": "2021-08-17",
+      "date_precision": "day",
+      "passage": "When sheriffs grant or deny permits to people to purchase a pistol, they do so after considering the risk that person might pose to their community. This background check process is one of our most effective tools to keep guns out of the hands of domestic abusers, felons, and other dangerous people. However, this bill would remove sheriffs’ role in granting permits, taking away their ability to protect the people in their communities and making it easier for people who are dangerous to buy pistols.",
+      "note": "Statement as Attorney General opposing a bill to repeal the sheriff permit needed to buy a pistol. Page is dated Aug. 17, 2021.",
+      "subjects": [
+        "permit to buy a pistol",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-05T23:58:25.352Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1d93db1d550dd651875aa67621b1832280f3df32159f25ad6f91d5dca93edce0",
+      "kind": "own-words",
+      "url": "https://ncdoj.gov/attorney-general-josh-stein-repealing-pistol-permit-law-will-make-north-carolinians-less-safe/",
+      "date": "2021-08-17",
+      "date_precision": "day",
+      "passage": "We’ve seen this experiment fail in other states. Two years after Missouri’s permit to purchase law was repealed, the firearm homicide rate spiked by 25 percent, and the firearm suicide rate went up by 14 percent. Our job is to do everything in our power to protect the people in our state. This bill would do the opposite – I urge legislators to consider the serious threat to public safety this legislation carries and reject it.",
+      "note": "Same statement: cites Missouri's repeal of its permit-to-purchase law and urges legislators to reject the repeal bill.",
+      "subjects": [
+        "permit to buy a pistol",
+        "repealing gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-05T23:58:25.352Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9b1f348754025e9151e8b82a3b09f0b4641200689d0d9c3718b2248123aa2fd",
+      "kind": "own-words",
+      "url": "https://www.wunc.org/news/2023-05-01/ag-stein-urges-public-safety-law-enforcement-bills",
+      "date": "2023-05-01",
+      "date_precision": "day",
+      "passage": "We don't want to have to have there be a school tragedy for this state to take action,” Stein said. \"We can take action today that will reduce the likelihood of a school shooting ever occurring.",
+      "note": "Quoted by WUNC at a news event where, as Attorney General, he urged lawmakers to adopt universal background checks and red flag laws (that part is the reporter's wording, not his).",
+      "subjects": [
+        "check every gun buyer",
+        "red flag orders",
+        "gun violence prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-05T23:58:25.352Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5cdac0ca6b5419832dde701b34fd1365dc26d7838e5b4664a7acf823bdb6e197",
+      "kind": "own-words",
+      "url": "https://www.wral.com/archive/22058585/",
+      "date": "2025-06-20",
+      "date_precision": "day",
+      "passage": "This bill makes North Carolinians less safe and undermines responsible gun ownership,” Stein said in a statement.",
+      "note": "Veto statement on Senate Bill 50, which would allow carrying a concealed handgun without a permit. Quoted by WRAL.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-05T23:58:25.352Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6e5841f4222b06d35e432be6efe4efded750ca254142750f9358bfde9e595ef1",
+      "kind": "own-words",
+      "url": "https://www.wral.com/archive/22058585/",
+      "date": "2025-06-20",
+      "date_precision": "day",
+      "passage": "Authorizing teenagers to carry a concealed weapon with no training whatsoever is dangerous,” Stein said. “The bill would also make the job of a law enforcement officer more difficult and less safe. We can and should protect the right to bear arms without recklessly endangering law enforcement officers and our people.",
+      "note": "Veto statement on Senate Bill 50, quoted by WRAL: objects to carry with no training and a lowered age; also says the right to bear arms should be protected.",
+      "subjects": [
+        "carry a gun without a permit",
+        "minimum age to carry",
+        "right to bear arms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-05T23:58:25.352Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1373c73df263a057da47add43d5d57f45c2ce76b6229f88ee7bd07d1b9d5923c",
+      "kind": "record",
+      "url": "https://www.wral.com/archive/22058585/",
+      "date": "2025-06-20",
+      "date_precision": "day",
+      "instrument_id": "NC-S-50-2025",
+      "act": "vetoed",
+      "note": "Governor vetoed Senate Bill 50, which would let people 18 and older carry a concealed handgun without a permit.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-05T23:58:25.352Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -141,6 +268,33 @@
       "found": 4,
       "at": "2026-10-27T00:59:37.345Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permit to buy a pistol",
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "red flag orders",
+        "minimum age to buy rifles",
+        "bills sponsored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the governor's press release list (first page only, nothing on the subject)",
+        "the attorney general's office site (2021 statement)",
+        "WRAL and Cardinal Pine news reports of the June 2025 veto",
+        "WUNC report of 2023 statement",
+        "ontheissues.org (lead only; quote cannot be confirmed from the original, not saved)",
+        "sponsor list: covered by LegiScan bulk check (a governor sponsors no bills)",
+        "Ballotpedia (not fetched; known to return empty)",
+        "not reviewed: Southport shooting video interview on red flag laws (cbs17 page returned no readable text; cardinalpine video page not opened)",
+        "blocked: https://dukechronicle.com/article/2024/03/duke-chronicle-josh-stein-student-media-event-governor-election-attorney-general-gerrymandering-housing-freedoms-voting (403)"
+      ],
+      "found": 6,
+      "at": "2026-11-05T23:58:25.352Z",
+      "by": "source-collector"
     }
   ]
 }
