@@ -1,0 +1,79 @@
+{
+  "politician_id": "9dc9d9a7-4963-4752-b38f-88c29ae03491",
+  "findings": [
+    {
+      "id": "175324ff8ac8a9b57f41f837e9229c6bf39993ac6086ec491567fe5553f14743",
+      "kind": "own-words",
+      "url": "https://attorneygenerallynnfitch.com/wp-content/uploads/2024/10/asking-Supreme-Court-to-expedite-Virginia-voter-registration-case-1.pdf",
+      "date": "2024-10-30",
+      "date_precision": "day",
+      "passage": "\"It is critical that we uphold state authority to determine voter qualifications and ensure the integrity of our elections,\" said Attorney General Lynn Fitch. \"Noncitizens cannot vote and should not be on the voter rolls and today the Supreme Court granted Virginia the opportunity to do what is fair and right.\"",
+      "note": "Press release from the AG's office (page: https://attorneygenerallynnfitch.com/2024/10/30/ag-fitch-praises-supreme-court-decision-allowing-virginia-to-remove-non-citizens-from-voter-rolls-october-30-2024/). She joined 25 other states' attorneys general in an amicus brief supporting Virginia's removal of self-identified noncitizens from its voter rolls.",
+      "subjects": [
+        "non-citizen voting",
+        "voter-roll checks",
+        "state authority over voter qualifications"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:39:35.277Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "da169044551735e7377637bd5b0903fe1977e2fa01348b2f7a4e8621151743b0",
+      "kind": "own-words",
+      "url": "https://attorneygenerallynnfitch.com/wp-content/uploads/2024/08/Voter-Registration-Joint-Release-NOT-SENT-Updated-Reeves-quote-1.pdf",
+      "date": "2024-08-13",
+      "date_precision": "day",
+      "passage": "\"We fully support encouraging voter registration and promoting an engaged electorate,\" said Attorney General Lynn Fitch. \"But putting the full weight of the Oval Office behind an effort first developed by partisan activist groups and then hiding the agency activities from public scrutiny goes too far. The law does not allow it. Mississippi will not stand for it. The people deserve answers, and we demand accountability here with this suit.\"",
+      "note": "Joint release with the Governor and Secretary of State announcing a state suit against Executive Order 14019 (federal agency voter registration effort). Concerns voter registration drives, not ID or citizenship proof; saved as related election material. Page: https://attorneygenerallynnfitch.com/2024/08/14/mississippi-sues-biden-administration-over-partisan-voter-registration-order-august-13-2024/",
+      "subjects": [
+        "voter registration drives by federal agencies",
+        "election law litigation"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:39:35.277Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site attorneygenerallynnfitch.com: site search for election, noncitizens, voter registration; press release bodies (PDF attachments) read for the October 30, 2024 and August 13, 2024 releases",
+        "official site: October 22, 2020 statement on integrity of the ballot read (about school political activity; off the subject)",
+        "official site: February 6, 2024 campaign finance release (body is a PDF; not read; headline only, off the subject): not reviewed: https://attorneygenerallynnfitch.com/2024/02/06/ag-fitch-proposes-campaign-finance-law-reforms-to-keep-mississippi-elections-for-mississippi-voters-february-6-2024/",
+        "blocked: https://legalnewsline.com/stories/665611229-ag-fitch-praises-supreme-court-decision-allowingvirginia-to-remove-noncitizens-from-voter-rolls (429)",
+        "blocked: https://ballotpedia.org/Lynn_Fitch (Ballotpedia refuses fetches; not tried)",
+        "legislature bill pages: not applicable, statewide officer (not a legislator)",
+        "web searches: name + voter ID / photo ID; proof of citizenship / SAVE Act; voter rolls / noncitizen voting; executive order voter registration; SAVE / DOJ voter data. No statement on photo ID, mail-ballot ID or documentary proof of citizenship found",
+        "Mississippi Free Press SAVE ruling article fetched; it did not name this person",
+        "scope confirmed: attorney general, re-elected 2023, term to January 2028 (own office pages)"
+      ],
+      "found": 2,
+      "at": "2026-11-05T22:39:35.277Z",
+      "by": "search-ms-2026-11-05"
+    }
+  ]
+}

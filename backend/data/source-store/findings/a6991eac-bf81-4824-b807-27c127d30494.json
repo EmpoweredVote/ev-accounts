@@ -1,0 +1,176 @@
+{
+  "politician_id": "a6991eac-bf81-4824-b807-27c127d30494",
+  "findings": [
+    {
+      "id": "364900856d99bfb399d1bd234a46bd84aa31932d2d96df01adc5d490b75dbbec",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/senate/0860019.pdf",
+      "date": "2022-03-30",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Report of Conference Committee on H. B. No. 1510 was adopted: (0860019)",
+      "note": "Senate roll call as printed ('Younger'), linked to Chuck Younger (district 17) via the official 2022 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dd2a12a6dee5821334b8172c5583de5ade5bdaf4f4ad0b5e1da44e4c195eeac3",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/senate/0580007.pdf",
+      "date": "2018-02-28",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-804-2018",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On H. B. No. 804. On motion of Senator Blackwell, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0580007)",
+      "note": "Senate roll call as printed ('Younger'), linked to Chuck Younger (district 17) via the official 2018 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4882f5923743be15767c820e4fb1624b236ee994c44bf2fe5104edde9d634120",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2020/pdf/history/SB/SB2237.xml",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2237-2020",
+      "act": "sponsor",
+      "motion": "co sponsor, SB2237IN",
+      "note": "Named as co sponsor ('Younger') on the official bill text, summary or journal; linked to Chuck Younger via the official 2020 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4cd68734c411fde05dc865eff22b5ec7355a7eca5840d62ffaae784f759ff30d",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/senate/0720054.pdf",
+      "date": "2024-03-13",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2576. On motion of Senator England, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0720054)",
+      "note": "Senate roll call as printed ('Younger'), linked to Chuck Younger (district 17) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b0a384baf6fe58a9ea0e42529ac3f22a97f043100dd50e424c87ef0255125e0b",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/senate/0770004.pdf",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Senate concurred in the foregoing House Amendment to S. B. No. 2588 by the following vote: (0770004)",
+      "note": "Senate roll call as printed ('Younger'), linked to Chuck Younger (district 17) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a028b8f2afe6c2f1d4227a3e8a492d2bda1790c4c4d4c75b9cf3a0db850d5f39",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/senate/0320004.pdf",
+      "date": "2018-02-02",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2766-2018",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2766. On motion of Senator Blackwell, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0320004)",
+      "note": "Senate roll call as printed ('Younger'), linked to Chuck Younger (district 17) via the official 2018 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship / SAVE Act / SHIELD Act",
+        "absentee and mail-ballot ID",
+        "election integrity / voter rolls"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "identity confirmed (Mississippi Senate District 17, Columbus): https://extramilepodcast.transistor.fm/episodes/legislative-session-state-senator-charles-chuck-younger/transcript (January 28, 2025 interview; covers his background and redistricting, nothing on the subject)",
+        "https://www.mississippifreepress.org/mississippi-senators-seek-easier-birth-certificate-access-under-new-voter-law/ (does not name him)",
+        "web search x5: name + voter ID/photo ID; name + citizenship/election integrity; name + absentee/ballots; name + questionnaire/voter guide (Commercial Dispatch); name + SHIELD Act/photo ID remarks; no own words found",
+        "blocked: https://ballotpedia.org/Charles_Younger (Ballotpedia refuses our fetches; not tried)",
+        "not reviewed: bluevoterguide.org (403, skipped per instructions)",
+        "no campaign site or newsletter found by search"
+      ],
+      "found": 0,
+      "at": "2026-11-05T23:10:05.518Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 6,
+      "at": "2026-11-05T23:52:51.757Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

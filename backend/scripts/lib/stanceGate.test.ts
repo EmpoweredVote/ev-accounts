@@ -390,6 +390,16 @@ describe('instrument-not-cited: Georgia Senate Resolutions (2026-10-31)', () => 
     expect(ids({ ...good, reasoning: 'John Doe Sr. voted Yea on HB 1001 (2025).' }, { evidence: [{ ...ev[0], snippet: `${'HB 1001'} roll call Yea John Doe` }] })).not.toContain('instrument-not-cited'));
 });
 
+describe('instrument-not-cited: Mississippi roll-call headings (2026-11-05)', () => {
+  const snip = (t: string) => [{ ...ev[0], snippet: `${t} by the following vote: Yeas--Doe, Roe. Total--2.` }];
+  it('reads the official heading "S. B. No. 2548" / "H. B. No. 586" as SB 2548 / HB 586', () => {
+    const row = { ...good, reasoning: 'Voted Yea on SB 2548 (2009) and HB 586 (2021).' };
+    expect(ids(row, { evidence: snip('YEAS AND NAYS On S. B. No. 2548. H. B. No. 586 passed') })).not.toContain('instrument-not-cited');
+  });
+  it('still tells SB 254 from "S. B. No. 2548"', () =>
+    expect(ids({ ...good, reasoning: 'Voted Yea on SB 254 (2009).' }, { evidence: snip('YEAS AND NAYS On S. B. No. 2548.') })).toContain('instrument-not-cited'));
+});
+
 describe('quote-not-in-snippet (C69)', () => {
   it('does not flag a quote that appears verbatim (normalized) in a cited snippet', () => {
     const row = { ...good, reasoning: 'Voted YES on HB 1001 (2025), saying "she believes every Hoosier family deserves affordable coverage"' };

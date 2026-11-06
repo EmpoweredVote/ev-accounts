@@ -143,6 +143,9 @@ const INSTRUMENT_IDENTIFIER_PATTERNS: RegExp[] = [
   /\bH\.?B\.?\s?\d+\b/,
   /\bS\.?B\.?\s?\d+\b/,
   /\b(?:House|Senate) Bill \d{1,4}\b/,
+  // Mississippi roll-call PDFs head each vote "On S. B. No. 2548." / "H. B. No. 586 passed" (2026-11-05);
+  // canonicalizeInstrumentId drops the "no" run after the chamber prefix, so both fold to "sb2548" / "hb586".
+  /\b[HS]\.\s?B\.\s?No\.\s?\d+\b/,
   /\bS\.?L\.?\s?20\d{2}-\d{1,4}\b/,
   // The U.S. House Clerk prints "H. R. 22" (a space after each period) and "H. J. RES. 44" (2026-10-07).
   /\bH\.?\s?R\.?\s?\d+\b/,
@@ -220,6 +223,7 @@ const SPELLED_OUT: [RegExp, string][] = [
 function canonicalizeInstrumentId(text: string): string {
   let c = (normalizeText(text).match(/[a-z]+|\d+/g) ?? []).join('');
   for (const [re, short] of SPELLED_OUT) c = c.replace(re, short);
+  c = c.replace(/^([hs]b)no(?=\d)/, '$1');
   return c.replace(/^([a-z]+)0+(?=\d)/, '$1');
 }
 

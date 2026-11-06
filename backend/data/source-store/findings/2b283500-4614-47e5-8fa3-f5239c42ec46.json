@@ -1,0 +1,113 @@
+{
+  "politician_id": "2b283500-4614-47e5-8fa3-f5239c42ec46",
+  "findings": [
+    {
+      "id": "364900856d99bfb399d1bd234a46bd84aa31932d2d96df01adc5d490b75dbbec",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/senate/0860019.pdf",
+      "date": "2022-03-30",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Report of Conference Committee on H. B. No. 1510 was adopted: (0860019)",
+      "note": "Senate roll call as printed ('Sparks'), linked to Daniel H. Sparks (district 5) via the official 2022 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.756Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4cd68734c411fde05dc865eff22b5ec7355a7eca5840d62ffaae784f759ff30d",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/senate/0720054.pdf",
+      "date": "2024-03-13",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2576. On motion of Senator England, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0720054)",
+      "note": "Senate roll call as printed ('Sparks'), linked to Daniel H. Sparks (district 5) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.756Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b0a384baf6fe58a9ea0e42529ac3f22a97f043100dd50e424c87ef0255125e0b",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/senate/0770004.pdf",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Senate concurred in the foregoing House Amendment to S. B. No. 2588 by the following vote: (0770004)",
+      "note": "Senate roll call as printed ('Sparks'), linked to Daniel H. Sparks (district 5) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.756Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "mail-in voting and citizenship proof"
+      ],
+      "places": [
+        "identity confirmed: https://billstatus.ls.state.ms.us/members/senate/Sparks.xml (Senate District 5)",
+        "On the Record (0 appearances)",
+        "no campaign site found; auditor-bid article https://www.mississippifreepress.org/?p=362268 (2026-09-08) read in full: he is running for state auditor in 2027, still holds the Senate seat; his quotes there cover state spending and AI campaign ads, nothing on ID or citizenship",
+        "Magnolia Tribune 2026-03-24 SHIELD Act article (https://magnoliatribune.com/?p=143044): reports a colleague saying he agreed with Sparks that mail-in ballots without proof of citizenship are not acceptable; this is another speaker's account, not Sparks's words, so not saved as own words",
+        "Magnolia Tribune 2026-02-12 ballot-initiative article: reports his concern about initiative length, off the subject",
+        "SHIELD Act coverage read, no words of his: Mississippi Free Press 2026-03-25 and 2026-05-04, SuperTalk 2026-04-01, Magnolia Tribune 2026-03-10, MPB",
+        "blocked: https://ballotpedia.org/Daniel_Sparks_(Mississippi) (refuses fetches, not tried)",
+        "no questionnaire found (unopposed in 2023)",
+        "web searches (6): voter ID/photo ID/citizenship, campaign/interview, SHIELD Act floor remarks, election/ballot bills, 'Sparks said' debate: nothing in his own words on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-05T22:43:11.848Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-05T23:52:51.756Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

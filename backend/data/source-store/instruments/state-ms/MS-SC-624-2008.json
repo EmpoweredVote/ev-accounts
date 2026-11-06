@@ -1,0 +1,477 @@
+{
+  "id": "MS-SC-624-2008",
+  "scope": "state:ms",
+  "title": "SC 624 (2008 Regular Session): Suspend rules for drafting, etc.; authorize restoration of suffrage, require certain ID to vote, and early voting pilot program.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2008/pdf/history/SC/SC0624.xml",
+    "https://billstatus.ls.state.ms.us/documents/2008/pdf/SC/SC0624PS.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2008/pdf/SC/SC0624IN.pdf"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) Long title (as adopted; the resolution only suspends deadlines to request a bill, and describes that bill)\n(quote) TO REQUIRE PERSONS WHO APPEAR TO VOTE IN PERSON AT A POLLING PLACE OR THE REGISTRAR'S OFFICE TO IDENTIFY THEMSELVES BY PRESENTING CERTAIN TYPES OF IDENTIFICATION TO AN ELECTION MANAGER OR THE REGISTRAR BEFORE THEY ARE ALLOWED TO VOTE;\n(section) Long title (as adopted)\n(quote) TO PROVIDE THAT PERSONS WHO WERE BORN ON OR BEFORE JUNE 30, 1944, AND WHO HAVE NOT BEEN ISSUED A VALID MISSISSIPPI DRIVER'S LICENSE, OR WHO ARE IDENTIFIED BY TWO OR MORE POLL WORKERS, SHALL NOT BE REQUIRED TO PRESENT IDENTIFICATION BEFORE THEY ARE ALLOWED TO VOTE;\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Long title (as introduced only; removed by Senate amendment)\n(quote) TO CREATE AN EARLY VOTING PILOT PROGRAM IN ALCORN, BOLIVAR, LAUDERDALE AND WASHINGTON COUNTIES;\n(other) Resolution text: suspends the joint rules so that the bill described in the title may be drafted and considered.\n(other) Described bill: Restoration of Voting Rights Act, notice before guilty plea, felony disenfranchisement period (title only).",
+  "sponsors": [
+    {
+      "name": "Burton",
+      "role": "prime",
+      "version": "As Adopted by the Senate (SC0624PS), 3/25/2008; introduced version (SC0624IN) also read"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2008-03-18",
+      "body": "MS Senate",
+      "motion": "YEAS AND NAYS On S. C. R. No. 624. On motion of Senator Hewes, the rules were suspended, the resolution considered engrossed, read the third time and, the yeas and nays being taken, it failed to be adopted, title standing as stated, by the following vote, a two-thirds vote being required: (0710005)",
+      "kind": "roll-call",
+      "yes": 31,
+      "no": 18,
+      "absent": 3,
+      "body_size": 52,
+      "note": "https://billstatus.ls.state.ms.us/2008/pdf/votes/senate/0710005.pdf",
+      "members": [
+        {
+          "name": "Blount",
+          "vote": "yea"
+        },
+        {
+          "name": "Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Browning",
+          "vote": "yea"
+        },
+        {
+          "name": "Burton",
+          "vote": "yea"
+        },
+        {
+          "name": "Carmichael",
+          "vote": "yea"
+        },
+        {
+          "name": "Chassaniol",
+          "vote": "yea"
+        },
+        {
+          "name": "Clarke",
+          "vote": "yea"
+        },
+        {
+          "name": "Davis D. (1st)",
+          "vote": "yea"
+        },
+        {
+          "name": "Dickerson",
+          "vote": "yea"
+        },
+        {
+          "name": "Fillingane",
+          "vote": "yea"
+        },
+        {
+          "name": "Gollott",
+          "vote": "yea"
+        },
+        {
+          "name": "Gordon",
+          "vote": "yea"
+        },
+        {
+          "name": "Hewes",
+          "vote": "yea"
+        },
+        {
+          "name": "Hudson",
+          "vote": "yea"
+        },
+        {
+          "name": "Hyde-Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Jackson G. (15th)",
+          "vote": "yea"
+        },
+        {
+          "name": "King",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirby",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee P. (35th)",
+          "vote": "yea"
+        },
+        {
+          "name": "McDaniel",
+          "vote": "yea"
+        },
+        {
+          "name": "Mettetal",
+          "vote": "yea"
+        },
+        {
+          "name": "Michel",
+          "vote": "yea"
+        },
+        {
+          "name": "Moffatt",
+          "vote": "yea"
+        },
+        {
+          "name": "Nunnelee",
+          "vote": "yea"
+        },
+        {
+          "name": "Powell",
+          "vote": "yea"
+        },
+        {
+          "name": "Simmons",
+          "vote": "yea"
+        },
+        {
+          "name": "Walls",
+          "vote": "yea"
+        },
+        {
+          "name": "Ward",
+          "vote": "yea"
+        },
+        {
+          "name": "Watson",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilemon",
+          "vote": "yea"
+        },
+        {
+          "name": "Yancey",
+          "vote": "yea"
+        },
+        {
+          "name": "Baria",
+          "vote": "nay"
+        },
+        {
+          "name": "Bryan",
+          "vote": "nay"
+        },
+        {
+          "name": "Butler",
+          "vote": "nay"
+        },
+        {
+          "name": "Davis V. (36th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Dawkins",
+          "vote": "nay"
+        },
+        {
+          "name": "Flowers",
+          "vote": "nay"
+        },
+        {
+          "name": "Frazier",
+          "vote": "nay"
+        },
+        {
+          "name": "Harden",
+          "vote": "nay"
+        },
+        {
+          "name": "Hopson",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackson R. (11th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackson S. (32nd)",
+          "vote": "nay"
+        },
+        {
+          "name": "Jones",
+          "vote": "nay"
+        },
+        {
+          "name": "Jordan",
+          "vote": "nay"
+        },
+        {
+          "name": "Lee E. (47th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Montgomery",
+          "vote": "nay"
+        },
+        {
+          "name": "Stone",
+          "vote": "nay"
+        },
+        {
+          "name": "Tollison",
+          "vote": "nay"
+        },
+        {
+          "name": "Turner",
+          "vote": "nay"
+        },
+        {
+          "name": "Albritton",
+          "vote": "absent"
+        },
+        {
+          "name": "Dearing",
+          "vote": "absent"
+        },
+        {
+          "name": "Horhn",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2008-03-25",
+      "body": "MS Senate",
+      "motion": "YEAS AND NAYS On S. C. R. No. 624. On motion of Senator Hewes, the rules were suspended, the resolution considered engrossed, read the third time and, the yeas and nays being taken, it was adopted, title standing as stated, by the following vote: (0780021)",
+      "kind": "roll-call",
+      "yes": 36,
+      "no": 13,
+      "absent": 3,
+      "body_size": 52,
+      "note": "https://billstatus.ls.state.ms.us/2008/pdf/votes/senate/0780021.pdf",
+      "members": [
+        {
+          "name": "Albritton",
+          "vote": "yea"
+        },
+        {
+          "name": "Baria",
+          "vote": "yea"
+        },
+        {
+          "name": "Blount",
+          "vote": "yea"
+        },
+        {
+          "name": "Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Browning",
+          "vote": "yea"
+        },
+        {
+          "name": "Burton",
+          "vote": "yea"
+        },
+        {
+          "name": "Carmichael",
+          "vote": "yea"
+        },
+        {
+          "name": "Chassaniol",
+          "vote": "yea"
+        },
+        {
+          "name": "Clarke",
+          "vote": "yea"
+        },
+        {
+          "name": "Davis D. (1st)",
+          "vote": "yea"
+        },
+        {
+          "name": "Dearing",
+          "vote": "yea"
+        },
+        {
+          "name": "Dickerson",
+          "vote": "yea"
+        },
+        {
+          "name": "Fillingane",
+          "vote": "yea"
+        },
+        {
+          "name": "Flowers",
+          "vote": "yea"
+        },
+        {
+          "name": "Gollott",
+          "vote": "yea"
+        },
+        {
+          "name": "Hewes",
+          "vote": "yea"
+        },
+        {
+          "name": "Hopson",
+          "vote": "yea"
+        },
+        {
+          "name": "Hudson",
+          "vote": "yea"
+        },
+        {
+          "name": "Hyde-Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Jackson G. (15th)",
+          "vote": "yea"
+        },
+        {
+          "name": "King",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirby",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee E. (47th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee P. (35th)",
+          "vote": "yea"
+        },
+        {
+          "name": "McDaniel",
+          "vote": "yea"
+        },
+        {
+          "name": "Mettetal",
+          "vote": "yea"
+        },
+        {
+          "name": "Michel",
+          "vote": "yea"
+        },
+        {
+          "name": "Moffatt",
+          "vote": "yea"
+        },
+        {
+          "name": "Montgomery",
+          "vote": "yea"
+        },
+        {
+          "name": "Nunnelee",
+          "vote": "yea"
+        },
+        {
+          "name": "Powell",
+          "vote": "yea"
+        },
+        {
+          "name": "Stone",
+          "vote": "yea"
+        },
+        {
+          "name": "Ward",
+          "vote": "yea"
+        },
+        {
+          "name": "Watson",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilemon",
+          "vote": "yea"
+        },
+        {
+          "name": "Yancey",
+          "vote": "yea"
+        },
+        {
+          "name": "Bryan",
+          "vote": "nay"
+        },
+        {
+          "name": "Butler",
+          "vote": "nay"
+        },
+        {
+          "name": "Davis V. (36th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Dawkins",
+          "vote": "nay"
+        },
+        {
+          "name": "Frazier",
+          "vote": "nay"
+        },
+        {
+          "name": "Horhn",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackson R. (11th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Jones",
+          "vote": "nay"
+        },
+        {
+          "name": "Jordan",
+          "vote": "nay"
+        },
+        {
+          "name": "Simmons",
+          "vote": "nay"
+        },
+        {
+          "name": "Tollison",
+          "vote": "nay"
+        },
+        {
+          "name": "Turner",
+          "vote": "nay"
+        },
+        {
+          "name": "Walls",
+          "vote": "nay"
+        },
+        {
+          "name": "Gordon",
+          "vote": "absent"
+        },
+        {
+          "name": "Harden",
+          "vote": "absent"
+        },
+        {
+          "name": "Jackson S. (32nd)",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

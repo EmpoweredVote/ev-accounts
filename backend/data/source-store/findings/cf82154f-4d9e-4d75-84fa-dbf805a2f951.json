@@ -1,0 +1,68 @@
+{
+  "politician_id": "cf82154f-4d9e-4d75-84fa-dbf805a2f951",
+  "findings": [
+    {
+      "id": "8f83d0028419134d578f055f22fbb42fc2269d0d95536e5a2081a180daf0e758",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/house/0940041.pdf",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "House: S. B. No. 2576 passed by the following vote: (0940041)",
+      "note": "House roll call as printed ('Hurst'), linked to Celeste Hurst (district 75) via the official 2024 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.759Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member page https://billstatus.ls.state.ms.us/members/house/hurst.xml (confirms House District 75, took office 2024; no statements)",
+        "iVoterGuide 2023 profile https://ivoterguide.com/candidate/75660/race/8079/election/1069 (photo ID and ballot-measure items marked did not answer; nothing on the subject)",
+        "Magnolia Tribune 2022 campaign launch https://magnoliatribune.com/?p=88450 (nothing on the subject)",
+        "no official or campaign site with a news page found by search; nothing on the subject",
+        "BillTrack50 legislator page fetched (bill list only); floor votes and sponsorships linked separately",
+        "blocked: https://ballotpedia.org (not fetched, refuses fetches)",
+        "6 web searches (voter ID, photo ID, proof of citizenship, SAVE Act, questionnaire, newsletter): no own words on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-05T23:08:44.739Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-05T23:52:51.759Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

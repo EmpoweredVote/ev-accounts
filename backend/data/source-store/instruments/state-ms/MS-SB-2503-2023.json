@@ -1,0 +1,25 @@
+{
+  "id": "MS-SB-2503-2023",
+  "scope": "state:ms",
+  "title": "SB 2503 (2023 Regular Session): Elections; candidates for any office must file documentation of United States citizenship.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2023/pdf/history/SB/SB2503.xml",
+    "https://billstatus.ls.state.ms.us/documents/2023/pdf/SB/2500-2599/SB2503IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec. 1\n(quote) A candidate for any elected office in this state must provide proof of the candidate's citizenship in the United States, whether by birth or naturalization.\n(section) Sec. 1\n(quote) The Secretary of State shall, by duly adopted rule, specify the documents that may be accepted to verify a candidate's citizenship, which at a minimum shall include: a birth certificate, social security card, driver's license, voter identification card or military identification card.\n(section) Sec. 3 (23-15-299(7)(a))\n(quote) The committee shall also determine whether each candidate is a United States citizen.\n(e_other_rule)\n(section) Sec. 5 (23-15-359(2)(a))\n(quote) Unless proof of United States citizenship and the petition or fee, whichever is applicable, required above shall be filed as provided for in subsection (3), (4) or (5) of this section, as appropriate, the name of the person requested to be a candidate, unless nominated by a political party, shall not be placed upon the ballot.\n(other) Sec. 2-6 (23-15-213, 23-15-299, 23-15-309, 23-15-359, 23-15-361, 23-15-857, 23-15-977): candidate qualifying filings, ballot access and election commission checks conformed to require proof of citizenship\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Sojourner",
+      "role": "prime",
+      "version": "SB2503IN"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

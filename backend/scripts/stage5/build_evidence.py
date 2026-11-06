@@ -39,6 +39,14 @@ for x in csv.DictReader(open(f'{B}/research-pre-evidence.csv')):
 # (src/lib/verificationFetch.ts), so it may still fail there. iga.in.gov is NOT fetched this way: it goes through the
 # official MyIGA API (_iga.py → iga-pages.ts, the same reader the verifier uses); congress.gov through the official
 # api.congress.gov reader (_congress.py → congress-pages.ts, what the verifier reads; a plain fetch gets a bot check).
+
+def _surname(full):
+    """Last name without a generational suffix ('Joel R. Carter, Jr.' -> 'Carter', 'Henry Zuber III' -> 'Zuber')."""
+    toks = [x.strip(',.') for x in (full or '').split()]
+    while len(toks) > 1 and toks[-1].lower() in ('jr', 'sr', 'ii', 'iii', 'iv', 'v'):
+        toks.pop()
+    return toks[-1] if toks else ''
+
 def text_of(url):
     f = f'{B}/pages/{hashlib.sha1(url.encode()).hexdigest()}.txt'
     if not os.path.exists(f):
@@ -93,7 +101,7 @@ def roll_lines(pid, fs):
             if not printed and f.get('url', '').startswith(xu.rsplit('.xml', 1)[0]):
                 # The vote finding cites this roll call but the instrument's member list is not linked:
                 # take the person's surname, and only when exactly one member on the roll carries it.
-                sur0 = (ro.get(pid, {}).get('full_name') or '').split()[-1]
+                sur0 = _surname(ro.get(pid, {}).get('full_name') or '')
                 cands = [mm.group(1).strip() for mm in re.finditer(r'<legislator\b[^>]*>([^<]*)</legislator>', x)
                          if re.sub(r'\s*\([A-Z]{2}\)\s*$', '', mm.group(1).strip()) == sur0]
                 if len(cands) == 1: printed = cands[0]
@@ -161,7 +169,7 @@ for r in rows:
             for u in pre_urls:
                 if u not in need and not re.search(r'ontheissues|wikipedia|google\.|bing\.|duckduckgo|congress\.gov/search', u): need.append(u)
         need = need[:MAXU]
-        sur = r['full_name'].split()[-1].strip(',.'); idx = 0; k = 0
+        sur = _surname(r['full_name']); idx = 0; k = 0
         for u in need:
             # A party word in the ADDRESS is fine (RULINGS.md "A party word in a source address is fine", W3-R15).
             t = text_of(u)
@@ -177,7 +185,7 @@ for r in rows:
             ev.append({'full_name': r['full_name'], 'topic_key': r['topic_key'], 'source_url': u, 'snippet': snip, 'snippet_index': idx})
         out.append(r); continue
     fs = json.load(open(f'{FIND}/{pid}.json'))['findings'] if pid and os.path.exists(f'{FIND}/{pid}.json') else []
-    sur = (ro.get(pid, {}).get('full_name') or r['full_name']).split()[-1].strip(',.')
+    sur = _surname(ro.get(pid, {}).get('full_name') or r['full_name'])
     # Split a quote that holds an ellipsis into its exact parts ("a ... b" -> "a" ... "b"); log each change.
     def _split(m):
         q = m.group(2); parts = [p.strip(' ,;') for p in re.split(r'\s*(?:\.\.\.|\u2026)\s*', q) if p.strip(' ,;')]
@@ -267,7 +275,7 @@ json.dump(edits, open(f'{B}/research-edits.json', 'w'), indent=1)
 own = []
 for r in out:
     if r['value'] == '0': continue
-    sur = r['full_name'].split()[-1].lower().strip(',.')
+    sur = _surname(r['full_name']).lower()
     for k in cols:
         u = r.get(k) or ''
         if k.startswith('source_url') and u:

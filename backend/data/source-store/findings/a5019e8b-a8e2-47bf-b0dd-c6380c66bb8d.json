@@ -1,0 +1,137 @@
+{
+  "politician_id": "a5019e8b-a8e2-47bf-b0dd-c6380c66bb8d",
+  "findings": [
+    {
+      "id": "d4e868964ed4d56fc32ec792437d9901a88084d804cae2d0686301c5384c34af",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/house/0850033.pdf",
+      "date": "2022-03-29",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "yea",
+      "motion": "House: The conference report on H. B. No. 1510 was adopted by the following vote: (0850033)",
+      "note": "House roll call as printed ('McCray'), linked to Hester Jackson McCray (district 40) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.750Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4fbba305f72e29d24d1602007a4a0beb2ae18d76c403cda48443134f7aacc0ba",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2021/pdf/votes/house/0370056.pdf",
+      "date": "2021-02-10",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-586-2021",
+      "act": "nay",
+      "motion": "House: H. B. No. 586 passed by the following vote: (0370056)",
+      "note": "House roll call as printed ('McCray'), linked to Hester Jackson McCray (district 40) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.750Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f83d0028419134d578f055f22fbb42fc2269d0d95536e5a2081a180daf0e758",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/house/0940041.pdf",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "House: S. B. No. 2576 passed by the following vote: (0940041)",
+      "note": "House roll call as printed ('McCray'), linked to Hester Jackson McCray (district 40) via the official 2024 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.750Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2147cca7436b02fc328055efc537138f61a5635591caea67c88f498332726704",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "nay",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('McCray'), linked to Hester Jackson McCray (district 40) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.750Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship / SAVE Act",
+        "mail-ballot ID",
+        "election integrity / voter rolls",
+        "early voting (related)"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "billstatus member page jackson-mccray.xml returned 404; legislature page not reviewed for the subject",
+        "web search: name + voter ID (5 searches total: voter ID, early voting + photo ID, proof of citizenship/SAVE Act, questionnaire/voter guide, campaign site issues)",
+        "https://desotocountynews.com/desoto-county-news/hester-jackson-mccray-to-seek-reelection-to-house/ (2023 candidate profile, nothing on the subject)",
+        "https://www.mpbonline.org/blogs/news/a-group-of-mississippi-activists-want-broad-inperson-voting/ (early-voting initiative, no ID content)",
+        "https://www.jacksonfreepress.com/news/2021/apr/02/advocates-put-early-voting-proposal-mississippi-ba (early-voting initiative, no ID content)",
+        "https://www.mississippifreepress.org/hester-jackson-mccray-prevails-in-special-election-committee/ (nothing on the subject)",
+        "https://ivoterguide.com/race/7044/election/1069 (no answers from her on the subject)",
+        "blocked: https://ballotpedia.org/Hester_Jackson-McCray (listed as blocked per instructions; fetch returned no usable content)",
+        "not reviewed: bluevoterguide.org (answers 403, skipped per instructions)",
+        "no personal campaign site found by search"
+      ],
+      "found": 0,
+      "at": "2026-11-05T23:08:57.545Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-05T23:52:51.750Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

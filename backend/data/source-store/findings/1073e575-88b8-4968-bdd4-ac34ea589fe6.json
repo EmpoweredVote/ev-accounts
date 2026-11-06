@@ -1,0 +1,90 @@
+{
+  "politician_id": "1073e575-88b8-4968-bdd4-ac34ea589fe6",
+  "findings": [
+    {
+      "id": "8f83d0028419134d578f055f22fbb42fc2269d0d95536e5a2081a180daf0e758",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/house/0940041.pdf",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "House: S. B. No. 2576 passed by the following vote: (0940041)",
+      "note": "House roll call as printed ('McMillan'), linked to Jonathan McMillan (district 58) via the official 2024 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.759Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b680fb8404ce02d97d84d7e0e33d2bd57ac1c2f65c056d5f4979c0eb31a6ce26",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('McMillan'), linked to Jonathan McMillan (district 58) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.759Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll citizenship checks (SB 2588)",
+        "election integrity"
+      ],
+      "places": [
+        "confirmed in office: https://billstatus.ls.state.ms.us/members/house/mcmillan.xml (House District 58, in office since 2024)",
+        "On the Record (0 meetings)",
+        "legislature member page (no personal site or news list)",
+        "no campaign site found by search",
+        "iVoterGuide https://ivoterguide.com/candidate/75578/race/7059/election/1024: photo ID, ballot measure, border and immigration questions all unanswered, nothing on the subject",
+        "blocked: https://onlinemadison.com/stories/mcmillan-introduces-first-bill,100026 (403; a story about a notary-fee bill, not the subject)",
+        "Ballotpedia: blocked (not fetched, refuses our fetches)",
+        "5 web searches (voter ID, photo ID, proof of citizenship, questionnaire, campaign site, local papers election bill): no hit with his own words on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-05T22:39:56.455Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-05T23:52:51.759Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

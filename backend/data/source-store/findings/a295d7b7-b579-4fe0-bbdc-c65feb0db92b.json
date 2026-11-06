@@ -1,0 +1,59 @@
+{
+  "politician_id": "a295d7b7-b579-4fe0-bbdc-c65feb0db92b",
+  "findings": [
+    {
+      "id": "874ddff806db834923977b0f86580524a226e8f627b740cec70310d1670410b4",
+      "kind": "own-words",
+      "url": "https://www.jacksonfreepress.com/news/2021/jun/21/state-senator-slams-voter-suppression-efforts-blac/",
+      "date": "2021-06-19",
+      "date_precision": "day",
+      "passage": "\"People are sitting quietly in their rooms; they are trying to scheme and devise laws that will further restrict our rights to vote, and that happened in this past legislative session,\" Ford told those gathered at the Owens Health and Wellness Center at Tougaloo College on Saturday. \"Bills were filed to try to strip and purge the voter roll, just because people have not participated in a series of elections, and that we cannot stand for.\"",
+      "note": "Speaking at a voting-rights event at Tougaloo College, as quoted by the Jackson Free Press, she objects to 2021 bills that would remove people from the voter roll for not voting in a series of elections. Not about ID or citizenship directly.",
+      "subjects": [
+        "voter-roll purges",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:09:07.373Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "SHIELD Act citizenship checks",
+        "voter-roll purges",
+        "non-citizen voting",
+        "mail ballot ID"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr.mjs returned none)",
+        "web search: name + voter ID",
+        "web search: name + proof of citizenship / SAVE Act / photo ID",
+        "web search: name + SHIELD Act voter citizenship",
+        "web search: name + voting rights election bill statement",
+        "web search: name + Legislative Black Caucus voter ID / suppression / voter rolls / SHIELD Act",
+        "Jackson Free Press 2021-06-21 article (read in full, source of the one finding)",
+        "Mississippi Free Press SHIELD Act articles (names her nowhere; nothing on the subject)",
+        "WDAM 2026-03-25 SHIELD Act article (nothing on the subject from her)",
+        "official legislature site: not reviewed: https://www.legislature.ms.gov/legislation/members/ (certificate error on fetch)",
+        "no campaign site found by search",
+        "blocked: https://ballotpedia.org/Angela_Turner-Ford (Ballotpedia refuses fetches per instructions; not tried)"
+      ],
+      "found": 1,
+      "at": "2026-11-05T23:09:07.373Z",
+      "by": "search-ms-2026-11-05"
+    }
+  ]
+}

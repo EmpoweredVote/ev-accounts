@@ -1,0 +1,119 @@
+{
+  "politician_id": "53f22bbd-e961-4bb3-9d66-4cc5ac75a1ef",
+  "findings": [
+    {
+      "id": "8f83d0028419134d578f055f22fbb42fc2269d0d95536e5a2081a180daf0e758",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/house/0940041.pdf",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "House: S. B. No. 2576 passed by the following vote: (0940041)",
+      "note": "House roll call as printed ('Boyd (37th)'), linked to Andy Boyd (district 37) via the official 2024 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b680fb8404ce02d97d84d7e0e33d2bd57ac1c2f65c056d5f4979c0eb31a6ce26",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Boyd (37th)'), linked to Andy Boyd (district 37) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.758Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll citizenship checks",
+        "online voter registration",
+        "felony voting restoration"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "web searches (name + voter ID / photo ID / proof of citizenship / SAVE Act / SHIELD Act / election / questionnaire / local paper), none returned the person's own words on the subject",
+        "Mississippi Free Press SHIELD Act articles 2026-03-25, 2026-04-23, 2026-05-04: person not named",
+        "Magnolia Tribune SHIELD Act articles 2026-03-10 and 2026-03-24: person not named",
+        "MPB 2022-04-19 citizenship article: person not named",
+        "blocked: https://ballotpedia.org (refused to fetch per brief)",
+        "blocked: bluevoterguide.org and justfacts.votesmart.org (known 403, skipped)",
+        "not reviewed: mississippitoday.org, clarionledger.com, wlbt.com, djournal.com (refused to AI agents in robots.txt)",
+        "sponsorship and floor votes: linked separately, not searched",
+        "identity confirmed: https://www.supertalk.fm/andy-boyd-wins-special-election-to-fill-seat-in-house-district-37/ (2022-11-08, House District 37, Columbus); member page billstatus .../house/boyd.xml returned 404",
+        "https://www.ballotready.org and https://thecandidate.com pages: no statements on the subject",
+        "no official or campaign site found by search",
+        "nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-05T22:48:08.344Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-05T23:52:51.758Z",
+      "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship",
+        "SAVE Act",
+        "SHIELD Act",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "searches returned only profile pages (ballotready, thecandidate, SuperTalk election-night story); no questionnaire, column or newsletter found",
+        "namesake excluded: Randy Boyd (House District 19) sponsored HB 1310 in 2023; not Andy Boyd",
+        "web searches (6 new): name + voter ID, name + proof of citizenship/SHIELD Act/SAVE Act, name + election/voting, name + questionnaire/voter guide, name + local paper, name + column/newsletter/interview",
+        "blocked: https://ballotpedia.org (not fetched per instructions)",
+        "not fetched, refused to AI agents: mississippitoday.org, clarionledger.com, wlbt.com, djournal.com"
+      ],
+      "found": 0,
+      "at": "2026-11-05T23:55:08.229Z",
+      "by": "research-ms-r2-2026-11-05"
+    }
+  ]
+}

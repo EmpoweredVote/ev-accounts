@@ -1,0 +1,33 @@
+{
+  "id": "MS-HB-736-2026",
+  "scope": "state:ms",
+  "title": "HB 736 (2026 Regular Session): Voter registration; require registrars to submit applicant's information into federal Systematic Alien Verification for Entitlements (SAVE) System.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2026/pdf/history/HB/HB0736.xml",
+    "https://billstatus.ls.state.ms.us/documents/2026/pdf/HB/0700-0799/HB0736IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy)\n(section) Sec. 1 (23-15-15)\n(quote) (a) A voter in pending status may cast an affidavit ballot. The affidavit ballot shall be considered if the voter provides the required documentation under subsection ( * * *3) of this section to the registrar within five (5) days of casting the affidavit ballot.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec. 1 (23-15-15(1))\n(quote) registrar shall: (a) Enter the applicant's information into the United States Citizenship and Immigration Service's Systematic Alien Verification for Entitlements (SAVE) or its successor database for further inquiry;\n(section) Sec. 1 (23-15-15(1))\n(quote) (b) Compare the Department of Public Safety's driver's license and identification with the applicant's information;\n(section) Sec. 1 (23-15-15(1)(c))\n(quote) send a notice by first-class mail to the applicant's mailing address provided on the voter registration application inquiring whether the individual is eligible to be registered to vote.\n(section) Sec. 1 (23-15-15)\n(quote) shall, within thirty (30) days of the receipt of such notice, provide proof of citizenship to the registrar or his or her designee.\n(section) Sec. 1 (23-15-15)\n(quote) For purposes of this section, proof of citizenship includes, but is not limited to: (a) The applicant's birth certificate or a legible photocopy of the birth certificate; (b) A United States passport, or a legible photocopy of the pertinent pages of the passport, identifying the applicant and showing the passport number;\n(section) Sec. 2 (23-15-165.1)\n(quote) The Secretary of State shall conduct two (2) checks annually of Statewide Elections Management System records against the United States Citizenship and Immigration Service's Systematic Alien Verification for Entitlements (SAVE) or its successor database.\n(e_other_rule)\n(section) Sec. 1 (23-15-15)\n(quote) If the applicant does not reply to the notice or provide proof of citizenship, the registrar of the county, or his or her designee, where the person registered to vote shall mark the applicant as \"PENDING\" in the Statewide Elections Management System until the next federal general election:\n(section) Sec. 1 (23-15-15)\n(quote) All documentation provided to show proof of citizenship as well as the Department of Public Safety database or relevant federal and state agency and county records shall be confidential\n(other) Sec. 1 (23-15-15): registrar citizenship verification revised; annual reports to the Secretary of State on SAVE flags and removals; pending then REJECTED status after the second federal general election if no proof\n(other) Sec. 2 (23-15-165.1): Secretary of State runs two SAVE comparisons a year and sends potential matches to registrars\n(other) 23-15-165.2: annual report to the Legislature on SAVE results; 23-15-165.3: SAVE personal data exempt from public records; 23-15-165.4: severability",
+  "sponsors": [
+    {
+      "name": "Remak",
+      "role": "prime",
+      "version": "HB0736IN"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

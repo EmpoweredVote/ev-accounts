@@ -30,7 +30,203 @@
           "sha256": "a1142904e692e81f08ce94bef1f5827e9d662ac1f81ce57f6330064169e08945"
         }
       }
+    },
+    {
+      "id": "ff08f7a0fdb5eaee3e5d1d2c42777bdeac65a7affc0cb9f7915c4db6ea53ed5f",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/senate/0860019.pdf",
+      "date": "2022-03-30",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Report of Conference Committee on H. B. No. 1510 was adopted: (0860019)",
+      "note": "Senate roll call as printed ('Frazier'), linked to Hillman Terome Frazier (district 27) via the official 2022 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "327f2d842df2759ad089cf1b3634d3d84c5fae40f664b90f8ccb74ad0f1a528a",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/senate/0580007.pdf",
+      "date": "2018-02-28",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-804-2018",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS On H. B. No. 804. On motion of Senator Blackwell, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0580007)",
+      "note": "Senate roll call as printed ('Frazier'), linked to Hillman Terome Frazier (district 27) via the official 2018 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "835f1b9254dd8e6c7e5bb5cf9e45e08f7bfe29c3a96b1580aba82cc2737ab569",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2012/pdf/votes/senate/0990009.pdf",
+      "date": "2012-04-10",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-921-2012",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS On H. B. No. 921. On motion of Senator McDaniel, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed as amended, title standing as stated, by the following vote: (0990009)",
+      "note": "Senate roll call as printed ('Frazier'), linked to Hillman Terome Frazier (district 27) via the official 2012 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "935ceca43fcf6368e69ec77d68e610738538e73ea9a08b6c751a001d3520317f",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2009/pdf/votes/senate/0300008.pdf",
+      "date": "2009-02-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2548-2009",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2548. The vote recurring, on motion of Senator Burton, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0300008)",
+      "note": "Senate roll call as printed ('Frazier'), linked to Hillman Terome Frazier (district 27) via the official 2009 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9843aa07be43e576f58c663963ae19b85d2585b3f0c37f86f69fc6e94abdc947",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/senate/0720054.pdf",
+      "date": "2024-03-13",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2576. On motion of Senator England, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0720054)",
+      "note": "Senate roll call as printed ('Frazier'), linked to Hillman Terome Frazier (district 27) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0bdc8f5070b1cefc73be1a5428135fb80819d0b830c979903e9a69d3e5147f46",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/senate/0770004.pdf",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Senate concurred in the foregoing House Amendment to S. B. No. 2588 by the following vote: (0770004)",
+      "note": "Senate roll call as printed ('Frazier'), linked to Hillman Terome Frazier (district 27) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dcb52dfbbb498e3bcbcc5e28c53abbdd8902d9718df53a47dc315838f4ff5043",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/senate/0320004.pdf",
+      "date": "2018-02-02",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2766-2018",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2766. On motion of Senator Blackwell, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0320004)",
+      "note": "Senate roll call as printed ('Frazier'), linked to Hillman Terome Frazier (district 27) via the official 2018 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "voter-roll citizenship checks (SHIELD Act)",
+        "SAVE Act"
+      ],
+      "places": [
+        "Identity confirmed: billstatus.ls.state.ms.us member page (senate/frazier.xml) lists Hillman Terome Frazier, Senate District 27; sitting member, seat not on the 2026-11-03 ballot",
+        "7 web searches (name + voter ID/photo ID/proof of citizenship, 2011-12 House-era quotes, SHIELD Act Senate debate, statements on voting): nothing by this person on the subject",
+        "SHIELD Act Senate-debate coverage names other senators, not him",
+        "iVoterGuide 2023 list shows him only as a listed candidate, no answers",
+        "On the Record (0 appearances)",
+        "Ballotpedia: blocked: https://ballotpedia.org (refused our fetches per the task notes; not tried)",
+        "MS House/Senate news and statewide coverage of the 2026 SHIELD Act (SB 2588) and SAVE Act: fetched Mississippi Free Press, Magnolia Tribune, SuperTalk, WLOX, WDAM, Star Herald, MPB, Clarke County Tribune, DeSoto County News, a state party's news site; none names this person on the subject",
+        "blocked: https://bluevoterguide.org and https://justfacts.votesmart.org (403)",
+        "Mississippi Today, Clarion Ledger, WLBT: not fetched (robots refuse); search snippets not used",
+        "Mississippi legislature does not post written testimony; not sought",
+        "Floor votes and sponsorships: linked separately, not searched"
+      ],
+      "found": 0,
+      "at": "2026-11-05T22:42:15.494Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 7,
+      "at": "2026-11-05T23:52:51.757Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
 }

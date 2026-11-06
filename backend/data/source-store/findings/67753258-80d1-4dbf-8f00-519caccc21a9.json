@@ -1,0 +1,154 @@
+{
+  "politician_id": "67753258-80d1-4dbf-8f00-519caccc21a9",
+  "findings": [
+    {
+      "id": "d4e868964ed4d56fc32ec792437d9901a88084d804cae2d0686301c5384c34af",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/house/0850033.pdf",
+      "date": "2022-03-29",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "yea",
+      "motion": "House: The conference report on H. B. No. 1510 was adopted by the following vote: (0850033)",
+      "note": "House roll call as printed ('Wallace'), linked to Price Wallace (district 77) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.753Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "be31c652ac91835cab3aaa121f44ae9e394e70f25ad4b51a05c576861b2ce7f2",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/history/HB/HB1510.xml",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, As Sent to Governor (HB1510SG = conference report HB1510CR text); passed-House (PS) and Senate committee amendment also read; introduced (IN, a risk-limiting-audit bill) also saved",
+      "note": "Named as co sponsor ('Wallace') on the official bill text, summary or journal; linked to Price Wallace via the official 2022 member roll of the House (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.753Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39b991844f0e395bc487c48e801820733d70f388586c168923fbb49ce0907e59",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2021/pdf/votes/house/0370056.pdf",
+      "date": "2021-02-10",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-586-2021",
+      "act": "yea",
+      "motion": "House: H. B. No. 586 passed by the following vote: (0370056)",
+      "note": "House roll call as printed ('Wallace'), linked to Price Wallace (district 77) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.753Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f83d0028419134d578f055f22fbb42fc2269d0d95536e5a2081a180daf0e758",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/house/0940041.pdf",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "House: S. B. No. 2576 passed by the following vote: (0940041)",
+      "note": "House roll call as printed ('Wallace'), linked to Price Wallace (district 77) via the official 2024 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.753Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b680fb8404ce02d97d84d7e0e33d2bd57ac1c2f65c056d5f4979c0eb31a6ce26",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Wallace'), linked to Price Wallace (district 77) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.753Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SHIELD Act / SAVE citizenship checks",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "status: died on Wednesday 2026-06-03 while in office as House District 77 member; no longer holds the seat (the Mississippi Free Press obituary dated 2026-06-04 says he died on Wednesday at age 64; a special election for the seat is on 2026-11-03)",
+        "https://www.mississippifreepress.org/mississippi-house-rep-price-wallace-a-ballot-initiative-advocate-dies-at-64/ : obituary; says nothing on voter ID, photo ID or citizenship; its voting-rights content is about restoring voting rights after felony convictions, which is off the subject",
+        "On the Record (0 appearances; extract-otr run with name search)",
+        "5 web searches (name with voter ID, photo ID, proof of citizenship, SHIELD Act, election integrity, questionnaire, committee statements): no page with his own words on the subject",
+        "not reviewed: https://mississippitoday.org/2025/07/21/podcast-price-wallace-voters-rights/ (site refuses AI agents; podcast, and by title about voters' rights bills)",
+        "blocked: https://ballotpedia.org/Price_Wallace (Ballotpedia refuses our fetches; not tried)"
+      ],
+      "found": 0,
+      "at": "2026-11-05T22:48:29.900Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 5,
+      "at": "2026-11-05T23:52:51.753Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}
