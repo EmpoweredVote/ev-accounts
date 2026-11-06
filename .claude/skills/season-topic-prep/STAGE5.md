@@ -34,7 +34,10 @@ No one else. The general election is 2026-11-03:
   candidate, so every winner is done when the results come in. Officials who are leaving (`leaving = yes`) get
   the pre-fill only, no open search.
 - **After the results:** drop the losers (their candidacy is no longer live). Finish only the close races as they
-  are called. Georgia and Louisiana runoffs stay active until December.
+  are called. Georgia and Louisiana runoffs stay active until December. "Drop" means **do not search or code** them
+  from here on. 🔴 Anything already written for a person who then loses **stays**: never remove their outcome, passage
+  or review rows (RULINGS.md "A loser's written research stays"). A close race may be written before it is called on
+  the runner's say-so.
 - `leaving = yes` only when the official's own seat has an upcoming race (before 2027) with live candidates on file
   and they are not one of them. `leaving = unknown` means the race data cannot say (no race on file for the seat,
   or no candidates loaded for it; 2026-10-22: Massachusetts has 200 state races on file and 4 candidates). Report
