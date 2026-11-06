@@ -6,6 +6,7 @@ Rewrites <batch>/research.csv in place (original kept as research-pre-evidence.c
 - blank rows: no source URLs (a blank claims no chair; the gate allows it), URLs in reasoning reduced to host names;
 - seated rows: one snippet per cited URL, cut from the page fetched once (pages/<sha1>.txt), >= 30 words, around the
   person's quoted passage, else their surname, else the instrument named in the reasoning.
+--from-research / --from-pre: see the research.built.sha256 check below (a replaced research.csv stops the run).
 --fetch fetches missing pages one at a time (curl, 1 s apart); iga.in.gov and congress.gov pages through their official
 APIs instead (_iga.py, _congress.py). A congress.gov page cached by an older run holds a bot check: delete it first."""
 import csv, json, sys, os, re, hashlib, subprocess, time, html
@@ -14,6 +15,27 @@ pol = json.load(open(f'{B}/politicians.json')); pol = pol if isinstance(pol, lis
 bname = {p['politician_id']: p['full_name'] for p in pol}
 ro = {r['politician_id']: r for r in csv.DictReader(open(ROSTER), delimiter='\t')}
 src = f'{B}/research-pre-evidence.csv'
+# A re-run rebuilds from research-pre-evidence.csv. When research.csv is no longer the file this tool last wrote (a new
+# dry run was copied over it, or a later step edited it), that silently threw the new text away (oh-01, 2026-11-06: a
+# second build after dry run 2 brought back dry run 1's dates and finding ids). So the written file's sha256 is kept in
+# research.built.sha256, and a changed research.csv stops the run until the runner picks: --from-research (rebuild from
+# the current research.csv; the old saved copy is kept as research-pre-evidence.prev.csv) or --from-pre (rebuild from
+# the saved copy, as before). A batch built before this check has no hash file: it warns and keeps the old behaviour.
+SHA = f'{B}/research.built.sha256'
+_sha = lambda f: hashlib.sha256(open(f, 'rb').read()).hexdigest()
+if os.path.exists(src) and os.path.exists(f'{B}/research.csv'):
+    changed = os.path.exists(SHA) and open(SHA).read().strip() != _sha(f'{B}/research.csv')
+    if '--from-research' in sys.argv:
+        os.replace(src, f'{B}/research-pre-evidence.prev.csv'); os.rename(f'{B}/research.csv', src)
+        print('build_evidence: rebuilding from the current research.csv (old saved copy: research-pre-evidence.prev.csv)')
+    elif changed and '--from-pre' not in sys.argv:
+        raise SystemExit('build_evidence: research.csv is not the file this tool last wrote (a new dry run, or a later step '
+                         'edited it). Re-run with --from-research to rebuild from it, or --from-pre to rebuild from '
+                         'research-pre-evidence.csv and drop the changes.')
+    elif not os.path.exists(SHA) and os.path.getmtime(f'{B}/research.csv') > os.path.getmtime(src) + 1:
+        print('build_evidence: WARNING research.csv is newer than research-pre-evidence.csv and this batch has no '
+              'research.built.sha256; rebuilding from research-pre-evidence.csv as before. If research.csv holds a new '
+              'dry run, re-run with --from-research.')
 if not os.path.exists(src): os.rename(f'{B}/research.csv', src)
 rows = list(csv.DictReader(open(src))); cols = list(rows[0].keys())
 LEVEL = sys.argv[sys.argv.index('--level') + 1] if '--level' in sys.argv else 'federal'
@@ -268,7 +290,9 @@ for r in out:
         if k.startswith('source_url') and ballotpedia_non_survey(r.get(k)):
             miss.append((r['full_name'], r[k], 'Ballotpedia non-survey page: not cited (ruling 2026-11-02)')); r[k] = ''
 ev = [e for e in ev if not ballotpedia_non_survey(e['source_url'])]
-w = csv.DictWriter(open(f'{B}/research.csv', 'w', newline=''), fieldnames=cols); w.writeheader(); w.writerows(out)
+with open(f'{B}/research.csv', 'w', newline='') as _f:
+    w = csv.DictWriter(_f, fieldnames=cols); w.writeheader(); w.writerows(out)
+open(SHA, 'w').write(_sha(f'{B}/research.csv') + '\n')
 w = csv.DictWriter(open(f'{B}/evidence.csv', 'w', newline=''), fieldnames=['full_name', 'topic_key', 'source_url', 'snippet', 'snippet_index']); w.writeheader(); w.writerows(ev)
 json.dump(miss, open(f'{B}/evidence-missing.json', 'w'), indent=1)
 json.dump(edits, open(f'{B}/research-edits.json', 'w'), indent=1)

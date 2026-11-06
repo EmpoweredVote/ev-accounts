@@ -158,6 +158,14 @@ const INSTRUMENT_IDENTIFIER_PATTERNS: RegExp[] = [
   /\bA\.?B\.?-?\s?\d+\b/,
   /\bLD\s?\d+\b/,
   /\bSJR\s?\d+\b/,
+  // Ohio (oh-01, 2026-11-06): the official texts head a bill "Sub. S. J. R. No. 10", "H. C. R. No. 18" and, on enrolled
+  // copies, "(Substitute House Bill Number 458)" / "(Substitute Senate Joint Resolution Number 10)"; coders write the
+  // dotted "S.J.R. 10" / "H.C.R. 18". canonicalizeInstrumentId folds the "no"/"number" run and the spelled-out
+  // chamber, so all of them compare as "sjr10" / "hcr18" / "hb458".
+  /\b[HS]\.\s?[JC]\.\s?R\.\s?(?:No\.\s?)?\d+\b/,
+  /\b[HS][JC]R\s?\d+\b/,
+  /\b(?:House|Senate) (?:Bill|Joint Resolution|Concurrent Resolution) Number \d{1,4}\b/,
+  /\b(?:House|Senate) (?:Joint|Concurrent) Resolution \d{1,4}\b/,
   // Michigan names joint resolutions by letter: "HJR B" (reasoning), "HJRB" (LegiScan), "House Joint
   // Resolution B" (the official heading); canonicalizeInstrumentId folds all three to "hjrb" (2026-10-30).
   /\b[HS]JR\s?[A-Z]{1,2}\b/,
@@ -208,7 +216,8 @@ function extractInstrumentIdentifiers(text: string): string[] {
 // Spelled-out chamber forms fold to the short form, so the official heading "Senate Bill 303" and
 // "House Joint Resolution B" match a reasoning's "SB 303" and "HJR B" (Michigan, 2026-10-30).
 const SPELLED_OUT: [RegExp, string][] = [
-  [/^housejointresolution/, 'hjr'], [/^senatejointresolution/, 'sjr'], [/^senateresolution/, 'sr'], [/^housebill/, 'hb'], [/^senatebill/, 'sb'],
+  [/^housejointresolution/, 'hjr'], [/^senatejointresolution/, 'sjr'], [/^houseconcurrentresolution/, 'hcr'], [/^senateconcurrentresolution/, 'scr'],
+  [/^senateresolution/, 'sr'], [/^housebill/, 'hb'], [/^senatebill/, 'sb'],
 ];
 
 /**
@@ -223,7 +232,7 @@ const SPELLED_OUT: [RegExp, string][] = [
 function canonicalizeInstrumentId(text: string): string {
   let c = (normalizeText(text).match(/[a-z]+|\d+/g) ?? []).join('');
   for (const [re, short] of SPELLED_OUT) c = c.replace(re, short);
-  c = c.replace(/^([hs]b)no(?=\d)/, '$1');
+  c = c.replace(/^([hs]b|[hs][jc]r)(?:no|number)(?=\d)/, '$1');
   return c.replace(/^([a-z]+)0+(?=\d)/, '$1');
 }
 

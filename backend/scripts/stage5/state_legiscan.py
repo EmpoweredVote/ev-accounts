@@ -11,14 +11,17 @@ not guess. Committee votes are never mapped (a "Conference Committee Report" is 
       --topic <key> [--bill-pad N] [--year-shift N]   -> legiscan/pairs.csv, needs.json, unmapped.json, rollcall-map.json
 Then legiscan-evidence-lines.ts and legiscan_merge.py as for legiscan_pairs.py.
 --bill-pad: zero-pad bill numbers to N digits (LegiScan prints IN SB0010: 4). --year-shift: add N to the instrument
-year when the store's year is not LegiScan's session year."""
+year when the store's year is not LegiScan's session year. --session-start odd: the state's regular sessions start in odd
+years (Ohio): a sponsorship's LegiScan bill page is named by the session's start year, so an even instrument year
+maps to the year before (HB472/2026 → https://legiscan.com/OH/bill/HB472/2025). Roll calls need no shift any more:
+legiscan-rollcalls.ts matches a vote to every session whose span covers its year."""
 import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir; _args.py sits beside this file
 from _args import opt, positional
 import csv, json, re
-USAGE = 'state_legiscan.py plan|pairs <batch dir> <findings dir> --state XX --host <host>[,<host>] [--topic <key>] [--bill-pad N] [--year-shift N]'
+USAGE = 'state_legiscan.py plan|pairs <batch dir> <findings dir> --state XX --host <host>[,<host>] [--topic <key>] [--bill-pad N] [--year-shift N] [--session-start odd]'
 mode, B, F = positional(3, USAGE)
 if mode not in ('plan', 'pairs'): raise SystemExit('usage: ' + USAGE)
-PAD = int(opt('--bill-pad', '0')); YS = int(opt('--year-shift', '0'))
+PAD = int(opt('--bill-pad', '0')); YS = int(opt('--year-shift', '0')); ODD = opt('--session-start', '') == 'odd'
 ST = opt('--state', required=True, usage=USAGE); HOSTS = opt('--host', required=True, usage=USAGE).split(',')
 TOPIC = opt('--topic', required=mode == 'pairs', usage=USAGE)
 SUF = {'Jr.', 'Sr.', 'II', 'III', 'IV', 'Jr', 'Sr'}
@@ -84,7 +87,9 @@ else:
             ls = f"https://legiscan.com/{ST}/rollcall/{bill}/id/{hs[0]['roll_call_id']}"; rmap[kid(k)] = {**hs[0], 'legiscan': ls}
         elif act in AUTH:
             m = re.match(ST + r'-([A-Z]+)-(\d+)-(?:SP(\d)-)?(\d{4})$', ins)
-            ls = f"https://legiscan.com/{ST}/bill/{m.group(1)}{m.group(2).zfill(PAD)}/{m.group(4)}" + (f"/X{m.group(3)}" if m.group(3) else '') if m else None
+            yr = int(m.group(4)) + YS if m else 0
+            if ODD and yr % 2 == 0: yr -= 1  # LegiScan's bill page names the session's start year (oh-01, 2026-11-06)
+            ls = f"https://legiscan.com/{ST}/bill/{m.group(1)}{m.group(2).zfill(PAD)}/{yr}" + (f"/X{m.group(3)}" if m.group(3) else '') if m else None
             if not ls: unmapped.append([n, u, ins, f'{act}: no bill id']); continue
         else: unmapped.append([n, u, ins, f'act {act} (not a vote or authorship)']); continue
         e = {'url': ls, 'official': u, 'act': act, 'instrument': ins}

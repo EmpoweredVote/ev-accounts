@@ -10,6 +10,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { pool } from '../../src/lib/db.js';
 import { legiscanQuery } from '../../src/lib/legiscan/client.js';
+import { sessionsForYear } from './lib.js';
 
 const [st, inp, outp] = process.argv.slice(2);
 const key = process.env.LEGISCAN_API_KEY;
@@ -27,7 +28,7 @@ const q = async (op: string, p: Record<string, string>) => {
 const sessions: any[] = (await q('getSessionList', { state: st })).sessions;
 const out: any[] = [];
 for (const pg of pages) {
-  const cands = sessions.filter((s) => Number(s.year_start) === pg.year || Number(s.year_start) === pg.year + 1);
+  const cands = sessionsForYear(sessions, pg.year);
   const hits: any[] = [];
   for (const s of cands) {
     const list = (await q('getMasterListRaw', { id: String(s.session_id) })).masterlist ?? {};

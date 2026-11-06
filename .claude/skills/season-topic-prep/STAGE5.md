@@ -245,6 +245,9 @@ not load keeps the quote check's word and is listed under **not re-checked on th
 
 It also writes `research.csv` for the seats and blanks. Fix every refused code before going on.
 
+`build_evidence.py` (step 4) rebuilds from the `research-pre-evidence.csv` it saved on its first run. A later dry run
+copied over `research.csv` makes it stop and ask: `--from-research` (rebuild from the new file) or `--from-pre`.
+
 **1. Quote check.** Run [templates/stage5-quote-check-prompt.md](templates/stage5-quote-check-prompt.md) as a
 **separate** agent: never the searcher or the coder. Use one subagent per batch of about 20 findings. Check every
 finding that a `doesnt-fit` code cites and that is own words or a local record. The agent fetches each page fresh
@@ -348,6 +351,7 @@ prints no party by the names. Otherwise cite a LegiScan line instead. The legisl
 | IN | iga.in.gov is a JavaScript app to a plain fetch; the official MyIGA API reads it (2026-11-02) | official roll-call lines (`iga-votes.ts`, below); LegiScan as before when `IGA_API_KEY` is unset |
 | MA | House roll-call PDFs print a vote mark and a surname only (an initial where two share it); LegiScan has no record of some House roll calls | official roll-call lines (`ma-rollcall-votes.ts`, below) |
 | TX | robots-blocked bill pages | LegiScan lane (PR #1218) |
+| OH | the vote pages print a party letter by each name; the legislature's API lists member ids only | LegiScan lines (`state_legiscan.py … --session-start odd` for sponsor pages); HB 458's 2022-12-14 House vote is not in LegiScan |
 | US | House: the Clerk XML prints a party by each name; Senate: senate.gov blocks a fresh fetch | House: Clerk XML lines; Senate: LegiScan lines (`federal-votes.ts`, below) |
 
 Steps:
