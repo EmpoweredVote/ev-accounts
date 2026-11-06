@@ -405,6 +405,22 @@ topic; if a topic seems to need the same reading, ask for a ruling and point to 
 - **Scope:** the Season 3 revision 5 of `gun-policy` only. Not offered to other topics until a second topic shows the
   same shape (runner, 2026-11-03).
 
+### gun-policy — carry for officers and for one named professional group is out of scope
+- **Reading:** a bill that only widens where serving or retired law-enforcement officers may carry (US-HR-354-2024,
+  US-HR-2243-2025, IN HB 1391-2020) is out of scope (`adjacent`). So is a bill that only lets **one named
+  professional group** carry for its work: NC H 194 (2021, federal judges and US attorneys who hold a permit) and
+  NC H 48 (2021, emergency medical staff serving with a police tactical team). A vote or sponsorship on either kind
+  neither seats nor blanks anyone and does not make a record two-sided; it is not a rung 4 act.
+- **Date and source:** police carry 2026-10-30, Chris Andrews, Stage 5 coding (`.planning/research/s3-prep-gun-policy/stage5/README.md`,
+  "RULINGS (runner, 2026-10-30, during coding)"). Named professional group 2026-11-06, Chris Andrews, North Carolina
+  Stage 5 ("No, like police carry"): H 194 alone had seated four people at rung 4 whose every other carry and permit
+  vote was a No; under the ruling three became blanks (two nay-only, one wording), one stayed at rung 4 on another bill, and Ball's
+  record stopped being two-sided (`write/nc-01/PREVIEW.md`). Until now the police-carry reading lived only in the
+  coder script (`make_code_batches.py`).
+- **Open:** NC H 47 (2021, elected officials carry on duty) fits the wording but was not named; the NC re-coders read
+  it as out of scope and no outcome depends on it.
+- **Scope:** the Season 3 revision 5 of `gun-policy` only.
+
 ### education-equity-programs — R1 (single-subject scope)
 - **Reading:** a separate operative part makes a bill multi-subject only when it acts **outside K-12 schools**
   (colleges' or state agencies' own operations, other employers). K-12 harassment, hiring and Title VI parts of a
