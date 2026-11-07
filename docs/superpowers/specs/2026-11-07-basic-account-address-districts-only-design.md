@@ -1,6 +1,6 @@
 # Basic accounts can add an address — districts only
 
-**Status:** design, awaiting approval · **Decided:** 2026-11-07, Chris Andrews — "Districts only"
+**Status:** approved 2026-11-07, built (CA_0368) · **Decided:** 2026-11-07, Chris Andrews — "Districts only"
 **Related:** PR #1280 (the 403 message), `docs/PRIVACY-DATA-MODEL.md`, ev-cto decision 0022 (identity vault)
 
 ## Problem
@@ -55,8 +55,9 @@ option "same as Connected" would store the districts anyway, plus the two most s
 makes an account Connected (`requireConnected` / `requireInform`). A dedicated table also keeps
 location apart from other profile data, as the privacy model asks.
 
-Grants: `ev_api` SELECT/INSERT/UPDATE/DELETE only; RLS on with an own-row SELECT policy; no
-`anon`. Same migration (house rule for new tables).
+Grants: `ev_api` and `service_role` SELECT/INSERT/UPDATE/DELETE only; RLS on with **no** policy
+(default-deny — no front end reads it through PostgREST); nothing for `anon` or `authenticated`.
+Same migration (house rule for new tables).
 
 ### 2. Resolve from a point, not from a stored point
 
@@ -67,7 +68,8 @@ One migration (a `CA_` slot from the allocator) adds:
   thin wrapper that reads the stored point and calls it, so the Connected path does not change.
 - `connect.resolve_congressional_2026_at_point(p_lat, p_lng)` — the same split for the 2026 map.
 
-Both `SECURITY DEFINER`, `REVOKE ALL FROM PUBLIC`, `EXECUTE` to `ev_api` / `service_role` only.
+Both `SECURITY DEFINER`, `REVOKE ALL FROM PUBLIC`, `EXECUTE` to `service_role` only — the same ACL as the
+existing resolvers, which the API calls through `adminRpc`.
 
 ### 3. Write path — rewrite `POST /api/account/set-location`
 
@@ -82,8 +84,8 @@ Both `SECURITY DEFINER`, `REVOKE ALL FROM PUBLIC`, `EXECUTE` to `ev_api` / `serv
    point.
 
 Also: stop the JSON write to `inform_profiles.last_essentials_location` in both this route and
-`/location-hint`, and drop the column's use (0 rows, so nothing to migrate). Remove the admin
-ProfilePage's read of it.
+`/location-hint` (0 rows, so nothing to migrate). The admin ProfilePage still reads the column;
+it will simply find nothing. Dropping the column is a later clean-up.
 
 ### 4. Read path — one helper, then lift the Connected guard
 
@@ -109,10 +111,12 @@ Connected-only route, and stops appearing on this page.
 
 ### 6. When a basic account becomes Connected
 
-Promotion copies the district columns into the new `connected_profiles` row and deletes the
-`account_jurisdictions` row. There is no point to copy, so the weekly district re-check does not
-cover them until they enter the address again on the Connected path. The app says so on the
-location page.
+Nothing is copied. `readStoredJurisdiction` prefers a Connected row only when it holds a location
+(the flag, a point, or any stored district), so a promoted account keeps reading its basic
+districts until it enters an address on the Connected path. `POST /api/connect/set-location` then
+deletes the basic row. This needs no change to the three enrollment paths (`signup_with_invite`,
+`complete_connect_flow`, admin promotion). Until the address is re-entered, the weekly re-check does
+not cover the account, because there is no point to re-check.
 
 ## Known costs
 

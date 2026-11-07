@@ -12,6 +12,7 @@
  * Architecture: this file is on the supabaseAdmin allowlist in architecture.test.ts.
  */
 
+import { readStoredJurisdiction } from './storedJurisdiction.js';
 import { supabaseAdmin, adminRpc } from './supabase.js';
 import { pool } from './db.js';
 import { getSelectedTopics } from './compassService.js';
@@ -225,7 +226,12 @@ async function fetchInternalProfile(
     _gem_balance_yellow: connected?.gem_balance_yellow ?? 0,
     _gem_balance_blue: connected?.gem_balance_blue ?? 0,
     _gem_balance_red: connected?.gem_balance_red ?? 0,
-    _location_consent: connected?.location_consent === true,
+    // Owner-only. A basic account has a location once it has added an address (CA_0368), and
+    // that lives in inform.account_jurisdictions, not on a connected profile. Only read for
+    // the owner view: a public profile never exposes this field, so it never pays the query.
+    _location_consent:
+      connected?.location_consent === true ||
+      (!publicOnly && (await readStoredJurisdiction(userId).catch(() => null))?.location_consent === true),
   };
 
   // Step 8: Add Connected-and-above fields
