@@ -1427,3 +1427,36 @@ geodesic measurement, is out of scope and keeps it.
 refuses a second apply ("the chamber this file creates already exists"). The changed gate was run
 on its own against production instead. **No written data differs between the version that ran and
 the version committed.**
+
+## ▶ The recipe for the next imported polygon
+
+Texas proved the route. Seven bodies are left: **AL State Board of Education (4 seats) · LA PSC
+(2) · NE PSC (1) · NE State Board of Education (3) · NE Regents (1) · NH Executive Council (5) ·
+NM Public Education Commission (4)**. For each:
+
+1. **Find the state's redistricting portal.** Texas runs CKAN:
+   `data.capitol.texas.gov/api/3/action/package_search?q=...` and `package_show?id=<plan>`.
+   Others will differ; an ArcGIS FeatureServer with `outSR=4326&f=geojson` is the other common
+   shape and is already in 4326.
+2. **Pick the plan whose title carries no end date.** Texas's four SBOE plans each state their own
+   validity in the title; three said "2013-2022" or "2003-2012".
+3. 🔴 **Prefer the KML. Read the `.prj` of any shapefile before you read its geometry.** Texas's
+   is Lambert Conformal Conic in metres, and loaded as 4326 it is valid, correctly shaped and
+   matches no address on Earth.
+4. **Parse with `CC_0369-parse-plane2106-kml.mjs` as the model** — it bounds-checks every
+   coordinate against the state and refuses holes or extra rings rather than dropping them.
+5. **Load with `CC_0369-tx-sboe-geofences.mjs` as the model**, under **`X0003` if the body is a
+   board of education** (no code change — that rule is not state-scoped). Any other kind of state
+   board goes under `X-ST-BOARD`, which `CC_0366` added to `districtQueries.ts` and
+   `geoIdGuard.ts`. ⚠ `mtfcc` is `varchar(10)`.
+6. **Gate the map against geometry we already trust**: union vs the state outline (`G4000`),
+   pairwise overlap, every incorporated place (`G4110`) resolving to exactly one district, and
+   members' home towns — but only the ones that lie **wholly** inside one district.
+7. **Migration with `emit369.mjs` as the model.** Create the whole body, seat every member, assert
+   the 238 baseline, and finish with the point-to-member chain.
+8. Run `check-address-reachability.mjs` and probe the live endpoint for a real address.
+
+⚠ **Kansas's State Board of Education (5) and Massachusetts's Governor's Council (8) are NOT in
+this list.** Their polygons are already in production — they are unions of state senate districts
+we hold — and they are blocked only on *which* senate districts compose each one. That is a
+sourcing problem, not a geometry one.
