@@ -63,8 +63,15 @@ AS $function$
       OR p_mtfcc LIKE 'X%'
 $function$;
 
--- A bounding box in SRID 4326 whatever the input SRID. A geometry stored with SRID 0 is taken to
--- be lon/lat already (the CC_0319 repair case); anything else is transformed.
+-- A bounding box in SRID 4326. A geometry stored with SRID 0 is taken to be lon/lat already (the
+-- CC_0319 repair case). Any other SRID gets the WHOLE-WORLD box — which re-asks every basic account
+-- in that state — rather than a reprojection: reprojecting reads public.spatial_ref_sys, which anon
+-- can write (ev-cto decision 0006, check-postgis-spatial-ref-guard.mjs). Measured 2026-11-07: all
+-- 75,059 shaped boundaries are SRID 4326, so this branch is a safety net, not a path.
+--
+-- ⚠ As first applied to prod (2026-11-07) this ELSE branch reprojected instead; CI's decision-0006
+-- guard caught it and CA_0370 replaced the function with this body. The branch never ran: every
+-- boundary is 4326 and the log was empty when CA_0370 applied.
 CREATE OR REPLACE FUNCTION essentials.boundary_extent_4326(p_geom public.geometry)
  RETURNS public.geometry
  LANGUAGE sql
@@ -74,7 +81,7 @@ AS $function$
   SELECT CASE
     WHEN p_geom IS NULL THEN NULL
     WHEN public.ST_SRID(p_geom) IN (0, 4326) THEN public.ST_SetSRID(public.ST_Envelope(p_geom), 4326)
-    ELSE public.ST_Envelope(public.ST_Transform(p_geom, 4326))
+    ELSE public.ST_MakeEnvelope(-180, -90, 180, 90, 4326)
   END
 $function$;
 
