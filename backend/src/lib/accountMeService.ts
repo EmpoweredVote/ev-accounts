@@ -16,6 +16,7 @@
  *   USER_NOT_FOUND — no public.users row (404)
  * Any other error propagates (the /me route maps it to 500).
  */
+import { readStoredJurisdiction, toJurisdictionResponse } from './storedJurisdiction.js';
 import { requestDb, adminRpc } from './supabase.js';
 import { getRequestAuthUser } from './authService.js';
 import { pool } from './db.js';
@@ -105,67 +106,17 @@ export async function getAccountMe(
     };
   }
 
-  // 5b. Stored jurisdiction columns for Connected users with location_consent. Graceful.
+  // 5b. Stored jurisdiction — Connected or basic (CA_0368; lib/storedJurisdiction.ts). Graceful.
   let jurisdictionData: Record<string, unknown> | null = null;
-  if (connected?.location_consent) {
-    try {
-      const { rows } = await pool.query<{
-        congressional_geo_id: string | null;
-        congressional_district_name: string | null;
-        state_senate_geo_id: string | null;
-        state_senate_district_name: string | null;
-        state_house_geo_id: string | null;
-        state_house_district_name: string | null;
-        county_geo_id: string | null;
-        county_name: string | null;
-        school_district_geo_id: string | null;
-        school_district_name: string | null;
-        jurisdiction_state: string | null;
-        jurisdiction_city: string | null;
-        city_council_geo_id: string | null;
-        city_council_district_name: string | null;
-        city_geo_id: string | null;
-        state_geo_id: string | null;
-        nation_geo_id: string | null;
-      }>(
-        `SELECT congressional_geo_id, congressional_district_name,
-                state_senate_geo_id, state_senate_district_name,
-                state_house_geo_id, state_house_district_name,
-                county_geo_id, county_name,
-                school_district_geo_id, school_district_name,
-                jurisdiction_state, jurisdiction_city,
-                city_council_geo_id, city_council_district_name,
-                city_geo_id, state_geo_id, nation_geo_id
-         FROM connect.connected_profiles WHERE user_id = $1`,
-        [userId]
-      );
-      const j = rows[0];
-      if (j && (j.congressional_geo_id || j.state_senate_geo_id)) {
-        jurisdictionData = {
-          congressional_district: j.congressional_geo_id,
-          congressional_district_name: j.congressional_district_name,
-          state_senate_district: j.state_senate_geo_id,
-          state_senate_district_name: j.state_senate_district_name,
-          state_house_district: j.state_house_geo_id,
-          state_house_district_name: j.state_house_district_name,
-          county: j.county_geo_id,
-          county_name: j.county_name,
-          school_district: j.school_district_geo_id,
-          school_district_name: j.school_district_name,
-          state: j.jurisdiction_state,
-          city: j.jurisdiction_city,
-          city_council_district: j.city_council_geo_id,
-          city_council_district_name: j.city_council_district_name,
-          // 🔴 Census FIPS geoids — deliberately NOT named `state`/`city` (already taken
-          // by the USPS code and place name above). Civic Spaces keys a slice on the geoid.
-          state_geoid: j.state_geo_id,
-          city_geoid: j.city_geo_id,
-          nation_geoid: j.nation_geo_id,
-        };
-      }
-    } catch (jErr) {
-      console.error('[getAccountMe] jurisdiction read error:', jErr);
+  let hasLocation = false;
+  try {
+    const j = await readStoredJurisdiction(userId);
+    hasLocation = j?.location_consent === true;
+    if (j && hasLocation && (j.congressional_geo_id || j.state_senate_geo_id)) {
+      jurisdictionData = toJurisdictionResponse(j);
     }
+  } catch (jErr) {
+    console.error('[getAccountMe] jurisdiction read error:', jErr);
   }
 
   // 6. Build response from an explicit whitelist — NEVER spread DB rows.
@@ -193,7 +144,8 @@ export async function getAccountMe(
     tier,
     is_admin: isAdmin,
     completed_onboarding: connected?.completed_onboarding ?? false,
-    location_consent: connected?.location_consent ?? false,
+    // True for a basic account too once it has added an address (CA_0368).
+    location_consent: hasLocation,
     verification_rating: connected?.verification_rating ?? 60,
     vq_hold_active: vqHoldActive,
     red_gem_quests_unlocked: redGemQuestsUnlocked,
