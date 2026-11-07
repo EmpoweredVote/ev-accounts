@@ -843,6 +843,23 @@ each was first learned.
   `STATE_BOARD_EDUCATION` because that is the name that fits. It has no sub-state polygon, so all
   eight members would have been **unreachable from every Michigan address and nothing would have
   errored** — the same failure as an empty `geo_id`, reached from the other direction.
+  - 🔴 **A DISTRICT IN A SEAT'S TITLE IS A CLAIM ABOUT THE CANDIDATE, NOT NECESSARILY ABOUT THE
+    ELECTORATE. READ WHO VOTES.** Georgia's Public Service Commissioners each *reside* in a
+    numbered district and are **chosen statewide**; Hawaii's OHA "Maui Resident Trustee" is elected
+    by the whole state; Alabama's PSC "Place 1" and "Place 2" are ballot positions on an at-large
+    commission. All three read as districted and none of them is, and all three were in the
+    inventory of seats "blocked on real geometry" until somebody read the enabling text
+    (`CC_0364`, `CC_0366`).
+  - 🟢 **BEFORE IMPORTING A POLYGON, ASK WHETHER THE BODY REUSES ONE WE HOLD.** Colorado's State
+    Board of Education and CU Regents are elected by **congressional district**, so `CC_0366`
+    copied the eight `G5200` polygons inside the database — no download, no reprojection, and the
+    CRS hazard cannot arise. A gate asserts each copy `ST_Equals` the district it claims to be;
+    a point-in-polygon check is **not** enough, because a consistent permutation passes it.
+  - ⚠ **A NEW `X…` LAYER NEEDS AN EXPLICIT LINE IN BOTH `districtQueries.ts` AND `geoIdGuard.ts`**
+    unless its district type is `LOCAL`, `COUNTY` or `JUDICIAL`, which is all the `X%` catch-all
+    admits. `X0003` → `STATE_BOARD_EDUCATION` is **not state-scoped**, so any state's K-12 board
+    can use it as-is. ⚠ **`geofence_boundaries.mtfcc` is `varchar(10)`** — a longer layer name
+    fails only at INSERT time, after every other gate has passed.
 - 🔴 **A MULTI-MEMBER STATEWIDE BODY IS ONE CHAMBER, ONE SHARED DISTRICT, N UNNUMBERED OFFICES, AND
   ONE RACE CARRYING `seats = N`.** Arizona's Corporation Commission is the pattern (5 offices all
   titled `Commissioner`); `CC_0364` built seven more on it — HI's Office of Hawaiian Affairs (9),
