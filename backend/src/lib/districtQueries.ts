@@ -204,6 +204,14 @@ export const GEOFENCE_DISTRICT_JOIN = `
         -- EXPLICIT, and kept in step with MTFCC_DISTRICT_TYPE_GUARD, whose X catch-all does not
         -- admit STATE_BOARD.
         OR (gb.mtfcc = 'X-CA-SBOE' AND d.district_type = 'STATE_BOARD')
+        -- X-ST-BOARD: elected state-level boards that are NOT boards of education and whose
+        -- districts have no TIGER layer of their own — the University of Colorado Board of
+        -- Regents, whose eight districts ARE the congressional districts and are loaded as copies
+        -- of the G5200 polygons (CC_0366). EXPLICIT for the same reason X-CA-SBOE is: the X
+        -- catch-all below admits only LOCAL, COUNTY and JUDICIAL, so without this line the seats
+        -- join nothing and are unreachable by address. Kept in step with
+        -- MTFCC_DISTRICT_TYPE_GUARD in geoIdGuard.ts, which check-address-reachability.mjs reads.
+        OR (gb.mtfcc = 'X-ST-BOARD' AND d.district_type = 'STATE_BOARD')
         OR (gb.mtfcc LIKE 'X%' AND gb.mtfcc NOT IN ('X0001','X0002','X0003','X0004') AND d.district_type IN ('LOCAL', 'COUNTY', 'JUDICIAL'))
         -- Fallback: if MTFCC not in known set, match any district type for this geo_id.
         -- G5200V26 (2026-vintage congressional boundaries) intentionally excluded: reps feed
