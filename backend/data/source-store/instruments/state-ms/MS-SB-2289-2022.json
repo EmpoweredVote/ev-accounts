@@ -1,0 +1,33 @@
+{
+  "id": "MS-SB-2289-2022",
+  "scope": "state:ms",
+  "title": "SB 2289 (2022 Regular Session): Voter registration; applicants must submit documentation proving U.S. citizenship.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2022/pdf/history/SB/SB2289.xml",
+    "https://billstatus.ls.state.ms.us/documents/2022/pdf/SB/2200-2299/SB2289IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec. 1\n(quote) Any person submitting an application to be registered as an elector in compliance with the laws of this state must provide one (1) of the following documents to prove his or her United States citizenship: (a) A birth certificate or a legible photocopy of the birth certificate; (b) A United States passport, or a legible photocopy of the pertinent pages of the passport, identifying the person and showing the passport number; (c) A United States naturalization documentation, a legible photocopy of the naturalization documentation, or the number of the voter's certificate of naturalization;\n(section) Sec. 1\n(quote) or (d) Any document or method of proof of citizenship established by the federal Immigration Reform and Control Act of 1986, Public Law 99-603, compiled in 8 USC Section 1101 et seq.\n(section) Sec. 2 (23-15-33(1))\n(quote) has submitted proof of his or her United States citizenship as provided in Section 1 of this act shall be registered by the county registrar in the voting precinct of the residence of such person through the Statewide Elections Management System.\n(section) Sec. 4 (23-15-47)\n(quote) Additionally, the county registrar shall verify that the applicant has submitted proof of his or her United States citizenship by attaching a document listed in Section 1 of this act to the application.\n(e_other_rule) not stated.\n(other) Sec. 3 (23-15-39): application form must let applicant state citizenship and instruct them to submit a listed document\n(other) Sec. 4 (23-15-47): mail-in applications also verified by driver license or social security number match",
+  "sponsors": [
+    {
+      "name": "Hill",
+      "role": "prime",
+      "version": "SB2289IN"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

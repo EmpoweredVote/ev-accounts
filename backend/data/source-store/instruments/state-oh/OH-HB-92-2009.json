@@ -1,0 +1,27 @@
+{
+  "id": "OH-HB-92-2009",
+  "scope": "state:oh",
+  "title": "HB 92 (2009-2010 (128th General Assembly)): H. B. No. 92: Absentee voting/registration verification/board of elections appointments",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/128/hb92",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_128/legislation/hb92/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) 3509.05(A)\n(quote) If the elector does not provide the elector's driver's license number or the last four digits of the elector's social security number on the statement of voter on the identification envelope, the elector also shall include in the return envelope with the identification envelope a copy of the elector's current valid photo identification, a copy of a military identification, or a copy of a current utility bill, bank statement, government check, paycheck, or other government document\n(section) 3509.07\n(quote) or that the elector has not included with the elector's ballot any identification required under section 3509.05 or 3511.09 of the Revised Code, the vote shall not be accepted or counted.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) 3503.15(H)(1)\n(quote) The secretary of state and the registrar of motor vehicles shall enter into an agreement to match information in the statewide voter registration database with motor vehicle records for the purpose of verifying the accuracy of the information in the statewide voter registration database and the information provided on voter registration applications, as required under 42 U.S.C. 15483.\n(section) 3503.15(H)(4)\n(quote) Notwithstanding any provision of the Revised Code to the contrary, a mismatch shall not be the sole reason for the removal of a voter from the statewide voter registration database.\n(other) 3509.04, 3509.05, 3509.06, 3509.07, 3511.05, 3511.11: absentee ballot identification-envelope statement must be completed or the ballot is not counted; boards must notify absent voters that a ballot will be rejected if the statement is incomplete\n(other) 3501.90, 3509.01: generally bar same-day voter registration and application for absent voter's ballots; revise the period and places for in-person absentee voting\n(other) 3501.07, 3501.10, 3505.21: election observers at the board of elections or other designated site during in-person absentee voting; changes to how board members are appointed\n(other) 3503.15(H): Secretary of State must tell boards of mismatches between voter registration data and motor vehicle records (driver's license number, SSN, date of birth); board notifies the voter, who can correct it\n(other) note: Only one version (introduced). Struck words are not marked. The 3509.05 ID sentence reads 'a copy of a military identification' with no 'that shows the elector's name and current address', unlike the enrolled 2006 text of HB 3; this may be a deletion by this bill, but the PDF text does not show it. The mismatch rule in 3503.15(H) concerns data matching, not citizenship.",
+  "sponsors": [],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

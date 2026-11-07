@@ -1,0 +1,55 @@
+{
+  "id": "OH-HB-457-2024",
+  "scope": "state:oh",
+  "title": "HB 457 (2023-2024 (135th General Assembly)): H. B. No. 457: Modifies voter registration procedures for electors who move",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/135/hb457",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb457/00_IN/html/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) R.C. 3503.14(A)(5) (reprinted unchanged)\n(quote) The voter to provide at least one of the following forms of identification: (a) The voter's Ohio driver's license or state identification card number; (b) The last four digits of the voter's social security number.\n(section) R.C. 3503.14(A)(7)\n(quote) The voter's signature, accompanied by the following statement: \"I declare under penalty of election falsification I am a citizen of the United States, will have lived in this state for 30 days immediately preceding the next election, and will be at least 18 years of age at the time of the general election. I understand that if I am registered to vote at any other address, the election officials will be notified of my change of address.\n(other) 3503.14: registration form adds current residence address and a space for former address; former address not required for validity\n(other) 3503.15: registration records kept permanently\n(other) 3503.20: online registration adds former-address option and the same declaration\n(other) 3503.21 and 3503.33: transfer of registration between counties and notice to the former state when a voter moves\n(other) note: Registration-form bill. The ID-number list in 3503.14(A)(5) is existing law reprinted unchanged; the new text is the signed citizenship declaration on the form (an attestation, no documents). Sole version.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Gary Click",
+      "role": "prime",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Adam C. Bird",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Thaddeus J. Claggett",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Bill Dean",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Jennifer Gross",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Roy Klopfenstein",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Scott Wiggam",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

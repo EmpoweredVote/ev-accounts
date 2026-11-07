@@ -1,0 +1,19 @@
+{
+  "id": "OH-SB-227-2011",
+  "scope": "state:oh",
+  "title": "SB 227 (2011-2012 (129th General Assembly)): S. B. No. 227: Elections process-efficient access to by voters",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/129/sb227",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_129/legislation/sb227/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) 3509.03(E)\n(quote) (E) One of the following: (1) The elector's driver's license number or state identification card number; (2) The last four digits of the elector's social security number; (3) A copy of the elector's current and valid photo identification, a copy of a military identification, a copy of a United States passport, or a copy of a current utility bill, bank statement, government check, paycheck, or other government document, other than a notice of voter registration mailed by a board of elections under section 3503.19 of the Revised Code, that shows the name and address of the elector.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) 3509.03: an elector may request absentee ballots by electronic mail or through the internet\n(other) 3509.03: a board may mail unsolicited absentee ballot applications (the text reads 'shall not may mail', so the change from 'shall not' to 'may' is shown); General Assembly must fund and the Secretary of State must reimburse boards for even-numbered-year general elections\n(other) note: Only one version (introduced). Struck words are not marked. The ID list differs from the 2011 companion bill HB 291, which reprints the list without 'state identification card number' and without 'a copy of a United States passport'; those two items and the dropped exclusion of 3501.19 election notices may be additions by this bill, but the PDF text does not show it.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

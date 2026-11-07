@@ -1,0 +1,198 @@
+{
+  "id": "OH-HB-687-2020",
+  "scope": "state:oh",
+  "title": "HB 687 (2019-2020 (133th General Assembly)): H. B. No. 687: Change election laws",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/133/hb687",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/hb687/00_IN/html/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) 3505.18(A)(1)\n(quote) and provide proof of the elector's identity in the form of a current and valid photo identification, a military identification, or a copy of a current utility bill, bank statement, government check, paycheck, or other government document\n(b_no_id_remedy)\n(section) 3505.18(A)(2)(a)\n(quote) (a) Write the elector's driver's license or state identification card number or the last four digits of the elector's social security number on the provisional ballot envelope; or\n(section) 3505.18(A)(2)(b)\n(quote) (b) Provide the identification required under division (A)(1) of this section, the elector's driver's license or state identification card number, or the last four digits of the elector's social security number to the board of elections not later than the seventh business day after the day of the election.\n(c_mail_ballot_id)\n(section) 3509.05(A)(2)\n(quote) If the elector does not provide the elector's driver's license number or the last four digits of the elector's social security number on the statement of voter on the identification envelope, the elector also shall include in the return envelope with the identification envelope a copy of the elector's current valid photo identification, a copy of a military identification, or a copy of a current utility bill, bank statement, government check, paycheck, or other government document\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) 3503.20(A)\n(quote) (A) As used in this section, \"applicant\" means a person who meets both of the following requirements: (1) The person is qualified to register to vote under this chapter; and (2) The person has a current and valid Ohio driver's license or identification card issued under Chapter 4507. of the Revised Code or a social security number.\n(section) 3503.20(B)(2)(a)(iv)\n(quote) (iv) Identification in the form of either the last four digits of the applicant's social security number, or the applicant's Ohio driver's license number or the number of the applicant's state identification card issued under section 4507.50 of the Revised Code.\n(section) 3503.20(B)(2)(b)\n(quote) STRUCK: The applicant's name, address, and date of birth, the last four digits of the applicant's social security number, and the applicant's Ohio driver's license number or the number of the applicant's state identification card as they are provided in the application are not inconsistent with the information on file with the bureau of motor vehicles;\n(other) 3503.20: online registration open to a person with an Ohio license or ID card or a social security number; the Secretary of State compares data with the bureau of motor vehicles; the exact-match requirement is struck; signature handling when no BMV signature exists\n(other) 3505.18: voter signs the poll book; no signature comparison when the registration has no signature\n(other) 3509.05, 3509.051-.053 (new 3509.052, 3509.053): ballot drop boxes; mail ballots count if returned by mail with a postmark on or before election day and received within ten days; return-envelope delivery changes\n(other) 3509.02, 3509.06, 3509.07, 3509.09, 3511.09, 3511.11: absentee and armed-service voting conforming changes\n(other) 3501.05, 3501.10, 3501.11, 3501.22, 3501.29, 3503.09-.28, 3599.11: election administration, registration and penalties\n(other) 3505.181-.183: provisional ballot rules\n(other) Repeals 3503.29\n(other) note: Only one version (introduced), with markers. In-person and mail-ballot ID text is reprinted unchanged except for added numbering. The new text changes the provisional-ballot follow-up from the seventh day to the seventh business day, and makes online registration depend on a driver's license, state ID or social security number with matching loosened. No citizenship rule other than the existing applicant statement that the applicant is a U.S. citizen.",
+  "sponsors": [
+    {
+      "name": "Paula Hicks-Hudson",
+      "role": "prime",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Bride Rose Sweeney",
+      "role": "prime",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Gil Blair",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Kristin Boggs",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Janine R. Boyd",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Juanita O. Brent",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Richard D. Brown",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Jack Cera",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Randi Clites",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Erica C. Crawley",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Sedrick Denson",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Tavia Galonski",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Stephanie D. Howse",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Catherine D. Ingram",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Brigid Kelly",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "David Leland",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Michele Lepore-Hagan",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Mary Lightbody",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Beth Liston",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Joseph A. Miller III",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Jessica E. Miranda",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Michael J. O'Brien",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "John Patterson",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Phillip M. Robinson, Jr.",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "John M. Rogers",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "C. Allison Russo",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Michael Sheehy",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Michael J. Skindell",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Kent Smith",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Lisa A. Sobecki",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Emilia Strong Sykes",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Terrence Upchurch",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Casey Weinstein",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Thomas West",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

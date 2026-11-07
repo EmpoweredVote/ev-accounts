@@ -47,6 +47,30 @@
       "found": 0,
       "at": "2026-10-27T14:41:41.613Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm bans",
+        "background checks",
+        "carry permits",
+        "gun rights general statements",
+        "firearm-industry investment policy"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity: https://en.wikipedia.org/wiki/Brad_Briner and the WUNC 2024 race article show he is the elected State Treasurer (not a legislator, so no bill sponsor list applies); ncleg member lists for both chambers do not list him",
+        "WUNC 2024 treasurer race article: nothing on the subject",
+        "Wikipedia page: nothing on the subject",
+        "web search: Brad Briner plus gun, firearm, Second Amendment words: nothing on the subject",
+        "web search: Treasurer Briner firearm industry investment/divestment: nothing on the subject (only an unrelated bond-sale item)",
+        "not reviewed: nctreasurer.gov press release archive (not searched page by page)",
+        "Ballotpedia: not reachable by fetch tool, not relied on"
+      ],
+      "found": 0,
+      "at": "2026-11-05T23:58:11.736Z",
+      "by": "source-collector"
     }
   ]
 }

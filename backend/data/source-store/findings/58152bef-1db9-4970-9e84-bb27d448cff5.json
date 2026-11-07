@@ -30,7 +30,224 @@
           "sha256": "a1142904e692e81f08ce94bef1f5827e9d662ac1f81ce57f6330064169e08945"
         }
       }
+    },
+    {
+      "id": "364900856d99bfb399d1bd234a46bd84aa31932d2d96df01adc5d490b75dbbec",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/senate/0860019.pdf",
+      "date": "2022-03-30",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Report of Conference Committee on H. B. No. 1510 was adopted: (0860019)",
+      "note": "Senate roll call as printed ('Kirby'), linked to Dean Kirby (district 30) via the official 2022 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.755Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad14525934ebeba21266dd1c31116eaf00bcbf2ad15a6cda52f2a22178431150",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2012/pdf/votes/senate/0990009.pdf",
+      "date": "2012-04-10",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-921-2012",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On H. B. No. 921. On motion of Senator McDaniel, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed as amended, title standing as stated, by the following vote: (0990009)",
+      "note": "Senate roll call as printed ('Kirby'), linked to Dean Kirby (district 30) via the official 2012 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.755Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9cd2168c2c71eccb747daa780f57637813f29d061602888c12ad07e0424846e7",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2008/pdf/history/SB/SB2196.xml",
+      "date": "2008",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2196-2008",
+      "act": "sponsor",
+      "motion": "co sponsor, SB2196IN",
+      "note": "Named as co sponsor ('Kirby') on the official bill text, summary or journal; linked to Dean Kirby via the official 2008 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.755Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "653efbdf42db114f34de52bc9afb4ca946ad6e0c0af0bbda9bc74d60916c4722",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2009/pdf/votes/senate/0300008.pdf",
+      "date": "2009-02-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2548-2009",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2548. The vote recurring, on motion of Senator Burton, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0300008)",
+      "note": "Senate roll call as printed ('Kirby'), linked to Dean Kirby (district 30) via the official 2009 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.755Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dc520a4a292cc586279b3cc17206fd1dea7229bef6cc5e4c9301edcf9855f7c4",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2009/pdf/history/SB/SB2548.xml",
+      "date": "2009",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2548-2009",
+      "act": "sponsor",
+      "motion": "co sponsor, As Passed the Senate (SB2548PS); introduced (SB2548IN) also read",
+      "note": "Named as co sponsor ('Kirby') on the official bill text, summary or journal; linked to Dean Kirby via the official 2009 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.755Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4cd68734c411fde05dc865eff22b5ec7355a7eca5840d62ffaae784f759ff30d",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/senate/0720054.pdf",
+      "date": "2024-03-13",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2576. On motion of Senator England, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0720054)",
+      "note": "Senate roll call as printed ('Kirby'), linked to Dean Kirby (district 30) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.755Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b0a384baf6fe58a9ea0e42529ac3f22a97f043100dd50e424c87ef0255125e0b",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/senate/0770004.pdf",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Senate concurred in the foregoing House Amendment to S. B. No. 2588 by the following vote: (0770004)",
+      "note": "Senate roll call as printed ('Kirby'), linked to Dean Kirby (district 30) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.755Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a028b8f2afe6c2f1d4227a3e8a492d2bda1790c4c4d4c75b9cf3a0db850d5f39",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/senate/0320004.pdf",
+      "date": "2018-02-02",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2766-2018",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2766. On motion of Senator Blackwell, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0320004)",
+      "note": "Senate roll call as printed ('Kirby'), linked to Dean Kirby (district 30) via the official 2018 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.755Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "SHIELD Act citizenship checks",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "confirmed in office: https://billstatus.ls.state.ms.us/members/senate/kirby.xml (Senate District 30)",
+        "On the Record (0 meetings)",
+        "legislature member page (no news or release list)",
+        "https://magnoliatribune.com/?p=144630 (2026-04-30 retirement story): nothing on the subject",
+        "https://www.supertalk.fm/?p=310685 (2026-05-05 retirement story): nothing on the subject",
+        "blocked: https://ballotpedia.org/Dean_Kirby (not fetched, per instruction)",
+        "not reviewed: mississippitoday.org Kirby podcast pages (site refuses AI agents)",
+        "no personal campaign or newsletter site found",
+        "5 web searches (voter ID/photo ID, proof of citizenship/SHIELD Act, questionnaire/voter guide, floor comments on citizenship bill): nothing naming him speaking on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-05T22:47:33.223Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 8,
+      "at": "2026-11-05T23:52:51.755Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
 }

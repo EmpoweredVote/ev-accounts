@@ -1,0 +1,163 @@
+{
+  "id": "OH-SB-8-2009",
+  "scope": "state:oh",
+  "title": "SB 8 (2009-2010 (128th General Assembly)): S. B. No. 8: Absentee voting/prohibit same day voter registration/mismatches/election observers",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/128/sb8",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_128/legislation/sb8/02_PS/pdf/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_128/legislation/sb8/00_IN/pdf/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_128/legislation/sb8/01_RS/pdf/"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) R.C. 3503.19 (voter notice)\n(quote) Voters must bring identification to the polls in order to verify identity. Identification may include a current and valid photo identification, a military identification, or a copy of a current utility bill, bank statement, government check, paycheck, or other government document, other than this notification or a notification of an election mailed by a board of elections, that shows the voter's name and current address.\n(b_no_id_remedy)\n(section) R.C. 3503.19 (voter notice)\n(quote) Voters who do not provide one of these documents will still be able to vote by providing the last four digits of the voter's social security number and by casting a provisional ballot. Voters who do not have any of the above forms of identification, including a social security number, will still be able to vote by signing an affirmation swearing to the voter's identity under penalty of election falsification and by casting a provisional ballot.\n(c_mail_ballot_id)\n(section) R.C. 3509.05(A)\n(quote) If the elector does not provide the elector's driver's license number or the last four digits of the elector's social security number on the statement of voter on the identification envelope, the elector also shall include in the return envelope with the identification envelope a copy of the elector's current valid photo identification, a copy of a military identification, or a copy of a current utility bill, bank statement, government check, paycheck, or other government document ... that shows the name and address of the elector.\n(section) R.C. 3509.07\n(quote) or that the elector has not included with the elector's ballot any identification required under section 3509.05 or 3511.09 of the Revised Code, the vote shall not be accepted or counted.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) R.C. 3503.15(H)(1)\n(quote) The secretary of state and the registrar of motor vehicles shall enter into an agreement to match information in the statewide voter registration database with motor vehicle records for the purpose of verifying the accuracy of the information in the statewide voter registration database and the information provided on voter registration applications, as required under 42 U.S.C. 15483.\n(section) R.C. 3503.15(H)(3)(a)\n(quote) Upon notification of mismatches by the secretary of state under division (H)(2) of this section, the board of elections shall notify each affected voter of the mismatch regarding the voter's information. The board shall provide the voter with the opportunity to verify and correct the mismatched information.\n(other) R.C. 3.02 to 6119.32 (about 280 sections): omnibus Election Law revision paralleling H.B. 260 (local bond/levy ballot procedures, zoning referenda notices, charter and initiative/referendum procedures, school and other levies, liquor local option, tax levies)\n(other) R.C. 3501.xx: boards of elections, polling place rules, harassment in violation of election law, election observers\n(other) R.C. 3503.xx: voter registration; statewide database and BMV mismatch notices (3503.15); registration notice (3503.19); new 3503.191\n(other) R.C. 3505.xx: ballot and voting procedure, observers (3505.21); new 3505.184\n(other) R.C. 3509.xx / 3511.xx: absent voting; incomplete-statement notice; absentee in-person period; new 3511.021, 3511.14; repeals 3509.022\n(other) R.C. 3513.xx: primaries and candidate petitions; 3515.09; 3519.xx; 3767.05; liquor local option sections (4301.xx)\n(other) version: 00_IN: about 84 KB bill like S.B. 380 of 2008: absentee ID text in 3509.04/05/07; mismatch rules in 3503.15; observers; same-day registration ban; no in-person ID text, no citizenship proof\n(other) version: 01_RS: omnibus (about 280 sections); keeps absentee ID text; adds R.C. 3503.19 voter notice listing in-person ID options and the SSN-4 provisional / affirmation fallback; no citizenship proof\n(other) version: 02_PS: same ID text as 01_RS\n(other) note: 2009 PDF text: struck and new words are not marked, so I cannot tell which of the ID wording is new and which is existing law reprinted (the in-person ID notice in 3503.19 and absentee ID text look like reprinted existing law because the bill title is about revising election law generally). R.C. 3505.18 (polling-place ID rule) is not in the bill's section list. Section list is summarized from the long title. Vote mapping per brief: Senate passage on committee-reported 01_RS (as-passed text 02_PS has same ID text). Bill did not pass the House.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2009-12-09",
+      "body": "OH Senate",
+      "motion": "Passed [version voted: 01_RS]",
+      "kind": "roll-call",
+      "yes": 22,
+      "no": 10,
+      "absent": 0,
+      "body_size": 32,
+      "note": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_128/legislation/sb8/actions/",
+      "members": [
+        {
+          "name": "Timothy Grendell",
+          "vote": "yea"
+        },
+        {
+          "name": "Jon Husted",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Widener",
+          "vote": "yea"
+        },
+        {
+          "name": "Karen Gillmor",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Cates",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Niehaus",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Gibbs",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Patton",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Coughlin",
+          "vote": "yea"
+        },
+        {
+          "name": "David Goodman",
+          "vote": "yea"
+        },
+        {
+          "name": "Shannon Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "John A. Carey",
+          "vote": "yea"
+        },
+        {
+          "name": "J. Kirk Schuring",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Hughes",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Sawyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Jimmy Stewart",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Schaffer",
+          "vote": "yea"
+        },
+        {
+          "name": "Keith Faber",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen Buehrer",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Seitz",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Wagoner",
+          "vote": "yea"
+        },
+        {
+          "name": "Fred Strahorn",
+          "vote": "nay"
+        },
+        {
+          "name": "Teresa Fedor",
+          "vote": "nay"
+        },
+        {
+          "name": "Ray Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Eric Kearney",
+          "vote": "nay"
+        },
+        {
+          "name": "Dale Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Jason Wilson",
+          "vote": "nay"
+        },
+        {
+          "name": "Shirley Smith",
+          "vote": "nay"
+        },
+        {
+          "name": "Joseph Schiavoni",
+          "vote": "nay"
+        },
+        {
+          "name": "Susan Morano",
+          "vote": "nay"
+        },
+        {
+          "name": "Nina Turner",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

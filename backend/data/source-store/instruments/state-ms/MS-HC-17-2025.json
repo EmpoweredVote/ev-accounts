@@ -1,0 +1,525 @@
+{
+  "id": "MS-HC-17-2025",
+  "scope": "state:ms",
+  "title": "HC 17 (2025 Regular Session): Constitution; amend to provide that only U.S. citizens are allowed the opportunity to vote.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2025/pdf/history/HC/HC0017.xml",
+    "https://billstatus.ls.state.ms.us/documents/2025/pdf/HC/HC0017PS.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2025/pdf/HC/HC0017IN.pdf"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Proposed text of Section 241, Mississippi Constitution (as adopted by the House)\n(quote) \"Section 241. * * * Only an inhabitant of this state, except * * *, persons adjudicated to be non compos mentis who is a citizen of the United States of America, eighteen (18) years old and upward, who has been a resident of this state for one (1) year, and for one (1) year in the county in which he offers to vote, and for six (6) months in the election precinct or in the incorporated city or town in which he offers to vote, and who is duly registered as provided in this article, and who has never been convicted of murder, rape, bribery, theft, arson, obtaining money or goods under false pretense, perjury, forgery, embezzlement or bigamy, is declared to be a qualified elector, except that he shall be qualified to vote for President and Vice President of the United States if he meets the requirements established by Congress therefor and is otherwise a qualified elector.\"\n(section) Ballot explanation\n(quote) \"This proposed constitutional amendment provides that only citizens of the United States are allowed the opportunity to vote.\"\n(section) Proposed text as introduced (differs: \"except idiots and insane persons\")\n(quote) \"Section 241. * * * Only an inhabitant of this state, except idiots and insane persons\n(other) Proposes the amendment for the November 2026 ballot.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "McLean",
+      "role": "prime",
+      "version": "As Adopted by the House (HC0017PS); introduced (HC0017IN) also read"
+    },
+    {
+      "name": "Eubanks",
+      "role": "co",
+      "version": "As Adopted by the House (HC0017PS); introduced (HC0017IN) also read"
+    }
+  ],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2025-02-12",
+      "body": "MS House",
+      "motion": "H. C. R. No. 17 was adopted by the following vote: (0370030)",
+      "kind": "roll-call",
+      "yes": 110,
+      "no": 4,
+      "absent": 6,
+      "body_size": 120,
+      "note": "https://billstatus.ls.state.ms.us/2025/pdf/votes/house/0370030.pdf",
+      "members": [
+        {
+          "name": "Aguirre",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson (122nd)",
+          "vote": "yea"
+        },
+        {
+          "name": "Anthony",
+          "vote": "yea"
+        },
+        {
+          "name": "Banks",
+          "vote": "yea"
+        },
+        {
+          "name": "Barnett",
+          "vote": "yea"
+        },
+        {
+          "name": "Barton",
+          "vote": "yea"
+        },
+        {
+          "name": "Bell (21st)",
+          "vote": "yea"
+        },
+        {
+          "name": "Bell (65th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Bennett",
+          "vote": "yea"
+        },
+        {
+          "name": "Blackmon",
+          "vote": "yea"
+        },
+        {
+          "name": "Blackwell",
+          "vote": "yea"
+        },
+        {
+          "name": "Bounds",
+          "vote": "yea"
+        },
+        {
+          "name": "Boyd (19th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Boyd (37th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Burch",
+          "vote": "yea"
+        },
+        {
+          "name": "Burnett",
+          "vote": "yea"
+        },
+        {
+          "name": "Butler-Washington",
+          "vote": "yea"
+        },
+        {
+          "name": "Byrd",
+          "vote": "yea"
+        },
+        {
+          "name": "Calvert",
+          "vote": "yea"
+        },
+        {
+          "name": "Carpenter",
+          "vote": "yea"
+        },
+        {
+          "name": "Clark",
+          "vote": "yea"
+        },
+        {
+          "name": "Cockerham",
+          "vote": "yea"
+        },
+        {
+          "name": "Crawford",
+          "vote": "yea"
+        },
+        {
+          "name": "Creekmore IV",
+          "vote": "yea"
+        },
+        {
+          "name": "Crudup",
+          "vote": "yea"
+        },
+        {
+          "name": "Currie",
+          "vote": "yea"
+        },
+        {
+          "name": "Deweese",
+          "vote": "yea"
+        },
+        {
+          "name": "Estrada",
+          "vote": "yea"
+        },
+        {
+          "name": "Eubanks",
+          "vote": "yea"
+        },
+        {
+          "name": "Eure",
+          "vote": "yea"
+        },
+        {
+          "name": "Evans",
+          "vote": "yea"
+        },
+        {
+          "name": "Faulkner",
+          "vote": "yea"
+        },
+        {
+          "name": "Felsher",
+          "vote": "yea"
+        },
+        {
+          "name": "Fondren",
+          "vote": "yea"
+        },
+        {
+          "name": "Ford (54th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Ford (73rd)",
+          "vote": "yea"
+        },
+        {
+          "name": "Foster",
+          "vote": "yea"
+        },
+        {
+          "name": "Gibbs (36th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Gibbs (72nd)",
+          "vote": "yea"
+        },
+        {
+          "name": "Grady",
+          "vote": "yea"
+        },
+        {
+          "name": "Guice",
+          "vote": "yea"
+        },
+        {
+          "name": "Hale",
+          "vote": "yea"
+        },
+        {
+          "name": "Hall",
+          "vote": "yea"
+        },
+        {
+          "name": "Haney",
+          "vote": "yea"
+        },
+        {
+          "name": "Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "Hawkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Hines",
+          "vote": "yea"
+        },
+        {
+          "name": "Hobgood-Wilkes",
+          "vote": "yea"
+        },
+        {
+          "name": "Holloway (27th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Holloway (76th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Hood",
+          "vote": "yea"
+        },
+        {
+          "name": "Horan",
+          "vote": "yea"
+        },
+        {
+          "name": "Horne",
+          "vote": "yea"
+        },
+        {
+          "name": "Hulum",
+          "vote": "yea"
+        },
+        {
+          "name": "Jackson (11th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Jackson (45th)",
+          "vote": "yea"
+        },
+        {
+          "name": "James-Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Karriem",
+          "vote": "yea"
+        },
+        {
+          "name": "Keen",
+          "vote": "yea"
+        },
+        {
+          "name": "Kinkade",
+          "vote": "yea"
+        },
+        {
+          "name": "Ladner",
+          "vote": "yea"
+        },
+        {
+          "name": "Lancaster",
+          "vote": "yea"
+        },
+        {
+          "name": "Lott",
+          "vote": "yea"
+        },
+        {
+          "name": "Mangold",
+          "vote": "yea"
+        },
+        {
+          "name": "Mansell",
+          "vote": "yea"
+        },
+        {
+          "name": "Massengill",
+          "vote": "yea"
+        },
+        {
+          "name": "Mattox",
+          "vote": "yea"
+        },
+        {
+          "name": "McCarty",
+          "vote": "yea"
+        },
+        {
+          "name": "McCray",
+          "vote": "yea"
+        },
+        {
+          "name": "McGee",
+          "vote": "yea"
+        },
+        {
+          "name": "McKnight",
+          "vote": "yea"
+        },
+        {
+          "name": "McLean",
+          "vote": "yea"
+        },
+        {
+          "name": "McMillan",
+          "vote": "yea"
+        },
+        {
+          "name": "Mickens",
+          "vote": "yea"
+        },
+        {
+          "name": "Mims",
+          "vote": "yea"
+        },
+        {
+          "name": "Morgan",
+          "vote": "yea"
+        },
+        {
+          "name": "Nelson",
+          "vote": "yea"
+        },
+        {
+          "name": "Newman",
+          "vote": "yea"
+        },
+        {
+          "name": "Oliver",
+          "vote": "yea"
+        },
+        {
+          "name": "Owen",
+          "vote": "yea"
+        },
+        {
+          "name": "Paden",
+          "vote": "yea"
+        },
+        {
+          "name": "Pigott",
+          "vote": "yea"
+        },
+        {
+          "name": "Porter",
+          "vote": "yea"
+        },
+        {
+          "name": "Powell",
+          "vote": "yea"
+        },
+        {
+          "name": "Read",
+          "vote": "yea"
+        },
+        {
+          "name": "Remak",
+          "vote": "yea"
+        },
+        {
+          "name": "Roberson",
+          "vote": "yea"
+        },
+        {
+          "name": "Rosebud",
+          "vote": "yea"
+        },
+        {
+          "name": "Rushing",
+          "vote": "yea"
+        },
+        {
+          "name": "Sanders",
+          "vote": "yea"
+        },
+        {
+          "name": "Sanford",
+          "vote": "yea"
+        },
+        {
+          "name": "Scoggin",
+          "vote": "yea"
+        },
+        {
+          "name": "Shanks",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Steverson",
+          "vote": "yea"
+        },
+        {
+          "name": "Taylor",
+          "vote": "yea"
+        },
+        {
+          "name": "Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Tubb",
+          "vote": "yea"
+        },
+        {
+          "name": "Tullos",
+          "vote": "yea"
+        },
+        {
+          "name": "Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Varner",
+          "vote": "yea"
+        },
+        {
+          "name": "Waldo",
+          "vote": "yea"
+        },
+        {
+          "name": "Wallace",
+          "vote": "yea"
+        },
+        {
+          "name": "Watson",
+          "vote": "yea"
+        },
+        {
+          "name": "Yancey",
+          "vote": "yea"
+        },
+        {
+          "name": "Yates",
+          "vote": "yea"
+        },
+        {
+          "name": "Zuber",
+          "vote": "yea"
+        },
+        {
+          "name": "Mr. Speaker",
+          "vote": "yea"
+        },
+        {
+          "name": "Bailey",
+          "vote": "nay"
+        },
+        {
+          "name": "Denton",
+          "vote": "nay"
+        },
+        {
+          "name": "Osborne",
+          "vote": "nay"
+        },
+        {
+          "name": "Summers",
+          "vote": "nay"
+        },
+        {
+          "name": "Anderson (110th)",
+          "vote": "absent"
+        },
+        {
+          "name": "Arnold",
+          "vote": "absent"
+        },
+        {
+          "name": "Hurst",
+          "vote": "absent"
+        },
+        {
+          "name": "Lamar",
+          "vote": "absent"
+        },
+        {
+          "name": "Scott",
+          "vote": "absent"
+        },
+        {
+          "name": "Harness",
+          "vote": "abstain"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

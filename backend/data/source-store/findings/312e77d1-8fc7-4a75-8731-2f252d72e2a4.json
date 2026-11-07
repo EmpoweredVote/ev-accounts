@@ -83,6 +83,69 @@
         "fetched_at": "2026-10-28T22:44:48.008Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "f8dbfd8aa0449300f6516952540e050aad349252b1fb5240af691cc198ea2b96",
+      "kind": "own-words",
+      "url": "https://theflintcouriernews.com/?p=39302",
+      "date": "2023-04-20",
+      "date_precision": "day",
+      "passage": "“When I was in middle school, we had classmates who lost their siblings to accidental gun deaths in their homes due to unsecured firearms,” Gilchrist added.",
+      "note": "Quoted in a local newspaper interview about the gun violence prevention bills (date from the page's own publication metadata).",
+      "subjects": [
+        "safe gun storage",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-05T22:12:06.450Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c6a3f2e34a4c25df1f199c8b54517dce76b5fe018c76e0336b98f2ceadc5cc7c",
+      "kind": "own-words",
+      "url": "https://theflintcouriernews.com/?p=39302",
+      "date": "2023-04-20",
+      "date_precision": "day",
+      "passage": "“Earlier in my career, after Trayvon Martin was killed, I helped organize the national response to that shooting by George Zimmerman. That’s weighed on my heart heavily for a long time, and I’m proud to stand tall alongside Governor Gretchen Whitmer in this democratic majority in the Michigan Legislature to get the first meaningful gun violence legislation in a long time enacted into law here in the state of Michigan.”",
+      "note": "Quoted in the same interview, on his role in getting the gun violence bills (background checks, safe storage, extreme risk orders) into law.",
+      "subjects": [
+        "gun safety laws",
+        "check every gun buyer",
+        "red flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-05T22:12:06.450Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c9d86673aea6d76c9716f04f34d4b0f09a4e43282847244de22d8c5a3522a10b",
+      "kind": "own-words",
+      "url": "https://theflintcouriernews.com/?p=39302",
+      "date": "2023-04-20",
+      "date_precision": "day",
+      "passage": "People on probation or parole shouldn’t have firearms. It’s illegal to have a firearm in possession if you have that status.",
+      "note": "Quoted in the same interview, speaking about the Operation Safe Neighborhoods illegal-gun effort.",
+      "subjects": [
+        "who may own a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-05T22:12:06.450Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -112,6 +175,34 @@
       "found": 4,
       "at": "2026-10-28T22:44:48.008Z",
       "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "background checks and permits",
+        "red flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "safe storage",
+        "gun rights and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Lieutenant Governor: no legislative sponsor list applies",
+        "local news interview (2023-04-20)",
+        "local TV report on gun-safety summit (2024-01-30)",
+        "blocked: https://www.michigan.gov/whitmer/news/press-releases/2024/08/06/lt-governor-gilchrist-announces-operation-safe-neighborhoods",
+        "blocked: https://ballotpedia.org/Garlin_Gilchrist",
+        "campaign site guesses returned a parked page: not reviewed",
+        "in scope: sitting Lieutenant Governor; won the convention endorsement for Secretary of State on 2026-04-19 (nomination step formal later; August outcome not confirmed by me)",
+        "a 2026 governor-race gun plan: not found"
+      ],
+      "found": 3,
+      "at": "2026-11-05T22:12:06.450Z",
+      "by": "source-collector"
     }
   ]
 }

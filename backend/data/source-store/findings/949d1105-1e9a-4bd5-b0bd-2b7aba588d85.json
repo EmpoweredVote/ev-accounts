@@ -30,7 +30,243 @@
           "sha256": "a1142904e692e81f08ce94bef1f5827e9d662ac1f81ce57f6330064169e08945"
         }
       }
+    },
+    {
+      "id": "d4e868964ed4d56fc32ec792437d9901a88084d804cae2d0686301c5384c34af",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/house/0850033.pdf",
+      "date": "2022-03-29",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "yea",
+      "motion": "House: The conference report on H. B. No. 1510 was adopted by the following vote: (0850033)",
+      "note": "House roll call as printed ('Guice'), linked to Jeffrey S. Guice (district 114) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.748Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "396503d99b0b235e2d081828912a522a8dc22d4813c14dce24ff89d852bddb79",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2009/pdf/history/HB/HB1520.xml",
+      "date": "2009",
+      "date_precision": "year",
+      "instrument_id": "MS-HB-1520-2009",
+      "act": "sponsor",
+      "motion": "co sponsor, HB1520IN",
+      "note": "Named as co sponsor ('Guice') on the official bill text, summary or journal; linked to Jeffrey Guice via the official 2009 member roll of the House (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.748Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39b991844f0e395bc487c48e801820733d70f388586c168923fbb49ce0907e59",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2021/pdf/votes/house/0370056.pdf",
+      "date": "2021-02-10",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-586-2021",
+      "act": "yea",
+      "motion": "House: H. B. No. 586 passed by the following vote: (0370056)",
+      "note": "House roll call as printed ('Guice'), linked to Jeffrey S. Guice (district 114) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.748Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7919841f482f7fbde91a529af7a24c5d037df8b0922771e24dad12af155e1c4f",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/house/0360024.pdf",
+      "date": "2018-02-06",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-804-2018",
+      "act": "yea",
+      "motion": "House: H. B. No. 804 passed by the following vote: (0360024)",
+      "note": "House roll call as printed ('Guice'), linked to Jeffrey S. Guice (district 114) via the official 2018 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.748Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cd554999607aa8d5b370072c28b22e203be62a9521fa66273ff792aeb1012882",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2012/pdf/votes/house/1150004.pdf",
+      "date": "2012-04-26",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-921-2012",
+      "act": "yea",
+      "motion": "House: The House concurred in the Senate amendment to H. B. No. 921 by the following vote: (1150004)",
+      "note": "House roll call as printed ('Guice'), linked to Jeffrey S. Guice (district 114) via the official 2012 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.748Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "67db4dc13e1dcfb854e617d8bea4846e0da6d1bacc4388fbc6e176698f34d14e",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2009/pdf/history/HB/HB0951.xml",
+      "date": "2009",
+      "date_precision": "year",
+      "instrument_id": "MS-HB-951-2009",
+      "act": "sponsor",
+      "motion": "co sponsor, HB0951IN",
+      "note": "Named as co sponsor ('Guice') on the official bill text, summary or journal; linked to Jeffrey Guice via the official 2009 member roll of the House (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.748Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cd7159271359864c7bf57ed42556a7f5ebcb3e1aedc4bc5f2cd6821170a9995b",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2009/pdf/history/HC/HC0028.xml",
+      "date": "2009",
+      "date_precision": "year",
+      "instrument_id": "MS-HC-28-2009",
+      "act": "sponsor",
+      "motion": "co sponsor, HC0028IN",
+      "note": "Named as co sponsor ('Guice') on the official bill text, summary or journal; linked to Jeffrey Guice via the official 2009 member roll of the House (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.748Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f83d0028419134d578f055f22fbb42fc2269d0d95536e5a2081a180daf0e758",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/house/0940041.pdf",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "House: S. B. No. 2576 passed by the following vote: (0940041)",
+      "note": "House roll call as printed ('Guice'), linked to Jeffrey S. Guice (district 114) via the official 2024 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.748Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b680fb8404ce02d97d84d7e0e33d2bd57ac1c2f65c056d5f4979c0eb31a6ce26",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Guice'), linked to Jeffrey S. Guice (district 114) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.748Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SAVE Act / SHIELD Act",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "BallotReady https://www.ballotready.org/people/jeffrey-s-guice-4fa67971-e8f0-4af0-9b39-b9feab5d2f64 (confirms Mississippi House District 114 to 2028-01-04; no statements on the subject)",
+        "no official or campaign issues site found by search; thecandidate.com profile lists no positions",
+        "iVoterGuide: no page found for him by search",
+        "blocked: Ballotpedia (listed per instructions, not fetched)",
+        "web searches (6): voter ID, photo ID, proof of citizenship/SHIELD, election integrity, questionnaire, forums: no own words on the subject found"
+      ],
+      "found": 0,
+      "at": "2026-11-05T22:55:14.238Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 9,
+      "at": "2026-11-05T23:52:51.748Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
 }

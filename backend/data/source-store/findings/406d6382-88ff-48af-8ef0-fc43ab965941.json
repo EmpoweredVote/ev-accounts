@@ -1,0 +1,181 @@
+{
+  "politician_id": "406d6382-88ff-48af-8ef0-fc43ab965941",
+  "findings": [
+    {
+      "id": "98f01adf061456904058583923a1e4110012717a06312c0d41952da34bc0c392",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/heidi-workman/news/state-rep-heidi-workman-applauds-adoption-of-state-issue-3-ballot-language-147518",
+      "date": "2026-08-05",
+      "date_precision": "day",
+      "passage": "Ohioans deserve elections they can trust,\" Workman said. \"Requiring photo ID to vote is a simple, widely supported safeguard. Enshrining it in our Constitution ensures this protection stays in place for the long term, no matter who is in power, protecting election security for generations to come.",
+      "note": "Statement in her House news release on the ballot language for State Issue 3 (SJR 10), which would put the photo ID requirement for in-person voting into the Ohio Constitution.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "election security"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:13:02.135Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "404b73715b4418ac2c79ccac8363d4c9379aa45ccd541ead05fa0f944770923e",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/news/republican/ohio-legislators-introduce-joint-resolutions-enshrining-voter-id-into-ohio-constitution-144342",
+      "date": "2026-05-18",
+      "date_precision": "day",
+      "passage": "This resolution is just commonsense and reinforces public trust, It's imperative we codify these requirements through the Ohio Constitution so that future generations can feel secure when taking part in the election process.",
+      "note": "Statement in a House release on introducing joint resolutions to put voter ID into the state constitution (she is a primary sponsor of HJR 9 per the House bill page). Passage joined from the fetch tool's word-for-word segments; a comma sits between two sentences as returned.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "public trust in elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:13:02.135Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "545139969c5c35a1f168640a412d667e03811d25673463e11c9fcc5bd7fca177",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "yea",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_workman_heidi_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.684Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cb87000697b71758e7ca0ad908fe673527a271a0150eff9c6bd3ec29180be76c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "yea",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_workman_heidi_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.684Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32abbbc8a3ef8b4b1a84709188caf92f2c696e2c45aaccbf5d255611a80b9668",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "yea",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_workman_heidi_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.684Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ee14fd7c59f04c6859216c17e232949530a49e6ba6a6d34b452d0a2fa04bb8b8",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/hjr9",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "OH-HJR-9-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, As Introduced (00_IN)",
+      "note": "Listed as prime sponsor of H. J. R. No. 9 (As Introduced) on the Ohio Legislature's own record (rep_workman_heidi_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.684Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment (SJR 10 / HJR 9 / State Issue 3)",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "noncitizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official House member page https://ohiohouse.gov/members/heidi-workman (confirms Rootstown, District 72; news list read)",
+        "member news items: State Issue 3 ballot language release; HJR 9 introduction release",
+        "House caucus bulletin https://content.govdelivery.com/accounts/OHHOUSEGOP/bulletins/4188176 (says she testified on HJR 9 on 2026-05-20; no quote from her)",
+        "ohiohouse.gov HJR 9 bill page (no testimony links listed)",
+        "blocked: https://www.legislature.ohio.gov/legislation/136/hjr9/committee (403 to curl; certificate error to fetch tool); her written testimony text not reached",
+        "iVoterGuide 2024 race page: questionnaire answers not shown on the page",
+        "web searches: voter ID/photo ID/election integrity/citizenship; questionnaire/voter guide; HJR 9/SJR 10 testimony",
+        "campaign site heidiworkman.com: not fetched (linked from iVoterGuide; not reviewed: https://heidiworkman.com)",
+        "blocked (not tried per instructions): Ballotpedia, bluevoterguide.org, justfacts.votesmart.org",
+        "ideastream.org item was a search lead only and is not cited"
+      ],
+      "found": 2,
+      "at": "2026-11-06T15:13:02.135Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 4,
+      "at": "2026-11-06T16:28:34.684Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}

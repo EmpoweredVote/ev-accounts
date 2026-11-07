@@ -1,0 +1,221 @@
+{
+  "politician_id": "cd927b66-84c3-4378-a91e-130b22439a9d",
+  "findings": [
+    {
+      "id": "38208c49afb42d07b048b8bfaa74459287ca4d6c9a43a836ab410390a3276a09",
+      "kind": "own-words",
+      "url": "https://www.wcpo.com/news/state/state-ohio/voter-photo-id-amendment-on-november-ballot-in-ohio",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "passage": "\"It's already the law, it's not going to change a single person's life,\" House Minority Leader Dani Isaacsohn (D-Cincinnati) said. \"And we're begging, begging not to take away Medicaid and healthcare coverage. That's how we're spending our last day before we break.\"",
+      "note": "Quoted by WCPO (WEWS reporter) on the day the House passed SJR 10, the photo-ID constitutional amendment. He says photo ID is already law and the amendment changes nothing for voters.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment (SJR 10)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:20:26.233Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f62c404526ad1df7be0c6f2e82870f7b7613a29cf6f7d68a0daf16145633106a",
+      "kind": "own-words",
+      "url": "https://www.wcpo.com/news/state/state-ohio/voter-photo-id-amendment-on-november-ballot-in-ohio",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "passage": "\"You are preventing not only seniors but people with disabilities, many of whom are veterans, from access to the ballot,\" Isaacsohn said. \"We should be getting more people to vote, not fewer. When you have fewer people voting, that is how billionaires get what they want from state legislatures and from Congress.\"",
+      "note": "Quoted by WCPO on the House debate of HB 472 as amended, which requires ID for mail ballots. He says the mail-ballot ID rule blocks seniors and people with disabilities from voting.",
+      "subjects": [
+        "mail-ballot ID",
+        "HB 472"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:20:26.233Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9de7f8f3081178eb0ba40ab7d4c8e68e2983f17e29ab6528ba609c7b9acf173",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/christine-cockley/in-the-news/ohio-republican-lawmakers-pass-bill-requiring-absentee-voters-show-a-copy-of-their-id-to-vote-7324",
+      "date": "2026-06-11",
+      "date_precision": "day",
+      "passage": "We are creating a real barrier for people to vote, particularly seniors across Ohio, and it makes no sense,",
+      "note": "Quote of him in a news report (Ohio Capital Journal story reprinted on the House site; date per the page, June 11, 2026) about HB 472, the bill requiring a copy of ID for absentee ballots. He calls the ID requirement a barrier for voters, especially seniors. Fetch tool returned the sentence in quotation marks; fragment is the full quoted clause.",
+      "subjects": [
+        "mail-ballot ID",
+        "HB 472"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:20:26.233Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6261382160b68255caf9a7c03726516d0d587764ce26efffb0d41d185baff9e9",
+      "kind": "own-words",
+      "url": "https://spectrumnews1.com/oh/cleveland/politics/2024/05/03/elections--bills--process",
+      "date": "2024-05-04",
+      "date_precision": "day",
+      "passage": "\"We've seen huge increases in participation through vote by mail, especially for seniors.\" said State Rep. Dani Isaacsohn, D-District 24. \"And so by requiring them to scan a photo ID to request their absentee ballot rather than use their Social Security number, that's going to hinder their ability to vote.",
+      "note": "Spectrum News quote on the 2024 bill that would require photo ID to request an absentee ballot instead of the last digits of a Social Security number. He says it would hinder voting by mail.",
+      "subjects": [
+        "mail-ballot ID",
+        "photo ID to request an absentee ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:20:26.233Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5737c03423eeabd5670fb0a61adc1fcd89774928e3a5d6128441f4d9e6338798",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hcr18/actions/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 73-20) on H. C. R. No. 18, from the Ohio Legislature's own actions record, which lists each member by id (rep_isaacsohn_dani_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.683Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0902e7fa76fc3542f273b3e0dca071180960f9dfbff7bf0c1b0df8b3faad7385",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_isaacsohn_dani_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.683Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "730a6b22119baaeca4679f9ddecfeae85a89635c34995cd13d24f8df728ef61c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "nay",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_isaacsohn_dani_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.683Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5d326e89edf5091ea0ff50afe14346565ee0d633bc08602a7061dddab8b599d",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_isaacsohn_dani_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.683Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID amendment (SJR 10 / State Issue 3)",
+        "mail-ballot ID (HB 472, 2024 bill)",
+        "proof of citizenship / citizenship data checks (SB 293)",
+        "noncitizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official House page https://ohiohouse.gov/members/dani-isaacsohn (news list: no item on the subject; confirms he is House Minority Leader and a sitting member)",
+        "House caucus release 2026-01-28 on SB 293 voter-registration directives (https://ohiohouse.gov/news/democratic/leader-isaacsohn-olbc-president-upchurch-urge-secretary-of-state-to-halt-confusing-voter-registration-directives-141843): fetch tool returned only a summary, so no passage saved",
+        "House caucus release on State Issue 3 ballot language: does not name him",
+        "WCPO (https://www.wcpo.com/news/state/state-ohio/voter-photo-id-amendment-on-november-ballot-in-ohio), read by plain curl",
+        "Spectrum News 2024 (https://spectrumnews1.com/oh/cleveland/politics/2024/05/03/elections--bills--process), read by plain curl",
+        "ohiohouse.gov reprint page of a June 2026 news report on HB 472 (https://ohiohouse.gov/members/christine-cockley/in-the-news/ohio-republican-lawmakers-pass-bill-requiring-absentee-voters-show-a-copy-of-their-id-to-vote-7324)",
+        "six web searches run",
+        "blocked: https://www.axios.com/local/cincinnati/2026/10/20/ohio-issue-3-voter-id-amendment-explainer-election-2026 (HTTP 403)",
+        "blocked: https://tiffinohio.net/posts/ohio-republicans-voter-id-amendment-already-law/ (HTTP 403)",
+        "blocked (by instruction): Ballotpedia, bluevoterguide.org, votesmart; refused-by-robots news sites not opened",
+        "not reviewed: HB 458 era (he took office in 2023), campaign site"
+      ],
+      "found": 4,
+      "at": "2026-11-06T16:20:26.233Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 4,
+      "at": "2026-11-06T16:28:34.683Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}

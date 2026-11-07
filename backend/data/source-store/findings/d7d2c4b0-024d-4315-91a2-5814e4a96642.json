@@ -1,0 +1,285 @@
+{
+  "politician_id": "d7d2c4b0-024d-4315-91a2-5814e4a96642",
+  "findings": [
+    {
+      "id": "d6e2266fda518404103d46b413bc0e5092c90b42079b12d4a9bad403fe169b5b",
+      "kind": "own-words",
+      "url": "https://www.wdam.com/2026/03/25/poll-tax-that-you-actually-have-pay-order-vote-senate-bill-raising-voting-concerns/",
+      "date": "2026-03-25",
+      "date_precision": "day",
+      "passage": "“Two million people that registered to vote, and you have 10 to 15 people, not percent, people, who may possibly have voted illegally in elections,” DuPree said. “That doesn’t even calculate.”",
+      "note": "Quoted by WDAM (Hattiesburg) on Senate Bill 2588 (SHIELD Act): he questions how common illegal voting by non-citizens is.",
+      "subjects": [
+        "SHIELD Act citizenship check of voter rolls",
+        "proof of citizenship",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:11:50.170Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8c3068941168f2b27fcf5ddbe420838e110dde4e244300264b9813d5027f5c18",
+      "kind": "own-words",
+      "url": "https://www.wdam.com/2026/03/25/poll-tax-that-you-actually-have-pay-order-vote-senate-bill-raising-voting-concerns/",
+      "date": "2026-03-25",
+      "date_precision": "day",
+      "passage": "“When they were born, they didn’t know who they were going to marry. And so, the name that they ended up with in a marriage certificate is different than the name on a birth certificate or different than the name on a government ID,” DuPree said.",
+      "note": "Quoted by WDAM on name mismatch between a birth certificate and current ID when citizenship documents are asked for.",
+      "subjects": [
+        "SHIELD Act citizenship check of voter rolls",
+        "proof of citizenship",
+        "birth certificate name mismatch"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:11:50.170Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cdf278d6600775a895b72ae2565307c8a53e7da87ec123d8e88d1a8e335bec88",
+      "kind": "own-words",
+      "url": "https://www.starherald.net/mississippi-lawmakers-send-shield-act-aimed-verifying-voters-citizenship-governor-69c54722db985",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "passage": "“So, it seems that we’re going down this dark path of putting obstacles in front of people to keep them from voting, do you agree?” Dupree asked of Blount.",
+      "note": "Quoted in an Associated Press story carried by the Star-Herald, during Senate debate on the SHIELD Act (Blount is the senator he addressed).",
+      "subjects": [
+        "SHIELD Act citizenship check of voter rolls",
+        "proof of citizenship"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:11:50.170Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5c75daf60042c22a6721d27d8056ba111434c67864d94f42579cd8f9c801bb36",
+      "kind": "own-words",
+      "url": "https://www.mississippifreepress.org/mississippi-senators-seek-easier-birth-certificate-access-under-new-voter-law/",
+      "date": "2026-05-04",
+      "date_precision": "day",
+      "passage": "“We already have problems with people not voting in Mississippi. So, do you think that more people are going to vote if you put more barriers in front of them?” DuPree said. “It’s not logical to think that, if I have a straight line to a door, I’m going to move faster if you put up barriers in front of me.”",
+      "note": "Quoted by Mississippi Free Press on the SHIELD Act and turnout.",
+      "subjects": [
+        "SHIELD Act citizenship check of voter rolls",
+        "proof of citizenship"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:11:50.170Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "783730281c401be922efaf7333f3f268b7579589a0be4cb63b8d40c174b39368",
+      "kind": "own-words",
+      "url": "https://www.mississippifreepress.org/mississippi-senators-seek-easier-birth-certificate-access-under-new-voter-law/",
+      "date": "2026-05-04",
+      "date_precision": "day",
+      "passage": "“I don’t think it’s legal,” DuPree said. “Hopefully, some judge… will prevent it from going into action and some other learned person or people determine whether it is constitutional.”",
+      "note": "Quoted by Mississippi Free Press: he hopes the SHIELD Act is challenged in court before it takes effect.",
+      "subjects": [
+        "SHIELD Act citizenship check of voter rolls",
+        "proof of citizenship"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:11:50.170Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e8d3d7207afd2062ee23aefb6cb070a8e30a0a66f1a24b602db452ff313a858a",
+      "kind": "own-words",
+      "url": "https://wdam.com/2026/05/14/state-senators-look-ways-address-concerns-raised-over-recently-passed-shield-act/",
+      "date": "2026-05-14",
+      "date_precision": "day",
+      "passage": "“At 1.8 million voters, if 1% is flagged, we’re talking about 18,000 voters that could possibly be thrown off of the voters roll,” DuPree said.",
+      "note": "Quoted by WDAM on how many voters the SHIELD Act citizenship check could flag.",
+      "subjects": [
+        "SHIELD Act citizenship check of voter rolls",
+        "proof of citizenship",
+        "voter-roll removals"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:11:50.170Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7f77bcbf98b183927f7af34fcdc7ac153b6f1c09c00f69273093e906c8fa3e80",
+      "kind": "own-words",
+      "url": "https://wdam.com/2026/05/14/state-senators-look-ways-address-concerns-raised-over-recently-passed-shield-act/",
+      "date": "2026-05-14",
+      "date_precision": "day",
+      "passage": "“We can have multiple locations where they can actually fill out the application and get that birth certificate back to them in a timely manner,” DuPree said.",
+      "note": "Quoted by WDAM: he discusses with the bill's author ways to make birth certificates easier to get for voters asked for proof of citizenship.",
+      "subjects": [
+        "SHIELD Act citizenship check of voter rolls",
+        "proof of citizenship",
+        "birth certificate access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:11:50.170Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0ac0b15093b48881ce0b2516c4f4b975c09d5b1d5604e6d6e54e848b87995f77",
+      "kind": "own-words",
+      "url": "https://www.jacksonfreepress.com/news/2019/nov/04/voter-id-stays-under-both-secretary-state-hopefuls",
+      "date": "2019-11-04",
+      "date_precision": "day",
+      "passage": "“Well, like I told everybody else, voter ID is the law,” DuPree told the Jackson Free Press at the Neshoba County Fair in August. “I like to drive 85 miles-per-hour, but you can't in Mississippi, because that's not the law.”",
+      "note": "Jackson Free Press, while he ran for Secretary of State; the interview was in August 2019 and the article is dated 2019-11-04. The same article states he would keep current photo ID procedures (reporter's words).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:11:50.170Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "34705c55b388b6fd37715765ad296fccab08ea620de49b872af682f715734abb",
+      "kind": "own-words",
+      "url": "https://www.jacksonfreepress.com/news/2019/oct/22/secretary-state-nominees-differ-expanding-early-vo",
+      "date": "2019-10-22",
+      "date_precision": "day",
+      "passage": "“You have a fundamental right to vote, and why do I have to give an excuse to vote?” DuPree said.",
+      "note": "Quoted by Jackson Free Press on no-excuse early and absentee voting (related to ballot access, not ID).",
+      "subjects": [
+        "no-excuse early voting",
+        "mail or absentee ballot access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:11:50.170Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c4de4254e58d6e04f6b92614d96e88ffe19c7ff85c983619688a55fff8de09d6",
+      "kind": "own-words",
+      "url": "https://www.mpbonline.org/blogs/election/johnny-dupree-d/",
+      "date": "2019-06-13",
+      "date_precision": "day",
+      "passage": "Increasing access and participation will increase confidence in the process and the outcome of elections.",
+      "note": "His own answer on the Mississippi Public Broadcasting 2019 candidate page for Secretary of State; general voter access, no mention of ID.",
+      "subjects": [
+        "voter access and participation"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:11:50.170Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0bdc8f5070b1cefc73be1a5428135fb80819d0b830c979903e9a69d3e5147f46",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/senate/0770004.pdf",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Senate concurred in the foregoing House Amendment to S. B. No. 2588 by the following vote: (0770004)",
+      "note": "Senate roll call as printed ('DuPree'), linked to Johnny DuPree (district 45) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.760Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "SHIELD Act citizenship check",
+        "voter-roll checks",
+        "mail or absentee ballot",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member page https://billstatus.ls.state.ms.us/members/senate/dupree.xml (confirms Senate District 45)",
+        "Mississippi Free Press, WDAM, Star-Herald (AP) and Jackson Free Press articles listed in findings",
+        "MPB 2019 candidate page https://www.mpbonline.org/blogs/election/johnny-dupree-d/",
+        "Mississippi Free Press 2011 article https://www.mississippifreepress.org/dupree-campaigns-against-the-tide/ (only the reporter says he opposed the 2011 voter ID initiative; no own words)",
+        "WDAM 2025-09-30 special election campaign article (nothing on the subject)",
+        "not reviewed: Sun Herald 2011 endorsement (an editorial; a votesmart copy was not fetched)",
+        "blocked: https://ballotpedia.org (not fetched, refuses fetches)",
+        "not fetched on purpose: mississippitoday.org (robots refuse AI agents)",
+        "supertalk.fm ?p=10612 and ?p=62992: 404 (page gone)",
+        "no official or campaign site found by search; 8 web searches run"
+      ],
+      "found": 10,
+      "at": "2026-11-05T23:11:50.170Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-05T23:52:51.760Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

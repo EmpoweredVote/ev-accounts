@@ -12,11 +12,11 @@ Python as `python3 -I scripts/stage5/<tool>.py`. `<batch>` is the batch folder, 
 
 | Step | Tool | What it does |
 |---|---|---|
-| 0, 14 | `write-batch.sh <stage5> <batch> <topic> <units> [N\|apply]` | `topic:stage5-write` with `held.txt` / `moved.txt` codes set aside, then put back (even on failure) |
+| 0, 14 | `write-batch.sh <stage5> <batch> <topic> <units> [N\|apply]` | `topic:stage5-write` with `held.txt` / `moved.txt` codes set aside, then put back (even on failure); writes `pids-write.txt` for `readback.ts` |
 | held | `setup_batch.py <stage5> <new batch> --level federal\|state [--state XX] <pid>…` | a held follow-up batch: `pids.txt` = these ids, `moved.txt` = every other coded id in the unit (refuses an id not coded there) |
 | held | `drop_held.py <batch>` | drops `held.txt` / `moved.txt` people from `research.csv` and `evidence.csv`; the full set kept once as `*-with-held.csv` |
 | 2 | `add_hand_rows.py <batch> <stage5> <findings> --topic <key>` | appends the rows in `hand-rows.json` (`{id: "no-evidence" \| "direction-only"}`) |
-| 4 | `build_evidence.py <batch> <roster.tsv> <findings> [--fetch] [--level state --state XX] [--max-urls N]` | builds `evidence.csv`; lists unread pages in `evidence-missing.json`. `--max-urls`: most sources a row keeps (default 8 federal, 20 state; federal-01 needed 20) |
+| 4 | `build_evidence.py <batch> <roster.tsv> <findings> [--fetch] [--level state --state XX] [--max-urls N] [--from-research\|--from-pre]` | builds `evidence.csv`; lists unread pages in `evidence-missing.json`. A `research.csv` replaced since its last run stops it: `--from-research` rebuilds from the new file, `--from-pre` from the saved copy. `--max-urls`: most sources a row keeps (default 8 federal, 20 state; federal-01 needed 20) |
 | 4 | `congress-pages.ts <pages dir> <url>…` | congress.gov text through the verifier's api.congress.gov reader (`build_evidence.py` calls it through `_congress.py`; a plain fetch gets a bot check) |
 | 4 | `pdf_pages.py <batch>` | reads PDF sources with `pdftotext` |
 | 5 | `s1-sources.ts --topic <key> <batch>` | old-season sources behind each blank over a shown answer → `fallback/fallback-required.json` |
@@ -26,7 +26,7 @@ Python as `python3 -I scripts/stage5/<tool>.py`. `<batch>` is the batch folder, 
 | 6 | `party_fix.py <batch>` | drops swept snippets (or cuts, `party-cuts.json`); uncites a page left with none |
 | 7 | `legiscan-rollcalls.ts <ST> <vote-pages.json> <out.json>` | finds the LegiScan roll call for each official one (bill, chamber, counts) |
 | 7 | `legiscan_pairs.py <batch> <findings> --topic --state --host --rollcalls <json> [--bill-pad N]` | official votes/authorships → `legiscan/pairs.csv` |
-| 7 | `state_legiscan.py plan\|pairs <batch> <findings> --state XX --host <h>[,<h>] [--topic <key>] [--bill-pad N] [--year-shift N]` | the same for a state whose findings print no roll-call number: `plan` → `vote-pages.json` for `legiscan-rollcalls.ts`; `pairs` matches bill, chamber, date and tally (ties: motion text) → `pairs.csv`, `needs.json`, `rollcall-map.json`, `unmapped.json` |
+| 7 | `state_legiscan.py plan\|pairs <batch> <findings> --state XX --host <h>[,<h>] [--topic <key>] [--bill-pad N] [--year-shift N] [--session-start odd]` | the same for a state whose findings print no roll-call number: `plan` → `vote-pages.json` for `legiscan-rollcalls.ts`; `pairs` matches bill, chamber, date and tally (ties: motion text) → `pairs.csv`, `needs.json`, `rollcall-map.json`, `unmapped.json` |
 | 7 | `../legiscan-evidence-lines.ts --in pairs.csv --out legiscan-evidence.csv` | the LegiScan lines (counted API calls) |
 | 7 (IN) | `iga-votes.ts <batch> <findings> --topic <key>` | Indiana: each vote's official roll-call PDF → its line; cites the PDF, uncites covered bill pages, cross-checks (exit 1 on any disagreement) |
 | 4, 7 (IN) | `iga-pages.ts <pages dir> <url>…` · `iga-evidence-lines.ts --in pairs.csv --out <csv>` | iga.in.gov text through the MyIGA API (what the verifier reads); lines for hand-made pairs |

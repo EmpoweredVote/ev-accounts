@@ -1,0 +1,313 @@
+{
+  "politician_id": "fc3e367c-5558-466d-86f7-684866c2e903",
+  "findings": [
+    {
+      "id": "19b29adcbba4828be0dc1ec31490ff5baa48de2351a0671eda47151ce1db3f95",
+      "kind": "own-words",
+      "url": "https://www.weirtondailytimes.com/news/local-news/2026/08/russo-says-voters-come-first/",
+      "date": "2026-08-01",
+      "date_precision": "month",
+      "passage": "“What I get upset about is when we have either legislators or people like my opponent come in and want to upend that process and make it more difficult for voters to access their right to vote when they have absolutely zero evidence that there are issues or fraud in the current process. We know it’s working well, and I think it’s an insult to our election workers, our election officials and the voters themselves.”",
+      "note": "Quoted by the Weirton Daily Times during an August 2026 campaign stop at the Jefferson County board of elections. She speaks about election-law changes that make voting harder, without naming photo ID in this passage. The same story says she was not in favor of State Issue 3 (the photo-ID constitutional amendment); that sentence is the reporter's paraphrase, not saved as her words.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter access",
+        "State Issue 3 context"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:19:57.547Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "806b32012849ad432fdb218b73cea30bb480afc5538702e38aad0445de9c39d3",
+      "kind": "own-words",
+      "url": "https://www.weirtondailytimes.com/news/local-news/2026/08/russo-says-voters-come-first/",
+      "date": "2026-08-01",
+      "date_precision": "month",
+      "passage": "“I think, right now, Ohio has a very good process. I do agree with the current secretary of state that we are the gold standard,” Russo, a resident of the Columbus suburb of Upper Arlington, said. “We have elections that are run by dedicated local election officials. We have Republicans and Democrats who are part of the process. Everything has a check and balance. We have a lot of security in the process.",
+      "note": "Quoted by the Weirton Daily Times in August 2026 on the security of Ohio's current election process.",
+      "subjects": [
+        "election integrity laws in general",
+        "security of current process"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:19:57.547Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59edf8453b8b59821e642d4522bfe359ccefeca2511dfa11c4c5b5e16aed0d40",
+      "kind": "own-words",
+      "url": "https://bgindependentmedia.org/?p=115316",
+      "date": "2026-02-01",
+      "date_precision": "day",
+      "passage": "“Maintaining accurate voter rolls matters, but not at the cost of eligible citizens losing their right to vote,” she said.",
+      "note": "Quoted by BG Independent News at a Bowling Green campaign event (page date taken from the page; event was the Saturday before). On voter-roll maintenance versus eligible voters.",
+      "subjects": [
+        "voter-roll checks",
+        "eligible citizens' right to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:19:57.547Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "484a540a10d81b8207d2108ef019b479becde486e0bbb7e4d55176c9338e8fb4",
+      "kind": "own-words",
+      "url": "https://allisonrusso.com/rep-russo-raises-concerns-after-ohio-voter-data-shared-with-federal-government/",
+      "date": "2026-03-07",
+      "date_precision": "day",
+      "passage": "“When Ohioans are required to provide private personal information to participate in our democracy, they deserve absolute confidence that their data will be protected,” added",
+      "note": "Her release (campaign site) on the state sharing voter registration data, which includes the last four digits of Social Security numbers and driver's license or state ID numbers, with the federal Department of Justice. The quoted sentence is cut by the page's link markup after 'added'; the speaker's name sits in a link not captured in the page text, but the release is headed with her name as State Rep.",
+      "subjects": [
+        "voter data privacy",
+        "ID numbers in voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:19:57.547Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5697afd32f03dc086b5345a0a6cd9ad151af0d90b6a4dc6c539a64510187c2b",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/actions/",
+      "date": "2022-12-14",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-458-2022",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 55-34) on H. B. No. 458, from the Ohio Legislature's own actions record, which lists each member by id (rep_russo_allison_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b76b08444464d687d2e3e5da5ab666871be545e481f02bd01a7bfa3659054db7",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hcr18/actions/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "yea",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 73-20) on H. C. R. No. 18, from the Ohio Legislature's own actions record, which lists each member by id (rep_russo_allison_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0902e7fa76fc3542f273b3e0dca071180960f9dfbff7bf0c1b0df8b3faad7385",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_russo_allison_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "730a6b22119baaeca4679f9ddecfeae85a89635c34995cd13d24f8df728ef61c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "nay",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_russo_allison_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5d326e89edf5091ea0ff50afe14346565ee0d633bc08602a7061dddab8b599d",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_russo_allison_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f77bc816c17d22b914779acb710cd17194b225a308ce98ccb6504db003fbcc3b",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/133/hb560",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-560-2020",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. B. No. 560 (As Introduced) on the Ohio Legislature's own record (rep_russo_allison_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d84fc9be9f18f1768dc375ba8a163121b4534d412e29d356d7fee6db6417e4ad",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/133/hb687",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-687-2020",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. B. No. 687 (As Introduced) on the Ohio Legislature's own record (rep_russo_allison_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ff8784f8d7753a83d77aa157e84fbc97c57afd9fe959bb72c6096c7efb9ace03",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/134/hb296",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-296-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. B. No. 296 (As Introduced) on the Ohio Legislature's own record (rep_russo_allison_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "State Issue 3 / SJR 10 photo ID amendment",
+        "proof of citizenship / SAVE Act",
+        "noncitizen voting",
+        "voter-roll accuracy",
+        "voter data privacy",
+        "HB 458",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://allisonrusso.com/news/ and its voter pages and release pages (one on-subject release)",
+        "official House member page https://ohiohouse.gov/members/allison-russo: server error 500, not read",
+        "blocked: https://www.10tv.com/video/news/local/ohio-secretary-of-state-candidates-split-drop-boxes-voter-id-columbus-conference/530-058a2d3a-6038-43ab-aae7-451cbd7fd4f6",
+        "blocked: https://www.dailysignal.com/2026/08/03/ohio-secretary-of-state-priorities/",
+        "blocked: https://ballotpedia.org/Allison_Russo",
+        "not reviewed: https://spectrumnews1.com/oh/columbus/Capital-This-Week/2026/09/18/russo-ohio-s-upcoming-election (video interview; only the outlet's text summary is readable, and it says she explains opposition to putting the photo-ID requirement in the constitution)",
+        "Weirton Daily Times campaign-stop story (read; two quotes saved)",
+        "BG Independent News campaign-stop story (read; one quote saved)",
+        "not fetched (refused-agent site): ohiocapitaljournal.com What is Issue 3 article",
+        "5 web searches (photo ID/citizenship, Issue 3, HB 458 statement, noncitizen/SAVE Act): no own-words statement on proof of citizenship or the SAVE Act found; no own-words HB 458 floor statement found"
+      ],
+      "found": 4,
+      "at": "2026-11-06T16:19:57.547Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 8,
+      "at": "2026-11-06T16:28:34.678Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}

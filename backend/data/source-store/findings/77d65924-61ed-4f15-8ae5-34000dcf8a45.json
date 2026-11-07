@@ -1,0 +1,221 @@
+{
+  "politician_id": "77d65924-61ed-4f15-8ae5-34000dcf8a45",
+  "findings": [
+    {
+      "id": "2db0e84b62cf63da24745d6d6e7a71fe9349bcdd11a1a3886490e35f5c077d97",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/45933/race/8078/election/716",
+      "date": "2019",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification. Strongly Disagree",
+      "note": "In the iVoterGuide questionnaire for the 2019 House District 74 general election (election date 2019-11-05), the candidate answered the statement that people should be able to vote without photo identification with 'Strongly Disagree'. The date of the answer itself is not shown; the year of the election is used.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:56:05.743Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d4e868964ed4d56fc32ec792437d9901a88084d804cae2d0686301c5384c34af",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/house/0850033.pdf",
+      "date": "2022-03-29",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "yea",
+      "motion": "House: The conference report on H. B. No. 1510 was adopted by the following vote: (0850033)",
+      "note": "House roll call as printed ('Yancey'), linked to Lee Yancey (district 74) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.753Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39b991844f0e395bc487c48e801820733d70f388586c168923fbb49ce0907e59",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2021/pdf/votes/house/0370056.pdf",
+      "date": "2021-02-10",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-586-2021",
+      "act": "yea",
+      "motion": "House: H. B. No. 586 passed by the following vote: (0370056)",
+      "note": "House roll call as printed ('Yancey'), linked to Lee Yancey (district 74) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.753Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d77ac41d2c6c28c8e3be10e12f2dccc7dd67e4601cde3b951dfbbe45535cdd2e",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/history/HB/HB0892.xml",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MS-HB-892-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, HB0892IN",
+      "note": "Named as prime sponsor ('Yancey') on the official bill text, summary or journal; linked to Lee Yancey via the official 2026 member roll of the House (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.753Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9cd2168c2c71eccb747daa780f57637813f29d061602888c12ad07e0424846e7",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2008/pdf/history/SB/SB2196.xml",
+      "date": "2008",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2196-2008",
+      "act": "sponsor",
+      "motion": "co sponsor, SB2196IN",
+      "note": "Named as co sponsor ('Yancey') on the official bill text, summary or journal; linked to Lee Yancey via the official 2008 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.753Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "653efbdf42db114f34de52bc9afb4ca946ad6e0c0af0bbda9bc74d60916c4722",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2009/pdf/votes/senate/0300008.pdf",
+      "date": "2009-02-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2548-2009",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2548. The vote recurring, on motion of Senator Burton, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0300008)",
+      "note": "Senate roll call as printed ('Yancey'), linked to Lee Yancey (district 20) via the official 2009 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.753Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f83d0028419134d578f055f22fbb42fc2269d0d95536e5a2081a180daf0e758",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/house/0940041.pdf",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "House: S. B. No. 2576 passed by the following vote: (0940041)",
+      "note": "House roll call as printed ('Yancey'), linked to Lee Yancey (district 74) via the official 2024 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.753Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b680fb8404ce02d97d84d7e0e33d2bd57ac1c2f65c056d5f4979c0eb31a6ce26",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Yancey'), linked to Lee Yancey (district 74) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.753Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "absentee ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed in office: https://billstatus.ls.state.ms.us/members/house/yancey.xml (House District 74, Rankin County, 2020-present)",
+        "iVoterGuide 2019 general-election questionnaire (one finding)",
+        "launch coverage https://www.supertalk.fm/lee-yancey-looks-to-return-to-the-mississippi-senate-launching-2027-bid/ and https://www.mississippifreepress.org/mississippi-house-rep-lee-yancey-ally-of-medical-cannabis-announces-bid-to-succeed-retiring-sen-dean-kirby/ (his quotes there are about his Senate run only; nothing on the subject)",
+        "blocked: https://lee-yancey-campaign.pages.dev/about (the page returned a Cloudflare Access sign-in screen, not content)",
+        "blocked: https://ballotpedia.org/Lee_Yancey (listed blocked per standing instruction, not fetched)",
+        "web searches: voter ID; proof of citizenship / SAVE Act / election integrity; questionnaire / candidate survey; photo ID / elections column; citizenship / absentee / voter rolls (nothing else on the subject; search hits on the 2026 citizenship-check law and 2012 voter-ID roll call did not name him)"
+      ],
+      "found": 1,
+      "at": "2026-11-05T22:56:05.743Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 7,
+      "at": "2026-11-05T23:52:51.753Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

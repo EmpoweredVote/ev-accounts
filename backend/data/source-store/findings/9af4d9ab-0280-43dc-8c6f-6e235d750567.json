@@ -1,0 +1,215 @@
+{
+  "politician_id": "9af4d9ab-0280-43dc-8c6f-6e235d750567",
+  "findings": [
+    {
+      "id": "9e95631dc092c5ad56bb2e7347d7145249001acc6b95c1efb182041ddb25b370",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/erika-white/news/rep-white-opposes-sjr-10-146618",
+      "date": "2026-06-23",
+      "date_precision": "day",
+      "passage": "I voted no on Senate Joint Resolution 10 because Ohio already has a voter ID law.",
+      "note": "Her own release on SJR 10, the amendment to put a photo-ID rule for in-person voting into the state constitution; she says she voted no.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:18:40.586Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eded40ed5cec6be0f48e836cc98db6a4f6dfc2cec9a57d0bb672f0c60223b43b",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/erika-white/news/rep-white-opposes-sjr-10-146618",
+      "date": "2026-06-23",
+      "date_precision": "day",
+      "passage": "This resolution is not about creating a new requirement; it is about placing an existing statute into the Ohio Constitution.",
+      "note": "Same release; describes what SJR 10 does in her view.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:18:40.586Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "55011d757f8bc6c08686b6695133362fa4a95cf66c486bde154d057e6ad8e98b",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/erika-white/news/rep-white-opposes-sjr-10-146618",
+      "date": "2026-06-23",
+      "date_precision": "day",
+      "passage": "I believe in secure elections and Ohio already has voter identification requirements in law.",
+      "note": "Same release; she speaks of election security and the existing ID law.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:18:40.586Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0902e7fa76fc3542f273b3e0dca071180960f9dfbff7bf0c1b0df8b3faad7385",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_white_erika_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "730a6b22119baaeca4679f9ddecfeae85a89635c34995cd13d24f8df728ef61c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "nay",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_white_erika_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5d326e89edf5091ea0ff50afe14346565ee0d633bc08602a7061dddab8b599d",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_white_erika_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cfba9fba1f7d4a841dd01e76b23fa5588bbb31911bc0c8f68733e450809080a9",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/erika-white/news/rep-white-opposes-sjr-10-146618",
+      "date": "2026-06-23",
+      "date_precision": "day",
+      "passage": "The question before us was whether those requirements belong in the Ohio Constitution. They do not.",
+      "note": "Same SJR 10 release already on file; fetch tool returned this sentence exactly. The release also says (summarized by the tool, not copied) that the language does not account for future ID methods.",
+      "subjects": [
+        "photo ID constitutional amendment",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:39:02.243Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment (SJR 10)",
+        "mail-ballot ID",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House page https://ohiohouse.gov/members/erika-white (names her as District 41)",
+        "House news list https://ohiohouse.gov/members/erika-white/news (one item on the subject, read in full via the fetch tool; the page refused a plain curl with 403)",
+        "blocked: web search (the search tool said its search allowance was used up before any search for this person could run)",
+        "blocked: Ballotpedia (refuses fetches)",
+        "not reviewed: campaign site, committee testimony, voter-guide questionnaires (no search was available to find them)"
+      ],
+      "found": 3,
+      "at": "2026-11-06T15:18:40.586Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 3,
+      "at": "2026-11-06T16:28:34.686Z",
+      "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "mail-ballot ID (HB 472)",
+        "proof of citizenship"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (refuse fetches)",
+        "web searches (5): name + voter ID/photo ID; HB 472/SB 293/HB 233; questionnaire/interview Toledo outlets; no own words found beyond the SJR 10 release",
+        "iVoterGuide https://ivoterguide.com/candidate/74080/race/17985/election/1201 (photo ID question: Did not answer; no other election items)",
+        "House news list https://ohiohouse.gov/members/erika-white/news page 1 (10 of 58 items; only SJR 10 touches the subject; pages 2-6 not shown by the tool)",
+        "December 2025 newsletter PDF via fetch tool (no election text readable); curl on ohiohouse.gov PDFs returned 403 page: blocked",
+        "13abc 2023 voter-ID story names an organizer called Erika White: different person, not used",
+        "not found: campaign site content on voting (a candidate page notes none)"
+      ],
+      "found": 1,
+      "at": "2026-11-06T16:39:02.243Z",
+      "by": "research-oh-r2-2026-11-06"
+    }
+  ]
+}

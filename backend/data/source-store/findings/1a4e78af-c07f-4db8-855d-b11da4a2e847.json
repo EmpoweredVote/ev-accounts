@@ -1,0 +1,70 @@
+{
+  "politician_id": "1a4e78af-c07f-4db8-855d-b11da4a2e847",
+  "findings": [
+    {
+      "id": "2147cca7436b02fc328055efc537138f61a5635591caea67c88f498332726704",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "nay",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Elliott'), linked to Gregory Elliott (district 82) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.760Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity",
+        "voter-roll citizenship checks"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr run)",
+        "https://billstatus.ls.state.ms.us/members/house/elliott.xml (confirms Gregory Elliott, House District 82, via curl)",
+        "https://magnoliatribune.com/?p=130218 (April 2025 special-election result; nothing on the subject)",
+        "https://www.wtok.com/2025/02/02/gregory-elliott-announces-candidacy-mississippi-house-representatives-district-82/ (his announcement; small business and economic development only)",
+        "https://www.mississippifreepress.org/meet-the-candidates-for-mississippi-house-districts-23-and-82-in-the-april-22-special-runoff-election/ (candidate guide; nothing on the subject)",
+        "Mississippi Free Press SHIELD Act articles and SuperTalk SHIELD Act article (do not name him)",
+        "no personal website exists per the candidate guide; Facebook page not reviewed: not reviewed: https://www.facebook.com (not fetchable)",
+        "5 web searches (voter ID, photo ID, proof of citizenship, SAVE Act, SHIELD Act, poll tax, questionnaire, forum, election law); nothing on the subject by him",
+        "blocked: https://ballotpedia.org (refused to fetch per instructions)",
+        "not reviewed: https://meridianstar.com/?p=384404 (2025 NAACP forum article; Meridian Star not checked for robots access)"
+      ],
+      "found": 0,
+      "at": "2026-11-05T22:42:57.452Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-05T23:52:51.760Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

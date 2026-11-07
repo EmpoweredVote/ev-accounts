@@ -1,0 +1,176 @@
+{
+  "politician_id": "e9da8d29-679d-4f33-9fd5-a0f023280e08",
+  "findings": [
+    {
+      "id": "fb664c98b931ec4529845d4f614dc433214255cbf7744bcab50e288f880b6ed3",
+      "kind": "own-words",
+      "url": "https://www.mississippifreepress.org/analysis-mississippi-debates-quicker-purge-of-voter-rolls/",
+      "date": "2021-02-01",
+      "date_precision": "day",
+      "passage": "If something happens and I am unable to respond to a notice or I don't receive it or, you know, my wife throws it into the trash just like she always does, then I'm going to be purged from the voter rolls, even though I'm a consistent voter?",
+      "note": "Question put in a House committee meeting about bills to speed removal of voters from the rolls; quoted by the Mississippi Free Press (page date shown as 2021-02-01).",
+      "subjects": [
+        "voter-roll purges"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:47:05.424Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "854dea2c9512ab38581c9488c1a99e2909513357dc562d92b1b2ae0429d8aea6",
+      "kind": "own-words",
+      "url": "https://magnoliatribune.com/?p=70875",
+      "date": "2020-09",
+      "date_precision": "month",
+      "passage": "This year's election is incredibly important and likely to be one of the highest turnout elections in the history of the state. With that said, we are also in the midst of an incredibly dangerous health crisis that is the COVID19 pandemic. This bill aims to reduce the number of voters at the precincts on Election Day, stymy the potential spread of the coronavirus and allow voters the option to vote safely, while keeping the integrity of our election secure.",
+      "note": "Statement on his bill for in-person no-excuse absentee voting in the November 2020 election, quoted by Magnolia Tribune; no mention of ID.",
+      "subjects": [
+        "absentee voting access",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:47:05.424Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d4e868964ed4d56fc32ec792437d9901a88084d804cae2d0686301c5384c34af",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/house/0850033.pdf",
+      "date": "2022-03-29",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "yea",
+      "motion": "House: The conference report on H. B. No. 1510 was adopted by the following vote: (0850033)",
+      "note": "House roll call as printed ('Owen'), linked to Jansen Owen (district 106) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.751Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39b991844f0e395bc487c48e801820733d70f388586c168923fbb49ce0907e59",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2021/pdf/votes/house/0370056.pdf",
+      "date": "2021-02-10",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-586-2021",
+      "act": "yea",
+      "motion": "House: H. B. No. 586 passed by the following vote: (0370056)",
+      "note": "House roll call as printed ('Owen'), linked to Jansen Owen (district 106) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.751Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f83d0028419134d578f055f22fbb42fc2269d0d95536e5a2081a180daf0e758",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/house/0940041.pdf",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "House: S. B. No. 2576 passed by the following vote: (0940041)",
+      "note": "House roll call as printed ('Owen'), linked to Jansen Owen (district 106) via the official 2024 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.751Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b680fb8404ce02d97d84d7e0e33d2bd57ac1c2f65c056d5f4979c0eb31a6ce26",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Owen'), linked to Jansen Owen (district 106) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.751Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship / SAVE Act",
+        "mail or absentee ballot ID",
+        "voter-roll purges",
+        "election integrity"
+      ],
+      "places": [
+        "identity confirmed: https://billstatus.ls.state.ms.us/members/house/owen.xml (District 106, Jansen T. Owen)",
+        "On the Record (0 appearances)",
+        "campaign site https://www.owenformississippi.com/poli (nothing on the subject)",
+        "official House page: member xml only, no news list",
+        "Mississippi Free Press DA-run profile (nothing on the subject)",
+        "Picayune Item 2019 new-faces piece (nothing on the subject)",
+        "iVoterGuide 2019 profile (no answers on the subject)",
+        "web searches: voter ID; photo ID/citizenship/SAVE Act/election integrity; local paper; questionnaire/voter guide; elections committee statements",
+        "blocked: Ballotpedia (refuses fetches per task notes)"
+      ],
+      "found": 2,
+      "at": "2026-11-05T23:47:05.424Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-05T23:52:51.751Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}
