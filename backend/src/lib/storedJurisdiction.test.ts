@@ -3,9 +3,18 @@ import { vi, describe, it, expect, beforeEach } from 'vitest';
 const { poolQueryMock } = vi.hoisted(() => ({ poolQueryMock: vi.fn() }));
 vi.mock('./db.js', () => ({ pool: { query: poolQueryMock } }));
 
-import { readStoredJurisdiction, toJurisdictionResponse, STORED_JURISDICTION_SQL } from './storedJurisdiction.js';
+import {
+  readStoredJurisdiction,
+  toJurisdictionResponse,
+  STORED_JURISDICTION_SQL,
+  locationNeedsConfirmation,
+} from './storedJurisdiction.js';
 
-beforeEach(() => poolQueryMock.mockReset());
+// Braces matter: a beforeEach that RETURNS a function has it run as teardown, and mockReset
+// returns the mock — so the mock would be called once more after each test.
+beforeEach(() => {
+  poolQueryMock.mockReset();
+});
 
 /**
  * The SQL itself is exercised against production data in CA_0368's dry run (a basic row and
@@ -76,5 +85,44 @@ describe('toJurisdictionResponse', () => {
 
   it('answers all-null for no row', () => {
     expect(Object.values(toJurisdictionResponse(null)).every((v) => v === null)).toBe(true);
+  });
+});
+
+describe('locationNeedsConfirmation (CA_0369)', () => {
+  const basic = { source: 'basic' as const } as Parameters<typeof locationNeedsConfirmation>[1];
+  const connected = { source: 'connected' as const } as Parameters<typeof locationNeedsConfirmation>[1];
+
+  it('asks the database for a basic row', async () => {
+    poolQueryMock.mockResolvedValue({ rows: [{ needs: true }] });
+    expect(await locationNeedsConfirmation('u1', basic)).toBe(true);
+    expect(poolQueryMock).toHaveBeenCalledWith(
+      expect.stringContaining('inform.basic_location_needs_confirmation($1)'),
+      ['u1'],
+    );
+  });
+
+  it('passes a false answer through', async () => {
+    poolQueryMock.mockResolvedValue({ rows: [{ needs: false }] });
+    expect(await locationNeedsConfirmation('u1', basic)).toBe(false);
+  });
+
+  it('is false for a Connected row without asking — the weekly job re-checks those', async () => {
+    expect(await locationNeedsConfirmation('u1', connected)).toBe(false);
+    expect(poolQueryMock).not.toHaveBeenCalled();
+  });
+
+  it('is false with no address on file', async () => {
+    expect(await locationNeedsConfirmation('u1', null)).toBe(false);
+    expect(poolQueryMock).not.toHaveBeenCalled();
+  });
+
+  it('🔴 a failing check reads false instead of breaking /me (deploy before CA_0369 is applied)', async () => {
+    const err = vi.spyOn(console, 'error').mockImplementation(() => {});
+    poolQueryMock.mockImplementation(async () => {
+      throw new Error('function inform.basic_location_needs_confirmation(uuid) does not exist');
+    });
+    expect(await locationNeedsConfirmation('u1', basic)).toBe(false);
+    expect(err).toHaveBeenCalled();
+    err.mockRestore();
   });
 });

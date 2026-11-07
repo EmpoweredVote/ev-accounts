@@ -1,6 +1,6 @@
 # Basic accounts re-enter their address after a boundary change
 
-**Status:** proposed 2026-11-07, awaiting approval · **Owner:** Chris Andrews (`CA_` namespace)
+**Status:** approved 2026-11-07 (Chris Andrews), built as CA_0369 — not yet applied · **Owner:** Chris Andrews (`CA_` namespace)
 **Follows:** `2026-11-07-basic-account-address-districts-only-design.md` (CA_0368, PR #1341), whose
 "Known costs" names this gap.
 
@@ -141,3 +141,11 @@ Keep them, with the notice. Do not hide them.
    tests for both tiers and the no-address case.
 3. **App:** the notice on the three pages, with a test that it shows only when the flag is true.
 4. Apply the migration and merge only on Chris Andrews' yes.
+
+## As built (2026-11-07)
+
+- The read function is `SECURITY DEFINER` with `EXECUTE` for `ev_api` and `service_role` only.
+- The API helper `locationNeedsConfirmation` (in `lib/storedJurisdiction.ts`) never throws: a
+  failed check reads `false`, so `/me` keeps working if the code deploys before CA_0369 is applied.
+- The accounts app has no test runner, so the notice (`components/LocationRecheckNotice.tsx`) was
+  checked by type-check, build, and a rendered screenshot in both themes, not by an automated test.
