@@ -586,3 +586,182 @@ control** — it asserts it can see a politician known to exist, and that it loa
 - **Certification**: all 334 rows read `called`. AP reports `isCertified: false` for every race.
 - The two duplicate pairs from `CC_0358` (`Arthur Dixon` ×2, `Jessica McCormick`/`Jessica
   Mccormick`) and now a third: `Rick Bennett` e73bd689 / f64c1364.
+
+---
+
+# `CC_0360` / `CC_0361` — the offices AP does not publish
+
+Applied 2026-11-06. **31 races created · 47 people seeded · 13 existing races recorded ·
+106 candidacies · 45 winners.** State-executive winners nationally: **94 → 139, across 38 states.**
+
+🔴 **CC_0359 drove the AP gap to zero and that was never "the tier is recorded".** Measured from
+AP's own feed, every `officeName` it carries for 2026-11-03 is: U.S. House, Governor, U.S.
+Senate, Attorney General, Secretary of State, Lieutenant Governor, Mayor, U.S. Delegate,
+Railroad Commissioner, and ballot measures. **Not one treasurer, comptroller, controller,
+auditor, superintendent, chief financial officer, land or agriculture commissioner.** Those seats
+were on the ballot and no AP race exists for them, so no AP-side check could ever see them.
+
+## 🔴 A third kind of gap: a race the source itself does not carry
+
+AP publishes a Lieutenant Governor race in **ten** states and none in the **six** where the office
+runs on the governor's ticket — **CT, HI, MA, NM, PA, WI**. Those six are invisible to an AP-side
+reconciliation because there is no AP row to reconcile *against*. They are not "uncalled" and not
+"missing a seat"; they simply never appear. Five are created in `CC_0360` and Wisconsin's existing
+race is recorded in `CC_0361`.
+
+## 🔴🔴 And the trap inside them: the Lieutenant Governor row names the GOVERNOR
+
+Ballotpedia renders a ticket LG contest as the gubernatorial ticket. Wisconsin's winning row reads
+**"David Crowley / Sarah Godlewski"** with the tick on **Crowley, who was running for GOVERNOR**.
+Reading the table would have seated six governors in six lieutenant governors' chairs:
+
+| | the row says | the office is actually won by |
+| --- | --- | --- |
+| CT | Ned Lamont | **Susan Bysiewicz** |
+| HI | Joshua Green | **Derek Kawakami** |
+| MA | Maura Healey | **Kim Driscoll** |
+| NM | Debra Haaland | **Stephanie Garcia Richard** |
+| PA | Josh Shapiro | **Austin Davis** |
+| WI | David Crowley | **Sarah Godlewski** |
+
+Every one of those wrong answers is a real, famous, plausible name for that state. ▶ **In a ticket
+votebox the NARRATIVE is authoritative and the row is the ticket head**; the candidate taken is the
+running mate, and the sentence was confirmed to lead with that same running mate in all six.
+🟢 A gate now refuses any ticket-LG candidate who also appears on that election's Governor ballot,
+and a control proved it by planting Josh Shapiro in Pennsylvania's lieutenant governorship.
+
+## The sourcing standard changed, so it was tested rather than assumed
+
+`CC_0358` and `CC_0359` used Ballotpedia for **identity only** and took every number and the winner
+from AP. With no AP race, Ballotpedia has to carry the outcome. Two measurements decided what may
+be taken from it:
+
+⚠ **ITS COUNTS HAVE NOT SETTLED.** Against AP's authoritative totals on the 71 races where both
+name a winner, only **45 (63%)** are within 0.5%. Maine's governor still reads 261,518 against AP's
+382,760 — **68% of the real figure, and unchanged from the day before.** Only **3 of 70** counts
+moved in 24 hours, so these tables are not converging; many are frozen part-counted.
+
+🟢 **ITS WINNER FLAG IS A CALL, NOT A LEADER.** On those same 71 races the flag agreed with AP's
+call **71 times out of 71** — while the counts beneath it ran up to 32% short. The two are
+independent. And it **withholds** the flag: Kansas's governor's race shows Cindy Holscher ahead
+50.3–49.7 on 1.09m votes **on its own page** and carries no winner, exactly where AP has also not
+called. A leader-takes-the-tick system would have ticked her.
+
+▶ **So the flag is used and NO NUMBER IS.** No vote count or percentage is written to any column,
+and none is stated as fact in either header. ⚠ This is still **one** source where `CC_0359` had
+two; `result_certainty` is `'called'` and `result_source` names Ballotpedia and the date.
+
+🟢 **The page states each outcome twice** — a CSS class on a table row and an editor's sentence —
+produced separately, so one can be wrong while the other is right. **All 44 races agree on both.**
+Not a second source; what this source makes available.
+
+## What the fetch itself tried to hide
+
+🔴 **WI and WY answered `curl` with HTTP 202 and a ZERO-BYTE body, three retries each.** A WAF
+rejection can be 200 or 202, so `r.ok` is never the test — the size was. Both were read in
+Playwright instead. ▶ **A zero-byte file parses cleanly and yields nothing, which reads as "that
+state held no elections"** — so every input is size-checked before parsing and a state that yields
+no votebox is named. The Playwright extractor was then validated against Wyoming parsed both ways:
+same offices, same candidates, same parties, same winner flags.
+
+⚠ Seven states have no Ballotpedia page at all (**KY MS NJ NC VA WA WV**, `wgRelevantArticleId: 0`)
+and hold no 2026-11-03 state-executive race on our side either. Consistent, not proven.
+
+## Mapping, where a miss reads as a finding
+
+Three states name the same seat differently and came back as "we hold no such seat" — a false
+absence: Rhode Island's **General Treasurer**, Texas's **Comptroller of Public Accounts**,
+Indiana's **Comptroller of State**. ⚠ Arizona holds **five** offices titled plainly "Commissioner";
+exactly one carries a 2026 race, and that race's five candidates are precisely Ballotpedia's five,
+so the pin is to that race rather than a guess among five.
+
+## 🔴 Two citations pointed at the wrong person
+
+On a ticket row Ballotpedia prints **two** links — the governor's article and the running mate's —
+so the obvious "first href" gives one person's page to another. Worse, for **David M. Gallegos**
+(NM) and **John Thomas** (PA) the second link is an **anchor into the governor candidate's page**
+(`#Campaign_themes`): they have no article of their own. Citing it would be a **fabricated citation
+in the one field that carries provenance**. A slug check caught both; those two cite the state
+page, which does name them, and a gate refuses any source containing a fragment.
+
+## 🔴 No AP surname field exists here
+
+`CC_0359` could assert all 143 of its splits against AP's own `last` column. AP publishes none of
+these offices, so nothing outside the name says where the surname starts. 44 of the 47 seeds are
+two words and have one possible split; three were read off their own articles —
+**"Stephanie Garcia Richard"** (the surname is the pair, not "Richard"), **"David M. Gallegos"**,
+**"V. Alonzo Echavarria-Garza"**. A last-token rule gets the first one wrong.
+
+## The controls found a gate that was too weak to work
+
+Seven tampers, each aimed at a different gate.
+
+| | fault planted | observed |
+| --- | --- | --- |
+| A | the ticket HEAD taken instead of the running mate (Josh Shapiro into PA's lieutenant governorship) | `a ticket lieutenant-governor candidate is on the Governor ballot — the ticket HEAD was taken instead of the running mate: PA Lieutenant Governor: Josh Shapiro` |
+| B | a loser promoted, so a race holds two winners | `1 race(s) in this file do not hold exactly one winner` |
+| C | a seeded surname corrupted (`Echavarria-Garza` → `Garza`) | 🔴 **DRY RUN OK — NOT CAUGHT** |
+| D | a seed cited to an anchor inside another person's article | `a seeded source is not a plain Ballotpedia page` |
+| E | one of Arizona's TWO winners demoted | `a race does not elect as many winners as it has seats: AZ Commissioner: 1 winner(s) for 2 seat(s)` |
+| F | a prior value claimed that the row does not hold | `a pinned row does not hold the prior value this file recorded: CA Controller Malia M. Cohen = NULL (this file expected advanced)` |
+| G | a row the file promises not to touch, written anyway | `a row this file does not pin was changed: Katherine Haley: not_nominated -> lost` |
+
+### 🔴 C: the gate existed and was the wrong shape
+
+`CC_0359` added a split gate after its own control, written as *"full_name must end with
+last_name"*. That is true of `"V. Alonzo Echavarria-Garza"` and `"Garza"` — **so the corruption
+passed.** A hyphenated surname contains its own tail. ▶ **The fix is equality, not containment:**
+`full_name = first_name || ' ' || last_name`, which all 47 satisfy and which has no such hole.
+⚠ **A gate inherited from a previous migration is not a gate that has been tested here.** This one
+was carried forward, looked right, and was load-bearing against exactly the case it could not see.
+
+### ⚠ G was shadowed first, for the fourth time in this series
+
+Widening the `UPDATE`'s `WHERE` to the whole race made the `FROM`-join match several `calls` rows
+per target, so Postgres wrote an arbitrary one and the **pinned** rows came out wrong. It failed on
+*"only 14 of the 34 pinned rows hold their stated result"* — a real refusal of the gate **before**
+the one being tested. ▶ **A tamper must leave everything else correct, or it never reaches its
+target.** Re-aimed as a second `UPDATE` on one deliberately-untouched row, it fires properly.
+
+## `CC_0361` overwrites, so the old values are in its header
+
+34 rows: **13 held `advanced`** (Arizona's primary outcomes, written against these same November
+races — the normal shape, and the gate refuses any other prior value) and **21 held NULL**.
+`result_source` and `result_recorded_at` are replaced alongside `result`; a stale timestamp is
+worse than a null, and `CC_0354` had to repair 155 rows that had one.
+
+⚠ **7 rows are deliberately untouched**: six primary losers (`not_nominated`) and one withdrawal.
+Leaving `not_nominated` alone is the point — they did not reach this ballot.
+⚠ **Two people on Ballotpedia's ballot are absent from our races** — Daniel Wagner (WI Lt Gov) and
+Joseph Kexel (WI Treasurer), both declared write-ins. Recorded, never invented.
+⚠ **Shawn Oliver (MA Lt Gov) withdrew and stayed on the ballot**, so his row reads
+`candidate_status = 'withdrawn'` with `result = 'lost'` — votes were cast for him. "Never filed"
+would have been a deletion; this is not that.
+
+## Verified against production after applying
+
+| check | result |
+| --- | --- |
+| State-executive races nationally | 141 |
+| Candidacies | 406 |
+| **Winners** | **139**, across **38 states** (was 94 / 37) |
+| `CC_0360` | 72 rows, 31 winners, 47 people seeded |
+| `CC_0361` | 34 rows, 14 winners, one measured timestamp |
+| Rows still `advanced` | **0** |
+| Races whose winners ≠ seats | 0 |
+| Rows claiming `certified` | 0 |
+| Rows still NULL | 15 — all accounted for: 3 withdrawals, CA's two uncalled races (4), Colorado's Lieutenant Governor (7, no Ballotpedia table), and Alex Astley |
+
+## Still owed
+
+- **Ballotpedia marks no winner yet** on CA Commissioner of Insurance, CA Superintendent of Public
+  Instruction, OH Auditor, OH Treasurer, IA Auditor and others — 27 voteboxes in all.
+- 🟢 **Ballotpedia has now called Iowa's Attorney General** — *"Nate Willems (D) defeated incumbent
+  Brenna Bird (R)"* — and **AP has not**. Left for the AP pass, since it is an AP-covered office
+  and this is the one place the two sources differ. ▶ Worth re-running `ap-state-exec-gap.mjs`.
+- **Colorado's Lieutenant Governor** has a race and seven candidates and no Ballotpedia table.
+- **119 Ballotpedia voteboxes match no seat we hold**: state boards of education, public service
+  and utility commissions, university regents, Massachusetts's Governor's Council, New Hampshire's
+  Executive Council, the Office of Hawaiian Affairs, and single seats such as Alabama's Auditor and
+  Connecticut's Comptroller. Creating those is an office-and-occupancy act, not a results migration.
+- The 4 AP-called seats we hold no office for, and certification everywhere.
