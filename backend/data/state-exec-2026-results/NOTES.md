@@ -1109,3 +1109,166 @@ up, the **49 districted board seats** that need real sub-state geometry, and the
 Ballotpedia has not called** — including **Michigan's University of Michigan Board of Regents and
 Wayne State University Board of Governors**, which are the same shape as the two Michigan boards
 built here and will slot straight into this pattern the moment they are called.
+
+---
+
+# `CC_0366` — the tier-3 seats that need no new polygon
+
+Applied 2026-11-07. **4 chambers · 20 districts (4 statewide, 16 congressional) · 16 copied
+polygons · 26 offices · 26 office_terms · 9 races · 44 politicians · 23 candidacies (9 won).**
+State-level 2026 results go from **177 races / 182 winners** to **186 / 191**, still across 40
+states. 🟢 **Occupancy baseline unchanged: 293 / 55 / 238.** Address reachability: nothing
+regressed.
+
+## 🔴🔴 Tier 3 said all 49 of its seats needed real sub-state geometry. Nine do not
+
+The inventory was built from Ballotpedia's office titles, and a title that reads *District 3* or
+*Place 1* reads as districted. Two of these four bodies are nothing of the kind:
+
+- **Georgia's Public Service Commission** — *"Though each commissioner must be a resident of the
+  district he represents for 12 months prior to election, commissioners are chosen in **statewide
+  elections** and not by the citizens of their district."* The district is a residency rule on the
+  **candidate**. Every Georgia voter votes in every PSC race.
+- **Alabama's Public Service Commission** — Place 1 and Place 2 are the last two seats filled
+  under a **three-member at-large commission**.
+
+▶ **A DISTRICT IN THE TITLE IS A CLAIM ABOUT THE CANDIDATE, NOT NECESSARILY ABOUT THE ELECTORATE.**
+Read who votes before deciding a seat needs geometry. This is the same shape as the Office of
+Hawaiian Affairs finding in `CC_0364`, where "Maui Resident Trustee" turned out to be elected by
+the whole state — it has now been the right question three times.
+
+## 🟢 The other seven reuse a polygon production already holds
+
+Colorado's **State Board of Education** and the **University of Colorado Board of Regents** are
+each nine members: eight elected **by congressional district** and one at large. Both boards' own
+sites list every member against a congressional district, and the Regents' site gives each
+member's term years — the three running 2021–27 are exactly the three seats Ballotpedia carries
+as 2026 contests.
+
+So each board district is a **copy of the congressional polygon, taken inside the database**:
+
+```sql
+INSERT INTO essentials.geofence_boundaries (...)
+SELECT ..., src.geometry, ...
+  FROM ... JOIN essentials.geofence_boundaries src
+    ON src.mtfcc = 'G5200' AND src.geo_id = mp.src_geo_id;
+```
+
+Nothing is downloaded, reprojected or digitised, so **the CRS hazard cannot arise** — and all
+eight sources were measured SRID 4326 and `ST_IsValid` before the copy, with gates asserting it
+again at run time. Colorado has no `G5200V26` rows, so there is one congressional map in
+production and no vintage to choose between; a gate refuses the file if that ever stops being
+true. After the apply, every copied polygon's area matches its source to the square mile
+(156/156, 11540/11540, 50087/50087 …).
+
+## 🔴 A new layer for a state board needs a read-path line, and only one of the two did
+
+`X0003` is already admitted for `STATE_BOARD_EDUCATION` — Utah's board — and **the rule is not
+state-scoped**, so Colorado's eight education districts join with **no code change at all**. The
+Regents are `STATE_BOARD`, and the `X%` catch-all admits only `LOCAL`, `COUNTY` and `JUDICIAL`, so
+a new layer had to be added explicitly to **both** `districtQueries.ts` and `geoIdGuard.ts`, which
+say in their own comments that they must stay in step.
+
+⚠ **`geofence_boundaries.mtfcc` is `varchar(10)`.** The first draft called the layer
+`X-STATE-BOARD` (13 characters) and the only thing that caught it was
+`value too long for type character varying(10)` at INSERT time, **after every other gate had
+passed**. The layer is `X-ST-BOARD`, exactly 10, and a unit test now pins the length.
+
+## Measured, not reasoned — twice, and they disagree on purpose
+
+`/api/essentials/address-search` against **live production**, after the migration:
+
+| address | returned |
+| --- | --- |
+| 11 S Union St, Montgomery, AL | all **3** Public Service Commissioners |
+| 206 Washington St SW, Atlanta, GA | all **5** Public Service Commissioners |
+| 200 E Colfax Ave, Denver, CO | **State Board of Education Member, District 1 — Lisa Escárcega**, plus both at-large seats |
+
+🔴 **The Denver address does NOT yet return University of Colorado Regent, District 1** — and that
+is the proof the code change is load-bearing. The deployed API has the data and the polygons but
+not the `X-ST-BOARD` line, so the same address resolves the `X0003` board and not the `X-ST-BOARD`
+one. The districted regent seats appear on the next backend deploy; the at-large regent already
+shows, because it comes through the statewide branch.
+
+The gate says the same thing from the other side. `check-address-reachability.mjs` reads the guard
+out of `geoIdGuard.ts`, so with the new line it reports `UNREACHABLE 7 (baseline 7)` — and with
+the line removed it reports **15, with a new `co|STATE_BOARD observed 8` bucket**. The eight
+regent districts are reachable because of that line and for no other reason.
+
+## Rosters
+
+Every seat is seated from the body's own site, and Ballotpedia's officeholder table independently
+agrees on all four:
+
+- `psc.alabama.gov` — Cynthia Lee Almond (President), Jeremy H. Oden (Place 1), Chris V. Beeker III (Place 2)
+- `psc.ga.gov` — District 1 Jason Shaw, 2 Alicia M. Johnson, 3 Peter Hubbard, 4 Lauren McDonald, 5 Stan Wise
+- `cde.state.co.us/cdeboard` — all nine against a congressional district
+- `regents.cu.edu` — all nine, with term years
+
+⚠ **The holder is not the winner:** 4 of the 9 winners replace the sitting member — Matt Gentry
+for Jeremy H. Oden, Jim Zeigler for Chris V. Beeker III, Shelia Edwards for Stan Wise, Edie Hooton
+for Callie Rennison.
+
+⚠ **Colorado's State Board District 3 is created and seated but carries no race.** It was on the
+2026 ballot — Ballotpedia's published rotation puts Districts 1, 3 and 7 in this cycle, and all
+three have a votebox — but no winner has been called, so it belongs to the uncalled pass. The seat
+table keeps the two facts in separate columns, `on_ballot_2026` and `race_recorded`, and a gate
+refuses a race on a seat that was not on the ballot.
+
+## Identity
+
+All 44 people are new; nothing is pinned and no collision is excused. Both sweeps — full name, and
+surname + first initial — returned only plainly different people: Jimmy Gordon (MN) for James O.
+Gordon, Jeanette and Johnny Shaw for Jason Shaw, Faye Johnson for Fitz Johnson, Scott and Stephanie
+Wise for Stan Wise, Rex and Rick Scott for Ray Scott, Patricia Mueller for Paul Mueller.
+
+🟢 **The sweep is not blind, and the control says which part of it is thin.** Production holds 64
+Colorado House and 35 Senate members and 180 Georgia House and 55 Senate members, so it can see
+those states. It holds **no Alabama state legislators at all**, which is why Cynthia Lee Almond —
+a former Alabama state representative — comes back new rather than matched.
+
+## Controls
+
+| | fault planted | observed |
+| --- | --- | --- |
+| A | the seating **and** the every-office-is-seated gate removed | `the unflagged offices-missing-terms baseline moved to 264 — it was 238 and must never be raised` |
+| B | each board district copied from the NEXT congressional district along | `a copied polygon is not its source: …/sboe:1 is not identical to 0801; …` (all 16) |
+| C | Colorado's at-large board member refiled under the Regents | `CO SBE: 8 seats for official_count 9; CO REGENTS: 10 seats for official_count 9` |
+| D | Wanda James's seat marked as on the 2026 ballot | `CO REGENTS#1 (Wanda James): on_ballot=true but the body says the term ends 2029` |
+| E | Georgia's District 3 treated as real geography | `a body would load polygons into no layer: GA PSC has cd seats but no layer` |
+| F | a compound surname halved | `a seeded name does not match its own split: Kristi Burton Brown splits to (Kristi, Brown)` |
+| — | the `X-ST-BOARD` line removed from `geoIdGuard.ts` | the reachability gate goes `UNREACHABLE 7 → 15` with a new `co|STATE_BOARD observed 8` bucket, and `geoIdGuard.test.ts` goes `1 failed \| 20 passed` |
+
+🔴 **B is the geometry control and it is the one worth reading.** Every polygon it writes is still
+a real, valid, SRID-4326 Colorado congressional district, and the set still tiles the state — so
+shape, projection and coverage all look perfect, and every voter is told the wrong board member.
+What catches it is the gate that each copy `ST_Equals` the congressional district it **claims** to
+be. A point-in-polygon uniqueness check would not: a consistent permutation passes that.
+
+⚠ **F's first draft proved nothing.** It wrote `('Kristi Burton', 'Brown')`, which reconstructs
+`Kristi Burton Brown` exactly — a tamper that cannot trip the comparison tests nothing at all. It
+drops the middle name instead. This is the fifth appearance of the split defect.
+
+⚠ **A false red, nearly recorded as a control passing.** `vitest` leaves a `.vite-temp` directory
+inside the worktree's otherwise-absent `node_modules`, and the *next* run resolves itself from
+there and dies with `ERR_MODULE_NOT_FOUND` before any test executes. Judged on exit code alone
+that reads as "the test failed", which is exactly the answer a control wants to hear. Clear
+`node_modules` before each run and read the `Tests` line, not the exit code.
+
+## What tier 3 still needs — 40 seats
+
+**Derivable from polygons we already hold, blocked on a composition:**
+- **KS State Board of Education (5)** — each district is four contiguous state senatorial
+  districts and we hold all 40 Kansas senate polygons. Which four is not published anywhere
+  found; K.S.A. 72-250 and 72-251 turn out to be about officers and quorum.
+- **MA Governor's Council (8)** — each district is five contiguous senatorial districts and we
+  hold all 40 Massachusetts senate polygons **with their real names**. The senate districts are
+  *named*, not numbered, so TIGER's `25D01…25D40` ordering cannot be assumed to be the
+  "consecutive" order the constitution means. Guessing it hands voters the wrong councillor.
+
+**Needs an imported polygon:** AL State Board of Education (4), LA PSC (2), NE PSC (1), NE State
+Board of Education (3), NE Regents (1), NH Executive Council (5), NM Public Education Commission
+(4), TX State Board of Education (7).
+⚠ New Hampshire's councillor districts are defined by statute as lists of towns and wards, which
+would be a union of county subdivisions — but we hold `G4040` for only 11 states and New Hampshire
+is not one of them.

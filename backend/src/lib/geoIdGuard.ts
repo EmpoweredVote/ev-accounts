@@ -95,6 +95,12 @@ export const MTFCC_DISTRICT_TYPE_GUARD = `(
     -- Bernardino County, so not a union of counties either. EXPLICIT for the same reason as X0029:
     -- the X catch-all below admits only LOCAL/COUNTY, which would leave every BOE member unreachable.
     OR (gp.mtfcc = 'X-CA-SBOE' AND d.district_type = 'STATE_BOARD')
+    -- X-ST-BOARD: elected state-level boards that are NOT boards of education and whose
+    -- districts have no TIGER layer of their own — the University of Colorado Board of Regents,
+    -- whose eight districts ARE the congressional districts and are loaded as copies of the
+    -- G5200 polygons (CC_0366). EXPLICIT for the same reason as X-CA-SBOE, and kept in step with
+    -- GEOFENCE_DISTRICT_JOIN in districtQueries.ts.
+    OR (gp.mtfcc = 'X-ST-BOARD' AND d.district_type = 'STATE_BOARD')
     OR (gp.mtfcc LIKE 'X%' AND gp.mtfcc NOT IN ('X0001','X0002','X0003','X0004') AND d.district_type IN ('LOCAL','COUNTY'))
     -- G5200V26 (2026-vintage congressional boundaries) is intentionally excluded from this
     -- catch-all: only the elections opt-in join (electionService.ts) may resolve against it.
