@@ -36,10 +36,14 @@ const ERROR_MESSAGES: Record<string, string> = {
   INTERNAL_ERROR: 'Something went wrong on our end. Please try again in a moment.',
   // 403s from requireConnected (backend/src/middleware/tierGuards.ts). Retrying
   // never changes these, so they must not fall through to INTERNAL_ERROR.
-  // Nothing in the product lets a person become Connected on their own yet (only
-  // an admin promotion does), so these say what is true and promise no next step.
+  //
+  // CONNECTED_REQUIRED is NOT "basic accounts cannot add an address" — they can,
+  // through /account/set-location (CA_0368). It only reaches this page when the
+  // app sent a basic account down the Connected route, i.e. the tier it holds is
+  // out of date (for example, an account changed tier in another tab). A reload
+  // re-reads the account and picks the right route.
   CONNECTED_REQUIRED:
-    'Adding an address needs a Connected account, and this account is not Connected yet. Trying again will not change that.',
+    "We couldn't match this page to your account type. Reload the page and try again.",
   CONNECTED_UNVERIFIED:
     'Your Connected account has not been verified yet. You can add an address once it is.',
 };
