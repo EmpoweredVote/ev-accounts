@@ -2,6 +2,8 @@
 --
 -- Slot CC_0368 reserved via `npm run steward --prefix backend -- slot CC` (author: Chris Andrews).
 -- No migration runner exists; this file records SQL applied by hand (pure DML). No DELETE.
+-- ✅ APPLIED to prod 2026-11-07 by Chris Andrews: dry run (ROLLBACK) then apply, both gates green each time. Re-read after:
+--   check:incumbency 0 drift (control passed) and check:duplicate-people OK.
 --
 -- CC_0360 seeded the 2026 Massachusetts Treasurer and Receiver-General race on office 3367d772 and created a
 -- NEW person for the winner, "Deb Goldberg" (57ce8d40, Ballotpedia source, no party, no seat), with

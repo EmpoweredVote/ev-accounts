@@ -3,6 +3,8 @@
 --
 -- Slot CC_0367 reserved via `npm run steward --prefix backend -- slot CC` (author: Chris Andrews).
 -- No migration runner exists; this file records SQL applied by hand (pure DML). No DELETE.
+-- ✅ APPLIED to prod 2026-11-07 by Chris Andrews: dry run (ROLLBACK) then apply, both gates green each time. Re-read after:
+--   check:incumbency 0 drift (control passed) and check:duplicate-people OK.
 --
 -- WHY. race_candidates.is_incumbent was ruled on 2026-11-04 to mean "incumbent OF THE SEAT THIS RACE IS FOR"
 --   (CC_0343). A race row points at ONE office, and a multi-seat race (a council electing three, a state

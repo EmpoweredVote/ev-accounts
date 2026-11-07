@@ -1,6 +1,6 @@
 {
   "_comment": "Reviewed pairs for check-duplicate-people.mjs. The gate fails on any pair NOT listed here. Set verdict to different_people (quiet for ever) or same_person (needs a merge migration) and add a note naming the source you checked. \"unreviewed\" is the backlog and should only shrink. split = the seated row holds nothing while the same-named unseated row holds the compass answers or the candidacies (voter-visible harm).",
-  "_updated": "2026-11-04",
+  "_updated": "2026-11-07",
   "pairs": {
     "006cec13-0c52-46b2-a509-703826a0f06b|04afc704-a4eb-42f7-bae4-dcacd6490e09": {
       "names": "Lawrence J Demoss ~ Lawrence Demoss",
@@ -65,6 +65,16 @@
       ],
       "split": false,
       "verdict": "unreviewed"
+    },
+    "0cb83889-8336-4c5f-9a23-553965d9ef6f|c9aaf920-9c5c-403e-9122-7c78c986a56a": {
+      "names": "Lauren McDonald ~ Lauren McDonald III",
+      "state": "ga",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "different_people",
+      "note": "Different people, checked 2026-11-07. 0cb83889 is Lauren \"Bubba\" McDonald Jr., Georgia Public Service Commissioner, District 4, seated by CC_0366. c9aaf920 is his son, Lauren McDonald III, a member of the Georgia House of Representatives. Father and son share a name and a state; they hold different offices."
     },
     "101a4057-f3e4-4345-a5f9-92722049fb53|a9233775-b8af-423e-aea6-734c2855e5ac": {
       "names": "Tim Peck ~ Timothy Peck",
@@ -458,15 +468,6 @@
       "split": true,
       "verdict": "different_people",
       "note": "DIFFERENT PEOPLE, checked 2026-10-20 (CC_0269). Bill Brown is the elected Sheriff-Coroner of Santa Barbara County. William Brown Jr. is a candidate for California State Senate District 12 (Central Valley) created from the SOS certified general-election list. Geometry: Santa Barbara County against SD-12 returns ST_Intersects = TRUE but an area share of 0.0% -- they touch along a boundary line and share no territory; control SD-19 returns false/0.0%. A sheriff of a county that lies wholly outside the district is not that district's senate candidate, and the suffix on the candidate's name points the same way. NOTE THE TRAP: the boolean said yes, the area said no -- read the area share, never ST_Intersects alone."
-    },
-    "c905324f-0568-48e9-931f-d42ddc657ec3|ec5cb4d8-b857-4442-b1c0-96bd69537de6": {
-      "names": "Christopher R Reynolds ~ Christopher Reynolds",
-      "state": "in",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": false,
-      "verdict": "unreviewed"
     },
     "ce8aef29-b9da-4e25-b7ea-d7a746de317b|d71c4160-9380-4788-88f1-4627b4abcb62": {
       "names": "Lawrence Kyle Clark ~ Jason Clark",
