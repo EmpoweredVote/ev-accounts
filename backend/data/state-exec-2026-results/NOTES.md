@@ -851,3 +851,83 @@ only identifier available — the state FIPS — would make address search tell 
 that they are represented by another district's member. **That is a false claim to a voter, which
 is worse than the seat being absent.** Utah's school board shows the right shape: real OCD
 divisions, loaded as geography first.
+
+---
+
+# `CC_0363` — creating 25 statewide executive offices, and seating them
+
+Applied 2026-11-06. **25 chambers · 25 districts · 25 offices · 25 office_terms · 25 races ·
+57 politicians · 54 candidacies (25 won, 29 lost).** State-level winners **146 → 171 across 40
+states**. 🟢 **Occupancy baseline unchanged: 293 / 55 / 238.** Address reachability: nothing
+regressed.
+
+🔴 **This is an OCCUPANCY ACT, not a results migration**, and the reason is a gate. An office with
+no `office_terms` row sits in `offices_missing_terms`; the unflagged count is **238** and
+CLAUDE.md says it must **never** be raised. Creating 25 offices and walking away would have taken
+it to **263** and handed the next person a red gate for drift nobody introduced. So each office is
+created *with its current holder seated*, and the post-verify asserts the baseline is still 238.
+
+⚠ **THE HOLDER IS NOT THE WINNER.** A certified result is not a fact about who holds a seat —
+taking office is a separate, later event. **14 of the 25 winners are someone other than the
+sitting officeholder**, and it is the sitting ones who are seated here.
+
+## How each holder was established
+
+- **5 from the office's own website** — `agi.alabama.gov`, `cosl.org`, `illinoiscomptroller.gov`,
+  `osa.state.mn.us`, `nmstatelands.org`. These are rosters, not race pages.
+- **20 from Ballotpedia's own "Incumbent X …" sentence.** That is a statement about who *holds*
+  the seat rather than about the count — the distinction CLAUDE.md draws — but it is an
+  aggregator, and each term's `source` says so explicitly rather than implying a roster.
+
+🔴 **NO TERM START IS INVENTED.** Not one source publishes when the current holder's term began,
+and "first elected" is not a term start. Every term is **open-ended with
+`start_precision = 'unknown'`** and `how_started = 'unknown'` (several of these people were
+appointed, not elected). A plausible date would have been a fabrication.
+
+🔴 **NINE TIER-1 OFFICES ARE DELIBERATELY ABSENT** because neither route produced a name: Kansas's
+insurance page 403s, Oklahoma's labour and insurance pages 404, South Dakota's auditor host does
+not resolve, and Oklahoma's superintendent page yields only a fragment ending "ields," before
+"State Superintendent". **Guessing an officeholder is the most expensive error available here**,
+so those nine wait for a real roster: KS Commissioner of Insurance, OK Commissioner of Insurance,
+OK Commissioner of Labor, OK Superintendent of Public Instruction, SC Commissioner of Agriculture,
+SC Comptroller General, SD State Auditor, VT State Auditor, WY Superintendent of Public Instruction.
+
+## 🔴 Three more name matches thrown out on what the person already holds
+
+| matched row | why it is someone else |
+| --- | --- |
+| `John King` 30f77168 | holds a **California local council seat**, source `scraped` — not Georgia's Insurance and Safety Fire Commissioner |
+| `Mike Foley` 38277535 | a candidate for **Minnesota's** U.S. Representative — not Nebraska's Auditor of Public Accounts |
+| `Chris Jones` d9ceca31 | a candidate for **Arkansas's** U.S. Representative — not Iowa's Secretary of Agriculture candidate |
+
+That is **six** contradicted matches across this series, every one caught by the same one extra
+column. Two matches were *kept* on the same evidence: **Cole Jester** holds Arkansas's Secretary
+of State and contested its Commissioner of State Lands, and **Stephanie Garcia Richard** is the row
+`CC_0360` seeded, who currently holds New Mexico's Commissioner of Public Lands.
+
+⚠ **The politicians snapshot went stale mid-task and nearly caused duplicates.** It was pulled
+before `CC_0360` and `CC_0362` applied, so Stephanie Garcia Richard — seeded an hour earlier —
+resolved as NEW. Re-pulled before the final resolution. **A snapshot taken before your own writes
+is not a snapshot of production.**
+
+## Controls
+
+| | fault planted | observed |
+| --- | --- | --- |
+| A | the `office_terms` insert disabled — offices created but unseated | `25 of the 25 new offices have no term and would raise the drift metric` |
+| B | Alabama's FIPS written as Alaska's | `a FIPS disagrees with the state's existing districts: AL Auditor: this file says FIPS 02 but AL districts use 01` |
+| C | a name dropped from the collision allowance | `a person this file seeds already exists: John King already exists as John King (…)` |
+| D | a compound given name corrupted (`Keisha Sean` to `Keisha`) | `a seeded name does not match its own split` |
+| E | a new office titled as one we already hold | `this file would duplicate an office we already hold: AL Auditor already exists as STATE_EXEC "Treasurer"` |
+
+🔴 **A is the control that matters**: it proves the baseline gate catches the exact failure that
+makes office creation dangerous. 🔴 **D is the third appearance of the split defect** — "Keisha
+Sean Waites" still *ends with* "Waites", so `CC_0360`'s containment form could not see a
+first-name corruption at all. 🔴 **E is the gate written because of `CC_0362`**: a reconciliation
+that filtered on `STATE_EXEC` reported seats we *do* hold as absent, so this gate checks every
+district type before creating anything.
+
+⚠ Two mechanical faults the dry run caught: `chambers.slug` is a **generated column** and cannot
+be inserted (the rows join back on `name_formal`), and the holder lookup built its key from
+"AL Auditor" where the people table is keyed "AL|…" — 24 of 25 holders resolved to nobody and the
+gate said so rather than seating silently.
