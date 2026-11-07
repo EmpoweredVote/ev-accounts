@@ -931,3 +931,181 @@ district type before creating anything.
 be inserted (the rows join back on `name_formal`), and the holder lookup built its key from
 "AL Auditor" where the people table is keyed "AL|…" — 24 of 25 holders resolved to nobody and the
 gate said so rather than seating silently.
+
+---
+
+# `CC_0364` — the seven multi-member bodies, built whole
+
+Applied 2026-11-07. **7 chambers · 7 districts · 35 offices created and 2 moved · 35 office_terms ·
+7 races · 61 politicians · 36 candidacies (11 won, 25 lost).** State-level 2026 results go from
+**178 races / 171 winners** to **185 / 182**, still across 40 states.
+🟢 **Occupancy baseline unchanged: 293 / 55 / 238.** Address reachability: nothing regressed.
+
+## 🔴 The blocker was a seat-numbering decision, and production had already made it
+
+`outstanding-state-exec-2026-11-06.json` set these seven aside with one sentence: *"creating one
+office for the seat up in 2026 leaves no way to tell it from the seats up in 2028."* Arizona's
+Corporation Commission, already in the database, answers it — **one chamber, one shared
+`STATE_EXEC` district on the state FIPS, five identical offices all titled "Commissioner", and the
+2026 contest as ONE race carrying `seats = 2`.** No numbers anywhere. Every body here is built that
+way.
+
+🔴 **The corollary is that the whole body has to be created, not just the seat that was up.** An
+office is a seat, and `chambers.official_count` states how many the body has; three offices in a
+chamber that says eight is a vacancy that does not exist. So all 37 seats were created and all 37
+are seated, each from the body's **own roster**:
+
+| body | seats | filled 2026 | roster |
+| --- | --- | --- | --- |
+| HI Office of Hawaiian Affairs Board of Trustees | 9 | 3 at-large | `oha.org` |
+| MI State Board of Education | 8 | 2 | `michigan.gov/mde` |
+| MI Michigan State University Board of Trustees | 8 | 2 | `trustees.msu.edu` |
+| ND Public Service Commission | 3 | 1 | `psc.nd.gov` |
+| OK Corporation Commission | 3 | 1 | `oklahoma.gov/occ` |
+| SD Public Utilities Commission | 3 | 1 | `puc.sd.gov` |
+| TX Railroad Commission | 3 | 1 | `rrc.texas.gov` |
+
+## 🔴🔴 `district_type` is a routing key, not a label — and it nearly cost Michigan its board
+
+The first draft filed Michigan's State Board of Education under `STATE_BOARD_EDUCATION` and the
+MSU trustees under `STATE_BOARD`, because those are the types whose **names** fit. Reading
+`buildStatewideQuery` before writing the file is what stopped it:
+
+```sql
+d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_EXEC', 'STATE_EXEC', 'NATIONAL_JUDICIAL', 'JUDICIAL')
+```
+
+**`STATE_BOARD` and `STATE_BOARD_EDUCATION` are not in that list.** They reach a voter only through
+the geofence join, keyed on a particular `mtfcc` — `X0003` for Utah's SBOE, `X-CA-SBOE` for
+California's Board of Equalization, `G5220` for DC — because every one of those boards is
+**districted**. Michigan's board is elected statewide at large and has no polygon of its own, so
+the type whose name fits would have made all eight members **unreachable from every Michigan
+address, silently**. All seven bodies are `STATE_EXEC`, which is what Arizona's commission already
+is.
+
+▶ The general form: ask what a column is *read by* before choosing its value. This is the same
+hazard as an empty `geo_id`, wearing a different hat.
+
+## 🔴 Which seat was up is a claim a December pass will act on, so it is asserted
+
+A race attaches to **one** office, and that office is what a seating pass will replace. Arizona's
+existing 2-seat race hangs off an arbitrary one of its five offices. This file can do better,
+because every outgoing member is published:
+
+- **SD** — the Commission's own home page: *Gary Hanson, Elected 2002, 2008, 2014, 2020, **Term
+  Ends 2027***. Don Haggar takes that seat.
+- **OK** — the Commission's own *Commissioner's Terms* table: **Todd Hiett, 01/11/2021–01/11/2027**.
+  Brad Boles takes it.
+- **TX** — **Jim Wright**, assumed 2021-01-01, term ends 2027-01-01. Jon Rosenthal takes it.
+- **MI** — Pritchett and Tilley (both assumed 2019-01-01, terms end 2027-01-01); Scott and Tebay
+  (terms end 2027-01-01). All four re-elected.
+- **ND** — Sheri Haugen-Hoffart, re-elected.
+- **HI** — Souza, Galuteria and Waihee IV. The fourth at-large seat is Keli'i Akina's, to 2028.
+
+21 of the 37 seats publish a term-end year, and a gate checks **every one of them** against the
+ballot column: a seat this contest filled must end its term in 2027, a seat it did not must end
+later. The other 16 publish no year and are **skipped rather than assumed**.
+
+🟢 **AP labels the Texas seat `"Term Exp 2032"`** — the only seat label any source in this whole
+programme publishes. It is recorded in the race description, **not** in the office title: a label
+that names a term goes stale the next time the seat is filled, which is exactly what makes it a
+race fact rather than an office fact.
+
+## 🔴 OHA's board was split across three chambers, and this file makes it one
+
+`CC_0363` created the Maui and Oahu Resident Trustee seats. Its builder treated every statewide
+office alike, so each got its **own single-seat chamber and district** — two of **nine** seats on
+one board. Both offices are **moved**: `chamber_id` and `district_id` are repointed, the office
+rows keep their ids, and their terms and races are untouched, so nothing cascades. The two chambers
+and two districts they vacate are then deleted.
+
+⚠ **`offices.chamber_id` and `offices.district_id` have NO foreign key.** Deleting a chamber or a
+district does not cascade and does not error — it silently orphans every office pointing at it.
+The file counts the references before and after, and the post-verify checks the *whole* offices
+table for a dangling pointer, not just its own rows.
+⚠ An emptied district would also be a fresh `DEAD_GEOGRAPHY` bucket in the master-only address
+reachability gate, so leaving them behind was not an option either.
+
+## 🔴 A roster and an aggregator contradicted each other about a living officeholder
+
+OHA's own board page, read 2026-11-07, lists **John D. Waihee IV** as a sitting At-large Trustee.
+Ballotpedia, read the same day, files the office under *"Prior offices"*, *"Years in office:
+2000 - 2026"*, and says *"He left office on November 3, 2026."*
+
+**The chamber's own roster outranks every aggregator, and election day is not a departure date.**
+He is seated as the current holder of the seat Ikaika Anderson won. This is the holder-is-not-the-
+winner rule with a visible counter-example attached.
+
+## Identity
+
+4 of the 65 people already existed and are pinned by uuid, each judged on what that row already
+holds:
+
+| row | what it holds | verdict |
+| --- | --- | --- |
+| `Roger Victory` 8a85a630 | Senator @MI | **KEPT** — Ballotpedia's page for the MSU trustee candidate *is* that senator's page |
+| `Jon Rosenthal` f5f63005 | Representative @TX | **KEPT** — and he wins a statewide executive seat while sitting in the Texas House |
+| `Carmen Hulu Lindsey` c669df3a | OHA Maui Resident Trustee | **KEPT** — `CC_0363`'s row, moved into the board |
+| `Kalei Akaka` 3fa0ddec | OHA Oahu Resident Trustee | **KEPT** — same |
+
+🔴 **"Adrian Akina (also known as Keali'i)" is not Keli'i Akina.** Ballotpedia's own page says
+Adrian Akina *lost* the 2026 at-large election; the sitting at-large trustee Keli'i Akina won in
+**2024** and holds the seat to 2028-11-07. One letter apart, both Akinas, both OHA at-large, both
+named on the same results table. They are two rows, and reading one page settled it.
+
+⚠ **Full-name equality cannot see a middle initial.** The roster says "Tiffany D. Tilley" and
+"Brianna T. Scott"; Ballotpedia's candidate rows say "Tiffany Tilley" and "Brianna Scott". Seeding
+both forms would have created two rows for each woman. A **second sweep on surname + first
+initial** caught the pair and found nothing else: Kanani Souza (HI Representative), Joann Pritchett
+(WI Alder), Bobby Scott (VA), Dan/David/Deb Patterson, Cabot/Carla/Clarke Nelson and Tom Craddick
+are all different people.
+
+## Term starts
+
+34 of the 35 new terms are open-ended with `start_precision = 'unknown'`: no roster publishes when
+the member took the seat, and "first elected" is not a term start. The one exception is sourced
+from the body's own page — **Jill Kringstad, "appointed to the Commission in Jan. 2025 by Governor
+Kelly Armstrong"** — written `2025-01-01` at `'month'` precision with `how_started = 'appointed'`.
+
+## Controls
+
+| | fault planted | observed |
+| --- | --- | --- |
+| A | the whole seating step removed | `35 of the 37 offices have no term and would raise the drift metric` |
+| B | Michigan's FIPS written as Minnesota's | `a FIPS disagrees with the state's existing districts: MI SBE: this file says FIPS 27 but MI uses 26` |
+| C | MSU's 8th trustee refiled under the State Board | `a body does not create its whole membership: MI SBE: 9 seats for official_count 8; MI MSU: 7 seats for official_count 8` |
+| D | the Texas race moved onto Christi Craddick's seat | `a seat is marked up against its own published term end: TX RRC#2 (Christi Craddick): up=true but the body says the term ends 2031` |
+| E | the Jon Rosenthal pin repointed at Roger Victory | `a pinned person is not who this file names: Jon Rosenthal is the row Roger Victory (8a85a630…)` |
+| F | a compound given name halved | `a seeded name does not match its own split: Mary Anne Hering splits to (Mary, Hering)` |
+| G | the seating **and** the every-office-is-seated gate removed | `the unflagged offices-missing-terms baseline moved to 273 — it was 238 and must never be raised` |
+
+🔴 **G is the one that proves the number.** A is caught by the post-verify's own "every new office
+is seated" gate, which never lets the `238` assertion run — so A proves that gate and nothing more.
+G removes it too, leaving the drift baseline as the only thing between 35 empty offices and
+production, and it reports **273**, exactly the +35 predicted.
+
+🔴 **C was shadowed on the first attempt** — the seventh time in this series. Deleting the eighth
+MSU trustee tripped the row-count gate (`expected 37 seats, found 36`), a correct catch for a
+*different* claim. Moving the seat into another body instead keeps the count at 37 and reaches the
+completeness gate. **A tamper has to satisfy every earlier gate to reach its own.**
+
+🔴 **F is the fourth appearance of the split defect.** "Mary Anne Hering" still *ends with*
+"Hering", so `CC_0360`'s containment form cannot see a corrupted given name at all. Only exact
+reconstruction can.
+
+## Measured on the live endpoint, not reasoned about
+
+`https://ev-accounts-api.onrender.com/api/essentials/address-search` after the migration:
+
+- `1000 Bishop St, Honolulu, HI` → **all 9 OHA trustees**
+- `124 W Allegan St, Lansing, MI` → **all 8 State Board members and all 8 MSU trustees**
+- `1701 N Congress Ave, Austin, TX` → **all 3 Railroad Commissioners**
+
+## What tier 2 leaves behind
+
+Tier 2 of `outstanding-state-exec-2026-11-06.json` is now closed. Still outstanding from that
+inventory: the **9 statewide offices** whose current officeholder no reachable roster would give
+up, the **49 districted board seats** that need real sub-state geometry, and the **22 voteboxes
+Ballotpedia has not called** — including **Michigan's University of Michigan Board of Regents and
+Wayne State University Board of Governors**, which are the same shape as the two Michigan boards
+built here and will slot straight into this pattern the moment they are called.
