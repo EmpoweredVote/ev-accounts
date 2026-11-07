@@ -1272,3 +1272,158 @@ Board of Education (3), NE Regents (1), NH Executive Council (5), NM Public Educ
 ⚠ New Hampshire's councillor districts are defined by statute as lists of towns and wards, which
 would be a union of county subdivisions — but we hold `G4040` for only 11 states and New Hampshire
 is not one of them.
+
+---
+
+# `CC_0369` — Texas's State Board of Education, and the first imported polygon
+
+Applied 2026-11-07. **1 chamber · 15 districts · 15 geofence polygons · 15 offices · 15
+office_terms · 7 races · 28 politicians · 15 candidacies (7 won).** State-level 2026 results go
+from **186 races / 191 winners** to **193 / 198**, across 40 states.
+🟢 **Occupancy baseline unchanged: 293 / 55 / 238.** Address reachability: nothing regressed.
+
+## 🔴🔴 The shapefile in the official dataset would have been the Holladay failure again
+
+The Texas Legislative Council publishes PLANE2106 as both a shapefile and a KML. `PLANE2106.prj`
+reads:
+
+```
+PROJCS["NAD_1983_Lambert_Conformal_Conic", ...
+  PARAMETER["False_Easting",1000000.0], PARAMETER["False_Northing",1000000.0],
+  ... UNIT["Meter",1.0]]
+```
+
+Texas-centric Lambert Conformal Conic **in metres**. Loaded as SRID 4326 those numbers are valid,
+correctly shaped polygons that match no address on Earth — exactly how Holladay's five wards went
+in, and **every geometric check passes**. KML is WGS84 lon/lat *by specification*, so the KML is
+what was used and there is no projection left to get wrong.
+
+The parser still bounds-checks every one of the 263,933 coordinate pairs against Texas
+(−107..−93, 25..37) and stops on the first that fails, and the loader re-checks each polygon's
+bounding box after insert. A control that reprojects the real data to Web Mercator metres and
+relabels it 4326 is refused on the first district:
+`sboe:1 bbox -11871739,3070060 .. -10920254,3763658 is outside Texas — WRONG CRS`.
+
+## Which map, and how that was settled
+
+The Capitol Data Portal carries exactly four SBOE plans, and the other three state their own end
+dates in their titles — `plane2100` and `plane120` "2013-2022", `plane100` "2003-2012".
+**PLANE2106, "STATE BOARD OF EDUCATION DISTRICTS, JANUARY 2023", is the only one still open**, and
+Texas's 2025 mid-decade redistricting did not redraw this map. Provenance — URLs, byte counts and
+sha256 digests — is in the header of `scripts/CC_0369-parse-plane2106-kml.mjs`.
+
+## 🟢 No read-path change was needed
+
+`districtQueries.ts` and `geoIdGuard.ts` already admit `(X0003, STATE_BOARD_EDUCATION)` for Utah's
+board, and **that rule is not state-scoped**, so Texas's rows join as they are. The `geo_id`
+carries the state (`ocd-division/country:us/state:tx/sboe:N`), so nothing collides with Utah's.
+
+## 7.9 MB of geometry is not in the migration
+
+263,933 coordinate pairs is too much to embed, so the polygons are loaded by
+`scripts/CC_0369-tx-sboe-geofences.mjs`, which **must run first** — the same split `CA_0205` used
+for California's Board of Equalization. The migration then asserts the rows are there, are valid
+4326 Texas polygons, cover the state, and reach the right member.
+
+## The map is checked against geometry production already trusts
+
+Measured by the loader and asserted again in the migration:
+
+| check | result |
+| --- | --- |
+| union against our TIGER Texas outline (`G4000` '48') | **99.890% of Texas covered** |
+| worst pairwise overlap between two districts | **0.000000%** |
+| Texas incorporated places (`G4110`) resolving to exactly one district | **1,228 of 1,228** — none to zero, none to two |
+| board members' home towns wholly inside their own district | **9 of 9** |
+
+The home town is evidence **independent of the map being checked**: the board's own members page
+gives it, and Texas law requires a member to be a bona fide resident of the district with one
+year's continuous residence.
+
+⚠ **Six members' towns anchor nothing, and that was measured rather than assumed.** El Paso, San
+Antonio, Pasadena, Houston, Pearland and Frisco each straddle a district line — Houston touches
+districts 4, 6, 7 and 8, and an interior point of it lands in 4. Only the nine towns that lie
+wholly inside one district are used.
+
+## Controls
+
+**On the loader:**
+
+| | fault planted | observed |
+| --- | --- | --- |
+| A | the real data reprojected to Web Mercator metres, relabelled 4326 | `sboe:1 bbox … is outside Texas — WRONG CRS` |
+| B | District 7 dropped from the file | `expected 15 districts … found 14` |
+| C | the geometry of Districts 2 and 15 swapped, numbers kept | `anchor town(s) not wholly inside their member's district: Midland city -> 2, expected 15; Corpus Christi city -> 15, expected 2` |
+
+🔴 **C is the one worth reading.** With the labels swapped the map passes *every structural check*
+— 15 districts, all valid 4326 inside Texas, union covering 99.89%, zero overlap, all 1,228 places
+resolving to exactly one district. Only the anchor guard, which brings in evidence from outside
+the map, can tell.
+
+**On the migration:**
+
+| | fault planted | observed |
+| --- | --- | --- |
+| A | the seating **and** the every-office-is-seated gate removed | `the baseline moved to 253 — it was 238 and must never be raised` |
+| B | the districts filed under layer `X0099` | `only 0 of the 15 districts meet a geofence row on (geo_id, mtfcc)` |
+| C | Districts 2 and 15's **members** swapped | `the anchor table and the seat table name different members: D2: anchor says LJ Francis, seat says Aaron Kinsey; …` |
+| D | a middle initial dropped from a compound given name | `a seeded name does not match its own split: Marisa B. Perez-Diaz splits to (Marisa, Perez-Diaz)` |
+
+## 🔴🔴 Control C passed the first time, and the gate was the problem
+
+The point-to-member gate originally read the expected name out of the `seat` table — the same
+table the seating had just been written from. So when the control put two members in each other's
+seat, the chain resolved Aaron Kinsey for Corpus Christi and the gate compared that with a `seat`
+row that *also* said Aaron Kinsey. **It was asking the data to agree with itself, and it agreed.**
+
+The fix is a second, independent statement of the roster: the anchor table now carries the
+member's name as a literal, a gate requires the two statements to match before either is used, and
+the chain is compared against the anchor. A one-line tamper now fires. ▶ **A gate that reads its
+expectation from the thing it is checking is not a gate.** This is the sixth shadowed or vacuous
+control in this series, and the first that was vacuous rather than shadowed.
+
+⚠ The split defect makes its **sixth** appearance: "Marisa B. Perez-Diaz" still ends with
+"Perez-Diaz".
+
+## Measured on the live endpoint
+
+`/api/essentials/address-search` for `1100 Congress Ave, Austin, TX` returns **State Board of
+Education Member, District 5 — Rebecca Bell-Metereau**, alongside the three Railroad Commissioners
+`CC_0364` created. No deploy was needed, because `X0003` was already in the deployed read path.
+
+In the database, the whole chain resolves for every town tried: Austin → District 5 →
+Rebecca Bell-Metereau (with Allison Bush recorded as the 2026 winner); Lufkin → District 9 →
+Keven Ellis (Kason Huddleston won); DeSoto → District 13 → Tiffany Clark, re-elected; Midland and
+Amarillo → District 15 → Aaron Kinsey, whose seat was not on the ballot.
+
+## What this file does not record
+
+⚠ **District 8 is created and seated but carries no race.** Eight districts were on the 2026
+ballot — 2, 5, 6, 7, 8, 9, 13 and 14 — and District 8 (Audrey Young) is the one Ballotpedia has
+not called. The seat table keeps `on_ballot_2026` and `race_recorded` apart and a gate refuses a
+race on a seat that was not on the ballot.
+
+⚠ **The holder is not the winner:** five of the seven winners replace the sitting member.
+
+## Tier 3 after Texas — 33 seats
+
+**Blocked only on a composition** (the polygons are already in production): KS State Board of
+Education (5) and MA Governor's Council (8).
+**Needs an imported polygon** (20): AL State Board of Education (4), LA PSC (2), NE PSC (1), NE
+State Board of Education (3), NE Regents (1), NH Executive Council (5), NM Public Education
+Commission (4). Texas was the largest of them, and the route it proves — find the state's
+redistricting portal, prefer the KML over the shapefile, load under `X0003` with no code change,
+and anchor on members' home towns — should carry to the rest.
+
+⚠ **ONE CI GUARD I DID NOT KNOW ABOUT, AND IT WAS RIGHT.** `check-postgis-spatial-ref-guard.mjs`
+refuses a `::geography` cast in any migration: a geography cast reads `public.spatial_ref_sys`,
+which `anon` can write, and ev-cto decision 0006 accepted that risk on the strict condition that
+no new SQL re-opens it. The coverage gate used two geography casts. It now takes the ratio of two
+**planar** areas over the same patch of Texas, where the distortion cancels — measured against
+production, planar says **99.891%** and geodesic **99.890%**, so it is the same test. The guard
+scans `backend/migrations` and `supabase/migrations` only, so the loader script, which does the
+geodesic measurement, is out of scope and keeps it.
+⚠ The amended file cannot be dry-run end to end any more, because its own first gate correctly
+refuses a second apply ("the chamber this file creates already exists"). The changed gate was run
+on its own against production instead. **No written data differs between the version that ran and
+the version committed.**
