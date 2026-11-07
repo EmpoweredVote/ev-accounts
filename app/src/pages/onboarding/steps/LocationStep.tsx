@@ -34,7 +34,24 @@ const ERROR_MESSAGES: Record<string, string> = {
     "We're not in your area yet, but we're expanding. We'll let you know when we arrive.",
   VALIDATION_ERROR: 'Please enter a complete address.',
   INTERNAL_ERROR: 'Something went wrong on our end. Please try again in a moment.',
+  // 403s from requireConnected (backend/src/middleware/tierGuards.ts). Retrying
+  // never changes these, so they must not fall through to INTERNAL_ERROR.
+  //
+  // CONNECTED_REQUIRED is NOT "basic accounts cannot add an address" — they can,
+  // through /account/set-location (CA_0368). It only reaches this page when the
+  // app sent a basic account down the Connected route, i.e. the tier it holds is
+  // out of date (for example, an account changed tier in another tab). A reload
+  // re-reads the account and picks the right route.
+  CONNECTED_REQUIRED:
+    "We couldn't match this page to your account type. Reload the page and try again.",
+  CONNECTED_UNVERIFIED:
+    'Your Connected account has not been verified yet. You can add an address once it is.',
 };
+
+// The same two refusals as sent before the guard carried a `code`. Kept so the
+// message is right whichever of the app and the API deploys first.
+ERROR_MESSAGES['Connected account required'] = ERROR_MESSAGES.CONNECTED_REQUIRED;
+ERROR_MESSAGES['Verified Connected account required'] = ERROR_MESSAGES.CONNECTED_UNVERIFIED;
 
 interface Props {
   isUpdate?: boolean;
