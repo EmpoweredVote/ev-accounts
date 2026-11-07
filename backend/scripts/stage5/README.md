@@ -3,39 +3,60 @@
 The tools behind the Stage 5 write recipe: `.claude/skills/season-topic-prep/STAGE5.md`, step 7. Each one takes
 the topic, state and season as arguments; none hard-codes a topic id, a season id or a worktree path. They were
 moved here from the voting-rights batches (2026-10-29/30) and replayed on the Indiana batch `in-01`, matching its
-outputs file for file.
+outputs file for file. The tools the gun-policy batches added (2026-11-03/04) were moved the same way and replayed on
+copies of those batches (`federal-01`, `tx-01`, `va-01`, `pa-01`, `in-01`, `ma-01` and the held follow-ups), matching
+the research-folder versions file for file.
 
 Run them from `backend/`: TypeScript as `ADMIN_INGEST_TOKEN=placeholder npx tsx --env-file=.env scripts/stage5/<tool>.ts`,
 Python as `python3 -I scripts/stage5/<tool>.py`. `<batch>` is the batch folder, `stage5/write/<unit>-NN/`.
 
 | Step | Tool | What it does |
 |---|---|---|
-| 0, 14 | `write-batch.sh <stage5> <batch> <topic> <units> [N\|apply]` | `topic:stage5-write` with `held.txt` / `moved.txt` codes set aside, then put back (even on failure) |
+| 0, 14 | `write-batch.sh <stage5> <batch> <topic> <units> [N\|apply]` | `topic:stage5-write` with `held.txt` / `moved.txt` codes set aside, then put back (even on failure); writes `pids-write.txt` for `readback.ts` |
+| held | `setup_batch.py <stage5> <new batch> --level federal\|state [--state XX] <pid>…` | a held follow-up batch: `pids.txt` = these ids, `moved.txt` = every other coded id in the unit (refuses an id not coded there) |
+| held | `drop_held.py <batch>` | drops `held.txt` / `moved.txt` people from `research.csv` and `evidence.csv`; the full set kept once as `*-with-held.csv` |
 | 2 | `add_hand_rows.py <batch> <stage5> <findings> --topic <key>` | appends the rows in `hand-rows.json` (`{id: "no-evidence" \| "direction-only"}`) |
-| 4 | `build_evidence.py <batch> <roster.tsv> <findings> [--fetch] [--level state --state XX]` | builds `evidence.csv`; lists unread pages in `evidence-missing.json` |
+| 4 | `build_evidence.py <batch> <roster.tsv> <findings> [--fetch] [--level state --state XX] [--max-urls N] [--from-research\|--from-pre]` | builds `evidence.csv`; lists unread pages in `evidence-missing.json`. A `research.csv` replaced since its last run stops it: `--from-research` rebuilds from the new file, `--from-pre` from the saved copy. `--max-urls`: most sources a row keeps (default 8 federal, 20 state; federal-01 needed 20) |
+| 4 | `congress-pages.ts <pages dir> <url>…` | congress.gov text through the verifier's api.congress.gov reader (`build_evidence.py` calls it through `_congress.py`; a plain fetch gets a bot check) |
 | 4 | `pdf_pages.py <batch>` | reads PDF sources with `pdftotext` |
 | 5 | `s1-sources.ts --topic <key> <batch>` | old-season sources behind each blank over a shown answer → `fallback/fallback-required.json` |
 | 5 | `fallback-fetch.ts <batch>/fallback` | loads `fallback/urls.txt` through the verifier's own fetch steps |
-| 5 | `add_fallback.py <batch> --topic <key> --gloss "…" [--hold Name]… [--seen Name]…` | lists loaded old sources as examined on each blank |
+| 5 | `add_fallback.py <batch> --topic <key> --gloss "…" [--hold Name]… [--seen Name]…` | lists loaded old sources as examined on each blank, each with a passage the verifier accepts when the page has one (`cited_unverifiable` in its log when not) |
 | 6, 10 | `party-sweep.ts <evidence.csv>` · `party-sweep.ts --research <research.csv>` | lists snippets / research text that name a party (must end at 0) |
 | 6 | `party_fix.py <batch>` | drops swept snippets (or cuts, `party-cuts.json`); uncites a page left with none |
 | 7 | `legiscan-rollcalls.ts <ST> <vote-pages.json> <out.json>` | finds the LegiScan roll call for each official one (bill, chamber, counts) |
 | 7 | `legiscan_pairs.py <batch> <findings> --topic --state --host --rollcalls <json> [--bill-pad N]` | official votes/authorships → `legiscan/pairs.csv` |
+| 7 | `state_legiscan.py plan\|pairs <batch> <findings> --state XX --host <h>[,<h>] [--topic <key>] [--bill-pad N] [--year-shift N] [--session-start odd]` | the same for a state whose findings print no roll-call number: `plan` → `vote-pages.json` for `legiscan-rollcalls.ts`; `pairs` matches bill, chamber, date and tally (ties: motion text) → `pairs.csv`, `needs.json`, `rollcall-map.json`, `unmapped.json` |
 | 7 | `../legiscan-evidence-lines.ts --in pairs.csv --out legiscan-evidence.csv` | the LegiScan lines (counted API calls) |
+| 7 (IN) | `iga-votes.ts <batch> <findings> --topic <key>` | Indiana: each vote's official roll-call PDF → its line; cites the PDF, uncites covered bill pages, cross-checks (exit 1 on any disagreement) |
+| 4, 7 (IN) | `iga-pages.ts <pages dir> <url>…` · `iga-evidence-lines.ts --in pairs.csv --out <csv>` | iga.in.gov text through the MyIGA API (what the verifier reads); lines for hand-made pairs |
+| 7 (MA) | `ma-rollcall-votes.ts <batch> <findings> --topic <key> [--instruments <dir>] [--pdf-dir <dir>]` | Massachusetts House: each vote's official roll-call PDF (from the store instrument's `urls`) → its line; cites the PDF, uncites covered bill pages, cross-checks (exit 1 on any disagreement) |
+| 7 (US) | `federal-votes.ts <batch> <findings> --topic <key>` | federal: each seated vote's roll call from `essentials.legislative_votes` (read only); House → Clerk XML line, cited, covered page uncited; Senate, and a House roll call the table gives no roll number → `legiscan/pairs.csv` + `needs.json` for the next two tools; cross-checks (exit 1 on any disagreement) |
 | 7 | `legiscan_merge.py <batch> --host <official host>` | cites the lines, uncites covered official pages, cross-checks every vote (exit 1 on any disagreement) |
-| 8 | `bill_text_auto.py <batch> <findings> --topic <key> [--instruments <dir>] [--saved-root <dir>]` | finds each quote the gate cannot place in the person's bills (store operative text, then the saved copy) and cites that bill with a 25+-word passage |
+| 8 | `bill_text_auto.py <batch> <findings> --topic <key> [--instruments <dir>] [--saved-root <dir>] [--gate <file>]` | finds each quote the gate cannot place in the person's bills (store operative text: quote blocks, then the whole text; then the saved copy) and cites that bill with a 25+-word passage. `--gate`: the gate output to read (default `gate-output.txt`) |
 | 8 | `add_bill_text.py <batch> --topic --url --sentences <json> [--text <file>]` | the same by hand, for a bill the store does not hold |
-| 9 | `apply_overrides.py <batch>` | research-text trims from `overrides.json` (`{"trims": [...]}`), never a stance or value |
+| 9 | `cite_named.py <batch> <gate output> <findings> --state XX` | for each `instrument-not-cited` bill, cites the person's own record finding on it; the rest → `cite-named-none.json` (a trim, never a guessed source) |
+| 9 | `quote_snippets.py <batch> <gate output> --topic <key>` | a quote the gate cannot place, found in a cited page already fetched (`pages/`) → a snippet round it |
+| 9 | `uncite.py <batch> [--file <json>]` | takes the pages in `uncite.json` (`[{name, url, why}]`) off their rows and drops their snippets |
+| 9 | `respell_ids.py <batch> --state XX` | trims: store ids in the research text (`VA-HB-2767-2025`) → bill numbers (`HB 2767 (2025)`) |
+| 9 | `unquote.py <batch> <gate output> [--skip Name]…` | trims: quote marks off act words no readable page prints; own words (statement rows, first person) listed, never touched |
+| 9 | `quote_fix.py <batch> <gate output> <findings> --saved-root <dir>` | trims: a coder-edited bill quote (`...`, `[x]`) split into the act's exact pieces |
+| 9 | `apply_overrides.py <batch> [--file <json>] [--skip-changed]` | research-text trims from `overrides.json` (`{"trims": [...]}`), never a stance or value. `--skip-changed`: a trim whose words an earlier trim already changed is skipped and listed, not fatal (several trim tools feed one file) |
 | 14 | `readback.ts --topic <key> <ids file> [--batch-id <id>]` | outcomes, passages and review rows the draft season now holds |
-| 15 | `approve-batch.ts <editor uuid> <batch,...> [--skip "Name"]…` | 🛑 approves pending review rows, on the runner's separate "approve" |
+| 15 | `approve-batch.ts <editor uuid> <batch,...> [--skip "Name"]… [--unverifiable-blank "Name"]…` | 🛑 approves pending review rows, on the runner's separate "approve"; `--unverifiable-blank` approves a queued blank whose old sources cannot be verified with no source, its reason on the review row (ruling 2026-10-31) — never write such a blank by hand |
 
 Notes:
 
 - ⚠ **`build_evidence.py` and `pdf_pages.py` fetch with a browser user-agent.** This is a deliberate exception to
   decision 0003 (ev-cto `knowledge/decisions/0003-scraping-toolchain.md`), ruled 2026-10-31 (Chris Andrews), for local research runs only. Never copy it into a live or
   scheduled fetch path. A page these tools read is not proof the verifier can read it: the verifier sends the honest
-  `EmpoweredVoteBot` identity (`src/lib/verificationFetch.ts`). iga.in.gov, for example, serves its PDFs and JSON to
-  a browser identity only, so Indiana's records come from LegiScan or the official keyed API (`api.iga.in.gov`).
+  `EmpoweredVoteBot` identity (`src/lib/verificationFetch.ts`).
+- **iga.in.gov goes through the official MyIGA API, never the browser user-agent.** Both tools hand any iga.in.gov
+  URL to `iga-pages.ts` (through `_iga.py`), which reads it with `src/lib/adapters/igaAdapter.ts`, the verifier's own
+  Indiana tier. The API asks for the token in `x-api-key` and as `User-Agent: iga-api-client-<token>`
+  (docs.api.iga.in.gov/usage.html): the state's rule, not a disguise. Set `IGA_API_KEY` in `backend/.env`; without
+  it Indiana pages stay unread and Indiana votes go through LegiScan as before. The token sits inside a header, so
+  never log a request.
 
 - `build_evidence.py` also reads an `overrides.json` of the older shape `{name: {column: value}}`; a `{"trims": …}`
   file is ignored by it (no row is named "trims").
@@ -46,7 +67,15 @@ Notes:
 - **Ballotpedia: survey answers only** (ruling 2026-11-02). `build_evidence.py` uncites any Ballotpedia page but a
   Candidate Connection `#Campaign_themes` link (logged in `evidence-missing.json`) and `add_fallback.py` skips it,
   through `_ballotpedia.py`. The stance gate refuses the same pages (`ballotpedia-non-survey`).
-- `lib.ts` holds the pure helpers (`readCsv`, `sweepHit`) and their tests; `batch-db.ts` resolves the topic id and
-  the draft season; `_args.py` is the Python tools' argument reader.
+- **One passage test for a blank's examined pages.** `build_evidence.py` and `add_fallback.py` first ask
+  `window-check.ts` (through `_window.py`) for a passage the verifier will accept: `verifiableWindow` in `lib.ts`,
+  built from the verifier's own `matchSnippet`, `matchedSpan` and `checkNameProximity` plus `sweepHit`. It need not
+  contain the name, only sit near it: on a congress.gov cosponsor list, where every name carries a party label, it is
+  the action line beside the list (Warner, S. 2747). Only when there is none do they fall back to the old window.
+- **Checks.** `python3 -I scripts/stage5/check_tools.py` runs the Python tools on small made-up batches, one check per
+  rule (no database, network or node_modules); `--tools <dir>` points it at a tampered copy. The TypeScript helpers are
+  tested with vitest (`lib.test.ts`, `federalVotesPlan.test.ts`).
+- `lib.ts` holds the pure helpers (`readCsv`, `sweepHit`, `verifiableWindow`, `unverifiableNote`) and their tests;
+  `batch-db.ts` resolves the topic id and the draft season; `_args.py` is the Python tools' argument reader.
 - One-off fixes for a single batch (a person's own sentence added by hand, a page uncited because the research text
   says it is unused) stay in that batch folder, with a line in its `PREVIEW.md`.

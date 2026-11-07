@@ -1,0 +1,394 @@
+{
+  "politician_id": "b4dfb975-9672-4f85-be5c-9726bcfd5321",
+  "findings": [
+    {
+      "id": "ddc872daa3c965714c4f7b3e42587b2b005a7a5c29f3b290aa4753626fe8ac00",
+      "kind": "record",
+      "url": "https://kslegislature.gov/li_2016/b2015_16/measures/SB45/",
+      "date": "2015-03-25",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-45-2015",
+      "act": "yea",
+      "motion": "Concurred with amendments (final Senate vote)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS Senate, Concurred with amendments (final Senate vote), 2015-03-25: yea (tally 31–8); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "C, F (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "11662c9152e1718bc6329994b9c06bb70eab618127587359adc003ca1c582604",
+      "kind": "own-words",
+      "url": "https://fortscott.biz/?p=49632",
+      "date": "2021-04-09",
+      "date_precision": "day",
+      "passage": "Kansas didn’t have the problems that other states had in the November 2020 elections but there is room for improvement. Elections are too important and we need 100% accuracy.",
+      "note": "From her legislative update posted on Fort Scott Biz (signed by her, dated April 9, 2021), under the heading 'Protecting Elections'. She says Kansas had no major problems in the 2020 elections and still wants improvement.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:55:37.043Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "937b9810fe42026481558458b606f354afe6359684b28f7c4f78730faa3ebfe0",
+      "kind": "own-words",
+      "url": "https://fortscott.biz/?p=49632",
+      "date": "2021-04-09",
+      "date_precision": "day",
+      "passage": "CCR 2183 will limit ballot harvesting, make it unlawful to alter postmarks on mailed ballots, and require signature verification on mailed ballots.",
+      "note": "In the same update she describes what the conference committee report on election law (CCR 2183) does, as she sees it, including signature checks on mailed ballots.",
+      "subjects": [
+        "mail ballot rules",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:55:37.043Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b74b98a1b81c5a33ed2fc6372e8a7f5048eb701618629ac4f88d61ab588b01c",
+      "kind": "own-words",
+      "url": "https://fortscott.biz/?p=49632",
+      "date": "2021-04-09",
+      "date_precision": "day",
+      "passage": "Some Senators argued these CCRs and the HCR promote voter suppression and that they are not needed.  That is not even true.  They help protect the integrity of our elections.",
+      "note": "She answers critics of CCR 2183, CCR 2332 and HCR 5015 and says the measures protect election integrity.",
+      "subjects": [
+        "election integrity laws in general",
+        "mail ballot rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:55:37.043Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad3e206d64457ef9268b74b95efceb7567083e718c343190ba3490bb271c8e20",
+      "kind": "own-words",
+      "url": "https://lawrencekstimes.com/2026/02/02/kr-bill-eliminates-mail-ballots/",
+      "date": "2026-02-02",
+      "date_precision": "day",
+      "passage": "“Who is discriminating?” Tyson said. “I know my county clerks would be completely offended by your comments. They are not discriminating against anyone. So who are you insinuating is discriminating?”",
+      "note": "Kansas Reflector story (republished by the Lawrence Times) quoting her at the Feb. 2, 2026 Senate committee hearing on a bill to end mail-in ballots if the signature verification law cannot be enforced; she answers a witness who said signature checks discriminate.",
+      "subjects": [
+        "mail ballot rules",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:55:37.043Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c6666fadca554242e66b81207db9e2f3175dfd3d7fd6fcc3b3cccdcb59135b3a",
+      "kind": "own-words",
+      "url": "https://lawrencekstimes.com/2026/02/02/kr-bill-eliminates-mail-ballots/",
+      "date": "2026-02-02",
+      "date_precision": "day",
+      "passage": "Tyson called it “common sense legislation.”",
+      "note": "Same story: the reporter's caption quotes her calling the signature-verification / mail-ballot bill common sense legislation.",
+      "subjects": [
+        "mail ballot rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:55:37.043Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fdaedfb9eba19fe689062aa56c913ec899ee4bf8a9d8fa4392cffd4a82b1e708",
+      "kind": "own-words",
+      "url": "https://ca.news.yahoo.com/kansas-senate-advances-ban-remote-110000286.html",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "passage": "“These remote boxes that are not monitored can be tampered with,” Tyson said.",
+      "note": "Kansas City Star story (via Yahoo News Canada, March 5, 2024) quoting her on her amendment banning remote ballot drop boxes. Text came from the fetch tool's quoted output; a plain curl of the page returned an empty body.",
+      "subjects": [
+        "mail ballot rules",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:55:37.043Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "16fc367b6ae612e9858d0804c70069da9a41e059381a62d495fc2173fe7e9422",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_191_HB2020.odt",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "Senate: Emergency Final Action As Amended",
+      "note": "Senate roll call as printed ('Tyson'), linked to Caryn Tyson (district 12) via the official 2025 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "15ffcf50f1b7935fe0c6bdf49e7087bc510628682927c604c8503e4c8437a2b0",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20110329104238_907523.odt",
+      "date": "2011-03-29",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2067-2011",
+      "act": "yea",
+      "motion": "House: On motion of Rep. Schwab the House concurred in Senate amendments to HB 2067.",
+      "note": "House roll call as printed ('Tyson'), linked to Caryn Tyson (district 4) via the official 2011 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6f049cded5bcfea0b89cdcddd7d9269d75f671c09c8525d3c82b9f0ae9a05eb4",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20120223102421_762384.odt",
+      "date": "2012-02-23",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2012",
+      "act": "yea",
+      "motion": "House: HB 2437, AN ACT concerning elections; relating to voting; changing effective date of United States citizenship requirements; amending K.S.A. 2011 Supp. 25-2309, 25-2908 and 65-2418 ... was considered on final action. (The bill passed, as amended.)",
+      "note": "House roll call as printed ('Tyson'), linked to Caryn Tyson (district 4) via the official 2012 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53cc439c8ba13aae8525c4a82092d677fe52f2aa3e4773008814268e4fad0c47",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Tyson'), linked to Caryn Tyson (district 12) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "26fc0eac68c90037c402f6af64ad21e632b079f7491d447d2551656187b6c5c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Tyson'), linked to Caryn Tyson (district 12) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db5f0de06ff5f665bbc68602e97997e4bcb23fae56790f0a906ca6a6d65c5fd2",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20120503112313_679546.odt",
+      "date": "2012-05-03",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-129-2011",
+      "act": "yea",
+      "motion": "House: On motion of Rep. Schwab, the conference committee report on H Sub for SB129 was adopted.",
+      "note": "House roll call as printed ('Tyson'), linked to Caryn Tyson (district 4) via the official 2012 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "826954d8ea499a0525f7998c672c0f480035d3c319de37f9d9912b9e94a6ced3",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20110323103652_433149.odt",
+      "date": "2011-03-23",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-129-HSUB-2011",
+      "act": "yea",
+      "motion": "House: SB 129, AN ACT concerning elections; amending K.S.A. 25-321, 25-2203, 25-2352 ... was considered on final action. (The substitute bill passed, as amended.)",
+      "note": "House roll call as printed ('Tyson'), linked to Caryn Tyson (district 4) via the official 2011 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7402ac78d0cb861ab346b86ac8d160bffc362b81a0af03b2d16e383d02d10c6f",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20120509105352_921338.odt",
+      "date": "2012-05-09",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-17-2011",
+      "act": "yea",
+      "motion": "House: SB 17, AN ACT concerning elections; relating to voter identification requirements; amending K.S.A. 2011 Supp. 25-2309, 25-2908 and 65-2418 ... was considered on final action. (The substitute bill passed, as amended.)",
+      "note": "House roll call as printed ('Tyson'), linked to Caryn Tyson (district 4) via the official 2012 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7709a8e391d094e607393601c6ffc28d7421685a297c8edcb9447240a463f87f",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/vote/?apn=b2023_24/year2/senate/legislative_days/day039_20240305/vote_records/vote_100_SB365.odt",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-365-2024",
+      "act": "yea",
+      "motion": "Senate: Final Action - Not passed",
+      "note": "Senate roll call as printed ('Tyson'), linked to Caryn Tyson (district 12) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "mail ballot rules"
+      ],
+      "places": [
+        "confirmed in office: https://www.kslegislature.gov/li/b2025_26/members/sen_tyson_caryn_1/ (Caryn Tyson, Senate District 12)",
+        "On the Record (0 meetings)",
+        "campaign site: https://www.carynforkansas.com did not load; no other campaign site found",
+        "legislator update on Fort Scott Biz (read)",
+        "Lawrence Times / Kansas Reflector hearing story (read)",
+        "KCUR Feb 2026 House election bills story: she is not named",
+        "committee testimony lists (HB 2056 House Elections page): no testimony by her found; she is a senator and sits on none of the election committees",
+        "web searches: 4",
+        "blocked: https://kansasreflector.com (refuses fetches, not tried)",
+        "blocked: https://ballotpedia.org (refuses fetches, not tried)"
+      ],
+      "found": 6,
+      "at": "2026-11-04T16:55:37.043Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 9,
+      "at": "2026-11-04T19:13:24.949Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

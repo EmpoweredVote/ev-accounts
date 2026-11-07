@@ -110,6 +110,214 @@
         "fetched_at": "2026-10-27T21:29:25.122Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "de993072b1f015691757356966b25be35f10f79ccfc21b9e05ca9348996cbcde",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "Roll Call #208 - Question on acceptance of conference committee report",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA Senate, Roll Call #208 - Question on acceptance of conference committee report, 2024-07-18: yea (tally 35–5); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db16b98b521d382c722d5503605116e48c77fb9d34798b9816992f739c986730",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "Senate Engrossed Roll Call #114",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA Senate, Senate Engrossed Roll Call #114, 2024-02-01: yea (tally 37–3); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "b217bf7236d592008af6b6b55e2f9966e9a1bad25733c3822a32a66bc1d68a0d",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/House/H4376",
+      "date": "2014-07-31",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4376-2013",
+      "act": "yea",
+      "motion": "Acceptance of conference committee report (Roll Call #473)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA Senate, Acceptance of conference committee report (Roll Call #473), 2014-07-31: yea (tally 37–3); census gate: multi-subject.",
+      "subjects": [
+        "firearm license classes merged and Class B licences phased out",
+        "new penalties for shooting and for trafficking guns into the state",
+        "background-check records sent to the federal system",
+        "ban on carrying firearms on school and college grounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "malegislature.gov roll-call PDFs + LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:34:02.477850Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4376-2013.introduced.pdf",
+          "sha256": "b94514a66e779c1400d1b875eb3aac207f6b1b1f12f9928fd8d977feab23bb61"
+        }
+      }
+    },
+    {
+      "id": "767c668122bf86e324f6d9a6719f5b58f7381ff23e94c183d816b849ebaf9525",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4670",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4670-2017",
+      "act": "yea",
+      "motion": "Senate Committee of conference report accepted, in concurrence  Roll Call #435",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MA Senate, Senate Committee of conference report accepted, in concurrence  Roll Call #435, 2018-06-28: yea (tally 36–1); census gate: near-unanimous.",
+      "subjects": [
+        "extreme risk protection orders to remove guns from people at risk of harming self or others",
+        "protection order added as a bar to gun licenses",
+        "stun gun rules and locked storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4670-2017.introduced.pdf",
+          "sha256": "6b37958358a3f01548ef0d16c386b3caaf5993d5c100f88279ff5b45ad1fe098"
+        }
+      }
+    },
+    {
+      "id": "85546fc57f5d269f45cce4e53e83af917abb91eb7d114d2da918d6d0615a2408",
+      "kind": "own-words",
+      "url": "https://willbrownsberger.com/senate-gun-bill/",
+      "date": "2024-01-26",
+      "date_precision": "day",
+      "passage": "In my view, they have produced a concise bill that is well-designed to improve public safety by reducing the probability that firearms will be in the hands of people who are unwell or not law-abiding.",
+      "note": "On his official blog, introducing the Senate's draft gun bill (S.2572, covering ghost guns, Glock switches, red flag orders), he describes the bill in favourable terms.",
+      "subjects": [
+        "ghost guns",
+        "red flag orders",
+        "keep guns from people who are unwell or not law-abiding",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:53:19.545Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eb60cb66c56eae56857599e6f0d569fe8787283fd8f02253c2cb72f8d74871d8",
+      "kind": "own-words",
+      "url": "https://willbrownsberger.com/preventing-gun-deaths-through-suicide/",
+      "date": "2018-06-08",
+      "date_precision": "day",
+      "passage": "The best argument for the new legislation is that it will reduce the dominant but least visible category of gun death: suicide.",
+      "note": "On his official blog about the 2018 extreme risk protection order legislation, he gives his reason for the bill.",
+      "subjects": [
+        "red flag orders",
+        "gun suicide prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:53:19.545Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "759538220e1c738f8945fc9198b9fd03cd884ead867979c45d90afe361b78298",
+      "kind": "own-words",
+      "url": "https://willbrownsberger.com/preventing-gun-deaths-through-suicide/",
+      "date": "2018-06-08",
+      "date_precision": "day",
+      "passage": "The legislation we approved this week will help save some lives among those in distress.",
+      "note": "Same post, closing remark on the extreme risk protection order bill the Senate approved.",
+      "subjects": [
+        "red flag orders",
+        "gun suicide prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:53:19.545Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e74a6eec17c091d71c1a9032bc76903ce4c01665a32a15c11d6c9423052fc3f9",
+      "kind": "own-words",
+      "url": "https://willbrownsberger.com/the-gun-decision/",
+      "date": "2022-07-01",
+      "date_precision": "day",
+      "passage": "A licensing authority may not deny or limit a license to carry because the applicant does not have a “reason” to carry a firearm.",
+      "note": "On his official blog, he explains how the Supreme Court's Bruen decision changes Massachusetts carry licensing; this is a description of the law, not a statement of approval or disapproval.",
+      "subjects": [
+        "carry permits",
+        "need-based carry licence ended by court ruling"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:53:19.545Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -167,6 +375,34 @@
       "found": 2,
       "at": "2026-10-27T21:29:25.122Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ghost guns",
+        "red flag / extreme risk orders",
+        "ban on assault-style guns and Glock switches",
+        "carry licences after the Bruen ruling",
+        "gun suicide prevention",
+        "general gun-safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity and scope: https://willbrownsberger.com/ (State Senator Will Brownsberger); https://www.wgbh.org/news/politics/2026-09-10/brownsberger-beats-lander-in-recount-holds-onto-state-senate-seat shows he won his 2026 primary recount on 2026-09-10 and holds the seat",
+        "official site Gun Violence category https://willbrownsberger.com/category/justice-2/gun-violence-policies-gun-control-reform/ (six posts on page 1 reviewed: the 2024 sent-to-governor post, Senate gun bill, gun survey continued, Massachusetts Gun Laws overview, The Gun Decision, Preventing gun suicides)",
+        "https://willbrownsberger.com/ma-gun-laws/ and https://willbrownsberger.com/gun-survey-continued/: reviewed, overview and survey data, no separate own-view sentence saved",
+        "https://willbrownsberger.com/s3253-act-reduce-gun-violence-protect-citizens-commonwealth: 2013 written testimony by his staff counsel in support of a House bill; fetch tool gave only a summary, so not saved",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia: not fetched (known to return empty)",
+        "blocked: https://www.williambrownsberger.com/ (domain does not exist)",
+        "blocked: https://watertownmanews.com/?p=1058997 (2026 candidate Q&A page returned no readable text)",
+        "blocked: https://www.progressivemass.com/portfolio-category/2026-questionnaires/ (404)",
+        "web searches (3): news and 2026 forum/questionnaire searches found no gun answers from the 2026 race"
+      ],
+      "found": 4,
+      "at": "2026-11-01T01:53:19.545Z",
+      "by": "source-collector"
     }
   ]
 }

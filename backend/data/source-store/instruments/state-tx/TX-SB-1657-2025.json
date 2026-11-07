@@ -1,0 +1,74 @@
+{
+  "id": "TX-SB-1657-2025",
+  "scope": "state:tx",
+  "title": "SB1657 (89th Legislature Regular Session): Relating to prohibiting the transfer of certain semiautomatic rifles to certain recipients; creating a criminal offense; increasing a criminal penalty.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1657",
+    "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB01657I.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 1 (amending Penal Code 46.06(a)(2)): (2)  intentionally or knowingly sells, rents, leases, or gives or offers to sell, rent, lease, or give{+:+} {+(A)+}  to {+a+} [[-any-]] child younger than 18 years of age {+a+} [[-any firearm,-]] club, [[-or-]] location-restricted knife{+, or firearm +}{+other than a semiautomatic rifle described by Paragraph (B); or+} {+(B)+}{+ +}{+ +}{+to a person younger than 21 years of age a +}{+semiautomatic rifle that is capable of accepting a detachable +}{+magazine and that has a caliber greater than .22+};\nSec. 1 (adding Penal Code 46.06(c-1)): {+(c-1)+}{+ +}{+ +}{+It is an exception to the application of Subsection +}{+(a)(2)(B) that:+} {+(1)+}{+ +}{+ +}{+the semiautomatic rifle is transferred to a +}{+recipient who:+} {+(A)  is a peace officer; or+} {+(B)+}{+ +}{+ +}{+is currently serving in or has been honorably +}{+discharged from the United States armed forces; or+} {+(2)+}{+ +}{+ +}{+the transfer of the semiautomatic rifle is a +}{+temporary loan to a person who is to carry or use the semiautomatic +}{+rifle only:+} {+(A)  while in the presence of the transferor;+} {+(B)+}{+ +}{+ +}{+while on property owned or leased by the +}{+transferor;+} {+(C)+}{+ +}{+ +}{+on the premises of a sport shooting range, as +}{+defined by Section 250.001, Local Government Code, and solely for +}{+the purpose of shooting targets at the range; or+} {+(D)+}{+ +}{+ +}{+at a lawful competition involving the use of +}{+a firearm.+}\nSec. 1 (amending Penal Code 46.06(d)(2)): (2)  an offense under Subsection {+(a)(2)(B) or+} (a)(7) is a state jail felony.",
+  "sponsors": [
+    {
+      "name": "Roland Gutierrez",
+      "politician_id": "3aee54f8-89eb-425d-b850-19fff9f2c8ea",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Carol Alvarado",
+      "politician_id": "6ed2b57e-4930-4099-8567-d5a6bf7b999f",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Molly Cook",
+      "politician_id": "e9ae7dbc-e266-4d10-ad47-4cd63efc5d0d",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Sarah Eckhardt",
+      "politician_id": "2775a1c4-d7e5-45ce-9633-f1ad137c546a",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Juan Hinojosa",
+      "politician_id": "6153ca04-6c12-4a04-b58b-5a6db1e92861",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Nathan Johnson",
+      "politician_id": "7d100649-77bc-4dd1-8845-d379ca466fa2",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Jose Menendez",
+      "politician_id": "ada67d5b-b7d5-4ab9-a751-59355715c3e1",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-1657-2025.introduced.html",
+      "sha256": "85f3832601ec3a643a12cd4e35a8f6bc44ff522c85892c21569417c324134307"
+    }
+  }
+}

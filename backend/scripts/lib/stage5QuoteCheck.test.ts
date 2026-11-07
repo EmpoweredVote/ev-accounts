@@ -109,6 +109,15 @@ describe('pageText', () => {
     expect(passageOnPage('"Every voter\'s ballot counts."', t)).toBe(true);
     expect(t).toContain('& more');
   });
+  it('drops a namespaced tag (a word-processor paste) without a space, so a split letter rejoins its word', () => {
+    // Facing South, 2026-03 (Zakiya Summers): a Google Docs paste wraps the first letter in <w:sdt>. A browser shows "Here".
+    const html = '<p>tactics of voter suppression. <w:sdt id="1602126531" sdttag="goog_rdk_91">H</w:sdt>ere in the state of Mississippi, right away, we implemented voter ID. <w:sdt id="1" sdttag="goog_rdk_93"></w:sdt>And when</p>';
+    expect(passageOnPage('Here in the state of Mississippi, right away, we implemented voter ID.', pageText(html))).toBe(true);
+  });
+  it('still puts a space where an ordinary HTML tag sat', () => {
+    expect(passageOnPage('one two', pageText('<p>one</p><p>two</p>'))).toBe(true);
+    expect(passageOnPage('onetwo', pageText('<p>one</p><p>two</p>'))).toBe(false);
+  });
 });
 
 describe('QuoteCheckSchema shown_text (CA_0337)', () => {

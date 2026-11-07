@@ -1,0 +1,32 @@
+{
+  "politician_id": "54be28b2-6981-454e-ab20-2cef233f75dd",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "check every gun buyer",
+        "assault-style guns and magazines",
+        "red flag orders",
+        "carry permits",
+        "gun insurance or licensing"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "public-broadcaster voter page https://www.wgvu.org/vote/us-house-of-representatives/ fetched: lists him as the 2026 general-election candidate for Michigan's 2nd District",
+        "campaign site https://ambrose4congress.com/ fetched: the page is a script-built app with no readable issue text; its script file searched for gun and Second Amendment words, nothing found",
+        "9&10 News candidate Q&A (2026-07-22) fetched: his answers do not touch guns; the only gun remarks on the page are by another candidate",
+        "Cadillac News Manton visit article fetched: nothing on the subject",
+        "blocked: https://michiganadvance.com/voter-guides/contests/2nd-district-representative-in-congress/ (403)",
+        "not applicable: he has held no legislative seat, so no sponsored-bill list",
+        "Ballotpedia: not reviewed (pages return empty)",
+        "web searches: three searches on name plus gun words found no statement by him"
+      ],
+      "found": 0,
+      "at": "2026-10-30T22:33:48.600Z",
+      "by": "source-collector"
+    }
+  ]
+}

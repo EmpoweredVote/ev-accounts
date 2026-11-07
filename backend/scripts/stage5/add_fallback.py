@@ -2,13 +2,18 @@
 python3 -I scripts/stage5/add_fallback.py <batch dir> --topic <key> --gloss "<what the question asks, in a few words>"
     [--hold "Full Name"]... [--seen "Full Name"]... [--date YYYY-MM-DD]
 Per blank: the source URL goes on the row, plus a party-free snippet (25+ words) cut from the saved copy
-(fallback/pages, loaded by fallback-fetch.ts) around the surname, else the page start, and one sentence on the
-reasoning: "Old Season 1 sources examined (<date>): <hosts> — nothing on <gloss>."
+(fallback/pages, loaded by fallback-fetch.ts): first one the verifier will accept, near the person's name
+(window-check.ts; on a congress.gov cosponsor list, the action line beside the list), else one around the surname
+or from the page start, and one sentence on the reasoning: "Old Season 1 sources examined (<date>): <hosts> — nothing on <gloss>."
 Reads fallback/fallback-required.json (s1-sources.ts), fallback/fallback-read.json (the reader agent:
 {name: {urls: [{url, verdict: on-topic | nothing-on-topic | not-loadable | excluded-source}]}}) and fallback/pages/index.json.
 Not-loadable and excluded (OnTheIssues, Wikipedia) URLs are skipped, and so is any Ballotpedia page but a
 Candidate Connection survey (ruling 2026-11-02). Anyone in --hold, or with an on-topic page that
 is not in --seen (pages the coder already weighed), is NOT touched: hold them for a re-code check.
+A page cited with a passage the verifier will not accept is listed under cited_unverifiable: it is still cited,
+because the verifier's blank-unexamined-fallback check needs every old page that loads among the blank's sources.
+A blank none of whose old sources verifies is queued below the threshold; approve it with approve-batch.ts
+--unverifiable-blank rather than writing it by hand.
 Log -> fallback/blank-examined-log.json."""
 import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir; _args.py sits beside this file
 from _args import opt, opts, positional
@@ -18,6 +23,7 @@ B = positional(1, USAGE)[0]; F = f'{B}/fallback'
 TOPIC, GLOSS = opt('--topic', required=True, usage=USAGE), opt('--gloss', required=True, usage=USAGE)
 HELD, SEEN = set(opts('--hold')), set(opts('--seen')); DATE = opt('--date', datetime.date.today().isoformat())
 from _party import names_party  # the one party test the sweep and the writer use (party-check.ts)
+from _window import verifiable_window  # a passage the verifier itself accepts (window-check.ts)
 from _ballotpedia import ballotpedia_non_survey  # survey answers only (ruling 2026-11-02)
 req = json.load(open(f'{F}/fallback-required.json')); rd = json.load(open(f'{F}/fallback-read.json'))
 idx = json.load(open(f'{F}/pages/index.json'))
@@ -34,7 +40,7 @@ def snip(t, sur, n=34):
         s = ' '.join(w[a:a + n])
         if len(s.split()) >= 25 and not names_party(s): return s
     return None
-held, none, nowin, unread, done, log = [], [], [], [], 0, []
+held, none, nowin, unver, unread, done, log = [], [], [], [], [], 0, []
 for name, q in req.items():
     # A blank the reader agent never read (no entry in fallback-read.json) is not touched: read it first.
     if name not in rd: unread.append(name); continue
@@ -47,7 +53,10 @@ for name, q in req.items():
     surname = re.sub(r',.*$', '', name).replace('"', '').split()[-1]
     us = [r[c] for c in uc if r[c]]; hosts = []; adds = []
     for u in use:
-        s = snip(open(f'{F}/pages/{idx[u]}').read(), surname)
+        s = verifiable_window(f'{F}/pages/{idx[u]}', name)
+        if not s:
+            s = snip(open(f'{F}/pages/{idx[u]}').read(), surname)
+            if s: unver.append([name, u])
         if not s: nowin.append([name, u]); continue
         if u not in us: us.append(u)
         k = 1 + max([int(e['snippet_index']) for e in ev if e['full_name'] == name and e['source_url'] == u] or [0])
@@ -64,5 +73,5 @@ for r in rows:
     for c in cols: r.setdefault(c, '')
 w = csv.DictWriter(open(f'{B}/research.csv', 'w', newline=''), fieldnames=cols); w.writeheader(); w.writerows(rows)
 w = csv.DictWriter(open(f'{B}/evidence.csv', 'w', newline=''), fieldnames=ec); w.writeheader(); w.writerows(ev)
-json.dump({'examined': log, 'held': held, 'no_loadable_source': none, 'no_party_free_window': nowin, 'not_read': unread}, open(f'{F}/blank-examined-log.json', 'w'), indent=1)
-print('examined', done, 'held', held, 'no loadable source', none, 'no party-free window', nowin, 'not read (no fallback-read.json entry)', unread)
+json.dump({'examined': log, 'held': held, 'no_loadable_source': none, 'no_party_free_window': nowin, 'cited_unverifiable': unver, 'not_read': unread}, open(f'{F}/blank-examined-log.json', 'w'), indent=1)
+print('examined', done, 'held', held, 'no loadable source', none, 'no party-free window', nowin, 'cited, verifier will not accept', unver, 'not read (no fallback-read.json entry)', unread)

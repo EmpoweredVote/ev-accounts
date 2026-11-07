@@ -130,6 +130,123 @@
         "fetched_at": "2026-10-28T15:15:14.799Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "5c595f709285f9d7b45fa3a7199ea7dd4f4c1b28a638de24995413ff00eacb44",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB1927",
+      "date": "2021-05-24",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-1927-2021",
+      "act": "yea",
+      "motion": "Adopt conference committee report on HB 1927",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX Senate, Adopt conference committee report on HB 1927, 2021-05-24: yea (tally 17–13); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/TX_HB1927F.htm",
+          "sha256": "4304d02a805a1d242de73ddfcf222aafa676bbf58aab71a8fda237b3e867d3f3"
+        }
+      }
+    },
+    {
+      "id": "cf45b065aaaea6da04cfe486d384e55126e06254f331fa91705e482845c4e7b5",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB1500",
+      "date": "2021-05-24",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-1500-2021",
+      "act": "yea",
+      "motion": "Read 3rd time",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "TX Senate, Read 3rd time, 2021-05-24: yea (tally 28–2); census gate: near-unanimous.",
+      "subjects": [
+        "emergency orders may not shut gun and ammunition businesses",
+        "governor can no longer suspend firearm sales in a disaster",
+        "cities lose power to regulate guns in riots or disasters"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-1500-2021.enrolled.html",
+          "sha256": "cef9b24c3a583cde7bb00e38d2b138b097c8192ec180b32f874ad81233deb4ee"
+        }
+      }
+    },
+    {
+      "id": "e57c92f7cc62307e736314de5ed47321f7435482805ff514a7a9ca00930a6d89",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB2622",
+      "date": "2021-05-24",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-2622-2021",
+      "act": "yea",
+      "motion": "Read 3rd time",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX Senate, Read 3rd time, 2021-05-24: yea (tally 17–13); census gate: none.",
+      "subjects": [
+        "no state help enforcing federal gun registry, license, background-check or confiscation rules",
+        "cities lose state funds if they help"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-2622-2021.enrolled.html",
+          "sha256": "0b56d10ce6535f540220291a769936dae432e67b8eafd35a9299aa2d078e6d8f"
+        }
+      }
+    },
+    {
+      "id": "ec902701ef604ecf89c5cd89f14aceab12643c19d0ce5c40c7645cf70dcf2ece",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB20",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-20-2021",
+      "act": "author",
+      "motion": "author sponsor, LegiScan sponsor list",
+      "note": "author sponsor of TX-SB-20-2021 (LegiScan sponsor list): SB20 (87th Legislature Regular Session): Relating to carrying and storing a handgun or handgun ammunition by a hotel guest..",
+      "subjects": [
+        "hotels may not ban guests' guns in rooms or vehicles",
+        "hotel guests with handgun licenses shielded from trespass charges"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-20-2021.enrolled.html",
+          "sha256": "0fad1b08f164e0fea7293d6fc72a9631dd6b308638cdd4bc24c1dc455132cb5f"
+        }
+      }
     }
   ],
   "searches": [

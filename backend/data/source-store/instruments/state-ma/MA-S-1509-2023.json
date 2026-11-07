@@ -1,0 +1,85 @@
+{
+ "id": "MA-S-1509-2023",
+ "scope": "state:ma",
+ "title": "S1509 (193rd General Court): An Act relative to 3D printed guns and ghost guns",
+ "urls": [
+  "https://malegislature.gov/Bills/193/S1509",
+  "https://malegislature.gov/Bills/193/S1509/Senate/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "James B. Eldridge",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "9ed1b75f-a314-4241-87ff-231de4aba963"
+  },
+  {
+   "name": "Michael J. Barrett",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "60e4da77-0c2b-4ca4-8d02-a4210bd91d90"
+  },
+  {
+   "name": "John F. Keenan",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "5cd1c798-31dc-4e53-b578-7e2d81378478"
+  },
+  {
+   "name": "Patricia D. Jehlen",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "d40a0eda-36fc-4032-8382-20c76a36d6a6"
+  },
+  {
+   "name": "Sal N. DiDomenico",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "c7e94dda-1862-40fe-bda5-5fa2fe68f536"
+  },
+  {
+   "name": "Michael O. Moore",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "c0b79f82-6ce7-413a-a18a-286c9a8fa5fd"
+  },
+  {
+   "name": "Joanne M. Comerford",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "961506eb-3f00-4358-a9a3-1730e7004474"
+  },
+  {
+   "name": "Rebecca L. Rausch",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "b7369e32-1916-413e-b0eb-2871a5348470"
+  },
+  {
+   "name": "Kay Khan",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-S-1509-2023.html",
+   "sha256": "9f465e684a894deec38feb197146fe65ea3754536d060da1a9ffc78466514449"
+  }
+ },
+ "operative_text": "Section 1. Section 121 of Chapter 140 of the General Laws, is hereby amended by inserting after the word “detectors” in line 77, ‘“frame”, the part of a handgun, or variants thereof, that provides housing or a structure for the primary energized component designed to hold back the hammer, striker, bolt, or similar component prior to initiation of the firing sequence (i.e., sear or equivalent), even if pins or other attachments are required to connect such component to the housing or structure, including any such part (1) that is marketed or sold to the public to be used in an assembled, operable firearm or (2) that can be readily converted for use in an assembled, operable firearm.\nSection 2. Section 121 of Chapter 140 of the General Laws is hereby amended by inserting after the word “detectors” in line 77, the following: a firearm shall include any firearm frame or receiver.\nSection 3. Section 121 of Chapter 140 of the General Laws is hereby amended by inserting after the word “tense” in line 133, the following: “‘receiver,’ the part of a rifle, shotgun, or projectile weapon other than a handgun, or variants thereof, that provides housing or a structure for the primary component designed to block or seal the breech prior to initiation of the firing sequence (i.e., bolt, breechblock, or equivalent), even if pins or other attachments are required to connect such component to the housing or structure, including any such part (1) that is marketed or sold to the public to be used in an assembled, operable firearm or (2) that can be readily converted for use in an assembled, operable firearm. The term shall not include a piece of material that has had its size or external shape altered to facilitate transportation or storage or has had its chemical composition altered.”\nSection 4. Section 121 of Chapter 140 of the General Laws is hereby amended by inserting after the word “lever” in line 165, the following: “‘variant’ and ‘variants thereof’ means a weapon utilizing a similar frame or receiver design irrespective of new or different model designations or configurations, characteristics, features, components, accessories, or attachments.\nSection 5. Chapter 140 is hereby amended by inserting the following new Section after Section 122D.\nSection 122E.\n(a) “assembly” or “assemble” means the fitting together of component parts of a firearm to construct a firearm; but shall not apply to the restoration of antique firearms nor the replacement of existing parts of a completed firearm so long as the parts are properly imprinted with a serial number issued by the Department of Criminal Justice Information Services.\n(b) “manufacture” means the newly fabricate or construct a firearm.\n(c) No individual shall sell, deliver, or transfer a firearm unless the firearm is required by law to be, and has been, imprinted with a serial number by a licensed importer, manufacturer, or dealer of firearms pursuant to 18 USC 923(i), or with a serial number issued by the by the Department of Criminal Justice Information Services as amended from time to time, and any regulation adopted thereunder within.\n(d) No individual shall purchase, obtain, or possess any firearm that is undetectable. \"Undetectable firearm” means a firearm that: (1) after removal of all parts other than major components, is not as detectable as the Security Exemplar, by walk-through metal detectors calibrated and operated to detect the Security Exemplar; or (2) includes a major component which, if the firearm were subjected to inspection by the types of detection devices commonly used at airports for security screening, would not generate an image that accurately depicts the shape of the component.\n\"Major component” means the barrel, the slide or cylinder, or the frame or receiver of a firearm.\n“Security Exemplar” means the Security Exemplar fabricated in accordance with subparagraph (C) of paragraph (2) of subsection (p) of 18 U.S.C. § 922\n(e) No person shall use a three-dimensional printer to manufacture any firearm, or any part or component that is intended to be used to assemble or manufacture a firearm, unless such person possesses a federal license to manufacture firearms and operates in compliance pursuant to 18 USC 923(i), as amended from time to time, and any regulation adopted thereunder within.\n(f) No person shall distribute by any means, including the Internet, to a person in Massachusetts who is not registered or licensed as a manufacturer, digital instructions in the form of computer-aided design files or other code or instructions stored and displayed in electronic format as a digital model that may be used to program a three-dimensional printer to manufacture or produce a firearm, magazine, or firearm component if the distributer intends the instructions to be used in commission of an act against the laws of the Commonwealth or knows, or has reason to know, that the person receiving the instructions intends to use them in commission of an act against the laws of the Commonwealth. As used in this subsection: “three-dimensional printer” means a computer or computer-driven machine or device capable of producing a three-dimensional object from a digital model; and “distribute” means to sell, or to manufacture, give, provide, lend, trade, mail, deliver, publish, circulate, disseminate, display, share, advertise, offer, or make available via the Internet or by any other means, whether for pecuniary gain or not, and includes an agreement or attempt to distribute.\n(g) The department of criminal justice information services shall develop and maintain a system to distribute a unique serial number or other mark of identification to any individual requesting such serial number or mark pursuant to this section, in accordance with applicable federal laws and regulations. Upon an application made by a person for a serial number or mark for a firearm pursuant to this section, which shall include any information required by the department, the department shall confirm with the appropriate licensing authority that the applicant is authorized to possess such firearm and possess a valid license or firearm identification card as required under chapter 140. Upon issuance of a serial number or mark, the department shall maintain identifying information of the person requesting the number or mark and of the firearm for which each such number or mark is requested.\n(h) Not later than ninety days after the effective date of this act, an individual who is in possession of a firearm that has not been imprinted with a serial number by the department of criminal justice information services, a licensed importer, manufacturer, or dealer of firearms pursuant to 18 USC 923(i) shall notify the commissioner of the department of criminal justice information services and provide any identifying information concerning the firearm and the owner of such firearm pursuant to Section 128B of Chapter 140, shall apply for a serial number or mark for a firearm pursuant to subsection (g), and within 30 days of receiving such serial number shall imprint or have it imprinted upon the firearm.\n(i) No individual shall knowingly, facilitate, aid, or abet the manufacture or assembly of a firearm by an individual or for an individual who is otherwise prohibited by law from owning or possessing a firearm.\n(j) The department of criminal justice information services shall promulgate regulations to carry out this section.\n(k) The provisions of this section shall not apply to (1) the sale or transfer of a firearm to, or to purchasing, obtaining, or possessing of a firearm by, a federally licensed firearm manufacturer, importer, or dealer, or (2) delivery or transfer of a firearm to a law enforcement agency.\nSection 6. Chapter 269 of the Massachusetts General Laws is hereby amended by inserting the following new Section after Section 10K\nSection 10L.\n(a) Any person who is found to have violated any provision of Chapter 140, Section 122E of the Massachusetts General Laws shall be punished by imprisonment in the state prison for a term of not more than ten years for each offense, or by not more than two and one half years in the House of Correction or by a fine of not more than ten thousand dollars for each offense or by both such imprisonment and fine.\n(b) Section 26 of Chapter 218 of the General Laws shall be amended by inserting after the words, “knowing the same to be forged”, the following words:\n“a violation of Section 122E of Chapter 140 of the General Laws.”"
+}

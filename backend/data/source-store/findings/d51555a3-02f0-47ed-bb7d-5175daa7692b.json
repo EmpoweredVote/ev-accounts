@@ -1,0 +1,31 @@
+{
+  "politician_id": "d51555a3-02f0-47ed-bb7d-5175daa7692b",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun rights",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "BallotReady profile https://www.ballotready.org/people/loran-ayles (identity check): names him as a candidate for U.S. House, Oregon 3rd District, 2026 general election; no issue answers on guns",
+        "KATU Know Your Candidates interview https://katu.com/news/know-your-candidates/loran-ayles-us-house-district-3: nothing on the subject",
+        "campaign site: none found by search",
+        "web search x2 (name plus guns; name plus campaign website): nothing by him on the subject",
+        "blocked: https://bluevoterguide.org/district/OR/Oregon_District_3/48249/792",
+        "blocked: https://goodparty.org/candidate/loran-ayles/us-house-of-representatives-oregon-3rd-congressional-district",
+        "Ballotpedia: not reviewed (pages return empty)",
+        "sponsor list: not applicable, has never held office"
+      ],
+      "found": 0,
+      "at": "2026-10-31T00:44:37.919Z",
+      "by": "source-collector"
+    }
+  ]
+}

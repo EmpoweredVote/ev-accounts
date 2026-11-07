@@ -1,6 +1,119 @@
 {
   "politician_id": "15f59b0c-f71c-4199-b195-7b653a05a310",
-  "findings": [],
+  "findings": [
+    {
+      "id": "de993072b1f015691757356966b25be35f10f79ccfc21b9e05ca9348996cbcde",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "Roll Call #208 - Question on acceptance of conference committee report",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA Senate, Roll Call #208 - Question on acceptance of conference committee report, 2024-07-18: yea (tally 35–5); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db16b98b521d382c722d5503605116e48c77fb9d34798b9816992f739c986730",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "Senate Engrossed Roll Call #114",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA Senate, Senate Engrossed Roll Call #114, 2024-02-01: yea (tally 37–3); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "b217bf7236d592008af6b6b55e2f9966e9a1bad25733c3822a32a66bc1d68a0d",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/House/H4376",
+      "date": "2014-07-31",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4376-2013",
+      "act": "yea",
+      "motion": "Acceptance of conference committee report (Roll Call #473)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA Senate, Acceptance of conference committee report (Roll Call #473), 2014-07-31: yea (tally 37–3); census gate: multi-subject.",
+      "subjects": [
+        "firearm license classes merged and Class B licences phased out",
+        "new penalties for shooting and for trafficking guns into the state",
+        "background-check records sent to the federal system",
+        "ban on carrying firearms on school and college grounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "malegislature.gov roll-call PDFs + LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:34:02.477850Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4376-2013.introduced.pdf",
+          "sha256": "b94514a66e779c1400d1b875eb3aac207f6b1b1f12f9928fd8d977feab23bb61"
+        }
+      }
+    },
+    {
+      "id": "e33edf3ecbf26a46be8d8c8adbd4503dcc7b9f215dc3b8058c7fbf220fe74161",
+      "kind": "record",
+      "url": "https://commonwealthbeacon.org/criminal-justice/726-the-politics-of-guns/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "act": "other",
+      "motion": "Senate amendment (filed by Sen. Michael Moore) to delete the House provision giving local police chiefs more discretion in handing out licences; Finegold named among backers",
+      "note": "A news report (CommonWealth Beacon, undated on the page, concerning the 2013-14 session bill S.2265 text) lists him among the senators who backed an amendment that removed the police-chief licensing discretion provision, which the Senate adopted. Not his own words; sponsor/vote detail should be checked against the Senate roll call.",
+      "subjects": [
+        "police chief discretion on licences"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:36:04.667Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -52,6 +165,31 @@
       "found": 0,
       "at": "2026-10-27T01:07:21.296Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "police chief discretion on licences",
+        "general statements on gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "official site https://www.barryfinegold.com/about (nothing on the subject)",
+        "Ballotpedia (not reachable by the fetch tool, not relied on)",
+        "news searches on name plus gun words (4): no own words found",
+        "CommonWealth Beacon news report (record of an amendment backed)",
+        "Senate bill-passage news pages from 2024 (Boston 25, WBUR, NEPM, Boston.com): do not name him"
+      ],
+      "found": 1,
+      "at": "2026-11-01T01:36:04.667Z",
+      "by": "source-collector"
     }
   ]
 }

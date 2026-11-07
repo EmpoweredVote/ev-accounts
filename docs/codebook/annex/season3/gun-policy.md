@@ -1,12 +1,13 @@
-# gun-policy — Season 3 draft, revision 4 `76a098af-cf9f-499c-abb8-5a0a0863114a` (v3 r4, Draft B, CA_0338)
+# gun-policy — Season 3 draft, revision 5 `41349e39-394a-47b9-81c6-a79f8ec60425` (v3 r5, CA_0356; replaces revision 4)
 
-**Revision 4 applied:** 2026-10-30 by CA_0338, which proposed and approved it (approved and parked) and pinned it in
-the draft Season 3. Season 2 keeps its pin (revision 2, served revision 3's text).
+**Revision 5 applied:** 2026-11-03 by CA_0356, which rejected revision 4 (`76a098af`, Draft B, CA_0338, applied
+2026-10-30), proposed and approved revision 5 (approved and parked) and pinned it in the draft Season 3. Revision 5
+keeps Draft B's rungs 1, 2, 4 and 5 and rewrites rung 3 after Stage 5 (Session C, 2026-11-03). Season 2 keeps its pin (revision 2, served revision 3's text).
 
 **Status:** drafted 2026-10-30 in the Stage 4 package of the season-topic-prep skill (research folder
 `~/Documents/GitHub/.planning/research/s3-prep-gun-policy/`). The Season 2 annex (`../gun-policy.md`) stays as it is
 for Season 2 rows. Rulings by Chris Andrews: R0a-1, census Q1, J1–J8, Stage 2 Q1–Q7 (2026-10-29); D1–D4 and P1
-(2026-10-30); the Stage 4 package (2026-10-30).
+(2026-10-30); the Stage 4 package (2026-10-30); Stage 5 Session C (2026-11-03): S1–S8 below.
 
 **Question:** "How should the government regulate firearms?"
 
@@ -32,15 +33,16 @@ checks", "private sale", "gun-show loophole", "transfer", "red flag" / "extreme 
 **Rungs:**
 1. Ban civilian gun ownership, except with a licence for hunting or sport.
 2. Ban a type of firearm or magazine, such as assault-style weapons.
-3. Limit who may have a gun, such as by checking every buyer or by court orders that take guns from a person found
-   dangerous.
+3. Add limits on buying, having or carrying a gun, such as checking every buyer, red-flag orders, waiting periods or
+   bans on guns in hospitals.
 4. Make carrying a gun easier, such as honoring carry permits from other states.
 5. Repeal laws that require a permit or registration for a gun, such as the permit to carry.
 
-**Rung map from revision 3:** identity (1→1 … 5→5).
+**Rung map from revision 3:** identity (1→1 … 5→5). Revision 4 was never served, so no answer was given on it.
 
 **Reading.** Each rung is one kind of gun law, ordered from the most restriction to the least. A record acts on one
-object — which guns, who may have one, or carrying — and a person sits at the **furthest act** their record states.
+object — which guns, the limits on buying, having or carrying them, or making carrying easier — and a person sits at the
+**furthest act** their record states.
 
 **Scope line — "firearms law".** On-question: a law that bans civilian ownership or a type of firearm or magazine; a
 law on who may buy, receive or keep a gun; a law that widens where or how a person may carry; a law that repeals a
@@ -53,7 +55,10 @@ since no rung is about which level decides (see Q5 for the one exception).
 
 - **Furthest act.** A record that states the acts of two neighbouring rungs sits on the rung of its furthest act;
   each lower act must still be stated, and nothing is inferred from silence. Acts from both sides of the middle (a
-  restriction from rungs 1–3 and a loosening from rungs 4–5) in one record → BLANK `adjacent-chairs`. Across a
+  restriction from rungs 1–3 and a loosening from rungs 4–5) → BLANK `adjacent-chairs`, **except under the licence
+  rule (S4)**: a rung 4 act that keeps the permit does not conflict with a rung 3 act on who may have a gun, how guns
+  are bought or made, or where guns may not be carried, and such a record sits at rung 3. A gated act (near-unanimous vote, gated sponsorship) never
+  makes a record two-sided (S7). Across a
   person's records, the newest governs only where it contradicts an older one (V5 `superseded-by-later`); two records
   on different objects on the same side are read together under furthest act.
 - **Rung 1** needs a stated ban on civilian ownership of firearms in general (a licence exception for hunting or
@@ -67,14 +72,20 @@ since no rung is about which level decides (see Q5 for the one exception).
   - **D1 (ruled 2026-10-30).** A type ban with a route to buy for a person who completes a state course and a check
     (Colorado SB25-003, 2025) is a type ban → 2. The route is an exception the law states, not an escape open to
     everyone (V4.2).
-- **Rung 3** needs a law that adds a condition on **who** may buy, receive or keep a gun: a background check on any
+- **Rung 3** needs a law that adds a limit on buying, having or carrying a gun short of a type ban (S1). It includes a
+  condition on **who** may buy, receive or keep a gun: a background check on any
   set of sales (every sale, gun shows, private sales, buyers under 21); a court order that removes guns from a person
   found to be a danger (extreme-risk or red-flag orders; surrender orders tied to domestic-violence findings); a
   minimum age to buy or possess; a licence or permit to buy. A check that only restates the federal dealer check →
   `no-evidence`.
-  - Rules that apply to every buyer alike and do not decide who (waiting periods, limits on how many guns a buyer may
-    buy in a period) are not rung 3 → `direction-only` (restriction side). Storage rules → `adjacent`.
-  - A law that adds a red-flag order and widens carry (both sides of the middle) → BLANK `adjacent-chairs`.
+  - **S1 (ruled 2026-11-03).** Also rung 3: a waiting period; a limit on how many guns one buyer may buy in a period; a
+    ban on carrying a gun in named places (hospitals, schools, college buildings, polling places, government
+    buildings); serial numbers required on every gun made or sold, a ban on selling or having unserialised frames,
+    receivers or kits, or a licence to make a gun (replaces Q6). An undetectable-gun ban copies federal law: no rung
+    act. Storage rules → `adjacent`. A voluntary do-not-sell list is not rung 3 (direction-only).
+  - Own words defending a limit already in force against a loosening bill show a side only (Q2), e.g. words against
+    arming teachers where school carry is already barred.
+  - A law or record that adds a red-flag order and widens carry while keeping the permit → rung 3 (licence rule, S4).
   - **D2 (ruled 2026-10-30).** A rule that makes agencies report records to the background-check system (Fix NICS) is
     record-keeping, not a rule on who may have a gun → not a rung 3 act. The 2017 House reciprocity bill (H.R.38,
     115th), which carried it, stays on 4.
@@ -90,6 +101,10 @@ since no rung is about which level decides (see Q5 for the one exception).
   - **D3 (ruled 2026-10-30).** Protection for carrying an unloaded, locked gun through a state between places where
     it is lawful (18 U.S.C. 926A, as in S.Amdt 715, 2013, Sec. 128) does not widen where a gun may be carried → not a
     rung 4 act. S.Amdt 715 stays on 3.
+  - **S2 (ruled 2026-11-03; annex only).** A law that keeps the carry permit but makes it easier to get is rung 4: more
+    training courses that count, applying online or at a nearer office, a lower fee or a fee waiver. Permit holders
+    exempted from local carry bans (VA HB 5020, 2020 Special I; SB 61, 2022) → 4. Voters do not yet see this in the
+    rung 4 wording (rev 5 T7: 0 of 3).
 - **Rung 5** needs a law that repeals a permit, licence or registration requirement for owning, buying or carrying a
   gun: removing the permit to carry for adults; removing a type of firearm or accessory from a registration law. A
   state law that removes its own carry permit → 5 (it also widens carry; furthest act). A minimum carry age that the
@@ -109,10 +124,29 @@ since no rung is about which level decides (see Q5 for the one exception).
   only to oppose a new bill, does not count. Where the law in force states no rung act (current federal law: no type
   ban, checks on dealer sales only, permits left to states), or states acts from both sides of the middle, the record
   stays `direction-only` / `adjacent-chairs`. (Same reading as voting-rights W3-R8; RULINGS.md line proposed.)
-- **Home-made and unserialised firearm rules (Q6, ruled 2026-10-29)** regulate how a gun is made or marked, not
-  which type is banned or who may have one → `direction-only` (restriction side). Expected Stage 5 "doesn't fit"
-  theme.
-- **A No vote** on any firearms bill → BLANK `direction-only` (V4.1).
+- **Home-made and unserialised firearm rules:** Q6 (direction-only) is **replaced by S1** (2026-11-03): rung 3.
+- **S3 (ruled 2026-11-03).** A ban on auto sears or other parts that convert a gun to automatic fire copies the
+  federal machine-gun ban: no rung act and no direction (like a state copy of any federal ban). A bump stock or other
+  accessory is not a type of firearm or magazine, so it is not rung 2.
+- **S4 — licence rule (ruled 2026-11-03).** A rung 4 act that keeps the permit (honoring other states' permits, carry
+  in more places for licence holders, lifting a carry ban during a declared emergency, tenant or hotel carry, an easier
+  permit) does not conflict with a rung 3 act that limits who may have a gun or how guns are bought or made (checks,
+  red-flag orders, minimum ages, licences to buy, waiting periods, purchase limits, serial-number and unserialised-gun
+  rules); the record sits at rung 3. It does conflict with a type ban (rungs 1–2): those records stay
+  `adjacent-chairs`. Permit repeal (rung 5) conflicts with every rung 1–3 act. The rule always resolves toward rung 3:
+  the screening act sets who passes the licence gate, and the carry act works inside it.
+  Evidence: the 22 two-sided Stage 5 records were rung 3 + rung 4, 16 of them voted to keep the permit; a Florida
+  roll-call test found this bloc small (about 5) and the emergency-carry repeal the crossover vote.
+  - **Narrowed 2026-11-05 (Michigan Stage 5).** A rung 4 act that keeps the permit (a fee cut, applying in any county,
+    a free re-application, a narrow carry widening such as a pistol while bow hunting, honoring other states' permits,
+    emergency carry) also does not conflict with a rung 3 ban on carrying in named places (polling places,
+    ballot-counting places, the Capitol). The 2026-11-03 text listed a place ban beside type bans as a conflict; it no
+    longer does. Type bans and permit repeal conflict as before. Evidence: 32 of Michigan's 35 records that did not fit
+    were a Yea on the 2023 polling-place bans (HB 4127/4128) beside a Yea on a permit-keeping carry easing; 31 moved to
+    rung 3, and the one that stayed two-sided also co-sponsored a magazine ban. The records already written for the
+    federal list, Virginia, Texas, Pennsylvania, Indiana and Massachusetts held no record of this shape (in Virginia
+    the only easing, the 2026 online permit application, passed 99-0 and is gated), so none changed.
+- **A No vote** on any firearms bill → BLANK `direction-only` (V4.1). A No on a different bill never cancels a Yea.
 - **Single-subject (codebook V4.1; replaces the Season 2 line "budget and omnibus votes with a firearms item →
   multi-subject").** A firearms bill is `multi-subject` only when an operative part other than the firearms part
   would be V2 `on-question` evidence for **another topic served in the season being coded**. Parts that are
@@ -124,17 +158,33 @@ since no rung is about which level decides (see Q5 for the one exception).
   - **Self-defense parts (J7, ruled 2026-10-29; topic-scoped).** A no-duty-to-retreat change or a
     justifiable-homicide line (MO SB 656; MS HB 786) defines when force is lawful; it is not evidence for
     `judicial-criminal-justice`, which is about the response to lawbreaking. Such a law stays single-subject.
+  - **S5 — main subject (ruled 2026-11-03; topic-scoped; narrows census Q1 kind 2).** A part that creates or changes a
+    crime whose act is using, firing, carrying, possessing or trafficking a gun, or a part that only changes a word or
+    cross-reference in another law, does not make a firearms bill multi-subject. Parts that change bail, detention or
+    sentencing for crimes in general or for non-gun crimes still do. Single-subject on this reading: MA H.4885 / Ch. 135
+    of 2024, MA H.3980, US H.R. 7910 (2022), MD SB 281 (2013), NC S 50 (2025), SC H 3594 (2024), TN SB 765 (2021) and
+    others listed in the Stage 5 log. A gun crime alone is sentencing → `adjacent`.
   - A section that bars state enforcement of federal rules judged unconstitutional is not on-question for any served
     topic (closure C2). A suicide-prevention fund is not `healthcare` access evidence (closure C4).
 - **Higher-law duty.** Congress and state legislatures have more than 10 voting members, so only the 10%-No rule
-  applies (gate `near-unanimous`). Local bodies of 10 or fewer: where state law forbids local gun rules, a council
+  applies (gate `near-unanimous`). **S6 (ruled 2026-11-03):** the 10% is a share of the members voting Yes or No, not
+  of all seats (MA H.4670, 2018 House, 133–15 = 10.1%, is not gated). **S7 (ruled 2026-11-03):** a sponsorship of a
+  bill whose every counted final floor vote is near-unanimous is gated like the vote; a gated act never makes a record
+  two-sided. **S8 (ruled 2026-11-03):** a repeal of a law that removes a registration requirement (MA Ch. 135 s. 32,
+  whole or in part) is rung 5. Local bodies of 10 or fewer: where state law forbids local gun rules, a council
   vote to repeal or amend its own ordinance to comply carries out a higher-law duty → `direction-only` (gate
   `higher-law-duty`). Standing duties: state preemption of local firearms rules (most states); federal dealer checks
   already required on dealer sales (a law that restates them is not a rung 3 act).
 - **Records.** One record per instrument per chamber: its final vote. Where a veto override fails, the chamber's last
   passage or concurrence vote is the record (J6, ruled 2026-10-29; VA SB 2 2024 Senate, 2024-03-01, 21–19).
 
-## Open for the next revision (rung backlog, P1 ruled 2026-10-30)
+## Open for the next revision (rung backlog)
+
+After Stage 5 Session C (2026-11-03): "keep current law" (29 people) and undoing a limit that is not a permit (10)
+stay without a rung (Q2, Q4). Voter-text gaps from the rev 5 T7 check: an easier permit is not read as rung 4;
+serial-number rules and a licence to buy are read as rung 3 only some of the time.
+
+From revision 4 (P1 ruled 2026-10-30):
 
 Kept in `preview/rung-backlog.md` of the research folder; none is ruled yet, and coders apply the lines above:
 votes to cancel a federal agency gun rule (pistol braces); "no new limits" with no step to loosen; mixed records on

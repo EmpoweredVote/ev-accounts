@@ -48,6 +48,30 @@
       "found": 0,
       "at": "2026-10-27T01:00:02.354Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun",
+        "gun rights and gun safety laws in general"
+      ],
+      "places": [
+        "status: advanced from the August 2026 primary to the November ballot for Alaska's U.S. House seat (https://alaskapublic.org/news/politics/elections/2026-08-27/a-federal-prisoner-with-no-clear-ties-to-alaska-advances-in-primary-for-the-states-u-s-house-seat); he is held in a federal prison in New York, so he has no public campaign materials",
+        "On the Record (0 meetings)",
+        "Alaska Public Media story: nothing on the subject from him",
+        "Alaska's News Source story 2026-06-06: nothing on the subject from him",
+        "blocked: https://ballotpedia.org/Eric_Hafner (page returned empty)",
+        "BallotReady profile link from search: 404, not reviewed",
+        "campaign site: none found",
+        "congress.gov sponsorships: not applicable (never held office)",
+        "one web search on name plus gun words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:00:14.742Z",
+      "by": "source-collector"
     }
   ]
 }

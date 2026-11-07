@@ -34,7 +34,10 @@ No one else. The general election is 2026-11-03:
   candidate, so every winner is done when the results come in. Officials who are leaving (`leaving = yes`) get
   the pre-fill only, no open search.
 - **After the results:** drop the losers (their candidacy is no longer live). Finish only the close races as they
-  are called. Georgia and Louisiana runoffs stay active until December.
+  are called. Georgia and Louisiana runoffs stay active until December. "Drop" means **do not search or code** them
+  from here on. 🔴 Anything already written for a person who then loses **stays**: never remove their outcome, passage
+  or review rows (RULINGS.md "A loser's written research stays"). A close race may be written before it is called on
+  the runner's say-so.
 - `leaving = yes` only when the official's own seat has an upcoming race (before 2027) with live candidates on file
   and they are not one of them. `leaving = unknown` means the race data cannot say (no race on file for the seat,
   or no candidates loaded for it; 2026-10-22: Massachusetts has 200 state races on file and 4 candidates). Report
@@ -58,13 +61,22 @@ Write `stage5/subjects.json`: each census instrument's subjects in plain words (
 the polls"] }`), read from its title and operative text. Then:
 
 ```bash
-npm run topic:stage5-prefill --prefix backend -- --topic <key> --research <abs topic folder> --subjects <abs>/stage5/subjects.json --dry-run
-npm run topic:stage5-prefill --prefix backend -- --topic <key> --research <abs topic folder> --subjects <abs>/stage5/subjects.json
+npm run topic:stage5-prefill --prefix backend -- --topic <key> --research <abs topic folder> --subjects <abs>/stage5/subjects.json --from-table --dry-run
+npm run topic:stage5-prefill --prefix backend -- --topic <key> --research <abs topic folder> --subjects <abs>/stage5/subjects.json --from-table
 ```
 
 Members with no politician id land in `stage5/prefill/unmatched.json`. Match them with `npm run census:identity`
 (official member lists, never surname alone), set the ids on the instruments, and run the pre-fill again; it adds
 only what is new.
+
+**`--from-table` (federal votes; leave it out when the census has no `US-` instrument).** It also reads the
+roster's federal roll calls on the census bills from `essentials.legislative_votes` (read only; roster ids with a
+bioguide id), takes findings from the table, and checks each hand-listed vote against it, by politician id, never by
+name: `yea` → yea, `nay` → nay, `present` → abstain, `not_voting` → no finding. It writes
+`stage5/prefill/table-crosscheck.json`. 🔴 On any disagreement it prints each one, writes **no** findings and exits
+1: fix the hand list or the store vote, then run it again. A hand-listed absent or recused against a table yea or nay
+is a disagreement. A census vote the table cannot match (a 2013 Senate amendment, two roll calls that fit) keeps its
+hand list and is listed as "not matched". The table read takes about 5 minutes for the federal roster.
 
 ### 3. Search, one unit at a time
 
@@ -93,6 +105,37 @@ Run [templates/stage5-coder-prompt.md](templates/stage5-coder-prompt.md) on the 
 per batch of about 20 people, writing `stage5/codes/<politician_id>.json`. The ladder text comes from
 `npm run topic:ladder-lint --prefix backend -- --topic <key> --season draft`.
 
+### Pitfalls the first topic found (voting-rights, Season 3, 2026-10/11)
+
+Each cost at least one re-code round or a store fix. Check them before coding a new topic.
+
+- **Read bill text before coding.** Fetch the full text of broad or much-voted bills and draft each bill's verdict
+  (an Opus draft, then a review) before the coders run. Three voting-rights re-code rounds came from text found late.
+  Never overwrite a stored instrument's text with an earlier version (enrolled text beats as-introduced).
+- **Read a vote on the version voted on.** An amendment can add or strike the topic's text between printer's
+  numbers. PA SB 224 PN 1171 and PA SB 1 PN 385 passed the House after their voter-ID text was struck, and the store
+  said they carried it (#1289). Check the journal for the version and for separate votes on the topic part
+  (W3-R25). A House-added part was never in the Senate-passed or as-introduced version, so its sponsors did not
+  sponsor it.
+- **Linking votes.** A concurrence motion is not an amendment vote. On a same-day failed-then-passed roll call, take
+  the later one. A cross-chamber sponsor fallback needs the printed first name to agree. Skip a vote taken before
+  the topic's text existed.
+- **Search notes.** A note whose first place starts with `status` is read as an exit by the coding scripts: keep
+  `status:` for exits only.
+- **Web-search budget.** About 200 searches per turn of the orchestrating session, shared by every subagent it runs.
+- **Blank classes.** Coders drift between `gate` and `wording` for people whose only records widen an accepted
+  list. Name that case in the coder prompt's blank-class rule.
+- **Rulings live in the coder digest.** A runner ruling that exists only in a batch script is invisible to the next
+  coder and the next topic. Add it to the digest the coders read, then to the scripts.
+- **Store corrections keep finding ids.** A finding's id hashes its kind, URL, instrument, act, date and motion.
+  Correct a wrong fact in the note and subjects, not the motion. A changed act changes the id: find the codes that
+  cite the old one first.
+- **Floor debate as evidence.** Pennsylvania's journals print floor remarks as text; Georgia keeps video only.
+  Read `robots.txt` before fetching from any video host (palegis' Sliq player says `Disallow: /`).
+- **Reasoning text is voter-facing.** When a store fix changes a fact that seated reasoning repeats, search the
+  codes for the phrase and fix each row with a guarded text-only migration (CA_0355, CA_0357), not a batch
+  re-write, which would send the rows back to review.
+
 ### 5. Early check (after federal and the first two or three states)
 
 ```bash
@@ -101,7 +144,16 @@ npm run topic:stage5-report --prefix backend -- --topic <key> --research <abs to
 
 Exit 3 means some codes failed their check: fix those first. Then run the theme pass,
 [templates/stage5-theme-prompt.md](templates/stage5-theme-prompt.md), as a fresh subagent on `notes.jsonl`,
-writing `stage5/themes.json`, and run the report again with `--themes <abs>/stage5/themes.json`.
+writing `stage5/themes.json`, and run the report again with `--themes <abs>/stage5/themes.json`. Do not fill the
+template by hand: write it with
+
+```bash
+npm run topic:stage5-theme-prompt --prefix backend -- --topic <key> --season draft --notes <abs>/stage5/notes.jsonl --out <abs>/stage5/theme-prompt.md
+```
+
+It fills the ladder (the question and five rungs the season serves) and exits 1, writing nothing, if any `{{…}}`
+slot stays unfilled. The Mississippi theme pass (2026-11-05) ran on a hand-filled copy with `{{LADDER_TEXT}}` left
+in, and grouped the notes without the ladder.
 
 **The bar (ruled 2026-10-22):** stop when "doesn't fit" is **more than 1 in 5** of the people with any on-topic
 evidence, or when **any one theme holds more than 1 in 10** of them (exit 4). Doesn't-fit cases whose only record
@@ -172,10 +224,13 @@ batch folder, with a line in its `PREVIEW.md`.
 
 **Held people.** A person whose row cannot pass yet (a tool gap, or a new item that needs a re-code check) is
 **held**: their id goes in `held.txt`, and their rows come out of `research.csv` and `evidence.csv` (keep the full
-set as `research-with-held.csv` / `evidence-with-held.csv`). A coded person who is leaving and is left out of the
-batch on the runner's choice goes in `moved.txt`. Set both lists' code files aside before each `topic:stage5-write`
-run and put them back after: `write-batch.sh` does both. Nothing is written for a held person. They follow in a
-small batch of their own (`<unit>-NN-<name>`) once the gap is fixed.
+set as `research-with-held.csv` / `evidence-with-held.csv`; `drop_held.py <batch>` does both). A coded person who is
+leaving and is left out of the batch on the runner's choice goes in `moved.txt`. Set both lists' code files aside
+before each `topic:stage5-write` run and put them back after: `write-batch.sh` does both. Nothing is written for a
+held person. They follow in a small batch of their own (`<unit>-NN-<name>`) once the gap is fixed:
+`setup_batch.py <abs>/stage5 <abs>/stage5/write/<unit>-NN-<name> --level state --state XX <pid>…` (`--level federal`
+for a federal one) writes its `pids.txt` and puts every other coded id in the unit in its `moved.txt`, so only those
+people are written.
 
 **0. Dry run 0.**
 
@@ -198,6 +253,9 @@ not load keeps the quote check's word and is listed under **not re-checked on th
   person's outcome row is still written for a refused passage.
 
 It also writes `research.csv` for the seats and blanks. Fix every refused code before going on.
+
+`build_evidence.py` (step 4) rebuilds from the `research-pre-evidence.csv` it saved on its first run. A later dry run
+copied over `research.csv` makes it stop and ask: `--from-research` (rebuild from the new file) or `--from-pre`.
 
 **1. Quote check.** Run [templates/stage5-quote-check-prompt.md](templates/stage5-quote-check-prompt.md) as a
 **separate** agent: never the searcher or the coder. Use one subagent per batch of about 20 findings. Check every
@@ -248,6 +306,11 @@ batch.
 python3 -I scripts/stage5/build_evidence.py <batch> <abs>/stage5/roster.tsv <abs>/backend/data/source-store/findings --fetch --level state --state XX
 ```
 
+A row keeps at most 20 sources (8 at federal level). When a federal seat rests on more cited acts than that, pass
+`--max-urls 20` (gun-policy `federal-01` lost cited acts at 8). congress.gov pages are read through the verifier's own
+api.congress.gov reader (`congress-pages.ts`, `CONGRESS_GOV_API_KEY` in `backend/.env`); a plain fetch gets a bot
+check. Delete a congress.gov page an older run cached before running again.
+
 It rewrites `research.csv` (sources from the cited findings) and writes `evidence.csv` (snippets cut from each
 fetched page, party labels skipped). Every page it could not read goes in `evidence-missing.json`. Read that list
 by host. A state legislature site that answers with a "please enable JavaScript" page or a bot check will fail the
@@ -294,8 +357,11 @@ prints no party by the names. Otherwise cite a LegiScan line instead. The legisl
 | NC | roll calls print party headings and surnames only | LegiScan lines, matched by bill, date and motion |
 | AZ | the vote API prints `"Party":"R"` by each name (the sweep misses it) | LegiScan lines |
 | MI | journal snippets mis-decoded, or cut from the attendance list | LegiScan lines |
-| IN | iga.in.gov is a JavaScript app to a plain fetch | LegiScan lines; bill text as a PDF (step 8) |
+| IN | iga.in.gov is a JavaScript app to a plain fetch; the official MyIGA API reads it (2026-11-02) | official roll-call lines (`iga-votes.ts`, below); LegiScan as before when `IGA_API_KEY` is unset |
+| MA | House roll-call PDFs print a vote mark and a surname only (an initial where two share it); LegiScan has no record of some House roll calls | official roll-call lines (`ma-rollcall-votes.ts`, below) |
 | TX | robots-blocked bill pages | LegiScan lane (PR #1218) |
+| OH | the vote pages print a party letter by each name; the legislature's API lists member ids only | LegiScan lines (`state_legiscan.py … --session-start odd` for sponsor pages); HB 458's 2022-12-14 House vote is not in LegiScan |
+| US | House: the Clerk XML prints a party by each name; Senate: senate.gov blocks a fresh fetch | House: Clerk XML lines; Senate: LegiScan lines (`federal-votes.ts`, below) |
 
 Steps:
 
@@ -304,26 +370,81 @@ Steps:
    Then `legiscan_pairs.py <batch> <findings dir> --topic <key> --state XX --host <official host> --rollcalls
    <batch>/legiscan/rollcall-map.json` writes `legiscan/pairs.csv` (IN also needs `--bill-pad 4`: LegiScan prints
    SB0010).
+   **When the findings print no roll-call number** (TX, VA, PA in gun-policy), use `state_legiscan.py` instead: it
+   matches each vote by bill, chamber, date and tally. `state_legiscan.py plan <batch> <findings dir> --state XX
+   --host <host>[,<host>]` writes `legiscan/vote-pages.json`; `legiscan-rollcalls.ts XX <batch>/legiscan/vote-pages.json
+   <batch>/legiscan/rollcall-hits.json` looks them up; `state_legiscan.py pairs … --topic <key>` keeps only a single
+   roll call on the finding's date with its tally (a same-day tie broken on the motion text) and writes
+   `legiscan/pairs.csv`, `needs.json` and `rollcall-map.json`. Everything else goes to `legiscan/unmapped.json`: hold
+   that person; do not guess.
 2. `npx tsx --env-file=.env scripts/legiscan-evidence-lines.ts --in <batch>/legiscan/pairs.csv --out <batch>/legiscan/legiscan-evidence.csv`.
    A pair with no line is reported: usually a name LegiScan prints another way. Hold that person; do not guess.
 3. Merge (`legiscan_merge.py <batch> --host <official host>`): cite the LegiScan URL; take an unreadable official page off the row
    only when every act of the person on it now has a line; and cross-check each vote line against the act in the
-   finding (`legiscan/crosscheck.json`). 🔴 It must show **0 disagree**. LegiScan's totals can differ from the
+   finding (`legiscan/crosscheck.json`). 🔴 It must show **0 disagree**. A row that needs more source columns than
+   the file has gets them (no padding step needed). LegiScan's totals can differ from the
    official tally by one (IN SB 10 House vote: official 66-26, LegiScan 66-25); what must agree is each person's
    own vote.
 
 Every LegiScan call counts against the monthly cap (`LEGISCAN_API_KEY`). The lines print no party.
 
+**Indiana: the official roll calls instead** (with `IGA_API_KEY` in `backend/.env`). One command replaces steps 1-3:
+`npx tsx --env-file=.env scripts/stage5/iga-votes.ts <batch> <findings dir> --topic <key>`. It finds each vote's
+official roll-call PDF through the MyIGA API, cuts the person's line from it
+("Indiana House roll call 340 (2025), SB 10 - Culp - 3rd Reading: Culp voted Yea."), cites the PDF, uncites a
+covered bill page, and cross-checks every line against the finding (`iga/crosscheck.json`, 🔴 **0 disagree**).
+A vote with no line is listed in `iga/unmapped.json`: hold that person; do not guess. A finding that prints no
+roll-call number is matched by chamber and tally to the bill's one roll call (exact first, else within one vote on
+each count, as LegiScan's tallies can be; never two candidates), and a floor vote on a conference committee report
+is a floor vote, not a committee vote (`igaVotesPlan.ts`, 2026-11-04). Replayed on `in-01`: the
+same 101 votes as the LegiScan lines, plus Alting and Prescott, whom LegiScan could not match. Bill pages,
+legislator pages and every other iga.in.gov PDF read through the same API in step 4 (`build_evidence.py`,
+`pdf_pages.py`), and the verifier reads them the same way (`src/lib/adapters/igaAdapter.ts`).
+
+**Massachusetts House: the official roll-call PDFs instead.** One command replaces steps 1-3:
+`npx tsx --env-file=.env scripts/stage5/ma-rollcall-votes.ts <batch> <findings dir> --topic <key>`. Each House
+vote finding is matched to its store instrument's House vote; the instrument's `urls` give the PDF
+(malegislature.gov/RollCall/<GC>/HouseRollCall<n>.pdf). The tool cuts the person's line from the PDF
+("Massachusetts House roll call 135 (193rd General Court), H.4885 - On acceptance of the report: Kilcoyne voted
+Yea."), cites the PDF, uncites a covered bill page, and cross-checks every line against the finding
+(`ma-rollcall/crosscheck.json`, 🔴 **0 disagree**). The label must fit the surname, and the first initial when
+printed; a bare surname two members share gives no line. "Mr. Speaker" never matches anyone, so the Speaker's
+vote needs another source. Votes with no line go to `ma-rollcall/unmapped.json`: hold that person, do not
+guess. The verifier reads the PDF the same way (`src/lib/adapters/maLegislatureAdapter.ts`). Replayed on the
+44 `ma-01` members held for this (2026-11-04): 56 lines, 0 disagree, all 44 verified.
+
+**Federal: the roll-call table instead.** One command for the House, two more for the Senate:
+
+```bash
+npx tsx --env-file=.env scripts/stage5/federal-votes.ts <batch> <findings dir> --topic <key>
+npx tsx --env-file=.env scripts/legiscan-evidence-lines.ts --in <batch>/legiscan/pairs.csv --out <batch>/legiscan/legiscan-evidence.csv
+python3 -I scripts/stage5/legiscan_merge.py <batch> --host <official host>
+```
+
+`federal-votes.ts` pairs each seated vote with its roll call in `essentials.legislative_votes` (read only), finds
+the person on it by politician id, and cross-checks the table position against the finding. House: it fetches the
+Clerk XML once per roll call, cuts the person's line by bioguide id, with no party
+("House roll call 102 (2025), H R 22, On Passage: Fedorchak (ND) voted Yea."), cites the XML, and uncites a covered
+page. Senate (115th Congress on): it writes `legiscan/pairs.csv` and `legiscan/needs.json` for the two commands
+after it; skip them when it prints no Senate pairs. 🔴 `federal/crosscheck.json` and `legiscan/crosscheck.json` must
+both show **0 disagree**. A vote with no line is listed in `federal/unmapped.json` (Senate: `legiscan/unmapped.json`):
+hold that person; do not guess. A House roll call the table gives no roll number has no Clerk XML: when its table
+id is a LegiScan id it takes the Senate's LegiScan lane (pair, lines, merge); otherwise it is held. A Senate seat whose act is abstain ("present") shows up as a `DISAGREE` line
+(LegiScan NV is stored as `not_voting`) and stops the run; hold that person by hand. A page it prints as `WARN` stays cited on purpose (a House vote or other snippet
+on it has no line). Replayed on `federal-01` (2026-11-03): 97 of the 98 House lines again, 0 disagree; the 98th is
+held, because that person's politician record has no bioguide id (held, never matched by surname).
+
 **8. Bill text.** When the reasoning quotes a bill's words and the cited page cannot be read, the gate cannot find
 the quote. Run the gate once (step 9) to list those quotes, then:
 
 ```bash
-python3 -I scripts/stage5/bill_text_auto.py <batch> <abs>/backend/data/source-store/findings --topic <key> --saved-root <abs>/.planning/research
+python3 -I scripts/stage5/bill_text_auto.py <batch> <abs>/backend/data/source-store/findings --topic <key> --saved-root <abs>/.planning/research [--gate <gate output>]
 ```
 
-For each high `quote-not-in-snippet` finding it looks for the quoted words in the bills the person's own findings
-name: first the store's operative text (verbatim from the act), then the act's saved copy (`provenance.saved_copy`,
-sha256 checked). It cites that bill's text URL with a passage of whole sentences, 25 words or more, that holds the
+For each high `quote-not-in-snippet` finding in the gate output (`gate-output.txt`, or the file `--gate` names) it
+looks for the quoted words in the bills the person's own findings name: first the store's operative text (verbatim
+from the act; its quote blocks, then the whole text), then the act's saved copy (`provenance.saved_copy`, sha256
+checked). It cites that bill's text URL with a passage of whole sentences, 25 words or more, that holds the
 quote. `bill-text.json` lists every quote it placed and every quote it could not. A quote it could not place is
 usually the coder's own words in quote marks (trim them, step 9) or a bill the store does not hold (add it with
 `add_bill_text.py`, by hand). On in-01 it placed the same 290 of 310 quotes the hand step did, leaving the same 20
@@ -344,6 +465,15 @@ Work every high finding down to 0. Two tools, and they are not the same:
   comma. Each entry records the old words, the new words and why. 🔴 The code file still says the old words; say
   so in the preview.
 - **Hold** (`held.txt`): a finding that only new evidence or a code change could clear.
+
+Tools for the common cases, each writing trims to `overrides.json` (or, for the first three, sources and snippets),
+never a stance: `cite_named.py` (a bill the text names: cite the person's own record on it, or list it for a trim),
+`quote_snippets.py` (a quote a cached cited page prints: add that snippet), `uncite.py` (`uncite.json`: take a page
+off a row), `respell_ids.py` (store ids in the text → bill numbers), `unquote.py` (quote marks off act words no
+readable page prints; own words are listed, never touched), `quote_fix.py` (a coder-edited bill quote → the act's
+exact pieces). When several of them feed one `overrides.json`, apply it with `apply_overrides.py <batch>
+--skip-changed`: a trim whose words an earlier trim already changed is skipped and listed instead of stopping the
+run. Read that list.
 
 Medium `statement-needs-review` findings are expected for own-words seats: they go to review. A seat placed on own
 words alone is `statement` evidence, so it keeps the `statement-evidence` hold until the topic's blind check passes

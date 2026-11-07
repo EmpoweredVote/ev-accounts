@@ -1,0 +1,51 @@
+{
+  "politician_id": "3af51468-a3eb-41be-9d8b-5686d31cb1fe",
+  "findings": [
+    {
+      "id": "342f85ea36ec959b5b1229da8857a7162da2c60e83312b32cf6fc8e8b666fa6a",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/77960/race/32319/election/1471",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "None. The Second Amendment affirms that the right of the people to keep and bear arms shall not be infringed. Public safety should be protected by enforcing laws against violent criminals, not by restricting the constitutional rights of law-abiding citizens.",
+      "note": "Her written answer to a voter-guide questionnaire item asking what restrictions on gun ownership are needed to protect public safety. Page undated; 2026 cycle.",
+      "subjects": [
+        "restrictions on gun ownership",
+        "Second Amendment rights",
+        "enforce laws against violent criminals"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:01:22.949Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "Second Amendment",
+        "restrictions on gun ownership"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://ivoterguide.com/candidate/77960/race/32319/election/1471 (confirms Texas U.S. House District 37, Nov 3 2026 general; questionnaire answer on guns saved)",
+        "https://theballotbrief.com/candidate/lauren-b-pena-tx (nothing on the subject)",
+        "https://www.kut.org/austin/2026-10-20/austin-tx-us-house-district-37-race-greg-casar-lauren-pena (race story; no gun text found)",
+        "https://branch.vote/races/2026-texas-general-election-tx-state-us-representative-tx-congressional-37/candidates/lauren-b-pea (candidate page; no gun text found)",
+        "blocked: https://ballotpedia.org/Lauren_Peña (empty page)",
+        "web searches: name plus Second Amendment, campaign website (no campaign site found)",
+        "congress.gov: not applicable, not a legislator"
+      ],
+      "found": 1,
+      "at": "2026-10-30T15:01:22.949Z",
+      "by": "source-collector"
+    }
+  ]
+}

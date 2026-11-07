@@ -97,9 +97,9 @@
       "instrument_id": "PA-SB-224-2023",
       "act": "nay",
       "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
-      "note": "House roll call as printed ('MAKO'), linked to Zachery Allen Mako (district 183) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "note": "House roll call as printed ('MAKO'), linked to Zachery Allen Mako (district 183) via the official 2023-2024 House member roll (identity step 2026-10-28). Corrected 2026-11-03: PN 1171 has no voter-ID text (struck by A02604, 2023-10-17); this vote says nothing about ID.",
       "subjects": [
-        "voter ID at the polls"
+        "voter ID removed from this version"
       ],
       "topic_keys": [
         "voting-rights"
@@ -152,6 +152,155 @@
         "fetched_by": "identity-pa-2026-10-31-raw-votes",
         "fetched_at": "2026-10-31T18:07:00.899Z",
         "method": "webfetch"
+      }
+    },
+    {
+      "id": "827b1988eebdd9e1ccbaa8a667b4ed595af3c7def4f2530300ed0ee68690eb2b",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2021/sb565",
+      "date": "2021-11-16",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-565-2021",
+      "act": "yea",
+      "motion": "FP (final passage, page prints 'FP')",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, FP (final passage, page prints 'FP'), 2021-11-16: yea (tally 107–92); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/PA_SB565_PN1212.pdf",
+          "sha256": "8599bf5e56d8378a456fd36d933e5a05733e1a059d642ddb6883c809f6226568"
+        }
+      }
+    },
+    {
+      "id": "2aea74d3bfc756ad174480475207b85edab2dd0e739ec148ef5e7b9605cf87f5",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb1953",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1953-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of PA-HB-1953-2025 (LegiScan sponsor list): HB1953 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for licenses..",
+      "subjects": [
+        "carry-license applicants may apply at the nearest sheriff's office"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1953-2025.introduced.pdf",
+          "sha256": "a8ae14ed8d544f1e0c68b1c8ed172b604628c435c26db9af05d4539f2063a0ca"
+        }
+      }
+    },
+    {
+      "id": "aadf049da9c877b6ff2c394840cb4aa7ed6144423f58ce2833cec97296371de3",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=1018",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1018-2023",
+      "act": "nay",
+      "motion": "House Floor: HB 1018 PN 1152, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 1018 PN 1152, FINAL PASSAGE, 2023-05-22: nay (tally 102–99); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders created to remove firearms",
+        "firearm ban while an order is active",
+        "penalty for not turning in firearms under an order",
+        "longer penalty for prohibited persons found with a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1018-2023.amended.pdf",
+          "sha256": "05d5a4c60b9a22ac9e77d07afe3e7adc8841cd9dab1224832eb50521b29958a6"
+        }
+      }
+    },
+    {
+      "id": "465f6ee5ddd1f662a245de10a843aaa91be6f6eb2fd9c53ca322315e316e29ad",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=777",
+      "date": "2024-03-27",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-777-2023",
+      "act": "nay",
+      "motion": "House Floor: HB 777 PN 2578, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 777 PN 2578, FINAL PASSAGE, 2024-03-27: nay (tally 104–97); census gate: none.",
+      "subjects": [
+        "sale or transfer of unserialized gun frames, receivers and kits made a felony",
+        "buying parts to build an unserialized gun made a felony",
+        "licensed dealers must mark and record privately made firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-777-2023.amended.pdf",
+          "sha256": "65a5f4847629a43127721168bc31890a6fd60f0aefae6ac528a3cd698d73d35e"
+        }
+      }
+    },
+    {
+      "id": "a9c09af126d69b2c1230440fd41791b65a2da59b0bd9de07e3e4811a1a87837a",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=979",
+      "date": "2021-06-08",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-979-2021",
+      "act": "yea",
+      "motion": "House Floor: HB 979 PN 1706, FP",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 979 PN 1706, FP, 2021-06-08: yea (tally 124–79); census gate: none.",
+      "subjects": [
+        "local gun and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs",
+        "localities barred from suing gun makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-979-2021.amended.pdf",
+          "sha256": "494cfe800bdb89be85cf7c2a28a81c203b581e7614e7bc8f69211cb4c736f5dd"
+        }
       }
     }
   ],
@@ -251,6 +400,34 @@
       "found": 1,
       "at": "2026-10-31T18:07:00.899Z",
       "by": "identity-pa-2026-10-31-raw-votes"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "limits on local gun rules",
+        "general Second Amendment statements",
+        "gun bans",
+        "background checks",
+        "red-flag orders",
+        "sponsored gun bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity confirmed: https://www.palegis.us/house/members/bio/1758/rep-zachary-mako (Rep. Zachary Mako, House District 183) and https://www.repmako.com/about",
+        "official site https://www.repmako.com/ and /about reviewed: nothing on the subject",
+        "campaign site https://zachmakoforpa.com/ reviewed: no gun language on the page today (only a line about protecting individual and constitutional rights, not specific to guns)",
+        "palegis.us member page lists 5 recent items for the 2025-2026 session out of 47 sponsored; none on firearms; the full sponsor list is not shown on that page: blocked: https://www.palegis.us/legislation/bills/search?sponsor=1758&chamber=H (404)",
+        "LegiScan: not opened; the official list is partial, so full sponsorships remain a gap",
+        "BillTrack50 scorecard reviewed: lists no sponsored gun bills; shows him absent on HB 726 (not saved, not a sponsorship)",
+        "An October 2024 local newsletter article says his 2024 campaign site called him a strong supporter of the Second Amendment; that is a report of the site, not saved as his own words, and the current site no longer shows it",
+        "Ballotpedia: not reviewed (known to return empty)",
+        "web searches (2): nothing further on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-30T22:34:24.324Z",
+      "by": "source-collector"
     }
   ]
 }

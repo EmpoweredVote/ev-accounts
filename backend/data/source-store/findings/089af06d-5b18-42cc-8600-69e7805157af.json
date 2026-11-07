@@ -1,0 +1,30 @@
+{
+  "politician_id": "089af06d-5b18-42cc-8600-69e7805157af",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun rights",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "BallotReady profile https://www.ballotready.org/people/lewis-mizrahi (confirms he is listed as a candidate for NY-8 in the 2026 primary and general; no statements on the subject)",
+        "The Ballot Brief page https://theballotbrief.com/candidate/lewis-mizrahi-ny (nothing on the subject; says no campaign website was found as of 2026-10-20)",
+        "Prediction Edge profile https://www.predictionedge.com/elections/profile/lewis-mizrahi/ (a site's own summary of his stance, not his words; not saved)",
+        "blocked: https://ballotpedia.org/Lewis_Mizrahi (page came back empty)",
+        "no campaign site found",
+        "web search x3: nothing from his own words on the subject",
+        "congress.gov: not applicable (not a member)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:01:48.502Z",
+      "by": "source-collector"
+    }
+  ]
+}

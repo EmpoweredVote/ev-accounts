@@ -1,6 +1,28 @@
 {
   "politician_id": "9ec8ec01-2b15-42ae-8a52-cc77930be151",
-  "findings": [],
+  "findings": [
+    {
+      "id": "d0bc3778687921487688ddd8128f9615d10e0c5c1febd447b7ef3abf25ac793e",
+      "kind": "own-words",
+      "url": "https://www.wmra.org/2026-02-05/virginia-house-democrats-pass-new-gun-laws-but-not-all-democrats-voted-for-them",
+      "date": "2026-02-05",
+      "date_precision": "day",
+      "passage": "\"Look, there's something things I think go too far,\" said Loudoun County Democrat John McAuliff after voting against a new safe storage law. \"We want to make sure we’re not putting additional penalties, additional fees on folks who are otherwise law-abiding, so I voted against it.\"",
+      "note": "Quoted by WMRA (Virginia Public Radio) on the day of the House floor votes on a safe-storage bill; he explains his no vote as avoiding added penalties and fees on law-abiding people. The reporter's framing of the quote is included for context.",
+      "subjects": [
+        "safe storage of guns",
+        "penalties on law-abiding gun owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:53:00.266Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -21,6 +43,31 @@
       "found": 0,
       "at": "2026-10-28T16:26:05.436Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "safe storage of guns",
+        "penalties on law-abiding gun owners",
+        "general gun safety statements",
+        "gun industry liability"
+      ],
+      "places": [
+        "status: in scope. Sitting Delegate for Virginia House District 30 since 2026-01-14 (https://en.wikipedia.org/wiki/John_McAuliff, used as a lead only; the WMRA report below also names him as a Loudoun County delegate)",
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "WMRA report https://www.wmra.org/2026-02-05/virginia-house-democrats-pass-new-gun-laws-but-not-all-democrats-voted-for-them: quote saved",
+        "campaign site https://www.johnmcauliff.com: page is a JavaScript site, nothing on the subject in the text returned; issues and news pages empty",
+        "Virginia Scope profile https://www.virginiascope.com/?p=6392 (2025-01-28): nothing on the subject",
+        "Giffords candidate list https://giffords.org/candidates/virginia-house-of-delegates/: lists him by name only, no quote",
+        "blocked: https://origin.vpap.org/legislators/523701-john-chilton-mcauliff/ (TLS handshake failure)",
+        "Ballotpedia: not reviewed (pages come back empty)",
+        "web searches (4): found the WMRA report"
+      ],
+      "found": 1,
+      "at": "2026-10-30T23:53:00.266Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -44,6 +44,74 @@
         "fetched_at": "2026-10-31T18:07:00.902Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "2e4eae06d48ac06e5a72566cb592de2509c22e4ec411b61ce7b53184db01b086",
+      "kind": "own-words",
+      "url": "https://riverreporter.com/stories/jeff-olsommer,143993",
+      "date": "2024-04-16",
+      "date_precision": "day",
+      "passage": "My priorities will be those of the people in Pike and Wayne counties – reducing taxes for our hardworking families and seniors on fixed incomes, enacting pro-growth policies to help rural Pennsylvania prosper, investing in our police to reduce crime, empowering parents to have more control over their children's education, reducing the amount of government intrusion in our daily lives, defending the sanctity of human life and safeguarding our 2nd Amendment rights.",
+      "note": "Campaign statement posted by him in the River Reporter during his run for the 139th District; lists safeguarding 2nd Amendment rights among his priorities.",
+      "subjects": [
+        "gun rights general statement",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:40:46.870Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bc0bd13aa77efa9e39b907f0633fde2e363898a942b4465c0f1a54a75acdd0b9",
+      "kind": "own-words",
+      "url": "https://riverreporter.com/stories/jeff-olsommer,143993",
+      "date": "2024-04-16",
+      "date_precision": "day",
+      "passage": "I have also been awarded the National Rifle Association's Highest Rating and have been recommended by the Pennsylvania Pro-Life Federation and Firearms Owners Against Crime.",
+      "note": "He states he holds the highest rating from a gun-rights group and a recommendation from a gun-owner political group.",
+      "subjects": [
+        "gun rights general statement",
+        "gun-rights group rating"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:40:46.870Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cb0fbf8a79daf53a68322bf31fb0b8eef29babb52a4ab119778974d097bbc960",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb2138",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2138-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-2138-2025 (LegiScan sponsor list): HB2138 (2025-2026 Regular Session): In firearms and other dangerous articles, providing for the offense of negligent marketing..",
+      "subjects": [
+        "limits on negligent-marketing lawsuits against gun and ammunition makers and sellers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2138-2025.introduced.pdf",
+          "sha256": "1091c7eb8bc290998cfd5cbd61e0d428a611b1deaf73f3dae253bdab7cb39273"
+        }
+      }
     }
   ],
   "searches": [
@@ -84,6 +152,32 @@
       "found": 1,
       "at": "2026-10-31T18:07:00.902Z",
       "by": "identity-pa-2026-10-31-raw-votes"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights general statements",
+        "Second Amendment",
+        "bills sponsored on firearms",
+        "carry a gun",
+        "check every gun buyer"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://www.repolsommer.com/Bio (confirms 139th District; nothing on the subject)",
+        "official site search page: not found; hunting and fishing news page: nothing on the subject",
+        "caucus member page https://www.pahousegop.com/Olsommer: opened, nothing on the subject",
+        "blocked: https://www.palegis.us/house/members/bio (member sponsor list; page returns 403 or wrong id)",
+        "not reviewed: https://www.billtrack50.com/legislatordetail/29287 (sponsored-bills list loads by script, empty)",
+        "LegiScan sponsor page: not opened, bill search found no firearm bill under his name",
+        "Ballotpedia: not usable through the fetch tool",
+        "news searches (3): River Reporter 2024 campaign piece found; Pike County Courier 2024 candidate Q&A has nothing by him on guns",
+        "voter guides / questionnaires: nothing found"
+      ],
+      "found": 2,
+      "at": "2026-10-30T20:40:46.870Z",
+      "by": "source-collector"
     }
   ]
 }

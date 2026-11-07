@@ -1,0 +1,200 @@
+{
+  "politician_id": "4b6f1d1b-4409-47ab-93e8-de41ab75cd15",
+  "findings": [
+    {
+      "id": "fdab8fad61b9202b85d2bdad070fddd83dc62a1ab11a17bca8d97dd959502e96",
+      "kind": "record",
+      "url": "https://kslegislature.gov/li_2016/b2015_16/measures/SB45/",
+      "date": "2015-03-25",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-45-2015",
+      "act": "nay",
+      "motion": "Concurred with amendments (final Senate vote)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS Senate, Concurred with amendments (final Senate vote), 2015-03-25: nay (tally 31–8); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "C, F (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dbad5e9963fb6113626e2b9c1ad54b57dece0a74da0d1b78d75776d1696dbbc",
+      "kind": "own-words",
+      "url": "https://ca.news.yahoo.com/gop-supported-changes-kansas-elections-100000274.html",
+      "date": "2024-04-23",
+      "date_precision": "day",
+      "passage": "\"If it's not broke, don't fix it,\" Sen. Oletha Faust-Goudeau, a Wichita Democrat, said.",
+      "note": "Quoted by the Kansas City Star (republished on Yahoo) on SB 14, which would end the three-day grace period for mail ballots arriving after Election Day. Not about ID or citizenship; saved as a related election-law remark. Article date is the publication date.",
+      "subjects": [
+        "mail-ballot return deadline (related election law)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:42:41.203Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e12d8c2c04969f9f4493070458d6fa03f7ff58d84685fb72235693093d0eeb43",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_191_HB2020.odt",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "nay",
+      "motion": "Senate: Emergency Final Action As Amended",
+      "note": "Senate roll call as printed ('Faust Goudeau'), linked to Oletha Faust Goudeau (district 29) via the official 2025 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12d5b96635aaee125a967de3c18520774687c5737469fd65d2358255cda8634d",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Faust Goudeau'), linked to Oletha Faust Goudeau (district 29) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c32e05d099cacb14913d1c7c047be9deb5093f489d52813e63f1f81be052e684",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Faust Goudeau'), linked to Oletha Faust Goudeau (district 29) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "410d6c177146ddda2c585bf7f149c2fc575ae132f41da9f48f917d0143318df7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2014/b2013_14/measures/sb253/",
+      "date": "2014",
+      "date_precision": "year",
+      "instrument_id": "KS-SB-253-2014",
+      "act": "sponsor",
+      "motion": "prime sponsor, As introduced (sb253_00_0000.pdf); no later version exists on the legislature site",
+      "note": "Named as prime sponsor ('Faust-Goudeau') on the official bill text, summary or journal; linked to Oletha Faust Goudeau via the official 2014 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b9138e22bc80ebaf6ba7c64f427af10148c9599d784a107b8895179d07a5def9",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2016/b2015_16/measures/sb333/",
+      "date": "2016",
+      "date_precision": "year",
+      "instrument_id": "KS-SB-333-2016",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced (sb333_00_0000.pdf); no later version exists on the legislature site",
+      "note": "Named as co sponsor ('Faust-Goudeau') on the official bill text, summary or journal; linked to Oletha Faust Goudeau via the official 2016 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "no-ID fallback",
+        "election law changes in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official legislature member index: https://www.kslegislature.gov/b2025_26/members/ returned 404, member page not reached",
+        "personal/official site oletha.org/news.htm (read; only homeless-veteran ID bill for jobs and nondriver IDs, nothing on voting)",
+        "blocked: https://kaaac.ks.gov/legislative-advocacy/african-american-legislators/senator-faust-goudeau (403)",
+        "blocked: https://ballotpedia.org/Oletha_Faust-Goudeau (not fetched, site refuses fetches)",
+        "news searches (6) on name plus voter ID, photo ID, proof of citizenship, mail ballot: one direct quote found (Kansas City Star via Yahoo, 2024)",
+        "Lawrence Journal-World 2012 voter ID piece and HPPR 2013 piece: nothing in her own words (HPPR only paraphrases her)",
+        "nothing on the subject of ID or citizenship in her own words found"
+      ],
+      "found": 1,
+      "at": "2026-11-04T16:42:41.203Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 5,
+      "at": "2026-11-04T19:13:24.949Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

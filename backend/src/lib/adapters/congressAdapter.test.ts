@@ -263,6 +263,47 @@ describe('fetchCongressPageText', () => {
     expect(text).toContain('Null Cosponsor Element Act of 2025');
   });
 
+  describe('a list the page must print is never silently missing', () => {
+    const billRoutes = (cosponsors: (n: number) => Response) => {
+      let n = 0;
+      return async (url: string) => {
+        if (url.includes('/bill/117/hr/1?')) return fakeRes({ bill: { title: 'For the People Act of 2021' } });
+        if (url.includes('/bill/117/hr/1/cosponsors')) return cosponsors(++n);
+        return fakeRes({ error: 'not found' }, false);
+      };
+    };
+    const status = (code: number) => ({ ok: false, status: code, json: async () => ({}), text: async () => '' }) as unknown as Response;
+    const URL_HR1 = 'https://www.congress.gov/bill/117th-congress/house-bill/1/cosponsors';
+
+    it('retries a cosponsor call that failed for a passing reason, and prints the list', async () => {
+      const fetchImpl = billRoutes((n) => (n === 1 ? status(429) : fakeRes({ cosponsors: [{ fullName: 'Rep. Sherman, Brad [D-CA-32]' }] })));
+      const text = await fetchCongressPageText(URL_HR1, { apiKey: KEY, fetchImpl, retryDelayMs: 0 });
+      expect(text).toContain('Cosponsors: Rep. Sherman, Brad [CA-32]');
+    });
+
+    it('falls through (null) when the cosponsor call fails twice, rather than print the page without it', async () => {
+      for (const fail of [() => status(503), () => { throw new Error('timeout'); }]) {
+        const fetchImpl = billRoutes(fail as (n: number) => Response);
+        expect(await fetchCongressPageText(URL_HR1, { apiKey: KEY, fetchImpl, retryDelayMs: 0 })).toBeNull();
+      }
+    });
+
+    it('keeps a 404 on the cosponsor list best-effort (the page still builds)', async () => {
+      const fetchImpl = billRoutes(() => status(404));
+      expect(await fetchCongressPageText(URL_HR1, { apiKey: KEY, fetchImpl, retryDelayMs: 0 })).toContain('For the People Act of 2021');
+    });
+
+    it('falls through when a member bill list fails twice', async () => {
+      const fetchImpl = async (url: string) => {
+        if (url.includes('/member/L000562?')) return fakeRes({ member: { directOrderName: 'Stephen F. Lynch', state: 'Massachusetts' } });
+        if (url.includes('/sponsored-legislation')) return status(500);
+        return fakeRes({ cosponsoredLegislation: [] });
+      };
+      expect(await fetchCongressPageText('https://www.congress.gov/member/stephen-lynch/L000562', { apiKey: KEY, fetchImpl, retryDelayMs: 0 }))
+        .toBeNull();
+    });
+  });
+
   it('bounds every api.congress.gov fetch with an AbortSignal timeout', async () => {
     const calls: Array<{ url: string; init?: RequestInit }> = [];
     const fetchImpl = routedFetch(

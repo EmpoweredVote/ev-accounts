@@ -30,6 +30,27 @@
           "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
         }
       }
+    },
+    {
+      "id": "5887aee3d85907ce14f944e8db7518cdf940c4ead3ba2a715db9dcbecf459d62",
+      "kind": "own-words",
+      "url": "https://www.wbaa.org/government/2023-01-17/proposed-legislation-from-greater-lafayette-lawmakers-could-expand-mental-health-care-gun-control",
+      "date": "2023-01-17",
+      "date_precision": "day",
+      "passage": "“I’m sad to continue turning on the news and see innocent kids, innocent civilians getting killed,” he said.",
+      "note": "Quoted by WBAA on his view of shootings; the same story reports (not in his words) that he said the state should raise the age to obtain semiautomatic weapons from 18 to 21.",
+      "subjects": [
+        "minimum age to buy a gun",
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T20:39:31.810Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -83,6 +104,33 @@
       "found": 0,
       "at": "2026-10-27T01:21:31.230Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "minimum age to buy a gun",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "general statements on gun rights or gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the Senate caucus member page https://www.indianasenaterepublicans.com/alting (confirms Senate District 22, Lafayette; nothing on the subject)",
+        "caucus news release https://indianasenaterepublicans.com/alting-honored-by-indiana-friends-committee-on-legislation (nothing on the subject)",
+        "campaign site: none found",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia: page came back empty",
+        "news search on name plus gun words (WBAA Jan 2023 story read; WBAA tag page for him showed no gun stories)",
+        "news search on 2022 permit-repeal debate: no Alting statement found",
+        "IBJ stories 67837, 67675, 67954 loaded; no passage naming him was found in page text",
+        "blocked: none"
+      ],
+      "found": 1,
+      "at": "2026-10-31T20:39:31.810Z",
+      "by": "source-collector"
     }
   ]
 }

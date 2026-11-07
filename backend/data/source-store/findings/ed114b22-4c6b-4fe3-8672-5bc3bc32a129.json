@@ -1,0 +1,252 @@
+{
+  "politician_id": "ed114b22-4c6b-4fe3-8672-5bc3bc32a129",
+  "findings": [
+    {
+      "id": "0c4350377c9b0507ae2bfc0d5ceedb9338418325088349f5614a4e57cbbc7dfa",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/134/sb215",
+      "date": "2022-03-02",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-215-2022",
+      "act": "nay",
+      "motion": "Passed (final House vote per Votes tab)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH House, Passed (final House vote per Votes tab), 2022-03-02: nay (tally 58–36); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/OH_sb215_EN.pdf",
+          "sha256": "dddae0081901748ede39524ddca0094c322a065fe443d8ffdbae0913c1a95fa4"
+        }
+      }
+    },
+    {
+      "id": "c3dbbbfcb65bfb80faa8473ca3a08de6b0cd1e80ffa8a00ca8a92cb461df90fc",
+      "kind": "own-words",
+      "url": "https://www.timesleaderonline.com/news/local-news/2026/06/ohio-constitutional-amendment-on-voter-photo-id-advances/",
+      "date": "2026-06-05",
+      "date_precision": "day",
+      "passage": "Since that time there have only been 18 voter fraud charges despite aggressive investigations,\" he said. \"Phony voting is just not happening very much at all in the state of Ohio.",
+      "note": "Direct quotes from the senator during the Senate debate on the photo ID constitutional amendment (SJR 10), as reported by Times Leader (byline David Beasley). The same story reports him saying \"In-person voting fraud is less common than UFO sightings.\" and \"Those cases of alleged fraud that are identified are usually the result of administrative mistakes,\" the senator said. Outlet quoted him; no transcript reached. He is speaking of how common voter fraud is, in the context of the ID amendment.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "how common voter fraud is"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:20:14.864Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5697afd32f03dc086b5345a0a6cd9ad151af0d90b6a4dc6c539a64510187c2b",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/actions/",
+      "date": "2022-12-14",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-458-2022",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 55-34) on H. B. No. 458, from the Ohio Legislature's own actions record, which lists each member by id (rep_smith_kent_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "61ad7ead5c708d5cc3644cba295a15f24a874cb0732ce0f06dad1de0e594ba9c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 23-10) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (sen_smith_kent_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ac99700f10fccf6a9e794750182dc8dc1f69f27d8bfd400811b06c254d0c19b4",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "nay",
+      "motion": "Senate: Concurred in House amendments",
+      "note": "OH Senate floor roll call (Concurred in House amendments, tally 23-10) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (sen_smith_kent_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9b1f5c0fab55b6852c164d5fd7548cc1853715c65462e15ee45b573dea4077ad",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "Senate: Adopted",
+      "note": "OH Senate floor roll call (Adopted, tally 22-9) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (sen_smith_kent_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f77bc816c17d22b914779acb710cd17194b225a308ce98ccb6504db003fbcc3b",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/133/hb560",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-560-2020",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. B. No. 560 (As Introduced) on the Ohio Legislature's own record (rep_smith_kent_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d84fc9be9f18f1768dc375ba8a163121b4534d412e29d356d7fee6db6417e4ad",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/133/hb687",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-687-2020",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. B. No. 687 (As Introduced) on the Ohio Legislature's own record (rep_smith_kent_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ff8784f8d7753a83d77aa157e84fbc97c57afd9fe959bb72c6096c7efb9ace03",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/134/hb296",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-296-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. B. No. 296 (As Introduced) on the Ohio Legislature's own record (rep_smith_kent_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment (SJR 10)",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Senate member page news list (page 1 of 2, 25 of 40 items; the fetch tool returned the same page for ?page=2, so the 15 oldest items were not seen; no item title touches ID or citizenship)",
+        "web search: name + voter ID / photo ID (confirms office: Senate District 21, Euclid)",
+        "web search: name + HB 458 / SB 293 / Issue 3 (nothing from him found)",
+        "web search: name + HB 458 December 2022 House statement (nothing naming him)",
+        "https://www.timesleaderonline.com/news/local-news/2026/06/ohio-constitutional-amendment-on-voter-photo-id-advances/ (news story quoting him)",
+        "blocked: ohiohouse.gov/members/kent-smith/news (HTTP 500 from fetch tool)",
+        "blocked: ballotpedia.org (not fetched, listed as refusing)",
+        "blocked: cleveland.com, clevelandjewishnews not opened (refused or not fetched)",
+        "campaign site: not found"
+      ],
+      "found": 1,
+      "at": "2026-11-06T16:20:14.864Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 7,
+      "at": "2026-11-06T16:28:34.678Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}

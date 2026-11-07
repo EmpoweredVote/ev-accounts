@@ -53,6 +53,30 @@
       "found": 0,
       "at": "2026-10-27T13:54:41.058Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "background checks",
+        "ban on assault-style guns",
+        "carry permits",
+        "gun safety laws",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope check: https://www.ballotready.org/people/james-pittsford-iii lists him as a candidate for Indiana House district 46 in the 2026 general election and the May 5, 2026 primary; https://theballotbrief.com/state/indiana/owen-county lists him on the November 3 ballot",
+        "campaign site https://www.pittsford4indiana.com/ : issue headings are Education, Highway Funding, Utility Reform, Public Corruption; nothing on the subject",
+        "voter guide https://ivoterguide.com/candidate/95548/race/30695/election/1456 : gun questions (teachers carrying at school; restrictions on gun ownership) are shown as did not answer",
+        "sponsor list: covered by LegiScan bulk check (not a sitting legislator; no sponsorships expected)",
+        "news search on name plus gun words: nothing on the subject",
+        "blocked: https://bluevoterguide.org/IN/candidate_James_Pittsford_III/726751",
+        "Ballotpedia: not reviewed (known to return empty to the fetch tool)"
+      ],
+      "found": 0,
+      "at": "2026-10-31T20:39:13.815Z",
+      "by": "source-collector"
     }
   ]
 }

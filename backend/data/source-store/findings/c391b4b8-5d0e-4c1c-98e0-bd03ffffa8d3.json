@@ -1,0 +1,129 @@
+{
+  "politician_id": "c391b4b8-5d0e-4c1c-98e0-bd03ffffa8d3",
+  "findings": [
+    {
+      "id": "9e12944216f4199e2fbcc9373296c13fd833050a9945ea58468d136c33af32e3",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills201/jrnpdf/jrn031.pdf",
+      "date": "2020-03-02",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1600-2020",
+      "act": "nay",
+      "motion": "House: HCS HB 1600 read the third time and passed by the following vote (Speaker Pro Tem Wiemann declared the bill passed)",
+      "note": "House roll call as printed ('Roberts 77'), linked to Steve Roberts (district 77) via the official 2020 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e114662582e36f9f876ea58ca7997d4a6cd77360af2d2f46d1a30370cb3d2133",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/26info/Journals/Rday6405111615-1637.pdf",
+      "date": "2026-05-11",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "Senate: SS for SCS for HCS for HB 1871, as amended, read the 3rd time and passed",
+      "note": "Senate roll call as printed ('Roberts'), linked to Steve Roberts (district 5) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21359c61a4aa9f0fc1d5ed5539ef00909e6cc5e45e12169c91328f1e12050b02",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/22info/Journals/RDay6205092378-2447.pdf",
+      "date": "2022-05-09",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1878-2022",
+      "act": "nay",
+      "motion": "Senate: SS for SCS for HB 1878, as amended, read the 3rd time and passed",
+      "note": "Senate roll call as printed ('Roberts'), linked to Steve Roberts (district 5) via the official 2022 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "places": [
+        "status check: sitting state senator for District 5 (https://www.senate.mo.gov/Senators/member?id=26)",
+        "On the Record (0 meetings)",
+        "official Senate site: member page and media archive (2025 items on police, disaster relief, veterans; nothing on the subject)",
+        "official Senate site: 2025-02-28 video update page (text mentions only a ballot-measure update; video not reviewed: https://www.senate.mo.gov/Media/NewsDetails?id=1757)",
+        "2025 end-of-session report PDF: nothing on the subject",
+        "blocked: https://ballotpedia.org/Steven_Roberts_(Missouri) (403)",
+        "blocked: https://missouriindependent.com/?p=10935 (403)",
+        "no campaign site found (guessed addresses did not load)",
+        "two news searches on his name plus the subject words: nothing in his own words",
+        "St. Louis Public Radio and Northwest Missouri Info pages on election bills: no passage from him"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:00:24.043Z",
+      "by": "search-mo-2026-11-03"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:10:53.742Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-04T14:14:55.221Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "politician_id": "59b3dfb8-d520-4a50-a552-c6e9848505aa",
+  "findings": [
+    {
+      "id": "e076c8b48278b31632ee890048920af3952a61ffb83895b5d23bfa476c64b17f",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Jamison'), linked to Kenneth Jamison (district 15) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.749Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia: blocked (listed per instructions, not fetched)",
+        "house.mo.gov: not fetched (robots/hard rule)",
+        "newsroom.house.mo.gov: not fetched (instructed)",
+        "web search on name plus subject words: nothing on the subject",
+        "campaign site kenjamison.com about and priorities pages: nothing on the subject",
+        "blocked: https://onyourballot.vote411.org/m/race-detail.do?id=68485176 (HTTP 500)",
+        "BallotReady listing confirms House District 15 seat and 2026 general ballot (search result only)",
+        "KCUR 2026-04-10 article: he is not quoted"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:07:07.606Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:10:53.749Z",
+      "by": "identity-mo-2026-11-04"
+    }
+  ]
+}

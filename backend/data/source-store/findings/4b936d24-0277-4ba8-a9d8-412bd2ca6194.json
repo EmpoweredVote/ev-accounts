@@ -1,0 +1,206 @@
+{
+  "politician_id": "4b936d24-0277-4ba8-a9d8-412bd2ca6194",
+  "findings": [
+    {
+      "id": "35ab7153e9f2d7da3e82c6075dab0b376205c90ddb76bf5fb288823ebd3e6f32",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2016/pdf/history/HB/HB0786.xml",
+      "date": "2016-04-05",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-786-2016",
+      "act": "nay",
+      "motion": "Concurred in Amendment from Senate (final House vote)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS House, Concurred in Amendment from Senate (final House vote), 2016-04-05: nay (tally 85–35); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence",
+        "church security"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/MS_HB786SG.pdf",
+          "sha256": "a1142904e692e81f08ce94bef1f5827e9d662ac1f81ce57f6330064169e08945"
+        }
+      }
+    },
+    {
+      "id": "50b1472fd8dc96cd3b92ff672544f4694d8552c1ff316460207f0415adafb6a4",
+      "kind": "own-words",
+      "url": "https://www.clarkecountytrib.com/most-recent/bill-ban-ballot-harvesting-passes-mississippi-house-6408e9449b85a",
+      "date": "2023-03-07",
+      "date_precision": "day",
+      "passage": "“This bill will make all of you criminals if you go and assist anybody with getting that absentee ballot,” Rep. Bailey said. “It’s just wrong to come here and make everybody a criminal when you’re trying to help people to engage in a democratic process, in a democratic right and you make it a crime.”",
+      "note": "Floor remarks on Senate Bill 2358 (ban on collecting others' absentee ballots), quoted by Magnolia Tribune and republished by the Clarke County Tribune on 2023-03-08. He argues the bill criminalizes helping people with absentee ballots and asks colleagues to vote it down: 'Let's bury this bill because it's no good, it's making innocent people criminals, and I don't think we intend to do that.'",
+      "subjects": [
+        "absentee ballot help and ballot-harvesting ban"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:49:49.705Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cc5cfcf84c9af7d2b1b63adcbd7e2f5706310f062d362a157ff8472e18ed166e",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/house/0850033.pdf",
+      "date": "2022-03-29",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "nay",
+      "motion": "House: The conference report on H. B. No. 1510 was adopted by the following vote: (0850033)",
+      "note": "House roll call as printed ('Bailey'), linked to Willie Bailey (district 49) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.753Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4fbba305f72e29d24d1602007a4a0beb2ae18d76c403cda48443134f7aacc0ba",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2021/pdf/votes/house/0370056.pdf",
+      "date": "2021-02-10",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-586-2021",
+      "act": "nay",
+      "motion": "House: H. B. No. 586 passed by the following vote: (0370056)",
+      "note": "House roll call as printed ('Bailey'), linked to Willie Bailey (district 49) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.753Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76693f0a7705839bf231662b486b6624deeab73f388da465d8847c745c23a11e",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/house/0360024.pdf",
+      "date": "2018-02-06",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-804-2018",
+      "act": "nay",
+      "motion": "House: H. B. No. 804 passed by the following vote: (0360024)",
+      "note": "House roll call as printed ('Bailey'), linked to Willie Bailey (district 49) via the official 2018 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.753Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0e3ccc7efbb92d42261b606c1c421cd32e3980d1e4d30f0d422eba716bc1e872",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2012/pdf/votes/house/1150004.pdf",
+      "date": "2012-04-26",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-921-2012",
+      "act": "nay",
+      "motion": "House: The House concurred in the Senate amendment to H. B. No. 921 by the following vote: (1150004)",
+      "note": "House roll call as printed ('Bailey'), linked to Willie Bailey (district 49) via the official 2012 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.753Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2147cca7436b02fc328055efc537138f61a5635591caea67c88f498332726704",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "nay",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Bailey (49th)'), linked to Willie Bailey (district 49) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.753Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "absentee ballot help and ballot-harvesting ban",
+        "voter-roll citizenship checks"
+      ],
+      "places": [
+        "On the Record (0 appearances; also searched by name)",
+        "Mississippi House/Senate member page at billstatus.ls.state.ms.us (confirms the person and office; no news or statements page)",
+        "web searches on name with voter ID, photo ID, proof of citizenship, SHIELD Act, election, absentee, questionnaire (nothing further on the subject beyond the findings)",
+        "Mississippi Free Press and MPB pages on citizenship-check bills (do not name the person)",
+        "blocked: https://ballotpedia.org (refuses fetches, not attempted)",
+        "blocked: https://electionlawblog.org/?p=153938 (403)",
+        "not reviewed: mississippitoday.org, clarionledger.com, wlbt.com (robots refuse AI agents)",
+        "Delta Daily News piece on a ballot-harvesting bill (https://www.deltadailynews.com/?p=1456961): page returns 404 now, so not citable",
+        "iVoterGuide 2023 profile https://ivoterguide.com/candidate/46013/race/8370/election/1069: candidate did not answer the questionnaire"
+      ],
+      "found": 1,
+      "at": "2026-11-05T22:49:49.705Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 5,
+      "at": "2026-11-05T23:52:51.753Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

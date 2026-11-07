@@ -47,6 +47,10 @@ const NICKNAME_GROUPS: Array<[string, string]> = [
   ['frank', 'franklin'], ['hank', 'henry'], ['ray', 'raymond'], ['walt', 'walter'],
   ['wes', 'wesley'], ['lenny', 'leonard'], ['len', 'leonard'], ['marty', 'martin'],
   ['jon', 'jonathan'], ['vince', 'vincent'], ['vic', 'victor'],
+  // gun-policy held people, 2026-11-04: LegiScan prints Josh Thomas, Sal DiDomenico, Cynthia Friedman as these.
+  ['josh', 'joshua'], ['sal', 'salvatore'], ['cindy', 'cynthia'],
+  // gun-policy NC, 2026-11-06: Rep. Phil Shepard is printed "Phillip" (two l's) by LegiScan.
+  ['phil', 'phillip'],
 ];
 
 const NICKNAME_MAP: Map<string, Set<string>> = (() => {

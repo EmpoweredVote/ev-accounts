@@ -1,0 +1,245 @@
+{
+  "politician_id": "0d97085c-eca6-4530-9fc7-512ca05487b9",
+  "findings": [
+    {
+      "id": "fa2db6fdf623b59e85e0f20110f6ee7c49a226957fd481af54be2c9e52b244bd",
+      "kind": "own-words",
+      "url": "https://keating.house.gov/policy-work/issues/gun-safety",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "He supports background checks before all gun purchases, in addition to stemming illegal possession or transfer of firearms and improving safety technologies like personalized weapons and trigger locks. ",
+      "note": "Third-person text on his official House issue page 'Gun Safety', issued in his name. Page is undated.",
+      "subjects": [
+        "check every gun buyer",
+        "safer gun technology"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:17:42.394Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "92423768ae15dbeccd4943f915dde0a4ee39cb72fb8041ce76b5c178fe3ced60",
+      "kind": "own-words",
+      "url": "https://keating.house.gov/policy-work/issues/gun-safety",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Bill strongly opposes the legal availability of high-capacity, military-grade firearms, which are strictly weapons of war. ",
+      "note": "Third-person text on his official House issue page 'Gun Safety', issued in his name. Page is undated.",
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:17:42.394Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2f53c5f6c2dd5e263272b5ca01715311e2786d8f5cfd568e72685c37d162d251",
+      "kind": "own-words",
+      "url": "https://keating.house.gov/policy-work/issues/gun-safety",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Throughout his entire career – from time as a member of the Massachusetts legislature to Norfolk County District Attorney to now in Congress – Bill has supported responsible gun control legislation. ",
+      "note": "Third-person text on his official House issue page 'Gun Safety', issued in his name. Page is undated.",
+      "subjects": [
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:17:42.394Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6849b39ffa751a37a383d25fd0d2bbda3bfd794fe3e0f2156bbdb775ab883c42",
+      "kind": "own-words",
+      "url": "https://keating.house.gov/policy-work/issues/gun-safety",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "As Ranking Member of the Terrorism Subcommittee, Bill has strongly advocated for the passage of the Denying Firearms and Explosives to Dangerous Terrorists Act of 2015, which would prevent a known or suspected terrorist from purchasing a firearm or explosives. ",
+      "note": "Third-person text on his official House issue page 'Gun Safety', issued in his name. Page is undated.",
+      "subjects": [
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:17:42.394Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d453b12be920023c6729869b0f7e30ee73dad932e2e38c6286d14d0bd4e5964",
+      "kind": "record",
+      "url": "https://keating.house.gov/policy-work/issues/gun-safety",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "act": "other",
+      "motion": "cosponsor: Large Capacity Ammunition Feeding Device Act",
+      "note": "His official issue page says he cosponsored this bill. The page says it prohibits the trade and manufacture of high-capacity ammunition feeding devices. Bill number and Congress not given on the page.",
+      "subjects": [
+        "ban on large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:17:42.394Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a57e24361e4225e5d6b419914277a5b15056a42b3fa5d6f71b030930176cab5",
+      "kind": "record",
+      "url": "https://keating.house.gov/policy-work/issues/gun-safety",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "act": "other",
+      "motion": "cosponsor: Fix Gun Checks Act",
+      "note": "His official issue page says he cosponsored this bill. The page says it would require a background check for every firearm sale and list prohibited buyers in the national background check system. Bill number and Congress not given on the page.",
+      "subjects": [
+        "check every gun buyer",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:17:42.394Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f9a397e9d8000f99c77afbf8281878a4a34887362a018a8d622fffc90ff86188",
+      "kind": "record",
+      "url": "https://keating.house.gov/policy-work/issues/gun-safety",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "act": "other",
+      "motion": "cosponsor: Fire Sale Loophole Closing Act",
+      "note": "His official issue page says he cosponsored this bill. The page says it stops people whose firearms licence was revoked or denied from moving guns into a personal collection or to an employee. Bill number and Congress not given on the page.",
+      "subjects": [
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:17:42.394Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1a0109fa7a68a3b0041240eace3e159185c8b35fd28ce7b9e4d6fb73a0c67d6d",
+      "kind": "record",
+      "url": "https://keating.house.gov/policy-work/issues/gun-safety",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "act": "other",
+      "motion": "cosponsor: Gun Trafficking Prevention Act",
+      "note": "His official issue page says he cosponsored this bill. The page says it would criminalize transfer of firearms to prohibited people or giving false information on an ATF transaction form. Bill number and Congress not given on the page.",
+      "subjects": [
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:17:42.394Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a4aa72582b31ccc1211ac10df8d26c191d8ac0c46775cca6dde7f079220e35b1",
+      "kind": "own-words",
+      "url": "https://wbsm.com/keating-joins-fellow-house-democrats-for-sit-in-video/",
+      "date": "2016-06-22",
+      "date_precision": "day",
+      "passage": "\"When there's one moment of silence, one tragedy after another, some of which may have been averted because of a change in the law, that kind of thing runs against democratic principles in general,\" said Keating.",
+      "note": "Direct quote of him in a WBSM local radio story about a House sit-in over gun bills; the story describes the No Fly No Buy bill (no gun purchase by people banned from commercial flights). He says a vote matters more to him than the outcome.",
+      "subjects": [
+        "limits on who may have a gun",
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:17:42.394Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f2889abe04905469f7c95a294c27b91b14b78eeb07493472f3ffb9ab57177c69",
+      "kind": "own-words",
+      "url": "https://www.wbur.org/radioboston/2018/02/22/keating-florida-guns",
+      "date": "2018-02-22",
+      "date_precision": "day",
+      "passage": "\"There are bipartisan pieces of legislation that are there have been sitting there that would get the support of the majority but we don't know because they're not allowed to be put on the floor for a vote,\" says Keating.",
+      "note": "Direct quote of him on a WBUR Radio Boston page about what legislation he would support after the Florida school shooting. The page text does not name the bills in this quote.",
+      "subjects": [
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:17:42.394Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "ban on large-capacity magazines",
+        "limits on who may have a gun",
+        "carry permits",
+        "red-flag orders",
+        "Second Amendment general statement"
+      ],
+      "places": [
+        "On the Record (0 appearances, also searched by name)",
+        "official site https://keating.house.gov/policy-work/issues/gun-safety (fetched; saved)",
+        "official site press-release list https://keating.house.gov/media/press-releases (page 1 and a ?search=gun try; the site search did not filter; no gun items)",
+        "official site home, about and sponsored-legislation pages (nothing further on the subject)",
+        "campaign site keatingforcongress.com home, working-for-you, meet-bill, in-the-news, 2026-vote (only a list of endorsing groups mentions gun safety, not his own words)",
+        "blocked: https://www.congress.gov/member/william-keating/K000375 (403)",
+        "blocked: https://justfacts.votesmart.org/candidate/public-statements/4743/bill-keating/37/guns (403)",
+        "blocked: https://ballotpedia.org/Bill_Keating (403)",
+        "two web searches on name plus gun words and statements 2022-2024: found only the issue page, a blocked Vote Smart index, and 2016/2018 news pieces; no 2022-2026 statement text reachable",
+        "https://www.capeandislands.org/news/2018-02-22/congressman-calls-for-house-action-on-gun-control-bills (audio interview, no quote in page text, not saved)",
+        "Congressional Record 2018 extensions of remarks found by search were by another member, not saved",
+        "the issue page is undated"
+      ],
+      "found": 10,
+      "at": "2026-10-30T15:17:42.394Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "politician_id": "96b267e5-6626-4805-9455-cb0c0fed660c",
+  "findings": [
+    {
+      "id": "ddc872daa3c965714c4f7b3e42587b2b005a7a5c29f3b290aa4753626fe8ac00",
+      "kind": "record",
+      "url": "https://kslegislature.gov/li_2016/b2015_16/measures/SB45/",
+      "date": "2015-03-25",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-45-2015",
+      "act": "yea",
+      "motion": "Concurred with amendments (final Senate vote)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS Senate, Concurred with amendments (final Senate vote), 2015-03-25: yea (tally 31–8); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "C, F (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bb346d21dded80d0759a382fb2985fbca8fed25d6c3f999cc9bb181d5cb88725",
+      "kind": "own-words",
+      "url": "https://www2.ljworld.com/news/2013/dec/31/kansas-check-voter-birth-records/",
+      "date": "2013-12-31",
+      "date_precision": "day",
+      "passage": "\"It's an effort by a small minority that wants to repress voter participation,\"",
+      "note": "Lawrence Journal-World (2013-12-31) quotes him in an interview earlier that month, in a story on the state's proof-of-citizenship law and voter registrations held for missing documents. The quote ends mid-sentence in the story with the attribution; the quoted words are given whole. A second quote in the story: \"It's disappointing and frustrating.\"",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-registration holds"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:57:07.768Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e12d8c2c04969f9f4493070458d6fa03f7ff58d84685fb72235693093d0eeb43",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_191_HB2020.odt",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "nay",
+      "motion": "Senate: Emergency Final Action As Amended",
+      "note": "Senate roll call as printed ('Haley'), linked to David Haley (district 4) via the official 2025 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3c71054470934f5f0e87fc64dc7b14fb455f86ba9567e7bc878cac439dab24c1",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20110323095205_685691.odt",
+      "date": "2011-03-23",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2067-2011",
+      "act": "nay",
+      "motion": "Senate: HB 2067, AN ACT concerning elections; ... was considered on final action. (Final action; passed as amended)",
+      "note": "Senate roll call as printed ('Haley'), linked to David Haley (district 4) via the official 2011 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12d5b96635aaee125a967de3c18520774687c5737469fd65d2358255cda8634d",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Haley'), linked to David Haley (district 4) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c32e05d099cacb14913d1c7c047be9deb5093f489d52813e63f1f81be052e684",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Haley'), linked to David Haley (district 4) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e8daad3e3e031ab4fc3a5a2f561eb2ed0928969aecd76b434293b72a9767310a",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/chamber/documents/permanent_journal_senate_2012.pdf",
+      "date": "2012-05-08",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-129-2011",
+      "act": "yea",
+      "motion": "Senate: Senator Huntington moved the Senate adopt the Conference Committee Report on H Sub for SB 129. (The Conference Committee Report was adopted.)",
+      "note": "Senate roll call as printed ('Haley'), linked to David Haley (district 4) via the official 2012 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b9138e22bc80ebaf6ba7c64f427af10148c9599d784a107b8895179d07a5def9",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2016/b2015_16/measures/sb333/",
+      "date": "2016",
+      "date_precision": "year",
+      "instrument_id": "KS-SB-333-2016",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced (sb333_00_0000.pdf); no later version exists on the legislature site",
+      "note": "Named as co sponsor ('Haley') on the official bill text, summary or journal; linked to David Haley via the official 2016 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "773a23f2ab30c456870279e3a5e51881ec013b5fc572b2fa03296b427529d0f8",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/vote/?apn=b2023_24/year2/senate/legislative_days/day039_20240305/vote_records/vote_100_SB365.odt",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-365-2024",
+      "act": "nay",
+      "motion": "Senate: Final Action - Not passed",
+      "note": "Senate roll call as printed ('Haley'), linked to David Haley (district 4) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "voter-roll holds",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record: not run (no extract available in this pass)",
+        "Senate caucus caucus page for Sen. Haley (confirms identity; nothing on the subject)",
+        "KCUR 2024 voter guide Senate District 4: nothing on the subject",
+        "community voice 2024 candidate profile: nothing on the subject",
+        "Kansas Public Radio 2011 voter ID story: reporter paraphrase only, not saved as own words",
+        "Lawrence Journal-World 2007 voter ID story: he is not mentioned",
+        "Kansas Public Radio 2014 voter registration bill story: he is not mentioned",
+        "Lawrence Journal-World 2013 proof-of-citizenship story: one direct quote saved",
+        "blocked: https://ballotpedia.org (not fetched, listed as refusing)",
+        "not reviewed: https://x.com/davidhaleyks (campaign account, cannot be read)",
+        "committee testimony: bill pages checked for another bill only (S Sub for HB 2056, not on ID); none signed by this person"
+      ],
+      "found": 1,
+      "at": "2026-11-04T16:57:07.768Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 7,
+      "at": "2026-11-04T19:13:24.949Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

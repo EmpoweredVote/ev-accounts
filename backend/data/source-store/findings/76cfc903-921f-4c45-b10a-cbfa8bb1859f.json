@@ -26,7 +26,213 @@
         "fetched_at": "2026-10-21T03:40:10.558Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "1b96562889f13dffcac90cf1110c9184a748b9d0fbed673ce6066d9e6fee7240",
+      "kind": "record",
+      "url": "https://menefee.house.gov/media/press-releases/reps-menefee-and-dean-introduce-the-kimberly-vaughan-firearm-safe-storage-act",
+      "date": "2026-05-15",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8619-2026",
+      "act": "sponsor",
+      "note": "Press release dated 2026-05-15 says he and another member introduced the Kimberly Vaughan Firearm Safe Storage Act (H.R. 8619, 119th Congress): dealers, makers and importers would give written safe-storage information and a storage device with each firearm sold; Justice Department best practices; storage-device grants; a tax credit. Date is the release date, not the filing date.",
+      "subjects": [
+        "safe storage of guns",
+        "guns sold with a storage device"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:57:34.508Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7ca86e38b25dfd163fe2a9a53734dc7d4dd67bba97f39aa02233f189494a5818",
+      "kind": "own-words",
+      "url": "https://menefee.house.gov/media/press-releases/reps-menefee-and-dean-introduce-the-kimberly-vaughan-firearm-safe-storage-act",
+      "date": "2026-05-15",
+      "date_precision": "day",
+      "passage": "“Safe firearm storage is one of the simplest and most effective ways to prevent gun violence, suicides, accidental shootings, and to keep stolen weapons from ending up in the wrong hands.”",
+      "note": "Quote from his official release on his safe-storage bill.",
+      "subjects": [
+        "safe storage of guns",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:57:34.508Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "93f565b71a335d13df4704456f722a02fe01cf980212cc534334ea6b90242f8f",
+      "kind": "own-words",
+      "url": "https://menefee.house.gov/media/press-releases/congressman-menefee-s-statement-on-the-tragic-deaths-of-two-houston-high-school-students",
+      "date": "2026-09-25",
+      "date_precision": "day",
+      "passage": "We must keep fighting for solutions that keep guns away from those who seek to do harm and keep our students safe.",
+      "note": "Statement after two Houston-area students were killed in shootings; calls for solutions that keep guns from people who would harm others; no specific bill named.",
+      "subjects": [
+        "keep guns from people who would harm others",
+        "gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:57:34.508Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "18eede92fa4b37c7efdb10e789ad4628df246b4308db8617e213442d6b459240",
+      "kind": "own-words",
+      "url": "https://menefee.house.gov/media/press-releases/congressman-menefee-backs-legislation-to-protect-domestic-violence-survivors",
+      "date": "2026-10-20",
+      "date_precision": "day",
+      "passage": "As a member of the House Gun Violence Prevention Task Force, Congressman Menefee also supports federal policies aimed at addressing the dangerous intersection of domestic violence and gun violence, including efforts to keep firearms out of the hands of domestic abusers and protect families from further harm.",
+      "note": "Statement issued in his office's name on his support for keeping guns from domestic abusers; says he is on the House Gun Violence Prevention Task Force.",
+      "subjects": [
+        "keep guns from domestic abusers",
+        "gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:57:34.508Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cc10645d5316ebb42651c8a53d6c6aadcffad279f2b2ae4494ca267430ab9459",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1041",
+      "date": "2026-05-21",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1041-2026",
+      "act": "nay",
+      "motion": "On Passage (Roll 190)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 190), 2026-05-21: nay (tally 216–201); census gate: none.",
+      "subjects": [
+        "VA records barred from gun background check without a judge's finding",
+        "VA fiduciary or incompetence finding not a 'mental defective' adjudication"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1041-2026.htm",
+          "sha256": "2a2784caf1b89019cb01ab04ebd2e2332984244d9935fad9618771638d40338e"
+        }
+      }
+    },
+    {
+      "id": "7ec892592e9e81a8d9eb8988f864827e569606567c2d3dc28ee24bff21b9c73b",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1181",
+      "date": "2026-07-14",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1181-2026",
+      "act": "nay",
+      "motion": "On Passage (Roll 240)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 240), 2026-07-14: nay (tally 221–201); census gate: none.",
+      "subjects": [
+        "separate payment codes for gun stores barred",
+        "state and local rules on gun-store payment codes preempted"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1181-2026.htm",
+          "sha256": "f006527184528c0f2d077b081748501c1dd86c4e2c2b83f4ce23ab419e1fb25c"
+        }
+      }
+    },
+    {
+      "id": "ca23e7025d826a863f98362cb04dbe6c7118d52ee12a75770ac7b314e80da6d5",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/2189",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "US-HR-2189-2026",
+      "act": "nay",
+      "motion": "On Passage (Roll 70)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 70), 2026-02-12: nay (tally 233–185); census gate: none.",
+      "subjects": [
+        "less-than-lethal launchers exempt from federal firearm rules",
+        "firearms and ammunition excise tax waived for those devices",
+        "exempt from National Firearms Act"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-2189-2026.htm",
+          "sha256": "dc2e63136aaa75fcc392af14f19bb2aae027e280992db65f70d454213a650e4e"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "safe storage of guns",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "keep guns from domestic abusers",
+        "gun violence statements",
+        "court ruling on carry licensing"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://menefee.house.gov/ (home, issues page, press-release list; three gun-related releases saved)",
+        "https://menefee.house.gov/media/press-releases/reps-menefee-and-dean-introduce-the-kimberly-vaughan-firearm-safe-storage-act",
+        "https://menefee.house.gov/media/press-releases/congressman-menefee-s-statement-on-the-tragic-deaths-of-two-houston-high-school-students",
+        "https://menefee.house.gov/media/press-releases/congressman-menefee-backs-legislation-to-protect-domestic-violence-survivors",
+        "https://giffords.org/candidates/christian-menefee/ (advocacy group's page about him, not his own words; used only as a lead)",
+        "web searches: two (news on his name plus gun words; the safe-storage bill)",
+        "Ballotpedia: not reviewed (empty to fetch tool)",
+        "blocked: https://www.congress.gov/member/christian-menefee/M001230 (403; sponsor list unreachable, so the bill is recorded from his official press release)",
+        "blocked: https://www.congress.gov/search (403)",
+        "blocked: https://cao.harriscountytx.gov/Connect/Newsroom/harris-county-attorney-christian-d-menefee-statement-on-new-york-state-rifle-pistol-association-inc-v-bruen and the Uvalde statement (404; his 2022 county-attorney statements could not be read)",
+        "campaign site: not reviewed"
+      ],
+      "found": 4,
+      "at": "2026-10-30T22:57:34.508Z",
+      "by": "source-collector"
+    }
+  ]
 }

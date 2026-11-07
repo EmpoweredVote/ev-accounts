@@ -226,6 +226,15 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
 
 ## Stage 5 rulings
 
+### A sponsorship of a near-unanimous bill is gated like the vote
+- **Ruling:** a sponsorship of a bill whose every counted final floor vote is near-unanimous (codebook V4.1) is gated
+  like the vote: it cannot seat anyone. A sponsorship of a bill with no floor vote on file is not gated. A gated act
+  (vote or sponsorship) never makes a record two-sided.
+- **Date and source:** 2026-11-03, Chris Andrews, gun-policy Stage 5 Session C
+  (`.planning/research/s3-prep-gun-policy/stage5/README.md`, SESSION C). First cases: VA HB 101 (2026, 99-0),
+  IN HB 1651 (2019, 93-1).
+- **Scope:** every topic.
+
 ### Local records support own words, never seat alone
 - **Ruling:** a local ordinance or resolution that shows which way a local official leans may serve as supporting
   evidence beside that person's own words on the topic. It never seats anyone alone. A local law that only decides
@@ -251,8 +260,12 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
   35 of 35 own-words seats; the pass mark (34 of 35) was set before the draw, with the setup unchanged from run 3.
   Runs 2 (69%) and 3 (89.5%) failed; their misses led to setup fixes (bill texts named only in words, rulings given
   without names) and ruling W3-R24, so run 4 confirms repeatability on the same seats rather than testing new ones.
-  Record: the local planning folder `s3-prep-voting-rights/stage5/blind-check/` (runs 2 to 4). Other topics
-  keep the hold.
+  Record: the local planning folder `s3-prep-voting-rights/stage5/blind-check/` (runs 2 to 4).
+- **Retired for `gun-policy`** (2026-11-04, Chris Andrews: "Approve"): blind check run 1 agreed on 24 of 24
+  own-words seats (every one in the codes: 20 written and pending review, 4 held or moved); the pass mark (23 of 24)
+  was set before the draw. Six blind Opus coders used the Stage 5 coder brief (revision 5) with their output sent
+  elsewhere. Two blind codes reached the same rung on a joint basis (a vote as support); agreement counts the rung.
+  Record: the local planning folder `s3-prep-gun-policy/stage5/blind-check/`. Other topics keep the hold.
 
 ### A vote on the record carries a joint seat
 - **Ruling:** a seat that rests on the person's own words together with a legislative record (a vote, sponsorship
@@ -326,6 +339,16 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
   `.planning/research/s3-prep-voting-rights/stage5/write/wi-01-clancy/`).
 - **Scope:** every topic.
 
+### A loser's written research stays
+- **Ruling:** once a person's Stage 5 research is written to the draft season, it stays even if they lose their race:
+  their outcome rows, passages and review rows are never removed. Losing only takes a person out of the next round's
+  search and coding ("After the results", STAGE5.md). The record is kept in case they run for another office later.
+- **Date and source:** 2026-11-06, Chris Andrews, gun-policy North Carolina ("we aren't going to remove their rows,
+  even if they lose"), on batch `nc-01-close`: four legislators in races not yet called (Britt, Reeder, Blust,
+  Pickett) were written and approved before the results, on the runner's instruction
+  (`.planning/research/s3-prep-gun-policy/stage5/write/nc-01-close/PREVIEW.md`).
+- **Scope:** every topic.
+
 ### OnTheIssues and Wikipedia are never sources
 - **Ruling:** OnTheIssues and Wikipedia are finding aids only: use them to find a primary source, then cite that.
   Neither is cited as stance evidence, and neither is listed as an "examined" old source on a blank row. An answer
@@ -377,6 +400,36 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
 
 These change how a general rule reads for **one topic only**. They are not general. Do not apply them to another
 topic; if a topic seems to need the same reading, ask for a ruling and point to the entry here.
+
+### gun-policy — S4 licence rule, S5 main-subject reading
+- **Reading:** S4 — a carry widening that keeps the permit does not conflict with a rung 3 act on who may have a gun or
+  how guns are bought or made, or with a rung 3 ban on carrying in named places (polling places, ballot-counting
+  places, the Capitol); the record sits at rung 3. It still conflicts with a type ban (rungs 1-2), and a permit repeal
+  conflicts with every rung 1-3 act. S5 — a part that creates or changes a gun crime, or only changes a word or
+  cross-reference in another law, does not make a firearms bill multi-subject (narrows census Q1 kind 2).
+- **Date and source:** 2026-11-03, Chris Andrews, Stage 5 Session C (Season 3 annex S1-S8; CA_0356). **Narrowed
+  2026-11-05**, Chris Andrews, Michigan Stage 5 ("Seat them at rung 3"): the 2026-11-03 text said a place ban still
+  conflicts; it no longer does. 31 Michigan records moved to rung 3; no record already written for the federal list,
+  VA, TX, PA, IN or MA had this shape (`.planning/research/s3-prep-gun-policy/stage5/README.md`, Michigan and
+  "Place-ban re-check").
+- **Scope:** the Season 3 revision 5 of `gun-policy` only. Not offered to other topics until a second topic shows the
+  same shape (runner, 2026-11-03).
+
+### gun-policy — carry for officers and for one named professional group is out of scope
+- **Reading:** a bill that only widens where serving or retired law-enforcement officers may carry (US-HR-354-2024,
+  US-HR-2243-2025, IN HB 1391-2020) is out of scope (`adjacent`). So is a bill that only lets **one named
+  professional group** carry for its work: NC H 194 (2021, federal judges and US attorneys who hold a permit) and
+  NC H 48 (2021, emergency medical staff serving with a police tactical team). A vote or sponsorship on either kind
+  neither seats nor blanks anyone and does not make a record two-sided; it is not a rung 4 act.
+- **Date and source:** police carry 2026-10-30, Chris Andrews, Stage 5 coding (`.planning/research/s3-prep-gun-policy/stage5/README.md`,
+  "RULINGS (runner, 2026-10-30, during coding)"). Named professional group 2026-11-06, Chris Andrews, North Carolina
+  Stage 5 ("No, like police carry"): H 194 alone had seated four people at rung 4 whose every other carry and permit
+  vote was a No; under the ruling three became blanks (two nay-only, one wording), one stayed at rung 4 on another bill, and Ball's
+  record stopped being two-sided (`write/nc-01/PREVIEW.md`). Until now the police-carry reading lived only in the
+  coder script (`make_code_batches.py`).
+- **Open:** NC H 47 (2021, elected officials carry on duty) fits the wording but was not named; the NC re-coders read
+  it as out of scope and no outcome depends on it.
+- **Scope:** the Season 3 revision 5 of `gun-policy` only.
 
 ### education-equity-programs — R1 (single-subject scope)
 - **Reading:** a separate operative part makes a bill multi-subject only when it acts **outside K-12 schools**

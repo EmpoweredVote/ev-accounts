@@ -67,7 +67,8 @@
         },
         {
           "name": "Brown (OH)",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "56603da5-e7ad-48a9-8c77-259513869ed4"
         },
         {
           "name": "Cantwell (WA)",
@@ -293,7 +294,8 @@
         },
         {
           "name": "Ayotte (NH)",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "13d45047-8183-46bd-a04a-5f5420b710cc"
         },
         {
           "name": "Barrasso (WY)",
@@ -371,7 +373,8 @@
         },
         {
           "name": "Graham (SC)",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "20aa1064-bbe7-484c-b779-28d99e92e608"
         },
         {
           "name": "Grassley (IA)",

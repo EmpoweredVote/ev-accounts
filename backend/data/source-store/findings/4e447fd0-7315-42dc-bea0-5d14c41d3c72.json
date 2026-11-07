@@ -138,7 +138,7 @@
       "instrument_id": "PA-SB-1-2023",
       "act": "sponsor",
       "motion": "co sponsor, PN 385 (House reported, passed House May 22, 2023). PN 26 (passed Senate Jan 11, 2023) also read; the voter ID paragraph reads the same in both.",
-      "note": "Named as co sponsor ('YAW') on the official bill page; linked to Gene Yaw via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "note": "Named as co sponsor ('YAW') on the official bill page; linked to Gene Yaw via the official 2023-2024 Senate member roll (identity step 2026-10-28). Corrected 2026-11-03: the sponsorship covers PN 26, which carries the voter-ID amendment; the House version PN 385 does not.",
       "subjects": [
         "voter ID at the polls"
       ],
@@ -216,6 +216,244 @@
         "fetched_at": "2026-10-28T22:51:16.464Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "aeb65d12036af99040b815acf169cd88e92459727111bbf138f6ffd554e9435f",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2021/sb565",
+      "date": "2021-11-09",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-565-2021",
+      "act": "yea",
+      "motion": "Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Final Passage, 2021-11-09: yea (tally 29–21); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/PA_SB565_PN1212.pdf",
+          "sha256": "8599bf5e56d8378a456fd36d933e5a05733e1a059d642ddb6883c809f6226568"
+        }
+      }
+    },
+    {
+      "id": "8d578900ed42e803cf538a32e61c01b8b4724fe4232f4e8611bafcca4a2f2a43",
+      "kind": "own-words",
+      "url": "https://www.senatorgeneyaw.com/enews/051826-2/",
+      "date": "2026-05-18",
+      "date_precision": "day",
+      "passage": "The Senate moved to protect the Second Amendment rights of law-abiding citizens by approving Senate Bill 822, which strengthens Pennsylvania’s state preemption over regulating firearms and ammunition, preventing local governments from enacting ordinances that are more restrictive than those established by the General Assembly.",
+      "note": "Text of his office e-newsletter (not a first-person quote) describing the Senate's passage of SB 822, which bars local gun rules stricter than state law. The newsletter does not say whether he sponsored it.",
+      "subjects": [
+        "state preemption of local gun rules",
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:26:27.708Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "128258bd73fb5244a23e938c132bd6efb5ebddc21e44ba4d60962d9ad50cd090",
+      "kind": "own-words",
+      "url": "https://www.senatorgeneyaw.com/enews/051826-2/",
+      "date": "2026-05-18",
+      "date_precision": "day",
+      "passage": "Allowing local governments to establish a patchwork of inconsistent gun laws would make it impossible for Pennsylvania residents, along with citizens from other states, to travel without fear of inadvertently breaking a local law they were unaware of.",
+      "note": "Same office e-newsletter, giving the reason for SB 822.",
+      "subjects": [
+        "state preemption of local gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:26:27.708Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7aab0b2c406ed4a12059a8f9e5d81b1975916b0c300a3c9fb8b40fbf83109f72",
+      "kind": "own-words",
+      "url": "https://www.senatorgeneyaw.com/enews/062625-2/",
+      "date": "2025-06-26",
+      "date_precision": "day",
+      "passage": "A new reciprocity agreement allows holders of Pennsylvania Licenses to Carry Firearms to do so in Virginia, making it the 30th state that has a concealed carry reciprocity agreement with Pennsylvania.",
+      "note": "Office e-newsletter item reporting a carry-permit reciprocity agreement made by the Attorney General; reports it without comment.",
+      "subjects": [
+        "honor other states' carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:26:27.708Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f8ba761f92f0e872ce8e5d77f3ccfd80c1858310f177d25520a334ec191f3db",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=1747",
+      "date": "2020-11-18",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1747-2019",
+      "act": "yea",
+      "motion": "Senate Floor: HB 1747 PN 2338, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 1747 PN 2338, FINAL PASSAGE, 2020-11-18: yea (tally 29–20); census gate: none.",
+      "subjects": [
+        "emergency-time carry restriction repealed",
+        "no seizure of guns, accessories or ammunition during emergencies",
+        "governor cannot suspend firearm sales in emergencies"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1747-2019.introduced.pdf",
+          "sha256": "a4e95a0229bcf1cde7a5fa9d58ac2c33f09477e837d84525b7ff04d3a5f71ece"
+        }
+      }
+    },
+    {
+      "id": "efb62f310bc5c5696e4809ac5721cfa0f83c160127cc45d98447f27c96540ce6",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=2440",
+      "date": "2020-11-18",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-2440-2019",
+      "act": "yea",
+      "motion": "Senate Floor: HB 2440 PN 3776, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 2440 PN 3776, FINAL PASSAGE, 2020-11-18: yea (tally 29–20); census gate: none.",
+      "subjects": [
+        "gun and ammunition businesses and ranges can never be closed or limited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2440-2019.amended.pdf",
+          "sha256": "9bdd564f4d0812adfa9af91a3ac7f854f4196ebd9577febef5953c94486be5c8"
+        }
+      }
+    },
+    {
+      "id": "4283984ad3d78c5d2314c26ee04a95552a5dbce6bc8b22bffb9b0237b64f1919",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=979",
+      "date": "2022-01-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-979-2021",
+      "act": "yea",
+      "motion": "Senate Floor: HB 979 PN 1706, Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 979 PN 1706, Final Passage, 2022-01-25: yea (tally 32–17); census gate: none.",
+      "subjects": [
+        "local gun and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs",
+        "localities barred from suing gun makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-979-2021.amended.pdf",
+          "sha256": "494cfe800bdb89be85cf7c2a28a81c203b581e7614e7bc8f69211cb4c736f5dd"
+        }
+      }
+    },
+    {
+      "id": "6bd9e0daf575de3278ee6eb88fa505dc19674172b27ff66e23a7275845a464d8",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb822",
+      "date": "2026-05-06",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-822-2025",
+      "act": "yea",
+      "motion": "Senate Floor: PN0881, Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: PN0881, Final Passage, 2026-05-06: yea (tally 30–20); census gate: none.",
+      "subjects": [
+        "local firearm and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-822-2025.introduced.pdf",
+          "sha256": "38d1bdcb626cc1614fee0c352427248f5e599df007fead7d1a6031742385df55"
+        }
+      }
+    },
+    {
+      "id": "d20f227db97f86c03f373ca7e0740f326dd513940d0ee0196faf2397fc32bb02",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb822",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-822-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-SB-822-2025 (LegiScan sponsor list): SB822 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for limitation on the regulation of firearms and ammunition; and, in preemptions, providing for regulation of firearms and ammunition..",
+      "subjects": [
+        "local firearm and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-822-2025.introduced.pdf",
+          "sha256": "38d1bdcb626cc1614fee0c352427248f5e599df007fead7d1a6031742385df55"
+        }
+      }
     }
   ],
   "searches": [
@@ -271,6 +509,32 @@
       "found": 1,
       "at": "2026-10-28T22:51:16.464Z",
       "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "state preemption of local gun rules",
+        "carry permits and reciprocity",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "Second Amendment general statement",
+        "bills sponsored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site senatorgeneyaw.com: fetched his page on being sworn into a fifth term (2025-01-07, term shown as running past 2026), site search for firearm, gun, Second Amendment, background check and concealed carry; read three e-newsletters that matched",
+        "his seat was last on the ballot in 2024 per a search result; no 2026 candidacy found (Ballotpedia gave no usable page)",
+        "web search x3 (his firearm bills; 2026 status; background-check op-ed); nothing found in his own words on assault-style guns, red-flag orders or background checks",
+        "blocked: https://www.palegis.us/senate/members/sponsor-list?id=1186 (403)",
+        "blocked: https://www.legis.state.pa.us/cfdocs/legis/home/member_information/Senate_bio.cfm?id=1186 (403)",
+        "blocked: https://legiscan.com/PA/sponsor/yaw/2025 (403)",
+        "not reviewed: Ballotpedia (empty to the fetch tool); no campaign site found separate from his Senate site; his sponsored-bill list could not be read, so sponsorships of gun bills are unconfirmed"
+      ],
+      "found": 3,
+      "at": "2026-10-30T22:26:27.708Z",
+      "by": "source-collector"
     }
   ]
 }

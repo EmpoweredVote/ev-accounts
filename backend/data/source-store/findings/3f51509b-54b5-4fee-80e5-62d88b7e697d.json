@@ -140,9 +140,9 @@
       "instrument_id": "PA-SB-224-2023",
       "act": "sponsor",
       "motion": "co sponsor, PN 1171 (House Appropriations re-reported as amended, Oct. 17, 2023; the version that passed the House 104-99 on Oct. 18, 2023). Read. Earlier versions: PN 194 (introduced), PN 1059, PN 1097 (Senate-passed 45-2), PN 1159, PN 1160. Page copy dated 2025-12-02.",
-      "note": "Named as co sponsor ('SANTARSIERO') on the official bill page; linked to Steven J. Santarsiero via the official 2023 member roll of the Senate (identity step 2026-10-28).",
+      "note": "Named as co sponsor ('SANTARSIERO') on the official bill page; linked to Steven J. Santarsiero via the official 2023 member roll of the Senate (identity step 2026-10-28). Corrected 2026-11-03: SB 224 as introduced (PN 194) and as passed by the House (PN 1171) has no voter-ID text; the ID part was a House amendment (A02365) later struck.",
       "subjects": [
-        "voter ID at the polls"
+        "voter ID removed from this version"
       ],
       "topic_keys": [
         "voting-rights"
@@ -151,6 +151,379 @@
         "fetched_by": "identity-pa-2026-10-29",
         "fetched_at": "2026-10-29T14:14:50.859Z",
         "method": "webfetch"
+      }
+    },
+    {
+      "id": "1d0155895ce8411a4438986cd1d5eafc092c54b213a013aab945a0900ab58bf7",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2021/sb565",
+      "date": "2021-11-09",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-565-2021",
+      "act": "nay",
+      "motion": "Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Final Passage, 2021-11-09: nay (tally 29–21); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/PA_SB565_PN1212.pdf",
+          "sha256": "8599bf5e56d8378a456fd36d933e5a05733e1a059d642ddb6883c809f6226568"
+        }
+      }
+    },
+    {
+      "id": "0acdbf955a37ad09e1eebbb73850a5f0265345d1d1803a85bca09f2ee4e65956",
+      "kind": "own-words",
+      "url": "https://pasenate.com/senator-santarsiero-to-introduce-legislation-banning-military-style-assault-weapons-in-pennsylvania/",
+      "date": "2022-06-10",
+      "date_precision": "day",
+      "passage": "“Military-style weapons have no place in civilian society,” said Sen. Santarsiero at a press conference on Thursday in Lower Makefield Township.",
+      "note": "Quoted at the press conference announcing his assault-weapon bill.",
+      "subjects": [
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:50:49.825Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6986b8cb279c711914c49a4918a5f254e5bc73e9f876b80bf2f6a6e46ead84d0",
+      "kind": "own-words",
+      "url": "https://pasenate.com/senator-santarsiero-to-introduce-legislation-banning-military-style-assault-weapons-in-pennsylvania/",
+      "date": "2022-06-10",
+      "date_precision": "day",
+      "passage": "“Since the Sandy Hook Elementary School shooting in 2012, Pennsylvania has taken no meaningful action to keep our children safe with reasonable gun safety measures.  That must change.”",
+      "note": "His statement when announcing his assault-weapon ban bill.",
+      "subjects": [
+        "ban on assault-style guns",
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:50:49.825Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "84fb3b546156e9d36d63567507892dfa182e2bc0d35fc2e2b207dbae2eebeab6",
+      "kind": "record",
+      "url": "https://pasenate.com/senator-santarsiero-to-introduce-legislation-banning-military-style-assault-weapons-in-pennsylvania/",
+      "date": "2022-06-10",
+      "date_precision": "day",
+      "act": "author",
+      "motion": "Pennsylvania Senate bill announced 2022-06-10 to ban military-style assault weapons and magazines over 10 rounds (number unconfirmed; a news report calls it SB 1300)",
+      "note": "He announced a bill to ban military-style assault weapons: it widens the state definition to more than 150 gun models, bans sale of magazines over 10 rounds, and sets a voluntary buy-back. Modeled on a Connecticut law. Bill number not confirmed on an official page (a news report calls it SB 1300).",
+      "subjects": [
+        "ban on assault-style guns",
+        "limit on magazine size"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:50:49.825Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8a80531c94f75369604ef4978b65b645acd55ccba4b3adbad02e9f8afe77965b",
+      "kind": "own-words",
+      "url": "https://www.senatorstevesantarsiero.com/?p=73643",
+      "date": "2019-09-25",
+      "date_precision": "day",
+      "passage": "“I am glad we had these hearings this week, but what we really need are hearings and votes on the actual gun safety bills currently before the Senate.  Let’s have a vote on these bills. Then we can say we have done something to keep our communities safe.”",
+      "note": "His statement after Senate Judiciary hearings on gun issues.",
+      "subjects": [
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:50:49.825Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ca2b4a3fbc7c24ff48396e81da877cedb3cdda13176b5551b793c0450f185ea8",
+      "kind": "own-words",
+      "url": "https://www.senatorstevesantarsiero.com/?p=73643",
+      "date": "2019-09-25",
+      "date_precision": "day",
+      "passage": "Bills like universal background checks, red flag, lost and stolen, safe storage and a ban on assault weapons would all help curb gun violence and suicides, have all languished in committee year after year.",
+      "note": "He names the bills he wants voted on.",
+      "subjects": [
+        "check every gun buyer",
+        "red flag orders",
+        "safe storage of guns",
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:50:49.825Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "af6464ff68a45258e4ad2691ba1f9cd404b5772c4921f9519cb3c441242c9402",
+      "kind": "own-words",
+      "url": "https://www.senatorstevesantarsiero.com/?p=73391",
+      "date": "2019-08-16",
+      "date_precision": "day",
+      "passage": "“The Pennsylvania General Assembly must now do its part and hold votes on common sense gun safety measures.",
+      "note": "His reaction to a governor's executive order on gun violence.",
+      "subjects": [
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:50:49.825Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "18ca8a0bbe0013f12adf16ef30afcea3c76d8b85d069b959903edf359105748d",
+      "kind": "record",
+      "url": "https://www.senatorstevesantarsiero.com/?p=58814",
+      "date": "2019-02",
+      "date_precision": "month",
+      "instrument_id": "PA-SB-137-2019",
+      "act": "sponsor",
+      "note": "Primary sponsor of SB 137 (safe storage of a firearm when the owner lives with a person who may not lawfully have a gun) and SB 138 (safe storage regardless of who lives there). Source is his office's release; date is the Parkland anniversary event week, month only.",
+      "subjects": [
+        "safe storage of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:50:49.825Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "faec6d398d3068b17ba9d67c8b7642c198d1ede73a7b928a5672a975fe3bb872",
+      "kind": "record",
+      "url": "https://www.senatorstevesantarsiero.com/?p=58814",
+      "date": "2019-02",
+      "date_precision": "month",
+      "instrument_id": "PA-SB-138-2019",
+      "act": "sponsor",
+      "note": "Primary sponsor of SB 138, safe storage of firearms regardless of who lives with the owner.",
+      "subjects": [
+        "safe storage of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:50:49.825Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6926d5aca1b8e5dfa1d1fe1815b11bc6b750c15358891fcd9c4ea5a405b5785b",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=1747",
+      "date": "2020-11-18",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1747-2019",
+      "act": "nay",
+      "motion": "Senate Floor: HB 1747 PN 2338, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 1747 PN 2338, FINAL PASSAGE, 2020-11-18: nay (tally 29–20); census gate: none.",
+      "subjects": [
+        "emergency-time carry restriction repealed",
+        "no seizure of guns, accessories or ammunition during emergencies",
+        "governor cannot suspend firearm sales in emergencies"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1747-2019.introduced.pdf",
+          "sha256": "a4e95a0229bcf1cde7a5fa9d58ac2c33f09477e837d84525b7ff04d3a5f71ece"
+        }
+      }
+    },
+    {
+      "id": "7ac860115240e898e99179f0252f386cf4942bf1be694ef5653fb8d3aaf3a31c",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=2440",
+      "date": "2020-11-18",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-2440-2019",
+      "act": "nay",
+      "motion": "Senate Floor: HB 2440 PN 3776, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 2440 PN 3776, FINAL PASSAGE, 2020-11-18: nay (tally 29–20); census gate: none.",
+      "subjects": [
+        "gun and ammunition businesses and ranges can never be closed or limited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2440-2019.amended.pdf",
+          "sha256": "9bdd564f4d0812adfa9af91a3ac7f854f4196ebd9577febef5953c94486be5c8"
+        }
+      }
+    },
+    {
+      "id": "e551ed2f59e072bfb12b47cdaee82befe90ec2b072f23db862ca5acdcd44d811",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=979",
+      "date": "2022-01-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-979-2021",
+      "act": "nay",
+      "motion": "Senate Floor: HB 979 PN 1706, Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 979 PN 1706, Final Passage, 2022-01-25: nay (tally 32–17); census gate: none.",
+      "subjects": [
+        "local gun and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs",
+        "localities barred from suing gun makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-979-2021.amended.pdf",
+          "sha256": "494cfe800bdb89be85cf7c2a28a81c203b581e7614e7bc8f69211cb4c736f5dd"
+        }
+      }
+    },
+    {
+      "id": "aeb8266984e53754ceef8ff83f7e417709cb966b7ba747cb9d64e2c79c4a49ed",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb822",
+      "date": "2026-05-06",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-822-2025",
+      "act": "nay",
+      "motion": "Senate Floor: PN0881, Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: PN0881, Final Passage, 2026-05-06: nay (tally 30–20); census gate: none.",
+      "subjects": [
+        "local firearm and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-822-2025.introduced.pdf",
+          "sha256": "38d1bdcb626cc1614fee0c352427248f5e599df007fead7d1a6031742385df55"
+        }
+      }
+    },
+    {
+      "id": "3295f3ca764ec705e99d1e3ac2783e1ae0949dab0b7628a119ff558b5999a87e",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=S&type=B&bn=204",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-204-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-SB-204-2023 (LegiScan sponsor list): SB204 (2023-2024 Regular Session): In actions, proceedings and other matters generally, providing for extreme risk protection orders..",
+      "subjects": [
+        "court orders to remove guns from people at risk of harming themselves or others",
+        "family members and police may petition",
+        "penalty for possessing guns under an order"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-204-2023.introduced.pdf",
+          "sha256": "3aaf5420de53bef1bf18d7ed5c88cda96951528d75fb2331337afa67ef725805"
+        }
+      }
+    },
+    {
+      "id": "974bcaa11083851fdf648bd4b6b53b2f69fbd2b79d1857b0e68638182e4e9f3b",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb348",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-348-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-SB-348-2025 (LegiScan sponsor list): SB348 (2025-2026 Regular Session): In firearms and other dangerous articles, providing for report of theft or loss of firearm; and imposing a penalty..",
+      "subjects": [
+        "lost or stolen firearm must be reported within 24 hours",
+        "fine for failing to report"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-348-2025.introduced.pdf",
+          "sha256": "abc26212fcdd2ced433b042efb2f17e7287787752032e5f4e6f1cba78f99f4e2"
+        }
       }
     }
   ],
@@ -221,6 +594,32 @@
       "found": 1,
       "at": "2026-10-29T14:14:50.859Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "safe storage of guns",
+        "red flag orders",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site senatorstevesantarsiero.com: gun-safety tag page and three press releases (2019-02, 2019-08, 2019-09)",
+        "Pennsylvania Senate caucus news site pasenate.com: 2022-06-10 release on the assault-weapon bill",
+        "web search: statement and bill searches (2 searches); nothing newer than 2022 found on his own site",
+        "blocked: https://www.palegis.us/legislation/bills/2025/sb200",
+        "blocked: https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2025&sind=0&body=S&type=B&bn=200",
+        "blocked: https://legiscan.com/PA/people/steven-santarsiero/id/20021",
+        "blocked: https://legiscan.com/PA/bill/SB1300/2021 (empty)",
+        "not reviewed: legislature member sponsorship list (official page 404/blocked), so sponsorships come from his office's releases only; a 2022 bill number and the 2025-26 assault-weapon bill SB 200 sponsor were not confirmed on an official page",
+        "Ballotpedia: not reachable by fetch tool, not reviewed"
+      ],
+      "found": 8,
+      "at": "2026-10-30T20:50:49.825Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -1,0 +1,154 @@
+{
+  "politician_id": "f7f926ec-2b4b-4176-8166-5ba45f288249",
+  "findings": [
+    {
+      "id": "45f2d080003eb30988bc5379fe7c78f556b3d88a1c852eaa2d634e39973634ed",
+      "kind": "own-words",
+      "url": "https://thebeaconnews.org/stories/2024/10/09/leah-howell-and-kyle-beauchamp-run-for-kansas-house-district-2024-election/",
+      "date": "2024-10-09",
+      "date_precision": "day",
+      "passage": "Yes. While Kansas is rated one of the best states for election security in the country, the USPS will not guarantee a postmark on all mail ballots and not all USPS postmarks contain a date and time stamp. Allowing mail-in ballots that currently arrive after 7 p.m. on Election Day gives mail ballot voters no guarantee that their ballot will be counted due to this ambiguity. The only way to ensure both mail ballot voters and in person voters are held to the same standard (of turning in or being in line) to vote by 7 p.m. on Election Day is to remove the current 3-day mail ballot extension.",
+      "note": "Her answer on whether to end the three-day grace period for mail ballots. The Wichita Beacon says she did not respond to its guide and drew her answers from her voting record, campaign website and social media page, so the wording is the outlet's attribution rather than a form she filled in. Not about ID or citizenship; saved as a related election-rule statement.",
+      "subjects": [
+        "mail-ballot receipt deadline",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:00:24.605Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a180dac9fbe82db0f7ed1e12eb5a8927f8abd4f868ef36e3cf40bf126221dbed",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/house/legislative_days/day045_20250320/vote_records/0275_HB2020.odt",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "House: Concurred with amendments",
+      "note": "House roll call as printed ('Howell'), linked to Leah Howell (district 82) via the official 2025 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.936Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba7a4d666ff4f78f90fc1c3060009b25057e446b4bc7846bcf906e1cf07d44b3",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day051_20260326/vote_records/0342_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "House: Conference Committee Report was adopted",
+      "note": "House roll call as printed ('Howell'), linked to Leah Howell (district 82) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.936Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21f55a599c11a6bfd03cc0b661541d4440ff0a0808ab91e9abc25020cfb5fc94",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day053_20260409/vote_records/0408_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "House: Motion to override veto prevailed",
+      "note": "House roll call as printed ('Howell'), linked to Leah Howell (district 82) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.936Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45a6a0e651989653960fc97af7759af58ffb11d0dd3f56bdfeab65bb700b032e",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day023_20260212/vote_records/0067_HB2448.odt",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2448-2026",
+      "act": "yea",
+      "motion": "House: Emergency Final Action - Passed as amended",
+      "note": "House roll call as printed ('Howell'), linked to Leah Howell (district 82) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.936Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "mail-ballot receipt deadline",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "KS legislature member page https://kslegislature.gov/legislators/rep_howell_leah_1/ (confirms House District 82, Sedgwick County, member of Federal and State Affairs; no news links; sponsored-bills list did not load)",
+        "Wichita Beacon 2024 voter guide https://thebeaconnews.org/stories/2024/10/09/leah-howell-and-kyle-beauchamp-run-for-kansas-house-district-2024-election/ (read in full by curl; one relevant answer, on the mail-ballot grace period; the outlet says she did not answer its guide and her answers come from her voting record, campaign website and social media page)",
+        "choicetracker profile (nothing on the subject)",
+        "campaign website: not found by web search; not reviewed",
+        "7 web searches (voter ID, campaign site, newsletter or column, questionnaire, election integrity, noncitizen voting): nothing further on the subject in her own words",
+        "blocked: https://ballotpedia.org/Leah_Howell (not fetched, listed as refusing)",
+        "blocked: kansasreflector.com (not fetched, listed as refusing)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T17:00:24.605Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T19:13:24.936Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

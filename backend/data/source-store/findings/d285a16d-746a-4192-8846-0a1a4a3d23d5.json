@@ -1,0 +1,336 @@
+{
+  "politician_id": "d285a16d-746a-4192-8846-0a1a4a3d23d5",
+  "findings": [
+    {
+      "id": "709cc1431664e6a3d8bd5d61a1636a533dc88bcba773fb30501803c1744dfd37",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/134/sb215",
+      "date": "2022-03-02",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-215-2022",
+      "act": "yea",
+      "motion": "Passed (final House vote per Votes tab)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH House, Passed (final House vote per Votes tab), 2022-03-02: yea (tally 58–36); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/OH_sb215_EN.pdf",
+          "sha256": "dddae0081901748ede39524ddca0094c322a065fe443d8ffdbae0913c1a95fa4"
+        }
+      }
+    },
+    {
+      "id": "fc3904af72816e20eee26f7d6b78aa9b36edf61f3657964c0103f4629f0fd874",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_127/legislation/sb380/actions/",
+      "date": "2008-12-16",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-380-2008",
+      "act": "yea",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 55-43) on S. B. No. 380, from the Ohio Legislature's own actions record, which lists each member by id (rep_oelslager_scott_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e8991e8c4732d1bc73efa9cf389737e776366b3a00ef0a33ea403e0523afaad3",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_128/legislation/hb260/actions/",
+      "date": "2009-11-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-260-2009",
+      "act": "nay",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 52-46) on H. B. No. 260, from the Ohio Legislature's own actions record, which lists each member by id (rep_oelslager_scott_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "57d98a1b5be65225931ee3b1d6a7e1b4853194fdbd3ac2c5357331835c205d49",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_129/legislation/hb194/actions/",
+      "date": "2011-06-23",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-194-2011",
+      "act": "yea",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 23-10) on H. B. No. 194, from the Ohio Legislature's own actions record, which lists each member by id (sen_oelslager_scott_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a71c069d74164e0f87f2ff55300c97128543442bd125e3f9eeef863d9c63c4c9",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_129/legislation/hb224/actions/",
+      "date": "2011-07-13",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-224-2011",
+      "act": "yea",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 29-0) on H. B. No. 224, from the Ohio Legislature's own actions record, which lists each member by id (sen_oelslager_scott_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "937325114349a065b5be9066477f45bf683129e87ac04a0c5f2bb5aad693d2cf",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/129/hb224",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-224-2011",
+      "act": "sponsor",
+      "motion": "co sponsor, As Passed by the Senate (04_PS)",
+      "note": "Listed as co sponsor of H. B. No. 224 (As Passed by the Senate) on the Ohio Legislature's own record (sen_oelslager_scott_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "08401b1f7e0f4f33f0bbda64c8f62a964363ab5541c111c6f51b68e66136aef7",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_129/legislation/sb148/actions/",
+      "date": "2011-05-24",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-148-2011",
+      "act": "yea",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 23-10) on S. B. No. 148, from the Ohio Legislature's own actions record, which lists each member by id (sen_oelslager_scott_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3028b978e7782cc9edad41f3a86de63f67d62319c2b949b76c6640ba45600277",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/sb205/actions/",
+      "date": "2014-02-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-205-2014",
+      "act": "yea",
+      "motion": "Senate: Concurred in House amendments",
+      "note": "OH Senate floor roll call (Concurred in House amendments, tally 21-8) on S. B. No. 205, from the Ohio Legislature's own actions record, which lists each member by id (sen_oelslager_scott_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9f34bcb541215a3702be021f7cc7d1556392c5029f687a04080f8480cb46ced",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/sb216/actions/",
+      "date": "2014-02-26",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-216-2014",
+      "act": "yea",
+      "motion": "Senate: Concurred in House amendments",
+      "note": "OH Senate floor roll call (Concurred in House amendments, tally 22-9) on S. B. No. 216, from the Ohio Legislature's own actions record, which lists each member by id (sen_oelslager_scott_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "07a62dc66aed003e5e74c155b191a11270cce9e881a9d9c6358ef547bbe69d62",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/actions/",
+      "date": "2022-12-14",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-458-2022",
+      "act": "yea",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 55-34) on H. B. No. 458, from the Ohio Legislature's own actions record, which lists each member by id (rep_oelslager_scott_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b76b08444464d687d2e3e5da5ab666871be545e481f02bd01a7bfa3659054db7",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hcr18/actions/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "yea",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 73-20) on H. C. R. No. 18, from the Ohio Legislature's own actions record, which lists each member by id (rep_oelslager_scott_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "545139969c5c35a1f168640a412d667e03811d25673463e11c9fcc5bd7fca177",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "yea",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_oelslager_scott_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cb87000697b71758e7ca0ad908fe673527a271a0150eff9c6bd3ec29180be76c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "yea",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_oelslager_scott_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32abbbc8a3ef8b4b1a84709188caf92f2c696e2c45aaccbf5d255611a80b9668",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "yea",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_oelslager_scott_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 13,
+      "at": "2026-11-06T16:28:34.671Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}

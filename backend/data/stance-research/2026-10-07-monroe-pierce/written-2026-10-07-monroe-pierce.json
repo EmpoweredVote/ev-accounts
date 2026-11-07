@@ -1,4 +1,11 @@
 {
-  "season_id": null,
-  "rows": []
+  "season_id": "86d893a1-c1a2-4bbf-b4e5-69ec43221194",
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "chair_after": 2,
+      "season_id": "86d893a1-c1a2-4bbf-b4e5-69ec43221194"
+    }
+  ]
 }

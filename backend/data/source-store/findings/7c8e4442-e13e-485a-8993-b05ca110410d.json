@@ -1,0 +1,61 @@
+{
+  "politician_id": "7c8e4442-e13e-485a-8993-b05ca110410d",
+  "findings": [
+    {
+      "id": "0efe1f5df93634314d3c200896dc5c85660351ff71f64bccd4d6438141467165",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/115th-congress/house-joint-resolution/40",
+      "date": "2017-02-15",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-40-2017",
+      "act": "yea",
+      "motion": "Passed Senate without amendment by Yea-Nay Vote. 57 - 43. Record Vote Number: 66 (Roll 66)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, Passed Senate without amendment by Yea-Nay Vote. 57 - 43. Record Vote Number: 66 (Roll 66), 2017-02-15: yea (tally 57–43); census gate: none.",
+      "subjects": [
+        "rule sending records to gun background check system overturned"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HJRES-40-2017.htm",
+          "sha256": "616db93c5dbc0f8d42ff56878c6d7302412f4feaade1ac2794ac4020fae05e55"
+        }
+      }
+    },
+    {
+      "id": "a79db97feb0101fbc93ee29dc0a3e5b51323914a16c3b2da2d48ce626bedd4f7",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/senate-joint-resolution/20",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "US-SJRES-20-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2023-03-15",
+      "note": "co sponsor of US-SJRES-20-2023 (cosponsor 2023-03-15): SJRES 20 (118th Congress): A joint resolution providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Justice and the Bureau of Alcohol, Tobacco, Firearms and Explosives relating to \"Factoring Criteria for Firearms With Attached 'Stabilizing Braces'\"..",
+      "subjects": [
+        "ATF stabilizing-brace rule disapproved"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-SJRES-20-2023.htm",
+          "sha256": "01e71824e8991c247f827837d8852968be726f4c2b3d843bf11bbb3a396d8f75"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

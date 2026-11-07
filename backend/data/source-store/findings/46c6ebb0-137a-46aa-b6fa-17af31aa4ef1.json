@@ -149,6 +149,389 @@
         "fetched_at": "2026-10-28T16:25:55.968Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "8cdde12149784ca1338611ab935c418b2d11e9154fac438233d84f81fa490306",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2022410",
+      "date": "2022-07-29",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1808-2022",
+      "act": "yea",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2022-07-29: yea (tally 217–213); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns",
+        "large magazine limit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-117hr1808eh.txt",
+          "sha256": "75fbb3d8aa67a1e741919bd36d5950f2147af5ee9aebad54f3c833934b9b65c9"
+        }
+      }
+    },
+    {
+      "id": "e490443f231416e4eda25d4ceddac54cc706b79e37886db337b05bc55f28fc05",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2021075",
+      "date": "2021-03-11",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8-2021",
+      "act": "yea",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2021-03-11: yea (tally 227–203); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-117hr8eh.txt",
+          "sha256": "7ff6618b8d01b36e670d15017408752e74041ec8d8a1582826124674ff3dff11"
+        }
+      }
+    },
+    {
+      "id": "6b5f3eff9393b9ed72b2b20ceb2569f569e3fe0f8d66ff785098426dcaf88740",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/201999",
+      "date": "2019-02-27",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8-2019",
+      "act": "yea",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2019-02-27: yea (tally 240–190); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-116hr8eh.txt",
+          "sha256": "8596643f954424e8d7074a38f569bc2885d50357f8208d6d0dbd7329c96e4b2c"
+        }
+      }
+    },
+    {
+      "id": "4bfe5feffdcd834aa96f97f2d56a39a6449292edd19b6b963ed9e99fd750d998",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2022245",
+      "date": "2022-06-08",
+      "date_precision": "day",
+      "instrument_id": "US-HR-7910-2022",
+      "act": "yea",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2022-06-08: yea (tally 223–204); census gate: none.",
+      "subjects": [
+        "age 21 to buy some semiautomatic rifles",
+        "large magazine limit",
+        "gun trafficking (package)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "69db56d0bfe8578817bff509cf09fa458879a97b92b0b93f98d4cafc678f7ec9",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-117s2938enr/html/BILLS-117s2938enr.htm",
+      "date": "2022-06-24",
+      "date_precision": "day",
+      "instrument_id": "US-S-2938-2022",
+      "act": "yea",
+      "motion": "On Concurring in the Senate Amendments to the House Amendment",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US House, On Concurring in the Senate Amendments to the House Amendment, 2022-06-24: yea (tally 234–193); census gate: multi-subject.",
+      "subjects": [
+        "background checks for buyers under 21",
+        "court orders that take guns from a dangerous person (state grants)",
+        "gun trafficking (package)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d48b2322289322cacca1b2eb8a88f66f4b944c01c7cb5000bc6ace5d7d6c973f",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2023252",
+      "date": "2023-06-13",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-44-2023",
+      "act": "nay",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2023-06-13: nay (tally 219–210); census gate: none.",
+      "subjects": [
+        "cancel the federal pistol-brace rule"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-118hjres44eh.txt",
+          "sha256": "d04fe1fe2a2512a1932d14b7b93d88fe25ac6712851bc4caa37df31b89101f4d"
+        }
+      }
+    },
+    {
+      "id": "a203eac2eac081a9a287f67613c48e67b2f1ae4f76e0767ad2853021a07e68ab",
+      "kind": "record",
+      "url": "https://www.wtkr.com/virginia-governor-signs-assault-weapons-ban-into-law",
+      "date": "2026-05-14",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-749-2026",
+      "act": "signed",
+      "note": "Signed the ban on sale, manufacture, purchase and transfer of assault firearms and high-capacity magazines; those already owned may be kept. Companion House bill HB 217. She had proposed amendments that the legislature rejected.",
+      "subjects": [
+        "ban on assault-style guns",
+        "limit on large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:57:10.127Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "851169b7d85c26d43025acbf0d73e64443d16c0a7aaf58a40023dd119ed0735e",
+      "kind": "own-words",
+      "url": "https://www.wtkr.com/virginia-governor-signs-assault-weapons-ban-into-law",
+      "date": "2026-05-14",
+      "date_precision": "day",
+      "passage": "\"I am signing this bill into law because firearms designed to inflict maximum casualties do not belong on our streets. We are taking this step to protect families and support the law enforcement officers who work every day to keep our communities safe,” said Spanberger in a statement to CBS 6.",
+      "note": "Her statement on signing the assault firearms and magazine bill, as quoted by CBS 6 / WTKR.",
+      "subjects": [
+        "ban on assault-style guns",
+        "limit on large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:57:10.127Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b694e7f8dfd37c797c5e007a7b102c34f6d48a18c65c2d7b04be043a837462c3",
+      "kind": "record",
+      "url": "https://www.governor.virginia.gov/newsroom/news-releases/2026/april-releases/name-1116183-en.html",
+      "date": "2026-04-10",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-40-2026",
+      "act": "signed",
+      "note": "Signed HB 40 / SB 323 banning manufacture, sale and possession of untraceable firearms without serial numbers (ghost guns). Date is the governor's release date.",
+      "subjects": [
+        "ghost guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:57:10.127Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32779273e8b71702e6add47c1dedecfc14dbc01ac7cbcf4cba17dba8f8f3b60a",
+      "kind": "record",
+      "url": "https://www.governor.virginia.gov/newsroom/news-releases/2026/april-releases/name-1116183-en.html",
+      "date": "2026-04-10",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-19-2026",
+      "act": "signed",
+      "note": "Signed HB 19 / SB 160 barring people convicted of misdemeanor domestic violence against an intimate partner from having a firearm. Date is the governor's release date.",
+      "subjects": [
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:57:10.127Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "61a8fe651758ff5c7d8b0845fdfd7f916e90c3a06f912f80b2de2c28dff9708c",
+      "kind": "record",
+      "url": "https://www.governor.virginia.gov/newsroom/news-releases/2026/april-releases/name-1116183-en.html",
+      "date": "2026-04-10",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-93-2026",
+      "act": "signed",
+      "note": "Signed HB 93 / SB 38 on how a person barred from having a firearm (protective order or domestic violence conviction) may transfer it to a lawful person aged 21 or older who does not live with them. Date is the governor's release date.",
+      "subjects": [
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:57:10.127Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f28130e72b10206ed1083132c7462a643e0d2460fb90991198727bfc47a780b0",
+      "kind": "record",
+      "url": "https://www.governor.virginia.gov/newsroom/news-releases/2026/april-releases/name-1116183-en.html",
+      "date": "2026-04-10",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-21-2026",
+      "act": "signed",
+      "note": "Signed HB 21 / SB 27 letting firearm makers and dealers be held legally accountable when negligent business practices contribute to gun violence. Date is the governor's release date.",
+      "subjects": [
+        "gun industry liability"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:57:10.127Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2c8aaf1489f3e19cf0a14525f27eff7abad6799a0abdfb3786acacbcbddd7772",
+      "kind": "own-words",
+      "url": "https://www.governor.virginia.gov/newsroom/news-releases/2026/april-releases/name-1116183-en.html",
+      "date": "2026-04-10",
+      "date_precision": "day",
+      "passage": "“Preventing gun violence is an issue of public safety — both for the officers who protect our streets and the children and families they work to keep safe.",
+      "note": "Quote from the governor's own news release on signing the April 2026 package.",
+      "subjects": [
+        "gun safety laws",
+        "ghost guns",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:57:10.127Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "220a89f81e635073cc174fbf2af1f9ff201e0f8ccb17b80e3e2df7558cd0d1e6",
+      "kind": "own-words",
+      "url": "https://abigailspanberger.com/richmond-times-dispatch-spanberger-vows-to-sign-gun-bills-including-ban-on-sales-of-assault-style-weapons/",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "“I will sign legislation into law to make progress on these issues to keep Virginia families safe,” she said.",
+      "note": "Campaign-site repost of a Richmond Times-Dispatch story; at a gun-safety rally she pledged to sign gun bills and said she would not veto them.",
+      "subjects": [
+        "gun safety laws",
+        "ban on assault-style guns",
+        "ghost guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:57:10.127Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6cac3718e2e0115c2b1620054430a6f3ab36a1d9ef05ae851ac041e77a3eeba3",
+      "kind": "own-words",
+      "url": "https://abigailspanberger.com/richmond-times-dispatch-spanberger-vows-to-sign-gun-bills-including-ban-on-sales-of-assault-style-weapons/",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "“I grew up in a family where responsible gun ownership was the norm,” she said.",
+      "note": "Same Richmond Times-Dispatch story: she also says she would support a ban on assault-style rifle sales as she did in Congress; the paper reports she said \"I am totally on the record.\"",
+      "subjects": [
+        "general statement on gun rights",
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:57:10.127Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5660a99a70a58d328dff8372bcd8940b3225eb938ec461e28430c9b4f9689737",
+      "kind": "own-words",
+      "url": "https://abigailspanberger.com/virginia-mercury-spanberger-rallies-for-gun-reform-calls-gun-violence-the-top-threat-to-kids",
+      "date": "2025-01-15",
+      "date_precision": "day",
+      "passage": "“The safety of our children should unite us all,” she added.",
+      "note": "Campaign-site repost of a Virginia Mercury story: at a gun-safety rally she called gun violence the number one killer of kids.",
+      "subjects": [
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:57:10.127Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -180,6 +563,36 @@
       "found": 7,
       "at": "2026-10-28T16:25:55.968Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "domestic abuse and gun possession",
+        "gun maker and seller liability",
+        "safe storage",
+        "general gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed in office: governor.virginia.gov news page names her as Governor of Virginia",
+        "governor's office release of 2026-04-10 on signed bills (read in full)",
+        "her campaign site abigailspanberger.com: two reposted news articles read (Richmond Times-Dispatch 2025-04-10, Virginia Mercury 2025-01-15); site issues page returned 404",
+        "WTKR/CBS 6 article on the 2026 assault weapons signing (read)",
+        "blocked: https://virginiamercury.com/?p=47241 (403)",
+        "blocked: https://virginiamercury.com/?p=47607 (403)",
+        "blocked: https://www.newsfromthestates.com/article/spanberger-signs-assault-weapons-ban-package-criminal-justice-and-energy-bills (bot check)",
+        "blocked: https://www.congress.gov/member/abigail-spanberger/S001209 (403); her House co-sponsorships were not listed from the official list. One news article quotes her saying she co-sponsored the 2022 assault-weapons legislation",
+        "not reviewed: https://lis.virginia.gov/bill-details/20261/SB749 (needs JavaScript)",
+        "not reviewed: Ballotpedia (fetch tool returns empty)",
+        "not reviewed: Virginia Mercury 2026-04-14 article on her amendments (Mercury blocked); amendment details (age 21) not recorded",
+        "two web searches run in this file's search"
+      ],
+      "found": 10,
+      "at": "2026-10-30T20:57:10.127Z",
+      "by": "source-collector"
     }
   ]
 }

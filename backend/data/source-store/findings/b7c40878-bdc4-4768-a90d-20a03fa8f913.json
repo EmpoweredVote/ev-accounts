@@ -1,0 +1,77 @@
+{
+  "politician_id": "b7c40878-bdc4-4768-a90d-20a03fa8f913",
+  "findings": [
+    {
+      "id": "db526f927e3d77d8d224be1686bd10e7836c072cc6c353c95193e922fb2efad5",
+      "kind": "own-words",
+      "url": "https://thomasholbrook.com/where-i-stand",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Take the Missouri Firearms Coalition for example. They mean well regarding the 2nd Amendment, which I absolutely support. Upon filling out their survey, my eyebrow raised in regard to “stand your ground” legislation. Having the right to defend yourself when an unprovoked attack occurs is paramount. I also am a big supporter of property rights, which Matt Gaetz’s bill makes no mention of. If any place does not want violence coming through their doors, I have to respect that regardless of whether I like it or not. I would vote yes for a law similar to HR 6248 so long as it also keeps in mind property rights of various privately owned venues.",
+      "note": "On his campaign issues page. He says he supports the 2nd Amendment, says he has the right to defend himself in an unprovoked attack, and says he would vote yes on a law similar to HR 6248 (a federal bill on guns in venues, as named on the page) if it also protects the property rights of private venues, which may set their own rules. Page is undated.",
+      "subjects": [
+        "general statement on the Second Amendment",
+        "stand-your-ground and self-defense",
+        "places where carry is allowed, private venue rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:13:12.125Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1158f93193635c67d50552389821bcd58de8ee59026d5eec13f4adfb97a51b95",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/10890/race/34670/election/1501",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Being a legal adult and a citizen or permanent resident should be the main requirements. Those who served time in prison for crimes they committed should of course limit access (depending on the crime), but beyond that we should not be clamping down so hard on firearms access and ownership.",
+      "note": "His answer to the iVoterGuide question 'What restrictions on gun ownership are needed to protect public safety?' on his profile for the 2026 Missouri 4th District race. Says adult age and citizenship or residency should be the main requirements, some limits for people with prison records, and no tighter rules beyond that. Page is undated.",
+      "subjects": [
+        "who may own a gun, minimum age",
+        "limits on gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:13:12.125Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "general Second Amendment statement",
+        "stand-your-ground / places where carry is allowed",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry permits",
+        "red flag orders",
+        "who may own a gun"
+      ],
+      "places": [
+        "scope: https://www.ballotready.org/people/thomas-holbrook lists him for U.S. House, Missouri 4th District, 2026 general election (2026-11-03); iVoterGuide profile lists him in the same race",
+        "On the Record (0 meetings)",
+        "campaign site https://thomasholbrook.com/where-i-stand: gun passage saved; home page and https://thomasholbrook.com/who-i-am: nothing on the subject",
+        "iVoterGuide candidate profile https://ivoterguide.com/candidate/10890/race/34670/election/1501: his 2nd Amendment answer saved",
+        "https://theballotbrief.com/candidate/thomas-holbrook-mo: nothing on guns",
+        "BallotReady issue stances: government reform only; nothing on guns",
+        "Ballotpedia: page returned empty; not reviewed",
+        "not a legislator: no sponsorship records to check",
+        "web searches: 2 (guns plus district; candidate interview): no news coverage of his gun views found"
+      ],
+      "found": 2,
+      "at": "2026-10-31T00:13:12.125Z",
+      "by": "source-collector"
+    }
+  ]
+}

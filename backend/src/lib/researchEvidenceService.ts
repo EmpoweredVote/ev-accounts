@@ -9,6 +9,8 @@ import type { VerifiedRow } from './researchVerifier.js';
 import { normalizeText, MIN_SNIPPET_WORDS } from './researchVerifier.js';
 import { isRollCallXmlUrl, parseRollCallLine } from './rollCallEvidence.js';
 import { isLegiscanUrl, parseLegiscanLine } from './legiscanEvidence.js';
+import { isIgaRollCallUrl, parseIgaRollCallLine } from './igaRollCallEvidence.js';
+import { isMaRollCallUrl, parseMaRollCallLine } from './maRollCallEvidence.js';
 import { BLANK_REASONS, isBlankReason } from './blankReasons.js';
 import { namesParty } from './partyLabels.js';
 // Type-only: erased at runtime, so it does not pull db.js in before a test's mock (see below).
@@ -654,6 +656,51 @@ export async function writeVerifiedStance(args: {
 }
 
 /**
+ * Retire any PENDING review row that an --auto-push has just answered.
+ *
+ * 🔴 WHY IT EXISTS (2026-10-28): the auto-push loop wrote the answer, its context and its
+ * snippets and never touched inform.stance_research_review — only the queue loop writes there.
+ * Run `--apply` first and `--apply --auto-push` second (the ordinary shape of "queue it, look at
+ * it, then publish it") and the pair's queue row stays `pending` with its value already live. 17
+ * rows reached that state across three batches and had to be superseded by hand. A reviewer
+ * opening the queue was being asked to approve what was already published, and nothing in the
+ * code said which rows those were.
+ *
+ * 🔑 MATCHED ON THE VALUE, NOT JUST THE PAIR. A pending row proposing a DIFFERENT chair for the
+ * same (politician, topic, season) is a real disagreement with what was just published — it is a
+ * `value-change` proposal now, and a person still has to see it. Only a row proposing exactly
+ * what was written has been answered by the write.
+ *
+ * Idempotent: a second run supersedes nothing, because the rows are no longer `pending`.
+ *
+ * @returns how many rows were superseded.
+ */
+export async function supersedePublishedReviewRows(args: {
+  politicianId: string; topicId: string; value: number; seasonId?: string; resolvedBy: string | null;
+}, db?: Queryable, opts: { seasonColumn?: boolean } = {}): Promise<number> {
+  const runner: Queryable = db ?? (await import('./db.js')).pool;
+  // season_id is CA_0264's and may not exist yet (OPTIONAL_REVIEW_COLUMNS). Without it the match
+  // is (politician, topic, value) — one season narrower than ideal, never wider, so it can only
+  // fail to supersede a row, never supersede one it should have left alone. `seasonColumn` lets a
+  // caller state it instead of probing, the same way upsertReviewRow takes `ladderColumns`.
+  const hasSeason = opts.seasonColumn ?? (await reviewOptionalColumns()).has('season_id');
+  const scoped = hasSeason && args.seasonId !== undefined;
+  const { rowCount } = await runner.query(
+    `UPDATE inform.stance_research_review
+        SET status = 'superseded', resolved_at = now(), resolved_by = $4,
+            notes = COALESCE(notes || ' | ', '')
+                    || 'Superseded: published by verify-stance-research --auto-push with this same value.'
+      WHERE status = 'pending'
+        AND politician_id = $1 AND topic_id = $2 AND proposed_value = $3
+        ${scoped ? 'AND season_id = $5' : ''}`,
+    scoped
+      ? [args.politicianId, args.topicId, args.value, args.resolvedBy, args.seasonId]
+      : [args.politicianId, args.topicId, args.value, args.resolvedBy],
+  );
+  return rowCount ?? 0;
+}
+
+/**
  * Approval input validation (2026-09-23 polish pass), defence in depth: the route already
  * rejects a shape it doesn't like with a 400, but this function is also reachable directly (a
  * script, a future caller), so a blank/whitespace entry (`['']`) or a non-http(s) string
@@ -693,6 +740,15 @@ function cleanHumanVerifiedUrls(urls: string[]): string[] {
  * client (I6): either the row is approved with its value, reasoning and citations, or nothing is
  * written and it stays pending.
  *
+ * One exception to "no citation, no stance", and only on request: `opts.unverifiableBlankNote` lets a queued
+ * BLANK be approved with no source when its old sources cannot be verified (runner ruling 2026-10-31, "Write a
+ * blank for all 26": OnTheIssues or Wikipedia only, a page that no longer loads, or a page with no passage the
+ * verifier can tie to the person). It applies only to a proposed blank approved as a blank, queued below the
+ * threshold — so the verifier's blank-unexamined-fallback check, a high finding that keeps a row out of the
+ * queue, has already passed: every old source that still loads is among the blank's cited pages. The note is
+ * appended to the review row's notes. stage5/approve-batch.ts --unverifiable-blank is the caller; the admin
+ * route never passes it.
+ *
  * Also refuses (CONFLICT → 409, LADDER_CHANGED_MESSAGE) a row whose stored ladder revision is known
  * and is not the open season's current pin for the topic (CA_0264): the proposed value answers a
  * sentence the open season no longer asks. A legacy row (revision NULL, queued before CA_0264) is
@@ -705,6 +761,7 @@ export async function resolveResearchReview(
   valueOverride?: number | null,
   reasoningOverride?: string,
   blankReasonOverride?: string,
+  opts: { unverifiableBlankNote?: string } = {},
 ): Promise<{ ladderRevisionUnknown: boolean }> {
   // Lazy, for the same reason as accumulateEvidence above: a static import of
   // seasonService drags db.js in before the test mock is installed.
@@ -773,7 +830,14 @@ export async function resolveResearchReview(
     .filter((e) => e.snippets.some((s) => publishable(e.url, s) !== null))
     .map((e) => e.url);
   const allSources = [...new Set([...machineVerifiedUrls, ...cleanedHumanVerifiedUrls])];
-  if (allSources.length === 0) {
+  const unverifiableNote = opts.unverifiableBlankNote?.trim() || null;
+  if (unverifiableNote && !(finalValue === 0 && row.proposedValue === 0
+    && (row.queueReasons ?? []).includes('below-threshold'))) {
+    throw Object.assign(
+      new Error('unverifiableBlankNote applies only to a proposed blank, approved as a blank, queued below the threshold'),
+      { code: 'INCOMPLETE' });
+  }
+  if (allSources.length === 0 && !unverifiableNote) {
     throw Object.assign(
       new Error('No verified or human-verified source — a stance cannot be published without a citation'),
       { code: 'INCOMPLETE' });
@@ -895,6 +959,12 @@ export async function resolveResearchReview(
         new Error('Review row is no longer pending — another decision landed first; nothing was written'),
         { code: 'CONFLICT' });
     }
+    if (unverifiableNote && allSources.length === 0) {
+      await client.query(
+        `UPDATE inform.stance_research_review SET notes = concat_ws(E'\\n', notes, $2::text) WHERE id = $1`,
+        [id, unverifiableNote],
+      );
+    }
     await client.query('COMMIT');
   } catch (err) {
     // A failed ROLLBACK (broken connection) must not mask the error that caused it.
@@ -941,7 +1011,9 @@ export async function rejectResearchReview(id: string, resolvedBy: string, notes
  * against the Clerk XML rather than as a run of page text. It is publishable when `url` is a
  * House roll-call XML URL, the span still parses as a canonical line, and it is the whole snippet —
  * exactly what the verifier stores for that lane. The LegiScan lane (legiscanEvidence.ts) is the
- * same case for a LegiScan bill or roll-call URL and its canonical line. Every other short span is
+ * same case for a LegiScan bill or roll-call URL and its canonical line, and the Indiana roll-call lane
+ * (igaRollCallEvidence.ts) for an iga.in.gov roll-call PDF and its line, and the Massachusetts House
+ * roll-call lane (maRollCallEvidence.ts) for a malegislature.gov roll-call PDF and its line. Every other short span is
  * still refused.
  */
 export function validStoredSpan(snippet: string, span: string | undefined, url?: string): string | null {
@@ -949,6 +1021,8 @@ export function validStoredSpan(snippet: string, span: string | undefined, url?:
   if (!t) return null;
   if (url !== undefined && isRollCallXmlUrl(url) && parseRollCallLine(t) && snippet.trim() === t) return t;
   if (url !== undefined && isLegiscanUrl(url) && parseLegiscanLine(t) && snippet.trim() === t) return t;
+  if (url !== undefined && isIgaRollCallUrl(url) && parseIgaRollCallLine(t) && snippet.trim() === t) return t;
+  if (url !== undefined && isMaRollCallUrl(url) && parseMaRollCallLine(t) && snippet.trim() === t) return t;
   // Same normalizer as the verifier, padded so the run must sit on whole words.
   const norm = (x: string) => ` ${normalizeText(x)} `;
   const words = normalizeText(t).split(' ').filter(Boolean).length;

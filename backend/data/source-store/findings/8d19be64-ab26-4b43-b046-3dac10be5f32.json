@@ -24,6 +24,143 @@
         "fetched_at": "2026-10-22T23:58:33.245Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "8ad09cac5db23a793dc1039f2f308018e609489b9c7fbac32b08f1fad28b997f",
+      "kind": "record",
+      "url": "https://ncleg.gov/BillLookUp/2025/S50",
+      "date": "2025-07-29",
+      "date_precision": "day",
+      "instrument_id": "NC-S-50-2025",
+      "act": "nay",
+      "motion": "Motion 11, Veto Override (RCS S-432)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NC Senate, Motion 11, Veto Override (RCS S-432), 2025-07-29: nay (tally 30–19); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "C (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2439acae5cbdb6b26196ae1e74eaf4e681b2d0a8a8f633254820716e90e94623",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H193",
+      "date": "2025-07-29",
+      "date_precision": "day",
+      "instrument_id": "NC-H-193-2025",
+      "act": "nay",
+      "motion": "Motion 11 Veto Override",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "NC Senate, Motion 11 Veto Override, 2025-07-29: nay (tally 29–19); census gate: multi-subject.",
+      "subjects": [
+        "permit holders may carry on nonpublic school and school-church property",
+        "nonpublic school staff may carry with written authorization and training",
+        "relocated law enforcement shooting ranges shielded from local limits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-H-193-2025.chaptered.html",
+          "sha256": "4e1b8602b941f80ce4472f753fd8398bb206adecfd47d41ca4fd7b32721d3170"
+        }
+      }
+    },
+    {
+      "id": "55e7690999fb36d06c0f5d04a229870f4a3faf02cdadc97806d2720bd823c742",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/S118",
+      "date": "2025-06-25",
+      "date_precision": "day",
+      "instrument_id": "NC-S-118-2025",
+      "act": "yea",
+      "motion": "Conference Report Motion 8 To Adopt",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "NC Senate, Conference Report Motion 8 To Adopt, 2025-06-25: yea (tally 45–0); census gate: near-unanimous.",
+      "subjects": [
+        "lower concealed handgun permit fees for honorably discharged veterans",
+        "e-mail option for concealed handgun permit renewal notices"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-S-118-2025.chaptered.html",
+          "sha256": "d1a417500db87564fb471b17578e775e03beae7face9cb2537d9ecf5b76cc31d"
+        }
+      }
+    },
+    {
+      "id": "4ebad65718c0a8dd524c961ed972aee5980ed19a29d91483da567f8817924654",
+      "kind": "own-words",
+      "url": "https://pro.stateaffairs.com/nc/politics/permitless-concealed-carry-north-carolina",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "passage": "“I know I’m not alone because my story, the whole story, was featured in Good Housekeeping in October of 2022,” she said. “I encourage you to look it up. The story is full of other women just like me who have stared down the barrel of a loaded abuser’s gun.”",
+      "note": "State Affairs report on the Senate debate of Senate Bill 50 (permitless concealed carry), dated 2025-03-20. It says Sen. Woodson Bradley, speaking to the Senate, described getting her own concealed carry permit when she left an abusive marriage. The article reports the debate day as a Thursday; the page publication date is used.",
+      "subjects": [
+        "carry a gun without a permit",
+        "guns and domestic violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-06T00:05:01.470Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "19842f02277d9d41b94007e5edc3ca637504fc734e1aaed72421a669f7e56c35",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/S280",
+      "date": "2025-05-07",
+      "date_precision": "day",
+      "instrument_id": "NC-S-280-2025",
+      "act": "nay",
+      "motion": "Second Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NC Senate, Second Reading, 2025-05-07: nay (tally 29–18); census gate: none.",
+      "subjects": [
+        "armed staff and volunteers allowed at private schools",
+        "concealed handguns allowed in church buildings that share a school site"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-S-280-2025.edition-3.html",
+          "sha256": "2f5dc12ef153c0522ded230925540f44679a8e8bf8d246ad23dd814badc35b98"
+        }
+      }
     }
   ],
   "searches": [
@@ -76,6 +213,30 @@
       "found": 0,
       "at": "2026-10-27T21:32:41.923Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permitless (constitutional) carry",
+        "domestic violence and guns",
+        "school threats",
+        "Second Amendment statements",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.ncleg.gov/Members/MemberTable/S (lists Bradley, Mecklenburg, in the Senate)",
+        "campaign site https://www.woodsonbradley.com (home and media pages read; issues page is 404; media page lists news links, one on permitless carry used below; others about school threats, divorce and budget, not gun regulation)",
+        "https://www.wsoctv.com/news/local/bill-aims-standardize-notifications-over-school-threats-nc/VSXKOEIZUFAQTLZXMKH3T76MKA/ (her school-threat notification bill; not a gun regulation, nothing saved)",
+        "Ballotpedia: page returns empty to fetch tool; 2026 ballot status not confirmed (her seat's election year not checked)",
+        "sponsor list: covered by LegiScan bulk check",
+        "news searches on name plus subject words: one floor-remarks account found (State Affairs)",
+        "not reviewed: her YouTube channel https://www.youtube.com/@WoodsonBradley-yg3qe and the 2022 Good Housekeeping story she cites"
+      ],
+      "found": 1,
+      "at": "2026-11-06T00:05:01.470Z",
+      "by": "source-collector"
     }
   ]
 }

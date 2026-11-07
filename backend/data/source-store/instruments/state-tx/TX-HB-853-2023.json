@@ -1,0 +1,97 @@
+{
+  "id": "TX-HB-853-2023",
+  "scope": "state:tx",
+  "title": "HB853 (88th Legislature Regular Session): Relating to designating August as Firearm Safety Awareness Month.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB853",
+    "https://capitol.texas.gov/tlodocs/88R/billtext/html/HB00853I.htm",
+    "https://capitol.texas.gov/tlodocs/88R/billtext/html/HB00853H.htm"
+  ],
+  "version": "other",
+  "operative_text": "Sec. 1 (adding Government Code 662.116(a)): {+Sec.+}{+ +}{+662.116.+}{+ +}{+ +}{+FIREARM SAFETY AWARENESS MONTH.  (a)  August +}{+is Firearm Safety Awareness Month to increase awareness of firearm +}{+safety and encourage community residents and leaders to discuss the +}{+safe and responsible ownership, storage, and use of firearms for +}{+recreational and defensive purposes and to promote voluntary and +}{+collaborative methods that improve public safety.+}\nSec. 1 (adding Government Code 662.116(b)): {+(b)+}{+ +}{+ +}{+Firearm Safety Awareness Month may be regularly +}{+observed through appropriate activities and programs in +}{+communities to increase awareness of and instruction on the +}{+responsible use of firearms.  A firearms accident prevention +}{+program may include animated videos, activity books, and other +}{+instructional materials for community residents of all ages.+}",
+  "sponsors": [
+    {
+      "name": "Barbara Gervin-Hawkins",
+      "politician_id": "1a94bee0-7418-4b75-ba17-f3cf97d888aa",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Justin Holland",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Rhetta Bowers",
+      "politician_id": "f4286f1f-dda7-4fe4-9473-455772f40fae",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Vikki Goodwin",
+      "politician_id": "f39b0865-c923-428a-b940-09138c09e4e8",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "John Bucy",
+      "politician_id": "2be64a58-ae2c-4eee-b80d-6e673ef774bd",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Elizabeth Campos",
+      "politician_id": "c1914284-9aee-44f4-8b7f-a833d8f392e7",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Julie Johnson",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Armando Martinez",
+      "politician_id": "d9486e4a-490a-4d87-a495-655cce9700e2",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Penny Morales Shaw",
+      "politician_id": "81d931a9-5906-4ff4-9ac8-15b49c4ae38a",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Mihaela Plesa",
+      "politician_id": "00184c56-6581-4815-b30a-2e47aca9ee14",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "James Talarico",
+      "politician_id": "e31c865b-e378-4c02-b6d5-3f3fc1393791",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-853-2023.comm-sub.html",
+      "sha256": "b8de9a52cee85ec89c672a0b6e430cc530122b5b4a58c93990b4776d854e31ac"
+    }
+  }
+}

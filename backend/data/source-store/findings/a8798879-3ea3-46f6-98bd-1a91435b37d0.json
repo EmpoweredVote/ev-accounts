@@ -1,0 +1,52 @@
+{
+  "politician_id": "a8798879-3ea3-46f6-98bd-1a91435b37d0",
+  "findings": [
+    {
+      "id": "e1236aad36bac4390e77a793a83b8a683001b3413bc9f21bed2678f01a0e5733",
+      "kind": "own-words",
+      "url": "https://neilgillespie4senate.blogspot.com/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Neil Gillespie supports the Second Amendment and US Armed Forces",
+      "note": "A photo caption on his own campaign site. It says he supports the Second Amendment and gives no detail on any gun law. The page is undated.",
+      "subjects": [
+        "general statement on the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:02:08.748Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "general Second Amendment statement",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry permits",
+        "red flag orders"
+      ],
+      "places": [
+        "scope: https://theballotbrief.com/candidate/neil-j-gillespie-fl lists him as a no-party candidate for U.S. Senate in Florida on the 2026-11-03 ballot; https://www.ballotready.org/people/neil-gillespie also lists him for U.S. Senate - Florida (the race is a Senate race, not the House)",
+        "On the Record (0 meetings)",
+        "campaign site https://neilgillespie4senate.blogspot.com/ (whole page read by plain curl): one gun-related line, saved",
+        "BallotReady issue stances: civil rights, environment, government reform, immigration; nothing on guns",
+        "Ballotpedia: page returned empty",
+        "not a legislator: no sponsorship records to check",
+        "news search: results were about other people named Gillespie; nothing about him on guns",
+        "not reviewed: his linked blogs (Neil2024, Neil4Justice, nosue.org pages) beyond the main campaign page",
+        "web searches run: 3"
+      ],
+      "found": 1,
+      "at": "2026-10-30T15:02:08.748Z",
+      "by": "source-collector"
+    }
+  ]
+}

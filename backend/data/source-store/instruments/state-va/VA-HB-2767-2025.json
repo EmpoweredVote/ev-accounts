@@ -1,0 +1,71 @@
+{
+  "id": "VA-HB-2767-2025",
+  "scope": "state:va",
+  "title": "HB2767 (2025 Regular Session): Concealed handgun permit; demonstrated competence.",
+  "urls": [
+    "https://lis.virginia.gov/bill-details/20251/HB2767",
+    "https://lis.virginia.gov/bill-details/20251/HB2767/text/HB2767"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 1 (amending Code 18.2-308.02(B)(2)): 2. Completing any National Rifle Association{+, U.S. LawShield,+} or United States Concealed Carry Association firearms safety or training course{+, or any other firearms safety training course recognized by the +}{+Department+}{+ of+}{+ State Police and +}{+listed+}{+ on +}{+the +}{+State Police+}{+ website+};\nSec. 1 (amending Code 18.2-308.02(B)(3)): 3. Completing any firearms safety or training course or class available to the general public offered by a{+ nationally recognized training organization,+} law-enforcement agency, institution of higher education, or private or public institution or organization or firearms training school utilizing instructors certified by the National Rifle Association, the United States Concealed Carry Association,{+ U.S. LawShield, or other nationally recognized firearms training organization,+} or the Department of Criminal Justice Services;\nSec. 1 (amending Code 18.2-308.02(B)(7)): 7. Completing any in-person firearms training or safety course or class conducted by a state-certified, National Rifle Association-certified,{+ U.S. LawShield-certified,+} or United States Concealed Carry Association-certified firearms instructor{+, or by completing any in-person firearms training or safety course or class conducted by a nationally recognized firearms safety training organization, or by any organization recognized by the +}{+Department of State Police and listed on +}{+the State Police website+};\nSec. 2: 2. That the Department of State Police (the Department) shall publish on its public website a list of organizations that conduct firearms training or safety courses or classes that the Department deems adequate.",
+  "sponsors": [
+    {
+      "name": "Chris Obenshain",
+      "role": "patron",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Mike Cherry",
+      "politician_id": "c7f94731-2162-4fb7-803a-a2ff7443a9a1",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Chad Green",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Paul Milde",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Wendell Walker",
+      "politician_id": "f830ca33-179a-4981-8b89-0b02155e374b",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Wren Williams",
+      "politician_id": "38cb6796-1539-48ac-92e6-00068aa5e339",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Luther Cifers",
+      "politician_id": "19c4b37d-4552-495c-a18b-d339585e684b",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/VA-HB-2767-2025.introduced.html",
+      "sha256": "9fda4676ba530b4181464b9c662e60714e76dabc805ff8a9213bc0dfad8fe8a3"
+    }
+  }
+}

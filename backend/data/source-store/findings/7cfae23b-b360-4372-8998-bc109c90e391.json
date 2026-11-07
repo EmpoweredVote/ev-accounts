@@ -1,0 +1,29 @@
+{
+  "politician_id": "7cfae23b-b360-4372-8998-bc109c90e391",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans and magazine limits",
+        "background checks and permits",
+        "red-flag orders",
+        "carry permits",
+        "gun rights general statement"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://www.dougbasler.com (home and about pages show him running for Congress in 2026; media page and site searches for gun and firearm found nothing on the subject; only a general public-safety paragraph with no gun mention)",
+        "blocked: https://ballotpedia.org/Doug_Basler",
+        "blocked: https://ivoterguide.com/candidate/22335/race/2696/election/507 (HTTP 500)",
+        "web search for gun/Second Amendment statements by him: nothing on the subject",
+        "web search of news coverage of his House races: nothing on the subject",
+        "congress.gov sponsorships: not applicable, never held federal office"
+      ],
+      "found": 0,
+      "at": "2026-10-30T14:59:31.040Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,6 +1,51 @@
 {
   "politician_id": "17ff1698-366e-4c56-a221-9d65fddd88ab",
-  "findings": [],
+  "findings": [
+    {
+      "id": "ddd214a50d2dac5cace310851c18f211f04a38db2320236472f8eb6305f5ed63",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=82R&Bill=SB321",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-321-2011",
+      "act": "author",
+      "note": "SB 321 (82nd session), listed with Hegar and Birdwell as authors. Its caption begins: \"Relating to an employee's transportation and storage of certain firearms or ammunition while on certain property owned or\" an employer. The page's last action reads effective 9/1/11.",
+      "subjects": [
+        "guns stored in locked cars at work",
+        "limits on employer gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:14:59.182Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4a1a03a28223fbc7fe14361144bc57d345d2875804cf1f22774120f6c8e6c0b1",
+      "kind": "own-words",
+      "url": "https://www.texastribune.org/texas-weekly/vol-30/no-31/guns-coming-campus-not-campus-carry",
+      "date": "2013-08-27",
+      "date_precision": "day",
+      "passage": "\"I'm not trying to replace campus carry,\" he said. \"This is a different concept.\"",
+      "note": "Quoted by the Texas Tribune (Texas Weekly) about his 2013 bill to let licence holders keep guns in cars on college parking lots. The outlet also quotes him: \"Everyone else has one privilege,\" ... \"but the student, because they are paying tuition, they are held to a different standard.\"",
+      "subjects": [
+        "guns in locked cars on campus",
+        "campus carry",
+        "concealed handgun licence holders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:14:59.182Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -17,6 +62,33 @@
       "found": 0,
       "at": "2026-10-28T14:31:01.534Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "guns in locked cars at work or school",
+        "campus carry",
+        "concealed handgun licences",
+        "Second Amendment statements",
+        "bills sponsored"
+      ],
+      "places": [
+        "scope note: held the statewide comptroller office until 2025-07-01, then became chancellor of a state university system (news reports of 2025-03); no 2026 ballot was found. The findings below are from his earlier years as a state senator.",
+        "On the Record (0 appearances)",
+        "official legislature bill page for SB 321 (2011) read: https://capitol.texas.gov/BillLookup/History.aspx?LegSess=82R&Bill=SB321",
+        "blocked: https://www.ammoland.com/2011/06/senator-hegar-announces-final-passage-of-legislation-protecting-texans-2a-rights/",
+        "blocked: https://justfacts.votesmart.org/public-statement/705372/issue-position-protecting-second-amendment-freedoms",
+        "blocked: https://justfacts.votesmart.org/public-statement/1297897/issue-position-defending-the-2nd-amendment",
+        "nothing on the subject (no quotes from him): https://www.nraila.org/articles/20131010/texas-state-senator-glenn-hegar-receives-nra-ila-defender-of-freedom-award",
+        "nothing on the subject: https://kfyo.com/senator-glenn-hegar-says-he-was-amazed-by-national-attention-to-house-bill-2-audio/",
+        "Ballotpedia: not reviewed (returns empty to the fetch tool)",
+        "campaign site: none for 2026 found",
+        "SB 1907 (2013) is named in a news search summary only; its bill page was not fetched, so it is not saved as a record"
+      ],
+      "found": 2,
+      "at": "2026-10-30T15:14:59.182Z",
+      "by": "source-collector"
     }
   ]
 }

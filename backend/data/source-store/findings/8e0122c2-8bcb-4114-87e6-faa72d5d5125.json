@@ -1,0 +1,252 @@
+{
+  "politician_id": "8e0122c2-8bcb-4114-87e6-faa72d5d5125",
+  "findings": [
+    {
+      "id": "d48b2322289322cacca1b2eb8a88f66f4b944c01c7cb5000bc6ace5d7d6c973f",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2023252",
+      "date": "2023-06-13",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-44-2023",
+      "act": "nay",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2023-06-13: nay (tally 219–210); census gate: none.",
+      "subjects": [
+        "cancel the federal pistol-brace rule"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-118hjres44eh.txt",
+          "sha256": "d04fe1fe2a2512a1932d14b7b93d88fe25ac6712851bc4caa37df31b89101f4d"
+        }
+      }
+    },
+    {
+      "id": "d96de20b3ffcd6dc2a9f3c3e22d4c4a0bacc6bc617e7dd25ed3c0cb3abe6b8e5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2021/H398",
+      "date": "2021-08-18",
+      "date_precision": "day",
+      "instrument_id": "NC-H-398-2021",
+      "act": "nay",
+      "motion": "Second Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NC Senate, Second Reading, 2021-08-18: nay (tally 27–20); census gate: none.",
+      "subjects": [
+        "pistol purchase permits repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-H-398-2021.enrolled.html",
+          "sha256": "cb4440fe754d67b912477f97a7f6f890b822f9ae08b5793dfe34a06d5a16b8fb"
+        }
+      }
+    },
+    {
+      "id": "369b383c540bf646926adbbff4928451a86bc47877d82c4126a80c83cd55e246",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2021/H49",
+      "date": "2022-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-49-2021",
+      "act": "nay",
+      "motion": "Second Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NC Senate, Second Reading, 2022-06-30: nay (tally 27–20); census gate: none.",
+      "subjects": [
+        "permit renewal training waived for late renewals up to 180 days"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-H-49-2021.enrolled.html",
+          "sha256": "a834dda0f357593dbfe24939e9b187cf3464d9e5e7b985c620cf7d86590025a8"
+        }
+      }
+    },
+    {
+      "id": "77dbbf9dc8994561dcec7b8932ffd02941e9badd845868bdb51cfa5227c04bdc",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2019/H652",
+      "date": "2020-06-25",
+      "date_precision": "day",
+      "instrument_id": "NC-H-652-2019",
+      "act": "nay",
+      "motion": "Conference Rpt Motion 8 To Adopt",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NC Senate, Conference Rpt Motion 8 To Adopt, 2020-06-25: nay (tally 33–14); census gate: none.",
+      "subjects": [
+        "permit holders may carry handguns on religious-school grounds after school hours",
+        "concealed handgun permit renewal training waived after lapse",
+        "designated law enforcement facility employees may carry concealed",
+        "tactical EMS personnel exempt from concealed weapons ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-H-652-2019.enrolled.html",
+          "sha256": "eb0db7aa4ca641651ed001d60d346fe221383def440f98498f3298d034541f75"
+        }
+      }
+    },
+    {
+      "id": "990636cfb76ba7d96a69dd77cf26223b0e757d987d24d2e523aa5af80a13bbc4",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2021/S43",
+      "date": "2021-06-08",
+      "date_precision": "day",
+      "instrument_id": "NC-S-43-2021",
+      "act": "nay",
+      "motion": "Motion 9 To Concur",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NC Senate, Motion 9 To Concur, 2021-06-08: nay (tally 30–19); census gate: none.",
+      "subjects": [
+        "permit holders may carry handguns on church-school property outside school hours",
+        "designated civilian law enforcement employees may carry in law enforcement facilities"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-S-43-2021.enrolled.html",
+          "sha256": "2a6b1aa4b16d242b5ccf89e4b7661c24ae844653c6ecf9409baf76542c3a8817"
+        }
+      }
+    },
+    {
+      "id": "8c18511f773dc790da9d8c16799d7bba86d458d89d69ff1effaa35aa3033fb99",
+      "kind": "own-words",
+      "url": "https://www.wfae.org/politics/2018-03-19/nc-democrats-call-for-common-sense-gun-controls",
+      "date": "2018-03-19",
+      "date_precision": "day",
+      "passage": "\"This bill is about using common sense to find common ground. I know this is a divisive issue, but we really can find common ground,\" Jackson said.",
+      "note": "WFAE quotes then-state Senator Jackson at a press conference where five lawmakers asked for bump stock limits, wider background checks, a higher age to buy assault-style rifles, and temporary removal of guns from people deemed a risk.",
+      "subjects": [
+        "bump stock ban",
+        "background checks",
+        "minimum age for assault-style rifles",
+        "extreme risk protection orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-06T14:01:21.292Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ec51847191e5d227f87636202d82edae3d4a7681c0ef88f782f67fb7e6d20827",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S737",
+      "date": "2018-05-23",
+      "date_precision": "day",
+      "instrument_id": "NC-S-737-2017",
+      "act": "sponsor",
+      "note": "Primary sponsor of Senate Bill 737, Safer Schools, Healthier Kids Act (filed 2018-05-23, referred to Rules). Text provides extreme risk protection orders, a permit to buy an assault weapon or long gun, no sale to underage buyers, and a ban on sale or possession of bump stocks and trigger cranks.",
+      "subjects": [
+        "extreme risk protection orders",
+        "permit to buy assault weapon or long gun",
+        "bump stock ban",
+        "minimum age"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-06T14:01:21.292Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "279d9c67f866b2954c662f40ba1bcd51f2010f5d024456b408f5d35ec7d268c4",
+      "kind": "own-words",
+      "url": "https://www.jeffjacksonnc.com/news/u-s-senate-candidate-jeff-jackson-visits-boone-as-part-of-100-county-tour",
+      "date": "2021-06-26",
+      "date_precision": "day",
+      "passage": "“The majority party in the state legislature is simply a wholly owned subsidiary of the (National Rifle Association),” Jackson said. “I consider the NRA to be a morally and financially bankrupt organization.”",
+      "note": "Quoted by the Watauga (reposted on his campaign site, dated 2021-06-28) from a 2021-06-26 town hall in Boone, in answer to a question on a local shooting and what had been filed in the legislature. He criticises the gun lobby's influence on the legislature. [kept from the first search pass]",
+      "subjects": [
+        "general statement on gun safety laws",
+        "gun lobby influence on the legislature"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-06T14:01:21.292Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans and large-capacity magazines",
+        "background checks and permits",
+        "extreme risk protection orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general statements on gun rights and gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "NC DOJ site ncdoj.gov news: nothing on the subject found by page text; Giffords 2024 release confirms he was elected Attorney General",
+        "campaign site jeffjacksonnc.com: nothing on the subject; /issues page 404",
+        "NC General Assembly bill page for Senate Bill 737 (2017): sponsor confirmed",
+        "blocked: https://www.congress.gov (Cloudflare check) for sponsor list; blocked: https://legiscan.com (403); blocked: https://ballotpedia.org (403)",
+        "sponsor list for the federal term: covered by neither bulk check as he is no longer a member; congress.gov blocked, so US House sponsorships (e.g. H.R. 3850 bump stock bill reported by search) not verified",
+        "ontheissues.org: lead only, its Jackson quotes (2021 Senate campaign) not traced to an original; not saved",
+        "Giffords endorsement and release pages: advocacy group text, not his own words; not saved",
+        "6 web searches done",
+        "first search pass (stopped early): 1 finding(s) kept"
+      ],
+      "found": 3,
+      "at": "2026-11-06T14:01:21.292Z",
+      "by": "source-collector"
+    }
+  ]
+}

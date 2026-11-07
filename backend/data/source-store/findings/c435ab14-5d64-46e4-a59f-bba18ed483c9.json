@@ -1,6 +1,123 @@
 {
   "politician_id": "c435ab14-5d64-46e4-a59f-bba18ed483c9",
-  "findings": [],
+  "findings": [
+    {
+      "id": "de993072b1f015691757356966b25be35f10f79ccfc21b9e05ca9348996cbcde",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "Roll Call #208 - Question on acceptance of conference committee report",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA Senate, Roll Call #208 - Question on acceptance of conference committee report, 2024-07-18: yea (tally 35–5); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db16b98b521d382c722d5503605116e48c77fb9d34798b9816992f739c986730",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "Senate Engrossed Roll Call #114",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA Senate, Senate Engrossed Roll Call #114, 2024-02-01: yea (tally 37–3); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "767c668122bf86e324f6d9a6719f5b58f7381ff23e94c183d816b849ebaf9525",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4670",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4670-2017",
+      "act": "yea",
+      "motion": "Senate Committee of conference report accepted, in concurrence  Roll Call #435",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MA Senate, Senate Committee of conference report accepted, in concurrence  Roll Call #435, 2018-06-28: yea (tally 36–1); census gate: near-unanimous.",
+      "subjects": [
+        "extreme risk protection orders to remove guns from people at risk of harming self or others",
+        "protection order added as a bar to gun licenses",
+        "stun gun rules and locked storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4670-2017.introduced.pdf",
+          "sha256": "6b37958358a3f01548ef0d16c386b3caaf5993d5c100f88279ff5b45ad1fe098"
+        }
+      }
+    },
+    {
+      "id": "098afdb4cf8c0cce88e55aa34438095f59ae2ea312a0d1e21b95ef0adc101724",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/191/S1388",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MA-S-1388-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-S-1388-2019 (LegiScan sponsor list): S1388 (191st General Court): Relative to crime gun data reporting and analysis.",
+      "subjects": [
+        "biennial report on crime gun trace and sales data"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-S-1388-2019.introduced.pdf",
+          "sha256": "ef4cb64fc242ae7df425557408dc449e1507668db996e81266a94029eb68522b"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -54,6 +171,30 @@
       "found": 0,
       "at": "2026-10-27T00:57:16.069Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "general gun-law statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official page: malegislature.gov profile of Senator Paul R. Feeney (confirms office); sponsor list: covered by LegiScan bulk check",
+        "campaign site: guessed addresses did not load, none found",
+        "Senate press room page 37: nothing naming him on the subject",
+        "Ballotpedia: not reviewed (pages return empty to the fetch tool)",
+        "4 web searches on name plus gun, firearm, SAFER Act, Question 9: no statement by him found",
+        "2026 ballot status not confirmed by a page; no page found saying he withdrew or lost"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:44:08.000Z",
+      "by": "source-collector"
     }
   ]
 }

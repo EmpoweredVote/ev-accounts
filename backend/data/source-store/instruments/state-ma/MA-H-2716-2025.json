@@ -1,0 +1,50 @@
+{
+ "id": "MA-H-2716-2025",
+ "scope": "state:ma",
+ "title": "H2716 (194th General Court): An Act to repeal expanded firearms bans",
+ "urls": [
+  "https://malegislature.gov/Bills/194/H2716",
+  "https://malegislature.gov/Bills/194/H2716/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Justin Thurber",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "a485b386-65a5-4c6c-aaa1-a441facd45fc"
+  },
+  {
+   "name": "John R. Gaskey",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "08a2dfdf-43fb-408a-b758-aa94497fd871"
+  },
+  {
+   "name": "Marc T. Lombardo",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "e2c3e1a7-78b2-4c90-a136-c0a22c3f3e48"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-H-2716-2025.html",
+   "sha256": "c4d3d818bc63bba740123f87e6c71053631170a90032f4650f497a158bc2d8e5"
+  }
+ },
+ "operative_text": "SECTION 1. Section 16 of Chapter 135 of the Acts of 2024 is hereby repealed.\nSECTION 2. Section 22 of Chapter 135 of the Acts of 2024 is hereby amended by deleting subsection (iv) from the definition of “Large capacity firearm” in section 121.\nSECTION 3. Section 49 of Chapter 135 of the Acts of 2024 is hereby amended by striking subsection 131(a).\nSECTION 4. Section 71 of Chapter 135 of the Acts of 2024 is hereby repealed."
+}

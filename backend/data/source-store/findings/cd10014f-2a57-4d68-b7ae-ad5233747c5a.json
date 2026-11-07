@@ -255,6 +255,90 @@
         "fetched_at": "2026-10-27T22:07:10.503Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "74b737520b2bc4b234613409f0ce2e2f9d0016575955f089aae478b952a05542",
+      "kind": "own-words",
+      "url": "https://www.jeffwadlin.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "The right to keep and bear arms is an individual constitutional right, and I will defend it.",
+      "note": "Issue page opens his gun section by calling the right to bear arms an individual right he will defend.",
+      "subjects": [
+        "general gun rights statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:50:36.529Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7732ab95bdbe7bee6ab977676059f8f8128423b98702082f35aa708340264929",
+      "kind": "own-words",
+      "url": "https://www.jeffwadlin.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Semi-automatic firearms are among the most commonly owned guns in America. They are legal and should remain legal. Law-abiding adults should not be treated like criminals because of the type of firearm they own or because they choose to carry one for self-defense.",
+      "note": "Says semi-automatic guns should stay legal and that adults should not be penalised for the type of gun or for carrying for self-defense.",
+      "subjects": [
+        "ban on assault-style guns",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:50:36.529Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bb8a0948668cbf0d447dfc19129d53a560b9eaf39a8108700788dcf5ffaaa320",
+      "kind": "own-words",
+      "url": "https://www.jeffwadlin.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Any restriction involving an individual’s rights must include strong due-process protections, prompt judicial review, and a meaningful opportunity to challenge the government’s evidence.",
+      "note": "Says any limit on a person's rights needs due process and quick court review; placed after a list of people government should focus on (violent offenders, traffickers, credible threats, domestic abusers).",
+      "subjects": [
+        "red-flag orders",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:50:36.529Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a8c71119ebd21be8348f53278a7417c026d4afe33cac370a5a9d7f151836d55",
+      "kind": "own-words",
+      "url": "https://www.jeffwadlin.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I support responsible ownership, secure storage around children, effective school security, and better intervention when someone presents a genuine danger. But I reject vague bans, arbitrary feature-based classifications, and laws that burden ordinary citizens while criminals ignore them.",
+      "note": "Supports safe storage, school security and intervention for people in danger; rejects feature-based bans and laws that burden ordinary owners.",
+      "subjects": [
+        "ban on assault-style guns",
+        "safe storage",
+        "school security"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:50:36.529Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -309,6 +393,30 @@
       "found": 5,
       "at": "2026-10-27T22:07:10.503Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "general gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope note: he is a 2026 candidate for U.S. Senate in Arkansas (not the House); nominated at the state party convention in February 2026 (talkbusiness.net listing in search results); general election 2026-11-03; his campaign site names the Senate race",
+        "campaign site https://www.jeffwadlin.com/issues : Second Amendment section found and copied; /about and /in-the-news had nothing on the subject",
+        "blocked: https://www.axios.com/local/nw-arkansas/2026/09/23/libertarian-candidate-jeff-wadlin (403)",
+        "blocked: https://ballotpedia.org/Jeff_Wadlin (empty page)",
+        "web and news searches: no other gun statements found",
+        "not reviewed: PBS Arkansas Senate debate video listed for 2026-10-14 (video, no transcript read)",
+        "sponsor list: not applicable, he has not held legislative office"
+      ],
+      "found": 4,
+      "at": "2026-10-31T00:50:36.529Z",
+      "by": "source-collector"
     }
   ]
 }

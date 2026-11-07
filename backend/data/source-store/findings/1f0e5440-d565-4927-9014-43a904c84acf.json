@@ -1,0 +1,34 @@
+{
+  "politician_id": "1f0e5440-d565-4927-9014-43a904c84acf",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "gun laws in general",
+        "Second Amendment general statement",
+        "check every gun buyer"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status check: Binj interview 2026-02-19 and WBUR 2026-10-13 name him as the 2026 U.S. Senate candidate in Massachusetts; the search results call him the party's nominee",
+        "Binj candidate interview 2026-02-19: nothing on the subject",
+        "WBUR debate report 2026-10-14: nothing on the subject",
+        "WBUR 2026-10-13 candidate piece: nothing on the subject",
+        "NBC Boston 2025 campaign launch piece: nothing on the subject",
+        "The Scope Boston conversation: nothing on the subject (one mention of a gun in his life story, not a policy statement)",
+        "Prediction Edge profile: secondary summary with no quote of his own, so not saved",
+        "blocked: https://www.axios.com/local/boston/2026/07/13/john-deaton-2026-senate-race-massachusetts-markey-moulton-reinvention-crypto (403)",
+        "campaign sites guessed (deatonforsenate.com, johndeaton.com): addresses do not exist",
+        "congress.gov: not applicable, he holds no federal office",
+        "ontheissues.org: lead only, records no gun stance",
+        "web search x3 on name plus gun words"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:13:57.570Z",
+      "by": "source-collector"
+    }
+  ]
+}

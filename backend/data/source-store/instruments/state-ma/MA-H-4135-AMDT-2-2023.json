@@ -1,0 +1,38 @@
+{
+ "id": "MA-H-4135-AMDT-2-2023",
+ "scope": "state:ma",
+ "title": "H.4135 (193rd General Court) House floor amendment #2: Shooting into a Dwelling. Withdrawn 10/18/2023.",
+ "urls": [
+  "https://malegislature.gov/Bills/GetAmendmentContent/193/H4135/2/House/Content",
+  "https://malegislature.gov/Bills/193/H4135/BillHistory"
+ ],
+ "version": "other",
+ "sponsors": [
+  {
+   "name": "Soter",
+   "role": "prime",
+   "version": "amendment text (movers named in it)",
+   "politician_id": "51e50b38-dbb2-4131-91bb-23c24bf6d741"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03): official amendment text + bill history for fate",
+  "fetched_at": "2026-11-03T19:02:32Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-H-4135-AMDT-2-2023.html",
+   "sha256": "40807557b6ecebeed554ab09be729d79928c27d625f0797e15b10a0081a0fc68"
+  }
+ },
+ "operative_text": "Amendment #2 to H.4135 - Withdrawn Amendment #2 to H4135 Shooting into a Dwelling Mr. Soter of Bellingham moves to amend the bill by striking Section 116 and inserting the following section: SECTION 116: Said chapter 269, as so appearing, is hereby amended by striking out section 12E and inserting in place thereof the following section:- Section 12E. (a) Whoever discharges a firearm with the intent to strike a dwelling, and as a result does strike a dwelling, shall be punished by imprisonment in the house of correction for not more than 2 ½ years, or in state prison for not more than 5 years, or by a fine of not more than $10,000, or both such imprisonment and fine. (b) This section shall not apply to (a) the lawful defense of life and property; (b) any law enforcement officer acting in the discharge of their duties; or (c) the discharge of blank cartridges for theatrical, athletic, ceremonial, firing squad or other purposes in accordance with section 39 of chapter 148. (c) This section shall not apply to a dwelling or building on the same property as (a) persons using underground or indoor target or test ranges with the consent of the owner or legal occupant thereof; (b) persons using outdoor skeet, trap, target or test ranges with the consent of the owner or legal occupant of the land on which the range is established; or (c) persons using shooting galleries, licensed and defined in section 56A of chapter 140. Nothing in this section shall exempt any persons from compliance with noise control laws, regulations, ordinances or by-laws in effect or from the prohibitions of section 58 of chapter 131"
+}

@@ -1,0 +1,70 @@
+{
+  "politician_id": "823a4ceb-4772-4bb8-9bcf-d21406c97ccf",
+  "findings": [
+    {
+      "id": "b680fb8404ce02d97d84d7e0e33d2bd57ac1c2f65c056d5f4979c0eb31a6ce26",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Bailey (23rd)'), linked to Perry Bailey (district 23) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.760Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "non-citizen voting",
+        "election integrity",
+        "mail ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Mississippi Free Press 2025 runoff candidate guide (https://www.mississippifreepress.org/meet-the-candidates-for-mississippi-house-districts-23-and-82-in-the-april-22-special-runoff-election/): confirms Perry Van Bailey as House District 23 runoff candidate and seated 2025; one campaign-video line about keeping illegal immigrants out of the state, not about voting, so not saved; nothing on the subject",
+        "SuperTalk article https://www.supertalk.fm/?p=227220: nothing on the subject",
+        "thecandidate.com page: no statements, positions pending; nothing on the subject",
+        "official legislature member page: not found under surname pattern (the bailey.xml page is a different member)",
+        "blocked: https://www.redhillsmsnews.com/communities-local-content/bailey-sworn-office-district-23-representative",
+        "blocked: https://ballotpedia.org/Perry_Van_Bailey (not fetched, known to refuse)",
+        "blocked: bluevoterguide.org (skipped, answers 403)",
+        "6 web searches (voter ID, photo ID, proof of citizenship/SAVE Act, questionnaire, newsletter, local papers): no own words on the subject found"
+      ],
+      "found": 0,
+      "at": "2026-11-05T22:54:04.118Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-05T23:52:51.760Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

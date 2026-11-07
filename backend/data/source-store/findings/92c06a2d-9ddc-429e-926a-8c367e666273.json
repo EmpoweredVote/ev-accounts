@@ -1,0 +1,29 @@
+{
+  "politician_id": "92c06a2d-9ddc-429e-926a-8c367e666273",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun carry rules",
+        "firearms regulation",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://vincentforcongress.com/ (nothing on the subject)",
+        "campaign issues page https://vincentforcongress.com/policy (nothing on the subject)",
+        "blocked: https://scdailygazette.com/2025/04/17/navy-veteran-hopes-to-be-first-democrat-to-win-grand-strand-and-pee-dee-congressional-seat/",
+        "Prediction Edge profile (third-party summary of his view, no source cited, not his own words; not saved)",
+        "Trump video transcript 2026-10-17 (an opponent's words about him, not saved)",
+        "Ballotpedia (not fetched, returns empty)",
+        "web searches: 2 (candidacy for SC 7th district in 2026 shown by campaign site and press; no own words on the subject found; no legislative record as a non-legislator)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T23:46:04.290Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,432 @@
+{
+  "politician_id": "bae7c0e9-be71-42a8-853f-c140c65db37d",
+  "findings": [
+    {
+      "id": "6a53de4be1a325d0f92a4593bddd5a1f79ab7609bc6c11604d59d770745003ee",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2016/pdf/history/HB/HB0786.xml",
+      "date": "2016-03-29",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-786-2016",
+      "act": "yea",
+      "motion": "Passed as amended (third reading, yeas and nays)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS Senate, Passed as amended (third reading, yeas and nays), 2016-03-29: yea (tally 36–14); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence",
+        "church security"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/MS_HB786SG.pdf",
+          "sha256": "a1142904e692e81f08ce94bef1f5827e9d662ac1f81ce57f6330064169e08945"
+        }
+      }
+    },
+    {
+      "id": "364900856d99bfb399d1bd234a46bd84aa31932d2d96df01adc5d490b75dbbec",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/senate/0860019.pdf",
+      "date": "2022-03-30",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Report of Conference Committee on H. B. No. 1510 was adopted: (0860019)",
+      "note": "Senate roll call as printed ('Blackwell'), linked to Kevin Blackwell (district 19) via the official 2022 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dd2a12a6dee5821334b8172c5583de5ade5bdaf4f4ad0b5e1da44e4c195eeac3",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/senate/0580007.pdf",
+      "date": "2018-02-28",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-804-2018",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On H. B. No. 804. On motion of Senator Blackwell, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0580007)",
+      "note": "Senate roll call as printed ('Blackwell'), linked to Kevin Blackwell (district 19) via the official 2018 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a8c4de99eef461ca6e1609ca64c8053c2b96b787cfd0e2aa237f858bab320346",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/history/SB/SB2008.xml",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2008-2024",
+      "act": "sponsor",
+      "motion": "prime sponsor, SB2008IN",
+      "note": "Named as prime sponsor ('Blackwell') on the official bill text, summary or journal; linked to Kevin Blackwell via the official 2024 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3d64932711258bf55f43f19a958641ea1b03adfbd9d1b91a8d23f9153bfda0e3",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2021/pdf/history/SB/SB2014.xml",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2014-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, SB2014IN",
+      "note": "Named as prime sponsor ('Blackwell') on the official bill text, summary or journal; linked to Kevin Blackwell via the official 2021 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a4d283086e879c331bff7c8d6629d7e148f08c9df40de3d9658f45b5d41c5ff4",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2021/pdf/history/SB/SB2016.xml",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2016-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, SB2016IN",
+      "note": "Named as prime sponsor ('Blackwell') on the official bill text, summary or journal; linked to Kevin Blackwell via the official 2021 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a6153476dbe45bf9ed44ef5f6d957fc6c19a9fea5ac9864278e3773772b4474d",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2025/pdf/history/SB/SB2063.xml",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2063-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, SB2063IN",
+      "note": "Named as prime sponsor ('Blackwell') on the official bill text, summary or journal; linked to Kevin Blackwell via the official 2025 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3999ecc1354d2c31a4246fd8a0f22846a83b3f84f3aa955b5356d9ac7691d2ab",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2020/pdf/history/SB/SB2086.xml",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2086-2020",
+      "act": "sponsor",
+      "motion": "prime sponsor, SB2086IN",
+      "note": "Named as prime sponsor ('Blackwell') on the official bill text, summary or journal; linked to Kevin Blackwell via the official 2020 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "beab8ce43b8b28a09530e1801661dcc950ed1a445c26edd64031ec09bc37ec3e",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/history/SB/SB2093.xml",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2093-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, SB2093IN",
+      "note": "Named as prime sponsor ('Blackwell') on the official bill text, summary or journal; linked to Kevin Blackwell via the official 2026 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "93f583e5e0049e19358dcaed24f8de13422f052d09903e238525fab7ff0f3541",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2023/pdf/history/SB/SB2110.xml",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2110-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, SB2110IN",
+      "note": "Named as prime sponsor ('Blackwell') on the official bill text, summary or journal; linked to Kevin Blackwell via the official 2023 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f35cce40c13b4c49c1c36f31a9a5623b4f971c2cbadd51b5032f864b0f8b803b",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2019/pdf/history/SB/SB2242.xml",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2242-2019",
+      "act": "sponsor",
+      "motion": "prime sponsor, SB2242IN",
+      "note": "Named as prime sponsor ('Blackwell') on the official bill text, summary or journal; linked to Kevin Blackwell via the official 2019 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4cd68734c411fde05dc865eff22b5ec7355a7eca5840d62ffaae784f759ff30d",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/senate/0720054.pdf",
+      "date": "2024-03-13",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2576. On motion of Senator England, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0720054)",
+      "note": "Senate roll call as printed ('Blackwell'), linked to Kevin Blackwell (district 19) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b0a384baf6fe58a9ea0e42529ac3f22a97f043100dd50e424c87ef0255125e0b",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/senate/0770004.pdf",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Senate concurred in the foregoing House Amendment to S. B. No. 2588 by the following vote: (0770004)",
+      "note": "Senate roll call as printed ('Blackwell'), linked to Kevin Blackwell (district 19) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "168f15390f655a4225625328856b806b8bd581a853f3da55562d837d72232da9",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/history/SB/SB2590.xml",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2590-2022",
+      "act": "sponsor",
+      "motion": "prime sponsor, SB2590IN",
+      "note": "Named as prime sponsor ('Blackwell') on the official bill text, summary or journal; linked to Kevin Blackwell via the official 2022 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3d1c3e6d912b1a665b1357dbee34fafee1aeab8232b1a9c7c72dc8e05cdbd815",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/history/SB/SB2608.xml",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2608-2022",
+      "act": "sponsor",
+      "motion": "prime sponsor, SB2608IN",
+      "note": "Named as prime sponsor ('Blackwell') on the official bill text, summary or journal; linked to Kevin Blackwell via the official 2022 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5fb2db7b709a5adce6169d4e97d37f4a0c8ab4b7a1214357f1325a6f7612c86e",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2020/pdf/history/SB/SB2671.xml",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2671-2020",
+      "act": "sponsor",
+      "motion": "prime sponsor, SB2671IN",
+      "note": "Named as prime sponsor ('Blackwell') on the official bill text, summary or journal; linked to Kevin Blackwell via the official 2020 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a028b8f2afe6c2f1d4227a3e8a492d2bda1790c4c4d4c75b9cf3a0db850d5f39",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/senate/0320004.pdf",
+      "date": "2018-02-02",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2766-2018",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2766. On motion of Senator Blackwell, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0320004)",
+      "note": "Senate roll call as printed ('Blackwell'), linked to Kevin Blackwell (district 19) via the official 2018 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.754Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SAVE Act / SHIELD Act",
+        "voter-roll checks",
+        "mail or absentee ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://desotocountynews.com/desoto-county-news/blackwell-another-election-year/ (his own column, 2023-02-11: elections only in the campaign sense, nothing on ID or citizenship)",
+        "https://desotocountynews.com/desoto-county-news/blackwell-launches-first-ad-in-senate-district-19-special-election/ (2025-09-29: nothing on ID or citizenship)",
+        "https://desotocountynews.com/mississippi-news/legislation-ensuring-voting-integrity-in-state-signed/ (2022-04-14: names no legislator quote)",
+        "https://www.mississippifreepress.org/proposed-school-board-election-changes-dead-by-bipartisan-vote/ (school-board election timing, not on the subject)",
+        "https://www.mississippifreepress.org/mississippi-senators-seek-easier-birth-certificate-access-under-new-voter-law/ and https://www.wdam.com/2026/05/14/state-senators-look-ways-address-concerns-raised-over-recently-passed-shield-act/ (read: do not name him)",
+        "Mississippi legislature bill pages: sponsorships linked separately, not searched",
+        "Ballotpedia: blocked (refused our fetches, not tried)",
+        "Vote Smart (justfacts.votesmart.org): skipped (known 403)",
+        "Mississippi does not post written testimony: not searched",
+        "web searches by name with voter ID, photo ID, proof of citizenship, SHIELD Act, questionnaire, local papers: nothing own-words on the subject",
+        "https://www.mpbonline.org/blogs/news/new-law-could-require-some-mississippians-to-prove-citizenship-when-registering-to-vote (read: does not name this person)"
+      ],
+      "found": 0,
+      "at": "2026-11-05T23:11:05.320Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 16,
+      "at": "2026-11-05T23:52:51.754Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

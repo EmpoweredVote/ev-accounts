@@ -1,6 +1,27 @@
 {
   "politician_id": "ceb5cd67-4ef1-4a33-a100-bfb6c0ae90f3",
-  "findings": [],
+  "findings": [
+    {
+      "id": "2155c2f8ea9fb366859eb19f3c43c0e23972edc7dc9db8cb420235317a7963f2",
+      "kind": "own-words",
+      "url": "https://adamrueda4nj5.com/about",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "We are champions of gun control as well as restoring true free speech in this country.",
+      "note": "Campaign About page, written in 'we' voice for the minor-party group that pays for the campaign, so it states the group's stance as posted by the campaign. It says 'gun control' with no detail on which rules.",
+      "subjects": [
+        "general support for gun control"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:00:27.953Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -51,6 +72,29 @@
       "found": 0,
       "at": "2026-10-27T15:52:48.592Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun control",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry permits",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://adamrueda4nj5.com: home, issues (nothing on the subject), about (one sentence on gun control)",
+        "NJ Division of Elections official general-election US House candidate list (PDF) lists Adam Rueda as a candidate in the 2026 general election",
+        "The Ballot Brief candidate page https://theballotbrief.com/candidate/adam-rueda-nj (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Adam_Rueda (page came back empty)",
+        "web search x1",
+        "congress.gov: not applicable (not a member)"
+      ],
+      "found": 1,
+      "at": "2026-10-30T15:00:27.953Z",
+      "by": "source-collector"
     }
   ]
 }

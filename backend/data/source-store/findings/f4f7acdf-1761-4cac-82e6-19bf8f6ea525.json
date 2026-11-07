@@ -1,0 +1,66 @@
+{
+  "politician_id": "f4f7acdf-1761-4cac-82e6-19bf8f6ea525",
+  "findings": [
+    {
+      "id": "c8f4c50e68edb8e951f09f4579b099e185e60c9885804a2bc9a41454ec89b363",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=1240&Year=2023&Initiative=false",
+      "date": "2023-04-19",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1240-2023",
+      "act": "yea",
+      "motion": "Final Passage as Amended by the Senate (Item 6)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA House, Final Passage as Amended by the Senate (Item 6), 2023-04-19: yea (tally 56–42); census gate: none.",
+      "subjects": [
+        "ban on selling assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/WA-HB1240-SL.pdf",
+          "sha256": "fde208b415d4a9fb3a430e62f8ffd4cf0db74ccb650c934198bd14547681432f"
+        }
+      }
+    },
+    {
+      "id": "908f8d9032dbada6b13f0b38d6c6cdb3f792998d6de7c25bc8f1c99452271bd3",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=1143&Year=2023&Initiative=false",
+      "date": "2023-04-14",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1143-2023",
+      "act": "yea",
+      "motion": "Final Passage as Amended by the Senate (Item 43)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA House, Final Passage as Amended by the Senate (Item 43), 2023-04-14: yea (tally 52–44); census gate: none.",
+      "subjects": [
+        "permit to buy a gun",
+        "safety training",
+        "10-day waiting period"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/WA-HB1143-SL.pdf",
+          "sha256": "9ed9fdb70ffb56147b272c6b241d7e0177bad7775d5a058683ffd46c4191521c"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

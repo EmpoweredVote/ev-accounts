@@ -54,9 +54,9 @@
       "instrument_id": "PA-SB-1-2023",
       "act": "yea",
       "motion": "House: Third consideration and final passage (PN 385)",
-      "note": "House roll call as printed ('Kazeem'), linked to Carol Kazeem (district 159) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "note": "House roll call as printed ('Kazeem'), linked to Carol Kazeem (district 159) via the official 2023-2024 House member roll (identity step 2026-10-28). Corrected 2026-11-03: PN 385 has no voter-ID text (House Judiciary amendment A00091 removed it); this vote says nothing about ID.",
       "subjects": [
-        "voter ID at the polls"
+        "voter ID removed from this version"
       ],
       "topic_keys": [
         "voting-rights"
@@ -76,9 +76,9 @@
       "instrument_id": "PA-SB-224-2023",
       "act": "yea",
       "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
-      "note": "House roll call as printed ('KAZEEM'), linked to Carol Kazeem (district 159) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "note": "House roll call as printed ('KAZEEM'), linked to Carol Kazeem (district 159) via the official 2023-2024 House member roll (identity step 2026-10-28). Corrected 2026-11-03: PN 1171 has no voter-ID text (struck by A02604, 2023-10-17); this vote says nothing about ID.",
       "subjects": [
-        "voter ID at the polls"
+        "voter ID removed from this version"
       ],
       "topic_keys": [
         "voting-rights"
@@ -109,6 +109,186 @@
         "fetched_by": "identity-pa-2026-10-31-a02365",
         "fetched_at": "2026-10-31T15:52:56.609Z",
         "method": "webfetch"
+      }
+    },
+    {
+      "id": "09e9ef6398e6b3d78994905e91616d6cd5e1efca60f5c68993dbcec26a99dc53",
+      "kind": "own-words",
+      "url": "https://pahouse.com/Kazeem/About/Biography",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Prioritizing justice over excuses, she strives to enact positive change that will impact the people of her district. To accomplish this, Kazeem is pursuing legislative initiatives such as strengthening education equity, combating gun violence, ending the war on drugs, criminal justice reform and raising the minimum wage.",
+      "note": "Official House biography page (written in the third person, issued on her official site, undated). Lists combating gun violence among her legislative initiatives; names no specific policy.",
+      "subjects": [
+        "general statement on gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:14:10.131Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "051db24fd543f8346eb5cfc9d8e829b1c97813bf94a07c1985631580a8fd9143",
+      "kind": "own-words",
+      "url": "https://pahouse.com/Kazeem/About/Biography",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Kazeem also serves as a gun violence interventionist. Having lost loved ones to this epidemic, Kazeem helps others with similar experiences by providing social resources and trusted, trauma-informed support to residents in-need.",
+      "note": "Official House biography page (third person, undated). Describes her work as a gun violence interventionist and her own losses; no policy named.",
+      "subjects": [
+        "general statement on gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:14:10.131Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "95afd9ad1379ad7306e56b4998064c83e1cfba71a15b960a944a73dbe794398b",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hr567",
+      "date": "2026-06-15",
+      "date_precision": "day",
+      "instrument_id": "PA-HR-567-2026",
+      "act": "sponsor",
+      "note": "Prime sponsor of House Resolution 567, a resolution designating June 2026 as Gun Violence Awareness Month in Pennsylvania. The page gives no introduction date; the date here is the first recorded action, referral to the Health Committee. It had 22 cosponsors and no votes listed.",
+      "subjects": [
+        "gun violence awareness"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:14:10.131Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "800874da45274888c512c3ce2ff57a496ed6554c3743f6c10ad583d9553f5506",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb1065",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1065-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-1065-2025 (LegiScan sponsor list): HB1065 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for definitions and providing for the offense of sale of firearm or firearm parts without serial numbers and for privately made firearms..",
+      "subjects": [
+        "sale of unserialized gun frames and kits made a felony",
+        "buying parts to build an untraceable gun made a felony",
+        "dealers must mark privately made firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1065-2025.introduced.pdf",
+          "sha256": "34b91995f20ec4936440cc2230659301f600d37e7e50653195d36caf02ae3e7c"
+        }
+      }
+    },
+    {
+      "id": "ed5786a72c0bd453a62e995692c5682a4ecded943c2f932717648e96ceb4c9af",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=777",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-777-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-777-2023 (LegiScan sponsor list): HB777 (2023-2024 Regular Session): In firearms and other dangerous articles, further providing for definitions and providing for the offense of sale of firearm or firearm parts without serial numbers and for privately made firearms..",
+      "subjects": [
+        "sale or transfer of unserialized gun frames, receivers and kits made a felony",
+        "buying parts to build an unserialized gun made a felony",
+        "licensed dealers must mark and record privately made firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-777-2023.amended.pdf",
+          "sha256": "65a5f4847629a43127721168bc31890a6fd60f0aefae6ac528a3cd698d73d35e"
+        }
+      }
+    },
+    {
+      "id": "b6f93bd51b38c8c63d69145e9446df56f7ebad8c7f4c3fa1dd09e5e0cf2ed28a",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=1018",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1018-2023",
+      "act": "yea",
+      "motion": "House Floor: HB 1018 PN 1152, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 1018 PN 1152, FINAL PASSAGE, 2023-05-22: yea (tally 102–99); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders created to remove firearms",
+        "firearm ban while an order is active",
+        "penalty for not turning in firearms under an order",
+        "longer penalty for prohibited persons found with a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1018-2023.amended.pdf",
+          "sha256": "05d5a4c60b9a22ac9e77d07afe3e7adc8841cd9dab1224832eb50521b29958a6"
+        }
+      }
+    },
+    {
+      "id": "1561ab47f9bb2cf3b379931e6b111466d9042b024b1f43b38ba23bbb38f188dc",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=777",
+      "date": "2024-03-27",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-777-2023",
+      "act": "yea",
+      "motion": "House Floor: HB 777 PN 2578, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 777 PN 2578, FINAL PASSAGE, 2024-03-27: yea (tally 104–97); census gate: none.",
+      "subjects": [
+        "sale or transfer of unserialized gun frames, receivers and kits made a felony",
+        "buying parts to build an unserialized gun made a felony",
+        "licensed dealers must mark and record privately made firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-777-2023.amended.pdf",
+          "sha256": "65a5f4847629a43127721168bc31890a6fd60f0aefae6ac528a3cd698d73d35e"
+        }
       }
     }
   ],
@@ -178,6 +358,29 @@
       "found": 1,
       "at": "2026-10-31T15:52:56.609Z",
       "by": "identity-pa-2026-10-31-a02365"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun violence prevention",
+        "gun violence awareness",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "sponsored gun bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House biography https://pahouse.com/Kazeem/About/Biography (confirms Rep. Carol Kazeem, 159th District; gun violence statements saved)",
+        "House news center https://www.pahouse.com/Kazeem/NewsCenter/ (first page only, May to Oct 2026; nothing on guns; older pages not reviewed)",
+        "legislature bill page https://www.palegis.us/legislation/bills/2025/hr567 (HR 567 sponsorship saved)",
+        "https://policyrisk.com/state-bill/PA-HR567-2025-2026 (confirms HR 567)",
+        "two web searches: no other gun bill sponsorship confirmed; one 2023 bill listing naming her could not be tied to a title or role, so not saved",
+        "Ballotpedia not fetched (known to return empty)"
+      ],
+      "found": 3,
+      "at": "2026-10-30T15:14:10.131Z",
+      "by": "source-collector"
     }
   ]
 }

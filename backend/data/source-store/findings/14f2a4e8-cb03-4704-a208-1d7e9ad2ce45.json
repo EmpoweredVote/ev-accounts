@@ -105,6 +105,52 @@
           "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
         }
       }
+    },
+    {
+      "id": "dccca3d801e58d120cadef4cc39fe904c579dd1b8e8dc7a06fbe3c46ee1ea739",
+      "kind": "record",
+      "url": "https://ncleg.gov/BillLookUp/2025/S50",
+      "date": "2025-06-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-50-2025",
+      "act": "yea",
+      "motion": "Second Reading (RCS H-426); page lists third reading passed same day per bill history",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NC House, Second Reading (RCS H-426); page lists third reading passed same day per bill history, 2025-06-11: yea (tally 59–48); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "C (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0137684ea8d2e84ebad22433a33708077c8fac1031d38c69b3f0464f931bbdd1",
+      "kind": "own-words",
+      "url": "https://nsjonline.com/?p=64072",
+      "date": "2021-06-08",
+      "date_precision": "day",
+      "passage": "The bills include legislation to repeal the state’s pistol-permit process, which bill sponsor state Rep. Jay Adams (R-Catawba) said “is duplicative, costly and an unnecessary burden on law enforcement and law-abiding gun owners.”",
+      "note": "Quoted in a news report on a House package; he says the pistol-permit process is duplicative, costly and a burden on police and gun owners, as sponsor of the bill to repeal it. Only the words inside the quote marks are his.",
+      "subjects": [
+        "repeal pistol permits",
+        "permit to buy a handgun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-05T23:59:06.486Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -130,6 +176,31 @@
       ],
       "found": 1,
       "at": "2026-10-22T23:34:55.038Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "background checks and permits",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "official page https://www.ncleg.gov/Members/Biography/H/697 (District 96)",
+        "https://www.carolinajournal.com/video/n-c-rep-jay-adams-discusses-the-second-amendment/ (2022-03-08 video, no transcript; not reviewed: video)",
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "blocked: https://ncnewsline.com/2025/06/11/north-carolina-house-approves-controversial-gun-bill-sends-to-stein/",
+        "Ballotpedia: not reviewed, returns empty to the fetch tool",
+        "web searches on name plus subject words"
+      ],
+      "found": 1,
+      "at": "2026-11-05T23:59:06.486Z",
       "by": "source-collector"
     }
   ]

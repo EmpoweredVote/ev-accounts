@@ -57,15 +57,18 @@
       "members": [
         {
           "name": "Acomb",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "f1f2ffaf-c9fb-4555-adf8-6c9c8114d9f3"
         },
         {
           "name": "Agbaje",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "285c226e-a195-4d7e-993b-d54b6712e65b"
         },
         {
           "name": "Bahner",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "4269e293-60c0-4348-adca-7a2dbc98dd18"
         },
         {
           "name": "Becker-Finn",
@@ -73,11 +76,13 @@
         },
         {
           "name": "Berg",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "a89ba4b9-a684-40a6-b5ec-db0876a65b8d"
         },
         {
           "name": "Bierman",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "32422c01-9158-4264-b2b9-b021e3438cce"
         },
         {
           "name": "Brand",
@@ -85,23 +90,28 @@
         },
         {
           "name": "Carroll",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "4f779833-0eb9-4b14-b2a9-1e541f548849"
         },
         {
           "name": "Cha",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "376e49a2-a73e-4748-b7c4-9195cbfa2ec5"
         },
         {
           "name": "Clardy",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "7c84dfd1-eb0b-47fa-9fd4-373591ce662d"
         },
         {
           "name": "Coulter",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "3386966b-b6fe-4ffb-8796-e755be9b44ab"
         },
         {
           "name": "Curran",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "131b330a-cbc2-477e-a94b-3eeec70418a5"
         },
         {
           "name": "Edelson",
@@ -109,47 +119,58 @@
         },
         {
           "name": "Elkins",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "7c525707-de26-453c-9d7b-166ab5dcf9e5"
         },
         {
           "name": "Feist",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "641bf895-0822-4ed2-9423-24b1a3fada2a"
         },
         {
           "name": "Finke",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "1c30fb24-6bda-46ca-94fe-df0579d7ca4d"
         },
         {
           "name": "Fischer",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "e6333290-8189-415a-af13-7cfc594ca86b"
         },
         {
           "name": "Frazier",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "7f7c4959-18a0-4dd3-901e-8d59aece0337"
         },
         {
           "name": "Frederick",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "58f8cad2-0a73-43ac-83d6-fcc21a047b51"
         },
         {
           "name": "Freiberg",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "ace1dba6-9927-4224-9e45-6aef5b6b75d6"
         },
         {
           "name": "Gomez",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "81033847-4e48-4080-a0c5-8daf154a4761"
         },
         {
           "name": "Greenman",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "a9303183-ae2a-4c1b-9777-587bb356f488"
         },
         {
           "name": "Hansen, R.",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "007efefd-7680-44b7-9f07-813340f52366"
         },
         {
           "name": "Hanson, J.",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "79ee7fa2-44fb-4681-a7ed-450e74388425"
         },
         {
           "name": "Hassan",
@@ -157,23 +178,28 @@
         },
         {
           "name": "Hemmingsen-Jaeger",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "bd87858e-f045-4b4d-aa3c-cbcfe3613066"
         },
         {
           "name": "Her",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "644b3ee9-31fd-4210-b2bc-54b47d6e9a19"
         },
         {
           "name": "Hicks",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "c63adb8a-5321-4ef1-be53-c915f81308aa"
         },
         {
           "name": "Hill",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "393a864c-e1a1-4940-810c-e26322c5679e"
         },
         {
           "name": "Hollins",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "27d3b46b-befc-4169-9bf0-f87e09d47d8b"
         },
         {
           "name": "Hornstein",
@@ -185,47 +211,58 @@
         },
         {
           "name": "Howard",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "e6082f4d-56fd-4fc7-b29a-2da8ad703979"
         },
         {
           "name": "Huot",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "ff1fbc23-7d83-4b4e-93ca-22a58b60e481"
         },
         {
           "name": "Hussein",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "940b9e75-ae5d-458e-a888-6d7096e7df54"
         },
         {
           "name": "Jordan",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "1b23f52f-50da-48bf-877b-e1182a1e7679"
         },
         {
           "name": "Keeler",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "4d08487a-cfb1-47d9-b61a-8fb20968b662"
         },
         {
           "name": "Klevorn",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "34b532b9-de36-4647-82f1-6bc17ed0d627"
         },
         {
           "name": "Koegel",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "3b0dc78e-e73a-47e7-b45a-73b880a1ab7c"
         },
         {
           "name": "Kotyza-Witthuhn",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "e3311ba8-aeed-497c-b61c-4487f7a22383"
         },
         {
           "name": "Kozlowski",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "b6759469-327d-46fe-9064-0c1ec40bec63"
         },
         {
           "name": "Kraft",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "461ec505-bdae-4b92-af7d-7d2cabf65b20"
         },
         {
           "name": "Lee, F.",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "556de586-e176-4e68-90de-1eabb24a5b4d"
         },
         {
           "name": "Lee, K.",
@@ -233,19 +270,23 @@
         },
         {
           "name": "Liebling",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "73b22a9e-e9f8-4419-8f64-7c0ed9806da3"
         },
         {
           "name": "Lillie",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "31699ccd-426b-4708-9a1d-bdaced1a56dc"
         },
         {
           "name": "Long",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "9e9ae384-03ef-4f76-831b-3ccc266509a4"
         },
         {
           "name": "Moller",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "ac902e73-18b8-48dd-9409-657e8bb85af0"
         },
         {
           "name": "Nelson, M.",
@@ -257,11 +298,13 @@
         },
         {
           "name": "Noor",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "afd02cc7-9c13-4345-b3b4-7a507c062414"
         },
         {
           "name": "Norris",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "e19f88ea-5ebe-4333-810e-d8d5d9ccaf9a"
         },
         {
           "name": "Olson, L.",
@@ -273,11 +316,13 @@
         },
         {
           "name": "Pérez-Vega",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "2b1b89f8-5692-4acf-b437-e8f1ae677b13"
         },
         {
           "name": "Pinto",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "8ae767e1-a3bc-406d-a191-5fb5133ec190"
         },
         {
           "name": "Pryor",
@@ -285,15 +330,18 @@
         },
         {
           "name": "Pursell",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "56a81dd0-5e0e-446f-8835-65d643520b72"
         },
         {
           "name": "Rehm",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "f409650c-fed4-467a-9ecd-000de3c99487"
         },
         {
           "name": "Reyer",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "6af8f82e-dbee-4ad2-b3ff-7b9e694b849c"
         },
         {
           "name": "Richardson",
@@ -301,39 +349,48 @@
         },
         {
           "name": "Sencer-Mura",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "05c8fc85-08b2-4f30-a6a3-65169ca9675d"
         },
         {
           "name": "Smith",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "3757d377-1cc0-45f0-8b6f-e1f988c6fea2"
         },
         {
           "name": "Stephenson",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "a04547cf-8928-4638-9fe4-bef286cfba0f"
         },
         {
           "name": "Tabke",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "cdcc38fe-555e-456f-9511-85f4cf7283e3"
         },
         {
           "name": "Vang",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "ba34c6bc-b9cf-4097-aa83-fdc191a3622c"
         },
         {
           "name": "Wolgamott",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "bef03b5f-8da7-46b6-b609-433ffb993f10"
         },
         {
           "name": "Xiong",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "36ac7eb0-5bb1-4fa6-b0e9-bc984a73fdb8"
         },
         {
           "name": "Youakim",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "7d365578-3cfd-444b-80fa-bd6927b3b72c"
         },
         {
           "name": "Altendorf",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "7a84bd40-30d3-4a27-9d54-b8262783f1da"
         },
         {
           "name": "Anderson, P. E.",
@@ -341,27 +398,33 @@
         },
         {
           "name": "Backer",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "7beab3d6-e4f9-401d-9859-de2ced5089f2"
         },
         {
           "name": "Bakeberg",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "562d1707-a74e-4ede-b8c7-8deaf9a90c0c"
         },
         {
           "name": "Baker",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "70ad1a5d-f216-415e-a307-f31c83785abb"
         },
         {
           "name": "Bennett",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "e86085c5-e044-49f1-a862-01d35da5f7f9"
         },
         {
           "name": "Bliss",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "fb704747-1d31-4a6d-9ce5-c1f7185fb018"
         },
         {
           "name": "Burkel",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "d6ec0d2d-21d1-4eda-933c-c7eb593389dc"
         },
         {
           "name": "Daniels",
@@ -373,31 +436,38 @@
         },
         {
           "name": "Davids",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "89f1c6e1-4cb6-4aa4-99d7-2260729fee28"
         },
         {
           "name": "Davis",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "32a1f6b7-ced6-4417-8074-cb37faca7659"
         },
         {
           "name": "Demuth",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "e49ed577-d00e-402f-bf80-5546baae414f"
         },
         {
           "name": "Dotseth",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "28b95309-d367-4c50-988b-38c851950cbc"
         },
         {
           "name": "Engen",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "171be6a9-0b10-4156-a2ce-e92da70f3b7f"
         },
         {
           "name": "Fogelman",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "338af9c7-7d7f-4450-830f-1a098a8cb080"
         },
         {
           "name": "Franson",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "b96b430e-5ba7-42cc-825f-38e2dbceb466"
         },
         {
           "name": "Garofalo",
@@ -405,7 +475,8 @@
         },
         {
           "name": "Gillman",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "96bbf0ae-f4b0-4a93-836a-c1ae576de868"
         },
         {
           "name": "Grossell",
@@ -413,11 +484,13 @@
         },
         {
           "name": "Harder",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "8d5c67e1-1443-477c-bfbf-317dbababa2f"
         },
         {
           "name": "Heintzeman",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "0bfc2626-fbf0-44cc-bd0d-ffcd10b12d44"
         },
         {
           "name": "Hudella",
@@ -425,15 +498,18 @@
         },
         {
           "name": "Hudson",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "37a6b346-470d-4f30-843f-7b5e9a20edaa"
         },
         {
           "name": "Igo",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "144b7c0e-354b-4d1f-be2f-73b04e8a0072"
         },
         {
           "name": "Jacob",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "c1baaa36-8965-4775-a453-d3e39089aa16"
         },
         {
           "name": "Johnson",
@@ -441,19 +517,23 @@
         },
         {
           "name": "Joy",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "ae296dbc-36aa-444f-89e3-1b1c6b734447"
         },
         {
           "name": "Knudsen",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "d0ed90a5-39e0-479b-b450-b57edda4e539"
         },
         {
           "name": "Koznick",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "ad0a254b-0082-41da-8eef-3567066d2bbf"
         },
         {
           "name": "Kresha",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "edc6c327-bd08-4993-af0b-98397d232e6d"
         },
         {
           "name": "Lislegard",
@@ -461,35 +541,43 @@
         },
         {
           "name": "McDonald",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "50ce958b-8215-41c2-afa0-cb993d31d2fd"
         },
         {
           "name": "Mekeland",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "463cdab3-b3bd-4aa9-b834-bf573f4f34bf"
         },
         {
           "name": "Mueller",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "c93d7f91-5e6d-4e41-a0ac-303c019c4b99"
         },
         {
           "name": "Murphy",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "ca967473-dabb-4bfa-9019-63cc6b1bd2e5"
         },
         {
           "name": "Myers",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "4a810646-c2f7-4702-a2ed-263fc3d0f4ed"
         },
         {
           "name": "Nadeau",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "4d2fbac3-d8d9-4bb4-96a9-bbaf0b864206"
         },
         {
           "name": "Nash",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "c9ea7750-8bd5-4db0-8ea9-40076eec7646"
         },
         {
           "name": "Nelson, N.",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "bd04bd63-5a7b-44ba-a34f-a293b51de5b9"
         },
         {
           "name": "Neu Brindley",
@@ -497,11 +585,13 @@
         },
         {
           "name": "Niska",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "a653e944-5dbf-4a40-bf03-02868ee902e7"
         },
         {
           "name": "Novotny",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "fbbc53e2-d3c8-4fbc-9df5-28cec3be9f41"
         },
         {
           "name": "O'Driscoll",
@@ -509,7 +599,8 @@
         },
         {
           "name": "Olson, B.",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "65c57cac-84ad-4ac1-9b4b-db5db92f1dfc"
         },
         {
           "name": "O'Neill",
@@ -517,7 +608,8 @@
         },
         {
           "name": "Perryman",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "d12d13ea-dbb8-4871-b35e-f37e2385db9a"
         },
         {
           "name": "Petersburg",
@@ -529,11 +621,13 @@
         },
         {
           "name": "Quam",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "8f781313-476b-48a0-b80c-c57a683b7db8"
         },
         {
           "name": "Robbins",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "0a48874e-3d5a-4160-9481-a67cb23cfafc"
         },
         {
           "name": "Schomacker",
@@ -541,23 +635,28 @@
         },
         {
           "name": "Schultz",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "a6159eb9-ec8c-42a4-951a-b27e41a936bd"
         },
         {
           "name": "Scott",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "15843ab1-33c5-480d-b4b4-c98935e9d880"
         },
         {
           "name": "Skraba",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "63dd49ad-2466-4256-a71c-ad2477dfbe6d"
         },
         {
           "name": "Swedzinski",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "394260b2-ddfe-4c6d-91dc-544d7fef9fe8"
         },
         {
           "name": "Torkelson",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "df16a6e7-95e5-4c40-b81e-690dfc7d3aeb"
         },
         {
           "name": "Urdahl",
@@ -565,11 +664,13 @@
         },
         {
           "name": "West",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "c9c55e16-d9fa-4c5a-b95e-b0e53cada2a5"
         },
         {
           "name": "Wiener",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "eb65cea1-51ae-487f-840f-b70b2c1126f9"
         },
         {
           "name": "Wiens",
@@ -577,11 +678,13 @@
         },
         {
           "name": "Witte",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "78a28a3b-98d0-46a6-bdf2-1d8b961fa6ed"
         },
         {
           "name": "Zeleznikar",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "95a65bb4-a540-4f52-8104-11a5bd7abb68"
         }
       ]
     },
@@ -597,15 +700,18 @@
       "members": [
         {
           "name": "Acomb",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "f1f2ffaf-c9fb-4555-adf8-6c9c8114d9f3"
         },
         {
           "name": "Agbaje",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "285c226e-a195-4d7e-993b-d54b6712e65b"
         },
         {
           "name": "Bahner",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "4269e293-60c0-4348-adca-7a2dbc98dd18"
         },
         {
           "name": "Becker-Finn",
@@ -613,11 +719,13 @@
         },
         {
           "name": "Berg",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "a89ba4b9-a684-40a6-b5ec-db0876a65b8d"
         },
         {
           "name": "Bierman",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "32422c01-9158-4264-b2b9-b021e3438cce"
         },
         {
           "name": "Brand",
@@ -625,23 +733,28 @@
         },
         {
           "name": "Carroll",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "4f779833-0eb9-4b14-b2a9-1e541f548849"
         },
         {
           "name": "Cha",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "376e49a2-a73e-4748-b7c4-9195cbfa2ec5"
         },
         {
           "name": "Clardy",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "7c84dfd1-eb0b-47fa-9fd4-373591ce662d"
         },
         {
           "name": "Coulter",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "3386966b-b6fe-4ffb-8796-e755be9b44ab"
         },
         {
           "name": "Curran",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "131b330a-cbc2-477e-a94b-3eeec70418a5"
         },
         {
           "name": "Edelson",
@@ -649,43 +762,53 @@
         },
         {
           "name": "Elkins",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "7c525707-de26-453c-9d7b-166ab5dcf9e5"
         },
         {
           "name": "Feist",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "641bf895-0822-4ed2-9423-24b1a3fada2a"
         },
         {
           "name": "Finke",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "1c30fb24-6bda-46ca-94fe-df0579d7ca4d"
         },
         {
           "name": "Fischer",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "e6333290-8189-415a-af13-7cfc594ca86b"
         },
         {
           "name": "Frazier",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "7f7c4959-18a0-4dd3-901e-8d59aece0337"
         },
         {
           "name": "Frederick",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "58f8cad2-0a73-43ac-83d6-fcc21a047b51"
         },
         {
           "name": "Freiberg",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "ace1dba6-9927-4224-9e45-6aef5b6b75d6"
         },
         {
           "name": "Greenman",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "a9303183-ae2a-4c1b-9777-587bb356f488"
         },
         {
           "name": "Hansen, R.",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "007efefd-7680-44b7-9f07-813340f52366"
         },
         {
           "name": "Hanson, J.",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "79ee7fa2-44fb-4681-a7ed-450e74388425"
         },
         {
           "name": "Hassan",
@@ -693,23 +816,28 @@
         },
         {
           "name": "Hemmingsen-Jaeger",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "bd87858e-f045-4b4d-aa3c-cbcfe3613066"
         },
         {
           "name": "Her",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "644b3ee9-31fd-4210-b2bc-54b47d6e9a19"
         },
         {
           "name": "Hicks",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "c63adb8a-5321-4ef1-be53-c915f81308aa"
         },
         {
           "name": "Hill",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "393a864c-e1a1-4940-810c-e26322c5679e"
         },
         {
           "name": "Hollins",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "27d3b46b-befc-4169-9bf0-f87e09d47d8b"
         },
         {
           "name": "Hornstein",
@@ -721,47 +849,58 @@
         },
         {
           "name": "Howard",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "e6082f4d-56fd-4fc7-b29a-2da8ad703979"
         },
         {
           "name": "Huot",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "ff1fbc23-7d83-4b4e-93ca-22a58b60e481"
         },
         {
           "name": "Hussein",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "940b9e75-ae5d-458e-a888-6d7096e7df54"
         },
         {
           "name": "Jordan",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "1b23f52f-50da-48bf-877b-e1182a1e7679"
         },
         {
           "name": "Keeler",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "4d08487a-cfb1-47d9-b61a-8fb20968b662"
         },
         {
           "name": "Klevorn",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "34b532b9-de36-4647-82f1-6bc17ed0d627"
         },
         {
           "name": "Koegel",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "3b0dc78e-e73a-47e7-b45a-73b880a1ab7c"
         },
         {
           "name": "Kotyza-Witthuhn",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "e3311ba8-aeed-497c-b61c-4487f7a22383"
         },
         {
           "name": "Kozlowski",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "b6759469-327d-46fe-9064-0c1ec40bec63"
         },
         {
           "name": "Kraft",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "461ec505-bdae-4b92-af7d-7d2cabf65b20"
         },
         {
           "name": "Lee, F.",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "556de586-e176-4e68-90de-1eabb24a5b4d"
         },
         {
           "name": "Lee, K.",
@@ -769,19 +908,23 @@
         },
         {
           "name": "Liebling",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "73b22a9e-e9f8-4419-8f64-7c0ed9806da3"
         },
         {
           "name": "Lillie",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "31699ccd-426b-4708-9a1d-bdaced1a56dc"
         },
         {
           "name": "Long",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "9e9ae384-03ef-4f76-831b-3ccc266509a4"
         },
         {
           "name": "Moller",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "ac902e73-18b8-48dd-9409-657e8bb85af0"
         },
         {
           "name": "Nelson, M.",
@@ -793,11 +936,13 @@
         },
         {
           "name": "Noor",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "afd02cc7-9c13-4345-b3b4-7a507c062414"
         },
         {
           "name": "Norris",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "e19f88ea-5ebe-4333-810e-d8d5d9ccaf9a"
         },
         {
           "name": "Olson, L.",
@@ -809,11 +954,13 @@
         },
         {
           "name": "Pérez-Vega",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "2b1b89f8-5692-4acf-b437-e8f1ae677b13"
         },
         {
           "name": "Pinto",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "8ae767e1-a3bc-406d-a191-5fb5133ec190"
         },
         {
           "name": "Pryor",
@@ -821,15 +968,18 @@
         },
         {
           "name": "Pursell",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "56a81dd0-5e0e-446f-8835-65d643520b72"
         },
         {
           "name": "Rehm",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "f409650c-fed4-467a-9ecd-000de3c99487"
         },
         {
           "name": "Reyer",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "6af8f82e-dbee-4ad2-b3ff-7b9e694b849c"
         },
         {
           "name": "Richardson",
@@ -837,39 +987,48 @@
         },
         {
           "name": "Sencer-Mura",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "05c8fc85-08b2-4f30-a6a3-65169ca9675d"
         },
         {
           "name": "Smith",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "3757d377-1cc0-45f0-8b6f-e1f988c6fea2"
         },
         {
           "name": "Stephenson",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "a04547cf-8928-4638-9fe4-bef286cfba0f"
         },
         {
           "name": "Tabke",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "cdcc38fe-555e-456f-9511-85f4cf7283e3"
         },
         {
           "name": "Vang",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "ba34c6bc-b9cf-4097-aa83-fdc191a3622c"
         },
         {
           "name": "Wolgamott",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "bef03b5f-8da7-46b6-b609-433ffb993f10"
         },
         {
           "name": "Xiong",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "36ac7eb0-5bb1-4fa6-b0e9-bc984a73fdb8"
         },
         {
           "name": "Youakim",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "7d365578-3cfd-444b-80fa-bd6927b3b72c"
         },
         {
           "name": "Altendorf",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "7a84bd40-30d3-4a27-9d54-b8262783f1da"
         },
         {
           "name": "Anderson, P. E.",
@@ -877,27 +1036,33 @@
         },
         {
           "name": "Backer",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "7beab3d6-e4f9-401d-9859-de2ced5089f2"
         },
         {
           "name": "Bakeberg",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "562d1707-a74e-4ede-b8c7-8deaf9a90c0c"
         },
         {
           "name": "Baker",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "70ad1a5d-f216-415e-a307-f31c83785abb"
         },
         {
           "name": "Bennett",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "e86085c5-e044-49f1-a862-01d35da5f7f9"
         },
         {
           "name": "Bliss",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "fb704747-1d31-4a6d-9ce5-c1f7185fb018"
         },
         {
           "name": "Burkel",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "d6ec0d2d-21d1-4eda-933c-c7eb593389dc"
         },
         {
           "name": "Daniels",
@@ -909,35 +1074,43 @@
         },
         {
           "name": "Davids",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "89f1c6e1-4cb6-4aa4-99d7-2260729fee28"
         },
         {
           "name": "Davis",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "32a1f6b7-ced6-4417-8074-cb37faca7659"
         },
         {
           "name": "Demuth",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "e49ed577-d00e-402f-bf80-5546baae414f"
         },
         {
           "name": "Dotseth",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "28b95309-d367-4c50-988b-38c851950cbc"
         },
         {
           "name": "Engen",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "171be6a9-0b10-4156-a2ce-e92da70f3b7f"
         },
         {
           "name": "Fogelman",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "338af9c7-7d7f-4450-830f-1a098a8cb080"
         },
         {
           "name": "Franson",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "b96b430e-5ba7-42cc-825f-38e2dbceb466"
         },
         {
           "name": "Gillman",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "96bbf0ae-f4b0-4a93-836a-c1ae576de868"
         },
         {
           "name": "Grossell",
@@ -945,11 +1118,13 @@
         },
         {
           "name": "Harder",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "8d5c67e1-1443-477c-bfbf-317dbababa2f"
         },
         {
           "name": "Heintzeman",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "0bfc2626-fbf0-44cc-bd0d-ffcd10b12d44"
         },
         {
           "name": "Hudella",
@@ -957,15 +1132,18 @@
         },
         {
           "name": "Hudson",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "37a6b346-470d-4f30-843f-7b5e9a20edaa"
         },
         {
           "name": "Igo",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "144b7c0e-354b-4d1f-be2f-73b04e8a0072"
         },
         {
           "name": "Jacob",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "c1baaa36-8965-4775-a453-d3e39089aa16"
         },
         {
           "name": "Johnson",
@@ -973,51 +1151,63 @@
         },
         {
           "name": "Joy",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "ae296dbc-36aa-444f-89e3-1b1c6b734447"
         },
         {
           "name": "Knudsen",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "d0ed90a5-39e0-479b-b450-b57edda4e539"
         },
         {
           "name": "Koznick",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "ad0a254b-0082-41da-8eef-3567066d2bbf"
         },
         {
           "name": "Kresha",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "edc6c327-bd08-4993-af0b-98397d232e6d"
         },
         {
           "name": "McDonald",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "50ce958b-8215-41c2-afa0-cb993d31d2fd"
         },
         {
           "name": "Mekeland",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "463cdab3-b3bd-4aa9-b834-bf573f4f34bf"
         },
         {
           "name": "Mueller",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "c93d7f91-5e6d-4e41-a0ac-303c019c4b99"
         },
         {
           "name": "Murphy",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "ca967473-dabb-4bfa-9019-63cc6b1bd2e5"
         },
         {
           "name": "Myers",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "4a810646-c2f7-4702-a2ed-263fc3d0f4ed"
         },
         {
           "name": "Nadeau",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "4d2fbac3-d8d9-4bb4-96a9-bbaf0b864206"
         },
         {
           "name": "Nash",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "c9ea7750-8bd5-4db0-8ea9-40076eec7646"
         },
         {
           "name": "Nelson, N.",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "bd04bd63-5a7b-44ba-a34f-a293b51de5b9"
         },
         {
           "name": "Neu Brindley",
@@ -1025,11 +1215,13 @@
         },
         {
           "name": "Niska",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "a653e944-5dbf-4a40-bf03-02868ee902e7"
         },
         {
           "name": "Novotny",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "fbbc53e2-d3c8-4fbc-9df5-28cec3be9f41"
         },
         {
           "name": "O'Driscoll",
@@ -1037,7 +1229,8 @@
         },
         {
           "name": "Olson, B.",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "65c57cac-84ad-4ac1-9b4b-db5db92f1dfc"
         },
         {
           "name": "O'Neill",
@@ -1045,7 +1238,8 @@
         },
         {
           "name": "Perryman",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "d12d13ea-dbb8-4871-b35e-f37e2385db9a"
         },
         {
           "name": "Petersburg",
@@ -1057,11 +1251,13 @@
         },
         {
           "name": "Quam",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "8f781313-476b-48a0-b80c-c57a683b7db8"
         },
         {
           "name": "Robbins",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "0a48874e-3d5a-4160-9481-a67cb23cfafc"
         },
         {
           "name": "Schomacker",
@@ -1069,31 +1265,38 @@
         },
         {
           "name": "Schultz",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "a6159eb9-ec8c-42a4-951a-b27e41a936bd"
         },
         {
           "name": "Scott",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "15843ab1-33c5-480d-b4b4-c98935e9d880"
         },
         {
           "name": "Skraba",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "63dd49ad-2466-4256-a71c-ad2477dfbe6d"
         },
         {
           "name": "Swedzinski",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "394260b2-ddfe-4c6d-91dc-544d7fef9fe8"
         },
         {
           "name": "Torkelson",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "df16a6e7-95e5-4c40-b81e-690dfc7d3aeb"
         },
         {
           "name": "West",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "c9c55e16-d9fa-4c5a-b95e-b0e53cada2a5"
         },
         {
           "name": "Wiener",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "eb65cea1-51ae-487f-840f-b70b2c1126f9"
         },
         {
           "name": "Wiens",
@@ -1101,11 +1304,13 @@
         },
         {
           "name": "Witte",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "78a28a3b-98d0-46a6-bdf2-1d8b961fa6ed"
         },
         {
           "name": "Zeleznikar",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "95a65bb4-a540-4f52-8104-11a5bd7abb68"
         }
       ]
     },
@@ -1121,15 +1326,18 @@
       "members": [
         {
           "name": "Acomb",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "f1f2ffaf-c9fb-4555-adf8-6c9c8114d9f3"
         },
         {
           "name": "Agbaje",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "285c226e-a195-4d7e-993b-d54b6712e65b"
         },
         {
           "name": "Bahner",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "4269e293-60c0-4348-adca-7a2dbc98dd18"
         },
         {
           "name": "Becker-Finn",
@@ -1137,11 +1345,13 @@
         },
         {
           "name": "Berg",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "a89ba4b9-a684-40a6-b5ec-db0876a65b8d"
         },
         {
           "name": "Bierman",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "32422c01-9158-4264-b2b9-b021e3438cce"
         },
         {
           "name": "Brand",
@@ -1149,23 +1359,28 @@
         },
         {
           "name": "Carroll",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "4f779833-0eb9-4b14-b2a9-1e541f548849"
         },
         {
           "name": "Cha",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "376e49a2-a73e-4748-b7c4-9195cbfa2ec5"
         },
         {
           "name": "Clardy",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "7c84dfd1-eb0b-47fa-9fd4-373591ce662d"
         },
         {
           "name": "Coulter",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "3386966b-b6fe-4ffb-8796-e755be9b44ab"
         },
         {
           "name": "Curran",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "131b330a-cbc2-477e-a94b-3eeec70418a5"
         },
         {
           "name": "Edelson",
@@ -1173,47 +1388,58 @@
         },
         {
           "name": "Elkins",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "7c525707-de26-453c-9d7b-166ab5dcf9e5"
         },
         {
           "name": "Feist",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "641bf895-0822-4ed2-9423-24b1a3fada2a"
         },
         {
           "name": "Finke",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "1c30fb24-6bda-46ca-94fe-df0579d7ca4d"
         },
         {
           "name": "Fischer",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "e6333290-8189-415a-af13-7cfc594ca86b"
         },
         {
           "name": "Frazier",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "7f7c4959-18a0-4dd3-901e-8d59aece0337"
         },
         {
           "name": "Frederick",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "58f8cad2-0a73-43ac-83d6-fcc21a047b51"
         },
         {
           "name": "Freiberg",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "ace1dba6-9927-4224-9e45-6aef5b6b75d6"
         },
         {
           "name": "Gomez",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "81033847-4e48-4080-a0c5-8daf154a4761"
         },
         {
           "name": "Greenman",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "a9303183-ae2a-4c1b-9777-587bb356f488"
         },
         {
           "name": "Hansen, R.",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "007efefd-7680-44b7-9f07-813340f52366"
         },
         {
           "name": "Hanson, J.",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "79ee7fa2-44fb-4681-a7ed-450e74388425"
         },
         {
           "name": "Hassan",
@@ -1221,23 +1447,28 @@
         },
         {
           "name": "Hemmingsen-Jaeger",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "bd87858e-f045-4b4d-aa3c-cbcfe3613066"
         },
         {
           "name": "Her",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "644b3ee9-31fd-4210-b2bc-54b47d6e9a19"
         },
         {
           "name": "Hicks",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "c63adb8a-5321-4ef1-be53-c915f81308aa"
         },
         {
           "name": "Hill",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "393a864c-e1a1-4940-810c-e26322c5679e"
         },
         {
           "name": "Hollins",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "27d3b46b-befc-4169-9bf0-f87e09d47d8b"
         },
         {
           "name": "Hornstein",
@@ -1249,47 +1480,58 @@
         },
         {
           "name": "Howard",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "e6082f4d-56fd-4fc7-b29a-2da8ad703979"
         },
         {
           "name": "Huot",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "ff1fbc23-7d83-4b4e-93ca-22a58b60e481"
         },
         {
           "name": "Hussein",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "940b9e75-ae5d-458e-a888-6d7096e7df54"
         },
         {
           "name": "Jordan",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "1b23f52f-50da-48bf-877b-e1182a1e7679"
         },
         {
           "name": "Keeler",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "4d08487a-cfb1-47d9-b61a-8fb20968b662"
         },
         {
           "name": "Klevorn",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "34b532b9-de36-4647-82f1-6bc17ed0d627"
         },
         {
           "name": "Koegel",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "3b0dc78e-e73a-47e7-b45a-73b880a1ab7c"
         },
         {
           "name": "Kotyza-Witthuhn",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "e3311ba8-aeed-497c-b61c-4487f7a22383"
         },
         {
           "name": "Kozlowski",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "b6759469-327d-46fe-9064-0c1ec40bec63"
         },
         {
           "name": "Kraft",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "461ec505-bdae-4b92-af7d-7d2cabf65b20"
         },
         {
           "name": "Lee, F.",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "556de586-e176-4e68-90de-1eabb24a5b4d"
         },
         {
           "name": "Lee, K.",
@@ -1297,19 +1539,23 @@
         },
         {
           "name": "Liebling",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "73b22a9e-e9f8-4419-8f64-7c0ed9806da3"
         },
         {
           "name": "Lillie",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "31699ccd-426b-4708-9a1d-bdaced1a56dc"
         },
         {
           "name": "Long",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "9e9ae384-03ef-4f76-831b-3ccc266509a4"
         },
         {
           "name": "Moller",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "ac902e73-18b8-48dd-9409-657e8bb85af0"
         },
         {
           "name": "Nelson, M.",
@@ -1321,11 +1567,13 @@
         },
         {
           "name": "Noor",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "afd02cc7-9c13-4345-b3b4-7a507c062414"
         },
         {
           "name": "Norris",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "e19f88ea-5ebe-4333-810e-d8d5d9ccaf9a"
         },
         {
           "name": "Olson, L.",
@@ -1337,11 +1585,13 @@
         },
         {
           "name": "Pérez-Vega",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "2b1b89f8-5692-4acf-b437-e8f1ae677b13"
         },
         {
           "name": "Pinto",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "8ae767e1-a3bc-406d-a191-5fb5133ec190"
         },
         {
           "name": "Pryor",
@@ -1349,15 +1599,18 @@
         },
         {
           "name": "Pursell",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "56a81dd0-5e0e-446f-8835-65d643520b72"
         },
         {
           "name": "Rehm",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "f409650c-fed4-467a-9ecd-000de3c99487"
         },
         {
           "name": "Reyer",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "6af8f82e-dbee-4ad2-b3ff-7b9e694b849c"
         },
         {
           "name": "Richardson",
@@ -1365,39 +1618,48 @@
         },
         {
           "name": "Sencer-Mura",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "05c8fc85-08b2-4f30-a6a3-65169ca9675d"
         },
         {
           "name": "Smith",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "3757d377-1cc0-45f0-8b6f-e1f988c6fea2"
         },
         {
           "name": "Stephenson",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "a04547cf-8928-4638-9fe4-bef286cfba0f"
         },
         {
           "name": "Tabke",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "cdcc38fe-555e-456f-9511-85f4cf7283e3"
         },
         {
           "name": "Vang",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "ba34c6bc-b9cf-4097-aa83-fdc191a3622c"
         },
         {
           "name": "Wolgamott",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "bef03b5f-8da7-46b6-b609-433ffb993f10"
         },
         {
           "name": "Xiong",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "36ac7eb0-5bb1-4fa6-b0e9-bc984a73fdb8"
         },
         {
           "name": "Youakim",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "7d365578-3cfd-444b-80fa-bd6927b3b72c"
         },
         {
           "name": "Altendorf",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "7a84bd40-30d3-4a27-9d54-b8262783f1da"
         },
         {
           "name": "Anderson, P. E.",
@@ -1409,27 +1671,33 @@
         },
         {
           "name": "Backer",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "7beab3d6-e4f9-401d-9859-de2ced5089f2"
         },
         {
           "name": "Bakeberg",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "562d1707-a74e-4ede-b8c7-8deaf9a90c0c"
         },
         {
           "name": "Baker",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "70ad1a5d-f216-415e-a307-f31c83785abb"
         },
         {
           "name": "Bennett",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "e86085c5-e044-49f1-a862-01d35da5f7f9"
         },
         {
           "name": "Bliss",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "fb704747-1d31-4a6d-9ce5-c1f7185fb018"
         },
         {
           "name": "Burkel",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "d6ec0d2d-21d1-4eda-933c-c7eb593389dc"
         },
         {
           "name": "Daniels",
@@ -1437,27 +1705,33 @@
         },
         {
           "name": "Davis",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "32a1f6b7-ced6-4417-8074-cb37faca7659"
         },
         {
           "name": "Demuth",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "e49ed577-d00e-402f-bf80-5546baae414f"
         },
         {
           "name": "Dotseth",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "28b95309-d367-4c50-988b-38c851950cbc"
         },
         {
           "name": "Engen",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "171be6a9-0b10-4156-a2ce-e92da70f3b7f"
         },
         {
           "name": "Fogelman",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "338af9c7-7d7f-4450-830f-1a098a8cb080"
         },
         {
           "name": "Franson",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "b96b430e-5ba7-42cc-825f-38e2dbceb466"
         },
         {
           "name": "Garofalo",
@@ -1465,7 +1739,8 @@
         },
         {
           "name": "Gillman",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "96bbf0ae-f4b0-4a93-836a-c1ae576de868"
         },
         {
           "name": "Grossell",
@@ -1473,11 +1748,13 @@
         },
         {
           "name": "Harder",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "8d5c67e1-1443-477c-bfbf-317dbababa2f"
         },
         {
           "name": "Heintzeman",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "0bfc2626-fbf0-44cc-bd0d-ffcd10b12d44"
         },
         {
           "name": "Hudella",
@@ -1485,15 +1762,18 @@
         },
         {
           "name": "Hudson",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "37a6b346-470d-4f30-843f-7b5e9a20edaa"
         },
         {
           "name": "Igo",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "144b7c0e-354b-4d1f-be2f-73b04e8a0072"
         },
         {
           "name": "Jacob",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "c1baaa36-8965-4775-a453-d3e39089aa16"
         },
         {
           "name": "Johnson",
@@ -1501,19 +1781,23 @@
         },
         {
           "name": "Joy",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "ae296dbc-36aa-444f-89e3-1b1c6b734447"
         },
         {
           "name": "Knudsen",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "d0ed90a5-39e0-479b-b450-b57edda4e539"
         },
         {
           "name": "Koznick",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "ad0a254b-0082-41da-8eef-3567066d2bbf"
         },
         {
           "name": "Kresha",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "edc6c327-bd08-4993-af0b-98397d232e6d"
         },
         {
           "name": "Lislegard",
@@ -1521,31 +1805,38 @@
         },
         {
           "name": "McDonald",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "50ce958b-8215-41c2-afa0-cb993d31d2fd"
         },
         {
           "name": "Mekeland",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "463cdab3-b3bd-4aa9-b834-bf573f4f34bf"
         },
         {
           "name": "Mueller",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "c93d7f91-5e6d-4e41-a0ac-303c019c4b99"
         },
         {
           "name": "Murphy",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "ca967473-dabb-4bfa-9019-63cc6b1bd2e5"
         },
         {
           "name": "Myers",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "4a810646-c2f7-4702-a2ed-263fc3d0f4ed"
         },
         {
           "name": "Nash",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "c9ea7750-8bd5-4db0-8ea9-40076eec7646"
         },
         {
           "name": "Nelson, N.",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "bd04bd63-5a7b-44ba-a34f-a293b51de5b9"
         },
         {
           "name": "Neu Brindley",
@@ -1553,11 +1844,13 @@
         },
         {
           "name": "Niska",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "a653e944-5dbf-4a40-bf03-02868ee902e7"
         },
         {
           "name": "Novotny",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "fbbc53e2-d3c8-4fbc-9df5-28cec3be9f41"
         },
         {
           "name": "O'Driscoll",
@@ -1565,7 +1858,8 @@
         },
         {
           "name": "Olson, B.",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "65c57cac-84ad-4ac1-9b4b-db5db92f1dfc"
         },
         {
           "name": "O'Neill",
@@ -1573,7 +1867,8 @@
         },
         {
           "name": "Perryman",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "d12d13ea-dbb8-4871-b35e-f37e2385db9a"
         },
         {
           "name": "Petersburg",
@@ -1585,11 +1880,13 @@
         },
         {
           "name": "Quam",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "8f781313-476b-48a0-b80c-c57a683b7db8"
         },
         {
           "name": "Robbins",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "0a48874e-3d5a-4160-9481-a67cb23cfafc"
         },
         {
           "name": "Schomacker",
@@ -1597,19 +1894,23 @@
         },
         {
           "name": "Schultz",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "a6159eb9-ec8c-42a4-951a-b27e41a936bd"
         },
         {
           "name": "Scott",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "15843ab1-33c5-480d-b4b4-c98935e9d880"
         },
         {
           "name": "Skraba",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "63dd49ad-2466-4256-a71c-ad2477dfbe6d"
         },
         {
           "name": "Swedzinski",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "394260b2-ddfe-4c6d-91dc-544d7fef9fe8"
         },
         {
           "name": "Urdahl",
@@ -1617,11 +1918,13 @@
         },
         {
           "name": "West",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "c9c55e16-d9fa-4c5a-b95e-b0e53cada2a5"
         },
         {
           "name": "Wiener",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "eb65cea1-51ae-487f-840f-b70b2c1126f9"
         },
         {
           "name": "Wiens",
@@ -1629,11 +1932,13 @@
         },
         {
           "name": "Witte",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "78a28a3b-98d0-46a6-bdf2-1d8b961fa6ed"
         },
         {
           "name": "Zeleznikar",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "95a65bb4-a540-4f52-8104-11a5bd7abb68"
         }
       ]
     },

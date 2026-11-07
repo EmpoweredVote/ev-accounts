@@ -1,0 +1,44 @@
+{
+  "id": "TX-HB-1169-2019",
+  "scope": "state:tx",
+  "title": "HB1169 (86th Legislature Regular Session): Relating to the creation of certain criminal offenses concerning firearm sales at gun shows; authorizing a fee.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB1169",
+    "https://capitol.texas.gov/tlodocs/86R/billtext/html/HB01169I.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 2 (adding Penal Code 46.065(a)): {+(a)  A person commits an offense if the person knowingly +} {+sells a firearm to another person in exchange for money or other +} {+consideration at a gun show without complying with the National +} {+Instant Criminal Background Check System in the manner required by +} {+18 U.S.C. Section 922 before completing the sale.+}\nSec. 2 (adding Penal Code 46.065(b)): {+A person commits an offense if the person knowingly +} {+sells a firearm to another person in exchange for money or other +} {+consideration at a gun show and the person does not maintain a +} {+record of the sale.+}\nSec. 2 (adding Penal Code 46.066(d)): {+A gun show promoter shall conduct, or arrange for a +} {+person who is a licensed firearms dealer under 18 U.S.C. Section 923 +} {+to conduct, an instant criminal background check in the manner +} {+required by 18 U.S.C. Section 922 on any person who purchases a +} {+firearm at a gun show organized, planned, promoted, or operated by +} {+the promoter from another person who is not a licensed firearms +} {+dealer under 18 U.S.C. Section 923.+}\nSec. 2 (adding Penal Code 46.066(c)): {+Not later than the 30th day before the date on which a +} {+gun show is held, the gun show promoter shall provide written notice +} {+of the date, time, and place of the gun show to the local law +} {+enforcement agency of the county or municipality in which the gun +} {+show will be held.+}",
+  "sponsors": [
+    {
+      "name": "Rafael Anchia",
+      "politician_id": "217dbd01-bbb3-45ef-afc3-a1a94a937583",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Ana-Maria Ramos",
+      "politician_id": "bd563960-3aa8-4d4d-94cb-62b6c2ae0656",
+      "role": "author",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-1169-2019.introduced.html",
+      "sha256": "52e2c379fb3e309e11d9d3ea950bfa099b87a88f3030ea27fab86010d06976f3"
+    }
+  }
+}

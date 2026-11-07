@@ -98,9 +98,9 @@
       "instrument_id": "PA-SB-224-2023",
       "act": "nay",
       "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
-      "note": "House roll call as printed ('KERWIN'), linked to Joseph P. Kerwin (district 125) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "note": "House roll call as printed ('KERWIN'), linked to Joseph P. Kerwin (district 125) via the official 2023-2024 House member roll (identity step 2026-10-28). Corrected 2026-11-03: PN 1171 has no voter-ID text (struck by A02604, 2023-10-17); this vote says nothing about ID.",
       "subjects": [
-        "voter ID at the polls"
+        "voter ID removed from this version"
       ],
       "topic_keys": [
         "voting-rights"
@@ -152,6 +152,308 @@
       "provenance": {
         "fetched_by": "identity-pa-2026-10-31-raw-votes",
         "fetched_at": "2026-10-31T18:07:00.902Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "827b1988eebdd9e1ccbaa8a667b4ed595af3c7def4f2530300ed0ee68690eb2b",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2021/sb565",
+      "date": "2021-11-16",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-565-2021",
+      "act": "yea",
+      "motion": "FP (final passage, page prints 'FP')",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, FP (final passage, page prints 'FP'), 2021-11-16: yea (tally 107–92); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/PA_SB565_PN1212.pdf",
+          "sha256": "8599bf5e56d8378a456fd36d933e5a05733e1a059d642ddb6883c809f6226568"
+        }
+      }
+    },
+    {
+      "id": "776be13d4edc022219fdf3819db0234ee24aae9807915d326ecc971a85558b0b",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb2599",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2599-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-2599-2025 (LegiScan sponsor list): HB2599 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for firearms not to be carried without a license, for licenses and for proof of license and exception..",
+      "subjects": [
+        "license no longer required to carry a gun in a vehicle",
+        "vehicle carry exceptions repealed",
+        "license covers concealed carry on the person only"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2599-2025.introduced.pdf",
+          "sha256": "dc8c286b9dddc4dec2d44c39427334dbb59b7f4135d52a736491c2e33d679d51"
+        }
+      }
+    },
+    {
+      "id": "c7728959489224f0a96b5bce283e58c745009ec949aa0308240cdc75736dc483",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=357",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-357-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-357-2021 (LegiScan sponsor list): HB357 (2021-2022 Regular Session): Providing that any Federal law which attempts to register, restrict or ban a firearm or to limit the size of a magazine of a firearm in this Commonwealth shall be unenforceable in this Commonwealth; and imposing penalties..",
+      "subjects": [
+        "federal gun, magazine and ammunition laws declared unenforceable in the state",
+        "criminal penalty for officials who enforce them",
+        "Attorney General defends residents prosecuted under them"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-357-2021.introduced.pdf",
+          "sha256": "c1353f85058f424382d90a5046f2f7185a24d56b36ef74c60ddc27cf94ecde6f"
+        }
+      }
+    },
+    {
+      "id": "5a1e8a788a9a3b1de393bdb1dde749a6f598706061fbe03d4e66bccf89447f17",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb454",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-454-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-454-2025 (LegiScan sponsor list): HB454 (2025-2026 Regular Session): In firearms and other dangerous articles, repealing provisions relating to firearms not to be carried without a license, providing for license not required, repealing provisions relating to carrying firearms on public streets or public property in Philadelphia, further providing for prohibited conduct during emergency, providing for sportsman's firearm permit, further providing for licenses and for antique firearms and repealing provisions relating to proof of license and exception; and making editorial changes..",
+      "subjects": [
+        "no license needed to carry firearms openly or concealed",
+        "carry license made optional",
+        "Philadelphia public-carry rule repealed",
+        "license age minimum and character check removed",
+        "duty to show license on demand repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-454-2025.introduced.pdf",
+          "sha256": "f30ec3f128cf3767ddff70a1eeaf2b9e5550db871bb897761638ddd54b516abe"
+        }
+      }
+    },
+    {
+      "id": "d51dc3a5330421c3e36c612a67e7e9bb4c8a0f2590f294d4c324b176f9addc31",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=893",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-893-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-893-2023 (LegiScan sponsor list): HB893 (2023-2024 Regular Session): Providing for Second Amendment Preservation Act, for limitation of Federal law and for private cause of action; and imposing a penalty..",
+      "subjects": [
+        "state declares federal gun laws void",
+        "state officers barred from enforcing federal gun laws",
+        "lawsuits and penalties against federal enforcers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-893-2023.introduced.pdf",
+          "sha256": "1f29f95c24f1689c0b30239ad30dfbb9aa1d60189079034113efbdb7b8f68491"
+        }
+      }
+    },
+    {
+      "id": "c7e7daa3ef8a51f5da36437a68d8d8c1ebfcd1b2d27d936dc705a20c95217be7",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=946",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-946-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-946-2021 (LegiScan sponsor list): HB946 (2021-2022 Regular Session): In firearms and other dangerous articles, further providing for licenses..",
+      "subjects": [
+        "counties may waive carry-license fees for veterans and people 65 or older"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-946-2021.introduced.pdf",
+          "sha256": "003ad9f8133ac7670d76781ee7d7c78ed7dbf41e0ddf2906ed48f081b8ba479c"
+        }
+      }
+    },
+    {
+      "id": "79a12eb09b9f84a7f21a6757e7f9aea7bfb46bcc3114ce126fa94c2fc7f97d5e",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=979",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-979-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-979-2021 (LegiScan sponsor list): HB979 (2021-2022 Regular Session): In firearms and other dangerous articles, further providing for limitation on the regulation of firearms and ammunition; and, in preemptions, providing for regulation of firearms and ammunition..",
+      "subjects": [
+        "local gun and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs",
+        "localities barred from suing gun makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-979-2021.amended.pdf",
+          "sha256": "494cfe800bdb89be85cf7c2a28a81c203b581e7614e7bc8f69211cb4c736f5dd"
+        }
+      }
+    },
+    {
+      "id": "aadf049da9c877b6ff2c394840cb4aa7ed6144423f58ce2833cec97296371de3",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=1018",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1018-2023",
+      "act": "nay",
+      "motion": "House Floor: HB 1018 PN 1152, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 1018 PN 1152, FINAL PASSAGE, 2023-05-22: nay (tally 102–99); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders created to remove firearms",
+        "firearm ban while an order is active",
+        "penalty for not turning in firearms under an order",
+        "longer penalty for prohibited persons found with a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1018-2023.amended.pdf",
+          "sha256": "05d5a4c60b9a22ac9e77d07afe3e7adc8841cd9dab1224832eb50521b29958a6"
+        }
+      }
+    },
+    {
+      "id": "a9c09af126d69b2c1230440fd41791b65a2da59b0bd9de07e3e4811a1a87837a",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=979",
+      "date": "2021-06-08",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-979-2021",
+      "act": "yea",
+      "motion": "House Floor: HB 979 PN 1706, FP",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 979 PN 1706, FP, 2021-06-08: yea (tally 124–79); census gate: none.",
+      "subjects": [
+        "local gun and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs",
+        "localities barred from suing gun makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-979-2021.amended.pdf",
+          "sha256": "494cfe800bdb89be85cf7c2a28a81c203b581e7614e7bc8f69211cb4c736f5dd"
+        }
+      }
+    },
+    {
+      "id": "392b4fc171ecfb91d967289f97af2eb6d15a0aa6cc4fd77a596de61d1dc9c574",
+      "kind": "own-words",
+      "url": "https://www.repjoekerwin.com",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "His legislative priorities include protecting the Second Amendment rights enshrined in the U.S. Constitution and ensuring Pennsylvania’s nearly 800,000 veterans have access to the benefits they earned through military service.",
+      "note": "Bio text on his official site (third person, undated); names protecting Second Amendment rights as a legislative priority.",
+      "subjects": [
+        "Second Amendment rights",
+        "general gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:17:06.277Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ae54edbaf179ad99cfa6be6df85aee4dbb4ac7c0fda360acde66a5115c339dcc",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/35343/Kerwin-Takes-Oath-for-Third-Term-?SiteID=1",
+      "date": "2025-01-07",
+      "date_precision": "day",
+      "passage": "His legislative priorities include protecting the Second Amendment rights enshrined in the U.S. Constitution and ensuring Pennsylvania’s nearly 800,000 veterans have access to the benefits they earned through military service.",
+      "note": "House caucus press release on his swearing-in for a third term; same priority statement, written in the third person, not a direct quote.",
+      "subjects": [
+        "Second Amendment rights",
+        "general gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:17:06.277Z",
         "method": "webfetch"
       }
     }
@@ -234,6 +536,31 @@
       "found": 1,
       "at": "2026-10-31T18:07:00.902Z",
       "by": "identity-pa-2026-10-31-raw-votes"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun rights",
+        "check every gun buyer",
+        "carry permits",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://www.repjoekerwin.com",
+        "House caucus member page https://www.pahousegop.com/Kerwin (nothing on the subject)",
+        "state legislature member page https://www.palegis.us/house/members/bio?id=1968 (nothing on the subject)",
+        "sponsor list: covered by LegiScan bulk check",
+        "House caucus press release 2025-01-07",
+        "two web searches on name plus gun words (nothing further on the subject)",
+        "Ballotpedia: not reviewed, pages return empty to the fetch tool"
+      ],
+      "found": 2,
+      "at": "2026-10-30T23:17:06.277Z",
+      "by": "source-collector"
     }
   ]
 }

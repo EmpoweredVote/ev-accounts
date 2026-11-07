@@ -1,0 +1,193 @@
+{
+  "politician_id": "764baa13-b0d1-4f92-b58a-62228782c063",
+  "findings": [
+    {
+      "id": "6b5e689fb85f192eb69c40def937a9a4295c7abe3db7fcba197ffd86b433ff93",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/newsDetails?id=1701",
+      "date": "2025-02-07",
+      "date_precision": "day",
+      "passage": "The Local Government, Elections and Pensions Committee debated Senate Bill 62 , a measure that is aimed at securing Missouri elections by requiring documented proof of citizenship and the removal of individuals from voter rolls who do not identify as citizens of the United States.",
+      "note": "In his weekly legislative column he describes a committee hearing on SB 62 (proof of citizenship, voter-roll removal) and states its aim. He does not say whether he supports it.",
+      "subjects": [
+        "proof of citizenship to register or vote",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:10:53.437Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "993617738474b6e1011b3f325a151322a46e53faa871349c51d0be802bb18bfd",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills221/jrnpdf/jrn070.pdf",
+      "date": "2022-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1878-2022",
+      "act": "yea",
+      "motion": "House: SS SCS HB 1878, as amended, adopted",
+      "note": "House roll call as printed ('Black 7'), linked to Rusty Black (district 7) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.743Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "09168f5132c6b66b10b4254aab83e73fdf84a5634b8de9e4a06a3e27354ca549",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills201/jrnpdf/jrn031.pdf",
+      "date": "2020-03-02",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1600-2020",
+      "act": "yea",
+      "motion": "House: HCS HB 1600 read the third time and passed by the following vote (Speaker Pro Tem Wiemann declared the bill passed)",
+      "note": "House roll call as printed ('Black 7'), linked to Rusty Black (district 7) via the official 2020 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.210Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e114662582e36f9f876ea58ca7997d4a6cd77360af2d2f46d1a30370cb3d2133",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/26info/Journals/Rday6405111615-1637.pdf",
+      "date": "2026-05-11",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "Senate: SS for SCS for HCS for HB 1871, as amended, read the 3rd time and passed",
+      "note": "Senate roll call as printed ('Black'), linked to Rusty Black (district 12) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.210Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "83ed7cdcb7b45a53a1a8c58005cd0bdc5762e1b3da17af7e338f0cd3bf061d21",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills221/jrnpdf/jrn036.pdf",
+      "date": "2022-03-10",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1878-PERF-2022",
+      "act": "yea",
+      "motion": "House: HB 1878 read the third time and passed",
+      "note": "House roll call as printed ('Black 7'), linked to Rusty Black (district 7) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.210Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c350f7cdbed9fac86919949bd8c9c98019a47152c42c532aeb59af7c8b34a250",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills211/jrnpdf/jrn029.pdf",
+      "date": "2021-02-24",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-334-2021",
+      "act": "yea",
+      "motion": "House: HCS HB 334 read the third time and passed",
+      "note": "House roll call as printed ('Black 7'), linked to Rusty Black (district 7) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.210Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search (several queries on name plus voter ID / citizenship / election words)",
+        "blocked: https://ballotpedia.org (not fetched, per instructions)",
+        "no house.mo.gov page fetched (House member, robots rule)",
+        "senate.mo.gov member page id=270 (Sen. Rusty Black, District 12)",
+        "senate.mo.gov CurrentMedia and MediaArchive lists (read)",
+        "senate.mo.gov newsDetails id=1693 (Feb 2025 podcast): nothing on subject",
+        "senate.mo.gov newsDetails id=1383 (2024 podcast): ballot-measure resolutions only, nothing on subject",
+        "senate.mo.gov newsDetails id=1701: saved",
+        "audio podcasts not reviewed: https://www.senate.mo.gov/Media/NewsDetails?id=2103 and id=2289 (audio)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T05:10:53.437Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-04T14:10:53.743Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T14:14:55.210Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

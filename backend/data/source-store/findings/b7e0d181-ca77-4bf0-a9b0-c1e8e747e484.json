@@ -1,0 +1,694 @@
+{
+  "politician_id": "b7e0d181-ca77-4bf0-a9b0-c1e8e747e484",
+  "findings": [
+    {
+      "id": "6a53de4be1a325d0f92a4593bddd5a1f79ab7609bc6c11604d59d770745003ee",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2016/pdf/history/HB/HB0786.xml",
+      "date": "2016-03-29",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-786-2016",
+      "act": "yea",
+      "motion": "Passed as amended (third reading, yeas and nays)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS Senate, Passed as amended (third reading, yeas and nays), 2016-03-29: yea (tally 36–14); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence",
+        "church security"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/MS_HB786SG.pdf",
+          "sha256": "a1142904e692e81f08ce94bef1f5827e9d662ac1f81ce57f6330064169e08945"
+        }
+      }
+    },
+    {
+      "id": "71c178e0bec40c1dff8617be27efa53c252d2f580a20e0dbefced9217994d103",
+      "kind": "own-words",
+      "url": "https://www.wlox.com/2026/03/01/mississippi-secretary-state-urges-voters-prepare-march-10-primary-highlights-election-integrity-efforts/",
+      "date": "2026-03-01",
+      "date_precision": "day",
+      "passage": "“Showing your ID and then proving you’re a citizen, those are no-brainers, in my opinion,” said Watson.",
+      "note": "Quoted by WLOX from a WLOX News This Week interview. He was speaking about the federal SAVE Act, which the article says would require voters to show ID and proof of citizenship, and which he said he supports.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:39:07.430Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "18a7799d16e4901023f59581362d8488d47d97e3026bc9f6f60d5d5dec038765",
+      "kind": "own-words",
+      "url": "https://www.wlox.com/2026/03/01/mississippi-secretary-state-urges-voters-prepare-march-10-primary-highlights-election-integrity-efforts/",
+      "date": "2026-03-01",
+      "date_precision": "day",
+      "passage": "“We should only have United States citizens voting in our elections,” said Watson.",
+      "note": "Quoted by WLOX in the same interview. The article reports that he said Mississippi already has a voter ID law and a proof-of-citizenship requirement, with registrants' information checked against security databases including the SAVE system (that sentence is the reporter's summary, not his quote).",
+      "subjects": [
+        "non-citizen voting",
+        "proof of citizenship",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:39:07.430Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "519e1f8829fc96d710b054725a14dd98fbd61fd52665100df4eeedcd25a0fc20",
+      "kind": "own-words",
+      "url": "https://www.wlox.com/2026/03/01/mississippi-secretary-state-urges-voters-prepare-march-10-primary-highlights-election-integrity-efforts/",
+      "date": "2026-03-01",
+      "date_precision": "day",
+      "passage": "“No matter who it is that casts that vote, I want to make sure that it was done correctly, by the law, and it is the vote that is going to be counted,” said Watson.",
+      "note": "Quoted by WLOX, about a bill to change the absentee-ballot envelope requirement; he said he is focused on the integrity of the process however that question is resolved.",
+      "subjects": [
+        "mail-ballot rules",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:39:07.430Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2f4c396284db657a9fac9a3e117ba6d59af2aa63b4f1951e48085a87987df8fe",
+      "kind": "own-words",
+      "url": "https://www.mississippifreepress.org/michael-watson-wants-to-flag-citizen-status-when-voters-register/",
+      "date": "2019-08-05",
+      "date_precision": "day",
+      "passage": "“I don’t think there would be any profiling. It’s the same as E-Verify now,” Watson said, referring to a federal system that allows employers to check potential employees’ immigration status.",
+      "note": "Quoted by the Jackson Free Press (now Mississippi Free Press) while he was a candidate for Secretary of State. He answered a question about his plan to run background checks on people when they register to vote and flag people who may not be legally in the country. The article says he would run the checks after registration, not as a condition of registering.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:39:07.430Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "92afdd9c8359cae5391af009ee79a0b8ffc9286f71f1aae1c23cf617bfb79d23",
+      "kind": "own-words",
+      "url": "https://www.mississippifreepress.org/michael-watson-wants-to-flag-citizen-status-when-voters-register/",
+      "date": "2019-07-31",
+      "date_precision": "day",
+      "passage": "At the fair, Watson told the crowd that the system would “keep illegal immigrants off our voting rolls.”",
+      "note": "Reporter's sentence with a short direct quote of Watson at the Neshoba County Fair on July 31, 2019, about his proposed citizenship-flagging system. Only the quoted phrase is his own wording.",
+      "subjects": [
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:39:07.430Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c1c8c6324993b05f6dcdb230bdffd13ed04c3f1667125116aad741c41c62658",
+      "kind": "own-words",
+      "url": "https://www.supertalk.fm/deadline-looms-for-proof-of-citizenship-voting-bill-secretary-of-state-issues-call-for-support/",
+      "date": "2021-03-02",
+      "date_precision": "day",
+      "passage": "“Not only is this legislation good public policy—and the right thing to do—Mississippi is currently defending a lawsuit on a similar issue that would more than likely be resolved by passage of our legislation. Additionally, given the Biden Administration’s relaxed policy towards illegal immigration, this issue is primed to become much more pressing across the country. Now is the time to act,” stated Watson.",
+      "note": "SuperTalk reports a social-media appeal by Watson, as Secretary of State, for support of HB 586, the Proof of Citizenship to Vote bill, which would compare the statewide elections management system to identification databases.",
+      "subjects": [
+        "proof of citizenship to vote",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:39:07.430Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f0f690eab5acb246a2923564c2b48786b1024fa651d969df73f87dc694e94a61",
+      "kind": "own-words",
+      "url": "https://www.supertalk.fm/deadline-looms-for-proof-of-citizenship-voting-bill-secretary-of-state-issues-call-for-support/",
+      "date": "2021-03-02",
+      "date_precision": "day",
+      "passage": "“If making sure only eligible Mississippi residents who are United States citizens can vote in our elections is important to you, please help by calling and/or emailing your State Senator and the Lt. Governor’s office and ask them to move HB 586 through the committee process. You can make the difference in making this happen. Please help me spread the word,” said Watson.",
+      "note": "Same SuperTalk report; his request that the public press the Senate to move HB 586 out of committee before the deadline.",
+      "subjects": [
+        "proof of citizenship to vote",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:39:07.430Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a85a58b26a8cbe27ca040917ef8423c5a9ccd1c89af9fe9a04fdd8feb7b4eb9c",
+      "kind": "own-words",
+      "url": "https://desotocountynews.com/mississippi-news/watson-fights-to-protect-election-integrity/",
+      "date": "2021-11-17",
+      "date_precision": "day",
+      "passage": "“Currently Mississippi relies on federal law and federal statutes,” Watson explained. “I proposed legislation last year and we got it through the Senate but it died in the House. We’re coming back with that this year.  We want to make sure that only United States citizens are in our elections. We’ve designed a program to help catch that.”",
+      "note": "Quoted by DeSoto County News in an interview, on voter-roll maintenance and his citizenship-check legislation for the coming session.",
+      "subjects": [
+        "proof of citizenship",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:39:07.430Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2d5b3c53541a7849181095c90f86156749c28d20e91651b999a0074c81b94697",
+      "kind": "own-words",
+      "url": "https://desotocountynews.com/mississippi-news/watson-fights-to-protect-election-integrity/",
+      "date": "2021-11-17",
+      "date_precision": "day",
+      "passage": "“That’s the cleanest and safest, when you’re going to the precincts and voting there,” Watson said.",
+      "note": "Quoted by DeSoto County News, about voting in person at the precinct versus early or absentee voting.",
+      "subjects": [
+        "in-person voting versus absentee",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:39:07.430Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "730a02c7e5525b8237e0e22ad4f4d41f355d6fe2c61fa35f3500a788037e46c7",
+      "kind": "own-words",
+      "url": "https://www.mississippifreepress.org/fact-check-free-voter-ids-available-for-mississippians-under-state-law/",
+      "date": "2021-05-27",
+      "date_precision": "day",
+      "passage": "“So, the only thing with voter ID, really quickly, everything is in statute with the exception of the government will provide a free ID,” Watson said. “That’s the only piece that was in the Constitution that’s not in statute. So it’s not that big of a deal, but again, I think we should get it right and get it as quickly as we can.”",
+      "note": "Quoted by the Mississippi Free Press from a SuperTalk radio interview with Paul Gallo on May 27, 2021, about the free voter ID card. The outlet's fact check says free IDs are available under state law.",
+      "subjects": [
+        "free state voter ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:39:07.430Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c6dbd7156f75c0b29f81022cdc3409ed2a556f9cb1a50018f44791bbe2de2963",
+      "kind": "own-words",
+      "url": "https://www.mississippifreepress.org/fact-check-free-voter-ids-available-for-mississippians-under-state-law/",
+      "date": "2021-06-04",
+      "date_precision": "day",
+      "passage": "“My concern about Voter ID being challenged stems from the fact it was originally passed by a ballot initiative and put into the Constitution by a process the Court has now deemed unconstitutional in its recent ruling about the medical marijuana initiative process,” Mississippi Secretary of State Michael Watson, seen here at the Neshoba County Fair on July 31, 2019, said in a statement on June 4, 2021.",
+      "note": "Photo caption in the Mississippi Free Press quoting a statement from his office on June 4, 2021, giving his concern that the voter ID provision could be challenged because it came in through a ballot initiative.",
+      "subjects": [
+        "voter ID at the polls",
+        "legal durability of the voter ID law"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:39:07.430Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dd2a12a6dee5821334b8172c5583de5ade5bdaf4f4ad0b5e1da44e4c195eeac3",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/senate/0580007.pdf",
+      "date": "2018-02-28",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-804-2018",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On H. B. No. 804. On motion of Senator Blackwell, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0580007)",
+      "note": "Senate roll call as printed ('Watson'), linked to Michael Watson (district 51) via the official 2018 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad14525934ebeba21266dd1c31116eaf00bcbf2ad15a6cda52f2a22178431150",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2012/pdf/votes/senate/0990009.pdf",
+      "date": "2012-04-10",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-921-2012",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On H. B. No. 921. On motion of Senator McDaniel, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed as amended, title standing as stated, by the following vote: (0990009)",
+      "note": "Senate roll call as printed ('Watson'), linked to Michael Watson (district 51) via the official 2012 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9cd2168c2c71eccb747daa780f57637813f29d061602888c12ad07e0424846e7",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2008/pdf/history/SB/SB2196.xml",
+      "date": "2008",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2196-2008",
+      "act": "sponsor",
+      "motion": "co sponsor, SB2196IN",
+      "note": "Named as co sponsor ('Watson') on the official bill text, summary or journal; linked to Michael Watson via the official 2008 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a774adfe1decd2548a1775e2ce3dc103dd619b19bad625483b3f01643aa34d39",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2019/pdf/history/SB/SB2506.xml",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2506-2019",
+      "act": "sponsor",
+      "motion": "prime sponsor, SB2506IN",
+      "note": "Named as prime sponsor ('Watson') on the official bill text, summary or journal; linked to Michael Watson via the official 2019 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "653efbdf42db114f34de52bc9afb4ca946ad6e0c0af0bbda9bc74d60916c4722",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2009/pdf/votes/senate/0300008.pdf",
+      "date": "2009-02-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2548-2009",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2548. The vote recurring, on motion of Senator Burton, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0300008)",
+      "note": "Senate roll call as printed ('Watson'), linked to Michael Watson (district 51) via the official 2009 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dc520a4a292cc586279b3cc17206fd1dea7229bef6cc5e4c9301edcf9855f7c4",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2009/pdf/history/SB/SB2548.xml",
+      "date": "2009",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2548-2009",
+      "act": "sponsor",
+      "motion": "co sponsor, As Passed the Senate (SB2548PS); introduced (SB2548IN) also read",
+      "note": "Named as co sponsor ('Watson') on the official bill text, summary or journal; linked to Michael Watson via the official 2009 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "846ab5fd06b40d5f4b819a38e2596f97a8fef08df08ba7af07c6c6251677f884",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/history/SB/SB2636.xml",
+      "date": "2018",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2636-2018",
+      "act": "sponsor",
+      "motion": "prime sponsor, SB2636IN",
+      "note": "Named as prime sponsor ('Watson') on the official bill text, summary or journal; linked to Michael Watson via the official 2018 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a028b8f2afe6c2f1d4227a3e8a492d2bda1790c4c4d4c75b9cf3a0db850d5f39",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/senate/0320004.pdf",
+      "date": "2018-02-02",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2766-2018",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2766. On motion of Senator Blackwell, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0320004)",
+      "note": "Senate roll call as printed ('Watson'), linked to Michael Watson (district 51) via the official 2018 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05e466a2001d2a3b71c69e5cf59b634aa48d15be7c1203aec95eb8e1cc83f73a",
+      "kind": "own-words",
+      "url": "https://www.sos.ms.gov/news/appeal-federal-save-program-advancements",
+      "date": "2025-03-11",
+      "date_precision": "day",
+      "passage": "Since championing the passage of House Bill 1510 in 2022, election officials in Mississippi have been able to compare the Statewide Election Management system with state and federal databases, including SAVE, to ensure only United States citizens register to vote in our state.",
+      "note": "Secretary of State news release, first person, signed MICHAEL WATSON. He says he championed the 2022 law (HB 1510) that lets officials check the voter system against state and federal databases to keep non-citizens off the rolls.",
+      "subjects": [
+        "proof of citizenship",
+        "voter-roll checks and non-citizen voting",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-ms-r2-2026-11-05",
+        "fetched_at": "2026-11-05T23:55:32.896Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b466e99dbf400869adcdc43c48fc85e9cd44ebc6064d25de10f4cf2d946f29f4",
+      "kind": "own-words",
+      "url": "https://www.sos.ms.gov/news/appeal-federal-save-program-advancements",
+      "date": "2025-03-11",
+      "date_precision": "day",
+      "passage": "Through the prioritization of these updates, we will further protect the integrity of state and federal elections, a duty to which I remain fully committed.",
+      "note": "Same signed release. He and 20 other state chief election officers asked the federal homeland security secretary to improve the SAVE citizenship-check program (batch searches, no cost to states, more identifying data, notice of naturalization applicants). This is the federal SAVE verification program, not the federal SAVE Act bill.",
+      "subjects": [
+        "voter-roll checks and non-citizen voting",
+        "SAVE Act",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-ms-r2-2026-11-05",
+        "fetched_at": "2026-11-05T23:55:32.896Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dfec09c225bf35cda048d88c0efd256b807e904a9163d788c41caeb98ef35f6",
+      "kind": "own-words",
+      "url": "https://www.sos.ms.gov/news/opinion-column-we-must-continue-safeguard-mississippi-elections",
+      "date": "2023-02-27",
+      "date_precision": "day",
+      "passage": "Other election security measures encapsulated in HB 1310 include a pilot for risk limiting audits, additional funding for enhanced cybersecurity, processes by which circuit clerks and election commissioners may better maintain voter rolls, and the ability to review all registered voters to ensure only U.S. citizens are voting in Mississippi elections.",
+      "note": "Signed opinion column by Watson asking support for HB 1310. He lists a citizenship review of all registered voters among the bill's measures.",
+      "subjects": [
+        "proof of citizenship",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-ms-r2-2026-11-05",
+        "fetched_at": "2026-11-05T23:55:32.896Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0e7dd16e11a63c91826faea43ee589c8435ee2f629cf302c6acd8779312074e6",
+      "kind": "own-words",
+      "url": "https://www.sos.ms.gov/news/opinion-column-we-must-continue-safeguard-mississippi-elections",
+      "date": "2023-02-27",
+      "date_precision": "day",
+      "passage": "A similar citizenship bill was passed during the 2022 Legislative Session but only included the right to review new voter registrations.",
+      "note": "Same column. He contrasts the 2022 law (new registrations only) with HB 1310's review of all registered voters.",
+      "subjects": [
+        "proof of citizenship",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-ms-r2-2026-11-05",
+        "fetched_at": "2026-11-05T23:55:32.896Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f7907ec272d39d38f5ff5654ca609923cd4021752a3e3d8765c8f722154a8f11",
+      "kind": "own-words",
+      "url": "https://www.sos.ms.gov/news/opinion-column-we-must-continue-safeguard-mississippi-elections",
+      "date": "2023-02-27",
+      "date_precision": "day",
+      "passage": "Ensuring free and fair elections is not a Republican or Democrat issue, it is an American one.",
+      "note": "Same column; the next sentence says he hopes to work to make it easier to vote and harder to cheat. General election-integrity framing.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-ms-r2-2026-11-05",
+        "fetched_at": "2026-11-05T23:55:32.896Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d09de89d6f25a294daa88e2e89a1fc7d13d6bfec714be40e1584d407daea40f3",
+      "kind": "own-words",
+      "url": "https://www.mpbonline.org/blogs/election/michael-watson-r",
+      "date": "2019-06-13",
+      "date_precision": "day",
+      "passage": "Voter ID has been instrumental in limiting fraud and restoring confidence in Mississippi's elections.",
+      "note": "MPB candidate-profile page for his 2019 run for Secretary of State (published 2019-06-13, last modified 2020-02-03), presented as his statement; the page says more work is needed. The fetch tool returned this sentence as the page text.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-ms-r2-2026-11-05",
+        "fetched_at": "2026-11-05T23:55:32.896Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "78ab00b07362e13b56378140f6ae08ff1773edbeb3f295bffe9b104c990ad503",
+      "kind": "own-words",
+      "url": "https://www.mpbonline.org/blogs/election/michael-watson-r",
+      "date": "2019-06-13",
+      "date_precision": "day",
+      "passage": "We need to make sure only citizens of the United States are allowed to register and vote in Mississippi.",
+      "note": "Same MPB candidate profile. He also proposes legislation to run a newly registered voter's identification information through security screens to confirm legal citizenship, as Tennessee does.",
+      "subjects": [
+        "proof of citizenship",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-ms-r2-2026-11-05",
+        "fetched_at": "2026-11-05T23:55:32.896Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "221e187aaf7647361058f9c26a83c4f645b1f1044c5a327f2421ad7a304d2bf4",
+      "kind": "own-words",
+      "url": "https://extramilepodcast.transistor.fm/episodes/legislative-session-2022-secretary-of-state-michael-watson/transcript",
+      "date": "2022-02-14",
+      "date_precision": "day",
+      "passage": "We’ve got a really good bill that moved through the House and will be headed to the Senate. It’s an election integrity package so we’re really excited about that and we really appreciate Speaker Gunn and his leadership over there and Representative Powell handled the bill for us on the floor so Chairman Beckett obviously.",
+      "note": "Extra Mile podcast transcript, February 2022 legislative-session episode. He calls the House-passed election bill (the 2022 session package) an election integrity package. He does not name voter ID or citizenship in the passage.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-ms-r2-2026-11-05",
+        "fetched_at": "2026-11-05T23:55:32.896Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state voter ID card",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks and non-citizen voting",
+        "mail or absentee ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: sitting Secretary of State (WLOX 2026-03-01 page names him in the office); seat next up 2027, he announced a run for lieutenant governor in 2027",
+        "On the Record (0 appearances, extract-otr run)",
+        "blocked: https://www.sos.ms.gov/voter-id (403)",
+        "Secretary of State site: only the voter-ID page was tried, and it was blocked",
+        "campaign site michaelwatson.ms: about page and one news post returned 404; the DeSoto County News post was read at its original outlet instead",
+        "Ballotpedia: blocked, not fetched per instructions",
+        "web searches (6): name + voter ID, proof of citizenship/SAVE Act, photo ID 2025, HB 1510, lieutenant governor election integrity",
+        "WLOX 2026-03-01 interview article (read)",
+        "Mississippi Free Press 2019-08-05 and 2021-06-04 articles (read)",
+        "SuperTalk Mississippi 2021-03-02 (read)",
+        "DeSoto County News 2021-11-17 (read)",
+        "WDAM 2024-01-18 and MPB third-term article: read, only general election-process or accomplishment remarks, nothing quotable on ID or citizenship rules",
+        "legislature bill pages for sponsorship: not applicable, he was a state senator until 2020 and floor votes are linked separately; not searched",
+        "not reviewed: WLOX video interview behind the 2026-03-01 article"
+      ],
+      "found": 11,
+      "at": "2026-11-05T22:39:07.430Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 8,
+      "at": "2026-11-05T23:52:51.758Z",
+      "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship",
+        "SAVE Act",
+        "SHIELD Act",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "https://www.sos.ms.gov/news (listing pages 0-7, all 76 titles scanned; bodies read for election-day reminders 2026-10-26, QR-code verification 2026-07-02, national voter registration month 2026-09-01, absentee ballots 2026-09-21, clarifies vote requirements 2026-09-10, absentee deadlines 2026-10-22, TrustedInfo2026 column 2026-08-05, Callais redistricting 2026-10-12, SAVE appeal 2025-03-11, HB 1310 column 2023-02-27, election update 2026-11-04)",
+        "sos.ms.gov news items that only link out and have no body on the site: march-10 primary article (WLBT copy, refused), Aberdeen Rotary (djournal, refused), midterm voter video (WLOX video), special-election explainer (msn), joint legislative session (wxxv25 link, not found by search), Ricky talk YouTube video (not reviewed)",
+        "https://extramilepodcast.transistor.fm/episodes/legislative-session-secretary-of-state-michael-watson/transcript (404)",
+        "https://www.michaelwatson.ms/enterprise-journal-watson-officials-discuss-election-process (404)",
+        "https://www.wlox.com/2026/08/04/mississippi-secretary-state-watson-speaks-gulf-coast-legislative-luncheon/ (read: nothing on ID or citizenship)",
+        "blocked: https://sos.ms.gov/press/appeal-federal-save-program-advancements (Cloudflare block; same text read at https://www.sos.ms.gov/news/appeal-federal-save-program-advancements)",
+        "blocked: https://www.sos.ms.gov/legislative-successes (403)",
+        "not retried: https://www.sos.ms.gov/voter-id (403 in round 1)",
+        "web searches (6 new): name + voter ID, name + proof of citizenship/SHIELD Act/SAVE Act, name + election/voting, name + questionnaire/voter guide, name + local paper, name + column/newsletter/interview",
+        "blocked: https://ballotpedia.org (not fetched per instructions)",
+        "not fetched, refused to AI agents: mississippitoday.org, clarionledger.com, wlbt.com, djournal.com",
+        "not used: https://www.sos.ms.gov/news/election-day-reminders-2026-general-election (unsigned office release; not his own words or act)"
+      ],
+      "found": 8,
+      "at": "2026-11-05T23:55:32.896Z",
+      "by": "research-ms-r2-2026-11-05"
+    }
+  ]
+}

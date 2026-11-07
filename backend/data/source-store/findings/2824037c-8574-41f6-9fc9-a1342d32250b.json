@@ -1,6 +1,234 @@
 {
   "politician_id": "2824037c-8574-41f6-9fc9-a1342d32250b",
-  "findings": [],
+  "findings": [
+    {
+      "id": "80123d818b5acbafb5e901d563c05fb593e33f9b9fb346ae14ac82f293db6c97",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?ID=author&LegSess=88R&Code=A4170",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-106-2023",
+      "act": "author",
+      "note": "Listed among the joint authors (Bernal, Moody, Campos, Garcia). Bill relates to required reporting of multiple sales of certain firearms to law enforcement. Last action 2023-04-18: left pending in committee.",
+      "subjects": [
+        "report multiple gun sales to police"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T19:42:30.151Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "573ca802b0ceaba5e6823e9998b1ab40ff3ec1c4329da5cab18efb7dc347d514",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?ID=author&LegSess=88R&Code=A4170",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-408-2023",
+      "act": "author",
+      "note": "Listed among the joint authors (Collier, Garcia). Bill relates to the eligibility requirements for a license to carry a handgun. Last action 2023-05-12: referred to State Affairs in the Senate.",
+      "subjects": [
+        "carry permit eligibility"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T19:42:30.151Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "61e4ad34cc3fd55b7b5bb0d0fb637da174c03fd75fce38980bbd96a078efcc49",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?ID=author&LegSess=88R&Code=A4170",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-482-2023",
+      "act": "author",
+      "note": "Listed among the joint authors (Meza, Garcia). Bill relates to the prohibition on possessing a firearm after conviction of certain family violence misdemeanors. Last action 2023-02-23: referred to committee.",
+      "subjects": [
+        "who may have a gun",
+        "firearm ban after family violence conviction"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T19:42:30.151Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9b9372b55e97621266d379dc4cdf5b591626edd0ab49581069fa0044b33c5113",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?ID=author&LegSess=88R&Code=A4170",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-735-2023",
+      "act": "author",
+      "note": "Listed among the joint authors (Meza, Garcia). Bill requires a person convicted of a family violence offense, or subject to a family violence protective order, to surrender firearms. Last action 2023-02-28: referred to committee.",
+      "subjects": [
+        "who may have a gun",
+        "surrender guns under family violence order"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T19:42:30.151Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "374e5f1db5b4c70523d86b3b553eae08579c948cdc005f0523aca5f090f6f50b",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?ID=coauthor&LegSess=88R&Code=A4170",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-2242-2023",
+      "act": "other",
+      "note": "Listed as a coauthor (not the main author). Bill relates to using dynamic message signs for the Keep 'Em Safe Texas Gun Storage Campaign. Last action 2023-05-12: referred to State Affairs in the Senate.",
+      "subjects": [
+        "safe gun storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T19:42:30.151Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dc6b6639dac5443eccf0a6211f995e894c640a994eb707ab206bd589f17d155b",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3053",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-3053-2025",
+      "act": "nay",
+      "motion": "Read 3rd time RV#2266",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Read 3rd time RV#2266, 2025-05-13: nay (tally 85–56); census gate: none.",
+      "subjects": [
+        "local firearm buyback programs prohibited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-3053-2025.enrolled.html",
+          "sha256": "5c783f0f9c65e8195dcc193a50eb55c2c6158aa0407a2ccf6a2bea6d95531ee0"
+        }
+      }
+    },
+    {
+      "id": "79c3d04b18933e463f43bf8a634bb3f442fce9e66de825f8fa3a6a809d950a63",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB3137",
+      "date": "2023-05-05",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-3137-2023",
+      "act": "nay",
+      "motion": "Point of order withdrawn RV#1134",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Point of order withdrawn RV#1134, 2023-05-05: nay (tally 84–58); census gate: none.",
+      "subjects": [
+        "local gun rules barred from being enforced",
+        "local firearm liability insurance requirement banned"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-3137-2023.enrolled.html",
+          "sha256": "870ff91198688315aa2fd6a3e3be74800698a2fdaa6edcb46a56b1688e6ceb81"
+        }
+      }
+    },
+    {
+      "id": "db44a3b7800a82a4097e065afe4b1cb0445c5d2eae3ad92381d516354f7cbb34",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1596",
+      "date": "2025-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1596-2025",
+      "act": "nay",
+      "motion": "Laid out as postponed business RV#3937",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Laid out as postponed business RV#3937, 2025-05-28: nay (tally 87–52); census gate: none.",
+      "subjects": [
+        "short-barrel firearm possession offense repealed",
+        "definition of short-barrel firearm repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-1596-2025.enrolled.html",
+          "sha256": "79af2b9f1e3b2967b40f051ee7540cd4f3d0d7f9ae0f8c6802c5cd20ab4d37f4"
+        }
+      }
+    },
+    {
+      "id": "89fe52e63cd8fdb701d7e490352bd00c8991e85a17b7415ce6f04c6256559a61",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB706",
+      "date": "2025-05-21",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-706-2025",
+      "act": "nay",
+      "motion": "Read 3rd time RV#3121",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Read 3rd time RV#3121, 2025-05-21: nay (tally 89–51); census gate: none.",
+      "subjects": [
+        "out-of-state handgun licenses recognized in Texas",
+        "state must publish list of states honoring Texas license",
+        "old background-check condition for recognition repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-706-2025.enrolled.html",
+          "sha256": "fb39773e7239800d5a632dde6685542e492721c2bc464dbd6838c1b0425f3c93"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -26,6 +254,34 @@
       "found": 0,
       "at": "2026-10-28T14:59:49.093Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "carry permit eligibility",
+        "who may have a gun (family violence)",
+        "safe gun storage",
+        "ban on assault-style guns",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Texas House member page http://house.texas.gov/members/member-page?district=124 (confirms Rep. Josey Garcia, District 124; nothing on guns in the page text)",
+        "Texas House biography https://house.texas.gov/members/4170/biography (nothing on the subject)",
+        "Texas Legislature Online author and coauthor reports, 89th session (71 authored, 64 coauthored): no gun bill found",
+        "Texas Legislature Online author and coauthor reports, 88th session (230 authored, 149 coauthored): gun bills listed below",
+        "Texas Legislature Online sponsor report, 89th session (2 bills): neither on guns",
+        "campaign site https://joseygarcia.com (one-page site; nothing on the subject)",
+        "candidate listing https://branch.vote/races/2026-texas-primary-election-tx-state-state-representative-tx-state-house-124-d (says unopposed in the 2026-03-03 primary and moving to the general election; no stances)",
+        "NBC News 2023 piece on school safety bills: about a different lawmaker, not used",
+        "Ballotpedia not fetched (known to return empty)",
+        "web searches: 2 used; no own-words statement on guns found"
+      ],
+      "found": 5,
+      "at": "2026-10-30T19:42:30.151Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -1,0 +1,103 @@
+{
+  "politician_id": "65d2b8c9-e90d-4d76-a9fc-729a201ca0e6",
+  "findings": [
+    {
+      "id": "e076c8b48278b31632ee890048920af3952a61ffb83895b5d23bfa476c64b17f",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Irwin'), linked to William (Bill) Irwin (district 55) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.749Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6ba01c3c53c9ad9a6ba60fcc1ef4475ff267c7a031b6e532a5fe68d691486359",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "nay",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was truly agreed to and finally passed",
+      "note": "House roll call as printed ('Irwin'), linked to William (Bill) Irwin (district 55) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.234Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "places": [
+        "Missouri Times candidacy announcement (nothing on subject)",
+        "KCUR 2024 voter guide (nothing on subject)",
+        "BallotReady page (nothing on subject)",
+        "house.mo.gov member/press pages: not fetched (robots rule)",
+        "newsroom.house.mo.gov: not fetched (rule)",
+        "blocked: https://ballotpedia.org (not tried, per rule)",
+        "On the Record (0 meetings; extract-otr.mjs run)",
+        "web news searches (several): nothing by this person on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:07:25.578Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:10:53.749Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:14:55.234Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

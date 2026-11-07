@@ -46,6 +46,25 @@
       "found": 0,
       "at": "2026-10-27T00:59:44.846Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://www.fox10phoenix.com/news/2026-election-arizona-congressional-district-9-explained-what-know-about-western-az-race (names him as a write-in candidate from Bullhead City for Arizona's 9th District; nothing on the subject)",
+        "blocked: https://ballotpedia.org/William_Perry_(Arizona) (empty page)",
+        "blocked: https://ballotpedia.org/William_Perry (empty page)",
+        "web searches: name plus gun terms, campaign platform (no campaign site found; nothing on the subject)",
+        "congress.gov: not applicable, not a legislator"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:00:27.518Z",
+      "by": "source-collector"
     }
   ]
 }

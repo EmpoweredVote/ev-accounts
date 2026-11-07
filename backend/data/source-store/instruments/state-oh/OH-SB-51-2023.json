@@ -1,0 +1,25 @@
+{
+  "id": "OH-SB-51-2023",
+  "scope": "state:oh",
+  "title": "SB 51 (2023-2024 (135th General Assembly)): S. B. No. 51: Establish Secretary of State Election Integrity Division",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/135/sb51",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/sb51/00_IN/html/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) 3501.05: Secretary of State acts through the new election integrity division\n(other) 3501.055 (new): election integrity division investigates allegations of election fraud and voter suppression, takes public complaints, refers to prosecutors or other agencies, files an annual report each January 15, and may subpoena and hold hearings\n(other) note: No voter ID, provisional ballot or proof-of-citizenship text (checked all marked words). Sole version.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Theresa Gavarone",
+      "role": "prime",
+      "version": "As Introduced (00_IN)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

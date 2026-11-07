@@ -60,6 +60,46 @@
         "fetched_at": "2026-10-28T22:10:26.490Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "102b197fd06ddd0431a20dfd977b6b331072740541539f2c854e9a715f532e60",
+      "kind": "own-words",
+      "url": "https://www.attorneygeneral.gov/taking-action/ag-sunday-partners-announce-arrest-of-philadelphia-area-ghost-gun-dealer-seizures-of-firearms-with-machine-gun-conversions/",
+      "date": "2026-01-15",
+      "date_precision": "day",
+      "passage": "“Ghost guns exist for criminals to avoid detection by law enforcement, and every one of these deadly weapons should be considered a direct threat to public safety,” Attorney General Sunday said.",
+      "note": "Quote in the Attorney General's release on the arrest of a Philadelphia-area ghost gun dealer.",
+      "subjects": [
+        "home-made (ghost) guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T17:23:45.656Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b7ebc11619b37ce701b259ab384fd4e4bc9c7b154f1bacf7e21a3b94ec10281",
+      "kind": "own-words",
+      "url": "https://www.attorneygeneral.gov/taking-action/ag-sunday-led-philadelphia-gun-violence-task-force-nabs-felon-not-to-possess-charged-with-print-at-home-firearms-trafficking-operation/",
+      "date": "2026-06-15",
+      "date_precision": "day",
+      "passage": "“Every print-at-home firearm that is transferred on the street presents a direct threat to public safety, as the guns are not traceable and could potentially be used in acts of violence or other crimes.”",
+      "note": "Quote from the Attorney General's release on a task-force case about print-at-home firearms. The release page's attribution line was not captured in the copy, so the speaker is taken from the release being issued by his office.",
+      "subjects": [
+        "home-made (ghost) guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T17:23:45.656Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -83,6 +123,33 @@
       "found": 3,
       "at": "2026-10-28T22:10:26.490Z",
       "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "home-made (ghost) guns",
+        "gun trafficking and illegal possession",
+        "Second Amendment and under-21 carry (Lara v. Paris)",
+        "check every gun buyer",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site attorneygeneral.gov: firearms search, two releases opened",
+        "web search: Sunday Second Amendment statement; Lara v. Paris; 2024 candidate statements",
+        "Spotlight PA 2024 election profile",
+        "campaign site: not reviewed, address dsunday.com did not resolve",
+        "Ballotpedia: not reviewed, returns empty to the fetch tool",
+        "sponsor list: not applicable, statewide executive, not a legislator",
+        "blocked: https://www.ammoland.com/2025/02/pennsylvania-attorney-general-breaks-promise-and-defends-gun-law/ (403)",
+        "not reviewed: Gun Owners of America 2024 candidate survey (not located)",
+        "nothing on the subject: Altoona Mirror 2025-02-28 piece on Lara v. Paris does not mention him or the Attorney General's office",
+        "Spotlight PA 2024 profile: only a partial quote on illegal gun possession could be copied, not saved"
+      ],
+      "found": 2,
+      "at": "2026-10-31T17:23:45.656Z",
+      "by": "source-collector"
     }
   ]
 }

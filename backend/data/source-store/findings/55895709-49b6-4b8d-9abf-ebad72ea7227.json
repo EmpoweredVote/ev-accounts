@@ -1,0 +1,63 @@
+{
+  "politician_id": "55895709-49b6-4b8d-9abf-ebad72ea7227",
+  "findings": [
+    {
+      "id": "19cdbbe5d34d08f33a4387382dd9d4a8a8a0a1c3d116d85c34272ae18d3c22ad",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2016/pdf/history/HB/HB0786.xml",
+      "date": "2016-04-05",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-786-2016",
+      "act": "yea",
+      "motion": "Concurred in Amendment from Senate (final House vote)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS House, Concurred in Amendment from Senate (final House vote), 2016-04-05: yea (tally 85–35); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence",
+        "church security"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/MS_HB786SG.pdf",
+          "sha256": "a1142904e692e81f08ce94bef1f5827e9d662ac1f81ce57f6330064169e08945"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "confirmed in office: https://billstatus.ls.state.ms.us/members/house/mims.xml (House District 97)",
+        "On the Record (0 meetings)",
+        "legislature member page (no news or release list)",
+        "iVoterGuide 2023 profile https://ivoterguide.com/candidate/45944/race/8089/election/1069: both voting questions marked did not answer; nothing on the subject",
+        "blocked: https://www.natchezdemocrat.com/?p=431968 (403; a search summary said he was quoted on voter ID there, never read, not cited)",
+        "blocked: https://ballotpedia.org/Sam_Mims_V (not fetched, per instruction)",
+        "7 web searches (voter ID, proof of citizenship/SAVE Act, Enterprise-Journal election, questionnaire/voter guide, photo ID/mail ballots, district name + voter ID): no own-words page that could be read",
+        "no personal campaign or newsletter site found"
+      ],
+      "found": 0,
+      "at": "2026-11-05T22:46:31.397Z",
+      "by": "search-ms-2026-11-05"
+    }
+  ]
+}

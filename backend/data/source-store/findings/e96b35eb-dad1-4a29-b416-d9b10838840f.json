@@ -25,6 +25,206 @@
         "fetched_at": "2026-10-21T03:40:10.569Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "818586ba7a6fa8e00a512d1c240c01472b0f796fab8f64a338fb0b5e616ea7fe",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: yea (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9fc7fe42d4ca0418da57b37f789b4766ff618ad71e31a528b663386efac66476",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: yea (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "3cb7a6eb2595e83f808e9aa6a3f3bb5e782a0aa86dc925a943767e1bab71e9ec",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/House/H4376",
+      "date": "2014-07-31",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4376-2013",
+      "act": "yea",
+      "motion": "Acceptance of the committee of conference report (Yea and Nay No. 483)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, Acceptance of the committee of conference report (Yea and Nay No. 483), 2014-07-31: yea (tally 122–30); census gate: multi-subject.",
+      "subjects": [
+        "firearm license classes merged and Class B licences phased out",
+        "new penalties for shooting and for trafficking guns into the state",
+        "background-check records sent to the federal system",
+        "ban on carrying firearms on school and college grounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "malegislature.gov roll-call PDFs + LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:34:02.477850Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4376-2013.introduced.pdf",
+          "sha256": "b94514a66e779c1400d1b875eb3aac207f6b1b1f12f9928fd8d977feab23bb61"
+        }
+      }
+    },
+    {
+      "id": "c5523d50a631897031188db98ea5d927074d7126174a492b6b9e8d21f240f855",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4517",
+      "date": "2018-05-23",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4517-2017",
+      "act": "yea",
+      "motion": "House On Engrossment Yea and Nay No. 359",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MA House, House On Engrossment Yea and Nay No. 359, 2018-05-23: yea (tally 139–14); census gate: near-unanimous.",
+      "subjects": [
+        "court orders to remove guns from people at risk of harming self or others",
+        "emergency orders without notice",
+        "penalty for false petitions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4517-2017.introduced.pdf",
+          "sha256": "3bac8bca02408059e2c0db49bae39de8a690f0fb6e1b5469f7a23cf51fbd5cc4"
+        }
+      }
+    },
+    {
+      "id": "7727b62aa6ef27fb9e9cfc73a0491b1c4dc595f2b71982384c335273fe2771d1",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4670",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4670-2017",
+      "act": "yea",
+      "motion": "On acceptance of the conference report (Yea and Nay No. 389)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, On acceptance of the conference report (Yea and Nay No. 389), 2018-06-28: yea (tally 133–15); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders to remove guns from people at risk of harming self or others",
+        "protection order added as a bar to gun licenses",
+        "stun gun rules and locked storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4670-2017.introduced.pdf",
+          "sha256": "6b37958358a3f01548ef0d16c386b3caaf5993d5c100f88279ff5b45ad1fe098"
+        }
+      }
+    },
+    {
+      "id": "69e9a97888aef7454243bbb6576c01148fda51dbd433a57e50a452f0bb91ef2a",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/191/H1441",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MA-H-1441-2019",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MA-H-1441-2019 (LegiScan sponsor list): H1441 (191st General Court): Increasing penalties for discharging a firearm into a dwelling, residence, or structure where persons reside.",
+      "subjects": [
+        "new prison penalties for shooting into homes",
+        "new penalties for shooting into schools, parks and daycares"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-1441-2019.introduced.pdf",
+          "sha256": "c82b2a6ba059064c870b83d7181ee52ed537d3123ad2977e7e47bc593a9ca8c2"
+        }
+      }
+    },
+    {
+      "id": "bfa78eaa4b45597d79d8b8cc158c6ff38a2dbafeb52c82c84c3ec851feb72cab",
+      "kind": "own-words",
+      "url": "https://temp.dotnews.com/?p=44920",
+      "date": "2014-05-30",
+      "date_precision": "day",
+      "passage": "“We wanted to have it so when people are convicted of a drug offense, they don’t automatically lose their license,” Holmes said.",
+      "note": "Dorchester Reporter quotes Holmes on an amendment he planned to add to the Speaker's 2014 gun-violence bill (about driver's licence loss after drug convictions); the article also says he supported specific gun-related provisions of that bill. The quote itself is about licence loss, not gun licences.",
+      "subjects": [
+        "general gun-safety statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:42:41.538Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -72,6 +272,33 @@
       "found": 0,
       "at": "2026-10-27T22:16:46.699Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "ghost guns",
+        "carrying guns and where",
+        "carry permits and licences",
+        "repeal of gun laws",
+        "general gun-rights or gun-safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign/official site russellholmes.com (no gun content on pages checked)",
+        "state legislature member page https://malegislature.gov/Legislators/Profile/REH1 (confirms identity; sponsor lists covered by bulk check)",
+        "web search: news coverage (Dorchester Reporter 2014)",
+        "Ballotpedia: not relied on (pages return empty to fetch tool)",
+        "blocked: https://baystatebanner.com/2013/05/16/tougher-gun-laws-needed-to-combat-violence-in-boston-2/ (403)",
+        "nothing on the subject from recent years (2023-2024 gun bill) found in his own words"
+      ],
+      "found": 1,
+      "at": "2026-11-01T01:42:41.538Z",
+      "by": "source-collector"
     }
   ]
 }

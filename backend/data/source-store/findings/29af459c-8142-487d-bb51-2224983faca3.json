@@ -74,6 +74,33 @@
       "found": 1,
       "at": "2026-10-27T01:20:32.328Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "ghost guns",
+        "carrying guns",
+        "general statements on gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "malegislature.gov member page https://malegislature.gov/Legislators/Profile/MLB1 (confirms Michelle L. Badger, 1st Plymouth, 194th General Court; her sponsored-bill list shows no gun bills)",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site https://www.badgerforplymouth.com/ (fetched with one plain curl; nothing on the subject)",
+        "campaign endorsements page https://www.badgerforplymouth.com/endorsements (nothing on the subject)",
+        "blocked: https://badgerforplymouth.com/badger-announces-campaign/ (404)",
+        "Wikipedia page (finding aid only; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Michelle_Badger (returned empty)",
+        "blocked: https://bluevoterguide.org/fr/MA/candidate_Michelle_Badger/449245 (403)",
+        "two web searches on name plus gun words: nothing on the subject from her"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:51:19.009Z",
+      "by": "source-collector"
     }
   ]
 }

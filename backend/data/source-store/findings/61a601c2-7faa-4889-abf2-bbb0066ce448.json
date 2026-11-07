@@ -137,6 +137,258 @@
         "fetched_at": "2026-10-27T19:57:18.140Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "d7675ba70c37b1ef2180d4ca25b67dd2d45fc2291a4b89110e9b23a9af40ba0b",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-117s2938enr/html/BILLS-117s2938enr.htm",
+      "date": "2022-06-23",
+      "date_precision": "day",
+      "instrument_id": "US-S-2938-2022",
+      "act": "yea",
+      "motion": "Motion to Concur in the House amendment to S. 2938 with an amendment (Amdt. No. 5099)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US Senate, Motion to Concur in the House amendment to S. 2938 with an amendment (Amdt. No. 5099), 2022-06-23: yea (tally 65–33); census gate: multi-subject.",
+      "subjects": [
+        "background checks for buyers under 21",
+        "court orders that take guns from a dangerous person (state grants)",
+        "gun trafficking (package)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c20fcb96eb78e01ead82694ac19d878a311409fb4bbbe34cb7a90636662f5d55",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2023252",
+      "date": "2023-06-22",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-44-2023",
+      "act": "nay",
+      "motion": "On the Joint Resolution (H.J. Res. 44)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Joint Resolution (H.J. Res. 44), 2023-06-22: nay (tally 49–50); census gate: none.",
+      "subjects": [
+        "cancel the federal pistol-brace rule"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-118hjres44eh.txt",
+          "sha256": "d04fe1fe2a2512a1932d14b7b93d88fe25ac6712851bc4caa37df31b89101f4d"
+        }
+      }
+    },
+    {
+      "id": "c90bdbcf78bf71ec4d53648b4f8ebe188ca331c8dd00e4aa90ea8f004b52d94a",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2025190",
+      "date": "2025-07-01",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2025",
+      "act": "nay",
+      "motion": "On Passage of the Bill (H.R. 1, as Amended)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US Senate, On Passage of the Bill (H.R. 1, as Amended), 2025-07-01: nay (tally 50–50); census gate: multi-subject.",
+      "subjects": [
+        "end the federal tax on suppressors and short-barrelled guns",
+        "budget (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0bcf016471a3530743def7198ea1e65f8306869d44346ee0c3488fbcb08902dc",
+      "kind": "own-words",
+      "url": "https://bethesdamagazine.com/2013/04/18/van-hollen-condemns-gun-control-failure-in-senate/",
+      "date": "2013-04-18",
+      "date_precision": "day",
+      "passage": "Today, in a sickening display of political cowardice, an undemocratic minority of senators blocked a series of bills that would help reduce gun violence, including a bipartisan compromise proposal to close gaping loopholes in current law and keep guns out of the hands of criminals and people with severe mental illnesses – a proposal that has the support of 90 percent of Americans.",
+      "note": "His statement as a House member, printed in full by Bethesda Magazine, after the Senate blocked the 2013 background-check compromise. Date is the article date.",
+      "subjects": [
+        "check every gun buyer",
+        "limits on who may have a gun",
+        "general gun safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:00:13.379Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6194b84e1ec73b47c68660234b7e09a9b24c9ac774641eb8607b8d5a1b6d7048",
+      "kind": "own-words",
+      "url": "https://bethesdamagazine.com/2013/04/18/van-hollen-condemns-gun-control-failure-in-senate/",
+      "date": "2013-04-18",
+      "date_precision": "day",
+      "passage": "We have a long tradition in this country of responsible gun ownership – but in the wake of too many tragedies, including the massacre in Newtown, we are clearly not doing enough to keep our citizens safe.",
+      "note": "Same 2013 statement. Mentions responsible gun ownership and says current action is not enough.",
+      "subjects": [
+        "general gun safety statement",
+        "responsible gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:00:13.379Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ca1c609e95be0307b653121dddfdc98a785b97f8f4f89255c176da477964cb7e",
+      "kind": "own-words",
+      "url": "https://raskin.house.gov/2022/7/maryland-congressional-delegation-members-release-statement-on-suspension-of-state-s-good-and-substantial-reason-standard-for-concealed-carry-permits",
+      "date": "2022-07",
+      "date_precision": "month",
+      "passage": "The Supreme Court's decision to interfere with common-sense concealed carry laws will ultimately result in more guns on our streets and less safe communities.",
+      "note": "Joint statement issued in the names of both Maryland senators and six House members (he is one), after the Bruen ruling and Maryland's suspension of its 'good and substantial reason' carry-permit standard. Posted on Rep. Raskin's site; month taken from the URL.",
+      "subjects": [
+        "carry permits",
+        "Bruen ruling",
+        "general gun safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:00:13.379Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3433df704fe2c242fdb97a9233480dc168e34a0d940b093746f9218798175a82",
+      "kind": "own-words",
+      "url": "https://raskin.house.gov/2022/7/maryland-congressional-delegation-members-release-statement-on-suspension-of-state-s-good-and-substantial-reason-standard-for-concealed-carry-permits",
+      "date": "2022-07",
+      "date_precision": "month",
+      "passage": "Now more than ever, we are committed to pushing for federal gun safety reforms that are proven to better protect our communities and are overwhelmingly supported by the American people.",
+      "note": "Same joint statement; commits the signers to federal gun safety reforms.",
+      "subjects": [
+        "federal gun safety reforms",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:00:13.379Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bd995a1e3dcb680b70cd621d4f6b5164604a5bb6d3a92c8170d6bb68a529fb9",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/115th-congress/house-joint-resolution/40",
+      "date": "2017-02-15",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-40-2017",
+      "act": "nay",
+      "motion": "Passed Senate without amendment by Yea-Nay Vote. 57 - 43. Record Vote Number: 66 (Roll 66)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, Passed Senate without amendment by Yea-Nay Vote. 57 - 43. Record Vote Number: 66 (Roll 66), 2017-02-15: nay (tally 57–43); census gate: none.",
+      "subjects": [
+        "rule sending records to gun background check system overturned"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HJRES-40-2017.htm",
+          "sha256": "616db93c5dbc0f8d42ff56878c6d7302412f4feaade1ac2794ac4020fae05e55"
+        }
+      }
+    },
+    {
+      "id": "7b0ece74e62d90b736e118101b5ca4d4a3d5365e9a5c7049fec2dae5e9351c9e",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/117th-congress/senate-bill/3623",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "US-S-3623-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2022-03-10",
+      "note": "co sponsor of US-S-3623-2022 (cosponsor 2022-03-10): S 3623 (117th Congress): Violence Against Women Act Reauthorization Act of 2022.",
+      "subjects": [
+        "failed gun background checks reported to state and tribal police within 24 hours",
+        "special prosecutors for domestic-violence gun prohibitions",
+        "annual report on background check denials"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-S-3623-2022.htm",
+          "sha256": "419c00ae6f2e6419ac37d5acb435277d30262291fcc4f6029d92a54840724e31"
+        }
+      }
+    },
+    {
+      "id": "bc4d8c5d394b8fd0c6878c21f7d001c7298234610622b0e0bfaf94d9ab462625",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/senate-bill/494",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "US-S-494-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2023-02-16",
+      "note": "co sponsor of US-S-494-2023 (cosponsor 2023-02-16): S 494 (118th Congress): Background Check Expansion Act.",
+      "subjects": [
+        "background check required for private firearm sales and transfers",
+        "dealer notice and certification form"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-S-494-2023.htm",
+          "sha256": "0eaaa7cc5526464d22459d097de221fb72ed82b50625475b2294e52829e78e63"
+        }
+      }
     }
   ],
   "searches": [
@@ -189,6 +441,36 @@
       "found": 1,
       "at": "2026-10-27T19:57:18.140Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "permit to buy a handgun",
+        "ghost guns",
+        "carry permits after the Bruen ruling",
+        "limits on who may have a gun",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://www.vanhollen.senate.gov/search?q=gun",
+        "blocked: https://www.vanhollen.senate.gov/news/press-releases/van-hollen-cardin-join-in-introducing-bills-to-protect-communities-schools-from-assault-weapons",
+        "blocked: https://www.vanhollen.senate.gov/news/press-releases/van-hollen-raskin-reintroduce-permit-to-purchase-gun-safety-bill",
+        "blocked: https://www.congress.gov/member/chris-van-hollen/V000128 (sponsorships; bot check)",
+        "blocked: https://www.govtrack.us (bot check)",
+        "blocked: https://ballotpedia.org/Chris_Van_Hollen",
+        "blocked: https://marylandmatters.org/2019/09/04/van-hollen-blasts-mcconnell-over-senate-inaction-on-gun-bill/",
+        "blocked: https://afro.com/van-hollen-remarks-on-house-floor-demanding-vote-on-gun-safety-legislation/",
+        "Senate press releases on bills he co-introduced (assault weapons, universal background checks, no check no sale, permit to purchase, ghost guns) were found by search but all senate.gov pages refuse the fetch, so the bill sponsorship records are not saved: gap, not nothing",
+        "Bethesda Magazine 2013 page with his full statement",
+        "Rep. Raskin's site, 2022 joint statement by the Maryland delegation"
+      ],
+      "found": 4,
+      "at": "2026-10-30T15:00:13.379Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -1,0 +1,32 @@
+{
+  "politician_id": "e6339c75-bf1e-4945-9fff-751a91c55325",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun rights",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://alexcookeforcongress.com/ (identity check: independent candidate for FL-21, former Mayor of Juno Beach); pages read: home, /issues, /issues/free-market, /meet-alex, /district-21; none mention guns, firearms or the Second Amendment",
+        "WLRN race article (confirms he is an independent challenging in the 2026-11-03 FL-21 election; nothing by him on guns): https://www.wlrn.org/government-politics/2026-10-20/2026-midterms-mast-vs-martin-vs-cooke-for-u-s-house-district-21",
+        "iVoterGuide page: 2nd Amendment question 'What restrictions on gun ownership are needed to protect public safety?' is marked 'Did not answer': https://ivoterguide.com/candidate/76582/race/31352/election/1464",
+        "The Ballot Brief profile: nothing on the subject: https://theballotbrief.com/candidate/alexander-cooke-fl",
+        "Juno Beach town directory page https://www.juno-beach.fl.us/directory-listing/alexander-cooke: nothing on the subject",
+        "BallotReady page https://www.ballotready.org/people/alexander-cooke: no issue answers",
+        "web searches: three run (campaign/news, questionnaire); no gun statement found",
+        "Ballotpedia: not reviewed (page returns empty to the fetch tool)",
+        "sponsor list: not a legislator, no sponsorships"
+      ],
+      "found": 0,
+      "at": "2026-10-31T00:44:59.936Z",
+      "by": "source-collector"
+    }
+  ]
+}

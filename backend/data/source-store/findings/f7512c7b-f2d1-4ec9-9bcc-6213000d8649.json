@@ -1,0 +1,146 @@
+{
+  "politician_id": "f7512c7b-f2d1-4ec9-9bcc-6213000d8649",
+  "findings": [
+    {
+      "id": "e076c8b48278b31632ee890048920af3952a61ffb83895b5d23bfa476c64b17f",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Steinhoff'), linked to Kathy Steinhoff (district 45) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.752Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8a52e4f16f777a6e9e8fa8b4ac260db72f53a04189a33fa3c38239ac4054f42d",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/sumpdf/HB2114I.pdf",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-2114-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, Introduced text (4892H.01I.pdf)",
+      "note": "Named as prime sponsor ('Steinhoff') on the official bill text, summary or journal; linked to Kathy Steinhoff via the official 2026 member roll of the House (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.752Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "80330c0e6489bb6ff0b6200ced2701ff65d77dd55c547547ecee715053dc3cb5",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/0458H.01I.pdf",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-308-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, Introduced text (0458H.01I.pdf)",
+      "note": "Named as prime sponsor ('Steinhoff') on the official bill text, summary or journal; linked to Kathy Steinhoff via the official 2025 member roll of the House (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.752Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9302fa7bcbb9205f150b8afd9e072506397909e3ae094c01acad3b2775cdebe0",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn052.pdf",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "MO-HCR-48-2026",
+      "act": "nay",
+      "motion": "House: HCR 48 read the third time and passed",
+      "note": "House roll call as printed ('Steinhoff'), linked to Kathy Steinhoff (district 45) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.231Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "places": [
+        "https://www.stlpr.org/podcast/politically-speaking/2024-02-06/state-rep-kathy-steinhoff-pans-missouri-open-school-enrollment-proposal (confirms office; nothing on the subject)",
+        "https://www.upballot.com/Kathy-Steinhoff/about (nothing on the subject)",
+        "search results show she is on the 2026 general-election ballot for District 45 (result not checked)",
+        "On the Record (0 meetings, extract-otr ran with name search)",
+        "web search x3 on name plus voter ID, citizenship and ballot words: no own words on the subject",
+        "blocked: Ballotpedia (not fetched, refuses fetches)",
+        "not fetched, House host off-limits by robots rule: official member page and newsroom (per instructions)",
+        "blocked: https://mohousedemcaucus.com (host did not resolve)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:12:34.524Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-04T14:10:53.752Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:14:55.231Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

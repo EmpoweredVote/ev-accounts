@@ -1,0 +1,699 @@
+{
+  "id": "US-HR-1478-2023",
+  "scope": "federal",
+  "title": "HR 1478 (118th Congress): Federal Firearm Licensee Act",
+  "urls": [
+    "https://www.congress.gov/bill/118th-congress/house-bill/1478",
+    "https://www.govinfo.gov/content/pkg/BILLS-118hr1478ih/xml/BILLS-118hr1478ih.xml"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 4 (amending 18 U.S.C. 922): Section 922 of title 18, United States Code, is amended by striking subsection (s).\nSec. 5(a)(1) (amending 18 U.S.C. 923(d)(1)(G)): Section 923(d)(1)(G) of title 18, United States Code, is amended by striking the period at the end and inserting , and the applicant submits with the application a security plan that describes how the applicant will secure, in accordance with the regulations issued under section 926(d), the premises from which the applicant will conduct business under the license (including in the event of a natural disaster or other emergency), and the applicant certifies that, if issued such a license, the applicant will comply with the plan; and.\nSec. 5(c) (adding 18 U.S.C. 926(d)): (d)The Attorney General shall prescribe such regulations as are necessary to ensure that any premises at which a licensee referred to in section 923(m) conducts business is secure from theft, which shall include requiring— (1)compliance with the security plan submitted by the licensee pursuant to section 923(d)(1)(G); (2)the use of locked metal cabinets and fireproof safes; (3)security systems, video monitoring, and antitheft alarms; (4)security gates, strong locks, and site hardening; (5)concrete bollards and other access controls, if necessary; and (6)the use of any other security-enhancing features appropriate for the licensee’s specific circumstances..\nSec. 6(b) (adding 18 U.S.C. 923(g)(8)): (8)Each licensee shall conduct a quarterly physical check of the firearms inventory of the business of the licensee licensed under this chapter and report any lost, stolen, or unaccounted for firearm to the Attorney General and appropriate local authorities\nSec. 7(c) (adding 18 U.S.C. 923(g)(10)): (10)In accordance with regulations promulgated by the Attorney General, each licensed dealer operating a location at which firearms are sold to a person not licensed under this chapter shall— (A)maintain video surveillance of all areas within each premises where firearms in the business inventory of the licensee are sold or transferred; (B)retain records of the surveillance, including any sound recording obtained from the surveillance, for a period of not less than 90 days; and (C)post a sign in a conspicuous place and at each public entrance to the retail location, in block letters not less than 1 inch in height, stating that the premises are under video surveillance.\nSec. 9(b) (amending 18 U.S.C. 922(t)(2)(C)): Section 922(t)(2)(C) of such title is amended— (1)by striking destroy and inserting retain for 90 business days; (2)by striking (other than the identifying number and the date the number was assigned); and (3)by inserting solely for purposes related to discovering misuse or avoidance of the national instant criminal background check system or ensuring its proper operation before the period at the end.\nSec. 18 (amending 18 U.S.C. 922(t)(5)): Section 922(t)(5) of title 18, United States Code, is amended by inserting in the case of the 1st violation and, in the case of a subsequent violation, shall immediately suspend or revoke any license issued to the licensee under section 923 and impose on the licensee a civil fine equal to $20,000 before the period.",
+  "sponsors": [
+    {
+      "name": "Robin Kelly",
+      "politician_id": "9d9ce75d-b1ba-4051-a87e-e84c1619be8a",
+      "role": "prime",
+      "version": "introduced"
+    },
+    {
+      "name": "David Cicilline",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "BARBARA LEE",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Joseph Morelle",
+      "politician_id": "c02d8232-aa7a-429a-9abe-dccb409c1c6f",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Jimmy Panetta",
+      "politician_id": "29a4c8f8-67a4-45a1-b4e8-ea708523cf3f",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "WILLIAM PASCRELL",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Jake Auchincloss",
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "EARL BLUMENAUER",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Jamaal Bowman",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Brendan Boyle",
+      "politician_id": "6d11b72d-fb42-49ca-b44f-89ef02defbb7",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Andre Carson",
+      "politician_id": "91c72443-147f-4d1f-adab-ee415dab5ea6",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Sean Casten",
+      "politician_id": "05cf439f-3932-4398-b97b-4fd9a7506934",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Kathy Castor",
+      "politician_id": "12623f00-b182-4511-a5a1-c715113b96cc",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Sheila Cherfilus-McCormick",
+      "politician_id": "3768a470-ae44-4621-bb46-7596653d2cf4",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Jasmine Crockett",
+      "politician_id": "10d7e182-3200-41d1-b391-2b9abad273ca",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Jason Crow",
+      "politician_id": "141a93cb-773a-416e-bb60-05334bd08852",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "DANNY DAVIS",
+      "politician_id": "0e65d006-9ede-4d90-b13b-23874d67b674",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Mark DeSaulnier",
+      "politician_id": "bc29096f-63ce-41f7-8d51-c4e6cfa87f8c",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Adriano Espaillat",
+      "politician_id": "26636234-c292-4a02-8205-6b84f6864f82",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Maxwell Frost",
+      "politician_id": "eeeab0bd-ce73-4152-8e80-679d3d031ad7",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Glenn Ivey",
+      "politician_id": "e59ec991-3948-4369-913c-63c62dc3ece5",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Seth Moulton",
+      "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "ELEANOR NORTON",
+      "politician_id": "4dbc8de1-9984-42a5-b2aa-5445bf0619b9",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Donald Payne",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Stacey Plaskett",
+      "politician_id": "2804ab49-5972-4c25-8e60-8331adbfa3c2",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Mike Quigley",
+      "politician_id": "05e88b53-b6f4-4c5d-bcd2-f6b7b20f98d6",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Delia Ramirez",
+      "politician_id": "f74970a7-a63c-43e2-8033-d04b7f2bd64d",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Jamie Raskin",
+      "politician_id": "731c674f-8f44-4df3-8b04-3b70be39a1bd",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Linda Sánchez",
+      "politician_id": "bb73793e-ad67-431a-bb03-663b765204d8",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Mary Scanlon",
+      "politician_id": "ba906956-7359-4b26-8f1b-0d8f8d60b9fc",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Hillary Scholten",
+      "politician_id": "80b0b2ee-5ccb-4ee1-a7fa-58e253bb6daf",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Eric Swalwell",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Dina Titus",
+      "politician_id": "786af5d2-9502-401c-a3ed-61de88e589e9",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Rashida Tlaib",
+      "politician_id": "aa1d94a3-6336-405d-89da-c43146cf0421",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Jill Tokuda",
+      "politician_id": "761aa2ac-d877-4654-97c7-60bf40980f63",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Bonnie Watson Coleman",
+      "politician_id": "a75a3e6e-31ff-4870-8aea-501e41326fd1",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Frederica Wilson",
+      "politician_id": "3fc35d7d-a121-4b5e-b243-b150daf6e628",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "BETTY MCCOLLUM",
+      "politician_id": "8d4d216a-2d44-4565-b605-14b24e31207b",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Juan Vargas",
+      "politician_id": "afa3cab9-4caf-4df3-a9ce-f739cc12b89d",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Paul Tonko",
+      "politician_id": "52bbba11-e099-457b-a05b-aa8f4f5a5b13",
+      "role": "co",
+      "version": "cosponsor 2023-03-09"
+    },
+    {
+      "name": "Daniel Kildee",
+      "role": "co",
+      "version": "cosponsor 2023-03-22"
+    },
+    {
+      "name": "Ro Khanna",
+      "politician_id": "07255876-bbe6-4f6a-8c68-75939d9b5128",
+      "role": "co",
+      "version": "cosponsor 2023-03-22"
+    },
+    {
+      "name": "Shontel Brown",
+      "politician_id": "e7f9cb36-33ae-4291-94da-57d956c822af",
+      "role": "co",
+      "version": "cosponsor 2023-03-22"
+    },
+    {
+      "name": "Julia Brownley",
+      "politician_id": "01147c2b-0f40-4255-b09e-b5a19a45fd31",
+      "role": "co",
+      "version": "cosponsor 2023-03-22"
+    },
+    {
+      "name": "Henry Johnson",
+      "politician_id": "135f4a8f-6e03-453f-a5b2-9a3b338f26c3",
+      "role": "co",
+      "version": "cosponsor 2023-03-22"
+    },
+    {
+      "name": "Kevin Mullin",
+      "politician_id": "9c880377-7e1f-4994-91b3-82d9cb15bbb4",
+      "role": "co",
+      "version": "cosponsor 2023-03-22"
+    },
+    {
+      "name": "ANNA ESHOO",
+      "role": "co",
+      "version": "cosponsor 2023-03-22"
+    },
+    {
+      "name": "Joe Neguse",
+      "politician_id": "2c71d91b-7ad8-4984-b9a6-81587c41ea0d",
+      "role": "co",
+      "version": "cosponsor 2023-04-03"
+    },
+    {
+      "name": "Andy Kim",
+      "politician_id": "e7c985f0-7804-485e-8ad7-8e71c0129a00",
+      "role": "co",
+      "version": "cosponsor 2023-04-03"
+    },
+    {
+      "name": "Joyce Beatty",
+      "politician_id": "dd93f609-82f5-4923-8a0e-d73b58120b80",
+      "role": "co",
+      "version": "cosponsor 2023-04-13"
+    },
+    {
+      "name": "Troy Carter",
+      "politician_id": "a1f17921-9054-4946-8dd5-01cb1173a036",
+      "role": "co",
+      "version": "cosponsor 2023-04-13"
+    },
+    {
+      "name": "Ed Case",
+      "politician_id": "649b2735-de39-459b-8ec5-b2b4923fb51d",
+      "role": "co",
+      "version": "cosponsor 2023-04-13"
+    },
+    {
+      "name": "DIANA DEGETTE",
+      "politician_id": "610bb358-bae9-4ce8-beaf-a33a27d5ba49",
+      "role": "co",
+      "version": "cosponsor 2023-04-13"
+    },
+    {
+      "name": "Greg Landsman",
+      "politician_id": "6cad043f-a4c0-48d5-af76-fdf70d319920",
+      "role": "co",
+      "version": "cosponsor 2023-04-13"
+    },
+    {
+      "name": "Raúl Grijalva",
+      "role": "co",
+      "version": "cosponsor 2023-04-13"
+    },
+    {
+      "name": "Morgan McGarvey",
+      "politician_id": "9c8e165b-9079-4ed2-ad0a-0a9d98fd9931",
+      "role": "co",
+      "version": "cosponsor 2023-04-18"
+    },
+    {
+      "name": "Jahana Hayes",
+      "politician_id": "efba0750-f472-47b3-acf7-054bd57817fc",
+      "role": "co",
+      "version": "cosponsor 2023-04-24"
+    },
+    {
+      "name": "Suzanne Bonamici",
+      "politician_id": "6ffb9093-7489-4197-aebc-67065c239fc3",
+      "role": "co",
+      "version": "cosponsor 2023-05-02"
+    },
+    {
+      "name": "Stephen Lynch",
+      "politician_id": "62b453da-3dea-4177-82ba-9e4b78eb7691",
+      "role": "co",
+      "version": "cosponsor 2023-05-10"
+    },
+    {
+      "name": "Brittany Pettersen",
+      "politician_id": "3142051c-9ded-4883-95fc-4af1de6e6eec",
+      "role": "co",
+      "version": "cosponsor 2023-05-24"
+    },
+    {
+      "name": "Tony Cárdenas",
+      "role": "co",
+      "version": "cosponsor 2023-06-07"
+    },
+    {
+      "name": "ADAM SCHIFF",
+      "politician_id": "8a27a8b7-88b4-4f79-bbcf-d1d0e70d4032",
+      "role": "co",
+      "version": "cosponsor 2023-06-14"
+    },
+    {
+      "name": "David Scott",
+      "politician_id": "281d268a-9f07-4bee-827f-94d7eb7d0716",
+      "role": "co",
+      "version": "cosponsor 2023-06-14"
+    },
+    {
+      "name": "Nikema Williams",
+      "politician_id": "acb046eb-1db6-44bf-a50b-32d16df15057",
+      "role": "co",
+      "version": "cosponsor 2023-06-30"
+    },
+    {
+      "name": "Emanuel Cleaver",
+      "politician_id": "8a776315-0da0-43a9-9f35-0cc2408ec6e4",
+      "role": "co",
+      "version": "cosponsor 2023-06-30"
+    },
+    {
+      "name": "Haley Stevens",
+      "politician_id": "5b642054-504c-46c8-a68b-324e7b593587",
+      "role": "co",
+      "version": "cosponsor 2023-06-30"
+    },
+    {
+      "name": "Dwight Evans",
+      "politician_id": "3c962502-99c7-46ec-ae6b-0c69143f571c",
+      "role": "co",
+      "version": "cosponsor 2023-06-30"
+    },
+    {
+      "name": "Seth Magaziner",
+      "politician_id": "42b655c0-7eef-4dc1-8d5d-b4a77977a7f4",
+      "role": "co",
+      "version": "cosponsor 2023-07-13"
+    },
+    {
+      "name": "Yvette Clarke",
+      "politician_id": "efa0cb88-6ae0-47dc-abe1-b1388983addf",
+      "role": "co",
+      "version": "cosponsor 2023-07-19"
+    },
+    {
+      "name": "Sara Jacobs",
+      "politician_id": "51e4c723-299f-46a6-b1b2-f75386ee64f0",
+      "role": "co",
+      "version": "cosponsor 2023-08-25"
+    },
+    {
+      "name": "Robert Menendez",
+      "politician_id": "fc7a00d6-c552-4627-87f7-b0fc5cfe486c",
+      "role": "co",
+      "version": "cosponsor 2023-08-25"
+    },
+    {
+      "name": "Mark Pocan",
+      "politician_id": "59662930-3fe8-4e3e-8f02-2a341d58619f",
+      "role": "co",
+      "version": "cosponsor 2023-09-14"
+    },
+    {
+      "name": "Terri Sewell",
+      "politician_id": "c269ef7a-8a6f-4641-9a75-ecea19905268",
+      "role": "co",
+      "version": "cosponsor 2023-09-28"
+    },
+    {
+      "name": "David Trone",
+      "role": "co",
+      "version": "cosponsor 2023-09-28"
+    },
+    {
+      "name": "SHEILA JACKSON LEE",
+      "role": "co",
+      "version": "cosponsor 2023-09-28"
+    },
+    {
+      "name": "NYDIA VELAZQUEZ",
+      "politician_id": "8fad496d-d92d-4f68-bc25-93102a4612e8",
+      "role": "co",
+      "version": "cosponsor 2023-10-26"
+    },
+    {
+      "name": "John Sarbanes",
+      "role": "co",
+      "version": "cosponsor 2023-10-26"
+    },
+    {
+      "name": "ADAM SMITH",
+      "politician_id": "74b2a9c6-a4ca-4fe7-b3a4-347f54bc62c2",
+      "role": "co",
+      "version": "cosponsor 2023-10-26"
+    },
+    {
+      "name": "J. Correa",
+      "role": "co",
+      "version": "cosponsor 2023-10-26"
+    },
+    {
+      "name": "Raja Krishnamoorthi",
+      "politician_id": "ee1a8680-16cf-40ee-bbee-09670cb296cc",
+      "role": "co",
+      "version": "cosponsor 2023-10-26"
+    },
+    {
+      "name": "Daniel Goldman",
+      "politician_id": "c7f357ce-2fa0-4760-921b-905ff6a63944",
+      "role": "co",
+      "version": "cosponsor 2023-11-02"
+    },
+    {
+      "name": "Madeleine Dean",
+      "politician_id": "bf942e86-fe8c-496f-9a36-212e9f9403e3",
+      "role": "co",
+      "version": "cosponsor 2023-11-02"
+    },
+    {
+      "name": "Melanie Stansbury",
+      "politician_id": "8a92e955-2138-41a3-a598-0c0e0478c73a",
+      "role": "co",
+      "version": "cosponsor 2023-12-06"
+    },
+    {
+      "name": "KWEISI MFUME",
+      "politician_id": "6e2f5cf7-4e00-4a83-b1d7-b3f2ea4c1ffd",
+      "role": "co",
+      "version": "cosponsor 2023-12-06"
+    },
+    {
+      "name": "Jim Costa",
+      "politician_id": "196e8502-0aab-49a8-a6a0-6626bf121f34",
+      "role": "co",
+      "version": "cosponsor 2023-12-06"
+    },
+    {
+      "name": "Mikie Sherrill",
+      "role": "co",
+      "version": "cosponsor 2024-01-05"
+    },
+    {
+      "name": "Gabe Amo",
+      "politician_id": "241207b1-a9eb-459b-a381-38af1e023356",
+      "role": "co",
+      "version": "cosponsor 2024-01-25"
+    },
+    {
+      "name": "Summer Lee",
+      "politician_id": "117883ff-7a9a-42cb-b42b-82223f1d618d",
+      "role": "co",
+      "version": "cosponsor 2024-01-25"
+    },
+    {
+      "name": "Nanette Barragan",
+      "politician_id": "5bd54ac0-c8b9-486c-844c-ecc4313e5de7",
+      "role": "co",
+      "version": "cosponsor 2024-01-25"
+    },
+    {
+      "name": "Zoe Lofgren",
+      "politician_id": "956281d7-e27e-43cc-84e9-244879ed5ecf",
+      "role": "co",
+      "version": "cosponsor 2024-03-11"
+    },
+    {
+      "name": "C. Ruppersberger",
+      "role": "co",
+      "version": "cosponsor 2024-03-11"
+    },
+    {
+      "name": "Frank Mrvan",
+      "politician_id": "e08ec276-3194-41d4-833b-953f27454857",
+      "role": "co",
+      "version": "cosponsor 2024-04-09"
+    },
+    {
+      "name": "Judy Chu",
+      "politician_id": "d75dfa60-351b-4f0d-880a-45acf013c82a",
+      "role": "co",
+      "version": "cosponsor 2024-04-09"
+    },
+    {
+      "name": "Ayanna Pressley",
+      "politician_id": "c61baf45-dc2a-4d78-b4b7-21b1e9d79464",
+      "role": "co",
+      "version": "cosponsor 2024-06-13"
+    },
+    {
+      "name": "Gerald Connolly",
+      "role": "co",
+      "version": "cosponsor 2024-06-13"
+    },
+    {
+      "name": "Josh Gottheimer",
+      "politician_id": "c4251d10-6fba-4a5a-b8a9-f4b2f4634f0d",
+      "role": "co",
+      "version": "cosponsor 2024-06-13"
+    },
+    {
+      "name": "Scott Peters",
+      "politician_id": "3a9072fc-cb5c-4435-ad77-86562481830f",
+      "role": "co",
+      "version": "cosponsor 2024-06-13"
+    },
+    {
+      "name": "Thomas Suozzi",
+      "politician_id": "a1c608d4-3feb-4bb0-b797-00453d08a0e8",
+      "role": "co",
+      "version": "cosponsor 2024-06-13"
+    },
+    {
+      "name": "Christopher Deluzio",
+      "politician_id": "c20345d9-e451-4813-8645-985734fedba3",
+      "role": "co",
+      "version": "cosponsor 2024-06-14"
+    },
+    {
+      "name": "Katie Porter",
+      "role": "co",
+      "version": "cosponsor 2024-06-14"
+    },
+    {
+      "name": "Sylvia Garcia",
+      "politician_id": "b956345e-e9fb-4e4f-97b3-ed2213f5da1e",
+      "role": "co",
+      "version": "cosponsor 2024-06-25"
+    },
+    {
+      "name": "Debbie Dingell",
+      "politician_id": "91d28127-8183-4b67-a1fb-dc8a150f6199",
+      "role": "co",
+      "version": "cosponsor 2024-06-25"
+    },
+    {
+      "name": "Dean Phillips",
+      "role": "co",
+      "version": "cosponsor 2024-06-25"
+    },
+    {
+      "name": "Salud Carbajal",
+      "politician_id": "565438e0-04f1-4d2d-87cf-44df42ac1173",
+      "role": "co",
+      "version": "cosponsor 2024-06-27"
+    },
+    {
+      "name": "Bradley Schneider",
+      "politician_id": "ecdb6fda-81cd-48bd-9403-a03a82f3ebad",
+      "role": "co",
+      "version": "cosponsor 2024-07-08"
+    },
+    {
+      "name": "Grace Napolitano",
+      "role": "co",
+      "version": "cosponsor 2024-07-08"
+    },
+    {
+      "name": "Lizzie Fletcher",
+      "politician_id": "af3deea9-ba89-4d48-b16a-fa785b35a827",
+      "role": "co",
+      "version": "cosponsor 2024-07-08"
+    },
+    {
+      "name": "Yadira Caraveo",
+      "role": "co",
+      "version": "cosponsor 2024-07-08"
+    },
+    {
+      "name": "Timothy Kennedy",
+      "politician_id": "7e37b0b1-d311-4cf3-8f19-f861626d5d98",
+      "role": "co",
+      "version": "cosponsor 2024-07-22"
+    },
+    {
+      "name": "Steve Cohen",
+      "politician_id": "7b2966fb-0b21-4db1-a3ad-f7f2cc69a4bb",
+      "role": "co",
+      "version": "cosponsor 2024-07-22"
+    },
+    {
+      "name": "Lois Frankel",
+      "politician_id": "b4040115-b3ea-4500-89cf-1ddaecafc94e",
+      "role": "co",
+      "version": "cosponsor 2024-08-06"
+    },
+    {
+      "name": "Janice Schakowsky",
+      "politician_id": "4fbdecd3-3161-49da-a610-9b9312e72507",
+      "role": "co",
+      "version": "cosponsor 2024-10-18"
+    },
+    {
+      "name": "Ann Kuster",
+      "role": "co",
+      "version": "cosponsor 2024-10-18"
+    },
+    {
+      "name": "Sydney Kamlager-Dove",
+      "politician_id": "a2c6adc7-7689-49b9-964f-8f2aeb243a83",
+      "role": "co",
+      "version": "cosponsor 2024-12-03"
+    },
+    {
+      "name": "Becca Balint",
+      "politician_id": "202729e0-489b-40d4-8ce8-ef58f4f22b22",
+      "role": "co",
+      "version": "cosponsor 2024-12-03"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-31T00:23:59.657689Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1478-2023.htm",
+      "sha256": "a081798dc6eafe57b8937fec0db8181811a5f7a019c1c2ad37ddf3b4cecdea5c"
+    }
+  }
+}

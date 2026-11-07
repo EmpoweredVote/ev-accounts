@@ -1,0 +1,178 @@
+{
+  "politician_id": "85de587e-4d69-4bd3-98c5-1e6ee3d85469",
+  "findings": [
+    {
+      "id": "5e45ab48caf52437ef09fcf0f2ce34fa9ab9705ead28926cb5b01e1ff7fc7933",
+      "kind": "record",
+      "url": "https://kslegislature.gov/li_2016/b2015_16/measures/SB45/",
+      "date": "2015-03-25",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-45-2015",
+      "act": "nay",
+      "motion": "Emergency Final Action - Passed as amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, Emergency Final Action - Passed as amended, 2015-03-25: nay (tally 85–39); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "C, F (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5568fdb71c243e9049791d3bddfd18bbd4f3ab36b1c12cd34a2f19a4e49ee4da",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20110329104238_907523.odt",
+      "date": "2011-03-29",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2067-2011",
+      "act": "nay",
+      "motion": "House: On motion of Rep. Schwab the House concurred in Senate amendments to HB 2067.",
+      "note": "House roll call as printed ('Ruiz'), linked to Louis Ruiz (district 32) via the official 2011 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.950Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f983fdee907036e59f055061e70a2938b4146c82aa2602ba0b86afdcdbbd8ee1",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20120223102421_762384.odt",
+      "date": "2012-02-23",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2012",
+      "act": "nay",
+      "motion": "House: HB 2437, AN ACT concerning elections; relating to voting; changing effective date of United States citizenship requirements; amending K.S.A. 2011 Supp. 25-2309, 25-2908 and 65-2418 ... was considered on final action. (The bill passed, as amended.)",
+      "note": "House roll call as printed ('Ruiz'), linked to Louis Ruiz (district 32) via the official 2012 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.950Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c219fe3754d2a4205c7f4df7b0eee9545951604494d4cca3e305ee08fdc67c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day051_20260326/vote_records/0342_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "House: Conference Committee Report was adopted",
+      "note": "House roll call as printed ('L. Ruiz'), linked to Louis Ruiz (district 31) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.950Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db5f0de06ff5f665bbc68602e97997e4bcb23fae56790f0a906ca6a6d65c5fd2",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20120503112313_679546.odt",
+      "date": "2012-05-03",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-129-2011",
+      "act": "yea",
+      "motion": "House: On motion of Rep. Schwab, the conference committee report on H Sub for SB129 was adopted.",
+      "note": "House roll call as printed ('Ruiz'), linked to Louis Ruiz (district 32) via the official 2012 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.950Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a3515ea8f35c5ec903b803c0568ebd89f89c75374f07adb6df17d903a0d6d742",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20110323103652_433149.odt",
+      "date": "2011-03-23",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-129-HSUB-2011",
+      "act": "nay",
+      "motion": "House: SB 129, AN ACT concerning elections; amending K.S.A. 25-321, 25-2203, 25-2352 ... was considered on final action. (The substitute bill passed, as amended.)",
+      "note": "House roll call as printed ('Ruiz'), linked to Louis Ruiz (district 32) via the official 2011 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.950Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "84d9aac109c04936170ec10eace4f6532d10bf748a66e8165115410dd6336e81",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20120509105352_921338.odt",
+      "date": "2012-05-09",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-17-2011",
+      "act": "nay",
+      "motion": "House: SB 17, AN ACT concerning elections; relating to voter identification requirements; amending K.S.A. 2011 Supp. 25-2309, 25-2908 and 65-2418 ... was considered on final action. (The substitute bill passed, as amended.)",
+      "note": "House roll call as printed ('Ruiz'), linked to Louis Ruiz (district 32) via the official 2012 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.950Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 6,
+      "at": "2026-11-04T19:13:24.950Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

@@ -1,0 +1,346 @@
+{
+  "politician_id": "8a208c28-1273-4e27-93d4-c2c0bb5a1dbc",
+  "findings": [
+    {
+      "id": "0c4350377c9b0507ae2bfc0d5ceedb9338418325088349f5614a4e57cbbc7dfa",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/134/sb215",
+      "date": "2022-03-02",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-215-2022",
+      "act": "nay",
+      "motion": "Passed (final House vote per Votes tab)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH House, Passed (final House vote per Votes tab), 2022-03-02: nay (tally 58–36); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/OH_sb215_EN.pdf",
+          "sha256": "dddae0081901748ede39524ddca0094c322a065fe443d8ffdbae0913c1a95fa4"
+        }
+      }
+    },
+    {
+      "id": "fb69a60221262dbc2a5de8bbc0c146fc993ffb482b2d9747bce329042032f022",
+      "kind": "own-words",
+      "url": "https://www.13abc.com/2024/02/21/community-organizers-reminding-public-new-voter-id-laws",
+      "date": "2024-02-20",
+      "date_precision": "day",
+      "passage": "The law changed. So, now you have to have a drivers license, a state ID or a passport to be eligible to vote,” said State Senator Paula Hicks-Hudson (D). “Before you could have a utility bill or something like that. But now the law has been changed that you need either state ID, driver’s license, or a passport.",
+      "note": "Quoted by 13abc at a Lucas County early-voting press conference reminding voters of the new ID rules. She describes the change from a utility bill to a driver license, state ID or passport. The outlet attached a party letter to her name; it is not part of her words.",
+      "subjects": [
+        "voter ID at the polls",
+        "documents accepted as ID",
+        "voter education on new ID law"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:18:56.415Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4fb2e3bf0959ee2ed7f7f6e4adf57449e12f17512fb6369106a5b162d23f0791",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/news/democrat/hicks-hudson-issues-letter-on-new-early-vote-procedures-101055",
+      "date": "2019-08-20",
+      "date_precision": "day",
+      "passage": "I want to make sure that everyone knows that there are no new restrictions on voter ID at Early Voting.",
+      "note": "From her letter, issued as a state representative, to the Lucas County Board of Elections about HB 41 early-voting ID rules. She says in-person early voters can still vote without an ID in hand by giving the last four digits of their Social Security number in writing, and asks the board to train poll workers and call back voters wrongly turned away.",
+      "subjects": [
+        "ID for early in-person voting",
+        "last four digits of Social Security number as ID",
+        "poll worker training"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:18:56.415Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a52a64fd7cbae90505953df2456c963529099b8ff2abc1de77126d7bfbbb5526",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/news/democrat/hicks-hudson-issues-letter-on-new-early-vote-procedures-101055",
+      "date": "2019-08-20",
+      "date_precision": "day",
+      "passage": "So, people can still go to Early Voting without an ID in their pocket and vote by providing their SSN+4 in writing.",
+      "note": "Same 2019 letter. She states that early voters without a photo or other ID may still vote by writing the last four digits of their Social Security number.",
+      "subjects": [
+        "ID for early in-person voting",
+        "voters with no ID in hand",
+        "last four digits of Social Security number as ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:18:56.415Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e1eebf7f3764e3664887df22a61a103b7a7a29ba1c05cd5d2e02978de1f33251",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/actions/",
+      "date": "2022-12-13",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-458-2022",
+      "act": "nay",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 24-7) on H. B. No. 458, from the Ohio Legislature's own actions record, which lists each member by id (sen_hicks_hudson_paula_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "61ad7ead5c708d5cc3644cba295a15f24a874cb0732ce0f06dad1de0e594ba9c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 23-10) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (sen_hicks_hudson_paula_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ac99700f10fccf6a9e794750182dc8dc1f69f27d8bfd400811b06c254d0c19b4",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "nay",
+      "motion": "Senate: Concurred in House amendments",
+      "note": "OH Senate floor roll call (Concurred in House amendments, tally 23-10) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (sen_hicks_hudson_paula_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9b1f5c0fab55b6852c164d5fd7548cc1853715c65462e15ee45b573dea4077ad",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "Senate: Adopted",
+      "note": "OH Senate floor roll call (Adopted, tally 22-9) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (sen_hicks_hudson_paula_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4092af7f10ab2c9482bb4204ce6aa36f96e06458e369526dd66f3b8467623c81",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/133/hb687",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-687-2020",
+      "act": "sponsor",
+      "motion": "prime sponsor, As Introduced (00_IN)",
+      "note": "Listed as prime sponsor of H. B. No. 687 (As Introduced) on the Ohio Legislature's own record (rep_hudson_paula_hicks_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3f0c85c11b1b361bd3e8d249dc74549720ef38af75739941abf9f535f8eea84b",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/paula-hicks-hudson/news/hicks-hudson-condemns-voter-suppression-bill",
+      "date": "2025-11-05",
+      "date_precision": "day",
+      "passage": "You can take a credit card anywhere in the world with a 4-digit pin and take out money, but we continue to restrict voting abilities while leveraging the under-resourced postal system to suppress our voters.",
+      "note": "Release on SB 293 (ends the grace period for mailed absentee ballots); the fetch tool returned it in two adjacent quoted segments, joined here. She compares voting checks to a card PIN.",
+      "subjects": [
+        "mail-ballot receipt deadline (SB 293)",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:42:06.717Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "be6612e803d76e1ab373c2e3f2e845e99c46500b65b36a6b80454531cc58c05c",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/paula-hicks-hudson/news/hicks-hudson-condemns-voter-suppression-bill",
+      "date": "2025-11-05",
+      "date_precision": "day",
+      "passage": "In Lucas County, we know that it takes unreasonable extra days for our mail to be delivered across the street.",
+      "note": "Same release; gives her reason for opposing the mail-ballot deadline.",
+      "subjects": [
+        "mail-ballot receipt deadline (SB 293)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:42:06.717Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "22ef6e077f2b3dd2d428c1065103d1d14b3eadf6c03303001a0dbb862df6004a",
+      "kind": "own-words",
+      "url": "https://nbc24.com/news/local/hicks-hudson-lucas-county-gop-encourage-voters-to-check-in-early",
+      "date": "2019-08-27",
+      "date_precision": "day",
+      "passage": "We don't have to worry about folks being removed from their roles because by voting, you're exercising your rights.",
+      "note": "Quoted by NBC24 at the Lucas County early vote center, then a state representative, on voter-roll purges; no ID content.",
+      "subjects": [
+        "voter roll purges",
+        "voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:42:06.717Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for early in-person voting",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "photo ID constitutional amendment (SJR 10)",
+        "election law in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Senate member page news list (first page of 25 of 36 items read; second page of 11 older items not shown by the fetch tool, so not reviewed: https://ohiosenate.gov/members/paula-hicks-hudson/news?page=2). Election items on page one: a 2025 mail-ballot deadline vote release, a 2026 voter-engagement event notice, and a 2025 release on a bill about carrying citizenship papers; none on ID to vote",
+        "ohiohouse.gov older House-era releases (2019 early-vote ID letter; 2020 drop-box release has nothing on ID)",
+        "13abc 2024 news story quoting her",
+        "13abc 2023 same-day registration story (nothing on ID)",
+        "SJR 10 testimony list on ohiohouse.gov (she is not listed as a witness)",
+        "web search: 1 search run, then the session search budget was used up; blocked: web search (this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent in it))",
+        "blocked: https://www.legislature.ohio.gov/legislation/136/sjr10/committee (403)",
+        "blocked: https://ohiosenate.gov/members/paula-hicks-hudson/news/hicks-hudson-commends-certification-of-voters-bill-of-rights (404)",
+        "blocked: https://ohiohouse.gov/news/democrat/hicks-hudson-issues-letter-on-new-early-vote-procedures-101055 (403 to curl; read by the fetch tool)",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (refuse fetches, not tried)",
+        "not reviewed: campaign site, Vote411 and voter-guide questionnaires (search budget gone, no URL found)"
+      ],
+      "found": 3,
+      "at": "2026-11-06T15:18:56.415Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 5,
+      "at": "2026-11-06T16:28:34.680Z",
+      "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment (SJR 10)",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot receipt deadline (SB 293)",
+        "voter registration",
+        "voter roll purges"
+      ],
+      "places": [
+        "6 web searches (voter ID/photo ID; HB 458/SJR 10/SB 293/citizenship; SB 293 release; iVoterGuide)",
+        "Senate news list page 2 (items 26-36, Jan-Jun 2025): nothing on the subject",
+        "Senate news list page 1 (25 items) re-read: SB 293 release, Mar 2026 voter-engagement event, redistricting",
+        "https://ohiosenate.gov/members/paula-hicks-hudson/news/hicks-hudson-condemns-voter-suppression-bill (read)",
+        "https://ohiosenate.gov/members/paula-hicks-hudson/news/hicks-hudson-to-host-voter-engagement-and-education-event (read; no ID content, no quote from her)",
+        "https://nbc24.com/news/local/hicks-hudson-lucas-county-gop-encourage-voters-to-check-in-early (2019, read)",
+        "13abc 2023-01-19 senators' priorities story: nothing from her on elections",
+        "iVoterGuide https://ivoterguide.com/candidate/42871/race/2971/election/766: voting questions unanswered",
+        "404: https://ohiosenate.gov/members/paula-hicks-hudson/news/hicks-hudson-statement-on-senate-votes",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (listed as refusing, not fetched)"
+      ],
+      "found": 3,
+      "at": "2026-11-06T16:42:06.717Z",
+      "by": "research-oh-r2-2026-11-06"
+    }
+  ]
+}

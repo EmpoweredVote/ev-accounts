@@ -1,0 +1,80 @@
+{
+  "id": "PA-SB-918-2025",
+  "scope": "state:pa",
+  "title": "SB918 (2025-2026 Regular Session): In sentencing, providing for sentences for persons not to possess, use, manufacture, control, sell or transfer firearms.",
+  "urls": [
+    "https://www.palegis.us/legislation/bills/2025/sb918",
+    "https://www.palegis.us/legislation/bills/text/PDF/2025/0/SB0918/PN1094"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 1 (adding 42 Pa.C.S. 9720.9(a)(1)): A person convicted under 18 Pa.C.S. § 6105(a) (relating to persons not to possess, use, manufacture, control, sell or transfer firearms) as a result of a conviction under 18 Pa.C.S. § 6105(b) shall be sentenced to a mandatory term of imprisonment of at least 11 months.\nSec. 1 (adding 42 Pa.C.S. 9720.9(a)(4)): If the person had previously been convicted of two or more violations of 18 Pa.C.S. § 6105 arising from separate criminal actions during the commission of the current offense, the person shall be sentenced to a minimum sentence of at least 15 years of total confinement.",
+  "sponsors": [
+    {
+      "name": "Frank Farry",
+      "politician_id": "0ffdcdb0-a5f4-44c6-93e3-30c797b3bfce",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Tracy Pennycuick",
+      "politician_id": "ce4c2b39-8000-475c-87ef-0c914809cb1a",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Joseph Picozzi",
+      "politician_id": "09235876-3ea2-437d-95db-91c7796d2979",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Wayne Fontana",
+      "politician_id": "e2c1ede6-5fed-4b72-80dc-91abccaa9c27",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Patrick Stefano",
+      "politician_id": "5e1f33dd-f8d9-494b-a3b4-ba9744e345e7",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Elder Vogel",
+      "politician_id": "8566dee4-21e3-4a2b-a4e8-db328816cbf6",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Devlin Robinson",
+      "politician_id": "79928fc3-72c0-47f3-af77-7087decdd2d7",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "David Argall",
+      "politician_id": "e7407d98-6918-4bb6-9331-1953814159c1",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-918-2025.introduced.pdf",
+      "sha256": "6cbf3667d680618446674cec5a5b784197368f595bccd6e6a5645e3a274ea3f9"
+    }
+  }
+}

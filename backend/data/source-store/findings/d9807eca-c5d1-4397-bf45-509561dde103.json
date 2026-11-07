@@ -60,6 +60,32 @@
       "found": 0,
       "at": "2026-10-27T15:52:03.771Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "general Second Amendment statement",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry permits",
+        "red flag orders",
+        "bills sponsored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope: https://www.pbs.org/video/2026-illinois-16th-congressional-district-candidate-forum-oxtg6b/ lists a 10/7/2026 forum with him and the incumbent for Illinois 16th (nothing on the subject)",
+        "campaign site issues page and news page (nothing on the subject)",
+        "25newsnow 2026-02-27 article (nothing on the subject)",
+        "NPR Illinois 2026-10-08 debate article (only a remark on federal agents shooting people in immigration enforcement; not about gun regulation, not saved)",
+        "blocked: https://ballotpedia.org/Paul_Nolley (empty page)",
+        "two web news searches on name plus gun words (nothing on the subject)",
+        "not reviewed: forum video; WILL radio interview transcript https://will.illinois.edu/transcript/am/democrat-paul-nolley (not fetched)",
+        "not a legislator: no sponsorship list to check"
+      ],
+      "found": 0,
+      "at": "2026-10-31T00:45:51.193Z",
+      "by": "source-collector"
     }
   ]
 }

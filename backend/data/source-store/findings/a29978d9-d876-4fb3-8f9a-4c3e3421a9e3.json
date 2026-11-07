@@ -1,0 +1,430 @@
+{
+  "politician_id": "a29978d9-d876-4fb3-8f9a-4c3e3421a9e3",
+  "findings": [
+    {
+      "id": "a813e82cf8b06e33e83b0a27b196c79e3459aca77bc827f3c5d7edb30f739bac",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2016/pdf/history/HB/HB0786.xml",
+      "date": "2016-03-29",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-786-2016",
+      "act": "nay",
+      "motion": "Passed as amended (third reading, yeas and nays)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS Senate, Passed as amended (third reading, yeas and nays), 2016-03-29: nay (tally 36–14); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence",
+        "church security"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/MS_HB786SG.pdf",
+          "sha256": "a1142904e692e81f08ce94bef1f5827e9d662ac1f81ce57f6330064169e08945"
+        }
+      }
+    },
+    {
+      "id": "b104c15b34fd64db52049bb8a4001663d3817cf83cccda1ab11d88d27194d105",
+      "kind": "own-words",
+      "url": "https://magnoliatribune.com/2014/07/10/state_sen-_david_blount_-_voting_laws_need_update/",
+      "date": "2014-07-10",
+      "date_precision": "day",
+      "passage": "We also need more voters participating in our elections and to make sure every eligible voter has his or her vote counted. In the primary and runoff elections, as many as 550 Mississippians went to the polls but were not able to cast a legal ballot. As long as voter ID is the law, we need to improve efforts to make free IDs easily available.",
+      "note": "Op-ed by Blount: while the voter ID law stands, he calls for easier access to free IDs, and he notes voters who could not cast a legal ballot in the 2014 primary and runoff.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:11:02.114Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5625bf10c296333d82e0efbc9d63f5c96334185f9ce3db32618df88e0f1dc255",
+      "kind": "own-words",
+      "url": "https://magnoliatribune.com/2026/03/10/shield-act-aims-to-verify-citizenship-of-mississippi-voters/",
+      "date": "2026-03-10",
+      "date_precision": "day",
+      "passage": "“I’m not aware of any case brought by any prosecutor in Mississippi for non-citizen voting,” Blount said. “I hear again and again this statement, ‘Well, just one vote’s too many.’ Well, I agree with that, but I also believe purging one person who shouldn’t be purged that’s too many.”",
+      "note": "Quoted by Magnolia Tribune from Senate floor debate on the SHIELD Act (SB 2588): he says he knows of no prosecution for non-citizen voting and that wrongly purging one voter is also too many. Article published 2026-03-10; debate was earlier (exact floor date not given).",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "voter-roll purges"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:11:02.114Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7af2f42eaf2a4254c78bebae19e29dbcdeb7c0d33c4232259447eb500820d72b",
+      "kind": "own-words",
+      "url": "https://magnoliatribune.com/2026/03/10/shield-act-aims-to-verify-citizenship-of-mississippi-voters/",
+      "date": "2026-03-10",
+      "date_precision": "day",
+      "passage": "“This is not what we need to do,” Blount told the Senate, noting Senator England’s remarks that when a review was undertaken by the Secretary of State’s office of the 1.7 million registered voters in Mississippi 15 people were identified with suspect citizenship status, with some being mistakenly flagged.",
+      "note": "Reporter's sentence containing a short direct quote: he told the Senate the SHIELD Act was not what the state needs to do. The rest of the sentence is the reporter's summary. Same article, date is publication date.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:11:02.114Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0a61a28d2ebefd5ef02aae91040b1917a2e03f7bcb9d4e5d0714a16528a72a07",
+      "kind": "own-words",
+      "url": "https://magnoliatribune.com/2026/03/24/mississippi-lawmakers-send-shield-act-aimed-at-verifying-voters-citizenship-on-to-governor/",
+      "date": "2026-03-24",
+      "date_precision": "day",
+      "passage": "“The premise of this bill is that there are illegal immigrants and non-citizens voting en-masse in our elections,” Blount explained. “That is not true.”",
+      "note": "Quoted in Magnolia Tribune on the Senate motion about the SHIELD Act: he says the bill's premise of mass non-citizen voting is not true.",
+      "subjects": [
+        "non-citizen voting",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:11:02.114Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4392e0fa72497e6ad2700bfae1c19b8ad8cc73708b24b042b4dae3bf7c3a92e3",
+      "kind": "own-words",
+      "url": "https://magnoliatribune.com/2026/03/24/mississippi-lawmakers-send-shield-act-aimed-at-verifying-voters-citizenship-on-to-governor/",
+      "date": "2026-03-24",
+      "date_precision": "day",
+      "passage": "“I don’t know how much confidence you have in databases created by the federal government but it was created to be the Systematic Alien Verification for Entitlements database, this is so the federal government could verify aliens and immigrants for entitlements,” Blount described.",
+      "note": "Quoted on the Senate floor: he questions use of the federal SAVE database for annual voter citizenship checks.",
+      "subjects": [
+        "voter-roll checks",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:11:02.114Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a67283d0de14631d6348be5383c09f459f84a5e83324f27aed774ff0e3499f80",
+      "kind": "own-words",
+      "url": "https://magnoliatribune.com/2026/03/24/mississippi-lawmakers-send-shield-act-aimed-at-verifying-voters-citizenship-on-to-governor/",
+      "date": "2026-03-24",
+      "date_precision": "day",
+      "passage": "“That’s right, and that’s a bad idea, and I’m not for that,” Blount added.",
+      "note": "Quoted in the same debate: reporter says he agreed only U.S. citizens should vote and agreed with a colleague that mail-in ballots for all citizens without proof of citizenship are not acceptable; this quote is his reply.",
+      "subjects": [
+        "mail-ballot ID",
+        "proof of citizenship to vote",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:11:02.114Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1be4a9c94b8e77bbf4732c32e03669a36a73102390588bdb85a9fc3d2ca52c0e",
+      "kind": "own-words",
+      "url": "https://www.mississippifreepress.org/bill-says-mississippi-could-check-for-voters-us-citizenship/",
+      "date": "2020-03-04",
+      "date_precision": "day",
+      "passage": "He called it “the most radical, dangerous, shameful” piece of election legislation since he joined the Senate in 2008.",
+      "note": "Reported speech with a short direct quote, at a Senate committee hearing on SB 2670 (2020), a bill on checking voters' citizenship. Date is the article's publication date; the hearing was on the Tuesday before.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:11:02.114Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d7a602e2e4f0a68fe73e6d46eeea0d7918024fb9935206d55caa87a4b29d5dad",
+      "kind": "own-words",
+      "url": "https://www.mississippifreepress.org/bill-says-mississippi-could-check-for-voters-us-citizenship/",
+      "date": "2020-03-04",
+      "date_precision": "day",
+      "passage": "Blount asked: “How many thousands and thousands of legally registered Mississippians are we going to purge?”",
+      "note": "Direct quote at the same 2020 committee hearing on SB 2670: he asks how many legally registered voters would be purged.",
+      "subjects": [
+        "voter-roll purges",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:11:02.114Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f46d265dd337f5511dc870022264605995534836a95b97cd8046ea8bb4ce36e6",
+      "kind": "record",
+      "url": "https://www.jacksonfreepress.com/news/2009/feb/11/week-5-id-justice-budgets/",
+      "date": "2009-01-15",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2548-2009",
+      "act": "other",
+      "note": "Reported by the Jackson Free Press: SB 2548 (voter ID) first passed the Senate Jan. 15, 2009 with Blount's amendment exempting people born before 1946 from showing ID; the amendment was later stripped. Amendment act, not a vote.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:11:02.114Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ff08f7a0fdb5eaee3e5d1d2c42777bdeac65a7affc0cb9f7915c4db6ea53ed5f",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/senate/0860019.pdf",
+      "date": "2022-03-30",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Report of Conference Committee on H. B. No. 1510 was adopted: (0860019)",
+      "note": "Senate roll call as printed ('Blount'), linked to David Blount (district 29) via the official 2022 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dd2a12a6dee5821334b8172c5583de5ade5bdaf4f4ad0b5e1da44e4c195eeac3",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/senate/0580007.pdf",
+      "date": "2018-02-28",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-804-2018",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On H. B. No. 804. On motion of Senator Blackwell, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0580007)",
+      "note": "Senate roll call as printed ('Blount'), linked to David Blount (district 29) via the official 2018 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "835f1b9254dd8e6c7e5bb5cf9e45e08f7bfe29c3a96b1580aba82cc2737ab569",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2012/pdf/votes/senate/0990009.pdf",
+      "date": "2012-04-10",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-921-2012",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS On H. B. No. 921. On motion of Senator McDaniel, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed as amended, title standing as stated, by the following vote: (0990009)",
+      "note": "Senate roll call as printed ('Blount'), linked to David Blount (district 29) via the official 2012 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "935ceca43fcf6368e69ec77d68e610738538e73ea9a08b6c751a001d3520317f",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2009/pdf/votes/senate/0300008.pdf",
+      "date": "2009-02-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2548-2009",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2548. The vote recurring, on motion of Senator Burton, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0300008)",
+      "note": "Senate roll call as printed ('Blount'), linked to David Blount (district 29) via the official 2009 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9843aa07be43e576f58c663963ae19b85d2585b3f0c37f86f69fc6e94abdc947",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/senate/0720054.pdf",
+      "date": "2024-03-13",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2576. On motion of Senator England, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0720054)",
+      "note": "Senate roll call as printed ('Blount'), linked to David Blount (district 29) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0bdc8f5070b1cefc73be1a5428135fb80819d0b830c979903e9a69d3e5147f46",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/senate/0770004.pdf",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Senate concurred in the foregoing House Amendment to S. B. No. 2588 by the following vote: (0770004)",
+      "note": "Senate roll call as printed ('Blount'), linked to David Blount (district 29) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dcb52dfbbb498e3bcbcc5e28c53abbdd8902d9718df53a47dc315838f4ff5043",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/senate/0320004.pdf",
+      "date": "2018-02-02",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2766-2018",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2766. On motion of Senator Blackwell, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0320004)",
+      "note": "Senate roll call as printed ('Blount'), linked to David Blount (district 29) via the official 2018 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act / SAVE database",
+        "SHIELD Act",
+        "voter-roll purges",
+        "mail-ballot ID",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr.mjs)",
+        "web search: name + voter ID / photo ID statement",
+        "web search: name + proof of citizenship / SAVE Act / SHIELD Act",
+        "web search: 'most radical, dangerous, shameful' quote",
+        "web search: name + questionnaire / newsletter / voting rights / free ID",
+        "Magnolia Tribune (2014 op-ed, 2026-03-10, 2026-03-24, 2020-02-03 reform article read)",
+        "Mississippi Free Press 2020 SB 2670 article",
+        "Star Herald/Clarke County Tribune syndicated SHIELD article",
+        "Daily Leader 2018 election-changes interview (absentee/early voting; nothing on ID or citizenship)",
+        "Jackson Free Press 2009 voter ID weekly",
+        "WXXV25 SHIELD article (short quote, same as MFP wording)",
+        "no campaign site found by search",
+        "blocked: https://ballotpedia.org/David_Blount (not tried; Ballotpedia refuses fetches)",
+        "blocked: https://justfacts.votesmart.org/candidate/biography/69833 and bluevoterguide.org (known 403; not tried)",
+        "not reviewed: Clarion Ledger, Mississippi Today, WLBT hits (refused sites; leads only)"
+      ],
+      "found": 9,
+      "at": "2026-11-05T23:11:02.114Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 7,
+      "at": "2026-11-05T23:52:51.757Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

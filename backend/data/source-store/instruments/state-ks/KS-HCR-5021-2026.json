@@ -1,0 +1,34 @@
+{
+  "id": "KS-HCR-5021-2026",
+  "scope": "state:ks",
+  "title": "HCR 5021 (2025-2026 biennium (2026 Regular Session)): Amending article 5 of the constitution of the state of Kansas to require voters to present photographic identification at the time of voting. (printed: A PROPOSITION to amend article 5 of the constitution of the state of Kansas by adding a new section to require voters to present photographic identification at the time of voting.)",
+  "urls": [
+    "https://www.kslegislature.gov/b2025_26/bills/hcr5021/",
+    "https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hcr_5021/hcr5021_01_0000.pdf",
+    "https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hcr_5021/hcr5021_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1, new Article 5 section 9, as amended by House Committee\n(quote) \"§ 9. Qualified elector identification. Each qualified elector shall present photographic identification issued by the state of Kansas, the government of the United States or the tribal government of any recognized Indian tribe at the time of voting in any election. The implementation and administration of this requirement shall be prescribed by law.\"\n(section) Sec. 1, new Article 5 section 9, as introduced (differs from the amended version by omitting tribal government ID)\n(quote) \"§ 9. Qualified elector identification. Each qualified elector shall present photographic identification issued by the state of Kansas or the government of the United States at the time of voting in any election. The implementation and administration of this requirement shall be prescribed by law.\"\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 2 ballot statement (introduced)\n(quote) \"A vote against this proposition would make no change to the constitution of the state of Kansas, and the voter identification requirement would remain in state law only.\"\n(other) Sec. 1: submits the proposed amendment to qualified electors.\n(other) Sec. 2: explanatory statement printed on the ballot.\n(other) Sec. 3: two-thirds vote of each chamber, journal entry of yeas and nays; special election on August 4, 2026 with the primary election.",
+  "sponsors": [
+    {
+      "name": "House Committee on Elections",
+      "role": "prime",
+      "version": "As Amended by House Committee (hcr5021_01_0000); also read: as introduced (hcr5021_00_0000)."
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

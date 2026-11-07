@@ -96,6 +96,30 @@
       "found": 1,
       "at": "2026-10-27T18:32:39.351Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns",
+        "background checks",
+        "carry permits",
+        "Second Amendment rights",
+        "Question 9 / repeal of the 2024 firearms law"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature profile and biography page for Senator Kelly A. Dooner (malegislature.gov KAD0): confirms she is the sitting senator; nothing on the subject",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site: none found (kellydooner.com returned nothing)",
+        "Ballotpedia: page came back empty",
+        "2024 local news coverage of her Senate race (New Bedford Light): nothing on the subject by her",
+        "web searches on name plus gun words and a gun-group candidate survey: nothing found by her",
+        "not reviewed: https://irp.cdn-website.com/7a261750/files/uploaded/GOAL+2026+Candidate+Questionaire+.pdf (a blank 2026 questionnaire; no answers by her found)"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:52:54.554Z",
+      "by": "source-collector"
     }
   ]
 }

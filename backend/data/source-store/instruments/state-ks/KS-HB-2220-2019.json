@@ -1,0 +1,33 @@
+{
+  "id": "KS-HB-2220-2019",
+  "scope": "state:ks",
+  "title": "HB 2220 (2019-2020 biennium (2019 Regular Session)): HB 2220 Free state election act; eliminate proof of citizenship; same day registration and voting; other.",
+  "urls": [
+    "https://www.kslegislature.gov/li_2020/b2019_20/measures/hb2220/",
+    "https://www.kslegislature.gov/li_2020/b2019_20/measures/documents/hb2220_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) K.S.A. 2018 Supp. 25-1122(b) (Sec. 2)\n(quote) (b) If the registered voter is applying for an advance voting ballot to be transmitted in person, the voter shall provide identification pursuant to K.S.A. 25-2908, and amendments thereto.\n(b_no_id_remedy)\n(section) K.S.A. 2018 Supp. 25-1122(d) (Sec. 2)\n(quote) (d) A voter may vote a provisional ballot according to K.S.A. 25-409, and amendments thereto, if: (1) The voter is unable or refuses to provide current and valid identification; or\n(c_mail_ballot_id)\n(section) K.S.A. 2018 Supp. 25-1122(e)(2) (Sec. 2)\n(quote) (2) the person provides such person's full Kansas driver's license number, Kansas nondriver's identification card number issued by the division of vehicles, or submits such person's application for an advance voting ballot and a copy of identification provided by K.S.A. 25-2908, and amendments thereto, to the county election officer for verification. If a person applies for an advance voting ballot to be transmitted by mail but fails to provide identification pursuant to this subsection or the identification of the person cannot be verified by the county election officer, the county election officer shall provide information to the person regarding the voter rights provisions of subsection (d) and shall provide the person an opportunity to provide identification pursuant to this subsection. For the purposes of this act, Kansas state offices and offices of any subdivision of the state will allow any person seeking to vote by an advance voting ballot the use of a photocopying device to make one photocopy of an identification document at no cost.\n(d_proof_of_citizenship)\n(section) K.S.A. 2018 Supp. 25-2309(l) (Sec. 4), printed in the bill; the title says the bill eliminates proof of citizenship\n(quote) (l) The county election officer or secretary of state's office shall accept any completed application for registration, but an applicant shall not be registered until the applicant has provided satisfactory evidence of United States citizenship.\n(section) Sec. 9 (repealer)\n(quote) Sec. 9. K.S.A. 25-1120 and 65-2418 and K.S.A. 2018 Supp. 25-1122, 25-1123, 25-2309, 25-2311, 25-2316c and 25-2358 are hereby repealed.\n(e_other_rule)\n(section) K.S.A. 2018 Supp. 25-2309(b) (Sec. 4): registration form statement\n(quote) (19)(18) a statement that the applicant shall may be required to provide identification when voting;\n(other) Sec. 1: K.S.A. 25-1120 advance ballot preparation timing.\n(other) Sec. 2: K.S.A. 25-1122 advance voting applications and ID subsections (quoted).\n(other) Sec. 3: K.S.A. 25-1123 comparison of ID number on advance ballot applications to the voter list.\n(other) Sec. 4: K.S.A. 25-2309 registration application and proof-of-citizenship subsection (l) ff.\n(other) Sec. 5-6: K.S.A. 25-2311 and 25-2316c (same-day registration and voting).\n(other) Sec. 7: K.S.A. 65-2418 fees for birth certificates (no fee when needed for voting ID or registration).\n(other) Sec. 9: repeals K.S.A. 2018 Supp. 25-2358.",
+  "sponsors": [
+    {
+      "name": "Committee on Elections",
+      "role": "prime",
+      "version": "Introduced (hb2220_00_0000)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

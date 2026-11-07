@@ -1,0 +1,44 @@
+{
+ "id": "MA-H-2589-2025",
+ "scope": "state:ma",
+ "title": "H2589 (194th General Court): An Act requiring licensed gun owners to submit a yearly affidavit",
+ "urls": [
+  "https://malegislature.gov/Bills/194/H2589",
+  "https://malegislature.gov/Bills/194/H2589/House/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Marjorie C. Decker",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "2b1a645a-72ce-4c0f-80ec-17565a2d6d10"
+  },
+  {
+   "name": "Estela A. Reyes",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "8e125ae2-3101-49b1-b228-f172ad9c70d9"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-H-2589-2025.html",
+   "sha256": "8ca6f51b70fbf2c6f4b6126322d195ccb291717275cf3c0fd64367301122a2f6"
+  }
+ },
+ "operative_text": "SECTION 1. Section 129B of chapter 140 of the General Laws, as appearing in the 2022 Official Edition, is hereby amended in paragraph 8 by inserting after the word “information”, in line 259, the following words: – or who fails to annually notify the licensing authority pursuant to paragraph (11A).\nSECTION 2. Said section 129B, as so appearing, is hereby further amended by inserting after paragraph 10 the following paragraph:–\n(11A) Notwithstanding the provisions of paragraph (9), a cardholder shall annually verify by written notice, in the form of a sworn affidavit or declaration to the licensing authority that issued such card, that the cardholder has not lost a firearm or had a firearm stolen from the cardholder's possession since the date of the cardholder's last renewal or issuance.\nSECTION 3. Section 131 of said chapter 140, as so appearing, is hereby amended in subsection (h) by inserting after the word “information”, in line 272, the following words:– or who fails to annually notify the licensing authority pursuant to subsection (l).\nSECTION 4. Said section 131, as so appearing, is hereby further amended in subsection (l) by adding the following sentence:– The holder of each such license to carry a firearm shall annually verify by written notice, in the form of a sworn affidavit or declaration to the licensing authority that issued such license, that the license holder has not lost a firearm or had a firearm stolen from the license holder's possession since the date of the license holder's last renewal or issuance."
+}

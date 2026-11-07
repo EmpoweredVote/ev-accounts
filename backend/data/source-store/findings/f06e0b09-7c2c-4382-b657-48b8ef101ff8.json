@@ -1,0 +1,182 @@
+{
+  "politician_id": "f06e0b09-7c2c-4382-b657-48b8ef101ff8",
+  "findings": [
+    {
+      "id": "03dc8ae9aef2e2ae573ca2ec2337034db3ab10fec2edddf67c815e832848b111",
+      "kind": "record",
+      "url": "https://kslegislature.gov/li_2016/b2015_16/measures/SB45/",
+      "date": "2015-03-25",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-45-2015",
+      "act": "yea",
+      "motion": "Emergency Final Action - Passed as amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, Emergency Final Action - Passed as amended, 2015-03-25: yea (tally 85–39); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "C, F (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "31dc3de134ab293b8dc0129f3467fb3afe53e1f40c0439ae2dba1cfaa247fa50",
+      "kind": "own-words",
+      "url": "https://kscbnews.net/?p=80009",
+      "date": "2023-02-26",
+      "date_precision": "day",
+      "passage": "This bill requires all advance voting ballots to be returned by 7 p.m. on election day. Thirty-one states in our nation either require ballots to arrive by 7 pm on Election Day or have tighter restrictions than Kansas law.  Federal law requires military ballots to be in by election day. This bill strengthens confidence in Kansas election law and further safeguards our elections.",
+      "note": "In his weekly column on the House turnaround week, he describes HB 2056 (advance ballots must be returned by 7 p.m. on election day) and says it strengthens confidence in election law and safeguards elections. Nothing on photo ID or citizenship.",
+      "subjects": [
+        "mail-ballot return deadline",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:00:31.560Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a180dac9fbe82db0f7ed1e12eb5a8927f8abd4f868ef36e3cf40bf126221dbed",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/house/legislative_days/day045_20250320/vote_records/0275_HB2020.odt",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "House: Concurred with amendments",
+      "note": "House roll call as printed ('Francis'), linked to Shannon Francis (district 125) via the official 2025 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba7a4d666ff4f78f90fc1c3060009b25057e446b4bc7846bcf906e1cf07d44b3",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day051_20260326/vote_records/0342_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "House: Conference Committee Report was adopted",
+      "note": "House roll call as printed ('Francis'), linked to Shannon Francis (district 125) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21f55a599c11a6bfd03cc0b661541d4440ff0a0808ab91e9abc25020cfb5fc94",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day053_20260409/vote_records/0408_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "House: Motion to override veto prevailed",
+      "note": "House roll call as printed ('Francis'), linked to Shannon Francis (district 125) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45a6a0e651989653960fc97af7759af58ffb11d0dd3f56bdfeab65bb700b032e",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day023_20260212/vote_records/0067_HB2448.odt",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2448-2026",
+      "act": "yea",
+      "motion": "House: Emergency Final Action - Passed as amended",
+      "note": "House roll call as printed ('Francis'), linked to Shannon Francis (district 125) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.935Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID and return deadline",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "identity confirmed: https://www.kslegislature.gov/li/b2025_26/members/rep_francis_shannon_1/ (House District 125, Seward County)",
+        "On the Record (0 appearances)",
+        "official legislature member page (no statements; lists no personal site)",
+        "weekly legislative column on KSCB (Seward County radio) dated 2023-02-26: one passage on the advance-ballot return deadline (saved)",
+        "KSCB other weekly columns (2024 column seen in search results, not opened; not reviewed)",
+        "no 2026 campaign site or questionnaire found; shannonfrancis.com listed by a third party, not confirmed",
+        "capitolreleases.com hit was a different official's release (not about this person)",
+        "blocked: Ballotpedia (listed as refusing fetches per task notes; not tried)",
+        "blocked: kansasreflector.com (listed as refusing fetches per task notes; not tried)",
+        "web searches (5): name + voter ID/election/citizenship; name + campaign site/newsletter/questionnaire; name + advance ballot/local papers; name + election integrity/photo ID/SAVE Act; name + KSCB election column; no statement on photo ID or citizenship found"
+      ],
+      "found": 1,
+      "at": "2026-11-04T17:00:31.560Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T19:13:24.935Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

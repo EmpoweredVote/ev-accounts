@@ -54,6 +54,19 @@ could not disprove them (CA_0156, CA_0159), all with `term_start` NULL — ungua
 past date. Read `office_terms` directly to see them. An audit that keeps an unverifiable term should use the
 same tag.
 
+🔴🔴 **THE VIEW IS MOSTLY CANDIDATES, NOT OFFICEHOLDERS.** Roughly **84.5k** rows against **~9.7k**
+with occupancy evidence (both figures drift). To restrict a read to evidenced holders, filter
+`is_placeholder_occupancy = false` on `essentials.politician_occupancy_evidence` — **not** on the
+view, which has no such column. ⚠ **Never delete the placeholder people**; they are candidates, and
+other subsystems hold them.
+
+🔴 **`office_current_holder` LEFT JOINs FROM `offices`, SO A VACANCY IS A ROW WITH A NULL
+`politician_id` — AND `count(*) = 0` PASSES VACUOUSLY.** A gate written as `count(*)` counts the
+empty seats too and reports success over a table that seated nobody. **Count `och.politician_id`.**
+
+⚠ **`unaccent` IS NOT INSTALLED ON PROD.** A name comparison that reaches for it works locally and
+fails in production; fold accents in the application, or compare on a column you already store.
+
 **Never cache "current" in a column.** No trigger fires merely because the calendar advanced — that
 is the whole reason this model exists.
 
@@ -305,6 +318,16 @@ Honesty rules that the schema enforces:
 - **`politicians.valid_from` / `valid_to` are DEPRECATED** — wrong entity (dates belong to a tenure,
   and people hold two offices). Don't read them in new code. `politicians.office_id` is a legacy
   point-in-time snapshot with the same flaw; prefer the view.
+- 🔴 **`term_end IS NULL` IS NOT "CURRENT".** An open-ended term can also be a row nobody ever
+  closed. Ask for **date containment** against the span, which is what the view does; a
+  `term_end IS NULL` filter quietly returns stale tenures beside live ones.
+- 🔴 **THREE PLACES HAVE NO INBOUND FOREIGN KEY, SO A DELETE CORRUPTS SILENTLY INSTEAD OF
+  ERRORING:** `districts` (deleting one **orphans its offices**), `chambers.government_id`, and
+  `politicians.office_id`. **Repoint before deleting**, and gate on the END STATE rather than on
+  the delete's own row count.
+- 🔴 **AN `external_id` COLLISION SEATS THE WRONG PERSON, AND NOTHING ERRORS.** The upsert finds an
+  existing row by that id and writes your term onto it. Assert the id is unseen, or that the row it
+  matched carries the name you expect, before you write.
 
 ### Sourcing a seat from a roster or an election result
 
@@ -332,6 +355,22 @@ Four rules the municipal seeding waves paid for, each after getting a real seat 
   were read in (`documents.house.mo.gov/billtracking/bills261/jrnpdf/jrnNNN.pdf`). A Wikipedia
   infobox citation is often the fastest way to find the right journal number. Most chambers
   publish the equivalent; reach for it before recording a date as unobtainable.
+
+- 🔴🔴 **NAMESAKES REACH PRODUCTION, AND NOTHING ERRORS.** A full-name match is not an identity —
+  this repo has shipped **Mark Harris as NC-8**, and a 2026-11-02 audit found two more live:
+  the portrait on Bell CA's **Ali Saleh** was *Ali Abdullah Saleh, the late President of Yemen*,
+  and Manhattan Beach's **Joe Franklin** was *the New York talk-show host*. ▶ Check a person
+  against **the body's own roster**, not against a name search, and open the image.
+- 🔴 **BALLOTPEDIA PUBLISHES BOTH *APPOINTED* AND *ASSUMED OFFICE*, AND ONLY THE SECOND IS A
+  `term_start`.** An appointment date precedes the tenure and sometimes by weeks.
+- 🔴 **BALLOTPEDIA'S OWN EXPLANATORY NOTE CAN BE STALE WHILE ITS TABLE IS CURRENT — AND THEY
+  CONTRADICT EACH OTHER.** Read the data, not the prose above it.
+- 🔴 **"SHALL BE ELECTED" DOES NOT MEAN "ELECTED BY VOTERS".** A charter clause often means elected
+  *by the body, from among its members* — a rotating chair, not a seat on the ballot. **Read who
+  elects** before creating an office or seating a winner.
+- ⚠ **WHAT A BODY PUBLISHES IS A FINDING, NOT A SEARCH FAILURE.** When a roster gives photographs
+  for 12 of 28 members, that is the body's practice and the answer to the question. Record it;
+  do not keep hunting for a completeness that does not exist.
 
 ### The `is_vacant` trap
 
@@ -437,6 +476,17 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
   - 🔴 **It also destroyed the evidence for its own premise.** `CA_0335` said all four rows showed
     a real name. They did not — two were invented handles. Nobody could check, because the values
     were gone. **Write the old value down and the claim stays testable.**
+- 🔴🔴 **THE DRY-RUN AND APPLY TOOLS ALREADY EXIST — `ls backend/scripts/` BEFORE WRITING ONE.**
+  `dry-run-migration.mjs` and `apply-migration-file.mjs`. They have been replaced with worse
+  hand-rolled copies more than once.
+  - 🔴🔴 **`dry-run-migration.mjs` ONCE COMMITTED TO PROD WHILE PRINTING "ROLLED BACK".** It strips
+    only the **FIRST** `BEGIN`/`COMMIT` pair, so a file holding two migrations has its second one
+    run and committed for real. **ONE MIGRATION PER FILE — NEVER CONCATENATE.** Guarded in #1235;
+    the guard does not make the rule optional.
+- 🔴 **"APPLIED TO PROD" IS NOT "ON MASTER".** There is no `schema_migrations` table, so **the file
+  is the only record that a migration exists**. Data alone cannot tell you whether the file was
+  ever merged — a migration can be live in production and absent from the repo. **Check the PR,
+  not just the data.**
 - 🔴 **`ev_api` CANNOT REACH EVERY SCHEMA — `apply-migration-file.mjs` FAILS ON `civic_spaces`**
   with `permission denied for schema civic_spaces`. That is not a broken credential; it is the
   role. Apply such a migration through the Supabase MCP, which connects privileged.
@@ -616,6 +666,12 @@ npm run steward --prefix backend -- extend  place:0642468 --hours 4
     worktree marker and no pathspec check. They now run through
     `backend/scripts/lib/main-checkout-fallback.mjs`, which borrows the main checkout's
     `node_modules` and `.env`, and print one "skipped" line when neither checkout has them.
+- 🔴🔴 **BEFORE ANY `git worktree remove`, SCAN FOR A `node_modules` JUNCTION — REMOVAL DELETES
+  STRAIGHT THROUGH IT.** A junction planted to save a reinstall is followed by the delete, and it
+  has **emptied the main checkout's `node_modules` twice**. ⚠ **`check:deletable` is silent on
+  this** — it is not one of the four checks. Look with PowerShell (`Get-ChildItem -Directory` and
+  read `LinkType`), and `rmdir` a junction you made yourself as a control before trusting the scan.
+  ▶ **Do not plant junctions**; run tooling from the main checkout with an absolute `--dir`.
 - **Before deleting a worktree or branch**, run the four checks — as **one command**:
 
   ```bash
@@ -671,6 +727,28 @@ each was first learned.
     that**, not the nearest property that is easy to assert.
   - Change one thing per tamper. A tamper that trips three assertions at once tells you the suite
     is alive but not which guard holds which claim.
+- 🔴🔴 **A FLAT CONTROL TESTS NOTHING, AND A CONTROL DERIVED FROM THE DATA UNDER TEST MOVES WITH
+  THE DEFECT.** A blank grey frame proves a detector can return "nothing"; it proves nothing about
+  what the detector does with real input. Worse, a threshold or baseline computed *from the same
+  rows you are checking* shifts when they shift, so the check silently follows the fault instead of
+  catching it. **Derive the control independently of the data under test.**
+- ⚠ **A UNIFORM PROBE RESULT CAN BE A PROPERTY OF YOUR SAMPLE, NOT OF THE DATA.** Before concluding
+  "they are all like this", check that the sample was not itself selected by the thing you are
+  measuring.
+- ⚠ **A PERCENTAGE COLUMN MAY BE COUNTING BLANKS IN ITS DENOMINATOR** — a reported 47.5% was really
+  58.2%. Ask what the denominator contains before quoting a rate.
+- 🔴 **A MASTER-ONLY GATE CANNOT VET THE MERGE THAT TRIPS IT.** It reads production data and runs
+  after the merge, so it fails on *the next* PR and names an innocent author. Carry the check into
+  the migration's own post-verify, as a delta, if you need it to block the guilty change.
+- 🔴🔴 **A TRUNCATED DISPLAY MANUFACTURES FINDINGS, AND IT BIASES THEM TOWARDS LOOKING LIKE
+  DUPLICATES.** Cutting a column to fit makes distinct values collapse onto one another, and that
+  collision is exactly the shape of a real defect, so the artefact reads as a discovery. On
+  2026-11-02 a report column formatted a district label with `.slice(0, 24)` — and
+  `"Congressional District "` is exactly 23 characters — so every two-digit district printed as
+  its first digit alone. Two different candidates appeared to share one implausible district,
+  which was reported as a race-mapping bug and was retracted: both were mapped correctly.
+  ▶ **Print the field at FULL WIDTH before believing a pattern in it, or read the stable key
+  beside it.** `ocd_id` carried the right answer throughout and was never displayed.
 - 🔴🔴 **A PREDICATE READS THE SHAPE OF A VALUE, NEVER WHAT THE VALUE IS.** Before naming or acting
   on the class some `WHERE` clause catches, `GROUP BY` the discriminating field and read a sample
   of real rows. **Deleting raises that bar, it does not lower it.** ⚠ A lookalike key can be a
@@ -687,11 +765,22 @@ each was first learned.
   four officeholder names and three district labels and presented them as quoted text from the
   page. Use it to LOCATE a document; never source a **name, a date or a count** from it. A web
   search summary is a lead, not evidence — open the page and read it.
+- 🔴 **A CLEAN HTTP 200 LIES IN AT LEAST FIVE WAYS**, and each one reads as success: an ACS or API
+  host returning an **HTML error page**; **TIGERweb layer 0** answering for a layer that holds
+  nothing; a **parked domain**; a **truncated body** — check `Content-Length` against what you
+  received; and a **soft 404**, a "not found" page served as 200. Assert on the *content* you
+  expected, never on the status code alone.
 - 🔴 **A WAF REJECTION CAN BE HTTP 200 OR 202, so never judge a fetch by `r.ok`.** F5 WAFs on
   government hosts reject Node's `fetch` on its TLS fingerprint and answer 200 with a challenge
   body; `curl` and Python `requests` get through. A 403 that persists even with a browser
   `User-Agent` means **fetch it in Playwright**. Wikimedia 429s a generic UA. ⚠ The inverse
   happens too, and a challenge may cover **pages** while leaving **files** open.
+- ⚠ **READ THE BODY OF A 503 BEFORE CALLING A HOST DEAD.** Government sites commonly answer 503
+  with "site is being rebuilt" or a maintenance notice — a temporary state with a successor URL in
+  it, not an outage to retry forever.
+- ⚠ **A PUBLISHER'S OWN HUB CAN SERVE A SUPERSEDED MAP**, with the same district count over the
+  same area and different answers per address. A plausible count is not evidence of the right
+  vintage — check which map legally governs.
 - 🔴 **ONE DENIED COMMAND IS NOT A BLOCKED PATH.** Try a different shape before reporting a
   capability as unavailable — and **never print a secret's value** while doing it. ⚠ An
   unexplained break from the normal workflow usually means "I am doing this wrong", not "the
@@ -710,6 +799,26 @@ each was first learned.
 - Party affiliation is **antipartisan** by design: party lives on `races.primary_party` (which ballot
   a voter requests), never on `race_candidates`.
 - `geofence_boundaries.state` holds **2-digit FIPS**, not USPS codes.
+- 🔴 **`geo_id` IS NOT UNIQUE — THE KEY IS THE PAIR `(mtfcc, geo_id)`.** Measured: **1,159
+  collisions across 13 states**, because a place and a county subdivision can share a number.
+  `geoIdGuard.ts` enforces the pair on the production write path; **ad-hoc SQL does not**, so a
+  hand-written join on `geo_id` alone silently matches the wrong geography. ⚠ **`ocd_id` ROLLS UP,
+  `geo_id` LOOKS UP** — they answer different questions and are not interchangeable.
+- 🔴🔴 **A CITY CAN BE FULLY SEEDED, ANSWER EVERY ADDRESS, AND STILL BE INVISIBLE ON THE MAIN
+  PAGE.** The landing chip keys on **`governments.geo_id`**, which address search never touches, so
+  the two surfaces fail independently and neither one's success implies the other's. 🔴 **THE ONLY
+  RELIABLE DETECTOR IS END-TO-END: does a city-hall point return a council member?**
+  `check:reachability` runs on master-push and cron — **not on PRs** — and takes no probe list, so
+  **green does not mean your districts were swept.**
+- 🔴🔴 **SUPABASE STORAGE NEEDS BOTH `apikey` AND `Authorization` HEADERS** (key `sb_secret_…`). A
+  lone Bearer is refused as **HTTP 400 with a body saying 403 "Invalid Compact JWS"**, which reads
+  like a missing object and sends you looking in the wrong place.
+  - 🔴🔴 **STORAGE ANSWERS ON TWO HOSTNAMES** — `<ref>.storage.supabase.co` *and* `<ref>.supabase.co`.
+    **Match on the PATH `%supabase.co/storage/v1/object/public/%`, never on the host:** a host-based
+    `LIKE` once classified **1,279 of our own mirrored headshots as "hotlinked"**.
+- 🔴🔴 **PROD AUTHENTICATES AS `ev_api`, AND A SUPABASE PASSWORD RESET ROTATES `postgres` ONLY.** So
+  the break you will see is a **mismatched username**, not an expired secret. **Test a credential
+  against a DATA endpoint** — `/api/health` touches no data and passes with a dead database.
 - 🔴 **`districts.geo_id` IS A LOOKUP KEY, SO AN EMPTY ONE IS A KEY NOTHING CAN EVER MATCH.** A
   district with `geo_id = ''` is invisible to every `geo_id`-keyed read — today that is the
   `government_bodies` join in `DISTRICT_SELECT_FIELDS`, which simply never fires for it. The seats
@@ -849,8 +958,9 @@ her position on abortion, even if she can't change the laws on that."* Memo:
 - 🔴 **An own-words chair is a separate reliability stratum.** A certification measured on `record` rows
   never covers it; own-words rows go to review until that stratum has its own blind gold. **Passed for
   `voting-rights`** (Season 3, 2026-10-31: blind check run 4, 35 of 35 against a pre-set 34; `.claude/skills/
-  season-topic-prep/RULINGS.md` "Own-words seats: the hold ends after a blind check"), so its own-words seats are
-  approved like any other row. Every other topic keeps the hold until its own blind check passes.
+  season-topic-prep/RULINGS.md` "Own-words seats: the hold ends after a blind check"), and for **`gun-policy`**
+  (Season 3, 2026-11-04: blind check run 1, 24 of 24 against a pre-set 23), so their own-words seats are approved
+  like any other row. Every other topic keeps the hold until its own blind check passes.
 - The election-cycle rule for statements (codebook V5, Q4) applies unchanged.
 - **What a voter sees is decided by the lenses, not by `compass_topic_roles`.** The essentials compass
   draws its spokes from the active lens's curated topic list (or the voter's own compass), and with no
@@ -859,3 +969,16 @@ her position on abortion, even if she can't change the laws on that."* Memo:
 - ⚠ **Legacy out-of-scope chairs exist and are already visible** in that breakdown (Season 1 research at
   levels that were not asked, e.g. local `taxes`, `deportation`, `same-sex-marriage`). They are owed a
   re-audit under the codebook; adding a role row does not change whether they show.
+
+## Render settings live in ev-infra
+
+This repo's Render services (`ev-accounts-api`, `ev-accounts` (admin), `empowered-vote-app` and the seven `ev-jobs-*` cron jobs) are managed by the Render Blueprint in
+[`EmpoweredVote/ev-infra`](https://github.com/EmpoweredVote/ev-infra) (`render.yaml`).
+
+- Build and start commands, rewrites, headers, custom domains, plans, cron
+  schedules and build filters change **only through a PR to ev-infra**. Render
+  syncs its `main` branch automatically.
+- A setting changed in the Render dashboard is **undone on the next sync**.
+- Env var **values** are the exception: set them in the Render dashboard. Add a
+  new variable's name to ev-infra (with `sync: false`) so the record stays complete.
+- Do not add a `render.yaml` to this repo. Render does not read it.

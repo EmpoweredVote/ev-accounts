@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { apiFetch } from '../../../lib/api';
+import { useAuthStore } from '../../../store/authStore';
 import { AuthPageLayout } from '../../../components/AuthPageLayout';
 import { AuthCard } from '../../../components/AuthCard';
 import { AuthInput } from '../../../components/AuthInput';
@@ -55,6 +56,8 @@ interface Props {
 
 export function LocationStep({ isUpdate = false, onSuccess }: Props) {
   const navigate = useNavigate();
+  const tier = useAuthStore((st) => st.user?.tier);
+  const isConnectedTier = tier === 'connected' || tier === 'empowered';
   const [street, setStreet] = useState('');
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
@@ -74,10 +77,18 @@ export function LocationStep({ isUpdate = false, onSuccess }: Props) {
     setLoading(true);
     const address = `${street.trim()}, ${city.trim()}, ${state.trim()} ${zip.trim()}`;
     try {
-      const result = await apiFetch<LocationResult>('/connect/set-location', {
-        method: 'POST',
-        body: JSON.stringify({ address, ...(isUpdate && { force: true }) }),
-      });
+      // Two routes, one per tier. A basic account keeps only its districts (CA_0368); a
+      // Connected account also keeps an encrypted point and seals the address in the identity
+      // vault. Both answer the same LocationResult shape and the same error codes.
+      const result = isConnectedTier
+        ? await apiFetch<LocationResult>('/connect/set-location', {
+            method: 'POST',
+            body: JSON.stringify({ address, ...(isUpdate && { force: true }) }),
+          })
+        : await apiFetch<LocationResult>('/account/set-location', {
+            method: 'POST',
+            body: JSON.stringify({ address }),
+          });
       onSuccess(result);
     } catch (err) {
       const msg = err instanceof Error ? err.message : 'INTERNAL_ERROR';

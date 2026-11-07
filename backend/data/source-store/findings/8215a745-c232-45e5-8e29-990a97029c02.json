@@ -1,0 +1,197 @@
+{
+  "politician_id": "8215a745-c232-45e5-8e29-990a97029c02",
+  "findings": [
+    {
+      "id": "5737c03423eeabd5670fb0a61adc1fcd89774928e3a5d6128441f4d9e6338798",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hcr18/actions/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 73-20) on H. C. R. No. 18, from the Ohio Legislature's own actions record, which lists each member by id (rep_sims_veronica_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.683Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0902e7fa76fc3542f273b3e0dca071180960f9dfbff7bf0c1b0df8b3faad7385",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_sims_veronica_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.683Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "730a6b22119baaeca4679f9ddecfeae85a89635c34995cd13d24f8df728ef61c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "nay",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_sims_veronica_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.683Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5d326e89edf5091ea0ff50afe14346565ee0d633bc08602a7061dddab8b599d",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_sims_veronica_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.683Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "260e0d438eec9d1978a58ecf2da225c8302ff0629cd27d8fe9d8da38d701bfc5",
+      "kind": "own-words",
+      "url": "https://www.ohiohouse.gov/assets/people/3012/newsletters/7991.pdf",
+      "date": "2024-03",
+      "date_precision": "month",
+      "passage": "Early Voting Accepted ID's: U.S. Passport State of Ohio ID Ohio Driver's License Passport Card US Military ID Ohio interim ID",
+      "note": "Information box in her March 2024 newsletter listing the IDs accepted for early in-person voting. It gives no opinion about the ID rule. Same newsletter says: \"We are once again in the midst of a Primary Election and I urge you to get out and vote.\"",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:40:13.761Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c88ece90251360bc5e7aad48feded5dcbb76ad432887e1c8b0c645b0c7d02178",
+      "kind": "own-words",
+      "url": "https://www.ohiohouse.gov/assets/press-releases/140086/files/35395.pdf",
+      "date": "2025-12-05",
+      "date_precision": "day",
+      "passage": "We write to urge you to veto Substitute Senate Bill 293 which needlessly and recklessly changes Ohio voting laws to yet again add administrative barriers for Ohio citizens to cast their vote and have it counted. SB 293 eliminates the four-day grace period for timely mailed ballots to be received by Boards of Elections after election day and creates additional mechanisms to cancel voter registrations.",
+      "note": "Co-signed letter from House minority members to the Governor asking for a veto of SB 293 (mail-ballot receipt deadline and registration cancellation using other agencies' databases, which the bill ties to citizenship checks). Signed by Veronica R. Sims with many colleagues; a shared statement, not written by this person alone.",
+      "subjects": [
+        "mail-ballot deadline (SB 293)",
+        "voter-roll checks / registration cancellation",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:40:13.761Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House page https://ohiohouse.gov/members/veronica-r-sims (House District 33, Akron; 4 news items, none on elections)",
+        "web searches done: 0 (tool refused)",
+        "blocked: web search (tool returned: web search budget is used up, limit 200 WebSearch calls per turn, shared by every agent); search was INCOMPLETE and must be run again",
+        "blocked: Ballotpedia (refuses fetch)",
+        "blocked: https://www.legislature.ohio.gov (403 to curl)"
+      ],
+      "found": 0,
+      "at": "2026-11-06T15:18:10.997Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 4,
+      "at": "2026-11-06T16:28:34.683Z",
+      "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web searches this round (5-6 each, shared outputs): voter ID; photo ID amendment SJR 10 / Issue 3; HB 472 / SB 293 / proof of citizenship; questionnaire / voter guide; local outlets",
+        "ivoterguide.com Ohio list (page 1 of 2 read; no questionnaire answers shown for these members)",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (refuse fetch, not tried)",
+        "member news list pages on ohiohouse.gov (page 1 only shows a shared list; no election items except a Nov 2026 caucus-leader post on election results)",
+        "Sims newsletters 2024 (people/3012/newsletters/7991, 9731, 10091) read by pdftotext",
+        "Signal Akron voter guide page: says she did not respond (per search summary, not opened)",
+        "Ohio House letter on SB 293 veto request (signed PDF), read"
+      ],
+      "found": 2,
+      "at": "2026-11-06T16:40:13.761Z",
+      "by": "research-oh-r2-2026-11-06"
+    }
+  ]
+}

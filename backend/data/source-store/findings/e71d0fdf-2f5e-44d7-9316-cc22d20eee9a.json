@@ -1,0 +1,203 @@
+{
+  "politician_id": "e71d0fdf-2f5e-44d7-9316-cc22d20eee9a",
+  "findings": [
+    {
+      "id": "5e45ab48caf52437ef09fcf0f2ce34fa9ab9705ead28926cb5b01e1ff7fc7933",
+      "kind": "record",
+      "url": "https://kslegislature.gov/li_2016/b2015_16/measures/SB45/",
+      "date": "2015-03-25",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-45-2015",
+      "act": "nay",
+      "motion": "Emergency Final Action - Passed as amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, Emergency Final Action - Passed as amended, 2015-03-25: nay (tally 85–39); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "C, F (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d9c3310acd8b5d0983f1e2ce0a12dc58b8db23d321ddc9511f50aad6667ddb9e",
+      "kind": "own-words",
+      "url": "https://lawrencekstimes.com/2025/02/04/ks-dems-blast-amendment/",
+      "date": "2025-02-04",
+      "date_precision": "day",
+      "passage": "I oftentimes find my friends here in the Capitol spend their time talking to themselves rather than listening to their constituents.",
+      "note": "Quoted by the Lawrence Times (a Kansas Reflector story) in House debate on HCR 5004, the citizen-only voting amendment. He says the testimony for it came from out-of-state groups and that he disagreed with the sponsor's claim of in-state support.",
+      "subjects": [
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:00:13.051Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7ee56b1e471e0ada7f804eba793a162db92685fbe07dc0224444a875538a8c07",
+      "kind": "own-words",
+      "url": "https://lawrencekstimes.com/2025/02/04/ks-dems-blast-amendment/",
+      "date": "2025-02-04",
+      "date_precision": "day",
+      "passage": "I think it’s pretty obvious what this is really about,” Carmichael added. “It’s by a bunch of out-of-state lobbyists who are making money traveling around the country, stirring up trouble where there’s not a problem, and raising money on the backs of people who contribute to their organizations based upon nothing but rumor, innuendo, suggestions and untruths, and I don’t want any part of supporting that.",
+      "note": "Same debate on HCR 5004. He describes the amendment as driven by out-of-state lobbyists and says he will not support it. Quoted by the Lawrence Times.",
+      "subjects": [
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:00:13.051Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c4338a77b3aba428947279af06cd61e61cdf9a7e779c7a2e8d9568cae10778af",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/house/legislative_days/day045_20250320/vote_records/0275_HB2020.odt",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "nay",
+      "motion": "House: Concurred with amendments",
+      "note": "House roll call as printed ('Carmichael'), linked to John Carmichael (district 92) via the official 2025 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.943Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c219fe3754d2a4205c7f4df7b0eee9545951604494d4cca3e305ee08fdc67c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day051_20260326/vote_records/0342_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "House: Conference Committee Report was adopted",
+      "note": "House roll call as printed ('Carmichael'), linked to John Carmichael (district 92) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.943Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1eb42db9bde1e358d45830781df62725c9ce8abcb4f9a4b11b626d8974c58e80",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day053_20260409/vote_records/0408_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "House: Motion to override veto prevailed",
+      "note": "House roll call as printed ('Carmichael'), linked to John Carmichael (district 92) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.943Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d78e075f99a6894d381835920e3c20b2e83e350f416352edaa8f164c0df580f1",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day023_20260212/vote_records/0067_HB2448.odt",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2448-2026",
+      "act": "nay",
+      "motion": "House: Emergency Final Action - Passed as amended",
+      "note": "House roll call as printed ('Carmichael'), linked to John Carmichael (district 92) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.943Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://lawrencekstimes.com/2025/02/04/ks-dems-blast-amendment/ (floor remarks on HCR 5004)",
+        "KCUR 2026-02-24 and 2026-04-15 articles (no mention of him)",
+        "HB 2056 bill page and its testimony links (no testimony signed by him)",
+        "not reviewed: https://www.kslegislature.gov/li/b2025_26/committees/ctte_h_electns_1/documents/testimony/20260203 (a search hit lists him on an advance-voting bill; not opened)",
+        "House Elections committee page: not reviewed, list loads by script",
+        "official or campaign newsletter: not found by search",
+        "Ballotpedia: blocked (not fetched, listed as refused by the state notes)",
+        "kansasreflector.com: blocked (not fetched, listed as refused by the state notes)",
+        "OnTheIssues and Wikipedia: not used as sources",
+        "web searches (5+) on name with voter ID, photo ID, proof of citizenship, SAVE Act, election, questionnaire: no own words on the subject beyond the findings"
+      ],
+      "found": 2,
+      "at": "2026-11-04T17:00:13.051Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T19:13:24.943Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

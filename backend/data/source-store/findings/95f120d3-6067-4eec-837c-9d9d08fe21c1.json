@@ -1,0 +1,30 @@
+{
+  "politician_id": "95f120d3-6067-4eec-837c-9d9d08fe21c1",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation general",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Branch voter guide page (confirms she is on the 2026 TX-25 general ballot; no gun statement): https://branch.vote/races/2026-texas-general-election-tx-state-us-representative-tx-congressional-25/candidates/dione-sims",
+        "iVoterGuide page (confirms the race; her answer to the gun-restrictions question is listed as not answered): https://ivoterguide.com/candidate/93317/race/32307/election/1471",
+        "campaign site https://dionesimsforcongress.com/ : page is built with scripts and returned no readable text; not reviewed",
+        "blocked: https://www.aol.com/articles/opal-lees-granddaughter-dione-sims-233330732.html (404)",
+        "Ballotpedia: fetch returned empty page; not reviewed",
+        "web searches on name plus gun words: nothing on the subject",
+        "congress.gov: not a sitting legislator, no sponsorships"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:02:05.395Z",
+      "by": "source-collector"
+    }
+  ]
+}

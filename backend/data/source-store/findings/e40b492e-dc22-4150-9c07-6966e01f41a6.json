@@ -180,6 +180,689 @@
         "fetched_at": "2026-10-28T22:55:46.335Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "d46e16095144b6bbfdb215f397e6d663e6a389fcd628b178b5b282f564876ab8",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4138",
+      "date": "2023-03-08",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-4138-2023",
+      "act": "nay",
+      "motion": "Passage, Roll Call No. 23 (as substituted H-1)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI House, Passage, Roll Call No. 23 (as substituted H-1), 2023-03-08: nay (tally 56–53); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/2023-PA-0019.pdf",
+          "sha256": "2b8ace86c9e2b41bb2310e59e23d0100684ebb1734093484e474d4588c5007c6"
+        }
+      }
+    },
+    {
+      "id": "c1de0db8be20402c4b1b103851c796458e82e5be9422a929b97aa8473d7ff938",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4127",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-4127-2023",
+      "act": "nay",
+      "motion": "House Third Reading: Given Immediate Effect Roll Call # 545",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI House, House Third Reading: Given Immediate Effect Roll Call # 545, 2023-11-09: nay (tally 56–53); census gate: none.",
+      "subjects": [
+        "firearms banned at polling places and early voting sites",
+        "firearms banned near absentee ballot drop boxes and clerk offices",
+        "misdemeanor penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-HB-4127-2023.chaptered.html",
+          "sha256": "78e672ad36cbc4c8f7e2091e8a696d3b974c41e137badb215778d5ff0685490c"
+        }
+      }
+    },
+    {
+      "id": "9079dadc7929ed45475db2815d440225e346413fad13a581eda1b287feb6593d",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4128",
+      "date": "2024-11-13",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-4128-2023",
+      "act": "nay",
+      "motion": "House Third Reading: Roll Call # 335",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI House, House Third Reading: Roll Call # 335, 2024-11-13: nay (tally 56–53); census gate: none.",
+      "subjects": [
+        "firearms banned at absentee ballot counting places",
+        "exception for uniformed law enforcement",
+        "misdemeanor penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-HB-4128-2023.chaptered.html",
+          "sha256": "49241650d70adb36bc09e49c6e0b5af40ed08a45ec49857e527682fae1bda851"
+        }
+      }
+    },
+    {
+      "id": "16e40a72efee8a7c7a5c1d4eecad20262e614aacfb0dd31faf5f7679771ccf35",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4146",
+      "date": "2023-04-26",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-4146-2023",
+      "act": "nay",
+      "motion": "House Third Reading: Roll Call # 65",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI House, House Third Reading: Roll Call # 65, 2023-04-26: nay (tally 56–52); census gate: none.",
+      "subjects": [
+        "people under an extreme risk protection order cannot buy firearms",
+        "people under an extreme risk protection order cannot get a concealed pistol license"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-HB-4146-2023.chaptered.html",
+          "sha256": "e108e82c1b124d6e0e7481987cbb8c7f153ceadd0bce80b91754b4bfc00de921"
+        }
+      }
+    },
+    {
+      "id": "12f36de5d5b1e4c6ae2a56d517cfaa682a9f258bb309ef952661ac9e6658dfcb",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4284",
+      "date": "2026-01-14",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-4284-2025",
+      "act": "yea",
+      "motion": "House Third Reading: Given Immediate Effect Roll Call #2",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI House, House Third Reading: Given Immediate Effect Roll Call #2, 2026-01-14: yea (tally 63–46); census gate: none.",
+      "subjects": [
+        "concealed pistol license renewal fee cut from $115 to $30",
+        "renewal fee kept by the county, not split with the state"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-HB-4284-2025.engrossed.html",
+          "sha256": "ecc12f704af77fd355ed0de9bd07216800d2b25d3bef179bd539442ffc1b1c6e"
+        }
+      }
+    },
+    {
+      "id": "454ab8c69d550ee9e7c467202ea309dc04562419489eb3d69cd8d05d998f4d98",
+      "kind": "record",
+      "url": "http://legislature.mi.gov/doc.aspx?2017-HB-4416",
+      "date": "2017-06-07",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-4416-2017",
+      "act": "yea",
+      "motion": "House Third Reading: Given Immediate Effect Roll Call # 183",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI House, House Third Reading: Given Immediate Effect Roll Call # 183, 2017-06-07: yea (tally 59–49); census gate: none.",
+      "subjects": [
+        "license no longer required to carry a concealed pistol",
+        "concealed-carry ban kept only for people barred from firearms",
+        "two firearm statutes repealed (sections 227a and 231a)",
+        "firearm offence cross-references updated"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-HB-4416-2017.engrossed.html",
+          "sha256": "e4e51c819ee066c424e5a747cd8059898ddb436ddbda87281ed3b678d72a8d85"
+        }
+      }
+    },
+    {
+      "id": "d21df64ce3cc5dd179184d8e0ba3d173159de3db5ee8352e4c27462c36b0dd75",
+      "kind": "record",
+      "url": "http://legislature.mi.gov/doc.aspx?2017-HB-4474",
+      "date": "2017-06-07",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-4474-2017",
+      "act": "yea",
+      "motion": "House Third Reading: Given Immediate Effect Roll Call # 182",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MI House, House Third Reading: Given Immediate Effect Roll Call # 182, 2017-06-07: yea (tally 103–5); census gate: near-unanimous.",
+      "subjects": [
+        "concealed carry allowed on military armory premises",
+        "adjutant general barred from rules burdening military carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-HB-4474-2017.enrolled.html",
+          "sha256": "7bf664cd1fb3857a26b79ee99ebd907418c00ad1cb5b9b555a7df53d3815d5af"
+        }
+      }
+    },
+    {
+      "id": "06be48355dde018d0e354953cdc06e03ebf519e82110a4122af14479385f468f",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4481",
+      "date": "2025-11-13",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-4481-2025",
+      "act": "yea",
+      "motion": "House Third Reading: Given Immediate Effect Roll Call #309",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MI House, House Third Reading: Given Immediate Effect Roll Call #309, 2025-11-13: yea (tally 92–9); census gate: near-unanimous.",
+      "subjects": [
+        "state website listing concealed pistol licence reciprocity and out-of-state carry rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-HB-4481-2025.engrossed.html",
+          "sha256": "6318db3fd22203a5642c3aa2219657e27f37770a654b8155e1cc3a79cbf69570"
+        }
+      }
+    },
+    {
+      "id": "6cdae55fc18a8af830a5733bdd6a733aa9b87a99681e7fa7b8266715c8fea436",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4855",
+      "date": "2026-02-05",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-4855-2025",
+      "act": "yea",
+      "motion": "House Third Reading: Given Immediate Effect Roll Call #31",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI House, House Third Reading: Given Immediate Effect Roll Call #31, 2026-02-05: yea (tally 90–13); census gate: none.",
+      "subjects": [
+        "bow hunters may carry a loaded pistol",
+        "pistol not to be used to take game in archery season"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-HB-4855-2025.engrossed.html",
+          "sha256": "3a38b45afd71900a4ed9547746a79f434be9ab3f49300deabd45cc0a2f36a356"
+        }
+      }
+    },
+    {
+      "id": "fb67676ca0b5fa570ee26315fbb05311a5c5c15d029260b012513d6981215d62",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4949",
+      "date": "2026-03-10",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-4949-2025",
+      "act": "yea",
+      "motion": "House Third Reading: Given Immediate Effect Roll Call #79",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI House, House Third Reading: Given Immediate Effect Roll Call #79, 2026-03-10: yea (tally 56–51); census gate: none.",
+      "subjects": [
+        "shooting ranges shielded from noise and nuisance claims",
+        "ranges may expand or upgrade without losing protection",
+        "existing ranges keep operating despite new local ordinances"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-HB-4949-2025.engrossed.html",
+          "sha256": "f2ac0e37c00fc6922e00cab5d4cc0e6df127258b95227072c86d881eaf07e8d2"
+        }
+      }
+    },
+    {
+      "id": "acb6ec3bbcfb4362455ae5551d696dbac052ea325c827a625f038f8c760ecaeb",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4980",
+      "date": "2026-01-21",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-4980-2025",
+      "act": "yea",
+      "motion": "House Third Reading: Given Immediate Effect Roll Call #16",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI House, House Third Reading: Given Immediate Effect Roll Call #16, 2026-01-21: yea (tally 60–45); census gate: none.",
+      "subjects": [
+        "concealed pistol license may be applied for in any county",
+        "renewal notices tied to the issuing county clerk",
+        "outdated renewal deadlines removed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-HB-4980-2025.engrossed.html",
+          "sha256": "c32ac96b0ac6b4fe70a4a9285ba10ec243712535ef060b279b75e396e66ca86b"
+        }
+      }
+    },
+    {
+      "id": "051112e35e6d8341cb8c3895e707db879575b52afe17da948a21925601b8c36d",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5113",
+      "date": "2026-01-21",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-5113-2025",
+      "act": "yea",
+      "motion": "House Third Reading: Given Immediate Effect Roll Call #15",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI House, House Third Reading: Given Immediate Effect Roll Call #15, 2026-01-21: yea (tally 78–27); census gate: none.",
+      "subjects": [
+        "free reapply after concealed pistol license denial due to application error"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-HB-5113-2025.engrossed.html",
+          "sha256": "2c6b1c6981897078984c1ab6365e55c622d7a46746044bcf53655d593bc205a6"
+        }
+      }
+    },
+    {
+      "id": "cbcd33403d0b71bd2130a7a1a54945490b12a7ee4b2f0327c6f56ad685d3c03d",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2024-HB-5450",
+      "date": "2024-11-13",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-5450-2023",
+      "act": "nay",
+      "motion": "House Third Reading: Given Immediate Effect Roll Call # 341",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI House, House Third Reading: Given Immediate Effect Roll Call # 341, 2024-11-13: nay (tally 56–53); census gate: none.",
+      "subjects": [
+        "safe firearm storage notice sent to schools",
+        "guidance on free or low-cost gun locks and safes"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-HB-5450-2023.engrossed.html",
+          "sha256": "871ba53d0090b17345b667e21f3dfee673f48a40321fff81baf51163febcdb34"
+        }
+      }
+    },
+    {
+      "id": "e042facb95a2ed38cb6e4d6ea9666876e337325d0ab8e0846ae4ce6b3f535c91",
+      "kind": "record",
+      "url": "http://legislature.mi.gov/doc.aspx?2021-SB-0011",
+      "date": "2021-03-04",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-11-2021",
+      "act": "yea",
+      "motion": "Senate Third Reading: Passed Roll Call # 42",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI Senate, Senate Third Reading: Passed Roll Call # 42, 2021-03-04: yea (tally 20–15); census gate: none.",
+      "subjects": [
+        "concealed pistol licenses must still be issued during declared emergencies",
+        "renewal licensing and fingerprinting continue in emergencies"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-SB-11-2021.enrolled.html",
+          "sha256": "35114fe1f622a657d2fac12d795729fb7df0287b3c6e7631c429413cc7ae28e6"
+        }
+      }
+    },
+    {
+      "id": "9c83f3f21bd922acae7fae0f7ab2eee541d07157228b08ec29b98d6dc347081e",
+      "kind": "record",
+      "url": "http://legislature.mi.gov/doc.aspx?2017-SB-0219",
+      "date": "2017-06-20",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-219-2017",
+      "act": "yea",
+      "motion": "House Third Reading: Given Immediate Effect Roll Call # 236",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MI House, House Third Reading: Given Immediate Effect Roll Call # 236, 2017-06-20: yea (tally 104–3); census gate: near-unanimous.",
+      "subjects": [
+        "concealed pistol licence application, renewal and emergency licence rules changed",
+        "places where licensed carry is barred restated",
+        "Penal Code section 232 repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-SB-219-2017.chaptered.html",
+          "sha256": "3b3748f4ddc79e6d947b23df1708df8ba9f02feb6537e2e161ce403f22c94a3b"
+        }
+      }
+    },
+    {
+      "id": "0cbdca7a66d844a7ba3bf16be6ef4dec123af9daf7910088d8094304300f0146",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0022",
+      "date": "2023-11-08",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-22-2023",
+      "act": "yea",
+      "motion": "House Third Reading: Given Immediate Effect Roll Call # 518",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI House, House Third Reading: Given Immediate Effect Roll Call # 518, 2023-11-08: yea (tally 91–18); census gate: none.",
+      "subjects": [
+        "firearms barred from sterile areas of commercial airports",
+        "misdemeanor and felony penalties for airport carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-SB-22-2023.chaptered.html",
+          "sha256": "1daf0a173fda33e916c23f379e35b238197be6cb3fa82b8e965c221cf553062f"
+        }
+      }
+    },
+    {
+      "id": "34bee8099659dd72f2730fe1c71949d9a0966035176572e80a44f9a94be9b64e",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0471",
+      "date": "2023-11-01",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-471-2023",
+      "act": "nay",
+      "motion": "House Third Reading: Given Immediate Effect Roll Call # 440",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI House, House Third Reading: Given Immediate Effect Roll Call # 440, 2023-11-01: nay (tally 58–52); census gate: none.",
+      "subjects": [
+        "8-year gun and ammunition ban after domestic-violence misdemeanor conviction"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-SB-471-2023.chaptered.html",
+          "sha256": "8fac4dc78d4ebfada782a7b418f38c90371e81a833c08fbf7a5ca309c77e91c2"
+        }
+      }
+    },
+    {
+      "id": "522e9d2ec2a4153fda9333911628781dec1bc0634dcc228061e51f6187093911",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0079",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-79-2023",
+      "act": "nay",
+      "motion": "House Third Reading: Given Immediate Effect Roll Call # 46",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MI House, House Third Reading: Given Immediate Effect Roll Call # 46, 2023-03-22: nay (tally 61–47); census gate: none.",
+      "subjects": [
+        "safe-storage duty where minors may be present, with penalties",
+        "dealers must include a lock or case and safety materials with each sale",
+        "local governments barred from suing firearm makers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-SB-79-2023.chaptered.html",
+          "sha256": "fe4c791599b9aa7903fd657df11a387de31d044c458c173325d7a4f846dd2124"
+        }
+      }
+    },
+    {
+      "id": "ec399e06416cc4a8b34b57df1a76a1ee61e1914bd5efea930376e8e372e017ae",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4855",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4855-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MI-HB-4855-2025 (LegiScan sponsor list): HB4855 (103rd Legislature): Weapons: firearms; possession of a pistol by a bow hunter; allow. Amends sec. 43510 of 1994 PA 451 (MCL 324.43510)..",
+      "subjects": [
+        "bow hunters may carry a loaded pistol",
+        "pistol not to be used to take game in archery season"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-HB-4855-2025.engrossed.html",
+          "sha256": "3a38b45afd71900a4ed9547746a79f434be9ab3f49300deabd45cc0a2f36a356"
+        }
+      }
+    },
+    {
+      "id": "e48b6fe5655fb00a555482ee9bcadcf6e1dbbb8500a4c90fa9fc4c9b7a86bb0d",
+      "kind": "record",
+      "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4980",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4980-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MI-HB-4980-2025 (LegiScan sponsor list): HB4980 (103rd Legislature): Weapons: licensing; license to carry a concealed pistol; modify requirement to file in county of residence. Amends secs. 5b & 5l of 1927 PA 372 (MCL 28.425b & 28.425l)..",
+      "subjects": [
+        "concealed pistol license may be applied for in any county",
+        "renewal notices tied to the issuing county clerk",
+        "outdated renewal deadlines removed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T19:47:07.650422Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-HB-4980-2025.engrossed.html",
+          "sha256": "c32ac96b0ac6b4fe70a4a9285ba10ec243712535ef060b279b75e396e66ca86b"
+        }
+      }
+    },
+    {
+      "id": "c8cdea117ae8b3a7f658aef7e261a4fb8846d8c4f5a93ef1df4353ae1001c512",
+      "kind": "own-words",
+      "url": "https://www.masoncountypress.com/2018/03/20/vanderwall-takes-on-veteran-legislators-in-bid-for-republican-senate-nomination",
+      "date": "2018-03-20",
+      "date_precision": "day",
+      "passage": "When it comes to allowing certain non-law enforcement personnel to have guns in a school system, and I am asked, ‘would you allow it?’ My answer would be yes, under certain circumstances.",
+      "note": "His answer on school safety in a candidate Q&A for the 35th District state Senate seat. In the same answer: 'I don't think every teacher should have a gun in a school' and that it should come down to the individual school district to decide.",
+      "subjects": [
+        "guns in schools",
+        "armed school staff"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-05T22:09:08.012Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "497272b9dcd379bf08068f2462b58851a5c9a07e9fdac1c981b4454edae91c2f",
+      "kind": "own-words",
+      "url": "https://www.masoncountypress.com/2018/03/20/vanderwall-takes-on-veteran-legislators-in-bid-for-republican-senate-nomination",
+      "date": "2018-03-20",
+      "date_precision": "day",
+      "passage": "I don’t think every teacher should have a gun in a school.",
+      "note": "Same school safety answer; he adds that perhaps the best route is to hire retired police officers.",
+      "subjects": [
+        "guns in schools",
+        "armed school staff"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-05T22:09:08.012Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05bb7418964221b981e49d7a852f4affe2c03bef43db0ff14d8d5c8749476699",
+      "kind": "own-words",
+      "url": "https://newschannel9.com/news/nation-world/firearm-safety-elective-hunting-certification-education-school-cirriculum-courses-michigan-districts-house-bill-lawmakers-representatives-senate-politics-laws-regulations",
+      "date": "2025-06-05",
+      "date_precision": "day",
+      "passage": "No one is forced to participate, but those who do will gain valuable skills that will not only benefit them, but every sportsman in their vicinity during hunting season.",
+      "note": "Quoted by WTVC (News Channel 3) in a story about HB 4285, his bill for an optional school firearm safety course. He says he is working to empower schools and families to teach responsible firearm handling.",
+      "subjects": [
+        "firearm safety education in schools",
+        "hunting tradition"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-05T22:09:08.012Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6c8768e5652fe9ae73d71d6bb0c727e5654f14825d9edeb3a5d13822ad0ccbb2",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4285",
+      "date": "2025-03-25",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-4285-2025",
+      "act": "author",
+      "note": "HB 4285 (Education: curriculum; firearm safety instruction) introduced by him as primary sponsor. It adds an optional firearm safety instruction program to the school code. House passed it June 4, 2025 (101-7); Senate passed it Dec 18, 2025; governor action Dec 23, 2025 per the bill page.",
+      "subjects": [
+        "firearm safety education in schools"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-05T22:09:08.012Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -221,6 +904,35 @@
       "found": 7,
       "at": "2026-10-28T22:55:46.335Z",
       "by": "identity-mi-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm safety instruction in schools",
+        "guns in schools",
+        "Second Amendment",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official member pages: blocked: https://housegop.org/vanderwall/ (404); blocked: https://gophouse.org/representatives/curt-vanderwall/ (404)",
+        "campaign site: blocked: http://www.curtvanderwall.com/ (certificate expired)",
+        "Branch voter-guide page confirms he is a 2026 candidate for Michigan House District 102; its one-line gun summary is the site's wording, not saved",
+        "legislature.mi.gov bill page for HB 4285 of 2025: sponsor confirmed",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia: not relied on (empty to fetch tool)",
+        "Spectrum News 'Know your electeds' (2026-03-09): nothing on the subject",
+        "Mason County Press 2018 candidate Q&A: school safety answer saved",
+        "news search: found coverage of HB 4285 with his quote, copied by curl",
+        "MLC spotlight page: nothing on the subject",
+        "not reviewed: https://ivoterguide.com/candidate/48957/race/8562/election/976 (search summary says he left gun questions unanswered)"
+      ],
+      "found": 4,
+      "at": "2026-11-05T22:09:08.012Z",
+      "by": "source-collector"
     }
   ]
 }

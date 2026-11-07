@@ -1,0 +1,66 @@
+{
+  "politician_id": "24987ca0-f280-4dae-a63b-f18059007f76",
+  "findings": [
+    {
+      "id": "e076c8b48278b31632ee890048920af3952a61ffb83895b5d23bfa476c64b17f",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Steinmetz'), linked to Connie Steinmetz (district 87) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.752Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org (not fetched, per instruction)",
+        "web search on name plus subject words (no own-words hit)",
+        "house.mo.gov member pages not fetched (URLs contain ?, barred by robots.txt)",
+        "campaign site conniesteinmetz.org About page: nothing on the subject",
+        "campaign site candidacy announcement post: nothing on the subject",
+        "not reviewed: other pages of conniesteinmetz.org (four issue pages)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:05:21.729Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:10:53.752Z",
+      "by": "identity-mo-2026-11-04"
+    }
+  ]
+}

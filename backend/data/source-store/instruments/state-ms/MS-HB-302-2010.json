@@ -1,0 +1,38 @@
+{
+  "id": "MS-HB-302-2010",
+  "scope": "state:ms",
+  "title": "HB 302 (2010 Regular Session): Voter identification; require before voting in person or by absentee.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2010/pdf/history/HB/HB0302.xml",
+    "https://billstatus.ls.state.ms.us/documents/2010/pdf/HB/0300-0399/HB0302IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1(1)\n(quote) Except as provided in subsection (3) of this section, each elector shall present current, valid government-issued photo identification for which proof of citizenship is required to an election manager, or the circuit clerk or deputy circuit clerk in the case of absentee voting at any polling place and prior to such person's admission to the enclosed space at such polling place.\n(section) Sec. 1(1)\n(quote) Proper identification shall consist of any one of the following: (a) A Mississippi driver's license which was properly issued by the appropriate state agency;\n(section) Sec. 1(1)(c)\n(quote) A valid United States passport;\n(b_no_id_remedy)\n(section) Sec. 1(2)\n(quote) If an individual does not present the identification required under subsection (1) of this section, the individual shall be permitted to cast an affidavit ballot with respect to the election, except that the election manager may not make a determination that the individual is eligible to vote in the election unless the individual presents the identification required under subsection (1) of this section to the official not later than forty-eight (48) hours after casting the affidavit ballot.\n(section) Sec. 2(1)\n(quote) No fee shall be charged or collected for the application for or issuance of a Mississippi voter identification card.\n(c_mail_ballot_id)\n(section) Conforming 23-15-631\n(quote) Before sealing the envelope, enclose a copy of a current, valid government-issued photo identification for which proof of citizenship is required, with the marked ballot.\n(section) Conforming 23-15-639(3)(b)\n(quote) If after opening the envelope, no copy of a current, valid government-issued photo identification for which proof of citizenship is required, is found, the commissioner or executive committee shall write across the face of the envelope \"REJECTED\" giving the reason therefor, and the registrar shall promptly notify the voter of its rejection.\n(d_proof_of_citizenship)\n(section) Sec. 1(1)\n(quote) current, valid government-issued photo identification for which proof of citizenship is required\n(e_other_rule)\n(section) Sec. 1(3)\n(quote) Any elector who falsely swears or affirms to any statement or who provides false identification under this act shall be guilty of a felony and, upon conviction, shall be fined not more than Five Thousand Dollars ($5,000.00) or imprisoned not more than five (5) years, or both.\n(other) Sec. 2: free Mississippi voter identification card issued by circuit clerks, valid only for voting, not available to anyone with a valid driver license or ID card; photo identity document or nonphoto document with full name and date of birth required to get it\n(other) Conforming amendments: 23-15-11, 23-15-541, 23-15-631, 23-15-639, 23-15-719 and absentee application\n(other) Preclearance and effective date",
+  "sponsors": [
+    {
+      "name": "Denny",
+      "role": "prime",
+      "version": "HB0302IN"
+    },
+    {
+      "name": "Upshaw",
+      "role": "co",
+      "version": "HB0302IN"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

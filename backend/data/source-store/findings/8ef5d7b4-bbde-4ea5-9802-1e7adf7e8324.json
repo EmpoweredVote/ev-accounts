@@ -1,0 +1,33 @@
+{
+  "politician_id": "8ef5d7b4-bbde-4ea5-9802-1e7adf7e8324",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry permits",
+        "red-flag orders",
+        "easing gun ownership",
+        "Second Amendment general statement"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://mele4america.com/ home page and platform.html, articles.html, challenge.html (fetched; nothing on the subject)",
+        "iVoterGuide https://ivoterguide.com/candidate/43059/race/33275/election/1478 (fetched; confirms 2026 candidate in New Jersey 12th District; gun questionnaire answer is 'Did not answer')",
+        "New Jersey Globe and WHYY race coverage (fetched; confirms he is on the November 2026 ballot; nothing on guns)",
+        "Prediction Edge profile https://www.predictionedge.com/elections/profile/gregg-mele/ (fetched; a third-party summary says he wants to make legal gun ownership easier; not his own words, so not saved)",
+        "blocked: https://ballotpedia.org/Gregg_Mele (403 request blocked)",
+        "https://justfacts.votesmart.org/candidate/biography/184175/gregg-mele (fetched; almost no text, nothing on the subject)",
+        "not reviewed: Facebook and Instagram pages linked from his site (social media)",
+        "congress.gov: not applicable, no legislative record",
+        "web search on name plus gun words: no own words on guns found"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:02:26.544Z",
+      "by": "source-collector"
+    }
+  ]
+}

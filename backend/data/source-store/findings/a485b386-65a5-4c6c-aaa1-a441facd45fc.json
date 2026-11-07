@@ -74,6 +74,114 @@
         "fetched_at": "2026-10-31T05:00:00Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "bb25693e59d531a52d5d821499cd1e502d10ff87ea29683ad6a323449a91b2d6",
+      "kind": "own-words",
+      "url": "https://www.justinthurber.com/priorities/protecting-rights",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Justin has filed vital legislation to push back against expanded firearms bans and protect the rights of lawful gun owners.",
+      "note": "Campaign site issue page, in the voice of his campaign; says he filed bills against the expanded firearms bans.",
+      "subjects": [
+        "Second Amendment rights",
+        "repeal of expanded firearms bans"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:57:07.797Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9df3e5cb93fdbcecb1a87efa11b0678ff7709bc6e5c9f1e20db6ba32b1bb6034",
+      "kind": "own-words",
+      "url": "https://www.justinthurber.com/priorities/protecting-rights",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Defending Second Amendment Rights: Filed critical legislation to push back against expanded firearms bans and protect the constitutional rights of lawful gun owners.",
+      "note": "Campaign site lists defending Second Amendment rights as something he is doing.",
+      "subjects": [
+        "Second Amendment rights",
+        "repeal of expanded firearms bans"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:57:07.797Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4c18ce28511189ebc4a500518002cc3bb53a02734120911cf7b7f5077c5073da",
+      "kind": "own-words",
+      "url": "https://www.justinthurber.com/media",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Reform of expanded firearms bans and Second Amendment protections",
+      "note": "Campaign media page describes bills H.2715 and H.2716 in these words.",
+      "subjects": [
+        "ban on assault-style guns",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:57:07.797Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bedcc3675363cb137cf4c2cf6474ee6e0cb15397117eda566f8b28935edd9a23",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H2716.Html",
+      "date": "2025-01-17",
+      "date_precision": "day",
+      "instrument_id": "MA-H-2716-2025",
+      "act": "sponsor",
+      "note": "Lead filer of H.2716, An Act to repeal expanded firearms bans. Bill text repeals Section 16 and Section 71 of Chapter 135 of the Acts of 2024 and edits the large capacity firearm definition. Co-filers Gaskey and Lombardo. Referred to Public Safety committee.",
+      "subjects": [
+        "repeal of the 2024 firearms law",
+        "ban on assault-style guns",
+        "large-capacity firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:57:07.797Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a790f65c6b0bb7d30204119076a74e5444b4ff9f3be3d27c702ddd743dab32f1",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H2715.Html",
+      "date": "2025-01-17",
+      "date_precision": "day",
+      "instrument_id": "MA-H-2715-2025",
+      "act": "sponsor",
+      "note": "Lead filer of H.2715, An Act relative to firearms features. Bill text removes parts of the 'Assault-style firearm' definition added by Chapter 135 of the Acts of 2024. Co-filers Gaskey and Brady. Committee report sent it to a study order.",
+      "subjects": [
+        "ban on assault-style guns",
+        "repeal of the 2024 firearms law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:57:07.797Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -127,6 +235,29 @@
       "found": 0,
       "at": "2026-10-27T14:46:43.150Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns",
+        "large-capacity firearms",
+        "repeal of the 2024 firearms law",
+        "Second Amendment rights",
+        "Question 9"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site justinthurber.com (home, about, media, priorities, protecting-rights pages)",
+        "malegislature.gov bill pages H.2715 and H.2716 (text and sponsors)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia: page came back empty",
+        "web searches on name plus gun words, Question 9: no statement by him found",
+        "nothing on the subject: no statement by him on Question 9 found; the official member profile URL I tried belonged to another member, so I did not use it"
+      ],
+      "found": 5,
+      "at": "2026-11-01T01:57:07.797Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -1,0 +1,201 @@
+{
+  "politician_id": "d9feea6c-c864-4f8c-b3bb-32f0ca0354d1",
+  "findings": [
+    {
+      "id": "fdab8fad61b9202b85d2bdad070fddd83dc62a1ab11a17bca8d97dd959502e96",
+      "kind": "record",
+      "url": "https://kslegislature.gov/li_2016/b2015_16/measures/SB45/",
+      "date": "2015-03-25",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-45-2015",
+      "act": "nay",
+      "motion": "Concurred with amendments (final Senate vote)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS Senate, Concurred with amendments (final Senate vote), 2015-03-25: nay (tally 31–8); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "C, F (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "10ca960e7e1bbf28b1d523d59344168e345132a900fca22f4da9ced1b175053f",
+      "kind": "own-words",
+      "url": "https://johnsoncountypost.com/?p=244411",
+      "date": "2024-10-15",
+      "date_precision": "day",
+      "passage": "I will not and have not supported any legislation that makes a citizens access to voting harder.",
+      "note": "Her written answer in the Johnson County Post candidate guide to the question 'If elected, would you support legislation that, in any way, would modify or place new restrictions on voting in Kansas?'. The rest of her answer names early voting, drop boxes and counting of advance voting ballots as things she says help more voters vote. No mention of ID or citizenship.",
+      "subjects": [
+        "election law changes in general",
+        "early voting and advance ballots (related)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:02:51.722Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e12d8c2c04969f9f4493070458d6fa03f7ff58d84685fb72235693093d0eeb43",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_191_HB2020.odt",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "nay",
+      "motion": "Senate: Emergency Final Action As Amended",
+      "note": "Senate roll call as printed ('Pettey'), linked to Pat Pettey (district 6) via the official 2025 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12d5b96635aaee125a967de3c18520774687c5737469fd65d2358255cda8634d",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Pettey'), linked to Pat Pettey (district 6) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c32e05d099cacb14913d1c7c047be9deb5093f489d52813e63f1f81be052e684",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Pettey'), linked to Pat Pettey (district 6) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b9138e22bc80ebaf6ba7c64f427af10148c9599d784a107b8895179d07a5def9",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2016/b2015_16/measures/sb333/",
+      "date": "2016",
+      "date_precision": "year",
+      "instrument_id": "KS-SB-333-2016",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced (sb333_00_0000.pdf); no later version exists on the legislature site",
+      "note": "Named as co sponsor ('Pettey') on the official bill text, summary or journal; linked to Pat Pettey via the official 2016 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "773a23f2ab30c456870279e3a5e51881ec013b5fc572b2fa03296b427529d0f8",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/vote/?apn=b2023_24/year2/senate/legislative_days/day039_20240305/vote_records/vote_100_SB365.odt",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-365-2024",
+      "act": "nay",
+      "motion": "Senate: Final Action - Not passed",
+      "note": "Senate roll call as printed ('Pettey'), linked to Pat Pettey (district 6) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "mail-ballot and early-voting rules",
+        "election law changes in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Senate caucusic caucus page https://www.kssenatedems.org/patpettey-1-  (confirms Senate seat, parts of Wyandotte and Johnson counties; nothing on voting)",
+        "KCUR 2024 voter guide Senate District 6 (no election or voting answers)",
+        "Johnson County Post 2024 candidate guide (one answer on voting restrictions)",
+        "web searches: voter ID, citizenship, questionnaire, mail ballot/Senate debate, local paper (no testimony or floor remarks by her surfaced)",
+        "blocked: https://bluevoterguide.org/KS/candidate_Pat_Pettey/42903 (403)",
+        "blocked: https://ballotpedia.org/Pat_Pettey",
+        "blocked: https://kansasreflector.com"
+      ],
+      "found": 1,
+      "at": "2026-11-04T17:02:51.722Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 5,
+      "at": "2026-11-04T19:13:24.949Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "PA-HB-2138-2025",
+  "scope": "state:pa",
+  "title": "HB2138 (2025-2026 Regular Session): In firearms and other dangerous articles, providing for the offense of negligent marketing.",
+  "urls": [
+    "https://www.palegis.us/legislation/bills/2025/hb2138",
+    "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2138/PN2763"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 1 (adding Title 18 Pa.C.S. 6143(a)): It is unlawful for a person to bring an action for negligent marketing against a manufacturer or seller unless all of the following conditions are satisfied: (1) The negligent marketing directly targeted individuals who are legally prohibited from owning firearms. (2) The negligent marketing encouraged or facilitated the unlawful use of firearms. (3) There is a direct and substantial causal link between the negligent marketing and the harm suffered by the plaintiff. (4) The manufacturer or seller willfully and knowingly violated a regulatory statute that proximately caused harm to the person.\nSec. 1 (adding Title 18 Pa.C.S. 6143(b)): The court shall dismiss an action brought in violation of subsection (a) and shall award reasonable attorney fees and costs incurred by a party defending the claim.\nSec. 1 (adding Title 18 Pa.C.S. 6143(c)(1)): A manufacturer or seller harmed by an action brought by a person in violation of subsection (a) may bring a counterclaim or a separate action for damages and injunctive relief against the person.",
+  "sponsors": [
+    {
+      "name": "Tina Pickett",
+      "politician_id": "c7fb3af8-ce99-40e4-80c6-6d3280539c1e",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Joe Hamm",
+      "politician_id": "ef3401e1-f9aa-4207-91d2-8fedbb76bafc",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Andrew Kuzma",
+      "politician_id": "c74a3a93-20e3-42cf-b522-6134c667347e",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Jeff Olsommer",
+      "politician_id": "35c85f11-dcf7-4141-8823-9fe1e26804d9",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Jamie Walsh",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "21341fbf-cec8-4c78-8d00-25f774a1e7a1"
+    },
+    {
+      "name": "Donald Cook",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "44be1280-e396-4640-86a4-0a3acff14d9e"
+    },
+    {
+      "name": "Jacob Banta",
+      "politician_id": "f5ee39fe-6a9a-462b-b725-4da3eb85833e",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Robert Kauffman",
+      "politician_id": "f697e205-75af-45ba-99e3-1c6787f31af1",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2138-2025.introduced.pdf",
+      "sha256": "1091c7eb8bc290998cfd5cbd61e0d428a611b1deaf73f3dae253bdab7cb39273"
+    }
+  }
+}

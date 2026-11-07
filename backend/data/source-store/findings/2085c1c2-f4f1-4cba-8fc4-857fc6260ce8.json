@@ -62,6 +62,113 @@
         "fetched_at": "2026-10-27T18:32:45.674Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "e631ad994d17440b6cefb8fe71bfefbe58639152fd5c22e367c08e0c7b52379d",
+      "kind": "own-words",
+      "url": "https://will.illinois.edu/transcript/am/democratic-congressional-candidate-julie-fortier-on-economy-gun-laws-and-southern-illinois-politics",
+      "date": "2026-08-18",
+      "date_precision": "day",
+      "passage": "I am a proponent of the Second Amendment. I agree that it is part of the Second Amendment and people have a right to own guns. I have no problem with that. I also believe that there has to be some regulation. It's no different than owning or driving a car.",
+      "note": "Radio interview (WILL 21st Show, page dated Aug 18, 2026). She says she supports the right to own guns and also wants some regulation.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment",
+        "some regulation of gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T19:44:38.830Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "34bac2455c1c516f81011696daf7bf985c7ad9d2ad7c016b91b69a1a77487b02",
+      "kind": "own-words",
+      "url": "https://will.illinois.edu/transcript/am/democratic-congressional-candidate-julie-fortier-on-economy-gun-laws-and-southern-illinois-politics",
+      "date": "2026-08-18",
+      "date_precision": "day",
+      "passage": "And so, you know, saying that they should be able to walk into a gun store and buy a gun and ammo the same day without any kind of background check or anything — I think we've gotten to the point where we know, in this society, in our country, that safety-wise, that's just not [wise] anymore.",
+      "note": "Same interview. She says buying a gun and ammunition the same day with no background check is no longer wise.",
+      "subjects": [
+        "check every gun buyer",
+        "waiting period"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T19:44:38.830Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "666eadc997537691a5fa4320047ed53994b95f5e13418bb2596224a4bbf66f92",
+      "kind": "own-words",
+      "url": "https://will.illinois.edu/transcript/am/democratic-congressional-candidate-julie-fortier-on-economy-gun-laws-and-southern-illinois-politics",
+      "date": "2026-08-18",
+      "date_precision": "day",
+      "passage": "I think they actually need to look at the facts, because we're not. Nobody has asked to go take away their weapons. Nobody has. It's just wanting to have smart legislation for them. I don't think that is asking too much at all. You know, and to me, even protecting — I don't know how law enforcement would view this, but do they want everybody on their streets who might not be mentally sound enough to have a weapon to go out and be able to buy a weapon? I don't know. I would think they wouldn't.",
+      "note": "Same interview, answering a question on voters who fear gun confiscation. She says no one is taking guns away, wants smart legislation, and raises limits on buyers who may not be mentally sound.",
+      "subjects": [
+        "limits on who may have a gun",
+        "no gun confiscation",
+        "smart gun legislation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T19:44:38.830Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bb3b046f7949009389dc7c93b180a3fdb3815ca5279377e9f109f16e2f3ab7d5",
+      "kind": "own-words",
+      "url": "https://juliefortier.org/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I believe the Second Amendment is a fundamental constitutional right, and I support responsible gun ownership. I will back common-sense measures that keep firearms out of the hands of dangerous individuals without infringing on the rights of law-abiding citizens. I also support education and safety initiatives that promote responsible firearm use.",
+      "note": "Campaign priorities page, Second Amendment section; page carries a 2026 copyright and no posting date.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment",
+        "keep guns from dangerous people",
+        "gun safety education"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T19:44:38.830Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3c466e8e51bde45fbfc874af725ea928a98b16fe6d47e83c553d3a87e3e5bf47",
+      "kind": "own-words",
+      "url": "https://irp.cdn-website.com/16e9fcce/files/uploaded/Julie+Fortier+Press+Kit-4.pdf",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Respect Second Amendment rights while promoting responsible gun safety",
+      "note": "Campaign press kit, fact sheet list of priority issues (page 3). The same page lists Gun Sense Voter among her endorsements. No posting date.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T19:44:38.830Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -118,6 +225,33 @@
       "found": 3,
       "at": "2026-10-27T18:32:45.674Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "background checks on gun sales",
+        "keeping guns from dangerous people",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://juliefortier.org/issues (Second Amendment section)",
+        "campaign site home page (nothing on the subject beyond an endorsement name)",
+        "campaign press kit PDF (fact sheet line on the subject)",
+        "WILL 21st Show interview transcript",
+        "iVoterGuide profile (gun question left unanswered)",
+        "https://www.predictionedge.com/elections/profile/julie-fortier/ (third-party summary; not used as a finding)",
+        "blocked: https://ballotpedia.org/Julie_Fortier",
+        "blocked: https://bluevoterguide.org/endorser-org/Gun_Sense_Voter/IL/4895",
+        "not reviewed: https://www.pbs.org/video/illinois-12th-congressional-district-forum-julie-fortier-democrat-candidate-xpw7dq/ (candidate video)",
+        "congress.gov: not applicable, she has not served in Congress; no sponsored bills",
+        "two web searches (name plus guns; campaign site plus gun safety)"
+      ],
+      "found": 5,
+      "at": "2026-10-30T19:44:38.830Z",
+      "by": "source-collector"
     }
   ]
 }

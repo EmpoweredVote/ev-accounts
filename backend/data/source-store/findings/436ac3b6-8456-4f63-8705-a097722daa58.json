@@ -1,0 +1,102 @@
+{
+  "politician_id": "436ac3b6-8456-4f63-8705-a097722daa58",
+  "findings": [
+    {
+      "id": "d1c2057c28b9a9de66314d9782a9a555af1fc83cfbd202012f15f99a2e9733c4",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "nay",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Whaley'), linked to Burt Whaley (district 138) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "72a52d290b9978b563f9da836e97197e83a6bdb92ec9fc051a7d62606b3d4473",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn052.pdf",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "MO-HCR-48-2026",
+      "act": "yea",
+      "motion": "House: HCR 48 read the third time and passed",
+      "note": "House roll call as printed ('Whaley'), linked to Burt Whaley (district 138) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.235Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Branson Globe 2024 candidate Q&A (https://www.bransonglobe.com/post/area-candidates-answer-questions-prior-to-august-elections-part-1-of-2): nothing on the subject",
+        "KSMU 2024 candidate interview: nothing on the subject",
+        "web searches on name plus subject words (3): nothing on the subject",
+        "blocked: Ballotpedia (not tried, per instruction)",
+        "no house.mo.gov page fetched (robots)",
+        "not reviewed: newsroom.house.mo.gov (separate collector)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:08:09.394Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:10:53.757Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:14:55.235Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

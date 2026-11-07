@@ -1,0 +1,33 @@
+{
+  "id": "MO-SB-523-2009",
+  "scope": "state:mo",
+  "title": "SB 523 (2009 First Regular Session (95th General Assembly)): Establishes advance voting and modifes voter identification requirements",
+  "urls": [
+    "https://www.senate.mo.gov/09info/BTS_Web/Bill.aspx?SessionType=R&BillID=959011",
+    "https://www.senate.mo.gov/09info/pdf-bill/intro/SB523.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) SB 523 introduced, new section 115.426 subsection 1\n(quote) 115.426. 1. Persons who do not provide personal identification containing a photograph to identify themselves under section 115.427 shall have a photographic or digital image taken of them prior to voting which shall be affixed to an affidavit signed by the voter whereby the voter shall aver that the voter is the person listed in the precinct register. \"Personal identification containing a photograph\" shall mean only one of the following: (1) Nonexpired Missouri driver's license showing the name and a photograph or digital image of the individual; or (2) Nonexpired or nonexpiring Missouri nondriver's license showing the name and a photographic or digital image of the individual; or (3) A document that satisfies all of the following requirements: (a) The document contains the name of the individual to whom the document was issued, and the name substantially conforms to the most recent signature in the individual's voter registration record; (b) The document shows a photographic or digital image of the individual; (c) The document includes an expiration date, and the document is not expired, or if expired, expired not before the date of the most recent general election; and (d) The document was issued by the United States or the state of Missouri; or (4) Any identification containing a photographic or digital image of the individual which is issued by the Missouri National Guard, the United States armed forces, or the United States Department of Veteran Affairs to a mem ber or former member of the Missouri National Guard or the United States armed forces and that does not have an expiration date.\n(b_no_id_remedy)\n(section) SB 523 introduced, new section 115.426 subsection 2 (photograph-and-affidavit for a voter without photo ID)\n(quote) 2. The affidavit to be used under subsection 1 of this section shall be substantially in the following form: \"State of ....................................... County of ..................................... I do solemnly swear (or affirm ) under penalty of perjury, a felony, that my name is ..........................................................; that I reside at ...........................................; and that I am the person listed in the precinct register under this name and at this address. I understand that knowingly providing false information is a violation of law and subjects me to possible criminal prosecution. ....................................................... Signature of voter Subscribed and affirmed before me this ......... day of ..............., 20.... ....................................................... Signature of election official\"\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) New section 115.274: in-person advance voting period (second Monday before the election, 8:00 a.m. to 5:00 p.m., no Sundays), bipartisan judges, effective January 1, 2010.\n(other) 115.435, 115.491, 115.493: conforming changes for advance-voting and affidavit records.",
+  "sponsors": [
+    {
+      "name": "Bartle",
+      "role": "prime",
+      "version": "Introduced version (LR 1274S.01I)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04T00:00:00Z)",
+    "fetched_at": "2026-11-04T00:00:00Z",
+    "method": "curl"
+  }
+}

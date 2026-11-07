@@ -75,9 +75,9 @@
       "instrument_id": "PA-SB-1-2023",
       "act": "yea",
       "motion": "House: Third consideration and final passage (PN 385)",
-      "note": "House roll call as printed ('Merski'), linked to Robert E. Merski (district 2) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "note": "House roll call as printed ('Merski'), linked to Robert E. Merski (district 2) via the official 2023-2024 House member roll (identity step 2026-10-28). Corrected 2026-11-03: PN 385 has no voter-ID text (House Judiciary amendment A00091 removed it); this vote says nothing about ID.",
       "subjects": [
-        "voter ID at the polls"
+        "voter ID removed from this version"
       ],
       "topic_keys": [
         "voting-rights"
@@ -97,9 +97,9 @@
       "instrument_id": "PA-SB-224-2023",
       "act": "yea",
       "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
-      "note": "House roll call as printed ('MERSKI'), linked to Robert E. Merski (district 2) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "note": "House roll call as printed ('MERSKI'), linked to Robert E. Merski (district 2) via the official 2023-2024 House member roll (identity step 2026-10-28). Corrected 2026-11-03: PN 1171 has no voter-ID text (struck by A02604, 2023-10-17); this vote says nothing about ID.",
       "subjects": [
-        "voter ID at the polls"
+        "voter ID removed from this version"
       ],
       "topic_keys": [
         "voting-rights"
@@ -130,6 +130,215 @@
         "fetched_by": "identity-pa-2026-10-31-a02365",
         "fetched_at": "2026-10-31T15:52:56.611Z",
         "method": "webfetch"
+      }
+    },
+    {
+      "id": "3c3cd688d1f3ae9a11d7102eee6220426291416599e2f1d9d192c1613bd747c1",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2021/sb565",
+      "date": "2021-11-16",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-565-2021",
+      "act": "nay",
+      "motion": "FP (final passage, page prints 'FP')",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, FP (final passage, page prints 'FP'), 2021-11-16: nay (tally 107–92); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/PA_SB565_PN1212.pdf",
+          "sha256": "8599bf5e56d8378a456fd36d933e5a05733e1a059d642ddb6883c809f6226568"
+        }
+      }
+    },
+    {
+      "id": "63a26fd926270c17e5f7c0ee93b6350e7c1dff253d9c3000a01be8a9d8335b10",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=2440",
+      "date": "2020-05-20",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-2440-2019",
+      "act": "yea",
+      "motion": "House Floor: HB 2440 PN 3776, FP",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 2440 PN 3776, FP, 2020-05-20: yea (tally 124–78); census gate: none.",
+      "subjects": [
+        "gun and ammunition businesses and ranges can never be closed or limited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2440-2019.amended.pdf",
+          "sha256": "9bdd564f4d0812adfa9af91a3ac7f854f4196ebd9577febef5953c94486be5c8"
+        }
+      }
+    },
+    {
+      "id": "f2066e2e0422a41b77fe738b946c1df3f184a82746ad606be324b611b1a6b977",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=2440",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2440-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-2440-2019 (LegiScan sponsor list): HB2440 (2019-2020 Regular Session): Providing for the designation of shooting ranges, sportsman clubs, hunting facilities and business relating to the sale and production of firearms and ammunition as life-sustaining..",
+      "subjects": [
+        "gun and ammunition businesses and ranges can never be closed or limited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2440-2019.amended.pdf",
+          "sha256": "9bdd564f4d0812adfa9af91a3ac7f854f4196ebd9577febef5953c94486be5c8"
+        }
+      }
+    },
+    {
+      "id": "b6f93bd51b38c8c63d69145e9446df56f7ebad8c7f4c3fa1dd09e5e0cf2ed28a",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=1018",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1018-2023",
+      "act": "yea",
+      "motion": "House Floor: HB 1018 PN 1152, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 1018 PN 1152, FINAL PASSAGE, 2023-05-22: yea (tally 102–99); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders created to remove firearms",
+        "firearm ban while an order is active",
+        "penalty for not turning in firearms under an order",
+        "longer penalty for prohibited persons found with a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1018-2023.amended.pdf",
+          "sha256": "05d5a4c60b9a22ac9e77d07afe3e7adc8841cd9dab1224832eb50521b29958a6"
+        }
+      }
+    },
+    {
+      "id": "658f90e32cc1e6c6a69d2835ba314dc1886667ea9297baf318a11f6a30f9b59f",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=1747",
+      "date": "2020-06-24",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1747-2019",
+      "act": "yea",
+      "motion": "House Floor: HB 1747 PN 2338, FP",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 1747 PN 2338, FP, 2020-06-24: yea (tally 127–74); census gate: none.",
+      "subjects": [
+        "emergency-time carry restriction repealed",
+        "no seizure of guns, accessories or ammunition during emergencies",
+        "governor cannot suspend firearm sales in emergencies"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1747-2019.introduced.pdf",
+          "sha256": "a4e95a0229bcf1cde7a5fa9d58ac2c33f09477e837d84525b7ff04d3a5f71ece"
+        }
+      }
+    },
+    {
+      "id": "1561ab47f9bb2cf3b379931e6b111466d9042b024b1f43b38ba23bbb38f188dc",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=777",
+      "date": "2024-03-27",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-777-2023",
+      "act": "yea",
+      "motion": "House Floor: HB 777 PN 2578, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 777 PN 2578, FINAL PASSAGE, 2024-03-27: yea (tally 104–97); census gate: none.",
+      "subjects": [
+        "sale or transfer of unserialized gun frames, receivers and kits made a felony",
+        "buying parts to build an unserialized gun made a felony",
+        "licensed dealers must mark and record privately made firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-777-2023.amended.pdf",
+          "sha256": "65a5f4847629a43127721168bc31890a6fd60f0aefae6ac528a3cd698d73d35e"
+        }
+      }
+    },
+    {
+      "id": "a9c09af126d69b2c1230440fd41791b65a2da59b0bd9de07e3e4811a1a87837a",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=979",
+      "date": "2021-06-08",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-979-2021",
+      "act": "yea",
+      "motion": "House Floor: HB 979 PN 1706, FP",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 979 PN 1706, FP, 2021-06-08: yea (tally 124–79); census gate: none.",
+      "subjects": [
+        "local gun and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs",
+        "localities barred from suing gun makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-979-2021.amended.pdf",
+          "sha256": "494cfe800bdb89be85cf7c2a28a81c203b581e7614e7bc8f69211cb4c736f5dd"
+        }
       }
     }
   ],

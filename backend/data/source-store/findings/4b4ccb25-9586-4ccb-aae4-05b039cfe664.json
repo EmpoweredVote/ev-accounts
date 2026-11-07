@@ -120,9 +120,9 @@
       "instrument_id": "PA-SB-224-2023",
       "act": "nay",
       "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
-      "note": "House roll call as printed ('DAVANZO'), linked to Eric M. Davanzo (district 58) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "note": "House roll call as printed ('DAVANZO'), linked to Eric M. Davanzo (district 58) via the official 2023-2024 House member roll (identity step 2026-10-28). Corrected 2026-11-03: PN 1171 has no voter-ID text (struck by A02604, 2023-10-17); this vote says nothing about ID.",
       "subjects": [
-        "voter ID at the polls"
+        "voter ID removed from this version"
       ],
       "topic_keys": [
         "voting-rights"
@@ -175,6 +175,390 @@
         "fetched_by": "identity-pa-2026-10-31-raw-votes",
         "fetched_at": "2026-10-31T18:07:00.902Z",
         "method": "webfetch"
+      }
+    },
+    {
+      "id": "827b1988eebdd9e1ccbaa8a667b4ed595af3c7def4f2530300ed0ee68690eb2b",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2021/sb565",
+      "date": "2021-11-16",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-565-2021",
+      "act": "yea",
+      "motion": "FP (final passage, page prints 'FP')",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, FP (final passage, page prints 'FP'), 2021-11-16: yea (tally 107–92); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/PA_SB565_PN1212.pdf",
+          "sha256": "8599bf5e56d8378a456fd36d933e5a05733e1a059d642ddb6883c809f6226568"
+        }
+      }
+    },
+    {
+      "id": "f2ce2b460998d6a74ccd8ae3280ff9717c66592cca03d728818a50d111852efc",
+      "kind": "own-words",
+      "url": "https://repdavanzo.com/News/18010/Press-Releases/Davanzo-to-Host-Second-Concealed-Carry-Seminar-on-Sept-17",
+      "date": "2020-08-07",
+      "date_precision": "day",
+      "passage": "The response to the Concealed Carry Seminar I’m hosting on Aug. 13 sure showed how much we believe in the Second Amendment in the 58th District. There was so much interest that we received all the RSVPs we can handle,” Davanzo said. “I am proud to offer a second Concealed Carry Seminar for the men and women who are serious about using their rights responsibly.",
+      "note": "Press release quoting him on hosting a second concealed carry seminar; he ties the turnout to local support for the Second Amendment.",
+      "subjects": [
+        "general statement on Second Amendment",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:53:34.332Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "10e3748286660df44eb033a8480d727326f29907de3058dd83d8639f140cc236",
+      "kind": "own-words",
+      "url": "https://repdavanzo.com/video/latestvideo",
+      "date": "2021-11-16",
+      "date_precision": "day",
+      "passage": "House Bill 565 would create a two-tiered system for the concealed carrying of firearms for lawful purposes in Pennsylvania.",
+      "note": "Video description on his official site titled 'Constitutional Carry of a Firearm'; site text, not a first-person quote.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:53:34.332Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "580eb18dc92acaea9120a2803498bf254f403574ae8ddac201fd9a753c77c435",
+      "kind": "own-words",
+      "url": "https://repdavanzo.com/video/latestvideo",
+      "date": "2021-06-16",
+      "date_precision": "day",
+      "passage": "The bill would remove the subjective “character and reputation” component of the application for the Pennsylvania License to Carry Firearms (LCTF).",
+      "note": "Description of an 'On Target' episode on his official site where he appears to discuss HB 924 (carry licence application, reciprocity with other states). His sponsorship of HB 924 is not shown on the page.",
+      "subjects": [
+        "carry permits",
+        "honoring other states' permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:53:34.332Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "63a26fd926270c17e5f7c0ee93b6350e7c1dff253d9c3000a01be8a9d8335b10",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=2440",
+      "date": "2020-05-20",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-2440-2019",
+      "act": "yea",
+      "motion": "House Floor: HB 2440 PN 3776, FP",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 2440 PN 3776, FP, 2020-05-20: yea (tally 124–78); census gate: none.",
+      "subjects": [
+        "gun and ammunition businesses and ranges can never be closed or limited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2440-2019.amended.pdf",
+          "sha256": "9bdd564f4d0812adfa9af91a3ac7f854f4196ebd9577febef5953c94486be5c8"
+        }
+      }
+    },
+    {
+      "id": "c7728959489224f0a96b5bce283e58c745009ec949aa0308240cdc75736dc483",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=357",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-357-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-357-2021 (LegiScan sponsor list): HB357 (2021-2022 Regular Session): Providing that any Federal law which attempts to register, restrict or ban a firearm or to limit the size of a magazine of a firearm in this Commonwealth shall be unenforceable in this Commonwealth; and imposing penalties..",
+      "subjects": [
+        "federal gun, magazine and ammunition laws declared unenforceable in the state",
+        "criminal penalty for officials who enforce them",
+        "Attorney General defends residents prosecuted under them"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-357-2021.introduced.pdf",
+          "sha256": "c1353f85058f424382d90a5046f2f7185a24d56b36ef74c60ddc27cf94ecde6f"
+        }
+      }
+    },
+    {
+      "id": "5a1e8a788a9a3b1de393bdb1dde749a6f598706061fbe03d4e66bccf89447f17",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb454",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-454-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-454-2025 (LegiScan sponsor list): HB454 (2025-2026 Regular Session): In firearms and other dangerous articles, repealing provisions relating to firearms not to be carried without a license, providing for license not required, repealing provisions relating to carrying firearms on public streets or public property in Philadelphia, further providing for prohibited conduct during emergency, providing for sportsman's firearm permit, further providing for licenses and for antique firearms and repealing provisions relating to proof of license and exception; and making editorial changes..",
+      "subjects": [
+        "no license needed to carry firearms openly or concealed",
+        "carry license made optional",
+        "Philadelphia public-carry rule repealed",
+        "license age minimum and character check removed",
+        "duty to show license on demand repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-454-2025.introduced.pdf",
+          "sha256": "f30ec3f128cf3767ddff70a1eeaf2b9e5550db871bb897761638ddd54b516abe"
+        }
+      }
+    },
+    {
+      "id": "d286596c5fbf23976f50103b657a58aab391f2dc93424dafbbac8f5df6ae6538",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb548",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-548-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-548-2025 (LegiScan sponsor list): HB548 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for limitation on the regulation of firearms and ammunition; and, in preemptions, providing for regulation of firearms and ammunition..",
+      "subjects": [
+        "state preemption of local gun and ammunition rules extended to all municipalities",
+        "lawsuits and expense awards against local governments that break preemption"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-548-2025.introduced.pdf",
+          "sha256": "96cead2961c739e15a8f1b6213d6cebb08434f6d00d7d5db6ad44267c48a36b1"
+        }
+      }
+    },
+    {
+      "id": "c7e7daa3ef8a51f5da36437a68d8d8c1ebfcd1b2d27d936dc705a20c95217be7",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=946",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-946-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-946-2021 (LegiScan sponsor list): HB946 (2021-2022 Regular Session): In firearms and other dangerous articles, further providing for licenses..",
+      "subjects": [
+        "counties may waive carry-license fees for veterans and people 65 or older"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-946-2021.introduced.pdf",
+          "sha256": "003ad9f8133ac7670d76781ee7d7c78ed7dbf41e0ddf2906ed48f081b8ba479c"
+        }
+      }
+    },
+    {
+      "id": "79a12eb09b9f84a7f21a6757e7f9aea7bfb46bcc3114ce126fa94c2fc7f97d5e",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=979",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-979-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-979-2021 (LegiScan sponsor list): HB979 (2021-2022 Regular Session): In firearms and other dangerous articles, further providing for limitation on the regulation of firearms and ammunition; and, in preemptions, providing for regulation of firearms and ammunition..",
+      "subjects": [
+        "local gun and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs",
+        "localities barred from suing gun makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-979-2021.amended.pdf",
+          "sha256": "494cfe800bdb89be85cf7c2a28a81c203b581e7614e7bc8f69211cb4c736f5dd"
+        }
+      }
+    },
+    {
+      "id": "aadf049da9c877b6ff2c394840cb4aa7ed6144423f58ce2833cec97296371de3",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=1018",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1018-2023",
+      "act": "nay",
+      "motion": "House Floor: HB 1018 PN 1152, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 1018 PN 1152, FINAL PASSAGE, 2023-05-22: nay (tally 102–99); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders created to remove firearms",
+        "firearm ban while an order is active",
+        "penalty for not turning in firearms under an order",
+        "longer penalty for prohibited persons found with a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1018-2023.amended.pdf",
+          "sha256": "05d5a4c60b9a22ac9e77d07afe3e7adc8841cd9dab1224832eb50521b29958a6"
+        }
+      }
+    },
+    {
+      "id": "658f90e32cc1e6c6a69d2835ba314dc1886667ea9297baf318a11f6a30f9b59f",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=1747",
+      "date": "2020-06-24",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1747-2019",
+      "act": "yea",
+      "motion": "House Floor: HB 1747 PN 2338, FP",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 1747 PN 2338, FP, 2020-06-24: yea (tally 127–74); census gate: none.",
+      "subjects": [
+        "emergency-time carry restriction repealed",
+        "no seizure of guns, accessories or ammunition during emergencies",
+        "governor cannot suspend firearm sales in emergencies"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1747-2019.introduced.pdf",
+          "sha256": "a4e95a0229bcf1cde7a5fa9d58ac2c33f09477e837d84525b7ff04d3a5f71ece"
+        }
+      }
+    },
+    {
+      "id": "465f6ee5ddd1f662a245de10a843aaa91be6f6eb2fd9c53ca322315e316e29ad",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=777",
+      "date": "2024-03-27",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-777-2023",
+      "act": "nay",
+      "motion": "House Floor: HB 777 PN 2578, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 777 PN 2578, FINAL PASSAGE, 2024-03-27: nay (tally 104–97); census gate: none.",
+      "subjects": [
+        "sale or transfer of unserialized gun frames, receivers and kits made a felony",
+        "buying parts to build an unserialized gun made a felony",
+        "licensed dealers must mark and record privately made firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-777-2023.amended.pdf",
+          "sha256": "65a5f4847629a43127721168bc31890a6fd60f0aefae6ac528a3cd698d73d35e"
+        }
+      }
+    },
+    {
+      "id": "a9c09af126d69b2c1230440fd41791b65a2da59b0bd9de07e3e4811a1a87837a",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=979",
+      "date": "2021-06-08",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-979-2021",
+      "act": "yea",
+      "motion": "House Floor: HB 979 PN 1706, FP",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA House, House Floor: HB 979 PN 1706, FP, 2021-06-08: yea (tally 124–79); census gate: none.",
+      "subjects": [
+        "local gun and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs",
+        "localities barred from suing gun makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-979-2021.amended.pdf",
+          "sha256": "494cfe800bdb89be85cf7c2a28a81c203b581e7614e7bc8f69211cb4c736f5dd"
+        }
       }
     }
   ],
@@ -271,6 +655,29 @@
       "found": 1,
       "at": "2026-10-31T18:07:00.902Z",
       "by": "identity-pa-2026-10-31-raw-votes"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "concealed carry permits",
+        "Second Amendment rights",
+        "gun owner rights seminars",
+        "sponsored gun bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site repdavanzo.com press releases and video page",
+        "PA House member page palegis.us bio 1875 (shows 59 sponsored bills for 2025-2026 but the full list needs the 'View more' link; the three bills visible are tax and school bills, none on guns)",
+        "blocked: https://legiscan.com/legislator/people/search?q=Davanzo",
+        "ivoterguide 2022 profile (gun questions unanswered)",
+        "Ballotpedia not reviewed (pages return empty)",
+        "web search on name plus Second Amendment and on sponsored carry bills; no gun bill with him as sponsor was confirmed"
+      ],
+      "found": 3,
+      "at": "2026-10-30T20:53:34.332Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -50,6 +50,33 @@
       "found": 0,
       "at": "2026-10-27T15:11:31.656Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns",
+        "background checks",
+        "red flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check (appointed executive official, not a legislator)",
+        "web search: name plus gun and Second Amendment words, nothing on the subject",
+        "Ballotpedia: not reliable through fetch tool",
+        "https://en.wikipedia.org/wiki/Elise_Nieshalla (shows she was appointed Indiana State Comptroller, ran for State Treasurer 2022; no gun mention; used only to confirm identity)",
+        "blocked: https://indianacapitalchronicle.com/2025/06/26/indiana-comptroller-elise-nieshalla-launches-reelection-bid/ (403)",
+        "search results show she launched a 2026 re-election bid for comptroller; ballot listing not fetched",
+        "comptroller office press and report pages in search results: nothing on the subject",
+        "not a legislator; no bills to list"
+      ],
+      "found": 0,
+      "at": "2026-10-31T20:37:46.296Z",
+      "by": "source-collector"
     }
   ]
 }

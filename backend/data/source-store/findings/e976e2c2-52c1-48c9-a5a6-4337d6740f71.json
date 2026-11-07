@@ -1,0 +1,33 @@
+{
+  "politician_id": "e976e2c2-52c1-48c9-a5a6-4337d6740f71",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "limits on who may have a gun",
+        "Second Amendment and gun rights in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "in scope: on the 2026-11-03 general-election ballot for Indiana U.S. House District 3 (https://ivoterguide.com/candidate/55607/race/30586/election/1456 and https://www.wboi.org/2026-04-17/rep-marlin-stutzman-faces-a-rematch-in-the-republican-primary-for-indianas-3rd-congressional-district)",
+        "campaign site kellythompsonforcongress.com home page: nothing on the subject",
+        "campaign site policy pages (constitution, rule of law): nothing on the subject",
+        "campaign newsletter page (substack): nothing on the subject",
+        "voter guide questionnaire (ivoterguide): Second Amendment question shown as 'Did not answer'",
+        "not a sitting legislator: no sponsored-bill list to open",
+        "Ballotpedia: not reachable by fetch tool, not reviewed",
+        "blocked: https://indianacapitalchronicle.com/voter-guides/contests/congressional-district-3/",
+        "blocked: https://bluevoterguide.org/IN/candidate_Kelly_Thompson/323678",
+        "one news search on name plus guns: nothing from her on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-31T00:47:44.501Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "politician_id": "5c5760c3-7d1c-4a4a-9cf0-918a88d7d711",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm export rules (federal agency gun rule)",
+        "Second Amendment general statements",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity: a Yahoo news page (fetched via the fetch tool, summary only) calls Howard Lutnick President Trump's nominee to head the Commerce Department (dated 2025-02-03); he is a Commerce Secretary, not a sitting member of Congress as the brief says, so no congress.gov sponsorship list applies",
+        "blocked: https://www.commerce.gov/about/leadership/howard-lutnick (403)",
+        "blocked: https://www.commerce.gov/node/6699 (403 bot check)",
+        "blocked: https://www.lee.senate.gov/2025/3/lee-leads-gop-urging-end-to-biden-firearm-export-rule (403)",
+        "blocked: https://www.yahoo.com/news/trump-nominee-review-biden-restrictions-222312198.html (429 on the plain curl; the fetch tool returned only a summary, so no passage could be copied)",
+        "not reviewed: Stanton letter PDF on firearm export rule (link returned 404)",
+        "two web searches on name plus gun words; they showed only third-party reports that, as nominee in written answers and at a 2025-06-05 hearing, he spoke on the Biden-era firearm export rule; the original text was not reachable, so nothing is saved",
+        "Ballotpedia not reviewed (pages return empty to the fetch tool)",
+        "no own-words or record found that could be copied from a page I fetched"
+      ],
+      "found": 0,
+      "at": "2026-10-30T22:32:58.969Z",
+      "by": "source-collector"
+    }
+  ]
+}

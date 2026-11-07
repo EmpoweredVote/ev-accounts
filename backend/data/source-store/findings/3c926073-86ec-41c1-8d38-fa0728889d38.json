@@ -42,6 +42,28 @@
       "found": 0,
       "at": "2026-10-27T01:31:35.412Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment general statement",
+        "gun rules",
+        "any gun policy position"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "candidate profile https://www.ballotready.org/people/gerald-l-heikes (confirms 2026 U.S. Senate candidate in Alaska, general election Nov 3 2026; nothing on the subject)",
+        "news report https://alaskapublic.org/news/politics/elections/2026-08-18/u-s-senate-race-will-likely-have-two-dan-sullivans-and-a-mary-peltola (names him; nothing on the subject)",
+        "blocked: https://alaskabeacon.com/voter-guides/contests/2026-alaska-congress-u-s-senate/ (403); search summary said he did not answer that guide",
+        "no campaign website found (search results and FEC-based guide note none); not reviewed",
+        "no legislative record (not a sitting legislator)",
+        "Ballotpedia (not usable via fetch tool)",
+        "three news searches: nothing by him on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-30T20:49:10.903Z",
+      "by": "source-collector"
     }
   ]
 }

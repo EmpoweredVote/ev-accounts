@@ -52,7 +52,8 @@
         },
         {
           "name": "Allred",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "1154e2d5-41b8-444d-b8f0-d9957999d6e7"
         },
         {
           "name": "Auchincloss",
@@ -69,7 +70,8 @@
         },
         {
           "name": "Bass",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "21c9e711-fb18-4afb-884f-08acd2b598ba"
         },
         {
           "name": "Beatty",
@@ -97,7 +99,8 @@
         },
         {
           "name": "Blunt Rochester",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "f9abc9e1-e1d5-4cd9-9983-a403dc94a5fc"
         },
         {
           "name": "Bonamici",
@@ -119,7 +122,8 @@
         },
         {
           "name": "Brown",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "60329719-1d5b-4bb4-8295-38ea18f6f378"
         },
         {
           "name": "Brownley",
@@ -263,7 +267,8 @@
         },
         {
           "name": "Davis, Danny K.",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "0e65d006-9ede-4d90-b13b-23874d67b674"
         },
         {
           "name": "Dean",
@@ -291,7 +296,8 @@
         },
         {
           "name": "Delgado",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "ff090074-25d8-4db5-96e8-c60de6893e6d"
         },
         {
           "name": "Demings",
@@ -336,7 +342,8 @@
         },
         {
           "name": "Evans",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "3c962502-99c7-46ec-ae6b-0c69143f571c"
         },
         {
           "name": "Fitzpatrick",
@@ -360,7 +367,8 @@
         },
         {
           "name": "Gallego",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "0fd03798-714d-4976-a9b6-448aa22d8a68"
         },
         {
           "name": "Garamendi",
@@ -523,7 +531,8 @@
         },
         {
           "name": "Kim (NJ)",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "e7c985f0-7804-485e-8ad7-8e71c0129a00"
         },
         {
           "name": "Kind",
@@ -611,7 +620,8 @@
         },
         {
           "name": "Luria",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "2a22bd69-fd7a-4782-9057-4647fdb4e7cb"
         },
         {
           "name": "Lynch",
@@ -660,11 +670,13 @@
         },
         {
           "name": "McNerney",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "0267f457-cd3f-4790-b0c8-76ec616de3f0"
         },
         {
           "name": "Meeks",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "b2f09c72-ceda-4942-a7db-9f0c5f229713"
         },
         {
           "name": "Meng",
@@ -872,7 +884,8 @@
         },
         {
           "name": "Schiff",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "8a27a8b7-88b4-4f79-bbcf-d1d0e70d4032"
         },
         {
           "name": "Schneider",
@@ -895,7 +908,8 @@
         },
         {
           "name": "Scott, David",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "281d268a-9f07-4bee-827f-94d7eb7d0716"
         },
         {
           "name": "Sewell",
@@ -909,7 +923,8 @@
         },
         {
           "name": "Sherrill",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "6609f174-6c1e-4fe9-afe6-2ed20f5f2463"
         },
         {
           "name": "Sires",
@@ -917,7 +932,8 @@
         },
         {
           "name": "Slotkin",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "ebe10065-0025-46e5-897e-7a81e4c77ecf"
         },
         {
           "name": "Smith (NJ)",
@@ -936,7 +952,8 @@
         },
         {
           "name": "Spanberger",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "46c6ebb0-137a-46aa-b6fa-17af31aa4ef1"
         },
         {
           "name": "Speier",
@@ -959,7 +976,8 @@
         },
         {
           "name": "Suozzi",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "a1c608d4-3feb-4bb0-b797-00453d08a0e8"
         },
         {
           "name": "Swalwell",
@@ -1059,7 +1077,8 @@
         },
         {
           "name": "Welch",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "9a9874ab-159f-4ffb-b88e-f058df02d5fa"
         },
         {
           "name": "Wexton",
@@ -1100,7 +1119,8 @@
         },
         {
           "name": "Armstrong",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "7544a9ec-53aa-4ed1-86a3-5f5f4d399544"
         },
         {
           "name": "Arrington",
@@ -1124,7 +1144,8 @@
         },
         {
           "name": "Banks",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "023c6644-356e-4afb-925b-e20f9c32209b"
         },
         {
           "name": "Barr",
@@ -1187,7 +1208,8 @@
         },
         {
           "name": "Budd",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "401f1fab-c996-4b1a-92f7-2817c5dd4619"
         },
         {
           "name": "Burchett",
@@ -1210,7 +1232,8 @@
         },
         {
           "name": "Carl",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "6a04d1f3-1065-45cb-9084-60906a70383b"
         },
         {
           "name": "Carter (GA)",
@@ -1271,7 +1294,8 @@
         },
         {
           "name": "Curtis",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "b87583fe-2348-4bf3-aba5-12f5f88d3606"
         },
         {
           "name": "Davidson",
@@ -1458,7 +1482,8 @@
         },
         {
           "name": "Harris",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "ff596d3f-3056-43e2-a80a-8c4b8fd9abde"
         },
         {
           "name": "Harshbarger",
@@ -1522,7 +1547,8 @@
         },
         {
           "name": "Jackson",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "184670b8-6647-4f84-a5fb-f2a9cfae3f5a"
         },
         {
           "name": "Jacobs (NY)",

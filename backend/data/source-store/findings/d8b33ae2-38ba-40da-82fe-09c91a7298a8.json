@@ -1,0 +1,126 @@
+{
+  "politician_id": "d8b33ae2-38ba-40da-82fe-09c91a7298a8",
+  "findings": [
+    {
+      "id": "e076c8b48278b31632ee890048920af3952a61ffb83895b5d23bfa476c64b17f",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Rush'), linked to Tonya Rush (district 67) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.751Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9302fa7bcbb9205f150b8afd9e072506397909e3ae094c01acad3b2775cdebe0",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn052.pdf",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "MO-HCR-48-2026",
+      "act": "nay",
+      "motion": "House: HCR 48 read the third time and passed",
+      "note": "House roll call as printed ('Rush'), linked to Tonya Rush (district 67) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.231Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House pages on house.mo.gov: not fetched (robots rule)",
+        "blocked: https://ballotpedia.org (not fetched per instruction)",
+        "web searches on name plus voter ID / citizenship / elections: no own words on the subject",
+        "blocked: https://bluevoterguide.org/MO/candidate_Tonya_Rush/547585 (403)",
+        "blocked: https://goodparty.org/people/tonya-rush-e6956d7c (429)",
+        "not reviewed: mohousedemcaucus.com (host did not resolve)",
+        "identity not confirmed from a fetched page (search results only): unfindable by fetch; nothing on the subject found"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:12:41.721Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks / election integrity"
+      ],
+      "places": [
+        "identity confirmed: https://www.ballotready.org/people/tonya-rush (fetched; lists her as holder of Missouri House District 67 until 2027-01-06 and a candidate for that seat in the 2026 general election)",
+        "https://thecandidate.com/states/mo/legislature/house/67/tonya-rush (no sourced quotes from her; page says quotes are pending)",
+        "3 web searches on name plus voter ID, SAVE Act, citizenship, campaign site, questionnaire, newsletter, interview: no statement by her on the subject",
+        "blocked: https://www.mohousedemcaucus.com/post/black-history-month-highlight-rep-tonya-rush (host did not resolve); https://mohousedemcaucus.com/team-1/tonya-rush (host did not resolve)",
+        "blocked: https://trackbill.com/legislator/missouri-representative-tonya-rush/1034-27818/ (host did not resolve)",
+        "not reviewed: https://whatsthevote.com/state-legislator/tonya-rush-b45073a9 (redirect not followed); no campaign site, newsletter on documents.house.mo.gov, or questionnaire found",
+        "house.mo.gov, newsroom.house.mo.gov, Ballotpedia, On the Record: not fetched this round (per instruction)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T13:27:04.282Z",
+      "by": "research-mo-r2-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:10:53.751Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:14:55.231Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

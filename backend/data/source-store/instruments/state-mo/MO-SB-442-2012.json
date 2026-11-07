@@ -1,0 +1,33 @@
+{
+  "id": "MO-SB-442-2012",
+  "scope": "state:mo",
+  "title": "SB 442 (2012 Second Regular Session (96th General Assembly)): Establishes photo identification requirements for voting",
+  "urls": [
+    "https://www.senate.mo.gov/12info/BTS_Web/Bill.aspx?SessionType=R&BillID=31",
+    "https://www.senate.mo.gov/12info/pdf-bill/intro/SB442.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) SB 442 introduced, section 115.427 subsection 1\n(quote) 115.427. 1. [Before receiving a ballot, voters] Persons seeking to vote in a public election shall establish their identity and eligibility to vote at the polling place by presenting a form of personal identification to election officials. [\"Personal identification\" shall mean only] No form of personal identification other than the forms listed in this section shall be accepted to establish a voter's qualifications to vote. Forms of personal identification that satisfy the requirements of this section are any one of the following: (1) Nonexpired Missouri driver's license [showing the name and a photograph or digital image of the individual]; [or] (2) Nonexpired or nonexpiring Missouri nondriver's license [showing the name and a photographic or digital image of the individual]; [or] (3) Any identification containing a photograph of the individual that is issued by the Missouri National Guard, the United States armed forces, or the United States Department of Veterans Affairs to a member or former member of the Missouri N ational Guard or the United States armed forces and that does not have an expiration date; or (4) A document that satisfies all of the following requirements: (a) The document contains the name of the individual to whom the document was issued, and the name substantially conforms to the most recent signature in the individual's voter registration record; (b) The document shows a [photographic or digital image] photograph of the individual; (c) The document includes an expiration date, and the document is not expired, or if expired, the document expired [not before] after the date of the most recent general election; and (d) The document was issued by the United States or the state of Missouri[; or (4) Any identification containing a photographic or digital image of the individual which is issued by the Missouri National Guard, the United States armed forces, or the United States Department of Veteran Affairs to a member or former member of the Missouri National Guard or the United States armed forces and that does not have an expiration date].\n(b_no_id_remedy)\n(section) SB 442 introduced, section 115.427 affidavit and provisional-ballot subsections\n(quote) An individual who appears at a polling place without a form of personal identification [in the form] described in [subsection 1 of] this section and who is otherwise qualified to vote at that polling place may execute an affidavit averring that the voter is the person listed in the precinct register [and that the voter], does not possess a form of personal identification specified in this section and is unable to obtain a current and valid form of personal identification because of: (1) A physical or mental disability or handicap of the voter, if the voter is otherwise competent to vote under Missouri law; [or] (2) The inability to pay for a birth certificate or other supporting docum entation that is necessary to obtain the identification required to vote under this section; (3) A sincerely held religious belief against the forms of personal identification described in [subsection 1 of] this section; or [(3)] (4) The voter being born on or before January 1, 1941. Upon executing such affidavit, the individual may cast a provisional ballot. Such provisional ballot shall be counted, provided the election authority verifies the identity of the individual by comparing that individual's signature to the signature on file with the election authority and determines that the individual was eligible to cast a ballot at the polling place where the ballot was cast.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) 115.430: provisional ballot rules apply in all elections and refer to 115.427 identification or affidavit.\n(other) Contingent effective date: the photo-ID sections take effect only if the constitutional amendment (companion SJR) is adopted.",
+  "sponsors": [
+    {
+      "name": "Stouffer",
+      "role": "prime",
+      "version": "Introduced version (LR 4292S.01I); the bill page shows a later SCS SB 442 (LR 4292S.02C) placed on the informal calendar 5/18/2012, not read here"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04T00:00:00Z)",
+    "fetched_at": "2026-11-04T00:00:00Z",
+    "method": "curl"
+  }
+}

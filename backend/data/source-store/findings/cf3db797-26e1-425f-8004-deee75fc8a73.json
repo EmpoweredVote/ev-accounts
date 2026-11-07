@@ -1,0 +1,146 @@
+{
+  "politician_id": "cf3db797-26e1-425f-8004-deee75fc8a73",
+  "findings": [
+    {
+      "id": "e076c8b48278b31632ee890048920af3952a61ffb83895b5d23bfa476c64b17f",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Aune'), linked to Ashley Aune (district 14) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.747Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dfe035d919161f8e7a212ccf1893e678f2501ffe4beeebfd715e92cbb874ba82",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills221/jrnpdf/jrn070.pdf",
+      "date": "2022-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1878-2022",
+      "act": "nay",
+      "motion": "House: SS SCS HB 1878, as amended, adopted",
+      "note": "House roll call as printed ('Aune'), linked to Ashley Aune (district 14) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.747Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0f220d433217529da91203e4d05844a646285c027e6522b2c321df2adf6901e2",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills211/jrnpdf/jrn029.pdf",
+      "date": "2021-02-24",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-334-2021",
+      "act": "nay",
+      "motion": "House: HCS HB 334 read the third time and passed",
+      "note": "House roll call as printed ('Aune'), linked to Ashley Aune (district 14) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.222Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9302fa7bcbb9205f150b8afd9e072506397909e3ae094c01acad3b2775cdebe0",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn052.pdf",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "MO-HCR-48-2026",
+      "act": "nay",
+      "motion": "House: HCR 48 read the third time and passed",
+      "note": "House roll call as printed ('Aune'), linked to Ashley Aune (district 14) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.222Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks / election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings, name search also 0)",
+        "campaign site https://www.ashleyformissouri.com/ (home, about, priorities, voter-resources read; confirms she is a sitting member seeking 2026 election; nothing on ID or citizenship proof; voter-resources page only gives early and absentee voting dates)",
+        "iVoterGuide https://ivoterguide.com/candidate/56296/race/34722/election/1501 (the photo ID question is marked did not answer)",
+        "blocked: https://ballotpedia.org/Ashley_Aune (known refusal, not tried)",
+        "not reviewed: X, Facebook and Instagram accounts (login-walled)",
+        "house.mo.gov not fetched (robots rule); newsroom.house.mo.gov not fetched (rule)",
+        "web searches (3): news searches on name plus voter ID words returned no statement by her"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:14:32.900Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-04T14:10:53.747Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-04T14:14:55.222Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

@@ -51,7 +51,233 @@
         "fetched_at": "2026-10-21T03:40:10.558Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "8e32c7aa3f9375c7e2ffa3433c3ececd243af24b314c9c0b1a351318f3c1a30f",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2025190",
+      "date": "2025-07-03",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2025",
+      "act": "nay",
+      "motion": "On Motion to Concur in the Senate Amendment",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US House, On Motion to Concur in the Senate Amendment, 2025-07-03: nay (tally 218–214); census gate: multi-subject.",
+      "subjects": [
+        "end the federal tax on suppressors and short-barrelled guns",
+        "budget (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cc10645d5316ebb42651c8a53d6c6aadcffad279f2b2ae4494ca267430ab9459",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1041",
+      "date": "2026-05-21",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1041-2026",
+      "act": "nay",
+      "motion": "On Passage (Roll 190)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 190), 2026-05-21: nay (tally 216–201); census gate: none.",
+      "subjects": [
+        "VA records barred from gun background check without a judge's finding",
+        "VA fiduciary or incompetence finding not a 'mental defective' adjudication"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1041-2026.htm",
+          "sha256": "2a2784caf1b89019cb01ab04ebd2e2332984244d9935fad9618771638d40338e"
+        }
+      }
+    },
+    {
+      "id": "7ec892592e9e81a8d9eb8988f864827e569606567c2d3dc28ee24bff21b9c73b",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1181",
+      "date": "2026-07-14",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1181-2026",
+      "act": "nay",
+      "motion": "On Passage (Roll 240)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 240), 2026-07-14: nay (tally 221–201); census gate: none.",
+      "subjects": [
+        "separate payment codes for gun stores barred",
+        "state and local rules on gun-store payment codes preempted"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1181-2026.htm",
+          "sha256": "f006527184528c0f2d077b081748501c1dd86c4e2c2b83f4ce23ab419e1fb25c"
+        }
+      }
+    },
+    {
+      "id": "ca23e7025d826a863f98362cb04dbe6c7118d52ee12a75770ac7b314e80da6d5",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/2189",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "US-HR-2189-2026",
+      "act": "nay",
+      "motion": "On Passage (Roll 70)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 70), 2026-02-12: nay (tally 233–185); census gate: none.",
+      "subjects": [
+        "less-than-lethal launchers exempt from federal firearm rules",
+        "firearms and ammunition excise tax waived for those devices",
+        "exempt from National Firearms Act"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-2189-2026.htm",
+          "sha256": "dc2e63136aaa75fcc392af14f19bb2aae027e280992db65f70d454213a650e4e"
+        }
+      }
+    },
+    {
+      "id": "4ea4d8e8bb4bbd7f7cfd506501e9cef20614c760bea78fb55218eaae0d517a65",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/2243",
+      "date": "2025-05-14",
+      "date_precision": "day",
+      "instrument_id": "US-HR-2243-2025",
+      "act": "nay",
+      "motion": "On Passage (Roll 128)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 128), 2025-05-14: nay (tally 229–193); census gate: none.",
+      "subjects": [
+        "more places where off-duty and retired officers may carry concealed guns",
+        "retired officer firearms-training standards loosened"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-2243-2025.htm",
+          "sha256": "ca5f7326393fa8074705e6aa642e2b3a991c4d683236cff228e515a1bf193f9e"
+        }
+      }
+    },
+    {
+      "id": "8466fb66a133679190169c8ba67cff389c94ad384c742f6922516d8b54883347",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1564",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "US-HR-1564-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2025-03-03",
+      "note": "co sponsor of US-HR-1564-2025 (cosponsor 2025-03-03): HR 1564 (119th Congress): Ethan's Law.",
+      "subjects": [
+        "federal safe-storage offence for guns reachable by minors or prohibited people",
+        "grants to states with matching safe-storage laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1564-2025.htm",
+          "sha256": "d35362313d852ff9cc41c95f1bfcebc775eed59c7d0a3977d15ff07c13559e45"
+        }
+      }
+    },
+    {
+      "id": "9cc17769e6b06347d62ea783d25f44319a9d18405f447b73d40881ac850250de",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1674",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "US-HR-1674-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2025-03-03",
+      "note": "co sponsor of US-HR-1674-2025 (cosponsor 2025-03-03): HR 1674 (119th Congress): Keep Americans Safe Act.",
+      "subjects": [
+        "ban on magazines holding more than 15 rounds",
+        "existing magazines allowed, new ones must carry serial numbers",
+        "buy-back funding for large magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1674-2025.htm",
+          "sha256": "b8f771e36906d74c17b43c374e789b4fc50b5e10422fdd280358ad6bb18e78d7"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "safe storage",
+        "general gun-safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House site: issues page (no gun page), press-release list page 1 (nothing on the subject), site search returned 403 for the fetch",
+        "campaign site aprilmcclaindelaneyforcongress.com: home, meet-the-candidate, press releases, in-the-news, campaign-updates, endorsements (nothing on the subject; no issues page, 404)",
+        "blocked: https://www.congress.gov/member/april-mcclain-delaney/M001232 (403)",
+        "Ballotpedia: page returned empty, not reviewed: https://ballotpedia.org/April_McClain_Delaney",
+        "web search x3: only a third-party endorsement group page (https://giffords.org/candidates/april-delaney/) describing her positions in the group's words; not her own words, not saved",
+        "member is a sitting House member; a news-index page names her as defending her seat (campaign site shows 2026 re-election activity); ballot status not verified on an official election page"
+      ],
+      "found": 0,
+      "at": "2026-10-30T14:58:38.733Z",
+      "by": "source-collector"
+    }
+  ]
 }

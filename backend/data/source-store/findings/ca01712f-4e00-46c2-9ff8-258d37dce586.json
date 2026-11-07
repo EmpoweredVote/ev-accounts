@@ -1,0 +1,211 @@
+{
+  "politician_id": "ca01712f-4e00-46c2-9ff8-258d37dce586",
+  "findings": [
+    {
+      "id": "a813e82cf8b06e33e83b0a27b196c79e3459aca77bc827f3c5d7edb30f739bac",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2016/pdf/history/HB/HB0786.xml",
+      "date": "2016-03-29",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-786-2016",
+      "act": "nay",
+      "motion": "Passed as amended (third reading, yeas and nays)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS Senate, Passed as amended (third reading, yeas and nays), 2016-03-29: nay (tally 36–14); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence",
+        "church security"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/MS_HB786SG.pdf",
+          "sha256": "a1142904e692e81f08ce94bef1f5827e9d662ac1f81ce57f6330064169e08945"
+        }
+      }
+    },
+    {
+      "id": "ff08f7a0fdb5eaee3e5d1d2c42777bdeac65a7affc0cb9f7915c4db6ea53ed5f",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/senate/0860019.pdf",
+      "date": "2022-03-30",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Report of Conference Committee on H. B. No. 1510 was adopted: (0860019)",
+      "note": "Senate roll call as printed ('Butler A. (36th)'), linked to Albert Butler (district 36) via the official 2022 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dd2a12a6dee5821334b8172c5583de5ade5bdaf4f4ad0b5e1da44e4c195eeac3",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/senate/0580007.pdf",
+      "date": "2018-02-28",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-804-2018",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On H. B. No. 804. On motion of Senator Blackwell, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0580007)",
+      "note": "Senate roll call as printed ('Butler'), linked to Albert Butler (district 36) via the official 2018 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "835f1b9254dd8e6c7e5bb5cf9e45e08f7bfe29c3a96b1580aba82cc2737ab569",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2012/pdf/votes/senate/0990009.pdf",
+      "date": "2012-04-10",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-921-2012",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS On H. B. No. 921. On motion of Senator McDaniel, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed as amended, title standing as stated, by the following vote: (0990009)",
+      "note": "Senate roll call as printed ('Butler A. (36th)'), linked to Albert Butler (district 36) via the official 2012 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9843aa07be43e576f58c663963ae19b85d2585b3f0c37f86f69fc6e94abdc947",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/senate/0720054.pdf",
+      "date": "2024-03-13",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2576. On motion of Senator England, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0720054)",
+      "note": "Senate roll call as printed ('Butler'), linked to Albert Butler (district 37) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0bdc8f5070b1cefc73be1a5428135fb80819d0b830c979903e9a69d3e5147f46",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/senate/0770004.pdf",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Senate concurred in the foregoing House Amendment to S. B. No. 2588 by the following vote: (0770004)",
+      "note": "Senate roll call as printed ('Butler'), linked to Albert Butler (district 37) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dcb52dfbbb498e3bcbcc5e28c53abbdd8902d9718df53a47dc315838f4ff5043",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/senate/0320004.pdf",
+      "date": "2018-02-02",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2766-2018",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2766. On motion of Senator Blackwell, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0320004)",
+      "note": "Senate roll call as printed ('Butler'), linked to Albert Butler (district 36) via the official 2018 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "no-ID voter affidavit ballot",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register (SAVE Act, SHIELD Act SB 2588)",
+        "voter-roll citizenship checks",
+        "election integrity"
+      ],
+      "places": [
+        "identity confirmed: https://billstatus.ls.state.ms.us/members/senate/butler_(36th).xml names Albert Butler as a senator since 2010 (positive control); office held now, seat not on the 2026-11-03 ballot",
+        "On the Record (0 meetings, extract-otr run with name search)",
+        "official/campaign site: blocked: http://senatoralbertbutler.com (hosting page says account suspended)",
+        "vote-usa.org candidate page https://vote-usa.org/Intro.aspx?State=MS&Id=msbutleralbert: lists profile links only, no answers on the subject",
+        "iVoterGuide 2023 general guide https://ivoterguide.com/voter-guide/eleck/1069: no candidate profile for him found; not reviewed",
+        "news articles on the SHIELD Act (Mississippi Monitor, WTOK, Mississippi Free Press x3, SuperTalk, MPB, Magnolia Tribune): read, none name him",
+        "10-or-fewer web searches (6 run: voter ID, photo ID, SAVE/proof of citizenship, questionnaire, floor remarks, Free Press/Magnolia Tribune): nothing on the subject in his own words",
+        "blocked: https://ballotpedia.org (refused by fetch rules, not attempted)",
+        "not fetched by rule: mississippitoday.org, clarionledger.com, hattiesburgamerican.com, djournal.com, wlbt.com",
+        "blocked: https://justfacts.votesmart.org (answers 403 per standing notes, not attempted)"
+      ],
+      "found": 0,
+      "at": "2026-11-05T23:11:25.421Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 6,
+      "at": "2026-11-05T23:52:51.757Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

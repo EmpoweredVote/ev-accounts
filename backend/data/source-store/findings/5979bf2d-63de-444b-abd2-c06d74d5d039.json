@@ -1,0 +1,217 @@
+{
+  "politician_id": "5979bf2d-63de-444b-abd2-c06d74d5d039",
+  "findings": [
+    {
+      "id": "93671c02aace8dce57ca61dfa60cba28a1a2b217e255d1e95808349f86390542",
+      "kind": "own-words",
+      "url": "https://www.haskinsforkansas.com/post/haskins-questions-kansas-bill-requiring-citizenship-status-on-driver-s-licenses",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Critics in the Legislature, including Haskins, questioned whether the change would create unnecessary complications for residents and whether existing safeguards already verify voter eligibility.",
+      "note": "Post on his campaign site, bylined to him, written in the third person (posted Feb 13; year not shown on page). It describes his questions in House debate on a bill to print citizenship status on driver's licenses. Not a first-person quote.",
+      "subjects": [
+        "citizenship status on driver's licenses",
+        "existing checks of voter eligibility"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:49:50.082Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e2f32cc853424ab718a44e43bcf6810ccec08fe05230eef5fbddf1a8b124a64d",
+      "kind": "own-words",
+      "url": "https://www.haskinsforkansas.com/post/kansas-lawmakers-debate-proposed-constitutional-amendment-on-voting",
+      "date": "2025-02-05",
+      "date_precision": "day",
+      "passage": "During the debate, Representative Kirk Haskins of Topeka questioned whether additional constitutional language was needed given that Kansas law already requires voters to be U.S. citizens.",
+      "note": "Campaign-site post (shown Feb 5; the news story it cites is dated 2025-02-04), third person. Says he questioned a proposed constitutional amendment on citizen voting because state law already requires citizenship.",
+      "subjects": [
+        "constitutional amendment on citizen voting",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:49:50.082Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "317ef8272caa18e48429297a296ad882f8908f6ffe8184ab03b19cc63a8e2619",
+      "kind": "own-words",
+      "url": "https://www.haskinsforkansas.com/post/haskins-questions-purpose-of-voting-amendment",
+      "date": "2026-10",
+      "date_precision": "month",
+      "passage": "As Kansas voters prepare to decide a constitutional amendment concerning citizenship and voting eligibility, Representative Kirk Haskins is questioning the motivation behind the proposal.",
+      "note": "Campaign-site post about the 2026 ballot amendment on citizen voting, third person, citing a 2026-10-30 news story. States that he questions the reason for the amendment.",
+      "subjects": [
+        "constitutional amendment on citizen voting",
+        "proof of citizenship"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:49:50.082Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8272db7065ed076233e522e32b4a81ccc3a3351ed4062b92d4325e25c8cf9367",
+      "kind": "own-words",
+      "url": "https://www.haskinsforkansas.com/post/haskins-questions-double-standard-in-election-law-dispute",
+      "date": "2026-09-23",
+      "date_precision": "day",
+      "passage": "While Haskins described that as a “minor misstep,” he said the larger issue deserves scrutiny, warning that selective attention and bias “damages public trust in our elected officials and ultimately our democracy.”",
+      "note": "Campaign-site post (date from the news story it cites). He spoke about uneven enforcement of election law after a call to investigate gift cards offered to students registering to vote. Related to voter registration rules, not ID.",
+      "subjects": [
+        "election law enforcement",
+        "voter registration drives"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:49:50.082Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "61cd2949cdfafbd07ae280edb03ab45a6273ae5c730f9a0a4a41ad2d22cbb51c",
+      "kind": "own-words",
+      "url": "https://www.haskinsforkansas.com/post/kansas-legislature-passes-election-bill-package-as-haskins-engages-in-debate-on-voting-changes",
+      "date": "2026-03-27",
+      "date_precision": "day",
+      "passage": "As the Kansas Legislature advanced a package of election-related bills altering voting procedures, Representative Kirk Haskins of Topeka participated in ongoing debates over how the changes could affect voters across the state.",
+      "note": "Campaign-site post, third person, giving no position of his own. Shows he took part in debate on the 2026 election bill package.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:49:50.082Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c219fe3754d2a4205c7f4df7b0eee9545951604494d4cca3e305ee08fdc67c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day051_20260326/vote_records/0342_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "House: Conference Committee Report was adopted",
+      "note": "House roll call as printed ('Haskins'), linked to Kirk Haskins (district 53) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.951Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1eb42db9bde1e358d45830781df62725c9ce8abcb4f9a4b11b626d8974c58e80",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day053_20260409/vote_records/0408_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "House: Motion to override veto prevailed",
+      "note": "House roll call as printed ('Haskins'), linked to Kirk Haskins (district 53) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.951Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d78e075f99a6894d381835920e3c20b2e83e350f416352edaa8f164c0df580f1",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day023_20260212/vote_records/0067_HB2448.odt",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2448-2026",
+      "act": "nay",
+      "motion": "House: Emergency Final Action - Passed as amended",
+      "note": "House roll call as printed ('Haskins'), linked to Kirk Haskins (district 53) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.951Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote",
+        "citizenship on driver's licenses",
+        "constitutional amendment on citizen voting",
+        "voter-roll checks against SAVE",
+        "election law enforcement"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site haskinsforkansas.com: read the body of the posts on the driver's license citizenship bill, the election bill package, the constitutional amendment, the election committee bills, the amendment-purpose post, and the gift-card post; the About page has nothing on the subject; the /news index returned 404",
+        "kslegislature.gov member page (confirms Rep. Kirk Haskins, District 53, Shawnee County; no sponsored bills listed)",
+        "Sunflower State Journal article on election bills (fetched; no words from him)",
+        "Johnson County Post article of 2026-10-30: fetched via the page tool only; a plain curl was refused (403), so no passage copied",
+        "blocked: https://kansasreflector.com/2025/02/04/kansas-democrats-blast-redundant-constitutional-amendment-as-an-attempt-to-drive-gop-voters-to-polls/",
+        "blocked: https://www.easternprogress.com/kansas-legislature-passes-package-of-elections-bills-that-alter-voting-processes/article_2f2634b0-61c5-5c64-9b26-e21884b2da2e.html (429)",
+        "blocked: https://ballotpedia.org (not fetched, listed as refusing)",
+        "two web searches on his name plus voter ID, SAVE and citizenship words"
+      ],
+      "found": 5,
+      "at": "2026-11-04T16:49:50.082Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-04T19:13:24.951Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "politician_id": "2b40ca6b-8bcf-42fb-8fc5-657bfa707c72",
+  "findings": [
+    {
+      "id": "e076c8b48278b31632ee890048920af3952a61ffb83895b5d23bfa476c64b17f",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Dean'), linked to Jeremy Dean (district 132) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.748Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9302fa7bcbb9205f150b8afd9e072506397909e3ae094c01acad3b2775cdebe0",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn052.pdf",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "MO-HCR-48-2026",
+      "act": "nay",
+      "motion": "House: HCR 48 read the third time and passed",
+      "note": "House roll call as printed ('Dean'), linked to Jeremy Dean (district 132) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.223Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "documentary proof of citizenship",
+        "mail-ballot ID",
+        "voter-roll checks / non-citizen voting"
+      ],
+      "places": [
+        "identity check: https://www.ksmu.org/show/informed-voter-coalition/2024-10-17/missouri-house-district-132 (2024 interview; only initiative-petition answers, off subject)",
+        "https://www.upballot.com/jeremy-dean/about/ nothing on the subject",
+        "https://suntimesnews.com/?p=151488 (corporate money amendment, off subject)",
+        "On the Record (0 meetings)",
+        "web searches on name plus subject words (several, nothing on the subject)",
+        "blocked: https://ballotpedia.org (not fetched, per instruction)",
+        "house.mo.gov member pages not fetched (URLs contain ?, barred by robots.txt)",
+        "nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:04:22.731Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:10:53.748Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:14:55.223Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

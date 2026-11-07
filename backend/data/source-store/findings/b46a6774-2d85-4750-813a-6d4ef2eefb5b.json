@@ -24,6 +24,269 @@
         "fetched_at": "2026-10-27T15:10:40.700Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "de993072b1f015691757356966b25be35f10f79ccfc21b9e05ca9348996cbcde",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "Roll Call #208 - Question on acceptance of conference committee report",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA Senate, Roll Call #208 - Question on acceptance of conference committee report, 2024-07-18: yea (tally 35–5); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db16b98b521d382c722d5503605116e48c77fb9d34798b9816992f739c986730",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "Senate Engrossed Roll Call #114",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA Senate, Senate Engrossed Roll Call #114, 2024-02-01: yea (tally 37–3); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "b217bf7236d592008af6b6b55e2f9966e9a1bad25733c3822a32a66bc1d68a0d",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/House/H4376",
+      "date": "2014-07-31",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4376-2013",
+      "act": "yea",
+      "motion": "Acceptance of conference committee report (Roll Call #473)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA Senate, Acceptance of conference committee report (Roll Call #473), 2014-07-31: yea (tally 37–3); census gate: multi-subject.",
+      "subjects": [
+        "firearm license classes merged and Class B licences phased out",
+        "new penalties for shooting and for trafficking guns into the state",
+        "background-check records sent to the federal system",
+        "ban on carrying firearms on school and college grounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "malegislature.gov roll-call PDFs + LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:34:02.477850Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4376-2013.introduced.pdf",
+          "sha256": "b94514a66e779c1400d1b875eb3aac207f6b1b1f12f9928fd8d977feab23bb61"
+        }
+      }
+    },
+    {
+      "id": "767c668122bf86e324f6d9a6719f5b58f7381ff23e94c183d816b849ebaf9525",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4670",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4670-2017",
+      "act": "yea",
+      "motion": "Senate Committee of conference report accepted, in concurrence  Roll Call #435",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MA Senate, Senate Committee of conference report accepted, in concurrence  Roll Call #435, 2018-06-28: yea (tally 36–1); census gate: near-unanimous.",
+      "subjects": [
+        "extreme risk protection orders to remove guns from people at risk of harming self or others",
+        "protection order added as a bar to gun licenses",
+        "stun gun rules and locked storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4670-2017.introduced.pdf",
+          "sha256": "6b37958358a3f01548ef0d16c386b3caaf5993d5c100f88279ff5b45ad1fe098"
+        }
+      }
+    },
+    {
+      "id": "6eb33f757367eef5fa28ef6b21b153d559fb35d0213d69abf7f8bb3a3d299837",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/191/S1388",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MA-S-1388-2019",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MA-S-1388-2019 (LegiScan sponsor list): S1388 (191st General Court): Relative to crime gun data reporting and analysis.",
+      "subjects": [
+        "biennial report on crime gun trace and sales data"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-S-1388-2019.introduced.pdf",
+          "sha256": "ef4cb64fc242ae7df425557408dc449e1507668db996e81266a94029eb68522b"
+        }
+      }
+    },
+    {
+      "id": "09f812fad57aaf1ce6e7df352255be45a5bfe6f62034bafa429485969bc5b86b",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/S1496",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MA-S-1496-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MA-S-1496-2023 (LegiScan sponsor list): S1496 (193rd General Court): Relative to ghost guns.",
+      "subjects": [
+        "ban on making, selling or possessing guns and frames without a serial number",
+        "license needed to make more than one gun a year or to 3D-print or CNC-mill guns",
+        "ban on sending digital gun-making files to unlicensed people",
+        "ban on undetectable and disguised firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-S-1496-2023.introduced.pdf",
+          "sha256": "9a9d2b6679f1aeb09e45b59a489422562e26ad916926d061a5260b3072ae3d2a"
+        }
+      }
+    },
+    {
+      "id": "a49321a9189f7ca84fa4fa78cfcdfb573930994696fdad32bd68e165c5f939b3",
+      "kind": "own-words",
+      "url": "https://www.wbur.org/news/2024/01/26/gun-law-reform-massachusetts-senate",
+      "date": "2024-01-25",
+      "date_precision": "day",
+      "passage": "\"Massachusetts gun laws are currently inadequate at preventing the unlawful possession of guns, and particularly the growing phenomenon of untraceable ghost guns,\" Creem said. \"This bill will track these unlicensed weapons the same as any other gun and keep them out of the hands of people who are not licensed to carry.\"",
+      "note": "Quoted by WBUR at a Senate press conference on 2024-01-25 presenting the Senate gun bill. She says current law is weak on untraceable guns and the bill would track them.",
+      "subjects": [
+        "untraceable home-made guns",
+        "serial numbers on gun parts"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:37:05.114Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd20d351081b24cac4503ac15c7a169d8445b47bb5e734c62fe9b1d8326ba5cf",
+      "kind": "own-words",
+      "url": "https://www.wbur.org/news/2024/02/02/mass-senate-passes-gun-control",
+      "date": "2024-02-02",
+      "date_precision": "day",
+      "passage": "\"I believe strongly that the bill before us will reduce gun deaths and gun injuries in Massachusetts, and that it will do so without infringing on gun owners' rights,\" said Sen. Cynthia Creem, who wrote the bill after months of private meetings with advocacy groups, prosecutors, and police.",
+      "note": "Quoted by WBUR on the Senate floor the day the Senate passed its gun bill. She says the bill cuts gun deaths without infringing on gun owners' rights.",
+      "subjects": [
+        "general statement on gun rights and gun safety laws",
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:37:05.114Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2417d77f5684778af57b0da4a8e2d60c4c63f3333f21c406aff632bc8abb1850",
+      "kind": "record",
+      "url": "https://www.wbur.org/news/2024/01/26/gun-law-reform-massachusetts-senate",
+      "date": "2024-01-25",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "author",
+      "note": "Per WBUR (not an official page), the Senate gun package advanced as an amendment she filed striking and replacing the entire text of the House bill H.4139. Confirm against the official Senate record.",
+      "subjects": [
+        "untraceable home-made guns",
+        "general statement on gun rights and gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:37:05.114Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c40c0388425b334d4ff56be7d61b8398454cf14c72e31a070e289b0ceb2a02a0",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/HD4266",
+      "date": "2017-10-04",
+      "date_precision": "day",
+      "instrument_id": "MA-HD-4266-2017",
+      "act": "author",
+      "note": "Lead petitioner (joint petition of Representative Linsky and Senator Creem) on House docket 4266 (190th General Court, 2017), An Act prohibiting large capacity feeding devices and devices that increase the rate of discharge of a weapon. Petitioner list read from the official bill page; date is the filing date shown for the docket.",
+      "subjects": [
+        "ban on large-capacity magazines",
+        "devices that raise the rate of fire"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T02:26:55.142Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -77,6 +340,43 @@
       "found": 1,
       "at": "2026-10-27T15:10:40.700Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "untraceable home-made guns",
+        "general statement on gun rights and gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "official site (https://senatorcindycreem.com/bio): blocked: connection refused",
+        "WBUR 2024-01-26 and 2024-02-02, New England Public Media 2024-02-02: quotes found, used",
+        "WBUR 2024-08-12: paraphrase only, not saved",
+        "Ballotpedia: not reviewed (returns empty to fetch tool)",
+        "Axios 2026-10-13 ballot question piece: blocked: https://www.axios.com/local/boston/2026/10/13/massachusetts-question-9-gun-law-ballot-2026-vote-yes-no-repeal-ghost-guns-red-flag (403)"
+      ],
+      "found": 3,
+      "at": "2026-11-01T01:37:05.114Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on large-capacity magazines",
+        "devices that raise the rate of fire"
+      ],
+      "places": [
+        "official bill page https://malegislature.gov/Bills/190/HD4266 and its Petitioners tab (orchestrator check, 2026-10-31): docket text says \"By Representative Linsky of Natick and Senator Creem, a joint petition\"; lead petitioners listed first"
+      ],
+      "found": 1,
+      "at": "2026-11-01T02:26:55.142Z",
+      "by": "source-collector"
     }
   ]
 }

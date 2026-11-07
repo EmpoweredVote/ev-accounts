@@ -186,6 +186,110 @@
         "fetched_at": "2026-10-28T15:28:56.927Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "52874f9774dd85305f8decce37f6cb5d1197b0fccbf58e339d748a0f1c3bff7c",
+      "kind": "own-words",
+      "url": "https://www.ltgov.texas.gov/?p=3419",
+      "date": "2015-02-02",
+      "date_precision": "day",
+      "passage": "“I have asked the chair of the committee to schedule these two bills, and the Campus Carry (Senate Bill 11) bill which was referred last week, for a public hearing as soon as possible.",
+      "note": "Statement from his office when he referred SB 342 (carry handguns, open and concealed, without a license) and SB 346 (open carry for licence holders) to the Senate State Affairs Committee. He continues in the same statement that he looks forward to working on these 2nd Amendment priorities.",
+      "subjects": [
+        "carry a gun without a permit",
+        "open carry",
+        "guns on campus"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T17:24:30.106Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e4118c383290fea576a6b72f48b3166600fcd6e1a852196bac43d2ae5bd9708b",
+      "kind": "own-words",
+      "url": "https://www.texastribune.org/2018/07/24/texas-lt-gov-dan-patrick-states-opposition-red-flag-gun-laws",
+      "date": "2018-07-24",
+      "date_precision": "day",
+      "passage": "\"Regarding the topic of 'Red Flag' laws, which was discussed today in the select committee, I have never supported these policies, nor has the majority of the Texas Senate,\" Patrick said.",
+      "note": "Quoted by the Texas Tribune from a news release he issued after a Senate select committee hearing on red flag laws.",
+      "subjects": [
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T17:24:30.106Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c3848b5903c1833439d34aa478a4a24a2d6de890d9be7be4973f8006938bca95",
+      "kind": "own-words",
+      "url": "https://www.texastribune.org/2021/04/19/texas-constitutional-carry-senate/",
+      "date": "2021-04-19",
+      "date_precision": "day",
+      "passage": "“If we have the votes to pass a permitless carry bill off the Senate floor, I will move it,\" Patrick said in a statement.",
+      "note": "Statement on House Bill 1927 (permitless handgun carry). In the same statement, per the Tribune, he says the Senate did not at that point have the votes and that he planned to meet with law enforcement, the NRA and Gun Owners of America to look for a path.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T17:24:30.106Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9099fc7cc218b6b820f3e506d320aa0cc894840205679ab7153bd3932b9716a",
+      "kind": "own-words",
+      "url": "https://www.ltgov.texas.gov/2021/04/15/lt-gov-dan-patrick-statement-on-the-passage-of-senate-bill-19-2/",
+      "date": "2021-04-15",
+      "date_precision": "day",
+      "passage": "“I congratulate Sen. Schwertner and the Texas Senate on the passage of Senate Bill 19 which ensures that the state of Texas will no longer do business with companies that discriminate against Second Amendment businesses.",
+      "note": "Statement on SB 19 (Stop Corporate Gun Boycotts Act). The statement goes on to say he stands with the majority of Texans who support the right to bear arms and is committed to protecting that right.",
+      "subjects": [
+        "gun-rights general statement",
+        "state contracts with firearm businesses"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T17:24:30.106Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ca467f11e99217b7a0c224433c8ad331b53cdcacd6b1e801da4256a7a3b8a6a4",
+      "kind": "own-words",
+      "url": "https://spectrumlocalnews.com/tx/austin/news/2021/05/22/lt--gov--dan-patrick-discusses-permitless-carry-compromise--priority-bills-",
+      "date": "2021-05-21",
+      "date_precision": "day",
+      "passage": "\"When you see the bill, it will be very clear that the House and Senate had two priorities, to be sure we protect Second Amendment rights for law-abiding citizens who should be able to carry. And for those convicted felons, dangerous people who can't under the law now, to make it tougher for them to carry,\" he said.",
+      "note": "Interview on Spectrum News Capital Tonight about the House-Senate compromise on permitless handgun carry (HB 1927).",
+      "subjects": [
+        "carry a gun without a permit",
+        "gun-rights general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T17:24:30.106Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -211,6 +315,33 @@
       "found": 9,
       "at": "2026-10-28T15:28:56.927Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun-rights general statements",
+        "raising the minimum age for rifles",
+        "state contracts with firearm businesses"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site ltgov.texas.gov: two statements opened (2015, 2021)",
+        "web search: Patrick on guns, red flag, permitless carry",
+        "web search: Patrick on Senate gun bills 2025",
+        "web search: Patrick after Uvalde and the minimum age for rifles (only second-hand reports, no direct quote found)",
+        "Texas Tribune 2018 and 2021 pages opened",
+        "Spectrum News 2021 interview page opened",
+        "campaign site: not reviewed, no address found",
+        "Ballotpedia: not reviewed, returns empty to the fetch tool",
+        "sponsor list: covered by LegiScan bulk check (he presides over the Senate; not an author of the bills listed)",
+        "not reviewed: https://www.texasmonthly.com/news-politics/dan-patrick-enemy-gun-control-nra/ (page returned no text)"
+      ],
+      "found": 5,
+      "at": "2026-10-31T17:24:30.106Z",
+      "by": "source-collector"
     }
   ]
 }

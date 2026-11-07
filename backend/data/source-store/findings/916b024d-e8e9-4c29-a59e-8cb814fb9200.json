@@ -1,0 +1,56 @@
+{
+  "politician_id": "916b024d-e8e9-4c29-a59e-8cb814fb9200",
+  "findings": [
+    {
+      "id": "a107a1435ef814f63cf3222794be8201067a8f443481fa4aa3f4854b27de20b3",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/94893",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Widespread civilian gun ownership and serious expectations of firearm responsibility can coexist. We should not be afraid to borrow some successful policies from other countries with strong firearm traditions, such as thorough background checks, safe storage education campaigns, and serious consequences for criminal misuse. Through it all, we should rely on evidence to inform which policies we should adopt, revise, and repeal to protect public safety without undue infringement of our rights.",
+      "note": "iVoterGuide candidate questionnaire for the 2026 Utah 2nd District race, answer to what restrictions on gun ownership are needed to protect public safety. Page is undated; shows a 2026 general election and 2026 page version.",
+      "subjects": [
+        "check every gun buyer",
+        "safe storage education",
+        "penalties for criminal misuse of guns",
+        "evidence-based gun policy"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:02:08.760Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "safe storage",
+        "restrictions on gun ownership",
+        "carry permits",
+        "assault-style guns",
+        "Second Amendment in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "iVoterGuide profile (confirms Utah 2nd District general election Nov 3 2026 candidate; own-words answer on the subject)",
+        "Salt Lake Tribune 2026-10-12 voter guide (his answers there: nothing on the subject)",
+        "BallotReady profile (nothing on the subject)",
+        "no personal campaign site found in results",
+        "not a legislator: no bill sponsorships to check",
+        "blocked: https://goodparty.org/people/robert-moesinger-0bc575fd (429)",
+        "blocked: https://ballotpedia.org/Robert_Moesinger",
+        "two web searches on name plus subject words"
+      ],
+      "found": 1,
+      "at": "2026-10-30T15:02:08.760Z",
+      "by": "source-collector"
+    }
+  ]
+}

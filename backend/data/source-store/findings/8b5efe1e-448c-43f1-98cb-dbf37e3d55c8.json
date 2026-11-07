@@ -1,0 +1,24 @@
+{
+  "politician_id": "8b5efe1e-448c-43f1-98cb-dbf37e3d55c8",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "Second Amendment"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (finished third of four in the Florida 2nd District race; WFSU page https://news.wfsu.org/state-news/2026-08-18/amanda-marie-green-wins-the-democrat-nod-and-advances-to-november-for-cd2 names her among the losing candidates)",
+        "positive control: https://news.wfsu.org/state-news/2026-04-09/brice-barnes-is-running-for-floridas-2nd-congressional-district (campaign launch page; nothing on the subject)",
+        "On the Record (0 meetings)",
+        "one web search on name plus Second Amendment: nothing on the subject",
+        "stopped after the primary loss as the brief directs"
+      ],
+      "found": 0,
+      "at": "2026-10-30T23:32:30.341Z",
+      "by": "source-collector"
+    }
+  ]
+}

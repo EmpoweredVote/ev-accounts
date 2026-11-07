@@ -74,6 +74,31 @@
       "found": 0,
       "at": "2026-10-27T22:09:34.673Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns",
+        "ghost guns",
+        "red flag law",
+        "gun safety laws",
+        "Second Amendment rights",
+        "Question 9 / 2024 firearms law"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature profile and biography page for Representative Leigh Davis, 3rd Berkshire (malegislature.gov LSD1): confirms office; nothing on the subject",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site leighdavis.org (home, priorities, what-i-stand-for, about-leigh, endorsements): nothing on the subject; policy and legislation pages returned no readable text",
+        "State House News Q&A and iBerkshires Q&A and Berkshire Edge reelection announcement: nothing on the subject",
+        "a gun-safety voter-guide listing calls her a 2024 candidate it backs, but it is a third-party label with no words of hers, so not saved",
+        "Ballotpedia: not reachable",
+        "web searches on name plus gun words: nothing found by her"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:54:26.468Z",
+      "by": "source-collector"
     }
   ]
 }

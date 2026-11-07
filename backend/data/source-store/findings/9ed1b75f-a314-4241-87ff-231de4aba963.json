@@ -21,6 +21,409 @@
         "fetched_at": "2026-10-27T21:49:29.714Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "de993072b1f015691757356966b25be35f10f79ccfc21b9e05ca9348996cbcde",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "Roll Call #208 - Question on acceptance of conference committee report",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA Senate, Roll Call #208 - Question on acceptance of conference committee report, 2024-07-18: yea (tally 35–5); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db16b98b521d382c722d5503605116e48c77fb9d34798b9816992f739c986730",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "Senate Engrossed Roll Call #114",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA Senate, Senate Engrossed Roll Call #114, 2024-02-01: yea (tally 37–3); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "b217bf7236d592008af6b6b55e2f9966e9a1bad25733c3822a32a66bc1d68a0d",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/House/H4376",
+      "date": "2014-07-31",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4376-2013",
+      "act": "yea",
+      "motion": "Acceptance of conference committee report (Roll Call #473)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA Senate, Acceptance of conference committee report (Roll Call #473), 2014-07-31: yea (tally 37–3); census gate: multi-subject.",
+      "subjects": [
+        "firearm license classes merged and Class B licences phased out",
+        "new penalties for shooting and for trafficking guns into the state",
+        "background-check records sent to the federal system",
+        "ban on carrying firearms on school and college grounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "malegislature.gov roll-call PDFs + LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:34:02.477850Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4376-2013.introduced.pdf",
+          "sha256": "b94514a66e779c1400d1b875eb3aac207f6b1b1f12f9928fd8d977feab23bb61"
+        }
+      }
+    },
+    {
+      "id": "767c668122bf86e324f6d9a6719f5b58f7381ff23e94c183d816b849ebaf9525",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4670",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4670-2017",
+      "act": "yea",
+      "motion": "Senate Committee of conference report accepted, in concurrence  Roll Call #435",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MA Senate, Senate Committee of conference report accepted, in concurrence  Roll Call #435, 2018-06-28: yea (tally 36–1); census gate: near-unanimous.",
+      "subjects": [
+        "extreme risk protection orders to remove guns from people at risk of harming self or others",
+        "protection order added as a bar to gun licenses",
+        "stun gun rules and locked storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4670-2017.introduced.pdf",
+          "sha256": "6b37958358a3f01548ef0d16c386b3caaf5993d5c100f88279ff5b45ad1fe098"
+        }
+      }
+    },
+    {
+      "id": "a00af043e828adfd93628001bb55296f31caa4e02bcca3e7273445aca8997aab",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/191/H2092",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MA-H-2092-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-2092-2019 (LegiScan sponsor list): H2092 (191st General Court): Relative to universal background checks for private gun sales.",
+      "subjects": [
+        "private gun sales must go through a licensed dealer",
+        "fee cap and penalty for unlawful private transfers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2092-2019.introduced.pdf",
+          "sha256": "5fd01d1a09d8ce366cbd5257b50c2937d0029e8495690da7567930f79f4a2203"
+        }
+      }
+    },
+    {
+      "id": "c94b2de26145d57badd2c72615ea2ede1f4e226fb463afa071ec5aa98c61da13",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H2359",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MA-H-2359-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-2359-2023 (LegiScan sponsor list): H2359 (193rd General Court): To prohibit carrying firearms in sensitive places.",
+      "subjects": [
+        "new offence for carrying guns in sensitive places",
+        "list of sensitive places: government buildings, schools, parks, transit, polling places"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2359-2023.introduced.pdf",
+          "sha256": "ae5134ebc4a3ceb3c56314ffb509a9e10f45934bd770c53473576c1f60b1bd13"
+        }
+      }
+    },
+    {
+      "id": "a7b3680b261d62ebf6107ab9f9df747c623a6f9a611585300571497c66066cff",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4869",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MA-H-4869-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-4869-2021 (LegiScan sponsor list): H4869 (192nd General Court): Relative to 3D printed guns and ghost guns.",
+      "subjects": [
+        "serial numbers required on firearms; unserialized guns must be registered and marked",
+        "ban on undetectable firearms and on 3D-printing guns without a federal license",
+        "ban on distributing digital gun-printing files in some cases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4869-2021.introduced.pdf",
+          "sha256": "bbafa283c191659d818a8dd83633ee46fe167ce87f0f7135b64e570c963d4381"
+        }
+      }
+    },
+    {
+      "id": "098afdb4cf8c0cce88e55aa34438095f59ae2ea312a0d1e21b95ef0adc101724",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/191/S1388",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MA-S-1388-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-S-1388-2019 (LegiScan sponsor list): S1388 (191st General Court): Relative to crime gun data reporting and analysis.",
+      "subjects": [
+        "biennial report on crime gun trace and sales data"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-S-1388-2019.introduced.pdf",
+          "sha256": "ef4cb64fc242ae7df425557408dc449e1507668db996e81266a94029eb68522b"
+        }
+      }
+    },
+    {
+      "id": "107fb3c27a3780c772ff5a01443fe9c0728fa3e77d93c46ba4503b0e437ca590",
+      "kind": "own-words",
+      "url": "https://senatoreldridge.com/blogposts/saferactfullspeech",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "passage": "There is nothing scarier than the prospect of gun violence, of losing a loved one from being shot to death.",
+      "note": "Senate floor speech supporting S.2572 (SAFER Act). Date from the page itself: its page metadata gives a publication date of 2024-02-01 (visible text shows only 'Thu Feb 1').",
+      "subjects": [
+        "gun violence",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:37:19.169Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ceff59c2236e54edbd87494e50f65ed1933565ed79ecc37b985293febf9cfaaa",
+      "kind": "own-words",
+      "url": "https://senatoreldridge.com/blogposts/saferactfullspeech",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "passage": "I rise in support of An Act to Sensibly Address Firearm Violence through Effective Reform, the SAFER Act, to build upon the strong foundation that marks Massachusetts as having the strongest gun control laws, and one of the lowest gun violence rates, in the nation.",
+      "note": "Opening of his floor speech, backing the Senate gun bill S.2572.",
+      "subjects": [
+        "gun safety laws",
+        "omnibus gun bill"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:37:19.169Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c0abf5d216059c8e47fcf86b67f4816aff5114c15d3246a994296670439ef877",
+      "kind": "own-words",
+      "url": "https://senatoreldridge.com/blogposts/saferactfullspeech",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "passage": "Mr. President, I am very proud to have supported gun safety legislation throughout my career as a State Senator and State Representative, including the comprehensive 2014 update, last session responding to the 2022 New York Supreme Court decision that tied Police Chiefs’ hands in determining the suitability of a prospective applicant, banning bumpstocks after the 2017 Las Vegas mass shooting, and increasing support for the training of police officers, and their access to body armor, and security grants to non-profits and houses of worship to strengthen public safety protections.",
+      "note": "He describes his past support for gun laws, including the 2014 update, a bump-stock ban and licensing-suitability changes.",
+      "subjects": [
+        "gun safety laws",
+        "bump stocks",
+        "gun licence suitability"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:37:19.169Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e761e06d92ecd90b8be6d2caaeab801631c6d74bac10fe29de24cba5b039db60",
+      "kind": "own-words",
+      "url": "https://senatoreldridge.com/blogposts/saferactfullspeech",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "passage": "Mr. President, that is largely the reality today in America, and it’s so important to realize that that is as a result of horrible policy choices and advocacy by those who believe that the 2nd Amendment of the United States Constitution is an absolute right that somehow trumps Americans’ right to live in peace, safety, and security.",
+      "note": "Speaks about the Second Amendment and how he sees its limits.",
+      "subjects": [
+        "Second Amendment",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:37:19.169Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bb0d5717d416c0b63c578e3121f1bf1987b9ddc2cbc714c73edba82fbc852b4a",
+      "kind": "own-words",
+      "url": "https://senatoreldridge.com/press-releases/gun-safety-legislation",
+      "date": "2023",
+      "date_precision": "year",
+      "passage": "“Gun violence has to be a priority for the Commonwealth to address, and these two bills go a long way to closing loopholes and ensuring responsibility in our gun safety laws. I hope that the committee will report both S.1508 and S.1509 favorably.”",
+      "note": "Statement issued in his name after he testified for his own bills S.1508 and S.1509 (testimony 2023-11-28; page dated 'Dec 18', no year shown). Import fix: release page shows \"Dec 18\" with no year; day taken from testimony date, so set to year precision (Hatcher precedent).",
+      "subjects": [
+        "gun dealer rules",
+        "ghost guns",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:37:19.169Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "99a7f7b3eda06b6b45fb3af75cd89b995b3ae016b1f5f966076d03956def1650",
+      "kind": "record",
+      "url": "https://senatoreldridge.com/press-releases/gun-safety-legislation",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MA-S-1508-2023",
+      "act": "sponsor",
+      "note": "Filed S.1508, An Act to Strengthen Gun Control, and testified for it. Per the release it bars dealers selling parts that could build banned assault weapons or untraceable guns, centralises dealer inspection in one state agency, and suspends gun licences of people under a restraining order. Date is the testimony date; filing date not shown. Import fix: release page shows \"Dec 18\" with no year; day taken from testimony date, so set to year precision (Hatcher precedent).",
+      "subjects": [
+        "ban on assault-style guns",
+        "gun dealer rules",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:37:19.169Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c79e520c3d723cec936d0c43771a63ddfe9510ff622d2c07aa8b3670025e56fd",
+      "kind": "record",
+      "url": "https://senatoreldridge.com/press-releases/gun-safety-legislation",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MA-S-1509-2023",
+      "act": "sponsor",
+      "note": "Filed S.1509, An Act relative to 3D printed guns and ghost guns, and testified for it. Per the release it closes loopholes on 3D printed and ghost guns so guns trace to an owner. Date is the testimony date; filing date not shown. Import fix: release page shows \"Dec 18\" with no year; day taken from testimony date, so set to year precision (Hatcher precedent).",
+      "subjects": [
+        "ghost guns",
+        "3D printed guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:37:19.169Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "608d62fc667ec95e48d76279b26400a4e523845d8fa442f8e6154abfd3b55da4",
+      "kind": "own-words",
+      "url": "https://www.wgbh.org/news/politics/2014-07-18/state-senate-passes-stripped-down-gun-bill",
+      "date": "2014-07-18",
+      "date_precision": "day",
+      "passage": "“I think for those that are truly concerned with gun violence throughout Massachusetts, they really need to be more vocal,” he said. “And their lack of being vocal has affected the direction of this bill.”",
+      "note": "Quoted by GBH News after the 2014 Senate passed a gun bill by voice vote; the article reports he said senators were under pressure from the National Rifle Association.",
+      "subjects": [
+        "gun safety laws",
+        "2014 gun bill"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:37:19.169Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -71,6 +474,31 @@
       "found": 1,
       "at": "2026-10-27T21:49:29.714Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bills",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "ghost guns",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia: not reviewed (fetch tool returns empty pages)",
+        "official profile https://malegislature.gov/Legislators/Profile/JBE0 (identity confirmed)",
+        "official Senate site: press release https://senatoreldridge.com/press-releases/gun-safety-legislation and floor speech https://senatoreldridge.com/blogposts/saferactfullspeech (used)",
+        "campaign site https://jamieeldridge.com/ (nothing on the subject)",
+        "news: GBH 2014 (used); Epoch Times 2024-02-02 article fetched but quotes were only available in summary, so not saved",
+        "5 web searches on name plus gun words, campaign and press",
+        "senatoreldridge.com newsletter/op-ed list pages: not reviewed"
+      ],
+      "found": 8,
+      "at": "2026-11-01T01:37:19.169Z",
+      "by": "source-collector"
     }
   ]
 }

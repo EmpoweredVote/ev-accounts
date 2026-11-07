@@ -250,7 +250,14 @@ function personFits(p: Json, fullName: string, lastName: string): boolean {
   const words = fold(joinInitials(fullName)).split(' ');
   const wants = [words[0] ?? ''];
   if (wants[0].length === 1 && words[1] && words[1] !== last) wants.push(words[1]);
-  const have = [fold(p.first_name ?? '').split(' ')[0], fold(joinInitials(p.nickname ?? ''))].filter(Boolean);
+  const first = fold(joinInitials(p.first_name ?? '')).split(' ')[0];
+  // A first name printed as dotted initials ("J.J.", "J. M.") fits our name written the same way ("JJ") or the
+  // initials of every given name before the surname ("Jose Manuel" → "jm"), never a single letter.
+  if (/^[A-Za-z]\.(?:\s*[A-Za-z]\.)+$/.test((p.first_name ?? '').trim())) {
+    const given = words.slice(0, words.lastIndexOf(last.split(' ')[0]));
+    if (given.length > 1 && given.every((w) => w.length > 1)) wants.push(given.map((w) => w[0]).join(''));
+  }
+  const have = [first, fold(joinInitials(p.nickname ?? ''))].filter(Boolean);
   return have.some((h) => wants.some((want) => h === want || getNameVariants(h).includes(want) || getNameVariants(want).includes(h)));
 }
 

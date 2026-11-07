@@ -107,6 +107,176 @@
         "fetched_at": "2026-10-27T19:12:38.392Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "ad11eb9cd9de447d9611bc24d898d150cb1728ea94ffc5b6b011cfe163396edd",
+      "kind": "own-words",
+      "url": "https://www.mass.gov/news/ag-campbell-issues-statement-on-first-circuit-court-of-appeals-decision-to-uphold-massachusetts-assault-weapons-ban",
+      "date": "2025-04-18",
+      "date_precision": "day",
+      "passage": "Massachusetts has some of the strongest common sense gun laws in the country, and we know they are effective in ensuring our communities, especially our children, remain safe. The recent First Circuit Court of Appeals’ decision to uphold Massachusetts’ assault weapons ban is a tremendous victory for our state, and I will continue to vigorously defend these laws,",
+      "note": "Official statement in her name after an appeals court upheld, at a preliminary stage, the state's ban on selling and possessing assault weapons and large-capacity magazines (Capen and National Association for Gun Rights v. Campbell).",
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:56:07.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cc7209f40a5d123dc301ae1c2a0df781ca329affc39f54bd2ac3d60a34edd3db",
+      "kind": "own-words",
+      "url": "https://www.mass.gov/news/ag-campbell-co-leads-coalition-to-support-assault-weapons-ban-in-cook-county-illinois",
+      "date": "2024-09-04",
+      "date_precision": "day",
+      "passage": "Extensive evidence demonstrates that gun safety regulations protect our residents and the public while not undermining the Second Amendment,",
+      "note": "Official press-release quote in her name when she co-led a 19-state friend-of-the-court brief defending Cook County, Illinois's assault weapons ban.",
+      "subjects": [
+        "ban on assault-style guns",
+        "Second Amendment",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:56:07.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "da0939d03a322d9a807b7108aea232d92ac879d7a7a7b91afed62df0252bb59b",
+      "kind": "own-words",
+      "url": "https://www.mass.gov/news/ag-campbell-co-leads-coalition-to-support-assault-weapons-ban-in-cook-county-illinois",
+      "date": "2024-09-04",
+      "date_precision": "day",
+      "passage": "Assault weapons are meant to kill and are not for self-defense, thus why we have used every tool available to defend commonsense gun laws in Massachusetts, and I’m proud to help other jurisdictions do the same.",
+      "note": "Same press release, her statement on why her office defends assault weapons bans.",
+      "subjects": [
+        "ban on assault-style guns",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:56:07.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "93b9aa1804023395f7b2d02503f21876174aa93a3f87e27623c042affb203397",
+      "kind": "record",
+      "url": "https://www.mass.gov/news/ag-campbell-co-leads-coalition-to-support-assault-weapons-ban-in-cook-county-illinois",
+      "date": "2024-09-04",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Co-led 19-state amicus brief, Viramontes v. County of Cook (Seventh Circuit), supporting a county assault weapons ban",
+      "note": "Her office co-led, with New Jersey, a brief urging the court to uphold Cook County's ban on selling and possessing assault weapons.",
+      "subjects": [
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:56:07.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8036d3c5615593061ce5016a1bbabd99ea3025381f4c312ad053a93940653021",
+      "kind": "own-words",
+      "url": "https://commonwealthbeacon.org/criminal-justice/ag-says-news-laws-needed-to-trace-ghost-guns/",
+      "date": "2023-07-11",
+      "date_precision": "day",
+      "passage": "You can buy parts online or use a 3D printer to make a deadly weapon and completely circumvent our existing gun laws in Massachusetts,",
+      "note": "Quoted by State House News Service (published by CommonWealth Beacon) at a briefing where she urged lawmakers to act on untraceable ghost guns.",
+      "subjects": [
+        "ghost guns",
+        "3D-printed guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:56:07.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7854a4344a7c3c832d35ef00e49190f8a8ede59ad3aac43efaa47d0ac915c723",
+      "kind": "own-words",
+      "url": "https://commonwealthbeacon.org/criminal-justice/ag-says-news-laws-needed-to-trace-ghost-guns/",
+      "date": "2023-07-11",
+      "date_precision": "day",
+      "passage": "We need to get these guns off the street and, frankly, out of communities that are seeing and have seen, probably for generations, an uptick in violence or gun violence in their community,",
+      "note": "Quoted by State House News Service at the same briefing, on ghost guns.",
+      "subjects": [
+        "ghost guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:56:07.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a672b6de9defa785d3a89ec9627df4c58d156412ea734240699de1c9c74ba7b",
+      "kind": "own-words",
+      "url": "https://commonwealthbeacon.org/criminal-justice/andrea-campbell-wants-to-cap-gun-purchases-expand-assault-weapons-ban/",
+      "date": "2022-06-30",
+      "date_precision": "day",
+      "passage": "We know no one should need that many guns, and it tends to be used for trafficking,",
+      "note": "Quoted by CommonWealth Beacon while she was a candidate for attorney general, on her plan to seek lifetime and annual limits on gun purchases.",
+      "subjects": [
+        "limit on buying multiple guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:56:07.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f9d94bf5a7b9723fa0fbf6dfa55465c3fc3b7bd9533335d9c7db5bef1e374898",
+      "kind": "own-words",
+      "url": "https://commonwealthbeacon.org/criminal-justice/andrea-campbell-wants-to-cap-gun-purchases-expand-assault-weapons-ban/",
+      "date": "2022-06-30",
+      "date_precision": "day",
+      "passage": "We have some of the best, most progressive gun laws in the country, but we still have work to do here,",
+      "note": "Quoted by CommonWealth Beacon on her campaign gun plan, which the outlet describes as covering revising the assault weapons ban, purchase caps, ghost guns and safety training.",
+      "subjects": [
+        "ban on assault-style guns",
+        "limit on buying multiple guns",
+        "ghost guns",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:56:07.793Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -164,6 +334,34 @@
       "found": 4,
       "at": "2026-10-27T19:12:38.392Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large-capacity magazines",
+        "ghost guns",
+        "limits on how many guns one person can buy",
+        "gun safety training",
+        "general gun-safety statements and Second Amendment litigation"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity and scope: https://www.wgbh.org/news/politics/2025-10-21/massachusetts-ag-andrea-campbell-announces-reelection-bid says Attorney General Andrea Campbell is running for reelection in 2026; mass.gov press releases below are issued by the Attorney General",
+        "official site: mass.gov Attorney General press releases of 2024-09-04 and 2025-04-18 (saved)",
+        "campaign site https://www.andreacampbell.org/ home page: nothing on the subject",
+        "sponsor list: not applicable (statewide office, not a legislator); earlier city council record searched, no gun ordinance found",
+        "Ballotpedia: not fetched (known to return empty)",
+        "blocked: https://www.mass.gov/news/ag-campbell-statement-on-signing-of-gun-safety-law (403)",
+        "blocked: https://andreacampbell.org/2022/06/30/andrea-campbell-for-attorney-general-announces-gun-violence-prevention-plan-for-massachusetts (404, page gone)",
+        "blocked: https://www.andreacampbell.org/issues (404)",
+        "blocked: https://www.mass.gov/orgs/gun-violence-prevention-unit (404)",
+        "not reviewed: https://www.bostonglobe.com/2024/07/15/metro/trump-shooting-mass-ag-gun-reform/ (not fetched)",
+        "web searches (3): found news and press releases; a Boston city council gun ordinance search found none"
+      ],
+      "found": 8,
+      "at": "2026-11-01T01:56:07.793Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -97,7 +97,7 @@
       "instrument_id": "PA-SB-1-2023",
       "act": "sponsor",
       "motion": "co sponsor, PN 385 (House reported, passed House May 22, 2023). PN 26 (passed Senate Jan 11, 2023) also read; the voter ID paragraph reads the same in both.",
-      "note": "Named as co sponsor ('BAKER') on the official bill page; linked to Elisabeth J. Baker via the official 2023 member roll of the Senate (identity step 2026-10-28).",
+      "note": "Named as co sponsor ('BAKER') on the official bill page; linked to Elisabeth J. Baker via the official 2023 member roll of the Senate (identity step 2026-10-28). Corrected 2026-11-03: the sponsorship covers PN 26, which carries the voter-ID amendment; the House version PN 385 does not.",
       "subjects": [
         "voter ID at the polls"
       ],
@@ -197,6 +197,266 @@
         "fetched_at": "2026-10-29T14:22:46.328Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "aeb65d12036af99040b815acf169cd88e92459727111bbf138f6ffd554e9435f",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2021/sb565",
+      "date": "2021-11-09",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-565-2021",
+      "act": "yea",
+      "motion": "Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Final Passage, 2021-11-09: yea (tally 29–21); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/PA_SB565_PN1212.pdf",
+          "sha256": "8599bf5e56d8378a456fd36d933e5a05733e1a059d642ddb6883c809f6226568"
+        }
+      }
+    },
+    {
+      "id": "3a9badac136c01e9249e17f67527f0342241e4a2cfa13cf4ba0c26cd7d4f7684",
+      "kind": "own-words",
+      "url": "https://whyy.org/articles/key-state-senator-voices-doubts-about-gun-safety-bill-in-pennsylvania",
+      "date": "2019-09-26",
+      "date_precision": "day",
+      "passage": "“We still have some reservations about due process,” Sen. Lisa Baker said, referring to an extreme-risk protection order bill that would allow judges to temporarily remove a person’s gun rights and any guns in that person’s possession if a judge decides the gun owner is a risk to self or others.",
+      "note": "Quoted by WHYY after two days of Senate hearings she chaired; she voiced due-process concerns about an extreme-risk order bill.",
+      "subjects": [
+        "red-flag orders",
+        "taking guns from people judged a risk"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:46:39.933Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5e9b908985e6138e668a3b19f328bd1ee3a51ef6aa080254589b2cb690d0dc7",
+      "kind": "own-words",
+      "url": "https://www.spotlightpa.org/news/2023/11/pennsylvania-gun-control-red-flag-law-background-checks-ceasefire-campaign/",
+      "date": "2023-11-14",
+      "date_precision": "day",
+      "passage": "\"I believe the issue of helping individuals in crisis would be more appropriately addressed through a modernization of the mental health procedures law as it relates to gun rights to ensure those in need of treatment receive it and that due process is maintained,\" Baker said in a statement.",
+      "note": "Statement quoted by Spotlight PA; the same story says she has \"no plans to advance\" the House-passed background check and extreme-risk bills.",
+      "subjects": [
+        "red-flag orders",
+        "check every gun buyer",
+        "mental health and gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:46:39.933Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cd0b8727e4ce90887bfb21678365b5ea1d166c967f2950e4b6d504138ff7b95c",
+      "kind": "own-words",
+      "url": "https://www.senatorbaker.com/?p=17582",
+      "date": "2026-05-06",
+      "date_precision": "day",
+      "passage": "“As chair of the Judiciary Committee, ensuring thoughtful review of legislation impacting both constitutional rights and public safety is a top priority,” Baker said.",
+      "note": "Her release on the committee advancing SB 357 (carry without a permit, with an optional licence kept for other states).",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:46:39.933Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b5f2094e3376d8b196cc39ea9327b9c40f542e989d600ee20495105f28595aa4",
+      "kind": "own-words",
+      "url": "https://www.senatorbaker.com/?p=17582",
+      "date": "2026-05-06",
+      "date_precision": "day",
+      "passage": "“Yet a patchwork of local firearm ordinances, changing from one municipality to the next, would inevitably turn well‑intentioned, law‑abiding citizens into unwitting violators.",
+      "note": "In her release on SB 822 (state-wide preemption of local gun rules) passing the Senate; she argues for uniform state gun laws.",
+      "subjects": [
+        "local gun rules overridden by state law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T20:46:39.933Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f8ba761f92f0e872ce8e5d77f3ccfd80c1858310f177d25520a334ec191f3db",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=1747",
+      "date": "2020-11-18",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1747-2019",
+      "act": "yea",
+      "motion": "Senate Floor: HB 1747 PN 2338, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 1747 PN 2338, FINAL PASSAGE, 2020-11-18: yea (tally 29–20); census gate: none.",
+      "subjects": [
+        "emergency-time carry restriction repealed",
+        "no seizure of guns, accessories or ammunition during emergencies",
+        "governor cannot suspend firearm sales in emergencies"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1747-2019.introduced.pdf",
+          "sha256": "a4e95a0229bcf1cde7a5fa9d58ac2c33f09477e837d84525b7ff04d3a5f71ece"
+        }
+      }
+    },
+    {
+      "id": "efb62f310bc5c5696e4809ac5721cfa0f83c160127cc45d98447f27c96540ce6",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=2440",
+      "date": "2020-11-18",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-2440-2019",
+      "act": "yea",
+      "motion": "Senate Floor: HB 2440 PN 3776, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 2440 PN 3776, FINAL PASSAGE, 2020-11-18: yea (tally 29–20); census gate: none.",
+      "subjects": [
+        "gun and ammunition businesses and ranges can never be closed or limited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2440-2019.amended.pdf",
+          "sha256": "9bdd564f4d0812adfa9af91a3ac7f854f4196ebd9577febef5953c94486be5c8"
+        }
+      }
+    },
+    {
+      "id": "4283984ad3d78c5d2314c26ee04a95552a5dbce6bc8b22bffb9b0237b64f1919",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=979",
+      "date": "2022-01-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-979-2021",
+      "act": "yea",
+      "motion": "Senate Floor: HB 979 PN 1706, Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 979 PN 1706, Final Passage, 2022-01-25: yea (tally 32–17); census gate: none.",
+      "subjects": [
+        "local gun and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs",
+        "localities barred from suing gun makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-979-2021.amended.pdf",
+          "sha256": "494cfe800bdb89be85cf7c2a28a81c203b581e7614e7bc8f69211cb4c736f5dd"
+        }
+      }
+    },
+    {
+      "id": "6bd9e0daf575de3278ee6eb88fa505dc19674172b27ff66e23a7275845a464d8",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb822",
+      "date": "2026-05-06",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-822-2025",
+      "act": "yea",
+      "motion": "Senate Floor: PN0881, Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: PN0881, Final Passage, 2026-05-06: yea (tally 30–20); census gate: none.",
+      "subjects": [
+        "local firearm and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-822-2025.introduced.pdf",
+          "sha256": "38d1bdcb626cc1614fee0c352427248f5e599df007fead7d1a6031742385df55"
+        }
+      }
+    },
+    {
+      "id": "d20f227db97f86c03f373ca7e0740f326dd513940d0ee0196faf2397fc32bb02",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb822",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-822-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-SB-822-2025 (LegiScan sponsor list): SB822 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for limitation on the regulation of firearms and ammunition; and, in preemptions, providing for regulation of firearms and ammunition..",
+      "subjects": [
+        "local firearm and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-822-2025.introduced.pdf",
+          "sha256": "38d1bdcb626cc1614fee0c352427248f5e599df007fead7d1a6031742385df55"
+        }
+      }
     }
   ],
   "searches": [
@@ -251,6 +511,32 @@
       "found": 7,
       "at": "2026-10-29T14:22:46.328Z",
       "by": "identity-pa-2026-10-29c"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red-flag orders",
+        "background checks",
+        "carry without a permit",
+        "local gun law preemption",
+        "mental health and gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site senatorbaker.com (May 2026 release; confirms she is the sitting Senator and Judiciary chair)",
+        "Judiciary Committee site judiciary.pasenategop.com (same release)",
+        "blocked: https://www.palegis.us/legislation/bills/2025/sb0357",
+        "blocked: https://www.palegis.us/legislation/bills/2025/sb0822",
+        "blocked: https://www.palegis.us/senate/members/bio/1199/lisa-baker",
+        "blocked: https://legiscan.com/PA/bill/SB822/2025",
+        "no sponsored gun bill found: search results name another senator as prime sponsor of SB 357 and SB 822; the member sponsor list itself could not be opened",
+        "Ballotpedia not reviewed (fetch returns empty)",
+        "news: WHYY 2019, Spotlight PA 2023"
+      ],
+      "found": 4,
+      "at": "2026-10-30T20:46:39.933Z",
+      "by": "source-collector"
     }
   ]
 }

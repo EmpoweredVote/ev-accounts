@@ -22,6 +22,63 @@
         "fetched_at": "2026-10-31T18:07:00.903Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "5a1e8a788a9a3b1de393bdb1dde749a6f598706061fbe03d4e66bccf89447f17",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb454",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-454-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-454-2025 (LegiScan sponsor list): HB454 (2025-2026 Regular Session): In firearms and other dangerous articles, repealing provisions relating to firearms not to be carried without a license, providing for license not required, repealing provisions relating to carrying firearms on public streets or public property in Philadelphia, further providing for prohibited conduct during emergency, providing for sportsman's firearm permit, further providing for licenses and for antique firearms and repealing provisions relating to proof of license and exception; and making editorial changes..",
+      "subjects": [
+        "no license needed to carry firearms openly or concealed",
+        "carry license made optional",
+        "Philadelphia public-carry rule repealed",
+        "license age minimum and character check removed",
+        "duty to show license on demand repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-454-2025.introduced.pdf",
+          "sha256": "f30ec3f128cf3767ddff70a1eeaf2b9e5550db871bb897761638ddd54b516abe"
+        }
+      }
+    },
+    {
+      "id": "d286596c5fbf23976f50103b657a58aab391f2dc93424dafbbac8f5df6ae6538",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb548",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-548-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-548-2025 (LegiScan sponsor list): HB548 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for limitation on the regulation of firearms and ammunition; and, in preemptions, providing for regulation of firearms and ammunition..",
+      "subjects": [
+        "state preemption of local gun and ammunition rules extended to all municipalities",
+        "lawsuits and expense awards against local governments that break preemption"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-548-2025.introduced.pdf",
+          "sha256": "96cead2961c739e15a8f1b6213d6cebb08434f6d00d7d5db6ad44267c48a36b1"
+        }
+      }
     }
   ],
   "searches": [
@@ -90,6 +147,35 @@
       "found": 1,
       "at": "2026-10-31T18:07:00.903Z",
       "by": "identity-pa-2026-10-31-raw-votes"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "red flag orders",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "general Second Amendment statements",
+        "bills sponsored on guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://archives.house.state.pa.us/people/member-biography?ID=9846 (confirms Eric Weaknecht, House District 5, Berks County, sessions 2025 and 2026; no sponsorship list on the page)",
+        "blocked: https://www.palegis.us/house/members/bio?id=9846 (404); the legislature's own sponsored-bill list could not be reached, and no third-party tracker was used for a sponsorship",
+        "blocked: https://www.wfmz.com/news/area/berks/sheriff-eric-weaknecht-preparing-for-new-role-as-state-lawmaker/article_c991d2a8-9e17-11ef-a05e-3fa5a3042fc9.html (429 / empty; a search summary attributes a quote on gun laws to this article but the page text could not be read, so it is not saved)",
+        "blocked: https://penncapital-star.com/government-politics/state-rep-elect-eric-weaknecht-wants-to-help-small-businesses-and-the-agriculture-community/ (403)",
+        "blocked: https://www.wfmz.com/news/election/berks-sheriff-wins-race-for-pa-houses-5th-district-seat/article_1079f49c-9ad6-11ef-9445-c3777fd08e32.html (429)",
+        "blocked: https://www.wfmz.com/news/area/berks/some-call-for-berks-to-be-a-2nd-amendment-sanctuary/article_78121854-5f18-11ea-8de2-5b8513de464b.html (429)",
+        "https://www.wfmz.com/news/area/berks/deputy-to-fill-remainder-of-sheriffs-term-following-weaknechts-win-of-5th-district-seat/article_46e224a8-9c72-11ef-8eb5-af8ec3e2cb72.html (nothing on the subject)",
+        "https://webcms.pahousegop.com/News-Print/35354/Weaknecht-Takes-Oath-of-Office-to-Begin-First-Term-?SiteID=1 (nothing on the subject)",
+        "https://www.berkspa.gov/departments/sheriff/inforce-newsletter (nothing on the subject)",
+        "https://www.pahouse.com/Weaknecht (404)",
+        "web search x2 on name plus guns (leads only); Ballotpedia not retrievable"
+      ],
+      "found": 0,
+      "at": "2026-10-30T20:02:42.167Z",
+      "by": "source-collector"
     }
   ]
 }

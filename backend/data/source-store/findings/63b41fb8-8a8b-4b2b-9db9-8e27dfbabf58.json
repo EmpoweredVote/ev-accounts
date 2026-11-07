@@ -1,0 +1,102 @@
+{
+  "politician_id": "63b41fb8-8a8b-4b2b-9db9-8e27dfbabf58",
+  "findings": [
+    {
+      "id": "d1c2057c28b9a9de66314d9782a9a555af1fc83cfbd202012f15f99a2e9733c4",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "nay",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Hruza'), linked to George Hruza (district 89) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "72a52d290b9978b563f9da836e97197e83a6bdb92ec9fc051a7d62606b3d4473",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn052.pdf",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "MO-HCR-48-2026",
+      "act": "yea",
+      "motion": "House: HCR 48 read the third time and passed",
+      "note": "House roll call as printed ('Hruza'), linked to George Hruza (district 89) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.233Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "places": [
+        "campaign site hruzaformissouri.com (nothing on the subject; 2026 ballot not confirmed on page)",
+        "St. Louis Public Radio 2022 interview (nothing on the subject in his own words)",
+        "On the Record (0 appearances)",
+        "blocked: https://ballotpedia.org (not fetched per instruction)",
+        "web searches on name plus voter ID / citizenship / election words (no own words found)",
+        "House member pages on house.mo.gov not fetched (off-limits)",
+        "newsroom.house.mo.gov not fetched (separate collector)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:06:57.676Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:10:53.754Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:14:55.233Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

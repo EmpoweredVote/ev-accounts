@@ -70,6 +70,133 @@
         "fetched_at": "2026-10-27T19:12:09.630Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "8ad09cac5db23a793dc1039f2f308018e609489b9c7fbac32b08f1fad28b997f",
+      "kind": "record",
+      "url": "https://ncleg.gov/BillLookUp/2025/S50",
+      "date": "2025-07-29",
+      "date_precision": "day",
+      "instrument_id": "NC-S-50-2025",
+      "act": "nay",
+      "motion": "Motion 11, Veto Override (RCS S-432)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NC Senate, Motion 11, Veto Override (RCS S-432), 2025-07-29: nay (tally 30–19); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "C (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2439acae5cbdb6b26196ae1e74eaf4e681b2d0a8a8f633254820716e90e94623",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H193",
+      "date": "2025-07-29",
+      "date_precision": "day",
+      "instrument_id": "NC-H-193-2025",
+      "act": "nay",
+      "motion": "Motion 11 Veto Override",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "NC Senate, Motion 11 Veto Override, 2025-07-29: nay (tally 29–19); census gate: multi-subject.",
+      "subjects": [
+        "permit holders may carry on nonpublic school and school-church property",
+        "nonpublic school staff may carry with written authorization and training",
+        "relocated law enforcement shooting ranges shielded from local limits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-H-193-2025.chaptered.html",
+          "sha256": "4e1b8602b941f80ce4472f753fd8398bb206adecfd47d41ca4fd7b32721d3170"
+        }
+      }
+    },
+    {
+      "id": "55e7690999fb36d06c0f5d04a229870f4a3faf02cdadc97806d2720bd823c742",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/S118",
+      "date": "2025-06-25",
+      "date_precision": "day",
+      "instrument_id": "NC-S-118-2025",
+      "act": "yea",
+      "motion": "Conference Report Motion 8 To Adopt",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "NC Senate, Conference Report Motion 8 To Adopt, 2025-06-25: yea (tally 45–0); census gate: near-unanimous.",
+      "subjects": [
+        "lower concealed handgun permit fees for honorably discharged veterans",
+        "e-mail option for concealed handgun permit renewal notices"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-S-118-2025.chaptered.html",
+          "sha256": "d1a417500db87564fb471b17578e775e03beae7face9cb2537d9ecf5b76cc31d"
+        }
+      }
+    },
+    {
+      "id": "4acdef6d830ded3a546bdd72c69e223ec81afb26ebd5803e2389682841dc94e5",
+      "kind": "own-words",
+      "url": "https://www.wccbcharlotte.com/?p=3895593",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "passage": "“If you look at violent crime, even for juveniles, everything has been going up,” Senator Theodros said. “So, why would we decide to put even less sort of restrictions on somebody’s ability to go out and just get a concealed carry?”",
+      "note": "Quoted by WCCB before the Senate vote on Senate Bill 50 (Freedom to Carry NC, carry a concealed handgun without a permit). He said he would vote no. Date is the page's publication timestamp (2025-03-20 UTC); the vote was scheduled for that Thursday.",
+      "subjects": [
+        "carry a gun without a permit",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-06T00:00:09.471Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c95435fe0a392522e98cf9da7f10d12becbe8ff2a82a8bc57cd681f2dfa5a9a1",
+      "kind": "own-words",
+      "url": "https://www.wccbcharlotte.com/?p=3895593",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "passage": "“You have multiple law enforcement members speaking out against it as well,” Senator Theodros said. “Ultimately, this is going to negatively impact people, but especially our police officers.”",
+      "note": "Same WCCB report. He cites law enforcement opposition to the permitless-carry bill (SB 50) and says it would harm people and police officers.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-06T00:00:09.471Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -121,6 +248,35 @@
       "found": 1,
       "at": "2026-10-27T19:12:09.630Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits",
+        "repealing gun laws",
+        "Second Amendment and gun rights statements",
+        "guns in churches and schools"
+      ],
+      "places": [
+        "status: on the 2026 general-election ballot for Senate District 41 (https://branch.vote/races/2026-north-carolina-general-election-nc-state-state-senator-nc-state-senate-41/candidates/caleb-theodros)",
+        "Wikipedia page: nothing on the subject",
+        "campaign site: no working address found; the candidate-profile page shows only a general public-safety line, nothing on guns",
+        "Wikipedia and a Branch profile read; no own-words on the subject beyond the WCCB report",
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "blocked: https://ncnewsline.com/2025/05/07/lawmakers-faith-leaders-stress-gun-safety-as-permitless-concealed-carry-bills-advance/ (403)",
+        "blocked: https://justfacts.votesmart.org/public-statement/896690/issue-position-second-amendment-rights (403)",
+        "Ballotpedia (page returned empty to the fetch tool)",
+        "news searches on name plus gun words"
+      ],
+      "found": 2,
+      "at": "2026-11-06T00:00:09.471Z",
+      "by": "source-collector"
     }
   ]
 }

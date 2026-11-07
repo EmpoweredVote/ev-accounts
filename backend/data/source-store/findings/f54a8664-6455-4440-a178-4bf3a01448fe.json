@@ -1,0 +1,65 @@
+{
+  "politician_id": "f54a8664-6455-4440-a178-4bf3a01448fe",
+  "findings": [
+    {
+      "id": "e114662582e36f9f876ea58ca7997d4a6cd77360af2d2f46d1a30370cb3d2133",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/26info/Journals/Rday6405111615-1637.pdf",
+      "date": "2026-05-11",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "Senate: SS for SCS for HCS for HB 1871, as amended, read the 3rd time and passed",
+      "note": "Senate roll call as printed ('O'Laughlin'), linked to Cindy O’Laughlin (district 18) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.236Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2820ba1138fe2edc7b2f277b507128c8dd5b25a415fff10237bc182989690f3d",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/22info/Journals/RDay6205092378-2447.pdf",
+      "date": "2022-05-09",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1878-2022",
+      "act": "yea",
+      "motion": "Senate: SS for SCS for HB 1878, as amended, read the 3rd time and passed",
+      "note": "Senate roll call as printed ('O’Laughlin'), linked to Cindy O’Laughlin (district 18) via the official 2022 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.236Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-04T14:14:55.236Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

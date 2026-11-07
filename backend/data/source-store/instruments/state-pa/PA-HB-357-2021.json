@@ -1,0 +1,438 @@
+{
+  "id": "PA-HB-357-2021",
+  "scope": "state:pa",
+  "title": "HB357 (2021-2022 Regular Session): Providing that any Federal law which attempts to register, restrict or ban a firearm or to limit the size of a magazine of a firearm in this Commonwealth shall be unenforceable in this Commonwealth; and imposing penalties.",
+  "urls": [
+    "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=357",
+    "https://www.legis.state.pa.us/cfdocs/legis/PN/Public/btCheck.cfm?txtType=PDF&sessYr=2021&sessInd=0&billBody=H&billTyp=B&billNbr=0357&pn=0515"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 3(a): A Federal law, rule, regulation or order created or taking effect after December 31, 2016, shall be unenforceable within the borders of this Commonwealth if the law, rule, regulation or order attempts to register, restrict or ban the ownership or purchase of a firearm, magazine of a firearm, firearm accessory or ammunition.\nSec. 3(b): An official, agent or employee of the Federal Government, the Commonwealth or a political subdivision who enforces or attempts to enforce a Federal law under subsection (a) commits a felony of the third degree and, upon conviction, shall be subject to imprisonment for not less than one year or more than seven years, a fine of not more than $15,000, or both.\nSec. 4: The Attorney General shall defend a resident of this Commonwealth who is prosecuted by the Federal Government for a violation of Federal law under section 3(a) that attempts to register, restrict or ban the ownership or purchase of a firearm, magazine of a firearm, firearm accessory or ammunition that is retained in this Commonwealth.",
+  "sponsors": [
+    {
+      "name": "Daryl Metcalfe",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Mike Armanini",
+      "politician_id": "ab88a2b1-69e0-4287-8126-423c7cfc45f3",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Aaron Bernstine",
+      "politician_id": "ffe5826b-e194-4c54-a044-5db1b2f7b90d",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Stephanie Borowicz",
+      "politician_id": "7458604f-683a-414c-91bc-b9da7ded2260",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Martin Causer",
+      "politician_id": "b1ce16f1-94a3-4aad-88ed-a229c8314340",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Donald Cook",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "44be1280-e396-4640-86a4-0a3acff14d9e"
+    },
+    {
+      "name": "Jim Cox",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Russ Diamond",
+      "politician_id": "ae8ab48a-c5eb-4acc-a9cf-8b6fad8c2f98",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Matthew Dowling",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Torren Ecker",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Joseph Emrick",
+      "politician_id": "a8cd5c6f-ca28-4c4d-b5e1-1555c9dc65f1",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Melinda Fee",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e33ca054-7be0-4a5d-a32d-32d4392c03d7"
+    },
+    {
+      "name": "Jonathan Fritz",
+      "politician_id": "5ea70331-2c15-4509-bba9-9245cd0f3da2",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Mark Gillen",
+      "politician_id": "f6cda73d-501f-4873-9d62-71c2652af602",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Barbara Gleim",
+      "politician_id": "9c785dc6-72eb-4b04-b6c4-fd98227552bb",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Keith Greiner",
+      "politician_id": "70a332e1-680f-4231-85fb-a7af45c9e04c",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Seth Grove",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Joe Hamm",
+      "politician_id": "ef3401e1-f9aa-4207-91d2-8fedbb76bafc",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Susan Helm",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Johnathan Hershey",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "David Hickernell",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Rich Irvin",
+      "politician_id": "70803951-ee71-4786-9f9f-667e1b166208",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Robert James",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "feebbd80-c9e9-48aa-b0fb-1ca306ada4e8"
+    },
+    {
+      "name": "Mike Jones",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d8d74592-7f08-4419-a18e-14cd72d1975f"
+    },
+    {
+      "name": "Barry Jozwiak",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Robert Kauffman",
+      "politician_id": "f697e205-75af-45ba-99e3-1c6787f31af1",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Dawn Keefer",
+      "politician_id": "28bcc9ec-e676-47c0-bbe1-30ad59bb98f4",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Joe Kerwin",
+      "politician_id": "7d3cf596-7b6d-434a-900e-e069ed9d9a04",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Jerome Knowles",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "David Maloney",
+      "politician_id": "4898bc23-98b0-4fc5-963b-2c174eba519f",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "James Marshall",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Carl Metzgar",
+      "politician_id": "537ea493-096b-4714-ad02-4e70a04932a1",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Dan Moul",
+      "politician_id": "3c4c0a99-f0d9-4d3e-9064-2fd4cd30b60f",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Marci Mustello",
+      "politician_id": "d316b273-2160-4e68-8d89-89fbbc87bd7e",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Eric Nelson",
+      "politician_id": "24d80077-1848-456a-8369-144fed9821a8",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Donna Oberlander",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Clinton Owlett",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "85e43270-e0f3-4547-b314-7b6bfb89ad79"
+    },
+    {
+      "name": "Tracy Pennycuick",
+      "politician_id": "ce4c2b39-8000-475c-87ef-0c914809cb1a",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Tina Pickett",
+      "politician_id": "c7fb3af8-ce99-40e4-80c6-6d3280539c1e",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Michael Puskaric",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Jeffrey Pyle",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Kathy Rapp",
+      "politician_id": "23c08656-f32f-4945-a0a3-664d0891ee45",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Bradley Roae",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "71968e1c-204a-44e2-9469-0fe87cb85e23"
+    },
+    {
+      "name": "Greg Rothman",
+      "politician_id": "f4d7b0fe-564e-452a-bf0b-ec64fdcb84f5",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "David Rowe",
+      "politician_id": "87c5f6fc-6b8f-4516-adb3-f28159c5b555",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Francis Ryan",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Thomas Sankey",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Stanley Saylor",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Paul Schemel",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Louis Schmitt",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Jason Silvis",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Brian Smith",
+      "politician_id": "5209d716-3335-4386-8808-a498748b9bc1",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Craig Staats",
+      "politician_id": "bb7f2a1e-12a9-4321-8404-4f28f9402037",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Perry Stambaugh",
+      "politician_id": "47dc85ea-f4a0-4f0e-be96-6f75dc77c254",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "James Struzzi",
+      "politician_id": "4a10db92-bade-4519-b281-45b2840374c6",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Ryan Warner",
+      "politician_id": "f904a512-fcc9-419b-bd0c-60d866461a7a",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Parke Wentling",
+      "politician_id": "b4181dbc-2330-40fa-a0ff-17a9c2da7b29",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Jeff Wheeland",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "David Zimmerman",
+      "politician_id": "b65cf92b-1a7d-401d-8abb-07b9befb7374",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Michael Peifer",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Joshua Kail",
+      "politician_id": "eeeaccdc-b3a7-457b-94bf-7d426862c618",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Jason Ortitay",
+      "politician_id": "01cc2eaa-92d2-4078-bf54-b2cb789efa7b",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "George Dunbar",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Valerie Gaydos",
+      "politician_id": "766e8991-702d-4031-900c-1cd0c935c901",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Ann Flood",
+      "politician_id": "3b8c1700-52f7-4694-b795-e093eb57b8f6",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Carrie Lewis DelRosso",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Andrew Lewis",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Curtis Sonney",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Eric Davanzo",
+      "politician_id": "4b4ccb25-9586-4ccb-aae4-05b039cfe664",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Jesse Topper",
+      "politician_id": "653b8009-9e49-45c6-9bce-374c189dcb0a",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Doyle Heffley",
+      "politician_id": "076d25d6-e8b3-4555-b569-429ed139f418",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Gary Day",
+      "politician_id": "d65a5753-38a7-47e5-9bc7-b280e0771283",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-30T23:06:47.588045Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-357-2021.introduced.pdf",
+      "sha256": "c1353f85058f424382d90a5046f2f7185a24d56b36ef74c60ddc27cf94ecde6f"
+    }
+  }
+}

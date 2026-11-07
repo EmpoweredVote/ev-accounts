@@ -75,6 +75,13 @@ describe('checkStanceRow — every planted defect is caught (positive controls)'
     expect(ids(row, { evidence: [{ ...ev[0], source_url: url, snippet: line }] })).toEqual([]);
     expect(ids(good, { evidence: [{ ...ev[0], snippet: line }] })).toContain('snippet-too-short');
   });
+  it('a canonical Indiana roll-call line on an iga.in.gov roll-call PDF is not held to the snippet length', () => {
+    const url = 'https://iga.in.gov/pdf-documents/124/2025/senate/bills/SB0010/rollcalls/SB0010.340_H.pdf';
+    const line = 'Indiana House roll call 340 (2025), SB 10 - Culp - 3rd Reading: Doe voted Yea.';
+    const row = { ...good, reasoning: 'Voted YES on SB 10 (2025).', source_urls: [url] };
+    expect(ids(row, { evidence: [{ ...ev[0], source_url: url, snippet: line }] })).toEqual([]);
+    expect(ids(good, { evidence: [{ ...ev[0], snippet: line }] })).toContain('snippet-too-short');
+  });
   it('topic-not-in-season', () => {
     expect(ids({ ...good, topic_key: 'no-such-topic' }, { topic: undefined })).toEqual(['topic-not-in-season']);
   });
@@ -381,6 +388,35 @@ describe('instrument-not-cited: Georgia Senate Resolutions (2026-10-31)', () => 
   });
   it('does not read a name suffix ("Sr.") as a resolution', () =>
     expect(ids({ ...good, reasoning: 'John Doe Sr. voted Yea on HB 1001 (2025).' }, { evidence: [{ ...ev[0], snippet: `${'HB 1001'} roll call Yea John Doe` }] })).not.toContain('instrument-not-cited'));
+});
+
+describe('instrument-not-cited: Mississippi roll-call headings (2026-11-05)', () => {
+  const snip = (t: string) => [{ ...ev[0], snippet: `${t} by the following vote: Yeas--Doe, Roe. Total--2.` }];
+  it('reads the official heading "S. B. No. 2548" / "H. B. No. 586" as SB 2548 / HB 586', () => {
+    const row = { ...good, reasoning: 'Voted Yea on SB 2548 (2009) and HB 586 (2021).' };
+    expect(ids(row, { evidence: snip('YEAS AND NAYS On S. B. No. 2548. H. B. No. 586 passed') })).not.toContain('instrument-not-cited');
+  });
+  it('still tells SB 254 from "S. B. No. 2548"', () =>
+    expect(ids({ ...good, reasoning: 'Voted Yea on SB 254 (2009).' }, { evidence: snip('YEAS AND NAYS On S. B. No. 2548.') })).toContain('instrument-not-cited'));
+});
+
+describe('instrument-not-cited: Ohio bill headings (2026-11-06)', () => {
+  const snip = (t: string) => [{ ...ev[0], snippet: `${t} General Assembly Regular Session 2025-2026 Representative Doe` }];
+  it('reads "Sub. S. J. R. No. 10" and "(Substitute House Bill Number 458)" as SJR 10 and HB 458', () => {
+    const row = { ...good, reasoning: 'Voted Yea on SJR 10 (2026) and HB 458 (2022).' };
+    expect(ids(row, { evidence: snip('As Adopted by the House Sub. S. J. R. No. 10 (Substitute House Bill Number 458)') })).not.toContain('instrument-not-cited');
+  });
+  it('matches the dotted forms a coder writes ("S.J.R. 10", "H.C.R. 18") to LegiScan "SJR10" / "HCR18"', () => {
+    const row = { ...good, reasoning: 'Voted Yea on S.J.R. 10 (2026); co-sponsor of H.C.R. 18 (2024).' };
+    expect(ids(row, { evidence: snip('LegiScan OH SJR10, roll call 1 (House): Jane Doe voted Yea. LegiScan OH HCR18: Jane Doe is listed as a cosponsor.') })).not.toContain('instrument-not-cited');
+    expect(ids(row, { evidence: snip('LegiScan OH SJR10, roll call 1 (House): Jane Doe voted Yea.') })).toContain('instrument-not-cited');
+  });
+  it('reads "Senate Joint Resolution Number 10" and "House Concurrent Resolution 18"', () => {
+    const row = { ...good, reasoning: 'Voted Yea on SJR 10 (2026) and HCR 18 (2024).' };
+    expect(ids(row, { evidence: snip('(Substitute Senate Joint Resolution Number 10) House Concurrent Resolution 18') })).not.toContain('instrument-not-cited');
+  });
+  it('still tells SJR 1 from "S. J. R. No. 10"', () =>
+    expect(ids({ ...good, reasoning: 'Voted Yea on SJR 1 (2026).' }, { evidence: snip('Sub. S. J. R. No. 10') })).toContain('instrument-not-cited'));
 });
 
 describe('quote-not-in-snippet (C69)', () => {

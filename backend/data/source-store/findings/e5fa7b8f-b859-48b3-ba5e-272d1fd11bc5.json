@@ -1,0 +1,403 @@
+{
+  "politician_id": "e5fa7b8f-b859-48b3-ba5e-272d1fd11bc5",
+  "findings": [
+    {
+      "id": "0c4350377c9b0507ae2bfc0d5ceedb9338418325088349f5614a4e57cbbc7dfa",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/134/sb215",
+      "date": "2022-03-02",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-215-2022",
+      "act": "nay",
+      "motion": "Passed (final House vote per Votes tab)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH House, Passed (final House vote per Votes tab), 2022-03-02: nay (tally 58–36); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/OH_sb215_EN.pdf",
+          "sha256": "dddae0081901748ede39524ddca0094c322a065fe443d8ffdbae0913c1a95fa4"
+        }
+      }
+    },
+    {
+      "id": "d8d0fb14a01ee5ed249c0f6f52d99c06d5f803a5a1046ec734a183f3f6a48240",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/jennifer-gross/news/gross-issues-statement-on-secretary-laroses-calls-for-election-integrity-legislation-123085",
+      "date": "2024-10-01",
+      "date_precision": "day",
+      "passage": "From addressing potential loopholes in ballot harvesting to ensuring only citizens can vote in Ohio’s elections, these proposed reforms are vital to maintaining Ohio’s status as a national leader in election integrity.",
+      "note": "Statement in her name backing the Secretary of State's call for election legislation, naming ballot harvesting and citizen-only voting.",
+      "subjects": [
+        "noncitizen voting",
+        "election integrity",
+        "ballot harvesting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:19:52.291Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c517ed6fe1eacf33ce9ae753a61e33d5f7560f656d8d5b85376d973deb91c45c",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/jennifer-gross/news/gross-issues-statement-on-secretary-laroses-calls-for-election-integrity-legislation-123085",
+      "date": "2024-10-01",
+      "date_precision": "day",
+      "passage": "I urge my colleagues to prioritize these reforms and pass them during the upcoming lame duck session.",
+      "note": "Same statement: she asks colleagues to pass the proposed election reforms in the lame duck session.",
+      "subjects": [
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:19:52.291Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53a8fc2875b1e73490ca450a968a9e8aae6e2b0b04ed4c964e9c518a465c6ec1",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/jennifer-gross/news/ohio-votes-count-act-introduced-in-ohio-house-119567",
+      "date": "2024-04-17",
+      "date_precision": "day",
+      "passage": "“Elections are a pillar of democracy and are an issue of national security,” said Gross.",
+      "note": "Release on HB 472 (Ohio Votes Count Act; voter-registration checks, identity and citizenship verification). She is named co-sponsor and is quoted.",
+      "subjects": [
+        "voter-roll checks",
+        "proof of citizenship/identity verification before registration",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:19:52.291Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "07a62dc66aed003e5e74c155b191a11270cce9e881a9d9c6358ef547bbe69d62",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/actions/",
+      "date": "2022-12-14",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-458-2022",
+      "act": "yea",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 55-34) on H. B. No. 458, from the Ohio Legislature's own actions record, which lists each member by id (rep_gross_jennifer_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b76b08444464d687d2e3e5da5ab666871be545e481f02bd01a7bfa3659054db7",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hcr18/actions/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "yea",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 73-20) on H. C. R. No. 18, from the Ohio Legislature's own actions record, which lists each member by id (rep_gross_jennifer_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ae71eaff83a55e307cf832fabbb5926aafe32a659721d9302bd6fd0c50f69e3e",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/hcr18",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. C. R. No. 18 (As Introduced) on the Ohio Legislature's own record (rep_gross_jennifer_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0902e7fa76fc3542f273b3e0dca071180960f9dfbff7bf0c1b0df8b3faad7385",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_gross_jennifer_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cb87000697b71758e7ca0ad908fe673527a271a0150eff9c6bd3ec29180be76c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "yea",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_gross_jennifer_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8821bd802ac08d3d23eae6eb6c70229c295318705fc826ef1f8ec5df774edf8a",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/sb293",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As Passed by the House (04_PH)",
+      "note": "Listed as co sponsor of S. B. No. 293 (As Passed by the House) on the Ohio Legislature's own record (rep_gross_jennifer_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32abbbc8a3ef8b4b1a84709188caf92f2c696e2c45aaccbf5d255611a80b9668",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "yea",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_gross_jennifer_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9a63aac1c1e14018bf98e6880c175f27f3a92b342aea6ccda9c7bce0c4111b31",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/134/hb387",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-387-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. B. No. 387 (As Introduced) on the Ohio Legislature's own record (rep_gross_jennifer_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a08e6acba11ba64f30bd1583402d173ccf5a89443601457ea1e4ad57923d135e",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/134/hb650",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-650-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. B. No. 650 (As Introduced) on the Ohio Legislature's own record (rep_gross_jennifer_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7623404e30c9b7d917e593cf82741706f25f8f169ba4ee2e9cd675b5db580e8a",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/hb472",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-472-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. B. No. 472 (As Introduced) on the Ohio Legislature's own record (rep_gross_jennifer_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5b12d59bcf11cb08b6d44c521188b6b1ec1ab581b1c606e33215809bfbc52e49",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/hb552",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-552-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. B. No. 552 (As Introduced) on the Ohio Legislature's own record (rep_gross_jennifer_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4ca76a6dc4f23da0f131b85b898818c31167636d640c1042879bb2b4ea6c4d35",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/hb233",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-233-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. B. No. 233 (As Introduced) on the Ohio Legislature's own record (rep_gross_jennifer_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.675Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "voter-roll checks",
+        "election integrity",
+        "Issue 3 photo ID amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official news list https://ohiohouse.gov/members/jennifer-gross/news (confirms Ohio House; recent items none on the subject)",
+        "member releases found by search, both fetched",
+        "5 web searches: noncitizen/voter ID/citizenship, election integrity, Issue 3/SJR 10, HB 233/HB 54 (no own words found on Issue 3 or HB 233)",
+        "blocked: https://ballotpedia.org (not fetched, listed as refusing)",
+        "blocked: bluevoterguide.org and justfacts.votesmart.org (not fetched, listed as refusing)"
+      ],
+      "found": 3,
+      "at": "2026-11-06T16:19:52.291Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 12,
+      "at": "2026-11-06T16:28:34.675Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}

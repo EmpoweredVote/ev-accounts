@@ -17,6 +17,7 @@
     "topic:stage5-prefill": "tsx scripts/topic-stage5-prefill.ts",
     "topic:stage5-find": "tsx scripts/topic-stage5-find.ts",
     "topic:stage5-report": "tsx scripts/topic-stage5-report.ts",
+    "topic:stage5-theme-prompt": "tsx scripts/topic-stage5-theme-prompt.ts",
     "topic:stage5-write": "tsx scripts/topic-stage5-write.ts",
     "test:unit": "vitest run src scripts --exclude \"**/ingest-gazetteer-places-counties.test.ts\"",
     "test:watch": "vitest",
@@ -87,7 +88,10 @@
     "check:stance-audit": "node scripts/check-stance-audit.mjs",
     "check:entity-types": "node scripts/check-entity-types.mjs",
     "check:instrument-contradictions": "node scripts/check-instrument-rung-contradictions.mjs",
-    "check:instrument-contradictions:selftest": "node scripts/check-instrument-rung-contradictions.mjs --selftest"
+    "check:instrument-contradictions:selftest": "node scripts/check-instrument-rung-contradictions.mjs --selftest",
+    "check:seating": "node scripts/check-seating-invariants.mjs",
+    "check:seating:control": "node scripts/control-seating-invariants.mjs",
+    "check:incumbency": "node scripts/reconcile-incumbency.mjs --check"
   },
   "overrides": {
     "qs": "^6.16.0",

@@ -150,6 +150,31 @@
           "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
         }
       }
+    },
+    {
+      "id": "dccca3d801e58d120cadef4cc39fe904c579dd1b8e8dc7a06fbe3c46ee1ea739",
+      "kind": "record",
+      "url": "https://ncleg.gov/BillLookUp/2025/S50",
+      "date": "2025-06-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-50-2025",
+      "act": "yea",
+      "motion": "Second Reading (RCS H-426); page lists third reading passed same day per bill history",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NC House, Second Reading (RCS H-426); page lists third reading passed same day per bill history, 2025-06-11: yea (tally 59–48); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "C (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -174,6 +199,31 @@
       ],
       "found": 3,
       "at": "2026-10-22T23:35:03.415Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "Second Amendment",
+        "gun rights",
+        "firearm bills",
+        "ban on assault-style guns",
+        "check every gun buyer"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/H/640 (confirms House District 69; nothing on the subject)",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site https://www.deanarp.com (nothing on the subject)",
+        "BallotReady profile (issue stances list no gun topic; nothing on the subject)",
+        "John Locke Foundation team page (nothing on the subject)",
+        "not reviewed: Ballotpedia (returns empty to the fetch tool)",
+        "web search x2 on name plus gun words: no own words found"
+      ],
+      "found": 0,
+      "at": "2026-11-05T23:58:46.000Z",
       "by": "source-collector"
     }
   ]

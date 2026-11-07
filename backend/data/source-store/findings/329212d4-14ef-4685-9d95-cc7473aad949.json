@@ -187,6 +187,170 @@
         "fetched_at": "2026-10-31T05:00:00Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "fa8087771668164fa41cebcce4ea1837cefe0d5dda9c72df7aa9612f3319e886",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "nay",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: nay (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bbdd9bc7132a57a94f28cf83874fa7e904f8da79aa8251a3b1194121a5467815",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "nay",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: nay (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "d01ed1ae5794f8824c367d91b05731dcc664f64b098a2107b1eec578c3a4f7cc",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4517",
+      "date": "2018-05-23",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4517-2017",
+      "act": "nay",
+      "motion": "House On Engrossment Yea and Nay No. 359",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MA House, House On Engrossment Yea and Nay No. 359, 2018-05-23: nay (tally 139–14); census gate: near-unanimous.",
+      "subjects": [
+        "court orders to remove guns from people at risk of harming self or others",
+        "emergency orders without notice",
+        "penalty for false petitions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4517-2017.introduced.pdf",
+          "sha256": "3bac8bca02408059e2c0db49bae39de8a690f0fb6e1b5469f7a23cf51fbd5cc4"
+        }
+      }
+    },
+    {
+      "id": "6eae9de37bdf534b21a6f61732cfdc3d406087959e7c425d4b36a7c27217b9d8",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4670",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4670-2017",
+      "act": "nay",
+      "motion": "On acceptance of the conference report (Yea and Nay No. 389)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, On acceptance of the conference report (Yea and Nay No. 389), 2018-06-28: nay (tally 133–15); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders to remove guns from people at risk of harming self or others",
+        "protection order added as a bar to gun licenses",
+        "stun gun rules and locked storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4670-2017.introduced.pdf",
+          "sha256": "6b37958358a3f01548ef0d16c386b3caaf5993d5c100f88279ff5b45ad1fe098"
+        }
+      }
+    },
+    {
+      "id": "2c8e720fa53b261816e3dd161d4e4373840e84b47372ff7c6ac217508a2101b6",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H2423",
+      "date": "2021-03-29",
+      "date_precision": "day",
+      "instrument_id": "MA-H-2423-2021",
+      "act": "sponsor",
+      "note": "H.2423 'An Act relative to firearm licensing', a petition filed by Berthiaume (lead filer) with David Allen Robertson, on licences to carry or possess firearms. Referred to the Public Safety and Homeland Security committee 3/29/2021; heard 11/16/2021; accompanied a study order 9/8/2022.",
+      "subjects": [
+        "gun licences and carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:35:15.136Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8284938b508dc19bdb784638e2e7c6d9f276e18bd9d9f65f8a4f094707a68d0a",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H3254",
+      "date": "2017-01-23",
+      "date_precision": "day",
+      "instrument_id": "MA-H-3254-2017",
+      "act": "sponsor",
+      "note": "H.3254 'An Act relative to hearings for firearms identification', a petition by Berthiaume (lead filer) and others on the process of reclassifying firearms. Referred to committee 1/23/2017; accompanied a study order 7/17/2018.",
+      "subjects": [
+        "reclassifying firearms",
+        "gun licences and carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:35:15.136Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -209,6 +373,29 @@
       ],
       "found": 1,
       "at": "2026-10-22T23:04:54.489Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun licences and carry permits",
+        "reclassifying firearms",
+        "Second Amendment statements",
+        "assault-style gun bans",
+        "background checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page https://malegislature.gov/Legislators/Profile/DRB1 (confirms Representative Donald R. Berthiaume Jr., 5th Worcester; no gun bills in the list shown)",
+        "official member bills page https://malegislature.gov/Legislators/Profile/DRB1/Bills (no gun titles in the list shown)",
+        "official bill pages H.2423 (192nd) and H.3254 (190th)",
+        "campaign site: not found (guessed address did not resolve)",
+        "Ballotpedia: not reviewed, returns empty to the fetch tool",
+        "two news/web searches on name plus gun words: no own words found"
+      ],
+      "found": 2,
+      "at": "2026-11-01T01:35:15.136Z",
       "by": "source-collector"
     }
   ]

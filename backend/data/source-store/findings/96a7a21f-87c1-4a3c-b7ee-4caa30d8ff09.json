@@ -1,6 +1,315 @@
 {
   "politician_id": "96a7a21f-87c1-4a3c-b7ee-4caa30d8ff09",
-  "findings": [],
+  "findings": [
+    {
+      "id": "652a6548ec0e77fb4ea73a7cbf7ed20f855abcfb42fd72ef715829e08284e3d0",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB2976",
+      "date": "2023-05-04",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-2976-2023",
+      "act": "yea",
+      "motion": "Read 3rd time RV#1016",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "TX House, Read 3rd time RV#1016, 2023-05-04: yea (tally 130–14); census gate: near-unanimous.",
+      "subjects": [
+        "optional firearms safety course for high school students",
+        "August named Firearm Safety Awareness Month"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-2976-2023.engrossed.html",
+          "sha256": "97c7c2cab8a7e2a8defbda8477ad070fa67d3a5b7e1244fdeefaeb9c14356646"
+        }
+      }
+    },
+    {
+      "id": "44e3ad3b4b49ea54d7f33986ebbdb077625d619ba70b899307f355d9e8d8a891",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB3",
+      "date": "2023-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-3-2023",
+      "act": "nay",
+      "motion": "House adopts conference committee report RV#2229",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "TX House, House adopts conference committee report RV#2229, 2023-05-28: nay (tally 93–49); census gate: multi-subject.",
+      "subjects": [
+        "armed security officer required at every school campus",
+        "limits on duties of people allowed to carry guns on campus",
+        "safe gun storage information given to parents",
+        "school safety funds may train staff who carry guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-3-2023.enrolled.html",
+          "sha256": "aa48b42b1c125656c8e194e81ca5eb7c8ff826e9fdc284d51a21c481481614b2"
+        }
+      }
+    },
+    {
+      "id": "dc6b6639dac5443eccf0a6211f995e894c640a994eb707ab206bd589f17d155b",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3053",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-3053-2025",
+      "act": "nay",
+      "motion": "Read 3rd time RV#2266",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Read 3rd time RV#2266, 2025-05-13: nay (tally 85–56); census gate: none.",
+      "subjects": [
+        "local firearm buyback programs prohibited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-3053-2025.enrolled.html",
+          "sha256": "5c783f0f9c65e8195dcc193a50eb55c2c6158aa0407a2ccf6a2bea6d95531ee0"
+        }
+      }
+    },
+    {
+      "id": "79c3d04b18933e463f43bf8a634bb3f442fce9e66de825f8fa3a6a809d950a63",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB3137",
+      "date": "2023-05-05",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-3137-2023",
+      "act": "nay",
+      "motion": "Point of order withdrawn RV#1134",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Point of order withdrawn RV#1134, 2023-05-05: nay (tally 84–58); census gate: none.",
+      "subjects": [
+        "local gun rules barred from being enforced",
+        "local firearm liability insurance requirement banned"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-3137-2023.enrolled.html",
+          "sha256": "870ff91198688315aa2fd6a3e3be74800698a2fdaa6edcb46a56b1688e6ceb81"
+        }
+      }
+    },
+    {
+      "id": "8509db7371a87e84f70628bb1f0f55e19257b6a9b76cb81359be8723f867ed3e",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1362",
+      "date": "2025-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1362-2025",
+      "act": "nay",
+      "motion": "Read 3rd time RV#3869",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Read 3rd time RV#3869, 2025-05-28: nay (tally 86–53); census gate: none.",
+      "subjects": [
+        "red flag orders may not be enforced by state or local officials",
+        "federal red flag orders declared unenforceable",
+        "serving an out-of-state red flag order is a state jail felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-1362-2025.enrolled.html",
+          "sha256": "aec24880eb60a1cd8426dd2df4725f2ab3d34a596d3b9e887d080e4018887f72"
+        }
+      }
+    },
+    {
+      "id": "db44a3b7800a82a4097e065afe4b1cb0445c5d2eae3ad92381d516354f7cbb34",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1596",
+      "date": "2025-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1596-2025",
+      "act": "nay",
+      "motion": "Laid out as postponed business RV#3937",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Laid out as postponed business RV#3937, 2025-05-28: nay (tally 87–52); census gate: none.",
+      "subjects": [
+        "short-barrel firearm possession offense repealed",
+        "definition of short-barrel firearm repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-1596-2025.enrolled.html",
+          "sha256": "79af2b9f1e3b2967b40f051ee7540cd4f3d0d7f9ae0f8c6802c5cd20ab4d37f4"
+        }
+      }
+    },
+    {
+      "id": "89fe52e63cd8fdb701d7e490352bd00c8991e85a17b7415ce6f04c6256559a61",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB706",
+      "date": "2025-05-21",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-706-2025",
+      "act": "nay",
+      "motion": "Read 3rd time RV#3121",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TX House, Read 3rd time RV#3121, 2025-05-21: nay (tally 89–51); census gate: none.",
+      "subjects": [
+        "out-of-state handgun licenses recognized in Texas",
+        "state must publish list of states honoring Texas license",
+        "old background-check condition for recognition repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-SB-706-2025.enrolled.html",
+          "sha256": "fb39773e7239800d5a632dde6685542e492721c2bc464dbd6838c1b0425f3c93"
+        }
+      }
+    },
+    {
+      "id": "ee8a4afb971127cac72c015fb0154bcf5caceafd0230d9db1309042a0abb4cf9",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB2744",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-2744-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of TX-HB-2744-2023 (LegiScan sponsor list): HB2744 (88th Legislature Regular Session): Relating to prohibiting the transfer of certain semiautomatic rifles to certain recipients; creating a criminal offense; increasing a criminal penalty..",
+      "subjects": [
+        "sale of semiautomatic rifles to under-21s banned",
+        "exceptions for peace officers and military",
+        "state jail felony penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TX-HB-2744-2023.comm-sub.html",
+          "sha256": "aa76df8f7b56a3247d3a176f9e6f333126b20ac64fbf2b896d5e54ba30d49948"
+        }
+      }
+    },
+    {
+      "id": "6ab4ffb00a4262c8a5ed002073bdbbcc86d5d4b1c5942a77d70f597ae915229a",
+      "kind": "own-words",
+      "url": "https://house.texas.gov/pdfs/newsletters/76/2023-Legislative-Letter-Volume-03.14.2023.pdf",
+      "date": "2023-03-14",
+      "date_precision": "day",
+      "passage": "As a father, gun safety and the safety of our schoolchildren is very important to me. As a physician, I know gun violence is a public health issue. As a Gun Sense Champion, I support those working for common sense expressions of our Second Amendment rights.",
+      "note": "Official House newsletter from the member describing his attendance at Gun Sense Day with a gun-safety advocacy group on March 1, 2023.",
+      "subjects": [
+        "gun safety laws",
+        "gun violence as a public health issue",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:44:44.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9efd2b9fed49c3fabd2eb6b9160d0cca85dd4d11a24230fc31dec843818b499e",
+      "kind": "own-words",
+      "url": "https://house.texas.gov/pdfs/newsletters/76/2023-Legislative-Letter-Volume-04.24.2023.pdf",
+      "date": "2023-04-24",
+      "date_precision": "day",
+      "passage": "I stand against gun violence everywhere and doing my part to end it in Texas is one of my legislative priorities. As a physician I understand gun violence is a public health issue as well as a human tragedy. As a father I believe no parent should have to accept this as normal. As a legislator I'm working toward policies supporting common sense expressions of our Second Amendment rights.",
+      "note": "Statement in his official newsletter after the Nashville school shooting.",
+      "subjects": [
+        "gun violence",
+        "gun safety laws",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:44:44.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4390b1ff11c793584b7b8d5db13ffaff137c205b27b8c51918aa43a406044c4d",
+      "kind": "own-words",
+      "url": "https://www.house.texas.gov/pdfs/newsletters/76/2025-Newsletter-Legislative-Update-10.17.2025-Constitution-Amendments.pdf",
+      "date": "2025-10-17",
+      "date_precision": "day",
+      "passage": "Public safety must be proactive, not reactive. HB 306, HB 352, and HB 397 were introduced to keep firearms out of the hands of minors and convicted sex offenders—raising the purchase age, closing transfer loopholes, and requiring background checks on private sales. Though these bills didn't pass, the work continues alongside families and survivors.",
+      "note": "Official 2025 session newsletter listing three gun bills among his authored/sponsored bills (the newsletter does not say which role on each); says they did not pass.",
+      "subjects": [
+        "check every gun buyer",
+        "background checks on private sales",
+        "minimum age to buy a gun",
+        "closing transfer loopholes"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:44:44.778Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -26,6 +335,30 @@
       "found": 0,
       "at": "2026-10-28T15:14:13.848Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "background checks on private sales",
+        "minimum age to buy a gun",
+        "gun safety laws",
+        "Second Amendment",
+        "gun violence"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search: name plus guns/Second Amendment (confirmed Texas House District 76 member via branch.vote and Texas Tribune result list; branch.vote page lists him as 2026 general-election candidate, not fetched)",
+        "official House newsletters for District 76 (2023-03-14, 2023-04-24, 2025-10-17), fetched and read",
+        "sponsor list: covered by LegiScan bulk check",
+        "not reviewed: house.texas.gov member page (redirect/empty on fetch)",
+        "Ballotpedia (not fetched; known to return empty)",
+        "campaign site: not found"
+      ],
+      "found": 3,
+      "at": "2026-10-30T23:44:44.778Z",
+      "by": "source-collector"
     }
   ]
 }

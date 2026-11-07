@@ -338,6 +338,76 @@
         "fetched_at": "2026-10-27T22:11:25.955Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "00665e08f686e2088620e3d81b3f81830dac66f3009a4394e6d73d9c358a74f5",
+      "kind": "record",
+      "url": "https://ncleg.gov/BillLookUp/2025/S50",
+      "date": "2025-06-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-50-2025",
+      "act": "nay",
+      "motion": "Second Reading (RCS H-426); page lists third reading passed same day per bill history",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NC House, Second Reading (RCS H-426); page lists third reading passed same day per bill history, 2025-06-11: nay (tally 59–48); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "C (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "286c41b8dd4e26b44a559a37fa290b949d5c8ad275e8b0ad1fd0c8e4701a4617",
+      "kind": "own-words",
+      "url": "https://assets.nationbuilder.com/durhampa/pages/4664/attachments/original/1648042986/hawkins_NCHouse_questionnaire.pdf?1648042986=",
+      "date": "2022-03-19",
+      "date_precision": "day",
+      "passage": "My colleague Marcia Morey led this charge this session. Extreme Risk Protection Orders, people who are a potential harm to themselves and others don't need guns. Limit the size of magazines. Make mandatory background checks and close the gun show loophole. Ban bump stocks. Never allow a teacher to have a gun at school.",
+      "note": "His answer to question 10 (guns) of the 2022 People's Alliance PAC questionnaire; the form is headed with his name. Date is the form's return deadline, March 19, 2022, not necessarily the day he wrote it. The answer goes on to mention punishing dealers who push illegal weapons and says no one with a history of mental health issues and violence should have a weapon.",
+      "subjects": [
+        "extreme-risk (red-flag) orders",
+        "limit magazine size",
+        "background checks on all sales and gun show loophole",
+        "ban on bump stocks",
+        "no guns for teachers at school",
+        "punish dealers of illegal guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-06T00:03:23.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8714eda99bcd7bafe59647aa07e840dba027ab2d6ceb0a46cd688b2e852d33a8",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/camedwards/2026/06/03/after-uber-driver-shot-and-killed-nc-democrat-misses-the-most-obvious-reform-possible-n1232737",
+      "date": "2026-06-02",
+      "date_precision": "day",
+      "passage": "loss is a painful reminder that gun violence continues to impact families and communities across our state.",
+      "note": "Quoted by Bearing Arms (article dated 2026-06-03) from his press conference the day before, held after a rideshare driver was shot and killed; the rest of his remarks were about rideshare driver safety and incident reporting, not firearm rules. 'Tuesday' is 2026-06-02.",
+      "subjects": [
+        "gun violence general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-06T00:03:23.050Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -397,6 +467,32 @@
       "found": 3,
       "at": "2026-10-27T22:11:25.955Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns and large magazines",
+        "background checks and permits to buy",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "minimum age",
+        "general statements on gun rights and gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope: Bearing Arms and Carolina Journal (June 2026) call him Rep. Zack Hawkins, Durham; Branch 2026 page lists him as a candidate for District 31",
+        "campaign sites zackhawkins.com and zackhawkinsnc.com: not reachable or no content (zackhawkins.com returned nothing)",
+        "sponsor list: covered by LegiScan bulk check",
+        "People's Alliance PAC questionnaire 2022, his own answers (PDF): saved",
+        "Carolina Journal 2026-06-04 article: his quotes are about rideshare driver safety, no gun policy content; not saved",
+        "Bearing Arms 2026-06-03 article: one gun-violence statement saved",
+        "Ballotpedia: not reviewed, returns empty to the fetch tool",
+        "web searches (3) on his name with guns, safe storage, permitless carry: nothing further in his own words"
+      ],
+      "found": 2,
+      "at": "2026-11-06T00:03:23.050Z",
+      "by": "source-collector"
     }
   ]
 }

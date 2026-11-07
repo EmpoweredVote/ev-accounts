@@ -1,6 +1,253 @@
 {
   "politician_id": "961506eb-3f00-4358-a9a3-1730e7004474",
-  "findings": [],
+  "findings": [
+    {
+      "id": "de993072b1f015691757356966b25be35f10f79ccfc21b9e05ca9348996cbcde",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "Roll Call #208 - Question on acceptance of conference committee report",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA Senate, Roll Call #208 - Question on acceptance of conference committee report, 2024-07-18: yea (tally 35–5); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db16b98b521d382c722d5503605116e48c77fb9d34798b9816992f739c986730",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "Senate Engrossed Roll Call #114",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA Senate, Senate Engrossed Roll Call #114, 2024-02-01: yea (tally 37–3); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "a7b3680b261d62ebf6107ab9f9df747c623a6f9a611585300571497c66066cff",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4869",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MA-H-4869-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-4869-2021 (LegiScan sponsor list): H4869 (192nd General Court): Relative to 3D printed guns and ghost guns.",
+      "subjects": [
+        "serial numbers required on firearms; unserialized guns must be registered and marked",
+        "ban on undetectable firearms and on 3D-printing guns without a federal license",
+        "ban on distributing digital gun-printing files in some cases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4869-2021.introduced.pdf",
+          "sha256": "bbafa283c191659d818a8dd83633ee46fe167ce87f0f7135b64e570c963d4381"
+        }
+      }
+    },
+    {
+      "id": "098afdb4cf8c0cce88e55aa34438095f59ae2ea312a0d1e21b95ef0adc101724",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/191/S1388",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MA-S-1388-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-S-1388-2019 (LegiScan sponsor list): S1388 (191st General Court): Relative to crime gun data reporting and analysis.",
+      "subjects": [
+        "biennial report on crime gun trace and sales data"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-S-1388-2019.introduced.pdf",
+          "sha256": "ef4cb64fc242ae7df425557408dc449e1507668db996e81266a94029eb68522b"
+        }
+      }
+    },
+    {
+      "id": "1c84c3606722d47862669f33058bd2724c1c3549181d45e52fddbff62b035014",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/S1496",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MA-S-1496-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-S-1496-2023 (LegiScan sponsor list): S1496 (193rd General Court): Relative to ghost guns.",
+      "subjects": [
+        "ban on making, selling or possessing guns and frames without a serial number",
+        "license needed to make more than one gun a year or to 3D-print or CNC-mill guns",
+        "ban on sending digital gun-making files to unlicensed people",
+        "ban on undetectable and disguised firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-S-1496-2023.introduced.pdf",
+          "sha256": "9a9d2b6679f1aeb09e45b59a489422562e26ad916926d061a5260b3072ae3d2a"
+        }
+      }
+    },
+    {
+      "id": "55f995a0aa912e467b58cce5f9231d479bf74f237455796d8d388ed7032338b2",
+      "kind": "own-words",
+      "url": "https://senatorjocomerford.org/the-safer-act/",
+      "date": "2024-02-04",
+      "date_precision": "day",
+      "passage": "Makes it illegal to possess devices that convert semi-automatic firearms into fully automatic machine guns.",
+      "note": "Newsletter summary of S.2572 (Senate gun bill debated Feb 1, 2024); she reports the bill bans machine-gun conversion devices.",
+      "subjects": [
+        "ban on machine-gun conversion devices",
+        "gun safety bill"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:36:38.894Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5ed1ffb29d18e373f8f2b6ad74c224581b2e89742efdacba675100008cb8c5b",
+      "kind": "own-words",
+      "url": "https://senatorjocomerford.org/the-safer-act/",
+      "date": "2024-02-04",
+      "date_precision": "day",
+      "passage": "Creates a criminal charge for intentionally firing a firearm at a dwelling or other building in use.",
+      "note": "Newsletter summary of S.2572 provision on firing at buildings.",
+      "subjects": [
+        "gun safety bill"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:36:38.894Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a57260a708cfa627b6437c0367fdee1951e7c084dfb9e76d8deebefc7e64280a",
+      "kind": "own-words",
+      "url": "https://senatorjocomerford.org/strengthening-our-gun-safety-laws/",
+      "date": "2024-07-19",
+      "date_precision": "day",
+      "passage": "The bill also enhances requirements for reporting lost, stolen and surrendered firearms.",
+      "note": "Newsletter describing S.2572 provisions; she also says her work was driven by an interest in reducing gun violence.",
+      "subjects": [
+        "gun safety bill",
+        "reporting lost or stolen guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:36:38.894Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cd38b02ec46efef8030db82a66b473054b720e42fd88c7c4369c5c4613e7ec05",
+      "kind": "own-words",
+      "url": "https://senatorjocomerford.org/strengthening-our-gun-safety-laws/",
+      "date": "2024-07-19",
+      "date_precision": "day",
+      "passage": "The legislation criminalizes discharging firearms at or near dwellings.",
+      "note": "Newsletter describing S.2572 provisions. The page also says the bill requires registration and serialization of frames and receivers (ghost guns) and bars carry on school buses, polling places and government buildings (fetch tool gave only fragments of those sentences).",
+      "subjects": [
+        "gun safety bill",
+        "ghost guns",
+        "places where carry is barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:36:38.894Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "93546c6213a13f21d147614c17ef5b6f6d2e78db36e992588c0f44b5f19fcb26",
+      "kind": "own-words",
+      "url": "https://senatorjocomerford.org/cant-stop-wont-stop-ever/",
+      "date": "2022-06-30",
+      "date_precision": "day",
+      "passage": "Massachusetts has some of the strongest common sense gun laws in the country",
+      "note": "From the 'On gun safety' section after the Supreme Court gun ruling (Bruen); fetch tool returned this as a fragment without final punctuation. She also promises to work to protect the state's safeguards.",
+      "subjects": [
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:36:38.894Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -47,6 +294,29 @@
       "found": 0,
       "at": "2026-10-27T14:40:42.396Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety bill",
+        "ghost guns",
+        "carry places",
+        "firearm licensing",
+        "assault-style guns and magazines"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site tag pages senatorjocomerford.org/tag/gun-safety/ and /tag/gun/",
+        "senatorjocomerford.org posts (3 fetched)",
+        "sponsor list: covered by LegiScan bulk check",
+        "blocked: plain curl of https://senatorjocomerford.org/the-safer-act/ (406); also strengthening-our-gun-safety-laws and cant-stop-wont-stop-ever (406); read through the fetch tool only, which returns short quotes",
+        "one web search on name plus gun safety",
+        "Ballotpedia: not relied on"
+      ],
+      "found": 5,
+      "at": "2026-11-01T01:36:38.894Z",
+      "by": "source-collector"
     }
   ]
 }

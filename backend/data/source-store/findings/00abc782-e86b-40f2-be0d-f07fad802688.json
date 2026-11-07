@@ -1,0 +1,411 @@
+{
+  "politician_id": "00abc782-e86b-40f2-be0d-f07fad802688",
+  "findings": [
+    {
+      "id": "3703a365d0ff2ef8d8d8279b183c3c2f604faa3957b62f8196be6c92bb5f7485",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-117s2938enr/html/BILLS-117s2938enr.htm",
+      "date": "2022-06-23",
+      "date_precision": "day",
+      "instrument_id": "US-S-2938-2022",
+      "act": "nay",
+      "motion": "Motion to Concur in the House amendment to S. 2938 with an amendment (Amdt. No. 5099)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US Senate, Motion to Concur in the House amendment to S. 2938 with an amendment (Amdt. No. 5099), 2022-06-23: nay (tally 65–33); census gate: multi-subject.",
+      "subjects": [
+        "background checks for buyers under 21",
+        "court orders that take guns from a dangerous person (state grants)",
+        "gun trafficking (package)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "86135173fc45c9e57fb00f0b7033b2cf40b696b7cf3c7f89dd826c77ca65f392",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2023252",
+      "date": "2023-06-22",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-44-2023",
+      "act": "yea",
+      "motion": "On the Joint Resolution (H.J. Res. 44)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Joint Resolution (H.J. Res. 44), 2023-06-22: yea (tally 49–50); census gate: none.",
+      "subjects": [
+        "cancel the federal pistol-brace rule"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-118hjres44eh.txt",
+          "sha256": "d04fe1fe2a2512a1932d14b7b93d88fe25ac6712851bc4caa37df31b89101f4d"
+        }
+      }
+    },
+    {
+      "id": "9ce1f33f76dbc58198365ff351ff87295e6f6a641ce6e66e7104616d8469acda",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2024/https://www.senate.gov/legislative/LIS/roll_call_votes/vote1131/vote_113_1_00097.htm",
+      "date": "2013-04-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-649-SAMDT-715-2013",
+      "act": "nay",
+      "motion": "On the Amendment (Manchin Amdt. No. 715) to S. 649 (Safe Communities, Safe Schools Act of 2013)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Amendment (Manchin Amdt. No. 715) to S. 649 (Safe Communities, Safe Schools Act of 2013), 2013-04-17: nay (tally 54–46); census gate: none.",
+      "subjects": [
+        "background checks at gun shows and online sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/CREC-2013-04-11-senate.pdf",
+          "sha256": "5cbf6123ec6d0ee19de0b8748333db8dffcc46d276dd1e80d1692c182b9872fb"
+        }
+      }
+    },
+    {
+      "id": "5332af60ebb1cedea53c74220b5423e11ba41619648c8e8288583a4c5b9c7306",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2024/https://www.senate.gov/legislative/LIS/roll_call_votes/vote1131/vote_113_1_00100.htm",
+      "date": "2013-04-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-649-SAMDT-719-2013",
+      "act": "yea",
+      "motion": "On the Amendment (Cornyn Amdt. No. 719) to S. 649 (Safe Communities, Safe Schools Act of 2013)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Amendment (Cornyn Amdt. No. 719) to S. 649 (Safe Communities, Safe Schools Act of 2013), 2013-04-17: yea (tally 57–43); census gate: none.",
+      "subjects": [
+        "honor carry permits from other states"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/CREC-2013-04-17-senate.pdf",
+          "sha256": "40bb495c367c32e142f8ea953accada60d7a67c47296fcd8b7dd71b653ef3a69"
+        }
+      }
+    },
+    {
+      "id": "cd6242a5f6074c3a522a526b23362688490f30e43baf232ed3fc5e7670715167",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2024/https://www.senate.gov/legislative/LIS/roll_call_votes/vote1131/vote_113_1_00101.htm",
+      "date": "2013-04-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-649-SAMDT-711-2013",
+      "act": "nay",
+      "motion": "On the Amendment (Feinstein Amdt. No. 711) to S. 649 (Safe Communities, Safe Schools Act of 2013)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, On the Amendment (Feinstein Amdt. No. 711) to S. 649 (Safe Communities, Safe Schools Act of 2013), 2013-04-17: nay (tally 40–60); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns",
+        "large magazine limit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/CREC-2013-04-11-senate.pdf",
+          "sha256": "5cbf6123ec6d0ee19de0b8748333db8dffcc46d276dd1e80d1692c182b9872fb"
+        }
+      }
+    },
+    {
+      "id": "59c9eaed6ad8d62b557e27fd6b2b75271bce535faf3cef2b6b55238230957dbc",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2025190",
+      "date": "2025-07-01",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2025",
+      "act": "yea",
+      "motion": "On Passage of the Bill (H.R. 1, as Amended)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US Senate, On Passage of the Bill (H.R. 1, as Amended), 2025-07-01: yea (tally 50–50); census gate: multi-subject.",
+      "subjects": [
+        "end the federal tax on suppressors and short-barrelled guns",
+        "budget (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "207ee0084a9122dd3942bffdd0b15b67995f651d047a18b44cd644b46ff3e79d",
+      "kind": "own-words",
+      "url": "https://urbanmilwaukee.com/pressrelease/johnson-supports-concealed-carry-reciprocity-bill",
+      "date": "2019-01-10",
+      "date_precision": "day",
+      "passage": "This bill protects states’ rights while allowing law-abiding citizens to safely exercise their Second Amendment rights away from home.",
+      "note": "Quote from his press release (reposted by Urban Milwaukee) backing the Constitutional Concealed Carry Reciprocity Act, introduced by another senator; the bill would let permit holders carry in other states that have carry laws.",
+      "subjects": [
+        "honour other states' carry permits",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:15:27.008Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "85132d58589e58ff666a472a09240070dc0922d7d8855dce27d4a0f75c7d3c79",
+      "kind": "own-words",
+      "url": "https://edition.cnn.com/2019/08/20/politics/ron-johnson-gun-control",
+      "date": "2019-08-20",
+      "date_precision": "day",
+      "passage": "“I don’t anticipate, that we’re going to pass any federal red flag law, I think all Sen. Graham is talking about is a grant program.”",
+      "note": "Quoted by CNN on federal red-flag proposals.",
+      "subjects": [
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:15:27.008Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a631be87e282be1b66a6af860dc7b420b8a8de3fa5f4e945ab86fbec27a41204",
+      "kind": "own-words",
+      "url": "https://edition.cnn.com/2019/08/20/politics/ron-johnson-gun-control",
+      "date": "2019-08-20",
+      "date_precision": "day",
+      "passage": "“If we have that discussion, if we’re going to offer grants to states to pass red flag laws, we ought to attach to those grants very strict guidelines in terms of due process,” Johnson said.",
+      "note": "Quoted by CNN on conditions for grants to states for red-flag laws.",
+      "subjects": [
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:15:27.008Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bf0e60d18d6be7633ee164f69f8ed5ba28c5312af00944cedcc0218cccfcfeef",
+      "kind": "own-words",
+      "url": "https://edition.cnn.com/2019/08/20/politics/ron-johnson-gun-control",
+      "date": "2019-08-20",
+      "date_precision": "day",
+      "passage": "Johnson referred to mandatory buyback programs as “compensated confiscation” and said that all of the options that have been proposed are “just a further infringement on second amendment rights.”",
+      "note": "CNN's sentence, with his own words quoted inside it, on gun buyback and other proposals; only the quoted parts are his.",
+      "subjects": [
+        "gun buyback programs",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:15:27.008Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c66402384ceac99f71bdb40bbb43560d19b497fba0314b23d5892f98e2cba09a",
+      "kind": "own-words",
+      "url": "https://edition.cnn.com/2019/08/20/politics/ron-johnson-gun-control",
+      "date": "2019-08-20",
+      "date_precision": "day",
+      "passage": "“People still ask the same questions. OK, if you propose some kind of gun legislation, first of all, how would that have prevented these tragedies in the past? How would they prevent them in the future?”",
+      "note": "Quoted by CNN on new gun legislation after the 2019 shootings.",
+      "subjects": [
+        "new gun laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:15:27.008Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9f078da3242cd087d2fe90bf1df04d4d11051334ca813d26b129424150c0e317",
+      "kind": "own-words",
+      "url": "https://wausaupilotandreview.com/2019/08/05/sen-johnson-appears-to-signal-support-for-red-flag-law/",
+      "date": "2019-08-05",
+      "date_precision": "day",
+      "passage": "Johnson in a statement Monday called for re-evaluating “how our society treats mental illness to keep firearms out of the hands of people who pose a danger to themselves and their communities.”",
+      "note": "AP report of his statement; only the quoted words are his. The report says the statement appears to signal possible support for a red-flag law.",
+      "subjects": [
+        "red-flag orders",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:15:27.008Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0efe1f5df93634314d3c200896dc5c85660351ff71f64bccd4d6438141467165",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/115th-congress/house-joint-resolution/40",
+      "date": "2017-02-15",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-40-2017",
+      "act": "yea",
+      "motion": "Passed Senate without amendment by Yea-Nay Vote. 57 - 43. Record Vote Number: 66 (Roll 66)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US Senate, Passed Senate without amendment by Yea-Nay Vote. 57 - 43. Record Vote Number: 66 (Roll 66), 2017-02-15: yea (tally 57–43); census gate: none.",
+      "subjects": [
+        "rule sending records to gun background check system overturned"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HJRES-40-2017.htm",
+          "sha256": "616db93c5dbc0f8d42ff56878c6d7302412f4feaade1ac2794ac4020fae05e55"
+        }
+      }
+    },
+    {
+      "id": "82aace17f4ba2c5eb7b92483e60727b6c46b6bb43cdbfea72357fea1a36e10b7",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/65",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "US-S-65-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2025-01-09",
+      "note": "co sponsor of US-S-65-2025 (cosponsor 2025-01-09): S 65 (119th Congress): Constitutional Concealed Carry Reciprocity Act of 2025.",
+      "subjects": [
+        "national concealed-carry reciprocity for handguns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-S-65-2025.htm",
+          "sha256": "553385ff6538d8ab33b460cba8f4ce77a6b27ee7f2d5542d5f6810317128aeb4"
+        }
+      }
+    },
+    {
+      "id": "a79db97feb0101fbc93ee29dc0a3e5b51323914a16c3b2da2d48ce626bedd4f7",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/senate-joint-resolution/20",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "US-SJRES-20-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2023-03-15",
+      "note": "co sponsor of US-SJRES-20-2023 (cosponsor 2023-03-15): SJRES 20 (118th Congress): A joint resolution providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Justice and the Bureau of Alcohol, Tobacco, Firearms and Explosives relating to \"Factoring Criteria for Firearms With Attached 'Stabilizing Braces'\"..",
+      "subjects": [
+        "ATF stabilizing-brace rule disapproved"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-SJRES-20-2023.htm",
+          "sha256": "01e71824e8991c247f827837d8852968be726f4c2b3d843bf11bbb3a396d8f75"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits honoured across states",
+        "gun buyback programs",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://www.ronjohnson.senate.gov/?p=5223 (403)",
+        "blocked: https://www.ronjohnson.senate.gov/2019/01/10/2019-1-johnson-supports-concealed-carry-reciprocity-bill/ (403)",
+        "blocked: https://www.ronjohnson.senate.gov/2023/2/sen-johnson-colleagues-introduce-concealed-carry-reciprocity-bill (403)",
+        "blocked: https://www.ronjohnson.senate.gov/public/index.cfm/press-releases (403)",
+        "blocked: https://www.wxow.com/news/johnson-votes-against-advancing-bipartisan-gun-laws-blaming-funding-for-red-flag-laws/article_1d200dd1-532d-5991-a656-c1e792b27322.html (429)",
+        "the 2019 reciprocity press release was read on a news-site repost of his office's release",
+        "CNN 2019-08-20 interview report fetched",
+        "AP report of his 2019-08-05 statement fetched",
+        "WPR 2013 report fetched: paraphrase only, not used",
+        "FOX6 2016 report fetched: reporter's words only, not used",
+        "web searches (2) on name plus gun words",
+        "not reviewed: congress.gov sponsorship list; the 2023 reciprocity bill co-sponsorship is named only in search results, not confirmed from a fetched page",
+        "Ballotpedia not fetched (known to return empty)"
+      ],
+      "found": 6,
+      "at": "2026-10-30T15:15:27.008Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "politician_id": "78a268b3-07fe-4179-97c8-8165cad6c6d0",
+  "findings": [
+    {
+      "id": "e076c8b48278b31632ee890048920af3952a61ffb83895b5d23bfa476c64b17f",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Voss'), linked to John Voss (district 147) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.752Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "places": [
+        "position confirmed: Cape Girardeau House District 147 member (KFVS, Southeast Missourian, Missouri Times pages)",
+        "KFVS 2022 candidate piece, Missouri Times 2019 launch piece, Southeast Missourian election-night piece, News-Tribune 2026-01-28 presidential-primary piece: nothing on proof of ID or citizenship",
+        "not reviewed: Southeast Missourian vice-chair article (blocked 403)",
+        "On the Record (0 meetings)",
+        "Ballotpedia: blocked, not tried per instructions",
+        "official house.mo.gov pages: not fetched (off-limits)",
+        "votesmart: blocked: https://justfacts.votesmart.org/candidate/biography/183349/ann-kelley",
+        "newsroom.house.mo.gov: not fetched (separate collector)",
+        "web searches on name plus subject words (nothing on the subject beyond what is listed)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:10:48.775Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:10:53.752Z",
+      "by": "identity-mo-2026-11-04"
+    }
+  ]
+}

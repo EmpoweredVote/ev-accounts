@@ -1,0 +1,26 @@
+{
+  "politician_id": "82ebf50d-786b-445d-9c39-f898e154c6a8",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and gun limits (scope check only)"
+      ],
+      "places": [
+        "status: lost the 2026-08-04 primary (third of three in Michigan's 10th district, 23,315 votes of 99,982), shown on https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Michigan; this is a finding-aid page and no second source could be reached, so please confirm against official results",
+        "On the Record (0 appearances)",
+        "campaign site https://www.timgreimel.com: still shows him as a candidate (not updated); confirms he ran in district 10",
+        "blocked: https://ballotpedia.org/Tim_Greimel (403)",
+        "blocked: https://michiganadvance.com/briefs/race-for-michigans-10th-congressional-district-narrows-as-former-candidate-endorses-hines/ (403)",
+        "blocked: https://www.freep.com/story/opinion/editorials/2026/09/30/free-press-endorsement-michigan-10th-us-house-district-christina-hines-michael-bouchard/92016310007/ (402)",
+        "blocked: https://www.michigan.gov/sos/elections/election-results-and-data (403)",
+        "blocked: web search (this session's search budget was used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:07:18.680Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "politician_id": "00425ef8-553e-4b65-8aef-17390bcde3d1",
+  "findings": [
+    {
+      "id": "f65926a14bef56614c516fbd58d173d95a4f240b31e750c3350fed9af927a045",
+      "kind": "own-words",
+      "url": "https://www.insidernj.com/proud-son-of-the-pinelands-murphy-wants-to-take-on-booker/",
+      "date": "2026-02-04",
+      "date_precision": "day",
+      "passage": "I will oppose any attempt by the government that threatens to take away our Constitutional right to bear arms",
+      "note": "Item 9 of his pledge list, titled Advocacy for Second Amendment Rights, as published by InsiderNJ. The item continues: \"I will oppose all attempts to suppress 2A rights whether from domestic or international bodies.\"",
+      "subjects": [
+        "Second Amendment",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:14:15.903Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d8441fce6c0c588be7f25c29b8330f85953edaff134cb37fe8ddc2221194ef02",
+      "kind": "own-words",
+      "url": "https://www.insidernj.com/proud-son-of-the-pinelands-murphy-wants-to-take-on-booker/",
+      "date": "2026-02-04",
+      "date_precision": "day",
+      "passage": "I support Constitutional Carry.",
+      "note": "Last sentence of item 9 of his pledge list as published by InsiderNJ.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:14:15.903Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "carry a gun without a permit",
+        "government limits on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "WHYY primary report fetched: confirms Justin Murphy won the 2026 primary for U.S. Senate in New Jersey (on the general-election ballot); nothing on guns",
+        "InsiderNJ campaign-platform article fetched (via the fetch tool, passage returned verbatim; a plain curl of the page returned empty)",
+        "gun-industry trade group page fetched: about a different Murphy, not used",
+        "campaign site: guessed address did not resolve; no working campaign address found",
+        "web searches (3) on name plus gun words",
+        "Ballotpedia not fetched (known to return empty)",
+        "not reviewed: https://www.predictionedge.com/elections/profile/justin-murphy/ (third-party summary, not his words)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T15:14:15.903Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "politician_id": "8f666d4a-8b9b-42bb-b0ec-a38c4afa2645",
+  "findings": [
+    {
+      "id": "19cdbbe5d34d08f33a4387382dd9d4a8a8a0a1c3d116d85c34272ae18d3c22ad",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2016/pdf/history/HB/HB0786.xml",
+      "date": "2016-04-05",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-786-2016",
+      "act": "yea",
+      "motion": "Concurred in Amendment from Senate (final House vote)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS House, Concurred in Amendment from Senate (final House vote), 2016-04-05: yea (tally 85–35); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence",
+        "church security"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/MS_HB786SG.pdf",
+          "sha256": "a1142904e692e81f08ce94bef1f5827e9d662ac1f81ce57f6330064169e08945"
+        }
+      }
+    },
+    {
+      "id": "6a36c7bec361da7c2b0bbb58ca0a7bb88a0eaf2cc80827cc0f0c72d0fef4508d",
+      "kind": "own-words",
+      "url": "https://magnoliatribune.com/?p=93192",
+      "date": "2023-03-28",
+      "date_precision": "day",
+      "passage": "“We changed it to where we make sure you have at least four years,” Powell said. “What we’re doing is: the presidential primary to the next presidential election which gives you basically about four and a half years to vote. If you don’t vote in that period of time, that’s when you’ll get that card, and if you don’t return that card within four years you’ll be removed. You can still vote affidavit and you can actually reregister at that point if you would like.”",
+      "note": "Quoted by Magnolia Tribune on House Bill 1310 (2023 election-integrity and voter-roll cleanup bill): explains when a non-voting registrant is sent a confirmation card and removed, and that the person can still vote by affidavit ballot or re-register. The article is dated 2023-03-28; the remark was made earlier (article says 'at the time'), so the date is the article date.",
+      "subjects": [
+        "voter-roll maintenance",
+        "affidavit ballot for removed or inactive voter"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:55:29.643Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d4e868964ed4d56fc32ec792437d9901a88084d804cae2d0686301c5384c34af",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/house/0850033.pdf",
+      "date": "2022-03-29",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "yea",
+      "motion": "House: The conference report on H. B. No. 1510 was adopted by the following vote: (0850033)",
+      "note": "House roll call as printed ('Powell'), linked to Brent Powell (district 59) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.751Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "80f543392cdecdfed857e1cecc2d81d1e019ff2973cf28bae978d78d335833e2",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/history/HB/HB1510.xml",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "sponsor",
+      "motion": "prime sponsor, As Sent to Governor (HB1510SG = conference report HB1510CR text); passed-House (PS) and Senate committee amendment also read; introduced (IN, a risk-limiting-audit bill) also saved",
+      "note": "Named as prime sponsor ('Powell') on the official bill text, summary or journal; linked to Brent Powell via the official 2022 member roll of the House (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.751Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39b991844f0e395bc487c48e801820733d70f388586c168923fbb49ce0907e59",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2021/pdf/votes/house/0370056.pdf",
+      "date": "2021-02-10",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-586-2021",
+      "act": "yea",
+      "motion": "House: H. B. No. 586 passed by the following vote: (0370056)",
+      "note": "House roll call as printed ('Powell'), linked to Brent Powell (district 59) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.751Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7919841f482f7fbde91a529af7a24c5d037df8b0922771e24dad12af155e1c4f",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/house/0360024.pdf",
+      "date": "2018-02-06",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-804-2018",
+      "act": "yea",
+      "motion": "House: H. B. No. 804 passed by the following vote: (0360024)",
+      "note": "House roll call as printed ('Powell'), linked to Brent Powell (district 59) via the official 2018 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.751Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f83d0028419134d578f055f22fbb42fc2269d0d95536e5a2081a180daf0e758",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/house/0940041.pdf",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "House: S. B. No. 2576 passed by the following vote: (0940041)",
+      "note": "House roll call as printed ('Powell'), linked to Brent Powell (district 59) via the official 2024 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.751Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b680fb8404ce02d97d84d7e0e33d2bd57ac1c2f65c056d5f4979c0eb31a6ce26",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Powell'), linked to Brent Powell (district 59) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.751Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act / SHIELD Act citizenship checks",
+        "voter-roll maintenance",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings for this id)",
+        "legislature member page (billstatus.ls.state.ms.us/members/house/powell.xml, fetched by curl; confirms the seat)",
+        "web searches on name + voter ID, photo ID, proof of citizenship / SHIELD Act, questionnaire / voter guide, local papers (no page with their own words on the subject beyond what is listed)",
+        "Magnolia Tribune 2026-03-10 SHIELD Act article (https://magnoliatribune.com/?p=142370): read, does not name this person",
+        "WLOX/WDAM 2026-05-14 SHIELD Act article: read, does not name this person",
+        "MPB citizenship-registration article and Desoto County News HB 1310 article: read, do not name this person",
+        "blocked: Ballotpedia (refused by rule, not fetched)",
+        "not reviewed: mississippitoday.org, clarionledger.com and other sites that refuse AI agents (rule)",
+        "blocked: https://legalnewsline.com/stories/670461764-citizen-only-voting-measure-seems-dead-in-mississippi-but-hosemann-has-power-to-revive-it (429 on one plain curl)",
+        "no personal campaign site or newsletter on the subject found by search",
+        "Magnolia Tribune 2023-03-28 HB 1310 article (https://magnoliatribune.com/?p=93192): read; one direct quote of this person, saved",
+        "Secretary of State column on HB 1310 (https://mageenews.com/easy-to-vote-hard-to-cheat/): read; words are the Secretary of State's, not this person's, so not saved"
+      ],
+      "found": 1,
+      "at": "2026-11-05T22:55:29.643Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 6,
+      "at": "2026-11-05T23:52:51.751Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

@@ -80,6 +80,893 @@
           "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
         }
       }
+    },
+    {
+      "id": "d8354bd96ef3b2f7bc2752dd19bc28bd5e73a9d49e5e4346b0ae89989d11d8cd",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2022410",
+      "date": "2022-07-29",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1808-2022",
+      "act": "nay",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2022-07-29: nay (tally 217–213); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns",
+        "large magazine limit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-117hr1808eh.txt",
+          "sha256": "75fbb3d8aa67a1e741919bd36d5950f2147af5ee9aebad54f3c833934b9b65c9"
+        }
+      }
+    },
+    {
+      "id": "79544b7f17fafb73741ecf3e91b943ed2e980a7c386058c35622bc31d59d5284",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2021075",
+      "date": "2021-03-11",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8-2021",
+      "act": "nay",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2021-03-11: nay (tally 227–203); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-117hr8eh.txt",
+          "sha256": "7ff6618b8d01b36e670d15017408752e74041ec8d8a1582826124674ff3dff11"
+        }
+      }
+    },
+    {
+      "id": "11c5e8927abf4f2884e1588daba1d4169b6f56bd0eb903dcd07a82af07721bca",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/201999",
+      "date": "2019-02-27",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8-2019",
+      "act": "nay",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2019-02-27: nay (tally 240–190); census gate: none.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-116hr8eh.txt",
+          "sha256": "8596643f954424e8d7074a38f569bc2885d50357f8208d6d0dbd7329c96e4b2c"
+        }
+      }
+    },
+    {
+      "id": "7292876d7868969a8ad870e44b579f60c678386171707aecc9904ddf1c1bf32a",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2017663",
+      "date": "2017-12-06",
+      "date_precision": "day",
+      "instrument_id": "US-HR-38-2017",
+      "act": "yea",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2017-12-06: yea (tally 231–198); census gate: none.",
+      "subjects": [
+        "honor carry permits from other states",
+        "background check system reporting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-115hr38eh.txt",
+          "sha256": "96f3d68e094e7438812650edc88a468959aa2048490e6a8299d390837cb09d12"
+        }
+      }
+    },
+    {
+      "id": "c072ff5fa91582b0b0fa6ff7cf6cffd94f588275db23a751786de0d6886a71a4",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2022245",
+      "date": "2022-06-08",
+      "date_precision": "day",
+      "instrument_id": "US-HR-7910-2022",
+      "act": "nay",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2022-06-08: nay (tally 223–204); census gate: none.",
+      "subjects": [
+        "age 21 to buy some semiautomatic rifles",
+        "large magazine limit",
+        "gun trafficking (package)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3b69171aad418cf3b882de356ff4b4f51b86cc460aed11ed8cb869de5bbd4d55",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-117s2938enr/html/BILLS-117s2938enr.htm",
+      "date": "2022-06-24",
+      "date_precision": "day",
+      "instrument_id": "US-S-2938-2022",
+      "act": "nay",
+      "motion": "On Concurring in the Senate Amendments to the House Amendment",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US House, On Concurring in the Senate Amendments to the House Amendment, 2022-06-24: nay (tally 234–193); census gate: multi-subject.",
+      "subjects": [
+        "background checks for buyers under 21",
+        "court orders that take guns from a dangerous person (state grants)",
+        "gun trafficking (package)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "706a380a62569720f113336c1911d3aa1d0bde03db194683edd8485644bc1e03",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2023252",
+      "date": "2023-06-13",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-44-2023",
+      "act": "yea",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2023-06-13: yea (tally 219–210); census gate: none.",
+      "subjects": [
+        "cancel the federal pistol-brace rule"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-118hjres44eh.txt",
+          "sha256": "d04fe1fe2a2512a1932d14b7b93d88fe25ac6712851bc4caa37df31b89101f4d"
+        }
+      }
+    },
+    {
+      "id": "d1cf3ea0fb05d85514d99e72ecfbc343d0b958d25acd54e6a5b4e7f76f835fe9",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2025190",
+      "date": "2025-07-03",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2025",
+      "act": "yea",
+      "motion": "On Motion to Concur in the Senate Amendment",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "US House, On Motion to Concur in the Senate Amendment, 2025-07-03: yea (tally 218–214); census gate: multi-subject.",
+      "subjects": [
+        "end the federal tax on suppressors and short-barrelled guns",
+        "budget (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0fb3929f5246717d4bde69923fcfeeda2c1e07d717698020231b9db0288a72f0",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/115th-congress/house-joint-resolution/40",
+      "date": "2017-02-02",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-40-2017",
+      "act": "yea",
+      "motion": "On Passage (Roll 77)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 77), 2017-02-02: yea (tally 235–180); census gate: none.",
+      "subjects": [
+        "rule sending records to gun background check system overturned"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HJRES-40-2017.htm",
+          "sha256": "616db93c5dbc0f8d42ff56878c6d7302412f4feaade1ac2794ac4020fae05e55"
+        }
+      }
+    },
+    {
+      "id": "589708d68e86e126254680ea18c91ed72a8f45c4ea1d4d85fb6f52e8a54d98a3",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1041",
+      "date": "2026-05-21",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1041-2026",
+      "act": "yea",
+      "motion": "On Passage (Roll 190)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 190), 2026-05-21: yea (tally 216–201); census gate: none.",
+      "subjects": [
+        "VA records barred from gun background check without a judge's finding",
+        "VA fiduciary or incompetence finding not a 'mental defective' adjudication"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1041-2026.htm",
+          "sha256": "2a2784caf1b89019cb01ab04ebd2e2332984244d9935fad9618771638d40338e"
+        }
+      }
+    },
+    {
+      "id": "4452b2d523b44906547583c31a076a0cc023cc2913c4f04adbf6c269dbdc254b",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/116th-congress/house-bill/1112",
+      "date": "2019-02-28",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1112-2019",
+      "act": "nay",
+      "motion": "On Passage (Roll 103)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 103), 2019-02-28: nay (tally 228–198); census gate: none.",
+      "subjects": [
+        "gun sale proceeds after 10 business days if background check pending and buyer petitions",
+        "renamed 'mental defective' category in gun prohibitions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1112-2019.htm",
+          "sha256": "d817cf452544898f788a74fb237b88aa4118eba8faf5f27c87a6b4a3553c0657"
+        }
+      }
+    },
+    {
+      "id": "47c366f203ce98320481a330d1d875c58d608bc4ba0ff068d88e6c5231a10b69",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/115th-congress/house-bill/1181",
+      "date": "2017-03-16",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1181-2017",
+      "act": "yea",
+      "motion": "On Passage (Roll 169)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 169), 2017-03-16: yea (tally 240–175); census gate: none.",
+      "subjects": [
+        "VA incompetence finding alone cannot block gun purchase"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1181-2017.htm",
+          "sha256": "16ac8058d73137cfefc981316ca66ecbcdedd11533be8975a8b95aed6f3ebd85"
+        }
+      }
+    },
+    {
+      "id": "4a308d48a9549e50306297a949724b97a1418451146f08ca82bbe8af63d33502",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1181",
+      "date": "2026-07-14",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1181-2026",
+      "act": "yea",
+      "motion": "On Passage (Roll 240)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 240), 2026-07-14: yea (tally 221–201); census gate: none.",
+      "subjects": [
+        "separate payment codes for gun stores barred",
+        "state and local rules on gun-store payment codes preempted"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1181-2026.htm",
+          "sha256": "f006527184528c0f2d077b081748501c1dd86c4e2c2b83f4ce23ab419e1fb25c"
+        }
+      }
+    },
+    {
+      "id": "1ae6322e39bf83bce3732cb5bc1cb0b702cf2caa0dedd0ef85ead10cff40fb5f",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/117th-congress/house-bill/1446",
+      "date": "2021-03-11",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1446-2021",
+      "act": "nay",
+      "motion": "On Passage (Roll 77)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 77), 2021-03-11: nay (tally 219–210); census gate: none.",
+      "subjects": [
+        "gun sale proceeds after 10 business days if background check pending and buyer petitions",
+        "FBI and GAO reporting on delayed checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1446-2021.htm",
+          "sha256": "c4882355126081a2e3fa4206892cd539969825312997c9b06bebcbeaa2e6e00d"
+        }
+      }
+    },
+    {
+      "id": "342e719a2631d053db4cb07977d5fc7e78d95ce5d7b5ae14f3440c2c501164ff",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/2189",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "US-HR-2189-2026",
+      "act": "yea",
+      "motion": "On Passage (Roll 70)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 70), 2026-02-12: yea (tally 233–185); census gate: none.",
+      "subjects": [
+        "less-than-lethal launchers exempt from federal firearm rules",
+        "firearms and ammunition excise tax waived for those devices",
+        "exempt from National Firearms Act"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-2189-2026.htm",
+          "sha256": "dc2e63136aaa75fcc392af14f19bb2aae027e280992db65f70d454213a650e4e"
+        }
+      }
+    },
+    {
+      "id": "23114e9e86206e3862695a222cdf0d4b9d8071e9e39e2d4fdbd7f6f4f00855de",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/2243",
+      "date": "2025-05-14",
+      "date_precision": "day",
+      "instrument_id": "US-HR-2243-2025",
+      "act": "yea",
+      "motion": "On Passage (Roll 128)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 128), 2025-05-14: yea (tally 229–193); census gate: none.",
+      "subjects": [
+        "more places where off-duty and retired officers may carry concealed guns",
+        "retired officer firearms-training standards loosened"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-2243-2025.htm",
+          "sha256": "ca5f7326393fa8074705e6aa642e2b3a991c4d683236cff228e515a1bf193f9e"
+        }
+      }
+    },
+    {
+      "id": "a7e7960420c95fbb22562bb2a39c5682ce204f7a4452b4ad1026d6531d951f5e",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/2255",
+      "date": "2025-05-15",
+      "date_precision": "day",
+      "instrument_id": "US-HR-2255-2025",
+      "act": "yea",
+      "motion": "On Passage (Roll 130)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 130), 2025-05-15: yea (tally 234–182); census gate: none.",
+      "subjects": [
+        "federal officers may buy retired service firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-2255-2025.htm",
+          "sha256": "d169bbda6c281e845e29bde7d0fdabe0f76218dba3948eaf0725bb49db42a459"
+        }
+      }
+    },
+    {
+      "id": "75140144064b25eae3548f85b13a31c8284a1eeb26d789dc82f36c5a47e7b3a8",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/117th-congress/house-bill/2377",
+      "date": "2022-06-09",
+      "date_precision": "day",
+      "instrument_id": "US-HR-2377-2022",
+      "act": "nay",
+      "motion": "On Passage (Roll 255)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 255), 2022-06-09: nay (tally 224–202); census gate: none.",
+      "subjects": [
+        "federal court orders removing guns from people at risk of harming self or others",
+        "people under such orders barred from buying or having guns",
+        "grants to states that pass similar laws; full faith and credit for state orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-2377-2022.htm",
+          "sha256": "0756bea215bf2e05254d7841253c5b9c96f55d0e61c40b092589269903a9da84"
+        }
+      }
+    },
+    {
+      "id": "6171d463f66ec40566e7e2d4bd517484e36c2f52e082e960bfd64923bb803c73",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/3091",
+      "date": "2023-05-17",
+      "date_precision": "day",
+      "instrument_id": "US-HR-3091-2023",
+      "act": "yea",
+      "motion": "On Passage (Roll 222)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 222), 2023-05-17: yea (tally 232–198); census gate: none.",
+      "subjects": [
+        "federal officers may buy retired service firearms",
+        "retired firearms sold at salvage value"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-3091-2023.htm",
+          "sha256": "e899d40a176d7044cba854eabc7143658b4f6582f0408b508c7766cb7554a3da"
+        }
+      }
+    },
+    {
+      "id": "cb3542f52ee29571b9fddb5a577d8404a950fda8627d445c4064c396df32daef",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/354",
+      "date": "2024-05-16",
+      "date_precision": "day",
+      "instrument_id": "US-HR-354-2024",
+      "act": "yea",
+      "motion": "On Passage (Roll 213)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 213), 2024-05-16: yea (tally 221–185); census gate: none.",
+      "subjects": [
+        "current and retired officers may carry concealed firearms in more places",
+        "school-zone and federal-facility carry exemption for officers",
+        "looser firearms training rules for retired officers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-354-2024.htm",
+          "sha256": "eb2493bda35fc8f6f40d3e53010f0fef11663f8ba0c4115861acc719aeb0bc51"
+        }
+      }
+    },
+    {
+      "id": "b6e5d81d8d58727db8225e525725eb1039ff74889d3c0bc30510e8583282924c",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/5110",
+      "date": "2023-09-26",
+      "date_precision": "day",
+      "instrument_id": "US-HR-5110-2023",
+      "act": "yea",
+      "motion": "On Motion to Suspend the Rules and Pass, as Amended (Roll 407)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "US House, On Motion to Suspend the Rules and Pass, as Amended (Roll 407), 2023-09-26: yea (tally 424–1); census gate: near-unanimous.",
+      "subjects": [
+        "federal school funds may be used for hunting and shooting-sports instruction"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-5110-2023.htm",
+          "sha256": "1f42e6e5f01a0732fbeebe8720c0185c496b2252d387bb7618d35ce849fdfce3"
+        }
+      }
+    },
+    {
+      "id": "34bd5a17f70f3b85b72aa5b55d5fc2bc310eb86ca5b7e8abee863fb37f6192e7",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/house-joint-resolution/144",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "US-HJRES-144-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2024-05-16",
+      "note": "co sponsor of US-HJRES-144-2024 (cosponsor 2024-05-16): HJRES 144 (118th Congress): Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Alcohol, Tobacco, Firearms, and Explosives, Department of Justice, relating to \"Definition of 'Engaged in the Business' as a Dealer in Firearms\"..",
+      "subjects": [
+        "ATF firearms dealer definition rule overturned"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HJRES-144-2024.htm",
+          "sha256": "2772667fa5813e7324db5da339213ad0444b16927f8dcd55394c8c3829ce2e21"
+        }
+      }
+    },
+    {
+      "id": "e6ee34478c6e49d93df45adb20d01f04cd35b1d0f88ff03a178e52273bc47ee1",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/house-joint-resolution/164",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "US-HJRES-164-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2024-09-06",
+      "note": "co sponsor of US-HJRES-164-2024 (cosponsor 2024-09-06): HJRES 164 (118th Congress): Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Commerce relating to \"Revision of Firearms License Requirements\"..",
+      "subjects": [
+        "firearms license requirements rule overturned"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HJRES-164-2024.htm",
+          "sha256": "ea1ab9ed94751700e95a07c47aaf4b31439a4851966412483df5ac9ac4d08420"
+        }
+      }
+    },
+    {
+      "id": "4caca9910749c53a88501829ce1e2971fbb8be60b1f1bea6804dffd2006e349a",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/115th-congress/house-joint-resolution/40",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "US-HJRES-40-2017",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2017-01-30",
+      "note": "co sponsor of US-HJRES-40-2017 (cosponsor 2017-01-30): HJRES 40 (115th Congress): Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Social Security Administration relating to Implementation of the NICS Improvement Amendments Act of 2007..",
+      "subjects": [
+        "rule sending records to gun background check system overturned"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HJRES-40-2017.htm",
+          "sha256": "616db93c5dbc0f8d42ff56878c6d7302412f4feaade1ac2794ac4020fae05e55"
+        }
+      }
+    },
+    {
+      "id": "7592bf495962733c4280b64efa5d0e10fad4510cdbaee1457f7625ff217c7156",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/117th-congress/house-bill/38",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "US-HR-38-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2021-01-04",
+      "note": "co sponsor of US-HR-38-2021 (cosponsor 2021-01-04): HR 38 (117th Congress): Concealed Carry Reciprocity Act.",
+      "subjects": [
+        "concealed-carry permits honored across state lines",
+        "state and local carry laws overridden",
+        "carry allowed on national park and federal public land",
+        "no arrest without probable cause; lawsuits and legal fees for violations"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-38-2021.htm",
+          "sha256": "6ac3412f9e51329fa293af248b4527bc8588c4c65705448fa8a2b6c5e1e46734"
+        }
+      }
+    },
+    {
+      "id": "393e3812da849aa7c43902f86149878eb4296efe244b6dd236ae60b5c288107f",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/38",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "US-HR-38-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2023-01-09",
+      "note": "co sponsor of US-HR-38-2023 (cosponsor 2023-01-09): HR 38 (118th Congress): Concealed Carry Reciprocity Act.",
+      "subjects": [
+        "concealed-carry permits honored across state lines",
+        "state and local carry laws overridden",
+        "carry allowed on national park and federal public land",
+        "no arrest without probable cause; lawsuits and legal fees for violations"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-38-2023.htm",
+          "sha256": "4635abba51a3eccdcabcc6c5c5391b1b76e152755d02e61584f24d1c2495ebef"
+        }
+      }
+    },
+    {
+      "id": "dca633779153905a5ffb1dc3c8c2f5fca431634f0babf5d8a2dac435e88e9fed",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/38",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "US-HR-38-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2025-01-07",
+      "note": "co sponsor of US-HR-38-2025 (cosponsor 2025-01-07): HR 38 (119th Congress): Constitutional Concealed Carry Reciprocity Act of 2025.",
+      "subjects": [
+        "concealed-carry permits honored across state lines",
+        "state and local carry laws overridden",
+        "carry allowed on national park and federal public land",
+        "no arrest without probable cause; lawsuits and legal fees for violations"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-38-2025.htm",
+          "sha256": "956e5f8eb857804e25089a765234f0d85edf8f6acc1803db879f4ed2e9fb30f3"
+        }
+      }
+    },
+    {
+      "id": "0875dd6844d1d729bd892069cf701f2fefedd3d732cbd2ccc842fbf0c68ef145",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/45",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "US-HR-45-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2026-08-24",
+      "note": "co sponsor of US-HR-45-2025 (cosponsor 2026-08-24): HR 45 (119th Congress): FIND Act.",
+      "subjects": [
+        "federal contractors barred from discriminating against gun and ammunition businesses",
+        "contract terminated and debarment for violators"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-45-2025.htm",
+          "sha256": "0a2fedce19846aa2979e9b5c658da25963f271a5e44d54fef9d6048e81873d76"
+        }
+      }
+    },
+    {
+      "id": "da79adf3b408531ab7da1935caed13d22a54566742e774e8199136cbd2301537",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/5110",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "US-HR-5110-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2023-08-15",
+      "note": "co sponsor of US-HR-5110-2023 (cosponsor 2023-08-15): HR 5110 (118th Congress): Protecting Hunting Heritage and Education Act.",
+      "subjects": [
+        "federal school funds may be used for hunting and shooting-sports instruction"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-5110-2023.htm",
+          "sha256": "1f42e6e5f01a0732fbeebe8720c0185c496b2252d387bb7618d35ce849fdfce3"
+        }
+      }
+    },
+    {
+      "id": "b0b602803c344cf8a386f1080c1bf03e559bfd0c5a41355429ddfabd46092cd7",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/53",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "US-HR-53-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2024-09-06",
+      "note": "co sponsor of US-HR-53-2023 (cosponsor 2024-09-06): HR 53 (118th Congress): FIND Act.",
+      "subjects": [
+        "federal contractors barred from discriminating against gun and ammunition businesses",
+        "contract terminated and debarment for violators"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-53-2023.htm",
+          "sha256": "62975a69d2dbd4e5d0c0fdd14053e22034073acc62712d4f783bd6a5adb031b2"
+        }
+      }
+    },
+    {
+      "id": "265811e489cb69cb3841e60dc44f5c27b04f466dbe836ce67b9b46be21463691",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/6734",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "US-HR-6734-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2023-12-13",
+      "note": "co sponsor of US-HR-6734-2023 (cosponsor 2023-12-13): HR 6734 (118th Congress): Stopping Unconstitutional Background Checks Act.",
+      "subjects": [
+        "no federal money to enforce the ATF rule on who counts as a firearms dealer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-6734-2023.htm",
+          "sha256": "da45ad9a5aa568e5a0e9ce9a8b03c53db157373dd4a2572ad48978e3c16f0bec"
+        }
+      }
     }
   ],
   "searches": []

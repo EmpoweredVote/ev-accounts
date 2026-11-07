@@ -1,0 +1,156 @@
+{
+  "politician_id": "e752a957-c776-4942-9aae-63ebf23174ac",
+  "findings": [
+    {
+      "id": "03dc8ae9aef2e2ae573ca2ec2337034db3ab10fec2edddf67c815e832848b111",
+      "kind": "record",
+      "url": "https://kslegislature.gov/li_2016/b2015_16/measures/SB45/",
+      "date": "2015-03-25",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-45-2015",
+      "act": "yea",
+      "motion": "Emergency Final Action - Passed as amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, Emergency Final Action - Passed as amended, 2015-03-25: yea (tally 85–39); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "C, F (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "15ffcf50f1b7935fe0c6bdf49e7087bc510628682927c604c8503e4c8437a2b0",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20110329104238_907523.odt",
+      "date": "2011-03-29",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2067-2011",
+      "act": "yea",
+      "motion": "House: On motion of Rep. Schwab the House concurred in Senate amendments to HB 2067.",
+      "note": "House roll call as printed ('Schwab'), linked to Scott Schwab (district 49) via the official 2011 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.950Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6f049cded5bcfea0b89cdcddd7d9269d75f671c09c8525d3c82b9f0ae9a05eb4",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20120223102421_762384.odt",
+      "date": "2012-02-23",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2012",
+      "act": "yea",
+      "motion": "House: HB 2437, AN ACT concerning elections; relating to voting; changing effective date of United States citizenship requirements; amending K.S.A. 2011 Supp. 25-2309, 25-2908 and 65-2418 ... was considered on final action. (The bill passed, as amended.)",
+      "note": "House roll call as printed ('Schwab'), linked to Scott Schwab (district 49) via the official 2012 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.950Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db5f0de06ff5f665bbc68602e97997e4bcb23fae56790f0a906ca6a6d65c5fd2",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20120503112313_679546.odt",
+      "date": "2012-05-03",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-129-2011",
+      "act": "yea",
+      "motion": "House: On motion of Rep. Schwab, the conference committee report on H Sub for SB129 was adopted.",
+      "note": "House roll call as printed ('Schwab'), linked to Scott Schwab (district 49) via the official 2012 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.950Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "826954d8ea499a0525f7998c672c0f480035d3c319de37f9d9912b9e94a6ced3",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20110323103652_433149.odt",
+      "date": "2011-03-23",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-129-HSUB-2011",
+      "act": "yea",
+      "motion": "House: SB 129, AN ACT concerning elections; amending K.S.A. 25-321, 25-2203, 25-2352 ... was considered on final action. (The substitute bill passed, as amended.)",
+      "note": "House roll call as printed ('Schwab'), linked to Scott Schwab (district 49) via the official 2011 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.950Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7402ac78d0cb861ab346b86ac8d160bffc362b81a0af03b2d16e383d02d10c6f",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20120509105352_921338.odt",
+      "date": "2012-05-09",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-17-2011",
+      "act": "yea",
+      "motion": "House: SB 17, AN ACT concerning elections; relating to voter identification requirements; amending K.S.A. 2011 Supp. 25-2309, 25-2908 and 65-2418 ... was considered on final action. (The substitute bill passed, as amended.)",
+      "note": "House roll call as printed ('Schwab'), linked to Scott Schwab (district 49) via the official 2012 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.950Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 5,
+      "at": "2026-11-04T19:13:24.950Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "politician_id": "12035f82-977f-4d76-9faf-804a8f2a2e70",
+  "findings": [
+    {
+      "id": "d1c2057c28b9a9de66314d9782a9a555af1fc83cfbd202012f15f99a2e9733c4",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "nay",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Elliott'), linked to Keith W. Elliott (district 153) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.753Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "72a52d290b9978b563f9da836e97197e83a6bdb92ec9fc051a7d62606b3d4473",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn052.pdf",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "MO-HCR-48-2026",
+      "act": "yea",
+      "motion": "House: HCR 48 read the third time and passed",
+      "note": "House roll call as printed ('Elliott'), linked to Keith W. Elliott (district 153) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.233Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "blocked: https://ballotpedia.org (not fetched per instructions)",
+        "not reviewed: house.mo.gov member page (URL contains ? , forbidden by robots.txt)",
+        "web search (several queries by name plus subject words): nothing on the subject",
+        "blocked: ozarkradionews Capitol Report PDFs (404): https://www.ozarkradionews.com/ozarkradionews/wp-content/uploads/2026/03/Capitol-Report-3.4.2026.pdf",
+        "blocked: https://www.ozarkradionews.com/ozarkradionews/wp-content/uploads/2026/02/Capitol-Report_Dist-153-2.3.2026.pdf",
+        "blocked: https://www.ozarkradionews.com/ozarkradionews/wp-content/uploads/2025/12/Capitol-Report-12.17.2025_.pdf",
+        "campaign site: not found by search"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:04:05.166Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:10:53.753Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:14:55.233Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

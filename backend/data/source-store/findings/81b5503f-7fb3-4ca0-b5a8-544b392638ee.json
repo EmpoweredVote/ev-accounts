@@ -43,6 +43,152 @@
         "fetched_at": "2026-10-31T18:07:00.900Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "776be13d4edc022219fdf3819db0234ee24aae9807915d326ecc971a85558b0b",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb2599",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2599-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-2599-2025 (LegiScan sponsor list): HB2599 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for firearms not to be carried without a license, for licenses and for proof of license and exception..",
+      "subjects": [
+        "license no longer required to carry a gun in a vehicle",
+        "vehicle carry exceptions repealed",
+        "license covers concealed carry on the person only"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2599-2025.introduced.pdf",
+          "sha256": "dc8c286b9dddc4dec2d44c39427334dbb59b7f4135d52a736491c2e33d679d51"
+        }
+      }
+    },
+    {
+      "id": "5a1e8a788a9a3b1de393bdb1dde749a6f598706061fbe03d4e66bccf89447f17",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb454",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-454-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-454-2025 (LegiScan sponsor list): HB454 (2025-2026 Regular Session): In firearms and other dangerous articles, repealing provisions relating to firearms not to be carried without a license, providing for license not required, repealing provisions relating to carrying firearms on public streets or public property in Philadelphia, further providing for prohibited conduct during emergency, providing for sportsman's firearm permit, further providing for licenses and for antique firearms and repealing provisions relating to proof of license and exception; and making editorial changes..",
+      "subjects": [
+        "no license needed to carry firearms openly or concealed",
+        "carry license made optional",
+        "Philadelphia public-carry rule repealed",
+        "license age minimum and character check removed",
+        "duty to show license on demand repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-454-2025.introduced.pdf",
+          "sha256": "f30ec3f128cf3767ddff70a1eeaf2b9e5550db871bb897761638ddd54b516abe"
+        }
+      }
+    },
+    {
+      "id": "dc33f92e9a47dbfb19b0f4a38cadeb56973ada56e4fee0f7a722d4faf66207ba",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb548",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-548-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of PA-HB-548-2025 (LegiScan sponsor list): HB548 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for limitation on the regulation of firearms and ammunition; and, in preemptions, providing for regulation of firearms and ammunition..",
+      "subjects": [
+        "state preemption of local gun and ammunition rules extended to all municipalities",
+        "lawsuits and expense awards against local governments that break preemption"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-548-2025.introduced.pdf",
+          "sha256": "96cead2961c739e15a8f1b6213d6cebb08434f6d00d7d5db6ad44267c48a36b1"
+        }
+      }
+    },
+    {
+      "id": "ec184250c9cb147e45038263f1ea3ba169d07826703fc4cfc411b50cb6970408",
+      "kind": "own-words",
+      "url": "https://repbashline.com/about",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Bashline is a strong advocate and protector of the Second Amendment and wants to bring more family-sustaining jobs to his district while cutting intrusive government red tape.",
+      "note": "Official biography page describing his stance on the Second Amendment (undated page).",
+      "subjects": [
+        "gun rights and Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:17:02.063Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "815e8c4e295725975d5f0452a225c9b289437dee8c039e9ca689cfc84f36b575",
+      "kind": "own-words",
+      "url": "https://repbashline.com/News/37804/Latest-News/Bashline-to-Host-Concealed-Carry-Seminar-April-30",
+      "date": "2026-04-07",
+      "date_precision": "day",
+      "passage": "“I am pleased to host this event once again to give law-abiding citizens pertinent information on how they can legally protect themselves, their families and their properties,” said Bashline.",
+      "note": "Quote in his office's release announcing his annual concealed carry seminar (date per page).",
+      "subjects": [
+        "concealed carry permits",
+        "gun safety"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:17:02.063Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "300c1adb0ab6eef03fbc6999631eb4f3e0e70eba16bf9fab5ae7a192cec284ca",
+      "kind": "own-words",
+      "url": "https://www.explorejeffersonpa.com/local/2026/02/13/rep-josh-bashline-launches-re-election-campaign-for-63rd-district-173258/",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "passage": "Bashline highlighted his voting record, noting support for pro-life legislation, Second Amendment protections, small businesses, energy development and agriculture.",
+      "note": "Outlet's report of how he described his own record at his re-election launch; paraphrase by the outlet, not a direct quote.",
+      "subjects": [
+        "gun rights and Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T23:17:02.063Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -234,6 +380,29 @@
       "found": 1,
       "at": "2026-10-31T18:07:00.900Z",
       "by": "identity-pa-2026-10-31-raw-votes"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and Second Amendment",
+        "concealed carry permits",
+        "gun buyback",
+        "gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site repbashline.com/about",
+        "official site news: concealed carry seminar release",
+        "re-election launch article (exploreJefferson)",
+        "web search: name plus Second Amendment",
+        "Ballotpedia: not reviewed (returns empty to fetch tool)",
+        "sponsor list: covered by LegiScan bulk check",
+        "blocked: none"
+      ],
+      "found": 3,
+      "at": "2026-10-30T23:17:02.063Z",
+      "by": "source-collector"
     }
   ]
 }

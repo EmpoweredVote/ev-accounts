@@ -1,0 +1,123 @@
+{
+  "politician_id": "e5567e6a-ff46-4067-9f16-5aba1a7f4f54",
+  "findings": [
+    {
+      "id": "5a5a87cb683da19759d44dde49bf43ce0795fe3bd8a349655c4ee462fd39897b",
+      "kind": "own-words",
+      "url": "https://banderman4rep119.com",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Our Democratic Republic cannot survive without free, fair, and legal elections. Elections should be controlled and transparent at the State level. The public trust in elections can only be maintained if a common sense process is used to register, verify legal identity and residency, and count the votes within each precinct. The entire process has to have immediate transparency for public scrutiny.",
+      "note": "Election Integrity plank on his campaign site. Names verifying legal identity and residency as part of registration; does not name photo ID, citizenship documents or mail ballots. Site page is undated.",
+      "subjects": [
+        "election integrity in general",
+        "verifying legal identity and residency when registering"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-mo-2026-11-04",
+        "fetched_at": "2026-11-04T05:13:03.731Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e076c8b48278b31632ee890048920af3952a61ffb83895b5d23bfa476c64b17f",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn068.pdf",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "House: SS SCS HCS HB 1871, as amended, was adopted",
+      "note": "House roll call as printed ('Banderman'), linked to Brad Banderman (district 119) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.747Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "72a52d290b9978b563f9da836e97197e83a6bdb92ec9fc051a7d62606b3d4473",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills261/jrnpdf/jrn052.pdf",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "MO-HCR-48-2026",
+      "act": "yea",
+      "motion": "House: HCR 48 read the third time and passed",
+      "note": "House roll call as printed ('Banderman'), linked to Brad Banderman (district 119) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.222Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "mail-ballot ID",
+        "election integrity",
+        "verifying legal identity and residency"
+      ],
+      "places": [
+        "identity confirmed: https://ivoterguide.com/race/11957/election/1245 (State Representative District 119, 2024 general)",
+        "On the Record (0 meetings)",
+        "campaign site https://banderman4rep119.com (Election Integrity plank, fetched by curl)",
+        "iVoterGuide 2024 primary and general pages: no own words on the subject",
+        "web search x3: no news quotes on the subject found",
+        "blocked: Ballotpedia (not fetched, per instruction)",
+        "House member pages not fetched (robots rule)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T05:13:03.731Z",
+      "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:10:53.747Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T14:14:55.222Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

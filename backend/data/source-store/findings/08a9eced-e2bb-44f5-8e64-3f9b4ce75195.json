@@ -1,0 +1,219 @@
+{
+  "politician_id": "08a9eced-e2bb-44f5-8e64-3f9b4ce75195",
+  "findings": [
+    {
+      "id": "326bdbefa5d0e1f6f56cfdf4659eeb73c631bcb9dae4a8c10c34423987feaf40",
+      "kind": "record",
+      "url": "https://house.mo.gov/BillContent.aspx?bill=SB656&year=2016&code=R&style=new",
+      "date": "2016-09-14",
+      "date_precision": "day",
+      "instrument_id": "MO-SB-656-2016",
+      "act": "yea",
+      "motion": "Veto override: that CCS HCS SB 656 be passed, the objections of the Governor thereto notwithstanding (Roll Call 73.018)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Veto override: that CCS HCS SB 656 be passed, the objections of the Governor thereto notwithstanding (Roll Call 73.018), 2016-09-14: yea (tally 112–41); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a permit",
+        "self-defence (stand your ground)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/MO_SB656_tat.pdf",
+          "sha256": "541d477ef09b83d6555700233abc760ce80a58d9602aff90b0ac2befb0f6afdd"
+        }
+      }
+    },
+    {
+      "id": "fb8bc7215936366db8d25d14ac2035ad2dfb934513b5290dbe4ec91c30e946b6",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills161/rollcalls/073.003.pdf",
+      "date": "2016-09-14",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1631-2016",
+      "act": "yea",
+      "motion": "House: SS#2 SCS HB 1631 ALFERMAN (061) VOTER IDENTIFICATION 4554S.18T THAT SS#2 SCS HB 1631 BE PASSED, THE OBJECTIONS OF THE GOVERNOR THERETO NOTWITHSTANDING",
+      "note": "House roll call as printed ('HOUGH'), linked to Lincoln Hough (district 135) via the official 2016 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.746Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fdf4dc53a4ec51a07d4beab3f585340c15ffdbabd51fb2ea8348344c58e0fe2f",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills161/jrnpdf/jrn070.pdf",
+      "date": "2016-05-12",
+      "date_precision": "day",
+      "instrument_id": "MO-HJR-53-2016",
+      "act": "yea",
+      "motion": "House: SS HJR 53 was adopted",
+      "note": "House roll call as printed ('Hough'), linked to Lincoln Hough (district 135) via the official 2016 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04",
+        "fetched_at": "2026-11-04T14:10:53.746Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "573eba7f65302613c600888ff0d15b2a409b81d99700a4fbbbfdeb4989b220b9",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills161/jrnpdf/jrn009.pdf",
+      "date": "2016-01-21",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1631-2016",
+      "act": "yea",
+      "motion": "House: HB 1631 read the third time and passed",
+      "note": "House roll call as printed ('Hough'), linked to Lincoln Hough (district 135) via the official 2016 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e114662582e36f9f876ea58ca7997d4a6cd77360af2d2f46d1a30370cb3d2133",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/26info/Journals/Rday6405111615-1637.pdf",
+      "date": "2026-05-11",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1871-2026",
+      "act": "yea",
+      "motion": "Senate: SS for SCS for HCS for HB 1871, as amended, read the 3rd time and passed",
+      "note": "Senate roll call as printed ('Hough'), linked to Lincoln Hough (district 30) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2820ba1138fe2edc7b2f277b507128c8dd5b25a415fff10237bc182989690f3d",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/22info/Journals/RDay6205092378-2447.pdf",
+      "date": "2022-05-09",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1878-2022",
+      "act": "yea",
+      "motion": "Senate: SS for SCS for HB 1878, as amended, read the 3rd time and passed",
+      "note": "Senate roll call as printed ('Hough'), linked to Lincoln Hough (district 30) via the official 2022 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0cdc75c9b016c744b75e601ed12d6cc9f3f3874e677e9ac655547831de822750",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills111/jrnpdf/jrn066.pdf",
+      "date": "2011-05-04",
+      "date_precision": "day",
+      "instrument_id": "MO-SB-3-2011",
+      "act": "yea",
+      "motion": "House: HCS#2 SB 3, as amended, read the third time and passed",
+      "note": "House roll call as printed ('Hough'), linked to Lincoln Hough (district 140) via the official 2011 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "24497832b7e519384b390326a460fcaa943e7c29f63e3789be857e19fb5d48f9",
+      "kind": "record",
+      "url": "https://documents.house.mo.gov/billtracking/bills111/jrnpdf/jrn064.pdf",
+      "date": "2011-05-02",
+      "date_precision": "day",
+      "instrument_id": "MO-SJR-2-2011",
+      "act": "yea",
+      "motion": "House: HCS#2 SJR 2 read the third time and passed",
+      "note": "House roll call as printed ('Hough'), linked to Lincoln Hough (district 140) via the official 2011 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mo-2026-11-04b",
+        "fetched_at": "2026-11-04T14:14:55.221Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-04T14:10:53.746Z",
+      "by": "identity-mo-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MO legislature bill pages, journals and roll calls in bills/mo-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 5,
+      "at": "2026-11-04T14:14:55.221Z",
+      "by": "identity-mo-2026-11-04b"
+    }
+  ]
+}

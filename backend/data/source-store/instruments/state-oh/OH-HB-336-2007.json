@@ -1,0 +1,19 @@
+{
+  "id": "OH-HB-336-2007",
+  "scope": "state:oh",
+  "title": "HB 336 (2007-2008 (127th General Assembly)): H. B. No. 336: Absent voter ballots-when counted if returned late/return envelope standards",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/127/hb336",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_127/legislation/hb336/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) 3509.05(A)\n(quote) If the elector does not provide the elector's driver's license number or the last four digits of the elector's social security number on the statement of voter on the identification envelope, the elector also shall include in the return envelope with the identification envelope a copy of the elector's current valid photo identification, a copy of a military identification that shows the elector's name and current address, or a copy of a current utility bill, bank statement, government check, paycheck, or other government document\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) 3509.04, 3509.05, 3511.05, 3511.11: absent voter's and armed-service ballots in envelopes postmarked before election day count if received within ten days after election day; ballots with no postmark or an illegible postmark received in that time also count\n(other) 3509.04(C)(2) (new): Secretary of State may set return-envelope standards so the envelopes can be identified as ballot envelopes for postmarking\n(other) note: Only one version (introduced). The absentee ID sentence in 3509.05 is reprinted existing law; the PDF text does not mark struck or new words, and the bill's stated purpose is late-arriving ballots, so the ID wording appears unchanged. The armed-service ballot envelope form (3511.05) reprints a question 'Are you a citizen of the United States?' on the voter statement; it is existing form text, not a new rule.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

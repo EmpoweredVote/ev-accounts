@@ -44,6 +44,63 @@
         "fetched_at": "2026-10-29T14:14:50.862Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "800874da45274888c512c3ce2ff57a496ed6554c3743f6c10ad583d9553f5506",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb1065",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1065-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-1065-2025 (LegiScan sponsor list): HB1065 (2025-2026 Regular Session): In firearms and other dangerous articles, further providing for definitions and providing for the offense of sale of firearm or firearm parts without serial numbers and for privately made firearms..",
+      "subjects": [
+        "sale of unserialized gun frames and kits made a felony",
+        "buying parts to build an untraceable gun made a felony",
+        "dealers must mark privately made firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1065-2025.introduced.pdf",
+          "sha256": "34b91995f20ec4936440cc2230659301f600d37e7e50653195d36caf02ae3e7c"
+        }
+      }
+    },
+    {
+      "id": "974a1fe6ea97e6fb2707025c37b89b50385ef4dc9f093e3769f59e928f7f3fe4",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb2244",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2244-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-HB-2244-2025 (LegiScan sponsor list): HB2244 (2025-2026 Regular Session): In sales and use tax, further providing for exclusions from tax. Amending Title 18 (Crimes and Offenses) of the Pennsylvania Consolidated Statutes, in firearms and other dangerous articles, providing for the offense of unauthorized access to firearms..",
+      "subjects": [
+        "secure storage required for firearms",
+        "strict civil liability for unsecured firearms",
+        "sales tax exemption for gun safes and gun locks",
+        "retailer must post storage warning"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2244-2025.amended.pdf",
+          "sha256": "44aa84fd2022c4fe857f2ee2443a4cec6a4dd720f0590e9cdde0e487b9a44723"
+        }
+      }
     }
   ],
   "searches": [
@@ -99,6 +156,32 @@
       "found": 1,
       "at": "2026-10-29T14:14:50.862Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general statements on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity confirmed: https://www.pahouse.net/inglis/InTheNews is his House member news page (38th District, Allegheny County); 2026 ballot status not confirmed from a fetched page",
+        "official member news page https://www.pahouse.net/inglis/InTheNews (headlines only; nothing on the subject)",
+        "sponsor list: covered by LegiScan bulk check",
+        "https://www.cbsnews.com/amp/pittsburgh/news/john-inglis-stone-sobieralski-pennsylvania-state-house-seat (2024 race story; nothing on the subject)",
+        "blocked: https://bluevoterguide.org/district/PA/Pennsylvania_House_of_Representatives_District_38/48412/793",
+        "Ballotpedia and campaign site: not reviewed, no separate fetch made",
+        "news searches on name plus gun words (2 searches): nothing on the subject by him"
+      ],
+      "found": 0,
+      "at": "2026-10-30T23:58:31.193Z",
+      "by": "source-collector"
     }
   ]
 }

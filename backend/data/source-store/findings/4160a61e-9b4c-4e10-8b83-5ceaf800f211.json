@@ -1,0 +1,28 @@
+{
+  "politician_id": "4160a61e-9b4c-4e10-8b83-5ceaf800f211",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation general",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballot Brief profile (confirms he is on the 2026-11-03 FL-24 general ballot as a no-party candidate; no gun statement): https://theballotbrief.com/candidate/andy-daro-fl",
+        "campaign site home, about, public service and press pages (fetched with curl, text searched for gun, firearm, weapon, Second Amendment): nothing on the subject: https://andydaro.com/",
+        "Ballotpedia: fetch returned empty page; not reviewed",
+        "web searches on name plus gun words: nothing on the subject",
+        "congress.gov: not a sitting member of Congress; no sponsorships. North Bay Village commission records not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:02:47.537Z",
+      "by": "source-collector"
+    }
+  ]
+}

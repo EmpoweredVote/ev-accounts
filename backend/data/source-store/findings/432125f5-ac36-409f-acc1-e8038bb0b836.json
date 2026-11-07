@@ -1,0 +1,28 @@
+{
+  "politician_id": "432125f5-ac36-409f-acc1-e8038bb0b836",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web searches on name plus subject words (3): nothing on the subject",
+        "iVoterGuide listing (2020 general): no answers seen",
+        "blocked: Ballotpedia (not tried, per instruction)",
+        "no house.mo.gov page fetched (robots)",
+        "not reviewed: newsroom.house.mo.gov (separate collector)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T05:08:09.393Z",
+      "by": "search-mo-2026-11-04"
+    }
+  ]
+}

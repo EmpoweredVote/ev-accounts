@@ -1,0 +1,119 @@
+{
+  "politician_id": "6a2e7d16-5073-40c3-a41c-1eab2d7ae8ba",
+  "findings": [
+    {
+      "id": "706a380a62569720f113336c1911d3aa1d0bde03db194683edd8485644bc1e03",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2023252",
+      "date": "2023-06-13",
+      "date_precision": "day",
+      "instrument_id": "US-HJRES-44-2023",
+      "act": "yea",
+      "motion": "On Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage, 2023-06-13: yea (tally 219–210); census gate: none.",
+      "subjects": [
+        "cancel the federal pistol-brace rule"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/BILLS-118hjres44eh.txt",
+          "sha256": "d04fe1fe2a2512a1932d14b7b93d88fe25ac6712851bc4caa37df31b89101f4d"
+        }
+      }
+    },
+    {
+      "id": "cb3542f52ee29571b9fddb5a577d8404a950fda8627d445c4064c396df32daef",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/354",
+      "date": "2024-05-16",
+      "date_precision": "day",
+      "instrument_id": "US-HR-354-2024",
+      "act": "yea",
+      "motion": "On Passage (Roll 213)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "US House, On Passage (Roll 213), 2024-05-16: yea (tally 221–185); census gate: none.",
+      "subjects": [
+        "current and retired officers may carry concealed firearms in more places",
+        "school-zone and federal-facility carry exemption for officers",
+        "looser firearms training rules for retired officers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-354-2024.htm",
+          "sha256": "eb2493bda35fc8f6f40d3e53010f0fef11663f8ba0c4115861acc719aeb0bc51"
+        }
+      }
+    },
+    {
+      "id": "da79adf3b408531ab7da1935caed13d22a54566742e774e8199136cbd2301537",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/5110",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "US-HR-5110-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2023-08-15",
+      "note": "co sponsor of US-HR-5110-2023 (cosponsor 2023-08-15): HR 5110 (118th Congress): Protecting Hunting Heritage and Education Act.",
+      "subjects": [
+        "federal school funds may be used for hunting and shooting-sports instruction"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-5110-2023.htm",
+          "sha256": "1f42e6e5f01a0732fbeebe8720c0185c496b2252d387bb7618d35ce849fdfce3"
+        }
+      }
+    },
+    {
+      "id": "d95af806771f587ccef59962c07a3ff13953f51b87cd22537c23a3a6c881a590",
+      "kind": "record",
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/6492",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "US-HR-6492-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, cosponsor 2023-11-29",
+      "note": "co sponsor of US-HR-6492-2023 (cosponsor 2023-11-29): HR 6492 (118th Congress): EXPLORE Act.",
+      "subjects": [
+        "federal public-land target shooting ranges to be built",
+        "ranges kept open before recreational shooting is closed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T00:23:59.657689Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-6492-2023.htm",
+          "sha256": "fa1ff70ba178164165b54edc4d889da9c2c6179318956c59d78b3700d1c443f4"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

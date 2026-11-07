@@ -1,0 +1,239 @@
+{
+  "politician_id": "693b23e7-b091-4bb1-8e0d-8d7ea13999df",
+  "findings": [
+    {
+      "id": "03dc8ae9aef2e2ae573ca2ec2337034db3ab10fec2edddf67c815e832848b111",
+      "kind": "record",
+      "url": "https://kslegislature.gov/li_2016/b2015_16/measures/SB45/",
+      "date": "2015-03-25",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-45-2015",
+      "act": "yea",
+      "motion": "Emergency Final Action - Passed as amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, Emergency Final Action - Passed as amended, 2015-03-25: yea (tally 85–39); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "C, F (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9a63a0120373d078617de8a0d5cbf56b2b118b3b39a9a56c4cc9735e50448850",
+      "kind": "own-words",
+      "url": "https://hayspost.com/posts/4a0bd43c-fdcd-4dd5-acee-57eb5358179a",
+      "date": "2025-02-12",
+      "date_precision": "day",
+      "passage": "First was Tuesday with House Concurrent Resolution 5004 , which amends the state constitution to add citizenship as a requirement for voting in any election.",
+      "note": "Newsletter in his name describes the House debate and vote on HCR 5004 (citizenship as a voting requirement in the state constitution). The same column closes with 'I voted yes on each bill, and each passed their floor votes.'",
+      "subjects": [
+        "citizenship requirement to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:50:37.638Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "07542fbfa7334f903f1cf1e02f9efd09ad9e7155a9c8e32c3a2e5b48eb423552",
+      "kind": "own-words",
+      "url": "https://hayspost.com/posts/4a0bd43c-fdcd-4dd5-acee-57eb5358179a",
+      "date": "2025-02-12",
+      "date_precision": "day",
+      "passage": "The second was on Wednesday with House Bill (HB) 2020 , which requires a quarterly report from the director of division of vehicles listing the names and addresses of noncitizens that have attained driver’s licenses in said period.",
+      "note": "Newsletter in his name describes HB 2020, a quarterly list of noncitizens holding driver's licenses, debated and voted that week; he states he voted yes on each bill.",
+      "subjects": [
+        "non-citizen voting and licenses",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:50:37.638Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8687d6f82d27c5674cc7684744ba058011ef4bf2e7e339a07b5ea67a7a3c642d",
+      "kind": "own-words",
+      "url": "https://hayspost.com/posts/ea830e2d-2833-4b98-98bd-41c173e1bfcc",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "passage": "HB 2016 , this bill adds published online obituaries as sufficient criteria for election officers to remove deceased voters from voter rolls, under state law.",
+      "note": "Newsletter in his name lists HB 2016 (deceased voters removed from rolls using online obituaries) among bills debated and passed by the House.",
+      "subjects": [
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:50:37.638Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5567b4d411f07cd273ae6ee26f675d1715a785131cabb545e6f7ef22584fe474",
+      "kind": "own-words",
+      "url": "https://hayspost.com/posts/77ffb1ba-e5fc-4672-9a4d-213719dd9440",
+      "date": "2026-02-19",
+      "date_precision": "day",
+      "passage": "This bill would restrict online voter registration to only government run websites, with a .gov domain, or websites vetted and chosen by the Secretary of State, upon meeting several security criteria, like data encryption.",
+      "note": "Newsletter in his name describes HB 2438 on online voter registration websites, reported out favorably by the House and sent to a Senate committee.",
+      "subjects": [
+        "online voter registration security",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:50:37.638Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a180dac9fbe82db0f7ed1e12eb5a8927f8abd4f868ef36e3cf40bf126221dbed",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/house/legislative_days/day045_20250320/vote_records/0275_HB2020.odt",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "House: Concurred with amendments",
+      "note": "House roll call as printed ('Waymaster'), linked to Troy Waymaster (district 109) via the official 2025 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.941Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba7a4d666ff4f78f90fc1c3060009b25057e446b4bc7846bcf906e1cf07d44b3",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day051_20260326/vote_records/0342_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "House: Conference Committee Report was adopted",
+      "note": "House roll call as printed ('Waymaster'), linked to Troy Waymaster (district 109) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.941Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21f55a599c11a6bfd03cc0b661541d4440ff0a0808ab91e9abc25020cfb5fc94",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day053_20260409/vote_records/0408_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "House: Motion to override veto prevailed",
+      "note": "House roll call as printed ('Waymaster'), linked to Troy Waymaster (district 109) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.941Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45a6a0e651989653960fc97af7759af58ffb11d0dd3f56bdfeab65bb700b032e",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day023_20260212/vote_records/0067_HB2448.odt",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2448-2026",
+      "act": "yea",
+      "motion": "House: Emergency Final Action - Passed as amended",
+      "note": "House roll call as printed ('Waymaster'), linked to Troy Waymaster (district 109) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.941Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof or requirement of citizenship to vote",
+        "voter-roll maintenance",
+        "online voter registration"
+      ],
+      "places": [
+        "confirmed in office: https://www.kslegislature.gov/li/b2025_26/members/rep_waymaster_troy_1/ (House District 109, 2013-present)",
+        "On the Record (0 meetings)",
+        "Hays Post 'From the Dome to Home' newsletters 2025-2026 (Jan 31, Feb 12, Feb 25, Mar 4, Apr 2 2025; Feb 16, Apr 15 2026): election items saved; the rest nothing on the subject",
+        "kslegislature.gov member page: no statements; sponsored-bill list did not load",
+        "web searches on name plus voter ID, proof of citizenship, election",
+        "blocked: https://ballotpedia.org (not fetched, known 403)",
+        "blocked: https://kansasreflector.com (not fetched, known 403)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T16:50:37.638Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T19:13:24.941Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

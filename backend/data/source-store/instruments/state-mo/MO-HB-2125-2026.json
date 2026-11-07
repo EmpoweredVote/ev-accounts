@@ -1,0 +1,25 @@
+{
+  "id": "MO-HB-2125-2026",
+  "scope": "state:mo",
+  "title": "HB 2125 (2026 Second Regular Session (103rd General Assembly)): HB 2125 -- FUNCTIONS OF THE SECRETARY OF STATE (House summary title)",
+  "urls": [
+    "https://documents.house.mo.gov/billtracking/bills261/sumpdf/HB2125I.pdf",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/4226H.02I.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Introduced text, voter-registration database match (citizenship status)\n(quote) The secretary of state and the director of the department of revenue shall enter into an agreement to match information in the database of the voter registration system with information in the database of the motor vehicle system, which shall include information pertaining to the citizenship status of those within the department of revenue's database, to enable the secretary to verify the accuracy of information provided on applications for voter registration.\n(e_other_rule) not stated.\n(other) House summary: HB 2125 -- FUNCTIONS OF THE SECRETARY OF STATE SPONSOR: Banderman Current law requires the Secretary of State and the Director of the Department of Revenue to enter into an agreement to match information in the voter registration database with information in the motor vehicle system. This bill requires the agreement to include information pertaining to the citizenship status of individuals in the department's database. This bill reinstates the Secretary of State's ability to conduct investigations and exercise subpoena power with respect to suspected election offenses, which expired on August \n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Banderman",
+      "role": "prime",
+      "version": "Introduced text (4226H.02I.pdf)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04T00:00:00Z)",
+    "fetched_at": "2026-11-04T00:00:00Z",
+    "method": "curl"
+  }
+}

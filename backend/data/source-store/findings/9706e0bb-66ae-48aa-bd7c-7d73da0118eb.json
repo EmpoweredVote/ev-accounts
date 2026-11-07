@@ -1,0 +1,291 @@
+{
+  "politician_id": "9706e0bb-66ae-48aa-bd7c-7d73da0118eb",
+  "findings": [
+    {
+      "id": "0c4350377c9b0507ae2bfc0d5ceedb9338418325088349f5614a4e57cbbc7dfa",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/134/sb215",
+      "date": "2022-03-02",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-215-2022",
+      "act": "nay",
+      "motion": "Passed (final House vote per Votes tab)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH House, Passed (final House vote per Votes tab), 2022-03-02: nay (tally 58–36); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/OH_sb215_EN.pdf",
+          "sha256": "dddae0081901748ede39524ddca0094c322a065fe443d8ffdbae0913c1a95fa4"
+        }
+      }
+    },
+    {
+      "id": "f23d98de828f620c1bc1159c801517fea8ac6b6291a1b8f4c977718ed9ea4107",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/beth-liston/news/liston-condemns-voter-suppression-bill",
+      "date": "2025-11-05",
+      "date_precision": "day",
+      "passage": "This bill destroys, without counting, thousands of votes sent by people and postmarked before Election Day.",
+      "note": "From her Senate release on SB 293, which ends the grace period for mail ballots arriving after Election Day; she says she voted against it. Fetch tool returned the quoted sentence; the page itself refused a plain curl (403).",
+      "subjects": [
+        "mail-ballot receipt deadline",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:17:32.837Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f7d9eb63f67df6b1b2477f86c13c8077a34aa403c6fc37df9dbfe9ac41a69649",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/beth-liston/news/liston-condemns-voter-suppression-bill",
+      "date": "2025-11-05",
+      "date_precision": "day",
+      "passage": "Ohioans will be stripped of their constitutional rights because of mail delays. This is wrong and anti-American.",
+      "note": "Same release; her statement on the mail-ballot deadline bill SB 293.",
+      "subjects": [
+        "mail-ballot receipt deadline"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:17:32.837Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5697afd32f03dc086b5345a0a6cd9ad151af0d90b6a4dc6c539a64510187c2b",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/actions/",
+      "date": "2022-12-14",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-458-2022",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 55-34) on H. B. No. 458, from the Ohio Legislature's own actions record, which lists each member by id (rep_liston_beth_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5737c03423eeabd5670fb0a61adc1fcd89774928e3a5d6128441f4d9e6338798",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hcr18/actions/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 73-20) on H. C. R. No. 18, from the Ohio Legislature's own actions record, which lists each member by id (rep_liston_beth_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "61ad7ead5c708d5cc3644cba295a15f24a874cb0732ce0f06dad1de0e594ba9c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 23-10) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (sen_liston_beth_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ac99700f10fccf6a9e794750182dc8dc1f69f27d8bfd400811b06c254d0c19b4",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "nay",
+      "motion": "Senate: Concurred in House amendments",
+      "note": "OH Senate floor roll call (Concurred in House amendments, tally 23-10) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (sen_liston_beth_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9b1f5c0fab55b6852c164d5fd7548cc1853715c65462e15ee45b573dea4077ad",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "Senate: Adopted",
+      "note": "OH Senate floor roll call (Adopted, tally 22-9) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (sen_liston_beth_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "14ab98bbafe1d8a08f0c50d3cbbc6b20b4b7b343dbb190cece546d2a5afb013e",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/133/hb560",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-560-2020",
+      "act": "sponsor",
+      "motion": "prime sponsor, As Introduced (00_IN)",
+      "note": "Listed as prime sponsor of H. B. No. 560 (As Introduced) on the Ohio Legislature's own record (rep_liston_beth_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d84fc9be9f18f1768dc375ba8a163121b4534d412e29d356d7fee6db6417e4ad",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/133/hb687",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-687-2020",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. B. No. 687 (As Introduced) on the Ohio Legislature's own record (rep_liston_beth_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4c2b73f18aaf0129c7c4ccf03fc99ce751bc19ba34f75efd95c2617c1bf1d48d",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/134/hb296",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-296-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, As Introduced (00_IN)",
+      "note": "Listed as prime sponsor of H. B. No. 296 (As Introduced) on the Ohio Legislature's own record (rep_liston_beth_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "mail-ballot receipt deadline",
+        "SJR 10 photo ID amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate page https://ohiosenate.gov/members/beth-liston (names her as Senate District 16; news list read; one item on the subject)",
+        "one release on the Senate site, read in full through the fetch tool",
+        "blocked: https://ohiohouse.gov/members/beth-liston/news (server error 500)",
+        "blocked: Ballotpedia (refuses fetches)",
+        "campaign site: not found in search; a voter-guide profile says her site had no voting or elections material in 2024 (not fetched)",
+        "web searches: name + voter ID, + HB 458, + SB 293 / photo ID, + SJR 10 floor speech, + 2024 questionnaire: no own words on ID or citizenship found",
+        "not reviewed: Senate newsletters 2026 (no election item titles)"
+      ],
+      "found": 2,
+      "at": "2026-11-06T15:17:32.837Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 8,
+      "at": "2026-11-06T16:28:34.678Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}

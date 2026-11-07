@@ -1,0 +1,78 @@
+{
+ "id": "MA-S-1360-2019",
+ "scope": "state:ma",
+ "title": "S1360 (191st General Court): An Act to require liability insurance for gun ownership",
+ "urls": [
+  "https://malegislature.gov/Bills/191/S1360",
+  "https://malegislature.gov/Bills/191/S1360/Senate/Bill/Text"
+ ],
+ "version": "as-filed",
+ "sponsors": [
+  {
+   "name": "Michael J. Barrett",
+   "role": "prime",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "60e4da77-0c2b-4ca4-8d02-a4210bd91d90"
+  },
+  {
+   "name": "Carmine Lawrence Gentile",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "a9ea7006-d595-45aa-a301-9c71d5a3af4d"
+  },
+  {
+   "name": "Marjorie C. Decker",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "2b1a645a-72ce-4c0f-80ec-17565a2d6d10"
+  },
+  {
+   "name": "Rebecca L. Rausch",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "b7369e32-1916-413e-b0eb-2871a5348470"
+  },
+  {
+   "name": "James B. Eldridge",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "9ed1b75f-a314-4241-87ff-231de4aba963"
+  },
+  {
+   "name": "Cindy F. Friedman",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Denise Provost",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)"
+  },
+  {
+   "name": "Michael D. Brady",
+   "role": "co",
+   "version": "official bill page (original petitioner and co-sponsors)",
+   "politician_id": "67ea7814-b7aa-42de-aba8-2230c181d15a"
+  }
+ ],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": []
+  }
+ ],
+ "votes": [],
+ "provenance": {
+  "fetched_by": "orchestrator, gun-policy Stage 5 MA Session A (2026-11-03, hand-off: fetch missing MA bill texts); official bill text page",
+  "fetched_at": "2026-11-03T18:51:48Z",
+  "method": "curl",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/bills/MA-S-1360-2019.html",
+   "sha256": "23c4a5273d6d9d1182f8fdc749c23b2accae44cdd0924bf980efa64e056cbafc"
+  }
+ },
+ "operative_text": "SECTION 1. Chapter 140 of the General Laws is hereby amended by adding the following section:-\nSection 207. (a) Any person who possesses, carries, or owns a firearm, rifle or shotgun shall obtain and maintain a liability policy, bond, or deposit. This section shall not apply to a person who possesses a firearm, rifle, or shotgun on a temporary basis while on the premises of a licensed gun club. Violation of this section shall result in a punishment of a fine of not less than five hundred and not more than five thousand dollars, or by imprisonment for not more than one year in a house of correction, or both.\n(b) The commissioner of insurance shall promulgate regulations set forth for the minimum terms of liability insurance policies which shall satisfy the requirements of this section."
+}

@@ -1,22 +1,48 @@
 """Stage 5 -> research-stances bridge (STAGE5 step 7.4).
 python3 -I scripts/stage5/build_evidence.py <batch dir> <roster.tsv> <store findings dir> [--fetch] [--level state --state XX]
+    [--max-urls N]  (default 8 federal, 20 state)
 Rewrites <batch>/research.csv in place (original kept as research-pre-evidence.csv) and writes <batch>/evidence.csv:
 - full_name -> the bundle's spelling (politicians.json), joined by politician_id through the roster;
 - blank rows: no source URLs (a blank claims no chair; the gate allows it), URLs in reasoning reduced to host names;
 - seated rows: one snippet per cited URL, cut from the page fetched once (pages/<sha1>.txt), >= 30 words, around the
   person's quoted passage, else their surname, else the instrument named in the reasoning.
---fetch fetches missing pages one at a time (curl, 1 s apart)."""
+--from-research / --from-pre: see the research.built.sha256 check below (a replaced research.csv stops the run).
+--fetch fetches missing pages one at a time (curl, 1 s apart); iga.in.gov and congress.gov pages through their official
+APIs instead (_iga.py, _congress.py). A congress.gov page cached by an older run holds a bot check: delete it first."""
 import csv, json, sys, os, re, hashlib, subprocess, time, html
 B, ROSTER, FIND = sys.argv[1:4]; FETCH = '--fetch' in sys.argv
 pol = json.load(open(f'{B}/politicians.json')); pol = pol if isinstance(pol, list) else pol.get('politicians', pol)
 bname = {p['politician_id']: p['full_name'] for p in pol}
 ro = {r['politician_id']: r for r in csv.DictReader(open(ROSTER), delimiter='\t')}
 src = f'{B}/research-pre-evidence.csv'
+# A re-run rebuilds from research-pre-evidence.csv. When research.csv is no longer the file this tool last wrote (a new
+# dry run was copied over it, or a later step edited it), that silently threw the new text away (oh-01, 2026-11-06: a
+# second build after dry run 2 brought back dry run 1's dates and finding ids). So the written file's sha256 is kept in
+# research.built.sha256, and a changed research.csv stops the run until the runner picks: --from-research (rebuild from
+# the current research.csv; the old saved copy is kept as research-pre-evidence.prev.csv) or --from-pre (rebuild from
+# the saved copy, as before). A batch built before this check has no hash file: it warns and keeps the old behaviour.
+SHA = f'{B}/research.built.sha256'
+_sha = lambda f: hashlib.sha256(open(f, 'rb').read()).hexdigest()
+if os.path.exists(src) and os.path.exists(f'{B}/research.csv'):
+    changed = os.path.exists(SHA) and open(SHA).read().strip() != _sha(f'{B}/research.csv')
+    if '--from-research' in sys.argv:
+        os.replace(src, f'{B}/research-pre-evidence.prev.csv'); os.rename(f'{B}/research.csv', src)
+        print('build_evidence: rebuilding from the current research.csv (old saved copy: research-pre-evidence.prev.csv)')
+    elif changed and '--from-pre' not in sys.argv:
+        raise SystemExit('build_evidence: research.csv is not the file this tool last wrote (a new dry run, or a later step '
+                         'edited it). Re-run with --from-research to rebuild from it, or --from-pre to rebuild from '
+                         'research-pre-evidence.csv and drop the changes.')
+    elif not os.path.exists(SHA) and os.path.getmtime(f'{B}/research.csv') > os.path.getmtime(src) + 1:
+        print('build_evidence: WARNING research.csv is newer than research-pre-evidence.csv and this batch has no '
+              'research.built.sha256; rebuilding from research-pre-evidence.csv as before. If research.csv holds a new '
+              'dry run, re-run with --from-research.')
 if not os.path.exists(src): os.rename(f'{B}/research.csv', src)
 rows = list(csv.DictReader(open(src))); cols = list(rows[0].keys())
 LEVEL = sys.argv[sys.argv.index('--level') + 1] if '--level' in sys.argv else 'federal'
 STATE = sys.argv[sys.argv.index('--state') + 1] if '--state' in sys.argv else None
-MAXU = 8 if LEVEL == 'federal' else 20  # stance-gate reads any number of source_url_N columns
+# Most source URLs a seated row keeps. stance-gate reads any number of source_url_N columns; the federal default of 8
+# dropped cited acts on a federal batch (2026-11-03), which then ran with 20. --max-urls N sets it for any level.
+MAXU = int(sys.argv[sys.argv.index('--max-urls') + 1]) if '--max-urls' in sys.argv else (8 if LEVEL == 'federal' else 20)
 cols += [f'source_url_{i}' for i in range(1, MAXU + 1) if f'source_url_{i}' not in cols]
 for _r in rows:
     for _k in cols: _r.setdefault(_k, '')
@@ -30,13 +56,25 @@ for x in csv.DictReader(open(f'{B}/research-pre-evidence.csv')):
     ps = by_name.get(n0, [])
     PRE[bname.get(ps[0], n0) if len(ps) == 1 else n0] = x
 # ⚠ BROWSER USER-AGENT — a deliberate exception to decision 0003 (ev-cto knowledge/decisions/0003-scraping-toolchain.md), ruled
-# 2026-10-31 by Chris Andrews: kept for LOCAL research runs only, never in a live or scheduled fetch path. Some sites
-# (iga.in.gov) serve their files only to a browser identity. A page read this way is NOT proof the verifier can read it:
-# the verifier sends the honest EmpoweredVoteBot identity (src/lib/verificationFetch.ts), so it may still fail there.
+# 2026-10-31 by Chris Andrews: kept for LOCAL research runs only, never in a live or scheduled fetch path. A page read
+# this way is NOT proof the verifier can read it: the verifier sends the honest EmpoweredVoteBot identity
+# (src/lib/verificationFetch.ts), so it may still fail there. iga.in.gov is NOT fetched this way: it goes through the
+# official MyIGA API (_iga.py → iga-pages.ts, the same reader the verifier uses); congress.gov through the official
+# api.congress.gov reader (_congress.py → congress-pages.ts, what the verifier reads; a plain fetch gets a bot check).
+
+def _surname(full):
+    """Last name without a generational suffix ('Joel R. Carter, Jr.' -> 'Carter', 'Henry Zuber III' -> 'Zuber')."""
+    toks = [x.strip(',.') for x in (full or '').split()]
+    while len(toks) > 1 and toks[-1].lower() in ('jr', 'sr', 'ii', 'iii', 'iv', 'v'):
+        toks.pop()
+    return toks[-1] if toks else ''
+
 def text_of(url):
     f = f'{B}/pages/{hashlib.sha1(url.encode()).hexdigest()}.txt'
     if not os.path.exists(f):
         if not FETCH: return None
+        if is_iga(url): return iga_text(url, f'{B}/pages')
+        if is_congress(url): return congress_text(url, f'{B}/pages')
         time.sleep(1)
         r = subprocess.run(['curl', '-sL', '--compressed', '--max-time', '40', '-A', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36', url], capture_output=True)
         if r.stdout[:5] == b'%PDF-':  # a PDF is read with pdftotext, never stripped as HTML
@@ -85,7 +123,7 @@ def roll_lines(pid, fs):
             if not printed and f.get('url', '').startswith(xu.rsplit('.xml', 1)[0]):
                 # The vote finding cites this roll call but the instrument's member list is not linked:
                 # take the person's surname, and only when exactly one member on the roll carries it.
-                sur0 = (ro.get(pid, {}).get('full_name') or '').split()[-1]
+                sur0 = _surname(ro.get(pid, {}).get('full_name') or '')
                 cands = [mm.group(1).strip() for mm in re.finditer(r'<legislator\b[^>]*>([^<]*)</legislator>', x)
                          if re.sub(r'\s*\([A-Z]{2}\)\s*$', '', mm.group(1).strip()) == sur0]
                 if len(cands) == 1: printed = cands[0]
@@ -102,6 +140,9 @@ def roll_lines(pid, fs):
 norm = lambda s: re.sub(r'\s+', ' ', s.replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"').replace('–', '-').replace('—', '-')).strip().lower()
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir; _party.py sits beside this file
 from _party import names_party  # the one party test the sweep and the writer use (party-check.ts)
+from _window import verifiable_window  # a passage the verifier itself accepts (window-check.ts)
+from _iga import is_iga, iga_text  # iga.in.gov through the official API, never the browser UA
+from _congress import is_congress, congress_text  # congress.gov through api.congress.gov, never the browser UA
 from _ballotpedia import ballotpedia_non_survey  # survey answers only (ruling 2026-11-02)
 def window(t, i, j, n=30):
     w = t.split(' '); pos = len(t[:i].split(' ')) - 1; end = len(t[:j].split(' '))
@@ -150,20 +191,23 @@ for r in rows:
             for u in pre_urls:
                 if u not in need and not re.search(r'ontheissues|wikipedia|google\.|bing\.|duckduckgo|congress\.gov/search', u): need.append(u)
         need = need[:MAXU]
-        sur = r['full_name'].split()[-1].strip(',.'); idx = 0; k = 0
+        sur = _surname(r['full_name']); idx = 0; k = 0
         for u in need:
             # A party word in the ADDRESS is fine (RULINGS.md "A party word in a source address is fine", W3-R15).
             t = text_of(u)
             if not t: miss.append((r['full_name'], u, 'blank fallback: no page')); continue
-            nt = norm(t); i = nt.find(norm(r['full_name']))
-            if i < 0: i = nt.find(sur.lower())
-            snip = window(t, i, i + len(sur)) if i >= 0 else None
+            # First a passage the verifier itself accepts (window-check.ts), else the party-free window around the name.
+            snip = verifiable_window(None, r['full_name'], text=t)
+            if not snip:
+                nt = norm(t); i = nt.find(norm(r['full_name']))
+                if i < 0: i = nt.find(sur.lower())
+                snip = window(t, i, i + len(sur)) if i >= 0 else None
             if not snip: miss.append((r['full_name'], u, 'blank fallback: no name window')); continue
             k += 1; r[f'source_url_{k}'] = u; idx += 1
             ev.append({'full_name': r['full_name'], 'topic_key': r['topic_key'], 'source_url': u, 'snippet': snip, 'snippet_index': idx})
         out.append(r); continue
     fs = json.load(open(f'{FIND}/{pid}.json'))['findings'] if pid and os.path.exists(f'{FIND}/{pid}.json') else []
-    sur = (ro.get(pid, {}).get('full_name') or r['full_name']).split()[-1].strip(',.')
+    sur = _surname(ro.get(pid, {}).get('full_name') or r['full_name'])
     # Split a quote that holds an ellipsis into its exact parts ("a ... b" -> "a" ... "b"); log each change.
     def _split(m):
         q = m.group(2); parts = [p.strip(' ,;') for p in re.split(r'\s*(?:\.\.\.|\u2026)\s*', q) if p.strip(' ,;')]
@@ -246,14 +290,16 @@ for r in out:
         if k.startswith('source_url') and ballotpedia_non_survey(r.get(k)):
             miss.append((r['full_name'], r[k], 'Ballotpedia non-survey page: not cited (ruling 2026-11-02)')); r[k] = ''
 ev = [e for e in ev if not ballotpedia_non_survey(e['source_url'])]
-w = csv.DictWriter(open(f'{B}/research.csv', 'w', newline=''), fieldnames=cols); w.writeheader(); w.writerows(out)
+with open(f'{B}/research.csv', 'w', newline='') as _f:
+    w = csv.DictWriter(_f, fieldnames=cols); w.writeheader(); w.writerows(out)
+open(SHA, 'w').write(_sha(f'{B}/research.csv') + '\n')
 w = csv.DictWriter(open(f'{B}/evidence.csv', 'w', newline=''), fieldnames=['full_name', 'topic_key', 'source_url', 'snippet', 'snippet_index']); w.writeheader(); w.writerows(ev)
 json.dump(miss, open(f'{B}/evidence-missing.json', 'w'), indent=1)
 json.dump(edits, open(f'{B}/research-edits.json', 'w'), indent=1)
 own = []
 for r in out:
     if r['value'] == '0': continue
-    sur = r['full_name'].split()[-1].lower().strip(',.')
+    sur = _surname(r['full_name']).lower()
     for k in cols:
         u = r.get(k) or ''
         if k.startswith('source_url') and u:

@@ -1,0 +1,56 @@
+{
+  "politician_id": "e9e79f56-f4c8-4694-b161-2858722dcbc0",
+  "findings": [
+    {
+      "id": "3a63d361647044e76b28d30d996f23ed311eb75da5e280fb3b3bf2acfa3c5c91",
+      "kind": "own-words",
+      "url": "https://guides.vote/guide/2026-pennsylvania-pa-01-us-house-voters-guide/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I have no issue with law-abiding citizens who want to carry a gun.",
+      "note": "Quote attributed to Harvie by a nonpartisan voters guide, which cites a YouTube video (timestamp 1642s) with no outlet or date. In the same entry the guide says he calls for 'common sense' gun laws, supports barring gun purchases by convicted felons and people on a no-fly list, and says assault weapons should not be 'on our streets' (guide's wording, not exact quotes). Text came through the fetch tool only; the raw page was blocked to curl.",
+      "subjects": [
+        "carry a gun with a permit or lawfully",
+        "limits on who may have a gun",
+        "check every gun buyer",
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-31T00:48:35.604Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "limits on who may have a gun",
+        "ban on assault-style guns",
+        "common-sense gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "in scope: on the 2026-11-03 general-election ballot for Pennsylvania U.S. House District 1 (https://ivoterguide.com/candidate/94928/race/32992/election/1477 and https://whyy.org/articles/election-2026-pennsylvania-bucks-county-1st-congressional-district-harvie-simonelli)",
+        "campaign site bobharvieforcongress.com home page and priorities page: nothing on the subject",
+        "voter guide questionnaire (ivoterguide): Second Amendment question shown as 'Did not answer'",
+        "candidate profile on branch.vote: says the campaign site had no information on public safety as of 2026-10-16",
+        "guides.vote PA-01 voters guide: summarises gun remarks from a campaign video; fetched through the fetch tool only, a plain curl of it returned 403 so the raw page text could not be checked: blocked: https://guides.vote/guide/2026-pennsylvania-pa-01-us-house-voters-guide/ (raw)",
+        "not reviewed: https://www.youtube.com/watch?v=uGk6czwESs4&t=1642s (video cited by the voter guide, cannot be read)",
+        "not a sitting member of Congress: county commissioner, no congressional sponsored-bill list; no county gun ordinance found in one news search",
+        "Ballotpedia: not reachable by fetch tool, not reviewed",
+        "news search on name plus gun words: nothing from him on the subject"
+      ],
+      "found": 1,
+      "at": "2026-10-31T00:48:35.604Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "politician_id": "a7032de5-1f94-41c8-be21-3ce37d836b68",
+  "findings": [
+    {
+      "id": "8f83d0028419134d578f055f22fbb42fc2269d0d95536e5a2081a180daf0e758",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/house/0940041.pdf",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "House: S. B. No. 2576 passed by the following vote: (0940041)",
+      "note": "House roll call as printed ('Blackmon'), linked to Lawrence Blackmon (district 57) via the official 2024 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2147cca7436b02fc328055efc537138f61a5635591caea67c88f498332726704",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "nay",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Blackmon'), linked to Lawrence Blackmon (district 57) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.758Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship / SAVE Act",
+        "mail-ballot ID",
+        "election integrity / voter rolls"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "identity: Mississippi House District 57 (Canton); search results name him as the son of Ed Blackmon and a different person from him; no page of his own words was fetched",
+        "https://www.mississippifreepress.org/black-americans-face-a-new-fight-for-racial-representation-after-justices-voting-rights-act-ruling/ (May 4, 2026; does not name him, nothing on the subject)",
+        "https://magnoliatribune.com/?p=93192 (March 28, 2023 election-law article; names only Ed Blackmon, a different person; not used)",
+        "web search x5: name + voter ID/photo ID; name + special election/District 57; name + voting rights/ID/citizenship; name + interview/statement on election bills; name + questionnaire/SAVE Act/proof of citizenship; no own words found",
+        "not reviewed: https://mississippitoday.org/2026/08/18/ed-blackmon-redistricting-mississippi/ (site refuses AI agents, not fetched; about redistricting)",
+        "blocked: ballotpedia.org (refuses our fetches; not tried)",
+        "not reviewed: bluevoterguide.org and justfacts.votesmart.org (403, skipped per instructions)",
+        "no campaign site or newsletter found by search"
+      ],
+      "found": 0,
+      "at": "2026-11-05T23:10:41.351Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-05T23:52:51.758Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

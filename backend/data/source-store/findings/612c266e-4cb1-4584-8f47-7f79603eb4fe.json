@@ -171,6 +171,424 @@
         "fetched_at": "2026-10-28T22:51:16.462Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "1d0155895ce8411a4438986cd1d5eafc092c54b213a013aab945a0900ab58bf7",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2021/sb565",
+      "date": "2021-11-09",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-565-2021",
+      "act": "nay",
+      "motion": "Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Final Passage, 2021-11-09: nay (tally 29–21); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/PA_SB565_PN1212.pdf",
+          "sha256": "8599bf5e56d8378a456fd36d933e5a05733e1a059d642ddb6883c809f6226568"
+        }
+      }
+    },
+    {
+      "id": "2aa066a56d950dae2f7682cae32b19639d28ccafc991362856a140902cd0b063",
+      "kind": "own-words",
+      "url": "https://www.senatorcollett.com/?p=136566",
+      "date": "2023-06-06",
+      "date_precision": "day",
+      "passage": "“Our Commonwealth is falling behind and it’s far past due for common sense gun reforms. I’m ready to vote on these lifesaving bills and urge my Senate majority colleagues to listen to the majority of Pennsylvanians who support these reforms and bring them up for a vote. We have no time to lose.”",
+      "note": "Senate floor remarks, issued in her press release, urging votes on gun safety bills.",
+      "subjects": [
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:40:55.424Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c3d5757894216f0287d610b91f05ee3da1cbe156f35385901994a1beda9149c2",
+      "kind": "own-words",
+      "url": "https://www.senatorcollett.com/?p=136566",
+      "date": "2023-06-06",
+      "date_precision": "day",
+      "passage": "“Firearms are prohibited in the Capitol building to protect legislators and staff. Why should our protection be more important than the protection of the citizens who work at and visit our local municipal buildings, public libraries, and playgrounds?”",
+      "note": "Explains why towns should be able to bar guns on their own property.",
+      "subjects": [
+        "places where carry is allowed",
+        "local control of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:40:55.424Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "707083931baa86ca60a1e3c13df83daeb0ad1a729c98ddd65438dcb9575c179d",
+      "kind": "own-words",
+      "url": "https://www.senatorcollett.com/?p=136566",
+      "date": "2023-06-06",
+      "date_precision": "day",
+      "passage": "Senator Collett is proud to cosponsor the senate versions of these bills, SB 60 and SB 204 respectively, in addition to a wide range of popular policy solutions, like:",
+      "note": "Press release states she cosponsors the Senate universal background check bill (SB 60) and red flag bill (SB 204); also lists safe storage SB 427/431, assault weapons ban SB 200, lost and stolen reporting SB 461. Sponsorship per her release, not the official list.",
+      "subjects": [
+        "check every gun buyer",
+        "red-flag orders",
+        "ban on assault-style guns",
+        "safe storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:40:55.424Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3f7a5c5665ea2c9c13fe943b88403cc910e6469776fc8d2c69149563a726804",
+      "kind": "own-words",
+      "url": "https://www.senatorcollett.com/?p=131578",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "We must prohibit ownership of assault weapons such as the AR-15, including its high-capacity ammunition feeding devices, and other accessories, that have become the tool of choice in mass murders.",
+      "note": "Priorities section of her Guns & Safety issue page (undated).",
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:40:55.424Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1dfb2d0aaa1b5756b85647d091f7793a12225230b98d222bfa5bb00b01b20d7c",
+      "kind": "own-words",
+      "url": "https://www.senatorcollett.com/?p=131578",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Every firearm sale in Pennsylvania needs to undergo a background check. Period.",
+      "note": "Priorities section of her Guns & Safety issue page (undated); mentions gun show and person-to-person sales.",
+      "subjects": [
+        "check every gun buyer",
+        "private sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:40:55.424Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ab6f7604ccaf43f90ed3a99be1a7fe25ed891556054077db9e6917ef73c2346d",
+      "kind": "own-words",
+      "url": "https://www.senatorcollett.com/?p=131578",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Extreme Risk Protection legislation – or “Red Flag Laws” – would allow for courts to order public protection orders if a person is demonstrating dangerous mental health characteristics.",
+      "note": "Priorities section of her Guns & Safety issue page (undated).",
+      "subjects": [
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:40:55.424Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "16cab33198b416db9e9156a81416c38a0ebf691a9aec5235cfe068a3f633003c",
+      "kind": "own-words",
+      "url": "https://www.senatorcollett.com/?p=131578",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Requiring gun locks and safe storage are commonsense prevention options.",
+      "note": "Priorities section of her Guns & Safety issue page (undated).",
+      "subjects": [
+        "safe storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:40:55.424Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c73aacc1821bc36abc328eca3d5e48a695067f6a694aad0684013e836f5d05c3",
+      "kind": "own-words",
+      "url": "https://pasenate.com/collett-introduces-legislation-allow-regulation-firearms-municipal-properties/",
+      "date": "2019-03-11",
+      "date_precision": "day",
+      "passage": "“In light of these recent tragedies and amidst a groundswell of public support, it is clearly time to update our laws to bolster local elected officials’ ability to keep their constituents safe,” said Senator Collett.",
+      "note": "Press release on her bill memo letting local governments restrict guns at facilities they own or operate.",
+      "subjects": [
+        "places where carry is allowed",
+        "local control of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:40:55.424Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "168581ecd9b5f5df0cb5a0313f6e424bf623d0469b7377d4b850ea021352e21c",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb489",
+      "date": "2025-03-21",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-489-2025",
+      "act": "sponsor",
+      "note": "Prime sponsor of SB 489, Local Regulation of Firearms: lets local governments limit firearms and ammunition rules on property they own or operate (PN 468, referred to committee 2025-03-21). Fetch tool summarised the page.",
+      "subjects": [
+        "places where carry is allowed",
+        "local control of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:40:55.424Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9ad64051527657cfe594fb1c2116d8dd78f2b3b1edbb3c421ecbd3e9ef8f7f19",
+      "kind": "record",
+      "url": "https://www.senatorcollett.com/?p=131578",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-200-2025",
+      "act": "other",
+      "note": "Her issue page lists SB 200 (assault weapons ban, listed as Santarsiero/Kane) among bills she says she introduced or cosponsored in 2025-2026; the page does not mark her role per bill. Same for SB 768 and 770 safe storage, SB 208 72-hour waiting period, SB 771 duty to retreat, SB 798 check-in at municipal buildings, SB 559 assault weapons under 21, SB 668 ID for ammunition purchases, SB 122 background checks, SB 348 lost/stolen reporting.",
+      "subjects": [
+        "ban on assault-style guns",
+        "waiting periods",
+        "check every gun buyer",
+        "safe storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T22:40:55.424Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6926d5aca1b8e5dfa1d1fe1815b11bc6b750c15358891fcd9c4ea5a405b5785b",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=1747",
+      "date": "2020-11-18",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1747-2019",
+      "act": "nay",
+      "motion": "Senate Floor: HB 1747 PN 2338, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 1747 PN 2338, FINAL PASSAGE, 2020-11-18: nay (tally 29–20); census gate: none.",
+      "subjects": [
+        "emergency-time carry restriction repealed",
+        "no seizure of guns, accessories or ammunition during emergencies",
+        "governor cannot suspend firearm sales in emergencies"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-1747-2019.introduced.pdf",
+          "sha256": "a4e95a0229bcf1cde7a5fa9d58ac2c33f09477e837d84525b7ff04d3a5f71ece"
+        }
+      }
+    },
+    {
+      "id": "7ac860115240e898e99179f0252f386cf4942bf1be694ef5653fb8d3aaf3a31c",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2019&sind=0&body=H&type=B&bn=2440",
+      "date": "2020-11-18",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-2440-2019",
+      "act": "nay",
+      "motion": "Senate Floor: HB 2440 PN 3776, FINAL PASSAGE",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 2440 PN 3776, FINAL PASSAGE, 2020-11-18: nay (tally 29–20); census gate: none.",
+      "subjects": [
+        "gun and ammunition businesses and ranges can never be closed or limited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-2440-2019.amended.pdf",
+          "sha256": "9bdd564f4d0812adfa9af91a3ac7f854f4196ebd9577febef5953c94486be5c8"
+        }
+      }
+    },
+    {
+      "id": "e551ed2f59e072bfb12b47cdaee82befe90ec2b072f23db862ca5acdcd44d811",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=979",
+      "date": "2022-01-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-979-2021",
+      "act": "nay",
+      "motion": "Senate Floor: HB 979 PN 1706, Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: HB 979 PN 1706, Final Passage, 2022-01-25: nay (tally 32–17); census gate: none.",
+      "subjects": [
+        "local gun and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs",
+        "localities barred from suing gun makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-HB-979-2021.amended.pdf",
+          "sha256": "494cfe800bdb89be85cf7c2a28a81c203b581e7614e7bc8f69211cb4c736f5dd"
+        }
+      }
+    },
+    {
+      "id": "aeb8266984e53754ceef8ff83f7e417709cb966b7ba747cb9d64e2c79c4a49ed",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb822",
+      "date": "2026-05-06",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-822-2025",
+      "act": "nay",
+      "motion": "Senate Floor: PN0881, Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "PA Senate, Senate Floor: PN0881, Final Passage, 2026-05-06: nay (tally 30–20); census gate: none.",
+      "subjects": [
+        "local firearm and ammunition rules preempted",
+        "people may sue localities over gun rules and recover costs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-822-2025.introduced.pdf",
+          "sha256": "38d1bdcb626cc1614fee0c352427248f5e599df007fead7d1a6031742385df55"
+        }
+      }
+    },
+    {
+      "id": "3295f3ca764ec705e99d1e3ac2783e1ae0949dab0b7628a119ff558b5999a87e",
+      "kind": "record",
+      "url": "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=S&type=B&bn=204",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-204-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-SB-204-2023 (LegiScan sponsor list): SB204 (2023-2024 Regular Session): In actions, proceedings and other matters generally, providing for extreme risk protection orders..",
+      "subjects": [
+        "court orders to remove guns from people at risk of harming themselves or others",
+        "family members and police may petition",
+        "penalty for possessing guns under an order"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-204-2023.introduced.pdf",
+          "sha256": "3aaf5420de53bef1bf18d7ed5c88cda96951528d75fb2331337afa67ef725805"
+        }
+      }
+    },
+    {
+      "id": "974bcaa11083851fdf648bd4b6b53b2f69fbd2b79d1857b0e68638182e4e9f3b",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb348",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-348-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of PA-SB-348-2025 (LegiScan sponsor list): SB348 (2025-2026 Regular Session): In firearms and other dangerous articles, providing for report of theft or loss of firearm; and imposing a penalty..",
+      "subjects": [
+        "lost or stolen firearm must be reported within 24 hours",
+        "fine for failing to report"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-30T23:06:47.588045Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/PA-SB-348-2025.introduced.pdf",
+          "sha256": "abc26212fcdd2ced433b042efb2f17e7287787752032e5f4e6f1cba78f99f4e2"
+        }
+      }
     }
   ],
   "searches": [
@@ -226,6 +644,32 @@
       "found": 1,
       "at": "2026-10-28T22:51:16.462Z",
       "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "safe storage",
+        "waiting periods",
+        "local control of guns",
+        "carry places"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Senate office site Guns & Safety page and June 2023 release",
+        "Senate caucus site 2019 release",
+        "official bill page palegis.us SB 489",
+        "web search (2 searches)",
+        "blocked: https://www.legis.state.pa.us/cfdocs/legis/home/member_information/house_bio.cfm?id=1887 (redirected to a 404)",
+        "Ballotpedia not reviewed (fetch returns empty)",
+        "member sponsor list on palegis.us not reached; used per-bill page and her issue page"
+      ],
+      "found": 10,
+      "at": "2026-10-30T22:40:55.424Z",
+      "by": "source-collector"
     }
   ]
 }

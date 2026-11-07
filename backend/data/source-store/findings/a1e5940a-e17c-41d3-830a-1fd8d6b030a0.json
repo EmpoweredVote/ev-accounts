@@ -1,0 +1,159 @@
+{
+  "politician_id": "a1e5940a-e17c-41d3-830a-1fd8d6b030a0",
+  "findings": [
+    {
+      "id": "c4338a77b3aba428947279af06cd61e61cdf9a7e779c7a2e8d9568cae10778af",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/house/legislative_days/day045_20250320/vote_records/0275_HB2020.odt",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "nay",
+      "motion": "House: Concurred with amendments",
+      "note": "House roll call as printed ('Xu'), linked to Rui Xu (district 25) via the official 2025 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c219fe3754d2a4205c7f4df7b0eee9545951604494d4cca3e305ee08fdc67c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day051_20260326/vote_records/0342_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "House: Conference Committee Report was adopted",
+      "note": "House roll call as printed ('Xu'), linked to Rui Xu (district 25) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1eb42db9bde1e358d45830781df62725c9ce8abcb4f9a4b11b626d8974c58e80",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day053_20260409/vote_records/0408_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "House: Motion to override veto prevailed",
+      "note": "House roll call as printed ('Xu'), linked to Rui Xu (district 25) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d78e075f99a6894d381835920e3c20b2e83e350f416352edaa8f164c0df580f1",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day023_20260212/vote_records/0067_HB2448.odt",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2448-2026",
+      "act": "nay",
+      "motion": "House: Emergency Final Action - Passed as amended",
+      "note": "House roll call as printed ('Xu'), linked to Rui Xu (district 25) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.ruixuforkansas.com/ (home, issues and meet-rui pages read; nothing on the subject; confirms a 2026 re-election run for District 25)",
+        "KCUR 2024 voter guide https://www.kcur.org/kcvoterguide2024/kansas/house-district-25 (nothing on the subject)",
+        "two news searches on name plus subject words: nothing on the subject",
+        "blocked: https://bluevoterguide.org/KS/candidate_Rui_Xu/301929 (403)",
+        "blocked: https://ballotpedia.org/Rui_Xu (listed as refusing fetches; not fetched)",
+        "blocked: kansasreflector.com (listed as refusing fetches; not fetched)",
+        "not reviewed: committee testimony lists for voter-ID bills; the legislature member page"
+      ],
+      "found": 0,
+      "at": "2026-11-04T16:54:29.555Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "advance-ballot return deadline",
+        "election integrity"
+      ],
+      "places": [
+        "web search: name + newsletter/op-ed/guest column (none found)",
+        "web search: name + floor debate (none found)",
+        "Written testimony PDF https://kslegislature.gov/li/b2023_24/committees/ctte_h_electns_1/documents/testimony/20230307_35.pdf (a constituent letter only copied to him; not his words)",
+        "web search: name + voter ID / proof of citizenship (no own words)",
+        "web search: name + mail ballot / advance ballot / election (no own words)",
+        "web search: name + 'Rep.' + said election/voters/ballot (no own words)",
+        "BillTrack50 and Legislature vote pages seen only as vote records (linked separately)",
+        "blocked: https://ballotpedia.org/ (listed as refusing fetches; not fetched)",
+        "blocked: kansasreflector.com (listed as refusing fetches; not fetched)",
+        "HB 2448 2026 House Elections testimony PDFs sampled (ALEC and citizen testimony; none signed by this person)",
+        "Johnson County Post https://johnsoncountypost.com/?p=279169 (this person not named)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T17:05:24.855Z",
+      "by": "research-ks-r2-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T19:13:24.946Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

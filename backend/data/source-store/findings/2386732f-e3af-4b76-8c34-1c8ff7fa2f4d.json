@@ -25,6 +25,65 @@
         "fetched_at": "2026-10-21T03:40:10.569Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "818586ba7a6fa8e00a512d1c240c01472b0f796fab8f64a338fb0b5e616ea7fe",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: yea (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9fc7fe42d4ca0418da57b37f789b4766ff618ad71e31a528b663386efac66476",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: yea (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
     }
   ],
   "searches": [
@@ -72,6 +131,31 @@
       "found": 0,
       "at": "2026-10-27T18:32:56.941Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun sales rules",
+        "assault-style guns",
+        "ghost guns",
+        "licences and background checks",
+        "Second Amendment and gun safety statements",
+        "the 2024 firearms law and its 2026 repeal question"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page (malegislature.gov KAD1, 194th session bills and co-sponsor pages): confirms he is the Barnstable representative; listed filings include no gun bills",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site: none found (kipdiggs.com is an unrelated site)",
+        "Ballotpedia: empty page, not relied on",
+        "news searches (3): no quote from him on guns found; a candidate-profile news page for his district returned no readable text, not reviewed: https://news.yahoo.com/meet-candidates-running-represent-2nd-081506657.html",
+        "WGBH 2023 hearing story checked for his name: not mentioned",
+        "not reviewed: 2026 ballot status (no page found confirming his 2026 race)"
+      ],
+      "found": 0,
+      "at": "2026-11-01T01:41:50.109Z",
+      "by": "source-collector"
     }
   ]
 }

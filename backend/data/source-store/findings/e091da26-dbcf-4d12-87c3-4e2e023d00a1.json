@@ -1,0 +1,53 @@
+{
+  "politician_id": "e091da26-dbcf-4d12-87c3-4e2e023d00a1",
+  "findings": [
+    {
+      "id": "f1d35d50ed612949fd4a31db32553bd1a2fbca98900de21a4ad296e5b7b6bc34",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/89217/race/34158/election/1495",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Felons convicted of heinous crimes should not (and already are barred from) be able to own a firearm.  Our current system does too much to infringe on law abiding citizens ability to defend themselves and thus I feel that we need to restore the rights of citizens to bear arms to the greatest extent possible.",
+      "note": "His written answer to a voter guide question on what limits on gun ownership are needed; the page is undated (2026 general-election profile). He names only people convicted of serious crimes and says current rules go too far.",
+      "subjects": [
+        "who may own a gun",
+        "general gun rights statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:06:55.243Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "carry permits",
+        "who may own a gun",
+        "general gun rights statement"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://ivoterguide.com/candidate/89217/race/34158/election/1495 (own answer on gun restrictions, fetched with curl)",
+        "https://ctpublic.org/news/2026-10-21/joe-courtney-george-austin-2nd-district-congress-ct-candidates (confirms CT 2nd District general race; nothing on guns)",
+        "https://theballotbrief.com/candidate/george-austin-ct (priorities listed, nothing on guns)",
+        "campaign site: not reached directly",
+        "debate video (NBC Connecticut): not reviewed: https://www.nbcconnecticut.com/news/local/rep-joe-courtney-faces-off-republican-challenger-george-austin-in-debate/3788803/",
+        "web searches on name plus gun words",
+        "no prior federal office, so no sponsorships"
+      ],
+      "found": 1,
+      "at": "2026-10-30T15:06:55.243Z",
+      "by": "source-collector"
+    }
+  ]
+}

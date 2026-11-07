@@ -80,6 +80,29 @@
       "found": 0,
       "at": "2026-10-27T16:08:06.221Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "general gun rights or gun safety laws",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "in scope: sitting Indiana state senator, District 35 (official page https://www.indianasenaterepublicans.com/young)",
+        "official senate page: nothing on the subject",
+        "two news searches on name plus gun words: no own-words quote found (results were mostly about a different person with the same surname, a U.S. senator, not used)",
+        "Ballotpedia: not usable through the fetch tool",
+        "sponsor list: covered by LegiScan bulk check"
+      ],
+      "found": 0,
+      "at": "2026-10-31T20:38:53.382Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -36,6 +36,25 @@
       "found": 0,
       "at": "2026-10-27T01:11:29.182Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "general gun statements"
+      ],
+      "places": [
+        "status: lost the 2026-08-11 primary (Alabama District 6 nomination went to another candidate; shown by https://abc3340.com/news/alabama-news/alabama-congressional-primary-results-winners-emerge-in-key-us-house-races, results unofficial at the time)",
+        "On the Record (0 appearances)",
+        "web searches: 2 on his name with gun and 2026 House words; nothing from him on the subject",
+        "not searched further because he is out of scope after losing the primary"
+      ],
+      "found": 0,
+      "at": "2026-10-30T15:13:48.663Z",
+      "by": "source-collector"
     }
   ]
 }

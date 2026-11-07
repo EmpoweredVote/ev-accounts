@@ -17,7 +17,7 @@ ACT = {'yea': 'Yea', 'nay': 'Nay', 'abstain': 'NV'}
 for r in rows:
     n = r['full_name']; vs = needs.get(n, [])
     if not vs: continue
-    urls = [r[c] for c in uc if r[c]]
+    urls = [r.get(c, '') for c in uc if r.get(c)]  # an earlier row may have added columns this row does not have yet
     for v in vs:
         if (n, v['url']) in have and v['url'] not in urls: urls.append(v['url']); log.append([n, 'cite LegiScan', v['url']])
     for off in {v['official'] for v in vs}:

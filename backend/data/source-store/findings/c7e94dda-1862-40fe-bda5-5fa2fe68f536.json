@@ -44,6 +44,258 @@
         "fetched_at": "2026-10-22T23:24:25.810Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "de993072b1f015691757356966b25be35f10f79ccfc21b9e05ca9348996cbcde",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "Roll Call #208 - Question on acceptance of conference committee report",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA Senate, Roll Call #208 - Question on acceptance of conference committee report, 2024-07-18: yea (tally 35–5); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "86db91a960d994188f2dfa3b8359da6eebd5ecc05e8910bdc86cc5b37e66f68e",
+      "kind": "own-words",
+      "url": "https://charlestownbridge.com/2024/02/01/didomenico-supports-comprehensive-gun-safety-reform/",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "passage": "“Gun violence has wreaked havoc in communities across our state and I am always proud to support reform measures like this one that promotes public safety and responsible gun ownership,” said Sal DiDomenico, Assistant Majority Leader of the Massachusetts Senate.",
+      "note": "Quoted in the Charlestown Bridge on the Senate gun bill S.2572 (SAFER Act). Date is the article date in its address; the statement was made the week the bill was introduced.",
+      "subjects": [
+        "general gun safety laws",
+        "ghost guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:41:38.048Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86d82bb8978314dbe02efac9acb4c8eb424e918753c3f17c7a6e4aa06bb9a15",
+      "kind": "own-words",
+      "url": "https://charlestownbridge.com/2024/02/01/didomenico-supports-comprehensive-gun-safety-reform/",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "passage": "“This commonsense proposal has secured support from gun safety advocates, law enforcement, the attorney general, and district attorneys across our state.",
+      "note": "Same quote, next sentence (the quote continues past this sentence): describes the Senate gun bill's backing and says he looks forward to voting for it.",
+      "subjects": [
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:41:38.048Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "06541d713164e77eb7b99cee71b5cb19e92c8b30fde03be0f7df54690b050976",
+      "kind": "own-words",
+      "url": "https://www.senatordidomenico.com/press-releases/2020/9/9/didomenico-votes-to-ban-bump-stocks-and-trigger-cranks",
+      "date": "2020-09-09",
+      "date_precision": "unknown",
+      "passage": "“There is no need for these devices, which is why the Senate has produced this much needed amendment that both protects the safety of our residents and ensures that there is adequate time for compliance with this change in the law.",
+      "note": "His office's release on a Senate vote to ban bump stocks and trigger cranks (the release refers to the Las Vegas shooting, so the vote is earlier than the date in the page address; actual date not shown on the page).",
+      "subjects": [
+        "ban on rapid-fire conversion devices (bump stocks)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:41:38.048Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1c25029dd6308b3c055ca10c1920e6934864a7f90e7a8d0ef470f51ccecf1696",
+      "kind": "own-words",
+      "url": "https://www.senatordidomenico.com/press-releases/2020/9/9/didomenico-votes-to-ban-bump-stocks-and-trigger-cranks",
+      "date": "2020-09-09",
+      "date_precision": "unknown",
+      "passage": "I am very proud of the action taken by my colleagues and I in the Senate, and I hope that similar legislation will soon be adopted on the federal level as well.”",
+      "note": "Same release: he says he hopes a similar ban becomes federal law.",
+      "subjects": [
+        "ban on rapid-fire conversion devices (bump stocks)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:41:38.048Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4ca9a9a32a3bb39a3be72b261e1884c89c812243dcea083341946e09c7acad60",
+      "kind": "own-words",
+      "url": "https://www.senatordidomenico.com/press-releases/2020/9/8/didomenico-supports-extreme-risk-protection-order-legislation",
+      "date": "2020-09-08",
+      "date_precision": "unknown",
+      "passage": "“This Extreme Risk Protective Order bill will provide us with the additional tools necessary to help prevent gun related tragedies and protect public safety,”",
+      "note": "His statement on a Senate vote on an extreme risk protection order (red flag) bill that he co-sponsored. Date in page address; the page says the Senate vote was 'last week'; page date may be a site re-post date, so precision unknown.",
+      "subjects": [
+        "red-flag / extreme risk orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:41:38.048Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "49afe9d7cfbbf07f8c55d2ecb2bd8372be9b8045165f4f5d994794ffb61435c3",
+      "kind": "own-words",
+      "url": "https://www.senatordidomenico.com/newsroom/2020/9/21/senators-debate-new-approaches-to-gun-violence",
+      "date": "2020-09-21",
+      "date_precision": "unknown",
+      "passage": "“I’m on that side always,” said Sal DiDomenico, an assistant majority leader, when asked if he thought the Legislature should act on gun control.",
+      "note": "State House News Service story reposted on his site; it refers to 'last month's' Florida high school shooting, so it was written in 2018; the date in the page address is a repost date. Quoted from his site; the News Service wrote the sentence quoting him.",
+      "subjects": [
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:41:38.048Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8a741a025866870023298d5d7e4426f7e74e5f9fed16c9378689cf3ab05cb193",
+      "kind": "own-words",
+      "url": "https://www.senatordidomenico.com/newsroom/2020/9/21/senators-debate-new-approaches-to-gun-violence",
+      "date": "2020-09-21",
+      "date_precision": "unknown",
+      "passage": "“Tragedies have been happening all across this country.",
+      "note": "Same story, same quote: he says the Legislature should not stand still on guns after school shootings.",
+      "subjects": [
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:41:38.048Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ecfaa23b804aad32d3a95e9b8b7d78a5ec4883794f2b5c4a787167cb8cfb3992",
+      "kind": "own-words",
+      "url": "https://www.senatordidomenico.com/public-safety",
+      "date": "2014-01-01",
+      "date_precision": "unknown",
+      "passage": "This bill was ultimately included in a Gun Safety Bill signed into law by Governor Patrick in 2014 that was designed to combat gun violence and suicide in our schools and communities.",
+      "note": "From his public safety issue page: he says his school-safety bill was folded into the 2014 state gun safety law. Page itself is undated; the year is the law's year, not the page date.",
+      "subjects": [
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:41:38.048Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c8cebf8209886b721f0d34891a36c67c69bacc66b7510fd79e11c7f7e6e90fd2",
+      "kind": "record",
+      "url": "https://www.senatordidomenico.com/press-releases/2020/9/9/didomenico-votes-to-ban-bump-stocks-and-trigger-cranks",
+      "date": "2020-09-09",
+      "date_precision": "unknown",
+      "act": "yea",
+      "motion": "Senate amendment banning bump stocks and trigger cranks (classified with machine guns, 18 months to life)",
+      "note": "His office's release says he voted with the Senate for an amendment banning bump stocks and trigger cranks. Bill number not on the page; date not shown (page address date is not the vote date).",
+      "subjects": [
+        "ban on rapid-fire conversion devices (bump stocks)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:41:38.048Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0b92e4270c1b20702f9fe0110f0a4e61141463212e8c629510add791e7878540",
+      "kind": "record",
+      "url": "https://www.senatordidomenico.com/press-releases/2020/9/8/didomenico-supports-extreme-risk-protection-order-legislation",
+      "date": "2020-09-08",
+      "date_precision": "unknown",
+      "act": "sponsor",
+      "motion": "Extreme risk protection order bill (co-sponsored), Senate engrossment vote",
+      "note": "The release says the bill was co-sponsored by him and that he and colleagues voted to engross it; recorded as a co-sponsorship (sponsor). Bill number not given on the page.",
+      "subjects": [
+        "red-flag / extreme risk orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:41:38.048Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "79209be864559ef9788cd8757c1edccc2c27bd56a91d9cb94fca18310b4edb76",
+      "kind": "record",
+      "url": "https://www.senatordidomenico.com/recent-happenings/2024/2/15/didomenico-joins-colleagues-law-enforcement-and-gun-safety-advocates-in-supporting-comprehensive-gun-safety-reform",
+      "date": "2024-02-15",
+      "date_precision": "unknown",
+      "instrument_id": "MA-S-2572-2023",
+      "act": "other",
+      "note": "His release says he joined Senate colleagues as they introduced S.2572, the SAFER Act, an omnibus gun safety bill; he is listed as a supporter at the press event, not named as author. Page date from its address; introduction was in late January 2024.",
+      "subjects": [
+        "general gun safety laws",
+        "ghost guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:41:38.048Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -96,6 +348,32 @@
       "found": 0,
       "at": "2026-10-27T21:57:28.012Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on rapid-fire conversion devices (bump stocks)",
+        "ghost guns",
+        "red-flag / extreme risk orders",
+        "general gun safety laws",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site senatordidomenico.com (names him as sitting Senate member for Cambridge, Charlestown, Chelsea, Everett; site search for 'gun' read; press release list read: three 2026 releases, none on guns)",
+        "official site pages: SAFER Act release, extreme risk order release, bump stock release, public safety page, 2018 news reprint",
+        "Charlestown Bridge article on the SAFER Act",
+        "web search x4 (news, ghost-gun coverage, one on his own site, campaign/interview): no campaign-site or interview statements found",
+        "Ballotpedia: not reviewed, returns empty to the fetch tool",
+        "sponsor list: covered by LegiScan bulk check",
+        "nothing found on 2026 campaign site or questionnaire; no candidate guide answer found",
+        "not reviewed: whether he is on the 2026 general-election ballot was not confirmed by a ballot page; his office site still lists 2026 press releases"
+      ],
+      "found": 11,
+      "at": "2026-11-01T01:41:38.048Z",
+      "by": "source-collector"
     }
   ]
 }

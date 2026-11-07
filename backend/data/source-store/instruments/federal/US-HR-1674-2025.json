@@ -1,0 +1,903 @@
+{
+  "id": "US-HR-1674-2025",
+  "scope": "federal",
+  "title": "HR 1674 (119th Congress): Keep Americans Safe Act",
+  "urls": [
+    "https://www.congress.gov/bill/119th-congress/house-bill/1674",
+    "https://www.govinfo.gov/content/pkg/BILLS-119hr1674ih/xml/BILLS-119hr1674ih.xml"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 2 (amending 18 U.S.C. 921(a)): (31)The term large capacity ammunition feeding device—(A)means a magazine, belt, drum, feed strip, helical feeding device, or similar device, including any such device joined or coupled with another in any manner, that has an overall capacity of, or that can be readily restored, changed, or converted to accept, more than 15 rounds of ammunition; and(B)does not include an attached tubular device designed to accept, and capable of operating only with, .22 caliber rimfire ammunition.\nSec. 3(a) (amending 18 U.S.C. 922, new (v)): (v)(1)It shall be unlawful for a person to import, sell, manufacture, transfer, or possess, in or affecting interstate or foreign commerce, a large capacity ammunition feeding device.(2)Paragraph (1) shall not apply to the possession of any large capacity ammunition feeding device otherwise lawfully possessed on or before the date of enactment of the Keep Americans Safe Act.\nSec. 3(b) (amending 18 U.S.C. 923(i)): A large capacity ammunition feeding device manufactured after the date of enactment of the Keep Americans Safe Act shall be identified by a serial number and the date on which the device was manufactured or made, legibly and conspicuously engraved or cast on the device, and such other identification as the Attorney General shall by regulations prescribe.\nSec. 4 (amending 18 U.S.C. 924(a)(1)(B)): Section 924(a)(1)(B) of title 18, United States Code, is amended by striking or (q) and inserting (q), or (v).\nSec. 5 (amending 34 U.S.C. 10152(a)(1)): (J)Compensation for surrendered large capacity ammunition feeding devices, as that term is defined in section 921 of title 18, United States Code, under buy-back programs for large capacity ammunition feeding devices.",
+  "sponsors": [
+    {
+      "name": "Diana DeGette",
+      "politician_id": "610bb358-bae9-4ce8-beaf-a33a27d5ba49",
+      "role": "prime",
+      "version": "introduced"
+    },
+    {
+      "name": "Dina Titus",
+      "politician_id": "786af5d2-9502-401c-a3ed-61de88e589e9",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Bradley Schneider",
+      "politician_id": "ecdb6fda-81cd-48bd-9403-a03a82f3ebad",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Emanuel Cleaver",
+      "politician_id": "8a776315-0da0-43a9-9f35-0cc2408ec6e4",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Jonathan Jackson",
+      "politician_id": "66da3b64-3dab-4f79-950a-475acc006dc8",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Mike Quigley",
+      "politician_id": "05e88b53-b6f4-4c5d-bcd2-f6b7b20f98d6",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Nanette Barragán",
+      "politician_id": "5bd54ac0-c8b9-486c-844c-ecc4313e5de7",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Henry Johnson",
+      "politician_id": "135f4a8f-6e03-453f-a5b2-9a3b338f26c3",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Mary Scanlon",
+      "politician_id": "ba906956-7359-4b26-8f1b-0d8f8d60b9fc",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Brad Sherman",
+      "politician_id": "96c77e2b-df35-4d56-a573-8bc0c15a142d",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Jennifer McClellan",
+      "politician_id": "3e7c0e88-5e35-4d71-8022-98731af6461b",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Kevin Mullin",
+      "politician_id": "9c880377-7e1f-4994-91b3-82d9cb15bbb4",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Morgan McGarvey",
+      "politician_id": "9c8e165b-9079-4ed2-ad0a-0a9d98fd9931",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Eleanor Norton",
+      "politician_id": "4dbc8de1-9984-42a5-b2aa-5445bf0619b9",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Suzan DelBene",
+      "politician_id": "fa64bf50-3abd-455f-ba78-5845ab983299",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Raul Ruiz",
+      "politician_id": "5238b298-6004-4bcc-94c2-ee43a9c2999e",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Betty McCollum",
+      "politician_id": "8d4d216a-2d44-4565-b605-14b24e31207b",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Ritchie Torres",
+      "politician_id": "606e50d6-7c2d-424e-86f3-e7da3c2d37f7",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Frank Pallone",
+      "politician_id": "332de859-029c-43ff-baa7-0113ad436d0f",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Sara Jacobs",
+      "politician_id": "51e4c723-299f-46a6-b1b2-f75386ee64f0",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Linda Sánchez",
+      "politician_id": "bb73793e-ad67-431a-bb03-663b765204d8",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Sylvia Garcia",
+      "politician_id": "b956345e-e9fb-4e4f-97b3-ed2213f5da1e",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Debbie Wasserman Schultz",
+      "politician_id": "097623b0-3063-4943-a13c-89d213ca5829",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Bennie Thompson",
+      "politician_id": "66eef569-f283-4d35-a535-30eed922199a",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Chellie Pingree",
+      "politician_id": "1638b2c9-4811-466d-bb24-44c6cece8cda",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "LaMonica McIver",
+      "politician_id": "c8cd097f-ce28-40b1-8236-18bc111ad868",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Richard Neal",
+      "politician_id": "a0cb697c-3158-4680-8e70-c154c3a15cc4",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Frank Mrvan",
+      "politician_id": "e08ec276-3194-41d4-833b-953f27454857",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Gilbert Cisneros",
+      "politician_id": "be2943b7-f634-42f4-8ab8-15db8138169f",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Stephen Lynch",
+      "politician_id": "62b453da-3dea-4177-82ba-9e4b78eb7691",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Julia Brownley",
+      "politician_id": "01147c2b-0f40-4255-b09e-b5a19a45fd31",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Debbie Dingell",
+      "politician_id": "91d28127-8183-4b67-a1fb-dc8a150f6199",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Brittany Pettersen",
+      "politician_id": "3142051c-9ded-4883-95fc-4af1de6e6eec",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Seth Magaziner",
+      "politician_id": "42b655c0-7eef-4dc1-8d5d-b4a77977a7f4",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Mark Pocan",
+      "politician_id": "59662930-3fe8-4e3e-8f02-2a341d58619f",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Eric Swalwell",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Daniel Goldman",
+      "politician_id": "c7f357ce-2fa0-4760-921b-905ff6a63944",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Raja Krishnamoorthi",
+      "politician_id": "ee1a8680-16cf-40ee-bbee-09670cb296cc",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "André Carson",
+      "politician_id": "91c72443-147f-4d1f-adab-ee415dab5ea6",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Robin Kelly",
+      "politician_id": "9d9ce75d-b1ba-4051-a87e-e84c1619be8a",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Seth Moulton",
+      "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "CLEO FIELDS",
+      "politician_id": "122f4dcd-efb7-4631-b4ec-a46287ef39d5",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Raúl Grijalva",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Nydia Velázquez",
+      "politician_id": "8fad496d-d92d-4f68-bc25-93102a4612e8",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Rashida Tlaib",
+      "politician_id": "aa1d94a3-6336-405d-89da-c43146cf0421",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Alexandria Ocasio-Cortez",
+      "politician_id": "86533db6-cfb8-49bf-a265-74a3b3845575",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Summer Lee",
+      "politician_id": "117883ff-7a9a-42cb-b42b-82223f1d618d",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Judy Chu",
+      "politician_id": "d75dfa60-351b-4f0d-880a-45acf013c82a",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Gerald Connolly",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Delia Ramirez",
+      "politician_id": "f74970a7-a63c-43e2-8033-d04b7f2bd64d",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Salud Carbajal",
+      "politician_id": "565438e0-04f1-4d2d-87cf-44df42ac1173",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Paul Tonko",
+      "politician_id": "52bbba11-e099-457b-a05b-aa8f4f5a5b13",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Adam Smith",
+      "politician_id": "74b2a9c6-a4ca-4fe7-b3a4-347f54bc62c2",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Scott Peters",
+      "politician_id": "3a9072fc-cb5c-4435-ad77-86562481830f",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Greg Casar",
+      "politician_id": "24e22813-4b39-4305-979d-1ea5f210a4f4",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Kelly Morrison",
+      "politician_id": "8a0696c4-5536-4309-9d02-b0ebb61de56b",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Danny Davis",
+      "politician_id": "0e65d006-9ede-4d90-b13b-23874d67b674",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Valerie Foushee",
+      "politician_id": "248c67f9-b8bf-4627-b358-a0f49b47abe7",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Sydney Kamlager-Dove",
+      "politician_id": "a2c6adc7-7689-49b9-964f-8f2aeb243a83",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Ami Bera",
+      "politician_id": "0d635e23-f206-44fc-bac1-e309b932a081",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Suzanne Bonamici",
+      "politician_id": "6ffb9093-7489-4197-aebc-67065c239fc3",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Gwen Moore",
+      "politician_id": "e268d067-d600-4443-939c-8dba4b2ecedb",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Sean Casten",
+      "politician_id": "05cf439f-3932-4398-b97b-4fd9a7506934",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Shontel Brown",
+      "politician_id": "e7f9cb36-33ae-4291-94da-57d956c822af",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Janice Schakowsky",
+      "politician_id": "4fbdecd3-3161-49da-a610-9b9312e72507",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Donald Norcross",
+      "politician_id": "b74a616d-9c47-4328-8c25-b1a3dc0a4f9d",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Madeleine Dean",
+      "politician_id": "bf942e86-fe8c-496f-9a36-212e9f9403e3",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Doris Matsui",
+      "politician_id": "5be0c642-33b3-4ea4-8bb1-2eb25df2b4ef",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Sarah McBride",
+      "politician_id": "f2801339-a7dc-432f-9333-c39d995fa3e5",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Marilyn Strickland",
+      "politician_id": "6174459a-2402-417f-9691-1533405c2767",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Bonnie Watson Coleman",
+      "politician_id": "a75a3e6e-31ff-4870-8aea-501e41326fd1",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Jimmy Panetta",
+      "politician_id": "29a4c8f8-67a4-45a1-b4e8-ea708523cf3f",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Teresa Leger Fernandez",
+      "politician_id": "1c83624c-d09b-40b9-aa7a-84fb7e9805a1",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Pramila Jayapal",
+      "politician_id": "ea144a3d-3a8c-4b88-b46a-171baacf0baa",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Shomari Figures",
+      "politician_id": "e54e3ded-838d-4980-82c8-ef23c19118a7",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Timothy Kennedy",
+      "politician_id": "7e37b0b1-d311-4cf3-8f19-f861626d5d98",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Haley Stevens",
+      "politician_id": "5b642054-504c-46c8-a68b-324e7b593587",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Gabe Amo",
+      "politician_id": "241207b1-a9eb-459b-a381-38af1e023356",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Robert Garcia",
+      "politician_id": "28a5f098-7f90-4fa9-af7e-c034d49cb538",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Deborah Ross",
+      "politician_id": "291f71df-c5c2-4f0a-b6be-d762d7aec9dd",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Mark DeSaulnier",
+      "politician_id": "bc29096f-63ce-41f7-8d51-c4e6cfa87f8c",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Jahana Hayes",
+      "politician_id": "efba0750-f472-47b3-acf7-054bd57817fc",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Rosa DeLauro",
+      "politician_id": "95dd596c-273e-4d68-948c-565ce7bbc4a1",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Suhas Subramanyam",
+      "politician_id": "98b05c70-2a30-48ea-81f3-b3216ffb0ca0",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Lucy McBath",
+      "politician_id": "66e69f62-7694-4e9a-89cf-8b699add8e1f",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Maxine Dexter",
+      "politician_id": "13dcf1a8-c0bf-4e2f-92aa-46637182b42a",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Andrea Salinas",
+      "politician_id": "5f6c498b-87dd-48fe-b744-62c8dced2ac3",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Jill Tokuda",
+      "politician_id": "761aa2ac-d877-4654-97c7-60bf40980f63",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Jimmy Gomez",
+      "politician_id": "99d93781-7c5f-492c-b959-ee502ca05c29",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Joseph Morelle",
+      "politician_id": "c02d8232-aa7a-429a-9abe-dccb409c1c6f",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Josh Gottheimer",
+      "politician_id": "c4251d10-6fba-4a5a-b8a9-f4b2f4634f0d",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "John Garamendi",
+      "politician_id": "28eeeb86-5ec1-48dd-86a7-9cf6d7771949",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Lois Frankel",
+      "politician_id": "b4040115-b3ea-4500-89cf-1ddaecafc94e",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Melanie Stansbury",
+      "politician_id": "8a92e955-2138-41a3-a598-0c0e0478c73a",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Yvette Clarke",
+      "politician_id": "efa0cb88-6ae0-47dc-abe1-b1388983addf",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Kathy Castor",
+      "politician_id": "12623f00-b182-4511-a5a1-c715113b96cc",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Sheila Cherfilus-McCormick",
+      "politician_id": "3768a470-ae44-4621-bb46-7596653d2cf4",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Alma Adams",
+      "politician_id": "2c12afd3-178d-46c3-a4ea-a09f2f796ce9",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Donald Beyer",
+      "politician_id": "0c1eef2f-19be-440f-b3d9-bd99d44ec056",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Jake Auchincloss",
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Robert Menendez",
+      "politician_id": "fc7a00d6-c552-4627-87f7-b0fc5cfe486c",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Stacey Plaskett",
+      "politician_id": "2804ab49-5972-4c25-8e60-8331adbfa3c2",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Mikie Sherrill",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Dwight Evans",
+      "politician_id": "3c962502-99c7-46ec-ae6b-0c69143f571c",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Hillary Scholten",
+      "politician_id": "80b0b2ee-5ccb-4ee1-a7fa-58e253bb6daf",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Juan Vargas",
+      "politician_id": "afa3cab9-4caf-4df3-a9ce-f739cc12b89d",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Grace Meng",
+      "politician_id": "a49af796-7961-4b82-8327-989691880a39",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Steve Cohen",
+      "politician_id": "7b2966fb-0b21-4db1-a3ad-f7f2cc69a4bb",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Joyce Beatty",
+      "politician_id": "dd93f609-82f5-4923-8a0e-d73b58120b80",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Darren Soto",
+      "politician_id": "f0b782ce-1d2a-4c62-9773-c6a36b5ef291",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Terri Sewell",
+      "politician_id": "c269ef7a-8a6f-4641-9a75-ecea19905268",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Shri Thanedar",
+      "politician_id": "32d35023-d9b4-4035-a73f-63433dbc9910",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Yassamin Ansari",
+      "politician_id": "dde8a67d-a16a-4442-9732-3e620f4f561b",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Christopher Deluzio",
+      "politician_id": "c20345d9-e451-4813-8645-985734fedba3",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Adriano Espaillat",
+      "politician_id": "26636234-c292-4a02-8205-6b84f6864f82",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "William Keating",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Glenn Ivey",
+      "politician_id": "e59ec991-3948-4369-913c-63c62dc3ece5",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Jared Moskowitz",
+      "politician_id": "1cb8827c-6ae0-4fcf-884c-94ad2246f15d",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Zoe Lofgren",
+      "politician_id": "956281d7-e27e-43cc-84e9-244879ed5ecf",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Ayanna Pressley",
+      "politician_id": "c61baf45-dc2a-4d78-b4b7-21b1e9d79464",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Kim Schrier",
+      "politician_id": "9625b961-5455-4fcc-8da7-5995ef3b9924",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Jesús García",
+      "politician_id": "2bc2ecee-9c21-47cd-ae0f-d712b1fa8b3e",
+      "role": "co",
+      "version": "cosponsor 2025-02-27"
+    },
+    {
+      "name": "Maxine Waters",
+      "politician_id": "203ab943-324d-4478-9093-d827d5d9c7da",
+      "role": "co",
+      "version": "cosponsor 2025-03-03"
+    },
+    {
+      "name": "Frederica Wilson",
+      "politician_id": "3fc35d7d-a121-4b5e-b243-b150daf6e628",
+      "role": "co",
+      "version": "cosponsor 2025-03-03"
+    },
+    {
+      "name": "Mike Thompson",
+      "politician_id": "4466bd8c-8dba-4f2e-9471-c06d8429a779",
+      "role": "co",
+      "version": "cosponsor 2025-03-03"
+    },
+    {
+      "name": "April McClain Delaney",
+      "politician_id": "da087947-83af-4ca2-91c8-1f9e0bf887a9",
+      "role": "co",
+      "version": "cosponsor 2025-03-03"
+    },
+    {
+      "name": "Nikema Williams",
+      "politician_id": "acb046eb-1db6-44bf-a50b-32d16df15057",
+      "role": "co",
+      "version": "cosponsor 2025-03-03"
+    },
+    {
+      "name": "Val Hoyle",
+      "politician_id": "f6202cef-4e46-4db5-a9c0-c69ac9a8eccd",
+      "role": "co",
+      "version": "cosponsor 2025-03-03"
+    },
+    {
+      "name": "Joe Neguse",
+      "politician_id": "2c71d91b-7ad8-4984-b9a6-81587c41ea0d",
+      "role": "co",
+      "version": "cosponsor 2025-03-04"
+    },
+    {
+      "name": "Maxwell Frost",
+      "politician_id": "eeeab0bd-ce73-4152-8e80-679d3d031ad7",
+      "role": "co",
+      "version": "cosponsor 2025-03-10"
+    },
+    {
+      "name": "Julie Johnson",
+      "politician_id": "db2251fb-8188-4d17-917f-ade709e5e498",
+      "role": "co",
+      "version": "cosponsor 2025-03-10"
+    },
+    {
+      "name": "Becca Balint",
+      "politician_id": "202729e0-489b-40d4-8ce8-ef58f4f22b22",
+      "role": "co",
+      "version": "cosponsor 2025-03-10"
+    },
+    {
+      "name": "Dave Min",
+      "politician_id": "59b9f70a-b67d-4ff9-a99a-829442300178",
+      "role": "co",
+      "version": "cosponsor 2025-03-11"
+    },
+    {
+      "name": "Al Green",
+      "politician_id": "449ad20f-7190-4c59-9809-0805e5a0edd8",
+      "role": "co",
+      "version": "cosponsor 2025-03-24"
+    },
+    {
+      "name": "Lizzie Fletcher",
+      "politician_id": "af3deea9-ba89-4d48-b16a-fa785b35a827",
+      "role": "co",
+      "version": "cosponsor 2025-03-24"
+    },
+    {
+      "name": "Jerrold Nadler",
+      "politician_id": "49a6832a-d736-4cfc-abd3-8ee9bf424ab0",
+      "role": "co",
+      "version": "cosponsor 2025-03-24"
+    },
+    {
+      "name": "Lori Trahan",
+      "politician_id": "b96758c6-2ea0-4698-8886-d574d34e366d",
+      "role": "co",
+      "version": "cosponsor 2025-03-24"
+    },
+    {
+      "name": "George Latimer",
+      "politician_id": "147f2883-d8c0-4a56-9adb-6b8c7990264b",
+      "role": "co",
+      "version": "cosponsor 2025-03-25"
+    },
+    {
+      "name": "Greg Landsman",
+      "politician_id": "6cad043f-a4c0-48d5-af76-fdf70d319920",
+      "role": "co",
+      "version": "cosponsor 2025-03-27"
+    },
+    {
+      "name": "Wesley Bell",
+      "politician_id": "ac0ab246-72b3-4714-add0-70e058aee506",
+      "role": "co",
+      "version": "cosponsor 2025-04-21"
+    },
+    {
+      "name": "Joe Courtney",
+      "politician_id": "c4c7733e-dec4-43ef-a7ac-c9547bd91a1a",
+      "role": "co",
+      "version": "cosponsor 2025-06-25"
+    },
+    {
+      "name": "Bill Foster",
+      "politician_id": "f45dfff4-2279-4d59-b682-160bb402b37b",
+      "role": "co",
+      "version": "cosponsor 2025-07-02"
+    },
+    {
+      "name": "Lloyd Doggett",
+      "politician_id": "ad8e300f-59f0-4cc6-a818-1986842353d1",
+      "role": "co",
+      "version": "cosponsor 2025-08-12"
+    },
+    {
+      "name": "Angie Craig",
+      "politician_id": "00b75ed0-3355-4bc5-a426-1667c12e2486",
+      "role": "co",
+      "version": "cosponsor 2025-09-15"
+    },
+    {
+      "name": "James Himes",
+      "politician_id": "8ce169cb-e9c0-4eca-a927-fbbad7315b98",
+      "role": "co",
+      "version": "cosponsor 2025-12-09"
+    },
+    {
+      "name": "James Walkinshaw",
+      "politician_id": "32ea954f-8bfa-4d28-9f9e-12d1929cb853",
+      "role": "co",
+      "version": "cosponsor 2026-04-21"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-31T00:23:59.657689Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-1674-2025.htm",
+      "sha256": "b8f771e36906d74c17b43c374e789b4fc50b5e10422fdd280358ad6bb18e78d7"
+    }
+  }
+}

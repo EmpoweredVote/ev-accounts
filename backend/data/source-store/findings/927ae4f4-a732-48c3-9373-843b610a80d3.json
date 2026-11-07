@@ -1,0 +1,69 @@
+{
+  "politician_id": "927ae4f4-a732-48c3-9373-843b610a80d3",
+  "findings": [
+    {
+      "id": "2147cca7436b02fc328055efc537138f61a5635591caea67c88f498332726704",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "nay",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Williams'), linked to Otha Williams (district 26) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.760Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "SHIELD Act voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: https://billstatus.ls.state.ms.us/members/house/williams.xml names Otha Williams as House District 26 member, 2026-present; https://tpcref.org/voter-information/2025-special-election-hd26/ lists him as the winner",
+        "On the Record (0 meetings)",
+        "https://tpcref.org/voter-information/2025-special-election-hd26/ (education questionnaire, no answers from him shown)",
+        "https://www.mississippifreepress.org/meet-the-candidates-mississippi-house-special-elections-on-nov-4/ (profile has nothing on voting, ID or elections; lists no website)",
+        "blocked: https://mississippitoday.org/guides/2025-special-election-guide/ (403; also on the refused list)",
+        "blocked: Ballotpedia (not fetched, refuses our fetches)",
+        "no official or campaign site or newsletter exists (legislature page has no news list)",
+        "web searches (5) on name with voter ID, photo ID, proof of citizenship, SAVE Act, SHIELD Act, questionnaire, forum: nothing of his own words on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-05T22:54:38.718Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-05T23:52:51.760Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

@@ -1,6 +1,48 @@
 {
   "politician_id": "269e955b-8a81-488d-b949-ab11027c4b17",
-  "findings": [],
+  "findings": [
+    {
+      "id": "ff9ffe05286a693cc4e2ac6076a6ca1a968d7c3f16057a8030b7c62a8bfc4854",
+      "kind": "own-words",
+      "url": "https://careycoleman.com/issues/",
+      "date": "2026-10-13",
+      "date_precision": "unknown",
+      "passage": "He will oppose federal mandates that infringe on personal liberty, defend the First and Second Amendments, protect religious freedom, and work to rein in unelected agencies that make rules without accountability.",
+      "note": "Campaign issues page, Defending Freedom section. Names the Second Amendment but no specific gun law. The date is the page's last-modified date for the site home page (2026-10-13), not a confirmed date for this text.",
+      "subjects": [
+        "general statement on Second Amendment",
+        "oppose federal mandates"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T19:40:06.712Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bee133c31488266194fed1c5dd94d3c181da0436c1590b73767a7c03322f4bb4",
+      "kind": "own-words",
+      "url": "https://careycoleman.com/issues/",
+      "date": "2026-10-13",
+      "date_precision": "unknown",
+      "passage": "The Constitution is not a suggestion it is the foundation of American liberty. Free speech, religious liberty, the right to self-defense, due process, and limits on government power are essential to preserving a free and prosperous nation.",
+      "note": "Campaign issues page. Lists the right to self-defense among core freedoms; does not name firearms.",
+      "subjects": [
+        "general statement on right to self-defense"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T19:40:06.712Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -53,6 +95,31 @@
       "found": 0,
       "at": "2026-10-27T01:20:51.087Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun restrictions for public safety",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site issues page https://careycoleman.com/issues/ (one Second Amendment sentence; text copied from page HTML)",
+        "campaign site about page https://careycoleman.com/about/ (nothing on the subject)",
+        "candidate profile https://theballotbrief.com/candidate/carey-coleman-oh (names him in the Ohio 13th District U.S. House race, general election date 2026-11-03; nothing on guns)",
+        "voter guide https://ivoterguide.com/candidate/90543/race/26061/election/1396 (gun restrictions question shown as 'Did not answer')",
+        "blocked: https://ohiocapitaljournal.com/2026/05/05/derek-merrin-eric-conroy-and-carey-coleman-win-ohio-congressional-primary-races/ (403; a search summary said he won the 2026-05-05 primary, not confirmed from a fetched page)",
+        "no legislative record (not a past legislator, so no sponsorship list)",
+        "Ballotpedia not fetched (known to return empty)",
+        "web searches: 1 used; nothing else on the subject found"
+      ],
+      "found": 2,
+      "at": "2026-10-30T19:40:06.712Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -133,7 +133,15 @@ const PATTERNS = [
     // Migration 1822 was simply the first NEW file to use the repo's own alias.
     // This narrows nothing: office_terms.politician_id is the column ADR 0002 tells you to read.
     // Numbered variants are covered for the same reason `och[0-9]*` is.
-    re: /(^|[^\w.])(?!(?:och|ot)[0-9]*\b)(?:o[0-9a-z]*|off|offices)\.politician_id\b/gi,
+    // 🔴 `ont` ADDED 2026-11-04 — the same false positive as `ot` above, one view later.
+    // `essentials.office_next_term` (CC_0341) is the successor who has not taken office yet; it
+    // carries a politician_id by design, exactly as `office_current_holder` does, and `ont` is
+    // its conventional alias. `o[0-9a-z]*` swallowed it, so joining the view — which is what
+    // ADR 0002 tells you to do — tripped the guard that exists to stop you reading the DROPPED
+    // column. Left alone, every future use of the view would hit this, and the `ot` note above
+    // records that such a false positive went unnoticed for a YEAR because this guard scans only
+    // files changed against origin/master.
+    re: /(^|[^\w.])(?!(?:och|ot|ont)[0-9]*\b)(?:o[0-9a-z]*|off|offices)\.politician_id\b/gi,
     why: "reads <offices alias>.politician_id — the column no longer exists",
   },
   {

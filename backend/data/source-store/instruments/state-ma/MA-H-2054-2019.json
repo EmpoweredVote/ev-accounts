@@ -1,0 +1,88 @@
+{
+  "id": "MA-H-2054-2019",
+  "scope": "state:ma",
+  "title": "H2054 (191st General Court): Relative to the lawful sale of ammunition",
+  "urls": [
+    "https://malegislature.gov/Bills/191/H2054",
+    "https://malegislature.gov/Bills/191/H2054.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Angelo D'Emilia",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Leonard Mirra",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "David DeCoste",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "a743a9a0-711c-40cf-b6e2-0ce2b587949a"
+    },
+    {
+      "name": "Steven Howitt",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3107f5d0-2cfd-43bc-a8eb-6b8ddc75bfc1"
+    },
+    {
+      "name": "Mathew Muratore",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Elizabeth Poirier",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Joseph McKenna",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2fadc37b-4d33-46b4-a3cc-a2ca5ebeb39a"
+    },
+    {
+      "name": "Jonathan Zlotnik",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "869ba820-3138-473c-b70d-383e67f5797d"
+    },
+    {
+      "name": "Alyson Sullivan",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "7131c893-90fc-4c27-b4f6-e3fc8fcf6ec2"
+    },
+    {
+      "name": "David Robertson",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f8ae17d7-bc53-4b74-a92e-efa122cd5f04"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-31T18:31:13.796330Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2054-2019.introduced.pdf",
+      "sha256": "5a6ba0ce903baf62f5afceb28995591653e3571a14650033d412de0e8ea70866"
+    }
+  },
+  "operative_text": "Sec. 1 (amending G.L. c. 140 s. 23): Notwithstanding any special law or regulation to the contrary nothing in this section shall be deemed as requiring a company outside of the Commonwealth of Massachusetts to be required to be licensed under this section. Said companies shall be entitled to sell and deliver inert ammunition components to persons properly licensed to possess or purchase ammunition under sections, 129B or 131 of this chapter, through the internet, U.S. Mail or by any other means common to interstate commerce. All deliveries of ammunition under this paragraph, whether in person or by common carrier, must require the signature of the licensee and photographic identification.\nSec. 1 (amending G.L. c. 140 s. 23): For the purposes of this section the term \"inert components\" shall include, but not be limited to the following: cases, bullets, shot, wads."
+}

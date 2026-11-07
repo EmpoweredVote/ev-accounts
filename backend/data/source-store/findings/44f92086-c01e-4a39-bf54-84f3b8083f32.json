@@ -43,6 +43,31 @@
       "found": 0,
       "at": "2026-10-27T02:57:01.632Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns",
+        "background checks",
+        "red flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check (appointed executive official, not a legislator)",
+        "web search: name plus gun and Second Amendment words, nothing on the subject",
+        "Ballotpedia: not reliable through fetch tool",
+        "https://brownfieldagnews.com/news/don-lamb-is-the-new-director-of-the-indiana-state-department-of-agriculture/ (shows he is director of the Indiana State Department of Agriculture; not a legislator)",
+        "blocked: https://www.hoosieragtoday.com/2023/03/01/don-lamb-new-isda-director/ (403)",
+        "no campaign site (not a candidate)"
+      ],
+      "found": 0,
+      "at": "2026-10-31T20:37:46.296Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -3,20 +3,23 @@ finding, look for the quoted words in the text of the bills the person's own fin
 text with a passage (25+ words, the gate's floor) that holds the quote word for word.
 python3 -I scripts/stage5/bill_text_auto.py <batch dir> <store findings dir> --topic <key>
     [--instruments <store instruments dir>] [--saved-root <dir the saved copies' paths are relative to>]
-Text sources, in order: the instrument's operative_text quote blocks (in the store, verbatim from the act), then its
-saved copy (provenance.saved_copy; PDFs read with pdftotext; the sha256 is checked) when --saved-root is given.
+    [--gate <gate output file>]  (default <batch>/gate-output.txt)
+Text sources, in order: the instrument's operative_text quote blocks (in the store, verbatim from the act), then the
+whole operative_text (section text outside the quote blocks; {+ +} insertion marks removed), then its saved copy
+(provenance.saved_copy; PDFs read with pdftotext; the sha256 is checked) when --saved-root is given.
 The cited URL is the instrument URL whose file name is the saved copy's, else its first .pdf URL, else its first URL.
-Reads gate-output.txt, politicians.json, research.csv, evidence.csv. Writes research.csv / evidence.csv (copies kept
+Reads the gate output, politicians.json, research.csv, evidence.csv. Writes research.csv / evidence.csv (copies kept
 as *-pre-billtext.csv) and bill-text.json: per person, each quote with the bill, URL, passage and text source, and
 every quote it could not place. The bill names no voter, so the verifier does not count it as a source."""
 import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir; _args.py sits beside this file
 from _args import opt, positional
 import csv, glob, hashlib, json, re, shutil, subprocess
 
-USAGE = 'bill_text_auto.py <batch dir> <findings dir> --topic <key> [--instruments <dir>] [--saved-root <dir>]'
+USAGE = 'bill_text_auto.py <batch dir> <findings dir> --topic <key> [--instruments <dir>] [--saved-root <dir>] [--gate <file>]'
 B, F = positional(2, USAGE); TOPIC = opt('--topic', required=True, usage=USAGE)
 INSTR = opt('--instruments', os.path.join(os.path.dirname(os.path.abspath(F.rstrip('/'))), 'instruments'))
 SAVED = opt('--saved-root')
+GATE = opt('--gate', f'{B}/gate-output.txt')
 MIN_WORDS = 25
 
 QMAP = str.maketrans({'“': '"', '”': '"', '‘': "'", '’': "'", '–': '-', '—': '-'})
@@ -35,6 +38,10 @@ def blocks(ins):
         t = re.sub(r'\s+', ' ', m.group(1)).strip()
         if t and not t.startswith('(x)'): out.append(t)
     return out
+
+def full_text(ins):
+    """The whole operative_text, whitespace collapsed: a quote can sit in section text no quote block holds."""
+    return re.sub(r'\s+', ' ', re.sub(r'\{\+|\+\}', '', ins.get('operative_text') or ''))
 
 def saved_text(ins, _c={}):
     sc = (ins.get('provenance') or {}).get('saved_copy') or {}
@@ -79,7 +86,7 @@ def cut(text, quote):
 pid = {p['full_name']: p['politician_id'] for p in json.load(open(f'{B}/politicians.json'))}
 pat = re.compile(r'high\s+quote-not-in-snippet\s+(.*?) / ' + re.escape(TOPIC) + r': .*?: "(.*)"$')
 need = {}
-for l in open(f'{B}/gate-output.txt'):
+for l in open(GATE):
     m = pat.search(l.rstrip())
     if m: need.setdefault(m.group(1), []).append(m.group(2))
 for f in ('research', 'evidence'):
@@ -100,7 +107,7 @@ for r in rows:
         for iid in iids:
             ins = instrument(iid)
             if not ins or not text_url(ins): continue
-            for src, texts in (('operative_text', blocks(ins)), ('saved_copy', [saved_text(ins)])):
+            for src, texts in (('operative_text', blocks(ins)), ('operative_text_full', [full_text(ins)]), ('saved_copy', [saved_text(ins)])):
                 for t in texts:
                     s = cut(t, q) if t else None
                     if s: hit = (iid, text_url(ins), s, src); break
@@ -109,7 +116,7 @@ for r in rows:
         if not hit: missed.append(q); continue
         iid, url, s, src = hit
         placed.append({'quote': q, 'instrument': iid, 'url': url, 'passage': s, 'source': src})
-        us = [r[c] for c in uc if r[c]]
+        us = [r[c] for c in uc if r.get(c)]  # an earlier row may have added columns this row does not have yet
         if url not in us: us.append(url)
         while len(us) > len(uc): uc.append(f'source_url_{len(uc) + 1}'); cols.append(uc[-1])
         for k, c in enumerate(uc): r[c] = us[k] if k < len(us) else ''

@@ -802,6 +802,14 @@ describe('validStoredSpan (I6)', () => {
     expect(validStoredSpan(ROLL_LINE, ROLL_LINE)).toBeNull();                        // no URL
     expect(validStoredSpan(ROLL_LINE, ROLL_LINE, 'https://a.example')).toBeNull();   // not the Clerk XML
     expect(validStoredSpan(`Note: ${ROLL_LINE}`, ROLL_LINE, ROLL_URL)).toBeNull();   // not the whole snippet
+    const IGA_URL = 'https://iga.in.gov/pdf-documents/124/2025/senate/bills/SB0010/rollcalls/SB0010.340_H.pdf';
+    const IGA_LINE = 'Indiana House roll call 340 (2025), SB 10 - Culp - 3rd Reading: Culp voted Yea.';
+    expect(validStoredSpan(IGA_LINE, IGA_LINE, IGA_URL)).toBe(IGA_LINE);
+    expect(validStoredSpan(IGA_LINE, IGA_LINE, ROLL_URL)).toBeNull();               // not an Indiana roll call
+    const MA_URL = 'https://malegislature.gov/RollCall/193/HouseRollCall135.pdf';
+    const MA_LINE = 'Massachusetts House roll call 135 (193rd General Court), H.4885 - On acceptance of the report: Kilcoyne voted Yea.';
+    expect(validStoredSpan(MA_LINE, MA_LINE, MA_URL)).toBe(MA_LINE);
+    expect(validStoredSpan(MA_LINE, MA_LINE, IGA_URL)).toBeNull();                  // not a Massachusetts roll call
     const party = 'House roll call 102 (2025), H R 22, On Passage: Jack (R-GA) voted Yea.';
     expect(validStoredSpan(party, party, ROLL_URL)).toBeNull();                      // not a canonical line
     expect(validStoredSpan('Jane Doe voted', 'Jane Doe voted', ROLL_URL)).toBeNull();
@@ -977,6 +985,68 @@ describe('Season 2 blanks through the review queue (CA_0303, spec 2026-10-07 §3
     mockQuery.mockResolvedValueOnce({ rows: [blankRow({ evidence: [] })] });
     await expect(resolveResearchReview('rev-b', 'editor-1')).rejects.toMatchObject({ code: 'INCOMPLETE' });
   });
+
+  // Ruling 2026-10-31 ("Write a blank for all 26"): a queued blank whose old sources cannot be verified is approved
+  // through the tool, with the reason on the review row, instead of being written by hand.
+  describe('unverifiableBlankNote (approve-batch --unverifiable-blank)', () => {
+    const note = 'Blank approved with no verified source (2026-11-03): no page could be cited.';
+    const unverified = (over: Record<string, unknown> = {}) => blankRow({
+      evidence: [{ url: 'https://old.example/s1', snippets: [{ snippet_index: 1, snippet: SPAN, verdict: 'name_not_present' }] }],
+      verified_source_count: 0, queue_reasons: ['below-threshold'], ...over });
+
+    it('approves a below-threshold blank with no source, cites nothing and records the note', async () => {
+      const { resolveResearchReview } = await import('./researchEvidenceService.js');
+      const { UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL } = await import('./seasonService.js');
+      mockQuery.mockResolvedValueOnce({ rows: [unverified()] });
+      openSeason();
+      await resolveResearchReview('rev-b', 'editor-1', [], undefined, undefined, undefined, { unverifiableBlankNote: note });
+      const calls = mockClientQuery.mock.calls;
+      expect(calls[0][0]).toBe('BEGIN');
+      expect(calls.at(-1)![0]).toBe('COMMIT');
+      expect(calls.find((c) => c[0] === UPSERT_ANSWER_SQL)![1]).toEqual(['p1', 't1', 0, 'editor-1']);
+      const ctx = calls.find((c) => c[0] === UPSERT_CONTEXT_SQL)!;
+      expect(ctx[1][2]).toMatch(/^Blank in Season 2 \(direction-only\) — researched on 2026-10-07\. /);
+      expect(ctx[1][3]).toEqual([]);
+      expect(calls.filter((c) => /INSERT INTO inform\.politician_context_evidence/.test(String(c[0])))).toHaveLength(0);
+      const notes = calls.find((c) => /SET notes = /.test(String(c[0])))!;
+      expect(notes[1]).toEqual(['rev-b', note]);
+    });
+
+    it('refuses without the note, as before', async () => {
+      const { resolveResearchReview } = await import('./researchEvidenceService.js');
+      mockQuery.mockResolvedValueOnce({ rows: [unverified()] });
+      await expect(resolveResearchReview('rev-b', 'editor-1')).rejects.toMatchObject({ code: 'INCOMPLETE' });
+      expect(mockConnect).not.toHaveBeenCalled();
+    });
+
+    it.each([
+      ['a proposed chair', { proposed_value: 3, proposed_blank_reason: null }],
+      ['a blank queued for another reason', { queue_reasons: ['blank-replaces-published-chair'] }],
+      ['a blank with no queue reasons recorded', { queue_reasons: null }],
+    ])('refuses %s', async (_label, over) => {
+      const { resolveResearchReview } = await import('./researchEvidenceService.js');
+      mockQuery.mockResolvedValueOnce({ rows: [unverified(over)] });
+      await expect(resolveResearchReview('rev-b', 'editor-1', [], undefined, undefined, undefined,
+        { unverifiableBlankNote: note })).rejects.toMatchObject({ code: 'INCOMPLETE' });
+      expect(mockConnect).not.toHaveBeenCalled();
+    });
+
+    it('refuses when the reviewer turns the blank into a chair', async () => {
+      const { resolveResearchReview } = await import('./researchEvidenceService.js');
+      mockQuery.mockResolvedValueOnce({ rows: [unverified()] });
+      await expect(resolveResearchReview('rev-b', 'editor-1', [], 2, 'new reasoning for rung 2', undefined,
+        { unverifiableBlankNote: note })).rejects.toMatchObject({ code: 'INCOMPLETE' });
+      expect(mockConnect).not.toHaveBeenCalled();
+    });
+
+    it('a blank that does verify is approved as usual and the note is not written', async () => {
+      const { resolveResearchReview } = await import('./researchEvidenceService.js');
+      mockQuery.mockResolvedValueOnce({ rows: [blankRow({ queue_reasons: ['below-threshold'] })] });
+      openSeason();
+      await resolveResearchReview('rev-b', 'editor-1', [], undefined, undefined, undefined, { unverifiableBlankNote: note });
+      expect(mockClientQuery.mock.calls.some((c) => /SET notes = /.test(String(c[0])))).toBe(false);
+    });
+  });
 });
 
 describe('review reads for a blank (CA_0303)', () => {
@@ -989,5 +1059,53 @@ describe('review reads for a blank (CA_0303)', () => {
     expect(r?.proposedBlankReason).toBe('no-evidence');
     expect(r?.displayed?.reasoning).toBe('Voted for HB 9 (2024).');
     expect(String(mockQuery.mock.calls[0][0])).toMatch(/shown_ctx\.season_id = shown\.season_id/);
+  });
+});
+
+// 2026-10-28: --auto-push wrote the stance and left its own queue row pending, so the reviewer was
+// asked to approve what was already published. 17 rows reached that state before it was caught.
+describe('supersedePublishedReviewRows — an auto-push retires the queue row it answered', () => {
+  beforeEach(() => mockQuery.mockClear());
+
+  it('matches on the value, so a row proposing a DIFFERENT chair stays pending', async () => {
+    const { supersedePublishedReviewRows } = await import('./researchEvidenceService.js');
+    const client = { query: vi.fn().mockResolvedValue({ rows: [], rowCount: 1 }) };
+    await supersedePublishedReviewRows(
+      { politicianId: 'p', topicId: 't', value: 4, seasonId: 's', resolvedBy: 'e' }, client, { seasonColumn: true },
+    );
+    const [sql, params] = client.query.mock.calls[0];
+    expect(String(sql)).toMatch(/proposed_value\s*=\s*\$3/);
+    expect(params).toEqual(['p', 't', 4, 'e', 's']);
+  });
+
+  it('only ever touches a pending row', async () => {
+    const { supersedePublishedReviewRows } = await import('./researchEvidenceService.js');
+    const client = { query: vi.fn().mockResolvedValue({ rows: [], rowCount: 0 }) };
+    await supersedePublishedReviewRows(
+      { politicianId: 'p', topicId: 't', value: 4, seasonId: 's', resolvedBy: 'e' }, client, { seasonColumn: true },
+    );
+    expect(String(client.query.mock.calls[0][0])).toMatch(/WHERE\s+status\s*=\s*'pending'/);
+  });
+
+  it('drops the season predicate when CA_0264 has not been applied', async () => {
+    const { supersedePublishedReviewRows } = await import('./researchEvidenceService.js');
+    const client = { query: vi.fn().mockResolvedValue({ rows: [], rowCount: 1 }) };
+    await supersedePublishedReviewRows(
+      { politicianId: 'p', topicId: 't', value: 4, seasonId: 's', resolvedBy: 'e' }, client, { seasonColumn: false },
+    );
+    const [sql, params] = client.query.mock.calls[0];
+    expect(String(sql)).not.toMatch(/season_id/);
+    expect(params).toEqual(['p', 't', 4, 'e']);
+  });
+
+  it('reports how many rows it superseded, and runs on the caller\'s transaction client', async () => {
+    const { supersedePublishedReviewRows } = await import('./researchEvidenceService.js');
+    const client = { query: vi.fn().mockResolvedValue({ rows: [], rowCount: 1 }) };
+    const before = mockQuery.mock.calls.length;
+    const n = await supersedePublishedReviewRows(
+      { politicianId: 'p', topicId: 't', value: 4, seasonId: 's', resolvedBy: 'e' }, client, { seasonColumn: true },
+    );
+    expect(n).toBe(1);
+    expect(mockQuery.mock.calls.length).toBe(before);
   });
 });

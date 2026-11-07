@@ -108,6 +108,315 @@
         "fetched_at": "2026-10-27T21:51:18.246Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "818586ba7a6fa8e00a512d1c240c01472b0f796fab8f64a338fb0b5e616ea7fe",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4885",
+      "date": "2024-07-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4885-2024",
+      "act": "yea",
+      "motion": "H.4885 acceptance of the conference committee report (Roll Call No. 135)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, H.4885 acceptance of the conference committee report (Roll Call No. 135), 2024-07-18: yea (tally 124–33); census gate: none.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "ghost guns",
+        "licences and checks (omnibus)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9fc7fe42d4ca0418da57b37f789b4766ff618ad71e31a528b663386efac66476",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4139",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4139-2023",
+      "act": "yea",
+      "motion": "House  Passed to be engrossed - 120 YEAS to 38 NAYS",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, House  Passed to be engrossed - 120 YEAS to 38 NAYS, 2023-10-18: yea (tally 120–38); census gate: multi-subject.",
+      "subjects": [
+        "ban on assault-style firearms and large capacity feeding devices",
+        "electronic firearm registration and ban on untraceable firearms",
+        "permit to purchase firearms and ammunition",
+        "court petitions to remove guns from people at risk of harm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4139-2023.introduced.pdf",
+          "sha256": "7636c314559d7c4f2e70edf43f46a29d2a4d2e9a2891fd2c034a70a61f92ffd1"
+        }
+      }
+    },
+    {
+      "id": "3cb7a6eb2595e83f808e9aa6a3f3bb5e782a0aa86dc925a943767e1bab71e9ec",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/House/H4376",
+      "date": "2014-07-31",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4376-2013",
+      "act": "yea",
+      "motion": "Acceptance of the committee of conference report (Yea and Nay No. 483)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MA House, Acceptance of the committee of conference report (Yea and Nay No. 483), 2014-07-31: yea (tally 122–30); census gate: multi-subject.",
+      "subjects": [
+        "firearm license classes merged and Class B licences phased out",
+        "new penalties for shooting and for trafficking guns into the state",
+        "background-check records sent to the federal system",
+        "ban on carrying firearms on school and college grounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "malegislature.gov roll-call PDFs + LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:34:02.477850Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4376-2013.introduced.pdf",
+          "sha256": "b94514a66e779c1400d1b875eb3aac207f6b1b1f12f9928fd8d977feab23bb61"
+        }
+      }
+    },
+    {
+      "id": "c5523d50a631897031188db98ea5d927074d7126174a492b6b9e8d21f240f855",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4517",
+      "date": "2018-05-23",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4517-2017",
+      "act": "yea",
+      "motion": "House On Engrossment Yea and Nay No. 359",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MA House, House On Engrossment Yea and Nay No. 359, 2018-05-23: yea (tally 139–14); census gate: near-unanimous.",
+      "subjects": [
+        "court orders to remove guns from people at risk of harming self or others",
+        "emergency orders without notice",
+        "penalty for false petitions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4517-2017.introduced.pdf",
+          "sha256": "3bac8bca02408059e2c0db49bae39de8a690f0fb6e1b5469f7a23cf51fbd5cc4"
+        }
+      }
+    },
+    {
+      "id": "7727b62aa6ef27fb9e9cfc73a0491b1c4dc595f2b71982384c335273fe2771d1",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/190/H4670",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4670-2017",
+      "act": "yea",
+      "motion": "On acceptance of the conference report (Yea and Nay No. 389)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MA House, On acceptance of the conference report (Yea and Nay No. 389), 2018-06-28: yea (tally 133–15); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders to remove guns from people at risk of harming self or others",
+        "protection order added as a bar to gun licenses",
+        "stun gun rules and locked storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4670-2017.introduced.pdf",
+          "sha256": "6b37958358a3f01548ef0d16c386b3caaf5993d5c100f88279ff5b45ad1fe098"
+        }
+      }
+    },
+    {
+      "id": "a00af043e828adfd93628001bb55296f31caa4e02bcca3e7273445aca8997aab",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/191/H2092",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MA-H-2092-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-2092-2019 (LegiScan sponsor list): H2092 (191st General Court): Relative to universal background checks for private gun sales.",
+      "subjects": [
+        "private gun sales must go through a licensed dealer",
+        "fee cap and penalty for unlawful private transfers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2092-2019.introduced.pdf",
+          "sha256": "5fd01d1a09d8ce366cbd5257b50c2937d0029e8495690da7567930f79f4a2203"
+        }
+      }
+    },
+    {
+      "id": "45bb3079b25331bd2630d0f30e56bb99ba4c86e89e26fcf7fa1f7a4271168756",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H2360",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MA-H-2360-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-2360-2023 (LegiScan sponsor list): H2360 (193rd General Court): Relative to 3D printed guns and ghost guns.",
+      "subjects": [
+        "ghost guns: serial numbers required on all firearms",
+        "3D-printed and undetectable firearms banned",
+        "felony penalty for breaking the new rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-2360-2023.introduced.pdf",
+          "sha256": "571ab4edc7bf2d33a4ab46199dedc64d80f657ef98d1f743254495c425d2fe94"
+        }
+      }
+    },
+    {
+      "id": "3e37989df5a7135793590676582056d9b4894fffcf53abf65d4e894b1a9c125c",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H3980",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MA-H-3980-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-3980-2023 (LegiScan sponsor list): H3980 (193rd General Court): Modernizing firearm laws.",
+      "subjects": [
+        "all firearms and magazines must be registered, with serial numbers required",
+        "privately made (ghost) guns regulated",
+        "licensing rewritten, with new limits on assault-style firearms and large magazines",
+        "extreme risk protection orders to remove guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-3980-2023.introduced.pdf",
+          "sha256": "fc2cf32dbd88bb4b1b9266311c82ce3b8ee11febb2a878a7f7da17f1ab4578fd"
+        }
+      }
+    },
+    {
+      "id": "a7b3680b261d62ebf6107ab9f9df747c623a6f9a611585300571497c66066cff",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4869",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MA-H-4869-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MA-H-4869-2021 (LegiScan sponsor list): H4869 (192nd General Court): Relative to 3D printed guns and ghost guns.",
+      "subjects": [
+        "serial numbers required on firearms; unserialized guns must be registered and marked",
+        "ban on undetectable firearms and on 3D-printing guns without a federal license",
+        "ban on distributing digital gun-printing files in some cases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-10-31T18:31:13.796330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MA-H-4869-2021.introduced.pdf",
+          "sha256": "bbafa283c191659d818a8dd83633ee46fe167ce87f0f7135b64e570c963d4381"
+        }
+      }
+    },
+    {
+      "id": "2d36a88424a06e725e30467de08d8cbef714b866dba6892259bc875cadc4e806",
+      "kind": "own-words",
+      "url": "https://repkengordon.org/issues/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "While the Second Amendment protects the rights of some people (not convicted felons, for example) to own some guns (not war weapons, at least in my opinion), our residents have a civil and moral right to feel safe in our schools, malls, theaters, town centers and more.",
+      "note": "From the 'On Gun Violence Protection: Focusing on Promoting Safety' section of his official issues page. The page shows no date for this text; 2025-11-20 is the page's last-modified stamp, so the date of the words is unknown. Page undated; date cleared at import (was a last-modified stamp).",
+      "subjects": [
+        "Second Amendment",
+        "who may own a gun",
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:57:07.860Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "efde110ff28c506d021bc5c5de93a1a7a7d4aa7632f0f194650702279c4557f3",
+      "kind": "own-words",
+      "url": "https://repkengordon.org/issues/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I proudly supported Governor Healey's 2024 gun law, which cracked down on \"ghost guns,\" strengthened public safety, and increased violence prevention programming in the state.",
+      "note": "Same issues-page section. He states he supported the 2024 state gun law. Date of the words is unknown (page last-modified stamp 2025-11-20). Page undated; date cleared at import (was a last-modified stamp).",
+      "subjects": [
+        "ghost guns",
+        "gun safety laws",
+        "support for the 2024 state gun law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-01T01:57:07.860Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -160,6 +469,32 @@
       "found": 3,
       "at": "2026-10-27T21:51:18.246Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "ghost guns",
+        "who may own a gun",
+        "gun safety and the Second Amendment",
+        "red flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page https://malegislature.gov/Legislators/Profile/KIG1: confirms 21st Middlesex seat; no firearm bill titles in the listed bills",
+        "sponsor list: covered by LegiScan bulk check",
+        "official site https://repkengordon.org/issues/: gun violence statement found",
+        "official site home page and navigation (news, newsletter, Rappin with the Rep): nothing else on the subject",
+        "Ballotpedia: not reviewed (pages return empty to the fetch tool)",
+        "news searches on name plus gun terms (2 searches): no direct quotes from him",
+        "https://bcattv.org/bcat-shows/rappin-with-the-rep/: show blurb about a gun violence bill episode, undated and not his own words",
+        "blocked: https://thebedfordcitizen.org/2013/06/forum-on-gun-violence-raises-and-answers-questions/ (bot check)",
+        "blocked: https://thebedfordcitizen.org/2022/08/letter-to-the-editor-in-support-of-the-re-election-of-ken-gordon/ (403)"
+      ],
+      "found": 2,
+      "at": "2026-11-01T01:57:07.860Z",
+      "by": "source-collector"
     }
   ]
 }

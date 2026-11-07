@@ -1,0 +1,93 @@
+{
+  "politician_id": "d37e2199-2df1-4658-b5d6-b5c92581955e",
+  "findings": [
+    {
+      "id": "d1e43ba8db832a38fc4f1ac4b3a920fe2bd2ffa3a108e3696511ec84af279df9",
+      "kind": "own-words",
+      "url": "https://conforti4congress.com/issues/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I am Pro – 2nd Amendment and believe we must protect our right to bear arms.",
+      "note": "Statement on the Second Amendment on her campaign issues page. Page has no date; the site mentions 2021 elsewhere.",
+      "subjects": [
+        "general gun rights statements",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:02:29.368Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7a37affd195c67bf012f7d05024626b62bfe219d64f194ba19a86beaf6db28f7",
+      "kind": "own-words",
+      "url": "https://shawlocal.com/news/election/2022/04/30/niki-conforti-us-house-6th-district-2022-primary-election-questionnaire",
+      "date": "2022-04-30",
+      "date_precision": "day",
+      "passage": "Are there any limits to the Second Amendment? No",
+      "note": "Question and her one-word answer on the 2022 primary questionnaire (date from the URL).",
+      "subjects": [
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:02:29.368Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bc63ce91f33a1f0df65f7ab65be2217d675fc3fff47ed7b1e37d99485d1aeffb",
+      "kind": "own-words",
+      "url": "https://shawlocal.com/news/election/2022/04/30/niki-conforti-us-house-6th-district-2022-primary-election-questionnaire",
+      "date": "2022-04-30",
+      "date_precision": "day",
+      "passage": "Do you support any restrictions on gun purchases or other stricter gun control measures including citizens’ access to military style weaponry? No",
+      "note": "Question and her one-word answer on the same 2022 questionnaire.",
+      "subjects": [
+        "restrictions on gun purchases",
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-30T15:02:29.368Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment limits",
+        "restrictions on gun purchases",
+        "ban on assault-style guns",
+        "right to bear arms",
+        "general gun rights statements"
+      ],
+      "places": [
+        "status: a news search result says she won the 2026 primary nomination for the 6th district; not confirmed by a page I could open (blocked: https://www.foxillinois.com/news/nation-world/niki-conforti-wins-republican-nomination-for-u-s-house-in-illinois-6th-congressional-district/article_0a0c0f3a-e341-576e-b65f-1ff769c9e3f3.html, 429)",
+        "On the Record (0 meetings)",
+        "campaign site conforti4congress.com: home page and issues page read (page date unknown, site looks like an earlier cycle's site)",
+        "blocked: https://www.dailyherald.com/20260225/us-congress-politics/niki-conforti-2026-candidate-for-6th-congressional-district/ (bot check)",
+        "2022 local-paper questionnaire read",
+        "blocked: https://www.congress.gov (not applicable, not an office holder)",
+        "not reviewed: https://ballotpedia.org (not fetched)",
+        "web searches: 1"
+      ],
+      "found": 3,
+      "at": "2026-10-30T15:02:29.368Z",
+      "by": "source-collector"
+    }
+  ]
+}

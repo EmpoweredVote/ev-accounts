@@ -48,6 +48,164 @@
         "fetched_at": "2026-10-23T00:18:35.779Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "6550e74aee08e1238dc72f84b4b9b0fdd4a9d66a3eb7ee6c7830eb19a520af81",
+      "kind": "record",
+      "url": "https://ncleg.gov/BillLookUp/2025/S50",
+      "date": "2025-07-29",
+      "date_precision": "day",
+      "instrument_id": "NC-S-50-2025",
+      "act": "yea",
+      "motion": "Motion 11, Veto Override (RCS S-432)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NC Senate, Motion 11, Veto Override (RCS S-432), 2025-07-29: yea (tally 30–19); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "C (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "429fb418c59d7350d1a3d3abd6aaf2976e2e743c900b178940b7425a21bcf335",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H193",
+      "date": "2025-07-29",
+      "date_precision": "day",
+      "instrument_id": "NC-H-193-2025",
+      "act": "yea",
+      "motion": "Motion 11 Veto Override",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "NC Senate, Motion 11 Veto Override, 2025-07-29: yea (tally 29–19); census gate: multi-subject.",
+      "subjects": [
+        "permit holders may carry on nonpublic school and school-church property",
+        "nonpublic school staff may carry with written authorization and training",
+        "relocated law enforcement shooting ranges shielded from local limits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-H-193-2025.chaptered.html",
+          "sha256": "4e1b8602b941f80ce4472f753fd8398bb206adecfd47d41ca4fd7b32721d3170"
+        }
+      }
+    },
+    {
+      "id": "55e7690999fb36d06c0f5d04a229870f4a3faf02cdadc97806d2720bd823c742",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/S118",
+      "date": "2025-06-25",
+      "date_precision": "day",
+      "instrument_id": "NC-S-118-2025",
+      "act": "yea",
+      "motion": "Conference Report Motion 8 To Adopt",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "NC Senate, Conference Report Motion 8 To Adopt, 2025-06-25: yea (tally 45–0); census gate: near-unanimous.",
+      "subjects": [
+        "lower concealed handgun permit fees for honorably discharged veterans",
+        "e-mail option for concealed handgun permit renewal notices"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-S-118-2025.chaptered.html",
+          "sha256": "d1a417500db87564fb471b17578e775e03beae7face9cb2537d9ecf5b76cc31d"
+        }
+      }
+    },
+    {
+      "id": "d4c1437f3c59df28b297cbf81920a752b389b53db2d3657e74bc797c045e86cb",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/2150/race/30813/election/1457",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "The second amendment protects the right of people to keep and bear arms.  Convicted felons and the severely mentally ill should be restricted.",
+      "note": "His answer to the iVoterGuide questionnaire for the 2026 Senate District 45 race, asked what restrictions on gun ownership are needed for public safety. Exact day of the answer is not shown.",
+      "subjects": [
+        "general gun rights statements",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-06T00:04:14.856Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5017190b52ced4338a6345696b4b639fb9b088e2d177a3b70a4bf564b7377bb9",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/2150/race/11214/election/718",
+      "date": "2020",
+      "date_precision": "year",
+      "passage": "Convicted felons should not be allowed to posses a gun.",
+      "note": "His answer to the iVoterGuide questionnaire for the 2020 Senate District 42 primary, asked what restrictions on gun ownership are needed. Same page records a Yes to whether teachers should be allowed to carry guns at school.",
+      "subjects": [
+        "limits on who may have a gun",
+        "guns in schools"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-06T00:04:14.856Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5091814fc8e25cd548a0899420c92824a5a12bc7a5297c9acbdbe66f6fae280f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/S280",
+      "date": "2025-05-07",
+      "date_precision": "day",
+      "instrument_id": "NC-S-280-2025",
+      "act": "yea",
+      "motion": "Second Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NC Senate, Second Reading, 2025-05-07: yea (tally 29–18); census gate: none.",
+      "subjects": [
+        "armed staff and volunteers allowed at private schools",
+        "concealed handguns allowed in church buildings that share a school site"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-S-280-2025.edition-3.html",
+          "sha256": "2f5dc12ef153c0522ded230925540f44679a8e8bf8d246ad23dd814badc35b98"
+        }
+      }
     }
   ],
   "searches": [
@@ -104,6 +262,31 @@
       "found": 0,
       "at": "2026-10-27T22:25:17.955Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "permit to buy a handgun",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun storage",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope confirmed: the Senate caucus member page and legislature biography page name him as the senator for District 45; the iVoterGuide 2026 general election page lists him on the 2026 ballot",
+        "sponsor list: covered by LegiScan bulk check",
+        "Senate caucus member page https://ncstatesenate.com/members/mark-hollo/: nothing on the subject",
+        "campaign site https://www.markhollo.com/: could not be opened (empty reply); not reviewed",
+        "web searches: 2 on name plus gun subjects; news results named no direct quote from him",
+        "Ballotpedia: not opened (host blocks the fetch tool)"
+      ],
+      "found": 2,
+      "at": "2026-11-06T00:04:14.856Z",
+      "by": "source-collector"
     }
   ]
 }

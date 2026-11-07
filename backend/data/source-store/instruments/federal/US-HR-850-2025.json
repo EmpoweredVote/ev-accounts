@@ -1,0 +1,146 @@
+{
+  "id": "US-HR-850-2025",
+  "scope": "federal",
+  "title": "HR 850 (119th Congress): SHUSH Act",
+  "urls": [
+    "https://www.congress.gov/bill/119th-congress/house-bill/850",
+    "https://www.govinfo.gov/content/pkg/BILLS-119hr850ih/xml/BILLS-119hr850ih.xml"
+  ],
+  "version": "as-filed",
+  "operative_text": "Sec. 2(a) (amending 26 U.S.C. 5845(a)): Section 5845(a) of the Internal Revenue Code of 1986 is amended by striking (7) any silencer and all that follows through ; and (8) and inserting ; and (7).\nSec. 3 (amending 26 U.S.C. 5841): A person acquiring or possessing a firearm silencer in accordance with Chapter 44 of title 18, United States Code, shall be treated as meeting any registration and licensing requirements of the National Firearms Act (as in effect on the day before the date of the enactment of this subsection) with respect to such silencer.\nSec. 4 (amending 18 U.S.C. 927): Notwithstanding the preceding sentence, a law of a State or a political subdivision of a State that, as a condition of lawfully making, transferring, using, possessing, or transporting a firearm silencer in or affecting interstate or foreign commerce, imposes a tax on any such conduct, or a marking, recordkeeping or registration requirement with respect to the firearm silencer, shall have no force or effect.\nSec. 5(a) (amending 18 U.S.C. 921(a)): in paragraph (3), by striking (C) any firearm muffler or firearm silencer; or (D) and inserting or (C); and\nSec. 5(b) (amending 18 U.S.C. 924(c)): in paragraph (1)(B)(ii) by striking , or is equipped with a firearm silencer or firearm muffler; and",
+  "sponsors": [
+    {
+      "name": "Michael Cloud",
+      "politician_id": "4e29212d-3ff9-42fc-bcd8-817ad6fd90d7",
+      "role": "prime",
+      "version": "introduced"
+    },
+    {
+      "name": "Andrew Ogles",
+      "politician_id": "1bc25880-660c-4254-b13d-729263e0d9e2",
+      "role": "co",
+      "version": "cosponsor 2025-01-31"
+    },
+    {
+      "name": "Clay Higgins",
+      "politician_id": "a8a724eb-d7ff-4bd2-8397-560024f478de",
+      "role": "co",
+      "version": "cosponsor 2025-01-31"
+    },
+    {
+      "name": "Paul Gosar",
+      "politician_id": "efd863c6-df64-4b40-9b49-73ddd003dc5d",
+      "role": "co",
+      "version": "cosponsor 2025-01-31"
+    },
+    {
+      "name": "Andy Harris",
+      "politician_id": "ff596d3f-3056-43e2-a80a-8c4b8fd9abde",
+      "role": "co",
+      "version": "cosponsor 2025-01-31"
+    },
+    {
+      "name": "Lauren Boebert",
+      "politician_id": "58c25b43-0ed1-4636-8213-b89a90f7f6a2",
+      "role": "co",
+      "version": "cosponsor 2025-01-31"
+    },
+    {
+      "name": "Mary Miller",
+      "politician_id": "73816ba4-4235-400c-a0a1-00c67b762687",
+      "role": "co",
+      "version": "cosponsor 2025-01-31"
+    },
+    {
+      "name": "Andy Biggs",
+      "politician_id": "8118811a-aadd-4eb9-9208-de0f5d3b29ad",
+      "role": "co",
+      "version": "cosponsor 2025-02-04"
+    },
+    {
+      "name": "Tim Burchett",
+      "politician_id": "56c566e1-c4be-47fe-8c39-2fa235de61ba",
+      "role": "co",
+      "version": "cosponsor 2025-02-12"
+    },
+    {
+      "name": "Harriet Hageman",
+      "politician_id": "1e08c7c7-68c1-4498-90b2-20850bac1c80",
+      "role": "co",
+      "version": "cosponsor 2025-03-21"
+    },
+    {
+      "name": "Mike Collins",
+      "politician_id": "b6542655-fc71-4b18-a022-6528522cdcae",
+      "role": "co",
+      "version": "cosponsor 2025-03-31"
+    },
+    {
+      "name": "Pete Stauber",
+      "politician_id": "f96903fe-3379-49f3-bec3-8e761db88ff2",
+      "role": "co",
+      "version": "cosponsor 2025-05-14"
+    },
+    {
+      "name": "Wesley Hunt",
+      "politician_id": "0248c3ba-caea-4421-9be3-ceaa6e0df69e",
+      "role": "co",
+      "version": "cosponsor 2025-10-17"
+    },
+    {
+      "name": "Celeste Maloy",
+      "politician_id": "a7983eb6-bae0-4269-856b-f4554fb5ce29",
+      "role": "co",
+      "version": "cosponsor 2026-03-09"
+    },
+    {
+      "name": "Clay Fuller",
+      "politician_id": "8c4ce29b-84ae-445b-9531-9fdaceb5d420",
+      "role": "co",
+      "version": "cosponsor 2026-04-22"
+    },
+    {
+      "name": "Chip Roy",
+      "politician_id": "815bc4fa-a987-4245-9fa1-cb1026ca3ee5",
+      "role": "co",
+      "version": "cosponsor 2026-04-28"
+    },
+    {
+      "name": "Mike Kennedy",
+      "politician_id": "9e3164d5-ce71-4c50-9220-b969265ce551",
+      "role": "co",
+      "version": "cosponsor 2026-05-15"
+    },
+    {
+      "name": "Jimmy Patronis",
+      "politician_id": "2d222946-7125-4c9e-ab59-9ebab94f8301",
+      "role": "co",
+      "version": "cosponsor 2026-05-19"
+    },
+    {
+      "name": "Scott DesJarlais",
+      "politician_id": "83775f9b-ed73-433b-87c0-fe0f9a177bba",
+      "role": "co",
+      "version": "cosponsor 2026-06-04"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "govinfo BILLSTATUS bulk + House Clerk roll calls + LegiScan Senate roll calls (gun-policy Stage 5 federal check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-10-31T00:23:59.657689Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/congress/texts/US-HR-850-2025.htm",
+      "sha256": "c82aca6905adcd127cdd348aeb836f78df29b15bd4beb177a62784466d0c8670"
+    }
+  }
+}

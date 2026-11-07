@@ -1,0 +1,251 @@
+{
+  "politician_id": "8ed17ce6-9f9d-4819-b609-a063ed7b700b",
+  "findings": [
+    {
+      "id": "709cc1431664e6a3d8bd5d61a1636a533dc88bcba773fb30501803c1744dfd37",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/134/sb215",
+      "date": "2022-03-02",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-215-2022",
+      "act": "yea",
+      "motion": "Passed (final House vote per Votes tab)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH House, Passed (final House vote per Votes tab), 2022-03-02: yea (tally 58–36); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/OH_sb215_EN.pdf",
+          "sha256": "dddae0081901748ede39524ddca0094c322a065fe443d8ffdbae0913c1a95fa4"
+        }
+      }
+    },
+    {
+      "id": "07a62dc66aed003e5e74c155b191a11270cce9e881a9d9c6358ef547bbe69d62",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/actions/",
+      "date": "2022-12-14",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-458-2022",
+      "act": "yea",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 55-34) on H. B. No. 458, from the Ohio Legislature's own actions record, which lists each member by id (rep_stephens_jason_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b76b08444464d687d2e3e5da5ab666871be545e481f02bd01a7bfa3659054db7",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hcr18/actions/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "yea",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 73-20) on H. C. R. No. 18, from the Ohio Legislature's own actions record, which lists each member by id (rep_stephens_jason_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "29024560daba08f577b2d9a67ad667e1516d1db2d1201351d6cce81be63c3b7e",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/hcr18",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, As Adopted by the House (02_AH)",
+      "note": "Listed as co sponsor of H. C. R. No. 18 (As Adopted by the House) on the Ohio Legislature's own record (rep_stephens_jason_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "545139969c5c35a1f168640a412d667e03811d25673463e11c9fcc5bd7fca177",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "yea",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_stephens_jason_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cb87000697b71758e7ca0ad908fe673527a271a0150eff9c6bd3ec29180be76c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "yea",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_stephens_jason_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32abbbc8a3ef8b4b1a84709188caf92f2c696e2c45aaccbf5d255611a80b9668",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "yea",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_stephens_jason_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4ca76a6dc4f23da0f131b85b898818c31167636d640c1042879bb2b4ea6c4d35",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/hb233",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-233-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. B. No. 233 (As Introduced) on the Ohio Legislature's own record (rep_stephens_jason_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.677Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "photo ID constitutional amendment (SJR 10 / HJR 9)",
+        "election law in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "ohiohouse.gov member page (District 93, Kitts Hill) and first two pages of its news list (20 items): nothing on the subject; later pages not reviewed because the page-number links returned the same list: not reviewed: https://ohiohouse.gov/members/jason-stephens/news (pages 3-8 of 8)",
+        "Statehouse News Bureau (statenews.org) site search for voter ID and photo ID terms plus all 13 voter-ID and election articles from 2022-2026 that it listed, read in full: none names or quotes this person",
+        "SJR 10, HJR 9 and HB 458 witness lists on ohiohouse.gov: this person is not a witness on any",
+        "web search: not run for this person; blocked: web search (this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent in it))",
+        "blocked: https://www.legislature.ohio.gov/legislation/136/sjr10/committee (403)",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (refuse fetches, not tried)",
+        "not reviewed: campaign site, Vote411 and voter-guide questionnaires (no URL found without web search)"
+      ],
+      "found": 0,
+      "at": "2026-11-06T15:21:37.588Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 7,
+      "at": "2026-11-06T16:28:34.677Z",
+      "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "photo ID constitutional amendment (SJR 10 / HJR 9)",
+        "election law in general"
+      ],
+      "places": [
+        "https://ohiohouse.gov/members/jason-stephens/news pages with pageSize=50 (start=1 and start=11, about 98 items back to 2022): election items are only the 2023 Issue 1 and Issue 2 result statements (not about ID or citizenship; not opened as off subject), plus other members' releases shown on the shared list; nothing from this person on ID or citizenship",
+        "https://ohiohouse.gov/news/republican/ohio-house-republicans-reveal-ohio-is-our-home-priority-bills-113513 (Feb 2023 priority-bills release): no election or ID content",
+        "ohiohouse.gov newsletter PDF found by search (assets/people/2892/newsletters/4108.pdf): belongs to a different member, not used; a search for a Stephens statement on HB 458 (passed Dec 2022 before he was Speaker) found only a news report of his vote, which is a record handled separately",
+        "web searches run this round (about 4 per person, name + voter ID / photo ID / HB 458 / SJR 10 / proof of citizenship / questionnaire): no own words on the subject found",
+        "https://ohiohouse.gov/news/republican/house-republicans-pass-resolution-aimed-at-strengthening-our-elections-by-placing-voter-id-requirements-in-the-state-constitution-145722 (June 2026 release on SJR 10 passage): quotes only the Speaker of the House, no quote from this person",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (refuse fetches, not tried)",
+        "not reviewed: legislature.ohio.gov SJR 10 / HB 458 committee testimony PDFs (round 1 found this person on no witness list)"
+      ],
+      "found": 0,
+      "at": "2026-11-06T16:39:34.096Z",
+      "by": "research-oh-r2-2026-11-06"
+    }
+  ]
+}

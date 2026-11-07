@@ -1,0 +1,144 @@
+{
+  "politician_id": "3822a315-a3af-44c6-b6fe-db575b4eb1d3",
+  "findings": [
+    {
+      "id": "35ab7153e9f2d7da3e82c6075dab0b376205c90ddb76bf5fb288823ebd3e6f32",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2016/pdf/history/HB/HB0786.xml",
+      "date": "2016-04-05",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-786-2016",
+      "act": "nay",
+      "motion": "Concurred in Amendment from Senate (final House vote)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS House, Concurred in Amendment from Senate (final House vote), 2016-04-05: nay (tally 85–35); census gate: none.",
+      "subjects": [
+        "carry a gun without a licence",
+        "church security"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/MS_HB786SG.pdf",
+          "sha256": "a1142904e692e81f08ce94bef1f5827e9d662ac1f81ce57f6330064169e08945"
+        }
+      }
+    },
+    {
+      "id": "d4e868964ed4d56fc32ec792437d9901a88084d804cae2d0686301c5384c34af",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/house/0850033.pdf",
+      "date": "2022-03-29",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "yea",
+      "motion": "House: The conference report on H. B. No. 1510 was adopted by the following vote: (0850033)",
+      "note": "House roll call as printed ('Anderson (110th)'), linked to Jeramey Anderson (district 110) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.745Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4fbba305f72e29d24d1602007a4a0beb2ae18d76c403cda48443134f7aacc0ba",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2021/pdf/votes/house/0370056.pdf",
+      "date": "2021-02-10",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-586-2021",
+      "act": "nay",
+      "motion": "House: H. B. No. 586 passed by the following vote: (0370056)",
+      "note": "House roll call as printed ('Anderson (110th)'), linked to Jeramey Anderson (district 110) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.745Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2147cca7436b02fc328055efc537138f61a5635591caea67c88f498332726704",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "nay",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Anderson (110th)'), linked to Jeramey Anderson (district 110) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.745Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "election integrity laws",
+        "voter access"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract-otr returned 0 appearances, 0 candidates)",
+        "official site jerameyanderson.com: blog feed (20 posts listed), pressroom page, HB 538 release (Feb 12; the release does not say what the bill covers; nothing on the subject), Dec 21 2018 college voting summit release (about voting access for students, no ID content), nothing on the subject",
+        "https://www.jerameyanderson.com/_files/ugd/eb6ad3_93e60e97362d423c89374dc58acc4ae5.pdf (2-page PDF made 2024-02-22; compressed text, could not be read: not reviewed)",
+        "Let America Vote 2019 endorsement page (words are the group's, not his; nothing on voter ID)",
+        "Jackson Free Press 2018 candidate questionnaire (nothing on the subject)",
+        "WLOX 2026-09-07 Labor Day voter turnout story (he speaks on turnout and checking registration; nothing on ID or citizenship)",
+        "Mississippi legislature bill pages: not searched, votes and sponsorships are linked separately",
+        "blocked: https://ballotpedia.org/Jeramey_Anderson (Ballotpedia refuses our fetches; not tried)",
+        "web searches (6): name + voter ID; photo ID/proof of citizenship; voter ID said; Mississippi Free Press SAVE Act; questionnaire/voter guide 2023; citizenship voter rolls 2025-2026; nothing own-words on the subject found"
+      ],
+      "found": 0,
+      "at": "2026-11-05T22:47:47.606Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-05T23:52:51.745Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

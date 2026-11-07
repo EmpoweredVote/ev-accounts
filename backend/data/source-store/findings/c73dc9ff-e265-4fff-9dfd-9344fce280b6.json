@@ -1,0 +1,155 @@
+{
+  "politician_id": "c73dc9ff-e265-4fff-9dfd-9344fce280b6",
+  "findings": [
+    {
+      "id": "9cf7a1e7556c43d0e0440d43cf663b3a4424725da2898c649e1311800442637f",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/48765/race/31727/election/1468",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Photo identification requirements can help ensure consistency and integrity. These policies must also include accessible alternatives so that eligible voters are not disenfranchised.",
+      "note": "Her iVoterGuide questionnaire answer, given as 'Disagree' to the statement 'People should be able to vote without photo identification.' Questionnaire for the Nov 3, 2026 Commissioner of Insurance race; exact date not shown.",
+      "subjects": [
+        "voter ID at the polls",
+        "accessible alternatives for voters without ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:02:09.122Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "88267dcd0b6d5f02703d3fe1115e396c36561eaf044a17f21dbb788f90766dad",
+      "kind": "own-words",
+      "url": "https://d1mkb6pb09f3c7.cloudfront.net/wp-content/uploads/2026/06/Commissioner-Schmidt-Sign-on-Letter.pdf",
+      "date": "2026-06-18",
+      "date_precision": "day",
+      "passage": "We continue to support election practices that are fair, accessible, and inclusive.",
+      "note": "Joint letter she signed as the Senate minority leader, asking the Johnson County election commissioner to reinstate eight closed advance voting locations; it also praises added secure ballot drop boxes. It does not address ID or citizenship.",
+      "subjects": [
+        "advance voting access",
+        "ballot drop boxes"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:02:09.122Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e12d8c2c04969f9f4493070458d6fa03f7ff58d84685fb72235693093d0eeb43",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_191_HB2020.odt",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "nay",
+      "motion": "Senate: Emergency Final Action As Amended",
+      "note": "Senate roll call as printed ('Sykes'), linked to Dinah Sykes (district 21) via the official 2025 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12d5b96635aaee125a967de3c18520774687c5737469fd65d2358255cda8634d",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Sykes'), linked to Dinah Sykes (district 21) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "773a23f2ab30c456870279e3a5e51881ec013b5fc572b2fa03296b427529d0f8",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/vote/?apn=b2023_24/year2/senate/legislative_days/day039_20240305/vote_records/vote_100_SB365.odt",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-365-2024",
+      "act": "nay",
+      "motion": "Senate: Final Action - Not passed",
+      "note": "Senate roll call as printed ('Sykes'), linked to Dinah Sykes (district 21) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "accessible alternatives for voters without ID",
+        "advance voting access",
+        "mail-ballot ID",
+        "proof of citizenship"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official page: https://www.kslegislature.gov/li/b2025_26/members/sen_sykes_dinah_1/ (confirms Senate District 21)",
+        "iVoterGuide 2026 questionnaire (Commissioner of Insurance race, Nov 3 2026 general; she is also listed as State Senator Dist. 21)",
+        "June 18 2026 letter to the Johnson County election commissioner (cloudfront PDF)",
+        "NWKS Radio legislature update page: nothing on the subject",
+        "the Senate minority caucus press page: nothing on the subject found in search",
+        "blocked: Ballotpedia (not fetched, listed as refusing)",
+        "blocked: kansasreflector.com (not fetched, listed as refusing)",
+        "web searches: name + voter ID / photo ID / proof of citizenship / advance ballot / Capitol Update / questionnaire (4 run)",
+        "committee testimony: not reviewed, none located in search"
+      ],
+      "found": 2,
+      "at": "2026-11-04T17:02:09.122Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-04T19:13:24.949Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}
