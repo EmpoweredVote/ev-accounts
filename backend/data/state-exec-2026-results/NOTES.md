@@ -1430,29 +1430,44 @@ the version committed.**
 
 ## ▶ The recipe for the next imported polygon
 
-Texas proved the route. Seven bodies are left: **AL State Board of Education (4 seats) · LA PSC
-(2) · NE PSC (1) · NE State Board of Education (3) · NE Regents (1) · NH Executive Council (5) ·
-NM Public Education Commission (4)**. For each:
+Texas proved the route and Alabama repeated it. ⚠ **UPDATED 2026-11-07 — Alabama is DONE**
+(`CC_0370`). Six bodies are left: **LA PSC (2) · NE PSC (1) · NE State Board of Education (3) ·
+NE Regents (1) · NH Executive Council (5) · NM Public Education Commission (4)**. For each:
 
 1. **Find the state's redistricting portal.** Texas runs CKAN:
    `data.capitol.texas.gov/api/3/action/package_search?q=...` and `package_show?id=<plan>`.
-   Others will differ; an ArcGIS FeatureServer with `outSR=4326&f=geojson` is the other common
-   shape and is already in 4326.
+   Others will differ; an ArcGIS FeatureServer is the other common shape — Alabama's is the
+   Reapportionment Office's own `_2021_Alabama_State_Bd_of_Education`, found by looking for
+   the organisation that also publishes that state's House, Senate and congressional plans.
+   🔴 **An ArcGIS service is NOT already in 4326 — Alabama's is Web Mercator (3857).**
+   `outSR=4326` makes the SERVER reproject; the query must carry it, and the result still
+   has to be bounds-checked.
 2. **Pick the plan whose title carries no end date.** Texas's four SBOE plans each state their own
    validity in the title; three said "2013-2022" or "2003-2012".
 3. 🔴 **Prefer the KML. Read the `.prj` of any shapefile before you read its geometry.** Texas's
    is Lambert Conformal Conic in metres, and loaded as 4326 it is valid, correctly shaped and
    matches no address on Earth.
-4. **Parse with `CC_0369-parse-plane2106-kml.mjs` as the model** — it bounds-checks every
-   coordinate against the state and refuses holes or extra rings rather than dropping them.
-5. **Load with `CC_0369-tx-sboe-geofences.mjs` as the model**, under **`X0003` if the body is a
+4. **Parse with `CC_0369-parse-plane2106-kml.mjs` as the model** for a KML, or
+   `CC_0370-fetch-al-sboe-arcgis.mjs` for an ArcGIS FeatureServer. Both bounds-check every
+   coordinate against the state and stop on the first that fails; neither drops anything
+   silently. The Texas one refuses a hole or a second ring outright because PlanE2106 has
+   none; the Alabama one carries them, because that plan has both (District 6 has a hole,
+   District 8 is two parts). It also records each raw response's sha256, and refuses the
+   file unless the district populations sum to the state's census total.
+5. **Load with `CC_0369-tx-sboe-geofences.mjs` or `CC_0370-al-sboe-geofences.mjs` as the model**, under **`X0003` if the body is a
    board of education** (no code change — that rule is not state-scoped). Any other kind of state
    board goes under `X-ST-BOARD`, which `CC_0366` added to `districtQueries.ts` and
    `geoIdGuard.ts`. ⚠ `mtfcc` is `varchar(10)`.
 6. **Gate the map against geometry we already trust**: union vs the state outline (`G4000`),
-   pairwise overlap, every incorporated place (`G4110`) resolving to exactly one district, and
-   members' home towns — but only the ones that lie **wholly** inside one district.
-7. **Migration with `emit369.mjs` as the model.** Create the whole body, seat every member, assert
+   pairwise overlap, and every incorporated place (`G4110`) resolving to exactly one district.
+   ⚠ **Not every state HAS `G4110` rows in production — Alabama has none.** Fall back to
+   ZCTAs (`G6350`) for point resolution.
+   🟢 **Then anchor it on evidence from OUTSIDE the map, because nothing above can see two
+   districts' labels swapped.** In order of preference: the **statute**, when the state
+   defines the districts as a list of counties (`CC_0370` — 62 of Alabama's 67, and it
+   covers the whole state); otherwise board members' **home towns**, and only the ones that
+   lie **wholly** inside one district (`CC_0369`).
+7. **Migration with `emit369.mjs` or `emit370.mjs` as the model.** Create the whole body, seat every member, assert
    the 238 baseline, and finish with the point-to-member chain.
 8. Run `check-address-reachability.mjs` and probe the live endpoint for a real address.
 
@@ -1460,3 +1475,213 @@ NM Public Education Commission (4)**. For each:
 this list.** Their polygons are already in production — they are unions of state senate districts
 we hold — and they are blocked only on *which* senate districts compose each one. That is a
 sourcing problem, not a geometry one.
+
+# `CC_0370` — Alabama's State Board of Education, and the statute as the anchor
+
+Applied 2026-11-07. **1 chamber · 8 districts · 8 geofence polygons · 8 offices · 8
+office_terms · 4 races · 13 politicians · 7 candidacies (4 won).** State-level 2026 results go
+from **193 races / 198 winners** to **197 / 202**, still across 40 states.
+🟢 **Occupancy baseline unchanged: 293 / 55 / 238.** Address reachability: nothing regressed
+(BAD_GEOMETRY 4, DEAD_GEOGRAPHY 17, UNREACHABLE 7, all at baseline).
+
+## 🟢🟢 THE ANCHOR IS THE STATUTE, AND IT IS A BETTER ANCHOR THAN A HOME TOWN
+
+Texas anchored its map on nine board members' **home towns**, because Texas law requires a member
+to live in the district. That route does not exist in Alabama: **production holds no incorporated
+places (`G4110`) for Alabama at all** — only 67 counties, 7 congressional districts and 656 ZCTAs.
+
+Something better does. **Code of Alabama § 16-3-1.1 *is* the map.** It lists each district as a
+set of whole counties followed by the census tracts and blocks of the counties it splits. 62 of
+Alabama's 67 counties are assigned whole; 5 are split. So the gate is: each of the 62 lies inside
+exactly the district the law names, and each of the 5 is shared by exactly the districts the law
+names. That is evidence written in 2021, before this GIS file was published, and it covers the
+**whole state** rather than nine points in it.
+
+Measured against production, the map reproduces the statute to the sliver:
+
+| check | result |
+| --- | --- |
+| union against our TIGER Alabama outline (`G4000` '01') | **99.939% covered** |
+| worst pairwise overlap between two districts | **0.000000%** |
+| the eight districts' total area | **52,420 sq mi**, which is Alabama's |
+| the 62 counties § 16-3-1.1 assigns WHOLE | **all ≥ 99.9966%** inside their own district |
+| the largest sliver leaking into any OTHER district | **0.0034%** (Bullock into D2) |
+| the 5 counties it SPLITS | Mobile **1/5** · Jefferson **3/4/7** · Montgomery **3/5** · Talladega **3/6** · Tuscaloosa **4/7** |
+| Alabama ZCTAs (`G6350`) resolving to exactly one district | **656 of 656** |
+
+⚠ **`ST_Covers` IS THE WRONG TEST AND IT FAILED ON 55 OF THE 62.** The plan's line work and
+TIGER's disagree by slivers along every shared boundary, so strict containment is not what the
+statute means. The thresholds — 99.9% in, 0.01% out — were chosen **after** measuring the real
+distribution, and sit about 30x clear of it on both sides.
+
+🔴 **THE SPLIT ARM SETTLED A READING OF THE LAW THAT THE TEXT ITSELF LEAVES AMBIGUOUS.** The
+Legislature's published bill text gives District 5's county list as *"… Wilcox County, **Mo
+County**:"*. Mobile or Montgomery? The tract numbers say Mobile — District 1 takes Mobile County
+tracts 31.00–70.00 and District 5's list runs 2.00–35.01, which is one county divided between two
+districts — and Montgomery is named separately in the same section with its own tracts. That was a
+**reading**, so it was written into the gate as a claim and tested rather than assumed. The
+geometry answers Mobile = D1 50.68% / D5 49.31%. If the reading had been wrong the file would have
+stopped.
+
+## 🔴🔴 THE SERVICE IS WEB MERCATOR, AND THE CONTROL THAT PROVES THE GUARD WAS SHADOWED AT FIRST
+
+The Alabama Legislative Reapportionment Office's ArcGIS layer reports
+`{wkid: 102100, latestWkid: 3857}` and an extent of `-9848795, 3522128 .. -9449716, 4164973` —
+**metres**. Taken as served and labelled 4326 that is the Holladay failure exactly. The query asks
+for `outSR=4326`, the parser bounds-checks all 71,244 coordinate pairs against Alabama, and the
+loader checks each bounding box again after INSERT.
+
+🔴 **CONTROL A FAILED, CORRECTLY, FOR THE WRONG REASON, AND THAT LOOKED LIKE A PASS.** The first
+version of the loader computed each district's area in square miles with a `::geography` cast *in
+the same SELECT as the bounding-box guard*, for a log line. Run against the Web Mercator tamper it
+died inside PostGIS — `lwgeom_area_spher(oid) returned area < 0.0` — **before the CRS guard was
+reached**. The transaction rolled back and the run went red, so nothing bad happened and nothing
+was learned: the gate under test had never executed. The area measurement now runs after the CRS
+guard, and the control fails where it should:
+`ocd-division/…/sboe:1 bbox -9842293,3522128 .. -9550003,3770101 is outside Alabama — WRONG CRS`.
+▶ **Nothing that needs lon/lat to be lon/lat may run before the gate that checks it is.**
+
+## Which map, and how that was settled
+
+The 2021 plan, enacted in the 2021 First Special Session as the **McClendon SBOE Plan 1** and
+codified whole as **§ 16-3-1.1**. Alabama redistricts only in the first session after each
+decennial census (Const. 1901, Art. IX §§ 197-200). The 2023 remedial litigation redrew the
+**congressional** map and, separately, state Senate districts, and left this one alone; it took
+effect for the 2022 board elections and governed the 2026 ones.
+
+🟢 **The layer identifies itself.** Its eight `POPULATION` values sum to **5,024,279** — Alabama's
+2020 apportionment population to the person — and `IDEAL_VALU` is **628,035**, that figure over
+eight. No map drawn on another census can do that. The fetch script asserts both, which is how
+this service was chosen over the two unattributed copies of the same plan also on ArcGIS Online.
+
+⚠ **THE LEGISLATURE'S OWN PAGE FOR THIS MAP IS STALE.**
+`alison.legislature.state.al.us/reapportionment-board-education-state-map` still reads
+**"Board of Education State Map: 2011 State Education Districts"**, with a broken image. The
+operative text is the statute, and the Reapportionment Office's GIS agrees with it. *A source can
+be authoritative for one field and out of date for another* — here, for the whole page.
+
+## The board has nine members and this file creates eight
+
+§ 16-3-1: *"The State Board of Education shall be composed of the Governor as an ex officio member
+and eight members elected from districts provided by general law."* The Governor's presidency is a
+power of the **Governor's office**, which production already holds, not a seat of its own, so no
+row is created for it. `official_count` is **9**, the chamber holds **8** offices, and the
+post-verify asserts both numbers and that `remarks` says why. **A gap nothing asserts is a
+decision the next pass has to make again.**
+
+## 🔴 Two of the four winners replace the sitting member, and the date is in the statute
+
+| district | holder today | 2026 |
+| --- | --- | --- |
+| 2 | Tracie West (R) | 🏆 **re-elected**, over Jamie McCurry (D) |
+| 4 | Yvette Richardson (D) | 🏆 **re-elected**, unopposed |
+| 6 | Marie Manning (R) | 🏆 **Cathi Bradford** (R) won, over Angela Morgan (D) |
+| 8 | Wayne Reynolds (R) | 🏆 **Emily Jones** (R) won, over Shatika Armstrong (D) |
+
+All eight seats are seated with their **current** holder. Manning and Reynolds were not on the
+November ballot and are still in office.
+
+▶ **2027-01-18 — SEAT BRADFORD IN DISTRICT 6 AND JONES IN DISTRICT 8.** § 16-3-1: a member holds
+office *"from the first Monday after the second Tuesday in January next after"* the election. In
+January 2027 the second Tuesday is the 12th, so the first Monday after it is the **18th**. The
+chamber's `inauguration_rules` carries that sentence and the date, and a gate asserts it is there.
+
+Districts 1, 3, 5 and 7 were last elected in 2024 and are next up in **2028** — Alabama staggers
+its board by parity, even districts in midterms and odd ones in presidential years.
+
+## Rosters and identity
+
+Two independent rosters, read 2026-11-07, agree on all eight districts: the board's own members
+page (`alabamaachieves.org/state-board-of-education/`) and Ballotpedia's officeholder table. Where
+they differ it is only in form — the board page prints degrees and maiden names (*Yvette M.
+Richardson, Ed.D.*, *Kelly McCarthy Mooney*, *Tonya S. Chestnut, Ed.D.*, *Allen Long, M.D.*,
+*Wayne Reynolds, Ed.D*) — so Ballotpedia's plain form is used, because the Ballotpedia page is the
+source each politician row cites.
+
+All 13 people are new. A sweep of all **91,735** politicians on both full name *and* (first, last)
+returned nothing for any of them, including Emily Jones, Angela Morgan and Allen Long, which is
+why it was run. 🟢 The sweep is not blind: its positive control found Tommy Tuberville.
+
+🔴 **EVERY SOURCE URL WAS FETCHED AND READ, NOT COMPOSED FROM THE NAME — AND ONE OF THEM WAS A
+DISAMBIGUATION PAGE.** `ballotpedia.org/Allen_Long` returns **HTTP 200**, contains the words
+"Allen Long", and is a list of two different men: *"Allen Long may refer to: Allen Long (Alabama),
+Allen Long (California)."* Only the "does this page mention the Alabama State Board of Education"
+test caught it, and that test would **not** catch the same thing for a name whose other bearer
+also sits on a school board — so `resolve-al-sboe.mjs` now refuses a disambiguation page by name.
+Emily Jones's page is `/Emily_Jones_(Alabama)` for the same reason. ▶ **A slug built from a name is
+a guess; the committed source is the URL that was opened and read.**
+
+## Controls
+
+**On the loader** (`controls370-loader.mjs`):
+
+| | fault planted | observed |
+| --- | --- | --- |
+| A | the real data reprojected to Web Mercator metres, relabelled 4326 | `sboe:1 bbox -9842293,3522128 … is outside Alabama — WRONG CRS` |
+| B | District 7 dropped from the file | `expected 8 districts … found 7` |
+| C | the geometry of Districts 2 and 6 swapped, numbers kept | `the statute puts these counties wholly in one district and the map does not: Russell County is only 0.0000% in D2; … Calhoun County is only 0.0025% in D6; …` |
+| D | the geometry of Districts 4 and 7 swapped (they share Tuscaloosa) | the same gate, on D4 and D7's counties |
+| E | the statute table claims Tuscaloosa for districts 4 and **6** | `a county the statute splits is shared with the wrong districts: Tuscaloosa County -> 4,7, statute says 4,6` |
+
+🔴 **C IS THE ONE WORTH READING, AND E EXISTS BECAUSE C AND D ARE NOT ENOUGH.** With two districts'
+labels swapped the map passes *every structural check* — 8 valid 4326 polygons inside Alabama, a
+union covering 99.939%, zero overlap, all 656 ZCTAs resolving to exactly one district. Only the
+statute can tell. But C and D both fire on the **whole-county** arm, which runs first, so the
+**split** arm had only ever been watched passing — and no geometry tamper breaks a split while
+leaving all 62 whole counties right. E tampers the statute table instead. *A gate that has only
+ever passed proves nothing.*
+
+**On the migration** (`controls370.mjs`):
+
+| | fault planted | observed |
+| --- | --- | --- |
+| A | the seating **and** the every-office-is-seated gate removed | `the baseline moved to 246 — it was 238 and must never be raised` |
+| B | the districts filed under layer `X0099` | `only 0 of the 8 districts meet a geofence row on (geo_id, mtfcc)` |
+| C | Districts 2 and 6's **members** swapped in the seat table | `the anchor table and the seat table name different members: D2: anchor says Tracie West, seat says Marie Manning; …` |
+| D | the office-to-district join reversed (`md.d = 9 - s.d`) | `an anchor county does not reach its board member: Baldwin County -> Wayne Reynolds (expected Jackie Zeigler); …` |
+| E | the statute table claims Coffee County for District 6 | `the statute puts these counties wholly in one district and the map does not: Coffee County is only 0.0000% in D6` |
+| F | a middle name dropped from a compound given name | `a seeded name does not match its own split: Tonya Smith Chestnut splits to (Tonya, Chestnut)` |
+| G | `official_count` set to 8 | `official_count is 8, not 9 — the board has 9 members and the Governor is the ninth` |
+
+🟢 **D IS THE CONTROL `CC_0369` COULD NOT WRITE.** Texas's control C swapped two members in the
+seat table, and the **pre-gate** caught it — which proved the two-statements-of-the-roster design
+but left the point-to-member **chain** itself still only ever watched passing. Reversing the
+office-to-district join instead leaves the seat table and the anchor table agreeing with each
+other, every polygon right, the statute gate green, 8 offices created and all 8 seated, and every
+count balanced. The chain is the only thing that can see it, and it did, on all eight anchors.
+
+⚠ **E WAS RETARGETED AFTER FIRING ON THE WRONG GATE.** It first moved **Houston County**, which is
+District 2's anchor, and the run died on the earlier *"an anchor county is not assigned whole to
+its district by the statute"* pre-gate — a correct failure, for a gate that was not under test.
+Coffee County anchors nothing. **Twice in this file a control failed for the wrong reason**; both
+times only reading the message said so.
+
+## Measured on the live endpoint
+
+`https://ev-accounts-api.onrender.com/api/essentials/address-search`, against **live production**,
+after the migration and with no deploy — `X0003` was already in the deployed read path:
+
+| address | returned |
+| --- | --- |
+| 600 Dexter Ave, Montgomery, AL | **State Board of Education Member, District 5 — Tonya Smith Chestnut**, `seat_status: held` |
+| 308 Fountain Cir, Huntsville, AL | **State Board of Education Member, District 8 — Wayne Reynolds**, `seat_status: held` |
+
+In the database the whole chain resolves for every point tried: Birmingham and Tuscaloosa →
+District 4 → Yvette Richardson; Montgomery and Mobile → District 5 → Tonya Smith Chestnut;
+Huntsville → District 8 → Wayne Reynolds. 🟢 Mobile city lands in District 5 and not District 1,
+which is the right answer: District 5 is the Black Belt seat running from Mobile through Selma to
+Montgomery, and District 1 takes Baldwin County and suburban Mobile County.
+
+## Tier 3 after Alabama — 25 seats
+
+**Blocked only on a composition** (the polygons are already in production, as unions of state
+senate districts we hold): KS State Board of Education (5) and MA Governor's Council (8).
+**Needs an imported polygon** (12): LA PSC (2), NE PSC (1), NE State Board of Education (3),
+NE Regents (1), NH Executive Council (5), NM Public Education Commission (4).
+⚠ **Nebraska is three separate bodies and we hold no Nebraska legislative-district geometry at
+all** — leave it for last.
+
+▶ **ALABAMA ADDS ONE LINE TO THE RECIPE ABOVE (§ "The recipe for the next imported
+polygon"): when the state publishes its districts as statute
+text, that text is a better anchor than anything on the map's own side** — it is independent of
+the GIS, it was written first, and it covers the whole state instead of a handful of points.
