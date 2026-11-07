@@ -1,0 +1,55 @@
+{
+ "measured": "2026-11-07",
+ "migration": "CC_0372",
+ "loader": "backend/scripts/CC_0372-nm-pec-geofences.mjs (run it first — the polygons are not in the migration)",
+ "geometry": {
+  "source": "New Mexico Secretary of State redistricting GIS, published by UNM's Earth Data Analysis Center: SOS/Education/MapServer layer 8, 'Public Education Commission District (PEC)'",
+  "plan": "HB 9, Laws 2021 (2nd Special Session), Chapter 3 — the 2021 Educational Redistricting Act, signed 2021-12-17",
+  "fetch": "backend/scripts/CC_0372-fetch-nm-pec-arcgis.mjs, queried 2026-11-07 with outSR=4326",
+  "note": "🔴 THE FIRST BILL I READ WAS NOT THE LAW. The 2021 Second Special Session filed two PEC redistricting bills, HB 6 and HB 7, and both died — HB 6's action line reads 'Action Postponed Indefinitely'. HB 9 is the one that passed (61-0 House, 25-13 Senate, signed Dec. 17, Ch. 3), and its precinct lists differ: HB 6 would have put Torrance county in District 8, HB 9 puts the whole of it in District 6. Three later attempts to replace the commission with an elected state school board by constitutional amendment — SJR 1 of 2023, SJR 9 of 2024 and SJR 3 of 2025 — all passed the Senate and all died in the House, so no such measure reached the 2026 ballot and the commission stands.",
+  "crs": "The service is NAD83 / UTM zone 13N (EPSG:26913), in metres. outSR=4326 makes the server reproject, and every one of the 83,186 coordinate pairs is bounds-checked against New Mexico.",
+  "checked": "Union covers 99.986% of our TIGER New Mexico outline; zero pairwise overlap; total area 121,595 sq mi, which is New Mexico's; all 372 New Mexico ZCTAs resolve to exactly one district; and the statute gate — all 23 counties HB 9 assigns whole are 99.9992%+ inside their own district with nothing over 0.01% elsewhere, and all 10 it splits are shared by exactly the districts it names."
+ },
+ "body": {
+  "st": "NM",
+  "stateName": "New Mexico",
+  "fips": "35",
+  "governmentId": "3e3c6584-1400-4f9d-9bfc-8438eac843dd",
+  "electionId": "6a560b73-4059-406c-b96a-6fe27073ecc9",
+  "chamberName": "Public Education Commission",
+  "chamberFormal": "New Mexico Public Education Commission",
+  "officialCount": 10,
+  "officeCount": 10,
+  "termLength": "4 years",
+  "mtfcc": "X0003",
+  "districtType": "STATE_BOARD_EDUCATION",
+  "rosterUrl": "https://ballotpedia.org/New_Mexico_Public_Education_Commission",
+  "rosterNote": "Ballotpedia's officeholder table for the commission, read 2026-11-07. The Legislative Council Service's 2025 handbook page (nmlegis.gov/Publications/handbook/public_education_commission_25.pdf) independently gives nine of the same ten members and every district's county list; it has District 3 as Alan Lee Brauer Jr., who has since been replaced by Jacob Trujillo — Ballotpedia's 2026 District 3 votebox calls Trujillo the incumbent, so the handbook is simply older on that one seat. ⚠ A roster can be right about the body and out of date about a seat.",
+  "remarks": "Ten members, one per district, elected to staggered four-year terms. HB 9 Section 3 sets the stagger by district number: 2, 3, 5, 6 and 7 are elected in 2022 and every four years after; 1, 4, 8, 9 and 10 in 2024 and every four years after. Established by Article XII, Section 6 of the New Mexico Constitution.",
+  "inaugurationRules": "HB 9 (Laws 2021 2nd S.S. Ch. 3) Section 3B: members are elected at the general election 'for terms commencing on January 1 next succeeding their election', so the 2026 winners take office on 2027-01-01.",
+  "electionRules": "Staggered four-year terms. Districts 2, 3, 5, 6 and 7 were on the 2026 ballot; districts 1, 4, 8, 9 and 10 are next up in 2028. A commissioner must reside in their district and is deemed to have resigned on moving out of it (HB 9 Section 4).",
+  "ballotNote": "Five districts were on the 2026 ballot — 2, 3, 5, 6 and 7 — exactly the five HB 9 Section 3C names, and Ballotpedia carries a votebox for each. Four are called. District 7 is not: Frederick Parker (D) and John Foreman (R) ran and no winner is reported, so no race is recorded for it here and neither candidate is seeded. It belongs to the uncalled pass.",
+  "holderNote": "🔴 ONE OF THE FOUR WINNERS REPLACES THE SITTING MEMBER. Jacob Trujillo (D3), Sharon E. Clahchischilliage (D5) and Stewart Ingham (D6) were re-elected; Ken Pascoe won District 2, which Timothy Beck holds. All ten seats are seated with their CURRENT holder, because an office with no term row raises the drift baseline and because a certified result is not a fact about who holds the seat."
+ },
+ "anchors": [
+  { "district": 4, "county": "Los Alamos County", "member": "Rebekka Burt" },
+  { "district": 5, "county": "McKinley County", "member": "Sharon E. Clahchischilliage" },
+  { "district": 6, "county": "Catron County", "member": "Stewart Ingham" },
+  { "district": 8, "county": "Colfax County", "member": "Michael Taylor" },
+  { "district": 9, "county": "Eddy County", "member": "K.T. Manis" },
+  { "district": 10, "county": "Rio Arriba County", "member": "Steven Carrillo" }
+ ],
+ "anchorNote": "🔴 ONLY SIX OF THE TEN DISTRICTS CAN BE ANCHORED, AND THE GAP IS A REAL LIMIT OF THIS METHOD. An anchor has to be a county HB 9 assigns WHOLE to one district, and four districts contain no such county: 1, 2 and 3 lie entirely inside Bernalillo, which the act splits six ways, and 7 is made only of parts of Doña Ana and Otero, both split. District 7 is still pinned, by the split arm — move its geometry anywhere else and Bernalillo or Doña Ana stops being shared by exactly the districts the act names. Districts 1, 2 and 3 are NOT: a permutation of those three passes every gate in this file, because each is a Bernalillo-only district and all three stay inside the same set. That is stated here rather than discovered later; see the controls, where the permutation is planted deliberately and observed to pass.",
+ "seats": [
+  { "district": 1, "holder": "Sam S. Obenshain", "onBallot2026": false },
+  { "district": 2, "holder": "Timothy Beck", "onBallot2026": true, "raceRecorded": true },
+  { "district": 3, "holder": "Jacob Trujillo", "onBallot2026": true, "raceRecorded": true },
+  { "district": 4, "holder": "Rebekka Burt", "onBallot2026": false },
+  { "district": 5, "holder": "Sharon E. Clahchischilliage", "onBallot2026": true, "raceRecorded": true },
+  { "district": 6, "holder": "Stewart Ingham", "onBallot2026": true, "raceRecorded": true },
+  { "district": 7, "holder": "Patricia Gipson", "onBallot2026": true },
+  { "district": 8, "holder": "Michael Taylor", "onBallot2026": false },
+  { "district": 9, "holder": "K.T. Manis", "onBallot2026": false },
+  { "district": 10, "holder": "Steven Carrillo", "onBallot2026": false }
+ ]
+}

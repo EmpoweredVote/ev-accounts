@@ -1,0 +1,245 @@
+{
+ "measured": "2026-11-07",
+ "plan": "HB 9, Laws 2021 (2nd Special Session), Chapter 3 — the 2021 Educational Redistricting Act, signed 2021-12-17",
+ "source": "https://www.nmlegis.gov/Sessions/21%20Special2/final/HB0009.PDF (the FINAL text; HB 6 and HB 7 were the PEC bills that DIED)",
+ "note": "The ten districts partition the state, so a county named in exactly one district is WHOLE in it and a county named in two or more is SPLIT between exactly those.",
+ "perDistrict": {
+  "1": [
+   "Bernalillo (precincts)"
+  ],
+  "2": [
+   "Bernalillo (precincts)"
+  ],
+  "3": [
+   "Bernalillo (precincts)"
+  ],
+  "4": [
+   "Bernalillo (precincts)",
+   "Los Alamos",
+   "Sandoval (precincts)",
+   "Santa Fe (precincts)"
+  ],
+  "5": [
+   "Bernalillo (precincts)",
+   "Cibola (precincts)",
+   "McKinley",
+   "Sandoval (precincts)",
+   "San Juan (precincts)",
+   "Socorro (precincts)"
+  ],
+  "6": [
+   "Bernalillo (precincts)",
+   "Catron",
+   "Cibola (precincts)",
+   "Dona Ana (precincts)",
+   "Grant",
+   "Hidalgo",
+   "Luna",
+   "Sierra",
+   "Socorro (precincts)",
+   "Torrance",
+   "Valencia"
+  ],
+  "7": [
+   "Dona Ana (precincts)",
+   "Otero (precincts)"
+  ],
+  "8": [
+   "Chaves (precincts)",
+   "Colfax",
+   "Curry",
+   "De Baca",
+   "Guadalupe",
+   "Harding",
+   "Lincoln",
+   "Mora",
+   "Quay",
+   "Roosevelt",
+   "San Miguel",
+   "Taos (precincts)",
+   "Union"
+  ],
+  "9": [
+   "Chaves (precincts)",
+   "Eddy",
+   "Lea",
+   "Otero (precincts)"
+  ],
+  "10": [
+   "Rio Arriba",
+   "San Juan (precincts)",
+   "Santa Fe (precincts)",
+   "Taos (precincts)"
+  ]
+ },
+ "whole": [
+  {
+   "county": "Catron County",
+   "district": 6
+  },
+  {
+   "county": "Colfax County",
+   "district": 8
+  },
+  {
+   "county": "Curry County",
+   "district": 8
+  },
+  {
+   "county": "De Baca County",
+   "district": 8
+  },
+  {
+   "county": "Eddy County",
+   "district": 9
+  },
+  {
+   "county": "Grant County",
+   "district": 6
+  },
+  {
+   "county": "Guadalupe County",
+   "district": 8
+  },
+  {
+   "county": "Harding County",
+   "district": 8
+  },
+  {
+   "county": "Hidalgo County",
+   "district": 6
+  },
+  {
+   "county": "Lea County",
+   "district": 9
+  },
+  {
+   "county": "Lincoln County",
+   "district": 8
+  },
+  {
+   "county": "Los Alamos County",
+   "district": 4
+  },
+  {
+   "county": "Luna County",
+   "district": 6
+  },
+  {
+   "county": "McKinley County",
+   "district": 5
+  },
+  {
+   "county": "Mora County",
+   "district": 8
+  },
+  {
+   "county": "Quay County",
+   "district": 8
+  },
+  {
+   "county": "Rio Arriba County",
+   "district": 10
+  },
+  {
+   "county": "Roosevelt County",
+   "district": 8
+  },
+  {
+   "county": "San Miguel County",
+   "district": 8
+  },
+  {
+   "county": "Sierra County",
+   "district": 6
+  },
+  {
+   "county": "Torrance County",
+   "district": 6
+  },
+  {
+   "county": "Union County",
+   "district": 8
+  },
+  {
+   "county": "Valencia County",
+   "district": 6
+  }
+ ],
+ "split": [
+  {
+   "county": "Bernalillo County",
+   "districts": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "county": "Chaves County",
+   "districts": [
+    8,
+    9
+   ]
+  },
+  {
+   "county": "Cibola County",
+   "districts": [
+    5,
+    6
+   ]
+  },
+  {
+   "county": "Doña Ana County",
+   "districts": [
+    6,
+    7
+   ]
+  },
+  {
+   "county": "Otero County",
+   "districts": [
+    7,
+    9
+   ]
+  },
+  {
+   "county": "San Juan County",
+   "districts": [
+    5,
+    10
+   ]
+  },
+  {
+   "county": "Sandoval County",
+   "districts": [
+    4,
+    5
+   ]
+  },
+  {
+   "county": "Santa Fe County",
+   "districts": [
+    4,
+    10
+   ]
+  },
+  {
+   "county": "Socorro County",
+   "districts": [
+    5,
+    6
+   ]
+  },
+  {
+   "county": "Taos County",
+   "districts": [
+    8,
+    10
+   ]
+  }
+ ]
+}

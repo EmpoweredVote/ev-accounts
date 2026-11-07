@@ -100,7 +100,21 @@ try {
         STATE_FIPS, MTFCC, SOURCE]);
     inserted += r.rowCount;
   }
+  console.log();
+
   console.log(`inserted ${inserted} row(s)`);
+
+  // 🔴🔴 A DRY RUN THAT INSERTS NOTHING CHECKS ROWS THAT WERE ALREADY THERE, AND EVERY GATE
+  //   BELOW THEN PASSES ON DATA THIS FILE DID NOT SUPPLY. The ON CONFLICT DO NOTHING above is
+  //   what makes a real re-run idempotent, and it is also what makes a tampered dry run
+  //   VACUOUS once the correct polygons are committed: CC_0372's CRS control and its
+  //   label-swap control both reported "DRY RUN OK" that way, with "inserted 0 row(s)" one
+  //   line above. A dry run is a rehearsal of the insert, so it has to actually insert.
+  if (DRY_RUN && inserted !== 5) {
+    fail(`a dry run inserted ${inserted} of 5 rows — the rest are already in the table, so `
+      + 'the gates below would be checking those and not this file. Delete them first, or run '
+      + 'the controls before the real load.');
+  }
 
   // 🔴 THE CRS GUARD GOES FIRST AND CARRIES NO ::geography. Areas are measured at the end.
   const rows = await client.query(

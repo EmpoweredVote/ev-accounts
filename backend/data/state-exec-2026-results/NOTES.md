@@ -1430,10 +1430,10 @@ the version committed.**
 
 ## ▶ The recipe for the next imported polygon
 
-Texas proved the route; Alabama and Louisiana repeated it. ⚠ **UPDATED 2026-11-07 — Alabama
-(`CC_0370`) and Louisiana (`CC_0371`) are DONE.** Five bodies are left: **NE PSC (1) · NE State
-Board of Education (3) · NE Regents (1) · NH Executive Council (5) · NM Public Education
-Commission (4)**. For each:
+Texas proved the route; Alabama, Louisiana and New Mexico repeated it. ⚠ **UPDATED 2026-11-07
+— Alabama (`CC_0370`), Louisiana (`CC_0371`) and New Mexico (`CC_0372`) are DONE.** Four bodies
+are left, in two states: **NE PSC (1) · NE State Board of Education (3) · NE Regents (1) ·
+NH Executive Council (5)**, and neither state has a source found yet. For each:
 
 1. **Find the state's redistricting portal.** Texas runs CKAN:
    `data.capitol.texas.gov/api/3/action/package_search?q=...` and `package_show?id=<plan>`.
@@ -1445,6 +1445,13 @@ Commission (4)**. For each:
    has to be bounds-checked.
 2. **Pick the plan whose title carries no end date.** Texas's four SBOE plans each state their own
    validity in the title; three said "2013-2022" or "2003-2012".
+   🔴🔴 **AND CHECK THAT THE BILL BEHIND IT PASSED.** New Mexico filed two PEC redistricting
+   bills in 2021 and BOTH DIED; the one a search finds first, HB 6, reads exactly like the law
+   and its action line says "Action Postponed Indefinitely". The act in force, HB 9, assigns
+   Torrance county to a different district. A gate built from the wrong bill refuses a correct
+   map, and the obvious next move is to loosen the gate. ⚠ Also check whether the BODY still
+   exists: three New Mexico joint resolutions proposed replacing this commission outright and
+   all three died in the House.
 3. 🔴 **Prefer the KML. Read the `.prj` of any shapefile before you read its geometry.** Texas's
    is Lambert Conformal Conic in metres, and loaded as 4326 it is valid, correctly shaped and
    matches no address on Earth.
@@ -1478,10 +1485,24 @@ Commission (4)**. For each:
      comes out at a clean 100%. Same gate, same thresholds, different data.
    🔴 And the split arm needs a tamper of its OWN. The whole-county arm runs first, and no
      geometry tamper breaks a split while leaving the whole ones right.
+   🔴 **MEASURE THE SHARE DISTRIBUTION BEFORE CHOOSING A FLOOR.** 0.5% worked for Alabama and
+     Louisiana and REFUSED A CORRECT NEW MEXICO MAP: Otero county's second district is a real
+     0.4962% of it. The floor belongs ten times below the smallest TRUE share in that state.
+   🔴 **COUNT THE DISTRICTS YOU CANNOT ANCHOR, AND SAY SO.** New Mexico has four: three lie
+     entirely inside one split county and a fourth is made only of parts of split counties. A
+     permutation of the three passes every gate there is. `CC_0372` plants it as a control and
+     records that it passes, rather than leaving it to be found.
 7. **Migration with `emit369.mjs`, `emit370.mjs` or `emit371.mjs` as the model** — 371 is the
    one to copy for a body that is NOT a board of education, since it files under `X-ST-BOARD`. Create the whole body, seat every member, assert
    the 238 baseline, and finish with the point-to-member chain.
 8. Run `check-address-reachability.mjs` and probe the live endpoint for a real address.
+
+🔴🔴 **RUN THE LOADER'S CONTROLS BEFORE THE REAL LOAD, OR DELETE THE ROWS FIRST.** The loaders
+insert `ON CONFLICT (geo_id, mtfcc) DO NOTHING`, so once the correct polygons are committed a
+tampered dry run inserts NOTHING and every gate checks the rows that were already there. A Web
+Mercator file and a map with two districts swapped both reported `DRY RUN OK` that way in
+`CC_0372`, with one line of `inserted 0 row(s)` as the only sign. All three loaders now refuse a
+dry run that does not insert its full set.
 
 ⚠ **Kansas's State Board of Education (5) and Massachusetts's Governor's Council (8) are NOT in
 this list.** Their polygons are already in production — they are unions of state senate districts
@@ -1897,3 +1918,219 @@ NH Executive Council (5), NM Public Education Commission (4).
 all.** New Mexico's Public Education Commission is the next single-source body; New Hampshire's
 executive councillor districts are defined as lists of towns and wards, and we hold `G4040`
 county subdivisions for only 11 states, New Hampshire not among them.
+
+# `CC_0372` — New Mexico's Public Education Commission, and the bill that was not the law
+
+Applied 2026-11-07. **1 chamber · 10 districts · 10 geofence polygons · 10 offices · 10
+office_terms · 4 races · 12 politicians · 5 candidacies (4 won).** State-level 2026 results go
+from **199 races / 204 winners** to **203 / 208**, still across 40 states.
+🟢 **Occupancy baseline unchanged: 293 / 55 / 238.** Address reachability: nothing regressed.
+
+## 🔴🔴 THE FIRST BILL I READ WAS NOT THE LAW, AND ITS MAP WAS DIFFERENT
+
+A search for New Mexico's PEC redistricting finds **HB 6** of the 2021 Second Special Session —
+"RELATING TO REDISTRICTING OF THE PUBLIC EDUCATION COMMISSION", the 2021 Educational
+Redistricting Act, ten districts defined precinct by precinct. It reads exactly like the answer,
+and its county composition was fully parsed before anything checked its status line:
+
+```
+ActionText: Action Postponed Indefinitely
+```
+
+**HB 6 died. So did HB 7, the other PEC bill.** The act in force is **HB 9, Laws 2021 (2nd S.S.),
+Chapter 3** — `PASSED/H (61-0) … PASSED/S (25-13) … SGND BY GOV (Dec. 17) Ch. 3`. Its lists are
+not HB 6's: HB 6 would have put **Torrance county in District 8**, and HB 9 puts the whole of it
+in **District 6**. Had the gate been built from HB 6, it would have refused a correct map and the
+obvious next move would have been to loosen the gate.
+
+▶ **A BILL PAGE IS NOT EVIDENCE THAT A BILL BECAME LAW. READ THE ACTION LINE.** The whole 2021
+2nd-session slate is instructive: of the thirteen bills checked, only SB 1 (Congress, Ch. 2),
+HB 9 (PEC, Ch. 3), HB 8 (House, Ch. 6) and SB 2 (Senate, Ch. 7) were signed.
+
+⚠ **AND A BODY CAN BE ABOLISHED ON PAPER THREE TIMES AND STILL EXIST.** SJR 1 (2023), SJR 9
+(2024) and SJR 3 (2025) each proposed replacing this commission with an elected state school
+board — one of them with members "elected at the 2026 general election for staggered terms
+beginning January 1, 2027", which is exactly the kind of sentence that would change what this
+file records. All three **passed the Senate and died in the House**, and no such measure reached
+the 2026 ballot. Checked one by one, because a half-read proposal is indistinguishable from a
+law.
+
+## 🟢 The statute says whole-or-partial outright, and a second source agrees
+
+HB 9 writes each district as semicolon-separated clauses of two shapes:
+
+```
+Catron county;                        → the WHOLE county is in this district
+Cibola county precincts 1, 7 and 15;  → only those precincts are
+```
+
+So the act classifies its own counties — **23 whole, 10 split** — and does not have to be
+inferred. `parse-nm-pec-statute.mjs` reads that out of the enacted PDF and then **cross-checks it
+against the Legislative Council Service's 2025 handbook page**, which lists each district's
+counties independently. They agree on all ten districts.
+
+⚠ **A PREDICATE READS THE SHAPE OF A VALUE, AND TWICE IT READ THE WRONG SHAPE.** The first
+version matched only `"<X> county precincts"` and found **10 counties instead of 33**, because
+every whole county is written without the word "precincts". The second matched only the plural
+and read `"Bernalillo county precinct 31"` — District 5's single-precinct clause — as the whole
+of Bernalillo. Both were caught by the count, not by reading: 10 ≠ 33, and "named whole in one
+district and by precinct in another".
+
+Measured against production after the load:
+
+| check | result |
+| --- | --- |
+| union against our TIGER New Mexico outline (`G4000` '35') | **99.986% covered** |
+| worst pairwise overlap between two districts | **0.000000%** |
+| the ten districts' total area | **121,595 sq mi**, which is New Mexico's |
+| the 23 counties HB 9 assigns WHOLE | **all ≥ 99.9992%** inside their own district |
+| the 10 it SPLITS | shared by exactly the districts named |
+| New Mexico ZCTAs (`G6350`) resolving to exactly one district | **372 of 372** |
+
+## 🔴 The split floor is 0.05% here, not 0.5%, and that is a measurement not a preference
+
+Alabama and Louisiana both used a 0.5% floor for "this county is really in that district". At
+0.5% the New Mexico gate refused a correct map:
+
+```
+a county HB 9 splits is shared with the wrong districts: Otero County -> 9, HB 9 says 7,9
+```
+
+**Otero county's District 7 slice is a real 0.4962% of it** — the Chaparral end, next to Doña
+Ana. Every *false* share in New Mexico is 0.000000% to six places, because this plan shares
+TIGER's county line work exactly, so the floor could go an order of magnitude lower with room on
+both sides. ▶ **A threshold carried over from another state is a guess. Measure the distribution,
+then choose.**
+
+## 🔴🔴 ONLY 6 OF THE 10 DISTRICTS CAN BE ANCHORED, AND THE HOLE IS RECORDED RATHER THAN HIDDEN
+
+An anchor has to be a county the act assigns WHOLE to one district. Four districts have none:
+**1, 2 and 3 lie entirely inside Bernalillo**, which HB 9 splits six ways, and **7 is made only
+of parts of Doña Ana and Otero**, both split.
+
+District 7 is still pinned, by the split arm: move its geometry anywhere else and Bernalillo or
+Doña Ana stops being shared by exactly the districts the act names. **Districts 1, 2 and 3 are
+not.** A permutation of those three leaves Bernalillo shared by exactly `{1,2,3,4,5,6}`, leaves
+the coverage, overlap and ZCTA tests untouched, and passes everything this file can ask.
+
+So the permutation is planted as **loader control D** and observed to pass. ▶ **A control that
+passes and is written down is a measured limit; a control nobody ran is a surprise waiting for
+the next pass.** Closing it needs evidence at precinct level, and production holds no New Mexico
+precinct geometry.
+
+## 🔴🔴 THE LOADER'S CONTROLS WENT VACUOUS THE MOMENT THE REAL POLYGONS WERE COMMITTED
+
+The loaders end their INSERT with `ON CONFLICT (geo_id, mtfcc) DO NOTHING`, which is what makes a
+real re-run idempotent. The first run of this body's controls happened **after** the correct
+polygons had been loaded for real — and the CRS control and the label-swap control both reported:
+
+```
+inserted 0 row(s)
+…
+DRY RUN OK — rolled back
+```
+
+Nothing was inserted, so every gate was checking the **already-correct production rows**, and a
+Web Mercator file and a map with two districts swapped both sailed through. The only sign was one
+line of output, `inserted 0 row(s)`, above a wall of green.
+
+All three loaders now refuse this outright:
+
+```js
+if (DRY_RUN && inserted !== 10) {
+  fail(`a dry run inserted ${inserted} of 10 rows — the rest are already in the table, so the
+        gates below would be checking those and not this file.`);
+}
+```
+
+▶ **A DRY RUN IS A REHEARSAL OF THE INSERT, SO IT HAS TO ACTUALLY INSERT.** `CC_0370` and
+`CC_0371` ran their controls before the real load and were never affected; the guard is added to
+them anyway, because the ordering was luck and not design. With the rows deleted and the controls
+re-run, every one of them fired.
+
+## Roster, and one seat the handbook has wrong
+
+| district | holder | 2026 |
+| --- | --- | --- |
+| 1 | Sam S. Obenshain (D) | not on the ballot — next up 2028 |
+| 2 | Timothy Beck (R) | 🏆 **Ken Pascoe** (R) won the seat |
+| 3 | Jacob Trujillo (D) | 🏆 re-elected, over Dennis Dinge (Forward Party) |
+| 4 | Rebekka Burt (D) | 2028 |
+| 5 | Sharon E. Clahchischilliage (R) | 🏆 re-elected |
+| 6 | Stewart Ingham (R) | 🏆 re-elected |
+| 7 | Patricia Gipson (D) | ⏳ on the ballot, **uncalled** |
+| 8 | Michael Taylor (R) | 2028 |
+| 9 | K.T. Manis (R) | 2028 |
+| 10 | Steven Carrillo (D) | 2028 |
+
+Five districts were on the ballot — **2, 3, 5, 6 and 7, exactly the five HB 9 Section 3C names** —
+and District 7 is the one with no winner called: Frederick Parker (D) and John Foreman (R) ran and
+Ballotpedia reports no result. Neither is seeded; it belongs to the uncalled pass.
+
+▶ **2027-01-01 — SEAT KEN PASCOE IN DISTRICT 2.** HB 9 Section 3B: members are elected "for terms
+commencing on January 1 next succeeding their election".
+
+⚠ **A ROSTER CAN BE RIGHT ABOUT THE BODY AND OUT OF DATE ABOUT A SEAT.** The 2025 Legislative
+Council handbook agrees with Ballotpedia on nine of the ten members and on every district's county
+list, and gives District 3 as **Alan Lee Brauer Jr.** Ballotpedia's 2026 District 3 votebox calls
+Jacob Trujillo the incumbent, so the handbook is simply older there — which is also why the
+handbook is used for the composition and not for the roster.
+
+All 12 people are new; the sweep over 91,758 politicians on full name and (first, last) returned
+nothing, and its positive control found Michelle Lujan Grisham. All 12 Ballotpedia pages were
+fetched and asserted to name the person, mention the commission, and not be disambiguation pages —
+a check that has now caught two real cases in this series (`/Allen_Long`, `/Mike_Francis`).
+
+## Controls
+
+**On the loader** (`controls372-loader.mjs`), run with the table empty:
+
+| | fault planted | observed |
+| --- | --- | --- |
+| A | the real data reprojected to NAD83 UTM 13N metres, relabelled 4326 | `pec:1 bbox 321425,3872860 … is outside New Mexico — WRONG CRS` |
+| B | District 6 dropped from the file | `expected 10 districts … found 9` |
+| C | the geometry of Districts 8 and 9 swapped | `HB 9 puts these counties wholly in one district and the map does not: Lea County is only 0.0000% in D9; …` |
+| D | **Districts 1, 2 and 3 rotated** | **`DRY RUN OK` — passes, by design; see the anchoring hole above** |
+| E | the county table claims Otero for districts 7 and **8** | `a county HB 9 splits is shared with the wrong districts: Otero County -> 7,9, HB 9 says 7,8` |
+
+**On the migration** (`controls372.mjs`):
+
+| | fault planted | observed |
+| --- | --- | --- |
+| A | the seating **and** the every-office-is-seated gate removed | `the baseline moved to 248 — it was 238 and must never be raised` |
+| B | the districts filed under layer `X0099` | `only 0 of the 10 districts meet a geofence row on (geo_id, mtfcc)` |
+| C | Districts 5 and 6's members swapped in the seat table | `the anchor table and the seat table name different members: D5: anchor says Sharon E. Clahchischilliage, seat says Stewart Ingham; …` |
+| D | the office-to-district join reversed (`md.d = 11 - s.d`) | `an anchor county does not reach its commissioner: Los Alamos County -> Patricia Gipson (expected Rebekka Burt); …` |
+| E | the plan table claims Luna County for District 9 | `HB 9 puts these counties wholly in one district and the map does not: Luna County is only 0.0000% in D9` |
+| F | a middle initial dropped from a compound given name | `a seeded name does not match its own split: Sharon E. Clahchischilliage splits to (Sharon, Clahchischilliage)` |
+
+⚠ E is deliberately **not** an anchor county — Catron is District 6's anchor, Luna is merely whole
+in it — so the anchor pre-gate does not shadow the gate under test. That shadowing is the mistake
+`CC_0370`'s control E made on its first run.
+⚠ The split defect makes its **ninth** appearance.
+
+## Measured on the live endpoint
+
+`https://ev-accounts-api.onrender.com/api/essentials/address-search`, against live production,
+with no deploy — `X0003` is already in the deployed read path because the Public Education
+Commission *is* a state board of education:
+
+| address | returned |
+| --- | --- |
+| 491 Old Santa Fe Trail, Santa Fe, NM | **Public Education Commissioner, District 10 — Steven Carrillo**, `seat_status: held` |
+| 400 N Main St, Roswell, NM | **Public Education Commissioner, District 8 — Michael Taylor**, `seat_status: held` |
+
+In the database the chain resolves for every point tried: Los Alamos → D4 → Rebekka Burt;
+Farmington → D5 → Sharon E. Clahchischilliage; Las Cruces → D7 → Patricia Gipson; Roswell → D8 →
+Michael Taylor; Santa Fe → D10 → Steven Carrillo.
+
+## Tier 3 after New Mexico — 19 seats
+
+**Blocked only on a composition** (the polygons are already in production, as unions of state
+senate districts we hold): KS State Board of Education (5) and MA Governor's Council (8).
+**Needs an imported polygon** (6): NE PSC (1), NE State Board of Education (3), NE Regents (1),
+NH Executive Council (5).
+⚠ **Nebraska is three separate bodies** and we hold no Nebraska legislative-district geometry at
+all. ⚠ **New Hampshire's executive councillor districts are defined as lists of towns and wards**,
+which would be a union of county subdivisions — and we hold `G4040` for only 11 states, New
+Hampshire not among them. Both need a source found before either can start.
