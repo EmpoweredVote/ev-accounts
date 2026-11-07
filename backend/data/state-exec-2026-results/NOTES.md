@@ -2130,7 +2130,28 @@ Michael Taylor; Santa Fe → D10 → Steven Carrillo.
 senate districts we hold): KS State Board of Education (5) and MA Governor's Council (8).
 **Needs an imported polygon** (6): NE PSC (1), NE State Board of Education (3), NE Regents (1),
 NH Executive Council (5).
-⚠ **Nebraska is three separate bodies** and we hold no Nebraska legislative-district geometry at
-all. ⚠ **New Hampshire's executive councillor districts are defined as lists of towns and wards**,
-which would be a union of county subdivisions — and we hold `G4040` for only 11 states, New
-Hampshire not among them. Both need a source found before either can start.
+
+🟢 **BOTH SOURCES ARE FOUND — neither state needs digitising, and New Hampshire does not need
+county subdivisions after all.** Searched ArcGIS Online 2026-11-07:
+
+- **Nebraska — one service covers all three bodies.** `gis.ne.gov`, the state's own GIS:
+  `https://gis.ne.gov/Enterprise/rest/services/PoliticalBoundaries_2021/FeatureServer`
+  — layer **3** "Public Service Commision 2021" (their spelling) and layer **6** "Board of
+  Education 2021", each described as *"created in 2021 by the Legislative Research Office with
+  input from the Nebraska Legislature Redistricting Committee"*. The Regents layer is in the same
+  service; enumerate it rather than guessing the index.
+  ▶ Three bodies, one fetch, one statute to read. Nebraska's districts are defined in LB 1 and
+  LB 3 of the 2021 special session — **check which passed before building a gate from either**
+  (the `CC_0372` lesson), and expect the composition to be stated by county, which Nebraska has
+  93 of and production holds.
+- **New Hampshire — NHGRANIT, the statewide GIS clearinghouse at UNH:**
+  `https://nhgeodata.unh.edu/hosting/rest/services/Hosted/APB_ElectoralDistricts/FeatureServer/7`
+  — "New Hampshire Executive Council District Boundaries - 2022".
+  🔴 **The same service also publishes a 2012 version. Take the 2022 one**, and confirm no later
+  plan exists: this is the "pick the plan still open" step, and here the two vintages sit side by
+  side with nothing but the year in the title to tell them apart.
+  ⚠ The councillor districts are defined by statute as lists of **towns and wards**, so the
+  statute gate wants county subdivisions (`G4040`) — which production holds for only 11 states,
+  New Hampshire not among them. Expect to anchor on **whole counties** instead: New Hampshire has
+  10 and production holds them, and the five districts are large enough that several counties
+  should fall wholly inside one.
