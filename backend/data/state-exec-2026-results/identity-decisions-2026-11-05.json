@@ -1,0 +1,34 @@
+[
+ {
+  "st": "AL", "office": "Governor", "apId": "3610", "politicianId": null,
+  "why": "the existing \"Doug Jones\" 3216400f-3f92-4d78-a52d-c1a9abe18b5e came from Colorado's certified candidate list (CC_0276) and is a candidate for CO State Representative ON THIS SAME DAY, 2026-11-03 - a different man with the same name, not Alabama's former US Senator"
+ },
+ {
+  "st": "DE", "office": "Attorney General", "apId": "179371", "politicianId": null,
+  "why": "the existing \"David C. Graham\" 25ab585b-7769-4264-b8f2-9543cad7f16f came from the Kansas Secretary of State's 2026 candidate list (CA_0233) and is a candidate for KS Senator on this same day - a different man"
+ },
+ {
+  "st": "FL", "office": "Attorney General", "apId": "107326", "politicianId": null,
+  "why": "the existing \"Jose J. Rodriguez\" 2ab06b40-d436-43fe-bda7-dfa62afc6820 holds a CALIFORNIA school-board seat (Trustee Area 2, from 2024-12-16) - not Florida's former state senator Jose Javier Rodriguez"
+ },
+ {
+  "st": "GA", "office": "Attorney General", "apId": "112352",
+  "politicianId": "1d40e77c-40f0-4475-bf2f-ff0a544a8eaf",
+  "why": "\"Tanya F. Miller\" holds a GEORGIA state-house seat - the same state and the office she won; the middle initial is the only difference"
+ },
+ {
+  "st": "MD", "office": "Attorney General", "apId": "173033",
+  "politicianId": "579020c7-482d-440e-b2f7-f7191da9b0e5",
+  "why": "\"James B. Rutledge III\" is sourced from electjim.com, read 2026-11-05, whose own pages read \"JIM RUTLEDGE FOR ATTORNEY GENERAL\" and \"PROTECTING MARYLAND'S CONSTITUTION\" - the same campaign"
+ },
+ {
+  "st": "ME", "office": "Governor", "apId": "177853",
+  "politicianId": "e73bd689-240f-492a-bf01-f7be307367f8",
+  "why": "of the THREE Bennett rows, this one holds the MAINE state senate seat; \"Richard Bennett\" f3242669 is a Mississippi state representative, and \"Rick Bennett\" f64c1364 is an ARCHIVED duplicate of this same Maine man (sourced from his Wikipedia article). Ballotpedia's fuller spelling is what surfaced all three - AP's \"Rick Bennett\" matched only one"
+ },
+ {
+  "st": "SC", "office": "Governor", "apId": "145291",
+  "politicianId": "5a642c1c-8754-49c5-ac1c-eff925a6cc43",
+  "why": "\"Jermaine L. Johnson, Sr.\" holds a SOUTH CAROLINA state-house seat - the same state as the governorship he contested; the suffix and middle initial are the only difference"
+ }
+]

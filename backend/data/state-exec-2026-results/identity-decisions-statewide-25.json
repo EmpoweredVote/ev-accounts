@@ -1,0 +1,12 @@
+[
+ {"st":"GA","name":"John King","politicianId":null,
+  "why":"the existing \"John King\" 30f77168 holds a CALIFORNIA local council seat and is sourced 'scraped' - not Georgia's Insurance and Safety Fire Commissioner"},
+ {"st":"NE","name":"Mike Foley","politicianId":null,
+  "why":"the existing \"Mike Foley\" 38277535 is a candidate for MINNESOTA's 'U.S. Representative' - not Nebraska's Auditor of Public Accounts"},
+ {"st":"IA","name":"Chris Jones","politicianId":null,
+  "why":"the existing \"Chris Jones\" d9ceca31 is a candidate for ARKANSAS's 'U.S. Representative' - not Iowa's Secretary of Agriculture candidate"},
+ {"st":"AR","name":"Cole Jester","politicianId":"0ee2a01a-3cf1-428e-b8ed-943d2e3c29f5",
+  "why":"holds ARKANSAS Secretary of State - the same state, a sitting statewide official contesting another statewide office"},
+ {"st":"NM","name":"Stephanie Garcia Richard","politicianId":"1b3be3e1-7423-4ba0-bddc-16d1bc59b232",
+  "why":"the row CC_0360 seeded for her NM Lieutenant Governor candidacy; she currently holds NM Commissioner of Public Lands, which nmstatelands.org names her in"}
+]

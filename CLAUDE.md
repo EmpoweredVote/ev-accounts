@@ -831,6 +831,27 @@ each was first learned.
     across all 51 jurisdictions: 48 give each statewide executive its own district; CA (17 offices),
     OR (5) and IN (10) share one. Do not "normalise" one of those into per-office districts — check
     whether its key is wrong before deciding its shape is.
+- 🔴 **`districts.district_type` IS A ROUTING KEY TOO, NOT A TAXONOMY LABEL — PICK IT BY WHAT READS
+  IT.** `buildStatewideQuery` admits a seat **by type**, and the list is closed:
+  `NATIONAL_UPPER`, `NATIONAL_EXEC`, `STATE_EXEC`, `NATIONAL_JUDICIAL`, `JUDICIAL` (plus DC's two
+  at-large `geo_id`s). **`STATE_BOARD` and `STATE_BOARD_EDUCATION` are not in it.** Those reach a
+  voter only through the geofence join, keyed on a particular `mtfcc` — `X0003` (Utah SBOE),
+  `X-CA-SBOE` (California BOE), `G5220` (DC) — because every board filed under them is
+  **districted**. ▶ **A board elected STATEWIDE AT LARGE belongs on `STATE_EXEC` with the state
+  FIPS**, which is what Arizona's Corporation Commission already is.
+  ⚠ `CC_0364` nearly filed Michigan's elected State Board of Education under
+  `STATE_BOARD_EDUCATION` because that is the name that fits. It has no sub-state polygon, so all
+  eight members would have been **unreachable from every Michigan address and nothing would have
+  errored** — the same failure as an empty `geo_id`, reached from the other direction.
+- 🔴 **A MULTI-MEMBER STATEWIDE BODY IS ONE CHAMBER, ONE SHARED DISTRICT, N UNNUMBERED OFFICES, AND
+  ONE RACE CARRYING `seats = N`.** Arizona's Corporation Commission is the pattern (5 offices all
+  titled `Commissioner`); `CC_0364` built seven more on it — HI's Office of Hawaiian Affairs (9),
+  Michigan's State Board of Education (8) and MSU's trustees (8), and the ND, OK, SD and TX
+  commissions (3 each). **Create the whole body, not the seats that were up**: `chambers.official_count`
+  states the size, so a chamber short of it reads as a vacancy that is not there — and every office
+  you create must be seated, or the 238 drift baseline rises. ▶ **Attach the race to the office of
+  the member who is actually leaving**, sourced from the body's own term table; that office is what
+  a seating pass replaces.
 - The `essentials` frontend never queries `essentials.*` tables directly — it goes through this API.
 - **Not every seat is residency-based or full-voting.** Maine seats three non-voting *tribal*
   representatives; the territories and DC send non-voting delegates.
