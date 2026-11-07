@@ -596,8 +596,16 @@ jobs:
       # What it is really watching for is a town that incorporated after our snapshot: a map can be
       # faithful to its vintage and still be missing a place where 100,000 people live. Nothing
       # else we run would notice, because the polygon is not wrong, it is absent.
+      #
+      # ⏱ SCHEDULE AND MANUAL RUNS ONLY, NOT EVERY PUSH (2026-11-07). It pages TIGERweb 1,000
+      # shapes at a time and took 276 s of this job's 6 min 18 s on the 2026-11-07 19:26 master
+      # push — about 4.6 billed minutes per push, for a defect that arrives ON THE CALENDAR (a
+      # town incorporates, a new vintage publishes), not with a commit. That is exactly the class
+      # the header says belongs on the schedule. The steps above stay on push: they are the
+      # feedback loop the header's evidence is about. A boundary load that drops polygons still
+      # trips reachability on push; this check then names the missing GEOIDs within a day.
       - name: Check Census TIGER layers against the vintage they claim
-        if: ${{ !cancelled() }}
+        if: ${{ !cancelled() && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') }}
         run: npm run check:tiger-fidelity
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
