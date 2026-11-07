@@ -969,3 +969,16 @@ her position on abortion, even if she can't change the laws on that."* Memo:
 - ⚠ **Legacy out-of-scope chairs exist and are already visible** in that breakdown (Season 1 research at
   levels that were not asked, e.g. local `taxes`, `deportation`, `same-sex-marriage`). They are owed a
   re-audit under the codebook; adding a role row does not change whether they show.
+
+## Render settings live in ev-infra
+
+This repo's Render services (`ev-accounts-api`, `ev-accounts` (admin), `empowered-vote-app` and the seven `ev-jobs-*` cron jobs) are managed by the Render Blueprint in
+[`EmpoweredVote/ev-infra`](https://github.com/EmpoweredVote/ev-infra) (`render.yaml`).
+
+- Build and start commands, rewrites, headers, custom domains, plans, cron
+  schedules and build filters change **only through a PR to ev-infra**. Render
+  syncs its `main` branch automatically.
+- A setting changed in the Render dashboard is **undone on the next sync**.
+- Env var **values** are the exception: set them in the Render dashboard. Add a
+  new variable's name to ev-infra (with `sync: false`) so the record stays complete.
+- Do not add a `render.yaml` to this repo. Render does not read it.
