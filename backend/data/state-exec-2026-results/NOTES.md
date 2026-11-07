@@ -1430,9 +1430,10 @@ the version committed.**
 
 ## ▶ The recipe for the next imported polygon
 
-Texas proved the route and Alabama repeated it. ⚠ **UPDATED 2026-11-07 — Alabama is DONE**
-(`CC_0370`). Six bodies are left: **LA PSC (2) · NE PSC (1) · NE State Board of Education (3) ·
-NE Regents (1) · NH Executive Council (5) · NM Public Education Commission (4)**. For each:
+Texas proved the route; Alabama and Louisiana repeated it. ⚠ **UPDATED 2026-11-07 — Alabama
+(`CC_0370`) and Louisiana (`CC_0371`) are DONE.** Five bodies are left: **NE PSC (1) · NE State
+Board of Education (3) · NE Regents (1) · NH Executive Council (5) · NM Public Education
+Commission (4)**. For each:
 
 1. **Find the state's redistricting portal.** Texas runs CKAN:
    `data.capitol.texas.gov/api/3/action/package_search?q=...` and `package_show?id=<plan>`.
@@ -1463,11 +1464,22 @@ NE Regents (1) · NH Executive Council (5) · NM Public Education Commission (4)
    ⚠ **Not every state HAS `G4110` rows in production — Alabama has none.** Fall back to
    ZCTAs (`G6350`) for point resolution.
    🟢 **Then anchor it on evidence from OUTSIDE the map, because nothing above can see two
-   districts' labels swapped.** In order of preference: the **statute**, when the state
-   defines the districts as a list of counties (`CC_0370` — 62 of Alabama's 67, and it
-   covers the whole state); otherwise board members' **home towns**, and only the ones that
-   lie **wholly** inside one district (`CC_0369`).
-7. **Migration with `emit369.mjs` or `emit370.mjs` as the model.** Create the whole body, seat every member, assert
+   districts' labels swapped.** In order of preference:
+   (a) the plan's own **county or parish composition** — from the statute (`CC_0370`, 62 of
+       Alabama's 67 counties) or from the Legislature's **block equivalency file**, which
+       most states publish beside the shapefile and which gives it at block level
+       (`CC_0371`). 🟢 **Better still, get it TWICE**: Louisiana's block file and the
+       commission's own district pages are independent of each other and of the map, and
+       `reconcile-la-psc-parishes.mjs` refuses to emit a table unless they agree;
+   (b) otherwise members' **home towns**, and only the ones that lie **wholly** inside one
+       district (`CC_0369`).
+   ⚠ Use an AREA test, not `ST_Covers`: Alabama's plan disagrees with TIGER by slivers and
+     strict containment failed on 55 of 62 counties. Louisiana's is drawn on census VTDs and
+     comes out at a clean 100%. Same gate, same thresholds, different data.
+   🔴 And the split arm needs a tamper of its OWN. The whole-county arm runs first, and no
+     geometry tamper breaks a split while leaving the whole ones right.
+7. **Migration with `emit369.mjs`, `emit370.mjs` or `emit371.mjs` as the model** — 371 is the
+   one to copy for a body that is NOT a board of education, since it files under `X-ST-BOARD`. Create the whole body, seat every member, assert
    the 238 baseline, and finish with the point-to-member chain.
 8. Run `check-address-reachability.mjs` and probe the live endpoint for a real address.
 
@@ -1685,3 +1697,203 @@ all** — leave it for last.
 polygon"): when the state publishes its districts as statute
 text, that text is a better anchor than anything on the map's own side** — it is independent of
 the GIS, it was written first, and it covers the whole state instead of a handful of points.
+
+# `CC_0371` — Louisiana's Public Service Commission, and a composition stated twice
+
+Applied 2026-11-07. **1 chamber · 5 districts · 5 geofence polygons · 5 offices · 5 office_terms ·
+2 races · 10 politicians · 5 candidacies (2 won).** State-level 2026 results go from **197 races /
+202 winners** to **199 / 204**, still across 40 states.
+🟢 **Occupancy baseline unchanged: 293 / 55 / 238.** Address reachability: nothing regressed
+(BAD_GEOMETRY 4, DEAD_GEOGRAPHY 17, UNREACHABLE 7, all at baseline).
+
+## 🟢🟢 THE COMPOSITION IS STATED TWICE, BY TWO OFFICIAL SOURCES THAT DO NOT DERIVE FROM EACH OTHER
+
+Alabama anchored its map on one statute. Louisiana has **two** independent official statements of
+the same thing, and `reconcile-la-psc-parishes.mjs` refuses to emit a parish table unless they
+agree on all 64:
+
+1. **The Legislature's block equivalency file** for Act 2 (HB2) of the 2022 First Extraordinary
+   Session — **142,874 rows** of `<2020 census block GEOID> <district>`. A parish is WHOLE in a
+   district when every one of its blocks maps to that district. This is the plan as enacted, at
+   the finest grain there is.
+2. **The commission's own five district pages**, `lpsc.louisiana.gov/District1..5`, each of which
+   lists its parishes under "Commission District Geographical Area" and marks the divided ones
+   with an asterisk, citing Act 2 by name.
+
+They agree exactly: **54 parishes whole, 10 split** — Ascension 2/3, Assumption 2/3, East Baton
+Rouge 2/3, Iberville 2/3, Jefferson 1/3, Livingston 1/2, Orleans 1/3, St. Charles 1/3, St. Martin
+2/4, West Baton Rouge 2/3. The 74 parish mentions across the five pages minus the 10 repeats is
+exactly 64, which is Louisiana's parish count, and no parish appears in three districts.
+
+⚠ **Two names needed an alias and no more.** The commission writes "St. John Baptist" and
+"DeSoto"; TIGER holds "St. John the Baptist Parish" and "De Soto Parish". Both are declared; a
+third difference stops the script rather than being absorbed quietly.
+
+Measured against production after the load:
+
+| check | result |
+| --- | --- |
+| union against our TIGER Louisiana outline (`G4000` '22') | **99.743% covered** |
+| worst pairwise overlap between two districts | **0.000000%** |
+| the five districts' total area | **52,377 sq mi**, which is Louisiana's |
+| the 54 parishes Act 2 assigns WHOLE | **all 100.0000%** inside their own district |
+| the largest sliver leaking into any OTHER district | **none at all** |
+| the 10 parishes it SPLITS | shared by exactly the districts named; **smallest true share 15.14%** (St. Martin in District 4) |
+| Louisiana ZCTAs (`G6350`) resolving to exactly one district | **539 of 539** |
+
+🟢 **Louisiana's parishes come out at a clean 100%, where Alabama's counties were 99.9966%.** The
+difference is real and expected: Act 2 was drawn on census VTDs, which nest inside parishes, so
+the plan's line work *is* TIGER's. Alabama's plan was digitised separately and disagrees with
+TIGER by slivers. The same gate is used for both, with the same thresholds; it is the data that
+differs, not the test.
+
+## 🟢 THE SHAPEFILE HERE IS NOT A CRS TRAP, AND THAT WAS READ RATHER THAN ASSUMED
+
+The Legislature publishes the plan as both a shapefile and a KML, exactly as Texas does.
+`HB2_PSC_221ES.prj` reads:
+
+```
+GEOGCS["GCS_North_American_1983",DATUM["D_North_American_1983",
+  SPHEROID["GRS_1980",6378137,298.257222101]],PRIMEM["Greenwich",0],
+  UNIT["Degree",0.017453292519943295]]
+```
+
+Geographic degrees on NAD83 — **not** a projected plane. Texas's `PLANE2106.prj` in precisely this
+role was Lambert Conformal Conic in **metres**, which loaded as 4326 is the Holladay failure.
+▶ **Same kind of file, same position in the same kind of dataset, opposite answer. Read the `.prj`
+every time; the previous state's answer is not evidence about this one.** The KML is used anyway,
+because KML is WGS84 lon/lat by specification and leaves nothing to decide, and the parser
+bounds-checks all 80,808 coordinate pairs against Louisiana.
+
+⚠ The Legislature's own directory for this plan is spelled **"Commssion"**. That is their typo and
+the URL only works with it.
+
+## Which map, and how that was settled
+
+Act 2 (HB2) of the 2022 First Extraordinary Session. ⚠ **Louisiana's 2026 Regular Session DID
+redistrict** — SB121 by Sen. Jay Morris became Act 2 of 2026 — **but that is the congressional
+map.** All nine redistricting bills filed that session were checked one by one on `legis.la.gov`
+on 2026-11-07: SB116, SB117, SB121, SB130 and HB642 congressional; SB136 Senate; HB640, HB698 and
+HB700 House. None touched the PSC. ▶ **"The state redistricted this year" is not an answer about
+*this* map — read the bill subjects.**
+
+## 🔴 LOUISIANA'S NOVEMBER TRAP IS REAL AND DOES NOT APPLY HERE, WHICH IS WHY IT IS WRITTEN DOWN
+
+Louisiana's November contest has historically been a **majority-vote "jungle" primary**, so a
+result under 50% means a runoff and not a loss. Ballotpedia's own page records the change:
+*"Beginning in the 2026 elections, Louisiana elections for U.S. Congress, the Louisiana Supreme
+Court, the Public Service Commission, and the Board of Elementary and Secondary Education use a
+closed partisan primary and primary runoff system."* So November 2026 is a true general election
+for this body.
+
+That is a claim about the law, so the emitter does not rely on it: it **asserts the winner's share
+is over 50%** in every recorded race, and stops otherwise. Hilferty took 58.9% and Atkins 59.2%,
+so both races are decided under either system. The chamber's `election_rules` carries the change
+and a gate asserts the text is there.
+
+## 🔴 THE LAYER IS `X-ST-BOARD`, AND THESE SEATS ARE NOT LIVE YET — MEASURED, NOT ASSUMED
+
+A Public Service Commission is not a board of education, so these districts are `STATE_BOARD` on
+layer `X-ST-BOARD` — the pair `CC_0366` added to `districtQueries.ts` and `geoIdGuard.ts` for the
+University of Colorado Regents. **That read-path line is on this branch and not yet deployed.**
+
+Measured on `ev-accounts-api.onrender.com` after the migration: a Baton Rouge address and a
+Shreveport address each return 43 rows and **no** Public Service Commissioner.
+🟢 **And the positive control says that is the deploy and not this file.** The same live endpoint,
+asked for `200 E Colfax Ave, Denver, CO`, returns *State Board of Education Member, District 1* and
+*University of Colorado Regent, At-Large* but still **not** the districted CU Regent — the exact
+state `CC_0366` recorded. One `X0003` seat shows and one `X-ST-BOARD` seat does not, from the same
+address, in the same response. Both appear on the next backend deploy.
+
+In the database the chain resolves now: New Orleans and Baton Rouge → District 3 → Davante Lewis;
+Lafayette → District 2 → Jean-Paul Coussan; Lake Charles → District 4 → Mike Francis;
+Shreveport → District 5 → Foster Campbell.
+
+## 🔴 Neither winner is the holder, and the handover date comes from the commission itself
+
+| district | holder today | 2026 |
+| --- | --- | --- |
+| 1 | Eric Skrmetta (in office since 2009-01-01) | 🏆 **Stephanie Hilferty** (R) won, over Connie Norris (D) and Chris Justin (unaffiliated) |
+| 2 | Jean-Paul Coussan | not on the ballot — term ends 2030-12-31 |
+| 3 | Davante Lewis | not on the ballot — term ends 2028-12-31 |
+| 4 | Mike Francis | not on the ballot — term ends 2028-12-31 |
+| 5 | Foster Campbell (in office since 2003-01-01) | 🏆 **John Atkins** (R) won, over James Green (D) |
+
+Neither sitting commissioner was a candidate, so **no** candidacy carries the incumbent flag, and
+a gate asserts that rather than leaving it to the generic cross-check.
+
+▶ **2027-01-01 — SEAT HILFERTY IN DISTRICT 1 AND ATKINS IN DISTRICT 5.** Terms run whole calendar
+years; the commission's own pages give Districts 1 and 5 as ending **December 31, 2026**. The
+chamber's `inauguration_rules` carries that and a gate asserts the date is in it.
+
+🔴 **No term start is invented.** The commission publishes each member's term *end*, not its start,
+so every term is open-ended with `start_precision 'unknown'`. The 2009 and 2003 dates above are
+what the pages say about *assuming office*, which is not the start of the current term, so they
+stay in prose and out of `office_terms`.
+
+## Identity
+
+All 10 people are new. A sweep of all **91,748** politicians on both full name and (first, last)
+returned nothing for any of them — including John Atkins, James Green, Chris Justin and Connie
+Norris, which is why it was run. 🟢 The sweep is not blind: its positive control found Jeff Landry.
+
+🔴 **A SECOND DISAMBIGUATION PAGE, IN A SECOND STATE.** `ballotpedia.org/Mike_Francis` returns
+HTTP 200, contains "Mike Francis", and is a list of two different men — an Arizona one and a
+Louisiana one. His page is `/Mike_Francis_(Louisiana)`. `CC_0370` found the same shape at
+`/Allen_Long` the same day. ▶ **Two in two files is not a coincidence; a slug built from a name is
+a guess.** Every one of the ten URLs was fetched and asserted to name the person, to mention the
+Louisiana Public Service Commission, and not to be a disambiguation page.
+
+## Controls
+
+**On the loader** (`controls371-loader.mjs`):
+
+| | fault planted | observed |
+| --- | --- | --- |
+| A | the real data reprojected to Web Mercator metres, relabelled 4326 | `psc:1 bbox -10123637,3357219 … is outside Louisiana — WRONG CRS` |
+| B | District 3 dropped from the file | `expected 5 districts … found 4` |
+| C | the geometry of Districts 4 and 5 swapped, numbers kept | `Act 2 puts these parishes wholly in one district and the map does not: Calcasieu Parish is only 0.0000% in D4; Caddo Parish is only 0.0000% in D5; …` (40 parishes) |
+| D | the parish table claims St. Martin for districts 2 and **5** | `a parish Act 2 splits is shared with the wrong districts: St. Martin Parish -> 2,4, Act 2 says 2,5` |
+
+🔴 **C is the one worth reading, and D exists because C is not enough.** With two districts'
+labels swapped the map passes every structural test — five valid 4326 polygons inside Louisiana,
+a union covering 99.743%, zero overlap, all 539 ZCTAs resolving to exactly one district. Only the
+parish composition can tell. But C fires on the **whole-parish** arm, which runs first, and no
+geometry tamper breaks a split while leaving all 54 whole parishes right, so the **split** arm
+needs a tamper of its own. D picks St. Martin, the thinnest split in the plan (127 of its 1,672
+blocks are in District 4).
+
+**On the migration** (`controls371.mjs`):
+
+| | fault planted | observed |
+| --- | --- | --- |
+| A | the seating **and** the every-office-is-seated gate removed | `the baseline moved to 243 — it was 238 and must never be raised` |
+| B | the districts filed under layer `X0099` | `only 0 of the 5 districts meet a geofence row on (geo_id, mtfcc)` |
+| C | Districts 1 and 5's **members** swapped in the seat table | `the anchor table and the seat table name different members: D1: anchor says Eric Skrmetta, seat says Foster Campbell; …` |
+| D | the office-to-district join reversed (`md.d = 6 - s.d`) | `an anchor parish does not reach its commissioner: St. Tammany Parish -> Foster Campbell (expected Eric Skrmetta); …` |
+| E | the plan table claims Lafourche Parish for District 5 | `Act 2 puts these parishes wholly in one district and the map does not: Lafourche Parish is only 0.0000% in D5` |
+| F | the hyphen dropped from a hyphenated given name | `a seeded name does not match its own split: Jean-Paul Coussan splits to (Jean, Coussan)` |
+| G | the District 1 winner marked as the incumbent | `an incumbent flag disagrees with the seat's holder: Stephanie Hilferty in D1` |
+
+⚠ **D names only four of the five anchors**, because `6 - 3 = 3`: District 3 maps to itself under
+the reversal and is the one seat the tamper leaves correct. That is the control reporting what it
+found, not a gap in it.
+
+⚠ **E is deliberately NOT an anchor parish.** `CC_0370`'s equivalent control first moved an anchor
+county and died on the earlier *"an anchor is not assigned whole to its district"* pre-gate — a
+correct failure, for a gate that was not under test. Lafourche is whole in District 2 and anchors
+nothing.
+
+⚠ The split defect makes its **eighth** appearance, and its first as a hyphenated *given* name
+rather than a compound surname.
+
+## Tier 3 after Louisiana — 23 seats
+
+**Blocked only on a composition** (the polygons are already in production, as unions of state
+senate districts we hold): KS State Board of Education (5) and MA Governor's Council (8).
+**Needs an imported polygon** (10): NE PSC (1), NE State Board of Education (3), NE Regents (1),
+NH Executive Council (5), NM Public Education Commission (4).
+⚠ **Nebraska is three separate bodies and we hold no Nebraska legislative-district geometry at
+all.** New Mexico's Public Education Commission is the next single-source body; New Hampshire's
+executive councillor districts are defined as lists of towns and wards, and we hold `G4040`
+county subdivisions for only 11 states, New Hampshire not among them.
