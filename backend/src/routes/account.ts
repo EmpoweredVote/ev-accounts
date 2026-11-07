@@ -7,7 +7,7 @@ import { requestDb, adminRpc } from '../lib/supabase.js';
 import { getRequestAuthUser } from '../lib/authService.js';
 import { pool } from '../lib/db.js';
 import { geocodeAddress, GeocodingError } from '../lib/geocodingService.js';
-import { readStoredJurisdiction, toJurisdictionResponse } from '../lib/storedJurisdiction.js';
+import { readStoredJurisdiction, toJurisdictionResponse, locationNeedsConfirmation } from '../lib/storedJurisdiction.js';
 import { saveBasicJurisdiction } from '../lib/basicJurisdictionService.js';
 import { isUserAdmin } from '../lib/adminService.js';
 import { getAccountMe } from '../lib/accountMeService.js';
@@ -69,7 +69,11 @@ router.get('/me/jurisdiction', requireAuth, async (req, res: Response) => {
       return;
     }
 
-    res.status(200).json({ jurisdiction: toJurisdictionResponse(j) });
+    res.status(200).json({
+      jurisdiction: toJurisdictionResponse(j),
+      // CA_0369 — see locationNeedsConfirmation. Beside `jurisdiction`, never inside it.
+      location_needs_confirmation: await locationNeedsConfirmation(authReq.userId, j),
+    });
   } catch (err) {
     console.error('[GET /api/account/me/jurisdiction] Unexpected error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });

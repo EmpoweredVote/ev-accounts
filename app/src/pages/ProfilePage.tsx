@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router';
+import LocationRecheckNotice from '../components/LocationRecheckNotice';
 import { apiFetch } from '../lib/api';
 import { AppNav } from '../components/AppNav';
 import { useTheme } from '../hooks/useTheme';
@@ -26,6 +27,8 @@ interface MeFull {
   is_admin: boolean;
   verification_rating: number;
   location_consent: boolean;
+  /** CA_0369: a basic account whose district maps changed since it added its address. */
+  location_needs_confirmation?: boolean;
   connected_profile: ConnectedProfile | null;
 }
 
@@ -372,6 +375,11 @@ export default function ProfilePage() {
                   )}
                 </div>
               </div>
+              {me.location_needs_confirmation && (
+                <div className="mt-4">
+                  <LocationRecheckNotice />
+                </div>
+              )}
             </div>
           </div>
         )}

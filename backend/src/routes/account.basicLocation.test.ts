@@ -209,3 +209,49 @@ describe('PATCH /api/account/location-hint — districts only', () => {
     expect(calls.some((c) => c.sql.includes('inform_profiles'))).toBe(false);
   });
 });
+
+describe('GET /api/account/me/jurisdiction — location_needs_confirmation (CA_0369)', () => {
+  function storedRow(source: 'basic' | 'connected', needs: boolean) {
+    poolQueryMock.mockImplementation((sql: string) => {
+      if (sql.includes('FROM inform.account_jurisdictions') && sql.includes('connect.connected_profiles')) {
+        return Promise.resolve({
+          rows: [{ pri: source === 'basic' ? 2 : 1, source, location_consent: true, has_coords: source === 'connected', county_geo_id: '37021', congressional_geo_id: '3711' }],
+        });
+      }
+      if (sql.includes('basic_location_needs_confirmation')) return Promise.resolve({ rows: [{ needs }] });
+      return Promise.resolve({ rows: [] });
+    });
+  }
+
+  it('is true for a basic account the maps changed under, and sits BESIDE jurisdiction', async () => {
+    storedRow('basic', true);
+    const res = await request(app).get('/api/account/me/jurisdiction');
+    expect(res.status).toBe(200);
+    expect(res.body.location_needs_confirmation).toBe(true);
+    expect(res.body.jurisdiction).not.toHaveProperty('location_needs_confirmation');
+    expect(res.body.jurisdiction.county).toBe('37021');
+  });
+
+  it('is false for a basic account whose maps did not change', async () => {
+    storedRow('basic', false);
+    const res = await request(app).get('/api/account/me/jurisdiction');
+    expect(res.body.location_needs_confirmation).toBe(false);
+  });
+
+  it('is false for a Connected account, without asking the database', async () => {
+    storedRow('connected', true);
+    const res = await request(app).get('/api/account/me/jurisdiction');
+    expect(res.body.location_needs_confirmation).toBe(false);
+    expect(sqlCalls().some((c) => c.sql.includes('basic_location_needs_confirmation'))).toBe(false);
+  });
+
+  it('still answers 200 with false when the check fails', async () => {
+    poolQueryMock.mockImplementation((sql: string) => {
+      if (sql.includes('basic_location_needs_confirmation')) return Promise.reject(new Error('does not exist'));
+      return Promise.resolve({ rows: [{ pri: 2, source: 'basic', location_consent: true, has_coords: false }] });
+    });
+    const res = await request(app).get('/api/account/me/jurisdiction');
+    expect(res.status).toBe(200);
+    expect(res.body.location_needs_confirmation).toBe(false);
+  });
+});

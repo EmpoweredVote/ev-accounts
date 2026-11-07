@@ -116,3 +116,33 @@ export function toJurisdictionResponse(j: StoredJurisdiction | null | undefined)
     nation_geoid: j?.nation_geo_id ?? null,
   };
 }
+
+/**
+ * Should this account re-enter its address? (CA_0369, design
+ * docs/superpowers/specs/2026-11-07-basic-account-location-reconfirm-design.md)
+ *
+ * Only a BASIC row can need it: we keep no point for it, so nothing can re-resolve its districts
+ * after a map changes. inform.basic_location_needs_confirmation answers from the boundary-change
+ * log — a change in the account's county since resolved_at, or a stored district that no longer
+ * exists. A Connected row is re-checked weekly from its point (districtStalenessService), so it
+ * is always false here, as is an account with no address.
+ *
+ * 🔴 Never throws. A failed check reads false and is logged, so /me keeps working — including in
+ * the window where this code is deployed before CA_0369 is applied.
+ */
+export async function locationNeedsConfirmation(
+  userId: string,
+  j: Pick<StoredJurisdiction, 'source'> | null | undefined,
+): Promise<boolean> {
+  if (j?.source !== 'basic') return false;
+  try {
+    const { rows } = await pool.query<{ needs: boolean }>(
+      'SELECT inform.basic_location_needs_confirmation($1) AS needs',
+      [userId],
+    );
+    return rows[0]?.needs === true;
+  } catch (err) {
+    console.error('[locationNeedsConfirmation] check failed; reporting false:', err);
+    return false;
+  }
+}

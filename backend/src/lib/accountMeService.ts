@@ -16,7 +16,7 @@
  *   USER_NOT_FOUND — no public.users row (404)
  * Any other error propagates (the /me route maps it to 500).
  */
-import { readStoredJurisdiction, toJurisdictionResponse } from './storedJurisdiction.js';
+import { readStoredJurisdiction, toJurisdictionResponse, locationNeedsConfirmation } from './storedJurisdiction.js';
 import { requestDb, adminRpc } from './supabase.js';
 import { getRequestAuthUser } from './authService.js';
 import { pool } from './db.js';
@@ -109,9 +109,12 @@ export async function getAccountMe(
   // 5b. Stored jurisdiction — Connected or basic (CA_0368; lib/storedJurisdiction.ts). Graceful.
   let jurisdictionData: Record<string, unknown> | null = null;
   let hasLocation = false;
+  let needsConfirmation = false;
   try {
     const j = await readStoredJurisdiction(userId);
     hasLocation = j?.location_consent === true;
+    // CA_0369: a basic row the maps changed under. Never throws.
+    needsConfirmation = await locationNeedsConfirmation(userId, j);
     if (j && hasLocation && (j.congressional_geo_id || j.state_senate_geo_id)) {
       jurisdictionData = toJurisdictionResponse(j);
     }
@@ -146,6 +149,10 @@ export async function getAccountMe(
     completed_onboarding: connected?.completed_onboarding ?? false,
     // True for a basic account too once it has added an address (CA_0368).
     location_consent: hasLocation,
+    // CA_0369: a basic account whose county's district maps changed after it added its
+    // address — ask it to re-enter it. Top level on purpose: `jurisdiction` feeds VQ and is
+    // kept byte-identical. Always false for Connected (re-checked weekly from its point).
+    location_needs_confirmation: needsConfirmation,
     verification_rating: connected?.verification_rating ?? 60,
     vq_hold_active: vqHoldActive,
     red_gem_quests_unlocked: redGemQuestsUnlocked,
