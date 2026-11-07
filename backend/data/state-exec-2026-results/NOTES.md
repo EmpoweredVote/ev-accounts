@@ -765,3 +765,89 @@ would have been a deletion; this is not that.
   Executive Council, the Office of Hawaiian Affairs, and single seats such as Alabama's Auditor and
   Connecticut's Comptroller. Creating those is an office-and-occupancy act, not a results migration.
 - The 4 AP-called seats we hold no office for, and certification everywhere.
+
+---
+
+# `CC_0362` — the 7 the reconciliation had hidden, and what the other 90 actually need
+
+Applied 2026-11-06. **3 races created · 5 candidacies inserted · 6 updated · 2 people seeded ·
+7 winners.** State-level winners: **139 → 146 across 39 states.** Occupancy baseline unmoved at
+**238**, which this file asserts in its own post-verify because it creates no office.
+
+## 🔴 The correction: "119 match no seat we hold" was my WHERE clause, not the data
+
+`CC_0360`'s header reported 119 voteboxes as matching no seat. The reconciliation loaded our
+offices with `district_type = 'STATE_EXEC'` and nothing else. **Utah's 15 State Board of Education
+districts are `STATE_BOARD_EDUCATION`** and **California's 4 Board of Equalization districts are
+`STATE_BOARD`**, so every one of them came back absent — and five of them were carrying a live
+2026 race the whole time.
+
+▶ **A PREDICATE READS THE SHAPE OF A VALUE, NEVER WHAT THE VALUE IS.** The filter was reported as
+a fact about the world. Re-run against *every* office, 119 resolves to:
+
+| | | |
+| --- | --- | --- |
+| **7** | seats we hold and can record | **this file** |
+| 90 | no office of ours at all | three tiers, below |
+| 22 | Ballotpedia marks no winner | nothing to do yet |
+
+⚠ These seats already carry **real geometry** — `ocd-division/country:us/state:ut/sboe:N` and
+`06-sboe-d3`. That is precisely why they must not be rebuilt as new offices, and the gate asserts
+each target is a Utah state-board seat with a non-empty `geo_id`.
+
+🔴 Three candidates are anchored on `office_current_holder` for the exact seat, not on a name
+match — and one of them, **Joseph Kerry, HOLDS Utah District 2 and lost it**, having withdrawn
+while staying on the ballot. His row reads `candidate_status = 'withdrawn'` with `result = 'lost'`.
+
+### Controls
+
+| | fault planted | observed |
+| --- | --- | --- |
+| A | the District 1 holder pinned to District 4's office | `a pinned politician is not the person this file names: … Jennie Earl but the pinned row is LeAnn Wood` |
+| B | the hyphenated surname corrupted (`Callow-Heusser` → `Heusser`) | `a seeded name does not match its own split` |
+| C | a pin repointed at a row that already holds a result | `a pinned row already holds a result, which this file did not record` |
+| E | the race pointed at a Nevada `STATE_EXEC` office | `an office is not a Utah state-board seat with real geometry: … NV STATE_EXEC geo=32` |
+
+🔴 **B is the case `CC_0360`'s split gate could not see.** That gate read *"full_name must end with
+last_name"* — and `"Cathy Callow-Heusser"` ends with `"Heusser"` too. Equality has no such hole.
+⚠ **C was shadowed twice before it landed**: adding a seventh row tripped the count gate, swapping
+only the id tripped the name gate. A tamper has to satisfy every earlier gate to reach its own.
+⚠ **A fifth gate — the before-image check on unpinned rows — is VACUOUS here and the file says
+so.** All six rows in the four touched races are pinned, so nothing can make it fire. It is kept
+because it costs nothing and goes live if a seventh candidacy appears; the identical gate was
+proved by `CC_0361`'s control G.
+
+## What the remaining 90 need, measured and committed
+
+The full inventory is `outstanding-state-exec-2026-11-06.json`. 🔴 **None of these is a results
+migration. Each needs a prerequisite that cannot be inferred:**
+
+**Tier 1 — 34 single-member statewide constitutional offices** (auditors, comptrollers,
+agriculture / insurance / labour / lands commissioners, superintendents, a tax commissioner).
+Geometry is easy — the state FIPS, exactly as the other 48 statewide seats do it. The blocker is
+occupancy: 🔴 **an office with no `office_terms` row raises the unflagged
+`offices_missing_terms` baseline**, which stands at **238** and which CLAUDE.md says must never be
+raised. So each office must be created *with its current holder seated*, and that holder has to be
+sourced. **20 of the 34 are named by the election page itself** ("Incumbent X …"); 14 are not, and
+a pass over their offices' own websites cleanly resolved only 5 more — Kansas 403s, Oklahoma's
+labour and insurance pages 404, South Dakota's host does not resolve. ⚠ For Oklahoma's
+superintendent the page yields the fragment `"ields,</b>…State Superintendent"`. **That is a name
+to guess, and guessing an officeholder is the single most expensive error in this repo.**
+
+**Tier 2 — 7 seats that are ONE SEAT OF A MULTI-MEMBER BODY**: Hawaii's OHA at-large trustees
+(3 seats), Michigan's State Board of Education and State University Board of Trustees (2 each),
+North Dakota's Public Service Commission, Oklahoma's Corporation Commissioner, South Dakota's
+Public Utilities Commission, Texas's Railroad Commission. 🔴 **A seat-numbering decision comes
+first.** Creating one office for "the seat up in 2026" leaves nothing to distinguish it from the
+seats up in 2028, and two years from now nobody can tell which is which. Arizona models its
+Corporation Commission as **five separate Commissioner offices** — that is the precedent to follow,
+and it is a modelling choice, not a lookup.
+
+**Tier 3 — 49 districted seats across 14 bodies**: state boards of education (AL, CO, KS, NE, TX),
+public service commissions (AL, GA, LA, NE), university regents (CO, NE), New Mexico's Public
+Education Commission, Massachusetts's Governor's Council, New Hampshire's Executive Council.
+🔴 **Their boundaries are not in our geofence tables.** `districts.geo_id` is a lookup key, and the
+only identifier available — the state FIPS — would make address search tell a voter in one district
+that they are represented by another district's member. **That is a false claim to a voter, which
+is worse than the seat being absent.** Utah's school board shows the right shape: real OCD
+divisions, loaded as geography first.
