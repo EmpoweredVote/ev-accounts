@@ -11,7 +11,10 @@ const require = createRequire(process.env.RESOLVE_FROM || import.meta.url);
 const pg = require('pg');
 
 const out = process.argv[2];
-if (!out) { console.error('usage: dump-our-rows.mjs <output.json>'); process.exit(2); }
+const handover = process.argv[3] || '2026-12-04';
+const expectRaces = process.argv[4] ? Number(process.argv[4]) : null;
+const expectRows = process.argv[5] ? Number(process.argv[5]) : null;
+if (!out) { console.error('usage: dump-our-rows.mjs <output.json> [handover-date] [expected races] [expected candidacies]'); process.exit(2); }
 const client = new pg.Client({ connectionString: process.env.DATABASE_URL });
 await client.connect();
 const { rows } = await client.query(`
@@ -26,13 +29,13 @@ const { rows } = await client.query(`
     JOIN essentials.districts d ON d.id = o.district_id
     JOIN essentials.office_swearing_in s ON s.office_id = r.office_id AND s.election_date = e.election_date
     JOIN essentials.race_candidates rc ON rc.race_id = r.id
-   WHERE e.election_date = DATE '2026-11-03' AND s.swearing_in_date = DATE '2026-12-04'
-   ORDER BY d.label, o.title, rc.last_name, rc.first_name`);
+   WHERE e.election_date = DATE '2026-11-03' AND s.swearing_in_date = $1::date
+   ORDER BY d.label, o.title, rc.last_name, rc.first_name`, [handover]);
 await client.end();
 
 const races = new Set(rows.map((r) => r.race_id));
-if (races.size !== 19) throw new Error(`expected 19 races on 2026-12-04, found ${races.size}`);
-if (rows.length !== 59) throw new Error(`expected 59 candidacies, found ${rows.length}`);
+if (expectRaces !== null && races.size !== expectRaces) throw new Error(`expected ${expectRaces} races on ${handover}, found ${races.size}`);
+if (expectRows !== null && rows.length !== expectRows) throw new Error(`expected ${expectRows} candidacies, found ${rows.length}`);
 fs.mkdirSync(path.dirname(path.resolve(out)), { recursive: true });
 fs.writeFileSync(out, JSON.stringify(rows, null, 1));
-console.log(`wrote ${out}: ${rows.length} candidacies across ${races.size} races`);
+console.log(`wrote ${out}: ${rows.length} candidacies across ${races.size} races handing over ${handover}`);

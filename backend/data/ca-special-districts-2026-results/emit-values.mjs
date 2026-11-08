@@ -15,3 +15,13 @@ for (const r of a.report.filter((x) => x.callable).sort((x, y) => x.district.loc
 lines[lines.length - 1] = lines[lines.length - 1].replace(/,$/, ';');
 console.log(lines.join('\n'));
 console.error(`-- ${won} won / ${lost} lost across ${a.report.filter((x) => x.callable).length} races`);
+
+// --bounds: the per-race bound table the migration gates on
+if (process.argv.includes('--bounds')) {
+  const lines = [];
+  for (const r of a.report.filter((x) => x.callable).sort((x, y) => x.district.localeCompare(y.district))) {
+    lines.push(`  ('${r.race_id}'::uuid, ${String(r.count.ballots).padStart(6)}, ${String(r.count.est_outstanding).padStart(5)}, ${r.count.safety}, ${String(r.count.bound).padStart(6)}),   -- ${r.district}`);
+  }
+  lines[lines.length - 1] = lines[lines.length - 1].replace('),  ', ');  ');
+  console.log(lines.join('\n'));
+}

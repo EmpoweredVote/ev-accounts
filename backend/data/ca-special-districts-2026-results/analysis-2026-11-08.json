@@ -74,6 +74,7 @@
     }
    ],
    "problems": [],
+   "warnings": [],
    "callable": true
   },
   {
@@ -126,6 +127,7 @@
     }
    ],
    "problems": [],
+   "warnings": [],
    "callable": true
   },
   {
@@ -178,6 +180,7 @@
     }
    ],
    "problems": [],
+   "warnings": [],
    "callable": true
   },
   {
@@ -230,6 +233,7 @@
     }
    ],
    "problems": [],
+   "warnings": [],
    "callable": true
   },
   {
@@ -282,6 +286,7 @@
     }
    ],
    "problems": [],
+   "warnings": [],
    "callable": true
   },
   {
@@ -334,6 +339,7 @@
     }
    ],
    "problems": [],
+   "warnings": [],
    "callable": true
   },
   {
@@ -386,6 +392,7 @@
     }
    ],
    "problems": [],
+   "warnings": [],
    "callable": true
   },
   {
@@ -438,6 +445,7 @@
     }
    ],
    "problems": [],
+   "warnings": [],
    "callable": true
   },
   {
@@ -508,6 +516,7 @@
     }
    ],
    "problems": [],
+   "warnings": [],
    "callable": true
   },
   {
@@ -569,6 +578,7 @@
     }
    ],
    "problems": [],
+   "warnings": [],
    "callable": false
   },
   {
@@ -657,6 +667,7 @@
     }
    ],
    "problems": [],
+   "warnings": [],
    "callable": false
   },
   {
@@ -709,6 +720,7 @@
     }
    ],
    "problems": [],
+   "warnings": [],
    "callable": false
   },
   {
@@ -797,6 +809,7 @@
     }
    ],
    "problems": [],
+   "warnings": [],
    "callable": false
   },
   {
@@ -849,6 +862,7 @@
     }
    ],
    "problems": [],
+   "warnings": [],
    "callable": false
   },
   {
@@ -910,6 +924,7 @@
     }
    ],
    "problems": [],
+   "warnings": [],
    "callable": false
   },
   {
@@ -989,6 +1004,7 @@
     }
    ],
    "problems": [],
+   "warnings": [],
    "callable": false
   },
   {
@@ -1041,6 +1057,7 @@
     }
    ],
    "problems": [],
+   "warnings": [],
    "callable": false
   },
   {
@@ -1102,6 +1119,7 @@
     }
    ],
    "problems": [],
+   "warnings": [],
    "callable": false
   },
   {
@@ -1185,6 +1203,7 @@
    "problems": [
     "spans Los Angeles and San Bernardino; San Bernardino publishes no outstanding-ballot estimate, so the margin cannot be bounded"
    ],
+   "warnings": [],
    "callable": false
   }
  ]

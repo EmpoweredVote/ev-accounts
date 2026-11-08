@@ -37,6 +37,18 @@ const norm = (s) => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '')
 //   "absent from the text-results page", which reads exactly like a real disagreement between
 //   two sources. It was my own parser. ▶ Decode before you compare, and never report a
 //   mismatch a normalisation step could have produced.
+// 🔴 FULL-NAME EQUALITY CANNOT SEE A MIDDLE NAME, and the county prints the long form. Our
+//   "Cheryl Williams" is Inglewood's "CHERYL SHAW WILLIAMS" and our "Brandon Myers" is
+//   "BRANDON GEORGE MYERS"; on exact equality both contests came back as if nobody on our
+//   ballot was on the county's. Compare on the full string OR on first-plus-last, and assert
+//   the relaxed form stays one-to-one inside a contest before trusting it.
+const nameKeys = (s) => {
+  const full = norm(s);
+  const t = full.split(' ');
+  return t.length > 2 ? [full, `${t[0]} ${t[t.length - 1]}`] : [full];
+};
+const sameName = (a, b) => nameKeys(a).some((k) => nameKeys(b).includes(k));
+
 const unent = (s) => s
   .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
   .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(Number(d)))
@@ -137,15 +149,21 @@ for (const r of ours) {
 
 const report = [];
 for (const race of byRace.values()) {
-  const want = new Set(race.cands.map((c) => norm(c.full_name)));
-  const hits = allContests.filter((c) => {
-    const have = new Set(c.candidates.map((k) => norm(k.name)));
-    return have.size === want.size && [...want].every((n) => have.has(n));
-  });
+  // 🔴 THE COUNTY'S BALLOT IS AUTHORITATIVE FOR WHO WAS ON IT, AND OURS IS A SEPTEMBER
+  //   NOMINATION LIST. Four school races hold a person the final ballot does not — Joe
+  //   Radabaugh, Alfonso Morales, Rick Phillips, Tomas Ursua — so set EQUALITY reported them
+  //   as "no county contest has this candidate set" alongside genuinely absent contests, and
+  //   the three kinds read as one bucket. Anchor on the county's ballot being CONTAINED in
+  //   our rows, and report the difference in each direction separately, because they mean
+  //   opposite things: someone of ours missing from the ballot is a candidacy to resolve;
+  //   someone on the ballot we do not hold is a WINNER WE COULD MISS, and blocks.
+  const want = race.cands.map((c) => c.full_name);
+  const hits = allContests.filter((c) => c.candidates.length > 0
+    && c.candidates.every((k) => want.some((n) => sameName(n, k.name))));
   const row = {
     district: race.district_label, office_title: race.office_title, office_id: race.office_id,
     race_id: race.race_id, seats: race.seats, is_vacant: race.is_vacant,
-    anchor: null, count: null, ranked: null, problems: [], callable: false,
+    anchor: null, count: null, ranked: null, problems: [], warnings: [], callable: false,
   };
   // 🔴🔴 A SPECIAL DISTRICT CAN STRADDLE A COUNTY LINE, AND THEN EACH COUNTY PUBLISHES ONLY
   //   ITS OWN SLICE — a complete-looking contest, with every candidate on it, counted from a
@@ -174,8 +192,8 @@ for (const race of byRace.values()) {
     ballots: hits.every((h) => h.ballots !== null) ? hits.reduce((a, h) => a + h.ballots, 0) : null,
     candidates: hits[0].candidates.map((k) => ({
       name: k.name,
-      votes: hits.reduce((a, h) => a + (h.candidates.find((x) => norm(x.name) === norm(k.name))?.votes ?? 0), 0),
-      per_county: Object.fromEntries(hits.map((h) => [h.county, h.candidates.find((x) => norm(x.name) === norm(k.name))?.votes ?? null])),
+      votes: hits.reduce((a, h) => a + (h.candidates.find((x) => sameName(x.name, k.name))?.votes ?? 0), 0),
+      per_county: Object.fromEntries(hits.map((h) => [h.county, h.candidates.find((x) => sameName(x.name, k.name))?.votes ?? null])),
     })),
   };
   row.anchor = {
@@ -188,11 +206,41 @@ for (const race of byRace.values()) {
     row.problems.push(`the county flags this contest as shared ("${c.note}") and only one county's slice was found`);
   }
 
-  // independent second reading: the contest title must also name this district
-  const key = norm(race.district_label).replace(/ - DIVISION \d+| - TRUSTEE AREA \d+/, '');
-  const head = key.split(' ').filter((w) => w.length > 3).slice(0, 3);
-  if (!head.every((w) => norm(c.title).includes(w))) {
-    row.problems.push(`title "${c.title}" does not name "${race.district_label}"`);
+  // ── independent second reading: the contest title must name this district AND this seat ──
+  // 🔴 ONCE THE ANCHOR ALLOWS CONTAINMENT IT IS NO LONGER SELF-LIMITING, so the title stops
+  //   being a reassurance and becomes a gate. Both parts below block.
+  // Generic words are dropped from both sides: our labels say "Elementary" and "Union" where
+  // the county says "School District", and a first-three-words rule read those five real
+  // matches as failures — Westside Union, Valle Lindo, Mountain View, Lawndale x2.
+  const GENERIC = /^(SCHOOL|DISTRICT|UNIFIED|ELEMENTARY|UNION|HIGH|BOARD|GOVERNING|MEMBER|MEMBERS|TRUSTEE|TRUSTEES|AREA|EDUCATION|COMMUNITY|COLLEGE|CITY|MUNICIPAL|WATER|LIBRARY|AGENCY|SERVICES|IRRIGATION|DIVISION|DIRECTOR|DIRECTORS|GENERAL|ELECTION|SPECIAL|THE|AND|OF|NO|FOR)$/;
+  const distinctive = norm(race.district_label)
+    .replace(/ - (DIVISION|TRUSTEE AREA) \d+$/, '')
+    .split(' ').filter((w) => w.length > 2 && !GENERIC.test(w));
+  const title = norm(c.title);
+  const missing = distinctive.filter((w) => !title.includes(w));
+  if (distinctive.length === 0) row.problems.push(`"${race.district_label}" has no distinctive word to check the title against`);
+  else if (missing.length) row.problems.push(`title "${c.title}" does not name ${missing.join(', ')} from "${race.district_label}"`);
+
+  // 🔴 AND THE SEAT NUMBER. Inglewood runs Trustee Areas 1, 2 and 3 in one district: without
+  //   this, a contest for the wrong area is an ordinary match on a right-looking title.
+  const ourSeatNo = /(?:DIVISION|TRUSTEE AREA)\s+(\d+)/.exec(norm(race.district_label) + ' ' + norm(race.office_title))?.[1];
+  const theirSeatNo = /(?:DIVISION|TRUSTEE AREA)(?:\s+NO)?\s+(\d+)/.exec(title)?.[1];
+  if (ourSeatNo && theirSeatNo && ourSeatNo !== theirSeatNo) {
+    row.problems.push(`we hold seat number ${ourSeatNo}, the county contest is number ${theirSeatNo}`);
+  } else if (ourSeatNo && !theirSeatNo) {
+    row.problems.push(`we hold seat number ${ourSeatNo} but "${c.title}" names no division or area`);
+  }
+
+  // 🔴 THE RELAXED NAME MATCH MUST STAY ONE-TO-ONE. first-plus-last can collapse two people,
+  //   and a collapse inside one contest would put one person's votes on another.
+  for (const k of c.candidates) {
+    const n = want.filter((x) => sameName(x, k.name));
+    if (n.length > 1) row.problems.push(`"${k.name}" matches ${n.length} of our rows (${n.join(', ')})`);
+  }
+  // someone of OURS who is not on the county's final ballot: reported, never silently dropped
+  const notOnBallot = want.filter((n) => !c.candidates.some((k) => sameName(n, k.name)));
+  if (notOnBallot.length) {
+    row.warnings.push(`NOT ON THE COUNTY BALLOT: ${notOnBallot.join(', ')} — our rows came from the September nomination list; this candidacy needs its own disposition`);
   }
 
   // every LA number re-read from the independently rendered text page — a second reading of
@@ -212,7 +260,7 @@ for (const race of byRace.values()) {
   if (countySeats !== race.seats) row.problems.push(`we hold seats=${race.seats}, the county ballot says "${c.voteFor || 'vote for 1'}"`);
 
   const ranked = [...c.candidates].sort((a, b) => b.votes - a.votes)
-    .map((k) => ({ ...k, rc: race.cands.find((x) => norm(x.full_name) === norm(k.name)) }));
+    .map((k) => ({ ...k, rc: race.cands.find((x) => sameName(x.full_name, k.name)) }));
   const lead = ranked[race.seats - 1];
   const chase = ranked[race.seats];
   const margin = chase ? lead.votes - chase.votes : lead.votes;
@@ -256,6 +304,7 @@ for (const r of report.sort((a, b) => Number(b.callable) - Number(a.callable) ||
       + `${k.incumbent ? '  (incumbent)' : ''}${k.politician_id ? '' : '  [no politician row]'}`);
   }
   for (const p of r.problems) console.log(`     !! ${p}`);
+  for (const w of r.warnings) console.log(`     ~~ ${w}`);
 }
 fs.writeFileSync(path.join(dir, `analysis-${stamp}.json`),
   JSON.stringify({ generated: stamp, safety: SAFETY, la: { counted: LA_COUNTED, outstanding: LA_OUTSTANDING }, report }, null, 1));
