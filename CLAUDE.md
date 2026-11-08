@@ -749,6 +749,16 @@ each was first learned.
   which was reported as a race-mapping bug and was retracted: both were mapped correctly.
   ▶ **Print the field at FULL WIDTH before believing a pattern in it, or read the stable key
   beside it.** `ocd_id` carried the right answer throughout and was never displayed.
+- 🔴🔴 **BOUND A PARSE BY THE DOCUMENT'S OWN STRUCTURE, NEVER BY A BLACKLIST OF WHAT ELSE MIGHT
+  BE IN IT.** A section reader that stops at a list of headings you thought of cannot see the
+  heading you did not, and everything after it is read as part of the section before — with a
+  plausible value, not an error. Nebraska's 2024 canvass book prints "Judge of the District
+  Court", "District 3", "Lancaster" a few pages past the Board of Regents, so a blacklist that
+  had not thought of judges would have recorded Lancaster County as part of **Regents District
+  3**. Take each section's page range and stop-title from the book's **own table of contents**
+  instead (`backend/data/state-exec-2026-results/parse-ne-canvass-counties.mjs`).
+  ▶ It applies to any delimiter you supply from outside the document: ask what the document
+  itself says its parts are.
 - 🔴🔴 **A PREDICATE READS THE SHAPE OF A VALUE, NEVER WHAT THE VALUE IS.** Before naming or acting
   on the class some `WHERE` clause catches, `GROUP BY` the discriminating field and read a sample
   of real rows. **Deleting raises that bar, it does not lower it.** ⚠ A lookalike key can be a
@@ -843,6 +853,33 @@ each was first learned.
   `STATE_BOARD_EDUCATION` because that is the name that fits. It has no sub-state polygon, so all
   eight members would have been **unreachable from every Michigan address and nothing would have
   errored** — the same failure as an empty `geo_id`, reached from the other direction.
+  - 🔴 **A DISTRICT IN A SEAT'S TITLE IS A CLAIM ABOUT THE CANDIDATE, NOT NECESSARILY ABOUT THE
+    ELECTORATE. READ WHO VOTES.** Georgia's Public Service Commissioners each *reside* in a
+    numbered district and are **chosen statewide**; Hawaii's OHA "Maui Resident Trustee" is elected
+    by the whole state; Alabama's PSC "Place 1" and "Place 2" are ballot positions on an at-large
+    commission. All three read as districted and none of them is, and all three were in the
+    inventory of seats "blocked on real geometry" until somebody read the enabling text
+    (`CC_0364`, `CC_0366`).
+  - 🟢 **BEFORE IMPORTING A POLYGON, ASK WHETHER THE BODY REUSES ONE WE HOLD.** Colorado's State
+    Board of Education and CU Regents are elected by **congressional district**, so `CC_0366`
+    copied the eight `G5200` polygons inside the database — no download, no reprojection, and the
+    CRS hazard cannot arise. A gate asserts each copy `ST_Equals` the district it claims to be;
+    a point-in-polygon check is **not** enough, because a consistent permutation passes it.
+  - ⚠ **A NEW `X…` LAYER NEEDS AN EXPLICIT LINE IN BOTH `districtQueries.ts` AND `geoIdGuard.ts`**
+    unless its district type is `LOCAL`, `COUNTY` or `JUDICIAL`, which is all the `X%` catch-all
+    admits. `X0003` → `STATE_BOARD_EDUCATION` is **not state-scoped**, so any state's K-12 board
+    can use it as-is. ⚠ **`geofence_boundaries.mtfcc` is `varchar(10)`** — a longer layer name
+    fails only at INSERT time, after every other gate has passed.
+  - 🔴🔴 **TWO BODIES CAN SHARE ONE CUSTOM LAYER INSIDE ONE STATE, SO SCOPE EVERY QUERY BY THE
+    `geo_id` PREFIX AS WELL.** Nebraska's Public Service Commission and its Board of Regents are
+    **both** `(X-ST-BOARD, STATE_BOARD)` in state `31`. Louisiana's commission and Colorado's
+    regents sit on that layer too, but in **different states** — so `(mtfcc, state)` was a unique
+    key by accident, everywhere, until Nebraska. A row count, a coverage test, or a "does this
+    body already exist" pre-gate keyed on `(mtfcc, state)` alone silently reads the two bodies as
+    one: without the prefix the `CC_0373`-`CC_0375` loader reports **13 rows where 8 are
+    expected**, and `CC_0375` refuses to run once `CC_0373` has been applied. ▶ The prefix is the
+    body — `ocd-division/country:us/state:ne/regents:%` — and controls on both the loader and the
+    migration prove the scoping is load-bearing.
 - 🔴 **A MULTI-MEMBER STATEWIDE BODY IS ONE CHAMBER, ONE SHARED DISTRICT, N UNNUMBERED OFFICES, AND
   ONE RACE CARRYING `seats = N`.** Arizona's Corporation Commission is the pattern (5 offices all
   titled `Commissioner`); `CC_0364` built seven more on it — HI's Office of Hawaiian Affairs (9),

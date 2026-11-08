@@ -1,0 +1,415 @@
+{
+  "body": "regents",
+  "label": "University of Nebraska Board of Regents",
+  "districts": 8,
+  "source": "Nebraska Secretary of State, Official Report of the Board of State Canvassers. The county list for each district is the set of counties that cast votes in that district's race. Nebraska's board districts are set by map reference and no statute lists a county.",
+  "books": [
+    {
+      "key": "2022-general",
+      "title": "Official Report of the Nebraska Board of State Canvassers, General Election, November 8, 2022",
+      "url": "https://sos.nebraska.gov/sites/default/files/doc/elections/2022/2022%20General%20Canvass%20Book.pdf",
+      "sha256": "bf1634f18964b1ab616a474c5f185680058bbb6a8856431c79ab2a04930b6e53"
+    },
+    {
+      "key": "2024-general",
+      "title": "Official Report of the Nebraska Board of State Canvassers, General Election, November 5, 2024",
+      "url": "https://sos.nebraska.gov/sites/default/files/doc/elections/2024/2024%20General%20Canvass%20Book.pdf",
+      "sha256": "4887fb1caab820ab737adaaff9b73ee601e37a707fb0002d8901fd674e8efbe9"
+    },
+    {
+      "key": "2026-primary",
+      "title": "Official Report of the Nebraska Board of State Canvassers, Primary Election, May 12, 2026",
+      "url": "https://sos.nebraska.gov/sites/default/files/doc/elections/2026/2026_Primary_Canvass_Book.pdf",
+      "sha256": "d1b2ce9b9746a4faddc2700ce613b3cd620ec1b9bd3f9bacf5e36d9586055fba"
+    }
+  ],
+  "readTwice": [
+    4
+  ],
+  "whole": [
+    {
+      "district": 6,
+      "county": "Adams County"
+    },
+    {
+      "district": 6,
+      "county": "Antelope County"
+    },
+    {
+      "district": 7,
+      "county": "Arthur County"
+    },
+    {
+      "district": 7,
+      "county": "Banner County"
+    },
+    {
+      "district": 7,
+      "county": "Blaine County"
+    },
+    {
+      "district": 6,
+      "county": "Boone County"
+    },
+    {
+      "district": 7,
+      "county": "Box Butte County"
+    },
+    {
+      "district": 7,
+      "county": "Boyd County"
+    },
+    {
+      "district": 7,
+      "county": "Brown County"
+    },
+    {
+      "district": 6,
+      "county": "Buffalo County"
+    },
+    {
+      "district": 3,
+      "county": "Burt County"
+    },
+    {
+      "district": 3,
+      "county": "Butler County"
+    },
+    {
+      "district": 5,
+      "county": "Cass County"
+    },
+    {
+      "district": 3,
+      "county": "Cedar County"
+    },
+    {
+      "district": 7,
+      "county": "Chase County"
+    },
+    {
+      "district": 7,
+      "county": "Cherry County"
+    },
+    {
+      "district": 7,
+      "county": "Cheyenne County"
+    },
+    {
+      "district": 6,
+      "county": "Clay County"
+    },
+    {
+      "district": 3,
+      "county": "Colfax County"
+    },
+    {
+      "district": 3,
+      "county": "Cuming County"
+    },
+    {
+      "district": 7,
+      "county": "Custer County"
+    },
+    {
+      "district": 3,
+      "county": "Dakota County"
+    },
+    {
+      "district": 7,
+      "county": "Dawes County"
+    },
+    {
+      "district": 7,
+      "county": "Dawson County"
+    },
+    {
+      "district": 7,
+      "county": "Deuel County"
+    },
+    {
+      "district": 3,
+      "county": "Dixon County"
+    },
+    {
+      "district": 3,
+      "county": "Dodge County"
+    },
+    {
+      "district": 7,
+      "county": "Dundy County"
+    },
+    {
+      "district": 6,
+      "county": "Fillmore County"
+    },
+    {
+      "district": 6,
+      "county": "Franklin County"
+    },
+    {
+      "district": 7,
+      "county": "Frontier County"
+    },
+    {
+      "district": 7,
+      "county": "Furnas County"
+    },
+    {
+      "district": 5,
+      "county": "Gage County"
+    },
+    {
+      "district": 7,
+      "county": "Garden County"
+    },
+    {
+      "district": 7,
+      "county": "Garfield County"
+    },
+    {
+      "district": 7,
+      "county": "Gosper County"
+    },
+    {
+      "district": 7,
+      "county": "Grant County"
+    },
+    {
+      "district": 7,
+      "county": "Greeley County"
+    },
+    {
+      "district": 6,
+      "county": "Hall County"
+    },
+    {
+      "district": 6,
+      "county": "Hamilton County"
+    },
+    {
+      "district": 7,
+      "county": "Harlan County"
+    },
+    {
+      "district": 7,
+      "county": "Hayes County"
+    },
+    {
+      "district": 7,
+      "county": "Hitchcock County"
+    },
+    {
+      "district": 7,
+      "county": "Holt County"
+    },
+    {
+      "district": 7,
+      "county": "Hooker County"
+    },
+    {
+      "district": 6,
+      "county": "Howard County"
+    },
+    {
+      "district": 5,
+      "county": "Jefferson County"
+    },
+    {
+      "district": 5,
+      "county": "Johnson County"
+    },
+    {
+      "district": 6,
+      "county": "Kearney County"
+    },
+    {
+      "district": 7,
+      "county": "Keith County"
+    },
+    {
+      "district": 7,
+      "county": "Keya Paha County"
+    },
+    {
+      "district": 7,
+      "county": "Kimball County"
+    },
+    {
+      "district": 6,
+      "county": "Knox County"
+    },
+    {
+      "district": 7,
+      "county": "Lincoln County"
+    },
+    {
+      "district": 7,
+      "county": "Logan County"
+    },
+    {
+      "district": 7,
+      "county": "Loup County"
+    },
+    {
+      "district": 7,
+      "county": "McPherson County"
+    },
+    {
+      "district": 3,
+      "county": "Madison County"
+    },
+    {
+      "district": 6,
+      "county": "Merrick County"
+    },
+    {
+      "district": 7,
+      "county": "Morrill County"
+    },
+    {
+      "district": 6,
+      "county": "Nance County"
+    },
+    {
+      "district": 5,
+      "county": "Nemaha County"
+    },
+    {
+      "district": 6,
+      "county": "Nuckolls County"
+    },
+    {
+      "district": 5,
+      "county": "Otoe County"
+    },
+    {
+      "district": 5,
+      "county": "Pawnee County"
+    },
+    {
+      "district": 7,
+      "county": "Perkins County"
+    },
+    {
+      "district": 7,
+      "county": "Phelps County"
+    },
+    {
+      "district": 6,
+      "county": "Pierce County"
+    },
+    {
+      "district": 3,
+      "county": "Platte County"
+    },
+    {
+      "district": 3,
+      "county": "Polk County"
+    },
+    {
+      "district": 7,
+      "county": "Red Willow County"
+    },
+    {
+      "district": 5,
+      "county": "Richardson County"
+    },
+    {
+      "district": 7,
+      "county": "Rock County"
+    },
+    {
+      "district": 5,
+      "county": "Saline County"
+    },
+    {
+      "district": 3,
+      "county": "Saunders County"
+    },
+    {
+      "district": 7,
+      "county": "Scotts Bluff County"
+    },
+    {
+      "district": 5,
+      "county": "Seward County"
+    },
+    {
+      "district": 7,
+      "county": "Sheridan County"
+    },
+    {
+      "district": 7,
+      "county": "Sherman County"
+    },
+    {
+      "district": 7,
+      "county": "Sioux County"
+    },
+    {
+      "district": 3,
+      "county": "Stanton County"
+    },
+    {
+      "district": 5,
+      "county": "Thayer County"
+    },
+    {
+      "district": 7,
+      "county": "Thomas County"
+    },
+    {
+      "district": 3,
+      "county": "Thurston County"
+    },
+    {
+      "district": 7,
+      "county": "Valley County"
+    },
+    {
+      "district": 3,
+      "county": "Washington County"
+    },
+    {
+      "district": 3,
+      "county": "Wayne County"
+    },
+    {
+      "district": 6,
+      "county": "Webster County"
+    },
+    {
+      "district": 7,
+      "county": "Wheeler County"
+    },
+    {
+      "district": 6,
+      "county": "York County"
+    }
+  ],
+  "split": [
+    {
+      "county": "Douglas County",
+      "districts": [
+        2,
+        4,
+        8
+      ]
+    },
+    {
+      "county": "Lancaster County",
+      "districts": [
+        1,
+        5
+      ]
+    },
+    {
+      "county": "Sarpy County",
+      "districts": [
+        2,
+        5
+      ]
+    }
+  ]
+}

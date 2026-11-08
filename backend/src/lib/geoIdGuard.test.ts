@@ -167,3 +167,35 @@ describe('X-CA-SBOE — California Board of Equalization districts', () => {
     expect(FALLBACK_EXCLUDED_MTFCCS).not.toContain('X-CA-SBOE');
   });
 });
+
+describe('X-ST-BOARD — elected state boards that are not boards of education', () => {
+  it('admits X-ST-BOARD for STATE_BOARD explicitly, not via the X catch-all', () => {
+    // The University of Colorado's eight regent districts ARE the congressional districts, and
+    // CC_0366 loads them as copies of the G5200 polygons. STATE_BOARD_EDUCATION already has a
+    // layer (X0003, Utah's board) and that rule is not state-scoped, so Colorado's education
+    // board needed no new line; the Regents are STATE_BOARD, and the X catch-all below admits
+    // only LOCAL/COUNTY here. MEASURED, not assumed: with this clause removed,
+    // check-address-reachability.mjs goes from 7 UNREACHABLE to 15, with a new
+    // `co|STATE_BOARD observed 8` bucket.
+    expect(MTFCC_DISTRICT_TYPE_GUARD).toContain(
+      "(gp.mtfcc = 'X-ST-BOARD' AND d.district_type = 'STATE_BOARD')",
+    );
+  });
+
+  it('admits X-ST-BOARD for STATE_BOARD in the geofence district join too', () => {
+    const queries = read('./districtQueries.ts');
+    expect(queries).toContain("(gb.mtfcc = 'X-ST-BOARD' AND d.district_type = 'STATE_BOARD')");
+  });
+
+  it('keeps X-ST-BOARD out of the fallback exclusion list', () => {
+    expect(FALLBACK_EXCLUDED_MTFCCS).not.toContain('X-ST-BOARD');
+  });
+
+  it('fits the mtfcc column, which is varchar(10)', () => {
+    // essentials.geofence_boundaries.mtfcc is character varying(10) and the longest code in use
+    // is exactly 10 characters. The first draft of CC_0366 called this layer 'X-STATE-BOARD' and
+    // the only thing that caught it was `value too long for type character varying(10)` at
+    // INSERT time, after every other gate had passed.
+    expect('X-ST-BOARD'.length).toBeLessThanOrEqual(10);
+  });
+});
