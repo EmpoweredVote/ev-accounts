@@ -150,3 +150,103 @@ node check-canceled.mjs analysis-YYYY-MM-DD.json la-canceled-elections-final-202
 node ../ca-special-districts-2026-results/emit-values.mjs analysis-YYYY-MM-DD.json [--bounds]
 node controls378.mjs <migration.sql> <dry-run-migration.mjs>
 ```
+
+---
+
+## ✅ THE SCOUT (2026-11-08): there is no appointee list, and for 95 of 96 seats there need not be
+
+The question was whether the 96 cancelled seats have a single published source for who was
+appointed. **They do not — and that turns out not to matter.** Two readings from the statute,
+taken from leginfo.legislature.ca.gov on 2026-11-08, settle it:
+
+**Educ. Code § 5326** — an election is not held when, by 5 p.m. on the 83rd day before it, the
+number of people **nominated** does not exceed the offices to be filled and no petition is
+presented.
+
+**Educ. Code § 5328** — what then happens is **two different things**, and only the second is an
+appointment:
+
+> *"the qualified person or persons nominated shall be seated at the organizational meeting of the
+> board, or if no person has been nominated or if an insufficient number is nominated, the
+> governing board shall appoint a qualified person or persons … and such appointee or appointees
+> shall be seated at the organizational meeting of the board as if elected."*
+
+| | what it means | where the name comes from |
+| --- | --- | --- |
+| **filed == seats** | the nominees are **seated as if elected**. Nobody is appointed. | the county's own candidate list |
+| **filed < seats** | **the district's own governing board** appoints the shortfall | that district's resolution or minutes |
+
+🔴 **The appointing body is the DISTRICT, not the county and not LACOE** — so no county-wide list
+of appointees exists, by law. That is the scout's answer.
+
+### 🔴🔴 The county publishes two dates and only the second is a candidacy
+
+Every row of the RR/CC candidate list carries **`nom_issue`** (papers taken out) and **`nom_file`**
+(papers returned and accepted). **Taking out papers is not standing for election.**
+
+**Azusa Trustee Area 3 is the case that exposed it.** Tavia Lorese Lawson took papers out on
+7/16 and **never filed**; Sandra Benavides issued *and* filed on 8/7. One filed nominee for one
+seat — so § 5326 cancelled the election and § 5328 seats Benavides. Our rows show two candidates
+and made the cancellation look impossible.
+
+### Measured against all 96
+
+`check-nominations.mjs` reads the candidate list, counts **filed** nominees per contest and
+compares with the seats:
+
+| | races |
+| --- | --- |
+| **filed == seats → nominees SEATED, nobody appointed** | **95** |
+| filed < seats → the district's board appoints | **0** |
+| not on the county's candidate list | **1** |
+| **races where more people filed than there are seats** | **0** |
+
+🟢 **That last row is the test that matters.** § 5326 cannot cancel a race in which more people
+filed than there are seats, and **not one of the 96 breaks it**. The reading is confirmed from the
+data, not just from the statute.
+
+⚠ **The one exception is Pasadena Unified School Board District 5**, which the **City of Pasadena**
+runs — which is why it appears under CITIES on the cancelled list and not on the county's
+candidate list at all. It needs the city's own record.
+
+⚠ Alhambra Area 2 and Torrance Area B are **unexpired terms ending 2028-12-08**, titled
+`… SPECIAL ELECTION … (Unexpired term ending December 8, 2028)`. Do not give them a four-year term.
+
+### 🔴 The same defect explains all seven earlier anomalies, and it reaches outside this wave
+
+The four "not on the county ballot" warnings in `CC_0378` and the three "contested yet cancelled"
+races are **one cause**: the seeding pass kept everyone on the candidate list, filed or not.
+
+**8 candidacy rows in production name somebody who never filed:**
+
+| | race | handover |
+| --- | --- | --- |
+| Tavia Lorese Lawson | Azusa Unified Area 3 | 2026-12-11 |
+| Carissa Oldenburg | Burbank Unified Area 4 | 2026-12-11 |
+| Alan Reynolds | South Pasadena Unified Area 4 | 2026-12-11 |
+| Joe Radabaugh | La Cañada Unified | 2026-12-11 |
+| Alfonso Morales | Lynwood Unified | 2026-12-11 |
+| Rick Phillips | Palos Verdes Peninsula Unified | 2026-12-11 |
+| Tomas Ursua | Pomona Unified Area 1 | 2026-12-11 |
+| Raycine Ector | Palmdale School District Area 5 | 2026-12-01 |
+
+🔴 **A NAME MATCH IS A HYPOTHESIS, AND IT CAUGHT ONE HERE.** Alfonso Morales holds a **second**
+candidacy, "At-Large", that is **not** this defect: it comes from the *City of Lynwood's* own
+**Qualified Candidate Filing List**, a different office and a source that says qualified. Only the
+RR/CC-sourced row is wrong. ▶ Check which contest a row belongs to before acting on a name.
+
+⚠ **The disposition is DELETE, not `withdrew`.** These people never filed, so they were never
+candidates; `withdrew` would be a false claim about someone who stood. That is the Troy Nehls
+precedent (`CC_0352`). **Not done here** — deleting published rows is the operator's call.
+
+### ▶ What this makes possible
+
+The 96 are no longer 96 research tasks. They are **one seating migration on 2026-12-11**:
+
+1. delete the 8 non-filer candidacies (or whatever disposition the operator chooses);
+2. seat the 95 nominees under § 5328, sourced to the statute, the county's FINAL cancelled list
+   and the county's candidate list;
+3. research **one** seat — Pasadena Unified District 5 — with the City of Pasadena.
+
+🔴 Record on each of those races that **no election was held**, or the next session re-derives it
+from an absence all over again.

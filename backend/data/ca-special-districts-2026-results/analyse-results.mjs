@@ -213,9 +213,16 @@ for (const race of byRace.values()) {
   // the county says "School District", and a first-three-words rule read those five real
   // matches as failures — Westside Union, Valle Lindo, Mountain View, Lawndale x2.
   const GENERIC = /^(SCHOOL|DISTRICT|UNIFIED|ELEMENTARY|UNION|HIGH|BOARD|GOVERNING|MEMBER|MEMBERS|TRUSTEE|TRUSTEES|AREA|EDUCATION|COMMUNITY|COLLEGE|CITY|MUNICIPAL|WATER|LIBRARY|AGENCY|SERVICES|IRRIGATION|DIVISION|DIRECTOR|DIRECTORS|GENERAL|ELECTION|SPECIAL|THE|AND|OF|NO|FOR)$/;
-  const distinctive = norm(race.district_label)
+  // ⚠ A LOCAL DISTRICT'S LABEL CAN BE JUST "District 3", WITH THE PLACE NAME NOWHERE IN IT —
+  //   CLAUDE.md records that there is no jurisdiction key in this data. Fall back to the
+  //   government's own name so the title still has something to be checked against.
+  const labelWords = norm(race.district_label)
     .replace(/ - (DIVISION|TRUSTEE AREA) \d+$/, '')
     .split(' ').filter((w) => w.length > 2 && !GENERIC.test(w));
+  // governments are named "Los Angeles, California, US" — the state and country are not part
+  // of any county contest title, so only the part before the first comma is usable
+  const distinctive = labelWords.length ? labelWords
+    : norm((race.government || '').split(',')[0]).split(' ').filter((w) => w.length > 2 && !GENERIC.test(w));
   const title = norm(c.title);
   const missing = distinctive.filter((w) => !title.includes(w));
   if (distinctive.length === 0) row.problems.push(`"${race.district_label}" has no distinctive word to check the title against`);
@@ -223,8 +230,15 @@ for (const race of byRace.values()) {
 
   // 🔴 AND THE SEAT NUMBER. Inglewood runs Trustee Areas 1, 2 and 3 in one district: without
   //   this, a contest for the wrong area is an ordinary match on a right-looking title.
-  const ourSeatNo = /(?:DIVISION|TRUSTEE AREA)\s+(\d+)/.exec(norm(race.district_label) + ' ' + norm(race.office_title))?.[1];
-  const theirSeatNo = /(?:DIVISION|TRUSTEE AREA)(?:\s+NO)?\s+(\d+)/.exec(title)?.[1];
+  // ⚠ The same seat is numbered four ways across these sources: "Division 2", "Trustee Area 3",
+  //   "District 9" and the county's own ordinal "9th District". All four LA City contests share
+  //   the title "LOS ANGELES CITY GENERAL MUNICIPAL ELECTION", so without the ordinal form this
+  //   check would have nothing to say about which council district a contest is.
+  const SEAT_OURS = /(?:DIVISION|TRUSTEE AREA|DISTRICT|SEAT)\s+(\d+)/;
+  const SEAT_THEIRS = /(\d+)(?:ST|ND|RD|TH)\s+DISTRICT|(?:DIVISION|TRUSTEE AREA|DISTRICT|SEAT)(?:\s+NO)?\s+(\d+)/;
+  const ourSeatNo = SEAT_OURS.exec(norm(race.district_label) + ' ' + norm(race.office_title))?.[1];
+  const tm = SEAT_THEIRS.exec(title);
+  const theirSeatNo = tm ? (tm[1] ?? tm[2]) : undefined;
   if (ourSeatNo && theirSeatNo && ourSeatNo !== theirSeatNo) {
     row.problems.push(`we hold seat number ${ourSeatNo}, the county contest is number ${theirSeatNo}`);
   } else if (ourSeatNo && !theirSeatNo) {
@@ -269,9 +283,16 @@ for (const race of byRace.values()) {
   // electorate in another county cannot be bounded at all, so it is never callable here.
   const laOnly = counties.length === 1 && counties[0] === 'Los Angeles';
   const estOut = laOnly && c.ballots ? Math.ceil((c.ballots / LA_COUNTED) * LA_OUTSTANDING) : null;
+  // 🔴 A SAFETY MULTIPLE CAN EXCEED THE WHOLE COUNTY'S OUTSTANDING PILE, AND THEN IT IS NOT A
+  //   BOUND — it is a number larger than the most that could possibly arrive. The Los Angeles
+  //   mayoralty is 37% of the county's ballots, so its proportional share is ~49,000 and x3 is
+  //   147,087 against a countywide 131,000. No contest can receive more late ballots than
+  //   exist, so the bound is capped there.
   row.count = {
     ballots: c.ballots, est_outstanding: estOut, safety: SAFETY,
-    bound: estOut === null ? null : estOut * SAFETY, margin, unopposed: !chase,
+    bound: estOut === null ? null : Math.min(estOut * SAFETY, LA_OUTSTANDING),
+    capped: estOut !== null && estOut * SAFETY > LA_OUTSTANDING,
+    margin, unopposed: !chase,
   };
   row.ranked = ranked.map((k, i) => ({
     rank: i + 1, name: k.name, votes: k.votes, rc_id: k.rc?.rc_id,
@@ -283,7 +304,7 @@ for (const race of byRace.values()) {
       ? `spans ${counties.join(' and ')}; San Bernardino publishes no outstanding-ballot estimate, so the margin cannot be bounded`
       : 'no outstanding-ballot figure for this county — the margin cannot be bounded');
   }
-  row.callable = row.problems.length === 0 && margin > estOut * SAFETY;
+  row.callable = row.problems.length === 0 && estOut !== null && margin > row.count.bound;
   report.push(row);
 }
 

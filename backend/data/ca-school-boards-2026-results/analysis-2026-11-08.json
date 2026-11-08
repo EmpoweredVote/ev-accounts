@@ -32,6 +32,7 @@
     "est_outstanding": 261,
     "safety": 3,
     "bound": 783,
+    "capped": false,
     "margin": 1381,
     "unopposed": false
    },
@@ -85,6 +86,7 @@
     "est_outstanding": 855,
     "safety": 3,
     "bound": 2565,
+    "capped": false,
     "margin": 4449,
     "unopposed": false
    },
@@ -138,6 +140,7 @@
     "est_outstanding": 185,
     "safety": 3,
     "bound": 555,
+    "capped": false,
     "margin": 747,
     "unopposed": false
    },
@@ -191,6 +194,7 @@
     "est_outstanding": 289,
     "safety": 3,
     "bound": 867,
+    "capped": false,
     "margin": 2048,
     "unopposed": false
    },
@@ -244,6 +248,7 @@
     "est_outstanding": 325,
     "safety": 3,
     "bound": 975,
+    "capped": false,
     "margin": 1076,
     "unopposed": false
    },
@@ -324,6 +329,7 @@
     "est_outstanding": 498,
     "safety": 3,
     "bound": 1494,
+    "capped": false,
     "margin": 5595,
     "unopposed": false
    },
@@ -377,6 +383,7 @@
     "est_outstanding": 543,
     "safety": 3,
     "bound": 1629,
+    "capped": false,
     "margin": 4005,
     "unopposed": false
    },
@@ -430,6 +437,7 @@
     "est_outstanding": 253,
     "safety": 3,
     "bound": 759,
+    "capped": false,
     "margin": 1155,
     "unopposed": false
    },
@@ -483,6 +491,7 @@
     "est_outstanding": 803,
     "safety": 3,
     "bound": 2409,
+    "capped": false,
     "margin": 3252,
     "unopposed": false
    },
@@ -554,6 +563,7 @@
     "est_outstanding": 249,
     "safety": 3,
     "bound": 747,
+    "capped": false,
     "margin": 1032,
     "unopposed": false
    },
@@ -607,6 +617,7 @@
     "est_outstanding": 68,
     "safety": 3,
     "bound": 204,
+    "capped": false,
     "margin": 271,
     "unopposed": false
    },
@@ -660,6 +671,7 @@
     "est_outstanding": 253,
     "safety": 3,
     "bound": 759,
+    "capped": false,
     "margin": 1199,
     "unopposed": false
    },
@@ -713,6 +725,7 @@
     "est_outstanding": 74,
     "safety": 3,
     "bound": 222,
+    "capped": false,
     "margin": 223,
     "unopposed": false
    },
@@ -775,6 +788,7 @@
     "est_outstanding": 52,
     "safety": 3,
     "bound": 156,
+    "capped": false,
     "margin": 218,
     "unopposed": false
    },
@@ -828,6 +842,7 @@
     "est_outstanding": 2066,
     "safety": 3,
     "bound": 6198,
+    "capped": false,
     "margin": 14074,
     "unopposed": false
    },
@@ -881,6 +896,7 @@
     "est_outstanding": 278,
     "safety": 3,
     "bound": 834,
+    "capped": false,
     "margin": 2452,
     "unopposed": false
    },
@@ -934,6 +950,7 @@
     "est_outstanding": 255,
     "safety": 3,
     "bound": 765,
+    "capped": false,
     "margin": 937,
     "unopposed": false
    },
@@ -1005,6 +1022,7 @@
     "est_outstanding": 314,
     "safety": 3,
     "bound": 942,
+    "capped": false,
     "margin": 1843,
     "unopposed": false
    },
@@ -1067,6 +1085,7 @@
     "est_outstanding": 433,
     "safety": 3,
     "bound": 1299,
+    "capped": false,
     "margin": 1600,
     "unopposed": false
    },
@@ -1120,6 +1139,7 @@
     "est_outstanding": 406,
     "safety": 3,
     "bound": 1218,
+    "capped": false,
     "margin": 1638,
     "unopposed": false
    },
@@ -1173,6 +1193,7 @@
     "est_outstanding": 245,
     "safety": 3,
     "bound": 735,
+    "capped": false,
     "margin": 1943,
     "unopposed": false
    },
@@ -1226,6 +1247,7 @@
     "est_outstanding": 38,
     "safety": 3,
     "bound": 114,
+    "capped": false,
     "margin": 129,
     "unopposed": false
    },
@@ -1279,6 +1301,7 @@
     "est_outstanding": 49,
     "safety": 3,
     "bound": 147,
+    "capped": false,
     "margin": 193,
     "unopposed": false
    },
@@ -1332,6 +1355,7 @@
     "est_outstanding": 204,
     "safety": 3,
     "bound": 612,
+    "capped": false,
     "margin": 1587,
     "unopposed": false
    },
@@ -1385,6 +1409,7 @@
     "est_outstanding": 98,
     "safety": 3,
     "bound": 294,
+    "capped": false,
     "margin": 394,
     "unopposed": false
    },
@@ -1438,6 +1463,7 @@
     "est_outstanding": 101,
     "safety": 3,
     "bound": 303,
+    "capped": false,
     "margin": 335,
     "unopposed": false
    },
@@ -1491,6 +1517,7 @@
     "est_outstanding": 88,
     "safety": 3,
     "bound": 264,
+    "capped": false,
     "margin": 510,
     "unopposed": false
    },
@@ -1543,7 +1570,8 @@
     "ballots": 1561128,
     "est_outstanding": 67248,
     "safety": 3,
-    "bound": 201744,
+    "bound": 131000,
+    "capped": true,
     "margin": 534981,
     "unopposed": false
    },
@@ -1642,6 +1670,7 @@
     "est_outstanding": 196,
     "safety": 3,
     "bound": 588,
+    "capped": false,
     "margin": 934,
     "unopposed": false
    },
@@ -1695,6 +1724,7 @@
     "est_outstanding": 381,
     "safety": 3,
     "bound": 1143,
+    "capped": false,
     "margin": 1574,
     "unopposed": false
    },
@@ -1775,6 +1805,7 @@
     "est_outstanding": 223,
     "safety": 3,
     "bound": 669,
+    "capped": false,
     "margin": 722,
     "unopposed": false
    },
@@ -1828,6 +1859,7 @@
     "est_outstanding": 193,
     "safety": 3,
     "bound": 579,
+    "capped": false,
     "margin": 2295,
     "unopposed": false
    },
@@ -1881,6 +1913,7 @@
     "est_outstanding": 239,
     "safety": 3,
     "bound": 717,
+    "capped": false,
     "margin": 2471,
     "unopposed": false
    },
@@ -1934,6 +1967,7 @@
     "est_outstanding": 142,
     "safety": 3,
     "bound": 426,
+    "capped": false,
     "margin": 739,
     "unopposed": false
    },
@@ -1987,6 +2021,7 @@
     "est_outstanding": 824,
     "safety": 3,
     "bound": 2472,
+    "capped": false,
     "margin": 8525,
     "unopposed": false
    },
@@ -2040,6 +2075,7 @@
     "est_outstanding": 991,
     "safety": 3,
     "bound": 2973,
+    "capped": false,
     "margin": 10021,
     "unopposed": false
    },
@@ -2093,6 +2129,7 @@
     "est_outstanding": 375,
     "safety": 3,
     "bound": 1125,
+    "capped": false,
     "margin": 1504,
     "unopposed": false
    },
@@ -2146,6 +2183,7 @@
     "est_outstanding": 428,
     "safety": 3,
     "bound": 1284,
+    "capped": false,
     "margin": 2060,
     "unopposed": false
    },
@@ -2199,6 +2237,7 @@
     "est_outstanding": 619,
     "safety": 3,
     "bound": 1857,
+    "capped": false,
     "margin": 2295,
     "unopposed": false
    },
@@ -2252,6 +2291,7 @@
     "est_outstanding": 416,
     "safety": 3,
     "bound": 1248,
+    "capped": false,
     "margin": 1404,
     "unopposed": false
    },
@@ -2316,6 +2356,7 @@
     "est_outstanding": 353,
     "safety": 3,
     "bound": 1059,
+    "capped": false,
     "margin": 4190,
     "unopposed": false
    },
@@ -2369,6 +2410,7 @@
     "est_outstanding": 269,
     "safety": 3,
     "bound": 807,
+    "capped": false,
     "margin": 3097,
     "unopposed": false
    },
@@ -2422,6 +2464,7 @@
     "est_outstanding": 2032,
     "safety": 3,
     "bound": 6096,
+    "capped": false,
     "margin": 6121,
     "unopposed": false
    },
@@ -2502,6 +2545,7 @@
     "est_outstanding": 2034,
     "safety": 3,
     "bound": 6102,
+    "capped": false,
     "margin": 10604,
     "unopposed": false
    },
@@ -2582,6 +2626,7 @@
     "est_outstanding": 487,
     "safety": 3,
     "bound": 1461,
+    "capped": false,
     "margin": 2445,
     "unopposed": false
    },
@@ -2635,6 +2680,7 @@
     "est_outstanding": 64,
     "safety": 3,
     "bound": 192,
+    "capped": false,
     "margin": 210,
     "unopposed": false
    },
@@ -2688,6 +2734,7 @@
     "est_outstanding": 541,
     "safety": 3,
     "bound": 1623,
+    "capped": false,
     "margin": 2046,
     "unopposed": false
    },
@@ -2741,6 +2788,7 @@
     "est_outstanding": 210,
     "safety": 3,
     "bound": 630,
+    "capped": false,
     "margin": 658,
     "unopposed": false
    },
@@ -2794,6 +2842,7 @@
     "est_outstanding": 518,
     "safety": 3,
     "bound": 1554,
+    "capped": false,
     "margin": 4990,
     "unopposed": false
    },
@@ -2863,6 +2912,7 @@
     "est_outstanding": 239,
     "safety": 3,
     "bound": 717,
+    "capped": false,
     "margin": 532,
     "unopposed": false
    },
@@ -2964,6 +3014,7 @@
     "est_outstanding": 47,
     "safety": 3,
     "bound": 141,
+    "capped": false,
     "margin": 54,
     "unopposed": false
    },
@@ -3065,6 +3116,7 @@
     "est_outstanding": 787,
     "safety": 3,
     "bound": 2361,
+    "capped": false,
     "margin": 37,
     "unopposed": false
    },
@@ -3120,6 +3172,7 @@
     "est_outstanding": 857,
     "safety": 3,
     "bound": 2571,
+    "capped": false,
     "margin": 645,
     "unopposed": false
    },
@@ -3173,6 +3226,7 @@
     "est_outstanding": 1237,
     "safety": 3,
     "bound": 3711,
+    "capped": false,
     "margin": 265,
     "unopposed": false
    },
@@ -3292,6 +3346,7 @@
     "est_outstanding": 721,
     "safety": 3,
     "bound": 2163,
+    "capped": false,
     "margin": 2161,
     "unopposed": false
    },
@@ -3372,6 +3427,7 @@
     "est_outstanding": 284,
     "safety": 3,
     "bound": 852,
+    "capped": false,
     "margin": 659,
     "unopposed": false
    },
@@ -3468,6 +3524,7 @@
     "est_outstanding": 214,
     "safety": 3,
     "bound": 642,
+    "capped": false,
     "margin": 605,
     "unopposed": false
    },
@@ -3521,6 +3578,7 @@
     "est_outstanding": 577,
     "safety": 3,
     "bound": 1731,
+    "capped": false,
     "margin": 1450,
     "unopposed": false
    },
@@ -3745,6 +3803,7 @@
     "est_outstanding": 655,
     "safety": 3,
     "bound": 1965,
+    "capped": false,
     "margin": 716,
     "unopposed": false
    },
@@ -3894,6 +3953,7 @@
     "est_outstanding": 121,
     "safety": 3,
     "bound": 363,
+    "capped": false,
     "margin": 85,
     "unopposed": false
    },
@@ -3979,6 +4039,7 @@
     "est_outstanding": 595,
     "safety": 3,
     "bound": 1785,
+    "capped": false,
     "margin": 667,
     "unopposed": false
    },
@@ -4032,6 +4093,7 @@
     "est_outstanding": 678,
     "safety": 3,
     "bound": 2034,
+    "capped": false,
     "margin": 487,
     "unopposed": false
    },
@@ -4149,6 +4211,7 @@
     "est_outstanding": 302,
     "safety": 3,
     "bound": 906,
+    "capped": false,
     "margin": 241,
     "unopposed": false
    },
@@ -4202,6 +4265,7 @@
     "est_outstanding": 203,
     "safety": 3,
     "bound": 609,
+    "capped": false,
     "margin": 36,
     "unopposed": false
    },
@@ -4303,6 +4367,7 @@
     "est_outstanding": 318,
     "safety": 3,
     "bound": 954,
+    "capped": false,
     "margin": 663,
     "unopposed": false
    },
@@ -4356,6 +4421,7 @@
     "est_outstanding": 230,
     "safety": 3,
     "bound": 690,
+    "capped": false,
     "margin": 273,
     "unopposed": false
    },
@@ -4505,6 +4571,7 @@
     "est_outstanding": 163,
     "safety": 3,
     "bound": 489,
+    "capped": false,
     "margin": 270,
     "unopposed": false
    },
@@ -4574,6 +4641,7 @@
     "est_outstanding": 352,
     "safety": 3,
     "bound": 1056,
+    "capped": false,
     "margin": 988,
     "unopposed": false
    },
@@ -4725,6 +4793,7 @@
     "est_outstanding": 42,
     "safety": 3,
     "bound": 126,
+    "capped": false,
     "margin": 23,
     "unopposed": false
    },
@@ -4778,6 +4847,7 @@
     "est_outstanding": 429,
     "safety": 3,
     "bound": 1287,
+    "capped": false,
     "margin": 1225,
     "unopposed": false
    },
@@ -4876,6 +4946,7 @@
     "est_outstanding": 251,
     "safety": 3,
     "bound": 753,
+    "capped": false,
     "margin": 335,
     "unopposed": false
    },
@@ -4929,6 +5000,7 @@
     "est_outstanding": 1246,
     "safety": 3,
     "bound": 3738,
+    "capped": false,
     "margin": 969,
     "unopposed": false
    },
@@ -5002,6 +5074,7 @@
     "est_outstanding": 120,
     "safety": 3,
     "bound": 360,
+    "capped": false,
     "margin": 239,
     "unopposed": false
    },
@@ -5071,6 +5144,7 @@
     "est_outstanding": 216,
     "safety": 3,
     "bound": 648,
+    "capped": false,
     "margin": 288,
     "unopposed": false
    },
@@ -5142,6 +5216,7 @@
     "est_outstanding": 113,
     "safety": 3,
     "bound": 339,
+    "capped": false,
     "margin": 19,
     "unopposed": false
    },
@@ -5227,6 +5302,7 @@
     "est_outstanding": 2074,
     "safety": 3,
     "bound": 6222,
+    "capped": false,
     "margin": 2488,
     "unopposed": false
    },
@@ -5279,7 +5355,8 @@
     "ballots": 1561128,
     "est_outstanding": 67248,
     "safety": 3,
-    "bound": 201744,
+    "bound": 131000,
+    "capped": true,
     "margin": 97209,
     "unopposed": false
    },
@@ -5359,7 +5436,8 @@
     "ballots": 1561128,
     "est_outstanding": 67248,
     "safety": 3,
-    "bound": 201744,
+    "bound": 131000,
+    "capped": true,
     "margin": 84905,
     "unopposed": false
    },
@@ -5431,6 +5509,7 @@
     "est_outstanding": 27,
     "safety": 3,
     "bound": 81,
+    "capped": false,
     "margin": 22,
     "unopposed": false
    },
@@ -5516,6 +5595,7 @@
     "est_outstanding": 596,
     "safety": 3,
     "bound": 1788,
+    "capped": false,
     "margin": 42,
     "unopposed": false
    },
@@ -5655,6 +5735,7 @@
     "est_outstanding": 315,
     "safety": 3,
     "bound": 945,
+    "capped": false,
     "margin": 186,
     "unopposed": false
    },
@@ -5749,6 +5830,7 @@
     "est_outstanding": 1210,
     "safety": 3,
     "bound": 3630,
+    "capped": false,
     "margin": 1282,
     "unopposed": false
    },
@@ -5898,6 +5980,7 @@
     "est_outstanding": 251,
     "safety": 3,
     "bound": 753,
+    "capped": false,
     "margin": 366,
     "unopposed": false
    },
@@ -5951,6 +6034,7 @@
     "est_outstanding": 269,
     "safety": 3,
     "bound": 807,
+    "capped": false,
     "margin": 593,
     "unopposed": false
    },
@@ -6004,6 +6088,7 @@
     "est_outstanding": 325,
     "safety": 3,
     "bound": 975,
+    "capped": false,
     "margin": 205,
     "unopposed": false
    },
@@ -6057,6 +6142,7 @@
     "est_outstanding": 1291,
     "safety": 3,
     "bound": 3873,
+    "capped": false,
     "margin": 1096,
     "unopposed": false
    },
@@ -6171,6 +6257,7 @@
     "est_outstanding": 1166,
     "safety": 3,
     "bound": 3498,
+    "capped": false,
     "margin": 2743,
     "unopposed": false
    },
@@ -6272,6 +6359,7 @@
     "est_outstanding": 657,
     "safety": 3,
     "bound": 1971,
+    "capped": false,
     "margin": 1654,
     "unopposed": false
    },
@@ -6325,6 +6413,7 @@
     "est_outstanding": 830,
     "safety": 3,
     "bound": 2490,
+    "capped": false,
     "margin": 638,
     "unopposed": false
    },
@@ -6410,6 +6499,7 @@
     "est_outstanding": 188,
     "safety": 3,
     "bound": 564,
+    "capped": false,
     "margin": 124,
     "unopposed": false
    },
@@ -6472,6 +6562,7 @@
     "est_outstanding": 275,
     "safety": 3,
     "bound": 825,
+    "capped": false,
     "margin": 2674,
     "unopposed": false
    },
@@ -6527,6 +6618,7 @@
     "est_outstanding": 515,
     "safety": 3,
     "bound": 1545,
+    "capped": false,
     "margin": 202,
     "unopposed": false
    },
@@ -6623,6 +6715,7 @@
     "est_outstanding": 1024,
     "safety": 3,
     "bound": 3072,
+    "capped": false,
     "margin": 1961,
     "unopposed": false
    },
@@ -6692,6 +6785,7 @@
     "est_outstanding": 382,
     "safety": 3,
     "bound": 1146,
+    "capped": false,
     "margin": 440,
     "unopposed": false
    },
@@ -6754,6 +6848,7 @@
     "est_outstanding": 377,
     "safety": 3,
     "bound": 1131,
+    "capped": false,
     "margin": 242,
     "unopposed": false
    },
@@ -7015,6 +7110,7 @@
     "est_outstanding": 85,
     "safety": 3,
     "bound": 255,
+    "capped": false,
     "margin": 82,
     "unopposed": false
    },
@@ -7118,6 +7214,7 @@
     "est_outstanding": 1122,
     "safety": 3,
     "bound": 3366,
+    "capped": false,
     "margin": 670,
     "unopposed": false
    },
@@ -7205,6 +7302,7 @@
     "est_outstanding": 199,
     "safety": 3,
     "bound": 597,
+    "capped": false,
     "margin": 74,
     "unopposed": false
    },
@@ -7290,6 +7388,7 @@
     "est_outstanding": 972,
     "safety": 3,
     "bound": 2916,
+    "capped": false,
     "margin": 1767,
     "unopposed": false
    },
@@ -7359,6 +7458,7 @@
     "est_outstanding": 1143,
     "safety": 3,
     "bound": 3429,
+    "capped": false,
     "margin": 3412,
     "unopposed": false
    },
@@ -7460,6 +7560,7 @@
     "est_outstanding": 297,
     "safety": 3,
     "bound": 891,
+    "capped": false,
     "margin": 320,
     "unopposed": false
    },

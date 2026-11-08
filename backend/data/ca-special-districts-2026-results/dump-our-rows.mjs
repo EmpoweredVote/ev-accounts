@@ -19,6 +19,7 @@ const client = new pg.Client({ connectionString: process.env.DATABASE_URL });
 await client.connect();
 const { rows } = await client.query(`
   SELECT d.label AS district_label, o.title AS office_title, r.seats,
+         g.name AS government,
          r.id AS race_id, o.id AS office_id, o.is_vacant, o.vacant_since,
          rc.id AS rc_id, rc.full_name, rc.first_name, rc.last_name, rc.politician_id,
          rc.is_incumbent, rc.candidate_status, rc.result, rc.result_certainty, rc.result_source,
@@ -27,6 +28,8 @@ const { rows } = await client.query(`
     JOIN essentials.elections e ON e.id = r.election_id
     JOIN essentials.offices o ON o.id = r.office_id
     JOIN essentials.districts d ON d.id = o.district_id
+    LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
+    LEFT JOIN essentials.governments g ON g.id = ch.government_id
     JOIN essentials.office_swearing_in s ON s.office_id = r.office_id AND s.election_date = e.election_date
     JOIN essentials.race_candidates rc ON rc.race_id = r.id
    WHERE e.election_date = DATE '2026-11-03' AND s.swearing_in_date = $1::date
