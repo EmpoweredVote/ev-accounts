@@ -778,6 +778,13 @@ each was first learned.
   which was reported as a race-mapping bug and was retracted: both were mapped correctly.
   ▶ **Print the field at FULL WIDTH before believing a pattern in it, or read the stable key
   beside it.** `ocd_id` carried the right answer throughout and was never displayed.
+  - 🔴 **A NORMALISATION STEP MANUFACTURES THE SAME SHAPE, AND IT LOOKS LIKE TWO SOURCES
+    DISAGREEING.** `CC_0377` cross-checked LA County's JSON against the same county's
+    server-rendered page and three candidates came back "absent from the text page" — a
+    disagreement about who was on the ballot. The pages write accents as numeric entities
+    (`LA CA&#xD1;ADA`, `ERIK PE&#xD1;A`) and the parser did not decode them. ▶ **Before
+    reporting a mismatch between two readings, ask what your own pipeline does to the field —
+    and give the comparison a positive control that names a row it must be able to see.**
 - 🔴🔴 **BOUND A PARSE BY THE DOCUMENT'S OWN STRUCTURE, NEVER BY A BLACKLIST OF WHAT ELSE MIGHT
   BE IN IT.** A section reader that stops at a list of headings you thought of cannot see the
   heading you did not, and everything after it is read as part of the section before — with a
