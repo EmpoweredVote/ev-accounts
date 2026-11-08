@@ -727,6 +727,22 @@ each was first learned.
     that**, not the nearest property that is easy to assert.
   - Change one thing per tamper. A tamper that trips three assertions at once tells you the suite
     is alive but not which guard holds which claim.
+- 🔴🔴 **A GATE NO CONTROL REACHES IS A GATE NOBODY HAS TESTED, AND TWO GATES CATCHING ONE FAULT
+  IS WHAT HIDES IT.** Gates run in order, so a tamper stopped by an earlier one says nothing about
+  a later one — and the earlier gate firing looks like success. `CC_0376` planted three label-swap
+  tampers before one reached its point-to-member chain gate: the first was stopped by an
+  incumbent-consistency check, the second by a gate the first tamper had just bought. Only a
+  tamper that leaves every other table correct and self-consistent tests the last gate in a chain.
+  ▶ **Track which gate each control fires on, not just that it went red.** A gate with no control
+  of its own is untested however many controls the file has.
+- 🔴🔴 **A UNION OR COVERAGE GATE CANNOT SEE WHICH VERSION OF A MAP IT HAS, AND ITS NUMBER WILL NOT
+  EVEN WOBBLE.** Two complete partitions of the same area have *identical* unions by construction,
+  so every coverage, overlap and bounding-box measure agrees to the last decimal. Measured: New
+  Hampshire's superseded 2012 councilor map covers the TIGER state outline to **99.6836%, the same
+  figure as the 2022 map to four decimal places**, and differs from it on 66 of 259 towns.
+  ▶ Only evidence about **which district a NAMED PLACE belongs to** separates two vintages. Where
+  a statute names places (New Hampshire names all 259), that is the strongest anchor available —
+  stronger than a county composition, and it leaves no district unpinned.
 - 🔴🔴 **A FLAT CONTROL TESTS NOTHING, AND A CONTROL DERIVED FROM THE DATA UNDER TEST MOVES WITH
   THE DEFECT.** A blank grey frame proves a detector can return "nothing"; it proves nothing about
   what the detector does with real input. Worse, a threshold or baseline computed *from the same
@@ -821,7 +837,13 @@ each was first learned.
 
 - Party affiliation is **antipartisan** by design: party lives on `races.primary_party` (which ballot
   a voter requests), never on `race_candidates`.
-- `geofence_boundaries.state` holds **2-digit FIPS**, not USPS codes.
+- `geofence_boundaries.state` holds **2-digit FIPS**, not USPS codes — ⚠ **EXCEPT ON THE `G4000`
+  STATE-OUTLINE LAYER, WHERE IT HOLDS USPS.** Measured 2026-11-08: of its 53 rows, 52 carry
+  `'NH'`, `'CA'`, … , one carries `'72'` and one is NULL. So a state-outline lookup written the
+  way this line used to read — `mtfcc = 'G4000' AND state = '33'` — returns **nothing**, and an
+  empty result reads as "we hold no outline for this state", which silently SKIPS a coverage gate
+  rather than failing it. 🔴 **Key the state outline on `geo_id`** (`geo_id = '33'`), as the
+  tier-3 loaders do.
 - 🔴 **`geo_id` IS NOT UNIQUE — THE KEY IS THE PAIR `(mtfcc, geo_id)`.** Measured: **1,159
   collisions across 13 states**, because a place and a county subdivision can share a number.
   `geoIdGuard.ts` enforces the pair on the production write path; **ad-hoc SQL does not**, so a
