@@ -740,6 +740,19 @@ each was first learned.
 - 🔴 **A MASTER-ONLY GATE CANNOT VET THE MERGE THAT TRIPS IT.** It reads production data and runs
   after the merge, so it fails on *the next* PR and names an innocent author. Carry the check into
   the migration's own post-verify, as a delta, if you need it to block the guilty change.
+  - 🔴🔴 **AND APPLYING A MIGRATION BEFORE ITS READ-PATH CODE MERGES HOLDS THAT GATE RED FOR
+    EVERYONE, FOR AS LONG AS THE BRANCH STAYS OPEN.** The gate reads **production data with
+    MASTER's code**, and those two are different things that can disagree for days.
+    `CC_0366`-`CC_0372` created Colorado's and Louisiana's board districts in production while
+    the `X-ST-BOARD` line that makes them readable sat unmerged in `districtQueries.ts` and
+    `geoIdGuard.ts`. `check:reachability` reported **`UNREACHABLE` 20 against a baseline of 7**
+    — new buckets `co|STATE_BOARD` 8 and `la|STATE_BOARD` 5 — and failed **four consecutive
+    master runs**, every one of them somebody else's merge. Merging the PR took it straight back
+    to 7 with no baseline change: the gate was right the whole time and the branch was late.
+    🔴 **So do not raise the baseline to clear this red** — see § Officeholder occupancy, *never
+    raise it at all*. ▶ **A districted body on a new `X…` layer is not safe to apply to
+    production until its registration is on master.** Land the migration and those two code
+    lines together, or merge the same day you apply.
 - 🔴🔴 **A TRUNCATED DISPLAY MANUFACTURES FINDINGS, AND IT BIASES THEM TOWARDS LOOKING LIKE
   DUPLICATES.** Cutting a column to fit makes distinct values collapse onto one another, and that
   collision is exactly the shape of a real defect, so the artefact reads as a discovery. On
