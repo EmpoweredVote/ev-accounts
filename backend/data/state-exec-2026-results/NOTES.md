@@ -1430,10 +1430,19 @@ the version committed.**
 
 ## ▶ The recipe for the next imported polygon
 
-Texas proved the route; Alabama, Louisiana, New Mexico and Nebraska repeated it. ⚠ **UPDATED
-2026-11-07 — Alabama (`CC_0370`), Louisiana (`CC_0371`), New Mexico (`CC_0372`) and all three
-Nebraska boards (`CC_0373`-`CC_0375`) are DONE.** **ONE body is left: the NH Executive Council
-(5 seats)**, and its source is found — see the end of this file. For each:
+Texas proved the route; Alabama, Louisiana, New Mexico, Nebraska and New Hampshire repeated it.
+🟢🟢 **UPDATED 2026-11-08 — EVERY BODY IN TIER 3 THAT NEEDED AN IMPORTED POLYGON IS DONE:**
+Alabama (`CC_0370`), Louisiana (`CC_0371`), New Mexico (`CC_0372`), all three Nebraska boards
+(`CC_0373`-`CC_0375`) and the NH Executive Council (`CC_0376`). **No tier-3 body is waiting on
+geometry.** What remains is sourcing — see "Tier 3 after New Hampshire" at the end of this file.
+The recipe is kept because the next state will want it. For each:
+
+0. 🟢🟢 **FIRST, LOOK FOR A STATUTE THAT NAMES PLACES RATHER THAN COUNTIES.** New Hampshire's
+   RSA 662:2 lists all 259 towns, cities and unincorporated places, each in exactly one district.
+   Joined to the Census county-subdivision gazetteer — which gives every one an internal point —
+   that is a point-in-polygon test per place, from two sources neither of which is the map. It is
+   strictly stronger than a county composition and it left NO district unanchored, where Nebraska
+   had two unpinned pairs and New Mexico four. Check for it before settling for counties.
 
 1. **Find the state's redistricting portal.** Texas runs CKAN:
    `data.capitol.texas.gov/api/3/action/package_search?q=...` and `package_show?id=<plan>`.
@@ -2409,3 +2418,269 @@ Nebraska's automatic recount threshold is one percent of the leading candidate's
 (`32-1119`), which is 418 here, so no recount is triggered — but the Board of State Canvassers
 does not certify the general until early December, and these results are recorded as `called`,
 not certified.
+
+# `CC_0376` — New Hampshire's Executive Council, and a statute that names every town
+
+Five seats, five imported polygons, five races, ten candidacies, ten people. **This closes
+state-executive tier 3's geometry work.** Baseline unchanged at 293 / 55 / 238; reachability
+unchanged at UNREACHABLE 7 against a baseline of 7.
+
+## 🟢🟢 THE BEST ANCHOR IN THE SERIES: THE STATUTE NAMES EVERY PLACE IN THE STATE
+
+RSA 662:2 "Councilor Districts" does not describe the districts by county, and it does not adopt a
+map by reference. It **lists every town, city and unincorporated place in New Hampshire**, each in
+exactly one of the five districts — 259 of them. The Census Bureau's county-subdivision gazetteer
+gives each of those an **internal point guaranteed to lie inside it**. The statute says which
+district a place is in; the Census says where the place is; neither knows about the other and
+neither is the plan.
+
+That produces **259 point-in-polygon test points, every district carrying at least 20**. Nebraska
+had to record two pairs of districts that no available evidence could separate, and New Mexico
+four. **New Hampshire leaves none.** No permutation of five districts survives 259 labelled points.
+
+▶ **Look for this shape first in any remaining state.** It is better than a county composition,
+better than a block equivalency file and far better than members' home towns, because it is
+complete and it is finer-grained than the geography production holds.
+
+## 🔴🔴 THE DECOY IS REAL, IT IS IN THE SAME SERVICE, AND EVERY STRUCTURAL GATE PASSES ON IT
+
+NHGRANIT's `APB_ElectoralDistricts` publishes the councilor map twice:
+
+| layer | name | what it is |
+| --- | --- | --- |
+| 1 | `NHExecCo2012` | the **superseded** map, drawn on the 2010 census |
+| 7 | `NHExecDists2022` | the map in force |
+
+Both are five valid, disjoint polygons covering the whole state. Both report the same extent to
+the millimetre. Neither carries a description. **Only the year in the layer name separates them.**
+
+Loader control B is not a synthetic tamper — it fetches the 2012 map for real and loads it under
+the 2022 labels. Measured:
+
+- bounding box: **passes**
+- pairwise overlap: **passes**, 0%
+- coverage of the TIGER state outline: **passes at 99.6836% — the SAME FIGURE AS THE CURRENT MAP
+  TO FOUR DECIMAL PLACES**, because both are complete partitions of New Hampshire
+- the statute anchor: **fails, on 66 of 259 towns**
+
+🔴 **A COVERAGE GATE CANNOT SEE VINTAGE, AND ITS NUMBER WILL NOT EVEN WOBBLE.** If two maps
+partition the same state, every union-based measure is identical by construction. Only evidence
+about WHICH district a named place belongs to can tell them apart.
+
+## 🔴 THE CRS TRAP IS THE WORST SO FAR, AND IT IS THE HOLLADAY FAILURE EXACTLY
+
+The layer's native reference is **wkid 102710 / latestWkid 3437 — NAD83 New Hampshire State Plane
+in US SURVEY FEET**, extent `745,474..1,267,014` by `72,030..1,023,284`. The query carries
+`outSR=4326`; every coordinate is bounds-checked at parse time, again after INSERT, and a third
+time in the migration before anything is created. Control A reprojects the real polygons back to
+3437 — what we would hold if `outSR` were ever dropped — and the loader stops on the first point.
+
+## 🔴🔴 TWO MEASUREMENTS CONTRADICTED THE PLAN, AND BOTH WOULD HAVE READ AS SUCCESS
+
+**1. `FUNCSTAT` is not the gazetteer filter, and the obvious reading throws away every city.**
+All 13 New Hampshire cities — Manchester, Nashua, Concord, Portsmouth, Keene, Dover, Rochester,
+Berlin, Claremont, Franklin, Laconia, Lebanon, Somersworth — are coded `FUNCSTAT = 'F'` in the
+county-subdivision file, because the Census carries a New Hampshire city as an incorporated PLACE
+and leaves a coextensive shell in the MCD layer. They have real land (Manchester 85.7 km²) and
+real internal points. `Livermore town` is `'I'`, an inactive unit the statute still names. The only
+genuinely empty row is `County subdivisions not defined`, whose `ALAND` is 0 and whose internal
+point is in the Atlantic. **The discriminator is `ALAND = 0`, read off the rows.** Filtering on
+`FUNCSTAT <> 'F'` was tried first and silently dropped the state's largest towns; it surfaced only
+because the join refuses to lose a statute name in either direction.
+▶ This is the `WHERE`-clause rule in CLAUDE.md: a predicate reads the shape of a value, never
+what the value is. `GROUP BY` the discriminating field and read real rows first.
+
+**2. Only ONE of the ten counties lies wholly in one district.** The tier-3 inventory predicted
+"several counties should fall wholly inside one". Nine of ten are split — Hillsborough four ways,
+Merrimack four ways. **The whole-county gate that carried Alabama (62 of 67) and Louisiana would
+have had a single usable row here and would have LOOKED anchored.** It is kept as corroboration;
+the town points are the anchor.
+
+| county | towns | districts |
+| --- | --- | --- |
+| Carroll | 19 | **1 (whole)** |
+| Belknap | 11 | 1, 4 |
+| Cheshire | 23 | 2, 5 |
+| Coos | 43 | 1, 2 |
+| Grafton | 40 | 1, 2 |
+| Hillsborough | 31 | 2, 3, 4, 5 |
+| Merrimack | 27 | 1, 2, 4, 5 |
+| Rockingham | 37 | 3, 4 |
+| Strafford | 13 | 1, 4 |
+| Sullivan | 15 | 2, 5 |
+
+Measured split shares: the smallest TRUE share is **2.7304%** (Coos in district 2) and the largest
+spurious sliver is **0.0021%** — three orders of magnitude apart, so the 0.05% floor is safe with
+room at both ends. ⚠ Measured here, for here. Alabama and Louisiana used 0.5%, which **refused a
+correct New Mexico map**.
+
+## ⚠ `geofence_boundaries.state` IS NOT FIPS ON THE `G4000` LAYER
+
+CLAUDE.md says that column holds 2-digit FIPS. True of every layer used here **except `G4000`**,
+where 52 of the 53 rows hold a **USPS code** (`'NH'`, `'CA'`, …), one holds `'72'` and one is NULL.
+A state-outline lookup written as `state = '33'` returns nothing, which reads as "we hold no
+outline for this state" and would quietly skip the coverage gate rather than fail it.
+▶ **Key the state outline on `geo_id`**, as the Nebraska loader already did — there by habit, here
+by necessity.
+
+## 🔴 THE CONSTITUTIONAL DATE IS THE DATE OF THE COUNT, NOT OF THE OATH
+
+N.H. Const. pt. 2, art. 60 requires the councilor returns to be laid before the Senate and House
+"**on the first Wednesday following the first Tuesday of January**" — 2027-01-06 for this cycle.
+That is a date for the **count**. The oath is administered afterwards, at a Joint Convention whose
+day the General Court sets. In 2025 the votes went before them on **Wednesday 8 January** and
+Governor Ayotte swore the councilors in on **Thursday 9 January**.
+
+So the handover date for 2027 **is not written down anywhere in this file**, and a gate fails if
+the chamber row ever loses the sentence explaining why. A December pass that reused the
+constitutional date would seat five people a day early — the same family of error as copying a
+vacancy date off a source that publishes the member's last day.
+▶ **Read what a source's date is a date OF.** Ballotpedia publishes departures; Three Valleys
+publishes effect; New Hampshire's constitution publishes a count.
+
+## The sitting councilors, and the primary record for their term start
+
+**New Hampshire House Journal No. 3, Thursday 9 January 2025**, under "OATHS OF OFFICE":
+
+> Governor Ayotte administered the oath of office to the Honorable Executive Councilors, Joseph
+> Kenney, Karen Liot Hill, Janet Stevens, John Stephen and David Wheeler.
+
+`https://gc.nh.gov/house/calendars_journals/Journals/2025/HJ%2003%20January%209,%202025.PDF`
+
+The same Journal seats the councilors-elect **by district**, which is a second source for the
+assignments beside council.nh.gov's own five pages, each headed with its member's name. All five
+carry `term_start = 2025-01-09`, precision `day`, `how_started = elected`.
+
+⚠ **A search summary claimed council.nh.gov's contact page still named Warmington and Gatsas**,
+the 2023-24 councilors, and that it contradicted the homepage. **It does not** — the live contact
+page names the current five. The contradiction was an artefact of whatever the summariser read.
+A search summary is a lead; the roster is the evidence.
+
+## The 2026 results, from the state's own return sheets
+
+The Secretary of State publishes **one .xlsx per district, town by town**
+(`https://www.sos.nh.gov/2026-general-election-results`). Democrats won all five seats; Karen Liot
+Hill is the only incumbent re-elected.
+
+| D | winner | votes | loser (incumbent) | votes | margin |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Luz Bay (D) | 64,227 | Joseph D. Kenney (R) | 60,500 | 3,727 · 2.99% |
+| 2 | **Karen Liot Hill (D)** re-elected | 81,364 | Tobin Menard (R) | 44,197 | 37,167 · 29.58% |
+| 3 | Lisa Kennedy Sheldon (D) | 70,251 | Janet Stevens (R) | 64,617 | 5,634 · 4.18% |
+| 4 | Jim O'Connell (D) | 60,540 | John Stephen (R) | 52,547 | 7,993 · 7.06% |
+| 5 | Melanie Levesque (D) | 64,712 | David K. Wheeler (R) | 55,615 | 9,097 · 7.56% |
+
+🟢 **THE RETURN SHEETS ARE A THIRD, INDEPENDENT STATEMENT OF THE COMPOSITION, AND THEY ARE USED AS
+ONE.** Each workbook lists exactly the towns that voted in that district's race — not the map, not
+the statute, but what happened at the polls. The parser refuses to emit unless that set equals
+RSA 662:2's, in both directions. It does, for all five: 91 / 81 / 32 / 20 / 35.
+
+🔴 **New Hampshire cities vote BY WARD and the sheets report them that way** — 73 "X Ward N" rows
+across the five districts. Berlin, also a city, reports as a single row, so this is each city's own
+practice and an exclusion list would go stale. Wards are folded into their city **for the set
+comparison only**, every ward's votes are counted either way, and the number folded is printed.
+⚠ Safe here **because RSA 662:2 assigns whole cities**. It would NOT be safe for RSA 662:1, whose
+congressional districts do split wards.
+
+⚠ **These are returns, not a canvass.** The Secretary of State states they "are subject to change
+if clerks submit amendments". Every candidacy carries `result_certainty = 'called'`.
+
+🔴 **The ballot name is not always the roster name.** The return sheet carries "**Dave Wheeler**";
+council.nh.gov heads his page "**David K. Wheeler**". One person, two forms. The roster form is
+stored and the ballot form is written into the race description so the return can still be traced
+to the row. Nothing else diverged across ten candidacies.
+
+## 🔴 THE WAF BLOCKS THE FILES AS WELL AS THE PAGES
+
+`www.sos.nh.gov` and `www.nh.gov` sit behind an Akamai edge that answers Node's `fetch` and `curl`
+with **HTTP 403 "Access Denied"** even with a browser User-Agent — and it does so on the `.xlsx`
+files too, so the usual "the challenge covers pages but leaves files open" escape **does not apply
+here**. The workbooks were pulled through Playwright and are committed beside the parser.
+
+⚠ **AND THE FIRST ATTEMPT WROTE THE 403 BODIES TO DISK AS `.xlsx`** — five 507-byte HTML files with
+spreadsheet names, which were swept into a commit before being spotted. Nothing read them, because
+the parser asserts the **PK zip magic** before trusting a workbook and names the WAF when it is
+missing. ▶ A file is not a spreadsheet because of its extension. `*.xlsx` is now pinned `binary` in
+`.gitattributes`, since a normalised workbook is corrupt on checkout and reads as a parser bug.
+
+## Controls
+
+Ten on the migration, seven on the loader; each asserted PRESENT before it ran. Two changed the
+file rather than confirming it, and both are the reason a gate exists.
+
+🔴🔴 **A2 REPORTED `DRY RUN OK`, AND IT WAS A REAL HOLE.** It swapped which polygon districts 1 and
+3 point at. The office-to-district join keys on a number **derived from the geo_id**, so the swap
+cancelled itself out and the chain gate never fired — leaving only a district whose **label
+disagreed with its geo_id**, which nothing checked. A voter would have been shown "District 1" over
+the District 3 map. Two gates were added: a district's label and `district_id` must match its
+`geo_id`, and an office's title must match the `geo_id` of the district it sits on.
+
+🔴 **A AND A3 WERE BOTH SHADOWED, IN OPPOSITE DIRECTIONS.** A (swap two councilors between seats)
+is stopped by the `calls` consistency check, because moving a holder leaves his race carrying no
+incumbent — two independent gates catching one fault is a good property of the file and a useless
+property of the control. A3 (attach the District 1 office to the District 3 district) is stopped by
+one of the *new* gates A2 bought. So the 259-town chain still had no control of its own.
+▶ **A4 is the one that reaches it**: it seats the right people in the WRONG OFFICES, leaving every
+other table correct and self-consistent. It fails naming the towns — `Alton -> Janet Stevens`,
+`Laconia -> Janet Stevens`, … **A gate no control reaches is a gate nobody has tested.**
+
+| # | tamper | caught by |
+| --- | --- | --- |
+| loader A | the real polygons reprojected to EPSG:3437 (State Plane feet) | bounding box, at the first point |
+| loader B | **the real 2012 map**, under 2022 labels | the statute anchor, 66 of 259 towns |
+| loader C | districts 1 and 2 swapped | the statute anchor, 172 towns |
+| loader D | districts 3 and 4 swapped — neither holds a whole county | the statute anchor alone, 52 towns |
+| loader E | a district dropped | the count gate |
+| loader F | the file claims layer `NHExecCo2012` | the layer-provenance gate |
+| loader G | 🟢 re-serialised through PostGIS, unchanged | **passes** |
+| A | councilors 1 and 3 swapped between seats | the incumbent/seat check (shadowed) |
+| A2 | districts 1 and 3 point at swapped polygons | 🔴 **passed at first** → label/geo_id gate |
+| A3 | the District 1 office attached to the District 3 district | the office/geo_id gate (shadowed) |
+| A4 | right people seated in the wrong offices | 🟢 **the 259-town chain gate** |
+| B | one anchor town moved to the wrong district | map-vs-statute, before anything is created |
+| C | the District 1 winner flipped, votes untouched | winner-is-the-leading-candidate |
+| D | the term start moved to 2025-01-08 | the oath-date gate |
+| E | the council recorded as staggered | the staggered gate |
+| F | one anchor town dropped | the anchor count — *not* the mismatch list |
+| G | 🟢 a comment added | **passes** |
+
+## Measured on the live endpoint, not reasoned about
+
+`https://ev-accounts-api.onrender.com/api/essentials/address-search`, against live production,
+with no deploy — `(X-ST-BOARD, STATE_BOARD)` is already in the deployed read path from `CC_0366`,
+so this body needed **no read-path change at all**.
+
+| address | returned |
+| --- | --- |
+| 45 Beacon St E, Laconia, NH | **Executive Councilor, District 1 — Joseph D. Kenney**, `held` |
+| 41 Green St, Concord, NH | **District 2 — Karen Liot Hill**, `held` |
+| 1 Junkins Ave, Portsmouth, NH | **District 3 — Janet Stevens**, `held` |
+| 900 Elm St, Manchester, NH | **District 4 — John Stephen**, `held` |
+| 229 Main St, Nashua, NH | **District 5 — David K. Wheeler**, `held` |
+
+⚠ `1 City Hall Plaza, Manchester, NH` returns `ADDRESS_NOT_FOUND` with **zero rows of any kind** —
+a geocoder miss on that address, not a gap in this data. Worth knowing because an empty response
+reads like a coverage hole; 900 Elm St a block away answers correctly.
+
+## ▶ Dated follow-up, January 2027
+
+Seat **Luz Bay** (D1), **Karen Liot Hill** (D2, re-elected), **Lisa Kennedy Sheldon** (D3),
+**Jim O'Connell** (D4) and **Melanie Levesque** (D5), and close the four defeated councilors'
+terms the day before.
+
+🔴 **Take the date from the House Journal for the Joint Convention. Do NOT use 2027-01-06** — that
+is art. 60's counting day, and in 2025 the oath came the day after. The chamber's
+`inauguration_rules` says so and a post-verify gate fails if that sentence is ever removed.
+
+## Tier 3 after New Hampshire
+
+🟢🟢 **THE IMPORTED-POLYGON WORK IS FINISHED.** Texas, Alabama, Louisiana, New Mexico, all three
+Nebraska boards and New Hampshire are done. Nothing in this tier is waiting on geometry.
+
+**What remains is sourcing, not geometry:**
+- **KS State Board of Education (5)** and **MA Governor's Council (8)** — their polygons are
+  already in production as unions of state senate districts we hold. Blocked only on **which
+  senate districts compose each one**.
+- **22 uncalled voteboxes**, including TX SBOE District 8, CO SBE District 3, Michigan's U-M
+  Regents and Wayne State Governors.
+- **9 statewide offices** no reachable roster would name.
