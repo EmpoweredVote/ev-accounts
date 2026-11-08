@@ -1430,10 +1430,10 @@ the version committed.**
 
 ## ▶ The recipe for the next imported polygon
 
-Texas proved the route; Alabama, Louisiana and New Mexico repeated it. ⚠ **UPDATED 2026-11-07
-— Alabama (`CC_0370`), Louisiana (`CC_0371`) and New Mexico (`CC_0372`) are DONE.** Four bodies
-are left, in two states: **NE PSC (1) · NE State Board of Education (3) · NE Regents (1) ·
-NH Executive Council (5)**, and neither state has a source found yet. For each:
+Texas proved the route; Alabama, Louisiana, New Mexico and Nebraska repeated it. ⚠ **UPDATED
+2026-11-07 — Alabama (`CC_0370`), Louisiana (`CC_0371`), New Mexico (`CC_0372`) and all three
+Nebraska boards (`CC_0373`-`CC_0375`) are DONE.** **ONE body is left: the NH Executive Council
+(5 seats)**, and its source is found — see the end of this file. For each:
 
 1. **Find the state's redistricting portal.** Texas runs CKAN:
    `data.capitol.texas.gov/api/3/action/package_search?q=...` and `package_show?id=<plan>`.
@@ -1445,6 +1445,13 @@ NH Executive Council (5)**, and neither state has a source found yet. For each:
    has to be bounds-checked.
 2. **Pick the plan whose title carries no end date.** Texas's four SBOE plans each state their own
    validity in the title; three said "2013-2022" or "2003-2012".
+   🔴🔴 **AND A FILE NAMED `..._final.pdf` CAN BE OLDER THAN THE AMENDMENT THAT PASSED.**
+   Nebraska publishes `reg_lb8_final.pdf`, assembled the day LB 8 passed, whose map sheets were
+   drawn three days before AM41 was adopted. Four of its eight districts are pre-amendment.
+   The bill history settles it (`AM41 · adopted`), and the state GIS agrees with AM41.
+   ⚠ **The plan IDENTIFIER does not change when a plan is amended** — LB 8 adopts
+   `REG21-39003-1 … -8` and AM41 kept those names — so citing the map name proves nothing
+   about which version you hold. **Read the date printed inside the map frame.**
    🔴🔴 **AND CHECK THAT THE BILL BEHIND IT PASSED.** New Mexico filed two PEC redistricting
    bills in 2021 and BOTH DIED; the one a search finds first, HB 6, reads exactly like the law
    and its action line says "Action Postponed Indefinitely". The act in force, HB 9, assigns
@@ -1488,6 +1495,18 @@ NH Executive Council (5)**, and neither state has a source found yet. For each:
    🔴 **MEASURE THE SHARE DISTRIBUTION BEFORE CHOOSING A FLOOR.** 0.5% worked for Alabama and
      Louisiana and REFUSED A CORRECT NEW MEXICO MAP: Otero county's second district is a real
      0.4962% of it. The floor belongs ten times below the smallest TRUE share in that state.
+     ⚠ **AND MEASURE IT THE WAY THE GATE WILL.** Nebraska's union coverage is 99.9966% as a
+     ratio of planar areas and 99.9019% as an `ST_Difference` in square metres — two different
+     questions, and only one of them is the gate.
+   🔴🔴 **THE STATE MAY DEFINE ITS DISTRICTS BY MAP REFERENCE, WITH NO COUNTY TEXT AT ALL.**
+     Nebraska's three boards are redistricted by "the adoption of maps by reference" and the
+     statutes name no county. Where that happens, build the composition from the **Secretary
+     of State's certified canvass books**: a county that cast votes in a district's race is in
+     that district, and a split county votes in both. Cover every district by using several
+     canvasses, and make the districts that appear twice agree. ▶ And bound the parse by the
+     book's OWN table of contents — a blacklist of other headings cannot see the heading you
+     did not think of, and the 2024 Nebraska book would have fed a judicial district straight
+     into the Board of Regents.
    🔴 **COUNT THE DISTRICTS YOU CANNOT ANCHOR, AND SAY SO.** New Mexico has four: three lie
      entirely inside one split county and a fourth is made only of parts of split counties. A
      permutation of the three passes every gate there is. `CC_0372` plants it as a control and
@@ -1496,6 +1515,19 @@ NH Executive Council (5)**, and neither state has a source found yet. For each:
    one to copy for a body that is NOT a board of education, since it files under `X-ST-BOARD`. Create the whole body, seat every member, assert
    the 238 baseline, and finish with the point-to-member chain.
 8. Run `check-address-reachability.mjs` and probe the live endpoint for a real address.
+
+🔴🔴 **IF THE STATE HAS TWO BODIES ON ONE CUSTOM LAYER, SCOPE EVERY QUERY BY THE GEO_ID PREFIX.**
+Nebraska is the first: its Public Service Commission and its Board of Regents are both
+`(X-ST-BOARD, STATE_BOARD)` in state 31. Louisiana's commission and Colorado's regents share
+that layer too, but in different states, so `(mtfcc, state)` was enough by accident. A count,
+a coverage test or an "already exists" pre-gate keyed on `(mtfcc, state)` alone silently reads
+both bodies as one. Both loaders and both migrations carry a control that proves the scoping
+is load-bearing.
+
+⚠ **TAKE A ZCTA'S TEST POINT FROM THE PART OF IT INSIDE THE STATE.** Three Nebraska ZCTAs
+straddle a state line and `ST_PointOnSurface` lands outside the state — two looked like holes
+in the district map and one like a district reaching into Iowa. Clipping to the state outline
+first removes all three cases and needs no exclusion list.
 
 🔴🔴 **RUN THE LOADER'S CONTROLS BEFORE THE REAL LOAD, OR DELETE THE ROWS FIRST.** The loaders
 insert `ON CONFLICT (geo_id, mtfcc) DO NOTHING`, so once the correct polygons are committed a
@@ -2155,3 +2187,225 @@ county subdivisions after all.** Searched ArcGIS Online 2026-11-07:
   New Hampshire not among them. Expect to anchor on **whole counties** instead: New Hampshire has
   10 and production holds them, and the five districts are large enough that several counties
   should fall wholly inside one.
+
+# CC_0373–CC_0375 — Nebraska's three boards, and a composition with no statute behind it
+
+21 seats in one state: the **Public Service Commission** (5), the **State Board of Education**
+(8) and the **University of Nebraska Board of Regents** (8). All created whole, all seated,
+eight 2026 results recorded. Baseline unchanged at 293 / 55 / 238; reachability unchanged.
+
+## 🔴🔴 THE STATUTE GATE DOES NOT EXIST HERE, AND THAT IS THE WHOLE STORY
+
+Alabama, Louisiana and New Mexico each define their board districts in statute as **lists of
+counties or parishes**, and the loaders gated the geometry on that text. Nebraska does not.
+LB 5, LB 7 and LB 8 of the 2021 First Special Session each "set the boundaries … **by the
+adoption of maps by reference**", and `75-101.01`, `79-311` and `85-103.01` name no county at
+all. The law is a set of map sheets filed with the Clerk of the Legislature, published only as
+**raster PDFs with no text layer**.
+
+▶ **So the composition came from the Secretary of State's certified canvass books.** A county
+that cast votes in District 7's race is in District 7; a county split between two districts
+casts votes in both. That is evidence from outside the map in the strongest sense available —
+the election was administered on these boundaries by 93 county election officials and the
+result was certified by the Board of State Canvassers.
+
+Three canvasses cover all 21 districts, and the statute predicts exactly which:
+
+| canvass | PSC | Board of Education | Regents |
+| --- | --- | --- | --- |
+| 2022 general | 4, 5 | 5, 6, 7, 8 | 6, 7 |
+| 2024 general | 1, 3 | 1, 2, 3, 4 | 3, 4, 5, 8 |
+| 2026 primary | 2 | 5, 6, 7, 8 | 1, 2, 4 |
+
+🟢 **Five districts are read twice, from books four years apart, and the two readings must
+agree.** They do. A parser that mis-assigns a column cannot produce the same wrong answer twice
+from two differently laid out books.
+
+🟢 **And the Regents' own website states the splits independently** — "District 1 & 5 Lancaster
+County; District 2 and 5 Sarpy County; District 2, 4 & 8 Douglas County" — which is exactly
+what the canvass gave. Three sources, one answer.
+
+## 🔴🔴 THE SECTION IS BOUNDED BY THE BOOK'S OWN TABLE OF CONTENTS, NOT BY A LIST OF HEADINGS
+
+The first version of the parser closed a body's section when it met a heading from a
+hand-written blacklist. **A heading that is not on the list does not close anything** — it
+silently keeps the section open and feeds another office's districts into this one. That is not
+hypothetical: the 2024 book puts "Judge of the District Court", "District 3", "Lancaster" a few
+pages after the Board of Regents, and a blacklist that had not thought of judges would have
+recorded Lancaster as part of Regents District 3. **The number would have looked perfectly
+plausible.** The parser now takes its page range and its stop heading from the book's own TOC,
+so a heading nobody anticipated is outside the pages being read at all.
+
+▶ **General form: when you must stop at "something else", take the boundary from the document's
+own structure, not from your list of what else there might be.**
+
+## 🔴🔴 THE FILE CALLED `reg_lb8_final.pdf` IS NOT THE ENACTED REGENTS PLAN
+
+The second anchor is the **enacted plan's own population table** — the Legislative Research
+Office prints a population and a deviation on each district's map sheet. Reading all 21 off the
+sheets and checking them against the GIS attribute found a real disagreement on the Regents:
+
+| district | `reg_lb8_final.pdf` | `reg_lb8_am41.pdf` | gis.ne.gov |
+| --- | --- | --- | --- |
+| 1 | 242,357 | **248,649** | 248,649 |
+| 4 | 234,292 | **237,525** | 237,525 |
+| 5 | 254,335 | **248,043** | 248,043 |
+| 8 | 248,467 | **245,234** | 245,234 |
+
+The "final" bundle was assembled on **2021-09-30**, after LB 8 passed — but its sheets carry the
+date the GIS drew them, **2021-09-25**. The Legislature's own bill history for LB 8 reads
+*"Sep 28, 2021 · Linehan · AM41 · adopted"* and *"Sep 30, 2021 · Passed on Final Reading with
+Emergency Clause 46-2-1"*. **The sheets in the file named "final" predate the amendment that
+passed.** `reg_lb8_am41.pdf` carries the enacted figures and the state's own GIS agrees with it
+on all eight.
+
+🔴 **And the statute cannot tell the two apart either.** LB 8 adopts the plan by the map NAME —
+`REG21-39003-1` … `-8` — and AM41 did not change the name. Citing the map identifier proves
+nothing about which version you have.
+
+▶ **Read the date inside the map frame, not the file name, and check the bill history.** A sheet
+titled "Final Reading" can be older than the amendment that was adopted.
+
+## 🔴🔴 TWO BODIES SHARE ONE MTFCC IN ONE STATE — NEW, AND IT BREAKS THE USUAL QUERY
+
+Louisiana's Public Service Commission and Colorado's Regents both live under `X-ST-BOARD`, but
+in different states, so a query keyed on `(mtfcc, state)` could not mix them. Nebraska puts the
+**Public Service Commission AND the Board of Regents** under `X-ST-BOARD` in state `31`.
+
+Every geofence query in the loader and every pre-gate in the migrations is therefore scoped by
+the **geo_id prefix** as well. Two controls prove it is load-bearing:
+- a copy of the loader with the scoping removed from its row-count query reports **13 rows where
+  8 are expected**, once the Commission is loaded;
+- a copy of `CC_0375` with the scoping removed from its "does this body already exist" pre-gate
+  refuses to run after `CC_0373`, naming the Commission's five districts.
+
+⚠ The Board of Education is `X0003` / `STATE_BOARD_EDUCATION` and is unaffected. Nebraska is now
+the first state in production holding two distinct bodies on one custom layer.
+
+## 🔴 THE ZCTA GATE ASKED THE WRONG QUESTION FIRST
+
+Three of the 586 Nebraska ZCTAs straddle a state line and `ST_PointOnSurface` lands on the far
+side: **68327** points into Kansas below the 40th parallel, **69212** into South Dakota above the
+43rd, and **68110** into **Carter Lake, Iowa** — the enclave the Missouri River left on the
+Nebraska bank when it moved in 1877. Two read as holes in the district map and the third as a
+district reaching outside the state. None of that is a fact about this map.
+
+The fix is not an exclusion list. **The point is taken from the part of the ZCTA that is in
+Nebraska**, so every ZCTA has a representative point genuinely inside the state, all 586 resolve
+to exactly one district, and there is nothing to go stale.
+
+## 🔴 THE THRESHOLDS, MEASURED HERE
+
+| quantity | measured | threshold |
+| --- | --- | --- |
+| smallest TRUE split share | **1.876912%** (Burt County in Education 6) | `SHARE_FLOOR` 0.1% |
+| largest FALSE share (a county grazing a district) | **0.006454%** | — |
+| worst whole-county containment | **99.9932%** (Merrick in Education 6) | `WHOLE_FLOOR` 99.9% |
+| worst leak out of a whole county | 0.006454% | `LEAK_CEILING` 0.01% |
+| union coverage of the TIGER outline | **99.9019%** geodesic | 99.5% |
+| worst pairwise overlap | **0%** | 0.001% |
+
+⚠ **Coverage is 99.9019%, not the 99.9966% the planar measurement gave.** Those are two
+different questions — a ratio of planar degree-areas against an `ST_Difference` in square metres
+on the spheroid — and only one of them is the gate. **A threshold copied from a measurement made
+another way is not a measured threshold.**
+
+## 🟢 BURT AND CUMING ARE REALLY SPLIT, AND THE CANVASS SAID SO FIRST
+
+The 2022 book records exactly **one vote** for each Board of Education District 6 candidate in
+Burt County. That reads like a stray ballot filed under the wrong county, and the obvious move
+is to drop it. It is real: Burt is **98.12%** in District 3 and **1.88%** in District 6, and
+Cuming is **87.71% / 12.29%**. ▶ **A two-ballot county entry turned out to be a boundary.
+Measure before dismissing.**
+
+## 🔴 EIGHT SEATS WERE ON THE BALLOT, NOT FIVE
+
+The inventory this programme carried said *NE PSC (1), NE State Board of Education (3), NE
+Regents (1)*. The statute says otherwise, and so does the state. `32-509`, `32-510` and `32-511`
+set the stagger **by district number**, and they predict exactly which districts appear in which
+canvass — which is itself a third confirmation of the coverage table above. Counting from the
+source's own list found **three more races** than the inventory had. This is the
+"a tier looks finished when the races don't exist" rule in its other direction.
+
+⚠ **Regents District 4 is a special election**, for the unexpired remainder of the term
+Elizabeth O'Connor won in 2024 and resigned in January 2026 after being charged over a crash
+that seriously injured a woman; Governor Pillen appointed Joel Makovicka on 2026-02-03 to serve
+through 2027-01-07. **The only machine-readable sign of it** is that the Secretary of State's
+contest heading carries no "Six Year Term" label.
+
+## 🟢 THE TERM START IS DERIVED, THEN CHECKED TWICE
+
+Neb. Const. Art. XVII-5: terms begin **on the first Thursday after the first Tuesday in January
+next succeeding the election**. January 2027: first Tuesday the 5th, so **Thursday 7 January
+2027**. The rule reproduces the date the Secretary of State printed for the previous cycle —
+the 2024 canvass book gives "Term Start: January 9, 2025" — and the Governor's office used the
+same date independently for Makovicka's appointment.
+
+🔴 **No term start is invented for a sitting member.** The rosters publish when a member was
+FIRST elected, which is a different fact, so every term written is open-ended with
+`start_precision 'unknown'`.
+
+## 🟢 AND THE BODY STILL EXISTS
+
+`LR278CA` (2024) proposed a constitutional amendment cutting the State Board of Education to
+**seven** members from the terms commencing in 2027, two of them appointed by the Governor. Its
+history reads *"Apr 18, 2024 · Indefinitely postponed"*. It never reached a ballot and the board
+remains eight elected members. ▶ The New Mexico habit of checking whether the body survives is
+now a standing step, and it paid again.
+
+## 🔴 A CONTROL THAT FAILS IS NOT THE SAME AS A CONTROL THAT FAILS WHERE YOU AIMED IT
+
+The ballot/race control set one seat to "not on the ballot, race recorded" and the run stopped
+at **"expected 1 seats on the ballot, found 0"** — an earlier gate. The gate under test was
+never reached, so the control proved nothing about it. Moving the ballot flag to another
+district at the same time keeps both counts right and lets the disagreement gate fire. Same
+lesson as `CC_0370` control E, in a different file.
+
+## ⚠ WHAT IS STILL OPEN, STATED RATHER THAN HIDDEN
+
+Thirteen of the 21 districts have a whole-county anchor. Of the eight that do not, **six are
+still pinned** because their county SET is unique — PSC 2 is the only Commission district whose
+counties are exactly {Douglas}; Education 1 and Regents 1 are the only ones that are {Lancaster};
+Regents 2 is the only {Douglas, Sarpy}.
+
+🔴 **Exactly two pairs are not pinned by county: Education 4 with Education 8, and Regents 4
+with Regents 8.** Each pair's county set is {Douglas} for both, so the canvass cannot separate
+them. Only the enacted plan's population can — Education 4 holds 245,713 and Education 8 holds
+246,703; Regents 4 holds 237,525 and Regents 8 holds 245,234 — and that separates a source that
+has **mislabelled** two districts, because geometry and attributes move together. It does not
+separate a geometry-only swap made inside our own pipeline, and loader control H plants exactly
+that and is observed to **pass**.
+
+⚠ What bounds the exposure: the fetcher asks the service for one district at a time and takes
+that feature's geometry and population from the same response, so a number and a shape cannot
+drift apart by accident. The swap has to be made deliberately in the intermediate file.
+
+## Measured on the live endpoint
+
+`https://ev-accounts-api.onrender.com/api/essentials/address-search`, against live production,
+with no deploy — `X0003` is already in the deployed read path:
+
+| address | returned |
+| --- | --- |
+| 1819 Farnam St, Omaha, NE | **State Board of Education District 4 — Liz Renner**, `held` |
+| 1228 L St, Lincoln, NE | **State Board of Education District 1 — Kristin Christensen**, `held` |
+| 1721 Broadway, Scottsbluff, NE | **State Board of Education District 7 — Elizabeth Tegtmeier**, `held` |
+| 307 N Dewey St, North Platte, NE | **State Board of Education District 7 — Elizabeth Tegtmeier**, `held` |
+
+⚠ **The Commission and the Regents do not answer an address yet**, for the same reason
+Louisiana's commission does not: `(X-ST-BOARD, STATE_BOARD)` is added by `CC_0366` on this
+branch and is not deployed. The chain resolves in the database — each migration's point-to-member
+gate walks it for every anchored district — and the seats appear the moment the branch ships.
+
+## ▶ Dated follow-ups
+
+**2027-01-07** — the winners take office. Seat **Wendy DeBoer** (PSC 2), **Angie Eberspacher**
+(Education 5), **Lou Ann Goding** (Education 8), **Brent Comstock** (Regents 1), **Elizabeth
+Butler** (Regents 2) and **Justin Solomon** (Regents 4). Sherry Jones (Education 6) and
+Elizabeth Tegtmeier (Education 7) were re-elected and stay.
+
+⚠ Education District 8 was the closest of the eight at **1,517 votes (50.92% / 49.08%)**.
+Nebraska's automatic recount threshold is one percent of the leading candidate's votes
+(`32-1119`), which is 418 here, so no recount is triggered — but the Board of State Canvassers
+does not certify the general until early December, and these results are recorded as `called`,
+not certified.
