@@ -1548,10 +1548,43 @@ jobs:
   # to: on a docs-only PR all five jobs skip and this must still go green. The price is that a job
   # switched off by a broken `if:` also reads as green here. If you edit a job's `if:`, confirm it
   # still runs when you think it does — this check will not tell you.
+  frontends:
+    # /admin (the deployed auth app) and /app had no CI at all, so a dependency bump there
+    # was never built before merge. Build both, and run admin's unit tests.
+    name: frontend build (${{ matrix.dir }})
+    runs-on: ubuntu-latest
+    needs: changes
+    if: github.event_name != 'schedule' && needs.changes.outputs.code == 'true'
+    strategy:
+      fail-fast: false
+      matrix:
+        dir: [admin, app]
+    defaults:
+      run:
+        working-directory: ${{ matrix.dir }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: backend/.node-version
+          cache: npm
+          cache-dependency-path: ${{ matrix.dir }}/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (tsc + vite)
+        run: npm run build
+
+      - name: Unit tests
+        if: matrix.dir == 'admin'
+        run: npm test
+
   ci-ok:
     name: ci ok
     if: always() && (github.event_name == 'pull_request' || github.event_name == 'push')
-    needs: [changes, backend, static-guards, migration-reservations, instrument-topics, answer-seasons]
+    needs: [changes, backend, frontends, static-guards, migration-reservations, instrument-topics, answer-seasons]
     runs-on: ubuntu-latest
     steps:
       - name: Every required job succeeded or was deliberately skipped
@@ -1561,6 +1594,7 @@ jobs:
           # subtraction, yields an empty string, and would read as a failure forever.
           R_CHANGES: ${{ needs.changes.result }}
           R_BACKEND: ${{ needs.backend.result }}
+          R_FRONTENDS: ${{ needs.frontends.result }}
           R_GUARDS: ${{ needs['static-guards'].result }}
           R_MIGRATIONS: ${{ needs['migration-reservations'].result }}
           R_INSTRUMENT: ${{ needs['instrument-topics'].result }}
@@ -1576,6 +1610,7 @@ jobs:
           }
           check "changes"                 "$R_CHANGES"
           check "backend"                 "$R_BACKEND"
+          check "frontends"               "$R_FRONTENDS"
           check "static guards"           "$R_GUARDS"
           check "migration reservations"  "$R_MIGRATIONS"
           check "instrument-topic"        "$R_INSTRUMENT"
@@ -1586,3 +1621,37 @@ jobs:
             exit 1
           fi
           echo "ci ok: all required jobs passed or were deliberately skipped"
+
+  # Dependabot auto-merge. Runs only on Dependabot PRs, only after every job above passed
+  # (or was skipped on purpose), and only for patch/minor updates. Majors stay open for a
+  # person to read. A merge that fails (usually a lockfile conflict after a sibling PR
+  # merged) is left alone: Dependabot rebases the PR, CI reruns, and this job tries again.
+  # Merges made with GITHUB_TOKEN do not start push-triggered workflows; hosting deploys
+  # (which listen to GitHub directly) still run.
+  dependabot-automerge:
+    name: dependabot auto-merge
+    needs: [ci-ok]
+    if: >-
+      always()
+      && github.event_name == 'pull_request'
+      && github.event.pull_request.user.login == 'dependabot[bot]'
+      && github.actor == 'dependabot[bot]'
+      && !contains(needs.*.result, 'failure')
+      && !contains(needs.*.result, 'cancelled')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - id: meta
+        uses: dependabot/fetch-metadata@v3.1.0
+      - name: Merge patch and minor updates
+        if: steps.meta.outputs.update-type != 'version-update:semver-major'
+          && steps.meta.outputs.directory != '/docs/infra'
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if ! gh pr merge --squash "$PR_URL"; then
+            echo "::warning::Merge did not go through (likely a conflict). Dependabot will rebase and this job will retry."
+          fi
