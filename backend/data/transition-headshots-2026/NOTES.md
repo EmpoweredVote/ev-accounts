@@ -84,3 +84,124 @@ faces a voter will look for first, and they have the nearest deadline.
 ⚠ **A seat is not a person.** 64 of the 233 are **re-elected incumbents** who have held the seat
 and still have no photo; the other 169 are new. The second group is the transition's own gap,
 the first is older debt that this list happens to surface.
+
+---
+
+# Batch 1 — applied 2026-11-09 (`CC_0383`)
+
+**14 of 25 imported, 11 refused with a stated reason.** The cohort was the two nearest
+handovers: 11 special-district directors seating **2026-12-04** and 14 members of four
+school boards seating **2026-12-11**, chosen because those four school bodies cluster onto one
+roster page each and a roster page yields several faces at once.
+
+```
+batch1-manifest-2026-11-09.json   what was offered for approval, sourced and refused alike
+batch1-imported-2026-11-09.json   what production holds afterwards, read back from prod
+check-flat-border.py              the border detector written for this batch, with its control
+```
+
+## 🔴🔴 BALLOTREADY IS A REFUSAL, NOT A SOURCE — AND 21 LIVE ROWS ALREADY REST ON IT
+
+`ballotready.org/terms` defines **"Services Content"** to include *"text, graphics, logos,
+button icons, **images**, audio clips, digital downloads, trade dress, data compilations"* and
+then: *"You won't modify, publish, transmit... reproduce... or otherwise exploit any of the
+Services."* There is **no press or media carve-out**. Read twice — the IP clause names images,
+the restriction clause forbids publishing them — which is the same shape as `coloradosos.gov`.
+
+This repo's notes call it *"the source that keeps working for local candidates"*. Measured
+against production on 2026-11-09:
+
+| | |
+| --- | --- |
+| active politicians citing `ballotready.org` / `assets.civicengine.com` as photo origin | **21** |
+| of those, **mirrored into our own bucket** (we serve copies) | **21** |
+| recorded `press_use` | **19** · `unknown` 1 · blank 1 |
+
+`press_use` means *"the site offers the photo for press use or publishes no restriction"*.
+BallotReady publishes a restriction, so those 19 claims are not supported by their source —
+the same defect class as the 184 unversioned CC BY-SA claims that `CC_0326`-`CC_0334` cleared.
+
+🟢 **THE FIX IS NOT DELETION.** The photographs are **candidate-submitted**, so the copyright is
+usually the candidate's, and BallotReady's own clause claims it for *"BallotReady or our
+suppliers"*. The rule this repo already wrote for Ballotpedia applies unchanged:
+▶ **AN AGGREGATOR IS A POINTER, NOT A GRANTOR.** Re-source each from the candidate's own site
+and record THAT as the origin. Affected names include Mike Bird, Stephen Otterstrom, Tayler
+Khater and Terri DeBoer — all seated from BallotReady by `CC_0255`/`CC_0257`/`CC_0259`.
+
+⚠ It cost this batch three people: Vrsalovich, Worthington and Blades-Snell. **Not fixed here.**
+
+## 🔴 WHAT A BODY PUBLISHES IS THE ANSWER, NOT A SEARCH FAILURE — THREE TIMES IN ONE BATCH
+
+- **Santa Monica College publishes its trustees in BLACK AND WHITE.** Chroma **0.00**, neutral
+  share **1.000** — pure greyscale, measured, not borderline. The standing no-monochrome rule
+  refuses Roy, Peters and Barrera Castañón, and BallotReady was their only other route, so
+  **all four SMC seats are blocked** rather than partly filled.
+- **Foothill MWD publishes NO member portraits at all** — text bios only; the page's only
+  images are a banner and a decorative valve photograph. ⚠ Its roster was still useful: it
+  independently corroborated the election result, naming Laura Olhasso as the sitting Division 4
+  director whom our data records Amy Chen as defeating.
+- **La Cañada Irrigation District has no website that resolves.**
+
+## ⚠ THREE REFUSALS THAT ARE NOT ABOUT LICENCE OR QUALITY
+
+- **"Amy Chen" was refused on IDENTITY.** A BallotReady page of that name exists and **names no
+  office at all**, so nothing ties it to our Foothill Division 4 winner. A name is a hypothesis.
+- **Patrick W. Atwater carries a live namesake risk** — a **RICHARD** Atwater retired from that
+  same board in February 2026. Do not source him without binding to the person, not the surname.
+- **Robbie Staenberg's BallotReady image is the grey placeholder silhouette.** Caught by reading
+  the `src`; the `alt` read *"Headshot of Robbie"*. 🔴 **READ THE SRC.**
+
+## 🔴 A PURE-BLACK BORDER PASSED `check-portrait-framing.mjs`, AND THE EYE CAUGHT IT
+
+Walnut Valley's published portrait of **Theresa Lee** is 4800×6000 with a black border measured
+at **505px left, 504px right, 161px top, 160px bottom**; all four corners read **exactly 15.0**,
+which is the disc-on-matte signature the gate exists to catch. `check-portrait-framing.mjs`
+returned **FRAMED: none** with its own two fixtures passing. The border was cropped off before
+import — corners now 18.4-22.4, the real studio backdrop — and the stored file is that crop.
+▶ **WHY THE GATE PASSED IT IS UNDIAGNOSED.** It prints only its flagged list, never per-row
+numbers for rows that pass, so the reason is not readable from its output. Worth a look.
+
+## ⚠ MY FIRST BORDER DETECTOR SAID 13 OF 14 AND WAS WRONG
+
+It measured *"distance inward to the first brightness change"*, which on any graduated studio
+backdrop fires well inside the frame. **The near-uniform answer was the tell.** `check-flat-border.py`
+replaces it and asks the three questions a border actually answers — is the ring **flat along its
+length**, does it **agree on all four sides**, does it **contrast with the interior** — and it was
+watched going **red on Lee's bordered file (flatness 0.0)** and **green on the de-bordered copy of
+the SAME PHOTOGRAPH (17.3)** before any result was believed. All 14 production crops read clean,
+flatness 15.3-85.1 against the border's 0.0.
+
+## What shipped, and the two judgement calls inside it
+
+🔴 **NOTHING IS ENLARGED.** Six are stored at **native** size — 400×500, 576×720, and 300×375
+three times — rather than upscaled to 600×750. The importer's default `--max-upscale 1.0` does
+this, and it is also what the approved contact sheet showed. The three 300×375 are **SMMUSD's
+published ceiling**, not a crop choice.
+
+⚠ **BODNAR AND JOHNSON CARRY `anchor_y: 0`.** The default centre crop took their crowns to
+**0.12 and 0.03 ear-lengths** of headroom — the NC-legislator defect. At `anchor_y=0` they sit
+at 0.31 and 0.37. Still short of the ~1.0 the house wants, and that is the source's framing;
+padding would invent image content.
+
+⚠ **Their licence is recorded `unknown`, not `press_use`** — `cvwd.com`'s footer asserts
+**"All Rights Reserved"**, a positive reservation rather than the silence case. An `unknown` is
+findable by the query that looks for missing provenance; a guessed licence is not.
+
+## Verification
+
+- **Before:** all 14 storage paths returned `NoSuchKey`, with a known-good object returning 200
+  as the control — so these are fresh objects and need **no `?v=` cache key**.
+- **After, against the PUBLIC CDN rather than the upload's own 200:** all 14 re-fetched and
+  re-gated — 14 real colour faces, correct rotation, **0 failures**.
+- **The rendered `<img>`, not the API:** `essentials.empowered.vote` was read for Triston
+  Ezidore — 600×750 from our bucket, credit line "Photo: Press use" displayed.
+- **`CC_0383` dry-run:** `UPDATE=0 INSERT=0` (everything already true), all three gates pass.
+  **Control:** pointing one row's scalar at a different object fires gate 3 alone
+  (*"1 of 14 have a default image row that disagrees"*), exit 1, nothing shadowed. The tamper
+  was asserted **present in the file** before it was run.
+
+## ▶ What is next in California
+
+**68 of the 82 CA rows remain** — 50 more school boards (2026-12-11), 6 special districts,
+and 12 legislators with no swearing-in date yet. The school boards are the nearest deadline.
+🔴 **Do not reach for BallotReady for any of them** until the re-sourcing piece above is done.
