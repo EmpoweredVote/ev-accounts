@@ -748,6 +748,26 @@ each was first learned.
   what the detector does with real input. Worse, a threshold or baseline computed *from the same
   rows you are checking* shifts when they shift, so the check silently follows the fault instead of
   catching it. **Derive the control independently of the data under test.**
+- 🔴🔴 **A CONTROL SET THAT IS UNIFORM IN A PROPERTY THE DETECTOR DEPENDS ON CANNOT TEST THAT
+  PROPERTY — AND IT PASSES WHILE A WHOLE CLASS OF INPUT WALKS THROUGH.** This is the companion to
+  "a uniform ANSWER is a broken detector", with the uniformity sitting in the *controls* instead of
+  the output. `check-portrait-framing.mjs` had two fixtures, a **green** matte and a **white**
+  matte, and a centre test that asked "is the middle the same colour as the surround". Neither
+  colour can occur in a human subject, so no fixture had ever exercised a **dark** surround — and a
+  pure-black border passed the gate, because dark hair, a dark jacket and shadow are near-black in
+  every portrait, so **the subject itself voted the frame innocent**. Both controls were green
+  throughout. ▶ **List what your fixtures hold constant, and add one that varies it.** A second
+  fixture of the same kind is coverage of nothing.
+  - 🔴 **TWO DETECTORS CAN BE COMPLEMENTARY RATHER THAN REDUNDANT, AND GEOMETRY DECIDES WHICH.**
+    The same gate could not see a rectangular frame *structurally*: a disc of full width touches
+    the left and right edges at their midpoints, so **no side of a disc image is flat along its
+    whole length**. A per-side test sees a letterbox and a corner-and-diagonal test sees a disc,
+    and neither can be made to see the other by moving a threshold. **Ask whether the shape you
+    missed is reachable by the measurement you have before you retune it.**
+  - 🔴 **A PREDICATE OF SEVERAL `&&` CONDITIONS FAILS FOR EXACTLY ONE REASON, AND NOTHING PRINTS
+    IT.** That gate reported only its flagged rows, so a passing row produced **no numbers at all**
+    and the verdict was readable while the evidence for it was not. ▶ **Print every row a detector
+    scanned, not only its hits** — otherwise "why did this pass?" costs a re-implementation.
 - ⚠ **A UNIFORM PROBE RESULT CAN BE A PROPERTY OF YOUR SAMPLE, NOT OF THE DATA.** Before concluding
   "they are all like this", check that the sample was not itself selected by the thing you are
   measuring.
