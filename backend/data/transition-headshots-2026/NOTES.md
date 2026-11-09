@@ -151,16 +151,67 @@ Khater and Terri DeBoer — all seated from BallotReady by `CC_0255`/`CC_0257`/`
 - **Robbie Staenberg's BallotReady image is the grey placeholder silhouette.** Caught by reading
   the `src`; the `alt` read *"Headshot of Robbie"*. 🔴 **READ THE SRC.**
 
-## 🔴 A PURE-BLACK BORDER PASSED `check-portrait-framing.mjs`, AND THE EYE CAUGHT IT
+## 🔴 A PURE-BLACK BORDER PASSED `check-portrait-framing.mjs` — DIAGNOSED AND FIXED 2026-11-09
 
-Walnut Valley's published portrait of **Theresa Lee** is 4800×6000 with a black border measured
+Walnut Valley’s published portrait of **Theresa Lee** is 4800×6000 with a black border measured
 at **505px left, 504px right, 161px top, 160px bottom**; all four corners read **exactly 15.0**,
 which is the disc-on-matte signature the gate exists to catch. `check-portrait-framing.mjs`
 returned **FRAMED: none** with its own two fixtures passing. The border was cropped off before
 import — corners now 18.4-22.4, the real studio backdrop — and the stored file is that crop.
-▶ **WHY THE GATE PASSED IT IS UNDIAGNOSED.** It prints only its flagged list, never per-row
-numbers for rows that pass, so the reason is not readable from its output. Worth a look.
 
+🟢 **The gate is now fixed** (same file, same session). Measured afterwards, Lee satisfied
+**four of the five** old conditions and failed on exactly one: `centrePct = 10` against a
+required `< 4`.
+
+🔴🔴 **THE MECHANISM: THE OLD CENTRE TEST ASKED “IS THE MIDDLE THE SAME COLOUR AS THE
+SURROUND”, WHICH IS NOT THE QUESTION “IS THE MIDDLE PART OF THE SURROUND”.** Lee’s matte is
+near-black, and dark hair, a dark jacket and shadow are near-black in every portrait ever taken,
+so **the subject itself voted the frame innocent**. ⚠ **BOTH FIXTURES WERE A GREEN MATTE AND A
+WHITE MATTE** — colours that cannot occur in a subject — so no fixture had ever exercised a dark
+surround. ▶ **A CONTROL SET THAT IS UNIFORM IN A PROPERTY THE DETECTOR DEPENDS ON CANNOT TEST
+THAT PROPERTY.** This is the companion to "a uniform ANSWER is a broken detector": here the
+uniformity was in the *controls*, and it hid a whole class of input.
+
+Two repairs, both chosen from measurements over the 14 approved crops of this batch plus every
+raw source and every fixture — **36 images, zero false positives**:
+
+1. 🟢 **SURROUND MEMBERSHIP IS NOW AN EDGE-CONNECTED FLOOD FILL, NOT A COLOUR MATCH.** A
+   surround touches the frame edge; dark hair in the middle of a face does not. On the same
+   corpus the colour test read up to **11.8%** inside the centre ellipse while the flood fill
+   reads **0.0% on every row**. The colour figure is still *reported* and never tested, so the
+   next reader can watch the two diverge instead of measuring it again.
+2. 🟢 **A BORDER BRANCH WAS ADDED, BECAUSE THE DISC TESTS CANNOT SEE A RECTANGULAR FRAME
+   STRUCTURALLY.** A disc of full width touches the left and right edges at their midpoints, so
+   **no side of a disc image is flat along its whole length** — a per-side test is the only
+   thing that sees a letterbox, and a corner-and-diagonal test is the only thing that sees a
+   disc. They are complementary, not redundant. Lee is the only row in the corpus with any flat
+   border depth (`[4,4,12,12]` px of 120×150, colour agreement 0, contrast 81); every approved
+   crop, the de-bordered twin and all three old fixtures read depth 0.
+
+🔴 **AND IT NOW PRINTS EVERY ROW IT SCANNED, NOT ONLY ITS HITS.** The reason the pass was
+undiagnosable for a day is that **a passing row produced no numbers at all** — the verdict was
+readable and the evidence for it was not.
+
+**Fixtures now number five**, and the last two are the same photograph: Lee’s published file as a
+third POSITIVE (the dark-matte case the other two miss) and **the de-bordered crop of it as a
+second NEGATIVE** — subject, studio, lens and compression all held constant, so the only thing it
+can be answering is the border. The de-bordered fixture is built by cropping the positive’s own
+downloaded bytes at the measured insets, and **the build asserts the source is still 4800×6000**,
+so if the district republishes the portrait the fixture fails loudly instead of cropping air.
+
+**Watched failing first, three tampers, each asserted present in the file before it ran:**
+
+| tamper | effect on Lee | what it proves |
+| --- | --- | --- |
+| **A** — flood fill reverted to colour | DISC goes dark, **BORDER still catches him** | the border branch alone is sufficient |
+| **B** — border branch disabled | BORDER goes dark, **DISC still catches him** | the flood-fill repair alone is sufficient |
+| **A+B** — both reverted (the original gate) | **not framed — the defect reproduced exactly** | and the gate then **refuses a verdict**: `*** CONTROLS FAILED — the gate is blind ***` |
+
+⚠ **A first attempt at tamper A was INVALID AND LOOKED LIKE A PASS** — it substituted a name that
+is not in scope at that line, so the gate threw and exited 1 for the wrong reason. **An exit code
+is not a control.** Read what the tamper actually did.
+
+⚠ **The gate is hand-run; it is NOT in CI and NOT in `package.json`.** Nothing runs it for you.
 ## ⚠ MY FIRST BORDER DETECTOR SAID 13 OF 14 AND WAS WRONG
 
 It measured *"distance inward to the first brightness change"*, which on any graduated studio
