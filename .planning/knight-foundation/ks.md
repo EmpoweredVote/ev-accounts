@@ -1145,7 +1145,8 @@ centroid test is too weak applies here twice over.
 ### 🔴🔴 A COUNCIL BOUNDARY IS NOT FIXED BETWEEN REDISTRICTINGS — IT MOVES WITH ANNEXATION
 
 The Wayback Machine holds **four** captures of this exact endpoint, all in 2026 (May 9, May 21,
-Jun 7, Aug 29). Comparing the May 9 capture with today:
+Jun 7, Aug 29). Comparing the May 9 capture with today — and read the next section before using
+any single capture as a control, because one of the middle two caught the layer mid-edit:
 
 | dist | 2026-05-09 | today | diff |
 | --- | --- | --- | --- |
@@ -1160,6 +1161,65 @@ Jun 7, Aug 29). Comparing the May 9 capture with today:
 ▶ **The total GREW.** A redistricting redistributes area and preserves the total — Lexington's did,
 to 0.03%. This is the opposite signature: the city annexed land. **So the layer is actively
 maintained, and the metric detects real change down to 0.0012%.**
+
+### 🔴🔴 THE SERIES IS NOT MONOTONIC — ONE CAPTURE CAUGHT THE LAYER MID-EDIT, 2026-11-10
+
+The table above compares the first capture with the live layer and skips the two in the middle.
+**All four captures are now on disk** — `backend/data/seed-ks-2026/wb-city-council-2026{0509,0521,
+0607,0829}.geojson`, each fetched through `web.archive.org/web/<ts>id_/` so the bytes are the
+layer's own response and not an archive page. The May 9 re-fetch is **byte-identical** to the copy
+this slice already held (sha256 `81c69438…`) — the control on the fetch method, since the other
+three came back through the same path. Every one is a FeatureCollection of six features carrying
+`COUNCIL` 1-6.
+
+Read as a series, against the May 9 capture, **with the part count beside the area**:
+
+| dist | 05-09 | 05-21 | 06-07 | 08-29 |
+| --- | --- | --- | --- | --- |
+| 1 | — · 1p | **+0.4463%** · 1p | +0.4463% · 1p | +0.4518% · 1p |
+| 2 | — · 10p | −0.0087% · 10p | **+0.4936%** · 10p | +0.5090% · **9p** |
+| 3 | — · 7p | 0.0000% · 7p | 0.0000% · 7p | **+0.0510%** · 7p |
+| 4 | — · 13p | **−0.1427%** · **18p** | −0.0012% · 13p | −0.0012% · 13p |
+| 5 | — · 9p | 0.0000% · 9p | **+0.0765%** · 9p | +0.0765% · 9p |
+| 6 | — · 4p | 0.0000% · 4p | **+0.1567%** · **3p** | +0.2045% · 3p |
+| **TOTAL** | — · **44p** | +0.0262% · **49p** | +0.1925% · **43p** | +0.2113% · **42p** |
+
+(Percent change is metric-independent to about 0.002 points, so these agree with the diff column
+above; the absolute figures there are computed on a different area metric and are not comparable
+value for value.)
+
+🔴 **District 4 SHRINKS and FRAGMENTS on May 21, then comes back.** It carries **18 parts** in that
+one capture where every other capture carries 13, and its area is **−0.1427%** — against a city that
+was expanding the whole time. Three weeks later it is 13 parts again and back to where it started
+(−0.0012%, which is the real, tiny edit). District 6 goes **4 parts to 3** between May 21 and June 7
+while *gaining* 0.1567%, and district 2 goes **10 to 9** by August while gaining 0.5090%. The whole
+layer's part count runs **44 → 49 → 43 → 42**.
+
+▶ **That is an annexation being worked through the city's GIS, not a boundary that moved.** Pieces
+split out of a district, sit there as separate parts for some days, and are merged back. The
+published boundary never had 18 parts in District 4; a capture did.
+
+🔴🔴 **A LIVE GIS LAYER PASSES THROUGH STATES THAT ARE TRUE OF NO BOUNDARY.** A single capture is a
+sample of an editing process, not a reading of the map in force. **Take more than one, and count
+PARTS as well as area** — here the part count moved *before* the area settled, and it is the thing
+that identifies the edit as an edit.
+
+⚠ **This is a live hazard for the vintage work above, not a curiosity.** A control drawn from the
+May 21 capture alone would have measured District 4 as **shrinking** while Wichita annexed — the
+wrong sign, on the one district the area metric says changed least. The +0.211% total and the
+per-district drift in the table above survive unchanged; what does not survive is the idea that any
+one archived capture states the boundary.
+
+**Two traps in getting the captures, each of which reads as a clean answer — and one rate limit:**
+- 🔴 **The CDX API returned a valid, empty JSON array `[]` twice** while the Internet Archive was
+  serving a *"Temporarily Offline"* page. An empty array is exactly what "this URL has no captures"
+  looks like. It was caught only by a **positive control on a host known to hold captures**, which
+  came back empty too.
+- 🔴 **CDX's `length` column is the COMPRESSED WARC size, not the response size** — 189,793 against
+  a 501,446-byte body. A fetch checked against it looks truncated when it is complete.
+- ⚠ The archive then answered **HTTP 429** (*"suspected abusive bot traffic"*) after about 15
+  requests and held it for ~40 minutes. The missing captures came back on patient retries with
+  three-minute gaps. Nothing was wrong with the data; only the rate.
 
 🔴 **This reframes what a vintage proof can even mean here.** "Does this byte-match Map B as adopted
 in 2022" is the WRONG question — Map B as adopted no longer equals the operative boundary, because
@@ -1214,7 +1274,7 @@ statistic.
 | --- | --- |
 | 6 features, `COUNCIL` contiguous 1..6, no gaps, no duplicates, no paging | ✅ measured |
 | The ballot-issuing system holds the same geometry | ✅ measured, vertex for vertex |
-| The layer is live-maintained and tracks annexation | ✅ measured across 4 captures |
+| The layer is live-maintained and tracks annexation | ✅ measured across all 4 captures — ⚠ and ONE OF THEM IS MID-EDIT, see above |
 | The metric can detect change and can tell districts apart | ✅ measured |
 | **The geometry descends from Map B and not its predecessor** | 🔴 **NOT PROVED — no control can fail** |
 

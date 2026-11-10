@@ -1,0 +1,13 @@
+# Raw source bytes are the wave's EVIDENCE and are kept on disk for the length of the wave, not
+# committed: they are re-fetchable from the URLs recorded in ROSTERS-fayette.md, which also
+# transcribes the quotations that matter.
+# A trailing comment on a pattern line is NOT a comment -- git reads the whole line, spaces and
+# all, as the pattern. Keep every comment on its own line.
+#
+# What IS committed: ROSTERS-fayette.md, the derived roster and timeline JSON, and the council
+# district geometry for all four vintages.
+
+# archived roster, officer, Ballotpedia, news and Wayback pages
+*.html
+# KRS sections, the constitution, the official canvass and the terms of use
+*.pdf
