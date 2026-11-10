@@ -44,17 +44,62 @@ const params = () => query.mock.calls[0][1] as unknown[];
 /** The matched WHERE clause text (empty string if none). */
 const whereClauseText = (s: string) => (s.match(WHERE_CLAUSE) ?? [''])[0];
 
+/**
+ * The "has a budget, or is a grouper county" rule, in whichever form the mode
+ * emits it.
+ *
+ * ⚠⚠ ASSERT THE RULE, NOT THE KEYWORD. These tests used to match the literal
+ * `HAVING COUNT(b.id) > 0`, which made the keyword the contract instead of the
+ * population it selects. Index and summary mode now aggregate inside a LATERAL
+ * and spell the same rule `s.budget_count > 0` in a WHERE; full mode still
+ * spells it `COUNT(b.id) > 0` in a HAVING, because its array ordering is a
+ * documented byte-for-byte contract (see DATASETS_FULL). Both forms admit
+ * exactly the same entities, which is the property worth defending — so this
+ * accepts either spelling and still fails if the rule goes missing entirely.
+ */
+const BUDGET_BEARING_RULE = /(HAVING COUNT\(b\.id\)|s\.budget_count) > 0/;
+
+/** Every mode must keep the grouper-county half of the rule too. */
+const expectBudgetBearingRule = (s: string) => {
+  expect(s).toMatch(BUDGET_BEARING_RULE);
+  expect(s).toContain("m.entity_type = 'county'");
+  expect(s).toContain('child.county_id = m.id');
+};
+
 describe('getCities — no slug (unchanged behaviour)', () => {
-  it('emits no WHERE clause and binds no parameters', async () => {
+  /**
+   * ⚠ These two used to assert `not.toMatch(WHERE_CLAUSE)`. That stopped being
+   * the right assertion when summary mode moved its budget-bearing rule out of
+   * a HAVING and into the WHERE: an unfiltered summary query now HAS a WHERE
+   * clause, and it always will. What "no filter" actually means is that nothing
+   * the CALLER supplied reached the statement — no bound parameter, and no
+   * condition beyond the rule every call carries. That is what these now check,
+   * and unlike the old form it would still fail if an unbound caller filter
+   * were interpolated into the clause.
+   */
+  it('binds no parameters and adds no caller condition', async () => {
     await getCities('summary');
-    expect(sql()).not.toMatch(WHERE_CLAUSE);
     expect(params()).toEqual([]);
+    expect(whereClauseText(sql())).not.toMatch(/\$\d/);
+    expect(whereClauseText(sql())).not.toMatch(/ AND /);
+    expectBudgetBearingRule(sql());
   });
 
   it('treats an explicit undefined slug as absent', async () => {
     await getCities('summary', undefined);
-    expect(sql()).not.toMatch(WHERE_CLAUSE);
     expect(params()).toEqual([]);
+    expect(whereClauseText(sql())).not.toMatch(/\$\d/);
+    expect(whereClauseText(sql())).not.toMatch(/ AND /);
+  });
+
+  it('full mode still has no WHERE clause at all when unfiltered', async () => {
+    // Full mode keeps the join-and-GROUP-BY shape, so with no caller filter it
+    // emits no WHERE clause whatsoever — the original property, still true for
+    // the one mode that still works that way.
+    await getCities('full', undefined, { state: undefined });
+    expect(params()).toEqual([]);
+    expect(sql()).not.toMatch(WHERE_CLAUSE);
+    expect(sql()).toMatch(/HAVING COUNT\(b\.id\) > 0/);
   });
 });
 
@@ -76,21 +121,28 @@ describe('getCities — slug filter', () => {
     await getCities('summary');
     const withoutSlug = sql();
 
-    // ⚠ THE LOAD-BEARING ASSERTION. Removing the WHERE clause from the filtered
-    // query must reproduce the unfiltered query EXACTLY. If a future edit makes
-    // the slug path also change the join, the GROUP BY, or the HAVING "has a
-    // budget or is a grouper county" contract, this fails — because that is how
-    // a narrowed query could start returning a row the full list would hide, or
-    // hiding one it would show.
-    const stripped = withSlug.replace(WHERE_CLAUSE, '');
+    // ⚠ THE LOAD-BEARING ASSERTION. Everything outside the WHERE clause must be
+    // identical, and the filtered WHERE must be the unfiltered WHERE with the
+    // caller's condition ADDED — never a different rule. If a future edit makes
+    // the slug path also change the join, the lateral, the projection or the
+    // "has a budget or is a grouper county" rule, this fails, because that is
+    // how a narrowed query could start returning a row the full list would
+    // hide, or hiding one it would show.
     const norm = (s: string) => s.replace(/\s+/g, ' ').trim();
-    expect(norm(stripped)).toBe(norm(withoutSlug));
+    expect(norm(withSlug.replace(WHERE_CLAUSE, ''))).toBe(
+      norm(withoutSlug.replace(WHERE_CLAUSE, ''))
+    );
+
+    // The unfiltered rule survives verbatim inside the filtered clause, so the
+    // filter can only ever narrow the population, never redefine it.
+    const ruleOf = (s: string) => norm(whereClauseText(s)).replace(/^WHERE /, '');
+    expect(norm(whereClauseText(withSlug))).toContain(ruleOf(withoutSlug));
+    expect(norm(whereClauseText(withSlug))).toMatch(/ AND /);
   });
 
-  it('keeps the HAVING contract on the filtered path', async () => {
+  it('keeps the budget-bearing rule on the filtered path', async () => {
     await getCities('summary', 'empowered-vote-ca');
-    expect(sql()).toMatch(/HAVING COUNT\(b\.id\) > 0/);
-    expect(sql()).toContain("m.entity_type = 'county'");
+    expectBudgetBearingRule(sql());
   });
 
   it('returns an empty array for a slug that matches nothing — never a substitute', async () => {
@@ -147,13 +199,19 @@ describe('getCities — entity_type / state / county_id filters', () => {
     await getCities('summary');
     const unfiltered = sql();
     const norm = (s: string) => s.replace(/\s+/g, ' ').trim();
-    expect(norm(filtered.replace(WHERE_CLAUSE, ''))).toBe(norm(unfiltered));
+    expect(norm(filtered.replace(WHERE_CLAUSE, ''))).toBe(
+      norm(unfiltered.replace(WHERE_CLAUSE, ''))
+    );
+
+    // ...and the filtered clause is the unfiltered rule plus the caller's
+    // condition, never a replacement for it.
+    const ruleOf = (s: string) => norm(whereClauseText(s)).replace(/^WHERE /, '');
+    expect(norm(whereClauseText(filtered))).toContain(ruleOf(unfiltered));
   });
 
-  it('keeps the HAVING contract on the filtered path', async () => {
+  it('keeps the budget-bearing rule on the filtered path', async () => {
     await getCities('summary', undefined, { state: 'CA' });
-    expect(sql()).toMatch(/HAVING COUNT\(b\.id\) > 0/);
-    expect(sql()).toContain("m.entity_type = 'county'");
+    expectBudgetBearingRule(sql());
   });
 
   // ⚠⚠ THE PROPERTY "WHERE clause only" ACTUALLY NEEDS. Stripping the WHERE
@@ -185,13 +243,15 @@ describe('getCities — entity_type / state / county_id filters', () => {
 
   it('treats empty and absent filters as no filter at all', async () => {
     await getCities('summary', undefined, {});
-    expect(sql()).not.toMatch(WHERE_CLAUSE);
+    const bare = sql();
     expect(params()).toEqual([]);
+    expect(whereClauseText(bare)).not.toMatch(/ AND /);
     query.mockReset();
     query.mockResolvedValue(NO_ROWS);
     await getCities('summary', undefined, { entityTypes: [] });
-    expect(sql()).not.toMatch(WHERE_CLAUSE);
     expect(params()).toEqual([]);
+    // An empty filter list must produce the same statement as no filter at all.
+    expect(sql()).toBe(bare);
   });
 
   it('returns an empty array when nothing matches — never a substitute', async () => {
@@ -206,7 +266,7 @@ describe('getCities — ?fields=index', () => {
     const s = sql();
     expect(s).toContain('m.id');
     expect(s).toContain('m.county_id');
-    expect(s).toMatch(/COUNT\(b\.id\) > 0\) AS has_data/);
+    expect(s).toMatch(/\(s\.budget_count > 0\) AS has_data/);
     // The heavy things must be gone.
     expect(s).not.toContain('m.hero_image_url');
     expect(s).not.toContain('m.population');
@@ -214,9 +274,9 @@ describe('getCities — ?fields=index', () => {
     expect(s).not.toContain('available_datasets');
   });
 
-  it('keeps the HAVING contract, so index rows are the same population', async () => {
+  it('keeps the budget-bearing rule, so index rows are the same population', async () => {
     await getCities('summary', undefined, { fields: 'index' });
-    expect(sql()).toMatch(/HAVING COUNT\(b\.id\) > 0/);
+    expectBudgetBearingRule(sql());
   });
 
   it('maps rows to the lean shape, coercing latest_year from the bigint-as-string node-postgres returns', async () => {
@@ -254,5 +314,69 @@ describe('getCities — ?fields=index', () => {
       id: 'c2', name: 'Grouper County', state: 'MI', entity_type: 'county',
       county_id: null, has_data: false, latest_year: null,
     });
+  });
+});
+
+/**
+ * ⚠⚠⚠ THE SHAPE SPLIT ITSELF, PINNED.
+ *
+ * `getCities` deliberately emits TWO different query shapes, and a well-meaning
+ * "let's make this consistent" refactor in either direction breaks something
+ * real and silent:
+ *
+ *  - Moving FULL mode onto the lateral reorders `available_datasets`. Entities
+ *    routinely hold several budget rows per fiscal year (two fund scopes, two
+ *    bases) and `ORDER BY b.fiscal_year DESC` leaves those ties UNSPECIFIED, so
+ *    the join shape and the lateral shape disagree. Measured against production
+ *    on Michigan: same 1,857 entities, same counts, and **1,857 of 1,857** rows
+ *    with a differently ordered array. Full mode is a documented byte-for-byte
+ *    cross-app contract, so that is a breaking change for any consumer reading
+ *    the array positionally.
+ *
+ *  - Moving SUMMARY or INDEX mode back onto the join costs the index-only scan
+ *    and puts ~1.1 seconds back on the landing page's first request, because
+ *    `b.id` is not in `idx_budget_municipality_year_type` and `COUNT(b.id)`
+ *    therefore has to visit the heap for all 585,630 budget rows.
+ *
+ * Neither failure shows up in a smoke test: both shapes return the right
+ * entities, and one of them is merely slow while the other is merely reordered.
+ */
+describe('getCities — the two query shapes', () => {
+  it('uses the lateral for summary and index mode, and reads no column outside the covering index', async () => {
+    for (const filters of [{}, { fields: 'index' as const }]) {
+      query.mockReset();
+      query.mockResolvedValue(NO_ROWS);
+      await getCities('summary', undefined, filters);
+      const s = sql();
+      expect(s).toContain('LEFT JOIN LATERAL');
+      expect(s).not.toMatch(/\bGROUP BY\b/);
+      expect(s).not.toMatch(/\bHAVING\b/);
+      // The whole point: no reference to a budgets column the index lacks.
+      // `b.id`, `reporting_entity`, `derivation` and `audit_grade` are the ones
+      // that silently cost the index-only scan.
+      expect(s).not.toMatch(/\bb\.id\b/);
+      expect(s).not.toMatch(/\bb\.(reporting_entity|derivation|audit_grade)\b/);
+    }
+  });
+
+  it('keeps full mode on the join-and-GROUP-BY shape, so array ordering cannot shift', async () => {
+    await getCities('full', 'plano-tx');
+    const s = sql();
+    expect(s).not.toContain('LEFT JOIN LATERAL');
+    expect(s).toContain('LEFT JOIN treasury.budgets b ON b.municipality_id = m.id');
+    expect(s).toMatch(/GROUP BY m\.id/);
+    expect(s).toMatch(/HAVING COUNT\(b\.id\) > 0/);
+    expect(s).toMatch(/ORDER BY b\.fiscal_year DESC/);
+  });
+
+  it('every shape still orders the entity list by name', async () => {
+    for (const [mode, filters] of [
+      ['summary', {}], ['summary', { fields: 'index' as const }], ['full', {}],
+    ] as const) {
+      query.mockReset();
+      query.mockResolvedValue(NO_ROWS);
+      await getCities(mode, 'plano-tx', filters);
+      expect(sql()).toMatch(/ORDER BY m\.name\s*$/);
+    }
   });
 });

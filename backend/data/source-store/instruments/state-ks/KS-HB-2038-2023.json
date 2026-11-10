@@ -1,0 +1,33 @@
+{
+  "id": "KS-HB-2038-2023",
+  "scope": "state:ks",
+  "title": "HB 2038 (2023-2024 biennium (2023 Regular Session)): Requiring postsecondary educational institutions to indicate when a student's identification issued by such institution cannot be used for voting purposes. (printed long title: AN ACT concerning elections; relating to voter identification; requiring postsecondary educational institutions to indicate when a student's identification issued by such institution cannot be used for voting purposes; amending K.S.A. 25-1122d and K.S.A. 2022 Supp. 25-2908 and repealing the existing sections.)",
+  "urls": [
+    "https://www.kslegislature.gov/li_2024/b2023_24/measures/hb2038/",
+    "https://www.kslegislature.gov/b2023_24/bills/download/?apn=b2023_24/year2/ready_for_publication/hb_2038/hb2038_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) K.S.A. 2022 Supp. 25-2908(b) as printed in Sec. 3 (reprinted existing law; rendered page 3 shows no marking)\n(quote) (b) A person desiring to vote shall provide to the election board: (1) The voter's name; (2) if required, the voter's address; (3) the voter's signature on the registration or poll book; and (4) a valid form of identification listed in subsection (h).\n(section) K.S.A. 2022 Supp. 25-2908(h)(1) as printed in Sec. 3 (reprinted existing law; one small wording change at (G), \"of education\" struck and \"educational\" added)\n(quote) (G) a student identification card issued by an accredited postsecondary educational institution of education in the state of Kansas;\n(b_no_id_remedy)\n(section) K.S.A. 2022 Supp. 25-2908(d) as printed in Sec. 3 (reprinted existing law)\n(quote) (d) If a voter is unable or refuses to provide current and valid identification, the voter may vote a provisional ballot pursuant to K.S.A. 25-409, and amendments thereto.\n(c_mail_ballot_id)\n(section) K.S.A. 25-1122d(a) as printed in Sec. 2 (affirmation form for a mailed advance ballot application; reprinted existing law apart from a wording change to the student ID line, rendered page 2)\n(quote) I understand that a current and valid Kansas driver's license number or Kansas nondriver's identification card number must be provided in order to receive a ballot. If I do not have a current and valid Kansas driver's license number or Kansas nondriver's identification card number, I must provide one of the following forms of identification with this application in order to receive a ballot:\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) New Section 1(a) (new text)\n(quote) (a) Any accredited postsecondary educational institution in this state that issues a student identification card to a student and knows such student is not a citizen of the United States or is otherwise not a legally qualified voter shall include the following statement on the front of such student's identification card: \"Cannot be used for voting purposes.\"\n(other) Sec. 4-5: repealer and effective date on publication in the statute book.",
+  "sponsors": [
+    {
+      "name": "House Committee on Elections",
+      "role": "prime",
+      "version": "As introduced (hb2038_00_0000); only version."
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

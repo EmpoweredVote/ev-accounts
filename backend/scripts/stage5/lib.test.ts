@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { checkNameProximity, matchedSpan } from '../../src/lib/researchVerifier.js';
-import { readCsv, sweepHit, unverifiableNote, verifiableWindow } from './lib.js';
+import { readCsv, sessionsForYear, sweepHit, unverifiableNote, verifiableWindow } from './lib.js';
 
 describe('readCsv', () => {
   it('reads quoted fields, doubled quotes and embedded newlines', () => {
@@ -89,3 +89,24 @@ describe('unverifiableNote', () => {
     expect(unverifiableNote(null, '2026-11-03')).toMatch(/: no page could be cited\.$/);
   });
 });
+
+describe('sessionsForYear', () => {
+  const S = [
+    { session_id: 1, year_start: 2021, year_end: 2022 },
+    { session_id: 2, year_start: 2023, year_end: 2024 },
+    { session_id: 3, year_start: 2025, year_end: 2026 },
+    { session_id: 4, year_start: 2026, year_end: 2026 },
+  ];
+  it('finds the session whose span covers a second-year vote (Ohio 2026)', () => {
+    expect(sessionsForYear(S, 2026).map((s) => s.session_id)).toEqual([3, 4]);
+  });
+  it('keeps the first-year match and the next-year start, as before', () => {
+    expect(sessionsForYear(S, 2025).map((s) => s.session_id)).toEqual([3, 4]);
+    expect(sessionsForYear(S, 2022).map((s) => s.session_id)).toEqual([1, 2]);
+  });
+  it('treats a missing year_end as a one-year session', () => {
+    expect(sessionsForYear([{ year_start: '2024' }], 2024)).toHaveLength(1);
+    expect(sessionsForYear([{ year_start: '2024' }], 2025)).toHaveLength(0);
+  });
+});
+

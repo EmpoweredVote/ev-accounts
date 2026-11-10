@@ -1,0 +1,161 @@
+{
+  "politician_id": "63bb815a-0d2c-451b-9f5b-1987dcb942ef",
+  "findings": [
+    {
+      "id": "16fc367b6ae612e9858d0804c70069da9a41e059381a62d495fc2173fe7e9422",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_191_HB2020.odt",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "Senate: Emergency Final Action As Amended",
+      "note": "Senate roll call as printed ('Dietrich'), linked to Brenda Dietrich (district 20) via the official 2025 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12d5b96635aaee125a967de3c18520774687c5737469fd65d2358255cda8634d",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Dietrich'), linked to Brenda Dietrich (district 20) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c32e05d099cacb14913d1c7c047be9deb5093f489d52813e63f1f81be052e684",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Dietrich'), linked to Brenda Dietrich (district 20) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "773a23f2ab30c456870279e3a5e51881ec013b5fc572b2fa03296b427529d0f8",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/vote/?apn=b2023_24/year2/senate/legislative_days/day039_20240305/vote_records/vote_100_SB365.odt",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-365-2024",
+      "act": "nay",
+      "motion": "Senate: Final Action - Not passed",
+      "note": "Senate roll call as printed ('Dietrich'), linked to Brenda Dietrich (district 20) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "https://www.kslegislature.gov/li/b2025_26/members/sen_dietrich_brenda_1/ confirms Brenda Dietrich in office: Kansas Senate District 20, in office 2021 to present; the page has no biography or statements on the subject (nothing on the subject)",
+        "official or campaign site: none listed on the legislature page (nothing on the subject)",
+        "blocked: https://ballotpedia.org (not fetched, refuses our fetches)",
+        "blocked: https://kansasreflector.com (not fetched, refuses our fetches)",
+        "blocked: https://justfacts.votesmart.org/candidate/biography/184118 (403)",
+        "web search for name plus subject words (several queries): nothing own-words on the subject",
+        "legislature bill pages for sponsorships: not searched, linked separately",
+        "not reviewed: https://www.aol.com/brenda-dietrich-candace-ayars-kansas-094621772.html (voter guide, returned 404)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T16:49:20.736Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "Positive control: Brenda Dietrich, Senate District 20, found at her campaign site https://dietrichforsenate.com/about (biography; sits on Federal and State Affairs, the election committee) and https://dietrichforsenate.com/ (home page text; nothing on the subject)",
+        "https://www.the74million.org/former-educator-wins-seat-in-kansas-state-senate-favors-local-control-on-pandemic-issues-like-mask-mandates/ : 2020 education interview (nothing on the subject)",
+        "https://sunflowerstatejournal.com/dietrich-announces-state-senate-bid/ (nothing on the subject)",
+        "Topeka Voters Guide, the AOL reprint https://www.aol.com/brenda-dietrich-candace-ayars-kansas-094621772.html returns 404 to both curl and the fetch tool; a search excerpt shows only her opening answer on community ties and accountable government, which is not about elections; not reviewed: the rest of that guide (original cjonline page not found by search)",
+        "https://dietrichforsenate.com/dietrich-to-run-for-kansas-senate/ : 404",
+        "blocked: Kansas Reflector 2024 Shawnee County meet-and-greet story (kansasreflector.com refuses fetches)",
+        "web searches this round (6+ per person): name plus voter ID / photo ID / proof of citizenship / election / questionnaire / newsletter / campaign site / local papers: no own-words on the subject",
+        "blocked: https://ballotpedia.org (refuses our fetches, not fetched)",
+        "blocked: https://kansasreflector.com (refuses our fetches, not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T17:06:34.281Z",
+      "by": "research-ks-r2-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T19:13:24.947Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

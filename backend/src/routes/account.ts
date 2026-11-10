@@ -7,7 +7,8 @@ import { requestDb, adminRpc } from '../lib/supabase.js';
 import { getRequestAuthUser } from '../lib/authService.js';
 import { pool } from '../lib/db.js';
 import { geocodeAddress, GeocodingError } from '../lib/geocodingService.js';
-import { getLocationConsent } from '../lib/connectService.js';
+import { readStoredJurisdiction, toJurisdictionResponse, locationNeedsConfirmation } from '../lib/storedJurisdiction.js';
+import { saveBasicJurisdiction } from '../lib/basicJurisdictionService.js';
 import { isUserAdmin } from '../lib/adminService.js';
 import { getAccountMe } from '../lib/accountMeService.js';
 
@@ -49,16 +50,18 @@ router.get('/me', requireAuth, async (req, res: Response) => {
 
 // ---------------------------------------------------------------------------
 // GET /api/account/me/jurisdiction
-// Returns 403 if location_consent is false/null; returns jurisdiction JSON if true
+// Both tiers (CA_0368). Returns 403 when no location is on file; jurisdiction JSON otherwise.
 // ---------------------------------------------------------------------------
 
-router.get('/me/jurisdiction', requireAuth, requireConnected, async (req, res: Response) => {
+router.get('/me/jurisdiction', requireAuth, async (req, res: Response) => {
   const authReq = req as AuthenticatedRequest;
 
   try {
-    const hasConsent = await getLocationConsent(authReq.userId);
+    // Both tiers: a Connected account's districts or a basic account's (CA_0368). The
+    // helper decides which table; see lib/storedJurisdiction.ts.
+    const j = await readStoredJurisdiction(authReq.userId);
 
-    if (!hasConsent) {
+    if (!j?.location_consent) {
       res.status(403).json({
         code: 'LOCATION_CONSENT_REQUIRED',
         error: 'Location must be set before jurisdiction can be retrieved',
@@ -66,61 +69,10 @@ router.get('/me/jurisdiction', requireAuth, requireConnected, async (req, res: R
       return;
     }
 
-    // Read stored jurisdiction columns instead of calling RPC
-    const { rows } = await pool.query<{
-      congressional_geo_id: string | null;
-      congressional_district_name: string | null;
-      state_senate_geo_id: string | null;
-      state_senate_district_name: string | null;
-      state_house_geo_id: string | null;
-      state_house_district_name: string | null;
-      county_geo_id: string | null;
-      county_name: string | null;
-      school_district_geo_id: string | null;
-      school_district_name: string | null;
-      jurisdiction_state: string | null;
-      jurisdiction_city: string | null;
-      city_geo_id: string | null;
-      state_geo_id: string | null;
-      nation_geo_id: string | null;
-      city_council_geo_id: string | null;
-      city_council_district_name: string | null;
-    }>(
-      `SELECT congressional_geo_id, congressional_district_name,
-              state_senate_geo_id, state_senate_district_name,
-              state_house_geo_id, state_house_district_name,
-              county_geo_id, county_name,
-              school_district_geo_id, school_district_name,
-              jurisdiction_state, jurisdiction_city,
-              city_council_geo_id, city_council_district_name,
-              city_geo_id, state_geo_id, nation_geo_id
-       FROM connect.connected_profiles WHERE user_id = $1`,
-      [authReq.userId]
-    );
-    const j = rows[0];
-
     res.status(200).json({
-      jurisdiction: {
-        congressional_district: j?.congressional_geo_id ?? null,
-        congressional_district_name: j?.congressional_district_name ?? null,
-        state_senate_district: j?.state_senate_geo_id ?? null,
-        state_senate_district_name: j?.state_senate_district_name ?? null,
-        state_house_district: j?.state_house_geo_id ?? null,
-        state_house_district_name: j?.state_house_district_name ?? null,
-        county: j?.county_geo_id ?? null,
-        county_name: j?.county_name ?? null,
-        school_district: j?.school_district_geo_id ?? null,
-        school_district_name: j?.school_district_name ?? null,
-        state: j?.jurisdiction_state ?? null,
-        city: j?.jurisdiction_city ?? null,
-        city_council_district: j?.city_council_geo_id ?? null,
-        city_council_district_name: j?.city_council_district_name ?? null,
-        // See the note on the same three keys in GET /me: geoids, not the geocoded
-        // state code and city name that `state` and `city` already carry.
-        state_geoid: j?.state_geo_id ?? null,
-        city_geoid: j?.city_geo_id ?? null,
-        nation_geoid: j?.nation_geo_id ?? null,
-      },
+      jurisdiction: toJurisdictionResponse(j),
+      // CA_0369 — see locationNeedsConfirmation. Beside `jurisdiction`, never inside it.
+      location_needs_confirmation: await locationNeedsConfirmation(authReq.userId, j),
     });
   } catch (err) {
     console.error('[GET /api/account/me/jurisdiction] Unexpected error:', err);
@@ -454,8 +406,11 @@ router.patch(
 // PATCH /api/account/location-hint
 // Middleware: requireAuth + requireInform (Connected users → 403)
 //
-// Stores a location hint JSON in inform_profiles.last_essentials_location.
-// Uses INSERT ON CONFLICT upsert — defensive against missing inform_profiles row.
+// Caches the districts at the point Essentials sends, and stores NOTHING else.
+//
+// 🔴 It used to write the whole payload — the point included — as plain JSON to
+// inform_profiles.last_essentials_location. CA_0368's rule for basic accounts is districts
+// only, so the point is used and dropped. (0 rows held one when this changed, 2026-11-07.)
 // ---------------------------------------------------------------------------
 
 const LocationHintBodySchema = z.object({
@@ -479,22 +434,14 @@ router.patch('/location-hint', requireAuth, requireInform, async (req, res: Resp
   const { location } = parsed.data;
 
   try {
-    await pool.query(
-      `INSERT INTO inform.inform_profiles (user_id, last_essentials_location)
-       VALUES ($1, $2::jsonb)
-       ON CONFLICT (user_id) DO UPDATE
-         SET last_essentials_location = EXCLUDED.last_essentials_location`,
-      [authReq.userId, JSON.stringify(location)]
-    );
-
-    // District cache (fail-open): extract lat/lng from opaque JSONB payload, then cache.
-    // location is z.unknown() — Essentials frontend passes { lat, lng, ... } objects,
-    // but the schema is not enforced. Defensive type narrowing.
+    // location is z.unknown() — Essentials passes { lat, lng, ... } objects, but the schema is
+    // not enforced. Defensive type narrowing.
     const loc = location as Record<string, unknown> | null;
     const hintLat = loc && typeof loc.lat === 'number' ? loc.lat : null;
     const hintLng = loc && typeof loc.lng === 'number' ? loc.lng : null;
 
     if (hintLat !== null && hintLng !== null) {
+      // District cache (fail-open): districts out, the point is not stored.
       try {
         await pool.query(
           `SELECT essentials.cache_user_districts($1, $2, $3)`,
@@ -627,17 +574,20 @@ router.get('/school-district', requireAuth, async (req, res: Response) => {
 // ---------------------------------------------------------------------------
 // POST /api/account/set-location
 // Auth: requireAuth + requireInform (Connected users get 403 — they use
-//       POST /api/connect/set-location instead, which has tier-specific writes
-//       to connected_profiles).
+//       POST /api/connect/set-location, which keeps an encrypted point and seals the
+//       address in the identity vault).
 //
-// Inform-tier equivalent of POST /api/connect/set-location: accepts an address
-// string from the Accounts app, geocodes it server-side, stores the result as
-// JSONB on inform.inform_profiles.last_essentials_location, and caches the
-// user's TIGER districts.
+// A BASIC account adds an address. We keep ONLY the districts (CA_0368, decided
+// 2026-11-07): geocode, resolve districts at the point, store them in
+// inform.account_jurisdictions, and drop the point and the address. Nothing is sealed in
+// the vault — that exists for Connected accountability, which basic accounts do not have.
 //
-// Security decision (Phase 70): the response body is exactly { ok: true }.
-// Address, lat/lng, and matchedAddress NEVER appear in the response — address
-// data stays server-side. This mirrors the Connected endpoint decision.
+// 🔴 This route used to write { lat, lng, city, state, matchedAddress } as plain JSON to
+// inform.inform_profiles.last_essentials_location — the full street address and the exact
+// point, unencrypted. No front end called it and it held 0 rows when replaced.
+//
+// The response carries district names for the confirmation screen, never the address or
+// the point.
 // ---------------------------------------------------------------------------
 
 const SetLocationBodySchema = z.object({
@@ -650,83 +600,38 @@ router.post('/set-location', requireAuth, requireInform, async (req, res: Respon
   const parsed = SetLocationBodySchema.safeParse(req.body);
   if (!parsed.success) {
     res.status(422).json({
-      error: 'VALIDATION_ERROR',
-      issues: parsed.error.issues,
+      code: 'VALIDATION_ERROR',
+      message: parsed.error.issues[0]?.message ?? 'Invalid request body',
     });
     return;
   }
 
-  const { address } = parsed.data;
-
-  // 1) Geocode. GeocodingError.code maps directly to HTTP status.
-  let lat: number;
-  let lng: number;
-  let city: string;
-  let state: string;
-  let matchedAddress: string;
-
+  // Geocode. The codes match POST /api/connect/set-location so one front end reads both.
+  let coords: Awaited<ReturnType<typeof geocodeAddress>>;
   try {
-    const coords = await geocodeAddress(address);
-    lat = coords.lat;
-    lng = coords.lng;
-    city = coords.city;
-    state = coords.state;
-    matchedAddress = coords.matchedAddress;
+    coords = await geocodeAddress(parsed.data.address);
   } catch (err) {
     if (err instanceof GeocodingError) {
-      // Per planning spec: ADDRESS_NOT_FOUND -> 400, GEOCODER_UNAVAILABLE -> 503.
-      // Note: GeocodingErrorCode also includes 'PO_BOX_REJECTED' (see
-      // backend/src/lib/geocodingService.ts) — treat it as a 400 input error too.
       if (err.code === 'ADDRESS_NOT_FOUND' || err.code === 'PO_BOX_REJECTED') {
-        res.status(400).json({ code: err.code, message: err.message });
+        res.status(422).json({ code: err.code, message: err.message });
         return;
       }
       if (err.code === 'GEOCODER_UNAVAILABLE') {
-        res.status(503).json({
-          code: 'GEOCODER_UNAVAILABLE',
-          message: 'Address lookup temporarily unavailable.',
-        });
+        res.status(503).json({ code: 'GEOCODER_UNAVAILABLE', message: 'Address lookup temporarily unavailable.' });
         return;
       }
-      // Defensive: unknown future GeocodingError code falls through to 500.
-      console.error('[POST /api/account/set-location] unknown geocoding error:', err);
-      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
-      return;
     }
-    // Non-GeocodingError thrown from geocodeAddress — let outer catch handle it.
-    throw err;
+    // Never log the address or the error message, which can carry it.
+    console.error('[POST /api/account/set-location] geocoding failed');
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+    return;
   }
 
-  // 2) Persist the geocoded result as JSONB on inform_profiles, then cache
-  //    districts (fail-open). Wrap both in an outer try/catch so any unexpected
-  //    DB error returns 500 with the standard envelope.
   try {
-    const location = { lat, lng, city, state, matchedAddress };
-
-    await pool.query(
-      `INSERT INTO inform.inform_profiles (user_id, last_essentials_location)
-       VALUES ($1, $2::jsonb)
-       ON CONFLICT (user_id) DO UPDATE
-         SET last_essentials_location = EXCLUDED.last_essentials_location`,
-      [authReq.userId, JSON.stringify(location)]
-    );
-
-    // District cache (fail-open): never block the location save on a PostGIS error.
-    // essentials.cache_user_districts is in the essentials schema, which is NOT
-    // in PostgREST's exposed schema list — MUST use pool.query, not adminRpc.
-    try {
-      await pool.query(
-        `SELECT essentials.cache_user_districts($1, $2, $3)`,
-        [authReq.userId, lat, lng]
-      );
-    } catch (cacheErr) {
-      console.error('[POST /api/account/set-location] district cache failed (non-fatal):', cacheErr);
-    }
-
-    // Security: response body is { ok: true } only — no address/lat/lng echo.
-    res.status(200).json({ ok: true });
-  } catch (err) {
-    console.error('[POST /api/account/set-location] error:', err);
+    const result = await saveBasicJurisdiction(authReq.userId, coords);
+    res.status(200).json(result);
+  } catch {
+    console.error('[POST /api/account/set-location] saving districts failed');
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });

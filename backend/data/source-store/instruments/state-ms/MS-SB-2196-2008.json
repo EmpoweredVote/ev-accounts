@@ -1,0 +1,138 @@
+{
+  "id": "MS-SB-2196-2008",
+  "scope": "state:ms",
+  "title": "SB 2196 (2008 Regular Session): Elections; require electors to present certain types of identification before being allowed to vote.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2008/pdf/history/SB/SB2196.xml",
+    "https://billstatus.ls.state.ms.us/documents/2008/pdf/SB/2100-2199/SB2196IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1(1)\n(quote) Except as provided in subsection (3) of this section, each elector who shall appear to vote in person at a polling place or the registrar's office shall present proper identification to an election manager or the registrar before such elector shall be allowed to vote.\n(section) Sec. 1(2)\n(quote) Proper identification shall consist of any one (1) of the following: (a) A Mississippi driver's license which was properly issued; (b) A Mississippi voter identification card issued under Section 2 of this act or other valid identification card issued by a branch, department, agency or entity of the State of Mississippi, any other state or the United States authorized by law to issue personal identification, provided such identification card contains a photograph of the elector; (c) A valid United States passport;\n(b_no_id_remedy)\n(section) Sec. 1(4)\n(quote) If a person is unable to produce any of the items of identification required by this section, the person may vote by affidavit ballot. The affidavit ballot may only be counted if, upon examination of the affidavit, the person is found to be a qualified elector.\n(section) Sec. 1(3)\n(quote) An elector who registered to vote by mail and who votes for the first time in this state shall present to the managers of the election or the registrar one (1) of the forms of identification listed in subsection (2) of this section or a copy of a current utility bill, bank statement, government check, paycheck or other government document that shows the name and address of the elector.\n(section) Sec. 2(1)\n(quote) No fee shall be charged or collected for the application for or issuance of a Mississippi voter identification card.\n(c_mail_ballot_id)\n(section) Sec. (23-15-631)(2)\n(quote) The Secretary of State shall prepare instructions on how absent voters may comply with the identification requirements of the Help America Vote Act of 2002, which shall be provided to the registrar and enclosed with each absentee ballot.\n(section) Sec. (23-15-719)\n(quote) The registrar shall identify the applicant by requiring him to present identification as required by Section 1 of Senate Bill No.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 2(5)\n(quote) The registrar shall require presentation and verification of the following information before issuing a Mississippi voter identification card to a person: (a) A photo identity document; however, a nonphoto identity document shall be acceptable if it includes both the applicant's full legal name and date of birth; (b) Documentation showing the person's date of birth;\n(other) Sec. 1(5): intimidating a voter is punished by fine of at least $5,000 and/or 1-5 years\n(other) Sec. 2: free Mississippi voter identification card, photo, valid only for voting\n(other) Other sections: 23-15-631, 23-15-639, 23-15-541, 23-15-719, 23-15-11 conformed; preclearance",
+  "sponsors": [
+    {
+      "name": "King",
+      "role": "prime",
+      "version": "SB2196IN"
+    },
+    {
+      "name": "Hewes",
+      "role": "co",
+      "version": "SB2196IN"
+    },
+    {
+      "name": "Michel",
+      "role": "co",
+      "version": "SB2196IN"
+    },
+    {
+      "name": "Moffatt",
+      "role": "co",
+      "version": "SB2196IN"
+    },
+    {
+      "name": "Gollott",
+      "role": "co",
+      "version": "SB2196IN"
+    },
+    {
+      "name": "Nunnelee",
+      "role": "co",
+      "version": "SB2196IN"
+    },
+    {
+      "name": "Davis (1st)",
+      "role": "co",
+      "version": "SB2196IN"
+    },
+    {
+      "name": "Kirby",
+      "role": "co",
+      "version": "SB2196IN"
+    },
+    {
+      "name": "Mettetal",
+      "role": "co",
+      "version": "SB2196IN"
+    },
+    {
+      "name": "Watson",
+      "role": "co",
+      "version": "SB2196IN"
+    },
+    {
+      "name": "McDaniel",
+      "role": "co",
+      "version": "SB2196IN"
+    },
+    {
+      "name": "Yancey",
+      "role": "co",
+      "version": "SB2196IN"
+    },
+    {
+      "name": "Carmichael",
+      "role": "co",
+      "version": "SB2196IN"
+    },
+    {
+      "name": "Chassaniol",
+      "role": "co",
+      "version": "SB2196IN"
+    },
+    {
+      "name": "Hyde-Smith",
+      "role": "co",
+      "version": "SB2196IN"
+    },
+    {
+      "name": "Fillingane",
+      "role": "co",
+      "version": "SB2196IN"
+    },
+    {
+      "name": "Albritton",
+      "role": "co",
+      "version": "SB2196IN"
+    },
+    {
+      "name": "Hudson",
+      "role": "co",
+      "version": "SB2196IN"
+    },
+    {
+      "name": "Browning",
+      "role": "co",
+      "version": "SB2196IN"
+    },
+    {
+      "name": "Lee (35th)",
+      "role": "co",
+      "version": "SB2196IN"
+    },
+    {
+      "name": "Burton",
+      "role": "co",
+      "version": "SB2196IN"
+    },
+    {
+      "name": "Ward",
+      "role": "co",
+      "version": "SB2196IN"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

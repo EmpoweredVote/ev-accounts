@@ -1,0 +1,137 @@
+{
+  "politician_id": "4ff0f9fe-1320-449b-be74-b5a6575d7124",
+  "findings": [
+    {
+      "id": "ef8ff8b169922fd3b17a394a7d964ef6a14af5e888b13724a58bca64ca93d158",
+      "kind": "own-words",
+      "url": "https://www.ohiohouse.gov/members/meredith-r-lawson-rowe/news/rep-lawson-rowe-ohio-republicans-place-new-burdens-on-voters-by-adding-unnecessary-hurdles-to-the-voting-process-139814",
+      "date": "2025-11-21",
+      "date_precision": "day",
+      "passage": "SB 293 is a direct attack on people of color and working Ohioans who already face barriers to voting.",
+      "note": "Release in her name on SB 293 (ends the absentee-ballot grace period and sets voter-registration cancellation procedures tied to other agencies' databases). She describes the bill as a barrier to voting. Quoted by the fetch tool; the page itself returned 403 to curl.",
+      "subjects": [
+        "absentee ballot deadline",
+        "voter-roll checks against agency databases",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:12:31.175Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0902e7fa76fc3542f273b3e0dca071180960f9dfbff7bf0c1b0df8b3faad7385",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_lawson_rowe_meredith_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.685Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "730a6b22119baaeca4679f9ddecfeae85a89635c34995cd13d24f8df728ef61c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "nay",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_lawson_rowe_meredith_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.685Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5d326e89edf5091ea0ff50afe14346565ee0d633bc08602a7061dddab8b599d",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_lawson_rowe_meredith_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.685Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "SB 293",
+        "SJR 10",
+        "HB 472",
+        "HB 458"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "House member news page https://ohiohouse.gov/members/meredith-r-lawson-rowe/news confirms Meredith R. Lawson-Rowe, Reynoldsburg, House District 5; page 1 of 5 (Feb-Sep 2026) nothing on the subject; pages 2-5 not reviewed",
+        "member release of 2025-11-21 on SB 293 (read through the fetch tool; one sentence saved)",
+        "blocked: https://www.ohiohouse.gov/members/meredith-r-lawson-rowe/news/rep-lawson-rowe-ohio-republicans-place-new-burdens-on-voters-by-adding-unnecessary-hurdles-to-the-voting-process-139814 (curl 403; text taken from the fetch tool only)",
+        "not reviewed: https://ohiohouse.gov/assets/people/3017/newsletters/15011.pdf and 16051.pdf (newsletters)",
+        "web searches: voter ID/photo ID; SB 293: found the release above; no own words on photo ID, SJR 10 or HB 472",
+        "blocked: ballotpedia.org and bluevoterguide.org (listed as refusing fetches, not tried)",
+        "not reviewed: campaign site (none found by search)"
+      ],
+      "found": 1,
+      "at": "2026-11-06T15:12:31.175Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 3,
+      "at": "2026-11-06T16:28:34.685Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}

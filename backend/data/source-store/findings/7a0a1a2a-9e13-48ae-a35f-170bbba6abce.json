@@ -25,7 +25,111 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "c4338a77b3aba428947279af06cd61e61cdf9a7e779c7a2e8d9568cae10778af",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/house/legislative_days/day045_20250320/vote_records/0275_HB2020.odt",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "nay",
+      "motion": "House: Concurred with amendments",
+      "note": "House roll call as printed ('Alcala'), linked to John Alcala (district 57) via the official 2025 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c219fe3754d2a4205c7f4df7b0eee9545951604494d4cca3e305ee08fdc67c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day051_20260326/vote_records/0342_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "House: Conference Committee Report was adopted",
+      "note": "House roll call as printed ('Alcala'), linked to John Alcala (district 57) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d78e075f99a6894d381835920e3c20b2e83e350f416352edaa8f164c0df580f1",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day023_20260212/vote_records/0067_HB2448.odt",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2448-2026",
+      "act": "nay",
+      "motion": "House: Emergency Final Action - Passed as amended",
+      "note": "House roll call as printed ('Alcala'), linked to John Alcala (district 57) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.942Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official legislature member page https://www.kslegislature.gov/b2025_26/legislators/rep_alcala_john_1/ (confirms House District 57, Shawnee County; no election text, no personal website)",
+        "blocked: https://bluevoterguide.org/KS/candidate_John_Alcala/27250 (403)",
+        "blocked: https://ballotpedia.org (listed blocked per instructions, not fetched)",
+        "blocked: kansasreflector.com (listed blocked per instructions, not fetched)",
+        "two web searches on name plus subject words and campaign site: nothing on the subject, no campaign site found",
+        "not reviewed: committee testimony PDFs (none found by search)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T16:49:02.277Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-04T19:13:24.942Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
 }

@@ -1,0 +1,3591 @@
+{
+ "generated_at": "2026-11-08T21:14:34.105Z",
+ "ap_races": 122,
+ "wa_sos_races": 122,
+ "joined": 122,
+ "rows": [
+  {
+   "race": "WA|Z|#6",
+   "ap_name": "Jeff Holy",
+   "sos_name": "Jeff Holy",
+   "name_variant": false,
+   "ap_votes": 0,
+   "sos_votes": 34907,
+   "winner": true
+  },
+  {
+   "race": "WA|Z|#7",
+   "ap_name": "Shelly Short",
+   "sos_name": "Shelly Short",
+   "name_variant": false,
+   "ap_votes": 35744,
+   "sos_votes": 35744,
+   "winner": true
+  },
+  {
+   "race": "WA|Z|#7",
+   "ap_name": "Ronald McCoy",
+   "sos_name": "Ronald L McCoy",
+   "name_variant": true,
+   "ap_votes": 17850,
+   "sos_votes": 17850,
+   "winner": false
+  },
+  {
+   "race": "WA|Z|#8",
+   "ap_name": "Nikki Torres",
+   "sos_name": "Nikki Torres",
+   "name_variant": false,
+   "ap_votes": 26590,
+   "sos_votes": 26590,
+   "winner": false
+  },
+  {
+   "race": "WA|Z|#8",
+   "ap_name": "Gabe Galbraith",
+   "sos_name": "Gabe Galbraith",
+   "name_variant": false,
+   "ap_votes": 22962,
+   "sos_votes": 22962,
+   "winner": false
+  },
+  {
+   "race": "WA|Z|#13",
+   "ap_name": "Alex Ybarra",
+   "sos_name": "Alex Ybarra",
+   "name_variant": false,
+   "ap_votes": 0,
+   "sos_votes": 33195,
+   "winner": true
+  },
+  {
+   "race": "WA|Z|#15",
+   "ap_name": "Jeremie Dufault",
+   "sos_name": "Jeremie Dufault",
+   "name_variant": false,
+   "ap_votes": 0,
+   "sos_votes": 39575,
+   "winner": true
+  },
+  {
+   "race": "WA|Z|#21",
+   "ap_name": "Marko Liias",
+   "sos_name": "Marko Liias",
+   "name_variant": false,
+   "ap_votes": 41236,
+   "sos_votes": 41236,
+   "winner": true
+  },
+  {
+   "race": "WA|Z|#21",
+   "ap_name": "Riaz Khan",
+   "sos_name": "Riaz Khan",
+   "name_variant": false,
+   "ap_votes": 15966,
+   "sos_votes": 15966,
+   "winner": false
+  },
+  {
+   "race": "WA|Z|#26",
+   "ap_name": "Deborah Krishnadasan",
+   "sos_name": "Deborah Krishnadasan",
+   "name_variant": false,
+   "ap_votes": 42329,
+   "sos_votes": 42329,
+   "winner": true
+  },
+  {
+   "race": "WA|Z|#26",
+   "ap_name": "Gary Parker",
+   "sos_name": "Gary Parker",
+   "name_variant": false,
+   "ap_votes": 32776,
+   "sos_votes": 32776,
+   "winner": false
+  },
+  {
+   "race": "WA|Z|#29",
+   "ap_name": "Sharlett Mena",
+   "sos_name": "Sharlett Mena",
+   "name_variant": false,
+   "ap_votes": 24375,
+   "sos_votes": 24375,
+   "winner": true
+  },
+  {
+   "race": "WA|Z|#29",
+   "ap_name": "David Anderson",
+   "sos_name": "David Anderson",
+   "name_variant": false,
+   "ap_votes": 9086,
+   "sos_votes": 9086,
+   "winner": false
+  },
+  {
+   "race": "WA|Z|#30",
+   "ap_name": "Claire Wilson",
+   "sos_name": "Claire Wilson",
+   "name_variant": false,
+   "ap_votes": 25505,
+   "sos_votes": 26449,
+   "winner": true
+  },
+  {
+   "race": "WA|Z|#30",
+   "ap_name": "Michael Rutland",
+   "sos_name": "Michael Rutland",
+   "name_variant": false,
+   "ap_votes": 14381,
+   "sos_votes": 14904,
+   "winner": false
+  },
+  {
+   "race": "WA|Z|#31",
+   "ap_name": "Phil Fortunato",
+   "sos_name": "Phil Fortunato",
+   "name_variant": false,
+   "ap_votes": 35161,
+   "sos_votes": 35239,
+   "winner": true
+  },
+  {
+   "race": "WA|Z|#31",
+   "ap_name": "Tamara Stramel",
+   "sos_name": "Tamara Stramel",
+   "name_variant": false,
+   "ap_votes": 28767,
+   "sos_votes": 28872,
+   "winner": false
+  },
+  {
+   "race": "WA|Z|#32",
+   "ap_name": "Cindy Ryu",
+   "sos_name": "Cindy Ryu",
+   "name_variant": false,
+   "ap_votes": 29946,
+   "sos_votes": 31442,
+   "winner": false
+  },
+  {
+   "race": "WA|Z|#32",
+   "ap_name": "Jesse Salomon",
+   "sos_name": "Jesse Salomon",
+   "name_variant": false,
+   "ap_votes": 28477,
+   "sos_votes": 29565,
+   "winner": false
+  },
+  {
+   "race": "WA|Z|#33",
+   "ap_name": "Tina Orwall",
+   "sos_name": "Tina L. Orwall",
+   "name_variant": true,
+   "ap_votes": 0,
+   "sos_votes": 34106,
+   "winner": true
+  },
+  {
+   "race": "WA|Z|#34",
+   "ap_name": "Emily Alvarado",
+   "sos_name": "Emily Alvarado",
+   "name_variant": false,
+   "ap_votes": 0,
+   "sos_votes": 54721,
+   "winner": true
+  },
+  {
+   "race": "WA|Z|#35",
+   "ap_name": "Carolina Mejia",
+   "sos_name": "Carolina Mejia",
+   "name_variant": false,
+   "ap_votes": 31973,
+   "sos_votes": 32859,
+   "winner": false
+  },
+  {
+   "race": "WA|Z|#35",
+   "ap_name": "Drew MacEwen",
+   "sos_name": "Drew C MacEwen",
+   "name_variant": true,
+   "ap_votes": 31739,
+   "sos_votes": 32446,
+   "winner": false
+  },
+  {
+   "race": "WA|Z|#36",
+   "ap_name": "Noel Frame",
+   "sos_name": "Noel C. Frame",
+   "name_variant": true,
+   "ap_votes": 64148,
+   "sos_votes": 69027,
+   "winner": true
+  },
+  {
+   "race": "WA|Z|#36",
+   "ap_name": "Jillian England",
+   "sos_name": "Jillian England",
+   "name_variant": false,
+   "ap_votes": 8893,
+   "sos_votes": 9639,
+   "winner": false
+  },
+  {
+   "race": "WA|Z|#37",
+   "ap_name": "Chipalo Street",
+   "sos_name": "Chipalo Street",
+   "name_variant": false,
+   "ap_votes": 37163,
+   "sos_votes": 42225,
+   "winner": true
+  },
+  {
+   "race": "WA|Z|#37",
+   "ap_name": "Tatiana Brown",
+   "sos_name": "Tatiana Brown",
+   "name_variant": false,
+   "ap_votes": 13149,
+   "sos_votes": 15634,
+   "winner": false
+  },
+  {
+   "race": "WA|Z|#42",
+   "ap_name": "Michael Shepard",
+   "sos_name": "Michael Alvarez Shepard",
+   "name_variant": true,
+   "ap_votes": 43990,
+   "sos_votes": 43990,
+   "winner": true
+  },
+  {
+   "race": "WA|Z|#42",
+   "ap_name": "Erika Creydt",
+   "sos_name": "Erika Creydt",
+   "name_variant": false,
+   "ap_votes": 33830,
+   "sos_votes": 33830,
+   "winner": false
+  },
+  {
+   "race": "WA|Z|#43",
+   "ap_name": "Jamie Pedersen",
+   "sos_name": "Jamie Pedersen",
+   "name_variant": false,
+   "ap_votes": 39178,
+   "sos_votes": 44002,
+   "winner": true
+  },
+  {
+   "race": "WA|Z|#43",
+   "ap_name": "Hannah Sabio-Howell",
+   "sos_name": "Hannah Sabio-Howell",
+   "name_variant": false,
+   "ap_votes": 13508,
+   "sos_votes": 16338,
+   "winner": false
+  },
+  {
+   "race": "WA|Z|#44",
+   "ap_name": "John Lovick",
+   "sos_name": "John Lovick",
+   "name_variant": false,
+   "ap_votes": 38582,
+   "sos_votes": 38582,
+   "winner": true
+  },
+  {
+   "race": "WA|Z|#44",
+   "ap_name": "Sherri Larkin",
+   "sos_name": "Sherri Larkin",
+   "name_variant": false,
+   "ap_votes": 23608,
+   "sos_votes": 23608,
+   "winner": false
+  },
+  {
+   "race": "WA|Z|#45",
+   "ap_name": "Manka Dhingra",
+   "sos_name": "Manka Dhingra",
+   "name_variant": false,
+   "ap_votes": 0,
+   "sos_votes": 44755,
+   "winner": true
+  },
+  {
+   "race": "WA|Z|#46",
+   "ap_name": "Javier Valdez",
+   "sos_name": "Javier Valdez",
+   "name_variant": false,
+   "ap_votes": 57600,
+   "sos_votes": 63909,
+   "winner": true
+  },
+  {
+   "race": "WA|Z|#46",
+   "ap_name": "Sandra Stephens",
+   "sos_name": "Sandra Stephens",
+   "name_variant": false,
+   "ap_votes": 6484,
+   "sos_votes": 7144,
+   "winner": false
+  },
+  {
+   "race": "WA|Z|#47",
+   "ap_name": "Claudia Kauffman",
+   "sos_name": "Claudia Kauffman",
+   "name_variant": false,
+   "ap_votes": 26382,
+   "sos_votes": 29453,
+   "winner": true
+  },
+  {
+   "race": "WA|Z|#47",
+   "ap_name": "Kristina Soltys",
+   "sos_name": "Kristina Soltys",
+   "name_variant": false,
+   "ap_votes": 16943,
+   "sos_votes": 18960,
+   "winner": false
+  },
+  {
+   "race": "WA|Z|#48",
+   "ap_name": "Vandana Slatter",
+   "sos_name": "Vandana Slatter",
+   "name_variant": false,
+   "ap_votes": 0,
+   "sos_votes": 33574,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#1|P1",
+   "ap_name": "Davina Duerr",
+   "sos_name": "Davina Duerr",
+   "name_variant": false,
+   "ap_votes": 44370,
+   "sos_votes": 49032,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#1|P1",
+   "ap_name": "Maggie Wang",
+   "sos_name": "Maggie Wang",
+   "name_variant": false,
+   "ap_votes": 16324,
+   "sos_votes": 18073,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#1|P2",
+   "ap_name": "Shelley Kloba",
+   "sos_name": "Shelley Kloba",
+   "name_variant": false,
+   "ap_votes": 43840,
+   "sos_votes": 48471,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#1|P2",
+   "ap_name": "Cliff Moon",
+   "sos_name": "Cliff Moon",
+   "name_variant": false,
+   "ap_votes": 16640,
+   "sos_votes": 18408,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#2|P1",
+   "ap_name": "Andrew Barkis",
+   "sos_name": "Andrew Barkis",
+   "name_variant": false,
+   "ap_votes": 30926,
+   "sos_votes": 32333,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#2|P1",
+   "ap_name": "William Dehnel",
+   "sos_name": "William Dehnel",
+   "name_variant": false,
+   "ap_votes": 22443,
+   "sos_votes": 23773,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#3|P1",
+   "ap_name": "Natasha Hill",
+   "sos_name": "Natasha Hill",
+   "name_variant": false,
+   "ap_votes": 38605,
+   "sos_votes": 38605,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#3|P1",
+   "ap_name": "Tony Kiepe",
+   "sos_name": "Tony Kiepe",
+   "name_variant": false,
+   "ap_votes": 19580,
+   "sos_votes": 19580,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#3|P2",
+   "ap_name": "Luc Jasmin",
+   "sos_name": "Luc Jasmin III",
+   "name_variant": true,
+   "ap_votes": 37485,
+   "sos_votes": 37485,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#3|P2",
+   "ap_name": "Natalie Poulson",
+   "sos_name": "Natalie Poulson",
+   "name_variant": false,
+   "ap_votes": 20657,
+   "sos_votes": 20657,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#4|P1",
+   "ap_name": "Hillary Pham",
+   "sos_name": "Hillary Q. Pham",
+   "name_variant": true,
+   "ap_votes": 25776,
+   "sos_votes": 25776,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#4|P1",
+   "ap_name": "Trent Maier",
+   "sos_name": "Trent Maier",
+   "name_variant": false,
+   "ap_votes": 23357,
+   "sos_votes": 23357,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#4|P2",
+   "ap_name": "Rob Chase",
+   "sos_name": "Rob Chase",
+   "name_variant": false,
+   "ap_votes": 33849,
+   "sos_votes": 33849,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#4|P2",
+   "ap_name": "Rob Tupper",
+   "sos_name": "Rob Tupper",
+   "name_variant": false,
+   "ap_votes": 26043,
+   "sos_votes": 26043,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#5|P1",
+   "ap_name": "Zach Hall",
+   "sos_name": "Zach Hall",
+   "name_variant": false,
+   "ap_votes": 36360,
+   "sos_votes": 39551,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#5|P1",
+   "ap_name": "Michelle Bennett",
+   "sos_name": "Michelle Bennett",
+   "name_variant": false,
+   "ap_votes": 28002,
+   "sos_votes": 30547,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#5|P2",
+   "ap_name": "Lisa Callan",
+   "sos_name": "Lisa Callan",
+   "name_variant": false,
+   "ap_votes": 37382,
+   "sos_votes": 40670,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#5|P2",
+   "ap_name": "Patrick Peacock",
+   "sos_name": "Patrick Peacock",
+   "name_variant": false,
+   "ap_votes": 26725,
+   "sos_votes": 29159,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#6|P1",
+   "ap_name": "Alan Nolan",
+   "sos_name": "Alan Nolan",
+   "name_variant": false,
+   "ap_votes": 28219,
+   "sos_votes": 28219,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#6|P1",
+   "ap_name": "Michaela Kelso",
+   "sos_name": "Michaela Kelso",
+   "name_variant": false,
+   "ap_votes": 24518,
+   "sos_votes": 24518,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#6|P2",
+   "ap_name": "Jonathan Bingle",
+   "sos_name": "Jonathan Bingle",
+   "name_variant": false,
+   "ap_votes": 29833,
+   "sos_votes": 29833,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#6|P2",
+   "ap_name": "Julia Payne",
+   "sos_name": "Julia Payne",
+   "name_variant": false,
+   "ap_votes": 22938,
+   "sos_votes": 22938,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#7|P1",
+   "ap_name": "Andrew Engell",
+   "sos_name": "Andrew Engell",
+   "name_variant": false,
+   "ap_votes": 0,
+   "sos_votes": 39504,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#7|P2",
+   "ap_name": "Hunter Abell",
+   "sos_name": "Hunter Abell",
+   "name_variant": false,
+   "ap_votes": 0,
+   "sos_votes": 39110,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#8|P1",
+   "ap_name": "Stephanie Barnard",
+   "sos_name": "Stephanie Barnard",
+   "name_variant": false,
+   "ap_votes": 0,
+   "sos_votes": 39317,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#8|P2",
+   "ap_name": "April Connors",
+   "sos_name": "April Connors",
+   "name_variant": false,
+   "ap_votes": 0,
+   "sos_votes": 39395,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#9|P1",
+   "ap_name": "Mary Dye",
+   "sos_name": "Mary Dye",
+   "name_variant": false,
+   "ap_votes": 0,
+   "sos_votes": 41287,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#9|P2",
+   "ap_name": "Joe Schmick",
+   "sos_name": "Joe Schmick",
+   "name_variant": false,
+   "ap_votes": 36254,
+   "sos_votes": 36254,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#9|P2",
+   "ap_name": "Karina Wallace",
+   "sos_name": "Karina Wallace",
+   "name_variant": false,
+   "ap_votes": 22086,
+   "sos_votes": 22086,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#10|P1",
+   "ap_name": "Clyde Shavers",
+   "sos_name": "Clyde Shavers",
+   "name_variant": false,
+   "ap_votes": 41046,
+   "sos_votes": 41046,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#10|P1",
+   "ap_name": "Robert Hicks",
+   "sos_name": "Robert (Chili) Hicks",
+   "name_variant": true,
+   "ap_votes": 31647,
+   "sos_votes": 31647,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#10|P2",
+   "ap_name": "Dave Paul",
+   "sos_name": "Dave Paul",
+   "name_variant": false,
+   "ap_votes": 42303,
+   "sos_votes": 42303,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#10|P2",
+   "ap_name": "Tim Hazelo",
+   "sos_name": "Tim Hazelo",
+   "name_variant": false,
+   "ap_votes": 30218,
+   "sos_votes": 30218,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#11|P1",
+   "ap_name": "David Hackney",
+   "sos_name": "David Hackney",
+   "name_variant": false,
+   "ap_votes": 19914,
+   "sos_votes": 23193,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#11|P1",
+   "ap_name": "Ashley Fedan",
+   "sos_name": "Ashley Fedan",
+   "name_variant": false,
+   "ap_votes": 13434,
+   "sos_votes": 15975,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#11|P2",
+   "ap_name": "Steve Bergquist",
+   "sos_name": "Steve Bergquist",
+   "name_variant": false,
+   "ap_votes": 0,
+   "sos_votes": 34481,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#12|P1",
+   "ap_name": "Brian Burnett",
+   "sos_name": "Brian Burnett",
+   "name_variant": false,
+   "ap_votes": 33638,
+   "sos_votes": 35243,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#12|P1",
+   "ap_name": "Stacy Willoughby",
+   "sos_name": "Stacy Willoughby",
+   "name_variant": false,
+   "ap_votes": 33542,
+   "sos_votes": 35784,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#12|P2",
+   "ap_name": "Mike Steele",
+   "sos_name": "Mike Steele",
+   "name_variant": false,
+   "ap_votes": 33027,
+   "sos_votes": 38982,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#12|P2",
+   "ap_name": "Maggie Adams",
+   "sos_name": "Maggie Adams",
+   "name_variant": false,
+   "ap_votes": 28144,
+   "sos_votes": 31716,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#13|P1",
+   "ap_name": "Tom Dent",
+   "sos_name": "Tom Dent",
+   "name_variant": false,
+   "ap_votes": 29823,
+   "sos_votes": 29823,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#13|P1",
+   "ap_name": "Juan Garcia",
+   "sos_name": "Juan \"Jerry\" Garcia",
+   "name_variant": true,
+   "ap_votes": 14978,
+   "sos_votes": 14978,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#13|P2",
+   "ap_name": "Joshua Thompson",
+   "sos_name": "Joshua Thompson",
+   "name_variant": false,
+   "ap_votes": 20227,
+   "sos_votes": 20227,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#13|P2",
+   "ap_name": "Deanna Martinez",
+   "sos_name": "Deanna Martinez",
+   "name_variant": false,
+   "ap_votes": 17098,
+   "sos_votes": 17098,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#14|P1",
+   "ap_name": "Chelsea Dimas",
+   "sos_name": "Chelsea Dimas",
+   "name_variant": false,
+   "ap_votes": 15821,
+   "sos_votes": 15821,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#14|P1",
+   "ap_name": "Gloria Mendoza",
+   "sos_name": "Gloria Mendoza",
+   "name_variant": false,
+   "ap_votes": 11604,
+   "sos_votes": 11604,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#14|P2",
+   "ap_name": "Ezequiel Morfin",
+   "sos_name": "Ezequiel Morfin",
+   "name_variant": false,
+   "ap_votes": 16103,
+   "sos_votes": 16103,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#14|P2",
+   "ap_name": "Deb Manjarrez",
+   "sos_name": "Deb Manjarrez",
+   "name_variant": false,
+   "ap_votes": 11465,
+   "sos_votes": 11465,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#15|P1",
+   "ap_name": "Chris Corry",
+   "sos_name": "Chris Corry",
+   "name_variant": false,
+   "ap_votes": 33531,
+   "sos_votes": 33531,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#15|P1",
+   "ap_name": "Jack McEntire",
+   "sos_name": "Jack McEntire",
+   "name_variant": false,
+   "ap_votes": 21059,
+   "sos_votes": 21059,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#15|P2",
+   "ap_name": "Reedy Berg",
+   "sos_name": "Reedy Berg",
+   "name_variant": false,
+   "ap_votes": 33301,
+   "sos_votes": 33301,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#15|P2",
+   "ap_name": "Liz Hallock",
+   "sos_name": "Liz Hallock",
+   "name_variant": false,
+   "ap_votes": 20228,
+   "sos_votes": 20228,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#16|P1",
+   "ap_name": "Mark Klicker",
+   "sos_name": "Mark Klicker",
+   "name_variant": false,
+   "ap_votes": 25450,
+   "sos_votes": 25450,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#16|P1",
+   "ap_name": "Kyle Palmer",
+   "sos_name": "Kyle Palmer",
+   "name_variant": false,
+   "ap_votes": 18875,
+   "sos_votes": 18875,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#16|P2",
+   "ap_name": "Skyler Rude",
+   "sos_name": "Skyler Rude",
+   "name_variant": false,
+   "ap_votes": 24005,
+   "sos_votes": 24005,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#16|P2",
+   "ap_name": "Derek Sarley",
+   "sos_name": "Derek Sarley",
+   "name_variant": false,
+   "ap_votes": 20205,
+   "sos_votes": 20205,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#17|P1",
+   "ap_name": "Ben Christly",
+   "sos_name": "Ben Christly",
+   "name_variant": false,
+   "ap_votes": 41277,
+   "sos_votes": 41277,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#17|P1",
+   "ap_name": "Kevin Waters",
+   "sos_name": "Kevin Waters",
+   "name_variant": false,
+   "ap_votes": 33406,
+   "sos_votes": 33406,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#17|P2",
+   "ap_name": "Diana Perez",
+   "sos_name": "Diana H. Perez",
+   "name_variant": true,
+   "ap_votes": 41342,
+   "sos_votes": 41342,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#17|P2",
+   "ap_name": "David Stuebe",
+   "sos_name": "David Stuebe",
+   "name_variant": false,
+   "ap_votes": 33371,
+   "sos_votes": 33371,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#18|P1",
+   "ap_name": "Randi Knott",
+   "sos_name": "Randi L. Knott",
+   "name_variant": true,
+   "ap_votes": 38025,
+   "sos_votes": 38025,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#18|P1",
+   "ap_name": "Stephanie McClintock",
+   "sos_name": "Stephanie McClintock",
+   "name_variant": false,
+   "ap_votes": 34624,
+   "sos_votes": 34624,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#18|P2",
+   "ap_name": "Deken Letinich",
+   "sos_name": "Deken Letinich",
+   "name_variant": false,
+   "ap_votes": 38945,
+   "sos_votes": 38945,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#18|P2",
+   "ap_name": "John Ley",
+   "sos_name": "John Ley",
+   "name_variant": false,
+   "ap_votes": 33504,
+   "sos_votes": 33504,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#19|P1",
+   "ap_name": "Jim Walsh",
+   "sos_name": "Jim Walsh",
+   "name_variant": false,
+   "ap_votes": 36376,
+   "sos_votes": 36510,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#19|P1",
+   "ap_name": "Kevin Moynihan",
+   "sos_name": "Kevin Moynihan",
+   "name_variant": false,
+   "ap_votes": 28988,
+   "sos_votes": 29074,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#19|P2",
+   "ap_name": "Joel McEntire",
+   "sos_name": "Joel McEntire",
+   "name_variant": false,
+   "ap_votes": 35782,
+   "sos_votes": 35920,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#19|P2",
+   "ap_name": "Terry Carlson",
+   "sos_name": "Terry Carlson",
+   "name_variant": false,
+   "ap_votes": 29008,
+   "sos_votes": 29086,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#20|P1",
+   "ap_name": "Peter Abbarno",
+   "sos_name": "Peter Abbarno",
+   "name_variant": false,
+   "ap_votes": 51339,
+   "sos_votes": 51394,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#20|P1",
+   "ap_name": "Andy Zahn",
+   "sos_name": "Andy Zahn",
+   "name_variant": false,
+   "ap_votes": 26908,
+   "sos_votes": 26922,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#20|P2",
+   "ap_name": "Ed Orcutt",
+   "sos_name": "Ed Orcutt",
+   "name_variant": false,
+   "ap_votes": 49172,
+   "sos_votes": 49216,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#20|P2",
+   "ap_name": "Evan Jones",
+   "sos_name": "Evan Jones",
+   "name_variant": false,
+   "ap_votes": 29039,
+   "sos_votes": 29065,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#21|P1",
+   "ap_name": "Strom Peterson",
+   "sos_name": "Strom Peterson",
+   "name_variant": false,
+   "ap_votes": 30996,
+   "sos_votes": 30996,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#21|P1",
+   "ap_name": "Jason Moon",
+   "sos_name": "Jason Moon",
+   "name_variant": false,
+   "ap_votes": 21828,
+   "sos_votes": 21828,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#21|P2",
+   "ap_name": "Lillian Ortiz-Self",
+   "sos_name": "Lillian Ortiz-Self",
+   "name_variant": false,
+   "ap_votes": 40148,
+   "sos_votes": 40148,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#21|P2",
+   "ap_name": "Bruce Guthrie",
+   "sos_name": "Bruce Guthrie",
+   "name_variant": false,
+   "ap_votes": 15466,
+   "sos_votes": 15466,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#22|P1",
+   "ap_name": "Beth Doglio",
+   "sos_name": "Beth Doglio",
+   "name_variant": false,
+   "ap_votes": 38715,
+   "sos_votes": 46478,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#22|P1",
+   "ap_name": "Don Hewett",
+   "sos_name": "Don Hewett",
+   "name_variant": false,
+   "ap_votes": 14942,
+   "sos_votes": 18004,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#22|P2",
+   "ap_name": "Lisa Parshley",
+   "sos_name": "Lisa Parshley",
+   "name_variant": false,
+   "ap_votes": 32962,
+   "sos_votes": 38763,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#22|P2",
+   "ap_name": "Jamie Keenan-deVargas",
+   "sos_name": "Jamie Keenan-deVargas",
+   "name_variant": false,
+   "ap_votes": 14055,
+   "sos_votes": 17659,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#23|P1",
+   "ap_name": "Tarra Simmons",
+   "sos_name": "Tarra Simmons",
+   "name_variant": false,
+   "ap_votes": 32335,
+   "sos_votes": 32335,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#23|P1",
+   "ap_name": "Daria Ilgen",
+   "sos_name": "Daria Ilgen",
+   "name_variant": false,
+   "ap_votes": 31944,
+   "sos_votes": 31944,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#23|P2",
+   "ap_name": "Greg Nance",
+   "sos_name": "Greg Nance",
+   "name_variant": false,
+   "ap_votes": 49127,
+   "sos_votes": 49127,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#23|P2",
+   "ap_name": "Lance Byrd",
+   "sos_name": "Lance Byrd",
+   "name_variant": false,
+   "ap_votes": 20859,
+   "sos_votes": 20859,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#24|P1",
+   "ap_name": "Adam Bernbaum",
+   "sos_name": "Adam Bernbaum",
+   "name_variant": false,
+   "ap_votes": 38761,
+   "sos_votes": 38761,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#24|P1",
+   "ap_name": "Eric Pratt",
+   "sos_name": "Eric W. Pratt",
+   "name_variant": true,
+   "ap_votes": 22725,
+   "sos_votes": 22725,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#24|P2",
+   "ap_name": "Kaylee Kuehn",
+   "sos_name": "Kaylee Kuehn",
+   "name_variant": false,
+   "ap_votes": 34474,
+   "sos_votes": 34474,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#24|P2",
+   "ap_name": "Marcia Kelbon",
+   "sos_name": "Marcia Kelbon",
+   "name_variant": false,
+   "ap_votes": 25730,
+   "sos_votes": 25730,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#25|P1",
+   "ap_name": "David Berg",
+   "sos_name": "David Berg",
+   "name_variant": false,
+   "ap_votes": 28299,
+   "sos_votes": 28299,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#25|P1",
+   "ap_name": "Michael Keaton",
+   "sos_name": "Michael Keaton",
+   "name_variant": false,
+   "ap_votes": 27630,
+   "sos_votes": 27630,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#25|P2",
+   "ap_name": "Cyndy Jacobsen",
+   "sos_name": "Cyndy Jacobsen",
+   "name_variant": false,
+   "ap_votes": 28031,
+   "sos_votes": 28031,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#25|P2",
+   "ap_name": "Jenn Strickling",
+   "sos_name": "Jenn Marie Strickling",
+   "name_variant": true,
+   "ap_votes": 27809,
+   "sos_votes": 27809,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#26|P1",
+   "ap_name": "Adison Richards",
+   "sos_name": "Adison Richards",
+   "name_variant": false,
+   "ap_votes": 40790,
+   "sos_votes": 41452,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#26|P1",
+   "ap_name": "David Olson",
+   "sos_name": "David Olson",
+   "name_variant": false,
+   "ap_votes": 32639,
+   "sos_votes": 33367,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#26|P2",
+   "ap_name": "Renee Greenfield",
+   "sos_name": "Renee Hernandez Greenfield",
+   "name_variant": true,
+   "ap_votes": 40145,
+   "sos_votes": 40145,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#26|P2",
+   "ap_name": "Katy Cornell",
+   "sos_name": "Katy Cornell",
+   "name_variant": false,
+   "ap_votes": 34677,
+   "sos_votes": 34677,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#27|P1",
+   "ap_name": "Laurie Jinkins",
+   "sos_name": "Laurie Jinkins",
+   "name_variant": false,
+   "ap_votes": 46031,
+   "sos_votes": 46031,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#27|P1",
+   "ap_name": "Carole Sue Braaten",
+   "sos_name": "Carole Sue Braaten",
+   "name_variant": false,
+   "ap_votes": 14150,
+   "sos_votes": 14150,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#27|P2",
+   "ap_name": "Jake Fey",
+   "sos_name": "Jake Fey",
+   "name_variant": false,
+   "ap_votes": 0,
+   "sos_votes": 46752,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#28|P1",
+   "ap_name": "Mari Leavitt",
+   "sos_name": "Mari Leavitt",
+   "name_variant": false,
+   "ap_votes": 29578,
+   "sos_votes": 29578,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#28|P1",
+   "ap_name": "Kathy Richardson",
+   "sos_name": "Kathy Richardson",
+   "name_variant": false,
+   "ap_votes": 16467,
+   "sos_votes": 16467,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#28|P2",
+   "ap_name": "Dan Bronoske",
+   "sos_name": "Dan Bronoske",
+   "name_variant": false,
+   "ap_votes": 29762,
+   "sos_votes": 29762,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#28|P2",
+   "ap_name": "Kerry Hills",
+   "sos_name": "Kerry Hills",
+   "name_variant": false,
+   "ap_votes": 14722,
+   "sos_votes": 14722,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#29|P1",
+   "ap_name": "Krista Perez",
+   "sos_name": "Krista Perez",
+   "name_variant": false,
+   "ap_votes": 17135,
+   "sos_votes": 17135,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#29|P1",
+   "ap_name": "Melanie Morgan",
+   "sos_name": "Melanie Morgan",
+   "name_variant": false,
+   "ap_votes": 15845,
+   "sos_votes": 15845,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#29|P2",
+   "ap_name": "Patrick Stickney",
+   "sos_name": "Patrick Stickney",
+   "name_variant": false,
+   "ap_votes": 16484,
+   "sos_votes": 16484,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#29|P2",
+   "ap_name": "Joe Bushnell",
+   "sos_name": "Joe Bushnell",
+   "name_variant": false,
+   "ap_votes": 15982,
+   "sos_votes": 15982,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#30|P1",
+   "ap_name": "Jamila Taylor",
+   "sos_name": "Jamila E. Taylor",
+   "name_variant": true,
+   "ap_votes": 26023,
+   "sos_votes": 26968,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#30|P1",
+   "ap_name": "Tiffany Bowyer",
+   "sos_name": "Tiffany Bowyer",
+   "name_variant": false,
+   "ap_votes": 13799,
+   "sos_votes": 14312,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#30|P2",
+   "ap_name": "Kristine Reeves",
+   "sos_name": "Kristine Reeves",
+   "name_variant": false,
+   "ap_votes": 25459,
+   "sos_votes": 26376,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#30|P2",
+   "ap_name": "Paul McDaniel",
+   "sos_name": "Paul McDaniel",
+   "name_variant": false,
+   "ap_votes": 13546,
+   "sos_votes": 14057,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#31|P1",
+   "ap_name": "Drew Stokesbary",
+   "sos_name": "Drew Stokesbary",
+   "name_variant": false,
+   "ap_votes": 36416,
+   "sos_votes": 36496,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#31|P1",
+   "ap_name": "Stephen Szczurko-Walton",
+   "sos_name": "Stephen Szczurko-Walton",
+   "name_variant": false,
+   "ap_votes": 27199,
+   "sos_votes": 27300,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#31|P2",
+   "ap_name": "Joshua Penner",
+   "sos_name": "Joshua Penner",
+   "name_variant": false,
+   "ap_votes": 34677,
+   "sos_votes": 34750,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#31|P2",
+   "ap_name": "John Bielka",
+   "sos_name": "John Bielka",
+   "name_variant": false,
+   "ap_votes": 28820,
+   "sos_votes": 28929,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#32|P1",
+   "ap_name": "Danica Noble",
+   "sos_name": "Danica Noble",
+   "name_variant": false,
+   "ap_votes": 29340,
+   "sos_votes": 30649,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#32|P1",
+   "ap_name": "Keith Scully",
+   "sos_name": "Keith Scully",
+   "name_variant": false,
+   "ap_votes": 27607,
+   "sos_votes": 28810,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#32|P2",
+   "ap_name": "Lauren Davis",
+   "sos_name": "Lauren Davis",
+   "name_variant": false,
+   "ap_votes": 40698,
+   "sos_votes": 42252,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#32|P2",
+   "ap_name": "Imraan Siddiqi",
+   "sos_name": "Imraan Siddiqi",
+   "name_variant": false,
+   "ap_votes": 15921,
+   "sos_votes": 16871,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#33|P1",
+   "ap_name": "Edwin Obras",
+   "sos_name": "Edwin Obras",
+   "name_variant": false,
+   "ap_votes": 30393,
+   "sos_votes": 32042,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#33|P1",
+   "ap_name": "Chris Martinez",
+   "sos_name": "Chris Martinez",
+   "name_variant": false,
+   "ap_votes": 11219,
+   "sos_votes": 11751,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#33|P2",
+   "ap_name": "Mia Gregerson",
+   "sos_name": "Mia Su-Ling Gregerson",
+   "name_variant": true,
+   "ap_votes": 30343,
+   "sos_votes": 31988,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#33|P2",
+   "ap_name": "Yuri Marinchik",
+   "sos_name": "Yuri Marinchik",
+   "name_variant": false,
+   "ap_votes": 10933,
+   "sos_votes": 11453,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#34|P1",
+   "ap_name": "Brianna Thomas",
+   "sos_name": "Brianna K. Thomas",
+   "name_variant": true,
+   "ap_votes": 0,
+   "sos_votes": 53818,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#34|P2",
+   "ap_name": "Joe Fitzgibbon",
+   "sos_name": "Joe Fitzgibbon",
+   "name_variant": false,
+   "ap_votes": 39054,
+   "sos_votes": 42926,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#34|P2",
+   "ap_name": "Mary Anito",
+   "sos_name": "Mary Anito",
+   "name_variant": false,
+   "ap_votes": 17558,
+   "sos_votes": 19510,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#35|P1",
+   "ap_name": "Dan Griffey",
+   "sos_name": "Dan Griffey",
+   "name_variant": false,
+   "ap_votes": 33018,
+   "sos_votes": 33791,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#35|P1",
+   "ap_name": "Jim Pierson",
+   "sos_name": "Jim Pierson",
+   "name_variant": false,
+   "ap_votes": 30535,
+   "sos_votes": 31344,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#35|P2",
+   "ap_name": "Travis Couture",
+   "sos_name": "Travis Couture",
+   "name_variant": false,
+   "ap_votes": 32956,
+   "sos_votes": 33722,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#35|P2",
+   "ap_name": "Maria Littlesun",
+   "sos_name": "Maria Littlesun",
+   "name_variant": false,
+   "ap_votes": 30547,
+   "sos_votes": 31371,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#36|P1",
+   "ap_name": "Julia Reed",
+   "sos_name": "Julia Grant Reed",
+   "name_variant": true,
+   "ap_votes": 0,
+   "sos_votes": 64790,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#36|P2",
+   "ap_name": "Liz Berry",
+   "sos_name": "Liz Berry",
+   "name_variant": false,
+   "ap_votes": 0,
+   "sos_votes": 64544,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#37|P1",
+   "ap_name": "Kelabe Tewolde",
+   "sos_name": "Kelabe Tewolde",
+   "name_variant": false,
+   "ap_votes": 33129,
+   "sos_votes": 38354,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#37|P1",
+   "ap_name": "Sharon Tomiko Santos",
+   "sos_name": "Sharon Tomiko Santos",
+   "name_variant": false,
+   "ap_votes": 18079,
+   "sos_votes": 20499,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#37|P2",
+   "ap_name": "Jaelynn Scott",
+   "sos_name": "Jaelynn Scott",
+   "name_variant": false,
+   "ap_votes": 44490,
+   "sos_votes": 51184,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#37|P2",
+   "ap_name": "Evon McCorkle",
+   "sos_name": "Evon McCorkle",
+   "name_variant": false,
+   "ap_votes": 5975,
+   "sos_votes": 6900,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#38|P1",
+   "ap_name": "Julio Cortes",
+   "sos_name": "Julio Cortes",
+   "name_variant": false,
+   "ap_votes": 32982,
+   "sos_votes": 32982,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#38|P1",
+   "ap_name": "Thomas Kelly",
+   "sos_name": "Thomas (Jeff) Kelly",
+   "name_variant": true,
+   "ap_votes": 16462,
+   "sos_votes": 16462,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#38|P2",
+   "ap_name": "Mary Fosse",
+   "sos_name": "Mary Fosse",
+   "name_variant": false,
+   "ap_votes": 0,
+   "sos_votes": 37936,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#39|P1",
+   "ap_name": "Sam Low",
+   "sos_name": "Sam Low",
+   "name_variant": false,
+   "ap_votes": 33425,
+   "sos_votes": 33425,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#39|P1",
+   "ap_name": "Kathryn Lewandowsky",
+   "sos_name": "Kathryn Lewandowsky",
+   "name_variant": false,
+   "ap_votes": 27943,
+   "sos_votes": 27943,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#39|P2",
+   "ap_name": "Steve Ewing",
+   "sos_name": "Steve Ewing",
+   "name_variant": false,
+   "ap_votes": 31815,
+   "sos_votes": 31815,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#39|P2",
+   "ap_name": "Ida Keeley",
+   "sos_name": "Ida Keeley",
+   "name_variant": false,
+   "ap_votes": 29334,
+   "sos_votes": 29334,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#40|P1",
+   "ap_name": "Debra Lekanoff",
+   "sos_name": "Debra Lekanoff",
+   "name_variant": false,
+   "ap_votes": 51297,
+   "sos_votes": 51297,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#40|P1",
+   "ap_name": "Cindy Carter",
+   "sos_name": "Cindy Carter",
+   "name_variant": false,
+   "ap_votes": 18407,
+   "sos_votes": 18407,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#40|P2",
+   "ap_name": "Alex Ramel",
+   "sos_name": "Alex Ramel",
+   "name_variant": false,
+   "ap_votes": 51139,
+   "sos_votes": 51139,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#40|P2",
+   "ap_name": "Joseph Segault",
+   "sos_name": "Joseph Segault",
+   "name_variant": false,
+   "ap_votes": 16908,
+   "sos_votes": 16908,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#41|P1",
+   "ap_name": "Janice Zahn",
+   "sos_name": "Janice Zahn",
+   "name_variant": false,
+   "ap_votes": 37865,
+   "sos_votes": 41910,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#41|P1",
+   "ap_name": "Elle Nguyen",
+   "sos_name": "Elle Nguyen",
+   "name_variant": false,
+   "ap_votes": 15638,
+   "sos_votes": 17369,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#41|P2",
+   "ap_name": "My-Linh Thai",
+   "sos_name": "My-Linh T Thai",
+   "name_variant": true,
+   "ap_votes": 31746,
+   "sos_votes": 35228,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#41|P2",
+   "ap_name": "Michael Rosen",
+   "sos_name": "Michael Rosen",
+   "name_variant": false,
+   "ap_votes": 21167,
+   "sos_votes": 23346,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#42|P1",
+   "ap_name": "Alicia Rule",
+   "sos_name": "Alicia Rule",
+   "name_variant": false,
+   "ap_votes": 45590,
+   "sos_votes": 45590,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#42|P1",
+   "ap_name": "Misty Flowers",
+   "sos_name": "Misty Flowers",
+   "name_variant": false,
+   "ap_votes": 31996,
+   "sos_votes": 31996,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#42|P2",
+   "ap_name": "Joe Timmons",
+   "sos_name": "Joe Timmons",
+   "name_variant": false,
+   "ap_votes": 43744,
+   "sos_votes": 43744,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#42|P2",
+   "ap_name": "Justin Pike",
+   "sos_name": "Justin Pike",
+   "name_variant": false,
+   "ap_votes": 33881,
+   "sos_votes": 33881,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#43|P1",
+   "ap_name": "Nicole Macri",
+   "sos_name": "Nicole Macri",
+   "name_variant": false,
+   "ap_votes": 47558,
+   "sos_votes": 54367,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#43|P1",
+   "ap_name": "Alby Clendennin",
+   "sos_name": "Alby Clendennin",
+   "name_variant": false,
+   "ap_votes": 3979,
+   "sos_votes": 4702,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#43|P2",
+   "ap_name": "Shaun Scott",
+   "sos_name": "Shaun Scott",
+   "name_variant": false,
+   "ap_votes": 0,
+   "sos_votes": 48247,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#44|P1",
+   "ap_name": "Brandy Donaghy",
+   "sos_name": "Brandy Donaghy",
+   "name_variant": false,
+   "ap_votes": 36927,
+   "sos_votes": 36927,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#44|P1",
+   "ap_name": "Chris Elder",
+   "sos_name": "Chris Elder",
+   "name_variant": false,
+   "ap_votes": 24919,
+   "sos_votes": 24919,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#44|P2",
+   "ap_name": "April Berg",
+   "sos_name": "April Berg",
+   "name_variant": false,
+   "ap_votes": 37704,
+   "sos_votes": 37704,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#44|P2",
+   "ap_name": "Tonya Stadlman",
+   "sos_name": "Tonya Stadlman",
+   "name_variant": false,
+   "ap_votes": 24147,
+   "sos_votes": 24147,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#45|P1",
+   "ap_name": "Roger Goodman",
+   "sos_name": "Roger Goodman",
+   "name_variant": false,
+   "ap_votes": 39201,
+   "sos_votes": 44439,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#45|P1",
+   "ap_name": "JoAnn Tolentino",
+   "sos_name": "JoAnn Tolentino",
+   "name_variant": false,
+   "ap_votes": 15739,
+   "sos_votes": 17960,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#45|P2",
+   "ap_name": "Vanessa Kritzer",
+   "sos_name": "Vanessa Kritzer",
+   "name_variant": false,
+   "ap_votes": 40133,
+   "sos_votes": 45558,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#45|P2",
+   "ap_name": "John Gibbons",
+   "sos_name": "John P Gibbons",
+   "name_variant": true,
+   "ap_votes": 13570,
+   "sos_votes": 15413,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#46|P1",
+   "ap_name": "Gerry Pollet",
+   "sos_name": "Gerry Pollet",
+   "name_variant": false,
+   "ap_votes": 38729,
+   "sos_votes": 42681,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#46|P1",
+   "ap_name": "Will Dreher",
+   "sos_name": "Will Dreher",
+   "name_variant": false,
+   "ap_votes": 21882,
+   "sos_votes": 24457,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#46|P2",
+   "ap_name": "Darya Farivar",
+   "sos_name": "Darya Farivar",
+   "name_variant": false,
+   "ap_votes": 55868,
+   "sos_votes": 61817,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#46|P2",
+   "ap_name": "Rodney Thornley",
+   "sos_name": "Rodney 'Star' Thornley",
+   "name_variant": true,
+   "ap_votes": 6216,
+   "sos_votes": 6946,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#47|P1",
+   "ap_name": "Debra Entenman",
+   "sos_name": "Debra Jean Entenman",
+   "name_variant": true,
+   "ap_votes": 26385,
+   "sos_votes": 29463,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#47|P1",
+   "ap_name": "Cobi Clark",
+   "sos_name": "Cobi Clark",
+   "name_variant": false,
+   "ap_votes": 15056,
+   "sos_votes": 16803,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#47|P2",
+   "ap_name": "Chris Stearns",
+   "sos_name": "Chris Stearns",
+   "name_variant": false,
+   "ap_votes": 26757,
+   "sos_votes": 29865,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#47|P2",
+   "ap_name": "Ted Cooke",
+   "sos_name": "Ted Cooke",
+   "name_variant": false,
+   "ap_votes": 16140,
+   "sos_votes": 18042,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#48|P1",
+   "ap_name": "Osman Salahuddin",
+   "sos_name": "Osman Salahuddin",
+   "name_variant": false,
+   "ap_votes": 27378,
+   "sos_votes": 30834,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#48|P1",
+   "ap_name": "Jeffery Poppe",
+   "sos_name": "Jeffery Poppe",
+   "name_variant": false,
+   "ap_votes": 12400,
+   "sos_votes": 13941,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#48|P2",
+   "ap_name": "Jessica Forsythe",
+   "sos_name": "Jessica Forsythe",
+   "name_variant": false,
+   "ap_votes": 18622,
+   "sos_votes": 21118,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#48|P2",
+   "ap_name": "Amy Walen",
+   "sos_name": "Amy Walen",
+   "name_variant": false,
+   "ap_votes": 16940,
+   "sos_votes": 18886,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#49|P1",
+   "ap_name": "Kim Harless",
+   "sos_name": "Kim D. Harless",
+   "name_variant": true,
+   "ap_votes": 41205,
+   "sos_votes": 41205,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#49|P1",
+   "ap_name": "Sarah Mittelman",
+   "sos_name": "Sarah Mittelman",
+   "name_variant": false,
+   "ap_votes": 18072,
+   "sos_votes": 18072,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#49|P2",
+   "ap_name": "Monica Stonier",
+   "sos_name": "Monica Jurado Stonier",
+   "name_variant": true,
+   "ap_votes": 42167,
+   "sos_votes": 42167,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#49|P2",
+   "ap_name": "Derek Thompson",
+   "sos_name": "Derek Thompson",
+   "name_variant": false,
+   "ap_votes": 16795,
+   "sos_votes": 16795,
+   "winner": false
+  },
+  {
+   "race": "WA|Z|#38",
+   "ap_name": "June Robinson",
+   "sos_name": "June Robinson",
+   "name_variant": false,
+   "ap_votes": 33859,
+   "sos_votes": 33859,
+   "winner": true
+  },
+  {
+   "race": "WA|Z|#38",
+   "ap_name": "Brad Bender",
+   "sos_name": "Brad Bender",
+   "name_variant": false,
+   "ap_votes": 18076,
+   "sos_votes": 18076,
+   "winner": false
+  },
+  {
+   "race": "WA|Y|#2|P2",
+   "ap_name": "Matt Marshall",
+   "sos_name": "Matt Marshall",
+   "name_variant": false,
+   "ap_votes": 30762,
+   "sos_votes": 32159,
+   "winner": true
+  },
+  {
+   "race": "WA|Y|#2|P2",
+   "ap_name": "Angela Taylor",
+   "sos_name": "Angela Taylor",
+   "name_variant": false,
+   "ap_votes": 22700,
+   "sos_votes": 24043,
+   "winner": false
+  }
+ ],
+ "disagreements": [
+  {
+   "race": "WA|Z|#6",
+   "ap_name": "Jeff Holy",
+   "sos_name": "Jeff Holy",
+   "ap_votes": 0,
+   "sos_votes": 34907,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Z|#13",
+   "ap_name": "Alex Ybarra",
+   "sos_name": "Alex Ybarra",
+   "ap_votes": 0,
+   "sos_votes": 33195,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Z|#15",
+   "ap_name": "Jeremie Dufault",
+   "sos_name": "Jeremie Dufault",
+   "ap_votes": 0,
+   "sos_votes": 39575,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Z|#30",
+   "ap_name": "Claire Wilson",
+   "sos_name": "Claire Wilson",
+   "ap_votes": 25505,
+   "sos_votes": 26449,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Z|#30",
+   "ap_name": "Michael Rutland",
+   "sos_name": "Michael Rutland",
+   "ap_votes": 14381,
+   "sos_votes": 14904,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Z|#31",
+   "ap_name": "Phil Fortunato",
+   "sos_name": "Phil Fortunato",
+   "ap_votes": 35161,
+   "sos_votes": 35239,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Z|#31",
+   "ap_name": "Tamara Stramel",
+   "sos_name": "Tamara Stramel",
+   "ap_votes": 28767,
+   "sos_votes": 28872,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Z|#32",
+   "ap_name": "Cindy Ryu",
+   "sos_name": "Cindy Ryu",
+   "ap_votes": 29946,
+   "sos_votes": 31442,
+   "call_status": "Too Early to Call"
+  },
+  {
+   "race": "WA|Z|#32",
+   "ap_name": "Jesse Salomon",
+   "sos_name": "Jesse Salomon",
+   "ap_votes": 28477,
+   "sos_votes": 29565,
+   "call_status": "Too Early to Call"
+  },
+  {
+   "race": "WA|Z|#33",
+   "ap_name": "Tina Orwall",
+   "sos_name": "Tina L. Orwall",
+   "ap_votes": 0,
+   "sos_votes": 34106,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Z|#34",
+   "ap_name": "Emily Alvarado",
+   "sos_name": "Emily Alvarado",
+   "ap_votes": 0,
+   "sos_votes": 54721,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Z|#35",
+   "ap_name": "Carolina Mejia",
+   "sos_name": "Carolina Mejia",
+   "ap_votes": 31973,
+   "sos_votes": 32859,
+   "call_status": "Too Early to Call"
+  },
+  {
+   "race": "WA|Z|#35",
+   "ap_name": "Drew MacEwen",
+   "sos_name": "Drew C MacEwen",
+   "ap_votes": 31739,
+   "sos_votes": 32446,
+   "call_status": "Too Early to Call"
+  },
+  {
+   "race": "WA|Z|#36",
+   "ap_name": "Noel Frame",
+   "sos_name": "Noel C. Frame",
+   "ap_votes": 64148,
+   "sos_votes": 69027,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Z|#36",
+   "ap_name": "Jillian England",
+   "sos_name": "Jillian England",
+   "ap_votes": 8893,
+   "sos_votes": 9639,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Z|#37",
+   "ap_name": "Chipalo Street",
+   "sos_name": "Chipalo Street",
+   "ap_votes": 37163,
+   "sos_votes": 42225,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Z|#37",
+   "ap_name": "Tatiana Brown",
+   "sos_name": "Tatiana Brown",
+   "ap_votes": 13149,
+   "sos_votes": 15634,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Z|#43",
+   "ap_name": "Jamie Pedersen",
+   "sos_name": "Jamie Pedersen",
+   "ap_votes": 39178,
+   "sos_votes": 44002,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Z|#43",
+   "ap_name": "Hannah Sabio-Howell",
+   "sos_name": "Hannah Sabio-Howell",
+   "ap_votes": 13508,
+   "sos_votes": 16338,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Z|#45",
+   "ap_name": "Manka Dhingra",
+   "sos_name": "Manka Dhingra",
+   "ap_votes": 0,
+   "sos_votes": 44755,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Z|#46",
+   "ap_name": "Javier Valdez",
+   "sos_name": "Javier Valdez",
+   "ap_votes": 57600,
+   "sos_votes": 63909,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Z|#46",
+   "ap_name": "Sandra Stephens",
+   "sos_name": "Sandra Stephens",
+   "ap_votes": 6484,
+   "sos_votes": 7144,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Z|#47",
+   "ap_name": "Claudia Kauffman",
+   "sos_name": "Claudia Kauffman",
+   "ap_votes": 26382,
+   "sos_votes": 29453,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Z|#47",
+   "ap_name": "Kristina Soltys",
+   "sos_name": "Kristina Soltys",
+   "ap_votes": 16943,
+   "sos_votes": 18960,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Z|#48",
+   "ap_name": "Vandana Slatter",
+   "sos_name": "Vandana Slatter",
+   "ap_votes": 0,
+   "sos_votes": 33574,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#1|P1",
+   "ap_name": "Davina Duerr",
+   "sos_name": "Davina Duerr",
+   "ap_votes": 44370,
+   "sos_votes": 49032,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#1|P1",
+   "ap_name": "Maggie Wang",
+   "sos_name": "Maggie Wang",
+   "ap_votes": 16324,
+   "sos_votes": 18073,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#1|P2",
+   "ap_name": "Shelley Kloba",
+   "sos_name": "Shelley Kloba",
+   "ap_votes": 43840,
+   "sos_votes": 48471,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#1|P2",
+   "ap_name": "Cliff Moon",
+   "sos_name": "Cliff Moon",
+   "ap_votes": 16640,
+   "sos_votes": 18408,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#2|P1",
+   "ap_name": "Andrew Barkis",
+   "sos_name": "Andrew Barkis",
+   "ap_votes": 30926,
+   "sos_votes": 32333,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#2|P1",
+   "ap_name": "William Dehnel",
+   "sos_name": "William Dehnel",
+   "ap_votes": 22443,
+   "sos_votes": 23773,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#5|P1",
+   "ap_name": "Zach Hall",
+   "sos_name": "Zach Hall",
+   "ap_votes": 36360,
+   "sos_votes": 39551,
+   "call_status": "Too Early to Call"
+  },
+  {
+   "race": "WA|Y|#5|P1",
+   "ap_name": "Michelle Bennett",
+   "sos_name": "Michelle Bennett",
+   "ap_votes": 28002,
+   "sos_votes": 30547,
+   "call_status": "Too Early to Call"
+  },
+  {
+   "race": "WA|Y|#5|P2",
+   "ap_name": "Lisa Callan",
+   "sos_name": "Lisa Callan",
+   "ap_votes": 37382,
+   "sos_votes": 40670,
+   "call_status": "Too Early to Call"
+  },
+  {
+   "race": "WA|Y|#5|P2",
+   "ap_name": "Patrick Peacock",
+   "sos_name": "Patrick Peacock",
+   "ap_votes": 26725,
+   "sos_votes": 29159,
+   "call_status": "Too Early to Call"
+  },
+  {
+   "race": "WA|Y|#7|P1",
+   "ap_name": "Andrew Engell",
+   "sos_name": "Andrew Engell",
+   "ap_votes": 0,
+   "sos_votes": 39504,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#7|P2",
+   "ap_name": "Hunter Abell",
+   "sos_name": "Hunter Abell",
+   "ap_votes": 0,
+   "sos_votes": 39110,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#8|P1",
+   "ap_name": "Stephanie Barnard",
+   "sos_name": "Stephanie Barnard",
+   "ap_votes": 0,
+   "sos_votes": 39317,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#8|P2",
+   "ap_name": "April Connors",
+   "sos_name": "April Connors",
+   "ap_votes": 0,
+   "sos_votes": 39395,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#9|P1",
+   "ap_name": "Mary Dye",
+   "sos_name": "Mary Dye",
+   "ap_votes": 0,
+   "sos_votes": 41287,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#11|P1",
+   "ap_name": "David Hackney",
+   "sos_name": "David Hackney",
+   "ap_votes": 19914,
+   "sos_votes": 23193,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#11|P1",
+   "ap_name": "Ashley Fedan",
+   "sos_name": "Ashley Fedan",
+   "ap_votes": 13434,
+   "sos_votes": 15975,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#11|P2",
+   "ap_name": "Steve Bergquist",
+   "sos_name": "Steve Bergquist",
+   "ap_votes": 0,
+   "sos_votes": 34481,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#12|P1",
+   "ap_name": "Brian Burnett",
+   "sos_name": "Brian Burnett",
+   "ap_votes": 33638,
+   "sos_votes": 35243,
+   "call_status": "Too Early to Call"
+  },
+  {
+   "race": "WA|Y|#12|P1",
+   "ap_name": "Stacy Willoughby",
+   "sos_name": "Stacy Willoughby",
+   "ap_votes": 33542,
+   "sos_votes": 35784,
+   "call_status": "Too Early to Call"
+  },
+  {
+   "race": "WA|Y|#12|P2",
+   "ap_name": "Mike Steele",
+   "sos_name": "Mike Steele",
+   "ap_votes": 33027,
+   "sos_votes": 38982,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#12|P2",
+   "ap_name": "Maggie Adams",
+   "sos_name": "Maggie Adams",
+   "ap_votes": 28144,
+   "sos_votes": 31716,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#19|P1",
+   "ap_name": "Jim Walsh",
+   "sos_name": "Jim Walsh",
+   "ap_votes": 36376,
+   "sos_votes": 36510,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#19|P1",
+   "ap_name": "Kevin Moynihan",
+   "sos_name": "Kevin Moynihan",
+   "ap_votes": 28988,
+   "sos_votes": 29074,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#19|P2",
+   "ap_name": "Joel McEntire",
+   "sos_name": "Joel McEntire",
+   "ap_votes": 35782,
+   "sos_votes": 35920,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#19|P2",
+   "ap_name": "Terry Carlson",
+   "sos_name": "Terry Carlson",
+   "ap_votes": 29008,
+   "sos_votes": 29086,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#20|P1",
+   "ap_name": "Peter Abbarno",
+   "sos_name": "Peter Abbarno",
+   "ap_votes": 51339,
+   "sos_votes": 51394,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#20|P1",
+   "ap_name": "Andy Zahn",
+   "sos_name": "Andy Zahn",
+   "ap_votes": 26908,
+   "sos_votes": 26922,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#20|P2",
+   "ap_name": "Ed Orcutt",
+   "sos_name": "Ed Orcutt",
+   "ap_votes": 49172,
+   "sos_votes": 49216,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#20|P2",
+   "ap_name": "Evan Jones",
+   "sos_name": "Evan Jones",
+   "ap_votes": 29039,
+   "sos_votes": 29065,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#22|P1",
+   "ap_name": "Beth Doglio",
+   "sos_name": "Beth Doglio",
+   "ap_votes": 38715,
+   "sos_votes": 46478,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#22|P1",
+   "ap_name": "Don Hewett",
+   "sos_name": "Don Hewett",
+   "ap_votes": 14942,
+   "sos_votes": 18004,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#22|P2",
+   "ap_name": "Lisa Parshley",
+   "sos_name": "Lisa Parshley",
+   "ap_votes": 32962,
+   "sos_votes": 38763,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#22|P2",
+   "ap_name": "Jamie Keenan-deVargas",
+   "sos_name": "Jamie Keenan-deVargas",
+   "ap_votes": 14055,
+   "sos_votes": 17659,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#26|P1",
+   "ap_name": "Adison Richards",
+   "sos_name": "Adison Richards",
+   "ap_votes": 40790,
+   "sos_votes": 41452,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#26|P1",
+   "ap_name": "David Olson",
+   "sos_name": "David Olson",
+   "ap_votes": 32639,
+   "sos_votes": 33367,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#27|P2",
+   "ap_name": "Jake Fey",
+   "sos_name": "Jake Fey",
+   "ap_votes": 0,
+   "sos_votes": 46752,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#30|P1",
+   "ap_name": "Jamila Taylor",
+   "sos_name": "Jamila E. Taylor",
+   "ap_votes": 26023,
+   "sos_votes": 26968,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#30|P1",
+   "ap_name": "Tiffany Bowyer",
+   "sos_name": "Tiffany Bowyer",
+   "ap_votes": 13799,
+   "sos_votes": 14312,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#30|P2",
+   "ap_name": "Kristine Reeves",
+   "sos_name": "Kristine Reeves",
+   "ap_votes": 25459,
+   "sos_votes": 26376,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#30|P2",
+   "ap_name": "Paul McDaniel",
+   "sos_name": "Paul McDaniel",
+   "ap_votes": 13546,
+   "sos_votes": 14057,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#31|P1",
+   "ap_name": "Drew Stokesbary",
+   "sos_name": "Drew Stokesbary",
+   "ap_votes": 36416,
+   "sos_votes": 36496,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#31|P1",
+   "ap_name": "Stephen Szczurko-Walton",
+   "sos_name": "Stephen Szczurko-Walton",
+   "ap_votes": 27199,
+   "sos_votes": 27300,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#31|P2",
+   "ap_name": "Joshua Penner",
+   "sos_name": "Joshua Penner",
+   "ap_votes": 34677,
+   "sos_votes": 34750,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#31|P2",
+   "ap_name": "John Bielka",
+   "sos_name": "John Bielka",
+   "ap_votes": 28820,
+   "sos_votes": 28929,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#32|P1",
+   "ap_name": "Danica Noble",
+   "sos_name": "Danica Noble",
+   "ap_votes": 29340,
+   "sos_votes": 30649,
+   "call_status": "Too Early to Call"
+  },
+  {
+   "race": "WA|Y|#32|P1",
+   "ap_name": "Keith Scully",
+   "sos_name": "Keith Scully",
+   "ap_votes": 27607,
+   "sos_votes": 28810,
+   "call_status": "Too Early to Call"
+  },
+  {
+   "race": "WA|Y|#32|P2",
+   "ap_name": "Lauren Davis",
+   "sos_name": "Lauren Davis",
+   "ap_votes": 40698,
+   "sos_votes": 42252,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#32|P2",
+   "ap_name": "Imraan Siddiqi",
+   "sos_name": "Imraan Siddiqi",
+   "ap_votes": 15921,
+   "sos_votes": 16871,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#33|P1",
+   "ap_name": "Edwin Obras",
+   "sos_name": "Edwin Obras",
+   "ap_votes": 30393,
+   "sos_votes": 32042,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#33|P1",
+   "ap_name": "Chris Martinez",
+   "sos_name": "Chris Martinez",
+   "ap_votes": 11219,
+   "sos_votes": 11751,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#33|P2",
+   "ap_name": "Mia Gregerson",
+   "sos_name": "Mia Su-Ling Gregerson",
+   "ap_votes": 30343,
+   "sos_votes": 31988,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#33|P2",
+   "ap_name": "Yuri Marinchik",
+   "sos_name": "Yuri Marinchik",
+   "ap_votes": 10933,
+   "sos_votes": 11453,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#34|P1",
+   "ap_name": "Brianna Thomas",
+   "sos_name": "Brianna K. Thomas",
+   "ap_votes": 0,
+   "sos_votes": 53818,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#34|P2",
+   "ap_name": "Joe Fitzgibbon",
+   "sos_name": "Joe Fitzgibbon",
+   "ap_votes": 39054,
+   "sos_votes": 42926,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#34|P2",
+   "ap_name": "Mary Anito",
+   "sos_name": "Mary Anito",
+   "ap_votes": 17558,
+   "sos_votes": 19510,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#35|P1",
+   "ap_name": "Dan Griffey",
+   "sos_name": "Dan Griffey",
+   "ap_votes": 33018,
+   "sos_votes": 33791,
+   "call_status": "Too Early to Call"
+  },
+  {
+   "race": "WA|Y|#35|P1",
+   "ap_name": "Jim Pierson",
+   "sos_name": "Jim Pierson",
+   "ap_votes": 30535,
+   "sos_votes": 31344,
+   "call_status": "Too Early to Call"
+  },
+  {
+   "race": "WA|Y|#35|P2",
+   "ap_name": "Travis Couture",
+   "sos_name": "Travis Couture",
+   "ap_votes": 32956,
+   "sos_votes": 33722,
+   "call_status": "Too Early to Call"
+  },
+  {
+   "race": "WA|Y|#35|P2",
+   "ap_name": "Maria Littlesun",
+   "sos_name": "Maria Littlesun",
+   "ap_votes": 30547,
+   "sos_votes": 31371,
+   "call_status": "Too Early to Call"
+  },
+  {
+   "race": "WA|Y|#36|P1",
+   "ap_name": "Julia Reed",
+   "sos_name": "Julia Grant Reed",
+   "ap_votes": 0,
+   "sos_votes": 64790,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#36|P2",
+   "ap_name": "Liz Berry",
+   "sos_name": "Liz Berry",
+   "ap_votes": 0,
+   "sos_votes": 64544,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#37|P1",
+   "ap_name": "Kelabe Tewolde",
+   "sos_name": "Kelabe Tewolde",
+   "ap_votes": 33129,
+   "sos_votes": 38354,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#37|P1",
+   "ap_name": "Sharon Tomiko Santos",
+   "sos_name": "Sharon Tomiko Santos",
+   "ap_votes": 18079,
+   "sos_votes": 20499,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#37|P2",
+   "ap_name": "Jaelynn Scott",
+   "sos_name": "Jaelynn Scott",
+   "ap_votes": 44490,
+   "sos_votes": 51184,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#37|P2",
+   "ap_name": "Evon McCorkle",
+   "sos_name": "Evon McCorkle",
+   "ap_votes": 5975,
+   "sos_votes": 6900,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#38|P2",
+   "ap_name": "Mary Fosse",
+   "sos_name": "Mary Fosse",
+   "ap_votes": 0,
+   "sos_votes": 37936,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#41|P1",
+   "ap_name": "Janice Zahn",
+   "sos_name": "Janice Zahn",
+   "ap_votes": 37865,
+   "sos_votes": 41910,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#41|P1",
+   "ap_name": "Elle Nguyen",
+   "sos_name": "Elle Nguyen",
+   "ap_votes": 15638,
+   "sos_votes": 17369,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#41|P2",
+   "ap_name": "My-Linh Thai",
+   "sos_name": "My-Linh T Thai",
+   "ap_votes": 31746,
+   "sos_votes": 35228,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#41|P2",
+   "ap_name": "Michael Rosen",
+   "sos_name": "Michael Rosen",
+   "ap_votes": 21167,
+   "sos_votes": 23346,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#43|P1",
+   "ap_name": "Nicole Macri",
+   "sos_name": "Nicole Macri",
+   "ap_votes": 47558,
+   "sos_votes": 54367,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#43|P1",
+   "ap_name": "Alby Clendennin",
+   "sos_name": "Alby Clendennin",
+   "ap_votes": 3979,
+   "sos_votes": 4702,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#43|P2",
+   "ap_name": "Shaun Scott",
+   "sos_name": "Shaun Scott",
+   "ap_votes": 0,
+   "sos_votes": 48247,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#45|P1",
+   "ap_name": "Roger Goodman",
+   "sos_name": "Roger Goodman",
+   "ap_votes": 39201,
+   "sos_votes": 44439,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#45|P1",
+   "ap_name": "JoAnn Tolentino",
+   "sos_name": "JoAnn Tolentino",
+   "ap_votes": 15739,
+   "sos_votes": 17960,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#45|P2",
+   "ap_name": "Vanessa Kritzer",
+   "sos_name": "Vanessa Kritzer",
+   "ap_votes": 40133,
+   "sos_votes": 45558,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#45|P2",
+   "ap_name": "John Gibbons",
+   "sos_name": "John P Gibbons",
+   "ap_votes": 13570,
+   "sos_votes": 15413,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#46|P1",
+   "ap_name": "Gerry Pollet",
+   "sos_name": "Gerry Pollet",
+   "ap_votes": 38729,
+   "sos_votes": 42681,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#46|P1",
+   "ap_name": "Will Dreher",
+   "sos_name": "Will Dreher",
+   "ap_votes": 21882,
+   "sos_votes": 24457,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#46|P2",
+   "ap_name": "Darya Farivar",
+   "sos_name": "Darya Farivar",
+   "ap_votes": 55868,
+   "sos_votes": 61817,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#46|P2",
+   "ap_name": "Rodney Thornley",
+   "sos_name": "Rodney 'Star' Thornley",
+   "ap_votes": 6216,
+   "sos_votes": 6946,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#47|P1",
+   "ap_name": "Debra Entenman",
+   "sos_name": "Debra Jean Entenman",
+   "ap_votes": 26385,
+   "sos_votes": 29463,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#47|P1",
+   "ap_name": "Cobi Clark",
+   "sos_name": "Cobi Clark",
+   "ap_votes": 15056,
+   "sos_votes": 16803,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#47|P2",
+   "ap_name": "Chris Stearns",
+   "sos_name": "Chris Stearns",
+   "ap_votes": 26757,
+   "sos_votes": 29865,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#47|P2",
+   "ap_name": "Ted Cooke",
+   "sos_name": "Ted Cooke",
+   "ap_votes": 16140,
+   "sos_votes": 18042,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#48|P1",
+   "ap_name": "Osman Salahuddin",
+   "sos_name": "Osman Salahuddin",
+   "ap_votes": 27378,
+   "sos_votes": 30834,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#48|P1",
+   "ap_name": "Jeffery Poppe",
+   "sos_name": "Jeffery Poppe",
+   "ap_votes": 12400,
+   "sos_votes": 13941,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#48|P2",
+   "ap_name": "Jessica Forsythe",
+   "sos_name": "Jessica Forsythe",
+   "ap_votes": 18622,
+   "sos_votes": 21118,
+   "call_status": "Too Early to Call"
+  },
+  {
+   "race": "WA|Y|#48|P2",
+   "ap_name": "Amy Walen",
+   "sos_name": "Amy Walen",
+   "ap_votes": 16940,
+   "sos_votes": 18886,
+   "call_status": "Too Early to Call"
+  },
+  {
+   "race": "WA|Y|#2|P2",
+   "ap_name": "Matt Marshall",
+   "sos_name": "Matt Marshall",
+   "ap_votes": 30762,
+   "sos_votes": 32159,
+   "call_status": "Called"
+  },
+  {
+   "race": "WA|Y|#2|P2",
+   "ap_name": "Angela Taylor",
+   "sos_name": "Angela Taylor",
+   "ap_votes": 22700,
+   "sos_votes": 24043,
+   "call_status": "Called"
+  }
+ ],
+ "ap_only": [],
+ "wa_only": [
+  {
+   "race": "WA|Z|#6",
+   "sos_name": "Write-in",
+   "sos_votes": 3211
+  },
+  {
+   "race": "WA|Z|#7",
+   "sos_name": "Write-in",
+   "sos_votes": 313
+  },
+  {
+   "race": "WA|Z|#8",
+   "sos_name": "Write-in",
+   "sos_votes": 995
+  },
+  {
+   "race": "WA|Z|#13",
+   "sos_name": "Write-in",
+   "sos_votes": 1169
+  },
+  {
+   "race": "WA|Z|#15",
+   "sos_name": "Write-in",
+   "sos_votes": 2346
+  },
+  {
+   "race": "WA|Z|#21",
+   "sos_name": "Write-in",
+   "sos_votes": 185
+  },
+  {
+   "race": "WA|Z|#26",
+   "sos_name": "Write-in",
+   "sos_votes": 74
+  },
+  {
+   "race": "WA|Z|#29",
+   "sos_name": "Write-in",
+   "sos_votes": 1396
+  },
+  {
+   "race": "WA|Z|#30",
+   "sos_name": "Write-in",
+   "sos_votes": 43
+  },
+  {
+   "race": "WA|Z|#31",
+   "sos_name": "Write-in",
+   "sos_votes": 51
+  },
+  {
+   "race": "WA|Z|#32",
+   "sos_name": "Write-in",
+   "sos_votes": 1047
+  },
+  {
+   "race": "WA|Z|#33",
+   "sos_name": "Write-in",
+   "sos_votes": 1830
+  },
+  {
+   "race": "WA|Z|#34",
+   "sos_name": "Write-in",
+   "sos_votes": 1489
+  },
+  {
+   "race": "WA|Z|#35",
+   "sos_name": "Write-in",
+   "sos_votes": 65
+  },
+  {
+   "race": "WA|Z|#36",
+   "sos_name": "Write-in",
+   "sos_votes": 142
+  },
+  {
+   "race": "WA|Z|#37",
+   "sos_name": "Write-in",
+   "sos_votes": 582
+  },
+  {
+   "race": "WA|Z|#42",
+   "sos_name": "Write-in",
+   "sos_votes": 95
+  },
+  {
+   "race": "WA|Z|#43",
+   "sos_name": "Write-in",
+   "sos_votes": 625
+  },
+  {
+   "race": "WA|Z|#44",
+   "sos_name": "Write-in",
+   "sos_votes": 52
+  },
+  {
+   "race": "WA|Z|#45",
+   "sos_name": "Write-in",
+   "sos_votes": 3951
+  },
+  {
+   "race": "WA|Z|#46",
+   "sos_name": "Write-in",
+   "sos_votes": 109
+  },
+  {
+   "race": "WA|Z|#47",
+   "sos_name": "Write-in",
+   "sos_votes": 61
+  },
+  {
+   "race": "WA|Z|#48",
+   "sos_name": "Write-in",
+   "sos_votes": 1487
+  },
+  {
+   "race": "WA|Y|#1|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 83
+  },
+  {
+   "race": "WA|Y|#1|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 121
+  },
+  {
+   "race": "WA|Y|#2|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 87
+  },
+  {
+   "race": "WA|Y|#3|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 117
+  },
+  {
+   "race": "WA|Y|#3|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 92
+  },
+  {
+   "race": "WA|Y|#4|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 3496
+  },
+  {
+   "race": "WA|Y|#4|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 149
+  },
+  {
+   "race": "WA|Y|#5|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 81
+  },
+  {
+   "race": "WA|Y|#5|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 92
+  },
+  {
+   "race": "WA|Y|#6|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 91
+  },
+  {
+   "race": "WA|Y|#6|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 123
+  },
+  {
+   "race": "WA|Y|#7|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 1566
+  },
+  {
+   "race": "WA|Y|#7|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 1496
+  },
+  {
+   "race": "WA|Y|#8|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 1404
+  },
+  {
+   "race": "WA|Y|#8|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 1425
+  },
+  {
+   "race": "WA|Y|#9|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 2757
+  },
+  {
+   "race": "WA|Y|#9|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 89
+  },
+  {
+   "race": "WA|Y|#10|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 90
+  },
+  {
+   "race": "WA|Y|#10|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 89
+  },
+  {
+   "race": "WA|Y|#11|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 1450
+  },
+  {
+   "race": "WA|Y|#11|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 1601
+  },
+  {
+   "race": "WA|Y|#12|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 64
+  },
+  {
+   "race": "WA|Y|#12|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 92
+  },
+  {
+   "race": "WA|Y|#13|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 60
+  },
+  {
+   "race": "WA|Y|#13|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 905
+  },
+  {
+   "race": "WA|Y|#14|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 107
+  },
+  {
+   "race": "WA|Y|#14|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 127
+  },
+  {
+   "race": "WA|Y|#15|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 75
+  },
+  {
+   "race": "WA|Y|#15|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 222
+  },
+  {
+   "race": "WA|Y|#16|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 38
+  },
+  {
+   "race": "WA|Y|#16|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 42
+  },
+  {
+   "race": "WA|Y|#17|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 129
+  },
+  {
+   "race": "WA|Y|#17|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 113
+  },
+  {
+   "race": "WA|Y|#18|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 120
+  },
+  {
+   "race": "WA|Y|#18|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 157
+  },
+  {
+   "race": "WA|Y|#19|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 77
+  },
+  {
+   "race": "WA|Y|#19|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 153
+  },
+  {
+   "race": "WA|Y|#20|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 194
+  },
+  {
+   "race": "WA|Y|#20|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 157
+  },
+  {
+   "race": "WA|Y|#21|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 781
+  },
+  {
+   "race": "WA|Y|#21|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 325
+  },
+  {
+   "race": "WA|Y|#22|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 174
+  },
+  {
+   "race": "WA|Y|#22|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 1636
+  },
+  {
+   "race": "WA|Y|#23|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 933
+  },
+  {
+   "race": "WA|Y|#23|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 106
+  },
+  {
+   "race": "WA|Y|#24|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 40
+  },
+  {
+   "race": "WA|Y|#24|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 137
+  },
+  {
+   "race": "WA|Y|#25|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 69
+  },
+  {
+   "race": "WA|Y|#25|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 60
+  },
+  {
+   "race": "WA|Y|#26|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 75
+  },
+  {
+   "race": "WA|Y|#26|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 105
+  },
+  {
+   "race": "WA|Y|#27|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 151
+  },
+  {
+   "race": "WA|Y|#27|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 2225
+  },
+  {
+   "race": "WA|Y|#28|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 76
+  },
+  {
+   "race": "WA|Y|#28|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 251
+  },
+  {
+   "race": "WA|Y|#29|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 1477
+  },
+  {
+   "race": "WA|Y|#29|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 1523
+  },
+  {
+   "race": "WA|Y|#30|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 58
+  },
+  {
+   "race": "WA|Y|#30|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 152
+  },
+  {
+   "race": "WA|Y|#31|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 61
+  },
+  {
+   "race": "WA|Y|#31|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 80
+  },
+  {
+   "race": "WA|Y|#32|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 1081
+  },
+  {
+   "race": "WA|Y|#32|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 995
+  },
+  {
+   "race": "WA|Y|#33|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 77
+  },
+  {
+   "race": "WA|Y|#33|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 97
+  },
+  {
+   "race": "WA|Y|#34|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 1457
+  },
+  {
+   "race": "WA|Y|#34|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 894
+  },
+  {
+   "race": "WA|Y|#35|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 72
+  },
+  {
+   "race": "WA|Y|#35|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 71
+  },
+  {
+   "race": "WA|Y|#36|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 1061
+  },
+  {
+   "race": "WA|Y|#36|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 1055
+  },
+  {
+   "race": "WA|Y|#37|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 464
+  },
+  {
+   "race": "WA|Y|#37|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 451
+  },
+  {
+   "race": "WA|Y|#38|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 436
+  },
+  {
+   "race": "WA|Y|#38|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 2858
+  },
+  {
+   "race": "WA|Y|#39|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 58
+  },
+  {
+   "race": "WA|Y|#39|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 76
+  },
+  {
+   "race": "WA|Y|#40|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 60
+  },
+  {
+   "race": "WA|Y|#40|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 180
+  },
+  {
+   "race": "WA|Y|#41|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 110
+  },
+  {
+   "race": "WA|Y|#41|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 110
+  },
+  {
+   "race": "WA|Y|#42|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 94
+  },
+  {
+   "race": "WA|Y|#42|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 68
+  },
+  {
+   "race": "WA|Y|#43|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 562
+  },
+  {
+   "race": "WA|Y|#43|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 1206
+  },
+  {
+   "race": "WA|Y|#44|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 49
+  },
+  {
+   "race": "WA|Y|#44|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 46
+  },
+  {
+   "race": "WA|Y|#45|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 78
+  },
+  {
+   "race": "WA|Y|#45|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 183
+  },
+  {
+   "race": "WA|Y|#46|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 491
+  },
+  {
+   "race": "WA|Y|#46|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 267
+  },
+  {
+   "race": "WA|Y|#47|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 394
+  },
+  {
+   "race": "WA|Y|#47|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 71
+  },
+  {
+   "race": "WA|Y|#48|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 71
+  },
+  {
+   "race": "WA|Y|#48|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 790
+  },
+  {
+   "race": "WA|Y|#49|P1",
+   "sos_name": "Write-in",
+   "sos_votes": 163
+  },
+  {
+   "race": "WA|Y|#49|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 159
+  },
+  {
+   "race": "WA|Z|#38",
+   "sos_name": "Write-in",
+   "sos_votes": 81
+  },
+  {
+   "race": "WA|Y|#2|P2",
+   "sos_name": "Write-in",
+   "sos_votes": 70
+  }
+ ],
+ "summary": {
+  "nameExact": 200,
+  "nameVariant": 25,
+  "voteAgree": 108,
+  "voteDisagree": 117,
+  "sos_rows_carrying_a_winner_flag": 0
+ }
+}

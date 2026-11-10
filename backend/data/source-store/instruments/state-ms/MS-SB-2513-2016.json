@@ -1,0 +1,25 @@
+{
+  "id": "MS-SB-2513-2016",
+  "scope": "state:ms",
+  "title": "SB 2513 (2016 Regular Session): Pre-election day voting; allow.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2016/pdf/history/SB/SB2513.xml",
+    "https://billstatus.ls.state.ms.us/documents/2016/pdf/SB/2500-2599/SB2513IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 4(1) (pre-election day voting)\n(quote) A qualified elector who desires to vote during the pre-election day voting period shall appear at the office of the appropriate registrar in the county or municipality in which the elector is registered to vote and shall present an acceptable form of photo identification.\n(section) Sec. 118 (23-15-563(1), brought forward)\n(quote) Each person who shall appear to vote in person at a polling place or the registrar's office shall be required to identify himself or herself to an election manager or the registrar by presenting current and valid photo identification before such person shall be allowed to vote.\n(section) Sec. 112 (23-15-541)\n(quote) the managers shall identify the voter by requiring the voter to submit identification as required by Section 23-15-563,\n(b_no_id_remedy)\n(section) Sec. 118 (23-15-563(3), brought forward)\n(quote) (a) A person who appears to vote in person at a polling place and does not have identification as required by this section may vote by affidavit ballot. The affidavit ballot shall then be counted if the person shall present acceptable photo identification to the registrar within five (5) days. (b) An elector who has a religious objection to being photographed may vote by affidavit ballot, and the elector, within five (5) days after the election, shall execute an affidavit in the registrar's office affirming that the exemption applies.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 118 (23-15-563(5))\n(quote) The intentional failure of an election official to require a voter to present identification as required by this section shall be considered corrupt conduct under Section 97-13-19 and shall be reported to the Secretary of State and the Attorney General.\n(other) Secs. 1-5: Pre-Election Day Voting Act (voting at the registrar office from 21 days before the election until noon on the Saturday before; no in-person absentee voting at the registrar office)\n(other) Absentee statutes 23-15-625 to 23-15-735 amended: revised list of voters eligible for absentee ballots\n(other) Secs. 6-200+: many Election Code sections brought forward or conformed, including candidate qualification and campaign finance\n(other) Sec. 33 (23-15-153 area): registrars take applications for Mississippi Voter Identification Cards\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Doty",
+      "role": "prime",
+      "version": "SB2513IN"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

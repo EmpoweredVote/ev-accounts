@@ -1,0 +1,132 @@
+{
+  "politician_id": "5e84262c-cb8f-40c6-b514-ae974095148a",
+  "findings": [
+    {
+      "id": "4c3395b182ac2f1736bfe17cec7d5711861dcd470c2f690855dfba2cb080225d",
+      "kind": "own-words",
+      "url": "https://kvoe.com/?p=265000",
+      "date": "2025-03-08",
+      "date_precision": "day",
+      "passage": "Argabright and Barrett are both in favor of the legislation, with Argabright saying the issue for him comes down to “mail delivery” as the main factor.",
+      "note": "KVOE report of a local legislative forum. It says he favours Senate Bill 4, which ends the three-day grace period for returning mail ballots (deadline 7 pm on election night), and gives his reason as mail delivery. The outlet's audio clip (argabright-mail.mp3) holds his words; I did not listen to it. Only the two words in quotation marks are directly his. Mail ballot rules, not ID.",
+      "subjects": [
+        "mail-ballot return deadline",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:50:43.943Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "16fc367b6ae612e9858d0804c70069da9a41e059381a62d495fc2173fe7e9422",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_191_HB2020.odt",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "Senate: Emergency Final Action As Amended",
+      "note": "Senate roll call as printed ('Argabright'), linked to Mike Argabright (district 17) via the official 2025 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12d5b96635aaee125a967de3c18520774687c5737469fd65d2358255cda8634d",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Argabright'), linked to Mike Argabright (district 17) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c32e05d099cacb14913d1c7c047be9deb5093f489d52813e63f1f81be052e684",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Argabright'), linked to Mike Argabright (district 17) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot return deadline",
+        "constitutional amendment on citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "kslegislature.gov member page (confirms Sen. Mike Argabright, Senate District 17, Lyon County; no website or news links listed)",
+        "campaign site mikeargabright.com home page and Priorities page: nothing on the subject",
+        "KVOE news report of 2025-03-08 on the Emporia legislative dialogue (plain curl, read in full)",
+        "Emporia Gazette: searched, nothing on the subject found",
+        "blocked: https://ballotpedia.org (listed as refusing; not fetched)",
+        "blocked: https://emporiakschamber.org/wp-content/uploads/2024/07/Senate-17th-Dist-Argabright-Mike-1.pdf (404)",
+        "four web searches on his name plus voter ID, citizenship, SAVE, ballots; no newsletter or column by him found"
+      ],
+      "found": 1,
+      "at": "2026-11-04T16:50:43.943Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-04T19:13:24.946Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "OH-SB-451-2026",
+  "scope": "state:oh",
+  "title": "SB 451 (2025-2026 (136th General Assembly)): S. B. No. 451: Revise Election Law; enact the Interstate Voter Assistance Act",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/sb451",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb451/00_IN/html/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) R.C. 3503.14(A)(5) (reprinted unchanged)\n(quote) The voter to provide at least one of the following forms of identification: (a) The voter's Ohio driver's license or state identification card number; (b) The last four digits of the voter's social security number.\n(section) R.C. 3503.14(A)(7)\n(quote) The voter's signature, accompanied by the following statement: \"I declare under penalty of election falsification I am a citizen of the United States, will have lived in this state for 30 days immediately preceding the next election, and will be at least 18 years of age at the time of the general election. I understand that if I am registered to vote at another address in Ohio, my registration will be transferred. If I am registered to vote in another state, I request that my previous voter registration be canceled.\"\n(other) 109.71, 109.77, 2935.01, 111.50 (new): Secretary of State investigators become peace officers\n(other) 3501.05, 3501.055, 3517.14-3517.16: election integrity unit and commission, investigation of complaints, authority reaches conduct within or outside the state\n(other) 3503.02: residency rule wording (registering to vote in another state)\n(other) 3503.14: registration form adds current residence and a former-address space (in Ohio or another state); former address not required for validity\n(other) 3503.21, 3503.33: transfer of registration between counties when the database shows a new registration\n(other) 3503.34 (new): quarterly report from the Secretary of State to other states' election officials about electors who moved to Ohio (with registration form copy)\n(other) 3503.35 (new): 'Interstate Voter Assistance Act' provisions on movers' registrations (text not read in detail)\n(other) note: Registration and voter-roll bill (names the 'Interstate Voter Assistance Act'). No ID-to-vote, provisional ballot rule or documentary proof of citizenship; the new text is a sworn citizenship statement on the form, an attestation only. The ID-number list in 3503.14(A)(5) is existing law reprinted. Section 3503.35 was not read in detail. Sole version.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Theresa Gavarone",
+      "role": "prime",
+      "version": "As Introduced (00_IN)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

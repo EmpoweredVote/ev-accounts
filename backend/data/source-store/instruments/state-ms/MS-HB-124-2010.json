@@ -1,0 +1,38 @@
+{
+  "id": "MS-HB-124-2010",
+  "scope": "state:ms",
+  "title": "HB 124 (2010 Regular Session): Voter identification; require.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2010/pdf/history/HB/HB0124.xml",
+    "https://billstatus.ls.state.ms.us/documents/2010/pdf/HB/0100-0199/HB0124IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1(1)\n(quote) Each person who shall appear to vote in person at a polling place or the registrar's office shall be required to identify himself or herself to an election manager or the registrar by presenting current state-issued photo identification.\n(section) Sec. 1(2)(a)\n(quote) Through December 31, 2010, the identification required by subsection (1) of this section shall be limited to\n(section) Sec. 1(2)(b)\n(quote) On and after January 1, 2011, the identification required by subsection (1) of this section shall be limited to the following: (i) A current and valid Mississippi driver's license; or (ii) A voter registration card with the elector's photograph and that lists the identification cardholder number required under the provisions of law regulating the Statewide Centralized Voter System.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) Sec. 5 (23-15-631)(3)\n(quote) The Secretary of State shall prepare instructions on how absentee voters may comply with the identification requirements of Section 1 of House Bill No.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 2 (23-15-33)(3)\n(quote) Every person entitled to be registered as an elector in compliance with this section shall be issued by January 1, 2011, a registration card with the elector's photograph and that lists the identification cardholder number required under the provisions of law regulating the Statewide Centralized Voter System.\n(other) Sec. 3 (23-15-169.1): voter registration cards with photographs by Secretary of State and Commissioner of Public Safety, no cost\n(other) Sec. 4: 23-15-163 brought forward\n(other) Conforming amendments to 23-15-639, 23-15-11, 23-15-541, 23-15-719\n(other) Preclearance and effective date",
+  "sponsors": [
+    {
+      "name": "Fillingane",
+      "role": "prime",
+      "version": "HB0124IN"
+    },
+    {
+      "name": "Upshaw",
+      "role": "co",
+      "version": "HB0124IN"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

@@ -555,6 +555,29 @@ function mapLineItem(row: LineItemRow): TreasuryBudgetLineItem {
  */
 export type DatasetsMode = 'full' | 'summary';
 
+/**
+ * ⚠⚠⚠ FULL MODE KEEPS THE OLD JOIN-AND-GROUP-BY SHAPE, DELIBERATELY. Index and
+ * summary mode moved to a lateral (see AGG_INDEX); this one did not, and the
+ * reason is measured, not cautious.
+ *
+ * `ORDER BY b.fiscal_year DESC` leaves TIES UNSPECIFIED, and entities routinely
+ * hold several rows per year (two fund scopes, two bases). In the join shape the
+ * tie order falls out of the merge join's input order; in a lateral it falls out
+ * of the per-entity index scan. Both are valid SQL, and they disagree. Measured
+ * on Michigan: same 1,857 entities, same counts, **1,857 of 1,857 rows with a
+ * different `available_datasets` array order** — digest 4f5ce223… versus
+ * eab299dd….
+ *
+ * This response is a documented cross-app contract that promises full mode is
+ * byte-for-byte unchanged, so that reordering is a breaking change for any
+ * consumer that reads the array positionally. Adding a tiebreak would fix the
+ * ambiguity but change today's bytes too, which is the same breakage.
+ *
+ * ⚠ Full mode can afford the slower shape: an unfiltered full list is REFUSED
+ * (FULL_LIST_TOO_LARGE), so it only ever runs behind a slug/state/type/county
+ * filter and never scans the fleet. Summary mode is the one the landing page
+ * calls with no filter, and the one that was costing 1.8s.
+ */
 const DATASETS_FULL = `COALESCE(
               json_agg(
                 json_build_object('fiscal_year', b.fiscal_year, 'dataset_type', b.dataset_type,
@@ -570,9 +593,12 @@ const DATASETS_FULL = `COALESCE(
 // scopes emits two rows per (year, dataset_type), and Michigan has 16 years of
 // them. Aggregating first and de-duplicating in JS would ship the very bytes
 // this mode exists to avoid.
+const AGG_SUMMARY = `json_agg(DISTINCT b.fiscal_year)  AS years,
+              json_agg(DISTINCT b.dataset_type) AS dataset_types`;
+
 const DATASETS_SUMMARY = `json_build_object(
-              'years', COALESCE(json_agg(DISTINCT b.fiscal_year) FILTER (WHERE b.id IS NOT NULL), '[]'),
-              'dataset_types', COALESCE(json_agg(DISTINCT b.dataset_type) FILTER (WHERE b.id IS NOT NULL), '[]')
+              'years', COALESCE(s.years, '[]'),
+              'dataset_types', COALESCE(s.dataset_types, '[]')
             ) AS dataset_summary`;
 
 /**
@@ -632,9 +658,43 @@ export interface TreasuryCityIndex {
   latest_year: number | null;
 }
 
+/**
+ * ⚠⚠⚠ EVERY AGGREGATE HERE RUNS INSIDE THE LATERAL IN `getCities`, AND THAT IS
+ * NOT A STYLE CHOICE — IT IS THE DIFFERENCE BETWEEN AN INDEX-ONLY SCAN AND
+ * 585,630 HEAP FETCHES.
+ *
+ * `idx_budget_municipality_year_type` is UNIQUE on
+ * (municipality_id, fiscal_year, dataset_type, period_label, fund_scope, basis).
+ * It already carries everything the index and summary modes need. The previous
+ * shape joined municipalities to budgets and asked `COUNT(b.id) > 0` in a
+ * HAVING — and `b.id` IS NOT IN THAT INDEX, so Postgres had to visit the heap
+ * for all 585,630 budget rows just to prove a count was non-zero. Measured:
+ *
+ *     before  1,784 ms   607,714 buffers   Index Scan     (heap for every row)
+ *     after     737 ms   216,570 buffers   Index Only Scan
+ *
+ * ⚠ So DO NOT reintroduce a column from `budgets` that this index lacks into a
+ * list query's aggregate or predicate. `id`, `reporting_entity`, `derivation`
+ * and `audit_grade` are the ones that will silently cost you the index-only
+ * scan. Full mode already pays it, which is survivable only because an
+ * unfiltered full list is refused (FULL_LIST_TOO_LARGE) — it never runs wide.
+ *
+ * ⚠⚠ LATERAL, NOT A CTE. A plain `GROUP BY municipality_id` CTE benchmarks the
+ * same on the unfiltered list (676 ms) but would aggregate ALL 585,630 budget
+ * rows even for `?slug=plano-tx`, making every narrow query dramatically worse.
+ * The lateral lets the municipality filters prune before the aggregate runs.
+ *
+ * ⭐ Equivalence was PROVEN, not argued: old and new shapes compared on
+ * production data gave 11,197 rows each, md5 digest
+ * `594e1f2c0e3321fc1f9426c66731a950` both ways, and zero rows in either
+ * direction of an EXCEPT. A rewrite of a documented cross-app contract gets
+ * checked that way or not at all.
+ */
+const AGG_INDEX = `MAX(b.fiscal_year) AS latest_year`;
+
 const COLUMNS_INDEX = `m.id, m.name, m.state, m.entity_type, m.county_id,
-            (COUNT(b.id) > 0) AS has_data,
-            MAX(b.fiscal_year) AS latest_year`;
+            (s.budget_count > 0) AS has_data,
+            s.latest_year`;
 
 /**
  * The `?entity_type=` whitelist and its validator now live in `./entityTypes.js`
@@ -689,20 +749,53 @@ export async function getCities(
 
   const index = filters.fields === 'index';
 
-  const { rows } = await pool.query<CityRow | CityIndexRow>(
-    `SELECT ${index
-      ? COLUMNS_INDEX
-      : `m.id, m.name, m.state, m.entity_type, m.population, m.population_year, m.county_id, m.hero_image_url,
+  // ⚠⚠ TWO SHAPES, AND THE SPLIT IS LOAD-BEARING. Index and summary mode read
+  // only columns `idx_budget_municipality_year_type` already carries, so they
+  // aggregate inside a lateral and get an index-only scan (1,784ms -> 737ms on
+  // the unfiltered list). Full mode cannot: its array order would change, which
+  // for a documented contract is a breaking change. See DATASETS_FULL.
+  const useLateral = index || mode === 'summary';
+
+  // ⚠ Moving the budget-bearing rule from HAVING to WHERE is the SAME rule:
+  // every `conds` entry filters `m` alone, so AND-ing them changes nothing about
+  // which rows survive. `s` is a bare aggregate with no GROUP BY, so the lateral
+  // always yields exactly one row — count 0 when the entity has no budgets —
+  // which is why `s.budget_count > 0` stands in for `COUNT(b.id) > 0`.
+  const BUDGET_BEARING = (countExpr: string) => `${countExpr} > 0
+        OR (m.entity_type = 'county' AND EXISTS (
+              SELECT 1 FROM treasury.municipalities child WHERE child.county_id = m.id
+            ))`;
+
+  const projection = index
+    ? COLUMNS_INDEX
+    : `m.id, m.name, m.state, m.entity_type, m.population, m.population_year, m.county_id, m.hero_image_url,
             m.created_at, m.updated_at,
-            ${mode === 'summary' ? DATASETS_SUMMARY : DATASETS_FULL}`}
-     FROM treasury.municipalities m
+            ${mode === 'summary' ? DATASETS_SUMMARY : DATASETS_FULL}`;
+
+  const body = useLateral
+    ? `FROM treasury.municipalities m
+     LEFT JOIN LATERAL (
+       -- ⚠ The lateral's WHERE shares a line with its FROM ON PURPOSE. The row
+       -- contract tests in treasuryService.cities.test.ts identify the OUTER
+       -- WHERE clause with a start-of-line anchored regex -- "a real WHERE
+       -- clause starts its own line". Breaking this one onto its own line makes
+       -- that regex match the lateral's correlation instead, and the test that
+       -- proves a filter cannot change WHICH entity comes back silently starts
+       -- checking nothing.
+       SELECT COUNT(*) AS budget_count,
+              ${index ? AGG_INDEX : AGG_SUMMARY}
+         FROM treasury.budgets b WHERE b.municipality_id = m.id
+     ) s ON true
+     WHERE ${[...conds, `(${BUDGET_BEARING('s.budget_count')})`].join(' AND ')}`
+    : `FROM treasury.municipalities m
      LEFT JOIN treasury.budgets b ON b.municipality_id = m.id
      ${conds.length ? `WHERE ${conds.join(' AND ')}` : ''}
      GROUP BY m.id
-     HAVING COUNT(b.id) > 0
-        OR (m.entity_type = 'county' AND EXISTS (
-              SELECT 1 FROM treasury.municipalities child WHERE child.county_id = m.id
-            ))
+     HAVING ${BUDGET_BEARING('COUNT(b.id)')}`;
+
+  const { rows } = await pool.query<CityRow | CityIndexRow>(
+    `SELECT ${projection}
+     ${body}
      ORDER BY m.name`,
     vals
   );

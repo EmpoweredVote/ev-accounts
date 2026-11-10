@@ -1,0 +1,38 @@
+{
+  "id": "KS-HB-2538-2018",
+  "scope": "state:ks",
+  "title": "HB 2538 (2017-2018 Regular Session (2018)): Free state elections act; voter identification; proof of citizenship eliminated; permanent advance voting for any voter; election day registration; eliminating interstate crosscheck. (index, abridged); AN ACT concerning elections; amending K.S.A. 25-1120 and K.S.A. 2017 Supp. 25-1122, 25-1123, 25-2309, 25-2311, 25-2316c and 65-2418 and repealing the existing sections; also repealing K.S.A. 2017 Supp. 25-2358.",
+  "urls": [
+    "https://www.kslegislature.gov/li_2018/b2017_18/measures/hb2538/",
+    "https://www.kslegislature.gov/li_2018/b2017_18/measures/documents/hb2538_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not extracted\n(b_no_id_remedy) not extracted\n(c_mail_ballot_id) not extracted\n(d_proof_of_citizenship) not extracted\n(e_other_rule)\n(section) Preamble\n(quote) WHEREAS, The provisions of the amendments to the sections in this act shall be known and may be cited as the free state election act.\n(other) K.S.A. 25-1120, 25-1122, 25-1123 (advance voting); 25-2309, 25-2311, 25-2316c (registration); 65-2418; K.S.A. 2017 Supp. 25-2358 repealed. Per the index caption: voter ID and proof of citizenship eliminated, permanent advance voting for any voter, election day registration.",
+  "sponsors": [
+    {
+      "name": "Parker",
+      "role": "prime",
+      "version": "As introduced (hb2538_00_0000.pdf); no later version exists on the legislature site"
+    },
+    {
+      "name": "Good",
+      "role": "co",
+      "version": "As introduced (hb2538_00_0000.pdf); no later version exists on the legislature site"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

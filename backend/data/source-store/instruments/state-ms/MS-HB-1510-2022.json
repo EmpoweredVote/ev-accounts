@@ -1,0 +1,2003 @@
+{
+  "id": "MS-HB-1510-2022",
+  "scope": "state:ms",
+  "title": "HB 1510 (2022 Regular Session): Elections; revise procedures regarding voter roll maintenance.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2022/pdf/history/HB/HB1510.xml",
+    "https://billstatus.ls.state.ms.us/documents/2022/pdf/HB/1500-1599/HB1510SG.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2022/pdf/HB/1500-1599/HB1510IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2022/pdf/HB/1500-1599/HB1510PS.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2022/pdf/cr/HB1510CR.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2022/pdf/sam/HB1510_S_Cmte_Amend_01.pdf"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Section 1 (23-15-15(1)), as sent to Governor\n(quote) (1) Upon receiving a completed voter registration application, the registrar shall enter the applicant into the Statewide Elections Management System. Said registration application shall be compared with the Department of Public Safety driver's license and identification information. If such information indicates that a particular applicant is not a citizen of the United States, the Statewide Elections Management System shall notify the registrar, or his or her designee, that the applicant may not be a citizen of the United States.\n(section) Section 1 (23-15-15(3)-(4))\n(quote) (3) Any applicant who receives the notice under subsection (2)(b) of this section shall, within thirty (30) days of the receipt of such notice, provide proof of citizenship to the registrar or his or her designee. (4) For purposes of this section, proof of citizenship includes, but is not limited to: (a) The applicant's birth certificate or a legible photocopy of the birth certificate; (b) A United States passport, or a legible photocopy of the pertinent pages of the passport, identifying the applicant and showing the passport number; (c) The applicant's United States naturalization documentation, a legible photocopy of the naturalization documentation, or the number of the applicant's Certificate of Naturalization; except that any person who provides the number of the Certificate of Naturalization in lieu of the naturalization documentation shall not be deemed to have provided proof of citizenship until the number is verified with the United States Citizenship and Immigration Services in the Department of Homeland Security or its successor; or (d) Any document or method of proof of citizenship established by the Federal Immigration Reform and Control Act of 1986, Public Law 99-603, compiled in 8 USC Section 1101 et seq.\n(section) Section 1 (23-15-15(6)): pending and rejected status; affidavit ballot\n(quote) (6) If the applicant does not reply to the notice or provide proof of citizenship, the registrar of the county, or his or her designee, where the person registered to vote shall mark the applicant as \"PENDING\" in the Statewide Elections Management System until the next federal general election: (a) A voter in pending status may cast an affidavit ballot. The affidavit ballot shall be considered if the voter provides the required documentation under subsection (4) of this section to the registrar within five (5) days of casting the affidavit ballot. (b) If the applicant fails to respond to the notice or cast an affidavit ballot and provide the proof described in subsection (4) of this section by the next federal general election, the registrar shall mark the applicant as \"REJECTED\" in the Statewide Election Management System.\n(section) As passed House: 23-15-15(2)-(3) (purge after 30 days)\n(quote) (3) If the attempted voter does not provide proof of citizenship within thirty (30) days of the receipt of the notification, the registrar, or his or her designee, where the person registered to vote shall purge the voter from the Statewide Elections Management System.\n(e_other_rule)\n(section) Section 1 (23-15-15(2)(a)-(b)): SAVE check\n(quote) (2) After receiving the notice from the Statewide Elections Management System as provided in subsection (1) of this section, the registrar, or his or her designee, shall: (a) Enter the applicant's information into the United States Citizenship and Immigration Service's Systematic Alien Verification for Entitlements (SAVE) or its successor database for further inquiry; and (b) If both the Department of Public Safety driver's license and identification information and the database in paragraph (a) of this subsection indicate that the applicant is not a citizen, send a notice by first-class mail to the applicant's mailing address provided on the voter registration application inquiring whether the individual is eligible to be registered to vote. The registrar may, in addition to first-class mail, contact the applicant by email or telephone.\n(other) Section 2: amends 23-15-5 (Elections Support Fund distribution).\n(other) Appeal procedure and the 2023 whole-roll comparison (in the House text) were dropped in the final text.",
+  "sponsors": [
+    {
+      "name": "Powell",
+      "role": "prime",
+      "version": "As Sent to Governor (HB1510SG = conference report HB1510CR text); passed-House (PS) and Senate committee amendment also read; introduced (IN, a risk-limiting-audit bill) also saved"
+    },
+    {
+      "name": "Shanks",
+      "role": "co",
+      "version": "As Sent to Governor (HB1510SG = conference report HB1510CR text); passed-House (PS) and Senate committee amendment also read; introduced (IN, a risk-limiting-audit bill) also saved"
+    },
+    {
+      "name": "Wallace",
+      "role": "co",
+      "version": "As Sent to Governor (HB1510SG = conference report HB1510CR text); passed-House (PS) and Senate committee amendment also read; introduced (IN, a risk-limiting-audit bill) also saved"
+    },
+    {
+      "name": "Horne",
+      "role": "co",
+      "version": "As Sent to Governor (HB1510SG = conference report HB1510CR text); passed-House (PS) and Senate committee amendment also read; introduced (IN, a risk-limiting-audit bill) also saved"
+    },
+    {
+      "name": "Boyd",
+      "role": "co",
+      "version": "As Sent to Governor (HB1510SG = conference report HB1510CR text); passed-House (PS) and Senate committee amendment also read; introduced (IN, a risk-limiting-audit bill) also saved"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2022-02-10",
+      "body": "MS House",
+      "motion": "H. B. No. 1510 passed by the following vote: (0380016)",
+      "kind": "roll-call",
+      "yes": 95,
+      "no": 24,
+      "absent": 3,
+      "body_size": 122,
+      "note": "https://billstatus.ls.state.ms.us/2022/pdf/votes/house/0380016.pdf",
+      "members": [
+        {
+          "name": "Aguirre",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson (122nd)",
+          "vote": "yea"
+        },
+        {
+          "name": "Arnold",
+          "vote": "yea"
+        },
+        {
+          "name": "Barnett",
+          "vote": "yea"
+        },
+        {
+          "name": "Barton",
+          "vote": "yea"
+        },
+        {
+          "name": "Beckett",
+          "vote": "yea"
+        },
+        {
+          "name": "Bell (21st)",
+          "vote": "yea"
+        },
+        {
+          "name": "Bennett",
+          "vote": "yea"
+        },
+        {
+          "name": "Bomgar",
+          "vote": "yea"
+        },
+        {
+          "name": "Bounds",
+          "vote": "yea"
+        },
+        {
+          "name": "Boyd",
+          "vote": "yea"
+        },
+        {
+          "name": "Brown (20th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Burnett",
+          "vote": "yea"
+        },
+        {
+          "name": "Busby",
+          "vote": "yea"
+        },
+        {
+          "name": "Byrd",
+          "vote": "yea"
+        },
+        {
+          "name": "Calvert",
+          "vote": "yea"
+        },
+        {
+          "name": "Carpenter",
+          "vote": "yea"
+        },
+        {
+          "name": "Clark",
+          "vote": "yea"
+        },
+        {
+          "name": "Clarke",
+          "vote": "yea"
+        },
+        {
+          "name": "Cockerham",
+          "vote": "yea"
+        },
+        {
+          "name": "Crawford",
+          "vote": "yea"
+        },
+        {
+          "name": "Creekmore IV",
+          "vote": "yea"
+        },
+        {
+          "name": "Criswell",
+          "vote": "yea"
+        },
+        {
+          "name": "Currie",
+          "vote": "yea"
+        },
+        {
+          "name": "Darnell",
+          "vote": "yea"
+        },
+        {
+          "name": "Deweese",
+          "vote": "yea"
+        },
+        {
+          "name": "Eubanks",
+          "vote": "yea"
+        },
+        {
+          "name": "Eure",
+          "vote": "yea"
+        },
+        {
+          "name": "Evans (45th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Evans (91st)",
+          "vote": "yea"
+        },
+        {
+          "name": "Faulkner",
+          "vote": "yea"
+        },
+        {
+          "name": "Felsher",
+          "vote": "yea"
+        },
+        {
+          "name": "Ford (54th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Ford (73rd)",
+          "vote": "yea"
+        },
+        {
+          "name": "Foster",
+          "vote": "yea"
+        },
+        {
+          "name": "Gibbs (36th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Goodin",
+          "vote": "yea"
+        },
+        {
+          "name": "Guice",
+          "vote": "yea"
+        },
+        {
+          "name": "Hale",
+          "vote": "yea"
+        },
+        {
+          "name": "Haney",
+          "vote": "yea"
+        },
+        {
+          "name": "Hobgood-Wilkes",
+          "vote": "yea"
+        },
+        {
+          "name": "Holloway",
+          "vote": "yea"
+        },
+        {
+          "name": "Hood",
+          "vote": "yea"
+        },
+        {
+          "name": "Hopkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Horan",
+          "vote": "yea"
+        },
+        {
+          "name": "Horne",
+          "vote": "yea"
+        },
+        {
+          "name": "Huddleston",
+          "vote": "yea"
+        },
+        {
+          "name": "Kinkade",
+          "vote": "yea"
+        },
+        {
+          "name": "Ladner",
+          "vote": "yea"
+        },
+        {
+          "name": "Lamar",
+          "vote": "yea"
+        },
+        {
+          "name": "Lancaster",
+          "vote": "yea"
+        },
+        {
+          "name": "Mangold",
+          "vote": "yea"
+        },
+        {
+          "name": "Massengill",
+          "vote": "yea"
+        },
+        {
+          "name": "McCarty",
+          "vote": "yea"
+        },
+        {
+          "name": "McGee",
+          "vote": "yea"
+        },
+        {
+          "name": "McKnight",
+          "vote": "yea"
+        },
+        {
+          "name": "McLean",
+          "vote": "yea"
+        },
+        {
+          "name": "McLeod",
+          "vote": "yea"
+        },
+        {
+          "name": "Mickens",
+          "vote": "yea"
+        },
+        {
+          "name": "Miles",
+          "vote": "yea"
+        },
+        {
+          "name": "Mims",
+          "vote": "yea"
+        },
+        {
+          "name": "Morgan",
+          "vote": "yea"
+        },
+        {
+          "name": "Newman",
+          "vote": "yea"
+        },
+        {
+          "name": "Oliver",
+          "vote": "yea"
+        },
+        {
+          "name": "Owen",
+          "vote": "yea"
+        },
+        {
+          "name": "Patterson",
+          "vote": "yea"
+        },
+        {
+          "name": "Pigott",
+          "vote": "yea"
+        },
+        {
+          "name": "Powell",
+          "vote": "yea"
+        },
+        {
+          "name": "Read",
+          "vote": "yea"
+        },
+        {
+          "name": "Reynolds",
+          "vote": "yea"
+        },
+        {
+          "name": "Roberson",
+          "vote": "yea"
+        },
+        {
+          "name": "Robinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Rosebud",
+          "vote": "yea"
+        },
+        {
+          "name": "Rushing",
+          "vote": "yea"
+        },
+        {
+          "name": "Sanford",
+          "vote": "yea"
+        },
+        {
+          "name": "Scoggin",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott",
+          "vote": "yea"
+        },
+        {
+          "name": "Shanks",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Steverson",
+          "vote": "yea"
+        },
+        {
+          "name": "Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Tubb",
+          "vote": "yea"
+        },
+        {
+          "name": "Tullos",
+          "vote": "yea"
+        },
+        {
+          "name": "Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Walker",
+          "vote": "yea"
+        },
+        {
+          "name": "Wallace",
+          "vote": "yea"
+        },
+        {
+          "name": "Weathersby",
+          "vote": "yea"
+        },
+        {
+          "name": "White",
+          "vote": "yea"
+        },
+        {
+          "name": "Williamson",
+          "vote": "yea"
+        },
+        {
+          "name": "Wright",
+          "vote": "yea"
+        },
+        {
+          "name": "Yancey",
+          "vote": "yea"
+        },
+        {
+          "name": "Yates",
+          "vote": "yea"
+        },
+        {
+          "name": "Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Zuber",
+          "vote": "yea"
+        },
+        {
+          "name": "Mr. Speaker",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson (110th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Anthony",
+          "vote": "nay"
+        },
+        {
+          "name": "Bailey",
+          "vote": "nay"
+        },
+        {
+          "name": "Banks",
+          "vote": "nay"
+        },
+        {
+          "name": "Bell (65th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Blackmon",
+          "vote": "nay"
+        },
+        {
+          "name": "Brown (70th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Crudup",
+          "vote": "nay"
+        },
+        {
+          "name": "Denton",
+          "vote": "nay"
+        },
+        {
+          "name": "Harness",
+          "vote": "nay"
+        },
+        {
+          "name": "Hines",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackson",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Karriem",
+          "vote": "nay"
+        },
+        {
+          "name": "McCray",
+          "vote": "nay"
+        },
+        {
+          "name": "Osborne",
+          "vote": "nay"
+        },
+        {
+          "name": "Porter",
+          "vote": "nay"
+        },
+        {
+          "name": "Sanders",
+          "vote": "nay"
+        },
+        {
+          "name": "Stamps",
+          "vote": "nay"
+        },
+        {
+          "name": "Straughter",
+          "vote": "nay"
+        },
+        {
+          "name": "Summers",
+          "vote": "nay"
+        },
+        {
+          "name": "Taylor",
+          "vote": "nay"
+        },
+        {
+          "name": "Watson",
+          "vote": "nay"
+        },
+        {
+          "name": "Williams-Barnes",
+          "vote": "nay"
+        },
+        {
+          "name": "Bain",
+          "vote": "absent"
+        },
+        {
+          "name": "Gibbs (72nd)",
+          "vote": "absent"
+        },
+        {
+          "name": "Paden",
+          "vote": "abstain"
+        }
+      ]
+    },
+    {
+      "date": "2022-02-11",
+      "body": "MS House",
+      "motion": "H. B. No. 1510 passed by the following vote: (0390002)",
+      "kind": "roll-call",
+      "yes": 75,
+      "no": 43,
+      "absent": 4,
+      "body_size": 122,
+      "note": "https://billstatus.ls.state.ms.us/2022/pdf/votes/house/0390002.pdf",
+      "members": [
+        {
+          "name": "Aguirre",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson (122nd)",
+          "vote": "yea"
+        },
+        {
+          "name": "Arnold",
+          "vote": "yea"
+        },
+        {
+          "name": "Barnett",
+          "vote": "yea"
+        },
+        {
+          "name": "Barton",
+          "vote": "yea"
+        },
+        {
+          "name": "Beckett",
+          "vote": "yea"
+        },
+        {
+          "name": "Bell (21st)",
+          "vote": "yea"
+        },
+        {
+          "name": "Bennett",
+          "vote": "yea"
+        },
+        {
+          "name": "Bomgar",
+          "vote": "yea"
+        },
+        {
+          "name": "Bounds",
+          "vote": "yea"
+        },
+        {
+          "name": "Boyd",
+          "vote": "yea"
+        },
+        {
+          "name": "Brown (20th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Byrd",
+          "vote": "yea"
+        },
+        {
+          "name": "Calvert",
+          "vote": "yea"
+        },
+        {
+          "name": "Carpenter",
+          "vote": "yea"
+        },
+        {
+          "name": "Crawford",
+          "vote": "yea"
+        },
+        {
+          "name": "Creekmore IV",
+          "vote": "yea"
+        },
+        {
+          "name": "Criswell",
+          "vote": "yea"
+        },
+        {
+          "name": "Currie",
+          "vote": "yea"
+        },
+        {
+          "name": "Darnell",
+          "vote": "yea"
+        },
+        {
+          "name": "Deweese",
+          "vote": "yea"
+        },
+        {
+          "name": "Eubanks",
+          "vote": "yea"
+        },
+        {
+          "name": "Eure",
+          "vote": "yea"
+        },
+        {
+          "name": "Evans (45th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Felsher",
+          "vote": "yea"
+        },
+        {
+          "name": "Ford (54th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Ford (73rd)",
+          "vote": "yea"
+        },
+        {
+          "name": "Goodin",
+          "vote": "yea"
+        },
+        {
+          "name": "Guice",
+          "vote": "yea"
+        },
+        {
+          "name": "Hale",
+          "vote": "yea"
+        },
+        {
+          "name": "Haney",
+          "vote": "yea"
+        },
+        {
+          "name": "Hobgood-Wilkes",
+          "vote": "yea"
+        },
+        {
+          "name": "Hood",
+          "vote": "yea"
+        },
+        {
+          "name": "Hopkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Horan",
+          "vote": "yea"
+        },
+        {
+          "name": "Horne",
+          "vote": "yea"
+        },
+        {
+          "name": "Huddleston",
+          "vote": "yea"
+        },
+        {
+          "name": "Kinkade",
+          "vote": "yea"
+        },
+        {
+          "name": "Ladner",
+          "vote": "yea"
+        },
+        {
+          "name": "Lamar",
+          "vote": "yea"
+        },
+        {
+          "name": "Lancaster",
+          "vote": "yea"
+        },
+        {
+          "name": "Mangold",
+          "vote": "yea"
+        },
+        {
+          "name": "Massengill",
+          "vote": "yea"
+        },
+        {
+          "name": "McKnight",
+          "vote": "yea"
+        },
+        {
+          "name": "McLean",
+          "vote": "yea"
+        },
+        {
+          "name": "McLeod",
+          "vote": "yea"
+        },
+        {
+          "name": "Miles",
+          "vote": "yea"
+        },
+        {
+          "name": "Mims",
+          "vote": "yea"
+        },
+        {
+          "name": "Morgan",
+          "vote": "yea"
+        },
+        {
+          "name": "Newman",
+          "vote": "yea"
+        },
+        {
+          "name": "Oliver",
+          "vote": "yea"
+        },
+        {
+          "name": "Owen",
+          "vote": "yea"
+        },
+        {
+          "name": "Patterson",
+          "vote": "yea"
+        },
+        {
+          "name": "Pigott",
+          "vote": "yea"
+        },
+        {
+          "name": "Powell",
+          "vote": "yea"
+        },
+        {
+          "name": "Read",
+          "vote": "yea"
+        },
+        {
+          "name": "Roberson",
+          "vote": "yea"
+        },
+        {
+          "name": "Robinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Rushing",
+          "vote": "yea"
+        },
+        {
+          "name": "Sanford",
+          "vote": "yea"
+        },
+        {
+          "name": "Scoggin",
+          "vote": "yea"
+        },
+        {
+          "name": "Shanks",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Steverson",
+          "vote": "yea"
+        },
+        {
+          "name": "Tubb",
+          "vote": "yea"
+        },
+        {
+          "name": "Tullos",
+          "vote": "yea"
+        },
+        {
+          "name": "Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Wallace",
+          "vote": "yea"
+        },
+        {
+          "name": "Weathersby",
+          "vote": "yea"
+        },
+        {
+          "name": "White",
+          "vote": "yea"
+        },
+        {
+          "name": "Williamson",
+          "vote": "yea"
+        },
+        {
+          "name": "Wright",
+          "vote": "yea"
+        },
+        {
+          "name": "Yancey",
+          "vote": "yea"
+        },
+        {
+          "name": "Zuber",
+          "vote": "yea"
+        },
+        {
+          "name": "Mr. Speaker",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson (110th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Anthony",
+          "vote": "nay"
+        },
+        {
+          "name": "Bailey",
+          "vote": "nay"
+        },
+        {
+          "name": "Banks",
+          "vote": "nay"
+        },
+        {
+          "name": "Bell (65th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Blackmon",
+          "vote": "nay"
+        },
+        {
+          "name": "Brown (70th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Burnett",
+          "vote": "nay"
+        },
+        {
+          "name": "Clark",
+          "vote": "nay"
+        },
+        {
+          "name": "Clarke",
+          "vote": "nay"
+        },
+        {
+          "name": "Cockerham",
+          "vote": "nay"
+        },
+        {
+          "name": "Crudup",
+          "vote": "nay"
+        },
+        {
+          "name": "Denton",
+          "vote": "nay"
+        },
+        {
+          "name": "Evans (91st)",
+          "vote": "nay"
+        },
+        {
+          "name": "Faulkner",
+          "vote": "nay"
+        },
+        {
+          "name": "Foster",
+          "vote": "nay"
+        },
+        {
+          "name": "Gibbs (36th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Gibbs (72nd)",
+          "vote": "nay"
+        },
+        {
+          "name": "Harness",
+          "vote": "nay"
+        },
+        {
+          "name": "Hines",
+          "vote": "nay"
+        },
+        {
+          "name": "Holloway",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackson",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Karriem",
+          "vote": "nay"
+        },
+        {
+          "name": "McCray",
+          "vote": "nay"
+        },
+        {
+          "name": "Mickens",
+          "vote": "nay"
+        },
+        {
+          "name": "Osborne",
+          "vote": "nay"
+        },
+        {
+          "name": "Paden",
+          "vote": "nay"
+        },
+        {
+          "name": "Porter",
+          "vote": "nay"
+        },
+        {
+          "name": "Reynolds",
+          "vote": "nay"
+        },
+        {
+          "name": "Rosebud",
+          "vote": "nay"
+        },
+        {
+          "name": "Sanders",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott",
+          "vote": "nay"
+        },
+        {
+          "name": "Stamps",
+          "vote": "nay"
+        },
+        {
+          "name": "Straughter",
+          "vote": "nay"
+        },
+        {
+          "name": "Summers",
+          "vote": "nay"
+        },
+        {
+          "name": "Taylor",
+          "vote": "nay"
+        },
+        {
+          "name": "Thompson",
+          "vote": "nay"
+        },
+        {
+          "name": "Walker",
+          "vote": "nay"
+        },
+        {
+          "name": "Watson",
+          "vote": "nay"
+        },
+        {
+          "name": "Williams-Barnes",
+          "vote": "nay"
+        },
+        {
+          "name": "Yates",
+          "vote": "nay"
+        },
+        {
+          "name": "Young",
+          "vote": "nay"
+        },
+        {
+          "name": "Bain",
+          "vote": "absent"
+        },
+        {
+          "name": "Busby",
+          "vote": "absent"
+        },
+        {
+          "name": "McCarty",
+          "vote": "absent"
+        },
+        {
+          "name": "McGee",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2022-03-08",
+      "body": "MS Senate",
+      "motion": "YEAS AND NAYS On H. B. No. 1510. On motion of Senator Tate, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed as amended, title standing as stated, by the following vote: (0640061)",
+      "kind": "roll-call",
+      "yes": 38,
+      "no": 14,
+      "absent": 0,
+      "body_size": 52,
+      "note": "https://billstatus.ls.state.ms.us/2022/pdf/votes/senate/0640061.pdf",
+      "members": [
+        {
+          "name": "Barrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Blackwell",
+          "vote": "yea"
+        },
+        {
+          "name": "Boyd",
+          "vote": "yea"
+        },
+        {
+          "name": "Branning",
+          "vote": "yea"
+        },
+        {
+          "name": "Bryan",
+          "vote": "yea"
+        },
+        {
+          "name": "Carter",
+          "vote": "yea"
+        },
+        {
+          "name": "Caughman",
+          "vote": "yea"
+        },
+        {
+          "name": "Chassaniol",
+          "vote": "yea"
+        },
+        {
+          "name": "Chism",
+          "vote": "yea"
+        },
+        {
+          "name": "DeBar",
+          "vote": "yea"
+        },
+        {
+          "name": "DeLano",
+          "vote": "yea"
+        },
+        {
+          "name": "England",
+          "vote": "yea"
+        },
+        {
+          "name": "Fillingane",
+          "vote": "yea"
+        },
+        {
+          "name": "Harkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Hopson",
+          "vote": "yea"
+        },
+        {
+          "name": "Horhn",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirby",
+          "vote": "yea"
+        },
+        {
+          "name": "McCaughn",
+          "vote": "yea"
+        },
+        {
+          "name": "McDaniel",
+          "vote": "yea"
+        },
+        {
+          "name": "McLendon",
+          "vote": "yea"
+        },
+        {
+          "name": "McMahan",
+          "vote": "yea"
+        },
+        {
+          "name": "Michel",
+          "vote": "yea"
+        },
+        {
+          "name": "Moran",
+          "vote": "yea"
+        },
+        {
+          "name": "Parker",
+          "vote": "yea"
+        },
+        {
+          "name": "Parks",
+          "vote": "yea"
+        },
+        {
+          "name": "Polk",
+          "vote": "yea"
+        },
+        {
+          "name": "Seymour",
+          "vote": "yea"
+        },
+        {
+          "name": "Sojourner",
+          "vote": "yea"
+        },
+        {
+          "name": "Sparks",
+          "vote": "yea"
+        },
+        {
+          "name": "Suber",
+          "vote": "yea"
+        },
+        {
+          "name": "Tate",
+          "vote": "yea"
+        },
+        {
+          "name": "Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Whaley",
+          "vote": "yea"
+        },
+        {
+          "name": "Wiggins",
+          "vote": "yea"
+        },
+        {
+          "name": "Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Younger",
+          "vote": "yea"
+        },
+        {
+          "name": "Barnett",
+          "vote": "nay"
+        },
+        {
+          "name": "Blackmon",
+          "vote": "nay"
+        },
+        {
+          "name": "Blount",
+          "vote": "nay"
+        },
+        {
+          "name": "Butler A. (36th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Butler K. (38th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Frazier",
+          "vote": "nay"
+        },
+        {
+          "name": "Hickman",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackson (11th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Jordan",
+          "vote": "nay"
+        },
+        {
+          "name": "Norwood",
+          "vote": "nay"
+        },
+        {
+          "name": "Simmons D. T. (12th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Simmons S. (13th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Thomas",
+          "vote": "nay"
+        },
+        {
+          "name": "Turner-Ford",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2022-03-29",
+      "body": "MS House",
+      "motion": "The conference report on H. B. No. 1510 was adopted by the following vote: (0850033)",
+      "kind": "roll-call",
+      "yes": 114,
+      "no": 5,
+      "absent": 3,
+      "body_size": 122,
+      "note": "https://billstatus.ls.state.ms.us/2022/pdf/votes/house/0850033.pdf",
+      "members": [
+        {
+          "name": "Aguirre",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson (110th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson (122nd)",
+          "vote": "yea"
+        },
+        {
+          "name": "Anthony",
+          "vote": "yea"
+        },
+        {
+          "name": "Arnold",
+          "vote": "yea"
+        },
+        {
+          "name": "Bain",
+          "vote": "yea"
+        },
+        {
+          "name": "Banks",
+          "vote": "yea"
+        },
+        {
+          "name": "Barnett",
+          "vote": "yea"
+        },
+        {
+          "name": "Barton",
+          "vote": "yea"
+        },
+        {
+          "name": "Beckett",
+          "vote": "yea"
+        },
+        {
+          "name": "Bell (21st)",
+          "vote": "yea"
+        },
+        {
+          "name": "Bell (65th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Bennett",
+          "vote": "yea"
+        },
+        {
+          "name": "Blackmon",
+          "vote": "yea"
+        },
+        {
+          "name": "Bomgar",
+          "vote": "yea"
+        },
+        {
+          "name": "Bounds",
+          "vote": "yea"
+        },
+        {
+          "name": "Boyd",
+          "vote": "yea"
+        },
+        {
+          "name": "Brown (20th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Brown (70th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Burnett",
+          "vote": "yea"
+        },
+        {
+          "name": "Busby",
+          "vote": "yea"
+        },
+        {
+          "name": "Byrd",
+          "vote": "yea"
+        },
+        {
+          "name": "Calvert",
+          "vote": "yea"
+        },
+        {
+          "name": "Carpenter",
+          "vote": "yea"
+        },
+        {
+          "name": "Clark",
+          "vote": "yea"
+        },
+        {
+          "name": "Cockerham",
+          "vote": "yea"
+        },
+        {
+          "name": "Crawford",
+          "vote": "yea"
+        },
+        {
+          "name": "Creekmore IV",
+          "vote": "yea"
+        },
+        {
+          "name": "Criswell",
+          "vote": "yea"
+        },
+        {
+          "name": "Currie",
+          "vote": "yea"
+        },
+        {
+          "name": "Darnell",
+          "vote": "yea"
+        },
+        {
+          "name": "Denton",
+          "vote": "yea"
+        },
+        {
+          "name": "Deweese",
+          "vote": "yea"
+        },
+        {
+          "name": "Eubanks",
+          "vote": "yea"
+        },
+        {
+          "name": "Eure",
+          "vote": "yea"
+        },
+        {
+          "name": "Evans (45th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Faulkner",
+          "vote": "yea"
+        },
+        {
+          "name": "Felsher",
+          "vote": "yea"
+        },
+        {
+          "name": "Ford (54th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Ford (73rd)",
+          "vote": "yea"
+        },
+        {
+          "name": "Foster",
+          "vote": "yea"
+        },
+        {
+          "name": "Gibbs (36th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Gibbs (72nd)",
+          "vote": "yea"
+        },
+        {
+          "name": "Goodin",
+          "vote": "yea"
+        },
+        {
+          "name": "Guice",
+          "vote": "yea"
+        },
+        {
+          "name": "Hale",
+          "vote": "yea"
+        },
+        {
+          "name": "Haney",
+          "vote": "yea"
+        },
+        {
+          "name": "Harness",
+          "vote": "yea"
+        },
+        {
+          "name": "Hines",
+          "vote": "yea"
+        },
+        {
+          "name": "Hobgood-Wilkes",
+          "vote": "yea"
+        },
+        {
+          "name": "Holloway",
+          "vote": "yea"
+        },
+        {
+          "name": "Hood",
+          "vote": "yea"
+        },
+        {
+          "name": "Hopkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Horan",
+          "vote": "yea"
+        },
+        {
+          "name": "Horne",
+          "vote": "yea"
+        },
+        {
+          "name": "Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Kinkade",
+          "vote": "yea"
+        },
+        {
+          "name": "Ladner",
+          "vote": "yea"
+        },
+        {
+          "name": "Lamar",
+          "vote": "yea"
+        },
+        {
+          "name": "Lancaster",
+          "vote": "yea"
+        },
+        {
+          "name": "Mangold",
+          "vote": "yea"
+        },
+        {
+          "name": "Massengill",
+          "vote": "yea"
+        },
+        {
+          "name": "McCarty",
+          "vote": "yea"
+        },
+        {
+          "name": "McCray",
+          "vote": "yea"
+        },
+        {
+          "name": "McGee",
+          "vote": "yea"
+        },
+        {
+          "name": "McKnight",
+          "vote": "yea"
+        },
+        {
+          "name": "McLean",
+          "vote": "yea"
+        },
+        {
+          "name": "McLeod",
+          "vote": "yea"
+        },
+        {
+          "name": "Mickens",
+          "vote": "yea"
+        },
+        {
+          "name": "Miles",
+          "vote": "yea"
+        },
+        {
+          "name": "Mims",
+          "vote": "yea"
+        },
+        {
+          "name": "Morgan",
+          "vote": "yea"
+        },
+        {
+          "name": "Newman",
+          "vote": "yea"
+        },
+        {
+          "name": "Oliver",
+          "vote": "yea"
+        },
+        {
+          "name": "Osborne",
+          "vote": "yea"
+        },
+        {
+          "name": "Owen",
+          "vote": "yea"
+        },
+        {
+          "name": "Paden",
+          "vote": "yea"
+        },
+        {
+          "name": "Patterson",
+          "vote": "yea"
+        },
+        {
+          "name": "Pigott",
+          "vote": "yea"
+        },
+        {
+          "name": "Porter",
+          "vote": "yea"
+        },
+        {
+          "name": "Powell",
+          "vote": "yea"
+        },
+        {
+          "name": "Read",
+          "vote": "yea"
+        },
+        {
+          "name": "Reynolds",
+          "vote": "yea"
+        },
+        {
+          "name": "Roberson",
+          "vote": "yea"
+        },
+        {
+          "name": "Robinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Rosebud",
+          "vote": "yea"
+        },
+        {
+          "name": "Rushing",
+          "vote": "yea"
+        },
+        {
+          "name": "Sanders",
+          "vote": "yea"
+        },
+        {
+          "name": "Sanford",
+          "vote": "yea"
+        },
+        {
+          "name": "Scoggin",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott",
+          "vote": "yea"
+        },
+        {
+          "name": "Shanks",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Stamps",
+          "vote": "yea"
+        },
+        {
+          "name": "Steverson",
+          "vote": "yea"
+        },
+        {
+          "name": "Straughter",
+          "vote": "yea"
+        },
+        {
+          "name": "Taylor",
+          "vote": "yea"
+        },
+        {
+          "name": "Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Tubb",
+          "vote": "yea"
+        },
+        {
+          "name": "Tullos",
+          "vote": "yea"
+        },
+        {
+          "name": "Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Walker",
+          "vote": "yea"
+        },
+        {
+          "name": "Wallace",
+          "vote": "yea"
+        },
+        {
+          "name": "Weathersby",
+          "vote": "yea"
+        },
+        {
+          "name": "White",
+          "vote": "yea"
+        },
+        {
+          "name": "Williams-Barnes",
+          "vote": "yea"
+        },
+        {
+          "name": "Williamson",
+          "vote": "yea"
+        },
+        {
+          "name": "Wright",
+          "vote": "yea"
+        },
+        {
+          "name": "Yancey",
+          "vote": "yea"
+        },
+        {
+          "name": "Yates",
+          "vote": "yea"
+        },
+        {
+          "name": "Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Zuber",
+          "vote": "yea"
+        },
+        {
+          "name": "Mr. Speaker",
+          "vote": "yea"
+        },
+        {
+          "name": "Bailey",
+          "vote": "nay"
+        },
+        {
+          "name": "Clarke",
+          "vote": "nay"
+        },
+        {
+          "name": "Evans (91st)",
+          "vote": "nay"
+        },
+        {
+          "name": "Karriem",
+          "vote": "nay"
+        },
+        {
+          "name": "Watson",
+          "vote": "nay"
+        },
+        {
+          "name": "Crudup",
+          "vote": "absent"
+        },
+        {
+          "name": "Huddleston",
+          "vote": "absent"
+        },
+        {
+          "name": "Summers",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2022-03-30",
+      "body": "MS Senate",
+      "motion": "YEAS AND NAYS. The yeas and nays being taken, the Report of Conference Committee on H. B. No. 1510 was adopted: (0860019)",
+      "kind": "roll-call",
+      "yes": 38,
+      "no": 13,
+      "absent": 1,
+      "body_size": 52,
+      "note": "https://billstatus.ls.state.ms.us/2022/pdf/votes/senate/0860019.pdf",
+      "members": [
+        {
+          "name": "Barrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Blackmon",
+          "vote": "yea"
+        },
+        {
+          "name": "Blackwell",
+          "vote": "yea"
+        },
+        {
+          "name": "Boyd",
+          "vote": "yea"
+        },
+        {
+          "name": "Branning",
+          "vote": "yea"
+        },
+        {
+          "name": "Bryan",
+          "vote": "yea"
+        },
+        {
+          "name": "Carter",
+          "vote": "yea"
+        },
+        {
+          "name": "Caughman",
+          "vote": "yea"
+        },
+        {
+          "name": "Chassaniol",
+          "vote": "yea"
+        },
+        {
+          "name": "Chism",
+          "vote": "yea"
+        },
+        {
+          "name": "DeBar",
+          "vote": "yea"
+        },
+        {
+          "name": "DeLano",
+          "vote": "yea"
+        },
+        {
+          "name": "England",
+          "vote": "yea"
+        },
+        {
+          "name": "Fillingane",
+          "vote": "yea"
+        },
+        {
+          "name": "Harkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Hopson",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirby",
+          "vote": "yea"
+        },
+        {
+          "name": "McCaughn",
+          "vote": "yea"
+        },
+        {
+          "name": "McDaniel",
+          "vote": "yea"
+        },
+        {
+          "name": "McLendon",
+          "vote": "yea"
+        },
+        {
+          "name": "McMahan",
+          "vote": "yea"
+        },
+        {
+          "name": "Michel",
+          "vote": "yea"
+        },
+        {
+          "name": "Moran",
+          "vote": "yea"
+        },
+        {
+          "name": "Parker",
+          "vote": "yea"
+        },
+        {
+          "name": "Parks",
+          "vote": "yea"
+        },
+        {
+          "name": "Polk",
+          "vote": "yea"
+        },
+        {
+          "name": "Seymour",
+          "vote": "yea"
+        },
+        {
+          "name": "Sojourner",
+          "vote": "yea"
+        },
+        {
+          "name": "Sparks",
+          "vote": "yea"
+        },
+        {
+          "name": "Suber",
+          "vote": "yea"
+        },
+        {
+          "name": "Tate",
+          "vote": "yea"
+        },
+        {
+          "name": "Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Whaley",
+          "vote": "yea"
+        },
+        {
+          "name": "Wiggins",
+          "vote": "yea"
+        },
+        {
+          "name": "Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Younger",
+          "vote": "yea"
+        },
+        {
+          "name": "Barnett",
+          "vote": "nay"
+        },
+        {
+          "name": "Blount",
+          "vote": "nay"
+        },
+        {
+          "name": "Butler A. (36th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Butler K. (38th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Frazier",
+          "vote": "nay"
+        },
+        {
+          "name": "Horhn",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackson (11th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Jordan",
+          "vote": "nay"
+        },
+        {
+          "name": "Norwood",
+          "vote": "nay"
+        },
+        {
+          "name": "Simmons D. T. (12th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Simmons S. (13th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Thomas",
+          "vote": "nay"
+        },
+        {
+          "name": "Turner-Ford",
+          "vote": "nay"
+        },
+        {
+          "name": "Hickman",
+          "vote": "abstain"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "politician_id": "a0ae5161-c204-47ab-a858-4a685ec51613",
+  "findings": [
+    {
+      "id": "3b967dd8ad9c5b87bdaa13533caa04dd3c294419c5ed0d9db974f354116e5a6d",
+      "kind": "own-words",
+      "url": "https://magnoliatribune.com/2026/04/01/governor-signs-shield-act-into-law-seeking-to-further-safeguard-mississippi-elections/",
+      "date": "2026-04-01",
+      "date_precision": "day",
+      "passage": "Governor Reeves said that “while states like California and New York flood their voter rolls with illegal aliens, Mississippi will do the opposite and defend Americans’ right to determine the outcome of elections.”",
+      "note": "Statement on signing SB 2588 (SHIELD Act), as quoted by Magnolia Tribune. The act has local officials verify citizenship at registration and has the state audit voter rolls annually.",
+      "subjects": [
+        "proof of citizenship to register",
+        "citizenship verification of voter rolls",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:39:27.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4a1b9e99abdeef4a10dd490a2ff11d00a5140121e7d927f5358db1cc06fb6286",
+      "kind": "own-words",
+      "url": "https://magnoliatribune.com/2026/04/01/governor-signs-shield-act-into-law-seeking-to-further-safeguard-mississippi-elections/",
+      "date": "2026-04-01",
+      "date_precision": "day",
+      "passage": "“We will continue to do everything in our power to make it infinitely harder – with a goal to make it impossible – to cheat in our elections,” Reeves said. “We will always put American citizens first.”",
+      "note": "Same SB 2588 signing statement, as quoted by Magnolia Tribune; he calls the act \"another win for election integrity in Mississippi (and America).\"",
+      "subjects": [
+        "election integrity laws in general",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:39:27.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ccc8934db6d9b42881bdd648a0bc6aaca6b7623aaa5125840c2b3452b2bfbaeb",
+      "kind": "own-words",
+      "url": "https://www.supertalk.fm/reeves-signs-legislation-ensuring-only-american-citizens-can-vote-in-mississippi",
+      "date": "2022-04-14",
+      "date_precision": "day",
+      "passage": "Governor Tate Reeves today announced the signing of House Bill 1510, legislation that strengthens the integrity of Mississippi elections by ensuring only American citizens can vote in the state’s elections.",
+      "note": "Release issued in the Governor's name as carried by SuperTalk (page dated 2022-04-14). The next sentence says HB 1510 \"takes the extra step of verifying voter registrations.\"",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:39:27.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6b9cfe70e40e11adcfaf925189fd9de9186f86356be86203f3ec951de83ba064",
+      "kind": "own-words",
+      "url": "https://supertalk.fm/gov-reeves-signs-legislation-banning-ballot-harvesting-in-mississippi",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "passage": "“Mississippi is taking another step toward upholding the absolute integrity of our election process by banning ballot harvesting across the state,” Reeves said. “This process is an open invitation for fraud and abuse and can occur without the voter ever even knowing.”",
+      "note": "Statement on signing SB 2358 (ban on collecting and handling others' absentee ballots), as carried by SuperTalk.",
+      "subjects": [
+        "ballot harvesting",
+        "absentee ballot handling",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:39:27.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "675f0ba444c68e6df9fba555256aaf920fdfc424937fb0205127f1e5f518e74a",
+      "kind": "own-words",
+      "url": "https://supertalk.fm/gov-reeves-signs-legislation-banning-ballot-harvesting-in-mississippi",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "passage": "“This bill builds on last year’s election integrity wins that banned illegal aliens and non-citizens from voting and blocked Zuckerbucks from funding elections.”",
+      "note": "Same SB 2358 signing statement; he refers back to the 2022 laws on non-citizen voting.",
+      "subjects": [
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:39:27.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "09ba56e5a27f0987ae1eab39eb5526a5ddc013d387ac7dbd52a1269eeed8e278",
+      "kind": "record",
+      "url": "https://magnoliatribune.com/2026/04/01/governor-signs-shield-act-into-law-seeking-to-further-safeguard-mississippi-elections/",
+      "date": "2026-04-01",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "signed",
+      "note": "Governor signed the SHIELD Act: local officials verify citizenship at registration through a federal database and the state audits voter rolls yearly.",
+      "subjects": [
+        "proof of citizenship to register",
+        "citizenship verification of voter rolls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:39:27.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2de377ee634f5331ed9ca5e1cfaa12b223e6dbc1cda6347d4349c1dd4792698b",
+      "kind": "record",
+      "url": "https://www.supertalk.fm/reeves-signs-legislation-ensuring-only-american-citizens-can-vote-in-mississippi",
+      "date": "2022-04-14",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "signed",
+      "note": "Governor signed HB 1510 on verifying voter registrations so only citizens vote. Date is the release page date.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:39:27.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ab6d5df8e8b06c9552bc8f2ee836d45f1299356845beb362aea39cdab62aeb03",
+      "kind": "record",
+      "url": "https://supertalk.fm/gov-reeves-signs-legislation-banning-ballot-harvesting-in-mississippi",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2358-2023",
+      "act": "signed",
+      "note": "Governor signed SB 2358 banning collection and handling of others' absentee ballots.",
+      "subjects": [
+        "ballot harvesting",
+        "absentee ballot handling"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:39:27.766Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "citizenship verification of voter rolls",
+        "non-citizen voting",
+        "ballot harvesting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "Governor's office releases as carried by SuperTalk Mississippi, Magnolia Tribune and MageeNews (confirms Tate Reeves signing bills as Governor)",
+        "campaign site: not found by search; no questionnaire found in 5+ web searches",
+        "legislature bill pages: not reviewed (floor votes and sponsorships linked separately)",
+        "blocked: https://ballotpedia.org (refuses fetches, not attempted)",
+        "nothing on the subject: Magnolia Tribune 2026-03-24 article on the SHIELD Act (reporter words only, no Reeves quote)",
+        "Fox News 2026-04-02 article read (quotes the same social media post as Magnolia Tribune)",
+        "not used as a source: Mississippi Today, Clarion Ledger and other robots-refused sites"
+      ],
+      "found": 8,
+      "at": "2026-11-05T22:39:27.766Z",
+      "by": "search-ms-2026-11-05"
+    }
+  ]
+}

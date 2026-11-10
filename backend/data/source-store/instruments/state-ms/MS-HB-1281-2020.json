@@ -1,0 +1,33 @@
+{
+  "id": "MS-HB-1281-2020",
+  "scope": "state:ms",
+  "title": "HB 1281 (2020 Regular Session): Statewide Electors Management System; compare to certain identification databases to ensure non-U.S. citizens are not registered to vote.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2020/pdf/history/HB/HB1281.xml",
+    "https://billstatus.ls.state.ms.us/documents/2020/pdf/HB/1200-1299/HB1281IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec. 1(1)\n(quote) The Statewide Elections Management System shall be compared with the state's identification databases to ensure non-United States citizens are not registered to vote in this state.\n(section) Sec. 1(2)\n(quote) Any registered voter who receives the notice shall, within thirty (30) days of the receipt of such notice, provide proof of citizenship to the registrar or his or her designee. For purposes of this subsection (2), proof of citizenship includes, but is not limited to: (a) The voter's birth certificate or a legible photocopy of the birth certificate; (b) A United States passport, or a legible photocopy of the pertinent pages of the passport, identifying the voter and showing the passport number;\n(section) Sec. 1(3)\n(quote) If the registered voter does not provide proof of citizenship within thirty (30) days of the receipt of the notification, the registrar of the county, or his or her designee, where the person registered to vote shall purge the voter from the Statewide Elections Management System.\n(e_other_rule)\n(section) Sec. 1(4)\n(quote) In the event a person is unable to provide any documentation listed in subsection (2) to show proof of citizenship, the person may appeal to the board of election commissioners of the county in which he or she attempted to register and submit additional proof of citizenship in person or in writing.\n(section) Sec. 1(5)\n(quote) All documentation provided to show proof of citizenship as well as the Department of Public Safety database or relevant federal and state agency and county records shall be confidential and shall not be available for inspection by the public.\n(other) Sec. 2 (23-15-165): Statewide Elections Management System reprinted to conform\n(other) Sec. 3 (title): repeals 23-15-15 (document rule for naturalized citizens)",
+  "sponsors": [
+    {
+      "name": "Currie",
+      "role": "prime",
+      "version": "HB1281IN"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

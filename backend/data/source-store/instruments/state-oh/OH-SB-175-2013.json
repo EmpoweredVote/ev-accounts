@@ -1,0 +1,19 @@
+{
+  "id": "OH-SB-175-2013",
+  "scope": "state:oh",
+  "title": "SB 175 (2013-2014 (130th General Assembly)): S. B. No. 175: Voter registration/requests for absentee ballots-revise law",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/130/sb175",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/sb175/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) 3509.031(A)(2)(c)\n(quote) The elector attests to the truth and accuracy of the information submitted in the online application under penalty of election falsification using the last four digits of the elector's social security number and either the elector's Ohio driver's license number or the elector's Ohio identification card number as proof of the elector's identity.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) 3503.20(A)(2)(c)\n(quote) The applicant attests to the truth and accuracy of the information submitted in the online application under penalty of election falsification using the applicant's Ohio driver's license number or the number of the applicant's Ohio identification card as proof of the applicant's identity.\n(section) 3503.20(A)(2)(a)\n(quote) The application contains all of the required information, including the last four digits of the applicant's social security number;\n(section) 3503.14(A)(5)\n(quote) (5) The voter to provide one or more of the following: (a) The voter's driver's license number, if any; (b) The last four digits of the voter's social security number, if any; (c) A copy of a current and valid photo identification, a copy of a military identification, or a copy of a current utility bill\n(other) 3503.05 (new): uniform process to tell people with an incomplete registration application and let them complete it\n(other) 3503.20 (new): Secretary of State online voter registration; uses the BMV signature on file\n(other) 3509.031 (new): online application for absentee ballots\n(other) 3503.15, 3503.18, 3503.21, 3503.22: statewide database, death records, cancellation, acknowledgment notice (title only)\n(other) note: Only one version (introduced). Struck words are not marked. 3503.14 reprints existing registration-form ID options.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

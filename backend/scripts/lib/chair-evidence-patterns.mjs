@@ -150,8 +150,19 @@
 // Michigan letter-named joint resolutions (2026-10-30), identifier-bearing: `HJR B` / `HJRB` / `House Joint
 // Resolution B` (copied to stanceGate.ts INSTRUMENT_IDENTIFIER_PATTERNS). Georgia Senate Resolutions (2026-10-31): `SR 838` /
 // `SR838` (LegiScan) / `Senate Resolution 838` (copied there too). Case-sensitive, so a name suffix "Sr." never matches.
+// ⚠ ELEVENTH WIDENING (2026-11-06, ruled by Chris Andrews after voting-rights Stage 5 Ohio). OHIO writes its bills
+// DOTTED — `H.B. 472`, `Sub. S.B. 293`, `S.J.R. 10`, `H.C.R. 18` — and this pattern saw only `HB 472`, so 144 Ohio
+// rows had to be respelled by hand in overrides.json before they passed. It also never saw a NUMBERED `HJR`, `HCR`
+// or `SCR` at all (only `SJR` and Michigan's lettered `HJR B`): the "HJR joins the list of vocabulary this gate
+// cannot read" note in 2026-10-22-repair-marker-remainder/RE-READ.md. Done in its own change, with its tests, not in
+// the pass that failed the rows. Three additions, all identifier-bearing — a number is required in each:
+//   · `H.B. <n>` / `S.B. <n>` (a period after EACH letter, an optional `No.`), e.g. Mississippi's `H. B. No. 586`.
+//   · `H.J.R.` / `S.J.R.` / `H.C.R.` / `S.C.R.` + number, the same shape.
+//   · `HJR` / `SJR` / `HCR` / `SCR` + number, undotted.
+// Refused: `H.B. Fuller` and `S.C.R. Smith` (no number), `H. Smith`. stanceGate's INSTRUMENT_IDENTIFIER_PATTERNS
+// already had all three forms, so nothing needs copying there.
 export const NAMES_INSTRUMENT =
-  /(\bHB\s?\d|\bSB\s?\d|\b(?:House|Senate) Bill \d{1,4}\b|\bS\.L\. 20\d{2}-\d{1,4}\b|\bH\.R\.|\bS\.J\.Res|\bAB-?\s?\d|\bLD\s?\d|\bSJR\s?\d|\b[HS]JR\s?[A-Z]{1,2}\b|\b(?:House|Senate) Joint Resolution [A-Z]{1,2}\b|\bSR\s?\d{1,4}\b|\bSenate Resolution \d{1,4}\b|\bAct\b|\bOrdinance\b|[Vv]oted (YES|Yes|NO|No|Yea|YEA|Nay|NAY|AYE|Aye)|[Rr]oll [Cc]all|Chapter \d|Resolution No\.|Ordinance No\.|referrals? (approved|adopted|considered)|recorded roll call|Measure \d+\.\d+|\bO-\d{4,5}\b|\bR-\d{5,6}\b|\bProposition [A-Z0-9]{1,3}\b|Commissioners Court (approved|adopted|voted)|(?<![A-Za-z]\.)\bS\.\s?\d{1,4}\b|\bBan of (?:19|20)\d{2}\b|\bR-\d{1,4}-\d{2}\b|\b(?:Senate|House) File (?:No\. )?\d{1,4}\b|\b[SH]F\s?\d{1,4}\b|\bH\.\d{3,5}\b|\bBill (?:No\.\s?|#)\d{6}\b|\bExecutive Order (?:No\.\s?)?\d{1,4}-\d{2}\b)/;
+  /(\bHB\s?\d|\bSB\s?\d|\b(?:House|Senate) Bill \d{1,4}\b|\bS\.L\. 20\d{2}-\d{1,4}\b|\bH\.R\.|\bS\.J\.Res|\bAB-?\s?\d|\bLD\s?\d|\bSJR\s?\d|\b[HS]JR\s?[A-Z]{1,2}\b|\b(?:House|Senate) Joint Resolution [A-Z]{1,2}\b|\bSR\s?\d{1,4}\b|\bSenate Resolution \d{1,4}\b|\bAct\b|\bOrdinance\b|[Vv]oted (YES|Yes|NO|No|Yea|YEA|Nay|NAY|AYE|Aye)|[Rr]oll [Cc]all|Chapter \d|Resolution No\.|Ordinance No\.|referrals? (approved|adopted|considered)|recorded roll call|Measure \d+\.\d+|\bO-\d{4,5}\b|\bR-\d{5,6}\b|\bProposition [A-Z0-9]{1,3}\b|Commissioners Court (approved|adopted|voted)|(?<![A-Za-z]\.)\bS\.\s?\d{1,4}\b|\bBan of (?:19|20)\d{2}\b|\bR-\d{1,4}-\d{2}\b|\b(?:Senate|House) File (?:No\. )?\d{1,4}\b|\b[SH]F\s?\d{1,4}\b|\bH\.\d{3,5}\b|\bBill (?:No\.\s?|#)\d{6}\b|\bExecutive Order (?:No\.\s?)?\d{1,4}-\d{2}\b|\b[HS]\.\s?B\.\s?(?:No\.\s?)?\d{1,4}\b|\b[HS]\.\s?[JC]\.\s?R\.\s?(?:No\.\s?)?\d{1,4}\b|\b[HS][JC]R\s?\d{1,4}\b)/;
 // A source that could carry such an instrument, as opposed to a bio or an aggregator profile.
 export const INSTRUMENT_SRC =
   /(legislature|mgaleg|leginfo|congress\.gov|govtrack|clerk\.house|senate\.gov\/legislative|\/bill|\/legislation|rollcall|roll_call|ordinance|agenda|minutes|\.pdf|capitol|legiscan)/i;

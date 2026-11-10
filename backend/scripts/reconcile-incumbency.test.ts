@@ -132,6 +132,22 @@ describe('the truth predicate must exclude candidate placeholder offices', () =>
   });
 });
 
+describe('the race-candidate predicate: seat-scoped, widened to the chamber only for multi-seat races', () => {
+  // 🔴 A TEXT GUARD on this module's own SQL (ruling 2026-11-07). A multi-seat race points at ONE
+  // of its body's offices, so the seat-only rule called the other sitting members defending a seat
+  // in it challengers. The widening must stay behind `r.seats > 1`: without that guard every
+  // cross-office candidate in the same chamber would be relabelled an incumbent.
+  const src = readFileSync(new URL('./reconcile-incumbency.mjs', import.meta.url), 'utf8');
+
+  it('accepts a seat of the same chamber only when the race fills more than one seat', () => {
+    expect(src).toMatch(/r\.seats > 1 AND ro\.chamber_id IS NOT NULL AND o2\.chamber_id = ro\.chamber_id/);
+  });
+
+  it("still matches the race's own office for every race", () => {
+    expect(src).toMatch(/t\.office_id = r\.office_id\s*\n?\s*OR \(r\.seats > 1/);
+  });
+});
+
 describe('the staging promotion must not force is_incumbent back on', () => {
   // 🔴 A TEXT GUARD, because a mocked test cannot see the SQL. Without this, piece 5 of the
   // transition programme is undone by the next staging promotion and nothing reports it.

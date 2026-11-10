@@ -1,0 +1,3023 @@
+{
+ "_note": "AP metadata.json + progress.json for the 18 state-executive races CC_0357 records. Fetched 2026-11-05 from interactives.apelections.org/election-results/data-live/2026-11-03/results/national/. A live feed is overwritten in place; this is the response as it stood.",
+ "_fetched_utc": "2026-11-05T15:22:44.222Z",
+ "_race_ids": [
+  "20261103AZ3018",
+  "20261103AZ3014",
+  "20261103AZ3016",
+  "20261103CA6482",
+  "20261103CA6123",
+  "20261103CA6480",
+  "20261103CA6481",
+  "20261103CO6622",
+  "20261103CO6619",
+  "20261103CO6621",
+  "20261103IN15010",
+  "20261103NV29864",
+  "20261103NV29861",
+  "20261103NV29862",
+  "20261103NV29863",
+  "20261103WI50024",
+  "20261103WI50016",
+  "20261103WI50028"
+ ],
+ "metadata": {
+  "20261103AZ3018": {
+   "eventID": "20261103",
+   "raceType": "General",
+   "raceTypeID": "G",
+   "tabulationStatus": "Active Tabulation",
+   "tabulationStatusPhase": "Extended Tabulation",
+   "raceCallStatus": "Called",
+   "officeID": "A",
+   "officeName": "Attorney General",
+   "eevpEdayInPerson": 96.42,
+   "eevpAdvanceTotal": 84.08,
+   "eevpProvisional": 0.08,
+   "national": true,
+   "state": true,
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 2572015,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 407298,
+       "provisional": 17167,
+       "advanceTotal": 2147550
+      }
+     },
+     "total": 2199324,
+     "registered": 5065056,
+     "voteTypeTotals": {
+      "advanceTotal": 1805687,
+      "electionDayInPerson": 392723,
+      "provisional": 14,
+      "typeTotal": 2198424
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": true,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    }
+   },
+   "raceID": "20261103AZ3018",
+   "seatNum": null,
+   "electionDate": "2026-11-03",
+   "statePostal": "AZ",
+   "candidates": {
+    "101535": {
+     "first": "Warren",
+     "last": "Petersen",
+     "party": "GOP",
+     "candidateID": "101535",
+     "ballotOrder": 2,
+     "editorialCandidate": true,
+     "typeTotal": 981000
+    },
+    "101961": {
+     "first": "Kris",
+     "last": "Mayes",
+     "incumbent": true,
+     "party": "Dem",
+     "candidateID": "101961",
+     "ballotOrder": 1,
+     "editorialCandidate": true,
+     "typeTotal": 1217424
+    }
+   },
+   "isCertified": false,
+   "incumbentID": "101961",
+   "firstPollClosingTime": "2026-11-04T02:00:00.000000Z"
+  },
+  "20261103AZ3014": {
+   "eventID": "20261103",
+   "raceType": "General",
+   "raceTypeID": "G",
+   "tabulationStatus": "Active Tabulation",
+   "tabulationStatusPhase": "Extended Tabulation",
+   "raceCallStatus": "Called",
+   "officeID": "G",
+   "officeName": "Governor",
+   "incumbents": [
+    {
+     "first": "Katie",
+     "last": "Hobbs",
+     "party": "Dem",
+     "candidateID": "70987",
+     "polID": "70987",
+     "polNum": "70987"
+    }
+   ],
+   "currentParty": "Dem",
+   "currentPartyCaucus": "Dem",
+   "eevpEdayInPerson": 96.43,
+   "eevpAdvanceTotal": 84.09,
+   "eevpProvisional": 0.08,
+   "national": true,
+   "state": true,
+   "keyRace": true,
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 2600067,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 410958,
+       "provisional": 17340,
+       "advanceTotal": 2171769
+      }
+     },
+     "total": 2223400,
+     "registered": 5065056,
+     "voteTypeTotals": {
+      "advanceTotal": 1826212,
+      "electionDayInPerson": 396268,
+      "provisional": 14,
+      "typeTotal": 2222494
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": true,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    }
+   },
+   "raceID": "20261103AZ3014",
+   "seatNum": null,
+   "electionDate": "2026-11-03",
+   "statePostal": "AZ",
+   "candidates": {
+    "52611": {
+     "first": "Andy",
+     "last": "Biggs",
+     "party": "GOP",
+     "candidateID": "52611",
+     "ballotOrder": 2,
+     "editorialCandidate": true,
+     "typeTotal": 948756,
+     "hasPhoto": true
+    },
+    "70987": {
+     "first": "Katie",
+     "last": "Hobbs",
+     "incumbent": true,
+     "party": "Dem",
+     "candidateID": "70987",
+     "ballotOrder": 1,
+     "editorialCandidate": true,
+     "typeTotal": 1235414,
+     "hasPhoto": true
+    },
+    "178234": {
+     "first": "Risa",
+     "last": "Lombardo",
+     "party": "Grn",
+     "candidateID": "178234",
+     "ballotOrder": 3,
+     "editorialCandidate": false,
+     "typeTotal": 19864
+    },
+    "178235": {
+     "first": "Teri Ann",
+     "last": "Hourihan",
+     "party": "NoL",
+     "candidateID": "178235",
+     "ballotOrder": 4,
+     "editorialCandidate": false,
+     "typeTotal": 18452,
+     "hasPhoto": true
+    },
+    "179624": {
+     "first": "Gertritrude",
+     "last": "Gonzalez (write-in)",
+     "party": "GOP",
+     "candidateID": "179624",
+     "ballotOrder": 5,
+     "editorialCandidate": true,
+     "typeTotal": 2
+    },
+    "179625": {
+     "first": "Alice",
+     "last": "Novoa (write-in)",
+     "party": "GOP",
+     "candidateID": "179625",
+     "ballotOrder": 6,
+     "editorialCandidate": true,
+     "typeTotal": 6
+    }
+   },
+   "isCertified": false,
+   "incumbentID": "70987",
+   "firstPollClosingTime": "2026-11-04T02:00:00.000000Z"
+  },
+  "20261103AZ3016": {
+   "eventID": "20261103",
+   "raceType": "General",
+   "raceTypeID": "G",
+   "tabulationStatus": "Active Tabulation",
+   "tabulationStatusPhase": "Extended Tabulation",
+   "raceCallStatus": "Called",
+   "officeID": "SS",
+   "officeName": "Secretary of State",
+   "eevpEdayInPerson": 96.42,
+   "eevpAdvanceTotal": 84.08,
+   "eevpProvisional": 0.08,
+   "national": true,
+   "state": true,
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 2579268,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 407247,
+       "provisional": 17188,
+       "advanceTotal": 2154833
+      }
+     },
+     "total": 2205383,
+     "registered": 5065056,
+     "voteTypeTotals": {
+      "advanceTotal": 1811804,
+      "electionDayInPerson": 392668,
+      "provisional": 14,
+      "typeTotal": 2204486
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": true,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    }
+   },
+   "raceID": "20261103AZ3016",
+   "seatNum": null,
+   "electionDate": "2026-11-03",
+   "statePostal": "AZ",
+   "candidates": {
+    "101900": {
+     "first": "Alexander",
+     "last": "Kolodin",
+     "party": "GOP",
+     "candidateID": "101900",
+     "ballotOrder": 2,
+     "editorialCandidate": true,
+     "typeTotal": 965094
+    },
+    "101959": {
+     "first": "Adrian",
+     "last": "Fontes",
+     "incumbent": true,
+     "party": "Dem",
+     "candidateID": "101959",
+     "ballotOrder": 1,
+     "editorialCandidate": true,
+     "typeTotal": 1208269
+    },
+    "178236": {
+     "first": "Duwayne",
+     "last": "Collier",
+     "party": "Grn",
+     "candidateID": "178236",
+     "ballotOrder": 3,
+     "editorialCandidate": false,
+     "typeTotal": 31123
+    }
+   },
+   "isCertified": false,
+   "incumbentID": "101959",
+   "firstPollClosingTime": "2026-11-04T02:00:00.000000Z"
+  },
+  "20261103CA6482": {
+   "eventID": "20261103",
+   "raceType": "General",
+   "raceTypeID": "G",
+   "tabulationStatus": "Active Tabulation",
+   "tabulationStatusPhase": "Election Night",
+   "raceCallStatus": "Called",
+   "officeID": "A",
+   "officeName": "Attorney General",
+   "eevpEdayInPerson": 0,
+   "eevpAdvanceTotal": 0,
+   "eevpProvisional": 0,
+   "national": true,
+   "state": true,
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 12992619,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 1629644,
+       "provisional": 76668,
+       "advanceTotal": 11286307,
+       "inPersonTotal": 1530934
+      }
+     },
+     "total": 7969000,
+     "registered": 23164977,
+     "voteTypeAvailability": {
+      "electionDayInPerson": false,
+      "advanceTotal": false,
+      "provisional": false,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    }
+   },
+   "raceID": "20261103CA6482",
+   "seatNum": null,
+   "electionDate": "2026-11-03",
+   "statePostal": "CA",
+   "candidates": {
+    "105252": {
+     "first": "Rob",
+     "last": "Bonta",
+     "incumbent": true,
+     "party": "Dem",
+     "candidateID": "105252",
+     "ballotOrder": 1,
+     "editorialCandidate": true
+    },
+    "172480": {
+     "first": "Michael",
+     "middle": "E.",
+     "last": "Gates",
+     "party": "GOP",
+     "candidateID": "172480",
+     "ballotOrder": 2,
+     "editorialCandidate": true
+    }
+   },
+   "isCertified": false,
+   "incumbentID": "105252",
+   "firstPollClosingTime": "2026-11-04T04:00:00.000000Z"
+  },
+  "20261103CA6123": {
+   "eventID": "20261103",
+   "raceType": "General",
+   "raceTypeID": "G",
+   "tabulationStatus": "Active Tabulation",
+   "tabulationStatusPhase": "Election Night",
+   "raceCallStatus": "Called",
+   "officeID": "G",
+   "officeName": "Governor",
+   "incumbents": [
+    {
+     "first": "Gavin",
+     "last": "Newsom",
+     "party": "Dem",
+     "candidateID": "60374",
+     "polID": "60374",
+     "polNum": "60374"
+    }
+   ],
+   "currentParty": "Dem",
+   "currentPartyCaucus": "Dem",
+   "eevpEdayInPerson": 0,
+   "eevpAdvanceTotal": 0,
+   "eevpProvisional": 0,
+   "national": true,
+   "state": true,
+   "keyRace": true,
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 13214092,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 1635815,
+       "provisional": 77950,
+       "advanceTotal": 11500327,
+       "inPersonTotal": 1560594
+      }
+     },
+     "total": 8079733,
+     "registered": 23164977,
+     "voteTypeAvailability": {
+      "electionDayInPerson": false,
+      "advanceTotal": false,
+      "provisional": false,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    }
+   },
+   "raceID": "20261103CA6123",
+   "seatNum": null,
+   "electionDate": "2026-11-03",
+   "statePostal": "CA",
+   "candidates": {
+    "94": {
+     "first": "Xavier",
+     "last": "Becerra",
+     "party": "Dem",
+     "candidateID": "94",
+     "ballotOrder": 1,
+     "editorialCandidate": true,
+     "hasPhoto": true
+    },
+    "172439": {
+     "first": "Steve",
+     "last": "Hilton",
+     "party": "GOP",
+     "candidateID": "172439",
+     "ballotOrder": 2,
+     "editorialCandidate": true,
+     "hasPhoto": true
+    }
+   },
+   "isCertified": false,
+   "firstPollClosingTime": "2026-11-04T04:00:00.000000Z"
+  },
+  "20261103CA6480": {
+   "eventID": "20261103",
+   "raceType": "General",
+   "raceTypeID": "G",
+   "tabulationStatus": "Active Tabulation",
+   "tabulationStatusPhase": "Election Night",
+   "raceCallStatus": "Called",
+   "officeID": "L",
+   "officeName": "Lieutenant Governor",
+   "eevpEdayInPerson": 0,
+   "eevpAdvanceTotal": 0,
+   "eevpProvisional": 0,
+   "national": true,
+   "state": true,
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 13028699,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 1641675,
+       "provisional": 76805,
+       "advanceTotal": 11310219,
+       "inPersonTotal": 1530786
+      }
+     },
+     "total": 7979063,
+     "registered": 23164977,
+     "voteTypeAvailability": {
+      "electionDayInPerson": false,
+      "advanceTotal": false,
+      "provisional": false,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    }
+   },
+   "raceID": "20261103CA6480",
+   "seatNum": null,
+   "electionDate": "2026-11-03",
+   "statePostal": "CA",
+   "candidates": {
+    "105098": {
+     "first": "Fiona",
+     "last": "Ma",
+     "party": "Dem",
+     "candidateID": "105098",
+     "ballotOrder": 1,
+     "editorialCandidate": true
+    },
+    "172469": {
+     "first": "Gloria",
+     "last": "Romero",
+     "party": "GOP",
+     "candidateID": "172469",
+     "ballotOrder": 2,
+     "editorialCandidate": true
+    }
+   },
+   "isCertified": false,
+   "firstPollClosingTime": "2026-11-04T04:00:00.000000Z"
+  },
+  "20261103CA6481": {
+   "eventID": "20261103",
+   "raceType": "General",
+   "raceTypeID": "G",
+   "tabulationStatus": "Active Tabulation",
+   "tabulationStatusPhase": "Election Night",
+   "raceCallStatus": "Called",
+   "officeID": "SS",
+   "officeName": "Secretary of State",
+   "eevpEdayInPerson": 0,
+   "eevpAdvanceTotal": 0,
+   "eevpProvisional": 0,
+   "national": true,
+   "state": true,
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 13033991,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 1636621,
+       "provisional": 76918,
+       "advanceTotal": 11320452,
+       "inPersonTotal": 1534589
+      }
+     },
+     "total": 7972270,
+     "registered": 23164977,
+     "voteTypeAvailability": {
+      "electionDayInPerson": false,
+      "advanceTotal": false,
+      "provisional": false,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    }
+   },
+   "raceID": "20261103CA6481",
+   "seatNum": null,
+   "electionDate": "2026-11-03",
+   "statePostal": "CA",
+   "candidates": {
+    "105195": {
+     "first": "Donald",
+     "middle": "P.",
+     "last": "Wagner",
+     "nickname": "Don",
+     "party": "GOP",
+     "candidateID": "105195",
+     "ballotOrder": 2,
+     "editorialCandidate": true
+    },
+    "105428": {
+     "first": "Shirley",
+     "middle": "N.",
+     "last": "Weber",
+     "incumbent": true,
+     "party": "Dem",
+     "candidateID": "105428",
+     "ballotOrder": 1,
+     "editorialCandidate": true
+    }
+   },
+   "isCertified": false,
+   "incumbentID": "105428",
+   "firstPollClosingTime": "2026-11-04T04:00:00.000000Z"
+  },
+  "20261103CO6622": {
+   "eventID": "20261103",
+   "raceType": "General",
+   "raceTypeID": "G",
+   "tabulationStatus": "Active Tabulation",
+   "tabulationStatusPhase": "Election Night",
+   "raceCallStatus": "Called",
+   "officeID": "A",
+   "officeName": "Attorney General",
+   "eevpEdayInPerson": 0,
+   "eevpAdvanceTotal": 0,
+   "eevpAbsenteeMail": 0,
+   "national": true,
+   "state": true,
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 2716018,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 0,
+       "absenteeMail": 30,
+       "advanceTotal": 2716018
+      }
+     },
+     "total": 2341071,
+     "registered": 4595674,
+     "voteTypeAvailability": {
+      "electionDayInPerson": false,
+      "advanceTotal": false,
+      "provisional": false,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    }
+   },
+   "raceID": "20261103CO6622",
+   "seatNum": null,
+   "electionDate": "2026-11-03",
+   "statePostal": "CO",
+   "candidates": {
+    "104359": {
+     "first": "Jena",
+     "last": "Griswold",
+     "party": "Dem",
+     "candidateID": "104359",
+     "ballotOrder": 2,
+     "editorialCandidate": true
+    },
+    "104624": {
+     "first": "Michael",
+     "middle": "J.",
+     "last": "Allen",
+     "party": "GOP",
+     "candidateID": "104624",
+     "ballotOrder": 1,
+     "editorialCandidate": true
+    }
+   },
+   "isCertified": false,
+   "firstPollClosingTime": "2026-11-04T02:00:00.000000Z"
+  },
+  "20261103CO6619": {
+   "eventID": "20261103",
+   "raceType": "General",
+   "raceTypeID": "G",
+   "tabulationStatus": "Active Tabulation",
+   "tabulationStatusPhase": "Election Night",
+   "raceCallStatus": "Called",
+   "officeID": "G",
+   "officeName": "Governor",
+   "incumbents": [
+    {
+     "first": "Jared",
+     "last": "Polis",
+     "party": "Dem",
+     "candidateID": "9302",
+     "polID": "9302",
+     "polNum": "9302"
+    }
+   ],
+   "currentParty": "Dem",
+   "currentPartyCaucus": "Dem",
+   "eevpEdayInPerson": 0,
+   "eevpAdvanceTotal": 0,
+   "eevpAbsenteeMail": 0,
+   "national": true,
+   "state": true,
+   "keyRace": true,
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 2716018,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 0,
+       "absenteeMail": 30,
+       "advanceTotal": 2716018
+      }
+     },
+     "total": 2370281,
+     "registered": 4595674,
+     "voteTypeAvailability": {
+      "electionDayInPerson": false,
+      "advanceTotal": false,
+      "provisional": false,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    }
+   },
+   "raceID": "20261103CO6619",
+   "seatNum": null,
+   "electionDate": "2026-11-03",
+   "statePostal": "CO",
+   "candidates": {
+    "67043": {
+     "first": "Greg",
+     "last": "Lopez",
+     "party": "Una",
+     "candidateID": "67043",
+     "ballotOrder": 7,
+     "editorialCandidate": true,
+     "hasPhoto": true
+    },
+    "71796": {
+     "first": "Eric",
+     "last": "Mulder",
+     "party": "Lib",
+     "candidateID": "71796",
+     "ballotOrder": 4,
+     "editorialCandidate": false,
+     "hasPhoto": true
+    },
+    "104361": {
+     "first": "Phil",
+     "last": "Weiser",
+     "party": "Dem",
+     "candidateID": "104361",
+     "ballotOrder": 2,
+     "editorialCandidate": true,
+     "hasPhoto": true
+    },
+    "174624": {
+     "first": "Victor",
+     "last": "Marx",
+     "party": "GOP",
+     "candidateID": "174624",
+     "ballotOrder": 1,
+     "editorialCandidate": true,
+     "hasPhoto": true
+    },
+    "177913": {
+     "first": "Jeff",
+     "last": "Peckman",
+     "party": "Uty",
+     "candidateID": "177913",
+     "ballotOrder": 5,
+     "editorialCandidate": false,
+     "hasPhoto": true
+    },
+    "178822": {
+     "first": "Stephen",
+     "middle": "T.",
+     "last": "Hamilton",
+     "party": "AmC",
+     "candidateID": "178822",
+     "ballotOrder": 3,
+     "editorialCandidate": false
+    },
+    "178823": {
+     "first": "Erik",
+     "last": "Underwood",
+     "party": "AVP",
+     "candidateID": "178823",
+     "ballotOrder": 6,
+     "editorialCandidate": false
+    }
+   },
+   "isCertified": false,
+   "firstPollClosingTime": "2026-11-04T02:00:00.000000Z"
+  },
+  "20261103CO6621": {
+   "eventID": "20261103",
+   "raceType": "General",
+   "raceTypeID": "G",
+   "tabulationStatus": "Active Tabulation",
+   "tabulationStatusPhase": "Election Night",
+   "raceCallStatus": "Called",
+   "officeID": "SS",
+   "officeName": "Secretary of State",
+   "eevpEdayInPerson": 0,
+   "eevpAdvanceTotal": 0,
+   "eevpAbsenteeMail": 0,
+   "national": true,
+   "state": true,
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 2716018,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 0,
+       "absenteeMail": 30,
+       "advanceTotal": 2716018
+      }
+     },
+     "total": 2350833,
+     "registered": 4595674,
+     "voteTypeAvailability": {
+      "electionDayInPerson": false,
+      "advanceTotal": false,
+      "provisional": false,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    }
+   },
+   "raceID": "20261103CO6621",
+   "seatNum": null,
+   "electionDate": "2026-11-03",
+   "statePostal": "CO",
+   "candidates": {
+    "102768": {
+     "first": "Amanda",
+     "last": "Campbell",
+     "party": "AmC",
+     "candidateID": "102768",
+     "ballotOrder": 4,
+     "editorialCandidate": false
+    },
+    "168013": {
+     "first": "James",
+     "last": "Wiley",
+     "party": "GOP",
+     "candidateID": "168013",
+     "ballotOrder": 2,
+     "editorialCandidate": true
+    },
+    "174625": {
+     "first": "Amanda",
+     "last": "Gonzalez",
+     "party": "Dem",
+     "candidateID": "174625",
+     "ballotOrder": 1,
+     "editorialCandidate": true
+    },
+    "178824": {
+     "first": "Celeste",
+     "last": "Landry",
+     "party": "FWD",
+     "candidateID": "178824",
+     "ballotOrder": 5,
+     "editorialCandidate": false
+    },
+    "179205": {
+     "first": "Sean",
+     "last": "Vadney",
+     "party": "Lib",
+     "candidateID": "179205",
+     "ballotOrder": 3,
+     "editorialCandidate": false
+    }
+   },
+   "isCertified": false,
+   "firstPollClosingTime": "2026-11-04T02:00:00.000000Z"
+  },
+  "20261103IN15010": {
+   "eventID": "20261103",
+   "raceType": "General",
+   "raceTypeID": "G",
+   "tabulationStatus": "Active Tabulation",
+   "tabulationStatusPhase": "Election Night",
+   "raceCallStatus": "Called",
+   "officeID": "SS",
+   "officeName": "Secretary of State",
+   "eevpEdayInPerson": 21.15,
+   "eevpAdvanceTotal": 25.2,
+   "eevpAbsenteeMail": 14.51,
+   "eevpProvisional": 0,
+   "eevpAdvanceInPerson": 22.83,
+   "national": true,
+   "state": true,
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 1982653,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 1088395,
+       "absenteeMail": 110868,
+       "provisional": 1585,
+       "advanceInPerson": 783390,
+       "advanceTotal": 894258
+      }
+     },
+     "total": 1943477,
+     "registered": 4713746,
+     "voteTypeTotals": {
+      "absenteeMail": 16084,
+      "advanceInPerson": 178817,
+      "advanceTotal": 225333,
+      "electionDayInPerson": 230245,
+      "provisional": 0,
+      "typeTotal": 455578
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": false,
+      "absenteeMail": true,
+      "advanceInPerson": true
+     }
+    }
+   },
+   "raceID": "20261103IN15010",
+   "seatNum": null,
+   "electionDate": "2026-11-03",
+   "statePostal": "IN",
+   "candidates": {
+    "162930": {
+     "first": "Max",
+     "last": "Engling",
+     "party": "GOP",
+     "candidateID": "162930",
+     "ballotOrder": 3,
+     "editorialCandidate": true,
+     "advanceInPerson": 71260,
+     "typeTotal": 200144
+    },
+    "167505": {
+     "first": "Lauri",
+     "middle": "A.",
+     "last": "Shillings",
+     "party": "Lib",
+     "candidateID": "167505",
+     "ballotOrder": 4,
+     "editorialCandidate": false,
+     "advanceInPerson": 2511,
+     "typeTotal": 8684
+    },
+    "177918": {
+     "first": "Beau",
+     "last": "Bayh",
+     "party": "Dem",
+     "candidateID": "177918",
+     "ballotOrder": 2,
+     "editorialCandidate": true,
+     "advanceInPerson": 99914,
+     "typeTotal": 234779
+    },
+    "178670": {
+     "first": "Greg",
+     "last": "Ballard",
+     "party": "LP",
+     "candidateID": "178670",
+     "ballotOrder": 1,
+     "editorialCandidate": false,
+     "advanceInPerson": 5132,
+     "typeTotal": 11971
+    }
+   },
+   "isCertified": false,
+   "firstPollClosingTime": "2026-11-03T23:00:00.000000Z"
+  },
+  "20261103NV29864": {
+   "eventID": "20261103",
+   "raceType": "General",
+   "raceTypeID": "G",
+   "tabulationStatus": "Active Tabulation",
+   "tabulationStatusPhase": "Extended Tabulation",
+   "raceCallStatus": "Called",
+   "officeID": "A",
+   "officeName": "Attorney General",
+   "eevpEdayInPerson": 12.73,
+   "eevpAdvanceTotal": 18.26,
+   "eevpAbsenteeMail": 18.25,
+   "eevpProvisional": 0,
+   "eevpAdvanceInPerson": 18.28,
+   "national": true,
+   "state": true,
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 1129792,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 273367,
+       "absenteeMail": 548357,
+       "provisional": 9698,
+       "advanceInPerson": 298370,
+       "advanceTotal": 846727
+      }
+     },
+     "total": 1018422,
+     "registered": 2506232,
+     "voteTypeTotals": {
+      "absenteeMail": 100085,
+      "advanceInPerson": 54554,
+      "advanceTotal": 154639,
+      "electionDayInPerson": 34809,
+      "typeTotal": 189448
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": false,
+      "absenteeMail": true,
+      "advanceInPerson": true
+     }
+    }
+   },
+   "raceID": "20261103NV29864",
+   "seatNum": null,
+   "electionDate": "2026-11-03",
+   "statePostal": "NV",
+   "candidates": {
+    "100013": {
+     "last": "None of These Candidates",
+     "party": "NPD",
+     "candidateID": "100013",
+     "ballotOrder": 3,
+     "editorialCandidate": false,
+     "advanceInPerson": 853,
+     "typeTotal": 3909
+    },
+    "132104": {
+     "first": "Adriana",
+     "last": "Guzmán Fralick",
+     "party": "GOP",
+     "candidateID": "132104",
+     "ballotOrder": 2,
+     "editorialCandidate": true,
+     "advanceInPerson": 23701,
+     "typeTotal": 77424
+    },
+    "132242": {
+     "first": "Nicole",
+     "middle": "Jeanette",
+     "last": "Cannizzaro",
+     "party": "Dem",
+     "candidateID": "132242",
+     "ballotOrder": 1,
+     "editorialCandidate": true,
+     "advanceInPerson": 30000,
+     "typeTotal": 108115
+    }
+   },
+   "isCertified": false,
+   "firstPollClosingTime": "2026-11-04T03:00:00.000000Z"
+  },
+  "20261103NV29861": {
+   "eventID": "20261103",
+   "raceType": "General",
+   "raceTypeID": "G",
+   "tabulationStatus": "Active Tabulation",
+   "tabulationStatusPhase": "Extended Tabulation",
+   "raceCallStatus": "Called",
+   "officeID": "G",
+   "officeName": "Governor",
+   "incumbents": [
+    {
+     "first": "Joseph",
+     "last": "Lombardo",
+     "nickname": "Joe",
+     "party": "GOP",
+     "candidateID": "70779",
+     "polID": "70779",
+     "polNum": "70779"
+    }
+   ],
+   "currentParty": "GOP",
+   "currentPartyCaucus": "GOP",
+   "eevpEdayInPerson": 13.59,
+   "eevpAdvanceTotal": 17.82,
+   "eevpAbsenteeMail": 17.87,
+   "eevpProvisional": 0,
+   "eevpAdvanceInPerson": 17.72,
+   "national": true,
+   "state": true,
+   "keyRace": true,
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 1142197,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 257173,
+       "absenteeMail": 567033,
+       "provisional": 10016,
+       "advanceInPerson": 307975,
+       "advanceTotal": 875008
+      }
+     },
+     "total": 1029573,
+     "registered": 2506232,
+     "voteTypeTotals": {
+      "absenteeMail": 101336,
+      "advanceInPerson": 54578,
+      "advanceTotal": 155914,
+      "electionDayInPerson": 34958,
+      "typeTotal": 190872
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": false,
+      "absenteeMail": true,
+      "advanceInPerson": true
+     }
+    }
+   },
+   "raceID": "20261103NV29861",
+   "seatNum": null,
+   "electionDate": "2026-11-03",
+   "statePostal": "NV",
+   "candidates": {
+    "70779": {
+     "first": "Joseph",
+     "last": "Lombardo",
+     "nickname": "Joe",
+     "incumbent": true,
+     "party": "GOP",
+     "candidateID": "70779",
+     "ballotOrder": 3,
+     "editorialCandidate": true,
+     "advanceInPerson": 25137,
+     "typeTotal": 83078,
+     "hasPhoto": true
+    },
+    "100013": {
+     "last": "None of These Candidates",
+     "party": "NPD",
+     "candidateID": "100013",
+     "ballotOrder": 4,
+     "editorialCandidate": true,
+     "advanceInPerson": 470,
+     "typeTotal": 2640
+    },
+    "131963": {
+     "first": "Aaron",
+     "middle": "D.",
+     "last": "Ford",
+     "party": "Dem",
+     "candidateID": "131963",
+     "ballotOrder": 1,
+     "editorialCandidate": true,
+     "advanceInPerson": 27968,
+     "typeTotal": 99793,
+     "hasPhoto": true
+    },
+    "177925": {
+     "first": "Danielle",
+     "last": "Ford",
+     "party": "NPA",
+     "candidateID": "177925",
+     "ballotOrder": 2,
+     "editorialCandidate": false,
+     "advanceInPerson": 1003,
+     "typeTotal": 5361
+    }
+   },
+   "isCertified": false,
+   "incumbentID": "70779",
+   "firstPollClosingTime": "2026-11-04T03:00:00.000000Z"
+  },
+  "20261103NV29862": {
+   "eventID": "20261103",
+   "raceType": "General",
+   "raceTypeID": "G",
+   "tabulationStatus": "Active Tabulation",
+   "tabulationStatusPhase": "Extended Tabulation",
+   "raceCallStatus": "Called",
+   "officeID": "L",
+   "officeName": "Lieutenant Governor",
+   "eevpEdayInPerson": 13.68,
+   "eevpAdvanceTotal": 17.75,
+   "eevpAbsenteeMail": 17.76,
+   "eevpProvisional": 0,
+   "eevpAdvanceInPerson": 17.73,
+   "national": true,
+   "state": true,
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 1135007,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 254157,
+       "absenteeMail": 564035,
+       "provisional": 9969,
+       "advanceInPerson": 306846,
+       "advanceTotal": 870881
+      }
+     },
+     "total": 1022709,
+     "registered": 2506232,
+     "voteTypeTotals": {
+      "absenteeMail": 100188,
+      "advanceInPerson": 54389,
+      "advanceTotal": 154577,
+      "electionDayInPerson": 34760,
+      "typeTotal": 189337
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": false,
+      "absenteeMail": true,
+      "advanceInPerson": true
+     }
+    }
+   },
+   "raceID": "20261103NV29862",
+   "seatNum": null,
+   "electionDate": "2026-11-03",
+   "statePostal": "NV",
+   "candidates": {
+    "1348": {
+     "first": "Janine",
+     "last": "Hansen",
+     "party": "IAP",
+     "candidateID": "1348",
+     "ballotOrder": 2,
+     "editorialCandidate": false,
+     "advanceInPerson": 1508,
+     "typeTotal": 6467
+    },
+    "100013": {
+     "last": "None of These Candidates",
+     "party": "NPD",
+     "candidateID": "100013",
+     "ballotOrder": 4,
+     "editorialCandidate": false,
+     "advanceInPerson": 644,
+     "typeTotal": 3088
+    },
+    "132349": {
+     "first": "Sandra",
+     "last": "Jauregui",
+     "party": "Dem",
+     "candidateID": "132349",
+     "ballotOrder": 3,
+     "editorialCandidate": true,
+     "advanceInPerson": 29100,
+     "typeTotal": 104260
+    },
+    "132744": {
+     "first": "Stavros",
+     "last": "Anthony",
+     "incumbent": true,
+     "party": "GOP",
+     "candidateID": "132744",
+     "ballotOrder": 1,
+     "editorialCandidate": true,
+     "advanceInPerson": 23137,
+     "typeTotal": 75522
+    }
+   },
+   "isCertified": false,
+   "incumbentID": "132744",
+   "firstPollClosingTime": "2026-11-04T03:00:00.000000Z"
+  },
+  "20261103NV29863": {
+   "eventID": "20261103",
+   "raceType": "General",
+   "raceTypeID": "G",
+   "tabulationStatus": "Active Tabulation",
+   "tabulationStatusPhase": "Extended Tabulation",
+   "raceCallStatus": "Called",
+   "officeID": "SS",
+   "officeName": "Secretary of State",
+   "eevpEdayInPerson": 13.77,
+   "eevpAdvanceTotal": 17.78,
+   "eevpAbsenteeMail": 17.79,
+   "eevpProvisional": 0,
+   "eevpAdvanceInPerson": 17.77,
+   "national": true,
+   "state": true,
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 1134219,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 252900,
+       "absenteeMail": 564330,
+       "provisional": 9975,
+       "advanceInPerson": 307014,
+       "advanceTotal": 871344
+      }
+     },
+     "total": 1021841,
+     "registered": 2506232,
+     "voteTypeTotals": {
+      "absenteeMail": 100417,
+      "advanceInPerson": 54546,
+      "advanceTotal": 154963,
+      "electionDayInPerson": 34832,
+      "typeTotal": 189795
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": false,
+      "absenteeMail": true,
+      "advanceInPerson": true
+     }
+    }
+   },
+   "raceID": "20261103NV29863",
+   "seatNum": null,
+   "electionDate": "2026-11-03",
+   "statePostal": "NV",
+   "candidates": {
+    "68854": {
+     "first": "Jim",
+     "last": "Marchant",
+     "party": "GOP",
+     "candidateID": "68854",
+     "ballotOrder": 4,
+     "editorialCandidate": true,
+     "advanceInPerson": 22319,
+     "typeTotal": 72219
+    },
+    "100013": {
+     "last": "None of These Candidates",
+     "party": "NPD",
+     "candidateID": "100013",
+     "ballotOrder": 5,
+     "editorialCandidate": false,
+     "advanceInPerson": 458,
+     "typeTotal": 2420
+    },
+    "132749": {
+     "first": "Francisco",
+     "last": "Aguilar",
+     "nickname": "Cisco",
+     "incumbent": true,
+     "party": "Dem",
+     "candidateID": "132749",
+     "ballotOrder": 1,
+     "editorialCandidate": true,
+     "advanceInPerson": 30794,
+     "typeTotal": 110325
+    },
+    "132872": {
+     "first": "John",
+     "middle": "T.",
+     "last": "Kennedy",
+     "party": "Lib",
+     "candidateID": "132872",
+     "ballotOrder": 3,
+     "editorialCandidate": false,
+     "advanceInPerson": 328,
+     "typeTotal": 1572
+    },
+    "166660": {
+     "first": "Brad Lee",
+     "last": "Barnhill",
+     "party": "IAP",
+     "candidateID": "166660",
+     "ballotOrder": 2,
+     "editorialCandidate": false,
+     "advanceInPerson": 647,
+     "typeTotal": 3259
+    }
+   },
+   "isCertified": false,
+   "incumbentID": "132749",
+   "firstPollClosingTime": "2026-11-04T03:00:00.000000Z"
+  },
+  "20261103WI50024": {
+   "eventID": "20261103",
+   "raceType": "General",
+   "raceTypeID": "G",
+   "tabulationStatus": "Active Tabulation",
+   "tabulationStatusPhase": "Chase",
+   "raceCallStatus": "Called",
+   "officeID": "A",
+   "officeName": "Attorney General",
+   "eevpEdayInPerson": 0,
+   "eevpAdvanceTotal": 0,
+   "eevpProvisional": 0,
+   "national": true,
+   "state": true,
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 2686844,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 1837129,
+       "provisional": 213,
+       "advanceTotal": 849502
+      }
+     },
+     "total": 2646607,
+     "registered": 4970610,
+     "voteTypeTotals": {
+      "advanceTotal": 0,
+      "electionDayInPerson": 0,
+      "typeTotal": 0
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": false,
+      "advanceTotal": false,
+      "provisional": false,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    }
+   },
+   "raceID": "20261103WI50024",
+   "seatNum": null,
+   "electionDate": "2026-11-03",
+   "statePostal": "WI",
+   "candidates": {
+    "156768": {
+     "first": "Josh",
+     "last": "Kaul",
+     "incumbent": true,
+     "party": "Dem",
+     "candidateID": "156768",
+     "ballotOrder": 2,
+     "editorialCandidate": true,
+     "typeTotal": 0
+    },
+    "175174": {
+     "first": "Eric",
+     "last": "Toney",
+     "party": "GOP",
+     "candidateID": "175174",
+     "ballotOrder": 1,
+     "editorialCandidate": true,
+     "typeTotal": 0
+    }
+   },
+   "isCertified": false,
+   "incumbentID": "156768",
+   "firstPollClosingTime": "2026-11-04T02:00:00.000000Z"
+  },
+  "20261103WI50016": {
+   "eventID": "20261103",
+   "raceType": "General",
+   "raceTypeID": "G",
+   "tabulationStatus": "Active Tabulation",
+   "tabulationStatusPhase": "Chase",
+   "raceCallStatus": "Called",
+   "officeID": "G",
+   "officeName": "Governor",
+   "incumbents": [
+    {
+     "first": "Tony",
+     "last": "Evers",
+     "party": "Dem",
+     "candidateID": "48461",
+     "polID": "48461",
+     "polNum": "48461"
+    }
+   ],
+   "currentParty": "Dem",
+   "currentPartyCaucus": "Dem",
+   "eevpEdayInPerson": 0,
+   "eevpAdvanceTotal": 0,
+   "eevpProvisional": 0,
+   "national": true,
+   "state": true,
+   "keyRace": true,
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 2700779,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 1851064,
+       "provisional": 213,
+       "advanceTotal": 849502
+      }
+     },
+     "total": 2660389,
+     "registered": 4970610,
+     "voteTypeTotals": {
+      "advanceTotal": 0,
+      "electionDayInPerson": 0,
+      "typeTotal": 0
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": false,
+      "advanceTotal": false,
+      "provisional": false,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    }
+   },
+   "raceID": "20261103WI50016",
+   "seatNum": null,
+   "electionDate": "2026-11-03",
+   "statePostal": "WI",
+   "candidates": {
+    "67975": {
+     "first": "Tom",
+     "last": "Tiffany",
+     "party": "GOP",
+     "candidateID": "67975",
+     "ballotOrder": 1,
+     "editorialCandidate": true,
+     "typeTotal": 0,
+     "hasPhoto": true
+    },
+    "156426": {
+     "first": "David",
+     "last": "Crowley",
+     "party": "Dem",
+     "candidateID": "156426",
+     "ballotOrder": 2,
+     "editorialCandidate": true,
+     "typeTotal": 0,
+     "hasPhoto": true
+    }
+   },
+   "isCertified": false,
+   "firstPollClosingTime": "2026-11-04T02:00:00.000000Z"
+  },
+  "20261103WI50028": {
+   "eventID": "20261103",
+   "raceType": "General",
+   "raceTypeID": "G",
+   "tabulationStatus": "Active Tabulation",
+   "tabulationStatusPhase": "Election Night",
+   "raceCallStatus": "Called",
+   "officeID": "SS",
+   "officeName": "Secretary of State",
+   "eevpEdayInPerson": 0,
+   "eevpAdvanceTotal": 0,
+   "eevpProvisional": 0,
+   "national": true,
+   "state": true,
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 2674605,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 1824890,
+       "provisional": 213,
+       "advanceTotal": 849502
+      }
+     },
+     "total": 2634506,
+     "registered": 4970610,
+     "voteTypeTotals": {
+      "advanceTotal": 0,
+      "electionDayInPerson": 0,
+      "typeTotal": 0
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": false,
+      "advanceTotal": false,
+      "provisional": false,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    }
+   },
+   "raceID": "20261103WI50028",
+   "seatNum": null,
+   "electionDate": "2026-11-03",
+   "statePostal": "WI",
+   "candidates": {
+    "154331": {
+     "first": "JoCasta",
+     "last": "Zamarripa",
+     "party": "Dem",
+     "candidateID": "154331",
+     "ballotOrder": 2,
+     "editorialCandidate": true,
+     "typeTotal": 0
+    },
+    "154657": {
+     "first": "Jay",
+     "last": "Schroeder",
+     "party": "GOP",
+     "candidateID": "154657",
+     "ballotOrder": 1,
+     "editorialCandidate": true,
+     "typeTotal": 0
+    },
+    "178828": {
+     "first": "Pete",
+     "last": "Karas",
+     "party": "Grn",
+     "candidateID": "178828",
+     "ballotOrder": 3,
+     "editorialCandidate": false,
+     "typeTotal": 0
+    }
+   },
+   "isCertified": false,
+   "firstPollClosingTime": "2026-11-04T02:00:00.000000Z"
+  }
+ },
+ "progress": {
+  "20261103AZ3018": {
+   "statePostal": "AZ",
+   "stateName": "Arizona",
+   "reportingunitID": "3",
+   "reportingunitLevel": 1,
+   "pollClosingTime": "2026-11-04T02:00:00.000000Z",
+   "level": "state",
+   "lastUpdated": "2026-11-05T02:14:57.070000Z",
+   "eevp": 85.51,
+   "eevpEdayInPerson": 96.42,
+   "eevpAdvanceTotal": 84.08,
+   "eevpProvisional": 0.08,
+   "candidates": [
+    {
+     "candidateID": "101961",
+     "voteCount": 1217638,
+     "avotes": 985612,
+     "winner": "X",
+     "advanceTotal": 1040524,
+     "electionDayInPerson": 176898,
+     "provisional": 2,
+     "votePct": 55.36,
+     "calledAt": "2026-11-04T09:07:10.914Z",
+     "colorIndex": 0
+    },
+    {
+     "candidateID": "101535",
+     "voteCount": 981686,
+     "avotes": 710631,
+     "advanceTotal": 765163,
+     "electionDayInPerson": 215825,
+     "provisional": 12,
+     "votePct": 44.64,
+     "colorIndex": 1
+    }
+   ],
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 2572015,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 407298,
+       "provisional": 17167,
+       "advanceTotal": 2147550
+      }
+     },
+     "total": 2199324,
+     "registered": 5065056,
+     "voteTypeTotals": {
+      "advanceTotal": 1805687,
+      "electionDayInPerson": 392723,
+      "provisional": 14,
+      "typeTotal": 2198424
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": true,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    },
+    "reportingSources": {
+     "totalBallotsCast": "Stringer",
+     "voteByMode": "Mixed",
+     "voteTotal": "Mixed"
+    }
+   },
+   "tabStatusNumber": 2,
+   "raceID": "20261103AZ3018",
+   "test": false,
+   "resultsType": "live"
+  },
+  "20261103AZ3014": {
+   "statePostal": "AZ",
+   "stateName": "Arizona",
+   "reportingunitID": "3",
+   "reportingunitLevel": 1,
+   "pollClosingTime": "2026-11-04T02:00:00.000000Z",
+   "level": "state",
+   "lastUpdated": "2026-11-05T02:14:57.023000Z",
+   "eevp": 85.51,
+   "eevpEdayInPerson": 96.43,
+   "eevpAdvanceTotal": 84.09,
+   "eevpProvisional": 0.08,
+   "candidates": [
+    {
+     "candidateID": "70987",
+     "voteCount": 1235630,
+     "avotes": 1002495,
+     "winner": "X",
+     "advanceTotal": 1058119,
+     "electionDayInPerson": 177293,
+     "provisional": 2,
+     "votePct": 55.57,
+     "calledAt": "2026-11-04T08:20:43.985Z",
+     "colorIndex": 0
+    },
+    {
+     "candidateID": "52611",
+     "voteCount": 949421,
+     "avotes": 686786,
+     "advanceTotal": 739375,
+     "electionDayInPerson": 209370,
+     "provisional": 11,
+     "votePct": 42.7,
+     "colorIndex": 1
+    },
+    {
+     "candidateID": "178234",
+     "voteCount": 19875,
+     "avotes": 13274,
+     "advanceTotal": 14216,
+     "electionDayInPerson": 5648,
+     "provisional": 0,
+     "votePct": 0.89
+    },
+    {
+     "candidateID": "178235",
+     "voteCount": 18465,
+     "avotes": 13490,
+     "advanceTotal": 14494,
+     "electionDayInPerson": 3957,
+     "provisional": 1,
+     "votePct": 0.83
+    },
+    {
+     "candidateID": "179625",
+     "voteCount": 6,
+     "avotes": 6,
+     "advanceTotal": 6,
+     "electionDayInPerson": 0,
+     "provisional": 0,
+     "votePct": 0
+    },
+    {
+     "candidateID": "179624",
+     "voteCount": 3,
+     "avotes": 2,
+     "advanceTotal": 2,
+     "electionDayInPerson": 0,
+     "provisional": 0,
+     "votePct": 0
+    }
+   ],
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 2600067,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 410958,
+       "provisional": 17340,
+       "advanceTotal": 2171769
+      }
+     },
+     "total": 2223400,
+     "registered": 5065056,
+     "voteTypeTotals": {
+      "advanceTotal": 1826212,
+      "electionDayInPerson": 396268,
+      "provisional": 14,
+      "typeTotal": 2222494
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": true,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    },
+    "reportingSources": {
+     "totalBallotsCast": "Stringer",
+     "voteByMode": "Mixed",
+     "voteTotal": "Mixed"
+    }
+   },
+   "tabStatusNumber": 2,
+   "raceID": "20261103AZ3014",
+   "test": false,
+   "resultsType": "live",
+   "flippedSeat": false
+  },
+  "20261103AZ3016": {
+   "statePostal": "AZ",
+   "stateName": "Arizona",
+   "reportingunitID": "3",
+   "reportingunitLevel": 1,
+   "pollClosingTime": "2026-11-04T02:00:00.000000Z",
+   "level": "state",
+   "lastUpdated": "2026-11-05T02:14:57.044000Z",
+   "eevp": 85.5,
+   "eevpEdayInPerson": 96.42,
+   "eevpAdvanceTotal": 84.08,
+   "eevpProvisional": 0.08,
+   "candidates": [
+    {
+     "candidateID": "101959",
+     "voteCount": 1208480,
+     "avotes": 981741,
+     "winner": "X",
+     "advanceTotal": 1035642,
+     "electionDayInPerson": 172625,
+     "provisional": 2,
+     "votePct": 54.8,
+     "calledAt": "2026-11-04T09:04:54.824Z",
+     "colorIndex": 0
+    },
+    {
+     "candidateID": "101900",
+     "voteCount": 965760,
+     "avotes": 699454,
+     "advanceTotal": 753148,
+     "electionDayInPerson": 211934,
+     "provisional": 12,
+     "votePct": 43.79,
+     "colorIndex": 1
+    },
+    {
+     "candidateID": "178236",
+     "voteCount": 31143,
+     "avotes": 21389,
+     "advanceTotal": 23014,
+     "electionDayInPerson": 8109,
+     "provisional": 0,
+     "votePct": 1.41
+    }
+   ],
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 2579268,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 407247,
+       "provisional": 17188,
+       "advanceTotal": 2154833
+      }
+     },
+     "total": 2205383,
+     "registered": 5065056,
+     "voteTypeTotals": {
+      "advanceTotal": 1811804,
+      "electionDayInPerson": 392668,
+      "provisional": 14,
+      "typeTotal": 2204486
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": true,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    },
+    "reportingSources": {
+     "totalBallotsCast": "Stringer",
+     "voteByMode": "Mixed",
+     "voteTotal": "Mixed"
+    }
+   },
+   "tabStatusNumber": 2,
+   "raceID": "20261103AZ3016",
+   "test": false,
+   "resultsType": "live"
+  },
+  "20261103CA6482": {
+   "statePostal": "CA",
+   "stateName": "California",
+   "reportingunitID": "5",
+   "reportingunitLevel": 1,
+   "pollClosingTime": "2026-11-04T04:00:00.000000Z",
+   "level": "state",
+   "lastUpdated": "2026-11-05T02:08:51.171000Z",
+   "eevp": 61.33,
+   "eevpEdayInPerson": 0,
+   "eevpAdvanceTotal": 0,
+   "eevpProvisional": 0,
+   "candidates": [
+    {
+     "candidateID": "105252",
+     "voteCount": 5101167,
+     "avotes": 2448566,
+     "winner": "X",
+     "votePct": 64.01,
+     "calledAt": "2026-11-04T04:28:09.572Z",
+     "colorIndex": 0
+    },
+    {
+     "candidateID": "172480",
+     "voteCount": 2867833,
+     "avotes": 1254384,
+     "votePct": 35.99,
+     "colorIndex": 1
+    }
+   ],
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 12992619,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 1629644,
+       "provisional": 76668,
+       "advanceTotal": 11286307,
+       "inPersonTotal": 1530934
+      }
+     },
+     "total": 7969000,
+     "registered": 23164977,
+     "voteTypeAvailability": {
+      "electionDayInPerson": false,
+      "advanceTotal": false,
+      "provisional": false,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    },
+    "reportingSources": {
+     "totalBallotsCast": "Stringer",
+     "voteByMode": "CountyAutoScrape",
+     "voteTotal": "Mixed"
+    }
+   },
+   "tabStatusNumber": 2,
+   "raceID": "20261103CA6482",
+   "test": false,
+   "resultsType": "live"
+  },
+  "20261103CA6123": {
+   "statePostal": "CA",
+   "stateName": "California",
+   "reportingunitID": "5",
+   "reportingunitLevel": 1,
+   "pollClosingTime": "2026-11-04T04:00:00.000000Z",
+   "level": "state",
+   "lastUpdated": "2026-11-05T02:01:45.275000Z",
+   "eevp": 61.14,
+   "eevpEdayInPerson": 0,
+   "eevpAdvanceTotal": 0,
+   "eevpProvisional": 0,
+   "candidates": [
+    {
+     "candidateID": "94",
+     "voteCount": 5186216,
+     "avotes": 2506803,
+     "winner": "X",
+     "votePct": 64.19,
+     "calledAt": "2026-11-04T04:00:05.615Z",
+     "colorIndex": 0
+    },
+    {
+     "candidateID": "172439",
+     "voteCount": 2893517,
+     "avotes": 1272407,
+     "votePct": 35.81,
+     "colorIndex": 1
+    }
+   ],
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 13214092,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 1635815,
+       "provisional": 77950,
+       "advanceTotal": 11500327,
+       "inPersonTotal": 1560594
+      }
+     },
+     "total": 8079733,
+     "registered": 23164977,
+     "voteTypeAvailability": {
+      "electionDayInPerson": false,
+      "advanceTotal": false,
+      "provisional": false,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    },
+    "reportingSources": {
+     "totalBallotsCast": "Stringer",
+     "voteByMode": "CountyAutoScrape",
+     "voteTotal": "Mixed"
+    }
+   },
+   "tabStatusNumber": 2,
+   "raceID": "20261103CA6123",
+   "test": false,
+   "resultsType": "live",
+   "flippedSeat": false
+  },
+  "20261103CA6480": {
+   "statePostal": "CA",
+   "stateName": "California",
+   "reportingunitID": "5",
+   "reportingunitLevel": 1,
+   "pollClosingTime": "2026-11-04T04:00:00.000000Z",
+   "level": "state",
+   "lastUpdated": "2026-11-05T02:07:48.017000Z",
+   "eevp": 61.24,
+   "eevpEdayInPerson": 0,
+   "eevpAdvanceTotal": 0,
+   "eevpProvisional": 0,
+   "candidates": [
+    {
+     "candidateID": "105098",
+     "voteCount": 5108336,
+     "avotes": 2472603,
+     "winner": "X",
+     "votePct": 64.02,
+     "calledAt": "2026-11-04T04:28:23.862Z",
+     "colorIndex": 0
+    },
+    {
+     "candidateID": "172469",
+     "voteCount": 2870727,
+     "avotes": 1268032,
+     "votePct": 35.98,
+     "colorIndex": 1
+    }
+   ],
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 13028699,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 1641675,
+       "provisional": 76805,
+       "advanceTotal": 11310219,
+       "inPersonTotal": 1530786
+      }
+     },
+     "total": 7979063,
+     "registered": 23164977,
+     "voteTypeAvailability": {
+      "electionDayInPerson": false,
+      "advanceTotal": false,
+      "provisional": false,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    },
+    "reportingSources": {
+     "totalBallotsCast": "Stringer",
+     "voteByMode": "CountyAutoScrape",
+     "voteTotal": "Mixed"
+    }
+   },
+   "tabStatusNumber": 2,
+   "raceID": "20261103CA6480",
+   "test": false,
+   "resultsType": "live"
+  },
+  "20261103CA6481": {
+   "statePostal": "CA",
+   "stateName": "California",
+   "reportingunitID": "5",
+   "reportingunitLevel": 1,
+   "pollClosingTime": "2026-11-04T04:00:00.000000Z",
+   "level": "state",
+   "lastUpdated": "2026-11-05T02:09:47.884000Z",
+   "eevp": 61.17,
+   "eevpEdayInPerson": 0,
+   "eevpAdvanceTotal": 0,
+   "eevpProvisional": 0,
+   "candidates": [
+    {
+     "candidateID": "105428",
+     "voteCount": 5176978,
+     "avotes": 2492444,
+     "winner": "X",
+     "votePct": 64.94,
+     "calledAt": "2026-11-04T04:58:03.918Z",
+     "colorIndex": 0
+    },
+    {
+     "candidateID": "105195",
+     "voteCount": 2795292,
+     "avotes": 1236272,
+     "votePct": 35.06,
+     "colorIndex": 1
+    }
+   ],
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 13033991,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 1636621,
+       "provisional": 76918,
+       "advanceTotal": 11320452,
+       "inPersonTotal": 1534589
+      }
+     },
+     "total": 7972270,
+     "registered": 23164977,
+     "voteTypeAvailability": {
+      "electionDayInPerson": false,
+      "advanceTotal": false,
+      "provisional": false,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    },
+    "reportingSources": {
+     "totalBallotsCast": "Stringer",
+     "voteByMode": "CountyAutoScrape",
+     "voteTotal": "Mixed"
+    }
+   },
+   "tabStatusNumber": 2,
+   "raceID": "20261103CA6481",
+   "test": false,
+   "resultsType": "live"
+  },
+  "20261103CO6622": {
+   "statePostal": "CO",
+   "stateName": "Colorado",
+   "reportingunitID": "6",
+   "reportingunitLevel": 1,
+   "pollClosingTime": "2026-11-04T02:00:00.000000Z",
+   "level": "state",
+   "lastUpdated": "2026-11-05T06:18:47.685000Z",
+   "eevp": 86.19,
+   "eevpEdayInPerson": 0,
+   "eevpAdvanceTotal": 0,
+   "eevpAbsenteeMail": 0,
+   "candidates": [
+    {
+     "candidateID": "104359",
+     "voteCount": 1361664,
+     "winner": "X",
+     "votePct": 58.16,
+     "calledAt": "2026-11-04T03:08:43.908Z",
+     "colorIndex": 1
+    },
+    {
+     "candidateID": "104624",
+     "voteCount": 979407,
+     "votePct": 41.84,
+     "colorIndex": 0
+    }
+   ],
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 2716018,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 0,
+       "absenteeMail": 30,
+       "advanceTotal": 2716018
+      }
+     },
+     "total": 2341071,
+     "registered": 4595674,
+     "voteTypeAvailability": {
+      "electionDayInPerson": false,
+      "advanceTotal": false,
+      "provisional": false,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    },
+    "reportingSources": {
+     "totalBallotsCast": "Stringer",
+     "voteByMode": "CountyAutoScrape",
+     "voteTotal": "Mixed"
+    }
+   },
+   "tabStatusNumber": 2,
+   "raceID": "20261103CO6622",
+   "test": false,
+   "resultsType": "live"
+  },
+  "20261103CO6619": {
+   "statePostal": "CO",
+   "stateName": "Colorado",
+   "reportingunitID": "6",
+   "reportingunitLevel": 1,
+   "pollClosingTime": "2026-11-04T02:00:00.000000Z",
+   "level": "state",
+   "lastUpdated": "2026-11-05T06:18:42.968000Z",
+   "eevp": 87.27,
+   "eevpEdayInPerson": 0,
+   "eevpAdvanceTotal": 0,
+   "eevpAbsenteeMail": 0,
+   "candidates": [
+    {
+     "candidateID": "104361",
+     "voteCount": 1433885,
+     "winner": "X",
+     "votePct": 60.49,
+     "calledAt": "2026-11-04T02:00:32.286Z",
+     "colorIndex": 0
+    },
+    {
+     "candidateID": "174624",
+     "voteCount": 804930,
+     "votePct": 33.96,
+     "colorIndex": 1
+    },
+    {
+     "candidateID": "67043",
+     "voteCount": 66413,
+     "votePct": 2.8
+    },
+    {
+     "candidateID": "71796",
+     "voteCount": 37739,
+     "votePct": 1.59
+    },
+    {
+     "candidateID": "178822",
+     "voteCount": 14976,
+     "votePct": 0.63
+    },
+    {
+     "candidateID": "178823",
+     "voteCount": 7573,
+     "votePct": 0.32
+    },
+    {
+     "candidateID": "177913",
+     "voteCount": 4765,
+     "votePct": 0.2
+    }
+   ],
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 2716018,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 0,
+       "absenteeMail": 30,
+       "advanceTotal": 2716018
+      }
+     },
+     "total": 2370281,
+     "registered": 4595674,
+     "voteTypeAvailability": {
+      "electionDayInPerson": false,
+      "advanceTotal": false,
+      "provisional": false,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    },
+    "reportingSources": {
+     "totalBallotsCast": "Stringer",
+     "voteByMode": "CountyAutoScrape",
+     "voteTotal": "Mixed"
+    }
+   },
+   "tabStatusNumber": 2,
+   "raceID": "20261103CO6619",
+   "test": false,
+   "resultsType": "live",
+   "flippedSeat": false
+  },
+  "20261103CO6621": {
+   "statePostal": "CO",
+   "stateName": "Colorado",
+   "reportingunitID": "6",
+   "reportingunitLevel": 1,
+   "pollClosingTime": "2026-11-04T02:00:00.000000Z",
+   "level": "state",
+   "lastUpdated": "2026-11-05T06:18:46.001000Z",
+   "eevp": 86.55,
+   "eevpEdayInPerson": 0,
+   "eevpAdvanceTotal": 0,
+   "eevpAbsenteeMail": 0,
+   "candidates": [
+    {
+     "candidateID": "174625",
+     "voteCount": 1397425,
+     "winner": "X",
+     "votePct": 59.44,
+     "calledAt": "2026-11-04T02:52:41.376Z",
+     "colorIndex": 1
+    },
+    {
+     "candidateID": "168013",
+     "voteCount": 884417,
+     "votePct": 37.62,
+     "colorIndex": 0
+    },
+    {
+     "candidateID": "179205",
+     "voteCount": 35430,
+     "votePct": 1.51
+    },
+    {
+     "candidateID": "102768",
+     "voteCount": 18462,
+     "votePct": 0.79
+    },
+    {
+     "candidateID": "178824",
+     "voteCount": 15099,
+     "votePct": 0.64
+    }
+   ],
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 2716018,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 0,
+       "absenteeMail": 30,
+       "advanceTotal": 2716018
+      }
+     },
+     "total": 2350833,
+     "registered": 4595674,
+     "voteTypeAvailability": {
+      "electionDayInPerson": false,
+      "advanceTotal": false,
+      "provisional": false,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    },
+    "reportingSources": {
+     "totalBallotsCast": "Stringer",
+     "voteByMode": "CountyAutoScrape",
+     "voteTotal": "Mixed"
+    }
+   },
+   "tabStatusNumber": 2,
+   "raceID": "20261103CO6621",
+   "test": false,
+   "resultsType": "live"
+  },
+  "20261103IN15010": {
+   "statePostal": "IN",
+   "stateName": "Indiana",
+   "reportingunitID": "15",
+   "reportingunitLevel": 1,
+   "pollClosingTime": "2026-11-04T00:00:00.000000Z",
+   "level": "state",
+   "lastUpdated": "2026-11-05T14:04:06.355000Z",
+   "eevp": 98.02,
+   "eevpEdayInPerson": 21.15,
+   "eevpAdvanceTotal": 25.2,
+   "eevpAbsenteeMail": 14.51,
+   "eevpProvisional": 0,
+   "eevpAdvanceInPerson": 22.83,
+   "candidates": [
+    {
+     "candidateID": "177918",
+     "voteCount": 1006973,
+     "avotes": 53705,
+     "winner": "X",
+     "absenteeMail": 10382,
+     "advanceTotal": 129265,
+     "electionDayInPerson": 105514,
+     "provisional": 0,
+     "votePct": 51.81,
+     "calledAt": "2026-11-04T07:21:21.950Z",
+     "colorIndex": 1
+    },
+    {
+     "candidateID": "162930",
+     "voteCount": 827876,
+     "avotes": 38934,
+     "absenteeMail": 5092,
+     "advanceTotal": 87078,
+     "electionDayInPerson": 113066,
+     "provisional": 0,
+     "votePct": 42.6,
+     "colorIndex": 0
+    },
+    {
+     "candidateID": "178670",
+     "voteCount": 70016,
+     "avotes": 2739,
+     "absenteeMail": 392,
+     "advanceTotal": 5832,
+     "electionDayInPerson": 6139,
+     "provisional": 0,
+     "votePct": 3.6
+    },
+    {
+     "candidateID": "167505",
+     "voteCount": 38612,
+     "avotes": 1691,
+     "absenteeMail": 218,
+     "advanceTotal": 3158,
+     "electionDayInPerson": 5526,
+     "provisional": 0,
+     "votePct": 1.99
+    }
+   ],
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 1982653,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 1088395,
+       "absenteeMail": 110868,
+       "provisional": 1585,
+       "advanceInPerson": 783390,
+       "advanceTotal": 894258
+      }
+     },
+     "total": 1943477,
+     "registered": 4713746,
+     "voteTypeTotals": {
+      "absenteeMail": 16084,
+      "advanceInPerson": 178817,
+      "advanceTotal": 225333,
+      "electionDayInPerson": 230245,
+      "provisional": 0,
+      "typeTotal": 455578
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": false,
+      "absenteeMail": true,
+      "advanceInPerson": true
+     }
+    },
+    "reportingSources": {
+     "totalBallotsCast": "Stringer",
+     "voteByMode": "CountyAutoScrape",
+     "voteTotal": "Mixed"
+    }
+   },
+   "tabStatusNumber": 2,
+   "raceID": "20261103IN15010",
+   "test": false,
+   "resultsType": "live"
+  },
+  "20261103NV29864": {
+   "statePostal": "NV",
+   "stateName": "Nevada",
+   "reportingunitID": "29",
+   "reportingunitLevel": 1,
+   "pollClosingTime": "2026-11-04T03:00:00.000000Z",
+   "level": "state",
+   "lastUpdated": "2026-11-05T13:51:27.563000Z",
+   "eevp": 90.14,
+   "eevpEdayInPerson": 12.73,
+   "eevpAdvanceTotal": 18.26,
+   "eevpAbsenteeMail": 18.25,
+   "eevpProvisional": 0,
+   "eevpAdvanceInPerson": 18.28,
+   "candidates": [
+    {
+     "candidateID": "132242",
+     "voteCount": 572968,
+     "avotes": 60472,
+     "winner": "X",
+     "absenteeMail": 60472,
+     "advanceTotal": 90472,
+     "electionDayInPerson": 17643,
+     "votePct": 56.26,
+     "calledAt": "2026-11-04T09:10:33.858Z",
+     "colorIndex": 1
+    },
+    {
+     "candidateID": "132104",
+     "voteCount": 423076,
+     "avotes": 37637,
+     "absenteeMail": 37637,
+     "advanceTotal": 61338,
+     "electionDayInPerson": 16086,
+     "votePct": 41.54,
+     "colorIndex": 0
+    },
+    {
+     "candidateID": "100013",
+     "voteCount": 22378,
+     "avotes": 1976,
+     "absenteeMail": 1976,
+     "advanceTotal": 2829,
+     "electionDayInPerson": 1080,
+     "votePct": 2.2
+    }
+   ],
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 1129792,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 273367,
+       "absenteeMail": 548357,
+       "provisional": 9698,
+       "advanceInPerson": 298370,
+       "advanceTotal": 846727
+      }
+     },
+     "total": 1018422,
+     "registered": 2506232,
+     "voteTypeTotals": {
+      "absenteeMail": 100085,
+      "advanceInPerson": 54554,
+      "advanceTotal": 154639,
+      "electionDayInPerson": 34809,
+      "typeTotal": 189448
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": false,
+      "absenteeMail": true,
+      "advanceInPerson": true
+     }
+    },
+    "reportingSources": {
+     "totalBallotsCast": "Stringer",
+     "voteByMode": "CountyAutoScrape",
+     "voteTotal": "Mixed"
+    }
+   },
+   "tabStatusNumber": 2,
+   "raceID": "20261103NV29864",
+   "test": false,
+   "resultsType": "live"
+  },
+  "20261103NV29861": {
+   "statePostal": "NV",
+   "stateName": "Nevada",
+   "reportingunitID": "29",
+   "reportingunitLevel": 1,
+   "pollClosingTime": "2026-11-04T03:00:00.000000Z",
+   "level": "state",
+   "lastUpdated": "2026-11-05T08:06:51.000000Z",
+   "eevp": 90.14,
+   "eevpEdayInPerson": 13.59,
+   "eevpAdvanceTotal": 17.82,
+   "eevpAbsenteeMail": 17.87,
+   "eevpProvisional": 0,
+   "eevpAdvanceInPerson": 17.72,
+   "candidates": [
+    {
+     "candidateID": "131963",
+     "voteCount": 530510,
+     "avotes": 336341,
+     "winner": "X",
+     "absenteeMail": 55294,
+     "advanceTotal": 83262,
+     "electionDayInPerson": 16531,
+     "votePct": 51.53,
+     "calledAt": "2026-11-04T09:46:36.197Z",
+     "colorIndex": 1
+    },
+    {
+     "candidateID": "70779",
+     "voteCount": 455302,
+     "avotes": 243556,
+     "absenteeMail": 41404,
+     "advanceTotal": 66541,
+     "electionDayInPerson": 16537,
+     "votePct": 44.22,
+     "colorIndex": 0
+    },
+    {
+     "candidateID": "177925",
+     "voteCount": 28870,
+     "avotes": 15017,
+     "absenteeMail": 3023,
+     "advanceTotal": 4026,
+     "electionDayInPerson": 1335,
+     "votePct": 2.8
+    },
+    {
+     "candidateID": "100013",
+     "voteCount": 14891,
+     "avotes": 8161,
+     "absenteeMail": 1615,
+     "advanceTotal": 2085,
+     "electionDayInPerson": 555,
+     "votePct": 1.45
+    }
+   ],
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 1142197,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 257173,
+       "absenteeMail": 567033,
+       "provisional": 10016,
+       "advanceInPerson": 307975,
+       "advanceTotal": 875008
+      }
+     },
+     "total": 1029573,
+     "registered": 2506232,
+     "voteTypeTotals": {
+      "absenteeMail": 101336,
+      "advanceInPerson": 54578,
+      "advanceTotal": 155914,
+      "electionDayInPerson": 34958,
+      "typeTotal": 190872
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": false,
+      "absenteeMail": true,
+      "advanceInPerson": true
+     }
+    },
+    "reportingSources": {
+     "totalBallotsCast": "Stringer",
+     "voteByMode": "CountyAutoScrape",
+     "voteTotal": "Mixed"
+    }
+   },
+   "tabStatusNumber": 2,
+   "raceID": "20261103NV29861",
+   "test": false,
+   "resultsType": "live",
+   "flippedSeat": true
+  },
+  "20261103NV29862": {
+   "statePostal": "NV",
+   "stateName": "Nevada",
+   "reportingunitID": "29",
+   "reportingunitLevel": 1,
+   "pollClosingTime": "2026-11-04T03:00:00.000000Z",
+   "level": "state",
+   "lastUpdated": "2026-11-05T08:06:41.680000Z",
+   "eevp": 90.11,
+   "eevpEdayInPerson": 13.68,
+   "eevpAdvanceTotal": 17.75,
+   "eevpAbsenteeMail": 17.76,
+   "eevpProvisional": 0,
+   "eevpAdvanceInPerson": 17.73,
+   "candidates": [
+    {
+     "candidateID": "132349",
+     "voteCount": 555522,
+     "avotes": 353754,
+     "winner": "X",
+     "absenteeMail": 58324,
+     "advanceTotal": 87424,
+     "electionDayInPerson": 16836,
+     "votePct": 54.32,
+     "calledAt": "2026-11-04T09:20:37.046Z",
+     "colorIndex": 1
+    },
+    {
+     "candidateID": "132744",
+     "voteCount": 421541,
+     "avotes": 223258,
+     "absenteeMail": 36858,
+     "advanceTotal": 59995,
+     "electionDayInPerson": 15527,
+     "votePct": 41.22,
+     "colorIndex": 0
+    },
+    {
+     "candidateID": "1348",
+     "voteCount": 27804,
+     "avotes": 13244,
+     "absenteeMail": 3522,
+     "advanceTotal": 5030,
+     "electionDayInPerson": 1437,
+     "votePct": 2.72
+    },
+    {
+     "candidateID": "100013",
+     "voteCount": 17842,
+     "avotes": 8665,
+     "absenteeMail": 1484,
+     "advanceTotal": 2128,
+     "electionDayInPerson": 960,
+     "votePct": 1.74
+    }
+   ],
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 1135007,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 254157,
+       "absenteeMail": 564035,
+       "provisional": 9969,
+       "advanceInPerson": 306846,
+       "advanceTotal": 870881
+      }
+     },
+     "total": 1022709,
+     "registered": 2506232,
+     "voteTypeTotals": {
+      "absenteeMail": 100188,
+      "advanceInPerson": 54389,
+      "advanceTotal": 154577,
+      "electionDayInPerson": 34760,
+      "typeTotal": 189337
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": false,
+      "absenteeMail": true,
+      "advanceInPerson": true
+     }
+    },
+    "reportingSources": {
+     "totalBallotsCast": "Stringer",
+     "voteByMode": "CountyAutoScrape",
+     "voteTotal": "Mixed"
+    }
+   },
+   "tabStatusNumber": 2,
+   "raceID": "20261103NV29862",
+   "test": false,
+   "resultsType": "live"
+  },
+  "20261103NV29863": {
+   "statePostal": "NV",
+   "stateName": "Nevada",
+   "reportingunitID": "29",
+   "reportingunitLevel": 1,
+   "pollClosingTime": "2026-11-04T03:00:00.000000Z",
+   "level": "state",
+   "lastUpdated": "2026-11-05T08:06:44.900000Z",
+   "eevp": 90.09,
+   "eevpEdayInPerson": 13.77,
+   "eevpAdvanceTotal": 17.78,
+   "eevpAbsenteeMail": 17.79,
+   "eevpProvisional": 0,
+   "eevpAdvanceInPerson": 17.77,
+   "candidates": [
+    {
+     "candidateID": "132749",
+     "voteCount": 581190,
+     "avotes": 368665,
+     "winner": "X",
+     "absenteeMail": 61711,
+     "advanceTotal": 92505,
+     "electionDayInPerson": 17820,
+     "votePct": 56.88,
+     "calledAt": "2026-11-04T08:39:18.047Z",
+     "colorIndex": 1
+    },
+    {
+     "candidateID": "68854",
+     "voteCount": 403305,
+     "avotes": 211508,
+     "absenteeMail": 35014,
+     "advanceTotal": 57333,
+     "electionDayInPerson": 14886,
+     "votePct": 39.47,
+     "colorIndex": 0
+    },
+    {
+     "candidateID": "166660",
+     "voteCount": 14939,
+     "avotes": 7289,
+     "absenteeMail": 1743,
+     "advanceTotal": 2390,
+     "electionDayInPerson": 869,
+     "votePct": 1.46
+    },
+    {
+     "candidateID": "100013",
+     "voteCount": 13706,
+     "avotes": 6400,
+     "absenteeMail": 1185,
+     "advanceTotal": 1643,
+     "electionDayInPerson": 777,
+     "votePct": 1.34
+    },
+    {
+     "candidateID": "132872",
+     "voteCount": 8701,
+     "avotes": 4127,
+     "absenteeMail": 764,
+     "advanceTotal": 1092,
+     "electionDayInPerson": 480,
+     "votePct": 0.85
+    }
+   ],
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 1134219,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 252900,
+       "absenteeMail": 564330,
+       "provisional": 9975,
+       "advanceInPerson": 307014,
+       "advanceTotal": 871344
+      }
+     },
+     "total": 1021841,
+     "registered": 2506232,
+     "voteTypeTotals": {
+      "absenteeMail": 100417,
+      "advanceInPerson": 54546,
+      "advanceTotal": 154963,
+      "electionDayInPerson": 34832,
+      "typeTotal": 189795
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": false,
+      "absenteeMail": true,
+      "advanceInPerson": true
+     }
+    },
+    "reportingSources": {
+     "totalBallotsCast": "Stringer",
+     "voteByMode": "CountyAutoScrape",
+     "voteTotal": "Mixed"
+    }
+   },
+   "tabStatusNumber": 2,
+   "raceID": "20261103NV29863",
+   "test": false,
+   "resultsType": "live"
+  },
+  "20261103WI50024": {
+   "statePostal": "WI",
+   "stateName": "Wisconsin",
+   "reportingunitID": "50",
+   "reportingunitLevel": 1,
+   "pollClosingTime": "2026-11-04T02:00:00.000000Z",
+   "level": "state",
+   "lastUpdated": "2026-11-04T21:14:43.472000Z",
+   "eevp": 98.5,
+   "eevpEdayInPerson": 0,
+   "eevpAdvanceTotal": 0,
+   "eevpProvisional": 0,
+   "candidates": [
+    {
+     "candidateID": "156768",
+     "voteCount": 1448278,
+     "winner": "X",
+     "advanceTotal": 0,
+     "electionDayInPerson": 0,
+     "votePct": 54.72,
+     "calledAt": "2026-11-04T04:41:02.767Z",
+     "colorIndex": 1
+    },
+    {
+     "candidateID": "175174",
+     "voteCount": 1198329,
+     "advanceTotal": 0,
+     "electionDayInPerson": 0,
+     "votePct": 45.28,
+     "colorIndex": 0
+    }
+   ],
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 2686844,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 1837129,
+       "provisional": 213,
+       "advanceTotal": 849502
+      }
+     },
+     "total": 2646607,
+     "registered": 4970610,
+     "voteTypeTotals": {
+      "advanceTotal": 0,
+      "electionDayInPerson": 0,
+      "typeTotal": 0
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": false,
+      "advanceTotal": false,
+      "provisional": false,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    },
+    "reportingSources": {
+     "totalBallotsCast": "Stringer",
+     "voteByMode": "CountyAutoScrape",
+     "voteTotal": "Mixed"
+    }
+   },
+   "tabStatusNumber": 2,
+   "raceID": "20261103WI50024",
+   "test": false,
+   "resultsType": "live"
+  },
+  "20261103WI50016": {
+   "statePostal": "WI",
+   "stateName": "Wisconsin",
+   "reportingunitID": "50",
+   "reportingunitLevel": 1,
+   "pollClosingTime": "2026-11-04T02:00:00.000000Z",
+   "level": "state",
+   "lastUpdated": "2026-11-04T21:14:50.622000Z",
+   "eevp": 98.5,
+   "eevpEdayInPerson": 0,
+   "eevpAdvanceTotal": 0,
+   "eevpProvisional": 0,
+   "candidates": [
+    {
+     "candidateID": "156426",
+     "voteCount": 1438721,
+     "winner": "X",
+     "advanceTotal": 0,
+     "electionDayInPerson": 0,
+     "votePct": 54.08,
+     "calledAt": "2026-11-04T04:28:00.184Z",
+     "colorIndex": 1
+    },
+    {
+     "candidateID": "67975",
+     "voteCount": 1221668,
+     "advanceTotal": 0,
+     "electionDayInPerson": 0,
+     "votePct": 45.92,
+     "colorIndex": 0
+    }
+   ],
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 2700779,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 1851064,
+       "provisional": 213,
+       "advanceTotal": 849502
+      }
+     },
+     "total": 2660389,
+     "registered": 4970610,
+     "voteTypeTotals": {
+      "advanceTotal": 0,
+      "electionDayInPerson": 0,
+      "typeTotal": 0
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": false,
+      "advanceTotal": false,
+      "provisional": false,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    },
+    "reportingSources": {
+     "totalBallotsCast": "Stringer",
+     "voteByMode": "CountyAutoScrape",
+     "voteTotal": "Mixed"
+    }
+   },
+   "tabStatusNumber": 2,
+   "raceID": "20261103WI50016",
+   "test": false,
+   "resultsType": "live",
+   "flippedSeat": false
+  },
+  "20261103WI50028": {
+   "statePostal": "WI",
+   "stateName": "Wisconsin",
+   "reportingunitID": "50",
+   "reportingunitLevel": 1,
+   "pollClosingTime": "2026-11-04T02:00:00.000000Z",
+   "level": "state",
+   "lastUpdated": "2026-11-04T18:04:51.359000Z",
+   "eevp": 98.5,
+   "eevpEdayInPerson": 0,
+   "eevpAdvanceTotal": 0,
+   "eevpProvisional": 0,
+   "candidates": [
+    {
+     "candidateID": "154331",
+     "voteCount": 1335494,
+     "winner": "X",
+     "advanceTotal": 0,
+     "electionDayInPerson": 0,
+     "votePct": 50.69,
+     "calledAt": "2026-11-04T05:38:09.368Z",
+     "colorIndex": 1
+    },
+    {
+     "candidateID": "154657",
+     "voteCount": 1199558,
+     "advanceTotal": 0,
+     "electionDayInPerson": 0,
+     "votePct": 45.53,
+     "colorIndex": 0
+    },
+    {
+     "candidateID": "178828",
+     "voteCount": 99454,
+     "advanceTotal": 0,
+     "electionDayInPerson": 0,
+     "votePct": 3.78
+    }
+   ],
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 2674605,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 1824890,
+       "provisional": 213,
+       "advanceTotal": 849502
+      }
+     },
+     "total": 2634506,
+     "registered": 4970610,
+     "voteTypeTotals": {
+      "advanceTotal": 0,
+      "electionDayInPerson": 0,
+      "typeTotal": 0
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": false,
+      "advanceTotal": false,
+      "provisional": false,
+      "absenteeMail": false,
+      "advanceInPerson": false
+     }
+    },
+    "reportingSources": {
+     "totalBallotsCast": "Stringer",
+     "voteByMode": "CountyAutoScrape",
+     "voteTotal": "Mixed"
+    }
+   },
+   "tabStatusNumber": 2,
+   "raceID": "20261103WI50028",
+   "test": false,
+   "resultsType": "live"
+  }
+ }
+}

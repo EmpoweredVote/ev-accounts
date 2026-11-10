@@ -30,7 +30,288 @@
           "sha256": "a1142904e692e81f08ce94bef1f5827e9d662ac1f81ce57f6330064169e08945"
         }
       }
+    },
+    {
+      "id": "e66f2bbe0e36d950e8473c32061f50764a5882d16f27dc0b178206d44b2eb432",
+      "kind": "own-words",
+      "url": "https://www.mississippifreepress.org/casualties-of-war-mississippi-voter-purge-bills-poll-tax-dead-for-2021/",
+      "date": "2021-03-04",
+      "date_precision": "day",
+      "passage": "“There’s a fear that people have that you’re going to disenfranchise somebody. And it’s a healthy fear,” he said. “You don’t want to disenfranchise people … but at some point you carry those concerns to the point where you wind up paralyzed with no action.”",
+      "note": "Quoted by the Mississippi Free Press in an interview about his bill HB 586, which would have checked registered voters for non-citizens. He speaks of the worry that such checks could disenfranchise voters and says concern should not stop action.",
+      "subjects": [
+        "voter-roll citizenship checks",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:57:06.422Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e06bef41c35c65f496294345b522545e7b9cb6858110828badfc7317ca507eb3",
+      "kind": "own-words",
+      "url": "https://www.mississippifreepress.org/casualties-of-war-mississippi-voter-purge-bills-poll-tax-dead-for-2021/",
+      "date": "2021-03-04",
+      "date_precision": "day",
+      "passage": "“What the bill effectively did was change how the state verified new registered voters. It would check everybody on the back side,” Eubanks said.",
+      "note": "Quoted by the Mississippi Free Press. He describes HB 586 as moving the citizenship check to after registration, covering everybody.",
+      "subjects": [
+        "voter-roll citizenship checks",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:57:06.422Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cce55aa0825152b1f877832f6abf1d19bf7f00e86c5391d4188f5a4f2d576c8d",
+      "kind": "own-words",
+      "url": "https://www.mississippifreepress.org/casualties-of-war-mississippi-voter-purge-bills-poll-tax-dead-for-2021/",
+      "date": "2021-03-04",
+      "date_precision": "day",
+      "passage": "“If you have no faith in your system, how can you have faith in your leaders?” he said.",
+      "note": "Quoted by the Mississippi Free Press. The article says he argues that measures like HB 586 restore faith in the electoral process; this is his own line on that point.",
+      "subjects": [
+        "election integrity",
+        "voter-roll citizenship checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:57:06.422Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b096560b2dc4776d65cb9a2316000fd8402dc4a9d03949a7600afd6ca4a14b0",
+      "kind": "record",
+      "url": "https://www.mississippifreepress.org/casualties-of-war-mississippi-voter-purge-bills-poll-tax-dead-for-2021/",
+      "date": "2021-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-586-2021",
+      "act": "sponsor",
+      "note": "Per the Mississippi Free Press (not the legislature's page), he introduced House Bill 586, which would have directed the Statewide Elections Management System to check identification databases for registered non-citizens. The bill died.",
+      "subjects": [
+        "voter-roll citizenship checks",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:57:06.422Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d4e868964ed4d56fc32ec792437d9901a88084d804cae2d0686301c5384c34af",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/house/0850033.pdf",
+      "date": "2022-03-29",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "yea",
+      "motion": "House: The conference report on H. B. No. 1510 was adopted by the following vote: (0850033)",
+      "note": "House roll call as printed ('Eubanks'), linked to Dan Eubanks (district 25) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.747Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39b991844f0e395bc487c48e801820733d70f388586c168923fbb49ce0907e59",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2021/pdf/votes/house/0370056.pdf",
+      "date": "2021-02-10",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-586-2021",
+      "act": "yea",
+      "motion": "House: H. B. No. 586 passed by the following vote: (0370056)",
+      "note": "House roll call as printed ('Eubanks'), linked to Dan Eubanks (district 25) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.747Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d07d1b92ab1899d57b36bd28b50384a7f4b1a7f73ad84fbc7a0bfbe4d9a6bf1",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2021/pdf/history/HB/HB0586.xml",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MS-HB-586-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, As Passed the House (HB0586PS; text identical to HB0586IN by comparison)",
+      "note": "Named as prime sponsor ('Eubanks') on the official bill text, summary or journal; linked to Dan Eubanks via the official 2021 member roll of the House (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.747Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7919841f482f7fbde91a529af7a24c5d037df8b0922771e24dad12af155e1c4f",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/house/0360024.pdf",
+      "date": "2018-02-06",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-804-2018",
+      "act": "yea",
+      "motion": "House: H. B. No. 804 passed by the following vote: (0360024)",
+      "note": "House roll call as printed ('Eubanks'), linked to Dan Eubanks (district 25) via the official 2018 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.747Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "61e6da2732509a72ee2384c2f713eba0b3709fbcf941a677e9578677c95fad7d",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/history/HB/HB0950.xml",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "MS-HB-950-2022",
+      "act": "sponsor",
+      "motion": "prime sponsor, HB0950IN",
+      "note": "Named as prime sponsor ('Eubanks') on the official bill text, summary or journal; linked to Dan Eubanks via the official 2022 member roll of the House (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.747Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "95937b47bf94fa62f3f519f18eca795ebf99705543c7e832cb99c5f53d64e9df",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/house/0940041.pdf",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "nay",
+      "motion": "House: S. B. No. 2576 passed by the following vote: (0940041)",
+      "note": "House roll call as printed ('Eubanks'), linked to Dan Eubanks (district 25) via the official 2024 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.747Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b680fb8404ce02d97d84d7e0e33d2bd57ac1c2f65c056d5f4979c0eb31a6ce26",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Eubanks'), linked to Dan Eubanks (district 25) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.747Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "non-citizen voter checks",
+        "voter-roll checks",
+        "election integrity",
+        "election audits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Mississippi Free Press 2021-03-04 article (https://www.mississippifreepress.org/casualties-of-war-mississippi-voter-purge-bills-poll-tax-dead-for-2021/): confirms Dan Eubanks (Walls, House) and holds three own-words passages, copied from the page HTML with curl",
+        "DeSoto County News Senate-run article https://desotocountynews.com/desoto-county-news/called-to-challenge-goliath/: confirms identity; nothing on the subject beyond illegal border crossings, not about voting",
+        "SuperTalk Senate-run article https://www.supertalk.fm/state-rep-eubanks-to-challenge-wicker-for-u-s-senate-seat/: nothing on the subject (southern border only)",
+        "DeSoto County News legislator column 2022-01-17 https://desotocountynews.com/mississippi-news/from-the-legislature-state-rep-dan-eubanks/: nothing on the subject (marijuana, income tax, teacher pay)",
+        "blocked: https://www.taterecord.com/eubanks-seeks-senate-seat (403)",
+        "blocked: https://ballotpedia.org/Dan_Eubanks (known to refuse, not fetched)",
+        "blocked: ontheissues.org (a lead only, never a source), not fetched",
+        "5 web searches (voter ID, citizenship/election integrity, Senate campaign issues, audits/ballots, local coverage); official member page not fetched (record lane handled separately)"
+      ],
+      "found": 4,
+      "at": "2026-11-05T22:57:06.422Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 7,
+      "at": "2026-11-05T23:52:51.747Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
 }

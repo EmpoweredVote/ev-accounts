@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router';
 import { useAuthStore } from '../store/authStore';
+import LocationRecheckNotice from '../components/LocationRecheckNotice';
 import { apiFetch } from '../lib/api';
 import { workosSignOut } from '../lib/workosAuth';
 import PostHistory from '../components/PostHistory';
@@ -66,6 +67,8 @@ interface MeFull {
   display_name: string | null;
   completed_onboarding: boolean;
   location_consent: boolean;
+  /** CA_0369: a basic account whose district maps changed since it added its address. */
+  location_needs_confirmation?: boolean;
   is_admin: boolean;
   verification_rating: number;
   vq_hold_active: boolean;
@@ -599,6 +602,7 @@ export default function DashboardPage() {
                 Civic Spaces →
               </a>
             </div>
+            {me?.location_needs_confirmation && <LocationRecheckNotice />}
             {(jurisdiction.city || jurisdiction.state) && (
               <p className="text-sm font-semibold text-ev-black dark:text-white">
                 {[jurisdiction.city, jurisdiction.state].filter(Boolean).join(', ')}
