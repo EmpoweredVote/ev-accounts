@@ -589,6 +589,14 @@ files for two days** and nothing said so.
   alone. It stays silent when nothing is wrong.
 - ▶ **A CONFLICTING BRANCH DOES NOT GET BETTER BY WAITING.** Merge the base into it early, and do
   it **in that branch's own worktree** — never by moving HEAD in a worktree you did not create.
+- 🔴🔴 **A DUPLICATED REGISTRATION IS NOT A TEXT CONFLICT, SO NEITHER THE MERGE NOR THE DRIFT
+  REPORT CAN SEE IT.** Two branches that add the same `vi.mock`, import, route or handler **in
+  different places** merge cleanly, and the later copy silently wins. Measured 2026-11-10: merging
+  master into `feat/fc-seasons-api` left master's `roleService` mock followed by this branch's
+  older copy of the same mock, so `getCachedUserRoles` returned `[]` for every caller and **five
+  curation tests answered 403 instead of 200** — in a file git had auto-merged without a murmur.
+  ▶ **RUN THE TESTS AFTER A MERGE GIT CALLED CLEAN.** And read `steward who`'s conflict list as a
+  floor: it names the files that collide as *text*, never the ones that collide as *meaning*.
 
 **The board tells you where everyone is.** `steward who` runs on session start, so you begin
 knowing what is claimed. Before working a jurisdiction, take the lease:
