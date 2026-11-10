@@ -1,0 +1,432 @@
+{
+  "politician_id": "17be86d2-303c-4a63-b821-05fd6416c58b",
+  "findings": [
+    {
+      "id": "ca448d274a60df91cabcf5b67ae6abff87b532c64b3860a68b1df8e79c3badd2",
+      "kind": "own-words",
+      "url": "https://patproctor4ks.com",
+      "date": "2026-11-04",
+      "date_precision": "day",
+      "passage": "As a State Representative and Chair of the House Elections Committee, I have championed and enacted into law strong election safeguards: ensuring only US citizens vote, restoring election day as the deadline for casting ballots, and strengthening paper audits of our elections.",
+      "note": "Campaign home page (date is the date fetched; page undated). He lists citizen-only voting among election laws he says he pushed and enacted.",
+      "subjects": [
+        "non-citizen voting",
+        "election integrity laws in general",
+        "mail-ballot deadline"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:17.314Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3bf16c21bea27bc39f6e9f7f3b8f01fc4b506931a0963a9c92e483ad4e25cc30",
+      "kind": "own-words",
+      "url": "https://patproctor4ks.com",
+      "date": "2026-11-04",
+      "date_precision": "day",
+      "passage": "As Secretary of State, I will carry on that mission to strongly safeguard Kansans’ right to vote, ensuring every lawful vote counts and securing our ballots and election processes.",
+      "note": "Campaign home page (undated; date is fetch date). General election-security pledge.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:17.314Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d579f890f03a68d9e82417461fb0edb7167f85fb17acd6d38d7ef28eb05458d4",
+      "kind": "own-words",
+      "url": "https://heartlandernews.com/2026/03/31/final-grade-for-kansas-legislatures-election-integrity-bills-awaits-april-veto-session/",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "passage": "“This is my favorite bill of the year,” Proctor said. “It was the second-to-the-last bill passed in the regular session, so that one was like 25 hours of labor. But we got that passed. It's headed to the governor.”",
+      "note": "Quoted in The Heartlander on HB 2587 (originally HB 2448), which puts citizenship status on new driver's licenses; the outlet says this is so voter ID means more at the polling place.",
+      "subjects": [
+        "citizenship marked on driver's license",
+        "voter ID at the polls",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:17.314Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d4b3e43faec956e9026eeb61ccbb6bdba594afd41d921f915cd001e17d7aed23",
+      "kind": "own-words",
+      "url": "https://heartlandernews.com/2026/03/31/final-grade-for-kansas-legislatures-election-integrity-bills-awaits-april-veto-session/",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "passage": "“Because to me, it's just a slam dunk. I mean, all we're doing is putting citizenship on new driver's licenses that are issued. I don't understand why we're having a problem with that bill at all.",
+      "note": "Quoted in The Heartlander on the driver's-license citizenship bill.",
+      "subjects": [
+        "citizenship marked on driver's license",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:17.314Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43dff8c3bf70edae42a9f822f0c1b3fce143825ccf90ec2fd11d7eed80c91138",
+      "kind": "own-words",
+      "url": "https://heartlandernews.com/2026/03/31/final-grade-for-kansas-legislatures-election-integrity-bills-awaits-april-veto-session/",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "passage": "“These cities and school boards,” Proctor explains, “they do these off-year, off-cycle elections and then they do them by mail-ballot only. So, there is no polling place.",
+      "note": "Quoted in The Heartlander on HB 2503 (end mail-ballot-only elections); he says voter rolls send ballots to people who have moved or died.",
+      "subjects": [
+        "mail-ballot elections",
+        "voter-roll accuracy"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:17.314Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "df757aeba4196787f10c9b2bed995f6269f555de9b12a21a9249dd454f019cc4",
+      "kind": "own-words",
+      "url": "https://hayspost.com/posts/1069c202-2991-4f2f-9961-773bec76a5a4",
+      "date": "2025-12-14",
+      "date_precision": "day",
+      "passage": "\"Do I believe that there is a vast conspiracy for noncitizens to vote in the state of Kansas? No,\" he said.",
+      "note": "Hays Post report of his talk at Fort Hays State (published 2025-12-14; talk was the preceding Tuesday). He says he does not believe in a vast conspiracy, and that the point is to be able to say confidently that voter rolls are scrubbed.",
+      "subjects": [
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:17.314Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3c118268cd9136187ec2690f0632d123c72641858189e83a7fa297b1b7622e0b",
+      "kind": "own-words",
+      "url": "https://hayspost.com/posts/1069c202-2991-4f2f-9961-773bec76a5a4",
+      "date": "2025-12-14",
+      "date_precision": "day",
+      "passage": "\"I want to change the law so that you have to be a qualified Kansas elector to turn in a Kansas ballot because,\" he said. \"The second thing is that right now on the ballot, the person who turns it in for somebody else has to sign. I want them to also have to put their driver's license number.\"",
+      "note": "Hays Post quote: his plan for mail-ballot returns by third parties, including an ID number from the person who returns the ballot.",
+      "subjects": [
+        "ID number with a mail ballot",
+        "ballot harvesting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:17.314Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5d0aa8d7d2e22f1af781d995086ba260a8869b742d54997be36179ef46f8849",
+      "kind": "own-words",
+      "url": "https://www.kcur.org/politics-elections-and-government/2026-02-24/kansas-house-passes-election-bills-restricting-early-voting-and-mail-in-ballots",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "passage": "“Am I up here saying that there’s a vast conspiracy to let noncitizens vote?” Proctor said. “No.”",
+      "note": "Kansas Reflector story (via KCUR) on House debate of HB 2491, the non-citizen voter-roll bill. He says non-citizens end up on rolls unintentionally.",
+      "subjects": [
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:17.314Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4faaca38a8f4d103d01baf8a6b482a09d184fc86babbc5f6220a54ad71f5b391",
+      "kind": "own-words",
+      "url": "https://www.kcur.org/politics-elections-and-government/2026-02-24/kansas-house-passes-election-bills-restricting-early-voting-and-mail-in-ballots",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "passage": "“But we owe it to Kansans to be able to tell them with confidence, ‘No, noncitizens are not voting, and we know because we have all these different ways of scrubbing the voter rolls to make sure they never get on the voter rolls in the first place,’ ” he said.",
+      "note": "Kansas Reflector story (via KCUR), House debate on HB 2491.",
+      "subjects": [
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:17.314Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "311508a228719a90808cfaf2b457c6c995473b675a0a881a8fb8f8719e02442e",
+      "kind": "own-words",
+      "url": "https://www.kcur.org/politics-elections-and-government/2026-08-03/kansas-secretary-of-state-election-2026-guide",
+      "date": "2026-08-03",
+      "date_precision": "day",
+      "passage": "Proctor said the amendment would change the state constitution from reading that “every” citizen can vote, to “only” citizens can vote.",
+      "note": "Reporter's paraphrase of Proctor on his constitutional amendment (HCR 5004) on the November 2026 ballot; only the words 'every' and 'only' are his in quotation marks. Weak own-words; kept as a lead.",
+      "subjects": [
+        "citizenship to vote (constitutional amendment)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:17.314Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "614b60ec9dde768148ac9dddee0a28ed0e8605e6538814d9d3ce51fe432b67d1",
+      "kind": "own-words",
+      "url": "https://www.kslegislature.gov/b2025_26/committees/testimony/pdf/?apn=b2025_26/year2/senate/committees/ctte_s_fed_st_1/testimony/published/ctte_s_fed_st_1_20250310_21_testimony.html",
+      "date": "2025-02-04",
+      "date_precision": "day",
+      "passage": "Thank you for allowing me to appear in strong support of HCR5004.",
+      "note": "Written testimony to Senate Federal and State Affairs, dated February 04, 2025, signed Pat Proctor, PhD, State Representative, House District 41. Hearing was 2025-03-10.",
+      "subjects": [
+        "non-citizen voting",
+        "citizenship in the Kansas Constitution"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-ks-r2-2026-11-04",
+        "fetched_at": "2026-11-04T17:08:27.262Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c48316c434ad2535c8d79125c0b0ac2cc502282e5e6b965b4b3ac8f2938bd107",
+      "kind": "own-words",
+      "url": "https://www.kslegislature.gov/b2025_26/committees/testimony/pdf/?apn=b2025_26/year2/senate/committees/ctte_s_fed_st_1/testimony/published/ctte_s_fed_st_1_20250310_21_testimony.html",
+      "date": "2025-02-04",
+      "date_precision": "day",
+      "passage": "This Resolution proposes an amendment to the Kansas Constitution to make it clear that only U.S. Citizens are allowed to vote in any election in the state of Kansas -- from bond issues and local elections to presidential elections.",
+      "note": "Same signed written testimony.",
+      "subjects": [
+        "non-citizen voting",
+        "citizenship in the Kansas Constitution"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-ks-r2-2026-11-04",
+        "fetched_at": "2026-11-04T17:08:27.262Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "50e867f7721af0c25422c471d84a9f6482fa96abd1e3657450f6db35f20f07a4",
+      "kind": "own-words",
+      "url": "https://www.kslegislature.gov/b2025_26/committees/testimony/pdf/?apn=b2025_26/year2/senate/committees/ctte_s_fed_st_1/testimony/published/ctte_s_fed_st_1_20250310_21_testimony.html",
+      "date": "2025-02-04",
+      "date_precision": "day",
+      "passage": "The Constitutional amendment proposed in this resolution would preclude a municipality or future Kansas Supreme Court from allowing non-citizens to vote by making explicit in the Kansas Constitution the principle that only U.S. citizens may vote.",
+      "note": "Same signed written testimony; his stated reason for the amendment.",
+      "subjects": [
+        "non-citizen voting",
+        "citizenship in the Kansas Constitution"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-ks-r2-2026-11-04",
+        "fetched_at": "2026-11-04T17:08:27.262Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a180dac9fbe82db0f7ed1e12eb5a8927f8abd4f868ef36e3cf40bf126221dbed",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/house/legislative_days/day045_20250320/vote_records/0275_HB2020.odt",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "House: Concurred with amendments",
+      "note": "House roll call as printed ('Proctor'), linked to Pat Proctor (district 41) via the official 2025 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.938Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba7a4d666ff4f78f90fc1c3060009b25057e446b4bc7846bcf906e1cf07d44b3",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day051_20260326/vote_records/0342_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "House: Conference Committee Report was adopted",
+      "note": "House roll call as printed ('Proctor'), linked to Pat Proctor (district 41) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.938Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21f55a599c11a6bfd03cc0b661541d4440ff0a0808ab91e9abc25020cfb5fc94",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day053_20260409/vote_records/0408_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "House: Motion to override veto prevailed",
+      "note": "House roll call as printed ('Proctor'), linked to Pat Proctor (district 41) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.938Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45a6a0e651989653960fc97af7759af58ffb11d0dd3f56bdfeab65bb700b032e",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day023_20260212/vote_records/0067_HB2448.odt",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2448-2026",
+      "act": "yea",
+      "motion": "House: Emergency Final Action - Passed as amended",
+      "note": "House roll call as printed ('Proctor'), linked to Pat Proctor (district 41) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.938Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "ID with mail ballot",
+        "documentary proof of citizenship / SAVE Act",
+        "citizenship on driver's license",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site patproctor4ks.com",
+        "KCUR/KNS candidate guide 2026-08-03",
+        "HPPR candidate guide 2026-08-04 (no first-person words on subject)",
+        "Hays Post 2025-12-14",
+        "The Heartlander 2026-03-31",
+        "KCUR/Kansas Reflector 2026-02-24",
+        "House Elections Committee HB 2448 testimony PDFs 01-06,12,15,106,151 (none by him)",
+        "web news searches (3)",
+        "blocked: https://kansasreflector.com/2025/04/04/leavenworth-house-member-first-republican-to-declare-as-2026-candidate-for-secretary-of-state/",
+        "blocked: https://kansasreflector.com/2026/02/26/sisyphus-in-kansas-pat-proctors-efforts-to-restore-confidence-in-voting-system-appear-ill-fated/",
+        "blocked: https://kclyradio.com/?p=156149",
+        "blocked: https://www.newsfromthestates.com/node/426715",
+        "blocked: https://ballotpedia.org",
+        "not reviewed: kslegislature.gov member page and sponsorship pages (record lane linked separately)"
+      ],
+      "found": 10,
+      "at": "2026-11-04T16:43:17.314Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "non-citizen voting",
+        "citizenship in the Kansas Constitution (HCR 5004)"
+      ],
+      "places": [
+        "HCR 5004 bill page (kslegislature.gov/li/b2025_26/measures/hcr5004/): all 19 linked testimony PDFs read with curl|pdftotext; only Senate Federal and State Affairs item _21 is signed by Pat Proctor (House committee items were by others; he chaired that hearing)",
+        "testimony lists of HB 2448, HB 2056, HB 2106, HB 2007, HB 2318, HB 2552, HB 2553, HB 2231 (all linked PDFs read; none signed by him; hits for his name were only 'Chair Proctor' salutations or third-party mentions)",
+        "blocked: https://ballotpedia.org (403, not fetched)",
+        "blocked: https://kansasreflector.com (403, not fetched)"
+      ],
+      "found": 3,
+      "at": "2026-11-04T17:08:27.262Z",
+      "by": "research-ks-r2-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T19:13:24.938Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

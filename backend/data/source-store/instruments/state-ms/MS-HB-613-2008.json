@@ -1,0 +1,48 @@
+{
+  "id": "MS-HB-613-2008",
+  "scope": "state:ms",
+  "title": "HB 613 (2008 Regular Session): Voter identification; require for all except certain older electors.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2008/pdf/history/HB/HB0613.xml",
+    "https://billstatus.ls.state.ms.us/documents/2008/pdf/HB/0600-0699/HB0613IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1(1)\n(quote) Each person, except a person born before 1942, who shall appear to vote in person at a polling place or the registrar's office shall be required to identify himself or herself to an election manager or the registrar by presenting current state-issued photo identification.\n(section) Sec. 1(2)(b)\n(quote) On and after January 1, 2009, the identification required by subsection (1) of this section shall be limited to the following: (i) A current and valid Mississippi driver's license; or (ii) A voter registration card with the elector's photograph and that lists the identification cardholder number required under the provisions of law regulating the Statewide Centralized Voter System.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) Sec. 5(3) (23-15-631)\n(quote) The Secretary of State shall prepare instructions on how absentee voters may comply with the identification requirements of Section 1 of House Bill No.\n(section) Sec. 9 (23-15-719)\n(quote) The registrar shall identify the applicant by requiring him to present identification as required by Section 1 of House Bill No.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 3(1) (23-15-169.1)\n(quote) The Secretary of State and the Commissioner of Public Safety shall enter into an agreement to grant the Secretary of State's Office \"read only\" access to the driver's license database and identification cardholder database for the purpose of matching information in the database of the Statewide Centralized Voter System created in Section 23-15-163 et seq.\n(other) Sec. 2: 23-15-33 photo registration card by Jan 1 2009\n(other) Sec. 3(2): voter registration cards with photographs\n(other) Sec. 4: 23-15-163 brought forward\n(other) Sec. 6-9: 23-15-639, 23-15-11, 23-15-541, 23-15-719 conformed\n(other) Sec. 10-11: preclearance, effective date",
+  "sponsors": [
+    {
+      "name": "Sullivan",
+      "role": "prime",
+      "version": "HB0613IN"
+    },
+    {
+      "name": "Bell",
+      "role": "co",
+      "version": "HB0613IN"
+    },
+    {
+      "name": "Gunn",
+      "role": "co",
+      "version": "HB0613IN"
+    },
+    {
+      "name": "Ward",
+      "role": "co",
+      "version": "HB0613IN"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

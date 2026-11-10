@@ -1,0 +1,65 @@
+{
+  "id": "OH-SB-323-2020",
+  "scope": "state:oh",
+  "title": "SB 323 (2019-2020 (133th General Assembly)): S. B. No. 323: Change election law regarding absentee voting and registration",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/133/sb323",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/sb323/00_IN/html/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) 3509.05(A)(2)\n(quote) (2) In the case of absent voter's ballots, if the elector does not provide the elector's driver's license number or the last four digits of the elector's social security number on the statement of voter on the identification envelope, the elector also shall include in the return envelope with the identification envelope a copy of the elector's current valid photo identification, a copy of a military identification, or a copy of a current utility bill, bank statement, government check, paycheck, or other government document\n(section) 3509.031(A)(3)(c)\n(quote) (c) The elector attests to the truth and accuracy of the information submitted in the online application under penalty of election falsification using the elector's birth date and the elector's Ohio driver's license number, the elector's Ohio identification card number, or the last four digits of the elector's social security number as proof of the elector's identity.\n(d_proof_of_citizenship)\n(section) 3503.15(H)(1)\n(quote) (H) The secretary of state shall conduct an annual review of the statewide voter registration database as follows: (1) The secretary of state shall compare the information in the statewide voter registration database with the information the secretary of state obtains from the bureau of motor vehicles under division (A)(2) of this section to identify any person who does all of the following, in the following order: (a) Submits documentation to the bureau of motor vehicles that indicates that the person is not a United States citizen;\n(section) 3503.15(H)(2)\n(quote) (2) The secretary of state shall send a written notice to each person identified under division (H)(1) of this section, instructing the person either to confirm that the person is a United States citizen or to submit a completed voter registration cancellation form to the secretary of state.\n(e_other_rule)\n(section) 3503.20(A)\n(quote) (A) As used in this section, \"applicant\" means a person who meets both of the following requirements: (1) The person is qualified to register to vote under this chapter; and (2) The person has a current and valid Ohio driver's license or identification card issued under Chapter 4507. of the Revised Code or a social security number.\n(section) 3503.20(B)(2)(a)(iv)\n(quote) (iv) Identification in the form of either the last four digits of the applicant's social security number, or the applicant's Ohio driver's license number or the number of the applicant's state identification card issued under section 4507.50 of the Revised Code.\n(other) 3509.031 (new): online application for absent voter's ballots\n(other) 3509.032, 3509.042 (new), 3509.041, 3509.052: Secretary of State mails an absentee application, return postage prepaid, to every elector before every election; boards pay no postage; ballot drop boxes\n(other) 3509.03, 3509.04, 3509.05, 3509.08, 3509.09, 3511.x: absentee application and return changes; a provisional absent voter's ballot and affirmation envelope; relatives may deliver ballots\n(other) 3503.20: online registration open to a person with an Ohio license or ID card or a social security number; party affiliation choice\n(other) 3503.x, 3513.x, 3517.x, 3599.x, 3319.077, 111.31: related election administration, a fund for absentee mailing, penalties\n(other) Repeals 3503.29 and 3511.13; declares an emergency (takes effect on passage)\n(other) note: Only one version (introduced), with markers. It does not amend 3505.18, so no in-person ID text appears. The mail-ballot ID sentence is reprinted unchanged except for added numbering. The 3503.15(H) citizenship review is existing law reprinted with a wording change ('updates the person's voter registration' replaces 'submits a voter registration change...form'); it checks bureau of motor vehicles records of people who showed non-citizen documents and then registered or voted, and only flagged people must confirm citizenship or cancel.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Nickie J. Antonio",
+      "role": "prime",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Sandra R. Williams",
+      "role": "prime",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Hearcel F. Craig",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Teresa Fedor",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Tina Maharath",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Sean J. O'Brien",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Vernon Sykes",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Cecil Thomas",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Kenny Yuko",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

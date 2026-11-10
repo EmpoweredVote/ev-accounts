@@ -1,0 +1,68 @@
+{
+  "id": "KS-SB-333-2016",
+  "scope": "state:ks",
+  "title": "SB 333 (2015-2016 Regular Session (2016)): Voter registration; citizenship requirements. (index); AN ACT concerning elections; relating to voter registration; concerning citizenship requirements; amending K.S.A. 2015 Supp. 25-2309 and repealing the existing section.",
+  "urls": [
+    "https://www.kslegislature.gov/li_2016/b2015_16/measures/sb333/",
+    "https://www.kslegislature.gov/li_2016/b2015_16/measures/documents/sb333_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) K.S.A. 25-2309(m)\n(quote) (m) An applicant who was born in Kansas shall not be required to present proof of citizenship as provided in subsection (l).\n(section) K.S.A. 25-2309(l)\n(quote) (l) Except as provided in subsection (m), the county election officer or secretary of state's office shall accept any completed application for registration, but an applicant shall not be registered until the applicant has provided satisfactory evidence of United States citizenship.\n(e_other_rule) not stated.\n(other) K.S.A. 25-2309: exempts applicants born in Kansas from the documentary proof of citizenship; adds a registration-form box asking whether the applicant was born in Kansas; the state registrar of vital statistics checks the birth record.",
+  "sponsors": [
+    {
+      "name": "Hensley",
+      "role": "prime",
+      "version": "As introduced (sb333_00_0000.pdf); no later version exists on the legislature site"
+    },
+    {
+      "name": "Faust-Goudeau",
+      "role": "co",
+      "version": "As introduced (sb333_00_0000.pdf); no later version exists on the legislature site"
+    },
+    {
+      "name": "Francisco",
+      "role": "co",
+      "version": "As introduced (sb333_00_0000.pdf); no later version exists on the legislature site"
+    },
+    {
+      "name": "Haley",
+      "role": "co",
+      "version": "As introduced (sb333_00_0000.pdf); no later version exists on the legislature site"
+    },
+    {
+      "name": "Hawk",
+      "role": "co",
+      "version": "As introduced (sb333_00_0000.pdf); no later version exists on the legislature site"
+    },
+    {
+      "name": "Holland",
+      "role": "co",
+      "version": "As introduced (sb333_00_0000.pdf); no later version exists on the legislature site"
+    },
+    {
+      "name": "Kelly",
+      "role": "co",
+      "version": "As introduced (sb333_00_0000.pdf); no later version exists on the legislature site"
+    },
+    {
+      "name": "Pettey",
+      "role": "co",
+      "version": "As introduced (sb333_00_0000.pdf); no later version exists on the legislature site"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

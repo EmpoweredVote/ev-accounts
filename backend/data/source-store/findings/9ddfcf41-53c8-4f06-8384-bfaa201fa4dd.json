@@ -1,0 +1,161 @@
+{
+  "politician_id": "9ddfcf41-53c8-4f06-8384-bfaa201fa4dd",
+  "findings": [
+    {
+      "id": "c04c62dfee42ae827ebfaf29de5059fca774c1507789e92ac95ab03b2307e143",
+      "kind": "record",
+      "url": "https://ohiosenate.gov/members/brian-m-chavez/news/chavez-approves-11-billion-transportation-budget-passed-by-ohio-senate",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Release 'Chavez Approves $11 Billion Transportation Budget Passed by Ohio Senate' on his official Senate page",
+      "note": "His release, welcoming Senate passage of the transportation budget, says the budget keeps voter registration at the BMV in place on condition that the applicant shows proof of U.S. citizenship, and adds that citizenship is required to vote in Ohio. The sentence is narrative text, not a quotation of him; the fetch tool returned only part of it, so no verbatim passage is saved.",
+      "subjects": [
+        "proof of citizenship to register (BMV)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:20:02.896Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a5bb1634ad5907616b86f560b8ecf96dfd5e4f77b5422bf26d6c663888557876",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "yea",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 23-10) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (sen_chavez_brian_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4c1f5fb2164062ff2f044b0322d2c82f7d347d63e7e3db39a346504a6a33e73f",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "yea",
+      "motion": "Senate: Concurred in House amendments",
+      "note": "OH Senate floor roll call (Concurred in House amendments, tally 23-10) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (sen_chavez_brian_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f13f923a9c6762dac1ec783ec55a014bc5e047ca8cf95da1a2ce9b180d4455de",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "yea",
+      "motion": "Senate: Adopted",
+      "note": "OH Senate floor roll call (Adopted, tally 22-9) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (sen_chavez_brian_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.686Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID in the state constitution (SJR 10 / State Issue 3)",
+        "proof of citizenship to register (BMV)",
+        "noncitizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site: https://ohiosenate.gov/members/brian-m-chavez (confirms Senator, Senate District 30) and his news list (26 items; 25 read by title, one on the transportation budget opened in full)",
+        "his own 2025-03-20 release on the Senate-passed transportation budget (one sentence on voter registration at the BMV with proof of citizenship; the fetch tool would not return that sentence whole, so no passage is saved)",
+        "not reviewed: news list item 26 (page 2 not returned by the fetch tool)",
+        "blocked: https://ohiohouse.gov/members/brian-chavez (HTTP 500; he is a Senator, so the House page is not his)",
+        "not reviewed: legislature.ohio.gov bill and testimony pages (certificate error in fetch tool; curl 403 on that host)",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (named in the instructions as refusing fetches)",
+        "blocked: web search (this turn's web search budget is used up: limit 200 per turn, shared by every agent in it); no web search could be run for this person",
+        "campaign site, questionnaires and local outlets: not reviewed, because no search was possible to find them"
+      ],
+      "found": 1,
+      "at": "2026-11-06T15:20:02.896Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 3,
+      "at": "2026-11-06T16:28:34.686Z",
+      "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID in the state constitution (SJR 10 / State Issue 3)",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record: not re-run this round (round 1 found 0 meetings)",
+        "web searches run this round (about 5): name plus voter ID, photo ID, Issue 3, proof of citizenship, noncitizen voting, questionnaire",
+        "blocked: https://www.legislature.ohio.gov (curl 403); read the same testimony lists on ohiohouse.gov instead",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (named as refusing fetches, not tried)",
+        "https://ohiosenate.gov/members/brian-m-chavez/news (25 of 26 items read by title this round; none on ID, ballots or citizenship beyond the 2025-03-20 transportation release already on file)",
+        "https://ivoterguide.com/candidate/78700/race/20948/election/1201 (2024 questionnaire: he did not answer the photo-ID question or the other elections question; nothing on the subject)",
+        "https://branch.vote candidate page (search result only: no voting and elections information from him as of Aug 2024; not opened)",
+        "https://ohiohouse.gov/legislation/136/sjr10/committee (testimony list: no testimony by him)",
+        "https://ohiohouse.gov/legislation/136/sb293/committee (testimony list: no testimony by him)",
+        "https://ohiohouse.gov/legislation/134/sjr6/committee and 135/hb472 (no testimony by him)",
+        "https://ohiosenate.gov/members/brian-m-chavez/news item 26 (page 2 not returned): not reviewed",
+        "blocked: https://ohiosenate.gov/members/brian-m-chavez/news/chavez-approves-11-billion-transportation-budget-passed-by-ohio-senate by curl (empty); fetch tool does not return the sentence whole, so nothing saved",
+        "campaign site: none found by search"
+      ],
+      "found": 0,
+      "at": "2026-11-06T16:41:40.450Z",
+      "by": "research-oh-r2-2026-11-06"
+    }
+  ]
+}

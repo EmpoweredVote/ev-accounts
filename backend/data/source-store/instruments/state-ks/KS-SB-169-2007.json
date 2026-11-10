@@ -1,0 +1,207 @@
+{
+  "id": "KS-SB-169-2007",
+  "scope": "state:ks",
+  "title": "SB 169 (2007-2008 Regular Session (2007)): AN ACT concerning elections; concerning presentation of photographic identification at time of voting; amending K.S.A. 2006 Supp. 25-1122, 25-1123, 25-2309, 25-2908 and 25-3002 and repealing the existing sections. (as voted by the Senate 2007-02-15); House Substitute for SENATE BILL No. 169 (archive file, 2008): AN ACT concerning elections; concerning presentation of photographic identification at time of voting; amending K.S.A. 2007 Supp. 25-1122, 25-1123, 25-2908 and 25-3002 ...",
+  "urls": [
+    "https://www.kslegislature.gov/historical_data/journals/2008/2007_S_Journal_0215.pdf",
+    "https://www.kslegislature.gov/historical_data/bills/2008/2007_S_Bill_169.pdf"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) House Substitute for SB 169, K.S.A. 25-2908(i)(1)\n(quote) The following forms of identification shall be considered current and valid if such form of identification contains the name and photograph of the applicant and an expiration date which has not expired: (A) A Kansas driver’s license; (B) a Kansas identification card issued by the Kansas department of revenue; (C) a United States passport; (D) an employee badge or identification; (E) a debit or credit card; (F) a military identification; (G) a student identification; or (H) a public assistance identification.\n(b_no_id_remedy)\n(section) House Substitute for SB 169, K.S.A. 25-2908\n(quote) If the voter fails to furnish the identification required by this subsection, the voter shall be allowed to vote a provisional ballot. The canvassing board shall determine the validity of the ballot pursuant to K.S.A. 25-3002 and amendments thereto.\n(c_mail_ballot_id)\n(section) House Substitute for SB 169, K.S.A. 25-1122(c)\n(quote) (c) If the registered voter is applying for an advance voting ballot to be transmitted by mail, and such voter is a first-time voter, such voter shall provide on the application for an advance voting ballot the voter’s current and valid Kansas driver’s license number, nondriver’s identification card number or the last four digits of the voter’s social security number, or shall provide with the application a copy of the voter’s current and valid Kansas driver’s license, nondriver’s identification card, utility bill, bank statement, paycheck, government check or other government document containing the voter’s current name and address as indicated on the registration book.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) K.S.A. 25-1122, 25-1123, 25-2908, 25-3002: photo ID for in-person voters from January 1, 2010 (House substitute); the Senate-passed 2007 version also amended 25-2309 (registration; Senator explanations of vote in the Senate Journal describe a birth-certificate proof-of-citizenship requirement).",
+  "sponsors": [
+    {
+      "name": "Committee on Elections and Governmental Organization",
+      "role": "prime",
+      "version": "House Substitute for Senate Bill No. 169 as amended by House Committee of the Whole (archive file 2007_S_Bill_169.pdf). The version the Senate voted on 2007-02-15 was not located."
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2007-02-15",
+      "body": "KS Senate",
+      "motion": "SB 169, An act concerning elections; concerning presentation of photographic identification at time of voting; amending K.S.A. 2006 Supp. 25-1122, 25-1123, 25-2309, 25-2908 and 25-3002 and repealing the existing sections. (The bill passed, as amended.)",
+      "kind": "roll-call",
+      "yes": 28,
+      "no": 12,
+      "absent": 0,
+      "body_size": 40,
+      "note": "161 | https://www.kslegislature.gov/historical_data/journals/2008/2007_S_Journal_0215.pdf",
+      "members": [
+        {
+          "name": "Apple",
+          "vote": "yea"
+        },
+        {
+          "name": "Barnett",
+          "vote": "yea"
+        },
+        {
+          "name": "Barone",
+          "vote": "yea"
+        },
+        {
+          "name": "Brownlee",
+          "vote": "yea"
+        },
+        {
+          "name": "Bruce",
+          "vote": "yea"
+        },
+        {
+          "name": "Brungardt",
+          "vote": "yea"
+        },
+        {
+          "name": "Donovan",
+          "vote": "yea"
+        },
+        {
+          "name": "Emler",
+          "vote": "yea"
+        },
+        {
+          "name": "Gilstrap",
+          "vote": "yea"
+        },
+        {
+          "name": "Huelskamp",
+          "vote": "yea"
+        },
+        {
+          "name": "Jordan",
+          "vote": "yea"
+        },
+        {
+          "name": "Journey",
+          "vote": "yea"
+        },
+        {
+          "name": "Lynn",
+          "vote": "yea"
+        },
+        {
+          "name": "McGinn",
+          "vote": "yea"
+        },
+        {
+          "name": "Morris",
+          "vote": "yea"
+        },
+        {
+          "name": "Ostmeyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Palmer",
+          "vote": "yea"
+        },
+        {
+          "name": "Petersen",
+          "vote": "yea"
+        },
+        {
+          "name": "Pine",
+          "vote": "yea"
+        },
+        {
+          "name": "Pyle",
+          "vote": "yea"
+        },
+        {
+          "name": "Schmidt D",
+          "vote": "yea"
+        },
+        {
+          "name": "Schmidt V",
+          "vote": "yea"
+        },
+        {
+          "name": "Schodorf",
+          "vote": "yea"
+        },
+        {
+          "name": "Steineger",
+          "vote": "yea"
+        },
+        {
+          "name": "Taddiken",
+          "vote": "yea"
+        },
+        {
+          "name": "Umbarger",
+          "vote": "yea"
+        },
+        {
+          "name": "Wagle",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilson",
+          "vote": "yea"
+        },
+        {
+          "name": "Allen",
+          "vote": "nay"
+        },
+        {
+          "name": "Betts",
+          "vote": "nay"
+        },
+        {
+          "name": "Francisco",
+          "vote": "nay"
+        },
+        {
+          "name": "Goodwin",
+          "vote": "nay"
+        },
+        {
+          "name": "Haley",
+          "vote": "nay"
+        },
+        {
+          "name": "Hensley",
+          "vote": "nay"
+        },
+        {
+          "name": "Kelly",
+          "vote": "nay"
+        },
+        {
+          "name": "Lee",
+          "vote": "nay"
+        },
+        {
+          "name": "Reitz",
+          "vote": "nay"
+        },
+        {
+          "name": "Teichman",
+          "vote": "nay"
+        },
+        {
+          "name": "Vratil",
+          "vote": "nay"
+        },
+        {
+          "name": "Wysong",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "id": "OH-HB-402-2015",
+  "scope": "state:oh",
+  "title": "HB 402 (2015-2016 (131th General Assembly)): H. B. No. 402: Modifies conditions for canceling voter registration",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/131/hb402",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_131/legislation/hb402/00_IN/html/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) 3503.21(B)(2)(a)\n(quote) (a) The secretary of state shall prescribe a process to use the national change of address service provided by the United States postal service system through its licensees to identify and cancel the registration of any registrant who changes the elector's voting residence to a location outside this state. That process shall be uniform and nondiscriminatory, shall comply with the Voting Rights Act of 1965, and shall be completed not later than ninety days prior to the date of any primary or general election for federal office.\n(section) 3503.21(B)(2)(c)\n(quote) (c) The secretary of state or a board of elections shall not mail a confirmation notice to an elector or cancel an elector's registration under division (B)(2) of this section unless the secretary of state or the board possesses reliable evidence from the national change of address service that the elector has changed the elector's voting residence to a location outside this state.\n(section) 3503.21(A)(7)\n(quote) STRUCK: (7) The failure of the registered elector, after having been mailed a confirmation notice, to do either of the following: (a) Respond to such a notice and vote at least once during a period of four consecutive years, which period shall include two general federal elections;\n(other) 3501.05(Q)(1): removal of voters who moved is limited to those who moved outside Ohio, identified by the national change of address service\n(other) 3503.21(A)(6)-(7), (B)(1): cancel a registration when the voter registers in another Ohio county; cancel on a move out of state; the old 'did not respond to a notice and did not vote for four years' ground in (A)(7) is struck\n(other) 3503.21(F): a registration cancelled in error is restored as of the cancellation date, and a ballot cast in the gap counts as cast by a registered voter\n(other) note: Only one version (introduced), with markers. No ID or citizenship text. It limits voter-roll removal to moves out of state shown by national change of address data, and keeps the confirmation-notice rule in (B)(2)(b) that cancels after the voter fails to respond and fails to vote in two federal elections.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Kathleen Clyde",
+      "role": "prime",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Nickie J. Antonio",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Michael Ashford",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Kevin Boyce",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Janine R. Boyd",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Nicholas Celebrezze",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Teresa Fedor",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "David Leland",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Michele Lepore-Hagan",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Michael J. O'Brien",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Debbie Phillips",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Daniel Ramos",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Alicia Reece",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "John M. Rogers",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Michael Sheehy",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Kent Smith",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Fred Strahorn",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Emilia Strong Sykes",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

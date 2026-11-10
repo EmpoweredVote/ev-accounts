@@ -1,0 +1,248 @@
+{
+  "politician_id": "88d523e9-6e21-42f0-bc31-d01c4bb1f3b1",
+  "findings": [
+    {
+      "id": "f54156239de5adc6f06f0e698e955b0da20082e4401e427f26ff1272223169ee",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/catherine-d-ingram/news/ingram-condemns-passage-of-sjr-10",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "passage": "This amendment is a solution in search of a problem and would make it harder for eligible voters to exercise their fundamental right to vote.",
+      "note": "Statement issued in her name after the Senate passed S.J.R. 10, the photo ID constitutional amendment. The fetch tool returned this sentence in two quoted pieces (limit of 125 characters each) joined here; the tool summary says she also criticised that caucus amendments (more acceptable ID types, free state IDs, same-day registration, provisional ballot protections) were tabled. Fuller body text could not be copied.",
+      "subjects": [
+        "photo ID constitutional amendment (SJR 10)",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:22:42.511Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e87bb4471eb666ebc97da8b9eb8f66d4aaa9b6b8c8f6aa8dceaaf96fbebb1898",
+      "kind": "record",
+      "url": "https://ohiosenate.gov/members/catherine-d-ingram/news/ingram-condemns-passage-of-sjr-10",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "other",
+      "note": "Her released statement on the Senate passage of S.J.R. 10 (photo ID constitutional amendment for the November 2026 ballot); the vote itself is linked separately.",
+      "subjects": [
+        "photo ID constitutional amendment (SJR 10)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:22:42.511Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e971499b1287077156796ba626683fe1ce9e3729a65dfceda2739dcb2a362acf",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/catherine-d-ingram/news/ingram-condemns-voter-suppression-bill",
+      "date": "2025-11-05",
+      "date_precision": "day",
+      "passage": "My colleagues continue to chip away at the progress we've made to ensure every Ohioan can participate in our democracy,",
+      "note": "Her statement after voting against SB 293, which ends the grace period for mail-in ballots arriving after Election Day. Related to mail-ballot rules, not ID. Only excerpts of the release were returned by the fetch tool; the quote is as the tool returned it, ending with a comma.",
+      "subjects": [
+        "mail-ballot receipt deadline (SB 293)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:22:42.511Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5697afd32f03dc086b5345a0a6cd9ad151af0d90b6a4dc6c539a64510187c2b",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/actions/",
+      "date": "2022-12-14",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-458-2022",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 55-34) on H. B. No. 458, from the Ohio Legislature's own actions record, which lists each member by id (rep_ingram_catherine_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "61ad7ead5c708d5cc3644cba295a15f24a874cb0732ce0f06dad1de0e594ba9c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 23-10) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (sen_ingram_catherine_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ac99700f10fccf6a9e794750182dc8dc1f69f27d8bfd400811b06c254d0c19b4",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "nay",
+      "motion": "Senate: Concurred in House amendments",
+      "note": "OH Senate floor roll call (Concurred in House amendments, tally 23-10) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (sen_ingram_catherine_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9b1f5c0fab55b6852c164d5fd7548cc1853715c65462e15ee45b573dea4077ad",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "Senate: Adopted",
+      "note": "OH Senate floor roll call (Adopted, tally 22-9) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (sen_ingram_catherine_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d84fc9be9f18f1768dc375ba8a163121b4534d412e29d356d7fee6db6417e4ad",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/133/hb687",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-687-2020",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. B. No. 687 (As Introduced) on the Ohio Legislature's own record (rep_ingram_catherine_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.678Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment (SJR 10 / HJR 9)",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot receipt deadline (SB 293)",
+        "voter registration"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "member page https://ohiosenate.gov/members/catherine-d-ingram: confirms Senate District 9",
+        "member news list pages 1 and 2 (Jan 2025-Sep 2026): read the SJR 10, SB 293 and voter-registration-day items",
+        "blocked: curl on ohiosenate.gov news pages answered 403 (not retried); text read through the fetch tool, which returned only excerpts",
+        "404: https://ohiosenate.gov/members/catherine-d-ingram/news/ingram-condemns-laroses-election-legislation-proposals",
+        "2 web searches (one leaning on her name and voter ID/absentee)",
+        "not reviewed: campaign site (not found)",
+        "blocked: Ballotpedia (not fetched, listed as refusing)",
+        "blocked: bluevoterguide.org",
+        "blocked: justfacts.votesmart.org",
+        "blocked: https://www.legislature.ohio.gov/legislation/134/hb458/committee (page is a script shell, no testimony list returned by curl)",
+        "blocked: web search (the search tool returned: web search budget is used up, limit 200 WebSearch calls per turn, shared by every agent in it) after the searches already run"
+      ],
+      "found": 3,
+      "at": "2026-11-06T15:22:42.511Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 5,
+      "at": "2026-11-06T16:28:34.678Z",
+      "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment (SJR 10)",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot receipt deadline (SB 293)",
+        "voter registration"
+      ],
+      "places": [
+        "7 web searches (name + voter ID/absentee; HB 458/citizenship/noncitizen; HB 472 floor; LaRose Sept 2024; voter guides): leads only, nothing new fetched",
+        "member news list pages 1 and 2 re-read (48 items, Jan 2025-Sep 2026): election items are SJR 10, SB 293, voter registration day (Sep 2025 and Sep 2026), redistricting; first-round files hold SJR 10 and SB 293",
+        "https://ohiosenate.gov/members/catherine-d-ingram/news/senator-ingram-marks-national-voter-registration-day (read: registration, not ID)",
+        "404: https://ohiosenate.gov/members/catherine-d-ingram/news/ingram-condemns-laroses-election-legislation-proposals (and www. form; a search summary says the Sept 2024 release covers drop boxes and proof of citizenship, but the page cannot be fetched so nothing saved)",
+        "www.senate.state.oh.us host: certificate error on fetch",
+        "no Vote411 or iVoterGuide questionnaire found for her; Ballotpedia 2022 survey page blocked (not fetched)",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (listed as refusing, not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-11-06T16:42:06.717Z",
+      "by": "research-oh-r2-2026-11-06"
+    }
+  ]
+}

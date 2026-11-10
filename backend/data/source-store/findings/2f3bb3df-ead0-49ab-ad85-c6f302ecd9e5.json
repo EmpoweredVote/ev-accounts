@@ -1,0 +1,138 @@
+{
+  "politician_id": "2f3bb3df-ead0-49ab-ad85-c6f302ecd9e5",
+  "findings": [
+    {
+      "id": "16fc367b6ae612e9858d0804c70069da9a41e059381a62d495fc2173fe7e9422",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_191_HB2020.odt",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "Senate: Emergency Final Action As Amended",
+      "note": "Senate roll call as printed ('J. Claeys'), linked to Joseph Claeys (district 27) via the official 2025 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53cc439c8ba13aae8525c4a82092d677fe52f2aa3e4773008814268e4fad0c47",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Claeys'), linked to Joseph Claeys (district 27) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "26fc0eac68c90037c402f6af64ad21e632b079f7491d447d2551656187b6c5c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Claeys'), linked to Joseph Claeys (district 27) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "Senate District 27 member page: https://www.kslegislature.gov/b2025_26/legislators/sen_claeys_joseph_1/",
+        "campaign site https://joeclaeys.com home, about, news pages 1-2 and the election-night release: nothing on the subject",
+        "a 2010 Wichita Liberty forum report quotes J.R. Claeys, a different person (a secretary of state candidate): not used",
+        "On the Record (0 meetings, extract-otr by id and by name)",
+        "legislature member page (confirms office)",
+        "news and radio coverage of 2026 Kansas election and citizenship bills (KCUR, Beacon, Fox Kansas, Ballotpedia News): names not present",
+        "web searches on name plus subject words: nothing on the subject",
+        "blocked: https://ballotpedia.org (not fetched, listed as blocked per instructions)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T16:43:42.937Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "Identity settled: Joseph (Joe) Claeys of Maize, a former school psychologist, holds Senate District 27 (Sedgwick County), term 2025 to present: https://www.kslegislature.gov/b2025_26/legislators/sen_claeys_joseph_1/ and the Beacon 2024 race story https://thebeaconnews.org/?p=24772 (open seat left by the prior member after redistricting; candidate described as former school psychologist, K-State and Fort Hays State degrees)",
+        "Identity settled: J.R. Claeys (Salina, House District 69 from 2012, Senate District 24, resigned June 2025 for a federal job) is a DIFFERENT person: https://www.ksal.com/claeys-joins-trump-administration/ . Nothing by J.R. Claeys (incl. his House years and 2010 secretary of state forum remarks on photo ID and Arizona citizenship law) is attributable to Joe Claeys; none saved. Some bill-tracking sites (legiplex) label Joe's seat with J.R.'s name: do not trust their name matches",
+        "https://thebeaconnews.org/?p=24772: 2024 candidate questionnaire; Joe Claeys did not respond and his site and Facebook listed no policy stances (nothing on the subject)",
+        "https://ivoterguide.com/candidate/82332/race/11720/election/1246: profile page loads by script; biography fields read 'Candidate did not provide' (nothing on the subject)",
+        "https://www.kslegislature.gov/li/b2025_26/committees/ctte_h_electns_1/documents/testimony/20260115_50.pdf: read with pdftotext; signed by a legal advocacy group, not this person (not used)",
+        "Ballotpedia says he did not complete its 2024 Candidate Connection survey (seen only in a search summary; Ballotpedia blocked)",
+        "web searches this round (6+ per person): name plus voter ID / photo ID / proof of citizenship / election / questionnaire / newsletter / campaign site / local papers: no own-words on the subject",
+        "blocked: https://ballotpedia.org (refuses our fetches, not fetched)",
+        "blocked: https://kansasreflector.com (refuses our fetches, not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T17:06:34.281Z",
+      "by": "research-ks-r2-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-04T19:13:24.946Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

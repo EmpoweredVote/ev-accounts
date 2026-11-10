@@ -73,10 +73,17 @@ const ENTITIES: Record<string, string> = {
   lsquo: '\u2018', rsquo: '\u2019', ndash: '\u2013', mdash: '\u2014', hellip: '\u2026',
 };
 
-/** A fetched page as text: scripts, styles and tags dropped, entities decoded. For passageOnPage. */
+/**
+ * A fetched page as text: scripts, styles and tags dropped, entities decoded. For passageOnPage.
+ * A namespaced tag (`<w:sdt>`, `<o:p>`: word-processor markup pasted into a page) is not HTML and a browser shows its
+ * text inline, so it is dropped with no space: Facing South wrapped a first letter in one ("H</w:sdt>ere"). Every
+ * other tag still becomes a space. Dropping a space can only join text, never add a word, so it cannot make a passage
+ * match that the page does not show.
+ */
 export function pageText(html: string): string {
   return html
     .replace(/<(script|style|noscript)\b[\s\S]*?<\/\1>/gi, ' ')
+    .replace(/<\/?[a-z][\w-]*:[\w-]+\b[^>]*>/gi, '')
     .replace(/<[^>]*>/g, ' ')
     .replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (m, e: string) => {
       if (e[0] === '#') return String.fromCodePoint(e[1] === 'x' || e[1] === 'X' ? parseInt(e.slice(2), 16) : parseInt(e.slice(1), 10));

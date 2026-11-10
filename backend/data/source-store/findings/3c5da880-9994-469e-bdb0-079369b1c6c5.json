@@ -1,0 +1,111 @@
+{
+  "politician_id": "3c5da880-9994-469e-bdb0-079369b1c6c5",
+  "findings": [
+    {
+      "id": "b0a1a264bd5b2ef15076eca4a436facee394d228c5ebbfb92f7f17a2caa6bf83",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/75561/race/7057/election/1024",
+      "date": "2023",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification. Strongly Disagree",
+      "note": "His answer to a 2023 iVoterGuide candidate questionnaire item. The first sentence is the survey's statement; 'Strongly Disagree' is the answer shown for him. The page says his answers came in after the evaluation was assigned and were not used in the panel ratings. The questionnaire was filled in for the 2023 primary and general elections.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID required to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:51:51.706Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f83d0028419134d578f055f22fbb42fc2269d0d95536e5a2081a180daf0e758",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/house/0940041.pdf",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "House: S. B. No. 2576 passed by the following vote: (0940041)",
+      "note": "House roll call as printed ('Blackwell'), linked to Charles Blackwell (district 88) via the official 2024 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b680fb8404ce02d97d84d7e0e33d2bd57ac1c2f65c056d5f4979c0eb31a6ce26",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Blackwell'), linked to Charles Blackwell (district 88) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.758Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "SHIELD Act",
+        "election integrity",
+        "voter registration"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract-otr returned 0 appearances, 0 candidates)",
+        "identity confirmed: https://billstatus.ls.state.ms.us/members/house/blackwell.xml (Charles Blackwell, House District 88); not the state senator named Blackwell, a different person whose bills were ignored",
+        "iVoterGuide 2023 profile https://ivoterguide.com/candidate/75561/race/7057/election/1024 (questionnaire answered; the voter ID item saved as a finding; read by plain curl)",
+        "no official or campaign site found in searches; nothing on the subject",
+        "Mississippi legislature bill pages: not searched, votes and sponsorships are linked separately",
+        "blocked: https://ballotpedia.org/Mississippi_House_of_Representatives_District_88 (Ballotpedia refuses our fetches; not tried)",
+        "web searches (5): Southaven + voter ID; Chuck Blackwell + photo ID/election; proof of citizenship/SAVE/SHIELD; Meridian forum/questionnaire/Leader-Call; Ellisville legislator column/newsletter 2025; no other own words found"
+      ],
+      "found": 1,
+      "at": "2026-11-05T22:51:51.706Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-05T23:52:51.758Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

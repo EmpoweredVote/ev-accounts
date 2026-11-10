@@ -1,0 +1,678 @@
+{
+  "id": "NC-H-206-2025",
+  "scope": "state:nc",
+  "title": "H206 (2025-2026 Session): DPS/Other Changes",
+  "urls": [
+    "https://www.ncleg.gov/BillLookUp/2025/H206",
+    "https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H206v2.pdf",
+    "https://www.ncleg.gov/Sessions/2025/Bills/House/HTML/H206v2.html"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Carson Smith",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "20ff7834-43e1-4306-9163-4f6cc5598bd9"
+    },
+    {
+      "name": "Celeste Cairns",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4055cd1a-d090-4816-bd87-a8e8fd33ea47"
+    },
+    {
+      "name": "Bill Ward",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4dc31304-0384-4469-82ca-a5ab43251e29"
+    },
+    {
+      "name": "Charles Miller",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f17c2322-69b4-4b9a-bcea-e5ea4ace8649"
+    },
+    {
+      "name": "James Adams",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "William Brisson",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "09f4fffb-c5e4-4ff3-bdf9-655723c8a194"
+    },
+    {
+      "name": "David Willis",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3b82d9c2-7d70-45c1-a4c2-bcb4bfe0e565"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-04-02",
+      "body": "NC House",
+      "motion": "Second Reading",
+      "kind": "roll-call",
+      "yes": 114,
+      "no": 0,
+      "absent": 6,
+      "note": "LegiScan roll call 1534132; NV counted with absent in the tally, members keep LegiScan marks",
+      "members": [
+        {
+          "name": "Hugh Blackwell",
+          "vote": "yea",
+          "politician_id": "0778fcb0-b9e2-4377-b6f7-39443494c084"
+        },
+        {
+          "name": "John Blust",
+          "vote": "yea",
+          "politician_id": "d81df43f-1f30-4c79-92ce-c61be7150a6e"
+        },
+        {
+          "name": "William Brisson",
+          "vote": "yea",
+          "politician_id": "09f4fffb-c5e4-4ff3-bdf9-655723c8a194"
+        },
+        {
+          "name": "Becky Carney",
+          "vote": "yea",
+          "politician_id": "8f61386d-d6f8-4bee-92a9-ae0e21dc96b2"
+        },
+        {
+          "name": "Patricia Cotham",
+          "vote": "yea",
+          "politician_id": "85c6928b-ba33-479d-b0da-11f94d4e4579"
+        },
+        {
+          "name": "Mary Harrison",
+          "vote": "yea",
+          "politician_id": "e1c90a85-67db-4a9a-baf0-135cb2aa9d89"
+        },
+        {
+          "name": "Julia Howard",
+          "vote": "yea",
+          "politician_id": "0c2a4e1c-9bb5-4a09-b644-67371bd9dbe2"
+        },
+        {
+          "name": "Francis Iler",
+          "vote": "yea",
+          "politician_id": "1bfc4374-fc2c-42f2-9131-e46503d3f18c"
+        },
+        {
+          "name": "Garland Pierce",
+          "vote": "yea",
+          "politician_id": "f14b8140-1fea-4378-b218-47caeeb06968"
+        },
+        {
+          "name": "Mitchell Setzer",
+          "vote": "yea",
+          "politician_id": "80f87b0c-a8ec-4a9f-a542-42a16596d285"
+        },
+        {
+          "name": "Sarah Stevens",
+          "vote": "yea"
+        },
+        {
+          "name": "James Dixon",
+          "vote": "yea",
+          "politician_id": "8bb786e1-3e47-4ec6-9ffd-5b7138a81460"
+        },
+        {
+          "name": "Harry Warren",
+          "vote": "yea",
+          "politician_id": "3f90c6a1-21b8-4e28-a94f-db3b584af143"
+        },
+        {
+          "name": "Kelly Hastings",
+          "vote": "yea",
+          "politician_id": "1226d0f0-140a-4827-b492-0926d34a8468"
+        },
+        {
+          "name": "Phillip Shepard",
+          "vote": "yea"
+        },
+        {
+          "name": "John Torbett",
+          "vote": "yea",
+          "politician_id": "c1f3ab20-5e39-4e21-adfe-048067a888e1"
+        },
+        {
+          "name": "Dean Arp",
+          "vote": "yea"
+        },
+        {
+          "name": "John Bell",
+          "vote": "yea",
+          "politician_id": "faa95b98-4d86-4134-ac92-4f191e69d0b6"
+        },
+        {
+          "name": "Mark Brody",
+          "vote": "yea",
+          "politician_id": "f6a9e3a7-cf2c-40e5-97b9-3af9b65b838f"
+        },
+        {
+          "name": "Carla Cunningham",
+          "vote": "yea",
+          "politician_id": "9a74561d-7bd2-42b7-83d1-810475545297"
+        },
+        {
+          "name": "Robert Davis",
+          "vote": "yea",
+          "politician_id": "c8f242c3-d4f6-4260-b585-6b6cf141409e"
+        },
+        {
+          "name": "Donny Lambeth",
+          "vote": "yea",
+          "politician_id": "45274204-828d-4292-8466-36f9681f99ec"
+        },
+        {
+          "name": "Dennis Riddell",
+          "vote": "yea",
+          "politician_id": "90bf1d2e-db4c-4579-a485-55263c734cac"
+        },
+        {
+          "name": "Stephen Ross",
+          "vote": "yea",
+          "politician_id": "112fe50f-2717-4ba5-9170-9725b25aa289"
+        },
+        {
+          "name": "Robert Reives",
+          "vote": "yea",
+          "politician_id": "ab1cff7a-cfe8-411c-b832-0071fa9cf983"
+        },
+        {
+          "name": "Brian Turner",
+          "vote": "yea",
+          "politician_id": "3d4368ce-8d60-4ae2-8000-ebed288c078c"
+        },
+        {
+          "name": "Cecil Brockman",
+          "vote": "yea"
+        },
+        {
+          "name": "Samuel Watford",
+          "vote": "yea",
+          "politician_id": "a9df6d55-ce14-4159-9094-bb781f750577"
+        },
+        {
+          "name": "Shelly Willingham",
+          "vote": "yea",
+          "politician_id": "8cad6813-2d2a-4c22-b5f5-70f7f5f63812"
+        },
+        {
+          "name": "James Adams",
+          "vote": "yea"
+        },
+        {
+          "name": "Kyle Hall",
+          "vote": "absent",
+          "politician_id": "e784bdf3-bf62-41c7-bdae-0a62f9da2456"
+        },
+        {
+          "name": "Cynthia Ball",
+          "vote": "yea",
+          "politician_id": "bc074749-7bf4-42ca-8eab-6fffc1e20729"
+        },
+        {
+          "name": "Mary Belk",
+          "vote": "yea",
+          "politician_id": "607091ec-f6d3-470f-bf2b-06160885f249"
+        },
+        {
+          "name": "Mike Clampitt",
+          "vote": "yea"
+        },
+        {
+          "name": "Destin Hall",
+          "vote": "yea",
+          "politician_id": "1fb3d25a-eb3d-48b1-8090-03b2cbbf100a"
+        },
+        {
+          "name": "Brenden Jones",
+          "vote": "yea",
+          "politician_id": "ba70a3c1-6533-41d7-94e1-78da5935c3f6"
+        },
+        {
+          "name": "Larry Potts",
+          "vote": "yea",
+          "politician_id": "9c8fccf3-b44e-450b-9c40-de61c959d769"
+        },
+        {
+          "name": "Amos Quick",
+          "vote": "yea",
+          "politician_id": "bce52b1d-a3cb-4463-a13a-da42fd216f75"
+        },
+        {
+          "name": "John Sauls",
+          "vote": "absent",
+          "politician_id": "7d476b66-eb47-4dcc-9dc0-d4733a8aa60b"
+        },
+        {
+          "name": "Larry Strickland",
+          "vote": "yea",
+          "politician_id": "1d6a1f6d-9270-431b-a70f-3de0fce579b4"
+        },
+        {
+          "name": "Donna White",
+          "vote": "yea",
+          "politician_id": "fae071c4-b3a6-49c7-af1d-87e3ebe7667b"
+        },
+        {
+          "name": "Deb Butler",
+          "vote": "yea",
+          "politician_id": "33e1a3a2-4472-4bcf-869b-1c4e0838029f"
+        },
+        {
+          "name": "Marcia Morey",
+          "vote": "yea",
+          "politician_id": "79a8f85e-c217-48d5-9909-1e9248cadd39"
+        },
+        {
+          "name": "Allison Dahle",
+          "vote": "yea",
+          "politician_id": "6677282e-b4fa-4d2c-ba8e-d29f9eeb2c79"
+        },
+        {
+          "name": "Edward Goodwin",
+          "vote": "abstain",
+          "politician_id": "86298b71-b7f6-4629-a0fe-ff0b964fb2f0"
+        },
+        {
+          "name": "Zack Forde-Hawkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Humphrey",
+          "vote": "yea",
+          "politician_id": "5905abfb-ae5d-4b90-abab-965cb511d1d7"
+        },
+        {
+          "name": "Keith Kidwell",
+          "vote": "yea",
+          "politician_id": "dc26ba4b-40b8-4d2f-a628-7c261269bfc9"
+        },
+        {
+          "name": "Brandon Lofton",
+          "vote": "yea",
+          "politician_id": "e81ce3e4-8b6c-4c57-82c1-733ecd1ba931"
+        },
+        {
+          "name": "Carolyn Logan",
+          "vote": "yea",
+          "politician_id": "cd3b506c-acf1-48b5-8b56-a43c79ac83e7"
+        },
+        {
+          "name": "Nasif Majeed",
+          "vote": "yea",
+          "politician_id": "e25c3c66-7b9c-498b-8ff4-bfd5c0354863"
+        },
+        {
+          "name": "Carson Smith",
+          "vote": "yea",
+          "politician_id": "20ff7834-43e1-4306-9163-4f6cc5598bd9"
+        },
+        {
+          "name": "Julie von Haefen",
+          "vote": "yea",
+          "politician_id": "e4af46e2-165a-444a-a671-d7517c621632"
+        },
+        {
+          "name": "Jeffrey McNeely",
+          "vote": "yea",
+          "politician_id": "22d8609a-82af-4155-97f5-63297aaf4190"
+        },
+        {
+          "name": "Jake Johnson",
+          "vote": "yea",
+          "politician_id": "86a423ca-a4e5-4890-8b9b-a9392ff051a5"
+        },
+        {
+          "name": "Vernetta Alston",
+          "vote": "abstain",
+          "politician_id": "3f7603aa-e71f-47be-8297-b13adc02b117"
+        },
+        {
+          "name": "Sarah Crawford",
+          "vote": "yea",
+          "politician_id": "933d399d-b0d2-42eb-94a2-d0a073ea179f"
+        },
+        {
+          "name": "Amber Baker",
+          "vote": "yea",
+          "politician_id": "c250d372-dc47-49d7-9594-c43075e648e2"
+        },
+        {
+          "name": "Terry Brown",
+          "vote": "yea",
+          "politician_id": "cd91941f-44d7-4250-9f09-e6979d805de4"
+        },
+        {
+          "name": "Karl Gillespie",
+          "vote": "yea",
+          "politician_id": "ef41385c-71a1-4e92-810a-1c607c8806a1"
+        },
+        {
+          "name": "Dudley Greene",
+          "vote": "yea",
+          "politician_id": "2219ec2a-f45f-43e9-863c-0265b420d1ac"
+        },
+        {
+          "name": "Abraham Jones",
+          "vote": "yea",
+          "politician_id": "0eff4a03-65bf-42d8-bb07-6ad1ab8dae97"
+        },
+        {
+          "name": "James Roberson",
+          "vote": "yea",
+          "politician_id": "e72ad020-c534-4730-8119-e77948e96c46"
+        },
+        {
+          "name": "Steve Tyson",
+          "vote": "yea",
+          "politician_id": "4f7eefdf-d9ba-405e-ba9f-4bff28113da6"
+        },
+        {
+          "name": "Diane Wheatley",
+          "vote": "yea",
+          "politician_id": "3abe0871-1d44-42bb-a5ab-37013852beae"
+        },
+        {
+          "name": "David Willis",
+          "vote": "yea",
+          "politician_id": "3b82d9c2-7d70-45c1-a4c2-bcb4bfe0e565"
+        },
+        {
+          "name": "Matthew Winslow",
+          "vote": "yea",
+          "politician_id": "81f31ead-9f94-4cdf-a00e-a7402a1d2b1d"
+        },
+        {
+          "name": "Jeff Zenger",
+          "vote": "yea",
+          "politician_id": "b5a36d1a-7d48-45ec-8052-57d16b265379"
+        },
+        {
+          "name": "Charles Miller",
+          "vote": "yea",
+          "politician_id": "f17c2322-69b4-4b9a-bcea-e5ea4ace8649"
+        },
+        {
+          "name": "Ben Moss",
+          "vote": "yea",
+          "politician_id": "a16b4745-7388-4818-abf4-ee50d4d4c520"
+        },
+        {
+          "name": "Erin Pare",
+          "vote": "yea",
+          "politician_id": "91c8abbc-8c76-42f2-8607-47ee476a0a8e"
+        },
+        {
+          "name": "Howard Penny",
+          "vote": "yea",
+          "politician_id": "0a8a5b5a-6d0c-4ead-a788-68a21ee736f9"
+        },
+        {
+          "name": "Ray Pickett",
+          "vote": "yea",
+          "politician_id": "8ea3659e-e18e-4141-9b20-a514f112a756"
+        },
+        {
+          "name": "Mark Pless",
+          "vote": "yea",
+          "politician_id": "8549a721-b4de-4848-98ac-108d0a6d063c"
+        },
+        {
+          "name": "Reece Pyrtle",
+          "vote": "yea",
+          "politician_id": "c58d68a1-3d5e-464f-9497-c192ecd62a72"
+        },
+        {
+          "name": "Donnie Loftis",
+          "vote": "yea",
+          "politician_id": "999ed538-c119-4bd3-b8ee-f1927fbc3aaa"
+        },
+        {
+          "name": "Allen Buansi",
+          "vote": "yea",
+          "politician_id": "72f01515-2705-4344-ac01-a3e8ceadd8de"
+        },
+        {
+          "name": "Jennifer Balkcom",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Biggs",
+          "vote": "yea",
+          "politician_id": "27e79e89-a6cc-4cca-a85e-fe82ee8c0e8f"
+        },
+        {
+          "name": "Gloristine Brown",
+          "vote": "yea",
+          "politician_id": "f3b4b50e-279d-4f47-b7f6-743432f50b00"
+        },
+        {
+          "name": "Kanika Brown",
+          "vote": "yea",
+          "politician_id": "6e03226c-d8ca-43db-84d3-9aee183fac6b"
+        },
+        {
+          "name": "Laura Budd",
+          "vote": "yea",
+          "politician_id": "87705a07-011d-4a10-9b21-f51fdda6e130"
+        },
+        {
+          "name": "Celeste Cairns",
+          "vote": "yea",
+          "politician_id": "4055cd1a-d090-4816-bd87-a8e8fd33ea47"
+        },
+        {
+          "name": "Maria Cervania",
+          "vote": "yea",
+          "politician_id": "67b46e18-cec0-4851-9535-92d1e8d58f65"
+        },
+        {
+          "name": "Allen Chesser",
+          "vote": "yea",
+          "politician_id": "d62b489b-2280-41d4-b06c-16cde06b5610"
+        },
+        {
+          "name": "Frances Jackson",
+          "vote": "yea",
+          "politician_id": "1ea857c4-5010-49bf-81f7-37d8f70f6537"
+        },
+        {
+          "name": "Neal Jackson",
+          "vote": "yea",
+          "politician_id": "6975d96d-d06f-4a47-80f4-de665c56f216"
+        },
+        {
+          "name": "Ray Jeffers",
+          "vote": "yea",
+          "politician_id": "3ab20c62-4e80-49f7-a11d-b95363e687d1"
+        },
+        {
+          "name": "Ya Liu",
+          "vote": "yea",
+          "politician_id": "05a8fe10-5b46-493d-b9af-44162b2de2eb"
+        },
+        {
+          "name": "Tim Longest",
+          "vote": "yea",
+          "politician_id": "458a6894-caf8-4705-8956-a01bac3dee5c"
+        },
+        {
+          "name": "Jarrod Lowery",
+          "vote": "yea"
+        },
+        {
+          "name": "Joe Pike",
+          "vote": "abstain",
+          "politician_id": "6728cd29-6abe-448b-8772-ff04693883bb"
+        },
+        {
+          "name": "Lindsey Prather",
+          "vote": "yea",
+          "politician_id": "f3fe0e26-7d27-4cd1-89c0-d5479e6f2460"
+        },
+        {
+          "name": "Renee Price",
+          "vote": "yea",
+          "politician_id": "15e962d0-c1d9-48d8-9929-631732f5fe2e"
+        },
+        {
+          "name": "Timothy Reeder",
+          "vote": "yea",
+          "politician_id": "480f2e8c-103b-429b-92d3-04d5ae70b96d"
+        },
+        {
+          "name": "Charles Smith",
+          "vote": "yea",
+          "politician_id": "60b7bab9-9e46-4cf4-9d9e-8e6592331e64"
+        },
+        {
+          "name": "Bill Ward",
+          "vote": "yea",
+          "politician_id": "4dc31304-0384-4469-82ca-a5ab43251e29"
+        },
+        {
+          "name": "Eric Ager",
+          "vote": "yea",
+          "politician_id": "650f9783-8295-4947-bd8a-0c1cbf3b4c16"
+        },
+        {
+          "name": "Jerry Branson",
+          "vote": "yea",
+          "politician_id": "62e8a3ab-caa7-44a2-adf0-7c503411f11a"
+        },
+        {
+          "name": "Tracy Clark",
+          "vote": "yea",
+          "politician_id": "c9f7f972-85f8-44f0-a2c6-0b05c8af9d96"
+        },
+        {
+          "name": "Heather Rhyne",
+          "vote": "yea",
+          "politician_id": "c7a28684-7476-44a0-a446-9a77116be4b4"
+        },
+        {
+          "name": "Blair Eddins",
+          "vote": "yea",
+          "politician_id": "5ff1a6f7-5a1e-4a2d-ba20-13a005101d4a"
+        },
+        {
+          "name": "Jonathan Almond",
+          "vote": "yea",
+          "politician_id": "ba95ecc9-d652-4397-b19d-a1841cbceb65"
+        },
+        {
+          "name": "Bryan Cohn",
+          "vote": "yea",
+          "politician_id": "6b358d6c-19c8-4c31-8ff4-56d6938f2795"
+        },
+        {
+          "name": "Brian Echevarria",
+          "vote": "yea",
+          "politician_id": "ecb7641d-37ff-47ab-a54f-f53bef20aa61"
+        },
+        {
+          "name": "Julia Greenfield",
+          "vote": "yea",
+          "politician_id": "66a20edb-0795-46a5-ad96-d8ced5cf65ed"
+        },
+        {
+          "name": "Grant Campbell",
+          "vote": "yea",
+          "politician_id": "70fc35c1-0929-4bae-be8d-6f4d3db98c61"
+        },
+        {
+          "name": "Mike Colvin",
+          "vote": "yea",
+          "politician_id": "0a63e6fe-e977-4166-8c7f-18017c725b2e"
+        },
+        {
+          "name": "Beth Helfrich",
+          "vote": "yea",
+          "politician_id": "cbbf5ae6-0793-46fb-ba4f-e6e3ffe90849"
+        },
+        {
+          "name": "Cody Huneycutt",
+          "vote": "yea",
+          "politician_id": "92c1a1d9-644f-4691-85d9-4c26da5a7aa8"
+        },
+        {
+          "name": "Monika Johnson-Hostler",
+          "vote": "yea",
+          "politician_id": "50460952-dd8a-4d81-aa0f-77986ded987e"
+        },
+        {
+          "name": "Jordan Lopez",
+          "vote": "yea",
+          "politician_id": "d0bcb2c4-3653-4b57-b8f1-c5688e40b54d"
+        },
+        {
+          "name": "Aisha Dew",
+          "vote": "absent",
+          "politician_id": "24aa0b9f-356a-45af-a24d-8f66f53bf6ca"
+        },
+        {
+          "name": "Wyatt Gable",
+          "vote": "yea",
+          "politician_id": "23cb2fee-97e9-4448-ae4a-0837a3676ab3"
+        },
+        {
+          "name": "Rodney Pierce",
+          "vote": "yea",
+          "politician_id": "14024874-9a06-40c7-9a3e-8a38901139ac"
+        },
+        {
+          "name": "Dante Pittman",
+          "vote": "yea",
+          "politician_id": "5ac53516-876e-40d9-89da-0d604020b831"
+        },
+        {
+          "name": "Mike Schietzelt",
+          "vote": "yea",
+          "politician_id": "c44ca883-5b63-480a-bd64-3b06be167c1a"
+        },
+        {
+          "name": "Paul Scott",
+          "vote": "yea",
+          "politician_id": "7ab29e3d-5acf-4f42-b7ad-8b64297b0cf4"
+        },
+        {
+          "name": "Richard Carver",
+          "vote": "yea",
+          "politician_id": "c9210730-9236-4ab1-9602-e8c9866e4f59"
+        },
+        {
+          "name": "Phil Rubin",
+          "vote": "yea",
+          "politician_id": "b4f9a7d0-1185-4496-bf36-c63fd880a974"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-11-05T23:47:38.356374Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-H-206-2025.edition-2.html",
+      "sha256": "04c1278e60c82aac1aac19373727d6d047c75ef3a73b01d6b4ff1496413e8236"
+    }
+  },
+  "operative_text": "Sec. 1(a) (amending G.S. 50B-3.1(e)): \"(e) Retrieval. – [-If the court does not enter a protective order when the ex parte or emergency order expires, the defendant may retrieve any weapons surrendered to the sheriff unless -]{+Unless +}the court finds that the defendant is precluded from owning or possessing a firearm pursuant to State or federal law or final disposition of any pending criminal charges committed against the person that is the subject of the current protective [-order.-]{+order, the defendant may retrieve any weapons surrendered to the sheriff without additional order of the court upon the occurrence of one of the following conditions:+}\n{+(1)+} {+The court does not enter a protective order when the ex parte or emergency order expires.+}\n{+(2)+} {+The protective order is denied by the court following a hearing.+}\n{+Prior to release of any firearms to the defendant pursuant to this subsection, the sheriff shall verify through a criminal history check conducted through the National Instant Criminal Background Check System (NICS) that the defendant is not prohibited from possessing or receiving a firearm pursuant to 18 U.S.C. § 922 or any State law and the defendant does not have any pending criminal charges committed against the person that is the subject of the current protective order or pending charges that, if convicted, would prohibit the defendant from possessing a firearm.+}\"\nSec. 1(a) (amending G.S. 50B-3.1(g)): \"The motion [-must -]{+may +}be filed [-not later than 30 days after the -]{+at any time following the +}seizure of the items by the [-sheriff. -]{+sheriff prior to their disposal pursuant to subsection (h) of this section. +}\"\nSec. 1(a) (amending G.S. 50B-3.1(h)): \"{+After notice to the defendant and all parties known or believed to have an ownership or possessory interest in the firearm, including any third-party owner, the sheriff who has control of the firearms, ammunition, or permits may apply to the court for an order of disposition of the firearms, ammunition, or permits under any of the following circumstances:+}\""
+}

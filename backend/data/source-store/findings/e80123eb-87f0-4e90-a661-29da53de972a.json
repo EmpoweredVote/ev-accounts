@@ -1,0 +1,245 @@
+{
+  "politician_id": "e80123eb-87f0-4e90-a661-29da53de972a",
+  "findings": [
+    {
+      "id": "95fbbb84f3c6f55445d83fa356757fc8fae25220d643747fd32617fdb5bc8b72",
+      "kind": "own-words",
+      "url": "https://www.hppr.org/hppr-news/2026-10-05/democrat-cindy-holschers-campaign-for-kansas-governor-highlights-distinctions-from-gop-rival",
+      "date": "2026-10-05",
+      "date_precision": "day",
+      "passage": "“He has been very hostile to public education, trying to defund our public schools. He has attacked voting rights. He keeps talking about property taxes, yet he’s been in charge for six years, has a supermajority … but hasn’t answered and hasn’t solved these issues of property tax,” she said.",
+      "note": "Quoted in an interview story about her governor campaign, speaking of her opponent. A general reference to voting rights; it names no ID or citizenship rule.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:03:10.865Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eee122cc65c28b5b9865a8342c4bcfd638c6dfdf09f1ea670b28bc5bb22b1e4a",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/kansas-senate-republicans-sank-own-222344013.html",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "passage": "Democratic Sen. Cindy Holscher of Overland Park called the final bill \"a bill that is extremely problematic, that in its totality is a major voter disenfranchisement bill.\"",
+      "note": "Topeka Capital-Journal/Kansas Reflector story via Yahoo on a Senate omnibus election bill (mail-ballot and related changes). Not about ID or citizenship rules.",
+      "subjects": [
+        "mail-ballot rules",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-ks-r2-2026-11-04",
+        "fetched_at": "2026-11-04T17:06:05.462Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3d6002c6055883f6352a486258bafd02f620e34adb44b3b5fd00d25fbd2117d3",
+      "kind": "own-words",
+      "url": "https://ca.news.yahoo.com/kansas-senate-advances-ban-remote-110000286.html",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "passage": "\"These are monumental changes we are asking them to make,\" Sen. Cindy Holscher, an Overland Park Democrat, said.",
+      "note": "Same session; floor debate on a bill banning electronic voting machines and requiring hand counts. Related quotes from the same article: \"This takes us back five decades.\" and \"We stopped hand counting because it was error prone, easy to rig, and time consuming.\" Not about ID or citizenship.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-ks-r2-2026-11-04",
+        "fetched_at": "2026-11-04T17:06:05.462Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "309b7be975ef5e503e0cf377ecf76b83cc4e15afd1e91dc8b4f9d1b3bda473b9",
+      "kind": "own-words",
+      "url": "https://www.kctv5.com/2026/02/17/kansas-bill-would-make-immigration-enforcement-near-polls-crime/",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "passage": "\"This bill will help legal Kansas citizens cast their ballots without fear of harassment or intimidation,\" Holscher told KCTV5.",
+      "note": "About her bill banning immigration enforcement near polling places. Also in the article: \"We can't allow that to happen near polling places,\" she added. Not about ID or citizenship rules.",
+      "subjects": [
+        "related: immigration enforcement near polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-ks-r2-2026-11-04",
+        "fetched_at": "2026-11-04T17:06:05.462Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e12d8c2c04969f9f4493070458d6fa03f7ff58d84685fb72235693093d0eeb43",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_191_HB2020.odt",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "nay",
+      "motion": "Senate: Emergency Final Action As Amended",
+      "note": "Senate roll call as printed ('Holscher'), linked to Cindy Holscher (district 8) via the official 2025 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12d5b96635aaee125a967de3c18520774687c5737469fd65d2358255cda8634d",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Holscher'), linked to Cindy Holscher (district 8) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c32e05d099cacb14913d1c7c047be9deb5093f489d52813e63f1f81be052e684",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Holscher'), linked to Cindy Holscher (district 8) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "773a23f2ab30c456870279e3a5e51881ec013b5fc572b2fa03296b427529d0f8",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/vote/?apn=b2023_24/year2/senate/legislative_days/day039_20240305/vote_records/vote_100_SB365.odt",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-365-2024",
+      "act": "nay",
+      "motion": "Senate: Final Action - Not passed",
+      "note": "Senate roll call as printed ('Holscher'), linked to Cindy Holscher (district 8) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (2 meetings, 2026 governor debates 07-17 and 07-22: no passage on ID, citizenship or ballots)",
+        "https://www.hppr.org/hppr-news/2026-10-05/democrat-cindy-holschers-campaign-for-kansas-governor-highlights-distinctions-from-gop-rival (fetched by curl)",
+        "https://cindyforkansas.com/ (issues pages listed: property taxes, costs, data centers, family costs; none on voting)",
+        "https://cindyforkansas.com/holscher-statement-on-johnson-county-early-voting-location-closures/ : blocked (404 by curl; fetch tool returned another page)",
+        "HB 2056 bill page and its testimony links (no testimony signed by her)",
+        "House Elections and Senate committee lists: not reviewed, load by script",
+        "Ballotpedia: blocked (not fetched, listed as refused by the state notes)",
+        "kansasreflector.com: blocked (not fetched, listed as refused by the state notes)",
+        "OnTheIssues and Wikipedia: not used as sources",
+        "web searches (5+) on name with voter ID, photo ID, proof of citizenship, SAVE Act, election, questionnaire: no own words on the subject beyond the findings"
+      ],
+      "found": 1,
+      "at": "2026-11-04T17:03:10.865Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID",
+        "mail-ballot rules",
+        "proof of citizenship / citizen-only voting amendment",
+        "early voting access",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "https://cindyforkansas.com/news (press list Oct 2026: nothing on ID, citizenship or ballots)",
+        "https://cindyforkansas.com/ home page link list (issues: property taxes, costs, data centers, families; none on voting)",
+        "https://cindyforkansas.com/holscher-statement-on-johnson-county-early-voting-location-closures/ : blocked (404; ?p=2868 returned a different page); statement text not read, only reported in search summary",
+        "https://cindyforkansas.com/ks-legislative-session-proves-why-sen-cindy-holscher-is-democratic-frontrunner/ : 404, not read",
+        "https://www.hppr.org/2026-10-29/why-does-the-kansas-election-have-a-constitutional-amendment-about-citizenship-and-voting (says she voted for putting HCR 5004 on the ballot; no direct quote from her; no passage saved)",
+        "https://www.wichitaliberty.org/?p=41073 (2026-08-27 head-to-head; nothing from her on the subject)",
+        "https://johnsoncountypost.com/2026/06/01/johnson-county-cuts-8-early-voting-sites-287501/ (no quote from her)",
+        "https://www.yahoo.com/news/kansas-lawmakers-act-limit-mail-035830693.html (2021; does not name her)",
+        "Senate floor remarks on HCR 5004 (2025-03-25): no transcript or quote found; roll call linked separately",
+        "Kansas Reflector (election-eve rally 2026-11-02 and others): blocked, not fetched",
+        "Ballotpedia: blocked, not fetched",
+        "7 web searches: voter ID/proof of citizenship, HCR 5004 floor, questionnaire, early-voting statement, bills quoting her, debate voting rights, floor remarks"
+      ],
+      "found": 3,
+      "at": "2026-11-04T17:06:05.462Z",
+      "by": "research-ks-r2-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T19:13:24.949Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

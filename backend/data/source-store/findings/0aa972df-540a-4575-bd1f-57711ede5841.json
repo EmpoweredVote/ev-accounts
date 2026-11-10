@@ -1,0 +1,92 @@
+{
+  "politician_id": "0aa972df-540a-4575-bd1f-57711ede5841",
+  "findings": [
+    {
+      "id": "76f9e5de00048ddcf792b7b9fbdbbef4734109395ad51ae4da4bb2a7fdf3f207",
+      "kind": "own-words",
+      "url": "https://www.mississippifreepress.org/annual-citizenship-checks-of-mississippi-voter-rolls-headed-to-governors-desk-with-shield-act/",
+      "date": "2026-02-05",
+      "date_precision": "day",
+      "passage": "“When you go through the voter rolls and you find a non-U.S. citizen, does the secretary of state have any power to turn that over to authorities?”",
+      "note": "Question put by this senator to the bill's author on the Senate floor during debate of the SHIELD Act (SB 2588), about whether the Secretary of State can refer non-citizens found on voter rolls to authorities. Quoted by the Mississippi Free Press, article dated 2026-03-25; the floor date is Feb. 5, 2026. A question, not a stated position.",
+      "subjects": [
+        "voter-roll citizenship checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:42:06.547Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b0a384baf6fe58a9ea0e42529ac3f22a97f043100dd50e424c87ef0255125e0b",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/senate/0770004.pdf",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Senate concurred in the foregoing House Amendment to S. B. No. 2588 by the following vote: (0770004)",
+      "note": "Senate roll call as printed ('Hartness'), linked to Don Hartness (district 42) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.760Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "documentary proof of citizenship to register",
+        "voter-roll citizenship checks",
+        "non-citizen voting",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "Mississippi Free Press article tag page for Don Hartness (2 articles)",
+        "iVoterGuide 2023 profile: nothing on the subject",
+        "WDAM 2025 special-election interviews: nothing on the subject",
+        "Mississippi Today questionnaire: not reviewed, site refuses AI agents",
+        "On the Record (0 appearances)",
+        "Ballotpedia: blocked (fetch refused by instruction, not tried)",
+        "web searches on name with voter ID, photo ID, proof of citizenship, SHIELD Act, questionnaire, local papers",
+        "Mississippi Free Press SHIELD Act articles (Mar 25 and Apr 2026), WLOX/WDAM SHIELD Act articles (Mar 25 and May 14 2026), MPB, SPLC release, DeSoto County News, Clarke County Tribune: read, do not quote this person",
+        "blocked: https://digital-release.wjtv.com/news/election/mississippi-lawmakers-consider-shield-act/amp/ (empty page)",
+        "legislature bill pages for sponsorships: not searched (linked separately)"
+      ],
+      "found": 1,
+      "at": "2026-11-05T22:42:06.547Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-05T23:52:51.760Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

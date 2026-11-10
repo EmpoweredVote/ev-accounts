@@ -1,0 +1,771 @@
+{
+ "_note": "AP metadata.json + progress.json for the four Texas state-executive races, fetched 2026-11-05. CC_0358 records the first three; the Railroad Commissioner is kept because AP called it and we hold no such office.",
+ "_fetched_utc": "2026-11-05T16:33:32.487Z",
+ "_race_ids": [
+  "20261103TX45901",
+  "20261103TX45902",
+  "20261103TX45903",
+  "20261103TX84775"
+ ],
+ "metadata": {
+  "20261103TX45901": {
+   "eventID": "20261103",
+   "raceType": "General",
+   "raceTypeID": "G",
+   "tabulationStatus": "Active Tabulation",
+   "tabulationStatusPhase": "Chase",
+   "raceCallStatus": "Called",
+   "officeID": "G",
+   "officeName": "Governor",
+   "incumbents": [
+    {
+     "first": "Greg",
+     "last": "Abbott",
+     "party": "GOP",
+     "candidateID": "41404",
+     "polID": "41404",
+     "polNum": "41404"
+    }
+   ],
+   "currentParty": "GOP",
+   "currentPartyCaucus": "GOP",
+   "eevpEdayInPerson": 99,
+   "eevpAdvanceTotal": 82.32,
+   "eevpAbsenteeMail": 58.84,
+   "eevpProvisional": 8.02,
+   "eevpAdvanceInPerson": 82.85,
+   "national": true,
+   "state": true,
+   "keyRace": true,
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 9960035,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 2143944,
+       "absenteeMail": 329187,
+       "provisional": 15244,
+       "advanceInPerson": 7516600,
+       "advanceTotal": 7800847
+      }
+     },
+     "total": 9903980,
+     "registered": 19041684,
+     "voteTypeTotals": {
+      "absenteeMail": 193678,
+      "advanceInPerson": 6227609,
+      "advanceTotal": 6421287,
+      "electionDayInPerson": 2238440,
+      "provisional": 1222,
+      "typeTotal": 8660949
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": true,
+      "absenteeMail": true,
+      "advanceInPerson": true
+     }
+    }
+   },
+   "raceID": "20261103TX45901",
+   "seatNum": null,
+   "electionDate": "2026-11-03",
+   "statePostal": "TX",
+   "candidates": {
+    "41404": {
+     "first": "Greg",
+     "last": "Abbott",
+     "incumbent": true,
+     "party": "GOP",
+     "candidateID": "41404",
+     "ballotOrder": 1,
+     "editorialCandidate": true,
+     "advanceInPerson": 2729121,
+     "typeTotal": 3861317,
+     "hasPhoto": true
+    },
+    "152027": {
+     "first": "Gina",
+     "last": "Hinojosa",
+     "party": "Dem",
+     "candidateID": "152027",
+     "ballotOrder": 3,
+     "editorialCandidate": true,
+     "advanceInPerson": 3419570,
+     "typeTotal": 4670840,
+     "hasPhoto": true
+    },
+    "155880": {
+     "first": "Pat",
+     "last": "Dixon",
+     "party": "Lib",
+     "candidateID": "155880",
+     "ballotOrder": 2,
+     "editorialCandidate": false,
+     "advanceInPerson": 78918,
+     "typeTotal": 128792,
+     "hasPhoto": true
+    }
+   },
+   "isCertified": false,
+   "incumbentID": "41404",
+   "firstPollClosingTime": "2026-11-04T01:00:00.000000Z"
+  },
+  "20261103TX45902": {
+   "eventID": "20261103",
+   "raceType": "General",
+   "raceTypeID": "G",
+   "tabulationStatus": "Active Tabulation",
+   "tabulationStatusPhase": "Chase",
+   "raceCallStatus": "Called",
+   "officeID": "L",
+   "officeName": "Lieutenant Governor",
+   "eevpEdayInPerson": 99,
+   "eevpAdvanceTotal": 81.22,
+   "eevpAbsenteeMail": 57.76,
+   "eevpProvisional": 7.97,
+   "eevpAdvanceInPerson": 81.76,
+   "national": true,
+   "state": true,
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 9883048,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 2089901,
+       "absenteeMail": 329218,
+       "provisional": 15146,
+       "advanceInPerson": 7494173,
+       "advanceTotal": 7778001
+      }
+     },
+     "total": 9827286,
+     "registered": 19041684,
+     "voteTypeTotals": {
+      "absenteeMail": 190161,
+      "advanceInPerson": 6127371,
+      "advanceTotal": 6317532,
+      "electionDayInPerson": 2213748,
+      "provisional": 1207,
+      "typeTotal": 8532487
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": true,
+      "absenteeMail": true,
+      "advanceInPerson": true
+     }
+    }
+   },
+   "raceID": "20261103TX45902",
+   "seatNum": null,
+   "electionDate": "2026-11-03",
+   "statePostal": "TX",
+   "candidates": {
+    "64382": {
+     "first": "Dan",
+     "last": "Patrick",
+     "incumbent": true,
+     "party": "GOP",
+     "candidateID": "64382",
+     "ballotOrder": 4,
+     "editorialCandidate": true,
+     "advanceInPerson": 2678263,
+     "typeTotal": 3795853
+    },
+    "65558": {
+     "first": "Kevin",
+     "last": "McCormick",
+     "party": "Grn",
+     "candidateID": "65558",
+     "ballotOrder": 3,
+     "editorialCandidate": false,
+     "advanceInPerson": 48818,
+     "typeTotal": 77319
+    },
+    "67198": {
+     "first": "Anthony",
+     "last": "Cristo",
+     "party": "Lib",
+     "candidateID": "67198",
+     "ballotOrder": 1,
+     "editorialCandidate": false,
+     "advanceInPerson": 91609,
+     "typeTotal": 147764
+    },
+    "153028": {
+     "first": "Vikki",
+     "last": "Goodwin",
+     "party": "Dem",
+     "candidateID": "153028",
+     "ballotOrder": 2,
+     "editorialCandidate": true,
+     "advanceInPerson": 3308681,
+     "typeTotal": 4511551
+    }
+   },
+   "isCertified": false,
+   "incumbentID": "64382",
+   "firstPollClosingTime": "2026-11-04T01:00:00.000000Z"
+  },
+  "20261103TX45903": {
+   "eventID": "20261103",
+   "raceType": "General",
+   "raceTypeID": "G",
+   "tabulationStatus": "Active Tabulation",
+   "tabulationStatusPhase": "Chase",
+   "raceCallStatus": "Called",
+   "officeID": "A",
+   "officeName": "Attorney General",
+   "eevpEdayInPerson": 99,
+   "eevpAdvanceTotal": 81.09,
+   "eevpAbsenteeMail": 57.62,
+   "eevpProvisional": 7.96,
+   "eevpAdvanceInPerson": 81.63,
+   "national": true,
+   "state": true,
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 9857896,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 2071433,
+       "absenteeMail": 328911,
+       "provisional": 15108,
+       "advanceInPerson": 7487843,
+       "advanceTotal": 7771355
+      }
+     },
+     "total": 9802195,
+     "registered": 19041684,
+     "voteTypeTotals": {
+      "absenteeMail": 189511,
+      "advanceInPerson": 6112211,
+      "advanceTotal": 6301722,
+      "electionDayInPerson": 2207182,
+      "provisional": 1203,
+      "typeTotal": 8510107
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": true,
+      "absenteeMail": true,
+      "advanceInPerson": true
+     }
+    }
+   },
+   "raceID": "20261103TX45903",
+   "seatNum": null,
+   "electionDate": "2026-11-03",
+   "statePostal": "TX",
+   "candidates": {
+    "149719": {
+     "first": "Tom",
+     "last": "Oxford",
+     "party": "Lib",
+     "candidateID": "149719",
+     "ballotOrder": 3,
+     "editorialCandidate": false,
+     "advanceInPerson": 88474,
+     "typeTotal": 143256
+    },
+    "152897": {
+     "first": "Nathan",
+     "last": "Johnson",
+     "party": "Dem",
+     "candidateID": "152897",
+     "ballotOrder": 1,
+     "editorialCandidate": true,
+     "advanceInPerson": 3338003,
+     "typeTotal": 4558459
+    },
+    "152985": {
+     "first": "Mayes",
+     "last": "Middleton",
+     "party": "GOP",
+     "candidateID": "152985",
+     "ballotOrder": 2,
+     "editorialCandidate": true,
+     "advanceInPerson": 2685734,
+     "typeTotal": 3808392
+    }
+   },
+   "isCertified": false,
+   "firstPollClosingTime": "2026-11-04T01:00:00.000000Z"
+  },
+  "20261103TX84775": {
+   "eventID": "20261103",
+   "raceType": "General",
+   "raceTypeID": "G",
+   "tabulationStatus": "Active Tabulation",
+   "tabulationStatusPhase": "Chase",
+   "raceCallStatus": "Called",
+   "officeID": "RR",
+   "officeName": "Railroad Commissioner",
+   "eevpEdayInPerson": 99,
+   "eevpAdvanceTotal": 80.8,
+   "eevpAbsenteeMail": 57.18,
+   "eevpProvisional": 7.83,
+   "eevpAdvanceInPerson": 81.35,
+   "national": true,
+   "seatName": "Term Exp 2032",
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 9773265,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 2020251,
+       "absenteeMail": 327544,
+       "provisional": 14998,
+       "advanceInPerson": 7455930,
+       "advanceTotal": 7738016
+      }
+     },
+     "total": 9717867,
+     "registered": 19041684,
+     "voteTypeTotals": {
+      "absenteeMail": 187294,
+      "advanceInPerson": 6065324,
+      "advanceTotal": 6252618,
+      "electionDayInPerson": 2184486,
+      "provisional": 1174,
+      "typeTotal": 8438278
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": true,
+      "absenteeMail": true,
+      "advanceInPerson": true
+     }
+    }
+   },
+   "raceID": "20261103TX84775",
+   "seatNum": null,
+   "electionDate": "2026-11-03",
+   "statePostal": "TX",
+   "candidates": {
+    "41967": {
+     "first": "Arthur",
+     "last": "DiBianca",
+     "party": "Lib",
+     "candidateID": "41967",
+     "ballotOrder": 1,
+     "editorialCandidate": false,
+     "advanceInPerson": 103483,
+     "typeTotal": 164085
+    },
+    "153695": {
+     "first": "Jon",
+     "last": "Rosenthal",
+     "party": "Dem",
+     "candidateID": "153695",
+     "ballotOrder": 3,
+     "editorialCandidate": true,
+     "advanceInPerson": 3322444,
+     "typeTotal": 4532805
+    },
+    "170079": {
+     "first": "Bo",
+     "last": "French",
+     "party": "GOP",
+     "candidateID": "170079",
+     "ballotOrder": 2,
+     "editorialCandidate": true,
+     "advanceInPerson": 2639397,
+     "typeTotal": 3741388
+    }
+   },
+   "isCertified": false,
+   "firstPollClosingTime": "2026-11-04T01:00:00.000000Z"
+  }
+ },
+ "progress": {
+  "20261103TX45901": {
+   "statePostal": "TX",
+   "stateName": "Texas",
+   "reportingunitID": "44",
+   "reportingunitLevel": 1,
+   "pollClosingTime": "2026-11-04T02:00:00.000000Z",
+   "level": "state",
+   "lastUpdated": "2026-11-05T14:33:07.364000Z",
+   "eevp": 99,
+   "eevpEdayInPerson": 99,
+   "eevpAdvanceTotal": 82.32,
+   "eevpAbsenteeMail": 58.84,
+   "eevpProvisional": 8.02,
+   "eevpAdvanceInPerson": 82.85,
+   "candidates": [
+    {
+     "candidateID": "152027",
+     "voteCount": 5230929,
+     "avotes": 3100217,
+     "winner": "X",
+     "absenteeMail": 119118,
+     "advanceTotal": 3538688,
+     "electionDayInPerson": 1131127,
+     "provisional": 1025,
+     "votePct": 52.82,
+     "calledAt": "2026-11-04T04:17:30.287Z",
+     "colorIndex": 0
+    },
+    {
+     "candidateID": "41404",
+     "voteCount": 4524955,
+     "avotes": 2618641,
+     "absenteeMail": 72635,
+     "advanceTotal": 2801756,
+     "electionDayInPerson": 1059372,
+     "provisional": 189,
+     "votePct": 45.69,
+     "colorIndex": 1
+    },
+    {
+     "candidateID": "155880",
+     "voteCount": 148096,
+     "avotes": 71779,
+     "absenteeMail": 1925,
+     "advanceTotal": 80843,
+     "electionDayInPerson": 47941,
+     "provisional": 8,
+     "votePct": 1.5
+    }
+   ],
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 9960035,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 2143944,
+       "absenteeMail": 329187,
+       "provisional": 15244,
+       "advanceInPerson": 7516600,
+       "advanceTotal": 7800847
+      }
+     },
+     "total": 9903980,
+     "registered": 19041684,
+     "voteTypeTotals": {
+      "absenteeMail": 193678,
+      "advanceInPerson": 6227609,
+      "advanceTotal": 6421287,
+      "electionDayInPerson": 2238440,
+      "provisional": 1222,
+      "typeTotal": 8660949
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": true,
+      "absenteeMail": true,
+      "advanceInPerson": true
+     }
+    },
+    "reportingSources": {
+     "totalBallotsCast": "Stringer",
+     "voteByMode": "Mixed",
+     "voteTotal": "Mixed"
+    }
+   },
+   "tabStatusNumber": 2,
+   "raceID": "20261103TX45901",
+   "test": false,
+   "resultsType": "live",
+   "flippedSeat": true
+  },
+  "20261103TX45902": {
+   "statePostal": "TX",
+   "stateName": "Texas",
+   "reportingunitID": "44",
+   "reportingunitLevel": 1,
+   "pollClosingTime": "2026-11-04T02:00:00.000000Z",
+   "level": "state",
+   "lastUpdated": "2026-11-05T14:33:07.457000Z",
+   "eevp": 99,
+   "eevpEdayInPerson": 99,
+   "eevpAdvanceTotal": 81.22,
+   "eevpAbsenteeMail": 57.76,
+   "eevpProvisional": 7.97,
+   "eevpAdvanceInPerson": 81.76,
+   "candidates": [
+    {
+     "candidateID": "153028",
+     "voteCount": 5083719,
+     "avotes": 2786880,
+     "winner": "X",
+     "absenteeMail": 117629,
+     "advanceTotal": 3426310,
+     "electionDayInPerson": 1084253,
+     "provisional": 988,
+     "votePct": 51.73,
+     "calledAt": "2026-11-04T08:00:09.624Z",
+     "colorIndex": 0
+    },
+    {
+     "candidateID": "64382",
+     "voteCount": 4485059,
+     "avotes": 2396582,
+     "absenteeMail": 70114,
+     "advanceTotal": 2748377,
+     "electionDayInPerson": 1047286,
+     "provisional": 190,
+     "votePct": 45.64,
+     "colorIndex": 1
+    },
+    {
+     "candidateID": "67198",
+     "voteCount": 170464,
+     "avotes": 78305,
+     "absenteeMail": 1578,
+     "advanceTotal": 93187,
+     "electionDayInPerson": 54566,
+     "provisional": 11,
+     "votePct": 1.73
+    },
+    {
+     "candidateID": "65558",
+     "voteCount": 88044,
+     "avotes": 40444,
+     "absenteeMail": 840,
+     "advanceTotal": 49658,
+     "electionDayInPerson": 27643,
+     "provisional": 18,
+     "votePct": 0.9
+    }
+   ],
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 9883048,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 2089901,
+       "absenteeMail": 329218,
+       "provisional": 15146,
+       "advanceInPerson": 7494173,
+       "advanceTotal": 7778001
+      }
+     },
+     "total": 9827286,
+     "registered": 19041684,
+     "voteTypeTotals": {
+      "absenteeMail": 190161,
+      "advanceInPerson": 6127371,
+      "advanceTotal": 6317532,
+      "electionDayInPerson": 2213748,
+      "provisional": 1207,
+      "typeTotal": 8532487
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": true,
+      "absenteeMail": true,
+      "advanceInPerson": true
+     }
+    },
+    "reportingSources": {
+     "totalBallotsCast": "Stringer",
+     "voteByMode": "Mixed",
+     "voteTotal": "Mixed"
+    }
+   },
+   "tabStatusNumber": 2,
+   "raceID": "20261103TX45902",
+   "test": false,
+   "resultsType": "live"
+  },
+  "20261103TX45903": {
+   "statePostal": "TX",
+   "stateName": "Texas",
+   "reportingunitID": "44",
+   "reportingunitLevel": 1,
+   "pollClosingTime": "2026-11-04T02:00:00.000000Z",
+   "level": "state",
+   "lastUpdated": "2026-11-05T14:33:07.571000Z",
+   "eevp": 99,
+   "eevpEdayInPerson": 99,
+   "eevpAdvanceTotal": 81.09,
+   "eevpAbsenteeMail": 57.62,
+   "eevpProvisional": 7.96,
+   "eevpAdvanceInPerson": 81.63,
+   "candidates": [
+    {
+     "candidateID": "152897",
+     "voteCount": 5133762,
+     "avotes": 2810487,
+     "winner": "X",
+     "absenteeMail": 119291,
+     "advanceTotal": 3457294,
+     "electionDayInPerson": 1100156,
+     "provisional": 1009,
+     "votePct": 52.37,
+     "calledAt": "2026-11-04T07:57:19.519Z",
+     "colorIndex": 1
+    },
+    {
+     "candidateID": "152985",
+     "voteCount": 4502859,
+     "avotes": 2393750,
+     "absenteeMail": 68750,
+     "advanceTotal": 2754484,
+     "electionDayInPerson": 1053726,
+     "provisional": 182,
+     "votePct": 45.94,
+     "colorIndex": 0
+    },
+    {
+     "candidateID": "149719",
+     "voteCount": 165574,
+     "avotes": 74356,
+     "absenteeMail": 1470,
+     "advanceTotal": 89944,
+     "electionDayInPerson": 53300,
+     "provisional": 12,
+     "votePct": 1.69
+    }
+   ],
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 9857896,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 2071433,
+       "absenteeMail": 328911,
+       "provisional": 15108,
+       "advanceInPerson": 7487843,
+       "advanceTotal": 7771355
+      }
+     },
+     "total": 9802195,
+     "registered": 19041684,
+     "voteTypeTotals": {
+      "absenteeMail": 189511,
+      "advanceInPerson": 6112211,
+      "advanceTotal": 6301722,
+      "electionDayInPerson": 2207182,
+      "provisional": 1203,
+      "typeTotal": 8510107
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": true,
+      "absenteeMail": true,
+      "advanceInPerson": true
+     }
+    },
+    "reportingSources": {
+     "totalBallotsCast": "Stringer",
+     "voteByMode": "Mixed",
+     "voteTotal": "Mixed"
+    }
+   },
+   "tabStatusNumber": 2,
+   "raceID": "20261103TX45903",
+   "test": false,
+   "resultsType": "live"
+  },
+  "20261103TX84775": {
+   "statePostal": "TX",
+   "stateName": "Texas",
+   "reportingunitID": "44",
+   "reportingunitLevel": 1,
+   "pollClosingTime": "2026-11-04T02:00:00.000000Z",
+   "level": "state",
+   "lastUpdated": "2026-11-05T14:33:09.915000Z",
+   "eevp": 99,
+   "eevpEdayInPerson": 99,
+   "eevpAdvanceTotal": 80.8,
+   "eevpAbsenteeMail": 57.18,
+   "eevpProvisional": 7.83,
+   "eevpAdvanceInPerson": 81.35,
+   "candidates": [
+    {
+     "candidateID": "153695",
+     "voteCount": 5103317,
+     "avotes": 2820544,
+     "winner": "X",
+     "absenteeMail": 119536,
+     "advanceTotal": 3441980,
+     "electionDayInPerson": 1089839,
+     "provisional": 986,
+     "votePct": 52.51,
+     "calledAt": "2026-11-04T08:36:42.255Z",
+     "colorIndex": 0
+    },
+    {
+     "candidateID": "170079",
+     "voteCount": 4426549,
+     "avotes": 2402153,
+     "absenteeMail": 65750,
+     "advanceTotal": 2705147,
+     "electionDayInPerson": 1036067,
+     "provisional": 174,
+     "votePct": 45.55,
+     "colorIndex": 1
+    },
+    {
+     "candidateID": "41967",
+     "voteCount": 188001,
+     "avotes": 88356,
+     "absenteeMail": 2008,
+     "advanceTotal": 105491,
+     "electionDayInPerson": 58580,
+     "provisional": 14,
+     "votePct": 1.93
+    }
+   ],
+   "parameters": {
+    "vote": {
+     "expected": {
+      "actual": 9773265,
+      "eevpCap": 99,
+      "voteTypes": {
+       "electionDayInPerson": 2020251,
+       "absenteeMail": 327544,
+       "provisional": 14998,
+       "advanceInPerson": 7455930,
+       "advanceTotal": 7738016
+      }
+     },
+     "total": 9717867,
+     "registered": 19041684,
+     "voteTypeTotals": {
+      "absenteeMail": 187294,
+      "advanceInPerson": 6065324,
+      "advanceTotal": 6252618,
+      "electionDayInPerson": 2184486,
+      "provisional": 1174,
+      "typeTotal": 8438278
+     },
+     "voteTypeAvailability": {
+      "electionDayInPerson": true,
+      "advanceTotal": true,
+      "provisional": true,
+      "absenteeMail": true,
+      "advanceInPerson": true
+     }
+    },
+    "reportingSources": {
+     "totalBallotsCast": "Stringer",
+     "voteByMode": "Mixed",
+     "voteTotal": "Mixed"
+    }
+   },
+   "tabStatusNumber": 2,
+   "raceID": "20261103TX84775",
+   "test": false,
+   "resultsType": "live"
+  }
+ }
+}

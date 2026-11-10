@@ -1,0 +1,25 @@
+{
+  "id": "MS-SB-2293-2022",
+  "scope": "state:ms",
+  "title": "SB 2293 (2022 Regular Session): Mississippi Voter Identification Cards; delete references to constitutional amendment.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2022/pdf/history/SB/SB2293.xml",
+    "https://billstatus.ls.state.ms.us/documents/2022/pdf/SB/2200-2299/SB2293IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1 (23-15-7(1))\n(quote) The card shall be valid for the purpose of voter identification purposes under Section 23-15-563 and available only to registered voters of this state.\n(b_no_id_remedy)\n(section) Sec. 1 (23-15-7(1))\n(quote) No fee shall be charged or collected for the application for or issuance of a Mississippi Voter Identification Card.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 1 (23-15-7(6))\n(quote) The registrar shall require presentation and verification of any of the following information during the application process before issuance of a Mississippi Voter Identification Card: (a) A photo identity document; or (b) Documentation showing the person's date and place of birth; or (c) A social security card; or (d) A Medicare card; or (e) A Medicaid card;\n(section) Sec. 1 (23-15-7(2))\n(quote) The registrar of each county shall provide a location in the registrar's office at which he or she shall accept applications for Mississippi Voter Identification Cards * * *;\n(other) Sec. 1 (23-15-7): voter ID card statute reprinted; deleted words are references to the Mississippi Constitution (shown as \"* * *\")\n(other) Sec. 2 (23-15-135): same deletion of the constitutional reference in the registrar duty to take voter ID card applications\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Carter",
+      "role": "prime",
+      "version": "SB2293IN"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

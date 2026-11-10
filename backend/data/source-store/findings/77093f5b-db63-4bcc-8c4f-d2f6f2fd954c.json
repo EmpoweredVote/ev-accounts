@@ -1,0 +1,114 @@
+{
+  "politician_id": "77093f5b-db63-4bcc-8c4f-d2f6f2fd954c",
+  "findings": [
+    {
+      "id": "00ada69a37b67a74988299e65754700fe9e55a2169f0cda84f95a83b09b5b524",
+      "kind": "own-words",
+      "url": "https://digital-release.ksn.com/?p=1417518",
+      "date": "2022-10-17",
+      "date_precision": "day",
+      "passage": "I think that our elections are secure and accurate. However, I think the election offices are often understaffed and that makes it more difficult for people to vote.",
+      "note": "His answer to the KSN candidate questionnaire (question: thoughts on election integrity in Kansas and across the United States) during his 2022 run for House District 86. Page posted 2022-10-17. He calls elections secure and accurate and says understaffed election offices make voting harder. The fetch tool also reported that he would support legislation that makes voting easier and would fund election offices for staff and equipment. Nothing on photo ID or citizenship proof.",
+      "subjects": [
+        "election integrity",
+        "voting access",
+        "election office staffing"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:51:35.003Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12d5b96635aaee125a967de3c18520774687c5737469fd65d2358255cda8634d",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Miller'), linked to Silas Miller (district 25) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.951Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c32e05d099cacb14913d1c7c047be9deb5093f489d52813e63f1f81be052e684",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Miller'), linked to Silas Miller (district 25) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.951Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID or grace period",
+        "proof of citizenship to register",
+        "election integrity",
+        "voting access"
+      ],
+      "places": [
+        "identity confirmed: https://www.kslegislature.gov/legislators/sen_miller_silas_1/ (Senate District 25, Sedgwick County; House member 2023-2025); seat held to 2029, so not up for re-election as an incumbent state-level question here; on the 2026 ballot per search results",
+        "On the Record (0 meetings)",
+        "KSN 2022 candidate profile https://digital-release.ksn.com/?p=1417518 (his House District 86 run): one finding. A direct curl of the same page returned 429, recorded as blocked: https://digital-release.ksn.com/?p=1417518 (curl); the passages come from the fetch tool's quoted text",
+        "iVoterGuide profile: empty biography, nothing on the subject",
+        "legislature member page: no statements on elections",
+        "three web searches on his name plus the subject words, 2026 questionnaires and voter guides: nothing further in his own words",
+        "blocked: https://bluevoterguide.org/es/KS/candidate_Silas_Miller/370097 (403)",
+        "blocked: https://ballotpedia.org/Silas_Miller (known to refuse fetches, not tried)",
+        "blocked: kansasreflector.com (known to refuse fetches, not tried)",
+        "blocked: silasforkansas.com (host did not resolve)",
+        "not reviewed: floor debate audio and video"
+      ],
+      "found": 1,
+      "at": "2026-11-04T16:51:35.003Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-04T19:13:24.951Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

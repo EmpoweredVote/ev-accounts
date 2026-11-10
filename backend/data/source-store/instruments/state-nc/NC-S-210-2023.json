@@ -1,0 +1,109 @@
+{
+  "id": "NC-S-210-2023",
+  "scope": "state:nc",
+  "title": "S210 (2023-2024 Session): Gun Violence Prevention Act",
+  "urls": [
+    "https://www.ncleg.gov/BillLookUp/2023/S210",
+    "https://www.ncleg.gov/Sessions/2023/Bills/Senate/PDF/S210v0.pdf",
+    "https://www.ncleg.gov/Sessions/2023/Bills/Senate/PDF/S210v1.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Natasha Marcus",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Natalie Murdock",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "a6dddad9-48af-4f40-9fff-c482eec44c90"
+    },
+    {
+      "name": "Michael Garrett",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4d19496f-08eb-49bb-8ccd-5698db9530ab"
+    },
+    {
+      "name": "Val Applewhite",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d30ac1dc-c292-4397-8708-8e3432a58e69"
+    },
+    {
+      "name": "Jay Chaudhuri",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8a528e10-77a3-4bb0-894c-a9f0131f0e77"
+    },
+    {
+      "name": "Lisa Grafstein",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "92bd7516-5718-4613-a0a1-5a6f42fa40eb"
+    },
+    {
+      "name": "Julie Mayfield",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5205c14a-a599-4f5f-abfd-505fe7e2ef07"
+    },
+    {
+      "name": "Graig Meyer",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Mujtaba Mohammed",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2f1ccb1c-4c03-4213-b4be-759ff2cad119"
+    },
+    {
+      "name": "Gladys Robinson",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f138d19b-55e1-4f3b-8a44-2802e546435a"
+    },
+    {
+      "name": "DeAndrea Salvador",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e91f21c8-43b5-4e33-a3eb-a8206817df78"
+    },
+    {
+      "name": "Kandie Smith",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6e3a4532-a633-458c-9252-d585e4f4789f"
+    },
+    {
+      "name": "Joyce Waddell",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "121954e0-f205-45f5-b3c8-14199ed1fc9f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-11-05T23:47:38.356374Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-S-210-2023.amended.html",
+      "sha256": "2b2f4daaf2769724cdd7f4fe31a45b980846b916d789604e8d7677b826e7b26b"
+    }
+  },
+  "operative_text": "Sec. 1(a) (amending G.S. 14-402(a)): {+ Additionally, it is unlawful for any person in this State to receive a pistol, assault weapon, or long gun unless a period of 72 hours has passed from the date of purchase or agreement to give away or transfer the pistol, assault weapon, or long gun.+}\nSec. 2(a) (amending G.S. 14-269.7(a)): (a) Any minor who willfully and intentionally possesses or carries a [-handgun -]{+handgun, long gun, or assault weapon +}is guilty of a Class 1 misdemeanor.\nSec. 3(a) (adding G.S. 14-409A(b)-(c)): {+Prohibition. – It shall be unlawful for any person, firm, or corporation to manufacture, sell, give away, transfer, use, or possess bump stocks, trigger cranks, or any other similar device or instrument added to a firearm by a person other than the manufacturer that is designed to increase the rate of fire achievable by the firearm.+} {+(c)+} {+Punishment. – Any person violating this section is guilty of a Class I felony.+}\nSec. 4(b) (adding G.S. 14-409.44(a)-(b)): {+Requirement. – Except when being carried or used by the owner or another lawfully authorized user, a person in possession or control of a firearm shall store or keep the firearm in a locked container. For purposes of this subsection, the term \"firearm\" includes weapons regulated under G.S. 14-409. Nothing in this subsection shall be construed as authorizing the possession of a firearm otherwise prohibited under State or federal law.+} {+(b)+} {+Penalty. – A person who violates subsection (a) of this section is guilty of a Class A1 misdemeanor.+}\nSec. 6(a) (adding G.S. 14-409.13): {+Any owner of a firearm as defined in G.S. 14-408.1(a) shall report the loss or theft of the firearm within 48 hours after the discovery of the loss or theft to either (i) the local law enforcement agency having jurisdiction over the location where the loss or theft of the firearm occurred or (ii) the State Bureau of Investigation.+} {+(b)+} {+A violation of this section is a Class 3 misdemeanor; however, a second or subsequent violation of this section is a Class I felony.+}\nSec. 7(b) (adding G.S. 14-409.44A(a)): {+Any person in this State who intends to own a firearm shall, prior to the ownership of the firearm, obtain, and during ownership continuously maintain, a policy of liability insurance in an amount not less than one hundred thousand dollars ($100,000) specifically covering any damages resulting from any negligent or willful acts involving the use of the firearm while it is owned by the person. No firearm shall be transferred in this State unless the transferee at the time of the transfer provides proof that the transferee has complied with the provisions of this section.+}\nSec. 9 (repealing preemption): SECTION 9. G.S. 14-409.40 is repealed.\nSec. 12(a) (repealing stand-your-ground): The following statutes are repealed: G.S. 14-51.2, 14-51.3, and 14-51.4.\nSec. 13(a) (adding G.S. 14-269.9(b)): {+Prohibition. – It is unlawful to leave a firearm in an unattended motor vehicle unless the vehicle is locked and the firearm is either (i) secured with a trigger lock or other safety device designed to prevent an unauthorized user from operating the firearm or (ii) in a locked container.+}\nSec. 14(a) (adding G.S. 14-409B(b)): {+Prohibition. – It shall be unlawful for any person, firm, or corporation to manufacture, sell, give away, transfer, use, or possess a ghost gun.+}\nSec. 15(a) (adding G.S. 14-269.7A(b)): {+Prohibition. – It is unlawful for a person under 21 years of age to willfully and intentionally possess or carry a semiautomatic firearm.+}\nSec. 17 (adding G.S. 147-97(a)): {+Subject to all applicable laws related to prudent investment, the State Treasurer shall promptly divest all direct and indirect holdings in firearms manufacturers held by the Public Fund.+}"
+}

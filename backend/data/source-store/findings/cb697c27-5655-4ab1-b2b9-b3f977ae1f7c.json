@@ -1,0 +1,112 @@
+{
+  "politician_id": "cb697c27-5655-4ab1-b2b9-b3f977ae1f7c",
+  "findings": [
+    {
+      "id": "fce60c76df6e3aff91f74c04db2ff2a00e482797451735b2c5b72477f423cbfd",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/75590/race/7039/election/1069",
+      "date": "2023",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification.",
+      "note": "In his iVoterGuide candidate questionnaire for the 2023 general election, House District 105, the statement above was put to him and his recorded answer was 'Strongly Disagree'. The page does not give the day he answered.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID required to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:08:50.808Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "95937b47bf94fa62f3f519f18eca795ebf99705543c7e832cb99c5f53d64e9df",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/house/0940041.pdf",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "nay",
+      "motion": "House: S. B. No. 2576 passed by the following vote: (0940041)",
+      "note": "House roll call as printed ('Burch'), linked to Elliot Burch (district 105) via the official 2024 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.760Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b680fb8404ce02d97d84d7e0e33d2bd57ac1c2f65c056d5f4979c0eb31a6ce26",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Burch'), linked to Elliot Burch (district 105) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.760Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "voter-roll checks",
+        "election integrity",
+        "mail ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Mississippi House member page https://billstatus.ls.state.ms.us/members/house/burch.xml (confirms House District 105, 2024-present)",
+        "Greene County page https://greenecountyms.gov/copy-of-state-senate-rep (confirms Representative, District 105; weekly report link has no text on the subject)",
+        "iVoterGuide 2023 general-election questionnaire (one answer on photo ID, saved)",
+        "nothing on the subject: web searches on name with voter ID, photo ID, proof of citizenship, SAVE Act, voter rolls, election integrity, questionnaire, Greene County Herald",
+        "blocked: https://www.greenecountyheraldonline.com/2023/03/01/elliot-burch-launches-campaign-for-state-representative-dist-105/ (403)",
+        "blocked: https://ballotpedia.org/Elliot_Burch (known refusal, not fetched)",
+        "not found: personal campaign site or newsletter on the subject"
+      ],
+      "found": 1,
+      "at": "2026-11-05T23:08:50.808Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-05T23:52:51.760Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

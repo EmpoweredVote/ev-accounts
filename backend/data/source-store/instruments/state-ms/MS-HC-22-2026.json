@@ -1,0 +1,25 @@
+{
+  "id": "MS-HC-22-2026",
+  "scope": "state:ms",
+  "title": "HC 22 (2026 Regular Session): Constitution; amend to provide that only U.S. citizens are allowed the opportunity to vote.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2026/pdf/history/HC/HC0022.xml",
+    "https://billstatus.ls.state.ms.us/documents/2026/pdf/HC/HC0022IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Amended Sec. 241\n(quote) Only an inhabitant of this state, except * * *, persons adjudicated to be non compos mentis who is a citizen of the United States of America, eighteen (18) years old and upward,\n(section) Ballot explanation\n(quote) This proposed constitutional amendment provides that only citizens of the United States are allowed the opportunity to vote.\n(other) Concurrent resolution proposing amendment of Section 241 of the Mississippi Constitution; election date and ballot explanation\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "McLean",
+      "role": "prime",
+      "version": "HC0022IN"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

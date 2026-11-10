@@ -733,6 +733,16 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
       console.error('[connect/set-location] district cache failed (non-fatal):', cacheErr);
     }
 
+    // A basic account promoted to Connected keeps its basic districts
+    // (inform.account_jurisdictions, CA_0368) until it enters an address here. Now it has,
+    // so the basic row is superseded: lib/storedJurisdiction.ts already prefers this
+    // profile, and keeping a second copy of someone's districts serves nothing.
+    try {
+      await pool.query(`DELETE FROM inform.account_jurisdictions WHERE user_id = $1`, [userId]);
+    } catch (delErr) {
+      console.error('[connect/set-location] basic jurisdiction cleanup failed (non-fatal):', delErr);
+    }
+
     const j = jData;
 
     res.status(200).json({

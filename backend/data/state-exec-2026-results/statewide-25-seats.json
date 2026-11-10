@@ -1,0 +1,884 @@
+[
+ {
+  "st": "AL",
+  "office": "Auditor",
+  "stateName": "Alabama",
+  "fips": "01",
+  "gov": "f427572f-d37a-4828-b68b-7f2c4e6ee4cd",
+  "holder": "Andrew Sorrell",
+  "how": "page",
+  "chamberSlug": "auditor-of-alabama",
+  "chamberFormal": "Auditor of Alabama",
+  "districtLabel": "Alabama Auditor",
+  "ocd": "ocd-division/country:us/state:al",
+  "electionId": "4dc3b465-4921-410c-a3b1-b05bac5004e7",
+  "electionName": "AL 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Andrew Sorrell",
+    "party": "R",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Andrew_Sorrell",
+    "withdrew": false
+   },
+   {
+    "name": "Violet Edwards",
+    "party": "D",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Violet_Edwards",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "AL",
+  "office": "Commissioner of Agriculture and Industries",
+  "stateName": "Alabama",
+  "fips": "01",
+  "gov": "f427572f-d37a-4828-b68b-7f2c4e6ee4cd",
+  "holder": "Rick Pate",
+  "how": "site",
+  "chamberSlug": "commissioner-of-agriculture-and-industries-of-alabama",
+  "chamberFormal": "Commissioner of Agriculture and Industries of Alabama",
+  "districtLabel": "Alabama Commissioner of Agriculture and Industries",
+  "ocd": "ocd-division/country:us/state:al",
+  "electionId": "4dc3b465-4921-410c-a3b1-b05bac5004e7",
+  "electionName": "AL 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Corey Hill",
+    "party": "R",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Corey_Hill",
+    "withdrew": false
+   },
+   {
+    "name": "Ron Sparks",
+    "party": "D",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Ron_Sparks",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "AR",
+  "office": "Auditor of State",
+  "stateName": "Arkansas",
+  "fips": "05",
+  "gov": "66e6181f-addc-4ff5-beeb-eb4e49e1ea67",
+  "holder": "Dennis Milligan",
+  "how": "page",
+  "chamberSlug": "auditor-of-state-of-arkansas",
+  "chamberFormal": "Auditor of State of Arkansas",
+  "districtLabel": "Arkansas Auditor of State",
+  "ocd": "ocd-division/country:us/state:ar",
+  "electionId": "b333dbd5-2b94-4dc7-8929-9743dc237191",
+  "electionName": "AR 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Dennis Milligan",
+    "party": "R",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Dennis_Milligan",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "AR",
+  "office": "Commissioner of State Lands",
+  "stateName": "Arkansas",
+  "fips": "05",
+  "gov": "66e6181f-addc-4ff5-beeb-eb4e49e1ea67",
+  "holder": "Tommy Land",
+  "how": "site",
+  "chamberSlug": "commissioner-of-state-lands-of-arkansas",
+  "chamberFormal": "Commissioner of State Lands of Arkansas",
+  "districtLabel": "Arkansas Commissioner of State Lands",
+  "ocd": "ocd-division/country:us/state:ar",
+  "electionId": "b333dbd5-2b94-4dc7-8929-9743dc237191",
+  "electionName": "AR 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Cole Jester",
+    "party": "R",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Cole_Jester",
+    "withdrew": false
+   },
+   {
+    "name": "Christopher Olson",
+    "party": "L",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Chris_Olson_(Arkansas)",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "CT",
+  "office": "Comptroller",
+  "stateName": "Connecticut",
+  "fips": "09",
+  "gov": "08cb83cf-d04c-46af-aff3-fbb693a8966e",
+  "holder": "Sean Scanlon",
+  "how": "page",
+  "chamberSlug": "comptroller-of-connecticut",
+  "chamberFormal": "Comptroller of Connecticut",
+  "districtLabel": "Connecticut Comptroller",
+  "ocd": "ocd-division/country:us/state:ct",
+  "electionId": "e7630bb9-d60d-4ffe-905d-d171f84e9cb7",
+  "electionName": "CT 2026 Statewide General",
+  "roleCanonical": "comptroller",
+  "cands": [
+   {
+    "name": "Sean Scanlon",
+    "party": "D / Working Families Party / Independent Party of Connecticut",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Sean_Scanlon",
+    "withdrew": false
+   },
+   {
+    "name": "Jennifer Tooker",
+    "party": "R",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Jennifer_Tooker",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "DE",
+  "office": "State Auditor",
+  "stateName": "Delaware",
+  "fips": "10",
+  "gov": "25b1cbb5-2fef-4803-9eb0-e78411f2ee29",
+  "holder": "Lydia York",
+  "how": "page",
+  "chamberSlug": "state-auditor-of-delaware",
+  "chamberFormal": "State Auditor of Delaware",
+  "districtLabel": "Delaware State Auditor",
+  "ocd": "ocd-division/country:us/state:de",
+  "electionId": "00653817-6888-4074-8342-057be2ceced9",
+  "electionName": "DE 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Lydia York",
+    "party": "D",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Lydia_York",
+    "withdrew": false
+   },
+   {
+    "name": "April Callaway",
+    "party": "R",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/April_Callaway",
+    "withdrew": false
+   },
+   {
+    "name": "Austin Cassidy",
+    "party": "Independent Party of Delaware",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Austin_Cassidy",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "FL",
+  "office": "Commissioner of Agriculture and Consumer Services",
+  "stateName": "Florida",
+  "fips": "12",
+  "gov": "623ac987-c7bc-4da1-8112-68adaec10cb2",
+  "holder": "Wilton Simpson",
+  "how": "page",
+  "chamberSlug": "commissioner-of-agriculture-and-consumer-services-of-florida",
+  "chamberFormal": "Commissioner of Agriculture and Consumer Services of Florida",
+  "districtLabel": "Florida Commissioner of Agriculture and Consumer Services",
+  "ocd": "ocd-division/country:us/state:fl",
+  "electionId": "1c868ba1-3169-4f0a-84a2-f41b349ef313",
+  "electionName": "FL 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Wilton Simpson",
+    "party": "R",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Wilton_Simpson",
+    "withdrew": false
+   },
+   {
+    "name": "Joey Atkins",
+    "party": "D",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Joey_Atkins",
+    "withdrew": false
+   },
+   {
+    "name": "Kyle Gibson",
+    "party": "No Party Affiliation",
+    "won": false,
+    "writeIn": true,
+    "url": "https://ballotpedia.org/Kyle_Gibson",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "GA",
+  "office": "Commissioner of Agriculture",
+  "stateName": "Georgia",
+  "fips": "13",
+  "gov": "eaeb1bd2-6bdb-4475-9bdc-e29acca8bebf",
+  "holder": "Tyler Harper",
+  "how": "page",
+  "chamberSlug": "commissioner-of-agriculture-of-georgia",
+  "chamberFormal": "Commissioner of Agriculture of Georgia",
+  "districtLabel": "Georgia Commissioner of Agriculture",
+  "ocd": "ocd-division/country:us/state:ga",
+  "electionId": "e4d22b2e-2c87-4fec-9b5a-c0680e99d2c7",
+  "electionName": "GA 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Katherine Juhan-Arnold",
+    "party": "D",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Katherine_Juhan-Arnold",
+    "withdrew": false
+   },
+   {
+    "name": "Tyler Harper",
+    "party": "R",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Tyler_Harper",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "GA",
+  "office": "Commissioner of Labor",
+  "stateName": "Georgia",
+  "fips": "13",
+  "gov": "eaeb1bd2-6bdb-4475-9bdc-e29acca8bebf",
+  "holder": "Bárbara Rivera Holmes",
+  "how": "page",
+  "chamberSlug": "commissioner-of-labor-of-georgia",
+  "chamberFormal": "Commissioner of Labor of Georgia",
+  "districtLabel": "Georgia Commissioner of Labor",
+  "ocd": "ocd-division/country:us/state:ga",
+  "electionId": "e4d22b2e-2c87-4fec-9b5a-c0680e99d2c7",
+  "electionName": "GA 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Nikki Porcher",
+    "party": "D",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Nikki_Porcher",
+    "withdrew": false
+   },
+   {
+    "name": "Bárbara Rivera Holmes",
+    "party": "R",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Bárbara_Rivera_Holmes",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "GA",
+  "office": "Insurance and Safety Fire Commissioner",
+  "stateName": "Georgia",
+  "fips": "13",
+  "gov": "eaeb1bd2-6bdb-4475-9bdc-e29acca8bebf",
+  "holder": "John King",
+  "how": "page",
+  "chamberSlug": "insurance-and-safety-fire-commissioner-of-georgia",
+  "chamberFormal": "Insurance and Safety Fire Commissioner of Georgia",
+  "districtLabel": "Georgia Insurance and Safety Fire Commissioner",
+  "ocd": "ocd-division/country:us/state:ga",
+  "electionId": "e4d22b2e-2c87-4fec-9b5a-c0680e99d2c7",
+  "electionName": "GA 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Keisha Sean Waites",
+    "party": "D",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Keisha_Sean_Waites",
+    "withdrew": false
+   },
+   {
+    "name": "John King",
+    "party": "R",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/John_King_(Georgia)",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "GA",
+  "office": "State Superintendent of Schools",
+  "stateName": "Georgia",
+  "fips": "13",
+  "gov": "eaeb1bd2-6bdb-4475-9bdc-e29acca8bebf",
+  "holder": "Richard Woods",
+  "how": "page",
+  "chamberSlug": "state-superintendent-of-schools-of-georgia",
+  "chamberFormal": "State Superintendent of Schools of Georgia",
+  "districtLabel": "Georgia State Superintendent of Schools",
+  "ocd": "ocd-division/country:us/state:ga",
+  "electionId": "e4d22b2e-2c87-4fec-9b5a-c0680e99d2c7",
+  "electionName": "GA 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Lydia Powell",
+    "party": "D",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Lydia_Powell",
+    "withdrew": false
+   },
+   {
+    "name": "Richard Woods",
+    "party": "R",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Richard_Woods_(Georgia)",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "HI",
+  "office": "Office of Hawaiian Affairs Maui Resident Trustee",
+  "stateName": "Hawaii",
+  "fips": "15",
+  "gov": "05b03419-f890-4c7c-b03f-dcd26c3005ee",
+  "holder": "Carmen Hulu Lindsey",
+  "how": "page",
+  "chamberSlug": "office-of-hawaiian-affairs-maui-resident-trustee-of-hawaii",
+  "chamberFormal": "Office of Hawaiian Affairs Maui Resident Trustee of Hawaii",
+  "districtLabel": "Hawaii Office of Hawaiian Affairs Maui Resident Trustee",
+  "ocd": "ocd-division/country:us/state:hi",
+  "electionId": "e6326a3d-bcf5-45c5-8afb-64999d993fa0",
+  "electionName": "HI 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Carmen Hulu Lindsey",
+    "party": "Nonpartisan",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Carmen_Hulu_Lindsey",
+    "withdrew": false
+   },
+   {
+    "name": "Ke'eaumoku Kapu",
+    "party": "Nonpartisan",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Ke&#39;eaumoku_Kapu",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "HI",
+  "office": "Office of Hawaiian Affairs Oahu Resident Trustee",
+  "stateName": "Hawaii",
+  "fips": "15",
+  "gov": "05b03419-f890-4c7c-b03f-dcd26c3005ee",
+  "holder": "Kalei Akaka",
+  "how": "page",
+  "chamberSlug": "office-of-hawaiian-affairs-oahu-resident-trustee-of-hawaii",
+  "chamberFormal": "Office of Hawaiian Affairs Oahu Resident Trustee of Hawaii",
+  "districtLabel": "Hawaii Office of Hawaiian Affairs Oahu Resident Trustee",
+  "ocd": "ocd-division/country:us/state:hi",
+  "electionId": "e6326a3d-bcf5-45c5-8afb-64999d993fa0",
+  "electionName": "HI 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Kalei Akaka",
+    "party": "Nonpartisan",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Kalei_Akaka",
+    "withdrew": false
+   },
+   {
+    "name": "Hinaleimoana Wong",
+    "party": "Nonpartisan",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Hinaleimoana_Wong",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "IA",
+  "office": "Secretary of Agriculture",
+  "stateName": "Iowa",
+  "fips": "19",
+  "gov": "a759078d-3d46-41e4-80af-2a00388cf309",
+  "holder": "Mike Naig",
+  "how": "page",
+  "chamberSlug": "secretary-of-agriculture-of-iowa",
+  "chamberFormal": "Secretary of Agriculture of Iowa",
+  "districtLabel": "Iowa Secretary of Agriculture",
+  "ocd": "ocd-division/country:us/state:ia",
+  "electionId": "ed7eb7da-8e46-4d25-a97a-f3168bd0fbf6",
+  "electionName": "IA 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Mike Naig",
+    "party": "R",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Mike_Naig",
+    "withdrew": false
+   },
+   {
+    "name": "Chris Jones",
+    "party": "D",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Chris_Jones_(Iowa)",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "IL",
+  "office": "Comptroller",
+  "stateName": "Illinois",
+  "fips": "17",
+  "gov": "4ae251df-c052-40ce-9e62-1865f55908bb",
+  "holder": "Susana A. Mendoza",
+  "how": "site",
+  "chamberSlug": "comptroller-of-illinois",
+  "chamberFormal": "Comptroller of Illinois",
+  "districtLabel": "Illinois Comptroller",
+  "ocd": "ocd-division/country:us/state:il",
+  "electionId": "804d07cf-11c9-4e3d-a85d-9ff8cbffb828",
+  "electionName": "IL 2026 Statewide General",
+  "roleCanonical": "comptroller",
+  "cands": [
+   {
+    "name": "Margaret Croke",
+    "party": "D",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Margaret_Croke",
+    "withdrew": false
+   },
+   {
+    "name": "Bryan Drew",
+    "party": "R",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Bryan_Drew",
+    "withdrew": false
+   },
+   {
+    "name": "Anna Schiefelbein",
+    "party": "Independent",
+    "won": false,
+    "writeIn": true,
+    "url": "https://ballotpedia.org/Anna_Schiefelbein",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "MN",
+  "office": "State Auditor",
+  "stateName": "Minnesota",
+  "fips": "27",
+  "gov": "b610e3f3-0ffa-4450-9ce8-f695ce7926a0",
+  "holder": "Julie Blaha",
+  "how": "site",
+  "chamberSlug": "state-auditor-of-minnesota",
+  "chamberFormal": "State Auditor of Minnesota",
+  "districtLabel": "Minnesota State Auditor",
+  "ocd": "ocd-division/country:us/state:mn",
+  "electionId": "964480b9-d8ae-4d80-a1f0-ddfca3b01883",
+  "electionName": "MN 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Zack Filipovich",
+    "party": "D",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Zack_Filipovich",
+    "withdrew": false
+   },
+   {
+    "name": "Scott Jensen",
+    "party": "R",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Scott_Jensen_(Minnesota)",
+    "withdrew": false
+   },
+   {
+    "name": "Jay Reeves",
+    "party": "Forward Independence Party",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Jay_Reeves_(Minnesota)",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "MO",
+  "office": "State Auditor",
+  "stateName": "Missouri",
+  "fips": "29",
+  "gov": "066b88fd-1458-462e-a3b5-1331f1810fdf",
+  "holder": "Scott Fitzpatrick",
+  "how": "page",
+  "chamberSlug": "state-auditor-of-missouri",
+  "chamberFormal": "State Auditor of Missouri",
+  "districtLabel": "Missouri State Auditor",
+  "ocd": "ocd-division/country:us/state:mo",
+  "electionId": "25941a7b-a488-4289-9d8a-3e9ca3d275ad",
+  "electionName": "MO 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Scott Fitzpatrick",
+    "party": "R",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Scott_Fitzpatrick",
+    "withdrew": false
+   },
+   {
+    "name": "Quentin Wilson",
+    "party": "D",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Quentin_Wilson",
+    "withdrew": false
+   },
+   {
+    "name": "Dustin Coffell",
+    "party": "L",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Dustin_Coffell",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "ND",
+  "office": "Commissioner of Agriculture",
+  "stateName": "North Dakota",
+  "fips": "38",
+  "gov": "cda06c83-809e-4239-9e7b-cc6b3db00fa1",
+  "holder": "Doug Goehring",
+  "how": "page",
+  "chamberSlug": "commissioner-of-agriculture-of-north-dakota",
+  "chamberFormal": "Commissioner of Agriculture of North Dakota",
+  "districtLabel": "North Dakota Commissioner of Agriculture",
+  "ocd": "ocd-division/country:us/state:nd",
+  "electionId": "fce62fc6-28b4-4d99-821a-3c5e94bb2915",
+  "electionName": "ND 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Doug Goehring",
+    "party": "R",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Doug_Goehring",
+    "withdrew": false
+   },
+   {
+    "name": "Vern Thompson",
+    "party": "D",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Vern_Thompson",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "ND",
+  "office": "Tax Commissioner",
+  "stateName": "North Dakota",
+  "fips": "38",
+  "gov": "cda06c83-809e-4239-9e7b-cc6b3db00fa1",
+  "holder": "Brian Kroshus",
+  "how": "page",
+  "chamberSlug": "tax-commissioner-of-north-dakota",
+  "chamberFormal": "Tax Commissioner of North Dakota",
+  "districtLabel": "North Dakota Tax Commissioner",
+  "ocd": "ocd-division/country:us/state:nd",
+  "electionId": "fce62fc6-28b4-4d99-821a-3c5e94bb2915",
+  "electionName": "ND 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Brian Kroshus",
+    "party": "R",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Brian_Kroshus",
+    "withdrew": false
+   },
+   {
+    "name": "Mark Nelson",
+    "party": "D",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Mark_Nelson_(North_Dakota)",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "NE",
+  "office": "Auditor of Public Accounts",
+  "stateName": "Nebraska",
+  "fips": "31",
+  "gov": "bb004e64-eeb4-4605-b062-ea991e7ad38b",
+  "holder": "Mike Foley",
+  "how": "page",
+  "chamberSlug": "auditor-of-public-accounts-of-nebraska",
+  "chamberFormal": "Auditor of Public Accounts of Nebraska",
+  "districtLabel": "Nebraska Auditor of Public Accounts",
+  "ocd": "ocd-division/country:us/state:ne",
+  "electionId": "1224487f-4f73-4048-b553-5629ee19b512",
+  "electionName": "NE 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Mike Foley",
+    "party": "R",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Mike_Foley",
+    "withdrew": false
+   },
+   {
+    "name": "John Knight",
+    "party": "America First Party Nebraska",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/John_Knight_(Nebraska)",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "NM",
+  "office": "Commissioner of Public Lands",
+  "stateName": "New Mexico",
+  "fips": "35",
+  "gov": "3e3c6584-1400-4f9d-9bfc-8438eac843dd",
+  "holder": "Stephanie Garcia Richard",
+  "how": "site",
+  "chamberSlug": "commissioner-of-public-lands-of-new-mexico",
+  "chamberFormal": "Commissioner of Public Lands of New Mexico",
+  "districtLabel": "New Mexico Commissioner of Public Lands",
+  "ocd": "ocd-division/country:us/state:nm",
+  "electionId": "6a560b73-4059-406c-b96a-6fe27073ecc9",
+  "electionName": "NM 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Juan Sanchez III",
+    "party": "D",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Juan_Sanchez_III",
+    "withdrew": false
+   },
+   {
+    "name": "Michael Perry",
+    "party": "R",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Michael_Perry_(New_Mexico)",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "NM",
+  "office": "State Auditor",
+  "stateName": "New Mexico",
+  "fips": "35",
+  "gov": "3e3c6584-1400-4f9d-9bfc-8438eac843dd",
+  "holder": "Joseph Maestas",
+  "how": "page",
+  "chamberSlug": "state-auditor-of-new-mexico",
+  "chamberFormal": "State Auditor of New Mexico",
+  "districtLabel": "New Mexico State Auditor",
+  "ocd": "ocd-division/country:us/state:nm",
+  "electionId": "6a560b73-4059-406c-b96a-6fe27073ecc9",
+  "electionName": "NM 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Joseph Maestas",
+    "party": "D",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Joseph_Maestas",
+    "withdrew": false
+   },
+   {
+    "name": "Joshua Lawrence",
+    "party": "R",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Joshua_Lawrence",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "SC",
+  "office": "Superintendent of Education",
+  "stateName": "South Carolina",
+  "fips": "45",
+  "gov": "daccc0ea-eafb-4962-ba00-2ee043fa6709",
+  "holder": "Ellen Weaver",
+  "how": "page",
+  "chamberSlug": "superintendent-of-education-of-south-carolina",
+  "chamberFormal": "Superintendent of Education of South Carolina",
+  "districtLabel": "South Carolina Superintendent of Education",
+  "ocd": "ocd-division/country:us/state:sc",
+  "electionId": "e9a9063d-7a17-43de-9ac4-012a50166b64",
+  "electionName": "SC 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Ellen Weaver",
+    "party": "R",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Ellen_Weaver",
+    "withdrew": false
+   },
+   {
+    "name": "Sylvia Wright",
+    "party": "D",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Sylvia_Wright",
+    "withdrew": false
+   },
+   {
+    "name": "Baba Amin Ojuok",
+    "party": "United Citizens Party",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Baba_Amin_Ojuok",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "SD",
+  "office": "Commissioner of School and Public Lands",
+  "stateName": "South Dakota",
+  "fips": "46",
+  "gov": "29fbd5e8-ef43-456b-b89f-2d170062a3b8",
+  "holder": "Brock Greenfield",
+  "how": "page",
+  "chamberSlug": "commissioner-of-school-and-public-lands-of-south-dakota",
+  "chamberFormal": "Commissioner of School and Public Lands of South Dakota",
+  "districtLabel": "South Dakota Commissioner of School and Public Lands",
+  "ocd": "ocd-division/country:us/state:sd",
+  "electionId": "ac7ebe0d-b300-43ed-b107-d919822502df",
+  "electionName": "SD 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Brock Greenfield",
+    "party": "R",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Brock_Greenfield",
+    "withdrew": false
+   },
+   {
+    "name": "Raeann Mettler",
+    "party": "D",
+    "won": false,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Raeann_Mettler",
+    "withdrew": false
+   }
+  ]
+ },
+ {
+  "st": "WY",
+  "office": "State Auditor",
+  "stateName": "Wyoming",
+  "fips": "56",
+  "gov": "781be5ce-3389-468d-bd68-a0e932abc8f4",
+  "holder": "Kristi Racines",
+  "how": "page",
+  "chamberSlug": "state-auditor-of-wyoming",
+  "chamberFormal": "State Auditor of Wyoming",
+  "districtLabel": "Wyoming State Auditor",
+  "ocd": "ocd-division/country:us/state:wy",
+  "electionId": "28ce873c-af6e-4802-9315-b47a5e0cdd9a",
+  "electionName": "WY 2026 Statewide General",
+  "roleCanonical": null,
+  "cands": [
+   {
+    "name": "Kristi Racines",
+    "party": "R",
+    "won": true,
+    "writeIn": false,
+    "url": "https://ballotpedia.org/Kristi_Racines",
+    "withdrew": false
+   }
+  ]
+ }
+]

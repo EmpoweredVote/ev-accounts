@@ -29,7 +29,439 @@
           "sha256": "dddae0081901748ede39524ddca0094c322a065fe443d8ffdbae0913c1a95fa4"
         }
       }
+    },
+    {
+      "id": "9a72caf0ce534e228fe677fd6415b9f465d2b445a275a5019d6274fe3b59ecf7",
+      "kind": "own-words",
+      "url": "https://wysu.org/ohio-news/2026-05-20/photo-id-amendment-likely-to-make-ballot-with-ohio-gop-leaders-behind-it",
+      "date": "2026-05-20",
+      "date_precision": "day",
+      "passage": "“Fundamental rights and requirements should be in the Constitution, and this is very fundamental,” House Speaker Matt Huffman (R-Lima) told reporters Wednesday.",
+      "note": "Quoted by the Statehouse News Bureau (via WYSU) on why photo voter ID should be placed in the state constitution.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID in the state constitution"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:10:36.325Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8fcfd5d576ef29403bd5b55ca8c0ae78eb5cc33d77dc80fe99887703c203f11d",
+      "kind": "own-words",
+      "url": "https://wysu.org/ohio-news/2026-05-28/an-ohio-house-committee-reviewed-the-voter-photo-id-amendment-no-one-spoke-for-it",
+      "date": "2026-05",
+      "date_precision": "month",
+      "passage": "“We know in this case that an overwhelming number of Ohioans think this is a good idea—Republicans, independents and Democrats,\" Huffman said.",
+      "note": "Quoted by the Statehouse News Bureau (via WYSU), asked why no one testified for the photo ID joint resolution in committee; he points to polling showing broad support.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID in the state constitution"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:10:36.325Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5c3c5e50388a84b75e842a02b9efd5f1888981bcd1993e5b0dc814ae1a4c64d3",
+      "kind": "own-words",
+      "url": "https://wysu.org/ohio-news/2026-05-28/an-ohio-house-committee-reviewed-the-voter-photo-id-amendment-no-one-spoke-for-it",
+      "date": "2026-05",
+      "date_precision": "month",
+      "passage": "“As we know, often it's the same set of people who are being invigorated by the same groups to come and testify,” Huffman said.",
+      "note": "Quoted by the Statehouse News Bureau (via WYSU) in answer to the question why no witness spoke for the photo ID joint resolution.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID in the state constitution"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:10:36.325Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e82143a6888b6eb1a7385c0c497dd6bcc13e54c0fc9dd8cde0eaf71bef709eb3",
+      "kind": "own-words",
+      "url": "https://www.news5cleveland.com/news/politics/ohio-politics/will-ohio-republicans-override-gov-dewines-voter-photo-id-veto",
+      "date": "2026-06",
+      "date_precision": "month",
+      "passage": "\"We are disappointed by the Governor’s veto of House Bill 472, despite 60 out of 65 Republican members of the Ohio House and growing public demand for stronger election safeguards, including voter ID protections,\" House Speaker Matt Huffman's spokesperson, Olivia Wile, said in a statement.",
+      "note": "Statement issued for the Speaker by his spokesperson (News 5 Cleveland) after the Governor vetoed HB 472, which would have required photo ID for mail-in absentee ballots. The article gives it as the Speaker's office statement; the words are the spokesperson's.",
+      "subjects": [
+        "mail-ballot ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:10:36.325Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc3904af72816e20eee26f7d6b78aa9b36edf61f3657964c0103f4629f0fd874",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_127/legislation/sb380/actions/",
+      "date": "2008-12-16",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-380-2008",
+      "act": "yea",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 55-43) on S. B. No. 380, from the Ohio Legislature's own actions record, which lists each member by id (rep_huffman_matt_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e8991e8c4732d1bc73efa9cf389737e776366b3a00ef0a33ea403e0523afaad3",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_128/legislation/hb260/actions/",
+      "date": "2009-11-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-260-2009",
+      "act": "nay",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 52-46) on H. B. No. 260, from the Ohio Legislature's own actions record, which lists each member by id (rep_huffman_matt_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "435793d89774b1931181520d9d9250644aeccea7e61d66e5d5f0f2d521c99a85",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_129/legislation/hb159/actions/",
+      "date": "2011-03-23",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-159-2011",
+      "act": "yea",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 57-38) on H. B. No. 159, from the Ohio Legislature's own actions record, which lists each member by id (rep_huffman_matt_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8b0efe999a9f23fc85947e3a6e1b7e631466a80b52aad663ce45c3cdc2cacbaa",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_129/legislation/hb194/actions/",
+      "date": "2011-06-29",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-194-2011",
+      "act": "yea",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 59-40) on H. B. No. 194, from the Ohio Legislature's own actions record, which lists each member by id (rep_huffman_matt_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "10daf79e0ca324eb0f9bb65ebd6cdb41d61d881492e50fe66c392e3cda207467",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/129/hb194",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-194-2011",
+      "act": "sponsor",
+      "motion": "co sponsor, As Passed by the House (03_PH)",
+      "note": "Listed as co sponsor of H. B. No. 194 (As Passed by the House) on the Ohio Legislature's own record (rep_huffman_matt_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d1208c0b7ce5814fce990ebb4efa689637f80aa0b1f13b83d2e42d16b6a2562c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_129/legislation/hb224/actions/",
+      "date": "2011-07-13",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-224-2011",
+      "act": "yea",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 92-0) on H. B. No. 224, from the Ohio Legislature's own actions record, which lists each member by id (rep_huffman_matt_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c500fd061b3bc192b92f89b7ca5f7d8e7d78f8ff2b9a85176e3a60b101a8f845",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/sb205/actions/",
+      "date": "2014-02-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-205-2014",
+      "act": "yea",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 60-38) on S. B. No. 205, from the Ohio Legislature's own actions record, which lists each member by id (rep_huffman_matt_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fed16c35084463e8c9461ce06977afc6a48013241f7ad87bf457b7a5d24f72c5",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/130/sb205",
+      "date": "2014",
+      "date_precision": "year",
+      "instrument_id": "OH-SB-205-2014",
+      "act": "sponsor",
+      "motion": "co sponsor, As Passed by House (04_PH)",
+      "note": "Listed as co sponsor of S. B. No. 205 (As Passed by House) on the Ohio Legislature's own record (rep_huffman_matt_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fab7b4a958714b2e754da1a8e3b78c1feac5bad10874e72062d0bd13f41b77df",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/sb216/actions/",
+      "date": "2014-02-26",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-216-2014",
+      "act": "yea",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 59-37) on S. B. No. 216, from the Ohio Legislature's own actions record, which lists each member by id (rep_huffman_matt_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d8d902dceb6a4f64eb36fe30807c431c9234632bb723375cda4f5baa1000ad9f",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/actions/",
+      "date": "2022-12-13",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-458-2022",
+      "act": "yea",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 24-7) on H. B. No. 458, from the Ohio Legislature's own actions record, which lists each member by id (sen_huffman_matt_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "545139969c5c35a1f168640a412d667e03811d25673463e11c9fcc5bd7fca177",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "yea",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_huffman_matt_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cb87000697b71758e7ca0ad908fe673527a271a0150eff9c6bd3ec29180be76c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "yea",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_huffman_matt_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32abbbc8a3ef8b4b1a84709188caf92f2c696e2c45aaccbf5d255611a80b9668",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "yea",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_huffman_matt_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "06d0cbb8a33de7e6c08462dae14000446cd6d79d32bff0569952ba4e42df5e9c",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/128/hb92",
+      "date": "2009",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-92-2009",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. B. No. 92 (As Introduced) on the Ohio Legislature's own record (rep_huffman_matt_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.672Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment (SJR 10)",
+        "mail-ballot photo ID (HB 472)",
+        "proof of citizenship / noncitizen voting",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page https://ohiohouse.gov/members/matt-huffman (no news items on the subject)",
+        "blocked: https://ohiosenate.gov/news/on-the-record/ohio-general-assembly-leadership-endorses-constitutional-amendment-for-voter-id (curl 403)",
+        "blocked: https://ohiohouse.gov/news/republican/house-republicans-pass-resolution-aimed-at-strengthening-our-elections-by-placing-voter-id-requirements-in-the-state-constitution-145722 (curl 403)",
+        "WYSU/Statehouse News Bureau May 2026 articles",
+        "News 5 Cleveland June 2026 veto article",
+        "Ballotpedia: blocked (refuses fetches, not tried)",
+        "four web searches on name plus voter ID, HB 458, HB 472 veto, noncitizen / proof of citizenship; nothing found on HB 458 or proof of citizenship in his own words",
+        "no campaign site found"
+      ],
+      "found": 4,
+      "at": "2026-11-06T15:10:36.325Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 14,
+      "at": "2026-11-06T16:28:34.672Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
 }

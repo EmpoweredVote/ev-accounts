@@ -1,0 +1,136 @@
+{
+  "politician_id": "1d27e808-28db-4429-87f1-6588886de59f",
+  "findings": [
+    {
+      "id": "545139969c5c35a1f168640a412d667e03811d25673463e11c9fcc5bd7fca177",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "yea",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_hiner_mark_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.683Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "730a6b22119baaeca4679f9ddecfeae85a89635c34995cd13d24f8df728ef61c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "nay",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_hiner_mark_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.683Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32abbbc8a3ef8b4b1a84709188caf92f2c696e2c45aaccbf5d255611a80b9668",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "yea",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_hiner_mark_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.683Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the member's Ohio House news page https://ohiohouse.gov/members/mark-hiner/news (Ohio House member from Howard; 3 items shown, none on the subject; list pagination incomplete)",
+        "web searches: name + voter ID/citizenship/election/ballot; iVoterGuide: no survey page found",
+        "nothing on the subject: campaign site and newsletters (none found)",
+        "blocked: https://ballotpedia.org (refuses fetches)",
+        "blocked: https://bluevoterguide.org (refuses fetches)",
+        "blocked: https://justfacts.votesmart.org (refuses fetches)"
+      ],
+      "found": 0,
+      "at": "2026-11-06T15:11:18.089Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 3,
+      "at": "2026-11-06T16:28:34.683Z",
+      "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "ohiohouse.gov/members/mark-hiner/news?pageSize=100: all 29 items (Apr 2025 to Oct 20 2026) listed, none on elections, voting, ID or citizenship",
+        "opened 2026 Summer Update newsletter: nothing on voter ID, ballots or citizenship (only a papal-election resolution)",
+        "iVoterGuide 2024 https://ivoterguide.com/candidate/78704/race/18043/election/1201 and 2026 https://ivoterguide.com/candidate/78704/race/30165/election/1452: survey item 'People should be able to vote without photo identification.' recorded as 'Did not answer', so no own words",
+        "not a cosponsor of SJR 10 per bill text (record, not saved)",
+        "web searches (4 this round): name + voter/election/ballot/interview; name + iVoterGuide: nothing further",
+        "blocked: https://ballotpedia.org (refuses fetches)",
+        "blocked: https://bluevoterguide.org (refuses fetches)",
+        "blocked: https://justfacts.votesmart.org (refuses fetches)",
+        "blocked: https://www.legislature.ohio.gov/legislation/136/sjr10/committee (curl 403; hjr9, hb472, hb233, sb153 committee pages also empty/403; sponsor lists seen only via search-prod.lis.state.oh.us bill text, which is a record not own words)",
+        "On the Record: not rerun this round (first round found 0 meetings)"
+      ],
+      "found": 0,
+      "at": "2026-11-06T16:41:07.901Z",
+      "by": "research-oh-r2-2026-11-06"
+    }
+  ]
+}

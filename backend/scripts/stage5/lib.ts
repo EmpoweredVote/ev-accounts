@@ -96,3 +96,16 @@ export function unverifiableNote(
   return `Blank approved with no verified source (${today}, approve-batch --unverifiable-blank; ruling 2026-10-31 `
     + `"Write a blank for all 26"): ${pages.length ? `no cited page verified: ${pages.join('; ')}` : 'no page could be cited'}.`;
 }
+
+/**
+ * LegiScan sessions a vote of `year` can sit in: every session whose span (year_start..year_end) covers it, plus a
+ * session that starts the next year (the old rule, kept). The old rule matched year_start only, so a vote in the
+ * second year of a two-year session (Ohio's 2022, 2024, 2026) found no session at all (oh-01, 2026-11-06).
+ */
+export function sessionsForYear<T extends { year_start: number | string; year_end?: number | string }>(sessions: T[], year: number): T[] {
+  return sessions.filter((s) => {
+    const a = Number(s.year_start), b = Number(s.year_end ?? s.year_start);
+    return (a <= year && year <= b) || a === year + 1;
+  });
+}
+

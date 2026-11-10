@@ -1,0 +1,52 @@
+{
+ "measured": "2026-11-07",
+ "migration": "CC_0370",
+ "loader": "backend/scripts/CC_0370-al-sboe-geofences.mjs (run it first — the polygons are not in the migration)",
+ "geometry": {
+  "source": "Alabama Legislative Reapportionment Office, ArcGIS feature service _2021_Alabama_State_Bd_of_Education",
+  "plan": "the 2021 plan, enacted in the 2021 First Special Session as the McClendon SBOE Plan 1 and codified whole as Code of Alabama § 16-3-1.1",
+  "fetch": "backend/scripts/CC_0370-fetch-al-sboe-arcgis.mjs, queried 2026-11-07 with outSR=4326",
+  "note": "The service itself is Web Mercator (EPSG:3857). Its eight POPULATION values sum to 5,024,279 — Alabama's 2020 apportionment population exactly — and IDEAL_VALU is 628,035, which is that figure divided by eight; that is what identifies the layer as the 2020-census plan rather than one of its predecessors.",
+  "checked": "Union covers 99.939% of our TIGER Alabama outline; zero pairwise overlap; total area 52,420 sq mi, which is Alabama's; all 656 Alabama ZCTAs resolve to exactly one district; and the statute gate — all 62 counties § 16-3-1.1 assigns whole are 99.9966%+ inside their own district with nothing over 0.01% elsewhere, and all 5 counties it splits are shared by exactly the districts it names."
+ },
+ "body": {
+  "st": "AL",
+  "stateName": "Alabama",
+  "fips": "01",
+  "governmentId": "f427572f-d37a-4828-b68b-7f2c4e6ee4cd",
+  "electionId": "4dc3b465-4921-410c-a3b1-b05bac5004e7",
+  "chamberName": "State Board of Education",
+  "chamberFormal": "Alabama State Board of Education",
+  "officialCount": 9,
+  "officeCount": 8,
+  "termLength": "4 years",
+  "rosterUrl": "https://www.alabamaachieves.org/state-board-of-education/",
+  "rosterNote": "The board's own members page, read 2026-11-07, names all eight district members. Ballotpedia's officeholder table, read the same day, agrees on all eight. Where the two differ it is only in form: the board page prints degrees and maiden names (\"Yvette M. Richardson, Ed.D.\", \"Kelly McCarthy Mooney\", \"Tonya S. Chestnut, Ed.D.\", \"Allen Long, M.D.\", \"Wayne Reynolds, Ed.D\"), so Ballotpedia's plain form is used, because the Ballotpedia page is the source each politician row cites.",
+  "remarks": "Nine members. The Governor of Alabama is the ninth, ex officio, and is the board's president (Code of Alabama § 16-3-1); that is a power of the Governor's office and not a seat of its own, so this chamber holds the eight elected district seats and no row is created for it.",
+  "inaugurationRules": "Code of Alabama § 16-3-1: a member holds office from the first Monday after the second Tuesday in January next after their election. For the 2026 winners that is 2027-01-18.",
+  "electionRules": "Four-year terms, staggered: districts 2, 4, 6 and 8 are elected in midterm years and districts 1, 3, 5 and 7 in presidential years. Members must be eligible voters living in the district they represent (§ 16-3-3).",
+  "ballotNote": "Four districts were on the 2026 ballot — 2, 4, 6 and 8 — and Ballotpedia carries a votebox for each, all four called. Districts 1, 3, 5 and 7 were last elected in 2024 and are next up in 2028.",
+  "holderNote": "🔴 THE HOLDER IS NOT THE WINNER IN TWO OF THE FOUR. Tracie West and Yvette Richardson were re-elected. Marie Manning (D6) and Wayne Reynolds (D8) are the sitting members and were not on the November ballot; Cathi Bradford and Emily Jones won those seats and take office on 2027-01-18. All eight seats are seated with their CURRENT holder, because an office with no term row raises the drift baseline and because a certified result is not a fact about who holds the seat."
+ },
+ "anchors": [
+  { "district": 1, "county": "Baldwin County", "member": "Jackie Zeigler" },
+  { "district": 2, "county": "Houston County", "member": "Tracie West" },
+  { "district": 3, "county": "Shelby County", "member": "Kelly Mooney" },
+  { "district": 4, "county": "Greene County", "member": "Yvette Richardson" },
+  { "district": 5, "county": "Dallas County", "member": "Tonya Smith Chestnut" },
+  { "district": 6, "county": "Calhoun County", "member": "Marie Manning" },
+  { "district": 7, "county": "Lauderdale County", "member": "Allen Long" },
+  { "district": 8, "county": "Madison County", "member": "Wayne Reynolds" }
+ ],
+ "anchorNote": "Every anchor is a county § 16-3-1.1 assigns WHOLE to that district, so the anchor is a statement of the law and not of the GIS file being checked. The member's name is written out here and again in the seat table on purpose: a chain gate that reads its expectation from the table it is checking is not a gate (CC_0369's control C).",
+ "seats": [
+  { "district": 1, "holder": "Jackie Zeigler", "onBallot2026": false },
+  { "district": 2, "holder": "Tracie West", "onBallot2026": true, "raceRecorded": true },
+  { "district": 3, "holder": "Kelly Mooney", "onBallot2026": false },
+  { "district": 4, "holder": "Yvette Richardson", "onBallot2026": true, "raceRecorded": true },
+  { "district": 5, "holder": "Tonya Smith Chestnut", "onBallot2026": false },
+  { "district": 6, "holder": "Marie Manning", "onBallot2026": true, "raceRecorded": true },
+  { "district": 7, "holder": "Allen Long", "onBallot2026": false },
+  { "district": 8, "holder": "Wayne Reynolds", "onBallot2026": true, "raceRecorded": true }
+ ]
+}

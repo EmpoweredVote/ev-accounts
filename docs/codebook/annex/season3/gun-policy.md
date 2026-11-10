@@ -56,8 +56,8 @@ since no rung is about which level decides (see Q5 for the one exception).
 - **Furthest act.** A record that states the acts of two neighbouring rungs sits on the rung of its furthest act;
   each lower act must still be stated, and nothing is inferred from silence. Acts from both sides of the middle (a
   restriction from rungs 1–3 and a loosening from rungs 4–5) → BLANK `adjacent-chairs`, **except under the licence
-  rule (S4)**: a rung 4 act that keeps the permit does not conflict with a rung 3 act on who may have a gun or how guns
-  are bought or made, and such a record sits at rung 3. A gated act (near-unanimous vote, gated sponsorship) never
+  rule (S4)**: a rung 4 act that keeps the permit does not conflict with a rung 3 act on who may have a gun, how guns
+  are bought or made, or where guns may not be carried, and such a record sits at rung 3. A gated act (near-unanimous vote, gated sponsorship) never
   makes a record two-sided (S7). Across a
   person's records, the newest governs only where it contradicts an older one (V5 `superseded-by-later`); two records
   on different objects on the same side are read together under furthest act.
@@ -132,11 +132,20 @@ since no rung is about which level decides (see Q5 for the one exception).
   in more places for licence holders, lifting a carry ban during a declared emergency, tenant or hotel carry, an easier
   permit) does not conflict with a rung 3 act that limits who may have a gun or how guns are bought or made (checks,
   red-flag orders, minimum ages, licences to buy, waiting periods, purchase limits, serial-number and unserialised-gun
-  rules); the record sits at rung 3. It does conflict with a type ban (rungs 1–2) and with a ban on carrying in named
-  places: those records stay `adjacent-chairs`. Permit repeal (rung 5) conflicts with every rung 1–3 act. The rule
-  always resolves toward rung 3: the screening act sets who passes the licence gate, and the carry act works inside it.
+  rules); the record sits at rung 3. It does conflict with a type ban (rungs 1–2): those records stay
+  `adjacent-chairs`. Permit repeal (rung 5) conflicts with every rung 1–3 act. The rule always resolves toward rung 3:
+  the screening act sets who passes the licence gate, and the carry act works inside it.
   Evidence: the 22 two-sided Stage 5 records were rung 3 + rung 4, 16 of them voted to keep the permit; a Florida
   roll-call test found this bloc small (about 5) and the emergency-carry repeal the crossover vote.
+  - **Narrowed 2026-11-05 (Michigan Stage 5).** A rung 4 act that keeps the permit (a fee cut, applying in any county,
+    a free re-application, a narrow carry widening such as a pistol while bow hunting, honoring other states' permits,
+    emergency carry) also does not conflict with a rung 3 ban on carrying in named places (polling places,
+    ballot-counting places, the Capitol). The 2026-11-03 text listed a place ban beside type bans as a conflict; it no
+    longer does. Type bans and permit repeal conflict as before. Evidence: 32 of Michigan's 35 records that did not fit
+    were a Yea on the 2023 polling-place bans (HB 4127/4128) beside a Yea on a permit-keeping carry easing; 31 moved to
+    rung 3, and the one that stayed two-sided also co-sponsored a magazine ban. The records already written for the
+    federal list, Virginia, Texas, Pennsylvania, Indiana and Massachusetts held no record of this shape (in Virginia
+    the only easing, the 2026 online permit application, passed 99-0 and is gated), so none changed.
 - **A No vote** on any firearms bill → BLANK `direction-only` (V4.1). A No on a different bill never cancels a Yea.
 - **Single-subject (codebook V4.1; replaces the Season 2 line "budget and omnibus votes with a firearms item →
   multi-subject").** A firearms bill is `multi-subject` only when an operative part other than the firearms part
