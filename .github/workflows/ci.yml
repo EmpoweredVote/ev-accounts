@@ -1226,13 +1226,43 @@ jobs:
   headshot-faces:
     name: headshot faces
     runs-on: ubuntu-latest
-    # Does every published headshot still contain a face, and does its URL still resolve?
+    # Does every published headshot still contain a face, does its URL still resolve, and is it
+    # a PHOTOGRAPH rather than something with a manufactured surround around it?
     # Nothing else asks either question: dimensions, aspect ratio, colour, licence and the
     # photo_custom_url/politician_images pairing were all GREEN on an office seal, an
     # election-results map, a blank frame, a headless torso, a campaign yard sign and a
     # five-person family photograph. scripts/check-headshot-faces.py is the check; it reads
     # BOTH columns an image publishes from (the profile scalar and race_candidates.photo_url,
     # which outranks it on ballot pages — CC_0259).
+    #
+    # 🔴 TWO DETECTORS, ONE CORPUS, AND THEY CATCH DIFFERENT THINGS. The second step runs
+    # scripts/check-portrait-framing.mjs, which asks whether the frame is a photograph at all or
+    # a DISC on a matte / a photograph letterboxed inside a flat BORDER. Measured over all 9,481
+    # published images on 2026-11-09, it found 11 real defects, and the face detector had passed
+    # every one of them — including the STATE SEAL OF WASHINGTON and the GREAT SEAL OF NORTH
+    # CAROLINA, both of which contain a face and so clear a face gate honestly.
+    #   * It does NOT re-query the database. It reads check-headshot-faces.py's own --json
+    #     output, so both detectors scan one list decided by one piece of SQL, and the
+    #     (url, sha256) key they each record a judgement under names the same bytes.
+    #   * It re-FETCHES the images (the face step holds them in memory, not on disk) and checks
+    #     each download against the sha the face step recorded. A file that changed in between
+    #     is reported and skipped, never judged against a key that names different bytes.
+    #   * data/headshot-framing-known.json carries the flags somebody has already looked at,
+    #     keyed on (url, sha256) exactly as data/headshot-accepted-flags.json is. Each entry
+    #     says which of two opposite things it is: a DEFECT (real, unfixed, a work queue that
+    #     should only shrink) or ACCEPTED (a real photograph this gate reads wrong, with the
+    #     reason). Only a flag in NEITHER list fails the build.
+    #   * FULL SWEEP ONLY. On the nightly --external-only scope the face step matches zero rows
+    #     by design (CC_0261 mirrored the last off-site image), so there is no corpus to frame.
+    #
+    # 💰 THE FRAMING STEP ROUGHLY DOUBLES THE SUNDAY RUN. Measured end to end over all 9,481
+    # published images on 2026-11-09: 12 min 08 s, of which ~3 min is fetching the corpus and
+    # ~9 min is the scan. The scan is one ffmpeg decode per image and is SPAWN-bound rather
+    # than CPU-bound, so a 2-core runner is not necessarily 6x slower than the 12-core box that
+    # produced that figure. Budget ~+15-25 min a week, ~+65-110 billed minutes a month against
+    # this repo's ~2,800. The job timeout below went 45 -> 75 to hold both steps.
+    # ⚠ THAT IS A LOCAL MEASUREMENT, NOT A RUNNER ONE — read the first Sunday run's duration
+    # and correct this comment, exactly as the face sweep's estimate above still asks.
     #
     # 💰 TWO SCOPES ON ONE CRON, AND THE HEADER REQUIRES STATING THE PRICE. The full sweep is
     # ~9,200 images and it is CPU-BOUND on face detection, not network-bound — measured
@@ -1257,8 +1287,9 @@ jobs:
     # Skips itself GREEN when DATABASE_URL is absent (forks / manual runs with no secret),
     # matching the other live-DB checks.
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
-    # Bounded so a pathological run cannot bill hours before anyone notices.
-    timeout-minutes: 45
+    # Bounded so a pathological run cannot bill hours before anyone notices. 75, not 45, since
+    # the framing sweep was added: the face step alone ran ~13 min of the old 45.
+    timeout-minutes: 75
     defaults:
       run:
         working-directory: backend
@@ -1271,8 +1302,26 @@ jobs:
           cache: pip
           cache-dependency-path: backend/scripts/requirements.txt
 
+      - uses: actions/setup-node@v7
+        with:
+          # Read the pin rather than repeating it. CI on 22 while backend/.node-version says
+          # something else is a difference nobody sees until it breaks.
+          node-version-file: backend/.node-version
+
       - name: Install dependencies
         run: pip install -r scripts/requirements.txt
+
+      - name: Install ffmpeg
+        shell: bash
+        # check-portrait-framing.mjs scales each image with ffmpeg before measuring it. The
+        # runner image does not promise ffmpeg — ubuntu-latest is mid-migration to 26.04, which
+        # dropped tools — so ask, and pay the ~30s only when it is genuinely absent.
+        run: |
+          if command -v ffmpeg >/dev/null 2>&1; then
+            echo "ffmpeg already present: $(ffmpeg -version | head -1)"
+          else
+            sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          fi
 
       - name: Check published headshots still contain a face, and still resolve
         shell: bash
@@ -1289,9 +1338,36 @@ jobs:
           # they want the whole answer, not tonight's slice.
           if [ "$(date -u +%u)" = "7" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "=== FULL CORPUS sweep (both columns, our storage)"
-            python scripts/check-headshot-faces.py --workers 8 --fail-on-unreachable
+            python scripts/check-headshot-faces.py --workers 8 --fail-on-unreachable \
+              --json "$RUNNER_TEMP/headshot-faces.json"
+            faces=$?
+            # 🔴 BOTH STEPS REPORT BEFORE EITHER ONE DECIDES THE BUILD. Returning on the face
+            # failure would hide every framing finding behind it, and that is the run where you
+            # most want both — the same reason check-headshot-faces.py prints its dead links and
+            # its face flags before it returns.
+            echo
+            echo "=== FRAMING sweep (same corpus, from the file the step above wrote)"
+            # The file is written before that script returns, on every path including its own
+            # failures — so if it is missing the face step died before it had results, and the
+            # framing answer for this run is "not asked". Say that, rather than letting node
+            # throw ENOENT and read as a framing defect.
+            if [ -s "$RUNNER_TEMP/headshot-faces.json" ]; then
+              node scripts/check-portrait-framing.mjs "$RUNNER_TEMP/framing" \
+                --from-json "$RUNNER_TEMP/headshot-faces.json" \
+                --known data/headshot-framing-known.json
+              framing=$?
+            else
+              echo "the face step wrote no result file — it did not get far enough to produce a corpus."
+              echo "FRAMING: not asked this run."
+              framing=0
+            fi
+            echo
+            echo "faces exit $faces, framing exit $framing"
+            [ "$faces" = 0 ] && [ "$framing" = 0 ]
           else
             echo "=== off-site links only (rot happens on other people's hosts, not in our bucket)"
+            # No framing step here: this scope matches zero rows by design, and a framing sweep
+            # over an empty corpus would be a vacuous green, not a check.
             python scripts/check-headshot-faces.py --external-only --workers 8 --fail-on-unreachable
           fi
 

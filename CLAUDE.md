@@ -748,6 +748,54 @@ each was first learned.
   what the detector does with real input. Worse, a threshold or baseline computed *from the same
   rows you are checking* shifts when they shift, so the check silently follows the fault instead of
   catching it. **Derive the control independently of the data under test.**
+- 🔴🔴 **A CONTROL SET THAT IS UNIFORM IN A PROPERTY THE DETECTOR DEPENDS ON CANNOT TEST THAT
+  PROPERTY — AND IT PASSES WHILE A WHOLE CLASS OF INPUT WALKS THROUGH.** This is the companion to
+  "a uniform ANSWER is a broken detector", with the uniformity sitting in the *controls* instead of
+  the output. `check-portrait-framing.mjs` had two fixtures, a **green** matte and a **white**
+  matte, and a centre test that asked "is the middle the same colour as the surround". Neither
+  colour can occur in a human subject, so no fixture had ever exercised a **dark** surround — and a
+  pure-black border passed the gate, because dark hair, a dark jacket and shadow are near-black in
+  every portrait, so **the subject itself voted the frame innocent**. Both controls were green
+  throughout. ▶ **List what your fixtures hold constant, and add one that varies it.** A second
+  fixture of the same kind is coverage of nothing.
+  - 🔴 **TWO DETECTORS CAN BE COMPLEMENTARY RATHER THAN REDUNDANT, AND GEOMETRY DECIDES WHICH.**
+    The same gate could not see a rectangular frame *structurally*: a disc of full width touches
+    the left and right edges at their midpoints, so **no side of a disc image is flat along its
+    whole length**. A per-side test sees a letterbox and a corner-and-diagonal test sees a disc,
+    and neither can be made to see the other by moving a threshold. **Ask whether the shape you
+    missed is reachable by the measurement you have before you retune it.**
+  - 🔴 **A PREDICATE OF SEVERAL `&&` CONDITIONS FAILS FOR EXACTLY ONE REASON, AND NOTHING PRINTS
+    IT.** That gate reported only its flagged rows, so a passing row produced **no numbers at all**
+    and the verdict was readable while the evidence for it was not. ▶ **Print every row a detector
+    scanned, not only its hits** — otherwise "why did this pass?" costs a re-implementation.
+- 🔴🔴 **A COUNT OF EVENTS THROWS AWAY THE MEASUREMENT OF THE EVENTS, AND THE MEASUREMENT IS
+  USUALLY THE ANSWER.** `check-portrait-framing.mjs` walked the four corner diagonals of an image
+  and asked **how many** of them left the matte. A circular crop answers four. A person cut out on
+  plain white answers four as well — so over the 9,481 published headshots the gate flagged 44 and
+  **33 of them were real photographs**. The number it already had and discarded was **how far
+  along each diagonal** the surround ended: a disc is round, so all four are the same, while a
+  person ends at their hair on the top two and their shoulders on the bottom two. The three
+  positive fixtures read 0, 1 and 3; every real manufactured surround in the corpus read 0–2; the
+  nearest real photograph read 8. One term, 44 flags down to 12. ▶ **When a detector counts
+  occurrences, ask what it measured to find them and whether that number discriminates.**
+  - ⚠ **A TUNING PASS NEEDS THE WHOLE CORPUS, NOT THE SET THAT PROMPTED IT.** The repair before
+    this one was measured over 36 images and reported **zero false positives**; the first 500
+    random published headshots produced one, and all 9,481 produced 33. The 36 were the batch
+    being worked on, so they were uniform in exactly the thing that was wrong. **Nothing about a
+    detector's error rate is known until it has been run over the population it will police.**
+  - 🔴 **TWO GATES OVER ONE CORPUS ARE NOT REDUNDANT WHEN THEY ASK DIFFERENT QUESTIONS, AND THE
+    SECOND ONE'S FINDINGS ARE INVISIBLE TO THE FIRST.** Every one of the 11 real framing defects
+    had **passed** `check-headshot-faces.py` — two of them are the **State Seal of Washington** and
+    the **Great Seal of North Carolina**, which contain a portrait, so a face detector clears them
+    honestly and correctly. "We already check the headshots" is not an answer to "do we check
+    *this*".
+  - 🔴 **A FLAGGING GATE NEEDS ITS BACKLOG WRITTEN DOWN AS DEFECTS, NOT AS ACCEPTANCES.**
+    `data/headshot-framing-known.json` keys on **(url, sha256)** like `headshot-accepted-flags.json`
+    — the hash is the load-bearing half, because our storage overwrites a file **in place** at the
+    same URL — and every entry must declare which of two opposite things it is: a **defect** that
+    is still published and still owed a re-source, or an **accepted** row the gate reads wrong,
+    with the reason. Both suppress the red; only one is a queue. **A defect filed as an acceptance
+    is a defect nobody will ever fix.**
 - ⚠ **A UNIFORM PROBE RESULT CAN BE A PROPERTY OF YOUR SAMPLE, NOT OF THE DATA.** Before concluding
   "they are all like this", check that the sample was not itself selected by the thing you are
   measuring.
