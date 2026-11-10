@@ -1,0 +1,92 @@
+{
+  "politician_id": "078aeae7-f65e-470c-8f0f-549d22b6403b",
+  "findings": [
+    {
+      "id": "8f83d0028419134d578f055f22fbb42fc2269d0d95536e5a2081a180daf0e758",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/house/0940041.pdf",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "House: S. B. No. 2576 passed by the following vote: (0940041)",
+      "note": "House roll call as printed ('Waldo'), linked to Beth Luther Waldo (district 15) via the official 2024 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.759Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b680fb8404ce02d97d84d7e0e33d2bd57ac1c2f65c056d5f4979c0eb31a6ce26",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Waldo'), linked to Beth Luther Waldo (district 15) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.759Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "voter-roll citizenship checks (SHIELD Act)",
+        "SAVE Act"
+      ],
+      "places": [
+        "Identity confirmed: billstatus.ls.state.ms.us member page (house/waldo.xml) lists Beth Luther Waldo, House District 15; sitting member, seat not on the 2026-11-03 ballot",
+        "5 web searches (name + voter ID/photo ID, questionnaire/forum/local papers, proof of citizenship/SAVE/SHIELD, 'Rep. Beth Waldo said', iVoterGuide): nothing by this person on the subject",
+        "thecandidate.com page: sourced quotes pending, none on the subject",
+        "Ballotpedia snippet only: she did not complete its 2023 survey (lead only, not cited)",
+        "On the Record (0 appearances)",
+        "Ballotpedia: blocked: https://ballotpedia.org (refused our fetches per the task notes; not tried)",
+        "MS House/Senate news and statewide coverage of the 2026 SHIELD Act (SB 2588) and SAVE Act: fetched Mississippi Free Press, Magnolia Tribune, SuperTalk, WLOX, WDAM, Star Herald, MPB, Clarke County Tribune, DeSoto County News, a state party's news site; none names this person on the subject",
+        "blocked: https://bluevoterguide.org and https://justfacts.votesmart.org (403)",
+        "Mississippi Today, Clarion Ledger, WLBT: not fetched (robots refuse); search snippets not used",
+        "Mississippi legislature does not post written testimony; not sought",
+        "Floor votes and sponsorships: linked separately, not searched"
+      ],
+      "found": 0,
+      "at": "2026-11-05T22:42:15.494Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-05T23:52:51.759Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

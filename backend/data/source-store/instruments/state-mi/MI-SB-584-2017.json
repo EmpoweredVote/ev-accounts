@@ -1,0 +1,203 @@
+{
+  "id": "MI-SB-584-2017",
+  "scope": "state:mi",
+  "title": "SB0584 (99th Legislature): Weapons; concealed; carrying a pistol concealed in pistol-free zones by certain individuals; allow. Amends secs. 5a, 5b, 5d & 5o of 1927 PA 372 (MCL 28.425a et seq.).",
+  "urls": [
+    "http://legislature.mi.gov/doc.aspx?2017-SB-0584",
+    "http://www.legislature.mi.gov/documents/2017-2018/billintroduced/Senate/htm/2017-SIB-0584.htm",
+    "http://www.legislature.mi.gov/documents/2017-2018/billengrossed/Senate/htm/2017-SEBS-0584.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Arlan Meekhof",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2017-11-08",
+      "body": "MI Senate",
+      "motion": "Senate Third Reading: Passed Roll Call # 455",
+      "kind": "roll-call",
+      "yes": 25,
+      "no": 12,
+      "absent": 1,
+      "note": "LegiScan roll call 678948; NV counted with absent in the tally, members keep LegiScan marks",
+      "members": [
+        {
+          "name": "Vincent Gregory",
+          "vote": "nay"
+        },
+        {
+          "name": "Bertram Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Kenneth Horn",
+          "vote": "yea"
+        },
+        {
+          "name": "Marty Knollenberg",
+          "vote": "nay"
+        },
+        {
+          "name": "Coleman Young",
+          "vote": "nay"
+        },
+        {
+          "name": "Tory Rocca",
+          "vote": "yea"
+        },
+        {
+          "name": "James Marleau",
+          "vote": "yea"
+        },
+        {
+          "name": "Rebekah Warren",
+          "vote": "nay"
+        },
+        {
+          "name": "Darwin Booher",
+          "vote": "yea"
+        },
+        {
+          "name": "Goeff Hansen",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Hildenbrand",
+          "vote": "yea"
+        },
+        {
+          "name": "Arlan Meekhof",
+          "vote": "yea"
+        },
+        {
+          "name": "John Proos",
+          "vote": "yea"
+        },
+        {
+          "name": "Wayne Schmidt",
+          "vote": "yea"
+        },
+        {
+          "name": "Tonya Schuitmaker",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Stamas",
+          "vote": "yea"
+        },
+        {
+          "name": "Phillip Pavlov",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Nofs",
+          "vote": "yea"
+        },
+        {
+          "name": "Rick Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "John Brandenburg",
+          "vote": "yea"
+        },
+        {
+          "name": "Dale Zorn",
+          "vote": "yea"
+        },
+        {
+          "name": "Margaret O'Brien",
+          "vote": "yea"
+        },
+        {
+          "name": "Peter MacGregor",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Shirkey",
+          "vote": "yea"
+        },
+        {
+          "name": "James Ananich",
+          "vote": "nay"
+        },
+        {
+          "name": "David Robertson",
+          "vote": "yea"
+        },
+        {
+          "name": "Joseph Hune",
+          "vote": "yea"
+        },
+        {
+          "name": "Judith Emmons",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Casperson",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Kowall",
+          "vote": "yea"
+        },
+        {
+          "name": "Patrick Colbeck",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Green",
+          "vote": "absent"
+        },
+        {
+          "name": "Morris Hood",
+          "vote": "nay"
+        },
+        {
+          "name": "Steven Bieda",
+          "vote": "nay"
+        },
+        {
+          "name": "Hoon-Yung Hopgood",
+          "vote": "nay"
+        },
+        {
+          "name": "David Knezek",
+          "vote": "nay"
+        },
+        {
+          "name": "Curtis Hertel",
+          "vote": "nay"
+        },
+        {
+          "name": "Ian Conyers",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-11-05T19:47:07.650422Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-SB-584-2017.engrossed.html",
+      "sha256": "d0012b6b1c9563cae3b806350c300aa8d35e5aacb537514ec73ef823f2fd377b"
+    }
+  },
+  "operative_text": "Sec. 5o(1)(i) (amending MCL 28.425o): <<(i) Any property owned by a public airport authority.>>\nSec. 5o(5)(l): (l) An individual who applies for and is granted an exemption from subsections (1) and (2) by the county clerk. An individual is eligible for an exemption from subsections (1) and (2) only if the individual requests an exemption on his or her license application and 1 or more of the following apply:\nSec. 5o(5)(l)(i): (i) Except as provided in subsection (6), the individual is a licensee or is applying for an initial or renewal license or an exemption under this subdivision who provides a certificate indicating on its face that the individual has completed not less than 8 hours of training in addition to the training required under sections 5b(7)(c) and 5j that satisfies all of the following conditions:\nSec. 5o(5)(l)(ii): (ii) The individual is certified as a firearms instructor by this state or by a national or state firearms training organization, and is eligible under section 5j to provide training under section 5b(7)(c).\nSec. 5o(9): (9) <<Except for private property leased or occupied by a public entity described under subsection (1)(a), nothing>> in this section prohibits a private property owner from prohibiting an individual from carrying a pistol, including a pistol that is openly displayed or carried in violation of subsection (11), on the premises of property described in subsection (1), and enforcing that prohibition under section 552 of the Michigan penal code, 1931 PA 328, MCL 750.552.\nSec. 5o(11) (licensee, fragment): shall not intentionally display or openly carry a pistol on the premises listed in subsection (1)(a) to <<(i)>> unless 1 of the following applies:\nSec. 5o(12)(a): (a) Except as provided in subdivisions (b) and (c), the individual is responsible for a state civil infraction and may be fined not more than $500.00. The court shall order the individual's license to carry a concealed pistol suspended for 6 months."
+}

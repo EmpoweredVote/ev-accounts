@@ -1,0 +1,25 @@
+{
+  "id": "MS-HB-686-2008",
+  "scope": "state:ms",
+  "title": "HB 686 (2008 Regular Session): Election laws; revise without voter identification requirements.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2008/pdf/history/HB/HB0686.xml",
+    "https://billstatus.ls.state.ms.us/documents/2008/pdf/HB/0600-0699/HB0686IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy)\n(section) Sec. 15(2)\n(quote) A voter who has not reregistered who appears at the polls to vote at any election conducted during calendar years 2008, 2009 and 2010 may vote by affidavit ballot and his vote shall be counted if he was lawfully registered to vote in the precinct prior to October 1, 2008, and currently meets all other requirements to vote in the precinct.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 15(1)\n(quote) The voter registration of all voters registered prior to October 1, 2008, shall be void unless the voter votes by affidavit ballot as authorized in subsection (2) of this section and all such voters shall be required to be reregistered.\n(section) Sec. 14 (23-15-541)\n(quote) When any person entitled to vote shall appear to vote, the person shall first sign his name in a receipt book or booklet provided for that purpose and to be used at that election only\n(other) Secs. 1-13: No Excuse Voting Act (early in-person voting period; absentee provisions conformed)\n(other) Sec. 14: 23-15-541 polling procedures, curbside voting\n(other) Sec. 15: reregistration of all voters registered before Oct 1 2008\n(other) Sec. 16 (23-15-225): registrar paid for reregistrations\n(other) Secs. 17-50: closed party primaries, candidate qualification, Statewide Elections Management System, ballot counting and other election-code changes\n(other) Sec. 51-52: preclearance, effective July 1 2008\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Eaton",
+      "role": "prime",
+      "version": "HB0686IN"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

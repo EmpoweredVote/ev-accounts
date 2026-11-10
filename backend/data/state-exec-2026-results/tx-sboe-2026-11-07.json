@@ -1,0 +1,57 @@
+{
+  "measured": "2026-11-07",
+  "migration": "CC_0369",
+  "loader": "backend/scripts/CC_0369-tx-sboe-geofences.mjs (polygons) and backend/scripts/CC_0369-parse-plane2106-kml.mjs (KML -> GeoJSON)",
+  "note": "The first of the tier-3 bodies that genuinely needed an imported polygon. Texas's State Board of Education is 15 members elected by district to four-year staggered terms; eight districts were on the 2026 ballot and Ballotpedia has called seven of them.",
+  "geometry": {
+    "plan": "PLANE2106 — STATE BOARD OF EDUCATION DISTRICTS, JANUARY 2023",
+    "why_this_plan": "The Texas Legislative Council's Capitol Data Portal carries exactly four SBOE plans and the other three state their own end dates in the title (plane2100 and plane120 '2013-2022', plane100 '2003-2012'). PLANE2106 is the only one still open. Texas's 2025 mid-decade redistricting did not redraw the SBOE map.",
+    "format": "KML",
+    "why_not_the_shapefile": "The shapefile in the same dataset carries PROJCS[\"NAD_1983_Lambert_Conformal_Conic\", ... PARAMETER[\"False_Easting\",1000000.0], PARAMETER[\"False_Northing\",1000000.0], ... UNIT[\"Meter\",1.0]] — Texas-centric Lambert Conformal Conic in METRES. Loaded as SRID 4326 those coordinates are valid, correctly shaped polygons that match no address on Earth, which is how Holladay's five wards went in. KML is WGS84 lon/lat by specification.",
+    "downloads": [
+      {"file": "plane2106_kml.zip", "bytes": 1911097, "sha256": "5cbe41fe5d1054b3fb0fb9ab536befcb1946a859c0d4afa7d41e3c9d38ec8978", "url": "https://data.capitol.texas.gov/dataset/ad1ae979-6df9-4322-98cf-6771cc67f02d/resource/a8a7daf2-ab21-4742-bf56-e1ab697580ea/download/plane2106_kml.zip"},
+      {"file": "PlanE2106.kml", "bytes": 8743575, "sha256": "a097abc64e0455b7b38b7364fc5dadb4e597009f1009530f7cb86f090cdc6d1b"}
+    ],
+    "parsed": {"districts": 15, "points": 263933, "geojson_mb": 7.94, "rings_per_district": 1, "holes": 0},
+    "layer": {"mtfcc": "X0003", "districtType": "STATE_BOARD_EDUCATION", "codeChange": false, "why": "districtQueries.ts and geoIdGuard.ts already admit (X0003, STATE_BOARD_EDUCATION) for Utah's board and the rule is not state-scoped, so these rows join with no read-path change"},
+    "measured_against_production": {
+      "pct_of_texas_outline_covered": 99.89,
+      "worst_pairwise_overlap_pct": 0.0,
+      "texas_places_resolving_to_exactly_one_district": "1228 of 1228",
+      "places_resolving_to_none": 0,
+      "places_resolving_to_more_than_one": 0,
+      "anchor_towns_wholly_inside_their_members_district": "9 of 9",
+      "split_member_towns_that_cannot_anchor": ["El Paso", "San Antonio", "Pasadena", "Houston", "Pearland", "Frisco"],
+      "note": "Houston touches districts 4, 6, 7 and 8 and an interior point of it lands in 4, so a member's listed city only anchors when the whole town lies in one district. Measured, not assumed."
+    }
+  },
+  "body": {
+    "st": "TX", "stateName": "Texas", "fips": "48",
+    "governmentId": "8aea8ed7-5abd-46f7-be0f-2bbbfe9fd2d9",
+    "electionId": "783b7506-dd52-47a1-a85a-9ffc363f8a04",
+    "chamberName": "State Board of Education",
+    "chamberFormal": "Texas State Board of Education",
+    "officialCount": 15,
+    "termLength": "4 years",
+    "rosterUrl": "https://sboe.texas.gov/state-board-of-education/sboe-board-members/sboe-members",
+    "rosterNote": "The board's own members page, read 2026-11-07, names all fifteen with their district number and home town. Ballotpedia agrees that the board is 15 members elected to four-year terms from 15 education districts, and that a member must be a bona fide resident of the district with one year's continuous residence before election — which is what makes the home town an independent anchor for the map.",
+    "ballotNote": "Eight districts were on the 2026 ballot — 2, 5, 6, 7, 8, 9, 13 and 14 — and Ballotpedia carries a votebox for each. District 8 has no winner called, so no race is recorded for it here; it belongs to the uncalled pass."
+  },
+  "seats": [
+    {"district": 1, "holder": "Gustavo Reveles", "town": "El Paso", "onBallot2026": false},
+    {"district": 2, "holder": "LJ Francis", "town": "Corpus Christi", "onBallot2026": true, "raceRecorded": true},
+    {"district": 3, "holder": "Marisa B. Perez-Diaz", "town": "San Antonio", "onBallot2026": false},
+    {"district": 4, "holder": "Tammie Nielsen", "town": "Pasadena", "onBallot2026": false},
+    {"district": 5, "holder": "Rebecca Bell-Metereau", "town": "San Marcos", "onBallot2026": true, "raceRecorded": true},
+    {"district": 6, "holder": "Will Hickman", "town": "Houston", "role": "Secretary", "onBallot2026": true, "raceRecorded": true},
+    {"district": 7, "holder": "Julie Pickren", "town": "Pearland", "onBallot2026": true, "raceRecorded": true},
+    {"district": 8, "holder": "Audrey Young", "town": "Trinity", "onBallot2026": true, "raceRecorded": false, "note": "on the 2026 ballot, but Ballotpedia has called no winner"},
+    {"district": 9, "holder": "Keven Ellis", "town": "Lufkin", "onBallot2026": true, "raceRecorded": true},
+    {"district": 10, "holder": "Tom Maynard", "town": "Florence", "onBallot2026": false},
+    {"district": 11, "holder": "Brandon Hall", "town": "Aledo", "onBallot2026": false},
+    {"district": 12, "holder": "Pam Little", "town": "Fairview", "role": "Vice Chair", "onBallot2026": false},
+    {"district": 13, "holder": "Tiffany Clark", "town": "DeSoto", "onBallot2026": true, "raceRecorded": true},
+    {"district": 14, "holder": "Evelyn Brooks", "town": "Frisco", "onBallot2026": true, "raceRecorded": true},
+    {"district": 15, "holder": "Aaron Kinsey", "town": "Midland", "role": "Chair", "onBallot2026": false}
+  ]
+}

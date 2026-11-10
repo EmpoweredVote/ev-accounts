@@ -1,0 +1,33 @@
+{
+  "id": "KS-HB-2364-2011",
+  "scope": "state:ks",
+  "title": "HB 2364 (2011-2012 Regular Session (2011)): Relating to voter identification. (AN ACT concerning elections; relating to voter identification; amending K.S.A. 25-2352, 25-2411, 25-2416, 25-2423 and 25-2431 and K.S.A. 2010 Supp. 25-1122, 25-1122d, 25-2309, 25-2908, 25-3002 and 25-3104 and repealing the existing sections.)",
+  "urls": [
+    "https://www.kslegislature.gov/li_2012/b2011_12/measures/hb2364/",
+    "https://www.kslegislature.gov/li_2012/b2011_12/measures/documents/hb2364_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) K.S.A. 25-2908(b)(4)\n(quote) (b) A person desiring to vote shall provide to the election board: (1) The voter's name; (2) if required, the voter's address; and (3) the voter's signature on the registration or poll book; and (4) a valid form of identification listed in subsection (d).\n(b_no_id_remedy)\n(section) K.S.A. 25-2908(e)(2)\n(quote) (2) If a voter is not a first-time voter, the county election officer shall validate the voter's eligibility by comparing the information provided on the provisional ballot application with the voter's county voter registration record.\n(c_mail_ballot_id) not extracted\n(d_proof_of_citizenship)\n(section) K.S.A. 25-2309(l)\n(quote) Upon the ability of the county officer or secretary of state's office to verify United States citizenship by obtaining Kansas driver's license numbers, Kansas nondriver's identification card numbers or social security numbers electronically, the county election officer or secretary of state shall reject any application for voter registration where satisfactory evidence of United States citizenship cannot be verified.\n(e_other_rule) not stated.\n(other) K.S.A. 25-1122, 25-1122d, 25-2908: voter ID rules for advance and polling-place voting, in a version that keeps non-photo forms (utility bill, bank statement and similar) in subsection (d) and adds ID for voters who are not first-time voters; 25-2309 citizenship check against Kansas driver's license and ID databases; 25-3002 and 25-3104 canvass and provisional ballots.",
+  "sponsors": [
+    {
+      "name": "Committee on Appropriations",
+      "role": "prime",
+      "version": "As introduced (hb2364_00_0000.pdf); no later version exists on the legislature site"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

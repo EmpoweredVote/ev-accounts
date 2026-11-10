@@ -1,0 +1,123 @@
+{
+  "politician_id": "5562e557-fac4-42f5-bb86-ebb6b67309fb",
+  "findings": [
+    {
+      "id": "8f83d0028419134d578f055f22fbb42fc2269d0d95536e5a2081a180daf0e758",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/house/0940041.pdf",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "House: S. B. No. 2576 passed by the following vote: (0940041)",
+      "note": "House roll call as printed ('Nelson'), linked to Fabian Nelson (district 66) via the official 2024 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.759Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2147cca7436b02fc328055efc537138f61a5635591caea67c88f498332726704",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "nay",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Nelson'), linked to Fabian Nelson (district 66) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.759Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll citizenship checks",
+        "online voter registration",
+        "felony voting restoration"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "web searches (name + voter ID / photo ID / proof of citizenship / SAVE Act / SHIELD Act / election / questionnaire / local paper), none returned the person's own words on the subject",
+        "Mississippi Free Press SHIELD Act articles 2026-03-25, 2026-04-23, 2026-05-04: person not named",
+        "Magnolia Tribune SHIELD Act articles 2026-03-10 and 2026-03-24: person not named",
+        "MPB 2022-04-19 citizenship article: person not named",
+        "blocked: https://ballotpedia.org (refused to fetch per brief)",
+        "blocked: bluevoterguide.org and justfacts.votesmart.org (known 403, skipped)",
+        "not reviewed: mississippitoday.org, clarionledger.com, wlbt.com, djournal.com (refused to AI agents in robots.txt)",
+        "sponsorship and floor votes: linked separately, not searched",
+        "identity confirmed: https://billstatus.ls.state.ms.us/members/house/nelson.xml (House District 66, Fabian Nelson)",
+        "https://www.supertalk.fm/legislation-introduced-to-allow-online-voter-registration-in-mississippi/ (2025-01-16): does not quote him",
+        "https://www.wbbjtv.com/?p=146196: does not mention him",
+        "no official or campaign site found by search",
+        "nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-05T22:48:08.344Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-05T23:52:51.759Z",
+      "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship",
+        "SAVE Act",
+        "SHIELD Act",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "https://mpbonline.org/blogs/news/fabian-nelson-will-be-the-states-first-openly-gay-lawmaker-but-his-platform-extends-beyond-that (read: nothing on voting rules)",
+        "https://www.mississippifreepress.org/?p=35789 (2023-08-30 runoff story read: one general line about people voting, not about ID or citizenship; not saved)",
+        "https://tpcref.org/?p=7659 (education questionnaire read: nothing on the subject)",
+        "search leads (record, not saved here): sponsor of online voter registration bill HB 1058 (2024) and voter-roll purge notice bills HB 1126 (2024), HB 642 and HB 841 (2025), per LegiScan/LegiPlex search summaries; sponsorships are linked separately",
+        "not reviewed: Washington Blade/Watermark piece, Ballotpedia survey answers (blocked)",
+        "web searches (6 new): name + voter ID, name + proof of citizenship/SHIELD Act/SAVE Act, name + election/voting, name + questionnaire/voter guide, name + local paper, name + column/newsletter/interview",
+        "blocked: https://ballotpedia.org (not fetched per instructions)",
+        "not fetched, refused to AI agents: mississippitoday.org, clarionledger.com, wlbt.com, djournal.com"
+      ],
+      "found": 0,
+      "at": "2026-11-05T23:55:08.229Z",
+      "by": "research-ms-r2-2026-11-05"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "OH-HB-42-2025",
+  "scope": "state:oh",
+  "title": "HB 42 (2025-2026 (136th General Assembly)): H. B. No. 42: Require certain agencies to collect and report citizenship data",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/hb42",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb42/00_IN/html/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) 2965.01 (new): law enforcement agencies record the citizenship or immigration status of each detained person and report yearly counts to the attorney general\n(other) 2965.02 (new): corrections department records and reports citizenship/immigration status of people in detention\n(other) 3301.0714, 3301.0717: public schools report yearly numbers of students by citizenship/immigration status\n(other) 5101.546 (new): county job and family services collect and report household citizenship data for food assistance\n(other) 3722.15, 5107.101 (new): similar reports for other public programs listed in the governor's summary\n(other) 107.26 (new): governor sends a yearly summary report to the General Assembly (due March 31)\n(other) note: Citizenship-data reporting bill for agencies. It has no voter ID, provisional ballot, voter registration or proof-of-citizenship-to-vote text (no elector/voter/ballot terms in the sections I read). Sole version.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Tex Fischer",
+      "role": "prime",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Josh Williams",
+      "role": "prime",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Adam C. Bird",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Gary Click",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Levi Dean",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Jennifer Gross",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Mark Johnson",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Angela N. King",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Roy Klopfenstein",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Beth Lear",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Jean Schmidt",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "David Thomas",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Heidi Workman",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "politician_id": "e8335c03-107d-453c-9a52-b7a964d0674c",
+  "findings": [
+    {
+      "id": "b76b08444464d687d2e3e5da5ab666871be545e481f02bd01a7bfa3659054db7",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hcr18/actions/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "yea",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 73-20) on H. C. R. No. 18, from the Ohio Legislature's own actions record, which lists each member by id (rep_claggett_thaddeus_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ae71eaff83a55e307cf832fabbb5926aafe32a659721d9302bd6fd0c50f69e3e",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/hcr18",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. C. R. No. 18 (As Introduced) on the Ohio Legislature's own record (rep_claggett_thaddeus_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "545139969c5c35a1f168640a412d667e03811d25673463e11c9fcc5bd7fca177",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "yea",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_claggett_thaddeus_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cb87000697b71758e7ca0ad908fe673527a271a0150eff9c6bd3ec29180be76c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "yea",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_claggett_thaddeus_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32abbbc8a3ef8b4b1a84709188caf92f2c696e2c45aaccbf5d255611a80b9668",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "yea",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_claggett_thaddeus_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a075bfb4ff1765b86bca4af02e0da360626c603a4b5a3a450f52fc592b1b2b9c",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/sjr10",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As Adopted by the House (04_AH)",
+      "note": "Listed as co sponsor of S. J. R. No. 10 (As Adopted by the House) on the Ohio Legislature's own record (rep_claggett_thaddeus_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7623404e30c9b7d917e593cf82741706f25f8f169ba4ee2e9cd675b5db580e8a",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/hb472",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-472-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. B. No. 472 (As Introduced) on the Ohio Legislature's own record (rep_claggett_thaddeus_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.680Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID amendment (SJR 10 / State Issue 3)",
+        "proof of citizenship / SAVE Act",
+        "HB 458",
+        "noncitizen voting",
+        "candidate questionnaire"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House page https://ohiohouse.gov/members/thaddeus-j-claggett/news (7 items, 2023-2026; nothing on the subject)",
+        "blocked: https://thereportingproject.org/meet-the-candidate-incumbent-thad-claggett-to-push-growth-management-legislation-if-reelected-in-state-district-68 (HTTP 403)",
+        "https://ivoterguide.com/race/30135/election/1452 opened: lists a questionnaire link only, no answers shown",
+        "blocked: Ballotpedia (refuses fetches)",
+        "web search: name + voter ID / photo ID / proof of citizenship; name + SAVE Act / Issue 3 / noncitizen / HB 458; name + questionnaire / voter guide (nothing on the subject by him)"
+      ],
+      "found": 0,
+      "at": "2026-11-06T16:19:48.606Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 7,
+      "at": "2026-11-06T16:28:34.680Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}

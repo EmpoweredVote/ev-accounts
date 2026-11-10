@@ -221,6 +221,269 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "443b137c667885f96038fb07eca585f78714438f76c11d325e25d1f633467637",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H193",
+      "date": "2025-07-29",
+      "date_precision": "day",
+      "instrument_id": "NC-H-193-2025",
+      "act": "nay",
+      "motion": "Veto Override",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "NC House, Veto Override, 2025-07-29: nay (tally 72–48); census gate: multi-subject.",
+      "subjects": [
+        "permit holders may carry on nonpublic school and school-church property",
+        "nonpublic school staff may carry with written authorization and training",
+        "relocated law enforcement shooting ranges shielded from local limits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-H-193-2025.chaptered.html",
+          "sha256": "4e1b8602b941f80ce4472f753fd8398bb206adecfd47d41ca4fd7b32721d3170"
+        }
+      }
+    },
+    {
+      "id": "40fcdfbcfedbb29a3a18a24bd45a03f0fb3ba53d7078ce195c09c18c7e52a605",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H28",
+      "date": "2025-03-18",
+      "date_precision": "day",
+      "instrument_id": "NC-H-28-2025",
+      "act": "yea",
+      "motion": "Second Reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "NC House, Second Reading, 2025-03-18: yea (tally 111–7); census gate: near-unanimous.",
+      "subjects": [
+        "higher felony class for felon with gun during a felony",
+        "higher still if brandished, highest if discharged"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-H-28-2025.amended.html",
+          "sha256": "c499a9586321f1cace9efabbabc5e6141a4a903da62a73936345d023e8caec13"
+        }
+      }
+    },
+    {
+      "id": "7a5b48c1d72405940d5467d0561c1f1b628877b0b483f708844e6015319b48d9",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H38",
+      "date": "2025-04-29",
+      "date_precision": "day",
+      "instrument_id": "NC-H-38-2025",
+      "act": "nay",
+      "motion": "Second Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NC House, Second Reading, 2025-04-29: nay (tally 77–38); census gate: none.",
+      "subjects": [
+        "payment card networks barred from firearms purchase codes",
+        "ban on card-network records of gun owners",
+        "civil penalties and lawsuits for violations"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-H-38-2025.amended.html",
+          "sha256": "8185eac303ae6c225177868e8f64ac678efcf2fb843e9e7dd111932c33d7fa7b"
+        }
+      }
+    },
+    {
+      "id": "3df9a071148ef2b7f4b6ecc20223d37975d2a5aa09bdb9544505d7cef7c396c4",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H674",
+      "date": "2025-05-07",
+      "date_precision": "day",
+      "instrument_id": "NC-H-674-2025",
+      "act": "nay",
+      "motion": "Second Reading",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "NC House, Second Reading, 2025-05-07: nay (tally 70–42); census gate: multi-subject.",
+      "subjects": [
+        "lifetime concealed handgun permits",
+        "permit renewal training waived for late renewals",
+        "surrendered guns under protective orders may go to a licensed dealer",
+        "liability shield for dealers holding guns voluntarily"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-H-674-2025.amended.html",
+          "sha256": "9e570edbea5f3ba2c04cfc56d236d00a7ed252deb44f5c21e624f9f0fd3b8f6a"
+        }
+      }
+    },
+    {
+      "id": "88ea485c323d5e6b65ff2db274f120a9ac259350aed30b25e436e396a6ba148d",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H811",
+      "date": "2025-06-11",
+      "date_precision": "day",
+      "instrument_id": "NC-H-811-2025",
+      "act": "yea",
+      "motion": "Second Reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "NC House, Second Reading, 2025-06-11: yea (tally 104–1); census gate: near-unanimous.",
+      "subjects": [
+        "community colleges must offer firearm safety course",
+        "$1 million a year for the course"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-H-811-2025.amended.html",
+          "sha256": "e7a7fefaf6662c8e05b4f96d466f4102d3584ba01440f5ee420291d5e9a7f631"
+        }
+      }
+    },
+    {
+      "id": "5ffd04e097659aa6e2e0ecc041d7b62c1b8149b3e0b875d18b76fa1e76d7f4cc",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H894",
+      "date": "2025-05-07",
+      "date_precision": "day",
+      "instrument_id": "NC-H-894-2025",
+      "act": "yea",
+      "motion": "Second Reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "NC House, Second Reading, 2025-05-07: yea (tally 108–1); census gate: near-unanimous.",
+      "subjects": [
+        "fire-code door-lock exemption for gun dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-H-894-2025.amended.html",
+          "sha256": "c92206b7e33f63007b17fd494bbd5545aaabdafbcf1ddf86e03701c843f492f8"
+        }
+      }
+    },
+    {
+      "id": "11ed003562359506f68bcd1a35ced4e9bd50685e1fce6e999eeda5bfd7ff7565",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H167",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "NC-H-167-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of NC-H-167-2025 (LegiScan sponsor list): H167 (2025-2026 Session): Firearm in Unattended Vehicle/Safely Store.",
+      "subjects": [
+        "firearms in unattended vehicles must be locked and secured",
+        "misdemeanor for leaving a gun unsecured in a vehicle"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-H-167-2025.amended.html",
+          "sha256": "74ebc6f57592a1e4ab27cda66aa2d61ddb269266ef0f552554aa419e0ceb9186"
+        }
+      }
+    },
+    {
+      "id": "c44a5a1a30fe0a5b8a6349c2e673bc144071b0c652dd516afe474f9a42c06f91",
+      "kind": "own-words",
+      "url": "https://www.carolinajournal.com/nc-house-dems-push-stalled-gun-safety-bills-tease-more/",
+      "date": "2026-06-04",
+      "date_precision": "day",
+      "passage": "“This should not be partisan; it should be bipartisan,” Clark said. “We’re trying to keep our communities safe.”",
+      "note": "Quoted by Carolina Journal at a press event where she said she and colleagues had introduced 12 gun-safety bills that had not had a committee hearing; the story lists red-flag orders (HB 166), a crime to leave a firearm in an unlocked parked vehicle (HB 167), and a sales-tax exemption for firearm storage equipment (HB 448).",
+      "subjects": [
+        "gun-safety bills",
+        "red-flag orders",
+        "safe storage of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-06T00:03:34.015Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bdf2e55b94765d900804436be765cf51230cddfef931ee20298d5e1cfe287360",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H206",
+      "date": "2025-04-02",
+      "date_precision": "day",
+      "instrument_id": "NC-H-206-2025",
+      "act": "yea",
+      "motion": "Second Reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "NC House, Second Reading, 2025-04-02: yea (tally 114–0); census gate: near-unanimous.",
+      "subjects": [
+        "surrendered guns returned after a background check when a protective order is not issued",
+        "third-party owners get more time to ask for return",
+        "sheriff disposal of surrendered guns after notice"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-H-206-2025.edition-2.html",
+          "sha256": "04c1278e60c82aac1aac19373727d6d047c75ef3a73b01d6b4ff1496413e8236"
+        }
+      }
     }
   ],
   "searches": [
@@ -277,6 +540,31 @@
       "found": 3,
       "at": "2026-10-27T22:07:57.429Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun-safety bills",
+        "red-flag orders",
+        "safe storage",
+        "permitless carry",
+        "general statement on gun violence"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House caucus member page and NC General Assembly biography page (confirm sitting House member, District 57); the caucus page lists gun violence prevention as a priority in third-person wording, so not saved as her own words",
+        "campaign site: could not be reached (https://www.tracyclarknc.com did not respond)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Carolina Journal article of 2026-06-04 on gun-safety bills (fetched by curl)",
+        "candidate-profile page on branch.vote: a third-party summary, not her words, not saved",
+        "aggregator page for a Clark opinion piece on community safety after a Concord shooting: only a teaser is on the page, original not found; not reviewed",
+        "Ballotpedia: not reviewed (pages return empty)",
+        "web searches (3): name plus gun, safe storage, red flag, permitless carry; nothing more from her own words"
+      ],
+      "found": 1,
+      "at": "2026-11-06T00:03:34.015Z",
+      "by": "source-collector"
     }
   ]
 }

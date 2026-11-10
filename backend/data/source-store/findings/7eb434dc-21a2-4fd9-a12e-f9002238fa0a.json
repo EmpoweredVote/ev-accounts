@@ -29,7 +29,225 @@
           "sha256": "dddae0081901748ede39524ddca0094c322a065fe443d8ffdbae0913c1a95fa4"
         }
       }
+    },
+    {
+      "id": "e1eebf7f3764e3664887df22a61a103b7a7a29ba1c05cd5d2e02978de1f33251",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/actions/",
+      "date": "2022-12-13",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-458-2022",
+      "act": "nay",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 24-7) on H. B. No. 458, from the Ohio Legislature's own actions record, which lists each member by id (sen_thomas_cecil_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5737c03423eeabd5670fb0a61adc1fcd89774928e3a5d6128441f4d9e6338798",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hcr18/actions/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 73-20) on H. C. R. No. 18, from the Ohio Legislature's own actions record, which lists each member by id (rep_thomas_cecil_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0902e7fa76fc3542f273b3e0dca071180960f9dfbff7bf0c1b0df8b3faad7385",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_thomas_cecil_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "730a6b22119baaeca4679f9ddecfeae85a89635c34995cd13d24f8df728ef61c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "nay",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_thomas_cecil_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5d326e89edf5091ea0ff50afe14346565ee0d633bc08602a7061dddab8b599d",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_thomas_cecil_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a2b44c84162415af891a61d31a3bcafbae2457cf798e3cd23ee0e7715554452",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/news/democratic/reps-isaacsohn-grim-thomas-defend-ohioans-freedom-to-vote-speak-against-needless-barriers-hb-472-would-create-119734",
+      "date": "2024-05-01",
+      "date_precision": "day",
+      "passage": "\"HB 472, unfortunately, does the opposite,\" said Rep. Thomas, ranking member on the Homeland Security Committee who was absent from today's committee. \"HB 472 is full of unnecessary and onerous requirements that will prevent Ohioans from casting their ballot.\"",
+      "note": "Release after the first committee hearing of HB 472 (adds ID copy for absentee ballots). He opposes the bill and says its requirements will prevent people from casting a ballot. Page also quotes him: \"The most important right of American citizens is the right to vote, as it protects all other rights.\"",
+      "subjects": [
+        "mail-ballot ID",
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:42:28.300Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c88ece90251360bc5e7aad48feded5dcbb76ad432887e1c8b0c645b0c7d02178",
+      "kind": "own-words",
+      "url": "https://www.ohiohouse.gov/assets/press-releases/140086/files/35395.pdf",
+      "date": "2025-12-05",
+      "date_precision": "day",
+      "passage": "We write to urge you to veto Substitute Senate Bill 293 which needlessly and recklessly changes Ohio voting laws to yet again add administrative barriers for Ohio citizens to cast their vote and have it counted. SB 293 eliminates the four-day grace period for timely mailed ballots to be received by Boards of Elections after election day and creates additional mechanisms to cancel voter registrations.",
+      "note": "Co-signed letter from House minority members to the Governor asking for a veto of SB 293 (mail-ballot receipt deadline and registration cancellation using other agencies' databases, which the bill ties to citizenship checks). Signed by Cecil Thomas with many colleagues; a shared statement, not written by this person alone.",
+      "subjects": [
+        "mail-ballot deadline (SB 293)",
+        "voter-roll checks / registration cancellation",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:42:28.300Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House page https://ohiohouse.gov/members/cecil-thomas (House District 25, Cincinnati; 4 news items, none on elections)",
+        "web searches done before the tool refused (3): voter ID; HB 458/SB 153/proof of citizenship; SJR 10 context; found nothing from him on the subject; search hits listed him on SCR 10 / SB 303 / SB 19 committee pages, not opened or confirmed as on topic",
+        "blocked: https://ohiosenate.gov/members/cecil-thomas (404, wrong slug; he is a House member now)",
+        "blocked: web search (tool returned: web search budget is used up, limit 200 WebSearch calls per turn, shared by every agent); search was INCOMPLETE and must be run again",
+        "blocked: Ballotpedia (refuses fetch)",
+        "blocked: https://www.legislature.ohio.gov (403 to curl)"
+      ],
+      "found": 0,
+      "at": "2026-11-06T15:18:10.983Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 5,
+      "at": "2026-11-06T16:28:34.680Z",
+      "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web searches this round (5-6 each, shared outputs): voter ID; photo ID amendment SJR 10 / Issue 3; HB 472 / SB 293 / proof of citizenship; questionnaire / voter guide; local outlets",
+        "ivoterguide.com Ohio list (page 1 of 2 read; no questionnaire answers shown for these members)",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (refuse fetch, not tried)",
+        "member news list pages on ohiohouse.gov (page 1 only shows a shared list; no election items except a Nov 2026 caucus-leader post on election results)",
+        "House caucusic release on HB 472 (2024-05-01), read",
+        "Ohio House release/letter on SB 293 veto request (2025-12-05, signed PDF), read",
+        "Thomas newsletter 2025 (people/2984/newsletters/14451, 14171): no voting text in the one that could be read; 14451 too large to fetch",
+        "SB 303 (134th GA) checked: jury-list bill, not on topic",
+        "Senate-era 2021-22 searches: nothing on voter ID found"
+      ],
+      "found": 2,
+      "at": "2026-11-06T16:42:28.300Z",
+      "by": "research-oh-r2-2026-11-06"
+    }
+  ]
 }

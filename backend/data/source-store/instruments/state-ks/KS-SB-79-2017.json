@@ -1,0 +1,33 @@
+{
+  "id": "KS-SB-79-2017",
+  "scope": "state:ks",
+  "title": "SB 79 (2017-2018 Regular Session (2017)): Elections; voter identification; affidavit in lieu of photo identification. (index); AN ACT concerning elections; dealing with voter identification; amending K.S.A. 2016 Supp. 25-2908 and repealing the existing section.",
+  "urls": [
+    "https://www.kslegislature.gov/li_2018/b2017_18/measures/sb79/",
+    "https://www.kslegislature.gov/li_2018/b2017_18/measures/documents/sb79_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy)\n(section) K.S.A. 25-2908(d)\n(quote) (d) If a voter is unable or refuses to provide current and valid identification, the voter may sign an affidavit listing the name, date of birth, address and last four digits of the social security number of the voter and may vote a provisional ballot pursuant to K.S.A. 25-409, and amendments thereto.\n(section) K.S.A. 25-2908(d)\n(quote) If the county board of canvassers determines that a voter's identification is valid or the voter has signed an affidavit listing the name, address and the last four digits of the social security number of the voter and the provisional ballot was properly cast, the ballot shall be counted.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) K.S.A. 25-2908: a voter without ID may sign an affidavit (name, date of birth, address, last four digits of social security number) and have the provisional ballot counted.",
+  "sponsors": [
+    {
+      "name": "Committee on Ethics, Elections and Local Government",
+      "role": "prime",
+      "version": "As introduced (sb79_00_0000.pdf); no later version exists on the legislature site"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

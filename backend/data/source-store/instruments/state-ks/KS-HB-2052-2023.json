@@ -1,0 +1,25 @@
+{
+  "id": "KS-HB-2052-2023",
+  "scope": "state:ks",
+  "title": "HB 2052 (2023-2024 biennium (2023 Regular Session)): HB 2052 Requiring correction of voter registration lists when notice is provided by a court that a person is disqualified from jury service due to not being a citizen of the United States.",
+  "urls": [
+    "https://www.kslegislature.gov/b2023_24/bills/HB2052/",
+    "https://www.kslegislature.gov/b2023_24/bills/download/?apn=b2023_24/year1/ready_for_publication/hb_2052/hb2052_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) K.S.A. 25-2316c(a)(5): correction of lists on jury-service non-citizen notice\n(quote) (5) notice is provided by a jury commissioner pursuant to K.S.A. 43-162, and amendments thereto, or by the appropriate officer of a federal court that a registered voter is not eligible for jury service due to such individual not being a citizen of the United States.\n(other) New Sec. 1: courts report noncitizen jury ineligibility to the county election office (K.S.A. 43-162).\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "House Committee on Elections",
+      "role": "prime",
+      "version": "As Introduced (hb2052_00)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

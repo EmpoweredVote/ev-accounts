@@ -1,0 +1,502 @@
+{
+  "id": "MI-HB-4416-2017",
+  "scope": "state:mi",
+  "title": "HB4416 (99th Legislature): Weapons; firearms; certain provisions regarding weapons; repeal. Amends secs. 227, 227b, 230 & 237a of 1931 PA 328 (MCL 750.227 et seq.) & repeals secs. 227a & 231a of 1931 PA 328 (MCL 750.227a & 750.231a).",
+  "urls": [
+    "http://legislature.mi.gov/doc.aspx?2017-HB-4416",
+    "http://www.legislature.mi.gov/documents/2017-2018/billintroduced/House/htm/2017-HIB-4416.htm",
+    "http://www.legislature.mi.gov/documents/2017-2018/billengrossed/House/htm/2017-HEBH-4416.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Michele Hoitenga",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "cde89f88-ac6f-429e-bc7d-e353de9bbeb5"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2017-06-07",
+      "body": "MI House",
+      "motion": "House Third Reading: Given Immediate Effect Roll Call # 183",
+      "kind": "roll-call",
+      "yes": 59,
+      "no": 49,
+      "absent": 0,
+      "note": "LegiScan roll call 660290; NV counted with absent in the tally, members keep LegiScan marks",
+      "members": [
+        {
+          "name": "Bettie Scott",
+          "vote": "nay"
+        },
+        {
+          "name": "Holly Hughes",
+          "vote": "yea"
+        },
+        {
+          "name": "Timothy Greimel",
+          "vote": "nay"
+        },
+        {
+          "name": "Joseph Graves",
+          "vote": "yea"
+        },
+        {
+          "name": "Winnie Brinks",
+          "vote": "nay",
+          "politician_id": "9d538855-3510-40ab-a48f-328d9c9bdba4"
+        },
+        {
+          "name": "Tom Cochran",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott Dianda",
+          "vote": "yea"
+        },
+        {
+          "name": "Pam Faris",
+          "vote": "nay"
+        },
+        {
+          "name": "Martin Howrylak",
+          "vote": "nay"
+        },
+        {
+          "name": "Tim Kelly",
+          "vote": "yea",
+          "politician_id": "e94fcd30-a72c-4d32-adbd-5d1de4ff993d"
+        },
+        {
+          "name": "Klint Kesto",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Kosowski",
+          "vote": "nay"
+        },
+        {
+          "name": "Dan Lauwers",
+          "vote": "yea",
+          "politician_id": "e2ebfe4d-f326-453b-9725-ead8244839cb"
+        },
+        {
+          "name": "Thomas Leonard",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael McCready",
+          "vote": "nay"
+        },
+        {
+          "name": "Dave Pagel",
+          "vote": "nay"
+        },
+        {
+          "name": "Rose Mary Robinson",
+          "vote": "nay"
+        },
+        {
+          "name": "Andy Schor",
+          "vote": "nay"
+        },
+        {
+          "name": "Samir Singh",
+          "vote": "nay"
+        },
+        {
+          "name": "Robert VerHeulen",
+          "vote": "nay"
+        },
+        {
+          "name": "Roger Victory",
+          "vote": "yea",
+          "politician_id": "8a85a630-0c68-498e-8e8f-631451fb59b1"
+        },
+        {
+          "name": "Henry Yanez",
+          "vote": "nay"
+        },
+        {
+          "name": "Adam Zemke",
+          "vote": "nay"
+        },
+        {
+          "name": "Phil Phelps",
+          "vote": "yea"
+        },
+        {
+          "name": "John Bizon",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Barrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Afendoulis",
+          "vote": "nay"
+        },
+        {
+          "name": "Wendell Byrd",
+          "vote": "nay"
+        },
+        {
+          "name": "Edward Canfield",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephanie Chang",
+          "vote": "nay",
+          "politician_id": "1a9aea1b-b22e-444c-b71b-2edfbaadc62a"
+        },
+        {
+          "name": "Lee Chatfield",
+          "vote": "yea"
+        },
+        {
+          "name": "John Chirkun",
+          "vote": "yea"
+        },
+        {
+          "name": "Triston Cole",
+          "vote": "yea"
+        },
+        {
+          "name": "Laura Cox",
+          "vote": "yea"
+        },
+        {
+          "name": "Daniela Garcia",
+          "vote": "yea"
+        },
+        {
+          "name": "Latanya Garrett",
+          "vote": "nay"
+        },
+        {
+          "name": "Sherry Gay-Dagnogo",
+          "vote": "nay"
+        },
+        {
+          "name": "Gary Glenn",
+          "vote": "yea"
+        },
+        {
+          "name": "Christine Greig",
+          "vote": "nay"
+        },
+        {
+          "name": "Vanessa Guerra",
+          "vote": "nay"
+        },
+        {
+          "name": "Jon Hoadley",
+          "vote": "nay"
+        },
+        {
+          "name": "Brandt Iden",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Inman",
+          "vote": "yea"
+        },
+        {
+          "name": "Eric Leutheuser",
+          "vote": "yea"
+        },
+        {
+          "name": "Frank Liberati",
+          "vote": "nay"
+        },
+        {
+          "name": "Leslie Love",
+          "vote": "nay"
+        },
+        {
+          "name": "Peter Lucido",
+          "vote": "yea"
+        },
+        {
+          "name": "David Maturen",
+          "vote": "nay"
+        },
+        {
+          "name": "Aaron Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Sheldon Neeley",
+          "vote": "nay"
+        },
+        {
+          "name": "Kristy Pagan",
+          "vote": "nay"
+        },
+        {
+          "name": "Brett Roberts",
+          "vote": "yea"
+        },
+        {
+          "name": "James Runestad",
+          "vote": "yea",
+          "politician_id": "732a5a3e-4571-45cf-9c6b-8e0bb5a9ecc9"
+        },
+        {
+          "name": "Jason Sheppard",
+          "vote": "yea"
+        },
+        {
+          "name": "James Tedder",
+          "vote": "yea"
+        },
+        {
+          "name": "Lana Theis",
+          "vote": "yea",
+          "politician_id": "22e06b6c-20a7-4289-ad07-984968ae34fe"
+        },
+        {
+          "name": "Henry Vaupel",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Webber",
+          "vote": "yea",
+          "politician_id": "448abed5-8af3-4542-abe6-de8970883328"
+        },
+        {
+          "name": "Robert Wittenberg",
+          "vote": "nay"
+        },
+        {
+          "name": "Erika Geiss",
+          "vote": "nay",
+          "politician_id": "4aaae9d8-5f9c-4cc7-a72c-2d80c6254e32"
+        },
+        {
+          "name": "Fred Durhal",
+          "vote": "nay"
+        },
+        {
+          "name": "Kathy Crawford",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeremy Moss",
+          "vote": "nay",
+          "politician_id": "bcda2b48-b064-42b5-a843-f6152b1f6456"
+        },
+        {
+          "name": "David LaGrand",
+          "vote": "nay"
+        },
+        {
+          "name": "Gary Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Whiteford",
+          "vote": "yea"
+        },
+        {
+          "name": "Patrick Green",
+          "vote": "nay"
+        },
+        {
+          "name": "Thomas Albert",
+          "vote": "yea",
+          "politician_id": "263a3e60-33d9-40c8-8e2c-af8189584f31"
+        },
+        {
+          "name": "Julie Alexander",
+          "vote": "yea"
+        },
+        {
+          "name": "Sue Allor",
+          "vote": "yea"
+        },
+        {
+          "name": "Joseph Bellino",
+          "vote": "yea",
+          "politician_id": "be36fee6-f81b-4e61-953c-0e89f9718bb4"
+        },
+        {
+          "name": "Tommy Brann",
+          "vote": "yea"
+        },
+        {
+          "name": "Darrin Camilleri",
+          "vote": "nay",
+          "politician_id": "eda2337e-010a-4271-8898-91566d2c52ae"
+        },
+        {
+          "name": "Brian Elder",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Ellison",
+          "vote": "nay"
+        },
+        {
+          "name": "Ben Frederick",
+          "vote": "yea"
+        },
+        {
+          "name": "Abdullah Hammoud",
+          "vote": "nay"
+        },
+        {
+          "name": "Roger Hauck",
+          "vote": "yea",
+          "politician_id": "44808453-d7f5-48d9-abb9-6ce42ec7d1ed"
+        },
+        {
+          "name": "Shane Hernandez",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Hertel",
+          "vote": "nay",
+          "politician_id": "cf6f5937-81d9-4962-af3a-b8c00518f677"
+        },
+        {
+          "name": "Michele Hoitenga",
+          "vote": "yea",
+          "politician_id": "cde89f88-ac6f-429e-bc7d-e353de9bbeb5"
+        },
+        {
+          "name": "Pamela Hornberger",
+          "vote": "yea"
+        },
+        {
+          "name": "Bronna Kahle",
+          "vote": "yea"
+        },
+        {
+          "name": "Beau LaFave",
+          "vote": "yea"
+        },
+        {
+          "name": "Kimberly LaSata",
+          "vote": "yea"
+        },
+        {
+          "name": "Donna Lasinski",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Lilly",
+          "vote": "yea"
+        },
+        {
+          "name": "James Lower",
+          "vote": "yea"
+        },
+        {
+          "name": "Steven Marino",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeffrey Noble",
+          "vote": "yea"
+        },
+        {
+          "name": "Ronnie Peterson",
+          "vote": "nay"
+        },
+        {
+          "name": "Yousef Rabhi",
+          "vote": "nay"
+        },
+        {
+          "name": "John Reilly",
+          "vote": "yea"
+        },
+        {
+          "name": "Terry Sabo",
+          "vote": "nay"
+        },
+        {
+          "name": "Tim Sneller",
+          "vote": "nay"
+        },
+        {
+          "name": "William Sowerby",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott VanSingel",
+          "vote": "yea"
+        },
+        {
+          "name": "Curtis VanderWall",
+          "vote": "yea",
+          "politician_id": "e40b492e-dc22-4150-9c07-6966e01f41a6"
+        },
+        {
+          "name": "Jason Wentworth",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeffrey Yaroch",
+          "vote": "yea"
+        },
+        {
+          "name": "Jewell Jones",
+          "vote": "nay"
+        },
+        {
+          "name": "Diana Farrington",
+          "vote": "yea"
+        },
+        {
+          "name": "Elizabeth Griffin",
+          "vote": "yea"
+        },
+        {
+          "name": "Steven Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Daire Rendon",
+          "vote": "yea"
+        },
+        {
+          "name": "Julie Calley",
+          "vote": "yea"
+        },
+        {
+          "name": "Sylvia Santana",
+          "vote": "nay",
+          "politician_id": "374b46e8-fd31-481c-b086-0588770f6466"
+        },
+        {
+          "name": "Cara Clemente",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+    "fetched_at": "2026-11-05T19:47:07.650422Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MI-HB-4416-2017.engrossed.html",
+      "sha256": "e4e51c819ee066c424e5a747cd8059898ddb436ddbda87281ed3b678d72a8d85"
+    }
+  },
+  "operative_text": "Sec. 227(1) (amending Penal Code 750.227): A person shall not carry a dagger, dirk, stiletto, a double-edged nonfolding stabbing instrument of any length, or any other dangerous weapon [-, except a hunting knife -] [-adapted and carried as such, -]concealed on or about his or her person, or whether concealed or otherwise in any vehicle operated or occupied by the person, except in his or her dwelling house, in his or her place of business, or on other land possessed by the person.\nSec. 227(2) (amending Penal Code 750.227): Subsection (1) does not apply to either of the following: (a) A firearm. (b) A hunting knife adapted and carried as a hunting knife.\nSec. 227(3) (amending Penal Code 750.227): (3) [-(2) -]A person who is prohibited by state or federal law from possessing a firearm shall not carry a pistol concealed on or about his or her person, or, whether concealed or otherwise, in a vehicle operated or occupied by the person. [-, except in his or her -] [-dwelling house, place of business, or on other land possessed by -] [-the person, without a license to carry the pistol as provided by -] [-law and if licensed, shall not carry the pistol in a place or -] [-manner inconsistent with any restrictions upon such license.-]\nSec. 227(4) (amending Penal Code 750.227): (4) [-(3) -]A person who violates this section is guilty of a felony [-, -]punishable by imprisonment for not more than 5 years [-, -]or [-by -]a fine of not more than $2,500.00.\nSec. 227b(1) (amending Penal Code 750.227b): (1) A person who carries or has in his or her possession a firearm when he or she commits or attempts to commit a felony, except a violation of section 223, 227, [-227a, -]or 230, is guilty of a felony and shall be punished by imprisonment for 2 years. Upon a second conviction under this subsection, the person shall be punished by imprisonment for 5 years. Upon a third or subsequent conviction under this subsection, the person shall be punished by imprisonment for 10 years.\nSec. 230 (amending Penal Code 750.230): A person who shall [-wilfully -]willfully alter, remove, or obliterate the name of the maker, model, manufacturer's number, or other mark of identity of a pistol or other firearm, [-shall be -]is guilty of a felony [-, -]punishable by imprisonment for not more than 2 years or fine of not more than $1,000.00. Possession of a firearm upon which the number [-shall have -]has been altered, removed, or obliterated, other than an antique firearm as defined by section [-231a(2)(a) or (b), shall be -]237a is presumptive evidence that the possessor has altered, removed, or obliterated the same.\nSec. 237a(1) (amending Penal Code 750.237a): (1) An individual who engages in conduct proscribed under section 224, 224a, 224b, 224c, 224e, 226, 227, [-227a, -]227f, 234a, 234b, or 234c, or who engages in conduct proscribed under section 223(2) for a second or subsequent time, in a weapon free school zone is guilty of a felony punishable by 1 or more of the following: (a) Imprisonment for not more than the maximum term of imprisonment authorized for the section violated.\nEnacting section 1: Sections 227a and 231a of the Michigan penal code, 1931 PA 328, MCL 750.227a and 750.231a, are repealed."
+}

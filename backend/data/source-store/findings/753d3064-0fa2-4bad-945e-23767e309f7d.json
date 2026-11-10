@@ -1,0 +1,113 @@
+{
+  "politician_id": "753d3064-0fa2-4bad-945e-23767e309f7d",
+  "findings": [
+    {
+      "id": "7a38769270a08c379334842e09b921efed7b6d0bcec81aceb08dac42ddb06feb",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/history/HB/HB0736.xml",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MS-HB-736-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, HB0736IN",
+      "note": "Named as prime sponsor ('Remak') on the official bill text, summary or journal; linked to Kimberly Remak via the official 2026 member roll of the House (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f83d0028419134d578f055f22fbb42fc2269d0d95536e5a2081a180daf0e758",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/house/0940041.pdf",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "House: S. B. No. 2576 passed by the following vote: (0940041)",
+      "note": "House roll call as printed ('Remak'), linked to Kimberly Remak (district 7) via the official 2024 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b680fb8404ce02d97d84d7e0e33d2bd57ac1c2f65c056d5f4979c0eb31a6ce26",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Remak'), linked to Kimberly Remak (district 7) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.758Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship",
+        "SAVE Act",
+        "SHIELD Act voter-roll citizenship checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "web search x6: name + voter ID; name + 2025 special election issues; name + election integrity / citizenship / SAVE Act column; name + legislative update newsletter",
+        "DeSoto County News 2023-02-01 candidacy announcement (fetched; nothing on the subject)",
+        "DeSoto County News 2024-06-30 first-term legislator interview (fetched; nothing on the subject)",
+        "BallotReady profile (fetched; issues listed do not include elections or voter ID)",
+        "nothing on the subject found in her own words; she was not on the 2025 special-election ballot",
+        "blocked: https://kimberlyremak.com (404, site gone)",
+        "blocked: https://ballotpedia.org/Kimberly_Remak (Ballotpedia refuses fetches)",
+        "blocked: https://legislature.ms.gov (certificate error on fetch)"
+      ],
+      "found": 0,
+      "at": "2026-11-05T22:50:47.904Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-05T23:52:51.758Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

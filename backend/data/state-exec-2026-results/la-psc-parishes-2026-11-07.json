@@ -1,0 +1,455 @@
+{
+ "measured": "2026-11-07",
+ "plan": "Act 2 (HB2) of the 2022 First Extraordinary Session — the Louisiana PSC districts in force",
+ "statement1": "Legislature block equivalency file, PSC - Act 2 (HB2) 1st ES (2022).txt, 142,874 blocks",
+ "statement2": "lpsc.louisiana.gov/District1..5, \"Commission District Geographical Area\", read 2026-11-07",
+ "note": "A parish is WHOLE where every one of its 2020 census blocks maps to one district AND the commission does not star it. The two statements are independent of each other and of the map they are used to check.",
+ "whole": [
+  {
+   "parish": "Acadia Parish",
+   "fips": "001",
+   "district": 4,
+   "blocks": 2635
+  },
+  {
+   "parish": "Allen Parish",
+   "fips": "003",
+   "district": 4,
+   "blocks": 1120
+  },
+  {
+   "parish": "Avoyelles Parish",
+   "fips": "009",
+   "district": 4,
+   "blocks": 1664
+  },
+  {
+   "parish": "Beauregard Parish",
+   "fips": "011",
+   "district": 4,
+   "blocks": 2095
+  },
+  {
+   "parish": "Bienville Parish",
+   "fips": "013",
+   "district": 5,
+   "blocks": 1353
+  },
+  {
+   "parish": "Bossier Parish",
+   "fips": "015",
+   "district": 5,
+   "blocks": 2456
+  },
+  {
+   "parish": "Caddo Parish",
+   "fips": "017",
+   "district": 5,
+   "blocks": 6412
+  },
+  {
+   "parish": "Calcasieu Parish",
+   "fips": "019",
+   "district": 4,
+   "blocks": 4927
+  },
+  {
+   "parish": "Caldwell Parish",
+   "fips": "021",
+   "district": 5,
+   "blocks": 687
+  },
+  {
+   "parish": "Cameron Parish",
+   "fips": "023",
+   "district": 4,
+   "blocks": 762
+  },
+  {
+   "parish": "Catahoula Parish",
+   "fips": "025",
+   "district": 5,
+   "blocks": 843
+  },
+  {
+   "parish": "Claiborne Parish",
+   "fips": "027",
+   "district": 5,
+   "blocks": 1111
+  },
+  {
+   "parish": "Concordia Parish",
+   "fips": "029",
+   "district": 5,
+   "blocks": 1048
+  },
+  {
+   "parish": "De Soto Parish",
+   "fips": "031",
+   "district": 5,
+   "blocks": 1547
+  },
+  {
+   "parish": "East Carroll Parish",
+   "fips": "035",
+   "district": 5,
+   "blocks": 504
+  },
+  {
+   "parish": "East Feliciana Parish",
+   "fips": "037",
+   "district": 2,
+   "blocks": 596
+  },
+  {
+   "parish": "Evangeline Parish",
+   "fips": "039",
+   "district": 4,
+   "blocks": 1781
+  },
+  {
+   "parish": "Franklin Parish",
+   "fips": "041",
+   "district": 5,
+   "blocks": 1025
+  },
+  {
+   "parish": "Grant Parish",
+   "fips": "043",
+   "district": 4,
+   "blocks": 1195
+  },
+  {
+   "parish": "Iberia Parish",
+   "fips": "045",
+   "district": 4,
+   "blocks": 2167
+  },
+  {
+   "parish": "Jackson Parish",
+   "fips": "049",
+   "district": 5,
+   "blocks": 1103
+  },
+  {
+   "parish": "Jefferson Davis Parish",
+   "fips": "053",
+   "district": 4,
+   "blocks": 1669
+  },
+  {
+   "parish": "Lafayette Parish",
+   "fips": "055",
+   "district": 2,
+   "blocks": 5158
+  },
+  {
+   "parish": "Lafourche Parish",
+   "fips": "057",
+   "district": 2,
+   "blocks": 2994
+  },
+  {
+   "parish": "LaSalle Parish",
+   "fips": "059",
+   "district": 4,
+   "blocks": 1279
+  },
+  {
+   "parish": "Lincoln Parish",
+   "fips": "061",
+   "district": 5,
+   "blocks": 1511
+  },
+  {
+   "parish": "Madison Parish",
+   "fips": "065",
+   "district": 5,
+   "blocks": 1014
+  },
+  {
+   "parish": "Morehouse Parish",
+   "fips": "067",
+   "district": 5,
+   "blocks": 1367
+  },
+  {
+   "parish": "Natchitoches Parish",
+   "fips": "069",
+   "district": 5,
+   "blocks": 2357
+  },
+  {
+   "parish": "Ouachita Parish",
+   "fips": "073",
+   "district": 5,
+   "blocks": 4085
+  },
+  {
+   "parish": "Plaquemines Parish",
+   "fips": "075",
+   "district": 1,
+   "blocks": 1711
+  },
+  {
+   "parish": "Pointe Coupee Parish",
+   "fips": "077",
+   "district": 2,
+   "blocks": 905
+  },
+  {
+   "parish": "Rapides Parish",
+   "fips": "079",
+   "district": 4,
+   "blocks": 4658
+  },
+  {
+   "parish": "Red River Parish",
+   "fips": "081",
+   "district": 5,
+   "blocks": 569
+  },
+  {
+   "parish": "Richland Parish",
+   "fips": "083",
+   "district": 5,
+   "blocks": 1296
+  },
+  {
+   "parish": "Sabine Parish",
+   "fips": "085",
+   "district": 5,
+   "blocks": 1599
+  },
+  {
+   "parish": "St. Bernard Parish",
+   "fips": "087",
+   "district": 1,
+   "blocks": 2039
+  },
+  {
+   "parish": "St. Helena Parish",
+   "fips": "091",
+   "district": 1,
+   "blocks": 409
+  },
+  {
+   "parish": "St. James Parish",
+   "fips": "093",
+   "district": 3,
+   "blocks": 893
+  },
+  {
+   "parish": "St. John the Baptist Parish",
+   "fips": "095",
+   "district": 3,
+   "blocks": 1139
+  },
+  {
+   "parish": "St. Landry Parish",
+   "fips": "097",
+   "district": 4,
+   "blocks": 3472
+  },
+  {
+   "parish": "St. Mary Parish",
+   "fips": "101",
+   "district": 4,
+   "blocks": 2727
+  },
+  {
+   "parish": "St. Tammany Parish",
+   "fips": "103",
+   "district": 1,
+   "blocks": 6136
+  },
+  {
+   "parish": "Tangipahoa Parish",
+   "fips": "105",
+   "district": 1,
+   "blocks": 2788
+  },
+  {
+   "parish": "Tensas Parish",
+   "fips": "107",
+   "district": 5,
+   "blocks": 710
+  },
+  {
+   "parish": "Terrebonne Parish",
+   "fips": "109",
+   "district": 2,
+   "blocks": 3197
+  },
+  {
+   "parish": "Union Parish",
+   "fips": "111",
+   "district": 5,
+   "blocks": 1383
+  },
+  {
+   "parish": "Vermilion Parish",
+   "fips": "113",
+   "district": 4,
+   "blocks": 2719
+  },
+  {
+   "parish": "Vernon Parish",
+   "fips": "115",
+   "district": 4,
+   "blocks": 3032
+  },
+  {
+   "parish": "Washington Parish",
+   "fips": "117",
+   "district": 1,
+   "blocks": 2032
+  },
+  {
+   "parish": "Webster Parish",
+   "fips": "119",
+   "district": 5,
+   "blocks": 2098
+  },
+  {
+   "parish": "West Carroll Parish",
+   "fips": "123",
+   "district": 5,
+   "blocks": 710
+  },
+  {
+   "parish": "West Feliciana Parish",
+   "fips": "125",
+   "district": 2,
+   "blocks": 410
+  },
+  {
+   "parish": "Winn Parish",
+   "fips": "127",
+   "district": 5,
+   "blocks": 1413
+  }
+ ],
+ "split": [
+  {
+   "parish": "Ascension Parish",
+   "fips": "005",
+   "districts": [
+    2,
+    3
+   ],
+   "blocks": [
+    894,
+    993
+   ]
+  },
+  {
+   "parish": "Assumption Parish",
+   "fips": "007",
+   "districts": [
+    2,
+    3
+   ],
+   "blocks": [
+    422,
+    276
+   ]
+  },
+  {
+   "parish": "East Baton Rouge Parish",
+   "fips": "033",
+   "districts": [
+    2,
+    3
+   ],
+   "blocks": [
+    2633,
+    4567
+   ]
+  },
+  {
+   "parish": "Iberville Parish",
+   "fips": "047",
+   "districts": [
+    2,
+    3
+   ],
+   "blocks": [
+    444,
+    892
+   ]
+  },
+  {
+   "parish": "Jefferson Parish",
+   "fips": "051",
+   "districts": [
+    1,
+    3
+   ],
+   "blocks": [
+    5069,
+    3064
+   ]
+  },
+  {
+   "parish": "Livingston Parish",
+   "fips": "063",
+   "districts": [
+    1,
+    2
+   ],
+   "blocks": [
+    1053,
+    947
+   ]
+  },
+  {
+   "parish": "Orleans Parish",
+   "fips": "071",
+   "districts": [
+    1,
+    3
+   ],
+   "blocks": [
+    1124,
+    10151
+   ]
+  },
+  {
+   "parish": "St. Charles Parish",
+   "fips": "089",
+   "districts": [
+    1,
+    3
+   ],
+   "blocks": [
+    334,
+    920
+   ]
+  },
+  {
+   "parish": "St. Martin Parish",
+   "fips": "099",
+   "districts": [
+    2,
+    4
+   ],
+   "blocks": [
+    1545,
+    127
+   ]
+  },
+  {
+   "parish": "West Baton Rouge Parish",
+   "fips": "121",
+   "districts": [
+    2,
+    3
+   ],
+   "blocks": [
+    431,
+    478
+   ]
+  }
+ ]
+}

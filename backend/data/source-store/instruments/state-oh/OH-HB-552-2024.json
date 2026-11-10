@@ -1,0 +1,93 @@
+{
+  "id": "OH-HB-552-2024",
+  "scope": "state:oh",
+  "title": "HB 552 (2023-2024 (135th General Assembly)): H. B. No. 552: Enact the Voter Verification Act",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/135/hb552",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb552/00_IN/html/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy)\n(section) R.C. 3503.201(C)(1)\n(quote) Except as otherwise provided in division (B) of this section, at the first election at which the elector appears to vote, the elector shall vote by provisional ballot under section 3505.181 of the Revised Code.\n(section) R.C. 3503.201(C)(2)\n(quote) If the board must verify the elector's Ohio driver's license or state identification card number or the last four digits of the elector's social security number, then in order for the elector's provisional ballot to be eligible to be counted, in addition to meeting all other requirements described in division (B)(3) of section 3505.183 of the Revised Code, the elector shall provide at least one of the following on the provisional ballot affirmation or shall appear in person at the office of the board within four days after the day of the election and provide at least one of the following: (a) An Ohio driver's license or state identification card that exists in the records of the bureau of motor vehicles and is associated with the elector's first name, last name, and date of birth, as confirmed by the secretary of state; (b) The last four digits of a social security number that exists in the records of the United States social security administration and is associated with the elector's first name, last name, and date of birth, as confirmed by the secretary of state;\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) R.C. 3503.151(E)(1)(a)-(c)\n(quote) The secretary of state shall use the information in the statewide voter registration database and the databases of the bureau of motor vehicles and the United States social security administration to prepare and transmit to each board of elections a weekly report that identifies each voter registration record in the county to which any of the following apply ... (a) The record contains neither an Ohio driver's license or state identification card number nor the last four digits of a social security number. (b) The record contains an Ohio driver's license or state identification card number, but one of the following applies: (i) The number does not exist in the records of the bureau of motor vehicles. (ii) The number exists in the records of the bureau of motor vehicles but is not associated with the first name, last name, and date of birth that appear in the voter registration record.\n(section) R.C. 3503.151(E)(1)(c)\n(quote) The record contains the last four digits of a social security number, but one of the following applies: (i) Those digits do not exist in the records of the United States social security administration. (ii) Those digits exist in the records of the United States social security administration but are not associated with the first name, last name, and date of birth that appear in the voter registration record.\n(section) R.C. 3503.201(B)(2)\n(quote) If the board must verify an elector's Ohio driver's license or state identification card number or the last four digits of the elector's social security number, and the elector provides at least one of the following to the board before the elector next appears to vote, the board shall correct the elector's registration, if needed, and shall remove the indication that the elector must vote by provisional ballot\n(other) 3501.01: confirmation notice sent by forwardable mail with a prepaid return form\n(other) 3503.151: weekly data-match report also flags licence-address mismatches (with an exclusion for address-confidentiality participants and public service workers)\n(other) 3503.19, 3503.21: returned-notice handling moved to the new 3503.201 process\n(other) 3503.201 (new): confirmation notice, flag to vote provisional, correction before next vote clears the flag, registration cancelled if the provisional ballot is not counted\n(other) 3505.181-3505.183: provisional ballot count conditions add the four-day verification\n(other) note: 'Voter Verification Act'. It is a registration data-matching bill, not a rule on ID shown at the polls or with mail ballots, and has no citizenship check or proof of citizenship. Flagged voters vote provisional and must supply a matching licence/ID number or last four SSN digits. Sole version.",
+  "sponsors": [
+    {
+      "name": "Scott Wiggam",
+      "role": "prime",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Beth Lear",
+      "role": "prime",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Adam C. Bird",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Rodney Creech",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Bill Dean",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Jennifer Gross",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Marilyn S. John",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Mark Johnson",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Darrell Kick",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Roy Klopfenstein",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Riordan T. McClain",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Melanie Miller",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Jean Schmidt",
+      "role": "co",
+      "version": "As Introduced (00_IN)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

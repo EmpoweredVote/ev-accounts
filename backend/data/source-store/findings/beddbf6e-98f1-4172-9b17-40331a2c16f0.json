@@ -1,0 +1,179 @@
+{
+  "politician_id": "beddbf6e-98f1-4172-9b17-40331a2c16f0",
+  "findings": [
+    {
+      "id": "b76b08444464d687d2e3e5da5ab666871be545e481f02bd01a7bfa3659054db7",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hcr18/actions/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "yea",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 73-20) on H. C. R. No. 18, from the Ohio Legislature's own actions record, which lists each member by id (rep_pizzulli_justin_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.682Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ae71eaff83a55e307cf832fabbb5926aafe32a659721d9302bd6fd0c50f69e3e",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/hcr18",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. C. R. No. 18 (As Introduced) on the Ohio Legislature's own record (rep_pizzulli_justin_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.682Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "545139969c5c35a1f168640a412d667e03811d25673463e11c9fcc5bd7fca177",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "yea",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_pizzulli_justin_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.682Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cb87000697b71758e7ca0ad908fe673527a271a0150eff9c6bd3ec29180be76c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "yea",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_pizzulli_justin_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.682Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32abbbc8a3ef8b4b1a84709188caf92f2c696e2c45aaccbf5d255611a80b9668",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "yea",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_pizzulli_justin_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.682Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record: not run",
+        "official House news list https://www.ohiohouse.gov/members/justin-pizzulli/news (first page of 10-20 items, Apr to Oct 2026; none on elections, voting, ID or citizenship; older pages not opened: not reviewed)",
+        "https://ohiohouse.gov/members/melanie-miller/news/rep-melanie-miller-votes-on-resolution-aimed-at-strengthening-elections-by-placing-voter-id-requirements-in-the-state-constitution-147233 and https://ohiohouse.gov/news/republican/house-republicans-pass-resolution-aimed-at-strengthening-our-elections-by-placing-voter-id-requirements-in-the-state-constitution-145722 (SJR 10 releases; do not name this person)",
+        "blocked: https://www.legislature.ohio.gov/legislation/136/sjr10/committee (403 to curl)",
+        "blocked: https://www.legislature.ohio.gov/legislation/136/hjr9/committee (403 to curl)",
+        "blocked: Ballotpedia (refuses fetches, not tried)",
+        "blocked: web search (tool returned an error: web search budget used up, limit 200 per turn shared by every agent); no person-specific web searches run for this person",
+        "not reviewed: campaign site, iVoterGuide, Vote411, local-paper voter guides, news searches"
+      ],
+      "found": 0,
+      "at": "2026-11-06T15:18:46.866Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 5,
+      "at": "2026-11-06T16:28:34.682Z",
+      "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "https://content.govdelivery.com/accounts/OHHOUSEGOP/bulletins/3d9e2cb (Spring newsletter; nothing on the subject)",
+        "https://www.justinforohio.com/about (campaign site; nothing on the subject)",
+        "official House news list page 1 re-read (nothing on elections); further pages not reachable by the fetch tool",
+        "blocked: https://www.portsmouth-dailytimes.com/?p=105275 and ?p=101928 (429 Too Many Requests)",
+        "web searches run this round (about 5): name + voter ID/election; name + local outlet + election/voter/ballot; newsletters; candidate questionnaire",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (refuse fetches, not tried)",
+        "blocked: https://www.legislature.ohio.gov/legislation/135/hcr18/committee (403 to curl); read https://ohiohouse.gov/legislation/135/hcr18 instead (no testimony listed)",
+        "not reviewed: House floor session video remarks on SJR 10 (video, not readable)"
+      ],
+      "found": 0,
+      "at": "2026-11-06T16:42:23.933Z",
+      "by": "research-oh-r2-2026-11-06"
+    }
+  ]
+}

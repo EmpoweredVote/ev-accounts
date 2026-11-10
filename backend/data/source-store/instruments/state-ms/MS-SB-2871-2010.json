@@ -1,0 +1,33 @@
+{
+  "id": "MS-SB-2871-2010",
+  "scope": "state:ms",
+  "title": "SB 2871 (2010 Regular Session): Elections; require electors to present certain types of identification before being allowed to vote.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2010/pdf/history/SB/SB2871.xml",
+    "https://billstatus.ls.state.ms.us/documents/2010/pdf/SB/2800-2899/SB2871IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1(1)\n(quote) Each person who shall appear to vote in person at a polling place or the registrar's office shall be required to identify himself or herself to an election manager or the registrar by presenting current and valid photo identification, a government document that shows the name and address of the person and the name substantially conforms to the name on the pollbook, a social security card that shows the name of the person, the birth certificate of the person, or a certified naturalization document showing the name of the person before such person shall be allowed to vote.\n(section) Sec. 1(2)\n(quote) The identification required by subsection (1) of this section shall include, but not be limited to, the following: (a) A current and valid Mississippi driver's license; (b) A current and valid identification card issued by a branch, department, agency or entity of the State of Mississippi; (c) A current and valid United States passport;\n(b_no_id_remedy)\n(section) Sec. 1(3)\n(quote) A person who appears to vote in person at a polling place and does not have identification as required by this section may vote by affidavit ballot. If, upon examination of the affidavit, the person is found to be a registered voter, the person's vote shall be counted.\n(section) Sec. 2(1)\n(quote) No fee shall be charged or collected for the application for or issuance of a Mississippi Voter Identification Card.\n(c_mail_ballot_id)\n(section) Conforming 23-15-719(1)\n(quote) the registrar shall identify the applicant by requiring him to present identification as required by Section 1 of this act, and shall then deliver the necessary ballots to the applicant.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 1(5)\n(quote) The intentional failure of an election official to require a voter to present identification as required by this section shall be considered corrupt conduct under Section 97-13-19 and shall be reported to the Secretary of State and the Attorney General.\n(section) Sec. 2(5)\n(quote) The registrar shall require presentation and verification of the following information during the application process which shall be certified to the Secretary of State before issuance of a Mississippi Voter Identification Card: (a) A photo identity document; (b) Documentation showing the person's date and place of birth;\n(other) Sec. 1(4): intimidating a voter by using the section is punished by fine of at least \\$5,000 and/or 1-5 years\n(other) Sec. 2: free Mississippi Voter Identification Card, valid four years, for registered voters without a valid driver license or state ID\n(other) Conforming amendments to 23-15-11, 23-15-541, 23-15-627 (agents of the elector removed from persons who may orally request an absentee ballot), 23-15-719; preclearance",
+  "sponsors": [
+    {
+      "name": "Burton",
+      "role": "prime",
+      "version": "SB2871IN"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

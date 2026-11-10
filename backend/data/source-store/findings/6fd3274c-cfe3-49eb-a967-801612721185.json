@@ -231,6 +231,31 @@
       "found": 6,
       "at": "2026-10-27T19:58:20.685Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "general statements on gun safety or the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity confirmed: https://en.wikipedia.org/wiki/Amanda_Cook_(politician) (NC House District 60, took office 2025-11-18); won the March 2026 primary per https://www.carolinajournal.com/cook-holds-seat-in-4-way-democratic-primary/",
+        "campaign site https://voteamandacook.com/ (page text fetched, no gun or firearm wording): nothing on the subject",
+        "https://branch.vote/races/2026-north-carolina-general-election-nc-state-state-representative-nc-state-house-60/candidates/amanda-cook: nothing on the subject",
+        "https://www.wfae.org/2025-11-15/high-point-council-member-amanda-cook-to-replace-brockman-in-nc-house: nothing on the subject",
+        "blocked: https://bluevoterguide.org/fr/endorser-org/Gun_Sense_Voter/NC/4895 (403)",
+        "blocked: https://www.ncleg.gov/Members/Biography/H/859 (HTTP 500)",
+        "Ballotpedia not fetched (known to return empty); web searches on her name plus gun words returned no statement by her",
+        "sponsor list: covered by LegiScan bulk check"
+      ],
+      "found": 0,
+      "at": "2026-11-05T23:58:08.490Z",
+      "by": "source-collector"
     }
   ]
 }

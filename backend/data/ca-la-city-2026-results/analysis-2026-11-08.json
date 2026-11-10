@@ -1,0 +1,226 @@
+{
+ "generated": "2026-11-08",
+ "safety": 3,
+ "la": {
+  "counted": 3041114,
+  "outstanding": 131000
+ },
+ "report": [
+  {
+   "district": "Los Angeles city",
+   "office_title": "City Attorney",
+   "office_id": "5a873c59-72ac-488f-8b2c-44dfd04d065c",
+   "race_id": "7caf9b67-6529-471c-9d8d-3ab29aa1908a",
+   "seats": 1,
+   "is_vacant": false,
+   "anchor": {
+    "county": "Los Angeles",
+    "contest_id": "10768",
+    "title": "LOS ANGELES CITY GENERAL MUNICIPAL ELECTION City Attorney",
+    "voteFor": "",
+    "note": "",
+    "ballots": 1138078,
+    "counties": [
+     "Los Angeles"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 1138078
+    }
+   },
+   "count": {
+    "ballots": 1138078,
+    "est_outstanding": 49025,
+    "safety": 3,
+    "bound": 131000,
+    "capped": true,
+    "margin": 360182,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "MARISSA ROY",
+     "votes": 673463,
+     "rc_id": "f7299480-14a2-47f3-86e4-7cde655e442d",
+     "politician_id": "7157dd95-0f1b-4e05-bd4f-39317345b47c",
+     "incumbent": false,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "JOHN MCKINNEY",
+     "votes": 313281,
+     "rc_id": "cd54abd9-b430-487b-9e73-e4970c5daa58",
+     "politician_id": "6cd2e87b-7366-429a-a049-990751bd647f",
+     "incumbent": false,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [],
+   "warnings": [],
+   "callable": true
+  },
+  {
+   "district": "District 3",
+   "office_title": "Council Member",
+   "office_id": "9eb3aa2a-8316-48fc-9385-60de9de476b6",
+   "race_id": "f2f43142-0376-4aee-97b2-e5a3e8608cda",
+   "seats": 1,
+   "is_vacant": false,
+   "anchor": {
+    "county": "Los Angeles",
+    "contest_id": "10770",
+    "title": "LOS ANGELES CITY GENERAL MUNICIPAL ELECTION Member of the City Council, 3rd District",
+    "voteFor": "",
+    "note": "",
+    "ballots": 77981,
+    "counties": [
+     "Los Angeles"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 77981
+    }
+   },
+   "count": {
+    "ballots": 77981,
+    "est_outstanding": 3360,
+    "safety": 3,
+    "bound": 10080,
+    "capped": false,
+    "margin": 1869,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "BARRI WORTH GIRVAN",
+     "votes": 34442,
+     "rc_id": "1da35f9c-4c6f-4476-9aa6-2206d19798a0",
+     "politician_id": "2cea762f-17c0-42a4-a83f-678a2941c8c9",
+     "incumbent": false,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "TIMOTHY K. GASPAR",
+     "votes": 32573,
+     "rc_id": "18a71e13-2fc3-487c-9bd5-47cb1c6a8a40",
+     "politician_id": "4632aaf1-6667-4e41-9763-c8b56ca7e702",
+     "incumbent": false,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [],
+   "warnings": [],
+   "callable": false
+  },
+  {
+   "district": "District 9",
+   "office_title": "Council Member",
+   "office_id": "b90452f3-360f-4e79-af3a-a43c1d30f754",
+   "race_id": "dee51f33-1380-48eb-b6e1-3fa56dc507a4",
+   "seats": 1,
+   "is_vacant": false,
+   "anchor": {
+    "county": "Los Angeles",
+    "contest_id": "10771",
+    "title": "LOS ANGELES CITY GENERAL MUNICIPAL ELECTION Member of the City Council, 9th District",
+    "voteFor": "",
+    "note": "",
+    "ballots": 39401,
+    "counties": [
+     "Los Angeles"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 39401
+    }
+   },
+   "count": {
+    "ballots": 39401,
+    "est_outstanding": 1698,
+    "safety": 3,
+    "bound": 5094,
+    "capped": false,
+    "margin": 417,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "JOSE UGARTE",
+     "votes": 18487,
+     "rc_id": "41d57623-bc17-4a4d-be55-e7f5320ba4e5",
+     "politician_id": "a25fea2b-2328-42d7-bb78-5b134a469af1",
+     "incumbent": false,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "ESTUARDO MAZARIEGOS",
+     "votes": 18070,
+     "rc_id": "6486447e-a645-4df5-ae28-382ff65363e5",
+     "politician_id": "92876cb7-9905-4be7-b349-2a4a4ff39846",
+     "incumbent": false,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [],
+   "warnings": [],
+   "callable": false
+  },
+  {
+   "district": "Los Angeles city",
+   "office_title": "Mayor",
+   "office_id": "b8c4bd9d-05ba-4751-b947-7a3d2645d3ef",
+   "race_id": "9e888818-c50b-4c61-a106-a0839ff2479d",
+   "seats": 1,
+   "is_vacant": false,
+   "anchor": {
+    "county": "Los Angeles",
+    "contest_id": "10767",
+    "title": "LOS ANGELES CITY GENERAL MUNICIPAL ELECTION Mayor",
+    "voteFor": "",
+    "note": "",
+    "ballots": 1138078,
+    "counties": [
+     "Los Angeles"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 1138078
+    }
+   },
+   "count": {
+    "ballots": 1138078,
+    "est_outstanding": 49025,
+    "safety": 3,
+    "bound": 131000,
+    "capped": true,
+    "margin": 94921,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "NITHYA RAMAN",
+     "votes": 579501,
+     "rc_id": "43809e67-3447-4ffa-835e-12a567513e7c",
+     "politician_id": "26dbe16a-9dff-42c0-939f-5b5e529063ca",
+     "incumbent": false,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "KAREN RUTH BASS",
+     "votes": 484580,
+     "rc_id": "c7e1cbf9-2f5c-4ed1-b82a-056cf755650d",
+     "politician_id": "21c9e711-fb18-4afb-884f-08acd2b598ba",
+     "incumbent": true,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [],
+   "warnings": [],
+   "callable": false
+  }
+ ]
+}

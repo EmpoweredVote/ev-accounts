@@ -53,6 +53,33 @@
       "found": 0,
       "at": "2026-10-27T16:43:24.456Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights",
+        "Second Amendment",
+        "gun bans",
+        "background checks",
+        "carry permits",
+        "permitless carry",
+        "red flag orders",
+        "assault-style weapons"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Wikipedia (confirms NC Senate District 18, appointed May 2026; nothing on the subject)",
+        "Branch candidate page (a one-line summary of his stance written by the site, not his words; not saved)",
+        "campaign site https://www.haseebfatmi.com (returned empty page; not reviewed)",
+        "NC Newsline voter guide (blocked: https://ncnewsline.com/voter-guides/contests/n-c-senate-district-18/)",
+        "web searches on name plus gun terms (nothing)",
+        "nothing on the subject in his own words; note: a state senator, not a House member"
+      ],
+      "found": 0,
+      "at": "2026-11-05T23:59:11.016Z",
+      "by": "source-collector"
     }
   ]
 }

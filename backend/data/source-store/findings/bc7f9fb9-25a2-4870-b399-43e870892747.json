@@ -1,0 +1,196 @@
+{
+  "politician_id": "bc7f9fb9-25a2-4870-b399-43e870892747",
+  "findings": [
+    {
+      "id": "320d8b011c3906f226d848b6cce02cf04bb571e40326dcb29b96776789b64c4d",
+      "kind": "own-words",
+      "url": "https://www.facingsouth.org/2026/03/our-work-protect-voting-rights-will-not-die-rep-zakiya-summers-fight-voting-rights",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "Here in the state of Mississippi, right away, we implemented voter ID.",
+      "note": "In a Facing South interview, she describes the state's adoption of voter ID as an immediate step taken after the 2013 Shelby County ruling. Page text came back through the fetch tool's exact-sentence request.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:10:02.982Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad82c798297cbcba546bf0c769c34ed09d6e457db3b9ef8fb8b12238d66d7e5c",
+      "kind": "own-words",
+      "url": "https://www.facingsouth.org/2026/03/our-work-protect-voting-rights-will-not-die-rep-zakiya-summers-fight-voting-rights",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "What this legislation would do is provide state-level protections as it relates to voting rights.",
+      "note": "She describes the state voting rights act bill she filed in 2026 as state-level voting protections.",
+      "subjects": [
+        "election integrity and voting access laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:10:02.982Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4dddfb472a0c1026e0982fcc6265d907d4103caceaf0cbfdda5b8d37a9226172",
+      "kind": "own-words",
+      "url": "https://www.jacksonfreepress.com/news/2019/feb/04/proposal-would-make-mississippi-voter-id-law-stric",
+      "date": "2019-02-04",
+      "date_precision": "day",
+      "passage": "We should not be in the business of limiting access to voters.",
+      "note": "Quoted in the Jackson Free Press, as a Hinds County election commissioner, on Senate Bill 2242, which would cut the time to show photo ID after an affidavit ballot from five days to three. The paper reports she argued full-time workers far from a courthouse could struggle to meet a three-day deadline.",
+      "subjects": [
+        "no-ID voter affidavit ballot deadline to show photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:10:02.982Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b71c290c635b3481a2dbdd1466cf8c5839e4933637b9836b62a6be2d5cca665",
+      "kind": "own-words",
+      "url": "https://jacksonadvocateonline.com/rep-zakiya-summers-responds-to-sos-proposal-to-disenfranchise-all-felons-and-appeals-court-ruling-on-mail-in-absentee-voting/",
+      "date": "2024-11-04",
+      "date_precision": "day",
+      "passage": "I am deeply disappointed in the recent Appeals Court panel ruling, which upholds restrictions on the counting of mail-in ballots postmarked by Election Day.",
+      "note": "Her statement on the Appeals Court ruling on mail-in ballot receipt. Not about ID. Related mail-ballot topic. (Fetch tool split the sentence into two exact segments; joined here.)",
+      "subjects": [
+        "mail-ballot rules (related)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:10:02.982Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4fbba305f72e29d24d1602007a4a0beb2ae18d76c403cda48443134f7aacc0ba",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2021/pdf/votes/house/0370056.pdf",
+      "date": "2021-02-10",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-586-2021",
+      "act": "nay",
+      "motion": "House: H. B. No. 586 passed by the following vote: (0370056)",
+      "note": "House roll call as printed ('Summers'), linked to Zakiya Summers (district 68) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f83d0028419134d578f055f22fbb42fc2269d0d95536e5a2081a180daf0e758",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/house/0940041.pdf",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "House: S. B. No. 2576 passed by the following vote: (0940041)",
+      "note": "House roll call as printed ('Summers'), linked to Zakiya Summers (district 68) via the official 2024 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2147cca7436b02fc328055efc537138f61a5635591caea67c88f498332726704",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "nay",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Summers'), linked to Zakiya Summers (district 68) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "affidavit ballot ID deadline",
+        "mail-ballot rules",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election law access"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "member page https://billstatus.ls.state.ms.us/members/house/summers.xml (confirms Zakiya Summers, House District 68)",
+        "Facing South interview 2026-03-18",
+        "Jackson Free Press 2019-02-04",
+        "Jackson Advocate 2024-11-04",
+        "Mississippi Free Press 2019 candidate questionnaire (nothing on voter ID)",
+        "Mississippi Free Press 2025-02-12 roundup (no words by her on the subject)",
+        "Love Black Girls Q&A 2019 (nothing on voter ID)",
+        "blocked: https://www.wjtv.com/news/election/jackson-town-hall-addresses-voting-rights-voter-confidence/ (403)",
+        "not reviewed: Magnolia Tribune 2020 op-ed coverage https://magnoliatribune.com/?p=69555",
+        "blocked: Ballotpedia (listed as blocked per instructions)",
+        "web searches: voter ID; photo ID/proof of citizenship (nothing found tying her to SAVE Act or citizenship); 2020 op-ed; Mississippi Free Press absentee; questionnaire"
+      ],
+      "found": 4,
+      "at": "2026-11-05T23:10:02.982Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-05T23:52:51.757Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

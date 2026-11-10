@@ -1,0 +1,244 @@
+{
+  "politician_id": "750b696e-7c32-4f8a-bb0f-7d8e317a4a17",
+  "findings": [
+    {
+      "id": "f5697afd32f03dc086b5345a0a6cd9ad151af0d90b6a4dc6c539a64510187c2b",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/actions/",
+      "date": "2022-12-14",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-458-2022",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 55-34) on H. B. No. 458, from the Ohio Legislature's own actions record, which lists each member by id (rep_humphrey_latyna_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5737c03423eeabd5670fb0a61adc1fcd89774928e3a5d6128441f4d9e6338798",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hcr18/actions/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 73-20) on H. C. R. No. 18, from the Ohio Legislature's own actions record, which lists each member by id (rep_humphrey_latyna_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0902e7fa76fc3542f273b3e0dca071180960f9dfbff7bf0c1b0df8b3faad7385",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_humphrey_latyna_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "730a6b22119baaeca4679f9ddecfeae85a89635c34995cd13d24f8df728ef61c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "nay",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_humphrey_latyna_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5d326e89edf5091ea0ff50afe14346565ee0d633bc08602a7061dddab8b599d",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_humphrey_latyna_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2474ba40384182db2a596b7122fe5d8b9ae7cc2c51f092f9e0fdc60dc8d2deea",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/latyna-m-humphrey/news/rep-humphrey-ohio-republicans-place-new-burdens-on-voters-by-adding-unnecessary-hurdles-to-the-voting-process-139688",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "passage": "Voting should be a straightforward and welcoming process for every eligible Ohioan.",
+      "note": "Release in her name on SB 293 (mail-ballot deadline, voter-roll cancellation steps); general voting statement, not about ID.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:40:10.941Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c0adece8cefa2a3688c705caaf2264239f9eb5f11e13498ed3ec4fc966826be4",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/latyna-m-humphrey/news/rep-humphrey-ohio-republicans-place-new-burdens-on-voters-by-adding-unnecessary-hurdles-to-the-voting-process-139688",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "passage": "Current law allows for a grace period for mailed absentee ballots to arrive after election day.",
+      "note": "Same release: describes current mailed-ballot law before objecting to SB 293.",
+      "subjects": [
+        "mail-ballot deadline",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:40:10.941Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "013cc3661f432fa3c6965d040559ee77b63cd46e99654f235b2e286e77de485b",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/latyna-m-humphrey/news/rep-humphrey-ohio-republicans-place-new-burdens-on-voters-by-adding-unnecessary-hurdles-to-the-voting-process-139688",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "passage": "The bill eliminates this grace period and says all ballots must arrive by 7:30pm on election day.",
+      "note": "Same release: describes what SB 293 does to mailed ballots.",
+      "subjects": [
+        "mail-ballot deadline",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:40:10.941Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "member news list ohiohouse.gov/members/latyna-m-humphrey/news (confirmed District 2, Columbus; shared caucus feed, no own item on the subject)",
+        "2 web searches run: nothing on the subject",
+        "committee testimony, campaign site, questionnaires: not reviewed",
+        "blocked: web search (this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent in it); fewer than 5 searches completed for this person)",
+        "blocked: https://ballotpedia.org (refuses fetches, not tried)",
+        "blocked: https://bluevoterguide.org (refuses fetches, not tried)",
+        "blocked: curl on ohiohouse.gov release pages (403)"
+      ],
+      "found": 0,
+      "at": "2026-11-06T15:18:07.552Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 5,
+      "at": "2026-11-06T16:28:34.679Z",
+      "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "member news list ohiohouse.gov/members/latyna-m-humphrey/news page 1 read: no title on ID or citizenship; list mixes in other members' releases",
+        "SB 293 release of 2025-11-19 read in full (found via search)",
+        "Humphrey newsletters 9851, 10271, 5631, 12491, 2026 (ohiohouse.gov/assets/people/2967/newsletters): read as PDF text; only voter-registration reminders, redistricting and a 2023 ballot-issue note; nothing on ID or citizenship",
+        "5 web searches (name + voter ID, photo ID, voter suppression, SB 293, HB 458, HJR 9, HB 577, Issue 3, Senate District 15 questionnaire): no own words on ID or citizenship; no SJR 10 release in her name found",
+        "campaign site / questionnaires for Senate District 15: none found",
+        "blocked: https://www.legislature.ohio.gov/legislation/136/<bill>/committee (HTTP 403 from curl for sjr10, hjr9, sb293, hb472, sb153, hb233; not retried)",
+        "blocked: https://thereportingproject.org/?p=27298 (HTTP 403)",
+        "blocked: https://ballotpedia.org and https://bluevoterguide.org (refuse fetches, not tried)",
+        "On the Record: round 1 found 0 meetings; not re-run"
+      ],
+      "found": 3,
+      "at": "2026-11-06T16:40:10.941Z",
+      "by": "research-oh-r2-2026-11-06"
+    }
+  ]
+}

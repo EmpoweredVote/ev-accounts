@@ -1,0 +1,85 @@
+{
+  "politician_id": "5857d445-b4b8-44fc-b63b-7d917bd30d05",
+  "findings": [
+    {
+      "id": "433a0220aca76b98d108b9d2ffbab0f78d9f7eb20de7098c2e019a4903f1bd23",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/78926/race/18016/election/1201",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "People should be able to vote without photo identification. Strongly Disagree",
+      "note": "His answer on the iVoterGuide candidate questionnaire to the statement 'People should be able to vote without photo identification.' The page does not date the answer.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:24.873Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cb87000697b71758e7ca0ad908fe673527a271a0150eff9c6bd3ec29180be76c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "yea",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_dean_levi_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.686Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "election integrity",
+        "constitutional amendment process"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page https://ohiohouse.gov/members/levi-dean (news list has nothing on the subject)",
+        "iVoterGuide candidate page (lists him on the 2026-11-03 general ballot for State Rep., Dist. 71)",
+        "Fairborn Daily Herald 2024 primary articles",
+        "Ballotpedia: blocked (refuses fetches, not tried)",
+        "Dayton Daily News candidate Q&A: not opened (site refuses AI agents)",
+        "two web searches on name plus voter ID / photo ID / citizenship / questionnaire; no testimony, release or interview found on proof of citizenship or HB 458"
+      ],
+      "found": 1,
+      "at": "2026-11-06T15:11:24.873Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 1,
+      "at": "2026-11-06T16:28:34.686Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}

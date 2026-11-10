@@ -30,7 +30,204 @@
           "sha256": "a1142904e692e81f08ce94bef1f5827e9d662ac1f81ce57f6330064169e08945"
         }
       }
+    },
+    {
+      "id": "85c274c17e61b44cc20f0bbb430e91f5097aa87469fc1f9d2e4e77a365263d86",
+      "kind": "record",
+      "url": "https://attorneygenerallynnfitch.com/wp-content/uploads/2024/10/J.Seymour-October-10-2024-Voter-Identification.pdf.pdf",
+      "date": "2024-10-10",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Request for Attorney General official opinion on the voter identification requirement (Miss. Code 23-15-563)",
+      "note": "The opinion letter says it answers his request for an official opinion. Per the letter, he asked what forms of ID a voter may show at the polls after the 2024 amendment of Section 23-15-563. His five questions cover expired driver's licenses, IDs from other states, an expired gun permit, and IDs from other countries. The letter text is the Attorney General's, not his; the questions are as presented in that letter.",
+      "subjects": [
+        "voter ID at the polls",
+        "acceptable forms of ID",
+        "expired ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:07:10.537Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "364900856d99bfb399d1bd234a46bd84aa31932d2d96df01adc5d490b75dbbec",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/senate/0860019.pdf",
+      "date": "2022-03-30",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Report of Conference Committee on H. B. No. 1510 was adopted: (0860019)",
+      "note": "Senate roll call as printed ('Seymour'), linked to Joseph M. Seymour (district 47) via the official 2022 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.756Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dd2a12a6dee5821334b8172c5583de5ade5bdaf4f4ad0b5e1da44e4c195eeac3",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/senate/0580007.pdf",
+      "date": "2018-02-28",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-804-2018",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On H. B. No. 804. On motion of Senator Blackwell, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0580007)",
+      "note": "Senate roll call as printed ('Seymour'), linked to Joseph M. Seymour (district 47) via the official 2018 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.756Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4882f5923743be15767c820e4fb1624b236ee994c44bf2fe5104edde9d634120",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2020/pdf/history/SB/SB2237.xml",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2237-2020",
+      "act": "sponsor",
+      "motion": "co sponsor, SB2237IN",
+      "note": "Named as co sponsor ('Seymour') on the official bill text, summary or journal; linked to Joseph M. Seymour via the official 2020 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.756Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4cd68734c411fde05dc865eff22b5ec7355a7eca5840d62ffaae784f759ff30d",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/senate/0720054.pdf",
+      "date": "2024-03-13",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2576. On motion of Senator England, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0720054)",
+      "note": "Senate roll call as printed ('Seymour'), linked to Joseph M. Seymour (district 47) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.756Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b0a384baf6fe58a9ea0e42529ac3f22a97f043100dd50e424c87ef0255125e0b",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/senate/0770004.pdf",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Senate concurred in the foregoing House Amendment to S. B. No. 2588 by the following vote: (0770004)",
+      "note": "Senate roll call as printed ('Seymour'), linked to Joseph M. Seymour (district 47) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.756Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a028b8f2afe6c2f1d4227a3e8a492d2bda1790c4c4d4c75b9cf3a0db850d5f39",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/senate/0320004.pdf",
+      "date": "2018-02-02",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2766-2018",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2766. On motion of Senator Blackwell, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0320004)",
+      "note": "Senate roll call as printed ('Seymour'), linked to Joseph M. Seymour (district 47) via the official 2018 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.756Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "acceptable forms of ID and expired ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "SHIELD Act voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: https://billstatus.ls.state.ms.us/members/senate/seymour.xml names Joseph M. Seymour as Senate District 47 member, 2016-present (Jackson County)",
+        "On the Record (0 meetings)",
+        "legislature member page (no news or release list exists)",
+        "https://attorneygenerallynnfitch.com/wp-content/uploads/2024/10/J.Seymour-October-10-2024-Voter-Identification.pdf.pdf (fetched; read as text with pdftotext; record saved)",
+        "https://ivoterguide.com/race/7012/election/1069 (listed; no voter ID answer visible)",
+        "blocked: Ballotpedia (not fetched, refuses our fetches)",
+        "no campaign site or newsletter found",
+        "web searches (6) on name with voter ID, photo ID, proof of citizenship, SAVE Act, SHIELD Act, questionnaire, forum, Sun Herald, Magnolia Tribune, Mississippi Free Press: no statement of his own words on the subject beyond the opinion request"
+      ],
+      "found": 1,
+      "at": "2026-11-05T23:07:10.537Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 6,
+      "at": "2026-11-05T23:52:51.756Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
 }

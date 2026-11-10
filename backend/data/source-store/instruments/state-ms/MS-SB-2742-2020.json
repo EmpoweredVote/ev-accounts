@@ -1,0 +1,25 @@
+{
+  "id": "MS-SB-2742-2020",
+  "scope": "state:ms",
+  "title": "SB 2742 (2020 Regular Session): Election campaign messages and materials; authorize prosecution for improper authorization or identification.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2020/pdf/history/SB/SB2742.xml",
+    "https://billstatus.ls.state.ms.us/documents/2020/pdf/SB/2700-2799/SB2742IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec. 1: amends 97-13-3 (bribery to induce voting) by adding violations of 23-15-897 (campaign messages and financier identification) to the offense\n(other) Sec. 2: effective July 1, 2020\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Blackwell",
+      "role": "prime",
+      "version": "SB2742IN"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

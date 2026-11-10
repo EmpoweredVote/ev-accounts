@@ -1,0 +1,33 @@
+{
+  "id": "KS-HB-2358-2017",
+  "scope": "state:ks",
+  "title": "HB 2358 (2017-2018 Regular Session (2017)): Elections; voter registration; voter identification; proof of citizenship deleted. (index); AN ACT concerning elections; amending K.S.A. 2016 Supp. 8-1324, 25-1122, 25-1122d, 25-1123, 25-1124, 25-1128, 25-2203, 25-2309, 25-2352, 25-2908, 25-3002 and 65-2418 and repealing the existing sections; also repealing K.S.A. 2016 Supp. 25-2357, 25-2358 and 25-2359.",
+  "urls": [
+    "https://www.kslegislature.gov/li_2018/b2017_18/measures/hb2358/",
+    "https://www.kslegislature.gov/li_2018/b2017_18/measures/documents/hb2358_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not extracted\n(b_no_id_remedy) not extracted\n(c_mail_ballot_id) not extracted\n(d_proof_of_citizenship) not extracted\n(e_other_rule) not extracted\n(other) K.S.A. 8-1324, 25-1122, 25-1122d, 25-1123, 25-1124, 25-1128, 25-2203, 25-2309, 25-2352, 25-2908, 25-3002, 65-2418 amended; 25-2357, 25-2358, 25-2359 repealed. Per the index caption the bill removes voter photo-ID and documentary proof-of-citizenship rules.",
+  "sponsors": [
+    {
+      "name": "Committee on Elections",
+      "role": "prime",
+      "version": "As introduced (hb2358_00_0000.pdf); no later version exists on the legislature site"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

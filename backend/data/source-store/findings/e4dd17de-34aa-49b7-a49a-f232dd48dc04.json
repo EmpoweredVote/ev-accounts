@@ -1,0 +1,135 @@
+{
+  "politician_id": "e4dd17de-34aa-49b7-a49a-f232dd48dc04",
+  "findings": [
+    {
+      "id": "c9ab662411977f0b29bbccda6bb889b6ac4732bed681ee9663776c12fc23e8d4",
+      "kind": "own-words",
+      "url": "https://johnsoncountypost.com/?p=244382",
+      "date": "2024-10-15",
+      "date_precision": "day",
+      "passage": "I do not see any restrictions on voting in the future.",
+      "note": "Answer to the Johnson County Post's Senate District 23 candidate question on the 2020 election and on whether he would support legislation that modifies or places new restrictions on voting. He also said he was focused on the election 21 days away and on turnout. Names no ID or citizenship measure.",
+      "subjects": [
+        "new restrictions on voting",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:00:36.161Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "16fc367b6ae612e9858d0804c70069da9a41e059381a62d495fc2173fe7e9422",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_191_HB2020.odt",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "Senate: Emergency Final Action As Amended",
+      "note": "Senate roll call as printed ('Thomas'), linked to Adam Thomas (district 23) via the official 2025 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.948Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53cc439c8ba13aae8525c4a82092d677fe52f2aa3e4773008814268e4fad0c47",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Thomas'), linked to Adam Thomas (district 23) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.948Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "26fc0eac68c90037c402f6af64ad21e632b079f7491d447d2551656187b6c5c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Thomas'), linked to Adam Thomas (district 23) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.948Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "mail/advance-ballot ID",
+        "election integrity",
+        "new restrictions on voting"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://kslegislature.gov/legislators/sen_thomas_adam_1/ (member page: Senate District 23, Johnson County, Senate 2025-present, House 2019-2024; member of Federal and State Affairs)",
+        "https://johnsoncountypost.com/?p=244382 (2024 candidate answers on elections; saved)",
+        "blocked: curl of https://johnsoncountypost.com/?p=244382 returned 403 (passage taken from the fetch tool's quoted sentences; not independently re-read in the HTML)",
+        "https://www.kcur.org/kcvoterguide2024/kansas/senate-district-23: third-person profile, nothing on the subject",
+        "no campaign site found by search",
+        "blocked: https://ballotpedia.org (per task notes, not fetched)",
+        "blocked: https://kansasreflector.com (per task notes, not fetched)",
+        "web searches (5): name + voter ID; + election integrity/citizenship; + campaign website; + SAVE Act/mail ballots; + Senate floor debate: no other own words found",
+        "not reviewed: Senate Federal and State Affairs testimony lists (member of that committee, not a testifier)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T17:00:36.161Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-04T19:13:24.948Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

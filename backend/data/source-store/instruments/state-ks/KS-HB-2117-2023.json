@@ -1,0 +1,25 @@
+{
+  "id": "KS-HB-2117-2023",
+  "scope": "state:ks",
+  "title": "HB 2117 (2023-2024 biennium (2023 Regular Session)): HB 2117 Requiring the secretary of state to revise the information collected from persons registering to vote to ensure that the state may utilize the systematic alien verification of entitlements program (SAVE) to delete non-citizens from voter registration rolls.",
+  "urls": [
+    "https://www.kslegislature.gov/b2023_24/bills/HB2117/",
+    "https://www.kslegislature.gov/b2023_24/bills/download/?apn=b2023_24/year1/ready_for_publication/hb_2117/hb2117_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 1 (SAVE use at registration)\n(quote) The secretary of state shall utilize the information collected from a person registering to vote to enable the state to utilize the systematic alien verification for entitlements program (SAVE) of the United States department of homeland security. The purpose of utilizing SAVE is to aid the state and local election officials in updating the state's voter registration rolls and to delete from such registration rolls any person registered to vote who is not a citizen of the United States.\n(other) Sec. 2: effective date only.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "House Committee on Elections",
+      "role": "prime",
+      "version": "As Introduced (hb2117_00)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

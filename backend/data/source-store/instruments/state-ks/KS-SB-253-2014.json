@@ -1,0 +1,33 @@
+{
+  "id": "KS-SB-253-2014",
+  "scope": "state:ks",
+  "title": "SB 253 (2013-2014 Regular Session (2014)): Kansas protection against voter suppression act. (index); AN ACT concerning elections; enacting the Kansas protection against voter suppression act; amending the crime of perjury; amending K.S.A. 2013 Supp. 21-5903 and 25-2309 and repealing the existing sections.",
+  "urls": [
+    "https://www.kslegislature.gov/li_2014/b2013_14/measures/sb253/",
+    "https://www.kslegislature.gov/li_2014/b2013_14/measures/documents/sb253_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) K.S.A. 25-2309(m)(14) (new document type: signed affidavit)\n(quote) (14) a signed affidavit swearing under oath the following: \"I am a United States citizen. I meet the eligibility requirements of my state and subscribe to any oath required. The information I have provided is true to the best of my knowledge under penalty of perjury. If I have provided false information, I may be fined, imprisoned or (if not a U.S. citizen) deported from or refused entry to the United States.\"\n(e_other_rule)\n(section) New section: short title\n(quote) (a) This section shall be known and may be cited as the \"Kansas protection against voter suppression act\"\n(other) K.S.A. 21-5903 (perjury): adds subscribing the registration affidavit under penalty of perjury.\n(other) K.S.A. 25-2309: adds a signed citizenship affidavit as one accepted document for registration.",
+  "sponsors": [
+    {
+      "name": "Faust-Goudeau",
+      "role": "prime",
+      "version": "As introduced (sb253_00_0000.pdf); no later version exists on the legislature site"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

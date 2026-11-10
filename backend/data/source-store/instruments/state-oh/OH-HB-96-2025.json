@@ -1,0 +1,1579 @@
+{
+  "id": "OH-HB-96-2025",
+  "scope": "state:oh",
+  "title": "HB 96 (2025-2026 (136th General Assembly)): H. B. No. 96: Make state operating appropriations for FY 2026-27",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/hb96",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb96/07_EN/html/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb96/00_IN/html/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb96/01_RH/html/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb96/02_PH/html/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb96/03_PSC/html/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb96/04_RS/html/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb96/05_PS/html/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb96/06_CR/html/"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) 3501.055 (new): election integrity unit in the secretary of state's office; investigates alleged Title 35 violations, takes public allegations, reports yearly, may subpoena; prosecutors must act on its referrals within one year or explain.\n(other) 3501.05(N): secretary of state investigates election fraud through the new unit; receives complaints for the Ohio election integrity commission.\n(other) 3517.13-3517.23 (changed): Ohio Elections Commission replaced by an Ohio Election Integrity Commission in the secretary of state's office (five members, chair chosen by the secretary of state); complaint and penalty references updated; 3517.991 (new) says violators are sentenced under the law in force when the act occurred.\n(other) 3501.01, 3501.02, 3505.03, 3505.04, 3505.06, 3505.33, 3505.38, 3513.04, 3513.05, 3513.052, 3513.19, 3517.092-3517.109: strike \"member of the state board of education\" wording from election sections; 3501.02 changes petition day counts and a date reference.\n(other) 3501.12, 3501.17: board of elections member pay increases; who pays for certain local option elections.\n(other) 3517.1012: lists allowed uses of state party funds.\n(other) Rest of the budget (thousands of pages) is not election law and was not read.\n(other) version: 00_IN, 01_RH, 02_PH, 03_PSC, 04_RS, 05_PS, 06_CR: text file not saved, not read. 07_EN (enrolled, read for election sections): no ID or citizenship text in slots a-d.\n(other) note: State operating budget; only the enrolled text (07_EN, 9.7 MB) was saved, so earlier versions were not read. Searched all of R.C. Title 35 changes, BMV sections (4501-4507) and 3503/3505/3509 text: no photo ID, mail-ballot ID, proof-of-citizenship or citizenship-check text. 3501.01 reprints the existing photo-ID definition and the noncitizen-license wording unchanged. The last two votes (2025-07-21, 2025-10-01) were on overriding line-item vetoes; which items they covered is not in the saved text.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Brian Stewart",
+      "role": "prime",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Adam C. Bird",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Gary Click",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Rodney Creech",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Jack K. Daniels",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Steve Demetriou",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Michael D. Dovilla",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Haraz N. Ghanbari",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Thomas Hall",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Marilyn John",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Riordan T. McClain",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Kevin D. Miller",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Melanie Miller",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Phil Plummer",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Nick Santucci",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "David Thomas",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Josh Williams",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Bernard Willis",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Tom Young",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Andrew O. Brenner",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Jerry C. Cirino",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Theresa Gavarone",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Terry Johnson",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "George F. Lang",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Kristina D. Roegner",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    },
+    {
+      "name": "Mark Romanchuk",
+      "role": "co",
+      "version": "As Enrolled (07_EN)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2025-04-09",
+      "body": "OH House",
+      "motion": "Passed [version voted: 01_RH]",
+      "kind": "roll-call",
+      "yes": 60,
+      "no": 39,
+      "absent": 0,
+      "body_size": 99,
+      "note": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb96/actions/",
+      "members": [
+        {
+          "name": "Cindy Abrams",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Barhorst",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam C. Bird",
+          "vote": "yea"
+        },
+        {
+          "name": "Jamie Callender",
+          "vote": "yea"
+        },
+        {
+          "name": "Thaddeus J. Claggett",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Click",
+          "vote": "yea"
+        },
+        {
+          "name": "Meredith Craig",
+          "vote": "yea"
+        },
+        {
+          "name": "Rodney Creech",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack K. Daniels",
+          "vote": "yea"
+        },
+        {
+          "name": "Kellie Deeter",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Demetriou",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Dovilla",
+          "vote": "yea"
+        },
+        {
+          "name": "Tex Fischer",
+          "vote": "yea"
+        },
+        {
+          "name": "Sarah Fowler Arthur",
+          "vote": "yea"
+        },
+        {
+          "name": "Haraz N. Ghanbari",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Hall",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Hiner",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Holmes",
+          "vote": "yea"
+        },
+        {
+          "name": "James M. Hoops",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Huffman",
+          "vote": "yea"
+        },
+        {
+          "name": "Marilyn S. John",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Don Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Angela N. King",
+          "vote": "yea"
+        },
+        {
+          "name": "Matthew Kishman",
+          "vote": "yea"
+        },
+        {
+          "name": "Roy Klopfenstein",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian E. Lampton",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff LaRe",
+          "vote": "yea"
+        },
+        {
+          "name": "Beth Lear",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Lorenz",
+          "vote": "yea"
+        },
+        {
+          "name": "Gayle Manning",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Mathews",
+          "vote": "yea"
+        },
+        {
+          "name": "Ty D. Mathews",
+          "vote": "yea"
+        },
+        {
+          "name": "Riordan T. McClain",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin D. Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Melanie Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Diane Mullins",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnathan Newman",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Odioso",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Oelslager",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Peterson",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Pizzulli",
+          "vote": "yea"
+        },
+        {
+          "name": "Phil Plummer",
+          "vote": "yea"
+        },
+        {
+          "name": "Sharon A. Ray",
+          "vote": "yea"
+        },
+        {
+          "name": "Tracy M. Richardson",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Ritter",
+          "vote": "yea"
+        },
+        {
+          "name": "Monica Robb Blasdel",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Roemer",
+          "vote": "yea"
+        },
+        {
+          "name": "Jodi Salvo",
+          "vote": "yea"
+        },
+        {
+          "name": "Nick Santucci",
+          "vote": "yea"
+        },
+        {
+          "name": "Jean Schmidt",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Stewart",
+          "vote": "yea"
+        },
+        {
+          "name": "D. J. Swearingen",
+          "vote": "yea"
+        },
+        {
+          "name": "David Thomas",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Thomas",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrea White",
+          "vote": "yea"
+        },
+        {
+          "name": "Josh Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Bernard Willis",
+          "vote": "yea"
+        },
+        {
+          "name": "Heidi Workman",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Munira Abdullahi",
+          "vote": "nay"
+        },
+        {
+          "name": "Rachel B. Baker",
+          "vote": "nay"
+        },
+        {
+          "name": "Sean P. Brennan",
+          "vote": "nay"
+        },
+        {
+          "name": "Juanita O. Brent",
+          "vote": "nay"
+        },
+        {
+          "name": "Darnell T. Brewer",
+          "vote": "nay"
+        },
+        {
+          "name": "Karen Brownlee",
+          "vote": "nay"
+        },
+        {
+          "name": "Christine Cockley",
+          "vote": "nay"
+        },
+        {
+          "name": "Levi Dean",
+          "vote": "nay"
+        },
+        {
+          "name": "Sedrick Denson",
+          "vote": "nay"
+        },
+        {
+          "name": "Ron Ferguson",
+          "vote": "nay"
+        },
+        {
+          "name": "Chris Glassburn",
+          "vote": "nay"
+        },
+        {
+          "name": "Michele Grim",
+          "vote": "nay"
+        },
+        {
+          "name": "Jennifer Gross",
+          "vote": "nay"
+        },
+        {
+          "name": "Derrick Hall",
+          "vote": "nay"
+        },
+        {
+          "name": "Latyna M. Humphrey",
+          "vote": "nay"
+        },
+        {
+          "name": "Dani Isaacsohn",
+          "vote": "nay"
+        },
+        {
+          "name": "Dontavius L. Jarrells",
+          "vote": "nay"
+        },
+        {
+          "name": "Meredith R. Lawson-Rowe",
+          "vote": "nay"
+        },
+        {
+          "name": "Crystal Lett",
+          "vote": "nay"
+        },
+        {
+          "name": "Lauren McNally",
+          "vote": "nay"
+        },
+        {
+          "name": "Joseph A. Miller III",
+          "vote": "nay"
+        },
+        {
+          "name": "Ismail Mohamed",
+          "vote": "nay"
+        },
+        {
+          "name": "Beryl Piccolantonio",
+          "vote": "nay"
+        },
+        {
+          "name": "Tristan Rader",
+          "vote": "nay"
+        },
+        {
+          "name": "Phillip M. Robinson, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Elgin Rogers, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "C. Allison Russo",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Sigrist",
+          "vote": "nay"
+        },
+        {
+          "name": "Veronica R. Sims",
+          "vote": "nay"
+        },
+        {
+          "name": "Anita Somani",
+          "vote": "nay"
+        },
+        {
+          "name": "Jason Stephens",
+          "vote": "nay"
+        },
+        {
+          "name": "Bride Rose Sweeney",
+          "vote": "nay"
+        },
+        {
+          "name": "Eric Synenberg",
+          "vote": "nay"
+        },
+        {
+          "name": "Michelle Teska",
+          "vote": "nay"
+        },
+        {
+          "name": "Cecil Thomas",
+          "vote": "nay"
+        },
+        {
+          "name": "Desiree Tims",
+          "vote": "nay"
+        },
+        {
+          "name": "Daniel P. Troy",
+          "vote": "nay"
+        },
+        {
+          "name": "Terrence Upchurch",
+          "vote": "nay"
+        },
+        {
+          "name": "Erika White",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2025-06-11",
+      "body": "OH Senate",
+      "motion": "Passed [version voted: 04_RS]",
+      "kind": "roll-call",
+      "yes": 23,
+      "no": 10,
+      "absent": 0,
+      "body_size": 33,
+      "note": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb96/actions/",
+      "members": [
+        {
+          "name": "Steve Wilson",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob McColley",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen A. Huffman",
+          "vote": "yea"
+        },
+        {
+          "name": "Nathan H. Manning",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrew O. Brenner",
+          "vote": "yea"
+        },
+        {
+          "name": "Kristina D. Roegner",
+          "vote": "yea"
+        },
+        {
+          "name": "Theresa Gavarone",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Schaffer",
+          "vote": "yea"
+        },
+        {
+          "name": "Terry Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "George F. Lang",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry C. Cirino",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Romanchuk",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Reineke",
+          "vote": "yea"
+        },
+        {
+          "name": "Sandra O'Brien",
+          "vote": "yea"
+        },
+        {
+          "name": "Al Landis",
+          "vote": "yea"
+        },
+        {
+          "name": "Shane Wilkin",
+          "vote": "yea"
+        },
+        {
+          "name": "Michele Reynolds",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian M. Chavez",
+          "vote": "yea"
+        },
+        {
+          "name": "Al Cutrona",
+          "vote": "yea"
+        },
+        {
+          "name": "Kyle Koehler",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Manchester",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas F. Patton",
+          "vote": "yea"
+        },
+        {
+          "name": "Jane M. Timken",
+          "vote": "yea"
+        },
+        {
+          "name": "Hearcel F. Craig",
+          "vote": "nay"
+        },
+        {
+          "name": "Nickie J. Antonio",
+          "vote": "nay"
+        },
+        {
+          "name": "Louis W. Blessing, III",
+          "vote": "nay"
+        },
+        {
+          "name": "Paula Hicks-Hudson",
+          "vote": "nay"
+        },
+        {
+          "name": "William P. DeMora",
+          "vote": "nay"
+        },
+        {
+          "name": "Kent Smith",
+          "vote": "nay"
+        },
+        {
+          "name": "Catherine D. Ingram",
+          "vote": "nay"
+        },
+        {
+          "name": "Willis E. Blackshear, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Beth Liston",
+          "vote": "nay"
+        },
+        {
+          "name": "Casey Weinstein",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2025-06-11",
+      "body": "OH House",
+      "motion": "Refused to concur in Senate amendments [version voted: 05_PS]",
+      "kind": "roll-call",
+      "yes": 1,
+      "no": 85,
+      "absent": 0,
+      "body_size": 86,
+      "note": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb96/actions/",
+      "members": [
+        {
+          "name": "Jason Stephens",
+          "vote": "yea"
+        },
+        {
+          "name": "Cindy Abrams",
+          "vote": "nay"
+        },
+        {
+          "name": "Tim Barhorst",
+          "vote": "nay"
+        },
+        {
+          "name": "Adam C. Bird",
+          "vote": "nay"
+        },
+        {
+          "name": "Sean P. Brennan",
+          "vote": "nay"
+        },
+        {
+          "name": "Karen Brownlee",
+          "vote": "nay"
+        },
+        {
+          "name": "Jamie Callender",
+          "vote": "nay"
+        },
+        {
+          "name": "Thaddeus J. Claggett",
+          "vote": "nay"
+        },
+        {
+          "name": "Gary Click",
+          "vote": "nay"
+        },
+        {
+          "name": "Christine Cockley",
+          "vote": "nay"
+        },
+        {
+          "name": "Meredith Craig",
+          "vote": "nay"
+        },
+        {
+          "name": "Rodney Creech",
+          "vote": "nay"
+        },
+        {
+          "name": "Jack K. Daniels",
+          "vote": "nay"
+        },
+        {
+          "name": "Levi Dean",
+          "vote": "nay"
+        },
+        {
+          "name": "Kellie Deeter",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Demetriou",
+          "vote": "nay"
+        },
+        {
+          "name": "Sedrick Denson",
+          "vote": "nay"
+        },
+        {
+          "name": "Mike Dovilla",
+          "vote": "nay"
+        },
+        {
+          "name": "Tex Fischer",
+          "vote": "nay"
+        },
+        {
+          "name": "Sarah Fowler Arthur",
+          "vote": "nay"
+        },
+        {
+          "name": "Haraz N. Ghanbari",
+          "vote": "nay"
+        },
+        {
+          "name": "Chris Glassburn",
+          "vote": "nay"
+        },
+        {
+          "name": "Michele Grim",
+          "vote": "nay"
+        },
+        {
+          "name": "Jennifer Gross",
+          "vote": "nay"
+        },
+        {
+          "name": "Derrick Hall",
+          "vote": "nay"
+        },
+        {
+          "name": "Thomas Hall",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Hiner",
+          "vote": "nay"
+        },
+        {
+          "name": "Adam Holmes",
+          "vote": "nay"
+        },
+        {
+          "name": "James M. Hoops",
+          "vote": "nay"
+        },
+        {
+          "name": "Matt Huffman",
+          "vote": "nay"
+        },
+        {
+          "name": "Latyna M. Humphrey",
+          "vote": "nay"
+        },
+        {
+          "name": "Dani Isaacsohn",
+          "vote": "nay"
+        },
+        {
+          "name": "Dontavius L. Jarrells",
+          "vote": "nay"
+        },
+        {
+          "name": "Marilyn S. John",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Angela N. King",
+          "vote": "nay"
+        },
+        {
+          "name": "Matthew Kishman",
+          "vote": "nay"
+        },
+        {
+          "name": "Roy Klopfenstein",
+          "vote": "nay"
+        },
+        {
+          "name": "Brian E. Lampton",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeff LaRe",
+          "vote": "nay"
+        },
+        {
+          "name": "Meredith R. Lawson-Rowe",
+          "vote": "nay"
+        },
+        {
+          "name": "Beth Lear",
+          "vote": "nay"
+        },
+        {
+          "name": "Crystal Lett",
+          "vote": "nay"
+        },
+        {
+          "name": "Brian Lorenz",
+          "vote": "nay"
+        },
+        {
+          "name": "Gayle Manning",
+          "vote": "nay"
+        },
+        {
+          "name": "Adam Mathews",
+          "vote": "nay"
+        },
+        {
+          "name": "Ty D. Mathews",
+          "vote": "nay"
+        },
+        {
+          "name": "Lauren McNally",
+          "vote": "nay"
+        },
+        {
+          "name": "Joseph A. Miller III",
+          "vote": "nay"
+        },
+        {
+          "name": "Kevin D. Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Melanie Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Ismail Mohamed",
+          "vote": "nay"
+        },
+        {
+          "name": "Mike Odioso",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott Oelslager",
+          "vote": "nay"
+        },
+        {
+          "name": "Bob Peterson",
+          "vote": "nay"
+        },
+        {
+          "name": "Beryl Piccolantonio",
+          "vote": "nay"
+        },
+        {
+          "name": "Justin Pizzulli",
+          "vote": "nay"
+        },
+        {
+          "name": "Phil Plummer",
+          "vote": "nay"
+        },
+        {
+          "name": "Tristan Rader",
+          "vote": "nay"
+        },
+        {
+          "name": "Sharon A. Ray",
+          "vote": "nay"
+        },
+        {
+          "name": "Tracy M. Richardson",
+          "vote": "nay"
+        },
+        {
+          "name": "Kevin Ritter",
+          "vote": "nay"
+        },
+        {
+          "name": "Monica Robb Blasdel",
+          "vote": "nay"
+        },
+        {
+          "name": "Phillip M. Robinson, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Roemer",
+          "vote": "nay"
+        },
+        {
+          "name": "C. Allison Russo",
+          "vote": "nay"
+        },
+        {
+          "name": "Jodi Salvo",
+          "vote": "nay"
+        },
+        {
+          "name": "Nick Santucci",
+          "vote": "nay"
+        },
+        {
+          "name": "Jean Schmidt",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Sigrist",
+          "vote": "nay"
+        },
+        {
+          "name": "Veronica R. Sims",
+          "vote": "nay"
+        },
+        {
+          "name": "Brian Stewart",
+          "vote": "nay"
+        },
+        {
+          "name": "D. J. Swearingen",
+          "vote": "nay"
+        },
+        {
+          "name": "Bride Rose Sweeney",
+          "vote": "nay"
+        },
+        {
+          "name": "Eric Synenberg",
+          "vote": "nay"
+        },
+        {
+          "name": "Michelle Teska",
+          "vote": "nay"
+        },
+        {
+          "name": "David Thomas",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Thomas",
+          "vote": "nay"
+        },
+        {
+          "name": "Daniel P. Troy",
+          "vote": "nay"
+        },
+        {
+          "name": "Terrence Upchurch",
+          "vote": "nay"
+        },
+        {
+          "name": "Andrea White",
+          "vote": "nay"
+        },
+        {
+          "name": "Erika White",
+          "vote": "nay"
+        },
+        {
+          "name": "Josh Williams",
+          "vote": "nay"
+        },
+        {
+          "name": "Bernard Willis",
+          "vote": "nay"
+        },
+        {
+          "name": "Heidi Workman",
+          "vote": "nay"
+        },
+        {
+          "name": "Tom Young",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2025-07-21",
+      "body": "OH House",
+      "motion": "Item passed notwithstanding objections of the Governor [version voted: 07_EN]",
+      "kind": "roll-call",
+      "yes": 61,
+      "no": 28,
+      "absent": 0,
+      "body_size": 89,
+      "note": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb96/actions/",
+      "members": [
+        {
+          "name": "Tim Barhorst",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam C. Bird",
+          "vote": "yea"
+        },
+        {
+          "name": "Jamie Callender",
+          "vote": "yea"
+        },
+        {
+          "name": "Thaddeus J. Claggett",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Click",
+          "vote": "yea"
+        },
+        {
+          "name": "Meredith Craig",
+          "vote": "yea"
+        },
+        {
+          "name": "Rodney Creech",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack K. Daniels",
+          "vote": "yea"
+        },
+        {
+          "name": "Levi Dean",
+          "vote": "yea"
+        },
+        {
+          "name": "Kellie Deeter",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Demetriou",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Dovilla",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Ferguson",
+          "vote": "yea"
+        },
+        {
+          "name": "Tex Fischer",
+          "vote": "yea"
+        },
+        {
+          "name": "Sarah Fowler Arthur",
+          "vote": "yea"
+        },
+        {
+          "name": "Haraz N. Ghanbari",
+          "vote": "yea"
+        },
+        {
+          "name": "Jennifer Gross",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Hall",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Hiner",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Holmes",
+          "vote": "yea"
+        },
+        {
+          "name": "James M. Hoops",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Huffman",
+          "vote": "yea"
+        },
+        {
+          "name": "Marilyn S. John",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Angela N. King",
+          "vote": "yea"
+        },
+        {
+          "name": "Matthew Kishman",
+          "vote": "yea"
+        },
+        {
+          "name": "Roy Klopfenstein",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian E. Lampton",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff LaRe",
+          "vote": "yea"
+        },
+        {
+          "name": "Beth Lear",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Lorenz",
+          "vote": "yea"
+        },
+        {
+          "name": "Gayle Manning",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Mathews",
+          "vote": "yea"
+        },
+        {
+          "name": "Ty D. Mathews",
+          "vote": "yea"
+        },
+        {
+          "name": "Riordan T. McClain",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin D. Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Melanie Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Diane Mullins",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnathan Newman",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Odioso",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Peterson",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Pizzulli",
+          "vote": "yea"
+        },
+        {
+          "name": "Phil Plummer",
+          "vote": "yea"
+        },
+        {
+          "name": "Tracy M. Richardson",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Ritter",
+          "vote": "yea"
+        },
+        {
+          "name": "Monica Robb Blasdel",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Roemer",
+          "vote": "yea"
+        },
+        {
+          "name": "Jodi Salvo",
+          "vote": "yea"
+        },
+        {
+          "name": "Nick Santucci",
+          "vote": "yea"
+        },
+        {
+          "name": "Jean Schmidt",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Stewart",
+          "vote": "yea"
+        },
+        {
+          "name": "D. J. Swearingen",
+          "vote": "yea"
+        },
+        {
+          "name": "Michelle Teska",
+          "vote": "yea"
+        },
+        {
+          "name": "David Thomas",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Thomas",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrea White",
+          "vote": "yea"
+        },
+        {
+          "name": "Josh Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Bernard Willis",
+          "vote": "yea"
+        },
+        {
+          "name": "Heidi Workman",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Ty Moore",
+          "vote": "yea"
+        },
+        {
+          "name": "Sean P. Brennan",
+          "vote": "nay"
+        },
+        {
+          "name": "Juanita O. Brent",
+          "vote": "nay"
+        },
+        {
+          "name": "Darnell T. Brewer",
+          "vote": "nay"
+        },
+        {
+          "name": "Christine Cockley",
+          "vote": "nay"
+        },
+        {
+          "name": "Sedrick Denson",
+          "vote": "nay"
+        },
+        {
+          "name": "Michele Grim",
+          "vote": "nay"
+        },
+        {
+          "name": "Derrick Hall",
+          "vote": "nay"
+        },
+        {
+          "name": "Latyna M. Humphrey",
+          "vote": "nay"
+        },
+        {
+          "name": "Dani Isaacsohn",
+          "vote": "nay"
+        },
+        {
+          "name": "Dontavius L. Jarrells",
+          "vote": "nay"
+        },
+        {
+          "name": "Meredith R. Lawson-Rowe",
+          "vote": "nay"
+        },
+        {
+          "name": "Crystal Lett",
+          "vote": "nay"
+        },
+        {
+          "name": "Ismail Mohamed",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott Oelslager",
+          "vote": "nay"
+        },
+        {
+          "name": "Beryl Piccolantonio",
+          "vote": "nay"
+        },
+        {
+          "name": "Tristan Rader",
+          "vote": "nay"
+        },
+        {
+          "name": "Phillip M. Robinson, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Elgin Rogers, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Sigrist",
+          "vote": "nay"
+        },
+        {
+          "name": "Veronica R. Sims",
+          "vote": "nay"
+        },
+        {
+          "name": "Anita Somani",
+          "vote": "nay"
+        },
+        {
+          "name": "Bride Rose Sweeney",
+          "vote": "nay"
+        },
+        {
+          "name": "Eric Synenberg",
+          "vote": "nay"
+        },
+        {
+          "name": "Cecil Thomas",
+          "vote": "nay"
+        },
+        {
+          "name": "Desiree Tims",
+          "vote": "nay"
+        },
+        {
+          "name": "Daniel P. Troy",
+          "vote": "nay"
+        },
+        {
+          "name": "Terrence Upchurch",
+          "vote": "nay"
+        },
+        {
+          "name": "Erika White",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2025-10-01",
+      "body": "OH Senate",
+      "motion": "Item passed notwithstanding objections of the Governor [version voted: 07_EN]",
+      "kind": "roll-call",
+      "yes": 21,
+      "no": 11,
+      "absent": 0,
+      "body_size": 32,
+      "note": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb96/actions/",
+      "members": [
+        {
+          "name": "Steve Wilson",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob McColley",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen A. Huffman",
+          "vote": "yea"
+        },
+        {
+          "name": "Nathan H. Manning",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrew O. Brenner",
+          "vote": "yea"
+        },
+        {
+          "name": "Kristina D. Roegner",
+          "vote": "yea"
+        },
+        {
+          "name": "Theresa Gavarone",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Schaffer",
+          "vote": "yea"
+        },
+        {
+          "name": "Terry Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "George F. Lang",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry C. Cirino",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Reineke",
+          "vote": "yea"
+        },
+        {
+          "name": "Sandra O'Brien",
+          "vote": "yea"
+        },
+        {
+          "name": "Al Landis",
+          "vote": "yea"
+        },
+        {
+          "name": "Shane Wilkin",
+          "vote": "yea"
+        },
+        {
+          "name": "Michele Reynolds",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian M. Chavez",
+          "vote": "yea"
+        },
+        {
+          "name": "Al Cutrona",
+          "vote": "yea"
+        },
+        {
+          "name": "Kyle Koehler",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Manchester",
+          "vote": "yea"
+        },
+        {
+          "name": "Jane M. Timken",
+          "vote": "yea"
+        },
+        {
+          "name": "Hearcel F. Craig",
+          "vote": "nay"
+        },
+        {
+          "name": "Nickie J. Antonio",
+          "vote": "nay"
+        },
+        {
+          "name": "Louis W. Blessing, III",
+          "vote": "nay"
+        },
+        {
+          "name": "Paula Hicks-Hudson",
+          "vote": "nay"
+        },
+        {
+          "name": "William P. DeMora",
+          "vote": "nay"
+        },
+        {
+          "name": "Kent Smith",
+          "vote": "nay"
+        },
+        {
+          "name": "Catherine D. Ingram",
+          "vote": "nay"
+        },
+        {
+          "name": "Willis E. Blackshear, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Beth Liston",
+          "vote": "nay"
+        },
+        {
+          "name": "Thomas F. Patton",
+          "vote": "nay"
+        },
+        {
+          "name": "Casey Weinstein",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

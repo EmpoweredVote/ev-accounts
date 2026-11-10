@@ -1,0 +1,25 @@
+{
+  "id": "MS-SB-2557-2016",
+  "scope": "state:ms",
+  "title": "SB 2557 (2016 Regular Session): Election Code; revise.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2016/pdf/history/SB/SB2557.xml",
+    "https://billstatus.ls.state.ms.us/documents/2016/pdf/SB/2500-2599/SB2557IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 143 (23-15-563(1))\n(quote) Each person who shall appear to vote in person at a polling place or the registrar's office shall be required to identify himself or herself to an election manager or the registrar by presenting current and valid photo identification before such person shall be allowed to vote.\n(section) Sec. 624 (23-15-563, brought forward)\n(quote) Each person who shall appear to vote in person at a polling place or the registrar's office shall be required to identify himself or herself to an election manager or the registrar by presenting current and valid photo identification before such person shall be allowed to vote.\n(b_no_id_remedy)\n(section) Sec. 143 (23-15-563(3))\n(quote) (a) A person who appears to vote in person at a polling place and does not have identification as required by this section may vote by affidavit ballot. The affidavit ballot shall then be counted if the person shall present acceptable photo identification to the registrar within five (5) days. (b) An elector who has a religious objection to being photographed may vote by affidavit ballot, and the elector, within five (5) days after the election, shall execute an affidavit in the registrar's office affirming that the exemption applies.\n(c_mail_ballot_id)\n(section) Sec. 372 (23-15-631(3))\n(quote) The Secretary of State shall prepare instructions on how absent voters may comply with the identification requirements of Section 23-15-563.\n(section) Sec. 376 (23-15-639)\n(quote) shall also take such action as may be prescribed by the Secretary of State to ensure compliance with the identification requirements of Section 23-15-563.\n(section) Sec. 404 (23-15-719)\n(quote) The registrar shall identify the applicant by requiring him to present identification as required by Section 23-15-563, and shall then deliver the ballots to the applicant by mail or to the applicant in the registrar's office.\n(d_proof_of_citizenship)\n(section) Sec. 5 (23-15-15)\n(quote) It shall be the duty of any and every person who has acquired citizenship by order or decree of naturalization and who is otherwise qualified to register and vote under the laws of the State of Mississippi to present or exhibit to the * * * registrar of the county of his or her residence, at or before the time he or she may offer to register, a certified copy of the final order or decree of naturalization, or a certificate of naturalization or duplicate thereof, or a certified copy of such certificate of naturalization or duplicate; otherwise he shall not be allowed to register or to vote.\n(e_other_rule)\n(section) Sec. 143 (23-15-563)\n(quote) The intentional failure of an election official to require a voter to present identification as required by this section shall be considered corrupt conduct under Section 97-13-19 and shall be reported to the Secretary of State and the Attorney General.\n(section) Sec. 264 (23-15-11)\n(quote) and shall be entitled to vote at any election upon compliance with Section 23-15-563.\n(other) Omnibus rewrite of Title 23, Chapter 15 (Election Code): qualifications, registration, records, purging, Statewide Elections Management System, primaries, general elections, absentee voting, counting, contests\n(other) Sec. 8 (23-15-33): registration by the county registrar through the Statewide Elections Management System\n(other) Sec. 143: 23-15-563 amended (visible change: the intimidation penalty subsection is struck/renumbered)\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Doty",
+      "role": "prime",
+      "version": "SB2557IN"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

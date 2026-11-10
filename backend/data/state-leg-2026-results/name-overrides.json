@@ -1,0 +1,46 @@
+{
+  "_what_this_is": "Five AP ballot lines whose spelling differs from ours by more than a middle initial, each matched to one of our candidacies BY HAND and on a named, independent basis. Nothing here is a fuzzy rule: a relaxation that would catch these would also catch a namesake, which is how this repo once shipped Mark Harris as NC-8. The analyser refuses an override whose rc_id is not in the stated race, and refuses to use one twice.",
+  "_the_other_18": "Eighteen further races disagreed on spelling and needed NO entry here, because an independent fact settles them: AP flags the candidate as the seat's incumbent AND essentials.office_current_holder names the politician our row links to for that same office. That rung needs no reading and the analyser applies it automatically as basis 'holder'.",
+  "overrides": [
+    {
+      "ap_race_id": "20261103AZ3049",
+      "ap_candidate_id": "102027",
+      "ap_name": "Patricia Contreras",
+      "rc_id": "bb5e2d66-760e-4205-8146-26618ada3b9c",
+      "our_name": "Patty Contreras",
+      "basis": "THE DISTRICT DISAMBIGUATES WHAT THE SURNAME COULD NOT. Arizona's legislature seats TWO Contrerases and a surname match is therefore ambiguous: azleg.gov's Member Roster (read 2026-11-08) gives Patty Contreras as the District 12 House member (D) and Lupe Contreras as District 22. Our row sits in the LD12 SENATE race and links to the politician our data already has holding AZ State House District 12 — the same person, the same district, moving chamber. The seat's sitting senator, Denise 'Mitzi' Epstein, is not on AP's ballot. 'Patty' is a diminutive of 'Patricia' and that alone would NOT be enough."
+    },
+    {
+      "ap_race_id": "20261103WA48195",
+      "ap_candidate_id": "176721",
+      "ap_name": "Diana Perez",
+      "rc_id": "efb51276-dfbe-4610-9e08-993e792da3de",
+      "our_name": "Diana H. Perez",
+      "basis": "Washington's own canvass prints the name AS FILED — 'Diana H. Perez' — on Legislative District 17 State Representative Pos. 2, and gives her 41,342 votes, THE SAME NUMBER AP publishes. Same contest, same spelling as ours, same count: one ballot line, read twice."
+    },
+    {
+      "ap_race_id": "20261103WA48139",
+      "ap_candidate_id": "176537",
+      "ap_name": "Luc Jasmin",
+      "rc_id": "5d989253-8f08-4129-b09b-8240bec30947",
+      "our_name": "Luc Jasmin III",
+      "basis": "Washington's canvass prints 'Luc Jasmin III' on Legislative District 3 State Representative Pos. 2 with 37,485 votes, the same figure AP publishes. AP drops the generational suffix; the state keeps it."
+    },
+    {
+      "ap_race_id": "20261103WA48321",
+      "ap_candidate_id": "176967",
+      "ap_name": "Kim Harless",
+      "rc_id": "c55830ec-3e85-4881-8739-0c3f2151a3d7",
+      "our_name": "Kim D. Harless",
+      "basis": "Washington's canvass prints 'Kim D. Harless' on Legislative District 49 State Representative Pos. 1 with 41,205 votes, the same figure AP publishes."
+    },
+    {
+      "ap_race_id": "20261103WA48113",
+      "ap_candidate_id": "176207",
+      "ap_name": "Michael Shepard",
+      "rc_id": "6dfd42a6-a29c-46bc-a64a-e93e9be42aca",
+      "our_name": "Michael Alvarez Shepard",
+      "basis": "Washington's canvass prints 'Michael Alvarez Shepard' on Legislative District 42 State Senator with 43,990 votes, the same figure AP publishes. The seat's sitting senator, Sharon Shewmake, is not on the ballot."
+    }
+  ]
+}

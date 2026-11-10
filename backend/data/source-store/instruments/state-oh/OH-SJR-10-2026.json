@@ -1,0 +1,562 @@
+{
+  "id": "OH-SJR-10-2026",
+  "scope": "state:oh",
+  "title": "SJR 10 (2025-2026 (136th General Assembly)): S. J. R. No. 10: CA: Require identification to vote",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/sjr10",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/05_EN/html/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/00_IN/html/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/01_RS/html/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/02_AS/html/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/03_RH/html/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/04_AH/html/"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id)\n(section) Ohio Const. art. V, sec. 5(A) (proposed)\n(quote) Electors shall provide photo identification in order to vote in person at a polling place or other voting location designated by law, in accordance with laws passed by the general assembly, except that the laws may provide an alternative method of verifying the identity of an elector who does not have photo identification because the elector has a sincere religious objection to being photographed.\n(section) Ohio Const. art. V, sec. 5(C)(1) (proposed)\n(quote) \"Photo identification\" means one of the following documents that is issued by an agency of this state or the United States, includes the elector's name and photograph, and is not expired:\n(b_no_id_remedy)\n(section) Ohio Const. art. V, sec. 5(A) (proposed)\n(quote) except that the laws may provide an alternative method of verifying the identity of an elector who does not have photo identification because the elector has a sincere religious objection to being photographed.\n(c_mail_ballot_id)\n(section) Ohio Const. art. V, sec. 5(B) (proposed)\n(quote) (B) At a minimum, and in accordance with laws passed by the general assembly, electors shall provide photo identification or, if authorized by law, a signature and at least one other unique identifier in order to vote by any other method authorized by law.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Ohio Const. art. V, sec. 5(C)(2) (proposed)\n(quote) (2) \"Other unique identifier\" means one of the following that is authorized by the general assembly by law for voting purposes: (a) A unique numeric or alphanumeric descriptor assigned to the elector by an agency of this state or the United States; (b) A truncated version of a descriptor described in division (C)(2)(a) of this section.\n(other) Effective date: if adopted by a majority of voters at the November 3, 2026 general election, Section 5 takes effect immediately.\n(other) version: 00_IN: laws must require identification to vote; photo ID in person; laws must give a religious-objection alternative and must let a person without photo ID cast a provisional ballot and show ID by a deadline; photo ID list includes \"another document\" the legislature authorizes; nothing requires the legislature to allow voting other than in person on Election Day.\n(other) version: 01_RS: committee substitute; photo ID in person with a permitted (may) religious-objection alternative; for any other voting method, photo ID or (if the law allows) a signature and one other unique identifier; closed list of photo IDs; no provisional-ballot mandate.\n(other) version: 02_AS, 03_RH, 04_AH, 05_EN: same operative text as 01_RS.\n(other) note: Joint resolution proposing a constitutional amendment (new Art. V, sec. 5) for the November 3, 2026 ballot. In the operative text the amendment itself sets the rule; the legislature passes the details. The introduced version (00_IN) differed (see version_differences); both chambers voted on the substitute text. Senate vote (2026-06-03) was on 01_RS; House vote (2026-06-11) on 03_RH.",
+  "sponsors": [
+    {
+      "name": "Jane M. Timken",
+      "role": "prime",
+      "version": "As Enrolled (05_EN)"
+    },
+    {
+      "name": "Theresa Gavarone",
+      "role": "prime",
+      "version": "As Enrolled (05_EN)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2026-06-03",
+      "body": "OH Senate",
+      "motion": "Adopted [version voted: 01_RS]",
+      "kind": "roll-call",
+      "yes": 22,
+      "no": 9,
+      "absent": 0,
+      "body_size": 31,
+      "note": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "members": [
+        {
+          "name": "Steve Wilson",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob McColley",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen A. Huffman",
+          "vote": "yea"
+        },
+        {
+          "name": "Nathan H. Manning",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrew O. Brenner",
+          "vote": "yea"
+        },
+        {
+          "name": "Theresa Gavarone",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Schaffer",
+          "vote": "yea"
+        },
+        {
+          "name": "Terry Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Louis W. Blessing, III",
+          "vote": "yea"
+        },
+        {
+          "name": "George F. Lang",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry C. Cirino",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Romanchuk",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Reineke",
+          "vote": "yea"
+        },
+        {
+          "name": "Sandra O'Brien",
+          "vote": "yea"
+        },
+        {
+          "name": "Al Landis",
+          "vote": "yea"
+        },
+        {
+          "name": "Shane Wilkin",
+          "vote": "yea"
+        },
+        {
+          "name": "Michele Reynolds",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian M. Chavez",
+          "vote": "yea"
+        },
+        {
+          "name": "Kyle Koehler",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Manchester",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas F. Patton",
+          "vote": "yea"
+        },
+        {
+          "name": "Jane M. Timken",
+          "vote": "yea"
+        },
+        {
+          "name": "Hearcel F. Craig",
+          "vote": "nay"
+        },
+        {
+          "name": "Paula Hicks-Hudson",
+          "vote": "nay"
+        },
+        {
+          "name": "William P. DeMora",
+          "vote": "nay"
+        },
+        {
+          "name": "Kent Smith",
+          "vote": "nay"
+        },
+        {
+          "name": "Catherine D. Ingram",
+          "vote": "nay"
+        },
+        {
+          "name": "Al Cutrona",
+          "vote": "nay"
+        },
+        {
+          "name": "Willis E. Blackshear, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Beth Liston",
+          "vote": "nay"
+        },
+        {
+          "name": "Casey Weinstein",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-11",
+      "body": "OH House",
+      "motion": "Adopted [version voted: 03_RH]",
+      "kind": "roll-call",
+      "yes": 62,
+      "no": 30,
+      "absent": 0,
+      "body_size": 92,
+      "note": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "members": [
+        {
+          "name": "Cindy Abrams",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Barhorst",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam C. Bird",
+          "vote": "yea"
+        },
+        {
+          "name": "Jamie Callender",
+          "vote": "yea"
+        },
+        {
+          "name": "Thaddeus J. Claggett",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Click",
+          "vote": "yea"
+        },
+        {
+          "name": "Meredith Craig",
+          "vote": "yea"
+        },
+        {
+          "name": "Rodney Creech",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack K. Daniels",
+          "vote": "yea"
+        },
+        {
+          "name": "Kellie Deeter",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Demetriou",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Dovilla",
+          "vote": "yea"
+        },
+        {
+          "name": "Tex Fischer",
+          "vote": "yea"
+        },
+        {
+          "name": "Sarah Fowler Arthur",
+          "vote": "yea"
+        },
+        {
+          "name": "Haraz N. Ghanbari",
+          "vote": "yea"
+        },
+        {
+          "name": "Jennifer Gross",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Hall",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Hiner",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Holmes",
+          "vote": "yea"
+        },
+        {
+          "name": "James M. Hoops",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Huffman",
+          "vote": "yea"
+        },
+        {
+          "name": "Marilyn S. John",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Angela N. King",
+          "vote": "yea"
+        },
+        {
+          "name": "Matthew Kishman",
+          "vote": "yea"
+        },
+        {
+          "name": "Roy Klopfenstein",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian E. Lampton",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff LaRe",
+          "vote": "yea"
+        },
+        {
+          "name": "Beth Lear",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Lorenz",
+          "vote": "yea"
+        },
+        {
+          "name": "Gayle Manning",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Mathews",
+          "vote": "yea"
+        },
+        {
+          "name": "Ty D. Mathews",
+          "vote": "yea"
+        },
+        {
+          "name": "Riordan T. McClain",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin D. Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Melanie Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Diane Mullins",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnathan Newman",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Odioso",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Oelslager",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Peterson",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Pizzulli",
+          "vote": "yea"
+        },
+        {
+          "name": "Phil Plummer",
+          "vote": "yea"
+        },
+        {
+          "name": "Sharon A. Ray",
+          "vote": "yea"
+        },
+        {
+          "name": "Tracy M. Richardson",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Ritter",
+          "vote": "yea"
+        },
+        {
+          "name": "Monica Robb Blasdel",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Roemer",
+          "vote": "yea"
+        },
+        {
+          "name": "Jodi Salvo",
+          "vote": "yea"
+        },
+        {
+          "name": "Nick Santucci",
+          "vote": "yea"
+        },
+        {
+          "name": "Jean Schmidt",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Stephens",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Stewart",
+          "vote": "yea"
+        },
+        {
+          "name": "D. J. Swearingen",
+          "vote": "yea"
+        },
+        {
+          "name": "David Thomas",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Thomas",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrea White",
+          "vote": "yea"
+        },
+        {
+          "name": "Josh Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Bernard Willis",
+          "vote": "yea"
+        },
+        {
+          "name": "Heidi Workman",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Ty Moore",
+          "vote": "yea"
+        },
+        {
+          "name": "Munira Abdullahi",
+          "vote": "nay"
+        },
+        {
+          "name": "Rachel B. Baker",
+          "vote": "nay"
+        },
+        {
+          "name": "Sean P. Brennan",
+          "vote": "nay"
+        },
+        {
+          "name": "Juanita O. Brent",
+          "vote": "nay"
+        },
+        {
+          "name": "Darnell T. Brewer",
+          "vote": "nay"
+        },
+        {
+          "name": "Karen Brownlee",
+          "vote": "nay"
+        },
+        {
+          "name": "Christine Cockley",
+          "vote": "nay"
+        },
+        {
+          "name": "Michele Grim",
+          "vote": "nay"
+        },
+        {
+          "name": "Latyna M. Humphrey",
+          "vote": "nay"
+        },
+        {
+          "name": "Dani Isaacsohn",
+          "vote": "nay"
+        },
+        {
+          "name": "Dontavius L. Jarrells",
+          "vote": "nay"
+        },
+        {
+          "name": "Meredith R. Lawson-Rowe",
+          "vote": "nay"
+        },
+        {
+          "name": "Crystal Lett",
+          "vote": "nay"
+        },
+        {
+          "name": "Lauren McNally",
+          "vote": "nay"
+        },
+        {
+          "name": "Joseph A. Miller III",
+          "vote": "nay"
+        },
+        {
+          "name": "Ismail Mohamed",
+          "vote": "nay"
+        },
+        {
+          "name": "Beryl Piccolantonio",
+          "vote": "nay"
+        },
+        {
+          "name": "Tristan Rader",
+          "vote": "nay"
+        },
+        {
+          "name": "Phillip M. Robinson, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Elgin Rogers, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "C. Allison Russo",
+          "vote": "nay"
+        },
+        {
+          "name": "Veronica R. Sims",
+          "vote": "nay"
+        },
+        {
+          "name": "Anita Somani",
+          "vote": "nay"
+        },
+        {
+          "name": "Bride Rose Sweeney",
+          "vote": "nay"
+        },
+        {
+          "name": "Eric Synenberg",
+          "vote": "nay"
+        },
+        {
+          "name": "Cecil Thomas",
+          "vote": "nay"
+        },
+        {
+          "name": "Desiree Tims",
+          "vote": "nay"
+        },
+        {
+          "name": "Terrence Upchurch",
+          "vote": "nay"
+        },
+        {
+          "name": "Erika White",
+          "vote": "nay"
+        },
+        {
+          "name": "Ashley Bryant Bailey",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

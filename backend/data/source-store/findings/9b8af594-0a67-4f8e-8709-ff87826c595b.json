@@ -1,0 +1,152 @@
+{
+  "politician_id": "9b8af594-0a67-4f8e-8709-ff87826c595b",
+  "findings": [
+    {
+      "id": "23fede7904b10c0abffeb673ef94f55c62993ff48bbb2ca9dadc54d43c4c6002",
+      "kind": "own-words",
+      "url": "https://thebeaconnews.org/stories/2024/10/07/renee-erickson-richard-smith-and-olivia-hayse-run-for-senate/",
+      "date": "2024-10-07",
+      "date_precision": "day",
+      "passage": "“Senator Erickson has sponsored and championed bills and resolutions affecting pro-life efforts, educational choice and freedom, athletic opportunities for women, free market principles, Second Amendment rights, election integrity, truth in taxation, healthcare freedom, and honoring military heroes and families,” her campaign website said.",
+      "note": "Text from her campaign website, quoted by The Beacon (Oct 2024). It lists election integrity among the areas of her bills; it names no specific rule on ID or citizenship.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:53:54.929Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "16fc367b6ae612e9858d0804c70069da9a41e059381a62d495fc2173fe7e9422",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_191_HB2020.odt",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "Senate: Emergency Final Action As Amended",
+      "note": "Senate roll call as printed ('Erickson'), linked to Renee Erickson (district 30) via the official 2025 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53cc439c8ba13aae8525c4a82092d677fe52f2aa3e4773008814268e4fad0c47",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Erickson'), linked to Renee Erickson (district 30) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "26fc0eac68c90037c402f6af64ad21e632b079f7491d447d2551656187b6c5c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Erickson'), linked to Renee Erickson (district 30) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7709a8e391d094e607393601c6ffc28d7421685a297c8edcb9447240a463f87f",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/vote/?apn=b2023_24/year2/senate/legislative_days/day039_20240305/vote_records/vote_100_SB365.odt",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-365-2024",
+      "act": "yea",
+      "motion": "Senate: Final Action - Not passed",
+      "note": "Senate roll call as printed ('Erickson'), linked to Renee Erickson (district 30) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity in general",
+        "mail ballot deadlines"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page (Senate District 30; shows no website, no text on the subject)",
+        "campaign site ericksonforkansas.com: not reachable (domain does not resolve); her campaign-site words found only as quoted by a news outlet",
+        "blocked: https://www.derbyinformer.com/special_articles/voter_s_guide/renee-erickson/article_0ab0d712-8d91-11ef-a9bc-07d650ee61d1.html (429)",
+        "blocked: https://ballotpedia.org/Renee_Erickson (known to refuse fetches; not tried)",
+        "blocked: kansasreflector.com (known to refuse fetches; not tried)",
+        "four web searches on name plus voter ID, citizenship, newsletter, campaign site: no column, newsletter or testimony by her found"
+      ],
+      "found": 1,
+      "at": "2026-11-04T16:53:54.929Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T19:13:24.947Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

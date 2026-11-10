@@ -1,0 +1,33 @@
+{
+  "id": "KS-HB-2075-2017",
+  "scope": "state:ks",
+  "title": "HB 2075 (2017-2018 Regular Session (2017)): Elections; voting procedures where proof of citizenship not provided. (index); AN ACT concerning elections; dealing with voting procedures; amending K.S.A. 25-601 and K.S.A. 2016 Supp. 25-210, 25-414, 25-2309, 25-2352 and 25-3002 and repealing the existing sections.",
+  "urls": [
+    "https://www.kslegislature.gov/li_2018/b2017_18/measures/hb2075/",
+    "https://www.kslegislature.gov/li_2018/b2017_18/measures/documents/hb2075_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy)\n(section) K.S.A. 25-414(c) (voting procedures where proof of citizenship not provided)\n(quote) (c) A person who has not provided satisfactory evidence of citizenship as required by K.S.A. 25-2309, and amendments thereto, but who is nevertheless registered to vote in elections for federal office resulting from a court's enjoining, invalidating or in any way rendering unenforceable the requirement that one provide satisfactory evidence of citizenship prior to being registered to vote, shall be entitled to cast only a provisional ballot pursuant to K.S.A. 25-409, and amendments thereto.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) K.S.A. 25-2309(l)\n(quote) If any provision of this statute is enjoined, invalidated or otherwise unenforceable as to elections for federal office, an applicant shall not be registered for any elections, except for elections for federal office, until the applicant has provided satisfactory evidence of United States citizenship.\n(e_other_rule) not stated.\n(other) K.S.A. 25-210 (ballots); 25-414 (challenged voters: provisional ballot for a person registered for federal elections only); 25-601; 25-2309 (registration); 25-2352; 25-3002 (provisional ballot canvass).",
+  "sponsors": [
+    {
+      "name": "Committee on Federal and State Affairs",
+      "role": "prime",
+      "version": "As introduced (hb2075_00_0000.pdf); no later version exists on the legislature site"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

@@ -2,7 +2,7 @@ import { Router } from 'express';
 import type { Request, Response } from 'express';
 import { optionalAuth, requireAuth } from '../middleware/auth.js';
 import type { AuthenticatedRequest } from '../middleware/auth.js';
-import { requireConnected } from '../middleware/tierGuards.js';
+import { readStoredJurisdiction } from '../lib/storedJurisdiction.js';
 import {
   getRepresentativesByAddress,
   getRepresentativesByJurisdiction,
@@ -542,35 +542,21 @@ router.get('/districts/:id', optionalAuth, async (req: Request, res: Response): 
 
 // ---------------------------------------------------------------------------
 // GET /api/essentials/representatives/me
-// Auth: required (Connected tier)
+// Auth: required (Connected or basic — CA_0368)
 // Returns politicians for the authenticated user's stored jurisdiction.
 // No geocoding — uses the GEOIDs from the user's saved location directly.
 // Returns 204 if the user has no location on file (consent not granted or
-// location never set). Returns 403 NOT_CONNECTED for Inform-tier users.
+// location never set).
 // ---------------------------------------------------------------------------
 
-router.get('/representatives/me', requireAuth, requireConnected, async (req: Request, res: Response): Promise<void> => {
+router.get('/representatives/me', requireAuth, async (req: Request, res: Response): Promise<void> => {
   const { userId } = req as AuthenticatedRequest;
 
   // Single query: fetch all location fields + has_coords flag in one round-trip.
-  const { rows } = await pool.query<{
-    congressional_geo_id: string | null;
-    state_senate_geo_id: string | null;
-    state_house_geo_id: string | null;
-    county_geo_id: string | null;
-    school_district_geo_id: string | null;
-    jurisdiction_state: string | null;
-    jurisdiction_city: string | null;
-    has_coords: boolean;
-  }>(
-    `SELECT congressional_geo_id, state_senate_geo_id, state_house_geo_id,
-             county_geo_id, school_district_geo_id,
-             jurisdiction_state, jurisdiction_city,
-             (encrypted_lat IS NOT NULL) AS has_coords
-      FROM connect.connected_profiles WHERE user_id = $1`,
-    [userId]
-  ).catch(() => ({ rows: [] as any[] }));
-  const j = rows[0];
+  // Both tiers (CA_0368): a Connected account's stored districts or a basic account's.
+  // A basic row has has_coords = false, so the point-based paths below (1.5 and the 2026
+  // congressional fallback) never fire for it — its 2026 district was stored at entry.
+  const j = await readStoredJurisdiction(userId).catch(() => null);
 
   // --- Path 0: TIGER user_districts cache — fastest path (added in Phase 70) ---
   // Source: connect.user_districts populated by essentials.cache_user_districts on
@@ -797,7 +783,7 @@ router.get('/representatives/me', requireAuth, requireConnected, async (req: Req
 
 // ---------------------------------------------------------------------------
 // GET /api/essentials/elections/me
-// Auth: required (Connected tier)
+// Auth: required (Connected or basic — CA_0368)
 // Returns upcoming elections for the authenticated user's stored location.
 // Uses stored geo_ids for a direct district match — no geocoding, no coord
 // decryption. Mirrors the fast path of representatives/me.
@@ -805,30 +791,13 @@ router.get('/representatives/me', requireAuth, requireConnected, async (req: Req
 // X-Formatted-Address: city-level label (jurisdiction_city + jurisdiction_state)
 // ---------------------------------------------------------------------------
 
-router.get('/elections/me', requireAuth, requireConnected, async (req: Request, res: Response): Promise<void> => {
+router.get('/elections/me', requireAuth, async (req: Request, res: Response): Promise<void> => {
   const { userId } = req as AuthenticatedRequest;
 
-  const { rows } = await pool.query<{
-    congressional_geo_id: string | null;
-    state_senate_geo_id: string | null;
-    state_house_geo_id: string | null;
-    county_geo_id: string | null;
-    school_district_geo_id: string | null;
-    city_council_geo_id: string | null;
-    municipality_geo_id: string | null;
-    jurisdiction_state: string | null;
-    jurisdiction_city: string | null;
-    has_coords: boolean;
-  }>(
-    `SELECT congressional_geo_id, state_senate_geo_id, state_house_geo_id,
-             county_geo_id, school_district_geo_id, city_council_geo_id,
-             municipality_geo_id,
-             jurisdiction_state, jurisdiction_city,
-             (encrypted_lat IS NOT NULL) AS has_coords
-      FROM connect.connected_profiles WHERE user_id = $1`,
-    [userId]
-  ).catch(() => ({ rows: [] as any[] }));
-  const j = rows[0];
+  // Both tiers (CA_0368): a Connected account's stored districts or a basic account's.
+  // A basic row has has_coords = false, so the point-based paths below (1.5 and the 2026
+  // congressional fallback) never fire for it — its 2026 district was stored at entry.
+  const j = await readStoredJurisdiction(userId).catch(() => null);
 
   // Path 1: stored geo_ids present — direct district match
   if (j && (j.congressional_geo_id || j.state_senate_geo_id || j.county_geo_id)) {
