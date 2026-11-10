@@ -244,6 +244,70 @@ owed a re-sourcing pass; the file is a queue that should only ever shrink. One r
 `"kind": "accepted"` with its reason: a cut-out portrait on plain white satisfies the BORDER
 branch, because when the subject reaches no edge every edge line really is flat and one colour,
 so that branch cannot tell a uniform BACKGROUND from a FRAME.
+## ✅ THE ELEVEN ARE FIXED — `CC_0384`, 2026-11-10
+
+Applied to prod. The whole published corpus now flags **one** frame, and that one is the recorded
+acceptance. The defect queue in `backend/data/headshot-framing-known.json` is **empty**.
+
+| what it was | n | what was done |
+| --- | --- | --- |
+| **state seals** | 2 | Jeff Jackson re-sourced; Steve Hobbs **repointed** |
+| oval crop on a matte | 4 | 3 re-sourced from the same shoot; 1 blanked |
+| letterboxed in a flat frame | 2 | the frame cropped off |
+| pillarboxed | 2 | the bands cropped off |
+| arched mask burnt in | 1 | blanked |
+
+🔴🔴 **ONE OF THE TWO SEALS WAS ALREADY HALF-FIXED, AND THE HALF THAT WAS MISSING IS THE ONE THE
+GATE READS.** Steve Hobbs got a real portrait on 2026-10-19. It went into `politician_images` as
+`<id>-headshot-v2.jpg` — and **`photo_custom_url` was never moved off `<id>-headshot.jpg`, the
+seal**. So for three weeks the profile grid, which reads `images[]`, showed the portrait while the
+backend scalar and the framing gate both still had the seal. ▶ **Three photo columns, and they can
+disagree PAIRWISE. "Both sides written" is not one check, it is three.** `CC_0384`'s post-verify
+asks the question that was wrong here: not *does the new value appear*, but **does any old value
+survive anywhere** — and it names `race_candidates.photo_url` as the third surface and gates it at
+zero, because nothing else above would have noticed it.
+
+🟢 **THE MEMBER PAGE AND THE ROSTER PAGE SERVED DIFFERENT FILES.** Draper publishes each councillor
+as a 1080×1080 circle on their own page — and the **Mayor and Council index** serves a different
+asset entirely: the rectangular original from the same shoot, 2216×3936. Three of the four oval
+crops were fixed from it, at a 0.43–0.52× downscale. ▶ **"The body publishes only circles" was true
+of the page I looked at and false of the site.** List the images on every page of a roster before
+concluding a source is empty.
+
+⚠ **AND THE OTHER THREE BODIES REALLY DO PUBLISH THE FRAME.** Allen County's own file carries the
+same white border we held, Covina's is byte-identical to ours (sha256 checked), Monroe County
+publishes every councillor as a circle, and Cottonwood Heights publishes no portrait at all. For
+those, cropping the surround off the file we already hold IS the fix, and it costs an enlargement:
+Scheuman 1.84×, Cortez 1.59×, Holton 1.25×. Blackwell's cost nothing — 0.79×, a downscale.
+
+🔴 **TWO WERE BLANKED, AND THE GEOMETRY IS WHY, NOT A SHRUG.** Liz Feitl's mask measures as a circle
+of radius **498** in a 1000×1000 frame with her crown at **y=75**; the largest 4:5 window that stays
+inside it, clears her hair and keeps her face near the middle is **279×349** — a 2.15× enlargement
+of a frame her face would overflow. Mike Klein's arch is burnt into a file already cropped to
+600×750, so there is nothing to crop back to, and his origin was a **Ballotpedia** election page
+recorded `press_use`, a claim Ballotpedia cannot grant. He lost FL-3 on 2026-11-03. **A rejection is
+a measurement too** — both numbers are in the migration header.
+
+⚠ **Klein's `politician_images` ROW WAS DELETED, NOT EMPTIED** — the grid reads `images[]` first, so
+a row holding a bad URL is worse than no row. Both now have `photo_origin_url` NULL as well, which
+is what puts them back in the needs-a-headshot queue.
+
+🔴 **EVERY REPLACEMENT URL CARRIES `?v=20261110`.** `x-upsert` at the same object path returns 200
+while the public CDN goes on serving the **old** bytes, `cf-cache-status: HIT`. Each of the eight
+uploads was verified by re-fetching **the exact URL written to the database** and comparing sha256
+to the local file: 8 of 8 matched, all `MISS`.
+
+**Watched failing first.** Three tampers on the post-verify, each asserted present in the file
+before the dry run: dropping the Hobbs repoint → `found 8`; blanking Klein's image row instead of
+deleting it → `found 1`; writing the scalar but leaving one `images[]` row on the old file → `found
+8`. All three red for the right reason, then the real file applied with every statement touching
+exactly one row.
+
+⚠ **NO FACE DETECTOR RAN ON THE NINE.** `check-headshot-faces.py` needs Python and there is none on
+the machine that did this work. Every frame was measured off a grid labelled in original pixels,
+drawn back onto the photograph, looked at, and put through `check-portrait-framing.mjs` with its
+five fixtures green. The Sunday CI sweep will be the first face check they get.
+
 ## ⚠ MY FIRST BORDER DETECTOR SAID 13 OF 14 AND WAS WRONG
 
 It measured *"distance inward to the first brightness change"*, which on any graduated studio

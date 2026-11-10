@@ -12,9 +12,14 @@
     "kind \"accepted\" = a real photograph this gate is wrong about, with the reason written out.",
     "",
     "A defect filed as an acceptance is a defect nobody will ever fix. Do not move one across",
-    "to make a red build green."
+    "to make a red build green.",
+    "",
+    "DRAINED 2026-11-10 by CC_0384: all 11 defects this file opened with are gone from production.",
+    "Nine were replaced (two state seals, four oval crops, one arched mask, two pillarboxed, one",
+    "letterboxed) and two were blanked, because no rectangular portrait of them exists at a usable",
+    "size. The one entry left is an ACCEPTANCE and always was."
   ],
-  "measured": "2026-11-09 over all 9,481 published headshots (both columns)",
+  "measured": "2026-11-09 over all 9,481 published headshots (both columns); the 11 defects it found were fixed by CC_0384 on 2026-11-10",
   "entries": [
     {
       "kind": "accepted",
@@ -24,116 +29,6 @@
       "sha256": "4dd1521fb76cbf5386fefa7337a928c14a88c8b006b78bf398008c55edcf21db",
       "detector": "BORDER",
       "why": "a real cut-out portrait on plain white. The BORDER branch cannot tell a uniform BACKGROUND from a FRAME when the subject reaches no edge: every edge line is flat white, so all four \"border depths\" are real and there is no frame.",
-      "first_seen": "2026-11-09"
-    },
-    {
-      "kind": "defect",
-      "name": "Bryn Heather Johnson",
-      "politician_id": "7fc14acd-5763-4eef-9ff6-26c098469c06",
-      "url": "https://kxsdzaojfaibhuzmclfq.supabase.co/storage/v1/object/public/politician_photos/ut/382968.png",
-      "sha256": "c6ff3b05bcb560dbc83134955941ddf192808045e770bbcdcb5a0e2a820b1eea",
-      "detector": "DISC",
-      "why": "an oval crop on black",
-      "first_seen": "2026-11-09"
-    },
-    {
-      "kind": "defect",
-      "name": "Fred Lowry",
-      "politician_id": "4d96a7dd-573d-4499-8ea5-be0738403b0a",
-      "url": "https://kxsdzaojfaibhuzmclfq.supabase.co/storage/v1/object/public/politician_photos/ut/382970.png",
-      "sha256": "82ae9df27de73af67f7a4f344f0d7a064c72e3a981e2fce10d3f06d951fbffc2",
-      "detector": "DISC",
-      "why": "an oval crop on black",
-      "first_seen": "2026-11-09"
-    },
-    {
-      "kind": "defect",
-      "name": "Jacquelynn Scheuman",
-      "politician_id": "e78a1793-b0c0-4531-8f4e-90890199cf2d",
-      "url": "https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/e78a1793-b0c0-4531-8f4e-90890199cf2d-headshot.jpg",
-      "sha256": "7b980adb6b06748ecbb5bb804953b6c8799e6292ed522bbc884d272bd65007af",
-      "detector": "DISC+BORDER",
-      "why": "the photograph is letterboxed inside a white frame on all four sides",
-      "first_seen": "2026-11-09"
-    },
-    {
-      "kind": "defect",
-      "name": "Jeff Jackson",
-      "politician_id": "8e0122c2-8bcb-4114-87e6-faa72d5d5125",
-      "url": "https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/8e0122c2-8bcb-4114-87e6-faa72d5d5125-headshot.jpg",
-      "sha256": "5d7cc2ea016b7484cb1775fd45eae4ab22e73e1847f10072eb85d95849b965e7",
-      "detector": "DISC",
-      "why": "the GREAT SEAL OF NORTH CAROLINA — not a photograph of anybody. The face gate passed it",
-      "first_seen": "2026-11-09"
-    },
-    {
-      "kind": "defect",
-      "name": "Liz Feitl",
-      "politician_id": "b3830ff1-3b9b-463a-bb7d-311bf1bf0168",
-      "url": "https://kxsdzaojfaibhuzmclfq.supabase.co/storage/v1/object/public/politician_photos/monroe_council/Liz-Feitl.png",
-      "sha256": "c914998d247458abdc28529bd7acdf72152ce80bf7ce9ad58df1c798805913e7",
-      "detector": "DISC",
-      "why": "an oval crop on white",
-      "first_seen": "2026-11-09"
-    },
-    {
-      "kind": "defect",
-      "name": "Matt Holton",
-      "politician_id": "42687b5a-95d2-4344-a471-2e71f23f56ef",
-      "url": "https://kxsdzaojfaibhuzmclfq.supabase.co/storage/v1/object/public/politician_photos/ut/389556.png",
-      "sha256": "6f22fb9af8d665ba7f1dfb844738690859142c9f2db94ee6fb11818877b67883",
-      "detector": "DISC",
-      "why": "pillarboxed — black bands down the left and right of the photograph",
-      "first_seen": "2026-11-09"
-    },
-    {
-      "kind": "defect",
-      "name": "Michael Green",
-      "politician_id": "dc503cfa-4d0f-4412-8fee-5e6b715a2cd1",
-      "url": "https://kxsdzaojfaibhuzmclfq.supabase.co/storage/v1/object/public/politician_photos/ut/382967.png",
-      "sha256": "a889f232b8abfc2a773d40c20045cc8481fbb3fcd5bfaa76cb00ca9d762bd995",
-      "detector": "DISC",
-      "why": "an oval crop on black",
-      "first_seen": "2026-11-09"
-    },
-    {
-      "kind": "defect",
-      "name": "Mike Klein",
-      "politician_id": "1cc730ef-cd4c-4633-a66b-3cb12e6d638d",
-      "url": "https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/1cc730ef-cd4c-4633-a66b-3cb12e6d638d-headshot.jpg",
-      "sha256": "2171b0ae67be206e932417d1a826105ba08fa0d34c8e16796ac171f69f7bcda4",
-      "detector": "DISC",
-      "why": "black arched mask over the top two corners — a dome crop, not the photograph",
-      "first_seen": "2026-11-09"
-    },
-    {
-      "kind": "defect",
-      "name": "Patricia Cortez",
-      "politician_id": "736fc53b-1778-4751-8002-5b42c2671ef1",
-      "url": "https://kxsdzaojfaibhuzmclfq.supabase.co/storage/v1/object/public/politician_photos/ddbc251f-fcd1-4790-aa56-d074c758b4b3/default.jpeg",
-      "sha256": "b0c9f72f4710a3f62cf28ef2ffcf03f199a22ce92ed01a737d97924bcbdbf825",
-      "detector": "DISC+BORDER",
-      "why": "the photograph is letterboxed inside a dark maroon frame on all four sides",
-      "first_seen": "2026-11-09"
-    },
-    {
-      "kind": "defect",
-      "name": "Sarah Blackwell",
-      "politician_id": "52f2ed4d-72dd-42e4-869d-886c925cd05e",
-      "url": "https://kxsdzaojfaibhuzmclfq.supabase.co/storage/v1/object/public/politician_photos/ut/370486.jpg",
-      "sha256": "d8c6d60167906823c5014a768aaf234cf0253260849355492acf2b0f5c366442",
-      "detector": "DISC",
-      "why": "pillarboxed — white bands down the left and right of the photograph",
-      "first_seen": "2026-11-09"
-    },
-    {
-      "kind": "defect",
-      "name": "Steve Hobbs",
-      "politician_id": "87f17e16-15dc-47d7-889a-40ee329f17b7",
-      "url": "https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/87f17e16-15dc-47d7-889a-40ee329f17b7-headshot.jpg",
-      "sha256": "6fbf5ef5a91388a898369a817e4e8680c8592047ac0623d2bf48f00066f41eb0",
-      "detector": "DISC",
-      "why": "the STATE SEAL OF WASHINGTON — not a photograph of anybody. The face gate passed it",
       "first_seen": "2026-11-09"
     }
   ]
