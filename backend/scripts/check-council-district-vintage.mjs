@@ -144,6 +144,45 @@ const REGISTRY = [
     district: (props) => Number(props.DISTRICT ?? props.SUP_DIST ?? props.District),
     expect: 5,
   },
+  {
+    key: 'reno',
+    label: 'Reno city council wards',
+    ocdPrefix: 'reno-nv-council-ward-',
+    // 🔴 THE CITY PUBLISHES TWO WARD SERVICES AND THE OBVIOUSLY-NAMED ONE IS DEAD.
+    // citymaps.reno.gov/AdminAreas/Reno_Wards (layers 8-12) still serves the FIVE-ward map
+    // retired after the 2024 election; this Public Works service is the live six-ward map.
+    // Reno went 5 -> 6 wards under Nevada AB36 (2017), the sixth ward replacing the at-large
+    // council seat, and Charter s 1.050(1) now requires six. Pointing this at AdminAreas would
+    // gate the wrong map and still pass, because every Reno address lands in SOME ward.
+    url:
+      'https://pwmaps.reno.gov/server/rest/services/PublicWorks/City_Wards/MapServer/0/query' +
+      '?where=1%3D1&outFields=WARD_NUM&returnGeometry=true&outSR=4326&f=geojson',
+    district: (props) => Number(String(props.WARD_NUM).replace(/\D/g, '')),
+    expect: 6,
+    // Proved 2026-11-09 against the Washoe County Registrar's own voter-precinct layer
+    // (wcgisweb.washoecounty.us OpenData layer 7, field RWARDS) — the layer the county builds
+    // Reno's BALLOTS from, the Columbus arbiter rule — on 161 of 161 Reno precincts. Proved
+    // BOTH ways: the superseded five-ward map contradicts that same arbiter on 47 of the 135
+    // precincts both maps place. See CC_0385.
+  },
+  {
+    key: 'washoe',
+    label: 'Washoe County Board of County Commissioners',
+    ocdPrefix: 'washoe-nv-commission-district-',
+    // The COUNTY'S OWN server. The City of Reno and NDOT both republish copies of this layer
+    // and an arcgis.com search returns those first; take boundaries from the government that
+    // draws them.
+    url:
+      'https://wcgisweb.washoecounty.us/arcgis/rest/services/OpenData/OpenData/FeatureServer/4/query' +
+      '?where=1%3D1&outFields=CDNO&returnGeometry=true&outSR=4326&f=geojson',
+    district: (props) => Number(props.CDNO),
+    expect: 5,
+    // Proved 2026-11-09 against the same Registrar precinct layer (field COMMISSION) on 471 of
+    // 472 precincts. ⚠ The one exception, precinct 9113, straddles the District 1/5 line
+    // 20.8/79.2 while the Registrar assigns all of it to District 1; it holds ZERO addresses in
+    // the county's own address-point layer (against 185 in the surrounding box as the control),
+    // so it cannot misroute anyone. See CC_0386.
+  },
 ];
 
 /**
@@ -312,12 +351,19 @@ async function fetchUpstream(entry) {
 async function checkEntry(pool, entry) {
   // The trailing integer is the district number in both id shapes we use:
   // '…/council_district:13' (OCD) and 'boston-ma-council-district-1' (local slug).
+  // 🔴 coalesce(ocd_id, geo_id, ''), NOT a bare ocd_id — the SAME form the ungated sweep below
+  // uses, and for a related reason. Many locally-sourced layers carry a NULL ocd_id and are
+  // keyed by geo_id alone (X0086 'reno-nv-council-ward-1', X0087
+  // 'washoe-nv-commission-district-1'). With a bare ocd_id the two queries DISAGREE: the sweep
+  // counts such a layer as gated and drops it from the ungated list, while this one finds no
+  // rows — so a registry entry can look present and never actually run. Every existing entry's
+  // ocd_id is non-NULL, so coalescing changes nothing for them.
   const { rows } = await pool.query(
-    `SELECT (regexp_match(ocd_id, '(\\d+)$'))[1] AS district,
+    `SELECT (regexp_match(coalesce(ocd_id, geo_id, ''), '(\\d+)$'))[1] AS district,
             public.ST_AsGeoJSON(geometry) AS gj,
             source
        FROM essentials.geofence_boundaries
-      WHERE ocd_id LIKE $1 || '%'`,
+      WHERE coalesce(ocd_id, geo_id, '') LIKE $1 || '%'`,
     [entry.ocdPrefix]
   );
   const problems = [];
