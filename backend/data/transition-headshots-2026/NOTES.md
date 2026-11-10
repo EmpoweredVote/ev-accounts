@@ -211,7 +211,39 @@ so if the district republishes the portrait the fixture fails loudly instead of 
 is not in scope at that line, so the gate threw and exited 1 for the wrong reason. **An exit code
 is not a control.** Read what the tamper actually did.
 
-⚠ **The gate is hand-run; it is NOT in CI and NOT in `package.json`.** Nothing runs it for you.
+🟢 **IT IS IN CI NOW (2026-11-09), inside the `headshot faces` job, on the Sunday full sweep.**
+It reads `check-headshot-faces.py`'s own `--json` output instead of querying the database, so
+both detectors scan one list decided by one piece of SQL and record judgements under the same
+`(url, sha256)` key; `data/headshot-framing-known.json` holds the flags already looked at. The
+line that used to stand here — *the gate is hand-run, nothing runs it for you* — is gone.
+
+🔴🔴 **AND WIRING IT UP IS WHAT REVEALED THAT THE FIX ABOVE WAS MEASURED ON TOO SMALL A SET.**
+Over the 36 images of this batch it had **zero false positives**. Over the first 500 random
+published headshots it had one, and over **all 9,481 it flagged 44, of which 33 were real
+photographs** — every one of them a subject cut out on plain white or shot against a seamless
+studio backdrop. The flood-fill repair is what admitted them: a seamless backdrop really **is**
+connected to the frame edge, so `surroundPct` was answering correctly and nothing left in the
+predicate could tell a backdrop from a matte. ▶ **36 images drawn from the batch being worked on
+are uniform in exactly the thing that was wrong. An error rate is not known until the detector
+has been run over the population it will police.**
+
+🟢 **THE REPAIR WAS A NUMBER THE GATE ALREADY HAD AND THREW AWAY.** The diagonal walk counted
+how many of the four corner diagonals left the matte — a disc answers four, and so does a person
+on white. It never kept **how far along each one** the surround ended. A disc is round, so all
+four are equal; a person ends at their hair on the top two and their shoulders on the bottom two.
+Measured: the three positive fixtures 0, 1 and 3; all 11 real manufactured surrounds in the
+corpus 0–2; the nearest real photograph **8**, then 8, 11, 13, 13, 14. `DISC_SPREAD = 6` sits in
+that gap, and the corpus went **44 → 12**. ▶ **When a detector counts occurrences, ask what it
+measured to find them.**
+
+🔴 **ALL 11 REAL DEFECTS HAD PASSED THE FACE GATE**, and two of them are the **State Seal of
+Washington** and the **Great Seal of North Carolina** — seals that contain a portrait, so a face
+detector clears them honestly. The rest are oval crops, pillarboxed photographs and framed ones.
+They are recorded as `"kind": "defect"` in `backend/data/headshot-framing-known.json` and are
+owed a re-sourcing pass; the file is a queue that should only ever shrink. One row is recorded
+`"kind": "accepted"` with its reason: a cut-out portrait on plain white satisfies the BORDER
+branch, because when the subject reaches no edge every edge line really is flat and one colour,
+so that branch cannot tell a uniform BACKGROUND from a FRAME.
 ## ⚠ MY FIRST BORDER DETECTOR SAID 13 OF 14 AND WAS WRONG
 
 It measured *"distance inward to the first brightness change"*, which on any graduated studio
