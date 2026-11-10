@@ -1,0 +1,358 @@
+{
+  "politician_id": "dab70f86-523b-4271-b183-0dc578c2b0fa",
+  "findings": [
+    {
+      "id": "59222983adf1d56a105c825f9e1cee102f0c12684a6c776b6ed3389d1c557edc",
+      "kind": "own-words",
+      "url": "https://lawreview.syr.edu/wp-content/uploads/2013/02/H-Kobach.pdf",
+      "date": "2012",
+      "date_precision": "year",
+      "passage": "The SAFE Act made Kansas the first state to combine three elements: (1) a requirement that voters present photo IDs when they vote in person, (2) a requirement that absentee voters present a full driver’s license number and have their signatures verified, and (3) a proof of citizenship requirement for all newly-registered voters.",
+      "note": "Describes the three parts of the 2011 Kansas SAFE Act as the author sees them. Source is the author's own Syracuse Law Review article (draft PDF dated 2012-01-11), written while he was Secretary of State.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:22.064Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "74be60f716d1c6b96482574c532d02ae8d8e8e50eece19d8220e95758b634e50",
+      "kind": "own-words",
+      "url": "https://lawreview.syr.edu/wp-content/uploads/2013/02/H-Kobach.pdf",
+      "date": "2012",
+      "date_precision": "year",
+      "passage": "First, an expired photo ID document may be used by any voter who is sixty-five years of age or older. Second, the state will provide a free non-driver ID (not a free driver’s license) to any voter who signs an affidavit stating that the person desires an identification card to vote in Kansas and that the person does not possess a valid form of ID.",
+      "note": "Explains the age-65 expired-ID allowance and the free state ID for a voter with no ID, who signs an affidavit. Source is the author's own Syracuse Law Review article (draft PDF dated 2012-01-11), written while he was Secretary of State.",
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:22.064Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "351007edce0dec236869ff9114470af02c659bfdff2b2f8561dbfc3fea48ffdf",
+      "kind": "own-words",
+      "url": "https://lawreview.syr.edu/wp-content/uploads/2013/02/H-Kobach.pdf",
+      "date": "2012",
+      "date_precision": "year",
+      "passage": "The SAFE Act closes a loophole that is present in other states’ photo ID laws: it applies equivalent security provisions to ballots that are submitted by mail. In some other states with photo ID laws, absentee ballots are left unchanged—a situation that simply encourages individuals and organizations intent on committing voter fraud to use absentee ballots.",
+      "note": "Argues that ID rules should also cover mail ballots, and says other states leave absentee ballots unchanged. Source is the author's own Syracuse Law Review article (draft PDF dated 2012-01-11), written while he was Secretary of State.",
+      "subjects": [
+        "mail-ballot ID",
+        "advance ballot protections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:22.064Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "706f9d731b8c747b762450e2edaef1f43e36e4c9a9cb3481a4e2de304e6c1f9a",
+      "kind": "own-words",
+      "url": "https://lawreview.syr.edu/wp-content/uploads/2013/02/H-Kobach.pdf",
+      "date": "2012",
+      "date_precision": "year",
+      "passage": "First, a voter requesting an absentee ballot must provide his Kansas driver’s license or non-driver ID number on the absentee ballot application, or a photocopy of a qualifying ID if he does not possess one.",
+      "note": "Describes the ID number or ID copy needed to request an advance ballot, plus a signature match by the county. Source is the author's own Syracuse Law Review article (draft PDF dated 2012-01-11), written while he was Secretary of State.",
+      "subjects": [
+        "mail-ballot ID",
+        "ID number to request a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:22.064Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "31e606509de9f0e334fcc11a24641f32201b9436d68197f63ec2df7e3427ff1d",
+      "kind": "own-words",
+      "url": "https://lawreview.syr.edu/wp-content/uploads/2013/02/H-Kobach.pdf",
+      "date": "2012",
+      "date_precision": "year",
+      "passage": "For most voters, the relevant document will be a birth certificate, a passport, a naturalization document, a driver’s license if the license indicates citizenship, or a photocopy of any of these documents.",
+      "note": "Lists the documents accepted as proof of citizenship at registration; already-registered voters were exempt. Source is the author's own Syracuse Law Review article (draft PDF dated 2012-01-11), written while he was Secretary of State.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:22.064Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "83d58ed6fcff2371288e845e63a2a66e13227735b6ada909f0931a7f4d91fbbf",
+      "kind": "own-words",
+      "url": "https://lawreview.syr.edu/wp-content/uploads/2013/02/H-Kobach.pdf",
+      "date": "2012",
+      "date_precision": "year",
+      "passage": "Voter security laws are here to stay. They are overwhelmingly popular with the public, and they are on solid constitutional footing in the courts.",
+      "note": "Conclusion of the article: his general case for photo ID and proof-of-citizenship laws. Source is the author's own Syracuse Law Review article (draft PDF dated 2012-01-11), written while he was Secretary of State.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:22.064Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8b3ca65a46190292d0a2d2cabf59d91a60d1d7bf8105f30ea58fe77db1a9e493",
+      "kind": "own-words",
+      "url": "https://www.breitbart.com/politics/2020/04/29/kobach-the-tenth-circuit-wrongly-strikes-down-kansass-proof-of-citizenship-election-requirement",
+      "date": "2020-04-29",
+      "date_precision": "day",
+      "passage": "As Kansas Secretary of State at the time, I was the author of that law—which passed with overwhelming bipartisan majorities in the Kansas Legislature.",
+      "note": "Op-ed by Kobach (byline Kris W. Kobach, Breitbart) on the 2020 appeals ruling that struck down the Kansas proof-of-citizenship law; he says he wrote the law.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:22.064Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b35bd7cda19483d77ec1a19c5cd0b5539b4acd8d8a57b7e5b49dca2e703769d",
+      "kind": "own-words",
+      "url": "https://www.breitbart.com/politics/2020/04/29/kobach-the-tenth-circuit-wrongly-strikes-down-kansass-proof-of-citizenship-election-requirement",
+      "date": "2020-04-29",
+      "date_precision": "day",
+      "passage": "The way the Kansas law worked, a voter could either submit a copy of his proof of citizenship—typically a birth certificate or passport—with his registration form, or he could send it in to the county election office up to 90 days later.",
+      "note": "Same op-ed: describes how the proof-of-citizenship rule worked, including a 90-day window and a check of state records.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:22.064Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2c8f6361f0287084d2c1869f67d3e6ad53c1a5ac7e2be33e139606a5bb325864",
+      "kind": "own-words",
+      "url": "https://www.breitbart.com/politics/2020/04/29/kobach-the-tenth-circuit-wrongly-strikes-down-kansass-proof-of-citizenship-election-requirement",
+      "date": "2020-04-29",
+      "date_precision": "day",
+      "passage": "Nevertheless, the State of Kansas did find over a hundred aliens who had registered to vote; and an expert witness used statistical sampling to conclude that the true number was likely in the thousands.",
+      "note": "Same op-ed: cites non-citizens found on the voter rolls as the reason for the rule.",
+      "subjects": [
+        "non-citizen voting",
+        "voter-roll checks",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:22.064Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2aaf0f7c341485b7326c14368b3478c8bdf89b3937e752dd6a6102429dc55efb",
+      "kind": "own-words",
+      "url": "https://www.foxnews.com/politics/kris-kobach-for-the-people-act-disastrous-bill",
+      "date": "2021-03-09",
+      "date_precision": "day",
+      "passage": "It's based on the myth that photo ID laws and other election security measures disproportionately affect Black and other minority Americans, and that's empirically false.",
+      "note": "Kobach on a TV interview (Fox News transcript page, published 2021-03-10) about a federal election bill; speaks about photo ID laws. Interview date taken as the day before the page date; the page says 'Tuesday'.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:22.064Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7fafdadd9dafc453693603054e00b7c34345896e6158ea5630e466a1e6061ce0",
+      "kind": "own-words",
+      "url": "https://www.foxnews.com/politics/kris-kobach-for-the-people-act-disastrous-bill",
+      "date": "2021-03-09",
+      "date_precision": "day",
+      "passage": "This H.R. 1 [bill] would obliterate states that want proof of citizenship requirements when you register to vote.",
+      "note": "Same interview: says the federal bill would override state proof-of-citizenship rules; also says non-citizens get on rolls via driver's licenses.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:22.064Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8c6aa11c5ef83fa5240de02c4bfcf8a33dfa9de5d3debb3f89d95957048b7587",
+      "kind": "own-words",
+      "url": "https://www.wibw.com/2024/07/16/kansas-attorney-general-calls-congress-pass-save-act-protect-elections-illegal-voters/",
+      "date": "2024-07-16",
+      "date_precision": "day",
+      "passage": "Congress should act immediately to pass the SAVE Act to secure our elections.",
+      "note": "Kobach, as Attorney General, quoted by WIBW in a statement backing the SAVE Act (multi-state attorney general letter).",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:22.064Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b9f3a5961ab703330f8a499a2eab1c383a39f328c61da74af03e842fee70b598",
+      "kind": "own-words",
+      "url": "https://www.wibw.com/2024/07/16/kansas-attorney-general-calls-congress-pass-save-act-protect-elections-illegal-voters/",
+      "date": "2024-07-16",
+      "date_precision": "day",
+      "passage": "When I was Secretary of State, I fought to require proof of citizenship for voting.",
+      "note": "Same WIBW report of his statement; refers to his earlier record.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:22.064Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0e010b2a8c8bbfb5516e5f193b1468fa22e171b8f74db2453673f0fd11559ded",
+      "kind": "own-words",
+      "url": "https://www.wibw.com/2022/05/31/kris-kobach-files-run-kansas-attorney-general/",
+      "date": "2022-05-31",
+      "date_precision": "day",
+      "passage": "As Kansas Secretary of State, I drafted the 2011 law that made Kansas's elections the most secure in the nation.",
+      "note": "Kobach quoted by WIBW on the day he filed for Attorney General; refers to the 2011 voter ID and citizenship law.",
+      "subjects": [
+        "election integrity in general",
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:22.064Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7106eb22875ec76b6c445487624668e5e1119d0eb4e1720b3cb8ea7d27e6e5f3",
+      "kind": "own-words",
+      "url": "https://www.wibw.com/2022/05/31/kris-kobach-files-run-kansas-attorney-general/",
+      "date": "2022-05-31",
+      "date_precision": "day",
+      "passage": "As Attorney General, I will be the first Kansas Attorney General to use that authority to prosecute voter fraud.",
+      "note": "Same WIBW report: campaign pledge to prosecute voter fraud.",
+      "subjects": [
+        "election integrity in general",
+        "voter fraud prosecution"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:22.064Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "non-citizen voting and voter-roll checks",
+        "election integrity in general"
+      ],
+      "places": [
+        "confirmed identity: WIBW 2022-05-31 and 2024-07-16 pages name him as Kansas Attorney General (race on 2026-11-03 ballot, uncalled)",
+        "On the Record (0 meetings)",
+        "blocked: https://ag.ks.gov/media-center/news-releases (403)",
+        "blocked: https://web.archive.org (fetch tool refused; archived sos.ks.gov releases not reached)",
+        "blocked: https://www.washingtonpost.com/opinions/why-we-need-voter-id-laws/2011/07/13/gIQAvAcDGI_story.html (403; his 2011 op-ed not read)",
+        "blocked: https://www.dailysignal.com/2026/05/24/kansas-noncitizen-voter-id/ (403)",
+        "blocked: https://legalnewsline.com/stories/661988934-kobach-urges-congress-to-pass-save-act-amid-concerns-over-election-security (429)",
+        "blocked: Ballotpedia (not fetched, per Kansas notes)",
+        "campaign site: search found no campaign-site page; not reviewed",
+        "web searches (4): ag.ks.gov releases, op-eds, SAVE Act, campaign site",
+        "his Syracuse Law Review article (lawreview.syr.edu PDF)",
+        "Breitbart op-ed 2020-04-29",
+        "Fox News interview page 2021",
+        "WIBW 2022 and 2024",
+        "nothing on the subject: kcur.org 2018-06-19 (only a spokeswoman quoted), kmuw.org 2013-06-18 (no direct quote), kansaspublicradio.org 2011 and 2012 articles (no direct quote), thepitchkc.com 2011 (no direct quote)",
+        "kslegislature.gov member pages not applicable (statewide official, not a legislator); floor votes and bills linked separately"
+      ],
+      "found": 15,
+      "at": "2026-11-04T16:43:22.064Z",
+      "by": "search-ks-2026-11-04"
+    }
+  ]
+}

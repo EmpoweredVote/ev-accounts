@@ -157,3 +157,18 @@ describe('set-location — an unresolved address must not pass silently', () => 
     expect(warnSpy.mock.calls.flat().join(' ')).not.toContain('UNRESOLVED');
   });
 });
+
+describe('set-location — a promoted basic account', () => {
+  it('removes the basic districts row once the Connected path holds the location (CA_0368)', async () => {
+    withJurisdiction({ ...RESOLVED_NOTHING, county: '41017', county_name: 'Deschutes County' });
+
+    const res = await post();
+
+    expect(res.status).toBe(200);
+    const deletes = poolQueryMock.mock.calls
+      .map(([sql, params]) => ({ sql: String(sql), params }))
+      .filter((c) => c.sql.includes('DELETE FROM inform.account_jurisdictions'));
+    expect(deletes).toHaveLength(1);
+    expect(deletes[0].params).toEqual(['user-1']);
+  });
+});

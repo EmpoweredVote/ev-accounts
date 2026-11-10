@@ -1,0 +1,178 @@
+{
+  "politician_id": "4f738c88-b6c5-4cda-afa1-ccc7cc0ec6ff",
+  "findings": [
+    {
+      "id": "56d9f0e87aa8d6331fb52878b4a95d70a88afab7609c8838345274705e0b1821",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/70454/race/11696/election/987",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification. Strongly Disagree",
+      "note": "On the iVoterGuide questionnaire for the 2022 general election, he marked Strongly Disagree to the statement that people should be able to vote without photo identification.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:50:53.931Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "60a56c2aa5762b50cb037847bca5051aa8d17ac160135efbf28a21abdca41762",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/70454/race/11696/election/987",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "Tighten up voter ID laws in some states.  County clerks should be more vigilant about removing voters from roles who have not voted for two election cycles and do not respond to inquiries about whether they are still elibigble to vote in the state or locale.  Mail-in ballots should only be counted if they comport with the law in every particular and are received by the election day.  Mail-in and absentee ballots received before the election day should be counted before, so that there is little or no delay of days or weeks for them to be counted.  The Supreme Court needs to make clear that courts or executive branch officials cannot change voting rules and practices without legislative approval.",
+      "note": "His written answer to what laws he would propose to change voting practices (2022 iVoterGuide). Covers voter ID laws, removing inactive voters, timing of mail and absentee ballots, and who may change voting rules.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter-roll maintenance",
+        "voter ID with mail or absentee ballot",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:50:53.931Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a180dac9fbe82db0f7ed1e12eb5a8927f8abd4f868ef36e3cf40bf126221dbed",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/house/legislative_days/day045_20250320/vote_records/0275_HB2020.odt",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "House: Concurred with amendments",
+      "note": "House roll call as printed ('Lewis'), linked to Bob Lewis (district 123) via the official 2025 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.937Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba7a4d666ff4f78f90fc1c3060009b25057e446b4bc7846bcf906e1cf07d44b3",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day051_20260326/vote_records/0342_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "House: Conference Committee Report was adopted",
+      "note": "House roll call as printed ('Lewis'), linked to Bob Lewis (district 123) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.937Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21f55a599c11a6bfd03cc0b661541d4440ff0a0808ab91e9abc25020cfb5fc94",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day053_20260409/vote_records/0408_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "House: Motion to override veto prevailed",
+      "note": "House roll call as printed ('Lewis'), linked to Bob Lewis (district 123) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.937Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45a6a0e651989653960fc97af7759af58ffb11d0dd3f56bdfeab65bb700b032e",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day023_20260212/vote_records/0067_HB2448.odt",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2448-2026",
+      "act": "yea",
+      "motion": "House: Emergency Final Action - Passed as amended",
+      "note": "House roll call as printed ('Lewis'), linked to Bob Lewis (district 123) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.937Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "voter-roll maintenance",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia: blocked (403 per brief, not fetched)",
+        "kansasreflector.com: blocked (403 per brief, not fetched)",
+        "Kansas legislature member page (https://www.kslegislature.gov/li/b2025_26/members/rep_lewis_bob_1/): confirms office, lists no personal site or newsletter",
+        "iVoterGuide 2022 general-election profile (fetched, curl-checked): https://ivoterguide.com/candidate/70454/race/11696/election/987",
+        "https://finneycountyks.gov/DocumentCenter/View/8151/2026-08-04-Primary-Election-Summary-Results---UNOFFICIAL (shows him on the 2026 primary ballot)",
+        "campaign site: none found",
+        "web news searches (3) on his name plus voter ID / citizenship / election bills: nothing further in his own words",
+        "House Elections Committee 2026 HCR 5021 testimony: not a member; nothing from him found"
+      ],
+      "found": 2,
+      "at": "2026-11-04T16:50:53.931Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T19:13:24.937Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

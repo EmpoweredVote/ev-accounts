@@ -1,0 +1,133 @@
+{
+  "politician_id": "7bc58cd2-82f7-4e18-8bef-2d2ca5b70195",
+  "findings": [
+    {
+      "id": "16fc367b6ae612e9858d0804c70069da9a41e059381a62d495fc2173fe7e9422",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_191_HB2020.odt",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "Senate: Emergency Final Action As Amended",
+      "note": "Senate roll call as printed ('Blasi'), linked to Chase Blasi (district 26) via the official 2025 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53cc439c8ba13aae8525c4a82092d677fe52f2aa3e4773008814268e4fad0c47",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Blasi'), linked to Chase Blasi (district 26) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "26fc0eac68c90037c402f6af64ad21e632b079f7491d447d2551656187b6c5c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Blasi'), linked to Chase Blasi (district 26) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7709a8e391d094e607393601c6ffc28d7421685a297c8edcb9447240a463f87f",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/vote/?apn=b2023_24/year2/senate/legislative_days/day039_20240305/vote_records/vote_100_SB365.odt",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-365-2024",
+      "act": "yea",
+      "motion": "Senate: Final Action - Not passed",
+      "note": "Senate roll call as printed ('Blasi'), linked to Chase Blasi (district 27) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "mail-ballot return deadline",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official legislature member page https://www.kslegislature.gov/b2025_26/legislators/sen_blasi_chase_1/ (confirms Senate District 26, Sedgwick County, Senate Majority Leader, in office 2023-present; seat not up until 2028; no election text, no personal website)",
+        "The Beacon tag page https://thebeaconnews.org/stories/tag/chase-blasi/ (no direct quotes on the subject)",
+        "two web searches on name plus subject words: nothing in his own words on the subject; no campaign site found",
+        "blocked: https://ballotpedia.org (listed blocked per instructions, not fetched)",
+        "blocked: kansasreflector.com (listed blocked per instructions, not fetched)",
+        "not reviewed: committee testimony PDFs (none found by search)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T16:49:37.376Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T19:13:24.946Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

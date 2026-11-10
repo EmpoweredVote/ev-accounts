@@ -1,0 +1,134 @@
+{
+  "politician_id": "3a699f1f-8a5c-4479-80b0-703ed31a0ef5",
+  "findings": [
+    {
+      "id": "a180dac9fbe82db0f7ed1e12eb5a8927f8abd4f868ef36e3cf40bf126221dbed",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/house/legislative_days/day045_20250320/vote_records/0275_HB2020.odt",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "House: Concurred with amendments",
+      "note": "House roll call as printed ('Neelly'), linked to Lance W. Neelly (district 42) via the official 2025 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.937Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba7a4d666ff4f78f90fc1c3060009b25057e446b4bc7846bcf906e1cf07d44b3",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day051_20260326/vote_records/0342_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "House: Conference Committee Report was adopted",
+      "note": "House roll call as printed ('Neelly'), linked to Lance W. Neelly (district 42) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.937Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21f55a599c11a6bfd03cc0b661541d4440ff0a0808ab91e9abc25020cfb5fc94",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day053_20260409/vote_records/0408_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "House: Motion to override veto prevailed",
+      "note": "House roll call as printed ('Neelly'), linked to Lance W. Neelly (district 42) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.937Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45a6a0e651989653960fc97af7759af58ffb11d0dd3f56bdfeab65bb700b032e",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day023_20260212/vote_records/0067_HB2448.odt",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2448-2026",
+      "act": "yea",
+      "motion": "House: Emergency Final Action - Passed as amended",
+      "note": "House roll call as printed ('Neelly'), linked to Lance W. Neelly (district 42) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.937Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting / voter rolls"
+      ],
+      "places": [
+        "Identity and scope confirmed: https://kslegislature.gov/li/b2025_26/members/rep_neelly_lance_1/ (House District 42, Leavenworth County) and https://sos.ks.gov/elections/26elec/2026-Primary-Election-Official-Vote-Totals.pdf (won the 2026 primary 1,652 to 1,618, so on the general ballot)",
+        "On the Record (0 appearances)",
+        "official legislature page: no news or newsletter links",
+        "https://www.tonganoxiemirror.com/news/2026/jul/30/closer-look-voting-guide-for-kansas-house-42nd-district-republican-primary/ : he did not answer the paper's questionnaire; nothing in his words",
+        "https://www.tonganoxiemirror.com/news/2026/aug/12/neelly-leads-stieben-by-26-votes-heading-into-canvass/ : no quotes from him",
+        "Lawrence Times 2024 questionnaire: reported as not answered (seen in search result only; not reviewed)",
+        "campaign site: none found by search",
+        "blocked: Ballotpedia (not fetched; refuses our fetches)",
+        "news searches (4) on name plus subject words: nothing in his own words",
+        "not reviewed: his Facebook video (per voting guide, about property tax)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T16:44:16.786Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T19:13:24.937Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

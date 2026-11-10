@@ -589,6 +589,14 @@ files for two days** and nothing said so.
   alone. It stays silent when nothing is wrong.
 - ▶ **A CONFLICTING BRANCH DOES NOT GET BETTER BY WAITING.** Merge the base into it early, and do
   it **in that branch's own worktree** — never by moving HEAD in a worktree you did not create.
+- 🔴🔴 **A DUPLICATED REGISTRATION IS NOT A TEXT CONFLICT, SO NEITHER THE MERGE NOR THE DRIFT
+  REPORT CAN SEE IT.** Two branches that add the same `vi.mock`, import, route or handler **in
+  different places** merge cleanly, and the later copy silently wins. Measured 2026-11-10: merging
+  master into `feat/fc-seasons-api` left master's `roleService` mock followed by this branch's
+  older copy of the same mock, so `getCachedUserRoles` returned `[]` for every caller and **five
+  curation tests answered 403 instead of 200** — in a file git had auto-merged without a murmur.
+  ▶ **RUN THE TESTS AFTER A MERGE GIT CALLED CLEAN.** And read `steward who`'s conflict list as a
+  floor: it names the files that collide as *text*, never the ones that collide as *meaning*.
 
 **The board tells you where everyone is.** `steward who` runs on session start, so you begin
 knowing what is claimed. Before working a jurisdiction, take the lease:
@@ -727,11 +735,75 @@ each was first learned.
     that**, not the nearest property that is easy to assert.
   - Change one thing per tamper. A tamper that trips three assertions at once tells you the suite
     is alive but not which guard holds which claim.
+- 🔴🔴 **A GATE NO CONTROL REACHES IS A GATE NOBODY HAS TESTED, AND TWO GATES CATCHING ONE FAULT
+  IS WHAT HIDES IT.** Gates run in order, so a tamper stopped by an earlier one says nothing about
+  a later one — and the earlier gate firing looks like success. `CC_0376` planted three label-swap
+  tampers before one reached its point-to-member chain gate: the first was stopped by an
+  incumbent-consistency check, the second by a gate the first tamper had just bought. Only a
+  tamper that leaves every other table correct and self-consistent tests the last gate in a chain.
+  ▶ **Track which gate each control fires on, not just that it went red.** A gate with no control
+  of its own is untested however many controls the file has.
+- 🔴🔴 **A UNION OR COVERAGE GATE CANNOT SEE WHICH VERSION OF A MAP IT HAS, AND ITS NUMBER WILL NOT
+  EVEN WOBBLE.** Two complete partitions of the same area have *identical* unions by construction,
+  so every coverage, overlap and bounding-box measure agrees to the last decimal. Measured: New
+  Hampshire's superseded 2012 councilor map covers the TIGER state outline to **99.6836%, the same
+  figure as the 2022 map to four decimal places**, and differs from it on 66 of 259 towns.
+  ▶ Only evidence about **which district a NAMED PLACE belongs to** separates two vintages. Where
+  a statute names places (New Hampshire names all 259), that is the strongest anchor available —
+  stronger than a county composition, and it leaves no district unpinned.
 - 🔴🔴 **A FLAT CONTROL TESTS NOTHING, AND A CONTROL DERIVED FROM THE DATA UNDER TEST MOVES WITH
   THE DEFECT.** A blank grey frame proves a detector can return "nothing"; it proves nothing about
   what the detector does with real input. Worse, a threshold or baseline computed *from the same
   rows you are checking* shifts when they shift, so the check silently follows the fault instead of
   catching it. **Derive the control independently of the data under test.**
+- 🔴🔴 **A CONTROL SET THAT IS UNIFORM IN A PROPERTY THE DETECTOR DEPENDS ON CANNOT TEST THAT
+  PROPERTY — AND IT PASSES WHILE A WHOLE CLASS OF INPUT WALKS THROUGH.** This is the companion to
+  "a uniform ANSWER is a broken detector", with the uniformity sitting in the *controls* instead of
+  the output. `check-portrait-framing.mjs` had two fixtures, a **green** matte and a **white**
+  matte, and a centre test that asked "is the middle the same colour as the surround". Neither
+  colour can occur in a human subject, so no fixture had ever exercised a **dark** surround — and a
+  pure-black border passed the gate, because dark hair, a dark jacket and shadow are near-black in
+  every portrait, so **the subject itself voted the frame innocent**. Both controls were green
+  throughout. ▶ **List what your fixtures hold constant, and add one that varies it.** A second
+  fixture of the same kind is coverage of nothing.
+  - 🔴 **TWO DETECTORS CAN BE COMPLEMENTARY RATHER THAN REDUNDANT, AND GEOMETRY DECIDES WHICH.**
+    The same gate could not see a rectangular frame *structurally*: a disc of full width touches
+    the left and right edges at their midpoints, so **no side of a disc image is flat along its
+    whole length**. A per-side test sees a letterbox and a corner-and-diagonal test sees a disc,
+    and neither can be made to see the other by moving a threshold. **Ask whether the shape you
+    missed is reachable by the measurement you have before you retune it.**
+  - 🔴 **A PREDICATE OF SEVERAL `&&` CONDITIONS FAILS FOR EXACTLY ONE REASON, AND NOTHING PRINTS
+    IT.** That gate reported only its flagged rows, so a passing row produced **no numbers at all**
+    and the verdict was readable while the evidence for it was not. ▶ **Print every row a detector
+    scanned, not only its hits** — otherwise "why did this pass?" costs a re-implementation.
+- 🔴🔴 **A COUNT OF EVENTS THROWS AWAY THE MEASUREMENT OF THE EVENTS, AND THE MEASUREMENT IS
+  USUALLY THE ANSWER.** `check-portrait-framing.mjs` walked the four corner diagonals of an image
+  and asked **how many** of them left the matte. A circular crop answers four. A person cut out on
+  plain white answers four as well — so over the 9,481 published headshots the gate flagged 44 and
+  **33 of them were real photographs**. The number it already had and discarded was **how far
+  along each diagonal** the surround ended: a disc is round, so all four are the same, while a
+  person ends at their hair on the top two and their shoulders on the bottom two. The three
+  positive fixtures read 0, 1 and 3; every real manufactured surround in the corpus read 0–2; the
+  nearest real photograph read 8. One term, 44 flags down to 12. ▶ **When a detector counts
+  occurrences, ask what it measured to find them and whether that number discriminates.**
+  - ⚠ **A TUNING PASS NEEDS THE WHOLE CORPUS, NOT THE SET THAT PROMPTED IT.** The repair before
+    this one was measured over 36 images and reported **zero false positives**; the first 500
+    random published headshots produced one, and all 9,481 produced 33. The 36 were the batch
+    being worked on, so they were uniform in exactly the thing that was wrong. **Nothing about a
+    detector's error rate is known until it has been run over the population it will police.**
+  - 🔴 **TWO GATES OVER ONE CORPUS ARE NOT REDUNDANT WHEN THEY ASK DIFFERENT QUESTIONS, AND THE
+    SECOND ONE'S FINDINGS ARE INVISIBLE TO THE FIRST.** Every one of the 11 real framing defects
+    had **passed** `check-headshot-faces.py` — two of them are the **State Seal of Washington** and
+    the **Great Seal of North Carolina**, which contain a portrait, so a face detector clears them
+    honestly and correctly. "We already check the headshots" is not an answer to "do we check
+    *this*".
+  - 🔴 **A FLAGGING GATE NEEDS ITS BACKLOG WRITTEN DOWN AS DEFECTS, NOT AS ACCEPTANCES.**
+    `data/headshot-framing-known.json` keys on **(url, sha256)** like `headshot-accepted-flags.json`
+    — the hash is the load-bearing half, because our storage overwrites a file **in place** at the
+    same URL — and every entry must declare which of two opposite things it is: a **defect** that
+    is still published and still owed a re-source, or an **accepted** row the gate reads wrong,
+    with the reason. Both suppress the red; only one is a queue. **A defect filed as an acceptance
+    is a defect nobody will ever fix.**
 - ⚠ **A UNIFORM PROBE RESULT CAN BE A PROPERTY OF YOUR SAMPLE, NOT OF THE DATA.** Before concluding
   "they are all like this", check that the sample was not itself selected by the thing you are
   measuring.
@@ -740,6 +812,19 @@ each was first learned.
 - 🔴 **A MASTER-ONLY GATE CANNOT VET THE MERGE THAT TRIPS IT.** It reads production data and runs
   after the merge, so it fails on *the next* PR and names an innocent author. Carry the check into
   the migration's own post-verify, as a delta, if you need it to block the guilty change.
+  - 🔴🔴 **AND APPLYING A MIGRATION BEFORE ITS READ-PATH CODE MERGES HOLDS THAT GATE RED FOR
+    EVERYONE, FOR AS LONG AS THE BRANCH STAYS OPEN.** The gate reads **production data with
+    MASTER's code**, and those two are different things that can disagree for days.
+    `CC_0366`-`CC_0372` created Colorado's and Louisiana's board districts in production while
+    the `X-ST-BOARD` line that makes them readable sat unmerged in `districtQueries.ts` and
+    `geoIdGuard.ts`. `check:reachability` reported **`UNREACHABLE` 20 against a baseline of 7**
+    — new buckets `co|STATE_BOARD` 8 and `la|STATE_BOARD` 5 — and failed **four consecutive
+    master runs**, every one of them somebody else's merge. Merging the PR took it straight back
+    to 7 with no baseline change: the gate was right the whole time and the branch was late.
+    🔴 **So do not raise the baseline to clear this red** — see § Officeholder occupancy, *never
+    raise it at all*. ▶ **A districted body on a new `X…` layer is not safe to apply to
+    production until its registration is on master.** Land the migration and those two code
+    lines together, or merge the same day you apply.
 - 🔴🔴 **A TRUNCATED DISPLAY MANUFACTURES FINDINGS, AND IT BIASES THEM TOWARDS LOOKING LIKE
   DUPLICATES.** Cutting a column to fit makes distinct values collapse onto one another, and that
   collision is exactly the shape of a real defect, so the artefact reads as a discovery. On
@@ -749,6 +834,23 @@ each was first learned.
   which was reported as a race-mapping bug and was retracted: both were mapped correctly.
   ▶ **Print the field at FULL WIDTH before believing a pattern in it, or read the stable key
   beside it.** `ocd_id` carried the right answer throughout and was never displayed.
+  - 🔴 **A NORMALISATION STEP MANUFACTURES THE SAME SHAPE, AND IT LOOKS LIKE TWO SOURCES
+    DISAGREEING.** `CC_0377` cross-checked LA County's JSON against the same county's
+    server-rendered page and three candidates came back "absent from the text page" — a
+    disagreement about who was on the ballot. The pages write accents as numeric entities
+    (`LA CA&#xD1;ADA`, `ERIK PE&#xD1;A`) and the parser did not decode them. ▶ **Before
+    reporting a mismatch between two readings, ask what your own pipeline does to the field —
+    and give the comparison a positive control that names a row it must be able to see.**
+- 🔴🔴 **BOUND A PARSE BY THE DOCUMENT'S OWN STRUCTURE, NEVER BY A BLACKLIST OF WHAT ELSE MIGHT
+  BE IN IT.** A section reader that stops at a list of headings you thought of cannot see the
+  heading you did not, and everything after it is read as part of the section before — with a
+  plausible value, not an error. Nebraska's 2024 canvass book prints "Judge of the District
+  Court", "District 3", "Lancaster" a few pages past the Board of Regents, so a blacklist that
+  had not thought of judges would have recorded Lancaster County as part of **Regents District
+  3**. Take each section's page range and stop-title from the book's **own table of contents**
+  instead (`backend/data/state-exec-2026-results/parse-ne-canvass-counties.mjs`).
+  ▶ It applies to any delimiter you supply from outside the document: ask what the document
+  itself says its parts are.
 - 🔴🔴 **A PREDICATE READS THE SHAPE OF A VALUE, NEVER WHAT THE VALUE IS.** Before naming or acting
   on the class some `WHERE` clause catches, `GROUP BY` the discriminating field and read a sample
   of real rows. **Deleting raises that bar, it does not lower it.** ⚠ A lookalike key can be a
@@ -798,7 +900,13 @@ each was first learned.
 
 - Party affiliation is **antipartisan** by design: party lives on `races.primary_party` (which ballot
   a voter requests), never on `race_candidates`.
-- `geofence_boundaries.state` holds **2-digit FIPS**, not USPS codes.
+- `geofence_boundaries.state` holds **2-digit FIPS**, not USPS codes — ⚠ **EXCEPT ON THE `G4000`
+  STATE-OUTLINE LAYER, WHERE IT HOLDS USPS.** Measured 2026-11-08: of its 53 rows, 52 carry
+  `'NH'`, `'CA'`, … , one carries `'72'` and one is NULL. So a state-outline lookup written the
+  way this line used to read — `mtfcc = 'G4000' AND state = '33'` — returns **nothing**, and an
+  empty result reads as "we hold no outline for this state", which silently SKIPS a coverage gate
+  rather than failing it. 🔴 **Key the state outline on `geo_id`** (`geo_id = '33'`), as the
+  tier-3 loaders do.
 - 🔴 **`geo_id` IS NOT UNIQUE — THE KEY IS THE PAIR `(mtfcc, geo_id)`.** Measured: **1,159
   collisions across 13 states**, because a place and a county subdivision can share a number.
   `geoIdGuard.ts` enforces the pair on the production write path; **ad-hoc SQL does not**, so a
@@ -831,6 +939,54 @@ each was first learned.
     across all 51 jurisdictions: 48 give each statewide executive its own district; CA (17 offices),
     OR (5) and IN (10) share one. Do not "normalise" one of those into per-office districts — check
     whether its key is wrong before deciding its shape is.
+- 🔴 **`districts.district_type` IS A ROUTING KEY TOO, NOT A TAXONOMY LABEL — PICK IT BY WHAT READS
+  IT.** `buildStatewideQuery` admits a seat **by type**, and the list is closed:
+  `NATIONAL_UPPER`, `NATIONAL_EXEC`, `STATE_EXEC`, `NATIONAL_JUDICIAL`, `JUDICIAL` (plus DC's two
+  at-large `geo_id`s). **`STATE_BOARD` and `STATE_BOARD_EDUCATION` are not in it.** Those reach a
+  voter only through the geofence join, keyed on a particular `mtfcc` — `X0003` (Utah SBOE),
+  `X-CA-SBOE` (California BOE), `G5220` (DC) — because every board filed under them is
+  **districted**. ▶ **A board elected STATEWIDE AT LARGE belongs on `STATE_EXEC` with the state
+  FIPS**, which is what Arizona's Corporation Commission already is.
+  ⚠ `CC_0364` nearly filed Michigan's elected State Board of Education under
+  `STATE_BOARD_EDUCATION` because that is the name that fits. It has no sub-state polygon, so all
+  eight members would have been **unreachable from every Michigan address and nothing would have
+  errored** — the same failure as an empty `geo_id`, reached from the other direction.
+  - 🔴 **A DISTRICT IN A SEAT'S TITLE IS A CLAIM ABOUT THE CANDIDATE, NOT NECESSARILY ABOUT THE
+    ELECTORATE. READ WHO VOTES.** Georgia's Public Service Commissioners each *reside* in a
+    numbered district and are **chosen statewide**; Hawaii's OHA "Maui Resident Trustee" is elected
+    by the whole state; Alabama's PSC "Place 1" and "Place 2" are ballot positions on an at-large
+    commission. All three read as districted and none of them is, and all three were in the
+    inventory of seats "blocked on real geometry" until somebody read the enabling text
+    (`CC_0364`, `CC_0366`).
+  - 🟢 **BEFORE IMPORTING A POLYGON, ASK WHETHER THE BODY REUSES ONE WE HOLD.** Colorado's State
+    Board of Education and CU Regents are elected by **congressional district**, so `CC_0366`
+    copied the eight `G5200` polygons inside the database — no download, no reprojection, and the
+    CRS hazard cannot arise. A gate asserts each copy `ST_Equals` the district it claims to be;
+    a point-in-polygon check is **not** enough, because a consistent permutation passes it.
+  - ⚠ **A NEW `X…` LAYER NEEDS AN EXPLICIT LINE IN BOTH `districtQueries.ts` AND `geoIdGuard.ts`**
+    unless its district type is `LOCAL`, `COUNTY` or `JUDICIAL`, which is all the `X%` catch-all
+    admits. `X0003` → `STATE_BOARD_EDUCATION` is **not state-scoped**, so any state's K-12 board
+    can use it as-is. ⚠ **`geofence_boundaries.mtfcc` is `varchar(10)`** — a longer layer name
+    fails only at INSERT time, after every other gate has passed.
+  - 🔴🔴 **TWO BODIES CAN SHARE ONE CUSTOM LAYER INSIDE ONE STATE, SO SCOPE EVERY QUERY BY THE
+    `geo_id` PREFIX AS WELL.** Nebraska's Public Service Commission and its Board of Regents are
+    **both** `(X-ST-BOARD, STATE_BOARD)` in state `31`. Louisiana's commission and Colorado's
+    regents sit on that layer too, but in **different states** — so `(mtfcc, state)` was a unique
+    key by accident, everywhere, until Nebraska. A row count, a coverage test, or a "does this
+    body already exist" pre-gate keyed on `(mtfcc, state)` alone silently reads the two bodies as
+    one: without the prefix the `CC_0373`-`CC_0375` loader reports **13 rows where 8 are
+    expected**, and `CC_0375` refuses to run once `CC_0373` has been applied. ▶ The prefix is the
+    body — `ocd-division/country:us/state:ne/regents:%` — and controls on both the loader and the
+    migration prove the scoping is load-bearing.
+- 🔴 **A MULTI-MEMBER STATEWIDE BODY IS ONE CHAMBER, ONE SHARED DISTRICT, N UNNUMBERED OFFICES, AND
+  ONE RACE CARRYING `seats = N`.** Arizona's Corporation Commission is the pattern (5 offices all
+  titled `Commissioner`); `CC_0364` built seven more on it — HI's Office of Hawaiian Affairs (9),
+  Michigan's State Board of Education (8) and MSU's trustees (8), and the ND, OK, SD and TX
+  commissions (3 each). **Create the whole body, not the seats that were up**: `chambers.official_count`
+  states the size, so a chamber short of it reads as a vacancy that is not there — and every office
+  you create must be seated, or the 238 drift baseline rises. ▶ **Attach the race to the office of
+  the member who is actually leaving**, sourced from the body's own term table; that office is what
+  a seating pass replaces.
 - The `essentials` frontend never queries `essentials.*` tables directly — it goes through this API.
 - **Not every seat is residency-based or full-voting.** Maine seats three non-voting *tribal*
   representatives; the territories and DC send non-voting delegates.
@@ -969,3 +1125,16 @@ her position on abortion, even if she can't change the laws on that."* Memo:
 - ⚠ **Legacy out-of-scope chairs exist and are already visible** in that breakdown (Season 1 research at
   levels that were not asked, e.g. local `taxes`, `deportation`, `same-sex-marriage`). They are owed a
   re-audit under the codebook; adding a role row does not change whether they show.
+
+## Render settings live in ev-infra
+
+This repo's Render services (`ev-accounts-api`, `ev-accounts` (admin), `empowered-vote-app` and the seven `ev-jobs-*` cron jobs) are managed by the Render Blueprint in
+[`EmpoweredVote/ev-infra`](https://github.com/EmpoweredVote/ev-infra) (`render.yaml`).
+
+- Build and start commands, rewrites, headers, custom domains, plans, cron
+  schedules and build filters change **only through a PR to ev-infra**. Render
+  syncs its `main` branch automatically.
+- A setting changed in the Render dashboard is **undone on the next sync**.
+- Env var **values** are the exception: set them in the Render dashboard. Add a
+  new variable's name to ev-infra (with `sync: false`) so the record stays complete.
+- Do not add a `render.yaml` to this repo. Render does not read it.

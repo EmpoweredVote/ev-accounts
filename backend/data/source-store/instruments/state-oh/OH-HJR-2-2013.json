@@ -1,0 +1,19 @@
+{
+  "id": "OH-HJR-2-2013",
+  "scope": "state:oh",
+  "title": "HJR 2 (2013-2014 (130th General Assembly)): H. J. R. No. 2: CA-specific right to vote",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/130/hjr2",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/hjr2/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Art. I, Sec. 2\n(quote) Every elector has the right to vote in the exercise of political power.\n(section) Art. I, Sec. 20\n(quote) Nothing in this constitution shall be deemed to deny, diminish, or impair the rights of any elector qualified to vote in any election in this state.\n(section) Art. V, Sec. 1\n(quote) Every citizen of the United States, of the age of eighteen years\n(other) Art. II, Sec. 1: reserves lawmaking powers to the people; text reprinted, limits on General Assembly also limit the people\n(other) Art. V, Sec. 1: residence and registration wording changed; an elector loses status only if he or she knowingly votes more than once in an election, and is 'disenfranchised, subject to restoration by a court' (the old four-year non-voting rule is replaced); defines 'election'\n(other) Art. V, Sec. 2: results verified by audit if the margin between the top two candidates or on a ballot issue is under one per cent\n(other) Art. V, Sec. 4: a person convicted of a felony may be excluded from voting only while incarcerated on that conviction\n(other) Art. V, Sec. 6: replaces 'idiot, or insane person' with a person adjudged incompetent by a court\n(other) note: Only one version (introduced). A joint resolution that proposes a constitutional amendment for the November 5, 2013 ballot; it is not a statute. It has no ID or proof-of-citizenship rule. Struck words are not marked in this PDF text. The Art. V, Sec. 1 citizen line appears to be existing constitutional wording kept in the text; the PDF text does not show whether it is new.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

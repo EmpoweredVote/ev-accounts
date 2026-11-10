@@ -1,0 +1,1401 @@
+{
+  "id": "KS-HB-2016-2025",
+  "scope": "state:ks",
+  "title": "HB 2016 (2025-2026 biennium (2025 Regular Session)): HB 2016 Including funeral home online obituary notices as sufficient grounds for removal of a deceased voter from the voter registration books; requiring that poll workers be citizens of the United States and live within the state of Kansas; prohibiting the disqualification of active military members, spouses or other dependents who are citizens of the United States as poll workers on the basis of residency or being a registered voter; relating to advance voting ballot applications; modifying the requirements for soliciting registered voters to submit advance voting applications.",
+  "urls": [
+    "https://www.kslegislature.gov/b2025_26/bills/HB2016/",
+    "https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hb_2016/hb2016_enrolled.pdf",
+    "https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hb_2016/hb2016_00_0000.pdf",
+    "https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hb_2016/hb2016_01_0000.pdf",
+    "https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/ccr_2025_hb2016_s_2167.pdf"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id)\n(section) K.S.A. 25-1122(b)\n(quote) (b) If the registered voter is applying for an advance voting ballot to be transmitted in person, the voter shall provide identification pursuant to K.S.A. 25-2908, and amendments thereto.\n(b_no_id_remedy)\n(section) K.S.A. 25-1122(d)\n(quote) (d) A voter may vote a provisional ballot according to K.S.A. 25- 409, and amendments thereto, if: (1) The voter is unable or refuses to provide current and valid identification; or\n(c_mail_ballot_id)\n(section) K.S.A. 25-1122(c)\n(quote) (c) If the registered voter is applying for an advance voting ballot to be transmitted by mail, the voter shall provide with the application for an advance voting ballot the voter's current and valid Kansas driver's license number, nondriver's identification card number or a photocopy of any other identification provided by K.S.A. 25-2908, and amendments thereto.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Title: poll workers must be citizens and live in Kansas\n(quote) requiring that poll workers be citizens of the United States and live within the state of Kansas;\n(other) Funeral-home online obituary notices as grounds to remove deceased voters (K.S.A. 25-2316c); poll worker residency and military exception (25-2804); soliciting advance-voting applications (25-1122).\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "House Committee on Elections",
+      "role": "prime",
+      "version": "Enrolled (hb2016_enrolled); also read As Introduced (00), Senate Committee (01), Conference Committee Report (ccr_2025_hb2016_s_2167)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2025-03-26",
+      "body": "KS House",
+      "motion": "Conference Committee Report was adopted",
+      "kind": "roll-call",
+      "yes": 97,
+      "no": 26,
+      "absent": 2,
+      "body_size": 125,
+      "note": "671 | https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/house/legislative_days/day049_20250326/vote_records/0326_HB2016.odt",
+      "members": [
+        {
+          "name": "Amyx",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Awerkamp",
+          "vote": "yea"
+        },
+        {
+          "name": "Ballard",
+          "vote": "yea"
+        },
+        {
+          "name": "Barrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Barth",
+          "vote": "yea"
+        },
+        {
+          "name": "Bergkamp",
+          "vote": "yea"
+        },
+        {
+          "name": "Bergquist",
+          "vote": "yea"
+        },
+        {
+          "name": "Blex",
+          "vote": "yea"
+        },
+        {
+          "name": "Bloom",
+          "vote": "yea"
+        },
+        {
+          "name": "Bohi",
+          "vote": "yea"
+        },
+        {
+          "name": "Borjon",
+          "vote": "yea"
+        },
+        {
+          "name": "Bryce",
+          "vote": "yea"
+        },
+        {
+          "name": "Buehler",
+          "vote": "yea"
+        },
+        {
+          "name": "Butler",
+          "vote": "yea"
+        },
+        {
+          "name": "B. Carpenter",
+          "vote": "yea"
+        },
+        {
+          "name": "W. Carpenter",
+          "vote": "yea"
+        },
+        {
+          "name": "Chauncey",
+          "vote": "yea"
+        },
+        {
+          "name": "Collins",
+          "vote": "yea"
+        },
+        {
+          "name": "Corbet",
+          "vote": "yea"
+        },
+        {
+          "name": "Croft",
+          "vote": "yea"
+        },
+        {
+          "name": "Curtis",
+          "vote": "yea"
+        },
+        {
+          "name": "Delperdang",
+          "vote": "yea"
+        },
+        {
+          "name": "Droge",
+          "vote": "yea"
+        },
+        {
+          "name": "Ellis",
+          "vote": "yea"
+        },
+        {
+          "name": "Esau",
+          "vote": "yea"
+        },
+        {
+          "name": "Essex",
+          "vote": "yea"
+        },
+        {
+          "name": "Estes",
+          "vote": "yea"
+        },
+        {
+          "name": "Fairchild",
+          "vote": "yea"
+        },
+        {
+          "name": "Francis",
+          "vote": "yea"
+        },
+        {
+          "name": "Gardner",
+          "vote": "yea"
+        },
+        {
+          "name": "Goddard",
+          "vote": "yea"
+        },
+        {
+          "name": "Goetz",
+          "vote": "yea"
+        },
+        {
+          "name": "Hawkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Helwig",
+          "vote": "yea"
+        },
+        {
+          "name": "Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Hoffman",
+          "vote": "yea"
+        },
+        {
+          "name": "Hoheisel",
+          "vote": "yea"
+        },
+        {
+          "name": "Howe",
+          "vote": "yea"
+        },
+        {
+          "name": "Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Howerton",
+          "vote": "yea"
+        },
+        {
+          "name": "Hoye",
+          "vote": "yea"
+        },
+        {
+          "name": "Huebert",
+          "vote": "yea"
+        },
+        {
+          "name": "Humphries",
+          "vote": "yea"
+        },
+        {
+          "name": "James",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Kessler",
+          "vote": "yea"
+        },
+        {
+          "name": "King",
+          "vote": "yea"
+        },
+        {
+          "name": "Lewis",
+          "vote": "yea"
+        },
+        {
+          "name": "Long",
+          "vote": "yea"
+        },
+        {
+          "name": "McNorton",
+          "vote": "yea"
+        },
+        {
+          "name": "Melton",
+          "vote": "yea"
+        },
+        {
+          "name": "Minnix",
+          "vote": "yea"
+        },
+        {
+          "name": "Moser",
+          "vote": "yea"
+        },
+        {
+          "name": "Neelly",
+          "vote": "yea"
+        },
+        {
+          "name": "Neighbor",
+          "vote": "yea"
+        },
+        {
+          "name": "Osman",
+          "vote": "yea"
+        },
+        {
+          "name": "Penn",
+          "vote": "yea"
+        },
+        {
+          "name": "Pickert",
+          "vote": "yea"
+        },
+        {
+          "name": "Pishny",
+          "vote": "yea"
+        },
+        {
+          "name": "Poetter Parshall",
+          "vote": "yea"
+        },
+        {
+          "name": "Proctor",
+          "vote": "yea"
+        },
+        {
+          "name": "Rahjes",
+          "vote": "yea"
+        },
+        {
+          "name": "Reavis",
+          "vote": "yea"
+        },
+        {
+          "name": "Resman",
+          "vote": "yea"
+        },
+        {
+          "name": "Rhiley",
+          "vote": "yea"
+        },
+        {
+          "name": "Roeser",
+          "vote": "yea"
+        },
+        {
+          "name": "Roth",
+          "vote": "yea"
+        },
+        {
+          "name": "Sanders",
+          "vote": "yea"
+        },
+        {
+          "name": "Sawyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Schmoe",
+          "vote": "yea"
+        },
+        {
+          "name": "Schreiber",
+          "vote": "yea"
+        },
+        {
+          "name": "Schwertfeger",
+          "vote": "yea"
+        },
+        {
+          "name": "Seiwert",
+          "vote": "yea"
+        },
+        {
+          "name": "A. Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "C. Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Steele",
+          "vote": "yea"
+        },
+        {
+          "name": "Stiens",
+          "vote": "yea"
+        },
+        {
+          "name": "Sutton",
+          "vote": "yea"
+        },
+        {
+          "name": "Sweely",
+          "vote": "yea"
+        },
+        {
+          "name": "Tarwater",
+          "vote": "yea"
+        },
+        {
+          "name": "Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Turk",
+          "vote": "yea"
+        },
+        {
+          "name": "Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "VanHouden",
+          "vote": "yea"
+        },
+        {
+          "name": "Waggoner",
+          "vote": "yea"
+        },
+        {
+          "name": "Ward",
+          "vote": "yea"
+        },
+        {
+          "name": "Wasinger",
+          "vote": "yea"
+        },
+        {
+          "name": "Waymaster",
+          "vote": "yea"
+        },
+        {
+          "name": "White",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilborn",
+          "vote": "yea"
+        },
+        {
+          "name": "Willcott",
+          "vote": "yea"
+        },
+        {
+          "name": "K. Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "L. Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Wolf",
+          "vote": "yea"
+        },
+        {
+          "name": "Woodard",
+          "vote": "yea"
+        },
+        {
+          "name": "Xu",
+          "vote": "yea"
+        },
+        {
+          "name": "Alcala",
+          "vote": "nay"
+        },
+        {
+          "name": "Brownlee Paige",
+          "vote": "nay"
+        },
+        {
+          "name": "Carlin",
+          "vote": "nay"
+        },
+        {
+          "name": "Carmichael",
+          "vote": "nay"
+        },
+        {
+          "name": "Carr",
+          "vote": "nay"
+        },
+        {
+          "name": "Featherston",
+          "vote": "nay"
+        },
+        {
+          "name": "Haskins",
+          "vote": "nay"
+        },
+        {
+          "name": "Helgerson",
+          "vote": "nay"
+        },
+        {
+          "name": "Martinez",
+          "vote": "nay"
+        },
+        {
+          "name": "McDonald",
+          "vote": "nay"
+        },
+        {
+          "name": "Meyer",
+          "vote": "nay"
+        },
+        {
+          "name": "Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Mosley",
+          "vote": "nay"
+        },
+        {
+          "name": "Ohaebosim",
+          "vote": "nay"
+        },
+        {
+          "name": "Oropeza",
+          "vote": "nay"
+        },
+        {
+          "name": "Ousley",
+          "vote": "nay"
+        },
+        {
+          "name": "Poskin",
+          "vote": "nay"
+        },
+        {
+          "name": "L. Ruiz",
+          "vote": "nay"
+        },
+        {
+          "name": "S. Ruiz",
+          "vote": "nay"
+        },
+        {
+          "name": "Sawyer Clayton",
+          "vote": "nay"
+        },
+        {
+          "name": "Schlingensiepen",
+          "vote": "nay"
+        },
+        {
+          "name": "Simmons",
+          "vote": "nay"
+        },
+        {
+          "name": "Stogsdill",
+          "vote": "nay"
+        },
+        {
+          "name": "Vaughn",
+          "vote": "nay"
+        },
+        {
+          "name": "Wikle",
+          "vote": "nay"
+        },
+        {
+          "name": "Winn",
+          "vote": "nay"
+        },
+        {
+          "name": "Brantley",
+          "vote": "absent"
+        },
+        {
+          "name": "Weigel",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2025-03-26",
+      "body": "KS Senate",
+      "motion": "Adopt CCR",
+      "kind": "roll-call",
+      "yes": 40,
+      "no": 0,
+      "absent": 0,
+      "body_size": 40,
+      "note": "480 | https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day049_20250326/vote_records/vote_263_HB2016.odt",
+      "members": [
+        {
+          "name": "Alley",
+          "vote": "yea"
+        },
+        {
+          "name": "Argabright",
+          "vote": "yea"
+        },
+        {
+          "name": "Billinger",
+          "vote": "yea"
+        },
+        {
+          "name": "Blasi",
+          "vote": "yea"
+        },
+        {
+          "name": "Blew",
+          "vote": "yea"
+        },
+        {
+          "name": "Bowers",
+          "vote": "yea"
+        },
+        {
+          "name": "Bowser",
+          "vote": "yea"
+        },
+        {
+          "name": "J. Claeys",
+          "vote": "yea"
+        },
+        {
+          "name": "J. Claeys",
+          "vote": "yea"
+        },
+        {
+          "name": "Clifford",
+          "vote": "yea"
+        },
+        {
+          "name": "Corson",
+          "vote": "yea"
+        },
+        {
+          "name": "Dietrich",
+          "vote": "yea"
+        },
+        {
+          "name": "Erickson",
+          "vote": "yea"
+        },
+        {
+          "name": "Fagg",
+          "vote": "yea"
+        },
+        {
+          "name": "Faust Goudeau",
+          "vote": "yea"
+        },
+        {
+          "name": "Francisco",
+          "vote": "yea"
+        },
+        {
+          "name": "Gossage",
+          "vote": "yea"
+        },
+        {
+          "name": "Haley",
+          "vote": "yea"
+        },
+        {
+          "name": "Holscher",
+          "vote": "yea"
+        },
+        {
+          "name": "Klemp",
+          "vote": "yea"
+        },
+        {
+          "name": "Kloos",
+          "vote": "yea"
+        },
+        {
+          "name": "Masterson",
+          "vote": "yea"
+        },
+        {
+          "name": "Murphy",
+          "vote": "yea"
+        },
+        {
+          "name": "Owens",
+          "vote": "yea"
+        },
+        {
+          "name": "Peck",
+          "vote": "yea"
+        },
+        {
+          "name": "Petersen",
+          "vote": "yea"
+        },
+        {
+          "name": "Pettey",
+          "vote": "yea"
+        },
+        {
+          "name": "Rose",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryckman",
+          "vote": "yea"
+        },
+        {
+          "name": "Schmidt",
+          "vote": "yea"
+        },
+        {
+          "name": "Shallenburger",
+          "vote": "yea"
+        },
+        {
+          "name": "Shane",
+          "vote": "yea"
+        },
+        {
+          "name": "Starnes",
+          "vote": "yea"
+        },
+        {
+          "name": "Sykes",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas",
+          "vote": "yea"
+        },
+        {
+          "name": "Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Titus",
+          "vote": "yea"
+        },
+        {
+          "name": "Tyson",
+          "vote": "yea"
+        },
+        {
+          "name": "Ware",
+          "vote": "yea"
+        },
+        {
+          "name": "Warren",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2025-03-19",
+      "body": "KS Senate",
+      "motion": "Emergency Final Action As Amended",
+      "kind": "roll-call",
+      "yes": 40,
+      "no": 0,
+      "absent": 0,
+      "body_size": 40,
+      "note": "346 | https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_200_HB2016.odt",
+      "members": [
+        {
+          "name": "Alley",
+          "vote": "yea"
+        },
+        {
+          "name": "Argabright",
+          "vote": "yea"
+        },
+        {
+          "name": "Billinger",
+          "vote": "yea"
+        },
+        {
+          "name": "Blasi",
+          "vote": "yea"
+        },
+        {
+          "name": "Blew",
+          "vote": "yea"
+        },
+        {
+          "name": "Bowers",
+          "vote": "yea"
+        },
+        {
+          "name": "Bowser",
+          "vote": "yea"
+        },
+        {
+          "name": "J. Claeys",
+          "vote": "yea"
+        },
+        {
+          "name": "J. Claeys",
+          "vote": "yea"
+        },
+        {
+          "name": "Clifford",
+          "vote": "yea"
+        },
+        {
+          "name": "Corson",
+          "vote": "yea"
+        },
+        {
+          "name": "Dietrich",
+          "vote": "yea"
+        },
+        {
+          "name": "Erickson",
+          "vote": "yea"
+        },
+        {
+          "name": "Fagg",
+          "vote": "yea"
+        },
+        {
+          "name": "Faust Goudeau",
+          "vote": "yea"
+        },
+        {
+          "name": "Francisco",
+          "vote": "yea"
+        },
+        {
+          "name": "Gossage",
+          "vote": "yea"
+        },
+        {
+          "name": "Haley",
+          "vote": "yea"
+        },
+        {
+          "name": "Holscher",
+          "vote": "yea"
+        },
+        {
+          "name": "Klemp",
+          "vote": "yea"
+        },
+        {
+          "name": "Kloos",
+          "vote": "yea"
+        },
+        {
+          "name": "Masterson",
+          "vote": "yea"
+        },
+        {
+          "name": "Murphy",
+          "vote": "yea"
+        },
+        {
+          "name": "Owens",
+          "vote": "yea"
+        },
+        {
+          "name": "Peck",
+          "vote": "yea"
+        },
+        {
+          "name": "Petersen",
+          "vote": "yea"
+        },
+        {
+          "name": "Pettey",
+          "vote": "yea"
+        },
+        {
+          "name": "Rose",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryckman",
+          "vote": "yea"
+        },
+        {
+          "name": "Schmidt",
+          "vote": "yea"
+        },
+        {
+          "name": "Shallenburger",
+          "vote": "yea"
+        },
+        {
+          "name": "Shane",
+          "vote": "yea"
+        },
+        {
+          "name": "Starnes",
+          "vote": "yea"
+        },
+        {
+          "name": "Sykes",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas",
+          "vote": "yea"
+        },
+        {
+          "name": "Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Titus",
+          "vote": "yea"
+        },
+        {
+          "name": "Tyson",
+          "vote": "yea"
+        },
+        {
+          "name": "Ware",
+          "vote": "yea"
+        },
+        {
+          "name": "Warren",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2025-02-19",
+      "body": "KS House",
+      "motion": "Final Action - Passed",
+      "kind": "roll-call",
+      "yes": 106,
+      "no": 13,
+      "absent": 6,
+      "body_size": 125,
+      "note": "285 | https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/house/legislative_days/day026_20250219/vote_records/0084_HB2016.odt",
+      "members": [
+        {
+          "name": "Alcala",
+          "vote": "yea"
+        },
+        {
+          "name": "Amyx",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Awerkamp",
+          "vote": "yea"
+        },
+        {
+          "name": "Ballard",
+          "vote": "yea"
+        },
+        {
+          "name": "Barrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Barth",
+          "vote": "yea"
+        },
+        {
+          "name": "Bergkamp",
+          "vote": "yea"
+        },
+        {
+          "name": "Bergquist",
+          "vote": "yea"
+        },
+        {
+          "name": "Blex",
+          "vote": "yea"
+        },
+        {
+          "name": "Bloom",
+          "vote": "yea"
+        },
+        {
+          "name": "Bohi",
+          "vote": "yea"
+        },
+        {
+          "name": "Borjon",
+          "vote": "yea"
+        },
+        {
+          "name": "Brantley",
+          "vote": "yea"
+        },
+        {
+          "name": "Brownlee Paige",
+          "vote": "yea"
+        },
+        {
+          "name": "Bryce",
+          "vote": "yea"
+        },
+        {
+          "name": "Buehler",
+          "vote": "yea"
+        },
+        {
+          "name": "Butler",
+          "vote": "yea"
+        },
+        {
+          "name": "B. Carpenter",
+          "vote": "yea"
+        },
+        {
+          "name": "W. Carpenter",
+          "vote": "yea"
+        },
+        {
+          "name": "Chauncey",
+          "vote": "yea"
+        },
+        {
+          "name": "Collins",
+          "vote": "yea"
+        },
+        {
+          "name": "Corbet",
+          "vote": "yea"
+        },
+        {
+          "name": "Croft",
+          "vote": "yea"
+        },
+        {
+          "name": "Curtis",
+          "vote": "yea"
+        },
+        {
+          "name": "Delperdang",
+          "vote": "yea"
+        },
+        {
+          "name": "Droge",
+          "vote": "yea"
+        },
+        {
+          "name": "Ellis",
+          "vote": "yea"
+        },
+        {
+          "name": "Esau",
+          "vote": "yea"
+        },
+        {
+          "name": "Essex",
+          "vote": "yea"
+        },
+        {
+          "name": "Estes",
+          "vote": "yea"
+        },
+        {
+          "name": "Fairchild",
+          "vote": "yea"
+        },
+        {
+          "name": "Featherston",
+          "vote": "yea"
+        },
+        {
+          "name": "Francis",
+          "vote": "yea"
+        },
+        {
+          "name": "Gardner",
+          "vote": "yea"
+        },
+        {
+          "name": "Goddard",
+          "vote": "yea"
+        },
+        {
+          "name": "Goetz",
+          "vote": "yea"
+        },
+        {
+          "name": "Haskins",
+          "vote": "yea"
+        },
+        {
+          "name": "Hawkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Helwig",
+          "vote": "yea"
+        },
+        {
+          "name": "Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Hoffman",
+          "vote": "yea"
+        },
+        {
+          "name": "Hoheisel",
+          "vote": "yea"
+        },
+        {
+          "name": "Howe",
+          "vote": "yea"
+        },
+        {
+          "name": "Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Howerton",
+          "vote": "yea"
+        },
+        {
+          "name": "Hoye",
+          "vote": "yea"
+        },
+        {
+          "name": "Huebert",
+          "vote": "yea"
+        },
+        {
+          "name": "Humphries",
+          "vote": "yea"
+        },
+        {
+          "name": "James",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Kessler",
+          "vote": "yea"
+        },
+        {
+          "name": "King",
+          "vote": "yea"
+        },
+        {
+          "name": "Lewis",
+          "vote": "yea"
+        },
+        {
+          "name": "Long",
+          "vote": "yea"
+        },
+        {
+          "name": "McDonald",
+          "vote": "yea"
+        },
+        {
+          "name": "McNorton",
+          "vote": "yea"
+        },
+        {
+          "name": "Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Minnix",
+          "vote": "yea"
+        },
+        {
+          "name": "Moser",
+          "vote": "yea"
+        },
+        {
+          "name": "Neelly",
+          "vote": "yea"
+        },
+        {
+          "name": "Neighbor",
+          "vote": "yea"
+        },
+        {
+          "name": "Osman",
+          "vote": "yea"
+        },
+        {
+          "name": "Pickert",
+          "vote": "yea"
+        },
+        {
+          "name": "Pishny",
+          "vote": "yea"
+        },
+        {
+          "name": "Poetter Parshall",
+          "vote": "yea"
+        },
+        {
+          "name": "Poskin",
+          "vote": "yea"
+        },
+        {
+          "name": "Proctor",
+          "vote": "yea"
+        },
+        {
+          "name": "Rahjes",
+          "vote": "yea"
+        },
+        {
+          "name": "Reavis",
+          "vote": "yea"
+        },
+        {
+          "name": "Resman",
+          "vote": "yea"
+        },
+        {
+          "name": "Rhiley",
+          "vote": "yea"
+        },
+        {
+          "name": "Roeser",
+          "vote": "yea"
+        },
+        {
+          "name": "Roth",
+          "vote": "yea"
+        },
+        {
+          "name": "Sanders",
+          "vote": "yea"
+        },
+        {
+          "name": "Sawyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Sawyer Clayton",
+          "vote": "yea"
+        },
+        {
+          "name": "Schlingensiepen",
+          "vote": "yea"
+        },
+        {
+          "name": "Schmoe",
+          "vote": "yea"
+        },
+        {
+          "name": "Schreiber",
+          "vote": "yea"
+        },
+        {
+          "name": "Schwertfeger",
+          "vote": "yea"
+        },
+        {
+          "name": "Seiwert",
+          "vote": "yea"
+        },
+        {
+          "name": "A. Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "C. Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Steele",
+          "vote": "yea"
+        },
+        {
+          "name": "Stiens",
+          "vote": "yea"
+        },
+        {
+          "name": "Sutton",
+          "vote": "yea"
+        },
+        {
+          "name": "Sweely",
+          "vote": "yea"
+        },
+        {
+          "name": "Tarwater",
+          "vote": "yea"
+        },
+        {
+          "name": "Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Turk",
+          "vote": "yea"
+        },
+        {
+          "name": "Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "VanHouden",
+          "vote": "yea"
+        },
+        {
+          "name": "Vaughn",
+          "vote": "yea"
+        },
+        {
+          "name": "Waggoner",
+          "vote": "yea"
+        },
+        {
+          "name": "Ward",
+          "vote": "yea"
+        },
+        {
+          "name": "Wasinger",
+          "vote": "yea"
+        },
+        {
+          "name": "Waymaster",
+          "vote": "yea"
+        },
+        {
+          "name": "White",
+          "vote": "yea"
+        },
+        {
+          "name": "Wikle",
+          "vote": "yea"
+        },
+        {
+          "name": "Willcott",
+          "vote": "yea"
+        },
+        {
+          "name": "K. Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "L. Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Wolf",
+          "vote": "yea"
+        },
+        {
+          "name": "Woodard",
+          "vote": "yea"
+        },
+        {
+          "name": "Xu",
+          "vote": "yea"
+        },
+        {
+          "name": "Carlin",
+          "vote": "nay"
+        },
+        {
+          "name": "Carmichael",
+          "vote": "nay"
+        },
+        {
+          "name": "Carr",
+          "vote": "nay"
+        },
+        {
+          "name": "Martinez",
+          "vote": "nay"
+        },
+        {
+          "name": "Melton",
+          "vote": "nay"
+        },
+        {
+          "name": "Mosley",
+          "vote": "nay"
+        },
+        {
+          "name": "Ohaebosim",
+          "vote": "nay"
+        },
+        {
+          "name": "Oropeza",
+          "vote": "nay"
+        },
+        {
+          "name": "Ousley",
+          "vote": "nay"
+        },
+        {
+          "name": "L. Ruiz",
+          "vote": "nay"
+        },
+        {
+          "name": "S. Ruiz",
+          "vote": "nay"
+        },
+        {
+          "name": "Simmons",
+          "vote": "nay"
+        },
+        {
+          "name": "Weigel",
+          "vote": "nay"
+        },
+        {
+          "name": "Helgerson",
+          "vote": "absent"
+        },
+        {
+          "name": "Meyer",
+          "vote": "absent"
+        },
+        {
+          "name": "Penn",
+          "vote": "absent"
+        },
+        {
+          "name": "Stogsdill",
+          "vote": "absent"
+        },
+        {
+          "name": "Wilborn",
+          "vote": "absent"
+        },
+        {
+          "name": "Winn",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "politician_id": "4f6b780e-f256-4b99-9580-70a883ba3e74",
+  "findings": [
+    {
+      "id": "a180dac9fbe82db0f7ed1e12eb5a8927f8abd4f868ef36e3cf40bf126221dbed",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/house/legislative_days/day045_20250320/vote_records/0275_HB2020.odt",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "House: Concurred with amendments",
+      "note": "House roll call as printed ('Howe'), linked to Steven K. Howe (district 71) via the official 2025 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.936Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21f55a599c11a6bfd03cc0b661541d4440ff0a0808ab91e9abc25020cfb5fc94",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day053_20260409/vote_records/0408_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "House: Motion to override veto prevailed",
+      "note": "House roll call as printed ('Howe'), linked to Steven K. Howe (district 71) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.936Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45a6a0e651989653960fc97af7759af58ffb11d0dd3f56bdfeab65bb700b032e",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day023_20260212/vote_records/0067_HB2448.odt",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2448-2026",
+      "act": "yea",
+      "motion": "House: Emergency Final Action - Passed as amended",
+      "note": "House roll call as printed ('Howe'), linked to Steven K. Howe (district 71) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.936Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "voter-roll maintenance",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia: blocked (403 per brief, not fetched)",
+        "kansasreflector.com: blocked (403 per brief, not fetched)",
+        "Kansas legislature member page (https://www.kslegislature.gov/li/b2025_26/members/rep_howe_steven_1/): confirms office, lists no personal site or newsletter",
+        "https://www.salina311.com/stories/2026-08-05-howe-holds-off-vanier-to-win-district-71-republican-primary/ (confirms won 2026 primary, faces a general-election opponent 2026-11-03; nothing on the subject)",
+        "https://www.ksal.com/howe-to-run-for-re-election/ (nothing on the subject)",
+        "https://www.salina311.com/stories/2026-05-31-three-candidates-listed-in-kansas-house-district-71-race/ (nothing on the subject)",
+        "campaign site: none found by web search",
+        "web news searches (4) on his name plus voter ID / proof of citizenship / mail ballots / election bills: nothing in his own words",
+        "iVoterGuide, Vote411, committee testimony: nothing found for him"
+      ],
+      "found": 0,
+      "at": "2026-11-04T16:50:53.931Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-04T19:13:24.936Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

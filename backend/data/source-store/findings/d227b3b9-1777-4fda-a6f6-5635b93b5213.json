@@ -1,0 +1,154 @@
+{
+  "politician_id": "d227b3b9-1777-4fda-a6f6-5635b93b5213",
+  "findings": [
+    {
+      "id": "69fe13d1450fcea42a66bc946a12e7f1ae63b38bae5ad29ab22cbff2a6394786",
+      "kind": "own-words",
+      "url": "https://thebeaconnews.org/?p=24617",
+      "date": "2024-10-07",
+      "date_precision": "day",
+      "passage": "I believe elections should be decided by Election Day.",
+      "note": "His answer, voting yes, in a candidate Q&A on eliminating the mail ballot grace period. The same answer also says: \"We are one of only a few states that allow the delay and rarely does it have an impact on the outcome.\" Outlet: The Beacon (page updated 2024-10-11).",
+      "subjects": [
+        "mail-ballot deadline (related)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:58:57.838Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "51875d5dea241237a62150642fea587f48463d6b65b1b36f2650fa41d97e89be",
+      "kind": "own-words",
+      "url": "https://digital-release.ksn.com/news/your-local-election-hq/candidates/stephen-owens-republican-for-kansas-house-district-74",
+      "date": "2022-10-17",
+      "date_precision": "day",
+      "passage": "Kansas has some of the most secure elections in the nation.",
+      "note": "Start of his questionnaire answer on election integrity in Kansas (KSN, 2022, House District 74). He goes on: \"While there is still some work to do to ensure ballot harvesting does not occur,\" \"Kansans should be proud of the work done to ensure their vote counts.\" \"I think other states aren't as secure and have work to do.\" \"I think the US Government should stay out of the state election process.\" The page has nothing on ID or citizenship.",
+      "subjects": [
+        "election integrity in general",
+        "ballot harvesting",
+        "federal role in state elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:58:57.838Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "16fc367b6ae612e9858d0804c70069da9a41e059381a62d495fc2173fe7e9422",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_191_HB2020.odt",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "Senate: Emergency Final Action As Amended",
+      "note": "Senate roll call as printed ('Owens'), linked to Stephen Owens (district 31) via the official 2025 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53cc439c8ba13aae8525c4a82092d677fe52f2aa3e4773008814268e4fad0c47",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Owens'), linked to Stephen Owens (district 31) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "26fc0eac68c90037c402f6af64ad21e632b079f7491d447d2551656187b6c5c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Owens'), linked to Stephen Owens (district 31) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "mail-ballot rules and deadline",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member page https://www.kslegislature.gov/legislators/sen_owens_stephen_1/ (confirms Senate District 31, 2025-present; no personal site or newsletter listed)",
+        "KSN 2022 candidate questionnaire (House District 74)",
+        "The Beacon 2024 candidate Q&A (Senate District 31)",
+        "web searches: voter ID, proof of citizenship/SAVE Act, questionnaire/Candidate Connection/Vote411, local paper column, election/ballot statements (nothing further on the subject)",
+        "blocked: https://ballotpedia.org/Stephen_Owens_(Kansas)",
+        "blocked: https://www.kansasreflector.com",
+        "blocked: https://digital-release.ksn.com (curl returned 'too many requests' on a plain fetch; passage taken from the fetch tool's exact-sentence reply)",
+        "nothing on the subject: no testimony by him found in the committee testimony PDFs surfaced by search"
+      ],
+      "found": 2,
+      "at": "2026-11-04T16:58:57.838Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-04T19:13:24.947Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

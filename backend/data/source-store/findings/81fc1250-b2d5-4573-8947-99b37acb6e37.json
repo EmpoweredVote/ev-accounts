@@ -94,6 +94,32 @@
       "found": 1,
       "at": "2026-10-27T20:36:30.466Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans and magazine limits",
+        "background checks and permits",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general statement on gun rights or gun safety"
+      ],
+      "places": [
+        "identity: Wikipedia and jonahgarson.com (fetched): state senator, District 23, since April 2026",
+        "campaign site jonahgarson.com: nothing on the subject",
+        "blocked: https://www.jonahgarson.com/issues (404)",
+        "ivoterguide 2026 profile: did not answer gun question",
+        "IndyWeek 2022 questionnaire and Daily Tar Heel profile: nothing on the subject",
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia (not fetched; empty to fetch tool, search snippets only)",
+        "web search on name plus gun words: nothing on the subject in their own words"
+      ],
+      "found": 0,
+      "at": "2026-11-05T23:58:40.464Z",
+      "by": "source-collector"
     }
   ]
 }

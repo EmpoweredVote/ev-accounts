@@ -1,0 +1,38 @@
+{
+  "id": "OH-HJR-9-2026",
+  "scope": "state:oh",
+  "title": "HJR 9 (2025-2026 (136th General Assembly)): H. J. R. No. 9: CA: Require identification to vote",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/hjr9",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hjr9/00_IN/html/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Ohio Const. art. V, sec. 5(A)(1)\n(quote) Electors shall provide identification in order to vote, in accordance with laws passed by the general assembly. The laws shall include a requirement that an elector show the elector's photo identification when voting in person at a polling place or other voting location designated by law, except as otherwise provided in divisions (A)(2) and (3) of this section.\n(section) Ohio Const. art. V, sec. 5(B)\n(quote) \"photo identification\" means one of the following documents that is issued by an agency of this state or the United States, includes the elector's name and photograph, and is not expired: (1) A driver's license or state identification card issued by the Ohio bureau of motor vehicles or its successor agency; (2) A United States passport or passport card; (3) A United States military identification card, an Ohio national guard identification card, or an identification card issued by the United States department of veterans affairs or its successor agency; (4) Another document authorized by the general assembly by law for use as photo identification for voting purposes.\n(b_no_id_remedy)\n(section) Ohio Const. art. V, sec. 5(A)(2)\n(quote) The laws shall provide an alternative method of verifying the identity of an elector who does not have photo identification because the elector has a sincere religious objection to being photographed.\n(section) Ohio Const. art. V, sec. 5(A)(3)\n(quote) The laws shall permit an elector who does not show photo identification at the time of voting in person to cast a provisional ballot and provide photo identification to the election officials by a deadline specified by law in order for the provisional ballot to be eligible to be counted.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Ohio Const. art. V, sec. 5(C)\n(quote) Nothing in this section requires the general assembly to pass laws allowing electors to vote in any location or manner other than in person at a polling place on the day of an election.\n(other) Effective date: takes effect immediately if adopted by a majority of electors at the November 3, 2026 general election\n(other) Mail ballot ID: section 5(A)(1) says electors shall provide identification 'in accordance with laws', with the photo ID show requirement stated only for in-person voting\n(other) note: Joint resolution proposing a new constitutional section (needs three-fifths of each house, then a statewide vote). It sets a constitutional photo-ID-in-person rule and leaves details to statute. Slot c: no rule on mail ballot ID beyond the general line in (A)(1). Sole version.",
+  "sponsors": [
+    {
+      "name": "Heidi Workman",
+      "role": "prime",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Adam C. Bird",
+      "role": "prime",
+      "version": "As Introduced (00_IN)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

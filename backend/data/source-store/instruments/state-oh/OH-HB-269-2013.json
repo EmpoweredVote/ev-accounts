@@ -1,0 +1,27 @@
+{
+  "id": "OH-HB-269-2013",
+  "scope": "state:oh",
+  "title": "HB 269 (2013-2014 (130th General Assembly)): H. B. No. 269: Voter identification",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/130/hb269",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/hb269/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) 3501.01(AA)\n(quote) (3) It is one of the following documents: (a) An Ohio driver's license or Ohio commercial driver's license issued by the registrar of motor vehicles or a deputy registrar under Chapter 4507. of the Revised Code that shows the current or former address of the elector, regardless of whether that address conforms to the address in the individual's voter registration record and regardless of whether the license is expired; (b) A state identification card issued by the registrar of motor vehicles or a deputy registrar under section 4507.50 of the Revised Code that shows the current or former address of the elector, regardless of whether that address conforms to the address in the individual's voter registration record, and that is not expired or that expired after the date of the most recent general election;\n(section) 3501.01(AA)\n(quote) (c) A United States military identification card that is not expired or that expired after the date of the most recent general election; or (d) A United States passport that is not expired or that expired after the date of the most recent general election.\n(b_no_id_remedy)\n(section) 3505.18(A)(4)\n(quote) Upon signing the affirmation, the elector may cast a provisional ballot under section 3505.181 of the Revised Code.\n(section) 3505.18(A)(4)\n(quote) (f) A statement that the elector has a religious objection to being photographed.\n(section) 4507.50(C)(1)\n(quote) (C)(1) An individual may apply to the registrar or a deputy registrar for the issuance to that individual of an identification card or a temporary identification card under this section without payment of any fee if both of the following are true: (a) The individual cannot afford to pay the fees prescribed in division (A) of this section, including any lamination fee; and (b) The individual's income does not exceed one hundred per cent of the federal poverty guidelines.\n(c_mail_ballot_id)\n(section) 3509.03(E)\n(quote) (1) The elector's photo identification, if the elector will be marking the absent voter's ballots in person at the board of elections; or\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) 3503.28\n(quote) Voters must bring photo identification to the polls in order to verify identity.\n(other) 3501.01(AA): redefines 'photo identification' as only an Ohio driver's license, state ID card, U.S. military ID card or U.S. passport\n(other) 3505.18, 3505.181-.183: in-person and provisional-ballot ID rules; religious-objection affirmation\n(other) 3509.03, 3509.04, 3509.05, 3509.08, 3511.02, 3511.05, 3511.09: absentee and armed-service ballot ID rules\n(other) 3503.14, 3503.16, 3503.19, 3503.28: registration-form, change-of-address and voter-notice wording on ID\n(other) 4507.50, 4507.52: free state ID card for a person who cannot pay and whose income is at or below the federal poverty level (affirmation under penalty of election falsification)\n(other) note: Only one version (introduced). Struck words are not marked in this PDF text and are interleaved with new words, so the other ID provisions (3505.18(A)(1)-(3), the 3509.05 mail rule, 3505.181 cure) cannot be quoted cleanly; the quoted lines are contiguous new text. The marked 2015 bill HB 189 (OH-HB-189-2015) has the same title and a near-identical structure: it keeps only 'photo identification' for in-person voting, replaces the utility-bill and similar options, and lets a voter with a religious objection sign an affirmation and cast a provisional ballot. The 3509.03(E)(1) line is the new in-person-at-the-board rule; for mail ballots the same section keeps driver's license or state ID number, SSN-4 or a copy of photo ID. The 3503.28 sentence is the opening of the notice text and is read from the unmarked PDF.",
+  "sponsors": [],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

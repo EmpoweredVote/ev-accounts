@@ -1,6 +1,91 @@
 {
   "politician_id": "e67dbe35-ecd4-4672-923b-289f9b8783d9",
-  "findings": [],
+  "findings": [
+    {
+      "id": "5276c97d050334b0496080c1c5a09c30278c03a89dc8e68cd888166a89921807",
+      "kind": "own-words",
+      "url": "https://www.wcmu.org/local-regional-news/2026-03-25/tunney-and-greene-spar-over-gun-control-education-at-35th-district-forum",
+      "date": "2026-03-25",
+      "date_precision": "day",
+      "passage": "“I believe that if you are a menace to the society and it is deemed that way, that you should temporarily have your guns replaced,” Greene said.",
+      "note": "Quoted at a candidate forum by a public radio outlet; the report says he supports red flag laws that temporarily take guns from people a court finds a threat.",
+      "subjects": [
+        "red flag orders",
+        "who may own a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-05T22:11:56.617Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "794ba94da217e67ac67bb18106c443cc0772ec57c44b3698c70780c724ea53b7",
+      "kind": "own-words",
+      "url": "https://www.wcmu.org/local-regional-news/2026-03-25/tunney-and-greene-spar-over-gun-control-education-at-35th-district-forum",
+      "date": "2026-03-25",
+      "date_precision": "day",
+      "passage": "“I am a registered firearm owner,” Greene said. “I make sure that my firearms are locked up. It's common sense.”",
+      "note": "Quoted by a public radio outlet at the same forum, on safe gun storage laws, which the report says he supports.",
+      "subjects": [
+        "safe gun storage",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-05T22:11:56.617Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "83d4359f37c8f36e24a53e41d2f125d6dcf6217fab6c1857e9623add5d849848",
+      "kind": "own-words",
+      "url": "https://senatedems.com/greene/?p=215",
+      "date": "2026-06-04",
+      "date_precision": "day",
+      "passage": "“As a parent, a public safety professional, and a responsible, law-abiding firearm owner, I have been proud to work locally on community violence intervention efforts and promote safe firearm storage and handling to keep our families safe. In the Senate, I will keep working to promote gun violence awareness and positive policy changes to help save lives, including passing yesterday’s resolution.”",
+      "note": "Senate caucus release in his name on his vote for Senate Resolution 127 (June as Gun Violence Awareness Month).",
+      "subjects": [
+        "gun violence awareness",
+        "safe gun storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-05T22:11:56.617Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "950f808e79a2ce5637556eeb484532afd32f8076bc0ced4bbc20901d5ba824c9",
+      "kind": "record",
+      "url": "https://senatedems.com/greene/?p=215",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "instrument_id": "MI-SR-127-2026",
+      "act": "yea",
+      "note": "Voted to pass Senate Resolution 127 commemorating June as Gun Violence Awareness Month, per his caucus release dated June 4, 2026 (voted 'yesterday'). The release also lists the caucus agenda items (ghost gun ban, extreme risk orders, secure storage) but does not say he sponsored them.",
+      "subjects": [
+        "gun violence awareness"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-05T22:11:56.617Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -26,6 +111,34 @@
       "found": 0,
       "at": "2026-10-28T22:52:26.362Z",
       "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "background checks and permits",
+        "red flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "safe storage",
+        "gun rights and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Senate caucus press release 2026-06-04",
+        "candidate forum report (public radio, 2026-03-25)",
+        "Senate caucus bio page: nothing on the subject",
+        "campaign site: nothing found on the subject",
+        "endorsement-group page: third-party text, not saved as own words",
+        "blocked: https://ballotpedia.org/Chedrick_Greene",
+        "in scope: sitting State Senator, 35th District, sworn in 2026-05-21; candidate on the 2026 ballot per endorsement page"
+      ],
+      "found": 4,
+      "at": "2026-11-05T22:11:56.617Z",
+      "by": "source-collector"
     }
   ]
 }

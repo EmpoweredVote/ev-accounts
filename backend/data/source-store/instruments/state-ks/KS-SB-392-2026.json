@@ -1,0 +1,208 @@
+{
+  "id": "KS-SB-392-2026",
+  "scope": "state:ks",
+  "title": "SB 392 (2025-2026 biennium (2026 Regular Session)): H Sub for SB392 House Substitute for SB 392 by Committee on Elections - Establishing reasons for withdrawal of candidacy from national, state and local offices, concerning vacancies in the joint candidacy of the governor and lieutenant governor, requiring driver's licenses to reflect citizenship status, requiring provisional ballots be provided to persons showing a driver's license reflecting noncitizenship, require state agencies required by federal law to provide voter registration services to provide quarterly reports to the secretary of state listing noncitizens receiving public benefits.",
+  "urls": [
+    "https://www.kslegislature.gov/b2025_26/bills/SB392/",
+    "https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/sb_392/sb392_01_0000.pdf",
+    "https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/sb_392/sb392_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy)\n(section) New Sec. 1 (House Substitute)\n(quote) New Section 1. Any person who displays a driver's license listing such person as a noncitizen at a polling place shall be given a provisional ballot for voting purposes if such person claims to be a citizen.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) K.S.A. 8-243 (House Substitute)\n(quote) All Kansas drivers' licenses and identification cards shall have physical security features designed to prevent tampering, counterfeiting or duplication of the document for fraudulent purposes. The secretary of revenue shall incorporate common machine-readable technology into all Kansas drivers' licenses and identification cards.\n(other) Candidate-withdrawal and vacancy-in-joint-candidacy sections (amend K.S.A. 25-306b, 25-2020, 25-2106, 25-4003, 71-1414).\n(other) New Sec. 2: quarterly reports by voter-registration agencies of noncitizen benefit recipients.",
+  "sponsors": [
+    {
+      "name": "Senate Committee on Federal and State Affairs",
+      "role": "prime",
+      "version": "House Substitute for SB 392 by Committee on Elections (sb392_01) - never voted on in either chamber; also read As Introduced (00)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2026-02-18",
+      "body": "KS Senate",
+      "motion": "Final Action",
+      "kind": "roll-call",
+      "yes": 40,
+      "no": 0,
+      "absent": 0,
+      "body_size": 40,
+      "note": "1512 | https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day027_20260218/vote_records/vote_72_SB392.odt",
+      "members": [
+        {
+          "name": "Alley",
+          "vote": "yea"
+        },
+        {
+          "name": "Argabright",
+          "vote": "yea"
+        },
+        {
+          "name": "Billinger",
+          "vote": "yea"
+        },
+        {
+          "name": "Blasi",
+          "vote": "yea"
+        },
+        {
+          "name": "Blew",
+          "vote": "yea"
+        },
+        {
+          "name": "Bowers",
+          "vote": "yea"
+        },
+        {
+          "name": "Bowser",
+          "vote": "yea"
+        },
+        {
+          "name": "Claeys",
+          "vote": "yea"
+        },
+        {
+          "name": "Clifford",
+          "vote": "yea"
+        },
+        {
+          "name": "Corson",
+          "vote": "yea"
+        },
+        {
+          "name": "Dietrich",
+          "vote": "yea"
+        },
+        {
+          "name": "Erickson",
+          "vote": "yea"
+        },
+        {
+          "name": "Fagg",
+          "vote": "yea"
+        },
+        {
+          "name": "Faust Goudeau",
+          "vote": "yea"
+        },
+        {
+          "name": "Francisco",
+          "vote": "yea"
+        },
+        {
+          "name": "Gossage",
+          "vote": "yea"
+        },
+        {
+          "name": "Haley",
+          "vote": "yea"
+        },
+        {
+          "name": "Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Holscher",
+          "vote": "yea"
+        },
+        {
+          "name": "Klemp",
+          "vote": "yea"
+        },
+        {
+          "name": "Kloos",
+          "vote": "yea"
+        },
+        {
+          "name": "Masterson",
+          "vote": "yea"
+        },
+        {
+          "name": "Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Murphy",
+          "vote": "yea"
+        },
+        {
+          "name": "Owens",
+          "vote": "yea"
+        },
+        {
+          "name": "Peck",
+          "vote": "yea"
+        },
+        {
+          "name": "Petersen",
+          "vote": "yea"
+        },
+        {
+          "name": "Pettey",
+          "vote": "yea"
+        },
+        {
+          "name": "Rose",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryckman",
+          "vote": "yea"
+        },
+        {
+          "name": "Schmidt",
+          "vote": "yea"
+        },
+        {
+          "name": "Shallenburger",
+          "vote": "yea"
+        },
+        {
+          "name": "Shane",
+          "vote": "yea"
+        },
+        {
+          "name": "Starnes",
+          "vote": "yea"
+        },
+        {
+          "name": "Sykes",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas",
+          "vote": "yea"
+        },
+        {
+          "name": "Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Titus",
+          "vote": "yea"
+        },
+        {
+          "name": "Tyson",
+          "vote": "yea"
+        },
+        {
+          "name": "Warren",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

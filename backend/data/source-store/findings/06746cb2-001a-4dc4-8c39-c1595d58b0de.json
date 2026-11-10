@@ -1,0 +1,354 @@
+{
+  "politician_id": "06746cb2-001a-4dc4-8c39-c1595d58b0de",
+  "findings": [
+    {
+      "id": "36dc00c33b1f3a32a804347e4173ff6301fdfa84b191959aa83db5a5334a6bc3",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/jane-m-timken/news/senate-passes-landmark-timken-gavarone-resolution-putting-voter-id-amendment-on-the-ballot",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "passage": "With AI being easily able to generate items like utility bills and bank statements, it is essential to constitutionally protect voter photo-ID requirements,",
+      "note": "Her own news release after the Senate passed Senate Joint Resolution 10. She gives AI-generated non-photo documents as the reason to protect photo ID in the constitution. Passage assembled from two consecutive pieces returned by the fetch tool.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID in the state constitution",
+        "non-photo documents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:24.763Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "194c1f38623d27bc0d3c00bc26576c357aed3fd83203528d83ecac53998bdc1c",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/jane-m-timken/news/senate-passes-landmark-timken-gavarone-resolution-putting-voter-id-amendment-on-the-ballot",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "passage": "This resolution ensures that it is easy to vote but hard to cheat.",
+      "note": "Same release, her closing statement on the resolution.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID in the state constitution"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:24.763Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9110d698e85a4c93f8d4bafca93b240dd43fca5905ab2e0824f6ffc0a1c4060b",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/news/republican/ohio-legislators-introduce-joint-resolutions-enshrining-voter-id-into-ohio-constitution-144342",
+      "date": "2026-05-18",
+      "date_precision": "day",
+      "passage": "Providing Ohioans with constitutionally protected voter photo-ID is essential, especially in today's world, where items like utility bills and bank statements can be so quickly and easily generated with Artificial Intelligence,",
+      "note": "Her remark on the day the matching resolutions were introduced. Assembled from consecutive pieces returned by the fetch tool.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID in the state constitution",
+        "non-photo documents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:24.763Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "19623798a7ae68fc8575d46a17e95d523c4d9d9cb48b26e7ee1ac8f850a69e90",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/news/republican/ohio-legislators-introduce-joint-resolutions-enshrining-voter-id-into-ohio-constitution-144342",
+      "date": "2026-05-18",
+      "date_precision": "day",
+      "passage": "Our elections should continue to be at least as secure as checking into a hotel.",
+      "note": "Same release, her closing remark.",
+      "subjects": [
+        "voter ID at the polls",
+        "election security"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:24.763Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7f571d3beea5265a0e10c7378d829cf8b8a395f352f41a9e640e5ec9711970e9",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/news/on-the-record/ohio-general-assembly-leadership-endorses-constitutional-amendment-for-voter-id",
+      "date": "2026-05-21",
+      "date_precision": "day",
+      "passage": "Voters need to know that when someone goes to vote that it is the actual person who is registered to vote and we do that by photo id.",
+      "note": "Her remark at the leadership announcement of the voter ID resolution. Fetch tool returned it in pieces (\"Voters need to know that when someone goes to vote that it is the actual person who is registered to vote\" / \"and we do that by photo id.\"); the joined form is assembled from those pieces.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter-roll identity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:24.763Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2f5998fb1ae351fc0de3c2d15772c560f156cd488b804cb74ec272c84c9f67f5",
+      "kind": "own-words",
+      "url": "https://spectrumnews1.com/oh/columbus/news/2026/05/20/lawmakers-push-on-adding-photo-id-requirement-in-constitution-for-voting",
+      "date": "2026-05-20",
+      "date_precision": "day",
+      "passage": "The voters want security in their elections, and this is how we're going to do it.",
+      "note": "Direct quote of her in a Spectrum News 1 story, on the voter ID resolution. The same story quotes her explaining the amendment is meant to put the rule where \"it cannot be revised by the Ohio revised code\".",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID in the state constitution"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:24.763Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d41b9cccf34d136aa498ef17ace7d303ff39b060784c949194c1d7b6a2c3c269",
+      "kind": "own-words",
+      "url": "https://www.timesleaderonline.com/news/local-news/2026/06/ohio-constitutional-amendment-on-voter-photo-id-advances/",
+      "date": "2026-06-05",
+      "date_precision": "day",
+      "passage": "Photo ID for voting helps secure the bedrock democratic principle of one person, one vote.",
+      "note": "Direct quote of her in a Center Square story carried by the Times Leader, on the Senate vote on the voter photo ID amendment.",
+      "subjects": [
+        "voter ID at the polls",
+        "one person one vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:24.763Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fe143cbec7f2f002d28c0ffaf9065ec77e29de420de7bf2e8e6a75290ef268fd",
+      "kind": "own-words",
+      "url": "https://www.news5cleveland.com/news/politics/ohio-politics/ohio-senate-passes-resolution-to-put-voter-photo-id-amendment-on-nov-ballot",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Provide for the long-term security of our elections while maintaining access to the ballot box,",
+      "note": "Direct quote of her in a News 5 Cleveland story on the Senate passing the amendment resolution; the page shows no date. The same story says the Senate version does not require photo ID for absentee ballots but allows it as an option, which is the story's wording, not hers.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID in the state constitution",
+        "access to the ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:24.763Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3dec3f2a338a9f3dc1b088ea9009dbb3b9d0be70fc4ed41bea54a39fe5b04c7e",
+      "kind": "record",
+      "url": "https://ohiosenate.gov/members/jane-m-timken/news/senate-passes-landmark-timken-gavarone-resolution-putting-voter-id-amendment-on-the-ballot",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "sponsor",
+      "note": "Joint sponsor, with a senator from Bowling Green, of Senate Joint Resolution 10, a constitutional amendment requiring identification to vote; passed the Senate on this date per her release.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID in the state constitution"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:24.763Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a5bb1634ad5907616b86f560b8ecf96dfd5e4f77b5422bf26d6c663888557876",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "yea",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 23-10) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (sen_timken_jane_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b01a298f469a447b587df6d60ea80d04048e28db8117e5d3c325e772d1cb7f45",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/hb472",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As Passed by the Senate (04_PS)",
+      "note": "Listed as co sponsor of H. B. No. 472 (As Passed by the Senate) on the Ohio Legislature's own record (sen_timken_jane_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4c1f5fb2164062ff2f044b0322d2c82f7d347d63e7e3db39a346504a6a33e73f",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "yea",
+      "motion": "Senate: Concurred in House amendments",
+      "note": "OH Senate floor roll call (Concurred in House amendments, tally 23-10) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (sen_timken_jane_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f13f923a9c6762dac1ec783ec55a014bc5e047ca8cf95da1a2ce9b180d4455de",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "yea",
+      "motion": "Senate: Adopted",
+      "note": "OH Senate floor roll call (Adopted, tally 22-9) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (sen_timken_jane_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "986547b14ee392acf95ba95d60a232cd225f4c17c2af96ca70a83305d96c4e81",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/sjr10",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, As Introduced (00_IN)",
+      "note": "Listed as prime sponsor of S. J. R. No. 10 (As Introduced) on the Ohio Legislature's own record (sen_timken_jane_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.686Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID in the state constitution",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election security",
+        "2020 election audit claims"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Senate member page and its full news list (22 items; one touches voting): https://ohiosenate.gov/members/jane-m-timken/news",
+        "member's own release, 2026-06-03 (fetched via fetch tool; page text returned as exact sentences)",
+        "blocked: curl of https://ohiosenate.gov/members/jane-m-timken/news/senate-passes-landmark-timken-gavarone-resolution-putting-voter-id-amendment-on-the-ballot (403)",
+        "Senate leadership release and House release on the joint resolutions (May 2026)",
+        "Spectrum News 1, Times Leader (Center Square), News 5 Cleveland",
+        "blocked: https://www.legislature.ohio.gov/legislation/136/sjr10/committee (certificate error, committee testimony PDFs not reached)",
+        "blocked: https://www.dailysignal.com/2026/06/02/voter-id-effort-makes-moves-in-ohio/ (403)",
+        "blocked: https://wkyc.com/article/news/local/ohio/us-senate-candidate-jane-timken-widespread-voter-fraud-swept-under-bus/95-9cdec14a-dd42-4171-8c75-1695c3201ea6 (403)",
+        "not reviewed: campaign site janetimkenforohio.com 2021 pages (404)",
+        "Ballotpedia: blocked (listed per instructions, not fetched)",
+        "nothing found on proof of citizenship or the SAVE Act in the pages read",
+        "5 web searches run"
+      ],
+      "found": 9,
+      "at": "2026-11-06T15:11:24.763Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 5,
+      "at": "2026-11-06T16:28:34.686Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}

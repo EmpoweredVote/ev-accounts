@@ -1,0 +1,32 @@
+{
+  "politician_id": "98324cab-4c16-406e-b462-d2c34aa38fcf",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SAVE Act / SHIELD Act",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "BallotReady https://www.ballotready.org/people/theresa-gillespie-isom (confirms Mississippi Senate District 2 to 2028-01-04; issue stances cover criminal justice, economy, education only)",
+        "DLCC https://dlcc.org/candidates/theresa-gillespie-isom (confirms Mississippi SD 02 race of 2025-11-04; no statements on the subject)",
+        "Mississippi Free Press 2025 candidate and election-result articles: her quoted words cover leadership, Medicaid expansion, rural hospitals; nothing on the subject",
+        "TPCREF 2025 candidate Q&A https://tpcref.org/voter-information/2025-special-election-sd2/ (no response)",
+        "no campaign site found by search; the billstatus member page for her returned 404",
+        "blocked: Ballotpedia Candidate Connection survey (listed per instructions, not fetched; may hold her answers)",
+        "not reviewed: https://mississippitoday.org 2025 special election guide (site refuses AI agents)",
+        "web searches (6): voter ID, citizenship/SHIELD, questionnaire, campaign site: no own words on the subject found"
+      ],
+      "found": 0,
+      "at": "2026-11-05T22:57:04.939Z",
+      "by": "search-ms-2026-11-05"
+    }
+  ]
+}

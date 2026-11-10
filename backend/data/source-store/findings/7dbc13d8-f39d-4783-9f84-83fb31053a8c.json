@@ -25,7 +25,224 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "e375148ef69a76102dd7c784b4837c0a54e41eb8e48250fb952565b799065dd5",
+      "kind": "own-words",
+      "url": "https://www.kctv5.com/2025/07/20/ty-masterson-announces-run-kansas-governor-lets-take-back-kansas/",
+      "date": "2025-07-20",
+      "date_precision": "day",
+      "passage": "And we’ve preserved the integrity of our elections with commonsense measures to protect the ballot box.",
+      "note": "From his governor-campaign announcement, as quoted by KCTV5. General statement about election integrity measures; names no specific ID or citizenship rule.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:56:50.068Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1c72f3beeac08e7adbc3f30e62daf5a18f560ba1faab756204c467d8f8196963",
+      "kind": "own-words",
+      "url": "https://ca.news.yahoo.com/kansas-senate-rejects-sweeping-election-214329596.html",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "passage": "Hopefully lesson learned and those that passionately want something more are willing to settle for advancing steps.",
+      "note": "Quoted by the news story after the Senate rejected a broad election bill; he also said (reporter's words) he believed a path still existed to end the three-day mail-ballot grace period. Concerns mail-ballot deadline and incremental election bills, not ID or citizenship.",
+      "subjects": [
+        "mail ballot grace period / mail voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:56:50.068Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "16fc367b6ae612e9858d0804c70069da9a41e059381a62d495fc2173fe7e9422",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_191_HB2020.odt",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "Senate: Emergency Final Action As Amended",
+      "note": "Senate roll call as printed ('Masterson'), linked to Ty Masterson (district 16) via the official 2025 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "816150df3b57d874e5546736c47afdb7fcbf218fd273f0add8e908d7cb7fb4cc",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20110323095205_685691.odt",
+      "date": "2011-03-23",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2067-2011",
+      "act": "yea",
+      "motion": "Senate: HB 2067, AN ACT concerning elections; ... was considered on final action. (Final action; passed as amended)",
+      "note": "Senate roll call as printed ('Masterson'), linked to Ty Masterson (district 16) via the official 2011 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53cc439c8ba13aae8525c4a82092d677fe52f2aa3e4773008814268e4fad0c47",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Masterson'), linked to Ty Masterson (district 16) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "26fc0eac68c90037c402f6af64ad21e632b079f7491d447d2551656187b6c5c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Masterson'), linked to Ty Masterson (district 16) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e8daad3e3e031ab4fc3a5a2f561eb2ed0928969aecd76b434293b72a9767310a",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/chamber/documents/permanent_journal_senate_2012.pdf",
+      "date": "2012-05-08",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-129-2011",
+      "act": "yea",
+      "motion": "Senate: Senator Huntington moved the Senate adopt the Conference Committee Report on H Sub for SB 129. (The Conference Committee Report was adopted.)",
+      "note": "Senate roll call as printed ('Masterson'), linked to Ty Masterson (district 16) via the official 2012 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7709a8e391d094e607393601c6ffc28d7421685a297c8edcb9447240a463f87f",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/vote/?apn=b2023_24/year2/senate/legislative_days/day039_20240305/vote_records/vote_100_SB365.odt",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-365-2024",
+      "act": "yea",
+      "motion": "Senate: Final Action - Not passed",
+      "note": "Senate roll call as printed ('Masterson'), linked to Ty Masterson (district 16) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.947Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "mail ballot grace period / mail voting",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person; extract run with name)",
+        "iVoterGuide profile (Governor 2026 and Senate 2024): elections item shown as 'Did not answer'",
+        "campaign announcement coverage: KCTV5 2025-07-20; Kansas Reflector via Yahoo 2025-07-20 (no direct quote on voter ID or citizenship)",
+        "Sunflower State Radio 2025-07-21 launch story (no direct quote on the subject)",
+        "KCUR governor race story 2026-10-14 (nothing on the subject); KCUR 2026-02-24 House election bills story (does not name him)",
+        "Yahoo/Kansas news story 2024-03-05 on Senate rejecting election bill",
+        "web searches on name plus voter ID / citizenship / platform: no further own words",
+        "campaign site tymasterson.com: redirects to a domain-sale page, nothing to read",
+        "blocked: https://ballotpedia.org (refuses fetches; not tried)",
+        "blocked: https://kansasreflector.com (refuses fetches; not tried)",
+        "blocked: https://ca.news.yahoo.com/kansas-senate-rejects-sweeping-election-214329596.html via plain curl (empty body); passage taken from the fetch tool's word-for-word return",
+        "not reviewed: Senate floor remarks and Senate Federal and State Affairs testimony; no written testimony found signed by him"
+      ],
+      "found": 2,
+      "at": "2026-11-04T16:56:50.068Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 6,
+      "at": "2026-11-04T19:13:24.947Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
 }

@@ -29,7 +29,311 @@
           "sha256": "dddae0081901748ede39524ddca0094c322a065fe443d8ffdbae0913c1a95fa4"
         }
       }
+    },
+    {
+      "id": "6ceceb9000686061747a18dbb9828944369b7b191aeb2d5b18e3596dcd3a30ca",
+      "kind": "own-words",
+      "url": "https://wysu.org/ohio-news/2025-11-12/republican-backed-bill-would-require-photo-id-for-ohio-voters-casting-ballots-by-mail",
+      "date": "2025-11-12",
+      "date_precision": "day",
+      "passage": "“In Ohio, it’s already the law that when you vote in person, you need to show that photo ID,\" Ferguson said in an interview. \"This is just to ensure that we do the same thing for mail-in ballots so that we can be assured that the person who is casting that ballot is indeed the person that is supposed to be casting that ballot.”",
+      "note": "Statehouse News Bureau interview about his HB 577. He says in-person voting already needs photo ID and the bill extends that to mail ballots.",
+      "subjects": [
+        "mail-ballot ID",
+        "voter ID at the polls",
+        "HB 577"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:21:52.854Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53de6a4c2299c1c756ad640ea01fd3831b169508fdb26bf6d715816e3ec3fbdc",
+      "kind": "own-words",
+      "url": "https://wysu.org/ohio-news/2025-11-12/republican-backed-bill-would-require-photo-id-for-ohio-voters-casting-ballots-by-mail",
+      "date": "2025-11-12",
+      "date_precision": "day",
+      "passage": "Ferguson said this change would be easy for voters to comply with: “Most of the mail-in process would be the same. We would just be requiring a copy of a photo ID that you would currently use to vote in person.”",
+      "note": "Same interview. He describes the mail-ballot requirement as a copy of the same photo ID used in person.",
+      "subjects": [
+        "mail-ballot ID",
+        "HB 577"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:21:52.854Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "25f1bb57142b672246f0d27c8ff38c0b8e2eb2a199c466006a4de3ccd1abdaaa",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/ron-ferguson/news/rep-ferguson-introduces-the-secure-the-vote-act-139371",
+      "date": "2025-11-07",
+      "date_precision": "day",
+      "passage": "Preventing voter fraud and ensuring one person, one vote is something every Ohioan should agree on.",
+      "note": "Quote in his release introducing HB 577, the Secure the Vote Act (photo ID for mail-in ballots). Page read through the fetch tool, which returned this as his quoted sentence.",
+      "subjects": [
+        "mail-ballot ID",
+        "election integrity",
+        "HB 577"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:21:52.854Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fb363c4e6c6b91ab7869f2a8da0e5f42df07b8d715da5498f47930b36b0c5e6a",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/ron-ferguson/news/state-rep-ferguson-provides-sponsor-testimony-for-house-bill-577-142669",
+      "date": "2026-03-19",
+      "date_precision": "day",
+      "passage": "The best way to ensure the integrity of our elections is to require a photo ID to vote.",
+      "note": "Quote in the release on his sponsor testimony to the House General Government Committee on HB 577. Page read through the fetch tool.",
+      "subjects": [
+        "photo ID to vote",
+        "mail-ballot ID",
+        "HB 577"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:21:52.854Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5668c65dc94d21c5b1b4eea9ce6665dabb17510b06185111eb6267981dfca8e9",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/ron-ferguson/news/state-rep-ferguson-provides-sponsor-testimony-for-house-bill-577-142669",
+      "date": "2026-03-19",
+      "date_precision": "day",
+      "passage": "Elections are the foundation of our republic, and it is important that every vote is legally cast and accurately counted.",
+      "note": "Second quote in the same release on his HB 577 testimony. Page read through the fetch tool.",
+      "subjects": [
+        "election integrity",
+        "HB 577"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:21:52.854Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "56b010f7fc62f444da2587cdf3e91f89fc57f618ba5256796b1f89be131e2892",
+      "kind": "own-words",
+      "url": "https://wysu.org/ohio-news/2026-06-08/ohio-gops-voter-id-amendment-remains-unchanged-for-now",
+      "date": "2026-06-08",
+      "date_precision": "day",
+      "passage": "“The Ohio Senate missed the mark, but we have the chance to salvage it in the Ohio House,” Rep. Ron Ferguson (R-Wintersville) said in a series of tweets last week. “Photo ID for every voter.”",
+      "note": "Statehouse News Bureau (via WYSU) quoting his posts the week before about SJR 10, the photo-ID amendment passed by the Senate. The article date is taken from the URL; the posts date from about the week before, exact day unknown.",
+      "subjects": [
+        "photo ID constitutional amendment (SJR 10)",
+        "mail-ballot ID",
+        "photo ID for every voter"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:21:52.854Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "07a62dc66aed003e5e74c155b191a11270cce9e881a9d9c6358ef547bbe69d62",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/actions/",
+      "date": "2022-12-14",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-458-2022",
+      "act": "yea",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 55-34) on H. B. No. 458, from the Ohio Legislature's own actions record, which lists each member by id (rep_ferguson_ron_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.674Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b76b08444464d687d2e3e5da5ab666871be545e481f02bd01a7bfa3659054db7",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hcr18/actions/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "yea",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 73-20) on H. C. R. No. 18, from the Ohio Legislature's own actions record, which lists each member by id (rep_ferguson_ron_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.674Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cb87000697b71758e7ca0ad908fe673527a271a0150eff9c6bd3ec29180be76c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "yea",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_ferguson_ron_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.674Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9a63aac1c1e14018bf98e6880c175f27f3a92b342aea6ccda9c7bce0c4111b31",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/134/hb387",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-387-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. B. No. 387 (As Introduced) on the Ohio Legislature's own record (rep_ferguson_ron_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.674Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a08e6acba11ba64f30bd1583402d173ccf5a89443601457ea1e4ad57923d135e",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/134/hb650",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-650-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. B. No. 650 (As Introduced) on the Ohio Legislature's own record (rep_ferguson_ron_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.674Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4c8a82a5365942470c885c842672add69e6dda1efc0bad7d015c5be404610de4",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/hb577",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-577-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, As Introduced (00_IN)",
+      "note": "Listed as prime sponsor of H. B. No. 577 (As Introduced) on the Ohio Legislature's own record (rep_ferguson_ron_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.674Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID amendment (SJR 10 / State Issue 3)",
+        "mail-ballot ID (HB 577 Secure the Vote Act)",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official House page https://ohiohouse.gov/members/ron-ferguson (confirms State Representative, House District 96, Wintersville; two election items found)",
+        "House release 2025-11-07 Secure the Vote Act (https://ohiohouse.gov/members/ron-ferguson/news/rep-ferguson-introduces-the-secure-the-vote-act-139371), via fetch tool",
+        "House release 2026-03-19 sponsor testimony on HB 577 (https://ohiohouse.gov/members/ron-ferguson/news/state-rep-ferguson-provides-sponsor-testimony-for-house-bill-577-142669), via fetch tool",
+        "Statehouse News Bureau via WYSU 2025-11-12 and 2026-06-08, read by plain curl",
+        "four web searches run (name + Secure the Vote Act, SJR 10, Issue 3, SB 293, proof of citizenship)",
+        "blocked: https://www.legislature.ohio.gov/legislation/136/hb577/committee (curl 403; committee testimony PDF not reached)",
+        "blocked: curl 403 on ohiohouse.gov news pages (fetch tool used for the same pages)",
+        "blocked (by instruction): Ballotpedia, bluevoterguide.org, votesmart; refused-by-robots news sites not opened",
+        "not reviewed: https://www.dailysignal.com/2026/06/02/voter-id-effort-makes-moves-in-ohio/ (curl returned no Ferguson text)",
+        "nothing on the subject found for proof of citizenship or SB 293"
+      ],
+      "found": 6,
+      "at": "2026-11-06T16:21:52.854Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 6,
+      "at": "2026-11-06T16:28:34.674Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
 }

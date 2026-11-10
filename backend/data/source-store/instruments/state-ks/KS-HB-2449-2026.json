@@ -1,0 +1,25 @@
+{
+  "id": "KS-HB-2449-2026",
+  "scope": "state:ks",
+  "title": "HB 2449 (2025-2026 biennium (2026 Regular Session)): HB 2449 Authorizing the removal of a voter from voter registration rolls if such voter is issued a driver's license by another state and requiring attestation on voter registration form that obtaining a foreign driver's license constitutes a change in residency for voting purposes.",
+  "urls": [
+    "https://www.kslegislature.gov/b2025_26/bills/HB2449/",
+    "https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hb_2449/hb2449_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) K.S.A. 25-2309(a) registration form content\n(quote) a statement that the applicant shall be required to provide identification when voting;\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) K.S.A. 25-2309(l)\n(quote) (l) The county election officer or secretary of state's office shall accept any completed application for registration, but an applicant shall not be registered until the applicant has provided satisfactory evidence of United States citizenship.\n(e_other_rule)\n(section) Title\n(quote) AN ACT concerning elections; relating to voter registration; authorizing the removal of a voter from voter registration rolls if such voter is issued a driver's license by another state; requiring an attestation on voter registration forms that states that obtaining a foreign driver's license constitutes a change of residency for voting purposes;\n(other) K.S.A. 25-2324: removal of a voter who is issued a licence by another state.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "House Committee on Elections",
+      "role": "prime",
+      "version": "As Introduced (hb2449_00)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

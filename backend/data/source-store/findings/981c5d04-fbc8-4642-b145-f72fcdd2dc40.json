@@ -106,6 +106,411 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "429fb418c59d7350d1a3d3abd6aaf2976e2e743c900b178940b7425a21bcf335",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H193",
+      "date": "2025-07-29",
+      "date_precision": "day",
+      "instrument_id": "NC-H-193-2025",
+      "act": "yea",
+      "motion": "Motion 11 Veto Override",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "NC Senate, Motion 11 Veto Override, 2025-07-29: yea (tally 29–19); census gate: multi-subject.",
+      "subjects": [
+        "permit holders may carry on nonpublic school and school-church property",
+        "nonpublic school staff may carry with written authorization and training",
+        "relocated law enforcement shooting ranges shielded from local limits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-H-193-2025.chaptered.html",
+          "sha256": "4e1b8602b941f80ce4472f753fd8398bb206adecfd47d41ca4fd7b32721d3170"
+        }
+      }
+    },
+    {
+      "id": "83b55f1fd792db34238272705f10ed53ae83065458f032fca28d5b9df4215e6e",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2021/H398",
+      "date": "2021-08-18",
+      "date_precision": "day",
+      "instrument_id": "NC-H-398-2021",
+      "act": "yea",
+      "motion": "Second Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NC Senate, Second Reading, 2021-08-18: yea (tally 27–20); census gate: none.",
+      "subjects": [
+        "pistol purchase permits repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-H-398-2021.enrolled.html",
+          "sha256": "cb4440fe754d67b912477f97a7f6f890b822f9ae08b5793dfe34a06d5a16b8fb"
+        }
+      }
+    },
+    {
+      "id": "6e6d5df1835714bec1a66badb471257c497d888d9e0602ad773745d6df784b7e",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2021/H49",
+      "date": "2022-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-49-2021",
+      "act": "yea",
+      "motion": "Second Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NC Senate, Second Reading, 2022-06-30: yea (tally 27–20); census gate: none.",
+      "subjects": [
+        "permit renewal training waived for late renewals up to 180 days"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-H-49-2021.enrolled.html",
+          "sha256": "a834dda0f357593dbfe24939e9b187cf3464d9e5e7b985c620cf7d86590025a8"
+        }
+      }
+    },
+    {
+      "id": "7e8993fde4dea00535ea14822dce009ac146376e2ece102c5de126c7d44cc8db",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2019/H652",
+      "date": "2020-06-25",
+      "date_precision": "day",
+      "instrument_id": "NC-H-652-2019",
+      "act": "yea",
+      "motion": "Conference Rpt Motion 8 To Adopt",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NC Senate, Conference Rpt Motion 8 To Adopt, 2020-06-25: yea (tally 33–14); census gate: none.",
+      "subjects": [
+        "permit holders may carry handguns on religious-school grounds after school hours",
+        "concealed handgun permit renewal training waived after lapse",
+        "designated law enforcement facility employees may carry concealed",
+        "tactical EMS personnel exempt from concealed weapons ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-H-652-2019.enrolled.html",
+          "sha256": "eb0db7aa4ca641651ed001d60d346fe221383def440f98498f3298d034541f75"
+        }
+      }
+    },
+    {
+      "id": "55e7690999fb36d06c0f5d04a229870f4a3faf02cdadc97806d2720bd823c742",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/S118",
+      "date": "2025-06-25",
+      "date_precision": "day",
+      "instrument_id": "NC-S-118-2025",
+      "act": "yea",
+      "motion": "Conference Report Motion 8 To Adopt",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "NC Senate, Conference Report Motion 8 To Adopt, 2025-06-25: yea (tally 45–0); census gate: near-unanimous.",
+      "subjects": [
+        "lower concealed handgun permit fees for honorably discharged veterans",
+        "e-mail option for concealed handgun permit renewal notices"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-S-118-2025.chaptered.html",
+          "sha256": "d1a417500db87564fb471b17578e775e03beae7face9cb2537d9ecf5b76cc31d"
+        }
+      }
+    },
+    {
+      "id": "f97570c6ae5b229852dd2ae703bd63308fd8a4ffff2c9470c56e5bd3782f01d2",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S41",
+      "date": "2023-03-28",
+      "date_precision": "day",
+      "instrument_id": "NC-S-41-2023",
+      "act": "yea",
+      "motion": "Motion 11 Veto Override",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NC Senate, Motion 11 Veto Override, 2023-03-28: yea (tally 30–19); census gate: none.",
+      "subjects": [
+        "concealed handgun carry allowed on church-school property outside school hours",
+        "designated law-enforcement staff may carry in law enforcement facilities",
+        "pistol purchase permits repealed",
+        "statewide firearm safe storage awareness campaign"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-S-41-2023.chaptered.html",
+          "sha256": "45b11fd7cfe412aa46614761b8cd49e1f590008b4a0a6d6b5e1435cd19b4cc5a"
+        }
+      }
+    },
+    {
+      "id": "f3611f7a35f667cb0114435459d201d68938a7a5ae42c0a68cd59a7c6b3c473f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2021/S43",
+      "date": "2021-06-08",
+      "date_precision": "day",
+      "instrument_id": "NC-S-43-2021",
+      "act": "yea",
+      "motion": "Motion 9 To Concur",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NC Senate, Motion 9 To Concur, 2021-06-08: yea (tally 30–19); census gate: none.",
+      "subjects": [
+        "permit holders may carry handguns on church-school property outside school hours",
+        "designated civilian law enforcement employees may carry in law enforcement facilities"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-S-43-2021.enrolled.html",
+          "sha256": "2a6b1aa4b16d242b5ccf89e4b7661c24ae844653c6ecf9409baf76542c3a8817"
+        }
+      }
+    },
+    {
+      "id": "c3a09492ad891c20e5b3175a9bd0000d2771eb4aa787b1d5046894ffc22d4f63",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S650",
+      "date": "2023-05-01",
+      "date_precision": "day",
+      "instrument_id": "NC-S-650-2023",
+      "act": "yea",
+      "motion": "Second Reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "NC Senate, Second Reading, 2023-05-01: yea (tally 48–0); census gate: near-unanimous.",
+      "subjects": [
+        "new felony for felon possessing a gun during a felony",
+        "higher penalty if gun is brandished or discharged"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-S-650-2023.amended.html",
+          "sha256": "5d2e11067a2eee305b2e738541b2170c358f59a39ce3072446d2d3336f563ac9"
+        }
+      }
+    },
+    {
+      "id": "01aaa7956b9daf9b7d8d9caa84dd3a241894e5b4327924647e97ec788a98f391",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/S118",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "NC-S-118-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of NC-S-118-2025 (LegiScan sponsor list): S118 (2025-2026 Session): Military and Veteran Support Act.",
+      "subjects": [
+        "lower concealed handgun permit fees for honorably discharged veterans",
+        "e-mail option for concealed handgun permit renewal notices"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-S-118-2025.chaptered.html",
+          "sha256": "d1a417500db87564fb471b17578e775e03beae7face9cb2537d9ecf5b76cc31d"
+        }
+      }
+    },
+    {
+      "id": "20e45cdc111343cf3c8eb6bc780a996aeb2fe98b0f12dcd759386bb9096bc609",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S41",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "NC-S-41-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of NC-S-41-2023 (LegiScan sponsor list): S41 (2023-2024 Session): Guarantee 2nd Amend Freedom and Protections.",
+      "subjects": [
+        "concealed handgun carry allowed on church-school property outside school hours",
+        "designated law-enforcement staff may carry in law enforcement facilities",
+        "pistol purchase permits repealed",
+        "statewide firearm safe storage awareness campaign"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-S-41-2023.chaptered.html",
+          "sha256": "45b11fd7cfe412aa46614761b8cd49e1f590008b4a0a6d6b5e1435cd19b4cc5a"
+        }
+      }
+    },
+    {
+      "id": "89dc6baa8cd4cf1a7fa12aa347e211eddd08f6122e5d47fd53adc8996edbe4fd",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2021/S43",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "NC-S-43-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of NC-S-43-2021 (LegiScan sponsor list): S43 (2021-2022 Session): Protect Religious Meeting Places.",
+      "subjects": [
+        "permit holders may carry handguns on church-school property outside school hours",
+        "designated civilian law enforcement employees may carry in law enforcement facilities"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-S-43-2021.enrolled.html",
+          "sha256": "2a6b1aa4b16d242b5ccf89e4b7661c24ae844653c6ecf9409baf76542c3a8817"
+        }
+      }
+    },
+    {
+      "id": "970ae3b6f97463f89712f9545fa1a1f8b41a89bc15958a78ecc328b45062ffba",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S650",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "NC-S-650-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of NC-S-650-2023 (LegiScan sponsor list): S650 (2023-2024 Session): Gun Violence Prevention Act.",
+      "subjects": [
+        "new felony for felon possessing a gun during a felony",
+        "higher penalty if gun is brandished or discharged"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-S-650-2023.amended.html",
+          "sha256": "5d2e11067a2eee305b2e738541b2170c358f59a39ce3072446d2d3336f563ac9"
+        }
+      }
+    },
+    {
+      "id": "5a3e7153d92005b9b21d4c102c466cbf4969491b0952a5e6f90500d2959eb24a",
+      "kind": "own-words",
+      "url": "https://jocoreport.com/constitutional-carry-will-north-carolina-be-the-30th-state-to-approve-permitless-carry",
+      "date": "2025-02-05",
+      "date_precision": "day",
+      "passage": "“But there is that constitutional issue, right? I mean, you do have the right to bear arms,” Sawyer added. “I see really both sides of the concerns about not having folks who don’t have the training but yet are allowed to purchase guns and to carry. But I think there is a constitutional issue there, I mean, you should be able to carry a gun.”",
+      "note": "Carolina Journal story (reprinted on jocoreport.com, dated by the page as 2025-02-05) quotes Sen. Vickie Sawyer (Iredell) from a recent podcast interview on permitless carry. The date is the story's publication date; the interview date is not stated.",
+      "subjects": [
+        "carry a gun without a permit",
+        "right to bear arms",
+        "training for gun carriers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-06T00:06:19.209Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5091814fc8e25cd548a0899420c92824a5a12bc7a5297c9acbdbe66f6fae280f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/S280",
+      "date": "2025-05-07",
+      "date_precision": "day",
+      "instrument_id": "NC-S-280-2025",
+      "act": "yea",
+      "motion": "Second Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NC Senate, Second Reading, 2025-05-07: yea (tally 29–18); census gate: none.",
+      "subjects": [
+        "armed staff and volunteers allowed at private schools",
+        "concealed handguns allowed in church buildings that share a school site"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by source-collector (Sonnet) from the saved official copy",
+        "fetched_at": "2026-11-05T23:47:38.356374Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NC-S-280-2025.edition-3.html",
+          "sha256": "2f5dc12ef153c0522ded230925540f44679a8e8bf8d246ad23dd814badc35b98"
+        }
+      }
     }
   ],
   "searches": [
@@ -133,6 +538,31 @@
       ],
       "found": 0,
       "at": "2026-10-23T00:00:50.749Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permitless (constitutional) carry",
+        "right to bear arms",
+        "training for carry",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.ncleg.gov/Members/Biography/S/405 (confirms Senator Vickie Sawyer, District 37; nothing on the subject)",
+        "https://iredellfreenews.com/?p=90761 (confirms office; nothing on the subject)",
+        "official/campaign site: vickiesawyer.com did not resolve (host not found); ncsenate.gov host not found",
+        "Ballotpedia: page returned empty to fetch tool",
+        "blocked: https://ncnewsline.com/2025/03/18/nc-senate-committee-approves-permitless-carry-of-concealed-firearms-for-residents-18-and-older/ (403)",
+        "blocked: https://votesmart.org/public-statement/1475685/issue-position-2nd-amendment (404, and the snippet did not name the office, so not used)",
+        "sponsor list: covered by LegiScan bulk check",
+        "news search on name plus subject words: one interview quote found (Carolina Journal via jocoreport.com)",
+        "not reviewed: the podcast interview itself, which the news story cites"
+      ],
+      "found": 1,
+      "at": "2026-11-06T00:06:19.209Z",
       "by": "source-collector"
     }
   ]

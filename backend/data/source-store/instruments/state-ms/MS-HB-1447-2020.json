@@ -1,0 +1,35 @@
+{
+  "id": "MS-HB-1447-2020",
+  "scope": "state:ms",
+  "title": "HB 1447 (2020 Regular Session): Collegiate voters; require each public and private 4-year postsecondary institution to have an on-campus voting precinct.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2020/pdf/history/HB/HB1447.xml",
+    "https://billstatus.ls.state.ms.us/documents/2020/pdf/HB/1400-1499/HB1447IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 2\n(quote) Possesses the required voter identification required under Section 23-15-563.\n(section) Sec. 18 (23-15-563(1), brought forward)\n(quote) Each person who appears to vote in person at a polling place or the registrar's office shall be required to identify himself or herself to a poll manager or the registrar by presenting current and valid photo identification before such person shall be allowed to vote.\n(section) Sec. 18 (23-15-563(2))\n(quote) (a) A current and valid Mississippi driver's license; (b) A current and valid identification card issued by a branch, department, agency or entity of the State of Mississippi; (c) A current and valid United States passport;\n(section) Sec. 18 (23-15-563(2))\n(quote) (h) A current and valid student identification card, containing a photograph of the elector, issued by any accredited college, university or community or junior college in the State of Mississippi;\n(b_no_id_remedy)\n(section) Sec. 18 (23-15-563(3)(a))\n(quote) A person who appears to vote in person at a polling place and does not have identification as required by this section may vote by affidavit ballot. The affidavit ballot shall then be counted if the person shall present acceptable photo identification to the registrar within five (5) days.\n(section) Sec. 18 (23-15-563(3)(b))\n(quote) An elector who has a religious objection to being photographed may vote by affidavit ballot, and the elector, within five (5) days after the election, shall execute an affidavit in the registrar's office affirming that the exemption applies.\n(c_mail_ballot_id)\n(section) Sec. 12 (23-15-47)\n(quote) Upon receipt of a mail-in application, the county registrar shall stamp the application with the date of receipt, and shall verify the application either by matching the applicant's Mississippi driver's license number through the Mississippi Department of Public Safety or by matching the applicant's social security number through the American Association of Motor Vehicle Administrators.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 18 (23-15-563(4))\n(quote) The intentional failure of an election official to require a voter to present identification as required by this section shall be considered corrupt conduct under Section 97-13-19 and shall be reported to the Secretary of State and the Attorney General.\n(section) Sec. 3 (23-15-11, brought forward)\n(quote) Every inhabitant of this state, except persons adjudicated to be non compos mentis, who is a citizen of the United States of America, eighteen (18) years old\n(other) Sec. 1: each eligible four-year college must have a voting precinct on its main campus\n(other) Sec. 2: on-campus students may vote at the campus precinct if registered, using campus address, and possessing required voter ID\n(other) Colleges must give the county registrar access to register voters; voter education\n(other) 23-15-39 through 23-15-49, 23-15-283, 23-15-285, 23-15-563 brought forward for possible amendment; 23-15-281 and 23-15-557 conformed\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Anderson (110th)",
+      "role": "prime",
+      "version": "HB1447IN"
+    },
+    {
+      "name": "Paden",
+      "role": "co",
+      "version": "HB1447IN"
+    },
+    {
+      "name": "Summers",
+      "role": "co",
+      "version": "HB1447IN"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

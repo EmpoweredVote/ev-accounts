@@ -1,0 +1,19 @@
+{
+  "id": "OH-HB-358-2009",
+  "scope": "state:oh",
+  "title": "HB 358 (2009-2010 (128th General Assembly)): H. B. No. 358: Absentee voting",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/128/hb358",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_128/legislation/hb358/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) 3512.02(A)\n(quote) (5) One of the following, unless the elector is a first-time mail-in registrant: (a) The elector's Ohio driver's license number; (b) The last four digits of the elector's social security number; (c) A copy of the elector's identification.\n(section) 3512.02(A)\n(quote) (12) If the elector is a first-time mail-in registrant, a copy of the elector's first-time mail-in registrant identification.\n(section) 3512.04(A)\n(quote) Unless the elector is a first-time mail-in registrant, the elector shall provide the elector's Ohio driver's license number or the last four digits of the elector's social security number on the statement of voter on the identification envelope. If the elector does not provide the elector's Ohio driver's license number or the last four digits of the elector's social security number on the statement of voter, the elector shall include in the return envelope with the identification envelope a copy of the elector's identification. If the elector is a first-time mail-in registrant, the elector shall include a copy of the elector's first-time mail-in registrant identification.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) 3505.23, 3509.01, 3511.04, 3511.10: change the time by which absent voter's ballots must be ready\n(other) 3509.032, 3511.14: Secretary of State may make emergency revisions to the armed-service absent voting rules\n(other) 3512.01-3512.07 (new): write-in absent voter's ballots for certain overseas voters who cannot cast regular absent ballots; application and return-envelope ID rules are in 3512.02 and 3512.04\n(other) note: Only one version (introduced). The ID rules quoted are in new sections for write-in absentee ballots for overseas voters, not for ordinary absentee voting. 'Identification' and 'first-time mail-in registrant identification' are not defined in the text read. Struck words are not marked.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

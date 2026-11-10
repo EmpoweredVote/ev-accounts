@@ -1,0 +1,113 @@
+{
+  "politician_id": "f1509da6-d506-44bc-ae4e-e574c6b0b751",
+  "findings": [
+    {
+      "id": "c4338a77b3aba428947279af06cd61e61cdf9a7e779c7a2e8d9568cae10778af",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/house/legislative_days/day045_20250320/vote_records/0275_HB2020.odt",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "nay",
+      "motion": "House: Concurred with amendments",
+      "note": "House roll call as printed ('Oropeza'), linked to Melissa Oropeza (district 37) via the official 2025 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.944Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1eb42db9bde1e358d45830781df62725c9ce8abcb4f9a4b11b626d8974c58e80",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day053_20260409/vote_records/0408_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "House: Motion to override veto prevailed",
+      "note": "House roll call as printed ('Oropeza'), linked to Melissa Oropeza (district 37) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.944Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d78e075f99a6894d381835920e3c20b2e83e350f416352edaa8f164c0df580f1",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day023_20260212/vote_records/0067_HB2448.odt",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2448-2026",
+      "act": "nay",
+      "motion": "House: Emergency Final Action - Passed as amended",
+      "note": "House roll call as printed ('Oropeza'), linked to Melissa Oropeza (district 37) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.944Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "citizenship-only voting amendment",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "KS legislature member page https://www.kslegislature.gov/li/b2025_26/members/rep_oropeza_melissa_1/ (confirms House District 37; committees listed; no election statements)",
+        "campaign site https://www.oropeza4kansas.com/ and /issues (only election dates and a judicial-selection amendment line; nothing on ID or citizenship)",
+        "campaign newsletter page https://www.oropeza4kansas.com/newsletter-2-jan (404)",
+        "KCUR 2024 voter guide https://www.kcur.org/kcvoterguide2024/kansas/house-district-37 (confirms race; no answers on the subject)",
+        "House Elections testimony HB 2448 (two PDFs opened, neither signed by this person)",
+        "6 web searches (voter ID, citizenship, Elections committee, newsletter, questionnaire): nothing on the subject in her own words",
+        "blocked: https://bluevoterguide.org/KS/candidate_Melissa_Oropeza/370083 (403)",
+        "blocked: https://ballotpedia.org/Melissa_Oropeza (not fetched, listed as refusing)",
+        "blocked: kansasreflector.com (not fetched, listed as refusing)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T16:58:39.880Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-04T19:13:24.944Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

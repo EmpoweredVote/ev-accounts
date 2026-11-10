@@ -1,0 +1,246 @@
+{
+  "politician_id": "bebc168c-8e2e-4ad8-9d84-848d583e92a7",
+  "findings": [
+    {
+      "id": "ff5b0400d1030c87648c5fb8e3afb920af22389cb4a9582cb34be5dfda705073",
+      "kind": "own-words",
+      "url": "https://delberthosemann.com/electionsecurity/",
+      "date": "2023",
+      "date_precision": "year",
+      "passage": "As Secretary of State, he fought to implement a constitutional voter ID law requiring identification to cast a ballot. He also made it easier for our military servicemembers who are serving overseas to vote and helped clean up bloated voter rolls.",
+      "note": "Campaign site page (2023 re-election, says vote August 8); site text is written in the third person. Page itself is undated.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter-roll clean-up"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:42:56.092Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "df3416d409b4590cb3322c0dfb8cbf3874687d9bfb04c81d8f433e720b4532ce",
+      "kind": "own-words",
+      "url": "https://delberthosemann.com/electionsecurity/",
+      "date": "2023",
+      "date_precision": "year",
+      "passage": "Under Delbert’s leadership as Lt. Governor, the Mississippi Senate voted to:\nAllow the Secretary of State to perform a full citizenship check to ensure illegal aliens are not voting;",
+      "note": "Campaign site list of Senate actions during his term as Lt. Governor; other items on the list cover paper-ballot equipment funds, tools for clerks to keep voter rolls accurate, and a ban on private money for running elections.",
+      "subjects": [
+        "citizenship check of voter rolls",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:42:56.092Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "88e0db4510fd08a2dd810a45933e22b84f93b01470cfc867bea19c8a50d4f8ea",
+      "kind": "own-words",
+      "url": "https://www.mississippifreepress.org/candidate-questionnaire-delbert-hosemann-lt-governor/",
+      "date": "2019-07-22",
+      "date_precision": "day",
+      "passage": "My record is what best qualifies me to serve as Lieutenant Governor. I have experience drafting and implementing meaningful legislation, like the bill securing insurance coverage for treatment for autism and other developmental disorders and Voter ID, and a history of bringing Mississippians with many different perspectives together to solve a problem.",
+      "note": "Written answer to a candidate questionnaire (verbatim responses per the paper); date is the original story date, republished by the Mississippi Free Press in 2025.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:42:56.092Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "997b01654d59a9f7cb453c4bf208e7131c2ab50c042fe36e231304cc1cc202f9",
+      "kind": "own-words",
+      "url": "https://www.mississippifreepress.org/fact-check-free-voter-ids-available-for-mississippians-under-state-law/",
+      "date": "2021-06-04",
+      "date_precision": "day",
+      "passage": "“Recent news articles have stated a provision of Mississippi’s Voter ID law, allowing a Mississippian to be issued a free voter identification card, has not been codified in state law. Those articles are inaccurate. The provision requiring a free Voter ID card is provided for in state law,” Hosemann said in a statement today.",
+      "note": "Statement as Lt. Governor, quoted by the Mississippi Free Press. The paper's text has non-breaking spaces and a line break inside the quote. He cites Miss. Code 23-15-7 on no fee for a voter ID card.",
+      "subjects": [
+        "free state ID for voters",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:42:56.092Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39bb27940616050fc419dedbf1d62712d0c15067c96b79b48e7119a982d17801",
+      "kind": "own-words",
+      "url": "https://www.mississippifreepress.org/at-the-capitol-lawmakers-flirt-with-purges-of-registered-voters-felony-convictions/",
+      "date": "2021-01",
+      "date_precision": "month",
+      "passage": "“To get those voter rolls right is important to the state—it’s important to the country,” Hosemann said.",
+      "note": "Quoted by the Mississippi Free Press (story dated 2021-01-30, says he spoke to the media on a Thursday); he said he supported action to clean up the voter rolls.",
+      "subjects": [
+        "voter-roll clean-up"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:42:56.092Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "24cc1123d99d0a26072c77bbbf9a42657635b3b5566c202eab680f829b2b655e",
+      "kind": "own-words",
+      "url": "https://magnoliatribune.com/2021/04/07/can-mississippis-successful-implementation-of-voter-id-be-a-path-for-georgia-other-states/",
+      "date": "2021-04-07",
+      "date_precision": "day",
+      "passage": "“Well, I’d like to think we had a relatively good Secretary of State for a while and one of the things we ran on 12 years ago now, was to implement a voter ID and have secure elections,” said Hosemann.",
+      "note": "Interview with Y'all Politics (Magnolia Tribune) as Lt. Governor, on how voter ID was put in place in Mississippi.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:42:56.092Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6a01ec3c47f3f23419c1154d2ec074dbb9180a76cbf010eda6827157f06ff40e",
+      "kind": "own-words",
+      "url": "https://magnoliatribune.com/2021/04/07/can-mississippis-successful-implementation-of-voter-id-be-a-path-for-georgia-other-states/",
+      "date": "2021-04-07",
+      "date_precision": "day",
+      "passage": "“I particularly didn’t want him to sue me. I remember it got dead quiet when I said that, at that time,” said Hosemann, telling Herrin, “Besides I had to get an ID to get in here to see you so I don’t see why you wouldn’t have one to vote.”",
+      "note": "Same interview; he recounts a meeting with a U.S. Justice Department official while planning the law. The article also says a 2012 exit survey found more than 98 percent of surveyed voters had a qualifying ID (reporter's words).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:42:56.092Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "26aa24f1c38d1ef45d3a4108e5381b2aad57966c10a892a0f5bab79d983a6a96",
+      "kind": "own-words",
+      "url": "https://www.mississippifreepress.org/free-voter-id-will-cost-but-what/",
+      "date": "2012-06-18",
+      "date_precision": "day",
+      "passage": "“Our office is taking a proactive, rather than reactive, approach to the constitutional change,” Hosemann said in a statement. “We are hoping to find as many people as possible who need a voter ID while we are awaiting approval. We can then expedite the process for getting them the proper identification later.”",
+      "note": "Statement as Secretary of State on free voter ID cards (paper says announced the day before its 2012-06-19 post; date is the day before the post).",
+      "subjects": [
+        "free state ID for voters",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:42:56.092Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "defb68f20dd95cb9be73e07bdfec226b769cfff5d01a72ce8e64fd80c3437d1f",
+      "kind": "own-words",
+      "url": "https://dailyleader.com/2009/05/27/hosemann-hopeful-for-voter-id-effort/",
+      "date": "2009-05-27",
+      "date_precision": "day",
+      "passage": "“It’s a chance for the citizens to rise up and make a decision without the Legislature,” Hosemann said. “Now, because we didn’t(pass voter ID in the Legislautre), we’ve got to go through the initiative process. It takes a good bit of work.”",
+      "note": "Quoted by the Daily Leader (Brookhaven) on the voter ID ballot initiative while Secretary of State. Spelling and the bracket text are the paper's. Same story quotes him: \"There is heavy activity and I think it will pick up during the summer months.\"",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:42:56.092Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "da135c3bde79dccc362868d0e36ddea8d013aa340a0ff7d62e5356fca618040d",
+      "kind": "own-words",
+      "url": "https://picayuneitem.com/2008/01/hosemann-says-miss-shouldnt-wait-for-court-to-enact-voter-id/",
+      "date": "2008-01-30",
+      "date_precision": "day",
+      "passage": "“The goal is not to exclude people from voting. The arguments that this would disenfranchise somebody are just wrong,” Hosemann said.",
+      "note": "Quoted by the Picayune Item (post dated 2008-01-31; says he met lawmakers on Tuesday) on his proposed voter ID requirement. Same story says he proposed that voters present a photo ID, a utility bill or a free ID from the Secretary of State (reporter's words).",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID and non-photo documents",
+        "free state ID for voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:42:56.092Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID and non-photo documents",
+        "free voter ID card",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "citizenship check of voter rolls",
+        "voter-roll clean-up",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "campaign site: https://delberthosemann.com/electionsecurity/ (read; confirms Lt. Governor office)",
+        "Mississippi Free Press 2019 candidate questionnaire (read)",
+        "Mississippi Free Press 2021 and 2012 and 2021-01 articles, Magnolia Tribune 2021, Daily Leader 2009, Picayune Item 2008 (read)",
+        "Mississippi Free Press 2026 SHIELD Act articles and WDAM 2026-05-14 article (read; no Hosemann words on the subject)",
+        "legislature bill pages: not reviewed (floor votes and sponsorships linked separately)",
+        "blocked: https://ballotpedia.org (refuses fetches, not attempted)",
+        "blocked: https://www.northsidesun.com/news-breaking-news/hosemann-not-supportive-purging-voter-rolls-if-citizenship-questioned (403)",
+        "blocked: https://legalnewsline.com/stories/670461764-citizen-only-voting-measure-seems-dead-in-mississippi-but-hosemann-has-power-to-revive-it (429)",
+        "blocked: https://www.vicksburgpost.com/?p=472284 (403)",
+        "not reviewed: https://mississippitoday.org/2020/03/05/hosemann-does-not-support-citizenship-check-for-voters/ (site refuses AI agents in its robots file)",
+        "not reviewed: https://ivoterguide.com/race/6967/election/1069 (answers not in the search result; not fetched)"
+      ],
+      "found": 10,
+      "at": "2026-11-05T22:42:56.092Z",
+      "by": "search-ms-2026-11-05"
+    }
+  ]
+}

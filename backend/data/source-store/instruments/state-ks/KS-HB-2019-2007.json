@@ -1,0 +1,715 @@
+{
+  "id": "KS-HB-2019-2007",
+  "scope": "state:ks",
+  "title": "HB 2019 (2007-2008 Regular Session (2008 action)): AN ACT concerning elections; amending K.S.A. 25-4502 and 25-4503 and K.S.A. 2007 Supp. 25-1122, 25-1123, 25-2908, 25-3002 and 25-4501 and repealing the existing sections.",
+  "urls": [
+    "https://www.kslegislature.gov/historical_data/journals/2008/2008_H_Journal_0506.pdf",
+    "https://www.kslegislature.gov/historical_data/bills/2008/2007_H_Bill_2019.pdf",
+    "https://www.kslegislature.gov/historical_data/supplemental/2008/2008_O_CCRB_2019.pdf"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) Conference committee report, K.S.A. 25-2908(i)(1) (effective January 1, 2010)\n(quote) The following forms of identification shall be considered current and valid if such form of identification contains the name and photograph of the applicant and an expiration date which has not expired: (A) A Kansas driver’s license; (B) a Kansas identification card issued by the Kansas department of revenue; (C) a United States passport; (D) an employee badge or identification; (E) a debit or credit card; (F) a military identification; (G) a student identification; or (H) a public assistance identification.\n(section) Conference committee report, K.S.A. 25-1122(b) (advance voting in person) and 25-2908(c)(4)\n(quote) If the photographic identification does not contain the signature of the voter, an additional form of identification that provides the voter’s signature shall be required from the voter.\n(b_no_id_remedy)\n(section) Conference committee report, K.S.A. 25-2908(i)(2)\n(quote) If the voter fails to furnish the identification required by this subsection, the voter shall be allowed to vote a provisional ballot. The canvassing board shall determine the validity of the ballot pursuant to K.S.A. 25-3002 and amendments thereto.\n(c_mail_ballot_id)\n(section) Conference committee report, K.S.A. 25-1122(c)\n(quote) (c) If the registered voter is applying for an advance voting ballot to be transmitted by mail, and such voter is a first-time voter, such voter shall provide on the application for an advance voting ballot the voter’s current and valid Kansas driver’s license number, nondriver’s identification card number or the last four digits of the voter’s social security number, or shall provide with the application a copy of the voter’s current and valid Kansas driver’s license, nondriver’s identification card, utility bill, bank statement, paycheck, government check or other government document containing the voter’s current name and address as indicated on the registration book.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Conference committee report, free nondriver ID\n(quote) Any person who is 18 years of age or older and less than 65 years old may receive a nondriver’s identification card free of charge upon application to the division of motor vehicles to meet requirements for photographic identification under this act.\n(other) K.S.A. 25-1122, 25-1123 (advance voting): photographic ID for in-person advance voters; additional signature ID; mail first-time voter ID options.\n(other) K.S.A. 25-2908: photo ID for every in-person voter from January 1, 2010; exemptions (subsection (j)).\n(other) K.S.A. 25-3002: canvass of provisional ballots.\n(other) K.S.A. 25-4501-4503 (presidential preference primary date moved to the first Saturday in February beginning in 2012).\n(other) Free nondriver identification card for qualifying persons aged 18 to 64 (effective July 1, 2008).",
+  "sponsors": [],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2008-05-06",
+      "body": "KS Senate",
+      "motion": "Senator Huelskamp moved the Senate adopt the Conference Committee Report on HB 2019. (The Conference Committee report was adopted.)",
+      "kind": "roll-call",
+      "yes": 27,
+      "no": 3,
+      "absent": 10,
+      "body_size": 40,
+      "note": "2202 | https://www.kslegislature.gov/historical_data/journals/2008/2008_S_Journal_0506.pdf",
+      "members": [
+        {
+          "name": "Allen",
+          "vote": "yea"
+        },
+        {
+          "name": "Barnett",
+          "vote": "yea"
+        },
+        {
+          "name": "Barone",
+          "vote": "yea"
+        },
+        {
+          "name": "Brownlee",
+          "vote": "yea"
+        },
+        {
+          "name": "Brungardt",
+          "vote": "yea"
+        },
+        {
+          "name": "Donovan",
+          "vote": "yea"
+        },
+        {
+          "name": "Gilstrap",
+          "vote": "yea"
+        },
+        {
+          "name": "Huelskamp",
+          "vote": "yea"
+        },
+        {
+          "name": "Jordan",
+          "vote": "yea"
+        },
+        {
+          "name": "Journey",
+          "vote": "yea"
+        },
+        {
+          "name": "Lynn",
+          "vote": "yea"
+        },
+        {
+          "name": "McGinn",
+          "vote": "yea"
+        },
+        {
+          "name": "Morris",
+          "vote": "yea"
+        },
+        {
+          "name": "Ostmeyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Petersen",
+          "vote": "yea"
+        },
+        {
+          "name": "Pine",
+          "vote": "yea"
+        },
+        {
+          "name": "Pyle",
+          "vote": "yea"
+        },
+        {
+          "name": "Reitz",
+          "vote": "yea"
+        },
+        {
+          "name": "Schmidt D",
+          "vote": "yea"
+        },
+        {
+          "name": "Schmidt V",
+          "vote": "yea"
+        },
+        {
+          "name": "Schodorf",
+          "vote": "yea"
+        },
+        {
+          "name": "Teichman",
+          "vote": "yea"
+        },
+        {
+          "name": "Umbarger",
+          "vote": "yea"
+        },
+        {
+          "name": "Vratil",
+          "vote": "yea"
+        },
+        {
+          "name": "Wagle",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilson",
+          "vote": "yea"
+        },
+        {
+          "name": "Wysong",
+          "vote": "yea"
+        },
+        {
+          "name": "Betts",
+          "vote": "nay"
+        },
+        {
+          "name": "Hensley",
+          "vote": "nay"
+        },
+        {
+          "name": "Lee",
+          "vote": "nay"
+        },
+        {
+          "name": "Francisco",
+          "vote": "abstain"
+        },
+        {
+          "name": "Goodwin",
+          "vote": "abstain"
+        },
+        {
+          "name": "Haley",
+          "vote": "abstain"
+        },
+        {
+          "name": "Kelly",
+          "vote": "abstain"
+        },
+        {
+          "name": "Apple",
+          "vote": "absent"
+        },
+        {
+          "name": "Bruce",
+          "vote": "absent"
+        },
+        {
+          "name": "Emler",
+          "vote": "absent"
+        },
+        {
+          "name": "Palmer",
+          "vote": "absent"
+        },
+        {
+          "name": "Steineger",
+          "vote": "absent"
+        },
+        {
+          "name": "Taddiken",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2008-05-06",
+      "body": "KS House",
+      "motion": "On motion of Rep. Burgess, the conference committee report on HB 2019 was adopted.",
+      "kind": "roll-call",
+      "yes": 67,
+      "no": 56,
+      "absent": 2,
+      "body_size": 125,
+      "note": "2508 | https://www.kslegislature.gov/historical_data/journals/2008/2008_H_Journal_0506.pdf",
+      "members": [
+        {
+          "name": "Beamer",
+          "vote": "yea"
+        },
+        {
+          "name": "Bethell",
+          "vote": "yea"
+        },
+        {
+          "name": "Bowers",
+          "vote": "yea"
+        },
+        {
+          "name": "Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Brunk",
+          "vote": "yea"
+        },
+        {
+          "name": "Burgess",
+          "vote": "yea"
+        },
+        {
+          "name": "Carlson",
+          "vote": "yea"
+        },
+        {
+          "name": "Colloton",
+          "vote": "yea"
+        },
+        {
+          "name": "Colyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Crum",
+          "vote": "yea"
+        },
+        {
+          "name": "Dahl",
+          "vote": "yea"
+        },
+        {
+          "name": "Donohoe",
+          "vote": "yea"
+        },
+        {
+          "name": "Faber",
+          "vote": "yea"
+        },
+        {
+          "name": "Fund",
+          "vote": "yea"
+        },
+        {
+          "name": "George",
+          "vote": "yea"
+        },
+        {
+          "name": "Goico",
+          "vote": "yea"
+        },
+        {
+          "name": "Gordon",
+          "vote": "yea"
+        },
+        {
+          "name": "Grange",
+          "vote": "yea"
+        },
+        {
+          "name": "Hayzlett",
+          "vote": "yea"
+        },
+        {
+          "name": "Hodge",
+          "vote": "yea"
+        },
+        {
+          "name": "C. Holmes",
+          "vote": "yea"
+        },
+        {
+          "name": "M. Holmes",
+          "vote": "yea"
+        },
+        {
+          "name": "Horst",
+          "vote": "yea"
+        },
+        {
+          "name": "Huebert",
+          "vote": "yea"
+        },
+        {
+          "name": "Humerickhouse",
+          "vote": "yea"
+        },
+        {
+          "name": "Huntington",
+          "vote": "yea"
+        },
+        {
+          "name": "Kelsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Kiegerl",
+          "vote": "yea"
+        },
+        {
+          "name": "King",
+          "vote": "yea"
+        },
+        {
+          "name": "Kinzer",
+          "vote": "yea"
+        },
+        {
+          "name": "Knox",
+          "vote": "yea"
+        },
+        {
+          "name": "Landwehr",
+          "vote": "yea"
+        },
+        {
+          "name": "Mast",
+          "vote": "yea"
+        },
+        {
+          "name": "Masterson",
+          "vote": "yea"
+        },
+        {
+          "name": "McLeland",
+          "vote": "yea"
+        },
+        {
+          "name": "Merrick",
+          "vote": "yea"
+        },
+        {
+          "name": "Metsker",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Morrison",
+          "vote": "yea"
+        },
+        {
+          "name": "Judy Morrison",
+          "vote": "yea"
+        },
+        {
+          "name": "Myers",
+          "vote": "yea"
+        },
+        {
+          "name": "Neufeld",
+          "vote": "yea"
+        },
+        {
+          "name": "O’Neal",
+          "vote": "yea"
+        },
+        {
+          "name": "Olson",
+          "vote": "yea"
+        },
+        {
+          "name": "Otto",
+          "vote": "yea"
+        },
+        {
+          "name": "Patton",
+          "vote": "yea"
+        },
+        {
+          "name": "Peck",
+          "vote": "yea"
+        },
+        {
+          "name": "Pottorff",
+          "vote": "yea"
+        },
+        {
+          "name": "Powell",
+          "vote": "yea"
+        },
+        {
+          "name": "Powers",
+          "vote": "yea"
+        },
+        {
+          "name": "Rardin",
+          "vote": "yea"
+        },
+        {
+          "name": "Rhoades",
+          "vote": "yea"
+        },
+        {
+          "name": "Schroeder",
+          "vote": "yea"
+        },
+        {
+          "name": "Schwartz",
+          "vote": "yea"
+        },
+        {
+          "name": "Siegfreid",
+          "vote": "yea"
+        },
+        {
+          "name": "Sloan",
+          "vote": "yea"
+        },
+        {
+          "name": "Spalding",
+          "vote": "yea"
+        },
+        {
+          "name": "Swanson",
+          "vote": "yea"
+        },
+        {
+          "name": "Tafanelli",
+          "vote": "yea"
+        },
+        {
+          "name": "Vickrey",
+          "vote": "yea"
+        },
+        {
+          "name": "Watkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Whitham",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilk",
+          "vote": "yea"
+        },
+        {
+          "name": "Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "B. Wolf",
+          "vote": "yea"
+        },
+        {
+          "name": "K. Wolf",
+          "vote": "yea"
+        },
+        {
+          "name": "Worley",
+          "vote": "yea"
+        },
+        {
+          "name": "Yoder",
+          "vote": "yea"
+        },
+        {
+          "name": "Ballard",
+          "vote": "nay"
+        },
+        {
+          "name": "Burroughs",
+          "vote": "nay"
+        },
+        {
+          "name": "Carlin",
+          "vote": "nay"
+        },
+        {
+          "name": "Craft",
+          "vote": "nay"
+        },
+        {
+          "name": "Crow",
+          "vote": "nay"
+        },
+        {
+          "name": "Davis",
+          "vote": "nay"
+        },
+        {
+          "name": "Dillmore",
+          "vote": "nay"
+        },
+        {
+          "name": "Faust-Goudeau",
+          "vote": "nay"
+        },
+        {
+          "name": "Feuerborn",
+          "vote": "nay"
+        },
+        {
+          "name": "Flaharty",
+          "vote": "nay"
+        },
+        {
+          "name": "Flora",
+          "vote": "nay"
+        },
+        {
+          "name": "Frownfelter",
+          "vote": "nay"
+        },
+        {
+          "name": "Garcia",
+          "vote": "nay"
+        },
+        {
+          "name": "Gatewood",
+          "vote": "nay"
+        },
+        {
+          "name": "Goyle",
+          "vote": "nay"
+        },
+        {
+          "name": "Grant",
+          "vote": "nay"
+        },
+        {
+          "name": "Hawk",
+          "vote": "nay"
+        },
+        {
+          "name": "Henderson",
+          "vote": "nay"
+        },
+        {
+          "name": "Henry",
+          "vote": "nay"
+        },
+        {
+          "name": "Hill",
+          "vote": "nay"
+        },
+        {
+          "name": "Holland",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Kuether",
+          "vote": "nay"
+        },
+        {
+          "name": "Lane",
+          "vote": "nay"
+        },
+        {
+          "name": "Light",
+          "vote": "nay"
+        },
+        {
+          "name": "Loganbill",
+          "vote": "nay"
+        },
+        {
+          "name": "Long",
+          "vote": "nay"
+        },
+        {
+          "name": "Lukert",
+          "vote": "nay"
+        },
+        {
+          "name": "Mah",
+          "vote": "nay"
+        },
+        {
+          "name": "McCray-Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "McKinney",
+          "vote": "nay"
+        },
+        {
+          "name": "McLachlan",
+          "vote": "nay"
+        },
+        {
+          "name": "Menghini",
+          "vote": "nay"
+        },
+        {
+          "name": "Moxley",
+          "vote": "nay"
+        },
+        {
+          "name": "Neighbor",
+          "vote": "nay"
+        },
+        {
+          "name": "Owens",
+          "vote": "nay"
+        },
+        {
+          "name": "Palmer",
+          "vote": "nay"
+        },
+        {
+          "name": "Pauls",
+          "vote": "nay"
+        },
+        {
+          "name": "Peterson",
+          "vote": "nay"
+        },
+        {
+          "name": "Phelps",
+          "vote": "nay"
+        },
+        {
+          "name": "Proehl",
+          "vote": "nay"
+        },
+        {
+          "name": "Quigley",
+          "vote": "nay"
+        },
+        {
+          "name": "Roth",
+          "vote": "nay"
+        },
+        {
+          "name": "Ruff",
+          "vote": "nay"
+        },
+        {
+          "name": "Ruiz",
+          "vote": "nay"
+        },
+        {
+          "name": "Sawyer",
+          "vote": "nay"
+        },
+        {
+          "name": "Shultz",
+          "vote": "nay"
+        },
+        {
+          "name": "Storm",
+          "vote": "nay"
+        },
+        {
+          "name": "Svaty",
+          "vote": "nay"
+        },
+        {
+          "name": "Swenson",
+          "vote": "nay"
+        },
+        {
+          "name": "Tietze",
+          "vote": "nay"
+        },
+        {
+          "name": "Treaster",
+          "vote": "nay"
+        },
+        {
+          "name": "Trimmer",
+          "vote": "nay"
+        },
+        {
+          "name": "Ward",
+          "vote": "nay"
+        },
+        {
+          "name": "Wetta",
+          "vote": "nay"
+        },
+        {
+          "name": "Winn",
+          "vote": "nay"
+        },
+        {
+          "name": "Aurand",
+          "vote": "absent"
+        },
+        {
+          "name": "Kelley",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

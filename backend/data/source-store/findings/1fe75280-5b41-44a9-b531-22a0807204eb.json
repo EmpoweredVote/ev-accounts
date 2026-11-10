@@ -1,0 +1,134 @@
+{
+  "politician_id": "1fe75280-5b41-44a9-b531-22a0807204eb",
+  "findings": [
+    {
+      "id": "b76b08444464d687d2e3e5da5ab666871be545e481f02bd01a7bfa3659054db7",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hcr18/actions/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "yea",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 73-20) on H. C. R. No. 18, from the Ohio Legislature's own actions record, which lists each member by id (rep_brennan_sean_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0902e7fa76fc3542f273b3e0dca071180960f9dfbff7bf0c1b0df8b3faad7385",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_brennan_sean_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "730a6b22119baaeca4679f9ddecfeae85a89635c34995cd13d24f8df728ef61c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "nay",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_brennan_sean_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5d326e89edf5091ea0ff50afe14346565ee0d633bc08602a7061dddab8b599d",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_brennan_sean_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.680Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "noncitizen voting",
+        "election integrity",
+        "SJR 10 voter ID amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://ohiohouse.gov/members/sean-p-brennan (confirms House District 14, Parma; news page 1 of 26 read: no item on voter ID or citizenship; pages 2-26 not reviewed: https://ohiohouse.gov/members/sean-p-brennan/news)",
+        "https://www.ohiohouse.gov/members/sean-p-brennan/news/rep-brennan-announces-funding-for-accessible-and-safe-elections-120065 (2024 release on vote-by-mail application funding; no ID content)",
+        "https://www.ohiohouse.gov/members/sean-p-brennan/news/rep-brennan-shares-voter-information-from-board-of-elections-123025 (2024 voting information; no ID content)",
+        "campaign site https://brennanforohio.com/ (nothing on the subject)",
+        "not reviewed: https://ivoterguide.com/voter-guide/eleck/1452 (page too long, his entry not reached)",
+        "Ballotpedia, Vote Smart: blocked (not fetched, per instructions); ideastream.org voter guide: not opened, on the refused list",
+        "web searches (5): voter ID/photo ID/proof of citizenship, voter suppression/HB 458/SAVE Act, questionnaire/voter guide, SJR 10/noncitizen floor speech: nothing by this person on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-06T15:12:01.058Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 4,
+      "at": "2026-11-06T16:28:34.680Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}

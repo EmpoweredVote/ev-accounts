@@ -1,0 +1,25 @@
+{
+  "id": "OH-SJR-6-2022",
+  "scope": "state:oh",
+  "title": "SJR 6 (2021-2022 (134th General Assembly)): S. J. R. No. 6: CA: Prohibit local government from allowing non-electors to vote",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/134/sjr6",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/sjr6/00_IN/html/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Ohio Const. art. V, sec. 1\n(quote) Only a citizen of the United States, of the age of eighteen years, who has been a resident of the state, county, township, or ward, such time as may be provided by law, and has been registered to vote for thirty days, has the qualifications of an elector, and is entitled to vote at all elections. No person who lacks those qualifications shall be permitted to vote at any state or local election held in this state.\n(section) Ohio Const. art. X, sec. 3\n(quote) subject to the requirements of Section 1 of Article V of this constitution\n(section) Ohio Const. art. XVIII, sec. 3\n(quote) Subject to the requirements of Section 1 of Article V of this constitution, municipalities shall have authority to exercise all powers of local self-government\n(other) Effective date: if adopted at the November 8, 2022 general election, takes effect immediately\n(other) Art. X sec. 3 and art. XVIII sec. 3: county and municipal charters made subject to the elector qualifications\n(other) note: Joint resolution proposing a constitutional amendment (needs three-fifths of each house, then a statewide vote). The first word change replaces 'Every' with 'Only a'. No ID, provisional-ballot or proof-of-citizenship document rule. Sole version.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Louis W. Blessing, III",
+      "role": "prime",
+      "version": "As Introduced (00_IN)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

@@ -1,0 +1,962 @@
+{
+  "id": "MS-SB-2588-2026",
+  "scope": "state:ms",
+  "title": "SB 2588 (2026 Regular Session): Safeguard Honesty Integrity in Elections for Lasting Democracy (SHIELD) Act; create.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2026/pdf/history/SB/SB2588.xml",
+    "https://billstatus.ls.state.ms.us/documents/2026/pdf/SB/2500-2599/SB2588SG.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2026/pdf/SB/2500-2599/SB2588IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2026/pdf/SB/2500-2599/SB2588CS.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2026/pdf/SB/2500-2599/SB2588PS.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2026/pdf/ham/SB2588_H_Cmte_Amend_01.pdf"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Section 2 (23-15-15(1)): check at registration\n(quote) * * * Upon receiving a completed voter registration application, the registrar shall enter the applicant into the Statewide Elections Management System. The registration application shall be compared with the Department of Public Safety driver's license and identification information. If such information indicates that a particular applicant is not a citizen of the United States, the Statewide Elections Management System shall notify the registrar, or his or her designee, that the applicant may not be a citizen of the United States. However, if an applicant does not provide the applicant's driver's license number on the application and the Statewide Elections Management System is unable to retrieve the same from the Department of Public Safety based on the other information provided, the registrar shall follow the procedures set out in paragraph (a) of this subsection and all other provisions of this section as if information from the Department of Public Safety indicated the applicant was a noncitizen.\n(section) Section 2 (23-15-15(1)(a)-(b)): SAVE check and notice\n(quote) shall: (a) Enter the applicant's information into the United States Citizenship and Immigration Service's Systematic Alien Verification for Entitlements (SAVE) or its successor database for further inquiry; and (b) If * * * either of the databases in * * * this subsection indicate that the applicant is not a citizen, send a notice by first-class mail to the applicant's mailing address provided on the voter registration application inquiring whether the individual is eligible to be registered to vote. The registrar may, in addition to first-class mail, contact the applicant by email or telephone.\n(section) Section 2 (23-15-15(2)): 30 days to provide proof\n(quote) Any applicant who receives the notice under paragraph (b) of subsection * * * (1) of this section shall, within thirty (30) days of the receipt of such notice, provide proof of citizenship to the registrar or his or her designee.\n(section) Section 2 (23-15-15(3)): what counts as proof\n(quote) For purposes of this section, proof of citizenship includes, but is not limited to: (a) The applicant's birth certificate or a legible photocopy of the birth certificate; (b) A United States passport, or a legible photocopy of the pertinent pages of the passport, identifying the applicant and showing the passport number; (c) The applicant's United States naturalization documentation, a legible photocopy of the naturalization documentation, or the number of the applicant's Certificate of Naturalization; except that any person who provides the number of the Certificate of Naturalization in lieu of the naturalization documentation shall not be deemed to have provided proof of citizenship until the number is verified with the United States Citizenship and Immigration Services in the Department of Homeland Security or its successor; or (d) Any document or method of proof of citizenship established by the Federal Immigration Reform and Control Act of 1986, Public Law 99-603, compiled in 8 USC Section 1101 et seq.\n(section) Section 2 (23-15-15(5)): pending and rejected status; affidavit ballot\n(quote) If the applicant does not reply to the notice or provide proof of citizenship, the registrar of the county, or his or her designee, where the person registered to vote shall mark the applicant as \"PENDING\" in the Statewide Elections Management System * * *. (a) A voter in pending status may cast an affidavit ballot. The affidavit ballot shall be considered if the voter provides the required documentation under subsection ( * * *3) of this section to the registrar within five (5) days of casting the affidavit ballot. (b) If the applicant fails to respond to the notice or cast an affidavit ballot and provide the proof described in subsection ( * * *3) of this section * * * during the period beginning on the date the notice was sent and ending on the day after the date of the second general election for federal office that occurs after the date of the notice, the registrar shall mark the applicant as \"REJECTED\" in the Statewide Elections Management System. (6) The registrar\n(section) Section 3 (23-15-165.1): annual SAVE comparison of the voter roll\n(quote) 23-15-165.1. (1) The Secretary of State shall conduct a check annually of Statewide Elections Management System records against the United States Citizenship and Immigration Service's Systematic Alien Verification for Entitlements (SAVE) or its successor database. The check must occur no later than one hundred eighty (180) days before a regularly scheduled federal general election. (2) The Secretary shall transmit any potential ineligible matches to the appropriate election commissioner, who shall send a notice under Section 23-15-15 inquiring whether the individual is eligible to be registered to vote and place the voter in pending verification status until the voter provides proof of citizenship as outlined in subsections (2) through (5) of Section 23-15-15. (3) A removal may not occur solely based on a SAVE match. Cancellation may occur only upon failure to respond or confirmation of ineligibility. (4) A SAVE-based removal may not occur during the ninety (90) days before a federal election.\n(e_other_rule)\n(section) Section 2 (23-15-15(6)): registrar annual report\n(quote) (6) The registrar shall report to the Secretary of State on an annual basis: (a) The number of registrants flagged by a SAVE system check; and (b) The number removed following confirmation.\n(section) Section 7\n(quote) SECTION 7. This act shall take effect and be in force from and after July 1, 2026.\n(other) Section 1: short title. Section 4 (23-15-165.2): annual Secretary of State report to the Legislature. Section 5 (23-15-165.3): SAVE data exempt from public disclosure. Section 6 (23-15-165.4): severability.",
+  "sponsors": [
+    {
+      "name": "England",
+      "role": "prime",
+      "version": "As Sent to Governor (SB2588SG) = Senate passed as amended by House Committee Amendment 1; committee substitute (CS = PS) and introduced (IN) also read"
+    },
+    {
+      "name": "McLendon",
+      "role": "co",
+      "version": "As Sent to Governor (SB2588SG) = Senate passed as amended by House Committee Amendment 1; committee substitute (CS = PS) and introduced (IN) also read"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2026-02-05",
+      "body": "MS Senate",
+      "motion": "YEAS AND NAYS On S. B. No. 2588. On motion of Senator England, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0310052)",
+      "kind": "roll-call",
+      "yes": 33,
+      "no": 17,
+      "absent": 0,
+      "body_size": 50,
+      "note": "https://billstatus.ls.state.ms.us/2026/pdf/votes/senate/0310052.pdf",
+      "members": [
+        {
+          "name": "Barrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Berry",
+          "vote": "yea"
+        },
+        {
+          "name": "Blackwell",
+          "vote": "yea"
+        },
+        {
+          "name": "Boyd",
+          "vote": "yea"
+        },
+        {
+          "name": "Carter",
+          "vote": "yea"
+        },
+        {
+          "name": "Chassaniol",
+          "vote": "yea"
+        },
+        {
+          "name": "Chism",
+          "vote": "yea"
+        },
+        {
+          "name": "DeBar",
+          "vote": "yea"
+        },
+        {
+          "name": "DeLano",
+          "vote": "yea"
+        },
+        {
+          "name": "England",
+          "vote": "yea"
+        },
+        {
+          "name": "Fillingane",
+          "vote": "yea"
+        },
+        {
+          "name": "Harkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Hartness",
+          "vote": "yea"
+        },
+        {
+          "name": "Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Hopson",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirby",
+          "vote": "yea"
+        },
+        {
+          "name": "McCaughn",
+          "vote": "yea"
+        },
+        {
+          "name": "McLendon",
+          "vote": "yea"
+        },
+        {
+          "name": "McMahan",
+          "vote": "yea"
+        },
+        {
+          "name": "Michel",
+          "vote": "yea"
+        },
+        {
+          "name": "Parks",
+          "vote": "yea"
+        },
+        {
+          "name": "Rhodes",
+          "vote": "yea"
+        },
+        {
+          "name": "Seymour",
+          "vote": "yea"
+        },
+        {
+          "name": "Sparks",
+          "vote": "yea"
+        },
+        {
+          "name": "Suber",
+          "vote": "yea"
+        },
+        {
+          "name": "Tate",
+          "vote": "yea"
+        },
+        {
+          "name": "Taylor",
+          "vote": "yea"
+        },
+        {
+          "name": "Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Whaley",
+          "vote": "yea"
+        },
+        {
+          "name": "Wiggins",
+          "vote": "yea"
+        },
+        {
+          "name": "Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Younger",
+          "vote": "yea"
+        },
+        {
+          "name": "Barnett",
+          "vote": "nay"
+        },
+        {
+          "name": "Blackmon",
+          "vote": "nay"
+        },
+        {
+          "name": "Blount",
+          "vote": "nay"
+        },
+        {
+          "name": "Brumfield",
+          "vote": "nay"
+        },
+        {
+          "name": "Bryan",
+          "vote": "nay"
+        },
+        {
+          "name": "Butler",
+          "vote": "nay"
+        },
+        {
+          "name": "DuPree",
+          "vote": "nay"
+        },
+        {
+          "name": "Frazier",
+          "vote": "nay"
+        },
+        {
+          "name": "Gillespie Isom",
+          "vote": "nay"
+        },
+        {
+          "name": "Hickman",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackson",
+          "vote": "nay"
+        },
+        {
+          "name": "Mumford",
+          "vote": "nay"
+        },
+        {
+          "name": "Norwood",
+          "vote": "nay"
+        },
+        {
+          "name": "Pope",
+          "vote": "nay"
+        },
+        {
+          "name": "Simmons S. (13th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Thomas",
+          "vote": "nay"
+        },
+        {
+          "name": "Turner-Ford",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-04",
+      "body": "MS House",
+      "motion": "S. B. No. 2588 passed by the following vote: (0580038)",
+      "kind": "roll-call",
+      "yes": 80,
+      "no": 41,
+      "absent": 1,
+      "body_size": 122,
+      "note": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "members": [
+        {
+          "name": "Aguirre",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson (122nd)",
+          "vote": "yea"
+        },
+        {
+          "name": "Arnold",
+          "vote": "yea"
+        },
+        {
+          "name": "Bailey (23rd)",
+          "vote": "yea"
+        },
+        {
+          "name": "Barnett",
+          "vote": "yea"
+        },
+        {
+          "name": "Barton",
+          "vote": "yea"
+        },
+        {
+          "name": "Bell (21st)",
+          "vote": "yea"
+        },
+        {
+          "name": "Bennett",
+          "vote": "yea"
+        },
+        {
+          "name": "Blackwell",
+          "vote": "yea"
+        },
+        {
+          "name": "Bounds",
+          "vote": "yea"
+        },
+        {
+          "name": "Boyd (19th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Boyd (37th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Burch",
+          "vote": "yea"
+        },
+        {
+          "name": "Burnett",
+          "vote": "yea"
+        },
+        {
+          "name": "Byrd",
+          "vote": "yea"
+        },
+        {
+          "name": "Calvert",
+          "vote": "yea"
+        },
+        {
+          "name": "Carpenter",
+          "vote": "yea"
+        },
+        {
+          "name": "Crawford",
+          "vote": "yea"
+        },
+        {
+          "name": "Creekmore IV",
+          "vote": "yea"
+        },
+        {
+          "name": "Currie",
+          "vote": "yea"
+        },
+        {
+          "name": "Deweese",
+          "vote": "yea"
+        },
+        {
+          "name": "Estrada",
+          "vote": "yea"
+        },
+        {
+          "name": "Eubanks",
+          "vote": "yea"
+        },
+        {
+          "name": "Eure",
+          "vote": "yea"
+        },
+        {
+          "name": "Felsher",
+          "vote": "yea"
+        },
+        {
+          "name": "Fondren",
+          "vote": "yea"
+        },
+        {
+          "name": "Ford (54th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Ford (73rd)",
+          "vote": "yea"
+        },
+        {
+          "name": "Gibbs (36th)",
+          "vote": "yea"
+        },
+        {
+          "name": "Grady",
+          "vote": "yea"
+        },
+        {
+          "name": "Guice",
+          "vote": "yea"
+        },
+        {
+          "name": "Hale",
+          "vote": "yea"
+        },
+        {
+          "name": "Hall",
+          "vote": "yea"
+        },
+        {
+          "name": "Haney",
+          "vote": "yea"
+        },
+        {
+          "name": "Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "Hawkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Hobgood-Wilkes",
+          "vote": "yea"
+        },
+        {
+          "name": "Hood",
+          "vote": "yea"
+        },
+        {
+          "name": "Horan",
+          "vote": "yea"
+        },
+        {
+          "name": "Horne",
+          "vote": "yea"
+        },
+        {
+          "name": "Keen",
+          "vote": "yea"
+        },
+        {
+          "name": "Kinkade",
+          "vote": "yea"
+        },
+        {
+          "name": "Ladner",
+          "vote": "yea"
+        },
+        {
+          "name": "Lamar",
+          "vote": "yea"
+        },
+        {
+          "name": "Lott",
+          "vote": "yea"
+        },
+        {
+          "name": "Mangold",
+          "vote": "yea"
+        },
+        {
+          "name": "Mansell",
+          "vote": "yea"
+        },
+        {
+          "name": "Massengill",
+          "vote": "yea"
+        },
+        {
+          "name": "Mattox",
+          "vote": "yea"
+        },
+        {
+          "name": "McCarty",
+          "vote": "yea"
+        },
+        {
+          "name": "McGee",
+          "vote": "yea"
+        },
+        {
+          "name": "McKnight",
+          "vote": "yea"
+        },
+        {
+          "name": "McLean",
+          "vote": "yea"
+        },
+        {
+          "name": "McMillan",
+          "vote": "yea"
+        },
+        {
+          "name": "Mims",
+          "vote": "yea"
+        },
+        {
+          "name": "Morgan",
+          "vote": "yea"
+        },
+        {
+          "name": "Newman",
+          "vote": "yea"
+        },
+        {
+          "name": "Oliver",
+          "vote": "yea"
+        },
+        {
+          "name": "Owen",
+          "vote": "yea"
+        },
+        {
+          "name": "Pigott",
+          "vote": "yea"
+        },
+        {
+          "name": "Powell",
+          "vote": "yea"
+        },
+        {
+          "name": "Read",
+          "vote": "yea"
+        },
+        {
+          "name": "Remak",
+          "vote": "yea"
+        },
+        {
+          "name": "Roberson",
+          "vote": "yea"
+        },
+        {
+          "name": "Rushing",
+          "vote": "yea"
+        },
+        {
+          "name": "Sanford",
+          "vote": "yea"
+        },
+        {
+          "name": "Scoggin",
+          "vote": "yea"
+        },
+        {
+          "name": "Shanks",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Steverson",
+          "vote": "yea"
+        },
+        {
+          "name": "Tubb",
+          "vote": "yea"
+        },
+        {
+          "name": "Tullos",
+          "vote": "yea"
+        },
+        {
+          "name": "Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Varner",
+          "vote": "yea"
+        },
+        {
+          "name": "Waldo",
+          "vote": "yea"
+        },
+        {
+          "name": "Wallace",
+          "vote": "yea"
+        },
+        {
+          "name": "Yancey",
+          "vote": "yea"
+        },
+        {
+          "name": "Yates",
+          "vote": "yea"
+        },
+        {
+          "name": "Zuber",
+          "vote": "yea"
+        },
+        {
+          "name": "Mr. Speaker",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson (110th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Anthony",
+          "vote": "nay"
+        },
+        {
+          "name": "Bailey (49th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Banks",
+          "vote": "nay"
+        },
+        {
+          "name": "Bell (65th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Blackmon",
+          "vote": "nay"
+        },
+        {
+          "name": "Brown",
+          "vote": "nay"
+        },
+        {
+          "name": "Butler-Washington",
+          "vote": "nay"
+        },
+        {
+          "name": "Clark",
+          "vote": "nay"
+        },
+        {
+          "name": "Cockerham",
+          "vote": "nay"
+        },
+        {
+          "name": "Crosby",
+          "vote": "nay"
+        },
+        {
+          "name": "Crudup",
+          "vote": "nay"
+        },
+        {
+          "name": "Denton",
+          "vote": "nay"
+        },
+        {
+          "name": "Elliott",
+          "vote": "nay"
+        },
+        {
+          "name": "Evans",
+          "vote": "nay"
+        },
+        {
+          "name": "Faulkner",
+          "vote": "nay"
+        },
+        {
+          "name": "Foster",
+          "vote": "nay"
+        },
+        {
+          "name": "Gibbs (72nd)",
+          "vote": "nay"
+        },
+        {
+          "name": "Harness",
+          "vote": "nay"
+        },
+        {
+          "name": "Hines",
+          "vote": "nay"
+        },
+        {
+          "name": "Holloway (27th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Holloway (76th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Hulum",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackson (11th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackson (45th)",
+          "vote": "nay"
+        },
+        {
+          "name": "James-Jones",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Karriem",
+          "vote": "nay"
+        },
+        {
+          "name": "McCray",
+          "vote": "nay"
+        },
+        {
+          "name": "Mickens",
+          "vote": "nay"
+        },
+        {
+          "name": "Nelson",
+          "vote": "nay"
+        },
+        {
+          "name": "Osborne",
+          "vote": "nay"
+        },
+        {
+          "name": "Porter",
+          "vote": "nay"
+        },
+        {
+          "name": "Rosebud",
+          "vote": "nay"
+        },
+        {
+          "name": "Sanders",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott",
+          "vote": "nay"
+        },
+        {
+          "name": "Summers",
+          "vote": "nay"
+        },
+        {
+          "name": "Taylor",
+          "vote": "nay"
+        },
+        {
+          "name": "Thompson",
+          "vote": "nay"
+        },
+        {
+          "name": "Watson",
+          "vote": "nay"
+        },
+        {
+          "name": "Williams",
+          "vote": "nay"
+        },
+        {
+          "name": "Hurst",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-23",
+      "body": "MS Senate",
+      "motion": "YEAS AND NAYS. The yeas and nays being taken, the Senate concurred in the foregoing House Amendment to S. B. No. 2588 by the following vote: (0770004)",
+      "kind": "roll-call",
+      "yes": 31,
+      "no": 16,
+      "absent": 1,
+      "body_size": 48,
+      "note": "https://billstatus.ls.state.ms.us/2026/pdf/votes/senate/0770004.pdf",
+      "members": [
+        {
+          "name": "Barrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Berry",
+          "vote": "yea"
+        },
+        {
+          "name": "Blackwell",
+          "vote": "yea"
+        },
+        {
+          "name": "Boyd",
+          "vote": "yea"
+        },
+        {
+          "name": "Carter",
+          "vote": "yea"
+        },
+        {
+          "name": "Chassaniol",
+          "vote": "yea"
+        },
+        {
+          "name": "Chism",
+          "vote": "yea"
+        },
+        {
+          "name": "DeBar",
+          "vote": "yea"
+        },
+        {
+          "name": "DeLano",
+          "vote": "yea"
+        },
+        {
+          "name": "England",
+          "vote": "yea"
+        },
+        {
+          "name": "Fillingane",
+          "vote": "yea"
+        },
+        {
+          "name": "Harkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Hartness",
+          "vote": "yea"
+        },
+        {
+          "name": "Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Hopson",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirby",
+          "vote": "yea"
+        },
+        {
+          "name": "McCaughn",
+          "vote": "yea"
+        },
+        {
+          "name": "McLendon",
+          "vote": "yea"
+        },
+        {
+          "name": "McMahan",
+          "vote": "yea"
+        },
+        {
+          "name": "Michel",
+          "vote": "yea"
+        },
+        {
+          "name": "Rhodes",
+          "vote": "yea"
+        },
+        {
+          "name": "Seymour",
+          "vote": "yea"
+        },
+        {
+          "name": "Sparks",
+          "vote": "yea"
+        },
+        {
+          "name": "Suber",
+          "vote": "yea"
+        },
+        {
+          "name": "Taylor",
+          "vote": "yea"
+        },
+        {
+          "name": "Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Whaley",
+          "vote": "yea"
+        },
+        {
+          "name": "Wiggins",
+          "vote": "yea"
+        },
+        {
+          "name": "Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Younger",
+          "vote": "yea"
+        },
+        {
+          "name": "Blackmon",
+          "vote": "nay"
+        },
+        {
+          "name": "Blount",
+          "vote": "nay"
+        },
+        {
+          "name": "Bryan",
+          "vote": "nay"
+        },
+        {
+          "name": "Butler",
+          "vote": "nay"
+        },
+        {
+          "name": "DuPree",
+          "vote": "nay"
+        },
+        {
+          "name": "Frazier",
+          "vote": "nay"
+        },
+        {
+          "name": "Gillespie Isom",
+          "vote": "nay"
+        },
+        {
+          "name": "Hickman",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackson",
+          "vote": "nay"
+        },
+        {
+          "name": "Mumford",
+          "vote": "nay"
+        },
+        {
+          "name": "Norwood",
+          "vote": "nay"
+        },
+        {
+          "name": "Pope",
+          "vote": "nay"
+        },
+        {
+          "name": "Simmons D. T. (12th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Simmons S. (13th)",
+          "vote": "nay"
+        },
+        {
+          "name": "Thomas",
+          "vote": "nay"
+        },
+        {
+          "name": "Turner-Ford",
+          "vote": "nay"
+        },
+        {
+          "name": "Parks",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

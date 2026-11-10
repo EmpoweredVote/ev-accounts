@@ -1,0 +1,841 @@
+{
+  "id": "OH-SB-380-2008",
+  "scope": "state:oh",
+  "title": "SB 380 (2007-2008 (127th General Assembly)): S. B. No. 380: Absentee voting/prohibit same day voter registration/mismatches/election observers",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/127/sb380",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_127/legislation/sb380/05_EN/pdf/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_127/legislation/sb380/00_IN/pdf/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_127/legislation/sb380/01_RS/pdf/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_127/legislation/sb380/02_PS/pdf/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_127/legislation/sb380/03_RH/pdf/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_127/legislation/sb380/04_PH/pdf/"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) R.C. 3509.04\n(quote) If the elector does not provide the elector's driver's license number or the last four digits of the elector's social security number on the statement of voter on the identification envelope, the elector also shall include in the return envelope with the identification envelope a copy of the elector's current valid photo identification, a copy of a military identification, or a copy of a current utility bill, bank statement, government check, paycheck, or other government document ... that shows the name and address of the elector.\n(section) R.C. 3509.05\n(quote) If the elector does not provide the elector's driver's license number or the last four digits of the elector's social security number on the statement of voter on the identification envelope, the elector also shall include in the return envelope with the identification envelope a copy of the elector's current valid photo identification, a copy of a military identification, or a copy of a current utility bill, bank statement, government check, paycheck, or other government document ... that shows the name and address of the elector.\n(section) R.C. 3509.07\n(quote) or that the elector has not included with the elector's ballot any identification required under section 3509.05 or 3511.09 of the Revised Code, the vote shall not be accepted or counted.\n(section) R.C. 3509.04 (voter statement form)\n(quote) (Voter must provide one of the following:) My driver's license number is ............... (Driver's license number). The last four digits of my Social Security Number are ............... (Last four digits of Social Security Number). ...... In lieu of providing a driver's license number or the last four digits of my Social Security Number, I am enclosing a copy of one of the following in the return envelope in which this identification envelope will be mailed: a current and valid photo identification, a military identification, or a current utility bill ...\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) R.C. 3503.15(H)(1)\n(quote) The secretary of state and the registrar of motor vehicles shall enter into an agreement to match information in the statewide voter registration database with motor vehicle records for the purpose of verifying the accuracy of the information in the statewide voter registration database and the information provided on voter registration applications, as required under 42 U.S.C. 15483.\n(section) R.C. 3503.15(H)(4)\n(quote) Notwithstanding any provision of the Revised Code to the contrary, a mismatch shall not be the sole reason for the removal of a voter from the statewide voter registration database.\n(section) R.C. 3503.15(H)(5)\n(quote) 'mismatch' means any of the following data fields that are not identical to one another with respect to a particular individual when information in the statewide voter registration database is compared to motor vehicle records: (a) Driver's license number; (b) Social security number; (c) Date of birth.\n(other) R.C. 3501.07: board of elections member appointment process revised\n(other) R.C. 3501.90: board / election-related provisions amended (election observer and litigation-related text)\n(other) R.C. 3503.15: statewide voter registration database; Secretary of State and BMV match records and tell boards of mismatches; boards tell voters and let them correct\n(other) R.C. 3505.21: election observers may serve at the board or another designated site while absent ballots are cast in person\n(other) R.C. 3509.01 / 3511.xx: period for casting absent ballots in person revised; same-day registration and absentee application generally barred\n(other) R.C. 3509.06: boards must notify absent voters when the identification envelope statement is incomplete (incomplete statement means ballot rejected)\n(other) R.C. 3509.07 / 3511.11: ballot not counted if the envelope statement is incomplete\n(other) version: 00_IN: carries absentee ID text (3509.04/05: DL number, last 4 SSN, or copy of photo ID / utility bill etc.); no in-person ID, no citizenship text\n(other) version: 01_RS: same absentee ID text; adds mismatch (DL/SSN/DOB) provisions in 3503.15 and observer text\n(other) version: 02_PS: same absentee ID text as 01_RS\n(other) version: 03_RH: same absentee ID text; no in-person ID or citizenship text\n(other) version: 04_PH: same absentee ID text\n(other) version: 05_EN: same absentee ID text; no in-person ID, no citizenship proof\n(other) note: 2008 PDF text: struck and new words are not marked, so I cannot tell which of the absentee ID wording was already law and which is new in this bill; the bill title says it makes the envelope statements required for a ballot to count. The absentee ID wording appears in every version. Vote-to-version mapping follows the brief (committee-reported version; concurrence on the version passed by the House); the as-passed Senate version is 02_PS. No in-person ID rule and no citizenship proof in any version. 'id_text_in_voted_version' is true for c (absentee ID) only.",
+  "sponsors": [],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2008-12-09",
+      "body": "OH Senate",
+      "motion": "Motion to Table Amendment [version voted: unknown (amendment text not saved)]",
+      "kind": "roll-call",
+      "yes": 19,
+      "no": 11,
+      "absent": 0,
+      "body_size": 30,
+      "note": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_127/legislation/sb380/actions/",
+      "members": [
+        {
+          "name": "Timothy Grendell",
+          "vote": "yea"
+        },
+        {
+          "name": "Peggy Lehner",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen Austria",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Cates",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Niehaus",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Amstutz",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Patton",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Coughlin",
+          "vote": "yea"
+        },
+        {
+          "name": "David Goodman",
+          "vote": "yea"
+        },
+        {
+          "name": "John A. Carey",
+          "vote": "yea"
+        },
+        {
+          "name": "J. Kirk Schuring",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Stivers",
+          "vote": "yea"
+        },
+        {
+          "name": "Joy Padgett",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Schaffer",
+          "vote": "yea"
+        },
+        {
+          "name": "Keith Faber",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen Buehrer",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Seitz",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Wagoner",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Roberts",
+          "vote": "nay"
+        },
+        {
+          "name": "Teresa Fedor",
+          "vote": "nay"
+        },
+        {
+          "name": "Ray Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Thomas Sawyer",
+          "vote": "nay"
+        },
+        {
+          "name": "Eric Kearney",
+          "vote": "nay"
+        },
+        {
+          "name": "Dale Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Jason Wilson",
+          "vote": "nay"
+        },
+        {
+          "name": "John Boccieri",
+          "vote": "nay"
+        },
+        {
+          "name": "Susan Morano",
+          "vote": "nay"
+        },
+        {
+          "name": "Capri Cafaro",
+          "vote": "nay"
+        },
+        {
+          "name": "Nina Turner",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2008-12-09",
+      "body": "OH Senate",
+      "motion": "Passed [version voted: 01_RS]",
+      "kind": "roll-call",
+      "yes": 19,
+      "no": 11,
+      "absent": 0,
+      "body_size": 30,
+      "note": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_127/legislation/sb380/actions/",
+      "members": [
+        {
+          "name": "Timothy Grendell",
+          "vote": "yea"
+        },
+        {
+          "name": "Peggy Lehner",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen Austria",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Cates",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Niehaus",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Amstutz",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Patton",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Coughlin",
+          "vote": "yea"
+        },
+        {
+          "name": "David Goodman",
+          "vote": "yea"
+        },
+        {
+          "name": "John A. Carey",
+          "vote": "yea"
+        },
+        {
+          "name": "J. Kirk Schuring",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Stivers",
+          "vote": "yea"
+        },
+        {
+          "name": "Joy Padgett",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Schaffer",
+          "vote": "yea"
+        },
+        {
+          "name": "Keith Faber",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen Buehrer",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Seitz",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Wagoner",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Roberts",
+          "vote": "nay"
+        },
+        {
+          "name": "Teresa Fedor",
+          "vote": "nay"
+        },
+        {
+          "name": "Ray Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Thomas Sawyer",
+          "vote": "nay"
+        },
+        {
+          "name": "Eric Kearney",
+          "vote": "nay"
+        },
+        {
+          "name": "Dale Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Jason Wilson",
+          "vote": "nay"
+        },
+        {
+          "name": "John Boccieri",
+          "vote": "nay"
+        },
+        {
+          "name": "Susan Morano",
+          "vote": "nay"
+        },
+        {
+          "name": "Capri Cafaro",
+          "vote": "nay"
+        },
+        {
+          "name": "Nina Turner",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2008-12-16",
+      "body": "OH House",
+      "motion": "Passed [version voted: 03_RH]",
+      "kind": "roll-call",
+      "yes": 55,
+      "no": 43,
+      "absent": 0,
+      "body_size": 98,
+      "note": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_127/legislation/sb380/actions/",
+      "members": [
+        {
+          "name": "Bill Coley",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Carmichael",
+          "vote": "yea"
+        },
+        {
+          "name": "Joseph Uecker",
+          "vote": "yea"
+        },
+        {
+          "name": "John White",
+          "vote": "yea"
+        },
+        {
+          "name": "Michelle Schneider",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Flowers",
+          "vote": "yea"
+        },
+        {
+          "name": "Matthew Dolan",
+          "vote": "yea"
+        },
+        {
+          "name": "Arlene Setzer",
+          "vote": "yea"
+        },
+        {
+          "name": "Shawn Webster",
+          "vote": "yea"
+        },
+        {
+          "name": "Jon Husted",
+          "vote": "yea"
+        },
+        {
+          "name": "Diana Fessler",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Brinkman",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Wolpert",
+          "vote": "yea"
+        },
+        {
+          "name": "Louis Blessing",
+          "vote": "yea"
+        },
+        {
+          "name": "Danny Bubp",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin DeWine",
+          "vote": "yea"
+        },
+        {
+          "name": "Jon Peterson",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Reinhard",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Aslanides",
+          "vote": "yea"
+        },
+        {
+          "name": "Anthony Core",
+          "vote": "yea"
+        },
+        {
+          "name": "John Hagan",
+          "vote": "yea"
+        },
+        {
+          "name": "Thom Collier",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Hughes",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim McGregor",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Oelslager",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Wagner",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Widener",
+          "vote": "yea"
+        },
+        {
+          "name": "John Schlichter",
+          "vote": "yea"
+        },
+        {
+          "name": "David Daniels",
+          "vote": "yea"
+        },
+        {
+          "name": "Clyde Evans",
+          "vote": "yea"
+        },
+        {
+          "name": "Jimmy Stewart",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Gibbs",
+          "vote": "yea"
+        },
+        {
+          "name": "Courtney Combs",
+          "vote": "yea"
+        },
+        {
+          "name": "Ross McGregor",
+          "vote": "yea"
+        },
+        {
+          "name": "William Batchelder",
+          "vote": "yea"
+        },
+        {
+          "name": "Shannon Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Lynn Wachtmann",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Huffman",
+          "vote": "yea"
+        },
+        {
+          "name": "Jay Hottinger",
+          "vote": "yea"
+        },
+        {
+          "name": "Bruce Goodwin",
+          "vote": "yea"
+        },
+        {
+          "name": "Cliff Hite",
+          "vote": "yea"
+        },
+        {
+          "name": "John Adams",
+          "vote": "yea"
+        },
+        {
+          "name": "Josh Mandel",
+          "vote": "yea"
+        },
+        {
+          "name": "Carol-Ann Schindel",
+          "vote": "yea"
+        },
+        {
+          "name": "Gerald Stebelton",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Bacon",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Letson",
+          "vote": "yea"
+        },
+        {
+          "name": "Tracy Heard",
+          "vote": "yea"
+        },
+        {
+          "name": "James Zehringer",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Mecklenborg",
+          "vote": "yea"
+        },
+        {
+          "name": "Randy Gardner",
+          "vote": "yea"
+        },
+        {
+          "name": "Barbara Sears",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Nero",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrew Ciafardini",
+          "vote": "yea"
+        },
+        {
+          "name": "Colleen Grady",
+          "vote": "yea"
+        },
+        {
+          "name": "Lorraine Fende",
+          "vote": "nay"
+        },
+        {
+          "name": "Kenny Yuko",
+          "vote": "nay"
+        },
+        {
+          "name": "Allan Sayre",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Driehaus",
+          "vote": "nay"
+        },
+        {
+          "name": "Fred Strahorn",
+          "vote": "nay"
+        },
+        {
+          "name": "Jennifer Garrison",
+          "vote": "nay"
+        },
+        {
+          "name": "Joyce Beatty",
+          "vote": "nay"
+        },
+        {
+          "name": "Chris Redfern",
+          "vote": "nay"
+        },
+        {
+          "name": "Joseph Koziura",
+          "vote": "nay"
+        },
+        {
+          "name": "Edna Brown",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael DeBose",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Skindell",
+          "vote": "nay"
+        },
+        {
+          "name": "Dan Stewart",
+          "vote": "nay"
+        },
+        {
+          "name": "Tyrone Yates",
+          "vote": "nay"
+        },
+        {
+          "name": "Peter Ujvagi",
+          "vote": "nay"
+        },
+        {
+          "name": "Sandra Harwood",
+          "vote": "nay"
+        },
+        {
+          "name": "Kathleen Chandler",
+          "vote": "nay"
+        },
+        {
+          "name": "T. Book",
+          "vote": "nay"
+        },
+        {
+          "name": "John Domenick",
+          "vote": "nay"
+        },
+        {
+          "name": "Timothy DeGeeter",
+          "vote": "nay"
+        },
+        {
+          "name": "Brian Williams",
+          "vote": "nay"
+        },
+        {
+          "name": "Mike Foley",
+          "vote": "nay"
+        },
+        {
+          "name": "Clayton Luckie",
+          "vote": "nay"
+        },
+        {
+          "name": "Eugene Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Armond Budish",
+          "vote": "nay"
+        },
+        {
+          "name": "Vernon Sykes",
+          "vote": "nay"
+        },
+        {
+          "name": "Jennifer Brady",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Okey",
+          "vote": "nay"
+        },
+        {
+          "name": "Robert Hagan",
+          "vote": "nay"
+        },
+        {
+          "name": "Sandra Williams",
+          "vote": "nay"
+        },
+        {
+          "name": "Barbara Boyd",
+          "vote": "nay"
+        },
+        {
+          "name": "Dan Dodd",
+          "vote": "nay"
+        },
+        {
+          "name": "Linda Bolon",
+          "vote": "nay"
+        },
+        {
+          "name": "Jay Goyal",
+          "vote": "nay"
+        },
+        {
+          "name": "Ted Celeste",
+          "vote": "nay"
+        },
+        {
+          "name": "Matt Szollosi",
+          "vote": "nay"
+        },
+        {
+          "name": "Matt Lundy",
+          "vote": "nay"
+        },
+        {
+          "name": "Stephen Dyer",
+          "vote": "nay"
+        },
+        {
+          "name": "Ron Gerberry",
+          "vote": "nay"
+        },
+        {
+          "name": "John Otterman",
+          "vote": "nay"
+        },
+        {
+          "name": "Stephen Slesnick",
+          "vote": "nay"
+        },
+        {
+          "name": "Deborah Newcomb",
+          "vote": "nay"
+        },
+        {
+          "name": "Tom Heydinger",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2008-12-17",
+      "body": "OH Senate",
+      "motion": "Concurred in House amendments [version voted: 04_PH]",
+      "kind": "roll-call",
+      "yes": 28,
+      "no": 3,
+      "absent": 0,
+      "body_size": 31,
+      "note": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_127/legislation/sb380/actions/",
+      "members": [
+        {
+          "name": "Timothy Grendell",
+          "vote": "yea"
+        },
+        {
+          "name": "Peggy Lehner",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen Austria",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Cates",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Niehaus",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Amstutz",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Patton",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Coughlin",
+          "vote": "yea"
+        },
+        {
+          "name": "David Goodman",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Roberts",
+          "vote": "yea"
+        },
+        {
+          "name": "Teresa Fedor",
+          "vote": "yea"
+        },
+        {
+          "name": "John A. Carey",
+          "vote": "yea"
+        },
+        {
+          "name": "J. Kirk Schuring",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Stivers",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Sawyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Joy Padgett",
+          "vote": "yea"
+        },
+        {
+          "name": "Eric Kearney",
+          "vote": "yea"
+        },
+        {
+          "name": "Dale Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Schaffer",
+          "vote": "yea"
+        },
+        {
+          "name": "Keith Faber",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen Buehrer",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Wilson",
+          "vote": "yea"
+        },
+        {
+          "name": "John Boccieri",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Morano",
+          "vote": "yea"
+        },
+        {
+          "name": "Capri Cafaro",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Seitz",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Wagoner",
+          "vote": "yea"
+        },
+        {
+          "name": "Ray Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Shirley Smith",
+          "vote": "nay"
+        },
+        {
+          "name": "Nina Turner",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

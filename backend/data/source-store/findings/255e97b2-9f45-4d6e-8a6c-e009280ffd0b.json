@@ -1,0 +1,175 @@
+{
+  "politician_id": "255e97b2-9f45-4d6e-8a6c-e009280ffd0b",
+  "findings": [
+    {
+      "id": "d8d902dceb6a4f64eb36fe30807c431c9234632bb723375cda4f5baa1000ad9f",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/actions/",
+      "date": "2022-12-13",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-458-2022",
+      "act": "yea",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 24-7) on H. B. No. 458, from the Ohio Legislature's own actions record, which lists each member by id (sen_huffman_stephen_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a5bb1634ad5907616b86f560b8ecf96dfd5e4f77b5422bf26d6c663888557876",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "yea",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 23-10) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (sen_huffman_stephen_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "01b33456142732237af59847ad8f3ad442bd9fa90d420431a5b08c7746d91219",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/hb472",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As Reported by the Senate General Government Committee (03_RS)",
+      "note": "Listed as co sponsor of H. B. No. 472 (As Reported by the Senate General Government Committee) on the Ohio Legislature's own record (sen_huffman_stephen_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4c1f5fb2164062ff2f044b0322d2c82f7d347d63e7e3db39a346504a6a33e73f",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "yea",
+      "motion": "Senate: Concurred in House amendments",
+      "note": "OH Senate floor roll call (Concurred in House amendments, tally 23-10) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (sen_huffman_stephen_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f13f923a9c6762dac1ec783ec55a014bc5e047ca8cf95da1a2ce9b180d4455de",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "yea",
+      "motion": "Senate: Adopted",
+      "note": "OH Senate floor roll call (Adopted, tally 22-9) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (sen_huffman_stephen_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fbf0945bdaeabc5779d41464393b4167c81387575714605c75d68df33b23cfa3",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/sjr10",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As Reported by the Senate General Government Committee (01_RS)",
+      "note": "Listed as co sponsor of S. J. R. No. 10 (As Reported by the Senate General Government Committee) on the Ohio Legislature's own record (sen_huffman_stephen_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0087be839eb37922ce0abaaf823c7db23345bcb44e2de85d05160ba52cfdee09",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/131/hb189",
+      "date": "2015",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-189-2015",
+      "act": "sponsor",
+      "motion": "co sponsor, As Introduced (00_IN)",
+      "note": "Listed as co sponsor of H. B. No. 189 (As Introduced) on the Ohio Legislature's own record (rep_huffman_stephen_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 7,
+      "at": "2026-11-06T16:28:34.679Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}

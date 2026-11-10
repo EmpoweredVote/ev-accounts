@@ -1,0 +1,33 @@
+{
+  "id": "KS-SB-3-2009",
+  "scope": "state:ks",
+  "title": "SB 3 (2009-2010 Regular Session (2009)): House Substitute for SENATE BILL No. 3 (archive file): AN ACT concerning elections; amending K.S.A. 2008 Supp. 25-1122, 25-1123, 25-2908 and 25-3002 and repealing the existing sections. (SB 3 as introduced and as passed by the Senate concerned the confirmation oversight committee.)",
+  "urls": [
+    "https://www.kslegislature.gov/li_2012/b2011_12/chamber/documents/permanent_journal_senate_2009.pdf",
+    "https://www.kslegislature.gov/historical_data/bills/2010/2009_S_Bill_3.pdf"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) K.S.A. 25-2908(i)(1) (House Substitute for SB 3)\n(quote) If the photographic identification does not contain the signature of the voter, an additional form of identification that provides the voter’s signature shall be required from the voter.\n(b_no_id_remedy)\n(section) K.S.A. 25-2908(i)(2)\n(quote) If the voter fails to furnish the identification required by this subsection, the voter shall be allowed to vote a provisional ballot. The canvassing board shall determine the validity of the ballot pursuant to K.S.A. 25-3002 and amendments thereto.\n(c_mail_ballot_id)\n(section) K.S.A. 25-1122(c)\n(quote) (c) If the registered voter is applying for an advance voting ballot to be transmitted by mail, and such voter is a first-time voter, such voter shall provide on the application for an advance voting ballot the voter’s current and valid Kansas driver’s license number, nondriver’s identification card number or the last four digits of the voter’s social security number, or shall provide with the application a copy of the voter’s current and valid Kansas driver’s license, nondriver’s identification card, utility bill, bank statement, paycheck, government check or other government document containing the voter’s current name and address as indicated on the registration book.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 1\n(quote) From and after January 1, 2010, K.S.A.\n(other) K.S.A. 25-1122, 25-1123, 25-2908, 25-3002: photographic ID for in-person voters from January 1, 2010; mail ID options for first-time voters.",
+  "sponsors": [
+    {
+      "name": "Committee on Elections",
+      "role": "prime",
+      "version": "House Substitute for Senate Bill No. 3 (archive file 2009_S_Bill_3.pdf)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

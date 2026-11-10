@@ -1,0 +1,112 @@
+{
+  "politician_id": "75a822d9-823f-48af-9c9c-8b93b59704ef",
+  "findings": [
+    {
+      "id": "89efca71f2928051400050f32a4b77169b2663db233ddfb66cf0e42716a7b6e2",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/46417/race/7022/election/1024",
+      "date": "2023",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification. Strongly Disagree",
+      "note": "In the iVoterGuide questionnaire for the 2023 House District 10 primary (election date 2023-08-08), the candidate answered the statement that people should be able to vote without photo identification with 'Strongly Disagree'. The page shows the answer under 'Received by Candidate'.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:54:15.096Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f83d0028419134d578f055f22fbb42fc2269d0d95536e5a2081a180daf0e758",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/house/0940041.pdf",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "House: S. B. No. 2576 passed by the following vote: (0940041)",
+      "note": "House roll call as printed ('Hawkins'), linked to Josh Hawkins (district 10) via the official 2024 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.759Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b680fb8404ce02d97d84d7e0e33d2bd57ac1c2f65c056d5f4979c0eb31a6ce26",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Hawkins'), linked to Josh Hawkins (district 10) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.759Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "absentee ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed in office: https://billstatus.ls.state.ms.us/members/house/hawkins.xml (House District 10, 2024-present) and https://panolian.com/?p=290427 (sworn in Jan. 2, 2024)",
+        "campaign announcement https://www.oxfordeagle.com/?p=138374 (nothing on the subject)",
+        "2019 candidate profile https://hottytoddy.com/2019/11/03/meet-the-candidates-house-districts-10-13-candidates-on-tuesdays-ballot/ (nothing on the subject)",
+        "iVoterGuide 2023 primary questionnaire (one finding)",
+        "no personal official or campaign site found by search; legislature member page has no news list",
+        "blocked: https://ballotpedia.org/Josh_Hawkins (listed blocked per standing instruction, not fetched)",
+        "web searches: voter ID; proof of citizenship; photo ID / election integrity; questionnaire / voter guide; Free Press / Magnolia Tribune / Y'all Politics; SAVE Act / noncitizen / voter rolls / absentee (nothing else on the subject)"
+      ],
+      "found": 1,
+      "at": "2026-11-05T22:54:15.096Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-05T23:52:51.759Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

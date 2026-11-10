@@ -1,0 +1,219 @@
+{
+  "politician_id": "6dc6d0e9-e26e-4376-b15e-ea831745f065",
+  "findings": [
+    {
+      "id": "bb43ec30bc49c466d72c82726d1d6d374f10c31a07d266a37089529cf8b23db7",
+      "kind": "own-words",
+      "url": "https://magnoliatribune.com/?p=126601",
+      "date": "2025-01-29",
+      "date_precision": "day",
+      "passage": "“I think that in our Legislature the past few years we’ve done a good job of crafting and passing laws that have helped maintain the integrity of elections in Mississippi,” Senator Tate said. “When there’s questions that come about in elections, I think Mississippi is the last place where there’s question marks.”",
+      "note": "Quoted by Magnolia Tribune (article date; spoken that week) while announcing a run for Secretary of State. General statement about state election-integrity laws; names no ID or citizenship rule.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:49:24.037Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "429d79eddf97a4a74746b2c8981e4a0027dc9911781d50e71dcb5f527a097c2d",
+      "kind": "own-words",
+      "url": "https://magnoliatribune.com/?p=126601",
+      "date": "2025-01-29",
+      "date_precision": "day",
+      "passage": "“Being a former election commissioner for 10 years and past chairman of the Senate Elections Committee, I have a passion and understanding of how we can move Mississippi forward regarding elections,” Tate said.",
+      "note": "Quoted by Magnolia Tribune on his background for the Secretary of State race. No specific ID or citizenship rule named.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:49:24.037Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "180d4d009e45f38ae5891312c41604bf7ea64304453b0eb4de52336245d0a9bf",
+      "kind": "own-words",
+      "url": "https://www.mpbonline.org/blogs/news/senate-bill-to-purge-voter-rolls-passes-chamber-critics-say-it-suppress-the-vote/",
+      "date": "2021-02-11",
+      "date_precision": "day",
+      "passage": "“The rationale is to clean our voter rolls, make sure that we maintain good voter rolls.  A lot of  legislations out there dictates how much counties have to spend on elections based on their active voter roll.  With inflating books were going to have more costs that go down to the counties,” said Tate.",
+      "note": "Quoted by Mississippi Public Broadcasting during Senate debate on SB 2588 (2021), his bill to start removal of voters who miss two years of voting after a postcard goes unanswered.",
+      "subjects": [
+        "voter-roll maintenance",
+        "removal of inactive voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:49:24.037Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1a159b2461381f172758be4525da9e5afcc309076ff734488629a638c9a90198",
+      "kind": "own-words",
+      "url": "https://www.mpbonline.org/blogs/news/senate-bill-to-purge-voter-rolls-passes-chamber-critics-say-it-suppress-the-vote/",
+      "date": "2021-02-11",
+      "date_precision": "day",
+      "passage": "“It’s there I promise you,” said Tate.",
+      "note": "Quoted by MPB answering a colleague who asked whether there was evidence of voter fraud, in the debate on SB 2588; he added he did not have the evidence with him.",
+      "subjects": [
+        "voter fraud claims",
+        "voter-roll maintenance"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:49:24.037Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "364900856d99bfb399d1bd234a46bd84aa31932d2d96df01adc5d490b75dbbec",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/senate/0860019.pdf",
+      "date": "2022-03-30",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Report of Conference Committee on H. B. No. 1510 was adopted: (0860019)",
+      "note": "Senate roll call as printed ('Tate'), linked to Jeff Tate (district 33) via the official 2022 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.756Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4cd68734c411fde05dc865eff22b5ec7355a7eca5840d62ffaae784f759ff30d",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/senate/0720054.pdf",
+      "date": "2024-03-13",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2576. On motion of Senator England, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0720054)",
+      "note": "Senate roll call as printed ('Tate'), linked to Jeff Tate (district 33) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.756Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b06245d25d2175f37574492ed83c14ff384d348b299ee3d82626e700bd71c0d",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2020/pdf/history/SB/SB2670.xml",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2670-2020",
+      "act": "sponsor",
+      "motion": "co sponsor, SB2670IN",
+      "note": "Named as co sponsor ('Tate') on the official bill text, summary or journal; linked to Jeff Tate via the official 2020 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.756Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c8de959726e0a134f259c7dfec803b5c50996898ef516e1fec05bae0b6d31744",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2020/pdf/history/SB/SB2690.xml",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2690-2020",
+      "act": "sponsor",
+      "motion": "co sponsor, SB2690IN",
+      "note": "Named as co sponsor ('Tate') on the official bill text, summary or journal; linked to Jeff Tate via the official 2020 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.756Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act / SHIELD Act (SB 2588, 2026) citizenship checks",
+        "voter-roll maintenance",
+        "candidate questionnaires"
+      ],
+      "places": [
+        "identity confirmed: https://billstatus.ls.state.ms.us/members/senate/tate.xml (Senate District 33, Jeff Tate)",
+        "On the Record (0 meetings)",
+        "https://magnoliatribune.com/?p=126601",
+        "https://www.mpbonline.org/blogs/news/senate-bill-to-purge-voter-rolls-passes-chamber-critics-say-it-suppress-the-vote/",
+        "https://www.mississippifreepress.org/casualties-of-war-mississippi-voter-purge-bills-poll-tax-dead-for-2021/ (no Tate quote on the subject)",
+        "https://www.mississippifreepress.org/at-the-capitol-lawmakers-flirt-with-purges-of-registered-voters-felony-convictions/ (no Tate quote on the subject)",
+        "https://www.mississippifreepress.org/annual-citizenship-checks-of-mississippi-voter-rolls-headed-to-governors-desk-with-shield-act/ (2026 SHIELD Act: no Tate quote)",
+        "https://magnoliatribune.com/?p=143044 and https://www.supertalk.fm/?p=308835 (2026 citizenship law: quotes are from the Governor, none from Tate)",
+        "web searches: name + voter ID/photo ID/citizenship, SHIELD/SAVE Act, Secretary of State campaign, 2021 elections committee: no own-words on photo ID or citizenship found; a search summary claiming Tate promoted the SHIELD Act on X was a mix-up with the Governor and is not used",
+        "blocked: https://ballotpedia.org (listed per instructions, not fetched)",
+        "not reviewed: https://www.wlbt.com and other refused sites (robots); campaign site not found"
+      ],
+      "found": 4,
+      "at": "2026-11-05T22:49:24.037Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-05T23:52:51.756Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}
