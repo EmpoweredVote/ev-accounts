@@ -1,0 +1,131 @@
+{
+  "measured": "2026-11-07",
+  "migration": "CC_0366",
+  "note": "Tier 3 of outstanding-state-exec-2026-11-06.json said all 49 of its seats needed real sub-state geometry. Nine of them do not, and this file is those nine, in four bodies. Alabama's and Georgia's Public Service Commissions are elected by the WHOLE STATE; Colorado's State Board of Education and University of Colorado Board of Regents are elected by CONGRESSIONAL DISTRICT, whose polygons production already holds under TIGER layer G5200. Every body is created whole and every seat is seated from the body's own roster, on the pattern CC_0364 set.",
+  "classificationCorrection": "The tier-3 inventory was built from Ballotpedia's office titles, and a title that says District N or Place N reads as districted. It is not always: Georgia's commissioners must RESIDE in the district they represent but are chosen in statewide elections, and Alabama's Place 1 and Place 2 were the last two seats filled under a three-member AT-LARGE commission. A district in the title is a claim about the candidate, not necessarily about the electorate - read who votes before deciding a seat needs geometry.",
+  "bodies": [
+    {
+      "key": "AL PSC",
+      "st": "AL", "stateName": "Alabama", "fips": "01",
+      "governmentId": "f427572f-d37a-4828-b68b-7f2c4e6ee4cd",
+      "electionId": "4dc3b465-4921-410c-a3b1-b05bac5004e7",
+      "chamberName": "Public Service Commission",
+      "chamberFormal": "Alabama Public Service Commission",
+      "officialCount": 3, "termLength": "4 years (6 years for terms elected after 2026-06-01)",
+      "rosterUrl": "https://psc.alabama.gov/",
+      "rosterNote": "The Commission's own home page, read 2026-11-07, names all three: Cynthia Lee Almond as President and Jeremy H. Oden and Chris V. Beeker III in Places 1 and 2. Ballotpedia's officeholder table agrees, in shorter forms (Cynthia Almond, Jeremy Oden, Chris Beeker, III).",
+      "electorate": "statewide",
+      "electorateNote": "HB475, the Power to the People Act, took effect 2026-06-01 and restructures the commission from three at-large members to seven elected by congressional district. The phase-in is published: NOVEMBER 2026 - two commissioners elected under the PRIOR AT-LARGE STRUCTURE, which is what Place 1 and Place 2 are; January 2027 - the governor appoints four, two to two-year and two to four-year terms; November 2028 - three elected by congressional district, replacing the president's seat and the two-year appointees; November 2030 - two more; November 2032 - the rest; January 2033 - a full seven-member commission, all by congressional district.",
+      "followUp": "2027-01: the governor appoints four commissioners. Create those four seats and raise official_count from 3 to 7. From November 2028 the elected seats become congressional-district seats and will need the same treatment Colorado gets here.",
+      "statewideDistrictLabel": "Alabama Public Service Commission",
+      "seats": [
+        {"title": "Public Service Commission President", "holder": "Cynthia Lee Almond", "role": "President", "onBallot2026": false, "geometry": "statewide"},
+        {"title": "Public Service Commissioner, Place 1", "holder": "Jeremy H. Oden", "onBallot2026": true, "raceRecorded": true, "geometry": "statewide", "ballotpediaOffice": "Public Service Commission Place 1", "raceTitle": "Alabama Public Service Commission Place 1"},
+        {"title": "Public Service Commissioner, Place 2", "holder": "Chris V. Beeker III", "onBallot2026": true, "raceRecorded": true, "geometry": "statewide", "ballotpediaOffice": "Public Service Commission Place 2", "raceTitle": "Alabama Public Service Commission Place 2"}
+      ]
+    },
+    {
+      "key": "GA PSC",
+      "st": "GA", "stateName": "Georgia", "fips": "13",
+      "governmentId": "eaeb1bd2-6bdb-4475-9bdc-e29acca8bebf",
+      "electionId": "e4d22b2e-2c87-4fec-9b5a-c0680e99d2c7",
+      "chamberName": "Public Service Commission",
+      "chamberFormal": "Georgia Public Service Commission",
+      "officialCount": 5, "termLength": "6 years",
+      "rosterUrl": "https://psc.ga.gov/about-the-psc/commissioners/",
+      "rosterNote": "The Commission's own commissioners page, read 2026-11-07, gives all five with their district numbers: District 1 Jason Shaw (Chairman), District 2 Alicia M. Johnson, District 3 Peter Hubbard, District 4 Lauren McDonald (Vice Chairman), District 5 Stan Wise. Ballotpedia's officeholder table agrees on all five.",
+      "electorate": "statewide",
+      "electorateNote": "Ballotpedia, read 2026-11-07, on the Georgia Public Service Commission: 'Though each commissioner must be a resident of the district he represents for 12 months prior to election, commissioners are chosen in statewide elections and not by the citizens of their district.' The district is a residency requirement on the candidate, so the seats need no sub-state geometry and every Georgia voter votes in every PSC race.",
+      "statewideDistrictLabel": "Georgia Public Service Commission",
+      "seats": [
+        {"title": "Public Service Commissioner, District 1", "holder": "Jason Shaw", "role": "Chairman", "onBallot2026": false, "geometry": "statewide"},
+        {"title": "Public Service Commissioner, District 2", "holder": "Alicia M. Johnson", "onBallot2026": false, "geometry": "statewide"},
+        {"title": "Public Service Commissioner, District 3", "holder": "Peter Hubbard", "onBallot2026": true, "raceRecorded": true, "geometry": "statewide", "ballotpediaOffice": "Public Service Commission District 3", "raceTitle": "Georgia Public Service Commission District 3"},
+        {"title": "Public Service Commissioner, District 4", "holder": "Lauren McDonald", "role": "Vice Chairman", "onBallot2026": false, "geometry": "statewide"},
+        {"title": "Public Service Commissioner, District 5", "holder": "Stan Wise", "onBallot2026": true, "raceRecorded": true, "geometry": "statewide", "ballotpediaOffice": "Public Service Commission District 5", "raceTitle": "Georgia Public Service Commission District 5"}
+      ]
+    },
+    {
+      "key": "CO SBE",
+      "st": "CO", "stateName": "Colorado", "fips": "08",
+      "governmentId": "41ad933e-ba54-48a3-baef-83fbdca9a9d5",
+      "electionId": "ae041272-78b1-4840-862c-797118b79afe",
+      "chamberName": "State Board of Education",
+      "chamberFormal": "Colorado State Board of Education",
+      "officialCount": 9, "termLength": "6 years",
+      "rosterUrl": "https://www.cde.state.co.us/cdeboard",
+      "rosterNote": "The Department of Education's own board page, read 2026-11-07, lists every member against a congressional district and names the at-large member. Ballotpedia's officeholder table agrees on all nine.",
+      "electorate": "congressional districts",
+      "electorateNote": "CDE's own page and Ballotpedia both state it: eight members are elected from the state's eight congressional districts and one at large, to six-year terms; the District 8 and at-large seats were created after the 2022 redistricting. Ballotpedia also publishes the rotation - the at-large seat and Districts 5 and 6 elect in years divisible by six, then Districts 2, 4 and 8 two years later, then DISTRICTS 1, 3 AND 7 two years after that, which is 2026 and is exactly the three voteboxes Ballotpedia carries.",
+      "districtType": "STATE_BOARD_EDUCATION",
+      "mtfcc": "X0003",
+      "geoIdPattern": "ocd-division/country:us/state:co/sboe:N",
+      "statewideDistrictLabel": "Colorado State Board of Education At-Large",
+      "seats": [
+        {"title": "State Board of Education Member, District 1", "holder": "Lisa Escárcega", "onBallot2026": true, "raceRecorded": true, "geometry": "cd", "cd": 1, "ballotpediaOffice": "State Board of Education District 1", "raceTitle": "Colorado State Board of Education District 1"},
+        {"title": "State Board of Education Member, District 2", "holder": "Kathy Gebhardt", "onBallot2026": false, "geometry": "cd", "cd": 2},
+        {"title": "State Board of Education Member, District 3", "holder": "Sherri Wright", "onBallot2026": true, "raceRecorded": false, "geometry": "cd", "cd": 3, "note": "on the 2026 ballot, but Ballotpedia has called no winner, so no race is recorded here. It belongs to the uncalled pass."},
+        {"title": "State Board of Education Member, District 4", "holder": "Kristi Burton Brown", "onBallot2026": false, "geometry": "cd", "cd": 4},
+        {"title": "State Board of Education Member, District 5", "holder": "Steve Durham", "onBallot2026": false, "geometry": "cd", "cd": 5},
+        {"title": "State Board of Education Member, District 6", "holder": "Rebecca McClellan", "role": "Chairperson", "onBallot2026": false, "geometry": "cd", "cd": 6},
+        {"title": "State Board of Education Member, District 7", "holder": "Karla Esser", "onBallot2026": true, "raceRecorded": true, "geometry": "cd", "cd": 7, "ballotpediaOffice": "State Board of Education District 7", "raceTitle": "Colorado State Board of Education District 7"},
+        {"title": "State Board of Education Member, District 8", "holder": "Yazmin Navarro", "role": "Vice-Chairperson", "onBallot2026": false, "geometry": "cd", "cd": 8},
+        {"title": "State Board of Education Member, At-Large", "holder": "Kathy Plomer", "onBallot2026": false, "geometry": "statewide"}
+      ]
+    },
+    {
+      "key": "CO REGENTS",
+      "st": "CO", "stateName": "Colorado", "fips": "08",
+      "governmentId": "41ad933e-ba54-48a3-baef-83fbdca9a9d5",
+      "electionId": "ae041272-78b1-4840-862c-797118b79afe",
+      "chamberName": "Board of Regents",
+      "chamberFormal": "University of Colorado Board of Regents",
+      "officialCount": 9, "termLength": "6 years",
+      "rosterUrl": "https://regents.cu.edu/meet-the-regents",
+      "rosterNote": "The board's own Meet the Regents page and its District Map page, both read 2026-11-07, name all nine against a congressional district and give each member's current term years. The three terms running 2021-27 are exactly the three seats Ballotpedia carries as 2026 contests.",
+      "electorate": "congressional districts",
+      "electorateNote": "The board's own pages list eight regents by congressional district plus one At Large, each with a six-year term.",
+      "districtType": "STATE_BOARD",
+      "mtfcc": "X-ST-BOARD",
+      "geoIdPattern": "ocd-division/country:us/state:co/regent:N",
+      "statewideDistrictLabel": "University of Colorado Board of Regents At-Large",
+      "seats": [
+        {"title": "University of Colorado Regent, District 1", "holder": "Wanda James", "onBallot2026": false, "geometry": "cd", "cd": 1, "termEnds": "2029"},
+        {"title": "University of Colorado Regent, District 2", "holder": "Callie Rennison", "role": "Vice Chair", "onBallot2026": true, "raceRecorded": true, "geometry": "cd", "cd": 2, "termEnds": "2027", "ballotpediaOffice": "University of Colorado Board of Regents District 2", "raceTitle": "University of Colorado Board of Regents District 2"},
+        {"title": "University of Colorado Regent, District 3", "holder": "Ray Scott", "onBallot2026": false, "geometry": "cd", "cd": 3, "termEnds": "2031"},
+        {"title": "University of Colorado Regent, District 4", "holder": "Frank McNulty", "onBallot2026": false, "geometry": "cd", "cd": 4, "termEnds": "2029"},
+        {"title": "University of Colorado Regent, District 5", "holder": "Ken Montera", "role": "Chair", "onBallot2026": false, "geometry": "cd", "cd": 5, "termEnds": "2031"},
+        {"title": "University of Colorado Regent, District 6", "holder": "Ilana Spiegel", "onBallot2026": true, "raceRecorded": true, "geometry": "cd", "cd": 6, "termEnds": "2027", "ballotpediaOffice": "University of Colorado Board of Regents District 6", "raceTitle": "University of Colorado Board of Regents District 6", "rosterName": "Ilana Dubin Spiegel"},
+        {"title": "University of Colorado Regent, District 7", "holder": "Nolbert Chavez", "onBallot2026": true, "raceRecorded": true, "geometry": "cd", "cd": 7, "termEnds": "2027", "ballotpediaOffice": "University of Colorado Board of Regents District 7", "raceTitle": "University of Colorado Board of Regents District 7"},
+        {"title": "University of Colorado Regent, District 8", "holder": "Mark VanDriel", "onBallot2026": false, "geometry": "cd", "cd": 8, "termEnds": "2029"},
+        {"title": "University of Colorado Regent, At-Large", "holder": "Elliott Hood", "onBallot2026": false, "geometry": "statewide", "termEnds": "2031"}
+      ]
+    }
+  ],
+  "geometry": {
+    "method": "Each Colorado board district is a copy of the congressional-district polygon production already holds, taken inside the database: INSERT ... SELECT gb.geometry FROM essentials.geofence_boundaries gb WHERE gb.mtfcc = 'G5200' AND gb.geo_id = '080N'. Nothing is downloaded, nothing is reprojected and nothing is digitised, so the CRS hazard does not arise - all eight source polygons were measured at SRID 4326 and ST_IsValid true before the copy.",
+    "vintage": "Colorado has no G5200V26 rows, so there is only one congressional map in production and no vintage to choose between. The eight polygons are the 2021 map, which is the map CDE's and the Regents' own pages describe their members against.",
+    "layers": [
+      {"mtfcc": "X0003", "districtType": "STATE_BOARD_EDUCATION", "codeChange": false, "why": "already admitted by districtQueries.ts and geoIdGuard.ts for Utah's State Board of Education; the rule is not state-scoped, so Colorado's rows join with no code change"},
+      {"mtfcc": "X-ST-BOARD", "districtType": "STATE_BOARD", "codeChange": true, "why": "the X catch-all admits only LOCAL, COUNTY and JUDICIAL, so a new STATE_BOARD layer needs an explicit line in BOTH districtQueries.ts and geoIdGuard.ts - the two say in their own comments that they must stay in step. X-CA-SBOE is the template."}
+    ]
+  },
+  "stillNeedsRealGeometry": {
+    "count": 40,
+    "note": "These are the tier-3 seats this file does not touch, with what each actually needs.",
+    "derivableFromDistrictsWeHold": [
+      {"body": "KS State Board of Education", "seats": 5, "need": "each district is four contiguous state senatorial districts (Ballotpedia, and K.S.A.); we hold all 40 Kansas senate polygons under G5210. BLOCKED ON THE COMPOSITION - which four senate districts make each board district. K.S.A. 72-250 and 72-251 are about officers and quorum, not districts; the mapping was not found."},
+      {"body": "MA Governor's Council", "seats": 8, "need": "each district is five contiguous senatorial districts; we hold all 40 Massachusetts senate polygons under G5210, with their real names. BLOCKED ON THE COMPOSITION - the Massachusetts senate districts are NAMED, not numbered, so TIGER's 25D01..25D40 ordering cannot be assumed to be the 'consecutive' order the constitution means. Guessing it would hand voters the wrong councillor."}
+    ],
+    "needsAnImportedPolygon": [
+      {"body": "AL State Board of Education", "seats": 4},
+      {"body": "LA Public Service Commission", "seats": 2},
+      {"body": "NE Public Service Commission", "seats": 1},
+      {"body": "NE State Board of Education", "seats": 3},
+      {"body": "NE University of Nebraska Board of Regents", "seats": 1},
+      {"body": "NH Executive Council", "seats": 5, "note": "defined by statute as lists of towns and wards. We hold county subdivisions (G4040) for only 11 states and New Hampshire is not one of them, so it cannot be built from what we have."},
+      {"body": "NM Public Education Commission", "seats": 4},
+      {"body": "TX State Board of Education", "seats": 7}
+    ]
+  }
+}

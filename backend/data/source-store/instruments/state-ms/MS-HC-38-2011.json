@@ -1,0 +1,33 @@
+{
+  "id": "MS-HC-38-2011",
+  "scope": "state:ms",
+  "title": "HC 38 (2011 Regular Session): Constitution; bring forward 2011 Initiative Measure No. 27 regarding voter ID for possible consideration of legislative alternative.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2011/pdf/history/HC/HC0038.xml",
+    "https://billstatus.ls.state.ms.us/documents/2011/pdf/HC/HC0038IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Proposed new section (1)(a)\n(quote) Except as provided in subsection (2), a qualified elector who votes in a primary or general election, either in person at the polls or in person in the office of the circuit clerk, shall present a government issued photo identification before being allowed to vote.\n(section) Proposed new section (2)(a)\n(quote) An elector living and voting in a state-licensed care facility shall not be required to show a government issued photo identification before being allowed to vote.\n(b_no_id_remedy)\n(section) Proposed new section (1)(b)\n(quote) A qualified elector who does not have a government issued photo identification and who cannot afford such identification may obtain a state issued photo identification free of charge from the Mississippi Department of Public Safety.\n(section) Proposed new section (2)(b)\n(quote) An elector who has a religious objection to being photographed will be allowed to cast an affidavit ballot, and the elector, within five (5) days after the election, shall execute an affidavit in the appropriate circuit clerk's office affirming that the exemption applies.\n(section) Proposed new section (2)(c)\n(quote) An elector who has a government issued photo identification, but is unable to present that identification when voting, shall file an affidavit ballot, and the elector, within five (5) days after the election, shall present the government issued photo identification to the appropriate circuit clerk.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Proposed new section (3)\n(quote) This provision shall not be construed to require photo identification to register to vote.\n(section) Proposed new section (4)\n(quote) The Legislature shall enact legislation to implement the provisions of this section of the Constitution.\n(other) Brings forward the text of Initiative Measure No. 27 for possible consideration of a legislative alternative; ballot explanation text\n(other) Submission to the U.S. Attorney General or D.C. court under the Voting Rights Act",
+  "sponsors": [
+    {
+      "name": "Evans (70th)",
+      "role": "prime",
+      "version": "HC0038IN"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

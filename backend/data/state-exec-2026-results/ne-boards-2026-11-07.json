@@ -1,0 +1,192 @@
+{
+  "_what": "Nebraska's three elected statewide boards: every seat, its current holder, and the eight 2026 general-election results. Input to emit373.mjs, which writes CC_0373, CC_0374 and CC_0375.",
+  "_sources": "🔴 NOT BALLOTPEDIA. Every holder comes from the body's OWN roster page and every result from the Secretary of State's own results service, so no aggregator is in the chain at all. CLAUDE.md: the chamber's own roster outranks every aggregator.",
+  "_termStart": "Neb. Const. Art. XVII-5: 'the terms of all elected officers shall begin on the first Thursday after the first Tuesday in January next succeeding their election.' January 2027: the first Tuesday is the 5th, so the first Thursday after it is THURSDAY 7 JANUARY 2027. The rule reproduces the date the Secretary of State printed for the previous cycle — the 2024 canvass book gives 'Term Start: January 9, 2025' for all three of these offices, and 9 January 2025 was the first Thursday after the first Tuesday. The Governor's office used the same date independently when it said Joel Makovicka would 'serve through Jan. 7, 2027'.",
+  "_currentHoldersHaveNoTermStart": "No roster publishes when a member's current term began; they publish when the member was FIRST elected, which is a different fact (CLAUDE.md). Every term written here is therefore open-ended with start_precision 'unknown'.",
+  "_results": "Read 2026-11-07 from the Secretary of State's results service with every precinct fully reported in all eight contests. ⚠ The Board of State Canvassers has not yet certified the 2026 general (it meets in early December), so these are the state's own returns rather than the canvass, and every result is recorded with result_certainty 'called'.",
+  "measured": "2026-11-07",
+  "election": { "id": "1224487f-4f73-4048-b553-5629ee19b512", "date": "2026-11-03", "name": "NE 2026 Statewide General" },
+  "governmentId": "bb004e64-eeb4-4605-b062-ea991e7ad38b",
+  "bodies": [
+    {
+      "key": "psc",
+      "slot": "CC_0373",
+      "chamberName": "Public Service Commission",
+      "chamberFormal": "Nebraska Public Service Commission",
+      "officeTitle": "Public Service Commissioner, District",
+      "officialCount": 5,
+      "termLength": "6 years",
+      "mtfcc": "X-ST-BOARD",
+      "districtType": "STATE_BOARD",
+      "prefix": "ocd-division/country:us/state:ne/psc:",
+      "rosterUrl": "https://psc.nebraska.gov/administration/psc-commissioners",
+      "resultsUrl": "https://electionresults.nebraska.gov/resultsSW.aspx?type=PS&map=DIST",
+      "countiesFile": "ne-psc-counties-2026-11-07.json",
+      "inaugurationRules": "Neb. Const. Art. XVII-5: the terms of all elected officers begin on the first Thursday after the first Tuesday in January next succeeding their election, so the 2026 winner takes office on 2027-01-07. The Secretary of State's 2024 canvass book states the same rule's result for the previous cycle: 'Term Start: January 9, 2025.'",
+      "electionRules": "Neb. Rev. Stat. 32-509(2) sets the stagger by district number: districts 1 and 3 were elected in 1994 and every six years after (2024, next 2030); districts 4 and 5 in 1992 and every six years after (2022, next 2028); district 2 in 1996 and every six years after (2026, next 2032). District 2 was the only Commission seat on the 2026 ballot.",
+      "remarks": "Five commissioners, one per district, elected on the PARTISAN ballot to six-year terms (Neb. Const. Art. IV-20; Neb. Rev. Stat. 32-509, 75-101). 🔴 The districts are set by LB 5 of the 2021 First Special Session 'by the adoption of maps by reference' — maps PSC21-39001-1 through PSC21-39001-5, filed with the Clerk of the Legislature — and Neb. Rev. Stat. 75-101.01 lists no county at all. The county composition this import gates on is taken from the Secretary of State's certified canvass books instead. District 2 lies wholly inside Douglas County and is the only district with no whole county of its own.",
+      "seats": [
+        { "district": 1, "holder": "Dan Watermeier", "onBallot2026": false, "raceRecorded": false },
+        { "district": 2, "holder": "Christian Mirch", "onBallot2026": true, "raceRecorded": true },
+        { "district": 3, "holder": "Tim Schram", "onBallot2026": false, "raceRecorded": false },
+        { "district": 4, "holder": "Eric Kamler", "onBallot2026": false, "raceRecorded": false },
+        { "district": 5, "holder": "Kevin Stocker", "onBallot2026": false, "raceRecorded": false }
+      ],
+      "anchors": [
+        { "district": 1, "county": "Cass County", "member": "Dan Watermeier" },
+        { "district": 3, "county": "Sarpy County", "member": "Tim Schram" },
+        { "district": 4, "county": "Madison County", "member": "Eric Kamler" },
+        { "district": 5, "county": "Lincoln County", "member": "Kevin Stocker" }
+      ],
+      "unanchored": [2],
+      "unanchoredWhy": "District 2 is wholly inside Douglas County, which the plan splits between districts 2 and 3. It is still PINNED, because no other Commission district has {Douglas} as its whole county set — there is nothing it could be swapped with.",
+      "races": [
+        {
+          "district": 2, "termNote": "six-year term",
+          "candidates": [
+            { "name": "Wendy DeBoer", "party": "Democratic", "votes": 87818, "won": true },
+            { "name": "Dennis McCann", "party": "Republican", "votes": 40745, "won": false }
+          ],
+          "precincts": "234 / 234 fully reported"
+        }
+      ]
+    },
+    {
+      "key": "sboe",
+      "slot": "CC_0374",
+      "chamberName": "State Board of Education",
+      "chamberFormal": "Nebraska State Board of Education",
+      "officeTitle": "Nebraska State Board of Education Member, District",
+      "officialCount": 8,
+      "termLength": "4 years",
+      "mtfcc": "X0003",
+      "districtType": "STATE_BOARD_EDUCATION",
+      "prefix": "ocd-division/country:us/state:ne/sboe:",
+      "rosterUrl": "https://www.education.ne.gov/stateboard/members/",
+      "resultsUrl": "https://electionresults.nebraska.gov/resultsSW.aspx?type=SE&map=DIST",
+      "countiesFile": "ne-sboe-counties-2026-11-07.json",
+      "inaugurationRules": "Neb. Const. Art. XVII-5: the terms of all elected officers begin on the first Thursday after the first Tuesday in January next succeeding their election, so the 2026 winners take office on 2027-01-07. The Secretary of State's 2024 canvass book states the same rule's result for the previous cycle: 'Term Start: January 9, 2025.'",
+      "electionRules": "Neb. Rev. Stat. 32-511 sets the stagger by district number: districts 1, 2, 3 and 4 were elected in 1996 and every four years after (2024, next 2028); districts 5, 6, 7 and 8 in 1994 and every four years after (2026, next 2030). All four of districts 5 to 8 were on the 2026 ballot.",
+      "remarks": "Eight members, one per district, elected on the NONPARTISAN ballot to four-year terms (Neb. Const. Art. VII-3; Neb. Rev. Stat. 32-511, 79-313). 🔴 The districts are set by LB 7 of the 2021 First Special Session 'by the adoption of maps by reference' — maps ED21-39003-1 through ED21-39003-8 — and Neb. Rev. Stat. 79-311 lists no county. ⚠ LR278CA (2024) proposed a constitutional amendment cutting the board to seven members from the terms commencing in 2027, two of them appointed by the Governor; it was INDEFINITELY POSTPONED on 2024-04-18 and never reached the ballot, so the board remains eight elected members.",
+      "seats": [
+        { "district": 1, "holder": "Kristin Christensen", "onBallot2026": false, "raceRecorded": false },
+        { "district": 2, "holder": "Maggie Douglas", "onBallot2026": false, "raceRecorded": false },
+        { "district": 3, "holder": "Lisa Schonhoff", "onBallot2026": false, "raceRecorded": false },
+        { "district": 4, "holder": "Liz Renner", "onBallot2026": false, "raceRecorded": false },
+        { "district": 5, "holder": "Kirk Penner", "onBallot2026": true, "raceRecorded": true },
+        { "district": 6, "holder": "Sherry Jones", "onBallot2026": true, "raceRecorded": true },
+        { "district": 7, "holder": "Elizabeth Tegtmeier", "onBallot2026": true, "raceRecorded": true },
+        { "district": 8, "holder": "Deborah Neary", "onBallot2026": true, "raceRecorded": true }
+      ],
+      "anchors": [
+        { "district": 2, "county": "Otoe County", "member": "Maggie Douglas" },
+        { "district": 3, "county": "Dodge County", "member": "Lisa Schonhoff" },
+        { "district": 5, "county": "Gage County", "member": "Kirk Penner" },
+        { "district": 6, "county": "Hall County", "member": "Sherry Jones" },
+        { "district": 7, "county": "Lincoln County", "member": "Elizabeth Tegtmeier" }
+      ],
+      "unanchored": [1, 4, 8],
+      "unanchoredWhy": "District 1 is wholly inside Lancaster County and districts 4 and 8 are both wholly inside Douglas County. District 1 is still pinned, because it is the only district whose county set is {Lancaster}. 🔴 DISTRICTS 4 AND 8 ARE NOT PINNED BY COUNTY: both have the county set {Douglas}, so the canvass cannot tell them apart, and only the enacted plan's population separates them — District 4 holds 245,713 people and District 8 holds 246,703.",
+      "races": [
+        {
+          "district": 5, "termNote": "four-year term",
+          "candidates": [
+            { "name": "Angie Eberspacher", "party": "Nonpartisan", "votes": 45942, "won": true },
+            { "name": "Michaela Conway", "party": "Nonpartisan", "votes": 36737, "won": false }
+          ],
+          "precincts": "360 / 360 fully reported"
+        },
+        {
+          "district": 6, "termNote": "four-year term",
+          "candidates": [
+            { "name": "Sherry Jones", "party": "Nonpartisan", "votes": 41090, "won": true },
+            { "name": "Grady Erickson", "party": "Nonpartisan", "votes": 24959, "won": false }
+          ],
+          "precincts": "204 / 204 fully reported"
+        },
+        {
+          "district": 7, "termNote": "four-year term",
+          "candidates": [
+            { "name": "Elizabeth Tegtmeier", "party": "Nonpartisan", "votes": 69508, "won": true }
+          ],
+          "precincts": "286 / 286 fully reported"
+        },
+        {
+          "district": 8, "termNote": "four-year term",
+          "candidates": [
+            { "name": "Lou Ann Goding", "party": "Nonpartisan", "votes": 41772, "won": true },
+            { "name": "Sherrye Hutcherson", "party": "Nonpartisan", "votes": 40255, "won": false }
+          ],
+          "precincts": "234 / 234 fully reported",
+          "note": "The closest of the eight: 1,517 votes, 50.92% to 49.08%. Nebraska's automatic recount threshold is one percent of the leading candidate's votes (Neb. Rev. Stat. 32-1119), which is 418 here, so the margin is more than three times too wide to trigger one."
+        }
+      ]
+    },
+    {
+      "key": "regents",
+      "slot": "CC_0375",
+      "chamberName": "Board of Regents",
+      "chamberFormal": "University of Nebraska Board of Regents",
+      "officeTitle": "University of Nebraska Regent, District",
+      "officialCount": 8,
+      "termLength": "6 years",
+      "mtfcc": "X-ST-BOARD",
+      "districtType": "STATE_BOARD",
+      "prefix": "ocd-division/country:us/state:ne/regents:",
+      "rosterUrl": "https://nebraska.edu/regents/board-members/index",
+      "resultsUrl": "https://electionresults.nebraska.gov/resultsSW.aspx?type=RG&map=DIST",
+      "countiesFile": "ne-regents-counties-2026-11-07.json",
+      "inaugurationRules": "Neb. Const. Art. XVII-5: the terms of all elected officers begin on the first Thursday after the first Tuesday in January next succeeding their election, so the 2026 winners take office on 2027-01-07. The Governor's office used the same date independently when it announced that Joel Makovicka, appointed to the District 4 vacancy on 2026-02-03, would 'serve through Jan. 7, 2027'.",
+      "electionRules": "Neb. Rev. Stat. 32-510 sets the stagger by district number: districts 1 and 2 were elected in 1996 and every six years after (2026, next 2032); districts 6 and 7 in 1992 and every six years after (2022, next 2028); districts 3, 4, 5 and 8 in 1994 and every six years after (2024, next 2030). Districts 1 and 2 were on the 2026 ballot for full six-year terms. ⚠ District 4 was ALSO on the 2026 ballot, for the unexpired remainder of the term elected in 2024, and that seat is next up in 2030 with the rest of its class.",
+      "remarks": "Eight regents, one per district, elected on the NONPARTISAN ballot to six-year terms (Neb. Const. Art. VII-10; Neb. Rev. Stat. 32-510). 🔴 The districts are set by LB 8 of the 2021 First Special Session 'by the adoption of maps by reference' — maps REG21-39003-1 through REG21-39003-8 — and Neb. Rev. Stat. 85-103.01 lists no county. ⚠ The file the Legislature publishes as reg_lb8_final.pdf is NOT the enacted plan: its sheets were drawn on 2021-09-25, three days before AM41 was adopted, and four of its eight districts are pre-amendment. ⚠ The board also seats four NON-VOTING student regents, one from each campus, who serve while they are their campus's student body president. They hold no district, are not elected by the public, and are not created here.",
+      "seats": [
+        { "district": 1, "holder": "Timothy Clare", "onBallot2026": true, "raceRecorded": true },
+        { "district": 2, "holder": "Jack Stark", "onBallot2026": true, "raceRecorded": true },
+        { "district": 3, "holder": "Jim Scheer", "onBallot2026": false, "raceRecorded": false },
+        { "district": 4, "holder": "Joel Makovicka", "onBallot2026": true, "raceRecorded": true },
+        { "district": 5, "holder": "Robert Schafer", "onBallot2026": false, "raceRecorded": false },
+        { "district": 6, "holder": "Paul Kenney", "onBallot2026": false, "raceRecorded": false },
+        { "district": 7, "holder": "Kathy Wilmot", "onBallot2026": false, "raceRecorded": false },
+        { "district": 8, "holder": "Barbara Weitz", "onBallot2026": false, "raceRecorded": false }
+      ],
+      "anchors": [
+        { "district": 3, "county": "Madison County", "member": "Jim Scheer" },
+        { "district": 5, "county": "Gage County", "member": "Robert Schafer" },
+        { "district": 6, "county": "Hall County", "member": "Paul Kenney" },
+        { "district": 7, "county": "Lincoln County", "member": "Kathy Wilmot" }
+      ],
+      "unanchored": [1, 2, 4, 8],
+      "unanchoredWhy": "District 1 is wholly inside Lancaster County, districts 4 and 8 wholly inside Douglas, and district 2 is made only of parts of Douglas and Sarpy. Districts 1 and 2 are still pinned, because {Lancaster} and {Douglas, Sarpy} are each a county set no other Regents district has. 🔴 DISTRICTS 4 AND 8 ARE NOT PINNED BY COUNTY: both have the county set {Douglas}, and only the enacted plan's population separates them — District 4 holds 237,525 people and District 8 holds 245,234.",
+      "holderNotes": {
+        "4": "Joel Makovicka was APPOINTED by Governor Jim Pillen on 2026-02-03 to fill the vacancy left when Elizabeth O'Connor, elected to this seat in 2024, resigned after being charged over a crash that seriously injured a woman. He serves through 2027-01-07, and the 2026 contest for this district was for the unexpired remainder of O'Connor's term."
+      },
+      "races": [
+        {
+          "district": 1, "termNote": "six-year term",
+          "candidates": [
+            { "name": "Brent Comstock", "party": "Nonpartisan", "votes": 41300, "won": true },
+            { "name": "Jeremy Hosein", "party": "Nonpartisan", "votes": 30987, "won": false }
+          ],
+          "precincts": "199 / 199 fully reported"
+        },
+        {
+          "district": 2, "termNote": "six-year term",
+          "candidates": [
+            { "name": "Elizabeth Butler", "party": "Nonpartisan", "votes": 46014, "won": true },
+            { "name": "Jill Wolfe", "party": "Nonpartisan", "votes": 37910, "won": false }
+          ],
+          "precincts": "315 / 315 fully reported"
+        },
+        {
+          "district": 4, "termNote": "unexpired term, to 2031",
+          "candidates": [
+            { "name": "Justin Solomon", "party": "Nonpartisan", "votes": 32857, "won": true },
+            { "name": "Susanne Shore", "party": "Nonpartisan", "votes": 20766, "won": false }
+          ],
+          "precincts": "234 / 234 fully reported",
+          "note": "A special election for the remainder of the term Elizabeth O'Connor won in 2024 and resigned in January 2026. The Secretary of State's contest heading carries no 'Six Year Term' label, which is how the state marks an unexpired term."
+        }
+      ]
+    }
+  ]
+}

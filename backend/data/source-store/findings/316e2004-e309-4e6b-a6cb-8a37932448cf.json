@@ -70,6 +70,28 @@
         "fetched_at": "2026-10-27T01:20:12.088Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "0ff72485d33528d9c484b9cfb6824d1ffa94223f9b4000092267f33cfa168d24",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/89641/race/24647/election/1371",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "The focus should be on enforcing existing laws, targeting violent offenders, and improving mental health intervention-not creating new gun restrictions for law-abiding citizens. Responsible gun ownership and public safety go hand in hand.",
+      "note": "His answer to the voter-guide question on what restrictions on gun ownership are needed to protect public safety (2026 race).",
+      "subjects": [
+        "limits on gun ownership",
+        "enforce existing gun laws",
+        "no new gun restrictions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-06T14:00:45.411Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -124,6 +146,34 @@
       "found": 3,
       "at": "2026-10-27T01:20:12.088Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer / permits to buy",
+        "red-flag orders and who may have a gun",
+        "home-made guns and federal agency gun rules",
+        "carry permits and carrying without a permit",
+        "places where carry is allowed",
+        "repeal of gun laws",
+        "general statements on gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official page: https://www.ncleg.gov/Members/Biography/H/1004 and member list https://www.ncleg.gov/Members/MemberList/H (confirms Dan Kiger, District 90, appointed 2026-06-23)",
+        "no official or campaign site found (the Branch voter-guide page says he had no website as of 2026-04-06); Elkin Tribune article on his appointment fetched (no gun statement)",
+        "iVoterGuide 2026 profiles (primary and general): questionnaire answer on gun restrictions found",
+        "Branch voter-guide summary says he is against firearm regulations: a third-party summary, not saved as his words",
+        "Ballotpedia: not fetched (known to return empty); two news searches on name plus gun words run, no direct quote found",
+        "sponsor list: covered by LegiScan bulk check (appointed June 2026, so little or no floor record)",
+        "blocked: https://www.elkintribune.com/news/veteran-trooper-former-party-chair-kiger-seeks-house-seat/article_5bfd3f2b-080e-56c8-a3c7-60614cb9ee52.html",
+        "blocked: https://mtairynews.com/news/one-step-closer-to-raleigh-kiger-reflects-on-primary-win/article_c1683172-b9b8-488f-805c-d3a40d8e8a69.html"
+      ],
+      "found": 1,
+      "at": "2026-11-06T14:00:45.411Z",
+      "by": "source-collector"
     }
   ]
 }

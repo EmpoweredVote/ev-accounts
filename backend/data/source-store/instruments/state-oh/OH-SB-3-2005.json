@@ -1,0 +1,27 @@
+{
+  "id": "OH-SB-3-2005",
+  "scope": "state:oh",
+  "title": "SB 3 (2005-2006 (126th General Assembly)): S. B. No. 3: Election reforms",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/126/sb3",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_126/legislation/sb3/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) 3505.18(A)(2)(a)\n(quote) If the election for which the elector appears in a polling place to vote is an election for federal office, if the elector registered to vote by mail, and if the elector has not previously voted in an election for federal office in this state, the elector shall announce to the precinct election officials the elector's full name and address and provide to them proof of the elector's identity in the form of a current valid photo identification or a copy of a current utility bill, bank statement, government check, paycheck, or other government document that shows the name and address of the elector.\n(section) 3505.18(A)(2)(b)\n(quote) If the election for which the elector appears in a polling place to vote is an election other than an election for federal office, if the elector registered to vote by mail, and if the elector has not previously voted in an election for federal office or an election other than an election for federal office in this state, the elector shall announce to the precinct election officials the elector's full name and address and provide to them proof of the elector's identity in the form of a current valid photo identification or a copy of a current utility bill, bank statement, government check, paycheck, or other government document that shows the name and address of the elector.\n(b_no_id_remedy)\n(section) 3505.18(A)(2)(a)\n(quote) If such an elector does not provide to the precinct election officials any of the forms of identification specified in division (A)(2)(a) of this section, the elector may cast a provisional ballot in that federal election as provided in division (A) of section 3505.181 of the Revised Code.\n(section) 3505.18(A)(2)(b)\n(quote) If such an elector does not provide to the precinct election officials any of the forms of identification specified in division (A)(2)(b) of this section, the elector may cast a provisional ballot in that election as provided in division (B) of section 3505.181 of the Revised Code.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) 3501.05, 3506.01, 3506.21: Secretary of State must set up a computerized statewide voter registration database (Help America Vote Act); optical scan ballot counting standards\n(other) 3505.181 (new): provisional ballot for federal, state and local elections\n(other) 3515.03, 3515.06, 3515.07: recounts; applicant for a non-automatic recount pays the whole cost if the result does not change\n(other) note: Only one version (introduced). Text is the same as HB 3 (OH-HB-3-2005) 00_IN, checked by comparing the files after dropping sponsor and header lines. The bill covers only first-time voters who registered by mail, not all voters.",
+  "sponsors": [],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

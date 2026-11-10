@@ -1,0 +1,291 @@
+{
+  "politician_id": "ade41ff2-eb0c-4778-a3e7-67eb4710aee0",
+  "findings": [
+    {
+      "id": "61ad7ead5c708d5cc3644cba295a15f24a874cb0732ce0f06dad1de0e594ba9c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 23-10) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (sen_demora_william_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ac99700f10fccf6a9e794750182dc8dc1f69f27d8bfd400811b06c254d0c19b4",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "nay",
+      "motion": "Senate: Concurred in House amendments",
+      "note": "OH Senate floor roll call (Concurred in House amendments, tally 23-10) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (sen_demora_william_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9b1f5c0fab55b6852c164d5fd7548cc1853715c65462e15ee45b573dea4077ad",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "Senate: Adopted",
+      "note": "OH Senate floor roll call (Adopted, tally 22-9) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (sen_demora_william_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "38c5b31dd1f42c65686c8df61fea5fd5a93fb682fcb2007dfacc97e3cacb9e57",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/william-p-demora/news/demora-condemns-passage-of-sjr-10",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "passage": "There are no protections in the resolution, there is no future proofing for when biometric and virtual IDs become safer.",
+      "note": "Release on Senate passage of S.J.R. 10, the photo-ID-to-vote constitutional amendment. He says it lacks protection for future ID technology.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "SJR 10 photo ID amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:40:47.240Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "872768e06e81742091c05e0972653383d81834fdd93ee05eef9db34a995d2c73",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/william-p-demora/news/demora-condemns-passage-of-sjr-10",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "passage": "All of these amendments were tabled.",
+      "note": "Same release. Refers to amendments offered on acceptable ID types, free state IDs, same-day registration and provisional ballots; all were tabled.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID",
+        "provisional ballot",
+        "SJR 10 photo ID amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:40:47.240Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a75d93344d7ebe14258d4feceb38bd2d71c816303dd7eec817ac1f60055a920c",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/william-p-demora/news/demora-condemns-legislation-to-require-voter-id-for-mail-in-voting",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "passage": "House Bill 472 was originally a bipartisan bill to help Ohioans experiencing homelessness get free identifying documents like birth certificates or state IDs.",
+      "note": "Release on Senate passage of Sub. H.B. 472, amended to require mail voters to send a photocopy of ID or upload it when requesting a ballot. He describes the bill's original purpose.",
+      "subjects": [
+        "mail-ballot ID",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:40:47.240Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1fc6ea7da774f95b033f510eac33e42a65daa191981117ee2afb5f41f600c6d6",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/william-p-demora/news/demora-condemns-legislation-to-require-voter-id-for-mail-in-voting",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "passage": "It would be comical if it weren't so harmful.",
+      "note": "Same release, his statement on the mail-ballot ID amendment to H.B. 472.",
+      "subjects": [
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:40:47.240Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dbc4eca37d26f87bdefd5cf655c259d26f8b6767ba2f7b3bef99b32b993da596",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/william-p-demora/news/demora-condemns-voter-suppression-bill",
+      "date": "2025-11-05",
+      "date_precision": "day",
+      "passage": "‘This bullshit bill is just another horrific attempt to further disenfranchise Ohioans who want to participate in the political process,’ said DeMora.",
+      "note": "Release on his no vote on S.B. 293 (ends the grace period for mailed ballots to arrive). Related election-law item, not an ID item.",
+      "subjects": [
+        "mail-ballot receipt deadline",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:40:47.240Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0f5c9f5d77aee39f9c6c265acb20d4a0a7c754cff5cacb38996d66457f0d753c",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/william-p-demora/news/demora-condemns-concurrence-of-voter-suppression-bill",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "passage": "Aside from disenfranchising thousands of people every year, now this bill will make it so any mistake on any database will mean you are kicked off the voter rolls.",
+      "note": "Release on his no vote on the House changes to S.B. 293, which added voter-roll matching from S.B. 153. Related voter-roll item.",
+      "subjects": [
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:40:47.240Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "580e7f9aa82185840ac5c07b4f359df6e13da0f24f9e322892f12e6f1db8a93a",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/william-p-demora/news/demora-blasts-laroses-decision-to-send-ohioans-voter-data-to-doj",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "passage": "It will be Ohioans who will suffer from this decision.",
+      "note": "Release on the Secretary of State's decision to send the statewide voter file to the federal Justice Department. Related voter-roll item.",
+      "subjects": [
+        "voter-roll checks",
+        "voter data sent to federal government"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:40:47.240Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "SJR 10 photo ID amendment",
+        "HB 458"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "blocked: https://ohiohouse.gov/members/bill-demora, /william-demora, /william-p-demora, /bill-demora/news, /bill-demora/biography (all HTTP 500); member directory page showed no entry",
+        "web searches: blocked: web search (this turn's web search budget is used up; limit 200 per turn, shared by every agent)",
+        "not reviewed: official news list, committee testimony",
+        "blocked: https://ballotpedia.org (listed as refusing fetches, not tried)",
+        "blocked: https://bluevoterguide.org (listed as refusing fetches, not tried)",
+        "blocked: https://www.legislature.ohio.gov (curl returned 403)"
+      ],
+      "found": 0,
+      "at": "2026-11-06T15:19:07.327Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 3,
+      "at": "2026-11-06T16:28:34.686Z",
+      "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "noncitizen voting",
+        "SJR 10 photo ID amendment",
+        "mail-ballot receipt deadline (SB 293)",
+        "voter-roll matching",
+        "voter data sent to federal government"
+      ],
+      "places": [
+        "round 2: correct member slug is william-p-demora on ohiosenate.gov (State Senate District 25, Columbus); the earlier House slugs were the wrong chamber",
+        "official news list https://ohiosenate.gov/members/william-p-demora/news, pages 1 and 2 (48 items) read; opened every item touching elections, ballots, voting or ID",
+        "web search: DeMora voter ID photo ID Ohio Senate (1 search)",
+        "nothing on the subject: other news items (budget, redistricting, immigration bill June 2025 not opened as it is not about voting)",
+        "not reviewed: committee testimony on HJR 9 / SJR 10 / HB 472 (legislature.ohio.gov not fetchable by curl; committee page lists no testimony by him in round 1)",
+        "blocked: https://ballotpedia.org (refuses fetches, not tried)",
+        "blocked: https://bluevoterguide.org (refuses fetches, not tried)",
+        "blocked: https://justfacts.votesmart.org (refuses fetches, not tried)",
+        "blocked: https://www.ohiosos.gov (not tried)",
+        "blocked: curl on ohiosenate.gov and ohiohouse.gov news pages answered 403; read with the fetch tool instead (the fetch tool limits quoted text to 125-character segments, so only whole sentences returned verbatim are saved)"
+      ],
+      "found": 7,
+      "at": "2026-11-06T16:40:47.240Z",
+      "by": "research-oh-r2-2026-11-06"
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "politician_id": "9d4f858b-8703-4806-b064-d0c4a7e54110",
+  "findings": [
+    {
+      "id": "053052659ee533568046fcb2f6ae5facbb9a7fed0495e61a864a580dd8984caa",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/news/democratic/rep-munira-seeks-clarity-on-voter-registration-cancellations-amid-rising-naturalization-rates-122406",
+      "date": "2024-09-10",
+      "date_precision": "day",
+      "passage": "We must ensure that every eligible voter, including our newly naturalized citizens, is not unfairly disenfranchised",
+      "note": "Quoted in her House caucus news release announcing a letter to the Secretary of State about cancelled registrations of people flagged as noncitizens who had since naturalized. Same release also quotes her: \"It is crucial that we understand the processes used to verify voter eligibility and prevent errors.\"",
+      "subjects": [
+        "voter-roll cancellations of naturalized citizens",
+        "noncitizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:18:00.313Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d597c63fbb15566b2aeaeafed470165711089b5286a5a3f64ae18f1c7c1d354e",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/munira-abdullahi/news/rep-abdullahis-statement-on-federal-law-enforcement-raids-of-voting-rights-organization-and-advocates-146158",
+      "date": "2026-06-17",
+      "date_precision": "day",
+      "passage": "Voter registration is vital to expanding civic engagement and ensuring that everyone has a voice in our government.",
+      "note": "From her statement on a federal raid of a voter-registration organization based on voter-fraud claims. Also states: \"The Trump administration is trying to intimidate community advocates and volunteers, all of whom are engaging in the democratic process.\" Not about ID or citizenship documents directly; related election-integrity talk.",
+      "subjects": [
+        "voter registration drives",
+        "voter fraud claims and election-integrity enforcement"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:18:00.313Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5737c03423eeabd5670fb0a61adc1fcd89774928e3a5d6128441f4d9e6338798",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hcr18/actions/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 73-20) on H. C. R. No. 18, from the Ohio Legislature's own actions record, which lists each member by id (rep_abdullahi_munira_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.682Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0902e7fa76fc3542f273b3e0dca071180960f9dfbff7bf0c1b0df8b3faad7385",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_abdullahi_munira_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.682Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "730a6b22119baaeca4679f9ddecfeae85a89635c34995cd13d24f8df728ef61c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "nay",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_abdullahi_munira_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.682Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5d326e89edf5091ea0ff50afe14346565ee0d633bc08602a7061dddab8b599d",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_abdullahi_munira_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.682Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "voter-roll cancellations of naturalized citizens",
+        "federal raid on voter registration group / voter fraud claims",
+        "noncitizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site: https://ohiohouse.gov/members/munira-abdullahi (confirms Representative, House District 9, Columbus) and first page of her news list (10 of 51 items; one touches voting)",
+        "her own news release of 2026-06-17 on federal raids (fetch tool only; curl answered 403, so the passage is limited to what the fetch tool returned as exact sentences)",
+        "House caucus press release 2024-09-10 on voter registration cancellations of new citizens",
+        "iVoterGuide 2024 profile (photo ID question left unanswered)",
+        "campaign site https://www.muniraforohio.com (nothing on the subject)",
+        "blocked: https://www.legislature.ohio.gov/legislation/135/hb589 (certificate error in fetch tool; curl 403)",
+        "blocked: curl 403 on ohiohouse.gov news pages",
+        "not reviewed: https://ohiohouse.gov/assets/press-releases/122406/files/19833.pdf (letter PDF unreadable to the fetch tool)",
+        "not reviewed: news list pages 2-6 on her member page",
+        "blocked: Ballotpedia and bluevoterguide.org (named in the instructions as refusing fetches)",
+        "web search: 5 searches run (voter ID; Issue 3/SJR 10/citizenship; HB 458; SB 153/BMV; one more) before the tool answered 'web search budget is used up'; the last planned search (local outlets) was blocked: web search (this turn's web search budget is used up: limit 200 per turn, shared by every agent)"
+      ],
+      "found": 2,
+      "at": "2026-11-06T15:18:00.313Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 4,
+      "at": "2026-11-06T16:28:34.682Z",
+      "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "proof of citizenship",
+        "noncitizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (refuse fetches)",
+        "web searches (4): Issue 3/photo ID; HB 472; SJR 10 floor debate; interview/questionnaire voting rights: no statement by her on ID or citizenship documents found",
+        "House news list https://ohiohouse.gov/members/munira-abdullahi/news?page=2 (list mixes other members' items; no further election item)",
+        "Release 2024-10-04 https://www.ohiohouse.gov/news/democratic/rep-munira-presses-secretary-laroses-to-answer-questions-on-new-citizens-voter-purge-123385 : fetch tool returned only cut-off sentences (over its length limit), not whole sentences, so none saved; curl 403: blocked",
+        "iVoterGuide https://ivoterguide.com/candidate/73931/race/17953/election/1201 seen in search (same unanswered photo-ID item as round 1)"
+      ],
+      "found": 0,
+      "at": "2026-11-06T16:39:02.243Z",
+      "by": "research-oh-r2-2026-11-06"
+    }
+  ]
+}

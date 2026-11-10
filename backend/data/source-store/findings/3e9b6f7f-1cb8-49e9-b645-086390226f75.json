@@ -1,0 +1,111 @@
+{
+  "politician_id": "3e9b6f7f-1cb8-49e9-b645-086390226f75",
+  "findings": [
+    {
+      "id": "662db1773b03eed3bf9cf0f8504a0ef3c6cf584e71ee7075550b7245834d152f",
+      "kind": "own-words",
+      "url": "https://www.jeffreyhulumiiiforcongress.com/issues",
+      "date": "2026-11-05",
+      "date_precision": "unknown",
+      "passage": "A fair and free society requires treating every person with dignity and equality. We must ensure that civil rights, voting rights, and basic freedoms are protected for all Mississippians. Every citizen of Mississippi deserves the right and access to participate in the democratic process.",
+      "note": "General voting-rights statement on his campaign issues page; names no ID or citizenship rule. Page undated; the date is the date it was fetched, so the real date is unknown.",
+      "subjects": [
+        "voting rights in general",
+        "access to voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:49:29.822Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f83d0028419134d578f055f22fbb42fc2269d0d95536e5a2081a180daf0e758",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/house/0940041.pdf",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "House: S. B. No. 2576 passed by the following vote: (0940041)",
+      "note": "House roll call as printed ('Hulum'), linked to Jeffrey Hulum III (district 119) via the official 2024 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.759Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2147cca7436b02fc328055efc537138f61a5635591caea67c88f498332726704",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "nay",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Hulum'), linked to Jeffrey Hulum III (district 119) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.759Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship (SAVE Act)",
+        "SHIELD Act / affidavit ballots",
+        "voting rights in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "confirmed on the 2026 general ballot for Mississippi's 4th Congressional District and as House District 119 member: https://www.mississippifreepress.org/meet-the-candidates-for-mississippis-4th-congressional-district-in-the-nov-3-elections/ (the election was held 2026-11-03; coverage after the vote reports he did not win; seat in the state House runs to 2028)",
+        "campaign site home, /issues and /why pages (only a general voting-rights sentence)",
+        "Mississippi Free Press candidate guide and profile (no statement on ID or citizenship)",
+        "WLOX candidate profile (no statement on ID or citizenship)",
+        "iVoterGuide: opponent's page found, no Hulum answers found",
+        "web searches: name + voter ID / photo ID / SAVE Act / SHIELD Act / debate / questionnaire / ivoterguide (6 searches)",
+        "blocked: Ballotpedia (refuses fetches, not tried)",
+        "not reviewed: debate videos, social media, legislature bill pages (votes and sponsorships linked separately)"
+      ],
+      "found": 1,
+      "at": "2026-11-05T22:49:29.822Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-05T23:52:51.759Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

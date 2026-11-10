@@ -1,0 +1,68 @@
+{
+  "politician_id": "0f3e06b4-a5a3-402d-b712-af1e7dd070d8",
+  "findings": [
+    {
+      "id": "0bdc8f5070b1cefc73be1a5428135fb80819d0b830c979903e9a69d3e5147f46",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/senate/0770004.pdf",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Senate concurred in the foregoing House Amendment to S. B. No. 2588 by the following vote: (0770004)",
+      "note": "Senate roll call as printed ('Jackson'), linked to Reginald Jackson (district 11) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.761Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "documentary proof of citizenship to register",
+        "voter-roll citizenship checks",
+        "non-citizen voting",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "TPCREF 2023 Senate District 11 questionnaire: no response, education only",
+        "No campaign or official site found",
+        "On the Record (0 appearances)",
+        "Ballotpedia: blocked (fetch refused by instruction, not tried)",
+        "web searches on name with voter ID, photo ID, proof of citizenship, SHIELD Act, questionnaire, local papers",
+        "Mississippi Free Press SHIELD Act articles (Mar 25 and Apr 2026), WLOX/WDAM SHIELD Act articles (Mar 25 and May 14 2026), MPB, SPLC release, DeSoto County News, Clarke County Tribune: read, do not quote this person",
+        "blocked: https://digital-release.wjtv.com/news/election/mississippi-lawmakers-consider-shield-act/amp/ (empty page)",
+        "legislature bill pages for sponsorships: not searched (linked separately)"
+      ],
+      "found": 0,
+      "at": "2026-11-05T22:42:06.548Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-05T23:52:51.761Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

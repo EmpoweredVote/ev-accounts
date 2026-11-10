@@ -1,0 +1,68 @@
+{
+  "politician_id": "e5c00545-cb86-4b46-b14b-7988b065cc75",
+  "findings": [
+    {
+      "id": "4cd68734c411fde05dc865eff22b5ec7355a7eca5840d62ffaae784f759ff30d",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/senate/0720054.pdf",
+      "date": "2024-03-13",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2576. On motion of Senator England, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0720054)",
+      "note": "Senate roll call as printed ('Ladner'), linked to Philman Ladner (district 46) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.760Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "SHIELD Act (SB 2588)",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "identity confirmed: https://billstatus.ls.state.ms.us/members/senate/ladner.xml (Philman A. Ladner, Senate District 46, Hancock and Harrison counties, in office 2024-present)",
+        "On the Record (0 appearances; extract-otr run by id and by name)",
+        "https://tpcref.org/election-2023-candidate-qa-sd46/ (2023 questionnaire; page records no response from him)",
+        "campaign site and official news page: none found by search",
+        "web searches (6): name + voter ID/photo ID/proof of citizenship/election; name + questionnaire/forum/interview; name + SHIELD Act/SAVE Act/election integrity; name + local papers (Sun Herald, WLOX, Sea Coast Echo) + election law; name + Pass Christian + quoted; all returned nothing on the subject in his own words",
+        "blocked: https://ballotpedia.org/Philman_Ladner (listed as blocked per instructions, not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-11-05T23:47:01.280Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 1,
+      "at": "2026-11-05T23:52:51.760Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "politician_id": "322bb72d-873c-41ff-b8bf-f0ec126490f7",
+  "findings": [
+    {
+      "id": "93bf0c60e69c766015ae1ba231609ec62c21d83df5c6c054d832d56be4436d04",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/willis-e-blackshear-jr/news/blackshear-condemns-passage-of-sub-hb-472",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "passage": "\"This bill will make it significantly harder for seniors and vulnerable citizens to vote by mail,\" said Blackshear.",
+      "note": "Statement issued in his name after the Senate passed Sub. H.B. 472, which was amended to require photo ID for voting by mail.",
+      "subjects": [
+        "photo ID to vote by mail"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:12:04.904Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1eb18598d680be0b1df02c423ea3c00d876c32e2885c291940db08e363358ae2",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/willis-e-blackshear-jr/news/blackshear-condemns-passage-of-sub-hb-472",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "passage": "H.B. 472 is confusing, entirely unnecessary, and adds hoops for people to jump through just to vote.",
+      "note": "Same release: his description of the mail-ballot photo ID provisions, which he also says changed a bill meant to help homeless Ohioans get free identifying documents.",
+      "subjects": [
+        "photo ID to vote by mail",
+        "free ID documents for people experiencing homelessness"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:12:04.904Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f22eafe336d5627e8c671d7c04833f8d1fb97369f7f10f54b8b6d48da917684e",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/willis-e-blackshear-jr/news/blackshear-condemns-passage-of-sub-hb-472",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "passage": "This bill will not protect against voter fraud and creates further uncertainty in our election processes while placing an additional burden on Ohio's election workers and public library employees with another unfunded mandate.",
+      "note": "Same release: he says the mail-ballot ID rule does not guard against voter fraud and burdens election workers and libraries.",
+      "subjects": [
+        "photo ID to vote by mail",
+        "voter fraud claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:12:04.904Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc6cec1488a05749d98094e76bf7f34d5c18b68f0b9b337a79e759bf3190cad8",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/willis-e-blackshear-jr/news/blackshear-condemns-passage-of-sjr-10",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "passage": "This constitutional amendment is unnecessary and ultimately a distraction from issues that people actually care about,",
+      "note": "Statement in his name after the Senate passed S.J.R. 10, a proposed constitutional amendment on photo ID to vote. The release also says amendments to widen accepted IDs and provide free state IDs were tabled.",
+      "subjects": [
+        "photo ID at the polls (constitutional amendment)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:12:04.904Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "40d9944ad5794e41a84a617c1fd83b0fdba66c2bdf920d313631e0186ce41110",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/willis-e-blackshear-jr/news/blackshear-condemns-passage-of-sjr-10",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "passage": "Photo ID is already required to vote under Ohio law, and this resolution fails to consider key voter protections.",
+      "note": "Same release: his statement that the photo ID requirement already exists and that the amendment leaves out voter protections.",
+      "subjects": [
+        "photo ID at the polls (constitutional amendment)",
+        "voter protections with ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:12:04.904Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5697afd32f03dc086b5345a0a6cd9ad151af0d90b6a4dc6c539a64510187c2b",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/actions/",
+      "date": "2022-12-14",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-458-2022",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 55-34) on H. B. No. 458, from the Ohio Legislature's own actions record, which lists each member by id (rep_blackshear_willis_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5737c03423eeabd5670fb0a61adc1fcd89774928e3a5d6128441f4d9e6338798",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hcr18/actions/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 73-20) on H. C. R. No. 18, from the Ohio Legislature's own actions record, which lists each member by id (rep_blackshear_willis_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "61ad7ead5c708d5cc3644cba295a15f24a874cb0732ce0f06dad1de0e594ba9c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 23-10) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (sen_blackshear_willis_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ac99700f10fccf6a9e794750182dc8dc1f69f27d8bfd400811b06c254d0c19b4",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "nay",
+      "motion": "Senate: Concurred in House amendments",
+      "note": "OH Senate floor roll call (Concurred in House amendments, tally 23-10) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (sen_blackshear_willis_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9b1f5c0fab55b6852c164d5fd7548cc1853715c65462e15ee45b573dea4077ad",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "Senate: Adopted",
+      "note": "OH Senate floor roll call (Adopted, tally 22-9) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (sen_blackshear_willis_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.677Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "photo ID to vote by mail",
+        "photo ID at the polls (constitutional amendment)",
+        "free state ID and documents",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot receipt deadline"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ohio Senate member news list https://ohiosenate.gov/members/willis-e-blackshear-jr/news (page 1 of 2 read: 25 of 34 items; opened the items on photo ID and voting)",
+        "not reviewed: page 2 of the Ohio Senate news list (older than Jun 2025)",
+        "blocked: https://ohiosenate.gov/members/willis-e-blackshear-jr/news/blackshear-condemns-passage-of-sjr-10 by plain curl (403); text from the fetch tool's quoted passages",
+        "blocked: https://ohiohouse.gov/members/willis-blackshear (HTTP 500)",
+        "Ohio Senate release on the veto of H.B. 472 (2026-06-25): fetch tool would only summarise, no verbatim passage saved",
+        "Ohio Senate release on S.B. 293 (2025-11-05) and on a raid of a voting-rights group (2026-06-15): about mail-ballot deadline and federal action, not saved",
+        "former House office newsletter, Winter 2021 (2930.pdf): nothing on the subject",
+        "web searches: name + voter ID / photo ID; name + HB 458; name + proof of citizenship / noncitizen / SAVE Act / SJR 10; name + questionnaire (nothing further on the subject in sites that allow fetching)",
+        "blocked: Ballotpedia, votesmart (refuse fetches); not opened: Dayton Daily News (refuses AI agents)"
+      ],
+      "found": 5,
+      "at": "2026-11-06T15:12:04.904Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 5,
+      "at": "2026-11-06T16:28:34.677Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}

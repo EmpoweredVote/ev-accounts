@@ -619,3 +619,58 @@ describe('getResearchStates and shown_text (CA_0337)', () => {
     await expect(getResearchStates('p1')).rejects.toThrow('w.other');
   });
 });
+
+// CC_0349: the Path B analogue of compass_responses_effective. Path A (an empowered
+// candidate's own answers) has always dropped answers whose rung the live ladder
+// invalidated — "it would read as a position the candidate never took". The ~33,000
+// RESEARCHED answers had no such guard. These pin which reads got it and which
+// deliberately did not, because a build and a screenshot both pass either way.
+describe('CC_0349 — researched answers whose rung was invalidated are not displayed', () => {
+  const EFFECTIVE = 'inform.politician_answers_effective';
+
+  it('getPoliticianAnswers reads the effective view, not the base table', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getPoliticianAnswers('p1');
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toContain(EFFECTIVE);
+    // The base table must not be what a displayed value comes from.
+    expect(sql).not.toMatch(/FROM inform\.politician_answers\s/);
+    // The view is a filter, not a replacement for the season collapse.
+    expect(sql).toContain(SEASON_IS_PUBLISHED);
+  });
+
+  it('compareWithPoliticians scores against the effective view', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await compareWithPoliticians('u1', ['p1']);
+    const sql = mockQuery.mock.calls.map(c => c[0] as string).find(s => s.includes('essentials.politicians ep'));
+    expect(sql).toBeDefined();
+    expect(sql!).toContain(EFFECTIVE);
+  });
+
+  it('getPoliticianCitations pairs reasoning with an effective value', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getPoliticianCitations('p1');
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toContain(EFFECTIVE);
+  });
+
+  // The other half of the rule: "did we research this person" is a different
+  // question from "what rung do they show at". An invalidated answer is still
+  // research that happened, so hiding it from these would overstate the gap.
+  it('getResearchStates still reads the BASE table', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getResearchStates('p1');
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).not.toContain(EFFECTIVE);
+  });
+
+  // A blank suppresses by being value 0 in a newer season. Reading that guard
+  // through a filtered view could let a hidden row stop suppressing.
+  it('the blank-suppression guards still read the BASE table', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getPoliticianContextAll('p1');
+    const sql = mockQuery.mock.calls.map(c => c[0] as string).find(s => s.includes('a.value = 0'));
+    expect(sql).toBeDefined();
+    expect(sql!).toMatch(/FROM inform\.politician_answers\s/);
+  });
+});

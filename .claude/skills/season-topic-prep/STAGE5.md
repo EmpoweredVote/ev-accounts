@@ -34,7 +34,10 @@ No one else. The general election is 2026-11-03:
   candidate, so every winner is done when the results come in. Officials who are leaving (`leaving = yes`) get
   the pre-fill only, no open search.
 - **After the results:** drop the losers (their candidacy is no longer live). Finish only the close races as they
-  are called. Georgia and Louisiana runoffs stay active until December.
+  are called. Georgia and Louisiana runoffs stay active until December. "Drop" means **do not search or code** them
+  from here on. 🔴 Anything already written for a person who then loses **stays**: never remove their outcome, passage
+  or review rows (RULINGS.md "A loser's written research stays"). A close race may be written before it is called on
+  the runner's say-so.
 - `leaving = yes` only when the official's own seat has an upcoming race (before 2027) with live candidates on file
   and they are not one of them. `leaving = unknown` means the race data cannot say (no race on file for the seat,
   or no candidates loaded for it; 2026-10-22: Massachusetts has 200 state races on file and 4 candidates). Report
@@ -141,7 +144,16 @@ npm run topic:stage5-report --prefix backend -- --topic <key> --research <abs to
 
 Exit 3 means some codes failed their check: fix those first. Then run the theme pass,
 [templates/stage5-theme-prompt.md](templates/stage5-theme-prompt.md), as a fresh subagent on `notes.jsonl`,
-writing `stage5/themes.json`, and run the report again with `--themes <abs>/stage5/themes.json`.
+writing `stage5/themes.json`, and run the report again with `--themes <abs>/stage5/themes.json`. Do not fill the
+template by hand: write it with
+
+```bash
+npm run topic:stage5-theme-prompt --prefix backend -- --topic <key> --season draft --notes <abs>/stage5/notes.jsonl --out <abs>/stage5/theme-prompt.md
+```
+
+It fills the ladder (the question and five rungs the season serves) and exits 1, writing nothing, if any `{{…}}`
+slot stays unfilled. The Mississippi theme pass (2026-11-05) ran on a hand-filled copy with `{{LADDER_TEXT}}` left
+in, and grouped the notes without the ladder.
 
 **The bar (ruled 2026-10-22):** stop when "doesn't fit" is **more than 1 in 5** of the people with any on-topic
 evidence, or when **any one theme holds more than 1 in 10** of them (exit 4). Doesn't-fit cases whose only record
@@ -241,6 +253,9 @@ not load keeps the quote check's word and is listed under **not re-checked on th
   person's outcome row is still written for a refused passage.
 
 It also writes `research.csv` for the seats and blanks. Fix every refused code before going on.
+
+`build_evidence.py` (step 4) rebuilds from the `research-pre-evidence.csv` it saved on its first run. A later dry run
+copied over `research.csv` makes it stop and ask: `--from-research` (rebuild from the new file) or `--from-pre`.
 
 **1. Quote check.** Run [templates/stage5-quote-check-prompt.md](templates/stage5-quote-check-prompt.md) as a
 **separate** agent: never the searcher or the coder. Use one subagent per batch of about 20 findings. Check every
@@ -345,6 +360,7 @@ prints no party by the names. Otherwise cite a LegiScan line instead. The legisl
 | IN | iga.in.gov is a JavaScript app to a plain fetch; the official MyIGA API reads it (2026-11-02) | official roll-call lines (`iga-votes.ts`, below); LegiScan as before when `IGA_API_KEY` is unset |
 | MA | House roll-call PDFs print a vote mark and a surname only (an initial where two share it); LegiScan has no record of some House roll calls | official roll-call lines (`ma-rollcall-votes.ts`, below) |
 | TX | robots-blocked bill pages | LegiScan lane (PR #1218) |
+| OH | the vote pages print a party letter by each name; the legislature's API lists member ids only | LegiScan lines (`state_legiscan.py … --session-start odd` for sponsor pages); HB 458's 2022-12-14 House vote is not in LegiScan |
 | US | House: the Clerk XML prints a party by each name; Senate: senate.gov blocks a fresh fetch | House: Clerk XML lines; Senate: LegiScan lines (`federal-votes.ts`, below) |
 
 Steps:

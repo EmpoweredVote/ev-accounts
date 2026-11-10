@@ -596,8 +596,16 @@ jobs:
       # What it is really watching for is a town that incorporated after our snapshot: a map can be
       # faithful to its vintage and still be missing a place where 100,000 people live. Nothing
       # else we run would notice, because the polygon is not wrong, it is absent.
+      #
+      # ⏱ SCHEDULE AND MANUAL RUNS ONLY, NOT EVERY PUSH (2026-11-07). It pages TIGERweb 1,000
+      # shapes at a time and took 276 s of this job's 6 min 18 s on the 2026-11-07 19:26 master
+      # push — about 4.6 billed minutes per push, for a defect that arrives ON THE CALENDAR (a
+      # town incorporates, a new vintage publishes), not with a commit. That is exactly the class
+      # the header says belongs on the schedule. The steps above stay on push: they are the
+      # feedback loop the header's evidence is about. A boundary load that drops polygons still
+      # trips reachability on push; this check then names the missing GEOIDs within a day.
       - name: Check Census TIGER layers against the vintage they claim
-        if: ${{ !cancelled() }}
+        if: ${{ !cancelled() && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') }}
         run: npm run check:tiger-fidelity
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
@@ -1218,13 +1226,43 @@ jobs:
   headshot-faces:
     name: headshot faces
     runs-on: ubuntu-latest
-    # Does every published headshot still contain a face, and does its URL still resolve?
+    # Does every published headshot still contain a face, does its URL still resolve, and is it
+    # a PHOTOGRAPH rather than something with a manufactured surround around it?
     # Nothing else asks either question: dimensions, aspect ratio, colour, licence and the
     # photo_custom_url/politician_images pairing were all GREEN on an office seal, an
     # election-results map, a blank frame, a headless torso, a campaign yard sign and a
     # five-person family photograph. scripts/check-headshot-faces.py is the check; it reads
     # BOTH columns an image publishes from (the profile scalar and race_candidates.photo_url,
     # which outranks it on ballot pages — CC_0259).
+    #
+    # 🔴 TWO DETECTORS, ONE CORPUS, AND THEY CATCH DIFFERENT THINGS. The second step runs
+    # scripts/check-portrait-framing.mjs, which asks whether the frame is a photograph at all or
+    # a DISC on a matte / a photograph letterboxed inside a flat BORDER. Measured over all 9,481
+    # published images on 2026-11-09, it found 11 real defects, and the face detector had passed
+    # every one of them — including the STATE SEAL OF WASHINGTON and the GREAT SEAL OF NORTH
+    # CAROLINA, both of which contain a face and so clear a face gate honestly.
+    #   * It does NOT re-query the database. It reads check-headshot-faces.py's own --json
+    #     output, so both detectors scan one list decided by one piece of SQL, and the
+    #     (url, sha256) key they each record a judgement under names the same bytes.
+    #   * It re-FETCHES the images (the face step holds them in memory, not on disk) and checks
+    #     each download against the sha the face step recorded. A file that changed in between
+    #     is reported and skipped, never judged against a key that names different bytes.
+    #   * data/headshot-framing-known.json carries the flags somebody has already looked at,
+    #     keyed on (url, sha256) exactly as data/headshot-accepted-flags.json is. Each entry
+    #     says which of two opposite things it is: a DEFECT (real, unfixed, a work queue that
+    #     should only shrink) or ACCEPTED (a real photograph this gate reads wrong, with the
+    #     reason). Only a flag in NEITHER list fails the build.
+    #   * FULL SWEEP ONLY. On the nightly --external-only scope the face step matches zero rows
+    #     by design (CC_0261 mirrored the last off-site image), so there is no corpus to frame.
+    #
+    # 💰 THE FRAMING STEP ROUGHLY DOUBLES THE SUNDAY RUN. Measured end to end over all 9,481
+    # published images on 2026-11-09: 12 min 08 s, of which ~3 min is fetching the corpus and
+    # ~9 min is the scan. The scan is one ffmpeg decode per image and is SPAWN-bound rather
+    # than CPU-bound, so a 2-core runner is not necessarily 6x slower than the 12-core box that
+    # produced that figure. Budget ~+15-25 min a week, ~+65-110 billed minutes a month against
+    # this repo's ~2,800. The job timeout below went 45 -> 75 to hold both steps.
+    # ⚠ THAT IS A LOCAL MEASUREMENT, NOT A RUNNER ONE — read the first Sunday run's duration
+    # and correct this comment, exactly as the face sweep's estimate above still asks.
     #
     # 💰 TWO SCOPES ON ONE CRON, AND THE HEADER REQUIRES STATING THE PRICE. The full sweep is
     # ~9,200 images and it is CPU-BOUND on face detection, not network-bound — measured
@@ -1249,8 +1287,9 @@ jobs:
     # Skips itself GREEN when DATABASE_URL is absent (forks / manual runs with no secret),
     # matching the other live-DB checks.
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
-    # Bounded so a pathological run cannot bill hours before anyone notices.
-    timeout-minutes: 45
+    # Bounded so a pathological run cannot bill hours before anyone notices. 75, not 45, since
+    # the framing sweep was added: the face step alone ran ~13 min of the old 45.
+    timeout-minutes: 75
     defaults:
       run:
         working-directory: backend
@@ -1263,8 +1302,26 @@ jobs:
           cache: pip
           cache-dependency-path: backend/scripts/requirements.txt
 
+      - uses: actions/setup-node@v7
+        with:
+          # Read the pin rather than repeating it. CI on 22 while backend/.node-version says
+          # something else is a difference nobody sees until it breaks.
+          node-version-file: backend/.node-version
+
       - name: Install dependencies
         run: pip install -r scripts/requirements.txt
+
+      - name: Install ffmpeg
+        shell: bash
+        # check-portrait-framing.mjs scales each image with ffmpeg before measuring it. The
+        # runner image does not promise ffmpeg — ubuntu-latest is mid-migration to 26.04, which
+        # dropped tools — so ask, and pay the ~30s only when it is genuinely absent.
+        run: |
+          if command -v ffmpeg >/dev/null 2>&1; then
+            echo "ffmpeg already present: $(ffmpeg -version | head -1)"
+          else
+            sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          fi
 
       - name: Check published headshots still contain a face, and still resolve
         shell: bash
@@ -1281,9 +1338,36 @@ jobs:
           # they want the whole answer, not tonight's slice.
           if [ "$(date -u +%u)" = "7" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "=== FULL CORPUS sweep (both columns, our storage)"
-            python scripts/check-headshot-faces.py --workers 8 --fail-on-unreachable
+            python scripts/check-headshot-faces.py --workers 8 --fail-on-unreachable \
+              --json "$RUNNER_TEMP/headshot-faces.json"
+            faces=$?
+            # 🔴 BOTH STEPS REPORT BEFORE EITHER ONE DECIDES THE BUILD. Returning on the face
+            # failure would hide every framing finding behind it, and that is the run where you
+            # most want both — the same reason check-headshot-faces.py prints its dead links and
+            # its face flags before it returns.
+            echo
+            echo "=== FRAMING sweep (same corpus, from the file the step above wrote)"
+            # The file is written before that script returns, on every path including its own
+            # failures — so if it is missing the face step died before it had results, and the
+            # framing answer for this run is "not asked". Say that, rather than letting node
+            # throw ENOENT and read as a framing defect.
+            if [ -s "$RUNNER_TEMP/headshot-faces.json" ]; then
+              node scripts/check-portrait-framing.mjs "$RUNNER_TEMP/framing" \
+                --from-json "$RUNNER_TEMP/headshot-faces.json" \
+                --known data/headshot-framing-known.json
+              framing=$?
+            else
+              echo "the face step wrote no result file — it did not get far enough to produce a corpus."
+              echo "FRAMING: not asked this run."
+              framing=0
+            fi
+            echo
+            echo "faces exit $faces, framing exit $framing"
+            [ "$faces" = 0 ] && [ "$framing" = 0 ]
           else
             echo "=== off-site links only (rot happens on other people's hosts, not in our bucket)"
+            # No framing step here: this scope matches zero rows by design, and a framing sweep
+            # over an empty corpus would be a vacuous green, not a check.
             python scripts/check-headshot-faces.py --external-only --workers 8 --fail-on-unreachable
           fi
 
@@ -1540,10 +1624,43 @@ jobs:
   # to: on a docs-only PR all five jobs skip and this must still go green. The price is that a job
   # switched off by a broken `if:` also reads as green here. If you edit a job's `if:`, confirm it
   # still runs when you think it does — this check will not tell you.
+  frontends:
+    # /admin (the deployed auth app) and /app had no CI at all, so a dependency bump there
+    # was never built before merge. Build both, and run admin's unit tests.
+    name: frontend build (${{ matrix.dir }})
+    runs-on: ubuntu-latest
+    needs: changes
+    if: github.event_name != 'schedule' && needs.changes.outputs.code == 'true'
+    strategy:
+      fail-fast: false
+      matrix:
+        dir: [admin, app]
+    defaults:
+      run:
+        working-directory: ${{ matrix.dir }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: backend/.node-version
+          cache: npm
+          cache-dependency-path: ${{ matrix.dir }}/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (tsc + vite)
+        run: npm run build
+
+      - name: Unit tests
+        if: matrix.dir == 'admin'
+        run: npm test
+
   ci-ok:
     name: ci ok
     if: always() && (github.event_name == 'pull_request' || github.event_name == 'push')
-    needs: [changes, backend, static-guards, migration-reservations, instrument-topics, answer-seasons]
+    needs: [changes, backend, frontends, static-guards, migration-reservations, instrument-topics, answer-seasons]
     runs-on: ubuntu-latest
     steps:
       - name: Every required job succeeded or was deliberately skipped
@@ -1553,6 +1670,7 @@ jobs:
           # subtraction, yields an empty string, and would read as a failure forever.
           R_CHANGES: ${{ needs.changes.result }}
           R_BACKEND: ${{ needs.backend.result }}
+          R_FRONTENDS: ${{ needs.frontends.result }}
           R_GUARDS: ${{ needs['static-guards'].result }}
           R_MIGRATIONS: ${{ needs['migration-reservations'].result }}
           R_INSTRUMENT: ${{ needs['instrument-topics'].result }}
@@ -1568,6 +1686,7 @@ jobs:
           }
           check "changes"                 "$R_CHANGES"
           check "backend"                 "$R_BACKEND"
+          check "frontends"               "$R_FRONTENDS"
           check "static guards"           "$R_GUARDS"
           check "migration reservations"  "$R_MIGRATIONS"
           check "instrument-topic"        "$R_INSTRUMENT"
@@ -1578,3 +1697,37 @@ jobs:
             exit 1
           fi
           echo "ci ok: all required jobs passed or were deliberately skipped"
+
+  # Dependabot auto-merge. Runs only on Dependabot PRs, only after every job above passed
+  # (or was skipped on purpose), and only for patch/minor updates. Majors stay open for a
+  # person to read. A merge that fails (usually a lockfile conflict after a sibling PR
+  # merged) is left alone: Dependabot rebases the PR, CI reruns, and this job tries again.
+  # Merges made with GITHUB_TOKEN do not start push-triggered workflows; hosting deploys
+  # (which listen to GitHub directly) still run.
+  dependabot-automerge:
+    name: dependabot auto-merge
+    needs: [ci-ok]
+    if: >-
+      always()
+      && github.event_name == 'pull_request'
+      && github.event.pull_request.user.login == 'dependabot[bot]'
+      && github.actor == 'dependabot[bot]'
+      && !contains(needs.*.result, 'failure')
+      && !contains(needs.*.result, 'cancelled')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - id: meta
+        uses: dependabot/fetch-metadata@v3.1.0
+      - name: Merge patch and minor updates
+        if: steps.meta.outputs.update-type != 'version-update:semver-major'
+          && steps.meta.outputs.directory != '/docs/infra'
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if ! gh pr merge --squash "$PR_URL"; then
+            echo "::warning::Merge did not go through (likely a conflict). Dependabot will rebase and this job will retry."
+          fi

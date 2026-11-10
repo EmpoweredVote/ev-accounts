@@ -1,0 +1,38 @@
+{
+  "id": "MS-HB-707-2020",
+  "scope": "state:ms",
+  "title": "HB 707 (2020 Regular Session): Voter identification; clarify that only Mississippi driver's license shall be acceptable license.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2020/pdf/history/HB/HB0707.xml",
+    "https://billstatus.ls.state.ms.us/documents/2020/pdf/HB/0700-0799/HB0707IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1 (23-15-563(1))\n(quote) Each person who appears to vote in person at a polling place or the registrar's office shall be required to identify himself or herself to a poll manager or the registrar by presenting current and valid photo identification before such person shall be allowed to vote.\n(section) Sec. 1 (23-15-563(2)(a))\n(quote) A current and valid Mississippi driver's license, no other state's driver's license shall be accepted;\n(section) Sec. 1 (23-15-563(2))\n(quote) (b) A current and valid identification card issued by a branch, department, agency or entity of the State of Mississippi; (c) A current and valid United States passport;\n(b_no_id_remedy)\n(section) Sec. 1 (23-15-563(3))\n(quote) (a) A person who appears to vote in person at a polling place and does not have identification as required by this section may vote by affidavit ballot. The affidavit ballot shall then be counted if the person shall present acceptable photo identification to the registrar within five (5) days. (b) An elector who has a religious objection to being photographed may vote by affidavit ballot, and the elector, within five (5) days after the election, shall execute an affidavit in the registrar's office affirming that the exemption applies.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 1 (23-15-563(4))\n(quote) The intentional failure of an election official to require a voter to present identification as required by this section shall be considered corrupt conduct under Section 97-13-19 and shall be reported to the Secretary of State and the Attorney General.\n(other) Sec. 2: effective July 1, 2020",
+  "sponsors": [
+    {
+      "name": "Hopkins",
+      "role": "prime",
+      "version": "HB0707IN"
+    },
+    {
+      "name": "Criswell",
+      "role": "co",
+      "version": "HB0707IN"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

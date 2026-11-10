@@ -1,0 +1,134 @@
+{
+  "politician_id": "b21b5e5e-3359-4692-a60d-47d459bbb198",
+  "findings": [
+    {
+      "id": "d29cb80691c547d51cd31b98474fcb46efe2dbd0a2816180b50bb882c16f173c",
+      "kind": "own-words",
+      "url": "https://lawrencekstimes.com/2024/10/20/meet-kssen19-24/",
+      "date": "2024-10-20",
+      "date_precision": "day",
+      "passage": "I will fight in the Senate to increase access to the ballot box, because in Kansas, voters should be able to exercise their vote without onerous restrictions.",
+      "note": "Candidate profile answer for the 2024 state Senate race; says he would work to widen ballot access and avoid heavy restrictions on voting. Date taken from the article URL.",
+      "subjects": [
+        "election access and voting restrictions in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:55:42.834Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e12d8c2c04969f9f4493070458d6fa03f7ff58d84685fb72235693093d0eeb43",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_191_HB2020.odt",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "nay",
+      "motion": "Senate: Emergency Final Action As Amended",
+      "note": "Senate roll call as printed ('Schmidt'), linked to Patrick Schmidt (district 19) via the official 2025 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12d5b96635aaee125a967de3c18520774687c5737469fd65d2358255cda8634d",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Schmidt'), linked to Patrick Schmidt (district 19) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c32e05d099cacb14913d1c7c047be9deb5093f489d52813e63f1f81be052e684",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Schmidt'), linked to Patrick Schmidt (district 19) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "no-ID voter fallback",
+        "voter-roll checks / non-citizen voting / election integrity"
+      ],
+      "places": [
+        "Substack posts (patrick-for-kansas, 2024; nothing on the subject)",
+        "KCUR 2026-06-20 interview page (nothing on the subject)",
+        "campaign site patrickforkansas.com home and /about/ (nothing on the subject)",
+        "Lawrence Times 2024 candidate profile",
+        "On the Record (0 meetings)",
+        "kslegislature.gov member page (confirms office; no site or newsletter linked, no subject text)",
+        "web search on name plus subject words (results only background, no own words)",
+        "not reviewed: House Elections / Senate Federal and State Affairs written-testimony PDFs (text unreadable through fetch tool)",
+        "blocked: https://ballotpedia.org (refuses fetches, not tried)",
+        "blocked: https://kansasreflector.com (refuses fetches, not tried)",
+        "blocked: https://johnsoncountypost.com (curl returned Access denied; candidate answer pages not reached)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T16:55:42.834Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-04T19:13:24.949Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "id": "KS-HB-2281-2013",
+  "scope": "state:ks",
+  "title": "HB 2281 (2013-2014 Regular Session (2013)): Voter identification; deleting requirement of proof of citizenship and provision of free certified birth certificate by secretary of KDHE. (index); AN ACT concerning voter registration; relating to proof of citizenship; amending K.S.A. 2012 Supp. 25-2309 and 65-2418 and repealing the existing sections.",
+  "urls": [
+    "https://www.kslegislature.gov/li_2014/b2013_14/measures/hb2281/",
+    "https://www.kslegislature.gov/li_2014/b2013_14/measures/documents/hb2281_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec. 1, K.S.A. 2012 Supp. 25-2309(l), as introduced (hb2281_00_0000.pdf p. 4 lines 31-43 and following): the whole subsection is STRUCK (strikethrough on the official PDF; the text layer prints it unmarked)\n(quote) The county election officer or secretary of state's office shall accept any completed application for registration, but an applicant shall not be registered until the applicant has provided satisfactory evidence of United States citizenship.\n(section) Sec. 1, 25-2309(b)(15) and (b)(5), kept: what a registrant still gives\n(quote) boxes for the applicant to check to indicate whether the applicant is or is not a citizen of the United States, together with the question \"Are you a citizen of the United States of America?\";\n(e_other_rule)\n(note) Repeals the documentary proof-of-citizenship requirement to register (25-2309(l)-(t)) and the free certified birth certificate for that purpose (65-2418); registration then rests on the citizenship attestation box and the last four digits of the social security number or the driver's licence / nondriver ID number. Read 2026-11-05 from the rendered PDF (strikethrough checked on page 4).\n(other) K.S.A. 25-2309 and 65-2418: per the index caption, deletes the proof-of-citizenship requirement and the free certified birth certificate provision.",
+  "sponsors": [
+    {
+      "name": "Finney",
+      "role": "prime",
+      "version": "As introduced (hb2281_00_0000.pdf); no later version exists on the legislature site"
+    },
+    {
+      "name": "Ballard",
+      "role": "co",
+      "version": "As introduced (hb2281_00_0000.pdf); no later version exists on the legislature site"
+    },
+    {
+      "name": "Carlin",
+      "role": "co",
+      "version": "As introduced (hb2281_00_0000.pdf); no later version exists on the legislature site"
+    },
+    {
+      "name": "Grant",
+      "role": "co",
+      "version": "As introduced (hb2281_00_0000.pdf); no later version exists on the legislature site"
+    },
+    {
+      "name": "Henderson",
+      "role": "co",
+      "version": "As introduced (hb2281_00_0000.pdf); no later version exists on the legislature site"
+    },
+    {
+      "name": "Houston",
+      "role": "co",
+      "version": "As introduced (hb2281_00_0000.pdf); no later version exists on the legislature site"
+    },
+    {
+      "name": "Kuether",
+      "role": "co",
+      "version": "As introduced (hb2281_00_0000.pdf); no later version exists on the legislature site"
+    },
+    {
+      "name": "Menghini",
+      "role": "co",
+      "version": "As introduced (hb2281_00_0000.pdf); no later version exists on the legislature site"
+    },
+    {
+      "name": "Sawyer",
+      "role": "co",
+      "version": "As introduced (hb2281_00_0000.pdf); no later version exists on the legislature site"
+    },
+    {
+      "name": "Winn",
+      "role": "co",
+      "version": "As introduced (hb2281_00_0000.pdf); no later version exists on the legislature site"
+    },
+    {
+      "name": "Finney",
+      "role": "prime",
+      "version": "As introduced (hb2281_00_0000), 2013-02-08; died in committee"
+    },
+    {
+      "name": "Ballard",
+      "role": "co",
+      "version": "As introduced (hb2281_00_0000), 2013-02-08; died in committee"
+    },
+    {
+      "name": "Carlin",
+      "role": "co",
+      "version": "As introduced (hb2281_00_0000), 2013-02-08; died in committee"
+    },
+    {
+      "name": "Grant",
+      "role": "co",
+      "version": "As introduced (hb2281_00_0000), 2013-02-08; died in committee"
+    },
+    {
+      "name": "Henderson",
+      "role": "co",
+      "version": "As introduced (hb2281_00_0000), 2013-02-08; died in committee"
+    },
+    {
+      "name": "Houston",
+      "role": "co",
+      "version": "As introduced (hb2281_00_0000), 2013-02-08; died in committee"
+    },
+    {
+      "name": "Kuether",
+      "role": "co",
+      "version": "As introduced (hb2281_00_0000), 2013-02-08; died in committee"
+    },
+    {
+      "name": "Menghini",
+      "role": "co",
+      "version": "As introduced (hb2281_00_0000), 2013-02-08; died in committee"
+    },
+    {
+      "name": "Sawyer",
+      "role": "co",
+      "version": "As introduced (hb2281_00_0000), 2013-02-08; died in committee"
+    },
+    {
+      "name": "Winn",
+      "role": "co",
+      "version": "As introduced (hb2281_00_0000), 2013-02-08; died in committee"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

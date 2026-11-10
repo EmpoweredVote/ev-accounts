@@ -1,0 +1,1108 @@
+{
+ "measured": "2026-11-06",
+ "note": "Every Ballotpedia 2026 general-election state-executive votebox that matches NO office we hold, after re-running the reconciliation against EVERY district type (the first pass filtered on STATE_EXEC and produced a false absence). Each tier names what it needs before a results migration can touch it.",
+ "tier1_statewide_single_member": {
+  "need": "a district (state FIPS geo_id), an office, AND a sourced current officeholder - an office with no office_terms row raises the unflagged offices-missing-terms baseline, which stands at 238 and must never be raised",
+  "count": 34,
+  "rows": [
+   {
+    "st": "AL",
+    "office": "Auditor",
+    "winners": [
+     "Andrew Sorrell"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Andrew Sorrell",
+    "candidates": 2
+   },
+   {
+    "st": "AL",
+    "office": "Commissioner of Agriculture and Industries",
+    "winners": [
+     "Corey Hill"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "AR",
+    "office": "Auditor of State",
+    "winners": [
+     "Dennis Milligan"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Dennis Milligan",
+    "candidates": 1
+   },
+   {
+    "st": "AR",
+    "office": "Commissioner of State Lands",
+    "winners": [
+     "Cole Jester"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "CT",
+    "office": "Comptroller",
+    "winners": [
+     "Sean Scanlon"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Sean Scanlon",
+    "candidates": 2
+   },
+   {
+    "st": "DE",
+    "office": "State Auditor",
+    "winners": [
+     "Lydia York"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Lydia York",
+    "candidates": 3
+   },
+   {
+    "st": "FL",
+    "office": "Commissioner of Agriculture and Consumer Services",
+    "winners": [
+     "Wilton Simpson"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Wilton Simpson",
+    "candidates": 3
+   },
+   {
+    "st": "GA",
+    "office": "Commissioner of Agriculture",
+    "winners": [
+     "Katherine Juhan-Arnold"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Tyler Harper",
+    "candidates": 2
+   },
+   {
+    "st": "GA",
+    "office": "Insurance and Safety Fire Commissioner",
+    "winners": [
+     "Keisha Sean Waites"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "John King",
+    "candidates": 2
+   },
+   {
+    "st": "GA",
+    "office": "Commissioner of Labor",
+    "winners": [
+     "Nikki Porcher"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Bárbara Rivera Holmes",
+    "candidates": 2
+   },
+   {
+    "st": "GA",
+    "office": "State Superintendent of Schools",
+    "winners": [
+     "Lydia Powell"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Richard Woods",
+    "candidates": 2
+   },
+   {
+    "st": "HI",
+    "office": "Office of Hawaiian Affairs Maui Resident Trustee",
+    "winners": [
+     "Carmen Hulu Lindsey"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Carmen Hulu Lindsey",
+    "candidates": 2
+   },
+   {
+    "st": "HI",
+    "office": "Office of Hawaiian Affairs Oahu Resident Trustee",
+    "winners": [
+     "Kalei Akaka"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Kalei Akaka",
+    "candidates": 2
+   },
+   {
+    "st": "IL",
+    "office": "Comptroller",
+    "winners": [
+     "Margaret Croke"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 3
+   },
+   {
+    "st": "IA",
+    "office": "Secretary of Agriculture",
+    "winners": [
+     "Mike Naig"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Mike Naig",
+    "candidates": 2
+   },
+   {
+    "st": "KS",
+    "office": "Commissioner of Insurance",
+    "winners": [
+     "Daniel Hawkins"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 3
+   },
+   {
+    "st": "MN",
+    "office": "State Auditor",
+    "winners": [
+     "Zack Filipovich"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 3
+   },
+   {
+    "st": "MO",
+    "office": "State Auditor",
+    "winners": [
+     "Scott Fitzpatrick"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Scott Fitzpatrick",
+    "candidates": 3
+   },
+   {
+    "st": "NE",
+    "office": "Auditor of Public Accounts",
+    "winners": [
+     "Mike Foley"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Mike Foley",
+    "candidates": 2
+   },
+   {
+    "st": "NM",
+    "office": "State Auditor",
+    "winners": [
+     "Joseph Maestas"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Joseph Maestas",
+    "candidates": 2
+   },
+   {
+    "st": "NM",
+    "office": "Commissioner of Public Lands",
+    "winners": [
+     "Juan Sanchez III"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "ND",
+    "office": "Commissioner of Agriculture",
+    "winners": [
+     "Doug Goehring"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Doug Goehring",
+    "candidates": 2
+   },
+   {
+    "st": "ND",
+    "office": "Tax Commissioner",
+    "winners": [
+     "Brian Kroshus"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Brian Kroshus",
+    "candidates": 2
+   },
+   {
+    "st": "OK",
+    "office": "Commissioner of Insurance",
+    "winners": [
+     "Bob Sullivan"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "OK",
+    "office": "Commissioner of Labor",
+    "winners": [
+     "Kevin West"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 3
+   },
+   {
+    "st": "OK",
+    "office": "Superintendent of Public Instruction",
+    "winners": [
+     "Robert Franklin"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "SC",
+    "office": "Commissioner of Agriculture",
+    "winners": [
+     "Cody Simpson"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 4
+   },
+   {
+    "st": "SC",
+    "office": "Comptroller General",
+    "winners": [
+     "Mike Burkhold"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "SC",
+    "office": "Superintendent of Education",
+    "winners": [
+     "Ellen Weaver"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Ellen Weaver",
+    "candidates": 3
+   },
+   {
+    "st": "SD",
+    "office": "State Auditor",
+    "winners": [
+     "Catherine Barranco"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "SD",
+    "office": "Commissioner of School and Public Lands",
+    "winners": [
+     "Brock Greenfield"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Brock Greenfield",
+    "candidates": 2
+   },
+   {
+    "st": "VT",
+    "office": "State Auditor",
+    "winners": [
+     "Timothy Ashe"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "WY",
+    "office": "State Auditor",
+    "winners": [
+     "Kristi Racines"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Kristi Racines",
+    "candidates": 1
+   },
+   {
+    "st": "WY",
+    "office": "Superintendent of Public Instruction",
+    "winners": [
+     "Steve Harshman"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   }
+  ]
+ },
+ "tier2_one_seat_of_a_multi_member_body": {
+  "need": "a seat-numbering decision FIRST. Creating one office for the seat up in 2026 leaves no way to tell it from the seats up in 2028; Arizona models its Corporation Commission as five separate Commissioner offices, which is the precedent",
+  "count": 7,
+  "rows": [
+   {
+    "st": "HI",
+    "office": "Office of Hawaiian Affairs At-large Trustee (3 seats)",
+    "winners": [
+     "Keoni Souza",
+     "Ikaika Anderson",
+     "Brickwood Galuteria"
+    ],
+    "nWinners": 3,
+    "currentHolderNamedByPage": null,
+    "candidates": 6
+   },
+   {
+    "st": "MI",
+    "office": "State Board of Education (2 seats)",
+    "winners": [
+     "Judith Pritchett",
+     "Tiffany Tilley"
+    ],
+    "nWinners": 2,
+    "currentHolderNamedByPage": null,
+    "candidates": 11
+   },
+   {
+    "st": "MI",
+    "office": "State University Board of Trustees (2 seats)",
+    "winners": [
+     "Brianna Scott",
+     "Kelly Tebay"
+    ],
+    "nWinners": 2,
+    "currentHolderNamedByPage": null,
+    "candidates": 10
+   },
+   {
+    "st": "ND",
+    "office": "Public Service Commission",
+    "winners": [
+     "Sheri Haugen-Hoffart"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Sheri Haugen-Hoffart",
+    "candidates": 2
+   },
+   {
+    "st": "OK",
+    "office": "Corporation Commissioner",
+    "winners": [
+     "Brad Boles"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "SD",
+    "office": "Public Utilities Commission",
+    "winners": [
+     "Don Haggar"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "TX",
+    "office": "Railroad Commission",
+    "winners": [
+     "Jon Rosenthal"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 3
+   }
+  ]
+ },
+ "tier3_districted_bodies": {
+  "need": "real sub-state geometry. districts.geo_id is a lookup key and the only one available (the state FIPS) would make address search name the WRONG district member to a voter - worse than the seat being absent",
+  "count": 49,
+  "rows": [
+   {
+    "st": "AL",
+    "office": "State Board of Education District 2",
+    "winners": [
+     "Tracie West"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Tracie West",
+    "candidates": 2
+   },
+   {
+    "st": "AL",
+    "office": "State Board of Education District 4",
+    "winners": [
+     "Yvette Richardson"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Yvette Richardson",
+    "candidates": 1
+   },
+   {
+    "st": "AL",
+    "office": "State Board of Education District 6",
+    "winners": [
+     "Cathi Bradford"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "AL",
+    "office": "State Board of Education District 8",
+    "winners": [
+     "Emily Jones"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "AL",
+    "office": "Public Service Commission Place 1",
+    "winners": [
+     "Matt Gentry"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "AL",
+    "office": "Public Service Commission Place 2",
+    "winners": [
+     "Jim Zeigler"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "CO",
+    "office": "University of Colorado Board of Regents District 2",
+    "winners": [
+     "Edie Hooton"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 3
+   },
+   {
+    "st": "CO",
+    "office": "University of Colorado Board of Regents District 6",
+    "winners": [
+     "Ilana Spiegel"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Ilana Spiegel",
+    "candidates": 3
+   },
+   {
+    "st": "CO",
+    "office": "University of Colorado Board of Regents District 7",
+    "winners": [
+     "Nolbert Chavez"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Nolbert Chavez",
+    "candidates": 3
+   },
+   {
+    "st": "CO",
+    "office": "State Board of Education District 1",
+    "winners": [
+     "Lisa Escárcega"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Lisa Escárcega",
+    "candidates": 3
+   },
+   {
+    "st": "CO",
+    "office": "State Board of Education District 7",
+    "winners": [
+     "Karla Esser"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Karla Esser",
+    "candidates": 3
+   },
+   {
+    "st": "GA",
+    "office": "Public Service Commission District 3",
+    "winners": [
+     "Peter Hubbard"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Peter Hubbard",
+    "candidates": 2
+   },
+   {
+    "st": "GA",
+    "office": "Public Service Commission District 5",
+    "winners": [
+     "Shelia Edwards"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "KS",
+    "office": "State Board of Education District 1",
+    "winners": [
+     "Amy Cawvey"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "KS",
+    "office": "State Board of Education District 3",
+    "winners": [
+     "Amy Diediker"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "KS",
+    "office": "State Board of Education District 5",
+    "winners": [
+     "Jean Clifford"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "KS",
+    "office": "State Board of Education District 7",
+    "winners": [
+     "Alana McWilliams"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "KS",
+    "office": "State Board of Education District 9",
+    "winners": [
+     "Destry Brown"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "LA",
+    "office": "Public Service Commission District 1",
+    "winners": [
+     "Stephanie Hilferty"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 3
+   },
+   {
+    "st": "LA",
+    "office": "Public Service Commission District 5",
+    "winners": [
+     "John Atkins"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "MA",
+    "office": "Governor's Council District 1",
+    "winners": [
+     "Joseph Ferreira"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Joseph Ferreira",
+    "candidates": 1
+   },
+   {
+    "st": "MA",
+    "office": "Governor's Council District 2",
+    "winners": [
+     "Tamisha Civil"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Tamisha Civil",
+    "candidates": 2
+   },
+   {
+    "st": "MA",
+    "office": "Governor's Council District 3",
+    "winners": [
+     "Mara Dolan"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Mara Dolan",
+    "candidates": 1
+   },
+   {
+    "st": "MA",
+    "office": "Governor's Council District 4",
+    "winners": [
+     "Christopher Iannella"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Christopher Iannella",
+    "candidates": 1
+   },
+   {
+    "st": "MA",
+    "office": "Governor's Council District 5",
+    "winners": [
+     "Eunice Zeigler"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Eunice Zeigler",
+    "candidates": 2
+   },
+   {
+    "st": "MA",
+    "office": "Governor's Council District 6",
+    "winners": [
+     "Terrence Kennedy"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Terrence Kennedy",
+    "candidates": 1
+   },
+   {
+    "st": "MA",
+    "office": "Governor's Council District 7",
+    "winners": [
+     "Paul DePalo"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Paul DePalo",
+    "candidates": 2
+   },
+   {
+    "st": "MA",
+    "office": "Governor's Council District 8",
+    "winners": [
+     "Tara Jacobs"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Tara Jacobs",
+    "candidates": 1
+   },
+   {
+    "st": "NE",
+    "office": "Public Service Commission District 2",
+    "winners": [
+     "Wendy DeBoer"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "NE",
+    "office": "State Board of Education District 5",
+    "winners": [
+     "Angie Eberspacher"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "NE",
+    "office": "State Board of Education District 6",
+    "winners": [
+     "Sherry Jones"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Sherry Jones",
+    "candidates": 2
+   },
+   {
+    "st": "NE",
+    "office": "State Board of Education District 7",
+    "winners": [
+     "Elizabeth Tegtmeier"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Elizabeth Tegtmeier",
+    "candidates": 1
+   },
+   {
+    "st": "NE",
+    "office": "University of Nebraska Board of Regents District 1",
+    "winners": [
+     "Brent Comstock"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "NH",
+    "office": "Executive Council District 1",
+    "winners": [
+     "Luz Bay"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Joseph Kenney",
+    "candidates": 2
+   },
+   {
+    "st": "NH",
+    "office": "Executive Council District 2",
+    "winners": [
+     "Karen Liot Hill"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Karen Liot Hill",
+    "candidates": 2
+   },
+   {
+    "st": "NH",
+    "office": "Executive Council District 3",
+    "winners": [
+     "Lisa Kennedy Sheldon"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Janet Stevens",
+    "candidates": 2
+   },
+   {
+    "st": "NH",
+    "office": "Executive Council District 4",
+    "winners": [
+     "James O'Connell"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "John Stephen",
+    "candidates": 2
+   },
+   {
+    "st": "NH",
+    "office": "Executive Council District 5",
+    "winners": [
+     "Melanie Levesque"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Dave Wheeler",
+    "candidates": 2
+   },
+   {
+    "st": "NM",
+    "office": "Public Education Commission District 2",
+    "winners": [
+     "Ken Pascoe"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 1
+   },
+   {
+    "st": "NM",
+    "office": "Public Education Commission District 3",
+    "winners": [
+     "Jacob Trujillo"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Jacob Trujillo",
+    "candidates": 2
+   },
+   {
+    "st": "NM",
+    "office": "Public Education Commission District 5",
+    "winners": [
+     "Sharon E. Clahchischilliage"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Sharon E. Clahchischilliage",
+    "candidates": 1
+   },
+   {
+    "st": "NM",
+    "office": "Public Education Commission District 6",
+    "winners": [
+     "Stewart Ingham"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Stewart Ingham",
+    "candidates": 1
+   },
+   {
+    "st": "TX",
+    "office": "State Board of Education District 2",
+    "winners": [
+     "Thomas Garcia"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "TX",
+    "office": "State Board of Education District 5",
+    "winners": [
+     "Allison Bush"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "TX",
+    "office": "State Board of Education District 6",
+    "winners": [
+     "Michelle Palmer"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 3
+   },
+   {
+    "st": "TX",
+    "office": "State Board of Education District 7",
+    "winners": [
+     "Julie Pickren"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Julie Pickren",
+    "candidates": 2
+   },
+   {
+    "st": "TX",
+    "office": "State Board of Education District 9",
+    "winners": [
+     "Kason Huddleston"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "TX",
+    "office": "State Board of Education District 13",
+    "winners": [
+     "Tiffany Clark"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": "Tiffany Clark",
+    "candidates": 2
+   },
+   {
+    "st": "TX",
+    "office": "State Board of Education District 14",
+    "winners": [
+     "Mindy Bumgarner"
+    ],
+    "nWinners": 1,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   }
+  ]
+ },
+ "uncalled": {
+  "need": "nothing yet - Ballotpedia marks no winner",
+  "count": 22,
+  "rows": [
+   {
+    "st": "CA",
+    "office": "Commissioner of Insurance",
+    "winners": [],
+    "nWinners": 0,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "CA",
+    "office": "Superintendent of Public Instruction",
+    "winners": [],
+    "nWinners": 0,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "CA",
+    "office": "State Board of Equalization District 1",
+    "winners": [],
+    "nWinners": 0,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "CA",
+    "office": "State Board of Equalization District 2",
+    "winners": [],
+    "nWinners": 0,
+    "currentHolderNamedByPage": "Sally Lieber",
+    "candidates": 2
+   },
+   {
+    "st": "CA",
+    "office": "State Board of Equalization District 4",
+    "winners": [],
+    "nWinners": 0,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "CO",
+    "office": "State Board of Education District 3",
+    "winners": [],
+    "nWinners": 0,
+    "currentHolderNamedByPage": "Sherri Wright",
+    "candidates": 2
+   },
+   {
+    "st": "IA",
+    "office": "Auditor of State",
+    "winners": [],
+    "nWinners": 0,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "MI",
+    "office": "University of Michigan Board of Regents (2 seats)",
+    "winners": [],
+    "nWinners": 0,
+    "currentHolderNamedByPage": null,
+    "candidates": 6
+   },
+   {
+    "st": "MI",
+    "office": "Wayne State University Board of Governors (2 seats)",
+    "winners": [],
+    "nWinners": 0,
+    "currentHolderNamedByPage": null,
+    "candidates": 10
+   },
+   {
+    "st": "MT",
+    "office": "Public Service Commission District 1",
+    "winners": [],
+    "nWinners": 0,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "MT",
+    "office": "Public Service Commission District 5",
+    "winners": [],
+    "nWinners": 0,
+    "currentHolderNamedByPage": "Ann Bukacek",
+    "candidates": 2
+   },
+   {
+    "st": "NE",
+    "office": "State Board of Education District 8",
+    "winners": [],
+    "nWinners": 0,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "NE",
+    "office": "University of Nebraska Board of Regents District 2",
+    "winners": [],
+    "nWinners": 0,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "NV",
+    "office": "Board of Regents District 2",
+    "winners": [],
+    "nWinners": 0,
+    "currentHolderNamedByPage": "Jennifer J. McGrath",
+    "candidates": 2
+   },
+   {
+    "st": "NV",
+    "office": "Board of Regents District 3",
+    "winners": [],
+    "nWinners": 0,
+    "currentHolderNamedByPage": "Byron Brooks",
+    "candidates": 2
+   },
+   {
+    "st": "NV",
+    "office": "Board of Regents District 5",
+    "winners": [],
+    "nWinners": 0,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "NV",
+    "office": "Board of Regents District 10",
+    "winners": [],
+    "nWinners": 0,
+    "currentHolderNamedByPage": "Joseph Arrascada",
+    "candidates": 2
+   },
+   {
+    "st": "NM",
+    "office": "Public Education Commission District 7",
+    "winners": [],
+    "nWinners": 0,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "OH",
+    "office": "Auditor of State",
+    "winners": [],
+    "nWinners": 0,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "OH",
+    "office": "Treasurer",
+    "winners": [],
+    "nWinners": 0,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   },
+   {
+    "st": "TX",
+    "office": "State Board of Education District 8",
+    "winners": [],
+    "nWinners": 0,
+    "currentHolderNamedByPage": "Audrey Young",
+    "candidates": 2
+   },
+   {
+    "st": "UT",
+    "office": "State Board of Education District 8",
+    "winners": [],
+    "nWinners": 0,
+    "currentHolderNamedByPage": null,
+    "candidates": 2
+   }
+  ]
+ }
+}

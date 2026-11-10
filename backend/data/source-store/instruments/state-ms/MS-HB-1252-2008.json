@@ -1,0 +1,33 @@
+{
+  "id": "MS-HB-1252-2008",
+  "scope": "state:ms",
+  "title": "HB 1252 (2008 Regular Session): Voter identification; require when one appears to vote.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2008/pdf/history/HB/HB1252.xml",
+    "https://billstatus.ls.state.ms.us/documents/2008/pdf/HB/1200-1299/HB1252IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1(1)\n(quote) Each person who shall appear to vote in person at a polling place or the registrar's office shall be required to identify himself or herself to an election manager or the registrar by presenting an acceptable form of identification, before such person shall be allowed to vote.\n(section) Sec. 1(2)\n(quote) The identification required by subsection (1) of this section shall include the following: (a) A current and valid Mississippi driver's license; (b) A current and valid identification card issued by a branch, department, agency or entity of the State of Mississippi;\n(section) Sec. 1(2)\n(quote) (k) A utility bill dated within sixty (60) days prior to the date of the election that shows the name and the address of the voter; (l) A bank statement dated within sixty (60) days prior to the date of the election that shows the name and the address of the voter; (m) A government check dated within sixty (60) days prior to the date of the election that shows the name and the address of the voter;\n(b_no_id_remedy)\n(section) Sec. 1(4)\n(quote) A person who appears to vote in person at a polling place and does not have identification as required by this section may vote by affidavit ballot. If, upon examination of the affidavit by the commissioners of election, the person is found to be a registered voter, the person's vote shall be counted. The commissioners of election shall conduct a review of the affidavit ballots within seven (7) days after the date of the election.\n(section) Sec. 2(1)\n(quote) No fee shall be charged or collected for the application for or issuance of a Mississippi voter identification card.\n(c_mail_ballot_id)\n(section) Sec. 6 (23-15-719)\n(quote) The registrar shall identify the applicant by requiring him to present identification as required by Section 1 of House Bill No.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 1(5)\n(quote) The failure of an election official to require a voter to present identification as required by this section shall be a misdemeanor and, upon conviction, the official shall be sentenced to pay a fine of not more than Five Hundred Dollars ($500.00) or imprisonment for not more than thirty (30) days, or both.\n(section) Sec. 2(5)\n(quote) The registrar shall require presentation and verification of the following information during the application process which shall be certified to the Secretary of State before issuance of a Mississippi voter identification card to a person: (a) A photo identity document; however, a nonphoto identity document shall be acceptable if it includes both the applicant's full legal name and date of birth; (b) Documentation showing the person's date of birth;\n(other) Sec. 1(6): intimidating a voter is a felony; election official convicted is removed from office\n(other) Sec. 2: free Mississippi voter identification card (not available to holders of a valid driver's license or state ID)\n(other) Other sections: 23-15-11, 23-15-541, 23-15-719 conformed; absentee instructions; curbside voting; affidavit revisions; preclearance",
+  "sponsors": [
+    {
+      "name": "Snowden",
+      "role": "prime",
+      "version": "HB1252IN"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

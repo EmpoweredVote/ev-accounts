@@ -128,16 +128,29 @@ export async function computeIncumbencyDrift(client) {
           AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'`),
     // Seat-scoped and measured AT THE ELECTION DATE — see findDrift. The expected value is
     // computed here, in SQL, because it is a fact about this row's own race and office.
+    //
+    // 🔴 A MULTI-SEAT RACE IS FOR SEVERAL SEATS BUT POINTS AT ONE. A race with seats > 1 (a
+    // council electing three, a state board electing two) hangs off ONE of the body's offices,
+    // chosen arbitrarily or as "the seat that was up". The seat-only rule therefore called every
+    // other sitting member defending a seat in that same race a challenger: 128 rows in 87 races
+    // on 2026-11-07, and CC_0364's four correctly-marked board members turned master CI red.
+    // RULED 2026-11-07 (Chris Andrews): in a race with seats > 1, a candidate who holds ANY
+    // office of the race office's chamber on election day is an incumbent. Single-seat races keep
+    // the 2026-11-04 rule exactly — a state senator running for the U.S. House is still a
+    // challenger, because a different body is a different chamber. CC_0367 applied it.
     client.query(
       `SELECT rc.id, rc.politician_id, rc.is_incumbent,
               EXISTS (SELECT 1 FROM essentials.office_terms t
-                       WHERE t.office_id = r.office_id
-                         AND t.politician_id = rc.politician_id
+                        JOIN essentials.offices o2 ON o2.id = t.office_id
+                       WHERE t.politician_id = rc.politician_id
+                         AND (t.office_id = r.office_id
+                              OR (r.seats > 1 AND ro.chamber_id IS NOT NULL AND o2.chamber_id = ro.chamber_id))
                          AND (t.term_start IS NULL OR t.term_start <= e.election_date)
                          AND (t.term_end   IS NULL OR t.term_end   >= e.election_date)
                      ) AS expected_is_incumbent
          FROM essentials.race_candidates rc
          JOIN essentials.races r ON r.id = rc.race_id
+         JOIN essentials.offices ro ON ro.id = r.office_id
          JOIN essentials.elections e ON e.id = r.election_id
         WHERE e.election_date >= CURRENT_DATE - INTERVAL '1 year'
           AND rc.politician_id IS NOT NULL`),

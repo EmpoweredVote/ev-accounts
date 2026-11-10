@@ -1,0 +1,38 @@
+{
+  "id": "OH-HR-330-2026",
+  "scope": "state:oh",
+  "title": "HR 330 (2025-2026 (136th General Assembly)): H. R. No. 330: Urge Congress to enact Safeguard American Voter Eligibility Act",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/hr330",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hr330/00_IN/html/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Preamble (describing the federal SAVE Act)\n(quote) WHEREAS, The SAVE Act requires each individual voting in a federal election to present an eligible photo identification document for both in-person and absentee voting;\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Preamble (whereas clauses)\n(quote) WHEREAS, The best way to ensure noncitizens and foreign nationals are prohibited from voting is to have safeguards, which require documentary proof of citizenship in order to register to vote and to allow states to remove noncitizens and foreign nationals from existing voter rolls;\n(e_other_rule)\n(section) Operative resolution\n(quote) RESOLVED, That we, the members of the House of Representatives of the 136th General Assembly of the State of Ohio, in adopting this resolution, urge the United States Congress to quickly enact the SAVE Act;\n(other) Clerk sends copies to Congress leaders, the Ohio delegation and the news media\n(other) Whereas clauses also say the federal bill requires proof of citizenship in person at registration and removal of noncitizens from voter rolls\n(other) note: House resolution urging Congress to pass the federal SAVE Act; it states no Ohio rule. The slot quotes are whereas clauses describing the federal bill, not Ohio law. A whereas clause says the U.S. House passed it on February 11, 2026 (as written in the text). Sole version.",
+  "sponsors": [
+    {
+      "name": "Tracy M. Richardson",
+      "role": "prime",
+      "version": "As Introduced (00_IN)"
+    },
+    {
+      "name": "Tom Young",
+      "role": "prime",
+      "version": "As Introduced (00_IN)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

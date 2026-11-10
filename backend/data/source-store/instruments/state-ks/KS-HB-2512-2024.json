@@ -1,0 +1,541 @@
+{
+  "id": "KS-HB-2512-2024",
+  "scope": "state:ks",
+  "title": "HB 2512 (2023-2024 biennium (2024 Regular Session)): Substitute for HB 2512 by Committee on Elections - Relating to advance voting ballots; requiring county election officers to provide at least four hours of advance voting in-person on the Saturday before an election; providing after January 1, 2025, such ballots cast in-person be received in the county election office by 7:00 p.m. on the Sunday proceding the election; exception to allow voting in-person until 12:00 noon on Monday for good cause.",
+  "urls": [
+    "https://www.kslegislature.gov/li_2024/b2023_24/measures/hb2512/",
+    "https://www.kslegislature.gov/b2023_24/bills/download/?apn=b2023_24/year2/ready_for_publication/hb_2512/hb2512_02_0000.pdf",
+    "https://www.kslegislature.gov/b2023_24/bills/download/?apn=b2023_24/year2/ready_for_publication/hb_2512/hb2512_01_0000.pdf",
+    "https://www.kslegislature.gov/b2023_24/bills/download/?apn=b2023_24/year2/ready_for_publication/hb_2512/hb2512_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) K.S.A. 2023 Supp. 25-1122(b) as printed in Sec. 1 (voted version); reprinted existing law, no strike or new-word marking seen on the rendered page\n(quote) (b) If the registered voter is applying for an advance voting ballot to be transmitted in person, the voter shall provide identification pursuant to K.S.A. 25-2908, and amendments thereto.\n(b_no_id_remedy)\n(section) K.S.A. 2023 Supp. 25-1122(d) as printed in Sec. 1 (voted version); reprinted existing law\n(quote) (d) A voter may vote a provisional ballot according to K.S.A. 25-409, and amendments thereto, if: (1) The voter is unable or refuses to provide current and valid identification; or\n(c_mail_ballot_id)\n(section) K.S.A. 2023 Supp. 25-1122(c) as printed in Sec. 1 (voted version); reprinted existing law\n(quote) (c) If the registered voter is applying for an advance voting ballot to be transmitted by mail, the voter shall provide with the application for an advance voting ballot the voter's current and valid Kansas driver's license number, nondriver's identification card number or a photocopy of any other identification provided by K.S.A. 25-2908, and amendments thereto.\n(section) K.S.A. 2023 Supp. 25-1122(e)(2) as printed in Sec. 1 (voted version); reprinted existing law\n(quote) (2) the person provides such person's full Kansas driver's license number, Kansas nondriver's identification card number issued by the division of vehicles, or submits such person's application for an advance voting ballot and a copy of identification provided by K.S.A. 25-2908, and amendments thereto, to the county election officer for verification.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec. 1 K.S.A. 2023 Supp. 25-1122(g)(1): county election officer must provide at least four hours of in-person advance voting on the Saturday before an election.\n(other) Sec. 2 (effective 2025-01-01): same section as amended again, with the 7:00 p.m. Sunday receipt deadline for in-person advance ballots and the good-cause exception to noon Monday (the House Committee of the Whole added the \"exception\" wording).\n(other) Sec. 3-4: K.S.A. 25-1128 (receipt of advance ballots), same two-step with an effective date of 2025-01-01.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "House Committee on Elections",
+      "role": "prime",
+      "version": "Substitute for HB 2512, As Amended by House Committee of the Whole (hb2512_02_0000; engrossed 2024-02-23). Also read: Substitute as introduced by committee (hb2512_01_0000) and HB 2512 as introduced (hb2512_00_0000)."
+    }
+  ],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2024-02-22",
+      "body": "KS House",
+      "motion": "Final Action - Substitute for HB 2512 passed as amended (version voted: Substitute for HB 2512 as amended by House Committee of the Whole)",
+      "kind": "roll-call",
+      "yes": 97,
+      "no": 23,
+      "absent": 5,
+      "body_size": 125,
+      "note": "1829 (House Journal, February 22, 2024) | https://www.kslegislature.gov/b2023_24/bills/download/?apn=b2023_24/year2/ready_for_publication/journal/daily_journal_house_20240222123028.pdf",
+      "members": [
+        {
+          "name": "Alcala",
+          "vote": "yea"
+        },
+        {
+          "name": "Amyx",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Awerkamp",
+          "vote": "yea"
+        },
+        {
+          "name": "Ballard",
+          "vote": "yea"
+        },
+        {
+          "name": "Barth",
+          "vote": "yea"
+        },
+        {
+          "name": "Bergkamp",
+          "vote": "yea"
+        },
+        {
+          "name": "Bergquist",
+          "vote": "yea"
+        },
+        {
+          "name": "Blew",
+          "vote": "yea"
+        },
+        {
+          "name": "Blex",
+          "vote": "yea"
+        },
+        {
+          "name": "Bloom",
+          "vote": "yea"
+        },
+        {
+          "name": "Borjon",
+          "vote": "yea"
+        },
+        {
+          "name": "Bryce",
+          "vote": "yea"
+        },
+        {
+          "name": "Buehler",
+          "vote": "yea"
+        },
+        {
+          "name": "Butler",
+          "vote": "yea"
+        },
+        {
+          "name": "Carmichael",
+          "vote": "yea"
+        },
+        {
+          "name": "B. Carpenter",
+          "vote": "yea"
+        },
+        {
+          "name": "W. Carpenter",
+          "vote": "yea"
+        },
+        {
+          "name": "Clifford",
+          "vote": "yea"
+        },
+        {
+          "name": "Concannon",
+          "vote": "yea"
+        },
+        {
+          "name": "Corbet",
+          "vote": "yea"
+        },
+        {
+          "name": "Croft",
+          "vote": "yea"
+        },
+        {
+          "name": "Curtis",
+          "vote": "yea"
+        },
+        {
+          "name": "Delperdang",
+          "vote": "yea"
+        },
+        {
+          "name": "Dodson, M.",
+          "vote": "yea"
+        },
+        {
+          "name": "Droge",
+          "vote": "yea"
+        },
+        {
+          "name": "Ellis",
+          "vote": "yea"
+        },
+        {
+          "name": "Eplee",
+          "vote": "yea"
+        },
+        {
+          "name": "Essex",
+          "vote": "yea"
+        },
+        {
+          "name": "Estes",
+          "vote": "yea"
+        },
+        {
+          "name": "Fairchild",
+          "vote": "yea"
+        },
+        {
+          "name": "Garber",
+          "vote": "yea"
+        },
+        {
+          "name": "Gardner",
+          "vote": "yea"
+        },
+        {
+          "name": "Goddard",
+          "vote": "yea"
+        },
+        {
+          "name": "Goetz",
+          "vote": "yea"
+        },
+        {
+          "name": "Haswood",
+          "vote": "yea"
+        },
+        {
+          "name": "Hawkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Helgerson",
+          "vote": "yea"
+        },
+        {
+          "name": "Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Hoffman",
+          "vote": "yea"
+        },
+        {
+          "name": "Hoheisel",
+          "vote": "yea"
+        },
+        {
+          "name": "Hougland",
+          "vote": "yea"
+        },
+        {
+          "name": "Howe",
+          "vote": "yea"
+        },
+        {
+          "name": "Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Howerton",
+          "vote": "yea"
+        },
+        {
+          "name": "Humphries",
+          "vote": "yea"
+        },
+        {
+          "name": "Jacobs",
+          "vote": "yea"
+        },
+        {
+          "name": "T. Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Kessler",
+          "vote": "yea"
+        },
+        {
+          "name": "Landwehr",
+          "vote": "yea"
+        },
+        {
+          "name": "Lewis",
+          "vote": "yea"
+        },
+        {
+          "name": "Mason",
+          "vote": "yea"
+        },
+        {
+          "name": "Maughan",
+          "vote": "yea"
+        },
+        {
+          "name": "McDonald",
+          "vote": "yea"
+        },
+        {
+          "name": "McNorton",
+          "vote": "yea"
+        },
+        {
+          "name": "Meyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Miller, D.",
+          "vote": "yea"
+        },
+        {
+          "name": "Miller, V.",
+          "vote": "yea"
+        },
+        {
+          "name": "Moser",
+          "vote": "yea"
+        },
+        {
+          "name": "Murphy",
+          "vote": "yea"
+        },
+        {
+          "name": "Neelly",
+          "vote": "yea"
+        },
+        {
+          "name": "Neighbor",
+          "vote": "yea"
+        },
+        {
+          "name": "Ohaebosim",
+          "vote": "yea"
+        },
+        {
+          "name": "Ousley",
+          "vote": "yea"
+        },
+        {
+          "name": "Owens",
+          "vote": "yea"
+        },
+        {
+          "name": "Penn",
+          "vote": "yea"
+        },
+        {
+          "name": "Pickert",
+          "vote": "yea"
+        },
+        {
+          "name": "Proctor",
+          "vote": "yea"
+        },
+        {
+          "name": "Resman",
+          "vote": "yea"
+        },
+        {
+          "name": "Rhiley",
+          "vote": "yea"
+        },
+        {
+          "name": "Roth",
+          "vote": "yea"
+        },
+        {
+          "name": "Ruiz, L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Ruiz, S.",
+          "vote": "yea"
+        },
+        {
+          "name": "Sanders",
+          "vote": "yea"
+        },
+        {
+          "name": "Sawyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Schlingensiepen",
+          "vote": "yea"
+        },
+        {
+          "name": "Schmoe",
+          "vote": "yea"
+        },
+        {
+          "name": "Schreiber",
+          "vote": "yea"
+        },
+        {
+          "name": "Seiwert",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith, C.",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith, E.",
+          "vote": "yea"
+        },
+        {
+          "name": "Sutton",
+          "vote": "yea"
+        },
+        {
+          "name": "Tarwater",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas",
+          "vote": "yea"
+        },
+        {
+          "name": "Titus",
+          "vote": "yea"
+        },
+        {
+          "name": "Turk",
+          "vote": "yea"
+        },
+        {
+          "name": "Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Underhill",
+          "vote": "yea"
+        },
+        {
+          "name": "Waggoner",
+          "vote": "yea"
+        },
+        {
+          "name": "Wasinger",
+          "vote": "yea"
+        },
+        {
+          "name": "Waymaster",
+          "vote": "yea"
+        },
+        {
+          "name": "Weigel",
+          "vote": "yea"
+        },
+        {
+          "name": "White",
+          "vote": "yea"
+        },
+        {
+          "name": "Williams, K.",
+          "vote": "yea"
+        },
+        {
+          "name": "Williams, L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Woodard",
+          "vote": "yea"
+        },
+        {
+          "name": "Younger",
+          "vote": "yea"
+        },
+        {
+          "name": "Carlin",
+          "vote": "nay"
+        },
+        {
+          "name": "Carr",
+          "vote": "nay"
+        },
+        {
+          "name": "Collins",
+          "vote": "nay"
+        },
+        {
+          "name": "Featherston",
+          "vote": "nay"
+        },
+        {
+          "name": "Francis",
+          "vote": "nay"
+        },
+        {
+          "name": "Haskins",
+          "vote": "nay"
+        },
+        {
+          "name": "Hoye",
+          "vote": "nay"
+        },
+        {
+          "name": "Martinez",
+          "vote": "nay"
+        },
+        {
+          "name": "Melton",
+          "vote": "nay"
+        },
+        {
+          "name": "Miller, S.",
+          "vote": "nay"
+        },
+        {
+          "name": "Minnix",
+          "vote": "nay"
+        },
+        {
+          "name": "Oropeza",
+          "vote": "nay"
+        },
+        {
+          "name": "Osman",
+          "vote": "nay"
+        },
+        {
+          "name": "Poetter",
+          "vote": "nay"
+        },
+        {
+          "name": "Poskin",
+          "vote": "nay"
+        },
+        {
+          "name": "Probst",
+          "vote": "nay"
+        },
+        {
+          "name": "Rahjes",
+          "vote": "nay"
+        },
+        {
+          "name": "Clayton",
+          "vote": "nay"
+        },
+        {
+          "name": "Smith, A.",
+          "vote": "nay"
+        },
+        {
+          "name": "Stogsdill",
+          "vote": "nay"
+        },
+        {
+          "name": "Vaughn",
+          "vote": "nay"
+        },
+        {
+          "name": "Winn",
+          "vote": "nay"
+        },
+        {
+          "name": "Xu",
+          "vote": "nay"
+        },
+        {
+          "name": "Donohoe",
+          "vote": "absent"
+        },
+        {
+          "name": "Highberger",
+          "vote": "absent"
+        },
+        {
+          "name": "Houser",
+          "vote": "absent"
+        },
+        {
+          "name": "Robinson",
+          "vote": "absent"
+        },
+        {
+          "name": "Thompson",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

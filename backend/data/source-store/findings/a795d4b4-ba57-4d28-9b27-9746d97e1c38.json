@@ -1,0 +1,29 @@
+{
+  "politician_id": "a795d4b4-ba57-4d28-9b27-9746d97e1c38",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship / SHIELD Act / SAVE Act",
+        "mail-ballot ID",
+        "election integrity / voter rolls"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "identity confirmed (Mississippi House District 69, Jackson; also appears as Tamarra Butler-Washington): https://www.supertalk.fm/?p=240284 (August 30, 2023; lists voter empowerment among her campaign priorities in the outlet's words, no statement on ID or citizenship)",
+        "web search x6: name + voter ID; name + election integrity/photo ID/voting rights; name + proof of citizenship/SHIELD Act/voter rolls; name + questionnaire/voter guide/campaign site; name + voter empowerment; no own words on the subject found",
+        "not reviewed: Yahoo-hosted candidate articles news.yahoo.com/see-candidates-running-replace-retiring-200126572.html and .../hear-jackson-district-69-house-100335617.html (syndicated from a Gannett paper that refuses AI agents; not fetched)",
+        "blocked: ballotpedia.org (refuses our fetches; not tried)",
+        "not reviewed: bluevoterguide.org (403, skipped per instructions)",
+        "no campaign site or newsletter found by search"
+      ],
+      "found": 0,
+      "at": "2026-11-05T23:11:18.445Z",
+      "by": "search-ms-2026-11-05"
+    }
+  ]
+}

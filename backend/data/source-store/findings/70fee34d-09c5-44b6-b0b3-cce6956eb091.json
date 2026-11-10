@@ -1,0 +1,174 @@
+{
+  "politician_id": "70fee34d-09c5-44b6-b0b3-cce6956eb091",
+  "findings": [
+    {
+      "id": "775d161bcea8aa2d30fa1c3e9206626f1a0684c81fa2ddd622e90f7a71ab76d5",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/82513/race/11247/election/1246",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification.",
+      "note": "Statement in the iVoterGuide 2024 candidate questionnaire; his recorded answer to it is 'Disagree'. The same page records 'Strongly Disagree' to a statement about the National Popular Vote Interstate Compact.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:51:29.113Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "669e7fca659f0b9044d29e7c7d15fc4a9f911fb0a49c648d08fb058f00c7ea92",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/hey-bob-uncle-sister-cousin-100000138.html",
+      "date": "2021-04-11",
+      "date_precision": "day",
+      "passage": "What we want to do is not have those types of allegations here in Kansas. We want to have safe, secure, fair and transparent elections.",
+      "note": "Quoted by the Kansas City Star (C.J. Janovy, syndicated on Yahoo News) on House Bill 2183, which limits who may return an advance voting ballot for another voter. He also said, per the same article, that there were allegations of ballot harvesting in the last cycle and that the bill 'would make it easy for everyone to vote'.",
+      "subjects": [
+        "mail or advance-ballot ID/rules",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:51:29.113Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "16fc367b6ae612e9858d0804c70069da9a41e059381a62d495fc2173fe7e9422",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_191_HB2020.odt",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "Senate: Emergency Final Action As Amended",
+      "note": "Senate roll call as printed ('Alley'), linked to Larry Alley (district 32) via the official 2025 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53cc439c8ba13aae8525c4a82092d677fe52f2aa3e4773008814268e4fad0c47",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Alley'), linked to Larry Alley (district 32) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "26fc0eac68c90037c402f6af64ad21e632b079f7491d447d2551656187b6c5c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Alley'), linked to Larry Alley (district 32) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "773a23f2ab30c456870279e3a5e51881ec013b5fc572b2fa03296b427529d0f8",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/vote/?apn=b2023_24/year2/senate/legislative_days/day039_20240305/vote_records/vote_100_SB365.odt",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-365-2024",
+      "act": "nay",
+      "motion": "Senate: Final Action - Not passed",
+      "note": "Senate roll call as printed ('Alley'), linked to Larry Alley (district 32) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail or advance-ballot ID/rules",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances; name search found no candidates)",
+        "legislature member page confirming Kansas Senate District 32 (Cowley County), Senate term 2017-present: https://www.kslegislature.gov/li/b2025_26/members/sen_alley_larry_1/ (no personal site or news links)",
+        "iVoterGuide 2024 questionnaire page https://ivoterguide.com/candidate/82513/race/11247/election/1246 (two elections answers saved)",
+        "Yahoo News / Kansas City Star article on HB 2183 https://www.yahoo.com/news/hey-bob-uncle-sister-cousin-100000138.html (fetched via the fetch tool; a plain curl was refused with 429, so recorded as blocked for curl)",
+        "web searches on name plus voter ID, citizenship, newsletter and column: no column or newsletter by him found",
+        "blocked: https://ballotpedia.org (not fetched, listed as refused in instructions)",
+        "blocked: https://kansasreflector.com (not fetched, listed as refused in instructions)"
+      ],
+      "found": 2,
+      "at": "2026-11-04T16:51:29.113Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T19:13:24.946Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

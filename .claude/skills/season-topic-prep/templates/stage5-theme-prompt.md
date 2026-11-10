@@ -1,7 +1,10 @@
 # Stage 5 theme pass — {{TOPIC_KEY}} — {{DATE}}
 
-<!-- Orchestrator: fill every {{…}} and delete these comments. Make the notes file with
-     `topic:stage5-report … --notes-out <abs notes.jsonl>`. Run this as a fresh subagent on the most capable model,
+<!-- Orchestrator: do not fill this by hand. Make the notes file with
+     `topic:stage5-report … --notes-out <abs notes.jsonl>`, then write the filled prompt with
+     `topic:stage5-theme-prompt --topic <key> --season draft --notes <abs notes.jsonl> --out <abs prompt.md>`: it fills
+     the ladder from the season's served revision and refuses to write if any slot stays unfilled.
+     Run this as a fresh subagent on the most capable model,
      separate from the coders. Give it the notes file and the ladder only. It writes
      <research folder>/stage5/themes.json; then re-run `topic:stage5-report … --themes <that file>`. -->
 

@@ -1,0 +1,27 @@
+{
+  "id": "OH-SB-36-2005",
+  "scope": "state:oh",
+  "title": "SB 36 (2005-2006 (126th General Assembly)): S. B. No. 36: Require identification to vote",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/126/sb36",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_126/legislation/sb36/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) 3505.18(A)(1)\n(quote) and provide to them proof of the elector's identity in the form of a current valid driver's license or other current valid photo identification.\n(b_no_id_remedy)\n(section) 3505.18(A)(2)\n(quote) If such an elector does not provide to the precinct election officials any of the forms of identification specified in this division, the elector may cast a provisional ballot in that federal election under 42 U.S.C. 15482.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) 3505.18(A)(2)\n(quote) If the election for which the elector appears in a polling place to vote is a federal election, if the elector registered to vote by mail, and if the elector has not previously voted in an election for federal office in this state, the elector shall announce to the precinct election officials the elector's full name and address and provide to them proof of the elector's identity in the form of a current valid photo identification or a copy of a current utility bill, bank statement, government check, paycheck, or other government document that shows the name and address of the elector.\n(other) 3505.18(B): signature comparison and poll-book procedure reprinted with wording changes\n(other) note: Only one version (introduced). Struck words are not marked. The (A)(1) rule (photo ID or driver's license for every in-person voter) is the new part. The (A)(2) text for first-time mail registrants in federal elections appears to be existing law moved to a new division; the PDF text does not show that. The only no-ID remedy stated is for those first-time federal voters (provisional ballot); no remedy is stated for other voters who lack ID.",
+  "sponsors": [],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

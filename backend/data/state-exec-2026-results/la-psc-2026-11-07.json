@@ -1,0 +1,48 @@
+{
+ "measured": "2026-11-07",
+ "migration": "CC_0371",
+ "loader": "backend/scripts/CC_0371-la-psc-geofences.mjs (run it first — the polygons are not in the migration)",
+ "geometry": {
+  "source": "Louisiana Legislature redistricting site, HB2_PSC_221ES KML",
+  "plan": "Act 2 (HB2) of the 2022 First Extraordinary Session — the Public Service Commission districts in force",
+  "parse": "backend/scripts/CC_0371-parse-la-psc-kml.mjs, downloaded and parsed 2026-11-07",
+  "note": "The 2026 Regular Session did redistrict, but congressional districts (SB121, Act 2 of 2026) and nothing else; all nine redistricting bills filed that session were congressional, House or Senate, checked one by one on legis.la.gov. 🟢 The shapefile in the same folder is NOT a CRS trap: HB2_PSC_221ES.prj is GCS_North_American_1983 in degrees, not a projected plane — the opposite of Texas's PLANE2106.prj, which was Lambert Conformal Conic in metres. The KML is used anyway, because KML is WGS84 by specification.",
+  "checked": "Union covers 99.743% of our TIGER Louisiana outline; zero pairwise overlap; total area 52,377 sq mi, which is Louisiana's; all 539 Louisiana ZCTAs resolve to exactly one district; and the parish gate — all 54 parishes Act 2 assigns whole are 100% inside their own district with nothing elsewhere, and all 10 it splits are shared by exactly the districts it names, the smallest true share being 15.14%."
+ },
+ "body": {
+  "st": "LA",
+  "stateName": "Louisiana",
+  "fips": "22",
+  "governmentId": "9f0eeee7-0763-44b5-905d-6c584f0eff70",
+  "electionId": "635930f4-f5af-4793-ba97-691ceca28114",
+  "chamberName": "Public Service Commission",
+  "chamberFormal": "Louisiana Public Service Commission",
+  "officialCount": 5,
+  "officeCount": 5,
+  "termLength": "6 years",
+  "mtfcc": "X-ST-BOARD",
+  "districtType": "STATE_BOARD",
+  "rosterUrl": "https://www.lpsc.louisiana.gov/Commissioners",
+  "rosterNote": "The commission's own five district pages, lpsc.louisiana.gov/District1..5, read 2026-11-07, each name their commissioner, list the district's parishes and give the term end. Ballotpedia's infobox for the commission independently lists the same five names. Where the two differ it is only in form: the commission prints middle initials (\"Jean-Paul P. Coussan\", \"Foster L. Campbell\"), so Ballotpedia's plain form is used, because the Ballotpedia page is the source each politician row cites.",
+  "remarks": "Five commissioners, each elected from a single district to a six-year term. Districts 1 and 5 were on the 2026 ballot; 2 was last elected in 2024 and 3 and 4 in 2022.",
+  "inaugurationRules": "Terms run whole calendar years. The commission's own pages give the sitting members' terms as ending December 31 — 2026 for Districts 1 and 5, 2028 for 3 and 4, 2030 for 2 — so the 2026 winners take office on 2027-01-01.",
+  "electionRules": "🔴 From the 2026 elections, Louisiana elects the Public Service Commission (with Congress, the Supreme Court and BESE) through a CLOSED PARTISAN PRIMARY and runoff, not the majority-vote \"jungle\" primary it used before. So the November contest is a true general election and the usual Louisiana hazard — a November result that is really a primary, where anything under 50% means a runoff — does not apply to these two races. Both winners cleared 50% in any case.",
+  "ballotNote": "Two districts were on the 2026 ballot — 1 and 5 — and Ballotpedia carries a votebox for each, both called. Neither sitting member was a candidate.",
+  "holderNote": "🔴 NEITHER WINNER IS THE HOLDER. Eric Skrmetta (D1, in office since 2009-01-01) and Foster Campbell (D5, in office since 2003-01-01) are the sitting commissioners and were not on the November ballot; Stephanie Hilferty and John Atkins won those seats and take office on 2027-01-01. All five seats are seated with their CURRENT holder, because an office with no term row raises the drift baseline and because a certified result is not a fact about who holds the seat."
+ },
+ "anchors": [
+  { "district": 1, "parish": "St. Tammany Parish", "member": "Eric Skrmetta" },
+  { "district": 2, "parish": "Lafayette Parish", "member": "Jean-Paul Coussan" },
+  { "district": 3, "parish": "St. James Parish", "member": "Davante Lewis" },
+  { "district": 4, "parish": "Calcasieu Parish", "member": "Mike Francis" },
+  { "district": 5, "parish": "Caddo Parish", "member": "Foster Campbell" }
+ ],
+ "anchorNote": "Every anchor is a parish Act 2 assigns WHOLE to that district, established by the two independent statements reconciled in la-psc-parishes-2026-11-07.json. The member's name is written out here and again in the seat table on purpose: a chain gate that reads its expectation from the table it is checking is not a gate (CC_0369's control C).",
+ "seats": [
+  { "district": 1, "holder": "Eric Skrmetta", "onBallot2026": true, "raceRecorded": true },
+  { "district": 2, "holder": "Jean-Paul Coussan", "onBallot2026": false },
+  { "district": 3, "holder": "Davante Lewis", "onBallot2026": false },
+  { "district": 4, "holder": "Mike Francis", "onBallot2026": false },
+  { "district": 5, "holder": "Foster Campbell", "onBallot2026": true, "raceRecorded": true }
+ ]
+}

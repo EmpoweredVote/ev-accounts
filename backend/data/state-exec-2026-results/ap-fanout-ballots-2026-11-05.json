@@ -1,0 +1,3616 @@
+[
+ {
+  "apRace": "20261103AL1025",
+  "st": "AL",
+  "office": "Attorney General",
+  "ourOfficeId": "dbb60021-06d6-4359-aa7e-60f82ed4e90b",
+  "ourTitle": "Attorney General",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 97.66,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "171298",
+    "first": "Katherine",
+    "last": "Robertson",
+    "name": "Katherine Robertson",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 910383,
+    "pct": 55.04,
+    "winner": true
+   },
+   {
+    "apId": "52832",
+    "first": "Jeff",
+    "last": "McLaughlin",
+    "name": "Jeff McLaughlin",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 743742,
+    "pct": 44.96,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103AL1019",
+  "st": "AL",
+  "office": "Governor",
+  "ourOfficeId": "8f62b37c-e344-4a24-be98-8c9617ad8f2c",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98.72,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "68308",
+    "first": "Thomas",
+    "last": "Tuberville",
+    "name": "Thomas Tuberville",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 872806,
+    "pct": 52.06,
+    "winner": true
+   },
+   {
+    "apId": "3610",
+    "first": "Doug",
+    "last": "Jones",
+    "name": "Doug Jones",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 803680,
+    "pct": 47.94,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103AL1021",
+  "st": "AL",
+  "office": "Lieutenant Governor",
+  "ourOfficeId": "a9d2cc9d-7d26-437f-9584-8feb9639e1ab",
+  "ourTitle": "Lieutenant Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98.97,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "171273",
+    "first": "John",
+    "last": "Wahl",
+    "name": "John Wahl",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 911312,
+    "pct": 54.36,
+    "winner": true
+   },
+   {
+    "apId": "100911",
+    "first": "Phillip",
+    "last": "Ensler",
+    "name": "Phillip Ensler",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 765219,
+    "pct": 45.64,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103AL1023",
+  "st": "AL",
+  "office": "Secretary of State",
+  "ourOfficeId": "6acd1d55-4faa-496c-bd97-5f12b4f548d7",
+  "ourTitle": "Secretary of State",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98.97,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "160910",
+    "first": "Caroleene",
+    "last": "Dobson",
+    "name": "Caroleene Dobson",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 909486,
+    "pct": 54.59,
+    "winner": true
+   },
+   {
+    "apId": "171403",
+    "first": "Wayne",
+    "last": "Rogers",
+    "name": "Wayne Rogers",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 756505,
+    "pct": 45.41,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103AR5729",
+  "st": "AR",
+  "office": "Attorney General",
+  "ourOfficeId": "a0c10af2-2694-4860-ac40-d5c863c9fd65",
+  "ourTitle": "Attorney General",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 0,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "60231",
+    "first": "Tim",
+    "last": "Griffin",
+    "name": "Tim Griffin",
+    "party": "GOP",
+    "incumbent": true,
+    "votes": 620639,
+    "pct": 100,
+    "winner": true
+   }
+  ]
+ },
+ {
+  "apRace": "20261103AR5626",
+  "st": "AR",
+  "office": "Governor",
+  "ourOfficeId": "38e72906-3f76-4071-9973-7b64558f7a6e",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "70516",
+    "first": "Sarah",
+    "last": "Huckabee Sanders",
+    "name": "Sarah Huckabee Sanders",
+    "party": "GOP",
+    "incumbent": true,
+    "votes": 477138,
+    "pct": 53.87,
+    "winner": true
+   },
+   {
+    "apId": "102193",
+    "first": "Fred",
+    "last": "Love",
+    "name": "Fred Love",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 341666,
+    "pct": 38.58,
+    "winner": false
+   },
+   {
+    "apId": "174770",
+    "first": "Colt",
+    "last": "Shelby",
+    "name": "Colt Shelby",
+    "party": "Lib",
+    "incumbent": false,
+    "votes": 66894,
+    "pct": 7.55,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103AR5315",
+  "st": "AR",
+  "office": "Lieutenant Governor",
+  "ourOfficeId": "73bf9b8d-275d-4e15-bb1f-dd245ef8e68d",
+  "ourTitle": "Lieutenant Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "102485",
+    "first": "Leslie",
+    "last": "Rutledge",
+    "name": "Leslie Rutledge",
+    "party": "GOP",
+    "incumbent": true,
+    "votes": 536096,
+    "pct": 63.89,
+    "winner": true
+   },
+   {
+    "apId": "66362",
+    "first": "Michael",
+    "last": "Kalagias",
+    "name": "Michael Kalagias",
+    "party": "Lib",
+    "incumbent": false,
+    "votes": 303013,
+    "pct": 36.11,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103AR5728",
+  "st": "AR",
+  "office": "Secretary of State",
+  "ourOfficeId": "9af74283-be8f-4964-ad8e-836ddc8dc3ec",
+  "ourTitle": "Secretary of State",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "102119",
+    "first": "Kim",
+    "last": "Hammer",
+    "name": "Kim Hammer",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 490427,
+    "pct": 55.85,
+    "winner": true
+   },
+   {
+    "apId": "169542",
+    "first": "Kelly",
+    "last": "Grappe",
+    "name": "Kelly Grappe",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 347467,
+    "pct": 39.57,
+    "winner": false
+   },
+   {
+    "apId": "168552",
+    "first": "Michael",
+    "last": "Pakko",
+    "name": "Michael Pakko",
+    "party": "Lib",
+    "incumbent": false,
+    "votes": 40164,
+    "pct": 4.57,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103CT7029",
+  "st": "CT",
+  "office": "Attorney General",
+  "ourOfficeId": "b0413048-a7ba-44fb-953d-d7f2510ba031",
+  "ourTitle": "Attorney General",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98.02,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "106050",
+    "first": "William",
+    "last": "Tong",
+    "name": "William Tong",
+    "party": "Dem",
+    "incumbent": true,
+    "votes": 799222,
+    "pct": 63.06,
+    "winner": true
+   },
+   {
+    "apId": "167164",
+    "first": "John",
+    "last": "Bolton",
+    "name": "John Bolton",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 468226,
+    "pct": 36.94,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103CT7019",
+  "st": "CT",
+  "office": "Governor",
+  "ourOfficeId": "58562e19-0ea9-4cef-a0d2-9a7586ef0892",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98.31,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "51911",
+    "first": "Ned",
+    "last": "Lamont",
+    "name": "Ned Lamont",
+    "party": "Dem",
+    "incumbent": true,
+    "votes": 765107,
+    "pct": 59.12,
+    "winner": true
+   },
+   {
+    "apId": "109320",
+    "first": "Ryan",
+    "last": "Fazio",
+    "name": "Ryan Fazio",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 529002,
+    "pct": 40.88,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103DE8283",
+  "st": "DE",
+  "office": "Attorney General",
+  "ourOfficeId": "58120cc2-36cb-4874-b61b-7736968cbda1",
+  "ourTitle": "Attorney General",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "176060",
+    "first": "Kathy",
+    "last": "Jennings",
+    "name": "Kathy Jennings",
+    "party": "Dem",
+    "incumbent": true,
+    "votes": 240429,
+    "pct": 63.62,
+    "winner": true
+   },
+   {
+    "apId": "179371",
+    "first": "David",
+    "last": "Graham",
+    "name": "David Graham",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 137464,
+    "pct": 36.38,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103FL10049",
+  "st": "FL",
+  "office": "Attorney General",
+  "ourOfficeId": "9e399ee2-5270-4877-9941-f0cd30235ace",
+  "ourTitle": "Attorney General",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "175594",
+    "first": "James",
+    "last": "Uthmeier",
+    "name": "James Uthmeier",
+    "party": "GOP",
+    "incumbent": true,
+    "votes": 4177889,
+    "pct": 50.93,
+    "winner": true
+   },
+   {
+    "apId": "107326",
+    "first": "José",
+    "last": "Rodriguez",
+    "name": "José Rodriguez",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 4024814,
+    "pct": 49.07,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103FL10045",
+  "st": "FL",
+  "office": "Governor",
+  "ourOfficeId": "e2dd77a5-604e-4537-8fe7-5b74f0cbc1d6",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "62408",
+    "first": "Byron",
+    "last": "Donalds",
+    "name": "Byron Donalds",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 4132363,
+    "pct": 50.02,
+    "winner": true
+   },
+   {
+    "apId": "63159",
+    "first": "David",
+    "last": "Jolly",
+    "name": "David Jolly",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 4024681,
+    "pct": 48.71,
+    "winner": false
+   },
+   {
+    "apId": "178993",
+    "first": "Scott",
+    "last": "Jewett",
+    "name": "Scott Jewett",
+    "party": "Lib",
+    "incumbent": false,
+    "votes": 37889,
+    "pct": 0.46,
+    "winner": false
+   },
+   {
+    "apId": "178995",
+    "first": "Frank",
+    "last": "Russo",
+    "name": "Frank Russo",
+    "party": "NPA",
+    "incumbent": false,
+    "votes": 23201,
+    "pct": 0.28,
+    "winner": false
+   },
+   {
+    "apId": "178990",
+    "first": "Charles",
+    "last": "Burkett",
+    "name": "Charles Burkett",
+    "party": "NPA",
+    "incumbent": false,
+    "votes": 15239,
+    "pct": 0.18,
+    "winner": false
+   },
+   {
+    "apId": "178989",
+    "first": "Dean",
+    "last": "Abrams",
+    "name": "Dean Abrams",
+    "party": "NPA",
+    "incumbent": false,
+    "votes": 12535,
+    "pct": 0.15,
+    "winner": false
+   },
+   {
+    "apId": "178991",
+    "first": "Jeffrey",
+    "last": "Datto",
+    "name": "Jeffrey Datto",
+    "party": "NPA",
+    "incumbent": false,
+    "votes": 8312,
+    "pct": 0.1,
+    "winner": false
+   },
+   {
+    "apId": "178992",
+    "first": "Moliere",
+    "last": "Dimanche",
+    "name": "Moliere Dimanche",
+    "party": "NPA",
+    "incumbent": false,
+    "votes": 7591,
+    "pct": 0.09,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103GA11033",
+  "st": "GA",
+  "office": "Attorney General",
+  "ourOfficeId": "525e4d1f-2648-4101-8ed7-ae4357ca9082",
+  "ourTitle": "Attorney General",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "112352",
+    "first": "Tanya",
+    "last": "Miller",
+    "name": "Tanya Miller",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 2319856,
+    "pct": 55.55,
+    "winner": true
+   },
+   {
+    "apId": "109167",
+    "first": "Brian",
+    "last": "Strickland",
+    "name": "Brian Strickland",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 1856384,
+    "pct": 44.45,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103GA12029",
+  "st": "GA",
+  "office": "Governor",
+  "ourOfficeId": "2411d0c8-5959-4013-8a32-0cc5ffb9868a",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": 50,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "110638",
+    "first": "Keisha",
+    "last": "Bottoms",
+    "name": "Keisha Bottoms",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 2271403,
+    "pct": 54.33,
+    "winner": true
+   },
+   {
+    "apId": "171426",
+    "first": "Rick",
+    "last": "Jackson",
+    "name": "Rick Jackson",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 1909161,
+    "pct": 45.67,
+    "winner": false
+   },
+   {
+    "apId": "100008",
+    "first": null,
+    "last": "Total Write-ins",
+    "name": "Total Write-ins",
+    "party": "Oth",
+    "incumbent": false,
+    "votes": 0,
+    "pct": 0,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103GA11029",
+  "st": "GA",
+  "office": "Lieutenant Governor",
+  "ourOfficeId": "56f2ebbe-b7e1-4790-b50a-ee33707e2a15",
+  "ourTitle": "Lieutenant Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "111031",
+    "first": "Josh",
+    "last": "McLaurin",
+    "name": "Josh McLaurin",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 2330206,
+    "pct": 55.96,
+    "winner": true
+   },
+   {
+    "apId": "110781",
+    "first": "Greg",
+    "last": "Dolezal",
+    "name": "Greg Dolezal",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 1833523,
+    "pct": 44.04,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103GA11031",
+  "st": "GA",
+  "office": "Secretary of State",
+  "ourOfficeId": "069e295f-4266-407b-be0c-b31238d0e80b",
+  "ourTitle": "Secretary of State",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "171430",
+    "first": "Penny",
+    "last": "Reynolds",
+    "name": "Penny Reynolds",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 2321387,
+    "pct": 55.69,
+    "winner": true
+   },
+   {
+    "apId": "112465",
+    "first": "Tim",
+    "last": "Fleming",
+    "name": "Tim Fleming",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 1847318,
+    "pct": 44.31,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103HI12480",
+  "st": "HI",
+  "office": "Governor",
+  "ourOfficeId": "69eaf89c-9d6f-4314-be40-e589fc71f144",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "71471",
+    "first": "Josh",
+    "last": "Green",
+    "name": "Josh Green",
+    "party": "Dem",
+    "incumbent": true,
+    "votes": 278652,
+    "pct": 72.65,
+    "winner": true
+   },
+   {
+    "apId": "71276",
+    "first": "Gary",
+    "last": "Cordery",
+    "name": "Gary Cordery",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 104926,
+    "pct": 27.35,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103IA17076",
+  "st": "IA",
+  "office": "Governor",
+  "ourOfficeId": "26e6c494-f075-478c-8576-3c217e1b2202",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "114528",
+    "first": "Rob",
+    "last": "Sand",
+    "name": "Rob Sand",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 757489,
+    "pct": 55.49,
+    "winner": true
+   },
+   {
+    "apId": "173748",
+    "first": "Zach",
+    "last": "Lahn",
+    "name": "Zach Lahn",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 607575,
+    "pct": 44.51,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103IA16950",
+  "st": "IA",
+  "office": "Secretary of State",
+  "ourOfficeId": "0bec374b-a5c4-404f-b9a1-eac2b9aaed39",
+  "ourTitle": "Secretary of State",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98.68,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "114183",
+    "first": "Paul",
+    "last": "Pate",
+    "name": "Paul Pate",
+    "party": "GOP",
+    "incumbent": true,
+    "votes": 711966,
+    "pct": 53.21,
+    "winner": true
+   },
+   {
+    "apId": "173763",
+    "first": "Ryan",
+    "last": "Peterman",
+    "name": "Ryan Peterman",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 625985,
+    "pct": 46.79,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103ID13681",
+  "st": "ID",
+  "office": "Attorney General",
+  "ourOfficeId": "3c42cbb6-afba-493e-a48e-5330fe73451b",
+  "ourTitle": "Attorney General",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98.93,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "60527",
+    "first": "Raul",
+    "last": "Labrador",
+    "name": "Raul Labrador",
+    "party": "GOP",
+    "incumbent": true,
+    "votes": 421897,
+    "pct": 59.84,
+    "winner": true
+   },
+   {
+    "apId": "172102",
+    "first": "Lori",
+    "last": "Hickman",
+    "name": "Lori Hickman",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 283162,
+    "pct": 40.16,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103ID13676",
+  "st": "ID",
+  "office": "Governor",
+  "ourOfficeId": "66dbc16e-56ea-47f9-86ac-b82078ada305",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98.94,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "53635",
+    "first": "Brad",
+    "last": "Little",
+    "name": "Brad Little",
+    "party": "GOP",
+    "incumbent": true,
+    "votes": 407200,
+    "pct": 57.07,
+    "winner": true
+   },
+   {
+    "apId": "112763",
+    "first": "Terri",
+    "last": "Pickens",
+    "name": "Terri Pickens",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 230746,
+    "pct": 32.34,
+    "winner": false
+   },
+   {
+    "apId": "178019",
+    "first": "John",
+    "last": "Stegner",
+    "name": "John Stegner",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 54200,
+    "pct": 7.6,
+    "winner": false
+   },
+   {
+    "apId": "70344",
+    "first": "Paul",
+    "last": "Sand",
+    "name": "Paul Sand",
+    "party": "Lib",
+    "incumbent": false,
+    "votes": 11541,
+    "pct": 1.62,
+    "winner": false
+   },
+   {
+    "apId": "56769",
+    "first": null,
+    "last": "Pro-Life",
+    "name": "Pro-Life",
+    "party": "CST",
+    "incumbent": false,
+    "votes": 9486,
+    "pct": 1.33,
+    "winner": false
+   },
+   {
+    "apId": "178018",
+    "first": "Jacob",
+    "last": "Burnett (write-in)",
+    "name": "Jacob Burnett (write-in)",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 340,
+    "pct": 0.05,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103ID13677",
+  "st": "ID",
+  "office": "Lieutenant Governor",
+  "ourOfficeId": "24c1a220-3ad3-47fc-adf3-1f6375453705",
+  "ourTitle": "Lieutenant Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98.92,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "53608",
+    "first": "Scott",
+    "last": "Bedke",
+    "name": "Scott Bedke",
+    "party": "GOP",
+    "incumbent": true,
+    "votes": 445891,
+    "pct": 63.52,
+    "winner": true
+   },
+   {
+    "apId": "172099",
+    "first": "Eric",
+    "last": "Myricks",
+    "name": "Eric Myricks",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 256065,
+    "pct": 36.48,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103ID13678",
+  "st": "ID",
+  "office": "Secretary of State",
+  "ourOfficeId": "5ed58238-3f48-4771-b1bd-b4b5f312ea40",
+  "ourTitle": "Secretary of State",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98.91,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "112084",
+    "first": "Phil",
+    "last": "McGrane",
+    "name": "Phil McGrane",
+    "party": "GOP",
+    "incumbent": true,
+    "votes": 472291,
+    "pct": 67.39,
+    "winner": true
+   },
+   {
+    "apId": "112765",
+    "first": "Shawn",
+    "last": "Keenan",
+    "name": "Shawn Keenan",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 228573,
+    "pct": 32.61,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103IL15258",
+  "st": "IL",
+  "office": "Attorney General",
+  "ourOfficeId": "33e4c5d9-da0d-4d4d-a429-a52620887bc6",
+  "ourTitle": "Attorney General",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 91.42,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "17760",
+    "first": "Kwame",
+    "last": "Raoul",
+    "name": "Kwame Raoul",
+    "party": "Dem",
+    "incumbent": true,
+    "votes": 2398115,
+    "pct": 61.27,
+    "winner": true
+   },
+   {
+    "apId": "116492",
+    "first": "Robert",
+    "last": "Fioretti",
+    "name": "Robert Fioretti",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 1515913,
+    "pct": 38.73,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103IL15989",
+  "st": "IL",
+  "office": "Governor",
+  "ourOfficeId": "b8fa5cdf-e0e4-47b3-abe7-b46e03e55c43",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 91.56,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "17710",
+    "first": "JB",
+    "last": "Pritzker",
+    "name": "JB Pritzker",
+    "party": "Dem",
+    "incumbent": true,
+    "votes": 2351390,
+    "pct": 59.73,
+    "winner": true
+   },
+   {
+    "apId": "71049",
+    "first": "Darren",
+    "last": "Bailey",
+    "name": "Darren Bailey",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 1454075,
+    "pct": 36.93,
+    "winner": false
+   },
+   {
+    "apId": "178028",
+    "first": "Collin",
+    "last": "Corbett",
+    "name": "Collin Corbett",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 131522,
+    "pct": 3.34,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103IL15257",
+  "st": "IL",
+  "office": "Secretary of State",
+  "ourOfficeId": "be10035e-21ec-4288-8130-14a8b5cba72b",
+  "ourTitle": "Secretary of State",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 91.35,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "60136",
+    "first": "Alexi",
+    "last": "Giannoulias",
+    "name": "Alexi Giannoulias",
+    "party": "Dem",
+    "incumbent": true,
+    "votes": 2521051,
+    "pct": 64.45,
+    "winner": true
+   },
+   {
+    "apId": "63211",
+    "first": "Diane",
+    "last": "Harris",
+    "name": "Diane Harris",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 1390790,
+    "pct": 35.55,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103MA22960",
+  "st": "MA",
+  "office": "Attorney General",
+  "ourOfficeId": "acff6f85-1bc2-4f50-94e6-58294f5f096a",
+  "ourTitle": "Attorney General",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 97.41,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "124893",
+    "first": "Andrea",
+    "last": "Campbell",
+    "name": "Andrea Campbell",
+    "party": "Dem",
+    "incumbent": true,
+    "votes": 1674279,
+    "pct": 65.62,
+    "winner": true
+   },
+   {
+    "apId": "124347",
+    "first": "Michael",
+    "last": "Walsh",
+    "name": "Michael Walsh",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 877110,
+    "pct": 34.38,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103MA22957",
+  "st": "MA",
+  "office": "Governor",
+  "ourOfficeId": "21f9e818-904d-4a19-879b-438f447bcd68",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 97.73,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "71279",
+    "first": "Maura",
+    "last": "Healey",
+    "name": "Maura Healey",
+    "party": "Dem",
+    "incumbent": true,
+    "votes": 1605885,
+    "pct": 62.16,
+    "winner": true
+   },
+   {
+    "apId": "176606",
+    "first": "Michael",
+    "last": "Minogue",
+    "name": "Michael Minogue",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 891059,
+    "pct": 34.49,
+    "winner": false
+   },
+   {
+    "apId": "179350",
+    "first": "Andrea",
+    "last": "James",
+    "name": "Andrea James",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 86647,
+    "pct": 3.35,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103MD22092",
+  "st": "MD",
+  "office": "Attorney General",
+  "ourOfficeId": "6f9fd58a-442c-4c58-bd6d-f36a1bcbf114",
+  "ourTitle": "Attorney General",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 78.18,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "54705",
+    "first": "Anthony",
+    "last": "Brown",
+    "name": "Anthony Brown",
+    "party": "Dem",
+    "incumbent": true,
+    "votes": 1242398,
+    "pct": 67.07,
+    "winner": true
+   },
+   {
+    "apId": "173033",
+    "first": "James",
+    "last": "Rutledge",
+    "name": "James Rutledge",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 610103,
+    "pct": 32.93,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103MD22091",
+  "st": "MD",
+  "office": "Governor",
+  "ourOfficeId": "1a7ac65d-983a-4c62-85bc-d506ea2755a3",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 78.25,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "71129",
+    "first": "Wes",
+    "last": "Moore",
+    "name": "Wes Moore",
+    "party": "Dem",
+    "incumbent": true,
+    "votes": 1168825,
+    "pct": 62.78,
+    "winner": true
+   },
+   {
+    "apId": "64816",
+    "first": "Dan",
+    "last": "Cox",
+    "name": "Dan Cox",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 617959,
+    "pct": 33.19,
+    "winner": false
+   },
+   {
+    "apId": "178524",
+    "first": "Andy",
+    "last": "Ellis",
+    "name": "Andy Ellis",
+    "party": "Grn",
+    "incumbent": false,
+    "votes": 38438,
+    "pct": 2.06,
+    "winner": false
+   },
+   {
+    "apId": "178525",
+    "first": "Cathy",
+    "last": "White",
+    "name": "Cathy White",
+    "party": "WCP",
+    "incumbent": false,
+    "votes": 36702,
+    "pct": 1.97,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103ME20646",
+  "st": "ME",
+  "office": "Governor",
+  "ourOfficeId": "95700fc5-2800-4766-9005-38dc7237c455",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 92.09,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "174083",
+    "first": "Hannah",
+    "last": "Pingree",
+    "name": "Hannah Pingree",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 382760,
+    "pct": 54.62,
+    "winner": true
+   },
+   {
+    "apId": "174086",
+    "first": "Robert",
+    "last": "Charles",
+    "name": "Robert Charles",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 261104,
+    "pct": 37.26,
+    "winner": false
+   },
+   {
+    "apId": "177853",
+    "first": "Rick",
+    "last": "Bennett",
+    "name": "Rick Bennett",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 56600,
+    "pct": 8.08,
+    "winner": false
+   },
+   {
+    "apId": "179066",
+    "first": "Randy",
+    "last": "Wilcox (write-in)",
+    "name": "Randy Wilcox (write-in)",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 186,
+    "pct": 0.03,
+    "winner": false
+   },
+   {
+    "apId": "120654",
+    "first": "John",
+    "last": "Glowa (write-in)",
+    "name": "John Glowa (write-in)",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 56,
+    "pct": 0.01,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103MI24116",
+  "st": "MI",
+  "office": "Attorney General",
+  "ourOfficeId": "a5281741-c2b2-4aac-8293-66b96cc6dce0",
+  "ourTitle": "Attorney General",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 97.37,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "178885",
+    "first": "Eli",
+    "last": "Savit",
+    "name": "Eli Savit",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 2458118,
+    "pct": 52.48,
+    "winner": true
+   },
+   {
+    "apId": "178886",
+    "first": "Doug",
+    "last": "Lloyd",
+    "name": "Doug Lloyd",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 2095977,
+    "pct": 44.75,
+    "winner": false
+   },
+   {
+    "apId": "178923",
+    "first": "Jason",
+    "last": "Dye",
+    "name": "Jason Dye",
+    "party": "Lib",
+    "incumbent": false,
+    "votes": 58484,
+    "pct": 1.25,
+    "winner": false
+   },
+   {
+    "apId": "177001",
+    "first": "John",
+    "last": "Ludtke",
+    "name": "John Ludtke",
+    "party": "UST",
+    "incumbent": false,
+    "votes": 31961,
+    "pct": 0.68,
+    "winner": false
+   },
+   {
+    "apId": "178924",
+    "first": "Jeff",
+    "last": "Polonowski",
+    "name": "Jeff Polonowski",
+    "party": "Grn",
+    "incumbent": false,
+    "votes": 25040,
+    "pct": 0.53,
+    "winner": false
+   },
+   {
+    "apId": "771",
+    "first": "Doug",
+    "last": "Dern",
+    "name": "Doug Dern",
+    "party": "NLP",
+    "incumbent": false,
+    "votes": 14046,
+    "pct": 0.3,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103MI24074",
+  "st": "MI",
+  "office": "Governor",
+  "ourOfficeId": "68da5056-e5aa-4653-9a61-feb3e3f3b257",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 97.56,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "128670",
+    "first": "Jocelyn",
+    "last": "Benson",
+    "name": "Jocelyn Benson",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 2600636,
+    "pct": 54.52,
+    "winner": true
+   },
+   {
+    "apId": "166570",
+    "first": "John",
+    "last": "James",
+    "name": "John James",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 2087265,
+    "pct": 43.76,
+    "winner": false
+   },
+   {
+    "apId": "166567",
+    "first": "Anthony",
+    "last": "Hudson",
+    "name": "Anthony Hudson",
+    "party": "Lib",
+    "incumbent": false,
+    "votes": 44317,
+    "pct": 0.93,
+    "winner": false
+   },
+   {
+    "apId": "70820",
+    "first": "Donna",
+    "last": "Brandenburg",
+    "name": "Donna Brandenburg",
+    "party": "UST",
+    "incumbent": false,
+    "votes": 20052,
+    "pct": 0.42,
+    "winner": false
+   },
+   {
+    "apId": "1321",
+    "first": "Douglas",
+    "last": "Campbell",
+    "name": "Douglas Campbell",
+    "party": "Grn",
+    "incumbent": false,
+    "votes": 17536,
+    "pct": 0.37,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103MI24115",
+  "st": "MI",
+  "office": "Secretary of State",
+  "ourOfficeId": "971841d3-b324-4870-b9b5-e2db53391d1d",
+  "ourTitle": "Secretary of State",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 97.46,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "178884",
+    "first": "Garlin",
+    "last": "Gilchrist",
+    "name": "Garlin Gilchrist",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 2537321,
+    "pct": 53.74,
+    "winner": true
+   },
+   {
+    "apId": "65347",
+    "first": "Anthony",
+    "last": "Forlini",
+    "name": "Anthony Forlini",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 2057408,
+    "pct": 43.58,
+    "winner": false
+   },
+   {
+    "apId": "178921",
+    "first": "Christine",
+    "last": "Sloan",
+    "name": "Christine Sloan",
+    "party": "Lib",
+    "incumbent": false,
+    "votes": 77115,
+    "pct": 1.63,
+    "winner": false
+   },
+   {
+    "apId": "178922",
+    "first": "Scott",
+    "last": "Aughney",
+    "name": "Scott Aughney",
+    "party": "UST",
+    "incumbent": false,
+    "votes": 28156,
+    "pct": 0.6,
+    "winner": false
+   },
+   {
+    "apId": "127616",
+    "first": "Eric",
+    "last": "Borregard",
+    "name": "Eric Borregard",
+    "party": "Grn",
+    "incumbent": false,
+    "votes": 21430,
+    "pct": 0.45,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103MN24793",
+  "st": "MN",
+  "office": "Attorney General",
+  "ourOfficeId": "a2cb5ff8-4a75-4563-b346-cdde981b710d",
+  "ourTitle": "Attorney General",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98.84,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "55265",
+    "first": "Keith",
+    "last": "Ellison",
+    "name": "Keith Ellison",
+    "party": "Dem",
+    "incumbent": true,
+    "votes": 1520975,
+    "pct": 54.29,
+    "winner": true
+   },
+   {
+    "apId": "177197",
+    "first": "Ronald",
+    "last": "Schutz",
+    "name": "Ronald Schutz",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 1276224,
+    "pct": 45.56,
+    "winner": false
+   },
+   {
+    "apId": "100008",
+    "first": null,
+    "last": "Total Write-ins",
+    "name": "Total Write-ins",
+    "party": "Oth",
+    "incumbent": false,
+    "votes": 4226,
+    "pct": 0.15,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103MN24704",
+  "st": "MN",
+  "office": "Governor",
+  "ourOfficeId": "73fc9ecc-3b0b-445e-898a-1d51b9846d32",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98.84,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "159027",
+    "first": "Amy",
+    "last": "Klobuchar",
+    "name": "Amy Klobuchar",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 1569698,
+    "pct": 55.46,
+    "winner": true
+   },
+   {
+    "apId": "126628",
+    "first": "Lisa",
+    "last": "Demuth",
+    "name": "Lisa Demuth",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 1206587,
+    "pct": 42.63,
+    "winner": false
+   },
+   {
+    "apId": "179590",
+    "first": "Steven",
+    "last": "Young",
+    "name": "Steven Young",
+    "party": "Grn",
+    "incumbent": false,
+    "votes": 51404,
+    "pct": 1.82,
+    "winner": false
+   },
+   {
+    "apId": "100008",
+    "first": null,
+    "last": "Total Write-ins",
+    "name": "Total Write-ins",
+    "party": "Oth",
+    "incumbent": false,
+    "votes": 2474,
+    "pct": 0.09,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103MN24710",
+  "st": "MN",
+  "office": "Secretary of State",
+  "ourOfficeId": "186e84b2-0798-43cf-88a3-0fde73138dff",
+  "ourTitle": "Secretary of State",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98.84,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "122463",
+    "first": "Steve",
+    "last": "Simon",
+    "name": "Steve Simon",
+    "party": "Dem",
+    "incumbent": true,
+    "votes": 1529177,
+    "pct": 54.71,
+    "winner": true
+   },
+   {
+    "apId": "124249",
+    "first": "Tad",
+    "last": "Jude",
+    "name": "Tad Jude",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 1168659,
+    "pct": 41.81,
+    "winner": false
+   },
+   {
+    "apId": "179592",
+    "first": "George",
+    "last": "Tangen",
+    "name": "George Tangen",
+    "party": "Lib",
+    "incumbent": false,
+    "votes": 54695,
+    "pct": 1.96,
+    "winner": false
+   },
+   {
+    "apId": "179591",
+    "first": "Seth",
+    "last": "Kuhl-Stennes",
+    "name": "Seth Kuhl-Stennes",
+    "party": "Grn",
+    "incumbent": false,
+    "votes": 41389,
+    "pct": 1.48,
+    "winner": false
+   },
+   {
+    "apId": "100008",
+    "first": null,
+    "last": "Total Write-ins",
+    "name": "Total Write-ins",
+    "party": "Oth",
+    "incumbent": false,
+    "votes": 1305,
+    "pct": 0.05,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103ND35345",
+  "st": "ND",
+  "office": "Attorney General",
+  "ourOfficeId": "a9c867cf-371e-4ab6-af26-0a4c508d3a85",
+  "ourTitle": "Attorney General",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98.19,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "135218",
+    "first": "Drew",
+    "last": "Wrigley",
+    "name": "Drew Wrigley",
+    "party": "GOP",
+    "incumbent": true,
+    "votes": 148423,
+    "pct": 63.93,
+    "winner": true
+   },
+   {
+    "apId": "135217",
+    "first": "Tim",
+    "last": "Lamb",
+    "name": "Tim Lamb",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 83732,
+    "pct": 36.07,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103ND35344",
+  "st": "ND",
+  "office": "Secretary of State",
+  "ourOfficeId": "5fd38de4-2c16-4e6e-881d-db543699a01a",
+  "ourTitle": "Secretary of State",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98.18,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "134977",
+    "first": "Michael",
+    "last": "Howe",
+    "name": "Michael Howe",
+    "party": "GOP",
+    "incumbent": true,
+    "votes": 144033,
+    "pct": 62.08,
+    "winner": true
+   },
+   {
+    "apId": "135245",
+    "first": "Ryan",
+    "last": "Braunberger",
+    "name": "Ryan Braunberger",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 87963,
+    "pct": 37.92,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103NE28011",
+  "st": "NE",
+  "office": "Attorney General",
+  "ourOfficeId": "d2e27132-0182-41d6-8fdc-7ff1977fe1c9",
+  "ourTitle": "Attorney General",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 93.43,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "128715",
+    "first": "Mike",
+    "last": "Hilgers",
+    "name": "Mike Hilgers",
+    "party": "GOP",
+    "incumbent": true,
+    "votes": 406338,
+    "pct": 56.35,
+    "winner": true
+   },
+   {
+    "apId": "171170",
+    "first": "Jocelyn",
+    "last": "Brasher",
+    "name": "Jocelyn Brasher",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 314747,
+    "pct": 43.65,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103NE28006",
+  "st": "NE",
+  "office": "Governor",
+  "ourOfficeId": "c45af066-9b43-4aee-bcbd-65e5e2369548",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 94.21,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "69957",
+    "first": "Jim",
+    "last": "Pillen",
+    "name": "Jim Pillen",
+    "party": "GOP",
+    "incumbent": true,
+    "votes": 376248,
+    "pct": 50.76,
+    "winner": true
+   },
+   {
+    "apId": "129088",
+    "first": "Lynne",
+    "last": "Walz",
+    "name": "Lynne Walz",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 312635,
+    "pct": 42.18,
+    "winner": false
+   },
+   {
+    "apId": "61797",
+    "first": "Brett",
+    "last": "Lindstrom",
+    "name": "Brett Lindstrom",
+    "party": "AFi",
+    "incumbent": false,
+    "votes": 32593,
+    "pct": 4.4,
+    "winner": false
+   },
+   {
+    "apId": "175131",
+    "first": "Rick",
+    "last": "Beard",
+    "name": "Rick Beard",
+    "party": "LMN",
+    "incumbent": false,
+    "votes": 19682,
+    "pct": 2.66,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103NE28009",
+  "st": "NE",
+  "office": "Secretary of State",
+  "ourOfficeId": "4496d005-bb8d-4b8b-8350-ba187f9be331",
+  "ourTitle": "Secretary of State",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 93.75,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "171167",
+    "first": "Scott",
+    "last": "Petersen",
+    "name": "Scott Petersen",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 393508,
+    "pct": 54.03,
+    "winner": true
+   },
+   {
+    "apId": "129548",
+    "first": "Sarah",
+    "last": "Slattery",
+    "name": "Sarah Slattery",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 293531,
+    "pct": 40.3,
+    "winner": false
+   },
+   {
+    "apId": "179200",
+    "first": "Paul",
+    "last": "Rumbaugh",
+    "name": "Paul Rumbaugh",
+    "party": "NWk",
+    "incumbent": false,
+    "votes": 22487,
+    "pct": 3.09,
+    "winner": false
+   },
+   {
+    "apId": "179201",
+    "first": "Bob",
+    "last": "Krist",
+    "name": "Bob Krist",
+    "party": "AFi",
+    "incumbent": false,
+    "votes": 18750,
+    "pct": 2.57,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103NH30005",
+  "st": "NH",
+  "office": "Governor",
+  "ourOfficeId": "ae8e7bfa-651a-4b8a-9d14-235b51c13e3f",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 95.87,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "61040",
+    "first": "Kelly",
+    "last": "Ayotte",
+    "name": "Kelly Ayotte",
+    "party": "GOP",
+    "incumbent": true,
+    "votes": 315127,
+    "pct": 51.16,
+    "winner": true
+   },
+   {
+    "apId": "139961",
+    "first": "Cinde",
+    "last": "Warmington",
+    "name": "Cinde Warmington",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 291533,
+    "pct": 47.33,
+    "winner": false
+   },
+   {
+    "apId": "168217",
+    "first": "Stephen",
+    "last": "Villee",
+    "name": "Stephen Villee",
+    "party": "Lib",
+    "incumbent": false,
+    "votes": 9291,
+    "pct": 1.51,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103NM32350",
+  "st": "NM",
+  "office": "Attorney General",
+  "ourOfficeId": "9e0f9033-a22b-424a-bfaf-df903fbebf15",
+  "ourTitle": "Attorney General",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98.24,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "134003",
+    "first": "Raul",
+    "last": "Torrez",
+    "name": "Raul Torrez",
+    "party": "Dem",
+    "incumbent": true,
+    "votes": 451711,
+    "pct": 62.95,
+    "winner": true
+   },
+   {
+    "apId": "173272",
+    "first": "Samuel",
+    "last": "Kane",
+    "name": "Samuel Kane",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 265908,
+    "pct": 37.05,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103NM32238",
+  "st": "NM",
+  "office": "Governor",
+  "ourOfficeId": "bae1e006-1759-49cd-a802-05cc098ed99c",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98.24,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "64378",
+    "first": "Deb",
+    "last": "Haaland",
+    "name": "Deb Haaland",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 414077,
+    "pct": 57.28,
+    "winner": true
+   },
+   {
+    "apId": "172994",
+    "first": "Greggory",
+    "last": "Hull",
+    "name": "Greggory Hull",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 308817,
+    "pct": 42.72,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103NM32342",
+  "st": "NM",
+  "office": "Secretary of State",
+  "ourOfficeId": "3bae9063-56a0-4d1c-94f6-6e90aa2f403b",
+  "ourTitle": "Secretary of State",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98.24,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "173270",
+    "first": "Amanda",
+    "last": "López Askin",
+    "name": "Amanda López Askin",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 434451,
+    "pct": 60.86,
+    "winner": true
+   },
+   {
+    "apId": "173271",
+    "first": "Ramona",
+    "last": "Goolsby",
+    "name": "Ramona Goolsby",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 279450,
+    "pct": 39.14,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103NY36820",
+  "st": "NY",
+  "office": "Attorney General",
+  "ourOfficeId": "ac3d6525-46d9-43a7-8005-112330f11c9f",
+  "ourTitle": "Attorney General",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 92.16,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "33000",
+    "first": "Letitia",
+    "last": "James",
+    "name": "Letitia James",
+    "party": "Dem",
+    "incumbent": true,
+    "votes": 3505459,
+    "pct": 60.04,
+    "winner": true
+   },
+   {
+    "apId": "174055",
+    "first": "Saritha",
+    "last": "Komatireddy",
+    "name": "Saritha Komatireddy",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 2328833,
+    "pct": 39.89,
+    "winner": false
+   },
+   {
+    "apId": "100008",
+    "first": null,
+    "last": "Total Write-ins",
+    "name": "Total Write-ins",
+    "party": "Oth",
+    "incumbent": false,
+    "votes": 4336,
+    "pct": 0.07,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103NY39760",
+  "st": "NY",
+  "office": "Governor",
+  "ourOfficeId": "2aafa674-b590-4bfb-b573-d620027467ab",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 91.82,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "61285",
+    "first": "Kathy",
+    "last": "Hochul",
+    "name": "Kathy Hochul",
+    "party": "Dem",
+    "incumbent": true,
+    "votes": 3523277,
+    "pct": 59.6,
+    "winner": true
+   },
+   {
+    "apId": "61145",
+    "first": "Bruce",
+    "last": "Blakeman",
+    "name": "Bruce Blakeman",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 2375863,
+    "pct": 40.19,
+    "winner": false
+   },
+   {
+    "apId": "100008",
+    "first": null,
+    "last": "Total Write-ins",
+    "name": "Total Write-ins",
+    "party": "Oth",
+    "incumbent": false,
+    "votes": 12452,
+    "pct": 0.21,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103OH36005",
+  "st": "OH",
+  "office": "Governor",
+  "ourOfficeId": "9c2a4c5e-1262-4138-9446-a0c4736e3780",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 97.99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "170750",
+    "first": "Amy",
+    "last": "Acton",
+    "name": "Amy Acton",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 2404178,
+    "pct": 52.31,
+    "winner": true
+   },
+   {
+    "apId": "71843",
+    "first": "Vivek",
+    "last": "Ramaswamy",
+    "name": "Vivek Ramaswamy",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 2039730,
+    "pct": 44.38,
+    "winner": false
+   },
+   {
+    "apId": "60901",
+    "first": "Don",
+    "last": "Kissick",
+    "name": "Don Kissick",
+    "party": "Lib",
+    "incumbent": false,
+    "votes": 151874,
+    "pct": 3.3,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103OH36011",
+  "st": "OH",
+  "office": "Secretary of State",
+  "ourOfficeId": "fe1848f7-956f-4a98-9f48-b19c913dc84a",
+  "ourTitle": "Secretary of State",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "142483",
+    "first": "Allison",
+    "last": "Russo",
+    "name": "Allison Russo",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 2287160,
+    "pct": 50.25,
+    "winner": true
+   },
+   {
+    "apId": "141808",
+    "first": "Robert",
+    "last": "Sprague",
+    "name": "Robert Sprague",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 2129981,
+    "pct": 46.8,
+    "winner": false
+   },
+   {
+    "apId": "168202",
+    "first": "Tom",
+    "last": "Pruss",
+    "name": "Tom Pruss",
+    "party": "Lib",
+    "incumbent": false,
+    "votes": 134179,
+    "pct": 2.95,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103OK37895",
+  "st": "OK",
+  "office": "Attorney General",
+  "ourOfficeId": "49173ad9-112e-47ef-8c96-8574fef6d151",
+  "ourTitle": "Attorney General",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "137775",
+    "first": "Jon",
+    "last": "Echols",
+    "name": "Jon Echols",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 617312,
+    "pct": 55.34,
+    "winner": true
+   },
+   {
+    "apId": "173600",
+    "first": "Nick",
+    "last": "Coffey",
+    "name": "Nick Coffey",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 498248,
+    "pct": 44.66,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103OK37857",
+  "st": "OK",
+  "office": "Governor",
+  "ourOfficeId": "78dacf12-acf1-41ba-9ccf-637b88d97bcb",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "137606",
+    "first": "Mike",
+    "last": "Mazzei",
+    "name": "Mike Mazzei",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 581706,
+    "pct": 51.93,
+    "winner": true
+   },
+   {
+    "apId": "138897",
+    "first": "Cyndi",
+    "last": "Munson",
+    "name": "Cyndi Munson",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 514342,
+    "pct": 45.92,
+    "winner": false
+   },
+   {
+    "apId": "179040",
+    "first": "Robert",
+    "last": "Brooks",
+    "name": "Robert Brooks",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 11649,
+    "pct": 1.04,
+    "winner": false
+   },
+   {
+    "apId": "179039",
+    "first": "Jerry",
+    "last": "Griffin",
+    "name": "Jerry Griffin",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 7433,
+    "pct": 0.66,
+    "winner": false
+   },
+   {
+    "apId": "179041",
+    "first": "Orlando",
+    "last": "Bush",
+    "name": "Orlando Bush",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 5009,
+    "pct": 0.45,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103OK37858",
+  "st": "OK",
+  "office": "Lieutenant Governor",
+  "ourOfficeId": "d188cd52-a64c-4378-bc6c-abb89ef38806",
+  "ourTitle": "Lieutenant Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "63815",
+    "first": "T.",
+    "last": "Shannon",
+    "name": "T. Shannon",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 646250,
+    "pct": 57.79,
+    "winner": true
+   },
+   {
+    "apId": "173592",
+    "first": "Kelly",
+    "last": "Forbes",
+    "name": "Kelly Forbes",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 471956,
+    "pct": 42.21,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103OR38019",
+  "st": "OR",
+  "office": "Governor",
+  "ourOfficeId": "780f76cd-2ec0-42fc-bb67-74a8911ca1c8",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 79.28,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "70205",
+    "first": "Tina",
+    "last": "Kotek",
+    "name": "Tina Kotek",
+    "party": "Dem",
+    "incumbent": true,
+    "votes": 843263,
+    "pct": 51.91,
+    "winner": true
+   },
+   {
+    "apId": "70218",
+    "first": "Christine",
+    "last": "Drazan",
+    "name": "Christine Drazan",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 735625,
+    "pct": 45.28,
+    "winner": false
+   },
+   {
+    "apId": "167924",
+    "first": "Brett",
+    "last": "Smith",
+    "name": "Brett Smith",
+    "party": "PAG",
+    "incumbent": false,
+    "votes": 43630,
+    "pct": 2.69,
+    "winner": false
+   },
+   {
+    "apId": "100008",
+    "first": null,
+    "last": "Total Write-ins",
+    "name": "Total Write-ins",
+    "party": "Oth",
+    "incumbent": false,
+    "votes": 2009,
+    "pct": 0.12,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103PA39292",
+  "st": "PA",
+  "office": "Governor",
+  "ourOfficeId": "99415af3-4691-49e5-a00e-33adcbe636d0",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98.67,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "70066",
+    "first": "Josh",
+    "last": "Shapiro",
+    "name": "Josh Shapiro",
+    "party": "Dem",
+    "incumbent": true,
+    "votes": 3006242,
+    "pct": 60.39,
+    "winner": true
+   },
+   {
+    "apId": "146618",
+    "first": "Stacy",
+    "last": "Garrity",
+    "name": "Stacy Garrity",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 1907223,
+    "pct": 38.31,
+    "winner": false
+   },
+   {
+    "apId": "1112",
+    "first": "Ken",
+    "last": "Krawchuk",
+    "name": "Ken Krawchuk",
+    "party": "Lib",
+    "incumbent": false,
+    "votes": 64439,
+    "pct": 1.29,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103RI40011",
+  "st": "RI",
+  "office": "Attorney General",
+  "ourOfficeId": "ec794af6-bbb1-4d54-82ae-67cdcdc457ae",
+  "ourTitle": "Attorney General",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 97.94,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "178125",
+    "first": "Kimberly",
+    "last": "Ahern",
+    "name": "Kimberly Ahern",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 233443,
+    "pct": 66.34,
+    "winner": true
+   },
+   {
+    "apId": "143376",
+    "first": "Alan",
+    "last": "Gordon",
+    "name": "Alan Gordon",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 117551,
+    "pct": 33.4,
+    "winner": false
+   },
+   {
+    "apId": "100008",
+    "first": null,
+    "last": "Total Write-ins",
+    "name": "Total Write-ins",
+    "party": "Oth",
+    "incumbent": false,
+    "votes": 909,
+    "pct": 0.26,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103RI40005",
+  "st": "RI",
+  "office": "Governor",
+  "ourOfficeId": "75bfe876-3cc1-4ba7-bbfd-f18d3b06ab76",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98.03,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "71486",
+    "first": "Helena",
+    "last": "Foulkes",
+    "name": "Helena Foulkes",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 206892,
+    "pct": 57.69,
+    "winner": true
+   },
+   {
+    "apId": "61223",
+    "first": "Kenneth",
+    "last": "Block",
+    "name": "Kenneth Block",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 99615,
+    "pct": 27.78,
+    "winner": false
+   },
+   {
+    "apId": "143645",
+    "first": "Aaron",
+    "last": "Guckian",
+    "name": "Aaron Guckian",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 47251,
+    "pct": 13.18,
+    "winner": false
+   },
+   {
+    "apId": "168232",
+    "first": "C.",
+    "last": "Reynolds",
+    "name": "C. Reynolds",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 2044,
+    "pct": 0.57,
+    "winner": false
+   },
+   {
+    "apId": "179317",
+    "first": "Jasjit",
+    "last": "Gotra",
+    "name": "Jasjit Gotra",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 1663,
+    "pct": 0.46,
+    "winner": false
+   },
+   {
+    "apId": "100008",
+    "first": null,
+    "last": "Total Write-ins",
+    "name": "Total Write-ins",
+    "party": "Oth",
+    "incumbent": false,
+    "votes": 1144,
+    "pct": 0.32,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103RI40008",
+  "st": "RI",
+  "office": "Lieutenant Governor",
+  "ourOfficeId": "8799c407-3d10-4e69-9322-be04c976f293",
+  "ourTitle": "Lieutenant Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 97.98,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "71854",
+    "first": "Sabina",
+    "last": "Matos",
+    "name": "Sabina Matos",
+    "party": "Dem",
+    "incumbent": true,
+    "votes": 210886,
+    "pct": 59.32,
+    "winner": true
+   },
+   {
+    "apId": "178112",
+    "first": "John",
+    "last": "Loughlin",
+    "name": "John Loughlin",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 143538,
+    "pct": 40.38,
+    "winner": false
+   },
+   {
+    "apId": "100008",
+    "first": null,
+    "last": "Total Write-ins",
+    "name": "Total Write-ins",
+    "party": "Oth",
+    "incumbent": false,
+    "votes": 1067,
+    "pct": 0.3,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103RI40010",
+  "st": "RI",
+  "office": "Secretary of State",
+  "ourOfficeId": "6d0f16b7-88f0-4bf6-b23f-2b3b65582da9",
+  "ourTitle": "Secretary of State",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 0,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "143080",
+    "first": "Gregg",
+    "last": "Amore",
+    "name": "Gregg Amore",
+    "party": "Dem",
+    "incumbent": true,
+    "votes": 274697,
+    "pct": 100,
+    "winner": true
+   }
+  ]
+ },
+ {
+  "apRace": "20261103SC41199",
+  "st": "SC",
+  "office": "Attorney General",
+  "ourOfficeId": "ba71d6b9-f182-43ad-8188-d8566266f2d4",
+  "ourTitle": "Attorney General",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "172871",
+    "first": "David",
+    "last": "Stumbo",
+    "name": "David Stumbo",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 1058525,
+    "pct": 52.32,
+    "winner": true
+   },
+   {
+    "apId": "145208",
+    "first": "Richard",
+    "last": "Hricik",
+    "name": "Richard Hricik",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 963645,
+    "pct": 47.63,
+    "winner": false
+   },
+   {
+    "apId": "100008",
+    "first": null,
+    "last": "Total Write-ins",
+    "name": "Total Write-ins",
+    "party": "Oth",
+    "incumbent": false,
+    "votes": 1132,
+    "pct": 0.06,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103SC41191",
+  "st": "SC",
+  "office": "Governor",
+  "ourOfficeId": "8b0de7c5-8fa0-46e9-814d-c720f0429975",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "143843",
+    "first": "Alan",
+    "last": "Wilson",
+    "name": "Alan Wilson",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 1050190,
+    "pct": 51.59,
+    "winner": true
+   },
+   {
+    "apId": "145291",
+    "first": "Jermaine",
+    "last": "Johnson",
+    "name": "Jermaine Johnson",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 959001,
+    "pct": 47.11,
+    "winner": false
+   },
+   {
+    "apId": "70923",
+    "first": "Michael",
+    "last": "Addison",
+    "name": "Michael Addison",
+    "party": "UCz",
+    "incumbent": false,
+    "votes": 16111,
+    "pct": 0.79,
+    "winner": false
+   },
+   {
+    "apId": "177976",
+    "first": "Walid",
+    "last": "Hakim",
+    "name": "Walid Hakim",
+    "party": "Grn",
+    "incumbent": false,
+    "votes": 9078,
+    "pct": 0.45,
+    "winner": false
+   },
+   {
+    "apId": "100008",
+    "first": null,
+    "last": "Total Write-ins",
+    "name": "Total Write-ins",
+    "party": "Oth",
+    "incumbent": false,
+    "votes": 1141,
+    "pct": 0.06,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103SC41195",
+  "st": "SC",
+  "office": "Secretary of State",
+  "ourOfficeId": "1ce91b70-b22f-4df1-8877-b665d59ce330",
+  "ourTitle": "Secretary of State",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "40271",
+    "first": "Mark",
+    "last": "Hammond",
+    "name": "Mark Hammond",
+    "party": "GOP",
+    "incumbent": true,
+    "votes": 1072797,
+    "pct": 52.86,
+    "winner": true
+   },
+   {
+    "apId": "172867",
+    "first": "Jason",
+    "last": "Belton",
+    "name": "Jason Belton",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 955922,
+    "pct": 47.1,
+    "winner": false
+   },
+   {
+    "apId": "100008",
+    "first": null,
+    "last": "Total Write-ins",
+    "name": "Total Write-ins",
+    "party": "Oth",
+    "incumbent": false,
+    "votes": 958,
+    "pct": 0.05,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103SD42010",
+  "st": "SD",
+  "office": "Attorney General",
+  "ourOfficeId": "410286b4-0bfa-4694-8270-1ac9046d77d3",
+  "ourTitle": "Attorney General",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 0,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "143717",
+    "first": "Lance",
+    "last": "Russell",
+    "name": "Lance Russell",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 0,
+    "pct": 0,
+    "winner": true
+   }
+  ]
+ },
+ {
+  "apRace": "20261103SD42222",
+  "st": "SD",
+  "office": "Governor",
+  "ourOfficeId": "519f011a-a114-4ee5-aac6-41a88a83c140",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "58102",
+    "first": "Larry",
+    "last": "Rhoden",
+    "name": "Larry Rhoden",
+    "party": "GOP",
+    "incumbent": true,
+    "votes": 193330,
+    "pct": 63.49,
+    "winner": true
+   },
+   {
+    "apId": "68738",
+    "first": "Dan",
+    "last": "Ahlers",
+    "name": "Dan Ahlers",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 111152,
+    "pct": 36.51,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103SD42009",
+  "st": "SD",
+  "office": "Secretary of State",
+  "ourOfficeId": "6de8c31e-52db-4b93-81cb-e676f5362dad",
+  "ourTitle": "Secretary of State",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "163072",
+    "first": "Heather",
+    "last": "Baxter",
+    "name": "Heather Baxter",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 172361,
+    "pct": 58.39,
+    "winner": true
+   },
+   {
+    "apId": "178209",
+    "first": "Terrence",
+    "last": "Davis",
+    "name": "Terrence Davis",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 106554,
+    "pct": 36.1,
+    "winner": false
+   },
+   {
+    "apId": "71643",
+    "first": "Tamara",
+    "last": "Lesnar",
+    "name": "Tamara Lesnar",
+    "party": "Lib",
+    "incumbent": false,
+    "votes": 16261,
+    "pct": 5.51,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103TN43440",
+  "st": "TN",
+  "office": "Governor",
+  "ourOfficeId": "b4667b62-fd9f-4ff5-9e5c-068f85ba6ce2",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98.91,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "682",
+    "first": "Marsha",
+    "last": "Blackburn",
+    "name": "Marsha Blackburn",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 955298,
+    "pct": 45.49,
+    "winner": true
+   },
+   {
+    "apId": "147782",
+    "first": "Jerri",
+    "last": "Green",
+    "name": "Jerri Green",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 902615,
+    "pct": 42.98,
+    "winner": false
+   },
+   {
+    "apId": "178865",
+    "first": "David",
+    "last": "Hatley",
+    "name": "David Hatley",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 195288,
+    "pct": 9.3,
+    "winner": false
+   },
+   {
+    "apId": "178868",
+    "first": "Lauren",
+    "last": "Pinkston",
+    "name": "Lauren Pinkston",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 26186,
+    "pct": 1.25,
+    "winner": false
+   },
+   {
+    "apId": "178863",
+    "first": "Dean",
+    "last": "Brewer",
+    "name": "Dean Brewer",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 4095,
+    "pct": 0.2,
+    "winner": false
+   },
+   {
+    "apId": "178864",
+    "first": "Ray",
+    "last": "Brown",
+    "name": "Ray Brown",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 2869,
+    "pct": 0.14,
+    "winner": false
+   },
+   {
+    "apId": "178866",
+    "first": "Wendell",
+    "last": "Jackson",
+    "name": "Wendell Jackson",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 2365,
+    "pct": 0.11,
+    "winner": false
+   },
+   {
+    "apId": "178867",
+    "first": "Eddie",
+    "last": "Murphy",
+    "name": "Eddie Murphy",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 2293,
+    "pct": 0.11,
+    "winner": false
+   },
+   {
+    "apId": "178873",
+    "first": "Robert",
+    "last": "Vick",
+    "name": "Robert Vick",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 2240,
+    "pct": 0.11,
+    "winner": false
+   },
+   {
+    "apId": "178862",
+    "first": "Misam",
+    "last": "Abidi",
+    "name": "Misam Abidi",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 2110,
+    "pct": 0.1,
+    "winner": false
+   },
+   {
+    "apId": "70888",
+    "first": "Charles",
+    "last": "Van Morgan",
+    "name": "Charles Van Morgan",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 1317,
+    "pct": 0.06,
+    "winner": false
+   },
+   {
+    "apId": "178872",
+    "first": "L.",
+    "last": "Taylor",
+    "name": "L. Taylor",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 1118,
+    "pct": 0.05,
+    "winner": false
+   },
+   {
+    "apId": "178870",
+    "first": "Dave",
+    "last": "Seeman",
+    "name": "Dave Seeman",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 870,
+    "pct": 0.04,
+    "winner": false
+   },
+   {
+    "apId": "178869",
+    "first": "Victor",
+    "last": "Scoggin",
+    "name": "Victor Scoggin",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 817,
+    "pct": 0.04,
+    "winner": false
+   },
+   {
+    "apId": "178871",
+    "first": "Karl",
+    "last": "Smithson",
+    "name": "Karl Smithson",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 494,
+    "pct": 0.02,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103VT46011",
+  "st": "VT",
+  "office": "Attorney General",
+  "ourOfficeId": "087c3021-ff29-44bf-9f61-b505e2b78297",
+  "ourTitle": "Attorney General",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 98.88,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "149600",
+    "first": "Charity",
+    "last": "Clark",
+    "name": "Charity Clark",
+    "party": "Dem",
+    "incumbent": true,
+    "votes": 200453,
+    "pct": 67.72,
+    "winner": true
+   },
+   {
+    "apId": "179188",
+    "first": "Edwin",
+    "last": "Kemon",
+    "name": "Edwin Kemon",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 94934,
+    "pct": 32.07,
+    "winner": false
+   },
+   {
+    "apId": "100008",
+    "first": null,
+    "last": "Total Write-ins",
+    "name": "Total Write-ins",
+    "party": "Oth",
+    "incumbent": false,
+    "votes": 633,
+    "pct": 0.21,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103VT46375",
+  "st": "VT",
+  "office": "Governor",
+  "ourOfficeId": "2abe04f0-ba94-42b9-aa71-1e2dcc4cfce8",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": 50,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "45443",
+    "first": "Phil",
+    "last": "Scott",
+    "name": "Phil Scott",
+    "party": "GOP",
+    "incumbent": true,
+    "votes": 163193,
+    "pct": 52.6,
+    "winner": true
+   },
+   {
+    "apId": "175074",
+    "first": "Amanda",
+    "last": "Janoo",
+    "name": "Amanda Janoo",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 141614,
+    "pct": 45.65,
+    "winner": false
+   },
+   {
+    "apId": "149767",
+    "first": "Brian",
+    "last": "Judd",
+    "name": "Brian Judd",
+    "party": "Ind",
+    "incumbent": false,
+    "votes": 2613,
+    "pct": 0.84,
+    "winner": false
+   },
+   {
+    "apId": "167782",
+    "first": "June",
+    "last": "Goodband",
+    "name": "June Goodband",
+    "party": "PJP",
+    "incumbent": false,
+    "votes": 1238,
+    "pct": 0.4,
+    "winner": false
+   },
+   {
+    "apId": "178912",
+    "first": "Dean",
+    "last": "Roy",
+    "name": "Dean Roy",
+    "party": "Oth",
+    "incumbent": false,
+    "votes": 1135,
+    "pct": 0.37,
+    "winner": false
+   },
+   {
+    "apId": "100008",
+    "first": null,
+    "last": "Total Write-ins",
+    "name": "Total Write-ins",
+    "party": "Oth",
+    "incumbent": false,
+    "votes": 455,
+    "pct": 0.15,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103VT46376",
+  "st": "VT",
+  "office": "Lieutenant Governor",
+  "ourOfficeId": "bd0adeb4-6746-418d-abb0-062c99f260c9",
+  "ourTitle": "Lieutenant Governor",
+  "rankedChoice": false,
+  "winThreshold": 50,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "71177",
+    "first": "Molly",
+    "last": "Gray",
+    "name": "Molly Gray",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 190967,
+    "pct": 62.72,
+    "winner": true
+   },
+   {
+    "apId": "147924",
+    "first": "John",
+    "last": "Rodgers",
+    "name": "John Rodgers",
+    "party": "GOP",
+    "incumbent": true,
+    "votes": 112814,
+    "pct": 37.05,
+    "winner": false
+   },
+   {
+    "apId": "100008",
+    "first": null,
+    "last": "Total Write-ins",
+    "name": "Total Write-ins",
+    "party": "Oth",
+    "incumbent": false,
+    "votes": 681,
+    "pct": 0.22,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103VT46377",
+  "st": "VT",
+  "office": "Secretary of State",
+  "ourOfficeId": "da8e0d09-2e16-4415-a362-76f22b72e3f1",
+  "ourTitle": "Secretary of State",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 99,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "148040",
+    "first": "Sarah",
+    "last": "Copeland Hanzas",
+    "name": "Sarah Copeland Hanzas",
+    "party": "Dem",
+    "incumbent": true,
+    "votes": 174694,
+    "pct": 59.18,
+    "winner": true
+   },
+   {
+    "apId": "62482",
+    "first": "H.",
+    "last": "Paige",
+    "name": "H. Paige",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 96159,
+    "pct": 32.58,
+    "winner": false
+   },
+   {
+    "apId": "179189",
+    "first": "Rachel",
+    "last": "Shaw",
+    "name": "Rachel Shaw",
+    "party": "Prg",
+    "incumbent": false,
+    "votes": 23996,
+    "pct": 8.13,
+    "winner": false
+   },
+   {
+    "apId": "100008",
+    "first": null,
+    "last": "Total Write-ins",
+    "name": "Total Write-ins",
+    "party": "Oth",
+    "incumbent": false,
+    "votes": 329,
+    "pct": 0.11,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103WY51403",
+  "st": "WY",
+  "office": "Governor",
+  "ourOfficeId": "409b15ad-4c4f-44ad-b656-5345b9ed6d8a",
+  "ourTitle": "Governor",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 96.97,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "153633",
+    "first": "Eric",
+    "last": "Barlow",
+    "name": "Eric Barlow",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 128480,
+    "pct": 68.57,
+    "winner": true
+   },
+   {
+    "apId": "179171",
+    "first": "Rebecca",
+    "last": "Bextel",
+    "name": "Rebecca Bextel",
+    "party": "CST",
+    "incumbent": false,
+    "votes": 31430,
+    "pct": 16.77,
+    "winner": false
+   },
+   {
+    "apId": "49137",
+    "first": "Kenneth",
+    "last": "Casner",
+    "name": "Kenneth Casner",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 27469,
+    "pct": 14.66,
+    "winner": false
+   }
+  ]
+ },
+ {
+  "apRace": "20261103WY51404",
+  "st": "WY",
+  "office": "Secretary of State",
+  "ourOfficeId": "130a2bc0-1c93-4424-96e5-949b509d3320",
+  "ourTitle": "Secretary of State",
+  "rankedChoice": false,
+  "winThreshold": null,
+  "seats": null,
+  "isCertified": false,
+  "eevp": 96.64,
+  "raceCallStatus": "Called",
+  "candidates": [
+   {
+    "apId": "69218",
+    "first": "Robert",
+    "last": "Short",
+    "name": "Robert Short",
+    "party": "GOP",
+    "incumbent": false,
+    "votes": 124924,
+    "pct": 67.78,
+    "winner": true
+   },
+   {
+    "apId": "175356",
+    "first": "Bryan",
+    "last": "McCarty",
+    "name": "Bryan McCarty",
+    "party": "Dem",
+    "incumbent": false,
+    "votes": 43872,
+    "pct": 23.8,
+    "winner": false
+   },
+   {
+    "apId": "155494",
+    "first": "Tamara",
+    "last": "Trujillo",
+    "name": "Tamara Trujillo",
+    "party": "CST",
+    "incumbent": false,
+    "votes": 15504,
+    "pct": 8.41,
+    "winner": false
+   }
+  ]
+ }
+]

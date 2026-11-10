@@ -1,0 +1,33 @@
+{
+  "id": "MS-SB-2636-2018",
+  "scope": "state:ms",
+  "title": "SB 2636 (2018 Regular Session): Voter registration; require applicants to submit acceptable documents to verify U.S. citizenship.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2018/pdf/history/SB/SB2636.xml",
+    "https://billstatus.ls.state.ms.us/documents/2018/pdf/SB/2600-2699/SB2636IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec. 1 (23-15-39)\n(quote) The application for registration shall include a portion allowing the applicant to indicate his or her United States citizenship status and to prove such citizenship status by providing an original or certified copy of his or her United States passport, United States birth certificate, consular report of birth abroad or certificate of naturalization.\n(section) Sec. 2 (23-15-47)\n(quote) and shall verify the application either by matching the applicant's Mississippi driver's license number through the Mississippi Department of Public Safety or by matching the applicant's social security number through the American Association of Motor Vehicle Administrators and by ensuring that the applicant submitted an acceptable document to verify his or her United States citi\n(e_other_rule) not stated.\n(other) Sec. 2 (23-15-47): mail-in applications also verified by driver license or social security number match",
+  "sponsors": [
+    {
+      "name": "Watson",
+      "role": "prime",
+      "version": "SB2636IN"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

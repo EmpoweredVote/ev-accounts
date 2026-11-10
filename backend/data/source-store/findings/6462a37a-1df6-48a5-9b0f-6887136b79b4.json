@@ -1,0 +1,111 @@
+{
+  "politician_id": "6462a37a-1df6-48a5-9b0f-6887136b79b4",
+  "findings": [
+    {
+      "id": "53cc439c8ba13aae8525c4a82092d677fe52f2aa3e4773008814268e4fad0c47",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Hill'), linked to Scott Hill (district 24) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.951Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "26fc0eac68c90037c402f6af64ad21e632b079f7491d447d2551656187b6c5c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Hill'), linked to Scott Hill (district 24) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.951Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "https://www.kslegislature.gov/li/b2025_26/members/sen_hill_scott_1/ confirms Scott Hill in office: Kansas Senate District 24, in office 2025 to present; the page has no biography or statements on the subject (nothing on the subject)",
+        "official or campaign site: none listed on the legislature page (nothing on the subject)",
+        "blocked: https://ballotpedia.org (not fetched, refuses our fetches)",
+        "blocked: https://kansasreflector.com (not fetched, refuses our fetches)",
+        "blocked: https://justfacts.votesmart.org/candidate/biography/184118 (403)",
+        "web search for name plus subject words (several queries): nothing own-words on the subject",
+        "legislature bill pages for sponsorships: not searched, linked separately"
+      ],
+      "found": 0,
+      "at": "2026-11-04T16:49:20.736Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "BallotReady profile (economy and education only)",
+        "scotthillforkansas.com (script-rendered, no readable text)",
+        "goodparty.org profile: blocked: 429",
+        "Dickinson County commission remarks Jan 2026 (cpo.soar.com): blocked: host unreachable",
+        "5 web searches (name with voter ID, newsletter, questionnaire, House 2023-24, Senate Federal and State Affairs): nothing own-words; Ballotpedia candidate survey 2022 listed but blocked",
+        "blocked: https://ballotpedia.org (403, not fetched)",
+        "blocked: https://kansasreflector.com (403, not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-11-04T17:08:27.262Z",
+      "by": "research-ks-r2-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 2,
+      "at": "2026-11-04T19:13:24.951Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

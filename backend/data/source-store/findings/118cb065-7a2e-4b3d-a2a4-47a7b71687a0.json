@@ -29,7 +29,544 @@
           "sha256": "dddae0081901748ede39524ddca0094c322a065fe443d8ffdbae0913c1a95fa4"
         }
       }
+    },
+    {
+      "id": "de5e0351ff7075abf3bfb200083a50b4931ad7855544b9e3c8b32ee7795a859a",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/theresa-gavarone/news/senate-passes-landmark-timken-gavarone-resolution-putting-voter-id-amendment-on-the-ballot",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "passage": "\"Voter photo-ID requirements are widely supported by Americans,\" said Senator Gavarone.",
+      "note": "Her release on Senate passage of the joint resolution to put photo ID in the state constitution.",
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment on voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:36.807Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d7dd2e7e18e55f18dbb36cd498b109e36dc94c14b9ac38055fd273bc55236f31",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/theresa-gavarone/news/senate-passes-landmark-timken-gavarone-resolution-putting-voter-id-amendment-on-the-ballot",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "passage": "\"Yet in states all around the country, these election protections are being repealed.\"",
+      "note": "Same release; she gives the reason for putting photo ID in the constitution.",
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment on voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:36.807Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0e5c1817f2092297403bec2687ec5f95359a106d8c6e22214911508bdafb3bb0",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/theresa-gavarone/news/senate-passes-photo-id-for-mail-in-ballots",
+      "date": "2026-06-11",
+      "date_precision": "day",
+      "passage": "\"I have been working on photo ID requirements since authoring the photo-ID language in House Bill 458 in the 134th General Assembly,\"",
+      "note": "Her release on Senate amendments to HB 472 extending photo ID to mail and absentee ballots. Page text appeared in two fragments joined here; the second fragment is the word 'Assembly'.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:36.807Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f581bf79642428d3ebdb63cb40752664f107d18973118fe167a772d8ac261a92",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/theresa-gavarone/news/senate-passes-photo-id-for-mail-in-ballots",
+      "date": "2026-06-11",
+      "date_precision": "day",
+      "passage": "\"And I believe we need to make sure we have the highest ID standards across the board—in person and absentee.\"",
+      "note": "Same release; she says ID standards should cover absentee voting as well as in person.",
+      "subjects": [
+        "mail-ballot ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:36.807Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f1580b33c98bfd99ca880d543a07c9201d904535b09c4fd113c05a80ab148a6f",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/theresa-gavarone/news/senate-passes-photo-id-for-mail-in-ballots",
+      "date": "2026-06-11",
+      "date_precision": "day",
+      "passage": "\"Whether you vote by mail, early in person, or on Election Day, we should be taking every step we can to ensure the vote is legal and secure,\"",
+      "note": "Same release; text appeared in two fragments joined here at 'the vote' / 'is legal and secure'.",
+      "subjects": [
+        "mail-ballot ID",
+        "election security"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:36.807Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "55303b4f550f5d87e565f6b38fe6fb1133bb515003a317faccd9f3c56177775d",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/theresa-gavarone/news/senate-passes-photo-id-for-mail-in-ballots",
+      "date": "2026-06-11",
+      "date_precision": "day",
+      "passage": "\"With Ohio providing free state IDs to citizen residents, providing proof of who you are is easy and secure.\"",
+      "note": "Same release; she points to free state IDs.",
+      "subjects": [
+        "free state ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:36.807Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "045ba663022af74bee01ec08d134efb51af32391f1a007516aab445504e5d240",
+      "kind": "own-words",
+      "url": "https://www.ncsl.org/resources/details/Election-Conversations-Sen-Theresa-Gavarone-Ohio",
+      "date": "2026-10-29",
+      "date_precision": "day",
+      "passage": "You need a photo ID to do an awful lot of things—to get a job, to rent an apartment, to buy an adult beverage—but not to vote.",
+      "note": "NCSL 'Election Conversations' interview (edited for clarity and length); the page shows date October 29, 2026. She describes why she introduced photo ID.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:36.807Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "62fa7771231a60a8d92ca6bcdbb1543793919494c53d88332f48502898899da4",
+      "kind": "own-words",
+      "url": "https://www.ncsl.org/resources/details/Election-Conversations-Sen-Theresa-Gavarone-Ohio",
+      "date": "2026-10-29",
+      "date_precision": "day",
+      "passage": "Before that, you could show a utility bill as proof that you are who you say you are in Ohio with no photo ID or anything.",
+      "note": "Same NCSL interview; she describes the earlier non-photo rule.",
+      "subjects": [
+        "voter ID at the polls",
+        "non-photo documents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:36.807Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6a041f7a40af1d0000a13b23b42dc05bba4cbbe5695de5de13dc9cd6acac9d9a",
+      "kind": "own-words",
+      "url": "https://www.ncsl.org/resources/details/Election-Conversations-Sen-Theresa-Gavarone-Ohio",
+      "date": "2026-10-29",
+      "date_precision": "day",
+      "passage": "For those who don't have a state ID, we provided one free to anyone who is eligible and of voting age.",
+      "note": "Same NCSL interview; she describes the free state ID.",
+      "subjects": [
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:36.807Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e4fb21a50be511e4998c02c20027fbb5f32f2bef9abb440d19e5225343c621c6",
+      "kind": "own-words",
+      "url": "https://ohiosenate.gov/members/andrew-o-brenner/news/brenner-gavarone-introduce-bill-to-require-proof-of-citizenship-to-vote",
+      "date": "2025-03-26",
+      "date_precision": "day",
+      "passage": "\"Ohio is the gold standard when it comes to running elections,\" said Senator Gavarone.",
+      "note": "Release on SB 153 (proof of citizenship at registration), co-introduced with a colleague from Delaware.",
+      "subjects": [
+        "proof of citizenship to register",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:36.807Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eefcaab6b62ef7714a368e9dcf7aa76b33f4526d92c3d229935bdc8b86f801ad",
+      "kind": "own-words",
+      "url": "https://www.wvxu.org/politics/2024-11-20/analysis-ohio-gop-non-citizen-voting-theresa-gavarone-niraj-antani",
+      "date": "2024-11-20",
+      "date_precision": "day",
+      "passage": "\"This is a simple fix that strengthens trust and integrity in our institutions,\" said Gavarone",
+      "note": "WVXU analysis quoting her on the proof-of-citizenship proposal (the predecessor bill SB 324); quoted by WVXU.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:36.807Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fe2a063b2e49d6066dc92dac31d95b7e7495476982b23917e366bd15b1de4ed9",
+      "kind": "own-words",
+      "url": "https://wysu.org/ohio-news/2026-06-03/ohio-senate-advances-its-fast-tracked-voter-id-amendment",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "passage": "\"Amending our constitution should never be taken lightly,\" she said.",
+      "note": "Statehouse News Bureau story (via WYSU) quoting her in Senate debate on the voter ID amendment.",
+      "subjects": [
+        "constitutional amendment on voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:11:36.807Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d8d902dceb6a4f64eb36fe30807c431c9234632bb723375cda4f5baa1000ad9f",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/actions/",
+      "date": "2022-12-13",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-458-2022",
+      "act": "yea",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 24-7) on H. B. No. 458, from the Ohio Legislature's own actions record, which lists each member by id (sen_gavarone_theresa_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "73c5bb1e74acd31b84d5955292a71dc3a3f968ab6d7abddb5e92ebe897cdac0a",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/134/hb458",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-458-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, As Reported by the Senate Local Government and Elections Committee (03_RS)",
+      "note": "Listed as co sponsor of H. B. No. 458 (As Reported by the Senate Local Government and Elections Committee) on the Ohio Legislature's own record (sen_gavarone_theresa_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a5bb1634ad5907616b86f560b8ecf96dfd5e4f77b5422bf26d6c663888557876",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "yea",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 23-10) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (sen_gavarone_theresa_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "01b33456142732237af59847ad8f3ad442bd9fa90d420431a5b08c7746d91219",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/hb472",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As Reported by the Senate General Government Committee (03_RS)",
+      "note": "Listed as co sponsor of H. B. No. 472 (As Reported by the Senate General Government Committee) on the Ohio Legislature's own record (sen_gavarone_theresa_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4c1f5fb2164062ff2f044b0322d2c82f7d347d63e7e3db39a346504a6a33e73f",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "yea",
+      "motion": "Senate: Concurred in House amendments",
+      "note": "OH Senate floor roll call (Concurred in House amendments, tally 23-10) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (sen_gavarone_theresa_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f13f923a9c6762dac1ec783ec55a014bc5e047ca8cf95da1a2ce9b180d4455de",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "yea",
+      "motion": "Senate: Adopted",
+      "note": "OH Senate floor roll call (Adopted, tally 22-9) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (sen_gavarone_theresa_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "986547b14ee392acf95ba95d60a232cd225f4c17c2af96ca70a83305d96c4e81",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/sjr10",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, As Introduced (00_IN)",
+      "note": "Listed as prime sponsor of S. J. R. No. 10 (As Introduced) on the Ohio Legislature's own record (sen_gavarone_theresa_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b9762206c88401f578d24da0354225c57e19cd7f7b377624f667a96e2648ae0",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/134/sb320",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "OH-SB-320-2022",
+      "act": "sponsor",
+      "motion": "prime sponsor, As Introduced (00_IN)",
+      "note": "Listed as prime sponsor of S. B. No. 320 (As Introduced) on the Ohio Legislature's own record (sen_gavarone_theresa_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "abf5a3aa2798dee7400ae6a7beb86f89f0e900db4065267c04a5dcb3beb2ce26",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/sb274",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "OH-SB-274-2024",
+      "act": "sponsor",
+      "motion": "prime sponsor, As Introduced (00_IN)",
+      "note": "Listed as prime sponsor of S. B. No. 274 (As Introduced) on the Ohio Legislature's own record (sen_gavarone_theresa_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3655b15a3a9ab9098577ef813652f20ca0bc913e854d4a79786fd192ddb6f953",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/sb324",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "OH-SB-324-2024",
+      "act": "sponsor",
+      "motion": "prime sponsor, As Introduced (00_IN)",
+      "note": "Listed as prime sponsor of S. B. No. 324 (As Introduced) on the Ohio Legislature's own record (sen_gavarone_theresa_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5b24c52f64b393af08deb7e355b124b6f74be16087616ecefe0ecd9a5a9bf5e3",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/sb153",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "OH-SB-153-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, As Introduced (00_IN)",
+      "note": "Listed as prime sponsor of S. B. No. 153 (As Introduced) on the Ohio Legislature's own record (sen_gavarone_theresa_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.679Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "non-photo documents",
+        "free state ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws",
+        "constitutional amendment on voter ID"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr run with name)",
+        "member page https://ohiosenate.gov/members/theresa-gavarone (news list read; office confirmed)",
+        "member news items on voter ID amendment, mail-ballot ID, SB 153 release; ranked-choice release read, nothing on the subject",
+        "Summer 2026 newsletter (mailchi.mp copy): only a brief line on the amendment; not saved",
+        "NCSL interview",
+        "WVXU 2024-11-20",
+        "WYSU/Statehouse News Bureau 2026-05-18 (names her as sponsor only) and 2026-06-03",
+        "web searches: HB 458, voter ID noncitizen, Issue 3, proof of citizenship (4 searches)",
+        "blocked: plain curl of ohiosenate.gov news pages returned 403 (not retried; the fetch tool was used instead)",
+        "blocked: Ballotpedia (listed per instructions, not fetched)",
+        "not reviewed: HB 458 / SB 320 committee testimony PDFs",
+        "not reviewed: https://ohiosenate.gov/members/theresa-gavarone/news/gavarone-introduces-legislation-requiring-a-photo-id-to-vote (404)"
+      ],
+      "found": 12,
+      "at": "2026-11-06T15:11:36.807Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 11,
+      "at": "2026-11-06T16:28:34.679Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
 }

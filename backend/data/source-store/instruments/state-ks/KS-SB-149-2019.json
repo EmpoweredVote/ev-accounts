@@ -1,0 +1,33 @@
+{
+  "id": "KS-SB-149-2019",
+  "scope": "state:ks",
+  "title": "SB 149 (2019-2020 biennium (2019 Regular Session)): SB 149 Facilitating voter registration by providing certificates of birth for applicants to evidence citizenship upon their consent.",
+  "urls": [
+    "https://www.kslegislature.gov/li_2020/b2019_20/measures/sb149/",
+    "https://www.kslegislature.gov/li_2020/b2019_20/measures/documents/sb149_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) K.S.A. 2018 Supp. 25-2309(b)(15) (Sec. 1): form statement\n(quote) The question shall be followed by a statement \"Proof of United States citizenship is required by Kansas law. You may, but are not required, to provide proof of United States citizenship at the time you complete this application. If you do not provide proof of United States citizenship with your application and you were born in Kansas, checking the box to indicate you are a citizen of the United States of America constitutes consent for the county election officer or chief state election official, if the county election officer or chief state election official chooses to do so, to obtain your birth certificate from the state registrar of vital statistics for the purpose of establishing your citizenship. If you do not provide proof of United States citizenship with your application and you were not born in Kansas, checking the box to indicate you are a citizen of the United States of America, indicating your place of birth and providing the agency and agency address where the county election officer or chief state election official may obtain your certificate of birth shall constitute consent for the county election officer or chief state election official, if the county election officer or chief state election official chooses to do so, to obtain your birth certificate from the agency at the address you provide for the purpose of establishing your citizenship.\"\n(section) K.S.A. 2018 Supp. 25-2309(l) (Sec. 1)\n(quote) (l) The county election officer or secretary of state's office shall accept any completed application for registration, but an applicant shall not be registered until the applicant has provided satisfactory evidence of United States citizenship has been obtained.\n(section) K.S.A. 65-2422d(k) (Sec. 2)\n(quote) (k) Upon request and presentation of a voter registration application or copy thereof demonstrating consent by the applicant, as provided by K.S.A. 25-2309, and amendments thereto, the state registrar shall furnish to a county election officer or the chief state election official, without charge, a certified copy of the applicant's certificate of birth, or a statement that the certificate of birth cannot be located.\n(e_other_rule) not stated.\n(other) Sec. 1: K.S.A. 25-2309 voter registration application: consent lets the election officer obtain the applicant's birth certificate as proof of citizenship.\n(other) Sec. 2: K.S.A. 65-2422d: state registrar furnishes the certified birth certificate without charge.\n(other) Sec. 3: repealer.",
+  "sponsors": [
+    {
+      "name": "Senator Miller",
+      "role": "prime",
+      "version": "Introduced (sb149_00_0000)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

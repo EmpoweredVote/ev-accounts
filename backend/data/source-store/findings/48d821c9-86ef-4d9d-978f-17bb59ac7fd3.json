@@ -1,0 +1,156 @@
+{
+  "politician_id": "48d821c9-86ef-4d9d-978f-17bb59ac7fd3",
+  "findings": [
+    {
+      "id": "64c9ecc425e3e82f4cc34d5eaa96b78bd021cbc2304298222adeb0185b0ef7b5",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/hey-bob-uncle-sister-cousin-100000138.html",
+      "date": "2021-04-11",
+      "date_precision": "day",
+      "passage": "But I mean, I'm a lawyer, I would just like to see evidence of these things. I don't think that's how we should make public policy.",
+      "note": "Quoted by the Kansas City Star (republished on Yahoo) on proposals to verify voter fraud. He says he wants evidence before making policy on the claims. Fetch tool split the quote into segments; sentences joined from adjacent segments.",
+      "subjects": [
+        "voter fraud claims",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:51.264Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e12d8c2c04969f9f4493070458d6fa03f7ff58d84685fb72235693093d0eeb43",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_191_HB2020.odt",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "nay",
+      "motion": "Senate: Emergency Final Action As Amended",
+      "note": "Senate roll call as printed ('Corson'), linked to Ethan Corson (district 7) via the official 2025 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12d5b96635aaee125a967de3c18520774687c5737469fd65d2358255cda8634d",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Corson'), linked to Ethan Corson (district 7) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c32e05d099cacb14913d1c7c047be9deb5093f489d52813e63f1f81be052e684",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Corson'), linked to Ethan Corson (district 7) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "773a23f2ab30c456870279e3a5e51881ec013b5fc572b2fa03296b427529d0f8",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/vote/?apn=b2023_24/year2/senate/legislative_days/day039_20240305/vote_records/vote_100_SB365.odt",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-365-2024",
+      "act": "nay",
+      "motion": "Senate: Final Action - Not passed",
+      "note": "Senate roll call as printed ('Corson'), linked to Ethan Corson (district 7) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter fraud claims",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (2 debate transcripts, 2026-07-17 and 2026-07-22): nothing on the subject",
+        "Senate caucus member page https://www.kssenatedems.org/ethan-corson: nothing on the subject (bio only: voter protection work)",
+        "Senate caucus release list https://www.kssenatedems.org/blog-3-1: no release by him on the subject; one release by another member, body not shown",
+        "blocked: https://www.ethancorson.com (connection refused)",
+        "blocked: https://kansasreflector.com/tag/sen-ethan-corson/ (403)",
+        "blocked: https://www.newsfromthestates.com/node/403996 (403)",
+        "blocked: curl of https://www.yahoo.com/news/hey-bob-uncle-sister-cousin-100000138.html (empty); quote taken from fetch tool output",
+        "Ballotpedia: blocked (not fetched, per instructions)",
+        "two news searches on name plus subject words; one search for the campaign site",
+        "kslegislature.gov member list URL returned 404; bill records not searched per instructions"
+      ],
+      "found": 1,
+      "at": "2026-11-04T16:43:51.264Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T19:13:24.949Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}
