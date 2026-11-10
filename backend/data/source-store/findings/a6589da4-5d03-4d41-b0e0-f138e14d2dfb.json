@@ -1,0 +1,425 @@
+{
+  "politician_id": "a6589da4-5d03-4d41-b0e0-f138e14d2dfb",
+  "findings": [
+    {
+      "id": "fc3904af72816e20eee26f7d6b78aa9b36edf61f3657964c0103f4629f0fd874",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_127/legislation/sb380/actions/",
+      "date": "2008-12-16",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-380-2008",
+      "act": "yea",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 55-43) on S. B. No. 380, from the Ohio Legislature's own actions record, which lists each member by id (rep_blessing_louis_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "733a06b6179a56d4675caf5e5c2d86a68ae8769ffe900799d8920da666767053",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/127/sb380",
+      "date": "2008",
+      "date_precision": "year",
+      "instrument_id": "OH-SB-380-2008",
+      "act": "sponsor",
+      "motion": "co sponsor, As Passed by the House (04_PH)",
+      "note": "Listed as co sponsor of S. B. No. 380 (As Passed by the House) on the Ohio Legislature's own record (rep_blessing_louis_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e8991e8c4732d1bc73efa9cf389737e776366b3a00ef0a33ea403e0523afaad3",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_128/legislation/hb260/actions/",
+      "date": "2009-11-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-260-2009",
+      "act": "nay",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 52-46) on H. B. No. 260, from the Ohio Legislature's own actions record, which lists each member by id (rep_blessing_louis_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "435793d89774b1931181520d9d9250644aeccea7e61d66e5d5f0f2d521c99a85",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_129/legislation/hb159/actions/",
+      "date": "2011-03-23",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-159-2011",
+      "act": "yea",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 57-38) on H. B. No. 159, from the Ohio Legislature's own actions record, which lists each member by id (rep_blessing_louis_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4e060491001491dffd9370a3768d9544237b1f3acff2b6efe1968d1be4334a54",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/129/hb159",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-159-2011",
+      "act": "sponsor",
+      "motion": "prime sponsor, As Introduced (00_IN)",
+      "note": "Listed as prime sponsor of H. B. No. 159 (As Introduced) on the Ohio Legislature's own record (rep_blessing_louis_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8b0efe999a9f23fc85947e3a6e1b7e631466a80b52aad663ce45c3cdc2cacbaa",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_129/legislation/hb194/actions/",
+      "date": "2011-06-29",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-194-2011",
+      "act": "yea",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 59-40) on H. B. No. 194, from the Ohio Legislature's own actions record, which lists each member by id (rep_blessing_louis_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "679bd5c4d725f83cb42711c5ea2cb4666825582006c6d13c9c03db2b50979081",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/129/hb194",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-194-2011",
+      "act": "sponsor",
+      "motion": "prime sponsor, As Introduced (00_IN)",
+      "note": "Listed as prime sponsor of H. B. No. 194 (As Introduced) on the Ohio Legislature's own record (rep_blessing_louis_1); this version carries the ID/citizenship text (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d1208c0b7ce5814fce990ebb4efa689637f80aa0b1f13b83d2e42d16b6a2562c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_129/legislation/hb224/actions/",
+      "date": "2011-07-13",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-224-2011",
+      "act": "yea",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 92-0) on H. B. No. 224, from the Ohio Legislature's own actions record, which lists each member by id (rep_blessing_louis_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c500fd061b3bc192b92f89b7ca5f7d8e7d78f8ff2b9a85176e3a60b101a8f845",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/sb205/actions/",
+      "date": "2014-02-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-205-2014",
+      "act": "yea",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 60-38) on S. B. No. 205, from the Ohio Legislature's own actions record, which lists each member by id (rep_blessing_louis_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fab7b4a958714b2e754da1a8e3b78c1feac5bad10874e72062d0bd13f41b77df",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_130/legislation/sb216/actions/",
+      "date": "2014-02-26",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-216-2014",
+      "act": "yea",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 59-37) on S. B. No. 216, from the Ohio Legislature's own actions record, which lists each member by id (rep_blessing_louis_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d8d902dceb6a4f64eb36fe30807c431c9234632bb723375cda4f5baa1000ad9f",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/actions/",
+      "date": "2022-12-13",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-458-2022",
+      "act": "yea",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 24-7) on H. B. No. 458, from the Ohio Legislature's own actions record, which lists each member by id (sen_blessing_louis_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "61ad7ead5c708d5cc3644cba295a15f24a874cb0732ce0f06dad1de0e594ba9c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "Senate: Passed",
+      "note": "OH Senate floor roll call (Passed, tally 23-10) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (sen_blessing_louis_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ac99700f10fccf6a9e794750182dc8dc1f69f27d8bfd400811b06c254d0c19b4",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "nay",
+      "motion": "Senate: Concurred in House amendments",
+      "note": "OH Senate floor roll call (Concurred in House amendments, tally 23-10) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (sen_blessing_louis_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f13f923a9c6762dac1ec783ec55a014bc5e047ca8cf95da1a2ce9b180d4455de",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-03",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "yea",
+      "motion": "Senate: Adopted",
+      "note": "OH Senate floor roll call (Adopted, tally 22-9) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (sen_blessing_louis_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.671Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bac86e58a1b20fdbd4d860872cf36a7a7360ab7233f20122645149795a5c379b",
+      "kind": "own-words",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/committees/cmte_s_local_govt_1/meetings/cmte_s_local_govt_1_2022-05-18-0245_1393/testimony/14212/sjr6blessingsponsor.pdf",
+      "date": "2022-05-18",
+      "date_precision": "day",
+      "passage": "My motivation for introducing this is simple: citizenship matters, and only citizens should have the vote.",
+      "note": "From his written sponsor testimony on SJR 6 (citizenship to vote in local elections) to the Senate Local Government and Elections Committee.",
+      "subjects": [
+        "noncitizen voting",
+        "citizenship to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:41:40.450Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "48ce6aadf11cbf55ff8456187073c45aaf6806852e24235fe2781cabd389c096",
+      "kind": "own-words",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/committees/cmte_s_local_govt_1/meetings/cmte_s_local_govt_1_2022-05-18-0245_1393/testimony/14212/sjr6blessingsponsor.pdf",
+      "date": "2022-05-18",
+      "date_precision": "day",
+      "passage": "As it currently stands, you must be a US citizen to vote for federal and state level officeholders and issues.",
+      "note": "In the same testimony he says there is a possible gap at the local level that could let noncitizens vote in municipal or chartered-county elections, and that SJR 6 would close it.",
+      "subjects": [
+        "noncitizen voting",
+        "citizenship to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "research-oh-r2-2026-11-06",
+        "fetched_at": "2026-11-06T16:41:40.450Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "SJR 10 photo ID amendment",
+        "HB 458"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Senate page https://ohiosenate.gov/members/louis-w-blessing-iii (confirms Senate District 8 member); news pages 1-2 reviewed, only election item is SB 395 consensus voting system (primary/general format, not ID or citizenship); nothing on the subject",
+        "blocked: https://ohiosenate.gov/members/louis-w-blessing-iii/news/protecting-election-integrity-and-voters-in-ohio (404 when fetched; a 2022 search lead said he planned a joint resolution on citizenship in election law, not confirmed from his own text)",
+        "https://ohiosenate.gov/legislation/135/sb331 checked: real-property liens bill, off the subject",
+        "one early web search returned only a lead on a 2022 joint resolution; later searches blocked: web search (this turn's web search budget is used up; limit 200 per turn, shared by every agent)",
+        "not reviewed: 2022 joint resolution on election law citizenship (Blessing and Edwards) text and release",
+        "blocked: https://ballotpedia.org (listed as refusing fetches, not tried)",
+        "blocked: https://bluevoterguide.org (listed as refusing fetches, not tried)",
+        "blocked: https://www.legislature.ohio.gov (curl returned 403)"
+      ],
+      "found": 0,
+      "at": "2026-11-06T15:19:07.327Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 14,
+      "at": "2026-11-06T16:28:34.671Z",
+      "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID in the state constitution (SJR 10 / State Issue 3)",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record: not re-run this round (round 1 found 0 meetings)",
+        "web searches run this round (about 5): name plus voter ID, photo ID, Issue 3, proof of citizenship, noncitizen voting, questionnaire",
+        "blocked: https://www.legislature.ohio.gov (curl 403); read the same testimony lists on ohiohouse.gov instead",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (named as refusing fetches, not tried)",
+        "https://ohiosenate.gov/members/louis-w-blessing-iii/news (all 17 items read by title; only election item is the SB 395-type consensus voting bill, opened again: no ID or citizenship text)",
+        "https://ohiohouse.gov/legislation/134/sjr6/committee (found his sponsor testimony of 2022-05-18; read as PDF with pdftotext)",
+        "blocked: https://ohiosenate.gov/members/louis-w-blessing-iii/news/protecting-election-integrity-and-voters-in-ohio (404 by fetch tool, 403 by curl)",
+        "blocked: https://www.ohiosos.gov/office/media-center/categories/press-releases/2022-05-18 (403)",
+        "blocked: https://wkyc.com (403); mountvernonnews.com, irontontribune.com, ashlandsource.com opened: no Blessing quote",
+        "blocked: https://ohiohouse.gov/members/jay-edwards/news/... (HTTP 500)",
+        "not reviewed: his 2011 voter-ID sponsorship (a search lead only; no own words found)"
+      ],
+      "found": 2,
+      "at": "2026-11-06T16:41:40.450Z",
+      "by": "research-oh-r2-2026-11-06"
+    }
+  ]
+}

@@ -1,0 +1,367 @@
+{
+  "politician_id": "3f899c1e-2da3-40cf-aca6-89a462a88eef",
+  "findings": [
+    {
+      "id": "31d86970c43ef86aec3dcf56bbfb8253225334ec6ed5e630f3d3528b4de7d513",
+      "kind": "own-words",
+      "url": "https://www.supertalk.fm/lawmakers-pass-mississippi-voter-citizenship-check-bill-amid-democratic-concerns-over-minority-voters/",
+      "date": "2026-03-25",
+      "date_precision": "day",
+      "passage": "“By running our voter rolls through that, we’re able to identify anybody who’s registered to vote in Mississippi who may not be a U.S. citizen, and we get them off the voter rolls,” England said. “That’s an important thing. We only want U.S. citizens voting in our state.”",
+      "note": "Quoted by SuperTalk Mississippi on passage of SB 2588 (SHIELD Act), which he authored.",
+      "subjects": [
+        "citizenship check of voter rolls",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:47:52.802Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a47f6b192cb23e6b7860e5a7da8db1874cfc967129ef82db8d45f63044a683a",
+      "kind": "own-words",
+      "url": "https://www.mississippifreepress.org/annual-citizenship-checks-of-mississippi-voter-rolls-headed-to-governors-desk-with-shield-act/",
+      "date": "2026-02-05",
+      "date_precision": "day",
+      "passage": "“Yes, and Sen. DuPree, I thank you for that question because election integrity a lot of times depends on perception of the election, it depends on voter confidence, but we want voters confident in our elections,” England replied. “And even if we have one instance of a voter who’s not supposed to be voting in our elections and once that’s reported, the integrity of our system and the confidence that voters have goes way down and we don’t want that. We want more people voting; we want to get rid of voter apathy.”",
+      "note": "Senate floor reply on SB 2588 on Feb. 5, 2026, as quoted by Mississippi Free Press (article published 2026-03-25).",
+      "subjects": [
+        "non-citizen voting",
+        "election integrity and voter confidence"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:47:52.802Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "40d92928bb735e92c79b011b116a26477f703d9707a8a30e6c1f1d5696b8fd6f",
+      "kind": "own-words",
+      "url": "https://www.wlox.com/2026/04/13/sen-england-discusses-funding-cuts-voter-checks-death-penalty-child-sex-assault/",
+      "date": "2026-04-13",
+      "date_precision": "day",
+      "passage": "“If you’ve applied for a license or some sort of ID through the Department of Public Safety, and you’ve marked that you’re not a citizen, or if you haven’t made that mark, or if you don’t have an ID, they’re going to run you through what’s called the SAVE system in D.C.,” England said.",
+      "note": "Studio interview with WLOX describing how SB 2588 checks citizenship at registration using state ID records and the federal SAVE database.",
+      "subjects": [
+        "proof of citizenship to register",
+        "citizenship check of voter rolls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:47:52.802Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b7beb7c15bd3acbfca85bbbe15d3d2bf9c0c25113f8fded39c15cb9a6b3a3b1d",
+      "kind": "own-words",
+      "url": "https://www.wlox.com/2026/04/13/sen-england-discusses-funding-cuts-voter-checks-death-penalty-child-sex-assault/",
+      "date": "2026-04-13",
+      "date_precision": "day",
+      "passage": "“We’re also going to require all of our voter rolls to be run through that federal system, that federal database annually, so that we can make sure that only U.S. citizens are voting here in Mississippi,” England said.",
+      "note": "Same WLOX interview: the annual run of all voter rolls through the federal database.",
+      "subjects": [
+        "citizenship check of voter rolls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:47:52.802Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6af1fadc9068afd6469de1312ee152ebd9e0fbd70ec47ab03017d0c1564e55d5",
+      "kind": "own-words",
+      "url": "https://www.wdam.com/2026/05/14/state-senators-look-ways-address-concerns-raised-over-recently-passed-shield-act/",
+      "date": "2026-05-14",
+      "date_precision": "day",
+      "passage": "“It doesn’t happen a lot, but there have been instances where non-citizens have been found on our voter rolls in Mississippi,” England said.",
+      "note": "Quoted by WDAM on the SHIELD Act rollout.",
+      "subjects": [
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:47:52.802Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "330701b458e328ba3ecaab31233421cb2b8aa496095adf50438a4646721cd1eb",
+      "kind": "own-words",
+      "url": "https://www.mississippifreepress.org/mississippi-senators-seek-easier-birth-certificate-access-under-new-voter-law/",
+      "date": "2026-05-04",
+      "date_precision": "day",
+      "passage": "“Previously, the SAVE database cost states money to operate. It doesn’t cost any money now, so it just made sense for us to take advantage of this extra level of security—this extra step—to ensure that our voter rolls only contain the names of U.S. citizens,” England said.",
+      "note": "Quoted by Mississippi Free Press on why the SAVE database is used.",
+      "subjects": [
+        "citizenship check of voter rolls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:47:52.802Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76fb01b8f5498efb5367388a48a7dbd0321e5107ed62e9e53b2492d6a3c115cc",
+      "kind": "own-words",
+      "url": "https://www.mississippifreepress.org/mississippi-senators-seek-easier-birth-certificate-access-under-new-voter-law/",
+      "date": "2026-05-04",
+      "date_precision": "day",
+      "passage": "“If we have one noncitizen vote, the fallout from that would be so detrimental to voter turnout and voter confidence,” England said.",
+      "note": "Quoted by Mississippi Free Press.",
+      "subjects": [
+        "non-citizen voting",
+        "election integrity and voter confidence"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:47:52.802Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d56f1e7f8e4b16b47abc711050bd6284ba47630384e9fbca93bbf684027530c2",
+      "kind": "own-words",
+      "url": "https://magnoliatribune.com/2024/03/04/in-person-early-voting-can-increase-election-integrity-and-voting-opportunities-for-mississippians/",
+      "date": "2024-03-04",
+      "date_precision": "day",
+      "passage": "Under my proposal, Mississippians who would vote early in-person would be required to show their valid photo ID and have their registration status checked, just like voting on Election Day.",
+      "note": "His own op-ed published by Magnolia Tribune, on photo ID for in-person early voting.",
+      "subjects": [
+        "photo ID for in-person early voting",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:47:52.802Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1b619bc6c6650283594a1c43f3441a951acc50328e95abb164edc3fe746f8967",
+      "kind": "own-words",
+      "url": "https://www.supertalk.fm/in-person-absentee-voting-will-look-different-in-mississippi-ahead-of-midterms/",
+      "date": "2026-06-12",
+      "date_precision": "day",
+      "passage": "“Even if nothing nefarious is going on, there’s that perception of, ‘Well, wait a minute. So-and-so was leading on election night, why are we seeing that change?’ And voters expect results instantaneously,” England explained.",
+      "note": "Quoted by SuperTalk on HB 859 (in-person absentee ballots cast in a machine); about absentee counting, not ID.",
+      "subjects": [
+        "absentee ballot handling",
+        "election integrity and voter confidence"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:47:52.802Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "364900856d99bfb399d1bd234a46bd84aa31932d2d96df01adc5d490b75dbbec",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/senate/0860019.pdf",
+      "date": "2022-03-30",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Report of Conference Committee on H. B. No. 1510 was adopted: (0860019)",
+      "note": "Senate roll call as printed ('England'), linked to Jeremy England (district 51) via the official 2022 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4882f5923743be15767c820e4fb1624b236ee994c44bf2fe5104edde9d634120",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2020/pdf/history/SB/SB2237.xml",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2237-2020",
+      "act": "sponsor",
+      "motion": "co sponsor, SB2237IN",
+      "note": "Named as co sponsor ('England') on the official bill text, summary or journal; linked to Jeremy England via the official 2020 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4cd68734c411fde05dc865eff22b5ec7355a7eca5840d62ffaae784f759ff30d",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/senate/0720054.pdf",
+      "date": "2024-03-13",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2576. On motion of Senator England, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0720054)",
+      "note": "Senate roll call as printed ('England'), linked to Jeremy England (district 51) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d689ec5ba9d1f218489f98f39c24b439e9066b92ea7c1e7b2122c8922fb0c805",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/history/SB/SB2576.xml",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "sponsor",
+      "motion": "prime sponsor, As Passed the Senate (SB2576PS) = As Sent to Governor (SG); introduced and committee substitute also read",
+      "note": "Named as prime sponsor ('England') on the official bill text, summary or journal; linked to Jeremy England via the official 2024 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b0a384baf6fe58a9ea0e42529ac3f22a97f043100dd50e424c87ef0255125e0b",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/senate/0770004.pdf",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "yea",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Senate concurred in the foregoing House Amendment to S. B. No. 2588 by the following vote: (0770004)",
+      "note": "Senate roll call as printed ('England'), linked to Jeremy England (district 51) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "44d73d4a76a956b3cf77780c450c41c4b3b963fe8da81d4483504d065c2e49ee",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/history/SB/SB2588.xml",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, As Sent to Governor (SB2588SG) = Senate passed as amended by House Committee Amendment 1; committee substitute (CS = PS) and introduced (IN) also read",
+      "note": "Named as prime sponsor ('England') on the official bill text, summary or journal; linked to Jeremy England via the official 2026 member roll of the Senate (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.754Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SAVE database / SHIELD Act (SB 2588)",
+        "absentee and mail ballot handling",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "confirmed office: Mississippi Senate District 51, chair of Senate Elections Committee, named on https://www.mississippifreepress.org/annual-citizenship-checks-of-mississippi-voter-rolls-headed-to-governors-desk-with-shield-act/ (term to 2028, not on 2026 ballot)",
+        "web searches: name + voter ID / photo ID / proof of citizenship / SHIELD Act / absentee / interview (5 searches)",
+        "Mississippi Free Press (3 articles)",
+        "SuperTalk Mississippi (2 articles)",
+        "Magnolia Tribune (op-ed by him; SHIELD Act article had no direct quote)",
+        "WLOX interview",
+        "WDAM",
+        "blocked: https://www.ncsl.org/resources/details/elections-conversations-sen-jeremy-england-mississippi (403 on plain curl; the fetch tool summary only was seen, nothing cited)",
+        "blocked: Ballotpedia (refuses fetches, not tried)",
+        "not reviewed: his Facebook page (login wall) and legislature bill pages (votes and sponsorships linked separately)"
+      ],
+      "found": 9,
+      "at": "2026-11-05T22:47:52.802Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 6,
+      "at": "2026-11-05T23:52:51.754Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

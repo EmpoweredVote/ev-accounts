@@ -35,13 +35,18 @@ export async function requireConnected(
     .is('deleted_at', null)
     .maybeSingle();
 
+  // `code` is for front ends to branch on; `error` stays word-for-word, because
+  // callers that only read `error` (the admin app's apiFetch, the vendored
+  // engines) already show it. Add a code here, never change one: a front end that
+  // maps CONNECTED_REQUIRED to a message falls back to "something went wrong"
+  // the moment the string moves.
   if (error || !data) {
-    res.status(403).json({ error: 'Connected account required' });
+    res.status(403).json({ error: 'Connected account required', code: 'CONNECTED_REQUIRED' });
     return;
   }
 
   if (data.verification_status !== 'verified') {
-    res.status(403).json({ error: 'Verified Connected account required' });
+    res.status(403).json({ error: 'Verified Connected account required', code: 'CONNECTED_UNVERIFIED' });
     return;
   }
 

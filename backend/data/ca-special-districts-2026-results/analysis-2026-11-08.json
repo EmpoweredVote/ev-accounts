@@ -1,0 +1,1229 @@
+{
+ "generated": "2026-11-08",
+ "safety": 3,
+ "la": {
+  "counted": 3041114,
+  "outstanding": 131000
+ },
+ "report": [
+  {
+   "district": "Crescenta Valley Water District",
+   "office_title": "Director",
+   "office_id": "519c3143-2ec7-5c52-8780-8c999dbd5003",
+   "race_id": "27d5eab3-f128-5eee-b2a7-62a1732448d1",
+   "seats": 3,
+   "is_vacant": false,
+   "anchor": {
+    "county": "Los Angeles",
+    "contest_id": "10377",
+    "title": "CRESCENTA VALLEY WATER DISTRICT Member, Board of Directors",
+    "voteFor": "Vote for no more than three",
+    "note": "",
+    "ballots": 8635,
+    "counties": [
+     "Los Angeles"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 8635
+    }
+   },
+   "count": {
+    "ballots": 8635,
+    "est_outstanding": 372,
+    "safety": 3,
+    "bound": 1116,
+    "capped": false,
+    "margin": 2466,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "CARLA D. DILLON",
+     "votes": 4402,
+     "rc_id": "fd3a5681-4eef-42d9-ad3d-0d79ee6b15dd",
+     "politician_id": "fa96c857-1efa-498a-b582-bd3ba990d36a",
+     "incumbent": false,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "JAMES BODNAR",
+     "votes": 4157,
+     "rc_id": "b70917b3-713d-460d-86e3-64d72c59f90d",
+     "politician_id": "c950eeaa-9fb9-589b-85ab-0b712388d308",
+     "incumbent": true,
+     "outcome": "won"
+    },
+    {
+     "rank": 3,
+     "name": "JEFFERY W. JOHNSON",
+     "votes": 3567,
+     "rc_id": "569c56a0-fe68-47ab-a9cb-d91ca29212b8",
+     "politician_id": "eba3e605-1284-58a0-b082-72ffccb63778",
+     "incumbent": true,
+     "outcome": "won"
+    },
+    {
+     "rank": 4,
+     "name": "ALEC HYELER",
+     "votes": 1101,
+     "rc_id": "2c9f901e-4a80-4098-bf37-226d074911ae",
+     "politician_id": "699c85eb-b954-47c1-b483-3a9779a3c2b8",
+     "incumbent": false,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [],
+   "warnings": [],
+   "callable": true
+  },
+  {
+   "district": "Foothill Municipal Water District - Division 2",
+   "office_title": "Director (Division 2)",
+   "office_id": "7d5d8326-6dfa-54ec-aae4-023a985c3560",
+   "race_id": "3e37bd0a-b384-5919-834d-a99eebe633c1",
+   "seats": 1,
+   "is_vacant": false,
+   "anchor": {
+    "county": "Los Angeles",
+    "contest_id": "10545",
+    "title": "FOOTHILL MUNICIPAL WATER DISTRICT Member, Board of Directors, Division 2",
+    "voteFor": "",
+    "note": "",
+    "ballots": 7460,
+    "counties": [
+     "Los Angeles"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 7460
+    }
+   },
+   "count": {
+    "ballots": 7460,
+    "est_outstanding": 322,
+    "safety": 3,
+    "bound": 966,
+    "capped": false,
+    "margin": 1445,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "JOHN VRSALOVICH",
+     "votes": 3379,
+     "rc_id": "3f7e3ada-73da-4d04-85a5-47b797081932",
+     "politician_id": "6d28a55c-00f1-50e2-b611-5ec83136b0e3",
+     "incumbent": true,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "TOM MAJICH",
+     "votes": 1934,
+     "rc_id": "3e6fc72f-0dab-4956-878b-e8ac5ed6d448",
+     "politician_id": "d22d78ba-62ff-457d-b8a0-ad51db36529b",
+     "incumbent": false,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [],
+   "warnings": [],
+   "callable": true
+  },
+  {
+   "district": "Foothill Municipal Water District - Division 4",
+   "office_title": "Director (Division 4)",
+   "office_id": "b9ae0830-b8e4-5f3c-8bdf-0e90bcd64fa6",
+   "race_id": "2266398e-0740-54dc-a75f-ecc082437603",
+   "seats": 1,
+   "is_vacant": false,
+   "anchor": {
+    "county": "Los Angeles",
+    "contest_id": "10546",
+    "title": "FOOTHILL MUNICIPAL WATER DISTRICT Member, Board of Directors, Division 4",
+    "voteFor": "",
+    "note": "",
+    "ballots": 8126,
+    "counties": [
+     "Los Angeles"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 8126
+    }
+   },
+   "count": {
+    "ballots": 8126,
+    "est_outstanding": 351,
+    "safety": 3,
+    "bound": 1053,
+    "capped": false,
+    "margin": 3495,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "AMY I. CHEN",
+     "votes": 5255,
+     "rc_id": "c89665fc-d487-4c06-968d-6accb7b103b8",
+     "politician_id": "976229b6-bc3a-4055-a681-73d4e873154b",
+     "incumbent": false,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "LAURA OLHASSO",
+     "votes": 1760,
+     "rc_id": "e8d805bb-0d99-47b7-a1b9-3157958af591",
+     "politician_id": "efdbb389-d789-5873-a2ca-2b83c71fe473",
+     "incumbent": true,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [],
+   "warnings": [],
+   "callable": true
+  },
+  {
+   "district": "Foothill Municipal Water District - Division 5",
+   "office_title": "Director (Division 5)",
+   "office_id": "a1ff23fb-dfe2-52ab-90ab-10aa0a5d1903",
+   "race_id": "79342cfc-56c9-5e29-a3fa-5feca02d145a",
+   "seats": 1,
+   "is_vacant": false,
+   "anchor": {
+    "county": "Los Angeles",
+    "contest_id": "10547",
+    "title": "FOOTHILL MUNICIPAL WATER DISTRICT Member, Board of Directors, Division 5",
+    "voteFor": "",
+    "note": "",
+    "ballots": 7079,
+    "counties": [
+     "Los Angeles"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 7079
+    }
+   },
+   "count": {
+    "ballots": 7079,
+    "est_outstanding": 305,
+    "safety": 3,
+    "bound": 915,
+    "capped": false,
+    "margin": 985,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "PATRICK W. ATWATER",
+     "votes": 3286,
+     "rc_id": "22e1e130-5d65-4cc1-91e2-3eb1da38754d",
+     "politician_id": "f93ab07d-e838-4cea-818d-ce85c56984f5",
+     "incumbent": false,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "NOOSHA RAZAVIAN",
+     "votes": 2301,
+     "rc_id": "d85e94b4-1d0e-493e-a040-f3d52de8ef3d",
+     "politician_id": "e9232d03-a6cb-4b72-b409-a277b6f6640f",
+     "incumbent": false,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [],
+   "warnings": [],
+   "callable": true
+  },
+  {
+   "district": "La Cañada Irrigation District - Division 4",
+   "office_title": "Director (Division 4)",
+   "office_id": "6a364a48-00d3-551f-89a8-dc6e9336065e",
+   "race_id": "a1fafd45-51ee-595b-9270-7df24563512e",
+   "seats": 1,
+   "is_vacant": false,
+   "anchor": {
+    "county": "Los Angeles",
+    "contest_id": "10405",
+    "title": "LA CAÑADA IRRIGATION DISTRICT Member, Board of Directors, Division 4",
+    "voteFor": "",
+    "note": "",
+    "ballots": 992,
+    "counties": [
+     "Los Angeles"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 992
+    }
+   },
+   "count": {
+    "ballots": 992,
+    "est_outstanding": 43,
+    "safety": 3,
+    "bound": 129,
+    "capped": false,
+    "margin": 290,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "HELEN GRACE AVILA OLIVARES",
+     "votes": 527,
+     "rc_id": "75806e33-a486-4318-a239-941d4c7c107c",
+     "politician_id": "e4c335f1-c6ba-4ec3-8326-f1eb3755ab2c",
+     "incumbent": false,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "SHEREE RAE BUTTS",
+     "votes": 237,
+     "rc_id": "ef55df04-c94a-407f-b7f5-7b281388217b",
+     "politician_id": "3f9c9035-c8c5-55c9-b338-e68e21db5e3a",
+     "incumbent": true,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [],
+   "warnings": [],
+   "callable": true
+  },
+  {
+   "district": "Las Virgenes Municipal Water District - Division 2",
+   "office_title": "Director (Division 2)",
+   "office_id": "730e799b-a7e3-5599-87fe-7d25b72dead0",
+   "race_id": "6947b0d4-96eb-54c6-b1cb-be1d832ba02b",
+   "seats": 1,
+   "is_vacant": false,
+   "anchor": {
+    "county": "Los Angeles",
+    "contest_id": "10548",
+    "title": "LAS VIRGENES MUNICIPAL WATER DISTRICT Member, Board of Directors, Division 2",
+    "voteFor": "",
+    "note": "",
+    "ballots": 5026,
+    "counties": [
+     "Los Angeles"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 5026
+    }
+   },
+   "count": {
+    "ballots": 5026,
+    "est_outstanding": 217,
+    "safety": 3,
+    "bound": 651,
+    "capped": false,
+    "margin": 1895,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "ANDY CORADESCHI",
+     "votes": 2658,
+     "rc_id": "0b943fc1-cd2d-4f86-b6eb-2cc0453d9e80",
+     "politician_id": "87d51b68-0018-5721-9c96-ec9393b3bff7",
+     "incumbent": true,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "TERI L. DAVIS",
+     "votes": 763,
+     "rc_id": "deced586-3b3b-4ce0-83be-032e73fc9710",
+     "politician_id": "36e3fac0-a9f7-439f-b824-594951a7fff0",
+     "incumbent": false,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [],
+   "warnings": [],
+   "callable": true
+  },
+  {
+   "district": "Walnut Valley Water District - Division 2",
+   "office_title": "Director (Division 2)",
+   "office_id": "9b04cb38-fb57-582a-a633-f4a01eb20555",
+   "race_id": "a8b9d5ce-1559-544b-b3b8-fc3835112119",
+   "seats": 1,
+   "is_vacant": false,
+   "anchor": {
+    "county": "Los Angeles",
+    "contest_id": "10371",
+    "title": "WALNUT VALLEY WATER DISTRICT Member, Board of Directors, Division 2",
+    "voteFor": "",
+    "note": "",
+    "ballots": 7183,
+    "counties": [
+     "Los Angeles"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 7183
+    }
+   },
+   "count": {
+    "ballots": 7183,
+    "est_outstanding": 310,
+    "safety": 3,
+    "bound": 930,
+    "capped": false,
+    "margin": 1194,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "BRIAN WORTHINGTON",
+     "votes": 3538,
+     "rc_id": "c717d33b-cc99-4b2b-bdc4-06b6f3d1a16d",
+     "politician_id": "f68299ac-d3e7-435e-ae79-bb52a6585043",
+     "incumbent": false,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "MICHAEL BRAUN",
+     "votes": 2344,
+     "rc_id": "a63fd90b-02c8-4d08-931b-ffd616f8bac7",
+     "politician_id": null,
+     "incumbent": false,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [],
+   "warnings": [],
+   "callable": true
+  },
+  {
+   "district": "Walnut Valley Water District - Division 3",
+   "office_title": "Director (Division 3)",
+   "office_id": "15c56c6a-2394-503a-8395-ed00ad89fbfd",
+   "race_id": "023e8c57-26d8-5f47-8a27-01ad5157f2d9",
+   "seats": 1,
+   "is_vacant": false,
+   "anchor": {
+    "county": "Los Angeles",
+    "contest_id": "10372",
+    "title": "WALNUT VALLEY WATER DISTRICT Member, Board of Directors, Division 3",
+    "voteFor": "",
+    "note": "",
+    "ballots": 6057,
+    "counties": [
+     "Los Angeles"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 6057
+    }
+   },
+   "count": {
+    "ballots": 6057,
+    "est_outstanding": 261,
+    "safety": 3,
+    "bound": 783,
+    "capped": false,
+    "margin": 2469,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "THERESA LEE",
+     "votes": 3698,
+     "rc_id": "90fba149-a000-4bfd-95ec-ac1f514784e9",
+     "politician_id": "2091d942-0d57-5843-9da0-9fcaa2293e0e",
+     "incumbent": true,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "KENNY SHU",
+     "votes": 1229,
+     "rc_id": "cc72fd2a-6595-45ef-969f-eb9ae65debf4",
+     "politician_id": "035c966b-b822-45a5-983f-b92c2270fac7",
+     "incumbent": false,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [],
+   "warnings": [],
+   "callable": true
+  },
+  {
+   "district": "West Basin Municipal Water District - Division 1",
+   "office_title": "Director (Division 1)",
+   "office_id": "09e9e913-110f-5365-b84e-752bab2662e8",
+   "race_id": "0b9c841e-672b-5d60-a61e-09fca78c3605",
+   "seats": 1,
+   "is_vacant": false,
+   "anchor": {
+    "county": "Los Angeles",
+    "contest_id": "10559",
+    "title": "WEST BASIN MUNICIPAL WATER DISTRICT Member, Board of Directors, Division 1",
+    "voteFor": "",
+    "note": "",
+    "ballots": 68892,
+    "counties": [
+     "Los Angeles"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 68892
+    }
+   },
+   "count": {
+    "ballots": 68892,
+    "est_outstanding": 2968,
+    "safety": 3,
+    "bound": 8904,
+    "capped": false,
+    "margin": 13773,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "TOMMY G. FAAVAE",
+     "votes": 28710,
+     "rc_id": "2f18e81e-f9c5-475d-b207-5c70c15346ae",
+     "politician_id": "939c52a4-660b-5e99-96f5-fae35e94ed01",
+     "incumbent": true,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "TIM ZAJIC",
+     "votes": 14937,
+     "rc_id": "32349d76-439a-42d2-92c5-c371d8bc1d3e",
+     "politician_id": "d1c04936-0434-494c-a022-8ddcfbedc8bb",
+     "incumbent": false,
+     "outcome": "lost"
+    },
+    {
+     "rank": 3,
+     "name": "ANTHONY J. FIDALEO",
+     "votes": 4614,
+     "rc_id": "47999601-942d-4d4b-8f9d-f1e9c7cf5ac1",
+     "politician_id": "66006d00-a0fe-4101-aa9f-1634c7c23f14",
+     "incumbent": false,
+     "outcome": "lost"
+    },
+    {
+     "rank": 4,
+     "name": "DEIRDRE BADAL",
+     "votes": 3036,
+     "rc_id": "d0df5bf2-2428-43d9-afb6-aeeb581a1027",
+     "politician_id": "c8a9e40c-c476-41f5-9a09-9a2a6df650ae",
+     "incumbent": false,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [],
+   "warnings": [],
+   "callable": true
+  },
+  {
+   "district": "Altadena Library District - Trustee Area 3",
+   "office_title": "Trustee (Trustee Area 3)",
+   "office_id": "6a08d6f1-900c-5675-a346-dbad51c309ea",
+   "race_id": "6e4717b5-99eb-557f-9cee-8778559810eb",
+   "seats": 1,
+   "is_vacant": true,
+   "anchor": {
+    "county": "Los Angeles",
+    "contest_id": "10541",
+    "title": "ALTADENA LIBRARY DISTRICT Member, Board of Trustees, Trustee Area No. 3",
+    "voteFor": "",
+    "note": "",
+    "ballots": 2182,
+    "counties": [
+     "Los Angeles"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 2182
+    }
+   },
+   "count": {
+    "ballots": 2182,
+    "est_outstanding": 94,
+    "safety": 3,
+    "bound": 282,
+    "capped": false,
+    "margin": 179,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "STEPHANIE A. CAPPS",
+     "votes": 806,
+     "rc_id": "8073a4b0-8a3a-483d-a7c8-e2d1cfd833e4",
+     "politician_id": "a55c805d-4b0f-49a6-af2f-cab81d2f652e",
+     "incumbent": false,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "SAMUEL MISTRANO",
+     "votes": 627,
+     "rc_id": "0556598c-d6b4-4f98-a0cd-cf0ce0d8335a",
+     "politician_id": "ed1925e2-3547-4734-88cd-4a199aa41952",
+     "incumbent": false,
+     "outcome": "lost"
+    },
+    {
+     "rank": 3,
+     "name": "STEVEN M. MCCALL",
+     "votes": 263,
+     "rc_id": "d6b3d24e-73dd-4e12-aa52-c7f532a07253",
+     "politician_id": "93d6c699-e153-4988-b73c-c3bbdf312c74",
+     "incumbent": false,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [],
+   "warnings": [],
+   "callable": false
+  },
+  {
+   "district": "La Puente Valley County Water District",
+   "office_title": "Director",
+   "office_id": "cb80e8ac-88b7-5a9c-9d5e-53218aef06ce",
+   "race_id": "9fd4b89b-947c-52e6-b32f-1928b8b84780",
+   "seats": 3,
+   "is_vacant": false,
+   "anchor": {
+    "county": "Los Angeles",
+    "contest_id": "10384",
+    "title": "LA PUENTE VALLEY COUNTY WATER DISTRICT Member, Board of Directors",
+    "voteFor": "Vote for no more than three",
+    "note": "",
+    "ballots": 2841,
+    "counties": [
+     "Los Angeles"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 2841
+    }
+   },
+   "count": {
+    "ballots": 2841,
+    "est_outstanding": 123,
+    "safety": 3,
+    "bound": 369,
+    "capped": false,
+    "margin": 266,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "CESAR J. BARAJAS",
+     "votes": 1357,
+     "rc_id": "33512378-f961-4337-b122-d9bf5c9e73ae",
+     "politician_id": "6e738bc6-1f71-545e-8165-382c62744fbd",
+     "incumbent": true,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "CHARLIE J. CHAVEZ",
+     "votes": 1084,
+     "rc_id": "6b54296c-1b26-4c22-85e9-c2235095130f",
+     "politician_id": "f36bc12d-0c80-4e25-a68f-ac39975ae8d8",
+     "incumbent": false,
+     "outcome": "won"
+    },
+    {
+     "rank": 3,
+     "name": "GEORGENE \"MRS. GEORGIE\" NAVARRETE",
+     "votes": 903,
+     "rc_id": "be1a09f3-422e-4de5-9ecd-b29e931ef4b4",
+     "politician_id": "b3026354-7889-458d-920b-541bc21753fa",
+     "incumbent": false,
+     "outcome": "won"
+    },
+    {
+     "rank": 4,
+     "name": "HENRY P. HERNANDEZ",
+     "votes": 637,
+     "rc_id": "ea62e2fb-492c-470d-8c99-64c3f7bfcc59",
+     "politician_id": "cc0e68aa-78fe-5193-88fb-ddb38be62777",
+     "incumbent": true,
+     "outcome": "lost"
+    },
+    {
+     "rank": 5,
+     "name": "JOHN P. ESCALERA",
+     "votes": 494,
+     "rc_id": "e3b17d51-7a38-463c-97d6-5ce8aed96ece",
+     "politician_id": "22ea3a62-c0dc-59cf-b532-729222cd5bcd",
+     "incumbent": true,
+     "outcome": "lost"
+    },
+    {
+     "rank": 6,
+     "name": "VINCENT M. SANTANA",
+     "votes": 488,
+     "rc_id": "22ad922d-bfd0-4634-aa26-c3774143e818",
+     "politician_id": "1c2fb7bf-7ad5-43e2-b31b-57f510a94951",
+     "incumbent": false,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [],
+   "warnings": [],
+   "callable": false
+  },
+  {
+   "district": "Palmdale Water District - Division 2",
+   "office_title": "Director (Division 2)",
+   "office_id": "460a7685-eeae-5428-bf0c-a11dde374cd0",
+   "race_id": "2a0bc808-af3b-5bdf-9259-9b493c574b66",
+   "seats": 1,
+   "is_vacant": false,
+   "anchor": {
+    "county": "Los Angeles",
+    "contest_id": "10535",
+    "title": "PALMDALE WATER DISTRICT Member, Board of Directors, Division 2",
+    "voteFor": "",
+    "note": "",
+    "ballots": 5888,
+    "counties": [
+     "Los Angeles"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 5888
+    }
+   },
+   "count": {
+    "ballots": 5888,
+    "est_outstanding": 254,
+    "safety": 3,
+    "bound": 762,
+    "capped": false,
+    "margin": 589,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "YVETTE L. GONZALEZ",
+     "votes": 2757,
+     "rc_id": "e66bf05b-a049-423d-8fe3-6adfa5e299a9",
+     "politician_id": "dc5b7491-a083-4b61-99d7-a0171614cae3",
+     "incumbent": false,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "CHRISTINA M. FRAGA-SAENZ",
+     "votes": 2168,
+     "rc_id": "2f7fce98-3bf3-4a85-bf5f-6514e6b95cb8",
+     "politician_id": "ecdb14f4-de9b-4a3f-acbc-c330812fc952",
+     "incumbent": false,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [],
+   "warnings": [],
+   "callable": false
+  },
+  {
+   "district": "Palos Verdes Library District",
+   "office_title": "Trustee",
+   "office_id": "78d592e2-750c-5f5b-aa13-94434ec6f669",
+   "race_id": "1ecc7fec-9e97-5647-a08e-10876da372b2",
+   "seats": 3,
+   "is_vacant": false,
+   "anchor": {
+    "county": "Los Angeles",
+    "contest_id": "10543",
+    "title": "PALOS VERDES LIBRARY DISTRICT Member, Board of Trustees",
+    "voteFor": "Vote for no more than three",
+    "note": "",
+    "ballots": 32897,
+    "counties": [
+     "Los Angeles"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 32897
+    }
+   },
+   "count": {
+    "ballots": 32897,
+    "est_outstanding": 1418,
+    "safety": 3,
+    "bound": 4254,
+    "capped": false,
+    "margin": 1360,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "BETH K. WHITTENBURY",
+     "votes": 13596,
+     "rc_id": "1d3d48e9-7733-4f9a-b001-69daa4c8947e",
+     "politician_id": "13e52de7-720b-5f3a-b3cf-b6e7b61af755",
+     "incumbent": true,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "JONATHAN BEUTLER",
+     "votes": 11034,
+     "rc_id": "ce6d939d-ef95-420e-907b-bcec89657ff0",
+     "politician_id": "686e6290-331b-5f64-8cee-271847bcc909",
+     "incumbent": true,
+     "outcome": "won"
+    },
+    {
+     "rank": 3,
+     "name": "MARIA D. VILLA LATHROP",
+     "votes": 7800,
+     "rc_id": "951fc82f-2211-43d4-8777-adeef423cc88",
+     "politician_id": "ff19481d-777d-457d-a0eb-943ec46482ac",
+     "incumbent": false,
+     "outcome": "won"
+    },
+    {
+     "rank": 4,
+     "name": "GABOR NEMETH",
+     "votes": 6440,
+     "rc_id": "db1b70b3-01b9-425f-a6d0-9356f26412b8",
+     "politician_id": "28e2ee78-49f9-4871-ad04-63e7ac0c6b85",
+     "incumbent": false,
+     "outcome": "lost"
+    },
+    {
+     "rank": 5,
+     "name": "PETER MICHEL",
+     "votes": 6247,
+     "rc_id": "17f31114-a813-49c7-a062-ae020ca1fd97",
+     "politician_id": "5b00e28a-b525-54e9-9d03-72121b0b57d8",
+     "incumbent": false,
+     "outcome": "lost"
+    },
+    {
+     "rank": 6,
+     "name": "LISA BLANK",
+     "votes": 2823,
+     "rc_id": "be4cbf33-fdaa-4be0-b5bd-e3260f41f615",
+     "politician_id": "f0728fdf-a205-42ac-9adc-4b4fd6f089ca",
+     "incumbent": false,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [],
+   "warnings": [],
+   "callable": false
+  },
+  {
+   "district": "San Gabriel Valley Municipal Water District - Division 5",
+   "office_title": "Director (Division 5)",
+   "office_id": "8ab37cd9-c692-5a4a-ab4a-08ef7faa8dd1",
+   "race_id": "f5f465fd-4464-5f67-9e5d-3444478b574a",
+   "seats": 1,
+   "is_vacant": false,
+   "anchor": {
+    "county": "Los Angeles",
+    "contest_id": "10553",
+    "title": "SAN GABRIEL VALLEY MUNICIPAL WATER DISTRICT Member, Board of Directors, Division 5",
+    "voteFor": "",
+    "note": "",
+    "ballots": 9779,
+    "counties": [
+     "Los Angeles"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 9779
+    }
+   },
+   "count": {
+    "ballots": 9779,
+    "est_outstanding": 422,
+    "safety": 3,
+    "bound": 1266,
+    "capped": false,
+    "margin": 674,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "ROBERT GONZALES",
+     "votes": 4723,
+     "rc_id": "fbc2efef-e9c6-4bc7-b68d-128675d2c5a0",
+     "politician_id": "f7a3197c-c73a-4170-9a2d-174f6434c142",
+     "incumbent": false,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "TIZOC CRUZ-GONZALEZ",
+     "votes": 4049,
+     "rc_id": "43376b29-ee28-4e70-9a3e-491379d2bc3d",
+     "politician_id": "43f5a3b9-e381-42f1-adba-aee4da923d56",
+     "incumbent": false,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [],
+   "warnings": [],
+   "callable": false
+  },
+  {
+   "district": "Three Valleys Municipal Water District - Division 3",
+   "office_title": "Director (Division 3)",
+   "office_id": "424d30d7-914c-5d77-9ad4-e40b74b140be",
+   "race_id": "071d19df-6b73-5ef7-b6a0-3dc83b73e856",
+   "seats": 1,
+   "is_vacant": true,
+   "anchor": {
+    "county": "Los Angeles",
+    "contest_id": "10555",
+    "title": "THREE VALLEYS MUNICIPAL WATER DISTRICT Member, Board of Directors, Division 3",
+    "voteFor": "",
+    "note": "",
+    "ballots": 31283,
+    "counties": [
+     "Los Angeles"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 31283
+    }
+   },
+   "count": {
+    "ballots": 31283,
+    "est_outstanding": 1348,
+    "safety": 3,
+    "bound": 4044,
+    "capped": false,
+    "margin": 1145,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "MONICA ALEMAN GIBBS",
+     "votes": 9381,
+     "rc_id": "22373d17-9758-43ca-bd29-81f56c863d01",
+     "politician_id": "78f3afc7-8067-4114-94ff-776dee414a54",
+     "incumbent": false,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "SHERRY SHAW",
+     "votes": 8236,
+     "rc_id": "a9fd6c26-dec6-47db-b45a-7873da8c1869",
+     "politician_id": "a0b54d62-22e7-42ae-bf64-984fae234136",
+     "incumbent": false,
+     "outcome": "lost"
+    },
+    {
+     "rank": 3,
+     "name": "JEFF HANLON",
+     "votes": 7484,
+     "rc_id": "d4db55d7-aa28-486b-9036-2ffc12b1c558",
+     "politician_id": "d2674417-9bee-402e-9209-bdaa513fbdac",
+     "incumbent": false,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [],
+   "warnings": [],
+   "callable": false
+  },
+  {
+   "district": "Valley County Water District",
+   "office_title": "Director",
+   "office_id": "9307fb86-a1f3-56ba-a114-a750437335ec",
+   "race_id": "1c2af33f-2851-5e47-8db9-b3294dbd3e2a",
+   "seats": 3,
+   "is_vacant": false,
+   "anchor": {
+    "county": "Los Angeles",
+    "contest_id": "10397",
+    "title": "VALLEY COUNTY WATER DISTRICT Member, Board of Directors",
+    "voteFor": "Vote for no more than three",
+    "note": "",
+    "ballots": 12777,
+    "counties": [
+     "Los Angeles"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 12777
+    }
+   },
+   "count": {
+    "ballots": 12777,
+    "est_outstanding": 551,
+    "safety": 3,
+    "bound": 1653,
+    "capped": false,
+    "margin": 465,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "JAZMIN LEOS",
+     "votes": 6015,
+     "rc_id": "7932e285-fded-4376-ba44-2c6a0ed7213d",
+     "politician_id": "f4550d05-abc9-5ac7-86b0-f6ccce289787",
+     "incumbent": true,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "DAVID L. MUSE",
+     "votes": 5364,
+     "rc_id": "0ed1bd96-5b14-46da-bcc3-81e87215044d",
+     "politician_id": "62b019e0-eac0-5cce-8ec2-002e596b9b1b",
+     "incumbent": true,
+     "outcome": "won"
+    },
+    {
+     "rank": 3,
+     "name": "ERIK PEÑA",
+     "votes": 4626,
+     "rc_id": "da139d76-a50b-4bc2-a4e3-77aa39ae1557",
+     "politician_id": "7c11d4bf-72b7-464f-879c-6c6a589fa933",
+     "incumbent": false,
+     "outcome": "won"
+    },
+    {
+     "rank": 4,
+     "name": "LENET PACHECO",
+     "votes": 4161,
+     "rc_id": "7bcc654d-d205-479e-a5a8-8d69b86cea94",
+     "politician_id": "a035c666-48cc-5c1c-8855-8d50cbd3328d",
+     "incumbent": true,
+     "outcome": "lost"
+    },
+    {
+     "rank": 5,
+     "name": "JIAMIN LI",
+     "votes": 2021,
+     "rc_id": "eb951daf-a3aa-4be2-93df-f79b49879714",
+     "politician_id": "872518bb-2f57-44a7-b0cb-56a2d557f261",
+     "incumbent": false,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [],
+   "warnings": [],
+   "callable": false
+  },
+  {
+   "district": "Walnut Valley Water District - Division 5",
+   "office_title": "Director (Division 5)",
+   "office_id": "7c6ad5eb-5c66-5533-9ac2-1ecabc1e7478",
+   "race_id": "10a1940e-da4c-55bb-a125-9205377a1dd1",
+   "seats": 1,
+   "is_vacant": false,
+   "anchor": {
+    "county": "Los Angeles",
+    "contest_id": "10374",
+    "title": "WALNUT VALLEY WATER DISTRICT SPECIAL ELECTION Member, Board of Directors, Division 5 (Unexpired term ending December 1, 2028)",
+    "voteFor": "",
+    "note": "",
+    "ballots": 5762,
+    "counties": [
+     "Los Angeles"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 5762
+    }
+   },
+   "count": {
+    "ballots": 5762,
+    "est_outstanding": 249,
+    "safety": 3,
+    "bound": 747,
+    "capped": false,
+    "margin": 113,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "DENNIS YANG",
+     "votes": 2394,
+     "rc_id": "eb66ac5a-341e-4d6b-86fd-3b0f6c1f5ad7",
+     "politician_id": "62241d60-1dcf-4bee-8368-f65563d6f479",
+     "incumbent": false,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "MICHAEL YEN-TING LIN",
+     "votes": 2281,
+     "rc_id": "4d8b613a-59eb-4865-a920-655ba8fbe758",
+     "politician_id": "ad937a57-89d5-5e9a-b35c-abfb9a24eced",
+     "incumbent": true,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [],
+   "warnings": [],
+   "callable": false
+  },
+  {
+   "district": "West Basin Municipal Water District - Division 2",
+   "office_title": "Director (Division 2)",
+   "office_id": "e1e4c2f5-e96b-58aa-baba-917574a80e96",
+   "race_id": "3f60f0e3-4e8f-573d-b7b8-852b4ddc98ab",
+   "seats": 1,
+   "is_vacant": false,
+   "anchor": {
+    "county": "Los Angeles",
+    "contest_id": "10560",
+    "title": "WEST BASIN MUNICIPAL WATER DISTRICT Member, Board of Directors, Division 2",
+    "voteFor": "",
+    "note": "",
+    "ballots": 57515,
+    "counties": [
+     "Los Angeles"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 57515
+    }
+   },
+   "count": {
+    "ballots": 57515,
+    "est_outstanding": 2478,
+    "safety": 3,
+    "bound": 7434,
+    "capped": false,
+    "margin": 2614,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "TYRON D. TURNER",
+     "votes": 20387,
+     "rc_id": "78326c79-b20c-485a-9a98-02477462ecd8",
+     "politician_id": "f32f1c3a-f3de-4905-ac1c-51c95dca91a2",
+     "incumbent": false,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "GLORIA D. GRAY",
+     "votes": 17773,
+     "rc_id": "3c842aac-c783-43e2-bcb0-5dcf4a6e6fed",
+     "politician_id": "7a04bf87-ab95-4ae7-a142-9899662637b1",
+     "incumbent": true,
+     "outcome": "lost"
+    },
+    {
+     "rank": 3,
+     "name": "CAROL RAINES BROWN",
+     "votes": 11311,
+     "rc_id": "e1b54aa8-1aed-41fb-96d5-795fc6d6c13e",
+     "politician_id": "de69f146-c3e5-4f31-8d70-550280ecd737",
+     "incumbent": false,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [],
+   "warnings": [],
+   "callable": false
+  },
+  {
+   "district": "Wrightwood Community Services District",
+   "office_title": "Director",
+   "office_id": "25a12bc5-e862-5f97-8b78-1ef83fd26da7",
+   "race_id": "5c81536d-9f07-5401-a11b-2c3e2d482df3",
+   "seats": 3,
+   "is_vacant": false,
+   "anchor": {
+    "county": "Los Angeles + San Bernardino",
+    "contest_id": "10375 + SB:WRIGHTWOOD COMMUNITY SERVICES DISTRICT MEMBER BOARD OF DIRECTORS",
+    "title": "WRIGHTWOOD COMMUNITY SERVICES DISTRICT Member, Board of Directors + Wrightwood Community Services District Member, Board of Directors",
+    "voteFor": "Vote for no more than three",
+    "note": "combined across 2 counties",
+    "ballots": 1380,
+    "counties": [
+     "Los Angeles",
+     "San Bernardino"
+    ],
+    "per_county_ballots": {
+     "Los Angeles": 71,
+     "San Bernardino": 1309
+    }
+   },
+   "count": {
+    "ballots": 1380,
+    "est_outstanding": null,
+    "safety": 3,
+    "bound": null,
+    "capped": false,
+    "margin": 98,
+    "unopposed": false
+   },
+   "ranked": [
+    {
+     "rank": 1,
+     "name": "ERIN C. DEGROOT",
+     "votes": 621,
+     "rc_id": "54733b5c-96dd-4755-8d7b-d20676f891ff",
+     "politician_id": "c1488832-9356-5fce-a141-01b49125032c",
+     "incumbent": true,
+     "outcome": "won"
+    },
+    {
+     "rank": 2,
+     "name": "WES ZUBER",
+     "votes": 526,
+     "rc_id": "e628a802-df9e-42c5-be14-e4741453c5ad",
+     "politician_id": "d5ce31ed-507f-4f26-b293-83036f48636e",
+     "incumbent": false,
+     "outcome": "won"
+    },
+    {
+     "rank": 3,
+     "name": "RUSS DREW",
+     "votes": 514,
+     "rc_id": "a7c748d8-d0c5-492e-9537-8cf3157d106e",
+     "politician_id": "657df1a7-713f-4391-bf64-92c04abc7d6e",
+     "incumbent": false,
+     "outcome": "won"
+    },
+    {
+     "rank": 4,
+     "name": "DAVID E. SCHOENWETTER",
+     "votes": 416,
+     "rc_id": "23a6d5a6-dbe2-4c71-8dbd-1ac09d0ab3ac",
+     "politician_id": "2ce2810a-25ae-5f59-9347-028ee0c82a62",
+     "incumbent": true,
+     "outcome": "lost"
+    },
+    {
+     "rank": 5,
+     "name": "JASON AGRAZ",
+     "votes": 362,
+     "rc_id": "8defabdf-6ea2-4ffb-b443-1e2d74838f42",
+     "politician_id": "6dba7d10-d9e6-49cf-8008-1140e7402b55",
+     "incumbent": false,
+     "outcome": "lost"
+    }
+   ],
+   "problems": [
+    "spans Los Angeles and San Bernardino; San Bernardino publishes no outstanding-ballot estimate, so the margin cannot be bounded"
+   ],
+   "warnings": [],
+   "callable": false
+  }
+ ]
+}

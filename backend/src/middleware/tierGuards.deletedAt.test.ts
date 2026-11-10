@@ -126,3 +126,32 @@ describe('tier guards agree about deleted_at', () => {
     expect(r.out.code).toBe(403);
   });
 });
+
+/**
+ * The app's apiFetch throws `body.code || body.error`, so the code is what
+ * LocationStep receives. Before it existed the page fell through to "Something
+ * went wrong on our end. Please try again", which no retry could ever fix.
+ * `error` is pinned too: the admin app reads only that field.
+ */
+describe('requireConnected says WHY it refused', () => {
+  it('no Connected profile -> CONNECTED_REQUIRED', async () => {
+    rowResult.current = { data: null, error: null };
+    const r = res();
+    await requireConnected(req, r as never, () => {});
+
+    expect(r.out.code).toBe(403);
+    expect(r.out.body).toEqual({ error: 'Connected account required', code: 'CONNECTED_REQUIRED' });
+  });
+
+  it('unverified Connected profile -> CONNECTED_UNVERIFIED', async () => {
+    rowResult.current = { data: { id: 'p1', verification_status: 'pending' }, error: null };
+    const r = res();
+    await requireConnected(req, r as never, () => {});
+
+    expect(r.out.code).toBe(403);
+    expect(r.out.body).toEqual({
+      error: 'Verified Connected account required',
+      code: 'CONNECTED_UNVERIFIED',
+    });
+  });
+});

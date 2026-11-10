@@ -1,0 +1,35 @@
+{
+  "_comment": [
+    "Framing flags from scripts/check-portrait-framing.mjs that a person has already looked at.",
+    "KEYED ON (url, sha256), and the HASH IS THE LOAD-BEARING HALF: our storage overwrites a",
+    "file in place at the same URL, so a URL-keyed record would go on muting that path after a",
+    "completely different picture was uploaded to it. Any change to the bytes lapses the entry",
+    "and the picture is judged again from scratch.",
+    "",
+    "kind \"defect\"   = a real manufactured surround, still published, NOT YET RE-SOURCED. This",
+    "                  is a WORK QUEUE. It is listed TODO on every run and the number should",
+    "                  only ever go down.",
+    "kind \"accepted\" = a real photograph this gate is wrong about, with the reason written out.",
+    "",
+    "A defect filed as an acceptance is a defect nobody will ever fix. Do not move one across",
+    "to make a red build green.",
+    "",
+    "DRAINED 2026-11-10 by CC_0384: all 11 defects this file opened with are gone from production.",
+    "Nine were replaced (two state seals, four oval crops, one arched mask, two pillarboxed, one",
+    "letterboxed) and two were blanked, because no rectangular portrait of them exists at a usable",
+    "size. The one entry left is an ACCEPTANCE and always was."
+  ],
+  "measured": "2026-11-09 over all 9,481 published headshots (both columns); the 11 defects it found were fixed by CC_0384 on 2026-11-10",
+  "entries": [
+    {
+      "kind": "accepted",
+      "name": "Che' Alexander",
+      "politician_id": "4a806638-f957-4d31-add3-d775f346a9d7",
+      "url": "https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/4a806638-f957-4d31-add3-d775f346a9d7-headshot.jpg",
+      "sha256": "4dd1521fb76cbf5386fefa7337a928c14a88c8b006b78bf398008c55edcf21db",
+      "detector": "BORDER",
+      "why": "a real cut-out portrait on plain white. The BORDER branch cannot tell a uniform BACKGROUND from a FRAME when the subject reaches no edge: every edge line is flat white, so all four \"border depths\" are real and there is no frame.",
+      "first_seen": "2026-11-09"
+    }
+  ]
+}

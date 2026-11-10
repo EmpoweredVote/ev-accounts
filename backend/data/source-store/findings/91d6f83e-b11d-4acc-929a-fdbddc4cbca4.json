@@ -1,0 +1,33 @@
+{
+  "politician_id": "91d6f83e-b11d-4acc-929a-fdbddc4cbca4",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site treasury.ms.gov: site search for 'voter' and 'election' returned no results; swearing-in page (https://treasury.ms.gov/2024/01/04/sworn-in-for-second-term-as-state-treasurer/) confirms the office and mentions no voting topic; nothing on the subject",
+        "legislature bill pages: not applicable, statewide officer (not a legislator)",
+        "blocked: https://ballotpedia.org/David_McRae (Ballotpedia refuses fetches; not tried)",
+        "web searches: name + treasurer + voter ID / election / citizenship; questionnaire / voter guide 2023; photo ID / voter ID / SAVE Act / proof of citizenship; interview + election integrity / voter rolls; Magnolia Tribune / Y'all Politics / Mississippi Free Press + voter. No hit shows him speaking on the subject",
+        "not reviewed: Magnolia Tribune interview reprinted at https://www.starherald.net/mcrae-seeking-third-term-mississippis-state-treasurer-6a69095281e67 (snippet shows it covers re-election, state finances and the pension system; not fetched)",
+        "not reviewed (refused by robots rules, lead only): mississippitoday.org candidate and voter-guide pages",
+        "scope confirmed: state treasurer, re-elected 2023, term to January 2028 (own office page)"
+      ],
+      "found": 0,
+      "at": "2026-11-05T22:40:55.405Z",
+      "by": "search-ms-2026-11-05"
+    }
+  ]
+}

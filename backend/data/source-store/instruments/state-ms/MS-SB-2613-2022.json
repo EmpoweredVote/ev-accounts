@@ -1,0 +1,38 @@
+{
+  "id": "MS-SB-2613-2022",
+  "scope": "state:ms",
+  "title": "SB 2613 (2022 Regular Session): Voter registration; require verification of an applicant's U.S. citizenship.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2022/pdf/history/SB/SB2613.xml",
+    "https://billstatus.ls.state.ms.us/documents/2022/pdf/SB/2600-2699/SB2613IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec. 1(2)\n(quote) These rules and regulations shall prescribe the procedure for verifying an applicant's United States citizenship either: (a) Through the Statewide Elections Management System; or (b) By inspection of at least one (1) document, the list of which shall include, but not be limited to, a birth certificate, social security card and military identification card.\n(section) Sec. 2 (23-15-33)(1)\n(quote) The registrar shall verify that an applicant for registration to vote is eligible to be an elector according to the rules and regulations promulgated by the Secretary of State. No person shall be registered as provided in subsections (2) and (3) of this section unless the registrar verifies his eligibility.\n(section) Sec. 3 (23-15-165)(2)(e)\n(quote) Verify that an applicant who is registering to vote in such county is a United States citizen.\n(e_other_rule)\n(section) Sec. 1(1)\n(quote) The Secretary of State shall promulgate rules and regulations for a registrar's verification of a person's eligibility to be an elector under Section 23-15-11.\n(other) Sec. 2 (23-15-33): registrar verifies eligibility per Secretary of State rules; absentee applications processed through the Statewide Elections Management System\n(other) Sec. 3 (23-15-165): Statewide Elections Management System reprinted with citizenship-verification duty (e)",
+  "sponsors": [
+    {
+      "name": "Sojourner",
+      "role": "prime",
+      "version": "SB2613IN"
+    },
+    {
+      "name": "McDaniel",
+      "role": "co",
+      "version": "SB2613IN"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

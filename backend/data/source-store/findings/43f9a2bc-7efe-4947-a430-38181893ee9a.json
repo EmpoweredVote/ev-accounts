@@ -1,0 +1,136 @@
+{
+  "politician_id": "43f9a2bc-7efe-4947-a430-38181893ee9a",
+  "findings": [
+    {
+      "id": "cd3216275172be20155d3ab82fcb3db09e6032b3a47df5f6f2bc45ff21a71ed4",
+      "kind": "own-words",
+      "url": "https://www.ohiohouse.gov/assets/people/2974/newsletters/7811.pdf",
+      "date": "2023-07",
+      "date_precision": "month",
+      "passage": "Ohio voter ID laws may have changed since you last voted. There are still several types of valid identification, but all ID cards must have a photo.",
+      "note": "Constituent newsletter issued under the member's name (July 2023), informing voters that valid ID for voting must carry a photo and listing accepted cards. It gives information and does not state a view on the law.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T15:10:16.731Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0902e7fa76fc3542f273b3e0dca071180960f9dfbff7bf0c1b0df8b3faad7385",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_mohamed_ismail_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.685Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "730a6b22119baaeca4679f9ddecfeae85a89635c34995cd13d24f8df728ef61c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "nay",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_mohamed_ismail_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.685Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5d326e89edf5091ea0ff50afe14346565ee0d633bc08602a7061dddab8b599d",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_mohamed_ismail_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.685Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "SJR 10 photo ID amendment",
+        "HB 458"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "House member page https://ohiohouse.gov/members/ismail-mohamed confirms Ismail Mohamed, House District 3",
+        "member news list page 1 (Jul-Dec 2025) and the headlines on the member page: nothing on the subject",
+        "member newsletter PDF https://www.ohiohouse.gov/assets/people/2974/newsletters/7811.pdf (one voter-ID passage saved)",
+        "member release of 2024-05-30 on HB 1 (about ballot-initiative rules; no voter ID; the passage touching green card holders was cut short by the fetch tool and not saved; curl of the page returned 403: blocked: https://ohiohouse.gov/members/ismail-mohamed/news/republicans-power-grab-a-continued-assault-on-peoples-right-to-hold-government-accountable-120167)",
+        "web searches: voter ID, proof of citizenship/noncitizen, HB 458, SJR 10, questionnaire: no own words on the subject other than the newsletter",
+        "blocked: ballotpedia.org (listed as refusing fetches, not tried)",
+        "blocked: bluevoterguide.org (not tried)",
+        "blocked: https://www.legislature.ohio.gov/legislation/135/hb470 (certificate error)",
+        "not reviewed: campaign site (none found by search)"
+      ],
+      "found": 1,
+      "at": "2026-11-06T15:10:16.731Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 3,
+      "at": "2026-11-06T16:28:34.685Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}

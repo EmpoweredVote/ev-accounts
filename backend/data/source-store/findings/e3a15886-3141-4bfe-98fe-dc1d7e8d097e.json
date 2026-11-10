@@ -1,0 +1,176 @@
+{
+  "politician_id": "e3a15886-3141-4bfe-98fe-dc1d7e8d097e",
+  "findings": [
+    {
+      "id": "e7216ce57d4846aa8a87c8d34bd7cdf5600ce8f4f8b1101ff0675b264f999a0f",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/darnell-t-brewer/news/rep-brewer-condemns-the-signing-of-the-anti-voter-bill-that-will-establish-needless-barriers-and-silences-the-will-of-the-people-113098",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "passage": "Ohio now joins the legion of states delivering needless voting restrictions in making the privilege of voting disproportionately difficult, especially for communities of color.",
+      "note": "Release in his name on HB 458 (strict photo ID and other election changes) becoming law; he describes the bill's voting restrictions as needless and hard on communities of color.",
+      "subjects": [
+        "voter ID at the polls",
+        "election law restrictions (HB 458)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:19:52.290Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "beead10b5d5c81662b7c8b393b5488466c39dc7ed0e205c13e8087d9014cbfd0",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/darnell-t-brewer/news/rep-brewer-condemns-the-signing-of-the-anti-voter-bill-that-will-establish-needless-barriers-and-silences-the-will-of-the-people-113098",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "passage": "From the beginning, HB 458 was rushed through the Ohio House Government Oversight committee where witness testimony was drastically limited and the impact of strict voter ID laws and the limitations on how and where Ohioans vote was never given proper consideration.",
+      "note": "Same release: he says HB 458 was rushed in committee and the effects of strict voter ID laws were not properly considered.",
+      "subjects": [
+        "voter ID at the polls",
+        "HB 458 process"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:19:52.290Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5737c03423eeabd5670fb0a61adc1fcd89774928e3a5d6128441f4d9e6338798",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hcr18/actions/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 73-20) on H. C. R. No. 18, from the Ohio Legislature's own actions record, which lists each member by id (rep_brewer_darnell_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.682Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0902e7fa76fc3542f273b3e0dca071180960f9dfbff7bf0c1b0df8b3faad7385",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_brewer_darnell_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.682Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "730a6b22119baaeca4679f9ddecfeae85a89635c34995cd13d24f8df728ef61c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb293/actions/",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-293-2025",
+      "act": "nay",
+      "motion": "House: Passed",
+      "note": "OH House floor roll call (Passed, tally 61-30) on S. B. No. 293, from the Ohio Legislature's own actions record, which lists each member by id (rep_brewer_darnell_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.682Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5d326e89edf5091ea0ff50afe14346565ee0d633bc08602a7061dddab8b599d",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_brewer_darnell_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.682Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "voter-roll checks",
+        "election integrity",
+        "Issue 3 photo ID amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "member news list https://ohiohouse.gov/members/darnell-t-brewer/news (16 items, only the 2023 release found via search is on the subject)",
+        "4 web searches: voter ID/photo ID, Issue 3/SJR 10, questionnaire/voter guide",
+        "blocked: curl https://ohiohouse.gov/members/darnell-t-brewer/news/...-113098 returned 403 (page read once with the fetch tool instead; quoted pieces returned by it)",
+        "blocked: https://ballotpedia.org (not fetched, listed as refusing)",
+        "blocked: bluevoterguide.org and justfacts.votesmart.org (not fetched, listed as refusing)"
+      ],
+      "found": 2,
+      "at": "2026-11-06T16:19:52.290Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 4,
+      "at": "2026-11-06T16:28:34.682Z",
+      "by": "identity-oh-2026-11-06"
+    }
+  ]
+}

@@ -25,7 +25,287 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "540604787908d39c8c97abbcf5c160c1d7e8df2723c4e30b986cc37fc7693fbf",
+      "kind": "own-words",
+      "url": "https://www2.ljworld.com/news/2016/oct/30/voter-guide-kansas-house-district-44-barbara-balla/",
+      "date": "2016-10-30",
+      "date_precision": "day",
+      "passage": "“Voting is a right of citizens of the United States and the state should not make the right to vote a difficult process,” she said. “We know that fraud is almost nonexistent, so why is the state making it difficult for folks to vote in Kansas?”",
+      "note": "Quoted in the Lawrence Journal-World 2016 voter guide, in the section on the state's photo ID and proof-of-citizenship voting rules. She says voting is a citizens' right, says fraud is almost nonexistent, and asks why the state makes voting hard.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "voter fraud claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:55:17.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c4338a77b3aba428947279af06cd61e61cdf9a7e779c7a2e8d9568cae10778af",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/house/legislative_days/day045_20250320/vote_records/0275_HB2020.odt",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "nay",
+      "motion": "House: Concurred with amendments",
+      "note": "House roll call as printed ('Ballard'), linked to Barbara Ballard (district 44) via the official 2025 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "15ffcf50f1b7935fe0c6bdf49e7087bc510628682927c604c8503e4c8437a2b0",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20110329104238_907523.odt",
+      "date": "2011-03-29",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2067-2011",
+      "act": "yea",
+      "motion": "House: On motion of Rep. Schwab the House concurred in Senate amendments to HB 2067.",
+      "note": "House roll call as printed ('Ballard'), linked to Barbara Ballard (district 44) via the official 2011 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a845abe974e44bdb542479990b09856b104058162b04fb66853a8a73490e6e2f",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2014/b2013_14/measures/hb2281/",
+      "date": "2013",
+      "date_precision": "year",
+      "instrument_id": "KS-HB-2281-2013",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced (hb2281_00_0000.pdf); no later version exists on the legislature site",
+      "note": "Named as co sponsor ('Ballard') on the official bill text, summary or journal; linked to Barbara Ballard via the official 2013 member roll of the House (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f983fdee907036e59f055061e70a2938b4146c82aa2602ba0b86afdcdbbd8ee1",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20120223102421_762384.odt",
+      "date": "2012-02-23",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2012",
+      "act": "nay",
+      "motion": "House: HB 2437, AN ACT concerning elections; relating to voting; changing effective date of United States citizenship requirements; amending K.S.A. 2011 Supp. 25-2309, 25-2908 and 65-2418 ... was considered on final action. (The bill passed, as amended.)",
+      "note": "House roll call as printed ('Ballard'), linked to Barbara Ballard (district 44) via the official 2012 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c219fe3754d2a4205c7f4df7b0eee9545951604494d4cca3e305ee08fdc67c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day051_20260326/vote_records/0342_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "House: Conference Committee Report was adopted",
+      "note": "House roll call as printed ('Ballard'), linked to Barbara Ballard (district 44) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1eb42db9bde1e358d45830781df62725c9ce8abcb4f9a4b11b626d8974c58e80",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day053_20260409/vote_records/0408_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "House: Motion to override veto prevailed",
+      "note": "House roll call as printed ('Ballard'), linked to Barbara Ballard (district 44) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d78e075f99a6894d381835920e3c20b2e83e350f416352edaa8f164c0df580f1",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day023_20260212/vote_records/0067_HB2448.odt",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2448-2026",
+      "act": "nay",
+      "motion": "House: Emergency Final Action - Passed as amended",
+      "note": "House roll call as printed ('Ballard'), linked to Barbara Ballard (district 44) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db5f0de06ff5f665bbc68602e97997e4bcb23fae56790f0a906ca6a6d65c5fd2",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20120503112313_679546.odt",
+      "date": "2012-05-03",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-129-2011",
+      "act": "yea",
+      "motion": "House: On motion of Rep. Schwab, the conference committee report on H Sub for SB129 was adopted.",
+      "note": "House roll call as printed ('Ballard'), linked to Barbara Ballard (district 44) via the official 2012 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "826954d8ea499a0525f7998c672c0f480035d3c319de37f9d9912b9e94a6ced3",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20110323103652_433149.odt",
+      "date": "2011-03-23",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-129-HSUB-2011",
+      "act": "yea",
+      "motion": "House: SB 129, AN ACT concerning elections; amending K.S.A. 25-321, 25-2203, 25-2352 ... was considered on final action. (The substitute bill passed, as amended.)",
+      "note": "House roll call as printed ('Ballard'), linked to Barbara Ballard (district 44) via the official 2011 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "84d9aac109c04936170ec10eace4f6532d10bf748a66e8165115410dd6336e81",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20120509105352_921338.odt",
+      "date": "2012-05-09",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-17-2011",
+      "act": "nay",
+      "motion": "House: SB 17, AN ACT concerning elections; relating to voter identification requirements; amending K.S.A. 2011 Supp. 25-2309, 25-2908 and 65-2418 ... was considered on final action. (The substitute bill passed, as amended.)",
+      "note": "House roll call as printed ('Ballard'), linked to Barbara Ballard (district 44) via the official 2012 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.942Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity in general",
+        "ease of voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page (House District 44, Douglas County): nothing on the subject",
+        "Lawrence Journal-World 2016 voter guide: her own quoted words on voting found",
+        "no campaign site found by search",
+        "blocked: https://ballotpedia.org (known to refuse fetches; not tried)",
+        "blocked: kansasreflector.com (known to refuse fetches; not tried)",
+        "two web searches on name plus voter ID, citizenship, voting, advance ballots: only the 2016 guide had her words"
+      ],
+      "found": 1,
+      "at": "2026-11-04T16:55:17.793Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 10,
+      "at": "2026-11-04T19:13:24.942Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
 }

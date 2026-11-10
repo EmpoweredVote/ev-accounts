@@ -1,0 +1,244 @@
+{
+  "politician_id": "71a28a20-f6c4-4bd5-8738-aa5e39faf280",
+  "findings": [
+    {
+      "id": "b073621c230a104e50c9a2e12a9405849ea3c1dcd89afd2e64033fe7b2c3db42",
+      "kind": "own-words",
+      "url": "https://www.mpbonline.org/blogs/news/shield-act-heads-to-tate-reeves-after-mississippi-lawmakers-approve-voter-verification-bill/",
+      "date": "2026-03-25",
+      "date_precision": "day",
+      "passage": "“It’s a solution in search of a problem,” Johnson said. “Look, nobody can point to me one issue of voter fraud in Mississippi that is raised to the level of needing a law. None. I can’t even think of one.”",
+      "note": "Quoted by Mississippi Public Broadcasting on SB 2588 (SHIELD Act: citizenship check at registration and annual check of the voter roll). Date is the article date (page shows March 25 and an update March 26, 2026); the day he spoke is not stated.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SHIELD Act citizenship checks of voter rolls",
+        "non-citizen voting claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:51:50.797Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b172a5865275a37aa6b767627023233cde520f5af397e4a27b5c8ff2894ec3e3",
+      "kind": "own-words",
+      "url": "https://magnoliatribune.com/?p=93192",
+      "date": "2023-03-28",
+      "date_precision": "day",
+      "passage": "“There’s a section in here that says a registered voter who has failed to vote at least once in any election, or update his registration during a period that begins in a presidential preference, you put all of these requirements on a person that’s registered to vote,” Johnson said.",
+      "note": "Quoted by Magnolia Tribune (article date) in House debate on the conference report for HB 1310 (2023), arguing against its rule on voters who do not vote or update their registration. Voter-roll item, not an ID rule.",
+      "subjects": [
+        "voter-roll maintenance",
+        "removal of inactive voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:51:50.797Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3d3891cebf221b52fc2885e7022089da8c2e671842b4eebcf997b2cd48b35add",
+      "kind": "own-words",
+      "url": "https://magnoliatribune.com/?p=93192",
+      "date": "2023-03-28",
+      "date_precision": "day",
+      "passage": "“In this day, two days after a whole town got wiped out, we’re getting ready to make a whole town, a whole county, inactive cause they’re not going to vote. For what?” Johnson said.",
+      "note": "Quoted by Magnolia Tribune (article date) in the same HB 1310 (2023) debate, after a tornado had destroyed a town; objects to making voters inactive for not voting.",
+      "subjects": [
+        "voter-roll maintenance",
+        "removal of inactive voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ms-2026-11-05",
+        "fetched_at": "2026-11-05T22:51:50.797Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d4e868964ed4d56fc32ec792437d9901a88084d804cae2d0686301c5384c34af",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/house/0850033.pdf",
+      "date": "2022-03-29",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "yea",
+      "motion": "House: The conference report on H. B. No. 1510 was adopted by the following vote: (0850033)",
+      "note": "House roll call as printed ('Johnson'), linked to Robert L. Johnson III (district 94) via the official 2022 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.749Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4fbba305f72e29d24d1602007a4a0beb2ae18d76c403cda48443134f7aacc0ba",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2021/pdf/votes/house/0370056.pdf",
+      "date": "2021-02-10",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-586-2021",
+      "act": "nay",
+      "motion": "House: H. B. No. 586 passed by the following vote: (0370056)",
+      "note": "House roll call as printed ('Johnson'), linked to Robert L. Johnson III (district 94) via the official 2021 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.749Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76693f0a7705839bf231662b486b6624deeab73f388da465d8847c745c23a11e",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2018/pdf/votes/house/0360024.pdf",
+      "date": "2018-02-06",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-804-2018",
+      "act": "nay",
+      "motion": "House: H. B. No. 804 passed by the following vote: (0360024)",
+      "note": "House roll call as printed ('Johnson (94th)'), linked to Robert L. Johnson III (district 94) via the official 2018 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.749Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0e3ccc7efbb92d42261b606c1c421cd32e3980d1e4d30f0d422eba716bc1e872",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2012/pdf/votes/house/1150004.pdf",
+      "date": "2012-04-26",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-921-2012",
+      "act": "nay",
+      "motion": "House: The House concurred in the Senate amendment to H. B. No. 921 by the following vote: (1150004)",
+      "note": "House roll call as printed ('Johnson'), linked to Robert L. Johnson III (district 94) via the official 2012 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.749Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f83d0028419134d578f055f22fbb42fc2269d0d95536e5a2081a180daf0e758",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/house/0940041.pdf",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "yea",
+      "motion": "House: S. B. No. 2576 passed by the following vote: (0940041)",
+      "note": "House roll call as printed ('Johnson'), linked to Robert L. Johnson III (district 94) via the official 2024 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.749Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2147cca7436b02fc328055efc537138f61a5635591caea67c88f498332726704",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0580038.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "nay",
+      "motion": "House: S. B. No. 2588 passed by the following vote: (0580038)",
+      "note": "House roll call as printed ('Johnson'), linked to Robert L. Johnson III (district 94) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.749Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act / SHIELD Act",
+        "voter-roll maintenance (HB 1310, 2023)",
+        "candidate questionnaire"
+      ],
+      "places": [
+        "identity confirmed: https://billstatus.ls.state.ms.us/members/house/johnson.xml (Robert L. Johnson III, House District 94) and https://www.mpbonline.org/blogs/news/shield-act-heads-to-tate-reeves-after-mississippi-lawmakers-approve-voter-verification-bill/ (names him as House minority leader)",
+        "On the Record (0 meetings)",
+        "https://www.mpbonline.org/blogs/news/shield-act-heads-to-tate-reeves-after-mississippi-lawmakers-approve-voter-verification-bill/",
+        "https://magnoliatribune.com/?p=93192",
+        "https://www.mississippifreepress.org/annual-citizenship-checks-of-mississippi-voter-rolls-headed-to-governors-desk-with-shield-act/ (no Robert Johnson quote)",
+        "https://www.mississippifreepress.org/?p=72117 (2004 voter ID story: its Johnson quotes are from a different person, the NAACP president; not used)",
+        "web searches: name + voter ID/photo ID/citizenship, SHIELD/SAVE Act, voter rolls, House floor: no own words on photo ID found; a 2012 vote against the voter ID law is a record (linked separately)",
+        "blocked: https://www.natchezdemocrat.com/2012/06/18/miss-counts-how-many-lack-id/ (403)",
+        "blocked: https://ballotpedia.org (listed per instructions, not fetched)",
+        "not reviewed: https://mississippitoday.org interviews and https://www.wlbt.com (refused by robots); https://www.mshousedems.org/leadership (not opened)"
+      ],
+      "found": 3,
+      "at": "2026-11-05T22:51:50.797Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 6,
+      "at": "2026-11-05T23:52:51.749Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

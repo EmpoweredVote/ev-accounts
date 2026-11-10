@@ -1,0 +1,70 @@
+{
+  "_what": "The 2020-census population and deviation the ENACTED Nebraska plan prints for each district of each board. Read by eye from the Legislative Research Office's official per-district map sheets, which are raster PDFs with no text layer. Each loader checks the ArcGIS layer's POPULATION attribute against the number here, exactly.",
+  "_why": "Nebraska's three boards are redistricted BY MAP REFERENCE (LB 5, LB 7, LB 8 of the 2021 First Special Session name no county), so the usual statute gate does not exist. The county composition comes from the Secretary of State's canvass books (parse-ne-canvass-counties.mjs); this file is the SECOND anchor, and it is the only one that can tell two districts apart when their county sets are identical. State Board of Education 4 and 8 both lie wholly inside Douglas County, as do Regents 4 and 8: the canvass cannot separate either pair, and these populations can.",
+  "_how_to_re_check": "Open the PDF named in `sheets` below, go to the page for the district, and read the 'District N Statistics' box: the Population and % Deviation rows. The numbers were transcribed by hand; the loaders compare them to the GIS attribute exactly, so a transcription slip fails the gate rather than passing silently.",
+  "_the_trap": "🔴🔴 THE FILE CALLED reg_lb8_final.pdf IS NOT THE ENACTED REGENTS PLAN. It was assembled on 2021-09-30, after LB 8 passed, and its sheets carry the date the GIS drew them: 2021-09-25. AM41 was filed AND ADOPTED on 2021-09-28 (Nebraska Legislature bill history for LB 8, DocumentID 46672), and LB 8 passed on Final Reading 46-2-1 on 2021-09-30. So the sheets in the 'final' bundle predate the amendment that passed, and four of the eight districts in it are wrong: it gives District 1 as 242,357 and District 4 as 234,292, against the enacted 248,649 and 237,525, with the differences traded to Districts 5 and 8. The enacted numbers are in reg_lb8_am41.pdf, and the State of Nebraska's own GIS agrees with it on all eight. ▶ A sheet titled 'Final Reading' can predate the amendment that passed. Read the date inside the map frame, not the file name, and check the bill history. And note that LB 8 adopts the plan by the map NAME (REG21-39003-1 … -8) — which AM41 did not change — so the statute cannot tell the two versions apart either.",
+  "measured": "2026-11-07",
+  "stateTotal2020": 1961504,
+  "sheets": {
+    "psc": {
+      "file": "psc_lb5_final.pdf",
+      "url": "https://nebraskalegislature.gov/pdf/maps/2021/psc/psc_lb5_final.pdf",
+      "sha256": "0568e0b1525520c39674990acb2dfa841a45e3286eba4baee90f086c32d4b45c",
+      "sheetDate": "2021-09-29",
+      "plan": "PSC21-39001-1 … PSC21-39001-5, LB 5 (2021 First Special Session)",
+      "ideal": 392301
+    },
+    "sboe": {
+      "file": "ed_lb7_final.pdf",
+      "url": "https://nebraskalegislature.gov/pdf/maps/2021/education/ed_lb7_final.pdf",
+      "sha256": "b74469305df3c340dc07206be0202d0b1987756ba65a288a88e0387afcced746",
+      "sheetDate": "2021-09-29",
+      "plan": "ED21-39003-1 … ED21-39003-8, LB 7 (2021 First Special Session)",
+      "ideal": 245188
+    },
+    "regents": {
+      "file": "reg_lb8_am41.pdf",
+      "url": "https://nebraskalegislature.gov/pdf/maps/2021/regents/reg_lb8_am41.pdf",
+      "sha256": "b78534256da3b063783288512c55dd1f61397376e2d4adf566c27b35f4608ba3",
+      "sheetDate": "2021-09-27",
+      "plan": "REG21-39003-1 … REG21-39003-8, LB 8 (2021 First Special Session) as amended by AM41",
+      "ideal": 245188,
+      "supersedes": {
+        "file": "reg_lb8_final.pdf",
+        "sha256": "c33a8d6c5d07e06c00a4cb8a0f53be62c9b4cb29b679c1aa2e6b56df38022e9e",
+        "sheetDate": "2021-09-25",
+        "why": "pre-AM41; see _the_trap above",
+        "wrongValues": { "1": 242357, "4": 234292, "5": 254335, "8": 248467 }
+      }
+    }
+  },
+  "populations": {
+    "psc": {
+      "1": { "population": 409601, "deviation": 17300, "pctDeviation": 4.41 },
+      "2": { "population": 409738, "deviation": 17437, "pctDeviation": 4.44 },
+      "3": { "population": 387670, "deviation": -4631, "pctDeviation": -1.18 },
+      "4": { "population": 378807, "deviation": -13494, "pctDeviation": -3.44 },
+      "5": { "population": 375688, "deviation": -16613, "pctDeviation": -4.23 }
+    },
+    "sboe": {
+      "1": { "population": 242357, "deviation": -2831, "pctDeviation": -1.15 },
+      "2": { "population": 245478, "deviation": 290, "pctDeviation": 0.12 },
+      "3": { "population": 251837, "deviation": 6649, "pctDeviation": 2.71 },
+      "4": { "population": 245713, "deviation": 525, "pctDeviation": 0.21 },
+      "5": { "population": 237994, "deviation": -7194, "pctDeviation": -2.93 },
+      "6": { "population": 244434, "deviation": -754, "pctDeviation": -0.31 },
+      "7": { "population": 246988, "deviation": 1800, "pctDeviation": 0.73 },
+      "8": { "population": 246703, "deviation": 1515, "pctDeviation": 0.62 }
+    },
+    "regents": {
+      "1": { "population": 248649, "deviation": 3461, "pctDeviation": 1.41 },
+      "2": { "population": 249455, "deviation": 4267, "pctDeviation": 1.74 },
+      "3": { "population": 247971, "deviation": 2783, "pctDeviation": 1.14 },
+      "4": { "population": 237525, "deviation": -7663, "pctDeviation": -3.13 },
+      "5": { "population": 248043, "deviation": 2855, "pctDeviation": 1.16 },
+      "6": { "population": 241365, "deviation": -3823, "pctDeviation": -1.56 },
+      "7": { "population": 243262, "deviation": -1926, "pctDeviation": -0.79 },
+      "8": { "population": 245234, "deviation": 46, "pctDeviation": 0.02 }
+    }
+  }
+}

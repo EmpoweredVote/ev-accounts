@@ -68,6 +68,31 @@
       "found": 1,
       "at": "2026-10-27T16:04:11.519Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "concealed carry permits",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "general statement on gun rights or the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site sosnc.gov, About the Secretary page (confirms her as the state's Secretary of State; nothing on the subject)",
+        "campaign site elainemarshall.com (2010 Senate-race site; home page only, nothing on the subject)",
+        "Washington Examiner 2010 piece on gun rights in Senate races (opened; no statement by her)",
+        "ontheissues.org gun-control page (lead only; it carries a third-party rating and no words of hers)",
+        "legislative sponsor list: not applicable to the statewide office she now holds; no current legislator page",
+        "three web searches on her name plus gun, Second Amendment, permitless carry, 2010 Senate race and debate words: no statement by her found",
+        "not reviewed: video of the October 2010 Senate debate (WRAL listing, https://www.wral.com/video/news/video/8435557/)",
+        "not reviewed: Ballotpedia (returns empty to the fetch tool)"
+      ],
+      "found": 0,
+      "at": "2026-11-06T14:00:24.395Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -8,3 +8,7 @@
 *.toml text eol=lf
 *.sh text eol=lf
 backend/data/source-store/dead-ends.jsonl merge=union
+
+# Spreadsheets are binary. Committed election returns must survive a checkout byte-for-byte.
+*.xlsx binary
+*.xls binary

@@ -148,11 +148,20 @@ second Friday of December 2022 was the **9th**.
 
 `swearing_in_date` is the commencement; `window_end_date` is the window's last day.
 
-▶ **Open decision for the operator.** Seating all 197 at 2026-12-11 shows the incoming member for up
-to two weeks while the predecessor is still lawfully serving. The alternative — each district's
-actual meeting date — **does not exist yet**: § 35143 has each board pick that day at its regular
-meeting immediately *before* 11 December. The commencement is the only answer available today and it
-is the legally correct start of the term.
+🟢 **RULED 2026-11-08 BY THE OPERATOR (Chris Cantrell): "Seat whichever is earliest."**
+**So: seat all 197 at the § 5017 COMMENCEMENT, 2026-12-11** — not at each district's oath.
+No longer an open question; do not re-derive it.
+
+- It is the **legally correct start of the term**, and it is the only date that exists today:
+  § 35143 has each board pick its meeting day at the regular meeting immediately *before*
+  11 December, so the per-district dates cannot be known in advance.
+- ⚠ **The cost of the ruling, stated plainly so nobody reports it as a bug:** between 11 and
+  25 December a seated incoming member can be shown while the predecessor is still lawfully
+  discharging the duties under § 5017's second sentence. That is accepted, not overlooked.
+- `swearing_in_date` stays the commencement and `window_end_date` the window's last day, so the
+  record still says what is a statutory date and what is a window.
+- ▶ **The same rule decides the rest of the programme**: where a term's commencement and the
+  oath are separate events, seat at the EARLIER one.
 
 ---
 

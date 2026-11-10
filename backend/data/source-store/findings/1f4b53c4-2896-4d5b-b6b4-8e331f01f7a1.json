@@ -1,0 +1,152 @@
+{
+  "politician_id": "1f4b53c4-2896-4d5b-b6b4-8e331f01f7a1",
+  "findings": [
+    {
+      "id": "973192fc49ad20e73b43b4297f699045f7871f71151e124d635cd521f1255a9f",
+      "kind": "own-words",
+      "url": "https://thebeaconnews.org/stories/2024/10/09/nick-hoheisel-and-christine-pruitt-running-for-kansas-statehouse",
+      "date": "2024-10-09",
+      "date_precision": "day",
+      "passage": "Yes. I believe it’s crucial to uphold strict deadlines for ballot counting. This change ensures that all ballots are received and processed on time. Given the current reliability issues with USPS, I encourage mail voters to use ballot drop boxes to ensure their votes are counted.",
+      "note": "His answer in The Beacon candidate Q&A on ending the mail-ballot three-day grace period. Related topic only; no ID or citizenship content. Date is the article date.",
+      "subjects": [
+        "mail-ballot deadline"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T16:43:05.709Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a180dac9fbe82db0f7ed1e12eb5a8927f8abd4f868ef36e3cf40bf126221dbed",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/house/legislative_days/day045_20250320/vote_records/0275_HB2020.odt",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "House: Concurred with amendments",
+      "note": "House roll call as printed ('Hoheisel'), linked to Nick Hoheisel (district 97) via the official 2025 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.936Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba7a4d666ff4f78f90fc1c3060009b25057e446b4bc7846bcf906e1cf07d44b3",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day051_20260326/vote_records/0342_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "House: Conference Committee Report was adopted",
+      "note": "House roll call as printed ('Hoheisel'), linked to Nick Hoheisel (district 97) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.936Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21f55a599c11a6bfd03cc0b661541d4440ff0a0808ab91e9abc25020cfb5fc94",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day053_20260409/vote_records/0408_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "House: Motion to override veto prevailed",
+      "note": "House roll call as printed ('Hoheisel'), linked to Nick Hoheisel (district 97) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.936Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45a6a0e651989653960fc97af7759af58ffb11d0dd3f56bdfeab65bb700b032e",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day023_20260212/vote_records/0067_HB2448.odt",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2448-2026",
+      "act": "yea",
+      "motion": "House: Emergency Final Action - Passed as amended",
+      "note": "House roll call as printed ('Hoheisel'), linked to Nick Hoheisel (district 97) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.936Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "voter-roll checks",
+        "mail-ballot deadline"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature page https://www.kslegislature.gov/legislators/rep_hoheisel_nick_1/ (House District 97, Sedgwick County)",
+        "blocked: https://ballotpedia.org",
+        "The Beacon Wichita 2024 candidate Q&A",
+        "Facebook page named as campaign site: not reviewed: https://www.facebook.com/RepHoheisel/",
+        "news search on name plus subject words (nothing further)"
+      ],
+      "found": 1,
+      "at": "2026-11-04T16:43:05.709Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T19:13:24.936Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

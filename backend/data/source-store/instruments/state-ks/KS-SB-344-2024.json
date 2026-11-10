@@ -1,0 +1,33 @@
+{
+  "id": "KS-SB-344-2024",
+  "scope": "state:ks",
+  "title": "SB 344 (2023-2024 biennium (2024 Regular Session)): SB 344 Requiring voter verification of identity when returning an advance voting ballot. (printed long title: AN ACT concerning elections; relating to advance voting ballots; requiring voter verification of identity when transmitting such ballots to the county election office; amending K.S.A. 25-1121 and 25-1123 and K.S.A. 2023 Supp. 25-1124 and repealing the existing sections.)",
+  "urls": [
+    "https://www.kslegislature.gov/li_2024/b2023_24/measures/sb344/",
+    "https://www.kslegislature.gov/b2023_24/bills/download/?apn=b2023_24/year2/ready_for_publication/sb_344/sb344_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy)\n(section) K.S.A. 25-1123(c) as printed in Sec. 2 (existing text reprinted; no new-word marking seen on rendered page 3)\n(quote) (c) The county election officer shall compare the driver's license number, nondriver's identification card number or copy of other valid identification provided by a voter to the voter registration list verified by the division of vehicles in accordance with federal law. If no identification information was provided by the voter or if such information does not match the information on the voter registration list, the county election officer shall transmit a provisional advance voting ballot.\n(c_mail_ballot_id)\n(section) K.S.A. 25-1121(d) as printed in Sec. 1 (rendered page 1 shows this subsection in new-word type)\n(quote) (d) The secretary of state shall prescribe the form of the voter identity verification to be included with each advance voting ballot. The verification form shall be separate from the advance voting ballot and contain appropriate space for the voter's government-issued photo identification information. A voter identity verification shall require the voter's name and date of birth and the voter's government-issued photo identification number and expiration date.\n(section) K.S.A. 2023 Supp. 25-1124(a) as printed in Sec. 3 (words in italics are new on the rendered page)\n(quote) If the advance voting ballot was transmitted by mail, the voter, personally, shall place the ballot in the ballot envelope bearing the same number as the ballot, complete the voter identity verification form and place it in the same ballot envelope with the ballot and seal the envelope.\n(section) K.S.A. 2023 Supp. 25-1124(b) as printed in Sec. 3 (new words italic on the rendered page)\n(quote) (b) The county election officer shall attempt to contact each person who submits an advance voting ballot where there is no signature or where, the signature does not match with the signature on file, the voter failed to complete the voter identity verification form or such form is incomplete and allow such voter the opportunity to correct the deficiency before the commencement of the final county canvass.\n(section) K.S.A. 2023 Supp. 25-1124(h) as printed in Sec. 3 (strike status not checked)\n(quote) and that the voter identity verification form is complete.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) K.S.A. 25-1123(a)(3) as printed in Sec. 2 (strike status not checked)\n(quote) (3) If the advance voting ballot is transmitted by mail, such ballot shall be transmitted with printed instructions prescribed by the secretary of state, a voter identity verification form bearing the same number as the number of the ballot and a ballot envelope bearing upon the outside the same number as the number of the ballot and a printed form as described in K.S.A. 25-1120, and amendments thereto, and the same number as the number of the ballot.\n(other) Sec. 1 K.S.A. 25-1121: forms and envelopes for advance ballots; signature blocks; envelope statement on signing for a person unable to sign.\n(other) Sec. 3 K.S.A. 2023 Supp. 25-1124: voting and transmitting an advance ballot; assistance rules; candidate bar; signature verification of mailed ballots.\n(other) Sec. 4-5: repealer and effective date on publication in the statute book.",
+  "sponsors": [
+    {
+      "name": "Senate Committee on Federal and State Affairs",
+      "role": "prime",
+      "version": "As introduced (sb344_00_0000); only version."
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-04)",
+    "fetched_at": "2026-11-04",
+    "method": "curl"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "politician_id": "9343ebd1-1d85-486b-a71f-a9a9736c0650",
+  "findings": [
+    {
+      "id": "ff08f7a0fdb5eaee3e5d1d2c42777bdeac65a7affc0cb9f7915c4db6ea53ed5f",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2022/pdf/votes/senate/0860019.pdf",
+      "date": "2022-03-30",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1510-2022",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Report of Conference Committee on H. B. No. 1510 was adopted: (0860019)",
+      "note": "Senate roll call as printed ('Simmons S. (13th)'), linked to Sarita Simmons (district 13) via the official 2022 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9843aa07be43e576f58c663963ae19b85d2585b3f0c37f86f69fc6e94abdc947",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2024/pdf/votes/senate/0720054.pdf",
+      "date": "2024-03-13",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2576-2024",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS On S. B. No. 2576. On motion of Senator England, the rules were suspended, the bill considered engrossed, read the third time and, the yeas and nays being taken, it passed, title standing as stated, by the following vote: (0720054)",
+      "note": "Senate roll call as printed ('Simmons S. (13th)'), linked to Sarita Simmons (district 13) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0bdc8f5070b1cefc73be1a5428135fb80819d0b830c979903e9a69d3e5147f46",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/votes/senate/0770004.pdf",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2588-2026",
+      "act": "nay",
+      "motion": "Senate: YEAS AND NAYS. The yeas and nays being taken, the Senate concurred in the foregoing House Amendment to S. B. No. 2588 by the following vote: (0770004)",
+      "note": "Senate roll call as printed ('Simmons S. (13th)'), linked to Sarita Simmons (district 13) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ms-2026-11-05",
+        "fetched_at": "2026-11-05T23:52:51.757Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "SHIELD Act voter-roll checks",
+        "election integrity",
+        "early voting"
+      ],
+      "places": [
+        "in scope: https://ivoterguide.com/candidate/47288/race/8324/election/716 names her as a Senate District 13 candidate; search results show her as the sitting District 13 senator since 2020 (the legislature member page could not be found at the guessed addresses, 404)",
+        "On the Record (0 meetings)",
+        "https://ivoterguide.com/candidate/47288/race/8324/election/716 (2019 questionnaire: photo ID item present, every item shows did not answer)",
+        "https://www.mississippifreepress.org/sen-simmons-response-gov-phil-bryants-proclamation/ (2016 page, article body missing, unclear which senator, nothing on the subject)",
+        "blocked: Ballotpedia (not fetched, refuses our fetches)",
+        "no official or campaign site or newsletter found",
+        "web searches (6) on name with voter ID, photo ID, proof of citizenship, SAVE Act, SHIELD Act, questionnaire, voting rights, early voting, Mississippi Free Press, Magnolia Tribune: nothing of her own words on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-05T22:55:16.247Z",
+      "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MS legislature bill pages, journals and roll calls in bills/ms-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 3,
+      "at": "2026-11-05T23:52:51.757Z",
+      "by": "identity-ms-2026-11-05"
+    }
+  ]
+}

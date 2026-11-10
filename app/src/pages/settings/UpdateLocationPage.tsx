@@ -1,12 +1,23 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useAuthStore } from '../../store/authStore';
+import LocationRecheckNotice from '../../components/LocationRecheckNotice';
+import { apiFetch } from '../../lib/api';
 import { LocationStep, type LocationResult } from '../onboarding/steps/LocationStep';
 
 export default function UpdateLocationPage() {
   const navigate = useNavigate();
   const { updateUser } = useAuthStore();
   const [confirmed, setConfirmed] = useState<LocationResult | null>(null);
+  // CA_0369: say why we are asking, when we are. Saving the address resets the server's
+  // resolved_at, which clears the flag on the next /me.
+  const [needsConfirmation, setNeedsConfirmation] = useState(false);
+
+  useEffect(() => {
+    apiFetch<{ location_needs_confirmation?: boolean }>('/account/me')
+      .then((me) => setNeedsConfirmation(me.location_needs_confirmation === true))
+      .catch(() => {});
+  }, []);
 
   function handleSuccess(result: LocationResult) {
     updateUser({ locationConsent: true });
@@ -57,6 +68,11 @@ export default function UpdateLocationPage() {
         >
           ← Back
         </button>
+        {needsConfirmation && (
+          <div className="mt-2">
+            <LocationRecheckNotice showLink={false} />
+          </div>
+        )}
       </div>
       <LocationStep isUpdate onSuccess={handleSuccess} />
     </div>

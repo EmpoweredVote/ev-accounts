@@ -1,0 +1,33 @@
+{
+  "id": "MS-SB-2633-2025",
+  "scope": "state:ms",
+  "title": "SB 2633 (2025 Regular Session): Register to vote; require proof of citizenship and 2 proofs of address.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2025/pdf/history/SB/SB2633.xml",
+    "https://billstatus.ls.state.ms.us/documents/2025/pdf/SB/2600-2699/SB2633IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec. 1 (23-15-11(1)(a))\n(quote) is eligible to register to vote, if he or she: (a) Is a citizen of the United States of America, and can provide at least one (1) form of documentation that shall serve as proof of citizenship.\n(section) Sec. 1 (23-15-11(1)(a))\n(quote) For the purpose of this section, proof of citizenship shall include: (i) The voter's birth certificate or a legible photocopy of the birth certificate; (ii) A United States passport, or a legible photocopy of the pertinent pages of the passport, identifying the voter and showing the passport number;\n(section) Sec. 1 (23-15-11(1)(a))\n(quote) or (iv) Any document or method of proof of citizenship established by the federal Immigration Reform and Control Act of 1986, Public Law 99-603, compiled in 8 U.S.C.\n(e_other_rule)\n(section) Sec. 1 (23-15-11(1)(c))\n(quote) and can provide, at minimum, two (2) forms of proof of address.\n(section) Sec. 1 (23-15-11(1)(c))\n(quote) For the purpose of this section, proof of address shall include: (i) Valid Mississippi driver's license; (ii) Valid state issued ID; (iii) Current bank statement; (iv) Current cell phone bill; (v) Current utility bill;\n(section) Sec. 1 (23-15-11(2))\n(quote) shall be a qualified elector in and for the county, municipality and voting precinct of his or her residence, and shall be entitled to vote at any election upon compliance with Section 23-15-563.\n(section) Sec. 2 (23-15-13)\n(quote) As part of the voter registration transfer application, the voter shall provide proof of address as required by Section 23-15-11(1)(c).\n(other) Sec. 2 (23-15-13): moving electors must give proof of address when transferring registration\n(other) Sec. 3: effective date",
+  "sponsors": [
+    {
+      "name": "Hill",
+      "role": "prime",
+      "version": "SB2633IN"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

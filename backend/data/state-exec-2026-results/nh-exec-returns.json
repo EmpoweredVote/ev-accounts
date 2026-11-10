@@ -1,0 +1,164 @@
+{
+ "body": "New Hampshire Executive Council",
+ "electionDate": "2026-11-03",
+ "source": "New Hampshire Secretary of State, 2026 General Election Results, \"Executive Council District N\" workbooks (https://www.sos.nh.gov/2026-general-election-results), retrieved 2026-11-08",
+ "caveat": "The Secretary of State states that these tallies reflect the returns reported by clerks and are subject to change if clerks submit amendments. They are returns, not a certified canvass.",
+ "crossCheck": "the towns listed on each return sheet equal the towns RSA 662:2 assigns to that district, both directions",
+ "districts": [
+  {
+   "district": 1,
+   "electionDate": "2026-11-03",
+   "towns": 112,
+   "ballotsCounted": 124813,
+   "writeIns": 86,
+   "candidates": [
+    {
+     "name": "Luz Bay",
+     "party": "Democratic",
+     "partyLetter": "d",
+     "votes": 64227,
+     "pct": 51.46,
+     "status": "won"
+    },
+    {
+     "name": "Joseph D. Kenney",
+     "party": "Republican",
+     "partyLetter": "r",
+     "votes": 60500,
+     "pct": 48.47,
+     "status": "lost"
+    }
+   ],
+   "winner": "Luz Bay",
+   "margin": 3727,
+   "marginPct": 2.99,
+   "resultStatus": "called",
+   "sha256": "7b90b2511c504b418ce9abedaac034615c5aaf67d66b55fc4a17b77b177c2cff",
+   "distinctPlaces": 91
+  },
+  {
+   "district": 2,
+   "electionDate": "2026-11-03",
+   "towns": 98,
+   "ballotsCounted": 125665,
+   "writeIns": 104,
+   "candidates": [
+    {
+     "name": "Karen Liot Hill",
+     "party": "Democratic",
+     "partyLetter": "d",
+     "votes": 81364,
+     "pct": 64.75,
+     "status": "won"
+    },
+    {
+     "name": "Tobin Menard",
+     "party": "Republican",
+     "partyLetter": "r",
+     "votes": 44197,
+     "pct": 35.17,
+     "status": "lost"
+    }
+   ],
+   "winner": "Karen Liot Hill",
+   "margin": 37167,
+   "marginPct": 29.58,
+   "resultStatus": "called",
+   "sha256": "49dbae0a064a7caa96f2bf09d705887068be2fe5ce1242fcbe3d6714451a1772",
+   "distinctPlaces": 81
+  },
+  {
+   "district": 3,
+   "electionDate": "2026-11-03",
+   "towns": 36,
+   "ballotsCounted": 134936,
+   "writeIns": 68,
+   "candidates": [
+    {
+     "name": "Lisa Kennedy Sheldon",
+     "party": "Democratic",
+     "partyLetter": "d",
+     "votes": 70251,
+     "pct": 52.06,
+     "status": "won"
+    },
+    {
+     "name": "Janet Stevens",
+     "party": "Republican",
+     "partyLetter": "r",
+     "votes": 64617,
+     "pct": 47.89,
+     "status": "lost"
+    }
+   ],
+   "winner": "Lisa Kennedy Sheldon",
+   "margin": 5634,
+   "marginPct": 4.18,
+   "resultStatus": "called",
+   "sha256": "7ae23cf7d789448be0db561d86d979e2efe1b5cdc4db05f6b3220cf1694c9d4c",
+   "distinctPlaces": 32
+  },
+  {
+   "district": 4,
+   "electionDate": "2026-11-03",
+   "towns": 31,
+   "ballotsCounted": 113151,
+   "writeIns": 64,
+   "candidates": [
+    {
+     "name": "Jim O'Connell",
+     "party": "Democratic",
+     "partyLetter": "d",
+     "votes": 60540,
+     "pct": 53.5,
+     "status": "won"
+    },
+    {
+     "name": "John Stephen",
+     "party": "Republican",
+     "partyLetter": "r",
+     "votes": 52547,
+     "pct": 46.44,
+     "status": "lost"
+    }
+   ],
+   "winner": "Jim O'Connell",
+   "margin": 7993,
+   "marginPct": 7.06,
+   "resultStatus": "called",
+   "sha256": "7f135b3eb5c1142863829bd0e226e14ee8dd48db7ce5654f6a62a249a5e5d1ee",
+   "distinctPlaces": 20
+  },
+  {
+   "district": 5,
+   "electionDate": "2026-11-03",
+   "towns": 43,
+   "ballotsCounted": 120402,
+   "writeIns": 75,
+   "candidates": [
+    {
+     "name": "Melanie Levesque",
+     "party": "Democratic",
+     "partyLetter": "d",
+     "votes": 64712,
+     "pct": 53.75,
+     "status": "won"
+    },
+    {
+     "name": "Dave Wheeler",
+     "party": "Republican",
+     "partyLetter": "r",
+     "votes": 55615,
+     "pct": 46.19,
+     "status": "lost"
+    }
+   ],
+   "winner": "Melanie Levesque",
+   "margin": 9097,
+   "marginPct": 7.56,
+   "resultStatus": "called",
+   "sha256": "c09316d30e06c04fc0a3e137239a945e1d63e2155b928f0ec24232af97a3bdca",
+   "distinctPlaces": 35
+  }
+ ]
+}

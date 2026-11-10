@@ -25,7 +25,184 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "d7c49cedf64606cadb1b0a1fb6b4e6e46bb4ca8a0e5d3cfd71a3f02f347710de",
+      "kind": "own-words",
+      "url": "https://digital-release.ksn.com/?p=2443518",
+      "date": "2025-02-05",
+      "date_precision": "day",
+      "passage": "This amendment is truly a great step forward for election integrity and security.",
+      "note": "Speaker's statement after the House passed HCR 5004, the constitutional amendment limiting voting to citizens. Quoted by KSN/KSNT (Colter Robinson); same wording in the Yahoo copy. The same release also has him saying he was happy to pass the amendment 'to further ensure that the constitutional right to vote here in Kansas is left to citizens only' (only part-sentences could be retrieved, so not saved as a passage).",
+      "subjects": [
+        "citizen-only voting constitutional amendment",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:02:51.720Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4e18f37338352db922ea031bdc784da8d90aaa9dbf208bfed5c81be2a4d1c78c",
+      "kind": "own-words",
+      "url": "https://1350kman.com/2023/02/conspiracies-fuel-gop-switch-on-kansas-ballot-grace-period",
+      "date": "2023-02-23",
+      "date_precision": "day",
+      "passage": "All you've got to do is read the papers and what you guys say. I mean, people do question the fraud all the time. Is there fraud? I think actually we're a fairly good state. But we can always make things better.",
+      "note": "Remarks to reporters before the House vote to end the mail-ballot grace period. Quoted in a Kansas Reflector story carried by 1350kman (article dated 2023-02-24; vote on the Thursday). Related election-integrity talk, not ID itself.",
+      "subjects": [
+        "mail-ballot grace period",
+        "election integrity",
+        "election fraud concerns"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:02:51.720Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a180dac9fbe82db0f7ed1e12eb5a8927f8abd4f868ef36e3cf40bf126221dbed",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/house/legislative_days/day045_20250320/vote_records/0275_HB2020.odt",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "House: Concurred with amendments",
+      "note": "House roll call as printed ('Hawkins'), linked to Daniel Hawkins (district 100) via the official 2025 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.936Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba7a4d666ff4f78f90fc1c3060009b25057e446b4bc7846bcf906e1cf07d44b3",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day051_20260326/vote_records/0342_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "House: Conference Committee Report was adopted",
+      "note": "House roll call as printed ('Hawkins'), linked to Daniel Hawkins (district 100) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.936Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21f55a599c11a6bfd03cc0b661541d4440ff0a0808ab91e9abc25020cfb5fc94",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day053_20260409/vote_records/0408_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "House: Motion to override veto prevailed",
+      "note": "House roll call as printed ('Hawkins'), linked to Daniel Hawkins (district 100) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.936Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45a6a0e651989653960fc97af7759af58ffb11d0dd3f56bdfeab65bb700b032e",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day023_20260212/vote_records/0067_HB2448.odt",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2448-2026",
+      "act": "yea",
+      "motion": "House: Emergency Final Action - Passed as amended",
+      "note": "House roll call as printed ('Hawkins'), linked to Daniel Hawkins (district 100) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.936Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "citizen-only voting amendment",
+        "mail-ballot grace period / election integrity",
+        "advance voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr run with name)",
+        "status check: sitting House Speaker, the other caucus candidate for Insurance Commissioner on 2026-11-03 per KCUR 2026-09-22 piece; race uncalled",
+        "campaign site danhawkinskansas.com (home, about, issues page): nothing on the subject",
+        "legislature member page: not reviewed: https://www.kslegislature.gov/li/b2025_26/members/rep_hawkins_dan_1/ (404, URL pattern does not exist)",
+        "KSN/KSNT and Yahoo copies of the HCR 5004 House-passage story (own quote found)",
+        "1350kman.com copy of the 2023 grace-period story (own quote found)",
+        "KCUR 2026-02-24 House election bills story: no Hawkins quote",
+        "KWCH 2025-05-13 announcement story: nothing on the subject",
+        "Lawrence Times 2022-12-06: reporter paraphrase only, not saved",
+        "blocked: https://kansasreflector.com/2025/05/13/kansas-house-speaker-launches-campaign-for-insurance-commissioner-with-pro-trump-rhetoric-1/",
+        "blocked: https://ballotpedia.org (not fetched, listed per instructions)",
+        "web searches (6): name + voter ID, proof of citizenship, election integrity, mail ballot/advance voting, questionnaire/voter guide, campaign site",
+        "not reviewed: iVoterGuide evaluation (not published in results)"
+      ],
+      "found": 2,
+      "at": "2026-11-04T17:02:51.720Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T19:13:24.936Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
 }

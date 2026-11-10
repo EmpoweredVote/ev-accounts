@@ -1,0 +1,196 @@
+{
+  "politician_id": "c8e9bf01-f0f1-4b48-b11a-d3207a0ea6d3",
+  "findings": [
+    {
+      "id": "33c51e9fc45d64e0d30e764f4c2142a4f13d6a8f64a90528fd986c97ed4f2d34",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/48701/race/18118/election/907",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "I strongly support our state's Voter ID laws.",
+      "note": "In her iVoterGuide questionnaire for the 2022 attorney general race, she answered 'Strongly Disagree' to the statement 'People should be able to vote without photo identification' and added this sentence. Exact questionnaire date not shown on the page.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:00:55.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b788929d1edf119c4207e1ae6c872a73048d05c067f2ff5de9f403e77d8488c",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/48701/race/18118/election/907",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "In the Kansas Senate, I've voted to strengthen election security and prohibit private donations like \"Zuckerbucks\" to election offices. As Attorney General, I will aggressively investigate and prosecute voter fraud.",
+      "note": "Her answer to 'What laws would you propose to change present voting practices?' in the same 2022 questionnaire.",
+      "subjects": [
+        "election security laws",
+        "voter fraud enforcement",
+        "private donations to election offices"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:00:55.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2d3ed3fab265ac6b2223b875348973b7b696bdb86b44d50af1ba6764085af5de",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/48701/race/18118/election/907",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "I strongly reject attempts by the far-left to smear conservatives as \"racist\" for supporting policies like requiring voter ID at the polls.",
+      "note": "From her answer on racism in the same 2022 questionnaire; she names voter ID at the polls as a policy she backs.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:00:55.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "16fc367b6ae612e9858d0804c70069da9a41e059381a62d495fc2173fe7e9422",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_191_HB2020.odt",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "Senate: Emergency Final Action As Amended",
+      "note": "Senate roll call as printed ('Warren'), linked to Kellie Warren (district 11) via the official 2025 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53cc439c8ba13aae8525c4a82092d677fe52f2aa3e4773008814268e4fad0c47",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Warren'), linked to Kellie Warren (district 11) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "26fc0eac68c90037c402f6af64ad21e632b079f7491d447d2551656187b6c5c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Warren'), linked to Kellie Warren (district 11) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "773a23f2ab30c456870279e3a5e51881ec013b5fc572b2fa03296b427529d0f8",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/vote/?apn=b2023_24/year2/senate/legislative_days/day039_20240305/vote_records/vote_100_SB365.odt",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-365-2024",
+      "act": "nay",
+      "motion": "Senate: Final Action - Not passed",
+      "note": "Senate roll call as printed ('Warren'), linked to Kellie Warren (district 11) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.949Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "election security laws",
+        "voter fraud enforcement",
+        "proof of citizenship"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official page: https://www.kslegislature.gov/li/b2025_26/members/sen_warren_kellie_1/ (confirms Senate District 11)",
+        "KC Voter Guide 2024 (KCUR) Senate District 11: https://www.kcur.org/kcvoterguide2024/kansas/senate-district-11 (nothing on the subject; confirms she is the 2024 incumbent)",
+        "iVoterGuide 2022 attorney general questionnaire",
+        "campaign sites kelliewarren.com and kelliewarrenforkansas.com: no response (connection failed)",
+        "Kansas Public Radio 2022 article: reporter paraphrase only, not her own words",
+        "blocked: Ballotpedia (not fetched, listed as refusing)",
+        "blocked: kansasreflector.com (not fetched, listed as refusing)",
+        "web searches: name + voter ID / proof of citizenship / election integrity / newsletter / local papers (3 run)",
+        "committee testimony: not reviewed, none located in search"
+      ],
+      "found": 3,
+      "at": "2026-11-04T17:00:55.766Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T19:13:24.949Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

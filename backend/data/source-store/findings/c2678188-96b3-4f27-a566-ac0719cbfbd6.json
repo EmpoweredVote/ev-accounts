@@ -25,7 +25,331 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "7c7e6a5dea67edd8225b1923a45077ec89607d6c367babd6085b7c629c703f78",
+      "kind": "own-words",
+      "url": "https://www.sentinel-times.com/node/34111",
+      "date": "2025-03-24",
+      "date_precision": "day",
+      "passage": "The bill would direct the Secretary to compare the list provided by the Director with the voter registration rolls and investigate and then direct the county election officer to remove the names of any non-citizens that appear on the voter registration rolls within five business days. The bill would require the county election officer to notify such person that they may be reinstated on the voter registration rolls by providing proof of their citizenship.  \nHB 2020 passed 32-8.  I voted yes.",
+      "note": "Her '2025 Senate Scene Week 10' column describes HB 2020 (quarterly list of non-citizen driver's licenses checked against voter rolls) and states she voted yes.",
+      "subjects": [
+        "non-citizen removal from voter rolls",
+        "proof of citizenship to be reinstated on rolls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:00:55.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ceaf9ea330bf95f7842e0bedd5015022ee85a034991738a4364622cd9c80043a",
+      "kind": "own-words",
+      "url": "https://hayspost.com/posts/504805e1-e23d-44f2-b774-deafa2567d38",
+      "date": "2024-03-12",
+      "date_precision": "day",
+      "passage": "There was broad support in the Senate for this bill; however other amendments dealing with drop boxes and voter identification and then more concerns emerged over the practical extent of an added amendment that would have required all ballots to be hand-counted.",
+      "note": "Her Senate Scene column on SB 365 (advance ballots due by 7 p.m. on Election Day) says amendments on drop boxes and voter identification were added on the floor; she says the bill failed 18-22 and that she voted no, objecting to unvetted floor amendments.",
+      "subjects": [
+        "advance-ballot return deadline",
+        "voter ID amendment on the Senate floor",
+        "ballot drop boxes"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:00:55.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4cae4fe0b7562d617b7ad4c1b4e6d8216d4f79884d724beafdc169c4a73f7c7d",
+      "kind": "own-words",
+      "url": "https://hayspost.com/posts/504805e1-e23d-44f2-b774-deafa2567d38",
+      "date": "2024-03-12",
+      "date_precision": "day",
+      "passage": "I have seen countless times over the years amendments, which are “unvetted” added to a bill on the floor and then produce unintended consequences.",
+      "note": "Same column: her stated reason for objecting to the floor amendments added to SB 365, which included voter-ID and drop-box changes; she also writes 'The bill failed 18-22. I voted no.'",
+      "subjects": [
+        "voter ID amendment on the Senate floor",
+        "election bills heard in committee first"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:00:55.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "17e4cef1e085ac09475badcc2a50c584cef579c629d2007c3aa2b3a75f79a3ce",
+      "kind": "own-words",
+      "url": "https://www.sentinel-times.com/node/6802",
+      "date": "2022-04-11",
+      "date_precision": "day",
+      "passage": "This topic needs further discussion with Counties and how the boxes and how many are being utilized by our County Clerks in our district – I voted NO until we have more discussion with our local elected officials.",
+      "note": "Her '2022 Senate Scene Week Twelve' column on S Sub for HB 2056 (limits on remote ballot boxes; passed Senate 21-17): she states she voted no pending talks with county officials. The same column describes HB 2717 (bars municipal ID cards as proof of identity, including for voter identification) without stating her own vote.",
+      "subjects": [
+        "ballot drop boxes",
+        "municipal ID cards for voter identification"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "search-ks-2026-11-04",
+        "fetched_at": "2026-11-04T17:00:55.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "16fc367b6ae612e9858d0804c70069da9a41e059381a62d495fc2173fe7e9422",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/senate/legislative_days/day044_20250319/vote_records/vote_191_HB2020.odt",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "yea",
+      "motion": "Senate: Emergency Final Action As Amended",
+      "note": "Senate roll call as printed ('Bowers'), linked to Elaine Bowers (district 36) via the official 2025 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "15ffcf50f1b7935fe0c6bdf49e7087bc510628682927c604c8503e4c8437a2b0",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20110329104238_907523.odt",
+      "date": "2011-03-29",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2067-2011",
+      "act": "yea",
+      "motion": "House: On motion of Rep. Schwab the House concurred in Senate amendments to HB 2067.",
+      "note": "House roll call as printed ('Bowers'), linked to Elaine Bowers (district 107) via the official 2011 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6f049cded5bcfea0b89cdcddd7d9269d75f671c09c8525d3c82b9f0ae9a05eb4",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20120223102421_762384.odt",
+      "date": "2012-02-23",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2012",
+      "act": "yea",
+      "motion": "House: HB 2437, AN ACT concerning elections; relating to voting; changing effective date of United States citizenship requirements; amending K.S.A. 2011 Supp. 25-2309, 25-2908 and 65-2418 ... was considered on final action. (The bill passed, as amended.)",
+      "note": "House roll call as printed ('Bowers'), linked to Elaine Bowers (district 107) via the official 2012 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53cc439c8ba13aae8525c4a82092d677fe52f2aa3e4773008814268e4fad0c47",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day051_20260326/vote_records/vote_308_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Adopt CCR",
+      "note": "Senate roll call as printed ('Bowers'), linked to Elaine Bowers (district 36) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "26fc0eac68c90037c402f6af64ad21e632b079f7491d447d2551656187b6c5c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day053_20260409/vote_records/vote_386_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "yea",
+      "motion": "Senate: Override",
+      "note": "Senate roll call as printed ('Bowers'), linked to Elaine Bowers (district 36) via the official 2026 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db5f0de06ff5f665bbc68602e97997e4bcb23fae56790f0a906ca6a6d65c5fd2",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20120503112313_679546.odt",
+      "date": "2012-05-03",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-129-2011",
+      "act": "yea",
+      "motion": "House: On motion of Rep. Schwab, the conference committee report on H Sub for SB129 was adopted.",
+      "note": "House roll call as printed ('Bowers'), linked to Elaine Bowers (district 107) via the official 2012 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "826954d8ea499a0525f7998c672c0f480035d3c319de37f9d9912b9e94a6ced3",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20110323103652_433149.odt",
+      "date": "2011-03-23",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-129-HSUB-2011",
+      "act": "yea",
+      "motion": "House: SB 129, AN ACT concerning elections; amending K.S.A. 25-321, 25-2203, 25-2352 ... was considered on final action. (The substitute bill passed, as amended.)",
+      "note": "House roll call as printed ('Bowers'), linked to Elaine Bowers (district 107) via the official 2011 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7402ac78d0cb861ab346b86ac8d160bffc362b81a0af03b2d16e383d02d10c6f",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2012/b2011_12/measures/odt_view/je_20120509105352_921338.odt",
+      "date": "2012-05-09",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-17-2011",
+      "act": "yea",
+      "motion": "House: SB 17, AN ACT concerning elections; relating to voter identification requirements; amending K.S.A. 2011 Supp. 25-2309, 25-2908 and 65-2418 ... was considered on final action. (The substitute bill passed, as amended.)",
+      "note": "House roll call as printed ('Bowers'), linked to Elaine Bowers (district 107) via the official 2012 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "773a23f2ab30c456870279e3a5e51881ec013b5fc572b2fa03296b427529d0f8",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/vote/?apn=b2023_24/year2/senate/legislative_days/day039_20240305/vote_records/vote_100_SB365.odt",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-365-2024",
+      "act": "nay",
+      "motion": "Senate: Final Action - Not passed",
+      "note": "Senate roll call as printed ('Bowers'), linked to Elaine Bowers (district 36) via the official 2024 Senate member roll (identity step 2026-11-04).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.946Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen removal from voter rolls",
+        "advance-ballot return deadline",
+        "ballot drop boxes"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official page: https://www.kslegislature.gov/li/b2025_26/members/sen_bowers_elaine_1/ (confirms Senate District 36, Cloud County, 2013-present)",
+        "campaign site elainebowers.com/senate-scenes (page loads only the 2021 wrap-up; nothing on the subject there)",
+        "Sentinel-Times 'News From Kansas Senator Elaine Bowers' columns (2022 week 12, 2025 week 10 read in full)",
+        "Hays Post 2024 Senate Scene column",
+        "blocked: Ballotpedia (not fetched, listed as refusing)",
+        "blocked: kansasreflector.com (not fetched, listed as refusing)",
+        "web searches: name + voter ID / photo ID / proof of citizenship / election / Senate Scene / HB 2020 (5 run)",
+        "committee testimony: not reviewed, no written testimony by the person located in search"
+      ],
+      "found": 4,
+      "at": "2026-11-04T17:00:55.766Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 9,
+      "at": "2026-11-04T19:13:24.946Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
 }

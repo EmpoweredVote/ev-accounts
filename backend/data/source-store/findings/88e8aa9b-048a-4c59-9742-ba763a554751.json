@@ -1,0 +1,142 @@
+{
+  "politician_id": "88e8aa9b-048a-4c59-9742-ba763a554751",
+  "findings": [
+    {
+      "id": "5737c03423eeabd5670fb0a61adc1fcd89774928e3a5d6128441f4d9e6338798",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hcr18/actions/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "instrument_id": "OH-HCR-18-2024",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 73-20) on H. C. R. No. 18, from the Ohio Legislature's own actions record, which lists each member by id (rep_grim_michele_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.683Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0902e7fa76fc3542f273b3e0dca071180960f9dfbff7bf0c1b0df8b3faad7385",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb472/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-472-2026",
+      "act": "nay",
+      "motion": "House: Concurred in Senate amendments",
+      "note": "OH House floor roll call (Concurred in Senate amendments, tally 60-34) on H. B. No. 472, from the Ohio Legislature's own actions record, which lists each member by id (rep_grim_michele_1); linked to the roster by that id (identity step 2026-11-06).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.683Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5d326e89edf5091ea0ff50afe14346565ee0d633bc08602a7061dddab8b599d",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/actions/",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SJR-10-2026",
+      "act": "nay",
+      "motion": "House: Adopted",
+      "note": "OH House floor roll call (Adopted, tally 62-30) on S. J. R. No. 10, from the Ohio Legislature's own actions record, which lists each member by id (rep_grim_michele_1); linked to the roster by that id (identity step 2026-11-06; dated by the legislative session day, as the journal and LegiScan print it).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-oh-2026-11-06",
+        "fetched_at": "2026-11-06T16:28:34.683Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment (SJR 10 / HJR 9)",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot receipt deadline (SB 293)",
+        "voter registration"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "member page https://ohiohouse.gov/members/michele-grim: confirms House District 43; nothing on the subject",
+        "member news list page 1 (May-Oct 2026, incl. June 2026): nothing on the subject",
+        "1 web search (voter ID / Issue 3): found only a Nov 2024 statement on a different ballot issue (https://www.ohiohouse.gov/members/michele-grim/news/rep-grim-says-we-must-fight-to-ensure-voters-freedoms-will-continue-124187), fetched, summary only, not about ID, not saved",
+        "not reviewed: https://ohiohouse.gov/assets/people/2988/newsletters/5627.pdf (compressed PDF, text unreadable; only links to Secretary of State ID pages)",
+        "not reviewed: campaign site (not found)",
+        "blocked: Ballotpedia (not fetched, listed as refusing)",
+        "blocked: bluevoterguide.org",
+        "blocked: justfacts.votesmart.org",
+        "blocked: https://www.legislature.ohio.gov/legislation/134/hb458/committee (page is a script shell, no testimony list returned by curl)",
+        "blocked: web search (the search tool returned: web search budget is used up, limit 200 WebSearch calls per turn, shared by every agent in it) after the searches already run"
+      ],
+      "found": 0,
+      "at": "2026-11-06T15:19:20.732Z",
+      "by": "search-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "Ohio Legislature API (search-prod.lis.state.oh.us) actions and versions records in bills/oh-bills.json (identity step 2026-11-06)"
+      ],
+      "found": 3,
+      "at": "2026-11-06T16:28:34.683Z",
+      "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment (SJR 10)",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot receipt deadline (SB 293)",
+        "voter registration"
+      ],
+      "places": [
+        "5 web searches (name + voter ID/photo ID/SB 293/Issue 3; ohiohouse news voting; Toledo outlets drop box/mail-in): nothing naming her on the subject",
+        "member news list page 1 and Jul 2024-May 2025 page (start=26): only election items are a Nov 2024 reaction to Issue 1 (redistricting measure, not ID) and a Jul 2024 release on the same measure; nothing on ID or citizenship",
+        "https://www.ohiohouse.gov/members/michele-grim/news/rep-grim-says-we-must-fight-to-ensure-voters-freedoms-will-continue-124187 (read; about Issue 1 result, not saved)",
+        "in-the-news list (3 items, 2023): nothing on the subject",
+        "newsletters list (28 issues): blocked: PDFs answer 403 to curl, not retried",
+        "blocked: WTOL race page (403); Toledo Blade 2022 candidacy article (paywalled, no body text)",
+        "no campaign site found",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (listed as refusing, not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-11-06T16:42:06.717Z",
+      "by": "research-oh-r2-2026-11-06"
+    }
+  ]
+}

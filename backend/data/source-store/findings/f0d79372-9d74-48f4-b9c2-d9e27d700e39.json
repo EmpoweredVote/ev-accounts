@@ -1,0 +1,137 @@
+{
+  "politician_id": "f0d79372-9d74-48f4-b9c2-d9e27d700e39",
+  "findings": [
+    {
+      "id": "c4338a77b3aba428947279af06cd61e61cdf9a7e779c7a2e8d9568cae10778af",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year1/house/legislative_days/day045_20250320/vote_records/0275_HB2020.odt",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2020-2025",
+      "act": "nay",
+      "motion": "House: Concurred with amendments",
+      "note": "House roll call as printed ('Schlingensiepen'), linked to Tobias Schlingensiepen (district 55) via the official 2025 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.945Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c219fe3754d2a4205c7f4df7b0eee9545951604494d4cca3e305ee08fdc67c7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day051_20260326/vote_records/0342_HB2437.odt",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "House: Conference Committee Report was adopted",
+      "note": "House roll call as printed ('Schlingensiepen'), linked to Tobias Schlingensiepen (district 55) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.945Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1eb42db9bde1e358d45830781df62725c9ce8abcb4f9a4b11b626d8974c58e80",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day053_20260409/vote_records/0408_HB2437.odt",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2437-2025",
+      "act": "nay",
+      "motion": "House: Motion to override veto prevailed",
+      "note": "House roll call as printed ('Schlingensiepen'), linked to Tobias Schlingensiepen (district 55) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.945Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d78e075f99a6894d381835920e3c20b2e83e350f416352edaa8f164c0df580f1",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day023_20260212/vote_records/0067_HB2448.odt",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2448-2026",
+      "act": "nay",
+      "motion": "House: Emergency Final Action - Passed as amended",
+      "note": "House roll call as printed ('Schlingensiepen'), linked to Tobias Schlingensiepen (district 55) via the official 2026 House member roll (identity step 2026-11-04).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ks-2026-11-04",
+        "fetched_at": "2026-11-04T19:13:24.945Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID and return deadline",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "identity confirmed: https://www.kslegislature.gov/li/b2025_26/members/rep_schlingensiepen_tobias_1/ (House District 55, Shawnee County)",
+        "On the Record (0 appearances)",
+        "official legislature member page (no statements; no personal site listed)",
+        "campaign site tobiasforkansashouse.com home and /priorities (headings: jobs, education, healthcare, tax relief, inclusive Kansas; nothing on the subject)",
+        "WIBW 2022 candidate interview page (no direct quotes on the subject)",
+        "HCR 5021 House Elections testimony dated 2026-01-29 (item _19): signed by a county committee chair, not this person",
+        "blocked: https://bluevoterguide.org/KS/candidate_Tobias_Schlingensiepen/55494 (403)",
+        "blocked: Ballotpedia (listed as refusing fetches per task notes; not tried)",
+        "blocked: kansasreflector.com (listed as refusing fetches per task notes; not tried)",
+        "not reviewed: Facebook https://www.facebook.com/TobiasForKansasHouse and Twitter https://twitter.com/TobiasForKansas",
+        "web searches (6): name + voter ID; name + campaign site/voting rights; name + statements on ID/citizenship/advance voting; name + floor remarks/op-ed 2026 election bills; name + questionnaire/voter guide; nothing on the subject by him"
+      ],
+      "found": 0,
+      "at": "2026-11-04T17:01:19.161Z",
+      "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KS legislature bill pages, journals and roll calls in bills/ks-bills.json (identity step 2026-11-04)"
+      ],
+      "found": 4,
+      "at": "2026-11-04T19:13:24.945Z",
+      "by": "identity-ks-2026-11-04"
+    }
+  ]
+}

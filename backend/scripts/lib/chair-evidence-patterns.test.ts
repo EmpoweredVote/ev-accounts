@@ -110,6 +110,26 @@ describe('NAMES_INSTRUMENT — the seventh widening ("File" states)', () => {
   });
 });
 
+describe('NAMES_INSTRUMENT — the eleventh widening (dotted bill numbers, Ohio)', () => {
+  it('sees a dotted bill or resolution number', () => {
+    for (const s of ['voted Yea on H.B. 472', 'sponsored Sub. S.B. 293', 'S.J.R. 10 would amend the constitution',
+      'co-sponsored H.C.R. 18', 'H.J.R. 2', 'S.C.R. 7', 'On S. B. No. 2548.', 'H. B. No. 586 passed']) {
+      expect(NAMES_INSTRUMENT.test(s), s).toBe(true);
+    }
+  });
+
+  it('sees a numbered HJR, HCR or SCR written without dots', () => {
+    for (const s of ['HJR 2', 'HCR 18', 'SCR7', 'SJR 10']) expect(NAMES_INSTRUMENT.test(s), s).toBe(true);
+  });
+
+  it('refuses the dotted letters without a number', () => {
+    for (const s of ['the H.B. Fuller company', 'a letter from S.C.R. Smith', 'H. Smith spoke against it',
+      'HCR rules apply', 'the S.J.R. was debated']) {
+      expect(NAMES_INSTRUMENT.test(s), s).toBe(false);
+    }
+  });
+});
+
 describe('NAMES_INSTRUMENT — what it must keep refusing', () => {
   it('refuses direction with no instrument, which is the whole point of the gate', () => {
     expect(NAMES_INSTRUMENT.test('She supports better transit and has spoken about it often.')).toBe(false);

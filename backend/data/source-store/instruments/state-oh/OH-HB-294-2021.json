@@ -1,0 +1,166 @@
+{
+  "id": "OH-HB-294-2021",
+  "scope": "state:oh",
+  "title": "HB 294 (2021-2022 (134th General Assembly)): H. B. No. 294: Enact Ohio Election Security and Modernization Act",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/134/hb294",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb294/01_RH/html/",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb294/00_IN/html/"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) R.C. 3509.051(B)(1)\n(quote) The voter shall provide a current and valid photo identification, a military identification, or a copy of a current utility bill, bank statement, government check, paycheck, or other government document, other than a notice of voter registration mailed by a board of elections under section 3503.19 of the Revised Code that shows the name and current address of the voter.\n(section) R.C. 3509.051(B)(2)\n(quote) The voter shall provide the voter's driver's license number or the last four digits of the voter's social security number. The election officials shall verify that the number or digits the voter provides are not different from the number or digits in the voter's registration record.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) R.C. 3509.031(B)(1)(d)-(e) (online absentee application)\n(quote) The elector's Ohio driver's license or state identification card number; The last four digits of the elector's social security number;\n(section) R.C. 3509.04 (identification envelope form)\n(quote) If you do not have or cannot provide a driver's license number or the last four digits of your Social Security number, a copy of a current and valid photo identification, a military identification, or a current utility bill, bank statement, government check, paycheck, or other government document, other than a notice of voter registration mailed by a board of elections, that shows your name and address. If you provide a copy of one of those documents, enclose it in the return envelope along with the identification envelope.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) R.C. 4507.13 / 4506.11 (licence contents)\n(quote) If the licensee is a noncitizen of the United States, a notation designating that the licensee is a noncitizen;\n(section) R.C. 4507.233(A)(2)-(3)\n(quote) The license or card indicates the licensee or cardholder was a noncitizen. At the time of application, the applicant is a United States citizen.\n(other) 3509.031 (new): secure online system for absent voter's ballot applications, window opens Jan 1 or 90 days before election, closes 7th day before\n(other) 3509.051: in-person absent voting schedule and hours\n(other) 3509.05/3509.06/3509.08/3511.xx: absent ballot handling, return deadline moved from tenth to seventh day after election for postmarked ballots\n(other) 3505.19 and 3521.031 (new): limits August special elections to fiscal-emergency cases\n(other) 3506.14/3506.24: voting machine testing/audits\n(other) 4507.233 (new): free replacement licence or ID card for a person who was shown as a noncitizen and is now a citizen\n(other) 3501.xx, 302.03, 323.17, 3513.xx, 3599.21: other election administration changes\n(other) version: 00_IN: carries ID text in slots a-c: reprints and amends 3505.18 (photo ID or utility bill etc. at polls; provisional ballot with licence/ID number or last four SSN, or return within 7 days), in-person early voting ID under 3509.051(B), ID number options on absentee application and envelope; no noncitizen licence notation\n(other) version: 01_RH: drops the 3505.18 amendment (polling-place ID and provisional text no longer in the bill); keeps in-person absent voting ID (3509.051(B)), online application ID numbers (3509.031), absentee envelope ID options (3509.04); adds noncitizen notation on licences and ID cards (4506.11, 4507.13, 4507.51, 4507.52) and free replacement (4507.233)\n(other) note: Sub. H.B. 294 as reported by House committee (7-5, 2022-12-12); never passed the chamber per saved actions. Most ID language reprints existing law with small edits (copy-of-ID options on absentee envelope are existing law reworded). Slot b: 01_RH has no provisional-ballot or no-ID remedy text. Votes array empty in skeleton.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Bill Seitz",
+      "role": "prime",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Sharon A. Ray",
+      "role": "prime",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Cindy Abrams",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Brian Baldridge",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Adam C. Bird",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Rick Carfagna",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Sara P. Carruthers",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Gary Click",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Jon Cross",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Al Cutrona",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Mark Fraizer",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Haraz N. Ghanbari",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Timothy E. Ginter",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Thomas Hall",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Brett Hudson Hillyer",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Adam Holmes",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Don Jones",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Darrell Kick",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Jeff LaRe",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Brian E. Lampton",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "P. Scott Lipps",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Mike Loychik",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Riordan T. McClain",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Phil Plummer",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Tracy M. Richardson",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Craig S. Riedel",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Bill Roemer",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Jean Schmidt",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    },
+    {
+      "name": "Shane Wilkin",
+      "role": "co",
+      "version": "As Reported by the House Government Oversight Committee (01_RH)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-06)",
+    "fetched_at": "2026-11-06",
+    "method": "curl"
+  }
+}

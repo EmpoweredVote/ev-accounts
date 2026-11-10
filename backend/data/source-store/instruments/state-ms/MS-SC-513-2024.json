@@ -1,0 +1,25 @@
+{
+  "id": "MS-SC-513-2024",
+  "scope": "state:ms",
+  "title": "SC 513 (2024 Regular Session): Constitution; amend to prohibit noncitizen voting by Mississippi Citizen Only Voting Amendment (COVA).",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2024/pdf/history/SC/SC0513.xml",
+    "https://billstatus.ls.state.ms.us/documents/2024/pdf/SC/SC0513IN.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Amended Sec. 241\n(quote) Only an inhabitant of this state, except idiots and insane persons, who is a citizen of the United States of America, eighteen (18) years old and upward,\n(section) Ballot explanation\n(quote) eligible voters in local and state elections would be limited to citizens of Mississippi.\n(other) Concurrent resolution proposing amendment of Section 241 of the Mississippi Constitution; election date Nov 2024; ballot explanation says current language leaves an opportunity for noncitizen inhabitants to vote in local and state elections\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "McMahan",
+      "role": "prime",
+      "version": "SC0513IN"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-11-05)",
+    "fetched_at": "2026-11-05",
+    "method": "curl"
+  }
+}

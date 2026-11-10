@@ -221,6 +221,27 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "f643dc5f4a73b26215a5c70a4d1a356c2b6bbcdc0fdac354cecf51a983749fc3",
+      "kind": "own-words",
+      "url": "https://carolinapublicpress.org/26431/understanding-local-needs-conversation-with-rep-kevin-corbin/",
+      "date": "2017-01-25",
+      "date_precision": "day",
+      "passage": "I am very pro-Second Amendment but I am not sure what changes, if any, should come to gun laws.",
+      "note": "Answer in a Carolina Public Press interview, when he sat in the NC House, to whether he wanted changes to NC gun laws, stronger or looser. Date is the article's publication date.",
+      "subjects": [
+        "general statement on gun rights",
+        "changes to state gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-06T00:01:42.900Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -247,6 +268,31 @@
       ],
       "found": 5,
       "at": "2026-10-22T23:33:02.565Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "who may own a gun",
+        "general statement on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Carolina Public Press interview (2017-01-25)",
+        "iVoterGuide 2022 general-election page: gun questions not answered",
+        "Wikipedia page: nothing on the subject",
+        "web searches on name plus gun subject words (SB 50, constitutional carry): no statements found",
+        "Ballotpedia: not reviewed (fetch returns empty)",
+        "official site and campaign site: not found by search"
+      ],
+      "found": 1,
+      "at": "2026-11-06T00:01:42.900Z",
       "by": "source-collector"
     }
   ]
