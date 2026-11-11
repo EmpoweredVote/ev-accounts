@@ -44,6 +44,10 @@
 -- once their tenures are dated correctly race_candidates.is_incumbent must say so:
 --   0c59532f-ae5b-4ef7-bf0a-0f5269095973  Pat Kelly   true -> false
 --   0aec1f87-4b53-48cc-ab2d-4f263a4aed9b  Agur Rios   true -> false
+-- ⚠ That election (2025-11-04) is just outside the one-year window check:incumbency and the
+-- incumbency guard read, so neither would have flagged these two. They are flipped because they are
+-- wrong, not because a gate asked. The guard below was watched failing: pushing John Nustad's
+-- (Longview) date past his in-window race made it raise and name him; the real write passes it.
 --
 -- NOT DONE HERE, reported in the PR: rotating-mayor rows (Burbank, Glendale, Norwalk) whose stored
 -- date is the council start, Blue Ridge's "Place N" labels on at-large seats, and the 62 unknowns.
