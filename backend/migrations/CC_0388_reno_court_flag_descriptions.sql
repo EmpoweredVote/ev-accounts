@@ -60,6 +60,15 @@
 --   Dept 2  sources disagree: the State of Nevada Judicial Directory (AOC, rev. 2026-03-17)
 --           gives it to Randall Soderquist and places Shelly O'Neill at FALLON Municipal
 --           Court; Ballotpedia puts O'Neill in Reno Dept 2. Recorded in CC_0387's header.
+--           🔴 CORRECTION, 2026-11-10 (made by CC_0389): THAT IS NOT WHAT THE DIRECTORY SAYS,
+--           AND THERE WAS NEVER A CONFLICT. The cited revision was read in full on 2026-11-10
+--           and puts Shelly O'Neill in RENO Dept 2 — the same seat Ballotpedia gives her.
+--           Randall Soderquist is in ELKO (Justice/Municipal, Dept. A); Fallon's judge is
+--           Michael R. Lister. The full table and the two traps that explain the misreading
+--           are in CC_0387's header, which this sentence inherited the error from.
+--           ▶ So the description this migration wrote for Dept 2 announced a source conflict
+--           to voters that does not exist. CC_0389 deleted it and seated O'Neill from the
+--           court's own roster. A SOURCE YOU HAVE NOT OPENED IS NOT A SOURCE.
 --   Dept 3  ⚠ NO REASON IS ON RECORD. CC_0387 says only "the bench is unresolved".
 --   Dept 4  ⚠ NO REASON IS ON RECORD, same.
 --
