@@ -72,6 +72,9 @@
 -- among CC_0394's 290 rows. The check only sees the ones with a race in the last year.
 --
 -- Idempotent: every write is guarded on the value it changes.
+--
+-- Applied to production 2026-11-11: 4 race rows -> false, 3 tenures undated. check:incumbency
+-- then read 0 drift rows, and control-reconcile-incumbency.mjs passed.
 
 BEGIN;
 
