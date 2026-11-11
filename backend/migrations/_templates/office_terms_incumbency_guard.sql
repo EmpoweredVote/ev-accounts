@@ -47,9 +47,25 @@
 --    one, before COMMIT.
 -- 4. Your migration must run as ONE transaction (the house `BEGIN; … COMMIT;`). `ON COMMIT DROP`
 --    needs that, and so does the before/after comparison.
+-- 5. State the disposition on the `-- @incumbency-decision:` line in block A.
+--    `npm run check:office-terms-guards --prefix backend` enforces it (CI job "static guards", step
+--    "office-terms incumbency guards"), and it runs ON PULL REQUESTS — which is the entire point,
+--    because `check:incumbency` does not. The two legal values:
+--
+--      gated      the gate below is in this migration. The check then also requires the
+--                 before-snapshot and BOTH halves of the comparison, so a gate on the TOTAL, or one
+--                 with the multi-seat rule simplified away, does not satisfy it.
+--      no-effect  this write cannot move an incumbency answer, and the line says why. The two
+--                 legitimate shapes: every office it touches is BRAND NEW and carries no race, or
+--                 the rows written cover the same election days they covered before.
+--
+--    ⚠ "There are probably no recent races" is NOT a `no-effect`. That is the question the gate's own
+--    NOTICE answers, in numbers, at apply time — and it costs you one paste to ask it properly.
 --
 -- ═══════════════════════════════════════════════════════════════════════════════════════════════
 -- ▼▼ BLOCK A — PASTE BEFORE YOUR FIRST WRITE TO essentials.office_terms ▼▼
+
+-- @incumbency-decision: gated — REPLACE THIS with the disposition and one line of what this writes
 
 -- Snapshot what the cached column says, and what office_terms says, for every race row belonging to
 -- a person this migration touches. `expected` is reconcile-incumbency.mjs's own SQL.

@@ -558,7 +558,12 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
   `CC_0396` to settle them three migrations later. Paste the delta gate from
   `backend/migrations/_templates/office_terms_incumbency_guard.sql` into any migration that writes
   `essentials.office_terms` — it fires only on a row **this transaction** moves from agreeing to
-  contradicting, so other people's drift cannot fail your merge.
+  contradicting, so other people's drift cannot fail your merge. State a
+  `-- @incumbency-decision: <gated|no-effect> — why` line; `npm run check:office-terms-guards --prefix
+  backend` enforces it (CI job "static guards", **which does run on PRs**). 253 applied migrations are
+  grandfathered by number — but a file **added on your branch binds whatever its number is**, because
+  a slot is reserved long before its file exists and `CC_0340` is sitting reserved, unwritten and
+  below every floor for exactly this kind of work.
   ⚠ **Do not answer it with `reconcile-incumbency.mjs --apply`** — it reads only the predicate, and
   on those seven rows it would have published three sitting officeholders as challengers for their
   own seats. ⚠ **The two causes look identical from the row**: a *newcomer* means the date is right

@@ -341,6 +341,22 @@ jobs:
         if: ${{ !cancelled() }}
         run: node backend/scripts/check-answer-delete-guards.mjs
 
+      # --- office-terms incumbency guards ----------------------------------------------------------
+      # 🔴 THIS STEP EXISTS BECAUSE ANOTHER GATE CANNOT RUN HERE. `check:incumbency` reads live
+      # production data, so it rides the `reachability` job and its `github.event_name != 'pull_request'`
+      # — push, schedule and manual dispatch only. On 2026-11-11 CC_0394 dated 290 tenures, which
+      # restated who held those seats on election days the new dates no longer covered, and
+      # race_candidates.is_incumbent is CACHED and does not follow. Master went red on the NEXT merge,
+      # naming an innocent author; CC_0395 added a 7th row and CC_0396 settled them three migrations
+      # downstream. That is the master-only-gate rule in CLAUDE.md, and this is the half that can run
+      # on a PR: it reads TEXT, needs no database, and asks whether the author measured — not what the
+      # measurement says. Dependency-free and carries the same `if:` as its four siblings.
+      - name: office-terms incumbency guards
+        if: ${{ !cancelled() }}
+        run: node backend/scripts/check-office-terms-incumbency-guards.mjs
+        env:
+          BASE_REF: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || '' }}
+
       # --- cal-access predicate tripwire -----------------------------------------------------------
       # `confirm-cal-access.ts` matched Cal-Access committees on the LAST SPACE-DELIMITED TOKEN of
       # full_name, ignoring last_name: "Gracey Van Der Mark" -> "mark" claimed 391 committees. It was
