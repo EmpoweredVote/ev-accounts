@@ -228,5 +228,10 @@ ITS OWN.**
    — and AP's per-state files carry the ballots.
 4. **Seating.** Nobody is seated here. Most of these chambers convene in January 2027 and each
    state's date needs its own authority, the way piece 4 did for California.
+   - ⚠ **Wisconsin: Romaine Quinn (`2dbf3032`) MOVES SEAT, SD-25 → SD-23** (noted 2026-11-10, `CA_0373`).
+     He holds SD-25 today and won SD-23; Erik Severson won SD-25. Seat **both** seats in the same pass
+     with `seat_officeholder`: SD-23 → Quinn, SD-25 → Severson, which closes Quinn's SD-25 term the day
+     before. Seat only SD-23 and he holds two seats; seat neither and the old roster stays live. His
+     race rows are already on `2dbf3032` — the duplicate `a0ea7354` was merged and is inactive.
 5. 🔴 **The other 40 states.** AP has called **5,439** legislative races; we recorded 427 because
    we hold races in nine states. The gap is an office-and-occupancy act, not a results one.
