@@ -1,0 +1,3002 @@
+[
+ {
+  "term_id": "d78a9108-e685-42af-ac5c-1bee2a10a5bc",
+  "who": "Rich Connelly",
+  "seat": "Fairview Council Member Seat 1",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "d78a9108-e685-42af-ac5c-1bee2a10a5bc",
+   "full_name": "Rich Connelly",
+   "verdict": "EARLIER",
+   "earliest_start": "2021-05",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://fairviewtexas.org/government/mayor-town-council/",
+     "quote": "was elected to the Town Council in May 2021."
+    }
+   ],
+   "note": "Town page says elected to council May 2021 (Seat One per page); stored 2024-05 is a re-election."
+  }
+ },
+ {
+  "term_id": "2b1b1b7b-f0ee-4cf3-9736-3dadddde2178",
+  "who": "John Hubbard",
+  "seat": "Fairview Mayor",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   "2025-01-01",
+   "year"
+  ],
+  "kind": "too_early",
+  "research": {
+   "term_id": "2b1b1b7b-f0ee-4cf3-9736-3dadddde2178",
+   "full_name": "John Hubbard",
+   "verdict": "FIRST",
+   "earliest_start": "2025-05",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://fairviewtexas.org/government/mayor-town-council/",
+     "quote": "was elected Mayor of Fairview, Texas, in May 2025, after serving on the Town Council since 2020"
+    }
+   ],
+   "note": "Town page puts his Mayor start at May 2025 (council seat since 2020 is a different seat); stored 2024-05 looks wrong."
+  }
+ },
+ {
+  "term_id": "67e8e624-ffb0-4702-8e21-aaac935368f6",
+  "who": "John Nustad",
+  "seat": "Longview Council Member District 4",
+  "was": [
+   "2026-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "67e8e624-ffb0-4702-8e21-aaac935368f6",
+   "full_name": "John Nustad",
+   "verdict": "EARLIER",
+   "earliest_start": "2023-05",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://longviewtexas.gov/2205/District-4---Kristen-Ishihara",
+     "quote": "Elected: May 2023"
+    }
+   ],
+   "note": "City District 4 page shows first election May 2023; stored 2026-05 is a re-election (our data also has inc=true)."
+  }
+ },
+ {
+  "term_id": "ca0f4cd9-cd4d-4e1f-aefc-0dcf72a6ec11",
+  "who": "Curtis Dorian",
+  "seat": "Richardson Council Member District 1",
+  "was": [
+   "2025-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "ca0f4cd9-cd4d-4e1f-aefc-0dcf72a6ec11",
+   "full_name": "Curtis Dorian",
+   "verdict": "EARLIER",
+   "earliest_start": "2023-05",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://richardsontoday.com/may-6-election-votes-canvassed-new-mayor-council-sworn-in/",
+     "quote": "new to the City Council are Curtis Dorian (Place 1) and Dan Barrios (Place 3)"
+    },
+    {
+     "url": "https://communityimpact.com/richardson/election/dubey-wins-richardson-mayoral-race-dorian-barrios-hutchenrider-earn-city-council-seats/",
+     "quote": "Curtis Dorian won the open seat"
+    }
+   ],
+   "note": "Won open Place 1 in May 2023 and was unopposed in 2025, so the stored 2025-05 start is a re-election."
+  }
+ },
+ {
+  "term_id": "2b96fb76-484e-4a19-bded-05aa5f34851f",
+  "who": "Jennifer Justice",
+  "seat": "Richardson Council Member District 2",
+  "was": [
+   "2025-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "2b96fb76-484e-4a19-bded-05aa5f34851f",
+   "full_name": "Jennifer Justice",
+   "verdict": "EARLIER",
+   "earliest_start": null,
+   "precision": null,
+   "sources": [
+    {
+     "url": "https://richardsontoday.com/may-6-election-votes-canvassed-new-mayor-council-sworn-in/",
+     "quote": "includes returning members Bob Dubey (formerly Place 1, now Mayor—Place 7), Jennifer Justice (Place 2),"
+    },
+    {
+     "url": "https://richardsontoday.com/may-6-election-votes-canvassed-new-mayor-council-sworn-in/",
+     "quote": "Joe Corcoran (Place 4), Ken Hutchenrider (Place 5), and Arefin Shamsul (Place 6)"
+    }
+   ],
+   "note": "Richardson Today (May 2023) lists this member as a returning member of the 2023-25 council in the same Place, so they held the seat before May 2023; true first start not found."
+  }
+ },
+ {
+  "term_id": "fbce97a3-7ae5-4a94-9625-e7b1ebb69ab8",
+  "who": "Dan Barrios",
+  "seat": "Richardson Council Member District 3",
+  "was": [
+   "2025-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "fbce97a3-7ae5-4a94-9625-e7b1ebb69ab8",
+   "full_name": "Dan Barrios",
+   "verdict": "EARLIER",
+   "earliest_start": "2023-05",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://richardsontoday.com/may-6-election-votes-canvassed-new-mayor-council-sworn-in/",
+     "quote": "new to the City Council are Curtis Dorian (Place 1) and Dan Barrios (Place 3)"
+    }
+   ],
+   "note": "New to Place 3 in May 2023 and unopposed in 2025, so stored 2025-05 is a re-election."
+  }
+ },
+ {
+  "term_id": "c7140df9-d39d-4256-a999-edf11e2c0cb6",
+  "who": "Joe Corcoran",
+  "seat": "Richardson Council Member District 4",
+  "was": [
+   "2025-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "c7140df9-d39d-4256-a999-edf11e2c0cb6",
+   "full_name": "Joe Corcoran",
+   "verdict": "EARLIER",
+   "earliest_start": null,
+   "precision": null,
+   "sources": [
+    {
+     "url": "https://richardsontoday.com/may-6-election-votes-canvassed-new-mayor-council-sworn-in/",
+     "quote": "includes returning members Bob Dubey (formerly Place 1, now Mayor—Place 7), Jennifer Justice (Place 2),"
+    },
+    {
+     "url": "https://richardsontoday.com/may-6-election-votes-canvassed-new-mayor-council-sworn-in/",
+     "quote": "Joe Corcoran (Place 4), Ken Hutchenrider (Place 5), and Arefin Shamsul (Place 6)"
+    }
+   ],
+   "note": "Richardson Today (May 2023) lists this member as a returning member of the 2023-25 council in the same Place, so they held the seat before May 2023; true first start not found."
+  }
+ },
+ {
+  "term_id": "0b1668c3-fe12-42b2-a58e-be7d5ac1a3d2",
+  "who": "Ken Hutchenrider",
+  "seat": "Richardson Council Member Place 5",
+  "was": [
+   "2025-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "0b1668c3-fe12-42b2-a58e-be7d5ac1a3d2",
+   "full_name": "Ken Hutchenrider",
+   "verdict": "EARLIER",
+   "earliest_start": null,
+   "precision": null,
+   "sources": [
+    {
+     "url": "https://richardsontoday.com/may-6-election-votes-canvassed-new-mayor-council-sworn-in/",
+     "quote": "includes returning members Bob Dubey (formerly Place 1, now Mayor—Place 7), Jennifer Justice (Place 2),"
+    },
+    {
+     "url": "https://richardsontoday.com/may-6-election-votes-canvassed-new-mayor-council-sworn-in/",
+     "quote": "Joe Corcoran (Place 4), Ken Hutchenrider (Place 5), and Arefin Shamsul (Place 6)"
+    }
+   ],
+   "note": "Richardson Today (May 2023) lists this member as a returning member of the 2023-25 council in the same Place, so they held the seat before May 2023; true first start not found."
+  }
+ },
+ {
+  "term_id": "244a13f5-77dd-478b-8538-e110a7ddba9d",
+  "who": "Arefin Shamsul",
+  "seat": "Richardson Council Member Place 6",
+  "was": [
+   "2025-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "244a13f5-77dd-478b-8538-e110a7ddba9d",
+   "full_name": "Arefin Shamsul",
+   "verdict": "EARLIER",
+   "earliest_start": null,
+   "precision": null,
+   "sources": [
+    {
+     "url": "https://richardsontoday.com/may-6-election-votes-canvassed-new-mayor-council-sworn-in/",
+     "quote": "includes returning members Bob Dubey (formerly Place 1, now Mayor—Place 7), Jennifer Justice (Place 2),"
+    },
+    {
+     "url": "https://richardsontoday.com/may-6-election-votes-canvassed-new-mayor-council-sworn-in/",
+     "quote": "Joe Corcoran (Place 4), Ken Hutchenrider (Place 5), and Arefin Shamsul (Place 6)"
+    }
+   ],
+   "note": "Richardson Today (May 2023) lists this member as a returning member of the 2023-25 council in the same Place, so they held the seat before May 2023; true first start not found."
+  }
+ },
+ {
+  "term_id": "4c573a49-4274-4b00-986e-3a7c062b11e4",
+  "who": "Burt Thakur",
+  "seat": "Frisco Council Member Place 2",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   "2025-01-01",
+   "year"
+  ],
+  "kind": "too_early",
+  "research": {
+   "term_id": "4c573a49-4274-4b00-986e-3a7c062b11e4",
+   "full_name": "Burt Thakur",
+   "verdict": "FIRST",
+   "earliest_start": "2025-06",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://communityimpact.com/dallas-fort-worth/frisco/election/2025/06/07/thakur-elad-win-respective-races-for-2-frisco-city-council-seats/",
+     "quote": "Thakur won over incumbent Tammy Meinershagen in the race for Frisco City Council Place 2."
+    },
+    {
+     "url": "https://www.friscotexas.gov/1969",
+     "quote": "Elected to Frisco City Council: 2025"
+    }
+   ],
+   "note": "New to seat in June 2025 runoff; stored 2024-05 start looks wrong (too early), term should run to May 2028."
+  }
+ },
+ {
+  "term_id": "36b8cb6d-50ec-49b6-9fbe-31082afc033a",
+  "who": "Angelia Pelham",
+  "seat": "Frisco Council Member Place 3",
+  "was": [
+   "2025-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "36b8cb6d-50ec-49b6-9fbe-31082afc033a",
+   "full_name": "Angelia Pelham",
+   "verdict": "EARLIER",
+   "earliest_start": "2021-06-15",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://communityimpact.com/dallas-fort-worth/frisco/city-county/2021/06/15/angelia-pelham-sworn-in-as-newest-frisco-city-council-member",
+     "quote": "Councilwoman Angelia Pelham was sworn in June 15 as the newest member on Frisco City Council."
+    },
+    {
+     "url": "https://communityimpact.com/dallas-fort-worth/frisco/city-county/2021/06/15/angelia-pelham-sworn-in-as-newest-frisco-city-council-member",
+     "quote": "Pelham filled the Place 3 spot held by Will Sowell, who reached his term limit after nine years on City Council."
+    }
+   ],
+   "note": "Took Place 3 in 2021; re-elected May 2024 (Collin May 4 2024 results show Pelham vs Redmond for Place 3)."
+  }
+ },
+ {
+  "term_id": "38507ad3-63ac-4b95-bdc8-91bb4a086dd7",
+  "who": "Laura Rummel",
+  "seat": "Frisco Council Member Place 5",
+  "was": [
+   "2023-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "38507ad3-63ac-4b95-bdc8-91bb4a086dd7",
+   "full_name": "Laura Rummel",
+   "verdict": "EARLIER",
+   "earliest_start": "2022-04",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://www.friscotexas.gov/1773/Laura-Rummel",
+     "quote": "Councilwoman Laura Rummel was elected during a special election in early 2022, re-elected in 2023."
+    },
+    {
+     "url": "https://communityimpact.com/dallas-fort-worth/frisco/election/2022/03/26/laura-rummel-wins-special-runoff-election-for-place-5-on-frisco-city-council",
+     "quote": "Rummel is scheduled to be sworn into office on April 19, according to the city."
+    }
+   ],
+   "note": "Took Place 5 after March 2022 special runoff; stored 2023-05 is a re-election."
+  }
+ },
+ {
+  "term_id": "d62d68ed-1c71-4720-92a3-639efe279e51",
+  "who": "Pam Sardo",
+  "seat": "Josephine Council Member Place 4",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "d62d68ed-1c71-4720-92a3-639efe279e51",
+   "full_name": "Pam Sardo",
+   "verdict": "EARLIER",
+   "earliest_start": "2021",
+   "precision": "year",
+   "sources": [
+    {
+     "url": "https://branch.vote/races/2025-texas-contitutional-amendemnt-election-tx-state-city-council-member-tx-city-josephine-4/candidates/pamela-sardo",
+     "quote": "She was first elected in 2021."
+    }
+   ],
+   "note": "Candidate bio (Branch, secondary) says first elected 2021; seat number not stated on page, so Place 4 continuity unverified."
+  }
+ },
+ {
+  "term_id": "2d83ad5e-960e-470a-91fb-14997dc3985f",
+  "who": "Elizabeth Abraham",
+  "seat": "Murphy Council Member Place 1",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "2d83ad5e-960e-470a-91fb-14997dc3985f",
+   "full_name": "Elizabeth Abraham",
+   "verdict": "EARLIER",
+   "earliest_start": "2019-05",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://murphymonitor.com/2022/05/12/incumbent-will-continue-to-serve/",
+     "quote": "In Place 1, Elizabeth Abraham received 675 votes over challenger Karan Chetal, who received 288 votes."
+    },
+    {
+     "url": "https://murphymonitor.com/2025/04/03/place-1-incumbent-hopes-to-keep-focused-on-key-issues/",
+     "quote": "is seeking her third term in Place 1"
+    }
+   ],
+   "note": "Incumbent in 2022; 2025 article says third term, consistent with first win in May 2019 (2019 Monitor results article, summarized)."
+  }
+ },
+ {
+  "term_id": "8c2b4358-66dd-4e43-85e1-161300e96287",
+  "who": "Scott Smith",
+  "seat": "Murphy Council Member Place 2",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "8c2b4358-66dd-4e43-85e1-161300e96287",
+   "full_name": "Scott Smith",
+   "verdict": "EARLIER",
+   "earliest_start": "2023-11",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://murphymonitor.com/2023/11/07/smith-bests-egwuekwe-for-murphy-council/",
+     "quote": "Funeral director W. Scott Smith has been elected to the vacant Place 2 seat"
+    },
+    {
+     "url": "https://murphymonitor.com/2025/05/08/murphy-councilmembers-outpoll-challengers/",
+     "quote": "Place 2 Councilmember W. Scott Smith was unopposed for re-election and received 1,875 votes."
+    }
+   ],
+   "note": "Won Nov 2023 special election for Berthiaume's vacated Place 2; stored 2024-05 is too late."
+  }
+ },
+ {
+  "term_id": "6bdfb540-86d7-4f3d-890f-5002f0f73699",
+  "who": "Ken Oltmann",
+  "seat": "Murphy Council Member Place 4",
+  "was": [
+   "2025-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "6bdfb540-86d7-4f3d-890f-5002f0f73699",
+   "full_name": "Ken Oltmann",
+   "verdict": "EARLIER",
+   "earliest_start": "2019-05",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://murphymonitor.com/2022/05/12/incumbent-will-continue-to-serve/",
+     "quote": "In Place 2 and Place 4, Jennifer Berthiaume and Ken Oltmann will continue to serve."
+    },
+    {
+     "url": "https://murphymonitor.com/2019/05/04/breaking-news-unofficial-voting-totals-released/",
+     "quote": "incumbent Betty Spraggins was defeated"
+    }
+   ],
+   "note": "Won Place 4 in May 2019 over incumbent Spraggins; continuing in 2022 and 2025."
+  }
+ },
+ {
+  "term_id": "23ddd37f-e65a-4f21-9618-956e941e4699",
+  "who": "Jené Butler",
+  "seat": "Murphy Council Member Place 6",
+  "was": [
+   "2025-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "23ddd37f-e65a-4f21-9618-956e941e4699",
+   "full_name": "Jené Butler",
+   "verdict": "EARLIER",
+   "earliest_start": "2019-05",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://murphymonitor.com/2022/05/12/incumbent-will-continue-to-serve/",
+     "quote": "Jene Butler retained Place 6 with 566 votes against challenger Michael Padilla, who received 319 votes."
+    }
+   ],
+   "note": "Retained Place 6 in 2022; first won May 2019 (2019 Monitor results article, summarized)."
+  }
+ },
+ {
+  "term_id": "c7898178-763a-4fc9-9a43-d5f90868533f",
+  "who": "Scott Bradley",
+  "seat": "Murphy Mayor",
+  "was": [
+   "2023-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "c7898178-763a-4fc9-9a43-d5f90868533f",
+   "full_name": "Scott Bradley",
+   "verdict": "EARLIER",
+   "earliest_start": "2017-05",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://murphymonitor.com/2017/05/06/city-school-district-posts-decided/",
+     "quote": "Residents chose Scott Bradley, 785 votes, over David Brandon, 587 votes and Bob Mortonson, 79 votes"
+    },
+    {
+     "url": "https://murphymonitor.com/2023/05/08/murphy-voters-elect-new-councilmember/",
+     "quote": "Mayor Scott Bradley was not opposed and was re-elected with 1,048 votes cast."
+    }
+   ],
+   "note": "Elected mayor May 2017; stored 2023-05 is a re-election."
+  }
+ },
+ {
+  "term_id": "a4ef7077-fa2c-499e-a1fb-aa516c71c6fc",
+  "who": "Buddy Pilgrim",
+  "seat": "Parker Council Member Place 3",
+  "was": [
+   "2026-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "a4ef7077-fa2c-499e-a1fb-aa516c71c6fc",
+   "full_name": "Buddy Pilgrim",
+   "verdict": "EARLIER",
+   "earliest_start": null,
+   "precision": null,
+   "sources": [
+    {
+     "url": "https://branch.vote/races/2026-texas-may-uniform-election-tx-state-city-council-member-tx-city-parker/candidates/buddy-pilgrim",
+     "quote": "Buddy Pilgrim is currently a member of the Parker City Council."
+    }
+   ],
+   "note": "Sitting member before the May 2026 election (re-elected); Parker seats appear at-large, start date not found."
+  }
+ },
+ {
+  "term_id": "2a8f6298-d35b-4fe3-93d2-1a8f53e6482e",
+  "who": "Billy Barron",
+  "seat": "Parker Council Member Place 5",
+  "was": [
+   "2026-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "2a8f6298-d35b-4fe3-93d2-1a8f53e6482e",
+   "full_name": "Billy Barron",
+   "verdict": "EARLIER",
+   "earliest_start": "2025",
+   "precision": "year",
+   "sources": [
+    {
+     "url": "https://tx3dnews.com/billy-barron-candidate-for-parker-city-council/",
+     "quote": "I was appointed in 2025 to fill an open seat on the Parker City Council, and I'm running to continue serving the city."
+    }
+   ],
+   "note": "Appointed 2025 (his own candidate profile); stored 2026-05 is a re-election/election."
+  }
+ },
+ {
+  "term_id": "ea4f99eb-8ded-45d1-b69e-db727c4b0dee",
+  "who": "Maria Tu",
+  "seat": "Plano Council Member Place 1",
+  "was": [
+   "2023-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "ea4f99eb-8ded-45d1-b69e-db727c4b0dee",
+   "full_name": "Maria Tu",
+   "verdict": "EARLIER",
+   "earliest_start": null,
+   "precision": null,
+   "sources": [
+    {
+     "url": "https://news.ballotpedia.org/2023/05/09/city-council-incumbents-win-re-election-in-plano-texas/",
+     "quote": "Incumbents Maria Tu, Shelby Williams, and Julie Holmer won re-election for Places 1, 5, and 7, respectively."
+    }
+   ],
+   "note": "Incumbent in May 2023; a search snippet says first won 2019 (not fetched)."
+  }
+ },
+ {
+  "term_id": "16de6d7b-e979-47a1-8c31-19dd02d75bae",
+  "who": "John B. Muns",
+  "seat": "Plano Mayor",
+  "was": [
+   "2025-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "16de6d7b-e979-47a1-8c31-19dd02d75bae",
+   "full_name": "John B. Muns",
+   "verdict": "EARLIER",
+   "earliest_start": null,
+   "precision": null,
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/2025_Plano_municipal_elections",
+     "quote": "Mayor before election"
+    }
+   ],
+   "note": "Wikipedia infobox lists Muns as sitting mayor before the May 2025 election; earlier start not sourced."
+  }
+ },
+ {
+  "term_id": "abf511e2-33ef-41fb-99eb-118813dd71a1",
+  "who": "Ken Cook",
+  "seat": "Allen Council Member Place 3",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "too_early",
+  "research": {
+   "term_id": "abf511e2-33ef-41fb-99eb-118813dd71a1",
+   "full_name": "Ken Cook",
+   "verdict": "FIRST",
+   "earliest_start": "2024-06",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://www.localprofile.com/community/city-of-allen-welcomes-new-council-members-9151352",
+     "quote": "Cook was sworn in as the Allen City Council Member for place 3, and Clemencich was sworn in as the Allen City Council Member for place 5."
+    },
+    {
+     "url": "https://www.localprofile.com/community/city-of-allen-welcomes-new-council-members-9151352",
+     "quote": "Outgoing council members, Dave Cornette and Dave Shafer, were also recognized and honored for their service on the Allen City Council."
+    }
+   ],
+   "note": "Won June 2024 runoff over incumbent Cornette and was sworn in as a new member; stored 2024-05-01 is about a month early."
+  }
+ },
+ {
+  "term_id": "a18157e1-baaf-4d68-a25c-b1cf503cb0a1",
+  "who": "Carl Clemencich",
+  "seat": "Allen Council Member Place 5",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "too_early",
+  "research": {
+   "term_id": "a18157e1-baaf-4d68-a25c-b1cf503cb0a1",
+   "full_name": "Carl Clemencich",
+   "verdict": "FIRST",
+   "earliest_start": "2024-06",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://www.localprofile.com/community/city-of-allen-welcomes-new-council-members-9151352",
+     "quote": "was held to honor the newly elected city of Allen Council Members, Ken Cook and Carl Clemencich."
+    },
+    {
+     "url": "https://www.localprofile.com/community/city-of-allen-welcomes-new-council-members-9151352",
+     "quote": "Clemencich was sworn in as the Allen City Council Member for place 5."
+    }
+   ],
+   "note": "Defeated incumbent Dave Shafer in the June 2024 runoff; earlier Allen ISD board and other service was not this seat."
+  }
+ },
+ {
+  "term_id": "f2ef449a-846e-4137-bf44-09c17343dd63",
+  "who": "Ben Trahan",
+  "seat": "Allen Council Member Place 6",
+  "was": [
+   "2025-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "f2ef449a-846e-4137-bf44-09c17343dd63",
+   "full_name": "Ben Trahan",
+   "verdict": "EARLIER",
+   "earliest_start": "2022-05",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://www.nbcdfw.com/news/elections//2958399/",
+     "quote": "Ben Trahan 54% 4,090 Srini Raghavan 46% 3,452"
+    }
+   ],
+   "note": "Won Place 6 in the May 7, 2022 election, so the 2025 date is a re-election."
+  }
+ },
+ {
+  "term_id": "a6b44c1f-0ce8-4c5b-bba6-0b2275c9b459",
+  "who": "Philip Ferguson",
+  "seat": "Celina Council Member Place 1",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "a6b44c1f-0ce8-4c5b-bba6-0b2275c9b459",
+   "full_name": "Philip Ferguson",
+   "verdict": "EARLIER",
+   "earliest_start": "2022",
+   "precision": "year",
+   "sources": [
+    {
+     "url": "https://communityimpact.com/dallas-fort-worth/prosper-celina/government/2025/02/17/1-contested-1-unopposed-race-in-celina-city-council-election",
+     "quote": "Ferguson was first elected in 2022."
+    }
+   ],
+   "note": "Stored 2024-05-01 is wrong; he was first elected 2022 and re-elected 2025."
+  }
+ },
+ {
+  "term_id": "46a805c4-3dba-4c35-a6b3-eecf225537ec",
+  "who": "Andy Hopkins",
+  "seat": "Celina Council Member Place 3",
+  "was": [
+   "2025-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "46a805c4-3dba-4c35-a6b3-eecf225537ec",
+   "full_name": "Andy Hopkins",
+   "verdict": "EARLIER",
+   "earliest_start": null,
+   "precision": null,
+   "sources": [
+    {
+     "url": "https://communityimpact.com/dallas-fort-worth/prosper-celina/election/2024/02/20/filing-period-closes-for-celina-prosper-council-seat-races",
+     "quote": "Hopkins is the Place 3 incumbent."
+    }
+   ],
+   "note": "Incumbent in the May 2024 race, so he held Place 3 before the stored 2025-05 date; true first date not found."
+  }
+ },
+ {
+  "term_id": "b6b4abf9-711a-4a24-8009-cf6115e58086",
+  "who": "Brandon Grumbles",
+  "seat": "Celina Council Member Place 6",
+  "was": [
+   "2025-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "b6b4abf9-711a-4a24-8009-cf6115e58086",
+   "full_name": "Brandon Grumbles",
+   "verdict": "EARLIER",
+   "earliest_start": "2024-01-09",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://communityimpact.com/prosper-celina/government/brandon-grumbles-sworn-into-celina-city-council/",
+     "quote": "Brandon Grumbles was sworn into his new Place 6 seat at a Jan. 9 meeting."
+    }
+   ],
+   "note": "Took Place 6 unopposed after Griggs resigned; year 2024 comes from search summaries (article text shows only Jan. 9); 2025 was a re-election."
+  }
+ },
+ {
+  "term_id": "8e558152-ff59-4cec-942c-9deb7a661d62",
+  "who": "Mike Shepard",
+  "seat": "Lavon Council Member Place 1",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "8e558152-ff59-4cec-942c-9deb7a661d62",
+   "full_name": "Mike Shepard",
+   "verdict": "EARLIER",
+   "earliest_start": "2023-11-21",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://lavontx.gov/wp-content/uploads/Public-Documents/City%20Council%20Minutes/2023-11-21-CC-Minutes.pdf",
+     "quote": "MIKE SHEPARD, PLACE I"
+    },
+    {
+     "url": "https://lavontx.gov/wp-content/uploads/Public-Documents/City%20Council%20Agendas/2022-12-20-CC-Meeting-Agenda.pdf",
+     "quote": "JOHN KELL, MAYOR PRO TEM, PLACE 1"
+    }
+   ],
+   "note": "Present in Place 1 by Nov 21, 2023 (Kell held it Dec 2022); this is a latest-possible date, true start is between."
+  }
+ },
+ {
+  "term_id": "a5fc81b0-223b-4bcc-b06c-3e0cc880c562",
+  "who": "Mike Cook",
+  "seat": "Lavon Council Member Place 2",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "a5fc81b0-223b-4bcc-b06c-3e0cc880c562",
+   "full_name": "Mike Cook",
+   "verdict": "EARLIER",
+   "earliest_start": "2022-12-20",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://lavontx.gov/wp-content/uploads/Public-Documents/City%20Council%20Agendas/2022-12-20-CC-Meeting-Agenda.pdf",
+     "quote": "ABSENT:          MIKE COOK, PLACE 2"
+    },
+    {
+     "url": "https://lavontx.gov/wp-content/uploads/Public-Documents/City%20Council%20Minutes/2023-11-21-CC-Minutes.pdf",
+     "quote": "ISSUANCE OF OATH OF OFFICE TO THE NEWLY ELECTED MAYOR VICKI SANSON AND CITY COUNCIL MEMBER MIKE COOK, PLACE 2"
+    }
+   ],
+   "note": "Already Place 2 member in Dec 2022 (latest-possible date); 2023 oath was a re-election."
+  }
+ },
+ {
+  "term_id": "7e467a97-4f38-4e4b-b257-1cd3d7acef4b",
+  "who": "Lindsey Hedge",
+  "seat": "Lavon Council Member Place 5",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "7e467a97-4f38-4e4b-b257-1cd3d7acef4b",
+   "full_name": "Lindsey Hedge",
+   "verdict": "EARLIER",
+   "earliest_start": "2022-12-20",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://lavontx.gov/wp-content/uploads/Public-Documents/City%20Council%20Agendas/2022-12-20-CC-Meeting-Agenda.pdf",
+     "quote": "Mayor Sanson administered the Oaths of Office to John Kell, Place 1; Kay Wright, Place 3; and Lindsey Hedge, Place 5."
+    }
+   ],
+   "note": "Sworn into Place 5 Dec 2022 (listed as newly elected); possibly earlier."
+  }
+ },
+ {
+  "term_id": "2727a867-01a8-4653-b10c-9cdad734509a",
+  "who": "Vicki Sanson",
+  "seat": "Lavon Mayor",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "2727a867-01a8-4653-b10c-9cdad734509a",
+   "full_name": "Vicki Sanson",
+   "verdict": "EARLIER",
+   "earliest_start": "2022-12-20",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://lavontx.gov/wp-content/uploads/Public-Documents/City%20Council%20Agendas/2022-12-20-CC-Meeting-Agenda.pdf",
+     "quote": "ATTENDING: VICKI SANSON, MAYOR"
+    }
+   ],
+   "note": "Already mayor Dec 2022 (latest-possible date), before stored 2024-05-01; Nov 2023 oath was a re-election."
+  }
+ },
+ {
+  "term_id": "1133ac28-a892-487c-b68b-58b7c57ddfb4",
+  "who": "Justin Beller",
+  "seat": "McKinney Council Member District 1",
+  "was": [
+   "2025-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "1133ac28-a892-487c-b68b-58b7c57ddfb4",
+   "full_name": "Justin Beller",
+   "verdict": "EARLIER",
+   "earliest_start": "2021-05-18",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://communityimpact.com/dallas-fort-worth/mckinney/government/2021/07/08/meet-mckinneys-newest-city-council-members-justin-beller-and-gere-feltus",
+     "quote": "Newly elected members of the McKinney City Council were sworn into office during the May 18 meeting."
+    },
+    {
+     "url": "https://communityimpact.com/dallas-fort-worth/mckinney/government/2021/07/08/meet-mckinneys-newest-city-council-members-justin-beller-and-gere-feltus",
+     "quote": "Justin Beller has transitioned to serving as the McKinney City Council member for District 1."
+    }
+   ],
+   "note": "First took District 1 in May 2021; 2025 was a re-election."
+  }
+ },
+ {
+  "term_id": "58d67221-1061-4a70-b1dd-fbb18110a146",
+  "who": "Geré Feltus",
+  "seat": "McKinney Council Member District 3",
+  "was": [
+   "2025-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "58d67221-1061-4a70-b1dd-fbb18110a146",
+   "full_name": "Geré Feltus",
+   "verdict": "EARLIER",
+   "earliest_start": "2021-05",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://communityimpact.com/mckinney/election/gere-feltus-wins-re-election-to-mckinney-city-council/",
+     "quote": "With all vote centers reporting in Collin County, incumbent Geré Feltus has won re-election to represent District 3 on the McKinney City Council"
+    },
+    {
+     "url": "https://communityimpact.com/dallas-fort-worth/mckinney/government/2021/07/08/meet-mckinneys-newest-city-council-members-justin-beller-and-gere-feltus",
+     "quote": "Newly elected members of the McKinney City Council were sworn into office during the May 18 meeting."
+    }
+   ],
+   "note": "Elected 2021, re-elected 2025."
+  }
+ },
+ {
+  "term_id": "d3ef6f15-cde4-409a-ac3c-335fea1e42c3",
+  "who": "Rick Franklin",
+  "seat": "McKinney Council Member District 4",
+  "was": [
+   "2023-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "d3ef6f15-cde4-409a-ac3c-335fea1e42c3",
+   "full_name": "Rick Franklin",
+   "verdict": "EARLIER",
+   "earliest_start": "2019",
+   "precision": "year",
+   "sources": [
+    {
+     "url": "https://www.nbcdfw.com/news/local/mckinney-props-isd-trustee-city-council-election-results/139181/?amp=1",
+     "quote": "the one vacated by Chuck Branch in District 4 was won by Rick Franklin with 82 percent of the vote"
+    }
+   ],
+   "note": "Won District 4 in May 2019; 2023 was re-election (unopposed per search summary, not fetched)."
+  }
+ },
+ {
+  "term_id": "1d269377-e33b-4a95-badc-77914d2390f3",
+  "who": "Marcus E. Ray",
+  "seat": "Prosper Council Member Place 1",
+  "was": [
+   "2025-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "1d269377-e33b-4a95-badc-77914d2390f3",
+   "full_name": "Marcus E. Ray",
+   "verdict": "EARLIER",
+   "earliest_start": "2023-05-16",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://mccmeetingspublic.blob.core.usgovcloudapi.net/prospertx-meet-76f313c690404cf98222ea6aaa920045/ITEM-Attachment-001-8a639b5e537c4e25a862261db5489e85.pdf",
+     "quote": "Councilmembers Marcus Ray and Chris Kern for their re-election."
+    },
+    {
+     "url": "https://mccmeetingspublic.blob.core.usgovcloudapi.net/prospertx-meet-f76896326d6f40f58a15ba3ba3f2aa2e/ITEM-Attachment-001-a5ff93bad03e47e18f437709231a2b49.pdf",
+     "quote": "Councilmember Marcus E. Ray"
+    },
+    {
+     "url": "https://mccmeetingspublic.blob.core.usgovcloudapi.net/prospertx-meet-2b9186d600d0465697b34b86f1fef710/ITEM-Attachment-001-a5658a4267c148fabc161e9262fa923b.pdf",
+     "quote": "Councilmember Place 1        Marcus E. Ray"
+    }
+   ],
+   "note": "Re-elected unopposed 2025 and on council by May 16, 2023 (latest-possible date); town directory reportedly says elected 2019 but that page was unreachable."
+  }
+ },
+ {
+  "term_id": "0df9db63-bd50-4434-8c99-951a3f88e221",
+  "who": "Craig Andres",
+  "seat": "Prosper Council Member Place 2",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "0df9db63-bd50-4434-8c99-951a3f88e221",
+   "full_name": "Craig Andres",
+   "verdict": "EARLIER",
+   "earliest_start": "2023-05-16",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://communityimpact.com/dallas-fort-worth/prosper-celina/election/2024/02/20/filing-period-closes-for-celina-prosper-council-seat-races",
+     "quote": "Place 2: incumbent Craig Andres"
+    },
+    {
+     "url": "https://mccmeetingspublic.blob.core.usgovcloudapi.net/prospertx-meet-f76896326d6f40f58a15ba3ba3f2aa2e/ITEM-Attachment-001-a5ff93bad03e47e18f437709231a2b49.pdf",
+     "quote": "Deputy Mayor Pro-Tem Craig Andres"
+    }
+   ],
+   "note": "Incumbent Place 2 in 2024 and on council May 2023 (latest-possible date); directory reportedly says 2018 but was unreachable."
+  }
+ },
+ {
+  "term_id": "2215f0f6-e7d5-4936-bddd-046be289c8f3",
+  "who": "Amy Bartley",
+  "seat": "Prosper Council Member Place 3",
+  "was": [
+   "2023-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "2215f0f6-e7d5-4936-bddd-046be289c8f3",
+   "full_name": "Amy Bartley",
+   "verdict": "EARLIER",
+   "earliest_start": null,
+   "precision": null,
+   "sources": [
+    {
+     "url": "https://mccmeetingspublic.blob.core.usgovcloudapi.net/prospertx-meet-702892e3477b46aca8d8c463b52b177d/ITEM-Attachment-001-9bd5451f9d36401d819cb5c3d8545b97.pdf",
+     "quote": "Amy Bartley, Place 3 and Jeff Hodges, Place 5 ran unopposed in the General Election; therefore, the Town Council was able to cancel the General Election declaring the incumbents elected."
+    }
+   ],
+   "note": "Incumbent Place 3 in May 2023, so stored 2023-05-01 is a re-election; directory reportedly says elected Nov 2020, not verified."
+  }
+ },
+ {
+  "term_id": "7c3cefcf-aafc-482c-8f59-4d21674f8c84",
+  "who": "Chris Kern",
+  "seat": "Prosper Council Member Place 4",
+  "was": [
+   "2025-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "7c3cefcf-aafc-482c-8f59-4d21674f8c84",
+   "full_name": "Chris Kern",
+   "verdict": "EARLIER",
+   "earliest_start": "2023-05-16",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://mccmeetingspublic.blob.core.usgovcloudapi.net/prospertx-meet-76f313c690404cf98222ea6aaa920045/ITEM-Attachment-001-8a639b5e537c4e25a862261db5489e85.pdf",
+     "quote": "Councilmembers Marcus Ray and Chris Kern for their re-election."
+    },
+    {
+     "url": "https://mccmeetingspublic.blob.core.usgovcloudapi.net/prospertx-meet-f76896326d6f40f58a15ba3ba3f2aa2e/ITEM-Attachment-001-a5ff93bad03e47e18f437709231a2b49.pdf",
+     "quote": "Councilmember Chris Kern"
+    }
+   ],
+   "note": "Re-elected unopposed 2025 and on council May 2023 (latest-possible date)."
+  }
+ },
+ {
+  "term_id": "9d5e6510-a070-44b9-a9c6-265fc18e6d6c",
+  "who": "David F. Bristol",
+  "seat": "Prosper Mayor",
+  "was": [
+   "2025-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "9d5e6510-a070-44b9-a9c6-265fc18e6d6c",
+   "full_name": "David F. Bristol",
+   "verdict": "EARLIER",
+   "earliest_start": "2023-05-16",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://mccmeetingspublic.blob.core.usgovcloudapi.net/prospertx-meet-76f313c690404cf98222ea6aaa920045/ITEM-Attachment-001-8a639b5e537c4e25a862261db5489e85.pdf",
+     "quote": "Councilmembers Marcus Ray and Chris Kern for their re-election."
+    },
+    {
+     "url": "https://mccmeetingspublic.blob.core.usgovcloudapi.net/prospertx-meet-f76896326d6f40f58a15ba3ba3f2aa2e/ITEM-Attachment-001-a5ff93bad03e47e18f437709231a2b49.pdf",
+     "quote": "Mayor David F. Bristol"
+    }
+   ],
+   "note": "Mayor in May 2023 (latest-possible date) and re-elected unopposed 2025."
+  }
+ },
+ {
+  "term_id": "a3c76bd2-f8bc-4436-8d9c-076c0398bc2f",
+  "who": "Ryan Neal",
+  "seat": "Van Alstyne Council Member Place 1",
+  "was": [
+   "2024-05-05",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "a3c76bd2-f8bc-4436-8d9c-076c0398bc2f",
+   "full_name": "Ryan Neal",
+   "verdict": "EARLIER",
+   "earliest_start": "2022-05-07",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://graarticles.optin.com/newsletter/awlist5581551/MTQzMTUxNDM=/van-alstyne-voters-overwhelmingly-approve-city-charter.htm",
+     "quote": "Place 1 Alderman Ryan Neal will also return to his seat after facing no opposition in his race."
+    }
+   ],
+   "note": "Incumbent Place 1 at the May 7, 2022 election (latest-possible date; article undated, matched to Grayson 2022 results)."
+  }
+ },
+ {
+  "term_id": "2b342a08-b4b0-46c7-9092-c74fb9712ec7",
+  "who": "Marla Butler",
+  "seat": "Van Alstyne Council Member Place 2",
+  "was": [
+   "2024-05-05",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "2b342a08-b4b0-46c7-9092-c74fb9712ec7",
+   "full_name": "Marla Butler",
+   "verdict": "EARLIER",
+   "earliest_start": "2022-05-07",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://graarticles.optin.com/newsletter/awlist5581551/MTQzMTUxNDM=/van-alstyne-voters-overwhelmingly-approve-city-charter.htm",
+     "quote": "In the Place 2 alderman contest, incumbent Marla Butler topped challenger Ryan Laing by a margin of 59 to 41 percent."
+    }
+   ],
+   "note": "Incumbent Place 2 in May 2022 (latest-possible date)."
+  }
+ },
+ {
+  "term_id": "472b0a63-6881-4ffd-8c03-d30170fd23c8",
+  "who": "Dusty Williams",
+  "seat": "Van Alstyne Council Member Place 3",
+  "was": [
+   "2024-05-05",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "472b0a63-6881-4ffd-8c03-d30170fd23c8",
+   "full_name": "Dusty Williams",
+   "verdict": "EARLIER",
+   "earliest_start": "2022-05",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://graarticles.optin.com/newsletter/awlist5581551/MTQzMTUxNDM=/van-alstyne-voters-overwhelmingly-approve-city-charter.htm",
+     "quote": "Williams received 190 of the 251 votes cast and will replace outgoing alderman Bruce Dawsey."
+    }
+   ],
+   "note": "Won Place 3 in May 2022; 2024 was a re-election."
+  }
+ },
+ {
+  "term_id": "18d857bf-824a-46b3-821b-ccffb6b58724",
+  "who": "Burhan Azeem",
+  "seat": "Cambridge City Councillor",
+  "was": [
+   "2026-01-05",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "18d857bf-824a-46b3-821b-ccffb6b58724",
+   "full_name": "Burhan Azeem",
+   "verdict": "EARLIER",
+   "earliest_start": "2022-01",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Burhan_Azeem",
+     "quote": "taking office in 2022 as the youngest city councilor in Cambridge history at the time."
+    },
+    {
+     "url": "https://www.cambridgeday.com/?p=147703",
+     "quote": "Incumbents Burhan Azeem, Jivan Sobrinho-Wheeler, Cathie Zusy, E. Denise Simmons and Patty Nolan were all returned to office."
+    }
+   ],
+   "note": "Incumbent first elected 2021, took office Jan 2022 (month inferred from Cambridge's January terms)."
+  }
+ },
+ {
+  "term_id": "6e456a29-f348-4d54-bb74-14de8dc605c3",
+  "who": "Catherine Zusy",
+  "seat": "Cambridge City Councillor",
+  "was": [
+   "2026-01-05",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "6e456a29-f348-4d54-bb74-14de8dc605c3",
+   "full_name": "Catherine Zusy",
+   "verdict": "EARLIER",
+   "earliest_start": "2024-09",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://www.cambridgeday.com/2024/09/19/zusy-is-elected-to-cambridges-city-council-filling-surprise-vacancy-for-a-monday-start/",
+     "quote": "A swearing-in is expected for Monday, with Zusy then being able to take her seat that night in Sullivan Chamber."
+    }
+   ],
+   "note": "Elected Sept 19, 2024 to fill the vacancy left by Joan Pickett's death; sworn in the following Monday (Sept 23, 2024, inferred); re-elected 2025."
+  }
+ },
+ {
+  "term_id": "1f10807d-77af-4974-b1b2-990170ea38f7",
+  "who": "E. Denise Simmons",
+  "seat": "Cambridge City Councillor",
+  "was": [
+   "2026-01-05",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "1f10807d-77af-4974-b1b2-990170ea38f7",
+   "full_name": "E. Denise Simmons",
+   "verdict": "EARLIER",
+   "earliest_start": "2002",
+   "precision": "year",
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/E._Denise_Simmons",
+     "quote": "In 2001, Simmons ran for and won a seat on the Cambridge City Council."
+    }
+   ],
+   "note": "Wikipedia says continuously on the council since 2002 (elected 2001); no break found."
+  }
+ },
+ {
+  "term_id": "2b3a4ab3-4e5b-408b-a645-b5322f2c19e9",
+  "who": "Jivan Sobrinho-Wheeler",
+  "seat": "Cambridge City Councillor",
+  "was": [
+   "2026-01-05",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "2b3a4ab3-4e5b-408b-a645-b5322f2c19e9",
+   "full_name": "Jivan Sobrinho-Wheeler",
+   "verdict": "EARLIER",
+   "earliest_start": "2024-01",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://www.cambridgeday.com/2023/11/08/sobrinho-wheeler-wilson-and-pickett-elected-onto-council-hudson-and-harding-for-schools/",
+     "quote": "served on the council from 2019 to 2021"
+    },
+    {
+     "url": "https://www.cambridgeday.com/2019/11/05/nolan-jivan-sobrinho-wheeler-join-council-committee-sees-wilson-villarreal-weinstein/",
+     "quote": "Challengers Patty Nolan and Jivan Sobrinho-Wheeler are preliminarily announced as elected to the City Council"
+    }
+   ],
+   "note": "First served about Jan 2020-2021, then a gap; re-elected 2023 so continuous stint starts Jan 2024 (inferred); the 2026 date is a later re-election."
+  }
+ },
+ {
+  "term_id": "a9b3ee8a-7e30-414f-a24e-aed547e7e18c",
+  "who": "Marc C. McGovern",
+  "seat": "Cambridge City Councillor",
+  "was": [
+   "2026-01-05",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "a9b3ee8a-7e30-414f-a24e-aed547e7e18c",
+   "full_name": "Marc C. McGovern",
+   "verdict": "EARLIER",
+   "earliest_start": "2014-01",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Marc_McGovern",
+     "quote": "Assumed office January 2014"
+    }
+   ],
+   "note": "Elected to council in 2013; I did not check for a break in service since 2014."
+  }
+ },
+ {
+  "term_id": "dd1798d0-5c02-4a4b-babe-531c4727b94e",
+  "who": "Patricia M. Nolan",
+  "seat": "Cambridge City Councillor",
+  "was": [
+   "2026-01-05",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "dd1798d0-5c02-4a4b-babe-531c4727b94e",
+   "full_name": "Patricia M. Nolan",
+   "verdict": "EARLIER",
+   "earliest_start": "2020-01",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://www.cambridgeday.com/2019/11/05/nolan-jivan-sobrinho-wheeler-join-council-committee-sees-wilson-villarreal-weinstein/",
+     "quote": "for a two-year term starting in January"
+    }
+   ],
+   "note": "Elected as a challenger in Nov 2019 (term from Jan 2020; a search summary of Ballotpedia gave Jan 6, 2020, which I did not fetch); re-elected since."
+  }
+ },
+ {
+  "term_id": "2f7edff3-3c1f-4b1f-b853-0dadfeded2ad",
+  "who": "David Weinstein",
+  "seat": "Cambridge School Committee Member",
+  "was": [
+   "2026-01-05",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "2f7edff3-3c1f-4b1f-b853-0dadfeded2ad",
+   "full_name": "David Weinstein",
+   "verdict": "EARLIER",
+   "earliest_start": "2020-01",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://www.cambridgeday.com/2026/01/05/new-school-committee-elects-weinstein-chair/",
+     "quote": "I'm excited to have the opportunity to take on this new role after three terms of service on this committee."
+    }
+   ],
+   "note": "Three terms by 2025 implies first elected 2019 (start Jan 2020, inferred); lost on election night 2025 then won after corrected count, no gap."
+  }
+ },
+ {
+  "term_id": "2156ba67-71ef-4b25-86e9-4a6eec73cea1",
+  "who": "Richard Harding, Jr.",
+  "seat": "Cambridge School Committee Member",
+  "was": [
+   "2026-01-05",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "2156ba67-71ef-4b25-86e9-4a6eec73cea1",
+   "full_name": "Richard Harding, Jr.",
+   "verdict": "EARLIER",
+   "earliest_start": "2024-01",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://www.cambridgeday.com/2026/01/05/new-school-committee-elects-weinstein-chair/",
+     "quote": "Members Richard Harding and Elizabeth Hudson, the other incumbents on the committee besides Weinstein"
+    },
+    {
+     "url": "https://www.cambridgeday.com/2023/11/08/sobrinho-wheeler-wilson-and-pickett-elected-onto-council-hudson-and-harding-for-schools/",
+     "quote": "served seven previous terms on the committee ending in 2017"
+    }
+   ],
+   "note": "Long history, absent 2018-2023, back for Jan 2024 (inferred; 2023 final result conflicting in sources); incumbent in 2025, so continuous stint starts 2024-01 at the latest, low confidence."
+  }
+ },
+ {
+  "term_id": "650eb755-fc0d-4401-9532-a0855df528b3",
+  "who": "Elizabeth Hudson",
+  "seat": "Cambridge School Committee Member",
+  "was": [
+   "2026-01-05",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "650eb755-fc0d-4401-9532-a0855df528b3",
+   "full_name": "Elizabeth Hudson",
+   "verdict": "EARLIER",
+   "earliest_start": "2024-01",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://www.cambridgeday.com/2023/11/08/sobrinho-wheeler-wilson-and-pickett-elected-onto-council-hudson-and-harding-for-schools/",
+     "quote": "first-timer Elizabeth Hudson"
+    }
+   ],
+   "note": "First elected Nov 2023 (start Jan 2024, inferred); 2025 article calls 2025 her second term."
+  }
+ },
+ {
+  "term_id": "40149015-398e-4aef-bc05-5f39530868c6",
+  "who": "Coleman Strickland",
+  "seat": "Farmersville Council Member Place 1",
+  "was": [
+   "2026-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "40149015-398e-4aef-bc05-5f39530868c6",
+   "full_name": "Coleman Strickland",
+   "verdict": "EARLIER",
+   "earliest_start": "2023",
+   "precision": "year",
+   "sources": [
+    {
+     "url": "https://farmersvilletimes.com/?p=19771",
+     "quote": "Coleman will serve his second term and Mondy, who was appointed to Place 3 last June, will serve her first full term."
+    },
+    {
+     "url": "https://farmersvilletimes.com/?p=20265",
+     "quote": "Certificates of Election were presented to Coleman Strickland, Place 1, and Kristi Mondy, Place 3,"
+    }
+   ],
+   "note": "Re-elected unopposed in 2026 for a second term in Place 1, so the 2026-05 start is only a later term; 2023 is inferred from 'second term' and a 3-year term cycle, not directly sourced."
+  }
+ },
+ {
+  "term_id": "626369de-e3db-412a-8a4b-1185775f07fd",
+  "who": "Russell Chandler",
+  "seat": "Farmersville Council Member Place 2",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   "2024-10-01",
+   "month"
+  ],
+  "kind": "too_early",
+  "research": {
+   "term_id": "626369de-e3db-412a-8a4b-1185775f07fd",
+   "full_name": "Russell Chandler",
+   "verdict": "FIRST",
+   "earliest_start": "2024-10",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://farmersvilletimes.com/?p=18449",
+     "quote": "Chandler was initially appointed to fill a Place 2 vacancy in October 2024"
+    }
+   ],
+   "note": "Appointed to Place 2 in Oct 2024 (then ran unopposed 2025), so the stored 2024-05 is too early; he was not holding the seat in May 2024."
+  }
+ },
+ {
+  "term_id": "b8e7f971-5c31-4ace-9ed1-0bac1c5f69fb",
+  "who": "Kristi Mondy",
+  "seat": "Farmersville Council Member Place 3",
+  "was": [
+   "2026-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "b8e7f971-5c31-4ace-9ed1-0bac1c5f69fb",
+   "full_name": "Kristi Mondy",
+   "verdict": "EARLIER",
+   "earliest_start": "2025-06",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://farmersvilletimes.com/?p=19771",
+     "quote": "Coleman will serve his second term and Mondy, who was appointed to Place 3 last June, will serve her first full term."
+    },
+    {
+     "url": "https://farmersvilletimes.com/?p=20265",
+     "quote": "Both will serve three-year terms, with Mondy beginning her first full term on the council."
+    }
+   ],
+   "note": "Appointed to Place 3 in June 2025 (article dated Feb 2026), so 2026-05 is the start of her first full term, not first service in the seat."
+  }
+ },
+ {
+  "term_id": "be4677bf-374a-4204-b744-6ce5e32e1ee5",
+  "who": "Mike Henry",
+  "seat": "Farmersville Council Member Place 4",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "be4677bf-374a-4204-b744-6ce5e32e1ee5",
+   "full_name": "Mike Henry",
+   "verdict": "EARLIER",
+   "earliest_start": null,
+   "precision": null,
+   "sources": [
+    {
+     "url": "https://farmersvilletimes.com/?p=14447",
+     "quote": "Williams was re-elected to his seat in Place 2, while Henry returns for a second term in Place 4."
+    },
+    {
+     "url": "https://farmersvilletimes.com/?p=16927",
+     "quote": "returning Place 4 council member Mike Henry Tuesday, May 14."
+    }
+   ],
+   "note": "Held Place 4 before the May 2022 election (second term then); exact first start not sourced (a 2020 Farmersville Times filing story names a 'Gary Henry' for Place 4, unconfirmed)."
+  }
+ },
+ {
+  "term_id": "bdbc839d-9be9-46fc-97d8-f9fc205f9626",
+  "who": "Tonya Fox",
+  "seat": "Farmersville Council Member Place 5",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   "2025-01-01",
+   "year"
+  ],
+  "kind": "too_early",
+  "research": {
+   "term_id": "bdbc839d-9be9-46fc-97d8-f9fc205f9626",
+   "full_name": "Tonya Fox",
+   "verdict": "FIRST",
+   "earliest_start": "2025",
+   "precision": "year",
+   "sources": [
+    {
+     "url": "https://farmersvilletimes.com/?p=18449",
+     "quote": "Russ Chandler and Tonya Fox were appointed to Places 2 and 5, respectively, after running unopposed"
+    }
+   ],
+   "note": "Place 5 was held by Lance Hudson in May 2024 and he resigned Jan 2025 per Farmersville Times search snippets, so Fox took the seat in 2025; stored 2024-05 is too early (exact date not found)."
+  }
+ },
+ {
+  "term_id": "4ff8fbad-dae7-4667-8809-fbc932f03b4b",
+  "who": "Scott Pitchure",
+  "seat": "Lowry Crossing Council Member Place 1",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "4ff8fbad-dae7-4667-8809-fbc932f03b4b",
+   "full_name": "Scott Pitchure",
+   "verdict": "EARLIER",
+   "earliest_start": "2023-11-14",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://webgen1files1.revize.com/lowrycrossingtx/Document%20Center/Operations/Meeting%20Minutes/City%20Of%20Council/2024/CC%20Minutes%2011%2014%2023.pdf",
+     "quote": "Council members were sworn in by City Secretary Janis Cable. Those taking the oath were: Bob Petitt – Mayor Scott Pitchure, Ward 1 Cynthia Sandlin, Ward 2 Cindy Cash, Ward 3"
+    },
+    {
+     "url": "https://webgen1files1.revize.com/lowrycrossingtx/Document%20Center/Operations/Meeting%20Minutes/City%20Of%20Council/2024/CC%20Minutes%2011%2014%2023.pdf",
+     "quote": "Attending was Cynthia Sandlin, Chris Madrid, Cindy Cash, Joe Trujillo, Pat Kelly and Peter Christian."
+    }
+   ],
+   "note": "Sworn in for Ward 1 on 2023-11-14 (not on the roll before oath), so 2024-05 is not his first start; Lowry Crossing uses wards with two seats each, so Place 1 vs Place 5 within Ward 1 is inferred."
+  }
+ },
+ {
+  "term_id": "9642ecc3-6499-4fc3-930a-c6519ed853c0",
+  "who": "Tammy Hodges",
+  "seat": "Lowry Crossing Council Member Place 2",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   "2024-11-12",
+   "day"
+  ],
+  "kind": "too_early",
+  "research": {
+   "term_id": "9642ecc3-6499-4fc3-930a-c6519ed853c0",
+   "full_name": "Tammy Hodges",
+   "verdict": "FIRST",
+   "earliest_start": "2024-11-12",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://webgen1files1.revize.com/lowrycrossingtx/CC%20Minutes%2011%2012%2024.pdf",
+     "quote": "Newly elected Council members were sworn in were Chris Madrid – Ward 1, Tammy Hodges – Ward 2, and Eusebio (Joe) Trujillo – Ward 3."
+    },
+    {
+     "url": "https://webgen1files1.revize.com/lowrycrossingtx/CC%20Minutes%201%2014%2025.pdf",
+     "quote": "Tammy Hodges was absent."
+    }
+   ],
+   "note": "Newly elected Ward 2 member sworn 2024-11-12; stored 2024-05 is too early (she is not in the May 2024 roll)."
+  }
+ },
+ {
+  "term_id": "50f9b8be-52b9-4615-93b7-c00b9e4b0a5d",
+  "who": "Eusebio \"Joe\" Trujillo III",
+  "seat": "Lowry Crossing Council Member Place 3",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "50f9b8be-52b9-4615-93b7-c00b9e4b0a5d",
+   "full_name": "Eusebio \"Joe\" Trujillo III",
+   "verdict": "EARLIER",
+   "earliest_start": "2023-11-14",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://webgen1files1.revize.com/lowrycrossingtx/Document%20Center/Operations/Meeting%20Minutes/City%20Of%20Council/2024/CC%20Minutes%2011%2014%2023.pdf",
+     "quote": "Attending was Cynthia Sandlin, Chris Madrid, Cindy Cash, Joe Trujillo, Pat Kelly and Peter Christian."
+    },
+    {
+     "url": "https://webgen1files1.revize.com/lowrycrossingtx/CC%20Minutes%2011%2012%2024.pdf",
+     "quote": "Newly elected Council members were sworn in were Chris Madrid – Ward 1, Tammy Hodges – Ward 2, and Eusebio (Joe) Trujillo – Ward 3."
+    }
+   ],
+   "note": "On council by Nov 2023 and re-elected Nov 2024 (Ward 3); earliest start not sourced, 2023-11-14 is only the first roll appearance found."
+  }
+ },
+ {
+  "term_id": "2794505c-ca84-490f-aa80-03d394fcfe78",
+  "who": "Chris Madrid",
+  "seat": "Lowry Crossing Council Member Place 5",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "2794505c-ca84-490f-aa80-03d394fcfe78",
+   "full_name": "Chris Madrid",
+   "verdict": "EARLIER",
+   "earliest_start": "2023-11-14",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://webgen1files1.revize.com/lowrycrossingtx/Document%20Center/Operations/Meeting%20Minutes/City%20Of%20Council/2024/CC%20Minutes%2011%2014%2023.pdf",
+     "quote": "Attending was Cynthia Sandlin, Chris Madrid, Cindy Cash, Joe Trujillo, Pat Kelly and Peter Christian."
+    },
+    {
+     "url": "https://webgen1files1.revize.com/lowrycrossingtx/CC%20Minutes%2011%2012%2024.pdf",
+     "quote": "Newly elected Council members were sworn in were Chris Madrid – Ward 1, Tammy Hodges – Ward 2, and Eusebio (Joe) Trujillo – Ward 3."
+    }
+   ],
+   "note": "On council before Nov 2023; earliest start not sourced (2023-11-14 is the first roll found); re-elected Nov 2024 and Nov 2025."
+  }
+ },
+ {
+  "term_id": "c19befb2-1589-43e4-b353-c22f86f12f34",
+  "who": "Agur Rios",
+  "seat": "Lowry Crossing Council Member Place 6",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   "2025-11-11",
+   "day"
+  ],
+  "kind": "too_early",
+  "research": {
+   "term_id": "c19befb2-1589-43e4-b353-c22f86f12f34",
+   "full_name": "Agur Rios",
+   "verdict": "FIRST",
+   "earliest_start": "2025-11-11",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://webgen1files1.revize.com/lowrycrossingtx/CC%20Minutes%2011%2011%2025.pdf",
+     "quote": "Janis Cable led newly elected officials in the Oath of Office and Statement of Election."
+    },
+    {
+     "url": "https://webgen1files1.revize.com/lowrycrossingtx/CC%20Minutes%2011%2011%2025.pdf",
+     "quote": "Agur Rios Ward 2 1-year term"
+    }
+   ],
+   "note": "First appears when sworn in on 2025-11-11 as newly elected Ward 2; stored 2024-05 is too early."
+  }
+ },
+ {
+  "term_id": "dea21e55-bcd2-4a31-8a7d-449d7213e933",
+  "who": "Cindy Cash",
+  "seat": "Lowry Crossing Council Member Place 7",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "dea21e55-bcd2-4a31-8a7d-449d7213e933",
+   "full_name": "Cindy Cash",
+   "verdict": "EARLIER",
+   "earliest_start": "2023-11-14",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://webgen1files1.revize.com/lowrycrossingtx/Document%20Center/Operations/Meeting%20Minutes/City%20Of%20Council/2024/CC%20Minutes%2011%2014%2023.pdf",
+     "quote": "Attending was Cynthia Sandlin, Chris Madrid, Cindy Cash, Joe Trujillo, Pat Kelly and Peter Christian."
+    },
+    {
+     "url": "https://webgen1files1.revize.com/lowrycrossingtx/Document%20Center/Operations/Meeting%20Minutes/City%20Of%20Council/2024/CC%20Minutes%2011%2014%2023.pdf",
+     "quote": "Those taking the oath were: Bob Petitt – Mayor Scott Pitchure, Ward 1 Cynthia Sandlin, Ward 2 Cindy Cash, Ward 3"
+    }
+   ],
+   "note": "Already on the roll before being sworn for Ward 3 in Nov 2023 (so re-elected then); earliest start not sourced."
+  }
+ },
+ {
+  "term_id": "9a45ca9b-01ef-4b97-acc0-f7e8e5cb6b09",
+  "who": "Ollie Simpson",
+  "seat": "Lowry Crossing Council Member Place 8",
+  "was": [
+   "2026-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "9a45ca9b-01ef-4b97-acc0-f7e8e5cb6b09",
+   "full_name": "Ollie Simpson",
+   "verdict": "EARLIER",
+   "earliest_start": "2025-11-11",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://webgen1files1.revize.com/lowrycrossingtx/CC%20Minutes%2011%2011%2025.pdf",
+     "quote": "Not present for swearing in Ollie Simpson, Ward 4, 2-year term."
+    },
+    {
+     "url": "https://webgen1files1.revize.com/lowrycrossingtx/CC%20Minutes%206%2023%2026.pdf",
+     "quote": "Attending was Cindy Cash, G. Hijazen, Chris Madrid, Pat Kelly, and Ollie Simpson."
+    }
+   ],
+   "note": "Listed as elected Ward 4 in Nov 2025 but absent for the oath and first seen attending June 2026; low confidence because the May 2026 ballot also had Ward 4 seats."
+  }
+ },
+ {
+  "term_id": "dc9e908f-db10-45e1-9d58-1c9dd4b9bbdc",
+  "who": "Pat Kelly",
+  "seat": "Lowry Crossing Mayor",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   "2025-11-11",
+   "day"
+  ],
+  "kind": "too_early",
+  "research": {
+   "term_id": "dc9e908f-db10-45e1-9d58-1c9dd4b9bbdc",
+   "full_name": "Pat Kelly",
+   "verdict": "FIRST",
+   "earliest_start": "2025-11-11",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://webgen1files1.revize.com/lowrycrossingtx/CC%20Minutes%2011%2011%2025.pdf",
+     "quote": "Pat Kelly Mayor 2-year term"
+    },
+    {
+     "url": "https://webgen1files1.revize.com/lowrycrossingtx/CC%20Minutes%206%2010%2025.pdf",
+     "quote": "Attending was Cynthia Sandlin, Bob Petitt, Joe Trujillo, Scott Pitchure, and Tammy Hodges."
+    }
+   ],
+   "note": "Mayor was Bob Petitt through mid-2025; Kelly sworn in as newly elected Mayor 2025-11-11 (earlier he was a council member, a different seat); stored 2024-05 is too early."
+  }
+ },
+ {
+  "term_id": "fecf9980-c018-4bc8-8a8b-a7e81e13071f",
+  "who": "Mike Laye",
+  "seat": "Nevada Council Member Place 1",
+  "was": [
+   "2026-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "fecf9980-c018-4bc8-8a8b-a7e81e13071f",
+   "full_name": "Mike Laye",
+   "verdict": "EARLIER",
+   "earliest_start": "2023-05-02",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://cms3.revize.com/revize/nevadatx/Documents/Government/Agendas%20and%20Minutes/2023/Minutes/050223-Minutes.pdf",
+     "quote": "Council Member Place I - Mike Laye"
+    },
+    {
+     "url": "https://cms3.revize.com/revize/nevadatx/Documents/Government/Agendas%20and%20Minutes/2024/Minutes/05%2007%2024%20Council%20Regular%20Minutes.pdf",
+     "quote": "Council Member Place 1 — Mike Laye"
+    }
+   ],
+   "note": "Listed as Place 1 in May 2023 minutes (earliest start not sourced); the 2026 cancelled election only re-seated him."
+  }
+ },
+ {
+  "term_id": "f8e0b730-72f0-4ea5-82af-397a3da7fbdb",
+  "who": "Paul Baker",
+  "seat": "Nevada Council Member Place 2",
+  "was": [
+   "2026-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "f8e0b730-72f0-4ea5-82af-397a3da7fbdb",
+   "full_name": "Paul Baker",
+   "verdict": "EARLIER",
+   "earliest_start": "2025",
+   "precision": "year",
+   "sources": [
+    {
+     "url": "https://cms3.revize.com/revize/nevadatx/Documents/Government/Agendas%20and%20Minutes/2025/Minutes/City%20Coouncil%20Meeting%20Minutes%205.6.25%20-%20Approved.pdf",
+     "quote": "Council Member Place 2 ~ Vacant"
+    },
+    {
+     "url": "https://cms3.revize.com/revize/nevadatx/Documents/Government/Agendas%20and%20Minutes/2025/Agendas/City%20Council%20Agenda%20Packet%209.2.25.pdf",
+     "quote": "Council Member Place 2 – Paul Baker"
+    }
+   ],
+   "note": "Place 2 was vacant on 2025-05-06 and Baker held it by Sept 2025 (exact date not found), so the 2026-05 start is a later term."
+  }
+ },
+ {
+  "term_id": "b6f17064-858c-4214-b1f5-41e46c4d4141",
+  "who": "Amanda Wilson",
+  "seat": "Nevada Council Member Place 3",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   "2025-01-01",
+   "year"
+  ],
+  "kind": "too_early",
+  "research": {
+   "term_id": "b6f17064-858c-4214-b1f5-41e46c4d4141",
+   "full_name": "Amanda Wilson",
+   "verdict": "FIRST",
+   "earliest_start": "2025-05-06",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://cms3.revize.com/revize/nevadatx/Documents/Government/Agendas%20and%20Minutes/2024/Minutes/05%2007%2024%20Council%20Regular%20Minutes.pdf",
+     "quote": "Council Member Place 3 — Kerrie Longoria"
+    },
+    {
+     "url": "https://cms3.revize.com/revize/nevadatx/Documents/Government/Agendas%20and%20Minutes/2025/Minutes/City%20Coouncil%20Meeting%20Minutes%205.6.25%20-%20Approved.pdf",
+     "quote": "Amanda Wilson — Place 3"
+    }
+   ],
+   "note": "Longoria held Place 3 in May 2024; Wilson sworn in as newly elected on 2025-05-06 (unopposed); stored 2024-05 is too early."
+  }
+ },
+ {
+  "term_id": "723d227d-fc84-4124-8c46-87aff3ade4c1",
+  "who": "Clayton Laughter",
+  "seat": "Nevada Council Member Place 4",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "723d227d-fc84-4124-8c46-87aff3ade4c1",
+   "full_name": "Clayton Laughter",
+   "verdict": "EARLIER",
+   "earliest_start": "2023-05-16",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://cms3.revize.com/revize/nevadatx/Documents/Government/Agendas%20and%20Minutes/2023/Minutes/062023-Minutes.pdf",
+     "quote": "Council Member Place 4 - Clayton Laughter"
+    },
+    {
+     "url": "https://cms3.revize.com/revize/nevadatx/Documents/Government/Agendas%20and%20Minutes/2024/Minutes/05%2007%2024%20Council%20Regular%20Minutes.pdf",
+     "quote": "Council Member Place 4 — Clayton Laughter"
+    }
+   ],
+   "note": "Place 4 was Karl Fisher on 2023-05-02 and Laughter by June 2023 (OCR of 2023-05-16 minutes shows newly elected members sworn in); stored 2024-05 is too late. Minutes are scanned images read by OCR."
+  }
+ },
+ {
+  "term_id": "321dabae-36e0-4083-80e9-aec6a55b8c6a",
+  "who": "Derrick Little",
+  "seat": "Nevada Council Member Place 5",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   "2025-01-01",
+   "year"
+  ],
+  "kind": "too_early",
+  "research": {
+   "term_id": "321dabae-36e0-4083-80e9-aec6a55b8c6a",
+   "full_name": "Derrick Little",
+   "verdict": "FIRST",
+   "earliest_start": "2025-05-06",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://cms3.revize.com/revize/nevadatx/Documents/Government/Agendas%20and%20Minutes/2024/Minutes/05%2007%2024%20Council%20Regular%20Minutes.pdf",
+     "quote": "Council Member Place 5 — Frank Hudson"
+    },
+    {
+     "url": "https://cms3.revize.com/revize/nevadatx/Documents/Government/Agendas%20and%20Minutes/2025/Minutes/City%20Coouncil%20Meeting%20Minutes%205.6.25%20-%20Approved.pdf",
+     "quote": "Derrick Little — Place 5"
+    }
+   ],
+   "note": "Hudson held Place 5 in May 2024; Little sworn in 2025-05-06; stored 2024-05 is too early. Minutes are scanned images read by OCR."
+  }
+ },
+ {
+  "term_id": "5c8ff32b-9966-4311-be27-27ae931d58dd",
+  "who": "Donald Deering",
+  "seat": "Nevada Mayor",
+  "was": [
+   "2026-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "5c8ff32b-9966-4311-be27-27ae931d58dd",
+   "full_name": "Donald Deering",
+   "verdict": "EARLIER",
+   "earliest_start": "2025-05-06",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://cms3.revize.com/revize/nevadatx/Documents/Government/Election/2025%20General%20&%20Special%20Election/2025.03.04%20ORDINANCE%20NO.%20O030425B%20-%20CANCELATION%20OF%20MAY%203,%202025%20SPECIAL%20ELECTION.pdf",
+     "quote": "Donald Deering Mayor"
+    },
+    {
+     "url": "https://cms3.revize.com/revize/nevadatx/Documents/Government/Agendas%20and%20Minutes/2025/Minutes/City%20Coouncil%20Meeting%20Minutes%205.6.25%20-%20Approved.pdf",
+     "quote": "Donald Deering — Mayor"
+    }
+   ],
+   "note": "Declared elected Mayor in the cancelled May 3, 2025 special election and sworn in 2025-05-06 (earlier he was Place 2, a different seat); stored 2026-05 is a later term. Scanned images read by OCR."
+  }
+ },
+ {
+  "term_id": "effbbf62-1a61-4ccf-8868-0b9db3a1c476",
+  "who": "Terrance Johnson",
+  "seat": "Princeton Council Member Place 1",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "too_early",
+  "research": {
+   "term_id": "effbbf62-1a61-4ccf-8868-0b9db3a1c476",
+   "full_name": "Terrance Johnson",
+   "verdict": "FIRST",
+   "earliest_start": "2024-11",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://www.ketr.org/2024-11-08/princeton-city-council-member-who-joked-about-shooting-liberals-loses-reelection",
+     "quote": "Terrance Johnson received about 54% of the votes according to unofficial election results."
+    },
+    {
+     "url": "https://princetonherald.com/?p=20512",
+     "quote": "Terrance Johnson outpolled Place 1 Councilmember David Kleiber in the Nov. 4, 2024, general election"
+    }
+   ],
+   "note": "Beat incumbent Kleiber in Nov 2024; stored 2024-05 is too early."
+  }
+ },
+ {
+  "term_id": "21ec272b-b5c3-4f7c-aea7-6e5ff6b7c851",
+  "who": "Cristina Todd",
+  "seat": "Princeton Council Member Place 2",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "too_early",
+  "research": {
+   "term_id": "21ec272b-b5c3-4f7c-aea7-6e5ff6b7c851",
+   "full_name": "Cristina Todd",
+   "verdict": "FIRST",
+   "earliest_start": "2024-11",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://princetonherald.com/?p=20512",
+     "quote": "Cristina Todd succeeded Marlo Obera."
+    },
+    {
+     "url": "https://princetonherald.com/?p=20512",
+     "quote": "The new year began in the Princeton Municipal Center with two new councilmembers, a new mayor and several new issues for them to deal with."
+    }
+   ],
+   "note": "Won Place 2 in Nov 2024 over Obera; stored 2024-05 is too early."
+  }
+ },
+ {
+  "term_id": "8bbb39a8-b049-4031-9ac2-7d22cc3d0ce2",
+  "who": "Bryan Washington",
+  "seat": "Princeton Council Member Place 3",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "8bbb39a8-b049-4031-9ac2-7d22cc3d0ce2",
+   "full_name": "Bryan Washington",
+   "verdict": "EARLIER",
+   "earliest_start": "2020-11",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://princetonherald.com/2023/11/07/council-incumbents-re-elected-new-seats-go-to-long-david-graves/",
+     "quote": "Place 3 Princeton City Councilmember Bryan Washington has been re-elected with 865 votes or 59.49%"
+    },
+    {
+     "url": "https://princetonherald.com/?p=6590",
+     "quote": "In City Council Place 3, Bryan Washington won with 2,207 votes (54.64%)"
+    }
+   ],
+   "note": "Won Place 3 in the Nov 3, 2020 election and was re-elected Nov 2023."
+  }
+ },
+ {
+  "term_id": "34971999-2847-47d6-9434-63ea5f26a581",
+  "who": "Steven Deffibaugh",
+  "seat": "Princeton Council Member Place 5",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "34971999-2847-47d6-9434-63ea5f26a581",
+   "full_name": "Steven Deffibaugh",
+   "verdict": "EARLIER",
+   "earliest_start": "2010",
+   "precision": "year",
+   "sources": [
+    {
+     "url": "https://princetonherald.com/2023/10/12/place-5-city-council-candidate-steven-deffibaugh/",
+     "quote": "the Place 5 seat on the Princeton City Council he has held since 2010"
+    }
+   ],
+   "note": "Herald says he has held Place 5 since 2010 (quote is the fragment returned by the fetch tool); unopposed re-election Nov 2023."
+  }
+ },
+ {
+  "term_id": "370d1d52-a3fa-4e9f-bc49-3768767a0416",
+  "who": "Ben Long",
+  "seat": "Princeton Council Member Place 6",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "370d1d52-a3fa-4e9f-bc49-3768767a0416",
+   "full_name": "Ben Long",
+   "verdict": "EARLIER",
+   "earliest_start": "2023-11",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://princetonherald.com/2023/11/07/council-incumbents-re-elected-new-seats-go-to-long-david-graves/",
+     "quote": "Construction project safety manager Ben Long received 888 votes or 74.19% of the 616 votes cast for new Place 6"
+    }
+   ],
+   "note": "Won newly created Place 6 on Nov 7, 2023, so the stored 2024-05 is too late."
+  }
+ },
+ {
+  "term_id": "1961f187-5ed1-4da4-9381-a32971ec9695",
+  "who": "Carolyn David-Graves",
+  "seat": "Princeton Council Member Place 7",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "1961f187-5ed1-4da4-9381-a32971ec9695",
+   "full_name": "Carolyn David-Graves",
+   "verdict": "EARLIER",
+   "earliest_start": "2023-11",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://princetonherald.com/2023/11/07/council-incumbents-re-elected-new-seats-go-to-long-david-graves/",
+     "quote": "The Place 7 victor was Carolyn David-Graves"
+    }
+   ],
+   "note": "Won newly created Place 7 on Nov 7, 2023, so the stored 2024-05 is too late."
+  }
+ },
+ {
+  "term_id": "74db750b-1a9c-486a-9046-568034afe447",
+  "who": "Eugene Escobar Jr.",
+  "seat": "Princeton Mayor",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "too_early",
+  "research": {
+   "term_id": "74db750b-1a9c-486a-9046-568034afe447",
+   "full_name": "Eugene Escobar Jr.",
+   "verdict": "FIRST",
+   "earliest_start": "2024-12",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://www.ketr.org/2024-12-18/princeton-voters-elect-mayoral-candidate-who-raised-concerns-about-rapid-growth-oust-incumbent",
+     "quote": "Eugene Escobar Jr. defeated Mayor Brianna Chacón with about 56% of the vote according to unofficial election results."
+    }
+   ],
+   "note": "Beat the sitting mayor in the Dec 14, 2024 runoff; stored 2024-05 is too early."
+  }
+ },
+ {
+  "term_id": "2372a3ff-25d8-495c-adc4-f9fc7fcd2f10",
+  "who": "Larry Nail",
+  "seat": "Saint Paul Council Member Place 1",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   "2024-07-08",
+   "day"
+  ],
+  "kind": "too_early",
+  "research": {
+   "term_id": "2372a3ff-25d8-495c-adc4-f9fc7fcd2f10",
+   "full_name": "Larry Nail",
+   "verdict": "FIRST",
+   "earliest_start": "2024-07-08",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://cms8.revize.com/revize/stpaultx/7.8.2024_Minutes_Regular%20Council%20Meeting.pdf",
+     "quote": "6.1. Swearing in and seating of Larry Nail to Town Council Seat #1 — Larry Nial was appointed to fill the remaining TERM FOR COUNCIL SEAT #1."
+    }
+   ],
+   "note": "Appointed to Seat 1 on 2024-07-08 (he is not on the May 2024 roll); stored 2024-05 is too early. Scanned minutes read by OCR."
+  }
+ },
+ {
+  "term_id": "f3ad11c2-a26c-41e8-acb6-7288115ded44",
+  "who": "David Dryden",
+  "seat": "Saint Paul Council Member Place 2",
+  "was": [
+   "2024-05-01",
+   "month"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "f3ad11c2-a26c-41e8-acb6-7288115ded44",
+   "full_name": "David Dryden",
+   "verdict": "EARLIER",
+   "earliest_start": "2024-01-08",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://cms8.revize.com/revize/stpaultx/Document%20Center/1%20-%20TSP%20AGENDAS/24.01.08%20CNL%20MIN%20REG%20MEETING.pdf",
+     "quote": "Present: David Gensler, Mark Campbell, David Dryden, John Crowe, J.T. Trevino, Robert Simmons."
+    },
+    {
+     "url": "https://cms8.revize.com/revize/stpaultx/Minutes_5.12.25.pdf",
+     "quote": "ii. David Dryden, Council Member, Place 2."
+    }
+   ],
+   "note": "On council by Jan 2024 (seat number not stated then); re-sworn for Place 2 on 2025-05-12; earliest start not sourced. Scanned minutes read by OCR."
+  }
+ },
+ {
+  "term_id": "050fdcd7-8245-452a-ae27-5872d1409a41",
+  "who": "Claudia M. Frometa",
+  "seat": "Downey Council Member (District 4)",
+  "was": [
+   "2022-12-06",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "050fdcd7-8245-452a-ae27-5872d1409a41",
+   "full_name": "Claudia M. Frometa",
+   "verdict": "EARLIER",
+   "earliest_start": "2018-11",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://www.thedowneypatriot.com/articles/claudia-frometa-giggy-saab-win-downey-elections",
+     "quote": "Claudia Frometa is Downey's newest council member."
+    },
+    {
+     "url": "https://www.thedowneypatriot.com/articles/frometa-sosa-cruise-through-election-night",
+     "quote": "This will be Frometa's second term on the council, and Sosa's first."
+    }
+   ],
+   "note": "Newly elected Nov 2018 (District 4); 2022 was her second term."
+  }
+ },
+ {
+  "term_id": "ad77e23f-5e70-4660-8a2a-1bd249c3537a",
+  "who": "Dorothy Pemberton",
+  "seat": "Downey Councilmember",
+  "was": [
+   "2023-11-13",
+   "day"
+  ],
+  "now": [
+   "2023-12-01",
+   "month"
+  ],
+  "kind": "too_early",
+  "research": {
+   "term_id": "ad77e23f-5e70-4660-8a2a-1bd249c3537a",
+   "full_name": "Dorothy Pemberton",
+   "verdict": "FIRST",
+   "earliest_start": "2023-12-12",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://www.thedowneypatriot.com/articles/pemberton-ortiz-take-oaths-of-office",
+     "quote": "Councilmembers Horacio Ortiz (District 1) and Dorothy Pemberton (District 3) were sworn in on Tuesday."
+    }
+   ],
+   "note": "Won special election; oath Tue Dec 12, 2023 (article dated Dec 13, 2023); stored 2023-11-13 is a month early, no earlier service found."
+  }
+ },
+ {
+  "term_id": "1b6a17aa-a2c2-4621-8654-2ded3581bde1",
+  "who": "Alex Padilla",
+  "seat": "Inglewood Council Member (District 2)",
+  "was": [
+   "2022-12-18",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "1b6a17aa-a2c2-4621-8654-2ded3581bde1",
+   "full_name": "Alex Padilla",
+   "verdict": "EARLIER",
+   "earliest_start": "2013-06",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://www.ourweekly.com/2013/06/13/incumbents-out-inglewood-elections/",
+     "quote": "Dunlap (31.8 percent) lost to political newcomer Alex Padilla (68.1 percent)."
+    }
+   ],
+   "note": "Inglewood D2 Padilla (not the senator) won the 2013 runoff over incumbent; took seat mid-2013 (search results say sworn July 16, 2013)."
+  }
+ },
+ {
+  "term_id": "be5ed03e-743e-411f-84ba-e2c243d21bcc",
+  "who": "Eloy Morales",
+  "seat": "Inglewood Council Member (District 3)",
+  "was": [
+   "2022-12-18",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "be5ed03e-743e-411f-84ba-e2c243d21bcc",
+   "full_name": "Eloy Morales",
+   "verdict": "EARLIER",
+   "earliest_start": "2020",
+   "precision": "year",
+   "sources": [
+    {
+     "url": "https://wavepublication.com/?p=3545",
+     "quote": "District 3 Councilman Eloy Morales Jr. and City Treasurer Wanda Brown, who both retained their seats."
+    }
+   ],
+   "note": "Article dated Nov 20, 2020 shows he already held D3; true first start likely earlier (search result says first elected 2003, unverified)."
+  }
+ },
+ {
+  "term_id": "6efc30a8-2c11-4872-92f6-1b320e9e1d4c",
+  "who": "Dionne Faulk",
+  "seat": "Inglewood Council Member (District 4)",
+  "was": [
+   "2022-12-18",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "6efc30a8-2c11-4872-92f6-1b320e9e1d4c",
+   "full_name": "Dionne Faulk",
+   "verdict": "EARLIER",
+   "earliest_start": "2020-11",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://wavepublication.com/?p=3545",
+     "quote": "In Council District 4, Inglewood Unified School Board advisory member Dionne Faulk will replace Ralph Franklin."
+    }
+   ],
+   "note": "Elected Nov 2020 to District 4 (article dated Nov 20, 2020); took office about Dec 2020."
+  }
+ },
+ {
+  "term_id": "0a10a1b0-bdea-4f0b-b976-22cbff8bf33c",
+  "who": "Bob Blumenfield",
+  "seat": "Los Angeles Council Member",
+  "was": [
+   "2022-12-12",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "0a10a1b0-bdea-4f0b-b976-22cbff8bf33c",
+   "full_name": "Bob Blumenfield",
+   "verdict": "EARLIER",
+   "earliest_start": "2013-07-01",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Los_Angeles_City_Council",
+     "quote": "District 3, Bob Blumenfield: \"July 1, 2013\" (current-members table, Start column)"
+    }
+   ],
+   "note": "District 3 since 2013 per Wikipedia table; stored title has no district, matched by name."
+  }
+ },
+ {
+  "term_id": "5ab5e444-98cb-4691-9f29-e1767fd8f2cf",
+  "who": "Heather Hutt",
+  "seat": "Los Angeles Council Member",
+  "was": [
+   "2022-12-12",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "5ab5e444-98cb-4691-9f29-e1767fd8f2cf",
+   "full_name": "Heather Hutt",
+   "verdict": "EARLIER",
+   "earliest_start": "2022-09-02",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Heather_Hutt",
+     "quote": "Hutt was confirmed by the Council in the next meeting and sworn in on September 2, 2022."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Heather_Hutt",
+     "quote": "On April 11, 2023, the City Council voted to re-appoint her as council to serve Ridley-Thomas's term."
+    }
+   ],
+   "note": "District 10 appointee since Sep 2022; brief lapse Mar 30-Apr 11 2023; elected 2024. Stored 2022-12-12 is wrong."
+  }
+ },
+ {
+  "term_id": "5d31666b-a588-4273-99dc-871463fa1a60",
+  "who": "Marqueece Harris-Dawson",
+  "seat": "Los Angeles Council Member",
+  "was": [
+   "2022-12-12",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "5d31666b-a588-4273-99dc-871463fa1a60",
+   "full_name": "Marqueece Harris-Dawson",
+   "verdict": "EARLIER",
+   "earliest_start": "2015-07-01",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Los_Angeles_City_Council",
+     "quote": "District 8, Marqueece Harris-Dawson: \"July 1, 2015\" (current-members table, Start column)"
+    }
+   ],
+   "note": "District 8 since 2015 per Wikipedia table."
+  }
+ },
+ {
+  "term_id": "0c296749-a2ca-4391-b983-93b183355905",
+  "who": "John Lee",
+  "seat": "Los Angeles Council Member",
+  "was": [
+   "2022-12-12",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "0c296749-a2ca-4391-b983-93b183355905",
+   "full_name": "John Lee",
+   "verdict": "EARLIER",
+   "earliest_start": "2019-08-30",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Los_Angeles_City_Council",
+     "quote": "District 12, John Lee: \"August 30, 2019\" (current-members table, Start column)"
+    }
+   ],
+   "note": "District 12 since 2019 per table."
+  }
+ },
+ {
+  "term_id": "354782e9-c95b-4254-9c48-c089fc06e6a8",
+  "who": "Monica Rodriguez",
+  "seat": "Los Angeles Council Member",
+  "was": [
+   "2022-12-12",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "354782e9-c95b-4254-9c48-c089fc06e6a8",
+   "full_name": "Monica Rodriguez",
+   "verdict": "EARLIER",
+   "earliest_start": "2017-07-01",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Los_Angeles_City_Council",
+     "quote": "District 7, Monica Rodriguez: \"July 1, 2017\" (current-members table, Start column)"
+    }
+   ],
+   "note": "District 7 since 2017 per table."
+  }
+ },
+ {
+  "term_id": "4a431c0e-8f2b-4272-a7cb-8811d43818f6",
+  "who": "Nithya Raman",
+  "seat": "Los Angeles Council Member",
+  "was": [
+   "2022-12-12",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "4a431c0e-8f2b-4272-a7cb-8811d43818f6",
+   "full_name": "Nithya Raman",
+   "verdict": "EARLIER",
+   "earliest_start": "2020-12-14",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Los_Angeles_City_Council",
+     "quote": "District 4, Nithya Raman: \"December 14, 2020\" (current-members table, Start column)"
+    }
+   ],
+   "note": "District 4 since Dec 2020 per table; stored 2022-12-12 is wrong."
+  }
+ },
+ {
+  "term_id": "2da49509-d404-4842-8c42-1de092174e04",
+  "who": "Doug Chaffee",
+  "seat": "Orange County Supervisor",
+  "was": [
+   "2023-01-03",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "2da49509-d404-4842-8c42-1de092174e04",
+   "full_name": "Doug Chaffee",
+   "verdict": "EARLIER",
+   "earliest_start": "2019-01-07",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Orange_County_Board_of_Supervisors",
+     "quote": "District 4: Doug Chaffee, Democrat (since January 7, 2019)."
+    }
+   ],
+   "note": "Fourth District since Jan 2019; stored 2023-01-03 is a later term."
+  }
+ },
+ {
+  "term_id": "520c7222-27c5-40e2-9faf-8d442a313901",
+  "who": "Richard J. Loa",
+  "seat": "Palmdale Council Member (District 2)",
+  "was": [
+   "2022-12-09",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "520c7222-27c5-40e2-9faf-8d442a313901",
+   "full_name": "Richard J. Loa",
+   "verdict": "EARLIER",
+   "earliest_start": "2018-12-11",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://www.avta.com/richard-loa.php",
+     "quote": "Richard J Loa was appointed to the Palmdale City Council on December 11, 2018."
+    },
+    {
+     "url": "https://www.avta.com/richard-loa.php",
+     "quote": "Councilmember Loa's appointment filled the District 2 vacancy created by Mayor Hofbauer's election."
+    }
+   ],
+   "note": "Seated in District 2 in Dec 2018 (also served 2001-2005 earlier, with a break)."
+  }
+ },
+ {
+  "term_id": "035e391d-86fa-4249-aaaf-a262c672ac6a",
+  "who": "Justin Jones",
+  "seat": "Pasadena Councilmember",
+  "was": [
+   "2022-12-12",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "035e391d-86fa-4249-aaaf-a262c672ac6a",
+   "full_name": "Justin Jones",
+   "verdict": "EARLIER",
+   "earliest_start": "2022-09",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://pasadenanow.com/main/after-two-appointments-special-election-jones-gets-first-four-year-term",
+     "quote": "Jones was first appointed in September 2022, following the death of John J. Kennedy."
+    }
+   ],
+   "note": "District 3 appointee since Sep 2022 (re-appointed Dec 2022); stored 2022-12-12 is not the first start."
+  }
+ },
+ {
+  "term_id": "6ad392ab-8fc8-410d-9626-cc5eee25b652",
+  "who": "Steve Madison",
+  "seat": "Pasadena Councilmember",
+  "was": [
+   "2022-12-12",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "6ad392ab-8fc8-410d-9626-cc5eee25b652",
+   "full_name": "Steve Madison",
+   "verdict": "EARLIER",
+   "earliest_start": "2020",
+   "precision": "year",
+   "sources": [
+    {
+     "url": "https://www.pasadenanow.com/main/?p=489969",
+     "quote": "will be sworn in alongside re-elected Councilmembers Tyron Hampton, Gene Masuda and Steve Madison."
+    }
+   ],
+   "note": "Re-elected in 2020, so stored 2022 is a later term; true first start not found (search says he was on council by 2015)."
+  }
+ },
+ {
+  "term_id": "bfe0c323-e4fc-401e-aa8d-2ce6e64a462b",
+  "who": "Gene Masuda",
+  "seat": "Pasadena Councilmember",
+  "was": [
+   "2022-12-12",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "bfe0c323-e4fc-401e-aa8d-2ce6e64a462b",
+   "full_name": "Gene Masuda",
+   "verdict": "EARLIER",
+   "earliest_start": "2020",
+   "precision": "year",
+   "sources": [
+    {
+     "url": "https://www.pasadenanow.com/main/?p=489969",
+     "quote": "will be sworn in alongside re-elected Councilmembers Tyron Hampton, Gene Masuda and Steve Madison."
+    }
+   ],
+   "note": "Re-elected in 2020, so stored 2022 is a later term; true first start not found."
+  }
+ },
+ {
+  "term_id": "31629cab-8566-4857-8f4e-5282d2a23f10",
+  "who": "Laurene Weste",
+  "seat": "Santa Clarita Council Member (At-Large)",
+  "was": [
+   "2022-12-13",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "31629cab-8566-4857-8f4e-5282d2a23f10",
+   "full_name": "Laurene Weste",
+   "verdict": "EARLIER",
+   "earliest_start": "1998",
+   "precision": "year",
+   "sources": [
+    {
+     "url": "https://signalscv.com/2021/12/city-council-votes-unanimously-laurene-weste-named-mayor",
+     "quote": "For the sixth time since she first joined the dais in 1998, Laurene Weste listened Tuesday night"
+    }
+   ],
+   "note": "At-large seat; on council since 1998."
+  }
+ },
+ {
+  "term_id": "9cbea3f3-e455-4062-929a-79d83079e05a",
+  "who": "Jason Gibbs",
+  "seat": "Santa Clarita Council Member (District 3)",
+  "was": [
+   "2024-12-10",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "9cbea3f3-e455-4062-929a-79d83079e05a",
+   "full_name": "Jason Gibbs",
+   "verdict": "EARLIER",
+   "earliest_start": "2024-08",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://signalscv.com/2024/08/council-names-gibbs-to-district-3-seat",
+     "quote": "appointed Councilman Jason Gibbs as the first-ever representative of the city’s 3rd District"
+    }
+   ],
+   "note": "AMBIGUOUS: appointed first-ever District 3 rep Aug 2024; sworn Dec 10, 2024. Was on council earlier at-large (different seat)."
+  }
+ },
+ {
+  "term_id": "eb24398d-9661-4303-a89a-7de29d17eb63",
+  "who": "Letty Lopez-Viado",
+  "seat": "West Covina Council Member (District 2)",
+  "was": [
+   "2022-12-20",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "eb24398d-9661-4303-a89a-7de29d17eb63",
+   "full_name": "Letty Lopez-Viado",
+   "verdict": "EARLIER",
+   "earliest_start": "2018-12-04",
+   "precision": "day",
+   "sources": [
+    {
+     "url": "https://sac.media/2018/12/05/west-covina-celebrates-outgoing-welcomes-new",
+     "quote": "Wu, Lopez-Viado, and Castellanos also took the oath to become council members."
+    }
+   ],
+   "note": "New member Dec 2018; 2022 was re-election."
+  }
+ },
+ {
+  "term_id": "35296c7a-6930-4f92-8b88-58716be16b16",
+  "who": "Tony Wu",
+  "seat": "West Covina Council Member (District 5)",
+  "was": [
+   "2022-12-20",
+   "day"
+  ],
+  "now": [
+   null,
+   "unknown"
+  ],
+  "kind": "reelected",
+  "research": {
+   "term_id": "35296c7a-6930-4f92-8b88-58716be16b16",
+   "full_name": "Tony Wu",
+   "verdict": "EARLIER",
+   "earliest_start": "2018-12",
+   "precision": "month",
+   "sources": [
+    {
+     "url": "https://sac.media/2018/12/05/west-covina-celebrates-outgoing-welcomes-new",
+     "quote": "For his time, mayor pro tem Tony Wu thanked residents for his reelection"
+    }
+   ],
+   "note": "On council since at least 2015 (at-large then); reelected Dec 2018 and 2022 as District 5."
+  }
+ }
+]
