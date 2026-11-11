@@ -1,0 +1,70 @@
+{
+  "politician_id": "1eb77657-f241-417f-9106-01757c8e9514",
+  "findings": [
+    {
+      "id": "9dd0ee89ef8fb9c67f15a50957cb3e8a79add9496d84b8f019ce8ee30b63c4b9",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=4295&session=126&summary=B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "SC-H-4295-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, 2025-04-03_Introduced",
+      "note": "Listed as co sponsor of H4295 (126th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2025-04-03_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.824Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity confirmed: Greenville Journal 2026 voter guide (https://greenvillejournal.com/government/meet-the-candidates-local-u-s-house-and-senate-general-election-candidates/) lists Stephen Frank as the House District 20 incumbent and says he did not respond to its questions",
+        "Freedom Voter Guide page https://freedomvoterguide.com/candidates/stephen-d-frank/: covers life, family, education and health topics; nothing on the subject",
+        "web searches with name plus voter ID, photo ID, proof of citizenship, SAVE Act, noncitizen, voter rolls, mail-in, campaign site, interview: nothing on the subject in his own words",
+        "inaccessible: https://votestephenfrank.com/ (certificate name mismatch error; not retried)",
+        "not reviewed: https://www.youtube.com/watch?v=UdmUjmYs1RQ (2024 primary interview video; a search summary says it covers immigration, judge selection, closed primaries and income tax, no voter ID or citizenship-to-register remarks reported)",
+        "not reviewed: https://simplecivicsgreenvillecounty.org/district-20-meet-your-candidates-for-south-carolina-house-of-representatives/ (podcast page; same host showed a security checkpoint for a sibling page)",
+        "not reviewed: https://www.facebook.com/votestephenfrank/ (social page)",
+        "blocked: ballotpedia.org, justfacts.votesmart.org (listed as refusing fetches)",
+        "House Journal floor remarks: search found none by him on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:33:42.192Z",
+      "by": "sc-search-r3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 1,
+      "at": "2026-11-10T23:17:03.824Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
+}

@@ -25,7 +25,136 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "eb6d59aafde3a981adc25d763015c598662439caa360c5fd89e844eb76e240d1",
+      "kind": "own-words",
+      "url": "https://static.foxnews.com/foxnews.com/content/uploads/2025/01/freedom-caucus-letter-on-save-act.pdf",
+      "date": "2025-01",
+      "date_precision": "month",
+      "passage": "On behalf of State Freedom Caucus legislators across the country, we are urging the Congress to pass the SAVE Act (H.R. 22) immediately to ensure only U.S. citizens can vote in U.S. elections.",
+      "note": "Joint letter to members of Congress signed by Pace as chairman of the South Carolina caucus, with chairs from other states. Urges passage of the federal SAVE Act. Date taken from the upload path (January 2025); the letter itself carries no date.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act",
+        "noncitizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:42:04.322Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6f25c22fbbac1d60c0bc84b8712a23b373d0477a8cf20576b162479a7a6a3bb0",
+      "kind": "own-words",
+      "url": "https://static.foxnews.com/foxnews.com/content/uploads/2025/01/freedom-caucus-letter-on-save-act.pdf",
+      "date": "2025-01",
+      "date_precision": "month",
+      "passage": "If H.R. 22 is signed into law, it would update the thirty-year old National Voter Registration Act by requiring states to obtain in-person, documentary proof of U.S. citizenship when registering individuals to vote in federal elections.",
+      "note": "Same joint letter signed by Pace as chairman: describes the SAVE Act as requiring in-person documentary proof of citizenship to register for federal elections.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:42:04.322Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a1c3460771bb0d4fdf2656f7c51210c8e7d309cc2ba1c06610f0095b41e3d648",
+      "kind": "record",
+      "url": "https://southcarolinafreedomcaucus.substack.com/p/sc-government-giving-voter-registration",
+      "date": "2024-05-02",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Official letter to the House Legislative Oversight Committee requesting an investigation into state agencies giving voter registration forms to non-citizens",
+      "note": "The House caucus post (dated by the page metadata) says Pace sent a letter to the House Legislative Oversight Committee asking it to open an investigation into allegations that a state agency gave voter registration forms to a non-citizen. Date is the post's publication date.",
+      "subjects": [
+        "noncitizen voting",
+        "voter registration of non-citizens"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:42:04.322Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9dd0ee89ef8fb9c67f15a50957cb3e8a79add9496d84b8f019ce8ee30b63c4b9",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=4295&session=126&summary=B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "SC-H-4295-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, 2025-04-03_Introduced",
+      "note": "Listed as co sponsor of H4295 (126th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2025-04-03_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.824Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://jordanpace.com/ (nothing on the subject)",
+        "2025 legislative recap newsletter https://jordanpace.substack.com/p/2025-legislative-recap (nothing on the subject; only a school-enrollment ID bill)",
+        "House caucus letter to Congress on the SAVE Act (saved)",
+        "House caucus newsletter post on voter registration forms (saved as a record)",
+        "2025-26 House journal search for floor remarks on voter photo identification (nothing found)",
+        "candidate questionnaire search (iVoterGuide, Vote411, local guides): nothing on the subject",
+        "news search with local outlets (The Nerve, FITSNews, South Carolina Public Radio): nothing naming him on the subject",
+        "blocked: https://ballotpedia.org (listed as blocked, not fetched)"
+      ],
+      "found": 3,
+      "at": "2026-11-10T21:42:04.322Z",
+      "by": "sc-search-r5"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 1,
+      "at": "2026-11-10T23:17:03.824Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

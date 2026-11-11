@@ -1,0 +1,90 @@
+{
+  "politician_id": "46458a0f-0491-4a4f-a693-c9504d253072",
+  "findings": [
+    {
+      "id": "51a34f2272c23bf2f7f26ec57c10aba24ec485955015ba515686c7b0a8343178",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/80606/race/31922/election/1469",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification.",
+      "note": "Questionnaire statement on the candidate's 2026 voter-guide profile; the recorded response to it is 'Strongly Disagree'. The exact date of the response is not printed. Her written comment beside it is a remark about the idea's popularity and is not quoted here (it names parties; our rule keeps party words out of snippets).",
+      "subjects": [
+        "photo ID at the polls",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:32:21.493Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9dd0ee89ef8fb9c67f15a50957cb3e8a79add9496d84b8f019ce8ee30b63c4b9",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=4295&session=126&summary=B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "SC-H-4295-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, 2025-04-03_Introduced",
+      "note": "Listed as co sponsor of H4295 (126th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2025-04-03_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.824Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks and noncitizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "confirmed seat: scstatehouse.gov member page, District 34",
+        "On the Record (0 appearances)",
+        "web searches on name with voter ID, photo ID, citizenship, election integrity, local outlets, questionnaire (nothing on the subject beyond what is listed)",
+        "scstatehouse.gov member page used only to confirm the House seat",
+        "blocked: https://ballotpedia.org (not fetched, listed blocked per instructions)",
+        "blocked: https://justfacts.votesmart.org (not fetched, listed blocked per instructions)",
+        "blocked: https://bluevoterguide.org (not fetched, listed blocked per instructions)",
+        "OneSpartanburg 2026 District 34 Q&A: nothing on the subject",
+        "campaign site saritaforsc.com: nothing on the subject"
+      ],
+      "found": 1,
+      "at": "2026-11-10T21:32:21.493Z",
+      "by": "sc-search-r3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 1,
+      "at": "2026-11-10T23:17:03.824Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
+}

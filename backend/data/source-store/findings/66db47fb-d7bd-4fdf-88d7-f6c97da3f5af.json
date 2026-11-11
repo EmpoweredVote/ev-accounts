@@ -27,5 +27,81 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search: name + voter ID / photo ID",
+        "web search: name + proof of citizenship / SAVE Act / noncitizen",
+        "web search: name + H. 3003 / photo ID law",
+        "web search: name + questionnaire / candidate survey / voter guide",
+        "web search: site:scstatehouse.gov journal remarks",
+        "blocked: https://ballotpedia.org (known refusal, not fetched)",
+        "blocked: https://justfacts.votesmart.org (known refusal, not fetched)",
+        "blocked: https://bluevoterguide.org (known refusal, not fetched)",
+        "sponsorship and vote records: linked separately, not searched",
+        "https://www.scstatehouse.gov/member.php?code=0953408977 (member page confirms Wendell K. Jones, House District 25, Greenville County; no voting-law bills shown)",
+        "https://ivoterguide.com/candidate/71384/race/16309/election/958 (2022 candidate questionnaire: voting and elections items all marked did not answer; nothing to save)",
+        "https://www.scstatehouse.gov/sess126_2025-2026/hj26/20260519.htm (House Journal 2026-05-19: only says Rep. Jones explained Amendment 16 to H. 5683; surname alone, no own words, cannot tell which Jones; not saved)",
+        "campaign site / newsletters: none found by search",
+        "nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:30:27.415Z",
+      "by": "sc-search-r3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search: name + voter ID / photo ID",
+        "web search: name + proof of citizenship / SAVE Act / noncitizen",
+        "web search: name + H. 3003 / photo ID law",
+        "web search: name + questionnaire / candidate survey / voter guide",
+        "web search: site:scstatehouse.gov journal remarks",
+        "blocked: https://ballotpedia.org (known refusal, not fetched)",
+        "blocked: https://justfacts.votesmart.org (known refusal, not fetched)",
+        "blocked: https://bluevoterguide.org (known refusal, not fetched)",
+        "sponsorship and vote records: linked separately, not searched",
+        "https://www.scstatehouse.gov/member.php?code=0953408977 (member page confirms Wendell K. Jones, House District 25, Greenville County; no voting-law bills shown)",
+        "https://ivoterguide.com/candidate/71384/race/16309/election/958 (2022 candidate questionnaire: voting and elections items all marked did not answer; nothing to save)",
+        "https://www.scstatehouse.gov/sess126_2025-2026/hj26/20260519.htm (House Journal 2026-05-19: only says Rep. Jones explained Amendment 16 to H. 5683; surname alone, no own words, cannot tell which Jones; not saved)",
+        "campaign site / newsletters: none found by search",
+        "nothing on the subject",
+        "re-search: https://www.scstatehouse.gov/sess126_2025-2026/hj26/20260519.htm (House Journal 2026-05-19: 'Rep. JONES explained the amendment' = Amendment No. 16 to H. 5683, a congressional-redistricting bill (LC-5683.DG0026H, adding Section 7-19-130 about when congressional districts may be redrawn). Not about voter ID or citizenship. The journal prints only that he explained it, no words of his. The member roll prints 'Jones' with no initials, so no second Jones sits in the House; he also proposed Amendments 18 and 65 to the same bill and spoke against it. Nothing saved: off the subject and no printed words)",
+        "re-search: https://www.scstatehouse.gov/sess126_2025-2026/hj26/20260505.htm (House Journal 2026-05-05, S. 582 citizens-only voting amendment: only 'Rep. JORDAN explained the Bill'; no remarks by Jones)",
+        "re-search: House Journals 2026-05-06, 05-07, 05-12, 05-13, 05-14: no S. 582 remarks by Jones",
+        "re-search: web search: name + voter ID / photo ID / citizens only / election statement (nothing by him on the subject)",
+        "re-search: web search: name + S. 582 floor remarks (no remarks found)",
+        "re-search: earlier file raw/66db47fb...json places repeated by reference: On the Record 0 meetings, iVoterGuide 2022 (did not answer), member page, earlier searches",
+        "re-search: blocked: https://ballotpedia.org (known refusal, not fetched)",
+        "re-search: blocked: https://justfacts.votesmart.org (known refusal, not fetched)",
+        "re-search: blocked: https://bluevoterguide.org (known refusal, not fetched)",
+        "re-search: not fetched (do-not-fetch host): scdailygazette.com result seen as a search lead only",
+        "re-search: nothing new on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:55:09.747Z",
+      "by": "sc-research-re"
+    }
+  ]
 }

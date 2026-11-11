@@ -1,0 +1,42 @@
+{
+  "id": "SC-H-3003-2013",
+  "scope": "state:sc",
+  "title": "H 3003 (120th General Assembly): Voting identification",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3003&session=120&summary=B"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) SECTION 1 (amends 7-13-710(A), item (6))\n(quote) a college or university identification card containing a photograph\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) SECTION 1 also moves 'or' so it follows item (5) and removes it from earlier items (list punctuation only).\n(other) SECTION 2: takes effect upon approval by the Governor.\n(other) version: 2012-12-11_Introduced (only version): adds a photo college or university ID as item (6) to the post-Act 27 ID list in 7-13-710(A) (driver's license, DMV photo ID, passport, military ID, voter registration card with photo), all 'valid and current'. No slot b, c or d text.\n(other) note: Amends 7-13-710(A) as last amended by Act 27 of 2011. One version; no floor action found in the saved record.",
+  "sponsors": [
+    {
+      "name": "Todd Rutherford",
+      "role": "prime",
+      "version": "2012-12-11_Introduced"
+    },
+    {
+      "name": "Robert Brown",
+      "role": "co",
+      "version": "2012-12-11_Introduced"
+    },
+    {
+      "name": "Maymia McLeod",
+      "role": "co",
+      "version": "2012-12-11_Introduced"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 SC bill texts and roll calls (Sonnet readers R1-R5 + official vote/journal pages, voting-rights, 2026-11-10)",
+    "fetched_at": "2026-11-10",
+    "method": "curl"
+  }
+}

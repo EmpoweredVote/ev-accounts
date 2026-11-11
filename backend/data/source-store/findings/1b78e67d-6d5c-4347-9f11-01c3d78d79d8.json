@@ -25,7 +25,108 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "6f4d9870c1d564c187c213162565fe62ca8e68dab8ec47500f362b58c96bb542",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/66251/race/21262/election/1229",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "As in virtually every developed nation, registered voters should present a photo ID in order to vote. It is obscenely derogatory and prejudicial to suggest that any class or group of South Carolinians is incapable of securing a South Carolina ID card that is offered free of charge.",
+      "note": "Questionnaire answer for the 2024 Senate race. The statement it answers, 'People should be able to vote without photo identification', is marked Strongly Disagree.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:27:45.473Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1cdc9905a2f8434c86d488cc7b86b1ef71b89a181e791aedacd513869521694e",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/66251/race/21262/election/1229",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "A bond reform bill and a constitutional amendment stating only US citizens may vote.",
+      "note": "Bullet in his questionnaire answer listing bills he says he fought to pass in the last session; it names a constitutional amendment on citizen-only voting.",
+      "subjects": [
+        "citizen voting amendment",
+        "noncitizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:27:45.473Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d0408510b99d35090c40b5547c5404fecb3f57da7fe854e2d44c61a9a8fb44fb",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=27457",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-872-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "note": "SC Senate roll call (2nd Reading, 44-0) on S0872 (126th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 23375 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.824Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship",
+        "noncitizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://ivoterguide.com/candidate/66251/race/21262/election/1229 (candidate questionnaire, 2024 Senate race)",
+        "blocked: https://www.leberforsenate.com/ (connection failed; campaign site unreachable)",
+        "South Carolina Senate Journal 2024-03-05 and 2024-03-06 (H. 3594 is a firearms bill; nothing on the subject)",
+        "blocked: Ballotpedia (refuses fetches)",
+        "web searches (6): no news quotes or journal remarks found beyond the questionnaire"
+      ],
+      "found": 2,
+      "at": "2026-11-10T21:27:45.473Z",
+      "by": "sc-search-r2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 1,
+      "at": "2026-11-10T23:17:03.824Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

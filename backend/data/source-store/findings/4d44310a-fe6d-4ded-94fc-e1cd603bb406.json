@@ -27,5 +27,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "identity confirmed: https://www.scstatehouse.gov/sess126_2025-2026/hj25/20250423.htm (lists Brewer among resolution sponsors)",
+        "iVoterGuide pages https://ivoterguide.com/candidate/66698/race/16398/election/958 and https://ivoterguide.com/race/32002/election/1469: no election-topic answers readable",
+        "not reviewed: https://www.live5news.com/video/2024/05/28/video-meet-candidates-sc-house-district-114-gary-brewer/ (video)",
+        "journal personal index pages: error pages (not read)",
+        "blocked: https://ballotpedia.org (not fetched, listed as refusing fetches)",
+        "blocked: https://justfacts.votesmart.org (not fetched, listed as refusing fetches)",
+        "On the Record (0 meetings)",
+        "web searches (name with voter ID, photo ID, SAVE Act or citizenship, questionnaire, local outlets): no statement by the person on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:43:09.627Z",
+      "by": "sc-search-r5"
+    }
+  ]
 }

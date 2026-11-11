@@ -1,0 +1,34 @@
+{
+  "politician_id": "061942d6-9e19-4e92-a642-dce008b3d3b8",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "early voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://www.cvsc.org/cvsc-endorses-keishan-scott-for-house-district-50/ (confirms the person ran for House District 50 in the 2025 special election; nothing on the subject)",
+        "https://www.theitem.com/stories/scott-wins-sc-house-district-50-election,430297 (Sumter Item; nothing on the subject)",
+        "blocked: https://kscottforsc.com/ (HTTP 403)",
+        "blocked: https://www.pmg-sc.com/camden/article_b6098f16-195c-5aed-a7d0-fc420fe71da2.html (HTTP 429)",
+        "House Journal personal index 2025-26: https://www.scstatehouse.gov/sess126_2025-2026/hj25/scott.htm returned an error page (not read)",
+        "House Journal 2026 daily pages: search hits show no floor remarks by this member on the subject (not read page by page)",
+        "blocked: Ballotpedia (do-not-fetch list)",
+        "blocked: justfacts.votesmart.org (do-not-fetch list)",
+        "web searches: 6 (voter ID, photo ID, proof of citizenship, campaign site, election, early voting and mail ballot, House Journal)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:37:23.043Z",
+      "by": "sc-search-r4"
+    }
+  ]
+}

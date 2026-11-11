@@ -1,0 +1,36 @@
+{
+  "politician_id": "84d21998-9b90-441c-ac06-db3c189bc558",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "what happens to a voter with no ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "non-citizen voting / citizen-only voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "identity confirmed: the House member list https://www.scstatehouse.gov/member.php?chamber=H names W. Scott Montgomery IV; member page https://www.scstatehouse.gov/member.php?code=1351704384 used only to identify; 2026-11-03 win per the task's election-commission note",
+        "On the Record (0 appearances; extract-otr run with the politician id and name)",
+        "OneSpartanburg 2026 candidate Q&A page https://www.onespartanburginc.com/vote/2026-sc-house-district-32-election/: fetched; nothing on the subject from this person (the page shows no answers under this person's name)",
+        "iVoterGuide 2026 listing: not reviewed: https://ivoterguide.com/all-in-state/sc (answers not visible in the search result)",
+        "campaign or official site: no site found by search; nothing on the subject",
+        "web searches (10): name plus voter ID, photo ID, proof of citizenship, SAVE Act, noncitizen, election integrity, questionnaire, forum; local outlets (The Nerve, FITSNews, SCNow, SC Policy Council) returned nothing naming this person on the subject",
+        "House Journal floor-remark search on scstatehouse.gov: nothing on the subject found",
+        "blocked: https://ballotpedia.org (not fetched, listed per instructions)",
+        "blocked: https://justfacts.votesmart.org (not fetched, listed per instructions)",
+        "blocked: https://bluevoterguide.org (not fetched, listed per instructions)",
+        "sponsorships and votes: not searched, linked separately"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:30:30.763Z",
+      "by": "sc-search-r3"
+    }
+  ]
+}

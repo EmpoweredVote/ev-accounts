@@ -1,0 +1,30 @@
+{
+  "politician_id": "ae5e3801-17c7-4e4a-8ed8-1edbfeef0569",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship",
+        "noncitizen voting",
+        "election integrity",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.mitchellforhouse.com/ (nothing on the subject)",
+        "official member page https://www.scstatehouse.gov/member.php?code=1344175976&session=0 (confirms District 21, Greenville County; no sponsored bills on the subject)",
+        "iVoterGuide https://ivoterguide.com/candidate/88859/race/23978/election/1340 (photo ID question marked did not answer; nothing on the subject)",
+        "Greenville Journal 2026 voter guide (nothing on the subject)",
+        "web searches: voter ID, election integrity / citizenship / SAVE Act, questionnaire/forum, House Journal, campaign priorities (nothing on the subject)",
+        "blocked: Ballotpedia (do-not-fetch list)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:30:05.995Z",
+      "by": "sc-search-r3"
+    }
+  ]
+}

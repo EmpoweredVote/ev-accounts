@@ -1,0 +1,39 @@
+{
+  "id": "SC-H-3459-2025",
+  "scope": "state:sc",
+  "title": "H 3459 (126th General Assembly): Voter registration",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3459&session=126&summary=B"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 5 (7-5-170(2))\n(quote) The application must be on a form prescribed and provided by the executive director and shall contain the following information: name, sex, race, South Carolina driver's license number or state identification card number issued by the Department of Motor Vehicles, date of birth, residence address, mailing address, telephone number of the applicant, and location of prior voter registration. The applicant's social security number is required only if the applicant does not have a South Carolina driver's license or state identification card issued by the Department of Motor Vehicles.\n(section) Sec. 6 (7-5-185(B)(5))\n(quote) An application submitted pursuant to this section must contain the applicant's name, sex, race, South Carolina driver's license or state identification number, last four digits of social security number, date of birth, residence address, mailing address, telephone number of the applicant, and location of prior voter registration.\n(section) Sec. 4 (7-3-60(B))\n(quote) The clerks of court of each county, chief magistrate for administrative purposes in each county, and municipal clerks of court must furnish to the executive director of the State Election Commission a quarterly report of all persons who have indicated in response to juror summonses that they are not United States citizens.\n(other) Sec. 1 (new 7-5-290): third-party voter registration groups must register with the State Election Commission and turn in applications within ten days; fines.\n(other) Sec. 2 (7-1-25): domicile; registering or voting elsewhere counts as changing domicile; removes some residence factors.\n(other) Sec. 3 (7-3-20(D)): executive director oversees third-party registration groups.\n(other) Sec. 7 (7-25-10): false swearing on a registration application becomes a felony, up to five years.\n(other) Sec. 8 (new 7-25-25): felony to fill out another person's registration application without knowledge.\n(other) Sec. 9: Sections 1 and 3 take effect 180 days after approval; the rest on approval.\n(other) version: Only one version (Introduced, 2024-12-05). Registration ID-number rule and juror-summons non-citizen reports appear in slot e; no in-person ID, no mail ballot ID, no documentary citizenship proof.\n(other) note: Strike/new markers restored from the bill's HTML styling. The new registration ID-number requirement is a number on the application (driver's licence or state ID number, else social security number), not a document to show. The juror-summons reports go to the executive director; the bill states no consequence for the listed person in the text read. Only the introduced text is saved.",
+  "sponsors": [
+    {
+      "name": "Weston Newton",
+      "role": "prime",
+      "version": "2024-12-05_Introduced"
+    },
+    {
+      "name": "Brandon Newton",
+      "role": "co",
+      "version": "2024-12-05_Introduced"
+    },
+    {
+      "name": "Fawn Pedalino",
+      "role": "co",
+      "version": "2024-12-05_Introduced"
+    },
+    {
+      "name": "Bill Taylor",
+      "role": "co",
+      "version": "2024-12-05_Introduced"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 SC bill texts and roll calls (Sonnet readers R1-R5 + official vote/journal pages, voting-rights, 2026-11-10)",
+    "fetched_at": "2026-11-10",
+    "method": "curl"
+  }
+}

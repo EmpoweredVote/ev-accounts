@@ -1,0 +1,723 @@
+{
+  "id": "SC-S-582-2026",
+  "scope": "state:sc",
+  "title": "S 582 (126th General Assembly): Ratify Constitutional Amendment",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0582&session=126&summary=B",
+    "https://www.scstatehouse.gov/votehistory.php?KEY=25989",
+    "https://www.scstatehouse.gov/votehistory.php?KEY=27533"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) SECTION 1 (ratifies S.C. Constitution Art. II, Sec. 4 as amended by Joint Resolution 1126 of 2024)\n(quote) Section 4. Only a citizen of the United States and of this State of the age of eighteen and upwards who is properly registered is entitled to vote as provided by law.\n(other) SECTION 1 also recites that the amendment was submitted at the 2024 General Election and received a favorable vote, and declares it part of the Constitution.\n(other) version: 2025-04-16_Introduced: ratification of the citizens-only voter-qualification amendment (from S 1126 of 2024); no slots a-d.\n(other) version: 2025-04-16_Amended: UNREADABLE (error page). The House Judiciary amendment (reported 2026-04-29) is not seen in it.\n(other) version: zz-final_ratified: Act No. 245 as ratified 2026-05-14 (R 143). Its operative words are identical to the introduced version: same recital about Joint Resolution 1126 of 2024 and the same Section 4 text. Slots a-d: none.\n(other) note: Furthest version is the ratified Act No. 245 (R 143, ratified 2026-05-14, no signature required, effective 05/16/26), read from zz-final_ratified. Its words match the introduced text, so the House committee amendment did not change the operative constitutional wording; what the amendment changed is not visible (the amended file is an error page). Senate vote 2025-04-24 was on the introduced text. The House vote 2026-05-05 was on the bill as amended by House Judiciary; the enrolled text that followed (read third time 05-06) is the ratified act, so the citizens-only wording was in the voted bill, but the exact amended print is not saved.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2025-04-24",
+      "body": "SC Senate",
+      "motion": "2nd Reading [version voted: 2025-04-16_Introduced]",
+      "kind": "roll-call",
+      "yes": 39,
+      "no": 0,
+      "absent": 6,
+      "body_size": 45,
+      "note": "LegiScan roll call; every yea and nay checked against the official vote page | https://www.scstatehouse.gov/votehistory.php?KEY=25989",
+      "members": [
+        {
+          "name": "Karl Allen",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Gambrell",
+          "vote": "yea"
+        },
+        {
+          "name": "Rex Rice",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Alexander",
+          "vote": "yea"
+        },
+        {
+          "name": "George Campsen",
+          "vote": "yea"
+        },
+        {
+          "name": "Ronnie Cromer",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Davis",
+          "vote": "yea"
+        },
+        {
+          "name": "Lawrence Grooms",
+          "vote": "yea"
+        },
+        {
+          "name": "Bradley Hutto",
+          "vote": "yea"
+        },
+        {
+          "name": "Darrell Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Shane Martin",
+          "vote": "yea"
+        },
+        {
+          "name": "Shane Massey",
+          "vote": "yea"
+        },
+        {
+          "name": "Harvey Peeler",
+          "vote": "yea"
+        },
+        {
+          "name": "Luke Rankin",
+          "vote": "yea"
+        },
+        {
+          "name": "Danny Verdin",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent Williams",
+          "vote": "absent"
+        },
+        {
+          "name": "Thomas Corbin",
+          "vote": "yea"
+        },
+        {
+          "name": "Ronnie Sabb",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen Goldfinch",
+          "vote": "absent"
+        },
+        {
+          "name": "Greg Hembree",
+          "vote": "yea"
+        },
+        {
+          "name": "Sean Bennett",
+          "vote": "yea"
+        },
+        {
+          "name": "Ross Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Russell Ott",
+          "vote": "yea"
+        },
+        {
+          "name": "Margie Matthews",
+          "vote": "yea"
+        },
+        {
+          "name": "David Climer",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Elliott",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Cash",
+          "vote": "yea"
+        },
+        {
+          "name": "Roger Nutt",
+          "vote": "yea"
+        },
+        {
+          "name": "Deon Tedder",
+          "vote": "yea"
+        },
+        {
+          "name": "Billy Garrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Joshua Kimbrell",
+          "vote": "absent"
+        },
+        {
+          "name": "Brian Adams",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Johnson",
+          "vote": "absent"
+        },
+        {
+          "name": "Mike Reichenbach",
+          "vote": "yea"
+        },
+        {
+          "name": "Matthew Leber",
+          "vote": "absent"
+        },
+        {
+          "name": "Tameika Devine",
+          "vote": "yea"
+        },
+        {
+          "name": "Allen Blackmon",
+          "vote": "yea"
+        },
+        {
+          "name": "JD Chaplin",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeffrey Graham",
+          "vote": "yea"
+        },
+        {
+          "name": "Carlisle Kennedy",
+          "vote": "yea"
+        },
+        {
+          "name": "Everett Stubbs",
+          "vote": "absent"
+        },
+        {
+          "name": "Ed Sutton",
+          "vote": "yea"
+        },
+        {
+          "name": "Overture Walker",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Zell",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-05",
+      "body": "SC House",
+      "motion": "Passage of Bill [version voted: bill as amended by House Judiciary 2026-04-29 (print not saved); final words = zz-final_ratified]",
+      "kind": "roll-call",
+      "yes": 106,
+      "no": 6,
+      "absent": 12,
+      "body_size": 124,
+      "note": "LegiScan roll call; every yea and nay checked against the official vote page | https://www.scstatehouse.gov/votehistory.php?KEY=27533",
+      "members": [
+        {
+          "name": "Terry Alexander",
+          "vote": "yea"
+        },
+        {
+          "name": "Carl Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Nathan Ballentine",
+          "vote": "absent"
+        },
+        {
+          "name": "Bruce Bannister",
+          "vote": "absent"
+        },
+        {
+          "name": "William Clyburn",
+          "vote": "yea"
+        },
+        {
+          "name": "Gilda Cobb-Hunter",
+          "vote": "absent"
+        },
+        {
+          "name": "Chandra Dillard",
+          "vote": "nay"
+        },
+        {
+          "name": "Shannon Erickson",
+          "vote": "yea"
+        },
+        {
+          "name": "Wendell Gilliard",
+          "vote": "nay"
+        },
+        {
+          "name": "Jerry Govan",
+          "vote": "yea"
+        },
+        {
+          "name": "Christopher Hart",
+          "vote": "yea"
+        },
+        {
+          "name": "Jackie Hayes",
+          "vote": "yea"
+        },
+        {
+          "name": "William Herbkersman",
+          "vote": "yea"
+        },
+        {
+          "name": "Davey Hiott",
+          "vote": "absent"
+        },
+        {
+          "name": "Lonnie Hosey",
+          "vote": "yea"
+        },
+        {
+          "name": "Leon Howard",
+          "vote": "absent"
+        },
+        {
+          "name": "John King",
+          "vote": "yea"
+        },
+        {
+          "name": "Phillip Lowe",
+          "vote": "yea"
+        },
+        {
+          "name": "Dennis Moss",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd Rutherford",
+          "vote": "yea"
+        },
+        {
+          "name": "Murrell Smith",
+          "vote": "absent"
+        },
+        {
+          "name": "Leonidas Stavrinakis",
+          "vote": "yea"
+        },
+        {
+          "name": "David Weeks",
+          "vote": "absent"
+        },
+        {
+          "name": "William Whitmire",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Willis",
+          "vote": "yea"
+        },
+        {
+          "name": "William Hixon",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Taylor",
+          "vote": "yea"
+        },
+        {
+          "name": "William Chumley",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Pope",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Hardee",
+          "vote": "yea"
+        },
+        {
+          "name": "Beth Bernstein",
+          "vote": "yea"
+        },
+        {
+          "name": "Craig Gagnon",
+          "vote": "yea"
+        },
+        {
+          "name": "Heather Crawford",
+          "vote": "yea"
+        },
+        {
+          "name": "Weston Newton",
+          "vote": "yea"
+        },
+        {
+          "name": "James Burns",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Bamberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeffrey Bradley",
+          "vote": "yea"
+        },
+        {
+          "name": "Neal Collins",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeffrey Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Roger Kirby",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Yow",
+          "vote": "yea"
+        },
+        {
+          "name": "Wallace Jordan",
+          "vote": "yea"
+        },
+        {
+          "name": "Sylleste Davis",
+          "vote": "yea"
+        },
+        {
+          "name": "Frank Atkinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Cally Forrest",
+          "vote": "absent"
+        },
+        {
+          "name": "William Hewitt",
+          "vote": "yea"
+        },
+        {
+          "name": "Roy Magnuson",
+          "vote": "yea"
+        },
+        {
+          "name": "John Mccravy",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Rivers",
+          "vote": "yea"
+        },
+        {
+          "name": "Brandon Newton",
+          "vote": "yea"
+        },
+        {
+          "name": "Steven Long",
+          "vote": "yea"
+        },
+        {
+          "name": "Micajah Caskey",
+          "vote": "yea"
+        },
+        {
+          "name": "Rosalyn Henderson-Myers",
+          "vote": "yea"
+        },
+        {
+          "name": "Timothy McGinnis",
+          "vote": "yea"
+        },
+        {
+          "name": "Christopher Wooten",
+          "vote": "yea"
+        },
+        {
+          "name": "Kambrell Garvin",
+          "vote": "yea"
+        },
+        {
+          "name": "Doug Gilliam",
+          "vote": "yea"
+        },
+        {
+          "name": "Randy Ligon",
+          "vote": "yea"
+        },
+        {
+          "name": "Annie McDaniel",
+          "vote": "nay"
+        },
+        {
+          "name": "JA Moore",
+          "vote": "yea"
+        },
+        {
+          "name": "Seth Rose",
+          "vote": "yea"
+        },
+        {
+          "name": "William Bailey",
+          "vote": "yea"
+        },
+        {
+          "name": "Paula Rawl Calhoon",
+          "vote": "yea"
+        },
+        {
+          "name": "Melissa Oremus",
+          "vote": "yea"
+        },
+        {
+          "name": "Patrick Haddon",
+          "vote": "yea"
+        },
+        {
+          "name": "Elizabeth Wetmore",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Brittain",
+          "vote": "yea"
+        },
+        {
+          "name": "Joseph Bustos",
+          "vote": "yea"
+        },
+        {
+          "name": "Gil Gatch",
+          "vote": "absent"
+        },
+        {
+          "name": "Jermaine Johnson",
+          "vote": "absent"
+        },
+        {
+          "name": "Marvin Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Donald McCabe",
+          "vote": "absent"
+        },
+        {
+          "name": "Travis Moore",
+          "vote": "yea"
+        },
+        {
+          "name": "Robby Robbins",
+          "vote": "yea"
+        },
+        {
+          "name": "Alan Morgan",
+          "vote": "yea"
+        },
+        {
+          "name": "Brandon Cox",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Beach",
+          "vote": "yea"
+        },
+        {
+          "name": "April Cromer",
+          "vote": "yea"
+        },
+        {
+          "name": "Brandon Guffey",
+          "vote": "yea"
+        },
+        {
+          "name": "Jay Kilmartin",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Lawson",
+          "vote": "yea"
+        },
+        {
+          "name": "Cody Mitchell",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Neese",
+          "vote": "yea"
+        },
+        {
+          "name": "Jordan Pace",
+          "vote": "yea"
+        },
+        {
+          "name": "Wendell Jones",
+          "vote": "nay"
+        },
+        {
+          "name": "Heath Sessions",
+          "vote": "yea"
+        },
+        {
+          "name": "Heather Bauer",
+          "vote": "yea"
+        },
+        {
+          "name": "Daniel Gibson",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "David Vaughan",
+          "vote": "yea"
+        },
+        {
+          "name": "Don Chapman",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Brewer",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Hartnett",
+          "vote": "yea"
+        },
+        {
+          "name": "Fawn Pedalino",
+          "vote": "yea"
+        },
+        {
+          "name": "Val Guest",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Hager",
+          "vote": "yea"
+        },
+        {
+          "name": "Kathy Landing",
+          "vote": "yea"
+        },
+        {
+          "name": "Carla Schuessler",
+          "vote": "yea"
+        },
+        {
+          "name": "Joe White",
+          "vote": "yea"
+        },
+        {
+          "name": "Tiffany Spann-Wilder",
+          "vote": "yea"
+        },
+        {
+          "name": "Phillip Bowers",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Duncan",
+          "vote": "yea"
+        },
+        {
+          "name": "Sarita Edgerton",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen Frank",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee Gilreath",
+          "vote": "yea"
+        },
+        {
+          "name": "Hamilton Grant",
+          "vote": "yea"
+        },
+        {
+          "name": "Charles Hartz",
+          "vote": "yea"
+        },
+        {
+          "name": "Harriet Holman",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Huff",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Luck",
+          "vote": "yea"
+        },
+        {
+          "name": "David Martin",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Montgomery",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Reese",
+          "vote": "nay"
+        },
+        {
+          "name": "Blake Sanders",
+          "vote": "absent"
+        },
+        {
+          "name": "James Teeple",
+          "vote": "yea"
+        },
+        {
+          "name": "Jackie Terribile",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Wickensimer",
+          "vote": "yea"
+        },
+        {
+          "name": "Luke Rankin",
+          "vote": "yea"
+        },
+        {
+          "name": "Courtney Waters",
+          "vote": "nay"
+        },
+        {
+          "name": "Keishan Scott",
+          "vote": "yea"
+        },
+        {
+          "name": "John Lastinger",
+          "vote": "yea"
+        },
+        {
+          "name": "Dianne Mitchell",
+          "vote": "yea"
+        },
+        {
+          "name": "Greg Ford",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 SC bill texts and roll calls (Sonnet readers R1-R5 + official vote/journal pages, voting-rights, 2026-11-10)",
+    "fetched_at": "2026-11-10",
+    "method": "curl"
+  }
+}

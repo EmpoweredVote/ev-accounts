@@ -1,0 +1,18 @@
+{
+  "id": "SC-H-4935-2023",
+  "scope": "state:sc",
+  "title": "H 4935 (125th General Assembly): SAVE Act",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4935&session=125&summary=B"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 5 (7-15-320(B))\n(quote) STRUCK: persons sixty-five years of age or older;\n(other) Sec. 1: short title, Secure, Accurate, and Verifiable Elections Act.\n(other) Sec. 2 (new 7-5-200): only paper poll books; electronic poll books banned.\n(other) Sec. 3 (new 7-13-870): hand-marked paper ballots on watermarked paper, counted by hand at each precinct in public view and by streamed video; keeps one accessible voting system per polling place.\n(other) Sec. 4 (new 7-13-880): chain-of-custody records for all election equipment and materials, kept 24 months.\n(other) Sec. 5 (7-15-320): removes early-voting references and strikes absentee eligibility for people 65 or older.\n(other) Sec. 6 (53-5-10): makes general election day a legal holiday.\n(other) Sec. 7: effective on approval by the Governor.\n(other) version: Only one version (Introduced, 2024-01-24). No ID or citizenship text in slots a-d. Slot e entry is a removal of an absentee-eligibility category, not ID.\n(other) note: Strike/new markers restored from HTML styling. Not an ID or citizenship bill; included only because of the absentee-eligibility change. Only the introduced text is saved.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 SC bill texts and roll calls (Sonnet readers R1-R5 + official vote/journal pages, voting-rights, 2026-11-10)",
+    "fetched_at": "2026-11-10",
+    "method": "curl"
+  }
+}

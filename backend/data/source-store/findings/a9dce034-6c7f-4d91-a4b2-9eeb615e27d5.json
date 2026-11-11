@@ -1,0 +1,35 @@
+{
+  "politician_id": "a9dce034-6c7f-4d91-a4b2-9eeb615e27d5",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "reasonable-impediment affidavit / provisional ballot",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "official page found via search (scstatehouse.gov member page, used only to confirm office)",
+        "campaign site https://luckforsc.com/ : nothing on the subject",
+        "iVoterGuide questionnaire https://ivoterguide.com/candidate/82885/race/16338/election/1229 : both elections-and-voting statements recorded as did not answer (not saved)",
+        "Marlboro Herald-Advocate filing article https://heraldadvocate.com/news/17062/luck-files-for-re-election-to-sc-house-district-54/ : nothing on the subject",
+        "candidate guide pages: Ballotpedia survey not completed per search; WSOC guide no response",
+        "On the Record (0 appearances)",
+        "scstatehouse.gov House Journal pages (2011 and 2025-26 dated pages; roll-call lists only, no floor remarks on the subject)",
+        "web searches (name plus voter ID, photo ID, proof of citizenship, noncitizen, questionnaire, local outlets): nothing on the subject",
+        "blocked: https://ballotpedia.org (not fetched, listed as refusing fetches)",
+        "blocked: https://bluevoterguide.org (not fetched, listed as refusing fetches)",
+        "blocked: https://justfacts.votesmart.org (not fetched, listed as refusing fetches)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:37:18.613Z",
+      "by": "sc-search-r4"
+    }
+  ]
+}

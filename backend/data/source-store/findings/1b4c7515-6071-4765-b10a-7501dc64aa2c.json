@@ -27,5 +27,36 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "noncitizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "status: holds SC House District 8 seat",
+        "On the Record (0 meetings)",
+        "official House member page (used to identify seat only)",
+        "campaign site",
+        "Ballotpedia (not fetched: refuses fetches)",
+        "blocked: https://justfacts.votesmart.org",
+        "blocked: https://onyourballot.vote411.org (server error / not found)",
+        "iVoterGuide candidate pages, all election years",
+        "House Journal search (no remarks on the subject found)",
+        "web searches: name + voter ID, photo ID, proof of citizenship / SAVE Act, noncitizen, questionnaire, election integrity, local outlets",
+        "chapmanforschouse.com issues pages (2024 and current): nothing on the subject",
+        "Anderson Observer 2026 questionnaire: blocked: https://www.andersonobserver.com/primary-2026/sc-rep-don-chapman-incumbent-sc-house-dist-8 (returned 404 to curl)",
+        "iVoterGuide: photo ID question marked 'Did not answer' in every year (2022, 2024, 2026)",
+        "nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:27:34.345Z",
+      "by": "sc-search-r2"
+    }
+  ]
 }

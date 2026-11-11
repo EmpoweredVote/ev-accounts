@@ -25,7 +25,77 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "a30c3d57f43d0d2e2bce2ee211c89b9ca2e0374a585e97c872cdf9b8f3bbe080",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/65976/race/16294/election/872",
+      "date": "2022-06-14",
+      "date_precision": "day",
+      "passage": "People should be able to vote without photo identification. Strongly Disagree What laws would you propose to change present voting practices? Paper ballots and photo ID.",
+      "note": "iVoterGuide 2022 primary questionnaire: answer to the photo ID statement and to the question on laws to change voting practices.",
+      "subjects": [
+        "voter ID at the polls",
+        "paper ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:27:34.346Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "46b7ac1faa1d0edf23b2c05da294e62996162cfab03fb8fe1a6d44143ff5fc64",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/65976/race/16294/election/958",
+      "date": "2022-11-08",
+      "date_precision": "day",
+      "passage": "People should be able to vote without photo identification. Strongly Disagree What laws would you propose to change present voting practices? Paper ballots and photo ID.",
+      "note": "iVoterGuide 2022 general-election questionnaire, same answers as printed.",
+      "subjects": [
+        "voter ID at the polls",
+        "paper ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:27:34.346Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "noncitizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "status: holds SC House District 10 seat",
+        "On the Record (0 meetings)",
+        "official House member page (used to identify seat only)",
+        "campaign site",
+        "Ballotpedia (not fetched: refuses fetches)",
+        "blocked: https://justfacts.votesmart.org",
+        "blocked: https://onyourballot.vote411.org (server error / not found)",
+        "iVoterGuide candidate pages, all election years",
+        "House Journal search (no remarks on the subject found)",
+        "web searches: name + voter ID, photo ID, proof of citizenship / SAVE Act, noncitizen, questionnaire, election integrity, local outlets",
+        "beachforhouse.com: nothing on voter ID (immigration paragraph is about licensing, not voting)"
+      ],
+      "found": 2,
+      "at": "2026-11-10T21:27:34.346Z",
+      "by": "sc-search-r2"
+    }
+  ]
 }

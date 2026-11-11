@@ -25,7 +25,194 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "0d9e9bdd39a678e6ddf3f8053785ebaa5e4d3bb3d77e3c15f599dd162bf4b7f5",
+      "kind": "own-words",
+      "url": "https://wesclimer.com/save-act-would-protect-the-integrity-of-the-vote/",
+      "date": "2026-04-03",
+      "date_precision": "day",
+      "passage": "The SAVE Act would establish a uniform standard by requiring documentary proof of citizenship when registering to vote in federal elections.",
+      "note": "In a signed campaign-site piece, he describes the federal SAVE Act as setting one standard of documentary proof of citizenship at registration for federal elections.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:21:25.740Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a615cd35d03ce5de315fa9031b93874ca227b6d534d4c75b9557fffe1306d663",
+      "kind": "own-words",
+      "url": "https://wesclimer.com/save-act-would-protect-the-integrity-of-the-vote/",
+      "date": "2026-04-03",
+      "date_precision": "day",
+      "passage": "The SAVE Act addresses that balance by relying on documentation that citizens already possess, such as a passport, a birth certificate, or other official records demonstrating citizenship.",
+      "note": "He says the proof-of-citizenship requirement uses documents citizens already have, and presents it as balancing access with integrity.",
+      "subjects": [
+        "proof of citizenship to register",
+        "documents accepted as proof"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:21:25.740Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6a484cb3b781d594a70fa78cb36762298fc1270e6fb85a89a11a02b901f2c102",
+      "kind": "own-words",
+      "url": "https://wesclimer.com/save-act-would-protect-the-integrity-of-the-vote/",
+      "date": "2026-04-03",
+      "date_precision": "day",
+      "passage": "South Carolina requires identification at the polls and has built a reputation for orderly election administration.",
+      "note": "He refers to South Carolina's in-person ID rule as the model the federal bill builds on.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:21:25.740Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2a7c0d10953af43ca827f356f54dcb9f0c2f3aa35724aae250cb0b672b074111",
+      "kind": "own-words",
+      "url": "https://wesclimer.com/save-act-would-protect-the-integrity-of-the-vote/",
+      "date": "2026-04-03",
+      "date_precision": "day",
+      "passage": "It would also require election officials to maintain procedures that verify voter eligibility against existing records.",
+      "note": "He describes the bill's voter-roll eligibility checks against existing records.",
+      "subjects": [
+        "voter-roll eligibility checks",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:21:25.740Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6faf09ea6e8effee660b59b459517d907eecd19de63e7bc874b2c5dba3d3fd59",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=20955",
+      "date": "2022-04-21",
+      "date_precision": "day",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "yea",
+      "motion": "Senate: 3rd Reading",
+      "note": "SC Senate roll call (3rd Reading, 43-0) on H4919 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 18031 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.823Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d0408510b99d35090c40b5547c5404fecb3f57da7fe854e2d44c61a9a8fb44fb",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=27457",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-872-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "note": "SC Senate roll call (2nd Reading, 44-0) on S0872 (126th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 18031 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.823Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ea5a5a4f1e09b7bcfa4335790c642610f0a275b7f866bf77bbf81559174018d0",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0872&session=126&summary=B",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "SC-S-872-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, 2026-01-29_Introduced",
+      "note": "Listed as co sponsor of S0872 (126th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2026-01-29_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.823Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "voter-roll eligibility checks",
+        "election integrity",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://wesclimer.com/save-act-would-protect-the-integrity-of-the-vote/ (fetched by curl; signed 'Wes Climer', published 2026-04-03; three passages saved)",
+        "campaign site news and pillars pages found only through search; no other post on the subject found",
+        "web searches: name + voter ID / photo ID; proof of citizenship / SAVE Act / noncitizen / election integrity; campaign-site news; S. 128 and citizen-voting bills; 2024 citizen-voting amendment floor remarks (no floor remarks or interviews found; sponsorship of S. 1054 and S. 1126 left to the separate record linking)",
+        "blocked: Ballotpedia, justfacts.votesmart.org (listed as refused)"
+      ],
+      "found": 4,
+      "at": "2026-11-10T21:21:25.740Z",
+      "by": "search-sc-2026-11-10"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 3,
+      "at": "2026-11-10T23:17:03.823Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }
