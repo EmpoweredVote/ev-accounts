@@ -427,9 +427,14 @@ export async function getPoliticiansFlatList(
            p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
            p.finance_summary,
-           COALESCE(p.valid_from, '') AS term_start,
-           COALESCE(p.valid_to, '') AS term_end,
-           COALESCE(p.term_date_precision, '') AS term_date_precision,
+           -- 🔴 Term dates come from the TENURE (office_current_holder -> office_terms), never from
+           -- p.valid_from / p.valid_to / p.term_date_precision — the deprecated per-person snapshot
+           -- this used to read, which left 4,033 current dated tenures showing no date to a voter.
+           -- to_char is load-bearing: a raw 'date' becomes a JS Date and stringifies to "Thu Jan 14".
+           -- Full rationale and the measurements are on DISTRICT_SELECT_FIELDS in districtQueries.ts.
+           COALESCE(to_char(och.term_start, 'YYYY-MM-DD'), '') AS term_start,
+           COALESCE(to_char(och.term_end, 'YYYY-MM-DD'), '') AS term_end,
+           COALESCE(CASE WHEN och.term_start IS NOT NULL THEN och.start_precision END, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.id AS office_id,
            -- CC_0341 transition fields. All three are NULL for a seat with no successor
@@ -439,7 +444,7 @@ export async function getPoliticiansFlatList(
            -- disappear, at midnight, with no write.
            ont.politician_id AS incoming_holder_id,
            inc.full_name AS incoming_holder_name,
-           ont.term_start AS incoming_on,
+           to_char(ont.term_start, 'YYYY-MM-DD') AS incoming_on,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.voting_powers, o.representation_note,
            o.is_appointed_position, o.is_vacant, o.vacant_since,
@@ -1411,9 +1416,14 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
            p.urls, p.email_addresses, p.bio_text, p.slug,
            p.total_years_in_office, p.is_incumbent, p.is_appointed, p.is_vacant,
            p.is_active, p.office_id, p.notes, p.finance_summary,
-           COALESCE(p.valid_from, '') AS term_start,
-           COALESCE(p.valid_to, '') AS term_end,
-           COALESCE(p.term_date_precision, '') AS term_date_precision,
+           -- 🔴 Term dates come from the TENURE (office_current_holder -> office_terms), never from
+           -- p.valid_from / p.valid_to / p.term_date_precision — the deprecated per-person snapshot
+           -- this used to read, which left 4,033 current dated tenures showing no date to a voter.
+           -- to_char is load-bearing: a raw 'date' becomes a JS Date and stringifies to "Thu Jan 14".
+           -- Full rationale and the measurements are on DISTRICT_SELECT_FIELDS in districtQueries.ts.
+           COALESCE(to_char(och.term_start, 'YYYY-MM-DD'), '') AS term_start,
+           COALESCE(to_char(och.term_end, 'YYYY-MM-DD'), '') AS term_end,
+           COALESCE(CASE WHEN och.term_start IS NOT NULL THEN och.start_precision END, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.voting_powers, o.representation_note,
