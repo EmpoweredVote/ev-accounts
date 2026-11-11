@@ -25,7 +25,91 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "6faf09ea6e8effee660b59b459517d907eecd19de63e7bc874b2c5dba3d3fd59",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=20955",
+      "date": "2022-04-21",
+      "date_precision": "day",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "yea",
+      "motion": "Senate: 3rd Reading",
+      "note": "SC Senate roll call (3rd Reading, 43-0) on H4919 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 19395 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.823Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d0408510b99d35090c40b5547c5404fecb3f57da7fe854e2d44c61a9a8fb44fb",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=27457",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-872-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "note": "SC Senate roll call (2nd Reading, 44-0) on S0872 (126th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 19395 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.823Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "confirmed in office: https://www.scstatehouse.gov/member.php?chamber=S lists Senator Richard J. Cash, District 3 (member page used only to confirm office, no text copied)",
+        "On the Record (0 meetings)",
+        "campaign site https://richardcash.sc/ (nothing on the subject; only a statement about a state of emergency and a primary, unrelated to ID or citizenship)",
+        "https://www.edgefieldadvertiser.com/?p=8855 (2013 profile for his 2014 federal Senate run: nothing on voter ID or photo ID)",
+        "https://www.andersonobserver.com/news/opinion-sen-cash-deserves-credit-for-upholding-states-integrity (his words concern stopping a 2026 redistricting effort once early voting began, not ID or citizenship)",
+        "web searches: voter ID/photo ID/election integrity, proof of citizenship/noncitizen/SAVE Act, questionnaire/candidate survey, 2014 U.S. Senate campaign, Senate Journal remarks (journal entries found were on other subjects)",
+        "blocked: https://ballotpedia.org/Richard_Cash (listed as refusing fetches, not tried)",
+        "not reviewed: https://scdailygazette.com (refused-site list, not opened)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:20:07.958Z",
+      "by": "search-sc-2026-11-10"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 2,
+      "at": "2026-11-10T23:17:03.823Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

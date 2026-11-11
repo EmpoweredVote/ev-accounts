@@ -27,5 +27,30 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "reasonable impediment affidavit",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://robbyforhouse.com/ and /about/ (confirms he holds House District 97; nothing on the subject; the issues and record sections are anchors on the home page)",
+        "old campaign news pages robbyforhouse.com/category/...: empty response, not reviewed",
+        "iVoterGuide 2026 and 2022 profiles: the photo-identification questionnaire item is marked Did not answer; nothing to save",
+        "House Journal 2026 via search: only adjournment motions by him; nothing on the subject",
+        "South Carolina Public Radio, local outlets, news searches: nothing on the subject",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (refuse fetches; not tried)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:44:02.107Z",
+      "by": "sc-search-r5"
+    }
+  ]
 }

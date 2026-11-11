@@ -1,0 +1,251 @@
+{
+  "id": "SC-S-872-2026",
+  "scope": "state:sc",
+  "title": "S 872 (126th General Assembly): Immigration Status on Driver's License",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0872&session=126&summary=B",
+    "https://www.scstatehouse.gov/votehistory.php?KEY=27457"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) 7-13-710(A), SECTION 2\n(quote) When a person presents himself to vote, he shall produce a valid and current: (1) South Carolina driver's license that does not contain the words \"Limited Term\"; or (2) other form of identification containing a photograph issued by the Department of Motor Vehicles that does not contain the words \"Limited Term\"; or (3) passport; or (4) military identification containing a photograph issued by the federal government; or (5) South Carolina voter registration card containing a photograph of the voter pursuant to Section 7-5-675.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) 56-1-140(A), SECTION 1 (licence marker)\n(quote) Qualified applicants who are not citizens of the United States must have \"Limited Term\" conspicuously included on the driver's licenses or identification cards issued to them.\n(section) 7-13-710(A)(1)-(2), SECTION 2 (immigration-status marker bars the card as voting ID)\n(quote) South Carolina driver's license that does not contain the words \"Limited Term\"\n(section) 56-1-235, SECTION 3\n(quote) Whenever any person becomes a citizen of the United States after previously providing the Department of Motor Vehicles with documentation that he was not a citizen of the United States, such person shall notify the Department of Motor Vehicles of the change and provide documentation substantiating his citizenship status. The Department of Motor Vehicles must provide one driver's license or identification card at no charge reflecting the applicable change.\n(other) SECTION 1 (56-1-140(A)): driver's licence terms (fee $25, eight-year term, photo etc.) reprinted; the new sentence is the 'Limited Term' marking for non-citizens.\n(other) SECTION 3 (56-1-235): a new citizen must report the change to the DMV; first replacement card free, later ones at the usual fee.\n(other) SECTION 4: takes effect on the Governor's approval.\n(other) version: 2026-01-29_Introduced: DMV must require proof of U.S. citizenship (or proof of legal status) for a licence or special ID card; non-citizens get an 'NC' code on the card; 7-13-710(A) ID list (driver's licence, DMV photo ID, passport, military ID, photo voter card) excludes a licence or DMV ID carrying 'NC'. No citizenship proof asked at registration or voting.\n(other) version: 2026-04-15_Comm-Sub: Senate Transportation 'strike all and insert' text (the saved file also reprints the introduced bill after it): drops the proof-of-citizenship requirement and the 'NC' code; instead marks non-citizens' licences and ID cards 'Limited Term'; 7-13-710(A) now excludes cards with the words 'Limited Term'; adds 56-1-235 (new-citizen update, one free card).\n(other) version: 2026-04-28_Comm-Sub: clean print of the same committee amendment adopted on the floor; same operative text as 04-15.\n(other) note: Bill stopped in the House (referred to Education and Public Works 2026-04-30); not enacted. The saved texts show no {{new: }} / [[struck: ]] markers around the changed words, so what is new is read from the title and the 'Limited Term'/'NC' differences, not from markers. Items (1)-(5) of the ID list other than the card-marker words are existing Act 27 of 2011 law reprinted unchanged. Slot d is 'not stated' for the final version because it has no proof-of-citizenship or database check for registration or voting; the introduced version's DMV proof-of-citizenship rule governs issuing licences, not voting, and was removed.",
+  "sponsors": [
+    {
+      "name": "Stephen Goldfinch",
+      "role": "prime",
+      "version": "2026-04-28_Comm-Sub"
+    },
+    {
+      "name": "Wes Climer",
+      "role": "co",
+      "version": "2026-04-28_Comm-Sub"
+    },
+    {
+      "name": "Jeff Zell",
+      "role": "co",
+      "version": "2026-04-28_Comm-Sub"
+    },
+    {
+      "name": "Billy Garrett",
+      "role": "co",
+      "version": "2026-04-28_Comm-Sub"
+    },
+    {
+      "name": "Thomas Alexander",
+      "role": "co",
+      "version": "2026-04-28_Comm-Sub"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2026-04-28",
+      "body": "SC Senate",
+      "motion": "2nd Reading [version voted: 2026-04-28_Comm-Sub]",
+      "kind": "roll-call",
+      "yes": 44,
+      "no": 0,
+      "absent": 2,
+      "body_size": 46,
+      "note": "LegiScan roll call; every yea and nay checked against the official vote page | https://www.scstatehouse.gov/votehistory.php?KEY=27457",
+      "members": [
+        {
+          "name": "Karl Allen",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Gambrell",
+          "vote": "yea"
+        },
+        {
+          "name": "Rex Rice",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Alexander",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee Bright",
+          "vote": "yea"
+        },
+        {
+          "name": "George Campsen",
+          "vote": "yea"
+        },
+        {
+          "name": "Ronnie Cromer",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Davis",
+          "vote": "yea"
+        },
+        {
+          "name": "Lawrence Grooms",
+          "vote": "yea"
+        },
+        {
+          "name": "Bradley Hutto",
+          "vote": "yea"
+        },
+        {
+          "name": "Darrell Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Shane Martin",
+          "vote": "yea"
+        },
+        {
+          "name": "Shane Massey",
+          "vote": "yea"
+        },
+        {
+          "name": "Harvey Peeler",
+          "vote": "yea"
+        },
+        {
+          "name": "Luke Rankin",
+          "vote": "yea"
+        },
+        {
+          "name": "Danny Verdin",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Corbin",
+          "vote": "yea"
+        },
+        {
+          "name": "Ronnie Sabb",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen Goldfinch",
+          "vote": "absent"
+        },
+        {
+          "name": "Greg Hembree",
+          "vote": "yea"
+        },
+        {
+          "name": "Sean Bennett",
+          "vote": "yea"
+        },
+        {
+          "name": "Ross Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Russell Ott",
+          "vote": "yea"
+        },
+        {
+          "name": "Margie Matthews",
+          "vote": "yea"
+        },
+        {
+          "name": "David Climer",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Elliott",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Cash",
+          "vote": "yea"
+        },
+        {
+          "name": "Deon Tedder",
+          "vote": "yea"
+        },
+        {
+          "name": "Billy Garrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Joshua Kimbrell",
+          "vote": "absent"
+        },
+        {
+          "name": "Brian Adams",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Reichenbach",
+          "vote": "yea"
+        },
+        {
+          "name": "Matthew Leber",
+          "vote": "yea"
+        },
+        {
+          "name": "Tameika Devine",
+          "vote": "yea"
+        },
+        {
+          "name": "Allen Blackmon",
+          "vote": "yea"
+        },
+        {
+          "name": "JD Chaplin",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Fernandez",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeffrey Graham",
+          "vote": "yea"
+        },
+        {
+          "name": "Carlisle Kennedy",
+          "vote": "yea"
+        },
+        {
+          "name": "Everett Stubbs",
+          "vote": "yea"
+        },
+        {
+          "name": "Ed Sutton",
+          "vote": "yea"
+        },
+        {
+          "name": "Overture Walker",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Zell",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 SC bill texts and roll calls (Sonnet readers R1-R5 + official vote/journal pages, voting-rights, 2026-11-10)",
+    "fetched_at": "2026-11-10",
+    "method": "curl"
+  }
+}

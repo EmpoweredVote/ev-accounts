@@ -1,0 +1,33 @@
+{
+  "politician_id": "ae8ce442-9649-4914-afe9-4355533a72fe",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail or absentee ballot ID",
+        "election integrity laws",
+        "non-citizen voting"
+      ],
+      "places": [
+        "status: sitting House member, District 79 (confirmed by search listings)",
+        "On the Record (0 meetings)",
+        "web searches on name plus voter ID, photo ID, proof of citizenship, SAVE Act, questionnaire, outlets (nothing on the subject unless listed)",
+        "House Journal (search hit only, no remarks by the member on the subject)",
+        "blocked: https://ballotpedia.org (not fetched, listed as refusing)",
+        "blocked: https://bluevoterguide.org (not fetched, listed as refusing)",
+        "blocked: https://justfacts.votesmart.org (not fetched, listed as refusing)",
+        "campaign site https://grantforsc.com and /legislative-updates (nothing on the subject)",
+        "news https://www.abccolumbia.com/?p=2376423 (nothing on the subject)",
+        "campaign post https://www.grantforsc.com/post/hamilton-grant-wins-bid-for-sc-house-district-79 (nothing on the subject)",
+        "blocked: Ballotpedia Candidate Connection survey 2024 (listed as refusing, not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:37:02.797Z",
+      "by": "sc-search-r4"
+    }
+  ]
+}

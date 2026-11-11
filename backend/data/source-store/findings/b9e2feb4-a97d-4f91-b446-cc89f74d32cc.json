@@ -1,0 +1,32 @@
+{
+  "politician_id": "b9e2feb4-a97d-4f91-b446-cc89f74d32cc",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "https://spannwilder4sc109.com/issues.html and /voter-info/ (campaign site: issues are crime, youth, jobs, traffic; voter-info page is polling logistics only; nothing on the subject)",
+        "Ballotpedia 2024 candidate survey exists but Ballotpedia is blocked to us",
+        "On the Record (0 appearances)",
+        "South Carolina House Journal pages 2023-2026 (several fetched and searched for the subject words: nothing on the subject)",
+        "web searches on name with voter ID, photo ID, citizenship, noncitizen, questionnaire (nothing on the subject)",
+        "blocked: https://ballotpedia.org (refuses our fetches, not tried)",
+        "blocked: https://justfacts.votesmart.org (refuses our fetches, not tried)",
+        "blocked: https://bluevoterguide.org (refuses our fetches, not tried)",
+        "not reviewed: Senate/House personal-index pages (error pages expected)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:42:52.716Z",
+      "by": "sc-search-r5"
+    }
+  ]
+}

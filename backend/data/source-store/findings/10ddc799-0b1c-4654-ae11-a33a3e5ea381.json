@@ -25,7 +25,76 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "4d732f4ffef990c12d73e2778e74f8ff5e40a2ed6a5c60e646b9a9671e2d9b98",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/65990/race/16332/election/958",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification.",
+      "note": "iVoterGuide questionnaire statement on the 2022 candidate profile; his recorded response to it is Strongly Disagree.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:39:32.114Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "efd6b16b48060c0b2c37b3da79071d242d7724548d24797f757ef280d21ef708",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/65990/race/16332/election/958",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "I believe early voting is fine so long as identity is confirmed and we can prove there are not duplicate votes.  I believe a print/electronic system should work as one to secure against any electronic contamination.",
+      "note": "His written answer to the iVoterGuide question \"What laws would you propose to change present voting practices?\" on the 2022 profile. He ties early voting to confirming identity and checking for duplicate votes.",
+      "subjects": [
+        "identity check for early voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:39:32.114Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "identity checks for early voting",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "member page https://scstatehouse.gov/member.php?code=0730681731 (confirms House District 48, York County; used only to identify him)",
+        "iVoterGuide candidate profile https://ivoterguide.com/candidate/65990/race/16332/election/958 : questionnaire read, two findings saved (2022 race page; the exact survey date is not printed, so year precision)",
+        "his campaign site https://voteguffey.com/ and /about/ : nothing on the subject",
+        "Freedom Voter Guide https://freedomvoterguide.com/candidates/brandon-guffey/ : nothing on the subject",
+        "House Journal pages found by search (2023-04-26, 2026-05-06): only procedural lines, no printed remarks on voting; not saved",
+        "WSOC candidate guide for District 48: page fetched, no answers on the subject found in its text",
+        "7 web searches (name plus voter ID, photo ID, noncitizen, proof of citizenship, SAVE Act, journal, local outlets): nothing further found",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (refused by rule)"
+      ],
+      "found": 2,
+      "at": "2026-11-10T21:39:32.114Z",
+      "by": "sc-search-r4"
+    }
+  ]
 }

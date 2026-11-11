@@ -25,7 +25,257 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "ce207922114d33e968bd28c07daf67fc5a899b77864d85de4f8c636bdeebf9de",
+      "kind": "own-words",
+      "url": "https://www.wistv.com/2025/02/21/groups-fear-proposed-rules-voter-registration-events-sc-could-have-chilling-effect/",
+      "date": "2025-02-20",
+      "date_precision": "day",
+      "passage": "While we’re not experiencing the issues that may be going on in other states, it is imperative that people trust our election process",
+      "note": "Quoted at a House Judiciary subcommittee meeting on the first hearing of his voter-registration bill (H. 3459). Source: WIS news story dated 2025-02-21. Verified word for word on the WIS page by Chris Andrews (by hand) on 2026-11-10; wistv.com refuses AI agents, so no agent fetched it — the quote check must NOT fetch this URL (first seen on a League of Women Voters copy, my.lwv.org/node/65239).",
+      "subjects": [
+        "election integrity laws in general",
+        "third-party voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:59:48.274Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "69773912c3d242e7cbfcc79efd71d81bb6a33a53a0c6084beb2fb1a79ae22eb5",
+      "kind": "own-words",
+      "url": "https://www.wistv.com/2025/02/21/groups-fear-proposed-rules-voter-registration-events-sc-could-have-chilling-effect/",
+      "date": "2025-02-20",
+      "date_precision": "day",
+      "passage": "The folks that are out soliciting people to register to vote ought to understand the law, ought to understand the law on who is eligible to vote",
+      "note": "Quoted by the same news story (reposted by the League of Women Voters, original from WIS) in the same hearing: he defends rules for groups that run voter registration drives, saying they should know who is eligible to vote. Source: WIS news story dated 2025-02-21. Verified word for word on the WIS page by Chris Andrews (by hand) on 2026-11-10; wistv.com refuses AI agents, so no agent fetched it — the quote check must NOT fetch this URL (first seen on a League of Women Voters copy, my.lwv.org/node/65239).",
+      "subjects": [
+        "third-party voter registration",
+        "voter eligibility"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:59:48.274Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b506837854b0adf9fc5c780a99d6c8040710317478de36513a259ec81071eb61",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=11554",
+      "date": "2016-04-27",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3167-2016",
+      "act": "yea",
+      "motion": "House: Passage of Bill",
+      "note": "SC House roll call (Passage of Bill, 90-9) on H3167 (121st General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 14301 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.819Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8d3982b32acd0e2d6c0e2e074cf10cc65b6726c75d22d4a3c6839c334714a28d",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=4162&session=124&summary=B",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "SC-H-4162-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, 2021-04-06_Introduced",
+      "note": "Listed as co sponsor of H4162 (124th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2021-04-06_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.819Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "348ca87b33927efca7450a06906bc28906495e1533c3260622d18e6d5b951f86",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=20247",
+      "date": "2022-03-02",
+      "date_precision": "day",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "yea",
+      "motion": "House: Passage of Bill",
+      "note": "SC House roll call (Passage of Bill, 114-0) on H4919 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 14301 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.819Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c57ac76bd3a1ee6b9e7e899c1b45c493788dafb46c6c33fdaf8d0f113ec60060",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=4919&session=124&summary=B",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, 2022-02-03_Introduced",
+      "note": "Listed as co sponsor of H4919 (124th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2022-02-03_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.819Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cebba425407e0560fa0727d36dcd6d2c9e3c39cb153b2e7cae5ed40936a29b73",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=21123",
+      "date": "2022-05-03",
+      "date_precision": "day",
+      "instrument_id": "SC-S-108-2022",
+      "act": "yea",
+      "motion": "House: Passage of Bill",
+      "note": "SC House roll call (Passage of Bill, 109-0) on S0108 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 14301 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.819Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "056bf59465aa5d3e1a619c736aca73762ca8d2e1bb9eb48aa9fa91dbc5e3c602",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3459&session=126&summary=B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "SC-H-3459-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, 2024-12-05_Introduced",
+      "note": "Listed as prime sponsor of H3459 (126th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2024-12-05_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.819Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "third-party voter registration",
+        "election trust"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity confirmed: League of Women Voters repost of a 2025-02-21 news story names him as lead sponsor of the voter-registration bill and chair of House Judiciary",
+        "web search: name + voter ID / photo ID: nothing by him (voter ID hits were a different Newton)",
+        "web search: name + election integrity / proof of citizenship / noncitizen / mail ballot: nothing on the subject",
+        "web search: name + election bill + local and state outlets: found the 2025 hearing story (saved, via the League repost)",
+        "web search: House journal remarks: only index pages and sponsor lists, nothing on the subject",
+        "web search: name + questionnaire / voter guide / newsletter / op-ed: nothing on the subject",
+        "blocked: https://ballotpedia.org (listed as blocked, not fetched)",
+        "not fetched on the do-not-fetch list: the original TV station story (the League repost was read instead)",
+        "not reviewed: his own campaign or House site (none found in search results)",
+        "orchestrator: 2 quotes held in held/ (repost of a refused outlet; awaiting a ruling)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:44:49.947Z",
+      "by": "sc-search-r5"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "third-party voter registration",
+        "election trust"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity confirmed: League of Women Voters repost of a 2025-02-21 news story names him as lead sponsor of the voter-registration bill and chair of House Judiciary",
+        "web search: name + voter ID / photo ID: nothing by him (voter ID hits were a different Newton)",
+        "web search: name + election integrity / proof of citizenship / noncitizen / mail ballot: nothing on the subject",
+        "web search: name + election bill + local and state outlets: found the 2025 hearing story (saved, via the League repost)",
+        "web search: House journal remarks: only index pages and sponsor lists, nothing on the subject",
+        "web search: name + questionnaire / voter guide / newsletter / op-ed: nothing on the subject",
+        "blocked: https://ballotpedia.org (listed as blocked, not fetched)",
+        "not fetched on the do-not-fetch list: the original TV station story (the League repost was read instead)",
+        "not reviewed: his own campaign or House site (none found in search results)",
+        "orchestrator: 2 quotes held in held/ (repost of a refused outlet; awaiting a ruling)",
+        "orchestrator: 2 held quotes restored after Chris Andrews verified them by hand on the WIS page (2026-11-10)"
+      ],
+      "found": 2,
+      "at": "2026-11-10T21:59:48.274Z",
+      "by": "sc-newton-verified"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 6,
+      "at": "2026-11-10T23:17:03.819Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

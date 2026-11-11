@@ -27,5 +27,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "voter-roll checks"
+      ],
+      "places": [
+        "identity confirmed: https://scstatehouse.gov/member.php?code=1344033930 (Cody T. Mitchell, District 65; Judiciary and Rules)",
+        "On the Record (0 appearances)",
+        "iVoterGuide https://ivoterguide.com/candidate/67114/race/27748/election/1421: photo-ID question marked did not answer",
+        "WSOC candidate guide District 65: page says he did not respond",
+        "https://www.newsandpress.net/2025-end-of-session-legislative-recap/: nothing on the subject",
+        "Heritage Action press release: does not name him",
+        "web searches (5): name with voter ID, citizenship, noncitizen, absentee, questionnaire: nothing on the subject in his own words",
+        "blocked: https://ballotpedia.org/Cody_Mitchell (listed as refusing fetches)",
+        "inaccessible: https://www.presby.edu/about/?p=12653 (404)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:36:47.486Z",
+      "by": "sc-search-r4"
+    }
+  ]
 }

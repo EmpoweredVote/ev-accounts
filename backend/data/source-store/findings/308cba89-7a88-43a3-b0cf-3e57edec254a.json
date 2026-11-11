@@ -25,7 +25,91 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "6faf09ea6e8effee660b59b459517d907eecd19de63e7bc874b2c5dba3d3fd59",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=20955",
+      "date": "2022-04-21",
+      "date_precision": "day",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "yea",
+      "motion": "Senate: 3rd Reading",
+      "note": "SC Senate roll call (3rd Reading, 43-0) on H4919 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 14070 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.823Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d0408510b99d35090c40b5547c5404fecb3f57da7fe854e2d44c61a9a8fb44fb",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=27457",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-872-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "note": "SC Senate roll call (2nd Reading, 44-0) on S0872 (126th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 14070 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.823Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member page https://www.scstatehouse.gov/member.php?code=819318084 (confirms Senator Greg Hembree, District 28; no election bills shown; nothing on the subject)",
+        "campaign site https://www.greghembree.com/platform (nothing on the subject)",
+        "campaign site https://www.greghembree.com/about (not reviewed)",
+        "Senate Journal 2024-03-06 https://www.scstatehouse.gov/sess125_2023-2024/sj24/20240306.htm (his printed remarks there are on another subject; nothing on the subject)",
+        "6 web searches (voter ID, photo ID, citizenship/noncitizen, journal remarks, newsletter, questionnaire/survey): no own words on the subject found",
+        "blocked: https://ballotpedia.org/Greg_Hembree (listed as blocked per instructions, not fetched)",
+        "blocked: https://justfacts.votesmart.org (listed as blocked per instructions, not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:24:04.952Z",
+      "by": "sc-search-r2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 2,
+      "at": "2026-11-10T23:17:03.823Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

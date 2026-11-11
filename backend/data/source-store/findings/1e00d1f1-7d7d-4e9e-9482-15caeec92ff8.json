@@ -25,7 +25,197 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "4fa15e347e78aae7bbd433a97a4c6675d5560e1ab17f9eff6bea07ef29d37f64",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/50347/race/16322/election/1229",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification.",
+      "note": "Questionnaire statement under ELECTIONS AND VOTING on the candidate's voter-guide profile for the 2024-11-05 general election (SC State Rep., Dist. 38); recorded response: 'Strongly Disagree'. Exact response date not printed.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID required to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:30:40.423Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d3c618cf684022b38270e536c3eced80e9079bedd3e2269910294760be4af1ce",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/50347/race/27721/election/1421",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification.",
+      "note": "Same questionnaire statement on the candidate's 2026 voter-guide profile (State Representative, District 38, primary 2026-06-09); recorded response: 'Disagree'. Exact response date not printed.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID required to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:30:40.423Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8d3982b32acd0e2d6c0e2e074cf10cc65b6726c75d22d4a3c6839c334714a28d",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=4162&session=124&summary=B",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "SC-H-4162-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, 2021-04-06_Introduced",
+      "note": "Listed as co sponsor of H4162 (124th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2021-04-06_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.822Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "348ca87b33927efca7450a06906bc28906495e1533c3260622d18e6d5b951f86",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=20247",
+      "date": "2022-03-02",
+      "date_precision": "day",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "yea",
+      "motion": "House: Passage of Bill",
+      "note": "SC House roll call (Passage of Bill, 114-0) on H4919 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 18091 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.822Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c57ac76bd3a1ee6b9e7e899c1b45c493788dafb46c6c33fdaf8d0f113ec60060",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=4919&session=124&summary=B",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, 2022-02-03_Introduced",
+      "note": "Listed as co sponsor of H4919 (124th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2022-02-03_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.822Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cebba425407e0560fa0727d36dcd6d2c9e3c39cb153b2e7cae5ed40936a29b73",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=21123",
+      "date": "2022-05-03",
+      "date_precision": "day",
+      "instrument_id": "SC-S-108-2022",
+      "act": "yea",
+      "motion": "House: Passage of Bill",
+      "note": "SC House roll call (Passage of Bill, 109-0) on S0108 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 18091 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.822Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9dd0ee89ef8fb9c67f15a50957cb3e8a79add9496d84b8f019ce8ee30b63c4b9",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=4295&session=126&summary=B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "SC-H-4295-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, 2025-04-03_Introduced",
+      "note": "Listed as co sponsor of H4295 (126th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2025-04-03_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.822Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "iVoterGuide profile, 2026 general election (SC House District 38)",
+        "iVoterGuide profile, 2024 general election (SC House District 38)",
+        "OneSpartanburg 2026 SC House District 38 questionnaire page (nothing on the subject)",
+        "web searches: voter ID/photo ID/election integrity/citizenship; House caucus and election coverage; questionnaire/survey; noncitizen voting (no news quotes of him on the subject)",
+        "blocked: Ballotpedia (listed as refused, not fetched)",
+        "not reviewed: sponsorship and vote records (linked separately)"
+      ],
+      "found": 2,
+      "at": "2026-11-10T21:30:40.423Z",
+      "by": "sc-search-r3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 5,
+      "at": "2026-11-10T23:17:03.822Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

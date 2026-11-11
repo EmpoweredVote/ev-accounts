@@ -182,6 +182,10 @@ const INSTRUMENT_IDENTIFIER_PATTERNS: RegExp[] = [
   /\bR-\d{5,6}\b/,
   /\bProposition [A-Z0-9]{1,3}\b/,
   /(?<![A-Za-z]\.)\bS\.?\s?\d{1,4}\b/,
+  // South Carolina (2026-11-10): House bills are four-digit and printed bare — "H 3003" in prose, "H. 3003"
+  // in the journals, "H3003" in a LegiScan line. All three canonicalize to "h3003". Four digits only, so a
+  // stray "H 12" is never read as a bill.
+  /(?<![A-Za-z]\.)\bH\.?\s?\d{4}\b/,
   /\bBan of (?:19|20)\d{2}\b/,
   /\bR-\d{1,4}-\d{2}\b/,
   // Philadelphia (2026-10-28). Matched by LOOKBEHIND so only the six digits are extracted: the city

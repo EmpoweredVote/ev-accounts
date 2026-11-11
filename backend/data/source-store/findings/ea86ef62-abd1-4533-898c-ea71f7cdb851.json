@@ -27,5 +27,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "confirmed in office: WMBF 2026-11-04 results page shows Carla Schuessler winning House District 61",
+        "On the Record (0 appearances)",
+        "iVoterGuide state page for the 2026 general election (lists her; no questionnaire answer reachable)",
+        "2023 new-members campaign-issues document (lists her key issues, none on the subject; not saved)",
+        "House Journal search for floor remarks (nothing on the subject found)",
+        "web searches: voter ID, photo ID, citizenship, SAVE Act, noncitizen, mail ballot, questionnaire, local outlets; nothing on the subject in her own words",
+        "no campaign site found",
+        "blocked: Ballotpedia (refuses fetches, not tried)",
+        "blocked: justfacts.votesmart.org (refuses fetches, not tried)",
+        "not reviewed: https://www.facebook.com/voteforcarla (social media, not fetchable)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:37:33.827Z",
+      "by": "sc-search-r4"
+    }
+  ]
 }

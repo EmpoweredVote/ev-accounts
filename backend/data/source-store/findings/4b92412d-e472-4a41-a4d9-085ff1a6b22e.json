@@ -77,7 +77,222 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "a126d26cc9d4bb8c13b96355649310c996d96580c99b8a7776a1284f06573feb",
+      "kind": "own-words",
+      "url": "https://www.scstatehouse.gov/sess119_2011-2012/sj11/20110224.htm",
+      "date": "2011-02-24",
+      "date_precision": "day",
+      "passage": "Thank you, Mr. PRESIDENT. I don't want to take too long, but I do just want to remind the body that there is a good reason why we require an ID for folks to vote. And, we have constitutional grounds to do so. In the 2008 decision, Crawford v. Marion County, out of Indiana the US Supreme Court held that an application of photo ID required that to the vast majority of Indiana voters is amply justified by the valid interest in protecting the integrity and reliability of the electoral process. In that instance there were not any cases of voter fraud sited in Indiana, but the Supreme Court came to that conclusion. Now, we have had instances of voter fraud in South Carolina and I have shared some with you previously, and I am going to share some more with you. And I said earlier, human nature doesn't change when you cross the border. If people will commit voter fraud in North Carolina or Georgia or Mississippi or Indiana or Wisconsin, they will do it here as well because human nature is the same. In the Indiana Court, the Crawford decision held that evenhanded restrictions that protect the integrity and reliability of the electoral process itself were not invidious and satisfied the standards set forth in Harper v. Virginia Board of Elections . We had a 2009 case from the 11th Circuit in Georgia, Common Case of Georgia v. Phillips , where the holding in that case -- the burden imposed by the requirement of photo identification was outweighed by the interest of Georgia in safeguarding the right to vote. That court held that the legitimate state interest in preventing voter fraud is more than sufficient to outweigh the limited burden of producing photo identification. So, we are squarely within the holding of these two very recent cases in 2008 and 2009 that address the issue of voter ID, in requiring voter ID.",
+      "note": "Floor remarks in the Senate Journal on H. 3003 (photo ID bill): he cites two federal court rulings upholding photo ID and says South Carolina has had voter fraud cases.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID law H. 3003",
+        "voter fraud"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:27:45.473Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "166916c9935cd3259ae10d999dd93cf2beb59d2f98e28704e4817adb67723927",
+      "kind": "own-words",
+      "url": "https://www.scstatehouse.gov/sess119_2011-2012/sj11/20110511.htm",
+      "date": "2011-05-11",
+      "date_precision": "day",
+      "passage": "The third issue I would like to address is the notion that this legislation constitutes some kind of poll tax or voter suppression. As indicated previously, the provisions of this legislation closely mirror legislation in Indiana and Georgia that have been upheld by the U.S. Supreme Court and 11th Circuit Court of Appeals. It is important to note that Georgia, like South Carolina, is a voting rights state. In the Crawford decision the Supreme Court held, \"the application of [a photo id requirement] to the vast majority of Indiana voters is amply justified by the valid interest in protecting the integrity and reliability of the electoral process.\" In Common Cause , the 11th Circuit held, \"The burden imposed by the requirement of photo identification is outweighed by the interests of Georgia in safeguarding the right to vote.\" Photo identification requirements like those contained in this conference report have been fully vetted and upheld by the federal courts. They do not unduly suppress voters or constitute a poll tax.",
+      "note": "Floor remarks in the Senate Journal on the H. 3003 conference report: he answers a claim that the bill is a poll tax or voter suppression, citing federal court rulings.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID law H. 3003"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:27:45.473Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9c216a15a4353ce559b88217974633b2d56a9fe7805e99f1762bdbbdaa8a8407",
+      "kind": "own-words",
+      "url": "https://thefga.org/?p=10259",
+      "date": "2022-05-27",
+      "date_precision": "day",
+      "passage": "Our election reform bill makes it easier to vote, and harder to cheat…South Carolina now has one of the strongest election laws in the nation.",
+      "note": "Quote of him in an advocacy group's post (dated by the page) about the 2022 election reform law; the same post lists a Social Security last-four requirement on absentee ballot applications. The ellipsis is as printed on the page; the quote's own date is unknown.",
+      "subjects": [
+        "election integrity laws in general",
+        "ID with absentee ballot application"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:27:45.473Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2d018a294744710583fce790c911cf002bbc00d651e9414d857f9be8b1a36b65",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/sess118_2009-2010/sj10/20100128.htm",
+      "date": "2010-01-28",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3418-2009",
+      "act": "yea",
+      "motion": "Senate: Senate second reading of H. 3418 (passed)",
+      "note": "SC Senate roll call (Senate second reading of H. 3418 (passed), 36-2) on H3418 (118th General Assembly), official journal (printed as 'Campsen'); linked by LegiScan member id 2330 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.817Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d0ae6251210def119c2e55581d969ec9bb6a9966a61aa31c077e5868c6a0eb7",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0304&session=119&summary=B",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "SC-S-304-2011",
+      "act": "sponsor",
+      "motion": "prime sponsor, 2010-12-15_Introduced",
+      "note": "Listed as prime sponsor of S0304 (119th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2010-12-15_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.817Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "97d1bb8b3a0dda53aa190fd291079a8ff430a1be8d7a4610fc9342acda466502",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0227&session=120&summary=B",
+      "date": "2013",
+      "date_precision": "year",
+      "instrument_id": "SC-S-227-2013",
+      "act": "sponsor",
+      "motion": "prime sponsor, 2013-01-15_Introduced",
+      "note": "Listed as prime sponsor of S0227 (120th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2013-01-15_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.817Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6faf09ea6e8effee660b59b459517d907eecd19de63e7bc874b2c5dba3d3fd59",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=20955",
+      "date": "2022-04-21",
+      "date_precision": "day",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "yea",
+      "motion": "Senate: 3rd Reading",
+      "note": "SC Senate roll call (3rd Reading, 43-0) on H4919 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 2330 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.817Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d0408510b99d35090c40b5547c5404fecb3f57da7fe854e2d44c61a9a8fb44fb",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=27457",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-872-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "note": "SC Senate roll call (2nd Reading, 44-0) on S0872 (126th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 2330 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.817Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "absentee ballot ID",
+        "proof of citizenship to register",
+        "election law package"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "South Carolina Senate Journal 2011-02-24 (printed remarks on H. 3003)",
+        "South Carolina Senate Journal 2011-05-11 (printed remarks on H. 3003 conference report)",
+        "South Carolina Senate Journal 2022-05-11 (he explained amendments to the 2022 election bill; no printed remarks)",
+        "South Carolina Senate Journal 2024-03-05 and 2024-03-06 (H. 3594 is a firearms bill; his printed remarks concern that bill, nothing on the subject)",
+        "https://thefga.org/?p=10259 (advocacy group post quoting him)",
+        "https://thefga.org/?p=10293 and https://heritageaction.com/press/south-carolina-legislature-expands-state-election-integrity-with-grassroots-support (no words of his)",
+        "blocked: https://943wsc.iheart.com/alternate/amp/2022-05-16-easier-to-vote-harder-to-cheat (empty page)",
+        "blocked: Ballotpedia and justfacts.votesmart.org (refuse fetches)",
+        "web searches (6) on voter ID, photo ID, proof of citizenship, noncitizen, S. 108, newsletter/op-ed: no personal site or newsletter found"
+      ],
+      "found": 3,
+      "at": "2026-11-10T21:27:45.473Z",
+      "by": "sc-search-r2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 5,
+      "at": "2026-11-10T23:17:03.817Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

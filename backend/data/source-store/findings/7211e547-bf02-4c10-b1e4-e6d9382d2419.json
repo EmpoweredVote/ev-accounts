@@ -51,7 +51,152 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "089ee888b6e005e95f65d7b52c8678e72d8b5b12001480a9d5b0245d9883f7b0",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/sess118_2009-2010/hj10/20100615.htm",
+      "date": "2010-06-15",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3418-2009",
+      "act": "nay",
+      "motion": "House: adopt the Conference Report on H. 3418 (adopted)",
+      "note": "SC House roll call (adopt the Conference Report on H. 3418 (adopted), 69-47) on H3418 (118th General Assembly), official journal (printed as 'Allen'); linked by LegiScan member id 2203 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6faf09ea6e8effee660b59b459517d907eecd19de63e7bc874b2c5dba3d3fd59",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=20955",
+      "date": "2022-04-21",
+      "date_precision": "day",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "yea",
+      "motion": "Senate: 3rd Reading",
+      "note": "SC Senate roll call (3rd Reading, 43-0) on H4919 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 2203 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d0408510b99d35090c40b5547c5404fecb3f57da7fe854e2d44c61a9a8fb44fb",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=27457",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-872-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "note": "SC Senate roll call (2nd Reading, 44-0) on S0872 (126th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 2203 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.816Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "reasonable-impediment affidavit and provisional ballot",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting and citizen-only voting amendment",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr returned none)",
+        "scstatehouse.gov Senate member roster page (https://www.scstatehouse.gov/senate.php): confirms Karl B. Allen is a sitting Senate member (positive control)",
+        "legislature Journals: several web searches of Journal pages by name plus voter terms; hits were attendance rolls, sponsor lists and resolutions, nothing on the subject; no Journal page with own remarks found",
+        "campaign site: none found by search",
+        "about 5 web searches by name plus voter ID, photo ID, proof of citizenship, noncitizen, questionnaire, local outlets: no own words on the subject found",
+        "blocked: https://ballotpedia.org (not fetched, listed as blocked per instructions)",
+        "blocked: https://justfacts.votesmart.org (not fetched, listed as blocked per instructions)",
+        "blocked: https://bluevoterguide.org (not fetched, listed as blocked per instructions)",
+        "not reviewed: refused news sites (scdailygazette.com and others on the do-not-fetch list); search snippets only, none cited"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:19:58.889Z",
+      "by": "search-sc-2026-11-10"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "reasonable-impediment affidavit and provisional ballot",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting and citizen-only voting amendment",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr returned none)",
+        "scstatehouse.gov Senate member roster page (https://www.scstatehouse.gov/senate.php): confirms Karl B. Allen is a sitting Senate member (positive control)",
+        "legislature Journals: several web searches of Journal pages by name plus voter terms; hits were attendance rolls, sponsor lists and resolutions, nothing on the subject; no Journal page with own remarks found",
+        "campaign site: none found by search",
+        "about 5 web searches by name plus voter ID, photo ID, proof of citizenship, noncitizen, questionnaire, local outlets: no own words on the subject found",
+        "blocked: https://ballotpedia.org (not fetched, listed as blocked per instructions)",
+        "blocked: https://justfacts.votesmart.org (not fetched, listed as blocked per instructions)",
+        "blocked: https://bluevoterguide.org (not fetched, listed as blocked per instructions)",
+        "not reviewed: refused news sites (scdailygazette.com and others on the do-not-fetch list); search snippets only, none cited",
+        "re-search: On the Record (0 appearances; extract-otr returned none)",
+        "re-search: scstatehouse.gov Senate member roster page (https://www.scstatehouse.gov/senate.php): confirms Karl B. Allen is a sitting Senate member (positive control)",
+        "re-search: legislature Journals: several web searches of Journal pages by name plus voter terms; hits were attendance rolls, sponsor lists and resolutions, nothing on the subject; no Journal page with own remarks found",
+        "re-search: campaign site: none found by search",
+        "re-search: about 5 web searches by name plus voter ID, photo ID, proof of citizenship, noncitizen, questionnaire, local outlets: no own words on the subject found",
+        "re-search: blocked: https://ballotpedia.org (not fetched, listed as blocked per instructions)",
+        "re-search: blocked: https://justfacts.votesmart.org (not fetched, listed as blocked per instructions)",
+        "re-search: blocked: https://bluevoterguide.org (not fetched, listed as blocked per instructions)",
+        "re-search: not reviewed: refused news sites (scdailygazette.com and others on the do-not-fetch list); search snippets only, none cited",
+        "re-search: Re-search: Senate Journal dated pages read in full text and scanned for this senator's remarks, statements and explanations: https://www.scstatehouse.gov/sess124_2021-2022/sj22/ (2022-03-01 to 2022-05-31 sitting days), sess125_2023-2024/sj24/ (2024-01 to 2024-05), sess126_2025-2026/sj25/ (2025-01 to 2025-05) and sj26/ (2026-01 to 2026-05), including the days voter-ID bills were taken up (H. 4919 / S. 108 in 2022, S. 1126 in 2024, S. 582 in 2025-26): only bare lines ('Senator X explained the Bill/amendment', 'spoke on the amendment') or unrelated printed statements; no printed words on the subject",
+        "re-search: Re-search: sess119_2011-2012/sj11/ dated pages 2011-02-23, 2011-02-24, 2011-05-11 (H. 3003): this senator does not appear in them",
+        "re-search: not reviewed: Journal pages outside the months above (June 2022 onward, June 2024 onward, June 2025 onward, the 2011 March-April days, sj12); directory index of the journal folders returns 403 (blocked: https://www.scstatehouse.gov/sess124_2021-2022/sj22/)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:55:09.749Z",
+      "by": "sc-research-re"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 3,
+      "at": "2026-11-10T23:17:03.816Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

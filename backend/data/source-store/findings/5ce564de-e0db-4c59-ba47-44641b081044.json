@@ -25,7 +25,113 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "348ca87b33927efca7450a06906bc28906495e1533c3260622d18e6d5b951f86",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=20247",
+      "date": "2022-03-02",
+      "date_precision": "day",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "yea",
+      "motion": "House: Passage of Bill",
+      "note": "SC House roll call (Passage of Bill, 114-0) on H4919 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 16116 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.822Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cebba425407e0560fa0727d36dcd6d2c9e3c39cb153b2e7cae5ed40936a29b73",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=21123",
+      "date": "2022-05-03",
+      "date_precision": "day",
+      "instrument_id": "SC-S-108-2022",
+      "act": "yea",
+      "motion": "House: Passage of Bill",
+      "note": "SC House roll call (Passage of Bill, 109-0) on S0108 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 16116 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.822Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d0408510b99d35090c40b5547c5404fecb3f57da7fe854e2d44c61a9a8fb44fb",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=27457",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-872-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "note": "SC Senate roll call (2nd Reading, 44-0) on S0872 (126th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 16116 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.822Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "campaign site https://ottforsenate.com/: nothing on the subject",
+        "iVoterGuide https://ivoterguide.com/candidate/25075/race/21247/election/1229: photo-ID question listed, marked did not answer",
+        "On the Record (0 appearances)",
+        "blocked: https://ballotpedia.org (refuses fetches, not tried)",
+        "blocked: https://justfacts.votesmart.org (refuses fetches, not tried)",
+        "web searches (6+): name with voter ID, photo ID, proof of citizenship, H. 3003, questionnaire, outlet names: nothing on the subject in the person's own words",
+        "Senate Journal 2025-26 pages surfaced by search (2025-04-16, 04-29, 04-30, 05-08, 2026-03-03, 03-26, 04-30): no remarks on the subject",
+        "scvotes.gov: not needed"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:25:45.823Z",
+      "by": "sc-search-r2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 3,
+      "at": "2026-11-10T23:17:03.822Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

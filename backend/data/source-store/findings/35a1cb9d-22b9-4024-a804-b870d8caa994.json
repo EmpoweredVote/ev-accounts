@@ -1,0 +1,69 @@
+{
+  "politician_id": "35a1cb9d-22b9-4024-a804-b870d8caa994",
+  "findings": [
+    {
+      "id": "d0408510b99d35090c40b5547c5404fecb3f57da7fe854e2d44c61a9a8fb44fb",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=27457",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-872-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "note": "SC Senate roll call (2nd Reading, 44-0) on S0872 (126th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 26262 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.824Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "campaign site https://allenblackmon.com/: nothing on the subject",
+        "iVoterGuide https://ivoterguide.com/candidate/80548/race/21248/election/1175: photo-ID question listed, marked did not answer",
+        "blocked: https://www.pmg-sc.com/ Lancaster News articles (429)",
+        "On the Record (0 appearances)",
+        "blocked: https://ballotpedia.org (refuses fetches, not tried)",
+        "blocked: https://justfacts.votesmart.org (refuses fetches, not tried)",
+        "web searches (6+): name with voter ID, photo ID, proof of citizenship, H. 3003, questionnaire, outlet names: nothing on the subject in the person's own words",
+        "Senate Journal 2025-26 pages surfaced by search (2025-04-16, 04-29, 04-30, 05-08, 2026-03-03, 03-26, 04-30): no remarks on the subject",
+        "scvotes.gov: not needed"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:25:45.823Z",
+      "by": "sc-search-r2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 1,
+      "at": "2026-11-10T23:17:03.824Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
+}

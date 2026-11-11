@@ -25,7 +25,180 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "05f6e5c84b094392223a919c9495cffa690aa39d3c848381035e9f339e463a81",
+      "kind": "own-words",
+      "url": "https://thefga.org/blog/sen-chip-campsen-elections-bill-20-new-reforms-south-carolina-elections/",
+      "date": "2022-05-27",
+      "date_precision": "day",
+      "passage": "I was proud to help lead the effort in the House to shore up South Carolina’s voting laws. We modernized our system, made it easier to vote and harder to cheat.",
+      "note": "Quoted in a Foundation for Government Accountability post on the 2022 election reform package, which lists among its reforms an ID requirement on absentee ballot applications (last four digits of Social Security number). Date is the post's publication date; the quote's own date is not given.",
+      "subjects": [
+        "election integrity laws in general",
+        "ID number on absentee ballot application",
+        "early voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:36:54.274Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8d3982b32acd0e2d6c0e2e074cf10cc65b6726c75d22d4a3c6839c334714a28d",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=4162&session=124&summary=B",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "SC-H-4162-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, 2021-04-06_Introduced",
+      "note": "Listed as co sponsor of H4162 (124th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2021-04-06_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.821Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "348ca87b33927efca7450a06906bc28906495e1533c3260622d18e6d5b951f86",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=20247",
+      "date": "2022-03-02",
+      "date_precision": "day",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "yea",
+      "motion": "House: Passage of Bill",
+      "note": "SC House roll call (Passage of Bill, 114-0) on H4919 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 18094 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.821Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c57ac76bd3a1ee6b9e7e899c1b45c493788dafb46c6c33fdaf8d0f113ec60060",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=4919&session=124&summary=B",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, 2022-02-03_Introduced",
+      "note": "Listed as co sponsor of H4919 (124th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2022-02-03_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.821Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cebba425407e0560fa0727d36dcd6d2c9e3c39cb153b2e7cae5ed40936a29b73",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=21123",
+      "date": "2022-05-03",
+      "date_precision": "day",
+      "instrument_id": "SC-S-108-2022",
+      "act": "yea",
+      "motion": "House: Passage of Bill",
+      "note": "SC House roll call (Passage of Bill, 109-0) on S0108 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 18094 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.821Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "df8544b08ec78e787d676aa9007f0bd74858b6bdf884865e162d6d3356c82bf2",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3459&session=126&summary=B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "SC-H-3459-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, 2024-12-05_Introduced",
+      "note": "Listed as co sponsor of H3459 (126th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2024-12-05_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.821Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for early voting",
+        "ID number on absentee ballot application",
+        "photo ID for absentee ballot returnees",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.scstatehouse.gov/member.php?code=1418607785 (member page used to confirm him as House District 45, Lancaster)",
+        "web searches: name plus voter ID, early voting photo ID op-ed, House Journal remarks, newsletter, proof of citizenship or SAVE Act: no further own words found",
+        "House Journal 2022-03-02 (https://www.scstatehouse.gov/sess124_2021-2022/hj22/20220302.htm): only procedural lines (explained the amendment, spoke in favor/against), no printed remarks, nothing saved",
+        "WFAE 2022-03-02 early voting story: his quote there is about the bill's authors, not on the subject",
+        "not reviewed: https://www.aol.com/early-voting-commonsense-election-reform-090500010.html (op-ed in his name on early voting and photo ID; the page returned 404 / an empty body)",
+        "not found: his own official or campaign site had no subject pages in search results",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (refused by rule)"
+      ],
+      "found": 1,
+      "at": "2026-11-10T21:36:54.274Z",
+      "by": "sc-search-r4"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 5,
+      "at": "2026-11-10T23:17:03.821Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

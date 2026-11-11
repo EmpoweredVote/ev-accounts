@@ -1,0 +1,24 @@
+{
+  "id": "SC-H-4261-2023",
+  "scope": "state:sc",
+  "title": "H 4261 (125th General Assembly): Clean Voter Roll Act",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4261&session=125&summary=B"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 6 (7-5-340(4))\n(quote) ensure any elector included on the master file of inactive registered electors produces a valid and current photographic identification pursuant to Section 7-13-710 before returning the elector to the master file of active qualified electors\n(section) Sec. 6 (7-5-340(1)(d))\n(quote) the elector is not a citizen of the United States\n(other) Sec. 1: short title, Clean Voter Roll Act.\n(other) Sec. 2 (new 7-5-35): county boards keep separate active and inactive master files, delete dead or disqualified voters, make precinct lists ten days before each election, keep records four years, and give electors on request, free, voter lists, poll lists, cast vote records, chain-of-custody documents, proof-of-citizenship verification actions and signature verification actions.\n(other) Sec. 3 (7-3-20(D)): rewrites the State Election Commission executive director's duties.\n(other) Sec. 4 (7-5-186(C)): bars sharing data with third-party nonprofit groups.\n(other) Sec. 5 (7-5-320(E)): driver's licence change-of-address forms must be sent to the county board within the same time limits.\n(other) Sec. 6 (7-5-340): list removals move from the State Election Commission to county boards (within seven days of information about request, incompetence, death, non-citizenship or move).\n(other) Sec. 7 (7-5-350): annual list-maintenance report and annual audit of county rolls.\n(other) Sec. 8: effective on approval; applies to elections after Jan. 1, 2024.\n(other) version: Only one version (Introduced, 2023-04-05). Photo ID appears only as a condition for an inactive voter to return to the active list (slot e), not as an ID rule at the polls. Non-citizenship is listed as a ground for removal; no documentary proof of citizenship for registering.\n(other) note: Strike/new markers restored from HTML styling; the (4) clause is split by nested markup in the saved file and was reassembled ('photographic'). Item (1)(d) non-citizen removal is existing law carried in a reprinted section. Only the introduced text is saved.",
+  "sponsors": [
+    {
+      "name": "Rob Harris",
+      "role": "prime",
+      "version": "2023-04-05_Introduced"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 SC bill texts and roll calls (Sonnet readers R1-R5 + official vote/journal pages, voting-rights, 2026-11-10)",
+    "fetched_at": "2026-11-10",
+    "method": "curl"
+  }
+}

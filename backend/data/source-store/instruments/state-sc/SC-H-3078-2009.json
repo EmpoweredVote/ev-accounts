@@ -1,0 +1,37 @@
+{
+  "id": "SC-H-3078-2009",
+  "scope": "state:sc",
+  "title": "H 3078 (118th General Assembly): Add A College Identification Card Containing A Photograph As Another Form Of Proof Of Identification Authorized To Be Accepted.",
+  "urls": [
+    "https://www.scstatehouse.gov/cgi-bin/web_bh10.exe?bill1=3078&session=118"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) SECTION 1 (amends 7-13-710)\n(quote) or a college identification card containing a photograph\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) SECTION 1 also changes 'any person' to 'a person' (wording only).\n(other) SECTION 2: takes effect upon approval by the Governor.\n(other) version: latest-2010_bill-page (only saved version, as introduced 12/9/2008): adds a photo college identification card to the ID list in slot a. No slot b, c or d text.\n(other) note: One text file only; no amendments or floor action (died in House Judiciary). The 7-13-710 reprint is the pre-Act 27 (1996) text: ID is a South Carolina driver's license or other photo ID issued by the Department of Public Safety (as printed in this bill), if not licensed to drive, or the signed written registration notification; the rest of the section is reprinted unchanged. The new words sit inside that clause, so a college ID is accepted on the same terms as the other items in it.",
+  "sponsors": [
+    {
+      "name": "John King",
+      "role": "prime",
+      "version": "latest-2010_bill-page"
+    },
+    {
+      "name": "Todd Rutherford",
+      "role": "co",
+      "version": "latest-2010_bill-page"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 SC bill texts and roll calls (Sonnet readers R1-R5 + official vote/journal pages, voting-rights, 2026-11-10)",
+    "fetched_at": "2026-11-10",
+    "method": "curl"
+  }
+}

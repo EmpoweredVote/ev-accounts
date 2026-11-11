@@ -25,7 +25,113 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "48a7bb3329df562ffed35d9d331aad6ee2fc044166baee2b28bdd70840119c19",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/66691/race/16369/election/958",
+      "date": "2022-01-01",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification.",
+      "note": "iVoterGuide questionnaire statement for the 2022 general election; his recorded response is Strongly Disagree.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:43:05.825Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ef6ee9382d81c69aa11da0c8f4ae1573f430bef74279efaa6fd32e0c9e704990",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/66691/race/16369/election/958",
+      "date": "2022-01-01",
+      "date_precision": "year",
+      "passage": "One day only voting, in person with a government issued picture identification card.",
+      "note": "His written answer to the question 'What laws would you propose to change present voting practices?' on the same questionnaire; the answer goes on to propose early in-person voting as the absentee route, with an exception for active-duty military.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail and absentee voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:43:05.825Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9dd0ee89ef8fb9c67f15a50957cb3e8a79add9496d84b8f019ce8ee30b63c4b9",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=4295&session=126&summary=B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "SC-H-4295-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, 2025-04-03_Introduced",
+      "note": "Listed as co sponsor of H4295 (126th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2025-04-03_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.824Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "mail and absentee ballot ID",
+        "noncitizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "iVoterGuide 2022 general-election profile (page names him as candidate for State Rep., Dist. 85; he holds the seat now and won it again 2026-11-03)",
+        "On the Record (0 meetings)",
+        "scstatehouse.gov member and bill pages (sponsorships linked separately)",
+        "iVoterGuide profile pages",
+        "web searches on name plus voter ID, photo ID, citizenship, noncitizen, H. 3003, questionnaire, local outlets",
+        "Campaign for Liberty 2016 and 2018 survey pages (questions do not cover the subject)",
+        "blocked: https://ballotpedia.org (refuses our fetches, not tried)",
+        "blocked: https://justfacts.votesmart.org (refuses our fetches, not tried)",
+        "the House caucus site: not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-11-10T21:43:05.825Z",
+      "by": "sc-search-r5"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 1,
+      "at": "2026-11-10T23:17:03.824Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

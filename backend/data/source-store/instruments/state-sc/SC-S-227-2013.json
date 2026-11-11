@@ -1,0 +1,47 @@
+{
+  "id": "SC-S-227-2013",
+  "scope": "state:sc",
+  "title": "S 227 (120th General Assembly): Voter registration",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0227&session=120&summary=B"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) SECTION 3 (new 7-5-123(A))\n(quote) The county board of registration must reject any application for voter registration unless the person submits satisfactory proof of United States citizenship. Satisfactory proof of citizenship shall include any of the following:\n(section) SECTION 3 (new 7-5-123(A)(1))\n(quote) the number of the applicant's driver's license or other form of identification containing a photograph that is issued by the South Carolina Department of Motor Vehicles or a driver's license or identification card containing a photograph that is issued by another state pursuant to the provisions in Section 41-8-20(B)(2)(c);\n(section) SECTION 3 (new 7-5-123(A)(2)-(3))\n(quote) the applicant's birth certificate or a certified photocopy of the person's birth certificate; (3) a valid United States passport or a legible photocopy of the pertinent pages of the person's passport, identifying the person and showing the passport number;\n(section) SECTION 3 (new 7-5-123(A)(4))\n(quote) the applicant's United States naturalization documentation or a legible photocopy of this documentation, or the number of the person's certificate of naturalization; except that a person who provides the number of the certificate of naturalization in lieu of the naturalization documentation must not be registered until the county board of registration verifies the number with United States Citizenship and Immigration Services;\n(section) SECTION 3 (new 7-5-123(A)(5)-(6))\n(quote) any document or method of proof of citizenship established by the federal 'Immigration Reform and Control Act of 1986'; or (6) the applicant's bureau of Indian affairs card number, tribal treaty card number, or tribal enrollment number.\n(section) SECTION 3 (new 7-5-123(C))\n(quote) A person who is registered to vote as of the effective date of this act is deemed to have provided proof of citizenship and is not required to submit proof of citizenship pursuant to this section.\n(section) SECTION 3 (new 7-5-123(D))\n(quote) A registered elector is not required to submit proof of citizenship when the elector: (1) moves within a county and changes his address on the registration record in accordance with this chapter; or (2) changes his name on the registration record in accordance with this chapter.\n(section) SECTION 3 (new 7-5-123(G))\n(quote) The State Election Commission shall establish procedures to match an applicant's voter registration information to the information contained in the data base maintained by the Department of Motor Vehicles for the verification of the accuracy of the information provided on the application for voter registration, including whether the applicant has provided satisfactory evidence of United States citizenship.\n(e_other_rule)\n(section) SECTION 2 (amends 7-5-120(A))\n(quote) (4) provides proof of citizenship pursuant to Section 7-5-123.\n(section) SECTION 3 (new 7-5-123(B))\n(quote) Proof of voter registration from another state or county is not satisfactory proof of citizenship for purposes of this section.\n(section) SECTION 3 (new 7-5-123(E))\n(quote) Residents of this State who are United States citizens who are not in possession of any of the documents or methods of proof enumerated under subsection (A), may submit other documents or methods of proof for establishing evidence of United States citizenship which shall be promulgated by rule and regulation of the State Election Commission.\n(section) SECTION 3 (new 7-5-123(F))\n(quote) After a person has submitted satisfactory evidence of citizenship, such information must be indicated on the elector's voter registration record. After two years, the State Election Commission may destroy all documents that were submitted as evidence of citizenship.\n(section) SECTION 4 (amends 7-5-320(C)(2)(c)(i))\n(quote) states each eligibility requirement, including citizenship with satisfactory documentation as required pursuant to Section 7-5-123(A);\n(other) Short title (SECTION 1): 'South Carolina Voter Citizenship Verification Act'.\n(other) SECTIONS 4-5 (amend 7-5-320): the voter registration part of a driver's license application must state that citizenship needs satisfactory documentation under 7-5-123(A), and the documentation must go to the county board with the application within ten days.\n(other) SECTION 6: takes effect upon approval by the Governor.\n(other) version: 2013-01-15_Introduced (only version): carries slot d text. It matches the 2/2/2012 committee substitute of S 304 (2011): 7-5-123 with six proofs, birth certificate 'or a certified photocopy', (C) exemption for persons registered as of the effective date, (D) movers and name-changers exempt, (E) other proof by State Election Commission rule, (F) two-year destruction of documents, (G) DMV database match.\n(other) note: Text is the same as the committee version of S 304 (2011) apart from sub-point formatting; the quotes were taken from this file, with the section labels renumbered to this bill's SECTION numbers (2, 3, 4, 5). One version; no floor action found in the saved record.",
+  "sponsors": [
+    {
+      "name": "George Campsen",
+      "role": "prime",
+      "version": "2013-01-15_Introduced"
+    },
+    {
+      "name": "Thomas Corbin",
+      "role": "co",
+      "version": "2013-01-15_Introduced"
+    },
+    {
+      "name": "Kevin Bryant",
+      "role": "co",
+      "version": "2013-01-15_Introduced"
+    },
+    {
+      "name": "Paul Campbell",
+      "role": "co",
+      "version": "2013-01-15_Introduced"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 SC bill texts and roll calls (Sonnet readers R1-R5 + official vote/journal pages, voting-rights, 2026-11-10)",
+    "fetched_at": "2026-11-10",
+    "method": "curl"
+  }
+}

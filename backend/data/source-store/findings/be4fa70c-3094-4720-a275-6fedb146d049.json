@@ -52,7 +52,91 @@
         "fetched_at": "2026-10-21T03:40:10.566Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "2d018a294744710583fce790c911cf002bbc00d651e9414d857f9be8b1a36b65",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/sess118_2009-2010/sj10/20100128.htm",
+      "date": "2010-01-28",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3418-2009",
+      "act": "yea",
+      "motion": "Senate: Senate second reading of H. 3418 (passed)",
+      "note": "SC Senate roll call (Senate second reading of H. 3418 (passed), 36-2) on H3418 (118th General Assembly), official journal (printed as 'Bright'); linked by LegiScan member id 2327 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.817Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d0408510b99d35090c40b5547c5404fecb3f57da7fe854e2d44c61a9a8fb44fb",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=27457",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-872-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "note": "SC Senate roll call (2nd Reading, 44-0) on S0872 (126th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 2327 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.817Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "election integrity",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site brightforsenate.com (About and Issues pages: nothing on the subject)",
+        "Senate Journal member index page for 2013 (index only, no remarks on the subject)",
+        "FITSNews profile of his 2025 special election (nothing on the subject)",
+        "https://www.newsfromthestates.com/article/firebrand-former-sc-senator-wins-back-upstate-seat-special-election (confirms he won the special-election primary in October 2025)",
+        "web searches: name + voter ID / photo ID; journal remarks; noncitizen / proof of citizenship / election integrity; op-ed or newsletter; 2026 citizen-voting amendment; questionnaire or candidate survey (no own words found)",
+        "blocked: Ballotpedia (listed as refused)",
+        "ontheissues.org seen as a lead only, not cited"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:19:30.825Z",
+      "by": "search-sc-2026-11-10"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 2,
+      "at": "2026-11-10T23:17:03.817Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

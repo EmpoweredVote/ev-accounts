@@ -1,0 +1,32 @@
+{
+  "id": "SC-H-4957-2021",
+  "scope": "state:sc",
+  "title": "H 4957 (124th General Assembly): Election Integrity Act",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4957&session=124&summary=B"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 8 (7-15-340(B)(3)(b))\n(quote) In order to be found eligible to cast an in-person absentee ballot at a duly designated location for in-person absentee voting, the voter shall produce one of the forms of identification specified in Section 7-13-710(A) to the appropriate elections official or employee at the in-person absentee voting location.\n(b_no_id_remedy)\n(section) Sec. 8 (7-15-340(B)(2)(b))\n(quote) If the voter fails to comply with the requirements of this item, the county board of voter registration and elections shall inform the voter promptly, and the voter must be allowed to correct the problem.\n(c_mail_ballot_id)\n(section) Sec. 8 (7-15-340(B)(2)(a))\n(quote) The absentee ballot application also shall require: (i) the voter's South Carolina driver's license number or the voter's personal identification card number or another form of identification containing a photograph issued by the South Carolina Department of Motor Vehicles; or (ii) a photocopy of one of the forms of identification specified in Section 7-13-710(A).\n(section) Sec. 8 (7-15-340(C))\n(quote) if the voter registered to vote by mail but failed to attach one of the registration application's required forms of identification and the voter is voting for the first time in this State, the absentee ballot application shall contain a photocopy of one of the forms of identification specified in Section 7-13-710(A).\n(d_proof_of_citizenship)\n(section) Sec. 2 (new 7-5-171(A))\n(quote) An applicant may not be registered to vote until the applicant has provided proof of United States citizenship to his county board of voter registration and elections. An applicant satisfies this proof of citizenship requirement by presenting one of the documents referenced herein in person or by mailing a photocopy of one of these documents to his county board of voter registration and elections.\n(section) Sec. 2 (new 7-5-171(B))\n(quote) 'proof of citizenship' means one of the following, or a legible photocopy of one of the following documents: (1) birth certificate which establishes United States citizenship; (2) United States passport, whether valid or expired, or the pertinent pages thereof identifying the applicant and the applicant's passport number; (3) certificate of naturalization or citizenship; (4) such other documentation as the State Election Commission determines sufficient to establish United States citizenship.\n(e_other_rule)\n(section) Sec. 6 (7-3-40(B))\n(quote) The name of any registered voter who can be identified as deceased based on the information reported monthly by the bureau must be removed from the official list of eligible voters within thirty days receipt of such report.\n(other) Sec. 1: short title, Election Integrity Act.\n(other) Sec. 3 (new 7-13-1625): any voting system the State buys must use hand-marked paper ballots read by an optical scanner.\n(other) Sec. 4 (new 7-13-1635): risk-limiting post-election audits from the 2022 general election cycle.\n(other) Sec. 5 (new 7-25-175): misdemeanor for election boards or officials to modify mandatory provisions of Title 7.\n(other) Sec. 7 (7-5-320(D)): driver's licence change-of-address forms must be sent to the election board within the registration-transmittal time frames.\n(other) Sec. 9: savings clause for pending actions.\n(other) version: Only one version (Introduced, 2022-02-10). Carries slots a, b, c (same absentee-application ID text as H 4162 2021, without the date-of-birth words) and d (documentary proof of citizenship for everyone registering).\n(other) note: Only the introduced text is saved. Citizenship proof applies to every applicant, in person or by photocopy by mail; an application without it may be accepted but the person is not registered until proof arrives.",
+  "sponsors": [
+    {
+      "name": "Robert May",
+      "role": "prime",
+      "version": "2022-02-10_Introduced"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 SC bill texts and roll calls (Sonnet readers R1-R5 + official vote/journal pages, voting-rights, 2026-11-10)",
+    "fetched_at": "2026-11-10",
+    "method": "curl"
+  }
+}

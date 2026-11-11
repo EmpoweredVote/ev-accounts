@@ -1,0 +1,32 @@
+{
+  "id": "SC-S-128-2025",
+  "scope": "state:sc",
+  "title": "S 128 (126th General Assembly): Voter Registration",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0128&session=126&summary=B"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec. 2 (7-5-170(C)(1)-(2))\n(quote) A person may not be registered to vote unless he has provided the county board with satisfactory evidence of citizenship. (2) A person may provide any one of the following to the county board to demonstrate satisfactory evidence of his citizenship: (a) a current, valid driver's license or state-issued identification card issued by the Department of Motor Vehicles on or after October 1, 1996 or a current, valid driver's license issued by another state if the person has recently taken up residence in this State; (b) a legible copy of the person's birth certificate indicating the person's birth in the United States;\n(section) Sec. 2 (7-5-170(C)(2)(c)-(f))\n(quote) (c) the person's current, valid passport or a legible copy of the relevant pages in the person's United States passport that identifies the person's passport number; (d) the person's United States naturalization documents or the number of the certificate of naturalization. If only the number of the certificate of naturalization is provided, the person shall not be registered until the county board verifies the number of naturalization with the federal government;\n(section) Sec. 3(A)-(B)\n(quote) each county board of voter registration and elections shall transmit to the Attorney General a complete list of all individuals in the county who, as of the effective date of this act, are registered to vote but have not provided satisfactory evidence of citizenship as required by this act. ... The Attorney General shall verify the citizenship of each of the individuals on the lists transmitted pursuant to subsection (A).\n(section) Sec. 3(B)(1)-(3)\n(quote) the Department of Motor Vehicles database of licensed drivers and individuals who have a state identification card issued by the Department of Motor Vehicles; (2) the Social Security Administration's databases; (3) the United States Citizenship and Immigration Services Systematic Alien Verification for Entitlements Program\n(e_other_rule)\n(section) Sec. 1 (7-5-120(A)(4), (B)(4))\n(quote) has provided satisfactory evidence of citizenship pursuant to Section 7-5-285. ... is unable to provide satisfactory evidence of citizenship pursuant to Section 7-5-170.\n(section) Sec. 2 (7-5-170(C)(4))\n(quote) Once a person has demonstrated satisfactory evidence of his citizenship, the person does not have to demonstrate satisfactory evidence of citizenship if he changes residence in this State.\n(other) Sec. 2 (7-5-170): application form adds citizenship; copy retention two years; subsection (C)(2)(e)-(f) accepts Bureau of Indian Affairs or tribal documents and methods under the federal Immigration Reform and Control Act of 1986.\n(other) Sec. 3(A)-(C): by Oct. 31, 2025 counties list existing registrants without evidence and the Attorney General verifies them, reporting by March 1, 2026.\n(other) Sec. 4: severability.\n(other) Sec. 5: effective on approval by the Governor.\n(other) version: Only one version (Introduced, 2024-12-11). Slot d: documentary proof of citizenship for everyone registering (list of six kinds), and a one-time Attorney General check of existing registrants who lack evidence against DMV, Social Security, SAVE and other databases.\n(other) note: Strike/new markers restored from the HTML styling. Slot e quote joins two phrases from 7-5-120 with '...'. 7-5-120(A)(4) cites 'Section 7-5-285' while the bill's own title and (B)(4) cite 7-5-170; no Section 7-5-285 is created in the bill text read (possible drafting error). Only the introduced text is saved.",
+  "sponsors": [
+    {
+      "name": "Michael Johnson",
+      "role": "prime",
+      "version": "2024-12-11_Introduced"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 SC bill texts and roll calls (Sonnet readers R1-R5 + official vote/journal pages, voting-rights, 2026-11-10)",
+    "fetched_at": "2026-11-10",
+    "method": "curl"
+  }
+}

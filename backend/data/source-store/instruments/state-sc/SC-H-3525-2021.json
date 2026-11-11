@@ -1,0 +1,18 @@
+{
+  "id": "SC-H-3525-2021",
+  "scope": "state:sc",
+  "title": "H 3525 (124th General Assembly): SC Election Fraud Law Enforcement Act of 2021",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3525&session=124&summary=B"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) Sec. 4 (7-15-385(B)(1))\n(quote) When an authorized returnee presents himself to the board of voter registration and elections to deliver a return-addressed envelope in person pursuant to subsection (A), he shall produce a valid and current: (a) South Carolina driver's license; (b) another form of identification containing a photograph issued by the Department of Motor Vehicles; (c) passport; (d) military identification containing a photograph issued by the federal government; or (e) South Carolina voter registration card containing a photograph of the voter pursuant to Section 7-5-675.\n(section) Sec. 4 (7-15-385(A))\n(quote) The authorization form prescribed by the State Election Commission must include a designated space in which the appropriate elections official or employee shall record the specific form of government-issued photo identification presented by the authorized returnee.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 5 (7-15-420(B))\n(quote) The elections entities identified in subsection (A) shall verify that absentee voters' signatures appearing on the return-addressed envelopes match the respective voter's signature on file with the elections entity. If an absentee voter's signature on the return-addressed envelope is determined not to match the voter's signature on file with the elections entity, the return-addressed envelope must not be opened, but must be put aside and the provisional voting procedure set forth in Section 7-13-830 must be utilized; but the absentee voter must be given reasonable notice of the challenged ballot.\n(other) Sec. 1: short title, South Carolina Election Fraud Law Enforcement Act of 2021.\n(other) Sec. 2 (new 7-5-35): county election directors must report suspected election-law violations to the Attorney General and law enforcement.\n(other) Sec. 3 (7-3-20(C)): State Election Commission executive director must make the same reports.\n(other) Sec. 6 (7-25-50): makes it a felony to give or take anything of value for an absentee ballot or for authority to return another voter's absentee envelope.\n(other) Sec. 7: Section 5 (signature matching) takes effect Jan. 1, 2022; the rest on approval by the Governor.\n(other) version: Only one version (Introduced, 2020-12-16). No in-person ID text (slot a) and no ID for voters' own mail ballots; adds photo ID for a person who hand-delivers another voter's absentee envelope (slot c as returnee ID), plus signature matching (slot e). No citizenship proof.\n(other) note: Only an introduced text is saved; no amended or enacted version. The returnee ID list is a new list written out in 7-15-385, not a cross-reference to 7-13-710. Applies to the person returning another voter's envelope, not to the voter.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 SC bill texts and roll calls (Sonnet readers R1-R5 + official vote/journal pages, voting-rights, 2026-11-10)",
+    "fetched_at": "2026-11-10",
+    "method": "curl"
+  }
+}

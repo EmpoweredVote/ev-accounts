@@ -51,7 +51,244 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "a1e8ec6865df88ac437155f7a19b538ae9fb0c12dfe2f732057d523a885fd1ed",
+      "kind": "own-words",
+      "url": "https://www.govinfo.gov/content/pkg/CHRG-112shrg81713/html/CHRG-112shrg81713.htm",
+      "date": "2012-12-19",
+      "date_precision": "day",
+      "passage": "I represent a rural area. I represent a district that is 63 percent black. Over 97 percent of the students are on free and reduced lunches. A lot of my constituents were born on farms. They were delivered by midwives. It sounds easy to say a free ID, as was offered by our State. It is more complicated than that. There are a number of documents that are required to get a free ID,--a birth certificate, for example. When you live in a rural community, it is very difficult, if you are 70 miles from the county seat--and that is 70 miles round trip--to have to pay someone to take you to the health department, to the DMV office, or wherever to get that. So there are barriers there that I think is important for us to keep in mind.",
+      "note": "Testimony to the U.S. Senate Judiciary Committee hearing: she says the state's free photo ID is harder to get than it sounds because of the documents needed, and distance to offices.",
+      "subjects": [
+        "photo ID barriers (documents, distance)",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:42:45.826Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5cccfb1543406f24775f802085025a695ead182a73ee38bebe42cac1504ee47b",
+      "kind": "own-words",
+      "url": "https://www.govinfo.gov/content/pkg/CHRG-112shrg81713/html/CHRG-112shrg81713.htm",
+      "date": "2012-12-19",
+      "date_precision": "day",
+      "passage": "I assure you that communities of color in South Carolina and across this country take the right to vote very seriously. There is no sentiment in my community or any other community that I am aware of for tolerating voter fraud. I would point out to you, Mr. Chair and other members of this Committee, that in South Carolina, when we debated this legislation and the question of voter impersonation using an ID was posed, there was not one example that was cited, and much with what Senator Nelson talked about in the State of Florida. So I encourage you to recognize the importance of the Voting Rights Act, to recognize that it has a function of preventing discrimination, hopefully before it takes root, and in the case in South Carolina, it most certainly did that. I do not think it is too strong language to say that the legislation was a poll tax as implemented in our State.",
+      "note": "Says no one she knows of tolerates voter fraud, that no example of in-person impersonation was cited in the SC debate, and calls the law as implemented a poll tax.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter fraud evidence"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:42:45.826Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "af3b46a827ee9ad6e50ec7acee07ced7be7a677c133efa04d1fa92c1e17dd4d0",
+      "kind": "own-words",
+      "url": "https://www.govinfo.gov/content/pkg/CHRG-112shrg81713/html/CHRG-112shrg81713.htm",
+      "date": "2012-12-19",
+      "date_precision": "day",
+      "passage": "So the issue is not the ID. The issue for us in South Carolina was the documentation that is required to get an ID. And so it is not that we support fraud, and I would point out again that there were absolutely zero--I have heard six, I have heard different numbers here. In South Carolina, there was not and is not one case that can be cited of a person showing up at the polls with the ID of another person attempting to vote.",
+      "note": "Answering a Senator's question: says the problem is the documents needed to get an ID, and that SC had no case of a person voting with another's ID.",
+      "subjects": [
+        "photo ID barriers (documents, distance)",
+        "voter fraud evidence"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:42:45.826Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ed6777464e8a2ead43fa1b0cca963a1157ee149e1debd045b5ef65e213363e0d",
+      "kind": "own-words",
+      "url": "https://www.govinfo.gov/content/pkg/CHRG-112shrg81713/html/CHRG-112shrg81713.htm",
+      "date": "2012-12-19",
+      "date_precision": "day",
+      "passage": "I am here because, were it not for Section 5 of the Voting Rights Act, this notion of reasonable impediment that is a part of the South Carolina statute would still be there. It was only because of the preclearance that is required under Section 5 of the Voting Rights Act and it was only because South Carolina was forced to have this aired before a three-judge panel that we got some expansion of that definition at the trial.",
+      "note": "Credits federal preclearance and the court review with widening the reasonable-impediment provision of the SC photo ID law.",
+      "subjects": [
+        "reasonable impediment affidavit"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:42:45.826Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "089ee888b6e005e95f65d7b52c8678e72d8b5b12001480a9d5b0245d9883f7b0",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/sess118_2009-2010/hj10/20100615.htm",
+      "date": "2010-06-15",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3418-2009",
+      "act": "nay",
+      "motion": "House: adopt the Conference Report on H. 3418 (adopted)",
+      "note": "SC House roll call (adopt the Conference Report on H. 3418 (adopted), 69-47) on H3418 (118th General Assembly), official journal (printed as 'Cobb-Hunter'); linked by LegiScan member id 2226 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f83e7532322fdd4b3c35798f759696b78a29793b67d1b00525c497603deb439",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=11554",
+      "date": "2016-04-27",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3167-2016",
+      "act": "nay",
+      "motion": "House: Passage of Bill",
+      "note": "SC House roll call (Passage of Bill, 90-9) on H3167 (121st General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 2226 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "06c85591cc25f9dd688958e4ed9bdf7d034e5b1277829ae4ec789b2e1185419d",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3822&session=124&summary=B",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "SC-H-3822-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, 2021-02-04_Introduced",
+      "note": "Listed as prime sponsor of H3822 (124th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2021-02-04_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "348ca87b33927efca7450a06906bc28906495e1533c3260622d18e6d5b951f86",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=20247",
+      "date": "2022-03-02",
+      "date_precision": "day",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "yea",
+      "motion": "House: Passage of Bill",
+      "note": "SC House roll call (Passage of Bill, 114-0) on H4919 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 2226 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cebba425407e0560fa0727d36dcd6d2c9e3c39cb153b2e7cae5ed40936a29b73",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=21123",
+      "date": "2022-05-03",
+      "date_precision": "day",
+      "instrument_id": "SC-S-108-2022",
+      "act": "yea",
+      "motion": "House: Passage of Bill",
+      "note": "SC House roll call (Passage of Bill, 109-0) on S0108 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 2226 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.816Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID barriers",
+        "reasonable impediment affidavit",
+        "free state ID",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "voter fraud"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "U.S. Senate Judiciary hearing record 2012-12-19 on govinfo.gov (read in full for her remarks)",
+        "House Journals 2011-01-25, 01-26, 01-27, 02-09, 02-10 (only procedural entries and others' remarks; nothing of hers saved)",
+        "PBS NewsHour 2012-12-20 (her words appear only in edited fragments; not saved)",
+        "blocked: https://www.washingtontimes.com/news/2021/apr/15/s-carolina-republicans-give-expanding-voting-a-brief-hearing (empty body)",
+        "blocked: https://www.judiciary.senate.gov/download/testimony-of-cobb-hunter-pdf?download=1 (404)",
+        "WFAE 2011-01-26 (does not quote her)",
+        "South Carolina Public Radio, FITSNews, The Nerve, voter guides: searched, nothing on the subject by her",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (refuse fetches; not tried)",
+        "not reviewed: her House campaign/official site (no page found by search)"
+      ],
+      "found": 4,
+      "at": "2026-11-10T21:42:45.826Z",
+      "by": "sc-search-r5"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 5,
+      "at": "2026-11-10T23:17:03.816Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

@@ -51,7 +51,265 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "17b648bd375555c697da3bee2fa6cc0473e6ceb85bc3273412e12ffd76316e65",
+      "kind": "own-words",
+      "url": "https://tommypope.com/state-house-report-14-2/",
+      "date": "2016-05-02",
+      "date_precision": "day",
+      "passage": "This bill adds Concealed Weapons Permits to the acceptable forms of identification necessary in order for a voter to cast an electoral ballot. The common sense law gives voters yet another option to prove their identity at the polls and will only help expand the number of people able to vote in our elections.",
+      "note": "From his State House Report #14 (page publication date 2016-05-02), under the heading Adding CWP to Allowable Voter ID Forms. He describes a bill that adds the concealed weapons permit to the forms of ID accepted at the polls. Bill number is not printed in the passage.",
+      "subjects": [
+        "voter ID at the polls",
+        "acceptable forms of photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:38:27.454Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b3100fbc9ae9039e8ca39ced44cb62cc018c3ccd504e3910ac201ae3cd5ea70a",
+      "kind": "own-words",
+      "url": "https://tommypope.com/legislative-update-week-9-2021/",
+      "date": "2021-03-15",
+      "date_precision": "day",
+      "passage": "This week, I voted in favor of legislation (H.3444) regarding our state’s election laws. This legislation has two goals: one, to maintain the integrity of each and every vote cast, and two, to ensure elections are run consistently across the state. After the elections of 2020, it became clear that there were discrepancies in the way each county handled votes. Simply put, we learned that counties were employing inconsistent processes, which is unacceptable. Upon ratification, this legislation would task the State Election Commission with ensuring there is a uniformity to guarantee free and fair elections. I supported this bill and it passed by a vote of 84-36.",
+      "note": "From his Legislative Update: Week 9, 2021 (heading: Maintaining the Integrity of our Elections). He explains his support for H. 3444 on election administration and uniform county procedures; the passage does not mention photo ID or citizenship.",
+      "subjects": [
+        "election integrity laws in general",
+        "election administration uniformity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:38:27.454Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c92e5ad8fea5e2039e6f1183d299a17519885be5f84fb7bde3d4e909831485ba",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3003&session=119&summary=B",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "SC-H-3003-2011",
+      "act": "sponsor",
+      "motion": "co sponsor, 2010-12-07_Introduced",
+      "note": "Listed as co sponsor of H3003 (119th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2010-12-07_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.818Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b506837854b0adf9fc5c780a99d6c8040710317478de36513a259ec81071eb61",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=11554",
+      "date": "2016-04-27",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3167-2016",
+      "act": "yea",
+      "motion": "House: Passage of Bill",
+      "note": "SC House roll call (Passage of Bill, 90-9) on H3167 (121st General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 11219 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.818Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "122877ebb9244cbe54752dd4a490999d41a6d116369b65dd7f74b573ed4b7c0c",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3167&session=121&summary=B",
+      "date": "2016",
+      "date_precision": "year",
+      "instrument_id": "SC-H-3167-2016",
+      "act": "sponsor",
+      "motion": "co sponsor, 2014-12-11_Introduced",
+      "note": "Listed as co sponsor of H3167 (121st General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2014-12-11_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.818Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8d3982b32acd0e2d6c0e2e074cf10cc65b6726c75d22d4a3c6839c334714a28d",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=4162&session=124&summary=B",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "SC-H-4162-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, 2021-04-06_Introduced",
+      "note": "Listed as co sponsor of H4162 (124th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2021-04-06_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.818Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "348ca87b33927efca7450a06906bc28906495e1533c3260622d18e6d5b951f86",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=20247",
+      "date": "2022-03-02",
+      "date_precision": "day",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "yea",
+      "motion": "House: Passage of Bill",
+      "note": "SC House roll call (Passage of Bill, 114-0) on H4919 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 11219 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.818Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c57ac76bd3a1ee6b9e7e899c1b45c493788dafb46c6c33fdaf8d0f113ec60060",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=4919&session=124&summary=B",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, 2022-02-03_Introduced",
+      "note": "Listed as co sponsor of H4919 (124th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2022-02-03_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.818Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cebba425407e0560fa0727d36dcd6d2c9e3c39cb153b2e7cae5ed40936a29b73",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=21123",
+      "date": "2022-05-03",
+      "date_precision": "day",
+      "instrument_id": "SC-S-108-2022",
+      "act": "yea",
+      "motion": "House: Passage of Bill",
+      "note": "SC House roll call (Passage of Bill, 109-0) on S0108 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 11219 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.818Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7434490f7188bbed09a7f543cec6a5cee0c334d7291d5a735350793de47a1954",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=5248&session=126&summary=B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "SC-H-5248-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, 2026-02-24_Introduced",
+      "note": "Listed as prime sponsor of H5248 (126th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2026-02-24_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.818Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "forms of acceptable photo ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws in general",
+        "state election commission uniformity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "member page https://www.scstatehouse.gov/member.php?code=1484090731 (used only to identify him as House District 47, Speaker Pro Tempore)",
+        "his own site https://tommypope.com/ : two legislative updates read (2016-05-02 and 2021-03-15); other update pages not individually opened",
+        "iVoterGuide https://ivoterguide.com/candidate/24832/race/4146/election/292 : not opened by me; a search summary says the photo-ID item is marked Did not answer, so nothing saved from it",
+        "Freedom Voter Guide https://freedomvoterguide.com/candidates/tommy-pope/ : nothing on the subject",
+        "web searches (6): name plus voter ID, photo ID, election integrity, noncitizen, proof of citizenship, questionnaire, newsletter: nothing further found; a Pennsylvania namesake (York County, PA) turned up and was ignored",
+        "one sentence in the 2016 update that names a party was not saved",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (refused by rule)"
+      ],
+      "found": 2,
+      "at": "2026-11-10T21:38:27.454Z",
+      "by": "sc-search-r4"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 8,
+      "at": "2026-11-10T23:17:03.818Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

@@ -1,0 +1,18 @@
+{
+  "id": "SC-H-5276-2025",
+  "scope": "state:sc",
+  "title": "H 5276 (126th General Assembly): Vehicle Licensing and Citizenship",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=5276&session=126&summary=B"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 2 (56-3-350(7))\n(quote) The applicant is not a United States citizen or a person currently authorized by the United States Department of Justice, the United States Department of Homeland Security, or the United States Department of State to live, work, or study in the United States on a temporary or permanent basis.\n(other) Sec. 1 (56-3-240): vehicle registration application must include the owner's South Carolina driver's licence information.\n(other) Sec. 2 (56-3-350): adds non-citizen or unauthorized status as a ground for DMV to refuse to register a vehicle.\n(other) Sec. 3: effective on approval by the Governor.\n(other) version: Only one version (Introduced, 2026-02-26). Vehicle-registration bill; no voting ID or voting citizenship text in slots a-d.\n(other) note: Not a voting bill: it amends vehicle registration rules. The single slot e entry is a citizenship and immigration-status ground for refusing to register a vehicle, quoted only because the bill is on the list. Only the introduced text is saved.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 SC bill texts and roll calls (Sonnet readers R1-R5 + official vote/journal pages, voting-rights, 2026-11-10)",
+    "fetched_at": "2026-11-10",
+    "method": "curl"
+  }
+}

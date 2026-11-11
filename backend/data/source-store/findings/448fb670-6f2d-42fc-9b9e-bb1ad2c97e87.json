@@ -27,5 +27,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "reasonable-impediment or provisional ballot",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "Thomas Duval 'Val' Guest Jr., House seat 106 (member code 0730113549)",
+        "https://ivoterguide.com/candidate/66002/race/16390/election/958 (2022 general questionnaire: photo identification and voting-law questions all marked 'Did not answer', so nothing to save)",
+        "On the Record (0 meetings)",
+        "House member roster page on scstatehouse.gov (confirms the person holds the seat now; bills and committees only)",
+        "House Journal pages and site-restricted journal searches for floor remarks: nothing on the subject",
+        "web searches on voter ID, photo ID, proof of citizenship, SAVE Act, noncitizen, H. 3003, questionnaire: nothing naming the person on the subject",
+        "not reviewed: no official or campaign site with an issues page found",
+        "blocked: https://ballotpedia.org (refuses fetches, not tried)",
+        "blocked: https://justfacts.votesmart.org (refuses fetches, not tried)",
+        "blocked: https://bluevoterguide.org (refuses fetches, not tried)",
+        "not fetched, on the do-not-fetch list: news outlets such as scdailygazette.com, postandcourier.com"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:43:26.341Z",
+      "by": "sc-search-r5"
+    }
+  ]
 }

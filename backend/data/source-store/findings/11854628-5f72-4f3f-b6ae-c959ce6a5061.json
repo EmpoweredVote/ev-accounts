@@ -25,7 +25,135 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "04ce6e5858a383d1ea3facea08f8a7bf3e7d446dd6e4d43886e4857f4a0fb455",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/sess126_2025-2026/bills/128.htm",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "SC-S-128-2025",
+      "act": "sponsor",
+      "note": "Sponsor of S. 128, Voter Registration: a person must provide satisfactory evidence of citizenship to register to vote, with the Attorney General to review the registration rolls for compliance. Prefiled 2024-12-11, introduced and referred to Judiciary 2025-01-14 (Senate Journal page 84). The bill page lists the sponsor as Senator Johnson; Journal of 2025-01-14 shows the same listing and the Senate roll has one Johnson.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:19:19.420Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6faf09ea6e8effee660b59b459517d907eecd19de63e7bc874b2c5dba3d3fd59",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=20955",
+      "date": "2022-04-21",
+      "date_precision": "day",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "yea",
+      "motion": "Senate: 3rd Reading",
+      "note": "SC Senate roll call (3rd Reading, 43-0) on H4919 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 21893 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.823Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2289bd898c494010556a78d293437fce1a1b151d26ad8518eef886e29fc62634",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0128&session=126&summary=B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "SC-S-128-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, 2024-12-11_Introduced",
+      "note": "Listed as prime sponsor of S0128 (126th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2024-12-11_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.823Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d0408510b99d35090c40b5547c5404fecb3f57da7fe854e2d44c61a9a8fb44fb",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=27457",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-872-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "note": "SC Senate roll call (2nd Reading, 44-0) on S0872 (126th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 21893 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.823Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "H. 3003 photo ID law"
+      ],
+      "places": [
+        "On the Record (0 appearances; also searched by name)",
+        "legislature member page https://www.scstatehouse.gov/member.php?code=0949431704 (confirms Senate District 16, committees; lists no bills on the page itself)",
+        "Senate Journal 2025-01-14, bill S. 128 listed under Senator Johnson; the only Johnson on the Senate roll",
+        "S. 128 bill page on the legislature site",
+        "no campaign or newsletter statements found by 8 web searches (name + voter ID, photo ID, proof of citizenship/SAVE Act, H. 3003, questionnaire, op-ed, local outlets, SC outlets)",
+        "Senate Journal floor remarks: nothing found on the subject by search",
+        "blocked: https://ballotpedia.org/Michael_Johnson_(South_Carolina) (not fetched, listed as refused)",
+        "blocked: https://justfacts.votesmart.org (not fetched, listed as refused)"
+      ],
+      "found": 1,
+      "at": "2026-11-10T21:19:19.420Z",
+      "by": "search-sc-2026-11-10"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 3,
+      "at": "2026-11-10T23:17:03.823Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

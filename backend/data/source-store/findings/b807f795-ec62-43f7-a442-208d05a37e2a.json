@@ -27,5 +27,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "https://votehartnett.com and /issues (campaign site: safety, roads, education; nothing on the subject)",
+        "https://mountpleasantmagazine.com 2022 candidate profile: reporter's paraphrase only, not his words, not saved",
+        "On the Record (0 appearances)",
+        "South Carolina House Journal pages 2023-2026 (several fetched and searched for the subject words: nothing on the subject)",
+        "web searches on name with voter ID, photo ID, citizenship, noncitizen, questionnaire (nothing on the subject)",
+        "blocked: https://ballotpedia.org (refuses our fetches, not tried)",
+        "blocked: https://justfacts.votesmart.org (refuses our fetches, not tried)",
+        "blocked: https://bluevoterguide.org (refuses our fetches, not tried)",
+        "not reviewed: Senate/House personal-index pages (error pages expected)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:42:52.716Z",
+      "by": "sc-search-r5"
+    }
+  ]
 }

@@ -1,0 +1,54 @@
+{
+  "politician_id": "a33d895f-c389-49e5-8eb7-7c374d258eab",
+  "findings": [
+    {
+      "id": "4792be73e8e8fc5d308f3b80803921c51495b1f17a312280ff98a92090e0956a",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/88905/race/24478/election/1367",
+      "date": "2025-12-23",
+      "date_precision": "day",
+      "passage": "People should be able to vote without photo identification.",
+      "note": "iVoterGuide questionnaire statement for the 2025 special general election (date is the election date); his recorded response is Strongly Disagree. The same response appears on his special primary and runoff profiles.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:43:05.826Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "mail and absentee ballot ID",
+        "noncitizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "iVoterGuide profiles for the 2025 special primary, runoff and special general and the 2026 primary (pages name him as candidate for District 88; 2026 primary page shows 'Did not answer')",
+        "On the Record (0 meetings)",
+        "scstatehouse.gov member and bill pages (sponsorships linked separately)",
+        "iVoterGuide profile pages",
+        "web searches on name plus voter ID, photo ID, citizenship, noncitizen, H. 3003, questionnaire, local outlets",
+        "Campaign for Liberty 2016 and 2018 survey pages (questions do not cover the subject)",
+        "blocked: https://ballotpedia.org (refuses our fetches, not tried)",
+        "blocked: https://justfacts.votesmart.org (refuses our fetches, not tried)",
+        "FITSNews, South Carolina Public Radio, AOL candidate profile: nothing on the subject"
+      ],
+      "found": 1,
+      "at": "2026-11-10T21:43:05.826Z",
+      "by": "sc-search-r5"
+    }
+  ]
+}

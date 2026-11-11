@@ -1,0 +1,32 @@
+{
+  "politician_id": "b2f9dfe8-d121-417d-a132-6b3f038e5c4f",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "reasonable-impediment affidavit and provisional ballot",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "citizens-only voting amendment",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.charliehartz.com (home, about, issues pages: nothing on the subject)",
+        "iVoterGuide profile https://ivoterguide.com/candidate/80715/race/16365/election/1175 (questionnaire items on photo ID and elections: Did not answer, so no statement to save)",
+        "House Journal and member-page search: no remarks found",
+        "web searches on name with voter ID, photo ID, citizenship amendment, election, questionnaire",
+        "not reviewed: Post and Courier Q&A of 2024-10-19 (host on do-not-fetch list)",
+        "blocked: https://ballotpedia.org (not tried)",
+        "blocked: https://justfacts.votesmart.org (not tried)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:44:27.079Z",
+      "by": "sc-search-r5"
+    }
+  ]
+}

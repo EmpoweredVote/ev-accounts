@@ -1,0 +1,75 @@
+{
+  "politician_id": "0d332476-eddf-4e77-9293-673a398629d5",
+  "findings": [
+    {
+      "id": "fdc80b9d2ac8165c984965bff8e4fa815fba94f44cef3aa355fedc7e1107a934",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/80560/race/16293/election/1175",
+      "date": "2024-06-11",
+      "date_precision": "day",
+      "passage": "People should be able to vote without photo identification. Strongly Disagree",
+      "note": "iVoterGuide questionnaire for the 2024 primary, answer to the photo ID statement as printed.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:27:34.346Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e26b77538eaf38704b22cc595ce801830ef0bbf3f60a0b7467a7af5c56541008",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/80560/race/22057/election/1220",
+      "date": "2024-06-25",
+      "date_precision": "day",
+      "passage": "People should be able to vote without photo identification. Strongly Disagree",
+      "note": "iVoterGuide questionnaire for the 2024 runoff, same answer to the photo ID statement as printed.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:27:34.346Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "noncitizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "status: holds SC House District 9 seat",
+        "On the Record (0 meetings)",
+        "official House member page (used to identify seat only)",
+        "campaign site",
+        "Ballotpedia (not fetched: refuses fetches)",
+        "blocked: https://justfacts.votesmart.org",
+        "blocked: https://onyourballot.vote411.org (server error / not found)",
+        "iVoterGuide candidate pages, all election years",
+        "House Journal search (no remarks on the subject found)",
+        "web searches: name + voter ID, photo ID, proof of citizenship / SAVE Act, noncitizen, questionnaire, election integrity, local outlets",
+        "voteblakesanders.com home and Meet Blake pages: nothing on the subject",
+        "Anderson Observer interview and freshman profile: nothing on the subject"
+      ],
+      "found": 2,
+      "at": "2026-11-10T21:27:34.346Z",
+      "by": "sc-search-r2"
+    }
+  ]
+}

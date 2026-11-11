@@ -1,0 +1,32 @@
+{
+  "politician_id": "b9ddf44a-0dbd-4672-8684-cd3f67e7d2e9",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "identity confirmed: https://www.scstatehouse.gov/sess126_2025-2026/hj25/20250423.htm (H. 4374 lists Rep. Waters as lead sponsor)",
+        "https://sc.emergeamerica.org/candidate-profile-courtney-waters/: nothing on the subject",
+        "https://www.live5news.com/2025/02/22/groups-fear-proposed-sc-voter-registration-rules-could-have-chilling-effect/: does not mention her",
+        "Ballotpedia says she skipped its candidate survey in several years (not fetched)",
+        "journal personal index pages: error pages (not read)",
+        "blocked: https://ballotpedia.org (not fetched, listed as refusing fetches)",
+        "blocked: https://justfacts.votesmart.org (not fetched, listed as refusing fetches)",
+        "On the Record (0 meetings)",
+        "web searches (name with voter ID, photo ID, SAVE Act or citizenship, questionnaire, local outlets): no statement by the person on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:43:09.627Z",
+      "by": "sc-search-r5"
+    }
+  ]
+}

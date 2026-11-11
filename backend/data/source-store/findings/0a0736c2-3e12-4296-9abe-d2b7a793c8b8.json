@@ -1,0 +1,30 @@
+{
+  "politician_id": "0a0736c2-3e12-4296-9abe-d2b7a793c8b8",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "confirmed in office: https://treasurer.sc.gov/about-us/meet-the-treasurer (State Treasurer, fourth term; nothing on the subject)",
+        "On the Record (0 meetings)",
+        "official site treasurer.sc.gov (newsroom statements found concern a financing report, nothing on the subject)",
+        "iVoterGuide 2022 questionnaire https://ivoterguide.com/candidate/24112/race/17533/election/958: did not answer the photo-ID or voting-practice items",
+        "web searches: voter ID, proof of citizenship/SAVE Act, election integrity/voter rolls, questionnaire, scstatehouse.gov photo identification (hits were about a different legislator with the same surname)",
+        "blocked: https://ballotpedia.org/Curtis_Loftis (listed as refusing fetches, not tried)",
+        "not reviewed: Journal remarks (a statewide executive office, no floor remarks)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:18:38.519Z",
+      "by": "search-sc-2026-11-10"
+    }
+  ]
+}

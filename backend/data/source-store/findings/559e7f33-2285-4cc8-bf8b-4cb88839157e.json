@@ -1,0 +1,36 @@
+{
+  "politician_id": "559e7f33-2285-4cc8-bf8b-4cb88839157e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Secretary of State site: https://www.sos.sc.gov/index.php/about-us/secretarys-biography (confirms office, elected 2002, returned 2006-2022; nothing on the subject)",
+        "official Secretary of State site: https://sos.sc.gov/index.php/node/182 (nothing on the subject)",
+        "campaign site https://hammond4sc.com (nothing on the subject)",
+        "WSOC Political Beat candidate guide, 2026-10-19: his answers do not touch the subject",
+        "BallotReady profile (confirms 2026 general-election candidacy; nothing on the subject)",
+        "Prediction Edge profile (no passages on the subject)",
+        "legislature bill pages: office is not a legislative seat; no sponsorships to look up; searched for testimony on scstatehouse.gov, none found",
+        "web searches: name + voter ID, photo ID, proof of citizenship / SAVE Act / noncitizen, election integrity questionnaire, 'Hammond said', hearing testimony: nothing on the subject by him",
+        "news: SC Daily Gazette 2026-11-04 reports his re-election (search lead only; the site is on the do-not-fetch list)",
+        "blocked: https://ballotpedia.org/Mark_Hammond_(South_Carolina) (listed as refusing fetches, not tried)",
+        "blocked: https://justfacts.votesmart.org (listed as refusing fetches, not tried)",
+        "not reviewed: ivoterguide.com and ballot.watch candidate pages (not reached)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:18:51.064Z",
+      "by": "search-sc-2026-11-10"
+    }
+  ]
+}

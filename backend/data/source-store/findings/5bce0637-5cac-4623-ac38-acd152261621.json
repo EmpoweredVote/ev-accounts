@@ -77,7 +77,114 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "2d018a294744710583fce790c911cf002bbc00d651e9414d857f9be8b1a36b65",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/sess118_2009-2010/sj10/20100128.htm",
+      "date": "2010-01-28",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3418-2009",
+      "act": "yea",
+      "motion": "Senate: Senate second reading of H. 3418 (passed)",
+      "note": "SC Senate roll call (Senate second reading of H. 3418 (passed), 36-2) on H3418 (118th General Assembly), official journal (printed as 'Williams'); linked by LegiScan member id 2370 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.818Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6faf09ea6e8effee660b59b459517d907eecd19de63e7bc874b2c5dba3d3fd59",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=20955",
+      "date": "2022-04-21",
+      "date_precision": "day",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "yea",
+      "motion": "Senate: 3rd Reading",
+      "note": "SC Senate roll call (3rd Reading, 43-0) on H4919 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 2370 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.818Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d0408510b99d35090c40b5547c5404fecb3f57da7fe854e2d44c61a9a8fb44fb",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=27457",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-872-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "note": "SC Senate roll call (2nd Reading, 44-0) on S0872 (126th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 2370 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.818Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Senate Journal personal index https://www.scstatehouse.gov/sess119_2011-2012/sj12/williams.htm (names Kent M. Williams, Senator from District No. 30; confirms who he is)",
+        "Senate Journal personal index 2011 https://www.scstatehouse.gov/sess119_2011-2012/sj11/williams.htm (lists no debate entry; one amendment on 2011-02-23)",
+        "Senate Journal 2011-02-23 https://www.scstatehouse.gov/sess119_2011-2012/sj11/20110223.htm (on H. 3003 he proposed an amendment on the number of early voting centers, which is not about ID; no remarks printed; nothing on the subject)",
+        "Senate Journal personal indexes for 2022, 2024 and 2025: not reviewed (index pages returned an error)",
+        "https://legacy.dillonheraldonline.com/?p=154464 (column by Senator Kent Williams): not reviewed, server error 500",
+        "6 web searches (voter ID, photo ID, citizenship, floor remarks, statements 2024-25, newsletter): no own words on the subject found",
+        "blocked: https://ballotpedia.org/Kent_Williams_(South_Carolina_Senator) (listed as blocked per instructions, not fetched)",
+        "blocked: https://justfacts.votesmart.org (listed as blocked per instructions, not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:25:36.888Z",
+      "by": "sc-search-r2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 3,
+      "at": "2026-11-10T23:17:03.818Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

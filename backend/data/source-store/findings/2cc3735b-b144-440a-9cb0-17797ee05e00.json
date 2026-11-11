@@ -1,0 +1,69 @@
+{
+  "politician_id": "2cc3735b-b144-440a-9cb0-17797ee05e00",
+  "findings": [
+    {
+      "id": "d0408510b99d35090c40b5547c5404fecb3f57da7fe854e2d44c61a9a8fb44fb",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=27457",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-872-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "note": "SC Senate roll call (2nd Reading, 44-0) on S0872 (126th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 26267 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.825Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "H. 3003 photo ID law"
+      ],
+      "places": [
+        "On the Record (0 appearances; also searched by name)",
+        "Ballotpedia: blocked (listed as refused, not fetched): https://ballotpedia.org/",
+        "blocked: https://justfacts.votesmart.org (listed as refused, not fetched)",
+        "legislature member page https://www.scstatehouse.gov/member.php?code=1780681605 (confirms Senate District 17; no bills listed on the page)",
+        "6 web searches (name + voter ID, photo ID, election integrity, citizenship, questionnaire/voter guide, interview/podcast/newsletter, sponsor of election bills): nothing on the subject",
+        "Voice of Blythewood letter to constituents (https://blythewoodonline.com/?p=61960): page text did not load with plain curl; not reviewed",
+        "Elrod Pope podcast https://elrodpope.com/podcast/local-justice-from-small-town-attorney-to-state-senator-with-everett-stubbs/: not reviewed (audio)",
+        "campaign site: nothing on the subject in search summaries (taxes, natural resources, term limits)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:21:28.813Z",
+      "by": "search-sc-2026-11-10"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 1,
+      "at": "2026-11-10T23:17:03.825Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "id": "SC-H-3005-2009",
+  "scope": "state:sc",
+  "title": "H 3005 (118th General Assembly): Require A Poll Manager To Compare The Photograph On The Required Identification With The Person Presenting Himself To Vote And Also To Require The Poll Manager To Verify That The Photograph Is That Of The Person Seeking To Vote.",
+  "urls": [
+    "https://www.scstatehouse.gov/cgi-bin/web_bh10.exe?bill1=3005&session=118"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) SECTION 3 (amends 7-13-710)\n(quote) One of the managers also shall compare the photograph contained on the required identification with the person presenting himself to vote. The manager shall verify that the photograph is that of the person seeking to vote.\n(section) SECTION 3 (amends 7-13-710)\n(quote) 7-5-125, 7-5-180, and 7-5-200 if the notification has been signed by the elector\n(section) SECTION 3 (amends 7-13-710)\n(quote) STRUCK: if he is not licensed to drive,\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) SECTION 1 (amends 7-5-125)\n(quote) and must include a photograph of the person pursuant to Section 7-5-200\n(section) SECTION 2 (new 7-5-200)\n(quote) The certificate must contain a photograph of the elector and other information as the State Election Commission requires. The commission may use photographs taken by other state agencies for use on the certificate and establish a procedure for taking photographs of electors when they register to vote.\n(other) SECTION 1 (7-5-125): the written notice of registration must carry the registrant's photograph.\n(other) SECTION 2 (new 7-5-200): every registered elector must be furnished a certificate with a photograph; the State Election Commission may reuse photographs from other state agencies and set a photo-taking procedure at registration.\n(other) SECTION 4: takes effect July 1, 2009.\n(other) version: latest-2010_bill-page (only saved version, as introduced 12/9/2008): carries ID text in slot a (poll-manager photo comparison, photo-bearing registration certificate added to the accepted list, 'if he is not licensed to drive' struck) and slot e (photo on registration notice and certificate). No slot b, c or d text.\n(other) note: Only one text file is saved (the bill page; its text matches the printed bill of 12/9/2008). No amendments, no floor action (died in House Judiciary). The bill predates Act 27 of 2011; 7-13-710 is shown in its 1996 form as last amended by Act 459 of 1996. Companion bill H 3418 is covered elsewhere.",
+  "sponsors": [
+    {
+      "name": "Kenneth Bingham",
+      "role": "prime",
+      "version": "latest-2010_bill-page"
+    },
+    {
+      "name": "Gregory Delleney",
+      "role": "co",
+      "version": "latest-2010_bill-page"
+    },
+    {
+      "name": "Steve Parker",
+      "role": "co",
+      "version": "latest-2010_bill-page"
+    },
+    {
+      "name": "Michael Pitts",
+      "role": "co",
+      "version": "latest-2010_bill-page"
+    },
+    {
+      "name": "McLain Toole",
+      "role": "co",
+      "version": "latest-2010_bill-page"
+    },
+    {
+      "name": "Annette Young",
+      "role": "co",
+      "version": "latest-2010_bill-page"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 SC bill texts and roll calls (Sonnet readers R1-R5 + official vote/journal pages, voting-rights, 2026-11-10)",
+    "fetched_at": "2026-11-10",
+    "method": "curl"
+  }
+}

@@ -25,7 +25,53 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "65d1c8a6651007ea2591d7294f1a304bf49c62988192db5a3aa080752f6861b9",
+      "kind": "own-words",
+      "url": "https://demcastusa.com/2022/08/27/meet-the-candidate-heather-bauer-sc/",
+      "date": "2022-08-27",
+      "date_precision": "day",
+      "passage": "I would introduce/support legislation to ensure that: – Voters with disabilities have equal access to the ballot box.",
+      "note": "Candidate survey answer on measures to protect constituents' right to vote. The list also names ending gerrymandering, short lines and Election Day as a national holiday; it says nothing on ID or citizenship.",
+      "subjects": [
+        "voting access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:38:17.123Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voting access"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scstatehouse.gov House Journals 2011, 2022 and 2025 (read dated pages)",
+        "web searches on name plus voter ID, photo ID, proof of citizenship, questionnaire, election",
+        "blocked: https://www.wltx.com/article/news/politics/south-carolina-house-passes-early-voting-bill/101-adfd8810-b08a-4c11-a561-32a5c328e80b",
+        "blocked: https://www.timesunion.com/news/article/South-Carolina-voting-changes-unite-Democrats-16972090.php",
+        "blocked: Ballotpedia, justfacts.votesmart.org (listed as refusing fetches, not tried)",
+        "not reviewed: scdailygazette.com, thestate.com and other do-not-fetch hosts (search snippets only, not opened)",
+        "vote411 and ivoterguide pages (no answers by this person found)",
+        "voteheatherbauer.com/about: nothing on the subject",
+        "demcastusa.com 2022 survey: voting access answer, nothing on ID"
+      ],
+      "found": 1,
+      "at": "2026-11-10T21:38:17.123Z",
+      "by": "sc-search-r4"
+    }
+  ]
 }
