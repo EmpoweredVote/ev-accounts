@@ -1,0 +1,29 @@
+{
+  "politician_id": "591924fa-120b-4221-9fee-ebe48159494e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "check every gun buyer",
+        "red-flag or extreme-risk orders",
+        "carry a gun",
+        "gun rights / Second Amendment statements",
+        "bills sponsored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search: name plus gun and Second Amendment words (several searches)",
+        "candidate for Assembly District 61, won the primary (search result: https://urbanmilwaukee.com/2026/08/12/army-veteran-brist-wins-primary-will-challenge-rep-bob-donovan/); announcement release (https://urbanmilwaukee.com/pressrelease/army-veteran-ben-brist-announces-campaign-for-wisconsins-61st-assembly-district/) 2026-03-17: nothing on the subject",
+        "campaign site home and issues pages (https://bristforassembly.com, https://bristforassembly.com/issues): nothing on the subject",
+        "voter-guide profile (https://ivoterguide.com/candidate/96993/race/34254/election/1497): gun question not answered",
+        "sponsor list: not applicable, not a sitting legislator; Ballotpedia not reviewed (returns empty to fetch tool)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T22:15:40.198Z",
+      "by": "source-collector"
+    }
+  ]
+}

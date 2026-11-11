@@ -44,6 +44,132 @@
         "fetched_at": "2026-10-28T23:31:40.381Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "f233742cbb8f009a9556cb1285b60ad7e4b3ac5ef1f6a8303038ebfe86b02af5",
+      "kind": "own-words",
+      "url": "https://www.wisdoj.gov/PressReleases/7.3.24_Ghost_Gun_Multistate.pdf",
+      "date": "2024-07-03",
+      "date_precision": "day",
+      "passage": "Ghost guns shouldn't be exempted from rules that apply to other firearms. When a background check is required to buy a firearm, it should be required to buy a ghost gun as well,",
+      "note": "Statement in a Wisconsin Department of Justice release in his name: he joined 24 attorneys general in a Supreme Court brief urging the court to uphold the federal ghost gun rule (Garland v. VanDerStok).",
+      "subjects": [
+        "home-made or unserialised guns",
+        "federal agency gun rules",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.288Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f237649984e93e9ba2290f4aadc5e097b33e799a8e7e42dd2ce7aa8180530c1b",
+      "kind": "own-words",
+      "url": "https://www.wisdoj.gov/PressReleases/8.20.21%20ATF%20Multistate%20Press%20Release%20(1).pdf",
+      "date": "2021-08-20",
+      "date_precision": "day",
+      "passage": "Ghost guns make our communities less safe. The ghost gun loophole makes it easier for people who are prohibited from possessing a firearm to get one, and it can make it more difficult to solve crimes,",
+      "note": "Statement in a Wisconsin Department of Justice release in his name: he joined 21 other attorneys general in a comment urging the federal agency to finalize its ghost gun rule.",
+      "subjects": [
+        "home-made or unserialised guns",
+        "federal agency gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.288Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aee7786d3363d882ced13c2d615883122ab4acfcc2a2e29adf4ecaafd5da39c9",
+      "kind": "own-words",
+      "url": "https://www.cbs58.com/news/attorney-general-josh-kaul-calls-for-universal-background-checks-on-gun-sales",
+      "date": "2021-04-01",
+      "date_precision": "day",
+      "passage": "The legislation that was proposed in the last session, that's included in the governor's budget, would close those loopholes",
+      "note": "Quoted by CBS58 (the fetch tool returned the sentence with a break after 'loopholes'; the next fragment reads 'and make sure that everybody who's getting a firearm has to go through the same background check process'). He calls for background checks on all gun transfers.",
+      "subjects": [
+        "check every gun buyer",
+        "background checks on private sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.288Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a7c129f8e7e05a037f835508229eb206c7cdee02b8d55173e67b48c130c2d024",
+      "kind": "own-words",
+      "url": "https://www.wpr.org/politics/attorney-general-josh-kaul-democratic-lawmakers-renew-push-gun-law-changes",
+      "date": "2021-04-01",
+      "date_precision": "day",
+      "passage": "If this budget isn't the right time, when is the right time?",
+      "note": "Quoted by WPR at an event with lawmakers urging the budget measures on universal background checks and a red flag law.",
+      "subjects": [
+        "check every gun buyer",
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.288Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "99fe95e99873bfe4b037aa18a2e21478148de24ccd3414eca28403fc6f207add",
+      "kind": "own-words",
+      "url": "https://www.wpr.org/justice/kaul-calls-more-gun-safety-laws-wake-brewery-shooting",
+      "date": "2020-03-03",
+      "date_precision": "day",
+      "passage": "There's nothing that's going to stop all mass shootings.",
+      "note": "Quoted by WPR after the Molson Coors shooting; the same article quotes him next: 'But there are steps than can make our communities safer and reduce the likelihood that these will happen.' He says he agrees with the governor and a state representative on gun safety steps.",
+      "subjects": [
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.288Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "60c553f337f2c03589d5fe95500f7bed06c7f49595734ef9e411e00a6284cbd4",
+      "kind": "own-words",
+      "url": "https://wpr.org/news/kaul-says-wisconsin-needs-holistic-approach-to-preventing-mass-shootings",
+      "date": "2024-12-23",
+      "date_precision": "day",
+      "passage": "There has not been a legislative hearing on these topics in years,",
+      "note": "Quoted by WPR in a year-end interview about gun-safety legislation in Wisconsin; the same piece has him discussing making safe gun storage more accessible.",
+      "subjects": [
+        "gun safety laws in general",
+        "safe storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.288Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -104,6 +230,32 @@
       "found": 2,
       "at": "2026-10-28T23:31:40.381Z",
       "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns and federal agency gun rules",
+        "waiting period",
+        "gun safety laws in general",
+        "storage"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope: a page names him as the attorney general seeking re-election on the 2026 ballot (https://fox6now.com/news/wisconsin-attorney-general-josh-kaul-announces-re-election-campaign)",
+        "campaign site: joshkaul.com and joshkaul.com/issues returned 404 (not found); nothing on the subject",
+        "official site: Wisconsin Department of Justice press releases (wisdoj.gov), two multistate ghost-gun releases read",
+        "sponsor list: not applicable, he is the attorney general and not a legislator; no bill sponsorships to record",
+        "Ballotpedia: not reviewed, returns empty to the fetch tool",
+        "news search on name plus subject words: CBS58, WPR (three articles) read",
+        "blocked: https://wisconsinexaminer.com/2021/09/24/attorney-general-and-lawmakers-introduce-gun-control-bills/",
+        "blocked: https://wisconsinexaminer.com/briefs/kaul-says-hell-run-for-ag-again-deciding-against-pursuing-governors-seat/"
+      ],
+      "found": 6,
+      "at": "2026-11-10T22:15:40.288Z",
+      "by": "source-collector"
     }
   ]
 }

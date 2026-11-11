@@ -65,6 +65,70 @@
         "fetched_at": "2026-10-28T23:15:12.786Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "51970e23265087b7cf4d7d03eebc2c63fbde28907da727c975e5c6068da7fe96",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/27/brill/media/hsdb32hp/representative-brill-responds-to-governor-evers-budget-address.pdf",
+      "date": "2025-02-19",
+      "date_precision": "day",
+      "passage": "As if his fiscal recklessness wasn’t enough, Governor Evers is also trying to use the budgetary process to ram through Leftist dream policies like new gun-control measures, legalizing marijuana, issuing IDs to illegal immigrants, and taking parents’ rights away when it comes to their children’s education.",
+      "note": "Her press release responding to the governor's 2025 budget address. She lists new gun-control measures among the governor's budget proposals that she objects to. The release does not name a specific gun proposal.",
+      "subjects": [
+        "gun-control proposals in the state budget",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.309Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "93550a8f2ab09cdfbdb9825f0878bdfd34191b06c9dee267c29bd1ba32ae7475",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/82317/race/3404/election/1251",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "What restrictions on gun ownership are needed to protect public safety? Background checks - both criminal and mental",
+      "note": "Answer shown in the QUESTIONNAIRE section of her iVoterGuide profile (a voter guide run by a third party). The same page is also served under her 2024 race (election/1169) with the same answers, so the answer date is not known. The guide does not show the full question wording beyond what is quoted.",
+      "subjects": [
+        "check every gun buyer",
+        "limits on who may own a gun (criminal and mental health checks)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.309Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "89c97b438f22cc5462fc9aae8c5ddef34e340a5cee2ee2ba6022e29b6c396f19",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/82317/race/3404/election/1251",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Should teachers be allowed to carry guns at school? Yes After background checks",
+      "note": "Answer shown in the QUESTIONNAIRE section of her iVoterGuide profile: yes, teachers should be allowed to carry guns at school, after background checks. Date of the answer is not known (same answers appear on her 2024 race page).",
+      "subjects": [
+        "guns in schools",
+        "armed teachers",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.309Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -129,6 +193,32 @@
       "found": 1,
       "at": "2026-10-28T23:31:40.434Z",
       "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "limits on who may own a gun",
+        "carry permits and guns in schools",
+        "general gun rights and Second Amendment statements",
+        "governor's gun-control proposals"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope: official site names her as the 27th Assembly District member; the 2026 Wisconsin State Assembly election page on Wikipedia (https://en.wikipedia.org/wiki/2026_Wisconsin_State_Assembly_election) lists her as running for re-election unopposed in District 27; her campaign site says she is running for a second term",
+        "official site: home, about, press release list (all 4 pages, 28 releases opened and searched for gun words), task force page; one release has a gun passage",
+        "official site issues and legislation pages: do not exist (404)",
+        "campaign site https://lindeeforwiassembly.com (home page only: nothing on the subject)",
+        "iVoterGuide candidate questionnaire (https://ivoterguide.com/candidate/82317/race/3404/election/1251)",
+        "Ballotpedia: not reviewed (page comes back empty to the fetch tool)",
+        "web searches: 2 (statements on the Second Amendment and firearms; candidate questionnaire)",
+        "sponsor list: covered by LegiScan bulk check"
+      ],
+      "found": 3,
+      "at": "2026-11-10T22:15:40.309Z",
+      "by": "source-collector"
     }
   ]
 }

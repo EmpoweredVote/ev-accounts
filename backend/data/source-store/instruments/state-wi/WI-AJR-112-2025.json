@@ -1,0 +1,134 @@
+{
+  "id": "WI-AJR-112-2025",
+  "scope": "state:wi",
+  "title": "AJR112 (2025-2026 Regular Session): The right to keep and bear arms (first consideration).",
+  "urls": [
+    "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/joint_resolution/ajr112",
+    "https://docs.legis.wisconsin.gov/document/proposaltext/2025/REG/AJR112.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Chanz Green",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5c631466-ba33-4731-89a3-ca017444cf78"
+    },
+    {
+      "name": "Elijah Behnke",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d68b3730-048f-4cb5-a952-104dd75409df"
+    },
+    {
+      "name": "Calvin Callahan",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1073fd5c-0bac-4f03-8254-892351795937"
+    },
+    {
+      "name": "Joy Goeben",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3d9e1ffb-1e2e-445a-a86d-259c630360aa"
+    },
+    {
+      "name": "Brent Jacobson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1adb3e54-9f6d-475c-9c4b-9a499f7a9f29"
+    },
+    {
+      "name": "Dan Knodl",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5cf0f099-b460-40f4-9e1a-0663315da02d"
+    },
+    {
+      "name": "Rob Kreibich",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6b10e440-3ab9-4e5e-be02-c61616ea4cf0"
+    },
+    {
+      "name": "Dave Maxey",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1d1a1f40-a1e4-4208-bdc0-810571bd11a9"
+    },
+    {
+      "name": "William Penterman",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6293d49b-6a86-41c1-9e2e-5f9ec8188924"
+    },
+    {
+      "name": "Jim Piwowarczyk",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1e6711f8-190e-4edd-a2d7-75584e192ce9"
+    },
+    {
+      "name": "Rob Swearingen",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0404c82e-7503-4b12-b44d-49d2c990a5a9"
+    },
+    {
+      "name": "Duke Tucker",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "00d0e0fc-ac5d-4610-bf25-d858a85a4b80"
+    },
+    {
+      "name": "Treig Pronschinske",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "59538da9-a7ca-4e7d-a57b-e576c7d66621"
+    },
+    {
+      "name": "Andre Jacque",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d677bfee-6bc5-4ad1-bb6a-fb6e5b6fe284"
+    },
+    {
+      "name": "Steve Nass",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f8901d87-cb68-480a-84cd-b40290c1bb8b"
+    },
+    {
+      "name": "Rob Stafsholt",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "31542340-858b-49de-8f46-f3054f00709d"
+    },
+    {
+      "name": "Eric Wimberger",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "47addb29-85ad-4c09-8886-7e5e224da353"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+    "fetched_at": "2026-11-10T23:03:34.524773Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AJR-112-2025.introduced.pdf",
+      "sha256": "4a5891db107d79f5a0da8091eef17592df50450f084f490052f2c42014abc8c4"
+    }
+  },
+  "operative_text": "Sec. 1 (amending Wisconsin Constitution art. I, s. 25): The people have the {+inalienable+} right to keep and bear arms [-for security, defense, hunting, recreation-][-,-][- or any other lawful purpose-]{+, which right shall never be infringed. The right of the people to keep and bear arms is a fundamental individual right, and any restriction on that right shall be subject to strict scrutiny+}."
+}

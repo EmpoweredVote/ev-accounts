@@ -1,0 +1,53 @@
+{
+  "politician_id": "b01540ed-5638-4f61-b066-17b27232f4e8",
+  "findings": [
+    {
+      "id": "e666c9209149540f754871476ecd7b5a706484c714ff1a99920a3566ba80db89",
+      "kind": "own-words",
+      "url": "https://www.ballotready.org/people/bernie-newman",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "In addition, Bernie supports protecting Second Amendment rights and moving firearm regulations closer to the freedoms outlined in the Constitution, including support for Constitutional carry.",
+      "note": "Candidate profile text on BallotReady for his 2026 Assembly District 58 race, written in the third person; the page does not say it is candidate-submitted, so the wording may come from his campaign. Date of posting is not shown.",
+      "subjects": [
+        "protect Second Amendment rights",
+        "carry a gun without a permit",
+        "loosen firearm regulations"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.203Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "permitless (constitutional) carry",
+        "gun regulation",
+        "hunting and DNR policy"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: not applicable (candidate, not a sitting legislator)",
+        "status: won the 2026-08-11 primary for Assembly District 58 and advanced to the November general election (TMJ4 primary results page)",
+        "BallotReady candidate profile (one finding)",
+        "Washington County Insider announcement article, 2026-04-22 (nothing on guns in his quoted words)",
+        "WisPolitics primary preview article (gun position is paraphrased by the reporter, not his words)",
+        "no separate campaign website found; Facebook campaign page not reviewed",
+        "not reviewed: https://ballotpedia.org/Bernie_Newman (Ballotpedia pages return empty to the fetch tool)",
+        "web searches (2): news plus subject words"
+      ],
+      "found": 1,
+      "at": "2026-11-10T22:15:40.203Z",
+      "by": "source-collector"
+    }
+  ]
+}

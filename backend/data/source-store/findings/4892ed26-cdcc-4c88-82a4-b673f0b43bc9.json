@@ -44,6 +44,138 @@
         "fetched_at": "2026-10-28T23:15:12.783Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "b88584f1719c7a275b3bcfc22c55efcb04d3ae6ac612000de7c5ea2496ea68bf",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2017/proposals/reg/asm/bill/ab65",
+      "date": "2018-02-20",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-65-2017",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and passed",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and passed, 2018-02-20: yea (tally 71–24); census gate: multi-subject.",
+      "subjects": [
+        "straw purchase of firearms made a felony",
+        "felony for lying on the purchase form about buying for a prohibited person",
+        "4-year minimum prison term for repeat offenders with firearm crimes",
+        "state grants for armed school safety officers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-65-2017.engrossed.pdf",
+          "sha256": "2e7ee03408a90c9c4b974da88807713557d8c903e33a989618307f9a3a296900"
+        }
+      }
+    },
+    {
+      "id": "6bc061acb2bcb176489ff9287507dfbaa402bbbaa5aade5ba87905a3639e14b1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2017/proposals/reg/sen/bill/sb7",
+      "date": "2017-03-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-7-2017",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and concurred in, 2017-03-09: yea (tally 92–7); census gate: near-unanimous.",
+      "subjects": [
+        "renewed concealed-carry license term set at 5 years",
+        "early renewal runs from old expiration date"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-7-2017.chaptered.pdf",
+          "sha256": "50c682283255b193e4b97107991d62678cb6783d79626a797a99a6a76a44b8db"
+        }
+      }
+    },
+    {
+      "id": "9d48cfa32272e111b51a88b40ae5db5d795387a12fef81ec17e0256eaed4a532",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2017/proposals/reg/asm/bill/ab65",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-65-2017",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-65-2017 (LegiScan sponsor list): AB65 (2017-2018 Regular Session): Sales and transfers of firearms and providing a criminal penalty. (FE).",
+      "subjects": [
+        "straw purchase of firearms made a felony",
+        "felony for lying on the purchase form about buying for a prohibited person",
+        "4-year minimum prison term for repeat offenders with firearm crimes",
+        "state grants for armed school safety officers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-65-2017.engrossed.pdf",
+          "sha256": "2e7ee03408a90c9c4b974da88807713557d8c903e33a989618307f9a3a296900"
+        }
+      }
+    },
+    {
+      "id": "bfde93d7c3c7da646967b62b416ec828dc48bc50b6630aeeb657a0f54081e909",
+      "kind": "own-words",
+      "url": "https://urbanmilwaukee.com/pressrelease/rep-zamarripa-statement-on-wear-orange-weekend/",
+      "date": "2019-06-07",
+      "date_precision": "day",
+      "passage": "There are real commonsense solutions we should be able to make a reality.",
+      "note": "Statement issued in her name for National Gun Violence Awareness Day. It calls for action on gun violence and names no specific law. Published on Urban Milwaukee as a submitted press release.",
+      "subjects": [
+        "general statement on gun violence prevention",
+        "commonsense gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.274Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c6d4c4d2656f5847405b5ebdb8e156560a7c7cce0a7de3a95f7ff423295d1684",
+      "kind": "own-words",
+      "url": "https://urbanmilwaukee.com/pressrelease/rep-zamarripa-statement-on-wear-orange-weekend/",
+      "date": "2019-06-07",
+      "date_precision": "day",
+      "passage": "I stand with activists who fight every day to protect us all from the threat of violence made worse by legislative inaction.",
+      "note": "Same press release. She says she stands with gun violence prevention activists and points to legislative inaction.",
+      "subjects": [
+        "general statement on gun violence prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.274Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -60,6 +192,29 @@
       "found": 2,
       "at": "2026-10-28T23:15:12.783Z",
       "by": "identity-wi-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun violence prevention",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "general statements on gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site https://votejocasta.com and /issues (nothing on the subject in the page text)",
+        "press release on Urban Milwaukee, submitted in her name as a state representative, 2019-06-07 (on the subject, saved)",
+        "web search x2 on name plus subject words (no 2026 statement on the subject found)",
+        "Ballotpedia: not reviewed (pages return empty to the fetch tool)",
+        "not reviewed: https://www.pbs.org/video/2026-candidate-statement-jocasta-zamarripa-wblfsb/ (video)"
+      ],
+      "found": 2,
+      "at": "2026-11-10T22:15:40.274Z",
+      "by": "source-collector"
     }
   ]
 }

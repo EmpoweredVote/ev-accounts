@@ -217,6 +217,247 @@
         "fetched_at": "2026-10-28T23:15:12.775Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "e991fe58cceb711c8fcd8b8a9a3b35b8cb23333c6b7db82672bb9ddab3efb09c",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/sen/bill/sb466",
+      "date": "2024-01-18",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-466-2023",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and concurred in, 2024-01-18: nay (tally 62–35); census gate: none.",
+      "subjects": [
+        "payment networks barred from firearms-retailer merchant codes",
+        "government lists of gun owners banned",
+        "background-check records may not be turned into a purchaser list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-466-2023.enrolled.pdf",
+          "sha256": "6d089108620592801f50b209f20b361fb9a3c5e87a5f8243957c44092e2874a2"
+        }
+      }
+    },
+    {
+      "id": "4d47c43ac5e1956992aa84573125d68212f67bc576871cfe76736b0e29a74e86",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab321",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-321-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-321-2025 (LegiScan sponsor list): AB321 (2025-2026 Regular Session): Prohibition against undetectable firearms, possessing a frame or receiver of a firearm without a serial number, and providing a penalty..",
+      "subjects": [
+        "undetectable firearms banned",
+        "unserialized frames and receivers banned",
+        "felony penalties for manufacture, sale and possession"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-321-2025.introduced.pdf",
+          "sha256": "c772127383cb636a604d984fd0a761553ac3167317db9fe3ee6994c4a2ba5349"
+        }
+      }
+    },
+    {
+      "id": "15e540178127385ecd197425f74a764d40d69081894b26d9d1cf5ce0d8ca0b68",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab325",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-325-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-325-2025 (LegiScan sponsor list): AB325 (2025-2026 Regular Session): Sales and transfers of firearms and providing a penalty. (FE).",
+      "subjects": [
+        "background check required for private firearm transfers",
+        "universal transfers through licensed dealers with family-gift exception",
+        "penalty and 2-year firearm ban for illegal transfer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-325-2025.introduced.pdf",
+          "sha256": "ab2e9cc55e3b3cf8840766c9cc0ff162e60a1250455ffc793fdb6950b9517865"
+        }
+      }
+    },
+    {
+      "id": "80099d32061d668474aa01481ba94e3782c043564a11bd338021946d4d439900",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab484",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-484-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-484-2025 (LegiScan sponsor list): AB484 (2025-2026 Regular Session): Training requirements for a license to carry a concealed weapon..",
+      "subjects": [
+        "live-fire and safety content required in concealed-carry training",
+        "continuing training required to renew license",
+        "hunter education no longer proves training"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-484-2025.introduced.pdf",
+          "sha256": "79576779721ab50f3b682354b5a877afb40901dd18d642df8026af7f52666765"
+        }
+      }
+    },
+    {
+      "id": "1fd3442384f2a10a8682c46f8f692b79ed713bbe1a7b2759544c6cde0c17f7d5",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/asm/bill/ab717",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-717-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-717-2023 (LegiScan sponsor list): AB717 (2023-2024 Regular Session): Prohibiting firearm accessories that accelerate the rate of fire of a semiautomatic firearm and providing a penalty..",
+      "subjects": [
+        "ban on bump-fire devices and rate-of-fire accessories",
+        "Class G felony penalty",
+        "180-day grace period for possession"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-717-2023.introduced.pdf",
+          "sha256": "5d1d595fbade75b2695a4381ef2f148f22f234dedd15eeb8a62cda325e94847a"
+        }
+      }
+    },
+    {
+      "id": "2262781ba2e1e880d866af5aa1098a7e70b4893b03c875b9b46aaa47619e2b41",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/sen/bill/sb330",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-330-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-SB-330-2025 (LegiScan sponsor list): SB330 (2025-2026 Regular Session): Waiting period for purchase of handguns..",
+      "subjects": [
+        "48-hour waiting period for handgun purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-330-2025.introduced.pdf",
+          "sha256": "d1c8aca51be26a8ce7048274dfed3b9489e5b8f31c6cc4aefc64d15a44aa86f7"
+        }
+      }
+    },
+    {
+      "id": "eb11e6870fecfd1127ee2632f80704c90b2b9f6c4b303b7a78bef59d9a4821fa",
+      "kind": "own-words",
+      "url": "https://urbanmilwaukee.com/pressrelease/milwaukee-county-should-not-be-in-the-gun-show-business/",
+      "date": "2021-03-18",
+      "date_precision": "day",
+      "passage": "“We are vehemently opposed to allowing gun shows at Milwaukee County facilities. Under state law, the County is unable to enforce common sense rules for gun shows at our own facilities, such as only allowing federally licensed firearm dealers, requiring private sellers to perform background checks, and imposing reasonable waiting periods.",
+      "note": "Joint statement issued by three county supervisors, Clancy among them, opposing a proposal to allow gun shows at a county facility. The release says 'released the following statement', so the words are shared by the three. Posted on Urban Milwaukee under his name as author. He was then a county supervisor, not yet in the Assembly.",
+      "subjects": [
+        "private sales and gun shows",
+        "check every gun buyer",
+        "waiting period for gun purchases",
+        "local limits on gun shows"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.355Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f07be894a175d90618799d647dcb72c3944f4adc04de4bc268bb3b97b36f537f",
+      "kind": "own-words",
+      "url": "https://urbanmilwaukee.com/pressrelease/milwaukee-county-should-not-be-in-the-gun-show-business/",
+      "date": "2021-03-18",
+      "date_precision": "day",
+      "passage": "“Supporters of this proposal claim that gun sales have occurred at this show for more than 20 years without incident. Yet without the ability to register or check buyers, that claim is completely unsubstantiated.",
+      "note": "Same joint statement by three county supervisors including Clancy: argues that without registration or buyer checks nothing shows whether guns sold at the show were used in crimes.",
+      "subjects": [
+        "private sales and gun shows",
+        "check every gun buyer",
+        "gun registration"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.355Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b71ba74c9790ab4bc175a062262239f6602f39e7d8aa6dc4d5ae1bd608c73b43",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab324",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-324-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-324-2025 (LegiScan sponsor list): AB324 (2025-2026 Regular Session): Waiting period for purchase of handguns..",
+      "subjects": [
+        "48-hour waiting period before handgun purchase",
+        "dealer may not transfer if buyer found prohibited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T23:03:34.524773Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-324-2025.introduced.pdf",
+          "sha256": "d814ae14dfcc4c45223cdbba60030204499773c3386b2eafc65e75acd3f7ac1a"
+        }
+      }
     }
   ],
   "searches": [
@@ -257,6 +498,32 @@
       "found": 7,
       "at": "2026-10-28T23:15:12.775Z",
       "by": "identity-wi-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "private sales and gun shows",
+        "waiting period for gun purchases",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "general statement on gun rights and gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope: official page https://legis.wisconsin.gov/assembly/19/clancy/ names him for Assembly District 19; https://urbanmilwaukee.com/2026/08/12/despite-criticism-challengers-voters-keep-electing-ryan-clancy/ says he won the 2026 primary and the November general election follows",
+        "official Assembly page and its press release list (one 2023 item, nothing on the subject)",
+        "his releases on Urban Milwaukee (author page, pages 1-5): one 2021 joint statement on gun shows, from his county board time",
+        "campaign site: not reviewed (no working address found; ryanclancy.com, clancyforwi.com and others did not respond, clancyforassembly.com returned 403)",
+        "Ballotpedia: not reviewed (pages return empty to the fetch tool)",
+        "4 web searches on his name plus gun and firearm words: no own words on guns from his Assembly years found",
+        "sponsor list: covered by LegiScan bulk check"
+      ],
+      "found": 2,
+      "at": "2026-11-10T22:15:40.355Z",
+      "by": "source-collector"
     }
   ]
 }

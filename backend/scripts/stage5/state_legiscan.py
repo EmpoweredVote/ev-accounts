@@ -42,7 +42,10 @@ def key(f):
     m = re.match(ST + r'-([A-Z]+)-(\d+)-(\d{4})$', f.get('instrument_id') or '')
     if not m: return None
     txt = (f.get('note') or '') + ' ' + (f.get('motion') or '')
-    ch = f.get('chamber') or ('H' if re.search(rf'\b{ST} House\b|\bHouse\b', txt) and not re.search(rf'\b{ST} Senate\b', txt) else 'S' if re.search(r'\bSenate\b', txt) else None)
+    ch = f.get('chamber') or ('H' if re.search(rf'\b{ST} House\b|\bHouse\b', txt) and not re.search(rf'\b{ST} Senate\b', txt)
+                              # a lower chamber named the Assembly (WI, CA, NY, NV, NJ) is chamber 'A' in LegiScan
+                              else 'A' if re.search(r'\bAssembly\b', txt) and not re.search(r'\bSenate\b', txt)
+                              else 'S' if re.search(r'\bSenate\b', txt) else None)
     t = re.search(r'tally (\d+)\s*[–-]\s*(\d+)', txt)
     if not ch or not t or not f.get('date'): return None
     return {'bill': m.group(1) + m.group(2).zfill(PAD), 'year': int(m.group(3)) + YS, 'chamber': ch, 'yea': int(t.group(1)), 'nay': int(t.group(2)), 'date': f['date'], 'instrument': f['instrument_id']}

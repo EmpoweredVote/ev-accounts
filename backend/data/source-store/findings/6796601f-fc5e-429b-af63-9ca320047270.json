@@ -1,0 +1,31 @@
+{
+  "politician_id": "6796601f-fc5e-429b-af63-9ca320047270",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "gun rights and the Second Amendment",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "ban on assault-style guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "candidacy: a WisPolitics release dated 2026-02-02 (https://www.wispolitics.com/?p=404022) says Marathon County Board Supervisor John Kroll announced his candidacy for the 85th Assembly District; search results list him as the 2026 general-election candidate for that seat. Nothing on the subject in the visible text (rest of the page is behind a login)",
+        "campaign site home, about and issues pages (https://www.krollforwi.com/, /about, /issues): issue headings are schools, cost of living, health care, data centers, water and natural resources, jobs; nothing on the subject",
+        "iVoterGuide candidate page (https://ivoterguide.com/candidate/97005/race/34278/election/1497): on the gun-restrictions question the page says he did not answer; nothing from him on the subject",
+        "BallotReady profile (https://www.ballotready.org/people/john-kroll): issue list has no gun item; nothing on the subject",
+        "blocked: https://bluevoterguide.org/fr/WI/candidate_John_Kroll/764697 (HTTP 403)",
+        "Ballotpedia: not reviewed (known to return empty to the fetch tool)",
+        "legislator sponsor lists: not applicable, he has not served in the legislature (county board supervisor only; no county gun ordinance or resolution found)",
+        "news searches on name plus gun words (two searches): nothing from him on the subject; the one WPR forum page returned was a 2012 forum without him"
+      ],
+      "found": 0,
+      "at": "2026-11-10T22:15:40.285Z",
+      "by": "source-collector"
+    }
+  ]
+}

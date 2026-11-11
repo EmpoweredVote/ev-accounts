@@ -1,0 +1,242 @@
+{
+  "id": "WI-AB-427-2025",
+  "scope": "state:wi",
+  "title": "AB427 (2025-2026 Regular Session): Prohibiting possessing a firearm on college and university campuses and providing a penalty.",
+  "urls": [
+    "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab427",
+    "https://docs.legis.wisconsin.gov/document/proposaltext/2025/REG/AB427.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Brienne Brown",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "77707b96-8245-4013-843c-12181ad35ff8"
+    },
+    {
+      "name": "Deb Andraca",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3736286a-44fb-42ad-8cd0-bcb6a4b985ea"
+    },
+    {
+      "name": "Renuka Mayadev",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "7d91fee1-7c0c-41e5-b1f2-fa93849c772c"
+    },
+    {
+      "name": "Mike Bare",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "79760db0-6741-4290-b4ab-b0de68df3ed3"
+    },
+    {
+      "name": "Margaret Arney",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fc46160a-cc85-44b2-a28b-dc7a40a37e8c"
+    },
+    {
+      "name": "Ben DeSmidt",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1646f089-0f51-45f8-b893-c5886a0e1a69"
+    },
+    {
+      "name": "Joan Fitzgerald",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "26902147-6244-4c6e-959b-14a08eb1b56f"
+    },
+    {
+      "name": "Francesca Hong",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f1212497-7049-413a-ac19-81c5baba900d"
+    },
+    {
+      "name": "Andrew Hysell",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "674b7c37-fd85-46e7-9087-3fefde2666a4"
+    },
+    {
+      "name": "Alex Joers",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8e804443-d7ac-4103-943f-546a76c4c8bf"
+    },
+    {
+      "name": "Tara Johnson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "94b1866a-cc0a-409a-bd21-367abf8be938"
+    },
+    {
+      "name": "Karen Kirsch",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0543aef9-357e-4337-8cb2-51c2e1531fea"
+    },
+    {
+      "name": "Maureen McCarville",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "21265ed4-0d98-4eb4-b9ea-85821a247d2f"
+    },
+    {
+      "name": "Lori Palmeri",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5ace10bc-ca43-4165-abf5-c52c5bb1ef01"
+    },
+    {
+      "name": "Pricilla Prado",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ea15032b-96a6-4135-bf29-a7e60a2c7153"
+    },
+    {
+      "name": "Ann Roe",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "732ee90d-016b-4879-9142-c3583130cf42"
+    },
+    {
+      "name": "Joe Sheehan",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9d545fd6-2ce1-49a1-bf29-ed77bf7b7f06"
+    },
+    {
+      "name": "Christine Sinicki",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1c73491e-50bd-4a4f-ac7b-b8e65acdd2bb"
+    },
+    {
+      "name": "Lee Snodgrass",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "352ced5f-5466-407c-a839-256de6542b8c"
+    },
+    {
+      "name": "Shelia Stubbs",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b4c1f85b-4fd7-4faf-9198-1dfcbc955941"
+    },
+    {
+      "name": "Angelito Tenorio",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "57f9eb3c-0554-43ed-b93b-c1ecfbb269fe"
+    },
+    {
+      "name": "Randy Udell",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "79744617-8efa-439f-86fe-b13c253c6cdb"
+    },
+    {
+      "name": "Robyn Vining",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "99443b59-c422-43c4-98ba-070cc2c97491"
+    },
+    {
+      "name": "Karen DeSanto",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5277f1a1-99be-4736-8096-07f36833a5cb"
+    },
+    {
+      "name": "Kelda Roys",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3079710f-a2bc-4e9d-a72a-69ba41722966"
+    },
+    {
+      "name": "Kristin Dassler-Alfheim",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "41359981-e7a3-4d8f-820a-c1a42f4e395a"
+    },
+    {
+      "name": "Dora Drake",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c52c5db1-44b8-4658-b0d3-07406c63366e"
+    },
+    {
+      "name": "Jodi Habush Sinykin",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "dc8045d4-65e6-4b35-a0ec-ce410b091649"
+    },
+    {
+      "name": "Dianne Hesselbein",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "171dbfaa-58dd-45f4-8526-231d78530461"
+    },
+    {
+      "name": "LaTonya Johnson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "7660721c-b379-48ea-a286-f6ce60a22af4"
+    },
+    {
+      "name": "Sarah Keyeski",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8e5bf4e2-d027-4a15-844d-601c8e0179ab"
+    },
+    {
+      "name": "Christopher Larson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "76a1c7f6-4493-462a-aabd-2307c7cda820"
+    },
+    {
+      "name": "Melissa Ratcliff",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "248b06ce-21fc-4a94-b808-5ad3656be0a0"
+    },
+    {
+      "name": "Jeff Smith",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0d156e09-417d-450a-b757-d44171336fed"
+    },
+    {
+      "name": "Mark Spreitzer",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9767d4aa-c6d5-43be-90b9-e619893b535c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+    "fetched_at": "2026-11-10T21:23:49.722488Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-427-2025.introduced.pdf",
+      "sha256": "65c0f7cfa897072e03ca3ec003af221631c207001575158e641d5348ed367e69"
+    }
+  },
+  "operative_text": "Sec. 7 (creating 941.236(1)): Any person who possesses a firearm is guilty of a Class A misdemeanor if any of the following applies: (a) The person is in a privately or publicly owned building on the grounds of a university or college. (b) The person is on the grounds of or land owned or occupied by a university or college.\nSec. 7 (creating 941.236(2)): Subsection (1) does not apply to the possession of a firearm by any of the following: (a) A person who is employed in this state by a public agency as a law enforcement officer and to whom s. 941.23 (1) (g) 2. to 5. and (2) (b) 1. to 3. applies. (b) Armed forces or military personnel going armed in the line of duty. (c) A person who leases residential premises that are not a dormitory or part of a residence hall, or who leases business premises on the grounds of the university or college, if the person is in or on the premises. (d) A person for use in a program approved by the university or college. (e) A person in accordance with a contract entered into between the university or college and the person or an employer of the person. (f) A person who possesses a firearm that is not loaded and is any of the following: 1. Encased, as defined in s. 167.31 (1) (b). 2. In a locked firearms rack that is on a motor vehicle.\nSec. 6 (amending 941.235(1)): {+This subsection does not apply to a building on the grounds of a +} {+university or college.+}\nSec. 8 (amending 943.13(1m)(c) 4.): This subdivision does not apply {+to any building or portion of a building under s. 175.60 +} {+(16) (a) or a privately or publicly owned building on the grounds of a university or +} {+college,+}\nSec. 9: 943.13 (1m) (c) 5. of the statutes is repealed.\nSec. 1 (amending 175.60(2g)(a)): A licensee or an out-of-state licensee may carry a concealed weapon anywhere in this state except as provided under subs. (15m) and (16) and ss. {+941.236,+} 943.13 (1m) (c){+,+} and 948.605 (2) (b) 1r.\nSec. 3 (amending 938.34(14q)): or if the juvenile is found to have violated s. 941.235{+, +} {+941.236,+} or 948.605, immediately suspend the juvenile’s operating privilege, as defined in s. 340.01 (40), for 2 years."
+}

@@ -1,0 +1,77 @@
+{
+  "politician_id": "ab2b087e-4dfa-4d4e-bd37-21a908e7c916",
+  "findings": [
+    {
+      "id": "94d12495bdbfd02cd3647c7d7e9ec25aed1d30195efde7353132421825b99d33",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/93609/race/27833/election/1423",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I support enforcing existing laws against violent criminals and ensuring those legally prohibited from possessing firearms are held accountable. I do not support restrictions that punish law-abiding citizens or infringe on the Second Amendment.",
+      "note": "His written answer to the voter-guide question 'What restrictions on gun ownership are needed to protect public safety?' for the 2026 Senate District 1 race. Page is undated.",
+      "subjects": [
+        "enforce existing gun laws",
+        "limits on who may have a gun",
+        "Second Amendment and gun rights in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.329Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "73b54c58ce95e09c37726583c9cc14e96025b59f310cfdf0edf3ee0308ec9f98",
+      "kind": "own-words",
+      "url": "https://niccravillionforwi.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Nic believes our constitutional rights must always be protected. He will stand strong for the Second Amendment, free speech, parental rights, and the individual freedoms that define our country.",
+      "note": "Text on his campaign site's issues section, written about him in the third person by his campaign. Page is undated.",
+      "subjects": [
+        "Second Amendment and gun rights in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.329Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry a gun without a permit",
+        "repeal of gun laws",
+        "Second Amendment and gun rights in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope: https://www.branch.vote/races/2026-wisconsin-primary-election-wi-state-state-senator-wi-state-senate-1-r shows him as winner of the Senate District 1 primary; https://ivoterguide.com/candidate/93609/race/27833/election/1423 lists him in the November 3, 2026 general election",
+        "sponsor list: not applicable (not a legislator)",
+        "campaign site https://niccravillionforwi.com/ (home, endorsements, news & media, about): home page saved; endorsements page lists the NRA among endorsers",
+        "BallotReady https://www.ballotready.org/people/nic-cravillion: issue stance on guns repeats campaign site text",
+        "iVoterGuide questionnaire: saved",
+        "blocked: https://www.wispolitics.com/2026/cravillion-campaign-cravillion-receives-nra-endorsement-and-aq-rating/ (403 to plain curl; the fetch tool only returned a summary, so nothing from it is copied)",
+        "blocked: https://www.wispolitics.com/?p=413954 (403 to plain curl)",
+        "Seehafer News https://www.seehafernews.com/?p=214619 and ?p=212255: candidacy stories, nothing on the subject",
+        "Ballotpedia: not relied on (returns empty to fetch)"
+      ],
+      "found": 2,
+      "at": "2026-11-10T22:15:40.329Z",
+      "by": "source-collector"
+    }
+  ]
+}

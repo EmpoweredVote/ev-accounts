@@ -230,6 +230,8 @@ for r in rows:
         if any(_cites(num, r.get(k) or '') for k in cols if k.startswith('source_url')): continue
         for f in fs:
             iid = f.get('instrument_id') or ''
+            # Same topic only: "SB 7 (2017)" in a gun row must not pull in the person's AB 7 (2011) voter-ID roll call (wi-01).
+            if f.get('topic_keys') and r['topic_key'] not in f['topic_keys']: continue
             if f.get('kind') == 'record' and re.search(r'-' + num + r'-', iid) and f.get('url') and f['url'] not in urls and len(urls) < MAXU:
                 urls.append(f['url']); r[f'source_url_{len(urls)}'] = f['url']; break
     TEXTURL = r'govinfo\.gov/content|BillLookUp|/Bills/.*\.pdf|/billtext/'

@@ -1,0 +1,31 @@
+{
+  "politician_id": "c3b22f21-fdef-46a9-bb32-680f08459d91",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign announcement on the WisPolitics release page (confirms run for the 92nd Assembly District; nothing on the subject in the visible text, article truncated)",
+        "ActBlue campaign page https://secure.actblue.com/donate/jf92-website (nothing on the subject)",
+        "voter guide page https://ivoterguide.com/candidate/97008/race/34285/election/1497 (the gun question is marked did not answer)",
+        "Up North News launch video page (nothing on the subject)",
+        "blocked: https://www.jeremiahforwi.com (host does not resolve; campaign site not reached)",
+        "web search x2 on name plus subject words (nothing on the subject)",
+        "sponsor list: not applicable, not a sitting legislator (candidate)",
+        "Ballotpedia: not reviewed (pages return empty to the fetch tool)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T22:15:40.269Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -419,13 +419,18 @@ topic; if a topic seems to need the same reading, ask for a ruling and point to 
 - **Reading:** a bill that only widens where serving or retired law-enforcement officers may carry (US-HR-354-2024,
   US-HR-2243-2025, IN HB 1391-2020) is out of scope (`adjacent`). So is a bill that only lets **one named
   professional group** carry for its work: NC H 194 (2021, federal judges and US attorneys who hold a permit) and
-  NC H 48 (2021, emergency medical staff serving with a police tactical team). A vote or sponsorship on either kind
-  neither seats nor blanks anyone and does not make a record two-sided; it is not a rung 4 act.
+  NC H 48 (2021, emergency medical staff serving with a police tactical team). **Teachers and other school staff
+  carrying on school grounds** are the same case: a candidate's "Yes" to teacher carry, or the school-employee part
+  of WI SB 256 (2023). A vote or sponsorship on any of these kinds
+  neither seats nor blanks anyone and does not make a record two-sided; it is not a rung 4 act. Another part of
+  the same bill is read on its own: SB 256's carry-licence fee waiver for teachers is a rung 4 act (annex S2).
 - **Date and source:** police carry 2026-10-30, Chris Andrews, Stage 5 coding (`.planning/research/s3-prep-gun-policy/stage5/README.md`,
   "RULINGS (runner, 2026-10-30, during coding)"). Named professional group 2026-11-06, Chris Andrews, North Carolina
   Stage 5 ("No, like police carry"): H 194 alone had seated four people at rung 4 whose every other carry and permit
   vote was a No; under the ruling three became blanks (two nay-only, one wording), one stayed at rung 4 on another bill, and Ball's
-  record stopped being two-sided (`write/nc-01/PREVIEW.md`). Until now the police-carry reading lived only in the
+  record stopped being two-sided (`write/nc-01/PREVIEW.md`). Teacher and school-staff carry 2026-11-10, Chris
+  Andrews, Wisconsin Stage 5 ("Out of scope"): four codes used it, and no outcome changed (`write/wi-01/PREVIEW.md`).
+  Until now the police-carry reading lived only in the
   coder script (`make_code_batches.py`).
 - **Open:** NC H 47 (2021, elected officials carry on duty) fits the wording but was not named; the NC re-coders read
   it as out of scope and no outcome depends on it.

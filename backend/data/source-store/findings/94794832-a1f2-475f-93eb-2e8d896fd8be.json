@@ -264,6 +264,255 @@
         "fetched_at": "2026-10-28T23:15:12.770Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "13244cbcab0b9298111a339603a02186a431005108339971c6aa627092ccd107",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/reg/asm/bill/ab293",
+      "date": "2021-06-09",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-293-2021",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and passed, 2021-06-09: yea (tally 61–36); census gate: none.",
+      "subjects": [
+        "no state or local money to confiscate lawful firearms",
+        "state-made firearms must be stamped",
+        "enforcing new federal gun restrictions made a misdemeanor"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-293-2021.enrolled.pdf",
+          "sha256": "fb9a15b92bd62f92f60a44d4c3def338f5e22c6d253b72fd1ec5e8d381a8369a"
+        }
+      }
+    },
+    {
+      "id": "b88584f1719c7a275b3bcfc22c55efcb04d3ae6ac612000de7c5ea2496ea68bf",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2017/proposals/reg/asm/bill/ab65",
+      "date": "2018-02-20",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-65-2017",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and passed",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and passed, 2018-02-20: yea (tally 71–24); census gate: multi-subject.",
+      "subjects": [
+        "straw purchase of firearms made a felony",
+        "felony for lying on the purchase form about buying for a prohibited person",
+        "4-year minimum prison term for repeat offenders with firearm crimes",
+        "state grants for armed school safety officers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-65-2017.engrossed.pdf",
+          "sha256": "2e7ee03408a90c9c4b974da88807713557d8c903e33a989618307f9a3a296900"
+        }
+      }
+    },
+    {
+      "id": "ebef6ea9ab2ae91420259dc69b20ceb45cc9ec0b4afe2566d3c08f6f504519c7",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/sen/bill/sb466",
+      "date": "2024-01-18",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-466-2023",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and concurred in, 2024-01-18: yea (tally 62–35); census gate: none.",
+      "subjects": [
+        "payment networks barred from firearms-retailer merchant codes",
+        "government lists of gun owners banned",
+        "background-check records may not be turned into a purchaser list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-466-2023.enrolled.pdf",
+          "sha256": "6d089108620592801f50b209f20b361fb9a3c5e87a5f8243957c44092e2874a2"
+        }
+      }
+    },
+    {
+      "id": "1867d7d4b85e816eb13baa216473ebcb94aefc5aa96b5767301d1ff31a69baed",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/reg/sen/bill/sb570",
+      "date": "2022-02-23",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-570-2021",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and concurred in, 2022-02-23: yea (tally 61–35); census gate: none.",
+      "subjects": [
+        "limits civil lawsuits against gun and ammunition makers and sellers",
+        "defendants win attorney fees when a barred suit is dismissed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-570-2021.enrolled.pdf",
+          "sha256": "29c3c905eadc72bf48ca38dd1c01f5ea7582fa8733684688d6d5ce79a216b9db"
+        }
+      }
+    },
+    {
+      "id": "6bc061acb2bcb176489ff9287507dfbaa402bbbaa5aade5ba87905a3639e14b1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2017/proposals/reg/sen/bill/sb7",
+      "date": "2017-03-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-7-2017",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and concurred in, 2017-03-09: yea (tally 92–7); census gate: near-unanimous.",
+      "subjects": [
+        "renewed concealed-carry license term set at 5 years",
+        "early renewal runs from old expiration date"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-7-2017.chaptered.pdf",
+          "sha256": "50c682283255b193e4b97107991d62678cb6783d79626a797a99a6a76a44b8db"
+        }
+      }
+    },
+    {
+      "id": "9c1b7c7c475fcc4309de3c8897b6a0c4b9b43eebb4b23988b443dba5ec38c9b5",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/reg/sen/bill/sb570",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-570-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-SB-570-2021 (LegiScan sponsor list): SB570 (2021-2022 Regular Session): Limiting civil liability for firearm, firearm accessory, and ammunition manufacturers, distributors, importers, trade associations, sellers, and dealers..",
+      "subjects": [
+        "limits civil lawsuits against gun and ammunition makers and sellers",
+        "defendants win attorney fees when a barred suit is dismissed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-570-2021.enrolled.pdf",
+          "sha256": "29c3c905eadc72bf48ca38dd1c01f5ea7582fa8733684688d6d5ce79a216b9db"
+        }
+      }
+    },
+    {
+      "id": "d7dbb254a5c6d6256e1116fb8eccf35f34078e0879dc3d9aa494068a3a369cbe",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2017/proposals/reg/sen/bill/sb7",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-7-2017",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-SB-7-2017 (LegiScan sponsor list): SB7 (2017-2018 Regular Session): Expiration dates of renewed licenses to carry a concealed weapon..",
+      "subjects": [
+        "renewed concealed-carry license term set at 5 years",
+        "early renewal runs from old expiration date"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-7-2017.chaptered.pdf",
+          "sha256": "50c682283255b193e4b97107991d62678cb6783d79626a797a99a6a76a44b8db"
+        }
+      }
+    },
+    {
+      "id": "8d922d8881c23bfeedea97ef2d3b9453d43f2837a12cfab99cd6ac0b0a5b6c77",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/7651/race/3450/election/1169",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "I am a proud gun owner, have my CCW, was previously in law enforcement and the US Air Force, and a strong supporter of the second amendment.",
+      "note": "His own answer to the iVoterGuide 2024 questionnaire question 'What restrictions on gun ownership are needed to protect public safety?' He names no restriction. The page is for the August 13, 2024 primary; the November 5, 2024 general-election page carries the same answer. Exact day he wrote it is not shown.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "carry a gun with a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.286Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0e1059572b848535df7e7656c3b6cf678e5b744ff52424f5c3852f001d38c001",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/7651/race/3450/election/1169",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "With proper training given they are mostly around children.",
+      "note": "His own follow-up on the same iVoterGuide 2024 questionnaire, after answering 'Yes' to 'Should teachers be allowed to carry guns at school?' The page shows the answer 'Yes' and this sentence; the wording of the question is the site's. Exact day not shown.",
+      "subjects": [
+        "teachers carrying guns at school"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.286Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -306,6 +555,33 @@
       "found": 12,
       "at": "2026-10-28T23:15:12.770Z",
       "by": "identity-wi-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "gun rights and the Second Amendment",
+        "carry a gun without a permit",
+        "teachers carrying guns at school",
+        "buying guns across state lines",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "official Assembly biography page (https://legis.wisconsin.gov/assembly/86/spiros/about-john/biography): confirms him as the 86th Assembly District member and a former police officer; nothing on the subject",
+        "2026 candidacy: the 2026 preview page for the 86th District (https://jdjohn215.github.io/wi-legis-26-preview/State-Assembly/AD86.html) lists him as the incumbent on the November ballot",
+        "iVoterGuide 2024 primary page (https://ivoterguide.com/candidate/7651/race/3450/election/1169): his questionnaire answers, saved below",
+        "iVoterGuide 2024 general page (https://ivoterguide.com/candidate/7651/race/3450/election/1251): the same answers as the primary page",
+        "Daily Cardinal 2014-01-21 (https://www.dailycardinal.com/article/2014/01/state-assembly-passes-two-bills-regarding-gun-rights-and-municipal-power): the reporter paraphrases him on a bill about buying guns from other states; not a direct quote, so not saved as his words",
+        "Ballotpedia: not reviewed (known to return empty to the fetch tool)",
+        "campaign site: none found; WisPolitics release pages for him found in search show nothing on the subject (not individually opened)",
+        "news searches on name plus gun words (three searches): no other statement by him on the subject found"
+      ],
+      "found": 2,
+      "at": "2026-11-10T22:15:40.286Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -1,0 +1,33 @@
+{
+  "politician_id": "f383f2fd-77aa-4bad-a924-a0a14a5d0bff",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "Second Amendment",
+        "gun safety",
+        "hunting and firearms",
+        "public safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: not applicable (candidate, not a sitting legislator)",
+        "campaign issues page https://ben-gruber.com/issues (nothing on the subject)",
+        "BallotReady profile (nothing on the subject; confirms 2026 Assembly District 51 candidacy)",
+        "iVoterGuide profile (Second Amendment question shown as not answered)",
+        "Up North News profile (nothing on the subject)",
+        "Monroe Times announcement article (nothing on the subject)",
+        "WisPolitics article on gun rights messaging (does not mention him)",
+        "blocked: https://www.bengruber.com (redirects to a Facebook page, not fetched)",
+        "not reviewed: https://ballotpedia.org/Ben_Gruber (Ballotpedia pages return empty to the fetch tool)",
+        "web searches (2): news plus subject words"
+      ],
+      "found": 0,
+      "at": "2026-11-10T22:15:40.201Z",
+      "by": "source-collector"
+    }
+  ]
+}

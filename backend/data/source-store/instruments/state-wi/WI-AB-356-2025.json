@@ -1,0 +1,218 @@
+{
+  "id": "WI-AB-356-2025",
+  "scope": "state:wi",
+  "title": "AB356 (2025-2026 Regular Session): Storage of a firearm in a residence if child is present and providing a penalty.",
+  "urls": [
+    "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab356",
+    "https://docs.legis.wisconsin.gov/document/proposaltext/2025/REG/AB356.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lisa Subeck",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "dc0e341f-b827-45f7-bcc6-35b8376979b3"
+    },
+    {
+      "name": "Joan Fitzgerald",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "26902147-6244-4c6e-959b-14a08eb1b56f"
+    },
+    {
+      "name": "Clinton Anderson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ad36a437-2193-4725-806b-d9d678579f00"
+    },
+    {
+      "name": "Deb Andraca",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3736286a-44fb-42ad-8cd0-bcb6a4b985ea"
+    },
+    {
+      "name": "Margaret Arney",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fc46160a-cc85-44b2-a28b-dc7a40a37e8c"
+    },
+    {
+      "name": "Mike Bare",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "79760db0-6741-4290-b4ab-b0de68df3ed3"
+    },
+    {
+      "name": "Brienne Brown",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "77707b96-8245-4013-843c-12181ad35ff8"
+    },
+    {
+      "name": "Angelina Cruz",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "11c8f424-55d1-4e28-b297-d6a670a033d6"
+    },
+    {
+      "name": "Ben DeSmidt",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1646f089-0f51-45f8-b893-c5886a0e1a69"
+    },
+    {
+      "name": "Russell Goodwin",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "cdd84abe-0a61-40bb-ba3f-6bf7fab74ba3"
+    },
+    {
+      "name": "Kalan Haywood",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6d736e91-2652-401c-b642-09de30f22a09"
+    },
+    {
+      "name": "Alex Joers",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8e804443-d7ac-4103-943f-546a76c4c8bf"
+    },
+    {
+      "name": "Tara Johnson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "94b1866a-cc0a-409a-bd21-367abf8be938"
+    },
+    {
+      "name": "Renuka Mayadev",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "7d91fee1-7c0c-41e5-b1f2-fa93849c772c"
+    },
+    {
+      "name": "Greta Neubauer",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4e65b04a-e607-4905-93ef-1e6ec0552fb6"
+    },
+    {
+      "name": "Sylvia Ortiz-Velez",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "546a57e6-05eb-4d59-ae6e-292c886c277a"
+    },
+    {
+      "name": "Lori Palmeri",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5ace10bc-ca43-4165-abf5-c52c5bb1ef01"
+    },
+    {
+      "name": "Pricilla Prado",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ea15032b-96a6-4135-bf29-a7e60a2c7153"
+    },
+    {
+      "name": "Ann Roe",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "732ee90d-016b-4879-9142-c3583130cf42"
+    },
+    {
+      "name": "Christine Sinicki",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1c73491e-50bd-4a4f-ac7b-b8e65acdd2bb"
+    },
+    {
+      "name": "Angela Stroud",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4ab2cafc-8eca-4cef-b301-830441a22e75"
+    },
+    {
+      "name": "Shelia Stubbs",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b4c1f85b-4fd7-4faf-9198-1dfcbc955941"
+    },
+    {
+      "name": "Angelito Tenorio",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "57f9eb3c-0554-43ed-b93b-c1ecfbb269fe"
+    },
+    {
+      "name": "Randy Udell",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "79744617-8efa-439f-86fe-b13c253c6cdb"
+    },
+    {
+      "name": "Robyn Vining",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "99443b59-c422-43c4-98ba-070cc2c97491"
+    },
+    {
+      "name": "Christopher Larson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "76a1c7f6-4493-462a-aabd-2307c7cda820"
+    },
+    {
+      "name": "Timothy Carpenter",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5130ee75-9b4e-4095-8a78-245f7402d287"
+    },
+    {
+      "name": "Dianne Hesselbein",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "171dbfaa-58dd-45f4-8526-231d78530461"
+    },
+    {
+      "name": "Melissa Ratcliff",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "248b06ce-21fc-4a94-b808-5ad3656be0a0"
+    },
+    {
+      "name": "Kelda Roys",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3079710f-a2bc-4e9d-a72a-69ba41722966"
+    },
+    {
+      "name": "Jeff Smith",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0d156e09-417d-450a-b757-d44171336fed"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+    "fetched_at": "2026-11-10T21:23:49.722488Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-356-2025.introduced.pdf",
+      "sha256": "49994cd5ace41385117c48f6e7444422d22bced446d6441a130696e0f0fc0003"
+    }
+  },
+  "operative_text": "Sec. 1 (repealing and recreating 948.55(1)): Whoever resides with a child, or knows a child will be present in his or her residence, may not store or leave a firearm at his or her residence unless the firearm is in a securely locked box or container or in a locked location that a reasonable person would believe to be secure or unless a trigger lock is engaged on the firearm. This prohibition does not apply to a person who is going armed with the firearm.\nSec. 1 (repealing and recreating 948.55(2)): A person who violates sub. (1) is guilty of the following: (a) For a first violation, a Class A misdemeanor. (b) For a 2nd or subsequent violation, a Class I felony."
+}
