@@ -183,6 +183,33 @@ const REGISTRY = [
     // the county's own address-point layer (against 185 in the surrounding box as the control),
     // so it cannot misroute anyone. See CC_0386.
   },
+  {
+    key: 'marin',
+    label: 'Marin County Board of Supervisors',
+    ocdPrefix: 'marin-county-ca-supervisorial-district-',
+    // The COUNTY'S OWN open data, published through gisopendata.marincounty.gov.
+    // ⚠ marincounty.gov itself answers 403 to our crawler on every tier, so the human-readable
+    //   pages are reachable only as text or through Wayback — but this ArcGIS host is not
+    //   behind that WAF and answers normally.
+    url:
+      'https://services6.arcgis.com/T8eS7sop5hLmgRRH/arcgis/rest/services/Supervisorial_Districts/' +
+      'FeatureServer/30/query?where=1%3D1&outFields=District&returnGeometry=true&outSR=4326&f=geojson',
+    district: (props) => Number(props.District),
+    expect: 5,
+    // 🔑 PROVED 2026-11-11 AGAINST THE COUNTY'S OWN BALLOT LAYER, BY ATTRIBUTE. Marin's
+    // Subprecincts layer (FeatureServer/7, lastEditDate 2026-09-04, built for the 2026 general)
+    // carries no district column — but THE LEADING DIGIT OF A SubPrecinct ID IS ITS
+    // SUPERVISORIAL DISTRICT, and that was measured rather than assumed: 738 of 738
+    // subprecincts, 170,099 registered voters, ZERO disagreements. Every subprecinct's interior
+    // point falls in the district its own ballot number claims.
+    // The converse was proved too: scrambling two districts
+    // (load-marin-supervisorial-districts.mjs --control=scramble) scores 277 disagreements, so
+    // the gate can tell a wrong map from the right one.
+    // 🔴 The layer's `Supervisor` column is TWO YEARS STALE — District 2 still names Katie Rice,
+    //    who left the board in 2024. Geometry is taken from this layer; occupancy never is.
+    // ⚠ Its `Acres` field is mislabeled: the five values sum to 827.7, which is the county's
+    //    area in SQUARE MILES. Nothing reads it. See CC_0392.
+  },
 ];
 
 /**
