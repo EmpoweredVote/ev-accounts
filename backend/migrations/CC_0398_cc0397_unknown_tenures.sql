@@ -68,6 +68,10 @@
 -- it, in backend/data/transition-tracker/cc_0398_evidence.json.
 --
 -- Idempotent: each write is guarded on the value it changes.
+--
+-- Applied to production 2026-11-11: 43 tenures updated (34 undated, 9 re-dated), 7 race rows -> false.
+-- check:incumbency then read 0 drift rows, control-reconcile-incumbency.mjs passed, and
+-- check:seating held.
 
 BEGIN;
 
