@@ -37,6 +37,10 @@
 --
 -- Idempotent: the helpers are idempotent on (office, person, start); the inserts and flag writes are
 -- guarded on the values they change.
+--
+-- Applied to production 2026-11-11: 2 people inserted, 5 tenure changes. check:incumbency then read
+-- 0 drift rows, control-reconcile-incumbency.mjs passed, check:seating held, and
+-- check:duplicate-people found no new pair.
 
 BEGIN;
 
