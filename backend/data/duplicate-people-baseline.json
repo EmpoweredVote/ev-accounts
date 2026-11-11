@@ -1,6 +1,6 @@
 {
   "_comment": "Reviewed pairs for check-duplicate-people.mjs. The gate fails on any pair NOT listed here. Set verdict to different_people (quiet for ever) or same_person (needs a merge migration) and add a note naming the source you checked. \"unreviewed\" is the backlog and should only shrink. split = the seated row holds nothing while the same-named unseated row holds the compass answers or the candidacies (voter-visible harm).",
-  "_updated": "2026-11-10",
+  "_updated": "2026-11-11",
   "pairs": {
     "006cec13-0c52-46b2-a509-703826a0f06b|04afc704-a4eb-42f7-bae4-dcacd6490e09": {
       "names": "Lawrence J Demoss ~ Lawrence Demoss",
@@ -161,15 +161,6 @@
     "2d6a4519-d5fe-4c11-9fca-00ee0b31cac6|9a83c931-0295-40a9-aaa3-95eb10e1c236": {
       "names": "Kevin Craig ~ Kevin Craig",
       "state": "mo",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": false,
-      "verdict": "unreviewed"
-    },
-    "2dbf3032-65b1-4898-813b-0f62dac0192e|a0ea7354-d1ff-49d2-a6c4-44a0a8099222": {
-      "names": "Romaine Quinn ~ Romaine Robert Quinn",
-      "state": "wi",
       "why": [
         "NAME_STATE"
       ],
