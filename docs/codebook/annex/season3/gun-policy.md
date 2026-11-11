@@ -118,6 +118,12 @@ since no rung is about which level decides (see Q5 for the one exception).
     (loosening side), like Q2 and Q4. Its card-payment merchant-code part is a dealer business rule (`adjacent`); a
     bar on enforcing federal gun rules (WI AB 293, 2021) stays under closure C2. A law that repeals an existing
     registration requirement is still rung 5 (S8).
+  - **R5-AZ (ruled 2026-11-11).** A ban whose only exception is federal registration is a registration law. Taking an
+    accessory off it is "removing a type of firearm or accessory from a registration law" → 5: AZ SB 1109 (2023),
+    SB 1014 (2025) and SB 1069 (2026) strike suppressors from A.R.S. 13-3101's prohibited-weapons list, whose only
+    exception is items held "in compliance with federal law" (NFA registration); TX SB 1596 (2025) has the same
+    shape. A rate-of-fire accessory (bump-fire device) still has no rung (S3). A person with a rung 1-3 act who
+    also voted for such a bill has a two-sided record (Arizona: Fernandez).
 
 ## Hard cases
 

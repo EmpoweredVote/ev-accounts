@@ -188,6 +188,46 @@
         "fetched_at": "2026-10-28T23:08:55.906Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "71c9dc420bfc3580ebe84d0e0c9d7f93469aeb1ac19a6d6938d89cccf77fc3a1",
+      "kind": "own-words",
+      "url": "https://crooksandliars.com/2022/07/democratic-sos-candidate-destroys-second",
+      "date": "2022-07-29",
+      "date_precision": "day",
+      "passage": "It also says 'the Congress shall the power to provide for organizing, arming, and disciplining the militia.' That means you get your militia arms from the government. You don't buy them yourself. That is what the Constitution says. Congress provides the rules for the militia. Congress provides the arms for the militia. Congress calls up the militia. You don't just get to be a militia on your own.",
+      "note": "Transcript of his video, as aired in a TV segment and posted by Crooks and Liars (page date is the post date; video date not shown). He was then a candidate for Secretary of State. He reads the militia clauses of the Constitution and argues the militia is organized, armed and called up by Congress.",
+      "subjects": [
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:13:41.559Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "63d1fa878c842fbb19c9538e18962112e98c8b406384c648f9bb8183213b1bf0",
+      "kind": "own-words",
+      "url": "https://crooksandliars.com/2022/07/democratic-sos-candidate-destroys-second",
+      "date": "2022-07-29",
+      "date_precision": "day",
+      "passage": "I think there's a lot of people who don't understand what the Second Amendment actually means in context of the whole Constitution.",
+      "note": "Same video transcript (opening of his remarks); he says many people misread the Second Amendment, and that being a militia by oneself is not what it means.",
+      "subjects": [
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:13:41.559Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -217,6 +257,33 @@
       "found": 9,
       "at": "2026-10-28T23:08:55.906Z",
       "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "gun safety laws",
+        "firearm restrictions",
+        "carry a gun without a permit",
+        "ban on assault-style guns",
+        "check every gun buyer"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope: confirmed on the 2026 general-election ballot as sitting Secretary of State (https://www.kold.com/2026/11/04/fontes-holds-arizona-secretary-state-office-says-election-denialism-was-rejected/)",
+        "campaign site https://electfontes.com/ and https://electfontes.com/proposed-policies/: nothing on the subject; the site has no gun page",
+        "sponsor list: covered by LegiScan bulk check (statewide officeholder, not a legislator)",
+        "blocked: https://www.westernjournal.com/lib-says-regulated-militia-asserts-gun-control-supreme-court-ruling-demolishes-argument/",
+        "blocked: https://azsos.gov/about-office/meet-secretary-state-adrian-fontes",
+        "blocked: https://www.axios.com/local/phoenix/2025/11/04/fontes-election-strategy-2026",
+        "Ballotpedia: not reviewed, page returns empty to the fetch tool (https://ballotpedia.org/Adrian_Fontes)",
+        "news search on his name plus gun and Second Amendment words: found a 2022 video, copied from a transcript page",
+        "no 2025-2026 gun remarks found"
+      ],
+      "found": 2,
+      "at": "2026-11-11T04:13:41.559Z",
+      "by": "source-collector"
     }
   ]
 }

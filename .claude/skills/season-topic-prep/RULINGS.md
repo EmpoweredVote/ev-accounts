@@ -448,6 +448,16 @@ topic; if a topic seems to need the same reading, ask for a ruling and point to 
   Season 3 annex (`docs/codebook/annex/season3/gun-policy.md`, R5-L) and its rung backlog.
 - **Scope:** the Season 3 revision 5 of `gun-policy` only.
 
+### gun-policy — R5-AZ (taking an accessory off a ban that excepts only federal registration is rung 5)
+- **Reading:** a state ban whose only exception is federal registration (NFA) works as a registration law. A bill
+  that takes an accessory off it — AZ SB 1109 (2023), SB 1014 (2025), SB 1069 (2026), suppressors off A.R.S.
+  13-3101's prohibited-weapons list — is "removing a type of firearm or accessory from a registration law", rung 5,
+  as TX SB 1596 (2025) was read. A rate-of-fire accessory (bump-fire) still has no rung (annex S3).
+- **Date and source:** 2026-11-11, Chris Andrews, Arizona Stage 5 ("ok, rung 5"). 23 of the 25 rung 5 seats
+  written in `write/az-01` rest on these bills alone; one person with a rung 3 act stays two-sided (Fernandez).
+  Recorded in the Season 3 annex (`docs/codebook/annex/season3/gun-policy.md`, R5-AZ).
+- **Scope:** the Season 3 revision 5 of `gun-policy` only.
+
 ### education-equity-programs — R1 (single-subject scope)
 - **Reading:** a separate operative part makes a bill multi-subject only when it acts **outside K-12 schools**
   (colleges' or state agencies' own operations, other employers). K-12 harassment, hiring and Title VI parts of a

@@ -1,0 +1,31 @@
+{
+  "politician_id": "ff600e1c-b748-484f-9607-9c3c300724ec",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed: https://en.wikipedia.org/wiki/Lea_M%C3%A1rquez_Peterson names her as a member of the Arizona Corporation Commission since 2019",
+        "sponsor list: covered by LegiScan bulk check (she is a commissioner, not a legislator, so no bill list applies)",
+        "blocked: https://azcc.gov/commissioners/lea-marquez-peterson (404)",
+        "blocked: https://justfacts.votesmart.org/candidate/political-courage-test/76354/lea-marquez-peterson (403)",
+        "nothing on the subject: https://en.wikipedia.org/wiki/Lea_M%C3%A1rquez_Peterson",
+        "Ballotpedia: not reviewed (blocked for the fetch tool in this batch)",
+        "news searches on name plus gun, Second Amendment, background check words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-11T04:17:24.733Z",
+      "by": "source-collector"
+    }
+  ]
+}

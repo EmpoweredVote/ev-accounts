@@ -1,0 +1,30 @@
+{
+  "politician_id": "433844aa-c80f-4168-a908-66244419feff",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation general",
+        "assault-style guns and magazines",
+        "background checks",
+        "red-flag orders",
+        "carry permits",
+        "Second Amendment general statement"
+      ],
+      "places": [
+        "in scope: 2026 candidate for Arizona House District 24, on the general-election ballot per search results (https://victoryfund.org/candidate/lisbeth-arescurenaga/)",
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "web search by name plus gun words: no page of their own on the subject",
+        "not reviewed: Ballotpedia (fetch returns empty)",
+        "https://secure.actblue.com/donate/lisbeth-arescurenaga-1: nothing on the subject",
+        "https://ivoterguide.com/candidate/95994/race/30499/election/1455: she did not answer the gun question; guide's own summary is not her words"
+      ],
+      "found": 0,
+      "at": "2026-11-11T04:17:17.474Z",
+      "by": "source-collector"
+    }
+  ]
+}

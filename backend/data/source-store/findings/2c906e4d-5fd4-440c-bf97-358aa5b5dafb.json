@@ -1,0 +1,53 @@
+{
+  "politician_id": "2c906e4d-5fd4-440c-bf97-358aa5b5dafb",
+  "findings": [
+    {
+      "id": "03bdece92ea143024e242170fd0e264b2cabe934783c749ef6d31f97da62511b",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/92267/race/30505/election/1455",
+      "date": "2026-07-21",
+      "date_precision": "unknown",
+      "passage": "We should enforce the laws on the books. I believe in the 2nd Amendment.",
+      "note": "His written answer to the voter-guide question 'What restrictions on gun ownership are needed to protect public safety?'. Page is the guide for the July 21, 2026 primary; the answer itself is undated, so the primary date is only the page's election date.",
+      "subjects": [
+        "general statement on gun rights",
+        "enforce existing gun laws",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:15:33.562Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "guns",
+        "Second Amendment",
+        "gun ownership restrictions",
+        "carry",
+        "background checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site mikegforld30.com (home page and The Campaign Trail page): nothing on the subject",
+        "BallotReady profile (confirms candidate for Arizona House District 30, 2026 general election; nothing on the subject)",
+        "iVoterGuide candidate questionnaire",
+        "Mohave Free Press note on his candidacy: nothing on the subject",
+        "sponsor list: covered by LegiScan bulk check (not a sitting legislator; no sponsorships)",
+        "Ballotpedia: not reviewed (page returns empty to the fetch tool)",
+        "one news search on name plus Second Amendment: nothing found about him"
+      ],
+      "found": 1,
+      "at": "2026-11-11T04:15:33.562Z",
+      "by": "source-collector"
+    }
+  ]
+}

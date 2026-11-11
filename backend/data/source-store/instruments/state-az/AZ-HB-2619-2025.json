@@ -1,0 +1,74 @@
+{
+  "id": "AZ-HB-2619-2025",
+  "scope": "state:az",
+  "title": "HB2619 (Fifty-seventh Legislature - First Regular Session (2025)): Assault weapons; magazines; prohibition; registration",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/82444",
+    "https://www.azleg.gov/legtext/57leg/1r/bills/hb2619p.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Aaron Marquez",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0df9cd85-3923-48bd-86c2-b7d4b31d510d"
+    },
+    {
+      "name": "Anna Abeytia",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1d2e925a-299f-4504-a4de-815d7a2ee7a6"
+    },
+    {
+      "name": "Quanta Crews",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1482a2bc-75d8-4aee-865c-53378c415210"
+    },
+    {
+      "name": "Brian Garcia",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ea0e5f51-f963-45ef-a104-429af91e5f90"
+    },
+    {
+      "name": "Alma Hernandez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e4460c64-fa27-4e05-96e8-cc005a478444"
+    },
+    {
+      "name": "Lydia Hernandez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8deb34b4-a40d-4d26-8d3a-1b5a9e9f07f9"
+    },
+    {
+      "name": "Mariana Sandoval",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c37db938-9db2-47d5-b30e-7ac6a5f5c5ee"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+    "fetched_at": "2026-11-11T03:51:26.779713Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2619-2025.introduced.html",
+      "sha256": "19a0c7217f1b057db513f8f9d1ca96e8503ce3e6703c13984d4645d531fe9e0e"
+    }
+  },
+  "operative_text": "Sec. 1 (adding A.R.S. 13-3123, subsection A): {+A. A PERSON, CORPORATION OR OTHER ENTITY MAY NOT MANUFACTURE, IMPORT, POSSESS, PURCHASE, SELL OR TRANSFER ANY ASSAULT WEAPON OR LARGE CAPACITY MAGAZINE.+}\nSec. 1 (A.R.S. 13-3123, subsection C): {+C. A PERSON WHO WAS LEGALLY IN POSSESSION OF AN ASSAULT WEAPON OR LARGE CAPACITY MAGAZINE ON THE EFFECTIVE DATE OF THIS SECTION AND WHO DOES ANY OF THE FOLLOWING WITHIN NINETY DAYS AFTER THE EFFECTIVE DATE OF THIS SECTION IS NOT SUBJECT TO PROSECUTION:+}\nSec. 1 (A.R.S. 13-3123, subsection D, paragraph 1): {+1. SUBMIT TO A BACKGROUND CHECK CONDUCTED BY THE APPROPRIATE LAW ENFORCEMENT AGENCY TO CONFIRM THAT THE PERSON IS NOT A PROHIBITED PURCHASER UNDER 18 UNITED STATES CODE SECTION 922 OR A PROHIBITED POSSESSOR PURSUANT TO SECTION 13-3101.+}\nSec. 1 (A.R.S. 13-3123, subsection D, paragraph 4): {+4. ANNUALLY RENEW THE REGISTRATION, SUBJECT TO COMPLETING A NEW BACKGROUND CHECK.+}\nSec. 1 (A.R.S. 13-3123, subsection E): {+E. IF A REGISTERED ASSAULT WEAPON IS USED IN THE COMMISSION OF A CRIME, THE REGISTERED OWNER IS CIVILLY LIABLE FOR ANY DAMAGES RESULTING FROM THAT CRIME. THE LIABILITY IMPOSED BY THIS SUBSECTION DOES NOT APPLY IF THE ASSAULT WEAPON WAS STOLEN AND THE REGISTERED OWNER REPORTED THE THEFT OF THE FIREARM TO A LAW ENFORCEMENT AGENCY AS PRESCRIBED IN SUBSECTION D, PARAGRAPH 6 OF THIS SECTION.+}\nSec. 1 (A.R.S. 13-3123, subsection F): {+F. REGISTERED ASSAULT WEAPONS MAY NOT BE PURCHASED, SOLD OR TRANSFERRED, EXCEPT THAT A REGISTERED ASSAULT WEAPON MAY BE TRANSFERRED TO A LICENSED GUNSMITH FOR THE PURPOSE OF LAWFUL REPAIR OR TO AN APPROPRIATE LAW ENFORCEMENT AGENCY FOR THE PURPOSE OF SURRENDERING THE ASSAULT WEAPON FOR DESTRUCTION.  AN ASSAULT WEAPON THAT IS POSSESSED IN VIOLATION OF THIS SECTION MAY BE DESTROYED UNLESS A COURT OR A COUNTY OR CITY ATTORNEY FINDS OR THE UNITED STATES DEPARTMENT OF JUSTICE DECLARES THAT PRESERVING THE ASSAULT WEAPON IS IN THE INTERESTS OF JUSTICE.+}\nSec. 1 (A.R.S. 13-3123, subsection H): {+H. THE REGISTERED OWNER OF AN ASSAULT WEAPON MAY NOT PURCHASE ADDITIONAL ASSAULT WEAPONS.+}\nSec. 1 (A.R.S. 13-3123, subsection J): {+J. A PERSON WHO VIOLATES THIS SECTION IS GUILTY:+}\nSec. 1 (A.R.S. 13-3123, subsection J, paragraph 1): {+1. OF A CLASS 1 MISDEMEANOR FOR A FIRST VIOLATION THAT INVOLVES ONLY THE POSSESSION OF AN ASSAULT WEAPON OR LARGE CAPACITY MAGAZINE AND, NOTWITHSTANDING SECTION 13-802, THE PERSON SHALL PAY A FINE OF AT LEAST $750.+}\nSec. 1 (A.R.S. 13-3123, subsection J, paragraph 2): {+2. OF A CLASS 5 FELONY FOR A SECOND OR SUBSEQUENT VIOLATION THAT INVOLVES ONLY THE POSSESSION OF AN ASSAULT WEAPON OR LARGE CAPACITY MAGAZINE AND, NOTWITHSTANDING SECTION 13-801, THE PERSON SHALL PAY A FINE OF AT LEAST $2,500.+}\nSec. 1 (A.R.S. 13-3123, subsection K, paragraph 3): {+3. \"LARGE CAPACITY MAGAZINE\" MEANS ANY AMMUNITION FEEDING DEVICE WITH THE CAPACITY TO ACCEPT MORE THAN TEN ROUNDS BUT DOES NOT INCLUDE ANY OF THE FOLLOWING:+}"
+}

@@ -44,6 +44,35 @@
         "fetched_at": "2026-10-28T22:53:15.888Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "185e9955ebf31c2d24fe8c1d4174f2bc4f71d1f09ce592895d54cdb0f9442b35",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/74500",
+      "date": "2021-02-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2111-2021",
+      "act": "nay",
+      "motion": "House - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ House, House - Third Reading, 2021-02-24: nay (tally 31–29); census gate: none.",
+      "subjects": [
+        "state and local non-cooperation with conflicting federal firearm rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2111-2021.chaptered.html",
+          "sha256": "45ea8e85fbc2a7e034e07d63f5e80f3b848ccbcefd65120293e76ac59569fecf"
+        }
+      }
     }
   ],
   "searches": [
@@ -60,6 +89,31 @@
       "found": 2,
       "at": "2026-10-28T22:53:15.888Z",
       "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "gun safety laws general statement",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope check: https://www.kjzz.org/elections/2026-10-06/2026-arizona-senate-4th-legislative-district-race-the-candidates-elex lists him as a candidate in the 2026 Legislative District 4 Senate race",
+        "campaign site https://aaron4az.com/ , /about-aaron and /facts: nothing on the subject (the only safety line is about law enforcement, crime prevention and mental health)",
+        "blocked: https://www.aaronforaz.com (connection reset)",
+        "Ballotpedia https://ballotpedia.org/Aaron_Lieberman: page came back empty, not usable",
+        "Wikipedia page: nothing on the subject",
+        "https://ontheissues.org/AZ/Aaron_Lieberman.htm: not found (404)",
+        "sponsor list: covered by LegiScan bulk check",
+        "web search (4 searches) on name plus gun, firearm, background check, assault weapon, Second Amendment terms, and 2022 governor campaign issues: nothing on the subject by him; 2022 governor campaign coverage not reviewed for gun content beyond search results"
+      ],
+      "found": 0,
+      "at": "2026-11-11T04:04:41.710Z",
+      "by": "source-collector"
     }
   ]
 }

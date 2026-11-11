@@ -1,0 +1,57 @@
+{
+  "politician_id": "8f6d28bd-fe31-403f-acb5-4988ef4600ab",
+  "findings": [
+    {
+      "id": "f588f4cf58e50dd961f6919274d039f33beb3531da22230568092c0240fab391",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/89231/race/30505/election/1455",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Law-abiding citizens have a constitutional right to keep and bear arms. The focus should be on enforcing existing laws, prosecuting violent criminals, and protecting due process, not creating new restrictions that punish responsible gun owners.",
+      "note": "His answer on the voter-guide question 'What restrictions on gun ownership are needed to protect public safety?'. Page shows no exact answer date; it is the 2026 general-election guide.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "no new gun restrictions",
+        "enforce existing gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:16:53.163Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "bans on a type of firearm",
+        "red-flag orders",
+        "carry permits",
+        "gun rights and the Second Amendment",
+        "gun safety laws",
+        "bills sponsored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "status: on the 2026 general-election voter guide for Arizona House District 30 (https://ivoterguide.com/candidate/89231/race/30505/election/1455); primary result not independently confirmed",
+        "iVoterGuide candidate profile (own answers)",
+        "Arizona Globe statement on veto record: nothing on the subject (https://arizonaglobe.com/?p=60874)",
+        "blocked: https://ballotpedia.org/David_Rose_(Arizona)",
+        "blocked: https://justfacts.votesmart.org/candidate/political-courage-test/171694",
+        "blocked: https://www.prismnews.com/local/la-paz-az/david-rose-visits-parker-urges-stronger-la-paz-county",
+        "no campaign site found",
+        "web searches: 3 candidate and subject searches; nothing further on the subject"
+      ],
+      "found": 1,
+      "at": "2026-11-11T04:16:53.163Z",
+      "by": "source-collector"
+    }
+  ]
+}

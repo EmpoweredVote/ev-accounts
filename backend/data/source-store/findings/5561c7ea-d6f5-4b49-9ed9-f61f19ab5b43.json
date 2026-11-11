@@ -25,6 +25,34 @@
       "found": 0,
       "at": "2026-10-28T23:09:17.650Z",
       "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carrying guns and permits",
+        "repeal of gun laws",
+        "general Second Amendment or gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia (page returned empty; nothing usable)",
+        "web search on name plus gun words (nothing on the subject)",
+        "identity: Arizona Corporation Commissioner (statewide office, took office Jan 2025, formerly Chandler council); not a legislator, so no sponsor list applies; not on the 2026 ballot per iVoterGuide",
+        "iVoterGuide profile: did not answer the gun questions (restrictions on gun ownership; teachers carrying)",
+        "not reviewed: Corporation Commission official page (404 at the address tried)",
+        "Chandler city council pages (search found nothing on guns)",
+        "azleg.gov member roster (no member by this name)",
+        "blocked: https://azvoterguide.com/?p=13882 (404)"
+      ],
+      "found": 0,
+      "at": "2026-11-11T04:17:21.443Z",
+      "by": "source-collector"
     }
   ]
 }

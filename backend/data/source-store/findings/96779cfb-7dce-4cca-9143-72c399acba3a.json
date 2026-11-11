@@ -1,0 +1,97 @@
+{
+  "politician_id": "96779cfb-7dce-4cca-9143-72c399acba3a",
+  "findings": [
+    {
+      "id": "1cc985b55780901753da6d704e665b442b008841b6c230382c28ba01e450055b",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/92275/race/28197/election/1426",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I strongly believe in the 2nd amendment and in our Arizona State Article 2, Section 26 protections. We have very strong gun ownership protections in Arizona and I would work strongly to defend them. Law abiding citizens should not be prohibited from protecting themselves! I also strongly believe in constitutional carry.",
+      "note": "His answer on the iVoterGuide 2026 questionnaire to 'What restrictions on gun ownership are needed to protect public safety?' Undated.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "carry a gun without a permit",
+        "defend state gun ownership protections"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:15:50.200Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5e5027e42a2218b42389d51a2c77d2129a47562892d0e8597be987e1c6e487cd",
+      "kind": "own-words",
+      "url": "https://azcdl.org/azcdlpacs-recommended-candidates-page/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "My default position is to always protect our second amendment and our citizens abilities to bear arms. This is for our citizens right to self defense and that should be taken extremely seriously.",
+      "note": "His statement to the Arizona Citizens Defense League 2026 candidate questionnaire, listed under State House LD3. Undated on the page.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "self-defense"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:15:50.200Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "587aa73afae024b7430547296c11bb6def64db71a7f3e361885d276d58b20747",
+      "kind": "own-words",
+      "url": "https://georgekhalaf.com/",
+      "date": "2026-11-10",
+      "date_precision": "unknown",
+      "passage": "I will always stand for life and defend the First and Second amendments, free speech, and religious freedom.",
+      "note": "Statement on his campaign site under 'Defend Constitutional Freedoms'. Date shown is when the page was read; the page itself is undated, so the true date is unknown.",
+      "subjects": [
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:15:50.200Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (empty page or not reachable by fetch tool)",
+        "sponsor list: covered by LegiScan bulk check",
+        "web search on name plus gun words",
+        "campaign site",
+        "KJZZ 2026 candidate guide",
+        "iVoterGuide profile",
+        "Gun Sense Voter Arizona list (names no candidates)",
+        "AzCDL recommended candidates page",
+        "campaign site georgekhalaf.com (curl and fetch)",
+        "Maricopa County Board of Supervisors LD3 appointment questionnaire (nothing on the subject; public safety answer names no gun policy)",
+        "confirmed as a candidate on the 2026-11-03 general ballot for state House, district 3 (BallotReady, iVoterGuide)"
+      ],
+      "found": 3,
+      "at": "2026-11-11T04:15:50.200Z",
+      "by": "source-collector"
+    }
+  ]
+}

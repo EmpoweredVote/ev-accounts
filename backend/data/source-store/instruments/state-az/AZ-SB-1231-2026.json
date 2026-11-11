@@ -1,0 +1,38 @@
+{
+  "id": "AZ-SB-1231-2026",
+  "scope": "state:az",
+  "title": "SB1231 (Fifty-seventh Legislature - Second Regular Session (2026)): Firearms; mandatory destruction; criminal offenses",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/84548",
+    "https://www.azleg.gov/legtext/57leg/2r/bills/sb1231p.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Brian Fernandez",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2aa0cf37-6c3a-405d-9cd2-0fafc7cf8636"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+    "fetched_at": "2026-11-11T04:23:07.062663Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1231-2026.introduced.html",
+      "sha256": "b27076be0d71be6b98471d1cbfdc3edc07f9b4eab893c8444483f832edfbac01"
+    }
+  },
+  "operative_text": "Sec. 1 (amending A.R.S. 13-3105, new subsection D): {+D. NOTWITHSTANDING ANY OTHER LAW, ON THE CONVICTION OF A PERSON FOR AN OFFENSE IN WHICH A FIREARM WAS USED, THE COURT SHALL ORDER THE FIREARM TO BE FORFEITED TO THE CITY, TOWN OR COUNTY IN WHICH THE OFFENSE WAS COMMITTED, AND THE CITY, TOWN OR COUNTY SHALL DESTROY THE FIREARM UNLESS THE VICTIM OR, IF THE VICTIM IS DECEASED, THE VICTIM'S FAMILY CHOOSES TO ALLOW THE FIREARM TO BE SOLD PURSUANT TO THIS SECTION.+}"
+}

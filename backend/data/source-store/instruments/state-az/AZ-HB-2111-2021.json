@@ -1,0 +1,546 @@
+{
+  "id": "AZ-HB-2111-2021",
+  "scope": "state:az",
+  "title": "HB2111 (Fifty-fifth Legislature - First Regular Session (2021)): 2nd amendment; unenforceable federal laws",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/74500",
+    "https://www.azleg.gov/legtext/55leg/1r/bills/hb2111p.htm",
+    "https://www.azleg.gov/legtext/55leg/1r/bills/hb2111h.htm",
+    "https://www.azleg.gov/legtext/55leg/1r/laws/0182.htm"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Leo Biasiucci",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b1b97401-d1a9-4442-9f78-2749f1853f6e"
+    },
+    {
+      "name": "Walter Blackman",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "a88f4ecd-5c4f-4caf-a88c-1d06c92bfdc7"
+    },
+    {
+      "name": "Frank Carroll",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "376698b5-a276-4977-b2c3-3d15a822f7d8"
+    },
+    {
+      "name": "Joseph Chaplik",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Regina Cobb",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Tim Dunn",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ebef00e8-7722-4e9b-b5dc-ef95a41a9a40"
+    },
+    {
+      "name": "Mark Finchem",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "489e2fc3-b47a-4304-b959-07e35f010da4"
+    },
+    {
+      "name": "Jake Hoffman",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "66ca210e-deab-4d07-8a18-48f7079f6f9b"
+    },
+    {
+      "name": "John Kavanagh",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a"
+    },
+    {
+      "name": "Quang Nguyen",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9cc152b6-c83b-4501-9e1a-2ab50e1db6a7"
+    },
+    {
+      "name": "Jacqueline Parker",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Kevin Payne",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0b0dc6ea-ed45-45e6-9a59-41d1c8aeb53c"
+    },
+    {
+      "name": "Beverly Pingerelli",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "184bd445-9f61-4bd3-859f-22522c9ccabd"
+    },
+    {
+      "name": "Bret Roberts",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Ben Toma",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Justin Wilmeth",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "729d1a1e-b58f-4a33-bf18-a0f11e3c5e04"
+    },
+    {
+      "name": "Sonny Borrelli",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2021-02-24",
+      "body": "AZ House",
+      "motion": "House - Third Reading",
+      "kind": "roll-call",
+      "yes": 31,
+      "no": 29,
+      "absent": 0,
+      "note": "LegiScan roll call 1014235; NV counted with absent in the tally, members keep LegiScan marks",
+      "members": [
+        {
+          "name": "Franklin Pratt",
+          "vote": "yea"
+        },
+        {
+          "name": "Judy Burges",
+          "vote": "yea"
+        },
+        {
+          "name": "John Kavanagh",
+          "vote": "yea",
+          "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a"
+        },
+        {
+          "name": "Robert Meza",
+          "vote": "nay"
+        },
+        {
+          "name": "Brenda Barton",
+          "vote": "yea"
+        },
+        {
+          "name": "John Fillmore",
+          "vote": "yea"
+        },
+        {
+          "name": "Gail Griffin",
+          "vote": "yea",
+          "politician_id": "188c386e-087b-4587-9510-da7fc5805575"
+        },
+        {
+          "name": "Andrea Dalessandro",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Finchem",
+          "vote": "yea",
+          "politician_id": "489e2fc3-b47a-4304-b959-07e35f010da4"
+        },
+        {
+          "name": "Russell Bowers",
+          "vote": "yea"
+        },
+        {
+          "name": "Regina Cobb",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Weninger",
+          "vote": "yea",
+          "politician_id": "b813cb2d-f80e-4f53-83e0-fc0477ff3f3d"
+        },
+        {
+          "name": "Richard Andrade",
+          "vote": "nay"
+        },
+        {
+          "name": "Randall Friese",
+          "vote": "nay"
+        },
+        {
+          "name": "Charlene Fernandez",
+          "vote": "nay"
+        },
+        {
+          "name": "Reginald Bolding",
+          "vote": "nay"
+        },
+        {
+          "name": "Diego Espinoza",
+          "vote": "nay"
+        },
+        {
+          "name": "Becky Nutt",
+          "vote": "yea"
+        },
+        {
+          "name": "Pamela Hannley",
+          "vote": "nay"
+        },
+        {
+          "name": "Michelle Udall",
+          "vote": "yea"
+        },
+        {
+          "name": "Cesar Chavez",
+          "vote": "nay"
+        },
+        {
+          "name": "Denise Epstein",
+          "vote": "nay",
+          "politician_id": "feecd8fc-b007-450a-8779-8e6f68e80dd6"
+        },
+        {
+          "name": "Travis Grantham",
+          "vote": "yea"
+        },
+        {
+          "name": "Athena Salman",
+          "vote": "nay"
+        },
+        {
+          "name": "David Cook",
+          "vote": "yea",
+          "politician_id": "b2def48c-4092-4518-babc-c6080ded42cf"
+        },
+        {
+          "name": "Kevin Payne",
+          "vote": "yea",
+          "politician_id": "0b0dc6ea-ed45-45e6-9a59-41d1c8aeb53c"
+        },
+        {
+          "name": "Kelli Butler",
+          "vote": "nay"
+        },
+        {
+          "name": "Daniel Hernandez",
+          "vote": "nay"
+        },
+        {
+          "name": "Ben Toma",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Dunn",
+          "vote": "yea",
+          "politician_id": "ebef00e8-7722-4e9b-b5dc-ef95a41a9a40"
+        },
+        {
+          "name": "Walter Blackman",
+          "vote": "yea",
+          "politician_id": "a88f4ecd-5c4f-4caf-a88c-1d06c92bfdc7"
+        },
+        {
+          "name": "Leo Biasiucci",
+          "vote": "yea",
+          "politician_id": "b1b97401-d1a9-4442-9f78-2749f1853f6e"
+        },
+        {
+          "name": "Bret Roberts",
+          "vote": "yea"
+        },
+        {
+          "name": "Alma Hernandez",
+          "vote": "nay",
+          "politician_id": "e4460c64-fa27-4e05-96e8-cc005a478444"
+        },
+        {
+          "name": "Jennifer Jermaine",
+          "vote": "nay"
+        },
+        {
+          "name": "Jennifer Pawlik",
+          "vote": "nay"
+        },
+        {
+          "name": "Frank Carroll",
+          "vote": "yea",
+          "politician_id": "376698b5-a276-4977-b2c3-3d15a822f7d8"
+        },
+        {
+          "name": "Aaron Lieberman",
+          "vote": "nay",
+          "politician_id": "a6d492a6-0d29-4d8d-8533-a3ae82284696"
+        },
+        {
+          "name": "Joanne Osborne",
+          "vote": "yea"
+        },
+        {
+          "name": "Shawnna Bolick",
+          "vote": "yea",
+          "politician_id": "2785d691-2404-400e-8dde-bcc5a58e419b"
+        },
+        {
+          "name": "Andres Cano",
+          "vote": "nay"
+        },
+        {
+          "name": "Jennifer Longdon",
+          "vote": "nay"
+        },
+        {
+          "name": "Diego Rodriguez",
+          "vote": "nay"
+        },
+        {
+          "name": "Lorenzo Sierra",
+          "vote": "nay"
+        },
+        {
+          "name": "Myron Tsosie",
+          "vote": "nay",
+          "politician_id": "47a75797-e525-4dd9-ab04-66dd4d667760"
+        },
+        {
+          "name": "Raquel Teran",
+          "vote": "nay"
+        },
+        {
+          "name": "Domingo Degrazia",
+          "vote": "nay"
+        },
+        {
+          "name": "Amish Shah",
+          "vote": "nay"
+        },
+        {
+          "name": "Joseph Chaplik",
+          "vote": "yea"
+        },
+        {
+          "name": "Jake Hoffman",
+          "vote": "yea",
+          "politician_id": "66ca210e-deab-4d07-8a18-48f7079f6f9b"
+        },
+        {
+          "name": "Steve Kaiser",
+          "vote": "yea"
+        },
+        {
+          "name": "Jacqueline Parker",
+          "vote": "yea"
+        },
+        {
+          "name": "Beverly Pingerelli",
+          "vote": "yea",
+          "politician_id": "184bd445-9f61-4bd3-859f-22522c9ccabd"
+        },
+        {
+          "name": "Justin Wilmeth",
+          "vote": "yea",
+          "politician_id": "729d1a1e-b58f-4a33-bf18-a0f11e3c5e04"
+        },
+        {
+          "name": "Joel John",
+          "vote": "yea"
+        },
+        {
+          "name": "Quang Nguyen",
+          "vote": "yea",
+          "politician_id": "9cc152b6-c83b-4501-9e1a-2ab50e1db6a7"
+        },
+        {
+          "name": "Judy Schwiebert",
+          "vote": "nay"
+        },
+        {
+          "name": "Stephanie Stahl Hamilton",
+          "vote": "nay",
+          "politician_id": "2405145c-f082-47f2-861d-d4efd19e8162"
+        },
+        {
+          "name": "Melody Hernandez",
+          "vote": "nay"
+        },
+        {
+          "name": "Jasmine Blackwater-Nygren",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2021-03-30",
+      "body": "AZ Senate",
+      "motion": "Senate - Third Reading",
+      "kind": "roll-call",
+      "yes": 17,
+      "no": 13,
+      "absent": 0,
+      "note": "LegiScan roll call 1040786; NV counted with absent in the tally, members keep LegiScan marks",
+      "members": [
+        {
+          "name": "David Gowan",
+          "vote": "yea",
+          "politician_id": "e71471f4-bef5-46ef-a1f2-f19f275b558d"
+        },
+        {
+          "name": "Nancy Barto",
+          "vote": "yea"
+        },
+        {
+          "name": "Rebecca Rios",
+          "vote": "nay"
+        },
+        {
+          "name": "Karen Fann",
+          "vote": "yea"
+        },
+        {
+          "name": "Rick Gray",
+          "vote": "yea"
+        },
+        {
+          "name": "Michelle Ugenti-Rita",
+          "vote": "yea"
+        },
+        {
+          "name": "Javan Mesnard",
+          "vote": "yea"
+        },
+        {
+          "name": "Lela Alston",
+          "vote": "nay",
+          "politician_id": "64520134-c1e3-44b1-aeb5-ed3e8762972d"
+        },
+        {
+          "name": "Sally Gonzales",
+          "vote": "nay",
+          "politician_id": "82f31f9c-754b-4417-bc21-af295b2b4d2b"
+        },
+        {
+          "name": "Martin Quezada",
+          "vote": "nay"
+        },
+        {
+          "name": "Lupe Contreras",
+          "vote": "nay",
+          "politician_id": "d5466317-d90a-41ce-ba20-30c12429dcb3"
+        },
+        {
+          "name": "Paul Boyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Sonny Borrelli",
+          "vote": "yea"
+        },
+        {
+          "name": "David Livingston",
+          "vote": "yea",
+          "politician_id": "43e734b4-4417-4dcd-91c9-f420f3a1b702"
+        },
+        {
+          "name": "Juan Mendez",
+          "vote": "nay"
+        },
+        {
+          "name": "Warren Petersen",
+          "vote": "yea",
+          "politician_id": "49b806b1-f15d-4998-a94e-de542d9e323e"
+        },
+        {
+          "name": "Thomas Shope",
+          "vote": "yea",
+          "politician_id": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1"
+        },
+        {
+          "name": "Victoria Steele",
+          "vote": "nay"
+        },
+        {
+          "name": "Kelly Townsend",
+          "vote": "yea"
+        },
+        {
+          "name": "Jamescita Peshlakai",
+          "vote": "nay",
+          "politician_id": "b285d29b-14f3-491e-a7a1-d94e30219bb8"
+        },
+        {
+          "name": "Lisa Otondo",
+          "vote": "yea"
+        },
+        {
+          "name": "Rosanna Gabaldon",
+          "vote": "nay",
+          "politician_id": "8cbc6c91-4147-4831-ae0e-f4658ce282e8"
+        },
+        {
+          "name": "Vince Leach",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirsten Engel",
+          "vote": "nay"
+        },
+        {
+          "name": "Tony Navarrete",
+          "vote": "nay"
+        },
+        {
+          "name": "Sean Bowie",
+          "vote": "nay"
+        },
+        {
+          "name": "Sine Kerr",
+          "vote": "yea"
+        },
+        {
+          "name": "Tyler Pace",
+          "vote": "yea"
+        },
+        {
+          "name": "Wendy Rogers",
+          "vote": "yea",
+          "politician_id": "23b7d096-37ad-4b00-8291-c7f0640a22d2"
+        },
+        {
+          "name": "Christine Marsh",
+          "vote": "nay",
+          "politician_id": "e7ce87c4-3b49-418d-ba10-88aaf4d827e2"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+    "fetched_at": "2026-11-11T03:51:26.779713Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2111-2021.chaptered.html",
+      "sha256": "45ea8e85fbc2a7e034e07d63f5e80f3b848ccbcefd65120293e76ac59569fecf"
+    }
+  },
+  "operative_text": "Sec. 1 (adding A.R.S. 1-272): {+PURSUANT TO THE SOVEREIGN AUTHORITY OF THIS STATE AND ARTICLE II, SECTION 3, CONSTITUTION OF ARIZONA, THIS STATE AND ALL POLITICAL SUBDIVISIONS OF THIS STATE ARE PROHIBITED FROM USING ANY PERSONNEL OR FINANCIAL RESOURCES TO ENFORCE, ADMINISTER OR COOPERATE WITH ANY ACT, LAW, TREATY, ORDER, RULE OR REGULATION OF THE UNITED STATES GOVERNMENT THAT IS INCONSISTENT WITH ANY LAW OF THIS STATE REGARDING THE REGULATION OF FIREARMS. +}"
+}
