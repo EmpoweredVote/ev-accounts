@@ -550,6 +550,20 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
   nor seeks, **delete** the context (a blank would assert an untested absence); if the topic genuinely
   applies and the record was read, **rewrite it as a documented blank**. Never make rows fall out by
   widening the carve-out regex in `check-stance-sources.mjs`.
+- 🔴 **WRITING A `term_start` RESTATES WHO HELD THAT SEAT ON EVERY ELECTION DAY THE TERM NO LONGER
+  COVERS — AND `race_candidates.is_incumbent` IS CACHED AND DOES NOT FOLLOW.** `check:incumbency`
+  catches the contradiction, but it runs on **master push and the schedule only, never on a PR**, so
+  it fails on the NEXT merge under somebody else's name. That is the master-only-gate rule under
+  **Verification rules**, and `CC_0394` paid for it: 290 dates, 6 red rows, a 7th from `CC_0395`, and
+  `CC_0396` to settle them three migrations later. Paste the delta gate from
+  `backend/migrations/_templates/office_terms_incumbency_guard.sql` into any migration that writes
+  `essentials.office_terms` — it fires only on a row **this transaction** moves from agreeing to
+  contradicting, so other people's drift cannot fail your merge.
+  ⚠ **Do not answer it with `reconcile-incumbency.mjs --apply`** — it reads only the predicate, and
+  on those seven rows it would have published three sitting officeholders as challengers for their
+  own seats. ⚠ **The two causes look identical from the row**: a *newcomer* means the date is right
+  and the race row is stale; *re-elected* means the race row is right and you have written their
+  latest term's start as the start of their whole tenure. `CC_0396`'s header works the split.
 - 🔴 **NEVER CREATE A TABLE OR VIEW IN `public`.** Put it in the EV schema it belongs to (`inform`,
   `treasury`, `connect`, `civic`, `civic_spaces`, `empower`, `validation_quests`, `essentials`).
   From 2026-10-30 Supabase gives new `public` tables **no automatic Data API grants**
