@@ -1,0 +1,32 @@
+{
+  "politician_id": "7c8dea94-8ba3-4f11-b9cb-28ead6724977",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun safety laws",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "status: in scope; 2026 candidate for Wisconsin Assembly District 13, and WUWM reports her as winning the 2026-11-03 general election (https://www.wuwm.com/wisconsin-state-assembly-district-13-candidates)",
+        "On the Record (0 meetings)",
+        "campaign site https://www.amyforwi.com (home, /why, /meet-amy opened; nothing on the subject; /issues, /platform, /priorities do not exist)",
+        "Ballotpedia: not reviewed (page returns empty to the fetch tool; no direct fetch made)",
+        "iVoterGuide https://ivoterguide.com/candidate/96228/race/34206/election/1497 (gun question marked Did not answer; the page text listing popular gun reforms is the site's own prompt, not her words)",
+        "Gun Sense Voter profile https://gunsensevoter.org/candidates/c96befece89d1eae33f93d9414501813c04b14f9ed52e2d7aba175cb37e3af8f/ (an outside group's label for her; it carries no words of hers, so nothing saved)",
+        "blocked: https://wisconsinexaminer.com/2026/08/12/state-legislature-primaries-set-stage-for-november-contests-in-assembly-senate/ (HTTP 403)",
+        "no legislative record: not a past or sitting legislator (sponsor list not applicable)",
+        "web searches (2): nothing on the subject in her own words"
+      ],
+      "found": 0,
+      "at": "2026-11-10T22:15:40.183Z",
+      "by": "source-collector"
+    }
+  ]
+}

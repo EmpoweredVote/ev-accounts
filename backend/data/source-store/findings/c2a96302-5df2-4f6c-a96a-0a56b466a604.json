@@ -154,6 +154,162 @@
         "fetched_at": "2026-10-28T23:15:12.784Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "ebef6ea9ab2ae91420259dc69b20ceb45cc9ec0b4afe2566d3c08f6f504519c7",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/sen/bill/sb466",
+      "date": "2024-01-18",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-466-2023",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and concurred in, 2024-01-18: yea (tally 62–35); census gate: none.",
+      "subjects": [
+        "payment networks barred from firearms-retailer merchant codes",
+        "government lists of gun owners banned",
+        "background-check records may not be turned into a purchaser list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-466-2023.enrolled.pdf",
+          "sha256": "6d089108620592801f50b209f20b361fb9a3c5e87a5f8243957c44092e2874a2"
+        }
+      }
+    },
+    {
+      "id": "91c7b600bcb1a3f39f913abb57fc1b37c1954c44105292a9e5e81b1d5ac48681",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/asm/bill/ab801",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-801-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-801-2023 (LegiScan sponsor list): AB801 (2023-2024 Regular Session): Possession of a firearm by a licensee in a place of worship located on the grounds of a private school..",
+      "subjects": [
+        "licensees may carry in a place of worship on private school grounds",
+        "licensees exempt from 1,000-foot school-zone forfeiture",
+        "definition of school narrowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-801-2023.introduced.pdf",
+          "sha256": "16c20b1a45da21cfdd8ed1a9e8fe7da04b46b52f2f89506a5b7be328f58bee41"
+        }
+      }
+    },
+    {
+      "id": "951b12a2942af6eaca26d3161b93c704c9e346f57573e6c7ce4b3640f5fd2a95",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/sen/bill/sb466",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-466-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-SB-466-2023 (LegiScan sponsor list): SB466 (2023-2024 Regular Session): Prohibiting firearms merchant category codes in payment card transactions, prohibiting government lists of firearm owners, and providing a penalty..",
+      "subjects": [
+        "payment networks barred from firearms-retailer merchant codes",
+        "government lists of gun owners banned",
+        "background-check records may not be turned into a purchaser list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-466-2023.enrolled.pdf",
+          "sha256": "6d089108620592801f50b209f20b361fb9a3c5e87a5f8243957c44092e2874a2"
+        }
+      }
+    },
+    {
+      "id": "d68cc3a98e309bf50a57d7757ae192bc6de309c937e1fac47ada8a473570d6c3",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/70823/race/3428/election/1251",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I support the constitution and believe that every law-abiding citizen has the right to carry.",
+      "note": "His written answer to the voter-guide question 'What restrictions on gun ownership are needed to protect public safety?' for the 2026 race. Page is undated; the 2026 profile tab was used. The same answer appears on the 2024 profile.",
+      "subjects": [
+        "carry a gun without a permit",
+        "Second Amendment and gun rights in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.328Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "caca4d10b8b033d256f044aeb12b7a619a0b39902e143394c63eb914642e6694",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/70823/race/3428/election/1251",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Should teachers be allowed to carry guns at school? Yes",
+      "note": "His answer to a yes/no question on the same voter-guide questionnaire: yes, teachers should be allowed to carry guns at school.",
+      "subjects": [
+        "carry a gun in schools"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.328Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f148127e3c137e2928888554610c1acb42a89916690464e60e7d7132b726b65c",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/sen/bill/sb256",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-256-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-SB-256-2023 (LegiScan sponsor list): SB256 (2023-2024 Regular Session): Possession of a firearm on school grounds by school employees and fees for licenses to carry a concealed weapon. (FE).",
+      "subjects": [
+        "licensed school employees may carry on school grounds if school adopts policy",
+        "concealed-carry license fees waived for teachers",
+        "firearm within 1,000 feet of a school becomes a forfeiture"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T23:03:34.524773Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-256-2023.introduced.pdf",
+          "sha256": "fd08df5afd774292beb782d8076e4bdb8b82493d3a6f17497ef9d121c452e381"
+        }
+      }
     }
   ],
   "searches": [
@@ -194,6 +350,32 @@
       "found": 6,
       "at": "2026-10-28T23:15:12.784Z",
       "by": "identity-wi-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry a gun without a permit",
+        "repeal of gun laws",
+        "Second Amendment and gun rights in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope: https://ivoterguide.com/candidate/70823/race/3428/election/1251 lists him as a candidate for Assembly District 55 in the November 3, 2026 general election",
+        "sponsor list: covered by LegiScan bulk check",
+        "official site https://legis.wisconsin.gov/assembly/55/gustafson/ press release list and five 2025-2026 press release PDFs opened: nothing on the subject",
+        "campaign site: not found (none located by search or on the iVoterGuide page text)",
+        "iVoterGuide questionnaire: saved",
+        "Ballotpedia: not relied on (returns empty to fetch)",
+        "news searches on his name plus gun words and AJR 112: no direct quote from him found"
+      ],
+      "found": 2,
+      "at": "2026-11-10T22:15:40.328Z",
+      "by": "source-collector"
     }
   ]
 }

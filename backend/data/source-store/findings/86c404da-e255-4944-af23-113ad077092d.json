@@ -110,6 +110,58 @@
         "fetched_at": "2026-10-28T23:15:12.784Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "ebef6ea9ab2ae91420259dc69b20ceb45cc9ec0b4afe2566d3c08f6f504519c7",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/sen/bill/sb466",
+      "date": "2024-01-18",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-466-2023",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and concurred in, 2024-01-18: yea (tally 62–35); census gate: none.",
+      "subjects": [
+        "payment networks barred from firearms-retailer merchant codes",
+        "government lists of gun owners banned",
+        "background-check records may not be turned into a purchaser list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-466-2023.enrolled.pdf",
+          "sha256": "6d089108620592801f50b209f20b361fb9a3c5e87a5f8243957c44092e2874a2"
+        }
+      }
+    },
+    {
+      "id": "9e013eac33e6ce600a9abbe9d527795b796d92197505bab1c4dae71f7d4cff6d",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/69/hurd/media/lfujndut/20230322-hurd-supports-tougher-on-crime-bills.pdf",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "passage": "“Violent crime is growing, and these bills not only address the problem, but establish a new level of accountability,” said Rep. Hurd. “Neighborhoods should be a place for families and children to enjoy and feel safe. We need to stop letting violent criminals and reoffenders from getting the soft and easy treatment. The safety and well-being of Wisconsin families come first and these bills reflect that.”",
+      "note": "Her press release backing a crime package. The release says the package includes a mandatory minimum sentence for violent felons in possession of a firearm. She does not discuss guns in her own quote.",
+      "subjects": [
+        "limits on who may have a gun",
+        "mandatory sentence for felons with a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.296Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -152,6 +204,31 @@
       "found": 4,
       "at": "2026-10-28T23:15:12.784Z",
       "by": "identity-wi-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style gun ban",
+        "background checks",
+        "waiting period",
+        "red flag orders",
+        "ghost guns",
+        "carrying guns",
+        "gun rights and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://legis.wisconsin.gov/assembly/69/hurd/ and about page: nothing on the subject",
+        "sponsor list: covered by LegiScan bulk check",
+        "scope: Branch.vote 2026 general election page for the 69th district lists her as the candidate",
+        "campaign site: not reviewed: none located",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Karen_Hurd (fetch tool returns empty)",
+        "web search on name plus gun words (3 searches): one 2023 release of her own found; a gun-owner group roster page names her but is not her words, not cited"
+      ],
+      "found": 1,
+      "at": "2026-11-10T22:15:40.296Z",
+      "by": "source-collector"
     }
   ]
 }

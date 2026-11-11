@@ -1,0 +1,113 @@
+{
+  "id": "WI-SB-256-2023",
+  "scope": "state:wi",
+  "title": "SB256 (2023-2024 Regular Session): Possession of a firearm on school grounds by school employees and fees for licenses to carry a concealed weapon. (FE)",
+  "urls": [
+    "https://docs.legis.wisconsin.gov/2023/proposals/reg/sen/bill/sb256",
+    "https://docs.legis.wisconsin.gov/document/proposaltext/2023/REG/SB256.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cory Tomczyk",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "10ec6e28-7666-4f86-9f52-9fa4b35d6d6d"
+    },
+    {
+      "name": "Rachael Cabral-Guevara",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1cdcaa5d-8576-44d4-8d9f-34f321924898"
+    },
+    {
+      "name": "Steve Nass",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f8901d87-cb68-480a-84cd-b40290c1bb8b"
+    },
+    {
+      "name": "Romaine Quinn",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "a0ea7354-d1ff-49d2-a6c4-44a0a8099222"
+    },
+    {
+      "name": "Scott Allen",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f08a79e9-42fe-4047-b7b1-ba5da9b31018"
+    },
+    {
+      "name": "Elijah Behnke",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d68b3730-048f-4cb5-a952-104dd75409df"
+    },
+    {
+      "name": "Ty Bodden",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Janel Brandtjen",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Rick Gundrum",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fff18b53-315b-4091-81ca-6f96d881613f"
+    },
+    {
+      "name": "Nate Gustafson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c2a96302-5df2-4f6c-a96a-0a56b466a604"
+    },
+    {
+      "name": "Tom Michalski",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "David Murphy",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3d3b7e41-b4d9-44e9-940e-e65fa85489b7"
+    },
+    {
+      "name": "Chuck Wichgers",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3db74c79-d91c-4bfb-9d1e-7cfc022cde25"
+    },
+    {
+      "name": "Chanz Green",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5c631466-ba33-4731-89a3-ca017444cf78"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+    "fetched_at": "2026-11-10T23:03:34.524773Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-256-2023.introduced.pdf",
+      "sha256": "fd08df5afd774292beb782d8076e4bdb8b82493d3a6f17497ef9d121c452e381"
+    }
+  },
+  "operative_text": "Sec. 4 (renumbering and amending 175.60 (7) (c)): 175.60 (7) (cm) 1. A {+fee for a background check that is equal to the fee charged under s. 175.35 (2i) and a+} license fee in an amount, as determined by the department by rule, that is equal to the cost of issuing the license but does not exceed $37.\nSec. 5 (creating 175.60 (7) (cm) (intro.) and 2.): 175.60 (7) (cm) (intro.) One of the following:\n2. A statement that he or she is a teacher who holds a license or permit issued by the state superintendent of public instruction or proof, as determined by the department, that he or she is employed as a teacher in a private school or tribal school located in this state.\nSec. 11 (renumbering and amending 948.605 (2) (a)): 948.605 (2) (a) 1. Any individual who knowingly possesses a firearm at a place that the individual knows, or has reasonable cause to believe, is in or on the grounds of a school is guilty of a Class I felony.\n{+2.+} Any individual who knowingly possesses a firearm at a place that the individual knows, or has reasonable cause to believe, is within 1,000 feet of the grounds of a school is subject to a Class B forfeiture.\nSec. 12 (renumbering and amending 948.605 (2) (b) 1r.): 948.605 (2) (bm) 2. [-Except if the person is in or on the grounds of a school,-] {+Paragraph (a) 2. does not apply to+} a licensee[-, as defined in s. 175.60 (1) (d),-] or an out-of-state licensee, as defined in s. 175.60 (1) (g).\nSec. 13 (creating 948.605 (2) (bm) 1.): 948.605 (2) (bm) 1. Paragraph (a) 1. does not apply to a licensee who possesses a firearm in or on the grounds of a school if the licensee is employed by the school and one of the following applies:\na. If the school is a public school, other than a charter school established under s. 118.40 (2r) or (2x), the school board has adopted a policy stating that employees who are licensees may possess a firearm in or on the grounds of the school.\nb. If the school is a charter school established under s. 118.40 (2r) or (2x), the operator of the charter school has adopted a policy stating that employees who are licensees may possess a firearm in or on the grounds of the school.\nc. If the school is a private, parochial, or tribal school, the governing body of the school has adopted a policy stating that employees who are licensees may possess a firearm in or on the grounds of the school.\nSec. 7 (creating 175.60 (15) (b) 3. (intro.) and b.): 175.60 (15) (b) 3. (intro.) Submits one of the following: ... b. A statement that the licensee is a teacher who holds a license or permit issued by the state superintendent of public instruction or proof, as determined by the department, that the licensee is employed as a teacher in a private school or tribal school located in this state."
+}

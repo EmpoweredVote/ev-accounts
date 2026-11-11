@@ -109,6 +109,163 @@
         "fetched_at": "2026-10-28T23:15:12.784Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "228d2ccde35f4d39b822684561143ebb75affbec5624e1402e4fd3424d55cf1c",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/sen/bill/sb607",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-607-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-SB-607-2025 (LegiScan sponsor list): SB607 (2025-2026 Regular Session): Right to carry a weapon in this state, licenses to carry a concealed weapon, and providing a penalty. (FE).",
+      "subjects": [
+        "permitless concealed carry (licence no longer required)",
+        "loaded-firearm-in-vehicle ban repealed",
+        "list of places where firearms are prohibited rewritten",
+        "employers may not bar carrying or storing weapons in an employee’s vehicle"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-607-2025.introduced.pdf",
+          "sha256": "9c15b7c2f009be0489a31087fcad7afd74130ebeab0157288f50e1d9b5e1fea2"
+        }
+      }
+    },
+    {
+      "id": "2ac29db886fbcc7d5416222afde7b9eba6bb16251bdfc38d4e58ec616d9fed08",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/related/proposals/ajr112",
+      "date": "2025-10-29",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-112-2025",
+      "act": "sponsor",
+      "note": "Named among the Assembly members who introduced Assembly Joint Resolution 112, a constitutional amendment on the right to keep and bear arms (first consideration). Referred to the Judiciary committee. Listed as co-author, recorded as sponsor.",
+      "subjects": [
+        "gun rights and Second Amendment",
+        "state constitutional right to bear arms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.213Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dfd71e108cd71aa86ae4af0957bb28258a5e80ca69e25a68686168acb4b3e25e",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/related/proposals/sjr105",
+      "date": "2025-10-30",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-105-2025",
+      "act": "sponsor",
+      "note": "Named among the Assembly members who co-sponsored Senate Joint Resolution 105, a companion constitutional amendment on the right to keep and bear arms (first consideration). Recorded as sponsor (co-sponsorship).",
+      "subjects": [
+        "gun rights and Second Amendment",
+        "state constitutional right to bear arms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.213Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a4083f20329d584f471836d0245900925cfbb43fc6813c4233f7ddfd0d794538",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab609",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-609-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-609-2025 (LegiScan sponsor list): AB609 (2025-2026 Regular Session): Right to carry a weapon in this state, licenses to carry a concealed weapon, and providing a penalty. (FE).",
+      "subjects": [
+        "permitless concealed carry (general ban repealed)",
+        "license kept but background check limited to federal prohibitions",
+        "list of places firearms are barred rewritten, Class A misdemeanor",
+        "employer may not bar weapons stored in employee vehicle",
+        "loaded firearm in vehicle ban dropped"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T23:03:34.524773Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-609-2025.introduced.pdf",
+          "sha256": "e7626966e4cf1b8cb1ab34dfdfb2b7b2a43443808df4408ec5e1314bfd60b6f3"
+        }
+      }
+    },
+    {
+      "id": "1faff1fda6eea2a638b4be07322419dac5f0dd82b1b80737edddc694bd53b080",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/joint_resolution/ajr112",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-112-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AJR-112-2025 (LegiScan sponsor list): AJR112 (2025-2026 Regular Session): The right to keep and bear arms (first consideration)..",
+      "subjects": [
+        "constitutional right to bear arms made inalienable",
+        "any gun restriction must pass strict scrutiny"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T23:03:34.524773Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AJR-112-2025.introduced.pdf",
+          "sha256": "4a5891db107d79f5a0da8091eef17592df50450f084f490052f2c42014abc8c4"
+        }
+      }
+    },
+    {
+      "id": "50ac833738e5cad9376ef55e0d790f63acf942c22f318d095e1bb1d093d9d98d",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/sen/joint_resolution/sjr105",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-105-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-SJR-105-2025 (LegiScan sponsor list): SJR105 (2025-2026 Regular Session): The right to keep and bear arms (first consideration)..",
+      "subjects": [
+        "constitutional right to bear arms made inalienable",
+        "any gun restriction must pass strict scrutiny"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T23:03:34.524773Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SJR-105-2025.introduced.pdf",
+          "sha256": "623b89b606cfd9f7d718fe1fe40c25440e25ddd2d3bb71c60d7ad3cf0f634fa3"
+        }
+      }
     }
   ],
   "searches": [
@@ -150,6 +307,30 @@
       "found": 3,
       "at": "2026-10-28T23:15:12.784Z",
       "by": "identity-wi-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and Second Amendment",
+        "gun safety laws",
+        "background checks",
+        "carry permits",
+        "assault-style guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sitting 87th District Assembly member: https://legis.wisconsin.gov/assembly/87/jacobson/ ; running for the seat in 2026: https://www.jacobsonforassembly.com",
+        "official press release list https://legis.wisconsin.gov/assembly/87/jacobson/media/press-releases/ (10 releases, none by title on the subject)",
+        "not reviewed: https://legis.wisconsin.gov/assembly/87/jacobson/media/epxpf1aw/3132025_pr_jacobson_republicans_vote_to_uphold_public_safety.pdf (PDF text could not be read)",
+        "campaign site issues page https://www.jacobsonforassembly.com/issues: nothing on the subject",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia: not reviewed (pages return empty to the fetch tool)",
+        "web searches on name plus gun words: no own-words statement found"
+      ],
+      "found": 2,
+      "at": "2026-11-10T22:15:40.213Z",
+      "by": "source-collector"
     }
   ]
 }

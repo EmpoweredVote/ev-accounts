@@ -132,6 +132,187 @@
         "fetched_at": "2026-10-28T23:15:12.773Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "e991fe58cceb711c8fcd8b8a9a3b35b8cb23333c6b7db82672bb9ddab3efb09c",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/sen/bill/sb466",
+      "date": "2024-01-18",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-466-2023",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and concurred in, 2024-01-18: nay (tally 62–35); census gate: none.",
+      "subjects": [
+        "payment networks barred from firearms-retailer merchant codes",
+        "government lists of gun owners banned",
+        "background-check records may not be turned into a purchaser list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-466-2023.enrolled.pdf",
+          "sha256": "6d089108620592801f50b209f20b361fb9a3c5e87a5f8243957c44092e2874a2"
+        }
+      }
+    },
+    {
+      "id": "8d249c737efcd12830329e8fbb19ba0e1356d73f70d91ba86004496bc2652a3e",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab319",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-319-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-319-2025 (LegiScan sponsor list): AB319 (2025-2026 Regular Session): Extreme risk protection temporary restraining orders and injunctions, making an appropriation, and providing a penalty. (FE).",
+      "subjects": [
+        "extreme risk protection orders that remove firearms",
+        "firearm surrender and return rules",
+        "felony for possessing a firearm under such an order",
+        "training grants for police on these orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-319-2025.introduced.pdf",
+          "sha256": "9d2bc9995dfe36189209ab49eb0822f8742213209bff822dc3b93e4b245062d3"
+        }
+      }
+    },
+    {
+      "id": "2d68fec7939037bb20b71dd44e89fa798dee6d164804fc6fbe6a1852c9fbc331",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/asm/bill/ab686",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-686-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-686-2023 (LegiScan sponsor list): AB686 (2023-2024 Regular Session): Possession of a dangerous weapon by a person under the age of 18..",
+      "subjects": [
+        "minors' hunting exemption for rifles and shotguns narrowed",
+        "no exemption for minors with short-barrel firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-686-2023.introduced.pdf",
+          "sha256": "641eb1c9551030acba8f7361bfb9cbaed2679eb8d8981fdb961ae3ae4801b613"
+        }
+      }
+    },
+    {
+      "id": "1fd3442384f2a10a8682c46f8f692b79ed713bbe1a7b2759544c6cde0c17f7d5",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/asm/bill/ab717",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-717-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-717-2023 (LegiScan sponsor list): AB717 (2023-2024 Regular Session): Prohibiting firearm accessories that accelerate the rate of fire of a semiautomatic firearm and providing a penalty..",
+      "subjects": [
+        "ban on bump-fire devices and rate-of-fire accessories",
+        "Class G felony penalty",
+        "180-day grace period for possession"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-717-2023.introduced.pdf",
+          "sha256": "5d1d595fbade75b2695a4381ef2f148f22f234dedd15eeb8a62cda325e94847a"
+        }
+      }
+    },
+    {
+      "id": "067834685c9194cf2635c44951bfadf06fbe937dee3744b2b6e708162c19b05c",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/43/jacobson/media/ingf0ush/gun-safety-bills.pdf",
+      "date": "2023-06-13",
+      "date_precision": "day",
+      "passage": "As we heard yesterday, Wisconsin’s kids, our future, relies on common-sense gun safety bills. With universal background checks, extreme risk protection orders, and incentives for stronger storage, we move toward minimizing gun violence across our state.",
+      "note": "Remarks in her own press release (official Assembly site) after a gun-safety coalition press conference. She names universal background checks, extreme risk protection orders and storage incentives.",
+      "subjects": [
+        "check every gun buyer",
+        "universal background checks",
+        "extreme risk protection orders",
+        "safe storage of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.267Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f46d1ee6edb316c8af6570cd6a30f4b7fa7056aa8802bfed5f926af12b88c2c0",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/43/jacobson/media/ingf0ush/gun-safety-bills.pdf",
+      "date": "2023-06-13",
+      "date_precision": "day",
+      "passage": "I’m proud to support these common sense bills and am calling upon my colleagues to schedule a hearing so that Wisconsinites have an opportunity to have their voices heard by their representatives.",
+      "note": "Same release. She says she supports the gun-safety bills and asks for a committee hearing on them.",
+      "subjects": [
+        "universal background checks",
+        "extreme risk protection orders",
+        "hearing on gun safety bills"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.267Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1d1680cb9089f5b288617380ad44674a3d803066deec272c72ace0976ec3bee5",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/50/jacobson/media/e5kamx15/2025-1jan-14-office-of-violence-prevention-creation.pdf",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "passage": "Last session I co-authored bills that addressed bipartisan concerns around school safety, gun safety, and mental health because Wisconsinites should not have to worry about the safety of their loved ones in school or in our communities.",
+      "note": "From her statement on the creation of the Office of Violence Prevention. Says she co-authored gun safety bills in the prior session and wants to keep preventing gun violence. [kept from the first search pass]",
+      "subjects": [
+        "gun safety bills co-authored",
+        "gun violence prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.267Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -173,6 +354,33 @@
       "found": 6,
       "at": "2026-10-28T23:15:12.773Z",
       "by": "identity-wi-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "universal background checks",
+        "extreme risk protection orders",
+        "safe storage",
+        "ban on assault-style guns",
+        "carry permits",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Assembly site https://legis.wisconsin.gov/assembly/43/jacobson/ (confirms the person and office as a state representative; the page shows a gun-safe-summer image with no text)",
+        "official press release list https://legis.wisconsin.gov/assembly/50/jacobson/news-updates/press-releases/ pages 1 to 4: one release on gun safety bills (2023), saved below",
+        "campaign site https://www.jennaforwisconsin.com/ (candidate for the 17th Senate District; nothing on the subject on the page)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia: not fetched (known to return empty to the fetch tool)",
+        "two web searches on name plus subject words: found the 2023 release; a search result describes her as a candidate for the 17th Senate District in the 2026-11-03 general election",
+        "ballot status: described by a search result as a candidate in the 2026-11-03 general election; no ballot page opened",
+        "first search pass stopped early; 1 finding(s) kept from it"
+      ],
+      "found": 3,
+      "at": "2026-11-10T22:15:40.267Z",
+      "by": "source-collector"
     }
   ]
 }

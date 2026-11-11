@@ -1,0 +1,296 @@
+{
+  "id": "WI-AB-319-2025",
+  "scope": "state:wi",
+  "title": "AB319 (2025-2026 Regular Session): Extreme risk protection temporary restraining orders and injunctions, making an appropriation, and providing a penalty. (FE)",
+  "urls": [
+    "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab319",
+    "https://docs.legis.wisconsin.gov/document/proposaltext/2025/REG/AB319.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Deb Andraca",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3736286a-44fb-42ad-8cd0-bcb6a4b985ea"
+    },
+    {
+      "name": "Shelia Stubbs",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b4c1f85b-4fd7-4faf-9198-1dfcbc955941"
+    },
+    {
+      "name": "Joan Fitzgerald",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "26902147-6244-4c6e-959b-14a08eb1b56f"
+    },
+    {
+      "name": "Alex Joers",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8e804443-d7ac-4103-943f-546a76c4c8bf"
+    },
+    {
+      "name": "Lisa Subeck",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "dc0e341f-b827-45f7-bcc6-35b8376979b3"
+    },
+    {
+      "name": "Robyn Vining",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "99443b59-c422-43c4-98ba-070cc2c97491"
+    },
+    {
+      "name": "Karen Kirsch",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0543aef9-357e-4337-8cb2-51c2e1531fea"
+    },
+    {
+      "name": "Brienne Brown",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "77707b96-8245-4013-843c-12181ad35ff8"
+    },
+    {
+      "name": "Mike Bare",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "79760db0-6741-4290-b4ab-b0de68df3ed3"
+    },
+    {
+      "name": "Christine Sinicki",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1c73491e-50bd-4a4f-ac7b-b8e65acdd2bb"
+    },
+    {
+      "name": "Ann Roe",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "732ee90d-016b-4879-9142-c3583130cf42"
+    },
+    {
+      "name": "Andrew Hysell",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "674b7c37-fd85-46e7-9087-3fefde2666a4"
+    },
+    {
+      "name": "Greta Neubauer",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4e65b04a-e607-4905-93ef-1e6ec0552fb6"
+    },
+    {
+      "name": "Sequanna Taylor",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3afc572b-7a49-4cb8-9edd-b57c936cea7b"
+    },
+    {
+      "name": "Lee Snodgrass",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "352ced5f-5466-407c-a839-256de6542b8c"
+    },
+    {
+      "name": "Renuka Mayadev",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "7d91fee1-7c0c-41e5-b1f2-fa93849c772c"
+    },
+    {
+      "name": "Joe Sheehan",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9d545fd6-2ce1-49a1-bf29-ed77bf7b7f06"
+    },
+    {
+      "name": "Vinnie Miresse",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "7c0b6fe8-da1a-45d8-8732-a411915c0d32"
+    },
+    {
+      "name": "Randy Udell",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "79744617-8efa-439f-86fe-b13c253c6cdb"
+    },
+    {
+      "name": "Margaret Arney",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fc46160a-cc85-44b2-a28b-dc7a40a37e8c"
+    },
+    {
+      "name": "Jodi Emerson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "74f9f4da-7fa4-4b49-899f-ab6ebf7ca1e0"
+    },
+    {
+      "name": "Pricilla Prado",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ea15032b-96a6-4135-bf29-a7e60a2c7153"
+    },
+    {
+      "name": "Angelito Tenorio",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "57f9eb3c-0554-43ed-b93b-c1ecfbb269fe"
+    },
+    {
+      "name": "Supreme Omokunde",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "125031ca-566f-4f10-a25d-80e3a7866da4"
+    },
+    {
+      "name": "Lori Palmeri",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5ace10bc-ca43-4165-abf5-c52c5bb1ef01"
+    },
+    {
+      "name": "Ben DeSmidt",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1646f089-0f51-45f8-b893-c5886a0e1a69"
+    },
+    {
+      "name": "Angela Stroud",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4ab2cafc-8eca-4cef-b301-830441a22e75"
+    },
+    {
+      "name": "Clinton Anderson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ad36a437-2193-4725-806b-d9d678579f00"
+    },
+    {
+      "name": "Angelina Cruz",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "11c8f424-55d1-4e28-b297-d6a670a033d6"
+    },
+    {
+      "name": "Russell Goodwin",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "cdd84abe-0a61-40bb-ba3f-6bf7fab74ba3"
+    },
+    {
+      "name": "Jenna Jacobson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1fbf690b-01c5-4d20-a938-de0c56f2e4a8"
+    },
+    {
+      "name": "Kalan Haywood",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6d736e91-2652-401c-b642-09de30f22a09"
+    },
+    {
+      "name": "LaTonya Johnson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "7660721c-b379-48ea-a286-f6ce60a22af4"
+    },
+    {
+      "name": "Christopher Larson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "76a1c7f6-4493-462a-aabd-2307c7cda820"
+    },
+    {
+      "name": "Dianne Hesselbein",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "171dbfaa-58dd-45f4-8526-231d78530461"
+    },
+    {
+      "name": "Sarah Keyeski",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8e5bf4e2-d027-4a15-844d-601c8e0179ab"
+    },
+    {
+      "name": "Kelda Roys",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3079710f-a2bc-4e9d-a72a-69ba41722966"
+    },
+    {
+      "name": "Jeff Smith",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0d156e09-417d-450a-b757-d44171336fed"
+    },
+    {
+      "name": "Melissa Ratcliff",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "248b06ce-21fc-4a94-b808-5ad3656be0a0"
+    },
+    {
+      "name": "Jodi Habush Sinykin",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "dc8045d4-65e6-4b35-a0ec-ce410b091649"
+    },
+    {
+      "name": "Timothy Carpenter",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5130ee75-9b4e-4095-8a78-245f7402d287"
+    },
+    {
+      "name": "Kristin Dassler-Alfheim",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "41359981-e7a3-4d8f-820a-c1a42f4e395a"
+    },
+    {
+      "name": "Mark Spreitzer",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9767d4aa-c6d5-43be-90b9-e619893b535c"
+    },
+    {
+      "name": "Dora Drake",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c52c5db1-44b8-4658-b0d3-07406c63366e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+    "fetched_at": "2026-11-10T21:23:49.722488Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-319-2025.introduced.pdf",
+      "sha256": "9d2bc9995dfe36189209ab49eb0822f8742213209bff822dc3b93e4b245062d3"
+    }
+  },
+  "operative_text": "Sec. 12 (creating 813.124(2t)(a)): A judge shall issue an extreme risk protection temporary restraining order under this subsection prohibiting the respondent from possessing a firearm and ordering the respondent to surrender all firearms in the respondent’s possession if all of the following occur:\nSec. 12 (creating 813.124(2t)(a) 2.): The judge finds all of the following: a. Substantial likelihood that the petition for an injunction will be successful. b. Good cause to believe that there is an immediate and present danger that the respondent may injure themself or another person if the respondent possesses a firearm and that waiting for the injunction hearing may increase the immediate and present danger.\nSec. 12 (creating 813.124(3)(a) 3.): The judge finds by clear and convincing evidence that the respondent is substantially likely to injure themself or another person if the respondent possesses a firearm.\nSec. 12 (creating 813.124(3)(c) 1.): Unless a judge vacates the injunction under par. (d), an injunction under this subsection is effective for a period determined by the judge that is no longer than one year.\nSec. 12 (creating 813.124(4)(c)): Only the following persons may file a petition under this section: 1. A law enforcement officer. 2. A family or household member of the respondent.\nSec. 12 (creating 813.124(5)(d) 2.): If the respondent does not comply with an order issued at a hearing to surrender firearms, or a law enforcement officer has probable cause to believe that the respondent possesses a firearm, the law enforcement officer shall request a search warrant to seize the firearms and may use information contained in the petition to establish probable cause.\nSec. 12 (creating 813.124(6)): Whoever files a petition under this section knowing the information in the petition to be false is subject to the penalty for false swearing under s. 946.32 (1).\nSec. 12 (creating 813.124(7)(a)): A firearm surrendered under this section may not be returned to the respondent until the respondent completes a petition for the return of firearms under par. (c) and a judge or circuit court commissioner determines all of the following:\nSec. 16 (amending 941.29(1m)(f)): The person is subject to an injunction issued under s. 813.12 or 813.122{+, a temporary restraining order or an injunction issued under s. 813.124,+} or [-under-] a tribal injunction\nSec. 1 (creating 16.316): The department shall award grants from the appropriation under s. 20.505 (1) (ft) to law enforcement agencies for the purpose of training law enforcement officers on filing petitions under s. 813.124 and identifying individuals who are substantially likely to injure themselves or another person if the individual possesses a firearm."
+}

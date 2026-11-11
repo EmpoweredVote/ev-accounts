@@ -176,6 +176,37 @@
         "fetched_at": "2026-10-28T23:15:12.781Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "ebef6ea9ab2ae91420259dc69b20ceb45cc9ec0b4afe2566d3c08f6f504519c7",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/sen/bill/sb466",
+      "date": "2024-01-18",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-466-2023",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and concurred in, 2024-01-18: yea (tally 62–35); census gate: none.",
+      "subjects": [
+        "payment networks barred from firearms-retailer merchant codes",
+        "government lists of gun owners banned",
+        "background-check records may not be turned into a purchaser list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-466-2023.enrolled.pdf",
+          "sha256": "6d089108620592801f50b209f20b361fb9a3c5e87a5f8243957c44092e2874a2"
+        }
+      }
     }
   ],
   "searches": [
@@ -215,6 +246,34 @@
       "found": 8,
       "at": "2026-10-28T23:15:12.781Z",
       "by": "identity-wi-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights constitutional amendment",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "status: in scope; sitting Assembly member for District 32, on the 2026 ballot and reported by WUWM as winning the 2026-11-03 general election (https://www.wuwm.com/wisconsin-assembly-district-32-candidates)",
+        "On the Record (0 meetings)",
+        "official Assembly page https://legis.wisconsin.gov/assembly/32/nedweski/ (confirms name and seat; nothing on the subject; /news and /media paths returned 404)",
+        "campaign site https://www.nedweski4assembly.com/platform and home page (platform speaks of safe streets and police funding; nothing on guns or firearms)",
+        "Ballotpedia: blocked: https://ballotpedia.org/Amanda_Nedweski",
+        "blocked: https://www.wispolitics.com/2026/nedweski-campaign-rep-nedweski-election-announcement/",
+        "blocked: https://www.wispolitics.com/wp-content/uploads/2024/04/240424Nedewski.pdf",
+        "iVoterGuide profile https://ivoterguide.com/candidate/70929/race/3409/election/1251 (gun questions marked Did not answer)",
+        "Wisconsin Gun Owners bill watch https://wisconsingunowners.org/?p=73 (no statement by her)",
+        "legislature author index https://docs.legis.wisconsin.gov/2025/legislators/assembly/2757 (opened; sponsor list: covered by LegiScan bulk check)",
+        "web searches (3): nothing on the subject in her own words"
+      ],
+      "found": 0,
+      "at": "2026-11-10T22:15:40.180Z",
+      "by": "source-collector"
     }
   ]
 }

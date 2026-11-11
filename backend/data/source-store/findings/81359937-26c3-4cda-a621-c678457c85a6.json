@@ -348,6 +348,230 @@
         "fetched_at": "2026-10-28T23:15:12.780Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "13244cbcab0b9298111a339603a02186a431005108339971c6aa627092ccd107",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/reg/asm/bill/ab293",
+      "date": "2021-06-09",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-293-2021",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and passed, 2021-06-09: yea (tally 61–36); census gate: none.",
+      "subjects": [
+        "no state or local money to confiscate lawful firearms",
+        "state-made firearms must be stamped",
+        "enforcing new federal gun restrictions made a misdemeanor"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-293-2021.enrolled.pdf",
+          "sha256": "fb9a15b92bd62f92f60a44d4c3def338f5e22c6d253b72fd1ec5e8d381a8369a"
+        }
+      }
+    },
+    {
+      "id": "ebef6ea9ab2ae91420259dc69b20ceb45cc9ec0b4afe2566d3c08f6f504519c7",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/sen/bill/sb466",
+      "date": "2024-01-18",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-466-2023",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and concurred in, 2024-01-18: yea (tally 62–35); census gate: none.",
+      "subjects": [
+        "payment networks barred from firearms-retailer merchant codes",
+        "government lists of gun owners banned",
+        "background-check records may not be turned into a purchaser list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-466-2023.enrolled.pdf",
+          "sha256": "6d089108620592801f50b209f20b361fb9a3c5e87a5f8243957c44092e2874a2"
+        }
+      }
+    },
+    {
+      "id": "1867d7d4b85e816eb13baa216473ebcb94aefc5aa96b5767301d1ff31a69baed",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/reg/sen/bill/sb570",
+      "date": "2022-02-23",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-570-2021",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and concurred in, 2022-02-23: yea (tally 61–35); census gate: none.",
+      "subjects": [
+        "limits civil lawsuits against gun and ammunition makers and sellers",
+        "defendants win attorney fees when a barred suit is dismissed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-570-2021.enrolled.pdf",
+          "sha256": "29c3c905eadc72bf48ca38dd1c01f5ea7582fa8733684688d6d5ce79a216b9db"
+        }
+      }
+    },
+    {
+      "id": "fec6fe2d830f0612da0f3736d7f517e5afae7aa78b027349240a47be1b972758",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/reg/asm/bill/ab495",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-495-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-495-2021 (LegiScan sponsor list): AB495 (2021-2022 Regular Session): Possession of a firearm in a vehicle on school grounds by a person with a license to carry a concealed weapon..",
+      "subjects": [
+        "licensees may keep a firearm in a locked vehicle on school grounds",
+        "firearm within 1,000 feet of a school becomes a forfeiture"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-495-2021.enrolled.pdf",
+          "sha256": "bcb0941e36d8430d4e80f6360c613083e04acb4ab7dd500f5b3ad6001baa0e94"
+        }
+      }
+    },
+    {
+      "id": "892d1bfa2491cb83de385d49e162ada30ea8bd69bb02715bcb26e39361ade18d",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/reg/asm/bill/ab518",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-518-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-518-2021 (LegiScan sponsor list): AB518 (2021-2022 Regular Session): Reciprocity for out-of-state licenses to carry a concealed weapon..",
+      "subjects": [
+        "any other state's concealed-carry permit recognized",
+        "conditions on out-of-state licenses repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-518-2021.enrolled.pdf",
+          "sha256": "469859a5ee6fc17b715889737c29fbedd7f319ad1ae770e092db717467163bc7"
+        }
+      }
+    },
+    {
+      "id": "91c7b600bcb1a3f39f913abb57fc1b37c1954c44105292a9e5e81b1d5ac48681",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/asm/bill/ab801",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-801-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-801-2023 (LegiScan sponsor list): AB801 (2023-2024 Regular Session): Possession of a firearm by a licensee in a place of worship located on the grounds of a private school..",
+      "subjects": [
+        "licensees may carry in a place of worship on private school grounds",
+        "licensees exempt from 1,000-foot school-zone forfeiture",
+        "definition of school narrowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-801-2023.introduced.pdf",
+          "sha256": "16c20b1a45da21cfdd8ed1a9e8fe7da04b46b52f2f89506a5b7be328f58bee41"
+        }
+      }
+    },
+    {
+      "id": "951b12a2942af6eaca26d3161b93c704c9e346f57573e6c7ce4b3640f5fd2a95",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/sen/bill/sb466",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-466-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-SB-466-2023 (LegiScan sponsor list): SB466 (2023-2024 Regular Session): Prohibiting firearms merchant category codes in payment card transactions, prohibiting government lists of firearm owners, and providing a penalty..",
+      "subjects": [
+        "payment networks barred from firearms-retailer merchant codes",
+        "government lists of gun owners banned",
+        "background-check records may not be turned into a purchaser list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-466-2023.enrolled.pdf",
+          "sha256": "6d089108620592801f50b209f20b361fb9a3c5e87a5f8243957c44092e2874a2"
+        }
+      }
+    },
+    {
+      "id": "60144dfb0f9dba77e14276df987598c762fa620d054ab32c15eadacc8bed5ff3",
+      "kind": "own-words",
+      "url": "https://www.wispolitics.com/2019/rep-dittrich-measured-action-versus-manipulation/",
+      "date": "2019-09-19",
+      "date_precision": "day",
+      "passage": "Wisconsin is already ahead of the game when it comes to separating those with mental health issues from firearms.",
+      "note": "From her 2019 release about the governor's extreme-risk (red-flag) order proposal. She says state law already restricts gun possession for people found dangerous, and that she would pursue measured steps that keep people safe without infringing on 2nd Amendment rights. Only this one sentence could be copied whole; the page is blocked to curl.",
+      "subjects": [
+        "red-flag or extreme-risk orders",
+        "keeping guns from people with mental health issues",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.195Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -388,6 +612,30 @@
       "found": 13,
       "at": "2026-10-28T23:15:12.780Z",
       "by": "identity-wi-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "check every gun buyer",
+        "red-flag or extreme-risk orders",
+        "carry a gun",
+        "gun rights / Second Amendment statements",
+        "bills sponsored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search: name plus gun and Second Amendment words (several searches)",
+        "official member page (https://legis.wisconsin.gov/assembly/99/dittrich/): nothing on the subject",
+        "2025 state-of-the-state release PDF (https://legis.wisconsin.gov/assembly/99/dittrich/media/lqojq3vw/2025-sots.pdf): not readable by fetch tool, not reviewed",
+        "WisPolitics 2019 release (fetch tool only): saved; blocked: curl of https://www.wispolitics.com/2019/rep-dittrich-measured-action-versus-manipulation/ (403), so only the sentence the fetch tool returned whole is copied",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia not reviewed (returns empty to fetch tool)"
+      ],
+      "found": 1,
+      "at": "2026-11-10T22:15:40.195Z",
+      "by": "source-collector"
     }
   ]
 }

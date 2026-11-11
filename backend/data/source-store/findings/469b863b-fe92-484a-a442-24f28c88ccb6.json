@@ -240,6 +240,205 @@
         "fetched_at": "2026-10-28T23:15:12.778Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "4c0111f205f85d81e867147517d245417886ae98cd70472eda8af63dbbddc355",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/reg/asm/bill/ab495",
+      "date": "2022-02-15",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-495-2021",
+      "act": "yea",
+      "motion": "Senate: Read a third time and concurred in",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Senate, Senate: Read a third time and concurred in, 2022-02-15: yea (tally 20–12); census gate: none.",
+      "subjects": [
+        "licensees may keep a firearm in a locked vehicle on school grounds",
+        "firearm within 1,000 feet of a school becomes a forfeiture"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-495-2021.enrolled.pdf",
+          "sha256": "bcb0941e36d8430d4e80f6360c613083e04acb4ab7dd500f5b3ad6001baa0e94"
+        }
+      }
+    },
+    {
+      "id": "8c27f3e5c9654025f1e3bee448fd2e6f818429e505d20ebc73ce9d900aa0f059",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/sen/bill/sb466",
+      "date": "2024-01-16",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-466-2023",
+      "act": "yea",
+      "motion": "Senate: Read a third time and passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Senate, Senate: Read a third time and passed, 2024-01-16: yea (tally 22–10); census gate: none.",
+      "subjects": [
+        "payment networks barred from firearms-retailer merchant codes",
+        "government lists of gun owners banned",
+        "background-check records may not be turned into a purchaser list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-466-2023.enrolled.pdf",
+          "sha256": "6d089108620592801f50b209f20b361fb9a3c5e87a5f8243957c44092e2874a2"
+        }
+      }
+    },
+    {
+      "id": "8b78d2aed0b4a380a52c7aff43404ca364bbd885c4a731f2f69653278c0f0dd8",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/reg/sen/bill/sb570",
+      "date": "2021-11-08",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-570-2021",
+      "act": "yea",
+      "motion": "Senate: Read a third time and passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Senate, Senate: Read a third time and passed, 2021-11-08: yea (tally 20–12); census gate: none.",
+      "subjects": [
+        "limits civil lawsuits against gun and ammunition makers and sellers",
+        "defendants win attorney fees when a barred suit is dismissed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-570-2021.enrolled.pdf",
+          "sha256": "29c3c905eadc72bf48ca38dd1c01f5ea7582fa8733684688d6d5ce79a216b9db"
+        }
+      }
+    },
+    {
+      "id": "923a022e16f9cf8e5e8cacf658301725877a90d04b2d5b171c7ceff1993065ca",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2017/proposals/reg/asm/bill/ab247",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-247-2017",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-247-2017 (LegiScan sponsor list): AB247 (2017-2018 Regular Session): Going armed with a firearm and electric weapons, licenses for carrying a concealed weapon, trespassing while armed with a firearm, and providing criminal penalties. (FE).",
+      "subjects": [
+        "general ban on going armed with a concealed weapon repealed",
+        "school-zone and many place-based firearm carry bans repealed; schools may post against firearms",
+        "optional basic concealed-carry license without training",
+        "employers may not bar guns in employees' own vehicles",
+        "local ban on carrying on public transit barred",
+        "stun-gun possession limited to people barred from firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-247-2017.introduced.pdf",
+          "sha256": "7a6e379c87e40d2f52455f04fb4f37af2fe8e9c8de450c8b86e6ce41ac1b8155"
+        }
+      }
+    },
+    {
+      "id": "9ac9a841154c6ca3e5469e35150289cb389ac532fb470b843dcaac7c3c0a472a",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/reg/asm/bill/ab669",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-669-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-669-2021 (LegiScan sponsor list): AB669 (2021-2022 Regular Session): Right to carry a weapon in this state. (FE).",
+      "subjects": [
+        "general ban on carrying a concealed weapon without a license removed",
+        "licence-to-carry restrictions on places repealed (government buildings, taverns, wildlife refuges, vehicles)",
+        "local bans on carrying on mass transit barred",
+        "employers barred from banning guns in employees' own vehicles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-669-2021.introduced.pdf",
+          "sha256": "9fdc2faa5d231df35351b3a61d539d1de4242a8713e3c1f97ceb9c1816b9c38d"
+        }
+      }
+    },
+    {
+      "id": "d7dbb254a5c6d6256e1116fb8eccf35f34078e0879dc3d9aa494068a3a369cbe",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2017/proposals/reg/sen/bill/sb7",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-7-2017",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-SB-7-2017 (LegiScan sponsor list): SB7 (2017-2018 Regular Session): Expiration dates of renewed licenses to carry a concealed weapon..",
+      "subjects": [
+        "renewed concealed-carry license term set at 5 years",
+        "early renewal runs from old expiration date"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-7-2017.chaptered.pdf",
+          "sha256": "50c682283255b193e4b97107991d62678cb6783d79626a797a99a6a76a44b8db"
+        }
+      }
+    },
+    {
+      "id": "b7700db8be726918143979824c4831388b1447ce99bfc2dbae7a0c73823e9c4c",
+      "kind": "own-words",
+      "url": "https://patricktestin.com/issues/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "The Second Amendment is very clear when it says “shall not be infringed.” While the federal government ramps up its administrative gun grab policies through executive fiat, Wisconsin needs state executive officers that will stand strong for one of Wisconsinites’ most important rights.",
+      "note": "Text under the heading 'Safeguarding Our Second Amendment Rights' on his campaign issues page. The page carries no date; its other text refers to the 2020 shutdowns, so it appears to be from an earlier campaign.",
+      "subjects": [
+        "Second Amendment and gun rights in general",
+        "federal agency gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.331Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -283,6 +482,33 @@
       "found": 9,
       "at": "2026-10-28T23:15:12.778Z",
       "by": "identity-wi-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry a gun without a permit",
+        "repeal of gun laws",
+        "Second Amendment and gun rights in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope: https://legis.wisconsin.gov/senate/24/testin/ is the state senator's own page; 2026 candidacy not asserted by the brief",
+        "sponsor list: covered by LegiScan bulk check",
+        "official site https://legis.wisconsin.gov/senate/24/testin/ and its press release list: nothing on the subject",
+        "campaign site https://patricktestin.com/ and https://patricktestin.com/issues/: issues page saved",
+        "Ballotpedia: not relied on (returns empty to fetch)",
+        "not reviewed: https://civicmedia.us/shows/perspective/2026/03/24/senator-patrick-testin-march-update (video/audio interview)",
+        "not reviewed: https://www.wispolitics.com/2017/wisconsin-firearm-owners-thank-senate-judiciary-committee-members-for-recommending-passage-of-right-to-carry-bill/ (a search snippet says he voted in committee in 2017; not fetched)",
+        "news searches on his name plus gun words: no direct quote from him found"
+      ],
+      "found": 1,
+      "at": "2026-11-10T22:15:40.331Z",
+      "by": "source-collector"
     }
   ]
 }

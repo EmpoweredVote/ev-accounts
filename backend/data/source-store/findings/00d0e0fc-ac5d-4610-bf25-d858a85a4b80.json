@@ -87,6 +87,182 @@
         "fetched_at": "2026-10-28T23:15:12.785Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "228d2ccde35f4d39b822684561143ebb75affbec5624e1402e4fd3424d55cf1c",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/sen/bill/sb607",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-607-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-SB-607-2025 (LegiScan sponsor list): SB607 (2025-2026 Regular Session): Right to carry a weapon in this state, licenses to carry a concealed weapon, and providing a penalty. (FE).",
+      "subjects": [
+        "permitless concealed carry (licence no longer required)",
+        "loaded-firearm-in-vehicle ban repealed",
+        "list of places where firearms are prohibited rewritten",
+        "employers may not bar carrying or storing weapons in an employee’s vehicle"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-607-2025.introduced.pdf",
+          "sha256": "9c15b7c2f009be0489a31087fcad7afd74130ebeab0157288f50e1d9b5e1fea2"
+        }
+      }
+    },
+    {
+      "id": "ecd4337d87ea7949b6bb14a2f7d1f653747776f9e5e15821adc1e0ce6b9950e0",
+      "kind": "own-words",
+      "url": "https://dukeforwisconsin.com/?p=457",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "As a staunch supporter of the 2nd Amendment, he is committed to responsible gun ownership and the right to defend yourself and your family.",
+      "note": "Campaign-site biography post (third-person text published on his own campaign site; the post concerns his 2024 Assembly run). It states his commitment to the Second Amendment and responsible gun ownership.",
+      "subjects": [
+        "Second Amendment",
+        "responsible gun ownership",
+        "right to defend yourself and family"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.251Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9aa4c283a4a6141a2595c9455bc946060d5d9819d7694a8c6ebcc4abe345a0f4",
+      "kind": "own-words",
+      "url": "https://dukeforwisconsin.com/?p=203",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "A proud conservative with strong family values, United States Air Force veteran, NRA Member, Wisconsin Bear Association Member, a longtime hunter, gun owner, leader, and fiscal conservative.",
+      "note": "Campaign about page bio (undated; footer says 2024-2026 and he is seeking re-election in November 2026). Lists NRA membership, hunting and gun ownership. The same page lists 'Protect the 2nd Amendment' among his priorities. [kept from the first search pass]",
+      "subjects": [
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.251Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7dfaeed4423af2eba5bcbdfef6941ede1d99154ef80a3bbb705fcb18a2453612",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/REG/AJR112",
+      "date": "2025-10-29",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-112-2025",
+      "act": "sponsor",
+      "note": "Named among the representatives introducing Assembly Joint Resolution 112 (co-author), a proposed change to section 25 of article I of the state constitution on the right to keep and bear arms. Recommended as amended by the Judiciary committee 5-3 on 2026-01-22; the page shows it failed to adopt on 2026-03-23 pursuant to Senate Joint Resolution 1. [kept from the first search pass]",
+      "subjects": [
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.251Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a4083f20329d584f471836d0245900925cfbb43fc6813c4233f7ddfd0d794538",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab609",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-609-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-609-2025 (LegiScan sponsor list): AB609 (2025-2026 Regular Session): Right to carry a weapon in this state, licenses to carry a concealed weapon, and providing a penalty. (FE).",
+      "subjects": [
+        "permitless concealed carry (general ban repealed)",
+        "license kept but background check limited to federal prohibitions",
+        "list of places firearms are barred rewritten, Class A misdemeanor",
+        "employer may not bar weapons stored in employee vehicle",
+        "loaded firearm in vehicle ban dropped"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T23:03:34.524773Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-609-2025.introduced.pdf",
+          "sha256": "e7626966e4cf1b8cb1ab34dfdfb2b7b2a43443808df4408ec5e1314bfd60b6f3"
+        }
+      }
+    },
+    {
+      "id": "1faff1fda6eea2a638b4be07322419dac5f0dd82b1b80737edddc694bd53b080",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/joint_resolution/ajr112",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-112-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AJR-112-2025 (LegiScan sponsor list): AJR112 (2025-2026 Regular Session): The right to keep and bear arms (first consideration)..",
+      "subjects": [
+        "constitutional right to bear arms made inalienable",
+        "any gun restriction must pass strict scrutiny"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T23:03:34.524773Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AJR-112-2025.introduced.pdf",
+          "sha256": "4a5891db107d79f5a0da8091eef17592df50450f084f490052f2c42014abc8c4"
+        }
+      }
+    },
+    {
+      "id": "50ac833738e5cad9376ef55e0d790f63acf942c22f318d095e1bb1d093d9d98d",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/sen/joint_resolution/sjr105",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-105-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-SJR-105-2025 (LegiScan sponsor list): SJR105 (2025-2026 Regular Session): The right to keep and bear arms (first consideration)..",
+      "subjects": [
+        "constitutional right to bear arms made inalienable",
+        "any gun restriction must pass strict scrutiny"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T23:03:34.524773Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SJR-105-2025.introduced.pdf",
+          "sha256": "623b89b606cfd9f7d718fe1fe40c25440e25ddd2d3bb71c60d7ad3cf0f634fa3"
+        }
+      }
     }
   ],
   "searches": [
@@ -131,6 +307,32 @@
       "found": 3,
       "at": "2026-10-28T23:15:12.785Z",
       "by": "identity-wi-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun ownership",
+        "carry a gun without a permit",
+        "right to keep and bear arms amendment",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site dukeforwisconsin.com (home page shows a re-election campaign for the 2026-11-03 election; one 2024 campaign post has one sentence on the subject)",
+        "official Assembly site press releases page https://legis.wisconsin.gov/assembly/75/tucker/news-updates/press-releases (empty: no articles listed)",
+        "official legislator page https://docs.legis.wisconsin.gov/2025/legislators/assembly/2897 (confirms the person and office)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia: not fetched (known to return empty to the fetch tool)",
+        "two web searches on name plus subject words: no own words on the subject beyond the campaign site; a general-news result had nothing quoting him",
+        "first search pass stopped early; 2 finding(s) kept from it"
+      ],
+      "found": 3,
+      "at": "2026-11-10T22:15:40.251Z",
+      "by": "source-collector"
     }
   ]
 }

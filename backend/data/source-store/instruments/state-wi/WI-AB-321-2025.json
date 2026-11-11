@@ -1,0 +1,308 @@
+{
+  "id": "WI-AB-321-2025",
+  "scope": "state:wi",
+  "title": "AB321 (2025-2026 Regular Session): Prohibition against undetectable firearms, possessing a frame or receiver of a firearm without a serial number, and providing a penalty.",
+  "urls": [
+    "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab321",
+    "https://docs.legis.wisconsin.gov/document/proposaltext/2025/REG/AB321.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Alex Joers",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8e804443-d7ac-4103-943f-546a76c4c8bf"
+    },
+    {
+      "name": "Joan Fitzgerald",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "26902147-6244-4c6e-959b-14a08eb1b56f"
+    },
+    {
+      "name": "Lisa Subeck",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "dc0e341f-b827-45f7-bcc6-35b8376979b3"
+    },
+    {
+      "name": "Francesca Hong",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f1212497-7049-413a-ac19-81c5baba900d"
+    },
+    {
+      "name": "Deb Andraca",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3736286a-44fb-42ad-8cd0-bcb6a4b985ea"
+    },
+    {
+      "name": "Shelia Stubbs",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b4c1f85b-4fd7-4faf-9198-1dfcbc955941"
+    },
+    {
+      "name": "Robyn Vining",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "99443b59-c422-43c4-98ba-070cc2c97491"
+    },
+    {
+      "name": "Ryan Clancy",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0207b7d2-1195-4672-bb1e-767b00d3f6e4"
+    },
+    {
+      "name": "Margaret Arney",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fc46160a-cc85-44b2-a28b-dc7a40a37e8c"
+    },
+    {
+      "name": "Mike Bare",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "79760db0-6741-4290-b4ab-b0de68df3ed3"
+    },
+    {
+      "name": "Brienne Brown",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "77707b96-8245-4013-843c-12181ad35ff8"
+    },
+    {
+      "name": "Angelina Cruz",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "11c8f424-55d1-4e28-b297-d6a670a033d6"
+    },
+    {
+      "name": "Ben DeSmidt",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1646f089-0f51-45f8-b893-c5886a0e1a69"
+    },
+    {
+      "name": "Jodi Emerson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "74f9f4da-7fa4-4b49-899f-ab6ebf7ca1e0"
+    },
+    {
+      "name": "Russell Goodwin",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "cdd84abe-0a61-40bb-ba3f-6bf7fab74ba3"
+    },
+    {
+      "name": "Andrew Hysell",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "674b7c37-fd85-46e7-9087-3fefde2666a4"
+    },
+    {
+      "name": "Kalan Haywood",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6d736e91-2652-401c-b642-09de30f22a09"
+    },
+    {
+      "name": "Tara Johnson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "94b1866a-cc0a-409a-bd21-367abf8be938"
+    },
+    {
+      "name": "Karen Kirsch",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0543aef9-357e-4337-8cb2-51c2e1531fea"
+    },
+    {
+      "name": "Renuka Mayadev",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "7d91fee1-7c0c-41e5-b1f2-fa93849c772c"
+    },
+    {
+      "name": "Vinnie Miresse",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "7c0b6fe8-da1a-45d8-8732-a411915c0d32"
+    },
+    {
+      "name": "Supreme Omokunde",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "125031ca-566f-4f10-a25d-80e3a7866da4"
+    },
+    {
+      "name": "Greta Neubauer",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4e65b04a-e607-4905-93ef-1e6ec0552fb6"
+    },
+    {
+      "name": "Lori Palmeri",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5ace10bc-ca43-4165-abf5-c52c5bb1ef01"
+    },
+    {
+      "name": "Pricilla Prado",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ea15032b-96a6-4135-bf29-a7e60a2c7153"
+    },
+    {
+      "name": "Amaad Rivera-Wagner",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c2eecef6-b969-43d0-9d19-7d048bf412e5"
+    },
+    {
+      "name": "Ann Roe",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "732ee90d-016b-4879-9142-c3583130cf42"
+    },
+    {
+      "name": "Joe Sheehan",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9d545fd6-2ce1-49a1-bf29-ed77bf7b7f06"
+    },
+    {
+      "name": "Christine Sinicki",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1c73491e-50bd-4a4f-ac7b-b8e65acdd2bb"
+    },
+    {
+      "name": "Lee Snodgrass",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "352ced5f-5466-407c-a839-256de6542b8c"
+    },
+    {
+      "name": "Angela Stroud",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4ab2cafc-8eca-4cef-b301-830441a22e75"
+    },
+    {
+      "name": "Sequanna Taylor",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3afc572b-7a49-4cb8-9edd-b57c936cea7b"
+    },
+    {
+      "name": "Angelito Tenorio",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "57f9eb3c-0554-43ed-b93b-c1ecfbb269fe"
+    },
+    {
+      "name": "Randy Udell",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "79744617-8efa-439f-86fe-b13c253c6cdb"
+    },
+    {
+      "name": "Dianne Hesselbein",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "171dbfaa-58dd-45f4-8526-231d78530461"
+    },
+    {
+      "name": "LaTonya Johnson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "7660721c-b379-48ea-a286-f6ce60a22af4"
+    },
+    {
+      "name": "Christopher Larson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "76a1c7f6-4493-462a-aabd-2307c7cda820"
+    },
+    {
+      "name": "Kelda Roys",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3079710f-a2bc-4e9d-a72a-69ba41722966"
+    },
+    {
+      "name": "Kristin Dassler-Alfheim",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "41359981-e7a3-4d8f-820a-c1a42f4e395a"
+    },
+    {
+      "name": "Dora Drake",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c52c5db1-44b8-4658-b0d3-07406c63366e"
+    },
+    {
+      "name": "Jodi Habush Sinykin",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "dc8045d4-65e6-4b35-a0ec-ce410b091649"
+    },
+    {
+      "name": "Sarah Keyeski",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8e5bf4e2-d027-4a15-844d-601c8e0179ab"
+    },
+    {
+      "name": "Melissa Ratcliff",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "248b06ce-21fc-4a94-b808-5ad3656be0a0"
+    },
+    {
+      "name": "Jeff Smith",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0d156e09-417d-450a-b757-d44171336fed"
+    },
+    {
+      "name": "Mark Spreitzer",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9767d4aa-c6d5-43be-90b9-e619893b535c"
+    },
+    {
+      "name": "Timothy Carpenter",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5130ee75-9b4e-4095-8a78-245f7402d287"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+    "fetched_at": "2026-11-10T21:23:49.722488Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-321-2025.introduced.pdf",
+      "sha256": "c772127383cb636a604d984fd0a761553ac3167317db9fe3ee6994c4a2ba5349"
+    }
+  },
+  "operative_text": "Sec. 3 (creating 941.293(2)(a)1.): Whoever sells, offers to sell, transfers, transports, manufactures, possesses, or goes armed with an undetectable firearm is guilty of a Class G felony.\nSec. 3 (creating 941.293(2)(a)2.): Whoever sells, offers to sell, transfers, posts, provides to another, or possesses plans for manufacturing an undetectable firearm is guilty of a Class H felony.\nSec. 3 (creating 941.293(3)(a)): Whoever possesses a frame or a receiver of a firearm that is not attached to a firearm and that is not marked or engraved with a serial number is guilty of a Class I felony.\nSec. 3 (creating 941.293(3)(b)): Paragraph (a) does not apply to a firearm frame or receiver manufactured before 1968, a person who is licensed by a state or the federal government to manufacture undetectable firearms while the person is on official duty, a law enforcement officer while on official duty, or armed forces or national guard personnel while on official duty.\nSec. 2 (amending 941.291(1)(b)): ... 941.28, 941.29, {+941.293,+} 941.30, ..."
+}

@@ -1,0 +1,314 @@
+{
+  "id": "WI-AB-495-2021",
+  "scope": "state:wi",
+  "title": "AB495 (2021-2022 Regular Session): Possession of a firearm in a vehicle on school grounds by a person with a license to carry a concealed weapon.",
+  "urls": [
+    "https://docs.legis.wisconsin.gov/2021/proposals/reg/asm/bill/ab495",
+    "https://docs.legis.wisconsin.gov/document/proposaltext/2021/REG/AB495.pdf",
+    "https://docs.legis.wisconsin.gov/document/enrolledbills/2021/REG/AB495.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Robert Brooks",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9419fa91-b7e4-48df-a00b-fc10d225f321"
+    },
+    {
+      "name": "David Armstrong",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "374fcadb-a124-4a02-b529-5a63ec494bbf"
+    },
+    {
+      "name": "Elijah Behnke",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d68b3730-048f-4cb5-a952-104dd75409df"
+    },
+    {
+      "name": "Janel Brandtjen",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Calvin Callahan",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1073fd5c-0bac-4f03-8254-892351795937"
+    },
+    {
+      "name": "Rachael Cabral-Guevara",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1cdcaa5d-8576-44d4-8d9f-34f321924898"
+    },
+    {
+      "name": "Barbara Dittrich",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "81359937-26c3-4cda-a621-c678457c85a6"
+    },
+    {
+      "name": "Rick Gundrum",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fff18b53-315b-4091-81ca-6f96d881613f"
+    },
+    {
+      "name": "Cody Horlacher",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Dan Knodl",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5cf0f099-b460-40f4-9e1a-0663315da02d"
+    },
+    {
+      "name": "Clint Moses",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "aa5b5294-df1a-47dd-bca9-1d7672d29417"
+    },
+    {
+      "name": "David Murphy",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3d3b7e41-b4d9-44e9-940e-e65fa85489b7"
+    },
+    {
+      "name": "Michael Schraa",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Paul Tittl",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0d122b39-f293-465a-8d3c-bfde10471705"
+    },
+    {
+      "name": "Chuck Wichgers",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3db74c79-d91c-4bfb-9d1e-7cfc022cde25"
+    },
+    {
+      "name": "Andre Jacque",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d677bfee-6bc5-4ad1-bb6a-fb6e5b6fe284"
+    },
+    {
+      "name": "Joan Ballweg",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Mary Felzkowski",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d36c9fc0-3aef-4cb7-8e0f-e8d7a4f5576b"
+    },
+    {
+      "name": "Steve Nass",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f8901d87-cb68-480a-84cd-b40290c1bb8b"
+    },
+    {
+      "name": "Van Wanggaard",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "908761b2-ab7f-4307-a073-a5a00e220b43"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2022-02-15",
+      "body": "WI Senate",
+      "motion": "Senate: Read a third time and concurred in",
+      "kind": "roll-call",
+      "yes": 20,
+      "no": 12,
+      "absent": 1,
+      "note": "LegiScan roll call 1144128; NV counted with absent in the tally, members keep LegiScan marks",
+      "members": [
+        {
+          "name": "Kelda Roys",
+          "vote": "nay",
+          "politician_id": "3079710f-a2bc-4e9d-a72a-69ba41722966"
+        },
+        {
+          "name": "Jeff Smith",
+          "vote": "nay",
+          "politician_id": "0d156e09-417d-450a-b757-d44171336fed"
+        },
+        {
+          "name": "Robert Wirch",
+          "vote": "nay",
+          "politician_id": "6e3e9f2e-c393-45ef-b702-8bba4c209220"
+        },
+        {
+          "name": "Joan Ballweg",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Cowles",
+          "vote": "yea"
+        },
+        {
+          "name": "Jon Erpenbach",
+          "vote": "nay"
+        },
+        {
+          "name": "Lena Taylor",
+          "vote": "nay"
+        },
+        {
+          "name": "Alberta Darling",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry Petrowski",
+          "vote": "yea"
+        },
+        {
+          "name": "Roger Roth",
+          "vote": "yea"
+        },
+        {
+          "name": "Timothy Carpenter",
+          "vote": "nay",
+          "politician_id": "5130ee75-9b4e-4095-8a78-245f7402d287"
+        },
+        {
+          "name": "Steve Nass",
+          "vote": "yea",
+          "politician_id": "f8901d87-cb68-480a-84cd-b40290c1bb8b"
+        },
+        {
+          "name": "Van Wanggaard",
+          "vote": "yea",
+          "politician_id": "908761b2-ab7f-4307-a073-a5a00e220b43"
+        },
+        {
+          "name": "Kathleen Bernier",
+          "vote": "yea"
+        },
+        {
+          "name": "Andre Jacque",
+          "vote": "yea",
+          "politician_id": "d677bfee-6bc5-4ad1-bb6a-fb6e5b6fe284"
+        },
+        {
+          "name": "Chris Kapenga",
+          "vote": "yea",
+          "politician_id": "fc2aa973-5043-47bc-9bfc-28ed52594724"
+        },
+        {
+          "name": "Dale Kooyenga",
+          "vote": "abstain"
+        },
+        {
+          "name": "Howard Marklein",
+          "vote": "yea",
+          "politician_id": "18528793-98ff-447e-80a1-78c6f4edef10"
+        },
+        {
+          "name": "Christopher Larson",
+          "vote": "nay",
+          "politician_id": "76a1c7f6-4493-462a-aabd-2307c7cda820"
+        },
+        {
+          "name": "Janet Bewley",
+          "vote": "nay"
+        },
+        {
+          "name": "Janis Ringhand",
+          "vote": "nay"
+        },
+        {
+          "name": "Duey Stroebel",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Felzkowski",
+          "vote": "yea",
+          "politician_id": "d36c9fc0-3aef-4cb7-8e0f-e8d7a4f5576b"
+        },
+        {
+          "name": "John Jagler",
+          "vote": "yea",
+          "politician_id": "6500d1e2-b7f3-4df4-9ca9-c973d91dd573"
+        },
+        {
+          "name": "LaTonya Johnson",
+          "vote": "nay",
+          "politician_id": "7660721c-b379-48ea-a286-f6ce60a22af4"
+        },
+        {
+          "name": "Melissa Agard",
+          "vote": "nay"
+        },
+        {
+          "name": "Rob Stafsholt",
+          "vote": "yea",
+          "politician_id": "31542340-858b-49de-8f46-f3054f00709d"
+        },
+        {
+          "name": "Dan Feyen",
+          "vote": "yea",
+          "politician_id": "8ebb711d-55b2-49f6-ad4c-ea9c0ff066ca"
+        },
+        {
+          "name": "Patrick Testin",
+          "vote": "yea",
+          "politician_id": "469b863b-fe92-484a-a442-24f28c88ccb6"
+        },
+        {
+          "name": "Devin LeMahieu",
+          "vote": "yea",
+          "politician_id": "67637e5a-0268-4440-a38f-2b57f2b27a43"
+        },
+        {
+          "name": "Julian Bradley",
+          "vote": "yea",
+          "politician_id": "7fdcb712-d201-49d4-9d2b-c28bfa780702"
+        },
+        {
+          "name": "Brad Pfaff",
+          "vote": "nay",
+          "politician_id": "02b0598e-5409-4f01-93ee-9ee2cb8ac015"
+        },
+        {
+          "name": "Eric Wimberger",
+          "vote": "yea",
+          "politician_id": "47addb29-85ad-4c09-8886-7e5e224da353"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+    "fetched_at": "2026-11-10T21:23:49.722488Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-495-2021.enrolled.pdf",
+      "sha256": "bcb0941e36d8430d4e80f6360c613083e04acb4ab7dd500f5b3ad6001baa0e94"
+    }
+  },
+  "operative_text": "Sec. 1 (amending 175.60 (2g) (a)): 175.60 (2g) (a) A licensee or an out-of-state licensee may carry a concealed weapon anywhere in this state except as provided under subs. (15m) and (16) and [-ss-]. {+s.+} 943.13 (1m) (c) and{+, subject to s. 948.605 (2) (c), s.+} 948.605 (2) [-(b) 1r.-] {+(a) 1.+}\nSec. 4 (renumbering and amending 948.605 (2) (a)): 948.605 (2) (a) 1. Any individual who knowingly possesses a firearm at a place that the individual knows, or has reasonable cause to believe, is in or on the grounds of a school is guilty of a Class I felony. {+2.+} Any individual who knowingly possesses a firearm at a place that the individual knows, or has reasonable cause to believe, is within 1,000 feet of the grounds of a school is subject to a Class B forfeiture.\nSec. 5 (renumbering and amending 948.605 (2) (b) 1r. as (2) (c)): 948.605 (2) (c) [-Except if the person is in or on the grounds of a school,-] {+Paragraph (a) 1. does not apply to a firearm, whether loaded or unloaded, that is possessed by+} a licensee[-, as defined in s. 175.60 (1) (d),-] or an out-of-state licensee[-, as defined in s. 175.60 (1) (g)-] {+ if the firearm is in a motor vehicle and, if the licensee or out-of-state licensee leaves the motor vehicle, the motor vehicle is locked and the firearm is not visible. Paragraph (a) 2. does not apply to a licensee or an out-of-state licensee+}."
+}

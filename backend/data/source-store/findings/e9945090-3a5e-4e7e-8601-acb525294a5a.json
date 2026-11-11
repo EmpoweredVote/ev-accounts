@@ -22,6 +22,200 @@
         "fetched_at": "2026-10-28T23:15:12.788Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "fcb5a406d83fc8768978701cce8dcfcd8665233bcc139c5c2e006cc458e00e01",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2017/proposals/reg/asm/bill/ab65",
+      "date": "2018-02-20",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-65-2017",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and passed",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and passed, 2018-02-20: nay (tally 71–24); census gate: multi-subject.",
+      "subjects": [
+        "straw purchase of firearms made a felony",
+        "felony for lying on the purchase form about buying for a prohibited person",
+        "4-year minimum prison term for repeat offenders with firearm crimes",
+        "state grants for armed school safety officers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-65-2017.engrossed.pdf",
+          "sha256": "2e7ee03408a90c9c4b974da88807713557d8c903e33a989618307f9a3a296900"
+        }
+      }
+    },
+    {
+      "id": "6bc061acb2bcb176489ff9287507dfbaa402bbbaa5aade5ba87905a3639e14b1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2017/proposals/reg/sen/bill/sb7",
+      "date": "2017-03-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-7-2017",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and concurred in, 2017-03-09: yea (tally 92–7); census gate: near-unanimous.",
+      "subjects": [
+        "renewed concealed-carry license term set at 5 years",
+        "early renewal runs from old expiration date"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-7-2017.chaptered.pdf",
+          "sha256": "50c682283255b193e4b97107991d62678cb6783d79626a797a99a6a76a44b8db"
+        }
+      }
+    },
+    {
+      "id": "9d48cfa32272e111b51a88b40ae5db5d795387a12fef81ec17e0256eaed4a532",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2017/proposals/reg/asm/bill/ab65",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-65-2017",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-65-2017 (LegiScan sponsor list): AB65 (2017-2018 Regular Session): Sales and transfers of firearms and providing a criminal penalty. (FE).",
+      "subjects": [
+        "straw purchase of firearms made a felony",
+        "felony for lying on the purchase form about buying for a prohibited person",
+        "4-year minimum prison term for repeat offenders with firearm crimes",
+        "state grants for armed school safety officers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-65-2017.engrossed.pdf",
+          "sha256": "2e7ee03408a90c9c4b974da88807713557d8c903e33a989618307f9a3a296900"
+        }
+      }
+    },
+    {
+      "id": "28b1881aed1e5d5b830372d1a24149dd2fca5a08716099f012577d203d606de2",
+      "kind": "own-words",
+      "url": "https://www.wispolitics.com/2018/rep-crowley-school-safety-starts-with-expanding-background-checks/",
+      "date": "2018-03-15",
+      "date_precision": "day",
+      "passage": "Background checks are the single most effective way to save lives and keep guns out of the hands of dangerous people.",
+      "note": "State representative press statement on school safety; says expanding background checks is the step he favors. Text obtained through the fetch tool because the direct page returned 403.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.243Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1fdd8f31f3094caf038f9ee9e20d9455b334c1b20055854e0baef381b4c138cc",
+      "kind": "own-words",
+      "url": "https://www.wispolitics.com/2018/rep-crowley-school-safety-starts-with-expanding-background-checks/",
+      "date": "2018-03-15",
+      "date_precision": "day",
+      "passage": "Background checks save lives. Background checks save children's lives.",
+      "note": "Same statement; repeats the case for background checks.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.243Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2d28019454944d5eee48d057d7012c9793236dff43e64834384ca12b12700555",
+      "kind": "own-words",
+      "url": "https://www.wispolitics.com/2020/rep-crowley-statement-on-molson-coors-mass-shooting/",
+      "date": "2020-02-27",
+      "date_precision": "day",
+      "passage": "We need to be focusing on red flag laws as well as background checks.",
+      "note": "State representative statement after the Molson Coors shooting in Milwaukee. Text obtained through the fetch tool because the direct page returned 403.",
+      "subjects": [
+        "red flag orders",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.243Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f8aa2ba17721db37fc9a06f5c87fab4d49f2c69c952db8307aa3e75d93cf032d",
+      "kind": "own-words",
+      "url": "https://giffords.org/press-release/2026/08/giffords-pac-endorses-david-crowley-for-governor-and-sarah-godlewski-for-lieutenant-governor-in-wisconsin/",
+      "date": "2026-08-27",
+      "date_precision": "day",
+      "passage": "Gun violence is a public health crisis that affects too many families, too many neighborhoods, and too many lives.",
+      "note": "Quoted in an endorsement release from a gun-safety group; he describes gun violence as a public health matter and cites community violence prevention.",
+      "subjects": [
+        "gun violence as public health"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.243Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1ea5e3b9ae21ded091a2b8392ed2a5d0f8472cd112c12cf01e107c497a1f35b9",
+      "kind": "own-words",
+      "url": "https://urbanmilwaukee.com/?p=1233248",
+      "date": "2026-11-02",
+      "date_precision": "day",
+      "passage": "“Gun violence is a public health crisis that affects too many families, too many neighborhoods, and too many lives,” Crowley said in an email to NNS.",
+      "note": "Quoted by Milwaukee Neighborhood News Service. The same article says his campaign platform calls for universal background checks, safe firearm takeback options and expanded access to free gun locks (the article's own description, not his words). He named mental health resources and community violence prevention as the changes needed and no ban was mentioned.",
+      "subjects": [
+        "gun violence as public health",
+        "check every gun buyer",
+        "firearm takeback and gun locks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.243Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -38,6 +232,31 @@
       "found": 1,
       "at": "2026-10-28T23:15:12.788Z",
       "by": "identity-wi-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "red flag orders",
+        "gun violence as public health",
+        "ban on assault-style guns",
+        "carry permits",
+        "firearm takeback and gun locks"
+      ],
+      "places": [
+        "status confirmed: won the 2026-08-11 primary for governor and was on the 2026-11-03 general-election ballot (https://pbswisconsin.org/news-item/crowley-wins-wisconsins-2026-democratic-primary-for-governor-in-a-photo-finish/)",
+        "On the Record (9 meetings): spoke on public safety and community violence interruption only; nothing on firearm regulation",
+        "campaign site crowleyforwi.com: home page and /issues returned no gun text (page has no issue content in fetched HTML)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia: not relied on (returns empty)",
+        "web searches (3): news and press releases on the subject",
+        "blocked: https://www.wispolitics.com/2018/rep-crowley-school-safety-starts-with-expanding-background-checks/ (curl 403; text read via fetch tool, no retry otherwise)",
+        "blocked: https://www.wispolitics.com/2020/rep-crowley-statement-on-molson-coors-mass-shooting/ (curl 403; text read via fetch tool, no retry otherwise)"
+      ],
+      "found": 5,
+      "at": "2026-11-10T22:15:40.243Z",
+      "by": "source-collector"
     }
   ]
 }

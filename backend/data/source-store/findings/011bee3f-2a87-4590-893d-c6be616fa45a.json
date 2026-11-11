@@ -1,0 +1,31 @@
+{
+  "politician_id": "011bee3f-2a87-4590-893d-c6be616fa45a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "Second Amendment",
+        "gun violence",
+        "gun restrictions for public safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: not applicable (candidate, not a sitting legislator)",
+        "status: candidate for Assembly District 50; reported (aggregator) as winner of the 2026-08-11 primary, so on the November ballot",
+        "WisPolitics primary interview series, 50th Assembly District (nothing on the subject)",
+        "iVoterGuide profile (gun restriction question shown as not answered)",
+        "BallotReady profile (nothing on the subject; page shows his school board seat)",
+        "Monroe Times profile (nothing on the subject)",
+        "no campaign website found",
+        "not reviewed: https://ballotpedia.org/Bill_Oemichen (Ballotpedia pages return empty to the fetch tool)",
+        "web searches (4): news plus subject words"
+      ],
+      "found": 0,
+      "at": "2026-11-10T22:15:40.204Z",
+      "by": "source-collector"
+    }
+  ]
+}

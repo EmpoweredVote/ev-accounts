@@ -1,0 +1,29 @@
+{
+  "politician_id": "db04f75c-76a9-40dd-a742-e71071117f27",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and Second Amendment",
+        "gun safety laws",
+        "background checks",
+        "carry permits",
+        "assault-style guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed on the 2026 general-election ballot for Assembly District 82: https://ivoterguide.com/candidate/93976/race/34275/election/1497",
+        "campaign site https://www.brysonforwisconsin.com and issues page https://www.brysonforwisconsin.com/issues: nothing on the subject (economy, costs)",
+        "voter-guide questionnaire on the Second Amendment: candidate did not answer",
+        "Ballotpedia: not reviewed (pages return empty to the fetch tool)",
+        "sponsor list: not applicable (not a sitting legislator)",
+        "web searches on name plus gun words: no statement found; a goodparty profile is unclaimed"
+      ],
+      "found": 0,
+      "at": "2026-11-10T22:15:40.216Z",
+      "by": "source-collector"
+    }
+  ]
+}

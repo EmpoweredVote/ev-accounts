@@ -1,0 +1,94 @@
+{
+  "politician_id": "5241dedb-30c9-49cf-8d0c-f0daafc103f3",
+  "findings": [
+    {
+      "id": "d487a15555e0757b649bd97b756bee81e13ec2dc94c94ca1bc4a2a802853129a",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/92971/race/27922/election/1423",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "We need to protect the 2nd amendment for law abiding citizens.",
+      "note": "His iVoterGuide answer to the question 'What restrictions on gun ownership are needed to protect public safety?'. The page shows no date for the answer.",
+      "subjects": [
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.302Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "134deb29bb2950c24661c77e25e83da0cf277fa23a1d4c43f2da43ba4d6ab331",
+      "kind": "own-words",
+      "url": "https://www.krentzforassembly.com/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Pro-Life, Pro-Second Amendment, Pro-Election Integrity, and defender of our freedoms and liberties.",
+      "note": "Tagline on his campaign site's front page; the page shows no date.",
+      "subjects": [
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.302Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8e9e4ee32b3422f2891d377772a4ecf50d80777aa9cc46c00b00c168ffcd6e9",
+      "kind": "own-words",
+      "url": "https://www.ballotready.org/people/kevin-krentz",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Pro-Second Amendment.",
+      "note": "Issue statement on his BallotReady profile (listed under the abortion heading); the page shows no date.",
+      "subjects": [
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.302Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed on the 2026 general-election ballot for Assembly District 57: https://ivoterguide.com/race/34250/election/1497",
+        "sponsor list: not applicable, candidate who holds no legislative record",
+        "campaign site: https://www.krentzforassembly.com/",
+        "iVoterGuide: https://ivoterguide.com/candidate/92971/race/27922/election/1423",
+        "BallotReady: https://www.ballotready.org/people/kevin-krentz",
+        "wispolitics endorsement release https://www.wispolitics.com/2026/krentz-campaign-wisconsin-family-action-only-endorses-krentz/ (nothing on the subject)",
+        "wispolitics https://www.wispolitics.com/?p=416007 (nothing on the subject)",
+        "Midwest Farm Report https://www.midwestfarmreport.com/2026/08/04/kevin-krentz-receives-endorsement/ (nothing on the subject)",
+        "Ballotpedia: not reviewed, page returns empty",
+        "web searches on his name plus gun words: no further pages"
+      ],
+      "found": 3,
+      "at": "2026-11-10T22:15:40.302Z",
+      "by": "source-collector"
+    }
+  ]
+}
