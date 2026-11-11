@@ -116,8 +116,8 @@ person AS (
      -- 🔴 BallotReady is not a source this repo uses.
      AND coalesce(nullif(btrim(p.source), ''), '<none>') <> 'ballotready'
      -- 🔴 A per-person date cannot say WHICH seat it describes.
-     AND (SELECT count(*) FROM essentials.office_current_holder o2
-           WHERE o2.politician_id = h.politician_id) = 1
+     AND (SELECT count(*) FROM essentials.office_current_holder och2
+           WHERE och2.politician_id = h.politician_id) = 1
 ),
 graded AS (
   SELECT pr.*,
@@ -300,8 +300,8 @@ BEGIN
      AND coalesce(btrim(p.valid_from), '') <> ''
      AND btrim(p.valid_from) ~ '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
      AND coalesce(nullif(btrim(p.source), ''), '<none>') <> 'ballotready'
-     AND (SELECT count(*) FROM essentials.office_current_holder o2
-           WHERE o2.politician_id = och.politician_id) = 1;
+     AND (SELECT count(*) FROM essentials.office_current_holder och2
+           WHERE och2.politician_id = och.politician_id) = 1;
   IF v_remaining <> 0 THEN
     RAISE EXCEPTION 'CC_0394 gate: % eligible tenure(s) are still undated', v_remaining;
   END IF;
@@ -316,8 +316,8 @@ BEGIN
   END IF;
   SELECT count(*) INTO v_bad
     FROM cc0394_plan pl
-   WHERE (SELECT count(*) FROM essentials.office_current_holder o2
-           WHERE o2.politician_id = pl.politician_id) > 1;
+   WHERE (SELECT count(*) FROM essentials.office_current_holder och2
+           WHERE och2.politician_id = pl.politician_id) > 1;
   IF v_bad <> 0 THEN
     RAISE EXCEPTION 'CC_0394 gate: % multi-seat holder(s) were written', v_bad;
   END IF;
