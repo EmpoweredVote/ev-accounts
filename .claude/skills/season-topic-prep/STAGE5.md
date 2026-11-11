@@ -306,7 +306,9 @@ batch.
 python3 -I scripts/stage5/build_evidence.py <batch> <abs>/stage5/roster.tsv <abs>/backend/data/source-store/findings --fetch --level state --state XX
 ```
 
-A row keeps at most 20 sources (8 at federal level). When a federal seat rests on more cited acts than that, pass
+A page the live site refuses (a 403, a challenge page) is read from its archive.org snapshot through the verifier's
+own reader (`archive-pages.ts`), as the verifier does, so it is not listed as unread when the verifier can read it
+(wi-01 held David Crowley over two wispolitics.com pages that verified this way, 2026-11-10). A row keeps at most 20 sources (8 at federal level). When a federal seat rests on more cited acts than that, pass
 `--max-urls 20` (gun-policy `federal-01` lost cited acts at 8). congress.gov pages are read through the verifier's own
 api.congress.gov reader (`congress-pages.ts`, `CONGRESS_GOV_API_KEY` in `backend/.env`); a plain fetch gets a bot
 check. Delete a congress.gov page an older run cached before running again.
