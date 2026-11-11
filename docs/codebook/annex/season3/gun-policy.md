@@ -113,6 +113,11 @@ since no rung is about which level decides (see Q5 for the one exception).
     states the carry rule, so it is on-question despite codebook V2 / H12 (preemption). For this topic only.
   - **Q4 (ruled 2026-10-29).** Repeal of a type ban, a waiting period or a minimum age matches no rung →
     `direction-only` (loosening side).
+  - **R5-L (ruled 2026-11-10; wording kept).** A law that forbids a government list of gun owners, or a gun registry,
+    where no registration requirement exists (WI SB 466, 2023) repeals nothing → not a rung 5 act; `direction-only`
+    (loosening side), like Q2 and Q4. Its card-payment merchant-code part is a dealer business rule (`adjacent`); a
+    bar on enforcing federal gun rules (WI AB 293, 2021) stays under closure C2. A law that repeals an existing
+    registration requirement is still rung 5 (S8).
 
 ## Hard cases
 
@@ -183,6 +188,11 @@ since no rung is about which level decides (see Q5 for the one exception).
 After Stage 5 Session C (2026-11-03): "keep current law" (29 people) and undoing a limit that is not a permit (10)
 stay without a rung (Q2, Q4). Voter-text gaps from the rev 5 T7 check: an easier permit is not read as rung 4;
 serial-number rules and a licence to buy are read as rung 3 only some of the time.
+
+After Wisconsin Stage 5 (2026-11-10, R5-L): forbidding a registry or owner list before one exists has no rung. It left
+8 Wisconsin people blank (Michigan and North Carolina: 0), and every Wisconsin rung 4 seat (5) also backed the same
+bill. A rung 5 that held it ("Remove or forbid …") would widen the claim: a new revision and a re-audit of the seated
+rung 5 rows (398 in the Stage 5 code files on 2026-11-10).
 
 From revision 4 (P1 ruled 2026-10-30):
 

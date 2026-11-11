@@ -436,6 +436,18 @@ topic; if a topic seems to need the same reading, ask for a ruling and point to 
   it as out of scope and no outcome depends on it.
 - **Scope:** the Season 3 revision 5 of `gun-policy` only.
 
+### gun-policy — R5-L (a ban on gun-owner lists where no registry exists is not rung 5)
+- **Reading:** rung 5 says "Repeal laws that require a permit or registration". A law that forbids a government list
+  of gun owners, or a registry, where no registration requirement exists (WI SB 466, 2023) repeals nothing, so it is
+  not a rung 5 act; it shows the loosening side only (`direction-only`), like annex Q2 and Q4. The rung wording is
+  kept. Its merchant-code part stays a dealer business rule (`adjacent`), and a bar on enforcing federal gun rules
+  stays under closure C2. Repealing an existing registration requirement is still rung 5 (annex S8).
+- **Date and source:** 2026-11-10, Chris Andrews, Wisconsin Stage 5 ("Rule A: keep wording"), on the memo
+  `.planning/research/s3-prep-gun-policy/stage5/rung5-registry-ban-memo.md` (theme pass 7, theme 1). It affects 8
+  Wisconsin people, who stay blank; Michigan and North Carolina had none. No written row changes. Recorded in the
+  Season 3 annex (`docs/codebook/annex/season3/gun-policy.md`, R5-L) and its rung backlog.
+- **Scope:** the Season 3 revision 5 of `gun-policy` only.
+
 ### education-equity-programs — R1 (single-subject scope)
 - **Reading:** a separate operative part makes a bill multi-subject only when it acts **outside K-12 schools**
   (colleges' or state agencies' own operations, other employers). K-12 harassment, hiring and Title VI parts of a
