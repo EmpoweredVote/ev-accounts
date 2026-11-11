@@ -33,6 +33,47 @@
 --    Dept 1 is itself mid-election (Gianoli v Hubach, undecided). An aggregator contradicting
 --    the state's own directory is not a basis for seating a judge.
 --
+-- ═══ CORRECTION, 2026-11-10 (made by CC_0389): THE DIRECTORY SAYS NO SUCH THING ════════════
+--    The paragraph above is left standing because it is what this migration acted on, and the
+--    four empty departments were its consequence. It is wrong on every point.
+--
+--    The document it names was read in full on 2026-11-10 — 22 pages, footer "Rev. March 17,
+--    2026", the same revision cited above:
+--    https://nvcourts.gov/__data/assets/pdf_file/0014/11282/Judicial_Directory_03.23.26.pdf
+--    Its MUNICIPAL COURT JUDGES table has the columns
+--    FIRST NAME · LAST NAME · COURT · APPOINTED/ELECTED · TOOK OFFICE · TERM EXPIRES, and reads:
+--
+--      Shelly O'Neill               Reno Municipal Court (Dept. 2)    11/08/2016  11/08/2016  01/02/2029
+--      Justin Champagne             Reno Municipal Court (Dept. 3)    11/08/2022  01/03/2023  01/02/2029
+--      Christopher Hazlett-Stevens  Reno Municipal Court (Dept. 4)    11/09/2021  11/13/2021  01/02/2029
+--      Gene S. Drakulich            Reno Municipal Court (Dept. 1)    11/04/2014  01/05/2015  01/03/2027
+--      Randall Soderquist           Elko Justice/Municipal Court (A)  01/04/2021  01/04/2021  01/07/2031
+--      Michael R. Lister            Fallon Municipal Court            04/08/2005  04/15/2005  open-ended
+--
+--    Soderquist is in ELKO. Fallon's judge is LISTER. And the directory puts O'Neill in Reno
+--    Dept 2 — exactly where Ballotpedia puts her.
+--
+-- 🔴 THERE WAS NEVER A CONFLICT. The two sources agree, and have agreed all along. The bench
+--    was held empty for three weeks, and CC_0388 then wrote a voter-facing sentence announcing
+--    a disagreement, over a contradiction that does not exist in the cited document.
+--    ▶ A SOURCE YOU HAVE NOT OPENED IS NOT A SOURCE. Nothing here required new research to
+--    correct — only reading the PDF that both headers already named.
+--
+--  ⚠ TWO TRAPS, EITHER OF WHICH EXPLAINS HOW THIS WAS MISREAD:
+--    - nvcourts.gov answers HTTP 403 to curl even with a browser User-Agent. The PDF has to be
+--      fetched in a real browser; a WAF rejection is not a missing document.
+--    - A STALE 2017 COPY OF A SIMILARLY-NAMED DIRECTORY is served from prod.rccd.nv.gov and is
+--      the first web-search hit. Its footer reads "Judicial Directory July 2017 (rev)" and it
+--      lists municipal courts by ADDRESS AND FAX NUMBER ONLY — it names no municipal judge at
+--      all. Reading that one and concluding anything about Reno Dept 2 is a different error
+--      with the same shape. Check a directory's own revision line before citing it.
+--
+--  ▶ STILL UNUSED: the TOOK OFFICE column above is an authoritative term_start for the three
+--    sitting judges, from the state's own AOC. CC_0389 seated them with start_precision
+--    'unknown' because the COURT publishes no dates and this table had not been read. That is
+--    now improvable — see CC_0389's header.
+-- ═══════════════════════════════════════════════════════════════════════════════════════════
+--
 -- ⚠ WASHOE'S HANDOVER IS IN JANUARY, NOT FRIDAY. Districts 2, 3 and 5 were contested on
 --   2026-11-03 but the winners are not sworn until January 2027, so all five sitting
 --   commissioners remain correct and NO successor rows are written for them either. That is a
