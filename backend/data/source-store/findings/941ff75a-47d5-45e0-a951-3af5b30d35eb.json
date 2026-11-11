@@ -1,0 +1,92 @@
+{
+  "politician_id": "941ff75a-47d5-45e0-a951-3af5b30d35eb",
+  "findings": [
+    {
+      "id": "e9d1cc56372773c897daa5108e69d4a07df5ffa947a543f55af89a207bd976d6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25771 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "121fcb8d83cdb77518dcfdab89ed949d5de64b621bdcdb306e7ab9a9e02793ea",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "nay",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25771 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.608Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "iVoterGuide profile, 2026 general (https://ivoterguide.com/candidate/77780/race/31252/election/1461) and 2024 general (https://ivoterguide.com/candidate/77780/race/15953/election/1211): confirms her as State Rep., Dist. 88 candidate; every questionnaire item, including \"People should be able to vote without photo identification.\", reads \"Did not answer\" (nothing to save)",
+        "Branch voter guide page seen in search: says her website had no information on the issues as of 2026-08-12; 2026 general candidacy confirmed by the iVoterGuide 2026 race page and the search listing of Ballotpedia's 2026 race summary",
+        "WUKY podcast episode https://www.wuky.org/podcast/local-global-leaders/2026-09-09/the-first-lady-from-scott-with-vanessa-grossl (audio interview; page has no transcript, so not reviewed: audio)",
+        "legislature page for House District 88 and sponsor lists seen in search (sponsored bills are on dietitians, food donation, education: none on voter ID or citizenship proof)",
+        "web searches (5): name + voter ID; name + photo ID / proof of citizenship / noncitizen / election integrity / voting rights; iVoterGuide / Vote411 / questionnaire; campaign website; name + Fayette + election bills + local outlets. A search listing mentioned her joining advocates on independent voters in primaries, which is off the subject and not saved",
+        "blocked: https://home.forwardparty.com/grossl_vanessa (403 bot check, not retried)",
+        "blocked: https://feeds.lexingtonky.news/article/grossl-joins-veterans-reformers-to-highlight-primary-access-gap (connection failed, not retried; off the subject in any case)",
+        "blocked: https://ballotpedia.org/Vanessa_Grossl (not fetched, listed as refused)",
+        "not reviewed: KET floor video of the House debates"
+      ],
+      "found": 0,
+      "at": "2026-11-11T18:38:28.683Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 2,
+      "at": "2026-11-11T21:12:46.608Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
+}

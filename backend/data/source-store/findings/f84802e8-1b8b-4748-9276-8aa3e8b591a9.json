@@ -1,0 +1,122 @@
+{
+  "politician_id": "f84802e8-1b8b-4748-9276-8aa3e8b591a9",
+  "findings": [
+    {
+      "id": "73f46727e22ac1eb6293dce4b63624b81baa6f651cbf61d1d4f082453233147b",
+      "kind": "own-words",
+      "url": "https://953wiki.com/news/local-news/kentucky-attorney-general-defends-kentuckys-election-integrity-laws",
+      "date": "2024-04-15",
+      "date_precision": "day",
+      "passage": "“Kentucky’s elections are free and secure because of our strong Voter ID and ballot integrity laws,” said Attorney General Coleman. “Instead of coming after commonsense and popular election security protections, the U.S. Department of Justice should focus on violent crime in our communities, deadly drugs tearing families apart and the southern border crisis.”",
+      "note": "Statement issued in his name, republished by 953wiki.com (the AG office release itself was blocked). Responds to the then-US Attorney General's March 2024 remarks that the federal government would challenge state voter ID rules. Names Kentucky's voter ID law as a reason elections are secure.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:21:40.247Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2ed3cbfb74ddcdab04ddccfd4a7fee001342a9baec055c47f405ce0214be642e",
+      "kind": "record",
+      "url": "https://attorneygeneral.utah.gov/wp-content/uploads/2024/04/FINAL_Garland_Election_Letter.pdf",
+      "date": "2024-04-10",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Signed multistate attorneys general letter to US Attorney General Garland defending state voter ID laws (no instrument id)",
+      "note": "Coleman is a signatory, listed as Attorney General of Kentucky. The letter answers a remark that voter ID is an unnecessary restriction on access to the ballot, and argues voter ID laws prevent voter fraud. Letter text not copied here.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:21:40.247Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f2c030b8c1ecb282962e9b10140e98e44501ff7d01081611bb09ce12f0d021b",
+      "kind": "own-words",
+      "url": "https://www.ag.ky.gov/Press%20Release%20Attachments/7.1.25%20Letter%20following%202024%20election%20inquiryv2.pdf",
+      "date": "2025-07-01",
+      "date_precision": "day",
+      "passage": "The integrity of Kentucky’s elections is foundational to our constitutional system, and the Attorney General’s Office takes our responsibility to protect the security of every Kentuckians’ vote seriously.",
+      "note": "Letter signed by Coleman to the State Board of Elections reporting that inquiries into 12 counties after the 2024 general election found no credible instances of election law irregularities. General election integrity, no mention of ID or citizenship.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:21:40.247Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9376bc5b403bf0ee8758b3e05a9da6411be74fa47fa4af106f109d0b7813e82d",
+      "kind": "record",
+      "url": "https://www.ag.ky.gov/Press%20Release%20Attachments/Mi%20Familia%20Amici%20Brief%20-filed.pdf",
+      "date": "2026",
+      "date_precision": "year",
+      "act": "other",
+      "motion": "Joined multistate amicus brief, RNC v. Mi Familia Vota, US Supreme Court No. 25-1017 (noncitizen removal from voter rolls; proof of citizenship on state registration form)",
+      "note": "Coleman is a signatory as Attorney General of Kentucky on a brief of 26 states supporting the petitioner. It argues states may remove noncitizens from voter rolls and defends Arizona's requirement that state-form registrations lacking proof of citizenship be rejected. Exact filing date not shown in the text read; it cites sources through August 2026.",
+      "subjects": [
+        "noncitizen voting",
+        "voter-roll maintenance",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:21:40.247Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "voter-roll maintenance",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site ag.ky.gov: election hotline page (office text only, nothing on voter ID or citizenship); home page (only a fraud-report link); press attachments for the 2025-07-01 letter and the 2026 multistate brief read as PDFs",
+        "confirmed office: the 2025-07-01 letter on ag.ky.gov is signed Russell Coleman, Attorney General",
+        "campaign site: not found by search",
+        "Ballotpedia: blocked: https://ballotpedia.org/Russell_Coleman",
+        "Commonwealth Policy Center 2023 voter guide (https://commonwealthpolicycenter.org/wp-content/uploads/2023/09/2023-AG-Voter-Guide.pdf): nothing on the subject",
+        "blocked: https://www.clayconews.com/news/24425-attorney-general-coleman-defends-kentuckys-election-integrity-laws (403); same release read at 953wiki.com instead",
+        "blocked: https://www.marshallcountydaily.com/?p=137354 (403)",
+        "blocked: curl of the 2025-07-01 letter URL on ag.ky.gov returned an HTML block page; the PDF was read through the fetch tool's saved copy",
+        "wuky.org Feb 2026 DOJ voter-roll suit article: does not name Coleman, nothing on the subject",
+        "web searches run (9): voter ID/election integrity; noncitizen/proof of citizenship; ag.ky.gov Garland letter; ag.ky.gov noncitizen rolls; photo ID Garland letter; DOJ voter roll lawsuit; SAVE Act; 2023 questionnaire; mail ballot/local outlets. Nothing found on SAVE Act, SB 2, HB 574, mail-ballot ID or a questionnaire answer",
+        "not reviewed: KET or other video of Coleman on elections (none located)"
+      ],
+      "found": 4,
+      "at": "2026-11-11T18:21:40.247Z",
+      "by": "source-collector"
+    }
+  ]
+}

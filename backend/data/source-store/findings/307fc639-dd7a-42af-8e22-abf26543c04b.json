@@ -1,0 +1,158 @@
+{
+  "politician_id": "307fc639-dd7a-42af-8e22-abf26543c04b",
+  "findings": [
+    {
+      "id": "a4bd2ad138d1b0216da931fb060b664c0c0ae7334725b4c79abfef8568b5f772",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/78931/race/11173/election/1085",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "It is not an inconvenience to get a state-issued photo ID. This is the bare minimum for making sure only legal citizens who are registered to vote are actually the only people voting.",
+      "note": "Answer to the iVoterGuide 2024-cycle question 'People should be able to vote without photo identification' (he marked Strongly Disagree). He ties photo ID to making sure only legal citizens who are registered vote. Exact answer date not printed.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "noncitizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:27:58.895Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d0a95cc966b02b0e2a4f4bfce71679513f1c47e272194e3c3f8bc4b7ab5bb3a7",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/78931/race/31230/election/1461",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "There is no way to verify the identification document belongs to the person trying to vote without a photo. It's nonsensical that this isn't the law in all fifty states.",
+      "note": "Answer to the iVoterGuide 2026 General Election question 'People should be able to vote without photo identification' (Strongly Disagree). He says a photo is needed to verify the ID belongs to the voter and that photo ID should be law in every state. Exact answer date not printed.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:27:58.895Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d46ecb91a31ee5cd1e1e87159cd4301382bc37721ea5bb099f789780020ffed",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25779 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9d1cc56372773c897daa5108e69d4a07df5ffa947a543f55af89a207bd976d6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25779 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd4f0553eb6ef608e5f4f0880dfe9d952201740968402fd0ab748856330a3352",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "yea",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25779 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.608Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "SAVE Act",
+        "mail ballot rules",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "confirmed in office: LINK nky 2026 election profile names him as the sitting House District 66 member seeking a second term, facing a general-election opponent",
+        "iVoterGuide 2024 questionnaire (1 passage)",
+        "iVoterGuide 2026 questionnaire (1 passage)",
+        "campaign site votetjroberts.com (page text has no election-law passages; no issue search available)",
+        "LINK nky 2024 primary story on the 66th district (nothing on the subject)",
+        "legislature.ky.gov bill pages: not reviewed (sponsorships linked separately)",
+        "web searches on name plus voter ID, photo ID, proof of citizenship, SAVE Act, noncitizen, mail ballot, questionnaire: no other own-words hits",
+        "blocked: https://ballotpedia.org (known to refuse fetches; not tried)",
+        "blocked: https://justfacts.votesmart.org (known to refuse fetches; not tried)"
+      ],
+      "found": 2,
+      "at": "2026-11-11T18:27:58.895Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 3,
+      "at": "2026-11-11T21:12:46.608Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
+}

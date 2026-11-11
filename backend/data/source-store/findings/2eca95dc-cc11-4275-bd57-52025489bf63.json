@@ -1,0 +1,117 @@
+{
+  "politician_id": "2eca95dc-cc11-4275-bd57-52025489bf63",
+  "findings": [
+    {
+      "id": "a25928f6651a1a63c0b5fc142c6506577dc9de80be5a0599fec7e36a0ce3b03b",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "nay",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23624 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.606Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "66d7488a685348429b625584d27155c3ad62b1a0d68d9f562d509f3e7302b9e6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "nay",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23624 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.606Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "121fcb8d83cdb77518dcfdab89ed949d5de64b621bdcdb306e7ab9a9e02793ea",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "nay",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23624 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.606Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "HB 534 (2026)",
+        "SB 154 (2026)",
+        "election integrity"
+      ],
+      "places": [
+        "status: sitting State House District 38 member, 2026 general-election candidate: legislature.ky.gov profile https://legislature.ky.gov/Legislators/Pages/Legislator-Profile.aspx?DistrictNumber=38 (title seen in search, page not readable) and her campaign site https://rachelroarx.com/ (naming her as the 38th District representative); the brief gives the 2026-11-03 win",
+        "On the Record (0 meetings)",
+        "campaign site https://rachelroarx.com/ and its voting page: election dates and state voter-info links only, nothing on the subject",
+        "web searches (5): name + voter ID + election; HB 534 / SB 154 / citizenship / noncitizen; House floor speech; 2026 questionnaire / forum; op-ed / newsletter / interview: no statement by her on proof of identity or citizenship",
+        "nothing on the subject: https://vote-usa.org/Intro.aspx?State=KY&Id=KYRoarxRachel (a lead only)",
+        "not reviewed: https://onyourballot.vote411.org/m/race-detail.do?id=3140277 (the page returned a program error, so could not be read; a search summary says it covers voting rights restoration, early and mail voting, same-day registration and ranked-choice voting, none of which is proof of identity)",
+        "not reviewed: https://ivoterguide.com/candidate/73257/race/15943/election/1211 (page is script-rendered and showed no readable answers; a search summary says its questionnaire dates from 2022 and does not address voter ID)",
+        "not reviewed: https://www.facebook.com/rachelroarxdistrict38/ (social page, not opened)",
+        "legislature.ky.gov bill records: her votes and sponsorships not collected per instructions",
+        "blocked: Ballotpedia (refuses fetches)",
+        "blocked: justfacts.votesmart.org (refuses fetches)"
+      ],
+      "found": 0,
+      "at": "2026-11-11T18:30:41.573Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 3,
+      "at": "2026-11-11T21:12:46.606Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
+}

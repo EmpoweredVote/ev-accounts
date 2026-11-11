@@ -1,0 +1,158 @@
+{
+  "politician_id": "b159e90d-9ebe-4cc5-9c85-ec189f1d0322",
+  "findings": [
+    {
+      "id": "1d57ed02f45d9aeb66259c62df4835f1706005d50b4ffba4ee1fef858aab1d19",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/20RS/sb2/vote_history.pdf",
+      "date": "2020-03-19",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-2-2020",
+      "act": "yea",
+      "motion": "House: House final passage (free conference committee version)",
+      "note": "KY House roll call (House final passage (free conference committee version), 58-25) on SB2 (2020 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 20489 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.600Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ac515fb3bba384a73d12b95f1b8fb6d1d53feb4bf09f738673f7f22301a65736",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/20RS/sb2/vote_history.pdf",
+      "date": "2020-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-2-2020",
+      "act": "yea",
+      "motion": "House: House override of veto",
+      "note": "KY House roll call (House override of veto, 60-29) on SB2 (2020 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 20489 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.600Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d46ecb91a31ee5cd1e1e87159cd4301382bc37721ea5bb099f789780020ffed",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 20489 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.600Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9d1cc56372773c897daa5108e69d4a07df5ffa947a543f55af89a207bd976d6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 20489 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.600Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd4f0553eb6ef608e5f4f0880dfe9d952201740968402fd0ab748856330a3352",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "yea",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 20489 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.600Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "election integrity law",
+        "mail-ballot ID",
+        "candidate questionnaire"
+      ],
+      "places": [
+        "On the Record (0 appearances, extract-otr run with name)",
+        "identity confirmed: https://apps.legislature.ky.gov/Legislators/subs/House-049.html (Rep. Thomas Huff, District 49, Bullitt part) and https://web.sos.ky.gov/candidatefilings/Default.aspx?cand=11509 (State Representative, 49th, filed 11/10/2025 for re-election)",
+        "official legislature page: no personal site, newsletter or campaign link on it; nothing on the subject",
+        "campaign site: none found in 2 searches",
+        "blocked: https://onyourballot.vote411.org/race-detail.do?id=3140382 (HTTP 500)",
+        "blocked: ballotpedia.org (not fetched, per instructions)",
+        "blocked: justfacts.votesmart.org (not fetched, per instructions)",
+        "web searches run (6): name + voter ID, + election integrity/photo ID/Shepherdsville, + proof of citizenship/noncitizen, + newsletter/questionnaire/candidate survey, + SB 2/photo ID with local outlets, + HB 534/interview, + campaign site; none surfaced his own words on the subject",
+        "nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-11T18:44:39.142Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 5,
+      "at": "2026-11-11T21:12:46.600Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
+}

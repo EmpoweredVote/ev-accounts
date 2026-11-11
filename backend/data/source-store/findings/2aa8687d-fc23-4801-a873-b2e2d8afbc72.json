@@ -1,0 +1,138 @@
+{
+  "politician_id": "2aa8687d-fc23-4801-a873-b2e2d8afbc72",
+  "findings": [
+    {
+      "id": "83b481c1b0e50b737bd494bb4986a48ebea5ce02bc03bb909e102e05c92c1f46",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24RS/hb374.html",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-374-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, orig_bill",
+      "note": "Listed as co sponsor of HB374 (2024 Regular Session) in LegiScan's bill record (sponsor order 2); the first version (orig_bill) carries the ID/citizenship text (identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d46ecb91a31ee5cd1e1e87159cd4301382bc37721ea5bb099f789780020ffed",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23689 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9d1cc56372773c897daa5108e69d4a07df5ffa947a543f55af89a207bd976d6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23689 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd4f0553eb6ef608e5f4f0880dfe9d952201740968402fd0ab748856330a3352",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "yea",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23689 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship / noncitizen voting",
+        "voter-roll citizenship checks",
+        "candidate questionnaire",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity confirmed: https://apps.legislature.ky.gov/Legislators/subs/House-037.html (Rep. Emily Callaway, House District 37 page)",
+        "https://lex18.com/news/covering-kentucky/concerns-over-amendment-1-and-showing-proof-of-citizenship-when-voting (does not name her)",
+        "https://www.wkms.org/2026-02-19/local-kentucky-elections-officials-concerned-over-gop-bill-pushing-extensive-changes (does not name her)",
+        "https://www.owensborotimes.com/?p=265622 (does not name her)",
+        "https://ivoterguide.com/candidate/62001/race/15942/election/1211 (nothing on the subject)",
+        "https://commonwealthpolicycenter.org/2022-h37 (nothing on the subject)",
+        "6 web searches: voter ID, photo ID, citizenship/noncitizen/HB 534, questionnaire/voter guides, newsletter/interview: no own words on the subject found",
+        "lead only, not saved (records are linked separately): she is listed as sponsor of HB 44 (2024), an elections act",
+        "blocked: https://ballotpedia.org/Kentucky_House_of_Representatives_District_37_candidate_surveys,_2022 (refused, tiny body)",
+        "blocked: spectrumnews1.com (listed as refused, not opened)",
+        "blocked: bluevoterguide.org, justfacts.votesmart.org (not tried)"
+      ],
+      "found": 0,
+      "at": "2026-11-11T18:24:13.997Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 4,
+      "at": "2026-11-11T21:12:46.603Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
+}

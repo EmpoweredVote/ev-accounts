@@ -78,7 +78,135 @@
         "fetched_at": "2026-10-21T01:52:20.308Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "5eb229758df1e61bc18c47c9fca4b1522f32ea146f6a875e113cc97c6e65c080",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/29625/race/11615/election/1211",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "People should be able to vote without photo identification.",
+      "note": "Questionnaire statement in the section 'Elections and Voting' of the iVoterGuide candidate questionnaire, with the ticked answer 'Strongly Disagree'. The page header shows the race as the Kentucky general election of November 5, 2024; the date the answer was given is not shown on the page.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID required to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:37:59.293Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d46ecb91a31ee5cd1e1e87159cd4301382bc37721ea5bb099f789780020ffed",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 22057 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.604Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9d1cc56372773c897daa5108e69d4a07df5ffa947a543f55af89a207bd976d6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 22057 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.604Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd4f0553eb6ef608e5f4f0880dfe9d952201740968402fd0ab748856330a3352",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "yea",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 22057 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.604Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "election integrity",
+        "candidate questionnaire"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://ivoterguide.com/candidate/29625/race/11615/election/1211 (iVoterGuide profile and questionnaire, page labelled Kentucky General, November 5, 2024 race; one answer on the subject saved)",
+        "https://danfister.com/issues (campaign platform page; nothing on the subject)",
+        "https://danfister.com/how-to-vote (campaign page on how to cast a ballot; no ID statement; nothing on the subject)",
+        "https://danfister.com/meet-dan (campaign page; the pasted page text did not render a body; nothing on the subject)",
+        "https://apps.legislature.ky.gov/Legislators/subs/House-056.html (seen in search results only, not fetched)",
+        "positive control: iVoterGuide lists him as a candidate for State Rep., Dist. 56 in the Kentucky General | November 3, 2026 race; the campaign site is titled Re-Elect Dan Fister, 56th District",
+        "web searches (5): name with voter ID, photo ID, proof of citizenship, noncitizen, questionnaire, forum, local outlets; no further own words found",
+        "blocked: https://ballotpedia.org/Daniel_Fister and https://justfacts.votesmart.org (listed as refusing fetches, not tried)"
+      ],
+      "found": 1,
+      "at": "2026-11-11T18:37:59.293Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 3,
+      "at": "2026-11-11T21:12:46.604Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
 }

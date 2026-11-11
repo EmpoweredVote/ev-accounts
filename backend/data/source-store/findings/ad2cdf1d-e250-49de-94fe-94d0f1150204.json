@@ -1,0 +1,110 @@
+{
+  "politician_id": "ad2cdf1d-e250-49de-94fe-94d0f1150204",
+  "findings": [
+    {
+      "id": "3b567d0b3b9d0917c72eab25705eac4fcdb4f1c18b5336fc1c8d847b9e66b665",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "nay",
+      "motion": "Senate: third reading, passed Senate with Senate Committee Substitute (1)",
+      "note": "KY Senate roll call (third reading, passed Senate with Senate Committee Substitute (1), 31-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 26549 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.609Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "763ea165d7dd607ae87a851dfc93bc0796aa12a9e07101112235b0eebe57a9e5",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "nay",
+      "motion": "Senate: override of the Governor's veto, final passage (Senate)",
+      "note": "KY Senate roll call (override of the Governor's veto, final passage (Senate), 32-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 26549 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.609Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad0682ba8f72e0136a4858141ce12fc45e14f6cb15fc397bebc4a35695f2bc3c",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/sb154/vote_history.pdf",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-154-2026",
+      "act": "nay",
+      "motion": "Senate: third reading, passed Senate",
+      "note": "KY Senate roll call (third reading, passed Senate, 31-7) on SB154 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 26549 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.609Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "election law reforms",
+        "felony voting rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://garyclemons.com/ and /issues: nothing on the subject",
+        "official legislature page: not reviewed (record search is linked separately)",
+        "WEKU report of the December 2025 special election: nothing on the subject",
+        "KentuckyElection.org Senate 37 voter guide (https://www.kentuckyelection.org/kentucky-senate-37): search results pointed to a questionnaire answer on voting reforms and felony voting rights, but the page now returns 404, so the answer could not be copied; gap, not nothing",
+        "blocked: https://www.whas11.com/article/news/politics/louisville-special-election-senate-district-37/417-390cfa17-f73e-4c2f-9464-a1c47bebd327 (403)",
+        "blocked: https://ballotpedia.org/Gary_Clemons (not fetched, refuses fetches)",
+        "6 web searches run (voter ID, photo ID, proof of citizenship, election, questionnaire/vote411): no own words on voter ID found; Senate member holds seat to 2028"
+      ],
+      "found": 0,
+      "at": "2026-11-11T18:37:13.811Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 3,
+      "at": "2026-11-11T21:12:46.609Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
+}

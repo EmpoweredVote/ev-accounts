@@ -145,7 +145,219 @@
           "sha256": "93266e8d17c0b31728a6c78573a4afda6517fbacbe2200b4273a5f2e422960c1"
         }
       }
+    },
+    {
+      "id": "b90574a553f429d2467b88ac138c712d5caea39cd7bf26228d2581ba11c7da55",
+      "kind": "own-words",
+      "url": "https://www.lex18.com/news/covering-kentucky/bill-targeting-college-ids-clears-kentucky-senate-in-effort-to-revise-voter-identification-law",
+      "date": "2024-01-30",
+      "date_precision": "day",
+      "passage": "“We are sending the wrong signal to our young people,” said Sen. Gerald Neal",
+      "note": "Quoted in an Associated Press story (written by AP, carried by LEX18, published 2024-01-31) on the Senate's 27-7 passage of SB 80, which removes college-issued student IDs from the primary voter ID list. He objects to the change, saying it sends the wrong signal to young people.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID",
+        "SB 80 (2024)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:34:33.639Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5197c6ef4b41a0e25125212dab2a8d490b32e5a72bcc170dfff37cc8e5e57ec",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/22RS/sb216/vote_history.pdf",
+      "date": "2022-03-07",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-216-2022",
+      "act": "nay",
+      "motion": "Senate: Senate third reading, passed with Senate committee substitute 1",
+      "note": "KY Senate roll call (Senate third reading, passed with Senate committee substitute 1, 22-10) on SB216 (2022 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 1232 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5bf6dbdba4299458f89733411f293f16bf5b15cafda2d6a5a8bdecfe46962b5c",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24RS/sb80/vote_history.pdf",
+      "date": "2024-01-30",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-80-2024",
+      "act": "nay",
+      "motion": "Senate: Senate third reading, passed",
+      "note": "KY Senate roll call (Senate third reading, passed, 27-7) on SB80 (2024 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 1232 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3b567d0b3b9d0917c72eab25705eac4fcdb4f1c18b5336fc1c8d847b9e66b665",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "nay",
+      "motion": "Senate: third reading, passed Senate with Senate Committee Substitute (1)",
+      "note": "KY Senate roll call (third reading, passed Senate with Senate Committee Substitute (1), 31-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 1232 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "763ea165d7dd607ae87a851dfc93bc0796aa12a9e07101112235b0eebe57a9e5",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "nay",
+      "motion": "Senate: override of the Governor's veto, final passage (Senate)",
+      "note": "KY Senate roll call (override of the Governor's veto, final passage (Senate), 32-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 1232 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad0682ba8f72e0136a4858141ce12fc45e14f6cb15fc397bebc4a35695f2bc3c",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/sb154/vote_history.pdf",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-154-2026",
+      "act": "nay",
+      "motion": "Senate: third reading, passed Senate",
+      "note": "KY Senate roll call (third reading, passed Senate, 31-7) on SB154 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 1232 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "544354b1d88da2b792c81214a87ae3436619b587a653132f0ab210a94fdfdc24",
+      "kind": "own-words",
+      "url": "https://www.lex18.com/news/covering-kentucky/bill-targeting-college-ids-clears-kentucky-senate-in-effort-to-revise-voter-identification-law",
+      "date": "2024-01-30",
+      "date_precision": "day",
+      "passage": "We are sending the wrong signal to our young people",
+      "note": "Quoted in an Associated Press story (written by AP, carried by LEX18, published 2024-01-31) on the Senate's 27-7 passage of SB 80, which removes college-issued student IDs from the primary voter ID list. He objects to the change, saying it sends the wrong signal to young people. Saved alone, without the reporter's attribution words, so only the person's own quoted words are shown (split 2026-11-11, SC Alexander precedent).",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID",
+        "SB 80 (2024)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "attrib-split-2026-11-11",
+        "fetched_at": "2026-11-11T21:40:50.055Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "student ID as voter ID (SB 80, 2024)",
+        "secondary ID options (SB 154, 2026)",
+        "proof of citizenship / noncitizen voting",
+        "election law omnibus HB 574 (2021)",
+        "SB 2 (2020)"
+      ],
+      "places": [
+        "status: seat runs to 2028, not on the 2026-11-03 ballot; named as Sen. Neal, Gerald A. on the legislature's sponsored-bills page https://apps.legislature.ky.gov/record/IndividualSponsorPages/51.html; the AP story below names him as the top-ranking member of the Senate minority",
+        "On the Record (0 meetings)",
+        "legislature.ky.gov legislator profile page (returned no readable text)",
+        "legislature.ky.gov sponsored-bills page (his election bills are sponsorships, not collected per instructions)",
+        "web searches (5): voter ID / photo ID; HB 574 2021; SB 2 2020 photo ID; noncitizen / proof of citizenship / SAVE Act; SB 80 coverage: one own-words quote found",
+        "nothing on the subject: no statement by him on SB 2 (2020), HB 574 (2021), or proof of citizenship found in any reachable page",
+        "read but not saved: https://hoptownchronicle.org/ky-senate-votes-to-tighten-voter-id-requirements-advance-felon-voting-rights-amendment/ (2026-02-23, SB 154 Senate debate) is a story written by Kentucky Lantern (a refused outlet) and reprinted; it only paraphrases him with short quoted fragments, so no passage saved",
+        "read but not saved: https://www.kentuckynewera.com/news/state/article_2ff62b4d-a32d-5795-b429-dd33a96ce962.html (SB 154): its long quote after his paragraph is read as another senator's per the Lantern version, so not attributed to him",
+        "blocked: Ballotpedia (refuses fetches)",
+        "blocked: justfacts.votesmart.org (refuses fetches)"
+      ],
+      "found": 1,
+      "at": "2026-11-11T18:34:33.639Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 5,
+      "at": "2026-11-11T21:12:46.602Z",
+      "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID",
+        "SB 80 (2024)"
+      ],
+      "places": [
+        "split of finding b90574a553f4 (same page)"
+      ],
+      "found": 1,
+      "at": "2026-11-11T21:40:50.055Z",
+      "by": "attrib-split-2026-11-11"
+    }
+  ]
 }

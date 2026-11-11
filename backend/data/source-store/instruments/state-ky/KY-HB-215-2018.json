@@ -1,0 +1,52 @@
+{
+  "id": "KY-HB-215-2018",
+  "scope": "state:ky",
+  "title": "HB 215 (2018 Regular Session): AN ACT relating to voter identification.",
+  "urls": [
+    "http://www.lrc.ky.gov/record/18RS/HB215.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1, KRS 117.227(1)\n(quote) (1) Election officers shall confirm the identity of each voter by personal acquaintance or by one (1) of the following documents:[ a document, such as ] (a) A motor vehicle operator's license;[, ] (b) An instruction permit for a motor vehicle or motorcycle; (c) An intermediate license to operate a motor vehicle;\n(section) Sec. 1, KRS 117.227(1)(d)-(i)\n(quote) (d) A Social Security card;[, ] (e) Any identification card that has been issued by a city or[ the] county government that includes a picture of the voter and which has been approved in writing by the State Board of Elections;[, any identification card with picture and signature, ] (f) Any United States government-issued identification card;[, ] (g) Any Kentucky state government-issued identification card that includes a picture of the voter;[ with picture, or credit card. ] (h) Any public or private college or university-issued identification card that includes a picture of the voter; or (i) Any public or private high school-issued identification card that includes a picture of the voter.\n(section) Sec. 1, KRS 117.227(2)\n(quote) (2) The election officer confirming the identity shall sign the precinct voter roster and list the method of identification.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Only one section (KRS 117.227); nothing else in the bill.\n(other) version: bill (only saved version, as introduced): ID text in slot a only. Reads like the 2017 HB258 list recast as subsections (a)-(i) with the same items; no new items found against that bill.\n(other) note: Status 1; last action 2018-02-22 \"posted in committee\"; no roll call. Underline marks lost; bracketed words (\"[ a document, such as ]\", \"[, ]\", \"[ the]\", \"[, any identification card with picture and signature, ]\", \"[ with picture, or credit card. ]\") are deleted, as in HB258. The bill description says it requires \"a picture identification card issued by a governmental or educational entity\", but the text does not: a licence, instruction permit, intermediate licence and Social Security card carry no picture requirement, and personal acquaintance remains an alternative. Photo is required only for the city/county, Kentucky state, college/university and high-school cards. No consequence for lacking ID is stated (slot b not stated).",
+  "sponsors": [
+    {
+      "name": "James Tipton",
+      "role": "prime",
+      "version": "bill"
+    },
+    {
+      "name": "David Hale",
+      "role": "co",
+      "version": "bill"
+    },
+    {
+      "name": "Kenny Imes",
+      "role": "co",
+      "version": "bill"
+    },
+    {
+      "name": "DJ Johnson",
+      "role": "co",
+      "version": "bill"
+    },
+    {
+      "name": "Kim King",
+      "role": "co",
+      "version": "bill"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 KY bill texts and roll calls (Sonnet readers R1-R4 + version pass; apps.legislature.ky.gov vote histories, voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "curl"
+  }
+}

@@ -26,7 +26,158 @@
         "fetched_at": "2026-10-21T01:52:20.308Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "c8cb9acebea2a06a980aca38850fae7fed271ac5f7b7caa5706f56b4e4f25e55",
+      "kind": "own-words",
+      "url": "https://kysenaterepublicans.com/press-releases/2024/2/13/howell-wants-constitutional-amendment-protecting-kentucky-residents-on-the-november-ballot",
+      "date": "2024-02-12",
+      "date_precision": "day",
+      "passage": "“It’s odd we don’t already have this spelled out in our Constitution. While this is specifically prohibited at the federal level, it isn’t addressed here in Kentucky,” said Howell. “This is about protecting citizens and the thousands of people who’ve lawfully navigated the immigration process.  One of the rewards of doing so is earning the right to vote.”",
+      "note": "Quoted in a Senate caucus release (dated Feb 13, describing Feb 12 floor presentation) on SB 143, a proposed constitutional amendment stating that only U.S. citizens may vote in Kentucky.",
+      "subjects": [
+        "citizenship required to vote",
+        "noncitizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:21:57.172Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dc5ff336a639ab5900ef167d3b3a549505deb4cea313cfb82eccf4bc309e626",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24RS/sb80/vote_history.pdf",
+      "date": "2024-01-30",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-80-2024",
+      "act": "yea",
+      "motion": "Senate: Senate third reading, passed",
+      "note": "KY Senate roll call (Senate third reading, passed, 27-7) on SB80 (2024 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 22071 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "964f43dd513a6a900fe46730c227d9b9c229eaaa4159401edbd436f6f4e82228",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "Senate: third reading, passed Senate with Senate Committee Substitute (1)",
+      "note": "KY Senate roll call (third reading, passed Senate with Senate Committee Substitute (1), 31-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 22071 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa8ad840466678434828836de887f898e45dc3f627478ec4fe8931f410f4e2d2",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "Senate: override of the Governor's veto, final passage (Senate)",
+      "note": "KY Senate roll call (override of the Governor's veto, final passage (Senate), 32-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 22071 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8cb257bf2da3336ed900008c97f3e633ffee27db4f47f3bef14f6db1a9004902",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/sb154/vote_history.pdf",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-154-2026",
+      "act": "yea",
+      "motion": "Senate: third reading, passed Senate",
+      "note": "KY Senate roll call (third reading, passed Senate, 31-7) on SB154 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 22071 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship",
+        "citizenship required to vote (constitutional amendment)",
+        "noncitizen voting",
+        "mail-ballot rules",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "State Senate caucus press release of 2024-02-13 (https://kysenaterepublicans.com/press-releases/2024/2/13/howell-wants-constitutional-amendment-protecting-kentucky-residents-on-the-november-ballot): names him as Sen. Jason Howell of Murray",
+        "WEKU story of 2024-02-13 on the noncitizen-voting amendments: repeats the same quotes",
+        "Commonwealth Policy Center 2024 S1 guide (https://commonwealthpolicycenter.org/wp-content/uploads/2024/05/2024-S1.pdf): nothing on the subject",
+        "iVoterGuide 2024 profile: photo-ID question listed as did not answer",
+        "member's local legislative-update columns, 2026-03 and 2026-04 (crittendenpress.blogspot.com): nothing on voter ID or citizenship",
+        "5 web searches on voter ID, photo ID, citizenship, noncitizen, questionnaires, absentee and mail voting",
+        "blocked: https://ballotpedia.org/Jason_Howell_(Kentucky) (known to refuse fetches; not tried)",
+        "not reviewed: legislature bill pages (votes and sponsorships are linked separately)"
+      ],
+      "found": 1,
+      "at": "2026-11-11T18:21:57.172Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 4,
+      "at": "2026-11-11T21:12:46.603Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
 }

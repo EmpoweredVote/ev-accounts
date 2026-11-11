@@ -1,0 +1,135 @@
+{
+  "politician_id": "78c9e7c6-4796-49b7-8e1a-1220b48e2adb",
+  "findings": [
+    {
+      "id": "c73bf1d19957ebbd60753493f73f936a4b5e56e6a1e32b6385546be0bf132230",
+      "kind": "own-words",
+      "url": "https://archive.kftc.org/election/state/keturah-herron",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "If we want to have people engaged, we must make it easier for people to cast a vote and not put more stipulations on them. I fully support making voting more accessible to more people. We all should be working to register as many people as possible as well as expanding voting rights and ways to vote.",
+      "note": "Her written answer to a Kentuckians For The Commonwealth questionnaire from her House run (listed as KY House 42). Question 3 read: \"During 2020, Kentuckians voted in large numbers as a result of mail-in absentee voting and early voting. What is your view on modernizing state election laws? Specifically, do you support allowing early voting, mail-in ballots without excuses, same-day voter registration, extended hours at polling locations, offering ballots in multiple languages, and other election reforms?\" She names no ID or citizenship rule. Date not shown on the page; it follows the 2020 election.",
+      "subjects": [
+        "voting access",
+        "mail-ballot access",
+        "same-day registration and early voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:39:30.042Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3b567d0b3b9d0917c72eab25705eac4fcdb4f1c18b5336fc1c8d847b9e66b665",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "nay",
+      "motion": "Senate: third reading, passed Senate with Senate Committee Substitute (1)",
+      "note": "KY Senate roll call (third reading, passed Senate with Senate Committee Substitute (1), 31-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23103 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.609Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "763ea165d7dd607ae87a851dfc93bc0796aa12a9e07101112235b0eebe57a9e5",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "nay",
+      "motion": "Senate: override of the Governor's veto, final passage (Senate)",
+      "note": "KY Senate roll call (override of the Governor's veto, final passage (Senate), 32-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23103 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.609Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad0682ba8f72e0136a4858141ce12fc45e14f6cb15fc397bebc4a35695f2bc3c",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/sb154/vote_history.pdf",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-154-2026",
+      "act": "nay",
+      "motion": "Senate: third reading, passed Senate",
+      "note": "KY Senate roll call (third reading, passed Senate, 31-7) on SB154 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23103 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.609Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship",
+        "noncitizen voting",
+        "mail and absentee ballots",
+        "election law and voting access"
+      ],
+      "places": [
+        "status: holds Kentucky Senate District 35, term to 2028 (brief); not on the 2026 ballot",
+        "On the Record (0 meetings)",
+        "https://archive.kftc.org/election/state/keturah-herron (questionnaire from her House run, date not shown; read by curl)",
+        "nothing on the subject: https://hoptownchronicle.org/?p=96341 (Kentucky Lantern story by McKenna Horsley; her quotes there are about restoring voting rights after a sentence, not identity or citizenship; the voter ID remarks in it are other senators')",
+        "nothing on the subject: https://www.leoweekly.com/?p=95779 (same Kentucky Lantern story)",
+        "nothing on the subject: https://kysenaterepublicans.com/press-releases/2025/8/26/senators-higdon-and-herron-lead-bipartisan-effort-on-restoration-of-voting-rights (felony voting rights only)",
+        "no campaign site or newsletter surfaced in 5 searches (ActBlue page only)",
+        "blocked: Ballotpedia, votesmart (refuse fetches); not tried",
+        "not reviewed: spectrumnews1.com pages (outlet refused)"
+      ],
+      "found": 1,
+      "at": "2026-11-11T18:39:30.042Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 3,
+      "at": "2026-11-11T21:12:46.609Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
+}

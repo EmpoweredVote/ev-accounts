@@ -1,0 +1,259 @@
+{
+  "politician_id": "9afa6c68-2cf9-4946-8ea0-7171d4153a4e",
+  "findings": [
+    {
+      "id": "29e744146769b58ad6b4c27b97ab18f89fc336ab28c7b13a337bd7856b12d859",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/62092/race/11168/election/885",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "People should be able to vote without photo identification. Strongly Disagree",
+      "note": "iVoterGuide candidate questionnaire page for the 2022 Kentucky primary (May 17, 2022); the date the answer was given is not printed. Ticked answer to the statement 'People should be able to vote without photo identification.' is 'Strongly Disagree'.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:42:15.705Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "61a9a7674807d9df0b2900d03b29ebcce25773f81d41aa3eb69c8ff54c3cc43d",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/62092/race/11168/election/885",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "I would remove the use of non-photo ids to vote.  I would support exploring the use of block-chain technology to create fraud proof elections that still allow for anonymous voting in our elections.",
+      "note": "Written answer on the same iVoterGuide 2022 primary page, to the question 'What laws would you propose to change present voting practices?'. Date of answer not printed.",
+      "subjects": [
+        "voter ID at the polls",
+        "non-photo ID",
+        "election security technology"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:42:15.705Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6dce689c657b215dc6abb2e70c6ced67279accecd06bfd93b06d42efd18ebf9f",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/62092/race/11168/election/955",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "People should be able to vote without photo identification. Strongly Disagree",
+      "note": "iVoterGuide page for the 2022 Kentucky general election (Nov 8, 2022); ticked answer 'Strongly Disagree'. The same page shows 'Did not answer' for the free-text question on changes to voting practices. Date of answer not printed.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:42:15.705Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5e4f3634e220a33ad40fce5b8e4d1c6961e2d8c75e6994192611e2339990be3",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/62092/race/11168/election/1085",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "People should be able to vote without photo identification. Strongly Agree",
+      "note": "iVoterGuide page for the 2024 Kentucky primary (May 21, 2024); ticked answer 'Strongly Agree'. The page is marked as 'Public data' and shows '(Candidate did not provide)' in its biography section, and it conflicts with the 2022 and 2026 pages. The staff note on the 2024 general-election page for this person says the intended answer was the opposite (see that finding). Date of answer not printed.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:42:15.705Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dba18d05db4a76982cb7c434d171b6893e120637f8b47dc6fbc00908de33b2a",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/62092/race/11168/election/1211",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Staff note: After evaluations occurred, candidate notified iVoterGuide that the intended answer to this question should have been: STRONGLY DISAGREE.",
+      "note": "iVoterGuide page for the 2024 Kentucky general election (Nov 5, 2024). The ticked answer printed to 'People should be able to vote without photo identification.' is 'Strongly Agree', and the page's staff note says the candidate told iVoterGuide after evaluation that the intended answer was Strongly Disagree. The note is iVoterGuide's report of what the candidate told them, not a direct candidate quote.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:42:15.705Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e7f2db7bf0dd56f9c74757fcc8c8452c2686b9e51d390f17d787dcbb85ec0b58",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/62092/race/24420/election/1358",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "People should be able to vote without photo identification. Strongly Disagree",
+      "note": "iVoterGuide page for the 2026 Kentucky primary (May 19, 2026); ticked answer 'Strongly Disagree'. Date of answer not printed.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:42:15.705Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f828c1e0e7e9836fe14b291462cfa99a1e47776134a04b538e3f4a00f1250a0d",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/62092/race/31233/election/1461",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "People should be able to vote without photo identification. Strongly Disagree",
+      "note": "iVoterGuide page for the 2026 Kentucky general election (Nov 3, 2026); ticked answer 'Strongly Disagree'. Date of answer not printed.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:42:15.705Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d46ecb91a31ee5cd1e1e87159cd4301382bc37721ea5bb099f789780020ffed",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23692 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.606Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9d1cc56372773c897daa5108e69d4a07df5ffa947a543f55af89a207bd976d6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23692 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.606Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd4f0553eb6ef608e5f4f0880dfe9d952201740968402fd0ab748856330a3352",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "yea",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23692 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.606Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to vote",
+        "proof of citizenship",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "iVoterGuide profile pages 2022-2026 (6 pages fetched)",
+        "Branch.vote 2026 profile (site had no information on voting)",
+        "LINK nky 2022 and 2024 candidate pieces (nothing on the subject)",
+        "Commonwealth Policy Center 2024 H69 guide (nothing on the subject)",
+        "web searches x5 (voter ID, photo ID/citizenship, questionnaire, election integrity/SB 2/HB 574, campaign site)",
+        "blocked: https://ballotpedia.org/Steven_Doan (not fetched per instructions)",
+        "not reviewed: official legislature page (bills handled separately)"
+      ],
+      "found": 7,
+      "at": "2026-11-11T18:42:15.705Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 3,
+      "at": "2026-11-11T21:12:46.606Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
+}
