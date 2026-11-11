@@ -8,7 +8,9 @@ Rewrites <batch>/research.csv in place (original kept as research-pre-evidence.c
   person's quoted passage, else their surname, else the instrument named in the reasoning.
 --from-research / --from-pre: see the research.built.sha256 check below (a replaced research.csv stops the run).
 --fetch fetches missing pages one at a time (curl, 1 s apart); iga.in.gov and congress.gov pages through their official
-APIs instead (_iga.py, _congress.py). A congress.gov page cached by an older run holds a bot check: delete it first."""
+APIs instead (_iga.py, _congress.py). A congress.gov page cached by an older run holds a bot check: delete it first.
+A page the live site refuses (non-2xx, or a page the verifier's looksLikeRealPage refuses) is read from its archive.org
+snapshot through the verifier's own reader instead (_archive.py → archive-pages.ts); with no usable snapshot it is unread."""
 import csv, json, sys, os, re, hashlib, subprocess, time, html
 B, ROSTER, FIND = sys.argv[1:4]; FETCH = '--fetch' in sys.argv
 pol = json.load(open(f'{B}/politicians.json')); pol = pol if isinstance(pol, list) else pol.get('politicians', pol)
@@ -76,13 +78,19 @@ def text_of(url):
         if is_iga(url): return iga_text(url, f'{B}/pages')
         if is_congress(url): return congress_text(url, f'{B}/pages')
         time.sleep(1)
-        r = subprocess.run(['curl', '-sL', '--compressed', '--max-time', '40', '-A', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36', url], capture_output=True)
-        if r.stdout[:5] == b'%PDF-':  # a PDF is read with pdftotext, never stripped as HTML
-            t = subprocess.run(['pdftotext', '-layout', '-', '-'], input=r.stdout, capture_output=True).stdout.decode('utf-8', 'replace')
+        r = subprocess.run(['curl', '-sL', '--compressed', '--max-time', '40', '-w', '\n%{http_code}', '-A', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36', url], capture_output=True)
+        body, _, status = r.stdout.rpartition(b'\n')
+        if body[:5] == b'%PDF-' and status.startswith(b'2'):  # a PDF is read with pdftotext, never stripped as HTML
+            t = subprocess.run(['pdftotext', '-layout', '-', '-'], input=body, capture_output=True).stdout.decode('utf-8', 'replace')
             t = re.sub(r'\s+', ' ', t).strip(); open(f, 'w').write(t); return t
-        raw = r.stdout.decode('utf-8', 'replace')
+        raw = body.decode('utf-8', 'replace')
         raw = re.sub(r'(?is)<(script|style|noscript)[^>]*>.*?</\1>', ' ', raw)
         t = html.unescape(re.sub(r'<[^>]+>', ' ', raw)); t = re.sub(r'\s+', ' ', t).strip()
+        # A refused, thin or challenge page: read the archive.org snapshot, as the verifier does (_archive.py). With no
+        # snapshot, a page that loaded (2xx) is kept as before, the verifier's best effort; a refused one is unread.
+        if live_failed(status, t):
+            a = archive_text(url, f'{B}/pages')
+            if a or not status.startswith(b'2') or not t: return a
         open(f, 'w').write(t)
     return open(f).read()
 
@@ -144,6 +152,7 @@ from _window import verifiable_window  # a passage the verifier itself accepts (
 from _iga import is_iga, iga_text  # iga.in.gov through the official API, never the browser UA
 from _congress import is_congress, congress_text  # congress.gov through api.congress.gov, never the browser UA
 from _ballotpedia import ballotpedia_non_survey  # survey answers only (ruling 2026-11-02)
+from _archive import live_failed, archive_text  # archive.org when the live page is refused, as the verifier
 def window(t, i, j, n=30):
     w = t.split(' '); pos = len(t[:i].split(' ')) - 1; end = len(t[:j].split(' '))
     span = end - pos

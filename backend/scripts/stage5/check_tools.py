@@ -216,6 +216,22 @@ def quote_fix_splits_an_edited_quote(t):
     assert [x['now'] for x in json.load(open(f'{B}/overrides.json'))['trims']] == ['"requires a permit" … "issued by the department"']
 
 
+@check
+def archive_fallback_when_live_page_is_refused(t):
+    """build_evidence.py reads archive.org when the live page fails the verifier's own test (_archive.live_failed).
+    wi-01 cut from a 403 page and held a person whose pages the verifier read from the archive (2026-11-10)."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location('_archive', os.path.join(TOOLS, '_archive.py'))
+    m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+    real = 'Statement on school safety. ' * 40
+    assert m.live_failed(b'403', real), 'a 403 must fall back, even with a long body'
+    assert m.live_failed(b'000', ''), 'a timeout must fall back'
+    assert m.live_failed(b'200', 'Just a moment... checking your browser'), 'a short challenge page must fall back'
+    assert m.live_failed(b'200', 'too short'), 'a body under 500 characters must fall back'
+    assert not m.live_failed(b'200', real), 'a real 200 page must be kept'
+    assert not m.live_failed(b'200', real + ' access denied ' + real), 'a marker in a long page is not a challenge'
+
+
 fails = 0
 with tempfile.TemporaryDirectory() as root:
     for i, f in enumerate(CHECKS):

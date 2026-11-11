@@ -18,6 +18,7 @@ Python as `python3 -I scripts/stage5/<tool>.py`. `<batch>` is the batch folder, 
 | 2 | `add_hand_rows.py <batch> <stage5> <findings> --topic <key>` | appends the rows in `hand-rows.json` (`{id: "no-evidence" \| "direction-only"}`) |
 | 4 | `build_evidence.py <batch> <roster.tsv> <findings> [--fetch] [--level state --state XX] [--max-urls N] [--from-research\|--from-pre]` | builds `evidence.csv`; lists unread pages in `evidence-missing.json`. A `research.csv` replaced since its last run stops it: `--from-research` rebuilds from the new file, `--from-pre` from the saved copy. `--max-urls`: most sources a row keeps (default 8 federal, 20 state; federal-01 needed 20) |
 | 4 | `congress-pages.ts <pages dir> <url>…` | congress.gov text through the verifier's api.congress.gov reader (`build_evidence.py` calls it through `_congress.py`; a plain fetch gets a bot check) |
+| 4 | `archive-pages.ts <pages dir> <url>…` | archive.org text through the verifier's own `fetchViaWayback` (`build_evidence.py` calls it through `_archive.py` when the live page is refused, thin or a challenge page, the verifier's `looksLikeRealPage` test) |
 | 4 | `pdf_pages.py <batch>` | reads PDF sources with `pdftotext` |
 | 5 | `s1-sources.ts --topic <key> <batch>` | old-season sources behind each blank over a shown answer → `fallback/fallback-required.json` |
 | 5 | `fallback-fetch.ts <batch>/fallback` | loads `fallback/urls.txt` through the verifier's own fetch steps |
