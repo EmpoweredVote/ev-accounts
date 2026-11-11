@@ -92,8 +92,8 @@ SELECT 's3', md5(
                WHERE e.id IN (SELECT id FROM _move WHERE tbl = 'evidence')), '') || '#' ||
     coalesce((SELECT string_agg((to_jsonb(r) - 'politician_id')::text, '|') FROM inform.stance_research_review r
                WHERE r.id IN (SELECT id FROM _move WHERE tbl = 'review')), '') || '#' ||
-    coalesce((SELECT string_agg((to_jsonb(o) - 'politician_id')::text, '|') FROM inform.topic_research_outcomes o, _p
-               WHERE o.politician_id IN (_p.keep, _p.dup) AND o.topic_id = _p.topic AND o.season_id = _p.season), ''))
+    coalesce((SELECT string_agg((to_jsonb(tro) - 'politician_id')::text, '|') FROM inform.topic_research_outcomes tro, _p
+               WHERE tro.politician_id IN (_p.keep, _p.dup) AND tro.topic_id = _p.topic AND tro.season_id = _p.season), ''))
 UNION ALL
 SELECT 'term', md5(to_jsonb(t)::text) FROM essentials.office_terms t, _p WHERE t.id = _p.sd25_term;
 
@@ -206,9 +206,9 @@ UPDATE inform.stance_research_review r SET politician_id = p.keep
   FROM _p p
  WHERE r.id IN (SELECT id FROM _move WHERE tbl = 'review') AND r.politician_id = p.dup;
 
-UPDATE inform.topic_research_outcomes o SET politician_id = p.keep
+UPDATE inform.topic_research_outcomes tro SET politician_id = p.keep
   FROM _p p
- WHERE o.politician_id = p.dup AND o.topic_id = p.topic AND o.season_id = p.season;
+ WHERE tro.politician_id = p.dup AND tro.topic_id = p.topic AND tro.season_id = p.season;
 
 -- ─── 3. The ballot name as an alias ──────────────────────────────────────────────────────────────
 INSERT INTO essentials.politician_name_aliases (politician_id, alias, source)
@@ -312,8 +312,8 @@ BEGIN
                     WHERE e.id IN (SELECT id FROM _move WHERE tbl = 'evidence')), '') || '#' ||
          coalesce((SELECT string_agg((to_jsonb(r) - 'politician_id')::text, '|') FROM inform.stance_research_review r
                     WHERE r.id IN (SELECT id FROM _move WHERE tbl = 'review')), '') || '#' ||
-         coalesce((SELECT string_agg((to_jsonb(o) - 'politician_id')::text, '|') FROM inform.topic_research_outcomes o
-                    WHERE o.politician_id IN (p.keep, p.dup) AND o.topic_id = p.topic AND o.season_id = p.season), ''))
+         coalesce((SELECT string_agg((to_jsonb(tro) - 'politician_id')::text, '|') FROM inform.topic_research_outcomes tro
+                    WHERE tro.politician_id IN (p.keep, p.dup) AND tro.topic_id = p.topic AND tro.season_id = p.season), ''))
      ELSE (SELECT md5(to_jsonb(t)::text) FROM essentials.office_terms t WHERE t.id = p.sd25_term)
    END);
   IF v_n <> 0 THEN RAISE EXCEPTION 'POST: % fingerprint(s) changed (Season 1, moved Season 3 content, or the District 25 term)', v_n; END IF;
