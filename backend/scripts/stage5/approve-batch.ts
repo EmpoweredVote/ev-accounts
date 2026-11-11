@@ -13,31 +13,39 @@
  * source, and the review row's notes record each cited page's verdict (resolveResearchReview,
  * unverifiableBlankNote; ruling 2026-10-31). It replaces writing such a blank by hand. A chair, or a blank queued
  * for any reason but below-threshold, still fails.
+ *
+ * --hand-checked names a queued row whose one cited page the runner opened and confirmed by hand, when the verifier
+ * cannot tie the passage to the person (the name is too far from it on the page). That page is passed as a
+ * human-verified source, the same path the admin review page uses, and is stored with the snippet
+ * "[Human verified during review]". A row citing no page or more than one is refused (handCheckedUrl). Use it only
+ * on the runner's own statement that they checked that page (ruling 2026-11-11, Joe White, sc-01).
  */
 import { pool } from '../../src/lib/db.js';
 import { resolveResearchReview } from '../../src/lib/researchEvidenceService.js';
-import { unverifiableNote } from './lib.js';
+import { handCheckedUrl, unverifiableNote } from './lib.js';
 
 const [editor, batches] = process.argv.slice(2);
 if (!editor || !batches || editor.startsWith('--')) {
-  console.error('usage: approve-batch.ts <editor uuid> <batch,...> [--skip "Full Name"]... [--unverifiable-blank "Full Name"]...');
+  console.error('usage: approve-batch.ts <editor uuid> <batch,...> [--skip "Full Name"]... [--unverifiable-blank "Full Name"]... [--hand-checked "Full Name"]...');
   process.exit(2);
 }
 const listed = (flag: string) => process.argv.flatMap((a, i) => (a === flag ? [process.argv[i + 1]] : []));
 const skip = listed('--skip');
 const unverifiable = listed('--unverifiable-blank');
+const handChecked = listed('--hand-checked');
 const rows = (await pool.query(
   "SELECT id, full_name_raw, batch_id, evidence FROM inform.stance_research_review WHERE status = 'pending' AND batch_id = ANY($1) ORDER BY batch_id, full_name_raw",
   [batches.split(',')])).rows;
-const missing = unverifiable.filter((n) => !rows.some((r) => r.full_name_raw === n));
-if (missing.length) console.log('NOT PENDING in these batches (--unverifiable-blank):', missing.join('; '));
+const missing = [...unverifiable, ...handChecked].filter((n) => !rows.some((r) => r.full_name_raw === n));
+if (missing.length) console.log('NOT PENDING in these batches (--unverifiable-blank / --hand-checked):', missing.join('; '));
 let ok = 0, bad = 0;
 for (const r of rows) {
   if (skip.includes(r.full_name_raw)) { console.log('SKIP', r.full_name_raw); continue; }
   const note = unverifiable.includes(r.full_name_raw) ? unverifiableNote(r.evidence) : undefined;
   try {
-    await resolveResearchReview(r.id, editor, [], undefined, undefined, undefined, { unverifiableBlankNote: note });
-    ok++; console.log(note ? 'DONE (no verified source)' : 'DONE', r.batch_id, r.full_name_raw);
+    const hand = handChecked.includes(r.full_name_raw) ? [handCheckedUrl(r.evidence)] : [];
+    await resolveResearchReview(r.id, editor, hand, undefined, undefined, undefined, { unverifiableBlankNote: note });
+    ok++; console.log(note ? 'DONE (no verified source)' : hand.length ? `DONE (hand-checked ${hand[0]})` : 'DONE', r.batch_id, r.full_name_raw);
   }
   catch (e: any) { bad++; console.log('FAIL', r.batch_id, r.full_name_raw, e.code, e.message); }
 }

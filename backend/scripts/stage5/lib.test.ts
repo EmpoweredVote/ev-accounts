@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { checkNameProximity, matchedSpan } from '../../src/lib/researchVerifier.js';
-import { readCsv, sessionsForYear, sweepHit, unverifiableNote, verifiableWindow } from './lib.js';
+import { handCheckedUrl, readCsv, sessionsForYear, sweepHit, unverifiableNote, verifiableWindow } from './lib.js';
 
 describe('readCsv', () => {
   it('reads quoted fields, doubled quotes and embedded newlines', () => {
@@ -110,3 +110,17 @@ describe('sessionsForYear', () => {
   });
 });
 
+
+describe('handCheckedUrl', () => {
+  it('returns the one page a row cites', () => {
+    expect(handCheckedUrl([{ url: 'https://a.example/x' }, { url: 'https://a.example/x' }])).toBe('https://a.example/x');
+  });
+  it('refuses a row that cites no page', () => {
+    expect(() => handCheckedUrl(null)).toThrow(/exactly one page; this one cites 0/);
+    expect(() => handCheckedUrl([])).toThrow(/cites 0/);
+  });
+  it('refuses a row that cites two pages, naming both', () => {
+    expect(() => handCheckedUrl([{ url: 'https://a.example/x' }, { url: 'https://b.example/y' }]))
+      .toThrow('cites 2: https://a.example/x; https://b.example/y');
+  });
+});

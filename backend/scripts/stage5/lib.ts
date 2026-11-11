@@ -98,6 +98,21 @@ export function unverifiableNote(
 }
 
 /**
+ * The page a hand check covers (approve-batch.ts --hand-checked): a queued row's ONE cited page, which the runner
+ * opened and confirmed carries the person's words. Refused when the row cites no page or more than one, so a check of
+ * one page can never vouch for another (sc-01, 2026-11-11: Joe White's iVoterGuide answer sits ~25,000 characters
+ * below his name, past the verifier's 500-character rule; the runner checked the page by hand).
+ */
+export function handCheckedUrl(evidence: { url: string }[] | null): string {
+  const urls = [...new Set((evidence ?? []).map((e) => e.url.trim()).filter(Boolean))];
+  if (urls.length !== 1) {
+    throw new Error(`--hand-checked needs a row that cites exactly one page; this one cites ${urls.length}`
+      + (urls.length ? `: ${urls.join('; ')}` : ''));
+  }
+  return urls[0];
+}
+
+/**
  * LegiScan sessions a vote of `year` can sit in: every session whose span (year_start..year_end) covers it, plus a
  * session that starts the next year (the old rule, kept). The old rule matched year_start only, so a vote in the
  * second year of a two-year session (Ohio's 2022, 2024, 2026) found no session at all (oh-01, 2026-11-06).
