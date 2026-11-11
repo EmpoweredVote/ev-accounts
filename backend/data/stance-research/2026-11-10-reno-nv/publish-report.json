@@ -1,0 +1,78 @@
+[
+  {
+    "full_name": "Hillary Schieve",
+    "topic_key": "public-safety-approach",
+    "value": 4,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.kunr.org/post/schieve-frustrated-renos-first-budget-workshop"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Kathleen Taylor",
+    "topic_key": "public-safety-approach",
+    "value": 4,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://thisisreno.com/2022/09/kathleen-taylor-appointed-to-ward-5-council-seat-talks-downtown-expansion-sustainability-and-public-safety/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Kathleen Taylor",
+    "topic_key": "data-centers",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://thenevadaindependent.com/article/where-do-candidates-for-reno-mayor-city-council-stand-on-the-issues"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Meghan Ebert",
+    "topic_key": "data-centers",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://thenevadaindependent.com/article/reno-hit-pause-on-approving-data-centers-now-what-happens"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Devon Reese",
+    "topic_key": "data-centers",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://thenevadaindependent.com/article/reno-hit-pause-on-approving-data-centers-now-what-happens",
+      "https://www.kunr.org/local-stories/2026-06-05/reno-city-council-extends-data-center-moratorium-into-2027"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  }
+]

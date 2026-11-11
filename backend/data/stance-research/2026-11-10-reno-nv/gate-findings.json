@@ -1,0 +1,47 @@
+{
+  "findings": [
+    {
+      "full_name": "Hillary Schieve",
+      "topic_key": "public-safety-approach",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Kathleen Taylor",
+      "topic_key": "public-safety-approach",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Kathleen Taylor",
+      "topic_key": "data-centers",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Meghan Ebert",
+      "topic_key": "data-centers",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Devon Reese",
+      "topic_key": "data-centers",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    }
+  ],
+  "summary": {
+    "rows": 364,
+    "high": 0,
+    "medium": 5,
+    "by_check": {
+      "statement-needs-review": 5
+    }
+  }
+}
