@@ -162,6 +162,31 @@ const PATTERNS = [
     re: /DELETE\s+FROM\s+essentials\.offices\b(?![\s\S]{0,120}?USING)[\s\S]{0,120}?\bWHERE\b[^;]*?\bpolitician_id\b/gi,
     why: "filters essentials.offices on politician_id",
   },
+  {
+    // 🔴 A FOURTH RULE, SAME FAMILY (added 2026-11-10, CC_0391): serving a TERM DATE out of the
+    // per-person snapshot. ADR 0002 moved occupancy onto essentials.office_terms, and
+    // politicians.valid_from / valid_to / term_date_precision are the DEPRECATED leftovers —
+    // wrong entity, because dates belong to a tenure and people hold two offices.
+    //
+    // This one is SILENT, which is why it needed a guard. The column exists, so there is no
+    // 42703; it is TEXT holding values like '2024', so nothing even looks malformed; and the
+    // query returns a row. It just answers with somebody else's date, or with nothing. Measured
+    // on prod the day this rule was written: 4,169 office_terms rows carried a start date against
+    // 693 people with a valid_from, so 4,033 current dated tenures rendered as NO DATE to a
+    // voter and 39 rendered a date that DISAGREED with the tenure. Every address, list and detail
+    // query in backend/src read the snapshot, for a year, with CI green throughout.
+    //
+    // Scoped to backend/src — the READ paths. Migrations and scripts legitimately WRITE these
+    // columns (stagingService's importer fills them from the upstream feed), and the unqualified
+    // column lists and `EXCLUDED.valid_from` those use do not match the alias-qualified form
+    // below. Restricting the alias set to p / p<N> / pol / politicians rather than the `p[0-9a-z]*`
+    // shape used above keeps it off unrelated identifiers like `prop.valid_from`.
+    re: /(^|[^\w.])(?:p[0-9]*|pol|politicians)\.(?:valid_from|valid_to|term_date_precision)\b/gi,
+    why:
+      "reads the deprecated politicians.valid_from/valid_to/term_date_precision snapshot for a term date — " +
+      "join essentials.office_current_holder and select to_char(och.term_start, 'YYYY-MM-DD')",
+    only: (rel) => rel.startsWith("backend/src/"),
+  },
 ];
 
 const SCAN_ALL = process.argv.includes("--all");
@@ -204,7 +229,9 @@ for (const rel of files) {
     continue; // deleted between diff and read
   }
   const code = stripComments(src);
-  for (const { re, why } of PATTERNS) {
+  for (const { re, why, only } of PATTERNS) {
+    // A rule may narrow itself to part of the tree; see the valid_from rule's note.
+    if (only && !only(rel)) continue;
     re.lastIndex = 0;
     const m = re.exec(code);
     if (m) {

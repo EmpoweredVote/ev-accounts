@@ -180,3 +180,89 @@ describe('check-office-occupancy — view aliases that legitimately carry politi
     expect(r.out).toContain('reads <offices alias>.politician_id');
   });
 });
+
+// ─────────────────────────────────────────────────────────────────────────────────────────────
+// CC_0391: serving a TERM DATE from the deprecated per-person snapshot.
+//
+// This rule is scoped to backend/src — the read paths — because migrations and scripts
+// legitimately WRITE politicians.valid_from (the staging importer fills it from the upstream
+// feed). Both halves are tested: the read path must be caught, and the writers must not be.
+//
+// 🔴 The rule shipped broken the first time and a positive control is the only reason anybody
+//    knew. It was generated through a shell heredoc into a template literal, which ate the
+//    backslashes: `\b` became a literal BACKSPACE byte (0x08) inside the regex, so the pattern
+//    demanded a control character that no source file contains and matched nothing, for ever.
+//    The guard reported "OK" over a planted violation and `cat -A` was what finally showed it.
+//    ▶ A GUARD THAT HAS NEVER BEEN WATCHED FAILING IS NOT A GUARD.
+// ─────────────────────────────────────────────────────────────────────────────────────────────
+describe('check-office-occupancy — term dates must come from the tenure, not the person', () => {
+  const READ_PATH_SRC = [
+    "export const SELECT = `",
+    '  p.id, p.full_name,',
+    "  COALESCE(p.valid_from, '') AS term_start,",
+    "  COALESCE(p.valid_to, '') AS term_end",
+    '`;',
+    '',
+  ].join('\n');
+
+  it('backend/src reading p.valid_from for a term date is a violation', () => {
+    const rel = 'backend/src/lib/someQueries.ts';
+    const r = run({ [rel]: READ_PATH_SRC });
+    expect(r.code).toBe(1);
+    expect(r.out).toContain('deprecated politicians.valid_from');
+    expect(reportedLine(r.out, rel)).toBe(realLine(READ_PATH_SRC, 'p.valid_from'));
+  });
+
+  it('p.term_date_precision and p.valid_to are caught the same way', () => {
+    const rel = 'backend/src/lib/other.ts';
+    const src = "const q = \"SELECT COALESCE(p.term_date_precision, '') AS term_date_precision\";\n";
+    const r = run({ [rel]: src });
+    expect(r.code).toBe(1);
+  });
+
+  it('the same read OUTSIDE backend/src is not a violation — importers write these columns', () => {
+    const r = run({ 'backend/scripts/import-feed.ts': READ_PATH_SRC });
+    expect(r.code).toBe(0);
+  });
+
+  it('an unqualified column list and EXCLUDED.valid_from are writes, not reads', () => {
+    const rel = 'backend/src/lib/stagingish.ts';
+    const src = [
+      "const sql = `",
+      '  INSERT INTO essentials.politicians (full_name, valid_from, valid_to, is_incumbent)',
+      '  VALUES ($1, $2, $3, false)',
+      '  ON CONFLICT (external_id) DO UPDATE SET',
+      '    valid_from = EXCLUDED.valid_from,',
+      '    valid_to = EXCLUDED.valid_to',
+      '`;',
+      '',
+    ].join('\n');
+    const r = run({ [rel]: src });
+    expect(r.code).toBe(0);
+  });
+
+  it('a comment ABOUT the snapshot is not a violation', () => {
+    const rel = 'backend/src/lib/noted.ts';
+    const src = [
+      '// Term dates come from office_current_holder now, never from p.valid_from.',
+      "const q = \"SELECT COALESCE(to_char(och.term_start, 'YYYY-MM-DD'), '') AS term_start\";",
+      '',
+    ].join('\n');
+    const r = run({ [rel]: src });
+    expect(r.code).toBe(0);
+  });
+
+  it('the fixed form — och.term_start through to_char — passes', () => {
+    const rel = 'backend/src/lib/fixed.ts';
+    const src = [
+      "export const SELECT = `",
+      "  COALESCE(to_char(och.term_start, 'YYYY-MM-DD'), '') AS term_start,",
+      "  COALESCE(to_char(och.term_end, 'YYYY-MM-DD'), '') AS term_end,",
+      "  COALESCE(CASE WHEN och.term_start IS NOT NULL THEN och.start_precision END, '') AS term_date_precision",
+      '`;',
+      '',
+    ].join('\n');
+    const r = run({ [rel]: src });
+    expect(r.code).toBe(0);
+  });
+});
