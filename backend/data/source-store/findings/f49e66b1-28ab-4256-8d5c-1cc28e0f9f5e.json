@@ -1,0 +1,32 @@
+{
+  "politician_id": "f49e66b1-28ab-4256-8d5c-1cc28e0f9f5e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "teachers carrying guns",
+        "general statement on gun safety or gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://karenforaz.com (home page and /priorities read; nothing naming guns or firearms; only general mentions of safe schools and public safety)",
+        "blocked: https://ballotpedia.org (not fetched; known to return empty pages)",
+        "https://ivoterguide.com/candidate/85875/race/9796/election/1243 (names her in the Arizona general election of 2026-11-03 for the state House; her answers to the gun-restriction and teacher-carry questions are marked 'Did not answer'; lists two gun-safety groups as endorsers, which is not her own words)",
+        "https://blogforarizona.net/school-board-member-karen-gresham-vies-to-help-democrats-get-a-state-house-majority-in-battleground-ld-four (nothing on the subject)",
+        "https://www.kjzz.org/elections/2026-10-06/2026-arizona-house-4th-legislative-district-race-the-candidates-elex (nothing on the subject)",
+        "blocked: https://bluevoterguide.org/endorser-org/Gun_Sense_Voter/AZ/4895 (403)",
+        "sponsor list: covered by LegiScan bulk check (not a sitting legislator)",
+        "news search on name plus gun words (only advocacy-group lists; no statement by her found)"
+      ],
+      "found": 0,
+      "at": "2026-11-11T04:15:43.922Z",
+      "by": "source-collector"
+    }
+  ]
+}

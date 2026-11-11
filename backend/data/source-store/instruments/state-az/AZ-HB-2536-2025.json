@@ -1,0 +1,110 @@
+{
+  "id": "AZ-HB-2536-2025",
+  "scope": "state:az",
+  "title": "HB2536 (Fifty-seventh Legislature - First Regular Session (2025)): Sentencing; concealed weapons permits; surrender",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/82358",
+    "https://www.azleg.gov/legtext/57leg/1r/bills/hb2536p.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Anna Abeytia",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1d2e925a-299f-4504-a4de-815d7a2ee7a6"
+    },
+    {
+      "name": "Cesar Aguilar",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "49b2db49-6438-437c-90ce-36b97670e30a"
+    },
+    {
+      "name": "Lorena Austin",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e2bd3486-1fcf-4726-8df8-564ad8ef2b62"
+    },
+    {
+      "name": "Brian Garcia",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ea0e5f51-f963-45ef-a104-429af91e5f90"
+    },
+    {
+      "name": "Sarah Liguori",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "eb8215ef-5e68-431a-a5cf-c226e8c0abf1"
+    },
+    {
+      "name": "Aaron Marquez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0df9cd85-3923-48bd-86c2-b7d4b31d510d"
+    },
+    {
+      "name": "Mariana Sandoval",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c37db938-9db2-47d5-b30e-7ac6a5f5c5ee"
+    },
+    {
+      "name": "Stephanie Simacek",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "84bb6849-a68d-42e0-999d-dd0456b9d0b4"
+    },
+    {
+      "name": "Stephanie Stahl Hamilton",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2405145c-f082-47f2-861d-d4efd19e8162"
+    },
+    {
+      "name": "Betty Villegas",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6dcc0e46-c944-480b-a432-7b36989d56e9"
+    },
+    {
+      "name": "Brian Fernandez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2aa0cf37-6c3a-405d-9cd2-0fafc7cf8636"
+    },
+    {
+      "name": "Lauren Kuby",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "68308cfb-52ff-4a9c-8363-9a582ea9a989"
+    },
+    {
+      "name": "Catherine Miranda",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f1b19116-3c6f-4c44-9faf-bc32db5fc5d2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+    "fetched_at": "2026-11-11T03:51:26.779713Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2536-2025.introduced.html",
+      "sha256": "e4d49ea046a353c8929051531bcaf3a20a2c88eabcc0d6bf79519bf092b53c18"
+    }
+  },
+  "operative_text": "Sec. 1 (amending A.R.S. 13-603, subsection M): {+M. THE COURT SHALL INQUIRE IF THE PERSON POSSESSES A CONCEALED WEAPONS PERMIT AND, IF THE PERSON'S CONVICTION RESULTS IN THE PERSON BEING A PROHIBITED POSSESSOR AS DEFINED IN SECTION 13-3101 OR OTHERWISE UNQUALIFIED TO POSSESS A CONCEALED WEAPONS PERMIT PURSUANT TO SECTION 13-3112, THE COURT SHALL REQUIRE THE PERSON TO SURRENDER THE PERMIT AT THE TIME OF SENTENCING OR, IF THE PERMIT CANNOT BE LOCATED, TO SUBMIT AN AFFIDAVIT DECLARING THAT THE PERMIT IS LOST. IF THE PERSON DOES NOT SURRENDER THE PERMIT AT THE TIME OF SENTENCING, THE COURT SHALL ORDER THE PERMIT REVOKED. THE COURT SHALL NOTIFY THE DEPARTMENT OF PUBLIC SAFETY THAT THE PERSON'S CONCEALED WEAPONS PERMIT IS REVOKED. IF THE PERSON IS PLACED ON PROBATION AND HAS NOT SUBMITTED AN AFFIDAVIT DECLARING THAT THE PERMIT IS LOST OR DOES NOT SURRENDER THE PERMIT AFTER THE PERMIT IS REVOKED, THE PROBATION DEPARTMENT SHALL LOCATE THE DEFENDANT AND SEIZE THE PERMIT. THE PROBATION DEPARTMENT SHALL TRANSFER THE SURRENDERED OR SEIZED PERMIT TO THE DEPARTMENT OF PUBLIC SAFETY.+}\nSec. 2 (amending A.R.S. 13-3602, subsection G, paragraph 4): {+IF, AFTER HOLDING A HEARING PURSUANT TO SUBSECTION L OF THIS SECTION, THE COURT PROHIBITS THE DEFENDANT FROM POSSESSING OR PURCHASING A FIREARM FOR THE DURATION OF THE ORDER, THE COURT SHALL INQUIRE IF THE DEFENDANT POSSESSES A CONCEALED WEAPONS PERMIT ISSUED PURSUANT TO SECTION 13-3112. IF THE DEFENDANT POSSESSES A CONCEALED WEAPONS PERMIT, THE COURT SHALL REQUIRE THE DEFENDANT TO SURRENDER THE PERMIT OR, IF THE PERMIT CANNOT BE LOCATED, TO SUBMIT AN AFFIDAVIT DECLARING THAT THE PERMIT IS LOST. IF THE DEFENDANT DOES NOT SURRENDER THE PERMIT AT THE HEARING, THE COURT SHALL REVOKE THE PERMIT. THE COURT SHALL ORDER THE DEFENDANT, WITHIN THREE BUSINESS DAYS AFTER THE DATE OF THE HEARING THAT WAS HELD PURSUANT TO SUBSECTION L OF THIS SECTION, TO SURRENDER THE PERMIT OR, IF THE PERMIT CANNOT BE LOCATED, TO SUBMIT AN AFFIDAVIT DECLARING THAT THE PERMIT IS LOST, TO THE DEPARTMENT OF PUBLIC SAFETY. THE COURT SHALL NOTIFY THE DEPARTMENT OF PUBLIC SAFETY THAT THE DEFENDANT'S CONCEALED WEAPONS PERMIT IS REVOKED.+}"
+}

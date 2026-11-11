@@ -1,0 +1,33 @@
+{
+  "politician_id": "fb782cf9-f5cf-444b-8f95-039792bce28c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "general statement on gun rights or gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope confirmed: BallotReady lists her as a 2026 general-election candidate for Arizona House District 22 (https://www.ballotready.org/people/betsy-munoz), nothing on the subject",
+        "iVoterGuide profile https://ivoterguide.com/candidate/95991/race/30497/election/1455: gun question shown as not answered",
+        "campaign fundraising page https://secure.actblue.com/donate/bm2026: nothing on the subject",
+        "Arizona List profile https://www.arizonalist.org/?p=14858: nothing on the subject",
+        "Arizona Citizens Defense League recommended-candidates page https://azcdl.org/azcdlpacs-recommended-candidates-page/: her name does not appear",
+        "blocked: https://ballotpedia.org/Betsy_Munoz (empty page)",
+        "blocked: https://bluevoterguide.org/es/AZ/candidate_Betsy_Munoz/548469 (403)",
+        "no personal campaign website found by search",
+        "sponsor list: covered by LegiScan bulk check (not a sitting legislator)",
+        "5 web searches run, none found any gun statement"
+      ],
+      "found": 0,
+      "at": "2026-11-11T04:13:04.496Z",
+      "by": "source-collector"
+    }
+  ]
+}

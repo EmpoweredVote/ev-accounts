@@ -1,0 +1,461 @@
+{
+  "id": "AZ-SB-1177-2022",
+  "scope": "state:az",
+  "title": "SB1177 (Fifty-fifth Legislature - Second Regular Session (2022)): Concealed weapons permit; renewal application",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/76668",
+    "https://www.azleg.gov/legtext/55leg/2r/bills/sb1177p.htm",
+    "https://www.azleg.gov/legtext/55leg/2r/bills/sb1177s.htm",
+    "https://www.azleg.gov/legtext/55leg/2r/laws/0344.htm"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "David Gowan",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e71471f4-bef5-46ef-a1f2-f19f275b558d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2022-02-01",
+      "body": "AZ Senate",
+      "motion": "Senate - Third Reading",
+      "kind": "roll-call",
+      "yes": 29,
+      "no": 0,
+      "absent": 1,
+      "note": "LegiScan roll call 1131634; NV counted with absent in the tally, members keep LegiScan marks",
+      "members": [
+        {
+          "name": "David Gowan",
+          "vote": "yea",
+          "politician_id": "e71471f4-bef5-46ef-a1f2-f19f275b558d"
+        },
+        {
+          "name": "Nancy Barto",
+          "vote": "yea"
+        },
+        {
+          "name": "Rebecca Rios",
+          "vote": "yea"
+        },
+        {
+          "name": "Karen Fann",
+          "vote": "yea"
+        },
+        {
+          "name": "Rick Gray",
+          "vote": "yea"
+        },
+        {
+          "name": "Michelle Ugenti-Rita",
+          "vote": "yea"
+        },
+        {
+          "name": "Javan Mesnard",
+          "vote": "yea"
+        },
+        {
+          "name": "Lela Alston",
+          "vote": "yea",
+          "politician_id": "64520134-c1e3-44b1-aeb5-ed3e8762972d"
+        },
+        {
+          "name": "Sally Gonzales",
+          "vote": "yea",
+          "politician_id": "82f31f9c-754b-4417-bc21-af295b2b4d2b"
+        },
+        {
+          "name": "Martin Quezada",
+          "vote": "yea"
+        },
+        {
+          "name": "Lupe Contreras",
+          "vote": "yea",
+          "politician_id": "d5466317-d90a-41ce-ba20-30c12429dcb3"
+        },
+        {
+          "name": "Paul Boyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Sonny Borrelli",
+          "vote": "yea"
+        },
+        {
+          "name": "David Livingston",
+          "vote": "yea",
+          "politician_id": "43e734b4-4417-4dcd-91c9-f420f3a1b702"
+        },
+        {
+          "name": "Juan Mendez",
+          "vote": "abstain"
+        },
+        {
+          "name": "Warren Petersen",
+          "vote": "yea",
+          "politician_id": "49b806b1-f15d-4998-a94e-de542d9e323e"
+        },
+        {
+          "name": "Thomas Shope",
+          "vote": "yea",
+          "politician_id": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1"
+        },
+        {
+          "name": "Victoria Steele",
+          "vote": "yea"
+        },
+        {
+          "name": "Kelly Townsend",
+          "vote": "yea"
+        },
+        {
+          "name": "Lisa Otondo",
+          "vote": "yea"
+        },
+        {
+          "name": "Rosanna Gabaldon",
+          "vote": "yea",
+          "politician_id": "8cbc6c91-4147-4831-ae0e-f4658ce282e8"
+        },
+        {
+          "name": "Vince Leach",
+          "vote": "yea"
+        },
+        {
+          "name": "Sean Bowie",
+          "vote": "yea"
+        },
+        {
+          "name": "Sine Kerr",
+          "vote": "yea"
+        },
+        {
+          "name": "Tyler Pace",
+          "vote": "yea"
+        },
+        {
+          "name": "Raquel Teran",
+          "vote": "yea"
+        },
+        {
+          "name": "Wendy Rogers",
+          "vote": "yea",
+          "politician_id": "23b7d096-37ad-4b00-8291-c7f0640a22d2"
+        },
+        {
+          "name": "Christine Marsh",
+          "vote": "yea",
+          "politician_id": "e7ce87c4-3b49-418d-ba10-88aaf4d827e2"
+        },
+        {
+          "name": "Stephanie Stahl Hamilton",
+          "vote": "yea",
+          "politician_id": "2405145c-f082-47f2-861d-d4efd19e8162"
+        },
+        {
+          "name": "Theresa Hatathlie",
+          "vote": "yea",
+          "politician_id": "5443de2a-bad1-4271-a8ac-30e7443ff605"
+        }
+      ]
+    },
+    {
+      "date": "2022-06-22",
+      "body": "AZ House",
+      "motion": "House - Third Reading",
+      "kind": "roll-call",
+      "yes": 54,
+      "no": 4,
+      "absent": 2,
+      "note": "LegiScan roll call 1217820; NV counted with absent in the tally, members keep LegiScan marks",
+      "members": [
+        {
+          "name": "Judy Burges",
+          "vote": "yea"
+        },
+        {
+          "name": "John Kavanagh",
+          "vote": "yea",
+          "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a"
+        },
+        {
+          "name": "Robert Meza",
+          "vote": "yea"
+        },
+        {
+          "name": "Brenda Barton",
+          "vote": "yea"
+        },
+        {
+          "name": "John Fillmore",
+          "vote": "yea"
+        },
+        {
+          "name": "Gail Griffin",
+          "vote": "yea",
+          "politician_id": "188c386e-087b-4587-9510-da7fc5805575"
+        },
+        {
+          "name": "Andrea Dalessandro",
+          "vote": "abstain"
+        },
+        {
+          "name": "Mark Finchem",
+          "vote": "yea",
+          "politician_id": "489e2fc3-b47a-4304-b959-07e35f010da4"
+        },
+        {
+          "name": "Russell Bowers",
+          "vote": "yea"
+        },
+        {
+          "name": "Regina Cobb",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Weninger",
+          "vote": "yea",
+          "politician_id": "b813cb2d-f80e-4f53-83e0-fc0477ff3f3d"
+        },
+        {
+          "name": "Richard Andrade",
+          "vote": "yea"
+        },
+        {
+          "name": "Reginald Bolding",
+          "vote": "yea"
+        },
+        {
+          "name": "Diego Espinoza",
+          "vote": "yea"
+        },
+        {
+          "name": "Pamela Hannley",
+          "vote": "nay"
+        },
+        {
+          "name": "Michelle Udall",
+          "vote": "yea"
+        },
+        {
+          "name": "Cesar Chavez",
+          "vote": "yea"
+        },
+        {
+          "name": "Denise Epstein",
+          "vote": "nay",
+          "politician_id": "feecd8fc-b007-450a-8779-8e6f68e80dd6"
+        },
+        {
+          "name": "Travis Grantham",
+          "vote": "yea"
+        },
+        {
+          "name": "Athena Salman",
+          "vote": "abstain"
+        },
+        {
+          "name": "David Cook",
+          "vote": "yea",
+          "politician_id": "b2def48c-4092-4518-babc-c6080ded42cf"
+        },
+        {
+          "name": "Kevin Payne",
+          "vote": "yea",
+          "politician_id": "0b0dc6ea-ed45-45e6-9a59-41d1c8aeb53c"
+        },
+        {
+          "name": "Kelli Butler",
+          "vote": "nay"
+        },
+        {
+          "name": "Daniel Hernandez",
+          "vote": "yea"
+        },
+        {
+          "name": "Ben Toma",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Dunn",
+          "vote": "yea",
+          "politician_id": "ebef00e8-7722-4e9b-b5dc-ef95a41a9a40"
+        },
+        {
+          "name": "Walter Blackman",
+          "vote": "yea",
+          "politician_id": "a88f4ecd-5c4f-4caf-a88c-1d06c92bfdc7"
+        },
+        {
+          "name": "Leo Biasiucci",
+          "vote": "yea",
+          "politician_id": "b1b97401-d1a9-4442-9f78-2749f1853f6e"
+        },
+        {
+          "name": "Alma Hernandez",
+          "vote": "yea",
+          "politician_id": "e4460c64-fa27-4e05-96e8-cc005a478444"
+        },
+        {
+          "name": "Jennifer Jermaine",
+          "vote": "yea"
+        },
+        {
+          "name": "Jennifer Pawlik",
+          "vote": "yea"
+        },
+        {
+          "name": "Frank Carroll",
+          "vote": "yea",
+          "politician_id": "376698b5-a276-4977-b2c3-3d15a822f7d8"
+        },
+        {
+          "name": "Joanne Osborne",
+          "vote": "yea"
+        },
+        {
+          "name": "Shawnna Bolick",
+          "vote": "yea",
+          "politician_id": "2785d691-2404-400e-8dde-bcc5a58e419b"
+        },
+        {
+          "name": "Andres Cano",
+          "vote": "yea"
+        },
+        {
+          "name": "Jennifer Longdon",
+          "vote": "yea"
+        },
+        {
+          "name": "Lorenzo Sierra",
+          "vote": "yea"
+        },
+        {
+          "name": "Myron Tsosie",
+          "vote": "yea",
+          "politician_id": "47a75797-e525-4dd9-ab04-66dd4d667760"
+        },
+        {
+          "name": "Domingo Degrazia",
+          "vote": "yea"
+        },
+        {
+          "name": "Amish Shah",
+          "vote": "yea"
+        },
+        {
+          "name": "Joseph Chaplik",
+          "vote": "yea"
+        },
+        {
+          "name": "Jake Hoffman",
+          "vote": "yea",
+          "politician_id": "66ca210e-deab-4d07-8a18-48f7079f6f9b"
+        },
+        {
+          "name": "Steve Kaiser",
+          "vote": "yea"
+        },
+        {
+          "name": "Jacqueline Parker",
+          "vote": "yea"
+        },
+        {
+          "name": "Beverly Pingerelli",
+          "vote": "yea",
+          "politician_id": "184bd445-9f61-4bd3-859f-22522c9ccabd"
+        },
+        {
+          "name": "Justin Wilmeth",
+          "vote": "yea",
+          "politician_id": "729d1a1e-b58f-4a33-bf18-a0f11e3c5e04"
+        },
+        {
+          "name": "Joel John",
+          "vote": "yea"
+        },
+        {
+          "name": "Quang Nguyen",
+          "vote": "yea",
+          "politician_id": "9cc152b6-c83b-4501-9e1a-2ab50e1db6a7"
+        },
+        {
+          "name": "Judy Schwiebert",
+          "vote": "yea"
+        },
+        {
+          "name": "Melody Hernandez",
+          "vote": "yea"
+        },
+        {
+          "name": "Jasmine Blackwater-Nygren",
+          "vote": "yea"
+        },
+        {
+          "name": "Lupe Diaz",
+          "vote": "yea",
+          "politician_id": "0ac7beee-f298-4d41-8981-30c3c307fe3d"
+        },
+        {
+          "name": "Teresa Martinez",
+          "vote": "yea",
+          "politician_id": "cacb84a8-4343-4919-a37c-dfcb6e050243"
+        },
+        {
+          "name": "Morgan Abraham",
+          "vote": "yea"
+        },
+        {
+          "name": "Sarah Liguori",
+          "vote": "nay",
+          "politician_id": "eb8215ef-5e68-431a-a5cf-c226e8c0abf1"
+        },
+        {
+          "name": "Marcelino Quiñonez",
+          "vote": "yea"
+        },
+        {
+          "name": "Christian Solorio",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Fernandez",
+          "vote": "yea",
+          "politician_id": "2aa0cf37-6c3a-405d-9cd2-0fafc7cf8636"
+        },
+        {
+          "name": "Christopher Mathis",
+          "vote": "yea",
+          "politician_id": "a7675f41-2e50-413c-9864-8a64969f47f9"
+        },
+        {
+          "name": "Neal Carter",
+          "vote": "yea",
+          "politician_id": "9a81dfd3-b70b-45bf-8851-3907d6e12508"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+    "fetched_at": "2026-11-11T03:51:26.779713Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1177-2022.chaptered.html",
+      "sha256": "3fa6cecb0287f62694f806dc01feaa3a1492f4236ba17bc1aef0c74a4286bdae"
+    }
+  },
+  "operative_text": "Sec. 1 (amending A.R.S. 13-3112, subsec. C): of not more than [-three hundred dollars-]{+ $300+}\nSec. 1 (amending A.R.S. 13-3112, subsec. H): The department of public safety shall complete all of the required qualification checks within sixty days after [-receipt of-]{+ RECEIVING+} the application and shall issue a permit within fifteen working days after completing the qualification checks if the applicant meets all of the conditions specified in subsection E of this section. If a permit is denied, the department of public safety shall notify the applicant in writing within fifteen working days after [-the completion of-]{+ COMPLETING+} all of the required qualification checks\nSec. 1 (amending A.R.S. 13-3112, subsec. K): K. A permit issued pursuant to this section is renewable every five years. {+AT LEAST SIXTY DAYS BEFORE THE EXPIRATION DATE OF A PERMIT, THE DEPARTMENT OF PUBLIC SAFETY SHALL SEND A RENEWAL REMINDER NOTICE AND RENEWAL APPLICATION FORM TO THE PERMIT HOLDER. +}"
+}

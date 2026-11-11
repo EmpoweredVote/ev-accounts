@@ -1,0 +1,98 @@
+{
+  "id": "AZ-SB-1359-2026",
+  "scope": "state:az",
+  "title": "SB1359 (Fifty-seventh Legislature - Second Regular Session (2026)): Firearms; destruction by state",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/84900",
+    "https://www.azleg.gov/legtext/57leg/2r/bills/sb1359p.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lauren Kuby",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "68308cfb-52ff-4a9c-8363-9a582ea9a989"
+    },
+    {
+      "name": "Lela Alston",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "64520134-c1e3-44b1-aeb5-ed3e8762972d"
+    },
+    {
+      "name": "Rosanna Gabaldon",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8cbc6c91-4147-4831-ae0e-f4658ce282e8"
+    },
+    {
+      "name": "Theresa Hatathlie",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5443de2a-bad1-4271-a8ac-30e7443ff605"
+    },
+    {
+      "name": "Catherine Miranda",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f1b19116-3c6f-4c44-9faf-bc32db5fc5d2"
+    },
+    {
+      "name": "Analise Ortiz",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8"
+    },
+    {
+      "name": "Brian Garcia",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ea0e5f51-f963-45ef-a104-429af91e5f90"
+    },
+    {
+      "name": "Nancy Gutierrez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ce872623-f6bd-4e90-9eba-239ed00c7491"
+    },
+    {
+      "name": "Aaron Marquez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0df9cd85-3923-48bd-86c2-b7d4b31d510d"
+    },
+    {
+      "name": "Mariana Sandoval",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c37db938-9db2-47d5-b30e-7ac6a5f5c5ee"
+    },
+    {
+      "name": "Stephanie Stahl Hamilton",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2405145c-f082-47f2-861d-d4efd19e8162"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+    "fetched_at": "2026-11-11T04:23:07.062663Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1359-2026.introduced.html",
+      "sha256": "149d7474ae33f3558091f1e7fe97dba59780ef5e4f731e28d14e5c174b5aaa12"
+    }
+  },
+  "operative_text": "Sec. 1 (amending A.R.S. 12-945, new subsection C): {+C. THIS SECTION DOES NOT PROHIBIT THIS STATE, ANY AGENCY OR POLITICAL SUBDIVISION OF THIS STATE OR ANY LAW ENFORCEMENT AGENCY IN THIS STATE FROM DESTROYING OR FACILITATING THE DESTRUCTION OF A FIREARM, AMMUNITION OR ANY FIREARM OR AMMUNITION COMPONENT OR RELATED ACCESSORY. +}\nSec. 2 (amending A.R.S. 13-3108, subsection F struck): [-F. This state, any agency or political subdivision of this state and any law enforcement agency in this state shall not facilitate the destruction of a firearm or purchase or otherwise acquire a firearm for the purpose of destroying the firearm except as authorized by section 13-3105 or 17-240.-]"
+}

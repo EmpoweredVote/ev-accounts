@@ -1,0 +1,31 @@
+{
+  "politician_id": "40fd6d44-21e9-4244-8806-a058f94596af",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "gun safety laws",
+        "firearm restrictions",
+        "carry a gun without a permit",
+        "ban on assault-style guns",
+        "check every gun buyer"
+      ],
+      "places": [
+        "scope: candidate for Arizona Senate District 2 in the 2026 general election (https://www.kjzz.org/elections/2026-10-06/2026-arizona-senate-2nd-legislative-district-race-the-candidates-elex)",
+        "On the Record (0 meetings)",
+        "KJZZ candidate profile: priorities are affordability and education; nothing on the subject",
+        "https://blogforarizona.net/dr-amelia-gallitano-hopes-to-win-arizonas-ld-two-senate-seat-running-on-the-affordability-agenda/: lists public safety as a priority with no gun statement; nothing on the subject",
+        "sponsor list: covered by LegiScan bulk check (not a sitting legislator)",
+        "Ballotpedia: not reviewed, page returns empty to the fetch tool (https://ballotpedia.org/Amelia_Gallitano)",
+        "campaign site: not opened, not located",
+        "news search on name plus gun safety words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-11T04:13:41.559Z",
+      "by": "source-collector"
+    }
+  ]
+}

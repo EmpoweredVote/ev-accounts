@@ -129,6 +129,241 @@
         "fetched_at": "2026-10-28T23:17:05.068Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "72fd5b1e7cb367fdc8f90c3150b9202e02cbf25bf3dd323e98fbf4d115745c41",
+      "kind": "record",
+      "url": "https://mcusercontent.com/44a5186aac69c13c570fca36a/files/0f9fbe62-5f8c-ce2d-01b7-0b0aeb3eb59d/SB1068_Veto_Letter.pdf",
+      "date": "2026-06-19",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1068-2026",
+      "act": "vetoed",
+      "note": "Governor's veto letter dated June 19, 2026, listed on https://azgovernor.gov/office-arizona-governor/news/2026/06/governor-katie-hobbs-legislative-action-update-0. SB1068 (disruption; educational institution; concealed weapons), which the governor's veto letter says is the same bill she vetoed in 2025 and 2023. The bill title shows it concerns concealed weapons at educational institutions; the letter ties her veto to student safety on campus.",
+      "subjects": [
+        "no guns on college campuses",
+        "carry a gun with a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:17:59.805Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b4e9410e58f9dc5b3217b1241dcb6bfb9667ad0d1d3a2084c9c537acf9c559e5",
+      "kind": "own-words",
+      "url": "https://mcusercontent.com/44a5186aac69c13c570fca36a/files/0f9fbe62-5f8c-ce2d-01b7-0b0aeb3eb59d/SB1068_Veto_Letter.pdf",
+      "date": "2026-06-19",
+      "date_precision": "day",
+      "passage": "Today I vetoed SB1068, which is the same bill that I vetoed in 2025 and 2023. As I have said previously, student safety is a top concern for university and college students. Ensuring their safety should be a top priority and I will continue to veto legislation that threatens student safety or that could lead to increased risk on campus.",
+      "note": "Veto letter of the Governor to the President of the Senate, on SB1068. Text read from the letter's PDF image.",
+      "subjects": [
+        "no guns on college campuses",
+        "carry a gun with a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:17:59.805Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "753aa18c75b56ca81b3990f8a678e74182900e3aa0c9d19feeabf4867734bdd9",
+      "kind": "record",
+      "url": "https://mcusercontent.com/44a5186aac69c13c570fca36a/files/94b8a764-a181-a5ee-4cb6-54edc3c4f0e3/SB1069_Veto_Letter.pdf",
+      "date": "2026-06-19",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1069-2026",
+      "act": "vetoed",
+      "note": "Governor's veto letter dated June 19, 2026, listed on https://azgovernor.gov/office-arizona-governor/news/2026/06/governor-katie-hobbs-legislative-action-update-0. SB1069 (prohibited weapons; muffling device; repeal) would remove devices that muffle a firearm's report from the state's definition of a prohibited weapon (azleg.gov summary: 'Excludes suppressors from the definition of prohibited weapon.'). The governor's letter gives her reason for the veto.",
+      "subjects": [
+        "gun silencers (suppressors)",
+        "repeal gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:17:59.805Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dc3666fa545da49519f3dd1fa8cb718b9220904fc0c9875fde0a6e784c881d1e",
+      "kind": "own-words",
+      "url": "https://mcusercontent.com/44a5186aac69c13c570fca36a/files/94b8a764-a181-a5ee-4cb6-54edc3c4f0e3/SB1069_Veto_Letter.pdf",
+      "date": "2026-06-19",
+      "date_precision": "day",
+      "passage": "Today I vetoed SB1069. As I stated last year when I vetoed an identical bill, ensuring the safety of all Arizonans is a priority for my administration. Gun silencers make it more difficult for hard-working law enforcement officers to do their job and keep Arizonans safe.",
+      "note": "Veto letter of the Governor to the President of the Senate, on SB1069. Text read from the letter's PDF image.",
+      "subjects": [
+        "gun silencers (suppressors)",
+        "repeal gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:17:59.805Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d9104a0de1b69e954f671fda0482d3dfe461ad54358a1ed32c957c96913a8bd",
+      "kind": "record",
+      "url": "https://mcusercontent.com/44a5186aac69c13c570fca36a/files/dd870ce1-b406-9278-3419-d74357671013/Sb1053_Veto_Letter.pdf",
+      "date": "2026-06-19",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1053-2026",
+      "act": "vetoed",
+      "note": "Governor's veto letter dated June 19, 2026, listed on https://azgovernor.gov/office-arizona-governor/news/2026/06/governor-katie-hobbs-legislative-action-update-0. SB1053 (concealed weapons permits; fees). The governor's letter says the bill reduces concealed-weapons permit fees and gives a funding reason for her veto; it names the state police's Concealed Weapons Permit Unit.",
+      "subjects": [
+        "concealed carry permit fees",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:17:59.805Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "550e99f103b2c358ab7af851519407f0b6d26f8f03472945e92cb84c22feba7f",
+      "kind": "own-words",
+      "url": "https://mcusercontent.com/44a5186aac69c13c570fca36a/files/dd870ce1-b406-9278-3419-d74357671013/Sb1053_Veto_Letter.pdf",
+      "date": "2026-06-19",
+      "date_precision": "day",
+      "passage": "Today I vetoed SB1053. As I stated last year when I vetoed an almost identical bill, without supplemental funding, reducing fees would defund our state police that administer the Concealed Weapons Permit Unit. I am deeply disturbed by this legislature's continued insistence on attacking funding for law enforcement.",
+      "note": "Veto letter of the Governor to the President of the Senate, on SB1053. Text read from the letter's PDF image.",
+      "subjects": [
+        "concealed carry permit fees",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:17:59.805Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "55e16257e1e9e37f2550cdfacb1837b373315f47260213bdc4b8777b7a1dd5f0",
+      "kind": "record",
+      "url": "https://mcusercontent.com/44a5186aac69c13c570fca36a/files/de72af27-306d-7394-6521-ca0b5437b0a3/SB1012_Veto_Letter.pdf",
+      "date": "2026-06-19",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1012-2026",
+      "act": "vetoed",
+      "note": "Governor's veto letter dated June 19, 2026, listed on https://azgovernor.gov/office-arizona-governor/news/2026/06/governor-katie-hobbs-legislative-action-update-0. SB1012 (concealed weapons; notice; repeal). The governor's letter says the bill would take away a restaurant business's authority over firearms restrictions in its own establishment.",
+      "subjects": [
+        "places where guns may be carried",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:17:59.805Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "73cc8d4f88279914988bf66cd71020b5e72a91e078681801b687d62687bb32a7",
+      "kind": "own-words",
+      "url": "https://mcusercontent.com/44a5186aac69c13c570fca36a/files/de72af27-306d-7394-6521-ca0b5437b0a3/SB1012_Veto_Letter.pdf",
+      "date": "2026-06-19",
+      "date_precision": "day",
+      "passage": "Today I vetoed SB1012. I will not take away decision-making authority from a restaurant business over firearms restrictions in their own establishments.",
+      "note": "Veto letter of the Governor to the President of the Senate, on SB1012. Text read from the letter's PDF image.",
+      "subjects": [
+        "places where guns may be carried",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:17:59.805Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b0683167763718a3b895b6a1fc3220f314f1ca0466fd1cc2896e498551a08491",
+      "kind": "own-words",
+      "url": "https://giffords.org/press-release/2026/01/giffords-pac-endorses-arizona-governor-katie-hobbs-for-reelection/",
+      "date": "2026-01",
+      "date_precision": "month",
+      "passage": "As governor, I've worked to keep Arizona families safe by supporting common sense laws that protect survivors of domestic violence and prevent tragedies before they happen.",
+      "note": "Statement attributed to Governor Hobbs in a press release from a gun-violence-prevention group endorsing her reelection (day of release not shown in the page text read; month taken from the page address).",
+      "subjects": [
+        "general statement on gun safety laws",
+        "limits on who may have a gun (domestic violence)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:17:59.805Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "445c618e474b70efa8f8698a930d6d3dd1963f7846cf3ce9c12d9fc0b925286d",
+      "kind": "own-words",
+      "url": "https://www.kawc.org/news/2026-05-25/gov-hobbs-vetoes-legislation-supporters-say-would-protect-2nd-amdt-rights",
+      "date": "2026-05",
+      "date_precision": "month",
+      "passage": "This recycled proposal would make it harder for law enforcement to catch violent criminals,",
+      "note": "Quoted by the KAWC news report (author Howard Fischer) from the Governor's veto message on a bill barring firearm-sale merchant category codes; the report is dated 2026-05-25 and gives no veto date. The report also quotes: \"Merchant category codes are vital tools that help law enforcement crack down on illegal gun trafficking to transnational criminal organizations,\" she wrote.",
+      "subjects": [
+        "tracking gun sales with merchant category codes",
+        "gun trafficking"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:17:59.805Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "96a23e5ab7eb5a318cbbf301f34f66eb6fa537610862afee7b77f1c7dae82221",
+      "kind": "record",
+      "url": "https://www.kawc.org/news/2026-05-25/gov-hobbs-vetoes-legislation-supporters-say-would-protect-2nd-amdt-rights",
+      "date": "2026-05",
+      "date_precision": "month",
+      "act": "vetoed",
+      "motion": "Veto of 2026 bill barring firearm merchant category codes (sponsor Sen. Wendy Rogers; bill number not stated in the report)",
+      "note": "KAWC reports the Governor vetoed a bill to prevent use of merchant category codes for firearm sales, and noted she had rejected the idea before. Report dated 2026-05-25; exact veto date not given.",
+      "subjects": [
+        "tracking gun sales with merchant category codes"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:17:59.805Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -174,6 +409,38 @@
       "found": 4,
       "at": "2026-10-28T23:17:05.068Z",
       "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permit fees",
+        "guns on campus",
+        "suppressors",
+        "gun industry preemption",
+        "general statement on gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the Governor's office legislative action update https://azgovernor.gov/office-arizona-governor/news/2026/06/governor-katie-hobbs-legislative-action-update-0 (veto letters for four gun bills opened)",
+        "azleg.gov bill summary for SB1069",
+        "https://www.kawc.org/news/2026-05-25/gov-hobbs-vetoes-legislation-supporters-say-would-protect-2nd-amdt-rights",
+        "https://giffords.org/press-release/2026/01/giffords-pac-endorses-arizona-governor-katie-hobbs-for-reelection/",
+        "campaign site katiehobbs.org/issues (404; katiehobbs.com redirects to katiehobbs.org)",
+        "blocked: https://legiscan.com/AZ/bill/SB1069/2026 (403 bot check)",
+        "https://azcdl.org/news-alerts/hobbs-vetoes-4-firearm-safety-bills/ (opposing group's page; paraphrases only, no full quotes)",
+        "https://www.nraila.org/articles/20260622/arizona-governor-hobbs-vetoes-pro-gun-legislationagain (read; third-party summary, not used as a source)",
+        "Ballotpedia not reviewed (returns empty to the fetch tool)",
+        "sponsor list: covered by LegiScan bulk check",
+        "2025 vetoes (preemption, campus carry, school training) and the 2023 campus-carry veto: not reviewed beyond mentions in 2026 letters"
+      ],
+      "found": 11,
+      "at": "2026-11-11T04:17:59.805Z",
+      "by": "source-collector"
     }
   ]
 }

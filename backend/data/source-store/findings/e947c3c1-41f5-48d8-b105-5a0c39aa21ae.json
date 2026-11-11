@@ -108,6 +108,196 @@
         "fetched_at": "2026-10-28T23:18:12.716Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "cd3dba3c23b70cb09496c4a403558a76d7bb0fecf27427e5c458f89e9e7fee41",
+      "kind": "own-words",
+      "url": "https://www.azag.gov/press-release/attorney-general-kris-mayes-withdraws-arizona-lawsuit-challenging-atf-rule",
+      "date": "2023-03-17",
+      "date_precision": "day",
+      "passage": "I believe this Rule is within the ATF’s authority and provides much-needed regulation of ghost guns, which have proliferated in recent years and have made law enforcement’s job more difficult and dangerous,",
+      "note": "Statement of the Attorney General in her office's press release announcing Arizona's withdrawal from a multistate lawsuit against the federal agency's rule covering privately made firearms and parts kits.",
+      "subjects": [
+        "home-made (ghost) guns",
+        "federal agency gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:19:21.279Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e57c4a9a40c835f94df9a889921e68dcbb604fe03bfbe9407b665b9ff5775b07",
+      "kind": "record",
+      "url": "https://www.azag.gov/press-release/attorney-general-kris-mayes-withdraws-arizona-lawsuit-challenging-atf-rule",
+      "date": "2023-03-17",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Withdrawal of Arizona from multistate lawsuit challenging the federal ATF rule on ghost guns (privately made firearms and parts kits)",
+      "note": "The Attorney General withdrew the state from a lawsuit filed in July 2022 by the prior administration; the rule defines 'firearm' to include privately made firearms and easily assembled parts kits.",
+      "subjects": [
+        "home-made (ghost) guns",
+        "federal agency gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:19:21.279Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "106dca8e3ad2d3d3cf1d7246af0da03fc6ca14d004f0de2bb6d00414993eb4f9",
+      "kind": "own-words",
+      "url": "https://www.azag.gov/press-release/attorney-general-mayes-urges-court-uphold-prohibition-handgun-sales-individuals-under",
+      "date": "2023-05-24",
+      "date_precision": "day",
+      "passage": "“Protecting our communities from gun violence requires multiple solutions, including laws already on the books,” said Attorney General Mayes. “For nearly 60 years, federal law has prohibited the sale of handguns from federally licensed dealers to individuals under 21. The Second Amendment allows for such age-based restrictions, and I urge the U.S. Court of Appeals for the Fifth Circuit to affirm the district court ruling and allow this critical safeguard to stand.”",
+      "note": "Statement of the Attorney General in her office's press release (dated 2023-05-24) on the amicus brief filed the week before.",
+      "subjects": [
+        "minimum age to buy a gun",
+        "Second Amendment and age limits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:19:21.279Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2d3dd6728ffbca8f94c0abf2886f5d256ce4e6f6c40fa06200cd9458444144c1",
+      "kind": "record",
+      "url": "https://www.azag.gov/press-release/attorney-general-mayes-urges-court-uphold-prohibition-handgun-sales-individuals-under",
+      "date": "2023-05",
+      "date_precision": "month",
+      "act": "other",
+      "motion": "Joined 21-attorney-general amicus brief, Reese v. ATF (5th Cir.), supporting the federal ban on handgun sales by licensed dealers to people under 21",
+      "note": "Brief filed 'last week' per a press release dated 2023-05-24, so the filing date is in May 2023; the exact day is not stated.",
+      "subjects": [
+        "minimum age to buy a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:19:21.279Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c804992f871252661b12a9ed18ec90e928211bc8e464e5ceace51a251f7b7962",
+      "kind": "own-words",
+      "url": "https://www.azfamily.com/2023/10/31/arizona-attorney-general-considering-red-flag-law-protect-students-against-gun-violence/?outputType=amp",
+      "date": "2023-10-30",
+      "date_precision": "day",
+      "passage": "“We should not have to worry about mentally ill people getting their hands on an AR-15,” said AG Kris Mayes.",
+      "note": "Quoted by Arizona's Family (3TV/CBS 5), published 2023-10-30, in a report on her plan for a school-focused extreme-risk order law.",
+      "subjects": [
+        "red-flag orders",
+        "limits on who may have a gun",
+        "assault-style rifle"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:19:21.279Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4a36f00daa4d53064be1e22391dc02839aea70c2ca07fadd98e5ea928839ba66",
+      "kind": "own-words",
+      "url": "https://www.azfamily.com/2023/10/31/arizona-attorney-general-considering-red-flag-law-protect-students-against-gun-violence/?outputType=amp",
+      "date": "2023-10-30",
+      "date_precision": "day",
+      "passage": "“Our office has been looking at crafting and helping to get introduced a ‘red flag’ law for Arizona,” she said.",
+      "note": "Quoted by Arizona's Family (3TV/CBS 5), published 2023-10-30.",
+      "subjects": [
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:19:21.279Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "be994f0216fa8186deb6ccc8d016747975f7ff2bb890b2a51c378dc53f843fb3",
+      "kind": "own-words",
+      "url": "https://www.azfamily.com/2023/10/31/arizona-attorney-general-considering-red-flag-law-protect-students-against-gun-violence/?outputType=amp",
+      "date": "2023-10-30",
+      "date_precision": "day",
+      "passage": "“This particular proposal has a lot of due process built into it. It has a judge who has to make this determination; only a specific list of people are allowed to make these claims and ask for these orders, and it ultimately ends up in a hearing,” she said.",
+      "note": "Quoted by Arizona's Family (3TV/CBS 5), published 2023-10-30, describing safeguards in her proposed school-focused extreme-risk order.",
+      "subjects": [
+        "red-flag orders",
+        "due process in gun-removal orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:19:21.279Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a5d7709d933909f908c8a06154870db489dcf0bb73066107bddbbffa8f2e13f2",
+      "kind": "own-words",
+      "url": "https://www.azag.gov/press-release/attorney-general-mayes-applauds-house-passage-critical-legislation-combat-weapons",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "passage": "My office has seen firsthand the devastation these weapons cause in our communities. Under current law, traffickers have been able to exploit loopholes and avoid serious prison time. HB 2131 changes that. This bill ensures that anyone who engages in weapons trafficking to gangs, criminal syndicates, or racketeering enterprises will face enhanced penalties.",
+      "note": "Statement of the Attorney General in her office's press release after the House passed HB 2131, a bill her office proposed.",
+      "subjects": [
+        "gun trafficking",
+        "enhanced penalties for weapons trafficking"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:19:21.279Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ee9a667d5a26ae6fdc3ce7056725cc7a54eff18a9b7e837784ff1470323294ff",
+      "kind": "record",
+      "url": "https://www.azag.gov/press-release/attorney-general-mayes-applauds-house-passage-critical-legislation-combat-weapons",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2131-2026",
+      "act": "other",
+      "note": "Her office proposed HB 2131 (sponsored by a House member), which expands the weapons-trafficking offense to include transfer of even one weapon to assist organized criminal activity and bars probation for trafficking three or more weapons. She did not sponsor it; the page names Rep. Quang Nguyen as sponsor. Recorded as 'other' (office-proposed bill, publicly urged the Senate to pass it).",
+      "subjects": [
+        "gun trafficking"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:19:21.279Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -138,6 +328,35 @@
       "found": 5,
       "at": "2026-10-28T23:18:12.716Z",
       "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "minimum age",
+        "ghost guns",
+        "federal agency gun rules",
+        "carry and Stand Your Ground",
+        "gun trafficking"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the Attorney General's press releases (azag.gov): ghost-gun lawsuit withdrawal, under-21 amicus brief, HB 2131 statement all opened",
+        "https://www.azfamily.com/2023/10/31/arizona-attorney-general-considering-red-flag-law-protect-students-against-gun-violence/ (opened)",
+        "campaign site krismayes.com (home, /issues and /priorities load script-rendered pages with no readable text on the subject)",
+        "blocked: https://ktar.com/arizona-news/arizona-ag-kris-mayes-to-propose-red-flag-law-to-protect-schools-from-gun-violence (403)",
+        "blocked: https://azpbs.org/horizon/2026/02/ag-kris-mayes-responds-to-resignation-requests (403; about her 2026 remarks on Stand Your Ground and federal agents)",
+        "Ballotpedia not reviewed (returns empty to the fetch tool)",
+        "azag.gov press release on the 2023 Phoenix ordinance on gun transfers to Ukraine: not opened (search summary says she ruled on state-law grounds only, not the merits)",
+        "sponsor list: covered by LegiScan bulk check",
+        "news search on name plus gun words; amicus search found no assault-weapon or magazine brief naming her"
+      ],
+      "found": 9,
+      "at": "2026-11-11T04:19:21.279Z",
+      "by": "source-collector"
     }
   ]
 }

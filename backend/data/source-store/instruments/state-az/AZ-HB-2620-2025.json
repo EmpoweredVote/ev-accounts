@@ -1,0 +1,74 @@
+{
+  "id": "AZ-HB-2620-2025",
+  "scope": "state:az",
+  "title": "HB2620 (Fifty-seventh Legislature - First Regular Session (2025)): Firearm sales; permit verification; requirements",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/82445",
+    "https://www.azleg.gov/legtext/57leg/1r/bills/hb2620p.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Aaron Marquez",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0df9cd85-3923-48bd-86c2-b7d4b31d510d"
+    },
+    {
+      "name": "Anna Abeytia",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1d2e925a-299f-4504-a4de-815d7a2ee7a6"
+    },
+    {
+      "name": "Quanta Crews",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1482a2bc-75d8-4aee-865c-53378c415210"
+    },
+    {
+      "name": "Brian Garcia",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ea0e5f51-f963-45ef-a104-429af91e5f90"
+    },
+    {
+      "name": "Alma Hernandez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e4460c64-fa27-4e05-96e8-cc005a478444"
+    },
+    {
+      "name": "Lydia Hernandez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8deb34b4-a40d-4d26-8d3a-1b5a9e9f07f9"
+    },
+    {
+      "name": "Mariana Sandoval",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c37db938-9db2-47d5-b30e-7ac6a5f5c5ee"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+    "fetched_at": "2026-11-11T03:51:26.779713Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2620-2025.introduced.html",
+      "sha256": "1b4e60b77f6864c24d57a594f2f13c10bf24b86c28a357f440f2497bfd364281"
+    }
+  },
+  "operative_text": "Sec. 1 (adding A.R.S. 13-3123): {+A. NOTWITHSTANDING SECTION 13-3112, SUBSECTION J, THE DEPARTMENT OF PUBLIC SAFETY SHALL MAINTAIN A SECURE WEBSITE PORTAL THAT ALLOWS A FEDERALLY LICENSED FIREARMS DEALER TO CHECK THE PERMIT STATUS OF ANY PERSON WHO PRESENTS THE FEDERALLY LICENSED FIREARMS DEALER WITH A CONCEALED WEAPONS PERMIT ISSUED PURSUANT TO SECTION 13-3112.+} {+B. IF A PERSON WHO IS PURCHASING OR RECEIVING A FIREARM IN THIS STATE PRESENTS A CONCEALED WEAPONS PERMIT ISSUED PURSUANT TO SECTION 13-3112 TO A FEDERALLY LICENSED FIREARMS DEALER, THE FEDERALLY LICENSED FIREARMS DEALER SHALL CONFIRM THE VALIDITY OF THE PERMIT BY CHECKING THE DEPARTMENT OF PUBLIC SAFETY'S SECURE WEBSITE PORTAL. IF THE PERMIT IS INVALID, THE FEDERALLY LICENSED FIREARMS DEALER MUST CONDUCT A BACKGROUND CHECK BEFORE SELLING OR PROVIDING THE PERSON WITH A FIREARM. A FEDERALLY LICENSED FIREARMS DEALER MAY QUERY THE SECURE WEBSITE PORTAL ONLY WHEN PRESENTED WITH A CONCEALED WEAPONS PERMIT BY A PERSON WHO IS PURCHASING OR RECEIVING A FIREARM.+}\nSec. 1 (adding A.R.S. 13-3123): {+C. THE DEPARTMENT OF PUBLIC SAFETY MAY NOT RETAIN OR COLLECT DATA ON THE NUMBER OF CONCEALED WEAPONS PERMIT QUERIES MADE BY FEDERALLY LICENSED FIREARMS DEALERS. +}\nSec. 2 (appropriation): The sum of $300,000 is appropriated from the school safety interoperability fund established by section 41-1733, Arizona Revised Statutes, in fiscal year 2025-2026 to the department of public safety for the cost of developing and maintaining a secure website portal that is prescribed by section 13-3123, Arizona Revised Statutes, as added by this act."
+}

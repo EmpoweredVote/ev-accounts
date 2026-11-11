@@ -1,0 +1,76 @@
+{
+  "politician_id": "a65f9938-6a76-4f21-8c8d-f2a3d898f5d4",
+  "findings": [
+    {
+      "id": "17908f4ce66f668a430426914722c7e46ac2aceb85f68b088a9a396363fe1b29",
+      "kind": "own-words",
+      "url": "https://kjzz.org/content/686080/arizona-march-our-lives-holds-gubernatorial-debate-ducey-declines-invitation",
+      "date": "2018-08-14",
+      "date_precision": "day",
+      "passage": "Well, until the Republican Party really adapts and gets to, you know, acknowledging issues that are actually issues, acknowledges gun violence in our community, that it's a real issue and that we need to do something about it, it's not really a party that I can align myself with.",
+      "note": "Radio interview on KJZZ's The Show, when he was a March for Our Lives organizer and Dobson High School student; says he left his earlier party because it did not treat gun violence as a real issue needing action. Same person as the 2026 candidate: BallotReady lists him as March For Our Lives national field organizer 2018-2019 and a Dobson High School 2019 graduate.",
+      "subjects": [
+        "general statement on gun violence needing action"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:17:07.176Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f837db461499ef6aa3300139b5dd17d81563d050d9799ca04ba4657e40f2e090",
+      "kind": "own-words",
+      "url": "https://kjzz.org/content/686080/arizona-march-our-lives-holds-gubernatorial-debate-ducey-declines-invitation",
+      "date": "2018-08-14",
+      "date_precision": "day",
+      "passage": "The school safety plan was endorsed by the NRA and not really, you know, put together with anyone on either side of the aisle or individuals that have made this an issue that they're at the forefront of. So we were strongly against the school safety bill because it's B.S. and we put out a bill similar to that, minus anything that was just trying to appease the NRA and any other special interest groups that may have his ear.",
+      "note": "Speaking for March for Our Lives Arizona, opposes the governor's 2018 school safety plan and says the group put out its own similar bill without anything meant to appease the NRA.",
+      "subjects": [
+        "school safety plan and gun-group influence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:17:07.176Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general statement on gun rights or gun safety laws",
+        "sponsored gun bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "ballotready profile (confirms 2026 general-election candidacy for AZ House District 9, and March For Our Lives national field organizer 2018-2019): https://www.ballotready.org/people/jacob-d-martinez",
+        "candidate-group page (Leaders We Deserve): nothing on the subject",
+        "BallotReady issue stances: nothing on the subject",
+        "Giffords PAC Arizona endorsement list: lists him as Jacob Martinez, LD-09 (a third-party listing, not his words)",
+        "Human Voters AZ questionnaire PDF: not reviewed (https://humanevotersaz.org/wp-content/uploads/Jacob-Martinez.pdf, text unreadable)",
+        "campaign site: not found by search",
+        "Ballotpedia: blocked: https://ballotpedia.org/Jacob_Martinez (empty page)",
+        "KJZZ 2018 radio interview (found, saved)"
+      ],
+      "found": 2,
+      "at": "2026-11-11T04:17:07.176Z",
+      "by": "source-collector"
+    }
+  ]
+}

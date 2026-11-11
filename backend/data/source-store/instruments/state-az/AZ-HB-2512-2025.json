@@ -1,0 +1,80 @@
+{
+  "id": "AZ-HB-2512-2025",
+  "scope": "state:az",
+  "title": "HB2512 (Fifty-seventh Legislature - First Regular Session (2025)): Firearm transfers; offenses; domestic violence",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/82317",
+    "https://www.azleg.gov/legtext/57leg/1r/bills/hb2512p.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lydia Hernandez",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8deb34b4-a40d-4d26-8d3a-1b5a9e9f07f9"
+    },
+    {
+      "name": "Lupe Contreras",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d5466317-d90a-41ce-ba20-30c12429dcb3"
+    },
+    {
+      "name": "Brian Garcia",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ea0e5f51-f963-45ef-a104-429af91e5f90"
+    },
+    {
+      "name": "Alma Hernandez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e4460c64-fa27-4e05-96e8-cc005a478444"
+    },
+    {
+      "name": "Sarah Liguori",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "eb8215ef-5e68-431a-a5cf-c226e8c0abf1"
+    },
+    {
+      "name": "Aaron Marquez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0df9cd85-3923-48bd-86c2-b7d4b31d510d"
+    },
+    {
+      "name": "Mariana Sandoval",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c37db938-9db2-47d5-b30e-7ac6a5f5c5ee"
+    },
+    {
+      "name": "Betty Villegas",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6dcc0e46-c944-480b-a432-7b36989d56e9"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+    "fetched_at": "2026-11-11T03:51:26.779713Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2512-2025.introduced.html",
+      "sha256": "76b2289dd0a2f887d5a54658ea86b9b66666cbbcc81518882b7b5fde2eb25ef3"
+    }
+  },
+  "operative_text": "Sec. 2 (amending A.R.S. 13-3101, subsection A, paragraph 7, subdivision (h)): {+(+}h{+) WHO HAS BEEN CONVICTED OF EITHER:+}\nSec. 2 (amending A.R.S. 13-3101, subsection A, paragraph 7, subdivision (i)): {+(+}i{+) WHO IS SUBJECT TO AN ORDER OF PROTECTION THAT WAS ISSUED PURSUANT TO SECTION 13-3602 OR A SIMILAR LAW IN ANOTHER JURISDICTION, AND THE ORDER WAS ISSUED AFTER THE PERSON RECEIVED NOTICE AND HAD AN OPPORTUNITY TO PARTICIPATE IN THE PROCEEDINGS.  +}\nSec. 3 (adding A.R.S. 13-3601.03, subsection A): {+A. AT THE TIME OF SENTENCING, THE COURT SHALL INFORM, EITHER ORALLY OR IN WRITING, A PERSON WHO IS A PROHIBITED POSSESSOR AS DEFINED IN SECTION 13-3101, SUBSECTION A, PARAGRAPH 7, SUBDIVISION (+}h{+) THAT THE PERSON IS PROHIBITED FROM OWNING OR POSSESSING A FIREARM.  THE COURT SHALL INDICATE ON THE RECORD OF CONVICTION THAT THE CONVICTION PROHIBITS THE PERSON FROM POSSESSING A FIREARM PURSUANT TO SECTION 13-3101, SUBSECTION A, PARAGRAPH 7, SUBDIVISION (+}h{+) AND SECTION 13-3102, SUBSECTION A, PARAGRAPH 4 AND ORDER THE PERSON TO TRANSFER ALL FIREARMS THAT THE PERSON OWNS OR POSSESSES TO THE APPROPRIATE LAW ENFORCEMENT AGENCY OR A FEDERALLY LICENSED FIREARMS DEALER WITHIN TWENTY-FOUR HOURS AFTER THE COURT ISSUES THE ORDER OR, IF THE PERSON IS IN CUSTODY, WITHIN TWENTY-FOUR HOURS AFTER BEING RELEASED FROM CUSTODY.+}\nSec. 3 (A.R.S. 13-3601.03, subsection C): {+C. THE COURT SHALL SET A COMPLIANCE HEARING TO CONFIRM THAT THE TRANSFER HAS OCCURRED. IF THE PROOF OF TRANSFER HAS BEEN FILED, THE COURT MAY CANCEL THE HEARING. +}\nSec. 3 (A.R.S. 13-3601.03, subsection G): {+G. IF THE PLAINTIFF OR A PEACE OFFICER FILES AN AFFIDAVIT ALLEGING THAT THE PERSON HAS FAILED TO TRANSFER A FIREARM THAT THE PERSON OWNS OR POSSESSES, THE COURT SHALL DETERMINE WHETHER PROBABLE CAUSE EXISTS TO BELIEVE THAT THE PERSON HAS FAILED TO TRANSFER THAT FIREARM. IF THE COURT FINDS THAT PROBABLE CAUSE EXISTS, THE COURT SHALL ISSUE A WARRANT THAT DESCRIBES THE FIREARM OWNED OR POSSESSED BY THE PERSON AND THAT AUTHORIZES A SEARCH OF THE LOCATION WHERE THE FIREARM IS REASONABLY BELIEVED TO BE AND THE SEIZURE OF ANY FIREARM THAT IS OWNED OR POSSESSED BY THE PERSON AND DISCOVERED PURSUANT TO THE SEARCH. THE FAILURE TO COMPLY WITH THE SURRENDER OF A FIREARM IS GROUNDS FOR THE ISSUANCE OF A SEARCH WARRANT.+}\nSec. 4 (amending A.R.S. 13-3602, subsection G, paragraph 4): 4. If {+THE ORDER OF PROTECTION WAS ISSUED BEFORE NOTICE AND A HEARING AT WHICH THE DEFENDANT HAD AN OPPORTUNITY TO PARTICIPATE AND +}the court finds that the defendant is a credible threat to the physical safety of the plaintiff or other specifically designated persons, prohibit the defendant from possessing or purchasing a firearm for the duration of the order. If the court prohibits the defendant from possessing a firearm, the court shall also order the defendant to {+IMMEDIATELY +}transfer{+ AFTER SERVICE OF THE ORDER+} any firearm owned or possessed by the defendant [-immediately after service of the order-] to the appropriate law enforcement agency {+OR A FEDERALLY LICENSED FIREARMS DEALER+} for the duration of the order. If the defendant does not immediately transfer the firearm, the defendant shall transfer the firearm within twenty-four hours after service of the order {+IN ACCORDANCE WITH THE REQUIREMENTS PRESCRIBED IN SUBSECTION I OF THIS SECTION+}.\nSec. 4 (A.R.S. 13-3602, subsection H): {+H. IF THE COURT ISSUES AN ORDER OF PROTECTION AFTER NOTICE AND A HEARING AT WHICH THE DEFENDANT HAD AN OPPORTUNITY TO PARTICIPATE, THE COURT SHALL PROHIBIT THE DEFENDANT FROM POSSESSING OR PURCHASING A FIREARM AND SHALL ORDER THE DEFENDANT TO IMMEDIATELY TRANSFER AFTER SERVICE OF THE ORDER ANY FIREARM OWNED OR POSSESSED BY THE DEFENDANT TO THE APPROPRIATE LAW ENFORCEMENT AGENCY OR A FEDERALLY LICENSED FIREARMS DEALER FOR THE DURATION OF THE ORDER.  IF THE DEFENDANT DOES NOT IMMEDIATELY TRANSFER THE FIREARM, THE DEFENDANT SHALL TRANSFER THE FIREARM WITHIN TWENTY-FOUR HOURS AFTER SERVICE OF THE TRANSFER ORDER.+}"
+}

@@ -1,0 +1,56 @@
+{
+  "politician_id": "5f8498b8-913e-4126-9b94-fe224e96bbee",
+  "findings": [
+    {
+      "id": "eb6bb0d566aff73bc92dd373cfdcf23b03c5f63734b7cdf8b4f0cb0fad2887d2",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/95893/race/30462/election/1455",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I support the Second Amendment and the rights of responsible, law-abiding gun owners. I also believe those rights come with a responsibility to protect our children, families, and communities from preventable violence.I support universal background checks for firearm sales, closing loopholes that allow prohibited individuals to obtain weapons, and keeping guns away from violent felons, domestic abusers, and people who have been found by a court to present an immediate danger to others/themselves",
+      "note": "His answer on the voter-guide question 'What restrictions on gun ownership are needed to protect public safety?'. Copied as printed, including the missing space after 'violence.'; the text ends there on the page. No exact date shown; 2026 general-election guide.",
+      "subjects": [
+        "check every gun buyer",
+        "gun rights and the Second Amendment",
+        "limits on who may have a gun",
+        "closing sale loopholes"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:20:54.689Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "bans on a type of firearm",
+        "red-flag orders",
+        "carry permits",
+        "gun rights and the Second Amendment",
+        "gun safety laws",
+        "bills sponsored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "status: only on the 2026 general-election ballot for Senate District 17 (https://ivoterguide.com/candidate/95893/race/30462/election/1455)",
+        "Tucson Spotlight profile: nothing on the subject (https://www.tucsonspotlight.org/democrat-edgar-soto-runs-for-open-ld17-senate-seat/)",
+        "DLCC and Blog for Arizona pages: nothing on the subject",
+        "blocked: https://ballotpedia.org/Edgar_Soto",
+        "KJZZ candidates page: nothing on the subject",
+        "web searches: 3; nothing further"
+      ],
+      "found": 1,
+      "at": "2026-11-11T04:20:54.689Z",
+      "by": "source-collector"
+    }
+  ]
+}

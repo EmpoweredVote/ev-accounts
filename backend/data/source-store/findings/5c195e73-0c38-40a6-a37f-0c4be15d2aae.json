@@ -1,0 +1,32 @@
+{
+  "politician_id": "5c195e73-0c38-40a6-a37f-0c4be15d2aae",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation general",
+        "assault-style guns and magazines",
+        "background checks",
+        "red-flag orders",
+        "carry permits",
+        "Second Amendment general statement"
+      ],
+      "places": [
+        "in scope: 2026 candidate for Arizona Senate District 27, on the general-election ballot per search results (https://ballotpedia.org/Kyle_Clayton, search summary only; fetch returned nothing)",
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "web search by name plus gun words: no page of their own on the subject",
+        "not reviewed: Ballotpedia (fetch returns empty)",
+        "campaign site https://www.kyleforarizona.com: issues list (education, costs, fiscal) has nothing on the subject",
+        "https://humanevotersaz.org/wp-content/uploads/Kyle-Clayton.pdf (animal-protection questionnaire read as text): nothing on the subject",
+        "blocked: https://goodparty.org/candidate/kyle-clayton/arizona-state-senate-district-27 (429)",
+        "blocked: https://bluevoterguide.org/AZ/candidate_Kyle_Clayton/375306 (403)"
+      ],
+      "found": 0,
+      "at": "2026-11-11T04:17:17.474Z",
+      "by": "source-collector"
+    }
+  ]
+}
