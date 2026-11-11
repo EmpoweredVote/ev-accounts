@@ -16,6 +16,9 @@
 -- UNDATED (CC_0397's rule), not re-dated. She stays seated: a NULL start is open-ended.
 --
 -- NOT tagged '| unverified' (CA_0171). Previous value is in the plan below. Idempotent.
+--
+-- Applied to production 2026-11-11: 1 tenure undated. check:incumbency then read 0 drift rows,
+-- control-reconcile-incumbency.mjs passed, and check:seating held.
 
 BEGIN;
 
