@@ -257,7 +257,155 @@
           "sha256": "93266e8d17c0b31728a6c78573a4afda6517fbacbe2200b4273a5f2e422960c1"
         }
       }
+    },
+    {
+      "id": "12cc58e067c7ded64fe36e9daf648057682710b41776b66ef5e0265b9e742dbd",
+      "kind": "own-words",
+      "url": "https://www.news-expressky.com/news/opinion/ballot-amendment-1-preserving-our-elections/article_5d822dde-6969-11ef-833d-bba580edd6d3.html",
+      "date": "2024-09-03",
+      "date_precision": "day",
+      "passage": "I believe it is crucial that only U.S. citizens vote in elections.",
+      "note": "From his own signed column 'Ballot Amendment 1: Preserving our elections' (byline John Blanton, State Representative, 92nd District), on the 2024 ballot amendment (SB 143) adding to the state constitution that only U.S. citizens may vote. He states this belief.",
+      "subjects": [
+        "noncitizen voting",
+        "citizenship requirement to vote",
+        "constitutional amendment on who may vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:46:49.406Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ecb83822988a1137c2df7c57edbaef5c085d435b918e7640ccd6464f96af3134",
+      "kind": "own-words",
+      "url": "https://www.news-expressky.com/news/opinion/ballot-amendment-1-preserving-our-elections/article_5d822dde-6969-11ef-833d-bba580edd6d3.html",
+      "date": "2024-09-03",
+      "date_precision": "day",
+      "passage": "Before I continue, I want to emphasize that there have been no reported cases of non-citizens voting in Kentucky elections.",
+      "note": "Same column. He notes that no cases of noncitizens voting have been reported in Kentucky, then goes on to say it has become an issue in other states.",
+      "subjects": [
+        "noncitizen voting",
+        "citizenship requirement to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:46:49.406Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b69b0dd3db594f9741c67afa7ac142742817e0be2fcc897df9f5e19fb799b9fb",
+      "kind": "own-words",
+      "url": "https://www.news-expressky.com/news/opinion/ballot-amendment-1-preserving-our-elections/article_5d822dde-6969-11ef-833d-bba580edd6d3.html",
+      "date": "2024-09-03",
+      "date_precision": "day",
+      "passage": "A “Yes” vote means that you support requiring that a voter in these elections be a citizen of the United States.",
+      "note": "Same column. He explains what a yes vote on the amendment means.",
+      "subjects": [
+        "constitutional amendment on who may vote",
+        "citizenship requirement to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:46:49.406Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d46ecb91a31ee5cd1e1e87159cd4301382bc37721ea5bb099f789780020ffed",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 18431 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.599Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9d1cc56372773c897daa5108e69d4a07df5ffa947a543f55af89a207bd976d6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 18431 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.599Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "constitutional amendment on who may vote (SB 143, 2024)",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://web.sos.ky.gov/candidatefilings/Default.aspx?cand=11576 (confirms John Blanton filed 2025-11-13 for State Representative, 92nd district)",
+        "own column at news-expressky.com, 2024-09-03 (saved)",
+        "campaign site: none found (filing lists only an email)",
+        "legislature.ky.gov sponsor pages: not reviewed (votes and sponsorships linked separately)",
+        "blocked: https://ballotpedia.org (refused by rule, not fetched)",
+        "blocked: https://justfacts.votesmart.org (refused by rule, not fetched)",
+        "web searches (5) on name plus voter ID, photo ID, proof of citizenship, SB 2, HB 574, HB 139, HB 534, questionnaire: only the 2024 column on the subject"
+      ],
+      "found": 3,
+      "at": "2026-11-11T18:46:49.406Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 2,
+      "at": "2026-11-11T21:12:46.599Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
 }

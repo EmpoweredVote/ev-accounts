@@ -1,0 +1,61 @@
+{
+  "politician_id": "a5752370-3b1b-4eaa-aced-91e786379b2f",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: statewide Treasurer, term to Dec 2027, not on the 2026 ballot; https://www.wkms.org/2023-10-11/kentucky-public-radio-voter-guide-state-treasurer names Mark Metcalf as the 2023 candidate for Treasurer (positive control that the person is findable); current-office page not confirmed because treasury.ky.gov returned 403",
+        "On the Record (0 appearances)",
+        "WKMS 2023 voter guide for state treasurer, read: Metcalf interview excerpts on the office and money management only; nothing on the subject",
+        "Commonwealth Policy Center 2023 treasurer guide PDF https://commonwealthpolicycenter.org/wp-content/uploads/2023/09/2023-Treasurer-Voter-Guide.pdf, read: questionnaire topics are budget, pensions, gambling, ESG, income tax, financial literacy, schools, marijuana; nothing on the subject",
+        "blocked: https://treasury.ky.gov/ (403)",
+        "blocked: https://treasury.ky.gov/about/Pages/biography.aspx (403)",
+        "blocked: https://news.yahoo.com/state-treasurer-candidate-metcalf-makes-035900791.html (429)",
+        "campaign site metcalffortreasurer.com: no connection (host did not answer); not reviewed: https://metcalffortreasurer.com/?p=5169",
+        "Ballotpedia: a fetch was attempted once by mistake with a placeholder prompt and returned nothing usable; treated as blocked/not reviewed: https://ballotpedia.org/Mark_Metcalf",
+        "web searches run (6): name + voter ID/election integrity/noncitizen; questionnaire/voter guide/photo ID; special counsel for election reform; proof of citizenship/SAVE Act/photo ID/voter rolls; social posts on elections; none returned a statement by him on the subject",
+        "not reviewed: video interviews in search results (WDRB election-night video); refused outlets not opened"
+      ],
+      "found": 0,
+      "at": "2026-11-11T18:38:01.936Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: statewide Treasurer, term to Dec 2027, not on the 2026 ballot; https://www.wkms.org/2023-10-11/kentucky-public-radio-voter-guide-state-treasurer names Mark Metcalf as the 2023 candidate for Treasurer (positive control that the person is findable); current-office page not confirmed because treasury.ky.gov returned 403",
+        "On the Record (0 appearances)",
+        "WKMS 2023 voter guide for state treasurer, read: Metcalf interview excerpts on the office and money management only; nothing on the subject",
+        "Commonwealth Policy Center 2023 treasurer guide PDF https://commonwealthpolicycenter.org/wp-content/uploads/2023/09/2023-Treasurer-Voter-Guide.pdf, read: questionnaire topics are budget, pensions, gambling, ESG, income tax, financial literacy, schools, marijuana; nothing on the subject",
+        "blocked: https://treasury.ky.gov/ (403)",
+        "blocked: https://treasury.ky.gov/about/Pages/biography.aspx (403)",
+        "blocked: https://news.yahoo.com/state-treasurer-candidate-metcalf-makes-035900791.html (429)",
+        "campaign site metcalffortreasurer.com: no connection (host did not answer); not reviewed: https://metcalffortreasurer.com/?p=5169",
+        "Ballotpedia: a fetch was attempted once by mistake with a placeholder prompt and returned nothing usable; treated as blocked/not reviewed: https://ballotpedia.org/Mark_Metcalf",
+        "web searches run (6): name + voter ID/election integrity/noncitizen; questionnaire/voter guide/photo ID; special counsel for election reform; proof of citizenship/SAVE Act/photo ID/voter rolls; social posts on elections; none returned a statement by him on the subject",
+        "not reviewed: video interviews in search results (WDRB election-night video); refused outlets not opened",
+        "re-search 2026-11-11: treasury.ky.gov and yahoo.com not refetched; new search on elections/citizenship found no statement by him; https://www.ballotready.org/people/mark-h-metcalf fetched (candidate profile only, nothing on the subject; campaign site link listed)"
+      ],
+      "found": 0,
+      "at": "2026-11-11T19:00:42.300Z",
+      "by": "source-collector"
+    }
+  ]
+}

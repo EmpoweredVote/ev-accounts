@@ -78,7 +78,90 @@
         "fetched_at": "2026-10-21T01:52:20.308Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "0d46ecb91a31ee5cd1e1e87159cd4301382bc37721ea5bb099f789780020ffed",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 22066 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.605Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9d1cc56372773c897daa5108e69d4a07df5ffa947a543f55af89a207bd976d6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 22066 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.605Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for absentee or mail ballots",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "iVoterGuide profile for Tom O'Dell Smith, State Rep., Dist. 86 (confirms who he is; his answer on voting without photo ID is marked 'Did not answer' and every other free-text field is blank: nothing on the subject)",
+        "MultiState candidate page (identity only, nothing on the subject)",
+        "blocked: https://thenewsjournal.net/86th-district-tom-odell-smith-seeking-to-return-to-state-legislature/ (403 to plain curl)",
+        "blocked: https://www.thenewsjournal.net/?p=67434 (HTTP 522)",
+        "blocked: legislature.ky.gov and Ballotpedia and Vote Smart pages not opened (refused or not fetchable); sponsorships are linked separately",
+        "not reviewed: https://mountainadvocate.com/stories/tom-odell-smith-offers-updates-on-several-major-projects-86th-district-rep-says-permanent-fix,50738 (a local-news talk summary about road projects; the search summary says no elections content)",
+        "6 web searches run (name with voter ID, questionnaire, proof of citizenship or noncitizen, HB 574 or SB 2, Corbin local news, iVoterGuide, column); no own words on the subject found"
+      ],
+      "found": 0,
+      "at": "2026-11-11T18:30:08.861Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 2,
+      "at": "2026-11-11T21:12:46.605Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
 }

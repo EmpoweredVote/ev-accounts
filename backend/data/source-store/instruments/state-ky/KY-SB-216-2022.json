@@ -1,0 +1,1780 @@
+{
+  "id": "KY-SB-216-2022",
+  "scope": "state:ky",
+  "title": "SB 216 (2022 Regular Session): AN ACT relating to elections and declaring an emergency.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/22RS/sb216.html",
+    "https://apps.legislature.ky.gov/record/22RS/sb216/vote_history.pdf"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy)\n(section) Section 2 (KRS 117.228(2)(e)), introduced text only\n(quote) STRUCK: A credit or debit card with the name of the voter stated\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Section 1 (KRS 15.243): Attorney General must open an independent inquiry after each election in not fewer than twelve counties (in place of five percent of counties), picked at random, none in two consecutive elections.\n(other) Final text, Sections 2-4 (KRS 117.125, 117.135, 117.295): voting-system approval date (after January 1, 2024), custody of voting equipment, and how long voting equipment stays locked after an election.\n(other) Final text, Section 5 (KRS 121.180) and Sections 7 and 12 (KRS 121.160, 121.175): campaign finance reporting, campaign treasurer designation, limits on campaign-account use; includes a member of the General Assembly's campaign account contributions to a party up to five thousand dollars a year.\n(other) Final text, Section 6 (KRS 117.015): State Board of Elections.\n(other) Final text, Sections 8-11 (KRS 118.205, 118.327, 118A.140, new section of KRS ch. 118): candidate registers kept by the Secretary of State and county clerks, and a requirement to post candidates and residences on official Web sites.\n(other) Section 13 of the final text: emergency clause (Section 5 takes effect on approval).\n(other) version: orig_bill (introduced, BR 1636): carries slot b only: Section 2 amends KRS 117.228 and brackets out the credit-or-debit-card item (e) of the secondary-ID list; the rest of 117.228 is reprinted unchanged. Sections 1, 3-5 are the Attorney General, voting-system, equipment and canvass items.\n(other) version: 0219: the printed Acts chapter text ('CHAPTER 219 (SB 216)'), not a floor amendment as the skeleton label says. It has NO KRS 117.228 section and no ID or citizenship text (searched for identification, 117.228, 117.227, citizen, credit, debit, photo, driver).\n(other) version: bill (furthest, header 'SB 216/VO' = vetoed and overridden text): same finding as 0219, no ID or citizenship text. So the credit-card removal from the introduced text did not reach the final law.\n(other) version: Senate committee substitute 1, House committee substitute 1 and House floor amendments 1 and 2 are now saved (see lines below); the conference reports are still NOT saved.\n(other) version: SCS1 (Senate committee substitute 1, 22 RS SB 216/SCS 1, saved 2026-11-11): carries slot b only, as the introduced bill does: Section 2 amends KRS 117.228 and brackets out the credit-or-debit-card item of the secondary-ID list. Against the introduced text it adds a bar on buying voting equipment or a voting system after the effective date, and a new Section 6 amending KRS 121.180 (campaign finance filing exemptions).\n(other) version: HCS1 (House committee substitute 1, 22 RS SB 216/HCS 1, saved 2026-11-11): still carries slot b (Section 2, the same credit-or-debit-card removal in KRS 117.228). Against SCS 1 it adds campaign-finance filing changes (KRS 121.160 and others, Sections 8 to 13); no change to the ID text.\n(other) version: HFA1 (House floor amendment 1, saved 2026-11-11): touches ID. It deletes Section 2 of HCS 1 (the KRS 117.228 secondary-ID change) in its entirety, so the credit-card removal leaves the bill. Adopted with HCS 1.\n(other) version: HFA2 (House floor amendment 2, saved 2026-11-11): no ID or citizenship text. It adds one sentence to the video-surveillance rule requiring storage for 60 consecutive days of recording. Adopted with HCS 1.\n(other) note: The credit-card change exists only in the introduced text. Neither saved later version (0219, bill) touches KRS 117.228 or any ID rule, so for the ENACTED law slots a-e are 'not stated'; slot b above quotes the introduced text and names it. In KRS 117.228 as reprinted in the introduced text, the other list items (Social Security card, county ID, any ID with photograph and name, food stamp or benefit card) are unchanged. The Senate committee substitute that passed the Senate on 2022-03-07 is not saved, so I cannot say whether it still carried the 117.228 change.",
+  "sponsors": [
+    {
+      "name": "Robert Mills",
+      "role": "prime",
+      "version": "SCS1"
+    },
+    {
+      "name": "Mike Wilson",
+      "role": "co",
+      "version": "SCS1"
+    },
+    {
+      "name": "Steve West",
+      "role": "co",
+      "version": "SCS1"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "campaign-finance"
+      ]
+    }
+  ],
+  "votes": [
+    {
+      "date": "2022-03-07",
+      "body": "KY Senate",
+      "motion": "Senate third reading, passed with Senate committee substitute 1 [version voted: SCS1]",
+      "kind": "roll-call",
+      "yes": 22,
+      "no": 10,
+      "absent": 6,
+      "body_size": 38,
+      "note": "LegiScan roll call; tally checked against the official vote-history PDF | https://apps.legislature.ky.gov/record/22RS/sb216/vote_history.pdf",
+      "members": [
+        {
+          "name": "C.B. Embry",
+          "vote": "absent"
+        },
+        {
+          "name": "David Givens",
+          "vote": "yea"
+        },
+        {
+          "name": "Denise Harper Angel",
+          "vote": "nay"
+        },
+        {
+          "name": "Jimmy Higdon",
+          "vote": "yea"
+        },
+        {
+          "name": "Alice Kerr",
+          "vote": "yea"
+        },
+        {
+          "name": "Gerald Neal",
+          "vote": "nay"
+        },
+        {
+          "name": "John Schickel",
+          "vote": "yea"
+        },
+        {
+          "name": "Brandon Smith",
+          "vote": "absent"
+        },
+        {
+          "name": "Robert Stivers",
+          "vote": "yea"
+        },
+        {
+          "name": "Damon Thayer",
+          "vote": "yea"
+        },
+        {
+          "name": "Robin Webb",
+          "vote": "nay"
+        },
+        {
+          "name": "Julie Raque Adams",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Nemes",
+          "vote": "yea"
+        },
+        {
+          "name": "Dennis Parrett",
+          "vote": "nay"
+        },
+        {
+          "name": "Jared Carpenter",
+          "vote": "absent"
+        },
+        {
+          "name": "Mike Wilson",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Hornback",
+          "vote": "yea"
+        },
+        {
+          "name": "Christian McDaniel",
+          "vote": "nay"
+        },
+        {
+          "name": "Whitney Westerfield",
+          "vote": "absent"
+        },
+        {
+          "name": "Morgan McGarvey",
+          "vote": "nay"
+        },
+        {
+          "name": "Reginald Thomas",
+          "vote": "nay"
+        },
+        {
+          "name": "George Wise",
+          "vote": "yea"
+        },
+        {
+          "name": "Ralph Alvarado",
+          "vote": "yea"
+        },
+        {
+          "name": "Wil Schroder",
+          "vote": "yea"
+        },
+        {
+          "name": "Danny Carroll",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve West",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Castlen",
+          "vote": "absent"
+        },
+        {
+          "name": "Rick Girdler",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen Meredith",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Mills",
+          "vote": "yea"
+        },
+        {
+          "name": "Phillip Wheeler",
+          "vote": "yea"
+        },
+        {
+          "name": "Brandon Storm",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Howell",
+          "vote": "absent"
+        },
+        {
+          "name": "Adrienne Southworth",
+          "vote": "nay"
+        },
+        {
+          "name": "Karen Berg",
+          "vote": "nay"
+        },
+        {
+          "name": "David Yates",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnnie Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Donald Douglas",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2022-03-24",
+      "body": "KY House",
+      "motion": "House third reading, passed with House committee substitute 1 and floor amendments 1 and 2 [version voted: HCS1+HFA1+HFA2]",
+      "kind": "roll-call",
+      "yes": 87,
+      "no": 6,
+      "absent": 7,
+      "body_size": 100,
+      "note": "LegiScan roll call; tally checked against the official vote-history PDF | https://apps.legislature.ky.gov/record/22RS/sb216/vote_history.pdf",
+      "members": [
+        {
+          "name": "Kevin Bratcher",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Burch",
+          "vote": "absent"
+        },
+        {
+          "name": "Myron Dossett",
+          "vote": "yea"
+        },
+        {
+          "name": "Joseph Fischer",
+          "vote": "yea"
+        },
+        {
+          "name": "Kelly Flood",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Gooch",
+          "vote": "yea"
+        },
+        {
+          "name": "Derrick Graham",
+          "vote": "yea"
+        },
+        {
+          "name": "Joni Jenkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Koenig",
+          "vote": "absent"
+        },
+        {
+          "name": "Mary Marzian",
+          "vote": "nay"
+        },
+        {
+          "name": "Charles Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "David Osborne",
+          "vote": "yea"
+        },
+        {
+          "name": "Ruth Palumbo",
+          "vote": "yea"
+        },
+        {
+          "name": "Steven Rudy",
+          "vote": "yea"
+        },
+        {
+          "name": "Sal Santoro",
+          "vote": "yea"
+        },
+        {
+          "name": "Ken Upchurch",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Westrom",
+          "vote": "yea"
+        },
+        {
+          "name": "Kim King",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Meredith",
+          "vote": "yea"
+        },
+        {
+          "name": "Regina Huff",
+          "vote": "absent"
+        },
+        {
+          "name": "Bart Rowland",
+          "vote": "yea"
+        },
+        {
+          "name": "David Meade",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeffery Donohue",
+          "vote": "yea"
+        },
+        {
+          "name": "Lynn Bechler",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Heath",
+          "vote": "yea"
+        },
+        {
+          "name": "Russell Webber",
+          "vote": "yea"
+        },
+        {
+          "name": "Suzanne Miles",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Duplessis",
+          "vote": "yea"
+        },
+        {
+          "name": "George Brown",
+          "vote": "nay"
+        },
+        {
+          "name": "David Hale",
+          "vote": "yea"
+        },
+        {
+          "name": "James Tipton",
+          "vote": "yea"
+        },
+        {
+          "name": "Daniel Elliott",
+          "vote": "yea"
+        },
+        {
+          "name": "Attica Scott",
+          "vote": "yea"
+        },
+        {
+          "name": "William Reed",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Hart",
+          "vote": "yea"
+        },
+        {
+          "name": "Danny Bentley",
+          "vote": "yea"
+        },
+        {
+          "name": "Melinda Prunty",
+          "vote": "yea"
+        },
+        {
+          "name": "DJ Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Walker Thomas",
+          "vote": "yea"
+        },
+        {
+          "name": "Kimberly Moser",
+          "vote": "yea"
+        },
+        {
+          "name": "Phillip Pratt",
+          "vote": "yea"
+        },
+        {
+          "name": "Alan Gentry",
+          "vote": "yea"
+        },
+        {
+          "name": "John Blanton",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Fugate",
+          "vote": "yea"
+        },
+        {
+          "name": "Angie Hatton",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Petrie",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Riley",
+          "vote": "yea"
+        },
+        {
+          "name": "Ken Fleming",
+          "vote": "yea"
+        },
+        {
+          "name": "Chad McCoy",
+          "vote": "yea"
+        },
+        {
+          "name": "McKenzie Cantrell",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Nemes",
+          "vote": "yea"
+        },
+        {
+          "name": "Josie Raymond",
+          "vote": "nay"
+        },
+        {
+          "name": "Lisa Willner",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott Lewis",
+          "vote": "yea"
+        },
+        {
+          "name": "Ed Massey",
+          "vote": "yea"
+        },
+        {
+          "name": "Matthew Koch",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Freeland",
+          "vote": "yea"
+        },
+        {
+          "name": "Ashley Tackett Laferty",
+          "vote": "yea"
+        },
+        {
+          "name": "Bobby McCool",
+          "vote": "yea"
+        },
+        {
+          "name": "Buddy Wheatley",
+          "vote": "yea"
+        },
+        {
+          "name": "Cherlynn Stevenson",
+          "vote": "yea"
+        },
+        {
+          "name": "Deanna Frazier",
+          "vote": "yea"
+        },
+        {
+          "name": "Nima Kulkarni",
+          "vote": "yea"
+        },
+        {
+          "name": "Nancy Tate",
+          "vote": "yea"
+        },
+        {
+          "name": "Patti Minter",
+          "vote": "yea"
+        },
+        {
+          "name": "Randy Bridges",
+          "vote": "yea"
+        },
+        {
+          "name": "Tina Bojanowski",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Huff",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Bowling",
+          "vote": "yea"
+        },
+        {
+          "name": "Derek Lewis",
+          "vote": "yea"
+        },
+        {
+          "name": "Savannah Maddox",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Sheldon",
+          "vote": "yea"
+        },
+        {
+          "name": "Kimberly Banta",
+          "vote": "yea"
+        },
+        {
+          "name": "Samara Heavrin",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard White",
+          "vote": "absent"
+        },
+        {
+          "name": "Rachel Roberts",
+          "vote": "yea"
+        },
+        {
+          "name": "Shane Baker",
+          "vote": "yea"
+        },
+        {
+          "name": "Joshua Branscum",
+          "vote": "absent"
+        },
+        {
+          "name": "Josh Bray",
+          "vote": "yea"
+        },
+        {
+          "name": "Josh Calloway",
+          "vote": "yea"
+        },
+        {
+          "name": "Jennifer Henson Decker",
+          "vote": "absent"
+        },
+        {
+          "name": "Jonathan Dixon",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan Dotson",
+          "vote": "yea"
+        },
+        {
+          "name": "Daniel Fister",
+          "vote": "yea"
+        },
+        {
+          "name": "Patrick Flannery",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Imes",
+          "vote": "yea"
+        },
+        {
+          "name": "Norma Kirk-McCormick",
+          "vote": "yea"
+        },
+        {
+          "name": "William Lawrence",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Lockett",
+          "vote": "yea"
+        },
+        {
+          "name": "Shawn McPherson",
+          "vote": "yea"
+        },
+        {
+          "name": "Felicia Rabourn",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Sharp",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Pamela Stevenson",
+          "vote": "absent"
+        },
+        {
+          "name": "Killian Timoney",
+          "vote": "yea"
+        },
+        {
+          "name": "Billy Wesley",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Pollock",
+          "vote": "yea"
+        },
+        {
+          "name": "Timmy Truett",
+          "vote": "yea"
+        },
+        {
+          "name": "Keturah Herron",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2022-03-30",
+      "body": "KY House",
+      "motion": "House final passage with free conference committee report [version voted: bill]",
+      "kind": "roll-call",
+      "yes": 83,
+      "no": 10,
+      "absent": 7,
+      "body_size": 100,
+      "note": "LegiScan roll call; tally checked against the official vote-history PDF | https://apps.legislature.ky.gov/record/22RS/sb216/vote_history.pdf",
+      "members": [
+        {
+          "name": "Kevin Bratcher",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Burch",
+          "vote": "absent"
+        },
+        {
+          "name": "Myron Dossett",
+          "vote": "yea"
+        },
+        {
+          "name": "Joseph Fischer",
+          "vote": "yea"
+        },
+        {
+          "name": "Kelly Flood",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Gooch",
+          "vote": "yea"
+        },
+        {
+          "name": "Derrick Graham",
+          "vote": "nay"
+        },
+        {
+          "name": "Joni Jenkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Koenig",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Marzian",
+          "vote": "nay"
+        },
+        {
+          "name": "Charles Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "David Osborne",
+          "vote": "yea"
+        },
+        {
+          "name": "Ruth Palumbo",
+          "vote": "yea"
+        },
+        {
+          "name": "Steven Rudy",
+          "vote": "yea"
+        },
+        {
+          "name": "Sal Santoro",
+          "vote": "yea"
+        },
+        {
+          "name": "Ken Upchurch",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Westrom",
+          "vote": "yea"
+        },
+        {
+          "name": "Kim King",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Meredith",
+          "vote": "yea"
+        },
+        {
+          "name": "Regina Huff",
+          "vote": "yea"
+        },
+        {
+          "name": "Bart Rowland",
+          "vote": "yea"
+        },
+        {
+          "name": "David Meade",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeffery Donohue",
+          "vote": "nay"
+        },
+        {
+          "name": "Lynn Bechler",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Heath",
+          "vote": "yea"
+        },
+        {
+          "name": "Russell Webber",
+          "vote": "absent"
+        },
+        {
+          "name": "Suzanne Miles",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Duplessis",
+          "vote": "yea"
+        },
+        {
+          "name": "George Brown",
+          "vote": "nay"
+        },
+        {
+          "name": "David Hale",
+          "vote": "yea"
+        },
+        {
+          "name": "James Tipton",
+          "vote": "yea"
+        },
+        {
+          "name": "Daniel Elliott",
+          "vote": "yea"
+        },
+        {
+          "name": "Attica Scott",
+          "vote": "nay"
+        },
+        {
+          "name": "William Reed",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Hart",
+          "vote": "yea"
+        },
+        {
+          "name": "Danny Bentley",
+          "vote": "yea"
+        },
+        {
+          "name": "Melinda Prunty",
+          "vote": "yea"
+        },
+        {
+          "name": "DJ Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Walker Thomas",
+          "vote": "yea"
+        },
+        {
+          "name": "Kimberly Moser",
+          "vote": "yea"
+        },
+        {
+          "name": "Phillip Pratt",
+          "vote": "yea"
+        },
+        {
+          "name": "Alan Gentry",
+          "vote": "yea"
+        },
+        {
+          "name": "John Blanton",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Fugate",
+          "vote": "yea"
+        },
+        {
+          "name": "Angie Hatton",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Petrie",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Riley",
+          "vote": "yea"
+        },
+        {
+          "name": "Ken Fleming",
+          "vote": "yea"
+        },
+        {
+          "name": "Chad McCoy",
+          "vote": "yea"
+        },
+        {
+          "name": "McKenzie Cantrell",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Nemes",
+          "vote": "yea"
+        },
+        {
+          "name": "Josie Raymond",
+          "vote": "nay"
+        },
+        {
+          "name": "Lisa Willner",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott Lewis",
+          "vote": "yea"
+        },
+        {
+          "name": "Ed Massey",
+          "vote": "yea"
+        },
+        {
+          "name": "Matthew Koch",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Freeland",
+          "vote": "yea"
+        },
+        {
+          "name": "Ashley Tackett Laferty",
+          "vote": "yea"
+        },
+        {
+          "name": "Bobby McCool",
+          "vote": "yea"
+        },
+        {
+          "name": "Buddy Wheatley",
+          "vote": "yea"
+        },
+        {
+          "name": "Cherlynn Stevenson",
+          "vote": "yea"
+        },
+        {
+          "name": "Deanna Frazier",
+          "vote": "yea"
+        },
+        {
+          "name": "Nima Kulkarni",
+          "vote": "absent"
+        },
+        {
+          "name": "Nancy Tate",
+          "vote": "yea"
+        },
+        {
+          "name": "Patti Minter",
+          "vote": "absent"
+        },
+        {
+          "name": "Randy Bridges",
+          "vote": "yea"
+        },
+        {
+          "name": "Tina Bojanowski",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Huff",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Bowling",
+          "vote": "yea"
+        },
+        {
+          "name": "Derek Lewis",
+          "vote": "yea"
+        },
+        {
+          "name": "Savannah Maddox",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Sheldon",
+          "vote": "yea"
+        },
+        {
+          "name": "Kimberly Banta",
+          "vote": "yea"
+        },
+        {
+          "name": "Samara Heavrin",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard White",
+          "vote": "absent"
+        },
+        {
+          "name": "Rachel Roberts",
+          "vote": "yea"
+        },
+        {
+          "name": "Shane Baker",
+          "vote": "yea"
+        },
+        {
+          "name": "Joshua Branscum",
+          "vote": "absent"
+        },
+        {
+          "name": "Josh Bray",
+          "vote": "yea"
+        },
+        {
+          "name": "Josh Calloway",
+          "vote": "yea"
+        },
+        {
+          "name": "Jennifer Henson Decker",
+          "vote": "absent"
+        },
+        {
+          "name": "Jonathan Dixon",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan Dotson",
+          "vote": "yea"
+        },
+        {
+          "name": "Daniel Fister",
+          "vote": "yea"
+        },
+        {
+          "name": "Patrick Flannery",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Imes",
+          "vote": "yea"
+        },
+        {
+          "name": "Norma Kirk-McCormick",
+          "vote": "yea"
+        },
+        {
+          "name": "William Lawrence",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Lockett",
+          "vote": "yea"
+        },
+        {
+          "name": "Shawn McPherson",
+          "vote": "yea"
+        },
+        {
+          "name": "Felicia Rabourn",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Sharp",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Pamela Stevenson",
+          "vote": "nay"
+        },
+        {
+          "name": "Killian Timoney",
+          "vote": "yea"
+        },
+        {
+          "name": "Billy Wesley",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Pollock",
+          "vote": "yea"
+        },
+        {
+          "name": "Timmy Truett",
+          "vote": "yea"
+        },
+        {
+          "name": "Keturah Herron",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2022-03-30",
+      "body": "KY Senate",
+      "motion": "Senate final passage with free conference committee report 1 [version voted: bill]",
+      "kind": "roll-call",
+      "yes": 35,
+      "no": 1,
+      "absent": 2,
+      "body_size": 38,
+      "note": "LegiScan roll call; tally checked against the official vote-history PDF | https://apps.legislature.ky.gov/record/22RS/sb216/vote_history.pdf",
+      "members": [
+        {
+          "name": "C.B. Embry",
+          "vote": "absent"
+        },
+        {
+          "name": "David Givens",
+          "vote": "yea"
+        },
+        {
+          "name": "Denise Harper Angel",
+          "vote": "yea"
+        },
+        {
+          "name": "Jimmy Higdon",
+          "vote": "yea"
+        },
+        {
+          "name": "Alice Kerr",
+          "vote": "absent"
+        },
+        {
+          "name": "Gerald Neal",
+          "vote": "yea"
+        },
+        {
+          "name": "John Schickel",
+          "vote": "yea"
+        },
+        {
+          "name": "Brandon Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Stivers",
+          "vote": "yea"
+        },
+        {
+          "name": "Damon Thayer",
+          "vote": "yea"
+        },
+        {
+          "name": "Robin Webb",
+          "vote": "yea"
+        },
+        {
+          "name": "Julie Raque Adams",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Nemes",
+          "vote": "yea"
+        },
+        {
+          "name": "Dennis Parrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Jared Carpenter",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Wilson",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Hornback",
+          "vote": "yea"
+        },
+        {
+          "name": "Christian McDaniel",
+          "vote": "yea"
+        },
+        {
+          "name": "Whitney Westerfield",
+          "vote": "yea"
+        },
+        {
+          "name": "Morgan McGarvey",
+          "vote": "yea"
+        },
+        {
+          "name": "Reginald Thomas",
+          "vote": "yea"
+        },
+        {
+          "name": "George Wise",
+          "vote": "yea"
+        },
+        {
+          "name": "Ralph Alvarado",
+          "vote": "yea"
+        },
+        {
+          "name": "Wil Schroder",
+          "vote": "yea"
+        },
+        {
+          "name": "Danny Carroll",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve West",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Castlen",
+          "vote": "yea"
+        },
+        {
+          "name": "Rick Girdler",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen Meredith",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Mills",
+          "vote": "yea"
+        },
+        {
+          "name": "Phillip Wheeler",
+          "vote": "yea"
+        },
+        {
+          "name": "Brandon Storm",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Adrienne Southworth",
+          "vote": "nay"
+        },
+        {
+          "name": "Karen Berg",
+          "vote": "yea"
+        },
+        {
+          "name": "David Yates",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnnie Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Donald Douglas",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2022-04-13",
+      "body": "KY Senate",
+      "motion": "Senate override of veto (final passage over veto) [version voted: bill]",
+      "kind": "roll-call",
+      "yes": 28,
+      "no": 9,
+      "absent": 1,
+      "body_size": 38,
+      "note": "LegiScan roll call; tally checked against the official vote-history PDF | https://apps.legislature.ky.gov/record/22RS/sb216/vote_history.pdf",
+      "members": [
+        {
+          "name": "C.B. Embry",
+          "vote": "absent"
+        },
+        {
+          "name": "David Givens",
+          "vote": "yea"
+        },
+        {
+          "name": "Denise Harper Angel",
+          "vote": "nay"
+        },
+        {
+          "name": "Jimmy Higdon",
+          "vote": "yea"
+        },
+        {
+          "name": "Alice Kerr",
+          "vote": "yea"
+        },
+        {
+          "name": "Gerald Neal",
+          "vote": "nay"
+        },
+        {
+          "name": "John Schickel",
+          "vote": "yea"
+        },
+        {
+          "name": "Brandon Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Stivers",
+          "vote": "yea"
+        },
+        {
+          "name": "Damon Thayer",
+          "vote": "yea"
+        },
+        {
+          "name": "Robin Webb",
+          "vote": "nay"
+        },
+        {
+          "name": "Julie Raque Adams",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Nemes",
+          "vote": "yea"
+        },
+        {
+          "name": "Dennis Parrett",
+          "vote": "nay"
+        },
+        {
+          "name": "Jared Carpenter",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Wilson",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Hornback",
+          "vote": "yea"
+        },
+        {
+          "name": "Christian McDaniel",
+          "vote": "yea"
+        },
+        {
+          "name": "Whitney Westerfield",
+          "vote": "yea"
+        },
+        {
+          "name": "Morgan McGarvey",
+          "vote": "nay"
+        },
+        {
+          "name": "Reginald Thomas",
+          "vote": "nay"
+        },
+        {
+          "name": "George Wise",
+          "vote": "yea"
+        },
+        {
+          "name": "Ralph Alvarado",
+          "vote": "yea"
+        },
+        {
+          "name": "Wil Schroder",
+          "vote": "yea"
+        },
+        {
+          "name": "Danny Carroll",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve West",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Castlen",
+          "vote": "yea"
+        },
+        {
+          "name": "Rick Girdler",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen Meredith",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Mills",
+          "vote": "yea"
+        },
+        {
+          "name": "Phillip Wheeler",
+          "vote": "yea"
+        },
+        {
+          "name": "Brandon Storm",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Adrienne Southworth",
+          "vote": "nay"
+        },
+        {
+          "name": "Karen Berg",
+          "vote": "nay"
+        },
+        {
+          "name": "David Yates",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnnie Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Donald Douglas",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2022-04-13",
+      "body": "KY House",
+      "motion": "House override of veto [version voted: bill]",
+      "kind": "roll-call",
+      "yes": 71,
+      "no": 18,
+      "absent": 11,
+      "body_size": 100,
+      "note": "LegiScan roll call; tally checked against the official vote-history PDF | https://apps.legislature.ky.gov/record/22RS/sb216/vote_history.pdf",
+      "members": [
+        {
+          "name": "Kevin Bratcher",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Burch",
+          "vote": "absent"
+        },
+        {
+          "name": "Myron Dossett",
+          "vote": "yea"
+        },
+        {
+          "name": "Joseph Fischer",
+          "vote": "yea"
+        },
+        {
+          "name": "Kelly Flood",
+          "vote": "absent"
+        },
+        {
+          "name": "Jim Gooch",
+          "vote": "yea"
+        },
+        {
+          "name": "Derrick Graham",
+          "vote": "nay"
+        },
+        {
+          "name": "Joni Jenkins",
+          "vote": "nay"
+        },
+        {
+          "name": "Adam Koenig",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Marzian",
+          "vote": "absent"
+        },
+        {
+          "name": "Charles Miller",
+          "vote": "absent"
+        },
+        {
+          "name": "David Osborne",
+          "vote": "yea"
+        },
+        {
+          "name": "Ruth Palumbo",
+          "vote": "nay"
+        },
+        {
+          "name": "Steven Rudy",
+          "vote": "yea"
+        },
+        {
+          "name": "Sal Santoro",
+          "vote": "yea"
+        },
+        {
+          "name": "Ken Upchurch",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Westrom",
+          "vote": "nay"
+        },
+        {
+          "name": "Kim King",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Meredith",
+          "vote": "yea"
+        },
+        {
+          "name": "Regina Huff",
+          "vote": "absent"
+        },
+        {
+          "name": "Bart Rowland",
+          "vote": "yea"
+        },
+        {
+          "name": "David Meade",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeffery Donohue",
+          "vote": "nay"
+        },
+        {
+          "name": "Lynn Bechler",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Heath",
+          "vote": "yea"
+        },
+        {
+          "name": "Russell Webber",
+          "vote": "yea"
+        },
+        {
+          "name": "Suzanne Miles",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Duplessis",
+          "vote": "yea"
+        },
+        {
+          "name": "George Brown",
+          "vote": "nay"
+        },
+        {
+          "name": "David Hale",
+          "vote": "yea"
+        },
+        {
+          "name": "James Tipton",
+          "vote": "yea"
+        },
+        {
+          "name": "Daniel Elliott",
+          "vote": "yea"
+        },
+        {
+          "name": "Attica Scott",
+          "vote": "nay"
+        },
+        {
+          "name": "William Reed",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Hart",
+          "vote": "yea"
+        },
+        {
+          "name": "Danny Bentley",
+          "vote": "yea"
+        },
+        {
+          "name": "Melinda Prunty",
+          "vote": "yea"
+        },
+        {
+          "name": "DJ Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Walker Thomas",
+          "vote": "yea"
+        },
+        {
+          "name": "Kimberly Moser",
+          "vote": "yea"
+        },
+        {
+          "name": "Phillip Pratt",
+          "vote": "yea"
+        },
+        {
+          "name": "Alan Gentry",
+          "vote": "nay"
+        },
+        {
+          "name": "John Blanton",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Fugate",
+          "vote": "yea"
+        },
+        {
+          "name": "Angie Hatton",
+          "vote": "absent"
+        },
+        {
+          "name": "Jason Petrie",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Riley",
+          "vote": "yea"
+        },
+        {
+          "name": "Ken Fleming",
+          "vote": "yea"
+        },
+        {
+          "name": "Chad McCoy",
+          "vote": "yea"
+        },
+        {
+          "name": "McKenzie Cantrell",
+          "vote": "nay"
+        },
+        {
+          "name": "Jason Nemes",
+          "vote": "yea"
+        },
+        {
+          "name": "Josie Raymond",
+          "vote": "nay"
+        },
+        {
+          "name": "Lisa Willner",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott Lewis",
+          "vote": "yea"
+        },
+        {
+          "name": "Ed Massey",
+          "vote": "yea"
+        },
+        {
+          "name": "Matthew Koch",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Freeland",
+          "vote": "yea"
+        },
+        {
+          "name": "Ashley Tackett Laferty",
+          "vote": "absent"
+        },
+        {
+          "name": "Bobby McCool",
+          "vote": "yea"
+        },
+        {
+          "name": "Buddy Wheatley",
+          "vote": "absent"
+        },
+        {
+          "name": "Cherlynn Stevenson",
+          "vote": "nay"
+        },
+        {
+          "name": "Deanna Frazier",
+          "vote": "yea"
+        },
+        {
+          "name": "Nima Kulkarni",
+          "vote": "nay"
+        },
+        {
+          "name": "Nancy Tate",
+          "vote": "yea"
+        },
+        {
+          "name": "Patti Minter",
+          "vote": "nay"
+        },
+        {
+          "name": "Randy Bridges",
+          "vote": "yea"
+        },
+        {
+          "name": "Tina Bojanowski",
+          "vote": "nay"
+        },
+        {
+          "name": "Thomas Huff",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Bowling",
+          "vote": "yea"
+        },
+        {
+          "name": "Derek Lewis",
+          "vote": "yea"
+        },
+        {
+          "name": "Savannah Maddox",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Sheldon",
+          "vote": "yea"
+        },
+        {
+          "name": "Kimberly Banta",
+          "vote": "yea"
+        },
+        {
+          "name": "Samara Heavrin",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard White",
+          "vote": "absent"
+        },
+        {
+          "name": "Rachel Roberts",
+          "vote": "nay"
+        },
+        {
+          "name": "Shane Baker",
+          "vote": "yea"
+        },
+        {
+          "name": "Joshua Branscum",
+          "vote": "absent"
+        },
+        {
+          "name": "Josh Bray",
+          "vote": "yea"
+        },
+        {
+          "name": "Josh Calloway",
+          "vote": "absent"
+        },
+        {
+          "name": "Jennifer Henson Decker",
+          "vote": "yea"
+        },
+        {
+          "name": "Jonathan Dixon",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan Dotson",
+          "vote": "yea"
+        },
+        {
+          "name": "Daniel Fister",
+          "vote": "yea"
+        },
+        {
+          "name": "Patrick Flannery",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Imes",
+          "vote": "yea"
+        },
+        {
+          "name": "Norma Kirk-McCormick",
+          "vote": "yea"
+        },
+        {
+          "name": "William Lawrence",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Lockett",
+          "vote": "yea"
+        },
+        {
+          "name": "Shawn McPherson",
+          "vote": "yea"
+        },
+        {
+          "name": "Felicia Rabourn",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Sharp",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Pamela Stevenson",
+          "vote": "nay"
+        },
+        {
+          "name": "Killian Timoney",
+          "vote": "yea"
+        },
+        {
+          "name": "Billy Wesley",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Pollock",
+          "vote": "yea"
+        },
+        {
+          "name": "Timmy Truett",
+          "vote": "yea"
+        },
+        {
+          "name": "Keturah Herron",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 KY bill texts and roll calls (Sonnet readers R1-R4 + version pass; apps.legislature.ky.gov vote histories, voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "curl"
+  }
+}

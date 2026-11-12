@@ -78,7 +78,266 @@
         "fetched_at": "2026-10-21T01:52:20.308Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "9c0465b261f66cfc8cd179528ea52603a57bd08bcabe7ccc2afc740c45203943",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/29571/race/11574/election/955",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification.\nStrongly Disagree",
+      "note": "Same 2022 questionnaire (House District 13): the statement and the answer recorded as his.",
+      "subjects": [
+        "photo ID to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:23:45.573Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f487873db65c6485baa1fa066606e76fffaa3d509c67884baac13235e24284f",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/29571/race/11574/election/955",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "The ability of \"We the People\" to choose our elected representatives of government at every level is the most basic, most foundational privilege of our representative republic.  But is a privilege that must be jealously guarded and secured.",
+      "note": "Candidate questionnaire answer (iVoterGuide, 2022 general election race, House District 13) to the prompt 'People should be able to vote without photo identification', to which the questionnaire records his answer as 'Strongly Disagree'. This passage is his written explanation.",
+      "subjects": [
+        "photo ID to vote",
+        "election security in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:23:45.573Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "50d8e1d4ed67026c1138511a3dd0d98a827c28004e5ad86778f38876d063016e",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/29571/race/11574/election/955",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "I like same day voting, but I recognize the benefit of limited early voting.  I believe Kentucky is generally on track with current procedures, but we must always be on alert for those who would illegally circumvent our voting system.",
+      "note": "Same questionnaire, answer to 'What laws would you propose to change present voting practices?'.",
+      "subjects": [
+        "voting procedures in general",
+        "early voting",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:23:45.573Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3056c6f9604e26bf6e6410e2c17b292da8eb08abaa1b489361e20769703c943",
+      "kind": "own-words",
+      "url": "https://www.wkms.org/2026-03-06/kentucky-house-oks-bill-authorizing-federal-citizen-verification-for-state-elections",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "passage": "\"There are those who are always looking for new ways to cheat the system. Because of that sad reality, it is our responsibility to remain ever vigilant,\" Johnson said.",
+      "note": "Quoted by WKMS (Kentucky Public Radio, story published 2026-03-06) in coverage of House passage of HB 534, his elections bill with federal citizenship checks of voter rolls. Date is the House floor day as reported (Thursday before the story).",
+      "subjects": [
+        "election integrity in general",
+        "citizenship verification of voter rolls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:23:45.573Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1cfbd0a5fbd2ffa810fda7e4c727045936d869bc5b510468d49d59f2a62e7bc7",
+      "kind": "own-words",
+      "url": "https://www.wkms.org/2026-03-06/kentucky-house-oks-bill-authorizing-federal-citizen-verification-for-state-elections",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "passage": "\"What they've asked for is access to basically a more concise database where they have easier access to it. The information is already there,\" Johnson said. \"They're just looking for us to help them correlate it, make it a simpler process.\"",
+      "note": "Quoted by WKMS defending, on the House floor, the HB 534 provision sharing voter name, birth date and Social Security number with federal agencies to identify noncitizens on the rolls.",
+      "subjects": [
+        "noncitizen voting",
+        "citizenship verification of voter rolls",
+        "voter data sharing"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:23:45.573Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8eed24d94febd2edad9d5cb0bbff63e76470692a2d8bf3494913863034d0d6e2",
+      "kind": "own-words",
+      "url": "https://www.owensborotimes.com/?p=265622",
+      "date": "2026-02-19",
+      "date_precision": "day",
+      "passage": "\"That does not mean we can’t continue to improve it though,\" he said.",
+      "note": "Quoted by the Owensboro Times after the House elections committee hearing on HB 534. He had just agreed that Kentucky's elections are secure, in answer to a question about whether he knew of widespread fraud. The article date is 2026-02-20 (published 12:13 am, 'Thursday' hearing = 2026-02-19).",
+      "subjects": [
+        "election integrity in general",
+        "voter roll maintenance"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:23:45.573Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e6f70059432f934647968d919996ab4df2dccaa9f17518eed8a6856eec47082f",
+      "kind": "record",
+      "url": "http://www.lrc.ky.gov/record/18RS/HB215.htm",
+      "date": "2018",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-215-2018",
+      "act": "sponsor",
+      "motion": "co sponsor, bill",
+      "note": "Listed as co sponsor of HB215 (2018 Regular Session) in LegiScan's bill record (sponsor order 4); the first version (bill) carries the ID/citizenship text (identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.598Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d46ecb91a31ee5cd1e1e87159cd4301382bc37721ea5bb099f789780020ffed",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 18392 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.598Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9d1cc56372773c897daa5108e69d4a07df5ffa947a543f55af89a207bd976d6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 18392 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.598Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd4f0553eb6ef608e5f4f0880dfe9d952201740968402fd0ab748856330a3352",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "yea",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 18392 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.598Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "voter-roll checks",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "iVoterGuide 2022 profile (fetched, saved)",
+        "iVoterGuide other cycle profile (fetched; question left unanswered)",
+        "Owensboro Times 2026-02-20 (fetched, saved)",
+        "WKMS 2026-03-06 (fetched, saved)",
+        "Hoptown Chronicle 2026-03-05 (fetched; his remarks there are about judicial and federal-ballot provisions, nothing on the subject)",
+        "WUKY 2026-03-06 (fetched; nothing on the subject)",
+        "Commonwealth Policy Center H13 page: blocked: https://commonwealthpolicycenter.org/h13 (HTTP 404)",
+        "blocked: Ballotpedia (refuses fetches, not tried)",
+        "not reviewed: https://apps.legislature.ky.gov/Legislators/subs/House-013.html",
+        "not reviewed: lexingtonky.news committee story (curl returned no body)",
+        "web searches run: 5 (voter ID, photo ID/SB 2/noncitizen, questionnaire, HB 534 local outlets)"
+      ],
+      "found": 6,
+      "at": "2026-11-11T18:23:45.573Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 4,
+      "at": "2026-11-11T21:12:46.598Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
 }

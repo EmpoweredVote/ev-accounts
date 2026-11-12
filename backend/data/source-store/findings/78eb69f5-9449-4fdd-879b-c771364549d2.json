@@ -1,0 +1,200 @@
+{
+  "politician_id": "78eb69f5-9449-4fdd-879b-c771364549d2",
+  "findings": [
+    {
+      "id": "adb74377dba7f239d4c5a9860b2c77c0c06cb70011493fbb152dd1ca37cb6509",
+      "kind": "own-words",
+      "url": "https://www.lex18.com/news/covering-kentucky/bill-targeting-college-ids-clears-kentucky-senate-in-effort-to-revise-voter-identification-law",
+      "date": "2024-01-30",
+      "date_precision": "day",
+      "passage": "Anybody in college can read that affidavit and sign it and vote. So there is absolutely, positively no impediment to voting with a student ID as a secondary ID.",
+      "note": "Quoted by the Associated Press (story carried by LEX 18) in the Senate debate on SB 80, which removed college ID from the primary voter-ID list but kept it as a secondary ID with a signed affidavit. The story says the vote was on a Tuesday and was published 2024-01-31; WEKU dates the Senate vote 2024-01-30. The two sentences are printed in the story as two quotes joined by 'Sen. Gex Williams said'.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID",
+        "secondary ID with affidavit"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:40:35.540Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e6beed76f6da1b344be72a14f47190217c10abd9f9c7dabbdda3c19dc7a57bfd",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/61652/race/15142/election/955",
+      "date": "2022-11-08",
+      "date_precision": "day",
+      "passage": "People should be able to vote without photo identification. Strongly Disagree",
+      "note": "His ticked answer on the iVoterGuide questionnaire, 'Elections and Voting' section, for the 2022 general election (the same answer appears on the 2022 primary page, election/885). The statement is 'People should be able to vote without photo identification.' and his answer is 'Strongly Disagree'. Date is the election date the page lists, not the date he answered.",
+      "subjects": [
+        "photo ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:40:35.540Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3b4ee26bf6301db89d4114dffb6d0a51f9cee502c4182a6a03b95f8204c6a260",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/61652/race/15142/election/955",
+      "date": "2022-11-08",
+      "date_precision": "day",
+      "passage": "Strengthen procedures to ensure only qualified voters are registered on the voter roles, better ensure the authenticity and chain of custody of absentee ballots and ensure voting machine source code is transparent. Results should be verifiable via audits prior to certification.",
+      "note": "His written answer to 'What laws would you propose to change present voting practices?' on the same 2022 iVoterGuide questionnaire. Date is the election date the page lists, not the date he answered.",
+      "subjects": [
+        "voter roll accuracy",
+        "absentee ballot security",
+        "election audits"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:40:35.540Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dc5ff336a639ab5900ef167d3b3a549505deb4cea313cfb82eccf4bc309e626",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24RS/sb80/vote_history.pdf",
+      "date": "2024-01-30",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-80-2024",
+      "act": "yea",
+      "motion": "Senate: Senate third reading, passed",
+      "note": "KY Senate roll call (Senate third reading, passed, 27-7) on SB80 (2024 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23565 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "964f43dd513a6a900fe46730c227d9b9c229eaaa4159401edbd436f6f4e82228",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "Senate: third reading, passed Senate with Senate Committee Substitute (1)",
+      "note": "KY Senate roll call (third reading, passed Senate with Senate Committee Substitute (1), 31-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23565 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa8ad840466678434828836de887f898e45dc3f627478ec4fe8931f410f4e2d2",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "Senate: override of the Governor's veto, final passage (Senate)",
+      "note": "KY Senate roll call (override of the Governor's veto, final passage (Senate), 32-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23565 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8cb257bf2da3336ed900008c97f3e633ffee27db4f47f3bef14f6db1a9004902",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/sb154/vote_history.pdf",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-154-2026",
+      "act": "yea",
+      "motion": "Senate: third reading, passed Senate",
+      "note": "KY Senate roll call (third reading, passed Senate, 31-7) on SB154 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23565 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "student ID as voter ID",
+        "proof of citizenship",
+        "noncitizen voting",
+        "voter roll accuracy",
+        "absentee ballot security"
+      ],
+      "places": [
+        "status: holds Kentucky Senate District 20; on the 2026 general-election ballot per the brief",
+        "On the Record (0 meetings)",
+        "campaign site https://gexforsenate.com and /priorities (nothing on the subject)",
+        "nothing on the subject: https://linknky.com/politics/frankfort/2024/02/20/profile-sen-gex-williams/",
+        "https://ivoterguide.com/candidate/61652/race/15142/election/955 and /885 (questionnaire, 2022; read by curl)",
+        "https://www.lex18.com/news/covering-kentucky/bill-targeting-college-ids-clears-kentucky-senate-in-effort-to-revise-voter-identification-law (Associated Press story; read by curl)",
+        "https://www.weku.org/the-commonwealth/2024-01-30/kentucky-senate-adopts-toughened-voter-id-legislation (reports his words indirectly only; not saved)",
+        "no 2026 floor remarks found in 6 searches",
+        "blocked: Ballotpedia, votesmart (refuse fetches); not tried"
+      ],
+      "found": 3,
+      "at": "2026-11-11T18:40:35.540Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 4,
+      "at": "2026-11-11T21:12:46.603Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
+}

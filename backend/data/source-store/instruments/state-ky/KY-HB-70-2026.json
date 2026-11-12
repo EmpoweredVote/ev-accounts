@@ -1,0 +1,18 @@
+{
+  "id": "KY-HB-70-2026",
+  "scope": "state:ky",
+  "title": "HB 70 (2026 Regular Session): AN ACT relating to identity documents.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/26RS/hb70.html"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Section 1, KRS 186.4102(9) (new subsection)\n(quote) On or after January 1, 2027, every new and renewal identity document issued under this chapter shall contain a denotation identifying the status of the person to whom the document was issued as: (a) A citizen of the United States; or (b) A noncitizen authorized to be in the United States.\n(section) Section 2, KRS 281A.170(3) (new subsection)\n(quote) On or after January 1, 2027, every new and renewal commercial driver's license issued under this chapter shall contain a denotation identifying the status of the person to whom the license was issued as: (a) A citizen of the United States; or (b) A noncitizen authorized to be in the United States.\n(other) Section 1 (KRS 186.4102): reprints driver's licence / ID card rules (photo, 'under 21' marking, travel-ID denotation, no-photo religious exception) and renumbers; only new part is the 2027 citizenship denotation in (9).\n(other) Section 2 (KRS 281A.170): same citizenship denotation for commercial driver's licences, new subsection (3); other subsections renumbered.\n(other) Section 3 (KRS 186.531): fee schedule reprinted; only change is a cross-reference renumber, 'KRS 186.4102(10)[(9)]'. Subsection (10) (no fee for a standard ID card for a person without a licence who is at least 18 on or before the next regular election) is reprinted with no bracket mark, so it is not shown as changed.\n(other) version: orig_bill (only saved version, as introduced): slots a-d not stated; slot e holds the citizenship denotation (Sections 1 and 2).\n(other) note: Introduced 2026-01-07 and sent to the House Transportation Committee 2026-01-14; no later action. Nothing in the saved text ties the denotation to voting or elections, or to proof of citizenship for registration; the only election words in the document are the 'next regular election' age condition in KRS 186.531(10), which is existing, reprinted text about fee-free ID cards. The denotation applies to new and renewed documents issued on or after 2027-01-01.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 KY bill texts and roll calls (Sonnet readers R1-R4 + version pass; apps.legislature.ky.gov vote histories, voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "curl"
+  }
+}

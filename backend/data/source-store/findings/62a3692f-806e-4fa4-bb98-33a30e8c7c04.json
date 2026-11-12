@@ -145,7 +145,176 @@
           "sha256": "93266e8d17c0b31728a6c78573a4afda6517fbacbe2200b4273a5f2e422960c1"
         }
       }
+    },
+    {
+      "id": "ffcb3f57ecc859082a90af1ecdf228fcafd7ba3ea6a656d4dcf70cdd13451276",
+      "kind": "own-words",
+      "url": "https://cartercountypost.blogspot.com/2020/01/column-senate-week-in-review-by-senator.html",
+      "date": "2020-01-26",
+      "date_precision": "day",
+      "passage": "According to Secretary of State Michael Adams, who testified in favor of SB 2 at the Senate State and Local Government Committee, Kentucky has no issues with in-person voter fraud. When questioned about any specific instances of in-person voter fraud, the Secretary of State said there were none. The process to obtain a birth certificate or photo ID is long and nearly impossible, especially in eastern Kentucky. This legislation does nothing but put up roadblocks and restrict voting access.",
+      "note": "Her weekly column on the Senate passing SB 2 (photo ID at the polls, ending identification by personal acquaintance). She says there is no in-person fraud problem and that getting a birth certificate or photo ID is hard in eastern Kentucky. Posted 2020-01-26 on a local blog; column headed with her name.",
+      "subjects": [
+        "voter ID at the polls",
+        "access to getting a photo ID",
+        "in-person voter fraud"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:34:26.492Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c1c3f9fef9b709d136ef95abe85e8d72b57a852a11990513e8912e04b34b17cf",
+      "kind": "own-words",
+      "url": "https://cartercountypost.blogspot.com/2020/01/column-senate-week-in-review-by-senator.html",
+      "date": "2020-01-26",
+      "date_precision": "day",
+      "passage": "For these reasons, I voted no.",
+      "note": "Same column: she states she voted no on SB 2 in the Senate committee.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:34:26.492Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5197c6ef4b41a0e25125212dab2a8d490b32e5a72bcc170dfff37cc8e5e57ec",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/22RS/sb216/vote_history.pdf",
+      "date": "2022-03-07",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-216-2022",
+      "act": "nay",
+      "motion": "Senate: Senate third reading, passed with Senate committee substitute 1",
+      "note": "KY Senate roll call (Senate third reading, passed with Senate committee substitute 1, 22-10) on SB216 (2022 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 1249 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5bf6dbdba4299458f89733411f293f16bf5b15cafda2d6a5a8bdecfe46962b5c",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24RS/sb80/vote_history.pdf",
+      "date": "2024-01-30",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-80-2024",
+      "act": "nay",
+      "motion": "Senate: Senate third reading, passed",
+      "note": "KY Senate roll call (Senate third reading, passed, 27-7) on SB80 (2024 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 1249 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa8ad840466678434828836de887f898e45dc3f627478ec4fe8931f410f4e2d2",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "Senate: override of the Governor's veto, final passage (Senate)",
+      "note": "KY Senate roll call (override of the Governor's veto, final passage (Senate), 32-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 1249 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad0682ba8f72e0136a4858141ce12fc45e14f6cb15fc397bebc4a35695f2bc3c",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/sb154/vote_history.pdf",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-154-2026",
+      "act": "nay",
+      "motion": "Senate: third reading, passed Senate",
+      "note": "KY Senate roll call (third reading, passed Senate, 31-7) on SB154 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 1249 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.602Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "secondary ID documents and affidavit for voters without photo ID",
+        "access to getting a photo ID",
+        "in-person voter fraud claims"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "The member's regular Senate Week in Review column as posted by Carter County Post (2020-01-26 column read; 2020-02-28 column read, nothing on the subject)",
+        "web searches (4) on name plus voter ID, SB 154, SB 2, column",
+        "Hoptown Chronicle page reprinting a Kentucky Lantern story on SB 154 (2026-02-20 Senate vote)",
+        "WKYU-FM and WUKY pages on SB 154 and SB 2 (read, no words by this person)",
+        "LEX18 page on 2024 college ID bill (read, no words by this person)",
+        "blocked: https://lexingtonky.news/?p=167672 (no connection)",
+        "Ballotpedia: not tried (refuses our fetches)",
+        "not reviewed: member's own legislature page and any campaign site"
+      ],
+      "found": 2,
+      "at": "2026-11-11T18:34:26.492Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 4,
+      "at": "2026-11-11T21:12:46.602Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
 }

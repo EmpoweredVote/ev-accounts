@@ -257,7 +257,249 @@
           "sha256": "93266e8d17c0b31728a6c78573a4afda6517fbacbe2200b4273a5f2e422960c1"
         }
       }
+    },
+    {
+      "id": "cc83191e5b6c4016827bb666a302151ca305fd9b8fa1c4299aa4cf22ae7d2db3",
+      "kind": "own-words",
+      "url": "https://kaco.org/articles/voter-id-bill-passes-house-returns-to-senate/",
+      "date": "2020-03-03",
+      "date_precision": "day",
+      "passage": "“The one thing I’ve heard loud and clear from my constituents (is) they want to make sure that when they cast their vote their vote is going to count, and is not going to be overturned by somebody trying to abuse the system because of a lack of identification at the poll,” said Tipton.",
+      "note": "Quoted in a Kentucky Association of Counties story by Shellie Hampton; he brought SB 2 (photo ID to vote) to the House floor vote and says the bill is meant to preserve the integrity of Kentucky elections. Date is the House vote day.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:57:01.624Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "023c62e46fb9dfe923713e7b56a859d56f1702ce8fa254af8cc869e1c3225bee",
+      "kind": "own-words",
+      "url": "https://953wiki.com/news/local-news/new-kentucky-bill-requires-voters-to-have-valid-photo-i-d",
+      "date": "2020-03-06",
+      "date_precision": "day",
+      "passage": "“The issue is about protecting the integrity of the ballot.”",
+      "note": "Short quote of Tipton on SB 2 (photo ID to vote) in a radio station story by Kacie Jackson, published 2020-03-06, which also mentions a House change letting poll workers vouch for voters they know.",
+      "subjects": [
+        "voter ID at the polls",
+        "poll worker vouching",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:57:01.624Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9238433a6425592d1010c5bf8f84ad8abb617f1c810d8d819c2ef5170e48e80d",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/20800/race/2917/election/490",
+      "date": "2016-11-08",
+      "date_precision": "day",
+      "passage": "People should be able to vote without photo identification.",
+      "note": "iVoterGuide questionnaire page for James A. Tipton, State Rep., Dist. 53, for the 2016-11-08 general election. The statement is \"People should be able to vote without photo identification.\" and his ticked answer is \"Disagree\". The date is the election the page is filed under, not the date he answered.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "candidate questionnaire answer"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:57:01.624Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa88c91dabdd88a8f716919f2c245b2d810294a2008b6405163cb02853d2c7f9",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/16RS/sb169/vote_history.pdf",
+      "date": "2016-03-29",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-169-2016",
+      "act": "yea",
+      "motion": "House: For Consent Adoption (RCS# 406)",
+      "note": "KY House roll call (For Consent Adoption (RCS# 406), 98-1) on SB169 (2016 Regular Session); official vote-history PDF (scan; surname as printed: 'Tipton'); linked by LegiScan member id 16669 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.597Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f87d3645ea9c03c12a717e04f812af2925163c86b060966dd480220f5fa5cecf",
+      "kind": "record",
+      "url": "http://www.lrc.ky.gov/record/17RS/HB258.htm",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-258-2017",
+      "act": "sponsor",
+      "motion": "prime sponsor, bill",
+      "note": "Listed as prime sponsor of HB258 (2017 Regular Session) in LegiScan's bill record (sponsor order 1); the first version (bill) carries the ID/citizenship text (identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.597Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e56721babc0e01613169acaa2306a8ec0d3d71dcac25a88ee95d8e29d59587c7",
+      "kind": "record",
+      "url": "http://www.lrc.ky.gov/record/18RS/HB215.htm",
+      "date": "2018",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-215-2018",
+      "act": "sponsor",
+      "motion": "prime sponsor, bill",
+      "note": "Listed as prime sponsor of HB215 (2018 Regular Session) in LegiScan's bill record (sponsor order 1); the first version (bill) carries the ID/citizenship text (identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.597Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d46ecb91a31ee5cd1e1e87159cd4301382bc37721ea5bb099f789780020ffed",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 16669 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.597Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9d1cc56372773c897daa5108e69d4a07df5ffa947a543f55af89a207bd976d6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 16669 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.597Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd4f0553eb6ef608e5f4f0880dfe9d952201740968402fd0ab748856330a3352",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "yea",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 16669 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.597Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "poll worker vouching",
+        "proof of citizenship to register or vote",
+        "noncitizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "iVoterGuide page for James A. Tipton, State Rep., Dist. 53 (the page fetched is the 2016 general election page; the profile lists a 2026-11-03 general election)",
+        "WKYU public radio story on the 2020 House vote on SB 2 (byline Ryland Barton, Kentucky Public Radio; the page names no other outlet)",
+        "WUKY story on the same vote (partial quote, byline Josh James)",
+        "Kentucky Association of Counties story on SB 2 passing the House (written by Shellie Hampton for KACO)",
+        "95.3 radio (Madison IN) story by Kacie Jackson, 2020-03-06",
+        "WUKY 2026-03-06 elections package story (does not name this person)",
+        "Kentucky Association of Counties, Northern Kentucky Tribune, Washington Times (AP) pages checked: no further Tipton words",
+        "web searches: name + District 53 + voter ID; name + questionnaire/photo identification; name + State Government committee 2026 elections bill; name + ivoterguide; name + local outlets + election security",
+        "not reviewed: Kentucky House floor video of 2020-03-03 (KET) and committee video, not readable",
+        "not fetched by instruction: lpm.org and wfpl.org versions of the 2020 SB 2 story",
+        "blocked: ballotpedia.org and votesmart.org (refused by instruction, not fetched)"
+      ],
+      "found": 3,
+      "at": "2026-11-11T18:57:01.624Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 6,
+      "at": "2026-11-11T21:12:46.597Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
 }

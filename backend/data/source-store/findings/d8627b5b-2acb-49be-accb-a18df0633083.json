@@ -1,0 +1,158 @@
+{
+  "politician_id": "d8627b5b-2acb-49be-accb-a18df0633083",
+  "findings": [
+    {
+      "id": "49cc49ba6187109cbc34218a1aafaf50ebe8a8b342fb96278fdc6300734f2cdd",
+      "kind": "own-words",
+      "url": "https://www.jejunemagazine.com/home/sarah-stalker-kentucky-house-of-representatives-district-34",
+      "date": "2026-07-14",
+      "date_precision": "day",
+      "passage": "I also that year passed legislation to make birth certificates and identification cards free for individuals experiencing homelessness.",
+      "note": "In a candidate interview she describes her 2024 legislation making birth certificates and identification cards free for people experiencing homelessness. Date is the page's published date.",
+      "subjects": [
+        "free state ID",
+        "ID access for people without documents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:47:41.831Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "045c6896b5e38b66285695c3369e7a536e3edf8554a4ede19175c0a6bd7989dd",
+      "kind": "own-words",
+      "url": "https://www.jejunemagazine.com/home/sarah-stalker-kentucky-house-of-representatives-district-34",
+      "date": "2026-07-14",
+      "date_precision": "day",
+      "passage": "Our voting rights are being attacked, our bodily autonomy, people are our neighbors are disappearing in front of us.",
+      "note": "In the same interview, answering what the most important issues are, she says voting rights are under attack and that she works against bad legislation; she names no specific ID or citizenship rule.",
+      "subjects": [
+        "voting rights in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:47:41.831Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a25928f6651a1a63c0b5fc142c6506577dc9de80be5a0599fec7e36a0ce3b03b",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "nay",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23696 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.607Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "66d7488a685348429b625584d27155c3ad62b1a0d68d9f562d509f3e7302b9e6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "nay",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23696 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.607Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "121fcb8d83cdb77518dcfdab89ed949d5de64b621bdcdb306e7ab9a9e02793ea",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "nay",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23696 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.607Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "mail-ballot ID / absentee voting",
+        "free state ID",
+        "voter-roll checks",
+        "noncitizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.sarahforky.com/ (meet, issues pages: confirms House District 34; issues page has nothing on ID or voter-ID rules)",
+        "iVoterGuide https://ivoterguide.com/candidate/70278/race/31198/election/1461 (all elections questions left unanswered)",
+        "Jejune Magazine candidate interview",
+        "legislature.ky.gov bills: not searched (records linked separately)",
+        "web searches: 7 (voter ID, photo ID, voting rights, HB 139, questionnaire), no floor speech or quote found",
+        "2026-11-03 result: unofficial results show her ahead (search summary; vrsws host not fetched)",
+        "blocked: https://onyourballot.vote411.org/m/candidate-detail.do?id=3140238 (HTTP 500 program error on plain curl; not retried another way)",
+        "blocked: https://justfacts.votesmart.org (refuses fetches, not tried)",
+        "blocked: ballotpedia.org (never fetched)",
+        "not fetched, refused outlets: Kentucky Lantern, Courier-Journal, Lexington Herald-Leader, Louisville Public Media and others on the refusal list"
+      ],
+      "found": 2,
+      "at": "2026-11-11T18:47:41.831Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 3,
+      "at": "2026-11-11T21:12:46.607Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
+}

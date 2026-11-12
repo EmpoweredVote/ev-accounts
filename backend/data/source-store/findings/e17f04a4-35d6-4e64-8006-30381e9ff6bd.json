@@ -257,7 +257,201 @@
           "sha256": "93266e8d17c0b31728a6c78573a4afda6517fbacbe2200b4273a5f2e422960c1"
         }
       }
+    },
+    {
+      "id": "c9cf073f1e0a0c1080c44cf03a4071a008c07dc50723910a09d38f803f3ac944",
+      "kind": "own-words",
+      "url": "https://x.com/SavannahLMaddox/status/1250190662626091008",
+      "date": "2020-04-14",
+      "date_precision": "day",
+      "passage": "The House just voted in favor of overriding the Governor's veto of Senate Bill 2- Voter ID. This legislation protects the integrity of our elections, and ensures that each ballot will be cast in a manner that is secure and fair. It passed 60-29. #kyga20",
+      "note": "Her post on the night the House overrode the Governor's veto of SB 2, the 2020 voter-ID law; she says the law protects election integrity.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:57:01.625Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "30349db20c634343e6494e5f2cea87c2b066f972cb7e0f8ff76dd2bc3ea4dcb8",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/51944/race/11172/election/955",
+      "date": "2022-01-01",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification. Strongly Disagree",
+      "note": "Questionnaire for the 2022 general election (iVoterGuide). The statement is \"People should be able to vote without photo identification.\" and her ticked answer is \"Strongly Disagree\".",
+      "subjects": [
+        "photo ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:57:01.625Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "06966849535e7360ff88b27395ca57b0f956802a7f70f8384bd2e3e9abbd5965",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/51944/race/11172/election/955",
+      "date": "2022-01-01",
+      "date_precision": "year",
+      "passage": "I would ensure that voting machines cannot be connected to the internet, and that voting must take place in-person on Election Day unless there is a verifiable reason for an absentee ballot: Serving overseas, surgery, disability, major illness, out of town, etc.",
+      "note": "Her written answer to \"What laws would you propose to change present voting practices?\" in the same 2022 questionnaire: in-person voting on Election Day unless a verifiable reason for an absentee ballot.",
+      "subjects": [
+        "mail-ballot ID / absentee voting",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:57:01.625Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "83b481c1b0e50b737bd494bb4986a48ebea5ce02bc03bb909e102e05c92c1f46",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24RS/hb374.html",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-374-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, orig_bill",
+      "note": "Listed as co sponsor of HB374 (2024 Regular Session) in LegiScan's bill record (sponsor order 5); the first version (orig_bill) carries the ID/citizenship text (identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.600Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d46ecb91a31ee5cd1e1e87159cd4301382bc37721ea5bb099f789780020ffed",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 20557 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.600Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9d1cc56372773c897daa5108e69d4a07df5ffa947a543f55af89a207bd976d6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 20557 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.600Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd4f0553eb6ef608e5f4f0880dfe9d952201740968402fd0ab748856330a3352",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "yea",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 20557 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.600Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "mail-ballot ID / absentee voting",
+        "free state ID",
+        "voter-roll checks",
+        "noncitizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "X post https://x.com/SavannahLMaddox/status/1250190662626091008 (fetched with plain curl)",
+        "iVoterGuide https://ivoterguide.com/candidate/51944/race/11172/election/955 (2022 general questionnaire)",
+        "web searches: 4 (voter ID, proof of citizenship/SAVE Act, HB 574, newsletter/Facebook); no other statement found",
+        "not reviewed: Facebook (not searched)",
+        "blocked: https://onyourballot.vote411.org/m/candidate-detail.do?id=3140238 (HTTP 500 program error on plain curl; not retried another way)",
+        "blocked: https://justfacts.votesmart.org (refuses fetches, not tried)",
+        "blocked: ballotpedia.org (never fetched)",
+        "not fetched, refused outlets: Kentucky Lantern, Courier-Journal, Lexington Herald-Leader, Louisville Public Media and others on the refusal list"
+      ],
+      "found": 3,
+      "at": "2026-11-11T18:57:01.625Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 4,
+      "at": "2026-11-11T21:12:46.600Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
 }

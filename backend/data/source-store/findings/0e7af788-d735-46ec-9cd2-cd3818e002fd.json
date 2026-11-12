@@ -202,7 +202,331 @@
           "sha256": "93266e8d17c0b31728a6c78573a4afda6517fbacbe2200b4273a5f2e422960c1"
         }
       }
+    },
+    {
+      "id": "f8ddea6e24478ea443779fe3c25bebd1ef4a25eddb7ca8c46662f3c93eac6d0e",
+      "kind": "own-words",
+      "url": "https://www.ksl.com/article/46701991",
+      "date": "2020-01-08",
+      "date_precision": "day",
+      "passage": "We have a gap here and this is one of the simple steps that we can take immediately to close this gap.",
+      "note": "Quoted by the Associated Press (page on ksl.com) at the SB 2 press event: says a photo-ID-to-vote requirement closes a gap in current law. Page prints a comma, not a period, after 'gap' inside the closing quote mark.",
+      "subjects": [
+        "photo ID required to vote",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:25:32.018Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "26ad8328b72929fdfd16c55fe920a1cb940e4cea1dc51288b9bf05ac319dcd59",
+      "kind": "own-words",
+      "url": "https://linknky.com/?p=40871",
+      "date": "2020-01-23",
+      "date_precision": "day",
+      "passage": "“When the law requires a photo ID be shown … confidence is raised in the election process,” “This is very important these days when doubt is easily raised, when social media spreads rumors. Anything this body can do to increase the public’s confidence in the election process is well worth the time and money invested.”",
+      "note": "Quoted by River City News (published 2020-01-24) on the Senate floor, Thursday 2020-01-23, before the 29-9 passage of SB 2: says photo ID raises confidence in elections and is worth the cost. Two quoted stretches joined; the page's words between them are the reporter's attribution.",
+      "subjects": [
+        "photo ID required to vote",
+        "public confidence in elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:25:32.018Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ef8cfe0e96536b40aaaebebbe82dd002ed30231423dcd065dcca2167140327ca",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/22105/race/15135/election/955",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification. Strongly Disagree What laws would you propose to change present voting practices? I have passed three election integrity bills over the last three years.",
+      "note": "Candidate questionnaire answers (2022 general-election profile): disagrees strongly that people should be able to vote without photo ID, and answers the law-change question by citing election integrity bills he has passed.",
+      "subjects": [
+        "photo ID required to vote",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:25:32.018Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "692f23c03c0711595f2cd23e2e2a77a8ea01d16e95954e68679b18dc29643c4a",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/22105/race/477/election/490",
+      "date": "2016",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification. Strongly Disagree",
+      "note": "Candidate questionnaire answer on the 2016 state House profile (District 11): disagrees strongly that people should be able to vote without photo ID.",
+      "subjects": [
+        "photo ID required to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:25:32.018Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0f90a8426f42dca82d43dbff5baaf40d216d84a3bccf2d5e126e19d2fc446a9d",
+      "kind": "own-words",
+      "url": "https://spectrumlocalnews.com/ga/georgia/news/2020/01/23/kentucky-senate-passes-voter-id-bill",
+      "date": "2020-01-23",
+      "date_precision": "day",
+      "passage": "“This is very important these days when doubt is easily raised when social media spreads rumors,” Mills said. “Anything that we can do, this body can do, to increase the public’s confidence in the election process is well worth the time and money invested.”",
+      "note": "Senate floor passage of SB 2 (2020), his bill requiring photo ID at the polls with a free ID card and a provisional ballot for voters without one. Read on the original Spectrum News 1 page.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T20:28:34.835Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c629e0aa026405cd80dc151d6b45e84522285729fd3b40330134e6670e6281ca",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/22RS/sb216/vote_history.pdf",
+      "date": "2022-03-07",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-216-2022",
+      "act": "yea",
+      "motion": "Senate: Senate third reading, passed with Senate committee substitute 1",
+      "note": "KY Senate roll call (Senate third reading, passed with Senate committee substitute 1, 22-10) on SB216 (2022 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 18339 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7e06e34165428c626f3e30504973570d8dd66d9a5955a9050e68cd122b00b936",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/22RS/sb216.html",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "KY-SB-216-2022",
+      "act": "sponsor",
+      "motion": "prime sponsor, orig_bill",
+      "note": "Listed as prime sponsor of SB216 (2022 Regular Session) in LegiScan's bill record (sponsor order 1); the first version (orig_bill) carries the ID/citizenship text (identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dc5ff336a639ab5900ef167d3b3a549505deb4cea313cfb82eccf4bc309e626",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24RS/sb80/vote_history.pdf",
+      "date": "2024-01-30",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-80-2024",
+      "act": "yea",
+      "motion": "Senate: Senate third reading, passed",
+      "note": "KY Senate roll call (Senate third reading, passed, 27-7) on SB80 (2024 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 18339 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "964f43dd513a6a900fe46730c227d9b9c229eaaa4159401edbd436f6f4e82228",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "Senate: third reading, passed Senate with Senate Committee Substitute (1)",
+      "note": "KY Senate roll call (third reading, passed Senate with Senate Committee Substitute (1), 31-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 18339 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa8ad840466678434828836de887f898e45dc3f627478ec4fe8931f410f4e2d2",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "Senate: override of the Governor's veto, final passage (Senate)",
+      "note": "KY Senate roll call (override of the Governor's veto, final passage (Senate), 32-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 18339 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8cb257bf2da3336ed900008c97f3e633ffee27db4f47f3bef14f6db1a9004902",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/sb154/vote_history.pdf",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-154-2026",
+      "act": "yea",
+      "motion": "Senate: third reading, passed Senate",
+      "note": "KY Senate roll call (third reading, passed Senate, 31-7) on SB154 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 18339 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3875ccf2b0bce127b499bb16cf622216ac29c8ac8bdb66e44fe7b8f864ce052f",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/sb154.html",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "KY-SB-154-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, orig_bill",
+      "note": "Listed as co sponsor of SB154 (2026 Regular Session) in LegiScan's bill record (sponsor order 3); the first version (orig_bill) carries the ID/citizenship text (identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.602Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "free state ID",
+        "reasonable-impediment affidavit",
+        "proof of citizenship",
+        "noncitizen voting",
+        "mail-ballot rules",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "AP story on ksl.com (2020-01-08) naming him as the Senator from Henderson and lead sponsor of SB 2",
+        "Kentucky Today story republished at harlanenterprise.net (not fetched from kentuckytoday.com)",
+        "River City News / linknky.com (2020-01-24)",
+        "State Senate caucus release 2024-02-13 (names him as chair of the State and Local Government committee; no words of his on the subject)",
+        "iVoterGuide profiles 2016, 2022 (and 2026 listing)",
+        "campaign / re-election announcement pages (wfmwradio.com, the-hendersonian.com): nothing on the subject",
+        "Branch profile: summary text about him, not his words; not used",
+        "blocked: https://m.washingtontimes.com (403, AP 2020 stories)",
+        "blocked: https://clayconews.com/news/261-other-news/15406-favorable-hearing-in-kentucky-for-voter-id-law (403)",
+        "blocked: https://www.bizpacreview.com (403)",
+        "blocked: https://old.thelevisalazer.com (connection failed)",
+        "6 web searches on voter ID, photo ID, reasonable impediment, noncitizen, columns, questionnaires",
+        "blocked: https://ballotpedia.org/Robby_Mills (known to refuse fetches; not tried)",
+        "not reviewed: legislature bill pages and Senate floor video (votes and sponsorships are linked separately)"
+      ],
+      "found": 4,
+      "at": "2026-11-11T18:25:32.018Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "Original Spectrum News 1 story (Joe Ragusa, 2020-01-23) opened by Chris in his browser 2026-11-11 and read there; replaces the held mynews13 repost"
+      ],
+      "found": 1,
+      "at": "2026-11-11T20:28:34.835Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 7,
+      "at": "2026-11-11T21:12:46.602Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
 }
