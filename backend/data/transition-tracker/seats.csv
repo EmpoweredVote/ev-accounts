@@ -65,6 +65,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,MA,"Senator, Plymouth and Barnstable District",MA State Senate Plymouth and Barnstable District,1,Not looked at,Dylan A. Fernandes,,,1,0,0,0,,,,0725cf42-ac3f-4ea4-af22-9e3ac8f0c12a
 4,Wave 4 — State,state,ME,Representative,ME State House District 141,1,Not looked at,Lucas Lanigan,,,1,0,0,0,,,,0775f94e-8a5f-480a-a848-dbd8dbca9243
 5,Wave 5 — Remaining locals,local,IN,Salt Creek Township Board,Salt Creek Township Board,1,Not looked at,,,,0,0,0,0,,,,07a8a93d-d6f1-4de0-9d95-0657315bb32c
+4,Wave 4 — State,state,IN,Representative,"State Representative, District 063",5,In office,Amy Kippenbrock,Amy Kippenbrock,called,0,0,1,1,,,,07bad85a-c774-426c-86f0-7f5aef59ad83
 4,Wave 4 — State,state,CO,State Representative,State Representative District 15,1,Not looked at,Scott Bottoms,,,0,0,0,0,,,,07ee4301-e2f4-4a45-87c7-80bbe7012dfd
 4,Wave 4 — State,state,IN,Representative,"State Representative, District 061",2,Called,Matt Pierce,Matt Pierce,called,0,0,0,0,,,,07f385a9-5fe1-4d2e-b5b2-869dfad4f1fc
 1,Wave 1 — Senate,federal,OR,U.S. Senate - Oregon,U.S. Senate Oregon,2,Called,Jeff Merkley,Jeff Merkley,called,0,0,0,0,,2027-01-03,statute,08051b89-7c0d-4609-9543-e685f44f6821
@@ -327,6 +328,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,ME,Representative,ME State House District 31,1,Not looked at,Chad Perkins,,,1,0,0,0,,,,24132b9c-f927-483d-9e9f-abea802a2cab
 4,Wave 4 — State,state,IL,Comptroller,Comptroller,2,Called,Susana A. Mendoza,Margaret Croke,called,0,0,1,1,,,,242a4580-4ee0-447d-ac90-6d6359e198b9
 2,Wave 2 — House,federal,UT,Representative,U.S. Representative District 3,2,Called,Mike Kennedy,Celeste Maloy,called,0,0,0,0,,2027-01-03,statute,24356264-2663-42a5-8362-0810abe29613
+4,Wave 4 — State,state,IN,Senator,"State Senator, District 39",5,In office,Jeffrey Ellington,Jeff Ellington,called,0,0,1,1,,,,244cdb65-bd1e-4f74-a6dd-6ad8faaf60e1
 4,Wave 4 — State,state,OR,Representative,OR State House District 10,1,Not looked at,David Gomberg,,,1,0,0,0,,,,24503ded-8443-4ef6-85eb-3e24a14e76a8
 4,Wave 4 — State,state,AZ,State Representative,State House District 14,2,Called,Khyl Powell,"Mary Rose, Tyler Andrew Farnsworth",called,0,0,0,1,,,,245de781-b526-4c21-88d5-aa733e065a87
 2,Wave 2 — House,federal,IN,U.S. Representative,U.S. Representative District 6,2,Called,Jefferson Shreve,Jefferson Shreve,called,0,0,0,0,,2027-01-03,statute,24763889-2018-4a50-b0b0-3c24e78be137
@@ -2290,6 +2292,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 2,Wave 2 — House,federal,KY,U.S. Representative,U.S. Representative District 6,2,Called,Andy Barr,Zach Dembo,called,0,0,0,0,,2027-01-03,statute,fbe1b442-892c-464b-b0ad-e00c37361cc8
 2,Wave 2 — House,federal,KY,U.S. Representative,U.S. Representative District 2,2,Called,Brett Guthrie,Brett Guthrie,called,0,0,0,0,,2027-01-03,statute,fc032dbf-70ce-4835-9ae3-f0843d91720e
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 82,2,Called,Scott Allen,Bryson Reyes,called,0,0,1,1,,,,fc264732-1bee-4a53-8536-97a6dce79262
+4,Wave 4 — State,state,IN,Representative,"State Representative, District 045",5,In office,Kellie Streeter,Kellie E. Streeter,called,0,0,1,1,,,,fc2dfad4-2a41-46f9-b5d9-671a75df0373
 5,Wave 5 — Remaining locals,local,IN,Monroe County Recorder,Monroe County Recorder,1,Not looked at,,,,0,0,0,0,,,,fc362d39-b8df-485a-bf99-028f52276f04
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area C),Torrance Unified School Board - Trustee Area C,1,Not looked at,James Han,,,0,0,0,0,,2026-12-11,statute,fc588564-7167-4bee-b0f5-1d9923415f7f
 4,Wave 4 — State,state,NH,"Executive Councilor, District 3",New Hampshire Executive Council District 3,2,Called,Janet Stevens,Lisa Kennedy Sheldon,called,0,0,1,1,,,,fc60b42c-82fc-44bf-aa3e-91ff2a50e449
