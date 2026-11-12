@@ -3,7 +3,7 @@
  *
  *   npx tsx scripts/stage5/coder-inputs.ts --config <stage5>/coder-config.json --rulings <stage5>/coder-rulings.md \
  *     --roster <stage5>/roster.tsv [--roster <more.tsv>] --ids <ids file> --unit state:mo --name mo \
- *     --out <stage5>/code-briefs --coded-dir <stage5>/coded [--size 20] [--store <source-store dir>]
+ *     --out <stage5>/code-briefs --coded-dir <stage5>/coded [--size 20] [--store <source-store dir>] [--record-only]
  *
  * For each batch of `--size` people it writes, in `--out`:
  *   <name>-NN.findings.json  this topic's findings for the batch, compacted (lib/stage5CoderInputs.ts)
@@ -17,10 +17,18 @@
  */
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { compactBatch, filterRulings, roundTripProblems, type CompactBatch } from '../lib/stage5CoderInputs.js';
+import { compactBatch, filterRulings, onTopic, roundTripProblems, type CompactBatch } from '../lib/stage5CoderInputs.js';
 import { REPO, STORE, findingsFileSize, instrumentIndex, parseArgs, readConfig, readPersonFindings, readRosters } from './coder-io.js';
 
 const TEMPLATE = join(REPO, '.claude/skills/season-topic-prep/templates/stage5-coder-prompt.md');
+
+/** Put first in a record-first brief (`--record-only`): what the pass is, and why no-stance never fits it. */
+export const RECORD_ONLY_NOTE = `**This is the record-first pass.** Your file holds each person's records only (votes and
+sponsorships); their own words have not been searched yet. Code each person on the record alone, by every rule
+above. Never code no-stance: if the record seats no one, code doesnt-fit with the fitting blank_class. Your codes
+decide who is searched next, so do not lean either way to save or force a search.
+
+`;
 
 /** One person per block and one finding per line, so the Read tool never meets a line it would cut. */
 export function formatCompact(c: CompactBatch): string {
@@ -35,6 +43,8 @@ export function formatCompact(c: CompactBatch): string {
   return `{"about": ${j(c.about)},\n"topic_key": ${j(c.topic_key)}, "season": ${c.season},\n"search_subjects": ${j(c.search_subjects)},\n`
     + `"bills": {\n${bills}\n},\n"people": [\n${people}\n]}\n`;
 }
+
+const recordOnlyFlag = (flags: Map<string, string[]>) => flags.has('record-only');
 
 function main() {
   const { flags } = parseArgs(process.argv.slice(2));
@@ -52,11 +62,23 @@ function main() {
   const store = one('store', STORE);
   const rosters = readRosters((flags.get('roster') ?? []).flatMap((r) => r.split(',')));
   if (!rosters.size) throw new Error('--roster is required');
-  const ids = readFileSync(one('ids'), 'utf8').split(/\s+/).filter(Boolean);
-  const missing = ids.filter((p) => !rosters.has(p));
+  const listed = readFileSync(one('ids'), 'utf8').split(/\s+/).filter(Boolean);
+  const missing = listed.filter((p) => !rosters.has(p));
   if (missing.length) throw new Error(`not on any roster: ${missing.join(', ')}`);
+  const config0 = readConfig(one('config'));
+  // The record-first pass codes only people with a record on file; the rest go straight to the search list.
+  const ids = recordOnlyFlag(flags) ? listed.filter((p) => onTopic(readPersonFindings(store, p), config0.topic_key, new Set(['record'] as const)).length) : listed;
+  if (ids.length < listed.length) {
+    const none = listed.filter((p) => !ids.includes(p));
+    mkdirSync(out, { recursive: true });
+    writeFileSync(join(out, `${name}-no-record.txt`), none.join('\n') + '\n');
+    console.log(`${none.length} of ${listed.length} have no record on file: not in the record-first pass (${join(out, `${name}-no-record.txt`)})`);
+  }
 
+  const recordOnly = recordOnlyFlag(flags);
+  const kinds = recordOnly ? new Set(['record'] as const) : undefined;
   const rulings = filterRulings(readFileSync(one('rulings'), 'utf8'), unit);
+  if (recordOnly) rulings.text = RECORD_ONLY_NOTE + rulings.text;
   const index = instrumentIndex(store);
   const template = readFileSync(one('template', TEMPLATE), 'utf8').replace(/<!--[\s\S]*?-->\n?/g, '');
   mkdirSync(out, { recursive: true });
@@ -69,11 +91,11 @@ function main() {
   for (let i = 0, n = 1; i < ids.length; i += size, n++) {
     const batch = `${name}-${String(n).padStart(2, '0')}`;
     const people = ids.slice(i, i + size).map((p) => ({ row: rosters.get(p)!, pf: readPersonFindings(store, p) }));
-    const c = compactBatch(people, config.topic_key, config.season, (id) => index.get(id));
+    const c = compactBatch(people, config.topic_key, config.season, (id) => index.get(id), kinds);
     const text = formatCompact(c);
     const problems = [
       ...(JSON.stringify(JSON.parse(text)) === JSON.stringify(c) ? [] : ['the written file does not parse back to the batch']),
-      ...roundTripProblems(people, JSON.parse(text) as CompactBatch, config.topic_key, config.season),
+      ...roundTripProblems(people, JSON.parse(text) as CompactBatch, config.topic_key, config.season, kinds),
     ];
     const noFile = Object.keys(c.bills).filter((id) => !c.bills[id].file);
     if (problems.length) {
