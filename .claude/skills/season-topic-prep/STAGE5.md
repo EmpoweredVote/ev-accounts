@@ -99,6 +99,49 @@ import first, then run `next` again**: it lists only people with no search for t
 written but not imported would be listed again. Commit the store's
 `findings/` with the stage PR (`npm run source-store --prefix backend -- validate` first).
 
+#### 3a. Bill round one: sponsor cover
+
+Before the search, put every topic bill a roster member sponsored into the state's core set, so the search does not
+have to find it and no second bill round is needed (Wisconsin, Arizona and Georgia each needed one: 5, 8 and 13 bills).
+
+```bash
+python3 -I scripts/stage5/sponsor_cover.py <bills.json> --state XX --roster <roster.tsv> --core <core.json> --ds <legiscan ds root> --idmap <idmap.tsv> --candidates <stage5>/sponsor-candidates-xx.json
+```
+
+The keyword scan is wide (Georgia: 164 such bills). One Opus agent triages the titles with
+[templates/stage5-sponsor-triage-prompt.md](templates/stage5-sponsor-triage-prompt.md); then the same command with
+`--triage <triage.json> --write <new core.json>` keeps only the "fill" bills. It refuses while any candidate is
+untriaged. Add the name matches it prints to `idmap.tsv` once checked.
+
+#### 3b. Bill table
+
+After the last bill round and the bill-text fill, one Opus agent reads each core bill once and writes the rung a Yes
+supports, with the deciding words copied from the bill
+([templates/stage5-bill-table-prompt.md](templates/stage5-bill-table-prompt.md)). Then:
+
+```bash
+python3 -I scripts/stage5/bill_table.py check <stage5>/bill-table-xx.json --ids <ids>          # exit 2 on any problem
+python3 -I scripts/stage5/bill_table.py questions <stage5>/bill-table-xx.json --ids <ids> --out <stage5>/bill-questions-xx.md
+```
+
+`questions` lists the flagged bills and every person with a Yes on both sides of the middle rung. **The runner
+answers that file before coding starts** (a runner stop). The answers go into the coder rulings digest.
+
+#### Pilot rule: record first, search only where the record leaves the seat open — MISSOURI PILOT ONLY
+
+> **Missouri pilot only (gun-policy, Season 3, 2026-11).** Do not use it for another state or topic until the pilot
+> report says it held. It rests on one measurement: in Georgia, a record seat at rung 5 (244 people) or rung 2 (12)
+> was never changed by the search; rung 3 changed 2.3% of the time and rung 4 10%.
+
+1. Code everyone from the record alone: `coder-inputs.ts ... --record-only --coded-dir <stage5>/record-coded`, then
+   `split-codes.ts ... --codes <stage5>/record-codes`. A record-only coder never codes no-stance (nothing was searched
+   yet); a person with no record is listed in `<name>-no-record.txt` and searched.
+2. `python3 -I scripts/stage5/search_list.py plan --record-codes <stage5>/record-codes --roster <roster.tsv> --skip-rungs 5,2 --out <stage5>/search-plan-xx`
+   skips record seats at rungs 5 and 2, except a seeded random 20 of them (the control), which are searched.
+3. Search and code everyone in `search.tsv` as usual.
+4. `search_list.py adopt ...` first checks the control (exit 4 when more than 1 in 20 changed outcome or rung: then
+   search the skipped people too, and report it), then copies the skipped people's record-only codes into `codes/`.
+
 ### 4. Code
 
 One Opus `stage5-coder` subagent per batch of about 20 people. Build the batches with `coder-inputs.ts`; never fill

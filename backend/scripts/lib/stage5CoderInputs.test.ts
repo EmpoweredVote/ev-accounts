@@ -38,6 +38,12 @@ describe('compactBatch', () => {
     expect(c.people[0].searches[0].subjects).toBeUndefined();
     expect(c.people[1].searches[0].subjects).toEqual(['other']);
   });
+  it('keeps records only in the record-first pass, and still rebuilds', () => {
+    const r = compactBatch(people, 'gun-policy', 3, () => undefined, new Set(['record'] as const));
+    expect(r.people[0].findings.map((f) => f.kind)).toEqual(['record']);
+    expect(roundTripProblems(people, r, 'gun-policy', 3, new Set(['record'] as const))).toEqual([]);
+    expect(roundTripProblems(people, r, 'gun-policy', 3).join()).toContain('lost');
+  });
   it('rebuilds to exactly what the store holds', () => {
     expect(roundTripProblems(people, c, 'gun-policy', 3)).toEqual([]);
   });
