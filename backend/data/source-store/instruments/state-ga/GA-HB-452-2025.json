@@ -1,0 +1,68 @@
+{
+  "id": "GA-HB-452-2025",
+  "scope": "state:ga",
+  "title": "HB452 (2025-2026 Regular Session): Firearms; persons convicted of family violence offenses cannot possess or purchase; provide",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/70324",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/232436"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Shea Roberts",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9f5a6746-3053-4e18-90c4-5418a240e679"
+    },
+    {
+      "name": "Karen Lupton",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "41b2aaee-62c1-48a3-8d88-7b4406ff2caf"
+    },
+    {
+      "name": "Lisa Campbell",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1838536a-ea4d-4054-ad51-dcf9bde3f8b9"
+    },
+    {
+      "name": "Anne Westbrook",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f561d1f0-e6ff-4791-8048-e26805ceaa93"
+    },
+    {
+      "name": "Bryce Berry",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4e119c6a-8ded-423f-9227-6e9d30236f4b"
+    },
+    {
+      "name": "Tangie Herring",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e1c88a0c-fbe5-44a2-a3b2-ac705b709d89"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:46:27.022243Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-452-2025.introduced.pdf",
+      "sha256": "1a91f6715481cf1d97f8b881f81006b21ecdf057a55ac4cc80fa3917abfeade8"
+    }
+  },
+  "operative_text": "SECTION 1 (amending O.C.G.A. 16-11-131(a)(2)): (2) 'Family violence offense' shall include the offenses listed in paragraph (2) of Code Section 19-13-1 when committed against past or present spouses, persons who are parents of the same child, parents and children, stepparents and stepchildren, foster parents and foster children, or other persons living or formerly living in the same household.\nSECTION 1 (amending O.C.G.A. 16-11-131(a)(3)): (3) 'Family violence protective order' means an order: (A) Issued pursuant to either Code Section 19-13-3 or 19-13-4; (B) Which was issued after a hearing in which the responding party received actual notice and had an opportunity to participate; (C) Which restrains the responding party from harassing, stalking, or threatening the petitioning party; and (D) Includes a finding that the responding party presents a credible threat to the physical safety of the petitioning party or by its terms explicitly prohibits the use, attempted use, or threatened use of physical force against the petitioning party that would be reasonably expected to cause bodily injury.\nSECTION 1 (amending O.C.G.A. 16-11-131(b.2)): (b.2) Any person who is on probation as a first offender pursuant to Article 3 of Chapter 8 of Title 42 for a family violence offense or who has been convicted of a family violence offense by a court of this state or any other state; by a court of the United States including its territories, possessions, and dominions; or by a court of any foreign nation and who receives, possesses, or transports a firearm or attempts to purchase or obtain transfer of a firearm commits a felony and, upon conviction thereof, shall be imprisoned for not less than one year nor more than five years; provided, however, that, if the family violence offense as to which the person is on probation or has been previously convicted is a forcible felony, then upon conviction of receiving, possessing, transporting, or attempting to purchase or obtain transfer of a firearm, such person shall be imprisoned for a period of five years.\nSECTION 1 (amending O.C.G.A. 16-11-131(b.3)): (b.3) Any person who is subject to a family violence protective order and who, during the pendency of such protective order, receives, possesses, transports, or attempts to purchase or obtain transfer of a firearm commits a felony and, upon conviction thereof, shall be imprisoned for not less than one year nor more than five years.\nSECTION 1 (amending O.C.G.A. 16-11-131(g)): (g) Any person subject to a family violence protective order shall, upon the expiration or dismissal of such family violence protective order, be relieved from the disabilities imposed by this Code section.\"\nSECTION 2: This Act shall become effective on July 1, 2025, and shall apply to any family violence conviction or family violence protective order issued on or after such date."
+}

@@ -22,7 +22,7 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Pool } from 'pg';
-import { buildStatus } from './election-transition-status.mjs';
+import { buildStatus, STATE_KEY, STATE_LABEL } from './election-transition-status.mjs';
 
 const WAVE_LABEL = {
   1: 'Wave 1 — Senate',
@@ -32,13 +32,10 @@ const WAVE_LABEL = {
   5: 'Wave 5 — Remaining locals',
 };
 
-const STATE_LABEL = {
-  1: 'Not looked at',
-  2: 'Called',
-  3: 'Certified',
-  4: 'Seated, awaiting swearing-in',
-  5: 'Sworn in',
-};
+// 🔴 STATE_LABEL AND STATE_KEY LIVE WITH seatState(), NOT HERE. They used to be a local copy,
+// and the copy said "Sworn in" for a state that only means the term has begun — see the long
+// note on seatState() for the Indiana case that exposed it. A label beside the function that
+// decides the state cannot drift away from what the state means.
 
 function csv(rows, columns) {
   const esc = (v) => {
@@ -144,11 +141,17 @@ try {
     const k = s.wave;
     const w = byWave.get(k) ?? {
       wave: k, wave_label: WAVE_LABEL[k], total: 0,
-      not_looked_at: 0, called: 0, certified: 0, seated: 0, sworn_in: 0,
+      not_looked_at: 0, called: 0, certified: 0, term_recorded: 0, in_office: 0,
       blocked: 0, needs_headshot: 0, needs_stances: 0,
     };
     w.total += 1;
-    w[['', 'not_looked_at', 'called', 'certified', 'seated', 'sworn_in'][s.seat_state]] += 1;
+    // 🔴 Read the key from STATE_KEY rather than a positional array. The array that stood here
+    // was a second, silent copy of the state list: adding a state meant remembering to extend
+    // an unlabelled literal, and renaming one here changed the CSV column without changing the
+    // label a reader sees. An unknown state now throws instead of writing NaN into a count.
+    const key = STATE_KEY[s.seat_state];
+    if (!key) throw new Error(`build-transition-dataset: unknown seat state ${s.seat_state}`);
+    w[key] += 1;
     if (s.blocked_no_candidates || s.blocked_no_office) w.blocked += 1;
     if (s.needs_headshot) w.needs_headshot += 1;
     if (s.needs_stances) w.needs_stances += 1;

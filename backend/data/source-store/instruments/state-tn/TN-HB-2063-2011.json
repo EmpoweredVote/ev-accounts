@@ -1,0 +1,33 @@
+{
+  "id": "TN-HB-2063-2011",
+  "scope": "state:tn",
+  "title": "HB 2063 (107th General Assembly): As introduced, clarifies that persons age 65 or older are not required to show identification with a photograph in order to vote. - Amends TCA Title 2, Chapter 7.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB2063/2011",
+    "https://legiscan.com/TN/rollcall/HB2063/id/173320"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) 2-7-112 (new subsection, unnumbered)\n(quote) Notwithstanding any other provision of law to the contrary, any voter age sixty-five (65) or older shall not be required to show an identification with a photograph of the voter in order to be allowed to vote at the polling place.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Section 2: effective on becoming law.\n(other) version: 183332-Draft (2011-02-17): photo-ID exemption for voters 65 and older (slot a); Senate companion SB1828 in header.\n(other) version: 524717-Draft (2011-12-11): identical body text; no change.\n(other) note: Action log: deferred to a 'Voter ID Calendar' 2012-02-01, then 'Failed In s/c' 2012-03-14. LegiScan's motion line and the log disagree on the question put; the voice vote has no tally. Slot a only (exemption from photo ID, not from ID).",
+  "sponsors": [
+    {
+      "name": "Craig Fitzhugh",
+      "role": "prime",
+      "version": "524717-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

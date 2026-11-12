@@ -1,0 +1,88 @@
+{
+  "id": "TN-SB-193-2019",
+  "scope": "state:tn",
+  "title": "SB 193 (111th General Assembly): As introduced, authorizes a person who registered to vote by mail or online and who is voting for the first time to vote absentee by applying to vote absentee at any county election commission office. - Amends TCA Title 2.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB0193/2019",
+    "https://legiscan.com/TN/rollcall/SB0193/id/962124"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) 2-6-202(a)(5) new (Sec. 2)\n(quote) by presenting evidence of identification pursuant to § 2-7-112(c)\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) 2-6-202(a)(5) new (Sec. 2)\n(quote) (5) A person who registered to vote by mail or online and who is voting for the first time may request an application to vote absentee at any county election commission office by presenting evidence of identification pursuant to § 2-7-112(c) and providing the information listed in subdivision (a)(3). The county election commission where the person completes the application shall verify the person's identity and, upon verification, forward the application to the appropriate county election commission.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) 2-2-115(b)(7)(B)(iii) new (Sec. 1)\n(quote) (iii) A person who submits an application to vote absentee pursuant to § 2-6-202(a)(5).\n(other) Sec. 1: adds the in-person absentee applicant as a new exception under 2-2-115(b)(7)(B) (the first-time mail/online registrant rule; the existing text of that rule is not saved).\n(other) Sec. 3: takes effect July 1, 2019.\n(other) version: 1876566-Draft: Draft only; carries slots a, c and e (first-time mail/online registrants may apply for an absentee ballot in person at a county election commission office by showing 2-7-112(c) ID, with the office verifying identity).\n(other) note: Only the Draft is saved. Died in Senate State and Local Government Committee 2020-06-02 (2 yes, 6 no, 1 not voting). The bill does not itself require ID; it uses the existing 2-7-112(c) list as an in-person route.",
+  "sponsors": [
+    {
+      "name": "Katrina Robinson",
+      "role": "prime",
+      "version": "1876566-Draft"
+    },
+    {
+      "name": "Jeff Yarbro",
+      "role": "co",
+      "version": "1876566-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2020-06-02",
+      "body": "TN Senate",
+      "motion": "Senate State and Local Government Committee, failed [version voted: Draft (no amendments saved)]",
+      "kind": "roll-call",
+      "yes": 2,
+      "no": 6,
+      "absent": 1,
+      "body_size": 9,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/SB0193/id/962124",
+      "members": [
+        {
+          "name": "Brian Kelsey",
+          "vote": "nay"
+        },
+        {
+          "name": "Ken Yager",
+          "vote": "nay"
+        },
+        {
+          "name": "Todd Gardenhire",
+          "vote": "nay"
+        },
+        {
+          "name": "Dawn White",
+          "vote": "nay"
+        },
+        {
+          "name": "Steven Dickerson",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Briggs",
+          "vote": "absent"
+        },
+        {
+          "name": "Jeff Yarbro",
+          "vote": "yea"
+        },
+        {
+          "name": "Edward Jackson",
+          "vote": "nay"
+        },
+        {
+          "name": "Shane Reeves",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

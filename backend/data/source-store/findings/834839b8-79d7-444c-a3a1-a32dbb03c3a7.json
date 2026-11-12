@@ -1,0 +1,33 @@
+{
+  "politician_id": "834839b8-79d7-444c-a3a1-a32dbb03c3a7",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "carry a gun without a permit",
+        "general statement on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity: sitting member of the Georgia Public Service Commission, District 2, per https://psc.ga.gov/about-the-psc/commissioners/alicia-johnson/ (a statewide regulator, not a legislator, so no bill sponsorships apply)",
+        "sponsor list: covered by LegiScan bulk check (not applicable: not a legislator)",
+        "official PSC commissioner page (nothing on the subject)",
+        "georgia.gov profile (nothing on the subject)",
+        "BallotReady candidate page (no gun stance)",
+        "Ballotpedia (not reviewed: page returns empty)",
+        "blocked: https://bluevoterguide.org/GA/candidate_Alicia_Johnson/663486 (bot check)",
+        "blocked: https://www.wabe.org/alicia-johnson-sworn-in-as-first-black-woman-on-the-georgia-public-service-commission/ (bot check)",
+        "web searches on her name plus gun words (nothing on the subject; the only gun results were about a congressman with the same surname)",
+        "note: sources disagree on whether her seat is on the 2026 ballot; not resolved"
+      ],
+      "found": 0,
+      "at": "2026-11-12T01:42:01.909Z",
+      "by": "source-collector"
+    }
+  ]
+}

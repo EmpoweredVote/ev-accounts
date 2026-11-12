@@ -1,0 +1,133 @@
+{
+  "id": "TN-HB-1443-2011",
+  "scope": "state:tn",
+  "title": "HB 1443 (107th General Assembly): As enacted, provides for issuance of photo identification license free of charge to person who signs an affidavit stating the person: does not have a valid government issued photo identification; is a registered voter in this state; and needs the photo identification license for voting purposes. - Amends TCA Title 55.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB1443/2011",
+    "https://legiscan.com/TN/rollcall/HB1443/id/65171",
+    "https://legiscan.com/TN/rollcall/HB1443/id/68996",
+    "https://legiscan.com/TN/rollcall/HB1443/id/82711",
+    "https://legiscan.com/TN/rollcall/HB1443/id/82712",
+    "https://legiscan.com/TN/rollcall/HB1443/id/82713"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Section 1: TCA 55-3-210 rewritten: a brand shall be affixed to a certificate of title for a flood motor vehicle as defined in 55-3-211.\n(other) Section 2: TCA 55-3-211 cross-reference changed from 55-3-209 to 55-3-210.\n(other) Section 3: effective July 1, 2011.\n(other) version: 173937-Draft (2011-02-16): flood-vehicle title-brand bill only; no ID or citizenship text in slots a-e.\n(other) version: 526176-Draft (2011-12-10): same body text as 173937 with a Senate companion number (SB1666, Ketron) added to the header; still no ID or citizenship text.\n(other) note: Both saved texts are an unrelated flood-vehicle title brand bill (TCA 55-3-210). LegiScan's title/description says 'as enacted' it provides a free photo ID licence on affidavit for registered voters needing it for voting, and the actions say 'Comp. SB subst.' then 'Comp. became Pub. Ch. 423'. So the enacted law is the Senate companion's text (Pub. Ch. 423), and the House committee amendments that rewrote HB1443 were not saved. No Enrolled/Chaptered/amendment file saved. The ID-licence wording cannot be quoted from anything saved. Every vote here is a House committee/subcommittee vote on a text that is not saved; no floor vote on HB1443 itself is shown (Senate bill substituted).",
+  "sponsors": [],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2011-05-19",
+      "body": "TN House",
+      "motion": "Committee recommends passage, 14 yes to 8 no [version voted: Draft + earlier committee amendment(s) (not saved)]",
+      "kind": "roll-call",
+      "yes": 14,
+      "no": 8,
+      "absent": 0,
+      "body_size": 22,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB1443/id/82712",
+      "members": [
+        {
+          "name": "David Hawk",
+          "vote": "yea"
+        },
+        {
+          "name": "Lois DeBerry",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnny Shaw",
+          "vote": "nay"
+        },
+        {
+          "name": "Gerald McCormick",
+          "vote": "yea"
+        },
+        {
+          "name": "Judd Matheny",
+          "vote": "yea"
+        },
+        {
+          "name": "Charles Sargent",
+          "vote": "yea"
+        },
+        {
+          "name": "Harry Brooks",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Coley",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Odom",
+          "vote": "nay"
+        },
+        {
+          "name": "Craig Fitzhugh",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve McDaniel",
+          "vote": "yea"
+        },
+        {
+          "name": "Jimmy Eldridge",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Brooks",
+          "vote": "yea"
+        },
+        {
+          "name": "Curtis Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Mike Harrison",
+          "vote": "yea"
+        },
+        {
+          "name": "Joe Armstrong",
+          "vote": "nay"
+        },
+        {
+          "name": "Tommie Brown",
+          "vote": "nay"
+        },
+        {
+          "name": "Dennis Roach",
+          "vote": "yea"
+        },
+        {
+          "name": "Emeritus James Naifeh",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Hall",
+          "vote": "yea"
+        },
+        {
+          "name": "David Alexander",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

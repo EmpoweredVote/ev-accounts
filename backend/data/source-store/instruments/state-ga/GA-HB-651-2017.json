@@ -1,0 +1,64 @@
+{
+  "id": "GA-HB-651-2017",
+  "scope": "state:ga",
+  "title": "HB651 (2017-2018 Regular Session): Georgia Firearms and Weapons Act; enact",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/51931",
+    "https://www.legis.ga.gov/api/legislation/document/20172018/170851",
+    "https://www.legis.ga.gov/api/legislation/document/20172018/171185"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mary Oliver",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "96b4b0dd-d110-4c17-9554-f17b05d03604"
+    },
+    {
+      "name": "Wendell Willard",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Michele Henson",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Bee Nguyen",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Renitta Shannon",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Patricia Gardner",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:46:27.022243Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-651-2017.introduced.pdf",
+      "sha256": "e3383bd2eeed3180fe1194d6265f9c98566773102c5d3c027a883ad245f366f3"
+    }
+  },
+  "operative_text": "SECTION 1 (amending O.C.G.A. 16-11-121 to 16-11-124), definition: (1) 'Bump fire stock' means any device that replaces or supplements, or is designed to replace or supplement, a weapon's buttstock or pistol grip and enables, or is designed to enable, such weapon to shoot more than six shots by a single function of the trigger or by recoil of the weapon.\nSECTION 1 (amending O.C.G.A. 16-11-121 to 16-11-124), definition: (2)(3) 'Machine gun' means any weapon which: (A) Shoots shoots or is designed to shoot, automatically, more than six shots, without manual reloading, by a single function of the trigger; or (B) Is used with a bump fire stock.\nSECTION 1 (amending O.C.G.A. 16-11-121 to 16-11-124), 16-11-122: No person shall have in his or her possession any sawed-off shotgun, sawed-off rifle, machine gun, dangerous weapon, bump fire stock, or silencer except as provided in Code Section 16-11-124.\nSECTION 1 (amending O.C.G.A. 16-11-121 to 16-11-124), 16-11-123: A person commits the offense of unlawful possession of firearms or weapons when he or she knowingly has in his or her possession any sawed-off shotgun, sawed-off rifle, machine gun, dangerous weapon, bump fire stock, or silencer, and, upon conviction thereof, he or she shall be punished by imprisonment for a period of five years.\nSECTION 1 (amending O.C.G.A. 16-11-121 to 16-11-124), 16-11-124 exceptions: (3) Any sawed-off shotgun, sawed-off rifle, machine gun, dangerous weapon, bump fire stock, or silencer which has been modified or changed to the extent that it is inoperative."
+}

@@ -1,0 +1,68 @@
+{
+  "id": "GA-HB-3-2025",
+  "scope": "state:ga",
+  "title": "HB3 (2025-2026 Regular Session): Brady Law Regulations; require universal background checks in all manner of firearm transfers",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/69283",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/229749"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michelle Au",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9cdee7d8-43d6-4596-8982-55b006f7754c"
+    },
+    {
+      "name": "Carolyn Hugley",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f2434780-8004-48e5-a1e8-27e9dcfe41ce"
+    },
+    {
+      "name": "Samuel Park",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0e03704f-d0a0-4a5b-9d7d-9035cc09cbee"
+    },
+    {
+      "name": "Tanya Miller",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1d40e77c-40f0-4475-bf2f-ff0a544a8eaf"
+    },
+    {
+      "name": "Spencer Frye",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "82a848e0-1b39-44c5-8b18-d8f4bc25325e"
+    },
+    {
+      "name": "Debbie Buckner",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c53377d9-299f-43c5-8e67-8a7e9fdc1891"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-3-2025.introduced.pdf",
+      "sha256": "537b7d28dc733b24ab2287744ac6f1aceaacb6a091a192c2d3a006ede5fb1362"
+    }
+  },
+  "operative_text": "SECTION 1 (amending O.C.G.A. 16-11-171): (7) 'Transferee' means a person who intends to receive a firearm from an unlicensed person. (8) 'Transferor' means an unlicensed person who intends to transfer a firearm. (9) 'Unlicensed person' means a person who is not validly licensed as a firearms dealer, manufacturer, or importer pursuant to 18 U.S.C. Section 921, et seq.\"\nSECTION 2 (adding O.C.G.A. 16-11-174(a)-(c)): (a) No unlicensed person shall transfer a firearm unless such transfer is facilitated by a dealer in accordance with this Code section. (b)(1) A dealer who facilitates a firearm transfer on behalf of an unlicensed person shall use the same procedures and comply with all state and federal laws required by such dealer for the transfer of a firearm from the inventory of such dealer, including, but not limited to, completion of an NICS check and maintenance of records. (2) When an NICS check indicates that a transferee is not prohibited from receiving or possessing a firearm under state or federal law and all legal requirements to complete the transfer have been met, the dealer shall deliver the firearm to the transferee. (3) When an NICS check indicates that a transferee is prohibited from receiving or possessing a firearm under state or federal law, or if a dealer cannot otherwise lawfully deliver a firearm to a transferee, a dealer shall not complete the transfer and shall return a firearm to a transferor; provided, however, that, if an NICS check indicates that the transferor is prohibited from receiving or possessing a firearm, the dealer shall not return the firearm to the transferor. (c) A dealer shall be authorized to charge a reasonable fee to facilitate the transfer of a firearm pursuant to this Code section.\nSECTION 2 (adding O.C.G.A. 16-11-174(d)): (d) The provisions of this Code section shall not apply to: (3) A transfer that is a loan or gift between spouses; between domestic partners; between parents and children, including stepparents and stepchildren; between siblings; between aunts, uncles, nieces, and nephews; or between grandparents and grandchildren, if the transferor has no reason to believe that the transferee will use or intends to use the firearm in a crime or that the transferee is prohibited from receiving or possessing a firearm under state or federal law; (5) A temporary transfer that is necessary to prevent imminent death or great bodily harm, including harm to self, family, household members, or others, if the transferee possesses the firearm only as long as is reasonably necessary to prevent such imminent death or great bodily harm;\nSECTION 2 (adding O.C.G.A. 16-11-174(e)-(f)): (e) A person who knowingly violates any provision of this Code section shall: (1) For a first offense, be guilty of a misdemeanor; or (2) For a second or subsequent offense, be guilty of a felony and, upon conviction, be punished by imprisonment for not less than one nor more than three years. (f) This Code section shall apply to transfers completed on or after July 1, 2025, and shall not apply to any transfer completed prior to such date.\""
+}

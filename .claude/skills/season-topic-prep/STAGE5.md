@@ -99,11 +99,82 @@ import first, then run `next` again**: it lists only people with no search for t
 written but not imported would be listed again. Commit the store's
 `findings/` with the stage PR (`npm run source-store --prefix backend -- validate` first).
 
+#### 3a. Bill round one: sponsor cover
+
+Before the search, put every topic bill a roster member sponsored into the state's core set, so the search does not
+have to find it and no second bill round is needed (Wisconsin, Arizona and Georgia each needed one: 5, 8 and 13 bills).
+
+```bash
+python3 -I scripts/stage5/sponsor_cover.py <bills.json> --state XX --roster <roster.tsv> --core <core.json> --ds <legiscan ds root> --idmap <idmap.tsv> --candidates <stage5>/sponsor-candidates-xx.json
+```
+
+The keyword scan is wide (Georgia: 164 such bills). One Opus agent triages the titles with
+[templates/stage5-sponsor-triage-prompt.md](templates/stage5-sponsor-triage-prompt.md); then the same command with
+`--triage <triage.json> --write <new core.json>` keeps only the "fill" bills. It refuses while any candidate is
+untriaged. Add the name matches it prints to `idmap.tsv` once checked.
+
+#### 3b. Bill table
+
+After the last bill round and the bill-text fill, one Opus agent reads each core bill once and writes the rung a Yes
+supports, with the deciding words copied from the bill
+([templates/stage5-bill-table-prompt.md](templates/stage5-bill-table-prompt.md)). Then:
+
+```bash
+python3 -I scripts/stage5/bill_table.py check <stage5>/bill-table-xx.json --ids <ids>          # exit 2 on any problem
+python3 -I scripts/stage5/bill_table.py questions <stage5>/bill-table-xx.json --ids <ids> --out <stage5>/bill-questions-xx.md
+```
+
+`questions` lists the flagged bills and every person with a Yes on both sides of the middle rung. **The runner
+answers that file before coding starts** (a runner stop). The answers go into the coder rulings digest.
+
+#### Pilot rule: record first, search only where the record leaves the seat open — MISSOURI PILOT ONLY
+
+> **Missouri pilot only (gun-policy, Season 3, 2026-11).** Do not use it for another state or topic until the pilot
+> report says it held. It rests on one measurement: in Georgia, a record seat at rung 5 (244 people) or rung 2 (12)
+> was never changed by the search; rung 3 changed 2.3% of the time and rung 4 10%.
+
+1. Code everyone from the record alone: `coder-inputs.ts ... --record-only --coded-dir <stage5>/record-coded`, then
+   `split-codes.ts ... --codes <stage5>/record-codes`. A record-only coder never codes no-stance (nothing was searched
+   yet); a person with no record is listed in `<name>-no-record.txt` and searched.
+2. `python3 -I scripts/stage5/search_list.py plan --record-codes <stage5>/record-codes --roster <roster.tsv> --skip-rungs 5,2 --out <stage5>/search-plan-xx`
+   skips record seats at rungs 5 and 2, except a seeded random 20 of them (the control), which are searched.
+3. Search and code everyone in `search.tsv` as usual.
+4. `search_list.py adopt ...` first checks the control (exit 4 when more than 1 in 20 changed outcome or rung: then
+   search the skipped people too, and report it), then copies the skipped people's record-only codes into `codes/`.
+
 ### 4. Code
 
-Run [templates/stage5-coder-prompt.md](templates/stage5-coder-prompt.md) on the most capable model, one subagent
-per batch of about 20 people, writing `stage5/codes/<politician_id>.json`. The ladder text comes from
-`npm run topic:ladder-lint --prefix backend -- --topic <key> --season draft`.
+One Opus `stage5-coder` subagent per batch of about 20 people. Build the batches with `coder-inputs.ts`; never fill
+[templates/stage5-coder-prompt.md](templates/stage5-coder-prompt.md) by hand.
+
+1. Once per topic, write `stage5/coder-config.json` (topic, season, season and revision ids, codebook version, date,
+   the ladder text from `npm run topic:ladder-lint --prefix backend -- --topic <key> --season draft`, and the
+   evidence basis by level) and `stage5/coder-rulings.md`: the runner rulings and store notes the coders apply, as
+   `## Heading {scope}` sections of `- ` bullets. A scope is `{all}` (the default), `{federal}` or `{state:xx[,yy]}`;
+   a bullet may carry its own scope first. Tag a ruling to one state only when it is about that state's bills and
+   nothing else; a ruling that names another state's bill as an example of a general rule is `{all}`.
+2. Build the batches:
+
+   ```bash
+   npx tsx scripts/stage5/coder-inputs.ts --config <abs>/stage5/coder-config.json --rulings <abs>/stage5/coder-rulings.md \
+     --roster <abs>/stage5/roster.tsv --ids <ids file> --unit state:xx --name xx --out <abs>/stage5/code-briefs --coded-dir <abs>/stage5/coded
+   ```
+
+   Each batch gets a brief, one compact findings file (this topic only, word for word, without source-tracking
+   fields; it refuses to write a file that does not rebuild to exactly what the store holds) and an ids list. It
+   prints each ruling the unit's coders will not see: read that list.
+3. Each coder writes ONE file, `stage5/coded/<batch>.json`. Check it and write the codes:
+
+   ```bash
+   npx tsx scripts/stage5/split-codes.ts <abs>/stage5/coded/<batch>.json --config <abs>/stage5/coder-config.json \
+     --codes <abs>/stage5/codes --ids <abs>/stage5/code-briefs/<batch>.ids.txt
+   ```
+
+   It sets `coded_at` and computes `evidence_basis` from the cited findings (the coder never writes either), runs
+   `checkCode`, and also refuses a bill named in the reasoning that is not in the person's findings, an annex or
+   ruling label (S3, Q2, R5-AZ…) in the reasoning, and quote marks round words in no cited finding or bill text.
+   Passing codes go to `codes/<politician_id>.json`; the rest go, with their reasons, to `coded/<batch>.sendback.md`
+   (exit 3). Hand that file back to a coder for those people only. `--replace` for a re-code after a ruling.
 
 ### Pitfalls the first topic found (voting-rights, Season 3, 2026-10/11)
 
@@ -213,6 +284,15 @@ are in `backend/scripts/stage5/`; its [README](../../../backend/scripts/stage5/R
 arguments. They take the topic, state and season as arguments, so they work for any topic. A one-off fix for a
 single batch (a sentence added by hand, a page uncited because the research text says it is unused) stays in that
 batch folder, with a line in its `PREVIEW.md`.
+
+**One runner for steps 0-12.** `python3 -I scripts/stage5/run_recipe.py <batch>` runs the steps below in order from
+`<batch>/recipe.json` and stops at the first check that fails or the first agent or hand step, printing the
+`--from N` to resume with. It keeps the bill-text step after the last LegiScan merge (a merge after it drops the
+bill-text pages: AZ, GA). The steps below stay the reference for what each one does and what to do at a stop.
+
+**Agents in waves.** Run searchers, coders and the quote check as waves with `scripts/stage5/wave.py` in the
+background (at most 8 at a time, slim by default; README "Slim agents"), so the main session wakes once per wave.
+The model is per row and is never lowered: coders and every judgment step stay on Opus.
 
 **Running them.** Run every tool from a worktree's `backend/` folder whose `.env` is linked to
 `ev-accounts/backend/.env`: `ADMIN_INGEST_TOKEN=placeholder npx tsx --env-file=.env scripts/stage5/<tool>.ts`, and

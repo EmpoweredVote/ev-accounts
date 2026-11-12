@@ -232,6 +232,128 @@ def archive_fallback_when_live_page_is_refused(t):
     assert not m.live_failed(b'200', real + ' access denied ' + real), 'a marker in a long page is not a challenge'
 
 
+def store(t, people, bills):
+    """A source store: findings/<pid>.json from {pid: [(bill, act, gate)]}, instruments/state-xx/<bill>.json from {bill: text}."""
+    os.makedirs(f'{t}/store/findings'); os.makedirs(f'{t}/store/instruments/state-xx')
+    for pid, rows in people.items():
+        json.dump({'politician_id': pid, 'findings': [{'id': f'{pid}{i}', 'kind': 'record', 'instrument_id': b, 'act': a, 'topic_keys': ['tp'],
+                                                       'gate_by_topic': {'tp': g}} for i, (b, a, g) in enumerate(rows)], 'searches': []},
+                  open(f'{t}/store/findings/{pid}.json', 'w'))
+    for b, text in bills.items(): json.dump({'title': b, 'operative_text': text}, open(f'{t}/store/instruments/state-xx/{b}.json', 'w'))
+    return f'{t}/store'
+
+
+@check
+def bill_table_check_needs_deciding_words_in_the_bill(t):
+    S = store(t, {'a': [('XX-HB-1-2025', 'yea', 'none'), ('XX-HB-9-2025', 'yea', 'none')]},
+              {'XX-HB-1-2025': 'A permit is no longer required to carry a handgun.', 'XX-HB-2-2025': 'Fees are waived.'})
+    good = {'topic_key': 'tp', 'bills': {'XX-HB-1-2025': {'rung': 5, 'deciding_words': 'a permit is no longer   required', 'why': '', 'flag': ''},
+                                         'XX-HB-2-2025': {'rung': None, 'deciding_words': '', 'why': 'direction only', 'flag': ''}}}
+    json.dump(good, open(f'{t}/t.json', 'w'))
+    assert run('bill_table.py', 'check', f'{t}/t.json', '--store', S).returncode == 0
+    bad = json.loads(json.dumps(good)); bad['bills']['XX-HB-1-2025']['deciding_words'] = 'a permit is abolished'
+    bad['bills']['XX-HB-2-2025']['why'] = ''; bad['bills']['XX-HB-7-2025'] = {'rung': 6, 'deciding_words': 'x'}
+    json.dump(bad, open(f'{t}/b.json', 'w')); open(f'{t}/ids', 'w').write('a\n')
+    p = run('bill_table.py', 'check', f'{t}/b.json', '--store', S, '--ids', f'{t}/ids', ok=False)
+    assert p.returncode == 2, p.stdout
+    for want in ('not in the operative text', 'needs a why', 'XX-HB-7-2025: no instrument file', 'XX-HB-9-2025: 1 person'):
+        assert want in p.stdout, (want, p.stdout)
+
+
+@check
+def bill_table_questions_find_both_sides_and_skip_gated(t):
+    S = store(t, {'a': [('XX-HB-1-2025', 'yea', 'none'), ('XX-HB-2-2025', 'sponsor', 'none')],
+                  'b': [('XX-HB-1-2025', 'yea', 'none'), ('XX-HB-2-2025', 'yea', 'multi-subject')],
+                  'c': [('XX-HB-1-2025', 'yea', 'none'), ('XX-HB-2-2025', 'nay', 'none')]},
+              {'XX-HB-1-2025': 'x', 'XX-HB-2-2025': 'y'})
+    json.dump({'topic_key': 'tp', 'bills': {'XX-HB-1-2025': {'rung': 4}, 'XX-HB-2-2025': {'rung': 2, 'flag': 'Is a fee cut rung 4?'}}}, open(f'{t}/t.json', 'w'))
+    open(f'{t}/ids', 'w').write('a b c\n')
+    p = run('bill_table.py', 'questions', f'{t}/t.json', '--store', S, '--ids', f'{t}/ids', '--out', f'{t}/q.md')
+    md = open(f'{t}/q.md').read()
+    assert 'Is a fee cut rung 4?' in md and '- a:' in md and '- b:' not in md and '- c:' not in md, md
+    assert '1 flagged bill(s), 1 both-sides person(s)' in p.stdout, p.stdout
+
+
+def code(d, pid, outcome, value=None, basis='record'):
+    os.makedirs(d, exist_ok=True)
+    json.dump({'politician_id': pid, 'outcome': outcome, 'value': value, 'evidence_basis': basis}, open(f'{d}/{pid}.json', 'w'))
+
+
+@check
+def search_list_skips_only_record_seats_at_skip_rungs_and_controls(t):
+    """Only a RECORD seat at a skip rung is skipped; the control is seeded, searched, and checked before adopting."""
+    pids = [f'p{i:02d}' for i in range(30)]
+    os.makedirs(t)
+    open(f'{t}/roster.tsv', 'w').write('politician_id\tfull_name\n' + ''.join(f'{p}\t{p.upper()}\n' for p in pids))
+    R = f'{t}/rec'
+    for p in pids[:24]: code(R, p, 'seated', 5)
+    code(R, 'p24', 'seated', 2, 'own-words'); code(R, 'p25', 'seated', 4); code(R, 'p26', 'doesnt-fit')  # p27-29: no record-only code
+    O = f'{t}/plan'
+    args = ['--record-codes', R, '--roster', f'{t}/roster.tsv', '--skip-rungs', '5,2', '--control', '5', '--out', O]
+    run('search_list.py', 'plan', *args)
+    ctrl = [r['politician_id'] for r in csv.DictReader(open(f'{O}/control.tsv'), delimiter='\t')]
+    first = open(f'{O}/control.tsv').read(); run('search_list.py', 'plan', *args)
+    assert open(f'{O}/control.tsv').read() == first, 'the control must be the same on a re-run'
+    search = {r['politician_id'] for r in csv.DictReader(open(f'{O}/search.tsv'), delimiter='\t')}
+    assert len(ctrl) == 5 and set(ctrl) <= search
+    assert {'p24', 'p25', 'p26', 'p27', 'p28', 'p29'} <= search, 'own-words, rung 4, no seat and no code are all searched'
+    assert len(search) == 6 + 5
+    C = f'{t}/codes'
+    assert run('search_list.py', 'adopt', '--record-codes', R, '--codes', C, '--out', O, ok=False).returncode == 3, 'no full codes yet'
+    for p in ctrl: code(C, p, 'seated', 5, 'joint')
+    code(C, ctrl[0], 'seated', 4, 'joint')
+    assert run('search_list.py', 'adopt', '--record-codes', R, '--codes', C, '--out', O, ok=False).returncode == 4, '1 in 5 changed'
+    code(C, ctrl[0], 'seated', 5, 'joint')
+    run('search_list.py', 'adopt', '--record-codes', R, '--codes', C, '--out', O)
+    assert len(os.listdir(C)) == 24, 'every skipped person adopted, the control keeps its full code'
+    assert json.load(open(f'{C}/{ctrl[0]}.json'))['evidence_basis'] == 'joint'
+
+
+@check
+def sponsor_cover_writes_only_triaged_fill_bills(t):
+    os.makedirs(f'{t}/ds/XX-1/2025/bill/people')
+    json.dump({'person': {'people_id': 7, 'first_name': 'Ann', 'last_name': 'Able', 'name': 'Ann Able'}}, open(f'{t}/ds/XX-1/2025/bill/people/7.json', 'w'))
+    open(f'{t}/roster.tsv', 'w').write('politician_id\tfull_name\npa\tAnn Able\n')
+    bills = [{'bill_id': i, 'st': 'XX', 'y': 2025, 'num': f'HB{i}', 'title': tt, 'res': False, 'sponsors': [{'pid': 7}]}
+             for i, tt in ((1, 'Carry permits'), (2, 'Game and fish'), (3, 'Core already'))] + [{'bill_id': 4, 'st': 'XX', 'y': 2025, 'num': 'HR4', 'title': 'x', 'res': True, 'sponsors': [{'pid': 7}]}]
+    json.dump(bills, open(f'{t}/bills.json', 'w')); json.dump([3], open(f'{t}/core.json', 'w'))
+    base = [f'{t}/bills.json', '--state', 'XX', '--roster', f'{t}/roster.tsv', '--core', f'{t}/core.json', '--ds', f'{t}/ds']
+    run('sponsor_cover.py', *base, '--candidates', f'{t}/cand.json')
+    assert [c['bill_id'] for c in json.load(open(f'{t}/cand.json'))] == [1, 2], 'resolutions and core bills are not candidates'
+    json.dump({'1': 'fill'}, open(f'{t}/tri.json', 'w'))
+    p = run('sponsor_cover.py', *base, '--triage', f'{t}/tri.json', '--write', f'{t}/new.json', ok=False)
+    assert p.returncode != 0 and 'not triaged' in p.stderr and not os.path.exists(f'{t}/new.json'), 'an untriaged candidate must stop the write'
+    json.dump({'1': 'fill', '2': 'skip'}, open(f'{t}/tri.json', 'w'))
+    run('sponsor_cover.py', *base, '--triage', f'{t}/tri.json', '--write', f'{t}/new.json')
+    assert json.load(open(f'{t}/new.json')) == [1, 3]
+
+
+@check
+def run_recipe_stops_on_a_high_and_on_stale_bill_text(t):
+    """A gate high stops the run for hand work (exit 10); step 9 refuses while step 7 ran after step 8 (exit 2)."""
+    os.makedirs(t)
+    json.dump({'stage5': t, 'topic': 'tp', 'unit': 'state:xx', 'level': 'state', 'state': 'XX', 'roster': f'{t}/r.tsv',
+               'codes': t, 'saved_root': t}, open(f'{t}/recipe.json', 'w'))
+    open(f'{t}/gate-output-final.txt', 'w').write('stance-gate: 3 rows · high=2 medium=0 · evidence rows=9\n')
+    assert run('run_recipe.py', t, '--check-only', '9', ok=False).returncode == 10
+    open(f'{t}/gate-output-final.txt', 'w').write('stance-gate: 3 rows · high=0 medium=0 · evidence rows=9\n')
+    assert run('run_recipe.py', t, '--check-only', '9').returncode == 0
+    json.dump({'8_stale': True}, open(f'{t}/recipe-log.json', 'w'))
+    p = run('run_recipe.py', t, '--from', '9', '--to', '9', ok=False)
+    assert p.returncode == 2 and 'stale' in p.stdout, p.stdout
+    open(f'{t}/dry-run-0.txt', 'w').write('outcomes: 1 (seated 1)\nrefused (2):\n  a  finding x…: kept off\n  b  CODE: a seat needs a value\n')
+    assert run('run_recipe.py', t, '--check-only', '0', ok=False).returncode == 2, 'a refused code must stop the run'
+
+
+@check
+def wave_starts_agents_slim_and_only_with_named_tools(t):
+    os.makedirs(t); open(f'{t}/p.md', 'w').write('x')
+    open(f'{t}/jobs.tsv', 'w').write(f'name\tprompt_file\tmodel\ttools\na\t{t}/p.md\topus\tRead,Write\n')
+    out = run('wave.py', f'{t}/jobs.tsv', '--out', f'{t}/o', '--print').stdout
+    assert '--safe-mode' in out and '--tools Read,Write' in out and 'claude-opus-5-5' in out, out
+    assert '--safe-mode' not in run('wave.py', f'{t}/jobs.tsv', '--out', f'{t}/o', '--print', '--full').stdout
+
+
 fails = 0
 with tempfile.TemporaryDirectory() as root:
     for i, f in enumerate(CHECKS):

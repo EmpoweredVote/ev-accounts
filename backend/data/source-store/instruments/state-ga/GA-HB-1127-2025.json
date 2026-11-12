@@ -1,0 +1,68 @@
+{
+  "id": "GA-HB-1127-2025",
+  "scope": "state:ga",
+  "title": "HB1127 (2025-2026 Regular Session): Crimes; offense of unlawful possession of parts of a machine gun; provide",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/72681",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/241114"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Omari Crawford",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "475c414e-270b-4b62-ad1a-bd7ed3ccbff9"
+    },
+    {
+      "name": "Anne Westbrook",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f561d1f0-e6ff-4791-8048-e26805ceaa93"
+    },
+    {
+      "name": "Mary Oliver",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "96b4b0dd-d110-4c17-9554-f17b05d03604"
+    },
+    {
+      "name": "Scott Holcomb",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b1819ac4-254b-4f4c-b163-59918efd9dee"
+    },
+    {
+      "name": "Inga Willis",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6591b8e5-9f1c-48d5-94ef-d1cbac61a222"
+    },
+    {
+      "name": "Yasmin Neal",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f534f1f2-2e81-4812-91d5-b23b68949bf9"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1127-2025.introduced.pdf",
+      "sha256": "303e9e71ebfa3add7b0875871ff55ccbd2f62535259f02d3ce50d94c501b9cc9"
+    }
+  },
+  "operative_text": "SECTION 1 (amending O.C.G.A. 16-11-121): (2) 'Machine gun' means any weapon which shoots or, is designed to shoot, or can be readily converted to shoot, automatically, more than six shots one shot, without manual reloading, by a single function of the trigger. (3) 'Parts of a machine gun' means: (A) The frame or receiver of any such weapon; (B) Any part designed and intended solely and exclusively, or combination of parts designed and intended, for use in converting a pistol into a machine gun; or (C) Any combination of parts from which a machine gun can be assembled if such parts are in the possession or under the control of a person.\nSECTION 2 (adding O.C.G.A. 16-11-123.1): (a) As used in this Code section, the term 'possession' means actual or constructive custody or control, including, but not limited to, manufacturing, obtaining, receiving, selling, offering for sale, or using. (b) No person shall have in his or her possession parts of a machine gun except as provided in Code Section 16-11-124. (c) A person commits the offense of unlawful possession of parts of a machine gun when he or she knowingly has in his or her possession parts of a machine gun, and, upon conviction thereof, shall be punished by imprisonment for not less than one nor more than five years.\"\nSECTION 3 (amending O.C.G.A. 16-11-124): \"(6) A manufacturer licensed and qualified to manufacture and maintain an inventory of machine guns under the Gun Control Act of 1968, 82 Stat. 1213-2 (18 U.S.C. Sections 921-934) and National Firearms Act, 68A Stat. 725 (26 U.S.C. Sections 5841-5862), that is acting pursuant to and in accordance with such provisions.\""
+}

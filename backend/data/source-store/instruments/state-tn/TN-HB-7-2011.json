@@ -1,0 +1,35 @@
+{
+  "id": "TN-HB-7-2011",
+  "scope": "state:tn",
+  "title": "HB 7 (107th General Assembly): As enacted, requires a voter to present qualified photographic identification before voting; voters without proper identification will be allowed to cast provisional ballots. - Amends TCA Title 2, Chapter 7, Part 1.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB0007/2011",
+    "https://legiscan.com/TN/rollcall/HB0007/id/58635",
+    "https://legiscan.com/TN/rollcall/HB0007/id/62319",
+    "https://legiscan.com/TN/rollcall/HB0007/id/64209"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1 (amends 2-7-112(a)(1))\n(quote) In addition, the voter shall present to the precinct registrar one (1) form of identification that bears the name and photograph of the voter; provided, however, a person voting in accordance with § 2-6-401(a) and (b) or § 2-6-601 shall not be required to show an identification with a photograph of the voter.\n(section) Sec. 7 (replaces 2-7-112(c))\n(quote) For purposes of verifying the person's identification on the application for ballot, \"evidence of identification\" shall be: (1) A Tennessee driver license; (2) A valid identification card issued by a branch, department, agency or entity of the state of Tennessee, any other state, or the United States authorized by law to issue personal identification, provided that such identification card contains a photograph of the voter;\n(b_no_id_remedy)\n(section) Sec. 4 (adds to 2-7-112(a)(3)(A))\n(quote) If a voter is unable to present evidence of identification, the voter shall be entitled to vote a provisional ballot pursuant to subsection (e) unless the voter is eligible to vote pursuant to subsection (f).\n(section) Sec. 8, new (e)(5)\n(quote) Provisional ballots cast pursuant to this subsection (e) shall only be counted if the voter provides evidence of identification specified in subsection (c) to the administrator of elections or the administrator's designee by the close of business on the second business day after the election.\n(section) Sec. 8, new (f)\n(quote) A voter who is indigent and unable to obtain proof of identification without payment of a fee or who has a religious objection to being photographed shall be required to execute an affidavit of identity on a form provided by the county election commission and then shall be allowed to vote.\n(c_mail_ballot_id)\n(section) Sec. 1 (exception)\n(quote) a person voting in accordance with § 2-6-401(a) and (b) or § 2-6-601 shall not be required to show an identification with a photograph of the voter.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec. 2-3: 2-7-112(a)(1)(B) now says the voter shall supply evidence of identification specified in (c); (C) changes 'comparison of the signature and other' to 'verification of'.\n(other) Sec. 5: deletes 2-7-112(a)(1)(E) in its entirety.\n(other) Sec. 6: provisional ballots must be counted within four business days of the close of polls.\n(other) Sec. 7: (c) list also includes a valid U.S. passport, a 55-50-336 ID card, employee ID card and military ID (with photograph where stated).\n(other) Sec. 8 (e)(1)-(9): provisional ballot procedure (fail-safe affidavit, written statement of the two-business-day deadline, sealed ballots, affidavit of identity, copy of ID attached, rejection notice by mail, extension to second Monday after election).\n(other) Sec. 10: takes effect January 1, 2012.\n(other) version: 107026-Draft (filed 2010-12-30) and 525493-Draft (a 2011-12-28 re-copy): same operative text, differing only in line layout and where the 'delete (a)(1)(E)' section is placed in the extraction. Both carry a, b and c-exception; no d. The House committee amendments ('Rec. for pass. if am.') are not saved, and the enacted text (the Senate companion, SB0016) is not saved.\n(other) note: House bill itself was 'Comp. SB subst.' on 2011-04-14: the companion Senate bill SB0016 became Public Chapter 323 (2011-06-03), so the enacted law is the Senate bill's text, which is NOT saved here. The LegiScan title says 'As enacted', but the saved text is the House bill as filed. Mail-ballot slot (c) is an exemption: a voter under 2-6-401(a),(b) or 2-6-601 (absentee categories, cited not reprinted) need not show photo ID; no absentee ID number is required in this text.",
+  "sponsors": [
+    {
+      "name": "Debra Maggart",
+      "role": "prime",
+      "version": "525493-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "politician_id": "dff0d1ad-869c-4397-87b0-bad415b6dee0",
+  "findings": [
+    {
+      "id": "58662b853e29ab1e845709c72609ae32febfaefca4f7829b2c5291430ec0d29e",
+      "kind": "own-words",
+      "url": "https://www.timesfreepress.com/news/2016/jul/25/naacp-officials-local-leaders-encourage-minor/",
+      "date": "2016-07",
+      "date_precision": "month",
+      "passage": "“Some of the obvious things that should tell us how important voting is, is the effort to keep people from voting, like the new voting ID Laws,” Hakeem said.",
+      "note": "Quoted by the Chattanooga Times Free Press from his remarks at the NAACP's State of the Vote 2016 meeting, when he was a city councilman (before taking his House seat). He refers to Tennessee's 2011 photo-ID law.",
+      "subjects": [
+        "voter ID at the polls",
+        "voting access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T02:03:36.522Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1cecfdb257386aabf7140f146ec59c75b625b60e9769b79ff95444962b764e94",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/HB1324/2021",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "TN-HB-1324-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, 2288905-Draft",
+      "note": "Listed as co sponsor of HB1324 (112th General Assembly) in LegiScan's bill record (sponsor order 3); the first version (2288905-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6bf6d81a82db697d74298b2d427ff9b8ac3a5267f7ae33bbaa137ed285b615aa",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/HB1316/id/1538770",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1316-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR AS AMENDED PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR AS AMENDED PASSAGE ON THIRD CONSIDERATION, 83-7) on HB1316 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + HA0118 (adopted on the floor 2025-04-07 per action log); linked by LegiScan member id 20343 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6930988a8505122e603380b4a817086271b34430e05e7cc3610482e5b39efdb3",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0626/id/1550047",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-626-2025",
+      "act": "nay",
+      "motion": "House: REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION, 72-22) on SB0626 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft 3093364 + SA0305 (full rewrite = chaptered text) as engrossed by the Senate; linked by LegiScan member id 20343 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b1bdab27c8e46b6dfd18fda952a09d982a3c0ae502b88906bafcd6d25276e5d0",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB6002/id/1477618",
+      "date": "2025-01-30",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "nay",
+      "motion": "House: REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION, 71-19) on SB6002 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA6001 + SA6007 (adopted on the Senate floor 1/29/2025; equals the chaptered text) as engrossed by the Senate; linked by LegiScan member id 20343 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting / voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Times Free Press 2016 https://www.timesfreepress.com/news/2016/jul/25/naacp-officials-local-leaders-encourage-minor/ (saved)",
+        "Times Free Press 2020 https://www.timesfreepress.com/news/2020/sep/26/local-republican-lawmakers-question-hakeem/ (on election commission staffing; body behind paywall, only phrases visible, not saved)",
+        "Times Free Press 2026-01-19 https://www.timesfreepress.com/news/2026/jan/19/chattanooga-rep-hakeem-will-run-for-reelection-in/ (page text visible to us had nothing on voting)",
+        "Times Free Press 2018 voter guide https://projects.timesfreepress.com/2018/07/voterguide/TnRep28YusufHakeem.html (connection error)",
+        "web searches: voter ID / photo ID / proof of citizenship / questionnaire / voting rights restoration / local outlets (5 searches); no campaign site found",
+        "won re-election 2026-11-03 per Times Free Press headline",
+        "blocked: https://ballotpedia.org (refuses fetches, not tried)",
+        "blocked: https://justfacts.votesmart.org (refuses fetches, not tried)",
+        "not fetched per rules: capitol.tn.gov and wapp.capitol.tn.gov"
+      ],
+      "found": 1,
+      "at": "2026-11-12T02:03:36.522Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 4,
+      "at": "2026-11-12T15:13:42.076Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "TN-SB-3141-2011",
+  "scope": "state:tn",
+  "title": "SB 3141 (107th General Assembly): As introduced, removes requirement that voter needs photograph identification prior to voting; restores former requirement that voter present identification for purpose of comparing signature on the application for ballot. - Amends TCA Title 2, Chapter 7, Part 1.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB3141/2011"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) TCA 2-7-112(a)(1), Section 1\n(quote) STRUCK: In addition, the voter shall present to the precinct registrar one (1) form of identification that bears the name and photograph of the voter. The requirement to present one (1) form of identification that bears the name and photograph of the voter shall apply to persons voting pursuant to § 2-6-109; provided, however, that a person voting in accordance with § 2-6-401(a) and (b) or § 2-6-601 shall not be required to show an identification with a photograph of the voter.\n(section) TCA 2-7-112(c), Section 6\n(quote) For purposes of comparing the person's signature on the application for ballot, \"evidence of identification\" shall be a valid voter's registration certificate, Tennessee driver license, social security card, credit card bearing the applicant's signature or other document bearing the applicant's signature\".\n(section) TCA 2-7-112(a)(1)(B), Section 2\n(quote) To compare the voter's signature on the application, the voter shall supply evidence of identification specified in subsection (c).\n(b_no_id_remedy)\n(section) TCA 2-7-112(a)(3)(A), Section 4\n(quote) STRUCK: If a voter is unable to present evidence of identification, the voter shall be entitled to vote a provisional ballot pursuant to subsection (e) unless the voter is eligible to vote pursuant to subsection (f).\n(section) TCA 2-7-112(a)(1)(E), new, Section 5\n(quote) If a voter is unable to present any evidence of identification specified in subsection (c), the voter shall be required to execute an affidavit of identity on a form provided by the county election commission.\n(section) TCA 2-7-112, Section 7\n(quote) STRUCK: subsections (e) and (f) (deleted in their entirety; text not shown)\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec 3: in 2-7-112(a)(1)(C), replaces 'verification of' with 'comparison of the signature and other'.\n(other) Sec 8: effective on becoming law.\n(other) version: Draft (only version saved): removes the photo ID requirement at the polls, restores signature comparison with a broad list of ID documents, replaces the provisional ballot with an affidavit of identity, and deletes subsections (e) and (f). Slots a and b only.\n(other) note: Subsection (e) and (f) text is not in the saved file; from the cross-references in the same bill, (e) is the provisional ballot procedure and (f) the affidavit exception (stated by Sec 4 text, not by quoted content). Stayed in Senate committee after referral; no votes. House companion HB3336 (Brown).",
+  "sponsors": [
+    {
+      "name": "James Kyle",
+      "role": "prime",
+      "version": "551260-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

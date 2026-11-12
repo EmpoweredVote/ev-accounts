@@ -208,7 +208,7 @@ const INSTRUMENT_IDENTIFIER_PATTERNS: RegExp[] = [
 ];
 
 /** Every identifier-bearing instrument mention in `text`, as raw matched substrings (may repeat). */
-function extractInstrumentIdentifiers(text: string): string[] {
+export function extractInstrumentIdentifiers(text: string): string[] {
   const out: string[] = [];
   for (const pattern of INSTRUMENT_IDENTIFIER_PATTERNS) {
     const re = new RegExp(pattern.source, pattern.flags.includes('g') ? pattern.flags : `${pattern.flags}g`);
@@ -233,7 +233,7 @@ const SPELLED_OUT: [RegExp, string][] = [
  * prefix is dropped ("SB0303", LegiScan's Michigan spelling, is "sb303"). An all-digit identifier keeps its
  * zeros: the executive-order hazard in chair-evidence-patterns.mjs is not solved here.
  */
-function canonicalizeInstrumentId(text: string): string {
+export function canonicalizeInstrumentId(text: string): string {
   let c = (normalizeText(text).match(/[a-z]+|\d+/g) ?? []).join('');
   for (const [re, short] of SPELLED_OUT) c = c.replace(re, short);
   c = c.replace(/^([hs]b|[hs][jc]r)(?:no|number)(?=\d)/, '$1');
@@ -241,7 +241,7 @@ function canonicalizeInstrumentId(text: string): string {
 }
 
 /** Text inside straight ("...") or curly (“...”) double quotes in `text`, in order, one entry per span. */
-function extractQuotedPhrases(text: string): string[] {
+export function extractQuotedPhrases(text: string): string[] {
   return [...text.matchAll(/"([^"]+)"|“([^”]+)”/g)].map((m) => m[1] ?? m[2] ?? '');
 }
 

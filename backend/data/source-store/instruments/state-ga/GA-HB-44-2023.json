@@ -1,0 +1,67 @@
+{
+  "id": "GA-HB-44-2023",
+  "scope": "state:ga",
+  "title": "HB44 (2023-2024 Regular Session): Brady Law Regulations; require universal background checks in all manner of firearm transfers and purchases",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/63547",
+    "https://www.legis.ga.gov/api/legislation/document/20232024/212539"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michelle Au",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9cdee7d8-43d6-4596-8982-55b006f7754c"
+    },
+    {
+      "name": "James Beverly",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Billy Mitchell",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5d137d02-da2e-4e8b-a65c-37d64c7402b2"
+    },
+    {
+      "name": "Samuel Park",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0e03704f-d0a0-4a5b-9d7d-9035cc09cbee"
+    },
+    {
+      "name": "Shea Roberts",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9f5a6746-3053-4e18-90c4-5418a240e679"
+    },
+    {
+      "name": "Sandra Scott",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3c4d981d-e32f-4e58-b7d5-eac9b4222f80"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-44-2023.introduced.pdf",
+      "sha256": "ab0b93fa7c5ef4974fa9824e99b046357e804166357bf6f7cf86a124435e8629"
+    }
+  },
+  "operative_text": "SECTION 2 (adding O.C.G.A. 16-11-174(a)): (a) No unlicensed person shall transfer a firearm to another unlicensed person unless such transfer is facilitated by a dealer in accordance with this Code section. A dealer who facilitates a firearm transfer on behalf of an unlicensed person shall use the same procedures and comply with all state and federal laws required by such dealer for the transfer of a firearm from such dealer's own inventory, including, but not limited to, the performance of background checks and maintenance of records. A dealer shall be authorized to charge a reasonable fee to facilitate the transfer of a firearm pursuant to this Code section.\nSECTION 2 (adding O.C.G.A. 16-11-174(c)): (c) When a background check indicates that the transferee is not authorized to receive or possess the firearm under state or federal law, or if the dealer cannot otherwise lawfully deliver the firearm to the transferee, the dealer shall not complete the transfer and shall return the firearm to the transferor; provided, however, that the dealer shall be authorized to conduct a background check to ensure that the transferor is not prohibited from receiving or possessing the firearm under state or federal law. If such background check indicates that the transferor is not authorized to receive or possess the firearm, the dealer shall not return the firearm to the transferor.\nSECTION 2 (adding O.C.G.A. 16-11-174(e)): (e) A person who knowingly violates any provision of this Code section shall: (1) For a first offense, be guilty of a misdemeanor; or (2) For a second or subsequent offense, be guilty of a felony and, upon conviction, be punished by confinement for not less than one nor more than three years.\nSECTION 2 (adding O.C.G.A. 16-11-174(f)): (f) This Code section shall apply to transfers completed on or after July 1, 2023, and shall not apply to any transfer completed prior to such date.\"\nSECTION 1 (amending O.C.G.A. 16-11-171): (7) 'Transferee' means an unlicensed person who intends to receive a firearm from another unlicensed person. (8) 'Transferor' means an unlicensed person who intends to transfer a firearm to another unlicensed person."
+}

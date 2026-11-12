@@ -12,6 +12,15 @@ Python as `python3 -I scripts/stage5/<tool>.py`. `<batch>` is the batch folder, 
 
 | Step | Tool | What it does |
 |---|---|---|
+| 3a | `scan_bills.py <ds_root> <XX,YY> <out.json> --topic gun-policy` | the topic's bills in a state's LegiScan datasets, with sponsors and votes (moved from the gun-policy folder's `scan_gun.py`; same output on GA and MO) |
+| 3a | `sponsor_cover.py <bills.json> --state XX --roster <tsv>… --core <json> --ds <dir> [--idmap <tsv>] [--since 2017] [--candidates <json>] [--triage <json> --write <json>]` | every non-resolution topic bill a roster member sponsored that is not core yet; writes candidates for an Opus title triage, then core + the "fill" bills (refuses while any is untriaged); prints LegiScan people matched by name for `idmap.tsv` |
+| 3b | `bill_table.py check\|questions <table.json> [--ids <file>] [--store <dir>] [--rungs 5] [--out <md>]` | `check`: every bill has an instrument file, a rung in range, and deciding words found in its operative text; with `--ids`, bills people have findings on that the table leaves out (exit 2). `questions`: flagged bills and people with a Yes on both sides of the middle rung, gated votes left out |
+| pilot | `search_list.py plan\|control\|adopt --record-codes <dir> [--roster <tsv> --skip-rungs 5,2 --control 20] [--codes <dir>] --out <dir>` | **Missouri pilot only.** `plan`: skip record seats at the skip rungs, except a seeded control; `control`: exit 4 when more than 1 in 20 control people changed; `adopt`: runs `control`, then copies skipped people's record-only codes |
+| code | `coder-inputs.ts --config <json> --rulings <md> --roster <tsv>… --ids <file> --unit state:xx\|federal --name <prefix> --out <dir> --coded-dir <dir> [--size 20] [--store <dir>] [--record-only]` | per coder batch (`--record-only`: record findings only, no-stance forbidden, people with no record listed apart): the brief, one compact findings file (refuses one that does not rebuild to the store) and an ids list; prints the rulings the unit's coders will not see, and characters before and after |
+| code | `split-codes.ts <coded batch file> --config <json> --codes <dir> [--ids <file>] [--store <dir>] [--replace]` | checks one coder file (`checkCode` plus the bill, label and quote checks in `lib/stage5Ingest.ts`), sets `coded_at` and `evidence_basis`, writes passing codes; the rest go to `<batch>.sendback.md` (exit 3) |
+| 0-12 | `run_recipe.py <batch> [--from N] [--to 12] [--print] [--check-only N]` | runs recipe steps 0-12 from `<batch>/recipe.json`; stops at the first failed check (exit 2) or at an agent or hand step (exit 10, with the `--from` to resume); step 9 refuses while step 7 ran after step 8; prints the PREVIEW numbers |
+| waves | `wave.py <jobs.tsv> --out <dir> [--max 8] [--full] [--add-dir <dir>]…` | one wave of headless agents (`claude -p`), at most 8 at a time, slim by default; one result file per agent; skips agents already done |
+| measure | `stage5_usage.py --session <main .jsonl> [--wave-dir <dir>]… [--people N] [--since ISO] [--until ISO] [--json <out>]` | the pilot's token numbers: weighted units, per person, main-session share and steps, agents by kind with their starting size (Georgia replay: 40.0M, 196k per person, 39%) |
 | 0, 14 | `write-batch.sh <stage5> <batch> <topic> <units> [N\|apply]` | `topic:stage5-write` with `held.txt` / `moved.txt` codes set aside, then put back (even on failure); writes `pids-write.txt` for `readback.ts` |
 | held | `setup_batch.py <stage5> <new batch> --level federal\|state [--state XX] <pid>…` | a held follow-up batch: `pids.txt` = these ids, `moved.txt` = every other coded id in the unit (refuses an id not coded there) |
 | held | `drop_held.py <batch>` | drops `held.txt` / `moved.txt` people from `research.csv` and `evidence.csv`; the full set kept once as `*-with-held.csv` |
@@ -73,9 +82,19 @@ Notes:
   built from the verifier's own `matchSnippet`, `matchedSpan` and `checkNameProximity` plus `sweepHit`. It need not
   contain the name, only sit near it: on a congress.gov cosponsor list, where every name carries a party label, it is
   the action line beside the list (Warner, S. 2747). Only when there is none do they fall back to the old window.
+- **Slim agents.** A headless agent started in this repo reads CLAUDE.md, the skills, plugins and MCP servers before
+  its prompt: measured 2026-11-12, its first turn was **175k tokens**; with `--strict-mcp-config
+  --disable-slash-commands` 56k; with `--safe-mode` (no CLAUDE.md, skills, plugins, hooks, MCP or custom agents)
+  **4.9k**. `wave.py` uses `--safe-mode` unless `--full`. That is safe only for a self-contained prompt, one that
+  names every file the agent reads and states every rule it applies: the coder brief, the bill-table, triage and
+  quote-check prompts are. A separate `CLAUDE_CONFIG_DIR` (for example `~/.claude-ev`) also works but needs its own
+  `/login` once. Re-measure with `stage5_usage.py` after a change to CLAUDE.md or the installed plugins.
+- **Pre-fill one unit.** `topic:stage5-prefill ... --units state:xx` writes findings only for that unit's people.
+  Without it the pre-fill merges every roster person with a vote on file (Georgia: 3,173 people for a 193-person
+  state), which rewrote other states' files in WI, AZ and GA.
 - **Checks.** `python3 -I scripts/stage5/check_tools.py` runs the Python tools on small made-up batches, one check per
   rule (no database, network or node_modules); `--tools <dir>` points it at a tampered copy. The TypeScript helpers are
-  tested with vitest (`lib.test.ts`, `federalVotesPlan.test.ts`).
+  tested with vitest (`lib.test.ts`, `federalVotesPlan.test.ts`, and `../lib/stage5Ingest.test.ts`, `../lib/stage5CoderInputs.test.ts` for the coding tools).
 - `lib.ts` holds the pure helpers (`readCsv`, `sweepHit`, `verifiableWindow`, `unverifiableNote`) and their tests;
   `batch-db.ts` resolves the topic id and the draft season; `_args.py` is the Python tools' argument reader.
 - One-off fixes for a single batch (a person's own sentence added by hand, a page uncited because the research text

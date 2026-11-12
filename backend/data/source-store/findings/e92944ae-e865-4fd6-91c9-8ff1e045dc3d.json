@@ -1,0 +1,114 @@
+{
+  "politician_id": "e92944ae-e865-4fd6-91c9-8ff1e045dc3d",
+  "findings": [
+    {
+      "id": "468d184dbcfc7d559cfabab1c090b7a6c31d859e02f5196c15041ffd43e5f528",
+      "kind": "own-words",
+      "url": "https://wpln.org/post/the-latest-on-voting-rights-in-tennessee/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "“There is always a backlash to our efforts to claim progress, and to have any sort of semblance of equality,” she told NPR.",
+      "note": "She is quoted (by WPLN, repeating an NPR interview; the page is stamped 2024-10-05 but the quote concerns a law signed in May of an earlier year, so the date of the words is unknown) on the Tennessee law adding rules and fines for groups that run voter registration drives. She says it responds to a 2018 registration campaign by the Tennessee Black Voter Project. Related to the subject only as voter-registration rules; it says nothing about ID or citizenship proof.",
+      "subjects": [
+        "voter registration drive rules (related)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T02:07:38.948Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a261b50fc8d6838cdcf667a80216e80b175248bcbe49b988daaf2dabdf23af09",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/SB0285/2023",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "TN-SB-285-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, 2652136-Draft",
+      "note": "Listed as prime sponsor of SB0285 (113th General Assembly) in LegiScan's bill record (sponsor order 1); the first version (2652136-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.077Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3eb2b8cb8e28469b4d579efd6f24f87d728715f7c104a8692eb338a8949bf4c6",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB6002/id/1476571",
+      "date": "2025-01-29",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "nay",
+      "motion": "Senate: as Amended Third Consideration",
+      "note": "TN Senate floor roll call (as Amended Third Consideration, 26-7) on SB6002 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA6001 + SA6007 (adopted on the Senate floor 1/29/2025; equals the chaptered text); linked by LegiScan member id 24391 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.077Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "digital licence as voter ID",
+        "voter registration drive rules",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed in office: search results and her own site charlaneoliver.com name her as the State Senate District 19 member; she is listed as seeking re-election in 2026",
+        "her own site charlaneoliver.com (home page): nothing on the subject",
+        "the Senate caucus site tnsenatedems.com search for 'voter': no item naming her on the subject",
+        "WPLN (wpln.org) search for her name with voter: one article found with a quote of hers on voter registration rules (saved)",
+        "WPLN article on noncitizen voting claims (2024-09-04): does not name her",
+        "7 web searches (name with voter ID, photo ID, proof of citizenship, noncitizen, digital driver licence, SB 658, SB 1136, local outlets): no own words on voter ID or citizenship proof found",
+        "blocked: https://www.nashvillescene.com/news/pithinthewind/special-session-2025-immigration-legislation/article_1db5f60c-14a4-5412-9588-e1cb31885e49.html (HTTP 429). A search snippet says she spoke on immigration status on state IDs in the 2025 special session; not reviewed, not saved",
+        "blocked: https://stateline.org/2019/08/14/tennessee-made-it-harder-to-register-voters-activists-consider-whats-next/ (bot check)",
+        "blocked: https://ballotpedia.org/Charlane_Oliver (listed as refused; not fetched)",
+        "not fetched by rule: capitol.tn.gov and wapp.capitol.tn.gov"
+      ],
+      "found": 1,
+      "at": "2026-11-12T02:07:38.948Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 2,
+      "at": "2026-11-12T15:13:42.077Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,423 @@
+{
+  "id": "GA-SB-499-2025",
+  "scope": "state:ga",
+  "title": "SB499 (2025-2026 Regular Session): Dangerous Instrumentalities and Practices; prohibition on possessing a silencer; repeal",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/73161",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/242455",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/244487",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/245499",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/246596"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Frank Ginn",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "197fc72c-7a39-451b-a263-373be76d05fa"
+    },
+    {
+      "name": "Larry Walker",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1b14b507-4e91-4c97-aefd-1eec5bb072cf"
+    },
+    {
+      "name": "Jason Anavitarte",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0761f7c4-67ba-4f38-9ea0-cd22c17b9065"
+    },
+    {
+      "name": "Shawn Still",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1bd8cb75-4099-4121-9e4e-c04418d8275c"
+    },
+    {
+      "name": "Chuck Payne",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b8cc3d66-9849-4586-acf1-b933bc920036"
+    },
+    {
+      "name": "Carden Summers",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6ffadf75-49b6-4223-8b32-cf17b3c0290b"
+    },
+    {
+      "name": "Steve Gooch",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "451da69b-17a2-465b-b138-ea27e7906694"
+    },
+    {
+      "name": "Mike Hodges",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "254e5bec-7ea1-47ac-954a-885da7c0547e"
+    },
+    {
+      "name": "Billy Hickman",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e92714ed-1596-484b-b53a-7d5d37415787"
+    },
+    {
+      "name": "Ed Setzler",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e2667eb3-7e13-4416-9daa-fb0be1ef3d2b"
+    },
+    {
+      "name": "Jason T. Dickerson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "695f9da5-9744-4025-b6bd-aeb861242efa"
+    },
+    {
+      "name": "Drew Echols",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "96e17f5c-3535-4316-bdff-df874507ad84"
+    },
+    {
+      "name": "Russ Goodman",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9bf773d5-7272-4fe0-9033-e3bd8930836c"
+    },
+    {
+      "name": "Lee Anderson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "bfe038f2-7f9c-4b13-b52a-ddfc3177c418"
+    },
+    {
+      "name": "Clint Dixon",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5c0c3808-0d01-43d6-ba77-4ca78e868e99"
+    },
+    {
+      "name": "Randy Robertson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "306db639-9373-48ef-9ba5-5b22d695b425"
+    },
+    {
+      "name": "Jason Ridley",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "97e7b5f9-94fe-4842-9b36-bd6e07cdddfa"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2026-03-06",
+      "body": "GA Senate",
+      "motion": "Passage By Substitute: Senate Vote #686",
+      "kind": "roll-call",
+      "yes": 30,
+      "no": 20,
+      "absent": 5,
+      "note": "LegiScan roll call 1656811; NV counted with absent in the tally, members keep LegiScan marks",
+      "members": [
+        {
+          "name": "Lee Anderson",
+          "vote": "yea",
+          "politician_id": "bfe038f2-7f9c-4b13-b52a-ddfc3177c418"
+        },
+        {
+          "name": "David Lucas",
+          "vote": "nay",
+          "politician_id": "6b522fd5-b059-4132-8702-ac6fd600efdf"
+        },
+        {
+          "name": "Randal Mangham",
+          "vote": "absent",
+          "politician_id": "00f540aa-f0f1-4a6e-8a38-3eaca300bf11"
+        },
+        {
+          "name": "Ed Setzler",
+          "vote": "yea",
+          "politician_id": "e2667eb3-7e13-4416-9daa-fb0be1ef3d2b"
+        },
+        {
+          "name": "Bill Cowsert",
+          "vote": "yea",
+          "politician_id": "86990d10-2dab-460c-89d0-783deea46cc4"
+        },
+        {
+          "name": "Ed Harbison",
+          "vote": "nay",
+          "politician_id": "ab37d478-2f5a-4545-8c80-281efb9ca9a2"
+        },
+        {
+          "name": "Donzella James",
+          "vote": "yea",
+          "politician_id": "4e367596-c6c9-44a3-af63-10c3670ed2af"
+        },
+        {
+          "name": "Emanuel Jones",
+          "vote": "nay",
+          "politician_id": "7b1648c9-2426-44ff-bb8f-3f66af0db31a"
+        },
+        {
+          "name": "Nan Orrock",
+          "vote": "nay",
+          "politician_id": "95c803e4-4853-41aa-b9d6-b4c108e9ea52"
+        },
+        {
+          "name": "Freddie Sims",
+          "vote": "nay"
+        },
+        {
+          "name": "Frank Ginn",
+          "vote": "yea",
+          "politician_id": "197fc72c-7a39-451b-a263-373be76d05fa"
+        },
+        {
+          "name": "Gail Davenport",
+          "vote": "absent",
+          "politician_id": "8c65ec5b-05f6-42fd-a25a-a62c1f64fd67"
+        },
+        {
+          "name": "John Albers",
+          "vote": "yea",
+          "politician_id": "da16fe95-fc75-49d8-9219-5b16961d66a6"
+        },
+        {
+          "name": "Steve Gooch",
+          "vote": "yea",
+          "politician_id": "451da69b-17a2-465b-b138-ea27e7906694"
+        },
+        {
+          "name": "Elena Parent",
+          "vote": "nay",
+          "politician_id": "83ffefbf-8cc7-4971-95df-9970188dd013"
+        },
+        {
+          "name": "Ben Watson",
+          "vote": "yea",
+          "politician_id": "654e8fe4-70a9-45c0-8ffa-62480aee1f16"
+        },
+        {
+          "name": "Chuck Hufstetler",
+          "vote": "absent",
+          "politician_id": "efd3aaf5-5a6a-485c-8570-5b8acb87bb5e"
+        },
+        {
+          "name": "Brian Strickland",
+          "vote": "yea",
+          "politician_id": "fc440298-213d-4985-b16d-191f5d1c67cf"
+        },
+        {
+          "name": "Sam Watson",
+          "vote": "absent",
+          "politician_id": "8b3c5c12-a4fb-44f9-8fa2-e06ddd358b0c"
+        },
+        {
+          "name": "Tonya Anderson",
+          "vote": "nay",
+          "politician_id": "0f8e373f-bfcb-43b0-b84a-4ab524bff191"
+        },
+        {
+          "name": "Marty Harbin",
+          "vote": "yea",
+          "politician_id": "d6036e6d-81ae-47da-9465-036f111d7f47"
+        },
+        {
+          "name": "Harold Jones",
+          "vote": "nay",
+          "politician_id": "07f1594a-b9ac-409e-b074-fc65c9316c8e"
+        },
+        {
+          "name": "Michael Rhett",
+          "vote": "nay",
+          "politician_id": "1295e8c6-a9a2-43aa-9eee-2113e3a21142"
+        },
+        {
+          "name": "Larry Walker",
+          "vote": "yea",
+          "politician_id": "1b14b507-4e91-4c97-aefd-1eec5bb072cf"
+        },
+        {
+          "name": "Ricky Williams",
+          "vote": "yea",
+          "politician_id": "267a7590-9ce3-4151-9d40-d0db381d664c"
+        },
+        {
+          "name": "Blake Tillery",
+          "vote": "yea",
+          "politician_id": "83120430-c817-4f51-8be8-dffc817ec188"
+        },
+        {
+          "name": "Matt Brass",
+          "vote": "yea",
+          "politician_id": "0b95813c-bb9b-426d-91e1-e5102ef21543"
+        },
+        {
+          "name": "Chuck Payne",
+          "vote": "yea",
+          "politician_id": "b8cc3d66-9849-4586-acf1-b933bc920036"
+        },
+        {
+          "name": "Kay Kirkpatrick",
+          "vote": "yea",
+          "politician_id": "8e4fa9bf-9233-46d7-b2a1-e0fb23270429"
+        },
+        {
+          "name": "Greg Dolezal",
+          "vote": "yea",
+          "politician_id": "a9c06c0b-b8a0-4a2c-9762-ab1f4bea97fb"
+        },
+        {
+          "name": "Sally Harrell",
+          "vote": "nay",
+          "politician_id": "cd6e7cf0-87d8-4a0f-b3a9-3272eb69a77b"
+        },
+        {
+          "name": "Sheikh Rahman",
+          "vote": "nay",
+          "politician_id": "a7ac9853-45dc-46fc-a604-9ec119a124db"
+        },
+        {
+          "name": "Randy Robertson",
+          "vote": "yea",
+          "politician_id": "306db639-9373-48ef-9ba5-5b22d695b425"
+        },
+        {
+          "name": "Josh McLaurin",
+          "vote": "nay",
+          "politician_id": "ce3bc454-d297-44f7-b145-601cb592d9c2"
+        },
+        {
+          "name": "Carden Summers",
+          "vote": "yea",
+          "politician_id": "6ffadf75-49b6-4223-8b32-cf17b3c0290b"
+        },
+        {
+          "name": "Jason Anavitarte",
+          "vote": "yea",
+          "politician_id": "0761f7c4-67ba-4f38-9ea0-cd22c17b9065"
+        },
+        {
+          "name": "Max Burns",
+          "vote": "yea",
+          "politician_id": "f410dd08-b72f-416c-bde0-bf83b5af00ed"
+        },
+        {
+          "name": "Clint Dixon",
+          "vote": "yea",
+          "politician_id": "5c0c3808-0d01-43d6-ba77-4ca78e868e99"
+        },
+        {
+          "name": "Russ Goodman",
+          "vote": "yea",
+          "politician_id": "9bf773d5-7272-4fe0-9033-e3bd8930836c"
+        },
+        {
+          "name": "Sonya Halpern",
+          "vote": "nay",
+          "politician_id": "5ae018ad-1a87-4f30-a9d2-63296f88a04c"
+        },
+        {
+          "name": "Bo Hatchett",
+          "vote": "absent",
+          "politician_id": "86fdf1eb-2200-46fb-b1fd-63f15acef171"
+        },
+        {
+          "name": "Billy Hickman",
+          "vote": "yea",
+          "politician_id": "e92714ed-1596-484b-b53a-7d5d37415787"
+        },
+        {
+          "name": "Kim Jackson",
+          "vote": "nay",
+          "politician_id": "4a922565-16b3-4c1a-a654-7ef16a3316b6"
+        },
+        {
+          "name": "Nikki Merritt",
+          "vote": "nay",
+          "politician_id": "46f32fee-0076-49db-a5cd-1526ef7316cb"
+        },
+        {
+          "name": "Derek Mallow",
+          "vote": "nay",
+          "politician_id": "58745dbd-d1d8-4662-90b0-6bb56a84fcf4"
+        },
+        {
+          "name": "Shawn Still",
+          "vote": "yea",
+          "politician_id": "1bd8cb75-4099-4121-9e4e-c04418d8275c"
+        },
+        {
+          "name": "Mike Hodges",
+          "vote": "yea",
+          "politician_id": "254e5bec-7ea1-47ac-954a-885da7c0547e"
+        },
+        {
+          "name": "Nabilah Islam Parkes",
+          "vote": "nay"
+        },
+        {
+          "name": "Timothy Bearden",
+          "vote": "yea",
+          "politician_id": "ba0b78a3-b448-4f0d-a2aa-4ab961f5ad2e"
+        },
+        {
+          "name": "Drew Echols",
+          "vote": "yea",
+          "politician_id": "96e17f5c-3535-4316-bdff-df874507ad84"
+        },
+        {
+          "name": "RaShaun Kemp",
+          "vote": "nay",
+          "politician_id": "91fbc0cb-1d87-4a5e-9b58-ddf462627b58"
+        },
+        {
+          "name": "Kenya Wicks",
+          "vote": "nay",
+          "politician_id": "3dab8c6b-e257-4528-b5e2-22b4b72df2ea"
+        },
+        {
+          "name": "Jason T. Dickerson",
+          "vote": "yea",
+          "politician_id": "695f9da5-9744-4025-b6bd-aeb861242efa"
+        },
+        {
+          "name": "Jaha Howard",
+          "vote": "nay",
+          "politician_id": "ea9e7082-78f2-4c12-92a5-aa1e764d5503"
+        },
+        {
+          "name": "Steven McNeel",
+          "vote": "yea",
+          "politician_id": "926f604c-ba3b-4119-b165-5812e6cfc0e8"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-499-2025.comm-sub.pdf",
+      "sha256": "9bd024fd2d64c29b3394a0fe59315418fd91f93aea89bb156b92369c35534b6e"
+    }
+  },
+  "operative_text": "SECTION 1 (amending O.C.G.A. 16-11-121): by repealing paragraph (7) of Code Section 16-11-121, relating to definitions relative to possession of dangerous weapons.\nSECTION 2 (amending O.C.G.A. 16-11-122): No person shall have in his or her possession any sawed-off shotgun, sawed-off rifle, machine gun, or dangerous weapon, or silencer except as provided in Code Section 16-11-124.\"\nSECTION 3 (amending O.C.G.A. 16-11-123): (b) A person commits the offense of unlawful possession of a silencer when the person possesses what he or she knows to be a silencer, as defined in Code Section 16-11-160, and at the time of such possession, knows he or she is prohibited from possessing or receiving a firearm under the laws of this state, and, upon conviction thereof, he or she shall be punished for a felony.\"\nSECTION 4 (amending O.C.G.A. 16-11-124): The exemption under this paragraph does not include the possession of silencers.\"\nSECTION 5 (amending O.C.G.A. 16-11-160): (b) It shall be unlawful for any person to possess or to use a machine gun, sawed-off rifle, sawed-off shotgun, or firearm equipped with a silencer or suppressor, as those terms are defined in Code Section 16-11-121, during the commission or the attempted commission of any of the following offenses:\nSECTION 6: This Act shall become effective on July 1, 2026, and shall apply to all offenses committed on or after such date."
+}

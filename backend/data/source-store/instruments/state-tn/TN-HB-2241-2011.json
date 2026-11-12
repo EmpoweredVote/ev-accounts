@@ -1,0 +1,79 @@
+{
+  "id": "TN-HB-2241-2011",
+  "scope": "state:tn",
+  "title": "HB 2241 (107th General Assembly): As introduced, permits a valid photo identification card issued by a county or city to its employee to be used as identification for verifying the person's identify on an application for ballot. - Amends TCA Section 2-7-112.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB2241/2011",
+    "https://legiscan.com/TN/rollcall/HB2241/id/174012"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) 2-7-112(c)(7) (Section 1)\n(quote) (7) A valid identification card issued by a Tennessee county or municipality to an employee of that county or municipality shall be evidence of identification for purposes of verifying the person's identification on the application for ballot; provided, that such identification contains a photograph of the voter.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sections 2-3: conforming punctuation ('or' moved from (c)(5) to (c)(6)).\n(other) Section 4: effective on becoming law.\n(other) version: 511581-Draft (2012-01-09): the only saved version; adds government-employee photo ID to the accepted-ID list (slot a).\n(other) note: Failed 3-5 on 2012-03-14. Slot a only.",
+  "sponsors": [
+    {
+      "name": "JoAnne Favors",
+      "role": "prime",
+      "version": "511581-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2012-03-14",
+      "body": "TN House",
+      "motion": "Subcommittee recommends passage, 3 yes to 5 no; action log says Failed In subcommittee [version voted: Draft (no amendments in saved actions)]",
+      "kind": "roll-call",
+      "yes": 3,
+      "no": 5,
+      "absent": 0,
+      "body_size": 8,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB2241/id/174012",
+      "members": [
+        {
+          "name": "Ryan Haynes",
+          "vote": "nay"
+        },
+        {
+          "name": "Gerald McCormick",
+          "vote": "nay"
+        },
+        {
+          "name": "Curry Todd",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Ramsey",
+          "vote": "nay"
+        },
+        {
+          "name": "Larry Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Tommie Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent Williams",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

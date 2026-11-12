@@ -43,6 +43,350 @@
         "fetched_at": "2026-10-28T20:51:14.417Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "f5910d0b75aaddcec1bed0087ec95f3925870d0e49399284f13a4db010530053",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/66265",
+      "date": "2024-02-27",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1018-2023",
+      "act": "nay",
+      "motion": "Passage: House Vote #581",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #581, 2024-02-27: nay (tally 106–60); census gate: none.",
+      "subjects": [
+        "banks barred from singling out firearms retailers by payment code",
+        "firearms registries by any person or government barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1018-2023.enrolled.pdf",
+          "sha256": "3073f18aecfd54c9c28d17feb9b9ef6f65e37967f1c92fad309d433378719fec"
+        }
+      }
+    },
+    {
+      "id": "ab2b6cbbf5ad2aa9f2c9e3c7ed2d3367bcce148eb8db4754bd5a93c703f8e9ce",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/73253",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1324-2025",
+      "act": "nay",
+      "motion": "Passage: House Vote #665",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #665, 2026-03-06: nay (tally 87–76); census gate: none.",
+      "subjects": [
+        "state ban on possessing a silencer repealed",
+        "silencer used in a crime still carries added penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1324-2025.comm-sub.pdf",
+          "sha256": "cac9c7cc0db7a3bfed34e302a4b693e66f6522544bcc39bdac7d05205d292d63"
+        }
+      }
+    },
+    {
+      "id": "f866f7205ef3ec645da1c5f6f35a27b4bb0f3a34590c422084455244e0b95623",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/72681",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-1127-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HB-1127-2025 (LegiScan sponsor list): HB1127 (2025-2026 Regular Session): Crimes; offense of unlawful possession of parts of a machine gun; provide.",
+      "subjects": [
+        "new felony for possessing machine gun parts",
+        "machine gun definition widened to one shot per trigger pull",
+        "exemption for federally licensed machine gun makers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1127-2025.introduced.pdf",
+          "sha256": "303e9e71ebfa3add7b0875871ff55ccbd2f62535259f02d3ce50d94c501b9cc9"
+        }
+      }
+    },
+    {
+      "id": "9ebc50acf9c5b2574d37da477fcb1432a1658a6d723e70ee3875d51a0908d93c",
+      "kind": "own-words",
+      "url": "https://atlantatribune.com/2023/01/27/governor-kemp-cant-make-georgia-communities-safe-if-hes-not-ready-to-talk-about-guns/",
+      "date": "2023-01-27",
+      "date_precision": "day",
+      "passage": "Georgia does not require background checks by unlicensed sellers, so anyone may purchase a gun through a private sale with no background check at all. Under Georgia’s new permitless carry legislation, which the Governor signed last year, more guns are in more hands-on Georgia streets without the safeguards necessary to keep Georgians and their families safe.",
+      "note": "Op-ed under her name, as the District 163 representative. Criticises the lack of checks on private sales and the permitless carry law.",
+      "subjects": [
+        "check every gun buyer",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:01.916Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7a998fb197ce2fb4aa6a2441a3e952a5b1e18b2b129541144388dc52616315b8",
+      "kind": "own-words",
+      "url": "https://atlantatribune.com/2023/01/27/governor-kemp-cant-make-georgia-communities-safe-if-hes-not-ready-to-talk-about-guns/",
+      "date": "2023-01-27",
+      "date_precision": "day",
+      "passage": "Georgia House Democrats have already introduced legislation this session that would close the private sale loophole to require universal background checks and legislation that would institute a mandatory 3-day waiting period. And there is more to come—including legislation that will keep guns safely stored and out of the hands of people who should not have them–to protect our children, our families, our communities, and our law enforcement officers.",
+      "note": "Describes the caucus bills on universal background checks, a 3-day waiting period and safe storage.",
+      "subjects": [
+        "check every gun buyer",
+        "waiting period",
+        "safe storage of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:01.916Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "16da2fd5e37f5c30d630ad452a430d876fefe840489cde8bff6cd83deed80c2f",
+      "kind": "own-words",
+      "url": "https://atlantatribune.com/2023/01/27/governor-kemp-cant-make-georgia-communities-safe-if-hes-not-ready-to-talk-about-guns/",
+      "date": "2023-01-27",
+      "date_precision": "day",
+      "passage": "Before it was repealed last year, Georgia’s permitting system helped keep Georgians safe by making sure that people carrying concealed handguns in public passed a background check.",
+      "note": "Says the repealed carry permit system helped keep people safe through its background check.",
+      "subjects": [
+        "carry permits",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:01.916Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aabdf765b1851ac557fdf2021d6535fc0a41069763f31f1b63d9d77ec37a660f",
+      "kind": "own-words",
+      "url": "https://www.anneallenwestbrookga163.com/platform",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Georgia needs common sense gun laws, including background checks on all gun sales, the single most effective policy for reducing gun violence across all categories. I support prohibiting firearm possession by domestic abusers so that Georgia can reduce its high rates of domestic violence homicide. And Georgia must repeal Stand Your Ground for the same reasons that it repealed Citizen’s Arrest, because it disproportionately harms Black Georgians, while making all Georgians less safe.",
+      "note": "Campaign platform page, gun safety section; page is undated.",
+      "subjects": [
+        "check every gun buyer",
+        "keeping guns from domestic abusers",
+        "stand your ground"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:01.916Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1dddc61bc2b5b60b1d906c3f7ffe6109ff692d7b68acea4d4cd64c69daa1eed7",
+      "kind": "own-words",
+      "url": "https://www.anneallenwestbrookga163.com/platform",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Local governments, not the state legislature, should make decisions on matters of local concern, such as crafting policy to combat city gun violence, transitioning to clean energy, altering local confederate monuments, and regulating short term rentals.",
+      "note": "Campaign platform, local government section: says cities should set their own policy on gun violence.",
+      "subjects": [
+        "local control of gun policy"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:01.916Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bc54bc13a9b5545a8dc40d676a87b3f453850106ac3fffbb89485d7cdc512e21",
+      "kind": "own-words",
+      "url": "https://www.connectsavannah.com/?p=187532",
+      "date": "2024-02-26",
+      "date_precision": "day",
+      "passage": "“People have a right to possess firearms, but rights have to be exercised in a way that doesn’t endanger others,” continued Westbrook.",
+      "note": "Quoted by Connect Savannah in a report on safe storage bills (HB 161, HB 1111, SB 340).",
+      "subjects": [
+        "safe storage of guns",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:01.916Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9a73dcd1e909717cc717dae09c8d94c975c6d92e6ffc81e7b3c333ffaf8635cd",
+      "kind": "own-words",
+      "url": "https://www.connectsavannah.com/?p=187532",
+      "date": "2024-02-26",
+      "date_precision": "day",
+      "passage": "The focus this session is  on safe storage of firearms. I am happy that my Republican colleagues are finally starting to come around, because keeping children safe should be bipartisan. And firearms are now the leading cause of death for Georgia’s children and teens.",
+      "note": "Quoted by Connect Savannah on the 2024 safe storage push.",
+      "subjects": [
+        "safe storage of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:01.916Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f2c4f11c109a966b1d22a34e3ff462559a7e5858c18763aa26cdc675dd4c69e",
+      "kind": "own-words",
+      "url": "https://mailchi.mp/e09956ce9f29/first-week-of-session-13543980",
+      "date": "2023-04",
+      "date_precision": "month",
+      "passage": "I hope you will join me in praying for all those affected by this senseless violence, many of whom are teens and young adults, and in renewing our resolve to change our culture, which enables anyone to respond to fear, misunderstanding, or conflict, with gun violence.",
+      "note": "Her weekly newsletter, 'This week in gun violence' section, after shootings of teens in April 2023. Date taken from the newsletter index entry 'April 17th'; year inferred from content.",
+      "subjects": [
+        "general statement on gun safety"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:01.916Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "04ccc77b110d54715c08a8fc745021531774285d7c55c178d13c7e3b548dd114",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/72353",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1023-2025",
+      "act": "nay",
+      "motion": "Passage: House Vote #546",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "GA House, Passage: House Vote #546, 2026-02-24: nay (tally 151–11); census gate: near-unanimous.",
+      "subjects": [
+        "weapon detection required at school building entrances",
+        "takes effect January 1, 2028"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1023-2025.comm-sub.pdf",
+          "sha256": "79e90ebc48e656276b1cf2a56ef9e94e0cf0286d51d38dec17f5f451ff55443d"
+        }
+      }
+    },
+    {
+      "id": "e65c4ac42c532c4eaf8d48178b8b3f799e8a3117f6ecec6e9af5590fe1e1184f",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/70476",
+      "date": "2025-04-04",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-204-2025",
+      "act": "nay",
+      "motion": "Passage: House Vote #429",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "GA House, Passage: House Vote #429, 2025-04-04: nay (tally 99–74); census gate: multi-subject.",
+      "subjects": [
+        "local limits on gun storage and gun parts barred",
+        "lawful gun carriers may sue over local rules",
+        "state declares gun regulation a statewide matter"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-204-2025.enrolled.pdf",
+          "sha256": "f3383faa3b85b22922b268ff733c78969bf7745386e967a71e6a9f02136f1fc2"
+        }
+      }
+    },
+    {
+      "id": "41004fd008f73ef6e077341cd7c7092f49d4ad769b4c4f01bd5fa2e4b4eb4deb",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/70324",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-452-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HB-452-2025 (LegiScan sponsor list): HB452 (2025-2026 Regular Session): Firearms; persons convicted of family violence offenses cannot possess or purchase; provide.",
+      "subjects": [
+        "gun ban for people convicted of family violence offenses",
+        "gun ban while a family violence protective order is in force",
+        "ban lifts when the protective order ends"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-452-2025.introduced.pdf",
+          "sha256": "1a91f6715481cf1d97f8b881f81006b21ecdf057a55ac4cc80fa3917abfeade8"
+        }
+      }
     }
   ],
   "searches": [
@@ -82,6 +426,35 @@
       "found": 1,
       "at": "2026-10-28T20:51:14.417Z",
       "by": "identity-ga-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "safe storage of guns",
+        "permitless carry",
+        "waiting period",
+        "keeping guns from domestic abusers",
+        "stand your ground",
+        "local control of gun policy"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site platform page (anneallenwestbrookga163.com/platform)",
+        "campaign site newsletters (2023 session, 2026 weeks 3 and 4; no gun text in the 2026 weeks)",
+        "Atlanta Tribune op-ed by the member, 2023-01-27",
+        "Connect Savannah report on safe storage, 2024-02-26",
+        "blocked: https://albanyherald.com/opinion/anne-westbrook-georgias-not-safe-under-existing-gun-laws/",
+        "Georgia WIN List endorsement bio (third party, not saved as her words)",
+        "not reviewed: https://gahouserules.buzzsprout.com/2449639/episodes/17153362-ep-7-what-s-law-got-to-do-with-it-w-guest-rep-anne-allen-westbrook (audio)",
+        "Ballotpedia (fetch tool returns empty; not relied on)",
+        "web searches: 2 news/own-words searches; confirmed in office via the Tribune op-ed (House District 163) and 2026 ballot listing in search results"
+      ],
+      "found": 8,
+      "at": "2026-11-12T01:42:01.916Z",
+      "by": "source-collector"
     }
   ]
 }

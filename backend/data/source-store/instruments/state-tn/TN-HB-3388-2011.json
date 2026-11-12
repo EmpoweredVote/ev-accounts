@@ -1,0 +1,153 @@
+{
+  "id": "TN-HB-3388-2011",
+  "scope": "state:tn",
+  "title": "HB 3388 (107th General Assembly): As introduced, exempts any person presenting evidence of honorable discharge from the military at the time of application for ballot from the requirements of showing an identification with a photograph of the voter when signing an application for ballot to vote. - Amends TCA Section 2-7-112.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB3388/2011",
+    "https://legiscan.com/TN/rollcall/HB3388/id/173759",
+    "https://legiscan.com/TN/rollcall/HB3388/id/178412"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1, TCA 2-7-112(a)(1), second sentence\n(quote) by inserting the language \"presenting evidence of honorable discharge from the military together with the application for ballot or\" in the second sentence between the language \"a person\" and the language \"voting in accordance with\".\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec. 2: takes effect on becoming law.\n(other) version: Draft 550908 (filed 2012-01-25): only saved version. Carries slot a text only, as an insertion into existing law; the sentence it edits is not reprinted. Read with SB2139's quoted existing law, that sentence lists persons who need not show photo ID (those voting under 2-6-401(a) and (b) or 2-6-601), so the insertion adds people presenting evidence of honorable military discharge to that list.\n(other) note: LegiScan's motion line says 'Recommended for passage' for the 3/27/2012 committee roll call, but the tally is 7 yes, 8 no and the actions say 'Failed In: State & Local Government Committee'. The sentence being amended is not saved; its content here is inferred from SB2139's reprint of existing law.",
+  "sponsors": [
+    {
+      "name": "John Windle",
+      "role": "prime",
+      "version": "550908-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2012-03-14",
+      "body": "TN House",
+      "motion": "House subcommittee (State & Local Government), recommended for passage [version voted: Draft 550908 (no amendment shown in the actions)]",
+      "kind": "roll-call",
+      "yes": 6,
+      "no": 2,
+      "absent": 0,
+      "body_size": 8,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB3388/id/173759",
+      "members": [
+        {
+          "name": "Ryan Haynes",
+          "vote": "nay"
+        },
+        {
+          "name": "Gerald McCormick",
+          "vote": "yea"
+        },
+        {
+          "name": "Curry Todd",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Ramsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Tommie Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent Williams",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2012-03-27",
+      "body": "TN House",
+      "motion": "House full committee (State & Local Government), motion to recommend failed 7-8 [version voted: Draft 550908 (no amendment shown in the actions)]",
+      "kind": "roll-call",
+      "yes": 7,
+      "no": 8,
+      "absent": 0,
+      "body_size": 15,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB3388/id/178412",
+      "members": [
+        {
+          "name": "Joshua Evans",
+          "vote": "nay"
+        },
+        {
+          "name": "Ryan Haynes",
+          "vote": "nay"
+        },
+        {
+          "name": "Gerald McCormick",
+          "vote": "nay"
+        },
+        {
+          "name": "Harry Tindell",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Dunn",
+          "vote": "nay"
+        },
+        {
+          "name": "Curry Todd",
+          "vote": "nay"
+        },
+        {
+          "name": "Vince Dean",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Pruitt",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Ramsey",
+          "vote": "nay"
+        },
+        {
+          "name": "Larry Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Tommie Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Gotto",
+          "vote": "nay"
+        },
+        {
+          "name": "Antonio Parkinson",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

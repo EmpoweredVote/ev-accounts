@@ -22,6 +22,279 @@
         "fetched_at": "2026-10-28T20:51:14.418Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "b6130accc7a1efcdce82e357742f575837a5e2277a5be10d64479042bc3a663f",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/66265",
+      "date": "2024-02-27",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1018-2023",
+      "act": "yea",
+      "motion": "Passage: House Vote #581",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #581, 2024-02-27: yea (tally 106–60); census gate: none.",
+      "subjects": [
+        "banks barred from singling out firearms retailers by payment code",
+        "firearms registries by any person or government barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1018-2023.enrolled.pdf",
+          "sha256": "3073f18aecfd54c9c28d17feb9b9ef6f65e37967f1c92fad309d433378719fec"
+        }
+      }
+    },
+    {
+      "id": "8c6b473d8068eab562c6c8591dfa7a5580b3a1658698a9cc72693fee496b12b6",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/73253",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1324-2025",
+      "act": "yea",
+      "motion": "Passage: House Vote #665",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #665, 2026-03-06: yea (tally 87–76); census gate: none.",
+      "subjects": [
+        "state ban on possessing a silencer repealed",
+        "silencer used in a crime still carries added penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1324-2025.comm-sub.pdf",
+          "sha256": "cac9c7cc0db7a3bfed34e302a4b693e66f6522544bcc39bdac7d05205d292d63"
+        }
+      }
+    },
+    {
+      "id": "9644e7ddfe4b1138378b697c0229c12c3c6f4375635a468f94593330beb8dcaf",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/66265",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-1018-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HB-1018-2023 (LegiScan sponsor list): HB1018 (2023-2024 Regular Session): Georgia Firearms Industry Nondiscrimination Act; enact.",
+      "subjects": [
+        "banks barred from singling out firearms retailers by payment code",
+        "firearms registries by any person or government barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1018-2023.enrolled.pdf",
+          "sha256": "3073f18aecfd54c9c28d17feb9b9ef6f65e37967f1c92fad309d433378719fec"
+        }
+      }
+    },
+    {
+      "id": "04ccc77b110d54715c08a8fc745021531774285d7c55c178d13c7e3b548dd114",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/72353",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1023-2025",
+      "act": "nay",
+      "motion": "Passage: House Vote #546",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "GA House, Passage: House Vote #546, 2026-02-24: nay (tally 151–11); census gate: near-unanimous.",
+      "subjects": [
+        "weapon detection required at school building entrances",
+        "takes effect January 1, 2028"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1023-2025.comm-sub.pdf",
+          "sha256": "79e90ebc48e656276b1cf2a56ef9e94e0cf0286d51d38dec17f5f451ff55443d"
+        }
+      }
+    },
+    {
+      "id": "a34cc336a57333a5058694dc2d7b6b4fef80d451a9377e1248f4d55fddd63e35",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/70476",
+      "date": "2025-04-04",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-204-2025",
+      "act": "yea",
+      "motion": "Passage: House Vote #429",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "GA House, Passage: House Vote #429, 2025-04-04: yea (tally 99–74); census gate: multi-subject.",
+      "subjects": [
+        "local limits on gun storage and gun parts barred",
+        "lawful gun carriers may sue over local rules",
+        "state declares gun regulation a statewide matter"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-204-2025.enrolled.pdf",
+          "sha256": "f3383faa3b85b22922b268ff733c78969bf7745386e967a71e6a9f02136f1fc2"
+        }
+      }
+    },
+    {
+      "id": "41e9a0f20e3433e037b6345098f923743aa6c79734775b3c64b3cc0f2a1c2236",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/legislation/document/20232024/221708",
+      "date": "2024-01-24",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1018-2023",
+      "act": "sponsor",
+      "note": "Co-sponsorship, not authorship: the official bill text reads 'By: Representatives Ridley of the 6th, Rhodes of the 124th, Burchett of the 176th, Williams of the 148th, Ridley of the 22nd, and others', and LegiList lists Jordan Ridley among the six cosponsors with Jason Ridley (District 6) as primary sponsor. The bill (Georgia Firearms Industry Nondiscrimination Act) bars financial institutions from using a firearms retailer code, and bars governments or persons from keeping registries of firearms or firearm owners. The date is the introduction date shown by LegiList (https://legilist.com/states/georgia/bill/1031/hb-1018); the official PDF carries no date.",
+      "subjects": [
+        "no registry of guns or gun owners",
+        "protections for gun sellers from banks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:54:11.308Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "50804a07f89b5d5b3f3a360af0f792344e524750b60adc344ca1305e97570560",
+      "kind": "own-words",
+      "url": "https://www.ridleyforhouse.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I firmly believe that the right to keep and bear arms is an unquestionable freedom that must be protected as staunchly as every other right guaranteed to Americans. If we allow one right to be legislated away, we put all our rights at risk. I will passionately defend the Second Amendment, safeguarding every citizen's fundamental right to bear arms.",
+      "note": "Second Amendment section of the issues page on his campaign site; the page carries no date.",
+      "subjects": [
+        "general statement on gun rights or the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:54:11.308Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c2c178d598b290402cd96714d34d42fb28df5c7961b6cb8d349bc103bf1838e4",
+      "kind": "own-words",
+      "url": "https://ridleyforhouse.com/meet-jordan",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "At the Capitol, he has been a reliable conservative vote fighting to reduce government overreach, defend the Second Amendment, protect taxpayers, strengthen local control, and uphold the values that matter to Georgia families.",
+      "note": "Biography on his campaign site, written in the third person; the page carries no date.",
+      "subjects": [
+        "general statement on gun rights or the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:54:11.308Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2ebad17398a4f299f6f9665326a5d68b39ed9390d08edb6d4161e73547eabeca",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/53040/race/19993/election/1226",
+      "date": "2024-11-05",
+      "date_precision": "day",
+      "passage": "What restrictions on gun ownership are needed to protect public safety? None, they violate the 2nd Amendment Should teachers be allowed to carry guns at school? Did not answer",
+      "note": "His answer on the voter-guide questionnaire for the November 5, 2024 general election (the election named at the top of the page); the answer's own date is not shown. He left the teachers question unanswered.",
+      "subjects": [
+        "no limits on gun ownership",
+        "teachers carrying guns at school"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:54:11.308Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "37761147dc21e40c0d31c74fd1bdc0cc1d19e4d552dc66e4d03f143c33d470b6",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/53040/race/11799/election/884",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "What restrictions on gun ownership are needed to protect public safety? None, it's a constitutional protected right Victims of gun violence should be able to sue firearms dealers and manufacturers. Strongly Disagree",
+      "note": "His answers on an earlier voter-guide questionnaire for the same seat; the page for race 11799, election 961 shows the same text. The page does not say which election cycle it belongs to.",
+      "subjects": [
+        "no limits on gun ownership",
+        "suing gun makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:54:11.308Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e39c3dec53fa8902abe5a5db285fa4ec7174f9e90197fe7a6b1c15cc4663673d",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/53040/race/11763/election/681",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Should teachers be allowed to carry guns at school? Yes What restrictions on gun ownership are needed to protect public safety? None, I strongly believe it is your constitutional right!",
+      "note": "His answers on another voter-guide questionnaire under the same candidate number (the page title reads 'Dist. 20'; the candidate is the same number as his District 22 profile). The election cycle is not shown.",
+      "subjects": [
+        "teachers carrying guns at school",
+        "no limits on gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:54:11.308Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -64,6 +337,65 @@
       "found": 1,
       "at": "2026-10-28T20:51:14.418Z",
       "by": "identity-ga-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "background checks",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "safe storage of guns",
+        "gun tax measures",
+        "Second Amendment rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "official House press page (nothing on the subject in his own words: the page found was on law-enforcement vehicle funding)",
+        "campaign site (ridleyforhouse.com/about and Ridley Report tag page: 404)",
+        "Ballotpedia (empty to fetch tool)",
+        "branch.vote profile (third-party summary, not his words; confirms 2026 general-election candidate for House District 22)",
+        "not reviewed: committee summary of his March 2026 defense of HB 1454 (host unreachable)",
+        "blocked: https://www.legiscan.com/GA/sponsors/HB1018/2023 (403)"
+      ],
+      "found": 0,
+      "at": "2026-11-12T01:42:02.051Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permit records and local limits on firearm discharge (HB 1454)",
+        "teachers carrying guns at school",
+        "suing gun makers and dealers",
+        "firearm sales tax holiday",
+        "general statement on gun rights or the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site https://www.ridleyforhouse.com/issues (Second Amendment section): saved",
+        "campaign site https://ridleyforhouse.com/meet-jordan (biography): saved",
+        "campaign site posts about-the-justice-for-peanut-and-fred-act and the-ayes-of-march: nothing on the subject; ridleyforhouse.com/about and /the-ridley-report are 404",
+        "iVoterGuide candidate profile (his own questionnaire answers) https://ivoterguide.com/candidate/53040/race/19993/election/1226 (2024 general): saved; and the pages for race 11799 (elections 884 and 961, identical answers) and race 11763 election 681: saved with unknown dates",
+        "house-press.com (House Media Services) press listings for Jordan Ridley, pages 1-6: no titles or text on firearms",
+        "IDENTITY CHECK FOR THE BILLS ON FILE: the official bill texts on legis.ga.gov read 'By: Representatives Ridley of the 6th' for HB 1018 (https://www.legis.ga.gov/api/legislation/document/20232024/221708), HB 1324 (https://www.legis.ga.gov/api/legislation/document/20252026/242742) and HB 1454 (https://www.legis.ga.gov/api/legislation/document/20252026/244011). The 6th is Jason Ridley, a different legislator. HB 1018's text also lists 'Ridley of the 22nd' (Jordan) among its sponsors: saved as a co-sponsorship. The 'prime sponsor' line on file for HB 1018 and any authorship of HB 1454 or HB 1324 belong to Jason Ridley, not Jordan Ridley (LegiList lists Jordan as a cosponsor only on HB 1018: https://legilist.com/states/georgia/bill/1031/hb-1018)",
+        "HB 1454 own words: NONE FOUND for Jordan Ridley, because the bill is Jason Ridley's. blocked: https://cpo.soar.com/articles/7625368/Georgia/Rep-Ridley-defends-bill-that-would-limit-local-firearms-ordinances-add-enforcement-options (host does not resolve). That page's 'Rep. Ridley' is not shown to be Jordan",
+        "HB 943 (2024 firearms sales tax exemption): a web search summary of the introduced text lists 'Ridley of the 22nd' as a co-sponsor, but the text is blocked: https://legiscan.com/GA/text/HB943/id/2883142/Georgia-2023-HB943-Introduced.pdf (403), so it is not saved",
+        "blocked: https://www.legiscan.com/GA/sponsors/HB1018/2023 (403); blocked: https://legiscan.com/GA/sponsors/HB526/2023 (403); blocked: https://www.billtrack50.com/billdetail/1980339 (403); blocked: https://app.azure.legiplex.com/ga/legislature/2025/2025-r/bills/hb1454 (403); blocked: https://stgwww.gunowners.org/?p=780105 (522)",
+        "Ballotpedia: empty to the fetch tool, not relied on",
+        "web searches: 8"
+      ],
+      "found": 6,
+      "at": "2026-11-12T01:54:11.308Z",
+      "by": "source-collector"
     }
   ]
 }

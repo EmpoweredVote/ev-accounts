@@ -1,6 +1,88 @@
 {
   "politician_id": "4dc4f106-8f2d-4245-b5e6-173e5dce3ab4",
-  "findings": [],
+  "findings": [
+    {
+      "id": "ab2b6cbbf5ad2aa9f2c9e3c7ed2d3367bcce148eb8db4754bd5a93c703f8e9ce",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/73253",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1324-2025",
+      "act": "nay",
+      "motion": "Passage: House Vote #665",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #665, 2026-03-06: nay (tally 87–76); census gate: none.",
+      "subjects": [
+        "state ban on possessing a silencer repealed",
+        "silencer used in a crime still carries added penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1324-2025.comm-sub.pdf",
+          "sha256": "cac9c7cc0db7a3bfed34e302a4b693e66f6522544bcc39bdac7d05205d292d63"
+        }
+      }
+    },
+    {
+      "id": "f2ef0d096182c2733aebf795ef242a331778476d04326c95bc8653a27fb8ca8d",
+      "kind": "own-words",
+      "url": "https://www.ballotready.org/people/muhammad-akbar-ali",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "We must take real action to end gun violence, support law enforcement with the training and resources they need, and build real trust between law enforcement and the people they serve, an approach.",
+      "note": "Candidate issue-stance text on the BallotReady page for Muhammad Akbar Ali (House District 106), under Guns. Names no specific bill or policy. Page gives no date; he is listed as a state representative from 2025.",
+      "subjects": [
+        "general statement on gun safety",
+        "end gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:01.903Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "951cd305c1cb08a73a6a49f61e8b2ba3447b1f7983a04fca49c30409c562a452",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/72353",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1023-2025",
+      "act": "yea",
+      "motion": "Passage: House Vote #546",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "GA House, Passage: House Vote #546, 2026-02-24: yea (tally 151–11); census gate: near-unanimous.",
+      "subjects": [
+        "weapon detection required at school building entrances",
+        "takes effect January 1, 2028"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1023-2025.comm-sub.pdf",
+          "sha256": "79e90ebc48e656276b1cf2a56ef9e94e0cf0286d51d38dec17f5f451ff55443d"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -28,6 +110,34 @@
       "found": 0,
       "at": "2026-10-28T15:53:26.599Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "carry a gun without a permit",
+        "places where guns may be carried",
+        "general statement on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site akbarali.com (not reachable; served an unrelated placeholder page)",
+        "blocked: https://www.wabe.org/?p=942000 (bot check)",
+        "blocked: https://www.wabe.org/newly-elected-gwinnett-democrat-akbar-ali-promises-progress-in-georgia-legislature/ (bot check)",
+        "futurecaucus.org profile (nothing on the subject)",
+        "news pages from WSB-TV and States Newsroom (nothing on the subject)",
+        "iVoter Guide (gun questions left unanswered by the candidate)",
+        "Ballotpedia (not reviewed: page returns empty)",
+        "BallotReady candidate page (issue stance on guns)",
+        "web searches on his name plus gun words (no other own words found)"
+      ],
+      "found": 1,
+      "at": "2026-11-12T01:42:01.903Z",
+      "by": "source-collector"
     }
   ]
 }

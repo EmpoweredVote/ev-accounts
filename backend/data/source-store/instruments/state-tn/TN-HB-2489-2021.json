@@ -1,0 +1,32 @@
+{
+  "id": "TN-HB-2489-2021",
+  "scope": "state:tn",
+  "title": "HB 2489 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 2 and Title 49, relative to the Tennessee Student Voter Act.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB2489/2021"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) 2-7-112(c)(2) (Sec. 3)\n(quote) (2) A valid identification card that contains a photograph of the voter, and that was issued by this state, or by the United States where authorized by law to issue personal identification;\n(section) 2-7-112(c)(8) new (Sec. 4)\n(quote) (8) A valid identification card that contains a photograph of the voter, and that was issued by an accredited postsecondary institution of education in this state.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) 2-2-115(b)(7) (Sec. 5, replaces subdivision)\n(quote) (7) A person who registers by mail or online may vote in person or absentee by mail.\n(other) Sec. 1: short title 'Tennessee Student Voter Act'.\n(other) Sec. 2: new subsection in 2-2-111: each high school must tell each senior who turns 18 that the student may vote and how to register, including the supplemental registration date at the school.\n(other) Sec. 6: takes effect on becoming law.\n(other) version: 2501361-Draft: Draft only; carries slots a and e (adds postsecondary-institution photo ID to 2-7-112(c); replaces 2-2-115(b)(7) so a mail/online registrant may vote in person or absentee by mail).\n(other) note: Only the Draft is saved. The actions say the subcommittee recommended it 'if amended' on 2022-03-30 and the full committee failed it 2022-04-05; that amendment is not saved and no roll call is saved. Existing text of 2-2-115(b)(7) is not saved, so the effect of replacing it cannot be stated beyond the new words. Companion SB2064 is not in this group.",
+  "sponsors": [
+    {
+      "name": "Vincent Dixie",
+      "role": "prime",
+      "version": "2501361-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

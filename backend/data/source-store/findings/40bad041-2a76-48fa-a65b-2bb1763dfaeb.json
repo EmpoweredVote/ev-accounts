@@ -1,0 +1,183 @@
+{
+  "politician_id": "40bad041-2a76-48fa-a65b-2bb1763dfaeb",
+  "findings": [
+    {
+      "id": "411ea17313ae9b1157173b82616bd382118b649ddd9675654ddcab246fff9e42",
+      "kind": "own-words",
+      "url": "https://votejustinjones.com/issue/democracy-requires-disruptors/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "While this voter ID law explicitly prohibited student identification cards it accepted gun permits as a form of voter suppression.",
+      "note": "Campaign issue page issued in his name; describes the state photo-ID law as barring student IDs while accepting gun permits, and calls that voter suppression. Page carries no date.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:54:27.651Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "15cb659452e6ca7dc49b45c89c43f4387e745c3617692372aeffd698e245b61b",
+      "kind": "own-words",
+      "url": "https://votejustinjones.com/issue/democracy-requires-disruptors/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Justin’s work in defending democracy in Tennessee and ensuring equitable access to the voting booth started long before he entered the legislature.",
+      "note": "Campaign issue page issued in his name; presents his work on voting access, including a 2015 suit over student IDs at the polls, as part of his record. Page carries no date.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID",
+        "voting access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:54:27.651Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3dfbb78db9f1879bee2468f7caa61e39f7f2788ee0f59e40c288524ffd885fc",
+      "kind": "own-words",
+      "url": "https://www.facingsouth.org/2018/03/tennessee-students-continue-their-fight-against-discriminatory-voter-id-law",
+      "date": "2018-03-30",
+      "date_precision": "day",
+      "passage": "\"If our votes were not powerful, they would not be trying to stop us,\" said Fisk student Justin Jones, one of the plaintiffs in the 2015 lawsuit.",
+      "note": "Quoted by Facing South (article by Rebekah Barber) as a Fisk student after a bill to add student IDs to accepted voter IDs was defeated. Said before he held office.",
+      "subjects": [
+        "student ID as voter ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:54:27.651Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1e9b137e0c5f7dddccb3b9b71283d64da491cb54bf4621a2f5f3ae2bbd89ebc9",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/HB0303/2023",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "TN-HB-303-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, 2651141-Draft",
+      "note": "Listed as prime sponsor of HB0303 (113th General Assembly) in LegiScan's bill record (sponsor order 1); the first version (2651141-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.077Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6930988a8505122e603380b4a817086271b34430e05e7cc3610482e5b39efdb3",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0626/id/1550047",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-626-2025",
+      "act": "nay",
+      "motion": "House: REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION, 72-22) on SB0626 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft 3093364 + SA0305 (full rewrite = chaptered text) as engrossed by the Senate; linked by LegiScan member id 24826 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.077Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b1bdab27c8e46b6dfd18fda952a09d982a3c0ae502b88906bafcd6d25276e5d0",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB6002/id/1477618",
+      "date": "2025-01-30",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "nay",
+      "motion": "House: REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION, 71-19) on SB6002 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA6001 + SA6007 (adopted on the Senate floor 1/29/2025; equals the chaptered text) as engrossed by the Senate; linked by LegiScan member id 24826 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.077Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "voter suppression"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract-otr returned no appearances, run with --city Nashville)",
+        "campaign site https://votejustinjones.com/issue/democracy-requires-disruptors/ (issue page, read by curl)",
+        "https://www.facingsouth.org/2018/03/tennessee-students-continue-their-fight-against-discriminatory-voter-id-law (read by curl; quote of him as a student plaintiff, 2018)",
+        "https://thegrio.com/2026/11/04/justin-jones-reelected-tennessee-house-district-52/ confirms he won the 2026-11-03 District 52 race",
+        "https://www.nashvillescene.com/news/coverstory/another-election-issue-state-house-races/article_c2e0ab16-020e-11ed-a3fc-2b37767dc95d.html: opened, nothing by him on the subject",
+        "blocked: https://www.theroot.com/9-hbcu-students-just-made-the-voter-id-war-hot-again (empty page)",
+        "blocked: https://www.campusvoteproject.org/post/new-nashville-lawmakers-aim-to-expand-student-voting-access (HTTP 404; a search summary says it quotes him on student IDs and gun permits, which could not be read)",
+        "blocked: https://www.campusvoteproject.org/post/student-ids-are-secure-and-reliable-they-should-be-recognized-as-voter-id-opinion (HTTP 404)",
+        "blocked: https://mnps.org/news/archived_news/student_voting_legislation/ (HTTP 404)",
+        "not reviewed (repost of Tennessee Lookout): none seen; Tennessee Lookout 2021 student-ID story not fetched by rule",
+        "web searches (7) on name with voter ID, student ID, proof of citizenship, SAVE Act, voter suppression, 2026 race, interviews: no proof-of-citizenship statement by him found",
+        "blocked: https://ballotpedia.org (not fetched, refuses our fetches)",
+        "blocked: https://justfacts.votesmart.org (not fetched, refuses our fetches)",
+        "blocked: https://bluevoterguide.org (not fetched, refuses our fetches)",
+        "not fetched by rule: capitol.tn.gov, wapp.capitol.tn.gov"
+      ],
+      "found": 3,
+      "at": "2026-11-12T01:54:27.651Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 3,
+      "at": "2026-11-12T15:13:42.077Z",
+      "by": "source-collector"
+    }
+  ]
+}

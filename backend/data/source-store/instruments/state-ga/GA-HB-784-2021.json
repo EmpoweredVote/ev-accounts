@@ -1,0 +1,66 @@
+{
+  "id": "GA-HB-784-2021",
+  "scope": "state:ga",
+  "title": "HB784 (2021-2022 Regular Session): Brady Law Regulations; five-day waiting period for the transfer or purchase of certain firearms; require",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/60588",
+    "https://www.legis.ga.gov/api/legislation/document/20212022/200912"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Josh McLaurin",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ce3bc454-d297-44f7-b145-601cb592d9c2"
+    },
+    {
+      "name": "Karen Bennett",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Stacey Evans",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "65286e2d-a44a-48d0-9c7b-edc9808d4e83"
+    },
+    {
+      "name": "Samuel Park",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0e03704f-d0a0-4a5b-9d7d-9035cc09cbee"
+    },
+    {
+      "name": "Beth Moore",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Carl Gilliard",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "19c84a45-b496-41f7-918d-8b636286ba63"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-784-2021.introduced.pdf",
+      "sha256": "ab9c2e2f49d3fb8aeabb55fb4b241bd9508464a68ce66835c1a2d36b343c90a7"
+    }
+  },
+  "operative_text": "SECTION 1 (amending O.C.G.A. 16-11-172(a)): \"(a) All transfers or purchases of firearms conducted by a licensed importer, licensed manufacturer, or licensed dealer shall be subject to the NICS; provided, however, that no firearm shall be transferred or purchased by a licensed dealer until five days after such transfer or purchase has been subject to the NICS."
+}

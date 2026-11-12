@@ -1,0 +1,69 @@
+{
+  "id": "TN-SB-2204-2025",
+  "scope": "state:tn",
+  "title": "SB 2204 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 2, relative to voter eligibility.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB2204/2025",
+    "https://legiscan.com/TN/rollcall/SB2204/id/1668602"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec. 1, 2-2-401(c) (new)\n(quote) The portal may also access data from the systematic alien verification for entitlements (SAVE) program from the United States department of homeland security, United States citizenship and immigration services (DHS-USCIS), if DHS-USCIS makes such data available via a secure web service.\n(e_other_rule) not stated.\n(other) Sec. 1 also redesignates the existing 2-2-401(c) and later subsections of the section created by Public Chapter 473 (SB0133/HB0069).\n(other) Sec. 2: effective on becoming law.\n(other) version: 3346243-Draft: slot d only (adds SAVE data to the 2-2-401 portal).\n(other) version: 3426173-Chaptered (PC 775, HB2185): same text; no change.\n(other) note: Builds on PC 473 (2-2-401). The portal is optional on the SAVE side ('may also access ... if DHS-USCIS makes such data available'). No document is required from an applicant. Only one roll call (Senate committee) is on SB2204; the floor action ran on HB2185.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2026-03-24",
+      "body": "TN Senate",
+      "motion": "Senate State & Local Government Committee, recommended for passage [version voted: Draft 3346243 as filed (no amendment recorded; same text as the chaptered law)]",
+      "kind": "roll-call",
+      "yes": 7,
+      "no": 2,
+      "absent": 0,
+      "body_size": 9,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/SB2204/id/1668602",
+      "members": [
+        {
+          "name": "Kerry Roberts",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd Gardenhire",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Briggs",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Yarbro",
+          "vote": "nay"
+        },
+        {
+          "name": "Edward Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Sara Kyle",
+          "vote": "nay"
+        },
+        {
+          "name": "Page Walley",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Lowe",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Hatcher",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

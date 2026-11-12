@@ -1,0 +1,32 @@
+{
+  "id": "TN-SB-2810-2019",
+  "scope": "state:tn",
+  "title": "SB 2810 (111th General Assembly): As introduced, allows a student currently enrolled at a public institution of higher education to use a photo identification card issued by the public institution of higher education to verify the student's identity when voting. - Amends TCA Title 2, Chapter 7 and Title 49.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB2810/2019"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) 2-7-112(c)(3) (Sec. 1, new item in rewritten subsection)\n(quote) (3) An identification card issued to a current student by a public institution of higher education containing a photograph of the student;\n(section) 2-7-112(c) (Sec. 1, intro of rewritten subsection)\n(quote) (c) For purposes of verifying the person's identification on the application for ballot, \"evidence of identification\" is:\n(section) 2-7-112(c)(4) (Sec. 1, listed in rewrite)\n(quote) (4) A valid identification card issued pursuant to § 55-50-336;\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec. 1 (rest of list): reprints a Tennessee driver licence, a state or federal photo ID card, a U.S. passport, a state or federal employee photo ID, a military photo ID and a retired-state-employee ID; the saved text does not show which of these were already in law.\n(other) Sec. 2: rules and administration take effect on becoming law; everything else July 1, 2020.\n(other) version: 2125832-Draft: Draft only; rewrites all of 2-7-112(c) and adds a current public-college student photo ID as item (3).\n(other) note: Title says Title 2, Chapter 7 and Title 49, but the saved text amends only 2-7-112(c). Existing wording of (c) is not saved. Companion HB1590 identical. Last action: referred to Senate State and Local Government 2020-02-10; no roll call saved.",
+  "sponsors": [
+    {
+      "name": "Raumesh Akbari",
+      "role": "prime",
+      "version": "2125832-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

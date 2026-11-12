@@ -1,0 +1,96 @@
+{
+  "id": "GA-SB-179-2021",
+  "scope": "state:ga",
+  "title": "SB179 (2021-2022 Regular Session): Brady Law Regulations; universal background checks in all manners of firearm transfers and purchases; require",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/59686",
+    "https://www.legis.ga.gov/api/legislation/document/20212022/197645"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michelle Au",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9cdee7d8-43d6-4596-8982-55b006f7754c"
+    },
+    {
+      "name": "Nan Orrock",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "95c803e4-4853-41aa-b9d6-b4c108e9ea52"
+    },
+    {
+      "name": "Gail Davenport",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8c65ec5b-05f6-42fd-a25a-a62c1f64fd67"
+    },
+    {
+      "name": "Kim Jackson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4a922565-16b3-4c1a-a654-7ef16a3316b6"
+    },
+    {
+      "name": "Sally Harrell",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "cd6e7cf0-87d8-4a0f-b3a9-3272eb69a77b"
+    },
+    {
+      "name": "Sheikh Rahman",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "a7ac9853-45dc-46fc-a604-9ec119a124db"
+    },
+    {
+      "name": "Nikki Merritt",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "46f32fee-0076-49db-a5cd-1526ef7316cb"
+    },
+    {
+      "name": "Sonya Halpern",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5ae018ad-1a87-4f30-a9d2-63296f88a04c"
+    },
+    {
+      "name": "Gloria Butler",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Lester Jackson",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "David Lucas",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6b522fd5-b059-4132-8702-ac6fd600efdf"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-179-2021.introduced.pdf",
+      "sha256": "6507b97aec84778f75f9daedc32551df568f99ecdf653927e0b112ea569aef97"
+    }
+  },
+  "operative_text": "SECTION 1 (amending O.C.G.A. 16-11-171): (7) 'Transferee' means an unlicensed person who intends to receive a firearm from another unlicensed person. (8) 'Transferor' means an unlicensed person who intends to transfer a firearm to another unlicensed person.\nSECTION 2 (adding O.C.G.A. 16-11-174(a)-(d)): (a) Except as provided for in subsection (e) of this Code section, an unlicensed person shall not transfer a firearm to any other unlicensed person, unless a licensed firearms dealer has first taken possession of the firearm and completed the requirements of this Code section. (b) Upon taking possession of a firearm under subsection (a) of this Code section, the licensed dealer shall facilitate the firearm transfer using the same procedures, and in compliance with all state and federal laws, that would apply if the dealer were transferring the firearm from the dealer's own inventory, including, but not limited to, completing a background check on the transferee and complying with applicable record-keeping requirements. A licensed dealer may charge a reasonable fee to facilitate the transfer of a firearm pursuant to this Code section. (c) If the background check indicates that the transferee is not prohibited from receiving or possessing the firearm under state or federal law, and all legal requirements to complete the transfer are met, the licensed dealer shall deliver the firearm to the transferee. (d) If the background check does not indicate that the transferee is approved to receive and possess the firearm under state or federal law, or if the licensed dealer cannot otherwise lawfully deliver the firearm to the transferee, the dealer shall decline to complete the transfer, and shall return the firearm to the transferor; provided, however, that the dealer may first conduct a background check to ensure that the transferor is not prohibited from receiving or possessing the firearm.\nSECTION 2 (adding O.C.G.A. 16-11-174(e)(3)): (3) A transfer that is a loan or bona fide gift between spouses, between domestic partners, between parents and their children, including stepparents and their stepchildren, between siblings, between aunts or uncles and their nieces or nephews, or between grandparents and their grandchildren, if the transferor has no reason to believe that the transferee will use or intends to use the firearm in a crime or is prohibited from receiving or possessing firearms under state or federal law;\nSECTION 2 (adding O.C.G.A. 16-11-174(f)-(g)): (f) A person who knowingly violates any provision of this Code section shall: (1) For a first offense, be guilty of a misdemeanor; and (2) For a second or subsequent offense, be guilty of a felony and, upon conviction, be punished by confinement for not less than one nor more than three years. (g) This Code section shall apply to transfers completed on and after July 1, 2022, and shall not apply to any transfer completed prior to such date.\""
+}

@@ -1,0 +1,69 @@
+{
+  "id": "TN-SB-2245-2021",
+  "scope": "state:tn",
+  "title": "SB 2245 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 2, Chapter 2 and Title 2, Chapter 7, relative to election integrity.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB2245/2021",
+    "https://legiscan.com/TN/rollcall/SB2245/id/1174628"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec.4, amends TCA 2-2-141(a) (kept in Chaptered Sec.4)\n(quote) (a) The coordinator of elections may compare the statewide voter registration database with the department of safety database to ensure non-United States citizens are not registered to vote in this state. The coordinator of elections is further authorized to compare the statewide voter registration database with those of relevant federal and state agencies, including the systematic alien verification for entitlements (SAVE) program database, and county records for the same purpose. If evidence exists that a particular registered voter is not a citizen of the United States, the coordinator of elections shall notify the county election commission where the person is registered to vote that the registered voter may not be a citizen of the United States.\n(e_other_rule)\n(section) Sec.1, adds TCA 2-2-102(b) (same words in Chaptered, which prints '( 1)' with a scan space)\n(quote) (1) An individual who is not a citizen of the United States shall not vote in a federal, state, or local election. ... (2) A county, municipality, or other political subdivision of this state shall not grant voting rights to a person who is not a United States citizen for an election.\n(section) Sec.2, new section in Title 2 Ch.2 Pt.1 (jury lists)\n(quote) The jury coordinator shall prepare or cause to be prepared a list of each person disqualified or potentially disqualified as a prospective juror from jury service due to being a non-United States citizen, convicted of a felony, deceased, not a resident of this state, or not a resident of the county.\n(other) Sec.2: federal-court jury coordinators send lists of people disqualified from jury service (non-citizen, felony, deceased, non-resident) to the coordinator of elections, who forwards them to county administrators, who follow 2-2-106 or 2-2-141; list-sharing is a condition for giving voter lists to federal courts.\n(other) Sec.3: adds 2-2-106(c)(1)(D)-(E) address-verification sources: comparison with state agency records (welfare, public assistance) and commercial data (credit agencies).\n(other) Draft Sec.5-6 (removed in Chaptered): 2-7-116(a)(2) and (b)(2) voter-assistance records kept by officer of elections with the poll books. SA0807 deletes exactly these two sections.\n(other) Last section: effective on becoming law.\n(other) version: Draft 2500437 (Lundberg) and Draft 2505281 (Hensley): word-for-word identical text (only the sponsor line differs); both carry slots d and e plus Sec.3 and Sec.5-6.\n(other) version: SA0807 (Hensley): deletes Sections 5 and 6 and renumbers; no ID/citizenship text. Skeleton marks adopted=0.\n(other) version: Chaptered 2579542 (Pub. Ch. 939, as HB 2128): Sections 1-4 unchanged from the Draft; Draft Sections 5-6 are gone (consistent with SA0807); effective section renumbered Sec.5.\n(other) note: The enacted text is HB 2128's Chaptered text; slot d is a permissive database comparison (the coordinator 'may compare'), with a notice to the county election commission if evidence exists a voter is not a citizen -- no voter is required to show proof. Slot a/b/c: nothing on voter ID. The Chaptered file is a scan with OCR noise but the quoted sections read cleanly.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2022-03-22",
+      "body": "TN Senate",
+      "motion": "Senate committee: recommended for passage, 7-2 [version voted: Draft 2505281 (Senate text; identical to Draft 2500437). SA0807 not named in the motion, adoption not shown]",
+      "kind": "roll-call",
+      "yes": 7,
+      "no": 2,
+      "absent": 0,
+      "body_size": 9,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/SB2245/id/1174628",
+      "members": [
+        {
+          "name": "Brian Kelsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Ken Yager",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd Gardenhire",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Briggs",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Yarbro",
+          "vote": "nay"
+        },
+        {
+          "name": "Edward Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Sara Kyle",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Powers",
+          "vote": "yea"
+        },
+        {
+          "name": "Page Walley",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}
