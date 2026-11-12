@@ -44,6 +44,139 @@
         "fetched_at": "2026-11-04T14:14:55.234Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "eb753c1890382c44337bc537e229c9dd079e59727a52c4c2679a76d063fa3674",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB1175&year=2025&code=R",
+      "date": "2025-03-27",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1175-2025",
+      "act": "yea",
+      "motion": "Third Read and Passed with Amendments (H) - HPA 1 adopted AYES: 100 NOES: 51 PRESENT: 0 (House: HBs FOR THIRD READING HCS HB 1175, A.A.)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed with Amendments (H) - HPA 1 adopted AYES: 100 NOES: 51 PRESENT: 0 (House: HBs FOR THIRD READING HCS HB 1175, A.A.), 2025-03-27: yea (tally 100–51); census gate: none.",
+      "subjects": [
+        "bar on enforcing federal gun laws by state and local officials",
+        "$50,000 civil penalties on agencies and subdivisions",
+        "suits for injunctions by residents"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1175-2025.engrossed.pdf",
+          "sha256": "ab67707e14c64e50b9b9f0f9d83f1b3001c41f790fb19c7d786aba98c78d5f2e"
+        }
+      }
+    },
+    {
+      "id": "912da2f4d66f77dde1292d277305325ad6c68e24fddcdd6aecdfecce560eebe8",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB2928&year=2026&code=R",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-2928-2026",
+      "act": "yea",
+      "motion": "Third Read and Passed (H) (House: HBs 3rd READ - INFORMAL HB 2928)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HBs 3rd READ - INFORMAL HB 2928), 2026-03-05: yea (tally 148–0); census gate: near-unanimous.",
+      "subjects": [
+        "USCCA instructors qualify to certify concealed carry training"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2928-2026.engrossed.pdf",
+          "sha256": "2b7844e1ffff738d5d212f8cbbf955f7dfd5d828f09a1943bce12533a882c33c"
+        }
+      }
+    },
+    {
+      "id": "92ca5e59ef3330e2b7f0fbe6b8e31ea6371ad1960982e73b3bad0b369335f951",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB328&year=2025&code=R",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-328-2025",
+      "act": "yea",
+      "motion": "Third Read and Passed (H) (House: HBs FOR THIRD READING HCS HB 328)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HBs FOR THIRD READING HCS HB 328), 2025-04-10: yea (tally 106–45); census gate: none.",
+      "subjects": [
+        "concealed carry age lowered to eighteen",
+        "permit holders may use public transit while carrying",
+        "military pistol-qualification path to training certificate"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-328-2025.engrossed.pdf",
+          "sha256": "41b0d81a8aceeffd3d45f4c047675629a13bd0bf639014307bdf0a372f278044"
+        }
+      }
+    },
+    {
+      "id": "8661ab03aed902132816b2605867a4b326f4fe5958f7329e28d29f56b525a288",
+      "kind": "own-words",
+      "url": "https://laubingerformissouri.com",
+      "date": "2026-11-12",
+      "date_precision": "year",
+      "passage": "I am honored to have received the NRA's highest rating for new candidates, and an endorsement from the Missouri Right to Life.",
+      "note": "Campaign site statement about an NRA rating she received; page undated, date is the fetch date and unreliable.",
+      "subjects": [
+        "gun rights group rating",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.833Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fcbcd19b815c051c05e9dd0efbb9a738e2640755925a602a4dfb04b477d477a2",
+      "kind": "own-words",
+      "url": "https://laubingerformissouri.com",
+      "date": "2026-11-12",
+      "date_precision": "year",
+      "passage": "Preserving Constitutional Freedoms Including the 2nd Amendment",
+      "note": "Campaign site lists this as one of three things she says she is committed to; it is a heading line, not a full sentence. Page undated.",
+      "subjects": [
+        "Second Amendment",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.833Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -96,6 +229,33 @@
       "found": 1,
       "at": "2026-11-04T14:14:55.234Z",
       "by": "identity-mo-2026-11-04b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment (general statement)",
+        "gun sales background checks",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry without a permit",
+        "federal gun rules"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page https://house.mo.gov/MemberDetails.aspx?year=2026&district=117 (confirms Rep. Becky Laubinger, District 117, in office; bio has nothing on the subject)",
+        "campaign site https://laubingerformissouri.com (home page only; one Second Amendment line and an NRA rating line; no issue pages found on the subject beyond that)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia: blocked: https://ballotpedia.org/Becky_Laubinger (empty page / bot check); 2026 election page also blocked: https://ballotpedia.org/Missouri_House_of_Representatives_elections,_2026 (HTTP 202, empty); a search result lists her as the District 117 incumbent in the 2026 race",
+        "news search on name plus gun words: nothing naming her on the subject",
+        "blocked: https://dailyjournalonline.com/2025/08/06/state-reps-wright-and-laubinger-give-legislative-overviews/ (403)",
+        "blocked: https://www.kfmo.com/news/laubinger-shares-legislative-update-at-park-hills-leadington-chamber-luncheon (406)",
+        "not reviewed: https://kfmo.com/news/laubinger-announces-candidacy-for-117th-district (404)",
+        "2026 ballot status not confirmed by a fetched page (Ballotpedia blocked)"
+      ],
+      "found": 2,
+      "at": "2026-11-12T21:23:45.833Z",
+      "by": "source-collector"
     }
   ]
 }

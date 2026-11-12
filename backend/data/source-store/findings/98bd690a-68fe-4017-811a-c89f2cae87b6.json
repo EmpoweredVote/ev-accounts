@@ -1,6 +1,179 @@
 {
   "politician_id": "98bd690a-68fe-4017-811a-c89f2cae87b6",
-  "findings": [],
+  "findings": [
+    {
+      "id": "91c8a751e1be6a1d419cf5648cd5d41f84296bad2caa8d467f1c8fe64305c70f",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB1175&year=2025&code=R",
+      "date": "2025-03-27",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1175-2025",
+      "act": "nay",
+      "motion": "Third Read and Passed with Amendments (H) - HPA 1 adopted AYES: 100 NOES: 51 PRESENT: 0 (House: HBs FOR THIRD READING HCS HB 1175, A.A.)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed with Amendments (H) - HPA 1 adopted AYES: 100 NOES: 51 PRESENT: 0 (House: HBs FOR THIRD READING HCS HB 1175, A.A.), 2025-03-27: nay (tally 100–51); census gate: none.",
+      "subjects": [
+        "bar on enforcing federal gun laws by state and local officials",
+        "$50,000 civil penalties on agencies and subdivisions",
+        "suits for injunctions by residents"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1175-2025.engrossed.pdf",
+          "sha256": "ab67707e14c64e50b9b9f0f9d83f1b3001c41f790fb19c7d786aba98c78d5f2e"
+        }
+      }
+    },
+    {
+      "id": "8302dee32c05bed2718f74424ee81f3d7f4b4bc9fa39f8676ef12178ac6b0f4b",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB282&year=2023&code=R",
+      "date": "2023-04-17",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-282-2023",
+      "act": "nay",
+      "motion": "Third Read and Passed (H) (House: HB 282 HBs FOR THIRD READING)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HB 282 HBs FOR THIRD READING), 2023-04-17: nay (tally 102–45); census gate: none.",
+      "subjects": [
+        "concealed carry permit minimum age lowered to eighteen",
+        "carry on public transit allowed for permit holders",
+        "church and house of worship carry consent rule repealed",
+        "military pistol-qualification training route"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-282-2023.engrossed.pdf",
+          "sha256": "e5882fc078a239aefc01faf3f6b9567d04d41c7050879cd0f637ffcc5e12141e"
+        }
+      }
+    },
+    {
+      "id": "694fae06f1e0a2579fd50c5f558e05a63f14fab9fa621bc4c5213af4fe3a4478",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB328&year=2025&code=R",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-328-2025",
+      "act": "abstain",
+      "motion": "Third Read and Passed (H) (House: HBs FOR THIRD READING HCS HB 328)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HBs FOR THIRD READING HCS HB 328), 2025-04-10: abstain (tally 106–45); census gate: none.",
+      "subjects": [
+        "concealed carry age lowered to eighteen",
+        "permit holders may use public transit while carrying",
+        "military pistol-qualification path to training certificate"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-328-2025.engrossed.pdf",
+          "sha256": "41b0d81a8aceeffd3d45f4c047675629a13bd0bf639014307bdf0a372f278044"
+        }
+      }
+    },
+    {
+      "id": "00b84495a3a16d8fe81ad3f2167c82cfe8c8c375f22e132e630116b6318f2322",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB2401&year=2026&code=R",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-2401-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-HB-2401-2026 (LegiScan sponsor list): HB2401 (2026 Regular Session): Establishes provisions related to the safe storage of firearms.",
+      "subjects": [
+        "safe firearm storage offense",
+        "dealer must post storage warning",
+        "state suicide-prevention page on storage law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2401-2026.introduced.pdf",
+          "sha256": "3f6a3e8a1c478d690198458894a58aead43ddaefd12d954a31ccf3066b624e0c"
+        }
+      }
+    },
+    {
+      "id": "a117649c8b589d7826f5496854986401e89daefef2df934b951295a74ae4f744",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB94&year=2025&code=R",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-94-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-HB-94-2025 (LegiScan sponsor list): HB94 (2025 Regular Session): Prohibits persons from carrying firearms into parade zones.",
+      "subjects": [
+        "firearm carry ban in parade zones",
+        "concealed carry permit does not allow carry in parade zones",
+        "parade checkpoints with metal detectors"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-94-2025.introduced.pdf",
+          "sha256": "fac3172dfe559fa3c33feb6b514ed6115f3c92c1667cb89c531694d5826a781b"
+        }
+      }
+    },
+    {
+      "id": "418863e4b2f84a0ec98308f2d4307a25a9e912a22bba14c0683afb1bbbdc2012",
+      "kind": "own-words",
+      "url": "https://www.kctv5.com/2024/12/18/missouri-lawmaker-wants-outlaw-lethal-weapons-require-checkpoints-parades/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "passage": "The fact that they were able to even have guns in their backpacks on their persons around hundreds of thousands of people it is just crazy and there has to be an answer to that,",
+      "note": "Quoted by KCTV5 about the 2024 Kansas City rally shooting, explaining why he filed a bill barring firearms from parade zones and requiring screening at parades.",
+      "subjects": [
+        "no guns in parade zones",
+        "screening for guns at large public events",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.829Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -23,6 +196,34 @@
       "found": 0,
       "at": "2026-11-04T05:10:02.481Z",
       "by": "search-mo-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "guns at parades / crowded events",
+        "safe storage of firearms",
+        "bans on a type of firearm",
+        "background checks",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "Second Amendment general statements",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "official House member page https://house.mo.gov/MemberDetails.aspx?year=2026&district=036 (confirms District 36 representative; nothing on the subject)",
+        "campaign site https://upballot.com/Anthony-Ealy/issues/ (issues list has only a general public safety heading; nothing specific on the subject)",
+        "blocked: https://ballotpedia.org/Anthony_Ealy (empty page)",
+        "one news search on name plus gun words (one quote found)",
+        "news story https://upballot.com/Anthony-Ealy/news/2-kansas-city-area-legislators-file-gun-related-bills-in-missouri-after-parade-shooting (describes bill; no direct quote from him)",
+        "news story about 2026-11 arrest https://www.kctv5.com/2026/11/06/metro-area-state-representative-arrested-following-capitol-disturbance-held-with-no-bond/ (police account, not on the subject, not saved)",
+        "not reviewed: ontheissues.org, vote411, debate or interview video (none located)"
+      ],
+      "found": 1,
+      "at": "2026-11-12T21:23:45.829Z",
+      "by": "source-collector"
     }
   ]
 }

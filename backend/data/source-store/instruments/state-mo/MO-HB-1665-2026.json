@@ -1,0 +1,44 @@
+{
+  "id": "MO-HB-1665-2026",
+  "scope": "state:mo",
+  "title": "HB1665 (2026 Regular Session): Prohibits homeowners' associations and other similar associations from infringing on the rights of concealed carry permit holders",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB1665&year=2026&code=R",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/3867H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Brian Seitz",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9dc25356-37b8-45c7-b3b8-63b52265450f"
+    },
+    {
+      "name": "Matthew Overcast",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "35cabeb8-6828-4518-9ca3-48e5f5923f73"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1665-2026.introduced.pdf",
+      "sha256": "9437ec482eb1b0fc94fe77a924aeef492b1ba16b2150b694f84817c8aaad1cf9"
+    }
+  },
+  "operative_text": "Section 571.107 (RSMo): 3. (1) Notwithstanding any provision of this section to the contrary, no homeowners' association, condominium owners' association, property owners' association, master association, or any other similar superordinate entity shall, by rule, policy, covenant, deed, contract, or any other similar instrument or method, infringe upon the right to carry concealed firearms of any person who: (a) Is an owner or occupant of a condominium or house within or under the control, authority, limits, or oversight of any such association or entity; and (b) Is lawfully in possession of a valid concealed carry permit issued under sections 571.101 to 571.121, a concealed carry endorsement issued prior to August 28, 2013, or a valid concealed carry permit or endorsement issued by another state or a political subdivision of another state. (2) The prohibition on any infringement on the right to carry concealed firearms described in subdivision (1) of this subsection shall extend to privately owned property, common elements, limited common elements, parking areas, and all ingress and egress routes, paths, and areas regardless of use, purpose, activity, necessity, convenience, or alternative.\nSection 571.215 (RSMo): 3. (1) Notwithstanding any provision of this section to the contrary, no homeowners' association, condominium owners' association, property owners' association, master association, or any other similar superordinate entity shall, by rule, policy, covenant, deed, contract, or any other similar instrument or method, infringe upon the right to carry concealed firearms of any person who: (a) Is an owner or occupant of a condominium or house within or under the control, authority, limits, or oversight of any such association or entity; and (b) Is lawfully in possession of a valid Missouri lifetime or extended concealed carry permit. (2) The prohibition on any infringement on the right to carry concealed firearms described in subdivision (1) of this subsection shall extend to privately owned property, common elements, limited common elements, parking areas, and all ingress and egress routes, paths, and areas regardless of use, purpose, activity, necessity, convenience, or alternative."
+}

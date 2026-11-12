@@ -1,0 +1,44 @@
+{
+  "id": "MO-HB-2136-2026",
+  "scope": "state:mo",
+  "title": "HB2136 (2026 Regular Session): Modifies provisions relating to unlawful possession of a firearm",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB2136&year=2026&code=R",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/5343H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bob Titus",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3a9073dc-015c-4df9-b4f0-86e698fd6378"
+    },
+    {
+      "name": "Lisa Durnell",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b7ce8e06-f568-4135-bb06-25cf6ccb717b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2136-2026.introduced.pdf",
+      "sha256": "4b49ed5cf7e27898b49e6ce308b335631314f6e02ee346b08017e2edb51349f2"
+    }
+  },
+  "operative_text": "Section 571.070 (RSMo): A person commits the offense of unlawful possession of a firearm if such person knowingly has any firearm in his or her possession and:\nSection 571.070 (RSMo): (2) Such person is a fugitive from justice, is habitually in an intoxicated or drugged condition, or is currently adjudged mentally incompetent; or (3) Such person is not a citizen or lawful permanent resident of the United States.\nSection 571.070 (RSMo): 2. Unlawful possession of a firearm is a class C felony, unless a person has been convicted of a dangerous felony as defined in section 556.061, or the person has a prior conviction for unlawful possession of a firearm in which case it is a class B felony."
+}

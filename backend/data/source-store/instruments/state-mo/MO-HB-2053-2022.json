@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-2053-2022",
+  "scope": "state:mo",
+  "title": "HB2053 (2022 Regular Session): Includes certain retired judges in the exceptions to the offense unlawful use of a weapon",
+  "urls": [
+    "https://www.house.mo.gov/Bill.aspx?bill=HB2053&year=2022&code=R",
+    "https://www.house.mo.gov/billtracking/bills221/hlrbillspdf/3519H.02I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bill Owen",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0480ab1d-603e-47ba-a06f-581216533227"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2053-2022.introduced.pdf",
+      "sha256": "e73e493849745d1b1e40532536f0d2a0aa3c02a2df58296918fb10241ff75cff"
+    }
+  },
+  "operative_text": "Section 571.030 (RSMo): Subdivisions (3), (4), (6), (7), and (9) of subsection 1 of this section shall not apply to or affect any of the following persons, when such uses are reasonably associated with or are necessary to the fulfillment of such person's official duties, except as otherwise provided in this subsection: (5) A person retired from judiciary service as described in subdivision (4) of this subsection; (6) Current and former members of the general assembly;"
+}

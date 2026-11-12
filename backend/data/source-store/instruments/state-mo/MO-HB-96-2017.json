@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-96-2017",
+  "scope": "state:mo",
+  "title": "HB96 (2017 Regular Session): Allows persons authorized to carry firearms under chapter 571 to sue for certain injuries sustained on the property of business enterprises that voluntarily prohibit firearms",
+  "urls": [
+    "https://www.house.mo.gov/Bill.aspx?bill=HB96&year=2017&code=R",
+    "https://www.house.mo.gov/billtracking/bills171/hlrbillspdf/0523H.03I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nick Schroer",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b6dd336b-81d6-488c-93db-2473ced473b8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-96-2017.introduced.pdf",
+      "sha256": "9271f2bf17e40596e7e112c06e7c073ac7e55a92469fb334dc05a38af95f9b44"
+    }
+  },
+  "operative_text": "Section 571.069 (RSMo): 1. Any business enterprise electing to prohibit the possession of firearms or other arms by the placement of signs as authorized under section 571.107, or other provisions of chapter 571, shall assume custodial responsibility for the safety and defense of any person who is authorized to carry firearms or other arms under chapter 571 while such person is on the premises of the business enterprise.\nSection 571.069 (RSMo): 3. A person authorized to carry firearms or other arms under chapter 571 who is injured, suffers bodily injury or death, incurs economic loss or expense, or suffers property damage as a result of conduct breaching the duty to defend such person shall have a cause of action against a business entity prohibiting the possession of firearms or other arms under chapter 571.\nSection 571.069 (RSMo): 5. If a plaintiff is successful in a lawsuit under this section, then he or she shall be entitled to reasonable attorneys' fees, expert witness costs, and court costs.\nSection 571.069 (RSMo): 6. The statute of limitations for an action under this section shall be two years from the date of the occurrence giving rise to the damages, loss, or injury."
+}

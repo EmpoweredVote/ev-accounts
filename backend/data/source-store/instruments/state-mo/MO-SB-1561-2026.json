@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-1561-2026",
+  "scope": "state:mo",
+  "title": "SB1561 (2026 Regular Session): Modifies provisions relating to firearm accessories",
+  "urls": [
+    "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=874039",
+    "https://www.senate.mo.gov/26info/pdf-bill/intro/SB1561.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tracy McCreery",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "dfb23acf-0d76-4084-8c2a-90a51b5ef94e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1561-2026.introduced.pdf",
+      "sha256": "2df30d16da568ccc96bd4675a01be5602f5380bfb578da18d814777fd0c753e3"
+    }
+  },
+  "operative_text": "Section 571.010 (RSMo): (16) \"Rapid fire device\", any accessory, conversion kit, device, or tool that attaches to a semiautomatic firearm and allows the firearm to discharge two or more shots when the device is activated, or a manual or power driven device that, when attached to a semiautomatic firearm, increases the rate of fire of that firearm;\nSection 571.020 (RSMo): 1. A person commits an offense if such person knowingly possesses, manufactures, transports, repairs, or sells: (6) Any of the following in violation of federal law: (a) A machine gun; (b) A short-barreled rifle or shotgun; (c) A firearm silencer; (d) A switchblade knife; or (7) A rapid fire device.\nSection 571.020 (RSMo): 3. An offense pursuant to subdivision (1), (2), (3), (6), or (7) of subsection 1 of this section is a class D felony; a crime pursuant to subdivision (4) or (5) of subsection 1 of this section is a class A misdemeanor."
+}

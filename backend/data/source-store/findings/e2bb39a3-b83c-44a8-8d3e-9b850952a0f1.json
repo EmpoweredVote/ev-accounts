@@ -104,6 +104,71 @@
         "fetched_at": "2026-11-04T04:58:13.156Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "49652e2b751b2e7fb675cf4303d68910872ee339c9e0515261a34b8f7c008b13",
+      "kind": "own-words",
+      "url": "https://ago.mo.gov/attorney-general-hanaway-sues-atf-to-defend-the-second-amendment-and-stop-unlawful-federal-overreach/",
+      "date": "2026-09-08",
+      "date_precision": "day",
+      "passage": "Law and order and the Second Amendment go hand in hand. A government that respects the Constitution has empowered, law‑abiding citizens who can protect themselves and their families. It does not paper over rights with red tape,",
+      "note": "Quote in the Attorney General's office release announcing the NFA suit; she speaks of gun rights and red tape.",
+      "subjects": [
+        "Second Amendment rights",
+        "federal registration of suppressors and short-barrelled rifles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.848Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5bbcebc33e425ec3c1aea6480a602bf6a07167c26ca67a3247fe3f5d317ff879",
+      "kind": "own-words",
+      "url": "https://ago.mo.gov/attorney-general-hanaway-sues-atf-to-defend-the-second-amendment-and-stop-unlawful-federal-overreach/",
+      "date": "2026-09-08",
+      "date_precision": "day",
+      "passage": "The ATF’s heavy-handed restrictions on suppressors threaten lawful firearm use and undermine the rights protected by the Second Amendment.",
+      "note": "Second quote in the same release, about ATF restrictions on suppressors.",
+      "subjects": [
+        "repeal National Firearms Act rules on suppressors",
+        "federal agency gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.848Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "257870ff9b85a052f683fb59b8e503f7927f3abfddc2e247572ec1bb899a4524",
+      "kind": "record",
+      "url": "https://ago.mo.gov/attorney-general-hanaway-sues-atf-to-defend-the-second-amendment-and-stop-unlawful-federal-overreach/",
+      "date": "2026-09-08",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Missouri v. ATF (Marshak), E.D. Mo. 4:26-cv-01430: suit to strike National Firearms Act registration rules for suppressors and short-barrelled rifles",
+      "note": "As Attorney General she filed a federal suit asking a court to declare the NFA registration rules for untaxed suppressors and short-barrelled rifles unconstitutional and to bar their enforcement.",
+      "subjects": [
+        "repeal National Firearms Act rules on suppressors",
+        "short-barrelled rifles",
+        "federal agency gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.848Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -131,6 +196,28 @@
       "found": 5,
       "at": "2026-11-04T04:58:13.156Z",
       "by": "search-mo-2026-11-03"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "federal registration of suppressors and short-barrelled rifles",
+        "Second Amendment rights",
+        "federal agency gun rules"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site: Missouri Attorney General office, identifies Catherine L. Hanaway as Missouri Attorney General; site search for Second Amendment returned one release by her and several by her predecessor",
+        "sponsor list: covered by LegiScan bulk check",
+        "blocked: https://ballotpedia.org/Catherine_Hanaway",
+        "web news search on name plus gun words: gun-news outlets report the NFA suit; no other own-words found",
+        "not reviewed: campaign site",
+        "not reviewed: https://www.supremecourt.gov/docket/docketfiles/html/public/26-34.html",
+        "not reviewed: interviews, floor remarks, questionnaires, newsletters"
+      ],
+      "found": 3,
+      "at": "2026-11-12T21:23:45.848Z",
+      "by": "source-collector"
     }
   ]
 }

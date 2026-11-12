@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-1185-2021",
+  "scope": "state:mo",
+  "title": "HB1185 (2021 Regular Session): Changes the law regarding the offense of unlawful use of weapons",
+  "urls": [
+    "https://www.house.mo.gov/Bill.aspx?bill=HB1185&year=2021&code=R",
+    "https://www.house.mo.gov/billtracking/bills211/hlrbillspdf/2411H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bennie Cook",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "818e7b9c-6fc9-4ef9-aba8-3fc6b3425f26"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1185-2021.introduced.pdf",
+      "sha256": "7a575f759aa13f857159ff61c83c3c13bbf13994420a85e21497887f749941d4"
+    }
+  },
+  "operative_text": "Section 571.030 (RSMo): 1. A person commits the offense of unlawful use of weapons, except as otherwise provided by sections 571.101 to 571.121, if he or she knowingly: … (11) Possesses a firearm while also knowingly in possession of a controlled substance that is sufficient for a felony violation of section 579.015; or (12) Possesses a stolen firearm while also knowingly in possession of a controlled substance that is sufficient for a felony violation of section 579.015.\nSection 571.030 (RSMo): 8. A person who commits the offense of unlawful use of weapons under: … (1) Subdivision (2), (3), or (4) of subsection 1 of this section shall be guilty of a class E felony;\nSection 571.030 (RSMo): (5) Subdivision (11) of subsection 1 of this section shall be guilty of a class C felony; or (6) Subdivision (12) of subsection 1 of this section shall be guilty of a class B felony. A person convicted under subdivision (12) of subsection 1 of this section shall be required to serve a minimum prison term of eighty-five percent of the sentence imposed by the court or, if the person attains seventy years of age, to serve at least forty percent of the sentence imposed by the court, whichever occurs first."
+}

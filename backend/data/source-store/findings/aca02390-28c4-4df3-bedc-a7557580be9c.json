@@ -85,6 +85,172 @@
         "fetched_at": "2026-11-04T14:14:55.236Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "7aa28baca2e227eef7b9b520b7a6f00d17e390d211b53cd1cf1d8c6cb98b813e",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=98",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-1061-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-1061-2026 (LegiScan sponsor list): SB1061 (2026 Regular Session): Creates provisions relating to firearms discrimination.",
+      "subjects": [
+        "no public contracts with firearm-industry boycotters",
+        "written no-discrimination verification for firearm businesses"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1061-2026.introduced.pdf",
+          "sha256": "5e4a6207e61a1e377dfa0226a4a4402231d6dab4d51c2cad5c3bd8f8b67355a8"
+        }
+      }
+    },
+    {
+      "id": "ef97d724bc44734755a735c5c9d135dbc070065e66df6a1845a1ac2f4a88ef7d",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=100",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-1128-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-1128-2026 (LegiScan sponsor list): SB1128 (2026 Regular Session): Enacts provisions relating to firearm privacy.",
+      "subjects": [
+        "no government registry of firearms or owners",
+        "no firearm-retailer payment category codes",
+        "attorney general enforcement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1128-2026.introduced.pdf",
+          "sha256": "900d88ec8a192943f9197a547087f5c6cc933f7138ba1e99d826e79203e5d416"
+        }
+      }
+    },
+    {
+      "id": "1829b3eb42b4d2df9a65ead516f460ecdde9cadacbabb1f9bf20c052208e00b9",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=103",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-1129-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-1129-2026 (LegiScan sponsor list): SB1129 (2026 Regular Session): Modifies provisions relating to concealed carry permits.",
+      "subjects": [
+        "digital copy of concealed carry permit allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1129-2026.introduced.pdf",
+          "sha256": "d7c60cbea62417536687b0f2c6eeb4c55583888822da936561a56c46ed13355c"
+        }
+      }
+    },
+    {
+      "id": "2064a48263f8712a3deaf4a4f190b0cbacde4e619833ddaa2f49be0f3a4d17b1",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/newsDetails?id=679",
+      "date": "2023-02-09",
+      "date_precision": "day",
+      "passage": "This is an infringement on our right to keep and bear arms, and I will continue to do all I can to protect our second amendment rights.",
+      "note": "In her Senate Capitol Report, she calls the federal agency's pistol-brace rule an infringement on gun rights and says she co-signed a letter to the state attorney general urging him to push back on it.",
+      "subjects": [
+        "federal pistol-brace rule",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.893Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f9718362836cfd27ea24dabd75f1a67af4874a7eb53779e28d1468c1ae459f01",
+      "kind": "own-words",
+      "url": "https://www.thepitchkc.com/?p=814674",
+      "date": "2024-03-06",
+      "date_precision": "day",
+      "passage": "As a carrying woman, mom, and mother, I will continue to stand up for our Second Amendment rights so we all can defend our families from violent criminals,",
+      "note": "A news column quotes her Facebook post made after the Kansas City parade shooting; she says taking away Second Amendment rights would embolden criminals. The column is by a critic; only her quoted words are saved.",
+      "subjects": [
+        "Second Amendment rights",
+        "carry a gun for self-defense"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.893Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "507e9f59431a923f60fb225ee394d819200ccbf03e14a1fdb00735af04cd95bd",
+      "kind": "own-words",
+      "url": "https://www.thepitchkc.com/?p=814674",
+      "date": "2024-03-06",
+      "date_precision": "day",
+      "passage": "It basically kind of goes along with the stand your ground laws. It just deals with the civil liability. If you are found not guilty, just strengthens that language just a little bit. It's one sentence.",
+      "note": "Quoted in a news column: her explanation to a Senate committee of SB 989, which ends civil liability for conduct found justified.",
+      "subjects": [
+        "stand your ground",
+        "civil liability after justified shooting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.893Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3810efee6345a48a59722afad62677768c0ebf306db0c1032a13d0a043d01866",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/BillTracking/Bills/BillSearch?Year=2024&district=32&LastName=Carter",
+      "date": "2024-02-28",
+      "date_precision": "day",
+      "instrument_id": "MO-SB-989-2024",
+      "act": "sponsor",
+      "note": "She sponsored SB 989, the 'Keep Your Ground Act', which says no one is civilly liable for damages from conduct found justified under law (committee hearing 2024-02-28, per the news column).",
+      "subjects": [
+        "stand your ground",
+        "civil liability after justified shooting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.893Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -127,6 +293,38 @@
       "found": 1,
       "at": "2026-11-04T14:14:55.236Z",
       "by": "identity-mo-2026-11-04b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment rights",
+        "federal pistol-brace rule",
+        "stand your ground / civil liability after justified shooting",
+        "gun registry ban",
+        "background checks",
+        "assault-style weapons",
+        "red flag orders",
+        "concealed carry"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Missouri Senate roster https://www.senate.mo.gov/senators/ confirms Jill Carter, District 32, sitting",
+        "official Senate page https://www.senate.mo.gov/Senators/Member?id=273 (no gun content on page; news list searched through web search)",
+        "Senate news pages: Capitol Report 2023-02-09 (gun content found); 2025 Legislative Champion release (nothing on the subject)",
+        "Missouri Senate bill search 2024 for Carter (SB 989 found)",
+        "sponsor list 2026: covered by LegiScan bulk check",
+        "blocked: https://ballotpedia.org/Jill_Carter",
+        "blocked: https://missouriindependent.com/2026/02/10/missouri-senate-bill-would-ban-keeping-lists-of-privately-owned-firearms/",
+        "blocked: https://www.yahoo.com/news/missouri-republican-bill-could-shield-185707987.html",
+        "blocked: https://www.yahoo.com/news/missouri-lawmakers-weigh-anti-red-171828832.html",
+        "blocked: https://www.myleaderpaper.com/news/state/senate-bill-would-ban-keeping-lists-of-privately-owned-firearms/article_13be6704-e2d5-56ac-977f-ca704b10b0fe.html",
+        "news search on name plus gun words (two web searches); a 2026 hearing quote on SB 1128 appears only in the blocked news pages, so not saved",
+        "not reviewed: ontheissues.org, vote411, campaign site (no separate campaign site found)"
+      ],
+      "found": 4,
+      "at": "2026-11-12T21:23:45.893Z",
+      "by": "source-collector"
     }
   ]
 }

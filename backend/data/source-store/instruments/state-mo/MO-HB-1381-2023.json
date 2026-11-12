@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-1381-2023",
+  "scope": "state:mo",
+  "title": "HB1381 (2023 Regular Session): Modifies the definition of rifle",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB1381&year=2023&code=R",
+    "http://reflect.legiscan.com/Proxy.php"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michael Burton",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e87ff38e-7a43-4eed-adee-89b567143bcd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1381-2023.introduced.pdf",
+      "sha256": "30aae750988ac279014ee9288c6212a1d55fe0756de586497cc5e5d24eb6b247"
+    }
+  },
+  "operative_text": "Section 571.010 (RSMo): \"Rifle\", any firearm designed or redesigned, made or remade, and intended to be fired from the shoulder, and designed or redesigned and made or remade to use the energy of an explosive in a fixed metallic cartridge to fire only a single projectile through a rifled bore by a single function of the trigger: (a) For purposes of this definition, the term \"designed or redesigned, made or remade, and intended to be fired from the shoulder\" shall include a firearm that is equipped with an accessory, component, or other rearward attachment that provides surface area that allows the firearm to be fired from the shoulder, provided other factors, as described in paragraph (b) of this subdivision, indicate that the firearm is designed, made, and intended to be fired from the shoulder; (b) When a firearm provides surface area that allows the firearm to be fired from the shoulder, the following factors shall also be considered in determining whether the firearm is designed, made, and intended to be fired from the shoulder: a. Whether the firearm has a weight or length consistent with the weight or length of similarly designed rifles; c. Whether the firearm is equipped with sights or a scope with eye relief that requires the firearm to be fired from the shoulder in order to be used as designed;"
+}

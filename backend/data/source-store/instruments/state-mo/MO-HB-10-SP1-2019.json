@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-10-SP1-2019",
+  "scope": "state:mo",
+  "title": "HB10 (2019 1st Extraordinary Session): Modifies provisions relating to the transport and storage of firearms",
+  "urls": [
+    "https://www.house.mo.gov/Bill.aspx?bill=HB10&year=2019&code=S1",
+    "https://www.house.mo.gov/billtracking/bills193/hlrbillspdf/2556H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Gretchen Bangert",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d3e2f42f-45bf-4fbb-aa05-8264ee7e94c7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-10-SP1-2019.introduced.pdf",
+      "sha256": "a1f459ebd5baa3331a72e86cd4e953b47f58614dcb9f440489ed73be87be49ca"
+    }
+  },
+  "operative_text": "Section 571.030 (RSMo): 3. Subdivision (1) of subsection 1 of this section does not apply to any person nineteen years of age or older or eighteen years of age or older and a member of the United States Armed Forces, or honorably discharged from the United States Armed Forces, transporting a concealable firearm in the passenger compartment of a motor vehicle while the person is in the motor vehicle or when transporting a firearm that is unloaded and in a locked container, so long as such firearm is otherwise lawfully possessed; nor when the actor is also in possession of an exposed firearm or projectile weapon for the lawful pursuit of game; or is in his or her dwelling unit or upon premises over which the actor has possession, authority or control; or is traveling in a continuous journey peaceably through this state if the provisions of subdivision (2) of subsection 6 of this section are met.\nSection 571.030 (RSMo): 6. (2) Any firearm, other than a handgun, being transported or stored in a motor vehicle shall be unloaded and stored in a locked case, a locked trunk, or in another type of secure container. A handgun may be transported within the cabin of a motor vehicle as long as it is under the direct control of the person carrying the handgun. If a handgun is left unattended in a motor vehicle, it shall be unloaded and stored in a locked case, locked trunk, or in another type of secure container."
+}

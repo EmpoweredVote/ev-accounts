@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-1532-2025",
+  "scope": "state:mo",
+  "title": "HB1532 (2025 Regular Session): Modifies provisions relating to firearms",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB1532&year=2025&code=R",
+    "https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/1504H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Eric Woods",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3ed359ed-821f-4a77-acda-5edff145c314"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1532-2025.introduced.pdf",
+      "sha256": "a31fc824cc4a66b1bd708fcef189af57cae95f254ced345b1b5a87be10b251b3"
+    }
+  },
+  "operative_text": "Section 571.030 (RSMo): Carries concealed upon or about his or her person a knife, a firearm, a blackjack or any other weapon readily capable of lethal use; or\nSection 571.030 (RSMo): Subdivision (1), (6), (7), or (8) of subsection 1 of this section shall be guilty of a class B misdemeanor;\nSection 571.101 (RSMo): Submits proof that the applicant satisfies the requirements of section 571.111;\nSection 571.101 (RSMo): An affirmation that the applicant has satisfied the requirements of section 571.111;\nSection 571.101 (RSMo): In addition to the completed application, the applicant for a concealed carry permit must also submit the following with the application: (1) Proof that the applicant satisfies the requirements of section 571.111; and\nSection 571.117 (RSMo): Revocation petition forms shall be provided by the clerk of the small claims court free of charge to any person:"
+}

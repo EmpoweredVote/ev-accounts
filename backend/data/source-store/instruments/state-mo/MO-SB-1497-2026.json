@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-1497-2026",
+  "scope": "state:mo",
+  "title": "SB1497 (2026 Regular Session): Modifies provisions relating to extreme risk orders of protection",
+  "urls": [
+    "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=74582",
+    "https://www.senate.mo.gov/26info/pdf-bill/intro/SB1497.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Angela Mosley",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "33fb91bf-0128-4953-8ec4-cf23ff32f2dd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1497-2026.introduced.pdf",
+      "sha256": "6468328715be32ea37ab29341f8e945848bf0a8965924a91c64da3e417c9e031"
+    }
+  },
+  "operative_text": "Section 455.096 (RSMo): 1. In addition to any other jurisdictional grounds provided by law, a court shall have jurisdiction to enter an extreme risk order of protection restraining or enjoining the respondent from possessing any firearms. 2. (1) Upon the filing of a verified petition by a parent, teacher, or school administrator of the respondent or a law enforcement officer or agency pursuant to this section, and for good cause shown in the petition, the court may immediately issue an ex parte order of protection. An immediate and present danger of the respondent causing personal injury to himself or herself or others shall constitute good cause shown for purposes of this section. An ex parte order of protection entered by the court shall take effect when entered and shall remain in effect until there is valid service of process and a hearing is held on the motion within fifteen days of the filing of the petition. 3. Upon issuance of any ex parte order of protection under subsection 2 of this section, the court shall order the respondent to surrender to the local law enforcement agency where the respondent resides, all firearms in the respondent's custody, control, or possession. The law enforcement officer serving any ex parte order of protection shall provide the respondent to the order an opportunity to comply with the order by surrendering all firearms in his or her custody, control, or possession. If the respondent does not comply, the law enforcement officer serving the order shall conduct a lawful search and seizure of any firearms of the respondent and in any area where probable cause exists that a firearm to be surrendered pursuant to the order is located. The law enforcement agency shall hold all surrendered firearms until a hearing is held on the petition for the extreme risk order of protection. 4. Not later than fifteen days after the filing of a verified petition that meets the requirements of this section, a hearing shall be held unless the court deems, for good cause shown, that a continuance should be granted. At the hearing, if the petitioner has proved the allegation that the respondent poses a significant danger to himself or herself or others by a preponderance of the evidence, the court shall issue a full extreme risk order of protection for a period of time of one year. 5. Upon issuance of any full extreme risk order of protection under subsection 4 of this section, the court shall order the respondent to surrender to the local law enforcement agency where the respondent resides, all firearms in the respondent's custody, control, or possession. If the respondent has been identified in the petition as being required to carry a firearm as a condition of the respondent's employment, the court shall notify the respondent's employer of the existence of the order. If the respondent holds a concealed carry permit pursuant to section 571.101, the court shall order a revocation of the concealed carry permit.\nSection 455.096 (RSMo): 6. If an extreme risk order of protection is terminated or expires without renewal, a law enforcement agency holding any firearm that has been surrendered pursuant to subsections 3 and 5 of this section shall return any surrendered firearm requested by a respondent only after confirming, through a background check administered by the state highway patrol under section 43.543, that the respondent is currently eligible to own or possess firearms under federal and state law and after confirming with the court that the extreme risk order of protection has terminated or has expired without renewal."
+}

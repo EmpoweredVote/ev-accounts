@@ -1,0 +1,44 @@
+{
+  "id": "MO-HB-1806-2026",
+  "scope": "state:mo",
+  "title": "HB1806 (2026 Regular Session): Creates the offense of unlawful use of a firearm by a minor",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB1806&year=2026&code=R",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/5490H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mark Sharp",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "bbc1d262-cfc6-4f5f-8d7f-5aa0fc2415db"
+    },
+    {
+      "name": "Marty Murray",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "650a7d81-583a-4bc3-82e7-1579f15012df"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1806-2026.introduced.pdf",
+      "sha256": "2fcfcfa3890ede95061354b11d4f1b1ceefe4020c834466c63589a9713063ced"
+    }
+  },
+  "operative_text": "Section 571.034 (RSMo), new: 571.034. 1. A person under eighteen years of age commits the offense of unlawful use of a firearm by a minor if such person knowingly carries concealed upon or about his or her person a firearm. 2. The offense of unlawful use of a firearm by a minor is a class D misdemeanor. 3. Upon conviction or a plea of guilty for an offense under this section, the court shall order the immediate confiscation of the firearm. The court may issue any other order allowed under section 571.095 in felony cases, and the procedures outlined in section 571.095 shall apply."
+}

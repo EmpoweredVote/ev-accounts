@@ -1,0 +1,39 @@
+{
+  "id": "MO-HB-1708-2024",
+  "scope": "state:mo",
+  "title": "HB1708 (2024 Regular Session): Changes the law regarding firearm concealed carry permits",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB1708&year=2024&code=R",
+    "https://documents.house.mo.gov/billtracking/bills241/hlrbillspdf/3311H.01I.pdf",
+    "https://documents.house.mo.gov/billtracking/bills241/hlrbillspdf/3311H.02C.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Adam Schnelting",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "a6b74a24-05e3-48a1-92ff-3cdf4c9b7920"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1708-2024.introduced.pdf",
+      "sha256": "b7bc077ea94928db6e73d9c6b474c4520f33ed5c46ceb3117d91d6bd036b3877"
+    }
+  },
+  "operative_text": "Section 571.101 (RSMo): (1) Is eighteen years of age or older, is a citizen or permanent resident of the United States, and either: (a) Has assumed residency in this state; or (b) Is a member of the United States Armed Forces stationed in Missouri or the spouse of such member of the military;\nSection 571.107 (RSMo): 3. Notwithstanding any provision of this chapter or chapter 70, 577, or 578 to the contrary, a person carrying a firearm concealed on or about his or her person who is lawfully in possession of a valid concealed carry permit or endorsement shall not be prohibited or impeded from accessing or using any publicly funded transportation system and shall not be harassed or detained for carrying a concealed firearm on the property, vehicles, or conveyances owned, contracted, or leased by such systems that are accessible to the public.\nSection 571.030 (RSMo): (5) A person retired from judiciary service as described in subdivision (4) of this subsection lawfully in possession of a valid concealed carry permit or endorsement; (6) Current and former members of the general assembly lawfully in possession of a valid concealed carry permit or endorsement;\nSection 571.030 (RSMo): 1. A person commits the offense of unlawful use of weapons, except as otherwise provided by sections 571.101 to 571.121 and sections 571.205 to 571.230, if he or she knowingly:\nSection 70.441 (RSMo): (11) Except as otherwise provided under section 571.107, no weapon or other instrument intended for use as a weapon may be carried in or on any facility or conveyance, except for law enforcement personnel.\nSection 577.703 (RSMo): (3) Persons carrying a concealed firearm who lawfully possess a valid concealed carry permit or endorsement in accordance with sections 571.101 to 571.126 or sections 571.205 to 571.230.\nSection 577.712 (RSMo): 2. Except as otherwise provided by section 571.107, it is unlawful for any person to carry a deadly or dangerous weapon or any explosives or hazardous material into a terminal or aboard a bus."
+}

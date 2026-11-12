@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-1128-2026",
+  "scope": "state:mo",
+  "title": "SB1128 (2026 Regular Session): Enacts provisions relating to firearm privacy",
+  "urls": [
+    "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=100",
+    "https://www.senate.mo.gov/26info/pdf-bill/intro/SB1128.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jill Carter",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "aca02390-28c4-4df3-bedc-a7557580be9c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1128-2026.introduced.pdf",
+      "sha256": "900d88ec8a192943f9197a547087f5c6cc933f7138ba1e99d826e79203e5d416"
+    }
+  },
+  "operative_text": "Section 314.405 (RSMo): 3. Except for those records kept during the regular course of a criminal investigation and prosecution, or as otherwise required by law, no government entity or official and no agent or employee of a government entity shall knowingly keep or cause to be kept any list, record, or registry of privately owned firearms or the owners of those firearms.\nSection 314.405 (RSMo): 4. No payment card network shall require or incentivize the use of a merchant category code in a manner that distinguishes a firearm retailer from other retailers.\nSection 314.405 (RSMo): 5. No covered entity shall assign a firearm retailer a merchant category code that distinguishes the firearm retailer from other retailers.\nSection 314.405 (RSMo): 6. The attorney general shall investigate reasonable allegations that a person or entity, including a government entity, has violated the provisions of this section and, upon finding a violation, provide written notice to the person or entity believed to have committed the violation."
+}

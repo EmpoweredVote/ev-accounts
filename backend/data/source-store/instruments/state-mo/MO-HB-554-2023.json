@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-554-2023",
+  "scope": "state:mo",
+  "title": "HB554 (2023 Regular Session): Changes the law regarding firearms by repealing certain stand your ground provisions and requiring a permit to purchase firearms",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB554&year=2023&code=R",
+    "http://reflect.legiscan.com/Proxy.php"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Maggie Nurrenbern",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6a38e290-dfac-4227-b013-2a38d747aad1"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-554-2023.introduced.pdf",
+      "sha256": "415cbf922180e1710fb34ac2a8356528d774daf27d54e4d6ca57dc038743d56e"
+    }
+  },
+  "operative_text": "Section 571.011 (RSMo): In order to purchase a firearm in this state, a person shall first obtain a firearm purchase permit issued by the sheriff's department in the county in which the person resides. Permit applications shall be available in each county sheriff's department, and the secretary of state shall administer a website allowing for electronic submission of application materials. Firearm purchase permits issued under this section shall be valid for a period of ten years.\nSection 571.011 (RSMo): 5. The following persons shall not be issued a firearm purchase permit: (1) Any person ineligible to own a firearm under the laws of this state; (2) Any person who is under an order of protection due to domestic violence, stalking, or a sexual offense; (3) Any person who has multiple charges for violent felonies or misdemeanors, at the discretion of the sheriff; (4) Any person on the Federal Bureau of Investigation's terrorist screening database, also known as the watchlist; (5) Any person listed by the Federal Bureau of Investigation as a member of a violent criminal gang; (6) Any person who has not completed a certified firearm safety course; (7) Any person having a persistent history of aggressive or self-destructive behavior as documented by a psychiatrist, psychologist, counselor, or social worker; or (8) Any person who has not passed a federal background check.\nSection 571.020 (RSMo): 2. A person commits an offense if, with the purpose to manufacture or assemble a firearm or components that can be assembled into a firearm, the person manufactures, assembles, or purchases: (1) A firearm frame or firearm receiver that is not imprinted with a serial number registered with a federally licensed manufacturer; or (2) A kit or combination of parts from which a firearm without a serial number may be readily manufactured or otherwise assembled but that does not have the capacity to function as a firearm unless manufactured or otherwise assembled. 3. A person commits an offense if, with the intention to distribute over the Internet or otherwise, the person distributes digital instructions in the form of computer-aided design files or other code that can automatically program a three- dimensional printer or similar device to produce a firearm or to complete a firearm from an unfinished frame or receiver.\nSection 571.060 (RSMo): (4) Knowingly delivers any firearm, incidental to a sale, without withholding delivery of the firearm for at least seventy-two hours after application for its purchase was made. 2. Unlawful transfer of weapons under subdivision (1) of subsection 1 of this section is a class E felony. Unlawful transfer of weapons under subdivisions (2) and (3) of subsection 1 of this section is a class A misdemeanor. Unlawful transfer of weapons under subdivision (4) of subsection 1 of this section punishable with a fine in an amount of two thousand dollars for a first violation, four thousand dollars for a second violation, and ten thousand dollars for a third or subsequent violation.\nSection 571.030 (RSMo): (1) Carries concealed upon or about his or her person a knife, a firearm, a blackjack or any other weapon readily capable of lethal use;\nSection 563.031 (RSMo): 3. A person does not have a duty to retreat from a dwelling, residence, or vehicle where the person is not unlawfully entering or unlawfully remaining. A person does not have a duty to retreat from private property that is owned or leased by such individual."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-1273-2024",
+  "scope": "state:mo",
+  "title": "SB1273 (2024 Regular Session): Modifies provisions relating to employer liability when prohibiting firearms",
+  "urls": [
+    "https://www.senate.mo.gov/24info/BTS_Web/Bill.aspx?SessionType=R&BillID=1625",
+    "https://www.senate.mo.gov/24info/pdf-bill/intro/SB1273.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nick Schroer",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b6dd336b-81d6-488c-93db-2473ced473b8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1273-2024.introduced.pdf",
+      "sha256": "470dd438b2a0fc93b5eb7c6251e3dd9735110f8d3ae155ec8d3ff2c8f7db4d86"
+    }
+  },
+  "operative_text": "Section 571.850 (RSMo, new): No employer shall prohibit any employee from having a firearm in the employee's vehicle or the company's vehicle while the employee is conducting activities within the scope of his or her employment either on the employer's property or while the employee is conducting activities within the scope of his or her employment off the employer's premises. Any employer that violates the provisions of this section shall be held civilly liable to the employee for any damages to person or property and all court costs and reasonable attorney's fees."
+}

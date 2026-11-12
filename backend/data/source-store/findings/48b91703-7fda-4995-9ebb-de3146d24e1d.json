@@ -171,6 +171,110 @@
         "fetched_at": "2026-11-04T14:14:55.222Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "862a854183d28420d444dd4c2b30490856569e7637210c9e9b77779adbdb0c0f",
+      "kind": "own-words",
+      "url": "https://gulftoday.ae/opinion/2025/02/06/missouri-governor-mike-kehoe-wants-to-fight-crime",
+      "date": "2024-09",
+      "date_precision": "month",
+      "passage": "Every time we put more restrictions on a citizen's Second Amendment rights, we actually hurt the citizens who are trying to do this law-abiding and legally,",
+      "note": "Quoted in a Tribune News Service story (republished by Gulf Today) from a fall 2024 campaign debate; the story says he tied it to gang members in St. Louis not buying guns at stores. Debate date from search summary, not confirmed on the page.",
+      "subjects": [
+        "Second Amendment and gun rights",
+        "limits on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fb9ed4b1a46fdd842b6c5c6784155c1652440a65568d3da4a36f3028a6f9a603",
+      "kind": "own-words",
+      "url": "https://www.bearingarms.com/camedwards/2025/02/05/missouri-democrats-cry-foul-as-governor-addresses-crime-without-gun-control-n1227590",
+      "date": "2025-02-05",
+      "date_precision": "day",
+      "passage": "does not agree that addressing crime means further restricting the Constitutional rights of Missourians,” adding, “He believes those who commit crimes with firearms should be punished, not law-abiding Missourians.",
+      "note": "Statement from the governor's office (a spokesperson, in his name) as relayed by a gun-rights news site quoting the Kansas City Star; says crime policy should not mean more limits on gun rights and that those who commit crimes with guns should be punished.",
+      "subjects": [
+        "limits on gun rights to address crime",
+        "Second Amendment and gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b73f3ae078de74a0b4ed6ba81d9d08e3dde5ce1e4bffb06b880aea6b2ea0a1a7",
+      "kind": "own-words",
+      "url": "https://www.alloutdoor.com/?p=113961",
+      "date": "2016-06-30",
+      "date_precision": "day",
+      "passage": "I fully expect that we will override the governor’s veto in September when we reconvene for our annual veto session.",
+      "note": "As Senate majority floor leader, quoted by a gun-news blog on Gov. Nixon's veto of SB 656 (carry a concealed gun without a permit); he also said the issue was a priority for his caucus and passed the Senate by an overwhelming vote.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e04b4d3c1c30e89b3b0055d7199b427ceb9a04bcd7bb4e06a20ae6da4c920312",
+      "kind": "own-words",
+      "url": "https://www.newstribune.com/news/2016/sep/15/battle-over-guns-voter-id-may-not-be-over/",
+      "date": "2016-09-15",
+      "date_precision": "day",
+      "passage": "I probably had more law enforcement officers in my area say they liked the bill than said they didn't like the bill.",
+      "note": "Quoted in a News Tribune story after the veto override of the permitless concealed-carry bill, answering police-group opposition.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "01b6c1dce9b6033571f84f7c05e6c2420fe33c85bf1e6b5429e9cf8f6ed6e5a7",
+      "kind": "record",
+      "url": "https://www.newstribune.com/news/2016/sep/15/battle-over-guns-voter-id-may-not-be-over/",
+      "date": "2016-09-14",
+      "date_precision": "day",
+      "instrument_id": "MO-SB-656-2016",
+      "act": "yea",
+      "motion": "Senate vote to override the governor's veto of SB 656, allowing concealed carry without a permit",
+      "note": "A news story reports he voted with the majority to override Gov. Nixon's veto on all bills where an override was requested, including the permitless concealed-carry bill (Senate vote 24-6 per other coverage). Official Senate journal not fetched.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.935Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -226,6 +330,37 @@
       "found": 2,
       "at": "2026-11-04T14:14:55.222Z",
       "by": "identity-mo-2026-11-04b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment and gun rights",
+        "carry a gun without a permit",
+        "limits on gun rights to address crime",
+        "concealed carry on public transit and in places of worship",
+        "armed school staff",
+        "background checks",
+        "assault-style weapons",
+        "red-flag orders",
+        "permits to buy"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sitting governor of Missouri: confirmed by the governor's official site https://governor.mo.gov/ and news stories naming him in office",
+        "official site: https://governor.mo.gov/search?search_api_fulltext=second+amendment returned no results; news and press-release lists not otherwise scanned for gun words",
+        "campaign site: blocked: https://www.kehoeformissouri.com/ (no connection)",
+        "blocked: https://ballotpedia.org/Mike_Kehoe (403)",
+        "blocked: https://missouriindependent.com/2026/07/10/missouri-governor-signs-bills-creating-armed-school-rangers-high-school-sports-appeals-board/ (403); the armed school rangers signing (July 2026) is known only from a search snippet, so not saved",
+        "sponsor list: covered by LegiScan bulk check",
+        "news searches on name plus Second Amendment, gun bill signed or vetoed, 2016 permitless-carry override (3 searches)",
+        "ontheissues.org: lead only, not cited",
+        "not reviewed: Kansas City Star story and the 2024 gubernatorial debate video/transcript (original of the debate quote; cited via a Tribune News Service story)",
+        "nothing found on the subject: background checks, assault-style weapons, red-flag orders, ghost guns, waiting periods, minimum ages, suppressors/NFA"
+      ],
+      "found": 5,
+      "at": "2026-11-12T21:23:45.935Z",
+      "by": "source-collector"
     }
   ]
 }

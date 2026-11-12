@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-1629-2026",
+  "scope": "state:mo",
+  "title": "HB1629 (2026 Regular Session): Creates provisions relating to tracking of firearms purchases by financial institutions",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB1629&year=2026&code=R",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/5200H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Willard Haley",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fcd8d8b7-a2ea-40b9-a2bb-c79a8fcb4613"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1629-2026.introduced.pdf",
+      "sha256": "82982b1715a686d32392973ee2b27bf0168de5b7ac272ab870bf046f3862ff60"
+    }
+  },
+  "operative_text": "Section 407.439 (RSMo): 2. (1) A financial institution or its agent shall not require the usage of the firearms code in a way that distinguishes a firearms retailer physically located in the state of Missouri from Missouri general merchandise retailers or sporting goods retailers.\nSection 407.439 (RSMo): (2) A financial institution shall not discriminate against a firearms retailer by: (a) Declining a lawful payment card transaction based solely on the assignment or nonassignment of a firearms code to the merchant or transaction; (b) Limiting or declining to do business with a customer, potential customer, or merchant based on the assignment or nonassignment of a firearms code to previous lawful transactions involving the customer, potential customer, or merchant; (c) Charging a higher transaction or interchange fee to any merchant or for a lawful transaction based on the assignment or nonassignment of a firearms code; or (d) Otherwise taking any action against a customer or merchant that is intended to suppress lawful commerce involving firearms, firearm accessories or components, or ammunition, which action is based solely or in part on the customer's or merchant's business involving firearms, firearm accessories or components, or ammunition.\nSection 407.439 (RSMo): (3) Except as otherwise required by law, a financial institution shall not disclose a financial record, including a firearms code, that was collected in violation of this section.\nSection 407.439 (RSMo): 3. (1) The attorney general shall investigate alleged violations of this section and, upon finding a violation, shall provide written notice to any individual or entity, public or private, believed to be in violation of this section."
+}

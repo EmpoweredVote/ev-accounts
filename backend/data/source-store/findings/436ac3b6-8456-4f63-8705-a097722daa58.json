@@ -44,6 +44,313 @@
         "fetched_at": "2026-11-04T14:14:55.235Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "eb753c1890382c44337bc537e229c9dd079e59727a52c4c2679a76d063fa3674",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB1175&year=2025&code=R",
+      "date": "2025-03-27",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1175-2025",
+      "act": "yea",
+      "motion": "Third Read and Passed with Amendments (H) - HPA 1 adopted AYES: 100 NOES: 51 PRESENT: 0 (House: HBs FOR THIRD READING HCS HB 1175, A.A.)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed with Amendments (H) - HPA 1 adopted AYES: 100 NOES: 51 PRESENT: 0 (House: HBs FOR THIRD READING HCS HB 1175, A.A.), 2025-03-27: yea (tally 100–51); census gate: none.",
+      "subjects": [
+        "bar on enforcing federal gun laws by state and local officials",
+        "$50,000 civil penalties on agencies and subdivisions",
+        "suits for injunctions by residents"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1175-2025.engrossed.pdf",
+          "sha256": "ab67707e14c64e50b9b9f0f9d83f1b3001c41f790fb19c7d786aba98c78d5f2e"
+        }
+      }
+    },
+    {
+      "id": "72a077311c89e1f9d5f5657d342d2969bc09127aa129d32b72b80543f69563db",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB1730&year=2026&code=R",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1730-2026",
+      "act": "yea",
+      "motion": "Third Read and Passed (H) (House: HBs FOR THIRD READING HB 1730)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HBs FOR THIRD READING HB 1730), 2026-04-09: yea (tally 95–44); census gate: none.",
+      "subjects": [
+        "state ban on firearm silencers repealed",
+        "Missouri-made suppressors declared outside federal regulation",
+        "state and local enforcement of federal suppressor rules barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1730-2026.engrossed.pdf",
+          "sha256": "bffbe9889de656bb447afd8bbd17634e56393b2d47ee17e636ff6ad1ba186d95"
+        }
+      }
+    },
+    {
+      "id": "912da2f4d66f77dde1292d277305325ad6c68e24fddcdd6aecdfecce560eebe8",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB2928&year=2026&code=R",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-2928-2026",
+      "act": "yea",
+      "motion": "Third Read and Passed (H) (House: HBs 3rd READ - INFORMAL HB 2928)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HBs 3rd READ - INFORMAL HB 2928), 2026-03-05: yea (tally 148–0); census gate: near-unanimous.",
+      "subjects": [
+        "USCCA instructors qualify to certify concealed carry training"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2928-2026.engrossed.pdf",
+          "sha256": "2b7844e1ffff738d5d212f8cbbf955f7dfd5d828f09a1943bce12533a882c33c"
+        }
+      }
+    },
+    {
+      "id": "92ca5e59ef3330e2b7f0fbe6b8e31ea6371ad1960982e73b3bad0b369335f951",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB328&year=2025&code=R",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-328-2025",
+      "act": "yea",
+      "motion": "Third Read and Passed (H) (House: HBs FOR THIRD READING HCS HB 328)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HBs FOR THIRD READING HCS HB 328), 2025-04-10: yea (tally 106–45); census gate: none.",
+      "subjects": [
+        "concealed carry age lowered to eighteen",
+        "permit holders may use public transit while carrying",
+        "military pistol-qualification path to training certificate"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-328-2025.engrossed.pdf",
+          "sha256": "41b0d81a8aceeffd3d45f4c047675629a13bd0bf639014307bdf0a372f278044"
+        }
+      }
+    },
+    {
+      "id": "c266bfb4c669a608f46a8a9b617b2e74effcaee5c7144fa4b3579db154733761",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB1175&year=2025&code=R",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-1175-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MO-HB-1175-2025 (LegiScan sponsor list): HB1175 (2025 Regular Session): Reestablishes the Second Amendment Preservation Act.",
+      "subjects": [
+        "bar on enforcing federal gun laws by state and local officials",
+        "$50,000 civil penalties on agencies and subdivisions",
+        "suits for injunctions by residents"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1175-2025.engrossed.pdf",
+          "sha256": "ab67707e14c64e50b9b9f0f9d83f1b3001c41f790fb19c7d786aba98c78d5f2e"
+        }
+      }
+    },
+    {
+      "id": "5589288a8893461f6ef55c9702b712f6f0002c7698f99702bc5cb2e0b5307f5e",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB1415&year=2025&code=R",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-1415-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MO-HB-1415-2025 (LegiScan sponsor list): HB1415 (2025 Regular Session): Prohibits homeowners' associations and other similar associations from infringing on the rights of concealed carry permit holders.",
+      "subjects": [
+        "homeowners' association limits on concealed carry barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1415-2025.introduced.pdf",
+          "sha256": "714a79d8d7b151a8c834a36ffcce0d5e1215438f6dce7012b6ce1db3b28c8135"
+        }
+      }
+    },
+    {
+      "id": "95729614dfa8e50758f6629fe534e11dc0bc993eed63fcbf208054d749b3f0b8",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB1683&year=2026&code=R",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-1683-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-HB-1683-2026 (LegiScan sponsor list): HB1683 (2026 Regular Session): Establishes the \"Anti-Red Flag Gun Seizure Act\".",
+      "subjects": [
+        "state and local enforcement of red flag laws barred",
+        "federal gun-seizure orders not enforced in state",
+        "civil penalty on agencies that enforce red flag laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1683-2026.introduced.pdf",
+          "sha256": "007dbf4d0eb8b094366ede462d75effd5b75667a692102943927cbe54e838955"
+        }
+      }
+    },
+    {
+      "id": "13a6771aef29576de7b0f13f4c68ef6812433e4485bb713342790a9a42807fc2",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB2928&year=2026&code=R",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-2928-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MO-HB-2928-2026 (LegiScan sponsor list): HB2928 (2026 Regular Session): Modifies provisions relating to qualified firearms safety instructors.",
+      "subjects": [
+        "USCCA instructors qualify to certify concealed carry training"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2928-2026.engrossed.pdf",
+          "sha256": "2b7844e1ffff738d5d212f8cbbf955f7dfd5d828f09a1943bce12533a882c33c"
+        }
+      }
+    },
+    {
+      "id": "2728a3f742ea748f0067a6be59dbc0161d3853d44a0832058dd7d1d04f0909f1",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB328&year=2025&code=R",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-328-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MO-HB-328-2025 (LegiScan sponsor list): HB328 (2025 Regular Session): Changes the law regarding firearm concealed carry permits.",
+      "subjects": [
+        "concealed carry age lowered to eighteen",
+        "permit holders may use public transit while carrying",
+        "military pistol-qualification path to training certificate"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-328-2025.engrossed.pdf",
+          "sha256": "41b0d81a8aceeffd3d45f4c047675629a13bd0bf639014307bdf0a372f278044"
+        }
+      }
+    },
+    {
+      "id": "807ca5faa28a686da3c28d71b787b2befdbafce02b6d26296f013e5047fcc712",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB726&year=2025&code=R",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-726-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MO-HB-726-2025 (LegiScan sponsor list): HB726 (2025 Regular Session): Modifies provisions relating to firearms.",
+      "subjects": [
+        "local open-carry rules no longer allowed",
+        "$50,000 civil penalty and lawsuits against localities that regulate firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-726-2025.introduced.pdf",
+          "sha256": "411d465daa8e9205ba969c35ad447fc380cf53c8b4e37ac8780af714f66308d4"
+        }
+      }
+    },
+    {
+      "id": "78eb92d90cad68b32d83e796130b6539780b684ffc9a509b6a36da493a453517",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/80573/race/34846/election/1501",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "No more than already enforced. We do needed to establish “Anti-Red Flag Gun Seizure Act” like Missouri HB 1683 (2026)",
+      "note": "His answer on a voter-guide questionnaire to 'What restrictions on gun ownership are needed to protect public safety?': no new restrictions beyond those now enforced, and he calls for a law barring red-flag gun seizures, citing his own HB 1683.",
+      "subjects": [
+        "limits on who may have a gun",
+        "red-flag orders",
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.845Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -97,6 +404,33 @@
       "found": 1,
       "at": "2026-11-04T14:14:55.235Z",
       "by": "identity-mo-2026-11-04b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun restrictions for public safety",
+        "red-flag orders",
+        "Second Amendment",
+        "assault-style guns",
+        "background checks",
+        "carry permits",
+        "National Firearms Act"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status: in scope, sitting District 138 representative (House member page confirms), on the 2026-11-03 general-election ballot per voter guide page",
+        "sponsor list: covered by LegiScan bulk check",
+        "official House member page: confirms office, nothing on the subject",
+        "campaign site: none found",
+        "blocked: https://ballotpedia.org/Burt_Whaley",
+        "voter guide questionnaire page (ivoterguide.com): one answer on gun restrictions, saved",
+        "news search on name plus gun words: no quotes from him found; KCUR story on the 2026 anti-red-flag bill and a Jefferson City News Tribune story on the 2025 gun-tracking bill do not mention him",
+        "not reviewed: no floor remarks, newsletters, interviews or debate video located"
+      ],
+      "found": 1,
+      "at": "2026-11-12T21:23:45.845Z",
+      "by": "source-collector"
     }
   ]
 }

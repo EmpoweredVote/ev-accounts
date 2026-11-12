@@ -65,6 +65,62 @@
         "fetched_at": "2026-11-04T14:14:55.235Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "95b66803efdcb70e8efa79963b9fc6f0559dc0b687fc1f6dd810090cf5ffc606",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=684",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-1176-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-1176-2026 (LegiScan sponsor list): SB1176 (2026 Regular Session): Modifies provisions relating to firearms.",
+      "subjects": [
+        "assault weapon and large magazine ban",
+        "firearm bar for people committed to a state mental institution",
+        "concealable firearm transfer offence adds background-check provision"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1176-2026.introduced.pdf",
+          "sha256": "04bfa93ead91ebc6ee1fa8b3d2f66155807d30a8d0b963f9a9ba60480da8996a"
+        }
+      }
+    },
+    {
+      "id": "28c60e6453c6a0babdaf161670d94f2e0a68fbbd5383eabcb52d0b3852236441",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=74582",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-1497-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-1497-2026 (LegiScan sponsor list): SB1497 (2026 Regular Session): Modifies provisions relating to extreme risk orders of protection.",
+      "subjects": [
+        "extreme risk protection order to remove firearms",
+        "ex parte and one-year full orders with firearm surrender",
+        "return of firearms after background check"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1497-2026.introduced.pdf",
+          "sha256": "6468328715be32ea37ab29341f8e945848bf0a8965924a91c64da3e417c9e031"
+        }
+      }
     }
   ],
   "searches": [

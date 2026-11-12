@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-1769-2026",
+  "scope": "state:mo",
+  "title": "SB1769 (2026 Regular Session): Creates the Office of Public Defense and authorizes the Office to acquire and transfer machine guns to residents",
+  "urls": [
+    "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=6616211",
+    "https://www.senate.mo.gov/26info/pdf-bill/intro/SB1769.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Rick Brattin",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e9ec322c-e997-486d-8202-48423671c800"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1769-2026.introduced.pdf",
+      "sha256": "0886156d9c5580053014ac987270dbea8b942189455a5eba768ed1ea29f303e8"
+    }
+  },
+  "operative_text": "Section 571.600 (RSMo): 1. An applicant for the acquisition of a machine gun shall demonstrate knowledge of machine gun safety training.\nSection 571.600 (RSMo): 2. A certificate of machine gun safety training course completion may be issued to any applicant by any qualified machine gun safety instructor. On the certificate of course completion, the qualified machine gun safety instructor shall affirm that the individual receiving instruction has taken and passed a machine gun safety course of at least eight hours in length taught by the instructor that included:\nSection 650.4000 (RSMo): 2. To carry out the provisions of this section and section 650.4005, there is hereby created and established an \"Office of Public Defense\" within the department of public safety.\nSection 650.4000 (RSMo): 4. The office of public defense, through its director, shall have the following powers and duties: (2) To establish, maintain, and operate a warehouse and distribution station, using to the extent possible existing department, infrastructure, and barracks, and in the operation thereof to purchase, transport, store, sell, and transfer machine guns to qualified persons.\nSection 650.4000 (RSMo): (3) To verify the eligibility of qualified persons to purchase machine guns through the same background check process used by federal firearms licensee dealers;\nSection 650.4000 (RSMo): 8. The director shall add a five hundred dollar surcharge to the total price of each machine gun sold and transferred under this section.\nSection 650.4005 (RSMo): 1. All transfers of machine guns to qualified persons under this section, section 571.600, and section 650.4000 shall be deemed to have been made by the state of Missouri, and such transfers are made under the authority of the state of Missouri, for purposes of 18 U.S.C. Section 922(o)(2)(A).\nSection 650.4005 (RSMo): 3. Should a person to whom a machine gun has been transferred under this section, section 571.600, and section 650.4000 later become prohibited from possessing firearms under Missouri or federal law, such person shall return the machine gun to the office within seven days of learning of his or her prohibited status."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-2788-2026",
+  "scope": "state:mo",
+  "title": "HB2788 (2026 Regular Session): Modifies the offense of unlawful possession of a firearm",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB2788&year=2026&code=R",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/6149H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Marlon Anderson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "62ace91d-b62f-473f-8d4b-a4e45b207650"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2788-2026.introduced.pdf",
+      "sha256": "a1d298a49e75b68505ef17a842a15b12bd18241ac0080874d8449c14589c83da"
+    }
+  },
+  "operative_text": "Section 571.070 (RSMo): 1. A person commits the offense of unlawful possession of a firearm if such person knowingly has any firearm in his or her possession and: (1) Such person has been convicted of a felony under the laws of this state, or of a crime under the laws of any state or of the United States which, if committed within this state, would be a felony. The provisions of this subdivision shall not apply as follows: (a) If such felony conviction was a conviction of a violent felony under the laws of this state or of a crime under the laws of any state or of the United States that if committed within this state would be a violent felony, possession under this subdivision shall not be an offense after a period of ten years has passed following the date of sentence completion for the felony conviction; and (b) If such felony conviction was a conviction of a nonviolent felony under the laws of this state or of a crime under the laws of any state or of the United States that if committed within this state would be a nonviolent felony, possession under this subdivision shall not be an offense after a period of three years has passed following the date of sentence completion for the felony conviction; or\nSection 571.070 (RSMo): 4. As used in this section, the following terms mean: (1) \"Nonviolent felony\", any felony offense that does not involve the use of force, or threat of force, against another person; (2) \"Sentence completion\", the date on which a person has satisfied all obligations placed on the person as part of the sentence, including any period of incarceration and any period of supervised probation or parole; (3) \"Violent felony\", any felony offense that involves the use of force, or threat of force, against another person."
+}

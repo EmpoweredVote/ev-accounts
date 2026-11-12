@@ -1,0 +1,44 @@
+{
+  "id": "MO-HB-2334-2026",
+  "scope": "state:mo",
+  "title": "HB2334 (2026 Regular Session): Prohibits persons under eighteen years of age from carrying firearms into public areas within urban areas",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB2334&year=2026&code=R",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/4994H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kathy Steinhoff",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f7512c7b-f2d1-4ec9-9bcc-6213000d8649"
+    },
+    {
+      "name": "Adrian Plank",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "885683bb-b31d-45de-bda3-cee124358dde"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2334-2026.introduced.pdf",
+      "sha256": "3344182a9a2c3046175b5370f154afc687f7a7f944484011ad3f2011ff01bd46"
+    }
+  },
+  "operative_text": "Section 571.010 (RSMo): \"Urban area\", any area of this state that is: (a) Within a metropolitan statistical area, as defined by the United States Office of Management and Budget, with a principal city of more than one hundred thousand inhabitants; and (b) Classified as an urban area by the United States Census Bureau.\nSection 571.030 (RSMo): Carries a firearm into any area accessible to the public within any urban area if the person is under eighteen years of age.\nSection 571.030 (RSMo): Subdivision (12) of subsection 1 of this section shall not apply if the firearm is otherwise lawfully possessed by a person: (a) In the course of employment. A person who is employed in a position described in subsection 2 of this section and who lawfully possesses the firearm in the course of that employment qualifies for this exemption from subdivision (12) of subsection 1 of this section regardless of any additional requirements for the exemption specified in subsection 2 of this section; (b) In the course of target practice or hunting; or (c) During instruction in the safe and lawful use of a firearm.\nSection 571.030 (RSMo): Subdivision (12) of subsection 1 of this section shall be guilty of a class A misdemeanor."
+}

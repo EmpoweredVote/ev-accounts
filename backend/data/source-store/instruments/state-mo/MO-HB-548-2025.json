@@ -1,0 +1,39 @@
+{
+  "id": "MO-HB-548-2025",
+  "scope": "state:mo",
+  "title": "HB548 (2025 Regular Session): Modifies provisions relating to firearm suppressors",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB548&year=2025&code=R",
+    "https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/0992H.01I.pdf",
+    "https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/0992H.02C.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mike Costlow",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6c9a021f-6787-4462-8520-26f83697c7b8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-548-2025.introduced.pdf",
+      "sha256": "6d6ab7a2152290131cab20f465b3b848321c4c6f1b31535990058232050fc3d3"
+    }
+  },
+  "operative_text": "Section 571.020 (RSMo): An offense pursuant to subdivision (1), (2), (3) or (6) of subsection 1 of this section is a class D felony; a crime pursuant to subdivision (4) or (5) of subsection 1 of this section is a class A misdemeanor.\nSection 571.020 (RSMo): 4. The offense of knowingly possessing, manufacturing, transporting, repairing, or selling a firearm silencer, as it existed immediately before August 28, 2025, shall not be prosecuted on or after August 28, 2025. If on August 28, 2025, a criminal action is pending for such offense, the action is dismissed on that date. However, a final conviction for such offense that exists on August 28, 2025, shall not be affected.\nSection 571.935 (RSMo): 1. (1) For the purposes of this section, a firearm suppressor is manufactured in this state if the item is manufactured: (a) In this state from basic materials; and (b) Without the inclusion of any part imported from another state other than a generic and insignificant part. (2) For the purposes of this section, a firearm suppressor is manufactured in this state if it is manufactured as described in subdivision (1) of this subsection without regard to whether a firearm imported into this state from another state is attached to or used in conjunction with the suppressor. 2. (1) A firearm suppressor that is manufactured in this state and remains in this state is not subject to federal law or federal regulation, including registration, under the authority of the United States Congress to regulate interstate commerce. (2) A basic material from which a firearm suppressor is manufactured in this state, including unmachined steel, is not a firearm suppressor and is not subject to federal regulation under the authority of the United States Congress to regulate interstate commerce as if it actually were a firearm suppressor. 3. A firearm suppressor manufactured and sold in this state shall have the words \"Made in Missouri\" clearly stamped on it. 4. On written notification to the attorney general by a United States citizen who resides in this state of the citizen's intent to manufacture a firearm suppressor to which subsection 2 of this section applies, the attorney general shall seek a declaratory judgment from a federal district court in this state that subsection 2 of this section is consistent with the United States Constitution. 5. The provisions of this section shall apply only to firearm suppressors that are manufactured on or after August 28, 2025.\nSection 571.940 (RSMo): 2. (1) An entity described in subsection 1 of this section shall not adopt a rule, order, ordinance, or policy under which the entity enforces, or by consistent action allows the enforcement of, a federal statute, order, rule, or regulation that purports to regulate a firearm suppressor if the statute, order, rule, or regulation imposes a prohibition, restriction, or other regulation that does not exist under the laws of this state.\nSection 571.940 (RSMo): 3. (1) An entity described in subsection 1 of this section shall not receive state grant funds if the entity adopts a rule, order, ordinance, or policy under which the entity enforces a federal law described in subdivision (1) of subsection 2 of this section or, by consistent action, allows the enforcement of a federal law described in subdivision (1) of subsection 2 of this section. (2) State grant funds for the entity shall be denied for the fiscal year following the year in which a final judicial determination in an action brought under this section is made that the entity has violated subdivision (1) of subsection 2 of this section."
+}

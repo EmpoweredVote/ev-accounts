@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-550-2025",
+  "scope": "state:mo",
+  "title": "HB550 (2025 Regular Session): Modifies provisions relating to firearms",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB550&year=2025&code=R",
+    "https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/0652H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Adrian Plank",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "885683bb-b31d-45de-bda3-cee124358dde"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-550-2025.introduced.pdf",
+      "sha256": "4442bd6b5a70af83ea203fb98cf7774223b1f61dd4ca3baf9b2ac27f2f27ce87"
+    }
+  },
+  "operative_text": "Section 1.320 (RSMo): The general assembly of the state of Missouri strongly promotes responsible gun ownership, including parental supervision of minors in the proper use, storage, and ownership of all firearms, the prompt reporting of stolen firearms, and the proper enforcement of all state gun laws. The general assembly of the state of Missouri hereby condemns any unlawful transfer of firearms and the use of any firearm in any criminal or unlawful activity.\nSection 571.030 (RSMo): (1) Carries concealed upon or about his or her person a knife, a firearm, a blackjack or any other weapon readily capable of lethal use; or (2) Sets a spring gun;\nSection 571.030 (RSMo): (1) Subdivision (1), (2), (3), (4), or (11) of subsection 1 of this section shall be guilty of a class E felony;\nSection 571.030 (RSMo): (2) Subdivision (6), (7), or (8) of subsection 1 of this section shall be guilty of a class B misdemeanor;\nSection 571.080 (RSMo): 1. A person commits the offense of transfer of a concealable firearm if: (1) Such person buys, leases, borrows, exchanges, or otherwise receives any concealable firearm unless such person first obtains and delivers to the person delivering the firearm a valid permit authorizing the acquisition of the firearm; (2) Such person sells, leases, loans, exchanges, gives away, or otherwise delivers any concealable firearm unless such person first demands and receives from the person receiving the firearm a valid permit authorizing such acquisition of the firearm; or (3) Such person violates 18 U.S.C. Section 922(b) or 18 U.S.C. Section 922(x). 2. A permit to acquire a concealable firearm shall be valid only for thirty days after the issuance thereof. 3. Subsection 1 of this section shall not apply to: (1) The acquisition by or transfer of concealable firearms among manufacturers, wholesalers, or retailers of firearms for purposes of commerce; (2) Antique firearms or replicas thereof; or (3) Curio or relic firearms. 4. A person who commits the offense of transfer of a concealable firearm shall be guilty of a class A misdemeanor.\nSection 571.090 (RSMo): 1. A permit to acquire a concealable firearm shall be issued by the sheriff of the county in which the applicant resides if all of the statements in the application are true and the applicant: (1) Is at least twenty-one years of age, is a citizen of the United States, and has resided in this state for at least six months; (2) Has not pled guilty to or been convicted of a crime punishable by imprisonment for a term exceeding one year under the laws of any state or of the United States other than a crime classified as a misdemeanor under the laws of any state and punishable by a term of imprisonment of two years or less that does not involve an explosive weapon, firearm, firearm silencer, or gas gun; (3) Is not a fugitive from justice or currently charged in an information or indictment with the commission of a crime punishable by imprisonment for a term exceeding one year under the laws of any state or of the United States other than a crime classified as a misdemeanor under the laws of any state and punishable by a term of imprisonment of two years or less that does not involve an explosive weapon, firearm, firearm silencer, or gas gun; (4) Has not been discharged under dishonorable conditions from the United States Armed Forces; and (5) Is not currently adjudged mentally incompetent and has not been committed to a mental health facility, as defined in section 632.005, or a similar institution located in another state within the previous six months.\nSection 571.090 (RSMo): 13. Violation of any provision of this section is a class A misdemeanor."
+}

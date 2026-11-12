@@ -1,0 +1,44 @@
+{
+  "id": "MO-HB-51-2025",
+  "scope": "state:mo",
+  "title": "HB51 (2025 Regular Session): Establishes standards in regards to the tracking of gun purchases by financial institutions",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB51&year=2025&code=R",
+    "https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/0838H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Willard Haley",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fcd8d8b7-a2ea-40b9-a2bb-c79a8fcb4613"
+    },
+    {
+      "name": "Tim Taylor",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e5224ede-49a9-4027-8cc4-d4c56d38a8dd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-51-2025.introduced.pdf",
+      "sha256": "4cd7ea53b5e379115e1a674228714c1ae0d9d44d472a07649aee56dd8358cbe1"
+    }
+  },
+  "operative_text": "Section 407.439 (RSMo): 2. (1) Except for those records kept during the regular course of a criminal investigation and prosecution or as otherwise required by law, a governmental entity, or any other person, public or private, other than the owner or owner's representative, shall not knowingly and willfully keep or cause to be kept any list, record, or registry of privately owned firearms or any list, record, or registry of the owners of those firearms. (2) A financial institution or its agent shall not require the usage of the firearms code in a way that distinguishes a firearms retailer physically located in the state of Missouri from Missouri general merchandise retailers or sporting goods retailers. (3) A financial institution shall not discriminate against a firearms retailer by: (a) Declining a lawful payment card transaction based solely on the assignment or nonassignment of a firearms code to the merchant or transaction; (b) Limiting or declining to do business with a customer, potential customer, or merchant based on the assignment or nonassignment of a firearms code to previous lawful transactions involving the customer, potential customer, or merchant; (c) Charging a higher transaction or interchange fee to any merchant or for a lawful transaction based on the assignment or nonassignment of a firearms code; or (d) Otherwise taking any action against a customer or merchant that is intended to suppress lawful commerce involving firearms, firearm accessories or components, or ammunition, which action is based solely or in part on the customer's or merchant's business involving firearms, firearm accessories or components, or ammunition. (4) Except as otherwise required by law, a financial institution shall not disclose a financial record, including a firearms code that was collected in violation of this section."
+}

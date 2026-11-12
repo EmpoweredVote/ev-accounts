@@ -1,0 +1,62 @@
+{
+  "id": "MO-HB-39-2025",
+  "scope": "state:mo",
+  "title": "HB39 (2025 Regular Session): Prohibits an employer from terminating an employee for having a firearm in the employee's vehicle on the employer's premises",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB39&year=2025&code=R",
+    "https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/0224H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Hardy Billington",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "36f0699e-cbc7-4030-b581-8f003f5ddf8c"
+    },
+    {
+      "name": "Tim Taylor",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e5224ede-49a9-4027-8cc4-d4c56d38a8dd"
+    },
+    {
+      "name": "Jamie Gragg",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0eb62660-6092-4d15-9fed-cabe0077f8f3"
+    },
+    {
+      "name": "Bill Lucas",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c3e92909-e9ce-4a53-a008-f30f33e3e3a3"
+    },
+    {
+      "name": "John Hewkin",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "645cc8f7-5299-48bf-999c-0c1eb54788dc"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-39-2025.introduced.pdf",
+      "sha256": "5547ad68685c1c86182d1b4cb0c664aa5c3dc4f2df8b047418630de1ede64749"
+    }
+  },
+  "operative_text": "Section 290.148 (RSMo): Notwithstanding any provision of law to the contrary, no employer in this state shall discharge or otherwise terminate the employment of any employee on the basis of such employee having a firearm in the employee's vehicle on the employer's property when the employee is arriving to or leaving from the employer's property for employment purposes or when the employee is conducting activities within the course and scope of his or her employment, provided that the employee's vehicle is locked, the firearm is not visible, and the employee is not prohibited from possessing a firearm by law. An employer shall not be civilly liable for any injuries or damages resulting from the use of firearms that are stored in compliance with this section."
+}

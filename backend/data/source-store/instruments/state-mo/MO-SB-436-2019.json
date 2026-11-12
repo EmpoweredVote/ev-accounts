@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-436-2019",
+  "scope": "state:mo",
+  "title": "SB436 (2019 Regular Session): Defines the term \"fugitive from justice\", which is used in various criminal offenses involving weapons and concealed carry permits",
+  "urls": [
+    "https://www.senate.mo.gov/19info/BTS_Web/Bill.aspx?SessionType=R&BillID=4941205",
+    "https://www.senate.mo.gov/19info/pdf-bill/intro/SB436.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Denny Hoskins",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b7318128-42e4-4285-989d-11a849f76e95"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-436-2019.introduced.pdf",
+      "sha256": "7bb644a7c0060b0eb64bd05b0d126355560e5d8ba5cc48689c302000de1ea096"
+    }
+  },
+  "operative_text": "Section 571.010 (RSMo): (10) \"Fugitive from justice\", any person who, knowing that he or she is the defendant or co-defendant in any criminal case in which that person is alleged to have committed any felony under the laws of this state, the United States, or any other state or territory of the United States, becomes a fugitive from justice by failing to appear for any scheduled court proceeding pertaining to such felony for which proper notice was provided or attempted. It is no defense to a prosecution under this subdivision that the person did not receive notice of the scheduled court proceeding;"
+}

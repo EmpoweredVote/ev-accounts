@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-1256-2018",
+  "scope": "state:mo",
+  "title": "HB1256 (2018 Regular Session): Imposes restrictions on the use of firearm tracking technology",
+  "urls": [
+    "https://www.house.mo.gov/Bill.aspx?bill=HB1256&year=2018&code=R",
+    "https://www.house.mo.gov/billtracking/bills181/hlrbillspdf/4041H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nick Schroer",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b6dd336b-81d6-488c-93db-2473ced473b8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1256-2018.introduced.pdf",
+      "sha256": "6b6109b25917563f896c1ed68a1da0e4eb73aed276ef4ea91488c26edba13d7a"
+    }
+  },
+  "operative_text": "Section 571.530 (RSMo): 1. Except as provided in subsection 2 of this section, it shall be unlawful to require a person to use or be subject to electronic firearm tracking technology or to disclose any identifiable information about the person or the person's firearm for the purpose of using electronic firearm tracking technology.\nSection 571.530 (RSMo): 4. Any person found to have violated the provisions of this section shall be guilty of a class E felony."
+}

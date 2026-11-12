@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-1533-2020",
+  "scope": "state:mo",
+  "title": "HB1533 (2020 Regular Session): Creates a class C felony for manufacturing, importing, possessing, purchasing, sell, or transfer any assault weapon or large capacity magazine.",
+  "urls": [
+    "https://www.house.mo.gov/Bill.aspx?bill=HB1533&year=2020&code=R",
+    "https://www.house.mo.gov/billtracking/bills201/hlrbillspdf/3880H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Barbara Washington",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b9226e1d-7341-4e30-9799-88b88abcb3fd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1533-2020.introduced.pdf",
+      "sha256": "99fc937121de82fff94cfe148b79e88e66dc83d88161fdb82018332bb69f7f81"
+    }
+  },
+  "operative_text": "Section 571.023 (RSMo): 2. No person, corporation, or other entity in the state of Missouri shall manufacture, import, possess, purchase, sell, or transfer any assault weapon or large capacity magazine.\nSection 571.023 (RSMo): 3. The provisions of this section shall not apply to: (1) Any government officer, agent, or employee; member of the United States Armed Forces; or peace officer, to the extent that the person is authorized to acquire or possess an assault weapon or large capacity magazine and does so while acting within the scope of his or her duties; (2) The manufacture of an assault weapon or large capacity magazine by a firearms manufacturer for the purpose of sale to an entity or person described under subdivision (1) of this subsection, provided that the manufacturer is properly licensed under federal and state laws; (3) The sale or transfer of an assault weapon or large capacity ammunition feeding device by a dealer, who is properly licensed under federal, state, and local laws, to an entity or person described under subdivision (1) of this subsection for use by that entity or person for official purposes; or (4) Any person who, prior to and continuously since the effective date of this section, was legally in possession of an assault weapon or large capacity magazine.\nSection 571.023 (RSMo): 4. A violation of this section is a class C felony.\nSection 571.023 (RSMo): (4) \"Large capacity magazine\", any ammunition feeding device with the capacity to accept more than ten rounds, but excluding: (a) A feeding device that has been permanently altered so that it cannot accommodate more than ten rounds; (b) A twenty-two caliber tubular magazine; or (c) A tubular magazine contained in a lever-action firearm."
+}
