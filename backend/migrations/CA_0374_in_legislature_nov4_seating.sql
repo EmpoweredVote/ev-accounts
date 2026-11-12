@@ -65,7 +65,10 @@
 -- Idempotent: seat_officeholder is idempotent on (office, person, start); the inserts, source appends
 -- and flag writes are guarded on the values they change.
 --
--- Dry-run against production: see the PR. Apply with backend/scripts/apply-migration-file.mjs.
+-- Applied to production 2026-11-12: 0 people inserted, 4 terms closed, 4 opened, 4 winners set
+-- active and incumbent, 4 leavers set not incumbent. check:incumbency then read 0 drift rows,
+-- control-reconcile-incumbency.mjs passed, check:seating held, and check:duplicate-people found no
+-- new pair. The public API then listed Streeter, Oliver, Kippenbrock and Ellington on these seats.
 
 BEGIN;
 
