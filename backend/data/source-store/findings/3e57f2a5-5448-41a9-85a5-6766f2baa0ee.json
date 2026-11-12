@@ -1,0 +1,194 @@
+{
+  "politician_id": "3e57f2a5-5448-41a9-85a5-6766f2baa0ee",
+  "findings": [
+    {
+      "id": "8e2dd535dd0995b7d983bc6127f2df1b6bea2ce6250b48e706cf0133a5f98d39",
+      "kind": "own-words",
+      "url": "https://hudsonvalleypress.com/2024/01/03/rep-harold-m-love-jr-could-affect-the-nation/",
+      "date": "2024-01-03",
+      "date_precision": "day",
+      "passage": "He says he believes voting rights “impact everything else that we’ve been discussing. When you talk about voting rights it’s not just the surface-level election day process. The whole concept of who governs is linked into access to voting. If I don’t have easy, consistent access to vote, then I don’t get to engage in the process of deciding who governs.",
+      "note": "Quoted by Hudson Valley Press in a profile of him as an incoming head of a national legislators' caucus group. He speaks of voting rights and access to voting in general; he does not mention ID or citizenship proof. The sentence copied is the writer's lead-in plus his quoted words; the page continues the quote past this point.",
+      "subjects": [
+        "access to voting in general",
+        "voting rights"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T02:12:12.914Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b156da78d41c0a44d1802d79a5fb6b0d2c6d47a81a333f869f9e455b461cba4",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0125/id/253215",
+      "date": "2013-03-25",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-125-2013",
+      "act": "nay",
+      "motion": "House: AS AMENDED PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (AS AMENDED PASSAGE ON THIRD CONSIDERATION, 65-30) on SB0125 (108th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + HA0155 + HA0156 (not saved); linked by LegiScan member id 15502 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.075Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b6b3318d2dee22402819f4fbd33977d7f37651376ab82dd7e860a692d098c5a3",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/HB0133/2019",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "TN-HB-133-2019",
+      "act": "sponsor",
+      "motion": "prime sponsor, 1870176-Draft",
+      "note": "Listed as prime sponsor of HB0133 (111th General Assembly) in LegiScan's bill record (sponsor order 1); the first version (1870176-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.075Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6bf6d81a82db697d74298b2d427ff9b8ac3a5267f7ae33bbaa137ed285b615aa",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/HB1316/id/1538770",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1316-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR AS AMENDED PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR AS AMENDED PASSAGE ON THIRD CONSIDERATION, 83-7) on HB1316 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + HA0118 (adopted on the floor 2025-04-07 per action log); linked by LegiScan member id 15502 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.075Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6930988a8505122e603380b4a817086271b34430e05e7cc3610482e5b39efdb3",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0626/id/1550047",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-626-2025",
+      "act": "nay",
+      "motion": "House: REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION, 72-22) on SB0626 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft 3093364 + SA0305 (full rewrite = chaptered text) as engrossed by the Senate; linked by LegiScan member id 15502 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.075Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "student ID at the polls",
+        "voting rights",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract-otr returned no appearances, run with --city Nashville)",
+        "campaign site https://www.haroldlovejr.com: nothing on the subject",
+        "https://www.wknofm.org/news-and-features/2011-04-18/state-capitol-report-proposal-to-require-photo-ids-at-the-polls: opened, does not name him",
+        "blocked: https://hudsonvalleypress.com/2024/01/03/rep-harold-m-love-jr-could-affect-the-nation/ (HTTP 429; a search summary says it holds a statement of his on voting rights, which could not be read)",
+        "blocked: https://www.campusvoteproject.org/post/new-nashville-lawmakers-aim-to-expand-student-voting-access (HTTP 404)",
+        "web searches (6) on name with voter ID, photo ID, proof of citizenship, SAVE Act, voting rights, questionnaire, Nashville outlets: no own words on the subject found that could be opened",
+        "tnfirefly.com 2026 race listing (search result): he is the only candidate on the 2026 District 58 general-election ballot; page not opened",
+        "blocked: https://ballotpedia.org (not fetched, refuses our fetches)",
+        "blocked: https://justfacts.votesmart.org (not fetched, refuses our fetches)",
+        "blocked: https://bluevoterguide.org (not fetched, refuses our fetches)",
+        "not fetched by rule: capitol.tn.gov, wapp.capitol.tn.gov, tennesseelookout.com",
+        "not reviewed (repost of Tennessee Lookout): https://www.newsfromthestates.com/node/435043"
+      ],
+      "found": 0,
+      "at": "2026-11-12T01:48:34.279Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "student ID at the polls",
+        "voting rights",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract-otr returned no appearances, run with --city Nashville)",
+        "campaign site https://www.haroldlovejr.com: nothing on the subject",
+        "https://www.wknofm.org/news-and-features/2011-04-18/state-capitol-report-proposal-to-require-photo-ids-at-the-polls: opened, does not name him",
+        "blocked: https://www.campusvoteproject.org/post/new-nashville-lawmakers-aim-to-expand-student-voting-access (HTTP 404)",
+        "web searches (6) on name with voter ID, photo ID, proof of citizenship, SAVE Act, voting rights, questionnaire, Nashville outlets: no own words on the subject found that could be opened",
+        "tnfirefly.com 2026 race listing (search result): he is the only candidate on the 2026 District 58 general-election ballot; page not opened",
+        "blocked: https://ballotpedia.org (not fetched, refuses our fetches)",
+        "blocked: https://justfacts.votesmart.org (not fetched, refuses our fetches)",
+        "blocked: https://bluevoterguide.org (not fetched, refuses our fetches)",
+        "not fetched by rule: capitol.tn.gov, wapp.capitol.tn.gov, tennesseelookout.com",
+        "not reviewed (repost of Tennessee Lookout): https://www.newsfromthestates.com/node/435043",
+        "https://hudsonvalleypress.com/2024/01/03/rep-harold-m-love-jr-could-affect-the-nation/: re-run 2026-11-11, opened this time (HTTP 200); holds his words on voting rights",
+        "On the Record re-run 2026-11-11 (extract-otr with --politician and --names): 0 appearances, 0 candidate sources",
+        "3 further web searches 2026-11-11 (name with voter ID/photo ID; proof of citizenship/SAVE Act/noncitizen; voting rights/student ID/outlets): no other own words found",
+        "https://www.facingsouth.org/2018/03/tennessee-students-continue-their-fight-against-discriminatory-voter-id-law, https://tn.chalkbeat.org/2017/1/25/21101457/four-questions-about-education-with-state-rep-harold-love and https://www.haroldlovejr.com: opened, no words of his on voter ID or proof of citizenship",
+        "https://mnps.org/news/archived_news/student_voting_legislation/ (HTTP 404)"
+      ],
+      "found": 1,
+      "at": "2026-11-12T02:12:12.914Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 4,
+      "at": "2026-11-12T15:13:42.075Z",
+      "by": "source-collector"
+    }
+  ]
+}

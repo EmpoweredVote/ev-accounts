@@ -1,0 +1,244 @@
+{
+  "politician_id": "6dbe4dd8-b749-4ef0-9ca4-f2c752e50ef1",
+  "findings": [
+    {
+      "id": "013bfc70f0948f1680e7a2e48c8d796c77cc3242d50a2b47200881e09e8d7fa8",
+      "kind": "own-words",
+      "url": "https://susan-lynn.blogspot.com/2007/10/voter-id.html",
+      "date": "2007-10-04",
+      "date_precision": "day",
+      "passage": "Press accounts state that the Supreme Court may not rule on a case challenging an Indiana Voter ID law until June 2008. The law has already been upheld by the U.S. Court of Appeals for the 7th Circuit. Opponents to the new law appealed on the basis that the new law causes mass disenfranchisement of certain voters. The law requires registered voters to show a government-issued photo identification card before they can cast a vote.",
+      "note": "Her blog post titled 'Voter ID', describing the Indiana photo-ID law case. Old post (2007), written while she was in the House.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:58:34.923Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3ed2a93bf3367c5505128117e18a63e5608bc2c39849e307d81bcf7312597864",
+      "kind": "own-words",
+      "url": "https://susan-lynn.blogspot.com/2007/10/voter-id.html",
+      "date": "2007-10-04",
+      "date_precision": "day",
+      "passage": "Reasonable Voter ID Laws printed this week in the Washington Times makes great points about some of the opponents' illogical objections.",
+      "note": "Same blog post; her one-sentence comment on a Washington Times piece about voter ID laws. The link title 'Reasonable Voter ID Laws' and the rest of the sentence are on separate lines of the page's text. The following paragraph on the page looks like a quotation of that piece, so it is not saved as hers.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:58:34.923Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c94e36489e5db68e88372783e97955deadf819cbd9f1662da28ee77aeb9b6e2b",
+      "kind": "own-words",
+      "url": "https://susan-lynn.blogspot.com/2008/02/bills-would-put-vote-in-peoples-hands.html",
+      "date": "2008-02-01",
+      "date_precision": "day",
+      "passage": "A simple, verifiable paper trail would help to alleviate many concerns for voters.",
+      "note": "Her Tennessean column reposted on her blog, about paper ballots and voting-machine security. Adjacent topic (election integrity), not ID or citizenship.",
+      "subjects": [
+        "election integrity laws in general",
+        "paper ballot voting machines"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:58:34.923Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12b2c6171e88711cd9c94b0b7980a1475191e2be98c0d766cfc0a56e38bb9056",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/HB0229/2013",
+      "date": "2013",
+      "date_precision": "year",
+      "instrument_id": "TN-HB-229-2013",
+      "act": "sponsor",
+      "motion": "prime sponsor, 711376-Draft",
+      "note": "Listed as prime sponsor of HB0229 (108th General Assembly) in LegiScan's bill record (sponsor order 1); the first version (711376-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.075Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c801f0571d1a4c5de4b4aeb998b1ad30e0c272c76e2fef6a63b2daed944d7021",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0125/id/253215",
+      "date": "2013-03-25",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-125-2013",
+      "act": "yea",
+      "motion": "House: AS AMENDED PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (AS AMENDED PASSAGE ON THIRD CONSIDERATION, 65-30) on SB0125 (108th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + HA0155 + HA0156 (not saved); linked by LegiScan member id 7214 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.075Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e5eb1c52047a7410d226f7d1d9bc9c163a1e51a5bc2917b608194d3253391bfc",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/SB0125/2013",
+      "date": "2013",
+      "date_precision": "year",
+      "instrument_id": "TN-SB-125-2013",
+      "act": "sponsor",
+      "motion": "prime sponsor, 705287-Draft",
+      "note": "Listed as prime sponsor of SB0125 (108th General Assembly) in LegiScan's bill record (sponsor order 2); the first version (705287-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.075Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6bf6d81a82db697d74298b2d427ff9b8ac3a5267f7ae33bbaa137ed285b615aa",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/HB1316/id/1538770",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1316-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR AS AMENDED PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR AS AMENDED PASSAGE ON THIRD CONSIDERATION, 83-7) on HB1316 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + HA0118 (adopted on the floor 2025-04-07 per action log); linked by LegiScan member id 7214 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.075Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad92ee221bdade53f1ad4bb273813b351662b750a615bdacabc84af573a8a288",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0626/id/1550047",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-626-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION, 72-22) on SB0626 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft 3093364 + SA0305 (full rewrite = chaptered text) as engrossed by the Senate; linked by LegiScan member id 7214 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.075Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dfc0f401b5e1e11d23ee20ace873f4d6d7b4216789ab4da3a289d27d0ae2ae27",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB6002/id/1477618",
+      "date": "2025-01-30",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION, 71-19) on SB6002 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA6001 + SA6007 (adopted on the Senate floor 1/29/2025; equals the chaptered text) as engrossed by the Senate; linked by LegiScan member id 7214 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.075Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election security and paper ballots",
+        "voter registration bills"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract-otr found no appearances)",
+        "her personal blog susan-lynn.blogspot.com (voter search; posts 2006 to 2018; confirms she is a Tennessee legislator)",
+        "iVoterGuide profile (candidate 6718): no elections and voting questions answered",
+        "official House caucus site: appeared in search results only, not reviewed",
+        "no current campaign site found by search",
+        "blocked: https://ballotpedia.org/Susan_Lynn (listed as refusing fetches, not fetched)",
+        "blocked: https://bluevoterguide.org (listed as refusing fetches, not fetched)",
+        "not reviewed (outlet refuses agents): https://tennesseelookout.com/voter-guides/contests/house-district-57/",
+        "not fetched, per the Tennessee notes: capitol.tn.gov and wapp.capitol.tn.gov",
+        "web searches (6): voter ID; citizenship/noncitizen/election integrity/photo ID; iVoterGuide; blog/column/op-ed; quoted statements on elections bills; no current-session statement of hers on the subject found",
+        "nothing on the subject from local news outlets"
+      ],
+      "found": 3,
+      "at": "2026-11-12T01:58:34.923Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 6,
+      "at": "2026-11-12T15:13:42.075Z",
+      "by": "source-collector"
+    }
+  ]
+}

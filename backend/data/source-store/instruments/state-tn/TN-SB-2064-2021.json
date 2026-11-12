@@ -1,0 +1,94 @@
+{
+  "id": "TN-SB-2064-2021",
+  "scope": "state:tn",
+  "title": "SB 2064 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 2 and Title 49, relative to the Tennessee Student Voter Act.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB2064/2021",
+    "https://legiscan.com/TN/rollcall/SB2064/id/1176830"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) Sec.3, amends TCA 2-7-112(c)(2)\n(quote) (2) A valid identification card that contains a photograph of the voter, and that was issued by this state, or by the United States where authorized by law to issue personal identification;\n(section) Sec.4, adds 2-7-112(c)(8)\n(quote) (8) A valid identification card that contains a photograph of the voter, and that was issued by an accredited postsecondary institution of education in this state.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec.5, amends TCA 2-2-115(b)(7)\n(quote) (7) A person who registers by mail or online may vote in person or absentee by mail.\n(other) Sec.1: short title 'Tennessee Student Voter Act'.\n(other) Sec.2: each high school must tell each senior who reaches 18 that the student is eligible to vote and how to register (adds to 2-2-111); the SA0798 rewrite softens this to 'may be eligible'.\n(other) Sec.5 (Draft only): replaces 2-2-115(b)(7) so a mail or online registrant may vote in person or absentee by mail.\n(other) Sec.6: effective on becoming law.\n(other) version: Draft 2494081: carries slots a (Sec.3-4) and e (Sec.5), plus the student voter act and high school notice.\n(other) version: SA0798 (Senate State and Local Government amendment 1, 'delete all language after the enacting clause'): full rewrite with NO ID or citizenship text; keeps only the short title and a softened high-school notice (Sec.2). Skeleton marks it adopted=0, but the committee motion says 'with amendment/s'.\n(other) note: Only floor/committee event: Senate State and Local Government committee 2022-03-23, 8-0, recommended with amendment; 2022-04-11 re-referred to Senate Calendar Committee. Whether SA0798 was adopted is not confirmed by the data flag (adopted=0), but it is the only amendment saved and the motion says 'with amendment/s'. If SA0798 was NOT adopted, the voted text is the Draft and carries slot a.",
+  "sponsors": [
+    {
+      "name": "Heidi Campbell",
+      "role": "prime",
+      "version": "amend-139884-SA0798"
+    },
+    {
+      "name": "Ken Yager",
+      "role": "co",
+      "version": "amend-139884-SA0798"
+    },
+    {
+      "name": "Raumesh Akbari",
+      "role": "co",
+      "version": "amend-139884-SA0798"
+    },
+    {
+      "name": "London Lamar",
+      "role": "co",
+      "version": "amend-139884-SA0798"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2022-03-23",
+      "body": "TN Senate",
+      "motion": "Senate committee: recommended for passage with amendment, 8-0 [version voted: Draft 2494081 + SA0798 (full rewrite) -- adoption of SA0798 inferred from 'with amendment/s' (data flag adopted=0)]",
+      "kind": "roll-call",
+      "yes": 8,
+      "no": 0,
+      "absent": 0,
+      "body_size": 8,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/SB2064/id/1176830",
+      "members": [
+        {
+          "name": "Ken Yager",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd Gardenhire",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Briggs",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Yarbro",
+          "vote": "yea"
+        },
+        {
+          "name": "Edward Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Sara Kyle",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Powers",
+          "vote": "yea"
+        },
+        {
+          "name": "Page Walley",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

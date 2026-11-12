@@ -1,0 +1,32 @@
+{
+  "id": "TN-HB-597-2021",
+  "scope": "state:tn",
+  "title": "HB 597 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 2 and Title 49, relative to elections.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB0597/2021"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) 2-7-112(c)(3) (Sec. 1, rewritten subsection)\n(quote) (3) An identification card issued to a current student by a public institution of higher education containing a photograph of the student;\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) 2-6-201(a) (Sec. 3, replaces section)\n(quote) A registered voter is not required to provide a reason in order to cast an absentee ballot by mail; provided, that the voter submits a certification as to the identity of the voter, on a form prescribed by the secretary of state, with the application for a by-mail absentee ballot.\n(section) 2-6-202(a)(3)(G) (Sec. 4, replaces item)\n(quote) (G) The certification required under § 2-6-201.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec. 1 (rest): rewrites the 2-7-112(c) list; other items appear to reprint existing ID types (passport, driver licence, state/federal photo ID, employee ID, military ID, retired state employee ID).\n(other) Sec. 2: deletes 2-2-115(b)(7) (existing text not saved).\n(other) Sec. 3 (b): a non-defective absentee ballot cast under (a) must be counted, including in a recount.\n(other) Sec. 5: deletes the words 'or that category of persons otherwise' in 2-6-401(c).\n(other) Sec. 6: deletes 2-8-101(b) (existing text not saved).\n(other) Sec. 7: rules take effect on becoming law; all else July 1, 2021.\n(other) version: 2278294-Draft: Draft only; carries slots a and c: adds public-college student photo ID to 2-7-112(c), and makes a signed identity certification (not an ID number or ID copy) the condition of a by-mail absentee ballot without a stated reason.\n(other) note: Only the Draft is saved. The certification form is to be prescribed by the secretary of state; the text does not say what it contains. Failed in House Elections & Campaign Finance Subcommittee 2021-03-03; no roll call saved.",
+  "sponsors": [
+    {
+      "name": "John Clemmons",
+      "role": "prime",
+      "version": "2278294-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

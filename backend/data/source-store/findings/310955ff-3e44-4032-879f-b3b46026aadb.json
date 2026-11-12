@@ -1,0 +1,153 @@
+{
+  "politician_id": "310955ff-3e44-4032-879f-b3b46026aadb",
+  "findings": [
+    {
+      "id": "dac11bb5a7f7cd1c84b874ef0fee31c3143d06b7310f57cb59e1922a14e5668a",
+      "kind": "own-words",
+      "url": "https://paulbaileyfortn.com/?p=2336",
+      "date": "2020-12-11",
+      "date_precision": "day",
+      "passage": "So, with what’s going on in our nation today, with the controversy in Georgia, Arizona, Pennsylvania, Michigan, Wisconsin, talk a little bit about Tennessee, the fact that we have photo ID, we don’t have same-day registration, we have the ability for you to request a ballot. So, speak to that just a little bit because there is a misconception between a mail-in ballot and an absentee ballot.",
+      "note": "As host of his own podcast, he asks the Secretary of State about Tennessee's photo ID requirement, no same-day registration and the ability to request a ballot, and about the difference between mail-in and absentee ballots. A question, not a stated position.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:51:16.690Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b1ab37694756733de7ffc9f835d35a39c661f91ba75acf01de3e8f3ecf05e7d8",
+      "kind": "own-words",
+      "url": "https://paulbaileyfortn.com/?p=2336",
+      "date": "2020-12-11",
+      "date_precision": "day",
+      "passage": "—because this is something that has come up in the last several weeks is the fact that—how often do we purge our voter rolls in the state of Tennessee? Because that has been a controversy in some of the states that they’re mailing ballots to individuals that are deceased; they’re mailing ballots to individuals that have not lived at an address for 12 months or longer. So, how does Tennessee go about purging its voter rolls to make sure that we are allowing that person that is duly registered that lives at that address to come in and vote and we try to mitigate any kind of voter fraud?",
+      "note": "In the same podcast he asks how Tennessee purges its voter rolls so that duly registered residents can vote while voter fraud is mitigated. A question, not a stated position.",
+      "subjects": [
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:51:16.690Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0163468abe7ef6cc7868a6546830d4095296324325aa2540d7bc350fe651df73",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/HB1316/id/1543681",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1316-2025",
+      "act": "yea",
+      "motion": "Senate: Third Consideration",
+      "note": "TN Senate floor roll call (Third Consideration, 27-1) on HB1316 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: House bill as engrossed: Draft + HA0118 (no Senate amendment adopted; SA0055 withdrawn, text not saved). Equals the Chaptered act.; linked by LegiScan member id 16127 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.082Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f0348f24a72db024f3a1a9c793f0dac0385e4fb82378e2fbb2b145afd1d30976",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0626/id/1541445",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-626-2025",
+      "act": "yea",
+      "motion": "Senate: as Amended Third Consideration",
+      "note": "TN Senate floor roll call (as Amended Third Consideration, 22-4) on SB0626 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft 3093364 + SA0305 (full rewrite = chaptered text); linked by LegiScan member id 16127 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.082Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f980e3e7619c55dde318902ee75c0bcffeab049f3ac02af140c30fb2d2daf2c1",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB6002/id/1476571",
+      "date": "2025-01-29",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "yea",
+      "motion": "Senate: as Amended Third Consideration",
+      "note": "TN Senate floor roll call (as Amended Third Consideration, 26-7) on SB6002 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA6001 + SA6007 (adopted on the Senate floor 1/29/2025; equals the chaptered text); linked by LegiScan member id 16127 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.082Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting and voter-roll checks",
+        "election integrity",
+        "candidate questionnaires"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "his campaign/official site paulbaileyfortn.com (home page, Capitol Hill Update posts seen in search, and the 2020 podcast transcript with the Secretary of State read; only the podcast is on the subject)",
+        "iVoterGuide Tennessee 2026 general listing: his entry has no questionnaire profile link",
+        "web searches: voter ID/photo ID; proof of citizenship/SAVE Act; questionnaire/iVoterGuide; named quotes on elections; column/newsletter election integrity (5 searches; no news quote from him on ID or citizenship)",
+        "his SB 2913 (2023-24) concerns rights of citizenship (felon rights), seen in search results only; no own words saved",
+        "blocked: https://ballotpedia.org/Paul_Bailey_(Tennessee) (listed as refusing fetches, not tried)",
+        "not fetched by rule: capitol.tn.gov and wapp.capitol.tn.gov; tennesseelookout.com, fox17.com and newsfromthestates.com results seen in search only"
+      ],
+      "found": 2,
+      "at": "2026-11-12T01:51:16.690Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 3,
+      "at": "2026-11-12T15:13:42.082Z",
+      "by": "source-collector"
+    }
+  ]
+}

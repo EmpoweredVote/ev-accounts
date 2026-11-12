@@ -1,0 +1,18 @@
+{
+  "id": "TN-SB-1767-2017",
+  "scope": "state:tn",
+  "title": "SB 1767 (110th General Assembly): As introduced, creates a process for automatic voter registration by county election commissions after a person completes an application for a driver license, photo identification license, or handgun carry permit with the department of safety. - Amends TCA Title 2 and Title 55, Chapter 50.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB1767/2017"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) TCA 2-2-201(a)(1) (new)\n(quote) The commissioner of the department of safety shall by rule establish a procedure by which the department of safety shall, no less frequently than once quarterly, make accessible to the secretary of state electronic records containing the legal name, age, residence, and citizenship information for, and the electronic signature of, each person eighteen (18) years of age or older who completes an initial application for or application for renewal of a driver license, a photo identification license, or a handgun carry permit.\n(e_other_rule)\n(section) TCA 2-2-201(b) (new)\n(quote) The electronic record and electronic signature of a person whose electronic record was obtained by a county election commission pursuant to subsection (a) shall constitute a completed in-person registration for the purposes of voter registration, and the county election commission shall register the person to vote if the person: (1) Does not decline to be registered as a voter ... (2) Is an eligible voter under the laws of this state; and (3) Is not already registered to vote.\n(section) TCA 2-2-201(d) (new)\n(quote) For purposes of voter registration pursuant to this section, the applicant's digital signature on file with the department of safety satisfies the signature requirement of § 2-2-116.\n(other) Section 1: replaces 2-2-201 with an automatic-registration process: department of safety records go quarterly to the secretary of state, then to county election commissions, which register eligible people who do not decline.\n(other) (c): notices of how to decline are posted by the secretary of state and counties.\n(other) Section 2: new Title 55 section requiring the commissioner to post decline notices and report decliners to the secretary of state.\n(other) Section 3: rulemaking authority.\n(other) Section 4: rulemaking effective on becoming law; all else January 1, 2019.\n(other) version: Draft 1696719 (2018-01-23): only version saved; same text as HB 1777. No amendments saved.\n(other) note: Companion HB 1777. Stopped after referral to Senate State and Local Government; no votes. Same note on citizenship as HB 1777.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "id": "TN-HB-1283-2025",
+  "scope": "state:tn",
+  "title": "HB 1283 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 2, relative to elections.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB1283/2025",
+    "https://legiscan.com/TN/rollcall/HB1283/id/1519852",
+    "https://legiscan.com/TN/rollcall/HB1283/id/1534294"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id)\n(section) Sec 1, new 2-4-108(e) (training only)\n(quote) (e) The coordinator of elections shall include in the educational standards created pursuant to subsection (a) training on temporary forms of identification issued to non-United States citizens that may not be used as evidence of identification as set forth in\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Draft Sec 1: 2-2-134(c) records of purged voters kept 3 years instead of 2 (no ID or citizenship text).\n(other) Draft Sec 2: effective on becoming law.\n(other) Chaptered/HA0289 Sec 1: new 2-4-108(e) election-official training (above). Sec 2: effective 2026-01-01.\n(other) version: 3105305-Draft (2025-02-06): caption bill; only 2-2-134(c) purge record retention 2 to 3 years. No slot a-e text.\n(other) version: amend-244888-HA0289 (committee amendment 1, Crawford, 2025-04-02, adopted flag 0): deletes all after the enacting clause; substitutes the training rule in 2-4-108(e). Carries slot a text (training only).\n(other) version: 3236810-Chaptered (2025-05-07, Public Chapter 394 = Senate Bill 1143, substituted for HB 1283): same as HA0289.\n(other) note: Slot a text is a training duty for election officials, not a rule on what a voter must show: it refers back to 2-7-112(c) (existing law, unchanged here) and says temporary non-citizen IDs may not be used as voter ID. The House substituted SB 1143 on 2025-04-16; no House floor roll call is saved under HB 1283.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2025-03-18",
+      "body": "TN House",
+      "motion": "Subcommittee recommended for passage [version voted: Draft (3105305-Draft; no amendment, the motion has no 'if amended')]",
+      "kind": "roll-call",
+      "yes": 6,
+      "no": 1,
+      "absent": 0,
+      "body_size": 7,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB1283/id/1519852",
+      "members": [
+        {
+          "name": "Jason Powell",
+          "vote": "nay"
+        },
+        {
+          "name": "Dan Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Rudd",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerome Moon",
+          "vote": "yea"
+        },
+        {
+          "name": "Rush Bricken",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Leatherwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Wright",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2025-04-02",
+      "body": "TN House",
+      "motion": "Committee recommended for passage if amended [version voted: Draft + HA0289 (full rewrite, committee amendment 1, dated the same day). Adoption inferred from the 'if am' motion and the Chaptered text matching HA0289.]",
+      "kind": "roll-call",
+      "yes": 18,
+      "no": 2,
+      "absent": 0,
+      "body_size": 20,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB1283/id/1534294",
+      "members": [
+        {
+          "name": "Dennis Powers",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Littleton",
+          "vote": "yea"
+        },
+        {
+          "name": "Bo Mitchell",
+          "vote": "yea"
+        },
+        {
+          "name": "Dan Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "John Crawford",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Rudd",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerome Moon",
+          "vote": "yea"
+        },
+        {
+          "name": "Rush Bricken",
+          "vote": "yea"
+        },
+        {
+          "name": "Jesse Chism",
+          "vote": "yea"
+        },
+        {
+          "name": "Vincent Dixie",
+          "vote": "nay"
+        },
+        {
+          "name": "Tom Leatherwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Iris Rudder",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Wright",
+          "vote": "yea"
+        },
+        {
+          "name": "Rick Eldridge",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd Warner",
+          "vote": "yea"
+        },
+        {
+          "name": "Michele Carringer",
+          "vote": "yea"
+        },
+        {
+          "name": "Greg Martin",
+          "vote": "yea"
+        },
+        {
+          "name": "Ed Butler",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Burkhart",
+          "vote": "yea"
+        },
+        {
+          "name": "Gabby Salinas",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

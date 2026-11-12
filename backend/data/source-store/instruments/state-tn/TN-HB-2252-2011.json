@@ -1,0 +1,32 @@
+{
+  "id": "TN-HB-2252-2011",
+  "scope": "state:tn",
+  "title": "HB 2252 (107th General Assembly): As introduced, requires the coordinator of elections to create a program to enable each precinct registrar to search records of the coordinator that are linked to the department of safety database to retrieve a photographic image of the voter if the voter is unable to present evidence of identification that bears the name and photograph of the voter. - Amends TCA Title 2, Chapter 7.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB2252/2011"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy)\n(section) 2-7-112 (new subsection, unnumbered) (Section 1)\n(quote) If a voter is unable to present evidence of identification that bears the name and photograph of the voter, prior to the voter casting a provisional ballot pursuant to subsection (e) the precinct registrar shall make an on-line search of the records maintained at the coordinator of election's office used, pursuant to § 2-2-141, to compare the statewide voter registration database with the department of safety database.\n(section) same subsection\n(quote) If this method is utilized and an image of the voter is retrieved, the precinct register shall make an appropriate notation on the voter's records that evidence of identification was obtained electronically and the voter shall be permitted to vote. If an image of the voter cannot be retrieved, the voter shall be entitled to vote a provisional ballot pursuant to subsection (e) unless the voter is eligible to vote pursuant to subsection (f).\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) same subsection\n(quote) The coordinator of election shall develop a program which will permit each precinct registrar to search, through the coordinator's office, the photographic images stored in the department of safety database and to retrieve instantaneously a copy of such image for comparison purposes as evidence of identification.\n(other) Section 2: effective on becoming law.\n(other) version: 511632-Draft (2012-01-09): the only saved version (slots b and e).\n(other) note: No roll calls. Last action is assignment to the S&LG Subcommittee 2012-01-24; never heard. The 2-2-141 reference is to the voter-list comparison with the safety department database; the bill does not make it a citizenship check.",
+  "sponsors": [
+    {
+      "name": "G Hardaway",
+      "role": "prime",
+      "version": "511632-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

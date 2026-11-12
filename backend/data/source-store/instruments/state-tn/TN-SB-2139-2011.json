@@ -1,0 +1,83 @@
+{
+  "id": "TN-SB-2139-2011",
+  "scope": "state:tn",
+  "title": "SB 2139 (107th General Assembly): As introduced, removes requirement that voter needs photograph identification prior to voting; restores former requirement that voter present identification for purpose of comparing signature on the application for ballot. - Amends TCA Title 2, Chapter 7, Part 1.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB2139/2011",
+    "https://legiscan.com/TN/rollcall/SB2139/id/179712"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1, TCA 2-7-112(a)(1)\n(quote) STRUCK: In addition, the voter shall present to the precinct registrar one (1) form of identification that bears the name and photograph of the voter. The requirement to present one (1) form of identification that bears the name and photograph of the voter shall apply to persons voting pursuant to § 2-6-109; provided, however, that a person voting in accordance with § 2-6-401(a) and (b) or § 2-6-601 shall not be required to show an identification with a photograph of the voter.\n(section) Sec. 2, TCA 2-7-112(a)(1)(B)\n(quote) (B) To compare the voter's signature on the application, the voter shall supply evidence of identification specified in subsection (c).\n(section) Sec. 6, TCA 2-7-112(c)\n(quote) (c) For purposes of comparing the person's signature on the application for ballot, \"evidence of identification\" shall be a valid voter's registration certificate, Tennessee driver license, social security card, credit card bearing the applicant's signature or other document bearing the applicant's signature\".\n(b_no_id_remedy)\n(section) Sec. 4, TCA 2-7-112(a)(3)(A)\n(quote) STRUCK: If a voter is unable to present evidence of identification, the voter shall be entitled to vote a provisional ballot pursuant to subsection (e) unless the voter is eligible to vote pursuant to subsection (f).\n(section) Sec. 5, new TCA 2-7-112(a)(1)(E)\n(quote) (E) If a voter is unable to present any evidence of identification specified in subsection (c), the voter shall be required to execute an affidavit of identity on a form provided by the county election commission.\n(section) Sec. 7, TCA 2-7-112 (e) and (f)\n(quote) STRUCK: Tennessee Code Annotated, Section 2-7-112, is amended by deleting subsections (e) and (f).\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec. 3: (a)(1)(C) 'verification of' changed to 'comparison of the signature and other'.\n(other) Sec. 7: also deletes the whole of (e) and (f); their content is not reprinted here (SB16 as filed put the provisional ballot procedure in (e) and the indigency/religious-objection affidavit in (f)).\n(other) Sec. 8: takes effect on becoming law.\n(other) version: Draft 511774 (dated 2011-12-14; filed 2011-10-21): only saved version. It repeals the photo ID requirement and returns to signature comparison with a wider ID list, replaces the provisional ballot with an affidavit of identity, and deletes (e) and (f). Slots c, d, e not stated. Header shows House Bill 2176 by Turner M as companion.\n(other) note: This bill REMOVES the photo ID rule (slot a) and the provisional-ballot path (slot b): the 'STRUCK' quotes are existing law being deleted. The new rule uses signature comparison against a wider list that includes a social security card or any document bearing the applicant's signature, and an affidavit of identity for a voter with none. LegiScan's motion line says 'Recommended for passage' but the tally is 3 yes, 6 no and the actions say 'Failed In S. S&L Govt. Comm.'.",
+  "sponsors": [
+    {
+      "name": "Lowe Finney",
+      "role": "prime",
+      "version": "511774-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2012-03-27",
+      "body": "TN Senate",
+      "motion": "Senate committee (State & Local Government), motion to recommend for passage failed 3-6 [version voted: Draft 511774 (no amendment shown in the actions)]",
+      "kind": "roll-call",
+      "yes": 3,
+      "no": 6,
+      "absent": 0,
+      "body_size": 9,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/SB2139/id/179712",
+      "members": [
+        {
+          "name": "Stacey Campfield",
+          "vote": "nay"
+        },
+        {
+          "name": "Ken Yager",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Ketron",
+          "vote": "nay"
+        },
+        {
+          "name": "Thelma Harper",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Faulk",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Norris",
+          "vote": "nay"
+        },
+        {
+          "name": "Joe Haynes",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Lowe Finney",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

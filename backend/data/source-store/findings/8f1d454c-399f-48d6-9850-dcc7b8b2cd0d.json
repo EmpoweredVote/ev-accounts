@@ -1,0 +1,115 @@
+{
+  "politician_id": "8f1d454c-399f-48d6-9850-dcc7b8b2cd0d",
+  "findings": [
+    {
+      "id": "6bf6d81a82db697d74298b2d427ff9b8ac3a5267f7ae33bbaa137ed285b615aa",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/HB1316/id/1538770",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1316-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR AS AMENDED PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR AS AMENDED PASSAGE ON THIRD CONSIDERATION, 83-7) on HB1316 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + HA0118 (adopted on the floor 2025-04-07 per action log); linked by LegiScan member id 18644 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.079Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad92ee221bdade53f1ad4bb273813b351662b750a615bdacabc84af573a8a288",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0626/id/1550047",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-626-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION, 72-22) on SB0626 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft 3093364 + SA0305 (full rewrite = chaptered text) as engrossed by the Senate; linked by LegiScan member id 18644 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.079Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dfc0f401b5e1e11d23ee20ace873f4d6d7b4216789ab4da3a289d27d0ae2ae27",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB6002/id/1477618",
+      "date": "2025-01-30",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION, 71-19) on SB6002 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA6001 + SA6007 (adopted on the Senate floor 1/29/2025; equals the chaptered text) as engrossed by the Senate; linked by LegiScan member id 18644 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.079Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting and voter-roll checks",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "identity confirmed: House caucus pages https://tnhousegop.org/member-newsroom/2026/04/state-rep-ron-gants-capitol-report-april-10-2026/ carry his weekly report under his name (District 94, Rossville); search results show him in the 2026 general election",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "House caucus site searches for his name plus voter / election: only his weekly Capitol Report titles returned",
+        "his weekly Capitol Reports (2026-03-20, 2026-03-27, 2026-04-02, 2026-04-10) read: the text on elections is the caucus's summary of other members' bills and quotes of other members, not his own words; nothing of his own on the subject; the 2025 and Jan-Mar 2026 reports not each opened (they are caucus roundups)",
+        "tnhousegop.org/legislation-seeks-to-enhance-criminal-sentences-for-illegal-non-citizens (his HB 1041, criminal sentencing, not about voting): in search results, off the subject, nothing saved",
+        "web searches (7): name + voter ID; + proof of citizenship / election integrity / noncitizen; + photo ID election commission; + questionnaire/voter guide; + 'Rep. Ron Gant' voting/ballot/elections; nothing in his own words on the subject",
+        "iVoterGuide 2026 page for District 94: listed in results with questionnaire section, answers not visible; nothing saved",
+        "blocked: https://ballotpedia.org/Ron_Gant (refused by instruction, not fetched)",
+        "blocked: bluevoterguide.org and justfacts.votesmart.org (refused by instruction, not fetched)",
+        "not reviewed (outlet refused by instruction): https://tennesseelookout.com/2026/04/07/bill-requiring-citizenship-database-checks-for-voter-registration-heads-to-governors-desk/",
+        "not fetched by instruction: capitol.tn.gov, wapp.capitol.tn.gov, sos.tn.gov, tn.gov"
+      ],
+      "found": 0,
+      "at": "2026-11-12T01:57:09.822Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 3,
+      "at": "2026-11-12T15:13:42.079Z",
+      "by": "source-collector"
+    }
+  ]
+}

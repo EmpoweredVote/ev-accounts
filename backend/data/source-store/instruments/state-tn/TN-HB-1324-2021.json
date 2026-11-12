@@ -1,0 +1,57 @@
+{
+  "id": "TN-HB-1324-2021",
+  "scope": "state:tn",
+  "title": "HB 1324 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 2, relative to evidence of identification for voting.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB1324/2021"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) 2-7-112(c)(2) (Sec. 1)\n(quote) (2) A valid identification card that contains a photograph of the voter, and that was issued by this state, or by the United States where authorized by law to issue personal identification;\n(section) 2-7-112(c)(8) new (Sec. 2)\n(quote) (8) A valid identification card that contains a photograph of the voter and that was issued by an accredited postsecondary institution of education in this state.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) new subsection of 2-7-112 (Sec. 3(1))\n(quote) The secretary of state shall conduct a study into the use of student identification cards for the purposes of voting.\n(other) Sec. 3: study lists consulting seven bodies; first report due Jan. 31, 2022; a second report assessing postsecondary IDs under (c)(8) due Jan. 31, 2023; the subsection is repealed Feb. 1, 2023.\n(other) Sec. 4: takes effect on becoming law.\n(other) version: 2288905-Draft: Draft only; adds a postsecondary-institution photo ID to 2-7-112(c) and orders a secretary of state study of student IDs for voting.\n(other) note: Only the Draft is saved. The Jan. 2022 report date had passed by the last action (returned to the clerk's desk 2022-03-30). No roll call saved. Companion SB947 is not in this group.",
+  "sponsors": [
+    {
+      "name": "G Hardaway",
+      "role": "prime",
+      "version": "2288905-Draft"
+    },
+    {
+      "name": "Sam McKenzie",
+      "role": "co",
+      "version": "2288905-Draft"
+    },
+    {
+      "name": "Yusuf Hakeem",
+      "role": "co",
+      "version": "2288905-Draft"
+    },
+    {
+      "name": "Larry Miller",
+      "role": "co",
+      "version": "2288905-Draft"
+    },
+    {
+      "name": "Barbara Cooper",
+      "role": "co",
+      "version": "2288905-Draft"
+    },
+    {
+      "name": "Joe Towns",
+      "role": "co",
+      "version": "2288905-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

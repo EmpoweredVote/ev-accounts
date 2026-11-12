@@ -1,0 +1,266 @@
+{
+  "politician_id": "f608a36d-a1c7-495d-8bc8-f0e011682e67",
+  "findings": [
+    {
+      "id": "00d60ceec40e88c39310f1a42b4e514a40c3e4a9e058c74ff2a20eb0a6c4649c",
+      "kind": "own-words",
+      "url": "https://www.newschannel5.com/news/tennessee-republican-leadership-file-bill-on-election-laws-temporary-drivers-licenses",
+      "date": "2025-01-07",
+      "date_precision": "day",
+      "passage": "As the number one state for election integrity, Tennessee leads the nation in protecting the ballot box because we are committed to safeguarding the democratic process for current and future generations,” Johnson said. \"This legislation is a significant step forward in enhancing the security and trustworthiness of our election system by proposing additional safeguards to ensure that only eligible citizens can participate in the electoral process.",
+      "note": "Statement issued on filing HB 69, which would have election officials check citizenship with the state safety department at registration, check felony status, and track restored voting rights, for the 2028 presidential election. Quoted by NewsChannel 5.",
+      "subjects": [
+        "voter-roll citizenship checks",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T02:09:13.111Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43be2a0dfb8d8a7ea425cbb04840285c6cf0a0b74dac2582b9f9eb9cd2a93f3f",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0016/id/84028",
+      "date": "2011-05-20",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-16-2011",
+      "act": "yea",
+      "motion": "Senate: CONCUR IN HOUSE AMEND# 2",
+      "note": "TN Senate floor roll call (CONCUR IN HOUSE AMEND# 2, 18-14) on SB0016 (107th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Senate-passed Draft + House amendment 2 (HA0158, not saved); linked by LegiScan member id 7298 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.074Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "58920d69c66e35d987abc9e35185daebe460af96eabe735397d9c437739415f2",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB1666/id/82547",
+      "date": "2011-05-21",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-1666-2011",
+      "act": "yea",
+      "motion": "Senate: THIRD CONSIDERATION AMENDED",
+      "note": "TN Senate floor roll call (THIRD CONSIDERATION AMENDED, 27-0) on SB1666 (107th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA0296 (not saved); DIRECTION ONLY (ruling T6: the enacted text is not saved; content known from the LegiScan description); linked by LegiScan member id 7298 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.074Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "392efdc8ab393853e95a585df80271d13d515114e0d823fd05c89632073529c7",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0125/id/259248",
+      "date": "2013-04-04",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-125-2013",
+      "act": "yea",
+      "motion": "Senate: CONCUR IN HOUSE AMEND# 2",
+      "note": "TN Senate floor roll call (CONCUR IN HOUSE AMEND# 2, 27-3) on SB0125 (108th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: House Amendment 2 not saved; linked by LegiScan member id 7298 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.074Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0163468abe7ef6cc7868a6546830d4095296324325aa2540d7bc350fe651df73",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/HB1316/id/1543681",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1316-2025",
+      "act": "yea",
+      "motion": "Senate: Third Consideration",
+      "note": "TN Senate floor roll call (Third Consideration, 27-1) on HB1316 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: House bill as engrossed: Draft + HA0118 (no Senate amendment adopted; SA0055 withdrawn, text not saved). Equals the Chaptered act.; linked by LegiScan member id 7298 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.074Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "63a064937b776a1e83b17ef93aa6a5bf32949e67416a5c4df357ded5de817fb6",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/SB0133/2025",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TN-SB-133-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, 3055361-Draft",
+      "note": "Listed as prime sponsor of SB0133 (114th General Assembly) in LegiScan's bill record (sponsor order 1); the first version (3055361-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.074Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f0348f24a72db024f3a1a9c793f0dac0385e4fb82378e2fbb2b145afd1d30976",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0626/id/1541445",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-626-2025",
+      "act": "yea",
+      "motion": "Senate: as Amended Third Consideration",
+      "note": "TN Senate floor roll call (as Amended Third Consideration, 22-4) on SB0626 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft 3093364 + SA0305 (full rewrite = chaptered text); linked by LegiScan member id 7298 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.074Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "80a84b0b22ca7b36850e2d6b15723e670e2a4b8585837c6fa0f8ffbe7d1dbaf4",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/SB1297/2025",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TN-SB-1297-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, 3106048-Draft",
+      "note": "Listed as prime sponsor of SB1297 (114th General Assembly) in LegiScan's bill record (sponsor order 1); the first version (3106048-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.074Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f980e3e7619c55dde318902ee75c0bcffeab049f3ac02af140c30fb2d2daf2c1",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB6002/id/1476571",
+      "date": "2025-01-29",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "yea",
+      "motion": "Senate: as Amended Third Consideration",
+      "note": "TN Senate floor roll call (as Amended Third Consideration, 26-7) on SB6002 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA6001 + SA6007 (adopted on the Senate floor 1/29/2025; equals the chaptered text); linked by LegiScan member id 7298 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.074Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e4e3bcaa8c23bef3a644a0818bbf9002fe692310cdabf1f932f571a953961d6c",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/SB6002/2025",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, 3072439-Draft",
+      "note": "Listed as prime sponsor of SB6002 (114th General Assembly) in LegiScan's bill record (sponsor order 1); the first version (3072439-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.074Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "voter-roll citizenship checks",
+        "election integrity in general",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "NewsChannel 5 article on HB 69 (fetched by curl)",
+        "NewsChannel 5 Investigates article on SAVE tool (2026-10-15; does not name him)",
+        "iVoterGuide profile (thin, no answers)",
+        "WPLN 2018 leadership story (nothing on the subject)",
+        "web searches (6) on voter ID, citizenship, SAVE, SB 2204, columns, interviews",
+        "not reviewed (refused host, quote seen only in search snippet): Tennessee Lookout and newsfromthestates stories on SB 2204 / HB 2185",
+        "blocked: https://ballotpedia.org (Ballotpedia refuses fetches; not tried per instructions)",
+        "not fetched per instructions: capitol.tn.gov, wapp.capitol.tn.gov, sos.tn.gov, tennesseelookout.com and newsfromthestates.com (refused hosts)"
+      ],
+      "found": 1,
+      "at": "2026-11-12T02:09:13.111Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 9,
+      "at": "2026-11-12T15:13:42.074Z",
+      "by": "source-collector"
+    }
+  ]
+}

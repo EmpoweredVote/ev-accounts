@@ -1,0 +1,32 @@
+{
+  "id": "TN-SB-658-2025",
+  "scope": "state:tn",
+  "title": "SB 658 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 2, relative to voter identification.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB0658/2025"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1, 2-7-112(c)(2) (new)\n(quote) \"Evidence of identification,\" as described in subdivision (c)(1), does not include a license, identification card, passport, or other document that has expired or that is invalid for any reason.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 2 (new section, Title 2, ch. 2, pt. 1)\n(quote) Notwithstanding a law to the contrary, a county election commission shall not register a person to vote unless the applicant has provided proof satisfactory to the respective commission that the person holds valid, unexpired evidence of identification as described in § 2-7-112(c)(1) at the time of processing the applicant's application to register.\n(other) Sec. 1 also designates the existing 2-7-112(c) as (c)(1).\n(other) Sec. 3: effective on becoming law.\n(other) version: 3094744-Draft (only saved version): slot a (expired or invalid ID is not 'evidence of identification') and slot e (no registration without valid, unexpired ID). Slots b-d not stated.\n(other) note: Draft text only; no votes. Caption names House companion HB0574. The registration clause is tied to the (c)(1) item, the Tennessee driver licence.",
+  "sponsors": [
+    {
+      "name": "Joseph Hensley",
+      "role": "prime",
+      "version": "3094744-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

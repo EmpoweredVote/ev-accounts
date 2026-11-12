@@ -1,0 +1,18 @@
+{
+  "id": "TN-SB-2124-2025",
+  "scope": "state:tn",
+  "title": "SB 2124 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 2, relative to voter registration.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB2124/2025"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec. 1, 2-2-141(f)(1) (new)\n(quote) Each county election commission shall check each applicant for registration with the systematic alien verification for entitlements (SAVE) program database prior to placing a registrant on the voter rolls in order to ensure non-United States citizens are not registered to vote in the county.\n(section) Sec. 1, 2-2-141(f)(2)\n(quote) At least once each quarter, the county election commission shall check the county's entire voter registration list through the SAVE program database to ensure that non-United States citizens are not on the voter rolls in the county.\n(e_other_rule) not stated.\n(other) Preamble clauses: federal SAVE now open to county election officials, free of cost, and allows batch entry.\n(other) Sec. 2: effective on becoming law.\n(other) version: 3329193-Draft (only saved version): slot d only (SAVE check of every applicant and quarterly check of the whole list, by the county). No document required from registrants.\n(other) note: Draft only; no votes. The citizenship check is a database check by officials; the text does not say what happens to a flagged applicant. Caption names House companion HB1897.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}
