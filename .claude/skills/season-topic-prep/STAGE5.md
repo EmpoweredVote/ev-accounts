@@ -127,20 +127,31 @@ python3 -I scripts/stage5/bill_table.py questions <stage5>/bill-table-xx.json --
 `questions` lists the flagged bills and every person with a Yes on both sides of the middle rung. **The runner
 answers that file before coding starts** (a runner stop). The answers go into the coder rulings digest.
 
-#### Pilot rule: record first, search only where the record leaves the seat open — MISSOURI PILOT ONLY
+#### Pilot rule: record first, search only where the record leaves the seat open — PILOT STATES ONLY
 
-> **Missouri pilot only (gun-policy, Season 3, 2026-11).** Do not use it for another state or topic until the pilot
-> report says it held. It rests on one measurement: in Georgia, a record seat at rung 5 (244 people) or rung 2 (12)
-> was never changed by the search; rung 3 changed 2.3% of the time and rung 4 10%.
+> **Pilot states only (gun-policy, Season 3, 2026-11).** It held in Missouri (control: 0 of 20 changed), and the
+> runner approved it for the next state on 2026-11-12. Do not use it for another topic yet. It rests on one
+> measurement: in Georgia, a record seat at rung 5 (244 people) or rung 2 (12) was never changed by the search;
+> rung 3 changed 2.3% of the time and rung 4 10%.
 
 1. Code everyone from the record alone: `coder-inputs.ts ... --record-only --coded-dir <stage5>/record-coded`, then
    `split-codes.ts ... --codes <stage5>/record-codes`. A record-only coder never codes no-stance (nothing was searched
-   yet); a person with no record is listed in `<name>-no-record.txt` and searched.
+   yet); a person with no record is listed in `<name>-no-record.txt` and searched. The roster must carry the
+   `office` column (`topic:stage5-roster` writes it): a record-only code may be final (step 3), so its coder must
+   know the seat.
 2. `python3 -I scripts/stage5/search_list.py plan --record-codes <stage5>/record-codes --roster <roster.tsv> --skip-rungs 5,2 --out <stage5>/search-plan-xx`
    skips record seats at rungs 5 and 2, except a seeded random 20 of them (the control), which are searched.
-3. Search and code everyone in `search.tsv` as usual.
+3. Search everyone in `search.tsv` and import. Then, before coding again:
+   `python3 -I scripts/stage5/search_list.py recode --record-codes <stage5>/record-codes --record-briefs <record-only --out folder> --out <stage5>/search-plan-xx --wave-dir <search wave folder> --codes <stage5>/codes --apply`.
+   Only people with a **new** on-topic finding (or no record-only code) go to the second pass (`recode-ids.txt`, as
+   `--ids` for `coder-inputs.ts`). A search that found nothing while reading none of the person's own pages, or whose
+   agent did not finish, is not "found nothing": search those people once more (`research-again-ids.txt`), import,
+   and run `recode` again. Everyone else keeps the record-only code (`--apply` copies it into `codes/`). 🔴 Never
+   show a coder its first code: the second pass is built blind, as usual.
 4. `search_list.py adopt ...` first checks the control (exit 4 when more than 1 in 20 changed outcome or rung: then
    search the skipped people too, and report it), then copies the skipped people's record-only codes into `codes/`.
+5. `search_effect.py --roster <roster.tsv> --unit state:xx --record-codes ... --codes ... --plan ...` counts, by the
+   record's rung, how many searched people the search changed, and codings per person. Report it with the run.
 
 ### 4. Code
 
@@ -305,8 +316,8 @@ The model is per row and is never lowered: coders and every judgment step stay o
 **Held people.** A person whose row cannot pass yet (a tool gap, or a new item that needs a re-code check) is
 **held**: their id goes in `held.txt`, and their rows come out of `research.csv` and `evidence.csv` (keep the full
 set as `research-with-held.csv` / `evidence-with-held.csv`; `drop_held.py <batch>` does both). A coded person who is
-leaving and is left out of the batch on the runner's choice goes in `moved.txt`. Set both lists' code files aside
-before each `topic:stage5-write` run and put them back after: `write-batch.sh` does both. Nothing is written for a
+leaving and is left out of the batch on the runner's choice goes in `moved.txt`. Leave both lists' people out
+of every `topic:stage5-write` run: `write-batch.sh` passes them as `--skip-ids` (no code file is moved). Nothing is written for a
 held person. They follow in a small batch of their own (`<unit>-NN-<name>`) once the gap is fixed:
 `setup_batch.py <abs>/stage5 <abs>/stage5/write/<unit>-NN-<name> --level state --state XX <pid>…` (`--level federal`
 for a federal one) writes its `pids.txt` and puts every other coded id in the unit in its `moved.txt`, so only those
@@ -319,7 +330,7 @@ zsh scripts/stage5/write-batch.sh <abs>/stage5 <abs batch> <key> state:xx 0
 ```
 
 It runs `topic:stage5-write --season draft --units state:xx --csv-out <batch>/research-stage5-0.csv` with the held
-and moved codes set aside, and saves its output in `dry-run-0.txt`. Later dry runs take the next number.
+and moved people left out (`--skip-ids`), and saves its output in `dry-run-0.txt`. Later dry runs take the next number.
 
 It reads the database only to find the draft season. It fetches each own-words passage's page again and keeps the
 passage only when it is there word for word, whatever the quote check said. A page that is not HTML (a PDF) or will
@@ -593,7 +604,7 @@ Write nothing until the runner says yes **for this batch**.
 
 **14. Write, queue for review, read back.** On yes:
 
-1. Run `topic:stage5-write` with `--apply` and without `--csv-out`, with held and moved codes set aside
+1. Run `topic:stage5-write` with `--apply` and without `--csv-out`, with held and moved people left out
    (`write-batch.sh <abs>/stage5 <abs batch> <key> state:xx apply`). It writes the outcomes and passages in one transaction. Exit 3 with "WROTE" is fine. It
    refuses to run while any code is refused: fix those codes and dry-run again first, or an earlier write for
    those people would stay live. Running it again for the same people replaces their outcome and their passages.

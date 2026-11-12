@@ -1,10 +1,11 @@
 """Token log for one Stage 5 state run: the numbers the pilot measures (process-efficiency review 2026-11-12, section 7).
 
-usage: python3 -I scripts/stage5/stage5_usage.py --session <main session .jsonl> [--wave-dir <dir>]... [--people N]
+usage: python3 -I scripts/stage5/stage5_usage.py --session <main session .jsonl>... [--wave-dir <dir>]... [--people N]
                                                   [--projects <dir>]... [--since <ISO>] [--until <ISO>] [--json <out>]
 
 --session    the main session's transcript (~/.claude/projects/<project>/<session id>.jsonl). Its subagents are read
-             from <session id>/subagents/*.jsonl beside it.
+             from <session id>/subagents/*.jsonl beside it. Repeat it for a state run as two sessions (set-up, then
+             search to write): their main-session units and steps are added together.
 --wave-dir   a wave.py output folder; each <name>.result.json names a session id, whose transcript is looked for
              under every --projects root (default ~/.claude/projects and ~/.claude-ev/projects).
 --since/--until  keep only turns in this window (one state's run inside a longer session).
@@ -21,7 +22,7 @@ import collections as C, glob, json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir
 from _args import opt, opts
 
-USAGE = 'stage5_usage.py --session <jsonl> [--wave-dir <dir>]... [--people N] [--since ISO] [--until ISO] [--json <out>]'
+USAGE = 'stage5_usage.py --session <jsonl>... [--wave-dir <dir>]... [--people N] [--since ISO] [--until ISO] [--json <out>]'
 W = {'in': 1.0, 'cw': 1.25, 'cr': 0.1, 'out': 5.0}
 
 
@@ -71,11 +72,16 @@ def find_session(sid, roots):
 
 
 def main():
-    main_path = opt('--session', required=True, usage=USAGE)
+    mains = opts('--session')
+    if not mains: raise SystemExit(USAGE)
     since, until = opt('--since'), opt('--until')
     roots = opts('--projects') or ['~/.claude/projects', '~/.claude-ev/projects']
-    mt, _, msteps, _ = read(main_path, since, until)
-    agents = [p for p in glob.glob(os.path.join(main_path[:-6], 'subagents', '*.jsonl'))]
+    mt, msteps, agents = C.defaultdict(C.Counter), 0, []
+    for main_path in mains:
+        t, _, s, _ = read(main_path, since, until)
+        for m, c in t.items(): mt[m].update(c)
+        msteps += s
+        agents += glob.glob(os.path.join(main_path[:-6], 'subagents', '*.jsonl'))
     missing = []
     for d in opts('--wave-dir'):
         for f in sorted(glob.glob(os.path.join(d, '*.result.json'))):
@@ -93,7 +99,7 @@ def main():
     people = int(opt('--people', '0'))
     starts = [b['start'] / b['n'] for b in by.values() if b['n']]
     out = {'total_units': round(total), 'per_person': round(total / people) if people else None,
-           'main_units': round(main_u), 'main_share': round(main_u / total, 3) if total else None, 'main_steps': msteps,
+           'main_sessions': len(mains), 'main_units': round(main_u), 'main_share': round(main_u / total, 3) if total else None, 'main_steps': msteps,
            'agent_start_avg': round(sum(b['start'] for b in by.values()) / max(1, sum(b['n'] for b in by.values()))),
            'agents': {f'{k}|{m}': {'n': b['n'], 'units': round(b['units']), 'steps': b['steps'], 'start_avg': round(b['start'] / b['n'])}
                       for (k, m), b in sorted(by.items())},

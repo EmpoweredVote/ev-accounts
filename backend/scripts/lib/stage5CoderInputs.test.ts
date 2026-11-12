@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { compactBatch, filterRulings, roundTripProblems, type RosterRow } from './stage5CoderInputs.js';
+import { batchLine, compactBatch, filterRulings, roundTripProblems, type RosterRow } from './stage5CoderInputs.js';
 import type { PersonFindings } from './sourceStore.js';
 
 const prov = { fetched_by: 'PROVENANCE-MARKER', fetched_at: '2026-11-01T00:00:00Z', method: 'api' as const };
@@ -99,5 +99,15 @@ describe('filterRulings', () => {
   });
   it('refuses a malformed scope', () => {
     expect(() => filterRulings('## X {state:georgia}\n- a', 'state:ga')).toThrow(/bad ruling scope/);
+  });
+});
+
+describe('batchLine', () => {
+  it('names the office, so a coder knows what the seat can act on', () => {
+    expect(batchLine({ politician_id: 'p1', full_name: 'Scott Fitzpatrick', level: 'state', state: 'mo', scope: 'sitting', office: 'State Auditor' }))
+      .toBe('- p1 — Scott Fitzpatrick, State Auditor, state, MO, sitting');
+  });
+  it('leaves the office out when the roster has none', () => {
+    expect(batchLine({ politician_id: 'p1', full_name: 'A', level: 'state', state: 'MO', scope: 'both' })).toBe('- p1 — A, state, MO, both');
   });
 });

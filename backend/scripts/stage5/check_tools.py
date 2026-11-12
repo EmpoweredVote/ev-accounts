@@ -2,7 +2,7 @@
 a tool is run as a subprocess, the way a batch runs it.
 python3 -I scripts/stage5/check_tools.py [--tools <dir>]   (default: this folder; point it at a tampered copy to watch
 a check fail). Exit 1 when any check fails. Needs no database, network or node_modules."""
-import csv, json, os, subprocess, sys, tempfile, traceback
+import csv, json, os, shutil, subprocess, sys, tempfile, traceback
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 TOOLS = sys.argv[sys.argv.index('--tools') + 1] if '--tools' in sys.argv else HERE
@@ -310,6 +310,43 @@ def search_list_skips_only_record_seats_at_skip_rungs_and_controls(t):
 
 
 @check
+def search_list_recode_only_new_findings_and_cut_short_searches(t):
+    """Second pass only for a NEW on-topic finding (or no record-only code); a search that read none of the person's
+    own pages is searched again once, not taken as 'found nothing'; everyone else keeps the record-only code."""
+    os.makedirs(f'{t}/store/findings'); os.makedirs(f'{t}/briefs'); os.makedirs(f'{t}/plan')
+    U = lambda i: f'00000000-0000-4000-8000-{i:012d}'
+    a, b, c, d, e, f = (U(i) for i in range(1, 7))
+    ok_places = ['campaign site https://x.example: nothing on the subject', 'blocked: https://ballotpedia.org/X (403)']
+    bad_places = ['campaign site: not reached (blocked: https://y.example)', 'official member page: not reviewed', 'news search: nothing']
+    srch = lambda places, n=1: [{'topic_key': 'tp', 'season': 3, 'places': places, 'found': 0, 'at': f'2026-11-1{i}T00:00:00Z'} for i in range(n)]
+    fnd = lambda i, kind='record', topic='tp': {'id': i, 'kind': kind, 'topic_keys': [topic]}
+    people = {a: ([fnd('a1'), fnd('a2', 'own-words')], srch(ok_places)),   # new own words -> second pass
+              b: ([fnd('b1'), fnd('b9', 'own-words', 'other')], srch(ok_places)),  # nothing new on THIS topic -> keep
+              c: ([fnd('c1')], srch(bad_places)),                           # nothing new, own pages unread -> search again
+              d: ([fnd('d1')], srch(bad_places, 2)),                        # already searched twice -> keep
+              e: ([fnd('e1')], []),                                         # no search on file -> search again
+              f: ([fnd('f1', 'own-words')], srch(ok_places))}               # no record-only code -> second pass
+    for p, (fs, ss) in people.items(): json.dump({'politician_id': p, 'findings': fs, 'searches': ss}, open(f'{t}/store/findings/{p}.json', 'w'))
+    json.dump({'people': [{'politician_id': p, 'findings': [{'id': fs[0]['id']}]} for p, (fs, _) in people.items() if p != f]}, open(f'{t}/briefs/x-01.findings.json', 'w'))
+    R = f'{t}/rec'
+    for p in (a, b, c, d, e):
+        os.makedirs(R, exist_ok=True)
+        json.dump({'politician_id': p, 'outcome': 'seated', 'value': 4, 'topic_key': 'tp', 'season': 3, 'reasoning': 'Voted Yes on HB 1 (2025).'}, open(f'{R}/{p}.json', 'w'))
+    open(f'{t}/plan/search.tsv', 'w').write('politician_id\tfull_name\n' + ''.join(f'{p}\tN{p[-1]}\n' for p in people))
+    C = f'{t}/codes'
+    args = ['--record-codes', R, '--record-briefs', f'{t}/briefs', '--store', f'{t}/store', '--out', f'{t}/plan']
+    run('search_list.py', 'recode', *args, '--codes', C, '--apply')
+    ids = lambda name: [r['politician_id'] for r in csv.DictReader(open(f'{t}/plan/{name}'), delimiter='\t')]
+    assert sorted(ids('recode.tsv')) == sorted([a, f]), ids('recode.tsv')
+    assert sorted(ids('research-again.tsv')) == sorted([c, e]), ids('research-again.tsv')
+    assert sorted(ids('keep.tsv')) == sorted([b, d]), ids('keep.tsv')
+    assert sorted(os.listdir(C)) == sorted([f'{b}.json', f'{d}.json']), 'only KEEP codes are copied'
+    json.dump({'politician_id': b, 'outcome': 'seated', 'value': 4, 'topic_key': 'tp', 'season': 3, 'reasoning': 'Not yet searched for own words.'}, open(f'{R}/{b}.json', 'w'))
+    run('search_list.py', 'recode', *args)
+    assert b in ids('recode.tsv'), 'a record-only code that mentions the search is never kept'
+
+
+@check
 def sponsor_cover_writes_only_triaged_fill_bills(t):
     os.makedirs(f'{t}/ds/XX-1/2025/bill/people')
     json.dump({'person': {'people_id': 7, 'first_name': 'Ann', 'last_name': 'Able', 'name': 'Ann Able'}}, open(f'{t}/ds/XX-1/2025/bill/people/7.json', 'w'))
@@ -329,6 +366,31 @@ def sponsor_cover_writes_only_triaged_fill_bills(t):
 
 
 @check
+def sponsor_cover_trims_refiled_copies(t):
+    """Newest copy per (title, prime sponsor) kept; an older copy only for a new ROSTER sponsor or a text of another size."""
+    os.makedirs(f'{t}/ds/XX-1/XX/2025/people'); os.makedirs(f'{t}/ds/XX-1/XX/2025/bill')
+    for pid, first, last in ((7, 'Ann', 'Able'), (8, 'Bob', 'Best'), (9, 'Cy', 'Nobody')):
+        json.dump({'person': {'people_id': pid, 'first_name': first, 'last_name': last, 'name': f'{first} {last}'}}, open(f'{t}/ds/XX-1/XX/2025/people/{pid}.json', 'w'))
+    open(f'{t}/roster.tsv', 'w').write('politician_id\tfull_name\npa\tAnn Able\npb\tBob Best\n')
+    prime = {'pid': 7, 't': 1}
+    rows = [(1, 2026, [prime], 1000), (2, 2025, [prime], 1005),           # 2: same text, no new sponsor -> dropped
+            (3, 2024, [prime, {'pid': 8, 't': 2}], 1000),                  # 3: adds roster sponsor Bob -> kept
+            (4, 2023, [prime, {'pid': 9, 't': 2}], 1003),                  # 4: adds a sponsor NOT on the roster -> dropped
+            (5, 2022, [prime], 1500)]                                      # 5: text size differs by 50% -> kept
+    bills = [{'bill_id': i, 'st': 'XX', 'y': y, 'num': f'HB{i}', 'title': 'Carry permits.', 'res': False, 'sponsors': sp} for i, y, sp, _ in rows]
+    for i, y, _, size in rows:
+        json.dump({'bill': {'bill_id': i, 'texts': [{'type': 'Introduced', 'text_size': size}]}}, open(f'{t}/ds/XX-1/XX/2025/bill/HB{i}.json', 'w'))
+    json.dump(bills, open(f'{t}/bills.json', 'w')); json.dump([], open(f'{t}/core.json', 'w'))
+    json.dump({str(i): 'fill' for i, *_ in rows}, open(f'{t}/tri.json', 'w'))
+    base = [f'{t}/bills.json', '--state', 'XX', '--roster', f'{t}/roster.tsv', '--core', f'{t}/core.json', '--ds', f'{t}/ds', '--triage', f'{t}/tri.json']
+    run('sponsor_cover.py', *base, '--write', f'{t}/new.json')
+    assert json.load(open(f'{t}/new.json')) == [1, 3, 5], json.load(open(f'{t}/new.json'))
+    assert sorted(json.load(open(f'{t}/new.refiled.json'))) == ['2', '4']
+    run('sponsor_cover.py', *base, '--keep-refiled', '--write', f'{t}/all.json')
+    assert json.load(open(f'{t}/all.json')) == [1, 2, 3, 4, 5]
+
+
+@check
 def run_recipe_stops_on_a_high_and_on_stale_bill_text(t):
     """A gate high stops the run for hand work (exit 10); step 9 refuses while step 7 ran after step 8 (exit 2)."""
     os.makedirs(t)
@@ -343,6 +405,56 @@ def run_recipe_stops_on_a_high_and_on_stale_bill_text(t):
     assert p.returncode == 2 and 'stale' in p.stdout, p.stdout
     open(f'{t}/dry-run-0.txt', 'w').write('outcomes: 1 (seated 1)\nrefused (2):\n  a  finding x…: kept off\n  b  CODE: a seat needs a value\n')
     assert run('run_recipe.py', t, '--check-only', '0', ok=False).returncode == 2, 'a refused code must stop the run'
+
+
+@check
+def run_recipe_writes_empty_fallback_list_only_when_nothing_is_needed(t):
+    """No blank over a shown answer: an empty fallback/urls.txt (fallback-fetch crashed on a missing one, mo-01).
+    Blanks over a shown answer: no list is made up; the fetch waits for the hand-written one."""
+    sys.path.insert(0, TOOLS)
+    import importlib; rr = importlib.import_module('run_recipe'); importlib.reload(rr)
+    os.makedirs(f'{t}/a/fallback'); json.dump([], open(f'{t}/a/fallback/fallback-required.json', 'w'))
+    assert rr.fallback_cmd(f'{t}/a', False) and open(f'{t}/a/fallback/urls.txt').read() == ''
+    os.makedirs(f'{t}/b/fallback'); json.dump([{'name': 'X'}], open(f'{t}/b/fallback/fallback-required.json', 'w'))
+    assert rr.fallback_cmd(f'{t}/b', False) is None and not os.path.exists(f'{t}/b/fallback/urls.txt')
+    sys.path.remove(TOOLS)
+
+
+@check
+def write_batch_leaves_out_held_ids_without_moving_codes(t):
+    """write-batch.sh passes held and moved ids to the writer as --skip-ids and never touches <stage5>/codes."""
+    if not shutil.which('zsh'): print('     (skipped: no zsh)'); return
+    os.makedirs(f'{t}/stage5/codes'); os.makedirs(f'{t}/batch'); os.makedirs(f'{t}/bin')
+    for p in ('a', 'h', 'm'): open(f'{t}/stage5/codes/{p}.json', 'w').write('{}')
+    open(f'{t}/batch/held.txt', 'w').write('h\n'); open(f'{t}/batch/moved.txt', 'w').write('m\n\n')
+    open(f'{t}/batch/pids.txt', 'w').write('a\nh\nm\n')
+    open(f'{t}/bin/npx', 'w').write(f'#!/bin/sh\nls {t}/stage5/codes > {t}/codes-during.txt\necho "$@" > {t}/args.txt\n'); os.chmod(f'{t}/bin/npx', 0o755)
+    env = dict(os.environ, PATH=f'{t}/bin:' + os.environ['PATH'])
+    p = subprocess.run(['zsh', os.path.join(TOOLS, 'write-batch.sh'), f'{t}/stage5', f'{t}/batch', 'tp', 'state:xx', '0'], capture_output=True, text=True, env=env)
+    assert p.returncode == 0, p.stdout + p.stderr
+    assert open(f'{t}/codes-during.txt').read().split() == ['a.json', 'h.json', 'm.json'], 'codes must stay in place during the run'
+    args = open(f'{t}/args.txt').read()
+    assert f'--skip-ids {os.path.realpath(t)}/batch/skip-ids.txt' in args and '--csv-out' in args, args
+    assert open(f'{t}/batch/skip-ids.txt').read().split() == ['h', 'm'] and open(f'{t}/batch/pids-write.txt').read().split() == ['a']
+
+
+@check
+def search_effect_counts_changes_by_record_rung_and_codings(t):
+    os.makedirs(f'{t}/plan')
+    open(f'{t}/roster.tsv', 'w').write('politician_id\tfull_name\tlevel\tstate\n' + ''.join(f'{p}\t{p}\tstate\tXX\n' for p in 'abcdef') + 'z\tz\tstate\tYY\n')
+    open(f'{t}/plan/search.tsv', 'w').write('politician_id\tfull_name\n' + ''.join(f'{p}\t{p}\n' for p in 'abcdz'))
+    open(f'{t}/plan/control.tsv', 'w').write('politician_id\tfull_name\na\ta\n')
+    R, F = f'{t}/rec', f'{t}/fin'
+    for p, o, v in (('a', 'seated', 5), ('b', 'seated', 3), ('c', 'doesnt-fit', None), ('e', 'seated', 5)): code(R, p, o, v)
+    for p, o, v in (('a', 'seated', 5), ('b', 'seated', 4), ('c', 'seated', 3), ('d', 'no-stance', None)): code(F, p, o, v)
+    shutil.copyfile(f'{R}/e.json', f'{F}/e.json')  # e: skipped, record-only code adopted
+    x = json.load(open(f'{F}/a.json')); x['coded_at'] = '2026-11-12T22:00:00Z'; json.dump(x, open(f'{F}/a.json', 'w'))  # a: re-coded, same seat
+    run('search_effect.py', '--roster', f'{t}/roster.tsv', '--unit', 'state:xx', '--record-codes', R, '--codes', F, '--plan', f'{t}/plan', '--json', f'{t}/o.json')
+    o = json.load(open(f'{t}/o.json'))
+    assert o['searched'] == 4 and o['control_changed'] == 0, o
+    b = o['by_record_result']
+    assert (b['seated 3']['changed'], b['seated 3']['rung_only']) == (1, 1) and (b['doesnt-fit']['outcome_changed']) == 1 and b['seated 5']['changed'] == 0, b
+    assert o['codings'] == {'record_only': 4, 'second_pass': 4, 'total': 8, 'per_person': 1.33}, o['codings']
 
 
 @check

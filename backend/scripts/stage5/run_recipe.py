@@ -101,8 +101,7 @@ def steps(c, b):
         4: ('evidence', [f"{PY} scripts/stage5/build_evidence.py {b} {c['roster']} {FINDINGS} --fetch {scope}{mx}",
                          f"{PY} scripts/stage5/pdf_pages.py {b}"], 'save'),
         5: ('old Season 1 sources', [f"{gate} > {b}/gate-output-0.txt || true", f"{verify} > {b}/verify-dry-run-0.txt",
-                                     f"{TSX} scripts/stage5/s1-sources.ts --topic {key} {b}",
-                                     f"{TSX} scripts/stage5/fallback-fetch.ts {b}/fallback"], None),
+                                     f"{TSX} scripts/stage5/s1-sources.ts --topic {key} {b}", 'FALLBACK'], None),
         6: ('party sweep', [f"npx tsx scripts/stage5/party-sweep.ts {b}/evidence.csv > {b}/party-sweep.jsonl"], None),
         7: ('roll calls', votes, 'save'),
         8: ('bill text', [f"{gate} > {b}/gate-output.txt || true",
@@ -123,6 +122,20 @@ def write_pids(c, b):
     ids = [r['politician_id'] for r in rows if r['politician_id'] in have and r['politician_id'] not in held]
     open(os.path.join(b, 'pids.txt'), 'w').write('\n'.join(ids) + '\n')
     return ids
+
+
+def fallback_cmd(b, dry):
+    """Step 5's fetch. No blank over a shown answer: an empty urls.txt, so the fetch has a list to read (it crashed on
+    a missing one, mo-01). Blanks but no urls.txt yet: no fetch; the step 5 stop says to write it."""
+    f = os.path.join(b, 'fallback')
+    urls = os.path.join(f, 'urls.txt')
+    if not dry and not os.path.exists(urls):
+        if json_len(f, 'fallback-required.json'):
+            print('  (no fallback/urls.txt yet: write it from fallback-required.json, then run fallback-fetch.ts; see the stop below)')
+            return None
+        os.makedirs(f, exist_ok=True); open(urls, 'w').close()
+        print('  (no blank over a shown answer: wrote an empty fallback/urls.txt)')
+    return f"{TSX} scripts/stage5/fallback-fetch.ts {b}/fallback"
 
 
 def bundle_cmd(c, b, ids):
@@ -153,8 +166,9 @@ def check(n, c, b):
         return f'evidence-missing {miss} (read it by host: a JavaScript or bot-check host needs steps 7 and 8)'
     if n == 5:
         need = json_len(os.path.join(b, 'fallback'), 'fallback-required.json')
-        if need: raise Stop(AGENT, f'AGENT: {need} blank(s) over a shown answer. Drop OnTheIssues and Wikipedia; one agent reads '
-                                   f'fallback/ pages for the question (fallback-read.json/.md); check its "nothing" answers; hold a person '
+        if need: raise Stop(AGENT, f'AGENT: {need} blank(s) over a shown answer. Write fallback/urls.txt from fallback-required.json '
+                                   f'without OnTheIssues and Wikipedia, run fallback-fetch.ts on it; one agent reads '
+                                   f'the fallback/ pages for the question (fallback-read.json/.md); check its "nothing" answers; hold a person '
                                    f'with a new item; then add_fallback.py. Resume with --from 6.')
         return 'no blank over a shown answer'
     if n == 6:
@@ -216,6 +230,9 @@ def run_step(n, c, b, dry):
         ids = write_pids(c, b) if not dry else []
         cmds = [bundle_cmd(c, b, ids or ['<pids.txt>'])]
     for cmd in cmds:
+        if cmd == 'FALLBACK':
+            cmd = fallback_cmd(b, dry)
+            if not cmd: continue
         print('  $', cmd if len(cmd) < 400 else cmd[:400] + ' …')
         if dry: continue
         p = subprocess.run(cmd, shell=True, cwd=BACKEND, text=True)
