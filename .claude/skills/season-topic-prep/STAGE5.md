@@ -285,6 +285,15 @@ arguments. They take the topic, state and season as arguments, so they work for 
 single batch (a sentence added by hand, a page uncited because the research text says it is unused) stays in that
 batch folder, with a line in its `PREVIEW.md`.
 
+**One runner for steps 0-12.** `python3 -I scripts/stage5/run_recipe.py <batch>` runs the steps below in order from
+`<batch>/recipe.json` and stops at the first check that fails or the first agent or hand step, printing the
+`--from N` to resume with. It keeps the bill-text step after the last LegiScan merge (a merge after it drops the
+bill-text pages: AZ, GA). The steps below stay the reference for what each one does and what to do at a stop.
+
+**Agents in waves.** Run searchers, coders and the quote check as waves with `scripts/stage5/wave.py` in the
+background (at most 8 at a time, slim by default; README "Slim agents"), so the main session wakes once per wave.
+The model is per row and is never lowered: coders and every judgment step stay on Opus.
+
 **Running them.** Run every tool from a worktree's `backend/` folder whose `.env` is linked to
 `ev-accounts/backend/.env`: `ADMIN_INGEST_TOKEN=placeholder npx tsx --env-file=.env scripts/stage5/<tool>.ts`, and
 `python3 -I scripts/stage5/<tool>.py`. Three zsh traps:

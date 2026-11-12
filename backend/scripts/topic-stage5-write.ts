@@ -122,7 +122,7 @@ async function main(): Promise<number> {
     }
     if (plan.refused.length) {
       console.log(`refused (${plan.refused.length}):`);
-      for (const r of plan.refused) console.log(`  ${r.politician_id}  ${r.reason}`);
+      for (const r of plan.refused) console.log(`  ${r.politician_id}  ${r.kind === 'code' ? 'CODE: ' : ''}${r.reason}`);
     }
 
     if (!apply) {
