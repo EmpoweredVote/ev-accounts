@@ -95,14 +95,22 @@ export function projectSearch(s: Search): CoderSearch {
   return { season: s.season, places: s.places, found: s.found, at: s.at, subjects: s.subjects };
 }
 
-/** This topic's findings and this topic-and-season's searches, per person, in the roster's order. */
+/** This topic's findings, of the kinds asked for (all kinds when none are named). */
+export function onTopic(pf: PersonFindings | undefined, topicKey: string, kinds?: ReadonlySet<Finding['kind']>): Finding[] {
+  return (pf?.findings ?? []).filter((f) => f.topic_keys.includes(topicKey) && (!kinds || kinds.has(f.kind)));
+}
+
+/**
+ * This topic's findings and this topic-and-season's searches, per person, in the roster's order. `kinds`
+ * limits the findings, for the record-first pass (`new Set(['record'])`): coded on their record alone.
+ */
 export function compactBatch(
   people: { row: RosterRow; pf: PersonFindings | undefined }[], topicKey: string, season: number,
-  instrumentFile: (id: string) => string | undefined,
+  instrumentFile: (id: string) => string | undefined, kinds?: ReadonlySet<Finding['kind']>,
 ): CompactBatch {
   const projected = people.map(({ row, pf }) => ({
     row,
-    findings: (pf?.findings ?? []).filter((f) => f.topic_keys.includes(topicKey)).map((f) => projectFinding(f, topicKey)),
+    findings: onTopic(pf, topicKey, kinds).map((f) => projectFinding(f, topicKey)),
     searches: (pf?.searches ?? []).filter((s) => s.topic_key === topicKey && s.season === season).map(projectSearch),
   }));
   const byBill = new Map<string, string[][]>();
@@ -153,11 +161,11 @@ export function expandCompact(c: CompactBatch): Map<string, { findings: CoderFin
 }
 
 /** Differences between the store and a compact batch, in plain words; empty means nothing was lost. */
-export function roundTripProblems(people: { row: RosterRow; pf: PersonFindings | undefined }[], c: CompactBatch, topicKey: string, season: number): string[] {
+export function roundTripProblems(people: { row: RosterRow; pf: PersonFindings | undefined }[], c: CompactBatch, topicKey: string, season: number, kinds?: ReadonlySet<Finding['kind']>): string[] {
   const out: string[] = [];
   const back = expandCompact(c);
   for (const { row, pf } of people) {
-    const want = (pf?.findings ?? []).filter((f) => f.topic_keys.includes(topicKey)).map((f) => projectFinding(f, topicKey));
+    const want = onTopic(pf, topicKey, kinds).map((f) => projectFinding(f, topicKey));
     const wantS = (pf?.searches ?? []).filter((s) => s.topic_key === topicKey && s.season === season).map(projectSearch);
     const got = back.get(row.politician_id);
     if (!got) { out.push(`${row.full_name}: missing from the compact file`); continue; }
