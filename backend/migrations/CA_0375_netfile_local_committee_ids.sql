@@ -39,7 +39,7 @@
 -- run `la-county-netfile` once. Until both are in, the new adapter fails these 15 sources with a pointer here.
 --
 -- No migration runner exists; this file records SQL applied by hand (DML, one transaction).
--- STATUS: NOT APPLIED.
+-- STATUS: APPLIED to prod 2026-11-12 ~18:55 UTC after #1404 merged (operator approval: Chris Andrews). Gates passed; after: 15 local ids, 0 nine-digit ids, 187 links, contributions unchanged (17,791).
 --
 -- ROLLBACK:
 --   UPDATE transparent_motivations.politician_sources ps
