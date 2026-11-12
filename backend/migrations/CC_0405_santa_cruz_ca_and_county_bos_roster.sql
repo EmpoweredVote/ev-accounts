@@ -3,6 +3,29 @@
 -- Santa Cruz, and the five sitting Santa Cruz County supervisors. Twelve office_terms rows.
 -- NOBODY WHO WON IN 2026 AND HAS NOT YET TAKEN OFFICE IS SEATED HERE.
 --
+-- @incumbency-decision: no-effect — all 12 offices are BRAND NEW (CC_0404, same PR) and carry
+-- zero races; all 12 politicians are new rows and carry zero race_candidates; and every term row
+-- written here has term_start AND term_end NULL, so it covers no election day and restates
+-- nobody's incumbency.
+--
+-- That claim is checkable, and was checked against production on 2026-11-11 rather than assumed:
+--
+--   races whose office_id is one of these 12 .......... 0
+--   race_candidates whose politician is one of these 12  0
+--   term rows written with a non-NULL date bound ...... 0  (all 12 are NULL/NULL)
+--
+-- `race_candidates.is_incumbent` means "incumbent OF THIS SEAT on this race's own election date".
+-- It is CACHED, and the way a migration corrupts it is by writing a term date that no longer
+-- covers an election day some race row still assumes. There is no date here to do that with, and
+-- no race row to do it to. This is the first of the two legitimate no-effect shapes the guard
+-- names, not the "there are probably no recent races" guess it rejects.
+--
+-- ⚠ This changes WHEN the successor passes land. The December Mayor handover and the January
+--   Supervisor D4 handover (see the TO DO at the foot of this file) WILL write dates on both
+--   sides of a seating, and by then these offices may well have race rows. Those migrations need
+--   the real `gated` delta gate from migrations/_templates/office_terms_incumbency_guard.sql.
+--   Do not carry this line forward into them.
+--
 -- ═══ 🔴 NAMESAKE SAFETY — WHY EVERY LOOKUP CARRIES 'CC_0405 ' ═══
 --
 -- The Reno seed (CC_0387) nearly bound a Reno ward to an Oregon state senator because its
