@@ -49,12 +49,15 @@ export interface IngestContext {
 export const STORE_ID_RE = /\b[A-Z]{2}-[A-Z]+(?:-[A-Z0-9]+)*-(?:19|20)\d{2}\b/g;
 
 /**
- * An annex or ruling label written into reasoning: S1-S8, Q1-Q7, C2, C37, D1, H12, L1, W3, R8, R5-L, R5-AZ.
+ * An annex or ruling label written into reasoning: S1-S8, Q1-Q7, C2, C37, D1, H12, L1, W3, R8, R5-L, R5-AZ,
+ * and the numbered rung rulings R4-1 to R4-4 (gun-policy annex, 2026-11-12).
  * No space and no period inside, at most two or three digits, so a bill ("S. 2747", "S 1496", "H 3003",
  * "SB 204") never matches. Codebook section numbers (V1-V6, V4.1) are left alone: the coder prompt is written
  * in them and the gate does not misread them.
+ * Only R takes a `-<number>` suffix: no annex numbers another prefix that way, and "Q3-24" or "H1-25" read
+ * as a fiscal quarter or half-year, not a label.
  */
-export const LABEL_RE = /(?<![\w.#-])(?:[SQCDLW]\d{1,2}|H\d{1,2}|R\d{1,2}(?:-[A-Z]{1,3})?)(?![\w.-]*\d)(?!-[A-Za-z])/g;
+export const LABEL_RE = /(?<![\w.#-])(?:[SQCDLW]\d{1,2}|H\d{1,2}|R\d{1,2}(?:-(?:[A-Z]{1,3}|\d{1,2}))?)(?![\w.-]*\d)(?!-[A-Za-z])/g;
 
 /** `GA-HB-1324-2025` → `hb1324`, the gate's canonical form; null for ids with no number after the type. */
 export function storeIdToken(id: string): string | null {

@@ -78,6 +78,19 @@ describe('helpers', () => {
     expect(labelsIn('S1, S8, Q4, C37, H12, R8, R5-L and R5-AZ; not S. 2747, S 1496, SB 204, H 3003, V4.1, MA-ACTS-C135-2024 or MA-S-1677-2025.'))
       .toEqual(['S1', 'S8', 'Q4', 'C37', 'H12', 'R8', 'R5-L', 'R5-AZ']);
   });
+  it('reads a numbered ruling label like R4-2', () => {
+    expect(labelsIn('Under R4-2 this holds, and R4-1 settles the rest.')).toEqual(['R4-2', 'R4-1']);
+    expect(labelsIn('R4-2.')).toEqual(['R4-2']);
+    expect(labelsIn('(R12-3)')).toEqual(['R12-3']);
+    expect(labelsIn('R4-2, R4-3; R4-4')).toEqual(['R4-2', 'R4-3', 'R4-4']);
+  });
+  it('still reads no bill, store id, section number, year or decimal as a label', () => {
+    for (const s of [
+      'IN-HB-1084-2024', 'MA-H-4135-AMDT-4-2023', 'VA-HB-5020-SP1-2020', 'HB 1084', 'H.B. 1084',
+      'Section 4-2', 'sec. 12-3', '§ 35-1', 'IC 35-47-2-1', 'V4.1', '4.2', '3-1', 'R4.2', 'R4-2.5',
+      'R4-2025', 'R4-123', 'R123-1', 'XR4-2', 'R4-2-1', '#R4-2', 'Q3-24', 'H1-25', 'S2-1',
+    ]) expect(labelsIn(s), s).toEqual([]);
+  });
   it('turns a store id into the gate token', () => {
     expect(storeIdToken('GA-HB-1324-2025')).toBe('hb1324');
     expect(storeIdToken('MA-H-4135-AMDT-4-2023')).toBe('h4135');

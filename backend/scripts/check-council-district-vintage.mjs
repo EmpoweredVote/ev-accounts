@@ -210,6 +210,61 @@ const REGISTRY = [
     // ⚠ Its `Acres` field is mislabeled: the five values sum to 827.7, which is the county's
     //    area in SQUARE MILES. Nothing reads it. See CC_0392.
   },
+  {
+    key: 'santa-cruz-county',
+    label: 'Santa Cruz County Board of Supervisors',
+    ocdPrefix: 'santa-cruz-county-ca-supervisorial-district-',
+    // The COUNTY'S OWN open data. copyrightText is literally "County of Santa Cruz" and the
+    // service description reads "Santa Cruz County Board of Supervisors Districts 1-5…
+    // Boundaries are revised as part of the decennial Census redistricting".
+    // lastEditDate 2026-10-21.
+    url:
+      'https://services1.arcgis.com/jJfZghspGKh8J9Jm/arcgis/rest/services/County_Supervisor_Districts/' +
+      'FeatureServer/18/query?where=1%3D1&outFields=Super_Dist&returnGeometry=true&outSR=4326&f=geojson',
+    // 🔴 `SName` and `District` on this layer are BLANK — every row carries a single space. The
+    //    district number lives only in Super_Dist, as 'SUPER-1'…'SUPER-5'. A checker that read
+    //    `District` would get NaN for all five and compare nothing.
+    district: (props) => Number(String(props.Super_Dist ?? '').replace(/^SUPER-/, '')),
+    expect: 5,
+    // 🔑 PROVED 2026-11-11 AGAINST THE COUNTY'S OWN BALLOT LAYER, BY ATTRIBUTE. The Precincts
+    // layer (FeatureServer/4, lastEditDate 2026-06-23, built for the June 2 2026 primary) carries
+    // SUPDIST on every row, so no numbering trick is needed: 692 of 692 precincts' interior points
+    // fall in the district their own ballot attribute names, ZERO disagreements.
+    // The converse was proved too: load-santa-cruz-districts.mjs --control=scramble swaps two
+    // districts and scores 256 disagreements, so the gate can tell a wrong map from the right one.
+  },
+  {
+    key: 'santa-cruz-city',
+    label: 'Santa Cruz city council',
+    ocdPrefix: 'santa-cruz-ca-council-district-',
+    // The CITY'S OWN GIS. ⚠ The city runs two ArcGIS hosts and only one of them works: the
+    // portal at vwgisportal.cityofsantacruz.com answers /arcgis/rest/services with HTTP 500, and
+    // the data layers live on vwgisportal2.santacruzca.gov instead. cityofsantacruz.com is the
+    // old domain — its robots.txt Sitemap points at www.santacruzca.gov.
+    url:
+      'https://vwgisportal2.santacruzca.gov/arcgis/rest/services/Basemap/MapServer/22/query' +
+      '?where=1%3D1&outFields=District&returnGeometry=true&outSR=4326&f=geojson',
+    district: (props) => Number(props.District),
+    expect: 6,
+    // 🔴 SEVEN FEATURES, SIX DISTRICTS. District 6 is published as two polygons — a 1,773.53-acre
+    //    main body and a detached 98.24-acre parcel out at the Coastal Science Campus
+    //    (centroids 36.95967,-122.05148 and 36.97471,-122.10509). fetchUpstream merges parts by
+    //    district number; this pins the count so a re-cut layer is seen rather than absorbed.
+    expectParts: 7,
+    // 🔑 PROVED 2026-11-11 AGAINST THE COUNTY'S BALLOT LAYER, BY ATTRIBUTE. The county's Precincts
+    // layer carries SCCC ("Santa Cruz City Council District N") on the 97 precincts inside the
+    // city — exactly the 97 its CITYLIMITS column puts there — and 97 of 97 interior points fall
+    // in the district their own ballot attribute names. Scrambling two districts scores 28
+    // disagreements.
+    // ⚠ THIS IS THE LAYER'S ONLY VINTAGE EVIDENCE. A MapServer layer publishes no editingInfo,
+    //   and this one's description and copyrightText are both empty, so there is no date on it
+    //   anywhere. The ballot layer is the whole proof; do not weaken it.
+    // 🔴 Its `NameCouncil` column carries a STALE TITLE — the District 6 rows read "Vice Mayor
+    //    Renee Golder", but the Vice Mayor for this term is Shebreh Kalantari-Johnson of District
+    //    3. Geometry is taken from this layer; occupancy and titles never are. Its `TermEnd`
+    //    column, by contrast, matched the council roster on all six districts, which is how the
+    //    off-by-one trap on the city's own roster page was caught. See CC_0404.
+  },
 ];
 
 /**
@@ -360,7 +415,7 @@ async function fetchUpstream(entry) {
     ? raw.filter((f) => entry.filter(f.properties ?? f.attributes))
     : raw;
   if (!features.length) throw new Error(`filter left no features for ${entry.key}`);
-  return features.map((f) => {
+  const parts = features.map((f) => {
     const props = f.properties ?? f.attributes;
     const rings = f.geometry?.rings;
     if (rings) {
@@ -373,6 +428,33 @@ async function fetchUpstream(entry) {
     const polys = toPolys(f.geometry);
     return { district: entry.district(props), polys, bbox: bboxOf(polys), area: polysArea(polys) };
   });
+
+  // 🔴 A FEATURE IS NOT A DISTRICT. Santa Cruz publishes its council District 6 as TWO polygons
+  // — a 1,773-acre main body and a detached 98-acre parcel at the Coastal Science Campus — so
+  // that layer answers with 7 features for 6 districts. Keyed one-to-one, the count check reads
+  // "authority publishes 7 districts, we hold 6" and the area map silently keeps whichever part
+  // happened to come last, scoring a 95% area delta against a district that is in fact correct.
+  // Both failures point at our data; neither is about our data.
+  //
+  // So parts are merged by district number. This changes nothing for a layer that already
+  // publishes one feature per district — every entry registered before this did — and `rawParts`
+  // is carried out to the result so a layer that STARTS splitting is visible rather than
+  // absorbed. An entry that knows its own shape pins it with `expectParts`.
+  const byNum = new Map();
+  for (const p of parts) {
+    const cur = byNum.get(p.district);
+    if (!cur) { byNum.set(p.district, { ...p }); continue; }
+    cur.area += p.area;
+    if (p.esriRings) cur.esriRings = (cur.esriRings ?? []).concat(p.esriRings);
+    if (p.polys) cur.polys = (cur.polys ?? []).concat(p.polys);
+    cur.bbox = [
+      Math.min(cur.bbox[0], p.bbox[0]), Math.min(cur.bbox[1], p.bbox[1]),
+      Math.max(cur.bbox[2], p.bbox[2]), Math.max(cur.bbox[3], p.bbox[3]),
+    ];
+  }
+  const merged = [...byNum.values()];
+  merged.rawParts = parts.length;
+  return merged;
 }
 
 async function checkEntry(pool, entry) {
@@ -407,6 +489,14 @@ async function checkEntry(pool, entry) {
   }
   if (theirs.length !== ours.length) {
     problems.push(`authority publishes ${theirs.length} districts, we hold ${ours.length}`);
+  }
+  // A layer that starts or stops splitting a district is a change in the upstream worth seeing,
+  // not something to absorb silently. Only entries that state the shape are held to it.
+  if (entry.expectParts && theirs.rawParts !== entry.expectParts) {
+    problems.push(
+      `authority returned ${theirs.rawParts} feature(s) for ${theirs.length} district(s); ` +
+      `${entry.expectParts} were expected — the layer has been re-cut, re-read it`
+    );
   }
 
   // 1. per-district area
@@ -453,6 +543,7 @@ async function checkEntry(pool, entry) {
     label: entry.label,
     ok: problems.length === 0,
     districts: ours.length,
+    upstreamParts: theirs.rawParts,
     worstAreaDelta: `${(worst * 100).toFixed(2)}%`,
     pointsTested: tested,
     pointsDisagreed: disagreed,
