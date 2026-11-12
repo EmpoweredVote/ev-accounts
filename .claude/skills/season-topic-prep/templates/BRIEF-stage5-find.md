@@ -77,7 +77,10 @@ blocked page is a gap, never "nothing": list it in `places` as `blocked: <url>`.
   minutes page stay apart.
 - **The date** of the act or the words (not the date you fetched it), with its precision.
 - **A short plain note** of what it says, in your own words, with no judgement of the person. 🔴 Never name a
-  party, in notes, subjects or places (an import refuses it). Name a bill by its number and short title.
+  party, in notes, subjects or places (an import refuses it). That includes a bare site name in `places` that
+  contains a party word (write the full `https://` address, which the import ignores, or "the campaign site"),
+  and a page's own tag, heading or caption copied into a note (say what the page is instead: "a news story",
+  "a caucus release"). This refused 19 files across MI, NC and WI. Name a bill by its number and short title.
 - **Subjects in plain words** (for example "voter ID at the polls", "mail-ballot ID", "proof of citizenship to
   register"). Never rung numbers.
 - Save off-subject material only if it is on the subject above. Save nothing else.

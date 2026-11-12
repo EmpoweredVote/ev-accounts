@@ -328,6 +328,32 @@ def sponsor_cover_writes_only_triaged_fill_bills(t):
     assert json.load(open(f'{t}/new.json')) == [1, 3]
 
 
+@check
+def run_recipe_stops_on_a_high_and_on_stale_bill_text(t):
+    """A gate high stops the run for hand work (exit 10); step 9 refuses while step 7 ran after step 8 (exit 2)."""
+    os.makedirs(t)
+    json.dump({'stage5': t, 'topic': 'tp', 'unit': 'state:xx', 'level': 'state', 'state': 'XX', 'roster': f'{t}/r.tsv',
+               'codes': t, 'saved_root': t}, open(f'{t}/recipe.json', 'w'))
+    open(f'{t}/gate-output-final.txt', 'w').write('stance-gate: 3 rows · high=2 medium=0 · evidence rows=9\n')
+    assert run('run_recipe.py', t, '--check-only', '9', ok=False).returncode == 10
+    open(f'{t}/gate-output-final.txt', 'w').write('stance-gate: 3 rows · high=0 medium=0 · evidence rows=9\n')
+    assert run('run_recipe.py', t, '--check-only', '9').returncode == 0
+    json.dump({'8_stale': True}, open(f'{t}/recipe-log.json', 'w'))
+    p = run('run_recipe.py', t, '--from', '9', '--to', '9', ok=False)
+    assert p.returncode == 2 and 'stale' in p.stdout, p.stdout
+    open(f'{t}/dry-run-0.txt', 'w').write('outcomes: 1 (seated 1)\nrefused (2):\n  a  finding x…: kept off\n  b  CODE: a seat needs a value\n')
+    assert run('run_recipe.py', t, '--check-only', '0', ok=False).returncode == 2, 'a refused code must stop the run'
+
+
+@check
+def wave_starts_agents_slim_and_only_with_named_tools(t):
+    os.makedirs(t); open(f'{t}/p.md', 'w').write('x')
+    open(f'{t}/jobs.tsv', 'w').write(f'name\tprompt_file\tmodel\ttools\na\t{t}/p.md\topus\tRead,Write\n')
+    out = run('wave.py', f'{t}/jobs.tsv', '--out', f'{t}/o', '--print').stdout
+    assert '--safe-mode' in out and '--tools Read,Write' in out and 'claude-opus-5-5' in out, out
+    assert '--safe-mode' not in run('wave.py', f'{t}/jobs.tsv', '--out', f'{t}/o', '--print', '--full').stdout
+
+
 fails = 0
 with tempfile.TemporaryDirectory() as root:
     for i, f in enumerate(CHECKS):
