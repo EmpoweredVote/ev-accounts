@@ -74,12 +74,48 @@ export function isStillStanding(row) {
  *   1 not looked at   no result recorded
  *   2 called          result = won, certainty = called
  *   3 certified       result = won, certainty = certified
- *   4 seated          a future-dated term exists for the winner
- *   5 sworn in        that term has started
+ *   4 term recorded   a future-dated term exists for the winner
+ *   5 in office       that term has started
  *
  * The 4/5 boundary is read off the CALENDAR, never off a stored flag — the whole transition
  * model exists so that nothing has to be flipped on the day.
+ *
+ * 🔴🔴 STATE 5 IS "THE TERM HAS BEGUN". IT IS NOT "SWORN IN", AND IT USED TO SAY SO.
+ * Those are two events, days or weeks apart, and this function cannot see the second one.
+ * Indiana is the worked case. Its constitution starts a legislator's term by the calendar —
+ * "Senators shall be elected for the term of four years, and Representatives for the term of
+ * two years, from the day next after their general election" (Const. art. 4 §3, as amended
+ * 1984-11-06) — so `CA_0374` opened four 2026-11-04 terms the day after the election. The OATH
+ * is taken later, at Organization Day in mid-November. On 2026-11-12 this file called Indiana
+ * House District 62 "Sworn in" eight days after the term began and before anyone had been
+ * sworn to anything, and it was reported to the operator in those words.
+ *
+ * ⚠ THE REPO HAS A REAL SWEARING-IN FACT AND THIS IS NOT IT. `essentials.office_swearing_in`
+ * holds a CITED handover date per office (809 of them for 2026-11-03). It held no row for
+ * Indiana House 62 while this function was calling that seat sworn in — the two disagreed on
+ * the one seat anybody looked at. If you want to report an oath, read that table. State 5 is
+ * derived from `office_terms`, answers a different question, and keeps a different word.
  */
+export const STATE_LABEL = {
+  1: 'Not looked at',
+  2: 'Called',
+  3: 'Certified',
+  4: 'Won, term not yet begun',
+  5: 'In office',
+};
+
+/**
+ * The per-wave counter key for each state. Kept beside the labels so the CSV column and the
+ * words a reader sees can never describe different things.
+ */
+export const STATE_KEY = {
+  1: 'not_looked_at',
+  2: 'called',
+  3: 'certified',
+  4: 'term_recorded',
+  5: 'in_office',
+};
+
 export function seatState(row) {
   if (row?.result !== 'won') return 1;
 
