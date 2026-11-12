@@ -1,0 +1,79 @@
+{
+  "id": "TN-SB-1210-2015",
+  "scope": "state:tn",
+  "title": "SB 1210 (109th General Assembly): As introduced, permits any registered Tennessee voter to vote absentee for any reason after providing evidence of identification in the application for a ballot; exempts certain absentee voters from the evidence of identification requirement under certain circumstances. - Amends TCA Title 2.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB1210/2015",
+    "https://legiscan.com/TN/rollcall/SB1210/id/427637"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) TCA 2-6-201(a) (changed)\n(quote) deleting the language “outlined in this part” and substituting instead the language “outlined in this part without providing evidence of identification, as defined in § 2-7-112(c)”.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) TCA 2-6-201(b) (new)\n(quote) A registered voter may vote absentee by mail according to the procedures outlined in this part in any primary election, election, or runoff election. A registered voter shall not be required to provide a reason in order to cast an absentee ballot by mail; provided, that the voter submits a legible scanned copy of evidence of identification, as defined in § 2-7-112(c), with the application for a by-mail absentee ballot.\n(section) TCA 2-6-202(a)(3)(G) (replaced)\n(quote) (G) A legible scanned copy of evidence of identification, as defined in § 2-7-112(c), except as provided in § 2-6-201(a).\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Section 1: designates existing 2-6-201 language as (a) and adds (b), no-excuse absentee by mail for any primary, election or runoff, if a scanned ID copy goes with the application.\n(other) Section 2: changes the existing excuse-based 2-6-201(a) so it covers absentee voting without the ID copy.\n(other) Section 3: replaces item (G) of the absentee application contents with the scanned-ID-copy item.\n(other) Section 4: in 2-6-401(c) deletes the words 'or that category of persons otherwise' (effect not explained in the text).\n(other) Section 5: takes effect July 1, 2015.\n(other) version: Draft 1123822 (2015-02-12): only version saved. Carries slot c (and a cross-reference in a). No amendments saved.\n(other) note: Companion House Bill 553 (cover). Recommended by Senate State and Local Government 6-2 on 2015-04-07 and sent to Finance, Ways, and Means, where action was deferred; no later action. No amendments saved or listed. The ID is a scanned copy of 'evidence of identification' as defined in 2-7-112(c); the text does not say whether that list changes.",
+  "sponsors": [
+    {
+      "name": "Jeff Yarbro",
+      "role": "prime",
+      "version": "1123822-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2015-04-07",
+      "body": "TN Senate",
+      "motion": "Senate State and Local Government Committee, recommended for passage [version voted: Draft 1123822 (no amendments)]",
+      "kind": "roll-call",
+      "yes": 6,
+      "no": 2,
+      "absent": 0,
+      "body_size": 8,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/SB1210/id/427637",
+      "members": [
+        {
+          "name": "Ken Yager",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Ketron",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Norris",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Green",
+          "vote": "nay"
+        },
+        {
+          "name": "Steven Dickerson",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Briggs",
+          "vote": "yea"
+        },
+        {
+          "name": "Edward Jackson",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "id": "TN-HB-553-2015",
+  "scope": "state:tn",
+  "title": "HB 553 (109th General Assembly): As introduced, permits any registered Tennessee voter to vote absentee for any reason after providing evidence of identification in the application for a ballot; exempts certain absentee voters from the evidence of identification requirement under certain circumstances. - Amends TCA Title 2.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB0553/2015"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) TCA 2-6-201(b), new, Section 1\n(quote) A registered voter shall not be required to provide a reason in order to cast an absentee ballot by mail; provided, that the voter submits a legible scanned copy of evidence of identification, as defined in § 2-7-112(c), with the application for a by-mail absentee ballot.\n(section) TCA 2-6-202(a)(3)(G), Section 3\n(quote) A legible scanned copy of evidence of identification, as defined in § 2-7-112(c), except as provided in § 2-6-201(a).\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec 1: no-excuse absentee voting by mail in any primary, election or runoff.\n(other) Sec 2: existing excuse-based absentee voting under 2-6-201(a) stays without ID ('without providing evidence of identification').\n(other) Sec 4: 2-6-401(c) deletes the words 'or that category of persons otherwise'.\n(other) Sec 5: effective July 1, 2015.\n(other) version: Draft (only version saved): ID copy is required only for the new no-excuse absentee route; the old (a)(3)(G) is replaced (what it said before is not in the saved text). Slot c.\n(other) note: Slot (G) of the application list is replaced wholesale; the prior text is not saved. 'Evidence of identification as defined in 2-7-112(c)' means the list of photo IDs. Taken off notice in House Finance subcommittee 2015-04-21; no votes recorded.",
+  "sponsors": [
+    {
+      "name": "Craig Fitzhugh",
+      "role": "prime",
+      "version": "1115892-Draft"
+    },
+    {
+      "name": "Antonio Parkinson",
+      "role": "co",
+      "version": "1115892-Draft"
+    },
+    {
+      "name": "John Clemmons",
+      "role": "co",
+      "version": "1115892-Draft"
+    },
+    {
+      "name": "Jason Powell",
+      "role": "co",
+      "version": "1115892-Draft"
+    },
+    {
+      "name": "Joe Towns",
+      "role": "co",
+      "version": "1115892-Draft"
+    },
+    {
+      "name": "Karen Camper",
+      "role": "co",
+      "version": "1115892-Draft"
+    },
+    {
+      "name": "Bill Beck",
+      "role": "co",
+      "version": "1115892-Draft"
+    },
+    {
+      "name": "Johnny Shaw",
+      "role": "co",
+      "version": "1115892-Draft"
+    },
+    {
+      "name": "G Hardaway",
+      "role": "co",
+      "version": "1115892-Draft"
+    },
+    {
+      "name": "Raumesh Akbari",
+      "role": "co",
+      "version": "1115892-Draft"
+    },
+    {
+      "name": "JoAnne Favors",
+      "role": "co",
+      "version": "1115892-Draft"
+    },
+    {
+      "name": "Larry Miller",
+      "role": "co",
+      "version": "1115892-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "TN-HB-2326-2015",
+  "scope": "state:tn",
+  "title": "HB 2326 (109th General Assembly): As introduced, removes requirement that voter needs photograph identification prior to voting; restores former requirement that voter present identification such as social security cared or credit card for purpose of comparing signature on the application for ballot. - Amends TCA Title 2.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB2326/2015"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) TCA 2-7-112(a)(1) (struck)\n(quote) STRUCK: In addition, the voter shall present to the precinct registrar one (1) form of identification that bears the name and photograph of the voter. The requirement to present one (1) form of identification that bears the name and photograph of the voter shall apply to persons voting pursuant to § 2-6-109; provided, however, that a person voting in accordance with § 2-6-401(a) and (b) or § 2-6-601 shall not be required to show an identification with a photograph of the voter.\n(section) TCA 2-7-112(c) (replaced)\n(quote) (c) For purposes of comparing the person’s signature on the application for ballot, “evidence of identification” shall be a valid voter’s registration certificate, Tennessee driver license, social security card, credit card bearing the applicant’s signature, or other document bearing the applicant’s signature.\n(section) TCA 2-7-112(a)(1)(B) (replaced)\n(quote) (B) To compare the voter’s signature on the application, the voter shall supply evidence of identification specified in subsection (c).\n(b_no_id_remedy)\n(section) TCA 2-7-112(a)(3)(A) (struck)\n(quote) STRUCK: If a voter is unable to present evidence of identification, the voter shall be entitled to vote a provisional ballot pursuant to subsection (e) unless the voter is eligible to vote pursuant to subsection (f).\n(section) TCA 2-7-112(a)(1) (new)\n(quote) If a voter is unable to present any evidence of identification specified in subsection (c), the voter shall be required to execute an affidavit of identity on a form provided by the county election commission.\n(section) TCA 2-7-112 (struck)\n(quote) STRUCK: deleting subsections (e), (f), and (g).\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) TCA 2-7-112(a)(1)(C)\n(quote) deleting the language “verification of” and substituting instead the language “comparison of the signature and other”.\n(other) Section 1: strikes the photo-ID sentence in 2-7-112(a)(1), including its reference to voters under 2-6-109 and the exemption for voters under 2-6-401(a),(b) and 2-6-601.\n(other) Section 2: rewrites (a)(1)(B) so ID is shown to compare the voter's signature on the application.\n(other) Section 3: changes 'verification of' to 'comparison of the signature and other' in (a)(1)(C).\n(other) Section 4: strikes the provisional-ballot sentence in (a)(3)(A).\n(other) Section 5: adds the affidavit-of-identity fallback.\n(other) Section 6: replaces subsection (c) with a signature-comparison ID list that includes a social security card or a credit card.\n(other) Section 7: deletes subsections (e), (f), (g) (per the brief, (e) is the provisional-ballot procedure and (f) the indigency/religious-objection affidavit; (g) is not described in the brief).\n(other) Section 8: takes effect on becoming law.\n(other) version: Draft 1303507 (2016-01-21): the full text above; removes the photo-ID requirement, adds an affidavit-of-identity fallback, replaces the ID list with a non-photo signature-comparison list.\n(other) version: Draft 1319958 (2016-02-01): identical operative text; only the cover adds the Senate companion (SB 2448, By Harris).\n(other) note: Companion SB 2448. Stopped after assignment to the House Local Government Subcommittee; no votes. No amendments saved or listed. Quotes taken from Draft 1319958 (identical to 1303507). The saved text names (e), (f), (g) only by letter; what they hold is from the brief.",
+  "sponsors": [
+    {
+      "name": "Barbara Cooper",
+      "role": "prime",
+      "version": "1319958-Draft"
+    },
+    {
+      "name": "G Hardaway",
+      "role": "co",
+      "version": "1319958-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

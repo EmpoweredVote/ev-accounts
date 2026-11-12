@@ -1,0 +1,717 @@
+{
+  "id": "TN-SB-150-2009",
+  "scope": "state:tn",
+  "title": "SB 150 (106th General Assembly): As introduced, requires a voter to present qualified photographic identification before voting; voters without proper identification shall be allowed to cast provisional ballots. - Amends TCA Title 2, Chapter 7, Part 1.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB0150/2009",
+    "https://legiscan.com/TN/rollcall/SB0150/id/128803",
+    "https://legiscan.com/TN/rollcall/SB0150/id/128804",
+    "https://legiscan.com/TN/rollcall/SB0150/id/128805",
+    "https://legiscan.com/TN/rollcall/SB0150/id/128806",
+    "https://legiscan.com/TN/rollcall/SB0150/id/128807",
+    "https://legiscan.com/TN/rollcall/SB0150/id/128808"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1 (amends 2-7-112(a)(1))\n(quote) In addition, the voter shall present to the registrar one (1) form of identification that bears the name, address and photograph of the voter.\n(section) Sec. 2 (replaces 2-7-112(c))\n(quote) For purposes of comparing the person's signature on the application for ballot, \"evidence of identification\" shall be: (1) A Tennessee driver license; (2) A valid identification card issued by a branch, department, agency or entity of the state of Tennessee, any other state, or the United States authorized by law to issue personal identification, provided that such identification card contains a photograph of the voter; (3) A valid identification card issued pursuant to § 55-50-336; (4) A valid United States passport;\n(b_no_id_remedy)\n(section) Sec. 3 (new 2-7-112(e))\n(quote) If a voter is unable to present any evidence of identification specified in subsection (c), the voter shall be entitled to vote a provisional ballot under the procedures of this section. Such provisional ballot shall only be counted if the central provisional ballot counting board is able to verify current and valid identification of the voter as provided in subsection (c)\n(section) Sec. 4(a) (free ID card)\n(quote) If a voter does not have any of the identification described in § 2-7-112(c) and is unable to afford a valid identification card issued pursuant to § 55-50-336, such identification card shall be issued to the voter upon the voter's signing a pauper's oath.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec. 2 also lists a valid employee ID card and military ID card (with photograph) in the rewritten (c).\n(other) Sec. 4(b): affidavit of indigency to the department of safety to waive the fee.\n(other) Sec. 5 severability; Sec. 6 effective on becoming law.\n(other) version: 456012-Draft (filed 2009-02-02), the only version saved: carries a and b. Same operative text as HB0267 Draft. NOT SAVED: Senate amendments SA0145, SA0165, SA0213, SA0214 (adopted 2009-04-13) and the engrossed text; SA0015, SA0016 withdrawn.\n(other) note: Passed the Senate 29-3 on 2009-04-13 and was held on the House desk 2009-04-16; no House action. Not enacted. Senate-passed text differs from the Draft by four unsaved amendments, so the saved text is only what was filed.",
+  "sponsors": [
+    {
+      "name": "Bill Ketron",
+      "role": "prime",
+      "version": "456012-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2009-03-03",
+      "body": "TN Senate",
+      "motion": "Senate committee, recommended with amendments, sent to Finance [version voted: Draft + committee amendments (not saved)]",
+      "kind": "roll-call",
+      "yes": 6,
+      "no": 3,
+      "absent": 0,
+      "body_size": 9,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/SB0150/id/128803",
+      "members": [
+        {
+          "name": "Ken Yager",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Ketron",
+          "vote": "yea"
+        },
+        {
+          "name": "Thelma Harper",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Tracy",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Faulk",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Norris",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Burchett",
+          "vote": "yea"
+        },
+        {
+          "name": "Joe Haynes",
+          "vote": "nay"
+        },
+        {
+          "name": "Lowe Finney",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2009-03-31",
+      "body": "TN Senate",
+      "motion": "Senate committee, recommended with amendments, sent to Calendar [version voted: Draft + committee amendments (not saved)]",
+      "kind": "roll-call",
+      "yes": 6,
+      "no": 3,
+      "absent": 0,
+      "body_size": 9,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/SB0150/id/128804",
+      "members": [
+        {
+          "name": "Ken Yager",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Ketron",
+          "vote": "yea"
+        },
+        {
+          "name": "Thelma Harper",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Tracy",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Faulk",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Norris",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Burchett",
+          "vote": "yea"
+        },
+        {
+          "name": "Joe Haynes",
+          "vote": "nay"
+        },
+        {
+          "name": "Lowe Finney",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2009-04-13",
+      "body": "TN Senate",
+      "motion": "Senate floor, Rule 39(3) amendment 5 (Kyle) [version voted: Draft + committee amendments + SA0145, SA0165 (all not saved); amendment itself SA0213 not saved]",
+      "kind": "roll-call",
+      "yes": 33,
+      "no": 0,
+      "absent": 0,
+      "body_size": 33,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/SB0150/id/128805",
+      "members": [
+        {
+          "name": "Bo Watson",
+          "vote": "yea"
+        },
+        {
+          "name": "Ken Yager",
+          "vote": "yea"
+        },
+        {
+          "name": "Mae Beavers",
+          "vote": "yea"
+        },
+        {
+          "name": "Randy McNally",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Ketron",
+          "vote": "yea"
+        },
+        {
+          "name": "Reginald Tate",
+          "vote": "yea"
+        },
+        {
+          "name": "Charlotte Burks",
+          "vote": "yea"
+        },
+        {
+          "name": "Diane Black",
+          "vote": "yea"
+        },
+        {
+          "name": "Dolores Gresham",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Stanley",
+          "vote": "yea"
+        },
+        {
+          "name": "Ronald Ramsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Beverly Marrero",
+          "vote": "yea"
+        },
+        {
+          "name": "Rusty Crowe",
+          "vote": "yea"
+        },
+        {
+          "name": "Thelma Harper",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Stewart",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Barnes",
+          "vote": "yea"
+        },
+        {
+          "name": "Douglas Henry",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Tracy",
+          "vote": "yea"
+        },
+        {
+          "name": "James Kyle",
+          "vote": "yea"
+        },
+        {
+          "name": "Dewayne Bunch",
+          "vote": "yea"
+        },
+        {
+          "name": "Douglas Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Andy Berke",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Southerland",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Faulk",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Norris",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Burchett",
+          "vote": "yea"
+        },
+        {
+          "name": "Joe Haynes",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Doug Overbey",
+          "vote": "yea"
+        },
+        {
+          "name": "Jamie Woodson",
+          "vote": "yea"
+        },
+        {
+          "name": "Lowe Finney",
+          "vote": "yea"
+        },
+        {
+          "name": "Ophelia Ford",
+          "vote": "yea"
+        },
+        {
+          "name": "Roy Herron",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2009-04-13",
+      "body": "TN Senate",
+      "motion": "Senate floor, previous question [version voted: Draft + committee amendments + SA0145, SA0165, SA0213 (not saved)]",
+      "kind": "roll-call",
+      "yes": 20,
+      "no": 11,
+      "absent": 2,
+      "body_size": 33,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/SB0150/id/128806",
+      "members": [
+        {
+          "name": "Bo Watson",
+          "vote": "yea"
+        },
+        {
+          "name": "Ken Yager",
+          "vote": "yea"
+        },
+        {
+          "name": "Mae Beavers",
+          "vote": "yea"
+        },
+        {
+          "name": "Randy McNally",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Ketron",
+          "vote": "yea"
+        },
+        {
+          "name": "Reginald Tate",
+          "vote": "nay"
+        },
+        {
+          "name": "Charlotte Burks",
+          "vote": "nay"
+        },
+        {
+          "name": "Diane Black",
+          "vote": "yea"
+        },
+        {
+          "name": "Dolores Gresham",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Stanley",
+          "vote": "yea"
+        },
+        {
+          "name": "Ronald Ramsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Beverly Marrero",
+          "vote": "nay"
+        },
+        {
+          "name": "Rusty Crowe",
+          "vote": "yea"
+        },
+        {
+          "name": "Thelma Harper",
+          "vote": "nay"
+        },
+        {
+          "name": "Mike Stewart",
+          "vote": "nay"
+        },
+        {
+          "name": "Tim Barnes",
+          "vote": "yea"
+        },
+        {
+          "name": "Douglas Henry",
+          "vote": "absent"
+        },
+        {
+          "name": "Jim Tracy",
+          "vote": "yea"
+        },
+        {
+          "name": "James Kyle",
+          "vote": "nay"
+        },
+        {
+          "name": "Dewayne Bunch",
+          "vote": "yea"
+        },
+        {
+          "name": "Douglas Jackson",
+          "vote": "absent"
+        },
+        {
+          "name": "Andy Berke",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Southerland",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Faulk",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Norris",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Burchett",
+          "vote": "yea"
+        },
+        {
+          "name": "Joe Haynes",
+          "vote": "nay"
+        },
+        {
+          "name": "Jack Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Doug Overbey",
+          "vote": "yea"
+        },
+        {
+          "name": "Jamie Woodson",
+          "vote": "yea"
+        },
+        {
+          "name": "Lowe Finney",
+          "vote": "nay"
+        },
+        {
+          "name": "Ophelia Ford",
+          "vote": "nay"
+        },
+        {
+          "name": "Roy Herron",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2009-04-13",
+      "body": "TN Senate",
+      "motion": "Senate floor, Rule 39(3) amendment 6 (Stewart) [version voted: Draft + committee amendments + SA0145, SA0165, SA0213 (not saved); amendment itself SA0214 not saved]",
+      "kind": "roll-call",
+      "yes": 29,
+      "no": 0,
+      "absent": 4,
+      "body_size": 33,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/SB0150/id/128807",
+      "members": [
+        {
+          "name": "Bo Watson",
+          "vote": "yea"
+        },
+        {
+          "name": "Ken Yager",
+          "vote": "yea"
+        },
+        {
+          "name": "Mae Beavers",
+          "vote": "absent"
+        },
+        {
+          "name": "Randy McNally",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Ketron",
+          "vote": "yea"
+        },
+        {
+          "name": "Reginald Tate",
+          "vote": "yea"
+        },
+        {
+          "name": "Charlotte Burks",
+          "vote": "yea"
+        },
+        {
+          "name": "Diane Black",
+          "vote": "absent"
+        },
+        {
+          "name": "Dolores Gresham",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Stanley",
+          "vote": "yea"
+        },
+        {
+          "name": "Ronald Ramsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Beverly Marrero",
+          "vote": "yea"
+        },
+        {
+          "name": "Rusty Crowe",
+          "vote": "yea"
+        },
+        {
+          "name": "Thelma Harper",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Stewart",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Barnes",
+          "vote": "yea"
+        },
+        {
+          "name": "Douglas Henry",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Tracy",
+          "vote": "yea"
+        },
+        {
+          "name": "James Kyle",
+          "vote": "yea"
+        },
+        {
+          "name": "Dewayne Bunch",
+          "vote": "absent"
+        },
+        {
+          "name": "Douglas Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Andy Berke",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Southerland",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Faulk",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Norris",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Burchett",
+          "vote": "yea"
+        },
+        {
+          "name": "Joe Haynes",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Johnson",
+          "vote": "absent"
+        },
+        {
+          "name": "Doug Overbey",
+          "vote": "yea"
+        },
+        {
+          "name": "Jamie Woodson",
+          "vote": "yea"
+        },
+        {
+          "name": "Lowe Finney",
+          "vote": "yea"
+        },
+        {
+          "name": "Ophelia Ford",
+          "vote": "yea"
+        },
+        {
+          "name": "Roy Herron",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2009-04-13",
+      "body": "TN Senate",
+      "motion": "Senate floor, third consideration, passed as amended [version voted: Draft + committee amendments + SA0145 + SA0165 + SA0213 + SA0214 (none saved)]",
+      "kind": "roll-call",
+      "yes": 29,
+      "no": 3,
+      "absent": 1,
+      "body_size": 33,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/SB0150/id/128808",
+      "members": [
+        {
+          "name": "Bo Watson",
+          "vote": "yea"
+        },
+        {
+          "name": "Ken Yager",
+          "vote": "yea"
+        },
+        {
+          "name": "Mae Beavers",
+          "vote": "yea"
+        },
+        {
+          "name": "Randy McNally",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Ketron",
+          "vote": "yea"
+        },
+        {
+          "name": "Reginald Tate",
+          "vote": "yea"
+        },
+        {
+          "name": "Charlotte Burks",
+          "vote": "yea"
+        },
+        {
+          "name": "Diane Black",
+          "vote": "yea"
+        },
+        {
+          "name": "Dolores Gresham",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Stanley",
+          "vote": "yea"
+        },
+        {
+          "name": "Ronald Ramsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Beverly Marrero",
+          "vote": "nay"
+        },
+        {
+          "name": "Rusty Crowe",
+          "vote": "yea"
+        },
+        {
+          "name": "Thelma Harper",
+          "vote": "absent"
+        },
+        {
+          "name": "Mike Stewart",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Barnes",
+          "vote": "yea"
+        },
+        {
+          "name": "Douglas Henry",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Tracy",
+          "vote": "yea"
+        },
+        {
+          "name": "James Kyle",
+          "vote": "yea"
+        },
+        {
+          "name": "Dewayne Bunch",
+          "vote": "yea"
+        },
+        {
+          "name": "Douglas Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Andy Berke",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Southerland",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Faulk",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Norris",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Burchett",
+          "vote": "yea"
+        },
+        {
+          "name": "Joe Haynes",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Doug Overbey",
+          "vote": "yea"
+        },
+        {
+          "name": "Jamie Woodson",
+          "vote": "yea"
+        },
+        {
+          "name": "Lowe Finney",
+          "vote": "nay"
+        },
+        {
+          "name": "Ophelia Ford",
+          "vote": "yea"
+        },
+        {
+          "name": "Roy Herron",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

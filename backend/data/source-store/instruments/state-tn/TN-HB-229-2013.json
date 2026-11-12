@@ -1,0 +1,40 @@
+{
+  "id": "TN-HB-229-2013",
+  "scope": "state:tn",
+  "title": "HB 229 (108th General Assembly): As enacted, specifies that only certain photo identification issued by state of Tennessee or United States may be used as evidence of identification for voting purposes; prohibits use of county or municipal identifications for voting purposes. - Amends TCA Title 2, Chapter 7, Part 1.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB0229/2013",
+    "https://legiscan.com/TN/rollcall/HB0229/id/245953",
+    "https://legiscan.com/TN/rollcall/HB0229/id/250881",
+    "https://legiscan.com/TN/rollcall/HB0229/id/252170"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id)\n(section) TCA 2-7-112(c)(2), Section 1\n(quote) A valid identification card issued by the state of Tennessee, or the United States where authorized by law to issue personal identification; provided, that such identification card contains a photograph of the voter;\n(section) TCA 2-7-112(c)(5), Section 2\n(quote) A valid employee identification card issued by the state of Tennessee or the United States where authorized by law to issue employee identification; provided, that such identification card contains a photograph of the voter;\n(section) TCA 2-7-112(g), new, Section 3\n(quote) An identification card issued by a county or municipality or entity thereof, including a public library, containing a photograph shall not be evidence of identification for purposes of verifying the person's identification on the application for ballot.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec 4: effective on becoming law.\n(other) version: Draft (only version saved; same text as SB125 Draft): limits accepted photo IDs to State of Tennessee or United States issuers and bars county, city and library IDs (slot a). The House committee amendment of 2013-03-19 and the House amendments HA0155 and HA0156 to SB125 are not saved; the enrolled text is not saved.\n(other) note: Companion of SB125. House floor action was 'Comp. SB subst.' on 2013-03-25, so the House passed SB125 in its place; this bill's own record ends with 'Comp. became Pub. Ch. 178'. Text of the Public Chapter not saved.",
+  "sponsors": [
+    {
+      "name": "Susan Lynn",
+      "role": "prime",
+      "version": "711376-Draft"
+    },
+    {
+      "name": "Bill Ketron",
+      "role": "co",
+      "version": "711376-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

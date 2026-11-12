@@ -1,0 +1,65 @@
+{
+  "id": "TN-SB-2267-2021",
+  "scope": "state:tn",
+  "title": "SB 2267 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 2, relative to voter registration.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB2267/2021",
+    "https://legiscan.com/TN/rollcall/SB2267/id/1176833"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec.3, replaces TCA 2-2-106(c), new (c)(3)\n(quote) (3) The coordinator of elections may contract with commercial data companies, including, but not limited to, credit agencies to verify and audit information in the voter registration lists, including, but not limited to, citizenship status and residence.\n(e_other_rule)\n(section) Sec.3, 2-2-106(c)(1)(B)\n(quote) (B) Information received from the coordinator of elections as a result of a comparison of voter registration addresses with the residential addresses of record with the department of safety.\n(other) Sec.1-2: add 'and the state coordinator of elections' to county election commission duties in 2-2-106(b) (address verification).\n(other) Sec.3: replaces 2-2-106(c): address-change sources (postal change of address, department of safety comparison, returned mail), commercial data contracts, forwardable confirmation notice.\n(other) Sec.4: 2-2-133 deceased-voter audits using commercial groups; county commission cancels registrations of deceased listed.\n(other) Sec.5: state coordinator may not enter list-maintenance agreements that require documents to be withheld from public inspection (2-2-140).\n(other) Sec.6: new part: general assembly has legal standing to sue state officials over unauthorized election-law changes; any registered voter may seek a writ of mandamus against an official who fails to enforce election law (timely if filed within 30 days of tabulation).\n(other) Sec.7-8: severability; effective on becoming law.\n(other) version: Draft 2500997 only full version: carries slot d (commercial-data audit including citizenship, permissive 'may') and address-check text.\n(other) version: SA0773 (Senate State and Local Government amendment 1, full rewrite): keeps only the 2-2-140 public-inspection rule (Sec.1-2); NO ID or citizenship text. Skeleton marks adopted=0.\n(other) note: Failed in Senate State and Local Government Committee 2022-03-23 on a 4-4 tie. The data do not show SA0773 adopted. The citizenship language in slot d is authority to contract with commercial data companies, with no proof requirement on voters.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2022-03-23",
+      "body": "TN Senate",
+      "motion": "Senate committee: failed, 4-4 [version voted: Draft 2500997 (SA0773 rewrite filed; no adoption recorded)]",
+      "kind": "roll-call",
+      "yes": 4,
+      "no": 4,
+      "absent": 0,
+      "body_size": 8,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/SB2267/id/1176833",
+      "members": [
+        {
+          "name": "Ken Yager",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd Gardenhire",
+          "vote": "nay"
+        },
+        {
+          "name": "Richard Briggs",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeff Yarbro",
+          "vote": "nay"
+        },
+        {
+          "name": "Edward Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Sara Kyle",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Powers",
+          "vote": "yea"
+        },
+        {
+          "name": "Page Walley",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

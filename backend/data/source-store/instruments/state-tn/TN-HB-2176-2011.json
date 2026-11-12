@@ -1,0 +1,79 @@
+{
+  "id": "TN-HB-2176-2011",
+  "scope": "state:tn",
+  "title": "HB 2176 (107th General Assembly): As introduced, removes requirement that voter needs photograph identification prior to voting; restores former requirement that voter present identification for purpose of comparing signature on the application for ballot. - Amends TCA Title 2, Chapter 7, Part 1.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB2176/2011",
+    "https://legiscan.com/TN/rollcall/HB2176/id/173582"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) 2-7-112(a)(1) (Section 1)\n(quote) STRUCK: In addition, the voter shall present to the precinct registrar one (1) form of identification that bears the name and photograph of the voter. The requirement to present one (1) form of identification that bears the name and photograph of the voter shall apply to persons voting pursuant to § 2-6-109; provided, however, that a person voting in accordance with § 2-6-401(a) and (b) or § 2-6-601 shall not be required to show an identification with a photograph of the voter.\n(section) 2-7-112(a)(1)(B) (Section 2)\n(quote) (B) To compare the voter's signature on the application, the voter shall supply evidence of identification specified in subsection (c).\n(section) 2-7-112(c) (Section 6)\n(quote) (c) For purposes of comparing the person's signature on the application for ballot, \"evidence of identification\" shall be a valid voter's registration certificate, Tennessee driver license, social security card, credit card bearing the applicant's signature or other document bearing the applicant's signature\".\n(b_no_id_remedy)\n(section) 2-7-112(a)(3)(A) (Section 4)\n(quote) STRUCK: If a voter is unable to present evidence of identification, the voter shall be entitled to vote a provisional ballot pursuant to subsection (e) unless the voter is eligible to vote pursuant to subsection (f).\n(section) 2-7-112(a)(1)(E) (Section 5)\n(quote) (E) If a voter is unable to present any evidence of identification specified in subsection (c), the voter shall be required to execute an affidavit of identity on a form provided by the county election commission.\n(section) 2-7-112(e) and (f) (Section 7)\n(quote) Tennessee Code Annotated, Section 2-7-112, is amended by deleting subsections (e) and (f).\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Section 3: 2-7-112(a)(1)(C) changed from 'verification of' to 'comparison of the signature and other'.\n(other) Section 8: effective on becoming law.\n(other) version: 511394-Draft (2011-12-11; filed 2011-10-24): the only saved version; carries slots a and b. Senate companion SB2139 in header. No amendments, engrossed or later text saved.\n(other) note: Not enacted: deferred in the full committee three times, then taken off notice 2012-04-10. Section 7 deletes subsections (e) (provisional ballot) and (f) (indigency/religious affidavit). Slots a and b only.",
+  "sponsors": [
+    {
+      "name": "Michael Turner",
+      "role": "prime",
+      "version": "511394-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2012-03-14",
+      "body": "TN House",
+      "motion": "Subcommittee recommends passage, 5 yes to 3 no [version voted: Draft (no amendments in saved actions)]",
+      "kind": "roll-call",
+      "yes": 5,
+      "no": 3,
+      "absent": 0,
+      "body_size": 8,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB2176/id/173582",
+      "members": [
+        {
+          "name": "Ryan Haynes",
+          "vote": "nay"
+        },
+        {
+          "name": "Gerald McCormick",
+          "vote": "nay"
+        },
+        {
+          "name": "Curry Todd",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Ramsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Tommie Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent Williams",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "politician_id": "c6214919-2804-40cf-8fda-efd070e2dc80",
+  "findings": [
+    {
+      "id": "d4411ea3d7198b9be2951d3b9fb27477c075cbf1233c48622035a781e739600d",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0016/id/68421",
+      "date": "2011-04-14",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-16-2011",
+      "act": "nay",
+      "motion": "House: AS AMENDED PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (AS AMENDED PASSAGE ON THIRD CONSIDERATION, 57-35) on SB0016 (107th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + HA0157 + HA0158 (neither saved); linked by LegiScan member id 7259 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.073Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e847707ed3dcfb3061ae8379ae7268704427c57f0b37d0ee3fc5ed6fa1dd48e3",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB1666/id/82548",
+      "date": "2011-05-21",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-1666-2011",
+      "act": "yea",
+      "motion": "House: PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (PASSAGE ON THIRD CONSIDERATION, 78-1) on SB1666 (107th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA0296 as passed by the Senate (not saved); House amendments HA0286 and HA0601 were withdrawn; DIRECTION ONLY (ruling T6: the enacted text is not saved; content known from the LegiScan description); linked by LegiScan member id 7259 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.073Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7a4fda4a213f229d1fca1c4b3490e5dab9dee875bef98f7bbadad7b7e9d181a4",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB3195/id/188257",
+      "date": "2012-04-23",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-3195-2011",
+      "act": "yea",
+      "motion": "House: PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (PASSAGE ON THIRD CONSIDERATION, 90-3) on SB3195 (107th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft (no amendment recorded; the companion House text is not saved); linked by LegiScan member id 7259 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.073Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9b9d27469c4ba05efe7c2675e0c5b9630bd294e8d5b21a0e8688155da261ac0e",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/HB0553/2015",
+      "date": "2015",
+      "date_precision": "year",
+      "instrument_id": "TN-HB-553-2015",
+      "act": "sponsor",
+      "motion": "co sponsor, 1115892-Draft",
+      "note": "Listed as co sponsor of HB0553 (109th General Assembly) in LegiScan's bill record (sponsor order 12); the first version (1115892-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.073Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1cecfdb257386aabf7140f146ec59c75b625b60e9769b79ff95444962b764e94",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/HB1324/2021",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "TN-HB-1324-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, 2288905-Draft",
+      "note": "Listed as co sponsor of HB1324 (112th General Assembly) in LegiScan's bill record (sponsor order 4); the first version (2288905-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.073Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6930988a8505122e603380b4a817086271b34430e05e7cc3610482e5b39efdb3",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0626/id/1550047",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-626-2025",
+      "act": "nay",
+      "motion": "House: REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION, 72-22) on SB0626 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft 3093364 + SA0305 (full rewrite = chaptered text) as engrossed by the Senate; linked by LegiScan member id 7259 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.073Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b1bdab27c8e46b6dfd18fda952a09d982a3c0ae502b88906bafcd6d25276e5d0",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB6002/id/1477618",
+      "date": "2025-01-30",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "nay",
+      "motion": "House: REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION, 71-19) on SB6002 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA6001 + SA6007 (adopted on the Senate floor 1/29/2025; equals the chaptered text) as engrossed by the Senate; linked by LegiScan member id 7259 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.073Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "noncitizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Confirmed in scope: sitting House District 88 member, unopposed on the 2026-11-03 ballot (search results from tnfirefly.com/ballotready listings)",
+        "https://dailymemphian.com/article/2633/Rep-Larry-Millers-bill-would-require-top-election-officials-to-vacate-office (2019 bill on election officials leaving posts; reporter's text only, no quote of him, nothing on the subject)",
+        "no campaign site or official site reachable (official site is capitol.tn.gov, not opened)",
+        "blocked: https://ballotpedia.org (not fetched, listed as refusing)",
+        "blocked: https://justfacts.votesmart.org and bluevoterguide.org (listed as refusing, not fetched)",
+        "not fetched by rule: capitol.tn.gov and wapp.capitol.tn.gov (votes and sponsorships are linked separately)",
+        "blocked: https://tennesseelookout.com/voter-guides/... (403; fetched once by mistake, refused-list site, nothing saved)",
+        "web searches run (5+ with name plus voter ID, photo ID, proof of citizenship, noncitizen, questionnaire, local outlets): no page with the person's own words on the subject found",
+        "https://www.ballotready.org profile: nothing on the subject in own words"
+      ],
+      "found": 0,
+      "at": "2026-11-12T02:02:08.654Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 7,
+      "at": "2026-11-12T15:13:42.073Z",
+      "by": "source-collector"
+    }
+  ]
+}

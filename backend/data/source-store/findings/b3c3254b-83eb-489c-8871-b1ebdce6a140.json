@@ -1,0 +1,267 @@
+{
+  "politician_id": "b3c3254b-83eb-489c-8871-b1ebdce6a140",
+  "findings": [
+    {
+      "id": "f1fd3fba0085500a9e9db5dd6052207a98562e62b75d400a98d8f32ae5675610",
+      "kind": "own-words",
+      "url": "https://democracydocket.com/wp-content/uploads/2024/06/Camper-Letter-to-Hargett.pdf",
+      "date": "2024-06-24",
+      "date_precision": "day",
+      "passage": "Lastly, I would like to address the multiple layers of security already in place to prevent individuals who are not legally eligible to vote from participating in our elections.",
+      "note": "Official letter on House Minority Leader letterhead (87th District, Shelby County) to the Secretary of State about the Coordinator of Elections' mailing asking about 14,000 registered voters for proof of citizenship. The letter goes on to list existing safeguards (registration process, identity and residency verification, federal database checks) and questions the need for the extra check. The letter itself is the source; fetched by curl and read as PDF text.",
+      "subjects": [
+        "proof of citizenship to registered voters",
+        "noncitizen voting and voter-roll checks",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T02:01:01.061Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "60851f2aa22c086a62ff5daa4e3908f25b19b15c2bb309a88d6db1a7090886b5",
+      "kind": "own-words",
+      "url": "https://democracydocket.com/wp-content/uploads/2024/06/Camper-Letter-to-Hargett.pdf",
+      "date": "2024-06-24",
+      "date_precision": "day",
+      "passage": "The right to vote is a cornerstone of our democracy, and it is imperative that all actions taken in the name of election security do not undermine voter confidence or disenfranchise eligible voters.",
+      "note": "Closing paragraph of the same letter; states her concern that election-security actions not disenfranchise eligible voters.",
+      "subjects": [
+        "proof of citizenship to registered voters",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T02:01:01.061Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "50140c9ad2458da2b721ded0728836aeed5d49c3277ba2ecc84ab0c0962aa92e",
+      "kind": "own-words",
+      "url": "https://democracydocket.com/wp-content/uploads/2024/06/Camper-Letter-to-Hargett.pdf",
+      "date": "2024-06-24",
+      "date_precision": "day",
+      "passage": "Given these existing safeguards, I am concerned about the necessity and timing of this additional verification measure.",
+      "note": "Same letter; she questions why the extra citizenship verification mailing was needed and why it was timed as it was.",
+      "subjects": [
+        "proof of citizenship to registered voters",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T02:01:01.061Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e847707ed3dcfb3061ae8379ae7268704427c57f0b37d0ee3fc5ed6fa1dd48e3",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB1666/id/82548",
+      "date": "2011-05-21",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-1666-2011",
+      "act": "yea",
+      "motion": "House: PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (PASSAGE ON THIRD CONSIDERATION, 78-1) on SB1666 (107th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA0296 as passed by the Senate (not saved); House amendments HA0286 and HA0601 were withdrawn; DIRECTION ONLY (ruling T6: the enacted text is not saved; content known from the LegiScan description); linked by LegiScan member id 7242 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.074Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7a4fda4a213f229d1fca1c4b3490e5dab9dee875bef98f7bbadad7b7e9d181a4",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB3195/id/188257",
+      "date": "2012-04-23",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-3195-2011",
+      "act": "yea",
+      "motion": "House: PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (PASSAGE ON THIRD CONSIDERATION, 90-3) on SB3195 (107th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft (no amendment recorded; the companion House text is not saved); linked by LegiScan member id 7242 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.074Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b156da78d41c0a44d1802d79a5fb6b0d2c6d47a81a333f869f9e455b461cba4",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0125/id/253215",
+      "date": "2013-03-25",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-125-2013",
+      "act": "nay",
+      "motion": "House: AS AMENDED PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (AS AMENDED PASSAGE ON THIRD CONSIDERATION, 65-30) on SB0125 (108th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + HA0155 + HA0156 (not saved); linked by LegiScan member id 7242 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.074Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9b9d27469c4ba05efe7c2675e0c5b9630bd294e8d5b21a0e8688155da261ac0e",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/HB0553/2015",
+      "date": "2015",
+      "date_precision": "year",
+      "instrument_id": "TN-HB-553-2015",
+      "act": "sponsor",
+      "motion": "co sponsor, 1115892-Draft",
+      "note": "Listed as co sponsor of HB0553 (109th General Assembly) in LegiScan's bill record (sponsor order 6); the first version (1115892-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.074Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6bf6d81a82db697d74298b2d427ff9b8ac3a5267f7ae33bbaa137ed285b615aa",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/HB1316/id/1538770",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1316-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR AS AMENDED PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR AS AMENDED PASSAGE ON THIRD CONSIDERATION, 83-7) on HB1316 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + HA0118 (adopted on the floor 2025-04-07 per action log); linked by LegiScan member id 7242 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.074Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6930988a8505122e603380b4a817086271b34430e05e7cc3610482e5b39efdb3",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0626/id/1550047",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-626-2025",
+      "act": "nay",
+      "motion": "House: REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION, 72-22) on SB0626 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft 3093364 + SA0305 (full rewrite = chaptered text) as engrossed by the Senate; linked by LegiScan member id 7242 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.074Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b1bdab27c8e46b6dfd18fda952a09d982a3c0ae502b88906bafcd6d25276e5d0",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB6002/id/1477618",
+      "date": "2025-01-30",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "nay",
+      "motion": "House: REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION, 71-19) on SB6002 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA6001 + SA6007 (adopted on the Senate floor 1/29/2025; equals the chaptered text) as engrossed by the Senate; linked by LegiScan member id 7242 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.074Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "noncitizen voting and voter-roll citizenship checks",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr run with --names)",
+        "her own letterhead letter to the Secretary of State, 2024-06-24 (PDF hosted by Democracy Docket), saved",
+        "web searches (5): name + voter ID, + proof of citizenship/noncitizen, + photo ID/election integrity, + Daily Memphian/WPLN/Times Free Press/SAVE, + questionnaire/candidate survey; results were news reposts, bill trackers and profile pages with nothing else from her on the subject",
+        "iVoterGuide profile page for her (lead only; snippet shows no answers; not fetched)",
+        "not reviewed (repost of Tennessee Lookout): https://tennesseelookout.com/2024/06/25/dems-demand-answers-after-tennessee-officials-send-14k-letters-warning-against-illegal-voting/",
+        "not reviewed (repost of Tennessee Lookout): https://wisconsinexaminer.com/2024/06/27/dems-demand-answers-after-tennessee-officials-send-14k-letters-warning-against-illegal-voting/",
+        "not reviewed (repost of Tennessee Lookout): https://news.yahoo.com/news/dems-demand-answers-tennessee-officials-210718559.html",
+        "blocked: https://ballotpedia.org/Karen_Camper (refused-list host, not fetched)",
+        "blocked: https://justfacts.votesmart.org/candidate/biography/104685/ (refused-list host, not fetched)",
+        "blocked: https://bluevoterguide.org/fr/TN/candidate_Karen_Camper/30770 (refused-list host, not fetched)",
+        "not opened by rule: capitol.tn.gov and wapp.capitol.tn.gov"
+      ],
+      "found": 3,
+      "at": "2026-11-12T02:01:01.061Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 7,
+      "at": "2026-11-12T15:13:42.074Z",
+      "by": "source-collector"
+    }
+  ]
+}

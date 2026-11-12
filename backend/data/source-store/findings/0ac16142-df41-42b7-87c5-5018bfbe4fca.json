@@ -1,0 +1,181 @@
+{
+  "politician_id": "0ac16142-df41-42b7-87c5-5018bfbe4fca",
+  "findings": [
+    {
+      "id": "aa474deb37468bc167c206e45ead5125f8f2108bc11e966a8cf17be0432d1b28",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/66782/race/15906/election/896",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification. Strongly Disagree",
+      "note": "Candidate questionnaire answer on the 2022 primary race page: the statement is 'people should be able to vote without photo identification' and the answer given is 'Strongly Disagree'.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:49:09.941Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5ae8acb367b72a75990f8f360be98ceafabd52115cf20b1625f5139b9e47d0f",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/66782/race/15906/election/896",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "I would work to strengthen the chain of custody in ballots by eradicating ballot harvesting.",
+      "note": "Answer to the questionnaire question 'What laws would you propose to change present voting practices?' on the 2022 primary race page.",
+      "subjects": [
+        "ballot harvesting",
+        "election integrity laws in general",
+        "mail-ballot handling"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:49:09.941Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0163468abe7ef6cc7868a6546830d4095296324325aa2540d7bc350fe651df73",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/HB1316/id/1543681",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1316-2025",
+      "act": "yea",
+      "motion": "Senate: Third Consideration",
+      "note": "TN Senate floor roll call (Third Consideration, 27-1) on HB1316 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: House bill as engrossed: Draft + HA0118 (no Senate amendment adopted; SA0055 withdrawn, text not saved). Equals the Chaptered act.; linked by LegiScan member id 24390 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.083Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2cb8a8353d645d27a96468ba982e2fc8af8c7485405aa5e12aea1c5eb5d4d620",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/SB0133/2025",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TN-SB-133-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, 3055361-Draft",
+      "note": "Listed as co sponsor of SB0133 (114th General Assembly) in LegiScan's bill record (sponsor order 3); the first version (3055361-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.083Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "14baaad1def98805df995d0c4364fa22be7d8829d306c1c08a54b34ac1069e9c",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/SB1029/2025",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TN-SB-1029-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, 3102287-Draft",
+      "note": "Listed as co sponsor of SB1029 (114th General Assembly) in LegiScan's bill record (sponsor order 2); the first version (3102287-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.083Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f980e3e7619c55dde318902ee75c0bcffeab049f3ac02af140c30fb2d2daf2c1",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB6002/id/1476571",
+      "date": "2025-01-29",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "yea",
+      "motion": "Senate: as Amended Third Consideration",
+      "note": "TN Senate floor roll call (as Amended Third Consideration, 26-7) on SB6002 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA6001 + SA6007 (adopted on the Senate floor 1/29/2025; equals the chaptered text); linked by LegiScan member id 24390 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.083Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "iVoterGuide 2022 primary profile (questionnaire answers)",
+        "iVoterGuide 2022 general and 2026 profile pages: photo ID answer 'Strongly Disagree', no extra text",
+        "Ballotpedia: blocked, and search says he has not completed its 2026 survey",
+        "no campaign site found by search",
+        "6 web searches (photo ID, citizenship, ballot harvesting, noncitizen, local outlets, campaign site): no further own words",
+        "Times Free Press 2022 primary story surfaced in search, not on the subject",
+        "blocked: https://ballotpedia.org",
+        "blocked: https://www.courthousenews.com/tennessee-senate-passes-crackdown-on-voter-registration-drives/ (403)",
+        "not reviewed (do not fetch per notes): capitol.tn.gov and wapp.capitol.tn.gov member pages",
+        "not reviewed: sos.tn.gov and tn.gov (block page)",
+        "not reviewed (repost of Tennessee Lookout): https://www.yahoo.com/news/articles/tennessee-lawmakers-respond-trump-push-000107104.html"
+      ],
+      "found": 2,
+      "at": "2026-11-12T01:49:09.941Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 4,
+      "at": "2026-11-12T15:13:42.083Z",
+      "by": "source-collector"
+    }
+  ]
+}

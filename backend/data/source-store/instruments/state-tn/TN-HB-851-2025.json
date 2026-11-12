@@ -1,0 +1,80 @@
+{
+  "id": "TN-HB-851-2025",
+  "scope": "state:tn",
+  "title": "HB 851 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 2, Chapter 6, Part 5, relative to absentee ballots.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB0851/2025",
+    "https://legiscan.com/TN/rollcall/HB0851/id/1651704"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy)\n(section) Sec 2, new 2-6-502(k)(2) (UOCAVA application mismatch: provisional absentee ballot)\n(quote) A UOCAVA absentee ballot application must not be rejected solely due to a mismatch between the identifying information of the elector on the application and the identifying information of the elector on file with the county election commission.\n(section) Sec 2, 2-6-502(k)(3) (cure by affidavit plus proof)\n(quote) the elector may cure the discrepancy by submitting an affidavit to the election official along with a copy of documentary proof of United States citizenship or overseas residency, as defined in subsection (h), before the close of the period for verifying provisional ballots.\n(c_mail_ballot_id)\n(section) Sec 2, 2-6-502(i) (application missing ID or proof of citizenship)\n(quote) If the application is missing a Tennessee residency address, overseas/current mailing address, identification, or documentary proof of citizenship, the county election commission shall notify the applicant of the application deficiency.\n(section) Sec 2, 2-6-502(m)\n(quote) The applicants must complete all required sections of the federal postcard application and provide the documents necessary for verification of identity and eligibility for voter registration and UOCAVA voting privileges.\n(d_proof_of_citizenship)\n(section) Sec 2, new 2-6-502(h)(1) (applies to every temporary-registration UOCAVA applicant: military, overseas, federal-only)\n(quote) An application for temporary registration must include a copy of documentary proof of United States citizenship and, if the voter is a civilian overseas voter or a federal-only voter, documentary proof of overseas residence.\n(section) Sec 2, 2-6-502(h)(2)(A)-(B) (accepted documents)\n(quote) (A) A form of identification issued consistent with the requirements of the REAL ID Act of 2005 (Public Law 109-13) that indicates the applicant is a citizen of the United States; (B) A valid, unexpired United States passport;\n(section) Sec 2, 2-6-502(j) (denial)\n(quote) If the applicant is ineligible to register to vote or does not provide documentary proof of United State citizenship or overseas residency, or if the application is not timely received, the county election commission shall deny the application\n(e_other_rule)\n(section) Sec 2, 2-6-502(k)(1) (no ballot application if registration rejected for missing proof)\n(quote) A UOCAVA absentee ballot application must not be accepted if the applicant's voter registration application was rejected for failure to provide the required documentary proof of citizenship or overseas residency.\n(section) Sec 2, 2-6-502(l) (electronic application)\n(quote) The secretary of state shall establish procedures that allow a military voter, civilian overseas voter, federal-only voter, or an eligible dependent thereof, to apply by electronic means to the county election commission of the county in which the person's voting residence is located for an absentee ballot.\n(other) Sec 1: definitions (civilian overseas voter, federal-only voter, military voter, UOCAVA ballot).\n(other) Sec 2 (2-6-502(n)-(u)): handling of federal postcard applications, electronic blank-ballot delivery, free ballot-tracking system, UOCAVA affidavit with two witnesses (no notary), return deadline of poll close on election day, no electronic return of voted ballots, separate recording and tally of UOCAVA ballots.\n(other) Sec 3: updates the UOCAVA citation in 2-6-502(b).\n(other) Sec 4: effective on becoming law.\n(other) SA0884 (amendment, not adopted): would delete 2-6-502(g) and take effect 2027-01-01.\n(other) version: 3099023-Draft (2025-02-04): 4-section UOCAVA bill; carries slots b, c, d, e text (documentary proof of citizenship for temporary registration; cure affidavit; deficiency notice).\n(other) version: 3102520-Draft (2025-02-05): same words; header adds companion Senate Bill 1029 (Bowling).\n(other) version: amend-290485-SA0884 (Senate State and Local Government amendment 1 to SB 1029, Briggs, dated 2026-03-26, adopted flag 0): deletes all language after the enacting clause; only deletes 2-6-502(g) (text of (g) not saved), effective 2027-01-01. No slot a-e text visible.\n(other) note: Only UOCAVA (military and overseas) voters are covered; it adds documentary proof of citizenship for them, and does not touch ordinary in-person or in-state absentee voting. LegiScan files SA0884 under HB 851 as chamber H, but it is a Senate amendment to the companion SB 1029 dated three weeks after the House subcommittee vote, so it is not the amendment voted on. Last action 2026-04-08: taken off notice in House State & Local Government Committee after weekly deferrals.",
+  "sponsors": [
+    {
+      "name": "Michele Reneau",
+      "role": "prime",
+      "version": "amend-290485-SA0884"
+    },
+    {
+      "name": "Jody Barrett",
+      "role": "co",
+      "version": "amend-290485-SA0884"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2026-03-03",
+      "body": "TN House",
+      "motion": "Subcommittee recommended for passage if amended [version voted: not saved (Draft + a House subcommittee amendment that is not in the saved set; SA0884 is a later Senate amendment on SB 1029)]",
+      "kind": "roll-call",
+      "yes": 6,
+      "no": 0,
+      "absent": 1,
+      "body_size": 7,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB0851/id/1651704",
+      "members": [
+        {
+          "name": "Jason Powell",
+          "vote": "absent"
+        },
+        {
+          "name": "Dan Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Rudd",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerome Moon",
+          "vote": "yea"
+        },
+        {
+          "name": "Rush Bricken",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Leatherwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Wright",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

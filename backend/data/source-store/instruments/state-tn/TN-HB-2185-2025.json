@@ -1,0 +1,697 @@
+{
+  "id": "TN-HB-2185-2025",
+  "scope": "state:tn",
+  "title": "HB 2185 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 2, relative to voter eligibility.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB2185/2025",
+    "https://legiscan.com/TN/rollcall/HB2185/id/1651733",
+    "https://legiscan.com/TN/rollcall/HB2185/id/1660899",
+    "https://legiscan.com/TN/rollcall/HB2185/id/1662228",
+    "https://legiscan.com/TN/rollcall/HB2185/id/1666206",
+    "https://legiscan.com/TN/rollcall/HB2185/id/1677386"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec 1, new 2-2-401(c) (citizenship portal may also use federal SAVE data, if DHS offers a secure web service)\n(quote) (c) The portal may also access data from the systematic alien verification for entitlements (SAVE) program from the United States department of homeland security, United States citizenship and immigration services (DHS-USCIS), if DHS-USCIS makes such data available via a secure web service.\n(e_other_rule) not stated.\n(other) Sec 2: effective on becoming law (Chaptered: signed 2026-04-21).\n(other) version: 3345925-Draft (2026-02-02): one operative section as above (slot d: SAVE data may be used by the portal).\n(other) version: 3426167-Chaptered (2026-04-24, Public Chapter 775, House Bill 2185 substituted for Senate Bill 2204): word-for-word the same operative text as the Draft (the Draft adds nothing the Chaptered lacks).\n(other) note: Permissive ('may also access'), not a mandate; it depends on DHS making SAVE data available by secure web service. The existing 2-2-401 portal text is not reprinted. No amendment saved or recorded at any stage, so every roll call is on the Draft text. The Calendar & Rules roll call (2026-03-16) shows only two recorded votes (0 yes, 2 no).\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2026-03-03",
+      "body": "TN House",
+      "motion": "Subcommittee recommended for passage [version voted: Draft (no amendment recorded)]",
+      "kind": "roll-call",
+      "yes": 6,
+      "no": 1,
+      "absent": 0,
+      "body_size": 7,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB2185/id/1651733",
+      "members": [
+        {
+          "name": "Jason Powell",
+          "vote": "nay"
+        },
+        {
+          "name": "Dan Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Rudd",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerome Moon",
+          "vote": "yea"
+        },
+        {
+          "name": "Rush Bricken",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Leatherwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Wright",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-11",
+      "body": "TN House",
+      "motion": "Committee recommended for passage [version voted: Draft (no amendment recorded)]",
+      "kind": "roll-call",
+      "yes": 15,
+      "no": 5,
+      "absent": 0,
+      "body_size": 20,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB2185/id/1660899",
+      "members": [
+        {
+          "name": "Larry Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Mary Littleton",
+          "vote": "yea"
+        },
+        {
+          "name": "Bo Mitchell",
+          "vote": "nay"
+        },
+        {
+          "name": "Jason Powell",
+          "vote": "nay"
+        },
+        {
+          "name": "Dan Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "John Crawford",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Rudd",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerome Moon",
+          "vote": "yea"
+        },
+        {
+          "name": "Rush Bricken",
+          "vote": "yea"
+        },
+        {
+          "name": "Jesse Chism",
+          "vote": "yea"
+        },
+        {
+          "name": "Vincent Dixie",
+          "vote": "nay"
+        },
+        {
+          "name": "Tom Leatherwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Iris Rudder",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Wright",
+          "vote": "yea"
+        },
+        {
+          "name": "Rick Eldridge",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd Warner",
+          "vote": "yea"
+        },
+        {
+          "name": "Michele Carringer",
+          "vote": "yea"
+        },
+        {
+          "name": "Greg Martin",
+          "vote": "yea"
+        },
+        {
+          "name": "Ed Butler",
+          "vote": "yea"
+        },
+        {
+          "name": "Gabby Salinas",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-16",
+      "body": "TN House",
+      "motion": "Calendar & Rules placed on regular calendar (procedural) [version voted: Draft (no amendment recorded)]",
+      "kind": "roll-call",
+      "yes": 0,
+      "no": 2,
+      "absent": 0,
+      "body_size": 2,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB2185/id/1662228",
+      "members": [
+        {
+          "name": "Karen Camper",
+          "vote": "nay"
+        },
+        {
+          "name": "John Clemmons",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-19",
+      "body": "TN House",
+      "motion": "House floor, third consideration, passed [version voted: Draft (no amendment recorded)]",
+      "kind": "roll-call",
+      "yes": 68,
+      "no": 22,
+      "absent": 0,
+      "body_size": 90,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB2185/id/1666206",
+      "members": [
+        {
+          "name": "Timothy Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "David Hawk",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnny Shaw",
+          "vote": "nay"
+        },
+        {
+          "name": "Pat Marsh",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Lynn",
+          "vote": "yea"
+        },
+        {
+          "name": "Karen Camper",
+          "vote": "nay"
+        },
+        {
+          "name": "Larry Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark White",
+          "vote": "yea"
+        },
+        {
+          "name": "Cameron Sexton",
+          "vote": "yea"
+        },
+        {
+          "name": "Kelly Keisling",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Sparks",
+          "vote": "yea"
+        },
+        {
+          "name": "Dennis Powers",
+          "vote": "yea"
+        },
+        {
+          "name": "Antonio Parkinson",
+          "vote": "nay"
+        },
+        {
+          "name": "William Lamberth",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Travis",
+          "vote": "yea"
+        },
+        {
+          "name": "Gloria Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Andrew Farmer",
+          "vote": "yea"
+        },
+        {
+          "name": "Debra Moody",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Littleton",
+          "vote": "yea"
+        },
+        {
+          "name": "Harold Love",
+          "vote": "nay"
+        },
+        {
+          "name": "Bo Mitchell",
+          "vote": "nay"
+        },
+        {
+          "name": "Jason Powell",
+          "vote": "nay"
+        },
+        {
+          "name": "Dan Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Bud Hulsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Sabi Kumar",
+          "vote": "yea"
+        },
+        {
+          "name": "Jay Reedy",
+          "vote": "yea"
+        },
+        {
+          "name": "Gregory Terry",
+          "vote": "yea"
+        },
+        {
+          "name": "John Clemmons",
+          "vote": "nay"
+        },
+        {
+          "name": "Jason Zachary",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Hicks",
+          "vote": "yea"
+        },
+        {
+          "name": "John Crawford",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Gant",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Rudd",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Sherrell",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerome Moon",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Vaughan",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnny Garrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Cepicky",
+          "vote": "yea"
+        },
+        {
+          "name": "Charlie Baum",
+          "vote": "yea"
+        },
+        {
+          "name": "Rush Bricken",
+          "vote": "yea"
+        },
+        {
+          "name": "Jesse Chism",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Cochran",
+          "vote": "yea"
+        },
+        {
+          "name": "Vincent Dixie",
+          "vote": "nay"
+        },
+        {
+          "name": "Clay Doggett",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Freeman",
+          "vote": "nay"
+        },
+        {
+          "name": "Yusuf Hakeem",
+          "vote": "nay"
+        },
+        {
+          "name": "Kirk Haston",
+          "vote": "yea"
+        },
+        {
+          "name": "Esther Helton",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Hurt",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Lafferty",
+          "vote": "yea"
+        },
+        {
+          "name": "Iris Rudder",
+          "vote": "yea"
+        },
+        {
+          "name": "Lowell Russell",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Wright",
+          "vote": "yea"
+        },
+        {
+          "name": "Rick Eldridge",
+          "vote": "yea"
+        },
+        {
+          "name": "Rusty Grills",
+          "vote": "yea"
+        },
+        {
+          "name": "Tandy Darby",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd Warner",
+          "vote": "yea"
+        },
+        {
+          "name": "Michele Carringer",
+          "vote": "yea"
+        },
+        {
+          "name": "Torrey Harris",
+          "vote": "nay"
+        },
+        {
+          "name": "Sam McKenzie",
+          "vote": "nay"
+        },
+        {
+          "name": "Tim Hicks",
+          "vote": "yea"
+        },
+        {
+          "name": "Rebecca Alexander",
+          "vote": "yea"
+        },
+        {
+          "name": "Greg Vital",
+          "vote": "yea"
+        },
+        {
+          "name": "Greg Martin",
+          "vote": "yea"
+        },
+        {
+          "name": "Kip Capley",
+          "vote": "yea"
+        },
+        {
+          "name": "Monty Fritts",
+          "vote": "yea"
+        },
+        {
+          "name": "Jake McCalmon",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Raper",
+          "vote": "yea"
+        },
+        {
+          "name": "Ed Butler",
+          "vote": "yea"
+        },
+        {
+          "name": "William Slater",
+          "vote": "yea"
+        },
+        {
+          "name": "Gino Bulso",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Hale",
+          "vote": "yea"
+        },
+        {
+          "name": "Caleb Hemmer",
+          "vote": "nay"
+        },
+        {
+          "name": "Jody Barrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Elaine Davis",
+          "vote": "yea"
+        },
+        {
+          "name": "Ronnie Glynn",
+          "vote": "nay"
+        },
+        {
+          "name": "Robert Stevens",
+          "vote": "yea"
+        },
+        {
+          "name": "Brock Martin",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Jones",
+          "vote": "nay"
+        },
+        {
+          "name": "Justin Pearson",
+          "vote": "nay"
+        },
+        {
+          "name": "Aftyn Behn",
+          "vote": "nay"
+        },
+        {
+          "name": "Fred Atchley",
+          "vote": "yea"
+        },
+        {
+          "name": "Shaundelle Brooks",
+          "vote": "nay"
+        },
+        {
+          "name": "Renea Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Aron Maberry",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee Reeves",
+          "vote": "yea"
+        },
+        {
+          "name": "Michele Reneau",
+          "vote": "yea"
+        },
+        {
+          "name": "Gabby Salinas",
+          "vote": "nay"
+        },
+        {
+          "name": "Richard Scarbrough",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Stinnett",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "body": "TN Senate",
+      "motion": "Senate floor, third consideration, passed [version voted: House bill as passed: Draft (no amendment recorded). Equals the Chaptered act.]",
+      "kind": "roll-call",
+      "yes": 27,
+      "no": 6,
+      "absent": 0,
+      "body_size": 33,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB2185/id/1677386",
+      "members": [
+        {
+          "name": "Joseph Hensley",
+          "vote": "yea"
+        },
+        {
+          "name": "Bo Watson",
+          "vote": "yea"
+        },
+        {
+          "name": "Ken Yager",
+          "vote": "yea"
+        },
+        {
+          "name": "Randy McNally",
+          "vote": "yea"
+        },
+        {
+          "name": "Rusty Crowe",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Southerland",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Ferrell Haile",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Pody",
+          "vote": "yea"
+        },
+        {
+          "name": "Kerry Roberts",
+          "vote": "yea"
+        },
+        {
+          "name": "Becky Massey",
+          "vote": "yea"
+        },
+        {
+          "name": "John Stevens",
+          "vote": "yea"
+        },
+        {
+          "name": "Janince Bowling",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd Gardenhire",
+          "vote": "yea"
+        },
+        {
+          "name": "Dawn White",
+          "vote": "yea"
+        },
+        {
+          "name": "Raumesh Akbari",
+          "vote": "nay"
+        },
+        {
+          "name": "Paul Bailey",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Briggs",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Yarbro",
+          "vote": "nay"
+        },
+        {
+          "name": "Edward Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Sara Kyle",
+          "vote": "nay"
+        },
+        {
+          "name": "Shane Reeves",
+          "vote": "yea"
+        },
+        {
+          "name": "London Lamar",
+          "vote": "nay"
+        },
+        {
+          "name": "Paul Rose",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Powers",
+          "vote": "yea"
+        },
+        {
+          "name": "Page Walley",
+          "vote": "yea"
+        },
+        {
+          "name": "Heidi Campbell",
+          "vote": "nay"
+        },
+        {
+          "name": "Brent Taylor",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Lowe",
+          "vote": "yea"
+        },
+        {
+          "name": "Charlane Oliver",
+          "vote": "nay"
+        },
+        {
+          "name": "Robert Harshbarger",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Hatcher",
+          "vote": "yea"
+        },
+        {
+          "name": "Jessie Seal",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

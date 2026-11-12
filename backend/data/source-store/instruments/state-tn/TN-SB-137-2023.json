@@ -1,0 +1,123 @@
+{
+  "id": "TN-SB-137-2023",
+  "scope": "state:tn",
+  "title": "SB 137 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Section 2-2-106 and Section 2-2-141, relative to election integrity.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB0137/2023",
+    "https://legiscan.com/TN/rollcall/SB0137/id/1287544",
+    "https://legiscan.com/TN/rollcall/SB0137/id/1424652"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec.2 in Draft / Sec.1 in Chaptered, amends TCA 2-2-141(a)\n(quote) The coordinator of elections shall compare the statewide voter registration database with the department of safety database to ensure non-United States citizens are not registered to vote in this state.\n(e_other_rule)\n(section) Draft Sec.1, amends TCA 2-2-106(c)(1)(D) (removed by SA1001; not in Chaptered)\n(quote) The coordinator of elections shall compare the statewide voter registration database with those of other relevant state agencies and county records for this purpose; and\n(other) Draft Sec.1: mandatory ('shall') comparison of registration addresses with other state agency and county records (2-2-106(c)(1)(D)); address check, not citizenship.\n(other) Draft Sec.2 / Chaptered Sec.1: 'may' to 'shall' in the 2-2-141(a) department-of-safety non-citizen comparison.\n(other) Last section: effective on becoming law.\n(other) version: Draft 2635792 (as filed) and Draft 2670437 (HB 835 companion header): identical operative text; carry slots d and e.\n(other) version: SA0341 (Senate State and Local Government amendment 1): effective date July 1, 2024 only; no ID/citizenship text.\n(other) version: SA1001 (Senate Finance, Ways, and Means amendment 2): full rewrite keeping only the 2-2-141(a) 'shall compare' change (slot d); drops the 2-2-106 section.\n(other) version: Chaptered 2996370 (Pub. Ch. 900): word-for-word the same as the HB 835 Chaptered text.\n(other) note: The Senate floor passed HB 835, not SB 137, so there is no Senate floor roll call under this bill id; the two Senate committee roll calls are all that is saved here. Skeleton flags both amendments adopted=0, but the committee motions say 'with amendment/s' and the 2024-04-15 action line records both as 'withdrawn' (Senate floor, when the House bill was substituted).\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2023-03-28",
+      "body": "TN Senate",
+      "motion": "Senate committee: recommended for passage with amendment, 6-2 [version voted: Draft + SA0341 (effective-date amendment; adoption inferred from 'with amendment/s', flag adopted=0)]",
+      "kind": "roll-call",
+      "yes": 6,
+      "no": 2,
+      "absent": 0,
+      "body_size": 8,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/SB0137/id/1287544",
+      "members": [
+        {
+          "name": "Mark Pody",
+          "vote": "yea"
+        },
+        {
+          "name": "John Stevens",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Briggs",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Yarbro",
+          "vote": "nay"
+        },
+        {
+          "name": "Edward Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Sara Kyle",
+          "vote": "nay"
+        },
+        {
+          "name": "Page Walley",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Lowe",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2024-04-10",
+      "body": "TN Senate",
+      "motion": "Senate committee: recommended for passage with amendment, 9-2 [version voted: Draft + SA0341 + SA1001 (SA1001 = rewrite keeping slot d only; adoption inferred, flag adopted=0)]",
+      "kind": "roll-call",
+      "yes": 9,
+      "no": 2,
+      "absent": 0,
+      "body_size": 11,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/SB0137/id/1424652",
+      "members": [
+        {
+          "name": "Joseph Hensley",
+          "vote": "yea"
+        },
+        {
+          "name": "Bo Watson",
+          "vote": "yea"
+        },
+        {
+          "name": "Ken Yager",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Ferrell Haile",
+          "vote": "yea"
+        },
+        {
+          "name": "John Stevens",
+          "vote": "yea"
+        },
+        {
+          "name": "Dawn White",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Yarbro",
+          "vote": "nay"
+        },
+        {
+          "name": "London Lamar",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Powers",
+          "vote": "yea"
+        },
+        {
+          "name": "Page Walley",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "TN-HB-3747-2011",
+  "scope": "state:tn",
+  "title": "HB 3747 (107th General Assembly): As introduced, allows person voting in county where no driver license station is located and who does not possess photographic identification to execute affidavit of identity at county election commission office during early voting and have digital photograph taken there prior to being able to vote. - Amends TCA Title 2, Chapter 7, Part 1.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB3747/2011",
+    "https://legiscan.com/TN/rollcall/HB3747/id/176007"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy)\n(section) Sec. 1, new TCA 2-7-112(g)\n(quote) Any voter, other than one described in subsection (f), who does not possess the required evidence of identification may appear in person at the county election commission office during the early voting period for an election and execute an affidavit of identity on a form approved by the state coordinator of elections and provided by the county election commission, at which time an employee of the commission shall digitally photograph the voter.\n(section) Sec. 1, new TCA 2-7-112(g)\n(quote) Thereupon, the voter may cast a vote for such election, at the county election commission office.\n(section) Sec. 1, new TCA 2-7-112(g)\n(quote) This subsection (g) shall only apply to persons voting in counties where no driver license station is located.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec. 1: affidavit and photograph are kept by the commission under state coordinator of elections guidelines.\n(other) Sec. 2: takes effect on becoming law.\n(other) version: Draft 557003 (filed 2012-01-30): only saved version; carries slot b text (the new subsection (g)); header also shows Senate Bill 3728 by Herron as the companion.\n(other) note: Voting is at the county election commission office during the early voting period only, not at polling places on election day. It applies only in counties with no driver license station. The 2-7-112(f) it refers to, and the 'required evidence of identification', are existing law and not reprinted. Actions end with 'Taken Off Notice For Cal.' in full committee on 4/10/2012.",
+  "sponsors": [
+    {
+      "name": "Michael Turner",
+      "role": "prime",
+      "version": "557003-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2012-03-21",
+      "body": "TN House",
+      "motion": "House subcommittee (State & Local Government), recommended for passage, 5-4 [version voted: Draft 557003 (no amendment shown in the actions)]",
+      "kind": "roll-call",
+      "yes": 5,
+      "no": 4,
+      "absent": 0,
+      "body_size": 9,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB3747/id/176007",
+      "members": [
+        {
+          "name": "Jim Cobb",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan Haynes",
+          "vote": "nay"
+        },
+        {
+          "name": "Judd Matheny",
+          "vote": "nay"
+        },
+        {
+          "name": "Curry Todd",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Ramsey",
+          "vote": "nay"
+        },
+        {
+          "name": "Larry Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Tommie Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent Williams",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

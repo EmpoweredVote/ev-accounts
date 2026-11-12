@@ -1,0 +1,18 @@
+{
+  "id": "TN-HB-162-2017",
+  "scope": "state:tn",
+  "title": "HB 162 (110th General Assembly): As enacted, permits the sending of an absentee ballot to an address within a county, regardless of whether the voter requesting the absentee ballot possesses a commercial driver license or a valid transportation worker identification credential. - Amends TCA Title 2, Chapter 6.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB0162/2017"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Section 1: replaces item (E) of the absentee application contents in 2-6-202(a)(3) with 'The address to mail the ballot outside the county, if applicable;'.\n(other) Section 2: takes effect on becoming law.\n(other) version: Draft 1486192 (2017-01-30): the one-item change to 2-6-202(a)(3)(E); no slot a-e content.\n(other) version: Chaptered 1801742 (2017-04-19): the Public Chapter as signed is the Senate bill's chapter (SB 286, substituted for HB 162); same operative text as the Draft.\n(other) note: The House bill itself was set aside ('Comp. SB subst.' 2017-04-03); the law is the Senate bill's Public Chapter 137 (signed 2017-04-17, effective 04/17/2017). No roll calls saved for HB 162. The saved chaptered text is a scan with garbled characters ('(aX3XE)') but reads as (a)(3)(E). The title says the change lets a ballot go to an address within the county regardless of driver license status; the saved text reads only as quoted. No ID or citizenship content.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

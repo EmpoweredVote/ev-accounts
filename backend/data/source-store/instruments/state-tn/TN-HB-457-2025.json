@@ -1,0 +1,159 @@
+{
+  "id": "TN-HB-457-2025",
+  "scope": "state:tn",
+  "title": "HB 457 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 2, relative to elections.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB0457/2025",
+    "https://legiscan.com/TN/rollcall/HB0457/id/1526442",
+    "https://legiscan.com/TN/rollcall/HB0457/id/1542846"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy)\n(section) Sec 6, new 2-2-111(f) (supplemental registration without ID/residence proof goes to 2-2-115 process)\n(quote) (f) A registration form from a person who registers to vote at a supplemental registration who does not present evidence of identification or verification of residential address, as those terms are defined in § 2-7-112, must be processed in accordance with § 2-2-115.\n(section) Sec 2, 2-7-112(a)(3)(B)(i) (provisional counting board notice; provisional ballots)\n(quote) The county election commission shall publish a notice of the location of the provisional counting board in conjunction with the notice of election required by\n(section) Sec 1, 2-7-112(e)(10) (provisional counting deadline)\n(quote) If the county election commission determines that the counting of provisional ballots cannot be completed by the designated time, the state coordinator of elections may grant the county an extension of time and shall designate a time that is no later than the third Monday after the election.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec 5, 2-2-118(a) (in-person registrant at the commission office; registration-time ID)\n(quote) (a) A person who registers to vote in the county election commission office shall present evidence of identification or verification of residential address, as those terms are defined in\n(section) Sec 7, 2-2-124(a) (registration card mailed to new voter without residence verification)\n(quote) The administrator of elections shall mail the voter registration card to any new voter who has not provided verification of residential address, as defined in § 2-7- 112, or who registers at a supplemental registration held pursuant to § 2-2-111.\n(other) Sec 1: 2-7-112(e)(10) deadline extension for counting provisional ballots (no later than third Monday after election).\n(other) Sec 2: 2-7-112(a)(3)(B)(i) notice of location of the provisional counting board; location fixed except in an emergency.\n(other) Sec 3: 2-9-110 no tabulation of ballots submitted over the internet; voting machines may not be connected to the internet.\n(other) Sec 4: 2-2-106(c)(2) address-verification process also used if voter failed to vote or update registration over two consecutive regular November elections.\n(other) Sec 5: 2-2-118(a) ID or residence verification for commission-office registrants (rewritten).\n(other) Sec 6: new 2-2-111(f) supplemental-registration forms lacking ID or residence proof go to 2-2-115.\n(other) Sec 7: 2-2-124(a) registration card mailed to new voter lacking residence verification or registered at a supplemental registration.\n(other) Sec 8: 2-2-132 purge of permanent registration records required under 2-2-106, unless federal law prevents it.\n(other) Sec 9: effective on becoming law.\n(other) version: 3085514-Draft (2025-01-28): caption bill; only 2-5-151(c), a sentence letting the commission notify petition filers of a documentation defect. No slot a-e text.\n(other) version: 3094076-Draft (2025-01-31): same words; header adds companion Senate Bill 626 (Briggs). No slot a-e text.\n(other) version: 3113307-Draft (2025-02-11): same words; sponsor line changes to Rudd. No slot a-e text.\n(other) version: amend-248215-HA0398 (committee amendment 1, Crawford, dated 2025-04-10, adopted flag 0): deletes everything after the enacting clause and substitutes the nine-section text of the later Public Chapter. Carries slots b and e text (nothing for a, c, d). Its wording matches the Chaptered act apart from clean-text fixes (OCR noise in the Chaptered copy).\n(other) version: 3235997-Chaptered (2025-05-07, Public Chapter 371 = Senate Bill 626, substituted for HB 457): same nine sections as HA0398. Carries slots b and e text.\n(other) note: House Bill 457 was a caption bill; the real text arrived by amendment and then the House substituted Senate Bill 626 on 2025-04-16 ('Comp. SB subst.'). No House floor roll call is saved under HB 457, and Senate roll calls are on SB 626 (not in this skeleton). The Chaptered OCR garbles the section number (reads '2-2-11 B(a)'; HA0398 says 2-2-118(a)) and the first words of Sec 6 ('from person'); quotes use HA0398 where OCR is bad. Slot a is not stated: Sec 5 is about registering at the commission office, not voting. LegiScan flags HA0398 adopted 0 because the bill was substituted.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2025-03-25",
+      "body": "TN House",
+      "motion": "Subcommittee recommended for passage if amended [version voted: not saved (Draft caption bill + a subcommittee amendment that is not in the saved set; HA0398 is dated 2025-04-10, after this vote)]",
+      "kind": "roll-call",
+      "yes": 6,
+      "no": 1,
+      "absent": 0,
+      "body_size": 7,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB0457/id/1526442",
+      "members": [
+        {
+          "name": "Jason Powell",
+          "vote": "nay"
+        },
+        {
+          "name": "Dan Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Rudd",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerome Moon",
+          "vote": "yea"
+        },
+        {
+          "name": "Rush Bricken",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Leatherwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Wright",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2025-04-09",
+      "body": "TN House",
+      "motion": "Committee recommended for passage if amended [version voted: Draft + HA0398 (full rewrite, committee amendment 1). Inferred: HA0398 is the only saved amendment, it is numbered as a State & Local Government amendment, and its text equals the Chaptered act; its date (2025-04-10) is the day after the vote.]",
+      "kind": "roll-call",
+      "yes": 16,
+      "no": 5,
+      "absent": 0,
+      "body_size": 21,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB0457/id/1542846",
+      "members": [
+        {
+          "name": "Larry Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Dennis Powers",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Littleton",
+          "vote": "yea"
+        },
+        {
+          "name": "Bo Mitchell",
+          "vote": "nay"
+        },
+        {
+          "name": "Jason Powell",
+          "vote": "nay"
+        },
+        {
+          "name": "Dan Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "John Crawford",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Rudd",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerome Moon",
+          "vote": "yea"
+        },
+        {
+          "name": "Rush Bricken",
+          "vote": "yea"
+        },
+        {
+          "name": "Vincent Dixie",
+          "vote": "nay"
+        },
+        {
+          "name": "Tom Leatherwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Iris Rudder",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Wright",
+          "vote": "yea"
+        },
+        {
+          "name": "Rick Eldridge",
+          "vote": "yea"
+        },
+        {
+          "name": "Michele Carringer",
+          "vote": "yea"
+        },
+        {
+          "name": "Greg Martin",
+          "vote": "yea"
+        },
+        {
+          "name": "Jake McCalmon",
+          "vote": "yea"
+        },
+        {
+          "name": "Ed Butler",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Burkhart",
+          "vote": "yea"
+        },
+        {
+          "name": "Gabby Salinas",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

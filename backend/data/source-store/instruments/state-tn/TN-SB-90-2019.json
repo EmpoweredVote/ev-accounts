@@ -1,0 +1,37 @@
+{
+  "id": "TN-SB-90-2019",
+  "scope": "state:tn",
+  "title": "SB 90 (111th General Assembly): As introduced, authorizes the use of a driver license from another state to establish a person's identity for the purposes of being issued a photo identification license by the department of safety for the purposes of voting. - Amends TCA Title 2 and Title 55, Chapter 50.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB0090/2019"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy)\n(section) 55-50-336(g)(1)(A) (Sec. 1)\n(quote) (A) Does not have a valid government-issued photo identification necessary for voting in this state;\n(section) 55-50-336(g)(2) (Sec. 2)\n(quote) even if the person has a valid nonphoto bearing driver license or a valid driver license from another state\n(section) 55-50-336(g)(3) new (Sec. 3)\n(quote) (3) A person applying for a photo identification license under this subsection (g) may establish the person's identity with a valid driver license from another state.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec. 4: takes effect on becoming law.\n(other) version: 1872572-Draft: Draft only; carries slot b text (free voting photo ID under 55-50-336(g): applicant may prove identity with another state's driver license; rewrites (g)(1)(A) and adds to (g)(2)).\n(other) note: Only the Draft is saved. The existing wording of 55-50-336(g)(1)(A) and (g)(2) is not in the file, so what changed in (g)(1)(A) cannot be stated beyond the replacement text. Companion pair HB133/SB90 have identical text. Bill dies in committee (deferred/taken off notice or sent to subcommittee); no roll call saved.",
+  "sponsors": [
+    {
+      "name": "Raumesh Akbari",
+      "role": "prime",
+      "version": "1872572-Draft"
+    },
+    {
+      "name": "Brenda Gilmore",
+      "role": "co",
+      "version": "1872572-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

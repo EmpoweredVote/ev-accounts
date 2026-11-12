@@ -1,0 +1,165 @@
+{
+  "id": "TN-HB-2730-2011",
+  "scope": "state:tn",
+  "title": "HB 2730 (107th General Assembly): As introduced, allows valid photograph identification cards issued to students at public institutions of higher learning in Tennessee to be used for voting. - Amends TCA Section 2-7-112.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB2730/2011",
+    "https://legiscan.com/TN/rollcall/HB2730/id/175942",
+    "https://legiscan.com/TN/rollcall/HB2730/id/181614"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) 2-7-112(c)(2) (Section 1)\n(quote) (2) A valid identification card issued by a branch, department, agency or entity of the State of Tennessee, any other state, or the United States authorized by law to issue personal identification, provided that such identification card contains a photograph of the voter;\n(section) 2-7-112(c) new subdivision (Section 2)\n(quote) A valid identification card issued to a student by a public institution of higher education in Tennessee containing a photograph of the voter;\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Section 3: effective on becoming law.\n(other) version: 539714-Draft (2012-01-18): the only saved version; adds public higher-education student photo ID to the accepted list (slot a); Senate companion SB2447 in header.\n(other) note: Subcommittee passed it 5-4 on 2012-03-21; the full committee voted 6-11 against on 2012-04-03. Slot a only.",
+  "sponsors": [
+    {
+      "name": "Joe Pitts",
+      "role": "prime",
+      "version": "539714-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2012-03-21",
+      "body": "TN House",
+      "motion": "Subcommittee recommends passage, 5 yes to 4 no [version voted: Draft (no amendments in saved actions)]",
+      "kind": "roll-call",
+      "yes": 5,
+      "no": 4,
+      "absent": 0,
+      "body_size": 9,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB2730/id/175942",
+      "members": [
+        {
+          "name": "Jim Cobb",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan Haynes",
+          "vote": "nay"
+        },
+        {
+          "name": "Gerald McCormick",
+          "vote": "nay"
+        },
+        {
+          "name": "Curry Todd",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Ramsey",
+          "vote": "nay"
+        },
+        {
+          "name": "Larry Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Tommie Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent Williams",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2012-04-03",
+      "body": "TN House",
+      "motion": "Committee recommends passage motion, 6 yes to 11 no [version voted: Draft (no amendments in saved actions)]",
+      "kind": "roll-call",
+      "yes": 6,
+      "no": 11,
+      "absent": 0,
+      "body_size": 17,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB2730/id/181614",
+      "members": [
+        {
+          "name": "Jim Cobb",
+          "vote": "nay"
+        },
+        {
+          "name": "Joshua Evans",
+          "vote": "nay"
+        },
+        {
+          "name": "Ryan Haynes",
+          "vote": "nay"
+        },
+        {
+          "name": "Gerald McCormick",
+          "vote": "nay"
+        },
+        {
+          "name": "Harry Tindell",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Dunn",
+          "vote": "nay"
+        },
+        {
+          "name": "Curry Todd",
+          "vote": "nay"
+        },
+        {
+          "name": "Eric Watson",
+          "vote": "nay"
+        },
+        {
+          "name": "Vince Dean",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Pruitt",
+          "vote": "nay"
+        },
+        {
+          "name": "Bob Ramsey",
+          "vote": "nay"
+        },
+        {
+          "name": "Larry Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Tommie Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Gotto",
+          "vote": "nay"
+        },
+        {
+          "name": "Antonio Parkinson",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

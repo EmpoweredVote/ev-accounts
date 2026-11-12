@@ -1,0 +1,232 @@
+{
+  "politician_id": "2a79d564-dde0-4201-a072-789554bbf6d6",
+  "findings": [
+    {
+      "id": "9b9d27469c4ba05efe7c2675e0c5b9630bd294e8d5b21a0e8688155da261ac0e",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/HB0553/2015",
+      "date": "2015",
+      "date_precision": "year",
+      "instrument_id": "TN-HB-553-2015",
+      "act": "sponsor",
+      "motion": "co sponsor, 1115892-Draft",
+      "note": "Listed as co sponsor of HB0553 (109th General Assembly) in LegiScan's bill record (sponsor order 10); the first version (1115892-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e0f7a4af650f8ce384cd7e0fe78173edcae30ea363468e9aa4dcf8edf3fe1bf9",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/SB0090/2019",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "TN-SB-90-2019",
+      "act": "sponsor",
+      "motion": "prime sponsor, 1872572-Draft",
+      "note": "Listed as prime sponsor of SB0090 (111th General Assembly) in LegiScan's bill record (sponsor order 1); the first version (1872572-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e5cada511cf12b954a96b64fed8fd418519a9f4c49f90fb2c1968d09000a4aa9",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/SB1843/2019",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "TN-SB-1843-2019",
+      "act": "sponsor",
+      "motion": "prime sponsor, 2109807-Draft",
+      "note": "Listed as prime sponsor of SB1843 (111th General Assembly) in LegiScan's bill record (sponsor order 1); the first version (2109807-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "66fca8d3c70d83f0960d1ddf709d5a20899221dbb064839adf84b4a96d778b05",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/SB2810/2019",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "TN-SB-2810-2019",
+      "act": "sponsor",
+      "motion": "prime sponsor, 2125832-Draft",
+      "note": "Listed as prime sponsor of SB2810 (111th General Assembly) in LegiScan's bill record (sponsor order 1); the first version (2125832-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "83c82744124199868780d63717c3d37ed83b678bf7f17520313fd2d35ff07b6a",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/SB2064/2021",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "TN-SB-2064-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, 2494081-Draft",
+      "note": "Listed as co sponsor of SB2064 (112th General Assembly) in LegiScan's bill record (sponsor order 3); the first version (2494081-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0163468abe7ef6cc7868a6546830d4095296324325aa2540d7bc350fe651df73",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/HB1316/id/1543681",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1316-2025",
+      "act": "yea",
+      "motion": "Senate: Third Consideration",
+      "note": "TN Senate floor roll call (Third Consideration, 27-1) on HB1316 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: House bill as engrossed: Draft + HA0118 (no Senate amendment adopted; SA0055 withdrawn, text not saved). Equals the Chaptered act.; linked by LegiScan member id 16126 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3eb2b8cb8e28469b4d579efd6f24f87d728715f7c104a8692eb338a8949bf4c6",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB6002/id/1476571",
+      "date": "2025-01-29",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "nay",
+      "motion": "Senate: as Amended Third Consideration",
+      "note": "TN Senate floor roll call (as Amended Third Consideration, 26-7) on SB6002 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA6001 + SA6007 (adopted on the Senate floor 1/29/2025; equals the chaptered text); linked by LegiScan member id 16126 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting / voter-roll checks",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (not run; no linked appearances expected)",
+        "Confirmed in scope: Senate District 29 seat holder, in Senate Minority Leader role per tnsenatedems.com front page",
+        "tnsenatedems.com front page: no item on the subject",
+        "Daily Memphian 2018 article on restoring voting rights after felony: reporter's description only, no quote of hers, off the subject of ID",
+        "6 web searches on voter ID, photo ID, SAVE, noncitizen, voter registration, local outlets: only lead is April 2026 criticism of the SAVE check bill, reported by Tennessee Lookout and its repost (not reviewed: https://tennesseelookout.com/2026/04/07/bill-requiring-citizenship-database-checks-for-voter-registration-heads-to-governors-desk/ ; not reviewed (repost of Tennessee Lookout): https://www.newsfromthestates.com/node/400686)",
+        "NewsChannel 5 SAVE story and Elizabethton SAVE story and WGNS student-ID story: fetched, do not quote her",
+        "blocked: https://ballotpedia.org (refuses fetches)",
+        "blocked: https://justfacts.votesmart.org (refuses fetches)",
+        "blocked: https://bluevoterguide.org (refuses fetches)",
+        "not fetched (site refuses bots): capitol.tn.gov and wapp.capitol.tn.gov",
+        "not reviewed (outlet refuses AI agents): tennesseelookout.com voter guide and stories (search leads only)"
+      ],
+      "found": 0,
+      "at": "2026-11-12T01:48:42.932Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting / voter-roll checks",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (not run; no linked appearances expected)",
+        "Confirmed in scope: Senate District 29 seat holder, in Senate Minority Leader role per tnsenatedems.com front page",
+        "tnsenatedems.com front page: no item on the subject",
+        "Daily Memphian 2018 article on restoring voting rights after felony: reporter's description only, no quote of hers, off the subject of ID",
+        "6 web searches on voter ID, photo ID, SAVE, noncitizen, voter registration, local outlets: only lead is April 2026 criticism of the SAVE check bill, reported by Tennessee Lookout and its repost (not reviewed: https://tennesseelookout.com/2026/04/07/bill-requiring-citizenship-database-checks-for-voter-registration-heads-to-governors-desk/ ; not reviewed (repost of Tennessee Lookout): https://www.newsfromthestates.com/node/400686)",
+        "NewsChannel 5 SAVE story and Elizabethton SAVE story and WGNS student-ID story: fetched, do not quote her",
+        "blocked: https://ballotpedia.org (refuses fetches)",
+        "blocked: https://justfacts.votesmart.org (refuses fetches)",
+        "blocked: https://bluevoterguide.org (refuses fetches)",
+        "not fetched (site refuses bots): capitol.tn.gov and wapp.capitol.tn.gov",
+        "not reviewed (outlet refuses AI agents): tennesseelookout.com voter guide and stories (search leads only)",
+        "On the Record run done 2026-11-11 (extract-otr with --politician and --names): 0 appearances, 0 candidate sources; nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-12T02:11:34.721Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 7,
+      "at": "2026-11-12T15:13:42.076Z",
+      "by": "source-collector"
+    }
+  ]
+}

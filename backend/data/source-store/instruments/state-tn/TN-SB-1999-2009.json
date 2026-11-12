@@ -1,0 +1,83 @@
+{
+  "id": "TN-SB-1999-2009",
+  "scope": "state:tn",
+  "title": "SB 1999 (106th General Assembly): As introduced, requires citizenship status to be proven prior to registration to vote and requires certain procedures to ensure identity and citizenship status prior to voting. - Amends TCA Title 2 and Title 4.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB1999/2009",
+    "https://legiscan.com/TN/rollcall/SB1999/id/108137"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 5 (amends 2-7-112(a)(1), after its second sentence)\n(quote) In addition, the voter shall present to the registrar one (1) form of identification that bears the name, address and photograph of the voter.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec. 4 (new section) (a)\n(quote) The administrator of elections shall reject any application for registration that is not accompanied by satisfactory evidence of United States citizenship. Satisfactory evidence of citizenship shall include any of the following:\n(section) Sec. 4(a)(1)-(2)\n(quote) The number of the applicant's driver license issued by the department of safety or a driver license, driver certificate, or nonoperating identification license issued by the equivalent governmental agency of another state within the United States if the agency indicates on the applicant's driver license, driver certificate or nonoperating identification license that the person has provided satisfactory proof of United States citizenship; (2) A legible photocopy of the applicant's birth certificate that verifies citizenship to the satisfaction of the administrator of elections;\n(section) Sec. 4(b)\n(quote) any person who is registered in this state on the effective date of this section is deemed to have provided satisfactory evidence of citizenship and shall not be required to resubmit evidence of citizenship unless the person is changing voter registration from one county to another.\n(e_other_rule)\n(section) Sec. 2 (rewrites 2-2-115(b)(2))\n(quote) The printed registration forms shall also include a statement that the applicant shall submit evidence of United States citizenship with the application and that the registrar shall reject the application if no evidence of citizenship is attached.\n(section) Sec. 3 (replaces 2-2-116(c))\n(quote) I, being duly sworn on oath (or affirmation) declare that I am a citizen of the United States\n(other) Sec. 1: 'postal card' becomes 'registration' in 2-2-115(a).\n(other) Sec. 2: replaces the detailed form-contents list in 2-2-115(b)(2) with a general rule that forms include what the coordinator of elections, with the secretary of state, requires to ascertain qualifications and prevent fraud (shorter than the HB0270 version).\n(other) Sec. 4(a)(3)-(6): passport, naturalization papers/certificate number (verified with USCIS), proof under the 1986 federal immigration act, BIA/tribal card number.\n(other) Sec. 4(c)-(e): proof of registration elsewhere is not citizenship proof; no resubmission in that county; noted in voter file, documents may be destroyed after two years.\n(other) Sec. 6 severability; Sec. 7 effective on becoming law.\n(other) version: 374307-Draft (filed 2009-02-23), the only version saved: carries a, d, e. Same operative text as HB1838 Draft. Committee amendments not saved.\n(other) note: Not enacted. Reset on the Senate regular calendar several times (last 2009-04-16, reset to 4/30/2009); no floor vote in the actions. Status 1 (introduced).",
+  "sponsors": [
+    {
+      "name": "Mark Norris",
+      "role": "prime",
+      "version": "374307-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2009-04-08",
+      "body": "TN Senate",
+      "motion": "Senate committee, recommended for passage with amendments [version voted: Draft + committee amendment(s) (not saved)]",
+      "kind": "roll-call",
+      "yes": 9,
+      "no": 0,
+      "absent": 0,
+      "body_size": 9,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/SB1999/id/108137",
+      "members": [
+        {
+          "name": "Ken Yager",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Ketron",
+          "vote": "yea"
+        },
+        {
+          "name": "Thelma Harper",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Tracy",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Faulk",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Norris",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Burchett",
+          "vote": "yea"
+        },
+        {
+          "name": "Joe Haynes",
+          "vote": "yea"
+        },
+        {
+          "name": "Lowe Finney",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

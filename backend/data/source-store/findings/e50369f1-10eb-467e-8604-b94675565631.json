@@ -1,0 +1,204 @@
+{
+  "politician_id": "e50369f1-10eb-467e-8604-b94675565631",
+  "findings": [
+    {
+      "id": "62edd4ccb815be27813d64184b4ee521bb52646771ca17b79625aea116feac49",
+      "kind": "own-words",
+      "url": "https://www.ballotready.org/people/janice-bowling-c7e78b9b-fe8f-473d-a493-e62e46e27dc0",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Janice believes we should protect the right of every citizen to have their vote count by requiring a photo id to vote. This common sense approach is not about keeping someone from voting, but is about making sure that our voting process is fair and free from fraudulent activity.",
+      "note": "Civil Rights section of her BallotReady candidate profile. Written in the third person, so it is a candidate-profile statement issued in her name rather than a verified first-person quote; undated.",
+      "subjects": [
+        "photo ID",
+        "voter ID at the polls",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T02:07:53.782Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "392efdc8ab393853e95a585df80271d13d515114e0d823fd05c89632073529c7",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0125/id/259248",
+      "date": "2013-04-04",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-125-2013",
+      "act": "yea",
+      "motion": "Senate: CONCUR IN HOUSE AMEND# 2",
+      "note": "TN Senate floor roll call (CONCUR IN HOUSE AMEND# 2, 27-3) on SB0125 (108th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: House Amendment 2 not saved; linked by LegiScan member id 15131 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0163468abe7ef6cc7868a6546830d4095296324325aa2540d7bc350fe651df73",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/HB1316/id/1543681",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1316-2025",
+      "act": "yea",
+      "motion": "Senate: Third Consideration",
+      "note": "TN Senate floor roll call (Third Consideration, 27-1) on HB1316 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: House bill as engrossed: Draft + HA0118 (no Senate amendment adopted; SA0055 withdrawn, text not saved). Equals the Chaptered act.; linked by LegiScan member id 15131 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f0348f24a72db024f3a1a9c793f0dac0385e4fb82378e2fbb2b145afd1d30976",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0626/id/1541445",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-626-2025",
+      "act": "yea",
+      "motion": "Senate: as Amended Third Consideration",
+      "note": "TN Senate floor roll call (as Amended Third Consideration, 22-4) on SB0626 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft 3093364 + SA0305 (full rewrite = chaptered text); linked by LegiScan member id 15131 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b2a2cd8b39f412451b038b2eb062f61ed51daf11b19d701d46879556635464ea",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/SB1029/2025",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TN-SB-1029-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, 3102287-Draft",
+      "note": "Listed as prime sponsor of SB1029 (114th General Assembly) in LegiScan's bill record (sponsor order 1); the first version (3102287-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f980e3e7619c55dde318902ee75c0bcffeab049f3ac02af140c30fb2d2daf2c1",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB6002/id/1476571",
+      "date": "2025-01-29",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "yea",
+      "motion": "Senate: as Amended Third Consideration",
+      "note": "TN Senate floor roll call (as Amended Third Consideration, 26-7) on SB6002 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA6001 + SA6007 (adopted on the Senate floor 1/29/2025; equals the chaptered text); linked by LegiScan member id 15131 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aae2c97a5f529071dced8b38c17fc0088f41a097037e7f68fef9d9d763b3453",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/SB6002/2025",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, 3072439-Draft",
+      "note": "Listed as co sponsor of SB6002 (114th General Assembly) in LegiScan's bill record (sponsor order 5); the first version (3072439-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "noncitizen voting",
+        "voter-roll citizenship checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia: blocked (refused fetches, not tried)",
+        "bluevoterguide.org: blocked (not tried)",
+        "justfacts.votesmart.org: blocked (not tried)",
+        "capitol.tn.gov / wapp.capitol.tn.gov: not opened (refused to bots)",
+        "8 or more web searches on name plus voter ID, photo ID, proof of citizenship, SAVE Act, noncitizen, questionnaire, local outlets",
+        "BallotReady profile https://www.ballotready.org/people/janice-bowling-c7e78b9b-fe8f-473d-a493-e62e46e27dc0 (confirms Senate District 16)",
+        "campaign site https://janicebowling.com/janice/: nothing on the subject",
+        "Thunder Radio https://archive.thunder1320.com/news/bowling-introduces-legislation-to-eliminate-voting-machines-early-voting/ (2021 bill on machines and early voting, reporter's words only, no quote from her)",
+        "Tennessee Conservative https://tennesseeconservativenews.com/new-tennessee-bill-would-require-counties-to-check-voter-rolls-for-illegal-aliens/ (sponsorship only, a reporter's words)",
+        "not reviewed (refused host): tennesseelookout.com 2021 and 2026 stories, fox17.com; timesfreepress 2021 story returned 404"
+      ],
+      "found": 1,
+      "at": "2026-11-12T02:07:53.782Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 6,
+      "at": "2026-11-12T15:13:42.076Z",
+      "by": "source-collector"
+    }
+  ]
+}

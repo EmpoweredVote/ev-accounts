@@ -1,0 +1,18 @@
+{
+  "id": "TN-HB-835-2019",
+  "scope": "state:tn",
+  "title": "HB 835 (111th General Assembly): As introduced, excludes, as acceptable proof of valid identification in Tennessee, a driver license, voter registration card, or photo identification license from a state that issues those documents to illegal aliens. - Amends TCA Title 55, Chapter 50.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB0835/2019"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) 55-50-321(i)(1) (Sec. 1)\n(quote) (1) A driver license, voter registration card, or photo identification license from another state that issues driver licenses, voter registration cards, or photo identification licenses to illegal aliens must not be accepted as proof of valid identification if presented by any person in this state for any purpose for which presentation of a valid form of identification is required by law.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec. 2: takes effect July 1, 2019.\n(other) version: 1891178-Draft: Draft only; carries the slot a rule (a general bar, in Title 55, on accepting certain other-state licences, voter cards or photo IDs wherever ID is required by law).\n(other) note: The text amends 55-50-321(i)(1), not 2-7-112, and never names voting; it reaches voting only through the phrase 'any purpose for which presentation of a valid form of identification is required by law'. Only the Draft is saved. No roll call saved; HB835 was taken off notice in subcommittee 2019-03-26 and SB1305 stopped after referral to Senate Transportation.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "politician_id": "13dde449-93ec-4b04-8ba9-2ec0960ca052",
+  "findings": [
+    {
+      "id": "53c059f8ba121dc33b48c05f64a1f0d61a1df720a348151bb5a64fc38d21857e",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/66010/race/15604/election/979",
+      "date": "2022-11-08",
+      "date_precision": "year",
+      "passage": "I am fairly happy with the voting practices in the State of Tennessee. We don’t use drop boxes, photo ID is required, and mail-in ballots are heavily regulated.",
+      "note": "Candidate questionnaire answer (2022 general-election profile) to 'What laws would you propose to change present voting practices?'. Says he is content with current Tennessee practices and names photo ID, no drop boxes and regulated mail-in ballots.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:48:34.682Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5612bc293b23ed4a67ac746905c0fe70e14d58b42a2e4fce5cacbef0b3b1a959",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/66010/race/15604/election/979",
+      "date": "2022-11-08",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification. Strongly Disagree",
+      "note": "Candidate questionnaire: gave the answer 'Strongly Disagree' to the statement that people should be able to vote without photo identification. Questionnaire statement plus his answer, same 2022 profile.",
+      "subjects": [
+        "photo ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:48:34.682Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7dc8e31df9aa85dc745b8adc49e3dd7091c791774489fb6033521ac9ba5fbf66",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/HB0069/2025",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TN-HB-69-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, 3041021-Draft",
+      "note": "Listed as co sponsor of HB0069 (114th General Assembly) in LegiScan's bill record (sponsor order 6); the first version (3041021-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.077Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6bf6d81a82db697d74298b2d427ff9b8ac3a5267f7ae33bbaa137ed285b615aa",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/HB1316/id/1538770",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1316-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR AS AMENDED PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR AS AMENDED PASSAGE ON THIRD CONSIDERATION, 83-7) on HB1316 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + HA0118 (adopted on the floor 2025-04-07 per action log); linked by LegiScan member id 23187 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.077Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "284ac6cf32a6e7101978f7f48db5f62427fdcce8b570a733d284e359fc92f641",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/HB1316/2025",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TN-HB-1316-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, 3106468-Draft",
+      "note": "Listed as co sponsor of HB1316 (114th General Assembly) in LegiScan's bill record (sponsor order 3); the first version (3106468-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.077Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0821951bbc4b420c45a5c4f6ef75f0a5c6a0cae3376a50e920a5d71264e637c2",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/HB6001/2025",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TN-HB-6001-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, 3073731-Draft",
+      "note": "Listed as co sponsor of HB6001 (114th General Assembly) in LegiScan's bill record (sponsor order 6); the first version (3073731-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.077Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad92ee221bdade53f1ad4bb273813b351662b750a615bdacabc84af573a8a288",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0626/id/1550047",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-626-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION, 72-22) on SB0626 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft 3093364 + SA0305 (full rewrite = chaptered text) as engrossed by the Senate; linked by LegiScan member id 23187 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.077Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dfc0f401b5e1e11d23ee20ace873f4d6d7b4216789ab4da3a289d27d0ae2ae27",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB6002/id/1477618",
+      "date": "2025-01-30",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION, 71-19) on SB6002 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA6001 + SA6007 (adopted on the Senate floor 1/29/2025; equals the chaptered text) as engrossed by the Senate; linked by LegiScan member id 23187 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.077Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting and voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "iVoterGuide https://ivoterguide.com/candidate/66010/race/15604/election/979",
+        "House caucus press-release category page: not found",
+        "campaign site: no page located by search",
+        "blocked: https://ballotpedia.org",
+        "blocked: https://justfacts.votesmart.org",
+        "blocked: https://www.capitol.tn.gov (never fetched, robots.txt)",
+        "not reviewed (repost of Tennessee Lookout): https://www.manchestertimes.com/?p=114699",
+        "web search x5+ on name plus voter ID, photo ID, proof of citizenship, election, questionnaire"
+      ],
+      "found": 2,
+      "at": "2026-11-12T01:48:34.682Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 6,
+      "at": "2026-11-12T15:13:42.077Z",
+      "by": "source-collector"
+    }
+  ]
+}

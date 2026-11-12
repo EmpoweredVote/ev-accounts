@@ -1,0 +1,32 @@
+{
+  "id": "TN-SB-1121-2017",
+  "scope": "state:tn",
+  "title": "SB 1121 (110th General Assembly): As introduced, permits the use of a photo identification card issued by this state, the United States, or an accredited postsecondary institution of education in this state for purposes of verifying the identity of an eligible voter. - Amends TCA Title 2, Chapter 7.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB1121/2017"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) TCA 2-7-112(c)(2) (replaced)\n(quote) (2) A valid identification card that contains a photograph of the voter, and that was issued by this state, or by the United States where authorized by law to issue personal identification;\n(section) TCA 2-7-112(c)(8) (new)\n(quote) (8) A valid identification card that contains a photograph of the voter, and that was issued by an accredited postsecondary institution of education in this state.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Section 1: replaces item (2) of the accepted-ID list in 2-7-112(c) (state or federal ID card with a photograph).\n(other) Section 2: adds a new item to the list for a photo ID card from an accredited in-state college or university.\n(other) Last section: takes effect on becoming law.\n(other) version: Draft 1506353 (2017-02-09): only version saved; same text as HB 79; slot a only.\n(other) note: Companion HB 79. Assigned to the General Subcommittee of Senate State and Local Government on 2017-04-05; no votes. No amendments saved.",
+  "sponsors": [
+    {
+      "name": "Sara Kyle",
+      "role": "prime",
+      "version": "1506353-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

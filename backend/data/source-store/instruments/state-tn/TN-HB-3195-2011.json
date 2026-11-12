@@ -1,0 +1,146 @@
+{
+  "id": "TN-HB-3195-2011",
+  "scope": "state:tn",
+  "title": "HB 3195 (107th General Assembly): As enacted, allows state employee upon retirement to keep such employee's photo identification card issued by the state; requires sticker or other designation to be placed on the card; specifies such card may be used as valid photo id for voting purposes. - Amends TCA Section 2-7-112 and Title 8.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB3195/2011",
+    "https://legiscan.com/TN/rollcall/HB3195/id/175997",
+    "https://legiscan.com/TN/rollcall/HB3195/id/185622",
+    "https://legiscan.com/TN/rollcall/HB3195/id/187569"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 2, TCA 2-7-112(c) new subdivision\n(quote) (_) An employee identification card for retired state employees authorized pursuant to § 8-50-118;\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec. 1: new TCA 8-50-118, a retiring state employee keeps the state photo ID card, with a sticker or other mark showing retired status.\n(other) Sec. 3: takes effect on becoming law.\n(other) version: Draft 552622 (filed 2012-01-25): only saved version. Carries slot a text (adds the retired state employee ID card to the 2-7-112(c) accepted-ID list); slots b-e not stated.\n(other) note: The House bill itself did not pass a floor vote in the saved votes; the companion Senate bill was substituted and became Pub. Ch. 938. The enacted wording is not saved here, so only the filed text is quoted. No floor roll call is saved. The 2-7-112(c) list it adds to is not reprinted.",
+  "sponsors": [
+    {
+      "name": "Jim Cobb",
+      "role": "prime",
+      "version": "552622-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2012-03-21",
+      "body": "TN House",
+      "motion": "House subcommittee (State & Local Government), recommended for passage [version voted: Draft 552622 (no amendment shown in the actions)]",
+      "kind": "roll-call",
+      "yes": 6,
+      "no": 3,
+      "absent": 0,
+      "body_size": 9,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB3195/id/175997",
+      "members": [
+        {
+          "name": "Jim Cobb",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan Haynes",
+          "vote": "nay"
+        },
+        {
+          "name": "Gerald McCormick",
+          "vote": "yea"
+        },
+        {
+          "name": "Curry Todd",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Ramsey",
+          "vote": "nay"
+        },
+        {
+          "name": "Larry Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Tommie Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent Williams",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2012-04-10",
+      "body": "TN House",
+      "motion": "House full committee (State & Local Government), recommended for passage [version voted: Draft 552622 (no amendment shown in the actions)]",
+      "kind": "roll-call",
+      "yes": 10,
+      "no": 2,
+      "absent": 0,
+      "body_size": 12,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB3195/id/185622",
+      "members": [
+        {
+          "name": "Jim Cobb",
+          "vote": "yea"
+        },
+        {
+          "name": "Joshua Evans",
+          "vote": "nay"
+        },
+        {
+          "name": "Ryan Haynes",
+          "vote": "nay"
+        },
+        {
+          "name": "Gerald McCormick",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Dunn",
+          "vote": "yea"
+        },
+        {
+          "name": "Vince Dean",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Ramsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Tommie Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Gotto",
+          "vote": "yea"
+        },
+        {
+          "name": "Antonio Parkinson",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}
